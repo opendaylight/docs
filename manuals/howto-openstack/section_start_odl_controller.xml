@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section [
+ <!-- Some useful entities borrowed from HTML -->
+<!ENTITY ndash  "&#x2013;">
+<!ENTITY mdash  "&#x2014;">
+<!ENTITY hellip "&#x2026;">
+]>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="start_odl_controller">
+    <title>Starting ODL Controller on the Openstack Node</title>
+    <para>
+        <screen><command>$ cd odl/opendaylight/</command></screen>
+    </para>
+    <para>Check that the configuration is set for OpenFlow v1.3 with the following to ensure that
+        ovsdb.of.version=1.3 is uncommented: </para>
+    <para>
+        <screen><command>$ grep ovsdb.of.version configuration/config.ini</command>
+<command>ovsdb.of.version=1.3</command></screen>
+    </para>
+    <para>If it is not uncommented, adjust the config.ini file to uncomment the line
+        ovsdb.of.version=1.3The file is located at
+        /home/odl/opendaylight/configuration/config.ini</para>
+    <para>
+        <screen><computeroutput>### Before ###
+# ovsdb.of.version=1.3
+### After ###
+ovsdb.of.version=1.3</computeroutput></screen>
+    </para>
+    <para>Or, paste the following:</para>
+    <para>
+        <screen><command>sudo sed -i 's/#\ ovsdb.of.version=1.3/ovsdb.of.version=1.3/' /home/odl/opendaylight/configuration/config.ini</command></screen>
+    </para>
+    <para>Lastly, start the ODL controller w/ the following:</para>
+    <para>
+        <screen><command>./run.sh -XX:MaxPermSize=384m -virt ovsdb -of13</command></screen>
+    </para>
+    <para>When the controller is finished loading here are some typical messages in the OSGI
+        console:</para>
+    <para>
+        <screen><computeroutput>
+2014-02-06 20:41:22.458 UTC [pool-2-thread-4] INFO o.o.controller.frm.flow.FlowProvider - Flow Config Provider started.
+2014-02-06 20:41:22.461 UTC [pool-2-thread-4] INFO o.o.c.frm.group.GroupProvider - Group Config Provider started.
+2014-02-06 20:41:22.507 UTC [pool-2-thread-4] INFO o.o.c.frm.meter.MeterProvider - Meter Config Provider started.
+2014-02-06 20:41:22.515 UTC [pool-2-thread-6] INFO o.o.c.m.s.manager.StatisticsProvider - Statistics Provider started.</computeroutput></screen>
+    </para>
+    <para>You can verify the sockets/ports are bound with the following command. Ports 6633, 6640
+        and 6653 should all be bound and listening:</para>
+    <para>
+        <screen><computeroutput>$ lsof -iTCP | grep 66
+java 1330 odl 154u IPv6 15262 0t0 TCP *:6640 (LISTEN)
+java 1330 odl 330u IPv6 15392 0t0 TCP *:6633 (LISTEN)
+java 1330 odl 374u IPv6 14306 0t0 TCP *:6653 (LISTEN)</computeroutput></screen>
+    </para>
+  </section>

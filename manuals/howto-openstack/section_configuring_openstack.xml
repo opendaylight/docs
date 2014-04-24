@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section [
+ <!-- Some useful entities borrowed from HTML -->
+<!ENTITY ndash  "&#x2013;">
+<!ENTITY mdash  "&#x2014;">
+<!ENTITY hellip "&#x2026;">
+]>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0"
+    xml:id="configuring_openstack">
+    <title>Configuring the Openstack Compute Node</title>
+    <para>The compute configuration steps are virtually identical to the controller other then the
+        configurations and that it does not run the Daylight controller.</para>
+    <para><emphasis role="bold">Fedora 19:</emphasis></para>
+    <para>
+        <screen><command>
+$ cd ~/
+$ cd devstack
+$ cp local.conf.compute local.conf
+$ vi local.conf</command></screen>
+    </para>
+    <para><emphasis role="bold">Fedora 20:</emphasis></para>
+    <para>
+        <screen><command>
+$ cd /home/odl/
+$ cp local.conf.compute devstack/local.conf
+$ cd devstack
+$ vi local.conf</command></screen>
+    </para>
+    <para>Edit the local.conf you just copied with the appropriate IPs in the devstack directory on
+        the compute host like the following example with your controller and compute host
+        IPs:</para>
+    <para>
+        <screen><command>
+[[local|localrc]]
+LOGFILE=stack.sh.log
+#LOG_COLOR=False
+#SCREEN_LOGDIR=/opt/stack/data/log
+OFFLINE=true
+#RECLONE=yes
+
+disable_all_services
+enable_service neutron nova n-cpu quantum n-novnc qpid
+
+HOST_NAME=fedora-odl-2
+HOST_IP=172.16.86.128
+SERVICE_HOST_NAME=fedora-odl-1
+SERVICE_HOST=172.16.86.129
+VNCSERVER_PROXYCLIENT_ADDRESS=172.16.86.128
+VNCSERVER_LISTEN=0.0.0.0
+
+FLOATING_RANGE=192.168.210.0/24
+
+NEUTRON_REPO=https://github.com/CiscoSystems/neutron.git
+NEUTRON_BRANCH=odl_ml2
+Q_PLUGIN=ml2
+Q_ML2_PLUGIN_MECHANISM_DRIVERS=opendaylight,linuxbridge
+ENABLE_TENANT_TUNNELS=True
+Q_HOST=$SERVICE_HOST
+
+MYSQL_HOST=$SERVICE_HOST
+RABBIT_HOST=$SERVICE_HOST
+GLANCE_HOSTPORT=$SERVICE_HOST:9292
+KEYSTONE_AUTH_HOST=$SERVICE_HOST
+KEYSTONE_SERVICE_HOST=$SERVICE_HOST
+
+MYSQL_PASSWORD=mysql
+RABBIT_PASSWORD=rabbit
+QPID_PASSWORD=rabbit
+SERVICE_TOKEN=service
+SERVICE_PASSWORD=admin
+ADMIN_PASSWORD=admin
+
+[[post-config|/etc/neutron/plugins/ml2/ml2_conf.ini]]
+[agent]
+minimize_polling=True
+
+[ml2_odl]
+url=http://172.16.86.129:8080/controller/nb/v2/neutron
+username=admin
+password=admin</command></screen>
+    </para>
+    <para>Or check the conf file quickly by grepping it.</para>
+    <para>
+        <screen><prompt>[ odl @ fedora - odl - 2 devstack ] $</prompt><command>grep 172 local .conf</command>
+<computeroutput>
+HOST_IP=172.16.86.128
+SERVICE_HOST=172.16.86.129
+VNCSERVER_PROXYCLIENT_ADDRESS=172.16.86.128
+url=http://172.16.86.129:8080/controller/nb/v2/neutron</computeroutput></screen>
+    </para>
+    <para>And now stack the compute host:</para>
+    <para>
+        <screen><command>$ ./stack.sh </command></screen>
+    </para>
+    <para>Once you get the stack working SNAPSHOT the image, it can be a handy timesaver. So is
+        leaving DevStack “offline=true” and “reclone=no” except for when you need to pull a
+        patch.</para>
+    <para>The state of OVS after the stack should be the following:</para>
+    <para>
+        <screen><prompt>[odl@fedora-odl-2 devstack]$</prompt><command>sudo ovs-vsctl show</command>
+<computeroutput>
+17074e89-2ac5-4bba-997a-1a5a3527cf56
+Manager "tcp:172.16.86.129:6640"
+is_connected: true
+Bridge br-int
+Controller "tcp:172.16.86.129:6633"
+is_connected: true
+fail_mode: secure
+Port br-int
+Interface br-int
+ovs_version: "2.0.0"</computeroutput></screen>
+    </para> 
+</section>

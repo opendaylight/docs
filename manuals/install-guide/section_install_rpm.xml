@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section [
+ <!-- Some useful entities borrowed from HTML -->
+<!ENTITY ndash  "&#x2013;">
+<!ENTITY mdash  "&#x2014;">
+<!ENTITY hellip "&#x2026;">
+]>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="installing_from_rpm">
+    <title>Installing from RPM </title>
+    <para>When using a RedHat-based distribution the easiest way to install OpenDaylight is to use
+        the prebuilt RPM packages. This can be done by downloading the packages or installing from
+        the YUM repository.</para>
+    <section xml:id="installing_from_rpm_install_from_yum">
+        <title>Installing from YUM Repository</title>
+        <para>Use this method to install OpenDaylight using the yum repo:<procedure>
+                <step>
+                    <para>Install the yum repo: <link
+                            xlink:href="https://nexus.opendaylight.org/content/repositories/opendaylight-yum-fedora-19-x86_64/rpm/opendaylight-release/0.1.0-2.fc19.noarch/opendaylight-release-0.1.0-2.fc19.noarch.rpm"
+                            >Download the yum repository file</link></para>
+                </step>
+                <step>
+                    <para>Install OpenDaylight Edition of your choice</para>
+                    <para><emphasis role="bold">OpenDaylight Base Edition</emphasis></para>
+                    <para>
+                        <screen><prompt>$</prompt><userinput>sudo yum install opendaylight</userinput></screen>
+                    </para>
+                    <para><emphasis role="bold">OpenDaylight Virtualization
+                        Edition</emphasis></para>
+                    <para>
+                        <screen><prompt>$</prompt><userinput>sudo yum install opendaylight-virtualization</userinput></screen>
+                    </para>
+                    <para><emphasis role="bold">OpenDaylight Service Provider
+                        Edition</emphasis></para>
+                    <para>
+                        <screen><prompt>$</prompt><userinput>sudo yum install opendaylight-serviceprovider</userinput></screen>
+                    </para>
+                </step>
+            </procedure></para>
+    </section>
+    <section xml:id="installing_from_rpm_install_download_rpm">
+        <title>Installing from downloaded RPM</title>
+        <para>If you have directly downloaded the RPM artifacts you can install OpenDaylight </para>
+        <para>
+            <screen><prompt>$</prompt><userinput>sudo rpm -Uvh /path/to/rpms/*.rpm</userinput></screen>
+        </para>
+        <para>to install from RPMs directly or</para>
+        <para>
+            <screen><prompt>$</prompt><userinput>sudo yum localinstall /path/to/rpms/*.rpm</userinput></screen>
+        </para>
+    </section>
+    <section xml:id="installing_from_rpm_managing_services_rpm">
+        <title>Managing Services</title>
+        <para>The main content of OpenDaylight Hydrogen is in Writea directory called <emphasis
+                role="italic">opendaylight</emphasis>, where you will see the following
+            files:</para>
+    </section>
+    <section xml:id="installing_from_rpm_configuration_rpm">
+        <title>Configuration</title>
+        <para>Add configuration instructions here</para>
+    </section>
+</section>

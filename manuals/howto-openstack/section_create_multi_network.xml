@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section [
+ <!-- Some useful entities borrowed from HTML -->
+<!ENTITY ndash  "&#x2013;">
+<!ENTITY mdash  "&#x2014;">
+<!ENTITY hellip "&#x2026;">
+]>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="create_multi_network">
+    <title>Create Multi Network Types, GRE and VXLan</title>
+    <para>Create some hosts in an overlay using the VXLAN encap with specified segmentation IDs
+        (VNIs):</para>
+    <para>
+        <screen><command>
+neutron net-create vxlan-net1 --tenant_id $(keystone tenant-list | grep '\sadmin' | awk '{print $2}') --provider:network_type vxlan --provider:segmentation_id 1600
+neutron subnet-create vxlan-net1 10.100.1.0/24 --name vxlan-net1
+
+neutron net-create vxlan-net2 --tenant_id $(keystone tenant-list | grep '\sadmin' | awk '{print $2}') --provider:network_type vxlan --provider:segmentation_id 1601
+neutron subnet-create vxlan-net2 10.100.2.0/24 --name vxlan-net2
+
+neutron net-create vxlan-net3 --tenant_id $(keystone tenant-list | grep '\sadmin' | awk '{print $2}') --provider:network_type vxlan --provider:segmentation_id 1603
+neutron subnet-create vxlan-net3 10.100.3.0/24 --name vxlan-net3 </command></screen>
+    </para>
+    <para>Next, take a look at the networks which were just created.</para>
+    <para>
+        <screen><prompt>[odl@fedora-odl-1 devstack]$</prompt><command>neutron net-list</command>
+<computeroutput>
++--------------------------------------+------------+-------------------------------------------------------+
+| id                                   | name       | subnets                                               |
++--------------------------------------+------------+-------------------------------------------------------+
+| 03e3f964-8bc8-48fa-b4c9-9b8390f37b93 | private    | b06d716b-527f-4da2-adda-5fc362456d34 10.0.0.0/24      |
+| 4eaf08d3-2234-4632-b1e7-d11704b1238a | vxlan-net2 | b54c30fd-e157-4935-b9c2-cefa145162a8 10.100.2.0/24    |
+| af8aa29d-a302-4ecf-a0b1-e52ff9c10b63 | vxlan-net1 | c44f9bee-adca-4bca-a197-165d545bcef9 10.100.1.0/24    |
+| e6f3c605-6c0b-4f7d-a64f-6e593c5e647a | vxlan-net3 | 640cf2d1-b470-41dd-a4d8-193d705ea73e 10.100.3.0/24    |
+| f6aede62-67a5-4fe6-ad61-2c1a88b08874 | public     | 1e945d93-caeb-4890-8b58-ed00297a7f03 192.168.210.0/24 |
++--------------------------------------+------------+-------------------------------------------------------+ </computeroutput></screen>
+    </para>
+    <para>Now, boot the VMS</para>
+    <para>
+        <screen><command>
+nova boot --flavor m1.tiny --image $(nova image-list | grep $IMAGE'\s' | awk '{print $2}') --nic net-id=$(neutron net-list | grep vxlan-net1 | awk '{print $2}') vxlan-host1 --availability_zone=nova:fedora-odl-2
+
+nova boot --flavor m1.tiny --image $(nova image-list | grep $IMAGE'\s' | awk '{print $2}') --nic net-id=$(neutron net-list | grep vxlan-net2 | awk '{print $2}') vxlan-host2 --availability_zone=nova:fedora-odl-2
+
+nova boot --flavor m1.tiny --image $(nova image-list | grep $IMAGE'\s' | awk '{print $2}') --nic net-id=$(neutron net-list | grep vxlan-net2 | awk '{print $2}') vxlan-host3 --availability_zone=nova:fedora-odl-2 </command></screen>
+    </para>
+    <para>To pull up the Horizon UI  to verify the nodes you have, point your web browser at the
+        controller IP (port 80).</para>
+    <figure>
+        <title>Horizon-OpenDaylight-e1392513990486.jpg</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata fileref="../../../../Horizon-OpenDaylight-e1392513990486.jpg"/>
+            </imageobject>
+        </mediaobject>
+    </figure>
+    <para>Now, Ping one of the hosts just created to verify it is functional:</para>
+    <para>
+        <screen><prompt> [odl@fedora-odl-1 devstack]$</prompt><command>ip netns</command>
+<computeroutput>
+qdhcp-4eaf08d3-2234-4632-b1e7-d11704b1238a
+qdhcp-af8aa29d-a302-4ecf-a0b1-e52ff9c10b63
+qrouter-bed7005f-4c51-4c3a-b23b-3830b5e7663a
+[odl@fedora-odl-1 devstack]$ nova list
++--------------------------------------+-------------+--------+------------+-------------+-----------------------+
+| ID                                   | Name        | Status | Task State | Power State | Networks              |
++--------------------------------------+-------------+--------+------------+-------------+-----------------------+
+| f34ed046-5daf-42f5-9b2c-644f5ab6b2bc | vxlan-host1 | ACTIVE | -          | Running     | vxlan-net1=10.100.1.2 |
+| 6b65d0f2-c621-4dc5-87ca-82a2c44734b2 | vxlan-host2 | ACTIVE | -          | Running     | vxlan-net2=10.100.2.2 |
+| f3d5179a-e974-4eb4-984b-399d1858ab76 | vxlan-host3 | ACTIVE | -          | Running     | vxlan-net2=10.100.2.4 |
++--------------------------------------+-------------+--------+------------+-------------+-----------------------+
+[odl@fedora-odl-1 devstack]$ sudo ip netns exec qdhcp-af8aa29d-a302-4ecf-a0b1-e52ff9c10b63 ping 10.100.1.2
+PING 10.100.1.2 (10.100.1.2) 56(84) bytes of data.
+64 bytes from 10.100.1.2: icmp_seq=1 ttl=64 time=2.63 ms
+64 bytes from 10.100.1.2: icmp_seq=2 ttl=64 time=1.15 ms
+^C
+--- 10.100.1.2 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1001ms
+rtt min/avg/max/mdev = 1.151/1.892/2.633/0.741 ms </computeroutput></screen>
+    </para>
+    <para>Now, create three new Neutron networks using the GRE encapsulation. (Note: With too many
+        VMs you can make them crash if too much memory is used).</para>
+    <para>
+        <screen><command>
+### Create the Networks and corresponding Subnets ###
+neutron net-create gre-net1 --tenant_id $(keystone tenant-list | grep '\sadmin' | awk '{print $2}') --provider:network_type gre --provider:segmentation_id 1700
+neutron subnet-create gre-net1 10.100.1.0/24 --name gre-net1
+
+neutron net-create gre-net2 --tenant_id $(keystone tenant-list | grep '\sadmin' | awk '{print $2}') --provider:network_type gre --provider:segmentation_id 1701
+neutron subnet-create gre-net2 10.100.2.0/24 --name gre-net2
+
+neutron net-create gre-net3 --tenant_id $(keystone tenant-list | grep '\sadmin' | awk '{print $2}') --provider:network_type gre --provider:segmentation_id 1703
+neutron subnet-create gre-net3 10.100.3.0/24 --name gre-net3</command></screen>
+    </para>
+    <para>
+        <screen><command>
+### Boot the VMs ###
+
+nova boot --flavor m1.tiny --image $(nova image-list | grep $IMAGE'\s' | awk '{print $2}') --nic net-id=$(neutron net-list | grep gre-net1 | awk '{print $2}') gre-host1 --availability_zone=nova:fedora-odl-2
+
+nova boot --flavor m1.tiny --image $(nova image-list | grep $IMAGE'\s' | awk '{print $2}') --nic net-id=$(neutron net-list | grep gre-net2 | awk '{print $2}') gre-host2 --availability_zone=nova:fedora-odl-2
+
+nova boot --flavor m1.tiny --image $(nova image-list | grep $IMAGE'\s' | awk '{print $2}') --nic net-id=$(neutron net-list | grep gre-net2 | awk '{print $2}') gre-host3 --availability_zone=nova:fedora-odl-2</command></screen>
+    </para>
+    <para>Here is an example of a OVS configuration. (Note: Since the tunnel ID is being set, use
+        the OpenFlow OXM metadata field to set the logical port OFPXMT_OFB_TUNNEL_ID implemented in
+        OpenFlow v1.3.)</para>
+    <para>
+        <screen><prompt>[odl@fedora-odl-1 devstack]$</prompt><command>nova list</command>
+<computeroutput>
++--------------------------------------+-------------+--------+------------+-------------+-----------------------+
+| ID                                   | Name        | Status | Task State | Power State | Networks              |
++--------------------------------------+-------------+--------+------------+-------------+-----------------------+
+| 8db56e44-36db-4447-aeb9-e6679ca420b6 | gre-host1   | ACTIVE | -          | Running     | gre-net1=10.100.1.2   |
+| 36fec86d-d9e6-462c-a686-f3c0929a2c21 | gre-host2   | ACTIVE | -          | Running     | gre-net2=10.100.2.2   |
+| 67d97a8e-ecd3-4913-886c-423170ef3635 | gre-host3   | ACTIVE | -          | Running     | gre-net2=10.100.2.4   |
+| f34ed046-5daf-42f5-9b2c-644f5ab6b2bc | vxlan-host1 | ACTIVE | -          | Running     | vxlan-net1=10.100.1.2 |
+| 6b65d0f2-c621-4dc5-87ca-82a2c44734b2 | vxlan-host2 | ACTIVE | -          | Running     | vxlan-net2=10.100.2.2 |
+| f3d5179a-e974-4eb4-984b-399d1858ab76 | vxlan-host3 | ACTIVE | -          | Running     | vxlan-net2=10.100.2.4 |
++--------------------------------------+-------------+--------+------------+-------------+-----------------------+</computeroutput></screen>
+    </para>
+    <para>Neutron mappings from the Neutron client output:</para>
+    <para>
+        <screen><prompt>[odl@fedora-odl-1 devstack]$</prompt><command>neutron net-list</command>
+<computeroutput>
++--------------------------------------+------------+-------------------------------------------------------+
+| id                                   | name       | subnets                                               |
++--------------------------------------+------------+-------------------------------------------------------+
+| 03e3f964-8bc8-48fa-b4c9-9b8390f37b93 | private    | b06d716b-527f-4da2-adda-5fc362456d34 10.0.0.0/24      |
+| 4eaf08d3-2234-4632-b1e7-d11704b1238a | vxlan-net2 | b54c30fd-e157-4935-b9c2-cefa145162a8 10.100.2.0/24    |
+| a33c5794-3830-4220-8724-95752d8f94bd | gre-net1   | d32c8a70-70c6-4bdc-b741-af718b3ba4cd 10.100.1.0/24    |
+| af8aa29d-a302-4ecf-a0b1-e52ff9c10b63 | vxlan-net1 | c44f9bee-adca-4bca-a197-165d545bcef9 10.100.1.0/24    |
+| e6f3c605-6c0b-4f7d-a64f-6e593c5e647a | vxlan-net3 | 640cf2d1-b470-41dd-a4d8-193d705ea73e 10.100.3.0/24    |
+| f6aede62-67a5-4fe6-ad61-2c1a88b08874 | public     | 1e945d93-caeb-4890-8b58-ed00297a7f03 192.168.210.0/24 |
+| fa44d171-4935-4fae-9507-0ecf2d521b49 | gre-net2   | f8151c73-cda4-47e4-bf7c-8a73a7b4ef5f 10.100.2.0/24    |
+| ffc7da40-8252-4cdf-a9a2-d538f4986215 | gre-net3   | 146931d8-9146-4abf-9957-d6a8a3db43e4 10.100.3.0/24    |
++--------------------------------------+------------+-------------------------------------------------------+</computeroutput></screen>
+    </para>
+    <para><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>Next, verify the Open
+        vSwitch configuration. Worthy of note is the tunnel IPv4 src/dest endpoints are defined
+        using OVSDB but the Tunnel ID is set using the flowmod in OpenFlow using key=flow. This
+        tells OVSDB to look for the tunnel ID in the flowmod. There is also a similar concept for
+        IPv4 tunnel source/destination using Nicira extensions with NXM_NX_TUN_IPV4_SRC and
+        NXM_NX_TUN_IPV4_DST that was implemented in OVS 2.0. The NXM code points are referenced in
+        the OF v1.3 specification but it seems pretty nascent wether the ONF is looking to handle
+        tunnel operations with OF-Config or via flowmods such as the NXM references. The NXM code
+        points are defined the ODL openflowjava project that implements the library model for OFv1.3
+        and would just need to be plumbed through the MD-SAL convertor.<?oxy_custom_end?></para>
+    <para>
+        <screen><prompt>[odl@fedora-odl-2 devstack]$</prompt><command>sudo ovs-vsctl show</command>
+<computeroutput>17074e89-2ac5-4bba-997a-1a5a3527cf56
+Manager "tcp:172.16.86.129:6640"
+is_connected: true
+Bridge br-int
+Controller "tcp:172.16.86.129:6633"
+is_connected: true
+fail_mode: secure
+Port "tap8b31df39-d4"
+Interface "tap8b31df39-d4"
+Port br-int
+Interface br-int
+Port "gre-172.16.86.129"
+Interface "gre-172.16.86.129"
+type: gre
+options: {key=flow, local_ip="172.16.86.128", remote_ip="172.16.86.129"}
+ovs_version: "2.0.0"</computeroutput></screen>
+    </para>
+    <para>And then the OF v1.3 flowmods:</para>
+    <para>
+        <screen><prompt>[odl@fedora-odl-2 devstack]$</prompt><command>sudo ovs-ofctl -O OpenFlow13 dump-flows br-int</command>
+<computeroutput>
+OFPST_FLOW reply (OF1.3) (xid=0x2):
+cookie=0x0, duration=2415.341s, table=0, n_packets=30, n_bytes=2586, send_flow_rem in_port=4,dl_src=fa:16:3e:1a:49:61 actions=set_field:0x641-&amp;gt;tun_id,goto_table:10
+cookie=0x0, duration=2425.095s, table=0, n_packets=39, n_bytes=3300, send_flow_rem in_port=2,dl_src=fa:16:3e:93:20:1e actions=set_field:0x640-&amp;gt;tun_id,goto_table:10
+cookie=0x0, duration=2415.981s, table=0, n_packets=37, n_bytes=2880, send_flow_rem in_port=5,dl_src=fa:16:3e:02:28:8d actions=set_field:0x641-&amp;gt;tun_id,goto_table:10
+cookie=0x0, duration=877.732s, table=0, n_packets=27, n_bytes=2348, send_flow_rem in_port=6,dl_src=fa:16:3e:20:cd:8e actions=set_field:0x6a4-&amp;gt;tun_id,goto_table:10
+cookie=0x0, duration=878.981s, table=0, n_packets=31, n_bytes=2908, send_flow_rem in_port=7,dl_src=fa:16:3e:86:08:5f actions=set_field:0x6a5-&amp;gt;tun_id,goto_table:10
+cookie=0x0, duration=882.297s, table=0, n_packets=32, n_bytes=2670, send_flow_rem in_port=8,dl_src=fa:16:3e:68:40:4a actions=set_field:0x6a5-&amp;gt;tun_id,goto_table:10
+cookie=0x0, duration=884.983s, table=0, n_packets=16, n_bytes=1888, send_flow_rem tun_id=0x6a4,in_port=3 actions=goto_table:20
+cookie=0x0, duration=2429.719s, table=0, n_packets=33, n_bytes=3262, send_flow_rem tun_id=0x640,in_port=1 actions=goto_table:20
+cookie=0x0, duration=881.723s, table=0, n_packets=29, n_bytes=3551, send_flow_rem tun_id=0x6a5,in_port=3 actions=goto_table:20
+cookie=0x0, duration=2418.434s, table=0, n_packets=33, n_bytes=3866, send_flow_rem tun_id=0x641,in_port=1 actions=goto_table:20
+cookie=0x0, duration=2426.048s, table=0, n_packets=0, n_bytes=0, send_flow_rem tun_id=0x2,in_port=3 actions=goto_table:20
+cookie=0x0, duration=2428.34s, table=0, n_packets=0, n_bytes=0, send_flow_rem tun_id=0x1,in_port=3 actions=goto_table:20
+cookie=0x0, duration=878.961s, table=0, n_packets=0, n_bytes=0, send_flow_rem priority=8192,in_port=7 actions=drop
+cookie=0x0, duration=882.211s, table=0, n_packets=0, n_bytes=0, send_flow_rem priority=8192,in_port=8 actions=drop
+cookie=0x0, duration=877.562s, table=0, n_packets=0, n_bytes=0, send_flow_rem priority=8192,in_port=6 actions=drop
+cookie=0x0, duration=2415.941s, table=0, n_packets=0, n_bytes=0, send_flow_rem priority=8192,in_port=5 actions=drop
+cookie=0x0, duration=2415.249s, table=0, n_packets=0, n_bytes=0, send_flow_rem priority=8192,in_port=4 actions=drop
+cookie=0x0, duration=2425.04s, table=0, n_packets=0, n_bytes=0, send_flow_rem priority=8192,in_port=2 actions=drop
+cookie=0x0, duration=2711.147s, table=0, n_packets=970, n_bytes=88270, send_flow_rem dl_type=0x88cc actions=CONTROLLER:56
+cookie=0x0, duration=873.508s, table=0, n_packets=0, n_bytes=0, send_flow_rem priority=1,in_port=3,dl_dst=00:00:00:00:00:00 actions=output:1
+cookie=0x0, duration=873.508s, table=0, n_packets=0, n_bytes=0, send_flow_rem priority=1,in_port=1,dl_dst=00:00:00:00:00:00 actions=output:1
+cookie=0x0, duration=877.224s, table=10, n_packets=0, n_bytes=0, send_flow_rem priority=8192,tun_id=0x6a4 actions=goto_table:20
+cookie=0x0, duration=2415.783s, table=10, n_packets=7, n_bytes=294, send_flow_rem priority=8192,tun_id=0x641 actions=goto_table:20
+cookie=0x0, duration=881.907s, table=10, n_packets=3, n_bytes=169, send_flow_rem priority=8192,tun_id=0x6a5 actions=goto_table:20
+cookie=0x0, duration=2424.811s, table=10, n_packets=0, n_bytes=0, send_flow_rem priority=8192,tun_id=0x640 actions=goto_table:20
+cookie=0x0, duration=881.623s, table=10, n_packets=37, n_bytes=3410, send_flow_rem priority=16384,tun_id=0x6a5,dl_dst=01:00:00:00:00:00/01:00:00:00:00:00 actions=output:3,goto_table:20
+cookie=0x0, duration=2429.661s, table=10, n_packets=18, n_bytes=1544, send_flow_rem priority=16384,tun_id=0x640,dl_dst=01:00:00:00:00:00/01:00:00:00:00:00 actions=output:1,goto_table:20
+cookie=0x0, duration=2418.33s, table=10, n_packets=36, n_bytes=3088, send_flow_rem priority=16384,tun_id=0x641,dl_dst=01:00:00:00:00:00/01:00:00:00:00:00 actions=output:1,goto_table:20
+cookie=0x0, duration=2428.227s, table=10, n_packets=0, n_bytes=0, send_flow_rem priority=16384,tun_id=0x1,dl_dst=01:00:00:00:00:00/01:00:00:00:00:00 actions=output:3,goto_table:20
+cookie=0x0, duration=884.854s, table=10, n_packets=15, n_bytes=1306, send_flow_rem priority=16384,tun_id=0x6a4,dl_dst=01:00:00:00:00:00/01:00:00:00:00:00 actions=output:3,goto_table:20
+cookie=0x0, duration=2425.966s, table=10, n_packets=0, n_bytes=0, send_flow_rem priority=16384,tun_id=0x2,dl_dst=01:00:00:00:00:00/01:00:00:00:00:00 actions=output:3,goto_table:20
+cookie=0x0, duration=885.097s, table=10, n_packets=12, n_bytes=1042, send_flow_rem tun_id=0x6a4,dl_dst=fa:16:3e:5d:3d:cd actions=output:3,goto_table:20
+cookie=0x0, duration=2426.083s, table=10, n_packets=0, n_bytes=0, send_flow_rem tun_id=0x2,dl_dst=fa:16:3e:fa:77:36 actions=output:3,goto_table:20
+cookie=0x0, duration=2429.782s, table=10, n_packets=21, n_bytes=1756, send_flow_rem tun_id=0x640,dl_dst=fa:16:3e:f8:d0:96 actions=output:1,goto_table:20
+cookie=0x0, duration=873.509s, table=10, n_packets=23, n_bytes=1999, send_flow_rem tun_id=0x6a5,dl_dst=fa:16:3e:21:eb:65 actions=output:3,goto_table:20
+cookie=0x0, duration=2418.518s, table=10, n_packets=24, n_bytes=2084, send_flow_rem tun_id=0x641,dl_dst=fa:16:3e:9b:c1:c7 actions=output:1,goto_table:20
+cookie=0x0, duration=2428.443s, table=10, n_packets=0, n_bytes=0, send_flow_rem tun_id=0x1,dl_dst=fa:16:3e:ea:1d:9d actions=output:3,goto_table:20
+cookie=0x0, duration=877.119s, table=20, n_packets=12, n_bytes=1042, send_flow_rem priority=8192,tun_id=0x6a4 actions=drop
+cookie=0x0, duration=2415.73s, table=20, n_packets=31, n_bytes=2378, send_flow_rem priority=8192,tun_id=0x641 actions=drop
+cookie=0x0, duration=881.815s, table=20, n_packets=26, n_bytes=2168, send_flow_rem priority=8192,tun_id=0x6a5 actions=drop
+cookie=0x0, duration=2424.74s, table=20, n_packets=21, n_bytes=1756, send_flow_rem priority=8192,tun_id=0x640 actions=drop
+cookie=0x0, duration=882.005s, table=20, n_packets=37, n_bytes=3410, priority=16384,tun_id=0x6a5,dl_dst=01:00:00:00:00:00/01:00:00:00:00:00 actions=output:8,output:7
+cookie=0x0, duration=2424.884s, table=20, n_packets=22, n_bytes=1864, send_flow_rem priority=16384,tun_id=0x640,dl_dst=01:00:00:00:00:00/01:00:00:00:00:00 actions=output:2
+cookie=0x0, duration=2415.83s, table=20, n_packets=38, n_bytes=3228, send_flow_rem priority=16384,tun_id=0x641,dl_dst=01:00:00:00:00:00/01:00:00:00:00:00 actions=output:5,output:4
+cookie=0x0, duration=877.333s, table=20, n_packets=15, n_bytes=1306, send_flow_rem priority=16384,tun_id=0x6a4,dl_dst=01:00:00:00:00:00/01:00:00:00:00:00 actions=output:6
+cookie=0x0, duration=878.799s, table=20, n_packets=15, n_bytes=1818, send_flow_rem tun_id=0x6a5,dl_dst=fa:16:3e:86:08:5f actions=output:7
+cookie=0x0, duration=2415.884s, table=20, n_packets=15, n_bytes=1818, send_flow_rem tun_id=0x641,dl_dst=fa:16:3e:02:28:8d actions=output:5
+cookie=0x0, duration=877.468s, table=20, n_packets=15, n_bytes=1818, send_flow_rem tun_id=0x6a4,dl_dst=fa:16:3e:20:cd:8e actions=output:6
+cookie=0x0, duration=882.102s, table=20, n_packets=14, n_bytes=1733, send_flow_rem tun_id=0x6a5,dl_dst=fa:16:3e:68:40:4a actions=output:8
+cookie=0x0, duration=2415.171s, table=20, n_packets=15, n_bytes=1818, send_flow_rem tun_id=0x641,dl_dst=fa:16:3e:1a:49:61 actions=output:4
+cookie=0x0, duration=2424.998s, table=20, n_packets=24, n_bytes=2532, send_flow_rem tun_id=0x640,dl_dst=fa:16:3e:93:20:1e actions=output:2</computeroutput></screen>
+    </para>
+    <para><?oxy_custom_start type="oxy_content_highlight" color="255,255,0"?>For more on TEPs please
+        see a nice document authored by Ben Pfaff who needs no introduction, that can be found <link
+            xlink:href="http://benpfaff.org/~blp/ovs-fields.pdf">here</link>.</para>
+    <para>Next take a look at the flowmods. The pipelines have been broken down into three tables, a
+        classifier, egress and ingress. Over the next 6 months we will be adding services into
+        pipeline for a much more complete implementation. We are looking for user contributions in
+        the roadmap and even better, pushing code upstream as the project continues to grow.</para>
+    <para>Lastly if you want to force availability zones from say the “demo” UID. You can add the
+        admin role to different UIDs using the following Keystone client calls.</para>
+    <?oxy_custom_end?>
+    <para>
+        <screen><command>
+$ keystone user-role-add --user $(keystone user-list | grep '\sdemo' | awk '{print $2}') \
+--role $(keystone role-list | grep 'admin' | awk '{print $2}') \
+--tenant_id $(keystone tenant-list | grep '\sdemo' | awk '{print $2}')
+$ . ./openrc demo demo </command></screen>
+    </para>
+</section>
