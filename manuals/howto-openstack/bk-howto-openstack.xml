@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book>
+<book version="5.0" xml:id="os-user-guide" xmlns="http://docbook.org/ns/docbook"
+  xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:svg="http://www.w3.org/2000/svg" xmlns:raxm="http://docs.rackspace.com/api/metadata"
+  xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml"
+  xmlns:db="http://docbook.org/ns/docbook">
+  <title>OpenDaylight User Guide</title>
+  <titleabbrev>End User Guide</titleabbrev>
+  <info>
+    <author>
+      <personname><firstname/>
+        <surname/></personname>
+      <affiliation>
+        <orgname>Linux Foundation</orgname>
+      </affiliation>
+    </author>
+    <copyright>
+      <year>2014</year>
+      <holder>Linux Foundation</holder>
+    </copyright>
+    <releaseinfo>hydrogen</releaseinfo>
+    <productname>OpenDaylight</productname>
+    <pubdate/>
+    <legalnotice role="cc-by">
+      <annotation>
+        <remark>Copyright details are filled in by the template.</remark>
+      </annotation>
+    </legalnotice>
+    <abstract>
+      <para>OpenDaylight is an open platform for network programmability to enable SDN and create a
+        solid foundation for NFV for networks at any size and scale. OpenDaylight software is a
+        combination of components including a fully pluggable controller, interfaces, protocol
+        plug-ins and applications. </para>
+    </abstract>
+    <revhistory>
+      <revision>
+        <date>2014-02-24</date>
+        <revdescription>
+          <itemizedlist>
+            <listitem>
+              <para>First edition of this document.</para>
+            </listitem>
+          </itemizedlist>
+        </revdescription>
+      </revision>
+    </revhistory>
+  </info>
+  <xi:include href="ch_install.xml">
+  </xi:include>
+  <xi:include href="section_ovsdb_project.xml">
+  </xi:include>
+      <xi:include href="section_configure_fedora_images.xml">
+      </xi:include>
+  <xi:include href="section_start_odl_controller.xml">
+  </xi:include>
+  <xi:include href="section_configure_devstack.xml">
+  </xi:include>
+  <xi:include href="section_configuring_openstack.xml">
+  </xi:include>
+  <xi:include href="section_verifying_openstack.xml">
+  </xi:include>
+  <xi:include href="section_create_multi_network.xml">
+  </xi:include>
+  <xi:include href="section_unstack_and_cleanup.xml">
+  </xi:include>
+  <xi:include href="../common/app_support.xml"> 
+  </xi:include>
+</book>

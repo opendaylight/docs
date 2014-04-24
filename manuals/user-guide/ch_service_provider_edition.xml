@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section [
+ <!-- Some useful entities borrowed from HTML -->
+<!ENTITY ndash  "&#x2013;">
+<!ENTITY mdash  "&#x2014;">
+<!ENTITY hellip "&#x2026;">
+]>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="ovsdb_project">
+    <title>Hydrogen Virtualization User Guide</title>
+    <para><emphasis role="bold"><emphasis role="underline">Overview and
+            Architecture</emphasis></emphasis></para>
+    <para>The Service Provider edition of OpenDaylight is designed for network operator use. It does
+        not include OVSDB, VTN or DOVE, but does include SNMP, BGP-LS, PCEP, and LISP southbound and
+        the Affinity Service and the LISP Service northbound. The following diagram shows
+        OpenDaylight Service Provider edition architecture in details:</para>
+    <para><inlinemediaobject>
+            <imageobject>
+                <imagedata fileref="../../../../800px-Serv-arch.png"/>
+            </imageobject>
+        </inlinemediaobject></para>
+    <para><emphasis role="bold"><emphasis role="underline">Installation
+        Guide</emphasis></emphasis></para>
+    <para>The installation instructions for Service Provider Edition can be found here.</para>
+    <para>The installation instructions for the Virtualization edition can be found here</para>
+    <para><emphasis role="bold"><emphasis role="underline"
+        >Configuration</emphasis></emphasis></para>
+    <para>To configure OpenDaylight Service Provider edition using the OpenFlow 1.3 plugin, start
+        Opendaylight Controller with the -of13 option. If you do not use the option, the controller
+        will use the OpenFlow 1.0 version.</para>
+    <para>
+        <itemizedlist>
+            <listitem>
+                <para>To start mininet for the OpenFlow 1.3 simulation, use the following command:
+                        <emphasis role="italic">mininet&gt; sudo mn --controller=remote,ip=a.b.c.d
+                        --topo tree,2 --switch ovsk,protocols=OpenFlow13</emphasis></para>
+            </listitem>
+            <listitem>
+                <para>To start mininet for the OpenFlow 1.0 simulation, use the following command:
+                        <emphasis role="italic">mininet&gt; sudo mn
+                        --controller=remote,ip=10.125.136.52 --topo tree,2</emphasis></para>
+            </listitem>
+        </itemizedlist>
+    </para>
+    <para><emphasis role="bold"><emphasis role="underline">Web / Graphical
+            Interface</emphasis></emphasis></para>
+    <para>The graphical user interface is the same as the one for Base edition.</para>
+    <para><emphasis role="underline"><emphasis role="bold">Release Notes
+            (link)</emphasis></emphasis></para>
+    <para>The release notes for the Service Provider Edition can be found here.</para>
+    <para><emphasis role="bold"><emphasis role="underline">SNMP4SDN</emphasis></emphasis></para>
+    <para><emphasis role="bold">Overview and Architecture</emphasis></para>
+    <para>Current SDN technology is usually assumed to be based on network infrastructures using
+        OpenFlow switches. Actually, SDN is not limited to OpenFlow, for example OpenDaylight SAL
+        can support multiple southbound protocols. To fulfill the scope of underlying switches
+        supported in OpenDaylight, Ethernet switches should also be considered.</para>
+    <para>Commodity Ethernet switches have the advantage of low price and is programmable to some
+        extent (i.e. using CLI and SNMP to modify the ACL, MAC table, forwarding table, etc). In an
+        SDN built on commodity Ethernet switches, the upper layer applications could be responsible
+        for making all the forwarding decisions for each switch, and the switches execute data plane
+        forwarding as assigned. Therefore, we believe that commodity Ethernet switch has its
+        advantage and warrants a position in SDN technology development.</para>
+    <para>Off-the-shelf commodity Ethernet switches are commonly allowed to be configured by SNMP,
+        and the Ethernet switch can actively report its status to the administrative computer (i.e.
+        OpenDaylight controller) using SNMP trap. Therefore, we propose an SNMP southbound plugin to
+        control underlying devices supporting SNMP using off-the-shelf commodity Ethernet switch. In
+        addition to SNMP support, this plugin will provide capabilities to manage configurations
+        that can only be accessed via CLI, e.g. ACL, disabling flooding, etc., since such
+        configurations are necessary for using Ethernet switches for SDN. Therefore, there will be
+        three phases in this project, as follows. (1) Creating an SNMP SouthBound Plugin: to
+        configure Ethernet switches via SNMP. (2) The plugin configures Ethernet switches via CLI,
+        for settings that SNMP cannot access. (3) SAL extension: for (1) and (2) we will contribute
+        extensions to the SAL configuration APIs to provide additional API to support SNMP and CLI
+        usage as specified above.</para>
+    <para>The below diagram shows the described components: </para>
+    <para><inlinemediaobject>
+            <imageobject>
+                <imagedata fileref="../../../../717px-SNMP4SDN_Architecture.jpg"/>
+            </imageobject>
+        </inlinemediaobject></para>
+    <para>An overview of the project can be found here.</para>
+    <para><emphasis role="bold">Installation Guide</emphasis></para>
+    <para>Guide to installation and testing can be found here.</para>
+    <para><emphasis role="bold">Tutorial / How-To</emphasis></para>
+    <para>
+        <itemizedlist>
+            <listitem>
+                <para>User Guide</para>
+            </listitem>
+            <listitem>
+                <para>Developer Guide</para>
+            </listitem>
+        </itemizedlist>
+    </para>
+    <para><emphasis role="bold">Programmatic Interfaces</emphasis></para>
+    <para>Proposed SAL API for the SNMP SouthBound Plugin can be found here.</para>
+    <para><emphasis role="bold">Help</emphasis></para>
+    <para>Sign up for snmp4sdn-dev mailing list.</para>
+    <para><emphasis role="bold"><emphasis role="underline">BGP-LS PCEP</emphasis></emphasis></para>
+    <para>You can find basic howto and guide here.</para>
+               <para>Lisp Flow Mapping</para>
+    <para><emphasis role="bold">Overview and Architecture</emphasis></para>
+    <para>Locator ID Separation Protocol (LISP) is a technology that provides a flexible
+        map-and-encap framework that can be used for overlay network applications, such as data
+        center network virtualization, and Network Function Virtualization (NFV). LISP introduces
+        two name spaces: Endpoint Identifiers (EIDs), and Routing Locators (RLOCs). In a
+        virtualization environment, EIDs can be viewed as virtual address space and RLOCs can be
+        viewed as physical network address space.</para>
+    <para>The LISP framework decouples network control plane from the forwarding plane by providing:
+        (1) a data plane that specifies how the virtualized network addresses are encapsulated in
+        addresses from the underlying physical network, and (2) a control plane that stores the
+        mapping of the virtual-to-physical address spaces and the associated forwarding policies,
+        and serves this information to the data plane on demand. Network programmability is achieved
+        by programming forwarding policies such as transparent mobility, service chaining, and
+        traffic engineering in the mapping system, where the data plane elements can fetch these
+        policies on demand as new flows arrive. In this presentation we explain how the LISP Flow
+        Mapping project in ODL can be used to enable advanced SDN and NFV use cases.</para>
+    <para>The Lisp Flow Mapping service provides LISP Mapping System services. This includes LISP
+        Map-Server and LISP Map-Resolver services, to store and serve the mapping data to data plane
+        nodes as well as to OpenDaylight applications. Mapping data can include mapping of virtual
+        addresses to physical network address where the virtual nodes are reachable/hosted at.
+        Mapping data can also include a variety of routing policies including traffic engineering
+        and load balancing. To leverage this service, a northbound API allows OpenDaylight
+        applications and services to define the mappings and policies in the LISP Mapping Service.
+        This project also includes a southbound LISP plugin that enables LISP dataplane devices to
+        interact with the OpenDaylight via the LISP protocol.</para>
+    <para>The below diagram shows the described components:</para>
+    <para><inlinemediaobject>
+            <imageobject>
+                <imagedata fileref="../../../../LISP-ODL-02.jpg"/>
+            </imageobject>
+        </inlinemediaobject></para>
+    <para>An overview of the project can be found here.</para>
+    <para>Please see the LISP Flow Mapping User Guide for more details on how to install and use
+        this project.</para>
+    <para><emphasis role="bold">Tutorial / How-To</emphasis></para>
+    <para>Please see the Tutorial section of the LISP Flow Mapping User Guide for more details on
+        how to use this project.</para>
+    <para><emphasis role="bold">Programmatic Interfaces</emphasis></para>
+    <para>Lisp Flow Mapping API can be found here.</para>
+    <para><emphasis role="bold">Help</emphasis></para>
+    <para>Sign up for lispflowmapping-dev mailing list.</para>
+</section>

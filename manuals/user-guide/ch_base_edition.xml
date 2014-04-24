@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section [
+ <!-- Some useful entities borrowed from HTML -->
+<!ENTITY ndash  "&#x2013;">
+<!ENTITY mdash  "&#x2014;">
+<!ENTITY hellip "&#x2026;">
+]>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="ovsdb_project">
+    <title>Hydrogen Base User Guide</title>
+    <para>The Base edition of OpenDaylight is designed for testing and experimental purposes. Please
+        see the following sections for more information:</para>
+    <para>
+        <itemizedlist>
+            <listitem>
+                <para>Installation and Configuration</para>
+            </listitem>
+            <listitem>
+                <para>OpenFlow</para>
+            </listitem>
+            <listitem>
+                <para>NetConf</para>
+                <para>The table below shows the components that are included in the controller
+                    platform:</para>
+                <para/>
+                <table frame="all">
+                    <title/>
+                    <tgroup cols="2">
+                        <colspec colname="Components" colnum="1" colwidth=".2*"/>
+                        <colspec colname="Description" colnum="2" colwidth=".75*"/>
+                        <thead>
+                            <row>
+                                <entry>Components</entry>
+                                <entry>Descriptions</entry>
+                            </row>
+                        </thead>
+                        <tbody>
+                            <row>
+                                <entry>Clustering Manager</entry>
+                                <entry>Manages shared cache across controller instances</entry>
+                            </row>
+                            <row>
+                                <entry>Container Manager</entry>
+                                <entry>Manages Network Slicing</entry>
+                            </row>
+                            <row>
+                                <entry>Switch Manager</entry>
+                                <entry>Handles SB devices Information</entry>
+                            </row>
+                            <row>
+                                <entry>Statistics Manager</entry>
+                                <entry>Collects Statistics information</entry>
+                            </row>
+                            <row>
+                                <entry>Topology Manager</entry>
+                                <entry>Builds network topology</entry>
+                            </row>
+                            <row>
+                                <entry>Host Tracker</entry>
+                                <entry>Tracks about connected hosts</entry>
+                            </row>
+                            <row>
+                                <entry>Forwarding Rules Manager</entry>
+                                <entry>Installs Flows on SB devices</entry>
+                            </row>
+                            <row>
+                                <entry>ARP Handler</entry>
+                                <entry>Handles ARP messages</entry>
+                            </row>
+                            <row>
+                                <entry>Forwarding Manager</entry>
+                                <entry>Installs Routes and tracks next-hop</entry>
+                            </row>
+                            <row>
+                                <entry>OpenFlow Plugin</entry>
+                                <entry>Interacts with OF switches</entry>
+                            </row>
+                            <row>
+                                <entry>Netconf Plugin</entry>
+                                <entry>Interacts with Netconf switches</entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </table>
+            </listitem>
+        </itemizedlist>
+    </para>
+    <para>This edition includes only OpenFlow, OVSDB and NetConf southbound with only the Base
+        Network Service functions. The following diagram shows OpenDaylight Base edition
+        architecture in details: </para>
+    <para><inlinemediaobject>
+            <imageobject>
+                <imagedata fileref="../../../../800px-Opendaylight_Base_Edition.png"/>
+            </imageobject>
+        </inlinemediaobject></para>
+  </section>

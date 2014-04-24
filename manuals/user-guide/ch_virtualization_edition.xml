@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section [
+ <!-- Some useful entities borrowed from HTML -->
+<!ENTITY ndash  "&#x2013;">
+<!ENTITY mdash  "&#x2014;">
+<!ENTITY hellip "&#x2026;">
+]>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="ovsdb_project">
+    <title>Hydrogen Virtualization User Guide</title>
+    <para><emphasis role="bold"><emphasis role="underline">Overview and
+            Architecture</emphasis></emphasis></para>
+    <para><inlinemediaobject>
+            <imageobject>
+                <imagedata fileref="../../../../800px-Virt_edition.png"/>
+            </imageobject>
+        </inlinemediaobject></para>
+    <para><emphasis role="bold"><emphasis role="underline">Installation</emphasis></emphasis></para>
+    <para>The installation instructions for the Virtualization edition can be found here</para>
+    <para><emphasis role="bold"><emphasis role="underline"
+        >Configuration</emphasis></emphasis></para>
+    <para>To configure OpenDaylight Virtualization edition using the OpenFlow 1.3 plugin, start
+        Opendaylight Controller with the -of13 option. If you do not use the option, the controller
+        will use the OpenFlow 1.0 version.</para>
+    <para>
+        <itemizedlist>
+            <listitem>
+                <para>To start mininet for the OpenFlow 1.3 simulation, use the following command:
+                        <emphasis role="italic">mininet&gt; sudo mn --controller=remote,ip=a.b.c.d
+                        --topo tree,2 --switch ovsk,protocols=OpenFlow13</emphasis></para>
+            </listitem>
+            <listitem>
+                <para>To start mininet for the OpenFlow 1.0 simulation, use the following command:
+                        <emphasis role="italic">mininet&gt; sudo mn
+                        --controller=remote,ip=10.125.136.52 --topo tree,2</emphasis></para>
+            </listitem>
+        </itemizedlist>
+    </para>
+    <para><emphasis role="bold"><emphasis role="underline">Web / Graphical
+            Interface</emphasis></emphasis></para>
+    <para>The graphical user interface is the same as the one for Base edition.</para>
+    <para><emphasis role="underline"><emphasis role="bold">Release
+        Notes</emphasis></emphasis></para>
+    <para>The release note for the Virtualization Edition can be found here.</para>
+    <para><emphasis role="bold"><emphasis role="underline">OVSDB</emphasis></emphasis></para>
+    <para>
+        <itemizedlist>
+            <listitem>
+                <para>OVSDB Integration is a bundle for OpenDaylight that will implement the Open
+                    vSwitch Database management protocol, allowing southbound configuration of
+                    vSwitches. It is a critical protocol for Network Virtualization with Open
+                    vSwitch forwarding elements.</para>
+            </listitem>
+            <listitem>
+                <para>OVSDB neutron bundle in Virtualization edition supports Network Virtualization
+                    using VXLAN &amp; GRE tunnel for Openstack and Cloudstack deployments</para>
+            </listitem>
+        </itemizedlist>
+    </para>
+    <para>The below diagram shows the OVSDB architecture for Neutron: </para>
+    <para><inlinemediaobject>
+            <imageobject>
+                <imagedata fileref="../../../../800px-OVSDB-Neutron.png"/>
+            </imageobject>
+        </inlinemediaobject></para>
+    <para>
+        <itemizedlist>
+            <listitem>
+                <para>Feature list and other Project documentation can be found here</para>
+            </listitem>
+            <listitem>
+                <para>The Design of the project can be found here</para>
+            </listitem>
+        </itemizedlist>
+    </para>
+    <para><emphasis role="bold"><emphasis role="underline">Tutorial /
+        How-To</emphasis></emphasis></para>
+    <para>Introduction and tutorial for the project can be found here.</para>
+    <para><emphasis role="bold"><emphasis role="underline">Help</emphasis></emphasis></para>
+    <para>
+        <itemizedlist>
+            <listitem>
+                <para>Sign up for ovsdb-dev mailing list.</para>
+            </listitem>
+            <listitem>
+                <para>Join us in #opendaylight-ovsdb channel in freenode.net</para>
+            </listitem>
+            <listitem>
+                <para>Visit us @ https://plus.google.com/u/0/+opendaylightovsdb/</para>
+            </listitem>
+        </itemizedlist>
+    </para>
+    <para><emphasis role="bold"><emphasis role="underline">Virtual Tenant Network
+            (VTN)</emphasis></emphasis></para>
+    <para>OpenDaylight Virtual Tenant Network (VTN) is an application that provides multi-tenant
+        virtual network on an SDN controller.</para>
+    <para>The below diagram shows the VTN architecture: </para>
+    <para><inlinemediaobject>
+            <imageobject>
+                <imagedata fileref="../../../../VTN_APPLICATION_ARCHITECTURE.png"/>
+            </imageobject>
+        </inlinemediaobject></para>
+    <para>The User Guide of VTN can be found here:</para>
+    <para>
+        <itemizedlist>
+            <listitem>
+                <para>VTN User Guide</para>
+            </listitem>
+        </itemizedlist>
+    </para>
+    <para><emphasis role="bold"><emphasis role="underline">Affinity</emphasis></emphasis></para>
+    <para><emphasis role="bold">Overview and Architecture</emphasis></para>
+    <para>
+        <itemizedlist>
+            <listitem>
+                <para>The Affinity service provides an API to allow controller and higher-level
+                    applications to create and share an abstract, topology and implementation
+                    independent description of the infrastructure needs, preferences and behaviors
+                    of workloads that use the network to "talk" to one another.</para>
+            </listitem>
+            <listitem>
+                <para>The detailed description of the project can be found here.</para>
+            </listitem>
+        </itemizedlist>
+    </para>
+    <para><emphasis role="bold">Programmatic Interfaces</emphasis></para>
+    <para>Affinity API and implementation in OpenDaylight can be found here. Additional information
+        can be found in the Affinity Developer Guide. </para>
+    <para><emphasis role="bold">Help</emphasis></para>
+    <para>Sign up for affinity-dev mailing list.</para>
+    <para><emphasis role="bold"><emphasis role="underline">OpenDOVE</emphasis></emphasis></para>
+    <para><emphasis role="bold">Overview and Architecture</emphasis></para>
+    <para>
+        <itemizedlist>
+            <listitem>
+                <para>DOVE (distributed overlay virtual Ethernet) is a network virtualization
+                    platform that provides isolated multi-tenant networks on any IP network in a
+                    virtualized data center. DOVE provides each tenant with a virtual network
+                    abstraction providing layer-2 or layer-3 connectivity and the ability to control
+                    communication using access control policies. Address dissemination and policy
+                    enforcement in DOVE is provided by a clustered directory service. It also
+                    includes a gateway function to enable virtual machines on a virtual network to
+                    communicate with hosts outside the virtual network domain.</para>
+            </listitem>
+            <listitem>
+                <para>Users interact with Open DOVE to create and manage virtual networks through
+                    the Open DOVE Management Console (DMC) which provides a REST API for
+                    programmatic virtual network management and a basic graphical UI. The DMC is
+                    also used to configure the Open DOVE Gateway to configure connectivity to
+                    external, non-virtualized networks.</para>
+            </listitem>
+            <listitem>
+                <para>The Open DOVE Connectivity Server (DCS) supplies address and policy
+                    information to individual Open DOVE vswitches which implement virtual networks
+                    by encapsulating tenant traffic in overlays that span virtualized hosts in the
+                    data center. The DCS also includes support for high-availability and scale-out
+                    deployments through a lightweight clustering protocol between replicated DCS
+                    instances. The Open DOVE vswitches serve as policy enforcement points for
+                    traffic entering virtual networks. Open DOVE uses the VxLAN encapsulation format
+                    but implements a scalable control plane that does not require the use of IP
+                    multicast in the data center.</para>
+            </listitem>
+            <listitem>
+                <para>The DOVE technology was originally developed by IBM Research and has also been
+                    included in commercial products.</para>
+            </listitem>
+            <listitem>
+                <para>The below diagram shows an overall DOVE architecture:</para>
+            </listitem>
+        </itemizedlist>
+    </para>
+    <para><inlinemediaobject>
+            <imageobject>
+                <imagedata fileref="../../../../800px-Opendove-arch.png"/>
+            </imageobject>
+        </inlinemediaobject></para>
+    <para>
+        <itemizedlist>
+            <listitem>
+                <para>The Hydrogen release review of the project can be found here.</para>
+            </listitem>
+        </itemizedlist>
+    </para>
+    <para><emphasis role="bold">Installation Guide</emphasis></para>
+    <para>The installation instructions for the project can be found here.</para>
+    <para><emphasis role="bold">Tutorial / How-To</emphasis></para>
+    <para>Step by step tutorial for this project, including how to do zero day tasks, configuring a
+        basic overlay, and externalizing the basic overlay, can be found here.</para>
+    <para><emphasis role="bold">Programmatic Interface(s) (link)</emphasis></para>
+    <para>
+        <itemizedlist>
+            <listitem>
+                <para>OpenDOVE Northbound and Southbound APIs can be found here.</para>
+            </listitem>
+            <listitem>
+                <para>OpenDOVE developer guide can be found here.</para>
+            </listitem>
+        </itemizedlist>
+    </para>
+    <para><emphasis role="bold">Help</emphasis></para>
+    <para>Sign up for opendove-dev mailing list.</para>
+    <para><emphasis role="bold"><emphasis role="underline">Defense4All</emphasis></emphasis></para>
+    <para><emphasis role="bold">Overview and Architecture</emphasis></para>
+    <para>
+        <itemizedlist>
+            <listitem>
+                <para>Defense4All is an SDN application for detecting and mitigating DDoS
+                    attacks.</para>
+            </listitem>
+            <listitem>
+                <para>The below diagram shows Defense4All overall architecture:</para>
+            </listitem>
+        </itemizedlist>
+    </para>
+    <para><inlinemediaobject>
+            <imageobject>
+                <imagedata fileref="../../../../800px-D4A_in_odl.jpg"/>
+            </imageobject>
+        </inlinemediaobject></para>
+    <para>
+        <itemizedlist>
+            <listitem>
+                <para>An overview of the project can be found here.</para>
+            </listitem>
+        </itemizedlist>
+    </para>
+    <para><emphasis role="bold">Installation Guide (link)</emphasis></para>
+    <para>The installation instructions for the project can be found here.</para>
+    <para><emphasis role="bold">Installation Troubleshooting (link)</emphasis></para>
+    <para>The installation troubleshooting of the project can be found here.</para>
+    <para><emphasis role="bold">Configuration</emphasis></para>
+    <para>The information for configuration of the project can be found here.</para>
+    <para><emphasis role="bold">Tutorial / How-To</emphasis></para>
+    <para>Introduction and tutorial for the project can be found here.</para>
+    <para><emphasis role="bold">Programmatic Interface(s) (link)</emphasis></para>
+    <para>Defense4All API can be found here.</para>
+    <para><emphasis role="bold">Help</emphasis></para>
+    <para>Sign up for defense4all-dev mailing list.</para>
+  </section>

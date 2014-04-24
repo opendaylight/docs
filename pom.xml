@@ -1,0 +1,101 @@
+<project  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.opendaylight.documentation</groupId>
+  <artifactId>root</artifactId>
+  <version>0.1.0-SNAPSHOT</version>
+  <name>OpenDaylight Docs</name>
+  <packaging>pom</packaging>
+  <url>https://wiki.opendaylight.org/view/CrossProject:Documentation_Group</url>
+  <scm>
+    <connection>scm:git:ssh://git.opendaylight.org:29418/documentation.git</connection>
+    <developerConnection>scm:git:ssh://git.opendaylight.org:29418/documentation.git</developerConnection>
+    <url>https://wiki.opendaylight.org/view/CrossProject:Integration_Group</url>
+    <tag>HEAD</tag>
+  </scm>
+  <properties>
+    <nexusproxy>http://nexus.opendaylight.org/content</nexusproxy>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  <modules>
+    <module>manuals</module>
+  </modules>
+
+  <repositories>
+
+    <!-- OpenDayLight Repo Mirror -->
+    <repository>
+      <id>opendaylight-mirror</id>
+      <name>opendaylight-mirror</name>
+      <url>${nexusproxy}/groups/public/</url>
+      <snapshots>
+          <enabled>false</enabled>
+      </snapshots>
+      <releases>
+          <enabled>true</enabled>
+          <updatePolicy>never</updatePolicy>
+      </releases>
+    </repository>
+    <!-- OpenDayLight Snapshot artifact -->
+    <repository>
+      <id>opendaylight-snapshot</id>
+      <name>opendaylight-snapshot</name>
+      <url>${nexusproxy}/repositories/opendaylight.snapshot/</url>
+      <snapshots>
+          <enabled>true</enabled>
+      </snapshots>
+      <releases>
+          <enabled>false</enabled>
+      </releases>
+    </repository>
+  </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>central2</id>
+      <name>central2</name>
+      <url>${nexusproxy}/repositories/central2/</url>
+    </pluginRepository>
+    <pluginRepository>
+      <id>opendaylight-snapshot</id>
+      <name>central2</name>
+      <url>${nexusproxy}/repositories/opendaylight.snapshot/</url>
+    </pluginRepository>
+    <pluginRepository>
+        <id>oss-sonatype</id>
+        <name>oss-sonatype</name>
+        <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+        <snapshots>
+            <enabled>true</enabled>
+        </snapshots>
+    </pluginRepository>
+  </pluginRepositories>
+
+  <distributionManagement>
+    <!-- OpenDayLight Released artifact -->
+    <repository>
+      <id>opendaylight-release</id>
+      <url>${nexusproxy}/repositories/opendaylight.release/</url>
+    </repository>
+    <!-- OpenDayLight Snapshot artifact -->
+    <snapshotRepository>
+      <id>opendaylight-snapshot</id>
+      <url>${nexusproxy}/repositories/opendaylight.snapshot/</url>
+    </snapshotRepository>
+    <site>
+      <id>${project.artifactId}-site</id>
+      <url>./</url>
+    </site>
+  </distributionManagement>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>com.inocybe.api</groupId>
+        <artifactId>sdndocs-maven-plugin</artifactId>
+        <version>0.1.0</version>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
