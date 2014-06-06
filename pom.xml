@@ -15,6 +15,7 @@
     <tag>HEAD</tag>
   </scm>
   <properties>
+    <asciidoctor.version>0.1.4</asciidoctor.version>
     <nexusproxy>http://nexus.opendaylight.org/content</nexusproxy>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
@@ -46,7 +47,7 @@
           <enabled>true</enabled>
       </snapshots>
       <releases>
-          <enabled>false</enabled>
+        <enabled>false</enabled>
       </releases>
     </repository>
   </repositories>
