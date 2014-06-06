@@ -1,0 +1,92 @@
+[[]]
+
+
+===Installing from RPM 
+
+When using a RedHat-based distribution the easiest way to install OpenDaylight is to use the prebuilt RPM packages. This can be done by downloading the packages or installing from the YUM repository.
+
+[[]]
+
+
+====Installing from YUM Repository
+
+Use this method to install OpenDaylight using the yum repo:Install the yum repo: link:$$https://nexus.opendaylight.org/content/repositories/opendaylight-yum-fedora-19-x86_64/rpm/opendaylight-release/0.1.0-2.fc19.noarch/opendaylight-release-0.1.0-2.fc19.noarch.rpm$$[Download the yum repository file] 
+
+Install OpenDaylight Edition of your choice
+
+ *OpenDaylight Base Edition* 
+
+ ++++++++++++++++++++++++++++++++++++++
+<screen format="linespecific">
+                     <prompt moreinfo="none">$</prompt>
+                     <userinput moreinfo="none">sudo yum install opendaylight</userinput>
+                  </screen>
+++++++++++++++++++++++++++++++++++++++
+
+ 
+
+ *OpenDaylight Virtualization Edition* 
+
+ ++++++++++++++++++++++++++++++++++++++
+<screen format="linespecific">
+                     <prompt moreinfo="none">$</prompt>
+                     <userinput moreinfo="none">sudo yum install opendaylight-virtualization</userinput>
+                  </screen>
+++++++++++++++++++++++++++++++++++++++
+
+ 
+
+ *OpenDaylight Service Provider Edition* 
+
+ ++++++++++++++++++++++++++++++++++++++
+<screen format="linespecific">
+                     <prompt moreinfo="none">$</prompt>
+                     <userinput moreinfo="none">sudo yum install opendaylight-serviceprovider</userinput>
+                  </screen>
+++++++++++++++++++++++++++++++++++++++
+
+ 
+
+ 
+
+[[]]
+
+
+====Installing from downloaded RPM
+
+If you have directly downloaded the RPM artifacts you can install OpenDaylight 
+
+ ++++++++++++++++++++++++++++++++++++++
+<screen format="linespecific">
+            <prompt moreinfo="none">$</prompt>
+            <userinput moreinfo="none">sudo rpm -Uvh /path/to/rpms/*.rpm</userinput>
+         </screen>
+++++++++++++++++++++++++++++++++++++++
+
+ 
+
+to install from RPMs directly or
+
+ ++++++++++++++++++++++++++++++++++++++
+<screen format="linespecific">
+            <prompt moreinfo="none">$</prompt>
+            <userinput moreinfo="none">sudo yum localinstall /path/to/rpms/*.rpm</userinput>
+         </screen>
+++++++++++++++++++++++++++++++++++++++
+
+ 
+
+[[]]
+
+
+====Managing Services
+
+The main content of OpenDaylight Hydrogen is in Writea directory called _opendaylight_, where you will see the following files:
+
+[[]]
+
+
+====Configuration
+
+Add configuration instructions here
+
