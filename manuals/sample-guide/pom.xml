@@ -8,14 +8,14 @@
     <relativePath>../pom.xml</relativePath>
   </parent>
   <modelVersion>4.0.0</modelVersion>
-  <artifactId>installguide</artifactId>
+  <artifactId>sampleguide</artifactId>
   <packaging>jar</packaging>
-  <name>OpenDaylight Docs - Manuals - Install Guide</name>
+  <name>OpenDaylight Docs - Manuals - Sample Guide</name>
   <properties>
     <!-- This is set by Jenkins according to the branch. -->
     <release.path.name>local</release.path.name>
     <comments.enabled>1</comments.enabled>
-    <bookname>bk-install-guide</bookname>
+    <bookname>bk-sample-guide</bookname>
   </properties>
   <!-- ################################################ -->
   <!-- USE "mvn clean generate-sources" to run this POM -->
@@ -29,7 +29,7 @@
          <executions>
          <execution>
             <id>output-docbook</id>
-            <phase>generate-resources</phase>
+            <phase>generate-sources</phase>
             <goals>
                 <goal>process-asciidoc</goal>
             </goals>
@@ -42,16 +42,38 @@
         <configuration>
            <sourceDirectory>src/main/asciidoc</sourceDirectory>
            <sourceDocumentName>${bookname}.adoc</sourceDocumentName>
-           <imagesDir>../resources/images</imagesDir>
+           <imagesDir>./images</imagesDir>
         </configuration> 
       </plugin>
+      <plugin>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>2.6</version>
+        <executions>
+          <execution>
+            <id>copy-resources</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${basedir}/target/generated-docs</outputDirectory>
+              <resources>          
+                <resource>
+                  <directory>src/main/resources</directory>
+                  <includes>
+                    <include>**/*.*</include>
+                  </includes> 
+               </resource>
+              </resources>              
+            </configuration>            
+          </execution>
+        </executions>
+      </plugin> 
       <plugin>
         <groupId>com.inocybe.api</groupId>
         <artifactId>sdndocs-maven-plugin</artifactId>
         <version>0.1.0</version>
-<!-- version is set in ../pom.xml file -->
         <executions>
-          <!-- Configuration for OpenStack End User Guide -->
           <execution>
             <id>generate-webhelp</id>
             <goals>
@@ -60,9 +82,8 @@
             <phase>compile</phase>
             <configuration>
               <profileAudience>enduser</profileAudience>
-             <!-- <includes>${project.build.directory}/generated-docs/${bookname}.xml</includes>
-             -->
-              <includes>bk-install-guide.xml</includes> 
+              <includes>target/generated-docs/${bookname}.xml</includes>
+            <!--  <includes>bk-install-guide.xml</includes> -->
               <generateToc>
                 appendix  toc,title
                 article/appendix  nop
