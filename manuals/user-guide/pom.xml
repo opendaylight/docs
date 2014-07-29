@@ -15,7 +15,7 @@
     <!-- This is set by Jenkins according to the branch. -->
     <release.path.name>local</release.path.name>
     <comments.enabled>1</comments.enabled>
-    <bookname>bk-sample-guide</bookname>
+    <bookname>bk-user-guide</bookname>
   </properties>
   <!-- ################################################ -->
   <!-- USE "mvn clean generate-sources" to run this POM -->
@@ -119,7 +119,7 @@
           <disqusShortname>os-user-guide</disqusShortname>
           <enableGoogleAnalytics>1</enableGoogleAnalytics>
           <googleAnalyticsId>UA-17511903-1</googleAnalyticsId>
-    -->      <suppressFooterNavigation>0</suppressFooterNavigation>
+    -->   <suppressFooterNavigation>0</suppressFooterNavigation>
           <canonicalUrlBase>http://docs.opendaylight.org/user-guide/content/</canonicalUrlBase>
           <glossaryCollection>${basedir}/../glossary/glossary-terms.xml</glossaryCollection>
         </configuration>
