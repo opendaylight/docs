@@ -1,0 +1,69 @@
+[[bk-user-guide]]
+= OpenDaylight Developer's Guide
+:docinfo:
+
+
+[dedication]
+Example Dedication
+------------------
+Optional dedication.
+
+This document is an AsciiDoc book skeleton containing briefly
+annotated example elements plus a couple of example index entries and
+footnotes.
+
+Books are normally used to generate DocBook markup and the titles of
+the preface, appendix, bibliography, glossary and index sections are
+significant ('specialsections').
+
+
+[preface]
+Example Preface
+---------------
+Optional preface.
+
+Preface Sub-section
+~~~~~~~~~~~~~~~~~~~
+Preface sub-section body.
+
+include::ch-samplech.adoc[]
+
+:numbered!:
+
+[appendix]
+Example Appendix
+----------------
+One or more optional appendixes go here at section level 1.
+
+Appendix Sub-section
+~~~~~~~~~~~~~~~~~~~
+Sub-section body.
+
+
+[glossary]
+Example Glossary
+----------------
+Glossaries are optional. Glossaries entries are an example of a style
+of AsciiDoc labeled lists.
+
+[glossary]
+A glossary term::
+  The corresponding (indented) definition.
+
+A second glossary term::
+  The corresponding (indented) definition.
+
+
+[colophon]
+Example Colophon
+----------------
+Text at the end of a book describing facts about its production.
+
+
+[index]
+Example Index
+-------------
+////////////////////////////////////////////////////////////////
+The index is normally left completely empty, it's contents being
+generated automatically by the DocBook toolchain.
+////////////////////////////////////////////////////////////////
