@@ -26,7 +26,27 @@ Preface Sub-section
 ~~~~~~~~~~~~~~~~~~~
 Preface sub-section body.
 
-include::ch-samplech.adoc[]
+include::overview.adoc[]
+include::aaa.adoc[]
+include::bgpcep.adoc[]
+include::controller.adoc[]
+include::defense4all.adoc[]
+include::dlux.adoc[]
+include::groupbasedpolicy.adoc[]
+include::l2switch.adoc[]
+include::lispflow.adoc[]
+include::odlsdni.adoc[]
+include::openflowlibrary.adoc[]
+include::openflowplugin.adoc[]
+include::ovsdb.adoc[]
+include::pcmm.adoc[]
+include::plugin2oc.adoc[]
+include::sfc.adoc[]
+include::snbi.adoc[]
+include::snmp4sdn.adoc[]
+include::tcpmd5.adoc[]
+include::vtn.adoc[]
+include::yangtools.adoc[]
 
 :numbered!:
 
@@ -67,3 +87,4 @@ Example Index
 The index is normally left completely empty, it's contents being
 generated automatically by the DocBook toolchain.
 ////////////////////////////////////////////////////////////////
+
