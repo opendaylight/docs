@@ -26,7 +26,38 @@ Preface Sub-section
 ~~~~~~~~~~~~~~~~~~~
 Preface sub-section body.
 
-include::ch-samplech.adoc[]
+Using OpenDaylight
+--------------------------
+
+[partintro]
+.Optional part introduction title
+--
+Optional part introduction goes here.
+--
+
+OpenDaylight Add-ons
+-------------------------
+
+[partintro]
+.Optional part introduction title
+--
+Optional part introduction goes here.
+--
+
+include::addons/aaa.adoc[]
+include::addons/bgpcep.adoc[]
+include::addons/defense4all.adoc[]
+include::addons/groupbasedpolicy.adoc[]
+include::addons/l2switch.adoc[]
+include::addons/lispflow.adoc[]
+include::addons/ovsdb.adoc[]
+include::addons/pcmm.adoc[]
+include::addons/plugin2oc.adoc[]
+include::addons/sfc.adoc[]
+include::addons/snbi.adoc[]
+include::addons/snmp4sdn.adoc[]
+include::addons/vtn.adoc[]
+include::addons/yangtools.adoc[]
 
 :numbered!:
 
@@ -67,3 +98,4 @@ Example Index
 The index is normally left completely empty, it's contents being
 generated automatically by the DocBook toolchain.
 ////////////////////////////////////////////////////////////////
+
