@@ -1,0 +1,183 @@
+== Installing LISP Flow Mapping
+
+This chapter contains installation instructions for Locator ID Separation Protocol (LISP) provides guidelines for installation from the lispflowmapping repository.
+
+
+=== Setting up Gerritt
+
+Code reviews are enabled through Gerrit. For setting up gerritt, see https://wiki.opendaylight.org/view/OpenDaylight_Controller:Gerrit_Setup[Set up Gerrit]. 
+
+NOTE: You will need to perform the Gerrit Setup before you can access git via ssh as described below. 
+
+=== Pulling code via Git CLI
+
+Pull the code by cloning the LispFlowMapping repository. 
+
+`git clone ssh://<username>@git.opendaylight.org:29418/lispflowmapping.git`
+
+or if you just want to do an anonymous git clone, you can use: 
+
+`git clone https://git.opendaylight.org/gerrit/p/lispflowmapping.git`
+
+=== Setting up Gerrit Change-id Commit Msg Hook 
+
+This command inserts a unique Change-Id tag in the footer of a commit message. This step is optional but highly recommended for tracking changes. 
+
+[source,perl]
+cd lispflowmapping
+scp -p -P 29418 <username>@git.opendaylight.org:hooks/commit-msg .git/hooks/
+chmod 755 .git/hooks/commit-msg
+
+=== Hacking the Code 
+
+The following tasks are used to help you hack the code. 
+
+*Setup Eclipse*
+
+. Run Eclipse (Kepler is the current version).
+. Open Git Repository perspective.
+. Add an existing repository and choose the Lisp Flow Mapping repository that was pulled earlier.
+. Import existing Maven projects and choose the following under the lispflowmapping directory:
+
+    * api/pom.xl
+    * implementation/pom.xml
+	
+*Build the code*
+
+`mvn clean install`
+
+To run without unitests you can skip building those tests running the following: 
+
+[source,perl]
+mvn clean install -DskipTests 
+/* instead of "mvn clean install" */
+
+*Run the controller*
+
+[source,perl]
+cd target/lispflowmapping-distribution-0.1.0-SNAPSHOT-osgipackage/opendaylight/
+./run.sh
+
+And point your browser at http://localhost:8080/ 
+
+
+For complete documentation on running the controller, see https://wiki.opendaylight.org/view/OpenDaylight_Controller:Installation[Installation Guide].
+
+=== Commit the code using Git CLI
+
+NOTE: To be accepted, all code must come with a http://elinux.org/Developer_Certificate_Of_Origin[developer certificate of origin] as expressed by having a Signed-off-by. This means that you are asserting that you have made the change and you understand that the work was done as part of an open-source license. 
+
+----
+Developer's Certificate of Origin 1.1
+
+        By making a contribution to this project, I certify that:
+
+        (a) The contribution was created in whole or in part by me and I
+            have the right to submit it under the open source license
+            indicated in the file; or
+
+        (b) The contribution is based upon previous work that, to the best
+            of my knowledge, is covered under an appropriate open source
+            license and I have the right under that license to submit that
+            work with modifications, whether created in whole or in part
+            by me, under the same open source license (unless I am
+            permitted to submit under a different license), as indicated
+            in the file; or
+
+        (c) The contribution was provided directly to me by some other
+            person who certified (a), (b) or (c) and I have not modified
+            it.
+
+        (d) I understand and agree that this project and the contribution
+            are public and that a record of the contribution (including all
+            personal information I submit with it, including my sign-off) is
+            maintained indefinitely and may be redistributed consistent with
+            this project or the open source license(s) involved.
+----
+			
+*Mechanically you do it this way*:
+
+`git commit --signoff`
+
+You will be prompted for a commit message. If you are fixing a buzilla bug you can add that to your commit message and it will get linked from Gerrit: 
+
+
+==========================
+.For Example:
+
+Fix for bug 2.
+
+Signed-off-by: Ed Warnicke <eaw@cisco.com>
+
+# Please enter the commit message for your changes. Lines starting + 
+# with '#' will be ignored, and an empty message aborts the commit. + 
+# On branch develop + 
+# Changes to be committed: + 
+#   (use "git reset HEAD <file>..." to unstage) + 
+# + 
+#       modified:   README + 
+#
+==========================
+
+=== Pulling the Code changes via Git CLI
+
+Use git pull to get the latest changes from the remote repository 
+
+`git pull origin HEAD:refs/for/develop`
+
+=== Pushing the Code via Git CLI
+
+Use git push to push your changes back to the remote repository. 
+
+`git push  origin HEAD:refs/for/develop`
+
+You will get a message pointing you to your gerrit request like: 
+
+==========================
+remote: Resolving deltas: 100% (2/2) + 
+remote: Processing changes: new: 1, refs: 1, done    + 
+remote: + 
+remote: New Changes: + 
+remote:   http://git.opendaylight.org/gerrit/64 + 
+remote: + 
+==========================
+
+=== Seeing your changes in Gerrit
+
+Follow the link you got above to see your commit in Gerrit: 
+
+image::gerrit-code-review.jpg[Gerritt Code Review Sample]
+
+Note that the Jenkins Controller User has verified your code and at the bottom is a link to the Jenkins build. 
+
+Once your code has been reviewed and submitted by a committer it will be merged into the authoritative repo, which would look like this: 
+ 
+image::gerrit-merged.jpg[Gerritt Code Merge Sample]
+
+=== Troubleshooting
+
+. *What to do if your Firewall blocks port 29418*
+
+There have been reports that many corporate firewalls block port 29418. If that's the case, please follow the https://wiki.opendaylight.org/view/OpenDaylight_Controller:Setting_up_HTTP_in_Gerrit[Setting up HTTP in Gerrit] instructions and use git URL: 
+
+`git clone https://<your_username>@git.opendaylight.org/gerrit/p/lispflowmapping.git`
+
+You will be prompted for the password you generated in https://wiki.opendaylight.org/view/OpenDaylight_Controller:Setting_up_HTTP_in_Gerrit[Setting up HTTP in Gerrit].
+
+All other instructions on this page remain unchanged.
+
+To download pre-built images with ODP bootstraps see the following Github project: 
+
+https://github.com/nerdalert/OpenDaylight-Lab[Pre-Built OpenDaylight VM Images]
+
+=== Key methods for early community understanding, assistance, and involvement 
+
+* Join the https://lists.opendaylight.org/mailman/listinfo[ODP Listserv]
+* Listen to the weekly Technical Work Stream meeting on https://wiki.opendaylight.org/view/Tech_Work_Stream:Main[Tech Work Stream:Main] . 
+* Join the IRC channel #opendaylight on irc.freenode.net 
+
+
+
+
+
+
