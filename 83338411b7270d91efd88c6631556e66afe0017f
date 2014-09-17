@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa82b9bf_f33ff6d4",
+        "filename": "manuals/developers-guide/src/main/asciidoc/l2switch.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1788
+      },
+      "writtenOn": "2014-09-17T17:37:44Z",
+      "side": 1,
+      "message": "Looks adequate for the developer persona..",
+      "revId": "83338411b7270d91efd88c6631556e66afe0017f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_3336be04",
+        "filename": "manuals/user-guide/src/main/asciidoc/addons/l2switch.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1788
+      },
+      "writtenOn": "2014-09-17T17:37:44Z",
+      "side": 1,
+      "message": "When we start with \"checkout with git\" or \"run distribution\" I feel that this is definitely targeted more to a developer related audience.. Are you sure this is properly directed to the network admin?",
+      "revId": "83338411b7270d91efd88c6631556e66afe0017f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_d33af2e6",
+        "filename": "manuals/user-guide/src/main/asciidoc/addons/l2switch.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1788
+      },
+      "writtenOn": "2014-09-17T17:37:44Z",
+      "side": 1,
+      "message": "These sections are more appropriate and adequate for this guide.",
+      "revId": "83338411b7270d91efd88c6631556e66afe0017f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
