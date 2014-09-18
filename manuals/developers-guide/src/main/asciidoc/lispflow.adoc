@@ -1,12 +1,15 @@
 == Lisp Flow Mapping
 
-Chapter on LISP Flow Mapping
+This chapter contains:
 
+* <<OpenDaylight Locator ID Separation Protocol (LISP) Flow Mapping Overview>>
+* <<Installing LISP Flow Mapping>>
 
 === OpenDaylight Locator/ID Separation Protocol (LISP) Flow Mapping Overview
 
-http://tools.ietf.org/html/rfc6830[Locator/ID Separation Protocol (LISP)] is a technology that provides a flexible map-and-encap framework that can be used for overlay network applications, such as data center network virtualization, and Network Function Virtualization (NFV).
-LISP introduces two name spaces: 
+http://tools.ietf.org/html/rfc6830[Locator/ID Separation Protocol (LISP)] is a technology that provides a flexible map-and-encap framework that can be used for overlay network applications such as data center network virtualization and Network Function Virtualization (NFV).
+
+LISP provides the following name spaces: 
 
 * http://tools.ietf.org/html/rfc6830#page-6[Endpoint Identifiers (EIDs)]
 * http://tools.ietf.org/html/rfc6830#section-3[Routing Locators (RLOCs)]
@@ -30,9 +33,9 @@ For more details and support for LISP data plane software please visit http://LI
 
 === LISP Flow Mapping Service
 
-The LISP Flow Mapping service provides LISP Mapping System services. This includes LISP  Map-Server and LISP Map-Resolver services to store and serve the mapping data to data plane nodes as well as to OpenDaylight applications. Mapping data can include mapping of virtual addresses to physical network address where the virtual nodes are reachable or hosted at. Mapping data can also include a variety of routing policies including traffic engineering and load balancing. To leverage this service OpenDaylight applications and services can use the northbound REST API to define the mappings and policies in the LISP Mapping Service. Data plane devices capable of LISP control protocol can leverage this service through a southbound LISP plugin via the LISP control protocol (Map-Register, Map-Request, Map-Reply messages). 
+The LISP Flow Mapping service provides LISP Mapping System services. This includes LISP  Map-Server and LISP Map-Resolver services to store and serve mapping data to data plane nodes as well as to OpenDaylight applications. Mapping data can include mapping of virtual addresses to physical network address where the virtual nodes are reachable or hosted at. Mapping data can also include a variety of routing policies including traffic engineering and load balancing. To leverage this service, OpenDaylight applications and services can use the northbound REST API to define the mappings and policies in the LISP Mapping Service. Data plane devices capable of LISP control protocol can leverage this service through a southbound LISP plugin via the LISP control protocol (Map-Register, Map-Request, Map-Reply messages). 
 
-The following figure depicts the described components. 
+The following figure depicts the described components:
 
 .Architecture Overview
 
@@ -47,18 +50,18 @@ The following figure shows the various LISP Flow Mapping modules.
 
 image::lispflow-technical-arch-overview-helium.jpg["LISP Mapping Service Internal Architecture", width=460]
 
-A brief description of each module follows:
+A brief description of each module is as follows:
 
-* DAO: This layer separates the LISP logic from the database, so that we can separate the map server and map resolver from the specific implementation of the DHT (Distributed Hash Table). Currently we have an implementation of this layer with the controller cluster service as a DHT, but it can be switched to any other DHT and you only need to implement the ILISPDAO interface. 
-* Map Server: This module processes the adding or registration of keys and mappings. For a detailed specification of LISP Map Server, see http://tools.ietf.org/search/rfc6830[LISP]. 
-* Map Resolver: This module receives and processes the mapping lookup queries and provides the mappings to requester. For a detailed specification of LISP Map Server, see http://tools.ietf.org/search/rfc6830[LISP].. 
-* Northbound API: This is part of the ODL northbound API. This module enables defining key-EID associations as well as adding mapping information through the Map Server. Key-EID associations can also be queried via this API. The Northbound API also provides capability of querying the mapping information for an EID prefix. 
-* Neutron: This module implements the ODL Neutron Service APIs. It provides integration between the LISP service and the ODL Neutron service.
-* NETCONF: This module enables the LISP service to communicate to NETCONF-enabled devices through ODL's NETCONF plugin.
-* Java API: The API module exposes the Map Server and Map Resolver capabilities via Java API. 
-* LISP Southbound Plugin: This plugin enables data plane devices that support LISP control plane protocol (see LISP) to register and query mappings to the LISP Flow Mapping via the LISP control plane protocol. 
+* *DAO:* This layer separates the LISP logic from the database, so that we can separate the map server and map resolver from the specific implementation of the DHT (Distributed Hash Table). Currently we have an implementation of this layer with the controller cluster service as a DHT, but it can be switched to any other DHT and you only need to implement the ILISPDAO interface.
+* *Map Server:* This module processes the adding or registration of keys and mappings. For a detailed specification of LISP Map Server, see http://tools.ietf.org/search/rfc6830[LISP].
+* *Map Resolver:* This module receives and processes the mapping lookup queries and provides the mappings to requester. For a detailed specification of LISP Map Server, see http://tools.ietf.org/search/rfc6830[LISP].
+* *Northbound API:* This is part of the ODL northbound API. This module enables defining key-EID associations as well as adding mapping information through the Map Server. Key-EID associations can also be queried via this API. The Northbound API also provides capability of querying the mapping information for an EID prefix.
+* *Neutron:* This module implements the ODL Neutron Service APIs. It provides integration between the LISP service and the ODL Neutron service.
+* *NETCONF:* This module enables the LISP service to communicate to NETCONF-enabled devices through ODL's NETCONF plugin.
+* *Java API:* The API module exposes the Map Server and Map Resolver capabilities via Java API.
+* *LISP Southbound Plugin:* This plugin enables data plane devices that support LISP control plane protocol (see LISP) to register and query mappings to the LISP Flow Mapping via the LISP control plane protocol.
 
-=== LISP APIs
+==== LISP APIs
 
 The LISP Flow Mapping service has JAVA APIs and REST APIs. The Java API reference documentation is auto-generated from the Java build and is available at:
 
@@ -368,8 +371,6 @@ ping 2.2.2.2
 
 If you used the Postman collection, you will notice an "ELP" mapping. This is for supporting service chaining, but it requires a Re-encapsulating Tunnel Router (RTR). Support for RTR functionality in LISPmob is in progress, and we will update the tutorial to demonstrate service chaining when it becomes available.
 
-
-
 === LISP Support
 
 For support please contact the lispflowmapping project at: 
@@ -382,13 +383,14 @@ You can also reach us at the following channel on IRC:
 
 * #opendaylight-lispflowmapping on irc.freenode.net 
 
-=== Hacking code from the CLI
+=== Installing LISP Flow Mapping
 
-This chapter provides guidelines for installation directly from the lispflowmapping repository.
+This chapter contains installation instructions for Locator ID Separation Protocol (LISP) provides guidelines for installation from the lispflowmapping repository.
 
-==== Setting up Gerrit
+==== Setting up Gerritt
 
-Code reviews are enabled through Gerrit. For setting up gerrit, see https://wiki.opendaylight.org/view/OpenDaylight_Controller:Gerrit_Setup[Set up Gerrit].
+Code reviews are enabled through Gerrit. For setting up gerritt, see https://wiki.opendaylight.org/view/OpenDaylight_Controller:Gerrit_Setup[Set up Gerrit]. 
+>>>>>>> a8dd6f1... added installation section into the lisp doc
 
 NOTE: You will need to perform the Gerrit Setup before you can access git via ssh as described below. 
 
@@ -396,19 +398,25 @@ NOTE: You will need to perform the Gerrit Setup before you can access git via ss
 
 Pull the code by cloning the LispFlowMapping repository. 
 
+----
  git clone ssh://<username>@git.opendaylight.org:29418/lispflowmapping.git
+----
 
 or if you just want to do an anonymous git clone, you can use: 
 
+----
  git clone https://git.opendaylight.org/gerrit/p/lispflowmapping.git
+----
 
 ==== Setting up Gerrit Change-id Commit Message Hook 
 
 This command inserts a unique Change-Id tag in the footer of a commit message. This step is optional but highly recommended for tracking changes. 
 
+----
  cd lispflowmapping
  scp -p -P 29418 <username>@git.opendaylight.org:hooks/commit-msg .git/hooks/
  chmod 755 .git/hooks/commit-msg
+----
 
 Install and setup gitreview. The instaructions can be found at http://www.mediawiki.org/wiki/Gerrit/git-review#Installation%7Chere[here].
 
@@ -428,19 +436,25 @@ The following tasks are used to help you hack the code.
 	
 *Build the code*
 
+----
  mvn clean install
+----
 
 To run without unitests you can skip building those tests running the following: 
 
+----
  mvn clean install -DskipTests
  /* instead of "mvn clean install" */
+----
 
 *Run the controller*
 
+----
  cd distribution-karaf/target/assembly/bin
  ./karaf
+----
 
-At this point the ODL controller is running. Open a web browser and oint your browser at http://localhost:8080/ 
+At this point the ODL controller is running. Open a web browser and point your browser at http://localhost:8080/ 
 
 For complete documentation on running the controller, see the ODL Helium Installation Guide.
 
@@ -478,17 +492,18 @@ Developer's Certificate of Origin 1.1
 			
 *Mechanically you do it this way*:
 
- git commit --signoff
+----
+git commit --signoff
+----
 
 You will be prompted for a commit message. If you are fixing a buzilla bug you can add the associated bug number to your commit message and it will get linked from Gerrit: 
 
-Example:
+.For Example:
 
 ----
 Fix for bug 2.
 
 Signed-off-by: Ed Warnicke <eaw@cisco.com>
-
 # Please enter the commit message for your changes. Lines starting
 # with '#' will be ignored, and an empty message aborts the commit.
 # On branch develop
@@ -503,12 +518,79 @@ Signed-off-by: Ed Warnicke <eaw@cisco.com>
 
 Use gitreview to push your changes back to the remote repository using: 
 
+----
  git review
+----
 
 You can set a topic for your patch by:
 
+----
  git review -t <topic>
+----
 
 The Jenkins Controller User will verify your code. 
 
-Once your code has been reviewed and submitted by a committer it will be merged into the authoritative repository.
+==== Pulling the Code changes via Git CLI
+
+Use git pull to get the latest changes from the remote repository 
+
+----
+git pull origin HEAD:refs/for/develop
+----
+
+==== Pushing the Code via Git CLI
+
+Use git push to push your changes back to the remote repository. 
+
+----
+git push  origin HEAD:refs/for/develop
+----
+
+You will get a message pointing you to your gerrit request like: 
+
+----
+==========================
+remote: Resolving deltas: 100% (2/2) + 
+remote: Processing changes: new: 1, refs: 1, done    + 
+remote: + 
+remote: New Changes: + 
+remote:   http://git.opendaylight.org/gerrit/64 + 
+remote: + 
+==========================
+----
+
+==== Viewing your Changes in Gerrit
+
+Follow the link you got above to see your commit in Gerrit: 
+
+image::gerrit-code-review.jpg[Gerritt Code Review Sample]
+
+Note that the Jenkins Controller User has verified your code and at the bottom is a link to the Jenkins build. 
+
+Once your code has been reviewed and submitted by a committer it will be merged into the authoritative repo, which would look like this: 
+ 
+image::gerrit-merged.jpg[Gerritt Code Merge Sample]
+
+==== Troubleshooting
+
+. *What to do if your Firewall blocks port 29418*
+
+There have been reports that many corporate firewalls block port 29418. If that's the case, please follow the https://wiki.opendaylight.org/view/OpenDaylight_Controller:Setting_up_HTTP_in_Gerrit[Setting up HTTP in Gerrit] instructions and use git URL: 
+
+----
+git clone https://<your_username>@git.opendaylight.org/gerrit/p/lispflowmapping.git
+----
+
+You will be prompted for the password you generated in https://wiki.opendaylight.org/view/OpenDaylight_Controller:Setting_up_HTTP_in_Gerrit[Setting up HTTP in Gerrit].
+
+All other instructions on this page remain unchanged.
+
+To download pre-built images with ODP bootstraps see the following Github project: 
+
+https://github.com/nerdalert/OpenDaylight-Lab[Pre-Built OpenDaylight VM Images]
+
+==== Participating in the LISP Community 
+
+* Join the https://lists.opendaylight.org/mailman/listinfo[ODP Listserv]
+* Listen to the weekly Technical Work Stream meeting on https://wiki.opendaylight.org/view/Tech_Work_Stream:Main[Tech Work Stream:Main] . 
+* Join the IRC channel #opendaylight on irc.freenode.net 
