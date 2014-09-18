@@ -1,4 +1,120 @@
 == Group Based Policy
 
-Chapter on Group Based Policy
+This chapter describes the Group-Based Policy project. The Group-Based Policy project defines an application-centric policy model for OpenDaylight that separates information about application connectivity requirements from information about the underlying details of the network infrastructure.
+
+=== Architecture
+
+.Group-Based Policy Architecture
+
+image::Group-based_policy_architecture.png[Group-Based Policy Architecture]
+
+State repositories (blue) communicate using MD-SAL (orange) with external orchestration systems as well as internally with renderers (green) through the renderer common framework (red).
+
+The components of the architecture are divided into two main categories. First, there are components that are responsible for managing the policy, configuration, and related state. These are the components that deal with the higher-order group-based policy that exists independent of the underlying infrastructure. Second, the renderer components that are responsible for applying the policy model to the underlying network infrastructure. The system can support potentially a variety of renderers that may have very different sets of features and different approaches for enabling the policy that the user has requested.
+
+The key to understanding the architecture is to first understand the policy model -- much of the design of the system flows directly from the design of the policy model.
+
+==== Policy Model
+
+The policy model is built around the idea of placing endpoints into groups that share the same semantics, and then defining what other groups those endpoints need to communicate, and then finally defining how these endpoints need to communicate. In this way, we represent the requirements of the application and then force the infrastructure to figure out how to meet these requirements, rather than defining the policy in terms of the underlying infrastructure.
+
+===== Policy Concepts
+
+This section describes some of the most important concepts in the policy model. See the next section on Policy Resolution for a description of how these fit together to determine how to apply the policy to the network.
+
+Endpoint::
+An _endpoint_ is a specific device in the network. It could be a VM interface, a physical interface, or other network device. Endpoints are defined and assigned to endpoint groups through mechanisms that are not specified by the policy model (See Endpoint Registry for more information). Endpoints can have associated _conditions_ that are just labels that represent some potentially-transient status information about an endpoint.
+Endpoint Group::
+_Endpoint groups_ are sets of endpoints that share a common set of policies. Endpoint groups can participate in _contracts_ that determine the kinds of communication that is allowed. They also expose both _requirements_ and _capabilities_, which are labels that help to determine how contracts will be applied. An endpoint group is allowed to specify a parent endpoint group from which it inherits.
+Contract::
+_Contracts_ determine which endpoints can communicate and in what way. Contracts between pairs of endpoint groups are selected by the contract selectors defined by the endpoint group. Contracts expose _qualities_, which are labels that can help endpoint groups to select contracts. Once the contract is selected, contracts have _clauses_ that can match against requirements and capabilities exposed by endpoint groups, as well as any conditions that may be set on endpoints, in order to activate _subjects_ that can allow specific kinds of communication. A contracts is allowed to specify a parent contract from which it inherits.
+Clause::
+_Clauses_ are defined as part of a contract. Clauses determine how a contract should be applied to particular endpoints and endpoint groups. Clauses can match against requirements and capabilities exposed by endpoint groups, as well as any conditions that may be set on endpoints. Matching clauses define some set of _subjects_ which can be applied to the communication between the pairs of endpoints.
+Subject::
+_Subjects_ describe some aspect of how two endpoints are allowed to communicate. Subjects define an ordered list of rules that will match against the traffic and perform any necessary actions on that traffic. No communication is allowed unless a subject allows that communication.
+
+===== Introduction to Policy Resolution
+
+There are a lot of concepts to unpack and it can be difficult to see how this all fits together.  Let's imagine that we want to analyze a particular flow of traffic in the network and walk through the policy resolution process for that flow.  The key here is that the policy resolution process happens logically in three phases.  First, we need to select the contracts that are in scope for the endpoint groups of the endpoints of the flow.  Next, we select the set of subjects that apply to the endpoints of the flow.  Finally, we apply the rules from the applicable subjects to the actual network traffic in the flow.
+
+Note that this description gives a semantic understanding of how the policy model should be applied.  The steps described here may or may not correspond to an actual efficient implementation of this policy model.
+
+====== Contract Selection
+
+The first step in policy resolution is to select the contracts that are in scope.  For a particular flow, we look up the endpoint groups for each of the endpoints involved in the flow.
+
+Endpoint groups participate in contracts either as a _provider_ or as a _consumer_.  Each endpoint group can participate in many contracts at the same time, but for each contract it can be in only one role at a time.  In addition, there are two ways for an endpoint group to select a contract: either with a _named selector_ or with a _target selector_.  Named selectors simply select a specific contract by its contract ID.  Target selectors allow for additional flexibility by matching against _qualities_ of the contract's _target_.
+
+Thus, there are a total of 4 kinds of contract selector:
+
+provider named selector::
+Select a contract by contract ID, and participate as a provider.
+provider target selector::
+Match against a contract's target with a quality matcher, and participate as a provider.
+consumer named selector::
+Select a contract by contract ID, and participate as a consumer.
+consumer target selector::
+Match against a contract's target with a quality matcher, and participate as a consumer.
+
+So to determine which contracts are in scope for our flow, we must find contracts where either the source endpoint group selects a contract as either a provider or consumer, while the destination endpoint group matches against the same contract in the corresponding role.  So if endpoint _x_ in endpoint group _X_ is communicating with endpoint _y_ in endpoint group _Y_, a contract _C_ is in scope if either _X_ selects _C_ as a provider and _Y_ selects _C_ as a consumer, or _X_ selects _C_ as a consumer and _Y_ selects _C_ as a provider.
+
+The details of how quality matchers work are described further below in Matchers.  For now, we can simply state that quality matchers provide a flexible mechanism for selecting the contract based on labels.
+
+The end result of the contract selection phase can be thought of as a set of tuples representing selected contract scopes.  The fields of the tuple are:
+
+* Contract ID
+* The provider endpoint group ID
+* The name of the selector in the provider endpoint group that was used to select the contract, which we'll call the _matching provider selector_.
+* The consumer endpoint group ID
+* The name of the selector in the consumer endpoint group that was used to select the contract, which we'll call the _matching consumer selector_.
+
+====== Subject Selection
+
+The second phase in policy resolution is to determine which subjects are in scope.  The subjects allow us to define what kinds of communication are allowed between endpoints in the endpoint groups.  For each of the selected contract scopes from the contract selection phase, we'll need to apply the subject selection procedure.
+
+Before we can discuss how the subjects are matched, we need to first examine what we match against to bring those subjects into scope.  We match against labels called, capabilities, requirements and conditions.  Endpoint groups have capabilities and requirements, while endpoints have conditions.
+
+[red]*Requirements and Capabilities*
+
+When acting as a provider, endpoint groups expose _capabilities_, which are labels representing specific pieces of functionality that can be exposed to other endpoint groups that may meet functional requirements of those endpoint groups.  When acting as a consumer, endpoint groups expose _requirements_, which are labels that represent that fact that the endpoint group requires some specific piece of functionality.    As an example, we might create a capability called "user-database" which indicates that an endpoint group contains endpoints that implement a database of users.  We might create a requirement also called "user-database" to indicate an endpoint group contains endpoints that will need to communicate with the endpoints that expose this service.  Note that in this example the requirement and capability have the same name, but the user need not follow this convention.
+
+We examine the matching provider selector (that was used by the provider endpoint group to select the contract) to determine the capabilities exposed by the provider endpoint group for this contract scope.  The provider selector will have a list of capabilities either directly included in the provider selector or inherited from a parent selector or parent endpoint group (See Inheritance below).  Similarly, the matching consumer selector will expose a set of requirements.
+
+[red]*Conditions*
+
+Endpoints can have _conditions_, which are labels representing some relevant piece of operational state related to the endpoint.  An example of a condition might be "malware-detected," or "authentication-succeeded."  We'll be able to use these conditions to affect how that particular endpoint can communicate.  To continue with our example, the "malware-detected" condition might cause an endpoint's connectivity to be cut off, while "authentication-succeeded" might open up communication with services that require an endpoint to be first authenticated and then forward its authentication credentials.
+
+Conditions do not actually appear in the policy configuration model other than as a named reference.  To determine the set of conditions that apply to a particular endpoint, the endpoint will need to be looked up in the endpoint registry, and it associated condition labels retrieved from there.
+
+[red]*Clauses*
+
+Clauses are what will do the actual selection of subjects.  A clause has four lists of matchers in two categories.  In order for a clause to become active, all four lists of matchers must match.  A matching clause will select all the subjects referenced by the clause.  Note that an empty list of matchers counts as a match.
+
+The first category is the consumer matchers, which match against the consumer endpoint group and endpoints.  The consumer matchers are:
+
+Requirement matchers::
+matches against requirements in the matching consumer selector.
+Consumer condition matchers::
+matches against conditions on endpoints in the consumer endpoint group
+
+The second category is the provider matchers, which match against the provider endpoint group and endpoints.  The provider matchers are:
+
+Capability matchers::
+matches against capability in the matching provider selector.
+Provider condition matchers::
+matches against conditions on endpoints in the provider endpoint group
+
+Clauses have a list of subjects that apply when all the matchers in the clause match.  The output of the subject selection phase logically is a set of subjects that are in scope for any particular pair of endpoints.
+
+====== Rule Application
+
+Now that we have a list of subjects that apply to the traffic between a particular set of endpoints, we're ready to describe how we actually apply policy to allow those endpoints to communicate.  The applicable subjects from the previous step will each contain a set of rules.  
+
+Rules consist of a set of _classifiers_ and a set of _actions_.  Classifiers match against traffic between two endpoints.  An example of a classifier would be something that matches against all TCP traffic on port 80, or one that matches against HTTP traffic containing a particular cookie.  Actions are specific actions that need to be taken on the traffic before it reaches its destination.  Actions could include tagging or encapsulating the traffic in some way, redirecting the traffic, or applying some service chain.  For more information on how classifiers and actions are defined, see below under Subject Features.
+
+If and only if _all_ classifiers on a rule matches, _all_ the actions on that rule are applied (in order) to the traffic.  Only the first matching rule will apply.
+
+Rules, subjects, and actions have an _order_ parameter, where a lower order value means that a particular item will be applied first.  All rules from a particular subject will be applied before the rules of any other subject, and all actions from a particular rule will be applied before the actions from another rule.  If more than item has the same order parameter, ties are broken with a lexicographic ordering of their names, with earlier names having logically lower order.
+
+We've now reached final phase in the three-phases policy resolution process.  First, we found the set of contract scopes to apply.  Second, we found the set of subjects to apply.  Finally, we saw how we apply the subjects to traffic between pairs of endpoints in order to realize the policy.  The remaining sections of this document will fill in additional detail for the policy resolution process.
 
