@@ -1,0 +1,293 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa82b9bf_aa11e85e",
+        "filename": "manuals/developers-guide/src/main/asciidoc/snbi.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 2765
+      },
+      "writtenOn": "2014-09-23T13:30:26Z",
+      "side": 1,
+      "message": "More accurate wording would be:\n\"The Secure Network Bootstrapping Infrastructure (SNBI) component of OpenDaylight automatically creates secure IP connectivity between a set of forwarding elements (devices) and the controller.\"",
+      "revId": "095211d00f57368deeb47f9e19dc1e9e8a6be342",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_ca16ac55",
+        "filename": "manuals/developers-guide/src/main/asciidoc/snbi.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 2765
+      },
+      "writtenOn": "2014-09-23T13:30:26Z",
+      "side": 1,
+      "message": "Suggest to reword to:\n\n\"In the SNBI context, network bootstrapping involves discovering the device, authenticating a device, and installing the device domain certificate so that it becomes part of an administrative domain (\"SNBI domain\").\"",
+      "revId": "095211d00f57368deeb47f9e19dc1e9e8a6be342",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_8a08a42e",
+        "filename": "manuals/developers-guide/src/main/asciidoc/snbi.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 2765
+      },
+      "writtenOn": "2014-09-23T13:30:26Z",
+      "side": 1,
+      "message": "Suggest to reword to:\n\n\"* Automatic: Normal network bootstrapping involves manual configuration of network connectivity. To secure any control protocol connecting to the device, one typically needs to manually install certificates. SNBI fully automates the configuration of network connectivity (incl. IP address assignment, routing protocol configuration, etc) as well as the distribution and installation of certificates.\"",
+      "revId": "095211d00f57368deeb47f9e19dc1e9e8a6be342",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_2a05d813",
+        "filename": "manuals/developers-guide/src/main/asciidoc/snbi.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 2765
+      },
+      "writtenOn": "2014-09-23T13:30:26Z",
+      "side": 1,
+      "message": "Note that a device can be both - a controller or a forwarding element. If you want to be specific about a device which forwards packets, you should use \"forwarding element\" -- which is the official ODL nomenclature. Suggest to reword to:\n\n\n\"An SNBI implementation includes SNBI controllers and forwarding elements\".",
+      "revId": "095211d00f57368deeb47f9e19dc1e9e8a6be342",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_4a029c0c",
+        "filename": "manuals/developers-guide/src/main/asciidoc/snbi.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 2765
+      },
+      "writtenOn": "2014-09-23T13:30:26Z",
+      "side": 1,
+      "message": "Forwarding element component (SNBI agent)",
+      "revId": "095211d00f57368deeb47f9e19dc1e9e8a6be342",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_4cff1902",
+        "filename": "manuals/developers-guide/src/main/asciidoc/snbi.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 2765
+      },
+      "writtenOn": "2014-09-23T13:30:26Z",
+      "side": 1,
+      "message": "Thoughout the document: Please use \"portable foundation\" instead of \"container\". We use container technology to implement the \"portable foundation\".",
+      "revId": "095211d00f57368deeb47f9e19dc1e9e8a6be342",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_6c045d15",
+        "filename": "manuals/developers-guide/src/main/asciidoc/snbi.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 2765
+      },
+      "writtenOn": "2014-09-23T13:30:26Z",
+      "side": 1,
+      "message": "* Expand UDI on first usage (Unique Device Identifier).\n* Change \"SUDI\" to \"802.1AR compliant identifiers\"",
+      "revId": "095211d00f57368deeb47f9e19dc1e9e8a6be342",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_2c0e5535",
+        "filename": "manuals/developers-guide/src/main/asciidoc/snbi.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 2765
+      },
+      "writtenOn": "2014-09-23T13:30:26Z",
+      "side": 1,
+      "message": "Would recommend to decouple IPv6 address creation from receiving the domain name and ID. E.g.\n\n\"The device gets a domain name and ID. The device uses the domain name and ID to also derive its IPv6 which it\u0027ll use to communicate with other SNBI agents over the secure channel\".",
+      "revId": "095211d00f57368deeb47f9e19dc1e9e8a6be342",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_0c09112c",
+        "filename": "manuals/developers-guide/src/main/asciidoc/snbi.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 2765
+      },
+      "writtenOn": "2014-09-23T13:30:26Z",
+      "side": 1,
+      "message": "s/Yang/YANG/",
+      "revId": "095211d00f57368deeb47f9e19dc1e9e8a6be342",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_8c1c416c",
+        "filename": "manuals/developers-guide/src/main/asciidoc/snbi.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 2765
+      },
+      "writtenOn": "2014-09-23T13:30:26Z",
+      "side": 1,
+      "message": "s/portable foundation or container/portable foundation/",
+      "revId": "095211d00f57368deeb47f9e19dc1e9e8a6be342",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_4c2639bc",
+        "filename": "manuals/developers-guide/src/main/asciidoc/snbi.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 2765
+      },
+      "writtenOn": "2014-09-23T13:30:26Z",
+      "side": 1,
+      "message": "Where is the \"discovery protocol\" described in the text above?",
+      "revId": "095211d00f57368deeb47f9e19dc1e9e8a6be342",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_0c20319a",
+        "filename": "manuals/developers-guide/src/main/asciidoc/snbi.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 2765
+      },
+      "writtenOn": "2014-09-23T13:30:26Z",
+      "side": 1,
+      "message": "s/thus making network management easy/thus supporting network management/",
+      "revId": "095211d00f57368deeb47f9e19dc1e9e8a6be342",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_2c25f5aa",
+        "filename": "manuals/developers-guide/src/main/asciidoc/snbi.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 2765
+      },
+      "writtenOn": "2014-09-23T13:30:26Z",
+      "side": 1,
+      "message": "change to:\n\n\"Exposes a device as either a forwarding element or a controller\"",
+      "revId": "095211d00f57368deeb47f9e19dc1e9e8a6be342",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_ac3025e9",
+        "filename": "manuals/developers-guide/src/main/asciidoc/snbi.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 2765
+      },
+      "writtenOn": "2014-09-23T13:30:26Z",
+      "side": 1,
+      "message": "change to:\n\n\"Associates a device to an administrative domain\"",
+      "revId": "095211d00f57368deeb47f9e19dc1e9e8a6be342",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_6c521d15",
+        "filename": "manuals/developers-guide/src/main/asciidoc/snbi.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 2765
+      },
+      "writtenOn": "2014-09-23T13:30:26Z",
+      "side": 1,
+      "message": "Suggest to change the first sentence to:\n\"The SNBI component of the OpenDaylight Controller automatically creates secure network connectivity between devices. This connectivity can be leveraged by other features and functions to for example to install, controll and manage the life cycle of additional software components hosted within the portable foundation of a forwarding element.\"",
+      "revId": "095211d00f57368deeb47f9e19dc1e9e8a6be342",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_0c57d103",
+        "filename": "manuals/developers-guide/src/main/asciidoc/snbi.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 2765
+      },
+      "writtenOn": "2014-09-23T13:30:26Z",
+      "side": 1,
+      "message": "Note that FE is a generic term in OpenDaylight. Hence would recommend to change to simply say:\n\n\"FE:: Forwarding Element.\"",
+      "revId": "095211d00f57368deeb47f9e19dc1e9e8a6be342",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_6c79bd92",
+        "filename": "manuals/developers-guide/src/main/asciidoc/snbi.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 2765
+      },
+      "writtenOn": "2014-09-23T13:30:26Z",
+      "side": 1,
+      "message": "Change to:\n\n\"Portable foundation (PF):: Reference environment to host network functions, like the SNBI-agent, on devices. The PF provides infrastructure to help host network-centric software components on devices while decoupling them from the  Linux distribution and software load of the underlying host.\"",
+      "revId": "095211d00f57368deeb47f9e19dc1e9e8a6be342",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
