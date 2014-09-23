@@ -1,4 +1,117 @@
-== Secure Network Bootstrapping Infrastructure
+== SNBI Developers' Guide
+The Secure Network Bootstrapping Infrastructure (SNBI) component of OpenDaylight securely and automatically brings up an integrated set of network devices and controllers. 
 
-Chapter on Secure Network Bootstrapping Infrastructure
+=== Defining characteristics of SNBI bootstrapping
+Devices with common goals need to belong to the same network. Additionally, the network must be secure. An SNBI domain is a logical set of SNBI-enabled devices with a common intent. In the SNBI context,  bootstrapping involves authenticating a device, and installing the device domain certificate so that it becomes part of the SNBI domain. Bootstrapping of devices the SNBI way allows devices to trust one another within the same domain. A new device is deemed to be outside the domain until it is bootstrapped.
+
+SNBI bootstrapping is: +
+
+* Secure: Only devices on the white list of the SNBI registrar are allowed into a domain. The RA (Registrar Authority) and the CA (Certificate Authority) ensure that a secure channel of communication is established between the SNBI registrar and the devices, and also between the devices. SNBI uses Bouncy Castle to run the CA and sign certificates.
+* Automatic:  Normal bootstrapping requires manual intervention by way of bringing up the Linux containers, connecting to an Ethernet port, and installing certificates. SNBI automates the installation of certificates.
+
+=== SNBI components
+An SNBI implementation includes SNBI controllers and devices.
+
+* Device component +
+The software package for secure discovery service is created and integrated with the network container reference platform for the devices.
+
+* Controller components:
+** SNBI Registrar: The north-bound configuration manager that configures the south-bound SNBI plugin.
+:: The registrar establishes trust in a network domain thereby anchoring it.
+ 
+:: The SNBI registrar does the following: + 
+
+*** Maintains the white list of devices which belong to a domain. An administrator sets a white list for the registrar for every domain.
+*** Decides in accordance with policy rules as to which devices are admitted to a domain. 
+*** Manages certificates: Issues, renews, and revokes certificates as a CA. Certificate management is fully self-contained in the SNBI solution.
+** SNBI plugin +
+The secure discovery service is a southbound plugin that runs the SNBI protocol.
+
+==== Forwarding element components
+The SNBI functions in the Forwarding Elements (FEs) are implemented inside lightweight portable foundations. 
+
+===== Portable Foundation
+The SNBI portable foundation can use any light weight portable container technology that provides a protected and isolated application execution environment. The current SNBI implementation utilizes Docker, a light weight container mechanism supported by the current Linux kernels.
+
+=== How SNBI works
+An administrator plugs in a device thereby introducing it into a domain. When a forwarding element discovers the new device, it acts as an intermediary between the new device and the registrar, and proxies all device requests to the registrar.
+
+A device gets a neighbour invite request from the registrar which is forwarded by a proxy forwarding element. The device presents its UDI to the registrar through the proxy. The UDI could be anything, a serial number, a SUDI, or others. The proxy sends the credentials to the registrar for validation. Upon validation, the device sends a Certificate Sign Request (CSR) PKCS10 request and gets it signed by the CA running at the SNBI Registrar. The CA enrols and signs an x.509 certificate. 
+
+The device gets a domain name and ID which it then uses to generate an IPv6 address for itself. The device is now bootstrapped, and is accommodated in the domain.
+
+==== Bootstrapping a device using SNBI
+To bootstrap a device using SNBI: +
+
+. In the Yang model of the REST API for SNBI, enter the names of devices per domain to be bootstrapped. The registrar includes this information in its white list.
+. Plug in the device to be bootstrapped.
+
+==== Controller and FE communications
+
+.Communication between the controller and FE
+image::Controller-fe-communication-channels.png[]
+
+*SNBI between controller and portable foundation or container* +
+The SNBI-plugin on the Controller and the SNBI agent on the "first hop" FE establishes a DTLS/SSL connection to secure their communication. It is assumed that the device or server which runs the Controller runs an instance of the portable foundation or container. This allows for SNBI to automatically establish a secure IP connectivity throughout the network without the need to pre-configure any IP connectivity between the devices in the network. If the Controller is hosted on a device which does not run an instance of an SNBI-agent within a portable foundation, then IP connectivity between the Controller and the "first hop" FE which runs an instance of an SNBI-agent within a portable foundation needs to be configured by other means (for example,  manually). 
+It is recommended that the Controller always be hosted on a device (server) which also runs an instance of the SNBI-agent within the portable foundation.
+
+*SNBI agent discovery* +
+SNBI-agents discover each other through the above described discovery protocol. 
+
+*Secure communication between devices* +
+SNBI agents establish a secure channel among themselves, which is typically an IPsec connection. Once the secure channel is established, other services running on the same host (be it a forwarding element or a controller) can leverage the secure IP connectivity for their means. In Figure 1, an example "protocol x plugin" leverages the secure channel to communicate between different instances of protocol x. Example protocols which could use the secure channel include OpenFlow, and Netconf. The protocols need not establish their own secure transport (for example, using DTLS/SSL). 
+Any protocol can, of course, establish its own additional secure transport on top of the already secure connectivity provided by SNBI. 
+
+*Configuration control between SNBI-agent and underlying host OS* +
+An SNBI-agent hosted in a portable foundation or container controls and retrieves certain configuration parameters through a RESTconf/Netconf interface. This includes: +
+
+* The establishment and configuration of the secure channel (that is to say, the IPsec connection).
+* Routing table control.
+* The retrieval of a UDI.
+
+The configuration interface between container and underlying host is based on standard IETF YANG models (https://tools.ietf.org/html/rfc7223[RFC 7223] for interface configuration, draft-ietf-netmod-routing-cfg for route management, and others). 
+
+This approach decouples the underlying host and its configuration specifics from the portable foundation or container hosting environment, and allows for the simplified portability of the portable foundation.
+
+==== Benefits of SNBI discovery
+The automatic discovery between SNBI devices and controllers: 
+
+* Reveals the physical topology of the network thus making network management easy
+* Exposes a component as either a regular network device or a controller
+* Assigns the domain for each device
+* Makes possible the initiation of controller federation processes through device type and domain information
+
+The SNBI component of ODL creates the basic infrastructure to host, run, and manage the life cycle of multiple network components or functions within a network device. These components or functions can include individual network element services, such as performance measurement, traffic-sniffing functionality, or traffic transformation functionality.
+The portable foundation built on container technology can be extended to support additional orchestration and configuration management functions.
+
+==== SNBI: Non-ODL technologies used
+
+* Yang models: The SNBI APIs are defined through Yang.
+
+:: RFC 6020 ‘YANG - A Data Modeling Language for the Network Configuration Protocol (NETCONF) is available at:
+http://tools.ietf.org/html/rfc6020
+
+* Docker 
+SNBI uses lightweight portable foundations to implement SNBI functions in FEs. The SNBI portable foundation in the current implementation uses Docker and Linux kernels. SNBI uses Docker to start the container in a host, and pass needed parameters, such as the CID, by means of environment variables into the container.
+
+:: Information on the Docker open platform is available at:
+https://www.docker.com/
+
+==== SNBI terms and definitions
+
+SNBI Domain:: A logical set of devices with common goals
+Registrar::  SNBI software that acts as a domain trust anchor, incorporating both RA and CA functions to bootstrap new devices
+UDI:: Unique device identifier
+FE:: Any forwarding, SNBI-enabled device (other than the controller) that has been bootstrapped by a registrar
+Portable foundation:: Light weight portable container that implements SNBI functions
+SNBI RA:: The Registration Authority module that authenticates new devices 
+SNBI CA:: The Certificate Authority module that signs device certificates
+
+
+
+
+
+
+
+
 
