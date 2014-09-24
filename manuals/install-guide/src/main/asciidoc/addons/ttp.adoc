@@ -1,0 +1,15 @@
+== Table Type Patterns
+
+Once the karaf distribution is downloaded and running, it is suggested that you install the following features:
+
+* +standard+
+* +odl-restconf+
+* +odl-mdsal-broker+
+* +odl-mdsal-apidocs+
+* +odl-ttp-model+
+
+This can be done as a single command at the Karaf CLI:
+
++feature:install standard odl-restconf odl-mdsal-broker odl-mdsal-apidocs odl-ttp-model+
+
+Technically, the +odl-restconf+ and  +odl-mdsal-apidocs+ features are not required for operation, but they enable you to verify the installation has worked and provide REST interfaces.
