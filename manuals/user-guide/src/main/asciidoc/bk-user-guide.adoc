@@ -26,19 +26,39 @@ Preface Sub-section
 ~~~~~~~~~~~~~~~~~~~
 Preface sub-section body.
 
+//////////////////////////
+Please note and leave the blank line between include statements here.
+
+It is a defensive measure to prevent individual projects' .adoc files
+from eating the next section if they forget to leave a blank line at
+the end of their file.
+//////////////////////////
 include::addons/aaa.adoc[]
+
 include::addons/bgpcep.adoc[]
+
 include::addons/defense4all.adoc[]
+
 include::addons/groupbasedpolicy.adoc[]
+
 include::addons/l2switch.adoc[]
+
 include::addons/lispflow.adoc[]
+
 include::addons/ovsdb.adoc[]
+
 include::addons/pcmm.adoc[]
+
 include::addons/plugin2oc.adoc[]
+
 include::addons/sfc.adoc[]
+
 include::addons/snbi.adoc[]
+
 include::addons/snmp4sdn.adoc[]
+
 include::addons/vtn.adoc[]
+
 include::addons/yangtools.adoc[]
 
 :numbered!:
