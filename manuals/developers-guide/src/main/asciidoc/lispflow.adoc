@@ -3,13 +3,13 @@
 Chapter on LISP Flow Mapping
 
 
-=== OpenDaylight Locator ID Separation Protocol (LISP) Flow Mapping Overview
+=== OpenDaylight Locator/ID Separation Protocol (LISP) Flow Mapping Overview
 
-Locator ID Separation Protocol (LISP) is a technology that provides a flexible map-and-encap framework that can be used for overlay network applications, such as data center network virtualization, and Network Function Virtualization (NFV). 
+http://tools.ietf.org/html/rfc6830[Locator/ID Separation Protocol (LISP)] is a technology that provides a flexible map-and-encap framework that can be used for overlay network applications, such as data center network virtualization, and Network Function Virtualization (NFV).
 LISP introduces two name spaces: 
 
-* Endpoint Identifiers (EIDs)
-* Routing Locators (RLOCs)
+* http://tools.ietf.org/html/rfc6830#page-6[Endpoint Identifiers (EIDs)]
+* http://tools.ietf.org/html/rfc6830#section-3[Routing Locators (RLOCs)]
 
 In a virtualization environment EIDs can be viewed as virtual address space and RLOCs can be viewed as physical network address space. 
 
@@ -26,7 +26,7 @@ LISP data plane Tunnel Routers are available at http://LISPmob.org/[LISPmob.org]
 * Android 
 * OpenWRT 
 
-For more details and support for LISP data plane software please visit http://LISPmob.org/[LISPmob.org].
+For more details and support for LISP data plane software please visit http://LISPmob.org/[the LISPmob web site].
 
 === LISP Flow Mapping Service
 
@@ -62,17 +62,23 @@ A brief description of each module follows:
 
 The LISP Flow Mapping service has JAVA APIs and REST APIs. The Java API reference documentation is auto-generated from the Java build and is available at:
 
-* https://jenkins.opendaylight.org/lispflowmapping/job/lispflowmapping-merge-develop/lastSuccessfulBuild/artifact/target/apidocs/index.html[JAVA APIs]
+* https://jenkins.opendaylight.org/lispflowmapping/job/lispflowmapping-merge-develop/247/artifact/target/apidocs/index.html[JAVA APIs]
 
 Below you will find the detailed information about the module's REST resources and their verbs (description, URI, parameters, responses, and status codes), schemas, example XML, example JSON, as well as programming examples.
 
-* https://jenkins.opendaylight.org/lispflowmapping/job/lispflowmapping-merge-develop/lastSuccessfulBuild/artifact/mappingservice/northbound/target/site/wsdocs/index.html[REST APIS]
+* https://jenkins.opendaylight.org/lispflowmapping/job/lispflowmapping-merge-develop/247/artifact/mappingservice/northbound/target/site/wsdocs/index.html[REST APIS]
 
+//TODO Need to update the links once the stable/helium branch is cut and the corresponding Jenkins merge job is created.  For now, instead of 'lastSuccessfulBuild' let's use the merge job corresponding to the commit that's supposed to be released as Helium
 
 === LISP Configuration Options
 
-//TODO
-Lori to fill here with Config.ini notes
+The +etc/custom.properties+ file in the Karaf distribution allows configuration of several OpenDaylight parameters.  The LISP service has two properties that can be adjusted: +lisp.mappingOverwrite+ and +lisp.smr+.
+
+*lisp.mappingOverwrite* (default: 'true')::
+    Configures handling of mapping updates.  When set to 'true' (default) a mapping update (either through the southbound plugin via a Map-Register message or through a northbound API PUT REST call) the existing RLOC set associated to an EID prefix is overwritten.  When set to 'false', the RLOCs of the update are merged to the existing set.
+
+*lisp.smr* (default: 'false')::
+    Enables/disables the http://tools.ietf.org/html/rfc6830#section-6.6.2[Solicit-Map-Request (SMR)] functionality.  SMR is a method to notify changes in an EID-to-RLOC mapping to "subscribers".  The LISP service considers all Map-Request's source RLOC as a subscriber to the requested EID prefix, and will send an SMR control message to that RLOC if the mapping changes.
 
 === Developer Tutorial
 
@@ -380,9 +386,9 @@ You can also reach us at the following channel on IRC:
 
 This chapter provides guidelines for installation directly from the lispflowmapping repository.
 
-==== Setting up Gerritt
+==== Setting up Gerrit
 
-Code reviews are enabled through Gerrit. For setting up gerritt, see https://wiki.opendaylight.org/view/OpenDaylight_Controller:Gerrit_Setup[Set up Gerrit]. 
+Code reviews are enabled through Gerrit. For setting up gerrit, see https://wiki.opendaylight.org/view/OpenDaylight_Controller:Gerrit_Setup[Set up Gerrit].
 
 NOTE: You will need to perform the Gerrit Setup before you can access git via ssh as described below. 
 
@@ -390,22 +396,19 @@ NOTE: You will need to perform the Gerrit Setup before you can access git via ss
 
 Pull the code by cloning the LispFlowMapping repository. 
 
-[literal]
-git clone ssh://<username>@git.opendaylight.org:29418/lispflowmapping.git
+ git clone ssh://<username>@git.opendaylight.org:29418/lispflowmapping.git
 
 or if you just want to do an anonymous git clone, you can use: 
 
-[literal]
-git clone https://git.opendaylight.org/gerrit/p/lispflowmapping.git
+ git clone https://git.opendaylight.org/gerrit/p/lispflowmapping.git
 
 ==== Setting up Gerrit Change-id Commit Message Hook 
 
 This command inserts a unique Change-Id tag in the footer of a commit message. This step is optional but highly recommended for tracking changes. 
 
-[literal]
-cd lispflowmapping
-scp -p -P 29418 <username>@git.opendaylight.org:hooks/commit-msg .git/hooks/
-chmod 755 .git/hooks/commit-msg
+ cd lispflowmapping
+ scp -p -P 29418 <username>@git.opendaylight.org:hooks/commit-msg .git/hooks/
+ chmod 755 .git/hooks/commit-msg
 
 Install and setup gitreview. The instaructions can be found at http://www.mediawiki.org/wiki/Gerrit/git-review#Installation%7Chere[here].
 
@@ -425,20 +428,17 @@ The following tasks are used to help you hack the code.
 	
 *Build the code*
 
-[literal]
-mvn clean install
+ mvn clean install
 
 To run without unitests you can skip building those tests running the following: 
 
-[literal]
-mvn clean install -DskipTests 
-/* instead of "mvn clean install" */
+ mvn clean install -DskipTests
+ /* instead of "mvn clean install" */
 
 *Run the controller*
 
-[literal]
-cd distribution-karaf/target/assembly/bin
-./karaf
+ cd distribution-karaf/target/assembly/bin
+ ./karaf
 
 At this point the ODL controller is running. Open a web browser and oint your browser at http://localhost:8080/ 
 
@@ -478,44 +478,37 @@ Developer's Certificate of Origin 1.1
 			
 *Mechanically you do it this way*:
 
-[literal]
-git commit --signoff
+ git commit --signoff
 
 You will be prompted for a commit message. If you are fixing a buzilla bug you can add the associated bug number to your commit message and it will get linked from Gerrit: 
 
+Example:
 
-==========================
-.For Example:
-
+----
 Fix for bug 2.
 
 Signed-off-by: Ed Warnicke <eaw@cisco.com>
 
-# Please enter the commit message for your changes. Lines starting + 
-# with '#' will be ignored, and an empty message aborts the commit. + 
-# On branch develop + 
-# Changes to be committed: + 
-#   (use "git reset HEAD <file>..." to unstage) + 
-# + 
-#       modified:   README + 
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch develop
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
 #
-==========================
+#       modified:   README
+#
+----
 
 ==== Pushing the Code via Git CLI
 
 Use gitreview to push your changes back to the remote repository using: 
 
-[literal]
-git review
+ git review
 
 You can set a topic for your patch by:
 
-[literal]
-git review -t <topic>
+ git review -t <topic>
 
 The Jenkins Controller User will verify your code. 
 
 Once your code has been reviewed and submitted by a committer it will be merged into the authoritative repository.
-
-
-
