@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa82b9bf_3bba09e2",
+        "filename": "manuals/install-guide/src/main/asciidoc/general_installation.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2014-09-25T22:08:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa82b9bf_5beeed23",
+      "revId": "163549367490cd1a61de371dc1be6ed484d07ccd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa82b9bf_9bba3509",
         "filename": "manuals/install-guide/src/main/asciidoc/general_installation.adoc",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2014-09-25T20:50:12Z",
       "side": 1,
       "message": "Could you change the Component Name from \"VTN OpenStack Neutron\" to \"VTN Manager\"?\n\nSince VTN Manager is not a feature only for OpenStack Neutron, I think \"VTN Manager\" is a more appropriate name here.",
+      "revId": "163549367490cd1a61de371dc1be6ed484d07ccd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_9bed55f2",
+        "filename": "manuals/install-guide/src/main/asciidoc/general_installation.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2014-09-25T22:08:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa82b9bf_9bba3509",
       "revId": "163549367490cd1a61de371dc1be6ed484d07ccd",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
