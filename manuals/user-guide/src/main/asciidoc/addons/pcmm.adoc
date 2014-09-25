@@ -24,7 +24,7 @@ The initial southbound transport has been written to the following version of th
 
 == Architecture Overview
 .Architecture Overview
-image::pcmm-docsis.jpg["Architecture Overview", width=512]
+image::pcmm-docsis.png["Architecture Overview", width=512]
 
 The OpenDaylight Packetcable PCMM includes:
 
@@ -40,7 +40,7 @@ The following figure shows the various Packetcable PCMM modules.
 
 .Packetcable PCMM Service Internal Architecture
 
-image::pcmm-technical-arch-overview-helium.jpg["Packetcable PCMM Service Internal Architecture", width=460]
+image::pcmm-technical-arch-overview-helium.png["Packetcable PCMM Service Internal Architecture", width=460]
 
 A brief description of some of what this feature has to offer:
 
