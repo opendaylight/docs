@@ -47,6 +47,7 @@ Optional part introduction goes here.
 //////////////////////////
 
 
+
 //////////////////////////
 Please note and leave the blank line between include statements here.
 
@@ -54,6 +55,8 @@ It is a defensive measure to prevent individual projects' .adoc files
 from eating the next section if they forget to leave a blank line at
 the end of their file.
 //////////////////////////
+include::general_installation.adoc[]
+
 include::addons/aaa.adoc[]
 
 include::addons/bgpcep.adoc[]
