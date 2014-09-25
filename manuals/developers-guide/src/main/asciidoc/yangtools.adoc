@@ -52,22 +52,22 @@ After the package name is generated check it in if it contains any JAVA key word
 
 List of key words which are prefixed with underscore:
 
-[sourceperl]
-
-    abstract, assert, boolean, break, byte, case, catch, char, class, const, continue, default, double, do, else, enum, extends, false, final, finally, float, for, goto, if, implements, import, instanceof, int, interface, long, native, new, null, package, private, protected, public, return, short, static, strictfp, super, switch, synchronized, this, throw, throws, transient, true, try, void, volatile, while
+---------
+abstract, assert, boolean, break, byte, case, catch, char, class, const, continue, default, double, do, else, enum, extends, false, final, finally, float, for, goto, if, implements, import, instanceof, int, interface, long, native, new, null, package, private, protected, public, return, short, static, strictfp, super, switch, synchronized, this, throw, throws, transient, true, try, void, volatile, while
+---------
 
 As an example suppose following yang model:
 
-[sourceperl]
-
-    module module {
-    namespace <font color="blue">"urn:2:case#module"</font color>
+---------
+module module {
+    namespace "urn:2:case#module";
     prefix "sbd";
     organization "OPEN DAYLIGHT";
     contact "http://www.whatever.com/";
-    revision <font color="violet">2013-07-09</font color> {        
+    revision 2013-07-09 {
     }
 }
+---------
 
 == Additional Packages
 In cases where the superior YANG elements contain specific subordinate YANG elements additional packages are generated. Table below provides details of superior and subordinate elements: 
@@ -87,8 +87,7 @@ In cases where the superior YANG elements contain specific subordinate YANG elem
 Subordinate elements are not mapped only to JAVA Getter methods in the interface of superior element but, they also generate packages with names consisting of superior element package name and superior element name.
 In the example YANG model considers the container element _cont_ as the direct subelement of the module.
 
-[sourceperl]
-
+---------
  container cont { 
    container cont-inner {
    }
@@ -97,6 +96,7 @@ In the example YANG model considers the container element _cont_ as the direct s
      }
    }
  }
+---------
 
 Container _cont_ is the superior element for the subordinate elements _cont-inner_ and _outter-list_.
 
@@ -108,8 +108,7 @@ JAVA code is generated in the following structure: +
 	** ContInner.java 
 	** OutterList.java 
 
-[sourceperl]
-
+---------
  container cont { 
    container cont-inner {
    }
@@ -118,6 +117,7 @@ JAVA code is generated in the following structure: +
      }
    }
  }
+---------
  
 _list outter-list_ is superior element for subordinate element _list-in-list_ 
 
