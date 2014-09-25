@@ -26,27 +26,55 @@ Preface Sub-section
 ~~~~~~~~~~~~~~~~~~~
 Preface sub-section body.
 
+//////////////////////////
+Please note and leave the blank line between include statements here.
+
+It is a defensive measure to prevent individual projects' .adoc files
+from eating the next section if they forget to leave a blank line at
+the end of their file.
+//////////////////////////
 include::overview.adoc[]
+
 include::section_Git_and_Gerrit_Setup.adoc[]
+
 include::aaa.adoc[]
+
 include::bgpcep.adoc[]
+
 include::controller.adoc[]
+
 include::defense4all.adoc[]
+
 include::dlux.adoc[]
+
 include::groupbasedpolicy.adoc[]
+
 include::l2switch.adoc[]
+
 include::lispflow.adoc[]
+
 include::odlsdni.adoc[]
+
 include::openflowlibrary.adoc[]
+
 include::openflowplugin.adoc[]
+
 include::ovsdb.adoc[]
+
 include::pcmm.adoc[]
+
 include::plugin2oc.adoc[]
+
 include::sfc.adoc[]
+
 include::snbi.adoc[]
+
 include::snmp4sdn.adoc[]
+
 include::tcpmd5.adoc[]
+
 include::vtn.adoc[]
+
 include::yangtools.adoc[]
 
 :numbered!:
