@@ -27,8 +27,8 @@ packetcable is comprised of three OpendayLight bundles
 | Bundle|Description
 | packetcable-model | Contains the YANG information model for flows and nodes
 | packetcable-provider | Provider hosts the model processing, RESTCONF, API implementation, and brokers requests to consumer
-| packetcable-driver | The codec for transforming the model into the appropriate PCMM Gate message for flows and CMTS connections
-| packetcable-consumer | The consumer is the codec for nodes and flows to gate messages
+| packetcable-driver | Driver manages PCMM Gate message over COPS for flows and CMTS connections
+| packetcable-consumer | Consumer is the codec for for transforming the model of nodes and flows to COPS Gate messages
 |=======================
 
 
@@ -36,11 +36,11 @@ See link:https://git.opendaylight.org/gerrit/gitweb?p=packetcable.git;a=tree;f=p
 
 === Download and Install
 
-Current instructions pertain to RC1
+Current instructions 
 
 ==== Download
 
-link:http://nexus.opendaylight.org/content/groups/staging/org/opendaylight/integration/distribution-karaf/0.2.0-Helium-RC1/distribution-karaf-0.2.0-Helium-RC1.zip[Download]
+link:http://nexus.opendaylight.org/content/groups/staging/org/opendaylight/integration/distribution-karaf/0.2.0-Helium/distribution-karaf-0.2.0-Helium.zip[Download]
 
 
 http://nexus.opendaylight.org/content/groups/staging/org/opendaylight/integration/distribution-karaf/
@@ -48,34 +48,34 @@ http://nexus.opendaylight.org/content/groups/staging/org/opendaylight/integratio
 ==== Unzip
 [source, text]
 ----
-unzip distribution-karaf-0.2.0-Helium-RC1.zip
+unzip distribution-karaf-0.2.0-Helium.zip
 ----
 
 
 ==== Run Karaf
 [source, text]
 ----
-cd distribution-karaf-0.2.0-Helium-RC1/bin/
+cd distribution-karaf-0.2.0-Helium/bin/
 ./karaf
 ----
 
 === Preparing to Work with the Packetcable PCMM Service 
 
-==== Minimum install procedure?
+==== Minimum install procedure
 
 [source, text]
 ----
 opendaylight-user@root>feature:install odl-packetcable-all
 ----
 
-==== What features should we install?
+==== Useful Features to Start with PCMM
 
 [source, text]
 ----
-opendaylight-user@root>feature:install odl-l2switch-switch odl-restconf odl-mdsal-broker odl-restconf odl-adsal-all odl-openflowplugin-flow-services odl-openflowjava-protocol odl-ovsdb-all  odl-openflow-nxm-extensions odl-adsal-compatibility  odl-dlux-core odl-packetcable-all odl-mdsal-apidocs odl-mdsal-xsql
+opendaylight-user@root>feature:install odl-restconf odl-l2switch-switch  odl-dlux-core  odl-mdsal-apidocs odl-packetcable-all
 ----
 
-==== How is ODL auto starting a series of bundles using Karaf?
+==== Auto Starting a Series of Bundles using Karaf
 
 Edit etc/org.apache.karaf.features.cfg ‘featuresBoot' 
 [source, text]
@@ -83,48 +83,14 @@ Edit etc/org.apache.karaf.features.cfg ‘featuresBoot'
 #
 # Comma separated list of features to install at startup
 #
-featuresBoot=config,standard,region,package,kar,ssh,management,odl-l2switch-switch,odl-restconf,odl-mdsal-broker,odl-restconf,odl-adsal-all,odl-openflowplugin-flow-services,odl-openflowjava-protocol,odl-ovsdb-all,odl-openflow-nxm-extensions,odl-adsal-compatibility,,odl-dlux-core,odl-packetcable-all,odl-mdsal-apidocs,odl-mdsal-xsql
+featuresBoot=config,standard,region,package,kar,ssh,management,odl-restconf,odl-l2switch-switch,odl-dlux-core,odl-mdsal-apidocs,odl-packetcable-all
 
 ----
 
-==== How can I create a system service to start Karaf?
-
-Install link:http://karaf.apache.org/manual/latest/users-guide/wrapper.html[Karaf Service Wrapper]
-[source, text]
+==== Starting Karaf as System Service
 ----
-opendaylight-user@root>feature:install service-wrapper
-opendaylight-user@root> wrapper:install
-Creating file: /home/user/odl/distribution-karaf-0.2.0-Helium-RC0/bin/karaf-wrapper
-Creating file: /home/user/odl/distribution-karaf-0.2.0-Helium-RC0/bin/karaf-service
-Creating file: /home/user/odl/distribution-karaf-0.2.0-Helium-RC0/etc/karaf-wrapper.conf
-Creating file: /home/user/odl/distribution-karaf-0.2.0-Helium-RC0/lib/libwrapper.so
-Creating file: /home/user/odl/distribution-karaf-0.2.0-Helium-RC0/lib/karaf-wrapper.jar
-Creating file: /home/user/odl/distribution-karaf-0.2.0-Helium-RC0/lib/karaf-wrapper-main.jar
-
-Setup complete.  You may wish to tweak the JVM properties in the wrapper configuration file:
-/home/user/odl/distribution-karaf-0.2.0-Helium-RC0/etc/karaf-wrapper.conf
-before installing and starting the service.
-
-
-Ubuntu/Debian Linux system detected:
-  To install the service:
-    $ ln -s /home/user/odl/distribution-karaf-0.2.0-Helium-RC0/bin/karaf-service /etc/init.d/
-
-  To start the service when the machine is rebooted:
-    $ update-rc.d karaf-service defaults
-
-  To disable starting the service when the machine is rebooted:
-    $ update-rc.d -f karaf-service remove
-
-  To start the service:
-    $ /etc/init.d/karaf-service start
-
-  To stop the service:
-    $ /etc/init.d/karaf-service stop
-
-  To uninstall the service :
-    $ rm /etc/init.d/karaf-service
-
+cd distribution-karaf-0.2.0-Helium/
+sudo bin/start
 ----
 
 ===== Accessing the Karaf Console
@@ -144,7 +110,7 @@ Ubuntu/Debian Linux system detected:
 ===== Tell a Bundle to Log Debug
 [source, text]
 ----
-    log:set  org.opendaylight.packetcable.packetcable-provider
+    log:set  org.opendaylight.packetcable
 ----
 
 
@@ -661,11 +627,6 @@ or save the flow. Note: The Table ID is not used.
 | 201
 |===
 
-
-=== Running the Packetcable PCMM project
-If you need additional resources, you can use these command line arguments:
-
- -Xms1024m -Xmx2048m -XX:PermSize=512m -XX:MaxPermSize=1024m
 
 
 === Specifications and References
