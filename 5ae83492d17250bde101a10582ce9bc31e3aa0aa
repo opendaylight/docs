@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "fa82b9bf_201414f4",
+        "filename": "manuals/developers-guide/src/main/asciidoc/section_Hacking_from_CLI.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 654
+      },
+      "writtenOn": "2014-09-25T09:08:09Z",
+      "side": 1,
+      "message": "Agree. But for some reason that I am not aware of, Colin and Divya added these in their patch on lisp.",
+      "parentUuid": "fa82b9bf_405ef8ea",
+      "revId": "5ae83492d17250bde101a10582ce9bc31e3aa0aa",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa82b9bf_a0682488",
         "filename": "manuals/developers-guide/src/main/asciidoc/section_Hacking_from_CLI.adoc",
         "patchSetId": 2
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "fa82b9bf_c0f8c8c6",
+        "filename": "manuals/developers-guide/src/main/asciidoc/section_Hacking_from_CLI.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 654
+      },
+      "writtenOn": "2014-09-25T09:08:09Z",
+      "side": 1,
+      "message": "The thing is I dont know if the karaf distribution directory is named the same way for all projects. So I tried to stay general. I think for many projects it is just distribution, and for some distribution-karaf.",
+      "parentUuid": "fa82b9bf_a0682488",
+      "revId": "5ae83492d17250bde101a10582ce9bc31e3aa0aa",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa82b9bf_0058f0f8",
         "filename": "manuals/developers-guide/src/main/asciidoc/section_Hacking_from_CLI.adoc",
         "patchSetId": 2
@@ -64,6 +100,24 @@
       "writtenOn": "2014-09-25T08:54:28Z",
       "side": 1,
       "message": "Unnecessary \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d",
+      "revId": "5ae83492d17250bde101a10582ce9bc31e3aa0aa",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_8002c0b2",
+        "filename": "manuals/developers-guide/src/main/asciidoc/section_Hacking_from_CLI.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 654
+      },
+      "writtenOn": "2014-09-25T09:08:09Z",
+      "side": 1,
+      "message": "This is a copy of wiki content.",
+      "parentUuid": "fa82b9bf_0058f0f8",
       "revId": "5ae83492d17250bde101a10582ce9bc31e3aa0aa",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
