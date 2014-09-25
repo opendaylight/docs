@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa82b9bf_6063fcb1",
+        "filename": "manuals/developers-guide/src/main/asciidoc/section_Hacking_from_CLI.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 491
+      },
+      "writtenOn": "2014-09-25T08:54:28Z",
+      "side": 1,
+      "message": "Some trailing spaces throughout the file.",
+      "revId": "5ae83492d17250bde101a10582ce9bc31e3aa0aa",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_405ef8ea",
+        "filename": "manuals/developers-guide/src/main/asciidoc/section_Hacking_from_CLI.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 491
+      },
+      "writtenOn": "2014-09-25T08:54:28Z",
+      "side": 1,
+      "message": "There is no need for the four dashes when you indent one space, they are useful for large copy/paste text where don\u0027t want to indent.  Text version is clearer without them.",
+      "revId": "5ae83492d17250bde101a10582ce9bc31e3aa0aa",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_a0682488",
+        "filename": "manuals/developers-guide/src/main/asciidoc/section_Hacking_from_CLI.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 491
+      },
+      "writtenOn": "2014-09-25T08:54:28Z",
+      "side": 1,
+      "message": "I would suggest changing to the target/assembly directory, since that\u0027s sort of the Karaf root, from where you have the bin/, etc/, data/, log/ directories, and then running bin/karaf",
+      "revId": "5ae83492d17250bde101a10582ce9bc31e3aa0aa",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_0058f0f8",
+        "filename": "manuals/developers-guide/src/main/asciidoc/section_Hacking_from_CLI.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 491
+      },
+      "writtenOn": "2014-09-25T08:54:28Z",
+      "side": 1,
+      "message": "Unnecessary \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d",
+      "revId": "5ae83492d17250bde101a10582ce9bc31e3aa0aa",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
