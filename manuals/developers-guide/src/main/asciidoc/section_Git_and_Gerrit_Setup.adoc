@@ -18,7 +18,7 @@ NOTE: If you already have an OpenDaylight account, you can click *Sign In* in th
 
 .Signing in to OpenDaylight account
 
-image::Sign_in.jpg[Signing in to OpenDaylight account]
+image::Sign_in.jpg["Signing in to OpenDaylight account",width=500]
 
 [start=2]
 
@@ -29,7 +29,7 @@ The *WS02 Identity Server* page is displayed.
 
 .Gerrit Account signup/management link
 
-image::Gerrit_setup.jpg[Account signup/management link]
+image::Gerrit_setup.jpg["Account signup/management link",width=500]
 
 [start=3]
 
@@ -103,7 +103,7 @@ Your public key is now available as *.ssh/id_rsa.pub* in your home folder.
 
 .Signin in to OpenDaylight repository
 
-image::Sign_in.jpg[Signin in to OpenDaylight repository]
+image::Sign_in.jpg["Signin in to OpenDaylight repository",width=500]
 
 [start=3]
 . Click your name in the top right corner of the window and then click *Settings*.
@@ -112,7 +112,7 @@ The *Settings* page is displayed.
 
 .Settings page for your Gerrit account
 
-image::Gerrit_settings.jpg[Settings page for your Gerrit account]
+image::Gerrit_settings.jpg["Settings page for your Gerrit account",width=500]
 
 [start=4]
 . Click *SSH Public Keys* under *Settings*.
