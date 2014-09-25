@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa82b9bf_b254fe21",
+        "filename": "manuals/developers-guide/src/main/asciidoc/aaa.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1120
+      },
+      "writtenOn": "2014-09-25T00:22:35Z",
+      "side": 1,
+      "message": "There are 3 ways a user may authenticate in OpenDaylight:\n1) Token-based Authentication\n    a) Direct authentication:  A user presents username/password and a domain he/she wishes to access to the controller and obtains a timed (default is 1 hour) scoped access token.  The user can then uses this token to access Restconf for example.\n    b) Federated authentication:  A user presents credentials to a third-party Identity Provider (e.g., SSSD) trusted by the controller.  Upon successful authentication, the controller returns a refresh (unscoped) token with a list of domains that the user has access to.  The user then presents this refresh token scoped to a domain that he/she has access to to obtain a scoped access token.  The user can then uses this access token to access Restconf for example.\n\n2) Basic Authentication\n   For backward compatibility with the Hydrogen release, the controller also supports the normal basic authentication with username/password.",
+      "revId": "d22f2d8a724cfb3b38dcf25c50e070e34c2e113b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_b27ddeb3",
+        "filename": "manuals/developers-guide/src/main/asciidoc/aaa.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1120
+      },
+      "writtenOn": "2014-09-25T00:22:35Z",
+      "side": 1,
+      "message": "We may want to define what a domain is.  In OpenDaylight, a domain is a grouping of resources (direct or indirect, physical, logical, or virtual) for the purpose of access control.",
+      "revId": "d22f2d8a724cfb3b38dcf25c50e070e34c2e113b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_72367605",
+        "filename": "manuals/developers-guide/src/main/asciidoc/aaa.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1120
+      },
+      "writtenOn": "2014-09-25T00:22:35Z",
+      "side": 1,
+      "message": "I am not sure I understand the above sentence.  I think it is ok to leave that out, since it might cause confusion.",
+      "revId": "d22f2d8a724cfb3b38dcf25c50e070e34c2e113b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_f22126b5",
+        "filename": "manuals/developers-guide/src/main/asciidoc/aaa.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1120
+      },
+      "writtenOn": "2014-09-25T00:22:35Z",
+      "side": 1,
+      "message": "I think the terms and definitions should be moved up before we describe the different authentication modes.",
+      "revId": "d22f2d8a724cfb3b38dcf25c50e070e34c2e113b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
