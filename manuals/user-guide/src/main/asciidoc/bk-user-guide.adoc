@@ -1,103 +1,12 @@
 [[bk-user-guide]]
 = OpenDaylight User Guide
-:docinfo:
 
+== Table of Contents
 
-[dedication]
-Example Dedication
-------------------
-Optional dedication.
+link:ch-introduction.adoc[OpenDaylight Controller Overview]
 
-This document is an AsciiDoc book skeleton containing briefly
-annotated example elements plus a couple of example index entries and
-footnotes.
+link:dlux-userguide.adoc[Using the OpenDaylight User Interface (DLUX)]
 
-Books are normally used to generate DocBook markup and the titles of
-the preface, appendix, bibliography, glossary and index sections are
-significant ('specialsections').
+link:ch-clustering.adoc[Setting Up Clustering on an OpenDaylight Controller]
 
-
-[preface]
-Example Preface
----------------
-Optional preface.
-
-Preface Sub-section
-~~~~~~~~~~~~~~~~~~~
-Preface sub-section body.
-
-//////////////////////////
-Please note and leave the blank line between include statements here.
-
-It is a defensive measure to prevent individual projects' .adoc files
-from eating the next section if they forget to leave a blank line at
-the end of their file.
-//////////////////////////
-include::addons/aaa.adoc[]
-
-include::addons/bgpcep.adoc[]
-
-include::addons/defense4all.adoc[]
-
-include::addons/groupbasedpolicy.adoc[]
-
-include::addons/l2switch.adoc[]
-
-include::addons/lispflow.adoc[]
-
-include::addons/ovsdb.adoc[]
-
-include::addons/pcmm.adoc[]
-
-include::addons/plugin2oc.adoc[]
-
-include::addons/sfc.adoc[]
-
-include::addons/snbi.adoc[]
-
-include::addons/snmp4sdn.adoc[]
-
-include::addons/vtn.adoc[]
-
-include::addons/yangtools.adoc[]
-
-:numbered!:
-
-[appendix]
-Example Appendix
-----------------
-One or more optional appendixes go here at section level 1.
-
-Appendix Sub-section
-~~~~~~~~~~~~~~~~~~~
-Sub-section body.
-
-
-[glossary]
-Example Glossary
-----------------
-Glossaries are optional. Glossaries entries are an example of a style
-of AsciiDoc labeled lists.
-
-[glossary]
-A glossary term::
-  The corresponding (indented) definition.
-
-A second glossary term::
-  The corresponding (indented) definition.
-
-
-[colophon]
-Example Colophon
-----------------
-Text at the end of a book describing facts about its production.
-
-
-[index]
-Example Index
--------------
-////////////////////////////////////////////////////////////////
-The index is normally left completely empty, it's contents being
-generated automatically by the DocBook toolchain.
-////////////////////////////////////////////////////////////////
-
+link:ch-xsql-commands.adoc[Running XSQL Console Commands and Queries]
