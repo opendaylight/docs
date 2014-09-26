@@ -11,7 +11,7 @@ For information on how the GRE-endpoint destination IP address is communicated t
 The OpenStack integration architecture uses the following technologies: +
 
 * https://tools.ietf.org/html/rfc7047[RFC 7047] and http://datatracker.ietf.org/doc/rfc7047/[The Open vSwitch Database Management Protocol]
-* OpenFlow v1.3 and v1.0 
+* OpenFlow v1.3
 * OpenStack Neutron ML2 Plugin
 
 ==== Getting the code
@@ -48,18 +48,26 @@ The code is mirrored to https://github.com/opendaylight/ovsdb[GitHub] to make re
 
 The OVSDB project generates 3 x Karaf Modules:
 
-    ovsdb
+    ovsdb  -- all ovsdb related artifacts
     of-nxm-extensions  -- openflow nxm extensions
     ovs-sfc  -- openflow service chainning function
 
 Both of-nxm-extensions and ovs-sfc are expected to be moved out of the ovsdb source tree in the future.
 
+Following are a brief descriptions on directories you will find a the root ovsdb/ directory:
+
 * _commons_ contains the parent POM file for Maven project which is used to get consistency of settings across the project. 
 
 * _distribution_ contains the OVSDB distribution. For OSGI, this is the latest Virtualization Edition pulled from the Integration project with your local OVSDB artifacts added. This gives developers the ability to run the controller for testing. 
-For Karaf, this is the latest Karaf bundle, which includes the 3 Karaf modules mentioned above, as well as the controller's opendaylight-karaf-resources.
+For Karaf, this is the latest Karaf bundle pulled from the Integration project, with your local OVSDB Karaf bundles mentioned above.
 
-* _resources_ contains useful scripts, How-To's and other resources
+* _openstack_ contains the northbound handlers for Neutron used by OVSDB, as well as their providers.
+
+* _resources_ contains useful scripts, How-To's and other resources.
+
+* _schemas_ contains the OVSDB schemas that are implemented in ODL.
+
+* _utils_ contains helper functions used for handling MD-SAL OpenFlow implementation.
 
 === Building and running OVSDB
 *Prerequisites* +
@@ -67,19 +75,37 @@ For Karaf, this is the latest Karaf bundle, which includes the 3 Karaf modules m
 * JDK 1.7+
 * Maven 3+
 
+[[ovsdbBuildSteps]]
 ==== Building a Karaf feature and deploying it in an Opendaylight Karaf distribution +
 This is a new method for Opendaylight distribution wherein there are no defined editions such 
 as Base, Virtualization, or SP editions.  The end-customer can choose to deploy the required feature based on user deployment needs.
 
 . From the root ovsdb/ directory, run *mvn clean install*.
-. Unzip the distribution-karaf-<VERSION_NUMBER>-SNAPSHOT.zip file created from Step 2 in  the directory ovsdb/distribution/opendaylight-karaf/target:
+. Unzip the distribution-karaf-<VERSION_NUMBER>-SNAPSHOT.zip file created from step 1 in the directory ovsdb/distribution/opendaylight-karaf/target:
 ----
 unzip distribution-karaf-<VERSION_NUMBER>-SNAPSHOT.zip
 ----
-[start=3]
+==== Downloading OVSDB's Karaf distribution +
+Instead of building, you can download the latest OVSDB distribution from the Nexus server. The link for that is:
+----
+http://nexus.opendaylight.org/content/repositories/opendaylight.snapshot/org/opendaylight/ovsdb/distribution.ovsdb/1.2.0-SNAPSHOT/
+----
+
+==== Running Karaf feature from OVSDB's Karaf distribution +
+
+[[ovsdbStartingOdl]]
+. Start ODL, from the unzipped directory
+----
+bin/karaf
+----
 . Once karaf has started, and you see the Opendaylight ascii art in the console, the last step is to start the OVSDB plugin framework with the following command in the karaf console: 
 ----
 feature:install odl-ovsdb-openstack
+----
+
+For ovsdb northbound, you will also need to invoke
+----
+feature:install odl-ovsdb-northbound
 ----
 ===== Sample output from the Karaf console
 ----
@@ -102,11 +128,6 @@ odl-ovsdb-ovssfc                 | 0.0.1-SNAPSHOT      |           | ovsdb-0.0.1
 OpenDaylight :: OVSDB :: OVS Service Function Chai
 odl-openflow-nxm-extensions      | 0.0.3-SNAPSHOT      | x         | ovsdb-0.0.3-SNAPSHOT        
 OpenDaylight :: Openflow :: Nicira Extensions
-----
-
-For ovsdb northbound, you will also need to invoke
-----
-feature:install odl-ovsdb-northbound
 ----
 
 ==== Testing patches
@@ -457,35 +478,24 @@ OVSDB also supports inbound/outbound NAT, floating IPs.
 
 ===== Starting OVSDB and OpenStack
 
-. Install Java jdk:
-----
-sudo yum install java-1.7.0-openjdk
-----
-[start=2]
+. Build or download OVSDB distribution, as mentioned in <<ovsdbBuildSteps,building a Karaf feature section>>.
 . http://docs.vagrantup.com/v2/installation/index.html[Install Vagrant].
 
-** This section hs been updated to include Karaf, please see:  https://wiki.opendaylight.org/view/OVSDB_Integration:L3Fwd
-
-. Get the latest http://nexus.opendaylight.org/content/repositories/opendaylight.snapshot/org/opendaylight/ovsdb/distribution.ovsdb/1.2.0-SNAPSHOT/[OVSDB Build].
-. Unzip the distribution:
-----
-unzip distribution.ovsdb-1.*-osgipackage.zip > /dev/null
-----
 [start=3]
 . Enable the L3 Forwarding feature:
 ----
-# enable l3 fwd feature
 echo 'ovsdb.l3.fwd.enabled=yes' >> ./opendaylight/configuration/config.ini
+echo 'ovsdb.l3gateway.mac=${GATEWAY_MAC}' >> ./configuration/config.ini
 ----
 [start=4]
-. Run the following commands:
+. Run the following commands to get the odl neutron drivers:
 [start=5]
 ----
 git clone https://github.com/dave-tucker/odl-neutron-drivers.git
 cd odl-neutron-drivers
 vagrant up devstack-control devstack-compute-1
 ----
-[start=5]
+[start=6]
 . Use ssh to go to the control node, and clone odl-neutron-drivers again:
 ----
 vagrant ssh devstack-control
@@ -494,23 +504,19 @@ cd odl-neutron-drivers
 sudo python setup.py install
 *leave this shell open*
 ----
-[start=6]
-. Start odl.
-----
-cd opendaylight/
-./run.sh -Xmx1024m -XX:MaxPermSize=1024m -virt ovsdb
-----
 [start=7]
-. To see processing of neutron event related to L3, do this from prompt in controller:
-----
-setLogLevel org.opendaylight.ovsdb.openstack.netvirt.impl.NeutronL3Adapter debug
-----
+. Start odl, as mentioned in <<ovsdbStartingOdl,running Karaf feature section>>.
 [start=8]
+. To see processing of neutron event related to L3, do this from prompt:
+----
+log:set debug org.opendaylight.ovsdb.openstack.netvirt.impl.NeutronL3Adapter
+----
+[start=9]
 . From shell, do one of the following: open on ssh into control node or vagrant ssh devstack-control.
 ----
 cd ~/devstack && ./stack.sh
 ----
-[start=9]
+[start=10]
 . From a new shell in the host system, run the following:
 ----
 cd odl-neutron-drivers
@@ -520,9 +526,9 @@ cd ~/devstack && ./stack.sh
 ===== OpenStack workflow
 
 .Sample workflow
-image::L3FwdSample.png[]
+image::L3FwdSample.png[height=250]
 
-Use the following steps to set up a workflow like the one shown in Figure 1.
+Use the following steps to set up a workflow like the one shown in figure above.
 
 . Set up authentication. From shell on stack control or vagrant ssh devstack-control:
 ----
@@ -640,7 +646,7 @@ The current implementation handles all neutron calls in the net-virt/LBaaSHandle
 ===== Limitations
 Owing to the inflexibility of the multipath action, the existing LBaaS implementation comes with some limitations: 
 
-* To avoid risking direct TCP reachability to member, only HTTP or HTTPS is supported, and not all TCP ports.  <---- this has been updated:  TCP, HTTP or HTTPS are supported protocols for the pool. (Caution: You can lose access to the members if you assign {Proto:TCP, Port:22} to LB) 
+* TCP, HTTP or HTTPS are supported protocols for the pool. (Caution: You can lose access to the members if you assign {Proto:TCP, Port:22} to LB) 
 
 * Member weights are ignored. 
 * The update of an LB instance is done as a delete + add, and not an actual delta. 
