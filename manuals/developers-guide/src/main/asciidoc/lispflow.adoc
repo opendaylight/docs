@@ -1,6 +1,6 @@
 == Lisp Flow Mapping
 
-This chapter contains:
+// This chapter contains:
 
 //* <<OpenDaylight Locator/ID Separation Protocol (LISP) Flow Mapping Overview>>
 //* <<Installing LISP Flow Mapping>>
@@ -61,7 +61,7 @@ A brief description of each module is as follows:
 * *Java API:* The API module exposes the Map Server and Map Resolver capabilities via Java API.
 * *LISP Southbound Plugin:* This plugin enables data plane devices that support LISP control plane protocol (see LISP) to register and query mappings to the LISP Flow Mapping via the LISP control plane protocol.
 
-==== LISP APIs
+=== LISP APIs
 
 The LISP Flow Mapping service has JAVA APIs and REST APIs. The Java API reference documentation is auto-generated from the Java build and is available at:
 
@@ -381,7 +381,11 @@ For support please contact the lispflowmapping project at:
 
 You can also reach us at the following channel on IRC:
 
-* #opendaylight-lispflowmapping on irc.freenode.net 
+* #opendaylight-lispflowmapping on irc.freenode.net
+
+Additional information is also available on the wiki:
+
+* https://wiki.opendaylight.org/view/OpenDaylight_Lisp_Flow_Mapping:Main[Lisp Flow Mapping wiki]
 
 === Installing LISP Flow Mapping
 
@@ -591,8 +595,4 @@ To download pre-built images with ODP bootstraps see the following Github projec
 
 https://github.com/nerdalert/OpenDaylight-Lab[Pre-Built OpenDaylight VM Images]
 
-==== Participating in the LISP Community 
 
-* Join the https://lists.opendaylight.org/mailman/listinfo[ODP Listserv]
-* Listen to the weekly Technical Work Stream meeting on https://wiki.opendaylight.org/view/Tech_Work_Stream:Main[Tech Work Stream:Main] . 
-* Join the IRC channel #opendaylight on irc.freenode.net 
