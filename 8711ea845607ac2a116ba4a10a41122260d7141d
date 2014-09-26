@@ -1,0 +1,378 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa82b9bf_db78bd2d",
+        "filename": "manuals/developers-guide/src/main/asciidoc/dlux.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2014-09-26T00:39:24Z",
+      "side": 1,
+      "message": "these links need a space before \")\" to render right.",
+      "revId": "8711ea845607ac2a116ba4a10a41122260d7141d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_7b75f130",
+        "filename": "manuals/developers-guide/src/main/asciidoc/dlux.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2014-09-26T00:39:24Z",
+      "side": 1,
+      "message": "Go to, two words.",
+      "revId": "8711ea845607ac2a116ba4a10a41122260d7141d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_9b723548",
+        "filename": "manuals/developers-guide/src/main/asciidoc/dlux.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2014-09-26T00:39:24Z",
+      "side": 1,
+      "message": "Remove the \"the\", just \"Download and install the NodeJS\"",
+      "revId": "8711ea845607ac2a116ba4a10a41122260d7141d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_3b8f6925",
+        "filename": "manuals/developers-guide/src/main/asciidoc/dlux.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2014-09-26T00:39:24Z",
+      "side": 1,
+      "message": "Add a blank line above this so that it\u0027s clearer which comment applies to which command. You might have to add a \"----\" block to get it to render the blank lines, so something like:\n\n----\n $ cd dlux/dlux-web\n\n #installs the necessary NodeJS related components for the project - will create a node_modules directory\n $ sudo npm install\n\n #installs necessary components provided by bower\n $ bower install\n\n # update dlux-web with all dlux static resources for each module by running maven\n $ maven clean install\n\n # run the unit tests and start karma test runner\n # this will open up the default browser pointing to karma test running and run the unit tests\n $ grunt watch\n----",
+      "revId": "8711ea845607ac2a116ba4a10a41122260d7141d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_fb98216c",
+        "filename": "manuals/developers-guide/src/main/asciidoc/dlux.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2014-09-26T00:39:24Z",
+      "side": 1,
+      "message": "I think this section should really go in the install guide.",
+      "revId": "8711ea845607ac2a116ba4a10a41122260d7141d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_bba29998",
+        "filename": "manuals/developers-guide/src/main/asciidoc/dlux.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2014-09-26T00:39:24Z",
+      "side": 1,
+      "message": "Change to \"I would recommend installing the following...\"",
+      "revId": "8711ea845607ac2a116ba4a10a41122260d7141d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_db9f5d4f",
+        "filename": "manuals/developers-guide/src/main/asciidoc/dlux.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2014-09-26T00:39:24Z",
+      "side": 1,
+      "message": "Capitalize L2switch the first time. Also, capitalize MD-SAL.",
+      "revId": "8711ea845607ac2a116ba4a10a41122260d7141d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_1b9e2557",
+        "filename": "manuals/developers-guide/src/main/asciidoc/dlux.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2014-09-26T00:39:24Z",
+      "side": 1,
+      "message": "Install *the* AD-SAL features...\n\n(Add \"the\" and capitalize AD-SAL)",
+      "revId": "8711ea845607ac2a116ba4a10a41122260d7141d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_7bac118d",
+        "filename": "manuals/developers-guide/src/main/asciidoc/dlux.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2014-09-26T00:39:24Z",
+      "side": 1,
+      "message": "Then, install *the* dlux feature",
+      "revId": "8711ea845607ac2a116ba4a10a41122260d7141d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_9ba9d57d",
+        "filename": "manuals/developers-guide/src/main/asciidoc/dlux.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2014-09-26T00:39:24Z",
+      "side": 1,
+      "message": "the period should be a comma",
+      "revId": "8711ea845607ac2a116ba4a10a41122260d7141d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_3bb689dd",
+        "filename": "manuals/developers-guide/src/main/asciidoc/dlux.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2014-09-26T00:39:24Z",
+      "side": 1,
+      "message": "I\u0027m assuming there shouldn\u0027t be a period at the end.",
+      "revId": "8711ea845607ac2a116ba4a10a41122260d7141d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_5bbb4dc4",
+        "filename": "manuals/developers-guide/src/main/asciidoc/dlux.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2014-09-26T00:39:24Z",
+      "side": 1,
+      "message": "For login, use admin as both the username and password.",
+      "revId": "8711ea845607ac2a116ba4a10a41122260d7141d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_fbafc17b",
+        "filename": "manuals/developers-guide/src/main/asciidoc/dlux.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2014-09-26T00:39:24Z",
+      "side": 1,
+      "message": "...and go to the URL\n\n(also, drop the dash at the end of the line)",
+      "revId": "8711ea845607ac2a116ba4a10a41122260d7141d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_1bb5c5cc",
+        "filename": "manuals/developers-guide/src/main/asciidoc/dlux.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2014-09-26T00:39:24Z",
+      "side": 1,
+      "message": "Change the second sentence to: \"Use admin as the username and password to access the UI.\"",
+      "revId": "8711ea845607ac2a116ba4a10a41122260d7141d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_bbc9395c",
+        "filename": "manuals/developers-guide/src/main/asciidoc/dlux.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2014-09-26T00:39:24Z",
+      "side": 1,
+      "message": "add a blank line above this to get a real list",
+      "revId": "8711ea845607ac2a116ba4a10a41122260d7141d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_9bc0f52b",
+        "filename": "manuals/developers-guide/src/main/asciidoc/dlux.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2014-09-26T00:39:24Z",
+      "side": 1,
+      "message": "add a blank line above this to get a real list",
+      "revId": "8711ea845607ac2a116ba4a10a41122260d7141d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_3bdd2915",
+        "filename": "manuals/developers-guide/src/main/asciidoc/dlux.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2014-09-26T00:39:24Z",
+      "side": 1,
+      "message": "should be \"...is only *required* by...\"",
+      "revId": "8711ea845607ac2a116ba4a10a41122260d7141d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_5be26dd6",
+        "filename": "manuals/developers-guide/src/main/asciidoc/dlux.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2014-09-26T00:39:24Z",
+      "side": 1,
+      "message": "\"append contain into\" should be \"add an item to\"\n\n\"an id who refer as\" should be \"an id that refers to\"",
+      "revId": "8711ea845607ac2a116ba4a10a41122260d7141d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_fbe6e1e7",
+        "filename": "manuals/developers-guide/src/main/asciidoc/dlux.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2014-09-26T00:39:24Z",
+      "side": 1,
+      "message": "\"parameter support\" should be \"parameter supports\"\n\n\"look like\" should be \"looks like\"\n\nneeds to be rootNode.childNode, not rootNode.chilNode",
+      "revId": "8711ea845607ac2a116ba4a10a41122260d7141d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_1bece5c6",
+        "filename": "manuals/developers-guide/src/main/asciidoc/dlux.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2014-09-26T00:39:24Z",
+      "side": 1,
+      "message": "add a blank line before this to actually get a list",
+      "revId": "8711ea845607ac2a116ba4a10a41122260d7141d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_bbd059f8",
+        "filename": "manuals/developers-guide/src/main/asciidoc/dlux.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2014-09-26T00:39:24Z",
+      "side": 1,
+      "message": "\"as the follow\" should be \"as follows\"",
+      "revId": "8711ea845607ac2a116ba4a10a41122260d7141d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_dbcd1d5f",
+        "filename": "manuals/developers-guide/src/main/asciidoc/dlux.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2014-09-26T00:39:24Z",
+      "side": 1,
+      "message": "\"is displayed in the bottom\" should be \"are displayed in the bottom\"",
+      "revId": "8711ea845607ac2a116ba4a10a41122260d7141d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
