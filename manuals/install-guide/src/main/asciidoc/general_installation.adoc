@@ -1,0 +1,59 @@
+== Getting and Installing OpenDaylight Helium
+
+This section should be reworked with content added.
+
+=== Downloading the Karaf Distribution
+
+==== Getting the Default Distribution
+
+This distribution comes with no features enabled by default, but all
+features are able to be installed and run.
+
+CAUTION: Not all features can be run at the same time without negative
+         consequences.
+
+==== Using the Custom Distribution Download Tool
+
+Fill in info once this exists.
+
+=== Running the Karaf distribution
+
+. Unzip the zip file
+. cd into the directory
+. run ./bin/karaf
+
+For example:
+
+----
+$ ls distribution-karaf-0.2.0-Helium.zip 
+distribution-karaf-0.2.0-Helium.zip
+$ unzip distribution-karaf-0.2.0-Helium.zip 
+Archive:  distribution-karaf-0.2.0-Helium.zip
+   creating: distribution-karaf-0.2.0-Helium/
+   creating: distribution-karaf-0.2.0-Helium/configuration/
+   creating: distribution-karaf-0.2.0-Helium/data/
+   creating: distribution-karaf-0.2.0-Helium/data/tmp/
+   creating: distribution-karaf-0.2.0-Helium/deploy/
+   creating: distribution-karaf-0.2.0-Helium/etc/
+   creating: distribution-karaf-0.2.0-Helium/externalapps/
+...
+  inflating: distribution-karaf-0.2.0-Helium/bin/start.bat  
+  inflating: distribution-karaf-0.2.0-Helium/bin/status.bat  
+  inflating: distribution-karaf-0.2.0-Helium/bin/stop.bat
+$ cd distribution-karaf-0.2.0-Helium
+$ ./bin/karaf 
+                                                                                           
+    ________                       ________                .__  .__       .__     __       
+    \_____  \ ______   ____   ____ \______ \ _____  ___.__.|  | |__| ____ |  |___/  |_     
+     /   |   \\____ \_/ __ \ /    \ |    |  \\__  \<   |  ||  | |  |/ ___\|  |  \   __\    
+    /    |    \  |_> >  ___/|   |  \|    `   \/ __ \\___  ||  |_|  / /_/  >   Y  \  |      
+    \_______  /   __/ \___  >___|  /_______  (____  / ____||____/__\___  /|___|  /__|      
+            \/|__|        \/     \/        \/     \/\/            /_____/      \/          
+                                                                                           
+
+Hit '<tab>' for a list of available commands
+and '[cmd] --help' for help on a specific command.
+Hit '<ctrl-d>' or type 'system:shutdown' or 'logout' to shutdown OpenDaylight.
+
+opendaylight-user@root>
+----
