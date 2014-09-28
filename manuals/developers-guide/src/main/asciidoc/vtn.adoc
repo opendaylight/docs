@@ -1,4 +1,1014 @@
-== VTN
+== Virtual Tenant Network
 
-Chapter on VTN
+=== OpenDaylight Virtual Tenant Network (VTN) Overview
+
+OpenDaylight Virtual Tenant Network (VTN) is an application that provides multi-tenant virtual network on an SDN controller.
+
+Conventionally, huge investment in the network systems and operating expenses are needed because the network is configured as a silo for each department and system. Therefore various network appliances must be installed for each tenant and those boxes cannot be shared with others. It is a heavy work to design, implement and operate the entire complex network.
+The uniqueness of VTN is a logical abstraction plane. This enables the complete separation of logical plane from physical plane. Users can design and deploy any desired network without knowing the physical network topology or bandwidth restrictions.
+VTN allows the users to define the network with a look and feel of conventional L2/L3 network. Once the network is designed on VTN, it will automatically be mapped into underlying physical network, and then configured on the individual switch leveraging SDN control protocol. The definition of logical plane makes it possible not only to hide the complexity of the underlying network but also to better manage network resources. It achieves reducing reconfiguration time of network services and minimizing network configuration errors.OpenDaylight Virtual Tenant Network (VTN) is an application that provides multi-tenant virtual network on an SDN controller. It provides API for creating a common virtual network irrespective of the physical network. 
+
+It is implemented as two major components
+
+* <<VTN Coordinator>>  
+* <<VTN Manager>>
+
+image::vtn-overview.PNG[VTN Architecture]
+
+==== VTN Coordinator
+
+The VTN coordinator is an external application that provides a REST interface to user to use the VTN Virtualization. It interacts with VTN Manager plugin to implement the user configuration. It is also capable of multiple controller orchestration.realizes Virtual Tenant Network (VTN) provisioning in OpenDaylight Controllers (ODC). In the OpenDaylight architecture VTN Coordinator is part of the network application, orchestration and services layer. VTN Co ordinator has been implemented as an external application to the OpenDaylight controller. This component is responsible for the VTN virtualization. VTN Coordinator will use the REST interface exposed by the VTN Manger to realize the virtual network using the OpenDaylight controller. It uses OpenDaylight APIs (REST) to construct the virtual network in ODCs. It provides REST APIs for northbound VTN applications and supports virtual networks spanning across multiple ODCs by coordinating across ODCs.
+
+image::vtn-coordinator-architecture.PNG[VTN Coordinator Architecture]
+
+VTN Co ordinator has the following components:
+
+* VTN API - VTN Web API module provides the north bound REST API interface for VTN applications. For more information about VTN API, see <<VTN Service Java API Library>>.
+* Transaction Co ordinator(TC) - The TC module is a two Phase commit coordinator module that provides the two phase commit coordination functionality for VTN coordinator components. For more information about TC module, see <<VTN Transaction Co ordinator (TC) Overview>>
+* Unified Provider Physical Layer (UPPL) - The UPPL module is a physical network provisioning/monitoring module. This module is a sub component of the VTN coordinator and provides the physical network provisioning and monitoring functionality. For more information about UPPL module, see <<VTN Unified Provider Physical Layer (UPPL) Overview>>.
+* Unified Provider Logical Layer (UPLL) - The UPLL is a virtual network provisioning/monitoring module. This module is a a sub component of the VTN coordinator and provides the Virtual network provisioning and monitoring functionality. For more information about UPLL module, see <<VTN Unified Provider Logical Layer (UPLL) Overview>>.
+* OpenDaylight Controller Driver (ODC Driver) - The OpenDaylight controller interface Module is a sub component of the VTN coordinator and provides mechanisms to provision and monitor virtual networks in the OpenDaylight controller. For more information about ODC Driver see, <<VTN OpenDaylight Controller Driver (ODC Driver) Overview>>. 
+
+==== Communication Framework
+
+You could communication with and from the VTN using the following: + 
+
+* *Internal communication*
+
+** Proprietary IPC framework
+
+* *External communication*
+
+** North Bound – REST API
+** South Bound – OpenDaylight API
+
+=== VTN Manager
+A OpenDayLight Controller Plugin that interacts with other modules to implement the components of the VTN model. It also provides a REST interface to configure VTN components in ODL controller.VTN Manager is implemented as one plugin to the OpenDayLight controller. This provides a REST interface to create/update/delete VTN components. The user command in VTN Coordinator is translated as REST API to VTN Manager by the ODC Driver component. In addition to the above mentioned role, it also provides an implementation to the Openstack L2 Network Functions API.
+
+image::vtn-manager-architecture.PNG[VTN Manager Architecture]
+
+==== Function Outline
+
+The table identifies the functions and the interface used by VTN Components:
+
+[cols=*3,2a,^,options="header",width="75%"]
+|===
+| Component | Interface | Purpose
+| VTN Manager |RESTful API | Configure VTN Virtualization model components in OpenDayLight
+| VTN Manager | Neutron API implementation | Handle Networks API from OpenStack (Neutron Interface)
+| VTN Co ordinator | RESTful API |
+* Uses the Restful interface of VTN Manager and configures VTN Virtualization model components in OpenDayLight. + 
+* Handles multiple controller orchestration. + 
+* Provides API to read the physical network details. See <<https://wiki.opendaylight.org/view/OpenDaylight_Virtual_Tenant_Network_(VTN):VTN_Coordinator:RestApi:L2_Network_Example_Using_VTN_Virtualization,samples>> for usage. + 
+|===
+
+==== OpenDaylight Virtual Tenant Network (VTN) API Overview
+
+The VTN API module is a sub component of the VTN coordinator and provides the north bound REST API interface for VTN applications It consists of two subcomponents: 
+
+* <<Web Server>>
+* <<VTN Service Java API Library>>
+
+image::vtn-coordinator-api-architecture.PNG[VTN Co ordinator Architecture]
+
+===== Web Server
+
+The Web Server module handles the REST APIs received from the VTN applications. It translates the REST APIs to the appropriate Java APIs.
+
+The main functions of this module are: 
+
+* Starts via the startup script catalina.sh.
+* VTN Application sends HTTP request to Web server in XML or JSON format.
+* Creates a session and acquire a read/write lock.
+* Invokes the <<VTN Service Java API Library>> corresponding to the specified URI.
+* Returns the response to the VTN Application.
+
+* WebServer Class Details *
+
+The table below lists the classes available for Web Server module and its descriptions:
+
+[cols=*9,2a,^,options="header",width="75%"]
+|===
+| Class Name | Description
+| InitManager |It is a singleton class for executing the acquisition of configuration information from properties file, log initialization, initialization of <<VTN Service Java API Library>>. + 
+Executed by init() of VtnServiceWebAPIServlet.
+| ConfigurationManager | Maintains the configuration information acquired from properties file.
+| VtnServiceCommonUtil | Utility class
+| VtnServiceWebUtil | Utility class 
+| VtnServiceWebAPIServlet | Receives HTTP request from VTN Application and calls the method of corresponding VtnServiceWebAPIHandler. + 
+Inherits class HttpServlet, and overrides doGet(), doPut(), doDelete(), doPost(). 
+| VtnServiceWebAPIHandler | Creates JsonObject(com.google.gson) from HTTP request, and calls method of corresponding VtnServiceWebAPIController. 
+| VtnServiceWebAPIController | Creates RestResource() class and calls UPLL API/UPPL API through Java API.
+At the time of calling UPLL API/UPPL API, performs the creation/deletion of session, acquisition/release of configuration mode, acquisition/release of read lock by TC API through Java API.
+| DataConverter | Converts  HTTP request to JsonObject and JsonXML to JSON. |
+|===
+
+==== VTN Service Java API Library
+
+It provides the Java API library to communicate with the lower layer modules in the VTN coordinator.
+
+The main functions of this library are: + 
+
+* Creates an IPC client session to the lower layer.
+* Converts the request to IPC framework format.
+* Invokes the lower layer API (i.e. UPPL API, UPLL API, TC API). 
+* Returns the response from the lower layer to the web server
+
+* VTN Service Java API LIbrary Class Details*
+
+The table below lists the classes available for VTN Service Java API library module and its descriptions:
+
+[cols=*9,2a,^,options="header",width="75%"]
+|===
+| Class Name | Description
+| VtnServiceInitManager |It is a Singleton class for executing the acquisition of configuration information from properties file, log initialization.
+Executed by init() of Web API Servlet.
+| VtnServiceConfiguration | Class to maintain the configuration information acquired from properties file.
+| IpcConnPool | Class that mains Connection pool of IPC.
+| IpcChannelConnection | Class that mains Connections of IPC.
+| RestResource | The class that will be interface for Web API Servlet. Implementation of Interface VtnServiceResource.
+| AnnotationReflect | Performs the mapping of path filed value of RestRsource class and xxxResource class. 
+| xxxResource | The class that is created according to the path filed value of RestResource.
+(vtnResource, VBridgeResource etc) Inherits abstract class AbstractResource.
+| xxxResourceValidator CommonValidator | The class that performs the appropriateness check of values specified in the path, query, request field of RestResource class.
+|IpcPhysicalResponseFactory  | The class to create JsonObject from the response received from <<VTN Unified Provider Logical Layer (UPLL)>>.
+| IpcRequestProcessor | Sends request to <<VTN Unified Provider Physical Layer (UPPL)>>  or <<VTN Unified Provider Logical Layer (UPLL)>> through proprietary IPC Framework.
+ UPLL API and UPPL APIs are implemented on proprietary IPC Framework, and request/response is defined by special interface called as Key Interface.
+| IpcRequestPacket | The class that maintains the request to be sent to <<VTN Unified Provider Logical Layer (UPLL)>>/<<VTN Unified Provider Logical Layer (UPLL)>>. 
+| IpcStructFactory | The class to create Key Structure and Value Structure that will be included in the request to be sent to <<VTN Unified Provider Logical Layer (UPLL)>>/<<VTN Unified Provider Logical Layer (UPLL)>>.
+|===
+
+==== VTN Transaction Co ordinator (TC) Overview
+
+The TC module provides the two phase commit coordination functionality for VTN coordinator components. It consists of two subcomponents
+
+* Transaction Coordinator (TC)
+* Transaction Coordinator Library (TCLIB)
+
+image::vtn-tc-architecture.PNG[VTN Transaction Co ordinator (TC) Architecture]
+
+==== Transaction Coordinator (TC)
+
+The Transaction Coordinator module implements the two phase commit operation.
+
+The main functions of this module are: 
+
+* TC is started from uncd daemon during startup of VTN coordinator.
+* Responsible for two phase commit operation in VTN
+* Receives requests from <<VTN Service Java API Library>> during Commit and Audit operations.
+* Invokes lower layer TCLIB API (i.e. UPLL API, UPPL API or ODC Driver API) via IPC framework.
+
+* Transaction Coordinator (TC) Class Details *
+
+The table below lists the classes available for TC module and its descriptions:
+
+[cols=*8,2a,^,options="header",width="75%"]
+|===
+| Class Name | Description
+| TcModule | Main interface which offers the services to VTN Service library. It also handles state transitions.
+| TcOperations | Base class that services every operation request in TC. 
+| TcMsg  | The message to be sent for every operation has different characteristics based on the type of message. 
+This base class will provide methods to handle different types of messages to the intended recipients. 
+| TcLock  | The exclusion control class, an object of TcLock is contained in TcModule and used for every operation.  
+| TcDbHandler  | Utility class for TC database operations. 
+| TcTaskqUtil | Utility class for taskq used in TC for driver triggered audit and read operations.
+|===
+
+==== Transaction Co ordinator Library
+
+It provides the Java API library to communicate with the lower layer modules in the VTN coordinator.
+
+The main functions of this library are: + 
+
+* TCLIB will be loaded as a module in UPLL, UPPL and ODC Driver daemon. 
+* Responsible for handling messages to the daemons from TC. 
+* The daemons will install their handler with TCLIB, the handlers will be invoked on receiving messages from TC. 
+
+*Transaction Co ordinator Library Class Details*
+
+The table below lists the classes available for Transaction Co ordinator library module and its descriptions:
+
+[cols=*4,2a,^,options="header",width="75%"]
+|===
+| Class Name | Description
+| TcLibModule  | Main class which handles requests from TC module. 
+| TcLibInterface  | Abstract class which every module implements to interact with TC module. Member of TcLibModule. 
+| TcLiBMsgUtil  | Internal utility class for extracting session attributes of every request from TC. 
+|===
+
+=== VTN OpenDaylight Controller Driver (ODC Driver) Overview
+
+The ODC driver module is a sub component of the VTN coordinator and provides mechanisms to provision and monitor virtual networks and monitor physical networks in the OpenDaylight controller. ODC driver is started during startup of VTN coordinator It consists of two sub components: 
+
+* Common Driver Framework (CDF) 
+* ODC Driver 
+
+image::vtn-coordinator-odc-driver-architecture.PNG[VTN ODC Driver Architecture]
+
+==== Common Driver Framework (CDF)
+
+CDF provides a controller independent processing of the messages sent from UPLL and UPPL modules. 
+
+The main functions of the CDF module are: 
+
+* Isolate the driver modules from processing messages sent by UPLL and UPPLmodules. 
+* Provide interfaces to the driver module to install their commands for various operations on the controller (eg: VTN creation). 
+* Provide controller management and support different types of controllers. 
+* Parse messages and invoke driver methods with appropriate parameters. 
+* Provide interface for different drivers to install command handlers. 
+* Simplify transaction processing with simplified transaction functions for vote and commit operations. 
+* Support for parallel update operation across many controllers. 
+* The framework can be extended to support all driver modules in a common daemon or individual daemons. 
+
+CDF is implemented using the following modules:
+
+* *vtndrvintf*: Implements the features of CDF listed above. 
+
+*Class Details*
+The following table lists the class details for vtndrvintf module:
+
+[cols=*6,2a,^,options="header",width="75%"]
+|===
+| Class Name | Description
+| VtnDrvIntf | Inherited from Module class and provides the entry point for messages from platform. 
+Provides interfaces to add drivers for different types of controllers. 
+| KtHandler  | Abstract interface for handling different message types. 
+| KtRequestHandler  | Template implementation of KtHandler to process all messages from platform. 
+| DriverTxnInterface | Common transaction handling for drivers.
+| ControllerFramework | Provides methods to add/delete/update Controllers to the VTN Coordinator. 
+Periodic monitoring of controllers
+|===
+
+* *vtncacheutil*: Utility module that provides interfaces for caching configuration entries to validate as a whole and then later commit 
+
+*Class Details*
+The following table lists the class details for vtncacheutil module:
+
+[cols=*3,2a,^,options="header",width="75%"]
+|===
+| Class Name | Description
+| keytree  | Cache container that provides interfaces to append config to cache. 
+| CommonIterator   | Provides methods to iterate the elements in cache, the option to iterate in VTN hierarchical order is also available.
+|===
+
+==== ODC Driver
+
+The ODC driver module implements the interfaces for controller connection management and virtual network provisioning and monitoring in the ODC controller. The request will be translated to the appropriate REST APIs and sent to the controller. 
+ODC driver is capable of translating the VTN Operations as Commands to VTN Manager in the ODL. 
+
+The above features are implemented using these modules 
+
+* *restjsonutil*: Utility module that provides services for JSON build/parse and handling REST Request/Response. 
+
+The following table lists the class details for restjsonutil module:
+
+[cols=*4,2a,^,options="header",width="75%"]
+|===
+| Class Name | Description
+| HttpClient | Interface to set up and maintain a connection to an HTTP Web service 
+| RestClient | Interface to handle request/response on a REST Interface 
+| JsonBuildParse | Interface for building/parsing the JSON strings for communication  
+|===
+
+* *odcdriver*: 
+
+** Implements the interfaces exposed by CDF 
+** Registers the driver for controllers of type : ODC (OpenDaylight Controllers) 
+** Uses the restjsonutil to communicate 
+
+The following table lists the class details for restjsonutil module:
+
+[cols=*5,2a,^,options="header",width="75%"]
+|===
+| Class Name | Description
+| OdcModule  | Module implementation of odc driver, registers itself as diver for controllers of ODL type 
+| ODCController  | Implements the various methods according to the features of the ODL Controller. 
+| ODCVTNCommand  | Handle Create/Update/Delete/Read requests for VTN. 
+| ODCVBRCommand  | Handle Create/Update/Delete/Read requests for vBridge . 
+| ODCVBRIfCommand | Handle Create/Update/Delete/Read requests for vBridge interfaces. 
+|===
+
+=== VTN Unified Provider Logical Layer (UPLL)
+
+The UPLL module is a sub component of the VTN coordinator and provides the Virtual network provisioning and monitoring functionality. It consists of two sub components: 
+
+* UPLL 
+* DAL 
+ 
+image::vtn-upll-architecture.PNG[VTN UPLL Architecture]
+
+==== UPLL Functionalities
+
+The main functions of this module are: 
+
+* UPLL is started from lgcnwd daemon during startup of VTN coordinator. 
+* Interacts with TC, UPPL and ODC Driver using IPC framework. 
+* Receives virtual network configuration Create/Update/Delete/Read requests from VTN service. 
+* Maintains the startup, candidate, and running configurations and state information in an external database 
+* Performs the Setup/Commit/Abort operations as instructed by TC. 
+* Connects to southbound controllers via ODC Driver. 
+* Constructs and maintains the virtual network topology using the configuration and notifications (events and alarms) received from controller platforms. 
+* Supports Audit and Import functionality for the virtual network configurations. 
+ 
+*UPLL Class Details*
+
+The table below lists the classes available for UPLL module and its descriptions:
+
+[cols=*19,2a,^,options="header",width="75%"]
+|===
+| Class Name | Description
+| UpllConfigSvc | UpllConfigService is a service layer implementation for UPLL. It provides UPLL service to VTN Service and handles all service requests. It also registers with UPPL and Drivers for notifications.
+| UpllIpcEventHandler | Handler for IPC events.
+| UpllConfigMgr | UpllConfigMgr is the core implementation class for configuration services and   transaction services including audit and import.
+| TcLibIntfImpl | This an implementation class which implements the TcLibInterface provided by TC. This implementation class, for each virtual function, will invoke corresponding UpllConfigMgr function.
+| MoCfgServiceIntf | Interface class for Edit/Read/Control operations.
+| MoTxServiceIntf | Interface class for normal transaction operations.
+| MoAuditServiceIntf | Interface class for audit operations.
+| MoImportServiceIntf | Interface class for import operations.
+| MoDbServiceIntf | Interface class for database operations.
+| MoManager | Base class for Key tree specific implementation.
+| CtrlrMgr| Stores the controllers as notified by Physical. UPLL stores the controller type and "invalid config" alarm status against each known controller type.
+| ConfigVal | Class for value structure of any key type. This class allows list of values to be specified.
+| ConfigKeyVal | Handler for IPC events
+| UpllConfigMgr | Class for additional data after the request/response header in messages corresponding to configuration operations. This class allows nesting of key types and values. For one key type many values can be specified and sequence of such <key, value, …> tuples can be encapsulated with one ConfigKeyVal
+| ConfigNotification | Implements config notification.
+| ConfigNotifier | Implements buffering and sending of config notifications. Also provides API for OperStatus change notification.
+| IpcUtil | Provides various IPC wrappers over the IPC framework.
+| IpctSt | Provides wrappers for data sent over IPC.
+| Key type specific classes | Implements the Key type handling functionality for all key types.
+|===
+
+==== DAL Functionalities
+
+The DAL Module implements the abstraction layer for the Database. 
+ 
+*DAL Class Details*
+
+The table below lists the classes available for DAL module and its descriptions:
+
+[cols=*6,2a,^,options="header",width="75%"]
+|===
+| Class Name | Description
+| DalBindColumnInfo | Contains column_info for each column_index ( column_index, app_data_type, dal_data_type, app_array_size). Contains bind_info (app_out_addr, db_in_out_addr, db_match_addr, io_type). Allocates memory in DB and copies input/match application data. Copies result from DB to application data.
+| DalBindInfo | Contains bind_info for all columns in a table (table_index, list of DalBindColumnInfo. Provides API to UPLL to bind the input/output/match address to DB And to copy result back to application.
+| DalCursor | Holds cursor information. Holds cursor data to fetch result one by one in case of multi-result query. Provides API to UPLL to fetch the result from cursor and destroy the cursor. Creation of cursor will be done in DalOdbcMgr based on the Query API.
+| DalQueryBuilder | Contains list of Query Templates and generates Query based on user inputs.
+| DalErrorHandler |Process SQL errors and maps to corresponding DB result code.
+| DalOdbcMgr | Provides APIs to UPLL for Connection/Disconnection, Commit/Rollback operation, Cursor fetch/Close cursor, All Single/Multiple result queries Diff, Copy Queries.
+|===
+
+=== VTN Unified Provider Physical Layer (UPPL)
+
+The UPPL module is a sub component of the VTN coordinator and provides the Physical network provisioning and monitoring functionality. 
+
+image::vtn-coordinator-uppl-architecture.PNG[VTN UPPL Architecture]
+
+==== UPPL Functionalities
+
+UPPL provides the following functionalities:
+
+* UPPL is started from phynwd daemon during startup of VTN coordinator. 
+* Interacts with TC, UPLL and ODC Driver using IPC framework 
+* Receives Controller, Domain and Boundary Create/Update/Delete/Read requests from VTN Services 
+* Maintains the startup, candidate, and running configurations and state information in an external database 
+* Performs the setup/commit/abort operations as instructed by TC. 
+* Connects to southbound controllers via ODC Driver 
+* Constructs physical topology using the notifications (events and alarms) from controller platform. 
+* Informs UPLL about the controller addition/deletion and operational status changes of physical topology objects. 
+
+*UPPL Class Details*
+
+The table below lists the classes available for UPPL module and its descriptions:
+
+[cols=*9,2a,^,options="header",width="75%"]
+|===
+| Class Name| Description
+| PhysicalLayer | It’s a singleton class which will instantiate other UPPL’s classes. This class will be inherited from base module in order to use the Core features and IPC service handlers.
+| PhysicalCore | Class that is responsible for processing requests from https://wiki.opendaylight.org/view/OpenDaylight_Virtual_Tenant_Network_(VTN):Transaction_Coordinator#Transaction_Coordinator%7C[VTN Transaction Coordinator]. 
+It also: + 
+
+*  Processes the configuration and capability file. + 
+*  Responsible for sending alarm to node manager. + 
+*  Responsible for receiving requests from north bound. + 
+| IPCConnectionManager | It is responsible for processing the requests received via IPC framework. It contains separate classes to process request from VTN_Service_Java_API_library, Unified Provider Logical Layer (UPLL), OpenDaylight Controller Driver. For more information about the modules mentioned, see https://wiki.opendaylight.org/view/Release/Hydrogen/VTN/Developer_Guide[VTN Co ordinator Architecture]
+| ODBCManager | It is a singleton class which performs all database services.
+| InternalTransactionCoordinator | It is responsible for parsing the IPC structures and forward it to the various request classes like ConfigurationRequest, ReadRequest, ImportRequest etc.
+| ConfigurationRequest | It is responsible to process the Create, Delete and Update operations received from <<VTN Service Java API Library>>.
+| ReadRequest | It is responsible to process all the read operations.
+| Kt_Base, Kt_State_Base and respective Kt classes | These classes perform the functionality required for individual key type.
+| TransactionRequest | It is responsible for performing the various functions required for each phase of the Transaction Request received from Transaction Coordinator during User Commit/Abort.
+| AuditRequest | It is responsible for performing functions related to audit request.
+| ImportRequest | It is responsible for performing functions related to import request.
+| SystemStateChangeRequest | It is responsible for performing functions when <<VTN Coordinator>> state is moved to active or standby.
+| DBConfigurationRequest |It is responsible for processing various Database operations like Save/Clear/Abort
+|===
+
+
+
+
+=== Installing OpenDaylight Virtual Tenant Network (VTN) Coordinator
+This chapter contains the installation instructions for virtual tenant network. (VTN). The chapter consists of three flavours of installation.
+
+* <<Installing VTN Coordinator from Source Code>>
+* <<Installing VTN Manager from Source Code>>
+* <<Installing Opendaylight Virtualization Edition>>
+
+==== Installing VTN Coordinator from Source Code
+
+This section contains instructions for installing VTN Coordinator from source code. 
+
+==== Pre Requisites for Installing VTN Coordinator
+
+.  Arrange a server with any one of the supported 64-bit OS environment.
+    * RHEL 6.1/6.4
+	* CentOS 6.1/6.4
+    * Fedora(19/20)
+    * Ubuntu (12.04/12.10/13.04)
+	
+.  Install the following packages. 
+
+   *  RHEL/Fedora/Cent OS
+[source,perl]
+    yum install make glibc-devel gcc gcc-c++ boost-devel openssl-devel \ ant perl-ExtUtils-MakeMaker unixODBC-devel perl-Digest-SHA uuid libxslt libcurl libcurl-devel git
+
+   * Ubuntu 13.10
+[source,perl]
+   apt-get install pkg-config gcc make  ant g++ maven git libboost-dev libcurl4-openssl-dev \ libjson0-dev libssl-dev openjdk-7-jdk unixodbc-dev xmlstarlet
+
+* Ubuntu 12.04
+   apt-get install pkg-config gcc make  ant g++ maven git libboost-dev libcurl4-openssl-dev \ libssl-dev openjdk-7-jdk unixodbc-dev
+ 
+NOTE: Install libjson0-dev from packages of ubuntu versions (>12.04)
+
+. Install JDK 7, and add the JAVA_HOME environment variable (Only for RHEL/Cent OS/Fedora)
+
+	* RHEL 6.1/Cent OS 6.1
+		.. Download Oracle JDK 7 from the following page, and install it.
+ http://www.oracle.com/technetwork/java/javase/downloads/index.html
+		.. Set JAVA_HOME to the location of the JDK.
+		For example export JAVA_HOME=/usr/java/default
+
+	* RHEL 6.4/Cent OS 6.4 /Fedora (17/20)
+		..  Install OpenJDK 7.
+		[source,perl] yum install java-1.7.0-openjdk-devel
+		.. Set JAVA_HOME to the location of the JDK.
+		For example export JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk.x86_64
+
+.  Preparing for Execution
+
+	* RHEL/Fedora/Cent OS
+	Download the following PostgreSQL 9.1 files (latest versions) from http://yum.postgresql.org/9.1/redhat/rhel-6.4-x86_64/ (RHEL 6.4) or http://yum.postgresql.org/9.1/redhat/rhel-6.1-x86_64/ (RHEL 6.1)and install. 
+		* postgresql91-libs 
+		* postgresql91
+		* postgresql91server
+		* postgresql91-contrib
+		* postgresql91-odbc
+
+	* Ubuntu 13.10/12.04
+		[source,perl] apt-get install  postgresql-9.1 postgresql-client-9.1 postgresql-client-common postgresql-contrib-9.1 odbc-postgresql
+
+. Install Maven. (RHEL/Cent OS/Fedora)
+	Download Maven from the following page and install it folloiwng the instruction in the page.
+	http://maven.apache.org/download.cgi
+
+. Install gtest-devel, json-c libraries 
+	* RHEL/Fedora/Cent OS
+[source,perl] 
+   wget http://dl.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
+   rpm -Uvh epel-release-6-8.noarch.rpm
+   yum install gtest-devel json-c json-c-devel
+
+	* Ubuntu 13.10/Ubuntu 12.04
+[source,perl] 	
+   apt-get install cmake libgtest-dev
+   cp -R /usr/src/gtest gtest-work
+   cd gtest-work
+   cmake CMakeLists.txt
+   make
+   sudo cp *.a /usr/lib
+   cd ..
+   rm -rf gtest-work
+
+==== Preparing for Installation
+
+NOTE: User is not required to be mandatorily root, but the user must own the directory /usr/local/vtn
+ 
+*Example* The directory should appear as below (assuming the user as "vtn"):
+[source,perl] # ls -l /usr/local/
+   drwxr-xr-x. 12 vtn  vtn  4096 Mar 14 21:53 vtn
+   
+. Download the code from git.
+[source,perl] 
+ git clone ssh://<username>@git.opendaylight.org:29418/vtn.git
+ 
+or
+
+[source,perl] 
+ git clone https://git.opendaylight.org/gerrit/p/vtn.git
+
+2. Build and install VTN Coordinator.
+[source,perl]
+ cd vtn/coordinator
+ mvn -f dist/pom.xml package
+ sudo make install
+
+=== Installing VTN Coordinator
+
+To install VTN Coordinator:
+
+. Change the port.
+	.. By Default coordinator will listen on port 8083
+	.. To change the listening port modify the TOMCAT_PORT in below file
+
+	[source,perl]
+	/usr/local/vtn/tomcat/conf/tomcat-env.sh.
+	
+. Set up the database.
+ /usr/local/vtn/sbin/db_setup
+
+NOTE: If there are any issues in setting up the database, click on https://wiki.opendaylight.org/view/OpenDaylight_Virtual_Tenant_Network_(VTN):Installation:Troubleshooting[Troubleshooting Installation]
+
+. Start VTN controller.
+
+	.. Start VTN Coordinator.
+	/usr/local/vtn/bin/vtn_start
+ 
+	.. Execute the following commands while stopping.
+	/usr/local/vtn/bin/vtn_stop
+
+. View VTN version details.
+
+	* VTN Coordinator version information will be displayed if following command is executed when VTN has started successfully.
+    curl -X GET -H 'content-type: application/json' -H 'username: admin' -H 'password: adminpass' -H \
+    'ipaddr:127.0.0.1' http://127.0.0.1:8083/vtn-webapi/api_version.json
+
+	* The expected response message:
+	{"api_version":{"version":"V1.0"}}
+ 
+
+=== Installing VTN Manager from Source Code
+
+This section contains instructions for installing VTN Manager.
+
+==== Pre Requisites for Installing VTN Manager
+
+VTN Manager is a set of OSGi bundles running in OpenDaylight controller, therefore prior preparation for installing VTN Manager is the same as OpenDaylight controller.
+
+For more information, see https://wiki.opendaylight.org/view/OpenDaylight_Controller:Installation[Installing Opendaylight].
+
+==== Preparing for Installation ==
+
+NOTE: The procedure that follows assumes that you are installing OpenDaylight Controller with VTN Manager on your local Linux machine.
+
+1. Download the code from the Git repository of VTN Project.
+[source,perl]
+ git clone ssh://<username>@git.opendaylight.org:29418/vtn.git
+ 
+or
+[source,perl]
+ git clone https://git.opendaylight.org/gerrit/p/vtn.git
+
+Note: The following instructions assume you put the code in directory ${VTN_DIR}.
+
+[source,perl]
+ ${VTN_DIR}=<Top of VTN source tree>
+
+. Build the code of VTN Manager.
+
+[source,perl]
+ cd ${VTN_DIR}
+ mvn -f manager/dist/pom.xml install
+
+== Running the Controller with VTN Manager
+
+On Linux/Unix systems, execute `run.sh` in the installation directory of OpenDaylight Controller.
+If you are installing controller from the source code as described above, the installation directory is usually the ${VTN_DIR}/manager/dist/target/distribution.vtn-manager-0.1.0-SNAPSHOT-osgipackage/opendaylight.
+
+[source,perl]
+ cd ${VTN_DIR}/manager/dist/target/distribution.vtn-manager-0.1.0-SNAPSHOT-osgipackage/opendaylight./run.sh
+
+For more information, see https://wiki.opendaylight.org/view/OpenDaylight_Controller:Installation[Installing Opendaylight].
+
+== REST API Examples
+
+VTN Manager provides REST API for virtual network functions.
+
+For detailed information about REST API specifications, see https://wiki.opendaylight.org/view/OpenDaylight_Virtual_Tenant_Network_(VTN):VTN_Manager:RestApi[VTN Manager REST APIs] 
+
+*To create a virtual tenant network*:
+
+[source,perl]
+ curl --user "admin":"admin" -H "Accept: application/json" -H \
+ "Content-type: application/json" -X POST \
+ http://localhost:8080/controller/nb/v2/vtn/default/vtns/Tenant1 \
+ -d '{"description": "My First Virtual Tenant Network"}'
+
+*To check the list of all tenants*
+
+[source,perl]
+ curl --user "admin":"admin" -H "Accept: application/json" -H \
+ "Content-type: application/json" -X GET \
+ http://localhost:8080/controller/nb/v2/vtn/default/vtns
+
+See the https://wiki.opendaylight.org/images/d/da/NEC_VTN_Demo_0722.pdf[VTN Slides] demonstrated for VTN Manager at Hackfest July 22. These slides helps you understand what VTN Manager brings to you.
+
+== Using Mininet ==
+
+Please refer to the information of https://wiki.opendaylight.org/view/OpenDaylight_Controller:Installation[Installing Opendaylight].
+
+=== Multiple Clusters of Controllers ===
+
+To run multiple clusters of OpenDaylight Controllers under VTN Coordinator, you can use the following python script (multitree.py) for Mininet.
+
+The script run six OpenFlow switches on mininet.
+Three of them will connect a OpenDaylight Controller, and the other three switches will connect other controller.
+
+. Edit "ControllerAddress" in the script for your environment.
+. Execute the script.
+ `% sudo python multitree.py`
+
+*multitree.py*
+
+----
+#!/usr/bin/python
+
+[source,perl]
+"""
+Run Mininet network using tree topology per remote controller.
+"""
+from mininet.cli import CLI
+from mininet.log import info, setLogLevel
+from mininet.net import Mininet
+from mininet.node import Host, OVSKernelSwitch, RemoteController
+from mininet.topo import Topo
+
+TreeDepth = 2
+FanOut = 2
+ControllerAddress = ["192.168.0.180", "192.168.0.181"]
+
+class MultiTreeTopo(Topo):
+    """Topology for multiple tree network using remote controllers.
+    A tree network is assigned to a remote controller."""
+    def __init__(self):
+        Topo.__init__(self)
+		
+        self.hostSize = 1
+        self.switchSize = 1
+        self.treeSwitches = []
+		
+        prev = None
+        for cidx in range(len(ControllerAddress)):
+            switches = []
+            self.treeSwitches.append(switches)
+            root = self.addTree(switches, TreeDepth, FanOut)
+            if prev:
+                self.addLink(prev, root)
+            prev = root
+			
+    def addTree(self, switches, depth, fanout):
+        """Add a tree node."""
+        if depth > 0:
+            node = self.addSwitch('s%u' % self.switchSize)
+            self.switchSize += 1
+            switches.append(node)
+            for i in range(fanout):
+                child = self.addTree(switches, depth - 1, fanout)
+                self.addLink(node, child)
+        else:
+            node = self.addHost('h%u' % self.hostSize)
+            self.hostSize += 1
+			
+        return node	
+		
+    def start(self, net):
+        """Start all controllers and switches in the network."""
+        cidx = 0
+        for c in net.controllers:
+            info("*** Starting controller: %s\n" % c)
+            info("    + Starting switches ... ")
+            switches = self.treeSwitches[cidx]
+            for sname in switches:
+                s = net.getNodeByName(sname)
+                info(" %s" % s)
+                s.start([c])
+            cidx += 1
+            info("\n")
+			
+        self.treeSwitches = None
+		
+class MultiTreeNet(Mininet):
+    """Mininet network environment with multiple tree network using remote
+    controllers."""
+    def __init__(self, **args):
+        args['topo'] = MultiTreeTopo()
+        args['switch'] = OVSKernelSwitch
+        args['controller'] = RemoteController
+        args['build'] = False
+        Mininet.__init__(self, **args)
+        idx = 1
+        for addr in ControllerAddress:
+            name = 'c%d' % idx
+            info('*** Creating remote controller: %s (%s)\n' % (name, addr))
+            self.addController(name, ip=addr, port=6633)
+            idx = idx + 1
+    def start(self):
+        "Start controller and switches."
+        if not self.built:
+            self.build()
+        self.topo.start(self)
+		
+if __name__ == '__main__':
+    setLogLevel('info')  # for CLI output
+    net = MultiTreeNet()
+    net.build()
+    print "*** Starting network"
+    net.start()
+    print "*** Running CLI"
+    CLI(net)
+    print "*** Stopping network"
+    net.stop()
+----
+
+==== Installing Opendaylight Virtualization Edition
+
+This section contains instructions for installing Opendaylight virtualization edition. 
+
+==== Pre Requisites for Installing VTN Coordinator
+
+.  Supported Platforms and Java Version
+    * RHEL 6.1 (64-bit)
+	  Download Oracle JDK 7 from the following page, and install it
+		http://www.oracle.com/technetwork/java/javase/downloads/index.html
+
+	* RHEL 6.4 (64-bit)
+	 Install OpenJDK 7
+	[source,perl] 
+	yum install java-1.7.0-openjdk-devel
+ 
+==== Preparing for Installation
+    
+The OpenDaylight virtualization edition zip file for Hydrogen release can be downloaded from https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/distributions-virtualization/0.1.0/[Hydrogen Distribution] 
+
+distributions-virtualization-0.1.0-osgipackage.zip 
+
+The latest OpenDaylight virtualization edition zip file can be downloaded from http://nexus.opendaylight.org/content/repositories/opendaylight.snapshot/org/opendaylight/integration/distributions-virtualization/0.1.2-SNAPSHOT/[Nexus Repository]
+
+NOTE: File names differ for all the latest virtualization edition and Hydrogen Release version. Ensure the release edition before running the  following commands for installing ODL controller:
+
+=== Installing ODL Controller
+
+To install ODL Controller:
+
+. Unzip the downloaded file as follows: 
+
+[source,perl]
+unzip distributions-virtualization-0.1.0-osgipackage.zip
+
+This will create a directory with name opendaylight 
+ 
+. Ensure that the environment variable JAVA_HOME is set to the location of the JDK. 
+
+. Execute Controller for VTN using the below command:
+[source,perl]
+  cd opendaylight
+  ./run.sh -virt vtn
+ 
+. The Controller will be up and running with the components required for VTN virtualization. 
+
+==== Installing VTN Coordinator
+
+. The VTN Coordinator is available in the external apps of the virtualization edition 
+
+. Install the VTN Coordinator using the following commands: + 
+	`cd opendaylight/externalapps 
+	tar –C / -jxvf org.opendaylight.vtn.distribution.vtn-coordinator-5.0.0.0-bin.tar.bz2`
+	
+	This will install the Coordinator to /usr/local/vtn directory. 
+
+. If the VTN Coordinator need to be run on a different machine, copy the org.opendaylight.vtn.distribution.vtn-coordinator-5.0.0.0-bin.tar.bz2 and uncompress. 
+
+==== Deploying VTN Coordinator
+
+*Preparing for Deployment*
+
+To install additional applications required for VTN Coordinator:
+
+[source,perl]
+yum install perl-Digest-SHA uuid libxslt libcurl unixODBC 
+wget http://dl.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm 
+rpm -Uvh epel-release-6-8.noarch.rpm 
+yum install json-c 
+
+*Installing PostgreSQL Database*
+
+The following steps to be followed to install PostgreSQL for Hydrogen release
+ 
+	* Configure Yum repository to download the latest rpms for PostgreSQL 9.1
+	
+	rpm -ivh http://yum.postgresql.org/9.1/redhat/rhel-6-x86_64/pgdg-redhat91-9.1-5.noarch.rpm
+	
+	
+  
+	* Install the required PostgreSQL packages 
+
+      yum install postgresql91-libs postgresql91 postgresql91-server postgresql91-contrib postgresql91-odbc
+	
+  
+NOTE: If you are facing any problems while installing postgreSQL rpm, see https://wiki.opendaylight.org/view/OpenDaylight_Virtual_Tenant_Network_(VTN):Installation:Troubleshooting#Problems_while_Installing_PostgreSQL_due_to_openssl[openssl_problems query] in troubleshooting FAQ. 
+
+*Installing and Configuring tomcat*
+
+To install and configure tomcat use one of the following procedures:
+
+* *Configuring using Script*
+
+To configure using the script, see https://wiki.opendaylight.org/view/OpenDaylight_Virtual_Tenant_Network_%28VTN%29:Main/Tomcat_configuration[Tomcat Configuration].
+
+To run the script: 
+[source,perl]
+  sh Tomcat_setup.sh
+
+NOTE:
+
+		* Run the script as a sudo user 
+		* If the VTN Coordinator and the controller are deployed in the same server then ensure that you set the port from 8080 to some other number as available in the server (8080 is the port used by ODL), when the setup script asks you to do so. This will be the last step in the script and the question will be "Need to change connector port, Enter[Y/N]". 
+
+* *Configuring Manually*
+. Install Tomcat. 
+	** Download the following file. + 
+		http://archive.apache.org/dist/tomcat/tomcat-7/v7.0.39/bin/apache-tomcat-7.0.39.tar.gz 
+	 
+	** Extract under /usr/share/java. + 
+		`tar zxvf apache-tomcat-7.0.39.tar.gz -C /usr/share/java`
+. Configure Tomcat settings. 
+		** Create the following symbolic link. + 
+		`ln -s /usr/local/vtn/tomcat/webapps/vtn-webapi /usr/share/java/apache-tomcat-7.0.39/webapps/vtn-webapi`
+	
+		** Add the following to common.loader of /usr/share/java/apache-tomcat-7.0.39/conf/catalina.properties. + 
+		`/usr/local/vtn/tomcat/lib,/usr/local/vtn/tomcat/lib/*.jar`
+	
+		** Add the following to shared.loader of /usr/share/java/apache-tomcat-7.0.39/conf/catalina.properties. + 
+		`/usr/local/vtn/tomcat/shared/lib/*.jar`
+	
+		** Add the following to <Server> of /usr/share/java/apache-tomcat-7.0.39/conf/server.xml. + 
+		`<Listener className="org.opendaylight.vtn.tomcat.server.StateListener" />`
+	
+. If the VTN Coordinator and the controller are deployed in the same server, then change the apache port from 8080 to some other number as available in the server. 8080 is the port used by the ODL. The ports need to be modified in the server.xml of the tomcat installation. 
+
+*Configuring Database for VTN Coordinator* + 
+	`/usr/local/vtn/sbin/db_setup`
+
+*Launch VTN Coordinator to Accept Requests*  + 
+	`/usr/local/vtn/bin/vtn_start`
+	
+	* Launch tomcat to accept requests (Not necessary to run the below command if downloaded latest virtualization edition). + 
+	`/usr/share/java/apache-tomcat-7.0.39/bin/catalina.sh start`
+  
+*Test and use VTN Coordinator*
+
+NOTE: 
+
+	* If you install "Hydrogen Release" version, VTN Coordinator runs on port 8080 by default.
+	* If you install  "latest virtualization edition" version, VTN Coordinator runs on port 8083 by default.
+
+Ensure the port number on which VTN coordinator is running and execute the following commands.
+
+. The following commands should display the response mentioned after the commands sections to ensure successful installation. + 
+	** *Hydrogen release*: + 
+	`curl -X GET -H 'content-type: application/json' -H 'username: admin' -H 'password: adminpass' \ -H 'ipaddr:127.0.0.1' http://<VTN_COORDINATOR_IP_ADDRESS>:<VTN_COORDINATOR_PORT>/vtn-webapi/api_version.json`
+  
+	** *Latest virtualization edition*: + 
+	
+	`curl --user admin:adminpass -H 'content-type: application/json' -X GET -H 'ipaddr:127.0.0.1' \
+	http://<VTN_COORDINATOR_IP_ADDRESS>:<VTN_COORDINATOR_PORT>/vtn-webapi/api_version.json`
+  
+	** *Response* + 
+	
+	`{"api_version":{"version":"V1.0"}}`
+  
+. Create and use VTN 
+For detailed  information about APIs to create VTN and all its sub components, see https://wiki.opendaylight.org/view/OpenDaylight_Virtual_Tenant_Network_(VTN):VTN_Coordinator:RestApi#VTNCoordinator_RestApi_Contents[API Web Reference].
+
+=== Configuring OpenDaylight Virtual Tenant Network (VTN)
+
+This page describes the various configurable parameters in VTN Coordinator. 
+
+==== Requirements
+
+Ensure that you have installed VTN Co ordinator as instructed in https://wiki.opendaylight.org/view/OpenDaylight_Virtual_Tenant_Network_(VTN):Installation:VTN_Coordinator[Installing VTN from Source Code] or https://wiki.opendaylight.org/view/OpenDaylight_Virtual_Tenant_Network_(VTN):Installation:Virtualization_Edition[Installing VTN using Virtualization Edition]
+
+==== Configurable Parameters
+
+Use the following parameters VTN:
+
+==== read_interval for physical attributes
+
+*Description*
+ When an ODL Controller is added as controller to VTN Coordinator, the latter will collect the physical network details from ODL on a timely basis.
+ This paramter will determine the frequency of this operation.
+ 
+*File*
+/usr/local/vtn/modules/vtndrvintf.conf 
+
+*Parameter*
+[source,perl] 
+physical_attributes_read_interval 
+
+*Default*
+40 seconds 
+
+==== ping_interval
+
+*Description* + 
+ When a ODL controller is added to VTN Coordinator, the latter will try to retrieve version of the ODL controller on a timely basis to ensure that the controller can accept configuration requests.
+
+*File*
+/usr/local/vtn/modules/odcdriver.conf 
+ 
+*Parameter*
+[source,perl] 
+odcdrv_ping_interval  
+
+*Default*
+30 seconds 
+
+==== ODL Port
+
+*Description* + 
+ The Port number in which the ODL can accept requests
+
+*File*
+/usr/local/vtn/modules/odcdriver.conf 
+ 
+*Parameter*
+[source,perl] 
+odc_port   
+
+*Default*
+8080 
+
+==== ODL connect timeout
+
+*Description* + 
+ The upper limit of the time that VTN Coordinator will wait for ODL to accept the connection.
+
+
+*File*
+/usr/local/vtn/modules/odcdriver.conf 
+ 
+*Parameter*
+[source,perl] 
+connect_time_out   
+
+*Default*
+30 seconds
+
+==== ODL Request timeout
+
+*Description* + 
+ The upper limit of the time that VTN Coordinator will wait for ODL to respond to a request.
+
+*File*
+/usr/local/vtn/modules/odcdriver.conf 
+ 
+*Parameter*
+[source,perl] 
+request_time_out   
+
+*Default*
+30 seconds
+
+==== ODL username
+
+*Description* + 
+ The username to send any request to ODL
+
+*File*
+/usr/local/vtn/modules/odcdriver.conf 
+ 
+*Parameter*
+[source,perl] 
+username   
+
+*Default*
+admin
+
+==== ODL Password
+
+*Description* + 
+ The password to send any request to ODL
+
+*File*
+/usr/local/vtn/modules/odcdriver.conf 
+ 
+*Parameter*
+[source,perl] 
+password   
+
+*Default*
+admin
+
+
+
+
 
