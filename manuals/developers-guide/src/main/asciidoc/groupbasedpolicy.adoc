@@ -18,6 +18,21 @@ The key to understanding the architecture is to first understand the policy mode
 
 The policy model is built around the idea of placing endpoints into groups that share the same semantics, and then defining what other groups those endpoints need to communicate, and then finally defining how these endpoints need to communicate. In this way, we represent the requirements of the application and then force the infrastructure to figure out how to meet these requirements, rather than defining the policy in terms of the underlying infrastructure.
 
+==== Policy Model UML Diagrams
+
+[NOTE]
+========
+The UML diagrams included here are *not* normative. They attempt to provide a pictorial representation of the group-based policy model. In the event of any conflicts, the RESTful interfaces that are generated dynamically from the group-based policy yang models are normative.
+========
+
+.Policy Model: Clauses and Subject Selection
+
+image::GBP-model-clauses.png[width="30%"]
+
+.Policy Model: Subject Contents
+
+image::GBP-model-subjects.png[width="50%"]
+
 ==== Policy Concepts
 
 This section describes some of the most important concepts in the policy model. See the next section on <<policy_resolution,Policy Resolution>> for a description of how these fit together to determine how to apply the policy to the network.
