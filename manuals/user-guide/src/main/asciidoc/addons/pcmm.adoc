@@ -1,9 +1,9 @@
 
-== OpenDaylight Packet Cable MultiMedia (PCMM) Service User Guide
+== Packet Cable MultiMedia (PCMM) Service 
 
 Packet Cable MultiMedia (PCMM) provides an interface to control and management service flow for CMTS network elements. A service flows constitute a DOCSIS data path between a CMTS and a subscriber's cable modem (CM) guaranteed application specific quality of service (QoS), known as Dynamic Quality of Service (DQoS). PCMM offers (MSOs) the ability to deliver new services using existing cable infrastructure. MSOs have already begun to apply PCMM technology for expanding their multimedia service offerings.
 
-== Overview
+=== Overview
 
 The PCMM architecture comprises the following components:
 
@@ -22,7 +22,7 @@ The goal of this project is to utilizes the OpenDayLight controller platform as 
 
 The initial southbound transport has been written to the following version of the specification: http://www.cablelabs.com/wp-content/uploads/specdocs/PKT-SP-MM-I05-091029.pdf
 
-== Architecture Overview
+=== Architecture 
 .Architecture Overview
 image::pcmm-docsis.png["Architecture Overview", width=512]
 
@@ -34,30 +34,27 @@ The OpenDaylight Packetcable PCMM includes:
 * Southbound ODL plugin supporting PCMM/COPS protocol driver
 * Packetcable PCMM RESTCONF Service API
 
-=== Packetcable PCMM Architecture
-
-The following figure shows the various Packetcable PCMM modules.
-
-.Packetcable PCMM Service Internal Architecture
-
-image::pcmm-technical-arch-overview-helium.png["Packetcable PCMM Service Internal Architecture", width=460]
+=== Features
 
 A brief description of some of what this feature has to offer:
 
 * Provision a CMTS 
 * Flow Programmer match-only for managing DOCSIS (service) flows
-* Northbound APIs for provisioning CMTS network elements
-* HTML Provisioning Interface or some Python RESTful examples
-* Northbound APIs for provisioning Service Flow values and types
-* Northbound APIs for provisioning QoS (or metering) parameters
+* RESTCONF APIs for provisioning CMTS network elements
+* HTML Provisioning Interface and some Python examples
+* RESTCONF APIs for provisioning Service Flow values and types
+* RESTCONF APIs for provisioning QoS (or metering) parameters
 * SAL extensions for DOCSIS specific data model and configuration APIs
-* Southbound PCMM/COPS transport plugin
+* PCMM/COPS protocol transport plugin
 
+==== Install
 
-The following figure depicts the described components. 
+[source, text]
+----
+opendaylight-user@root>feature:install odl-packetcable-all
+----
 
-
-=== Packetcable PCMM Support
+=== Support
 
 For support please contact the packetcable project at:
 
