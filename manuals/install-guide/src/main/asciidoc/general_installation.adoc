@@ -57,3 +57,47 @@ Hit '<ctrl-d>' or type 'system:shutdown' or 'logout' to shutdown OpenDaylight.
 
 opendaylight-user@root>
 ----
+
+=== Installing Features
+
+.Karaf features
+[options="header"]
+|=======================
+| Component Name                   | Component Description | Karaf feature name                    | Compatibility
+| AAA                              | description           | odl-aaa-all                           | all
+| AAA authz                        | description           | odl-aaa-authz                         | all
+| AD-SAL                           | description           | odl-adsal-all                         | all
+| AD-SAL Compatibility             | description           | odl-adsal-compatibility               | all
+| BGPCEP                           | description           | odl-bgpcep-all                        | all
+| dLux Web Interface               | description           | odl-dlux-core                         | all
+| LISP Flow Mapping                | description           | odl-lispflowmapping-all               | all
+| MD-SAL Broker                    | description           | odl-mdsal-broker                      | all
+| MD-SAL Clustering                | description           | odl-mdsal-clustering                  | all
+| Netconf over ssh                 | description           | odl-netconf-connector-ssh             | all
+| Network Service Functions        | description           | odl-nsf-all                           | all
+| OpenFlow NXM Extensions          | description           | odl-openflow-nxm-extensions           | all
+| OpenFlow Protocol                | description           | odl-openflowjava-protocol             | all
+| OpenFlow Flow Programming        | description           | odl-openflowplugin-flow-services      | all
+| OpenFlow Flow Programming (REST) | description           | odl-openflowplugin-flow-services-rest | all
+| OpenFlow Flow Programming (UI)   | description           | odl-openflowplugin-flow-services-ui   | all
+| OVSDB                            | description           | odl-ovsdb-all                         | all
+| Packetcable PCMM                 | description           | odl-packetcable-all                   | all
+| SDN Interface                    | description           | odl-sdninterfaceapp-all               | all
+| RESCONF APIS                     | description           | odl-restconf                          | all
+| Service Flow Chaining (SFC)      | description           | odl-sfc-all                           | all
+| SFC over LISP                    | description           | odl-sfclisp                           | all
+| SFC over L2                      | description           | odl-sfcofl2                           | all
+| Secure Networking Bootstrap      | description           | odl-snbi-all                          | all
+| OpenFlow Table Type Patterns     | description           | odl-ttp-all                           | all
+| SNMP4SDN                         | description           | odl-snmp4sdn-all                      | all
+| Group Based Policy               | description           | odl-groupbasedpolicy-ofoverlay        | self+all
+| L2 Switch                        | description           | odl-l2switch-switch                   | self+all
+| L2 Switch (REST)                 | description           | odl-l2switch-switch-rest              | self+all
+| L2 Switch (UI)                   | description           | odl-l2switch-switch-ui                | self+all
+| Plugin to OpenContrail           | description           | odl-plugin2oc                         | self+all
+| OVSDB OpenStack Neutron          | description           | odl-ovsdb-openstack                   | self+all
+| OVSDB SFC                        | description           | odl-ovsdb-ovssfc                      | self+all
+| VTN Manager                      | description           | odl-vtn-manager-all                   | self+all
+|=======================
+
+In the table a compatibility value of "all" means that it can be run with any other features. A value of "self+all" indicates that the feature can be installed with anything with a value of "all", but not any other features with a value of "self+all".
