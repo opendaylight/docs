@@ -1,11 +1,11 @@
 == Setting Up Clustering on an OpenDaylight Controller
 
-* <<Clustering Overview>>
-* <<Single Node Clustering>>
-* <<Multiple Node Clustering>>
-** <<Deployment Considerations>>
-** <<Setting Up a Multiple Node Cluster>>
-*** <<Enabling HA on a Multiple Node Cluster>>
+//* <<Clustering Overview>>
+//* <<Single Node Clustering>>
+//* <<Multiple Node Clustering>>
+//** <<Deployment Considerations>>
+//** <<Setting Up a Multiple Node Cluster>>
+//*** <<Enabling HA on a Multiple Node Cluster>>
 
 === Clustering Overview
 
@@ -40,7 +40,7 @@ After enabling the DistributedDataStore feature in a single instance, you can ac
 
 === Multiple Node Clustering
 
-The following sections describe how to set up multiple node clusters in OpenDaylight. 
+The following sections describe how to set up multiple node clusters in OpenDaylight.
 
 ==== Deployment Considerations
 
@@ -52,7 +52,7 @@ Here is some information to keep in mind when you implement clustering:
 
 * Data shards are used to house all or a certain segment of a module&#8217;s data. For example, one shard can contain all of a module&#8217;s inventory data while another shard contains all of it&#8217;s topology data. If you do not specify a module in the modules.conf file and do not specify a shard in module-shards.conf, then (by default) all the data is places onto the default shard (which must also be defined in module-shards.conf file). Each shard has replicas configured, and the module-shards.conf file is where you can specify where these replicas reside.
 
-* Say you have a three node cluster on which HA is enabled. A replica of every defined data shard must be running on all three cluster nodes. This is because OpenDaylight&#8217;s clustering implementation requires a majority of the defined shard replicas to be running in order to function. If you only define data shard replicas on two of the cluster nodes and one of those nodes goes down, the corresponding data shards will not function. 
+* Say you have a three node cluster on which HA is enabled. A replica of every defined data shard must be running on all three cluster nodes. This is because OpenDaylight&#8217;s clustering implementation requires a majority of the defined shard replicas to be running in order to function. If you only define data shard replicas on two of the cluster nodes and one of those nodes goes down, the corresponding data shards will not function.
 
 * If you have a three node cluster and have defined replicas for a data shard on each of those nodes, that shard will still function even if only two of the cluster nodes are running. Note that if one of those two nodes go down, your controller will no longer be operational.
 
