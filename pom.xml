@@ -86,7 +86,7 @@
       <url>${nexusproxy}/repositories/opendaylight.snapshot/</url>
     </snapshotRepository>
     <site>
-      <id>${project.artifactId}-site</id>
+      <id>opendaylight-site</id>
       <url>dav:${sitedeploy}/</url>
     </site>
   </distributionManagement>
