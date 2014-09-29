@@ -1,0 +1,245 @@
+OpenDaylight Virtual Tenant Network (VTN):VTN Coordinator:RestApi:How to install VTN Coordinator(Troubleshooting steps)
+
+== Overview
+This page demonstrates Installation troubleshooting steps of VTN coordinator. 
+OpenDaylight VTN provides multi-tenant virtual network functions on OpenDaylight controllers. OpenDaylight VTN consists of two parts: 
+      * VTN Coordinator 
+      * VTN Manager. 
+VTN Coordinator orchestrates multiple VTN Managers running in OpenDaylight Controllers, and provides VTN Applications with VTN API. 
+VTN Manager is OSGi bundles running in OpenDaylight Controller. Current VTN Manager supports only OpenFlow switches. It handles PACKET_IN messages, sends PACKET_OUT messages, manages host information, and installs flow entries into OpenFlow switches to provide VTN Coordinator with virtual network functions. 
+The requirements for installing these two are different.Therefore, we recommend that you install VTN Manager and VTN Coordinator in different machines. 
+== Requirements
+* Arrange a server where RHEL 6.1 or later is installed. 
+* Install necessary packages
+[cols=*3,2a,^,options="header",width="75%"]
+|===
+|
+yum install make glibc-devel gcc gcc-c++ boost-devel openssl-devel \
+ant perl-ExtUtils-MakeMaker \
+unixODBC-devel perl-Digest-SHA uuid libxslt libcurl \
+libcurl-devel git
+|===
+* Install JDK 7, and add the JAVA_HOME environment variable.
+[cols=*3,2a,^,options="header",width="75%"]
+|===
+| 
+  * RHEL 6.1
+   Download Oracle JDK 7 from the following page, and install it.
+   http://www.oracle.com/technetwork/java/javase/downloads/index.html
+   Set JAVA_HOME to the location of the JDK.
+   e.g.) export JAVA_HOME=/usr/java/default
+|===
+[cols=*3,2a,^,options="header",width="75%"]
+|=== 
+|
+ * RHEL 6.4
+   Install OpenJDK 7.
+   yum install java-1.7.0-openjdk-devel
+   Set JAVA_HOME to the location of the JDK.
+   e.g.) export JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk.x86_64
+|===
+* Download the following PostgreSQL 9.1 files from
+http://yum.postgresql.org/9.1/redhat/rhel-6-x86_64/ and install.
+[cols=*3,2a,^,options="header",width="75%"]
+|=== 
+  * postgresql91-libs-9.1.9-1PGDG.rhel6.x86_64.rpm
+  * postgresql91-9.1.9-1PGDG.rhel6.x86_64.rpm
+  * postgresql91-server-9.1.9-1PGDG.rhel6.x86_64.rpm
+  * postgresql91-contrib-9.1.9-1PGDG.rhel6.x86_64.rpm
+  * postgresql91-odbc-09.00.0310-1PGDG.rhel6.x86_64.rpm
+|===
+* Install Maven.
+[cols=*3,2a,^,options="header",width="75%"]
+|=== 
+|* Download Maven from the following page and install it following the instruction in the page.
+   http://maven.apache.org/download.cgi
+|===
+* Install gtest-devel and json-c libraries
+[cols=*3,2a,^,options="header",width="75%"]
+|=== 
+ |wget http://dl.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
+  rpm -Uvh epel-release-6-8.noarch.rpm
+  yum install gtest-devel json-c json-c-devel
+|===
+
+=== Steps to run VTN Coordinator
+. Install Tomcat.
+[cols=*3,2a,^,options="header",width="75%"]
+|=== 
+|
+  * Download the following file.
+      http://archive.apache.org/dist/tomcat/tomcat-7/v7.0.39/bin/apache-tomcat-7.0.39.tar.gz
+   * Extract under /usr/share/java.
+      tar zxvf apache-tomcat-7.0.39.tar.gz -C /usr/share/java
+|===
+. Carry out Tomcat settings.
+[cols=*3,2a,^,options="header",width="75%"]
+|=== 
+|
+   * Create the following symbolic link.
+       ln -s /usr/local/vtn/tomcat/webapps/vtn-webapi \
+       /usr/share/java/apache-tomcat-7.0.39/webapps/vtn-webapi 
+|===
+[cols=*3,2a,^,options="header",width="75%"]
+|=== 
+|
+   * Add the following to "common.loader" of
+      /usr/share/java/apache-tomcat-7.0.39/conf/catalina.properties.
+      /usr/local/vtn/tomcat/lib,/usr/local/vtn/tomcat/lib/*.jar
+|===
+[cols=*3,2a,^,options="header",width="75%"]
+|=== 
+|
+   * Add the following to "shared.loader" of
+      /usr/share/java/apache-tomcat-7.0.39/conf/catalina.properties.
+     /usr/local/vtn/tomcat/shared/lib/*.jar
+|===
+[cols=*3,2a,^,options="header",width="75%"]
+|===    
+|
+   * Add the following to <Server> of
+      /usr/share/java/apache-tomcat-7.0.39/conf/server.xml.
+      <Listener className="org.opendaylight.vtn.tomcat.server.StateListener" />
+|===
+. Set up the DB.
+[cols=*3,2a,^,options="header",width="75%"]
+|=== 
+| /usr/local/vtn/sbin/db_setup
+|===
+
+== Configuration
+
+Please find this link to configure VTN coordinator[[https://wiki.opendaylight.org/view/OpenDaylight_Virtual_Tenant_Network_(VTN):VTN_Coordinator:RestApi:L2_Network_Example_Using_VTN_Virtualization#L2_Network_with_Single_Controller|VTN configuration]]
+
+=== List of installation Troubleshooting How to's
+==== How to install VTN Coordinator?
+
+* [[OpenDaylight Virtual Tenant Network (VTN):Installation:VTN Coordinator|Install coordinator from source]]
+
+==== After executing db_setup, you have encountered the error "Failed to setup database"?
+
+The error could be due to the below reasons 
+* Access Restriction
+[cols=*3,2a,^,options="header",width="75%"]
+|=== 
+|
+The user who owns /usr/local/vtn/ directory and installs VTN coordinator, can only start db_setup.
+  Example : 
+  The directory should appear as below (assuming the user as "vtn"):
+  # ls -l /usr/local/
+    drwxr-xr-x. 12 vtn  vtn  4096 Mar 14 21:53 vtn
+  If the user doesnot own /usr/local/vtn/ then, please run the below command (assuming the username as vtn),
+              chown -R vtn:vtn /usr/local/vtn
+|===
+* Postgres not Present 
+[cols=*3,2a,^,options="header",width="75%"]
+|=== 
+|
+1. In case of Fedora/CentOS/RHEL, please check if /usr/pgsql/<version> directory is present and also ensure the commands initdb, createdb,pg_ctl,psql are working. If, not please re-install postgres packages
+2. In case of Ubuntu, check if /usr/lib/postgres/<version> directory is present and check for the commands as in the previous step.
+|===
+* Not enough space to create tables
+[cols=*3,2a,^,options="header",width="75%"]
+|=== 
+|
+Please check df -k and ensure enough free space is available.
+|===
+* If the above steps do not solve the problem, please refer to the log file for the exact problem
+[cols=*3,2a,^,options="header",width="75%"]
+|=== 
+|
+/usr/local/vtn/var/dbm/unc_setup_db.log for the exact error.
+|===
+
+==== What are the things to check after vtn_start?
+
+* list of coordinator processes 
+* Run the below command ensure the Coordinator daemons are running. 
+[cols=*3,2a,^,options="header",width="75%"]
+|=== 
+|
+Command:     /usr/local/vtn/bin/unc_dmctl status
+	   Name              Type           IPC Channel       PID
+    -----------       -----------      --------------     ------
+        drvodcd         DRIVER           drvodcd           15972
+        lgcnwd         LOGICAL           lgcnwd            16010
+        phynwd         PHYSICAL          phynwd            15996 
+|===
+* Issue the curl command to fetch version and ensure the process is able to respond.
+==== How to debug a startup failure?
+
+The following activities take place in order during startup 
+* Database server is started after setting virtual memory to required value 
+[cols=*3,2a,^,options="header",width="75%"]
+|===         
+|
+         Any database startup errors will be reflected in any of the below logs
+         /usr/local/vtn/var/dbm/unc_db_script.log.
+         /usr/local/vtn/var/db/pg_log/postgresql-*.log (the pattern will have the date)
+|===
+* uncd daemon is kicked off, The daemon in turn kicks off the rest of the daemons. 
+[cols=*3,2a,^,options="header",width="75%"]
+|=== 
+|
+        Any  uncd startup failures will be reflected in /usr/local/vtn/var/uncd/uncd_start.err.
+         please refer to the file for any errors.
+|===
+==== After setting up the apache tomcat server, what are the aspects that should be checked.
+
+[cols=*3,2a,^,options="header",width="75%"]
+|=== 
+|            
+Please check if catalina is running. 
+|===
+[cols=*3,2a,^,options="header",width="75%"]
+|=== 
+            | The command ps -ef | grep catalina | grep -v grep should list a catalina process 
+|===
+==== If you encounter an erroneous situation where the REST API is always failing.
+[cols=*3,2a,^,options="header",width="75%"]
+|=== 
+           |Please ensure the firewall settings for port:8080(Helium release) or port:8083(Post Helium release) and enable the same.
+|===
+==== How to debug a REST API returning a failure message?
+
+[cols=*3,2a,^,options="header",width="75%"]
+|=== 
+         |Please check the /usr/share/java/apache-tomcat-7.0.39/logs/core/core.log for failure details.
+
+==== REST API for VTN configuration fails, how to debug?
+
+The default log level for all daemons is "INFO", to debug the situation TRACE or DEBUG logs may be needed. To increase the log level for individual daemons, please use the commands suggested below
+[cols=*3,2a,^,options="header",width="75%"]
+|=== 
+ |  /usr/local/vtn/bin/lgcnw_control loglevel trace -- upll daemon log 
+   /usr/local/vtn/bin/phynw_control loglevel trace -- uppl daemon log 
+   /usr/local/vtn/bin/unc_control loglevel trace -- uncd daemon log 
+   /usr/local/vtn/bin/drvodc_control loglevel trace -- Driver daemon log 
+|===
+After setting the log levels, the operation can be repeated and the log files can be referred for debugging.
+
+==== Problems while Installing PostgreSQL due to openssl  
+
+Errors may occur when trying to install postgreSQL rpms. Recently PostgreSQL has upgraded all their binaries to use the latest openssl versions with fix for [http://en.wikipedia.org/wiki/Heartbleed heartbleed bug]. Please upgrade the openssl package to the latest version and re-install. 
+For RHEL 6.1/6.4 : If you have subscription, Please use the same and update the rpms. The details are available in this link:[https://access.redhat.com/site/solutions/781793 ACCESS-REDHAT].
+If you do not have subscription, Please use the Cent OS 6 yum respository and update the openssl package. [http://mirrors.kernel.org/centos/6/os/x86_64/Packages CentOS6]
+[cols=*3,2a,^,options="header",width="75%"]
+|=== 
+|
+   rpm -Uvh http://mirrors.kernel.org/centos/6/os/x86_64/Packages/openssl-1.0.1e-15.el6.x86_64.rpm
+   rpm -ivh http://mirrors.kernel.org/centos/6/os/x86_64/Packages/openssl-devel-1.0.1e-15.el6.x86_64.rpm 
+|===
+For other linux platforms, Please do yum update, the public respositroes will have the latest openssl, please install the same.
+[cols=*3,2a,^,options="header",width="75%"]
+|=== 
+|
+[[Category:OpenDaylight Virtual Tenant Network]]
+|===
+
+
+
+
+
+
+
+ 

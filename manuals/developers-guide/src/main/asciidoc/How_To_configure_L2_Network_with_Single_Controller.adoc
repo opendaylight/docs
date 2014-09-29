@@ -1,0 +1,83 @@
+OpenDaylight Virtual Tenant Network (VTN):VTN Coordinator:RestApi:How to configure L2 Network with Single Controller 
+
+== Overview
+
+This example provides the procedure to demonstrate configuration of VTN Coordinator with L2 network using VTN Virtualization(single controller). Here is the Example for vBridge Interface Mapping with Single Controller using mininet. mininet details and set-up can be referred at below URL:
+https://wiki.opendaylight.org/view/OpenDaylight_Controller:Installation#Using_Mininet
+
+image::Single_Controller_Mapping.PNG[EXAMPLE DEMONSTRATING SINGLE CONTROLLER]
+
+== Requirements
+
+* Configure mininet and create a topology:
+[cols=*3,2a,^,options="header",width="75%"]
+|===
+|mininet@mininet-vm:~$ sudo mn --controller=remote,ip=<controller-ip> --topo tree,2
+|===
+
+* mininet> net
+[cols=*3,2a,^,options="header",width="75%"]
+|===
+|
+ s1 lo:  s1-eth1:h1-eth0 s1-eth2:s2-eth1
+ s2 lo:  s2-eth1:s1-eth2 s2-eth2:h2-eth0
+ h1 h1-eth0:s1-eth1
+ h2 h2-eth0:s2-eth2
+|===
+== Configuration
+
+* Create a Controller
+[cols=*3,2a,^,options="header",width="75%"]
+|===
+| curl --user admin:adminpass -H 'content-type: application/json' -H 'ipaddr:127.0.0.1' -X POST -d '{"controller": {"controller_id": "controllerone", "ipaddr":"10.0.0.2", "type": "odc", "version": "1.0", "auditstatus":"enable"}}' http://127.0.0.1:8083/vtn-webapi/controllers.json   
+|===
+
+* Create a VTN 
+[cols=*3,2a,^,options="header",width="75%"]
+|===
+| curl --user admin:adminpass -H 'content-type: application/json' -H 'ipaddr:127.0.0.1' -X POST -d '{"vtn" : {"vtn_name":"vtn1","description":"test VTN" }}' http://127.0.0.1:8083/vtn-webapi/vtns.json 
+|===
+
+* Create a vBridge in the VTN 
+[cols=*3,2a,^,options="header",width="75%"]
+|===
+| curl --user admin:adminpass -H 'content-type: application/json' -H 'ipaddr:127.0.0.1' -X POST -d '{"vbridge" : {"vbr_name":"vBridge1","controller_id":"controllerone","domain_id":"(DEFAULT)" }}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn1/vbridges.json
+|===
+
+* Create two Interfaces into the vBridge 
+
+[cols=*3,2a,^,options="header",width="75%"]
+|===
+| curl --user admin:adminpass -H 'content-type: application/json' -H 'ipaddr:127.0.0.1' -X POST -d '{"interface": {"if_name": "if1","description": "if_desc1"}}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn1/vbridges/vBridge1/interfaces.json
+|===
+
+[cols=*3,2a,^,options="header",width="75%"]
+|===
+|  curl --user admin:adminpass -H 'content-type: application/json' -H 'ipaddr:127.0.0.1' -X POST -d '{"interface": {"if_name": "if2","description": "if_desc2"}}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn1/vbridges/vBridge1/interfaces.json
+|===
+
+* Get the list of logical ports configured
+[cols=*3,2a,^,options="header",width="75%"]
+|===
+| curl --user admin:adminpass -H 'content-type: application/json' -X GET -H 'ipaddr:127.0.0.1' http://127.0.0.1:8083/vtn-webapi/controllers/controllerone/domains/\(DEFAULT\)/logical_ports.json
+|===
+
+* Configure two mappings on the interfaces 
+[cols=*3,2a,^,options="header",width="75%"]
+|===
+| curl --user admin:adminpass -H 'content-type: application/json' -H 'ipaddr:127.0.0.1' -X PUT -d '{"portmap":{"logical_port_id": "PP-OF:00:00:00:00:00:00:00:03-s3-eth1"}}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn1/vbridges/vBridge1/interfaces/if1/portmap.json
+|===
+[cols=*3,2a,^,options="header",width="75%"]
+|===
+|  curl --user admin:adminpass -H 'content-type: application/json' -H 'ipaddr:127.0.0.1' -X PUT -d '{"portmap":{"logical_port_id": "PP-OF:00:00:00:00:00:00:00:02-s2-eth1"}}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn1/vbridges/vBridge1/interfaces/if2/portmap.json
+|===
+
+== Verification
+
+Please verify whether the Host1 and Host3 are pinging.
+* Send packets from Host1 to Host3
+[cols=*3,2a,^,options="header",width="75%"]
+|===
+|mininet> h1 ping h3
+|===
+
