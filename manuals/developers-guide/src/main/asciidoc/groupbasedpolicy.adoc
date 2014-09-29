@@ -22,8 +22,12 @@ The policy model is built around the idea of placing endpoints into groups that 
 
 [NOTE]
 ========
-The UML diagrams included here are *not* normative. They attempt to provide a pictorial representation of the group-based policy model. In the event of any conflicts, the RESTful interfaces that are generated dynamically from the group-based policy yang models are normative.
+The UML diagrams included here are *not* normative. They attempt to provide a pictorial representation of the group-based policy model. In the event of any conflicts, the RESTful interfaces that are generated dynamically from the group-based policy yang models are normative. The group-based policy yang models can be found at './groupbasedpolicy/groupbasedpolicy/src/main/yang/model/'.
 ========
+
+.Policy Model: Contract Selection
+
+image::GBP-model-contract-selection.png[width="46%"]
 
 .Policy Model: Clauses and Subject Selection
 
@@ -32,6 +36,11 @@ image::GBP-model-clauses.png[width="30%"]
 .Policy Model: Subject Contents
 
 image::GBP-model-subjects.png[width="50%"]
+
+.Policy Model: Forwarding
+
+image::GBP-model-forwarding.png[width="57%"]
+
 
 ==== Policy Concepts
 
