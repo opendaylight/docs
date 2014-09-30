@@ -2,7 +2,7 @@
 = OpenDaylight Installation Guide
 :docinfo:
 
-
+//////////////////////////
 [dedication]
 Example Dedication
 ------------------
@@ -26,7 +26,6 @@ Preface Sub-section
 ~~~~~~~~~~~~~~~~~~~
 Preface sub-section body.
 
-//////////////////////////
 Using OpenDaylight
 --------------------------
 
@@ -57,12 +56,15 @@ the end of their file.
 //////////////////////////
 include::general_installation.adoc[]
 
+/////////////
 include::addons/aaa.adoc[]
 
 include::addons/bgpcep.adoc[]
+/////////////
 
 include::addons/defense4all.adoc[]
 
+/////////////
 include::addons/groupbasedpolicy.adoc[]
 
 include::addons/l2switch.adoc[]
@@ -84,11 +86,13 @@ include::addons/snmp4sdn.adoc[]
 include::addons/ttp.adoc[]
 
 include::addons/vtn.adoc[]
+/////////////
 
 include::addons/yangtools.adoc[]
 
 :numbered!:
 
+//////////////////////////
 [appendix]
 Example Appendix
 ----------------
@@ -122,6 +126,8 @@ Text at the end of a book describing facts about its production.
 [index]
 Example Index
 -------------
+//////////////////////////
+
 ////////////////////////////////////////////////////////////////
 The index is normally left completely empty, it's contents being
 generated automatically by the DocBook toolchain.

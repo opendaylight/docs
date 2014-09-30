@@ -1,18 +1,13 @@
 == Yang Tools 
-This chapter contains the following sections:
 
-* <<_installation_overview>>
-* <<_adding_plugin_repositories>>
-* <<_using_plugin>>
-
-== Installation Overview
+=== Installation Overview
 Yang tools is a infrastructure project aiming to develop necessary tooling and libraries providing support for NETCONF and YANG for Java (JVM-language based) projects and applications.
 Yang tools is used for application such as Model Driven SAL for Controller (which uses YANG as the modeling language) and Netconf or OFConfig plugins. 
 
-=== Installing the Project
+==== Installing the Project
 To configure your project and generate source code from YANG edit your projects *pom.xml* and add Opendaylight SNAPSHOT repository for snapshot releases (currently only snapshots are available). 
 
-== Adding Plugin Repositories 
+=== Adding Plugin Repositories 
 ==== Plugin Repository
 To add following plugin repositories for plugin use: +
 
@@ -33,24 +28,24 @@ To add following plugin repositories for plugin use: +
 
 To add repositories for required dependencies use: 
 [literal]
-<repositories>
+<repositories> 
     <repository>	   
        <id>opendaylight-release</id>
        <name>opendaylight-release</name>
        <url>http://nexus.opendaylight.org/content/repositories/opendaylight.release/</url>
-        </repositories>
+    </repository>
     <repository>	   
        <id>opendaylight-snapshot</id>
        <name>opendaylight-snapshot</name>
        <url>http://nexus.opendaylight.org/content/repositories/opendaylight.snapshot/</url>
-        </repository>
-   </repositories>
+    </repository>
+</repositories>
    
 ==== Using Plugin
 
 To add yang-maven-plugin to build section of your pom.xml use:
 [literal]
-<build>
+   <build>
        <plugins>
            <plugin>
                <groupId>org.opendaylight.yangtools</groupId>
