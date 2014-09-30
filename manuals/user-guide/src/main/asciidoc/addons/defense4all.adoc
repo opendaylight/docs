@@ -1,18 +1,20 @@
 == Defense4All
 
 This chapter provides the following sections: +
-
-* <<Defense4All Overview>>
-* <<Defense4All User Interface>>
-* <<Configuring the FrameWork Environment>>
-* <<FrameWork Maintenance>>
-* <<FrameWork Reports>>
-* <<Configuring Defense4All Protected Objects (POs)>>
-* <<Defense4All Reports>>
+:toc:
+//* <<Defense4All Overview>>
+//* <<Defense4All User Interface>>
+//* <<Configuring the FrameWork Environment>>
+//* <<FrameWork Maintenance>>
+//* <<FrameWork Reports>>
+//* <<Configuring Defense4All Protected Objects (POs)>>
+//* <<Defense4All Reports>>
 
 === Defense4All Overview
 Defense4All is an SDN application for detecting and mitigating DDoS attacks. The figure below depicts the positioning of Defense4All in OpenDaylight environment. +
-image::defense4all_overview.jpg[Defense4All Overview]
+
+.Defense4All Overview
+image::defense4all_overview.jpg[Defense4All Overview,width=500]
 
 The application communicates with OpenDaylight Controller through the ODC north-bound REST API. 
 

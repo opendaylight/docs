@@ -1,18 +1,18 @@
 == OpenDaylight Release Notes
-	
+
 === Key Features
 
 The following table describes the key features provided by the OpenDaylight controller.
 
-[cols=\u201c2*\u201d]
+[cols="2",option="headers"]
 |==============================================
 | *Feature* | *Description*
 |  Maven support | Used to simplify build automation.
-| OSGi framework | Serves as the controller&#8217;s back-end, allowing it to dynamically load bundles, package JAR files, and bind bundles together when exchanging information.  
-| Java interface support | Used by specific bundles to implement call-back functions for events and indicate the awareness of specific states.  
+| OSGi framework | Serves as the controller&#8217;s back-end, allowing it to dynamically load bundles, package JAR files, and bind bundles together when exchanging information.
+| Java interface support | Used by specific bundles to implement call-back functions for events and indicate the awareness of specific states.
 | Service Abstraction Layer (SAL) | Allows the controller to support multiple protocols (such as BGP-LS and OpenFlow) on the southbound interface. Also provides consistent services for modules and applications (which is where the business logic is embedded).
-| Switch Manager | Once a network element has been discovered, its details (such as device type, software version, etc.) are stored by the Switch Manager.  
-| High Availability (HA) | The controller supports cluster-based HA, allowing you to connect multiple controllers and configure them to act as one in order	 to ensure the controller&#8217;s continuous operation. 
+| Switch Manager | Once a network element has been discovered, its details (such as device type, software version, etc.) are stored by the Switch Manager.
+| High Availability (HA) | The controller supports cluster-based HA, allowing you to connect multiple controllers and configure them to act as one in order	 to ensure the controller&#8217;s continuous operation.
 |==============================================
 
 === Target Environment
@@ -35,7 +35,7 @@ All of the known issues for the OpenDaylight controller are listed https://bugs.
 
 The following table provides links to the release notes that are currently available for the various projects that are part of the OpenDaylight Helium release. This table will be updated as more release notes become available.
 
-[cols=\u201c2*\u201d]
+[cols="2",option="headers"]
 |==============================================
 | *Project* | *Release Notes URL*
 | BGPCEP | https://wiki.opendaylight.org/view/BGP_LS_PCEP:Helium_Release_Notes
@@ -47,9 +47,9 @@ The following table provides links to the release notes that are currently avail
 | PackCable PCMM | https://wiki.opendaylight.org/view/PacketCablePCMM:ReleaseNotes
 | Plugin2OC | https://wiki.opendaylight.org/view/Southbound_Plugin_to_the_OpenContrail_Platform:Helium_Release_Notes
 | SDNi | https://wiki.opendaylight.org/view/ODL-SDNi_App:Helium_Release_Notes
-| TCPMD5 | https://wiki.opendaylight.org/view/TCPMD5:Helium_Release_Notes 
+| TCPMD5 | https://wiki.opendaylight.org/view/TCPMD5:Helium_Release_Notes
 | TTP | https://wiki.opendaylight.org/view/Table_Type_Patterns:Helium_Release_Notes
 | VTN | https://wiki.opendaylight.org/view/OpenDaylight_Virtual_Tenant_Network_(VTN):Helium_Release_Notes
-| Yang Tools | https://wiki.opendaylight.org/view/YANG_Tools:Helium:Release_Notes 
+| Yang Tools | https://wiki.opendaylight.org/view/YANG_Tools:Helium:Release_Notes
 |==============================================
 
