@@ -49,7 +49,7 @@ The Address Observations on a Node Connector can be checked through a browser or
  http://10.194.126.91:8080/restconf/operational/opendaylight-inventory:nodes/node/openflow:1/node-connector/openflow:1:1
 
 .Address Observations
-image::l2switch-address-observations.png[AddressObservations image]
+image::l2switch-address-observations.png["AddressObservations image",width=500]
 
 === Checking Hosts
 Host information is added to the Topology data tree.
@@ -62,7 +62,7 @@ This host information and attachment point information can be checked through a 
  http://10.194.126.91:8080/restconf/operational/network-topology:network-topology/topology/flow:1/
 
 .Hosts
-image::l2switch-hosts.png[Hosts image]
+image::l2switch-hosts.png["Hosts image",width=500]
 
 === Checking STP status of each link
 STP Status information is added to the Inventory data tree.
@@ -75,7 +75,7 @@ The STP status of a link can be checked through a browser or a REST Client.
  http://10.194.126.91:8080/restconf/operational/opendaylight-inventory:nodes/node/openflow:1/node-connector/openflow:1:2
 
 .STP status
-image::l2switch-stp-status.png[STPStatus image]
+image::l2switch-stp-status.png["STPStatus image",width=500]
 
 === Miscellaneous mininet commands
  link s1 s2 down

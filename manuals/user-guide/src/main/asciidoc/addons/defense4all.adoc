@@ -1,15 +1,5 @@
 == Defense4All
 
-This chapter provides the following sections: +
-:toc:
-//* <<Defense4All Overview>>
-//* <<Defense4All User Interface>>
-//* <<Configuring the FrameWork Environment>>
-//* <<FrameWork Maintenance>>
-//* <<FrameWork Reports>>
-//* <<Configuring Defense4All Protected Objects (POs)>>
-//* <<Defense4All Reports>>
-
 === Defense4All Overview
 Defense4All is an SDN application for detecting and mitigating DDoS attacks. The figure below depicts the positioning of Defense4All in OpenDaylight environment. +
 
@@ -39,10 +29,10 @@ Logged event records can be operational or security related. The former includes
 The latter includes detections, attacks and attack mitigation lifecycles, traffic diversion information and periodic traffic averages. 
 All logs are persistent (stable storage and replication).
 
-== Defense4All User Interface
+=== Defense4All User Interface
 This section describes how to configure the Defense4All Framework environment. +
 
-=== Configuring the FrameWork Environment
+==== Configuring the FrameWork Environment
 
 To set Defense4All configuration parameters: +
 
@@ -170,7 +160,7 @@ NOTE: Only relevant for DefensePro. Layer 2 Broadcast Destination MAC Address, M
 . Click *OK*.
 . In the Add Net Node pane, click *Submit*.
 
-=== FrameWork Maintenance
+==== FrameWork Maintenance
 
 This section describes how to run maintenance operations on Defense4All 
 
@@ -178,7 +168,7 @@ This section describes how to run maintenance operations on Defense4All
 * *Restart Framework* — To manually restart Defense4All, at the bottom of the FrameWork Setup 
 pane, click Restart FrameWork. 
 
-=== FrameWork Reports
+==== FrameWork Reports
 
 You can generate reports containing syslog messages that have been saved over a period of time. 
 
@@ -203,7 +193,7 @@ To generate FrameWork reports: +
 * In the *Delete events older than* field, enter a number of days. Events older than this number of days are deleted. 
 * Click *Submit*. The results display at the bottom of the pane. You cannot save this query to a file. 
 
-=== Configuring Defense4All Protected Objects (POs)
+==== Configuring Defense4All Protected Objects (POs)
 
 This section describes how to configure Defense4All protected objects (POs). 
 
@@ -225,7 +215,7 @@ Valid characters: A–Z, a–z, 0-9, _ +
 [start = 5]
 . Click Submit.
 
-=== Defense4All Reports
+==== Defense4All Reports
 
 You can generate reports containing syslog messages that have been saved over a period of time. +
 
