@@ -34,11 +34,13 @@ It is a defensive measure to prevent individual projects' .adoc files
 from eating the next section if they forget to leave a blank line at
 the end of their file.
 //////////////////////////
-include::overview.adoc[]
+= Overview
 
 include::section_Git_and_Gerrit_Setup.adoc[]
 
 include::section_Hacking_from_CLI.adoc[]
+
+= Project-Specific Development Guides
 
 include::aaa.adoc[]
 
