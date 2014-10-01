@@ -1,4 +1,4 @@
-== Virtual Tenant Network
+== Virtual Tenant Network (VTN)
 
 === OpenDaylight Virtual Tenant Network (VTN) Overview
 
@@ -54,15 +54,16 @@ image::vtn-manager-architecture.png[]
 
 The table identifies the functions and the interface used by VTN Components:
 
-[cols=*3,2a,^,options="header",width="75%"]
+[options="header"]
 |===
 | Component | Interface | Purpose
 | VTN Manager |RESTful API | Configure VTN Virtualization model components in OpenDayLight
 | VTN Manager | Neutron API implementation | Handle Networks API from OpenStack (Neutron Interface)
-| VTN Co ordinator | RESTful API |
-* Uses the Restful interface of VTN Manager and configures VTN Virtualization model components in OpenDayLight. + 
-* Handles multiple controller orchestration. + 
-* Provides API to read the physical network details. See https://wiki.opendaylight.org/view/OpenDaylight_Virtual_Tenant_Network_(VTN):VTN_Coordinator:RestApi:L2_Network_Example_Using_VTN_Virtualization[samples] for usage. + 
+| VTN Co ordinator | RESTful API | 
+(1) Uses the Restful interface of VTN Manager and configures VTN Virtualization model components in OpenDayLight. + 
+(2) Handles multiple controller orchestration. + 
+(3) Provides API to read the physical network details. See https://wiki.opendaylight.org/view/OpenDaylight_Virtual_Tenant_Network_(VTN):VTN_Coordinator:RestApi:L2_Network_Example_Using_VTN_Virtualization[samples] for usage.
+--
 |===
 
 ==== OpenDaylight Virtual Tenant Network (VTN) API Overview
@@ -87,11 +88,11 @@ The main functions of this module are:
 * Invokes the <<_vtn_service_java_api_library>> corresponding to the specified URI.
 * Returns the response to the VTN Application.
 
-* WebServer Class Details *
+*WebServer Class Details*
 
 The table below lists the classes available for Web Server module and its descriptions:
 
-[cols=*9,2a,^,options="header",width="75%"]
+[options="header"]
 |===
 | Class Name | Description
 | InitManager |It is a singleton class for executing the acquisition of configuration information from properties file, log initialization, initialization of <<_vtn_service_java_api_library>>. + 
@@ -122,7 +123,7 @@ The main functions of this library are: +
 
 The table below lists the classes available for VTN Service Java API library module and its descriptions:
 
-[cols=*9,2a,^,options="header",width="75%"]
+[options="header"]
 |===
 | Class Name | Description
 | VtnServiceInitManager |It is a Singleton class for executing the acquisition of configuration information from properties file, log initialization.
@@ -163,11 +164,11 @@ The main functions of this module are:
 * Receives requests from <<_vtn_service_java_api_library>> during Commit and Audit operations.
 * Invokes lower layer TCLIB API (i.e. UPLL API, UPPL API or ODC Driver API) via IPC framework.
 
-* Transaction Coordinator (TC) Class Details *
+*Transaction Coordinator (TC) Class Details*
 
 The table below lists the classes available for TC module and its descriptions:
 
-[cols=*8,2a,^,options="header",width="75%"]
+[options="header"]
 |===
 | Class Name | Description
 | TcModule | Main interface which offers the services to VTN Service library. It also handles state transitions.
@@ -193,7 +194,7 @@ The main functions of this library are: +
 
 The table below lists the classes available for Transaction Co ordinator library module and its descriptions:
 
-[cols=*4,2a,^,options="header",width="75%"]
+[options="header"]
 |===
 | Class Name | Description
 | TcLibModule  | Main class which handles requests from TC module. 
@@ -233,7 +234,7 @@ CDF is implemented using the following modules:
 *Class Details*
 The following table lists the class details for vtndrvintf module:
 
-[cols=*6,2a,^,options="header",width="75%"]
+[options="header"]
 |===
 | Class Name | Description
 | VtnDrvIntf | Inherited from Module class and provides the entry point for messages from platform. 
@@ -250,7 +251,7 @@ Periodic monitoring of controllers
 *Class Details*
 The following table lists the class details for vtncacheutil module:
 
-[cols=*3,2a,^,options="header",width="75%"]
+[options="header"]
 |===
 | Class Name | Description
 | keytree  | Cache container that provides interfaces to append config to cache. 
@@ -268,7 +269,7 @@ The above features are implemented using these modules
 
 The following table lists the class details for restjsonutil module:
 
-[cols=*4,2a,^,options="header",width="75%"]
+[options="header"]
 |===
 | Class Name | Description
 | HttpClient | Interface to set up and maintain a connection to an HTTP Web service 
@@ -284,7 +285,7 @@ The following table lists the class details for restjsonutil module:
 
 The following table lists the class details for restjsonutil module:
 
-[cols=*5,2a,^,options="header",width="75%"]
+[options="header"]
 |===
 | Class Name | Description
 | OdcModule  | Module implementation of odc driver, registers itself as diver for controllers of ODL type 
@@ -321,7 +322,7 @@ The main functions of this module are:
 
 The table below lists the classes available for UPLL module and its descriptions:
 
-[cols=*19,2a,^,options="header",width="75%"]
+[options="header"]
 |===
 | Class Name | Description
 | UpllConfigSvc | UpllConfigService is a service layer implementation for UPLL. It provides UPLL service to VTN Service and handles all service requests. It also registers with UPPL and Drivers for notifications.
@@ -353,7 +354,7 @@ The DAL Module implements the abstraction layer for the Database.
 
 The table below lists the classes available for DAL module and its descriptions:
 
-[cols=*6,2a,^,options="header",width="75%"]
+[options="header"]
 |===
 | Class Name | Description
 | DalBindColumnInfo | Contains column_info for each column_index ( column_index, app_data_type, dal_data_type, app_array_size). Contains bind_info (app_out_addr, db_in_out_addr, db_match_addr, io_type). Allocates memory in DB and copies input/match application data. Copies result from DB to application data.
@@ -388,7 +389,7 @@ UPPL provides the following functionalities:
 
 The table below lists the classes available for UPPL module and its descriptions:
 
-[cols=*9,2a,^,options="header",width="75%"]
+[options="header"]
 |===
 | Class Name| Description
 | PhysicalLayer | It’s a singleton class which will instantiate other UPPL’s classes. This class will be inherited from base module in order to use the Core features and IPC service handlers.
@@ -514,7 +515,7 @@ or
 [source,perl] 
  git clone https://git.opendaylight.org/gerrit/p/vtn.git
 
-2. Build and install VTN Coordinator.
+. Build and install VTN Coordinator.
 [source,perl]
  cd vtn/coordinator
  mvn -f dist/pom.xml package
@@ -564,7 +565,7 @@ VTN Manager is a set of OSGi bundles running in OpenDaylight controller, therefo
 
 For more information, see https://wiki.opendaylight.org/view/OpenDaylight_Controller:Installation[Installing Opendaylight].
 
-==== Preparing for Installation ==
+==== Preparing for Installation
 
 NOTE: The procedure that follows assumes that you are installing OpenDaylight Controller with VTN Manager on your local Linux machine.
 
@@ -1016,7 +1017,7 @@ password
 *Default*
 admin
 
-== Tutorial / How-To
+=== Tutorial / How-To
 *  https://wiki.opendaylight.org/view/OpenDaylight_Virtual_Tenant_Network_(VTN):VTN_Coordinator:RestApi:How_to_configure_L2_Network_with_Single_Controller[L2 Nertwork using Single Controller]]
 
 * https://wiki.opendaylight.org/view/OpenDaylight_Virtual_Tenant_Network_(VTN):VTN_Coordinator:RestApi:How_to_configure_L2_Network_with_Multiple_Controllers[How_to_configure_L2_Network_with_Multiple_Controllers]

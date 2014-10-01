@@ -31,10 +31,10 @@ To build the code, increase the memory available for Maven. The settings on the 
 
 IMPORTANT: The top level build line for yangtools project is: `cd yangtools;mvn clean install`
 
-== Mapping YANG to Java 
+=== Mapping YANG to Java 
 This chapter covers the details of mapping YANG to Java.
 
-=== Name of the Package
+==== Name of the Package
 To configure your project and generate source code from YANG, edit your projects *pom.xml* and add Opendaylight SNAPSHOT repository for snapshot releases. Currently, only snapshots are available. 
 The name of the package is _org.opendaylight.yang.gen.v1.urn:2:case#module.rev201379_
 After replacing digits and JAVA keywords the package name is _org.opendaylight.yang.gen.v1.urn._2._case.module.rev201379_
@@ -69,10 +69,10 @@ module module {
 }
 ---------
 
-== Additional Packages
+=== Additional Packages
 In cases where the superior YANG elements contain specific subordinate YANG elements additional packages are generated. Table below provides details of superior and subordinate elements: 
 
-[cols=*2,options="header",width="75%"]
+[options="header"]
 |===
 |Superior Element  | Subordinate Element 
 |list  |list, container, choice 
@@ -126,12 +126,12 @@ JAVA code is generated in the following structure: +
 * org.opendaylight.yang.gen.v1.urn.module.rev201379.cont.outter.list - package contains subordinate elements of outter-list list element 
   ** ListInList.java 
 
-=== Class and interface name
+==== Class and interface name
 Some YANG elements are mapped to JAVA classes and interfaces. The name of YANG element may contain various characters which aren't permitted in JAVA class names. Firstly whitespaces are trimmed from YANG name. Next characters space, -, _ are deleted and subsequent letter is capitalized. At the end first letter is capitalized. Transformation example:
 example-name without_capitalization is mapped to 
 `ExampleNameWithoutCapitalization`
 
-=== Getters and setters name
+==== Getters and setters name
 In some cases are YANG elements generated as getter or setter methods. This methods are created through class `MethodSignatureBuilder`
 The process for getter is: +
 
@@ -146,7 +146,7 @@ The process for setter is: +
 * input parameter name is set to element's name converted to JAVA parameter style 
 * return parameter is set to void 
 
-=== Module
+==== Module
 
 YANG module is converted to JAVA as two JAVA classes. Each of the class is in the separate JAVA file. The names of JAVA files are composed as follows:
 `<YANG_module_name><Sufix>`.java where `<sufix>` can be data or service.
@@ -154,16 +154,16 @@ YANG module is converted to JAVA as two JAVA classes. Each of the class is in th
 
 
 
-== Data Interface
+=== Data Interface
 Data Interface has a mapping similar to container, but contains only top level nodes defined in module. 
 
-== Service Interface
+=== Service Interface
 Service Interface serves to describe RPC contract defined in the module. This RPC contract is defined by rpc statements. 
 
-=== Typedef
+==== Typedef
 YANG typedef statement is mapped to JAVA class. Typedef may contain following substatement:
 
-[cols=*2,2a,^,options="header",width="75%"]
+[options="header"]
 |===
 |Substatement | Argument Mapped to JAVA
 |type| class attribute
@@ -172,9 +172,10 @@ YANG typedef statement is mapped to JAVA class. Typedef may contain following su
 |default|is not mapped
 |===
 
-=== Valid Arguments Type
+==== Valid Arguments Type
 Simple values of type argument are mapped as follows:
-[cols=*2,2a,^,options="header",width="75%"]
+
+[options="header"]
 |===
 |Argument Type |  Mapped to JAVA
 |boolean| Boolean
@@ -193,7 +194,8 @@ Simple values of type argument are mapped as follows:
 |===
 
 Complex values of type argument are mapped as follows:
-[cols=*2,2a,^,options="header",width="75%"]
+
+[options="header"]
 |===
 |Argument Type|Mapped to JAVA
 |enumeration|enum
@@ -204,11 +206,11 @@ Complex values of type argument are mapped as follows:
 |instance-identifier|??
 |===
 
-=== Enumeration Substatement Enum
+==== Enumeration Substatement Enum
 The YANG enumeration type has to contain some enum substatements. Enumeration is mapped as JAVA enum type (standalone class) and every YANG enum subelement is mapped to JAVA enum's predefined values.
 Enum substatement can have following substatements:
 
-[cols=*2,2a,^,options="header",width="75%"]
+[options="header"]
 |===
 |Enum's Substatement |Mapped to JAVA
 |description|is not mapped
@@ -216,7 +218,8 @@ Enum substatement can have following substatements:
 |===
 
 Example of maping of YANG enumeration to JAVA:
-[cols=*2,2a,^,options="header",width="75%"]
+
+[options="header"]
 |===
 |YANG|JAVA
 
@@ -251,10 +254,10 @@ public enum TypedefEnumeration {
 }
 ----
 |===
-=== Bits's Substatement Bit
+==== Bits's Substatement Bit
 The YANG bits type has to contain some bit substatements. YANG Bits is mapped to JAVA class (standalone class) and every YANG bits subelement is mapped to class boolean attributes. In addition are overriden Object methods `hash, toString, equals`.
 
-[cols=*3,^,options="header",width="75%"]
+[options="header"]
 |===
 |YANG|JAVA|JAVA overriden Object methods
 a|----
@@ -346,12 +349,12 @@ public String toString() {
 }
 |===
 
-=== Union's Substatement Type
+==== Union's Substatement Type
 If type of typedef is union it has to contain `type` substatements. Union typedef is mapped to class and its `type` subelements are mapped to private class attributes. For every YANG union subtype si generated own JAVA constructor with a parameter which represent just one attribute.
 Example to union mapping:
 
 
-[cols=[2, 2, 2,],^,options="header",width="90%"]
+[options="header"]
 |===
 |YANG|JAVA|JAVA overriden Object methods
 a|----
@@ -438,10 +441,10 @@ public String toString() {
 }
 |===
 
-=== String Mapping
+==== String Mapping
 YANG String can be detailed specified through type subelements length and pattern which are mapped as follows:
 
-[cols=*2,2a,^,options="header",width="75%"]
+[options="header"]
 |===
 |Type  subelement  |  Mapping to JAVA
 | length | not mapped
@@ -454,7 +457,7 @@ YANG String can be detailed specified through type subelements length and patter
 
 Example of YANG string mapping 
 
-[cols=[3,3,3],^ ,options="header",width="75%"]
+[options="header"]
 |===
 |YANG|JAVA|JAVA Overriden Object Methods
 a|----
@@ -531,11 +534,11 @@ public String toString() {
 } 
 ----
 |===
-=== Container
+==== Container
 YANG Container is mapped to JAVA interface which extends interfaces DataObject, Augmentable<container_interface>, where container_interface is name of mapped interface.
 Example of mapping:
 
-[cols= [2,2],^,options="header",width="90%"]
+[options="header"]
 |===
 |YANG|JAVA
 a|----
@@ -545,11 +548,11 @@ a|----
 public interface Cont extends DataObject, Augmentable<Cont> {
 }
 |===
-=== Leaf
+==== Leaf
 Each leaf has to contain at least one type substatement. The leaf is mapped to getter method of superior element with return type equal to type substatement value.
 Example of mapping:
 
-[cols= [2,2],^,options="header",width="90%"]
+[options="header"]
 |===
 |YANG|JAVA
 a|----
@@ -575,7 +578,8 @@ public interface ModuleData {
 } 
 |===
 Example of leaf mapping at container level:
-[cols= [2,2],^,options="header",width="90%"]
+
+[options="header"]
 |===
 |YANG|JAVA
 a|
@@ -591,10 +595,11 @@ public interface Cont extends DataObject, Augmentable<Cont> {
 } 
 |===
 
-=== Leaf-list
+==== Leaf-list
 Each leaf-list has to contain one type substatement. The leaf-list is mapped to getter method of superior element with return type equal to List of type substatement value.
 Example of mapping of leaf-list.
-[cols= [2,2],^,options="header",width="90%"]
+
+[options="header"]
 |===
 |YANG|JAVA
 a|
@@ -613,17 +618,18 @@ public interface Cont extends DataObject, Augmentable<Cont> {
 
 YANG `typedef-union` and `JAVA TypedefUnion` are the same as in union type.
 
-=== List
+==== List
 YANG list element is mapped to JAVA interface. In superior element is generated as getter method with return type List of generated interfaces.
 Mapping of list substatement to JAVA:
 
-[cols=*2,2a,^,options="header",width="80%"]
+[options="header"]
 |===
 |Substatement|Mapping to JAVA
 |Key|Class
 |===
 Example of list mapping _outter-list_ is mapped to JAVA interface _OutterList_ and in _Cont_ interface (superior of _OutterList_) contains getter method with return type List<OutterList> 
-[cols=[3,3,3],^ ,options="header",width="75%"]
+
+[options="header"]
 |===
 |YANG|JAVA|JAVA Overriden Object Methods
 a|
@@ -760,11 +766,12 @@ public String toString() {
 ----
 |===
 
-=== Choice and Case	
+==== Choice and Case	
 `Choice` element is mapped similarly as `list` element. Choice element is mapped to interface (marker interface) and in the superior element is created using getter method with the return type `List` of this marker interfaces.
 `Case` substatements are mapped to the JAVA interfaces which extend mentioned marker interface.
 Example of choice mapping: 
-[cols=[3,3],^ ,options="header",width="90%"]
+
+[options="header"]
 |===
 |YANG|JAVA
 a|
@@ -829,10 +836,11 @@ public interface Cont extends DataObject, Augmentable<Cont> {
 ----
 |===
 
-=== Grouping and Uses
+==== Grouping and Uses
 Grouping is mapped to JAVA interface. Uses used in some element (using of concrete grouping) are mapped as extension of interface for this element with the interface which represents grouping.
 Example of grouping and uses mapping.
-[cols=[3,3],^ ,options="header",width="90%"]
+
+[options="header"]
 |===
 |YANG|JAVA
 a|
@@ -867,10 +875,11 @@ public interface Grp extends DataObject {
 ---- 
 |===
 
-=== Rpc
+==== Rpc
 Rpc is mapped to JAVA as method of class `ModuleService.java`.
 Rpc's substatement are mapped as follows: 
-[cols=*2,2a,^,options="header",width="75%"]
+
+[options="header"]
 |===
 |Rpc Substatement|Mapping to JAVA
 |input|interface
@@ -878,7 +887,8 @@ Rpc's substatement are mapped as follows:
 |===
 
 Example of rpc mapping: 
-[cols=[3,3],^ ,options="header",width="90%"]
+
+[options="header"]
 |===
 |YANG|JAVA
 a|
@@ -931,10 +941,11 @@ public interface RpcTest1Output {
 ----
 |===
 
-=== Notification
+==== Notification
 `Notification` is mapped to the JAVA interface which extends Notification interface.
 Example of notification mapping:
-[cols=*2,2a,^,options="header",width="75%"]
+
+[options="header"]
 |===
 |YANG|JAVA
 a|
@@ -956,10 +967,11 @@ public interface Notif extends DataObject, Augmentable<Notif>, Notification {
 ----
 |===
 
-=== Augment
+==== Augment
 `Augment` is mapped to the JAVA interface. The interface starts with the same name as the name of augmented interface. The suffix is order number of augmenting interface. The augmenting interface also extends `Augmentation<>` with actual type parameter equal to augmented interface.
 Example of augment mapping. In this example is augmented interface `Cont` so whole parametrized type is `Augmentation<Cont>`. 
-[cols=*2,2a,^,options="header",width="75%"]
+
+[options="header"]
 |===
 |YANG|JAVA
 a|
@@ -993,10 +1005,10 @@ public interface Cont1 extends DataObject, Augmentation<Cont> {
 }
 ----
 |===
-=== Identity
+==== Identity
 The purpose of the identity statement is to define a new globally unique, abstract, and untyped identity. YANG substatement base considers an argument a string; the name of existing identity from which the new identity is derived. Hence, the identity statement is mapped to JAVA abstract class and base substatement is mapped as extends JAVA keyword. The identity name is translated to class name. 
 
-[cols=*2,2a,^,options="header",width="75%"]
+[options="header"]
 |===
 |YANG|JAVA
 

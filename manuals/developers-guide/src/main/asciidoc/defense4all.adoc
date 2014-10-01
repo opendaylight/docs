@@ -1,19 +1,6 @@
 == Defense4all
 
-This chapter contains the following sections:
-
-* <<_defense4all_design>>
-* <<_defense4all_in_an_odl_environment>>
-* <<_framework_view>>
-* <<_application_view>>
-* <<_odl_reps_view>>
-* <<_basic_control_flow>>
-* <<_configurations_and_setup_flow>>
-* <<_attack_detection_flow>>
-* <<_attack_mitigation_flow>>
-* <<_continuity>>
-
-== Defense4All Design
+=== Defense4All Design
 
 Defense4All is a security SDN application for detecting and driving mitigation of DoS and DDoS attacks in different SDN topologies. It realizes anti-DoS in OOP mode for the ProgrammableFlow SDN environment. Administrators can configure Defense4All to protect certain networks 
 and servers, known as protected networks or Protected Objects (POs). Defense4All exploits SDN capabilities to count specified traffic, and installs traffic counting flows for each protocol of 
@@ -52,7 +39,7 @@ The main advantages of this architecture are:
 * Enhanced robustness - Complex framework code is implemented and tested once, cleaner separation of concerns leads to more stable code, and the framework can increase robustness proactively with no additional code in the application logic (such as periodic application recycle).
 * Unified management of common aspects – Common look and feel.
 
-== Framework View
+=== Framework View
 
 The following figure illustrates the framework view.
 image::800px-Framework_view.jpg[Framework View]
@@ -79,7 +66,7 @@ The framework contains the following elements:
 
 The Defense4All application is highly pluggable. It can accommodate different attack detection mechanisms, different attack mitigation drivers, and drivers (called reps [representative]) to different versions of the ODC and different AMSs. The Defense4All application comprises “core” modules and “pluggable” modules implementing well-defined Defense4All application APIs. 
 
-== Application View
+=== Application View
 
 The following figure illustrates the application view.
 image::800px-D4a_application_view.jpg[Application View]
@@ -129,7 +116,7 @@ When mitigation should be ended, the MitigationDriverLocal notifies AMSBasedDete
 
 *AMSRep* - A pluggable module for different AMSs. The module adheres to AMSRep APIs. It can support configuration of all introduced AMSs (permanently or before/after attack mitigations). It can also receive/query security information (attack statuses), as well as operational information (health, load). AMSRep module is entirely optional – AMSs can be configured and monitored externally. In many cases, attacks can continue be monitored solely via SDN counters. Defense4All contains a reference implementation AMSRep that communicates with Radware’s DefensePro AMSs. 
 
-== ODL Reps View
+=== ODL Reps View
 
 The following figure illustrates the Defense4All application ODL Reps module-set structure. 
 image::D4a_odl_reps_view.jpg[ODL Reps View]
@@ -165,7 +152,7 @@ StatsCollectionRep - The module adheres to StatsCollectionRep APIs. Its main tas
 
 *ODL REST Pojos* – This set of Java classes are part of the ODC REST API, specifying the Java classes of the parameters and the results of interaction with the ODC. 
 
-== Basic Control Flow
+=== Basic Control Flow
 
 Control flows are logically ordered according to module runtime dependencies, so if module A depends on module B then module B should be initialized before module A, and terminate after it. Defense4All application modules depend on most Framework modules, except WebServer. 
 
@@ -173,7 +160,7 @@ Control flows are logically ordered according to module runtime dependencies, so
 *Termination* - restart — Defense4All persists any relevant data into stable storage repositories, and terminates itself. If the termination is for restart, the automatic restart mechanism restarts Defense4All. Otherwise (such as upgrading) Defense4All does not automatically restart. +
 *Reset* — In this flow, all modules are reset to factory level. This means that all dynamically obtained data as well as user configurations are deleted +
 
-== Configurations and Setup Flow
+=== Configurations and Setup Flow
 
 *OFC (OpenFlowController = ODC)* – When DFMgmtPoint receives from DFRestService a request to add an OFC, it first records the added OFC in the OFC’s Repo, and then notifies ODLStatsCollectionRep and ODLDvsnRep, which in turn notify the ODL to initiate a connection to the added OFC (ODC). ODL instantiates a REST client for communication with the ODC. 
 
@@ -186,7 +173,7 @@ Control flows are logically ordered according to module runtime dependencies, so
 
 *PN* - Multiple PNs can be added. When DFMgmtPoint receives from DFRestService a request to add a PN, it first records the added PN in the PN’s Repo, notifies MitigationMgr, and then finally notifies the DetectionMgr. MitigationMgr notifies MitigationDriverLocal, which then notifies AMSRep. AMSRep can preconfigure the AMS for this PN, as well its EventMgr to accept events related to this PN’s traffic. DetectionMgr notifies RateBasedDetector, which then notifies StatsCollector. StatsCollector queries ODLStatsCollectionRep about possible placement of stats collection counters for this PN. ODLStatsCollectionRep returns all NetNodes configured for this PN (and if none are configured, it returns all NetNodes currently known to Defense4All). StatsCollector “chooses” the counter locations option (the only available option in this version). For each of the NetNodes, it then asks ODLStatsCollectionRep to create a counter for the subject PN. The counter is essentially a set of flow entries set for the protocols of interest (TCP, UDP, ICMP, and the rest of the IPs) on each north traffic port. The counter is given a priority and this constitutes the peacetime traffic floor (to monitor traffic by periodically reading all counter flow entry traffic count values). Because the PN may be re-introduced at restart or a change in network topology may require re-calculation of counter locations, it is possible that some/all counters may already be in place. Only new counters are added. Counters that are no longer are removed. ODLStatsCollectionRep configures the flow entries according to the NetNode type. For hybrid NetNodes, the flow entry action is “send to normal” (proceed to legacy routing), while for native NetNodes, the action is to match the output port (in each protected link). OdlStatsCollectionRep invokes the ODL to create each specified flow entry. The latter invokes FlowEntryMgr and Connector to send the request to the ODC. 
 
-== Attack Detection Flow
+=== Attack Detection Flow
 Periodically, the StatsCollector requests the ODL StatsCollectionRep to query the ODC for the latest statistics for each set counter for each configured PN. ODLStatsCollectionRep invokes FlowEntryMgr to obtain statistics for each flow entry in a counter. The latter invokes the connector to obtain the desired statistics from the ODC. 
 
 ODLStatsCollectionRep aggregates the obtained results in a vector of stats (latest bytes and packets readings per each protocol) and returns that vector. StatsCollector feeds each counter stats vector to DetectionMgr, which then forwards the stats vector to the RateBasedDetector. The RateBasedDetector maintains stats information for every counter as well as aggregated counter stats for every PN. Stats information includes the time of previous reading, and for every protocol the latest rates and exponential averages. 
@@ -195,7 +182,7 @@ The RateBasedDetector checks for significant and prolonged latest rate deviation
 
 AttackDecisionPoint honors all detections. If it has already declared an attack on that protocol-port, then the AttackDecisionPoint associates the additional detection with that existing attack. Otherwise, it creates a new attack and notifies the MitigationMgr to mitigate that attack (as described below). Periodically, AttackDecisionPoint checks the status of all detections of each live attack. If all detections have expired, AttackDecisionPoint declares the end of the attack and notifies MitigationMgr to stop mitigating the attack. 
 
-== Attack Mitigation Flow
+=== Attack Mitigation Flow
 
 MitigationMgr, upon receiving mitigate notification from yhe AttackDecisionPoint, attempts to find a plugged-in MitigationDriver to handle the mitigation. Currently, it requests only its plugged-in MitigationDriverLocal. 
 
@@ -211,7 +198,7 @@ If MitigationDriverLocal finds no suitable AMSs, or fails to configure any of it
 
 When MitigationMgr receives a notification to stop mitigating an attack, it forwards this notification to the relevant (and currently the only) MitigationDriver, MitigationDriverLocal. MitigationDriverLocal reverses the actions in at the start of the mitigation. It notifies AMSRep to stop monitoring for this attack, it cancels diversion for the attacked traffic, and finally notifies AMSRep to optionally remove pre-mitigation configurations. 
 
-== Continuity
+=== Continuity
 
 Service Continuity, as opposed to High Availability, is defined here as the ability to deliver a required level of service, at tolerable cost, 
 in the presence of disrupting events, where:

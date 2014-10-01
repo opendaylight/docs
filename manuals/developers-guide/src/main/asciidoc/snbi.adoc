@@ -49,7 +49,7 @@ To bootstrap a device using SNBI: +
 ==== Controller and FE communications
 
 .Communication between the controller and FE
-image::Controller-fe-communication-channels.png[]
+image::Controller-fe-communication-channels.png[width=500]
 
 *SNBI between controller and portable foundation* +
 The SNBI-plugin on the Controller and the SNBI agent on the "first hop" FE establishes a DTLS/SSL connection to secure their communication. It is assumed that the device or server which runs the Controller runs an instance of the portable foundation or container. This allows for SNBI to automatically establish a secure IP connectivity throughout the network without the need to pre-configure any IP connectivity between the devices in the network. If the Controller is hosted on a device which does not run an instance of an SNBI-agent within a portable foundation, then IP connectivity between the Controller and the "first hop" FE which runs an instance of an SNBI-agent within a portable foundation needs to be configured by other means (for example, manually). + 
