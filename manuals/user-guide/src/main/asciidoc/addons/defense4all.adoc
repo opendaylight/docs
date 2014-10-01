@@ -52,7 +52,7 @@ To set Defense4All configuration parameters: +
 . To the right of the SDN Controllers label, click *Add*.
 . In the Add SDN Controller pane, set the following parameters:
 
-[cols=*2,2a,^,options="header",width="75%"]
+[options="header"]
 |===
 |Parameter|Description 
 |Hostname |Name of the SDN Controller. This is the SDN Controller that supports OpenFlow network programming (OFC stands for OpenFlow Controller). 
@@ -73,7 +73,7 @@ NOTE: The SDN controller cannot be changed or removed. Only one (1) SDN controll
 . In the Add Attack Mitigation System (AMS) pane, set the following parameters:
 
 
-[cols=*2,2a,^,options="header",width="75%"]
+[options="header"]
 |===
 |Parameter|Description 
 |Name|AMS descriptive name.  
@@ -118,7 +118,7 @@ NOTE: Only relevant for DefensePro. Layer 2 Broadcast Destination MAC Address, M
 
 +
 --
-[cols=*2,2a,^,options="header",width="75%"]
+[options="header"]
 |===
 |Parameter|  Description  
 |Name|  NetNode descriptive name.  
@@ -136,7 +136,7 @@ NOTE: Only relevant for DefensePro. Layer 2 Broadcast Destination MAC Address, M
 . In the Add Protected Link pane, set the following parameters: +
 +
 --
-[cols=*2,2a,^,options="header",width="75%"]
+[options="header"]
 |===
 |Parameter|  Description  
 |Incoming Traffic Port|The incoming traffic port number.  
@@ -152,7 +152,7 @@ NOTE: Only relevant for DefensePro. Layer 2 Broadcast Destination MAC Address, M
 
 +
 --
-[cols=*2,2a,^,options="header",width="75%"]
+[options="header"]
 |===
 |Parameter|  Description  
 |Name|  AMS connection descriptive name.  
@@ -214,7 +214,7 @@ To set up Defense4All protected objects (POs): +
 . To the right of the *Protected Objects (POs)* label, click *Add*.
 . In the Add Protected Object (PO) pane, set the following parameters:
 
-[cols=*2,2a,^,options="header",width="75%"]
+[options="header"]
 |===
 |Parameter|  Description  
 |Name|  Name of the PO. +
