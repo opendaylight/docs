@@ -734,8 +734,7 @@ Figure 1 shows the GET operation with URI restconf/config/M:N where M is the mod
 
 
 .Get
-
-image::Get.png[]
+image::Get.png[width=500]
 
 . The requested URI is translated into the InstanceIdentifier which points to the data node. During this translation, the DataSchemaNode that conforms to the data node is obtained. If the data node is behind the mount point, the MountInstance is obtained as well. 
 . Restconf asks for the value of the data node from DataBrokerService based on InstanceIdentifier. 
@@ -749,7 +748,7 @@ Figure 2 shows the PUT operation with the URI restconf/config/M:N where M is the
 
 .Put
 
-image::Put.png[] 
+image::Put.png[width=500] 
 
 . Input data is sent to JsonToCompositeNodeProvider or XmlToCompositeNodeProvider. The correct provider is selected based on the Content-Type field from the http request. These two providers can transform input data to CompositeNode. However, this CompositeNode does not contain enough information for transactions. 
 . The requested URI is translated into InstanceIdentifier which points to the data node. DataSchemaNode conforming to the data node is obtained during this translation. If the data node is behind the mount point, the MountInstance is obtained as well. 
@@ -935,10 +934,10 @@ In fact, each configuration operation is wrapped in a transaction. Once a transa
  If this commit is successful, the transaction enters the last stage, committed. After that, the desired modules are reconfigured. If the second phase commit fails, it means that the transaction is unhealthy - basically, a new configuration instance creation failed, and the application can be in an inconsistent state.
  
 .Configuration states 
-image::configuration.jpg[]
+image::configuration.jpg[width=500]
  
 .Transaction states
-image::Transaction.jpg[]
+image::Transaction.jpg[width=500]
 
 ==== Validation
 To secure the consistency and safety of the new configuration and to avoid conflicts, the configuration validation process is necessary. 
@@ -973,25 +972,29 @@ A module factory implementation must have a globally unique name.
 
 ==== APIs
 
-ConfigRegistry:: Represents functionality provided by a configuration transaction (create, destroy module, validate, or abort transaction).
-
-ConfigTransactionController:: Represents functionality for manipulating with configuration transactions (begin, commit config).
-
-RuntimeBeanRegistratorAwareConfiBean:: The module implementing this interface will receive RuntimeBeanRegistrator before getInstance is invoked.
+|===
+| ConfigRegistry | Represents functionality provided by a configuration transaction (create, destroy module, validate, or abort transaction).
+| ConfigTransactionController | Represents functionality for manipulating with configuration transactions (begin, commit config).
+| RuntimeBeanRegistratorAwareConfiBean | The module implementing this interface will receive RuntimeBeanRegistrator before getInstance is invoked.
+|===
 
 ==== Runtime APIs
-RuntimeBean:: Common interface for all runtime beans
-RootRuntimeBeanRegistrator:: Represents functionality for root runtime bean registration, which subsequently allows hierarchical registrations
-HierarchicalRuntimeBeanRegistration:: Represents functionality for runtime bean registration and unreregistration from hierarchy
+
+|===
+| RuntimeBean | Common interface for all runtime beans
+| RootRuntimeBeanRegistrator | Represents functionality for root runtime bean registration, which subsequently allows hierarchical registrations
+| HierarchicalRuntimeBeanRegistration | Represents functionality for runtime bean registration and unreregistration from hierarchy
+|===
 
 ==== JMX APIs
 
 JMX API is purposed as a transition between the Client API and the JMX platform. +
 
-ConfigTransactionControllerMXBean:: Extends ConfigTransactionController, executed by Jolokia clients on configuration transaction.
-ConfigRegistryMXBean:: Represents entry point of configuration management for MXBeans.
-Object names:: Object Name is the pattern used in JMX to locate JMX beans. It consists of domain and key properties (at least one key-value pair). Domain is defined as "org.opendaylight.controller". 
-The only mandatory property is "type".
+|===
+| ConfigTransactionControllerMXBean | Extends ConfigTransactionController, executed by Jolokia clients on configuration transaction.
+| ConfigRegistryMXBean | Represents entry point of configuration management for MXBeans.
+| Object names | Object Name is the pattern used in JMX to locate JMX beans. It consists of domain and key properties (at least one key-value pair). Domain is defined as "org.opendaylight.controller". The only mandatory property is "type".
+|===
 
 ==== Use case scenarios
 
@@ -1088,8 +1091,7 @@ The configuration for the config subsystem is pushed as a set of edit-config net
 *Configuration Persister interactions:* +
 
 .Persister
-
-image::Persister.jpg[]
+image::Persister.jpg[width=500]
 
 === Current configuration for controller distribution
 
@@ -1718,7 +1720,7 @@ NOTE: This process is very expensive. It means maintaining a Normalized Node rep
 . At the begin of transaction, get a NormalizedNode Object tree of the current tree in ISPN TreeCache (This is mandated by the current DataChangeEvent interface.)
 . For each CUD operations that happens within the transaction, maintain a transaction log.
 . When the pre-commit of the 3PhaseCommit Transaction Interface is called, prepare data changes. This involves: +
-.. Comparing the transaction log items with the Snapshot Tree one taken at the beginning of the tranasactions
+.. Comparing the transaction log items with the Snapshot Tree one taken at the beginning of the transactions
 .. Preparing the DataChangeEvent lists based on what level the listeners have registered
 . Upon a commit, send the events to the listeners in a separate executor, that is asynchronously.
 
@@ -1726,6 +1728,7 @@ NOTE: This process is very expensive. It means maintaining a Normalized Node rep
 
 * Remove the requirement for sending the `before transaction tree' or the `after transaction tree' within each event.
 * Send the changed paths of tree to the consumer, and let the consumer do the reading.
+
 ==== Building the POC +
 To build or run the POC, you need the latest version of the following: +
 
@@ -1841,7 +1844,7 @@ This was a latency test and the arguments roughly translate to this: +
 ==== The results for In-Memory Datastore +
 To test the in-memory datastore, a pre-built openflow plugin distribution from Jenkins was downloadedon and on which was enabled the new in-memory datastore. +
 *In-Memory Datastore Results*
-[cols="5*",^,options="header",width="75%"]
+[options="header",width="75%"]
 |===
 | Run | Min | Max | Avg | StdDev
 | 1 | 365 | 1049 | 715 | 04
@@ -2766,7 +2769,7 @@ rpc-reply {
 }
 ----
 
-====== Modifying existing console appender in logback
+===== Modifying existing console appender in logback
 . Start edit-config with merge option:
 ----
 merge /modules/module

@@ -1,8 +1,8 @@
 [[bk-user-guide]]
-= OpenDaylight Developer's Guide
+= OpenDaylight Developer Guide
 :docinfo:
 
-
+///////
 [dedication]
 Example Dedication
 ------------------
@@ -25,6 +25,7 @@ Optional preface.
 Preface Sub-section
 ~~~~~~~~~~~~~~~~~~~
 Preface sub-section body.
+///////
 
 //////////////////////////
 Please note and leave the blank line between include statements here.
@@ -83,6 +84,7 @@ include::yangtools.adoc[]
 
 :numbered!:
 
+///////
 [appendix]
 Example Appendix
 ----------------
@@ -116,6 +118,8 @@ Text at the end of a book describing facts about its production.
 [index]
 Example Index
 -------------
+///////
+
 ////////////////////////////////////////////////////////////////
 The index is normally left completely empty, it's contents being
 generated automatically by the DocBook toolchain.

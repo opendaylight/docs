@@ -1,5 +1,4 @@
- 
-== Packet Cable MultiMedia (PCMM) Developer
+== Packet Cable MultiMedia (PCMM)
 
 === Checking out the Packetcable PCMM project
  git clone https://git.opendaylight.org/gerrit/p/packetcable.git
@@ -11,15 +10,15 @@ The above command will create a directory called "packetcable" with the project.
 These components introduce a DOCSIS QoS Service Flow management using the PCMM protocol.  The driver component is responsible for the PCMM/COPS/PDP functionality required to service requests from PacketCable Provider and FlowManager.  Requests are transposed into PCMM Gate Control messages and transmitted via COPS to the CMTS. This plugin adheres to the PCMM/COPS/PDP functionality defined in the CableLabs specification.  PacketCable solution is an MD-SAL compliant component.
 
 .System Overview
-image::pcmm-architecture.png["System Overview"]
+image::pcmm-architecture.png["System Overview",width=500]
 
 === Dependency Map
 .Dependency Map
-image::pcmm-depends-map.png["Dependency Map", width=700 height=900]
+image::pcmm-depends-map.png["Dependency Map",width=500]
 
 === Packetcable Components
 
-packetcable is comprised of three OpendayLight bundles
+packetcable is comprised of three OpenDaylight bundles
 
 .Table of Bundle and Components
 [options="header"]
@@ -127,17 +126,17 @@ http://localhost:8181/dlux/index.html
 Sign in
 
 .Sign in to Dlux UI
-image:pcmm-dlux-login.png[Dlux Login]
+image::pcmm-dlux-login.png["Dlux Login",width=500]
 
 Manage Flows
 
 .View and Manage Flows in Dlux
-image::pcmm-dlux-flows.png[Dlux Flows]
+image::pcmm-dlux-flows.png["Dlux Flows",width=500]
 
 Manage Nodes
 
 .View and Manage Nodes in Dlux
-image::pcmm-dlux-nodes.png[Dlux Nodes]
+image::pcmm-dlux-nodes.png["Dlux Nodes",width=500]
 
 
 === Explore and exercise the PacketCable REST API
@@ -152,7 +151,7 @@ http://localhost:8181/apidoc/explorer/index.html
 Add a CMTS to Opendaylight Inventory
 
 .Add CMTS using RESTCONF Explorer
-image:pcmm-apidoc-explorer.png[Add CMTS using RESTCONF Explorer]
+image::pcmm-apidoc-explorer.png["Add CMTS using RESTCONF Explorer",width=500]
 
 
 === Postman
@@ -163,9 +162,9 @@ Download and import sample
 link:https://git.opendaylight.org/gerrit/gitweb?p=packetcable.git;a=tree;f=packetcable-client[packetcable collection] for Postman.
 
 .Postman Collection for Packetcable PCMM
-image:pcmm-postman.png[Postman]
+image::pcmm-postman.png["Postman",width=500]
 
-== Custom Testsuite
+=== Custom Testsuite
 
 Most of the tests for RESTCONF can be adapted for PCMM and service flow testing. The following list of 
 Packetcable client testing.  Browse this folder for tests and examples used for  testing.
@@ -189,7 +188,7 @@ Select the interface to monitor.
 
 Use the Filter to only display COPS messages by applying “cops” in the filter field. 
 .Using Wireshark to View COPS
-image:pcmm-wireshark.png[Wireshark]
+image::pcmm-wireshark.png["Wireshark",width=500]
 
 === Debugging and Verifying DQoS Gate (Flows) on the CMTS
 
@@ -333,15 +332,15 @@ debug cable dynamic_qos trace
 Pending
 
 
-== RESTCONF API for Packetcable PCMM
+=== RESTCONF API for Packetcable PCMM
 
-=== CMTS 
+==== CMTS 
 
 CMTS can be read, created, updated and deleted by a user having the 
 correct role. An ID is used to identify where to read 
 or save the CMTS node.
 
-==== Read
+===== Read
 
 [cols="h,5a"]
 |===
@@ -369,7 +368,7 @@ or save the CMTS node.
 | 201
 |===
 
-==== Create
+===== Create
 
 [cols="h,5a"]
 |===
@@ -402,7 +401,7 @@ or save the CMTS node.
 |===
 
 
-==== Delete
+===== Delete
 
 [cols="h,5a"]
 |===
@@ -429,13 +428,13 @@ or save the CMTS node.
 | 201
 |===
 
-=== Flows 
+==== Flows 
 
 Flows can be read, created, updated and deleted by a user having the 
 correct role. A CMTS ID is used to identify which CMTS node to read 
 or save the flow. Note: The Table ID is not used.
 
-==== Read
+===== Read
 
 [cols="h,5a"]
 |===
@@ -501,7 +500,7 @@ or save the flow. Note: The Table ID is not used.
 ----
 |===
 
-==== Create
+===== Create
 
 [cols="h,5a"]
 |===
@@ -599,7 +598,7 @@ or save the flow. Note: The Table ID is not used.
 |===
 
 
-==== Delete
+===== Delete
 
 [cols="h,5a"]
 |===
@@ -629,6 +628,6 @@ or save the flow. Note: The Table ID is not used.
 
 
 
-=== Specifications and References
+==== Specifications and References
 The packetcable-driver was written to the 
 link:http://www.cablelabs.com/wp-content/uploads/specdocs/PKT-SP-MM-I05-091029.pdf[PacketCable Specification Multimedia Specification PKT-SP-MM-I05-091029]

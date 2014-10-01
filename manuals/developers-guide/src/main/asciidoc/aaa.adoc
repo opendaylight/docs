@@ -1,4 +1,4 @@
-== OpenDaylight Authentication Service Developers' Guide
+== Authentication Service
 Authentication uses the credentials presented by a user to identify the user.
 
 === Authenthentication data model
@@ -114,7 +114,7 @@ The ODL authentication service transforms assertions from an external federated 
 . SssdAuthFilter constructs a JSON document from the data.
 . ODL Authentication Service uses a general purpose transformation mapper to transform the JSON document.
 
-===== Operational model
+==== Operational model
 The mapping model works as follows: +
 
 . Assertions from an IdP are stored in an associative array.
@@ -124,7 +124,7 @@ The mapping model works as follows: +
 ** The mapped values are taken from the local variables set during the rule execution.
 ** The definition of the rules and mapped results are expressed in JSON notation.
 
-===== Operational Model: Sample code
+==== Operational Model: Sample code
 ----
 mapped = null
 foreach rule in rules {
@@ -153,7 +153,7 @@ if result == success {
 return mapped
 ----
 
-===== Mapping Users
+==== Mapping Users
 A JSON Object acts as a mapping template to produce the final associative array of name/value pairs. The value in a name/value pair can be a constant or a variable.
 An example of a mapping template and rule variables in JSON: +
 Template: +
@@ -180,7 +180,7 @@ The final mapped result will be: +
 }
 ----
 
-===== Example: Splitting a fully qualified username into user and realm components
+==== Example: Splitting a fully qualified username into user and realm components
 Some IdPs return a fully qualified username (for example, principal or subject). The fully qualified username is the concatenation of the user name, separator, and realm name.
 The following example shows the mapped result that returns the user and realm as independent values for the fully qualified username is bob@example.com .
 
@@ -259,12 +259,3 @@ Authorization will do the following:
 
 * Verify the operations the user or service is authorized to do
 * Enforce policies to grant or deny access to resources
-
-
-
-
-
-
-
-
-

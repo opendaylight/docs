@@ -226,13 +226,17 @@ The configuration file contains: +
    
      <modules xmlns="urn:opendaylight:params:xml:ns:yang:controller:config">
        <module>
-         <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:openflow:switch:connection:provider:impl">prefix:openflow-switch-connection-provider-impl</type>
+         <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:openflow:switch:connection:provider:impl">
+           prefix:openflow-switch-connection-provider-impl
+         </type>
          <name>openflow-switch-connection-provider-default-impl</name>
          <port>6633</port>
          <switch-idle-timeout>15000</switch-idle-timeout>
        </module>
        <module>
-         <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:openflow:switch:connection:provider:impl">prefix:openflow-switch-connection-provider-impl</type>
+         <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:openflow:switch:connection:provider:impl">
+           prefix:openflow-switch-connection-provider-impl
+         </type>
          <name>openflow-switch-connection-provider-legacy-impl</name>
          <port>6653</port>
          <switch-idle-timeout>15000</switch-idle-timeout>
@@ -240,21 +244,29 @@ The configuration file contains: +
 
 
        <module>
-         <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:openflow:common:config:impl">prefix:openflow-provider-impl</type>
+         <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:openflow:common:config:impl">
+           prefix:openflow-provider-impl
+         </type>
          <name>openflow-provider-impl</name>
          
          <openflow-switch-connection-provider>
-           <type xmlns:ofSwitch="urn:opendaylight:params:xml:ns:yang:openflow:switch:connection:provider">ofSwitch:openflow-switch-connection-provider</type>
+           <type xmlns:ofSwitch="urn:opendaylight:params:xml:ns:yang:openflow:switch:connection:provider">
+             ofSwitch:openflow-switch-connection-provider
+           </type>
            <name>openflow-switch-connection-provider-default</name>
          </openflow-switch-connection-provider>
          <openflow-switch-connection-provider>
-           <type xmlns:ofSwitch="urn:opendaylight:params:xml:ns:yang:openflow:switch:connection:provider">ofSwitch:openflow-switch-connection-provider</type>
+           <type xmlns:ofSwitch="urn:opendaylight:params:xml:ns:yang:openflow:switch:connection:provider">
+             ofSwitch:openflow-switch-connection-provider
+           </type>
            <name>openflow-switch-connection-provider-legacy</name>
          </openflow-switch-connection-provider>
 
 
          <binding-aware-broker>
-           <type xmlns:binding="urn:opendaylight:params:xml:ns:yang:controller:md:sal:binding">binding:binding-broker-osgi-registry</type>
+           <type xmlns:binding="urn:opendaylight:params:xml:ns:yang:controller:md:sal:binding">
+             binding:binding-broker-osgi-registry
+           </type>
            <name>binding-osgi-broker</name>
          </binding-aware-broker>
        </module>
@@ -262,7 +274,9 @@ The configuration file contains: +
 
      <services xmlns="urn:opendaylight:params:xml:ns:yang:controller:config">
        <service>
-         <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:openflow:switch:connection:provider">prefix:openflow-switch-connection-provider</type>
+         <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:openflow:switch:connection:provider">
+           prefix:openflow-switch-connection-provider
+         </type>
          <instance>
            <name>openflow-switch-connection-provider-default</name>
            <provider>/modules/module[type='openflow-switch-connection-provider-impl'][name='openflow-switch-connection-provider-default-impl']</provider>
@@ -346,7 +360,7 @@ Access the message statistics by means of logs, osgi, and jmx. +
 : +osgi> dumpMsgCount+ +
 
 * From the controller console where statistics are refreshed every 10 seconds:
-: +Required logback settings: <logger name="org.opendaylight.openflowplugin.openflow.md.queue.MessageSpyCounterImpl" level="DEBUG"\/>+
++Required logback settings: <logger name="org.opendaylight.openflowplugin.openflow.md.queue.MessageSpyCounterImpl" level="DEBUG" />+
 
 * As JMX from the jconsole:
 ** Start the OFplugin with the -jmx parameter.
@@ -967,7 +981,9 @@ vi configuration/initial/42-openflowplugin.xml
 
         <!-- default OF-switch-connection-provider (port 6633) -->
         <module>
-          <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:openflow:switch:connection:provider:impl">prefix:openflow-switch-connection-provider-impl</type>
+          <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:openflow:switch:connection:provider:impl">
+            prefix:openflow-switch-connection-provider-impl
+          </type>
           <name>openflow-switch-connection-provider-default-impl</name>
           <port>6633</port>
           <switch-idle-timeout>15000</switch-idle-timeout>
@@ -986,7 +1002,9 @@ vi configuration/initial/42-openflowplugin.xml
         </module>
         <!-- default OF-switch-connection-provider (port 6653) -->
         <module>
-          <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:openflow:switch:connection:provider:impl">prefix:openflow-switch-connection-provider-impl</type>
+          <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:openflow:switch:connection:provider:impl">
+            prefix:openflow-switch-connection-provider-impl
+          </type>
           <name>openflow-switch-connection-provider-legacy-impl</name>
           <port>6653</port>
           <switch-idle-timeout>15000</switch-idle-timeout>
