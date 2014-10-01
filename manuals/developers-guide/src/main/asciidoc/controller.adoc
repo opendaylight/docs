@@ -935,7 +935,7 @@ In fact, each configuration operation is wrapped in a transaction. Once a transa
  If this commit is successful, the transaction enters the last stage, committed. After that, the desired modules are reconfigured. If the second phase commit fails, it means that the transaction is unhealthy - basically, a new configuration instance creation failed, and the application can be in an inconsistent state.
  
 .Configuration states 
-image::Configuration.jpg[]
+image::configuration.jpg[]
  
 .Transaction states
 image::Transaction.jpg[]
