@@ -75,29 +75,29 @@ feature:install <feature1-name> <feature2-name> ... <featureN-name>
 -----
 
 .Karaf features
-[options="header"]
+[options="header",cols="18%,50%,18%,14%"]
 |=======================
 | Component Name                   | Component Description | Karaf feature name                    | Compatibility
 | BGPCEP                           | description           | odl-bgpcep-all                        | all
-| LISP Flow Mapping                | description           | odl-lispflowmapping-all               | all
+| LISP Flow Mapping                | Enable LISP control plane services including the mapping system services REST API and LISP protocol SB plugin | odl-lispflowmapping-all               | all
 | MD-SAL Clustering                | description           | odl-mdsal-clustering                  | special
 | Netconf over ssh                 | description           | odl-netconf-connector-ssh             | all
 | OpenFlow Flow Programming        | description           | odl-openflowplugin-flow-services-ui   | all
-| OVSDB                            | description           | odl-ovsdb-all                         | all
-| Packetcable PCMM                 | description           | odl-packetcable-all                   | all
+| OVS Management                   | Enable OVS management using OVSDB plugin and its associated OVSDB northbound APIs | odl-ovsdb-all                         | all
+| Packetcable PCMM                 | Enable flow-based dynamic QoS management of CMTS using in the DOCSIS infrastructure | odl-packetcable-all                   | all
 | SDN Interface                    | description           | odl-sdninterfaceapp-all               | all
-| RESTCONF Northbound API Support  | description           | odl-restconf                          | all
+| RESTCONF API Support             | description           | odl-restconf                          | all
 | Service Flow Chaining (SFC)      | description           | odl-sfc-all                           | all
 | SFC over LISP                    | description           | odl-sfclisp                           | all
 | SFC over L2                      | description           | odl-sfcofl2                           | all
 | SFC over VXLAN                   | description           | odl-ovsdb-ovssfc                      | self+all
-| Secure Networking Bootstrap      | description           | odl-snbi-all                          | all
+| Secure Networking Bootstrap      | Define a SNBI domain and associated white lists of devices to be accomodated to the domain | odl-snbi-all                          | all
 | OpenFlow Table Type Patterns     | description           | odl-ttp-all                           | all
 | SNMP4SDN                         | description           | odl-snmp4sdn-all                      | all
-| Group Based Policy               | description           | odl-groupbasedpolicy-ofoverlay        | self+all
+| Group Based Policy               | Enable Endpoint Registry and Policy Repository REST APIs and associated functionality for the Group Based Policy Proof of Concept demonstration | odl-groupbasedpolicy-ofoverlay        | self+all
 | L2 Switch                        | description           | odl-l2switch-switch-ui                | self+all
 | Plugin to OpenContrail           | description           | odl-plugin2oc                         | self+all
-| OVSDB OpenStack Neutron          | description           | odl-ovsdb-openstack                   | self+all
+| OVSDB OpenStack Neutron          | OpenStack Network Virtualization using OpenDaylight's OVSDB support | odl-ovsdb-openstack                   | self+all
 | VTN Manager                      | description           | odl-vtn-manager-all                   | self+all
 |=======================
 
