@@ -80,9 +80,9 @@ feature:install <feature1-name> <feature2-name> ... <featureN-name>
 | Component Name                   | Component Description | Karaf feature name                    | Compatibility
 | BGPCEP                           | description           | odl-bgpcep-all                        | all
 | LISP Flow Mapping                | Enable LISP control plane services including the mapping system services REST API and LISP protocol SB plugin | odl-lispflowmapping-all               | all
-| MD-SAL Clustering                | description           | odl-mdsal-clustering                  | special
+| MD-SAL Clustering                | Provides support for operating a cluster of OpenDaylight instances | odl-mdsal-clustering                  | special
 | Netconf over ssh                 | description           | odl-netconf-connector-ssh             | all
-| OpenFlow Flow Programming        | description           | odl-openflowplugin-flow-services-ui   | all
+| OpenFlow Flow Programming        | Enables discovery and control of OpenFlow switches and the topology between them | odl-openflowplugin-flow-services-ui   | all
 | OVS Management                   | Enable OVS management using OVSDB plugin and its associated OVSDB northbound APIs | odl-ovsdb-all                         | all
 | Packetcable PCMM                 | Enable flow-based dynamic QoS management of CMTS using in the DOCSIS infrastructure | odl-packetcable-all                   | all
 | SDN Interface                    | description           | odl-sdninterfaceapp-all               | all
