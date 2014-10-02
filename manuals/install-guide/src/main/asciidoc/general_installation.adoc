@@ -1,7 +1,5 @@
 == Getting and Installing OpenDaylight Helium
 
-This section should be reworked with content added.
-
 === Downloading the Karaf Distribution
 
 // ==== Getting the Default Distribution
@@ -64,7 +62,7 @@ opendaylight-user@root>
 ----
 |===
 
-=== Installing Features
+=== Installing Components
 
 The following table describes a list of components in OpenDaylight Helium and the relevant Karaf feature to install in order to enable that component. To install a feature use the +feature:install+ Karaf command, for example:
 
@@ -78,7 +76,7 @@ Multiple features can be installed in the same command:
 feature:install <feature1-name> <feature2-name> ... <featureN-name>
 -----
 
-.Karaf features
+.Helium Components
 [options="header",cols="18%,50%,18%,14%"]
 |=======================
 | Component Name                   | Component Description | Karaf feature name                    | Compatibility
