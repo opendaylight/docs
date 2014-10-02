@@ -24,8 +24,18 @@ include::ch-clustering.adoc[Setting Up Clustering on an OpenDaylight Controller]
 
 This second part of the user guide covers project specific usage instructions.
 
-include::addons/bgpcep.adoc[BGPCEP]
+include::addons/bgpcep.adoc[BGP LS PCEP]
 
 include::addons/defense4all.adoc[Defense4All]
 
+include::addons/groupbasedpolicy.adoc[Group Based Policy]
 
+include::addons/l2switch.adoc[L2 Switch]
+
+include::addons/odlsdni.adoc[ODL-SDNi]
+
+include::addons/pcmm.adoc[Packet Cable MultiMedia (PCMM) Service]
+
+include::addons/plugin2oc.adoc[Plugin for OpenContrail]
+
+include::addons/tcpmd5.adoc[TCP-MD5]
