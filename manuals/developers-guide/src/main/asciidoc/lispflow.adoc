@@ -85,8 +85,6 @@ The +etc/custom.properties+ file in the Karaf distribution allows configuration 
 
 === Developer Tutorial
 
-//TODO Update tutorial with OVS updates (domain bridge) and SMR
-
 This section provides instructions to set up a LISP network of three nodes (one "client" node and two "server" nodes) using LISPmob and Open vSwitch (OVS) as data plane LISP nodes and the LISP Flow Mapping project from ODL as the LISP programmable mapping system for the LISP network. The steps shown below will demonstrate performing a failover between the two "server" nodes. The three LISP data plane nodes and the LISP mapping system are assumed to be running in Linux virtual machines using the following IPv4 addresses on their eth0 interfaces (please adjust configuration files, JSON examples, etc. accordingly if you're using another addressing scheme):
 
 .Nodes in the tutorial
@@ -109,41 +107,47 @@ NOTE: It is assumed that commands are executed as the 'root' user.
 
 NOTE: To set up a basic LISP network overlay (no fail-over) without dealing with OVS, you can skip steps 7 and 8 and just use LISPmob as your dataplane. If you do want to test fail-over, but not using OVS, skip steps 7 and 8, but set up LISPmob on *server2* as well, with identical configuration.
 
-. Install and run OpenDaylight Helium release on the controller VM. Please follow the general OpenDaylight Helium Installation Guide for this step. Once the OpenDaylight controller is running install odl-lispflowmapping-all feature from the CLI:
+. Install and run OpenDaylight Helium release on the controller VM. Please follow the general OpenDaylight Helium Installation Guide for this step. Once the OpenDaylight controller is running install the 'odl-openflowplugin-all', 'odl-adsal-compatibility-all', 'odl-ovsdb-all', and 'odl-lispflowmapping-all' features from the CLI:
 
- feature:install odl-lispflowmapping-all
+ feature:install odl-openflowplugin-all odl-adsal-compatibility-all odl-ovsdb-all odl-lispflowmapping-all
++
+NOTE: If you're not planning on using OVS you can skip the first three and install 'odl-lispflowmapping-all' only.
++
+It takes quite a while to load and initialize all features and their dependencies. It's worth running the command +log:tail+ in the Karaf console to see when is the log output winding down, and continue after that.
     
 . Install LISPmob on the *client* and *server1* VMs following the installation instructions https://github.com/LISPmob/lispmob#software-prerequisites[from the LISPmob README file].
 
 . Configure the LISPmob installations from the previous step. Starting from the +lispd.conf.example+ file in the distribution, set the EID in each +lispd.conf+ file from the IP address space selected for your virtual/LISP network. In this tutorial the EID of the *client* is set to 1.1.1.1/32, and that of *server1* to 2.2.2.2/32. Set the RLOC interface in each +lispd.conf+. LISP will determine the RLOC (IP address of the corresponding VM) based on this interface. Set the Map-Resolver address to the IP address of the *controller*, and on the *client* the Map-Server too. On *server1* set the Map-Server to something else, so that it doesn't interfere with the mappings on the controller, since we're going to program them manually. Modify the "key" parameter in each +lispd.conf+ file to a key/password of your choice, 'asdf' in this tutorial. The +resources/tutorial+ directory in the 'develop' branch of the project git repository has the files used in the tutorial checked in: https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=blob_plain;f=resources/tutorial/lispd.conf.client;hb=refs/heads/develop[lispd.conf.client] and https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=blob_plain;f=resources/tutorial/lispd.conf.server1;hb=refs/heads/develop[lispd.conf.server1]. Copy the files to +/root/lispd.conf+ on the respective VMs.
 
-. Define a key and EID prefix association in ODL using the northbound API for both EIDs (1.1.1.1/32 and 2.2.2.2/32).  You can run the commands from this and the next step from any machine that can reach the *controller*, including on the *controller* itself.
+. Define a key and EID prefix association in ODL using the northbound API for both EIDs (1.1.1.1/32 and 2.2.2.2/32).  Run the below commands on the *controller* (or any machine that can reach *controller*, by replacing 'localhost' with the IP address of *controller*).
 
  curl -u "admin":"admin" -H "Content-type: application/json" -X PUT \
-     http://10.33.12.32:8080/lispflowmapping/nb/v2/default/key --data @key1.json
+     http://localhost:8080/lispflowmapping/nb/v2/default/key \
+     --data @key1.json
  curl -u "admin":"admin" -H "Content-type: application/json" -X PUT \
-     http://10.33.12.32:8080/lispflowmapping/nb/v2/default/key --data @key2.json
+     http://localhost:8080/lispflowmapping/nb/v2/default/key \
+     --data @key2.json
 
 +
 where the content of the 'key1.json' and 'key2.json' files is the following (with different "ipAddress"):
 +
 [source,json]
 ----
- {
-   "key" : "asdf",
-   "maskLength" : 32,
-   "address" :
-   {
-     "ipAddress" : "1.1.1.1",
-     "afi" : 1
-   }
- }
+{
+  "key" : "asdf",
+  "maskLength" : 32,
+  "address" :
+  {
+    "ipAddress" : "1.1.1.1",
+    "afi" : 1
+  }
+}
 ----
 
 . Verify that the key is added properly by requesting the following URL:
 
- curl -u "admin":"admin" http://10.33.12.32:8080/lispflowmapping/nb/v2/default/key/0/1/1.1.1.1/32
- curl -u "admin":"admin" http://10.33.12.32:8080/lispflowmapping/nb/v2/default/key/0/1/2.2.2.2/32
+ curl -u "admin":"admin" http://localhost:8080/lispflowmapping/nb/v2/default/key/0/1/1.1.1.1/32
+ curl -u "admin":"admin" http://localhost:8080/lispflowmapping/nb/v2/default/key/0/1/2.2.2.2/32
 
 . Run the lispd LISPmob daemon on the *client* and *server1* VMs:
 
@@ -158,7 +162,7 @@ where the content of the 'key1.json' and 'key2.json' files is the following (wit
  ovs-vsctl show
 
 +
- .. Create a TAP port for communications with the guest VM (we'll have another VM inside the *server2* VM, that will be set up with the 2.2.2.2/32 EID):
+ .. Create a TAP port for communications with the guest VM.  We'll have another VM inside the *server2* VM, that will be set up with the 2.2.2.2/24 EID.  It also needs a ficticious gateway, and a static ARP entry for that gateway, with any MAC address.
 
  tunctl -t tap0
  ifconfig tap0 up
@@ -167,16 +171,16 @@ where the content of the 'key1.json' and 'key2.json' files is the following (wit
  .. Start the guest VM:
 
  modprobe kvm
- kvm -daemonize -m 128 -net nic,macaddr=00:00:0C:15:C0:A1 \
+ kvm -daemonize -vnc :0 -m 128 -net nic,macaddr=00:00:0C:15:C0:A1 \
      -net tap,ifname=tap0,script=no,downscript=no \
-     -drive file=ubuntu.12-04.x86-64.20120425.static_ip_2.2.2.2.qcow2 -vnc :0
+     -drive file=ubuntu.12-04.x86-64.20120425.static_ip_2.2.2.2.qcow2
 
 +
 . Set up the OVS environment on *server2* using the ODL northbound API
  .. Connect to the OVSDB management port from ODL:
 
  curl -u "admin":"admin" -X PUT \
-     http://10.33.12.32:8080/controller/nb/v2/connectionmanager/node/server2/address/10.33.12.44/port/6640
+     http://localhost:8080/controller/nb/v2/connectionmanager/node/server2/address/10.33.12.44/port/6640
 
 +
 You can check if this and the next requests have the desired effect on OVS by running the following on *server2*
@@ -189,18 +193,18 @@ It should now show the "Manager" connection as connected
  .. Create the bridge +br0+:
 
  curl -u "admin":"admin" -H "Content-type: application/json" -X POST \
-     http://10.33.12.32:8080/controller/nb/v2/networkconfig/bridgedomain/bridge/OVS/server2/br0 -d "{}"
+     http://localhost:8080/controller/nb/v2/networkconfig/bridgedomain/bridge/OVS/server2/br0 -d "{}"
 
  .. Add +tap0+ to +br0+:
 
  curl -u "admin":"admin" -H "Content-type: application/json" -X POST \
-     http://10.33.12.32:8080/controller/nb/v2/networkconfig/bridgedomain/port/OVS/server2/br0/tap0 -d "{}"
+     http://localhost:8080/controller/nb/v2/networkconfig/bridgedomain/port/OVS/server2/br0/tap0 -d "{}"
 
 +
  .. Add the +lisp0+ LISP tunneling virtual port to +br0+:
 
  curl -u "admin":"admin" -H "Content-type: application/json" -X POST \
-     http://10.33.12.32:8080/controller/nb/v2/networkconfig/bridgedomain/port/OVS/server2/br0/lisp0 -d @lisp0.json
+     http://localhost:8080/controller/nb/v2/networkconfig/bridgedomain/port/OVS/server2/br0/lisp0 -d @lisp0.json
 +
 where 'lisp0.json' has the following content:
 +
@@ -216,21 +220,21 @@ The *dest_ip* parameter sets the tunnel destination to the *client* VM. This has
 
  .. We will now need to set up flows on +br0+ to to steer traffic received on the LISP virtual port in OVS to the VM connected to +tap0+ and vice-versa. For that we will need the node id of the bridge, which is based on its MAC address, which is generated at creation time. So we look at the list of connections on the controller:
 
- curl -u "admin":"admin" http://10.33.12.32:8080/controller/nb/v2/connectionmanager/nodes
+ curl -u "admin":"admin" http://localhost:8080/controller/nb/v2/connectionmanager/nodes
 +
 The response should look similar to this:
 +
 [literal]
-{"node":[{"id":"server2","type":"OVS"},{"id":"00:00:62:71:36:30:7b:44","type":"OF"}]}
+{"id":"00:00:62:71:36:30:7b:44","type":"OF"}]},{"id":"10.33.12.35","type":"LISP"},{"id":"server2","type":"OVS"}]}
 +
-There are two types of nodes connected to ODL: one "OVS" node (this is the OVSDB connection to *server2*) and one "OF" node (the OpenFlow connection to +br0+ on *server2*). We will need the id of the "OF" node in order to set up flows.
+There are three types of nodes connected to ODL: one "OF" node (the OpenFlow connection to +br0+ on *server2*), one "LISP" node (the *client* VM sending LISP Map-Register control messages to the controller which is acting as a LISP Map-Server), and one "OVS" node (this is the OVSDB connection to *server2*). We will need the id of the "OF" node in order to set up flows.
 
  .. The first flow will decapsulate traffic received from the client VM on *server2* and send it to the guest VM through the +tap0+ port.
 
  curl -u "admin":"admin" -H "Content-type: application/json" -X PUT \
-     http://10.33.12.32:8080/controller/nb/v2/flowprogrammer/default/node/OF/00:00:62:71:36:30:7b:44/staticFlow/Decap -d @flow_decap.json
+     http://localhost:8080/controller/nb/v2/flowprogrammer/default/node/OF/00:00:62:71:36:30:7b:44/staticFlow/Decap -d @flow_decap.json
 +
-Make sure that the bridge id after the OF path component of the URL is the id from the previous step. It should also be the same in the 'flow_decap.json' file, which looks like this:
+Make sure that the bridge id after the OF path component of the URL is the id from the previous step. It should also be the same on line 6 in 'flow_decap.json' file (see below), which should have the MAC address of the KVM instance started on *server2* on line 11 (+SET_DL_DST+):
 +
 [source,json]
 ----
@@ -253,7 +257,7 @@ Make sure that the bridge id after the OF path component of the URL is the id fr
  .. The second flow will encapsulate traffic received from the guest VM on *server2* through the +tap0+ port.
 
  curl -u "admin":"admin" -H "Content-type: application/json" -X PUT \
-     http://10.33.12.32:8080/controller/nb/v2/flowprogrammer/default/node/OF/00:00:62:71:36:30:7b:44/staticFlow/Encap -d @flow_encap.json
+     http://localhost:8080/controller/nb/v2/flowprogrammer/default/node/OF/00:00:62:71:36:30:7b:44/staticFlow/Encap -d @flow_encap.json
 +
 The 'flow_encap.json' file should look like this:
 +
@@ -279,20 +283,21 @@ The 'flow_encap.json' file should look like this:
 
  .. Check if the flows have been created correctly. First, in ODL
 
- curl -u "admin":"admin" http://10.33.12.32:8080/controller/nb/v2/flowprogrammer/default
+ curl -u "admin":"admin" http://localhost:8080/controller/nb/v2/flowprogrammer/default
 +
 And most importantly, on *server2*
 
- ovs-ofctl dump-flows br0
+ ovs-ofctl dump-flows br0 -O OpenFlow13
 
 . The *client* LISPmob node should now register its EID-to-RLOC mapping in ODL. To verify you can lookup the corresponding EIDs via the northbound API
 
- curl -u "admin":"admin" http://10.33.12.32:8080/lispflowmapping/nb/v2/default/mapping/0/1/1.1.1.1/32
+ curl -u "admin":"admin" http://localhost:8080/lispflowmapping/nb/v2/default/mapping/0/1/1.1.1.1/32
 
  . Register the EID-to-RLOC mapping of the server EID 2.2.2.2/32 to the controller, pointing to *server1* and *server2* with a higher priority for *server1*
 
  curl -u "admin":"admin" -H "Content-type: application/json" -X PUT \
-     http://10.33.12.32:8080/lispflowmapping/nb/v2/default/mapping -d @mapping.json
+     http://localhost:8080/lispflowmapping/nb/v2/default/mapping \
+     -d @mapping.json
 +
 where the 'mapping.json' file looks like this
 +
@@ -301,56 +306,56 @@ where the 'mapping.json' file looks like this
 {
 "key" : "asdf",
 "mapregister" :
-{
-"proxyMapReply" : true,
-"eidToLocatorRecords" :
-[
   {
-  "authoritative" : true,
-  "prefixGeneric" :
-    {
-    "ipAddress" : "2.2.2.2",
-    "afi" : 1
-    },
-  "mapVersion" : 0,
-  "maskLength" : 32,
-  "action" : "NoAction",
-  "locators" :
+  "proxyMapReply" : true,
+  "eidToLocatorRecords" :
     [
       {
-      "multicastPriority" : 1,
-      "locatorGeneric" :
+      "authoritative" : true,
+      "prefixGeneric" :
         {
-        "ipAddress" : "10.33.12.37",
+        "ipAddress" : "2.2.2.2",
         "afi" : 1
         },
-      "routed" : true,
-      "multicastWeight" : 0,
-      "rlocProbed" : false,
-      "localLocator" : false,
-      "priority" : 126,
-      "weight" : 1
-      } ,
-      {
-      "multicastPriority" : 1,
-      "locatorGeneric" :
-        {
-        "ipAddress" : "10.33.12.44",
-        "afi" : 1
-        },
-      "routed" : true,
-      "multicastWeight" : 0,
-      "rlocProbed" : false,
-      "localLocator" : false,
-      "priority" : 127,
-      "weight" : 1
+      "mapVersion" : 0,
+      "maskLength" : 32,
+      "action" : "NoAction",
+      "locators" :
+        [
+          {
+          "multicastPriority" : 1,
+          "locatorGeneric" :
+            {
+            "ipAddress" : "10.33.12.37",
+            "afi" : 1
+            },
+          "routed" : true,
+          "multicastWeight" : 0,
+          "rlocProbed" : false,
+          "localLocator" : false,
+          "priority" : 126,
+          "weight" : 1
+          } ,
+          {
+          "multicastPriority" : 1,
+          "locatorGeneric" :
+            {
+            "ipAddress" : "10.33.12.44",
+            "afi" : 1
+            },
+          "routed" : true,
+          "multicastWeight" : 0,
+          "rlocProbed" : false,
+          "localLocator" : false,
+          "priority" : 127,
+          "weight" : 1
+          }
+        ],
+      "recordTtl" : 5
       }
     ],
-  "recordTtl" : 5
+  "keyId" : 0
   }
-],
-"keyId" : 0
-}
 }
 ----
 +
@@ -358,14 +363,15 @@ Here the priority of the second RLOC (10.33.12.44 - *server2*) is 127, a higher 
 
  . Verify the correct registration of the 2.2.2.2/32 EID:
 
- curl -u "admin":"admin" http://10.33.12.32:8080/lispflowmapping/nb/v2/default/mapping/0/1/2.2.2.2/32
+ curl -u "admin":"admin" http://localhost:8080/lispflowmapping/nb/v2/default/mapping/0/1/2.2.2.2/32
 
  . Now the LISP network is up. To verify, log into the *client* VM and ping the server EID:
 
  ping 2.2.2.2
 
- . Let's test fail-over now. Suppose you had a service on *server1* which became unavailable, but *server1* itself is still reachable. LISP will not automatically fail over, even if the mapping for 2.2.2.2/32 has two locators, since both locators are still reachable and uses the one with the higher priority (lowest priority value). To force a failover, we need to set the priority of *server2* to a lower value. Using the file mapping.json above, change to priority values to 125 and 124 respectively and repeat the request from step 10. You can also repeat step 11 to see if the mapping is correctly registered. Not that the previous locators are still present, so you should see a list of four locators. If you leave the ping on, and monitor the traffic using wireshark you can see that the ping traffic will be diverted from *server1* to *server2*. Currently this may take some time as this version of the LISP Flow Mapping project does not support proactive SMR, meaning that it will wait for the LISPmob nodes to query the new policy on their periodic cycle. The proactive push of policy to the data plane nodes is scheduled to be supported in the next version of LISP Flow Mapping, to allow for immediate distribution and enforcement of policies defined via ODL northbound API.
-
+ . Let's test fail-over now. Suppose you had a service on *server1* which became unavailable, but *server1* itself is still reachable. LISP will not automatically fail over, even if the mapping for 2.2.2.2/32 has two locators, since both locators are still reachable and uses the one with the higher priority (lowest priority value). To force a failover, we need to set the priority of *server2* to a lower value. Using the file mapping.json above, swap the priority values between the two locators and repeat the request from step 10. You can also repeat step 11 to see if the mapping is correctly registered. Not that the previous locators are still present, so you should see a list of four locators. If you leave the ping on, and monitor the traffic using wireshark you can see that the ping traffic will be diverted from *server1* to *server2*.
++
+With the default ODL configuration this may take some time, because the mapping stays in the *client* map-cache until the TTL expires. LISP has a http://tools.ietf.org/html/rfc6830#section-6.6.2[Solicit-Map-Request (SMR) mechanism] that can ask a LISP data plane element to update its mapping for a certain EID. This is disabled by default, and is controlled by the +lisp.smr+ variable in +etc/custom.porperties+. When enabled, any mapping change from the northbound will trigger an SMR packet to all data plane elements that have requested the mapping in a certain time window.
 
 If you used the Postman collection, you will notice an "ELP" mapping. This is for supporting service chaining, but it requires a Re-encapsulating Tunnel Router (RTR). Support for RTR functionality in LISPmob is in progress, and we will update the tutorial to demonstrate service chaining when it becomes available.
 
