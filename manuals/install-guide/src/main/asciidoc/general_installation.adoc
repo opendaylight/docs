@@ -26,6 +26,9 @@ CAUTION: Not all features can be run at the same time without negative
 
 For example:
 
+[frame="none"]
+|===
+a|
 ----
 $ ls distribution-karaf-0.2.0-Helium.zip 
 distribution-karaf-0.2.0-Helium.zip
@@ -44,14 +47,14 @@ Archive:  distribution-karaf-0.2.0-Helium.zip
   inflating: distribution-karaf-0.2.0-Helium/bin/stop.bat
 $ cd distribution-karaf-0.2.0-Helium
 $ ./bin/karaf 
-                                                                                           
+
     ________                       ________                .__  .__       .__     __       
-    \_____  \ ______   ____   ____ \______ \ _____  ___.__.|  | |__| ____ |  |___/  |_     
-     /   |   \\____ \_/ __ \ /    \ |    |  \\__  \<   |  ||  | |  |/ ___\|  |  \   __\    
-    /    |    \  |_> >  ___/|   |  \|    `   \/ __ \\___  ||  |_|  / /_/  >   Y  \  |      
-    \_______  /   __/ \___  >___|  /_______  (____  / ____||____/__\___  /|___|  /__|      
-            \/|__|        \/     \/        \/     \/\/            /_____/      \/          
-                                                                                           
+    \_____  \ ______   ____   ____ \______ \ _____  ___.__.\|  \| \|__\| ____ \|  \|___/  \|_     
+     /   \|   \\____ \_/ __ \ /    \ \|    \|  \\__  \<   \|  \|\|  \| \|  \|/ ___\\|  \|  \   __\    
+    /    \|    \  \|_> >  ___/\|   \|  \\|    `   \/ __ \\___  \|\|  \|_\|  / /_/  >   Y  \  \|      
+    \_______  /   __/ \___  >___\|  /_______  (____  / ____\|\|____/__\___  /\|___\|  /__\|      
+            \/\|__\|        \/     \/        \/     \/\/            /_____/      \/          
+
 
 Hit '<tab>' for a list of available commands
 and '[cmd] --help' for help on a specific command.
@@ -59,6 +62,7 @@ Hit '<ctrl-d>' or type 'system:shutdown' or 'logout' to shutdown OpenDaylight.
 
 opendaylight-user@root>
 ----
+|===
 
 === Installing Features
 
@@ -78,30 +82,39 @@ feature:install <feature1-name> <feature2-name> ... <featureN-name>
 [options="header",cols="18%,50%,18%,14%"]
 |=======================
 | Component Name                   | Component Description | Karaf feature name                    | Compatibility
-| BGPCEP                           | description           | odl-bgpcep-all                        | all
-| LISP Flow Mapping                | Enable LISP control plane services including the mapping system services REST API and LISP protocol SB plugin | odl-lispflowmapping-all               | all
-| MD-SAL Clustering                | description           | odl-mdsal-clustering                  | special
-| Netconf over ssh                 | description           | odl-netconf-connector-ssh             | all
-| OpenFlow Flow Programming        | description           | odl-openflowplugin-flow-services-ui   | all
-| OVS Management                   | Enable OVS management using OVSDB plugin and its associated OVSDB northbound APIs | odl-ovsdb-all                         | all
-| Packetcable PCMM                 | Enable flow-based dynamic QoS management of CMTS using in the DOCSIS infrastructure | odl-packetcable-all                   | all
-| SDN Interface                    | description           | odl-sdninterfaceapp-all               | all
-| RESTCONF API Support             | description           | odl-restconf                          | all
-| Service Flow Chaining (SFC)      | description           | odl-sfc-all                           | all
-| SFC over LISP                    | description           | odl-sfclisp                           | all
-| SFC over L2                      | description           | odl-sfcofl2                           | all
-| SFC over VXLAN                   | description           | odl-ovsdb-ovssfc                      | self+all
-| Secure Networking Bootstrap      | Define a SNBI domain and associated white lists of devices to be accomodated to the domain | odl-snbi-all                          | all
-| OpenFlow Table Type Patterns     | description           | odl-ttp-all                           | all
-| SNMP4SDN                         | description           | odl-snmp4sdn-all                      | all
+| BGPCEP                           | Enables support for BGP LS PCEP | odl-bgpcep-all                        | all
+| Defense4All                      | Enable DDoS detection and protection | n/a, see <<_defense4all,Defense4All>> | all
 | Group Based Policy               | Enable Endpoint Registry and Policy Repository REST APIs and associated functionality for the Group Based Policy Proof of Concept demonstration | odl-groupbasedpolicy-ofoverlay        | self+all
-| L2 Switch                        | description           | odl-l2switch-switch-ui                | self+all
-| Plugin to OpenContrail           | description           | odl-plugin2oc                         | self+all
-| OVSDB OpenStack Neutron          | OpenStack Network Virtualization using OpenDaylight's OVSDB support | odl-ovsdb-openstack                   | self+all
-| VTN Manager                      | description           | odl-vtn-manager-all                   | self+all
+| L2 Switch                        | Provides L2 (Ethernet) forwarding across connected OppenFlow switches and support for host tracking | odl-l2switch-switch-ui                | self+all
+| LISP Flow Mapping                | Enable LISP control plane services including the mapping system services REST API and LISP protocol SB plugin | odl-lispflowmapping-all               | all
+| MD-SAL Clustering                | Provides support for operating a cluster of OpenDaylight instances | odl-mdsal-clustering                  | special
+| Netconf over SSH                 | Provide support to manage Netconf-enabled devices over SSH | odl-netconf-connector-ssh             | all
+| OpenFlow Flow Programming        | Enables discovery and control of OpenFlow switches and the topology between them | odl-openflowplugin-flow-services-ui   | all
+| OpenFlow Table Type Patterns     | Allows OpenFlow Table Type Patterns to be manually associated with network elements | odl-ttp-all                          |all
+| OVS Management                   | Enable OVS management using OVSDB plugin and its associated OVSDB northbound APIs | odl-ovsdb-all                        | all
+| OVSDB OpenStack Neutron          | OpenStack Network Virtualization using OpenDaylight's OVSDB support | odl-ovsdb-openstack                   | all
+| Packetcable PCMM                 | Enable flow-based dynamic QoS management of CMTS using in the DOCSIS infrastructure | odl-packetcable-all                   | all
+| Plugin to OpenContrail           | Provides OpenStack Neutron support via OpenContrail | odl-plugin2oc                         | self+all
+| RESTCONF API Support             | Enables REST API access to the MD-SAL including the data store | odl-restconf                          | all
+| SDN Interface                    | Provides support for interaction and sharing of state between (non-clustered) OpenDaylight instances | odl-sdninterfaceapp-all               | all
+| Secure Networking Bootstrap      | Define a SNBI domain and associated white lists of devices to be accommodated to the domain | odl-snbi-all                          | all
+| Service Flow Chaining (SFC)      | Enables support for applying chains of network services to certain traffic | odl-sfc-all                           | all
+| SFC over LISP                    | Supports implementing SFC using LISP | odl-sfclisp                           | all
+| SFC over L2                      | Supports implementing SFC using Layer 2 forwarding | odl-sfcofl2                           | all
+| SFC over VXLAN                   | Supports implementing SFC using VXLAN via OVSDB | odl-ovsdb-ovssfc                      | self+all
+| SNMP4SDN                         | Enables monitoring and control of network elements via SNMP | odl-snmp4sdn-all                      | all
+| VTN Manager                      | Enables Virtual Tenant Network support including support for OpenStack Neutron | odl-vtn-manager-all                   | self+all
 |=======================
 
 In the table a compatibility value of "all" means that it can be run with any other features. A value of "self+all" indicates that the feature can be installed with anything with a value of "all", but not any other features with a value of "self+all".
+
+==== Installing the DLUX Web Interface
+
+The OpenDaylight Web Interface, DLUX, draws information from the OpenFlow Flow Programming and L2 Switch components to display information about the topology of the network, flow statistics, host locations and the like. It will automatically be installed when you install either of these components.
+
+==== Installing support for REST APIs
+
+Most components that offer REST APIs will automatically load the RESTCONF API Support component, but if for whatever reason they seem to be missing, you can activate this support by installing the +odl-restconf+ feature.
 
 ==== Installing MD-SAL Clustering
 
@@ -128,3 +141,7 @@ feature:list -i
 === Project-Specific Installation Instructions
 
 The Defense4All and Yang Tools projects provide project-specific installation instructions here. Other projects can either be installed by simply installing the appropriate Karaf feature(s) or, in some cases, further instructions can be found in the User Guide or Developer Guide.
+
+=== Further Information
+
+Further information can be found in the User Guide and Developer Guide, which should be available in the same location as this guide.
