@@ -14,14 +14,14 @@ DLUX also uses the SAL services to obtain network related information and use it
 
 You can either use DLUX as a stand-alone plug-in or integrate with the Opendaylight controller. +
 
-To install DLUX as a standalone application see https://wiki.opendaylight.org/view/OpenDaylight_DLUX:Setup_and_Run[OpenDaylight DLUX:Setup and Run]. +
+To install DLUX as a standalone application see https://wiki.opendaylight.org/view/OpenDaylight_dlux:Setup_and_Run[OpenDaylight DLUX:Setup and Run]. +
 
 To integrate with Opendaylight Controller you must enable DLUX Karaf feature. You can enable adsal, md sal and various other bundles within Karaf depending on the features you would like to access using DLUX.
 Each feature can be enabled or disabled separately.
 
 IMPORTANT: Ensure that you have created a topology and enabled MD-SAL feature in the Karaf distribution before you use DLUX for network management.
 
-For more information about enabling the Karaf features for DLUX, see https://wiki.opendaylight.org/view/OpenDaylight_DLUX:DLUX_Karaf_Feature[OpenDaylight DLUX:DLUX Karaf Feature].
+For more information about enabling the Karaf features for DLUX, see https://wiki.opendaylight.org/view/OpenDaylight_dlux:Dlux_Karaf_Feature[OpenDaylight DLUX:DLUX Karaf Feature].
 
 === Logging In
 
