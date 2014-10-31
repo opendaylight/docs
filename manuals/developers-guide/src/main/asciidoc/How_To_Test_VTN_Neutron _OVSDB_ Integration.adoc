@@ -1,0 +1,236 @@
+==  How to test VTN Neutron – OVSDB Integration 
+=== Requirements
+To use OpenDaylight Controller (ODL) as Network Service Provider for Openstack.
+(By using VTN Neutron – OVSDB Integration).
+====Components
+.OpenDaylight Controller.
+.OpenStack Control Node.
+.OpenStack Compute Node.
+.OpenFlow Switch like mininet(Not Mandatory).
+: The VTN Manager Neutron bundle supports multiple nodes. For this demo purpose we have used one control and compute node setup.
+:Openstack nodes should communicate with each other through a physical or logical openflow switches.
+
+==== OpenDaylight settings 
+* Please refer link:/https://wiki.opendaylight.org/view/OpenDaylight_Virtual_Tenant_Network_(VTN):Installation:VTN_Manager#Build[Installation Guide in User Guide ] to install from karaf distro.
+
+===Configuration for demo setup
+Configuration for VTN Manager Neutron-OVSDB. Below steps depicts the configuration of single devstack Control and compute node setup.
+===== OS Preparation
+. Installed Fedora-20 OS in two VM's(control node and compute node respectively).
+. Log in to both the VM's.
+. To add new user, install softwares and to configure the settings, we need to login as a root user in control and compute nodes and procced with the following commands in both the nodes, in the given sequence:
+*  systemctl disable firewalld
+*  disable selinux (this is not command, please edit /etc/selinux/config and add DISABLED).
+*  yum install git vim net-tools (net-tools is not mandatory useful for handy commands like ifconfig!!)
+*  systemctl disable NetworkManager.service
+*  chkconfig network on
+*  Edited the network config files as follows:(In our case the nodes came up as ens192 and ens224)
+   Control Node
+[cols=*3,2a,^,options="header",width="75%"]
+|===
+|
+      (Management Interface) 
+      [root@odl-icehouse-controller network-scripts]# cat ifcfg-ens192 
+      TYPE=Ethernet 
+      BOOTPROTO=static 
+      DEFROUTE=yes 
+      DEVICE=ens192 
+      ONBOOT=yes 
+      IPADDR=192.168.64.20 
+      GATEWAY=192.168.64.1 
+      Internal node for VM's communiation) 
+      [root@odl-icehouse-controller network-scripts]# cat ifcfg-ens224 
+      TYPE=Ethernet 
+      BOOTPROTO=static 
+      DEVICE=ens224 
+      ONBOOT=yes 
+      IPADDR=192.168.35.1 
+|===
+    Compute Node
+[cols=*3,2a,^,options="header",width="75%"]
+|===
+|
+     (Management interface) 
+    [root@odl-helium-compute network-scripts]# cat ifcfg-ens192 
+    TYPE=Ethernet 
+     BOOTPROTO=static 
+    DEFROUTE=yes 
+     DEVICE=ens192 
+     ONBOOT=yes 
+    IPADDR=192.168.64.21 
+     GATEWAY=192.168.64.1 
+     (Internal node for VM's communiation) 
+     [root@odl-helium-compute network-scripts]# cat ifcfg-ens224 
+     TYPE=Ethernet 
+    BOOTPROTO=static 
+    DEVICE=ens224 
+    ONBOOT=yes 
+    IPADDR=192.168.35.2 
+    GATEWAY=192.168.35.1 
+|===
+ *  reboot
+ *  groupadd stack
+ *  useradd -g stack -s /bin/bash -d /opt/stack -m stack
+ *  echo "stack ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+ *  su - stack
+
+===== Devstack Setup
+.GIT Checkout
+* To chechout the devstack from the git use the URL: https://github.com/openstack-dev/devstack.git.
+* Please switch to ice house stable (cd devstack; git checkout stable/icehouse).
+.local.conf:
+*For control node copy the contents of local.conf (devstack control node) from https://wiki.opendaylight.org/view/OpenDaylight_Virtual_Tenant_Network_(VTN):Scripts:devstack and save it as local.conf in the location /opt/stack/devstack in the control node VM.
+*For compute node copy the contents of local.conf (devstack compute node)from https://wiki.opendaylight.org/view/OpenDaylight_Virtual_Tenant_Network_(VTN):Scripts:devstack and save it as local.conf in the location /opt/stack/devstack in the compute node VM.
+*Edit the CONTROL_NODE_IP_ADDRESS with management Interface IP of control node.
+*Edit the COMPUTE_NODE_IP_ADDRESS with management Interface IP of compute node.
+*Edit the ODL_IP_ADDRESS to the IP address of the ODL server.
+*Edit Flat Interface to the appropriate internal network interface (ens224 in our example case).
+*For the first time, please comment out OFFLINE=true and make RECLONE as yes.
+. Ensure ODL is running 
+*Please refer the below page for more information :
+  https://wiki.opendaylight.org/view/Release/Helium/VTN/Installation_Guide_Using_KARAF
+  In ODL if Helium Karaf distro is used, a configuration file vtn.ini' needs to be created manually.
+  VTN uses the configuration parameters for the OVSDB integration.<br>These values will be set for the OVS interface br-int, in all the participating nodes.
+  Please ensure that a file vtn.ini to be present in the configuration directory, the contents are as follows 
+   bridgename=br-int
+   failmode=secure
+   protocols=OpenFlow13
+   portname=ens33
+   The configuration parameter bridgename is the name of the bridge, that will be created.
+   The parameter failmode can be standalone or secure.
+   The parameter protocols is OpenFlow protocol through which OpenFlow Switch and Controller communicate. The values can be OpenFlow13 or OpenFlow10. 
+   portname is the name of the port that will be created.
+   The values of the configuration parameters can be modified based on the user requirement.
+   If the vtn.ini configuration files is not present, the above specified default values will be used.
+
+===== Devstack Execution
+Please follow the below steps in sequence.
+* Start ODL controller.
+* Execute ./stack.sh in the control node.
+* After successful execution of the stack.sh in control node ,execute ./stack.sh in the compute node.
+
+===== Troubleshooting Tips
+* Execute the command sudo ovs-vsctl show after stack.sh is executed successfully.
+* Check the ovs_version from the displayed response of the command. If the version is greater than  2.1.1,then please run the below command in both control and compute nodes.
+*The below command is added to send the packets to controller when no table entry matches.
+ sudo ovs-ofctl --protocols=OpenFlow13 add-flow br-int priority=0,actions=output:CONTROLLER
+*Note: Occasionally error due c-sch occurs in compute node, In such cases Please do ./unstack.sh, ./clean.sh, Then proceed to do ./stack.sh again
+
+===== Verify Successful Devstack startup
+:1. Control Node:
+ *stack.sh prints out Horizon is now available at http://<CONTROL_NODE_IP>:8080/
+ *Execute the command sudo ovs-vsctl show in the control node terminal and verify if the bridge br-int  is created.
+  [stack@odl-icehouse-controller devstack]$ sudo ovs-vsctl show
+  4a742f41-54de-4249-9798-e35b1c77ef32
+  Manager "tcp:192.168.64.73:6640"
+  is_connected: true
+  Bridge br-int 
+  Controller "tcp:192.168.64.73:6633"
+  is_connected: true 
+  fail_mode: secure 
+  Port "ens224"
+  Interface "ens224"
+  ovs_version: "2.3.0"  
+ 2. Compute Node
+* Execute the command sudo ovs-vsctl show in the compute node terminal and verify if the bridge br-int is created.
+  [stack@odl-helium-compute devstack]$ sudo ovs-vsctl show
+  48f129af-5035-4807-977e-27e56c09694e
+  Manager "tcp:192.168.64.73:6640"
+  is_connected: true
+  Bridge br-int 
+  Controller "tcp:192.168.64.73:6633"
+  is_connected: true 
+  fail_mode: secure 
+  Port "ens224" 
+  Interface "ens224"
+  ovs_version: "2.3.0"
+
+===Create VM from Devstack Horizon GUI
+.Login to http://<CONTROL_NODE_IP>:8080/ to check the horizon GUI.
+  image::OpenStackGui.png  
+ Enter the value for User Name as admin and enter the value for Password as labstack.
+. We should first ensure both the hypervisors(control node and compute node) are mapped under hypervisors by clicking on Hpervisors tab.image:https://wiki.opendaylight.org/view/File:Hypervisors.png[
+  "HyperVisors",width=128,link="https://wiki.opendaylight.org/view/File:Hypervisors.png"]
+.Create a new Network from Horizon GUI.
+* Click on Networks Tab.
+* click on the Create Network button.
+image::Create_Network.png
+* A popup screen will appear. 
+* Enter network name and click Next button.
+ image::Creare_Network_Step_1.png
+* Create a sub network by giving Network Address and click Next button .
+ image::Create_Network_Step_2
+* Specify the additional details for subnetwork (please refer the image for your reference).
+image::Create_Network_Step_3
+* Click Create button .
+.Create VM Instance 
+*Navigate to Instances tab in the GUI.
+image:: Instance_ping
+* Click on Lauch Instances button.
+image::Launch_Instance.png
+* Click on Details tab to enter the VM details.For this demo we are creating Ten VM's(insances).
+ image::Launch_Instance.png
+*In the Networking tab, we must select the network,for this we need to drag and drop the Available networks to Selected Networks (i.e) Drag vtn1 we created  from Available networks to Selected Networks and click Launch to create the instances. 
+ image::Launch_Instance_network.png
+* Ten VM's will be created.
+  image::Load_All_Instances.png
+*Click on any VM displayed in the Instances tab and click the Console tab.
+  image::Instance_Console.png"]
+* Login to the VM console and verify with a ping commad.
+  image::Instance_ping.png
+
+=== Verification of Control and Compute Node after VM creation
+The output of sudo ovs-vsctl command after VM creation 
+[cols=*3,2a,^,options="header",width="75%"]
+|===
+|
+  [stack@icehouse-compute-odl devstack]$ sudo ovs-vsctl show  Manager "tcp:192.168.64.73:6640" 
+  is_connected: true 
+  Bridge br-int 
+  Controller "tcp:192.168.64.73:6633" 
+  is_connected: true 
+  fail_mode: secure 
+  Port "tapa2e1ef67-79" 
+  Interface "tapa2e1ef67-79" 
+  Port "tap5f34d39d-5e" 
+  Interface "tap5f34d39d-5e" 
+  Port "tapc2858395-f9" 
+  Interface "tapc2858395-f9" 
+  Port "tapa9ea900a-4b" 
+  Interface "tapa9ea900a-4b" 
+  Port "tapc63ef3de-53" 
+  Interface "tapc63ef3de-53" 
+  Port "tap01d51478-8b" 
+  Interface "tap01d51478-8b" 
+  Port "tapa0b085ab-ce" 
+  Interface "tapa0b085ab-ce" 
+   Port "tapeab380de-8f" 
+  Interface "tapeab380de-8f" 
+  Port "tape404538c-0a" 
+  Interface "tape404538c-0a" 
+  Port "tap2940658d-15" 
+  Interface "tap2940658d-15" 
+  Port "ens224" 
+  Interface "ens224" 
+  ovs_version: "2.3.0" 
+  <code>[stack@icehouse-controller-odl devstack]$ sudo ovs-vsctl show  
+  Manager "tcp:192.168.64.73:6640" 
+  is_connected: true 
+  Bridge br-int 
+  Controller "tcp:192.168.64.73:6633" 
+  is_connected: true 
+  fail_mode: secure 
+  Port "tap71790d18-65" 
+  Interface "tap71790d18-65" 
+  Port "ens224" 
+  Interface "ens224" 
+  ovs_version: "2.3.0"  
+Note:In the above scenario more nodes have been created in the compute node
+|===
+== References
+http://devstack.org/guides/multinode-lab.html 
+http://www.siliconloons.com/opendaylight-integration-with-openstack-has-merged-into-icehouse/
+
+http://networkstatic.net/opendaylight-openstack-integration-devstack-fedora-20/
+https://wiki.opendaylight.org/view/File:Vtn_demo_hackfest_2014_march.pdf
+http://networkstatic.net/opendaylight-openstack-integration-devstack-fedora-20/
