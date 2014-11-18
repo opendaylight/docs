@@ -30,7 +30,158 @@ The OpenDaylight controller source files are completely portable and only requir
 
 Although the OpenDaylight controller is developed as a normal Java project, it makes heavy use of the Xtend language in some places. While development is possible with bare tools, we recommend you use Eclipse with the Xtend plugin.
 
-=== Known Issues and Limitation
+=== Helium-SR1 Release Notes
+
+This section details changes and bug fixes between the Helium release of OpenDaylight and the first Helium Stability Release (Helium-SR1) of OpenDaylight. First, we list projects with no noteworthy changes followed by a list of the bugs fixed and/or changes for each project.
+
+==== Projects with no noteworthy changes
+
+The following projects had no changes in the Helium-SR1 release:
+
+* L2 Switch
+* ODL-SDNi Application
+* OpenFlow Protocol Library
+* PacketCable PCMM
+* SNMP4SDN
+* Secure Network Bootstrapping Infrastructure
+* Service Function Chaining
+* Southbound plugin to the OpenContrail Platform
+* TCP-MD5
+* Table Type Patterns
+
+==== AAA
+
+* https://bugs.opendaylight.org/show_bug.cgi?id=2292[BUG-2292]: CORS Basic Auth Fix
+
+==== BGP LS PCEP
+
+* https://bugs.opendaylight.org/show_bug.cgi?id=1921[BUG-1921]: features-bgpcep has incorrect guava version
+* https://bugs.opendaylight.org/show_bug.cgi?id=1924[BUG-1924]: features.xml lists multiple commons-codec versions
+* https://bugs.opendaylight.org/show_bug.cgi?id=1931[BUG-1931]: Overridden version of junit
+* https://bugs.opendaylight.org/show_bug.cgi?id=2082[BUG-2082]: feature.xml is missing dependencies on tcp-md5
+* https://bugs.opendaylight.org/show_bug.cgi?id=2109[BUG-2109]: Ghost BGP session could not be cleaned
+* https://bugs.opendaylight.org/show_bug.cgi?id=2115[BUG-2115]: close() method of BGPSessionImpl should set the error subcode
+* https://bugs.opendaylight.org/show_bug.cgi?id=2167[BUG-2167]: pcc-mock is not bindable to different source addresses
+* https://bugs.opendaylight.org/show_bug.cgi?id=2171[BUG-2171]: pcc-mock: enable logging level configuration 
+* https://bugs.opendaylight.org/show_bug.cgi?id=2201[BUG-2201]: routes announced after initial synchronization not present in loc-rib
+* https://bugs.opendaylight.org/show_bug.cgi?id=2204[BUG-2204]: pcc-mock does not support mocking pcc with zero initial lsps
+
+==== Controller
+
+* https://bugs.opendaylight.org/show_bug.cgi?id=1577[BUG-1577]: Gates access to Shard actor until its initialized
+* https://bugs.opendaylight.org/show_bug.cgi?id=1607[BUG-1607]: Clustering : Remove actorFor (deprecated) call from TransactionProxy.java
+* https://bugs.opendaylight.org/show_bug.cgi?id=1631[BUG-1631]: Refactored RaftActorBehavior#handleMessage (and related methods) to return RaftActorBehavior instead of RaftActorState.
+* https://bugs.opendaylight.org/show_bug.cgi?id=1833[BUG-1833]: Remove all unused code from sal-clustering-commons
+* https://bugs.opendaylight.org/show_bug.cgi?id=1839[BUG-1839]: HTTP delete of non existing data
+* https://bugs.opendaylight.org/show_bug.cgi?id=1965[BUG-1965]: Fixed DataChangedReply sent to deadletters
+* https://bugs.opendaylight.org/show_bug.cgi?id=1966[BUG-1966]: change message logging level (info -> trace)
+* https://bugs.opendaylight.org/show_bug.cgi?id=2002[BUG-2002]: Classpath error when loading neutron northbound api
+* https://bugs.opendaylight.org/show_bug.cgi?id=2002[BUG-2002]: Classpath error when loading neutron northbound api
+* https://bugs.opendaylight.org/show_bug.cgi?id=2003[BUG-2003]: CDS serialization improvements
+* https://bugs.opendaylight.org/show_bug.cgi?id=2017[BUG-2017]: Fix possible concurrent modification ex in config subsystem
+* https://bugs.opendaylight.org/show_bug.cgi?id=2038[BUG-2038]: Ensure only one concurrent 3-phase commit in Shard
+* https://bugs.opendaylight.org/show_bug.cgi?id=2047[BUG-2047]: HTTP GET - no returning error message
+* https://bugs.opendaylight.org/show_bug.cgi?id=2055[BUG-2055]: Handle Tx create in TransactionProxy resiliently
+* https://bugs.opendaylight.org/show_bug.cgi?id=2055[BUG-2055]: Handle shard not initialized resiliently
+* https://bugs.opendaylight.org/show_bug.cgi?id=2086[BUG-2086]: Adding normalized node  stream reader and writer
+* https://bugs.opendaylight.org/show_bug.cgi?id=2098[BUG-2098]: sal-compatibility not get up-to-date flow information
+* https://bugs.opendaylight.org/show_bug.cgi?id=2114[BUG-2114]: Adds handling of "leaf" node at the module level.
+* https://bugs.opendaylight.org/show_bug.cgi?id=2131[BUG-2131]: NPE when starting controller
+* https://bugs.opendaylight.org/show_bug.cgi?id=2134[BUG-2134]: Fix intermittent RaftActorTest failure
+* https://bugs.opendaylight.org/show_bug.cgi?id=2134[BUG-2134]: Make persistence configurable at the datastore level
+* https://bugs.opendaylight.org/show_bug.cgi?id=2135[BUG-2135]: Create ShardInformation on startup
+* https://bugs.opendaylight.org/show_bug.cgi?id=2136[BUG-2136]: Clustering : When a transaction is local then do not serialize the Reading/Writing of data
+* https://bugs.opendaylight.org/show_bug.cgi?id=2160[BUG-2160]: Added concurrent 3-phase commit coordinator
+* https://bugs.opendaylight.org/show_bug.cgi?id=2174[BUG-2174]: XSQL log file is hardcode to /tmp/xql.log
+* https://bugs.opendaylight.org/show_bug.cgi?id=2184[BUG-2184]: Fix config.yang module(add type as a key for modules list)
+* https://bugs.opendaylight.org/show_bug.cgi?id=2184[BUG-2184]: Fix subtree filtering for identity-ref leaves
+* https://bugs.opendaylight.org/show_bug.cgi?id=2207[BUG-2207]: Make reconnect promise reconnect even if session was dropped during negotiation
+* https://bugs.opendaylight.org/show_bug.cgi?id=2210[BUG-2210]: Fixed initial DCL notification on registration
+* https://bugs.opendaylight.org/show_bug.cgi?id=2217[BUG-2217]: Add missing namespace to serialized inner runtime beans
+* https://bugs.opendaylight.org/show_bug.cgi?id=2221[BUG-2221]: Add metering to ShardTransaction actor
+* https://bugs.opendaylight.org/show_bug.cgi?id=2252[BUG-2252]: Terminate ShardWriteTransaction actor on ready
+* https://bugs.opendaylight.org/show_bug.cgi?id=2265[BUG-2265]: Modified NormalizedNodeOutputStreamWriter to implement yangtools interface
+* https://bugs.opendaylight.org/show_bug.cgi?id=2290[BUG-2290]: Add IPv6 support Neutron APIs
+* https://bugs.opendaylight.org/show_bug.cgi?id=2294[BUG-2294]: Handle Shard backwards compatibility
+* https://bugs.opendaylight.org/show_bug.cgi?id=2296[BUG-2296]: TransactionProxy should support the ability to accept a local TPC actor path
+* https://bugs.opendaylight.org/show_bug.cgi?id=2318[BUG-2318]: Ensure previous Tx in chain is readied before creating the next
+* https://bugs.opendaylight.org/show_bug.cgi?id=2325[BUG-2325]: Value type of byte[] not recognized by the NormalizedNodeSerializer
+* Fix intermittent failure in DataChangeListenerTest
+
+.Reverted for Helium-SR1, but should be expected in Helium SR2
+* https://bugs.opendaylight.org/show_bug.cgi?id=1764[BUG-1764]
+* https://bugs.opendaylight.org/show_bug.cgi?id=2254[BUG-2254]
+
+==== Defense4All
+
+* Fixing RPM/DEB pkgs versions
+
+==== DLUX
+
+* Flow links broken; fixed duplicate ENV call to get the correct restconf url
+
+==== Group Based Policy
+
+* https://bugs.opendaylight.org/show_bug.cgi?id=2112[BUG-2112]: Workaround for missing flows in POC demo.
+
+==== Integration
+
+* https://bugs.opendaylight.org/show_bug.cgi?id=2274[BUG-2274]: User odl-restconf-noauth feature by default" into stable/helium
+* Added a docker distribution
+
+==== Lisp Flow Mapping
+
+* Fix SMR not being built on IPv6 enabled hosts
+
+==== OpenFlow Plugin
+
+* https://bugs.opendaylight.org/show_bug.cgi?id=1491[BUG-1491]: OF plugin does not handle SET_TP_SRC/SET_TP_DST actions
+* https://bugs.opendaylight.org/show_bug.cgi?id=1680[BUG-1680]: pushing of default table-miss-entry feature should be pulled out into separate module
+* https://bugs.opendaylight.org/show_bug.cgi?id=2098[BUG-2098]: Multipart Request flow was not set to the flow case
+* https://bugs.opendaylight.org/show_bug.cgi?id=2126[BUG-2126]: MatchConvertorImpl.OfMatchToSALMatchConvertor() converts OF13 match into incorrect MD-SAL match
+* https://bugs.opendaylight.org/show_bug.cgi?id=2127[BUG-2127]: IllegalArgumentException in MatchConvertorImpl.fromOFMatchV10ToSALMatch().
+* https://bugs.opendaylight.org/show_bug.cgi?id=2128[BUG-2128]: Large PACKET_IN message from OF10 switch may be truncated
+
+==== Open vSwitch Database (OVSDB) Integration
+
+* https://bugs.opendaylight.org/show_bug.cgi?id=2076[BUG-2076]: Routing does not work unless node contains vms on all vlans (segIds)
+* https://bugs.opendaylight.org/show_bug.cgi?id=2192[BUG-2192]: Fix access to custom.properties, so non-default values can be provided
+* https://bugs.opendaylight.org/show_bug.cgi?id=2214[BUG-2214]: Unable to set the external_ids field of the Qos object
+* Fix issue found by sonar: Method call on object which may be null
+* Ignore testGetOpenflowVersion: it is no longer applicable
+
+==== Virtual Tenant Networking
+
+* https://bugs.opendaylight.org/show_bug.cgi?id=1992[BUG-1992]: Failed to get up-to-date flow statistics.
+* https://bugs.opendaylight.org/show_bug.cgi?id=2235[BUG-2235]: PathPolicy(long, List) always throws NullPointerException.
+* https://bugs.opendaylight.org/show_bug.cgi?id=2236[BUG-2236]: PathMap class handles mapIndex field incorrectly.
+* https://bugs.opendaylight.org/show_bug.cgi?id=2239[BUG-2239]: Minor bugs in manager.neutron bundle.
+
+==== YANG Tools
+
+* https://bugs.opendaylight.org/show_bug.cgi?id=1957[BUG-1957]: StackOverFlowError in YangParserImpl
+* https://bugs.opendaylight.org/show_bug.cgi?id=1975[BUG-1975]: yang unkeyed list is transformed to map node
+* https://bugs.opendaylight.org/show_bug.cgi?id=2117[BUG-2117]: Inner grouping used in outer grouping's choice case
+* https://bugs.opendaylight.org/show_bug.cgi?id=2147[BUG-2147]: JSON does not properly encode multiline string
+* https://bugs.opendaylight.org/show_bug.cgi?id=2155[BUG-2155]: depth parameter in NormalizedNodeWriter
+* https://bugs.opendaylight.org/show_bug.cgi?id=2156[BUG-2156]: Unsupported augment target
+* https://bugs.opendaylight.org/show_bug.cgi?id=2172[BUG-2172]: AbstractGeneratedTypeBuilder check for duplicate elements.
+* https://bugs.opendaylight.org/show_bug.cgi?id=2176[BUG-2176]: add property with name == null fix.
+* https://bugs.opendaylight.org/show_bug.cgi?id=2180[BUG-2180]: schema aware builders for ordered list and leaf-list are absent
+* https://bugs.opendaylight.org/show_bug.cgi?id=2183[BUG-2183]: ClassCastException in AbstractTypeMemberBuilder fix
+* https://bugs.opendaylight.org/show_bug.cgi?id=2191[BUG-2191]: Invalid use of addType in ChoiceCaseBuilder
+* https://bugs.opendaylight.org/show_bug.cgi?id=2202[BUG-2202]: DerivableSchemaNode API incorrect Javadoc
+* https://bugs.opendaylight.org/show_bug.cgi?id=2271[BUG-2271]: Fixed potentional NPE in generateTypesFromChoiceCases
+* https://bugs.opendaylight.org/show_bug.cgi?id=2279[BUG-2279]: top level element should be entry and not list
+* https://bugs.opendaylight.org/show_bug.cgi?id=2291[BUG-2291]: When revision statement enclose a custom statement, Yang Parser fails to parse correctly
+* Parent schema node input parameter in JsonParserStream
+* Remove module name prefix from top level element
+
+.Reverted for Helium-SR1, but should be expected in Helium SR2
+* https://bugs.opendaylight.org/show_bug.cgi?id=2329[BUG-2329]
+* https://bugs.opendaylight.org/show_bug.cgi?id=2282[BUG-2282]
+
+=== Known Issues and Limitations
 
 Other than as noted in project-specific release notes, there are two known limitations.
 
@@ -39,11 +190,11 @@ Other than as noted in project-specific release notes, there are two known limit
 
 ==== Full Bug List
 
-All of the known issues for the OpenDaylight controller are listed https://bugs.opendaylight.org/buglist.cgi?bug_severity=blocker&bug_severity=critical&bug_severity=major&bug_severity=normal&bug_severity=minor&bug_severity=trivial&bug_status=UNCONFIRMED&bug_status=CONFIRMED&bug_status=IN_PROGRESS&bug_status=WAITING_FOR_REVIEW&columnlist=product%2Ccomponent%2Cassigned_to%2Cbug_status%2Cresolution%2Cshort_desc%2Cchangeddate%2Ccf_target_milestone&f1=cf_target_milestone&list_id=15952&n1=1&o1=substring&product=controller&query_based_on=&query_format=advanced&resolution=---&v1=Lithium[here].
+All of the known issues for the OpenDaylight Helium release are listed https://bugs.opendaylight.org/buglist.cgi?bug_severity=blocker&bug_severity=critical&bug_severity=major&bug_severity=normal&bug_severity=minor&bug_severity=trivial&bug_status=UNCONFIRMED&bug_status=CONFIRMED&bug_status=IN_PROGRESS&bug_status=WAITING_FOR_REVIEW&columnlist=product%2Ccomponent%2Cassigned_to%2Cbug_status%2Cresolution%2Cshort_desc%2Cchangeddate%2Ccf_target_milestone&f1=cf_target_milestone&list_id=15952&n1=1&o1=substring&query_based_on=&query_format=advanced&resolution=---&v1=Lithium[here].
 
-=== Project-specific Release Notes
+=== Project-specific Helium Release Notes
 
-Project-specific release notes can be found on the OpenDaylight wiki. This table provides links to them by project.
+Project-specific release notes for the Helium release can be found on the OpenDaylight wiki. This table provides links to them by project.
 
 [options="header",cols="1,4"]
 |==============================================
