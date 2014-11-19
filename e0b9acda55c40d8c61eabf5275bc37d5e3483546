@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a91bd0f_88a69bc0",
+        "filename": "manuals/install-guide/src/main/asciidoc/addons/vtn.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 396
+      },
+      "writtenOn": "2014-11-19T00:03:15Z",
+      "side": 1,
+      "message": "I think these lines are not needed here, because users who get the installation guide and read here certainly know the location of Helium.",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 39
+      },
+      "revId": "e0b9acda55c40d8c61eabf5275bc37d5e3483546",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a91bd0f_a89eff61",
+        "filename": "manuals/install-guide/src/main/asciidoc/addons/vtn.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 396
+      },
+      "writtenOn": "2014-11-19T00:03:15Z",
+      "side": 1,
+      "message": "Does this line work in ASCCI format?\nI think this is a keyword which works in wiki format.",
+      "range": {
+        "startLine": 115,
+        "startChar": 0,
+        "endLine": 115,
+        "endChar": 48
+      },
+      "revId": "e0b9acda55c40d8c61eabf5275bc37d5e3483546",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
