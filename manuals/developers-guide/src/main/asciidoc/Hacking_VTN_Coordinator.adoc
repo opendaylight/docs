@@ -1,0 +1,121 @@
+==Hacking VTN Coordinator 
+=== Supported Platforms 
+[cols=*7,1a,^,options="header",width="75%"]
+|===
+|Devices|Supported Platforms
+|VTN Manager | All Java Platform
+|VTN Coordinator |64-bit version of below Linux variants
+|Fedora 19
+|Fedora 20
+|CentOS 6
+RHEL 6
+|===
+
+=== Steps for Installation  
+==== Installing the VTN Coordinator 
+. Enter into the same unzipped folder
+. change into the directory as below,
+  cd externalapps
+. Run the below command to install VTN Coorndinator
+  tar –C / -jxvf distribution.vtn-coordinator-6.0.0.0-Helium-bin.tar.bz2
+Note: tar file name may change, please give the same tar.bz2 file name which is there in your directory
+. This will install the Coordinator to /usr/local/vtn directory.
+
+====Installing the Java Software 
+
+*For RHEL/CentOS 6.1 (x86_64)
+[source,perl]
+----
+     Download Oracle JDK 7 and install it.
+     http://www.oracle.com/technetwork/java/javase/downloads/index.html
+----
+
+*For RHEL/CentOS 6.4 (x86_64)
+[source,perl]
+----
+     Install OpenJDK 7.
+     yum install java-1.7.0-openjdk-devel
+----
+
+*Fedora 19/20
+[source,perl]
+----
+     Install OpenJDK 7.
+     yum install java-1.7.0-openjdk-devel
+----
+==== Launch the VTN Coordinator 
+===== Prior Preparation 
+====== Install additional applications required for VTN Coordinator 
+* yum install perl-Digest-SHA uuid libxslt libcurl unixODBC
+* wget  http://dl.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
+* rpm -Uvh epel-release-6-8.noarch.rpm
+* yum install json-c
+
+====== Installing PostgreSQL Database 
+The following steps to be followed to have PostgreSQL installed for Helium release
+[source,perl]
+----   
+Configure Yum repository to download the latest rpms for PostgreSQL 9.1
+    rpm -ivh http://yum.postgresql.org/9.1/redhat/rhel-6-x86_64/pgdg-redhat91-9.1-5.noarch.rpm
+Install the required PostgreSQL packages
+    yum install postgresql91-libs postgresql91 postgresql91-server \
+       postgresql91-contrib postgresql91-odbc java-1.7.0-openjdk
+----
+.Note
+
+*if you are facing any problems while installing postgreSQL rpm, Please refer to [[OpenDaylight_Virtual_Tenant_Network_(VTN):Installation:Troubleshooting#Problems_while_Installing_PostgreSQL_due_to_openssl|openssl_problems]] query in troubleshooting FAQ.
+
+*VTN Coordinator support postgres version greater than 9.1 only and currently tested with 9.1 and 9.3. Please ensure the postgres version>=9.1 is installed.
+
+*VTN Coordinator requires JDK 7, So if JDK 7 is unavailable in your distro please download and install from  http://www.oracle.com/technetwork/java/javase/downloads/index.html
+
+====== Configure Database for VTN Coordinator 
+ /usr/local/vtn/sbin/db_setup
+
+====== Launch VTN Coordinator to accept requests 
+ /usr/local/vtn/bin/vtn_start
+
+====== Test and use VTN Coordinator 
+======= Installing ODL Controller and Execution 
+1. Ensure jre is installed, else install the same using 
+     yum install java-1.7.0-openjdk 
+     or
+     yum list *openjdk* (then install the version available in the distro) 
+
+2. Unzip the downloaded file
+
+3. cd to the unzipped directory
+
+4. Run the below command 
+      bin/karaf
+
+5. Once the console is up type as below
+      feature:install odl-adsal-compatibility-all odl-openflowplugin-all odl-vtn-manager-all
+
+6. For logs, please look into the below file
+       data/log/karaf.log
+
+ .Note: 
+ 1. You can also install feature: install odl-integration-compatible-with-vtn-manager (it will install all the features related to VTN). 
+ 2. If you want to run the Controller in different machine, copy the zip file and follow the same steps as mentioned above
+
+======= Test VTN Coordinator 
+.Important Note:
+* VTN Coordinator runs on port 8083 by default.If you want to run it on differnet port other than the default, change the port in the below file
+  /usr/local/vtn/tomcat/conf/tomcat-env.sh 
+1. Get the version of api using the below command, and make sure the setup is working and getting the same response
+[source,perl]
+----
+   curl --user admin:adminpass -H 'content-type: application/json' -X GET -H 'ipaddr:127.0.0.1' \
+   http://<VTN_COORDINATOR_IP_ADDRESS>:<VTN_COORDINATOR_PORT>/vtn-webapi/api_version.json
+----
+*Response 
+[source,perl]
+----  
+   {"api_version":{"version":"V1.1"}}
+----
+2. Create and use VTN
+Please refer to [[OpenDaylight_Virtual_Tenant_Network_(VTN):VTN_Coordinator:RestApi#VTNCoordinator_RestApi_Contents|Web API reference]] for all the API details to create VTN and all its sub components.
+
+====== Terminate VTN Coordinator 
+ /usr/local/vtn/bin/vtn_stop
