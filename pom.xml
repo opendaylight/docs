@@ -9,9 +9,9 @@
   <packaging>pom</packaging>
   <url>${sitedeploy}</url>
   <scm>
-    <connection>scm:git:ssh://git.opendaylight.org:29418/documentation.git</connection>
-    <developerConnection>scm:git:ssh://git.opendaylight.org:29418/documentation.git</developerConnection>
-    <url>https://wiki.opendaylight.org/view/CrossProject:Integration_Group</url>
+    <connection>scm:git:ssh://git.opendaylight.org:29418/docs.git</connection>
+    <developerConnection>scm:git:ssh://git.opendaylight.org:29418/docs.git</developerConnection>
+    <url>https://wiki.opendaylight.org/view/CrossProject:Documentation_Group</url>
     <tag>HEAD</tag>
   </scm>
   <properties>

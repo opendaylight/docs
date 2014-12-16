@@ -13,11 +13,10 @@
   <version>0.1.0-SNAPSHOT</version>
   <name>OpenDaylight Docs - Manuals</name>
   <packaging>pom</packaging>
-  <url>https://wiki.opendaylight.org/view/CrossProject:Documentation_Group</url>
   <scm>
-    <connection>scm:git:ssh://git.opendaylight.org:29418/documentation.git</connection>
-    <developerConnection>scm:git:ssh://git.opendaylight.org:29418/documentation.git</developerConnection>
-    <url>https://wiki.opendaylight.org/view/CrossProject:Integration_Group</url>
+    <connection>scm:git:ssh://git.opendaylight.org:29418/docs.git</connection>
+    <developerConnection>scm:git:ssh://git.opendaylight.org:29418/docs.git</developerConnection>
+    <url>https://wiki.opendaylight.org/view/CrossProject:Documentation_Group</url>
     <tag>HEAD</tag>
   </scm>
   <properties>
