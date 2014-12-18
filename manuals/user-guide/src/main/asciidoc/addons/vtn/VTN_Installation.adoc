@@ -1,0 +1,114 @@
+=== VTN Installation Guide
+
+This guide explains how to install VTN Coordinator and VTN Manager to use VTN API.
+
+VTN Manager is a set of OSGi bundles running in OpenDaylight controller, and VTN Coordinator is an application running outside the controller.
+
+It is recommended to install VTN Coordinator and OpenDaylight controller on different machines, since their supported platforms and prerequisites are different.
+
+==== Supported Platforms
+[cols="2*"]
+|===
+| Software
+| Supported Platforms
+
+|VTN Manager
+| All Java Platform
+
+|VTN Coordinator
+| (64-bit version of below Linux variants)
+  Fedora 20
+  CentOS 6
+  RHEL 6
+  RHEL 7
+  CentOS 7
+|===
+
+==== Downloading Helium
+* Go to the download page of opendaylight.org.
+  http://www.opendaylight.org/software/downloads
+* Download the "Pre-Built Zip File" or "Pre-Built Tar File" of the latest Helium.
+* Extract files from the downloaded file.
+  e.g.
+[source,perl]
+----
+    unzip distribution-karaf-0.2.1-Helium-SR1.zip
+    or
+    tar zxvf distribution-karaf-0.2.1-Helium-SR1.tar.gz
+----
+==== Setting up VTN Coordinator
+
+* Arrange a physical/virtual server with any one of the supported 64-bit OS environment listed above.
+
+===== Installing the Java
+
+* For RHEL/CentOS 6.1 (x86_64)
+ Download Oracle JDK 7 and install it.
+ http://www.oracle.com/technetwork/java/javase/downloads/index.html
+
+* For RHEL/CentOS 6.4 (x86_64)
+[source,perl]
+----
+    Install OpenJDK 7.
+    yum install java-1.7.0-openjdk-devel
+----
+* For Fedora 19/20
+Install OpenJDK 7
+[source,perl]
+----
+  yum install java-1.7.0-openjdk-devel
+----
+===== Installing prerequisites
+
+* For RHEL 6
+[source,perl]
+----
+yum install perl-Digest-SHA uuid libxslt libcurl unixODBC
+wget http://dl.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
+rpm -Uvh epel-release-6-8.noarch.rpm
+yum install json-c
+----
+
+* For CentOS6 and Fedora 20
+[source,perl]
+----
+yum install perl-Digest-SHA uuid libxslt libcurl unixODBC json-c
+----
+=====  Installing PostgreSQL Database
+* Configure Yum repository to download the latest rpms for PostgreSQL 9.1
+[source,perl]
+----
+    rpm -ivh http://yum.postgresql.org/9.1/redhat/rhel-6-x86_64/pgdg-redhat91-9.1-5.noarch.rpm
+----
+* Install the required PostgreSQL packages
+[source,perl]
+----
+yum install postgresql91-libs postgresql91 postgresql91-server postgresql91-contrib postgresql91-odbc
+----
+NOTE: * If you are facing any problems while installing postgreSQL rpm, Please refer to: https://wiki.opendaylight.org/view/OpenDaylight_Virtual_Tenant_Network_(VTN):Installation:Troubleshooting#Problems_while_Installing_PostgreSQL_due_to_openssl
+* VTN Coordinator support PostgreSQL version greater than 9.1 only and currently tested with 9.1 and 9.3. Please ensure the PostgreSQL version>=9.1 is installed.
+
+===== Installing the VTN Coordinator
+* Enter into the 'externalapps' directory in the top directory of Helium.
+[source,perl]
+----
+    cd distribution-karaf-0.2.1-Helium-SR1/externalapps
+----
+* Untar the package distribution.vtn-coordinator-6.0.0.1-Helium-SR1-bin.tar.bz2  to extract VTN Coordinator from the tar.bz2 file in the "externalapps" directory.
+
+This will install VTN Coordinator to "/usr/local/vtn" directory.
+The name of the tar.bz2 file name varies depending on the version. Please give the same tar.bz2 file name which is there in your directory.
+
+NOTE: VTN Coordinator runs on port 8083 (TCP) for REST API by default. If you want to run it on different port other than the default, change the port number in the below file:
+[source,perl]
+----
+/usr/local/vtn/tomcat/conf/tomcat-env.sh
+----
+
+===== Configuring database for VTN Coordinator
+* Execute the below command.
+[source,perl]
+----
+   /usr/local/vtn/sbin/db_setup
+----
+

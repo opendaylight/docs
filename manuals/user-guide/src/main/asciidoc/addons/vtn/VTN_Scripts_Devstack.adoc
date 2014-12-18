@@ -1,0 +1,120 @@
+=== VTN Devstack Script
+* The local.conf is a user-maintained settings file. This allows all custom settings for DevStack to be contained in a single file. This file is processed strictly in sequence.
+The following datas are needed to be set in the local.conf file:
+* Set the Host_IP as the detection is unreliable.
+* Set FLOATING_RANGE to a range not used on the local network, i.e. 192.168.1.224/27. This configures IP addresses ending in 225-254 to be used as floating IPs.
+* Set FLAT_INTERFACE to the Ethernet interface that connects the host to your local network. This is the interface that should be configured with the static IP address mentioned above.
+* If the *_PASSWORD variables are not set, we will be prompted to enter values during the execution of stack.sh.
+* Set ADMIN_PASSWORD . This password is used for the admin and demo accounts set up as OpenStack users. We can login to the OpenStack GUI with this credentials only.
+* Set the MYSQL_PASSWORD. The default here is a random hex string which is inconvenient if you need to look at the database directly for anything.
+* Set the RABBIT_PASSWORD. This is used by messaging services used by both the nodes.
+* Set the service password. This is used by the OpenStack services (Nova, Glance, etc) to authenticate with Keystone.
+
+==== local.conf (devstack control node)
+local.conf(control)
+[source,perl]
+----
+#IP Details
+HOST_IP=<CONTROL_NODE_MANAGEMENT_IF_IP_ADDRESS>#Please Add The Control Node IP Address in this line
+FLAT_INTERFACE=<FLAT_INTERFACE_NAME>
+SERVICE_HOST=$HOST_IP
+#Instance Details
+MULTI_HOST=1
+#config Details
+RECLONE=yes #Make it "no" after stacking successfully the first time
+VERBOSE=True
+LOG_COLOR=True
+LOGFILE=/opt/stack/logs/stack.sh.log
+SCREEN_LOGDIR=/opt/stack/logs
+#OFFLINE=True #Uncomment this after stacking successfully the first time
+#Passwords
+ADMIN_PASSWORD=labstack
+MYSQL_PASSWORD=supersecret
+RABBIT_PASSWORD=supersecret
+SERVICE_PASSWORD=supersecret
+SERVICE_TOKEN=supersecrettoken
+ENABLE_TENANT_TUNNELS=false
+#Services
+disable_service rabbit
+enable_service qpid
+enable_service quantum
+enable_service n-cpu
+enable_service n-cond
+disable_service n-net
+enable_service q-svc
+enable_service q-dhcp
+enable_service q-meta
+enable_service horizon
+enable_service quantum
+enable_service tempest
+ENABLED_SERVICES+=,n-api,n-crt,n-obj,n-cpu,n-cond,n-sch,n-novnc,n-cauth,n-cauth,nova
+ENABLED_SERVICES+=,cinder,c-api,c-vol,c-sch,c-bak
+#ML2 Details
+Q_PLUGIN=ml2
+Q_ML2_PLUGIN_MECHANISM_DRIVERS=opendaylight
+Q_ML2_TENANT_NETWORK_TYPE=local
+Q_ML2_PLUGIN_TYPE_DRIVERS=local
+disable_service n-net
+enable_service q-svc
+enable_service q-dhcp
+enable_service q-meta
+enable_service neutron
+enable_service odl-compute
+ODL_MGR_IP=<ODL_IP_ADDRESS> #Please Add the ODL IP Address in this line
+OVS_PHYSICAL_BRIDGE=br-int
+Q_OVS_USE_VETH=True
+url=http://<ODL_IP_ADDRESS>:8080/controller/nb/v2/neutron #Please Add the ODL IP Address in this line
+username=admin
+password=admin
+----
+
+==== local.conf (devstack compute node)
+local.conf(compute)
+[source,perl]
+----
+#IP Details
+HOST_IP=<COMPUTE_NODE_MANAGEMENT_IP_ADDRESS> #Add the Compute node Management IP Address
+SERVICE_HOST=<CONTROLLEr_NODE_MANAGEMENT_IP_ADDRESS> #Add the cotnrol Node Management IP Address here
+#Instance Details
+MULTI_HOST=1
+#config Details
+RECLONE=yes #Make thgis "no" after stacking successfully once
+#OFFLINE=True #Uncomment this line after stacking successfuly first time.
+VERBOSE=True
+LOG_COLOR=True
+LOGFILE=/opt/stack/logs/stack.sh.log
+SCREEN_LOGDIR=/opt/stack/logs
+#Passwords
+ADMIN_PASSWORD=labstack
+MYSQL_PASSWORD=supersecret
+RABBIT_PASSWORD=supersecret
+SERVICE_PASSWORD=supersecret
+SERVICE_TOKEN=supersecrettoken
+#Services
+ENABLED_SERVICES=n-cpu,rabbit,neutron
+#ML2 Details
+Q_PLUGIN=ml2
+Q_ML2_PLUGIN_MECHANISM_DRIVERS=opendaylight
+Q_ML2_TENANT_NETWORK_TYPE=local
+Q_ML2_PLUGIN_TYPE_DRIVERS=local
+enable_service odl-compute
+ODL_MGR_IP=<ODL_IP_ADDRESS> #ADD ODL IP address here
+OVS_PHYSICAL_BRIDGE=br-int
+ENABLE_TENANT_TUNNELS=false
+Q_OVS_USE_VETH=True
+#Details of the Control node for various services
+[[post-config|/etc/neutron/plugins/ml2/ml2_conf.ini]]
+Q_HOST=$SERVICE_HOST
+MYSQL_HOST=$SERVICE_HOST
+RABBIT_HOST=$SERVICE_HOST
+GLANCE_HOSTPORT=$SERVICE_HOST:9292
+KEYSTONE_AUTH_HOST=$SERVICE_HOST
+KEYSTONE_SERVICE_HOST=$SERVICE_HOST
+NOVA_VNC_ENABLED=True
+NOVNCPROXY_URL="http://<CONTROLLER_NODE_IP_ADDRESS>:6080/vnc_auto.html" #Add Controller Node IP address
+VNCSERVER_LISTEN=$HOST_IP
+VNCSERVER_PROXYCLIENT_ADDRESS=$VNCSERVER_LISTEN
+----
+.Note:
+* We have to comment OFFLINE=TRUE in local.conf files, this will make all the installations to happen automatically.
+* RECLONE=yes only when we set up the DevStack environment from scratch.
