@@ -65,22 +65,22 @@ sudo mn --controller=remote,ip=192.168.64.13 --custom vlan_vtn_test.py --topo my
 Please follow the below steps to test a vlan map using mininet:
 [Mininet script]
 * .Create a controller
-curl --user admin:adminpass -H 'content-type: application/json' -H 'ipaddr:127.0.0.1' -X POST -d '{"controller": {"controller_id": "controllerone", "ipaddr":"10.0.0.2", "type": "odc", "version": "1.0", "auditstatus":"enable"}}' http://127.0.0.1:8083/vtn-webapi/controllers
+curl --user admin:adminpass -H 'content-type: application/json'  -X POST -d '{"controller": {"controller_id": "controllerone", "ipaddr":"10.0.0.2", "type": "odc", "version": "1.0", "auditstatus":"enable"}}' http://127.0.0.1:8083/vtn-webapi/controllers
 
 * .Create a VTN
-curl -X POST -H 'content-type: application/json' -H 'username: admin' -H 'password: adminpass' -H 'ipaddr:127.0.0.1' -d '{"vtn" : {"vtn_name":"vtn1","description":"test VTN" }}' http://127.0.0.1:8083/vtn-webapi/vtns.json
+curl -X POST -H 'content-type: application/json' -H 'username: admin' -H 'password: adminpass' -d '{"vtn" : {"vtn_name":"vtn1","description":"test VTN" }}' http://127.0.0.1:8083/vtn-webapi/vtns.json
 
 * .Create a vBridge(vBridge1)
-curl -X POST -H 'content-type: application/json' -H 'username: admin' -H 'password: adminpass' -H 'ipaddr:127.0.0.1' -d '{"vbridge" : {"vbr_name":"vBridge1","controller_id":"controllerone","domain_id":"(DEFAULT)" }}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn1/vbridges.json
+curl -X POST -H 'content-type: application/json' -H 'username: admin' -H 'password: adminpass' -d '{"vbridge" : {"vbr_name":"vBridge1","controller_id":"controllerone","domain_id":"(DEFAULT)" }}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn1/vbridges.json
 
 * .Create a vlan map with vlanid 200 for vBridge vBridge1
-curl -X POST -H 'content-type: application/json' -H 'username: admin' -H 'password: adminpass' -H 'ipaddr:127.0.0.1' -d '{"vlanmap" : {"vlan_id": 200 }}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn1/vbridges/vBridge1/vlanmaps.json
+curl -X POST -H 'content-type: application/json' -H 'username: admin' -H 'password: adminpass' -d '{"vlanmap" : {"vlan_id": 200 }}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn1/vbridges/vBridge1/vlanmaps.json
 
 * .Create a vBridge (vBridge2)
-curl -X POST -H 'content-type: application/json' -H 'username: admin' -H 'password: adminpass' -H 'ipaddr:127.0.0.1' -d '{"vbridge" : {"vbr_name":"vBridge2","controller_id":"controllerone","domain_id":"(DEFAULT)" }}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn1/vbridges.json
+curl -X POST -H 'content-type: application/json' -H 'username: admin' -H 'password: adminpass' -d '{"vbridge" : {"vbr_name":"vBridge2","controller_id":"controllerone","domain_id":"(DEFAULT)" }}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn1/vbridges.json
 
 * .Create a vlan map with vlanid 300 for vBridge vBridge2
-curl -X POST -H 'content-type: application/json' -H 'username: admin' -H 'password: adminpass' -H 'ipaddr:127.0.0.1' -d '{"vlanmap" : {"vlan_id": 300 }}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn1/vbridges/vBridge2/vlanmaps.json
+curl -X POST -H 'content-type: application/json' -H 'username: admin' -H 'password: adminpass' -d '{"vlanmap" : {"vlan_id": 300 }}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn1/vbridges/vBridge2/vlanmaps.json
 
 == Verification
 

@@ -1,0 +1,76 @@
+== Installing VTN Manager from source code
+
+== Prior preparation
+
+VTN Manager is a set of OSGi bundles running in OpenDaylight controller in Karaf platform, so prior preparation for installing VTN Manager is the same as OpenDaylight controller.
+
+Please see [[OpenDaylight_Controller:Installation|Controller's Installation Guide]].
+
+== Get VTN Source
+The below procedure assumes, You are installing OpenDaylight Controller with VTN Manager on your local Linux machine.
+
+* Download the code from the Git repository of VTN Project.
+ git clone ssh://<username>@git.opendaylight.org:29418/vtn.git
+or
+ git clone <nowiki>https://git.opendaylight.org/gerrit/p/vtn.git</nowiki>
+
+The following instructions assume you put the code in directory ${VTN_DIR}.
+
+ ${VTN_DIR}=<Top of VTN source tree>
+
+* Build the code of VTN Manager.
+ cd ${VTN_DIR}/manager
+ mvn clean install
+NOTE: This command will build the local Karaf distribution in the folder manager/dist/karaf/target/assembly.
+
+== Build and Run the Controller with VTN Manager
+=== Build
+NOTE: You will need direct internet connection for this build to be successful.
+
+[options="header"]
+|===
+|
+*cd ${VTN_DIR}/manager
+*mvn clean install –DskipTests
+ (Note: SkipTests will not execute the Unit Tests and Integration Tests while compilation)
+| ===
+
+== Run Distribution
+
+[options="header"]
+|===
+|
+*cd ${VTN_DIR}/manager/dist/karaf/target/assembly
+*./bin/karaf
+| ===
+
+NOTE:
+* On successful build, the ${VTN_DIR}/manager/dist/karaf/target/ will have tarball and zip distributions of binaries
+* User can uncompress that tarball and zip file and execute the bin/karaf.
+
+== Verify if VTN is running
+* In the karaf prompt, type the below command to ensure that vtn packages are installed.
+ feature:list –i | grep vtn
+
+== REST API
+
+VTN Manager provides REST API for virtual network functions.
+
+For detailed information about REST API specifications, see OpenDaylight_Virtual_Tenant_Network_(VTN):VTN_Manager:RestApi[the VTN Manager's REST API specification page]
+
+Here is an example of how to create a virtual tenant network.
+[source,perl]
+ curl --user "admin":"admin" -H "Accept: application/json" -H \
+ "Content-type: application/json" -X POST \
+ http://localhost:8080/controller/nb/v2/vtn/default/vtns/Tenant1 \
+ -d '{"description": "My First Virtual Tenant Network"}'
+
+You can check the list of all tenants by executing the following command.
+
+[source,perl]
+ curl --user "admin":"admin" -H "Accept: application/json" -H \
+ "Content-type: application/json" -X GET \
+ http://localhost:8080/controller/nb/v2/vtn/default/vtns
+To know the usage of VTN Manager in Opendaylight Controller, Please click the below link:
+* Media:NEC_VTN_Demo_0722.pdf[How to use VTN Manager in Opendaylight Controller]
+

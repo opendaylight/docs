@@ -3,11 +3,11 @@ This example demonstrates on how to view a specific VTN Station information.
 image::vtn_stations.PNG[EXAMPLE DEMONSTRATING VTN STATIONS]
 == Requirement
 *Configure mininet and create a topology:
-$  mininet@mininet-vm:~$  sudo mn --controller=remote,ip=<controller_ip> --topo linear,2 
+ $ sudo mn --custom /home/mininet/mininet/custom/topo-2sw-2host.py --controller=remote,ip=10.100.9.61 --topo mytopo
 *mininet> net
 [cols=*3,2a,^,options="header",width="75%"]
 |===
-|s1 lo:  s1-eth1:h1-eth0 s1-eth2:s2-eth1
+|  s1 lo:  s1-eth1:h1-eth0 s1-eth2:s2-eth1
  s2 lo:  s2-eth1:s1-eth2 s2-eth2:h2-eth0
  h1 h1-eth0:s1-eth1
  h2 h2-eth0:s2-eth2
@@ -22,19 +22,19 @@ $  mininet@mininet-vm:~$  sudo mn --controller=remote,ip=<controller_ip> --topo 
  64 bytes from 10.0.0.2: icmp_req=2 ttl=64 time=13.2 ms
 |===
 == Configuration
-* .Create Controller
-curl -v --user admin:adminpass -H 'content-type: application/json' -H 'ipaddr:127.0.0.1' -X POST -d '{"controller": {"controller_id": "controllerone", "ipaddr":"10.100.9.61", "type": "odc", "version": "1.0", "auditstatus":"enable"}}' http://127.0.0.1:8083/vtn-webapi/controllers.json
-* .Create a VTN
-curl -v --user admin:adminpass -H 'content-type: application/json' -H 'ipaddr:127.0.0.1' -X POST -d '{"vtn" : {"vtn_name":"vtn1","description":"test VTN" }}' http://127.0.0.1:8083/vtn-webapi/vtns.json
-* .Create a vBridge in the VTN
-curl -v --user admin:adminpass -H 'content-type: application/json' -H 'ipaddr:127.0.0.1' -X POST -d '{"vbridge" : {"vbr_name":"vBridge1","controller_id":"controllerone","domain_id":"(DEFAULT)" }}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn1/vbridges.json
-* .Create two Interfaces into the vBridge
-curl -v --user admin:adminpass -H 'content-type: application/json' -H 'ipaddr:127.0.0.1' -X POST -d '{"interface": {"if_name": "if1","description": "if_desc1"}}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn1/vbridges/vBridge1/interfaces.json
-curl -v --user admin:adminpass -H 'content-type: application/json' -H 'ipaddr:127.0.0.1' -X POST -d '{"interface": {"if_name": "if2","description": "if_desc2"}}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn1/vbridges/vBridge1/interfaces.json
-* .Configure two mappings on the interfaces
-curl -v --user admin:adminpass -H 'content-type: application/json' -H 'ipaddr:127.0.0.1' -X PUT -d '{"portmap":{"logical_port_id": "PP-OF:00:00:00:00:00:00:00:01-s1-eth1"}}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn1/vbridges/vBridge1/interfaces/if1/portmap.json
-curl -v --user admin:adminpass -H 'content-type: application/json' -H 'ipaddr:127.0.0.1' -X PUT -d '{"portmap":{"logical_port_id": "PP-OF:00:00:00:00:00:00:00:02-s2-eth2"}}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn1/vbridges/vBridge1/interfaces/if2/portmap.json
-* .Get the VTN stations information
+.Create Controller
+curl -v --user admin:adminpass -H 'content-type: application/json' -X POST -d '{"controller": {"controller_id": "controllerone", "ipaddr":"10.100.9.61", "type": "odc", "version": "1.0", "auditstatus":"enable"}}' http://127.0.0.1:8083/vtn-webapi/controllers.json
+.Create a VTN
+curl -v --user admin:adminpass -H 'content-type: application/json' -X POST -d '{"vtn" : {"vtn_name":"vtn1","description":"test VTN" }}' http://127.0.0.1:8083/vtn-webapi/vtns.json
+.Create a vBridge in the VTN
+curl -v --user admin:adminpass -H 'content-type: application/json' -X POST -d '{"vbridge" : {"vbr_name":"vBridge1","controller_id":"controllerone","domain_id":"(DEFAULT)" }}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn1/vbridges.json
+.Create two Interfaces into the vBridge
+curl -v --user admin:adminpass -H 'content-type: application/json' -X POST -d '{"interface": {"if_name": "if1","description": "if_desc1"}}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn1/vbridges/vBridge1/interfaces.json
+curl -v --user admin:adminpass -H 'content-type: application/json' -X POST -d '{"interface": {"if_name": "if2","description": "if_desc2"}}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn1/vbridges/vBridge1/interfaces.json
+.Configure two mappings on the interfaces
+curl -v --user admin:adminpass -H 'content-type: application/json' -X PUT -d '{"portmap":{"logical_port_id": "PP-OF:00:00:00:00:00:00:00:01-s1-eth1"}}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn1/vbridges/vBridge1/interfaces/if1/portmap.json
+curl -v --user admin:adminpass -H 'content-type: application/json' -X PUT -d '{"portmap":{"logical_port_id": "PP-OF:00:00:00:00:00:00:00:02-s2-eth2"}}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn1/vbridges/vBridge1/interfaces/if2/portmap.json
+.Get the VTN stations information
 curl -v -X GET -H 'content-type: application/json' -H 'username: admin' -H 'password: adminpass' "http://127.0.0.1:8083/vtn-webapi/vtnstations?controller_id=controllerone&vtn_name=vtn1"
 
 == Verification
@@ -77,4 +77,3 @@ curl -v -X GET -H 'content-type: application/json' -H 'username: admin' -H 'pass
    ]
 }
 |===
-[[Category:OpenDaylight Virtual Tenant Network]]
