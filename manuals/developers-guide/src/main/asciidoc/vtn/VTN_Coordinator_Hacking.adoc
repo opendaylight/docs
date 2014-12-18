@@ -1,0 +1,198 @@
+=== Hacking VTN Coordinator
+
+==== Prior preparation
+. Arrange a server with any one of the supported 64-bit OS environment.
+
+* RHEL 6 / 7
+* CentOS 6 / 7
+* Fedora(19/20)
+* Ubuntu (12.04/12.10/13.04/14.04)
+
+* Install necessary packages.
+* RHEL/Fedora/Cent OS
+[source,perl]
+----
+    yum install make glibc-devel gcc gcc-c++ boost-devel openssl-devel \
+    ant perl-ExtUtils-MakeMaker unixODBC-devel perl-Digest-SHA uuid libxslt libcurl libcurl-devel git
+----
+* Ubuntu 13.10/14.04
+[source,perl]
+----
+   apt-get install pkg-config gcc make  ant g++ maven git libboost-dev libcurl4-openssl-dev \
+    libjson0-dev libssl-dev openjdk-7-jdk unixodbc-dev xmlstarlet
+----
+* Ubuntu 12.04
+[source,perl]
+----
+   apt-get install pkg-config gcc make  ant g++ maven git libboost-dev libcurl4-openssl-dev \
+    libssl-dev openjdk-7-jdk unixodbc-dev
+----
+NOTE: Install libjson0-dev from packages of ubuntu versions (>12.04)
+
+* Install JDK 7, and add the JAVA_HOME environment variable (Only for RHEL/Cent OS/Fedora)
+* RHEL 6.1/Cent OS 6.1
+
+. Download Oracle JDK 7 from the following page, and install it.
+   http://www.oracle.com/technetwork/java/javase/downloads/index.html
+
+. Set JAVA_HOME to the location of the JDK.
+
+[source,perl]
+----
+ export JAVA_HOME=/usr/java/default
+----
+
+* RHEL 6.4,Cent OS 6.4 ,Fedora (17,20)
+
+.1.Install OpenJDK 7
+
+[source,perl]
+----
+yum install java-1.7.0-openjdk-devel
+----
+
+.2. Set JAVA_HOME to the location of the JDK.
+[source,perl]
+----
+export JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk.x86_64
+----
+* Preperation for Execution
+
+* RHEL 6/Fedora/Cent OS 6
+[source,perl]
+----
+ Download the following PostgreSQL 9.1 files (latest versions) from http://yum.postgresql.org/9.1/redhat/rhel-6.4-x86_64/ (RHEL 6.4) or http://yum.postgresql.org/9.1/redhat/rhel-6.1-x86_64/ (RHEL 6.1)and install.
+postgresql91-libs
+postgresql91
+postgresql91server
+postgresql91-contrib
+postgresql91-odbc
+----
+
+NOTE: The above procedure caters only for RHEL 6, For Fedora and CentOS, Please visit http://yum.postgresql.org and install the corresponding rpm for the particular version of Linux distro
+
+* RHEL 7/Cent OS 7
+
+. Download and install the Postgres 9.3 by installing the rpm
+NOTE: For RHEL 7, Please install the below rpm
+[source,perl]
+----
+   rpm -ivh http://yum.postgresql.org/9.3/redhat/rhel-7-x86_64/pgdg-redhat93-9.3-1.noarch.rpm
+  yum install postgresql93-libs postgresql93 postgresql93-server postgresql93-contrib postgresql93-odbc
+----
+NOTE: For Cent OS 7, Please install the below rpm
+[source,perl]
+----
+ rpm -ivh http://yum.postgresql.org/9.3/redhat/rhel-7-x86_64/pgdg-centos93-9.3-1.noarch.rpm
+ yum install postgresql93-libs postgresql93 postgresql93-server postgresql93-contrib postgresql93-odbc
+----
+
+* Ubuntu 13.10/12.04
+[source,perl]
+----
+   apt-get install  postgresql-9.1 postgresql-client-9.1 postgresql-client-common postgresql-contrib-9.1 odbc-postgresql
+----
+
+* Install Maven. (RHEL/Cent OS/Fedora)
+. Download Maven from the following page and install it folloiwng the instruction in the page.
+. http://maven.apache.org/download.cgi
+
+. Install gtest-devel, json-c libraries
+
+* RHEL/Fedora/Cent OS
+
+[source,perl]
+----
+   wget <nowiki>http://dl.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm</nowiki>
+   rpm -Uvh epel-release-6-8.noarch.rpm
+   yum install gtest-devel json-c json-c-devel
+----
+
+NOTE: For RHEL7 and CentOS7, the json-c is part of the default repo, Please install json-c and json-c-devel from the default repo and gtest-devel alsone from the EPEL repo (http://dl.fedoraproject.org/pub/epel/7/x86_64/)
+
+*  Ubuntu 13.10/Ubuntu 12.04
+[source,perl]
+----
+   apt-get install cmake libgtest-dev
+   cp -R /usr/src/gtest gtest-work
+   cd gtest-work
+   cmake CMakeLists.txt
+   make
+   sudo cp *.a /usr/lib
+   cd ..
+   rm -rf gtest-work
+----
+
+==== Build
+
+NOTE: User is not required to be mandatorily root, but the user must own the directory /usr/local/vtn
+
+* Example :
+.The directory should appear as below (assuming the user as "vtn"):
+[source,perl]
+----
+ # ls -l /usr/local/
+   drwxr-xr-x. 12 vtn  vtn  4096 Mar 14 21:53 vtn
+----
+
+* Download the code from git.
+[source,perl]
+----
+ git clone ssh://<username>@git.opendaylight.org:29418/vtn.git
+ git clone https://git.opendaylight.org/gerrit/p/vtn.git
+----
+
+* Build and install VTN Coordinator.
+[source,perl]
+----
+ cd vtn/coordinator
+ mvn -f dist/pom.xml install
+ tar -C/ -jxvf dist/target/distribution.vtn-coordinator-6.1.0.0-SNAPSHOT-bin.tar.bz2
+----
+
+==== Run VTN Coordinator
+
+===== Prior preparation
+====== To change the port
+. By Default coordinator will listen on port 8083
+. To change the listening port modify the TOMCAT_PORT in below file
+[source,perl]
+----
+ /usr/local/vtn/tomcat/conf/tomcat-env.sh.
+----
+
+. Set up the DB.
+[source,perl]
+----
+ /usr/local/vtn/sbin/db_setup
+----
+
+If any problem in setting up db, Please visit: * https://wiki.opendaylight.org/view/OpenDaylight_Virtual_Tenant_Network_(VTN):Installation:Troubleshooting#After_executing_db_setup.2C_you_have_encountered_the_error_.22Failed_to_setup_database.22.3F
+
+==== Start
+.1. Start VTN Coordinator.
+
+[source,perl]
+----
+ /usr/local/vtn/bin/vtn_start
+----
+
+.2. Execute the following commands while stopping.
+[source,perl]
+----
+ /usr/local/vtn/bin/vtn_stop
+----
+
+==== WebAPI
+* VTN Coordinator version information will be displayed if following command is executed when VTN has started successfully.
+[source,perl]
+----
+curl --user admin:adminpass -H 'content-type: application/json' -X GET \
+'http://127.0.0.1:8083/vtn-webapi/api_version.json'
+----
+
+* The expected response message:
+[source,perl]
+----
+ {"api_version":{"version":"V1.2"}}
+----
