@@ -429,8 +429,8 @@ This section contains instructions for installing VTN Coordinator from source co
 ==== Pre Requisites for Installing VTN Coordinator
 
 .  Arrange a server with any one of the supported 64-bit OS environment.
-    * RHEL 6.1/6.4
-	* CentOS 6.1/6.4
+    * RHEL 6/7
+    * CentOS 6/7
     * Fedora(19/20)
     * Ubuntu (12.04/12.10/13.04)
 	
@@ -438,14 +438,15 @@ This section contains instructions for installing VTN Coordinator from source co
 
    *  RHEL/Fedora/Cent OS
 [source,perl]
-    yum install make glibc-devel gcc gcc-c++ boost-devel openssl-devel \ ant perl-ExtUtils-MakeMaker unixODBC-devel perl-Digest-SHA uuid libxslt libcurl libcurl-devel git
+    yum install make glibc-devel gcc gcc-c++ boost-devel openssl-devel  ant perl-ExtUtils-MakeMaker unixODBC-devel perl-Digest-SHA uuid libxslt libcurl libcurl-devel git
 
    * Ubuntu 13.10
 [source,perl]
-   apt-get install pkg-config gcc make  ant g++ maven git libboost-dev libcurl4-openssl-dev \ libjson0-dev libssl-dev openjdk-7-jdk unixodbc-dev xmlstarlet
+   apt-get install pkg-config gcc make  ant g++ maven git libboost-dev libcurl4-openssl-dev libjson0-dev libssl-dev openjdk-7-jdk unixodbc-dev xmlstarlet
 
 * Ubuntu 12.04
-   apt-get install pkg-config gcc make  ant g++ maven git libboost-dev libcurl4-openssl-dev \ libssl-dev openjdk-7-jdk unixodbc-dev
+[source,perl]
+   apt-get install pkg-config gcc make  ant g++ maven git libboost-dev libcurl4-openssl-dev libssl-dev openjdk-7-jdk unixodbc-dev
  
 NOTE: Install libjson0-dev from packages of ubuntu versions (>12.04)
 
@@ -465,7 +466,7 @@ NOTE: Install libjson0-dev from packages of ubuntu versions (>12.04)
 
 .  Preparing for Execution
 
-	* RHEL/Fedora/Cent OS
+	* RHEL 6/Fedora/Cent OS 6
 	Download the following PostgreSQL 9.1 files (latest versions) from http://yum.postgresql.org/9.1/redhat/rhel-6.4-x86_64/ (RHEL 6.4) or http://yum.postgresql.org/9.1/redhat/rhel-6.1-x86_64/ (RHEL 6.1)and install. 
 		* postgresql91-libs 
 		* postgresql91
@@ -475,6 +476,11 @@ NOTE: Install libjson0-dev from packages of ubuntu versions (>12.04)
 
 	* Ubuntu 13.10/12.04
 		[source,perl] apt-get install  postgresql-9.1 postgresql-client-9.1 postgresql-client-common postgresql-contrib-9.1 odbc-postgresql
+
+        * RHEL 7 / Cent OS 7
+              Please visit http://yum.postgresql.org and install the Postgres version 9.3 rpm for the distribution. Then install the required postgres packages as follows
+         [source,perl] yum install postgresql93-libs postgresql93 postgresql93server postgresql93-contrib postgresql93-odbc
+               
 
 . Install Maven. (RHEL/Cent OS/Fedora)
 	Download Maven from the following page and install it folloiwng the instruction in the page.
@@ -552,7 +558,7 @@ NOTE: If there are any issues in setting up the database, click on https://wiki.
     'ipaddr:127.0.0.1' http://127.0.0.1:8083/vtn-webapi/api_version.json
 
 	* The expected response message:
-	{"api_version":{"version":"V1.0"}}
+	{"api_version":{"version":"V1.2"}}
  
 
 === Installing VTN Manager from Source Code
@@ -920,9 +926,10 @@ Use the following parameters VTN:
 /usr/local/vtn/modules/vtndrvintf.conf 
 
 *Parameter*
-[source,perl] 
+[source,perl]
+---- 
 physical_attributes_read_interval 
-
+----
 *Default*
 40 seconds 
 
@@ -935,8 +942,10 @@ physical_attributes_read_interval
 /usr/local/vtn/modules/odcdriver.conf 
  
 *Parameter*
-[source,perl] 
+[source,perl]
+---- 
 odcdrv_ping_interval  
+----
 
 *Default*
 30 seconds 
@@ -951,8 +960,9 @@ odcdrv_ping_interval
  
 *Parameter*
 [source,perl] 
+----
 odc_port   
-
+----
 *Default*
 8080 
 
@@ -967,8 +977,9 @@ odc_port
  
 *Parameter*
 [source,perl] 
+----
 connect_time_out   
-
+----
 *Default*
 30 seconds
 
@@ -982,8 +993,9 @@ connect_time_out
  
 *Parameter*
 [source,perl] 
+----
 request_time_out   
-
+----
 *Default*
 30 seconds
 
@@ -997,8 +1009,9 @@ request_time_out
  
 *Parameter*
 [source,perl] 
+----
 username   
-
+----
 *Default*
 admin
 
@@ -1011,9 +1024,10 @@ admin
 /usr/local/vtn/modules/odcdriver.conf 
  
 *Parameter*
-[source,perl] 
+[source,perl]
+---- 
 password   
-
+----
 *Default*
 admin
 

@@ -1,0 +1,90 @@
+=== Hacking VTN Manager(Helium)
+==== Installing VTN Manager from source code
+.Prior preparation
+VTN Manager is a set of OSGi bundles running in OpenDaylight controller in Karaf platform, so prior preparation for installing VTN Manager is the same as OpenDaylight controller.
+
+==== Get VTN Source
+The below procedure assumes, You are installing OpenDaylight Controller with VTN Manager on your local Linux machine.
+
+* Download the code from the Git repository of VTN Project.
+[source,perl]
+----
+ git clone ssh://<username>@git.opendaylight.org:29418/vtn.git
+or
+ git clone https://git.opendaylight.org/gerrit/p/vtn.git
+----
+The following instructions assume you put the code in directory ${VTN_DIR}.
+[source,perl]
+----
+ ${VTN_DIR}=<Top of VTN source tree>
+----
+* Build the code of VTN Manager.
+[source,perl]
+----
+ cd ${VTN_DIR}/manager
+ mvn clean install
+----
+NOTE: This command will build the local Karaf distribution in the folder manager/dist/karaf/target/assembly.
+
+==== Build and Run the Controller with VTN Manager
+===== Build karaf distribution
+.Build
+NOTE: You will need direct internet connection for this build to be successful.
+[source,perl]
+----
+ cd ${VTN_DIR/manager/dist-karaf for karaf binaries
+ mvn clean install
+----
+.Run:
+* cd ${VTN_DIR}/manager/dist-karaf/target/assembly
+* ./bin/karaf
+Note: By default the VTN packages will be installed
+
+
+NOTE:
+* After successful build, the directory  ${VTN_DIR}/manager/dist-karaf will have assembly and tar and zip versions of binaries
+* User can either choose to run from assembly or copy the tar or zip to required locations and execute there.
+* Test if VTN Manger is running
+* In the karaf prompt, type the below command to ensure that vtn packages are installed.
+ 
+===== Build Non-Karaf distribution
+.Build
+ cd ${VTN_DIR}/manager/dist to build the non-karaf binaries
+ mvn clean install 
+ cd ${VTN_DIR}/manager/dist/target/distribution.vtn-manager-0.2.2-SNAPSHOT-osgipackage/opendaylight
+
+.Run
+ ./run.sh of10 (If you want to enable only OpenFlow 1.0)
+ ./run.sh of13 (If you want to enable all supported openflow versions)
+
+==== Verify if VTN is running
+* In the karaf prompt, type the below command to ensure that vtn packages are installed.
+  feature:list i | grep vtn
+
+==== REST API
+VTN Manager provides REST API for virtual network functions.
+
+For detailed information about REST API specifications, see https://wiki.opendaylight.org/view/OpenDaylight_Virtual_Tenant_Network_(VTN):VTN_Manager:RestApi
+
+Here is an example of how to create a virtual tenant network.
+[source,perl]
+----
+ curl --user "admin":"admin" -H "Accept: application/json" -H \
+ "Content-type: application/json" -X POST \
+ http://localhost:8080/controller/nb/v2/vtn/default/vtns/Tenant1 \
+ -d '{"description": "My First Virtual Tenant Network"}'
+----
+
+You can check the list of all tenants by executing the following command.
+
+[source,perl]
+----
+ curl --user "admin":"admin" -H "Accept: application/json" -H \
+ "Content-type: application/json" -X GET \
+ http://localhost:8080/controller/nb/v2/vtn/default/vtns
+----
+
+ 
+ 
+
+
