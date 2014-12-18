@@ -920,9 +920,10 @@ Use the following parameters VTN:
 /usr/local/vtn/modules/vtndrvintf.conf 
 
 *Parameter*
-[source,perl] 
+[source,perl]
+---- 
 physical_attributes_read_interval 
-
+----
 *Default*
 40 seconds 
 
@@ -935,8 +936,10 @@ physical_attributes_read_interval
 /usr/local/vtn/modules/odcdriver.conf 
  
 *Parameter*
-[source,perl] 
+[source,perl]
+---- 
 odcdrv_ping_interval  
+----
 
 *Default*
 30 seconds 
@@ -951,8 +954,9 @@ odcdrv_ping_interval
  
 *Parameter*
 [source,perl] 
+----
 odc_port   
-
+----
 *Default*
 8080 
 
@@ -967,8 +971,9 @@ odc_port
  
 *Parameter*
 [source,perl] 
+----
 connect_time_out   
-
+----
 *Default*
 30 seconds
 
@@ -982,8 +987,9 @@ connect_time_out
  
 *Parameter*
 [source,perl] 
+----
 request_time_out   
-
+----
 *Default*
 30 seconds
 
@@ -997,8 +1003,9 @@ request_time_out
  
 *Parameter*
 [source,perl] 
+----
 username   
-
+----
 *Default*
 admin
 
@@ -1011,9 +1018,10 @@ admin
 /usr/local/vtn/modules/odcdriver.conf 
  
 *Parameter*
-[source,perl] 
+[source,perl]
+---- 
 password   
-
+----
 *Default*
 admin
 
