@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a96c907_98232605",
+        "filename": "manuals/install-guide/src/main/asciidoc/addons/vtn.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 396
+      },
+      "writtenOn": "2014-12-19T02:37:56Z",
+      "side": 1,
+      "message": "What do you mean \"the same unzipped folder\" here?\nI think you need more explanation about it.",
+      "range": {
+        "startLine": 15,
+        "startChar": 1,
+        "endLine": 15,
+        "endChar": 37
+      },
+      "revId": "48e3cdebacccd41c5625499d38e7846df0cab104",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_78265a18",
+        "filename": "manuals/install-guide/src/main/asciidoc/addons/vtn.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 396
+      },
+      "writtenOn": "2014-12-19T02:37:56Z",
+      "side": 1,
+      "message": "Does this link really work in AsciiDoc?\nIt seems to me that it works only in wiki pages.",
+      "range": {
+        "startLine": 117,
+        "startChar": 16,
+        "endLine": 117,
+        "endChar": 135
+      },
+      "revId": "48e3cdebacccd41c5625499d38e7846df0cab104",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_d811aead",
+        "filename": "manuals/user-guide/src/main/asciidoc/VTN_How_To_view_list_of_host_connected_to_vtn.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 396
+      },
+      "writtenOn": "2014-12-19T02:37:56Z",
+      "side": 1,
+      "message": "Does this line work in ASCCI format? I think this is a keyword which works in wiki format.",
+      "range": {
+        "startLine": 80,
+        "startChar": 0,
+        "endLine": 80,
+        "endChar": 48
+      },
+      "revId": "48e3cdebacccd41c5625499d38e7846df0cab104",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
