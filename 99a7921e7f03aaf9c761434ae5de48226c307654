@@ -1,0 +1,211 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a96c907_444e1071",
+        "filename": "manuals/install-guide/src/main/asciidoc/addons/vtn.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 396
+      },
+      "writtenOn": "2014-12-26T00:59:40Z",
+      "side": 1,
+      "message": "What do you mean \"the same unzipped folder\" here? I think you need more explanation about it.",
+      "range": {
+        "startLine": 15,
+        "startChar": 2,
+        "endLine": 15,
+        "endChar": 37
+      },
+      "revId": "99a7921e7f03aaf9c761434ae5de48226c307654",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_64530c18",
+        "filename": "manuals/install-guide/src/main/asciidoc/addons/vtn.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 396
+      },
+      "writtenOn": "2014-12-26T00:59:40Z",
+      "side": 1,
+      "message": "Does this link really work in AsciiDoc? It seems to me that it works only in wiki pages.",
+      "range": {
+        "startLine": 117,
+        "startChar": 16,
+        "endLine": 117,
+        "endChar": 201
+      },
+      "revId": "99a7921e7f03aaf9c761434ae5de48226c307654",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_04580831",
+        "filename": "manuals/user-guide/src/main/asciidoc/addons/vtn/VTN_How_To_configure_L2_Network_with_Multiple_Controllers.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 396
+      },
+      "writtenOn": "2014-12-26T00:59:40Z",
+      "side": 1,
+      "message": "This image is not shown in the PDF format.",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 18
+      },
+      "revId": "99a7921e7f03aaf9c761434ae5de48226c307654",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_242664b8",
+        "filename": "manuals/user-guide/src/main/asciidoc/addons/vtn/VTN_Installation.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 396
+      },
+      "writtenOn": "2014-12-26T00:59:40Z",
+      "side": 1,
+      "message": "It seems to me that one \"|\" should be removed.\n\nIn the PDF format of this document, the table is broken, and some information is not shown.",
+      "range": {
+        "startLine": 13,
+        "startChar": 13,
+        "endLine": 13,
+        "endChar": 15
+      },
+      "revId": "99a7921e7f03aaf9c761434ae5de48226c307654",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_c43a20cd",
+        "filename": "manuals/user-guide/src/main/asciidoc/addons/vtn/VTN_Installation.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 396
+      },
+      "writtenOn": "2014-12-26T00:59:40Z",
+      "side": 1,
+      "message": "I think \".\" should be removed.",
+      "range": {
+        "startLine": 25,
+        "startChar": 2,
+        "endLine": 25,
+        "endChar": 3
+      },
+      "revId": "99a7921e7f03aaf9c761434ae5de48226c307654",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_e4371ce2",
+        "filename": "manuals/user-guide/src/main/asciidoc/addons/vtn/VTN_Installation.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 396
+      },
+      "writtenOn": "2014-12-26T00:59:40Z",
+      "side": 1,
+      "message": "I think \".\" should be removed.",
+      "range": {
+        "startLine": 26,
+        "startChar": 2,
+        "endLine": 26,
+        "endChar": 3
+      },
+      "revId": "99a7921e7f03aaf9c761434ae5de48226c307654",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_843418df",
+        "filename": "manuals/user-guide/src/main/asciidoc/addons/vtn/VTN_Installation.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 396
+      },
+      "writtenOn": "2014-12-26T00:59:40Z",
+      "side": 1,
+      "message": "In the PDF format of this document, bullet list items are broken.\n\nWould you check it in the PDF format?\nI think we need a blank line above the start of the bullet list items.",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 38,
+        "endChar": 10
+      },
+      "revId": "99a7921e7f03aaf9c761434ae5de48226c307654",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_a43114ee",
+        "filename": "manuals/user-guide/src/main/asciidoc/addons/vtn/VTN_OpenStack_Support_User_Guide.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 396
+      },
+      "writtenOn": "2014-12-26T00:59:40Z",
+      "side": 1,
+      "message": "These are not shown in the PDF format.\n\nWould you make it to be shown in the PDF format.",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 24
+      },
+      "revId": "99a7921e7f03aaf9c761434ae5de48226c307654",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_0421e89e",
+        "filename": "manuals/user-guide/src/main/asciidoc/addons/vtn/VTN_Overview.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 396
+      },
+      "writtenOn": "2014-12-26T00:59:40Z",
+      "side": 1,
+      "message": "Is this \"?\" needed?",
+      "range": {
+        "startLine": 144,
+        "startChar": 21,
+        "endLine": 144,
+        "endChar": 22
+      },
+      "revId": "99a7921e7f03aaf9c761434ae5de48226c307654",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
