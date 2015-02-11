@@ -1,0 +1,38 @@
+= < Feature > Installation Guide 
+This is a template for installing a feature or a project developed in the ODL project. The '''feature''' could be interfaces, protocol plug-ins, or applications.
+ 
+== Title 
+Add chapter title. For example Installing '''<Feature>'''
+== Overview 
+Add overview of the product. Include Architecture diagram and the positioning of this feature in overall controller architecture. Highlighting  the feature in a different color within the overall architecture must help. Include information to describe if the project is within ODL installation package or to be installed seperately.
+
+== Pre Requisites for Installing or Downloading the Controller Distribution<Feature>
+* Hardware Requirements
+* Software Requirements
+* Platform Requirements
+
+== Preparing for Installation
+Include any pre configuration, database, or other software downloads required to install <feature>.
+
+== Installing the <Feature>
+Include if you have separate procedures for Windows and Linux
+
+== Verifying your Installation 
+
+== Post Installation Configuration
+ Post Installation Configuration section must include some basic (must-do) procedures if any, to get started.
+
+Mandatory instructions to get started with the product.
+* Logging in
+* Getting Started
+* Integration points with controller
+
+== Upgrading From a Previous Release 
+
+== Uninstalling the <Feature>
+
+== Troubleshooting Scenario 
+
+== Related Documentation
+
+
