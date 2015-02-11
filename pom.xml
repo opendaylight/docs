@@ -24,56 +24,6 @@
     <module>manuals</module>
   </modules>
 
-  <repositories>
-
-    <!-- OpenDayLight Repo Mirror -->
-    <repository>
-      <id>opendaylight-mirror</id>
-      <name>opendaylight-mirror</name>
-      <url>${nexusproxy}/groups/public/</url>
-      <snapshots>
-          <enabled>false</enabled>
-      </snapshots>
-      <releases>
-          <enabled>true</enabled>
-          <updatePolicy>never</updatePolicy>
-      </releases>
-    </repository>
-    <!-- OpenDayLight Snapshot artifact -->
-    <repository>
-      <id>opendaylight-snapshot</id>
-      <name>opendaylight-snapshot</name>
-      <url>${nexusproxy}/repositories/opendaylight.snapshot/</url>
-      <snapshots>
-          <enabled>true</enabled>
-      </snapshots>
-      <releases>
-        <enabled>false</enabled>
-      </releases>
-    </repository>
-  </repositories>
-
-  <pluginRepositories>
-    <pluginRepository>
-      <id>central2</id>
-      <name>central2</name>
-      <url>${nexusproxy}/repositories/central2/</url>
-    </pluginRepository>
-    <pluginRepository>
-      <id>opendaylight-snapshot</id>
-      <name>central2</name>
-      <url>${nexusproxy}/repositories/opendaylight.snapshot/</url>
-    </pluginRepository>
-    <pluginRepository>
-        <id>oss-sonatype</id>
-        <name>oss-sonatype</name>
-        <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-        <snapshots>
-            <enabled>true</enabled>
-        </snapshots>
-    </pluginRepository>
-  </pluginRepositories>
-
   <distributionManagement>
     <!-- OpenDayLight Released artifact -->
     <repository>
