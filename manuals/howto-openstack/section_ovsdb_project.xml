@@ -23,7 +23,7 @@
         open operating systems):</para>
     <para><inlinemediaobject>
             <imageobject>
-                <imagedata fileref="../../../../Overlay-OpenDaylight-OVSDB-OpenFlow.png"/>
+                <imagedata fileref="images/Overlay-OpenDaylight-OVSDB-OpenFlow.png"/>
             </imageobject>
         </inlinemediaobject></para>
     <para>The provider segmentation keys used in the encap (GRE key/VNI) is a hash of Network and
@@ -36,7 +36,7 @@
         the controller project and OpenStack:</para>
     <para><inlinemediaobject>
             <imageobject>
-                <imagedata fileref="../../../../OVSDB-Architecture.png"/>
+                <imagedata fileref="images/OVSDB-Architecture.png"/>
             </imageobject>
         </inlinemediaobject></para>
   </section>

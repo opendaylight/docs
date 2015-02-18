@@ -37,7 +37,7 @@ ODL-Devstack-Fedora19.ovf</command></screen>
         settings on the new network. Refer to the existing if unsure of the values to use. When
         complete the host OS should be able to reach the guest OS.<inlinemediaobject>
             <imageobject>
-                <imagedata fileref="VirtualBox-HostOnly-Networks.png"/>
+                <imagedata fileref="images/VirtualBox-HostOnly-Networks.png"/>
             </imageobject>
         </inlinemediaobject></para>
     <para>The second example is what the VirtualBox NIC setup can look like without have to deal
@@ -46,7 +46,7 @@ ODL-Devstack-Fedora19.ovf</command></screen>
         networks default gateway and get to the Inets as needed. With host only that is not the case
         but it is plenty to run the stack and integration.<inlinemediaobject>
             <imageobject>
-                <imagedata fileref="VirtualBox-HostOnly-Nics.png"/>
+                <imagedata fileref="images/VirtualBox-HostOnly-Nics.png"/>
             </imageobject>
         </inlinemediaobject></para>
     <para>Boot both guest VMs write down the four IP addresses from both NICs. You will primarily

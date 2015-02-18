@@ -2,7 +2,7 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <parent>
-    <groupId>org.opendaylight.integration</groupId>
+    <groupId>org.opendaylight.docs</groupId>
     <artifactId>manuals</artifactId>
     <version>0.1.0-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
@@ -10,7 +10,7 @@
   <modelVersion>4.0.0</modelVersion>
   <artifactId>opendaylight-howto-openstack</artifactId>
   <packaging>jar</packaging>
-  <name>OpenDaylight HowTo OpenStack</name>
+  <name>OpenDaylight Docs - Manuals - OpenStack How To</name>
   <properties>
     <!-- This is set by Jenkins according to the branch. -->
     <release.path.name>local</release.path.name>
@@ -24,7 +24,7 @@
       <plugin>
         <groupId>com.inocybe.api</groupId>
         <artifactId>sdndocs-maven-plugin</artifactId>
-        <version>0.1.0-SNAPSHOT</version>
+        <version>0.1.0</version>
 <!-- version is set in ../pom.xml file -->
         <executions>
           <!-- Configuration for OpenStack End User Guide -->

@@ -50,7 +50,7 @@ nova boot --flavor m1.tiny --image $(nova image-list | grep $IMAGE'\s' | awk '{p
         <title>Horizon-OpenDaylight-e1392513990486.jpg</title>
         <mediaobject>
             <imageobject>
-                <imagedata fileref="../../../../Horizon-OpenDaylight-e1392513990486.jpg"/>
+                <imagedata fileref="images/Horizon-OpenDaylight-e1392513990486.jpg"/>
             </imageobject>
         </mediaobject>
     </figure>
