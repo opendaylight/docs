@@ -24,6 +24,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   <modules>
+    <module>readme</module> <!-- this is just to make sure readme builds -->
     <module>glossary</module>
     <module>sample-guide</module>
     <module>install-guide</module>
