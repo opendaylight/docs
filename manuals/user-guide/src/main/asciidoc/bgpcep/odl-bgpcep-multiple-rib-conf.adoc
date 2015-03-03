@@ -1,0 +1,143 @@
+== Multiple RIB Configuration
+This configuration guide is updated to conform Lithium Release SNAPSHOT version.
+
+=== Overview
+Application Peer is a special type of BGP peer. It has it's own BGP RIB. This RIB can be acquired or changed through RESTCONF.
+
+
+[big]#Is possible to set up ODL as:#
+
+- BGP Speaker
+- BGP listener
+
+[big]#BGP Listener (stateless):#
+.
+- tell controller of prefixes received
+- tell controller of BGP sessions comming (up/down)
+- preferable using structure envelope (JSON/XML)
+
+[big]#BGP Speaker (stateful):#
+
+- announce or withdraw a route to a peer
+- keep state of announced prefixes
+- state is not shared among speakers
+
+
+=== Configuration
+
+==== BGP Speaker configuration
+
+NOTE: ODL supports BGP Speaker functionality and accepts incoming BGP connections.
+
+The configuration of BGP speaker is located in: _41-bgp-example.xml_
+
+[source,xml]
+----
+<module>
+   <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">prefix:bgp-peer-acceptor</type>
+   <name>bgp-peer-server</name>
+   <binding-address>25.25.25.25</binding-address>-->
+   <binding-port>179</binding-port>-->
+   <bgp-dispatcher>
+       <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">prefix:bgp-dispatcher</type>
+       <name>global-bgp-dispatcher</name>
+   </bgp-dispatcher>
+   <peer-registry>
+       <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">prefix:bgp-peer-registry</type>
+      <name>global-bgp-peer-registry</name>
+   </peer-registry>
+</module>
+----
+
+==== Configure RIB
+
+NOTE: In this example, where ODL is configured as Listener, every BGP RIB point to the same BGP peer acceptor with IP address in bgp-rib-id. Each RIB table is configured in its own module. We will specify name, rib-id and bgp-rib-id.
+
+[big]#*First RIB:*#
+
+[source,xml]
+----
+<module>
+    <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">prefix:rib-impl<type>
+    <name>example-bgp-rib1</name>
+    <rib-id>example-bgp-rib1</rib-id>
+    <local-as>64496</local-as>
+    <bgp-rib-id>25.25.25.25</bgp-rib-id> // is the same for each RIB
+----
+
+[big]#*Second RIB:*#
+
+[source,xml]
+----
+<module>
+    <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">prefix:rib-impl<type>
+    <name>example-bgp-rib2</name>
+    <rib-id>example-bgp-rib2</rib-id>
+    <local-as>64496</local-as>
+    <bgp-rib-id>25.25.25.25</bgp-rib-id> // is the same for each RIB
+----
+
+[big]#*Third RIB:*#
+
+[source,xml]
+----
+<module>
+    <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">prefix:rib-impl<type>
+    <name>example-bgp-rib3</name>
+    <rib-id>example-bgp-rib3</rib-id>
+    <local-as>64496</local-as>
+    <bgp-rib-id>25.25.25.25</bgp-rib-id> // is the same for each RIB
+----
+
+==== Configure BGP peer
+
+NOTE: Every BGP peer is configured in its own module. We sep up host name, IP adddress and name of BGP RIB.
+
+[big]#*First Peer:*#
+
+[source,xml]
+----
+<module>
+    <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">prefix:bgp-peer</type>
+    <name>example-bgp-peer1</name>
+    <host>11.12.13.14</host>
+    <holdtimer>180</holdtimer>
+    <rib>
+        <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:cfg">prefix:rib</type>
+        <name>example-bgp-rib1</name>
+    </rib>
+----
+
+[big]#*Second Peer:*#
+
+[source,xml]
+----
+<module>
+    <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">prefix:bgp-peer</type>
+    <name>example-bgp-peer2</name>
+    <host>72.71.70.69</host>
+    <holdtimer>180</holdtimer>
+    <rib>
+        <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:cfg">prefix:rib</type>
+        <name>example-bgp-rib2</name>
+    </rib>
+----
+
+[big]#*Third Peer:*#
+
+[source,xml]
+----
+<module>
+    <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">prefix:bgp-peer</type>
+    <name>example-bgp-peer3</name>
+    <host>42.32.22.12</host>
+    <holdtimer>180</holdtimer>
+    <rib>
+        <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:cfg">prefix:rib</type>
+        <name>example-bgp-rib3</name>
+    </rib>
+----
+
+NOTE: Every BGP peer has its own BGP RIB and we refer to this RIB with unique name.
+
+If all is configured properly, through the RESTCONF we can get content of every RIB table. See link:../../../../../developer-guide/src/main/asciidoc/core/odl-restconf-overview.adoc[Restconf Tutorial].
