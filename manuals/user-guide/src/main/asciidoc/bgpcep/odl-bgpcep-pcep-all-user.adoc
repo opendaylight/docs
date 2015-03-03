@@ -1,81 +1,39 @@
-== PCEP User Guide
-Refer to this template to identify the required sections and information
-that you should  provide for a User Guide. The user guide should contain
-configuration, administration, management, using, and troubleshooting
-sections for the feature.
+== PCEP User Guide ==
 
-=== Overview
-Provide an overview of the feature and the use case. Also include the
-audience who will use the feature. For example,  audience can be the
-network administrator, cloud administrator, network engineer, system
-administrators, and so on.
+=== Overview ===
 
-=== PCEP Architecture
-Provide information about feature components and how they work together.
-Also include information about how the feature integrates with
-OpenDaylight. An architecture diagram could help.
+OpenDaylight Karaf edition comes preconfigured with baseline PCEP configuration.
 
-=== Configuring PCEP
+- *32-pcep.xml* (basic PCEP configuration, including session parameters)
+- *39-pcep-provider.xml* (configuring for PCEP provider)
 
-Describe how to configure the feature or the project after installation.
-Configuration information could include day-one activities for a project
-such as configuring users, configuring clients/servers and so on.
+=== Configuring PCEP ===
 
-=== Administering or Managing PCEP
-Include related command reference or  operations that you could perform
-using the feature. For example viewing network statistics, monitoring
-the network,  generating reports, and so on.
+The default shipped configuration will start a PCE server on 0.0.0.0:4189. You can change this behavior in *39-pcep-provider.xml*:
 
-NOTE:  Ensure that you create a step procedure whenever required and
-avoid concepts.
+[source,xml]
+----
+<module>
+ <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:controller:pcep:topology:provider">prefix:pcep-topology-provider</type>
+ <name>pcep-topology</name>
+ <listen-address>192.168.122.55</listen-address>
+ <listen-port>4189</listen-port>
+...
+</module>
+----
 
-For example:
+-*listen-address* - adress on which PCE will be started and listen
+-*listen-port* - port on which the address will be started and listen
 
-.To configure L2switch components perform the following steps.
-. Step 1:
-. Step 2:
-. Step 3:
+PCEP default configuration is set to conform stateful PCEP extension:
 
-=== Tutorials
-<optional>
-If there is only one tutorial, you skip the "Tutorials" section and
-instead just lead with the single tutorial's name.
+link:http://tools.ietf.org/html/draft-ietf-pce-stateful-pce - in versions 02 and 07
 
-==== Managing PCEP tunnels
-Ensure that the title starts with a gerund. For example using,
-monitoring, creating, and so on.
+==== PCEP Segment Routing ====
 
-===== Overview
-An overview of the use case.
+Conforms link:http://tools.ietf.org/html/draft-ietf-pce-segment-routing-01 - PCEP extension for Segment Routing
 
-===== Prerequisites
-Provide any prerequisite information, assumed knowledge, or environment
-required to execute the use case.
+The default configuration file is located in etc/opendaylight/karaf.
 
-===== Target Environment
-Include any topology requirement for the use case. Ideally, provide
-visual (abstract) layout of network diagrams and any other useful visual
-aides.
+- *33-pcep-segment-routing.xml* - You don't need to edit this file.
 
-===== Instructions
-Use case could be a set of configuration procedures. Including
-screenshots to help demonstrate what is happening is especially useful.
-Ensure that you specify them separately. For example:
-
-. *Setting up the VM*
-To set up a VM perform the following steps.
-.. Step 1
-.. Step 2
-.. Step 3
-
-. *Installing the feature*
-To install the feature perform the following steps.
-.. Step 1
-.. Step 2
-.. Step 3
-
-. *Configuring the environment*
-To configure the system perform the following steps.
-.. Step 1
-.. Step 2
-.. Step 3

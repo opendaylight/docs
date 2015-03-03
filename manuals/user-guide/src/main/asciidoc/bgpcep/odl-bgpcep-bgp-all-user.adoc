@@ -1,81 +1,395 @@
-== BGP User Guide
-Refer to this template to identify the required sections and information
-that you should  provide for a User Guide. The user guide should contain
-configuration, administration, management, using, and troubleshooting
-sections for the feature.
+== BGP User Guide ==
 
-=== Overview
-Provide an overview of the feature and the use case. Also include the
-audience who will use the feature. For example,  audience can be the
-network administrator, cloud administrator, network engineer, system
-administrators, and so on.
+=== Overview ===
+OpenDaylight karaf edition comes pre-configured with baseline BGP
+configuration. You can find it in the etc/opendaylight/karaf directory and it
+consists of two files:
 
-=== BGP Architecture
-Provide information about feature components and how they work together.
-Also include information about how the feature integrates with
-OpenDaylight. An architecture diagram could help.
+- *31-bgp.xml* (defines the basic parser and RIB support)
+- *41-bgp-example.xml* (which contains a sample configuration which needs to be
+  customized to your deployment)
 
-=== Configuring BGP
+Next sections will describe how to configure BGP manually or using RESTCONF.
 
-Describe how to configure the feature or the project after installation.
-Configuration information could include day-one activities for a project
-such as configuring users, configuring clients/servers and so on.
+=== Configuring BGP ===
 
-=== Administering or Managing BGP
-Include related command reference or  operations that you could perform
-using the feature. For example viewing network statistics, monitoring
-the network,  generating reports, and so on.
+==== RIB ====
+[source,xml]
+----
+<module>
+    <type>prefix:rib-impl</type>
+    <name>example-bgp-rib</name>
+    <rib-id>example-bgp-rib</rib-id>
+    <local-as>64496</local-as>
+    <bgp-id>192.0.2.2</bgp-id>
+    <cluster-id>192.0.2.3</cluster-id>
+    ...
+</module>
+----
 
-NOTE:  Ensure that you create a step procedure whenever required and
-avoid concepts.
+- *rib-id* - BGP RIB Identifier, in this configuration file you can specify more BGP RIBs by
+copy-pasting the above module. These RIBs must have a unique rib-id and name.
+- *local-as* - Our local AS number (where Opendaylight is deployed), we use this in best path selection
+- *bgp-id* - Our local BGP identifier (the IP of the VM where Opendaylight is deployed),
+we use this in best path selection.
+- *cluster-id* - Cluster Identifier, non-mandatory, if not specified, BGP Identifier will be used
 
-For example:
+MIGHT NOT BE NEEDED: depending on your BGP router, you might need a switch from
+linkstate attribute type 99 to 29. Check with your router vendor. Switch the
+field iana-linkstate-attribute-type to true if your router supports type 29.
+This snippet is located in 31-bgp.xml file.
 
-.To configure L2switch components perform the following steps.
-. Step 1:
-. Step 2:
-. Step 3:
+[source,xml]
+----
+<module>
+ <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:controller:bgp:linkstate">prefix:bgp-linkstate</type>
+ <name>bgp-linkstate</name>
+ <iana-linkstate-attribute-type>true</iana-linkstate-attribute-type>
+</module>
+----
 
-=== Tutorials
-<optional>
-If there is only one tutorial, you skip the "Tutorials" section and
-instead just lead with the single tutorial's name.
+- *iana-linkstate-attribute-type* - IANA has issued an early allocation for the
+  BGP Linkstate path attribute (=29). To preserve (TYPE = 99) set value bellow
+to false; to use IANA assigned type set the value to true or remove (true by
+default)
 
-==== Creating and using BGP speaker
-Ensure that the title starts with a gerund. For example using,
-monitoring, creating, and so on.
+==== BGP Peer ====
 
-===== Overview
-An overview of the use case.
+The initial configuration is written so that it will be ignored to prevent the
+client from starting with default configuration. Therefore the first step is to
+uncomment the module containing bgp-peer.
 
-===== Prerequisites
-Provide any prerequisite information, assumed knowledge, or environment
-required to execute the use case.
+[source,xml]
+----
+<module>
+ <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">prefix:bgp-peer</type>
+ <name>example-bgp-peer</name>
+ <host>192.0.2.1</host>
+ <holdtimer>180</holdtimer>
+ <peer-role>ibgp</peer-role>
+ <rib>
+  <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:cfg">prefix:rib</type>
+  <name>example-bgp-rib</name>
+ </rib>
+ ...
+</module>
+----
 
-===== Target Environment
-Include any topology requirement for the use case. Ideally, provide
-visual (abstract) layout of network diagrams and any other useful visual
-aides.
+- *name* - BGP Peer name, in this configuration file you can specify more BGP Peers by copy-pasting the above module. These peers must have a *unique* name.
+- *host* - IP address or hostname of BGP speaker (IP where Opendaylight should connect to gather topology)
+- *holdtimer* - unit: seconds
+- *peer-role* - If peer role is not present, default value "ibgp" will be used (allowed values are also "ebgp" and "rr-client"). This field is case-sensitive.
+- *rib* - BGP RIB identifier
 
-===== Instructions
-Use case could be a set of configuration procedures. Including
-screenshots to help demonstrate what is happening is especially useful.
-Ensure that you specify them separately. For example:
+==== Configure Connection Attributes (all in milliseconds) - OPTIONAL ====
 
-. *Setting up the VM*
-To set up a VM perform the following steps.
-.. Step 1
-.. Step 2
-.. Step 3
+[source,xml]
+----
+<module>
+   <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:controller:reconnectstrategy">prefix:timed-reconnect-strategy</type>
+   <name>example-reconnect-strategy</name>
+   <min-sleep>1000</min-sleep>
+   <max-sleep>180000</max-sleep>
+   <sleep-factor>2.00</sleep-factor>
+   <connect-time>5000</connect-time>
+   <executor>
+       <type xmlns:netty="urn:opendaylight:params:xml:ns:yang:controller:netty">netty:netty-event-executor</type>
+       <name>global-event-executor</name>
+   </executor>
+</module>
+----
 
-. *Installing the feature*
-To install the feature perform the following steps.
-.. Step 1
-.. Step 2
-.. Step 3
+- *min-sleep* - Minimum sleep time in between reconnect tries
+- *max-sleep* - Maximum sleep time in between reconnect tries
+- *sleep-factor* - Power factor of the sleep time between reconnect tries
+- *connect-time* - How long we should wait for the TCP connect attempt, overrides default connection timeout dictated by TCP retransmits
 
-. *Configuring the environment*
-To configure the system perform the following steps.
-.. Step 1
-.. Step 2
-.. Step 3
+
+==== BGP Speaker Configuration ====
+
+Previous entries addressed the configuration of a BGP connection initiated by
+Opendaylight. Opendaylight also supports BGP Speaker functionality and accepts
+incoming BGP connections.
+
+*The configuration of BGP speaker is located in: *41-bgp-example.xml*:
+
+[source,xml]
+----
+<module>
+    <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">prefix:bgp-peer-acceptor</type>
+    <name>bgp-peer-server</name>
+
+    <!--Default parameters-->
+    <!--<binding-address>0.0.0.0</binding-address>-->
+    <!--<binding-port>1790</binding-port>-->
+
+    ...
+    <!--Drops or accepts incoming BGP connection, every BGP Peer that should be accepted needs to be added to this registry-->
+    <peer-registry>
+        <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">prefix:bgp-peer-registry</type>
+        <name>global-bgp-peer-registry</name>
+    </peer-registry>
+</module>
+----
+
+*Changing speaker configuration*
+--
+- Changing binding address: Uncomment tag binding-address and change the address to e.g. _127.0.0.1_. The default binding address is _0.0.0.0_.
+- Changing binding port: Uncomment tag binding-port and change the port to e.g.
+  _1790_. The default binding port is _179_ as specified in link:http://tools.ietf.org/html/rfc4271[BGP RFC].  --
+
+==== Incomming BGP Connections ====
+
+*BGP speaker drops all BGP connections from unknown BGP peers.* The decision is
+made in component bgp-peer-registry that is injected into the speaker (The
+registry is configured in 31-bgp.xml).
+
+To add BGP Peer configuration into the registry, it is necessary to configure
+regular BGP peer just like in example in 41-bgp-example.xml. Notice that the
+BGP peer depends on the same bgp-peer-registry as bgp-speaker:
+
+[source,xml]
+----
+<module>
+    <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">prefix:bgp-peer</type>
+    <name>example-bgp-peer</name>
+    <host>192.0.2.1</host>
+    ...
+    <peer-registry>
+        <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">prefix:bgp-peer-registry</type>
+        <name>global-bgp-peer-registry</name>
+    </peer-registry>
+    ...
+</module>
+----
+
+The BGP peer registers itself into the registry, which allows incoming BGP
+connections handled by the bgp-speaker. (Config attribute peer-registry is
+optional for now to preserve backwards compatibility). With this configuration,
+the connection to 192.0.2.1 is initiated by Opendaylight but will also be accepted from
+192.0.2.1. In case both connections are being established, only one of them
+will be preserved and the other will be dropped. The connection initiated from
+device with lower bgp id will be dropped by the registry.  Each BGP peer must
+be configured in its own module. Note, that the name of the module needs to be
+unique, so if you are configuring more peers, when changing the *host*, change
+also the *name*.
+There is a way to configure the peer only for incoming connections (The
+connection will not be initiated by the Opendaylight, Opendaylight will only wait for incoming
+connection from the peer. The peer is identified by its IP address). To
+configure peer only for incoming connection add attribute initiate-connection
+to peer's configuration:
+
+[source,xml]
+----
+<module>
+    <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">prefix:bgp-peer</type>
+    <name>example-bgp-peer</name>
+    <host>192.0.2.1</host>                         // IP address or hostname of the speaker
+    <holdtimer>180</holdtimer>
+    <initiate-connection>false</initiate-connection>  // Connection will not be initiated by ODL
+    ...
+</module>
+----
+
+- *initiate-connection* - if set to false Opendaylight will not initiate connection to this peer. Default value is true for all peers.
+
+==== BGP Application Peer  ====
+
+BGP speaker needs to register all peers that can be connected to it (meaning if
+a BGP peer is not configured, the connection with Opendaylight won't be
+successful). As a first step, configure RIB. Then, instead of configuring
+regular peer, configure this application peer, with its own application RIB.
+Change the value in bold bgp-peer-id which is your local BGP-ID that will be
+used in BGP Best Path Selection algorithm.
+
+[source,xml]
+----
+<module>
+ <type xmlns:x="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">x:bgp-application-peer</type>
+ <name>example-bgp-peer-app</name>
+ <bgp-peer-id>10.25.1.9</bgp-peer-id>
+ <target-rib>
+  <type xmlns:x="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">x:rib-instance</type>
+  <name>example-bgp-rib</name>
+ </target-rib>
+ <application-rib-id>example-app-rib</application-rib-id>
+ ...
+</module>
+----
+
+-*bgp-peer-id* - Our local BGP identifier (the IP of the VM where Opendaylight is deployed), we use this in best path selection.
+-*target-rib* - RIB ID of existing RIB where the data should be transferred
+-*application-rib-id* - RIB ID of local application RIB (all the routes that you put to Opendaylight will be displayed here)
+
+To populate RIB use //TODO: internal link to Populate RIB
+
+In order to get routes advertised to other peers, you have to also configure the peers, like it's described in section BGP Peer //TODO: internal jump to section?
+
+=== Configuration through RESTCONF ===
+
+Another method to configure BGP is dynamically through RESTCONF. Before you
+start, make sure, you've completed steps 1-5 in Installation Guide. Instead of
+restarting Karaf, install another feature, that provides you the access to
+'restconf/config/' URLs.
+
+feature:install odl-netconf-connector-all
+
+To check what modules you have currently configured, check following link:
+http://localhost:8181/restconf/config/opendaylight-inventory:nodes/node/controller-config/yang-ext:mount/config:modules/
+This URL is also used to POST new configuration. If you want to change any
+other configuration that is listed here, make sure you include the correct
+namespaces. RESTCONF will tell you if some namespace is wrong.
+
+It is vital that you respect the order of steps described in user guide.
+
+==== RIB ====
+
+First, configure RIB. This module is already present in the configuration,
+therefore we change only the parameters we need. In this case, it's
+*bgp-rib-id* and *local-as*.
+
+.*POST:*
+[source,xml]
+----
+<module xmlns="urn:opendaylight:params:xml:ns:yang:controller:config">
+  <type xmlns:x="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">x:rib-impl</type>
+  <name>example-bgp-rib</name>
+  <bgp-rib-id xmlns="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">192.0.2.2</bgp-rib-id>
+  <local-as xmlns="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">64496</local-as>
+</module>
+----
+
+IMPORTANT: MIGHT NOT BE NEEDED depending on your BGP router, you might need a
+switch from linkstate attribute type 99 to 29. Check with your router vendor.
+Switch the field to true if your router supports type 29.
+
+.*POST:*
+[source,xml]
+----
+<module xmlns="urn:opendaylight:params:xml:ns:yang:controller:config">
+ <type xmlns:x="urn:opendaylight:params:xml:ns:yang:controller:bgp:linkstate">x:bgp-linkstate</type>
+ <name>bgp-linkstate</name>
+ <iana-linkstate-attribute-type xmlns="urn:opendaylight:params:xml:ns:yang:controller:bgp:linkstate">true</iana-linkstate-attribute-type>
+</module>
+----
+
+==== BGP Peer ====
+
+We also need to add new module to configuration (bgp-peer). In this case, the
+whole module needs to be configured. Please change values *host*, *holdtimer*
+and *peer-role* (if necessary).
+
+.*POST:*
+
+[source,xml]
+----
+<module xmlns="urn:opendaylight:params:xml:ns:yang:controller:config">
+ <type xmlns:x="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">x:bgp-peer</type>
+ <name>example-bgp-peer</name>
+ <host xmlns="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">192.0.2.1</host>
+ <holdtimer xmlns="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">180</holdtimer>
+ <peer-role xmlns="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">ibgp</peer-role>
+ <rib xmlns"urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">
+  <type xmlns:x="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:cfg">x:rib</type>
+  <name>example-bgp-rib</name>
+ </rib>
+ <peer-registry xmlns="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">
+  <type xmlns:x="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">x:bgp-peer-registry</type>
+  <name>global-bgp-peer-registry</name>
+ </peer-registry>
+ <advertized-table xmlns="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">
+  <type xmlns:x="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">x:bgp-table-type</type>
+  <name>ipv4-unicast</name>
+ </advertized-table>
+ <advertized-table xmlns="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">
+  <type xmlns:x="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">x:bgp-table-type</type>
+  <name>ipv6-unicast</name>
+ </advertized-table>
+ <advertized-table xmlns="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">
+  <type xmlns:x="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">x:bgp-table-type</type>
+  <name>linkstate</name>
+ </advertized-table>
+ <advertized-table xmlns="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">
+  <type xmlns:x="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">x:bgp-table-type</type>
+  <name>flowspec</name>
+ </advertized-table>
+</module>
+----
+
+This is all necessary information that you need to get ODL connect to your speaker.
+
+==== BGP Application Peer ====
+
+Change the value *bgp-peer-id* which is your local BGP ID that will be used in
+BGP Best Path Selection algorithm.
+
+.*POST:*
+[source,xml]
+----
+<module xmlns="urn:opendaylight:params:xml:ns:yang:controller:config">
+ <type xmlns:x="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">x:bgp-application-peer</type>
+ <name>example-bgp-peer-app</name>
+ <bgp-peer-id xmlns="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">10.25.1.9</bgp-peer-id> <!-- Your local BGP-ID that will be used in BGP Best Path Selection algorithm -->
+ <target-rib xmlns="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">
+  <type xmlns:x="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">x:rib-instance</type>
+  <name>example-bgp-rib</name>
+  </target-rib>
+ <application-rib-id xmlns="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">example-app-rib</application-rib-id>
+ <data-broker xmlns="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">
+  <type xmlns:x="urn:opendaylight:params:xml:ns:yang:controller:md:sal:binding">x:binding-async-data-broker</type>
+  <name>pingpong-binding-data-broker</name>
+ </data-broker>
+</module>
+----
+
+To populate the RIB through the RESTCONF : //TODO: internal link to Populate RIB
+
+=== Tutorials ===
+
+==== Viewing BGP Topology ====
+
+// TODO:
+
+==== Populate RIB ====
+
+If your peer is configured, you can populate the RIB by making following POST call to RESTCONF:
+
+*URL:* http://localhost:8181/restconf/config/bgp-rib:application-rib/example-app-rib/tables/bgp-types:ipv4-address-family/bgp-types:unicast-subsequent-address-family/
+
+- where example-app-rib is your application RIB id (that you specified in the configuration) and tables specifies AFI and SAFI of the data that you want to add.
+
+*POST:*
+
+*Content-Type:* application/xml
+
+[source,xml]
+----
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ipv4-routes xmlns="urn:opendaylight:params:xml:ns:yang:bgp-rib">
+ <ipv4-route>
+  <prefix>200.20.160.="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">Ibgp</peer-role>1/32</prefix>
+  <attributes>
+   <ipv4-next-hop>
+    <global>199.20.160.41</global>
+   </ipv4-next-hop><as-path/>
+   <multi-exit-disc>
+    <med>0</med>
+   </multi-exit-disc>
+   <local-pref>
+    <pref>100</pref>
+   </local-pref>
+   <originator-id>
+    <originator>41.41.41.41</originator>
+   </originator-id>
+   <origin>
+    <value>igp</value>
+   </origin>
+   <cluster-id>
+    <cluster>40.40.40.40</cluster>
+   </cluster-id>
+  </attributes>
+ </ipv4-route>
+</ipv4-routes>
+----
+
+The request results in *204 No content*. This is expected.
