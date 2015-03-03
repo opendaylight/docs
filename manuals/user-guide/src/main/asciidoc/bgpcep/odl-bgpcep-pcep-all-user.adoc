@@ -1,0 +1,157 @@
+== PCEP User Guide
+This user guide is updated to conform SNAPSHOT version of the service edition.
+HYDROGEN and HELIUM releases may have different configuration.
+
+=== Overview
+OpenDaylight SP edition comes preconfigured with baseline PCEP configuration.
+
+.Configuration files
+- *32-pcep.xml* (basic PCEP configuration, including session parameters)
+- *39-pcep-provider.xml* (configuring for PCEP provider).
+
+=== Configuring PCEP
+
+.[big]#Server binding#
+
+The default shipped configuration will start a PCE server on 0.0.0.0:4189. You can change this behavior in 39-pcep-provider.xml:
+
+[source,xml] 
+----
+<module>
+ <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:controller:pcep:topology:provider">prefix:pcep-topology-provider</type>
+ <name>pcep-topology</name>
+ <listen-address>192.168.122.55</listen-address>
+ <listen-port>4189</listen-port>
+...
+</module>
+----
+
+.[big]#Configure draft versions#
+
+.There are already two extensions for PCEP:
+- *draft-ietf-pce-stateful-pce* (in versions 02 and 07)
+- *draft-ietf-pce-pce-initiated-lsp* (versions crabbe-initiated-00 and ietf-initiated-00)
+
+TIP: They extend each other, so it is vital to load the extensions with compatible versions. In this case crabbe-initiated-00 is compatible with stateful-02 and ietf-initiated-00 is compatible with stateful-07. Default configuration is to use newest versions of the drafts.
+
+IMPORTANT: You have to complete all three steps in order to get stateful02 PCEP connection running and synchronized.
+
+.If you want to use older version:
+--
+. Switch commented code to ignore stateful-7 and ietf-initiated-00 versions in 32-pcep.xml:
+
+[source,xml]
+----
+ <!-- This block is draft-ietf-pce-stateful-pce-07 + draft-ietf-pce-inititated-pce-00 -->
+ <!--extension>
+  <type>pcepspi:extension</type>
+  <name>pcep-parser-ietf-stateful07</name>
+ </extension>
+ <extension>
+  <type>pcepspi:extension</type>
+  <name>pcep-parser-ietf-initiated00</name>
+ </extension-->
+ <!-- This block is draft-ietf-pce-stateful-pce-02 + draft-crabbe-pce-inititated-pce-00 -->
+<extension>
+ <type xmlns:pcepspi="urn:opendaylight:params:xml:ns:yang:controller:pcep:spi">pcepspi:extension</type>
+ <name>pcep-parser-ietf-stateful02</name>
+</extension>
+<extension>
+ <type xmlns:pcepspi="urn:opendaylight:params:xml:ns:yang:controller:pcep:spi">pcepspi:extension</type>
+ <name>pcep-parser-crabbe-initiated00</name>
+</extension>
+----
+
+. In the same file, make sure the proposal matches your chosen draft version. Change stateful07-proposal to stateful02-proposal :
+
+[source,xml]
+----
+<pcep-session-proposal-factory>
+    <type>pcep:pcep-session-proposal-factory</type>
+    <name>stateful02-proposal</name>
+</pcep-session-proposal-factory>
+----
+
+. In 39-pcep-provider.xml, stateful-plugin also needs to match. Change stateful07 to stateful02:
+
+[source,xml]
+----
+<stateful-plugin>
+    <type>prefix:pcep-topology-stateful</type>
+    <name>stateful02</name>
+</stateful-plugin>
+----
+
+.[big]#configure PCEP Segment routing#
+
+draft-sivabalan-pce-segment-routing-02 PCEP extension for Segment Routing,
+
+.[big]#PCEP Segment Routing initial configuration#
+--
+- 33-pcep-segment-routing.xml
+- To use Segment Routing uncomment two commented blocks
+- Activate parsers/serializes extension:
+continuation
+- Crete pcep-parser-segment-routing02 instance
+- Reconfigure (inject into list of extensions) global-pcep-extensions
+
+[source,xml]
+----
+<module>
+    <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:controller:pcep:sr02:cfg">prefix:pcep-parser-segment-routing02</type>
+    <name>pcep-parser-segment-routing02</name>
+</module>
+ 
+<module>
+    <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:controller:pcep:spi">prefix:pcep-extensions-impl</type>
+    <name>global-pcep-extensions</name>
+    <extension>
+        <type xmlns:pcepspi="urn:opendaylight:params:xml:ns:yang:controller:pcep:spi">pcepspi:extension</type>
+        <name>pcep-parser-segment-routing02</name>
+    </extension>
+</module>
+.
+.
+.
+<services xmlns="urn:opendaylight:params:xml:ns:yang:controller:config">
+    <service>
+        <type xmlns:pcepspi="urn:opendaylight:params:xml:ns:yang:controller:pcep:spi">pcepspi:extension</type>
+        <instance>
+            <name>pcep-parser-segment-routing02</name>
+            <provider>/config/modules/module[name='pcep-parser-segment-routing02']/instance[name='pcep-parser-segment-routing02']</provider>
+        </instance>
+    </service>
+</services>
+----
+
+.[big]#Advertise Segment Routing capability in Open Message:#
+- Instantiate pcep-session-proposal-factory-sr02
+- Reconfigure global-pcep-dispatcher
+
+[source,xml]
+----
+<module>
+    <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:controller:pcep:sr02:cfg">prefix:pcep-session-proposal-factory-sr02</type>
+    <name>pcep-session-proposal-factory-sr02</name>
+</module>
+<module>
+    <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:controller:pcep:impl">prefix:pcep-dispatcher-impl</type>
+    <name>global-pcep-dispatcher</name>
+    <pcep-session-proposal-factory>
+        <type xmlns:pcep="urn:opendaylight:params:xml:ns:yang:controller:pcep">pcep:pcep-session-proposal-factory</type>
+        <name>pcep-session-proposal-factory-sr02</name>
+    </pcep-session-proposal-factory>
+</module>
+.
+.
+.
+<services xmlns="urn:opendaylight:params:xml:ns:yang:controller:config">
+    <service>
+        <type xmlns:pcep="urn:opendaylight:params:xml:ns:yang:controller:pcep">pcep:pcep-session-proposal-factory</type>
+        <instance>
+            <name>pcep-session-proposal-factory-sr02</name>
+            <provider>/config/modules/module[name='pcep-session-proposal-factory-sr02']/instance[name='pcep-session-proposal-factory-sr02']</provider>
+        </instance>
+    </service>
+</services>
+----
