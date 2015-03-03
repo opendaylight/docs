@@ -26,7 +26,9 @@ include::ch-clustering.adoc[Setting Up Clustering on an OpenDaylight Controller]
 
 This second part of the user guide covers project specific usage instructions.
 
-include::addons/bgpcep.adoc[BGP LS PCEP]
+include::bgpcep/odl-bgpcep-bgp-all-user.adoc[BGP]
+
+include::bgpcep/odl-bgpcep-pcep-all-user.adoc[PCEP]
 
 include::addons/defense4all.adoc[Defense4All]
 
