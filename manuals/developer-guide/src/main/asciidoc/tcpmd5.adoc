@@ -1,4 +1,29 @@
 == TCP-MD5
 
-The Developer Guide for TCP-MD5 can be found on the OpenDaylight wiki here: https://wiki.opendaylight.org/view/TCPMD5:Helium_Developer_Guide
+=== Introduction
 
+The project is available from the tcpmd5 repository. It is split into:
+
+.[big]#*tcpmd5-api*#
+
+Defines the basic API and a dummy implementation.
+
+.[big]#*tcpmd5-jni*#
+
+Contains the JNI implementation and its Java binding. The core of the artifact is NativeKeyAccess.java, which is the Java frontend and binding class. It defines the two native methods, setChannelKey0() and isClassSupported0(). These are implemented in tcpmd5_jni.c. Individual instances are then provided by NativeKeyAccessFactory, which runs basic sanity tests before allowing itself being instantiated.
+
+.[big]#*tcpmd5-nio*#
+
+Contains the code to bridge the JNI component with java.nio package, specifically ServerSocketChannel, SocketChannel and SocketOption classes.
+
+.[big]#*tcpmd5-netty*#
+
+Contains the code to bridge the JNI component with netty.io, by providing the appropriate SocketChannelFactory.
+
+.[big]#*tcpmd5-controller-config*#
+
+Default (disabled) configuration for activation.
+
+.[big]#*tcpmd5-feature*#
+
+Karaf feature artifact, pulling in all the other artifacts.
