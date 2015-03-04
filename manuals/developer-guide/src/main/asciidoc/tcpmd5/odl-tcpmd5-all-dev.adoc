@@ -1,40 +1,56 @@
 == TCPMD5 Developer Guide
 
 === Overview
-Provide an overview of the feature, what it logical functionality it
-provides and why you might use it as a developer. To be clear the target
-audience for this guide is a developer who will be _using_ the feature
-to build something separate, but _not_ somebody who will be developing
-code for this feature itself.
 
-NOTE: More so than with user guides, the guide may cover more than one
-feature. If that is the case, be sure to list all of the features this
-covers.
+The TCPMD5 project delivers the support for providing access to MD5 Signature
+Option on operating systems which support it in their TCP stack.  The
+implementation is compliant with link:http://tools.ietf.org/html/rfc2385[RFC-2385].
+
+The project is available from the tcpmd5 repository. It is split into:
+
+tcpmd5-api
+
+tcpmd5-jni
+
+tcpmd5-nio
+
+tcpmd5-netty
+
+tcpmd5-controller-config
+
+tcpmd5-feature
 
 === TCPMD5 Architecture
-Provide information about feature components and how they work together.
-Also include information about how the feature integrates with
-OpenDaylight. An architecture diagram could help. This may be the same
-as the diagram used in the user guide, but it should likely be less
-abstract and provide more information that would be applicable to a
-developer.
+
+This project defines a new TCP option for carrying an MD5 digest
+in a TCP segment. This digest acts like a signature for that segment,
+incorporating information known only to the connection end points.
 
 === Key APIs and Interfaces
-Document the key things a user would want to use. For some features,
-there will only be one logical grouping of APIs. For others there may be
-more than one grouping.
 
-Assuming the API is MD-SAL- and YANG-based, the APIs will be available
-both via RESTCONF and via Java APIs. Giving a few examples using each is
-likely a good idea.
+As this project is fairly small, it provides only one feature that installs and
+provides all APIs and implementations for this project.
 
-==== API Group 1
-Provide a description of what the API does and some examples of how to
-use it.
+==== tcpmd5-api
 
-==== API Group 2
-Provide a description of what the API does and some examples of how to
-use it.
+Defines the basic API and a dummy implementation.
 
-=== API Reference Documentation
-Provide links to JavaDoc, REST API documentation, etc.
+==== tcpmd5-jni
+
+Contains the JNI implementation and its Java binding. The core of the artifact
+is NativeKeyAccess.java, which is the Java frontend and binding class. It
+defines the two native methods, setChannelKey0() and isClassSupported0(). These
+are implemented in tcpmd5_jni.c. Individual instances are then provided by
+NativeKeyAccessFactory, which runs basic sanity tests before allowing itself
+being instantiated.
+
+==== tcpmd5-nio
+
+Contains the code to bridge the JNI component with java.nio package,
+specifically ServerSocketChannel, SocketChannel and SocketOption classes.
+
+==== tcpmd5-netty
+
+Contains the code to bridge the JNI component with netty.io, by providing the
+appropriate SocketChannelFactory.
+
