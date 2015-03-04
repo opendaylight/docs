@@ -1,17 +1,35 @@
 == TCPMD5 Developer Guide
 
 === Overview
-Provide an overview of the feature, what it logical functionality it
-provides and why you might use it as a developer. To be clear the target
-audience for this guide is a developer who will be _using_ the feature
-to build something separate, but _not_ somebody who will be developing
-code for this feature itself.
 
-NOTE: More so than with user guides, the guide may cover more than one
-feature. If that is the case, be sure to list all of the features this
-covers.
+The project is available from the tcpmd5 repository. It is split into:
+
+.[big]#*tcpmd5-api*#
+
+Defines the basic API and a dummy implementation.
+
+.[big]#*tcpmd5-jni*#
+
+Contains the JNI implementation and its Java binding. The core of the artifact is NativeKeyAccess.java, which is the Java frontend and binding class. It defines the two native methods, setChannelKey0() and isClassSupported0(). These are implemented in tcpmd5_jni.c. Individual instances are then provided by NativeKeyAccessFactory, which runs basic sanity tests before allowing itself being instantiated.
+
+.[big]#*tcpmd5-nio*#
+
+Contains the code to bridge the JNI component with java.nio package, specifically ServerSocketChannel, SocketChannel and SocketOption classes.
+
+.[big]#*tcpmd5-netty*#
+
+Contains the code to bridge the JNI component with netty.io, by providing the appropriate SocketChannelFactory.
+
+.[big]#*tcpmd5-controller-config*#
+
+Default (disabled) configuration for activation.
+
+.[big]#*tcpmd5-feature*#
+
+Karaf feature artifact, pulling in all the other artifacts.
 
 === TCPMD5 Architecture
+
 Provide information about feature components and how they work together.
 Also include information about how the feature integrates with
 OpenDaylight. An architecture diagram could help. This may be the same
@@ -20,6 +38,7 @@ abstract and provide more information that would be applicable to a
 developer.
 
 === Key APIs and Interfaces
+
 Document the key things a user would want to use. For some features,
 there will only be one logical grouping of APIs. For others there may be
 more than one grouping.
