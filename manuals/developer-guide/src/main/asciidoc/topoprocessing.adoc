@@ -1,0 +1,30 @@
+== Topology Processing Framework
+Content on developing using the Topology Processing Framework can be found on 
+the OpenDaylight wiki here: 
+https://wiki.opendaylight.org/view/Topology_Processing_Framework:Main
+
+=== Features Overview
+There are two features inside topoprocessing project: +
+. odl-topoprocessing-framework - which provides Topology Processing Framework 
+functionality
+. odl-topoprocessing-mlmt - which performs multitechnology and multilayer 
+operations on top of overlay topologies (provided by Topology Processing 
+Framework)
+
+=== odl-topoprocessing-framework Architecture
+Contains of topoprocessing-api, topoprocessing-spi and topoprocessing-impl 
+bundles.
+topoprocessing-api - contains correlation definitions
+topoprocessing-spi - entry point for topoprocessing service (start and close)
+topoprocessing-impl - contains implemented handlers, listeners and aggregators
+
+=== odl-topoprocessing-mlmt Architecture
+mlmt provides multilayer and multitechnology views based on overlay topologies
+
+=== Key APIs and Interfaces
+Basic SPI class is TopoProcessingProvider which provides startup and shutdown 
+methods. Otherwise the framework communicates via requests and outputs stored 
+in DataStores.
+
+=== API Reference Documentation
+Provide links to JavaDoc, REST API documentation, etc. [TBD]
