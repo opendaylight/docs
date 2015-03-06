@@ -1,0 +1,27 @@
+== USC
+
+=== Overview
+
+The USC core feature provides REST API, manager, and plugin for unified
+secure channels.  The REST API provides a northbound api.  The manager
+monitors, maintains, and provides channel related services.  The plugin
+handles the lifecycle of channels.
+
+=== USC  Architecture
+
+TBD: Architecture Diagram
+
+=== USC APIs and Interfaces
+
+This section describes the APIs for interacting with the unified secure
+channels.
+
+==== USC Topology
+
+The USC project maintains a topology that is YANG-based in MD-SAL.
+These models are available via RESTCONF.
+
+=== API Reference Documentation
+
+TBD: Provide links to JavaDoc, REST API documentation, etc.
+
