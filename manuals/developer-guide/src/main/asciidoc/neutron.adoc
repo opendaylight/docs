@@ -1,0 +1,91 @@
+== Neutron Northbound
+
+=== How to Write a SB Neutron Consumer
+
+In Lithium, there will be two options for SB Neutron Consumers:
+
+* Using the legacy I*Aware interfaces
+* Listening for changes via the Neutron YANG model
+
+=== How to use the legacy I*Aware interfaces
+
+For each neutron data object, there is an I*Aware interface defined to allow
+southbound providers that don't want to use the MD-SAL to register with the
+Neutron service to be made aware of potential operations on that type of
+object.  For each modification operation (create, update and delete), the 
+I*Aware interface defines a pair of calls (The general template
+is shown in the following table, please see javadoc of the specific interface
+for specific details)
+
+.Table I*Aware Methods
+|===
+|Create |Update |Delete
+
+|canCreate*()
+|canUpdate*()
+|canDelete*()
+
+|neutron*Created()
+|neutron*Updated()
+|neutron*Deleted()
+|===
+
+==== The semantics of the can*() methods
+
+Each of the can*() methods gives a southbound provider a vote on whether a
+proposed change is acceptable or not. A southbound provider that implements
+a particular can*() method is expected to return an HTTP response code as
+its "vote" - values between 200 and 299 are a "yes" vote, other values are
+a "no" vote.  The neutron white board pattern is an all or nothing affair:
+if any one southbound provider votes no on a change, that change is rejected.
+
+For the canCreate*() method, the southbound provider recieves the proposed
+object.  In the case of canDelete*(), the southbound provider recieves the
+current object that will be removed.  Lastly, the canUpdate*() method passed
+the current object and the proposed delta.
+
+==== The semantics of the neutron*() methods
+
+Once all southbound providers vote yes for a particular change, the neutron
+service transcribes the change into its caches/MD-SAL models and then calls
+the appropriate neutron*() method on each registered southbound provider.
+At this point, the southbound provider is expected to meet the request as
+best they can and when they can, taking responsibility for any errors that
+might be incurred (there is no back signalling of errors).  For these calls,
+the modified object is provided in all cases, except for the neutron*Deleted()
+method.  This passes an instance of the deleted object that will be garbage
+collected once all the southbound providers are finished with it.
+
+==== How to register your consumer with the Neutron Service
+
+A southbound provider that wants to register with the neutron service
+via a particular I*Aware interface must first implement that interface.
+Then, in the init class of its Activator method, it should add the name of
+the implemented I*Aware class as an interface that is managed.  The following
+example from the Neutron test dummy provider shows it is registering for
+*all* I*Aware interfaces:
+
+[source,java]
+----
+    @Override
+    public void init(BundleContext context, DependencyManager manager) throws Exception {
+       manager.add(createComponent().setInterface(new String[] {
+           INeutronFirewallAware.class.getName(),
+           INeutronFirewallPolicyAware.class.getName(),
+           INeutronFirewallRuleAware.class.getName(),
+           INeutronFloatingIPAware.class.getName(),
+           INeutronLoadBalancerAware.class.getName(),
+           INeutronLoadBalancerHealthMonitorAware.class.getName(),
+           INeutronLoadBalancerListenerAware.class.getName(),
+           INeutronLoadBalancerPoolAware.class.getName(),
+           INeutronLoadBalancerPoolMemberAware.class.getName(),
+           INeutronNetworkAware.class.getName(),
+           INeutronPortAware.class.getName(),
+           INeutronRouterAware.class.getName(),
+           INeutronSecurityGroupAware.class.getName(),
+           INeutronSecurityRuleAware.class.getName(),
+           INeutronSubnetAware.class.getName() }, null));
+    }
+---- 
+
+=== How to use the Neutron YANG model
