@@ -1,0 +1,43 @@
+== Control And Provisioning of Wireless Access Points (CAPWAP) Protocol Plugin
+
+=== Overview
+CAPWAP plugin project fills the gap Opendaylight Controller has w.r.t. 
+managing CAPWAP compliant wireless termination point (WTP) network devices 
+present in Enterprises networks. Intelligent applications (e.g. Radio planning, etc) 
+can be developed by taping into the operational states, made available via 
+REST APIs, of WTP network devices.
+
+=== CAPWAP Architecture
+TBD: Architecture Diagram
+
+=== Scope of CAPWAP Project
+In Lithium release, CAPWAP project aims to only detect the WTPs and store their 
+attributes in operation data store, which will be accessible via REST and JAVA APIs.
+
+=== Configuring CAPWAP
+
+TBD: Describe how to configure CAPWAP AC (Multicast groups to listen 
+for WTP Discovery messages, AC Name, AC Descriptor, etc).
+
+=== Administering or Managing CAPWAP
+
+TBD: Describe steps for viewing CAPWAP topology and operational data.
+
+=== Tutorials
+
+==== CAPWAP Plugin Bringup Steps
+
+===== Overview
+This tutorial can be used as a walk through to understand the steps for 
+starting the CAPWAP feature, doing initial configuration for AC, 
+detecting CAPWAP WTPs, accessing the operation states of WTPs.
+
+===== Prerequisites
+It is assumed that user has access to a hardware/software based CAPWAP compliant WTP.
+
+===== Target Environment
+TBD: Topology Diagram
+
+===== Instructions
+TBD: Describe Steps
+
