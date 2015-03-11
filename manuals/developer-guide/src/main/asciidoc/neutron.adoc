@@ -1,0 +1,22 @@
+== Neutron Northbound
+
+=== How to Write a SB Neutron Consumer
+
+In Lithium, there will be two options for SB Neutron Consumers:
+
+* Using the legacy I*Aware interfaces
+* Listening for changes via the Neutron YANG model
+
+=== How to use the legacy I*Aware interfaces
+
+For each neutron data object, there is an I*Aware interface defined, which
+usually consists of three pairs of messages (one pair each for create, update,
+and delete). The semantics of each of this pair of messages is discussed below.
+
+==== The semantics of the can*() methods
+
+==== The semantics of the *() methods
+
+==== How to register your consumer with the Neutron Service
+
+=== How to use the Neutron YANG model
