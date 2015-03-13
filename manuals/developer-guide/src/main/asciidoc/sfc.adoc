@@ -2,3 +2,9 @@
 
 More information on Service Function Chaining can be found on the OpenDaylight wiki here: https://wiki.opendaylight.org/view/Service_Function_Chaining:Main
 
+include::sfc/odl-sfc-sb-rest-dev.adoc[Southbound REST Plugin developer guide]
+
+include::sfc/odl-sfc-ovs-dev.adoc[SFC OVS developer guide]
+
+include::sfc/classifier-dev.adoc[Classifier Control and Data Plane developer guide]
+

@@ -1,4 +1,7 @@
-== Service Function Chaining
+== SFC
 
-Chapter on Service Function Chaining
+include::sfc/odl-sfc-sb-rest-user.adoc[Southbound REST plugin user guide]
 
+include::sfc/odl-sfc-ovs-user.adoc[SFC OVS user guide]
+
+include::sfc/classifier-user.adoc[Classifier configuration user guide]
