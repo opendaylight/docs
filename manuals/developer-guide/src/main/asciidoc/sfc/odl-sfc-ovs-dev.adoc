@@ -1,0 +1,14 @@
+=== SFC OVS Developer Guide
+
+==== Overview
+In current state, SFC OVS provides mapping between SFF and OVS Bridge. It automatically configures SFF according to received OVS Bridge data. The next step is the opposite direction: configuring OVS Bridge according to SFF data.
+
+==== SFC OVS Architecture
+SFC OVS uses OVSDB MDSAL for communication with Open vSwitch devices. 
+
+==== Key APIs and Interfaces
+* Provides API to configure/control OVS through SFC
+* Support for these device types:
+** Service Function Forwarder (SFF)
+** (to be done) Service Function (SF)
+** (to be done) Classifier
