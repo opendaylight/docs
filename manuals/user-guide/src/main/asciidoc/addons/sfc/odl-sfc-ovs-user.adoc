@@ -1,0 +1,16 @@
+== SFC OVS User Guide
+
+=== Overview
+In current state, SFC OVS provides mapping between SFF and OVS Bridge. It automatically configures SFF according to received OVS Bridge data. The next step is the opposite direction: configuring OVS Bridge according to SFF data.
+
+=== SFC OVS Architecture
+SFC OVS uses OVSDB MDSAL for communication with Open vSwitch devices.
+
+=== Configuring SFC OVS
+TBA
+
+=== Administering or Managing SFC OVS
+TBA
+
+=== Tutorials
+TBA

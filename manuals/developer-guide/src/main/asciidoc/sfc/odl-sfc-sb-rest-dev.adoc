@@ -1,0 +1,22 @@
+== SFC Southbound REST Plugin Developer Guide
+
+=== Overview
+The Southbound REST Plugin is used to send configuration from DataStore down to network devices supporting a REST API (i.e. they have a configured REST Uri). It supports POST/PUT/DELETE operations, which are triggered accordingly to changes in DataStore.
+
+In the current state it listens to changes in these DataStores:
+* Access List (ACL)
+* Service Function (SF)
+* Service Function Group (SFG)
+* Service Function Forwader (SFF)
+* Rendered Service Path (RSP)
+
+=== Southbound REST Plugin Architecture
+Listeners in sfc-sb-rest/
+
+=== Key APIs and Interfaces
+* Provides Southbound REST API designated to listening REST devices, supports POST/PUT/DELETE operations on these data types:
+** Access List (ACL)
+** Service Function (SF)
+** Service Function Group (SFG)
+** Service Function Forwarder (SFF)
+** Rendered Service Path (RSP)

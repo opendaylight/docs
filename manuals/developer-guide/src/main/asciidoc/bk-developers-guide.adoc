@@ -76,7 +76,11 @@ include::pcmm.adoc[]
 
 include::plugin2oc.adoc[]
 
-include::sfc.adoc[]
+include::sfc/odl-sfc-sb-rest-dev.adoc[SFC Southbound REST Plugin Developer guide]
+
+include::sfc/odl-sfc-ovs-dev.adoc[SFC OVS Developer guide]
+
+include::sfc/classifier-dev.adoc[SFC Classifier Control and Data Plane Developer guide]
 
 include::snbi.adoc[]
 
