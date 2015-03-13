@@ -44,6 +44,14 @@ include::addons/plugin2oc.adoc[Plugin for OpenContrail]
 
 include::tcpmd5/odl-tcpmd5-all-user.adoc[TCP-MD5]
 
+include::sfc/odl-sfc-ui-user.adoc[SFC UI User guide]
+
+include::sfc/odl-sfc-sb-rest-user.adoc[SFC Southbound REST plugin User guide]
+
+include::sfc/odl-sfc-ovs-user.adoc[SFC OVS User guide]
+
+include::sfc/classifier-user.adoc[SFC Classifier configuration User guide]
+
 include::usc/odl-usc-channel-user.adoc[USC]
 
 include::addons/vtn.adoc[VTN]
