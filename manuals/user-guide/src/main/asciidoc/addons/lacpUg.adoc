@@ -1,0 +1,77 @@
+== LACP
+=== Overview 
+The LACP(Link Aggregation Control Protocol) project provides LACP functionality.
+The User Guide contains information about how to use the LACP plugin project with OpenDaylight, including configurations.
+
+=== Running the LACP project 
+
+==== Check out the project using git
+git clone https://git.opendaylight.org/gerrit/p/lacp.git
+
+The above command will create a directory called "lacp" with the project.
+
+==== Run the distribution
+To run the karaf distribution, you can use the following command:
+
+*./distribution/karaf/target/assembly/bin/karaf*
+
+Install following components,
+
+feature:install odl-restconf odl-lacp-plugin
+
+==== Create a network using mininet 
+*sudo mn --controller=remote,ip=<Controller IP> --custom=lacp_custom.py --switch ovsk,protocols=OpenFlow13*
+
+The above command will create a virtual network consisting of 1 switch,2 host(s) with bonded interface with switch(act as external switch with passive mode),2 host(s) act as normal endpoints.
+
+Each switch will connect to the controller located at the specified IP, i.e. 127.0.0.1
+
+The custom mininet script *lacp_custom.py*, can be downloaded from integration script repository (integration/test/csit/suites/lacp-of13)
+
+==== Generating network traffic using mininet
+h1 ping h2
+
+The above command will cause host1 (h1) to ping host2 (h2)
+
+pingall
+
+'pingall' will cause each host to ping every other host.
+
+**Note:**
+Flow should be added manually on openflow switch.Since LACP doesn't create flows and its create the link aggregation group port(LAG) and add the ports to lag membership
+
+=== List of aggregators available for a node
+ http://<ControllerIP >:8181/restconf/operational/opendaylight-inventory:nodes/node/<node-id>
+
+Aggregator information are available within xml tag <lacp-aggregators>
+
+=== To view only the information of an aggregator 
+ http://<ControllerIP>:8181/restconf/operational/opendaylight-inventory:nodes/node/<node-id>/lacp-aggregators/<agg-id>
+
+Group-id associated with the aggregator can be available with the tag <lag-groupid>
+The group table entry information for the <lag-groupid> added for the aggregator shall also be available with the opendaylight-inventory node database.
+
+=== To view physical port information
+http://< ControllerIP >:8181/restconf/operational/opendaylight-inventory:nodes/node/<node-id>/node-connector/<node-connector-id>
+
+Ports that are associated with an aggregator will have the tag < lacp-agg-ref> updated with valid aggregator information.
+
+=== Miscellaneous mininet commands
+Using mininet *m* utility,user can create link down on specific host on the bonded interface 
+
+*./m h1*
+
+ifconfig h1 h1-eth1 down
+
+This will bring down the link between switch1 (s1) and h1-eth1 (h1). h1-eth1 is bonded interface on host(h1) and its member of bond0 interface.
+
+*./m h1*
+
+ifconfig h1 h1-eth1 up
+
+This will bring up the link between switch1 (s1) and h1-eth1 (h1). h1-eth1 is bonded interface on host(h1) and its member of bond0 interface.
+
+
+=== Configuration of LACP Components
+
+None
