@@ -1,0 +1,56 @@
+== LACP
+==== Link Aggregation Control Protocol Overview
+LACP feature can be used to aggregate multiple links between
+Opendaylight controlled network switches and its directly
+connected LACP enabled legacy switches or hosts operating in active mode.
+
+LACP passively negotiates automatic bundling of multiple links to form
+a single logical interface.
+The logical interface is currently realised in the Opendaylight controlled
+switches using Openflow (1.3) group table functionality.
+The realisation of the logical interface can be other mean by providing
+a pluggable extension to the LACP.
+
+==== LACP Architecture
+* *Inventory*
+   ** Responsible for maintaining list of lacp supporting opendaylight
+     controlled switches, list of logical interfaces created and physical
+     links that are part of the logical interfaces.
+* *PacketHandler*
+   ** Responsible for receiving and transmitting LACP PDUs to the
+     LACP enabled endpoint 
+* *Core*
+   ** Responsible for the LACP state machine processing.
+
+==== Realizing logical interface in switches
+
+===== Group Table programming
+The logical interface representing the aggregated multiple physical links
+are realized in the opendaylight controlled switches by creating a 
+group table entry (supported from Openflow 1.3).
+The group table entry has a group type *Select* and Action referring to
+the aggregated physical links.
+Any data traffic to be sent out through the logical interface can be sent
+through the *Group entry* available for the logical interface.
+
+====== Alternate ways of realizing logical interface
+
+An interface for the logical interface creation / modification / deletion
+is provided by the LACP feature. The plugin to realize the logical interface
+has to implement this interface and provide implementation for the following 
+interface functions
+
+* LACreateLag(nodeId, aggId, portId)
+
+* LADeleteLag(nodeId, aggId)
+
+* LAUpdateLag(nodeId, aggId, portId, action)
+
+===== Realizing logical interface using other pluggable extension
+The above mentioned interface implementations has to be provided by
+the newly added pluggable extension. These functions must have a way
+of informing the logical interface related operation to the switch.
+It also has to provide a mapping so as to handle the data 
+traffic transmitted through the logical interface using the hardware
+support available for that logical interface in the switch.
+
