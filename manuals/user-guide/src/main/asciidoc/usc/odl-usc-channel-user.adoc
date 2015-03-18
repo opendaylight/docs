@@ -1,0 +1,51 @@
+== Unified Secure Channel
+This document describes how to use the Unified Secure Channel (USC) 
+feature in OpenDaylight.  This document contains configuration,
+administration, and management sections for the feature.
+
+=== Overview
+In enterprise networks, more and more controller and network
+management systems are being deployed remotely, such as in the
+cloud. Additionally, enterprise networks are becoming more
+heterogeneous - branch, IoT, wireless (including cloud access
+control). Enterprise customers want a converged network controller
+and management system solution.  This feature is intended for
+device and network administrators looking to use unified secure
+channels for their systems.
+
+=== USC Channel Architecture
+TBD: Architecture Diagram
+
+=== Installing USC Channel
+To install USC, download OpenDaylight and use the Karaf console
+to install the following feature:
+
+odl-usc-channel-ui
+
+=== Configuring USC Channel
+TBD: Describe configuration of plugin and agent.
+
+=== Administering or Managing USC Channel
+TBD: Describe viewing USC topology steps.
+
+=== Tutorials
+Below are tutorials for USC Channel
+
+==== Viewing USC Channel
+The purpose of this tutorial is to view USC Channel
+
+===== Overview
+This tutorial walks users through the process of viewing the USC
+Channel environment topology including established channels connecting
+the controllers and devices in the USC topology.
+
+===== Prerequisites
+For this tutorial, we assume that a device running a USC agent
+is already installed.
+
+===== Target Environment
+TBD: Topology Diagram
+
+===== Instructions
+TBD: Describe Steps
+
