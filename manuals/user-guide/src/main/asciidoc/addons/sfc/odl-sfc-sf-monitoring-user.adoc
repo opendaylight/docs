@@ -1,0 +1,31 @@
+=== Service Function Monitoring
+Refer to this template to identify the required sections and information
+that you should  provide for a User Guide. The user guide should contain
+configuration, administration, management, using, and troubleshooting
+sections for the feature.
+
+==== SF Monitoring Overview
+Provide an overview of the feature and the use case. Also include the
+audience who will use the feature. For example,  audience can be the
+network administrator, cloud administrator, network engineer, system
+administrators, and so on.
+
+==== SF Monitoring Architecture
+Provide information about feature components and how they work together.
+Also include information about how the feature integrates with
+OpenDaylight. An architecture diagram could help.
+
+==== The way of getting SF monitor information
+This part uses netconf agent as an example of how to getting the Service
+Function Monitoring information.
+
+===== SF netconf server configuration
+Provide information about feature components and how they work together.
+Also include information about how the feature integrates with
+OpenDaylight. An architecture diagram could help.
+
+===== ODL configuration
+Provide information about feature components and how they work together.
+Also include information about how the feature integrates with
+OpenDaylight. An architecture diagram could help.
+
