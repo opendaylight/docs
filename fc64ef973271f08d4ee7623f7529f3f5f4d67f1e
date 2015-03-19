@@ -2,6 +2,322 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a93c517_00cd5f31",
+        "filename": "manuals/user-guide/src/main/asciidoc/tcpmd5/odl-tcpmd5-all-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2595
+      },
+      "writtenOn": "2015-03-19T11:11:21Z",
+      "side": 1,
+      "message": "Who is the audience for this document? Please mention this in the overview.",
+      "revId": "fc64ef973271f08d4ee7623f7529f3f5f4d67f1e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_e07953fd",
+        "filename": "manuals/user-guide/src/main/asciidoc/tcpmd5/odl-tcpmd5-all-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 2595
+      },
+      "writtenOn": "2015-03-19T11:11:21Z",
+      "side": 1,
+      "message": "Do not use word contractions in formal writing. This should be rewritten as cannot.",
+      "range": {
+        "startLine": 11,
+        "startChar": 62,
+        "endLine": 11,
+        "endChar": 67
+      },
+      "revId": "fc64ef973271f08d4ee7623f7529f3f5f4d67f1e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_606d4332",
+        "filename": "manuals/user-guide/src/main/asciidoc/tcpmd5/odl-tcpmd5-all-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 2595
+      },
+      "writtenOn": "2015-03-19T11:11:21Z",
+      "side": 1,
+      "message": "Configuring",
+      "range": {
+        "startLine": 13,
+        "startChar": 4,
+        "endLine": 13,
+        "endChar": 17
+      },
+      "revId": "fc64ef973271f08d4ee7623f7529f3f5f4d67f1e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_007f9fe1",
+        "filename": "manuals/user-guide/src/main/asciidoc/tcpmd5/odl-tcpmd5-all-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 2595
+      },
+      "writtenOn": "2015-03-19T11:11:21Z",
+      "side": 1,
+      "message": "its",
+      "range": {
+        "startLine": 17,
+        "startChar": 47,
+        "endLine": 17,
+        "endChar": 51
+      },
+      "revId": "fc64ef973271f08d4ee7623f7529f3f5f4d67f1e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_c088d7e9",
+        "filename": "manuals/user-guide/src/main/asciidoc/tcpmd5/odl-tcpmd5-all-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 2595
+      },
+      "writtenOn": "2015-03-19T11:11:21Z",
+      "side": 1,
+      "message": "the BGP",
+      "range": {
+        "startLine": 19,
+        "startChar": 22,
+        "endLine": 19,
+        "endChar": 25
+      },
+      "revId": "fc64ef973271f08d4ee7623f7529f3f5f4d67f1e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_a0834bcb",
+        "filename": "manuals/user-guide/src/main/asciidoc/tcpmd5/odl-tcpmd5-all-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 2595
+      },
+      "writtenOn": "2015-03-19T11:11:21Z",
+      "side": 1,
+      "message": "perform the following steps:",
+      "range": {
+        "startLine": 19,
+        "startChar": 36,
+        "endLine": 19,
+        "endChar": 65
+      },
+      "revId": "fc64ef973271f08d4ee7623f7529f3f5f4d67f1e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_806acf18",
+        "filename": "manuals/user-guide/src/main/asciidoc/tcpmd5/odl-tcpmd5-all-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 2595
+      },
+      "writtenOn": "2015-03-19T11:11:21Z",
+      "side": 1,
+      "message": "Setting",
+      "range": {
+        "startLine": 72,
+        "startChar": 6,
+        "endLine": 72,
+        "endChar": 16
+      },
+      "revId": "fc64ef973271f08d4ee7623f7529f3f5f4d67f1e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_20773b04",
+        "filename": "manuals/user-guide/src/main/asciidoc/tcpmd5/odl-tcpmd5-all-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 2595
+      },
+      "writtenOn": "2015-03-19T11:11:21Z",
+      "side": 1,
+      "message": "out of scope",
+      "range": {
+        "startLine": 72,
+        "startChar": 52,
+        "endLine": 72,
+        "endChar": 68
+      },
+      "revId": "fc64ef973271f08d4ee7623f7529f3f5f4d67f1e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_4074c7fc",
+        "filename": "manuals/user-guide/src/main/asciidoc/tcpmd5/odl-tcpmd5-all-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 2595
+      },
+      "writtenOn": "2015-03-19T11:11:21Z",
+      "side": 1,
+      "message": "for",
+      "range": {
+        "startLine": 72,
+        "startChar": 68,
+        "endLine": 72,
+        "endChar": 71
+      },
+      "revId": "fc64ef973271f08d4ee7623f7529f3f5f4d67f1e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_e0607337",
+        "filename": "manuals/user-guide/src/main/asciidoc/tcpmd5/odl-tcpmd5-all-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 2595
+      },
+      "writtenOn": "2015-03-19T11:11:21Z",
+      "side": 1,
+      "message": "its",
+      "range": {
+        "startLine": 76,
+        "startChar": 47,
+        "endLine": 76,
+        "endChar": 51
+      },
+      "revId": "fc64ef973271f08d4ee7623f7529f3f5f4d67f1e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_0066bf51",
+        "filename": "manuals/user-guide/src/main/asciidoc/tcpmd5/odl-tcpmd5-all-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 2595
+      },
+      "writtenOn": "2015-03-19T11:11:21Z",
+      "side": 1,
+      "message": "perform the following steps:",
+      "range": {
+        "startLine": 78,
+        "startChar": 36,
+        "endLine": 78,
+        "endChar": 64
+      },
+      "revId": "fc64ef973271f08d4ee7623f7529f3f5f4d67f1e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_60546354",
+        "filename": "manuals/user-guide/src/main/asciidoc/tcpmd5/odl-tcpmd5-all-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 2595
+      },
+      "writtenOn": "2015-03-19T11:11:21Z",
+      "side": 1,
+      "message": "delete",
+      "range": {
+        "startLine": 105,
+        "startChar": 44,
+        "endLine": 105,
+        "endChar": 50
+      },
+      "revId": "fc64ef973271f08d4ee7623f7529f3f5f4d67f1e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_204e5bc2",
+        "filename": "manuals/user-guide/src/main/asciidoc/tcpmd5/odl-tcpmd5-all-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 2595
+      },
+      "writtenOn": "2015-03-19T11:11:21Z",
+      "side": 1,
+      "message": "Setting a password on PCC is out of scope for this document.",
+      "range": {
+        "startLine": 115,
+        "startChar": 6,
+        "endLine": 115,
+        "endChar": 72
+      },
+      "revId": "fc64ef973271f08d4ee7623f7529f3f5f4d67f1e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_404b67b0",
+        "filename": "manuals/user-guide/src/main/asciidoc/tcpmd5/odl-tcpmd5-all-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 2595
+      },
+      "writtenOn": "2015-03-19T11:11:21Z",
+      "side": 1,
+      "message": "you have",
+      "range": {
+        "startLine": 119,
+        "startChar": 40,
+        "endLine": 119,
+        "endChar": 46
+      },
+      "revId": "fc64ef973271f08d4ee7623f7529f3f5f4d67f1e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a93c517_a54a9081",
         "filename": "manuals/user-guide/src/main/asciidoc/tcpmd5/odl-tcpmd5-all-user.adoc",
         "patchSetId": 3
@@ -13,6 +329,29 @@
       "writtenOn": "2015-03-12T21:22:20Z",
       "side": 1,
       "message": "can you split this line to make it more readable, please?",
+      "revId": "fc64ef973271f08d4ee7623f7529f3f5f4d67f1e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_e0c71311",
+        "filename": "manuals/user-guide/src/main/asciidoc/tcpmd5/odl-tcpmd5-all-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 2595
+      },
+      "writtenOn": "2015-03-19T11:11:21Z",
+      "side": 1,
+      "message": "Enabling",
+      "range": {
+        "startLine": 209,
+        "startChar": 0,
+        "endLine": 209,
+        "endChar": 6
+      },
       "revId": "fc64ef973271f08d4ee7623f7529f3f5f4d67f1e",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
