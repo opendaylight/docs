@@ -1,0 +1,35 @@
+== IoTDM Developer Guide
+
+=== Overview
+See https://wiki.opendaylight.org/view/IoTDM_Overview#Overview
+The onem2m resource tree according to the procedures documented in
+TS0001: OneM2M Functional Architecture, and TS0004: OneM2M Service
+Layer Core Protocol Specification.  The two official methods to
+access the data tree are HTTP and CoAP.  Typically, applications
+access the data tree with HTTP using the procedures outlined
+in TS0009 OneM2M HTTP Protocol Bindings.  And, again, typically,
+devices or things access the data tree using CoAP using the
+procedures outlined in TS0008 OneM2M CoAP Protocol Bindings.
+These documents are available on http://onem2m.org
+
+The karaf feature odl-iotdm-onem2m is required in order to access
+the data tree before apps, and things can access it.
+
+=== OneM2M Architecture
+ More text to follow
+
+=== Key APIs and Interfaces
+ More text to follow
+
+RESTconf is available too but generally HTTP and CoAP are used to
+access the oneM2M data tree.
+
+==== HTTP
+ More text to follow
+
+==== CoAP
+ More text to follow
+
+=== API Reference Documentation
+ More text to follow
+
