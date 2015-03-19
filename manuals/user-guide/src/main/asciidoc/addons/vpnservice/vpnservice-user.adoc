@@ -1,0 +1,25 @@
+== VPNservice
+== Overview
+The VPNservice project aims at providing the L3 VPN as a service functionality in ODL
+The user guide provides information about configuring the VPNservice module in Opendaylight
+
+=== Running the VPNservice
+
+==== check out the project using git
+git clone https://git.opendaylight.org/gerrit/p/vpnservice.git
+
+This would create a directory called "vpnservice"
+
+==== Run the distribution
+To run the karaf distribution, ou would need to execute the following command:
+*./distribution/karaf/target/assembly/bin/karaf*
+
+Install vpnservice
+
+feature:install odl-vpnservice-core
+
+==== VPN Service APIs
+
+- CreatePort() 
+- CreateVPN()
+- AddPorttoVPN()
