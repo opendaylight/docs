@@ -1,21 +1,23 @@
 == LACP
 ==== Link Aggregation Control Protocol Overview
-LACP feature can be used to aggregate multiple links between
-Opendaylight controlled network switches and its directly
+The LACP feature can be used to aggregate multiple links between
+OpenDaylight controlled network switches and their directly
 connected LACP enabled legacy switches or hosts operating in active mode.
 
 LACP passively negotiates automatic bundling of multiple links to form
 a single logical interface.
-The logical interface is currently realised in the Opendaylight controlled
+The logical interface is currently realised in the OpenDaylight controlled
 switches using Openflow (1.3) group table functionality.
-The realisation of the logical interface can be other mean by providing
-a pluggable extension to the LACP.
+The realisation of the logical interface can be also be done by informing the 
+creation of the LAG interface to the OpenDaylight controlled switches or in
+any other manner by adding the required pluggable extension to the LACP.
 
 ==== LACP Architecture
 * *Inventory*
-   ** Responsible for maintaining list of lacp supporting opendaylight
-     controlled switches, list of logical interfaces created and physical
-     links that are part of the logical interfaces.
+   ** Responsible for maintaining list of LACP supporting OpenDaylight
+     controlled switches, the list of logical interfaces created and
+     physical links that are part of the logical interfaces available in
+     each switch.
 * *PacketHandler*
    ** Responsible for receiving and transmitting LACP PDUs to the
      LACP enabled endpoint 
@@ -26,9 +28,9 @@ a pluggable extension to the LACP.
 
 ===== Group Table programming
 The logical interface representing the aggregated multiple physical links
-are realized in the opendaylight controlled switches by creating a 
+are realized in the OpenDaylight controlled switches by creating a 
 group table entry (supported from Openflow 1.3).
-The group table entry has a group type *Select* and Action referring to
+The group table entry has a group type *Select* and action referring to
 the aggregated physical links.
 Any data traffic to be sent out through the logical interface can be sent
 through the *Group entry* available for the logical interface.
