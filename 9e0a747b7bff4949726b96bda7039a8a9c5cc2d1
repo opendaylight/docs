@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a93c517_0018ffd1",
+        "filename": "manuals/user-guide/src/main/asciidoc/addons/lacpUg.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2595
+      },
+      "writtenOn": "2015-03-19T10:56:59Z",
+      "side": 1,
+      "message": "The full form comes first and the abbreviation in brackets.",
+      "revId": "9e0a747b7bff4949726b96bda7039a8a9c5cc2d1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_a00cab95",
+        "filename": "manuals/user-guide/src/main/asciidoc/addons/lacpUg.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 2595
+      },
+      "writtenOn": "2015-03-19T10:56:59Z",
+      "side": 1,
+      "message": "The information you have here about running the project, installing the project, creating a test network is more suited for an developer\u0027s guide. An user guide tells the user how to use the feature to do something, whereas this guide is telling a developer how to set up the feature and run test simulations.\n\nStrong recommendation to either make this a dev guide and follow the dev guide outlines.",
+      "revId": "9e0a747b7bff4949726b96bda7039a8a9c5cc2d1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
