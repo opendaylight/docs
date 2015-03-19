@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a93c517_e004f37f",
+        "filename": "manuals/developer-guide/src/main/asciidoc/usc/odl-usc-channel-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 2595
+      },
+      "writtenOn": "2015-03-19T10:46:49Z",
+      "side": 1,
+      "message": "USC\u003d Unified Secure Channels ??\n\nIf so, and as mentioned in the user guide, please use the full term in the first instance and use the short form thereafter.\n\nFor example\n\nThe Unified Secure Channels (USC) feature is ...",
+      "revId": "21e8ae6d741013bb27d563f8915f79b5397068ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_000a3f8a",
+        "filename": "manuals/developer-guide/src/main/asciidoc/usc/odl-usc-channel-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 2595
+      },
+      "writtenOn": "2015-03-19T10:46:49Z",
+      "side": 1,
+      "message": "Do you have any APIs, if so, please list them.\nIf not, you can delete this section.",
+      "revId": "21e8ae6d741013bb27d563f8915f79b5397068ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a93c517_6095433f",
         "filename": "manuals/user-guide/src/main/asciidoc/usc/odl-usc-channel-user.adoc",
         "patchSetId": 2
