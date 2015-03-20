@@ -1,0 +1,46 @@
+== TTP CLI Tools Developer Guide
+
+=== Overview
+Table Type Patterns are a specification developed by the
+https://www.opennetworking.org/[Open Networking Foundation] to enable
+the description and negotiation of subsets of the OpenFlow protocol.
+This is particularly useful for hardware switches that support OpenFlow
+as it enables the to describe what features they do (and thus also what
+features they do not) support. More details can be found in the full
+specification listed on the
+https://www.opennetworking.org/sdn-resources/onf-specifications/openflow[OpenFlow
+specifications page].
+
+The TTP CLI Tools provide a way for people interested in TTPs to read
+in, validate, output, and manipulate TTPs as a self-contained,
+executable jar file.
+
+=== TTP CLI Tools Architecture
+The TTP CLI Tools use the TTP Model and the YANG Tools/RESTCONF codecs
+to translate between the Data Transfer Objects (DTOs) and JSON/XML.
+
+=== Command Line Options
+This will cover the various options for the CLI Tools. For now, there
+are no options and it merely outputs fixed data using the codecs.
+
+// The CLI tools don't have an APIs in the common sense.
+//
+// === Key APIs and Interfaces
+// Document the key things a user would want to use. For some features,
+// there will only be one logical grouping of APIs. For others there may be
+// more than one grouping.
+//
+// Assuming the API is MD-SAL- and YANG-based, the APIs will be available
+// both via RESTCONF and via Java APIs. Giving a few examples using each is
+// likely a good idea.
+//
+// ==== API Group 1
+// Provide a description of what the API does and some examples of how to
+// use it.
+//
+// ==== API Group 2
+// Provide a description of what the API does and some examples of how to
+// use it.
+//
+// === API Reference Documentation
+// Provide links to JavaDoc, REST API documentation, etc.

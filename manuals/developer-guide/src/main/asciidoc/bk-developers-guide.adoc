@@ -82,7 +82,9 @@ include::snmp4sdn.adoc[]
 
 include::tcpmd5.adoc[]
 
-include::ttp.adoc[]
+include::ttp/ttp-model-dev.adoc[]
+
+include::ttp/ttp-cli-tools-dev.adoc[]
 
 include::usc/odl-usc-channel-dev.adoc[USC]
 
