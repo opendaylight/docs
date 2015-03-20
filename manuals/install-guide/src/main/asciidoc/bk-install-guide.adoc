@@ -74,6 +74,8 @@ include::addons/lispflow.adoc[]
 
 include::addons/ovsdb.adoc[]
 
+include::ovsdb/ovsdb-install.adoc[]
+
 include::addons/pcmm.adoc[]
 
 include::addons/plugin2oc.adoc[]
@@ -86,7 +88,6 @@ include::addons/snmp4sdn.adoc[]
 
 include::addons/ttp.adoc[]
 
-include::addons/vtn.adoc[]
 /////////////
 
 include::addons/yangtools.adoc[]
