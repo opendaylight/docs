@@ -1,0 +1,117 @@
+== Service Function Selection Algorithm User Guide
+Refer to this template to identify the required sections and information
+that you should  provide for a User Guide. The user guide should contain
+configuration, administration, management, using, and troubleshooting
+sections for the Service Function Selection Algorithm.
+
+=== Overview
+When creating the Rendered Service Path, the SFC currently chooses the available service function from a list of available service functions randomly. This may result in lots of issues such as overloaded service functions and longest service path as SFC has no means to understand the status of service functions and network topology. The service function selection framework supports at least four algorithms (e.g. Random, Round Robin, Load Balancing, Shortest Path) to choose the most appropriate service function when instantiating the RSP. 
+
+=== Service Function Selection Algorithm Architecture
+Provide information about Service Function Selection Algorithm components and how they work together.
+Also include information about how the Service Function Selection Algorithm integrates with
+OpenDaylight. An architecture diagram could help.
+
+=== Configuring Service Function Selection Algorithm
+
+Describe how to configure the Service Function Selection Algorithm or the project after installation.
+Configuration information could include day-one activities for a project
+such as configuring users, configuring clients/servers and so on.
+
+=== Administering or Managing Service Function Selection Algorithm
+Include related command reference or  operations that you could perform
+using the Service Function Selection Algorithm. For example viewing network statistics, monitoring
+the network,  generating reports, and so on.
+
+==== Load Balance Algorithm
+Ensure that the title starts with a gerund. For example using,
+monitoring, creating, and so on.
+
+===== Overview
+An overview of the use case. The Load Balance Algorithm is used to select appropriate Service Function 
+by actual CPU utilization of living service functions. The CPU utilization of service function is one
+of monitoring information reported via Netconf.
+
+===== Prerequisites
+CPU-utilization for Service Function.
+Netconf server.
+Netconf client.
+every Vm has a Netconf server. Netconf client communicate with Netconf server well.
+
+===== Instructions
+set up VMs as Service Functions. enable netconf server in VMs.
+Ensure that you specify them separately. For example:
+
+. *Setting up the VM*
+.. Setup 4 VMs include 2 SFs' type are Firewall, Others are Napt44. They're named firewall-1, firewall-2, napt44-1, napt44-2 as Service Function.
+.. Install Netconf server on every VM and enable it. 
+More information on Netconf can be found on the OpenDaylight wiki here:
+https://wiki.opendaylight.org/view/OpenDaylight_Controller:Config:Examples:Netconf:Manual_netopeer_installation
+.. Install tools to monitor CPU utilization or using the static XML data. 
+Suppose the CPU-utilization in firewall-1 is 12, firewall-2 is 30, napt44-1 is 40, napt44-2 is 30.
+   
+static XML data like this:
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<service-function-description-monitor-report>
+  <SF-description>
+    <number-of-dataports>2</number-of-dataports>
+    <capabilities>
+      <supported-packet-rate>5</supported-packet-rate>
+      <supported-bandwidth>10</supported-bandwidth>
+      <supported-ACL-number>2000</supported-ACL-number>
+      <RIB-size>200</RIB-size>
+      <FIB-size>100</FIB-size>
+      <ports-bandwidth>
+        <port-bandwidth>
+          <port-id>1</port-id>
+          <ipaddress>10.0.0.1</ipaddress>
+          <macaddress>00:1e:67:a2:5f:f4</macaddress>
+          <supported-bandwidth>20</supported-bandwidth>
+        </port-bandwidth>
+        <port-bandwidth>
+          <port-id>2</port-id>
+          <ipaddress>10.0.0.2</ipaddress>
+          <macaddress>01:1e:67:a2:5f:f6</macaddress>
+          <supported-bandwidth>10</supported-bandwidth>
+        </port-bandwidth>
+      </ports-bandwidth>
+    </capabilities>
+  </SF-description>
+  <SF-monitoring-info>
+    <liveness>true</liveness>
+    <resource-utilization>
+        <packet-rate-utilization>10</packet-rate-utilization>
+        <bandwidth-utilization>15</bandwidth-utilization>
+        <CPU-utilization>12</CPU-utilization>
+        <memory-utilization>17</memory-utilization>
+        <available-memory>8</available-memory>
+        <RIB-utilization>20</RIB-utilization>
+        <FIB-utilization>25</FIB-utilization>
+        <power-utilization>30</power-utilization>
+        <SF-ports-bandwidth-utilization>
+          <port-bandwidth-utilization>
+            <port-id>1</port-id>
+            <bandwidth-utilization>20</bandwidth-utilization>
+          </port-bandwidth-utilization>
+          <port-bandwidth-utilization>
+            <port-id>2</port-id>
+            <bandwidth-utilization>30</bandwidth-utilization>
+          </port-bandwidth-utilization>
+        </SF-ports-bandwidth-utilization>
+    </resource-utilization>
+  </SF-monitoring-info>
+</service-function-description-monitor-report>
+----
+
+. *Start SFC*
+.. Build SFC.
+.. Run SFC: ./sfc-karaf/target/assembly/bin/karaf.
+More information on Service Function Chaining can be found on the OpenDaylight wiki here:
+https://wiki.opendaylight.org/view/Service_Function_Chaining:Main
+
+. *Verify the Load Balance Algorithm*
+.. Deploy the SFC2(firewall-abstract2=>napt44-abstract2) and click button to Create Rendered Service Path in SFC UI(http://localhost:8181/sfc/index.html).
+.. Verify the Rendered Service Path to ensure the CPU utilization of the selected hop is the minimum one among all the service functions with same type. 
+The correct RSP is firewall-1=>napt44-2
+
