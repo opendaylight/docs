@@ -44,7 +44,9 @@ include::section_Hacking_from_CLI.adoc[]
 
 include::aaa.adoc[]
 
-include::bgpcep.adoc[]
+include::bgpcep/odl-bgpcep-bgp-all-dev.adoc[BGP]
+
+include::bgpcep/odl-bgpcep-pcep-all-dev.adoc[PCEP]
 
 include::controller.adoc[]
 
