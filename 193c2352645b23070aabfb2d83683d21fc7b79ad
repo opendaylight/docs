@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a93c517_fb125861",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sfc.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-24T21:42:39Z",
+      "side": 1,
+      "message": "This file should be deleted or moved to the sfc/ folder of one of the manuals as appropriate.",
+      "revId": "193c2352645b23070aabfb2d83683d21fc7b79ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_1b186480",
+        "filename": "manuals/user-guide/src/main/asciidoc/addons/sfc.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-24T21:42:39Z",
+      "side": 1,
+      "message": "This file should be deleted or moved to the sfc/ folder of one of the manuals as appropriate.",
+      "revId": "193c2352645b23070aabfb2d83683d21fc7b79ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a93c517_5219f886",
         "filename": "manuals/user-guide/src/main/asciidoc/addons/sfc/sf-selection-algorithm-user.adoc",
         "patchSetId": 1
@@ -42,6 +76,23 @@
         "endLine": 33,
         "endChar": 47
       },
+      "revId": "193c2352645b23070aabfb2d83683d21fc7b79ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_9b03140f",
+        "filename": "manuals/user-guide/src/main/asciidoc/bk-user-guide.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-24T21:42:39Z",
+      "side": 1,
+      "message": "This link will need to be updated if you move sfc.adoc to sfc/sfc-user.adoc.",
       "revId": "193c2352645b23070aabfb2d83683d21fc7b79ad",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
