@@ -1,0 +1,64 @@
+== OpenDaylight Security Considerations
+
+This document discusses the various security issues that might affect the OpenDaylight controller. The document also lists specific recommendations to mitigate security risks. The OpenDaylight community has a Security Advisory Board that is involved in identifying and resolving security threats to the controller. This document also contains information about the corrective steps you can take if you discover a security issue with the deployment of your controller, and if necessary, contact the Security Board.
+
+=== Overview of OpenDaylight Security
+
+There are two main kinds of security vulnerability for your controller.
+
+* *Access vulnerability*: This is defined as the vulnerability that arises if the hardware running the controller and your various applications is not installed in a secure area. Access vulnerability is beyond the scope of this document. Refer to the security guidelines of your government and hardware vendors to best understand how to run a business from a secure premise.
+
+* *Code vulnerability*: This is defined as the vulnerability that arises because of malicious human access to the applications and services that define your business. With the increased usage of cloud and virtualized solutions, there has been a rise in newer types of security threats. Your users require access to data from anywhere and at any time. At present, there are a number of recommended security strategies for your datacenter. However, with the disparity of hardware vendors used across cloud services, it is difficult to state with complete certainty that virtualized datacenters are completely secured. Access vulnerability, thus, is not a hallmark particular to the controller, but to all services and businesses that run on the cloud.
+
+The OpenDaylight controller has specific advantages in terms of mitigating both access and code vulnerability.
+
+* The separation of the control plane and the data plane allows possible security threats to be isolated.
+
+* The rapid evolution of southbound protocols also ensures the control of network traffic in more innovative ways.
+
+* The centralized databases and network control allows network administrators more control over the entire networking system. At the same time, centralization of network control can be an advantage only if access to that control is secure.
+
+* OpenDaylight is installed from OSGi bundles. These bundles provide some level of isolation with explicit code boundaries and package import and exports. 
+
+* The OpenDaylight community has specific recommendations to minimize the occurrence of code vulnerability.
+
+=== OpenDaylight Security Information
+
+* If you have any security issue, you can send a mail to *security@lists.opendaylight.org*.
+
+* For the list of current OpenDaylight security issues that are now resolved, refer to https://wiki.opendaylight.org/view/Security_Advisories.
+
+* To know more about the OpenDaylight security issues policies and procedure, refer to https://wiki.opendaylight.org/view/CrossProject:OpenDaylight_Security_Analysis.
+
+=== Recommended Deployment Model for OpenDaylight
+
+We recommend that you follow the deployment guidelines in setting up your OpenDaylight controller to minimize security threats.
+
+* The controller must be deployed in a private network that cannot be accessed from the internet.
+
+* Separate the controller data network from the management network.
+
+* Define levels of user access to the controller management network.
+
+* Implement an authentication policy for devices that connect to both the data and management network.
+
+* Authenticate devices that connect from the controller data network to the management network. Untrusted entities in the data network can provide unfiltered data to the controller.
+
+=== Securing OSGi bundles
+
+
+=== Securing the Karaf container
+
+Apache Karaf is a OSGi-based runtime which provides a lightweight container onto which various components and applications can be deployed. Apache Karaf uses either Apache Felix Framework or Eclipse Equinox OSGi frameworks, and provide additional features on top of the framework. Apache Karaf provides a complete security framework (based on JAAS), and providing RBAC (Role-Based Access Control) mechanism for console and JMX.
+
+=== Securing the Northbound and Southbound Plugins
+
+
+=== Securing the controller using AAA
+
+
+=== Security considerations for clustering
+
+	
+
+
