@@ -2,6 +2,121 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a93c517_ee3b74e9",
+        "filename": "manuals/developer-guide/src/main/asciidoc/capwap-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-25T02:49:52Z",
+      "side": 1,
+      "message": "It probably makes sense to expand and define CAPWAP in the overview.",
+      "range": {
+        "startLine": 1,
+        "startChar": 3,
+        "endLine": 1,
+        "endChar": 9
+      },
+      "revId": "d0ed1466fbf28e1ed44603222950879a555fbaf4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_6e58c456",
+        "filename": "manuals/developer-guide/src/main/asciidoc/capwap-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-25T02:49:52Z",
+      "side": 1,
+      "message": "southbound",
+      "range": {
+        "startLine": 5,
+        "startChar": 42,
+        "endLine": 5,
+        "endChar": 44
+      },
+      "revId": "d0ed1466fbf28e1ed44603222950879a555fbaf4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_4e370800",
+        "filename": "manuals/developer-guide/src/main/asciidoc/capwap-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-25T02:49:52Z",
+      "side": 1,
+      "message": "The CAPWAP feature...",
+      "range": {
+        "startLine": 6,
+        "startChar": 68,
+        "endLine": 6,
+        "endChar": 74
+      },
+      "revId": "d0ed1466fbf28e1ed44603222950879a555fbaf4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_8e55101f",
+        "filename": "manuals/developer-guide/src/main/asciidoc/capwap-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-25T02:49:52Z",
+      "side": 1,
+      "message": "expand this acronym",
+      "range": {
+        "startLine": 6,
+        "startChar": 47,
+        "endLine": 6,
+        "endChar": 50
+      },
+      "revId": "d0ed1466fbf28e1ed44603222950879a555fbaf4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_2e32bc10",
+        "filename": "manuals/developer-guide/src/main/asciidoc/capwap-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-25T02:49:52Z",
+      "side": 1,
+      "message": "northbound",
+      "range": {
+        "startLine": 7,
+        "startChar": 32,
+        "endLine": 7,
+        "endChar": 34
+      },
+      "revId": "d0ed1466fbf28e1ed44603222950879a555fbaf4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a93c517_a0feeb69",
         "filename": "manuals/user-guide/src/main/asciidoc/addons/capwap-user.adoc",
         "patchSetId": 1
