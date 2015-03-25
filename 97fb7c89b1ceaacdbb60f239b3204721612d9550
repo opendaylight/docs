@@ -1,0 +1,630 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a93c517_6ee76441",
+        "filename": "manuals/user-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-user.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-25T02:33:09Z",
+      "side": 1,
+      "message": "I don\u0027t think this line is needed.",
+      "revId": "97fb7c89b1ceaacdbb60f239b3204721612d9550",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_ceda3878",
+        "filename": "manuals/user-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-user.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-25T02:33:09Z",
+      "side": 1,
+      "message": "There hasn\u0027t been an \"SP edition\" since Hydrogen.",
+      "range": {
+        "startLine": 5,
+        "startChar": 13,
+        "endLine": 5,
+        "endChar": 23
+      },
+      "revId": "97fb7c89b1ceaacdbb60f239b3204721612d9550",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_4e1868d3",
+        "filename": "manuals/user-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-user.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-25T02:33:09Z",
+      "side": 1,
+      "message": "Expand these acronyms? Starting things off in a user guide with dense acronyms is likely a bad idea.",
+      "range": {
+        "startLine": 12,
+        "startChar": 8,
+        "endLine": 12,
+        "endChar": 16
+      },
+      "revId": "97fb7c89b1ceaacdbb60f239b3204721612d9550",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_0e1260b1",
+        "filename": "manuals/user-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-user.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-25T02:33:09Z",
+      "side": 1,
+      "message": "Maybe changed to: \"The initial configuration is written so that it will be ignored to prevent...\"",
+      "range": {
+        "startLine": 18,
+        "startChar": 10,
+        "endLine": 18,
+        "endChar": 83
+      },
+      "revId": "97fb7c89b1ceaacdbb60f239b3204721612d9550",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_8e1d10c0",
+        "filename": "manuals/user-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-user.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-25T02:33:09Z",
+      "side": 1,
+      "message": "It probably makes sense to say OpenDaylight or maybe even the BGP feature of OpenDaylight instead of ODL.",
+      "range": {
+        "startLine": 72,
+        "startChar": 78,
+        "endLine": 72,
+        "endChar": 81
+      },
+      "revId": "97fb7c89b1ceaacdbb60f239b3204721612d9550",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_ee8374ca",
+        "filename": "manuals/user-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-user.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-25T02:33:09Z",
+      "side": 1,
+      "message": "Probably start with \"The BGP peer...\"\n\nAlso, ideally lines should be wrapped to ~100 characters, but this one is really long.",
+      "revId": "97fb7c89b1ceaacdbb60f239b3204721612d9550",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_0e8900eb",
+        "filename": "manuals/user-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-user.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-25T02:33:09Z",
+      "side": 1,
+      "message": "Again, I\u0027d say OpenDaylight or the BGP plugin instead of ODL.",
+      "range": {
+        "startLine": 125,
+        "startChar": 108,
+        "endLine": 125,
+        "endChar": 120
+      },
+      "revId": "97fb7c89b1ceaacdbb60f239b3204721612d9550",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_ae6d6c34",
+        "filename": "manuals/user-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-user.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-25T02:33:09Z",
+      "side": 1,
+      "message": "\"An Application Peer...\"",
+      "range": {
+        "startLine": 142,
+        "startChar": 0,
+        "endLine": 142,
+        "endChar": 11
+      },
+      "revId": "97fb7c89b1ceaacdbb60f239b3204721612d9550",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_ce6a381a",
+        "filename": "manuals/user-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-user.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-25T02:33:09Z",
+      "side": 1,
+      "message": "Avoid using ODL.",
+      "range": {
+        "startLine": 144,
+        "startChar": 29,
+        "endLine": 144,
+        "endChar": 32
+      },
+      "revId": "97fb7c89b1ceaacdbb60f239b3204721612d9550",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_6e776403",
+        "filename": "manuals/user-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-user.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-25T02:33:09Z",
+      "side": 1,
+      "message": "preferably?",
+      "range": {
+        "startLine": 151,
+        "startChar": 2,
+        "endLine": 151,
+        "endChar": 12
+      },
+      "revId": "97fb7c89b1ceaacdbb60f239b3204721612d9550",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_8e7430fe",
+        "filename": "manuals/user-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-user.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-25T02:33:09Z",
+      "side": 1,
+      "message": "Avoid ODL.",
+      "range": {
+        "startLine": 160,
+        "startChar": 6,
+        "endLine": 160,
+        "endChar": 9
+      },
+      "revId": "97fb7c89b1ceaacdbb60f239b3204721612d9550",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_2e615c39",
+        "filename": "manuals/user-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-user.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-25T02:33:09Z",
+      "side": 1,
+      "message": "Avoid ODL.",
+      "range": {
+        "startLine": 184,
+        "startChar": 29,
+        "endLine": 184,
+        "endChar": 32
+      },
+      "revId": "97fb7c89b1ceaacdbb60f239b3204721612d9550",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_8e4670be",
+        "filename": "manuals/user-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-user.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-25T02:33:09Z",
+      "side": 1,
+      "message": "set? instead of sep?",
+      "range": {
+        "startLine": 224,
+        "startChar": 57,
+        "endLine": 224,
+        "endChar": 60
+      },
+      "revId": "97fb7c89b1ceaacdbb60f239b3204721612d9550",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_ee5a9482",
+        "filename": "manuals/user-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-user.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-25T02:33:09Z",
+      "side": 1,
+      "message": "\"...with a unique...\"",
+      "range": {
+        "startLine": 271,
+        "startChar": 66,
+        "endLine": 271,
+        "endChar": 77
+      },
+      "revId": "97fb7c89b1ceaacdbb60f239b3204721612d9550",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_ae548c54",
+        "filename": "manuals/user-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-user.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-25T02:33:09Z",
+      "side": 1,
+      "message": "Maybe change the name to not imply that it\u0027s a separate guide. Maybe \"operator instructions\".",
+      "range": {
+        "startLine": 273,
+        "startChar": 97,
+        "endLine": 273,
+        "endChar": 118
+      },
+      "revId": "97fb7c89b1ceaacdbb60f239b3204721612d9550",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_0e602031",
+        "filename": "manuals/user-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-user.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-25T02:33:09Z",
+      "side": 1,
+      "message": "\"...the contents of...\"",
+      "range": {
+        "startLine": 273,
+        "startChar": 63,
+        "endLine": 273,
+        "endChar": 73
+      },
+      "revId": "97fb7c89b1ceaacdbb60f239b3204721612d9550",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_6e49a4cf",
+        "filename": "manuals/user-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-user.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-25T02:33:09Z",
+      "side": 1,
+      "message": "delete \"how\", just \"Another method to...\"",
+      "range": {
+        "startLine": 277,
+        "startChar": 15,
+        "endLine": 277,
+        "endChar": 18
+      },
+      "revId": "97fb7c89b1ceaacdbb60f239b3204721612d9550",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_ce51d863",
+        "filename": "manuals/user-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-user.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-25T02:33:09Z",
+      "side": 1,
+      "message": "Do we actually have a steps 1-5 in the Installation Guide?",
+      "range": {
+        "startLine": 277,
+        "startChar": 120,
+        "endLine": 277,
+        "endChar": 151
+      },
+      "revId": "97fb7c89b1ceaacdbb60f239b3204721612d9550",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_8e4bd0af",
+        "filename": "manuals/user-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-user.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-25T02:33:09Z",
+      "side": 1,
+      "message": "Avoid ODL.",
+      "range": {
+        "startLine": 347,
+        "startChar": 55,
+        "endLine": 347,
+        "endChar": 58
+      },
+      "revId": "97fb7c89b1ceaacdbb60f239b3204721612d9550",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_4ef4e85a",
+        "filename": "manuals/user-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-user.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-25T02:33:09Z",
+      "side": 1,
+      "message": "This link syntax doesn\u0027t work right in the PDF.",
+      "range": {
+        "startLine": 349,
+        "startChar": 51,
+        "endLine": 349,
+        "endChar": 90
+      },
+      "revId": "97fb7c89b1ceaacdbb60f239b3204721612d9550",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_eee8547e",
+        "filename": "manuals/user-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-user.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-25T02:33:09Z",
+      "side": 1,
+      "message": "Is it really \"by definition\"? Maybe just say \"A BGP speaker needs to...\"",
+      "range": {
+        "startLine": 353,
+        "startChar": 0,
+        "endLine": 353,
+        "endChar": 13
+      },
+      "revId": "97fb7c89b1ceaacdbb60f239b3204721612d9550",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_0eeee088",
+        "filename": "manuals/user-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-user.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-25T02:33:09Z",
+      "side": 1,
+      "message": "Avoid ODL.",
+      "range": {
+        "startLine": 353,
+        "startChar": 145,
+        "endLine": 353,
+        "endChar": 148
+      },
+      "revId": "97fb7c89b1ceaacdbb60f239b3204721612d9550",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_ae024c3c",
+        "filename": "manuals/user-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-user.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 374,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-25T02:33:09Z",
+      "side": 1,
+      "message": "Again, I\u0027d rather see a name that didn\u0027t imply it was a separate guide.",
+      "range": {
+        "startLine": 374,
+        "startChar": 46,
+        "endLine": 374,
+        "endChar": 66
+      },
+      "revId": "97fb7c89b1ceaacdbb60f239b3204721612d9550",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_ceff9833",
+        "filename": "manuals/user-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-user.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-25T02:33:09Z",
+      "side": 1,
+      "message": "Change to operation instructions or something?",
+      "revId": "97fb7c89b1ceaacdbb60f239b3204721612d9550",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_6efc443f",
+        "filename": "manuals/user-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-user.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-25T02:33:09Z",
+      "side": 1,
+      "message": "by default the username and password are both admin, but this can be changed and may be different in your environment.",
+      "range": {
+        "startLine": 379,
+        "startChar": 59,
+        "endLine": 379,
+        "endChar": 70
+      },
+      "revId": "97fb7c89b1ceaacdbb60f239b3204721612d9550",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_4e9b8818",
+        "filename": "manuals/user-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-user.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 383,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-25T02:33:09Z",
+      "side": 1,
+      "message": "See above for how to do that?",
+      "range": {
+        "startLine": 383,
+        "startChar": 129,
+        "endLine": 383,
+        "endChar": 167
+      },
+      "revId": "97fb7c89b1ceaacdbb60f239b3204721612d9550",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_ee9ff401",
+        "filename": "manuals/user-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-user.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-25T02:33:09Z",
+      "side": 1,
+      "message": "There hasn\u0027t been an SP edition since Hydrogen.",
+      "range": {
+        "startLine": 4,
+        "startChar": 13,
+        "endLine": 4,
+        "endChar": 23
+      },
+      "revId": "97fb7c89b1ceaacdbb60f239b3204721612d9550",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_0ea58052",
+        "filename": "manuals/user-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-user.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-25T02:33:09Z",
+      "side": 1,
+      "message": "It probably makes sense to define PCE (and PCEP and provide a link to the RFC) in the overview section.",
+      "range": {
+        "startLine": 16,
+        "startChar": 47,
+        "endLine": 16,
+        "endChar": 50
+      },
+      "revId": "97fb7c89b1ceaacdbb60f239b3204721612d9550",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
