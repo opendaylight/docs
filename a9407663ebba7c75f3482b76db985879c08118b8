@@ -1,0 +1,289 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a93c517_6e93e4fa",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sfc.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-25T02:47:25Z",
+      "side": 1,
+      "message": "This document should really be listed under a feature (or group of features) in an sfc directory per the instructions here: https://wiki.opendaylight.org/view/Karaf:Step_by_Step_Guide",
+      "revId": "a9407663ebba7c75f3482b76db985879c08118b8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_8e90b0ed",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sfc/classifier-dev.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-25T02:47:25Z",
+      "side": 1,
+      "message": "Avoid trailing whitespace (on lines 4, 7 and 10 here) if you can.",
+      "revId": "a9407663ebba7c75f3482b76db985879c08118b8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_eeb6148a",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sfc/odl-sfc-ovs-dev.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-25T02:47:25Z",
+      "side": 1,
+      "message": "Avoid trailing whitespace.",
+      "revId": "a9407663ebba7c75f3482b76db985879c08118b8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_cead5833",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sfc/odl-sfc-sb-rest-dev.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-25T02:47:25Z",
+      "side": 1,
+      "message": "...supporting a REST...",
+      "range": {
+        "startLine": 4,
+        "startChar": 92,
+        "endLine": 4,
+        "endChar": 107
+      },
+      "revId": "a9407663ebba7c75f3482b76db985879c08118b8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_0ebca068",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sfc/odl-sfc-sb-rest-dev.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-25T02:47:25Z",
+      "side": 1,
+      "message": "The Southbound REST...",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 10
+      },
+      "revId": "a9407663ebba7c75f3482b76db985879c08118b8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_6eaa041b",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sfc/odl-sfc-sb-rest-dev.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-25T02:47:25Z",
+      "side": 1,
+      "message": "They have a configured REST URI",
+      "range": {
+        "startLine": 4,
+        "startChar": 118,
+        "endLine": 4,
+        "endChar": 147
+      },
+      "revId": "a9407663ebba7c75f3482b76db985879c08118b8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_8ea7504f",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sfc/odl-sfc-sb-rest-dev.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-25T02:47:25Z",
+      "side": 1,
+      "message": "In its current state...",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 10
+      },
+      "revId": "a9407663ebba7c75f3482b76db985879c08118b8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_0e7340ea",
+        "filename": "manuals/user-guide/src/main/asciidoc/addons/sfc.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-25T02:47:25Z",
+      "side": 1,
+      "message": "Again, this file should be moved to the sfc/ directory and should really provide one section per feature (or feature group) as per the instructions here: https://wiki.opendaylight.org/view/Karaf:Step_by_Step_Guide",
+      "revId": "a9407663ebba7c75f3482b76db985879c08118b8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_ae77acd3",
+        "filename": "manuals/user-guide/src/main/asciidoc/addons/sfc/classifier-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-25T02:47:25Z",
+      "side": 1,
+      "message": "Avoid trailing whitespace.",
+      "revId": "a9407663ebba7c75f3482b76db985879c08118b8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_ce7478d1",
+        "filename": "manuals/user-guide/src/main/asciidoc/addons/sfc/classifier-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-25T02:47:25Z",
+      "side": 1,
+      "message": "Avoid trailing whitespace.",
+      "revId": "a9407663ebba7c75f3482b76db985879c08118b8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_8e7e70ad",
+        "filename": "manuals/user-guide/src/main/asciidoc/addons/sfc/odl-sfc-ovs-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-25T02:47:25Z",
+      "side": 1,
+      "message": "See comments about the overview from the developer guide.",
+      "revId": "a9407663ebba7c75f3482b76db985879c08118b8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_6e81a48e",
+        "filename": "manuals/user-guide/src/main/asciidoc/addons/sfc/odl-sfc-ovs-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-25T02:47:25Z",
+      "side": 1,
+      "message": "Avoid trailing whitespace.",
+      "revId": "a9407663ebba7c75f3482b76db985879c08118b8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_2e4b9c88",
+        "filename": "manuals/user-guide/src/main/asciidoc/addons/sfc/odl-sfc-sb-rest-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-25T02:47:25Z",
+      "side": 1,
+      "message": "See comments on the overview from developer guide.",
+      "revId": "a9407663ebba7c75f3482b76db985879c08118b8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_4e506832",
+        "filename": "manuals/user-guide/src/main/asciidoc/addons/sfc/odl-sfc-ui-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-25T02:47:25Z",
+      "side": 1,
+      "message": "...status of the sfc-karaf distribution...\n\nAlso, do you really mean sfc-karaf distribution? That isn\u0027t what will actually be released...\n\nLastly, avoid trialing whitespace.",
+      "range": {
+        "startLine": 4,
+        "startChar": 120,
+        "endLine": 4,
+        "endChar": 145
+      },
+      "revId": "a9407663ebba7c75f3482b76db985879c08118b8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_ee44d475",
+        "filename": "manuals/user-guide/src/main/asciidoc/bk-user-guide.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-25T02:47:25Z",
+      "side": 1,
+      "message": "Avoid trailing whitespace.",
+      "revId": "a9407663ebba7c75f3482b76db985879c08118b8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
