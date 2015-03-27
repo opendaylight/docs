@@ -1,0 +1,146 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a93c517_af96bdee",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bk-developers-guide.adoc",
+        "patchSetId": 8
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-27T19:58:24Z",
+      "side": 1,
+      "message": "We probably want to remove this link to the old (Helium) docs and move the old ovsdb.adoc to ovsdb/helium-ovsdb.adoc or something to scavenge for content later.",
+      "revId": "09ef79059dd55812c9f59d611d3e6fe09d6722d0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_cf99c920",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-northbound-developer.adoc",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-27T19:58:24Z",
+      "side": 1,
+      "message": "Ideally this should look a little bit more like the template at manuals/readme/src/main/asciidoc/template_developer_guide.adoc",
+      "revId": "09ef79059dd55812c9f59d611d3e6fe09d6722d0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_6fa0b543",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-openstack-developer.adoc",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-27T19:58:24Z",
+      "side": 1,
+      "message": "Ideally this should look a little bit more like the template at manuals/readme/src/main/asciidoc/template_developer_guide.adoc",
+      "revId": "09ef79059dd55812c9f59d611d3e6fe09d6722d0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_8fa3c14e",
+        "filename": "manuals/install-guide/src/main/asciidoc/ovsdb/ovsdb-northbound-install.adoc",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-27T19:58:24Z",
+      "side": 1,
+      "message": "Ideally this should look a little bit more like the template at manuals/readme/src/main/asciidoc/template_installation_guide.adoc",
+      "revId": "09ef79059dd55812c9f59d611d3e6fe09d6722d0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_2f8aadbf",
+        "filename": "manuals/install-guide/src/main/asciidoc/ovsdb/ovsdb-openstack-install.adoc",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-27T19:58:24Z",
+      "side": 1,
+      "message": "Ideally this should look a little bit more like the template at manuals/readme/src/main/asciidoc/template_installation_guide.adoc",
+      "revId": "09ef79059dd55812c9f59d611d3e6fe09d6722d0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_4f85b9ab",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/ovsdb-northbound-user.adoc",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-27T19:58:24Z",
+      "side": 1,
+      "message": "This looks like you used the template for the developer guide instead of the user guide. You can find the user guide template here: manuals/readme/src/main/asciidoc/template_user_guide.adoc",
+      "revId": "09ef79059dd55812c9f59d611d3e6fe09d6722d0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_ef9365f8",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/ovsdb-openstack-user.adoc",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-27T19:58:24Z",
+      "side": 1,
+      "message": "This looks like you used the template for the developer guide instead of the user guide. You can find the user guide template here: manuals/readme/src/main/asciidoc/template_user_guide.adoc",
+      "revId": "09ef79059dd55812c9f59d611d3e6fe09d6722d0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_0f8fb1cd",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/ovsdb-user.adoc",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-27T19:58:24Z",
+      "side": 1,
+      "message": "Guide?",
+      "range": {
+        "startLine": 1,
+        "startChar": 14,
+        "endLine": 1,
+        "endChar": 21
+      },
+      "revId": "09ef79059dd55812c9f59d611d3e6fe09d6722d0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
