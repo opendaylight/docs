@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a93c517_afb79dd7",
+        "filename": "manuals/developer-guide/src/main/asciidoc/openflowlibrary.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-27T18:54:22Z",
+      "side": 1,
+      "message": "There\u0027s lots of trailing whitespace that would be nice to eliminate.",
+      "revId": "aca21cd32edaa27d5a747c0f1dde02c290269419",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_efc4c541",
+        "filename": "manuals/developer-guide/src/main/asciidoc/openflowlibrary.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-27T18:54:22Z",
+      "side": 1,
+      "message": "Is this still true? Are you planning to copy that content here?",
+      "revId": "aca21cd32edaa27d5a747c0f1dde02c290269419",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_0fa9f17a",
+        "filename": "manuals/developer-guide/src/main/asciidoc/openflowlibrary.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-27T18:54:22Z",
+      "side": 1,
+      "message": "It\u0027s odd to have two \"sections\" at the same level. Maybe just remove this one and change the one above to OpenFlow Protocol Library Developer guide?",
+      "revId": "aca21cd32edaa27d5a747c0f1dde02c290269419",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a93c517_209f3b61",
         "filename": "manuals/developer-guide/src/main/asciidoc/openflowlibrary.adoc",
         "patchSetId": 1
