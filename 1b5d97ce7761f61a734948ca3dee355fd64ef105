@@ -1,0 +1,290 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a93c517_ef4e05c1",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sfc.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-27T19:49:31Z",
+      "side": 1,
+      "message": "You should delete this file and update the link from bk-developers-guide.adoc to point to sfc/sfc.adoc",
+      "revId": "1b5d97ce7761f61a734948ca3dee355fd64ef105",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_afc8fd22",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sfc/sf-selection-algorithm-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-27T19:49:31Z",
+      "side": 1,
+      "message": "Please replace the verbatim text from the templates with at least \"TBD\" and preferably a sentence or two specific to the feature.",
+      "revId": "1b5d97ce7761f61a734948ca3dee355fd64ef105",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_0f4a51ac",
+        "filename": "manuals/user-guide/src/main/asciidoc/addons/sfc.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-27T19:49:31Z",
+      "side": 1,
+      "message": "Please move this file out of the addons directory. It should really be located at manuals/user-guide/src/main/asciidoc/sfc/sfc.adoc.\n\nYou\u0027ll need to adjust the link in bk-user-guide.adoc as well.",
+      "revId": "1b5d97ce7761f61a734948ca3dee355fd64ef105",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_effcc540",
+        "filename": "manuals/user-guide/src/main/asciidoc/addons/sfc.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-27T19:49:31Z",
+      "side": 1,
+      "message": "Could you replace this with some actual content or at least \"TBD\"?",
+      "revId": "1b5d97ce7761f61a734948ca3dee355fd64ef105",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_6fd2f5d3",
+        "filename": "manuals/user-guide/src/main/asciidoc/addons/sfc/sf-selection-algorithm-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-27T19:49:31Z",
+      "side": 1,
+      "message": "Can you move this file to manuals/user-guide/src/main/asciidoc/sfc/sf-selection-algorithm-user.adoc (no /addons) to keep things inline with the instructions here: https://wiki.opendaylight.org/view/CrossProject:Documentation_Group:Lithium_Project_Documentation_Requirements#Step-by-step_Guide",
+      "revId": "1b5d97ce7761f61a734948ca3dee355fd64ef105",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_8fd501bb",
+        "filename": "manuals/user-guide/src/main/asciidoc/addons/sfc/sf-selection-algorithm-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-27T19:49:31Z",
+      "side": 1,
+      "message": "Please replace the verbatim text from the templates with at least \"TBD\" and preferably a sentence or two specific to the feature.",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 54
+      },
+      "revId": "1b5d97ce7761f61a734948ca3dee355fd64ef105",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_2fdcede3",
+        "filename": "manuals/user-guide/src/main/asciidoc/addons/sfc/sf-selection-algorithm-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-27T19:49:31Z",
+      "side": 1,
+      "message": "Please replace the verbatim text from the templates with at least \"TBD\" and preferably a sentence or two specific to the feature.",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 48
+      },
+      "revId": "1b5d97ce7761f61a734948ca3dee355fd64ef105",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_4fd7f9bf",
+        "filename": "manuals/user-guide/src/main/asciidoc/addons/sfc/sf-selection-algorithm-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-27T19:49:31Z",
+      "side": 1,
+      "message": "Please replace the verbatim text from the templates with at least \"TBD\" and preferably a sentence or two specific to the feature.",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 44
+      },
+      "revId": "1b5d97ce7761f61a734948ca3dee355fd64ef105",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_efe5a5a8",
+        "filename": "manuals/user-guide/src/main/asciidoc/addons/sfc/sf-selection-algorithm-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-27T19:49:31Z",
+      "side": 1,
+      "message": "avoid trailing whitespace",
+      "range": {
+        "startLine": 31,
+        "startChar": 102,
+        "endLine": 31,
+        "endChar": 103
+      },
+      "revId": "1b5d97ce7761f61a734948ca3dee355fd64ef105",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_afef9d86",
+        "filename": "manuals/user-guide/src/main/asciidoc/addons/sfc/sf-selection-algorithm-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-27T19:49:31Z",
+      "side": 1,
+      "message": "Presumably these want to a bulleted list. You can do that by starting each line with an asterisk and a space, e.g.,\n* CPU-utilization...",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 83
+      },
+      "revId": "1b5d97ce7761f61a734948ca3dee355fd64ef105",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_cff2296f",
+        "filename": "manuals/user-guide/src/main/asciidoc/addons/sfc/sf-selection-algorithm-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-27T19:49:31Z",
+      "side": 1,
+      "message": "avoid trailing whitespace",
+      "range": {
+        "startLine": 47,
+        "startChar": 52,
+        "endLine": 47,
+        "endChar": 53
+      },
+      "revId": "1b5d97ce7761f61a734948ca3dee355fd64ef105",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_6fe9957f",
+        "filename": "manuals/user-guide/src/main/asciidoc/addons/sfc/sf-selection-algorithm-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-27T19:49:31Z",
+      "side": 1,
+      "message": "avoid trailing whitespace",
+      "range": {
+        "startLine": 50,
+        "startChar": 73,
+        "endLine": 50,
+        "endChar": 74
+      },
+      "revId": "1b5d97ce7761f61a734948ca3dee355fd64ef105",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_8fec2191",
+        "filename": "manuals/user-guide/src/main/asciidoc/addons/sfc/sf-selection-algorithm-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-27T19:49:31Z",
+      "side": 1,
+      "message": "avoid trailing whitespace",
+      "range": {
+        "startLine": 52,
+        "startChar": 0,
+        "endLine": 52,
+        "endChar": 3
+      },
+      "revId": "1b5d97ce7761f61a734948ca3dee355fd64ef105",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_2f038d43",
+        "filename": "manuals/user-guide/src/main/asciidoc/addons/sfc/sfc.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-27T19:49:31Z",
+      "side": 1,
+      "message": "Please delete this file. I\u0027m assuming you\u0027re going to move manuals/user-guide/src/main/asciidoc/addons/sfc.adoc to manuals/user-guide/src/main/asciidoc/sfc/sfc.adoc and that will take the same role as this file.",
+      "revId": "1b5d97ce7761f61a734948ca3dee355fd64ef105",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
