@@ -42,11 +42,11 @@ include::addons/pcmm.adoc[Packet Cable MultiMedia (PCMM) Service]
 
 include::addons/plugin2oc.adoc[Plugin for OpenContrail]
 
-include::addons/tcpmd5.adoc[TCP-MD5] 
+include::tcpmd5/odl-tcpmd5-all-user.adoc[TCP-MD5]
 
 include::usc/odl-usc-channel-user.adoc[USC]
 
-include::addons/vtn.adoc[VTN] 
+include::addons/vtn.adoc[VTN]
 
 include::ttp/ttp-cli-tools-user.adoc[TTP]
 
