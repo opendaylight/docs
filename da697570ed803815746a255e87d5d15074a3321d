@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a93c517_6fe8b5b4",
+        "filename": "manuals/install-guide/src/main/asciidoc/bk-install-guide.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-27T19:02:45Z",
+      "side": 1,
+      "message": "Presumably this wants to be tsdr-hbase-install.adoc, right?",
+      "range": {
+        "startLine": 94,
+        "startChar": 25,
+        "endLine": 94,
+        "endChar": 29
+      },
+      "revId": "da697570ed803815746a255e87d5d15074a3321d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a93c517_20fc1b3e",
         "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-h2-user.adoc",
         "patchSetId": 2
@@ -25,6 +48,23 @@
     },
     {
       "key": {
+        "uuid": "5a93c517_2fd2ad00",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-h2-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-27T19:02:45Z",
+      "side": 1,
+      "message": "It would be good to provide either \"TBD\" or a sentence or two for each of the sections starting with Overview rather than just leaving the the verbatim text from the template.",
+      "revId": "da697570ed803815746a255e87d5d15074a3321d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a93c517_e095d3e4",
         "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-h2-user.adoc",
         "patchSetId": 2
@@ -42,6 +82,23 @@
         "endLine": 12,
         "endChar": 26
       },
+      "revId": "da697570ed803815746a255e87d5d15074a3321d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_4fcdb95c",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-hbase-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-03-27T19:02:45Z",
+      "side": 1,
+      "message": "It would be good to provide either \"TBD\" or a sentence or two for each of the sections starting with Overview rather than just leaving the the verbatim text from the template.",
       "revId": "da697570ed803815746a255e87d5d15074a3321d",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
