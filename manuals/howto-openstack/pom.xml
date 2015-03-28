@@ -8,13 +8,14 @@
     <relativePath>../pom.xml</relativePath>
   </parent>
   <modelVersion>4.0.0</modelVersion>
-  <artifactId>opendaylight-howto-openstack</artifactId>
+  <artifactId>openstack</artifactId>
   <packaging>jar</packaging>
-  <name>OpenDaylight Docs - Manuals - OpenStack How To</name>
+  <name>OpenDaylight Docs - Manuals - OpenStack Howto</name>
   <properties>
     <!-- This is set by Jenkins according to the branch. -->
     <release.path.name>local</release.path.name>
     <comments.enabled>1</comments.enabled>
+    <bookname>openstack</bookname>
   </properties>
   <!-- ################################################ -->
   <!-- USE "mvn clean generate-sources" to run this POM -->
@@ -22,21 +23,67 @@
   <build>
     <plugins>
       <plugin>
+         <groupId>org.asciidoctor</groupId>
+         <artifactId>asciidoctor-maven-plugin</artifactId>
+         <version>${asciidoctor.version}</version>
+         <executions>
+         <execution>
+            <id>output-docbook</id>
+            <phase>generate-sources</phase>
+            <goals>
+                <goal>process-asciidoc</goal>
+            </goals>
+            <configuration>
+                <backend>docbook5</backend>
+                <doctype>book</doctype>
+            </configuration>
+        </execution>
+        </executions>
+        <configuration>
+           <sourceDirectory>src/main/asciidoc</sourceDirectory>
+           <sourceDocumentName>${bookname}.adoc</sourceDocumentName>
+           <imagesDir>./images</imagesDir>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>2.6</version>
+        <executions>
+          <execution>
+            <id>copy-resources</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${basedir}/target/generated-docs</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>src/main/resources</directory>
+                  <includes>
+                    <include>**/*.*</include>
+                  </includes>
+               </resource>
+              </resources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
         <groupId>com.inocybe.api</groupId>
         <artifactId>sdndocs-maven-plugin</artifactId>
         <version>0.1.0</version>
-<!-- version is set in ../pom.xml file -->
         <executions>
-          <!-- Configuration for OpenStack End User Guide -->
           <execution>
             <id>generate-webhelp</id>
             <goals>
               <goal>generate-webhelp</goal>
             </goals>
-            <phase>generate-sources</phase>
+            <phase>compile</phase>
             <configuration>
               <profileAudience>enduser</profileAudience>
-              <includes>bk-howto-openstack.xml</includes>
+              <includes>target/generated-docs/${bookname}.xml</includes>
+            <!--  <includes>bk-install-guide.xml</includes> -->
               <generateToc>
                 appendix  toc,title
                 article/appendix  nop
@@ -50,8 +97,8 @@
                 reference toc,title
                 set       toc,title
               </generateToc>
-              <webhelpDirname>howto-openstack</webhelpDirname>
-              <pdfFilenameBase>howto-openstack</pdfFilenameBase>
+              <webhelpDirname>${bookname}</webhelpDirname>
+              <pdfFilenameBase>${bookname}</pdfFilenameBase>
             </configuration>
           </execution>
         </executions>
@@ -72,11 +119,31 @@
           <disqusShortname>os-user-guide</disqusShortname>
           <enableGoogleAnalytics>1</enableGoogleAnalytics>
           <googleAnalyticsId>UA-17511903-1</googleAnalyticsId>
-    -->      <suppressFooterNavigation>0</suppressFooterNavigation>
-          <canonicalUrlBase>http://docs.opendaylight.org/howto-openstack/content/</canonicalUrlBase>
+    -->   <suppressFooterNavigation>0</suppressFooterNavigation>
+          <canonicalUrlBase>http://docs.opendaylight.org/user-guide/content/</canonicalUrlBase>
           <glossaryCollection>${basedir}/../glossary/glossary-terms.xml</glossaryCollection>
         </configuration>
       </plugin>
+      <plugin>
+       <groupId>org.apache.maven.plugins</groupId>
+       <artifactId>maven-site-plugin</artifactId>
+       <version>3.1</version>
+       <configuration>
+          <inputDirectory>${project.build.directory}/docbkx/webhelp</inputDirectory>
+       </configuration>
+       <dependencies>
+           <dependency>
+               <groupId>org.apache.maven.wagon</groupId>
+               <artifactId>wagon-webdav-jackrabbit</artifactId>
+               <version>2.2</version>
+           </dependency>
+           <dependency>
+               <groupId>org.slf4j</groupId>
+               <artifactId>slf4j-api</artifactId>
+               <version>1.6.1</version>
+           </dependency>
+       </dependencies>
+     </plugin>
     </plugins>
   </build>
 </project>
