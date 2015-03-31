@@ -1,0 +1,417 @@
+== OpenFlow Protocol Library Developer Guide
+
+=== Introduction
+OpenFlow Protocol Library is component in OpenDaylight, that mediates communication
+between OpenDaylight controller and hardware devices supporting OpenFlow protocol.
+Primary goal is to provide user (or upper layers of OpenDaylight) communication
+channel, that can be used for managing network hardware devices.
+
+=== Features Overview
+There are three features inside openflowjava:
+
+* *odl-openflowjava-protocol* provides all openflowjava bundles, that are needed
+for communication with openflow devices. It ensures message translation and
+handles network connections. It also provides openflow protocol specific
+model.
+* *odl-openflowjava-all* currently contains only odl-openflowjava-protocol feature.
+* *odl-openflowjava-stats* provides mechanism for message counting and reporting.
+Can be used for performance analysis.
+
+=== odl-openflowjava-protocol Architecture
+Basic bundles contained in this feature are openflow-protocol-api,
+openflow-protocol-impl, openflow-protocol-spi and util.
+
+* *openflow-protocol-api* - contains openflow model, constants and keys used for
+(de)serializer registration.
+* *openflow-protocol-impl* - contains message factories, that translate binary
+messages into DataObjects and vice versa. Bundle also contains network connection
+handlers - servers, netty pipeline handlers, ...
+* *openflow-protocol-spi* - entry point for openflowjava configuration,
+startup and close. Basically starts implementation.
+* *util* - utility classes for binary-Java conversions and to ease experimenter
+key creation
+
+=== odl-openflowjava-stats Feature
+Runs over odl-openflowjava-protocol. It counts various message types / events
+and reports counts in specified time periods. Statistics collection can be
+configured in openflowjava-config/src/main/resources/45-openflowjava-stats.xml
+
+=== Key APIs and Interfaces
+Basic API / SPI classes are ConnectionAdapter (Rpc/notifications) and
+SwitchConnectionProcider (configure, start, shutdown)
+
+=== API Reference Documentation
+Provide links to JavaDoc, REST API documentation, etc.  [TBD]
+
+=== Installation ===
+Pull the code and import project into your IDE.
+----
+git clone ssh://<username>@git.opendaylight.org:29418/openflowjava.git
+----
+=== Configuration ===
+Current implementation allows to configure:
+
+* listening port (mandatory)
+* transfer protocol (mandatory)
+* switch idle timeout (mandatory)
+* TLS configuration (optional)
+* thread count (optional)
+
+You can find exemplary Openflow Protocol Library instance configuration below:
+----
+<data xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+  <modules xmlns="urn:opendaylight:params:xml:ns:yang:controller:config">
+    <!-- default OF-switch-connection-provider (port 6633) -->
+    <module>
+      <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:openflow:switch:connection:provider:impl">prefix:openflow-switch-connection-provider-impl</type>
+      <name>openflow-switch-connection-provider-default-impl</name>
+      <port>6633</port>
+<!--  Possible transport-protocol options: TCP, TLS, UDP -->
+      <transport-protocol>TCP</transport-protocol>
+      <switch-idle-timeout>15000</switch-idle-timeout>
+<!--       Exemplary TLS configuration:
+            - uncomment the <tls> tag
+            - copy exemplary-switch-privkey.pem, exemplary-switch-cert.pem and exemplary-cacert.pem
+              files into your virtual machine
+            - set VM encryption options to use copied keys
+            - start communication
+           Please visit OpenflowPlugin or Openflow Protocol Library#Documentation wiki pages
+           for detailed information regarding TLS -->
+<!--       <tls>
+             <keystore>/exemplary-ctlKeystore</keystore>
+             <keystore-type>JKS</keystore-type>
+             <keystore-path-type>CLASSPATH</keystore-path-type>
+             <keystore-password>opendaylight</keystore-password>
+             <truststore>/exemplary-ctlTrustStore</truststore>
+             <truststore-type>JKS</truststore-type>
+             <truststore-path-type>CLASSPATH</truststore-path-type>
+             <truststore-password>opendaylight</truststore-password>
+             <certificate-password>opendaylight</certificate-password>
+           </tls> -->
+<!--       Exemplary thread model configuration. Uncomment <threads> tag below to adjust default thread model -->
+<!--       <threads>
+             <boss-threads>2</boss-threads>
+             <worker-threads>8</worker-threads>
+           </threads> -->
+    </module>
+----
+----
+    <!-- default OF-switch-connection-provider (port 6653) -->
+    <module>
+      <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:openflow:switch:connection:provider:impl">prefix:openflow-switch-connection-provider-impl</type>
+      <name>openflow-switch-connection-provider-legacy-impl</name>
+      <port>6653</port>
+<!--  Possible transport-protocol options: TCP, TLS, UDP -->
+      <transport-protocol>TCP</transport-protocol>
+      <switch-idle-timeout>15000</switch-idle-timeout>
+<!--       Exemplary TLS configuration:
+            - uncomment the <tls> tag
+            - copy exemplary-switch-privkey.pem, exemplary-switch-cert.pem and exemplary-cacert.pem
+              files into your virtual machine
+            - set VM encryption options to use copied keys
+            - start communication
+           Please visit OpenflowPlugin or Openflow Protocol Library#Documentation wiki pages
+           for detailed information regarding TLS -->
+<!--       <tls>
+             <keystore>/exemplary-ctlKeystore</keystore>
+             <keystore-type>JKS</keystore-type>
+             <keystore-path-type>CLASSPATH</keystore-path-type>
+             <keystore-password>opendaylight</keystore-password>
+             <truststore>/exemplary-ctlTrustStore</truststore>
+             <truststore-type>JKS</truststore-type>
+             <truststore-path-type>CLASSPATH</truststore-path-type>
+             <truststore-password>opendaylight</truststore-password>
+             <certificate-password>opendaylight</certificate-password>
+           </tls> -->
+<!--       Exemplary thread model configuration. Uncomment <threads> tag below to adjust default thread model -->
+<!--       <threads>
+             <boss-threads>2</boss-threads>
+             <worker-threads>8</worker-threads>
+           </threads> -->
+    </module>
+----
+----
+    <module>
+      <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:openflow:common:config:impl">prefix:openflow-provider-impl</type>
+      <name>openflow-provider-impl</name>
+      <openflow-switch-connection-provider>
+        <type xmlns:ofSwitch="urn:opendaylight:params:xml:ns:yang:openflow:switch:connection:provider">ofSwitch:openflow-switch-connection-provider</type>
+        <name>openflow-switch-connection-provider-default</name>
+      </openflow-switch-connection-provider>
+      <openflow-switch-connection-provider>
+        <type xmlns:ofSwitch="urn:opendaylight:params:xml:ns:yang:openflow:switch:connection:provider">ofSwitch:openflow-switch-connection-provider</type>
+        <name>openflow-switch-connection-provider-legacy</name>
+      </openflow-switch-connection-provider>
+      <binding-aware-broker>
+        <type xmlns:binding="urn:opendaylight:params:xml:ns:yang:controller:md:sal:binding">binding:binding-broker-osgi-registry</type>
+        <name>binding-osgi-broker</name>
+      </binding-aware-broker>
+    </module>
+  </modules>
+----
+Possible transport-protocol options:
+
+* TCP
+* TLS
+* UDP
+
+Switch-idle timeout specifies time needed to detect idle state of switch. When
+no message is received from switch within this time, upper layers are notified
+on switch idleness.
+To be able to use this exemplary TLS configuration:
+
+* uncomment the +<tls>+ tag
+* copy _exemplary-switch-privkey.pem_, _exemplary-switch-cert.pem_ and
+_exemplary-cacert.pem_ files into your virtual machine
+* set VM encryption options to use copied keys (please visit TLS support wiki page
+for detailed information regarding TLS)
+* start communication
+
+Thread model configuration specifies how many threads are desired to perform
+Netty's I/O operations.
+
+* boss-threads specifies the number of threads that register incoming connections
+* worker-threads specifies the number of threads performing read / write
+(+ serialization / deserialization) operations.
+
+
+=== Architecture
+
+==== Public API +(openflow-protocol-api)+
+Set of interfaces and builders for immutable data transfer objects representing
+Openflow Protocol structures.
+
+Transfer objects and service APIs are infered from several YANG models
+using code generator to reduce verbosity of definition and repeatibility of code.
+
+The following YANG modules are defined:
+
+* openflow-types - defines common Openflow specific types
+* openflow-instruction - defines base Openflow instructions
+* openflow-action - defines base Openflow actions
+* openflow-augments - defines object augmentations
+* openflow-extensible-match - defines Openflow OXM match
+* openflow-protocol - defines Openflow Protocol messages
+* system-notifications - defines system notification objects
+* openflow-configuration - defines structures used in ConfigSubsystem
+
+This modules also reuse types from following YANG modules:
+
+* ietf-inet-types - IP adresses, IP prefixes, IP-protocol related types
+* ietf-yang-types - Mac Address, etc.
+
+The use of predefined types is to make APIs contracts more safe, better readable
+and documented (e.g using MacAddress instead of byte array...)
+
+==== TCP Channel pipeline +(openflow-protocol-impl)+
+
+Creates channel processing pipeline based on configuration and support.
+
+image::https://wiki.opendaylight.org/images/thumb/b/b4/ChannelPipeline.png/500px-ChannelPipeline.png[Channel pipeline]
+
+.Switch Connection Provider
+Implementation of connection point for other projects. Library exposes its
+functionality through this class.
+Library can be configured, started and shutdowned here. There are also methods
+for custom (de)serializer registration.
+
+.Tcp Connection Initializer
+In order to initialize TCP connection to a device (switch), OF Plugin calls method
++initiateConnection()+ in +SwitchConnectionProvider+. This method in turn initializes
+(Bootstrap) server side channel towards the device.
+
+.TCP Handler
+Represents single server that is handling incoming connections over TCP / TLS protocol.
+TCP Handler creates a single instance of TCP Channel Initializer that will initialize
+channels. After that it binds to configured InetAddress and port. When a new
+device connects, TCP Handler registers its channel and passes control to
+TCP Channel Initializer.
+
+.TCP Channel Initializer
+This class is used for channel initialization / rejection and passing arguments.
+After a new channel has been registered it calls Switch Connection Handler's
+(OF Plugin) accept method to decide if the library should keep the newly registered
+channel or if the channel should be closed. If the channel has been accepted,
+TCP Channel Initializer creates the whole pipeline with needed handlers and also
+with ConnectionAdapter instance. After the channel pipeline is ready, Switch
+Connection Handler is notified with +onConnectionReady+ notification.
+OpenFlow Plugin can now start sending messages downstream.
+
+.Idle Handler
+If there are no messages received for more than time specified, this handler
+triggers idle state notification.
+The switch idle timeout is received as a parameter from ConnectionConfiguration
+settings. Idle State Handler is inactive while there are messages received within
+the switch idle timeout. If there are no messages received for more than timeout
+specified, handler creates SwitchIdleEvent message and sends it upstream.
+
+.TLS Handler
+It encrypts and decrypts messages over TLS protocol.
+Engaging TLS Handler into pipeline is matter of configuration (+<tls>+ tag).
+TLS communication is either unsupported or required. TLS Handler is represented
+as a Netty's SslHandler.
+
+.OF Frame Decoder
+Parses input stream into correct length message frames for further processing.
+Framing is based on Openflow header length. If received message is shorter than
+minimal length of OpenFlow message (8 bytes), OF Frame Decoder waits for more data.
+After receiving at least 8 bytes the decoder checks length in OpenFlow header.
+If there are still some bytes missing, the decoder waits for them. Else the OF
+Frame Decoder sends correct length message to next handler in the channel pipeline.
+
+.OF Version Detector
+Detects version of used OpenFlow Protocol and discards unsupported version messages.
+If the detected version is supported, OF Version Detector creates
++VersionMessageWrapper+ object containing the detected version and byte message
+and sends this object upstream.
+
+.OF Decoder
+Chooses correct deserilization factory (based on message type) and deserializes
+messages into generated DTOs (Data Transfer Object).
+OF Decoder receives +VersionMessageWrapper+ object and passes it to
++DeserializationFactory+ which will return translated DTO. +DeserializationFactory+
+creates +MessageCodeKey+ object with version and type of received message and
+Class of object that will be the received message deserialized into. This object
+is used as key when searching for appropriate decoder in +DecoderTable+.
++DecoderTable+ is basically a map storing decoders. Found decoder translates
+received message into DTO. If there was no decoder found, null is returned. After
+returning translated DTO back to OF Decoder, the decoder checks if it is null or not.
+When the DTO is null, the decoder logs this state and throws an Exception. Else it
+passes the DTO further upstream. Finally, the OF Decoder releases ByteBuf containing
+received and decoded byte message.
+
+.OF Encoder
+Chooses correct serialization factory (based on type of DTO) and serializes DTOs
+into byte messages.
+OF Encoder does the opposite than the OF Decoder using the same principle.
+OF Encoder receives DTO, passes it for translation and if the result is not null,
+it sends translated DTO downstream as a ByteBuf. Searching for appropriate encoder
+is done via MessageTypeKey, based on version and class of received DTO.
+
+.Delegating Inbound Handler
+Delegates received DTOs to Connection Adapter.
+It also reacts on channelInactive and channelUnregistered events. Upon one of
+these events is triggered, DelegatingInboundHandler creates DisconnectEvent message
+and sends it upstream, notifying upper layers about switch disconnection.
+
+.Channel Outbound Queue
+Message flushing handler.
+Stores outgoing messages (DTOs) and flushes them. Flush is performed based on time
+expired and on the number of messages enqueued.
+
+.Connection Adapter
+Provides a facade on top of pipeline, which hides netty.io specifics. Provides a
+set of methods to register for incoming messages and to send messages to particular
+channel / session.
+ConnectionAdapterImpl basically implements three interfaces (unified in one
+superinterface ConnectionFacade):
+
+* ConnectionAdapter
+* MessageConsumer
+* OpenflowProtocolService
+
+
+*ConnectionAdapter* interface has methods for setting up listeners (message,
+system and connection ready listener), method to check if all listeners are set,
+checking if the channel is alive and disconnect method. Disconnect method clears
+responseCache and disables consuming of new messages.
+
+*MessageConsumer* interface holds only one method: +consume()+. +Consume()+ method
+is called from DelegatingInboundHandler. This method processes received DTO's based
+on their type. There are three types of received objects:
+
+* System notifications - invoke system notifications in OpenFlow Plugin
+(systemListener set). In case of +DisconnectEvent+ message, the Connection Adapter
+clears response cache and disables consume() method processing,
+* OpenFlow asynchronous messages (from switch) - invoke corresponding notifications
+in OpenFlow Plugin,
+* OpenFlow symmetric messages (replies to requests) - create +RpcResponseKey+
+with XID and DTO's class set. This +RpcResponseKey+ is then used to find
+corresponding future object in responseCache. Future object is set with success
+flag, received message and errors (if any occurred). In case no corresponding
+future was found in responseCache, Connection Adapter logs warning and discards
+the message. Connection Adapter also logs warning when an unknown DTO is received.
+
+*OpenflowProtocolService* interface contains all rpc-methods for sending messages
+from upper layers (OpenFlow Plugin) downstream and responding. Request messages
+return Future filled with expected reply message, otherwise the expected Future
+is of type Void.
+
+*NOTE:*
+MultipartRequest message is the only exception. Basically it is request - reply
+Message type, but it wouldn't be able to process more following MultipartReply
+messages if this was implemented as rpc (only one Future). This is why MultipartReply
+is implemented as notification. OpenFlow Plugin takes care of correct message
+processing.
+
+
+==== UDP Channel pipeline (openflow-protocol-impl)
+Creates UDP channel processing pipeline based on configuration and support.
+*Switch Connection Provider*, *Channel Outbound Queue* and *Connection Adapter*
+fulfill the same role as in case of TCP connection / channel pipeline (please
+see above).
+
+image::https://wiki.opendaylight.org/images/thumb/5/57/UdpChannelPipeline.png/500px-UdpChannelPipeline.png[Channel pipeline]
+
+.UDP Handler
+
+Represents single server that is handling incoming connections over UDP (DTLS)
+protocol.
+UDP Handler creates a single instance of UDP Channel Initializer that will
+initialize channels. After that it binds to configured InetAddress and port.
+When a new device connects, UDP Handler registers its channel and passes control
+to UDP Channel Initializer.
+
+.UDP Channel Initializer
+This class is used for channel initialization and passing arguments.
+After a new channel has been registered (for UDP there is always only one channel)
+UDP Channel Initializer creates whole pipeline with needed handlers.
+
+.DTLS Handler
+Haven't been implemented yet. Will take care of secure DTLS connections.
+
+.OF Datagram Packet Handler
+Combines functionality of OF Frame Decoder and OF Version Detector. Extracts
+messages from received datagram packets and checks if message version is supported.
+If there is a message received from yet unknown sender, OF Datagram Packet Handler
+creates Connection Adapter for this sender and stores it under sender's address in
++UdpConnectionMap+. This map is also used for sending the messages and for correct
+Connection Adapter lookup - to delegate messages from one channel to multiple sessions.
+
+.OF Datagram Packet Decoder
+Chooses correct deserilization factory (based on message type) and deserializes
+messages into generated DTOs.
+OF Decoder receives +VersionMessageUdpWrapper+ object and passes it to
++DeserializationFactory+ which will return translated DTO. +DeserializationFactory+
+creates +MessageCodeKey+ object with version and type of received message and
+Class of object that will be the received message deserialized into. This object
+is used as key when searching for appropriate decoder in +DecoderTable+.
++DecoderTable+ is basically a map storing decoders. Found decoder translates
+received message into DTO (DataTransferObject). If there was no decoder found,
+null is returned. After returning translated DTO back to OF Datagram Packet Decoder,
+the decoder checks if it is null or not. When the DTO is null, the decoder logs
+this state. Else it looks up appropriate Connection Adapter in +UdpConnectionMap+
+and passes the DTO to found Connection Adapter. Finally, the OF Decoder releases
++ByteBuf+ containing received and decoded byte message.
+
+.OF Datagram Packet Encoder
+Chooses correct serialization factory (based on type of DTO) and serializes DTOs
+into byte messages.
+OF Datagram Packet Encoder does the opposite than the OF Datagram Packet Decoder
+using the same principle. OF Encoder receives DTO, passes it for translation and
+if the result is not null, it sends translated DTO downstream as a datagram packet.
+Searching for appropriate encoder is done via MessageTypeKey, based on version
+and class of received DTO.
+
+==== SPI (openflow-protocol-spi)
+Defines interface for library's connection point for other projects. Library
+exposes its functionality through this interface.
+
+==== Integration test (openflow-protocol-it)
+Testing communication with simple client.
+
+==== Simple client(simple-client)
+Lightweight switch simulator - programmable with desired scenarios.
+
+==== Utility (util)
+Contains utility classes, mainly for work with ByteBuf.
