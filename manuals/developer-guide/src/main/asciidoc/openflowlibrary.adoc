@@ -2,3 +2,41 @@
 
 Content on developing using the OpenFlow Protocol Library can be found on the OpenDaylight wiki here: https://wiki.opendaylight.org/view/Openflow_Protocol_Library:Documentation
 
+
+== Openflowjava Developer Guide
+
+=== Features Overview
+There are three features inside openflowjava: +
+. odl-openflowjava-protocol provides all openflowjava bundles, that are needed 
+for communication with openflow devices. It ensures message translation and 
+handles network connections. It also provides openflow protocol specific 
+model.
+. odl-openflowjava-all currently contains only odl-openflowjava-protocol feature.
+. odl-openflowjava-stats provides mechanism for message counting and reporting.
+Can be used for performance analysis. 
+
+=== odl-openflowjava-protocol Architecture
+Basic bundles contained in this feature are openflow-protocol-api, 
+openflow-protocol-impl, openflow-protocol-spi and util.
+openflow-protocol-api - contains openflow model, constants and keys used for 
+(de)serializer registration.
+openflow-protocol-impl - contains message factories, that translate binary 
+messages into DataObjects and vice versa. Bundle also contains network connection 
+handlers - servers, netty pipeline handlers, ...
+openflow-protocol-spi - entry point for openflowjava configuration, 
+startup and close. Basically starts implementation.
+util - utility classes for binary-Java conversions and to ease experimenter 
+key creation
+
+=== odl-openflowjava-stats feature
+Runs over odl-openflowjava-protocol. It counts various message types / events 
+and reports counts in specified time periods. Statistics collection can be 
+configured in openflowjava-config/src/main/resources/45-openflowjava-stats.xml
+
+=== Key APIs and Interfaces
+Basic API / SPI classes are ConnectionAdapter (Rpc/notifications) and 
+SwitchConnectionProcider (configure, start, shutdown)
+
+=== API Reference Documentation
+Provide links to JavaDoc, REST API documentation, etc.  [TBD]
+
