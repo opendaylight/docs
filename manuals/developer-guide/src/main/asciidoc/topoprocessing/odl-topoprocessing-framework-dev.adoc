@@ -1,0 +1,22 @@
+== odl-topoprocessing-framework Developer Guide
+
+=== Overview
+TopoProcessingProvider is entry point for Topology Processing Framework. It requires DataBroker instance. DataBroker is needed for listener registrations. There is TopologyRequestListener which listens on aggregated topology requests (placed into configuration datastore) and UnderlayTopologyListeners which listen on underlay topology data changes (made in operational datastore). TopologyRequestHandler saves toporequest data and provides method for translating path to the specified leaf. When a change in topology occurs, registered UnderlayTopologyListener processes this information for further aggregation and/or filtration. Finally, after overlay topology is created, it is passed to TopologyWriter, which writes this topology into operational datastore.
+
+=== odl-topoprocessing-framework Architecture
+Contains of topoprocessing-api, topoprocessing-spi and topoprocessing-impl 
+bundles.
+topoprocessing-api - contains correlation definitions
+topoprocessing-spi - entry point for topoprocessing service (start and close)
+topoprocessing-impl - contains implemented handlers, listeners and aggregators
+
+.architecture schema
+image::topoprocessing/architecture.png[architecture]
+
+=== Key APIs and Interfaces
+Basic Provider class is TopoProcessingProvider which provides startup and shutdown
+methods. Otherwise the framework communicates via requests and outputs stored 
+in DataStores.
+
+=== API Reference Documentation
+Provide links to JavaDoc, REST API documentation, etc. [TBD]
