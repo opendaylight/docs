@@ -1,0 +1,37 @@
+== odl-topoprocessing-framework Developer Guide
+
+=== Overview
+TopoProcessingProvider is entry point for Topology Processing Framework. It requires DataBroker instance. DataBroker is needed for listener registrations. There is TopologyRequestListener which listens on aggregated topology requests (placed into configuration datastore) and UnderlayTopologyListeners which listen on underlay topology data changes (made in operational datastore). TopologyRequestHandler saves toporequest data and provides method for translating path to the specified leaf. When a change in topology occurs, registered UnderlayTopologyListener processes this information for further aggregation and/or filtration. Finally, after overlay topology is created, it is passed to TopologyWriter, which writes this topology into operational datastore.
+
+=== odl-topoprocessing-framework Architecture
+Contains of topoprocessing-api, topoprocessing-spi and topoprocessing-impl 
+bundles.
+
+* topoprocessing-api - contains correlation definitions
+* topoprocessing-spi - entry point for topoprocessing service (start and close)
+* topoprocessing-impl - contains implemented handlers, listeners and aggregators
+
+*Typical usecase*
+
+1. TopoProcessingProvider instance is created, DataBroker dependency is set
+2. TopoProcessingProvider registers TopologyRequestListener (into configuration datastore)
+    - TopologyRequestListener listens on any topology creation or deletion and checks if it contains CorrelationAugment augmentation
+3. TopologyRequestListener creates TopologyRequestHandler on new topology request
+    - TopologyRequestHandler translates paths from correlation into InstanceIdentifiers
+4. TopologyRequestHandler creates TopologyFiltrator and/or TopologyAggregator (depending on correlation)
+5. This step shows, that we can create filtered views on aggregated topologies
+6. TopologyRequestHandler registers needed UnderlayTopologyListener(s) (into operational datastore)
+7. Data change events are passed for aggregation and/or filtering
+8. Overlay topology is passed to TopologyWriter
+9. TopologyWriter writes the overlay topology into operational datastore
+
+.architecture schema
+image::topoprocessing/architecture.png[architecture]
+
+=== Key APIs and Interfaces
+Basic Provider class is TopoProcessingProvider which provides startup and shutdown
+methods. Otherwise the framework communicates via requests and outputs stored 
+in DataStores.
+
+=== API Reference Documentation
+Provide links to JavaDoc, REST API documentation, etc. [TBD]
