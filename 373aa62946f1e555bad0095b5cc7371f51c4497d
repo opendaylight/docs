@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a93c517_3f4f236d",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sfc/sf-selection-algorithm-dev.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-06T18:42:10Z",
+      "side": 1,
+      "message": "The other sections have used SFC instead of spelling it out. See here: https://git.opendaylight.org/gerrit/#/c/16479/\n\nIdeally, we would be consistent.",
+      "range": {
+        "startLine": 1,
+        "startChar": 3,
+        "endLine": 1,
+        "endChar": 19
+      },
+      "revId": "373aa62946f1e555bad0095b5cc7371f51c4497d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_5f522f14",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sfc/sfc.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-06T18:42:10Z",
+      "side": 1,
+      "message": "This patch\u0027s changes to this file will conflict with another SFC user documentation patch, see here: https://git.opendaylight.org/gerrit/#/c/16479/",
+      "revId": "373aa62946f1e555bad0095b5cc7371f51c4497d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_ff58db33",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/sf-selection-algorithm-user.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-06T18:42:10Z",
+      "side": 1,
+      "message": "Another SFC docs patch uses SFC instead of \"Service Function\", ideally they would be consistent.\n\nSee: https://git.opendaylight.org/gerrit/#/c/16479/",
+      "range": {
+        "startLine": 1,
+        "startChar": 3,
+        "endLine": 1,
+        "endChar": 19
+      },
+      "revId": "373aa62946f1e555bad0095b5cc7371f51c4497d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_1f5ca724",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/sfc.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-06T18:42:10Z",
+      "side": 1,
+      "message": "Again this will conflict with this patch: https://git.opendaylight.org/gerrit/#/c/16479/",
+      "revId": "373aa62946f1e555bad0095b5cc7371f51c4497d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
