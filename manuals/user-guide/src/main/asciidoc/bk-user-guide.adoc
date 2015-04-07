@@ -54,8 +54,13 @@ include::ttp/ttp-cli-tools-user.adoc[TTP]
 
 include::addons/vpnservice/vpnservice-user.adoc[VPN Service]
 
+<<<<<<< HEAD
 include::capwap/capwap-user.adoc[CAPWAP] 
 
 include::tsdr/tsdr-hbase-user.adoc[]
 
 include::tsdr/tsdr-h2-user.adoc[]
+=======
+include::sdninterfaceapp/odl-sdninterfaceapp-all-user.adoc[ODL_SDNi]
+
+>>>>>>> a029287... Addressed Comments

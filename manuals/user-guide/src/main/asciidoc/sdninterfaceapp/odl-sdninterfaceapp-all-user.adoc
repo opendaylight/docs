@@ -1,0 +1,29 @@
+== ODl-SDNi User Guide
+Refer to this template to identify the required sections and information
+that you should  provide for a User Guide. The user guide should contain
+configuration, administration, management, using, and troubleshooting
+sections for the feature.
+
+===Introduction
+This user guide will help to setup the ODL-SDNi application for lithium release and contains the examples configuration using ODL-BGPCEP.
+
+===ODL-SDNi App Source code
+git clone https://git.opendaylight.org/gerrit/sdninterfaceapp.git
+OR
+git clone ssh://<username>@git.opendaylight.org:29418/sdninterfaceapp
+
+===Components
+*SDNiAggregator(controller), SDNi REST API(controller) and SDNiWrapper(bgpcep) are the three components in ODL-SDNi App  
+SDNiAggregator: Connects with switch, topology, hosttracker managers of controller to get the topology and other related data.
+*SDNi Rest API: It is a part of controller northbound, which gives the required information by quering SDNiAggregator
+*SDNiWrapper: This component uses the SDNi RestAPI and gathers the information required to be shared among controllers.
+
+===TroubleShooting
+To work with multiple controllers, change some of the configuration in config.ini file.
+For example change the listening port of one controller to 6653 and other controller to 6663 in /root/controller/opendaylight/distribution/opendaylight/target/distribution.opendaylight-osgipackage/opendaylight/configuration/config.ini (i.e of.listenPort=6653)
+
+Open Flow related system parameters 
+TCP port on which the controller is listening (default 6633) of.listenPort=6653
+
+
+
