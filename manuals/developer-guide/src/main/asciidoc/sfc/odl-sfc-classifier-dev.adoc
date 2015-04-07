@@ -1,0 +1,13 @@
+=== SFC Classifier Control and Date plane Developer guide
+
+==== Overview
+Description of classifier can be found in: https://datatracker.ietf.org/doc/draft-ietf-sfc-architecture/
+
+==== Classifier Architecture
+Python code located in project directory sfc-py/
+
+==== Key APIs and Interfaces
+This features exposes API to configure classifier (corresponds to service-function-classifier.yang)
+
+==== API Reference Documentation
+See: sfc-model/src/main/yang/service-function-classifier.yang
