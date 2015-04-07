@@ -1,0 +1,33 @@
+=== SFC OpenFlow Layer 2 Renderer User Guide
+
+==== Overview
+The SFC OpenFlow Layer 2 Renderer implements Service Chaining on Open Flow
+switches. It listens for the creation of a Rendered Service Path, and once 
+received it programs Service Function Forwarders that are hosted on Open
+Flow capable switches to steer packets through the service chain.
+
+==== SFC OFS Architecture
+
+TODO add an SFCOFL2 architecture diagram here
+
+TODO explain the SFCOFL2 Flow pipeline.
+
+==== Administering or Managing <feature>
+
+TODO list the necesary Karaf features for SFCOFL2.
+
+==== SFCOFL2 Tutorial
+
+TODO add an example SFC configuration that demonstrates a simple use-case.
+
+====== Overview
+TBD
+
+====== Prerequisites
+TBD
+
+====== Target Environment
+TBD
+
+====== Instructions
+TBD
