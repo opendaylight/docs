@@ -39,6 +39,24 @@
       "revId": "8a6c50399a4c47cbc6548c26279a217cb9f0247d",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_c88a03bf",
+        "filename": "manuals/developer-guide/src/main/asciidoc/openflowjava/odl-openflowjava-protocol-dev.adoc",
+        "patchSetId": 8
+      },
+      "lineNbr": 648,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-07T18:20:04Z",
+      "side": 1,
+      "message": "It doesn\u0027t. It showed up as an ñ in my editor and so I replaced it with an n. I think you put either an en-dash or an em-dash instead of a hyphen here. If you replace it with a normal hyphen, it should work fine and I\u0027ll merge it when you\u0027re happy.",
+      "parentUuid": "5a93c517_c2de646d",
+      "revId": "8a6c50399a4c47cbc6548c26279a217cb9f0247d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
