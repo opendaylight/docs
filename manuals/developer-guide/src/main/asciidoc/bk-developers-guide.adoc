@@ -60,8 +60,6 @@ include::iotdm/iotdm-dev.adoc[]
 
 include::l2switch.adoc[]
 
-include::lacp/lacp-dev.adoc[]
-
 include::lispflow.adoc[]
 
 include::nic/nic-model-dev.adoc[]
@@ -97,6 +95,8 @@ include::usc/odl-usc-channel-dev.adoc[USC]
 include::VTN_developer_guide.adoc[]
 
 include::yangtools.adoc[]
+
+include::sdninterfaceapp/odl-sdninterfaceapp-all-dev.adoc[]
 
 :numbered!:
 
