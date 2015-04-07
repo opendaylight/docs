@@ -1,0 +1,24 @@
+== Control And Provisioning of Wireless Access Points (CAPWAP) Protocol Plugin
+
+=== Overview
+
+CAPWAP plugin project aims to provide new southbound interface for controller to 
+be able to monitor and manage CAPWAP compliant WTP network devices. The CAPWAP 
+feature will provide REST based northbound APIs.
+
+=== CAPWAP  Architecture
+
+TBD: Architecture Diagram
+
+=== CAPWAP APIs and Interfaces
+
+This section describes the APIs for interacting with the CAPWAP plugin.
+
+==== CAPWAP Topology
+
+TBD:
+
+=== API Reference Documentation
+
+TBD: Provide links to JavaDoc, REST API documentation, etc.
+
