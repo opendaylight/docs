@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a93c517_a84537b4",
+        "filename": "manuals/developer-guide/src/main/asciidoc/topoprocessing/odl-topoprocessing-framework-dev.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-07T18:05:08Z",
+      "side": 1,
+      "message": "You probably want to have a more human-readable name here, e.g., Topology Processing Framework.",
+      "range": {
+        "startLine": 1,
+        "startChar": 3,
+        "endLine": 1,
+        "endChar": 31
+      },
+      "revId": "d9d240b1356d74757306a9e4df3e9a8620ee6b59",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_4814b39f",
+        "filename": "manuals/developer-guide/src/main/asciidoc/topoprocessing/odl-topoprocessing-framework-dev.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-07T18:05:08Z",
+      "side": 1,
+      "message": "You probably want to have a more human-readable name here, e.g., Topology Processing Framework.",
+      "range": {
+        "startLine": 6,
+        "startChar": 4,
+        "endLine": 6,
+        "endChar": 32
+      },
+      "revId": "d9d240b1356d74757306a9e4df3e9a8620ee6b59",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_88dcfb13",
+        "filename": "manuals/developer-guide/src/main/asciidoc/topoprocessing/odl-topoprocessing-framework-dev.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-07T18:05:08Z",
+      "side": 1,
+      "message": "If you look here: http://powerman.name/doc/asciidoc#_lists\n\nYou can see to make automatically numbered lists you can use . instead of * and thus avoid numbers if you want.",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 72
+      },
+      "revId": "d9d240b1356d74757306a9e4df3e9a8620ee6b59",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_080eab8d",
+        "filename": "manuals/developer-guide/src/main/asciidoc/topoprocessing/odl-topoprocessing-framework-dev.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-07T18:05:08Z",
+      "side": 1,
+      "message": "You probably want to add a width\u003d500 here to avoid running off the page. See this: https://wiki.opendaylight.org/view/CrossProject:Documentation_Group:Tools:AsciiDoc_Tips#Watch_widths_and_heights_on_big_images",
+      "revId": "d9d240b1356d74757306a9e4df3e9a8620ee6b59",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
