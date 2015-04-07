@@ -12,13 +12,13 @@ include::core-release-notes.adoc[OpenDaylight Release Notes]
 
 This first part of the user guide covers the basic user operations of the OpenDaylight Release using the generic base functionality.
 
-include::ch-introduction.adoc[OpenDaylight Controller Overview]
+include::ch-clustering.adoc[Setting Up Clustering on an OpenDaylight Controller]
 
-include::dlux-userguide.adoc[Using the OpenDaylight User Interface (DLUX)]
+include::ch-introduction.adoc[OpenDaylight Controller Overview]
 
 include::ch-xsql-commands.adoc[Running XSQL Console Commands and Queries]
 
-include::ch-clustering.adoc[Setting Up Clustering on an OpenDaylight Controller]
+include::dlux-userguide.adoc[Using the OpenDaylight User Interface (DLUX)]
 
 = Addons
 
@@ -26,15 +26,9 @@ include::ch-clustering.adoc[Setting Up Clustering on an OpenDaylight Controller]
 
 This second part of the user guide covers project specific usage instructions.
 
-include::bgpcep/odl-bgpcep-bgp-all-user.adoc[BGP]
-
-include::bgpcep/odl-bgpcep-pcep-all-user.adoc[PCEP]
-
 include::addons/defense4all.adoc[Defense4All]
 
 include::addons/groupbasedpolicy.adoc[Group Based Policy]
-
-include::sfc/sfc.adoc[Service Function Chain]
 
 include::addons/l2switch.adoc[L2 Switch]
 
@@ -44,18 +38,27 @@ include::addons/pcmm.adoc[Packet Cable MultiMedia (PCMM) Service]
 
 include::addons/plugin2oc.adoc[Plugin for OpenContrail]
 
-include::tcpmd5/odl-tcpmd5-all-user.adoc[TCP-MD5]
-
-include::usc/odl-usc-channel-user.adoc[USC]
+include::addons/vpnservice/vpnservice-user.adoc[VPN Service]
 
 include::addons/vtn.adoc[VTN]
 
-include::ttp/ttp-cli-tools-user.adoc[TTP]
+include::bgpcep/odl-bgpcep-bgp-all-user.adoc[BGP]
 
-include::addons/vpnservice/vpnservice-user.adoc[VPN Service]
+include::bgpcep/odl-bgpcep-pcep-all-user.adoc[PCEP]
 
 include::capwap/capwap-user.adoc[CAPWAP] 
+
+include::sdninterfaceapp/odl-sdninterfaceapp-all-user.adoc[ODL_SDNi]
+
+include::sfc/sfc.adoc[Service Function Chain]
+
+include::tcpmd5/odl-tcpmd5-all-user.adoc[TCP-MD5]
 
 include::tsdr/tsdr-hbase-user.adoc[]
 
 include::tsdr/tsdr-h2-user.adoc[]
+
+include::ttp/ttp-cli-tools-user.adoc[TTP]
+
+include::usc/odl-usc-channel-user.adoc[USC]
+
