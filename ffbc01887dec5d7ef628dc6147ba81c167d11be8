@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a93c517_68688ff5",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sdninterfaceapp/odl-sdninterfaceapp-all-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-07T18:29:50Z",
+      "side": 1,
+      "message": "Did you mean to have an underscore here?",
+      "range": {
+        "startLine": 1,
+        "startChar": 6,
+        "endLine": 1,
+        "endChar": 7
+      },
+      "revId": "ffbc01887dec5d7ef628dc6147ba81c167d11be8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_48bef366",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sdninterfaceapp/odl-sdninterfaceapp-all-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-07T18:29:50Z",
+      "side": 1,
+      "message": "Did you mean to have an underscore here?",
+      "range": {
+        "startLine": 6,
+        "startChar": 7,
+        "endLine": 6,
+        "endChar": 8
+      },
+      "revId": "ffbc01887dec5d7ef628dc6147ba81c167d11be8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_68c16fe3",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sdninterfaceapp/odl-sdninterfaceapp-all-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-07T18:29:50Z",
+      "side": 1,
+      "message": "Since you have a space between SDNi and the component above, do you also want to do that for the section headers? \n\nAlso below.",
+      "revId": "ffbc01887dec5d7ef628dc6147ba81c167d11be8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_e8ac9f37",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sdninterfaceapp/odl-sdninterfaceapp-all-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-07T18:29:50Z",
+      "side": 1,
+      "message": "Without blank lines between these paragraphs, they will all appear as one big paragraph together.\n\nAlso below.",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 107
+      },
+      "revId": "ffbc01887dec5d7ef628dc6147ba81c167d11be8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
