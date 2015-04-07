@@ -1,4 +1,18 @@
 == Service Function Chaining
 
-More information on Service Function Chaining can be found on the OpenDaylight wiki here: https://wiki.opendaylight.org/view/Service_Function_Chaining:Main
+include::sfc/sfc_overview.adoc[SFC Overview]
+
+include::sfc/classifier-dev.adoc[SFC Classifier]
+
+include::sfc/odl-sfc-ovs-dev.adoc[SFC OVS]
+
+include::sfc/odl-sfc-sb-rest-dev.adoc[SFC SouthBound REST plugin]
+
+include::sfc/odl-sfc-load-balance-dev.adoc[Service Function Grouping and Load Balancing developer guide]
+
+include::sfc/odl-sfc-sf-scheduler-dev.adoc[Service Function selection scheduler]
+
+include::sfc/odl-sfc-sf-monitoring-dev.adoc[Service Function Monitoring]
+
+include::sfc/odl-sfc-sf-selection-algorithm-dev.adoc[Service Function Selection Algorithm guide]
 
