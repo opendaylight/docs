@@ -1,0 +1,38 @@
+== OpenDaylight Release Notes
+
+=== Key Features
+
+A list of the key functionality provided in OpenDaylight Helium can be found in the table in the <<_installing_components,section below>>.
+
+////
+The following table describes the key features provided by OpenDaylight Helium.
+
+[cols="2",option="headers"]
+|==============================================
+| *Feature* | *Description*
+|  Maven support | Used to simplify build automation.
+| OSGi framework | Serves as the controller&#8217;s back-end, allowing it to dynamically load bundles, package JAR files, and bind bundles together when exchanging information.
+| Java interface support | Used by specific bundles to implement call-back functions for events and indicate the awareness of specific states.
+| Model- Driven Service Abstraction Layer (MD-SAL) | Allows the controller to support multiple protocols (such as BGP-LS and OpenFlow) on the southbound interface. Also provides consistent services for modules and applications (which is where the business logic is embedded).
+| Switch Manager | Once a network element has been discovered, its details (such as device type, software version, etc.) are stored by the Switch Manager.
+| High Availability (HA) | The controller supports cluster-based HA, allowing you to connect multiple controllers and configure them to act as one in order	 to ensure the controller&#8217;s continuous operation.
+|==============================================
+////
+=== Target Environment
+
+NOTE: If you are using Oracle, JDK version 1.7.0_45 or later is required.
+
+==== For Execution
+
+The OpenDaylight controller source files are completely portable and only require a Java 7-compliant JVM to run.
+
+==== For Development
+
+Although the OpenDaylight controller is developed as a normal Java project, it makes heavy use of the Xtend language in some places. While development is possible with bare tools, we recommend you use Eclipse with the Xtend plugin.
+
+=== Known Issues and Limitations
+
+Other than as noted in project-specific release notes, there are two known limitations.
+
+. The Karaf distribution of OpenDaylight requires internet access when run for the first time.
+. There are scales beyond which the controller has been unreliable when collecting flow statistics from OpenFlow switches. In tests, theses issues became apparent when managing 10s of thousands of OpenFlow switches, however this may vary depending on deployment and use cases. Flow programming has been unaffected in our tests.

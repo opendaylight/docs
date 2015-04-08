@@ -48,7 +48,7 @@ Optional part introduction goes here.
 //////////////////////////
 
 [preface]
-include::core-release-notes.adoc[OpenDaylight Release Notes]
+include::release-notes.adoc[OpenDaylight Release Notes]
 
 //////////////////////////
 // BEGIN COMMENT
@@ -62,49 +62,7 @@ the end of their file.
 
 include::general_installation.adoc[]
 
-/////////////
-// BEGIN COMMENT
-include::addons/aaa.adoc[]
-
-include::addons/bgpcep.adoc[]
-// END COMMENT
-/////////////
-
-include::addons/defense4all.adoc[]
-
-/////////////
-// BEGIN COMMENT
-include::addons/groupbasedpolicy.adoc[]
-
-include::addons/l2switch.adoc[]
-
-include::addons/lispflow.adoc[]
-
-include::addons/ovsdb.adoc[]
-// END COMMENT
-/////////////
-
 include::ovsdb/ovsdb-install.adoc[]
-
-/////////////
-// BEGIN COMMENT
-include::addons/pcmm.adoc[]
-
-include::addons/plugin2oc.adoc[]
-
-include::addons/sfc.adoc[]
-
-include::addons/snbi.adoc[]
-
-include::addons/snmp4sdn.adoc[]
-
-include::addons/ttp.adoc[]
-
-include::addons/vtn.adoc[]
-// END COMMENT
-/////////////
-
-include::addons/yangtools.adoc[]
 
 include::tsdr/tsdr-hbase-install.adoc[]
 

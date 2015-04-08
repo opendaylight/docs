@@ -81,7 +81,7 @@ feature:install <feature1-name> <feature2-name> ... <featureN-name>
 |=======================
 | Component Name                   | Component Description | Karaf feature name                    | Compatibility
 | BGPCEP                           | Enables support for BGP LS PCEP | odl-bgpcep-all                        | all
-| Defense4All                      | Enable DDoS detection and protection | n/a, see <<_defense4all,Defense4All>> | all
+| Defense4All                      | Enable DDoS detection and protection | n/a | all
 | Group Based Policy               | Enable Endpoint Registry and Policy Repository REST APIs and associated functionality for the Group Based Policy Proof of Concept demonstration | odl-groupbasedpolicy-ofoverlay        | self+all
 | L2 Switch                        | Provides L2 (Ethernet) forwarding across connected OppenFlow switches and support for host tracking | odl-l2switch-switch-ui                | self+all
 | LISP Flow Mapping                | Enable LISP control plane services including the mapping system services REST API and LISP protocol SB plugin | odl-lispflowmapping-all               | all
