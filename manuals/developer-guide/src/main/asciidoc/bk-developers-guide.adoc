@@ -42,65 +42,31 @@ include::section_Hacking_from_CLI.adoc[]
 
 = Project-Specific Development Guides
 
-include::aaa.adoc[]
-
 include::bgpcep/odl-bgpcep-bgp-all-dev.adoc[BGP]
 
 include::bgpcep/odl-bgpcep-pcep-all-dev.adoc[PCEP]
 
-include::controller.adoc[]
-
-include::defense4all.adoc[]
-
-include::dlux.adoc[]
-
-include::groupbasedpolicy.adoc[]
-
 include::iotdm/iotdm-dev.adoc[]
 
-include::l2switch.adoc[]
-
 include::lacp/lacp-dev.adoc[]
-
-include::lispflow.adoc[]
 
 include::nic/nic-model-dev.adoc[]
 
 include::neutron/neutron.adoc[]
 
-include::odlsdni.adoc[]
-
 include::openflowjava/odl-openflowjava-protocol-dev.adoc[]
 
-include::openflowplugin.adoc[]
-
 include::ovsdb/ovsdb-developer.adoc[]
-
-include::pcmm.adoc[]
-
-include::plugin2oc.adoc[]
 
 include::reservation/reservation-dev.adoc[]
 
 include::sfc/sfc.adoc[]
-
-include::snbi.adoc[]
-
-include::snmp4sdn.adoc[]
 
 include::tcpmd5/odl-tcpmd5-all-dev.adoc[TCP-MD5]
 
 include::ttp/ttp-model-dev.adoc[]
 
 include::ttp/ttp-cli-tools-dev.adoc[]
-
-include::usc/odl-usc-channel-dev.adoc[USC]
-
-include::capwap/capwap-dev.adoc[CAPWAP]
-
-include::VTN_developer_guide.adoc[]
-
-include::yangtools.adoc[]
 
 :numbered!:
 
