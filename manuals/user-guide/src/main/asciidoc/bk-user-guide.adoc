@@ -14,7 +14,7 @@ This first part of the user guide covers the basic user operations of the OpenDa
 
 include::ch-introduction.adoc[OpenDaylight Controller Overview]
 
-include::dlux-userguide.adoc[Using the OpenDaylight User Interface (DLUX)]
+include::ch-dlux-userguide.adoc[Using the OpenDaylight User Interface (DLUX)]
 
 include::ch-xsql-commands.adoc[Running XSQL Console Commands and Queries]
 
@@ -30,29 +30,13 @@ include::bgpcep/odl-bgpcep-bgp-all-user.adoc[BGP]
 
 include::bgpcep/odl-bgpcep-pcep-all-user.adoc[PCEP]
 
-include::addons/defense4all.adoc[Defense4All]
-
-include::addons/groupbasedpolicy.adoc[Group Based Policy]
-
 include::sfc/sfc.adoc[Service Function Chain]
-
-include::addons/l2switch.adoc[L2 Switch]
-
-include::addons/odlsdni.adoc[ODL-SDNi]
-
-include::addons/pcmm.adoc[Packet Cable MultiMedia (PCMM) Service]
-
-include::addons/plugin2oc.adoc[Plugin for OpenContrail]
 
 include::tcpmd5/odl-tcpmd5-all-user.adoc[TCP-MD5]
 
 include::usc/odl-usc-channel-user.adoc[USC]
 
-include::addons/vtn.adoc[VTN]
-
 include::ttp/ttp-cli-tools-user.adoc[TTP]
-
-include::addons/vpnservice/vpnservice-user.adoc[VPN Service]
 
 include::capwap/capwap-user.adoc[CAPWAP] 
 
