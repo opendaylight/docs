@@ -3,14 +3,31 @@
 ==== Overview
 Description of classifier can be found in: https://datatracker.ietf.org/doc/draft-ietf-sfc-architecture/
 
+Classifier manages everything from starting the packet listener to creation (and removal) of appropriate ip(6)tables rules and marking received packets accordingly. Its functionality is *available only on Linux* as it leverdges *NetfilterQueue*, which provides access to packets matched by an *iptables* rule. Classifier requires *root privileges* to be able to operate.
+
+So far it is capable of processing ACL for MAC addresses, ports, IPv4 and IPv6. Supported protocols are TCP and UDP.
+
 ==== Classifier Architecture
-TBA
+Python code located in the project repository sfc-py/common/classifier.py.
+
+NOTE: classifier assumes that Rendered Service Path (RSP) *already exists* in ODL when an ACL referencing it is obtained
+
+.How it works:
+. sfc_agent receives an ACL and passes it for processing to the classifier
+. the RSP (its SFF locator) referenced by ACL is requested from ODL
+. if the RSP exists in the ODL then ACL based iptables rules for it are applied
+
+After this process is over, every packet successfully matched to an iptables rule (i.e. successfully classified) will be NSH encapsulated and forwarded to a related SFF, which knows how to traverse the RSP.
+
+Rules are created using appropriate iptables command. If the Access List Entrie (ACE) rule is MAC address related both iptables and ip6tabeles rules re issued. If ACE rule is IPv4 address related, only iptables rules are issued, same for IPv6.
+
+NOTE: iptables *raw* table contains all created rules
 
 ==== Configuring Classifier
-Run python code contained in project directory sfc-py/
+Classfier does't need any configuration. +
+Its only requirement is that the *second (2) Netfilter Queue* is not used by any other process and is *avalilable for the classifier*.
 
 ==== Administering or Managing Classifier
-TBA
+Classfier runs alongside sfc_agent, therefore the commad for starting it locally is:
 
-==== Tutorials
-TBA
+	sudo python3.4 sfc-py/sfc_agent.py --rest --odl-ip-port localhost:8181 --auto-sff-name --nfq-class
