@@ -1,6 +1,5 @@
 === System requirements and prerequisites
 * Hardware Requirements: <To be added>
-
 * Software Requirements:
 If you are using Oracle, JDK version 1.7.0_45 or later is required.
 
@@ -18,7 +17,6 @@ The distribution (karaf) has no features enabled by default. However, you can in
 
 NOTE: You cannot enable all the features at the same time.
 
-		 
 ==== Running the karaf distribution 
 To run the karaf distribution:
 
@@ -28,9 +26,6 @@ To run the karaf distribution:
 
 For Example:
 
-[frame="none"]
-|===
-a|
 ----
 $ ls distribution-karaf-0.3.0-Lithium.zip 
 distribution-karaf-0.3.0-Lithium.zip
@@ -61,9 +56,8 @@ $ ./bin/karaf
 ----
 Select *tab* for a list of available commands and *[cmd] --help* for help on a specific command.
 Select *ctrl-d* or type *system:shutdown* or *logout* to shutdown OpenDaylight.
-|===
-=== Installing the components
 
+=== Installing the components
 This section describes a list of components in OpenDaylight Lithium and the relevant karaf feature to install in order to enable that component. 
 
 To install a feature use the following command:
@@ -71,13 +65,10 @@ To install a feature use the following command:
 feature:install+karaf command
 -----
 For Example:
-
 -----
 feature:install <feature-name>
 -----
-
 Multiple features can be installed using the following command:
-
 -----
 feature:install <feature1-name> <feature2-name> ... <feature-name>
 -----
@@ -116,11 +107,11 @@ In the table a compatibility value of *all* means that it can be run with other 
 To verify your install start the controller. If the controller console comes up, and that means that your controller is up and running.  
 
 === Downloading mininet
-Mininet downloads are available at: http://mininet.org 
+Mininet downloads are available at: http://mininet.org .
 The OVS version must be 2.1 or earlier.
 
 === Installing mininet
-The instructions for installation are available at: http://mininet.org.
+The instructions for installation are available at: http://mininet.org .
 
 === Verifying mininet installation
 To verify your mininet installation run the following command:
@@ -154,7 +145,6 @@ c0
 *** Done
 completed in 0.541 seconds
 
-
 === Installing support for REST APIs
 Most components that offer REST APIs will automatically load the RESTCONF API Support
 component, but if for whatever reason they seem to be missing, you can activate this
@@ -165,13 +155,13 @@ RESTCONF is a protocol that provides a programmatic interface over HTTP to acces
 RESTCONF protocol is implemented in `sal-rest-connector` artifact that is packed with the karaf bundle. 
 For more information on the RESTCONF protocol, refer to http://tools.ietf.org/html/draft-bierman-netconf-restconf-02
 
-RESTCONF allows access to datastores in the controller. The datastores available are:
+RESTCONF allows access to datastores in the controller. 
+The datastores available are:
 
 * config - contains data inserted using controller
 * operational - contains other data
 
 === Installing the DLUX web interface
-
 The OpenDaylight web interface; DLUX, draws information from the OpenFlow flow programming and L2 Switch components to display information about the topology of the network, 
 flow statistics, host locations. DLUX is automatically installed when either of the components are installed.
 
@@ -182,26 +172,19 @@ you can activate the support by installing the +odl-restconf+ feature.
 ==== Installing MD-SAL clustering
 The MD-SAL clustering feature has "special" compatibility criteria. You *must* installed clustering, before other features are installed. 
 To install clustering, run the following command on the Karaf CLI console:
-
 ----
 feature:install odl-mdsal-clustering
 ----
 ==== Karaf features list
 To find the complete list of karaf features, run the following command:
-
 ----
 feature:list
 ----
-
 To list the installed karaf features, run the following command:
-
 ----
 feature:list -i
 ----
-
 === Project specific installation instructions
-
 The Defense4All and Yang tools projects provide project-specific installation instructions here. 
 Other projects can either be installed by simply installing the appropriate Karaf features or, in some cases, further instructions can be found in the _User Guide_ or the _Developer Guide_.
-
 
