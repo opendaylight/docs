@@ -1,0 +1,231 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a93c517_818a88bd",
+        "filename": "manuals/user-guide/src/main/asciidoc/addons/lacp-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-10T18:39:28Z",
+      "side": 1,
+      "message": "Please move this file to manuals/user-guide/src/main/asciidoc/lacp/lacp-user.adoc from manuals/user-guide/src/main/asciidoc/addons/lacp-user.adoc.\n\nAssuming it\u0027s easy, getting lines wrapped to ~80-100 characters makes things easier to review in gerrit, but it\u0027s not required.",
+      "revId": "fe226499a1bac00dc9685aa6954f5fff9ed8a2fb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_61a65c55",
+        "filename": "manuals/user-guide/src/main/asciidoc/addons/lacp-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-10T18:39:28Z",
+      "side": 1,
+      "message": "OpenDaylight instead of Open Daylight or Opendaylight.\n\n\"...the creation of *a* logical channell...\" (add the word a)\n\nMissing a space between sentences: \"...of the links.Link aggregation...\"\n\nimmplementation is misspelled.\n\n\"This implementation *adheres to*...\" instead of adhere with\n\nShould their be a link to 802.3ad?",
+      "revId": "fe226499a1bac00dc9685aa6954f5fff9ed8a2fb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_c16e5001",
+        "filename": "manuals/user-guide/src/main/asciidoc/addons/lacp-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-10T18:39:28Z",
+      "side": 1,
+      "message": "\"This feature *can* be enabled...\" \n\n\"...in the Karaf console of OpenDaylight by issuing...\" (remove \"controller\", get capitalization right, add \"the\" before Karaf)",
+      "revId": "fe226499a1bac00dc9685aa6954f5fff9ed8a2fb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_817848c5",
+        "filename": "manuals/user-guide/src/main/asciidoc/addons/lacp-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-10T18:39:28Z",
+      "side": 1,
+      "message": "If you replace the \"s with `s, you\u0027ll get code formatting.",
+      "revId": "fe226499a1bac00dc9685aa6954f5fff9ed8a2fb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_014c389d",
+        "filename": "manuals/user-guide/src/main/asciidoc/addons/lacp-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-10T18:39:28Z",
+      "side": 1,
+      "message": "Replace 1. and 2. with period-space \". \" so that it gets formatted correctly. See here for more info: http://powerman.name/doc/asciidoc#_lists",
+      "revId": "fe226499a1bac00dc9685aa6954f5fff9ed8a2fb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_214ff493",
+        "filename": "manuals/user-guide/src/main/asciidoc/addons/lacp-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-10T18:39:28Z",
+      "side": 1,
+      "message": "Missing space between sentences \"...switch.Since...\"\n\nMissing space and capitalization in \"link aggregation group port(LAG)\" which should probably be \"Link Aggregation Group (LAG) group\".\n\nThere should be period at the end of the sentence.",
+      "revId": "fe226499a1bac00dc9685aa6954f5fff9ed8a2fb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_c145f070",
+        "filename": "manuals/user-guide/src/main/asciidoc/addons/lacp-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-10T18:39:28Z",
+      "side": 1,
+      "message": "REST APIs",
+      "range": {
+        "startLine": 20,
+        "startChar": 82,
+        "endLine": 20,
+        "endChar": 91
+      },
+      "revId": "fe226499a1bac00dc9685aa6954f5fff9ed8a2fb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_812608cd",
+        "filename": "manuals/user-guide/src/main/asciidoc/addons/lacp-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-10T18:39:28Z",
+      "side": 1,
+      "message": "This list is likely better done with period spaces (\". \") to make a list. To put multiple paragraphs under one list item use a line containing only a \"+\" to separate paragraphs instead of a blank line.",
+      "revId": "fe226499a1bac00dc9685aa6954f5fff9ed8a2fb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_41300001",
+        "filename": "manuals/user-guide/src/main/asciidoc/addons/lacp-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-10T18:39:28Z",
+      "side": 1,
+      "message": "Avoid spaces in URL so that the format correctly as links. So, put \"\u003cControllerIP\u003e\" instead of \"\u003cControllerIP \u003e\".",
+      "revId": "fe226499a1bac00dc9685aa6954f5fff9ed8a2fb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_011af87c",
+        "filename": "manuals/user-guide/src/main/asciidoc/addons/lacp-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-10T18:39:28Z",
+      "side": 1,
+      "message": "Add a period at the end of this sentence.",
+      "revId": "fe226499a1bac00dc9685aa6954f5fff9ed8a2fb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_211db473",
+        "filename": "manuals/user-guide/src/main/asciidoc/addons/lacp-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-10T18:39:28Z",
+      "side": 1,
+      "message": "Add a period at the end of this sentence.",
+      "revId": "fe226499a1bac00dc9685aa6954f5fff9ed8a2fb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_612bbc94",
+        "filename": "manuals/user-guide/src/main/asciidoc/addons/lacp-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-10T18:39:28Z",
+      "side": 1,
+      "message": "\"\u003c ControllerIP \u003e\" should be \"\u003cControllerIP\u003e\"",
+      "revId": "fe226499a1bac00dc9685aa6954f5fff9ed8a2fb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_e116ec54",
+        "filename": "manuals/user-guide/src/main/asciidoc/bk-user-guide.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-10T18:39:28Z",
+      "side": 1,
+      "message": "Please add this in alphabetical order.",
+      "revId": "fe226499a1bac00dc9685aa6954f5fff9ed8a2fb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
