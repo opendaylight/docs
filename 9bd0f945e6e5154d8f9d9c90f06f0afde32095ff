@@ -2,6 +2,115 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a93c517_6102dc0c",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sfc/odl-sfc-classifier-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-10T18:57:25Z",
+      "side": 1,
+      "message": "You shouldn\u0027t normally need a trailing \" +\" at the end of line in a paragraph. Adjacent non-empty lines become a paragraph and having a blank line between two blocks separates them into paragraphs.",
+      "revId": "9bd0f945e6e5154d8f9d9c90f06f0afde32095ff",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_1c2b3f83",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sfc/odl-sfc-classifier-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-10T18:57:25Z",
+      "side": 1,
+      "message": "the project repository",
+      "range": {
+        "startLine": 13,
+        "startChar": 23,
+        "endLine": 13,
+        "endChar": 40
+      },
+      "revId": "9bd0f945e6e5154d8f9d9c90f06f0afde32095ff",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_fc2773b4",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sfc/odl-sfc-classifier-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-10T18:57:25Z",
+      "side": 1,
+      "message": "RSP hasn\u0027t been defined yet.",
+      "range": {
+        "startLine": 15,
+        "startChar": 30,
+        "endLine": 15,
+        "endChar": 33
+      },
+      "revId": "9bd0f945e6e5154d8f9d9c90f06f0afde32095ff",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_dc24f7b0",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sfc/odl-sfc-classifier-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-10T18:57:25Z",
+      "side": 1,
+      "message": "ACE isn\u0027t defined yet.",
+      "range": {
+        "startLine": 24,
+        "startChar": 61,
+        "endLine": 24,
+        "endChar": 64
+      },
+      "revId": "9bd0f945e6e5154d8f9d9c90f06f0afde32095ff",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a93c517_7c3b63d1",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sfc/odl-sfc-classifier-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-10T18:57:25Z",
+      "side": 1,
+      "message": "Presumably you want to expand on this a bit. None of the terms seem terribly better defined by this.\n\nAlso, if you want to format the keywords in the same way the code listing is you can put them in `s. For example: `name`.",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 52,
+        "endChar": 25
+      },
+      "revId": "9bd0f945e6e5154d8f9d9c90f06f0afde32095ff",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a93c517_56b5282f",
         "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-classifier-user.adoc",
         "patchSetId": 1
