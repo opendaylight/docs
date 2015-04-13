@@ -1,0 +1,389 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aa0d159_fce36903",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfcofl2-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-13T15:01:47Z",
+      "side": 1,
+      "message": "It\u0027s OpenFlow, not Open Flow",
+      "range": {
+        "startLine": 5,
+        "startChar": 20,
+        "endLine": 5,
+        "endChar": 29
+      },
+      "revId": "7fab893a423053a581ab7df47e62d068ef8c464c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_dccd4d88",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfcofl2-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-13T15:01:47Z",
+      "side": 1,
+      "message": "Do you want to add a \"(RSP)\" here?",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 21
+      },
+      "revId": "7fab893a423053a581ab7df47e62d068ef8c464c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_9cf025cb",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfcofl2-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-13T15:01:47Z",
+      "side": 1,
+      "message": "It\u0027s OpenFlow, not Open Flow",
+      "range": {
+        "startLine": 7,
+        "startChar": 30,
+        "endLine": 7,
+        "endChar": 39
+      },
+      "revId": "7fab893a423053a581ab7df47e62d068ef8c464c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_fcca896d",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfcofl2-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-13T15:01:47Z",
+      "side": 1,
+      "message": "Do you want to to add a \"(SFF)\" here?",
+      "range": {
+        "startLine": 6,
+        "startChar": 53,
+        "endLine": 7,
+        "endChar": 10
+      },
+      "revId": "7fab893a423053a581ab7df47e62d068ef8c464c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_3cb9d1e9",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfcofl2-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-13T15:01:47Z",
+      "side": 1,
+      "message": "Drop the RSP expansion here if you define it earlier.",
+      "range": {
+        "startLine": 11,
+        "startChar": 53,
+        "endLine": 11,
+        "endChar": 58
+      },
+      "revId": "7fab893a423053a581ab7df47e62d068ef8c464c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_1cb415f1",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfcofl2-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-13T15:01:47Z",
+      "side": 1,
+      "message": "It probably makes sense to expand this acronym. Maybe in the overview.",
+      "range": {
+        "startLine": 11,
+        "startChar": 4,
+        "endLine": 11,
+        "endChar": 11
+      },
+      "revId": "7fab893a423053a581ab7df47e62d068ef8c464c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_1cabb58a",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfcofl2-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-13T15:01:47Z",
+      "side": 1,
+      "message": "do you want to call this out as a name by making it fixed width font by putting +\u0027s around it? You don\u0027t have to, but it might help readability.",
+      "range": {
+        "startLine": 12,
+        "startChar": 26,
+        "endLine": 12,
+        "endChar": 46
+      },
+      "revId": "7fab893a423053a581ab7df47e62d068ef8c464c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_3cb0f1f3",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfcofl2-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-13T15:01:47Z",
+      "side": 1,
+      "message": "Same here with fixed-width fonts.",
+      "range": {
+        "startLine": 13,
+        "startChar": 4,
+        "endLine": 13,
+        "endChar": 24
+      },
+      "revId": "7fab893a423053a581ab7df47e62d068ef8c464c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_dc946d46",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfcofl2-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-13T15:01:47Z",
+      "side": 1,
+      "message": "and here",
+      "range": {
+        "startLine": 14,
+        "startChar": 13,
+        "endLine": 14,
+        "endChar": 33
+      },
+      "revId": "7fab893a423053a581ab7df47e62d068ef8c464c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_fc912953",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfcofl2-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-13T15:01:47Z",
+      "side": 1,
+      "message": "and here",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 25
+      },
+      "revId": "7fab893a423053a581ab7df47e62d068ef8c464c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_bc9ba171",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfcofl2-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-13T15:01:47Z",
+      "side": 1,
+      "message": "I *think* this is supposed to be \"Path\u003d2\", but I could be wrong.",
+      "range": {
+        "startLine": 92,
+        "startChar": 5,
+        "endLine": 92,
+        "endChar": 11
+      },
+      "revId": "7fab893a423053a581ab7df47e62d068ef8c464c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_5c885d22",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfcofl2-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-13T15:01:47Z",
+      "side": 1,
+      "message": "Do you mean \"NextHop\" or \"Next Hop\" you use it with a space everywhere else, so I\u0027m guessing \"Next Hop\".",
+      "range": {
+        "startLine": 108,
+        "startChar": 4,
+        "endLine": 108,
+        "endChar": 11
+      },
+      "revId": "7fab893a423053a581ab7df47e62d068ef8c464c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_bc72c147",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfcofl2-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-13T15:01:47Z",
+      "side": 1,
+      "message": "\"Here is\", generally avoid contractions in formal docs.",
+      "range": {
+        "startLine": 111,
+        "startChar": 0,
+        "endLine": 111,
+        "endChar": 6
+      },
+      "revId": "7fab893a423053a581ab7df47e62d068ef8c464c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_1c82d500",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfcofl2-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-13T15:01:47Z",
+      "side": 1,
+      "message": "source MAC address (MacSrc)",
+      "range": {
+        "startLine": 113,
+        "startChar": 18,
+        "endLine": 113,
+        "endChar": 24
+      },
+      "revId": "7fab893a423053a581ab7df47e62d068ef8c464c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_dc7b0d28",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfcofl2-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-13T15:01:47Z",
+      "side": 1,
+      "message": "You never mention SFF1 in the table and never mention SF in the accompanying text, are they one in the same?",
+      "range": {
+        "startLine": 115,
+        "startChar": 0,
+        "endLine": 138,
+        "endChar": 4
+      },
+      "revId": "7fab893a423053a581ab7df47e62d068ef8c464c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_3c9eb157",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfcofl2-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-13T15:01:47Z",
+      "side": 1,
+      "message": "I believe it\u0027s RESTCONF, not RESTconf here and in the rest of the document.",
+      "range": {
+        "startLine": 219,
+        "startChar": 30,
+        "endLine": 219,
+        "endChar": 38
+      },
+      "revId": "7fab893a423053a581ab7df47e62d068ef8c464c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_9caca58e",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfcofl2-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-13T15:01:47Z",
+      "side": 1,
+      "message": "Is there a reason you call out SF, SFF, SFC, SFP, and RSP in `s here, but not anywhere else?",
+      "revId": "7fab893a423053a581ab7df47e62d068ef8c464c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
