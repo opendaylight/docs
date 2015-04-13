@@ -1,0 +1,341 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aa0d159_9cc34538",
+        "filename": ".gitignore",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-13T15:34:38Z",
+      "side": 1,
+      "message": "It appears as though you had a merge conflict here that you didn\u0027t resolve.",
+      "revId": "a58b1cb8262b9f62abbaa74d44a35616c0f06678",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_fcc60949",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-13T15:34:38Z",
+      "side": 1,
+      "message": "Since this is the commit message that will appear in the final git log (without the history of patch sets), you likely want to leave it as \"Documentation outline for sdninterfaceapp\".",
+      "revId": "a58b1cb8262b9f62abbaa74d44a35616c0f06678",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_dc3ead29",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bk-developers-guide.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-13T15:34:38Z",
+      "side": 1,
+      "message": "Can you please replace this line with the new docs and delete the old odlsni.adoc file?",
+      "revId": "a58b1cb8262b9f62abbaa74d44a35616c0f06678",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_5c793dfb",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sdninterfaceapp/odl-sdninterfaceapp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-13T15:34:38Z",
+      "side": 1,
+      "message": "This is wiki syntax for including a picture, not AsciiDoc. You\u0027ll want to do something like:\n\n.a title for the image\n\nimage::foo.png[]\n\nSee here for an example: https://wiki.opendaylight.org/view/CrossProject:Documentation_Group:Tools:AsciiDoc_Tips#You_can.27t_have_a_bare_image",
+      "revId": "a58b1cb8262b9f62abbaa74d44a35616c0f06678",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_fc228900",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sdninterfaceapp/odl-sdninterfaceapp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-13T15:34:38Z",
+      "side": 1,
+      "message": "It appears as though you need a space after the * to get it to format correctly.\n\nYou may find it helps to try building the documentation by using mvn clean install and then looking in the various manuals for the PDF. In this case it\u0027s stored at: manuals/developer-guide/target/docbkx/webhelp/bk-developers-guide/bk-developers-guide-\u003cdate\u003e.pdf",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 125
+      },
+      "revId": "a58b1cb8262b9f62abbaa74d44a35616c0f06678",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_7c7e79e6",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sdninterfaceapp/odl-sdninterfaceapp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-13T15:34:38Z",
+      "side": 1,
+      "message": "See above about including images.",
+      "revId": "a58b1cb8262b9f62abbaa74d44a35616c0f06678",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_9c1fc5b7",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sdninterfaceapp/odl-sdninterfaceapp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-13T15:34:38Z",
+      "side": 1,
+      "message": "It appears as though you need a space after the * to get it to format correctly.",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 109
+      },
+      "revId": "a58b1cb8262b9f62abbaa74d44a35616c0f06678",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_fc692926",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sdninterfaceapp/odl-sdninterfaceapp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-13T15:34:38Z",
+      "side": 1,
+      "message": "My guess is that this isn\u0027t formatting the way you\u0027d like. You should look at the PDF.",
+      "revId": "a58b1cb8262b9f62abbaa74d44a35616c0f06678",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_1c83b5cd",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sdninterfaceapp/odl-sdninterfaceapp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-13T15:34:38Z",
+      "side": 1,
+      "message": "See above about including images.",
+      "revId": "a58b1cb8262b9f62abbaa74d44a35616c0f06678",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_bc1c01c3",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sdninterfaceapp/odl-sdninterfaceapp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-13T15:34:38Z",
+      "side": 1,
+      "message": "It appears as though you need a space after the * to get it to format correctly.",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 371
+      },
+      "revId": "a58b1cb8262b9f62abbaa74d44a35616c0f06678",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_3c88f1e6",
+        "filename": "manuals/user-guide/src/main/asciidoc/bk-user-guide.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-13T15:34:38Z",
+      "side": 1,
+      "message": "It appears as though you have unresolved conflicts here.",
+      "revId": "a58b1cb8262b9f62abbaa74d44a35616c0f06678",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_9c76e505",
+        "filename": "manuals/user-guide/src/main/asciidoc/bk-user-guide.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-13T15:34:38Z",
+      "side": 1,
+      "message": "When you fix the conflicts, can you also include this is alphabetical order?",
+      "revId": "a58b1cb8262b9f62abbaa74d44a35616c0f06678",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_dc6c6d39",
+        "filename": "manuals/user-guide/src/main/asciidoc/sdninterfaceapp/odl-sdninterfaceapp-all-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-13T15:34:38Z",
+      "side": 1,
+      "message": "Presumably you mean ODL.",
+      "range": {
+        "startLine": 1,
+        "startChar": 3,
+        "endLine": 1,
+        "endChar": 6
+      },
+      "revId": "a58b1cb8262b9f62abbaa74d44a35616c0f06678",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_5c605d35",
+        "filename": "manuals/user-guide/src/main/asciidoc/sdninterfaceapp/odl-sdninterfaceapp-all-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-13T15:34:38Z",
+      "side": 1,
+      "message": "Please remove this verbatim text from the template. Either replace it with content specific to SDNi if you want, or just remove it.",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 25
+      },
+      "revId": "a58b1cb8262b9f62abbaa74d44a35616c0f06678",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_9c4d85c7",
+        "filename": "manuals/user-guide/src/main/asciidoc/sdninterfaceapp/odl-sdninterfaceapp-all-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-13T15:34:38Z",
+      "side": 1,
+      "message": "This likely isn\u0027t formatting the way you\u0027d like. You\u0027ll want to add a blank line between the different paragraphs.",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 69
+      },
+      "revId": "a58b1cb8262b9f62abbaa74d44a35616c0f06678",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_bc4ac1aa",
+        "filename": "manuals/user-guide/src/main/asciidoc/sdninterfaceapp/odl-sdninterfaceapp-all-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-13T15:34:38Z",
+      "side": 1,
+      "message": "Again, you\u0027ll want a space between * and the text.",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 119
+      },
+      "revId": "a58b1cb8262b9f62abbaa74d44a35616c0f06678",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_bce1619c",
+        "filename": "manuals/user-guide/src/main/asciidoc/sdninterfaceapp/odl-sdninterfaceapp-all-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-13T15:34:38Z",
+      "side": 1,
+      "message": "This should be Troubleshooting or Trouble shooting.",
+      "range": {
+        "startLine": 21,
+        "startChar": 3,
+        "endLine": 21,
+        "endChar": 18
+      },
+      "revId": "a58b1cb8262b9f62abbaa74d44a35616c0f06678",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
