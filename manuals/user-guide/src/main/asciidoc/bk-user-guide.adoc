@@ -38,6 +38,8 @@ include::sfc/sfc.adoc[Service Function Chain]
 
 include::addons/l2switch.adoc[L2 Switch]
 
+include::lacp/lacp-user.adoc[LACP]
+
 include::addons/odlsdni.adoc[ODL-SDNi]
 
 include::addons/pcmm.adoc[Packet Cable MultiMedia (PCMM) Service]
@@ -59,5 +61,3 @@ include::capwap/capwap-user.adoc[CAPWAP]
 include::tsdr/tsdr-hbase-user.adoc[]
 
 include::tsdr/tsdr-h2-user.adoc[]
-
-include::addons/lacp-user.adoc[LACP]

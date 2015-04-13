@@ -1,0 +1,57 @@
+== Link Aggregation Control Protocol User Guide
+
+=== Overview
+The User Guide contains information about how to use the LACP plugin project with OpenDaylight, including configurations.
+
+=== Link Aggregation Control Protocol Architecture
+LACP Project within Open Daylight implements Link Aggregation Control Protocol (LACP) as a MD-SAL service module and will be used to auto-discover and aggregate multiple links between Opendaylight controlled network and LACP enabled endpoints or switches, which are external to Opendaylight controller. The result is the creation of a logical channel, which represents the aggregation of the links. Link aggregation provides link resiliency and also provides bandwidth aggregation. This implementation adheres to IEEE Ethernet specification link:http://www.ieee802.org/3/hssg/public/apr07/frazier_01_0407.pdf[802.3ad]
+
+=== Configuring Link Aggregation Control Protocol
+
+This feature can be enabled in the karaf console of opendaylight controller by issuing the following commands:
+
+"feature:install odl-lacp-plugin"
+
+NOTE:  
+  1. Ensure legacy-switch has been configured with lacp mode as active with long timeout.  
+  2. Flow should be added manually on openflow switch.Since LACP doesnot create flows and its create the Link Aggregation Group(LAG) and add the ports to lag membership.
+       
+=== Administering or Managing Link Aggregation Control Protocol
+LACP discovered network inventory or network statistics can be viewed using below RESTAPIs.
+
+1. List of aggregators available for a node.
+
+ http://<ControllerIP>:8181/restconf/operational/opendaylight-inventory:nodes/node/<node-id>
+
+Aggregator information are available within xml tag <lacp-aggregators>
+
+2. To view only the information of an aggregator.
+ 
+ http://<ControllerIP>:8181/restconf/operational/opendaylight-inventory:nodes/node/<node-id>/lacp-aggregators/<agg-id>
+
+Group-id associated with the aggregator can be available with the tag <lag-groupid>.
+The group table entry information for the <lag-groupid> added for the aggregator shall also be available with the opendaylight-inventory node database.
+
+3. To view physical port information.
+
+ http://<ControllerIP>:8181/restconf/operational/opendaylight-inventory:nodes/node/<node-id>/node-connector/<node-connector-id>
+
+Ports that are associated with an aggregator will have the tag <lacp-agg-ref> updated with valid aggregator information.
+
+=== Tutorials
+To be updated later
+
+==== <Tutorial Name>
+To be updated later
+
+===== Overview
+An overview of the use case.
+
+===== Prerequisites
+Legacy switch should be enabled with lacp mode and configured with longtimeout.
+
+===== Target Environment
+To be updated later
+
+===== Instructions
+To be updated 
