@@ -1,0 +1,593 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aa0d159_9ff017cb",
+        "filename": "manuals/install-guide/src/main/asciidoc/ch-introduction.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-14T02:22:14Z",
+      "side": 1,
+      "message": "Please include this in the appropriate place from /bk-install-guide.adoc.\n\nDoes this make sense to put in the installation/getting started guide? Where does it want to go?\n\nAlso, in general, I\u0027ve been trying to avoid using \"controller\" because it\u0027s ambiguous between meaning the project and the abstract controller that is OpenDaylight.",
+      "revId": "a844e38da58f6fe23b63ba22fc0a26a92b8dfdfa",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_bfedd3f1",
+        "filename": "manuals/install-guide/src/main/asciidoc/ch-introduction.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-14T02:22:14Z",
+      "side": 1,
+      "message": "with?",
+      "range": {
+        "startLine": 3,
+        "startChar": 43,
+        "endLine": 3,
+        "endChar": 46
+      },
+      "revId": "a844e38da58f6fe23b63ba22fc0a26a92b8dfdfa",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_7fbf4bd1",
+        "filename": "manuals/install-guide/src/main/asciidoc/ch-introduction.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-14T02:22:14Z",
+      "side": 1,
+      "message": "OpenDaylight mainly consists of software designed to be run on top of a Java Virtual Machine (JVM) and...",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 47
+      },
+      "revId": "a844e38da58f6fe23b63ba22fc0a26a92b8dfdfa",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_3fb9c3e9",
+        "filename": "manuals/install-guide/src/main/asciidoc/ch-introduction.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-14T02:22:14Z",
+      "side": 1,
+      "message": "It",
+      "range": {
+        "startLine": 6,
+        "startChar": 42,
+        "endLine": 6,
+        "endChar": 56
+      },
+      "revId": "a844e38da58f6fe23b63ba22fc0a26a92b8dfdfa",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_1faba78a",
+        "filename": "manuals/install-guide/src/main/asciidoc/ch-introduction.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-14T02:22:14Z",
+      "side": 1,
+      "message": "third party tools?\n\nWe also use a lot more tools that are internal to OpenDaylight.",
+      "range": {
+        "startLine": 7,
+        "startChar": 70,
+        "endLine": 7,
+        "endChar": 75
+      },
+      "revId": "a844e38da58f6fe23b63ba22fc0a26a92b8dfdfa",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_ffca7b6d",
+        "filename": "manuals/install-guide/src/main/asciidoc/ch-introduction.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-14T02:22:14Z",
+      "side": 1,
+      "message": "bundles",
+      "range": {
+        "startLine": 10,
+        "startChar": 58,
+        "endLine": 10,
+        "endChar": 64
+      },
+      "revId": "a844e38da58f6fe23b63ba22fc0a26a92b8dfdfa",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_9fc7b764",
+        "filename": "manuals/install-guide/src/main/asciidoc/ch-introduction.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-14T02:22:14Z",
+      "side": 1,
+      "message": "which?",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 4
+      },
+      "revId": "a844e38da58f6fe23b63ba22fc0a26a92b8dfdfa",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_7fa66bc3",
+        "filename": "manuals/install-guide/src/main/asciidoc/ch-introduction.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-14T02:22:14Z",
+      "side": 1,
+      "message": "Should we add another bullet on Karaf? Probably.",
+      "revId": "a844e38da58f6fe23b63ba22fc0a26a92b8dfdfa",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_9f9ed762",
+        "filename": "manuals/install-guide/src/main/asciidoc/ch-introduction.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-14T02:22:14Z",
+      "side": 1,
+      "message": "Do we want to mention that Java our interfaces are usually generated by compiling YANG here or as a separate bullet?",
+      "revId": "a844e38da58f6fe23b63ba22fc0a26a92b8dfdfa",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_bf9b9371",
+        "filename": "manuals/install-guide/src/main/asciidoc/ch-introduction.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-14T02:22:14Z",
+      "side": 1,
+      "message": "We probably want to mention that most REST APIs in OpenDaylight are actually defined using YANG and are RESTCONF APIs.\n\nAlso, the example APIs are mostly deprecated in Lithium.",
+      "revId": "a844e38da58f6fe23b63ba22fc0a26a92b8dfdfa",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_bf72b347",
+        "filename": "manuals/install-guide/src/main/asciidoc/ch-introduction.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-14T02:22:14Z",
+      "side": 1,
+      "message": "This content is heavily Hydrogen focused and will need to be reworked.",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 74
+      },
+      "revId": "a844e38da58f6fe23b63ba22fc0a26a92b8dfdfa",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_bfa9537d",
+        "filename": "manuals/install-guide/src/main/asciidoc/general_installation.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-14T02:22:14Z",
+      "side": 1,
+      "message": "Somehow we lost the chapter header here. We need something like:\n\n\u003d\u003d Getting and Installing OpenDaylight Lithium",
+      "revId": "a844e38da58f6fe23b63ba22fc0a26a92b8dfdfa",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_5fb60fde",
+        "filename": "manuals/install-guide/src/main/asciidoc/general_installation.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-14T02:22:14Z",
+      "side": 1,
+      "message": "Do we want to bold these two items?",
+      "range": {
+        "startLine": 2,
+        "startChar": 2,
+        "endLine": 2,
+        "endChar": 24
+      },
+      "revId": "a844e38da58f6fe23b63ba22fc0a26a92b8dfdfa",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_fff4bb88",
+        "filename": "manuals/install-guide/src/main/asciidoc/general_installation.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-14T02:22:14Z",
+      "side": 1,
+      "message": "This seems to be describing for somebody who wants to modify the OpenDaylight code, not develop applications that use the OpenDaylight release. I think we mean the latter.",
+      "revId": "a844e38da58f6fe23b63ba22fc0a26a92b8dfdfa",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_5f95afe2",
+        "filename": "manuals/install-guide/src/main/asciidoc/general_installation.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-14T02:22:14Z",
+      "side": 1,
+      "message": "Is there a reason we want these to be bullets instead of numbers?",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 20
+      },
+      "revId": "a844e38da58f6fe23b63ba22fc0a26a92b8dfdfa",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_bff8734a",
+        "filename": "manuals/install-guide/src/main/asciidoc/general_installation.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-14T02:22:14Z",
+      "side": 1,
+      "message": "Without the [frame\u003d\"none\"] that you removed, this formats *very* badly in the pdf.",
+      "revId": "a844e38da58f6fe23b63ba22fc0a26a92b8dfdfa",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_df88dfc8",
+        "filename": "manuals/install-guide/src/main/asciidoc/general_installation.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-14T02:22:14Z",
+      "side": 1,
+      "message": "Do you mean enter instead of select?",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 57,
+        "endChar": 6
+      },
+      "revId": "a844e38da58f6fe23b63ba22fc0a26a92b8dfdfa",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_1f9f2705",
+        "filename": "manuals/install-guide/src/main/asciidoc/general_installation.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-14T02:22:14Z",
+      "side": 1,
+      "message": "It\u0027s not really feature:install+karaf command, there are more karaf commands than just feature:install, but feature:install only takes a feature name.",
+      "range": {
+        "startLine": 64,
+        "startChar": 0,
+        "endLine": 66,
+        "endChar": 5
+      },
+      "revId": "a844e38da58f6fe23b63ba22fc0a26a92b8dfdfa",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_ff859bad",
+        "filename": "manuals/install-guide/src/main/asciidoc/general_installation.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-14T02:22:14Z",
+      "side": 1,
+      "message": "I\u0027d either leaven this as featureN (the Nth feature) or remove it and just end with ...",
+      "range": {
+        "startLine": 73,
+        "startChar": 51,
+        "endLine": 73,
+        "endChar": 66
+      },
+      "revId": "a844e38da58f6fe23b63ba22fc0a26a92b8dfdfa",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_9f9257f5",
+        "filename": "manuals/install-guide/src/main/asciidoc/general_installation.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-14T02:22:14Z",
+      "side": 1,
+      "message": "This formatting winds up not using the full page and giving more space than is needed to names and compatibility. Was there something you were trying to do?",
+      "revId": "a844e38da58f6fe23b63ba22fc0a26a92b8dfdfa",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_c2a9e67c",
+        "filename": "manuals/install-guide/src/main/asciidoc/general_installation.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-14T02:22:14Z",
+      "side": 1,
+      "message": "This seems literally useless. Let\u0027s either put a TODO here or expand it to something useful.",
+      "revId": "a844e38da58f6fe23b63ba22fc0a26a92b8dfdfa",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_62b6d2de",
+        "filename": "manuals/install-guide/src/main/asciidoc/general_installation.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-14T02:22:14Z",
+      "side": 1,
+      "message": "I\u0027m not sure if this is still true.",
+      "revId": "a844e38da58f6fe23b63ba22fc0a26a92b8dfdfa",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_82bbdec3",
+        "filename": "manuals/install-guide/src/main/asciidoc/general_installation.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-14T02:22:14Z",
+      "side": 1,
+      "message": "I *think* you need to specific --controler\u003dremote and then also the IP of the controller.",
+      "revId": "a844e38da58f6fe23b63ba22fc0a26a92b8dfdfa",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_22b0cadc",
+        "filename": "manuals/install-guide/src/main/asciidoc/general_installation.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-14T02:22:14Z",
+      "side": 1,
+      "message": "Presumably we actually want to add some information about using PostMan or cURL or whatever.",
+      "revId": "a844e38da58f6fe23b63ba22fc0a26a92b8dfdfa",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_42b5d6cb",
+        "filename": "manuals/install-guide/src/main/asciidoc/general_installation.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-14T02:22:14Z",
+      "side": 1,
+      "message": "topology and host databases",
+      "range": {
+        "startLine": 165,
+        "startChar": 65,
+        "endLine": 165,
+        "endChar": 115
+      },
+      "revId": "a844e38da58f6fe23b63ba22fc0a26a92b8dfdfa",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_e2c9825b",
+        "filename": "manuals/install-guide/src/main/asciidoc/general_installation.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-14T02:22:14Z",
+      "side": 1,
+      "message": "either of what components?",
+      "range": {
+        "startLine": 166,
+        "startChar": 70,
+        "endLine": 166,
+        "endChar": 83
+      },
+      "revId": "a844e38da58f6fe23b63ba22fc0a26a92b8dfdfa",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_02c7ce46",
+        "filename": "manuals/install-guide/src/main/asciidoc/general_installation.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-14T02:22:14Z",
+      "side": 1,
+      "message": "load",
+      "range": {
+        "startLine": 169,
+        "startChar": 51,
+        "endLine": 169,
+        "endChar": 56
+      },
+      "revId": "a844e38da58f6fe23b63ba22fc0a26a92b8dfdfa",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_a2c37a37",
+        "filename": "manuals/install-guide/src/main/asciidoc/general_installation.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-14T02:22:14Z",
+      "side": 1,
+      "message": "install",
+      "range": {
+        "startLine": 173,
+        "startChar": 79,
+        "endLine": 173,
+        "endChar": 88
+      },
+      "revId": "a844e38da58f6fe23b63ba22fc0a26a92b8dfdfa",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_c2c0062d",
+        "filename": "manuals/install-guide/src/main/asciidoc/general_installation.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-14T02:22:14Z",
+      "side": 1,
+      "message": "Given that I\u0027m not sure we provide specific installation instructions for either of these projects any more, we should update this.",
+      "revId": "a844e38da58f6fe23b63ba22fc0a26a92b8dfdfa",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
