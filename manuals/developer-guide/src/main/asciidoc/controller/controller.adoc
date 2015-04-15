@@ -24,7 +24,7 @@ foundation for Java applications:
 * *<<Config Subsystem>>* - an activation, dependency-injection and configuration
    framework, which allows two-phase commits of configuration and dependency-injection
    and allow for run-time rewiring.
-* *MD-SAL* - messaging and data storage functionality for data,
+* *<<MD-SAL Overview,MD-SAL>>* - messaging and data storage functionality for data,
    notifications and RPCs modeled by application developers. MD-SAL uses YANG
    as the modeling for both interface and data definitions, and provides
    a messaging and data-centric runtime for such services based on YANG modeling.
