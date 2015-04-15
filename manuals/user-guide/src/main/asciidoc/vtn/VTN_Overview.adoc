@@ -48,7 +48,7 @@ It is possible to configure a network which has L2 and L3 transfer function, by 
 The following figure shows an example of a constructed virtual network. VRT is defined as the vRouter, BR1 and BR2 are defined as vBridges. interfaces of the vRouter and vBridges are connected using vLinks.
 
 .VTN Construction
-image::vtn/VTN_Construction.jpg[VTN Construnction]
+image::vtn/VTN_Construction.jpg[VTN Construction]
 
 
 ==== Mapping of Physical Network Resources
@@ -143,11 +143,11 @@ VLAN priority control and DSCP marking are also supported.
 
 The following figure shows an example of how the flow filter function works.
 
-   If there is any matching condition specified by flow filter when a packet being transferred within a virtual network goes through a virtual interface, the function evaluates the matching condition to see whether the packet matches it.
-   If the packet matches the condition, the function applies the matching action specified by flow filter. In the example shown in the figure, the function evaluates the matching condition at BR1 and discards the packet if it matches the condition.
+If there is any matching condition specified by flow filter when a packet being transferred within a virtual network goes through a virtual interface, the function evaluates the matching condition to see whether the packet matches it.
+If the packet matches the condition, the function applies the matching action specified by flow filter. In the example shown in the figure, the function evaluates the matching condition at BR1 and discards the packet if it matches the condition.
 
 .VTN FlowFilter
-image::vtn/VTN_Flow_Filter.jpg[VTN fLOW fILTER]
+image::vtn/VTN_Flow_Filter.jpg[width=500]
 
 ==== Multiple SDN Controller Coordination
 
@@ -277,28 +277,28 @@ VTN provides following operations for various network resources.
 The following is an example of the usage to connect the terminal to the network.
 
 * Create VTN
-[source,perl]
+
 ----
    curl --user admin:adminpass -X POST -H 'content-type: application/json'  \
-  -d '{"vtn":{"vtn_name":"VTN1"}}' http://172.1.0.1:8080/vtn-webapi/vtns.json
+  -d '{"vtn":{"vtn_name":"VTN1"}}' http://172.1.0.1:8282/vtn-webapi/vtns.json
 ----
 * Create Controller Information
-[source,perl]
+
 ----
    curl --user admin:adminpass -X POST -H 'content-type: application/json'  \
   -d '{"controller": {"controller_id":"CONTROLLER1","ipaddr":"172.1.0.1","type":"odc","username":"admin", \
-  "password":"admin","version":"1.0"}}' http://172.1.0.1:8080/vtn-webapi/controllers.json
+  "password":"admin","version":"1.0"}}' http://172.1.0.1:8282/vtn-webapi/controllers.json
 ----
 * Create vBridge under VTN
-[source,perl]
+
 ----
   curl --user admin:adminpass -X POST -H 'content-type: application/json' \
   -d '{"vbridge":{"vbr_name":"VBR1","controller_id": "CONTROLLER1","domain_id": "(DEFAULT)"}}' \
-  http://172.1.0.1:8080/vtn-webapi/vtns/VTN1/vbridges.json
+  http://172.1.0.1:8282/vtn-webapi/vtns/VTN1/vbridges.json
 ----
 * Create the interface to connect the terminal under vBridge
-[source,perl]
+
 ----
   curl --user admin:adminpass -X POST -H 'content-type: application/json' \
-  -d '{"interface":{"if_name":"IF1"}}' http://172.1.0.1:8080/vtn-webapi/vtns/VTN1/vbridges/VBR1/interfaces.json
+  -d '{"interface":{"if_name":"IF1"}}' http://172.1.0.1:8282/vtn-webapi/vtns/VTN1/vbridges/VBR1/interfaces.json
 ----
