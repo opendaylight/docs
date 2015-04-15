@@ -14,8 +14,8 @@ This model-driven infrastructure allows developers to develop applications
 and plugins against an API type of their choice (Java generated APIs, DOM APIs,
 REST APIs). The infrastructure automatically provides the other API types.
 The modelling language of choice for MD-SAL is YANG, which is an IETF standard,
-for modelling network element configuration. The YANGTools project and its development
- tools provide support for YANG.
+for modelling network element configuration. The YANGTools project and its
+development tools provide support for YANG.
 
 
 ==== API types
@@ -23,71 +23,96 @@ for modelling network element configuration. The YANGTools project and its devel
 MD-SAL provides three API types: +
 
 * Java generated APIs for consumers and producers
-* Java DOM APIs: Mostly used by infrastucture components and usuful for XML-driven plugin and application types
+* Java DOM APIs: Mostly used by infrastucture components and usuful for
+  XML-driven plugin and application types
 
 
-NOTE: External APIs for using MD-SAL and MD-SAL enabled components is possible via https://wiki.opendaylight.org/view/OpenDaylight_Controller:MD-SAL:Restconf[Restconf] and Netconf
-
+NOTE: External APIs for using MD-SAL and MD-SAL enabled components is possible
+via https://wiki.opendaylight.org/view/OpenDaylight_Controller:MD-SAL:Restconf[Restconf]
+and Netconf
 
 ==== Basic YANG concepts and their rendition in APIs
 
 The following are the basic concepts in YANG modeling: +
 
-* Remote Procedure (RPCs): In MD-SAL, RPCs are used for any call or invocation that crosses the plugin or module boundaries. RPCs are triggered by consumers, and usually have return values.
+* Remote Procedure (RPCs): In MD-SAL, RPCs are used for any call or
+  invocation that crosses the plugin or module boundaries. RPCs are triggered by
+  consumers, and usually have return values.
 * Notifications: Asynchronous events, published by components for listeners.
-* Configuration and Operational Data tree: The well-defined (by model) tree structure that represents the operational state of components and systems.
-** Instance Identifier: The path that uniquely identifies the sub-tree in the configuration or operational space. Most of the addressing of data is done by Instance Identifier.
+* Configuration and Operational Data tree: The well-defined (by model) tree
+  structure that represents the operational state of components and systems.
+** Instance Identifier: The path that uniquely identifies the sub-tree in the
+  configuration or operational space. Most of the addressing of data is done by
+  Instance Identifier.
 
 ===== RPC
-In YANG, Remote Procedure Calls (RPCs) are used to model any procedure call implemented by a Provider (Server), which exposes functionality to Consumers (Clients).
 
-In MD-SAL terminology, the term 'RPC' is used to define the input and output for a procedure (function) that is to be provided by a Provider, and adapted by the MD-SAL.
+In YANG, Remote Procedure Calls (RPCs) are used to model any procedure call
+implemented by a Provider (Server), which exposes functionality to Consumers
+(Clients).
+
+In MD-SAL terminology, the term 'RPC' is used to define the input and output for
+a procedure (function) that is to be provided by a Provider, and adapted by the
+MD-SAL.
 
 In the context of the MD-SAL, there are three types of RPCs (RPC services): +
 
-* Global: One service instance (implementation) per controller container or mount point
-* Routed: Multiple service instances (implementations) per controller container or mount point
+* Global: One service instance (implementation) per controller container or
+  mount point
+* Routed: Multiple service instances (implementations) per controller container
+  or mount point
 
 ====== Global RPCs service
 
-* There is only one instance of a Global Service per controller instance. (Note that a controller instance can consist of a cluster of controller nodes.)
+* There is only one instance of a Global Service per controller instance.
+(Note that a controller instance can consist of a cluster of controller nodes.)
 
 *Routing* +
 
 * Binding-Aware MD-SAL (sal-binding)
-** **Rpc Type**: Identified by a generated RpcService class and a name of a method invoked on that interface
+** **Rpc Type**: Identified by a generated RpcService class and a name of a
+method invoked on that interface
 * Binding-Independent MD-SAL (sal-dom)
 ** **Rpc Type**: Identified by a QName
 
 ==== Routed service ====
 
-* There can be multiple instances (implementations) of a service per controller instance
-* Can be used for southbound plugins or for horizontal scaling (load-balancing) of northbound plugins (services)
+* There can be multiple instances (implementations) of a service per controller
+instance
+* Can be used for southbound plugins or for horizontal scaling (load-balancing)
+of northbound plugins (services)
 
 *Routing* +
 
-Routing is done based on the contents of a message, for example, 'Node Reference'. The field in a message that is used for routing is specified in a YANG model by using the routing-reference statement from the yang-ext model. +
+Routing is done based on the contents of a message, for example, 'Node Reference'.
+The field in a message that is used for routing is specified in a YANG model by
+using the routing-reference statement from the yang-ext model. +
 
 * Binding Aware MD-SAL (sal-binding)
-* RPC Type: Identified by an RpcService subclass and the name of the method invoked on that interface
-* Instance Identifier: In a data tree, identifies the element instance that will be used as the route target.
+* RPC Type: Identified by an RpcService subclass and the name of the method
+  invoked on that interface
+* Instance Identifier: In a data tree, identifies the element instance that will
+  be used as the route target.
+
 The used class is: +
 ----
 org.opendaylight.yang.binding.InstanceIdentifier
 ----
 
-The Instance Identifier is learned from the message payload and from the model. +
+The Instance Identifier is learned from the message payload and from the model.+
 
 * Binding Independent MD-SAL (sal-dom)
 * RPC Type: Identified by a QName
 
-* Instance Identifier: In a data tree, identifies the element instance that will be used as the route target. The used class is: +
+* Instance Identifier: In a data tree, identifies the element instance that will
+ be used as the route target. The used class is: +
 ----
 org.opendaylight.yang.data.api.InstanceIdentifier
 ----
 RPCs in various API types: +
 
-* Java Generated APIs: For each model there is *Service interface. See https://wiki.opendaylight.org/view/YANG_Tools:YANG_to_Java_Mapping#Rpc[YANG Tools: Yang to Java mapping-RPC]  to understand how YANG statements maps to Service interface.
+* Java Generated APIs: For each model there is *Service interface.
+See https://wiki.opendaylight.org/view/YANG_Tools:YANG_to_Java_Mapping#Rpc[YANG Tools: Yang to Java mapping-RPC]  to understand how YANG statements maps to Service interface.
 ** Providers expose their implementation of *Service by registering their implementation to RpcProviderRegistry.
 ** Consumers get the *Service implementation from RpcConsumerRegistry. If the implementer uses a different API type, MD-SAL automatically translates data in the background.
 * DOM APIs: RPCs are identified by QName.
@@ -97,11 +122,13 @@ RPCs in various API types: +
 * Consumers invoke RPCs by invoking POST operation to /restconf/operations/model-name:rpc-name.
 
 ==== Notification
-In YANG, Notifications represent asynchronous events, published by providers for listeners.
+In YANG, Notifications represent asynchronous events, published by providers
+for listeners.
 
 RPCs in various API types: +
 
-* Java Generated APIs: For each model, there is *Listener interface and transfer object for each notification. See https://wiki.opendaylight.org/view/YANG_Tools:YANG_to_Java_Mapping#Notification[YANG Tools: Yang to Java mapping-Notification] to understand how YANG statements map to the Notifications interface.
+* Java Generated APIs: For each model, there is *Listener interface and transfer
+ object for each notification. See https://wiki.opendaylight.org/view/YANG_Tools:YANG_to_Java_Mapping#Notification[YANG Tools: Yang to Java mapping-Notification] to understand how YANG statements map to the Notifications interface.
 ** Providers publish notifications by invoking the publish method on NotificationPublishService.
 ** To receive notifications, consumers register their implementation of *Listener to NotificationBrokerService. If the notification publisher uses a different API type, MD-SAL automatically translates data in the background.
 * DOM APIs: Notifications are represented only by XML Payload.
@@ -156,15 +183,12 @@ import org.opendaylight.yangtools.yang.binding.InstanceIdentifier;
 
 InstanceIdentifier<Node> identifier = InstanceIdentifier.builder(Nodes.class).child(Node.class,new NodeKey("foo")).toInstance();
 ----
-NOTE: The last call, _toInstance()_ does not return an instance of the node, but the Java version of Instance identifier which uniquely identifies the node *foo*.
-
-* **HTTP Restconf APIs** +
-----
-http://localhost:8080/restconf/config/inventory:nodes/node/foo
-----
-NOTE: We assume that HTTP APIs are exposed on localhost, port 8080.
+NOTE: The last call, _toInstance()_ does not return an instance of the node, but
+the Java version of Instance identifier which uniquely identifies the node *foo*.
 
 * **Binding Independent version (yang-data-api)**
+
+[source,java]
 ----
 import org.opendaylight.yang.common.QName;
 import org.opendaylight.yang.data.api.InstanceIdentifier;
@@ -177,37 +201,57 @@ InstanceIdentifier = InstanceIdentifier.builder()
     .nodeWithKey(node,idName,"foo")
     .toInstance();
 ----
-NOTE: The last call, _toInstance()_ does not return an instance of node, but the Java version of Instance identifier which uniquely identifies the node *foo*.
+NOTE: The last call, _toInstance()_ does not return an instance of node, but the
+ Java version of Instance identifier which uniquely identifies the node *foo*.
 
+//FIXME: Is this section necessary?
 === MD-SAL: Plugin types
-MD-SAL has four component-types that differ in complexity, expose different models, and use different subsets of the MD-SAL functionality.
+MD-SAL has four component-types that differ in complexity, expose different
+models, and use different subsets of the MD-SAL functionality.
 
-* Southbound Protocol Plugin: Responsible for handling multiple sessions to the southbound network devices and providing common abstracted interface to access various type of functionality provided by these network devices
-* Manager-type application: Responsible for managing the state and the configuration of a particular functionality which is exposed by southbound protocol plugins
-* Protocol Library: Responsible for handling serialization or de-serialization between the wire protocol format and the Java form of the protocol
-* Connector Plugin: Responsible for connecting consumers (and providers) to Model-driven SAL (and other components) by means of different wire protocol or set of APIs
+* Southbound Protocol Plugin: Responsible for handling multiple sessions to
+  the southbound network devices and providing common abstracted interface
+  to access various type of functionality provided by these network devices
+* Manager-type application: Responsible for managing the state
+  and the configuration of a particular functionality which is exposed by
+  southbound protocol plugins
+* Protocol Library: Responsible for handling serialization or de-serialization
+between the wire protocol format and the Java form of the protocol
+* Connector Plugin: Responsible for connecting consumers (and providers) to
+ Model-driven SAL (and other components) by means of different wire protocol
+ or set of APIs
 
 ==== Southbound protocol plugin
 
 The responsibilities of the Southbound Protocol plugin include the following :
 
 * Handling multiple sessions to southbound network devices
-* Providing a common abstracted interface to access various type of functionality provided by the network devices
+* Providing a common abstracted interface to access various type
+  of functionality provided by the network devices
 
-The Southbound Protocol Plugin should be stateless. The only preserved state (which is still transient) is the list of connected devices or sessions. Models mostly use RPCs and Notifications to describe plugin functionality
-Example plugins: Openflow Southbound Plugin, Netconf Southbound Plugin, BGP Southbound Plugin, and PCEP Southbound Plugin.
+The Southbound Protocol Plugin should be stateless. The only preserved state
+(which is still transient) is the list of connected devices or sessions. Models
+mostly use RPCs and Notifications to describe plugin functionality
+Example plugins: Openflow Southbound Plugin, Netconf Southbound Plugin,
+ BGP Southbound Plugin, and PCEP Southbound Plugin.
 
 ==== Manager-type application
 
 The responsibilities of the Manager-type applications include the following:
 
-* Providing configuration-like functionality to set or modify the behaviour of network elements or southbound plugins
+* Providing configuration-like functionality to set or modify the behaviour
+of network elements or southbound plugins
 * Coordinating flows and provide higher logic on top of stateless southbound plugins
 
-Manager-type Applications preserve state. Models mostly use Configuration Data and Runtime Data to describe component functionality.
+Manager-type Applications preserve state. Models mostly use Configuration
+Data and Runtime Data to describe component functionality.
 
 === Protocol library
-The OpenFlow Protocol Library is a component in OpenDaylight, that mediates communication between the OpenDaylight controller and the hardware devices supporting the OpenFlow protocol. The primary goal of the library is to provide user (or upper layers of OpenDaylight) communication channel, that can be used for managing network hardware devices.
+The OpenFlow Protocol Library is a component in OpenDaylight, that mediates
+communication between the OpenDaylight controller and the hardware devices
+supporting the OpenFlow protocol. The primary goal of the library is to provide
+user (or upper layers of OpenDaylight) communication channel, that can be used
+for managing network hardware devices.
 
 === MD-SAL: Southbound plugin development guide
 The southbound controller plugin is a functional component.
@@ -220,24 +264,34 @@ The plugin: +
 
 The plugin development process generally moves through the following phases: +
 
-. Definition of YANG models (API contracts): For Model-Driven SAL, the API contracts are defined by YANG models and the Java interfaces generated for these models. A developers opts for one of the following: +
+. Definition of YANG models (API contracts): For Model-Driven SAL,
+  the API contracts are defined by YANG models and the Java interfaces generated
+  for these models. A developers opts for one of the following: +
 ** Selects from existing models
 ** Creates new models
 ** Augments (extends) existing models
 [start=2]
-. Code Generation: The Java Interfaces, implementation of Transfer Objects, and mapping to Binding-Independent form is generated for the plugin. This phase requires the proper configuration of the Maven build and YANG Maven Tools.
-. Implementation of plugin: The actual implementation of the plugin functionality and plugin components.
+. Code Generation: The Java Interfaces, implementation of Transfer Objects,
+  and mapping to Binding-Independent form is generated for the plugin.
+  This phase requires the proper configuration of the Maven build
+  and YANG Maven Tools.
+. Implementation of plugin: The actual implementation of the plugin
+  functionality and plugin components.
 
-NOTE: The order of steps is not definitive, and it is up to the developer to find the most suitable workflow. For additional information, see <<_best_practices>>.
+NOTE: The order of steps is not definitive, and it is up to the developer to
+find the most suitable workflow. For additional information, see <<_best_practices>>.
 
 === Definition of YANG models
 
-In this phase, the developer selects from existing models (provided by controller or other plugins), writes new models, or augments existing ones. A partial list of available models could be found at:
+In this phase, the developer selects from existing models (provided by controller
+or other plugins), writes new models, or augments existing ones. A partial list
+of available models could be found at:
 https://wiki.opendaylight.org/view/YANG_Tools:Available_Models[YANG Tools:Available Models].
 
 The mapping of YANG to Java is documented at: https://wiki.opendaylight.org/view/Yang_Tools:YANG_to_Java_Mapping[Yang Tools:YANG to Java Mapping.] This mapping provides an overview of how YANG is mapped to Java.
 
-Multiple approaches to model the functionality of the southbound plugin are available: +
+Multiple approaches to model the functionality of the southbound plugin are
+available: +
 
 * Using RPCs and Notifications
 * Using Configuration Data Description
@@ -246,14 +300,17 @@ Multiple approaches to model the functionality of the southbound plugin are avai
 
 === RPCs
 
-RPCs can model the functionality invoked by consumers (applications) that use the southbound plugin. Although RPCs can model any functionality, they are usually used to model functionality that cannot be abstracted as configuration data, for example, PacketOut, or initiating a new session to a device (controller-to-device session).
+RPCs can model the functionality invoked by consumers (applications) that use
+the southbound plugin. Although RPCs can model any functionality, they are usually used to model functionality that cannot be abstracted as configuration data, for example, PacketOut, or initiating a new session to a device (controller-to-device session).
 
 RPCs are modeled with an RPC statement in the following form: +
 +rpc foo {}+ +
 This statement is mapped to method. +
 
 *RPC input* +
-To define RPC input, use an input statement inside RPC. The structure of the input is defined with the same statements as the structure of notifications, configuration, and so on.
+To define RPC input, use an input statement inside RPC. The structure of the
+input is defined with the same statements as the structure of notifications,
+configuration, and so on.
 ----
  rpc foo {
     input {
@@ -271,7 +328,8 @@ To define the RPC output (structure of result), use the RPC output statement. +
  }
 ----
 *Notifications* +
-Use notifications to model events originating in a network device or southbound plugin which is exposed to consumers to listen.
+Use notifications to model events originating in a network device or southbound
+plugin which is exposed to consumers to listen.
 
 
 A notification statement defines a notification:
@@ -284,10 +342,13 @@ A notification statement defines a notification:
 
 Configuration data is good for the following purposes: +
 
-* Model or provide CRUD access to the state of protocol plugin and/or network devices
-* Model any functionality which could be exposed as a configuration to the consumers or applications
+* Model or provide CRUD access to the state of protocol plugin and/or network
+  devices
+* Model any functionality which could be exposed as a configuration to the
+  consumers or applications
 
-Configuration data in YANG is defined by using the config substatement with a true argument. For example: +
+Configuration data in YANG is defined by using the config substatement with
+a true argument. For example: +
 ----
   container foo {
      config true;
@@ -295,7 +356,8 @@ Configuration data in YANG is defined by using the config substatement with a tr
   }
 ----
 *Runtime (read-only) data* +
-Runtime (read-only) data is good to model or provide read access to the state of the protocol plugin and networtk devices, or network devices. This type of data is good to model statistics or any state data, which cannot be modified by the consumers (applications), but needs exposure (for example, learned topology, or list of connected switches).
+Runtime (read-only) data is good to model or provide read access to the state
+of the protocol plugin and networtk devices, or network devices. This type of data is good to model statistics or any state data, which cannot be modified by the consumers (applications), but needs exposure (for example, learned topology, or list of connected switches).
 
 Runtime data in YANG is defined by using config subsatement with a false argument:
 ----
@@ -304,7 +366,8 @@ Runtime data in YANG is defined by using config subsatement with a false argumen
   }
 ----
 *Structural elements* +
-The structure of RPCs, notifications, configuration data, and runtime data is modelled using structural elements (data schema nodes). Structural elements define the actual structure of XML, DataDOM documents, and Java APIs for accessing or storing these elements. The most commonly used structural elements are: +
+The structure of RPCs, notifications, configuration data, and runtime data is
+modelled using structural elements (data schema nodes). Structural elements define the actual structure of XML, DataDOM documents, and Java APIs for accessing or storing these elements. The most commonly used structural elements are: +
 
 * Container
 * List
@@ -313,7 +376,9 @@ The structure of RPCs, notifications, configuration data, and runtime data is mo
 * Choice
 
 === Augmentations +
-Augmentations are used to extend existing models by providing additional structural elements and semantics. Augmentation cannot change the mandatory status of nodes in the original model, or introduce any new mandatory statements.
+Augmentations are used to extend existing models by providing additional
+structural elements and semantics. Augmentation cannot change the mandatory
+status of nodes in the original model, or introduce any new mandatory statements.
 
 === Best practices
 
@@ -322,7 +387,9 @@ Augmentations are used to extend existing models by providing additional structu
 * Always try to reuse existing models and types provided by these models. See https://wiki.opendaylight.org/view/YANG_Tools:Available_Models[YANG Tools:Available Models] or others if there is no model which provides you with data structures and types you need.
 
 *Code generation* +
-To configure your project for code generation, your build system needs to use Maven. For the configuration of java API generation, see https://wiki.opendaylight.org/view/Yang_Tools:Maven_Plugin_Guide[Yang Tools:Maven Plugin Guide].
+To configure your project for code generation, your build system needs to use
+Maven. For the configuration of java API generation,
+see https://wiki.opendaylight.org/view/Yang_Tools:Maven_Plugin_Guide[Yang Tools:Maven Plugin Guide].
 
 *Artefacts generated at compile time* +
 The following artefacts are generated at compile time: +
@@ -332,11 +399,15 @@ The following artefacts are generated at compile time: +
 * Builders for transfer objects and immutable versions of transfer objects
 
 === Implementation +
-This step uses generated artefacts to implement the intended functionality of the southbound plugin. +
+This step uses generated artefacts to implement the intended functionality
+of the southbound plugin. +
 
 *Provider implementation* +
-To expose functionality through binding-awareness, the MD-SAL plugin needs to be compiled against these APIs, and must at least implement the BindingAwareProvider interface.
-The provider uses APIs which are available in the SAL-binding-api Maven artifact. To use this dependency, insert the following dependency into your pom.xml:
+To expose functionality through binding-awareness, the MD-SAL plugin needs
+to be compiled against these APIs, and must at least implement
+the BindingAwareProvider interface. The provider uses APIs which are available
+in the SAL-binding-api Maven artifact. To use this dependency, insert the
+following dependency into your pom.xml:
 ----
 <dependency>
        <groupId>org.opendaylight.controller</groupId>
@@ -346,39 +417,72 @@ The provider uses APIs which are available in the SAL-binding-api Maven artifact
 ----
 
 *BindingAwareProvider implementation* +
-A BindingAwareProvider interface requires the implementation of four methods, and registering an instance with BindingAwareBroker. Use AbstractBindingAwareProvider to simplify the implementation.
+A BindingAwareProvider interface requires the implementation of four methods,
+and registering an instance with BindingAwareBroker.
+Use AbstractBindingAwareProvider to simplify the implementation.
 
-* void onSessionInitialized(ConsumerContext ctx): This callback is called when Binding-Aware Provider is initialized and ConsumerContext is injected into it. ConsumerContext serves to access all functionality which the plugin is to consume from other controller components.
-* void onSessionInitialized(ProviderContext ctx): This callback is called when Binding-Aware Provider is initialized and ProviderContext is injected into it. ProviderContext serves to access all functionality which the plugin could use to provide its functionality to controller components.
-* Collection<? extends RpcService> getImplementations(): Shorthand registration of an already instantiated implementations of global RPC services. Automated registration is currently not supported.
-* public Collection<? extends ProviderFunctionality> getFunctionality(): Shorthand registration of an already instantiated implementations of ProviderFunctionality. Automated registration is currently not supported.
-NOTE: You also need to set your implementation of AbstractBindingAwareProvider set as Bundle Activator for MD-SAL to properly load it.
+* void onSessionInitialized(ConsumerContext ctx): This callback is called
+when Binding-Aware Provider is initialized and ConsumerContext is injected
+into it. ConsumerContext serves to access all functionality which the plugin
+is to consume from other controller components.
+* void onSessionInitialized(ProviderContext ctx): This callback is called when
+Binding-Aware Provider is initialized and ProviderContext is injected into it.
+ProviderContext serves to access all functionality which the plugin could use
+to provide its functionality to controller components.
+* Collection<? extends RpcService> getImplementations(): Shorthand registration
+  of an already instantiated implementations of global RPC services. Automated
+  registration is currently not supported.
+* public Collection<? extends ProviderFunctionality> getFunctionality():
+  Shorthand registration of an already instantiated implementations
+  of ProviderFunctionality. Automated registration is currently not supported.
+
+NOTE: You also need to set your implementation of AbstractBindingAwareProvider
+set as Bundle Activator for MD-SAL to properly load it.
 
 === Notifications
-To publish events, request an instance of NotificationProviderService from ProviderContext. Use the following:
+To publish events, request an instance of NotificationProviderService from
+ProviderContext. Use the following:
+
+[source,java]
 ----
    ExampleNotification notification = (new ExampleNotificationBuilder()).build();
    NotificationProviderService notificationProvider = providerContext.getSALService(NotificationProviderService.class);
    notificationProvider.notify(notification);
 ----
+
 *RPC implementations* +
-To implement the functionality exposed as RPCs, implement the generated RpcService interface. Register the implementation within ProviderContext included in the provider.
+To implement the functionality exposed as RPCs, implement the generated
+RpcService interface. Register the implementation within ProviderContext
+included in the provider.
 
 If the generated RpcInterface is FooService, and the implementation is FooServiceImpl:
+
+[source,java]
 ----
    @Override
    public void onSessionInitiated(ProviderContext context) {
        context.addRpcImplementation(FooService.class, new FooServiceImpl());
    }
 ----
+
 === Best practices
 
-RPC Service interface contract requires you to return http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/Future.html[Future object] (to make it obvious that call may be asynchronous), but it is not specified how this Future is implemented. Consider using existing implementations provided by JDK or Google Guava. Implement your own Future only if necessary.
+RPC Service interface contract requires you to return
+http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/Future.html[Future object]
+(to make it obvious that call may be asynchronous), but it is not specified how
+this Future is implemented. Consider using existing implementations provided by
+JDK or Google Guava. Implement your own Future only if necessary.
 
-Consider using http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/util/concurrent/SettableFuture.html[SettableFuture] if you intend not to use http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/FutureTask.html[FutureTask] or submit http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/Callable.html[Callables] to http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/ExecutorService.html[ExecutorService].
+Consider using
+http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/util/concurrent/SettableFuture.html[SettableFuture]
+if you intend not to use http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/FutureTask.html[FutureTask] or submit http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/Callable.html[Callables] to http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/ExecutorService.html[ExecutorService].
 
-IMPORTANT: Do not implement transfer object interfaces unless necessary. Choose already generated builders and immutable versions. If you want to implement transfer objects, ensure that instances exposed outside the plugin are immutable.
+IMPORTANT: Do not implement transfer object interfaces unless necessary.
+Choose already generated builders and immutable versions. If you want to
+implement transfer objects, ensure that instances exposed outside the
+plugin are immutable.
 
+//FIXME: Remove or udpate this section / split it to proper places 
 === OpenDaylight Controller: MD-SAL FAQs
 
 *Q-1: What is the overall MD-SAL architecture?*
@@ -386,14 +490,29 @@ IMPORTANT: Do not implement transfer object interfaces unless necessary. Choose 
 * **What is the overall architecture, components, and functionality?**
 * **Who supplies which components, and how are the components plumbed?**
 
-*A-1:* The overall Model-Driven SAL (MD-SAL) architecture did not really change from the API-Driven SAL (AD-SAL). As with the AD-SAL, plugins can be data providers, or data consumers, or both (although the AD-SAL did not explicitly name them as such). Just like the AD-SAL, the MD-SAL connects data consumers to appropriate data providers and (optionally) facilitates data adaptation between them.
+*A-1:* The overall Model-Driven SAL (MD-SAL) architecture did not really change
+from the API-Driven SAL (AD-SAL). As with the AD-SAL, plugins can be data
+providers, or data consumers, or both (although the AD-SAL did not explicitly
+name them as such). Just like the AD-SAL, the MD-SAL connects data consumers
+to appropriate data providers and (optionally) facilitates data adaptation
+between them.
 
-Now, in the AD-SAL, the SAL APIs request routing between consumers and providers, and data adaptations are all statically defined at compile or build time. In the MD-SAL, the SAL APIs and request routing between consumers and providers are defined from models, and data adaptations are provided by 'internal' adaptation plugins. The API code is generated from models when a plugin is compiled. When the plugin OSGI bundle is loaded into the controller, the API code is loaded into the controller along with the rest of the plugin containing the model.
+Now, in the AD-SAL, the SAL APIs request routing between consumers and
+providers, and data adaptations are all statically defined at compile or
+build time. In the MD-SAL, the SAL APIs and request routing between consumers
+and providers are defined from models, and data adaptations are provided by
+'internal' adaptation plugins. The API code is generated from models when
+a plugin is compiled. When the plugin OSGI bundle is loaded into the controller,
+the API code is loaded into the controller along with the rest of the plugin
+containing the model.
 
 .AD-SAL and MD-SAL
 image::MD-SAL.png[]
 
-The AD-SAL provides request routing (selects an SB plugin based on service type) and optionally provides service adaptation, if an NB (Service, abstract) API is different from its corresponding SB (protocol) API. For example, in the above figure, the AD-SAL routes requests from NB-Plugin 1 to SB Plugins 1 and 2. Note that the plugin SB and NB APIs in this example are essentially the same (although both of them need to be defined). Request routing is based on plugin type: the SAL knows which node instance is served by which plugin. When an NB Plugin requests an operation on a given node, the request is routed to the appropriate plugin which then routes the request to the appropriate node. The AD-SAL can also provide service abstractions and adaptations. For example, in the above figure, NB Plugin 2 is using an abstract API to access the services provided by SB Plugins 1 and 2. The translation between the SB Plugin API and the abstract NB API is done in the Abstraction module in the AD-SAL.
+The AD-SAL provides request routing (selects an SB plugin based on service type)
+and optionally provides service adaptation, if an NB (Service, abstract) API
+is different from its corresponding SB (protocol) API. For example, in the above
+figure, the AD-SAL routes requests from NB-Plugin 1 to SB Plugins 1 and 2. Note that the plugin SB and NB APIs in this example are essentially the same (although both of them need to be defined). Request routing is based on plugin type: the SAL knows which node instance is served by which plugin. When an NB Plugin requests an operation on a given node, the request is routed to the appropriate plugin which then routes the request to the appropriate node. The AD-SAL can also provide service abstractions and adaptations. For example, in the above figure, NB Plugin 2 is using an abstract API to access the services provided by SB Plugins 1 and 2. The translation between the SB Plugin API and the abstract NB API is done in the Abstraction module in the AD-SAL.
 
 The MD-SAL provides request routing and the infrastructure to support service adaptation. However, it does not provide service adaptation itself: service adaptation is provided by plugins. From the point of view of MD-SAL, the Adaptation Plugin is a regular plugin. It provides data to the SAL, and consumes data from the SAL through APIs generated from models. An Adaptation Plugin basically performs model-to-model translations between two APIs. Request Routing in the MD-SAL is done on both protocol type and node instances, since node instance data is exported from the plugin into the SAL (the model data contains routing information).
 
