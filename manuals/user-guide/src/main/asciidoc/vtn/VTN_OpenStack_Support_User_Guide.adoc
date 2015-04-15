@@ -1,4 +1,4 @@
-=== How to set up OpenStack for the integration with VTN Manager
+=== VTN OpenStack Configuration
 
 This guide describes how to set up OpenStack for integration with OpenDaylight Controller.
 
@@ -36,17 +36,17 @@ TIP: Please do minimal Install to avoid any issues in devstack bringup
 - Login to both servers
 - Disable Ubuntu Firewall
 
-[source,perl]
+
   sudo ufw disable
 
 - Optionally install these packages
 
-[source,perl]
+
   sudo apt-get install net-tools
 
 - Edit sudo vim /etc/sudoers and add an entry as follows
 
-[source,perl]
+
   stack ALL=(ALL) NOPASSWD: ALL
 
 *Network Settings*
@@ -55,7 +55,7 @@ TIP: Please do minimal Install to avoid any issues in devstack bringup
 - eth1 interface in both servers were connected to a different network to act as data plane for the VM's created using the OpenStack.
 - Manually edited the file : sudo vim /etc/network/interfaces and made entries as follows
 
-[source,perl]
+
    stack@ubuntu-devstack:~/devstack$ cat /etc/network/interfaces
    # This file describes the network interfaces available on your system
    # and how to activate them. For more information, see interfaces(5).
@@ -88,7 +88,7 @@ NOTE: The entries for eth1 are not mandatory, If not set, we may have to manuall
  * A configuration file 'vtn.ini'''' needs to be created manually in the 'configuration' directory.
  * The contents of 'vtn.ini' should be as follows:
 
-[source,perl]
+
 bridgename=br-int
 portname=eth1
 protocols=OpenFlow13
@@ -97,23 +97,23 @@ failmode=secure
  * The values of the configuration parameters must be changed based on the user environment.
  * Especially, "portname" should be carefully configured, because if the value is wrong, OpenDaylight controller fails to forward packets.
  * Other parameters works fine as is for general use cases.
-  bridgename
- * The name of the bridge in Open vSwitch, that will be created by OpenDaylight Controller.
- * It must be "br-int".
- portname
- * The name of the port that will be created in the vbridge in Open vSwitch.
- * This must be the same name of the interface of OpenStack Nodes which is used for interconnecting OpenStack Nodes in data plane.(in our case:eth1)
- * By default, if vtn.ini is not created, VTN uses ens33 as portname.
- protocols
- * OpenFlow protocol through which OpenFlow Switch and Controller communicate.
- * The values can be OpenFlow13 or OpenFlow10.
- failmode
- * The value can be "standalone" or "secure".
- * Please use "secure" for general use cases.
+ ** bridgename
+ *** The name of the bridge in Open vSwitch, that will be created by OpenDaylight Controller.
+ *** It must be "br-int".
+ ** portname
+ *** The name of the port that will be created in the vbridge in Open vSwitch.
+ *** This must be the same name of the interface of OpenStack Nodes which is used for interconnecting OpenStack Nodes in data plane.(in our case:eth1)
+ *** By default, if vtn.ini is not created, VTN uses ens33 as portname.
+ ** protocols
+ *** OpenFlow protocol through which OpenFlow Switch and Controller communicate.
+ *** The values can be OpenFlow13 or OpenFlow10.
+ ** failmode
+ *** The value can be "standalone" or "secure".
+ *** Please use "secure" for general use cases.
 
 ====  Start ODL Controller
 
- * Please refer to the  https://wiki.opendaylight.org/view/Release/Helium/VTN/Installation_Guide to run ODL with VTN Feature enabled.
+ * Please refer to the  https://wiki.opendaylight.org/view/Release/Lithium/VTN/Installation_Guide to run ODL with VTN Feature enabled.
 
 
 TIP: After running ODL Controller, please ensure ODL Controller listens to the ports:6633,6653, 6640 and 8080
@@ -124,32 +124,33 @@ NOTE: 6633/6653 - OpenFlow Ports
 
 NOTE: 6640 - OVS Manager Port
 
-NOTE: 8080 - Port for REST API
+NOTE: 8282 - Port for REST API
 
 ====  Devstack Setup
 
 =====  Get Devstack (All nodes)
 Install git application using
 
-[source,perl]
+
 sudo apt-get install git
 get devstack
 git clone https://git.openstack.org/openstack-dev/devstack;
 
 Switch to stable/Juno Version branch
 
-[source,perl]
+
 cd devstack
 git checkout stable/juno
 
 =====  Stack Control Node
 .local.conf:
- cd devstack in the controller node
+cd devstack in the controller node
+
 * Copy the contents of local.conf (devstack control node)  and save it as "local.conf" in the devstack.
 * Please modify the IP Address values as required.
 * Stack the node
 
-[source,perl]
+
   ./stack.sh
 
 ====== Verify Control Node stacking
@@ -163,10 +164,10 @@ git checkout stable/juno
 * Please modify the IP Address values as required.
 * Stack the node
 
-[source,perl]
+
   ./stack.sh
 
-====== Verify Compute Node stacking
+====== Verify Compute Node Stacking
 * stack.sh prints out This is your host ip: <COMPUTE_NODE_IP_ADDRESS>
 * Execute the command 'sudo ovs-vsctl show' in the control node terminal and verify if the bridge 'br-int'  is created.
 * The output of the ovs-vsctl show will be similar to the one seen in control node.
@@ -175,12 +176,12 @@ git checkout stable/juno
 
 TIP: If the interconnected between the OVS is not seen, Please bring up the interface for the dataplane manually using the below comamnd
 
-[source,perl]
+
   ifup <interface_name>
 
 TIP: Some versions of OVS, drop packets when there is a table-miss, So please add the below flow to all the nodes with OVS version (>=2.1)
 
-[source,perl]
+
   ovs-ofctl --protocols=OpenFlow13 add-flow br-int priority=0,actions=output:CONTROLLER
 
 TIP: Please Accept Promiscuous mode in the networks involving the interconnect.
@@ -191,8 +192,9 @@ TIP: Please Accept Promiscuous mode in the networks involving the interconnect.
 .Horizon GUI
 image::vtn/OpenStackGui.png["Horizon",width= 600]
 
-  Enter the value for User Name as admin and enter the value for Password as labstack.
-*  We should first ensure both the hypervisors(control node and compute node) are mapped under hypervisors by clicking on Hpervisors tab.
+Enter the value for User Name as admin and enter the value for Password as labstack.
+
+* We should first ensure both the hypervisors(control node and compute node) are mapped under hypervisors by clicking on Hpervisors tab.
 
 .Hypervisors
 image::vtn/Hypervisors.png["Hypervisors",width=512]
