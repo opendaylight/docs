@@ -24,17 +24,17 @@ It is recommended to install VTN Coordinator and OpenDaylight controller on diff
   CentOS 7
 |===
 
-==== Downloading Helium
+==== Downloading Lithium
 * Go to the download page of opendaylight.org.
   http://www.opendaylight.org/software/downloads
-* Download the "Pre-Built Zip File" or "Pre-Built Tar File" of the latest Helium.
+* Download the "Pre-Built Zip File" or "Pre-Built Tar File" of the latest Lithium.
 * Extract files from the downloaded file.
   e.g.
 [source,perl]
 ----
-    unzip distribution-karaf-0.2.1-Helium-SR1.zip
+    unzip distribution-karaf-0.2.1-Lithium-SR1.zip
     or
-    tar zxvf distribution-karaf-0.2.1-Helium-SR1.tar.gz
+    tar zxvf distribution-karaf-0.2.1-Lithium-SR1.tar.gz
 ----
 ==== Setting up VTN Coordinator
 
@@ -89,12 +89,12 @@ NOTE: * If you are facing any problems while installing postgreSQL rpm, Please r
 * VTN Coordinator support PostgreSQL version greater than 9.1 only and currently tested with 9.1 and 9.3. Please ensure the PostgreSQL version>=9.1 is installed.
 
 ===== Installing the VTN Coordinator
-* Enter into the 'externalapps' directory in the top directory of Helium.
+* Enter into the 'externalapps' directory in the top directory of Lithium.
 [source,perl]
 ----
-    cd distribution-karaf-0.2.1-Helium-SR1/externalapps
+    cd distribution-karaf-0.2.1-Lithium-SR1/externalapps
 ----
-* Untar the package distribution.vtn-coordinator-6.0.0.1-Helium-SR1-bin.tar.bz2  to extract VTN Coordinator from the tar.bz2 file in the "externalapps" directory.
+* Untar the package distribution.vtn-coordinator-6.0.0.1-Lithium-SR1-bin.tar.bz2  to extract VTN Coordinator from the tar.bz2 file in the "externalapps" directory.
 
 This will install VTN Coordinator to "/usr/local/vtn" directory.
 The name of the tar.bz2 file name varies depending on the version. Please give the same tar.bz2 file name which is there in your directory.
@@ -111,4 +111,5 @@ NOTE: VTN Coordinator runs on port 8083 (TCP) for REST API by default. If you wa
 ----
    /usr/local/vtn/sbin/db_setup
 ----
+
 

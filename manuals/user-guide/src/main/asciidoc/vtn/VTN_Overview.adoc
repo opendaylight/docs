@@ -280,25 +280,26 @@ The following is an example of the usage to connect the terminal to the network.
 [source,perl]
 ----
    curl --user admin:adminpass -X POST -H 'content-type: application/json'  \
-  -d '{"vtn":{"vtn_name":"VTN1"}}' http://172.1.0.1:8080/vtn-webapi/vtns.json
+  -d '{"vtn":{"vtn_name":"VTN1"}}' http://172.1.0.1:8282/vtn-webapi/vtns.json
 ----
 * Create Controller Information
 [source,perl]
 ----
    curl --user admin:adminpass -X POST -H 'content-type: application/json'  \
   -d '{"controller": {"controller_id":"CONTROLLER1","ipaddr":"172.1.0.1","type":"odc","username":"admin", \
-  "password":"admin","version":"1.0"}}' http://172.1.0.1:8080/vtn-webapi/controllers.json
+  "password":"admin","version":"1.0"}}' http://172.1.0.1:8282/vtn-webapi/controllers.json
 ----
 * Create vBridge under VTN
 [source,perl]
 ----
   curl --user admin:adminpass -X POST -H 'content-type: application/json' \
   -d '{"vbridge":{"vbr_name":"VBR1","controller_id": "CONTROLLER1","domain_id": "(DEFAULT)"}}' \
-  http://172.1.0.1:8080/vtn-webapi/vtns/VTN1/vbridges.json
+  http://172.1.0.1:8282/vtn-webapi/vtns/VTN1/vbridges.json
 ----
 * Create the interface to connect the terminal under vBridge
 [source,perl]
 ----
   curl --user admin:adminpass -X POST -H 'content-type: application/json' \
-  -d '{"interface":{"if_name":"IF1"}}' http://172.1.0.1:8080/vtn-webapi/vtns/VTN1/vbridges/VBR1/interfaces.json
+  -d '{"interface":{"if_name":"IF1"}}' http://172.1.0.1:8282/vtn-webapi/vtns/VTN1/vbridges/VBR1/interfaces.json
 ----
+

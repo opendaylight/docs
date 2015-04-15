@@ -1,4 +1,4 @@
-=== Hacking VTN Manager(Helium)
+=== Hacking VTN Manager(Lithium)
 ==== Installing VTN Manager from source code
 .Prior preparation
 VTN Manager is a set of OSGi bundles running in OpenDaylight controller in Karaf platform, so prior preparation for installing VTN Manager is the same as OpenDaylight controller.
@@ -47,16 +47,6 @@ NOTE:
 * Test if VTN Manger is running
 * In the karaf prompt, type the below command to ensure that vtn packages are installed.
 
-===== Build Non-Karaf distribution
-.Build
- cd ${VTN_DIR}/manager/dist to build the non-karaf binaries
- mvn clean install
- cd ${VTN_DIR}/manager/dist/target/distribution.vtn-manager-0.2.2-SNAPSHOT-osgipackage/opendaylight
-
-.Run
- ./run.sh of10 (If you want to enable only OpenFlow 1.0)
- ./run.sh of13 (If you want to enable all supported openflow versions)
-
 ==== Verify if VTN is running
 * In the karaf prompt, type the below command to ensure that vtn packages are installed.
   feature:list i | grep vtn
@@ -71,7 +61,7 @@ Here is an example of how to create a virtual tenant network.
 ----
  curl --user "admin":"admin" -H "Accept: application/json" -H \
  "Content-type: application/json" -X POST \
- http://localhost:8080/controller/nb/v2/vtn/default/vtns/Tenant1 \
+ http://localhost:8282/controller/nb/v2/vtn/default/vtns/Tenant1 \
  -d '{"description": "My First Virtual Tenant Network"}'
 ----
 
@@ -81,5 +71,5 @@ You can check the list of all tenants by executing the following command.
 ----
  curl --user "admin":"admin" -H "Accept: application/json" -H \
  "Content-type: application/json" -X GET \
- http://localhost:8080/controller/nb/v2/vtn/default/vtns
+ http://localhost:8282/controller/nb/v2/vtn/default/vtns
 ----
