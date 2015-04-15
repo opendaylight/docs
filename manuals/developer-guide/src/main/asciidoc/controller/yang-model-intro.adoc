@@ -1,0 +1,113 @@
+
+==== Basic YANG concepts and their rendition in APIs
+
+The following are the basic concepts in YANG modeling: +
+
+* Remote Procedure (RPCs): In MD-SAL, RPCs are used for any call or
+  invocation that crosses the plugin or module boundaries. RPCs are triggered by
+  consumers, and usually have return values.
+* Notifications: Asynchronous events, published by components for listeners.
+* Configuration and Operational Data tree: The well-defined (by model) tree
+  structure that represents the operational state of components and systems.
+** Instance Identifier: The path that uniquely identifies the sub-tree in the
+  configuration or operational space. Most of the addressing of data is done by
+  Instance Identifier.
+
+=== Definition of YANG models
+
+In this phase, the developer selects from existing models (provided by controller
+or other plugins), writes new models, or augments existing ones. A partial list
+of available models could be found at:
+https://wiki.opendaylight.org/view/YANG_Tools:Available_Models[YANG Tools:Available Models].
+
+The mapping of YANG to Java is documented at: https://wiki.opendaylight.org/view/Yang_Tools:YANG_to_Java_Mapping[Yang Tools:YANG to Java Mapping.] This mapping provides an overview of how YANG is mapped to Java.
+
+Multiple approaches to model the functionality of the southbound plugin are
+available: +
+
+* Using RPCs and Notifications
+* Using Configuration Data Description
+* Using Runtime Data Description
+* Combining approaches
+
+=== RPCs
+
+RPCs can model the functionality invoked by consumers (applications) that use
+the southbound plugin. Although RPCs can model any functionality, they are usually used to model functionality that cannot be abstracted as configuration data, for example, PacketOut, or initiating a new session to a device (controller-to-device session).
+
+RPCs are modeled with an RPC statement in the following form: +
++rpc foo {}+ +
+This statement is mapped to method. +
+
+*RPC input* +
+To define RPC input, use an input statement inside RPC. The structure of the
+input is defined with the same statements as the structure of notifications,
+configuration, and so on.
+----
+ rpc foo {
+    input {
+       ...
+    }
+ }
+----
+*RPC output* +
+To define the RPC output (structure of result), use the RPC output statement. +
+----
+ rpc foo {
+   output {
+      ...
+   }
+ }
+----
+*Notifications* +
+Use notifications to model events originating in a network device or southbound
+plugin which is exposed to consumers to listen.
+
+
+A notification statement defines a notification:
+----
+   notification foo {
+      ...
+   }
+----
+*Configuration data* +
+
+Configuration data is good for the following purposes: +
+
+* Model or provide CRUD access to the state of protocol plugin and/or network
+  devices
+* Model any functionality which could be exposed as a configuration to the
+  consumers or applications
+
+Configuration data in YANG is defined by using the config substatement with
+a true argument. For example: +
+----
+  container foo {
+     config true;
+     ...
+  }
+----
+*Runtime (read-only) data* +
+Runtime (read-only) data is good to model or provide read access to the state
+of the protocol plugin and networtk devices, or network devices. This type of data is good to model statistics or any state data, which cannot be modified by the consumers (applications), but needs exposure (for example, learned topology, or list of connected switches).
+
+Runtime data in YANG is defined by using config subsatement with a false argument:
+----
+  container foo {
+     config false;
+  }
+----
+*Structural elements* +
+The structure of RPCs, notifications, configuration data, and runtime data is
+modelled using structural elements (data schema nodes). Structural elements define the actual structure of XML, DataDOM documents, and Java APIs for accessing or storing these elements. The most commonly used structural elements are: +
+
+* Container
+* List
+* Leaf
+* Leaf-list
+* Choice
+
+=== Augmentations +
+Augmentations are used to extend existing models by providing additional
+structural elements and semantics. Augmentation cannot change the mandatory
+status of nodes in the original model, or introduce any new mandatory statements.
