@@ -1,16 +1,91 @@
-=== SFC OVS User Guide
+=== SFC-OVS integration
 
 ==== Overview
-In current state, SFC OVS provides mapping between SFF and OVS Bridge. It automatically configures SFF according to received OVS Bridge data. The next step is the opposite direction: configuring OVS Bridge according to SFF data.
+SFC-OVS provides integration of SFC with OpenVSwitch (OVS) devices.
+Integration is realized through mapping of SFC objects (like SF, SFF,
+Classifier, etc.) to OVS objects (like Bridge, TerminationPoint=Port/Interface).
+The mapping takes care of automatic instantiation (setup) of corresponding objects
+whenever it's opossite is created. E.g. new SFF --create-- > OVS Bridge, new OVS
+Bridge --create-- > SFF, etc.
 
-==== SFC OVS Architecture
-SFC OVS uses OVSDB MDSAL for communication with Open vSwitch devices.
+The feature is intended for SFC users willing to use OpenVSwitch as underlying
+network infrastructure for deploying RSPs (Rendered Service Paths).
 
-==== Configuring SFC OVS
-TBA
+==== SFC-OVS Architecture
+SFC-OVS uses OVSDB MDSAL Southbound API for getting/writing information from/to
+OVS devices. From the user perspective SFC-OVS acts as a layer between SFC
+DataStore and OVSDB.
 
-==== Administering or Managing SFC OVS
-TBA
+.SFC-OVS integration into ODL
+image::sfc/sfc-ovs-architecture-user.png[width=250]
+
+==== Configuring SFC-OVS
+.Configuration steps:
+. Run ODL distribution (run karaf)
+. In karaf console execute: feature:install odl-sfc-ovs
+. Configure OpenVSwitch to use ODL as a manager, using following command:
++ovs-vsctl set-manager tcp:<odl_ip_address>:6640
 
 ==== Tutorials
-TBA
+
+===== Verifying mapping from OVS to SFF
+
+====== Overview
+This tutorial shows the usual workflow when OVS configuration is transformed to
+corresponding SFC objects (in this case SFF).
+
+====== Prerequisities
+* OpenVSwitch installed (ovs-vsctl command available in shell)
+* SFC-OVS feature configured as stated above
+
+====== Instructions
+.In shell execute:
+. +ovs-vsctl set-manager tcp:<odl_ip_address>:6640+
+. +ovs-vsctl add-br br1+
+. +ovs-vsctl add-port br1 testPort+
+
+====== Verification
+.There are two possible ways to verify if SFF was created:
+a. visit +http://<odl_ip_address>:8181/sfc/index.html#/sfc/serviceforwarder+
+b. use pure RESTconf and send GET request to URL:
++http://<odl_ip_address>:8181/restconf/config/service-function-forwarder:service-function-forwarders+
+
+There should be SFF, which name will be ending with 'br1' and the SFF should
+containt two DataPlane locators: 'br1' and 'testPort'.
+
+===== Verifying mapping from SFF to OVS
+
+====== Overview
+This tutorial shows the usual workflow during creation of OVS Bridge with use
+of SFC APIs.
+
+====== Prerequisities
+* OpenVSwitch installed (ovs-vsctl command available in shell)
+* SFC-OVS feature configured as stated above
+
+====== Instructions
+.Steps:
+. In shell execute: +ovs-vsctl set-manager tcp:<odl_ip_address>:6640+
+. Send POST request to URL:
++http://<odl_ip_address>:8181/restconf/operations/service-function-forwarder-ovs:create-ovs-bridge+
+Use Basic auth with credentials: "admin", "admin" and set +Content-Type: application/json+.
+The content of POST request should be following:
+----
+{
+    "input":
+    {
+        "name": "br-test",
+        "ovs-node": {
+            "ip": "<OpenVSwitch_ip_address>"
+        }
+    }
+}
+----
+OpenVSwitch_ip_address is IP address of machine, where OpenVSwitch is installed.
+
+====== Verification
+In shell execute: +ovs-vsctl show+. There should be Bridge with name 'br-test'
+and one port/interface called 'br-test'.
+
+Also, corresponding SFF for this OVS Bridge should be configured, what can be
+verified through SFC-UI or RESTconf as stated in previous tutorial.
