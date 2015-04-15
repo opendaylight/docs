@@ -185,6 +185,8 @@ image::Put.png[width=500]
 . CompositeNode can be normalized by adding additional information from DataSchemaNode.
 . Restconf begins the transaction, and puts CompositeNode with InstanceIdentifier into it. The response on the request from the client is the status code which depends on the result from the transaction.
 
+
+// FIXME: Replace with coretutorials tutorial or point to openflow location
 === Something practical
 
 . Create a new flow on the switch openflow:1 in table 2.
