@@ -113,7 +113,7 @@ failmode=secure
 
 ====  Start ODL Controller
 
- * Please refer to the  https://wiki.opendaylight.org/view/Release/Helium/VTN/Installation_Guide to run ODL with VTN Feature enabled.
+ * Please refer to the  https://wiki.opendaylight.org/view/Release/Lithium/VTN/Installation_Guide to run ODL with VTN Feature enabled.
 
 
 TIP: After running ODL Controller, please ensure ODL Controller listens to the ports:6633,6653, 6640 and 8080
@@ -124,7 +124,7 @@ NOTE: 6633/6653 - OpenFlow Ports
 
 NOTE: 6640 - OVS Manager Port
 
-NOTE: 8080 - Port for REST API
+NOTE: 8282 - Port for REST API
 
 ====  Devstack Setup
 
@@ -422,3 +422,4 @@ NOTE:
 ===== References
 * http://devstack.org/guides/multinode-lab.html
 * https://wiki.opendaylight.org/view/File:Vtn_demo_hackfest_2014_march.pdf
+
