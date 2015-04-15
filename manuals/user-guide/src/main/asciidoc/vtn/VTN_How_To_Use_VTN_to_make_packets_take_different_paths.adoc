@@ -8,7 +8,7 @@ image::vtn/Pathmap.png[pathmap]
 * Save the mininet script given below as pathmap_test.py and run the mininet script in the mininet environment where Mininet is installed.
 
 * Create topology using the below mininet script:
-[source,perl]
+
 ----
 from mininet.topo import Topo
   class MyTopo( Topo ):
@@ -33,7 +33,7 @@ from mininet.topo import Topo
         self.addLink( rightSwitch, rightHost )
  topos = { 'mytopo': ( lambda: MyTopo() ) }
 ----
-[source,perl]
+
 ----
  mininet> net
  c0
@@ -46,7 +46,7 @@ from mininet.topo import Topo
 ----
 
 * Generate traffic by pinging between hosts h1 and h2 before creating the portmaps respectively
-[source,perl]
+
 ----
   mininet> h1 ping h2
   PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
@@ -58,39 +58,39 @@ from mininet.topo import Topo
 
 ===== Configuration
 * Create Controller
-[source,perl]
+
 ----
 curl --user admin:adminpass -H 'content-type: application/json'  -X POST -d '{"controller": {"controller_id": "odc", "ipaddr":"10.100.9.42", "type": "odc", "version": "1.0", "auditstatus":"enable"}}' http://127.0.0.1:8083/vtn-webapi/controllers.json
 ----
 
 * Create a VTN
-[source,perl]
+
 ----
 curl --user admin:adminpass -H 'content-type: application/json'  -X POST -d '{"vtn" : {"vtn_name":"vtn1","description":"test VTN" }}' http://127.0.0.1:8083/vtn-webapi/vtns.json
 ----
 
 * Create a vBridge in the VTN
-[source,perl]
+
 ----
 curl --user admin:adminpass -H 'content-type: application/json'  -X POST -d '{"vbridge" : {"vbr_name":"vBridge1","controller_id":"odc","domain_id":"(DEFAULT)" }}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn1/vbridges.json
 ----
 
 * Create two Interfaces into the vBridge
-[source,perl]
+
 ----
 curl --user admin:adminpass -H 'content-type: application/json'  -X POST -d '{"interface": {"if_name": "if1","description": "if_desc1"}}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn1/vbridges/vBridge1/interfaces.json
 curl --user admin:adminpass -H 'content-type: application/json'  -X POST -d '{"interface": {"if_name": "if2","description": "if_desc2"}}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn1/vbridges/vBridge1/interfaces.json
 ----
 
 * Configure two mappings on the interfaces
-[source,perl]
+
 ----
 curl --user admin:adminpass -H 'content-type: application/json'  -X PUT -d '{"portmap":{"logical_port_id": "PP-OF:00:00:00:00:00:00:00:01-s1-eth1"}}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn1/vbridges/vBridge1/interfaces/if1/portmap.json
 curl --user admin:adminpass -H 'content-type: application/json'  -X PUT -d '{"portmap":{"logical_port_id": "PP-OF:00:00:00:00:00:00:00:03-s3-eth3"}}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn1/vbridges/vBridge1/interfaces/if2/portmap.json
 ----
 
 * Generate traffic by pinging between hosts h1 and h2 after creating the portmaps respectively
-[source,perl]
+
 ----
   mininet> h1 ping h2
   PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
@@ -101,32 +101,32 @@ curl --user admin:adminpass -H 'content-type: application/json'  -X PUT -d '{"po
 ----
 
 * Get the VTN Dataflows information
-[source,perl]
+
 ----
 curl -X GET -H 'content-type: application/json' --user 'admin:adminpass' "http://127.0.0.1:8083/vtn-webapi/dataflows?&switch_id=00:00:00:00:00:00:00:01&port_name=s1-eth1&controller_id=odc&srcmacaddr=de3d.7dec.e4d2&no_vlan_id=true"
 ----
 
 * Create a Flowcondition in the VTN
-[source,perl]
+
 ----
-curl --user admin:admin -H 'content-type: application/json' -X PUT -d '{"name": "flowcond_1","match": [{"index": 1,"ethernet": {"src": "ca:9e:58:0c:1e:f0","dst": "ba:bd:0f:e3:a8:c8","type": 2048},"inetMatch": {"inet4": {"src": "10.0.0.1","dst": "10.0.0.2","protocol": 1}}}]}' http://10.100.9.42:8080/controller/nb/v2/vtn/default/flowconditions/flowcond_1
+curl --user admin:admin -H 'content-type: application/json' -X PUT -d '{"name": "flowcond_1","match": [{"index": 1,"ethernet": {"src": "ca:9e:58:0c:1e:f0","dst": "ba:bd:0f:e3:a8:c8","type": 2048},"inetMatch": {"inet4": {"src": "10.0.0.1","dst": "10.0.0.2","protocol": 1}}}]}' http://10.100.9.42:8282/controller/nb/v2/vtn/default/flowconditions/flowcond_1
 ----
 
 * Create a Pathmap in the VTN
-[source,perl]
+
 ----
-curl --user admin:admin -H 'content-type: application/json' -X PUT -d '{"index": 10, "condition":"flowcond_1", "policy":1, "idleTimeout": 300, "hardTimeout": 0}' http://10.100.9.42:8080/controller/nb/v2/vtn/default/pathmaps/1
+curl --user admin:admin -H 'content-type: application/json' -X PUT -d '{"index": 10, "condition":"flowcond_1", "policy":1, "idleTimeout": 300, "hardTimeout": 0}' http://10.100.9.42:8282/controller/nb/v2/vtn/default/pathmaps/1
 ----
 
 * Get the Path policy information
-[source,perl]
+
 ----
-curl --user admin:admin -H 'content-type: application/json' -X GET -d '{"id": 1,"default": 100000,"cost": [{"location": {"node": {"type": "OF","id": "00:00:00:00:00:00:00:01"},"port": {"type": "OF","id": "3","name": "s1-eth3"}},"cost": 1000},{"location": {"node": {"type": "OF","id": "00:00:00:00:00:00:00:04"},"port": {"type": "OF","id": "2","name": "s4-eth2"}},"cost": 1000},{"location": {"node": {"type": "OF", "id": "00:00:00:00:00:00:00:03"},"port": {"type": "OF","id": "3","name": "s3-eth3"}},"cost": 100000}]}' http://10.100.9.42:8080/controller/nb/v2/vtn/default/pathpolicies/1
+curl --user admin:admin -H 'content-type: application/json' -X GET -d '{"id": 1,"default": 100000,"cost": [{"location": {"node": {"type": "OF","id": "00:00:00:00:00:00:00:01"},"port": {"type": "OF","id": "3","name": "s1-eth3"}},"cost": 1000},{"location": {"node": {"type": "OF","id": "00:00:00:00:00:00:00:04"},"port": {"type": "OF","id": "2","name": "s4-eth2"}},"cost": 1000},{"location": {"node": {"type": "OF", "id": "00:00:00:00:00:00:00:03"},"port": {"type": "OF","id": "3","name": "s3-eth3"}},"cost": 100000}]}' http://10.100.9.42:8282/controller/nb/v2/vtn/default/pathpolicies/1
 ----
 
 ===== Verification
 * Before applying Path policy information in the VTN
-[source,perl]
+
 ----
 {
         "pathinfos": [
@@ -149,7 +149,7 @@ curl --user admin:admin -H 'content-type: application/json' -X GET -d '{"id": 1,
 }
 ----
 * After applying Path policy information in the VTN
-[source,perl]
+
 ----
 {
     "pathinfos": [
@@ -171,3 +171,4 @@ curl --user admin:admin -H 'content-type: application/json' -X GET -d '{"id": 1,
                      ]
 }
 ----
+
