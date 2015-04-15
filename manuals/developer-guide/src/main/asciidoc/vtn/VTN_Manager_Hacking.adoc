@@ -10,19 +10,19 @@ Please see https://wiki.opendaylight.org/view/OpenDaylight_Controller:Installati
 The below procedure assumes, You are installing OpenDaylight Controller with VTN Manager on your local Linux machine.
 
 * Download the code from the Git repository of VTN Project.
-[source,perl]
+
 ----
  git clone ssh://<username>@git.opendaylight.org:29418/vtn.git
 or
  git clone https://git.opendaylight.org/gerrit/p/vtn.git
 ----
 The following instructions assume you put the code in directory ${VTN_DIR}.
-[source,perl]
+
 ----
  ${VTN_DIR}=<Top of VTN source tree>
 ----
 * Build the code of VTN Manager.
-[source,perl]
+
 ----
  cd ${VTN_DIR}/manager
  mvn clean install

@@ -28,7 +28,7 @@ For more details: Please refer to https://wiki.openstack.org/wiki/NeutronDevstac
 ===== ODL Configuration Details
 The implementation makes use of a configuration file vtn.ini in the OpenDaylight configuration directory. The name of the bridge in Openstack OVS, the physical interface device name to be used for VM's are mentioned in this file. 
 The vtn.ini is created with the below parameters and the explanation for them is as follows
-[source,perl]
+
 ----
  bridgename=br-int 
  portname=eth1 
@@ -54,7 +54,7 @@ Other parameters works fine as is for general use cases.
 
 If the file is not found, the following default values are assumed
 
-[source,perl]
+
 ----
  bridgename=br-int 
  portname=eth1 

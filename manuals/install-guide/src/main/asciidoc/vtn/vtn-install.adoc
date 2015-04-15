@@ -1,0 +1,81 @@
+== Getting and Installing OpenDaylight Lithium
+
+=== Downloading the Karaf Distribution
+
+* Go to the download page of opendaylight.org.
+  http://www.opendaylight.org/software/downloads
+* Download the "Pre-Built Zip File" or "Pre-Built Tar File" of the latest Lithium.
+* Extract files from the downloaded file.
+  e.g.,
+
+----
+    unzip distribution-karaf-0.2.1-Lithium-SR1.zip
+    or
+    tar zxvf distribution-karaf-0.2.1-Lithium-SR1.tar.gz
+----
+
+=== Running the Karaf distribution
+
+. Unzip the zip file
+. cd into the directory
+. run ./bin/karaf
+
+NOTE: By default the VTN packages will be installed
+For example:
+
+[frame="none"]
+|===
+a|
+----
+$ ls distribution-karaf-0.2.1-Lithium-SR1.zip 
+distribution-karaf-0.2.1-Lithium-SR1.zip
+$ unzip distribution-karaf-0.2.1-Lithium-SR1.zip 
+Archive:  distribution-karaf-0.2.1-Lithium-SR1.zip
+   creating: distribution-karaf-0.2.1-Lithium-SR1/
+   creating: distribution-karaf-0.2.1-Lithium-SR1/configuration/
+   creating: distribution-karaf-0.2.1-Lithium-SR1/data/
+   creating: distribution-karaf-0.2.1-Lithium-SR1/data/tmp/
+   creating: distribution-karaf-0.2.1-Lithium-SR1/deploy/
+   creating: distribution-karaf-0.2.1-Lithium-SR1/etc/
+   creating: distribution-karaf-0.2.1-Lithium-SR1/externalapps/
+...
+  inflating: distribution-karaf-0.2.1-Lithium-SR1/bin/start.bat  
+  inflating: distribution-karaf-0.2.1-Lithium-SR1/bin/status.bat  
+  inflating: distribution-karaf-0.2.1-Lithium-SR1/bin/stop.bat
+$ cd distribution-karaf-0.2.1-Lithium-SR1
+$ ./bin/karaf 
+
+    ________                       ________                .__  .__       .__     __       
+    \_____  \ ______   ____   ____ \______ \ _____  ___.__.\|  \| \|__\| ____ \|  \|___/  \|_     
+     /   \|   \\____ \_/ __ \ /    \ \|    \|  \\__  \<   \|  \|\|  \| \|  \|/ ___\\|  \|  \   __\    
+    /    \|    \  \|_> >  ___/\|   \|  \\|    `   \/ __ \\___  \|\|  \|_\|  / /_/  >   Y  \  \|      
+    \_______  /   __/ \___  >___\|  /_______  (____  / ____\|\|____/__\___  /\|___\|  /__\|      
+            \/\|__\|        \/     \/        \/     \/\/            /_____/      \/          
+
+
+Hit '<tab>' for a list of available commands
+and '[cmd] --help' for help on a specific command.
+Hit '<ctrl-d>' or type 'system:shutdown' or 'logout' to shutdown OpenDaylight.
+
+opendaylight-user@root>
+----
+|===
+
+=== Verify if VTN is running
+
+In the karaf prompt, type the below command to ensure that vtn packages are installed.
+
+  feature:list i | grep vtn
+  
+For example:
+
+----
+opendaylight-user@root>feature:list -i |grep vtn
+odl-vtn-manager-all                        | 0.3.0-SNAPSHOT      | x         | vtn-manager-0.3.0-SNAPSHOT            | OpenDaylight VTN Manager All                     
+odl-vtn-manager-java-api                   | 0.3.0-SNAPSHOT      | x         | vtn-manager-0.3.0-SNAPSHOT            | OpenDaylight :: VTN Manager :: Java API          
+odl-vtn-manager-northbound                 | 0.3.0-SNAPSHOT      | x         | vtn-manager-0.3.0-SNAPSHOT            | OpenDaylight :: VTN Manager :: Northbound        
+odl-vtn-manager-neutron                    | 0.3.0-SNAPSHOT      | x         | vtn-manager-0.3.0-SNAPSHOT            | OpenDaylight :: VTN Manager :: Neutron Interface 
+odl-vtn-manager-runtime                    | 0.3.0-SNAPSHOT      | x         | vtn-manager-0.3.0-SNAPSHOT            | OpenDaylight :: VTN Manager :: Runtime Dependencie
+opendaylight-user@root>
+
+----

@@ -6,12 +6,12 @@ The same Configuration as Vlan Mapping Example(https://wiki.opendaylight.org/vie
 
 ===== Verification
 Get the VTN Dataflows information
-[source,perl]
+
 ----
 curl -v -X GET -H 'content-type: application/json' --user 'admin:adminpass' "http://127.0.0.1:8083/vtn-webapi/dataflows?controller_id=controllerone&srcmacaddr=924c.e4a3.a743&vlan_id=300&switch_id=00:00:00:00:00:00:00:02&port_name=s2-eth1"
 ----
 
-[source,perl]
+
 ----
 {
    "dataflows": [
@@ -64,3 +64,4 @@ curl -v -X GET -H 'content-type: application/json' --user 'admin:adminpass' "htt
    ]
 }
 ----
+
