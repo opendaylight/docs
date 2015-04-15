@@ -1,0 +1,156 @@
+== OpenDaylight Security Considerations
+
+This document discusses the various security issues that might affect the OpenDaylight controller. The document also lists specific recommendations to mitigate security risks. The OpenDaylight community has a Security Advisory Board that is involved in identifying and resolving security threats to the controller. This document also contains information about the corrective steps you can take if you discover a security issue with the deployment of your controller, and if necessary, contact the Security Board.
+
+=== Overview of OpenDaylight Security
+
+There are two main kinds of security vulnerability for your controller.
+
+* *Access vulnerability*: This is defined as the vulnerability that arises if the hardware running the controller and your various applications is not installed in a secure area. Access vulnerability is beyond the scope of this document. Refer to the security guidelines of your government and hardware vendors to best understand how to run a business from a secure premise.
+
+* *Code vulnerability*: This is defined as the vulnerability that arises because of malicious human access to the applications and services that define your business. With the increased usage of cloud and virtualized solutions, there has been a rise in newer types of security threats. Your users require access to data from anywhere and at any time. At present, there are a number of recommended security strategies for your datacenter. However, with the disparity of hardware vendors used across cloud services, it is difficult to state with complete certainty that virtualized datacenters are completely secured. Access vulnerability, thus, is not a hallmark particular to the controller, but to all services and businesses that run on the cloud.
+
+The OpenDaylight controller has specific advantages in terms of mitigating both access and code vulnerability.
+
+* The separation of the control plane and the data plane allows possible security threats to be isolated.
+
+* The rapid evolution of southbound protocols also ensures the control of network traffic in more innovative ways.
+
+* The centralized databases and network control allows network administrators more control over the entire networking system. At the same time, centralization of network control can be an advantage only if access to that control is secure.
+
+* OpenDaylight is installed from OSGi bundles. These bundles provide some level of isolation with explicit code boundaries and package import and exports. 
+
+* The OpenDaylight community has specific recommendations to minimize the occurrence of code vulnerability.
+
+=== OpenDaylight Security Information
+
+* If you have any security issue, you can send a mail to *security@lists.opendaylight.org*.
+
+* For the list of current OpenDaylight security issues that are now resolved, refer to https://wiki.opendaylight.org/view/Security_Advisories.
+
+* To know more about the OpenDaylight security issues policies and procedure, refer to https://wiki.opendaylight.org/view/CrossProject:OpenDaylight_Security_Analysis.
+
+=== Recommended Deployment Model for OpenDaylight
+
+We recommend that you follow the deployment guidelines in setting up your OpenDaylight controller to minimize security threats.
+
+* The controller must be deployed in a private network that cannot be accessed from the internet.
+
+* Separate the controller data network from the management network.
+
+* Define levels of user access to the controller management network.
+
+* Implement an authentication policy for devices that connect to both the data and management network.
+
+* Authenticate devices that connect from the controller data network to the management network. Untrusted entities in the data network can provide unfiltered data to the controller.
+
+=== Securing OSGi bundles
+
+OSGi is a Java-specific framework that improves the way that Java classes interact within a single JVM. It provides an enhanced version of the *java.lang.SecurityManager* (ConditionalPermissionAdmin) in terms of security.
+
+Java provides a security framework that allows a security policy to grant permissions, such as reading a file or opening a network connection, to specific code. The code maybe classes from the jarfile loaded from a specific URL, or a class signed by a specific key. OSGi builds on the standard JAVA security model to add the following features:
+
+* A set of OSGi-specific permission types, such as one that grants the right to register an OSGi service or get an OSGi service from the service registry.
+
+* The ability to dynamically modify permissions at runtime. This includes the ability to specify permissions by using code rather than a text configuration file.
+
+* A flexible predicate-based approach to determining which rules are applicable to which *ProtectionDomain*. This approach is much more powerful than the standard Java security policy which can only grant rights based on a jarfile URL or class signature. A few standard predicates are provided, including selecting rules based upon bundle symbolic-name.
+
+* Support for bundle *local permissions* policies with optional further constraints such as *DENY* operations.
+Most of this functionality is accessed by using the *OSGi ConditionalPermissionAdmin* service which is part of the OSGi core and can be obtained from the OSGi service registry. The +ConditionalPermissionAdmin+ API replaces the earlier *PermissionAdmin* API.
+
+For more information, refer to http://www.osgi.org/Main/HomePage.
+
+
+=== Securing the Karaf container
+
+Apache Karaf is a OSGi-based runtime platform which provides a lightweight container for the OpenDaylight controller and applications. Apache Karaf uses either Apache Felix Framework or Eclipse Equinox OSGi frameworks, and provide additional features on top of the framework. 
+
+Apache Karaf provides a security framework based on Java Authentication and Authorization Service (JAAS) and in compliance with OSGi recommendations, while providing RBAC (Role-Based Access Control) mechanism for the console and Java Management Extensions (JMX).
+
+The Apache Karaf security framework is used internally to control the access to the following components:
+
+* OSGi services
+ 
+* console commands
+
+* JMX layer
+
+* WebConsole
+
+The remote management capabilities are present in Apache Karaf by default, however they can be disabled by using various configuration alterations. These configuration options may be applied during the construction of the ODL-Karaf distribution. 
+
+NOTE: Refer to the following list of publications for more information on implementing security for the Karaf container.
+
+* For role-based JMX administration, refer to http://karaf.apache.org/manual/latest/users-guide/monitoring.html.
+
+* For remote SSH access configuration, refer to http://karaf.apache.org/manual/latest/users-guide/remote.html.
+
+* For WebConsole access, refer to http://karaf.apache.org/manual/latest/users-guide/webconsole.html.
+
+* For Karaf security features, refer to http://karaf.apache.org/manual/latest/developers-guide/security-framework.html.
+
+==== Disabling the remote shutdown port
+
+You can lock down your deployment post installation. Set karaf.shutdown.port=-1 in etc/custom.properties or etc/config.properties to disable the remote shutdown port.
+
+
+=== Securing the Northbound and Southbound Plugins
+
+
+=== Securing the controller by using AAA
+
+AAA stands for Authentication, Authorization, and Accounting. The scope of AAA is discussed below:
+
+* *Authentication*: Authenticate the identity of both human and machine users independent of choice of binding (direct or federated).
+
+* *Authorization*: Authorize human or machine user access to resources including RPCs, notification subscriptions, and subsets of the datatree.
+
+* *Accounting*: Record and access the records of human or machine user access to resources including RPCs, notifications, and subsets of the datatree.
+
+The scope does not include the implementation of an enterprise-level Identity Provider for the Opendaylight controller.
+
+=== Securing the controller by using Defense4All
+
+Defense4All is an SDN application for detecting and driving mitigation of DoS and DDoS attacks in different SDN topologies. The application detects anti-DoS in OOP mode for the ProgrammableFlow SDN environment. Administrators can configure Defense4All to protect specific networks and servers. These are known as protected networks or Protected Objects (POs). Defense4All uses SDN capabilities to count specified traffic and installs traffic counting flows for each protocol of each configured PO in every network location through which traffic of the subject PO flows. These are referred to as VTN Vexternals. Defense4All then monitors the traffic of all configured POs, summarizing readings, rates, and averages from all relevant network locations. 
+
+If the application detects a deviation from normal learned traffic behaviour in a protocol such as TCP, UDP, ICMP, or the rest of the traffic of a particular PO, Defense4All declares an attack against that protocol in the subject PO. The Defense4All learning period has a minimum of one week from the installation of the counting flows in which Defense4All does not detect attacks. To mitigate a detected attack, Defense4All performs the following procedure:
+
+. The application validates that the DefensePro device is alive and selects a live connection to it. If DefensePro is not alive or does not have a live connection from a PFS, then no traffic diversion is performed.
+
+. Defense4All configures DefensePro with a security policy and normal rates of the attacked traffic. DefensePro’s efficient mitigation of the attack is speeded up.
+
+. Defense4All starts monitoring and logging syslogs arriving from DefensePro for the subject traffic. As long as it continues receiving syslog attack notifications from DefensePro regarding this attack, Defense4All continues attack mitigation through traffic diversion even if the Vexternal FlowFilter counters do not indicate any more attacks.
+
+. Defense4All maps the selected physical DefensePro connection to the relevant VTN by creating a pair of Vexternals and mapping them to the selected pair of physical PFS ports connected to DefensePro. The application automatically learns and preserves VLAN tagging if it exists. If Defense4All has already created and mapped a pair of Vexternals with the same VLAN in the VTN, then the same pair is also reused for diversion of the new traffic rather than creating new Vexternals for the same VTN and VLAN.
+
+. Defense4All installs higher priority flow filter entries in every north Vexternal through which the attacked traffic flows in order to redirect traffic to the “north DP-In Vexternal”. It also selects one of the live north interfaces of the Vbr connected to all those Vexternals (there can be exactly one Vbr with the same VLAN). Defense4All re-injects traffic from the “DP-Out Vexternal” to the selected interface of the Vbr. 
+
+. When Defense4All decides that the attack is over, there is no indication from either PFC FlowFilter counters or from DefensePro, it reverts to the previous actions: it stops monitoring for DefensePro syslogs about the subject traffic, it removes the traffic diversion FlowFilters, removes the “DP-In and DP-Out Vexternals” (if this is the last attack in this VTN and VLAN), and removes the security configuration from DefensePro. Defense4All then returns to peacetime monitoring.
+
+For more information on Defense4All, refer to the OpenDaylight wiki.
+
+
+=== Security considerations for clustering
+
+The Open Daylight Controller supports a cluster-based High Availability model. There are several instances of the Open Daylight Controller which logically act as one logical controller. This not only gives redundancy but also allows a scale-out model for linear scalability. To make the Controller highly available, we need to add resilience at the controller level, the OpenFlow switch level, and the applications level.
+
+There must be one or more controller instances in clustered fashion. The Open Flow enabled switches (OF-S elements) must be multi-homed to multiple instances of the controller. The applications must be multi-homed to the controller instances.
+
+The interaction between the Controller(s) and the Open-Flow enabled switches is essentially to have one Openflow switch multi-homed to multiple controllers, so if one of the controller goes down, another is ready to control the switch.
+
+The benefits of clustering are:
+
+* Scaling: If you have multiple controllers running, you can potentially do more work with
+or store more data on those controllers if they are clustered. You can also break up your
+data into smaller chunks (known as shards) and either distribute that data across the
+cluster or perform certain operations on certain members of the cluster.
+
+* High Availability: If you have multiple controllers running and one of them crashes, you
+would still have the other instances working and available.
+
+* Data Persistence: You will not lose any data gathered by your controller after a manual
+restart or a crash.
+
+
+
