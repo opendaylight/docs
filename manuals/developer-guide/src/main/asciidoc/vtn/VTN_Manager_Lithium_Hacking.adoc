@@ -1,40 +1,56 @@
-=== Hacking VTN Manager
+=== Hacking VTN Manager (Lithium)
 ==== Installing VTN Manager from source code
-.Prior preparation
+===== Prior preparation
 
 VTN Manager is a set of OSGi bundles running in OpenDaylight controller in Karaf platform, so prior preparation for installing VTN Manager is the same as OpenDaylight controller.
 
-Please see https://wiki.opendaylight.org/view/OpenDaylight_Controller:Installation.
-
-===== Get VTN Source
+==== Get VTN Source
 The below procedure assumes, You are installing OpenDaylight Controller with VTN Manager on your local Linux machine.
 
 * Download the code from the Git repository of VTN Project.
-
 ----
- git clone ssh://<username>@git.opendaylight.org:29418/vtn.git
-or
+----
  git clone https://git.opendaylight.org/gerrit/p/vtn.git
+----
 ----
 The following instructions assume you put the code in directory ${VTN_DIR}.
 
 ----
+----
  ${VTN_DIR}=<Top of VTN source tree>
+----
 ----
 * Build the code of VTN Manager.
 
 ----
+----
  cd ${VTN_DIR}/manager
  mvn clean install
 ----
- NOTE: This command will build the local Karaf distribution in the folder manager/dist/karaf/target/assembly.
+----
+NOTE: This command will build the local Karaf distribution in the folder manager/dist/karaf/target/assembly.
 
 ==== Build and Run the Controller with VTN Manager
-===== Build
+===== Build karaf distribution
+
 NOTE: You will need direct internet connection for this build to be successful.
 
- cd ${VTN_DIR}/manager
- mvn clean install -DskipTests
+----
+----
+ cd ${VTN_DIR/manager/dist-karaf for karaf binaries
+ mvn clean install
+----
+----
+Run:
 
-Note: SkipTests will not execute the Unit Tests and Integration Tests while compilation
+----
+ cd ${VTN_DIR}/manager/dist-karaf/target/assembly
+ ./bin/karaf
+----
+
+NOTE:
+  After successful build, the directory  ${VTN_DIR}/manager/dist-karaf will have assembly and tar and zip versions of binaries.
+  User can either choose to run from assembly or copy the tar or zip to required locations and execute there.
+  Test if VTN Manger is running.
+  In the karaf prompt, type the below command to ensure that vtn packages are installed.
 
