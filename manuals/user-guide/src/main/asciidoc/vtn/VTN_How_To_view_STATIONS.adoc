@@ -7,7 +7,7 @@ image::vtn/vtn_stations.png[EXAMPLE DEMONSTRATING VTN STATIONS]
 
 ===== Requirement
 * Configure mininet and create a topology:
-[source,perl]
+
 ----
  $ sudo mn --custom /home/mininet/mininet/custom/topo-2sw-2host.py --controller=remote,ip=10.100.9.61 --topo mytopo
 mininet> net
@@ -18,9 +18,9 @@ mininet> net
  h2 h2-eth0:s2-eth2
 ----
 
-*Generate traffic by pinging between hosts h1 and h2 after configuring the portmaps respectively
+* Generate traffic by pinging between hosts h1 and h2 after configuring the portmaps respectively
 
-[source,perl]
+
 ----
  mininet> h1 ping h2
  PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
@@ -30,40 +30,40 @@ mininet> net
 
 ===== Configuration
 .Create Controller
-[source,perl]
+
 ----
 curl -v --user admin:adminpass -H 'content-type: application/json' -X POST -d '{"controller": {"controller_id": "controllerone", "ipaddr":"10.100.9.61", "type": "odc", "version": "1.0", "auditstatus":"enable"}}' http://127.0.0.1:8083/vtn-webapi/controllers.json
 ----
 .Create a VTN
-[source,perl]
+
 ----
 curl -v --user admin:adminpass -H 'content-type: application/json' -X POST -d '{"vtn" : {"vtn_name":"vtn1","description":"test VTN" }}' http://127.0.0.1:8083/vtn-webapi/vtns.json
 ----
 .Create a vBridge in the VTN
-[source,perl]
+
 ----
 curl -v --user admin:adminpass -H 'content-type: application/json' -X POST -d '{"vbridge" : {"vbr_name":"vBridge1","controller_id":"controllerone","domain_id":"(DEFAULT)" }}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn1/vbridges.json
 ----
 .Create two Interfaces into the vBridge
-[source,perl]
+
 ----
 curl -v --user admin:adminpass -H 'content-type: application/json' -X POST -d '{"interface": {"if_name": "if1","description": "if_desc1"}}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn1/vbridges/vBridge1/interfaces.json
 curl -v --user admin:adminpass -H 'content-type: application/json' -X POST -d '{"interface": {"if_name": "if2","description": "if_desc2"}}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn1/vbridges/vBridge1/interfaces.json
 ----
 .Configure two mappings on the interfaces
-[source,perl]
+
 ----
 curl -v --user admin:adminpass -H 'content-type: application/json' -X PUT -d '{"portmap":{"logical_port_id": "PP-OF:00:00:00:00:00:00:00:01-s1-eth1"}}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn1/vbridges/vBridge1/interfaces/if1/portmap.json
 curl -v --user admin:adminpass -H 'content-type: application/json' -X PUT -d '{"portmap":{"logical_port_id": "PP-OF:00:00:00:00:00:00:00:02-s2-eth2"}}' http://17.0.0.1:8083/vtn-webapi/vtns/vtn1/vbridges/vBridge1/interfaces/if2/portmap.json
 ----
 .Get the VTN stations information
-[source,perl]
+
 ----
 curl -v -X GET -H 'content-type: application/json' -H 'username: admin' -H 'password: adminpass' "http://127.0.0.1:8083/vtn-webapi/vtnstations?controller_id=controllerone&vtn_name=vtn1"
 ----
 
 ===== Verification
-[source,perl]
+
 ----
 curl -v -X GET -H 'content-type: application/json' -H 'username: admin' -H 'password: adminpass' "http://127.0.0.1:8083/vtn-webapi/vtnstations?controller_id=controllerone&vtn_name=vtn1"
 {
