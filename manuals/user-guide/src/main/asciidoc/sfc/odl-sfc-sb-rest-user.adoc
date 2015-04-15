@@ -1,16 +1,35 @@
 === SFC Southbound REST Plugin User Guide
 
 ==== Overview
-Southbound REST Plugin is used to send configuration from DataStore down to network devices supporting REST API (i.e. they have configured REST Uri). It supports POST/PUT/DELETE operations, which are triggered accordingly to changes in DataStore.
+The Southbound REST Plugin is used to send configuration from DataStore down to
+network devices supporting a REST API (i.e. they have a configured REST URI).
+It supports POST/PUT/DELETE operations, which are triggered accordingly to
+changes in DataStore.
+
+.In its current state it listens to changes in these DataStores:
+* Access List (ACL)
+* Service Classifier (SCF)
+* Service Function (SF)
+* Service Function Group (SFG)
+* Service Function Schedule Type (SFST)
+* Service Function Forwader (SFF)
+* Rendered Service Path (RSP)
 
 ==== Southbound REST Plugin Architecture
-TBA
+From the user perspective, the REST plugin is another SFC Southbound plugin
+used to communicate with network devices.
+
+.Soutbound REST Plugin integration into ODL
+image::sfc/sb-rest-architecture-user.png[width=250]
 
 ==== Configuring Southbound REST Plugin
-TBA
+.Configuration steps:
+. Run ODL distribution (run karaf)
+. In karaf console execute: feature:install odl-sfc-sb-rest
+. Configure REST URIs for SF/SFF through SFC-UI or RESTconf 
+(required configuration steps can be found in the tutorial stated bellow)
 
-==== Administering or Managing Southbound REST Plugin
-TBA
-
-==== Tutorials
-TBA
+==== Tutorial
+Comprehensive tutorial on how to use the Southbound REST Plugin and how to
+control network devices with it can be found on:
+https://wiki.opendaylight.org/view/Service_Function_Chaining:Main#SFC_101
