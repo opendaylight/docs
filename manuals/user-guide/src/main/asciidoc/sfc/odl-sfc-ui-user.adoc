@@ -1,16 +1,19 @@
-=== SFC UI User Guide
+=== SFC User Interface
 
 ==== Overview
-SFC UI is based on Dlux project. It provides an easy way to CRUD configuration stored in Datastore. Moreover, it shows status of the SFC features (e.g installed, uninstalled) and Karaf log messages as well. SFC-UI operates purely through Restconf.
+SFC User Interface (SFC-UI) is based on Dlux project. It provides an easy way
+to create, read, update and delete configuration stored in Datastore. Moreover,
+it shows the status of all SFC features (e.g installed, uninstalled) and
+Karaf log messages as well.
 
-==== SFC UI Architecture
-TBA
+==== SFC-UI Architecture
+SFC-UI operates purely by using RESTCONF.
 
-==== Configuring SFC UI
-TBA
+.SFC-UI integration into ODL
+image::sfc/sfc-ui-architecture.png[width=250]
 
-==== Administering or Managing SFC UI
-TBA
-
-==== Tutorials
-TBA
+==== Configuring SFC-UI
+.Configuration steps
+. Run ODL distribution (run karaf)
+. In karaf console execute: +feature:install odl-sfc-ui+
+. Visit SFC-UI on: +http://<odl_ip_address>:8181/sfc/index.html+
