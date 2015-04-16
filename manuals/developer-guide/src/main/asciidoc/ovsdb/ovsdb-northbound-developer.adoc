@@ -1,19 +1,31 @@
 == OVSDB Northbound Developer Guide
 
 === Overview
-TBD
+The OVSDB Northbound feature's goal is to give low level access to
+an OVS instance. For instance, one would like to be able to directly create, read, update and delete rows into an OVS instance by using RESTCONF.
+
+The target audience for this feature is one that needs low level
+access to an OVS instance from inside OpenDaylight
 
 === OVSDB Northbound Developer Architecture
-TBD
+The northbound bundle architecture is as follow:
+
+- mdsal-northbound-aggregator
+
+- mdsal-northbound-api
+
+- mdsal-northbound-impl
+
+- mdsal-northbound-features
+
 
 === Key APIs and Interfaces
-TBD
-
-==== API Group 1
-TBD
-
-==== API Group 2
-TBD
-
-=== API Reference Documentation
-TBD
+[width="80%",cols="10%,10%,10%,70%"]
+|=======
+|Type | Action | Input | URL
+|PUT | Insert Row |Row Data | restconf/config/network-topology:network-topology/topology/ovsdb:1/\{nodeId\}/tables/\{tableName\}/rows
+|GET | Show Row |N/A | restconf/config/network-topology:network-topology/topology/ovsdb:1/\{nodeId\}/tables/\{tableName\}/rows/\{rowUuid\}
+|GET | Show All Row |N/A | restconf/config/network-topology:network-topology/topology/ovsdb:1/\{nodeId\}/tables/\{tableName\}/rows
+|PUT | Update Row |Row Data | restconf/config/network-topology:network-topology/topology/ovsdb:1/\{nodeId\}/tables/\{tableName\}/rows/\{rowUuid\}
+|DELETE | Delete Row |N/A | restconf/config/network-topology:network-topology/topology/ovsdb:1/\{nodeId\}/tables/\{tableName\}/rows/\{rowUuid\}
+|=======
