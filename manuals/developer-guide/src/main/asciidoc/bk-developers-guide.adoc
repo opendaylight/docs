@@ -42,6 +42,8 @@ include::section_Hacking_from_CLI.adoc[]
 
 = Project-Specific Development Guides
 
+include::alto/odl-alto-dev.adoc[ALTO]
+
 include::bgpcep/odl-bgpcep-bgp-all-dev.adoc[BGP]
 
 include::bgpcep/odl-bgpcep-pcep-all-dev.adoc[PCEP]

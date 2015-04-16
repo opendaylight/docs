@@ -1,0 +1,14 @@
+== ALTO Installation Guide
+This installation guide will navigate you through initial steps of '''karaf''' distribution.
+
+# Download karaf distribution from: http://www.opendaylight.org/software/downloads
+# Run karaf container ''bin/karaf''
+# Optional, but needed for troubleshooting: set bgpcep and protocol modules log level to trace ''log:set DEBUG org.opendaylight.alto'' and ''log:set DEBUG org.opendaylight.protocol''
+# Install ALTO feature: ''feature:install odl-alto-all''
+# Install Restconf feature: ''feature:install odl-restconf-noauth''
+# Shutdown karaf container: ''logout''
+# Update configuration according to [[ALTO:Lithium User Guide|User Guide]]. Configuration files are located in ''./etc/opendaylight/karaf/''.
+# Run karaf container again, check if the features are installed: ''feature:list'' and you're good to go
+# ODL log file is visible here: ''./data/log/karaf.log''
+
+Note: if you see a HTTP prompt to enter credentials, that is AAA project that enforces authorization in RESTCONF, therefore you have to enter username/password (admin/admin) on RESTCONF requests.

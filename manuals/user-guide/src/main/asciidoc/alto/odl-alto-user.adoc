@@ -1,0 +1,23 @@
+== ALTO User Guide
+There are two user interfaces to ALTO: one for northbound, and one for ALTO
+administrator. This user focuses on the second, with a brief introduction 
+for the first.
+
+=== ALTO Architecture
+To be added.
+
+=== Access ALTO Northbound using an ALTO Client
+Accessing ALTO services using a standard ALTO client is easy: follow RFC 7285.
+Assume that your OpenDayLight server is the locahost. You can use the following 
+curl command to get ALTO info:
+curl -u karaf:karaf -X GET -D - http://localhost:8181/controller/nb/v2/alto/
+
+=== Managing ALTO server
+If you are the administrator of the ALTO server, you can use the alto CI 
+infrastructure to manage the maps store at the ALTO server.
+
+=== Additional Help
+If you have any questions, feel free to write to one of our mailing lists:
+
+* [https://lists.opendaylight.org/mailman/listinfo/alto-dev alto-dev], a general developers list
+* [https://lists.opendaylight.org/mailman/listinfo/alto-users alto-users], the general user support list

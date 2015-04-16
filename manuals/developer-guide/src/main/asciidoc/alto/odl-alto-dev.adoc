@@ -1,0 +1,29 @@
+== ALTO Developer Guide
+=== ALTO Overview
+The ALTO (Application-Layer Traffic Optimization) features provide two sets of 
+functions: (1) a northbound interface based on RFC7285 to provide ALTO services 
+to ALTO clients; and (2) an ALTO manager so that a network administrator can 
+provision the data of the services.
+
+
+=== ALTO Architecture
+* *alto-model*
+   ** Provides the YANG model
+* *alto-provider*
+   ** Implements the services
+* *northbound*
+   ** Provides the translation between RFC7285 and YANG data store
+
+=== Key APIs and Interfaces
+ALTO in OpenDayLight is MD-SAL- and YANG-based, and hence there are two 
+APIs that will be available: via RESTCONF and via RFC 7285. 
+
+==== RESTCONF API
+This will serve as the provision API.
+
+==== RFC7285 API
+This will serve as the standard API for ALTO clients.
+
+=== API Reference Documentation
+Please see RFC7285 for the RFC7285 API.
+
