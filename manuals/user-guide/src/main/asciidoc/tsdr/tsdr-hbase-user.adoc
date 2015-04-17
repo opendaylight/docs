@@ -5,19 +5,58 @@ Lithium release. This document contains configuration, administration,
 management, using, and troubleshooting sections for the feature.
 
 === Overview
-TBD.
+Time Series Data Repository (TSDR) project in OpenDaylight (ODL) creates a framework for collecting, storing, querying, and maintaining the time series data in OpenDaylight SDN controller. TSDR provides the framework for plugging in proper data collectors to collect various time series data and store into TSDR data stores. With a common data model and generic TSDR data persistence APIs, the user could choose various data stores to be plugged into TSDR Persistence framework. Particularly in Lithium, two types of data stores are supported: HBase NoSQL database and H2 relational database.
 
+With the capabilities of data collection, storage, query, aggregation, and purging provided by TSDR, Network Administrators could leverage various data driven appliations built on top of TSDR for security risk detection, performance analysis, operational configuration optimization, traffic engineering, and network analytics with automated intelligence.
 
 === <Feature> Architecture
-TBD.
+TSDR contains Data Collection Service, Data Storage Service, TSDR Persistence Layer with various plugin persistence data stores. It also contains Data Aggregation and Data Purging service for aggregating the raw data and delete the raw data periodically according to the user configured retention time.  In Lithium, a notification based data collector was implemented to listen to the data change event from MD-SAL in memory data store and pass the collected data to the Data Storage Service. The Data Storage service stores the data into the user configured TSDR data store through the generic TSDR Persistence APIs. As reference implementation, in Lithium, we implemented an HBase data store as well as H2 data store. A data query command was also provided from Karaf console for the user to retrieve the data from the configured TSDR data store.
+
+A common TSDR data model that aims at abstracting the commonalities among various types of time series data was designed and implemented in Lithium. It is the heart and core of TSDR where all TSDR data services are built upon. Data Collection Service, Data Storage Service, Data Query Service, Data Aggregation Service, and Data Query Service are communicating with each other using the common TSDR data model.
+ 
+With time constraint, we left the implementation of a full fledged Data Query Service with Northbound API to future releases. For the same reason, we also postponed Data Aggregation and Data Purging service to the future. Nevertheless, we believe these are important services of TSDR and should be developed in the immediate next release to achieve the complete functionality of TSDR.
 
 === Configuring <feature>
 
-TBD.
+This section will describe the configuration steps for Data Collection, Data Storge, and HBase data stores.
+
+* Data Collection
+The user can configure the storage frequency.
+Detailed steps: TBD.
+
+* Data Storage
+The user can configure the number of storage threads.
+Detailed steps: TBD.
+
+* HBase Data Store
+1) Configure HBase data store 
+The user can configure the following parameters for HBase data store:
+** HBase server name 
+Detailed steps: TBD.
+** HBase server port
+Detailed steps: TBD.
+** HBase client connection pool size.
+Detailed Steps: TBD.
+** HBase client write buffer size.
+Detailed steps: TBD.
+
+2) Install HBase data store from Karaf console.
+After the configuration of HBase data store, proceed with the installation of HBase data store from Karaf console.
+
+From Karaf console, run the following commands to install HBase data store:
+
+feature:install odl-tsdr-hbase
+
 
 === Administering or Managing <feature>
-TBD.
 
+The user can retrieve the data from HBase data store using the following commands from Karaf console:
+
+tsdr:list
+
+tsdr:list <CategoryName> <StartTime> <EndTime>
+
+Typing tab will get the context prompt of the arguments when typeing the command in Karaf console.
 === Tutorials
 TBD.
 
@@ -31,7 +70,7 @@ TBD.
 TBD.
 
 ===== Target Environment
-TBD.
+HBase data store is only supported in Linux operation system.
 
 ===== Instructions
 TBD.
