@@ -4,20 +4,38 @@ for using HBase Data Store in Time Series Data Repository, which is
 a new feature available in OpenDaylight Lithium release.
 
 === Overview
-TBD.
+Time Series Data Repository (TSDR) project in OpenDaylight (ODL) creates a framework for collecting, storing, querying, and maintaining the time series data in OpenDaylight SDN controller. It contains Data Collection Service, Data Storage Service, TSDR Persistence Layer with various plugin persistence data stores. It also contains Data Aggregation and Data Purging service for aggregating the raw data and delete the raw data periodically according to the user configured retention time.
+
 
 === Pre Requisites for Installing <Feature>
-TBD.
+* Hardware Requirements
+  Hardware requirements for TSDR is related to the size of the monitored network. 
+* Software Requirements
+  ** The supported operating system for TSDR HBase Data Store is Linux. We do not support TSDR HBase Data Store on Windows system.
+  ** Besides the software that ODL requires, we also requires HBase database running on top of Hadoop.
 
 === Preparing for Installation
-TBD.
+* Download HBase (version number to be finalized) from the following website.
+  ** The finalized website to be determined.
+
 
 === Installing <Feature>
-TBD.
+* Installing HBase server
+In Lithium, we only support HBase single node running together on the same machine as ODL controller.
+   1) create a folder in Linux operating system for the HBase server.
+      For example, create an hbase directory under /usr/lib
+      mkdir /usr/lib/hbase
+   2) Unzip the downloaded HBase server tar file.
+      run the following command to unzip the installation package:
+      tar xvf <hbase-installer-name>  /usr/lib/hbase
+
+   3) make proper changes in hbase-site.xml
+      under <hbase-install-directory>/conf/, there is a hbase-site.xml. The user can specify the data directory for hbase server to store the data.
+      Detailed content: TBD.
+ 
 
 === Verifying your Installation
-TBD.
-
+After the HBase server is properly installed, start hbase server and hbase shell.
 ==== Troubleshooting
 TBD.
 
