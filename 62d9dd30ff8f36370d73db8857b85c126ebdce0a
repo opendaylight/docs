@@ -1,0 +1,1331 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aa0d159_719f7004",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "Should clustering be mentioned here or as a later sub-section? Given that it\u0027s now on by default, it seems like here.",
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_b195f8e5",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "expand to Service Abstraction Layer?",
+      "range": {
+        "startLine": 4,
+        "startChar": 13,
+        "endLine": 4,
+        "endChar": 16
+      },
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_d19a0414",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "The MD-SAL",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 6
+      },
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_91a47c58",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "expand to Remote Procedure Call?",
+      "range": {
+        "startLine": 10,
+        "startChar": 2,
+        "endLine": 10,
+        "endChar": 5
+      },
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_3189e8ca",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "publishing",
+      "range": {
+        "startLine": 11,
+        "startChar": 32,
+        "endLine": 11,
+        "endChar": 39
+      },
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_5186f4ba",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "expand?",
+      "range": {
+        "startLine": 14,
+        "startChar": 70,
+        "endLine": 14,
+        "endChar": 73
+      },
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_f192a0f5",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "Do we typically refer to it as YANG Tools or YANGTools?",
+      "range": {
+        "startLine": 17,
+        "startChar": 49,
+        "endLine": 17,
+        "endChar": 58
+      },
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_71b6908c",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "You say three, but list either two (in the bulleted list) or four (if you include RESTCONF and NETCONF).",
+      "range": {
+        "startLine": 23,
+        "startChar": 16,
+        "endLine": 23,
+        "endChar": 21
+      },
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_716d3004",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "Should we define consumers and producers earlier?",
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_d1f3e471",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "It seems like the link should be a local AsciiDoc link, not to the wiki.\n\nAlso, I think you should use RESTCONF and NETCONF since those appear to be the formal names.",
+      "range": {
+        "startLine": 29,
+        "startChar": 83,
+        "endLine": 29,
+        "endChar": 179
+      },
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_51ad9430",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "rendering",
+      "range": {
+        "startLine": 32,
+        "startChar": 35,
+        "endLine": 32,
+        "endChar": 44
+      },
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_11a70c51",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "Remote Procedure Calls",
+      "range": {
+        "startLine": 36,
+        "startChar": 2,
+        "endLine": 36,
+        "endChar": 19
+      },
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_3177a8d6",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "these shouldn\u0027t be capitalized\n\nNeither should Consumers (Clients).",
+      "range": {
+        "startLine": 42,
+        "startChar": 93,
+        "endLine": 42,
+        "endChar": 109
+      },
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_9149dc8d",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "don\u0027t capitalize Provider.",
+      "range": {
+        "startLine": 44,
+        "startChar": 132,
+        "endLine": 44,
+        "endChar": 140
+      },
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_1155cc1c",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "mediated instead of adapted?",
+      "range": {
+        "startLine": 44,
+        "startChar": 146,
+        "endLine": 44,
+        "endChar": 153
+      },
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_b131780d",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "You say three, but only list two.",
+      "range": {
+        "startLine": 46,
+        "startChar": 40,
+        "endLine": 46,
+        "endChar": 45
+      },
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_512274ba",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "Have we previously defined mount point?",
+      "range": {
+        "startLine": 48,
+        "startChar": 76,
+        "endLine": 48,
+        "endChar": 87
+      },
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_f12e20a5",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "It seems weird to talk about routing of non-routed services. Is there a better word or phrase we could use?",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 38
+      },
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_9140fc57",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "This needs to be: \u003d\u003d\u003d\u003d\u003d\u003d Routed service\n\nWith 6 \u003ds before and none after",
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_d11d2475",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "Does this want to be a subsection?",
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_71121064",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "could we link to the AsciiDoc instead of the wiki?",
+      "range": {
+        "startLine": 90,
+        "startChar": 71,
+        "endLine": 90,
+        "endChar": 179
+      },
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_112cecaa",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "Needs to be one level deeper: 5 \u003ds",
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_310c8842",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "Could we get an AsciiDoc link?",
+      "range": {
+        "startLine": 104,
+        "startChar": 115,
+        "endLine": 104,
+        "endChar": 241
+      },
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_51091430",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "Is this still true? Does websockets not work?",
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_b1189885",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "Needs to be one level deeper: 5 \u003ds",
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_11038c10",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "Is there also NETCONF now?\n\nCould we get this link to point to AsciiDoc and not the wiki?",
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_f44a8e54",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "To be clear, these are recommendations and/or best practices. It\u0027s perfectly possible to organize functionality in different ways. Right?",
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_f4336ef4",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "the MD-SAL",
+      "range": {
+        "startLine": 188,
+        "startChar": 76,
+        "endLine": 188,
+        "endChar": 92
+      },
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_b44de674",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "no space before the colon",
+      "range": {
+        "startLine": 192,
+        "startChar": 76,
+        "endLine": 192,
+        "endChar": 77
+      },
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_3441d639",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "In reality these protocols preserve more state than just the list of devices, right? Doesn\u0027t the OpenFlow plugin preserve features-reply info? or is that done in a features-reply-manager?",
+      "range": {
+        "startLine": 197,
+        "startChar": 41,
+        "endLine": 197,
+        "endChar": 50
+      },
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_74099e2b",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "Needs to be one level deeper: 4 \u003ds",
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_14485a5a",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "You\u0027re missing a connector plugin section.",
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_3468f6b9",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "This seems general enough to be about any MD-SAL plugin that provides service via a model, not just a SB plugin.",
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_b474069d",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "developer",
+      "range": {
+        "startLine": 223,
+        "startChar": 166,
+        "endLine": 223,
+        "endChar": 176
+      },
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_14bb7a0f",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "It seems like there\u0027s a subsection for defining yang models and implementation, but not code generation. That should probably line up.",
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_94730ab1",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "given that this id is likely to be overloaded, it probably makes sense to use a more unique id.",
+      "range": {
+        "startLine": 231,
+        "startChar": 143,
+        "endLine": 231,
+        "endChar": 161
+      },
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_141a9a6e",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "Needs to be one level deeper: 4 \u003ds",
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_546582df",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "can be found",
+      "range": {
+        "startLine": 235,
+        "startChar": 182,
+        "endLine": 235,
+        "endChar": 196
+      },
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_f4612ed4",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "Is this still up-to-date?",
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_145ffa0f",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "AsciiDoc link?",
+      "range": {
+        "startLine": 238,
+        "startChar": 46,
+        "endLine": 238,
+        "endChar": 146
+      },
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_3496b695",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "This doesn\u0027t quite match the section which seems to have 5 things: RPCs, Notifications, Configuration Data, Runtime Data, and Structural elements\n\nThe text doesn\u0027t ever describe combining approaches.",
+      "range": {
+        "startLine": 242,
+        "startChar": 0,
+        "endLine": 245,
+        "endChar": 22
+      },
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_940eaa33",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "Needs to be two levels deeper: 5 \u003ds",
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_344b162d",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "OpenFlow PACKET_OUT?",
+      "range": {
+        "startLine": 249,
+        "startChar": 251,
+        "endLine": 249,
+        "endChar": 260
+      },
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_d4a0b2f6",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "This should be a section, right?",
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_74a51e03",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "This should be a section, right?",
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_f454cecb",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "Should we define CRUD?",
+      "range": {
+        "startLine": 287,
+        "startChar": 19,
+        "endLine": 287,
+        "endChar": 23
+      },
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_5448222d",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "Should we mention that config is true by default?",
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_34af96e5",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "This should be a section, right?",
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_549342a3",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "This should be a section, right?",
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_5410224e",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "Needs to be two levels deeper: 5 \u003ds",
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_f41cce6c",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "Needs to be two levels deeper: 5 \u003ds",
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_34dd5671",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "Is this still the right, up-to-date link?",
+      "range": {
+        "startLine": 322,
+        "startChar": 78,
+        "endLine": 322,
+        "endChar": 169
+      },
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_d4d51244",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "Is there an AsciiDoc link for this?",
+      "range": {
+        "startLine": 325,
+        "startChar": 135,
+        "endLine": 325,
+        "endChar": 230
+      },
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_94cf8ab0",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 327,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "Artifacts",
+      "range": {
+        "startLine": 327,
+        "startChar": 1,
+        "endLine": 327,
+        "endChar": 10
+      },
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_74cafea2",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "artifacts",
+      "range": {
+        "startLine": 328,
+        "startChar": 14,
+        "endLine": 328,
+        "endChar": 23
+      },
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_34c47691",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "Do we want to use Transfer object, Data Transfer Object or DTO?",
+      "range": {
+        "startLine": 331,
+        "startChar": 2,
+        "endLine": 331,
+        "endChar": 17
+      },
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_b42646b9",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 334,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "Needs to be two levels deeper: 5 \u003ds",
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_d463d2af",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "artifacts",
+      "range": {
+        "startLine": 335,
+        "startChar": 25,
+        "endLine": 335,
+        "endChar": 34
+      },
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_7458befa",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "can we get the indentation of \u003cdependency\u003e and \u003c/dependency\u003e to match?",
+      "range": {
+        "startLine": 341,
+        "startChar": 0,
+        "endLine": 345,
+        "endChar": 16
+      },
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_546fc292",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "Does it make sense to refer to the startup archetype here since it takes care of a lot of this for you?",
+      "range": {
+        "startLine": 351,
+        "startChar": 0,
+        "endLine": 354,
+        "endChar": 215
+      },
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_94254aad",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 357,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "I think this needs to be 3 levels deeper: 6 \u003ds",
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_343a36ce",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 374,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "I think this needs to be 3 levels deeper: 6 \u003ds",
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_94146af6",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "I\u0027ll review this content in the later patch that breaks it out.",
+      "range": {
+        "startLine": 382,
+        "startChar": 0,
+        "endLine": 503,
+        "endChar": 155
+      },
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_d43192a3",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/restconf.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "This section header is missed because there is no blank line at the end of whatever was included above it. I suggest fixing this by adding blank lines between include statements in controller/controller-dev.adoc.",
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_74267e6a",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/restconf.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-17T18:58:52Z",
+      "side": 1,
+      "message": "Should be indented one more level: 4 \u003ds",
+      "revId": "62d9dd30ff8f36370d73db8857b85c126ebdce0a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
