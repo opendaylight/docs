@@ -4,28 +4,65 @@ for using HBase Data Store in Time Series Data Repository, which is
 a new feature available in OpenDaylight Lithium release.
 
 === Overview
-TBD.
+The Time Series Data Repository (TSDR) project in OpenDaylight (ODL) creates a framework for collecting, storing, querying, and maintaining time series data in the OpenDaylight SDN controller. It contains Data Collection Service, Data Storage Service, TSDR Persistence Layer with various plugin persistence data stores. It also contains Data Aggregation and Data Purging service for aggregating the raw data and deleting the raw data periodically according to the user configured retention time.
 
-=== Pre Requisites for Installing <Feature>
-TBD.
+
+=== Pre Requisites for Installing TSDR HBase Data Store 
+* Software Requirements
+  ** The supported operating system for TSDR HBase Data Store is Linux. We do not support TSDR HBase Data Store on Windows.
+  ** Besides the software that ODL requires, we also requires HBase database running on top of Hadoop.
 
 === Preparing for Installation
-TBD.
+* Download HBase (version number to be finalized) from the following website.
+  ** TODO: The finalized website to be determined.
 
-=== Installing <Feature>
-TBD.
+
+=== Installing TSDR HBase Data Store 
+* Installing HBase server
+In Lithium, we only support HBase single node running together on the same machine as ODL controller.
+a. create a folder in Linux operating system for the HBase server.
+      For example, create an hbase directory under /usr/lib
+      mkdir /usr/lib/hbase
+b. Unzip the downloaded HBase server tar file.
+      run the following command to unzip the installation package:
+      tar xvf <hbase-installer-name>  /usr/lib/hbase
+
+c. make proper changes in hbase-site.xml
+      under <hbase-install-directory>/conf/, there is a hbase-site.xml. Although it is not recommended, an experience user with HBase canmodify the data directory for hbase server to store the data.
+      modify the value of the property with name "hbase.rootdir" in the file to reflect the desired file directory for storing hbase data.
+The following is an example of the file:
+
+<configuration>
+  <property>
+    <name>hbase.rootdir</name>
+    <value>file:///usr/lib/hbase/data</value>
+  </property>
+  <property>
+    <name>hbase.zookeeper.property.dataDir</name>
+    <value>/usr/lib/hbase/zookeeper</value>
+  </property>
+</configuration>
+
+ 
 
 === Verifying your Installation
-TBD.
-
+After the HBase server is properly installed, start hbase server and hbase shell.
+a. start hbase server
+* cd <hbase-installation-directory> 
+* ./start-hbase.sh
+b. start hbase shell
+* cd <hbase-insatllation-directory>
+* ./hbase shell
 ==== Troubleshooting
-TBD.
 
 === Post Installation Configuration
-TBD.
-
+Please refer to HBase Data Store User Guide.
 === Upgrading From a Previous Release
-TBD.
-
-=== Uninstalling <Feature>
-TBD.
+Lithium is the first release of TSDR. Upgrading is not applicable for TSDR Lithium release.
+=== Uninstalling HBase Data Store 
+To uninstall TSDR HBase Data Store, 
+a. stop hbase server
+* cd <hbase-installation-directory>
+* ./stop-hbase.sh
+b. remove the file directory that contains the HBase server installation.
+* rm -r <hbase-installation-directory>
