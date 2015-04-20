@@ -53,26 +53,26 @@ The following projects had no changes in the Helium-SR3 release:
 * TCP-MD5
 
 ==== BGP LS PCEP
-* https://git.opendaylight.org/gerrit/#/q/52f08e[52f08e] https://bugs.opendaylight.org/show_bug.cgi?id=1957[BUG-2712]: do not hold lock while updating future
+* https://git.opendaylight.org/gerrit/#/q/52f08e[52f08e] https://bugs.opendaylight.org/show_bug.cgi?id=2712[BUG-2712]: do not hold lock while updating future
 * https://git.opendaylight.org/gerrit/#/q/7af0f1[7af0f1] Added synchronized to close().
 * https://git.opendaylight.org/gerrit/#/q/f92a57[f92a57] Fix unsynchronized access to TransactionChain
 * https://git.opendaylight.org/gerrit/#/q/6b884d[6b884d] PCEP add-lsp RPC: propagate TLVs from input to initiate message.
-* https://git.opendaylight.org/gerrit/#/q/f526f0[f526f0] https://bugs.opendaylight.org/show_bug.cgi?id=1957[BUG-2631]: Fixed BGP connection collision detection
+* https://git.opendaylight.org/gerrit/#/q/f526f0[f526f0] https://bugs.opendaylight.org/show_bug.cgi?id=2631[BUG-2631]: Fixed BGP connection collision detection
 
 ==== Controller
-* https://git.opendaylight.org/gerrit/#/q/67eed6[67eed6] https://bugs.opendaylight.org/show_bug.cgi?id=1957[BUG-2723]: Topology spoofing via LLDP - hash check in topology-discovery
-* https://git.opendaylight.org/gerrit/#/q/26dfd6[26dfd6] https://bugs.opendaylight.org/show_bug.cgi?id=1957[BUG-2820]: LLDP refactor
-* https://git.opendaylight.org/gerrit/#/q/91a473[91a473] https://bugs.opendaylight.org/show_bug.cgi?id=1957[BUG-2820]: LLDP TLV support and testing
-* https://git.opendaylight.org/gerrit/#/q/87a930[87a930] https://bugs.opendaylight.org/show_bug.cgi?id=1957[BUG-2834]: Fix Restconf POST to wait for completion
+* https://git.opendaylight.org/gerrit/#/q/67eed6[67eed6] https://bugs.opendaylight.org/show_bug.cgi?id=2723[BUG-2723]: Topology spoofing via LLDP - hash check in topology-discovery
+* https://git.opendaylight.org/gerrit/#/q/26dfd6[26dfd6] https://bugs.opendaylight.org/show_bug.cgi?id=2820[BUG-2820]: LLDP refactor
+* https://git.opendaylight.org/gerrit/#/q/91a473[91a473] https://bugs.opendaylight.org/show_bug.cgi?id=2820[BUG-2820]: LLDP TLV support and testing
+* https://git.opendaylight.org/gerrit/#/q/87a930[87a930] https://bugs.opendaylight.org/show_bug.cgi?id=2834[BUG-2834]: Fix Restconf POST to wait for completion
 * https://git.opendaylight.org/gerrit/#/q/24342e[24342e] Switched from the WIP custom authn realm to using tomcat-users.xml, also enabled HttpOnly cookies
-* https://git.opendaylight.org/gerrit/#/q/254ab1[254ab1] https://bugs.opendaylight.org/show_bug.cgi?id=1957[BUG-2820]: problem to add second TLV with type 127.
-* https://git.opendaylight.org/gerrit/#/q/74a258[74a258] https://bugs.opendaylight.org/show_bug.cgi?id=1957[BUG-2699]: websocket does not implement the ws:// protocol defined in the URI scheme in rfc6455
+* https://git.opendaylight.org/gerrit/#/q/254ab1[254ab1] https://bugs.opendaylight.org/show_bug.cgi?id=2820[BUG-2820]: problem to add second TLV with type 127.
+* https://git.opendaylight.org/gerrit/#/q/74a258[74a258] https://bugs.opendaylight.org/show_bug.cgi?id=2699[BUG-2699]: websocket does not implement the ws:// protocol defined in the URI scheme in rfc6455
 * https://git.opendaylight.org/gerrit/#/q/6e4385[6e4385] Neutron to return ServiceUnavailable if no providers registered
-* https://git.opendaylight.org/gerrit/#/q/d32781[d32781] https://bugs.opendaylight.org/show_bug.cgi?id=1957[BUG-2642]: Websocket notifications: No notification received when data are removed
-* https://git.opendaylight.org/gerrit/#/q/2d33f2[2d33f2] https://bugs.opendaylight.org/show_bug.cgi?id=1957[BUG-2524]: Change event notification subscription: Unable to listen on topology
+* https://git.opendaylight.org/gerrit/#/q/d32781[d32781] https://bugs.opendaylight.org/show_bug.cgi?id=2642[BUG-2642]: Websocket notifications: No notification received when data are removed
+* https://git.opendaylight.org/gerrit/#/q/2d33f2[2d33f2] https://bugs.opendaylight.org/show_bug.cgi?id=2524[BUG-2524]: Change event notification subscription: Unable to listen on topology
 
 ==== DLUX
-* https://git.opendaylight.org/gerrit/#/q/4dcab7[4dcab7] https://bugs.opendaylight.org/show_bug.cgi?id=1957[BUG-2535]:
+* https://git.opendaylight.org/gerrit/#/q/4dcab7[4dcab7] https://bugs.opendaylight.org/show_bug.cgi?id=2535[BUG-2535]:
 * https://git.opendaylight.org/gerrit/#/q/e2f62d[e2f62d] [Backport] Use frontend-maven-plugin to build dlux-web
 * https://git.opendaylight.org/gerrit/#/q/40a97a[40a97a] Re-enable DLUX distribution.
 
@@ -88,10 +88,10 @@ The following projects had no changes in the Helium-SR3 release:
 * https://git.opendaylight.org/gerrit/#/q/e69cbc[e69cbc] cleaning the robot repo + creating testplans
 * https://git.opendaylight.org/gerrit/#/q/12fb76[12fb76] Set JAVA_HOME before launching karaf inside containers
 * https://git.opendaylight.org/gerrit/#/q/585904[585904] removing failing tests
-* https://git.opendaylight.org/gerrit/#/q/6a3f3e[6a3f3e] https://bugs.opendaylight.org/show_bug.cgi?id=1957[BUG-2676]: Add some tuning parameters to improve the performance of CDS
+* https://git.opendaylight.org/gerrit/#/q/6a3f3e[6a3f3e] https://bugs.opendaylight.org/show_bug.cgi?id=2676[BUG-2676]: Add some tuning parameters to improve the performance of CDS
 * https://git.opendaylight.org/gerrit/#/q/dbcb86[dbcb86] adding ability for test VMs to have a different command prompt
-* https://git.opendaylight.org/gerrit/#/q/b4bf3b[b4bf3b] https://bugs.opendaylight.org/show_bug.cgi?id=1957[BUG-2711]: Match RPC actor system's Netty TCP settings with existing cluster DATA actor system setting to avoid oversized Gossip RPC messages.
-* https://git.opendaylight.org/gerrit/#/q/4592dc[4592dc] https://bugs.opendaylight.org/show_bug.cgi?id=1957[BUG-2035]: Increasing default Akka config for auto-down of unreachable nodes from 10sec to 5min to avoid locking out nodes during transient network blips, etc.
+* https://git.opendaylight.org/gerrit/#/q/b4bf3b[b4bf3b] https://bugs.opendaylight.org/show_bug.cgi?id=2711[BUG-2711]: Match RPC actor system's Netty TCP settings with existing cluster DATA actor system setting to avoid oversized Gossip RPC messages.
+* https://git.opendaylight.org/gerrit/#/q/4592dc[4592dc] https://bugs.opendaylight.org/show_bug.cgi?id=2035[BUG-2035]: Increasing default Akka config for auto-down of unreachable nodes from 10sec to 5min to avoid locking out nodes during transient network blips, etc.
 * https://git.opendaylight.org/gerrit/#/q/b2c48c[b2c48c] Adding test plan for l2switch
 * https://git.opendaylight.org/gerrit/#/q/e0dc42[e0dc42] Replace compatible-with-x by all feature
 * https://git.opendaylight.org/gerrit/#/q/0560a9[0560a9] Make get followers more reliable
@@ -100,19 +100,19 @@ The following projects had no changes in the Helium-SR3 release:
 * https://git.opendaylight.org/gerrit/#/q/1e1249[1e1249] Move to new Karaf-based RPM
 
 ==== L2 Switch
-* https://git.opendaylight.org/gerrit/#/q/1afa4d[1afa4d] https://bugs.opendaylight.org/show_bug.cgi?id=1957[BUG-2607]: Now using the right constant for no buffer
+* https://git.opendaylight.org/gerrit/#/q/1afa4d[1afa4d] https://bugs.opendaylight.org/show_bug.cgi?id=2607[BUG-2607]: Now using the right constant for no buffer
 
 ==== OpenFlow Plugin
-* https://git.opendaylight.org/gerrit/#/q/e20d25[e20d25] https://bugs.opendaylight.org/show_bug.cgi?id=1957[BUG-2723]: Topology spoofing via LLDP - LLDPSpeaker
-* https://git.opendaylight.org/gerrit/#/q/6e80e3[6e80e3] https://bugs.opendaylight.org/show_bug.cgi?id=1957[BUG-2394]: ConnectionConductorImpl and HandshakeManagerImpl leak threads on exception paths
+* https://git.opendaylight.org/gerrit/#/q/e20d25[e20d25] https://bugs.opendaylight.org/show_bug.cgi?id=2723[BUG-2723]: Topology spoofing via LLDP - LLDPSpeaker
+* https://git.opendaylight.org/gerrit/#/q/6e80e3[6e80e3] https://bugs.opendaylight.org/show_bug.cgi?id=2394[BUG-2394]: ConnectionConductorImpl and HandshakeManagerImpl leak threads on exception paths
 
 ==== Open vSwitch Database (OVSDB) Integration
-* https://git.opendaylight.org/gerrit/#/q/3efcbb[3efcbb] https://bugs.opendaylight.org/show_bug.cgi?id=1957[BUG-2460]: Converting ipv4 to ipv4Prefix requires mask
+* https://git.opendaylight.org/gerrit/#/q/3efcbb[3efcbb] https://bugs.opendaylight.org/show_bug.cgi?id=2460[BUG-2460]: Converting ipv4 to ipv4Prefix requires mask
 
 ==== Virtual Tenant Networking (VTN)
-* https://git.opendaylight.org/gerrit/#/q/20c4e3[20c4e3] https://bugs.opendaylight.org/show_bug.cgi?id=1957[BUG-2793]: Fixed default values for hardTimeout and idleTimeout attributes
-* https://git.opendaylight.org/gerrit/#/q/50f120[50f120] https://bugs.opendaylight.org/show_bug.cgi?id=1957[BUG-2758]: Fixed bug in VbrIf for Update adminstatus check
-* https://git.opendaylight.org/gerrit/#/q/5e5721[5e5721] https://bugs.opendaylight.org/show_bug.cgi?id=1957[BUG-2688]: Fixed bug in flow timeout setting specified by path map.
+* https://git.opendaylight.org/gerrit/#/q/20c4e3[20c4e3] https://bugs.opendaylight.org/show_bug.cgi?id=2793[BUG-2793]: Fixed default values for hardTimeout and idleTimeout attributes
+* https://git.opendaylight.org/gerrit/#/q/50f120[50f120] https://bugs.opendaylight.org/show_bug.cgi?id=2758[BUG-2758]: Fixed bug in VbrIf for Update adminstatus check
+* https://git.opendaylight.org/gerrit/#/q/5e5721[5e5721] https://bugs.opendaylight.org/show_bug.cgi?id=2688[BUG-2688]: Fixed bug in flow timeout setting specified by path map.
 
 ==== YANG Tools
 * https://git.opendaylight.org/gerrit/#/q/2bf2ef[2bf2ef] Fix ImmutableOrderedLeafSetNode.size()
