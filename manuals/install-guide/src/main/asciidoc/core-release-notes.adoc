@@ -36,7 +36,7 @@ This section details changes and bug fixes between the second Helium Stability R
 
 ==== Projects with no noteworthy changes:
 
-The following projects had no changes in the Helium-SR3 release:
+The following projects had no noteworthy changes in the Helium-SR3 release:
 
 * AAA
 * Defense4All
@@ -46,8 +46,8 @@ The following projects had no changes in the Helium-SR3 release:
 * PacketCable/PCMM
 * SDN Interface Application
 * Service Function Chaining
-* snbi
-* Table Type Pattersn
+* SNBI
+* Table Type Patterns
 * Group Based Policy
 * SNMP4SDN
 * TCP-MD5
@@ -72,9 +72,8 @@ The following projects had no changes in the Helium-SR3 release:
 * https://git.opendaylight.org/gerrit/#/q/2d33f2[2d33f2] https://bugs.opendaylight.org/show_bug.cgi?id=2524[BUG-2524]: Change event notification subscription: Unable to listen on topology
 
 ==== DLUX
-* https://git.opendaylight.org/gerrit/#/q/4dcab7[4dcab7] https://bugs.opendaylight.org/show_bug.cgi?id=2535[BUG-2535]:
+* https://git.opendaylight.org/gerrit/#/q/4dcab7[4dcab7] https://bugs.opendaylight.org/show_bug.cgi?id=2535[BUG-2535]: topology canvas height too small
 * https://git.opendaylight.org/gerrit/#/q/e2f62d[e2f62d] [Backport] Use frontend-maven-plugin to build dlux-web
-* https://git.opendaylight.org/gerrit/#/q/40a97a[40a97a] Re-enable DLUX distribution.
 
 ==== Integration
 * https://git.opendaylight.org/gerrit/#/q/8c9599[8c9599] Add very basic Vagrantfile for RPM-building env
@@ -87,7 +86,7 @@ The following projects had no changes in the Helium-SR3 release:
 * https://git.opendaylight.org/gerrit/#/q/da1810[da1810] adding a mask for destination and source ip addresses
 * https://git.opendaylight.org/gerrit/#/q/e69cbc[e69cbc] cleaning the robot repo + creating testplans
 * https://git.opendaylight.org/gerrit/#/q/12fb76[12fb76] Set JAVA_HOME before launching karaf inside containers
-* https://git.opendaylight.org/gerrit/#/q/585904[585904] removing failing tests
+* https://git.opendaylight.org/gerrit/#/q/5859048a851bbee448362e6e8b3d994a00b9828b[585904] removing failing tests
 * https://git.opendaylight.org/gerrit/#/q/6a3f3e[6a3f3e] https://bugs.opendaylight.org/show_bug.cgi?id=2676[BUG-2676]: Add some tuning parameters to improve the performance of CDS
 * https://git.opendaylight.org/gerrit/#/q/dbcb86[dbcb86] adding ability for test VMs to have a different command prompt
 * https://git.opendaylight.org/gerrit/#/q/b4bf3b[b4bf3b] https://bugs.opendaylight.org/show_bug.cgi?id=2711[BUG-2711]: Match RPC actor system's Netty TCP settings with existing cluster DATA actor system setting to avoid oversized Gossip RPC messages.
@@ -123,13 +122,14 @@ This section details changes and bug fixes between the first Helium Stability Re
 
 ==== Projects with no noteworthy changes:
 
-The following projects had no changes in the Helium-SR2 release:
+The following projects had no noteworthy changes in the Helium-SR2 release:
 
+* DLUX
 * PacketCable/PCMM
-* Southbound Plugin to OpenContrail
-* SDN Interface Applicaiton
+* SDN Interface Application
 * SNBI
 * SNMP4SDN
+* Southbound Plugin to OpenContrail
 * Table Type Patterns
 
 ==== AAA
@@ -172,7 +172,7 @@ The following projects had no changes in the Helium-SR2 release:
 * https://git.opendaylight.org/gerrit/#/q/94d07b[94d07b] https://bugs.opendaylight.org/show_bug.cgi?id=2255[BUG-2255]: introduce PingPongDataBroker
 * https://git.opendaylight.org/gerrit/#/q/c0fd4b[c0fd4b] https://bugs.opendaylight.org/show_bug.cgi?id=2255[BUG-2255]: Introduce forwarding DOMData classes
 * https://git.opendaylight.org/gerrit/#/q/fae661[fae661] Increase timeout in config pusher for conflicting version ex
-* https://git.opendaylight.org/gerrit/#/q/660309[660309] Remove sonar.profile since it's deprecated in Sonar 4.5
+* https://git.opendaylight.org/gerrit/#/q/Id9cd1958399ddcdb9694d26f9a4a64462b480e0b[660309] Remove sonar.profile since it's deprecated in Sonar 4.5
 * https://git.opendaylight.org/gerrit/#/q/20f1a7[20f1a7] https://bugs.opendaylight.org/show_bug.cgi?id=2570[BUG-2570]: Make NotificationPublishService available
 * https://git.opendaylight.org/gerrit/#/q/f27c17[f27c17] Stabilizing tests for TopologyManager.
 * https://git.opendaylight.org/gerrit/#/q/782c82[782c82] https://bugs.opendaylight.org/show_bug.cgi?id=2464[BUG-2464]: Shard dataSize does not seem to correspond to actual memory usage
@@ -203,7 +203,7 @@ The following projects had no changes in the Helium-SR2 release:
 * https://git.opendaylight.org/gerrit/#/q/a2626c[a2626c] https://bugs.opendaylight.org/show_bug.cgi?id=2437[BUG-2437]: Enable snapshotting based on size of data in the in-memory journal
 * https://git.opendaylight.org/gerrit/#/q/52f089[52f089] https://bugs.opendaylight.org/show_bug.cgi?id=2371[BUG-2371]: Leader should reset it's snapshot tracking when follower is restarted
 * https://git.opendaylight.org/gerrit/#/q/6259cc[6259cc] https://bugs.opendaylight.org/show_bug.cgi?id=2397[BUG-2397]: Provide a mechanism for stakeholders to get notifications on Raft state change
-* https://git.opendaylight.org/gerrit/#/q/646163[646163] https://bugs.opendaylight.org/show_bug.cgi?id=2372[BUG-2372]: Removing duplicate call in loadBalancerPoolNorthbound to loadBalancerPoolInterface.addNeutronLoadBalancerPool(singleton);
+* https://git.opendaylight.org/gerrit/#/q/646163250b541401cbb0d5ab851b1623f2877486[646163] https://bugs.opendaylight.org/show_bug.cgi?id=2372[BUG-2372]: Removing duplicate call in loadBalancerPoolNorthbound to loadBalancerPoolInterface.addNeutronLoadBalancerPool(singleton);
 * https://git.opendaylight.org/gerrit/#/q/bbe72b[bbe72b] https://bugs.opendaylight.org/show_bug.cgi?id=2340[BUG-2340]: Fix improper cleanup of resources in netconf ssh handler
 * https://git.opendaylight.org/gerrit/#/q/7101e2[7101e2] https://bugs.opendaylight.org/show_bug.cgi?id=2435[BUG-2435]: Controller/MD-SAL throwing ModifiedNodeDoesNotExistException exception when statistics manager augment queue statistics to the node connector. Exception was thrown because parent (queue) container was not present when statistics manager tried to augment statistics. Fixed the issue by creating empty queue container and 'merge'ing it to the node connector before augmenting the statistics.
 * https://git.opendaylight.org/gerrit/#/q/a7480e[a7480e] https://bugs.opendaylight.org/show_bug.cgi?id=2413[BUG-2413]: Fix NPE for group and meters
@@ -237,9 +237,6 @@ The following projects had no changes in the Helium-SR2 release:
 ==== Defense4All
 * https://git.opendaylight.org/gerrit/#/q/aaeb47[aaeb47] merge from master: Fixing "Vulnerabilities in defense4all": 1. Limit the "dump" method to a specific folder 2. Use spring 3.1.2 Credit for notifying of these issues goes to "David Jorm of IIX"
 
-==== DLUX
-* https://git.opendaylight.org/gerrit/#/q/085ba5[085ba5] Re-enable DLUX distribution.
-
 ==== Documentation
 * https://git.opendaylight.org/gerrit/#/q/4f1c8a[4f1c8a] Fix Errors in VTN Overview Page Examples
 * https://git.opendaylight.org/gerrit/#/q/d038de[d038de] Updating contents related to VTN.
@@ -268,7 +265,7 @@ The following projects had no changes in the Helium-SR2 release:
 * https://git.opendaylight.org/gerrit/#/q/4bd858[4bd858] GIT Reorganization - Create VTN suites
 * https://git.opendaylight.org/gerrit/#/q/44782d[44782d] Replaced the multi-blaster skeleton with real functionality. multi-blaster functions are now driven from command line switches and arguments.
 * https://git.opendaylight.org/gerrit/#/q/4cd9cc[4cd9cc] GIT restructure - Adding project folders and features
-* https://git.opendaylight.org/gerrit/#/q/225007[225007] Added shard performance tests (shard_perf_test.py and shard_multi_test.sh) Cleaned up help text for inventory crawler
+* https://git.opendaylight.org/gerrit/#/q/225007441a11b6d847b0c4dc4c38874e9d06f065[225007] Added shard performance tests (shard_perf_test.py and shard_multi_test.sh) Cleaned up help text for inventory crawler
 * https://git.opendaylight.org/gerrit/#/q/95c67b[95c67b] Added a printout for the overall test execution time
 * https://git.opendaylight.org/gerrit/#/q/b709ce[b709ce] adding missing example flows
 * https://git.opendaylight.org/gerrit/#/q/7589c0[7589c0] added output error message display by remote ssh execution
@@ -364,7 +361,7 @@ This section details changes and bug fixes between the Helium release of OpenDay
 
 ==== Projects with no noteworthy changes
 
-The following projects had no changes in the Helium-SR1 release:
+The following projects had no noteworthy changes in the Helium-SR1 release:
 
 * L2 Switch
 * ODL-SDNi Application
