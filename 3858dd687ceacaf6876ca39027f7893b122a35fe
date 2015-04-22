@@ -1,0 +1,256 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aa0d159_a9234104",
+        "filename": "manuals/developer-guide/src/main/asciidoc/alto/odl-alto-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-22T19:26:57Z",
+      "side": 1,
+      "message": "call these out as bullets by putting a period-space in front of them and putting them on their own line?",
+      "range": {
+        "startLine": 4,
+        "startChar": 11,
+        "endLine": 6,
+        "endChar": 35
+      },
+      "revId": "3858dd687ceacaf6876ca39027f7893b122a35fe",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_691d39bd",
+        "filename": "manuals/developer-guide/src/main/asciidoc/alto/odl-alto-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-22T19:26:57Z",
+      "side": 1,
+      "message": "OpenDaylight",
+      "range": {
+        "startLine": 18,
+        "startChar": 8,
+        "endLine": 18,
+        "endChar": 20
+      },
+      "revId": "3858dd687ceacaf6876ca39027f7893b122a35fe",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_e98869e9",
+        "filename": "manuals/install-guide/src/main/asciidoc/alto/alto-install.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-22T19:26:57Z",
+      "side": 1,
+      "message": "In general if all that\u0027s required for installation is installing features, we just put that together in one big table rather than requiring each project list pretty much exactly the same information.",
+      "revId": "3858dd687ceacaf6876ca39027f7893b122a35fe",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_89544555",
+        "filename": "manuals/user-guide/src/main/asciidoc/alto/odl-alto-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-22T19:26:57Z",
+      "side": 1,
+      "message": "Does it make sense to expand the ALTO acronym?",
+      "revId": "3858dd687ceacaf6876ca39027f7893b122a35fe",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_896d2535",
+        "filename": "manuals/user-guide/src/main/asciidoc/alto/odl-alto-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-22T19:26:57Z",
+      "side": 1,
+      "message": "what do you mean by northbound?",
+      "range": {
+        "startLine": 2,
+        "startChar": 47,
+        "endLine": 2,
+        "endChar": 57
+      },
+      "revId": "3858dd687ceacaf6876ca39027f7893b122a35fe",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_49771d03",
+        "filename": "manuals/user-guide/src/main/asciidoc/alto/odl-alto-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-22T19:26:57Z",
+      "side": 1,
+      "message": "section instead of user?",
+      "range": {
+        "startLine": 3,
+        "startChar": 20,
+        "endLine": 3,
+        "endChar": 24
+      },
+      "revId": "3858dd687ceacaf6876ca39027f7893b122a35fe",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_a96a6118",
+        "filename": "manuals/user-guide/src/main/asciidoc/alto/odl-alto-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-22T19:26:57Z",
+      "side": 1,
+      "message": "\"an ALTO administrator\"? or \"ALTO administrators\"?",
+      "range": {
+        "startLine": 2,
+        "startChar": 71,
+        "endLine": 3,
+        "endChar": 13
+      },
+      "revId": "3858dd687ceacaf6876ca39027f7893b122a35fe",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_697459fd",
+        "filename": "manuals/user-guide/src/main/asciidoc/alto/odl-alto-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-22T19:26:57Z",
+      "side": 1,
+      "message": "OpenDaylight",
+      "range": {
+        "startLine": 11,
+        "startChar": 17,
+        "endLine": 11,
+        "endChar": 29
+      },
+      "revId": "3858dd687ceacaf6876ca39027f7893b122a35fe",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_29665152",
+        "filename": "manuals/user-guide/src/main/asciidoc/alto/odl-alto-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-22T19:26:57Z",
+      "side": 1,
+      "message": "reachable at?",
+      "range": {
+        "startLine": 11,
+        "startChar": 40,
+        "endLine": 11,
+        "endChar": 43
+      },
+      "revId": "3858dd687ceacaf6876ca39027f7893b122a35fe",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_c95a4d83",
+        "filename": "manuals/user-guide/src/main/asciidoc/alto/odl-alto-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-22T19:26:57Z",
+      "side": 1,
+      "message": "My guess is that you want this to be on its own line and thus you want a blank line before it. You might also put it in inside pluses (+) or put a space in front of it to get it to format in a fixed-width font.",
+      "revId": "3858dd687ceacaf6876ca39027f7893b122a35fe",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_e95f0971",
+        "filename": "manuals/user-guide/src/main/asciidoc/alto/odl-alto-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-22T19:26:57Z",
+      "side": 1,
+      "message": "expand the acronym?",
+      "range": {
+        "startLine": 16,
+        "startChar": 70,
+        "endLine": 16,
+        "endChar": 72
+      },
+      "revId": "3858dd687ceacaf6876ca39027f7893b122a35fe",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_a9510164",
+        "filename": "manuals/user-guide/src/main/asciidoc/alto/odl-alto-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-22T19:26:57Z",
+      "side": 1,
+      "message": "This format is wiki syntax, not AsciiDoc, the AsciiDoc would be:\n\nhttps://lists.opendaylight.org/mailman/listinfo/alto-dev[alto-dev]",
+      "revId": "3858dd687ceacaf6876ca39027f7893b122a35fe",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
