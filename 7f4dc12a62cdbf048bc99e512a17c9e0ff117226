@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aa0d159_5481f08d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 396
+      },
+      "writtenOn": "2015-04-23T04:16:52Z",
+      "side": 1,
+      "message": "I think \"(Lithium)\" should be removed, since it\u0027s obvious and all other projects does not contain such kind of thing for Documentation Outline patches.",
+      "range": {
+        "startLine": 7,
+        "startChar": 29,
+        "endLine": 7,
+        "endChar": 38
+      },
+      "revId": "7f4dc12a62cdbf048bc99e512a17c9e0ff117226",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_b474f4cf",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/VTN_Manager_Lithium_Hacking.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 396
+      },
+      "writtenOn": "2015-04-23T04:16:52Z",
+      "side": 1,
+      "message": "In Lithium, VTN project does not support the non-karaf distribution.",
+      "range": {
+        "startLine": 50,
+        "startChar": 0,
+        "endLine": 58,
+        "endChar": 70
+      },
+      "revId": "7f4dc12a62cdbf048bc99e512a17c9e0ff117226",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
