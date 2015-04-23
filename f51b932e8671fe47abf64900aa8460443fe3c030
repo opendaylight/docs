@@ -1,0 +1,325 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aa0d159_348ea42f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T01:24:58Z",
+      "side": 1,
+      "message": "something more descriptive than \"check in\" would be better.",
+      "range": {
+        "startLine": 7,
+        "startChar": 15,
+        "endLine": 7,
+        "endChar": 24
+      },
+      "revId": "f51b932e8671fe47abf64900aa8460443fe3c030",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_7473cc4d",
+        "filename": "manuals/install-guide/src/main/asciidoc/tsdr/tsdr-hbase-install.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T01:24:58Z",
+      "side": 1,
+      "message": "It is easier to review documents when they wrap to 80 or 100 characters.",
+      "revId": "f51b932e8671fe47abf64900aa8460443fe3c030",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_d499806f",
+        "filename": "manuals/install-guide/src/main/asciidoc/tsdr/tsdr-hbase-install.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T01:24:58Z",
+      "side": 1,
+      "message": "Maybe say \"It contains the following services:\" and then list them with bullets?",
+      "range": {
+        "startLine": 7,
+        "startChar": 189,
+        "endLine": 7,
+        "endChar": 201
+      },
+      "revId": "f51b932e8671fe47abf64900aa8460443fe3c030",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_14904842",
+        "filename": "manuals/install-guide/src/main/asciidoc/tsdr/tsdr-hbase-install.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T01:24:58Z",
+      "side": 1,
+      "message": "Just \"time series data\" instead of \"the time series data\"",
+      "range": {
+        "startLine": 7,
+        "startChar": 135,
+        "endLine": 7,
+        "endChar": 156
+      },
+      "revId": "f51b932e8671fe47abf64900aa8460443fe3c030",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_34954433",
+        "filename": "manuals/install-guide/src/main/asciidoc/tsdr/tsdr-hbase-install.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T01:24:58Z",
+      "side": 1,
+      "message": "It might be easier to just say \"in OpenDaylight\", but if you want to say SDN controller, it should be \"in the OpenDaylight SDN controller\"",
+      "range": {
+        "startLine": 7,
+        "startChar": 160,
+        "endLine": 7,
+        "endChar": 187
+      },
+      "revId": "f51b932e8671fe47abf64900aa8460443fe3c030",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_f49efc55",
+        "filename": "manuals/install-guide/src/main/asciidoc/tsdr/tsdr-hbase-install.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T01:24:58Z",
+      "side": 1,
+      "message": "\"...Data Purging services...\" services should be plural.",
+      "range": {
+        "startLine": 7,
+        "startChar": 367,
+        "endLine": 7,
+        "endChar": 374
+      },
+      "revId": "f51b932e8671fe47abf64900aa8460443fe3c030",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_94a3f89d",
+        "filename": "manuals/install-guide/src/main/asciidoc/tsdr/tsdr-hbase-install.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T01:24:58Z",
+      "side": 1,
+      "message": "deleting not delete",
+      "range": {
+        "startLine": 7,
+        "startChar": 408,
+        "endLine": 7,
+        "endChar": 414
+      },
+      "revId": "f51b932e8671fe47abf64900aa8460443fe3c030",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_d482e0ff",
+        "filename": "manuals/install-guide/src/main/asciidoc/tsdr/tsdr-hbase-install.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T01:24:58Z",
+      "side": 1,
+      "message": "The Time...",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 4
+      },
+      "revId": "f51b932e8671fe47abf64900aa8460443fe3c030",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_5476d03f",
+        "filename": "manuals/install-guide/src/main/asciidoc/tsdr/tsdr-hbase-install.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T01:24:58Z",
+      "side": 1,
+      "message": "Replace this with the name of the feature or thing you\u0027re installing.",
+      "range": {
+        "startLine": 10,
+        "startChar": 34,
+        "endLine": 10,
+        "endChar": 43
+      },
+      "revId": "f51b932e8671fe47abf64900aa8460443fe3c030",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_b4795431",
+        "filename": "manuals/install-guide/src/main/asciidoc/tsdr/tsdr-hbase-install.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T01:24:58Z",
+      "side": 1,
+      "message": "Remove this unless you plan to fill them in in the future.",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 82
+      },
+      "revId": "f51b932e8671fe47abf64900aa8460443fe3c030",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_b4a07491",
+        "filename": "manuals/install-guide/src/main/asciidoc/tsdr/tsdr-hbase-install.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T01:24:58Z",
+      "side": 1,
+      "message": "drop \"system\" just \"on Windows.\"",
+      "range": {
+        "startLine": 14,
+        "startChar": 123,
+        "endLine": 14,
+        "endChar": 129
+      },
+      "revId": "f51b932e8671fe47abf64900aa8460443fe3c030",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_54ad7087",
+        "filename": "manuals/install-guide/src/main/asciidoc/tsdr/tsdr-hbase-install.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T01:24:58Z",
+      "side": 1,
+      "message": "Maybe add a big TODO here so you don\u0027t miss it or even comment this part out until you fill it in just you don\u0027t forget.",
+      "revId": "f51b932e8671fe47abf64900aa8460443fe3c030",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_74aaec71",
+        "filename": "manuals/install-guide/src/main/asciidoc/tsdr/tsdr-hbase-install.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T01:24:58Z",
+      "side": 1,
+      "message": "Replace \u003cFeature\u003e with what you\u0027re installing. The original intent was to have it be the name of the OpenDaylight feature, but if there\u0027s something else more descriptive, use that.",
+      "range": {
+        "startLine": 22,
+        "startChar": 15,
+        "endLine": 22,
+        "endChar": 24
+      },
+      "revId": "f51b932e8671fe47abf64900aa8460443fe3c030",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_14b7e8d9",
+        "filename": "manuals/install-guide/src/main/asciidoc/tsdr/tsdr-hbase-install.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T01:24:58Z",
+      "side": 1,
+      "message": "My guess is that these paragraphs aren\u0027t formatted correctly. To fix that, you\u0027ll want to use period-space at each line to create an ordered list. See here for more details: http://powerman.name/doc/asciidoc#_lists",
+      "revId": "f51b932e8671fe47abf64900aa8460443fe3c030",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_34bc64bb",
+        "filename": "manuals/install-guide/src/main/asciidoc/tsdr/tsdr-hbase-install.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T01:24:58Z",
+      "side": 1,
+      "message": "How? Add a TODO or TBD here?",
+      "revId": "f51b932e8671fe47abf64900aa8460443fe3c030",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
