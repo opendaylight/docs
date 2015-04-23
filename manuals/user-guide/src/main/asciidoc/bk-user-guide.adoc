@@ -40,6 +40,8 @@ include::l2switch/l2switch-user.adoc[]
 
 include::opflex/agent-ovs-user.adoc[]
 
+include::lfm/lispflowmapping-all-user.adoc[LISP flow mapping]
+
 include::sdninterfaceapp/odl-sdninterfaceapp-all-user.adoc[ODL-SDNi]
 
 include::sfc/sfc.adoc[Service Function Chain]
