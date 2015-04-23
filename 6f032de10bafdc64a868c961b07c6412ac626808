@@ -1,0 +1,851 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aa0d159_943a18cc",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-northbound-developer.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T00:35:05Z",
+      "side": 1,
+      "message": "directly create, read, update and delete",
+      "range": {
+        "startLine": 5,
+        "startChar": 60,
+        "endLine": 5,
+        "endChar": 64
+      },
+      "revId": "6f032de10bafdc64a868c961b07c6412ac626808",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_b43714e3",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-northbound-developer.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T00:35:05Z",
+      "side": 1,
+      "message": "remove \"directly\"",
+      "range": {
+        "startLine": 6,
+        "startChar": 5,
+        "endLine": 6,
+        "endChar": 13
+      },
+      "revId": "6f032de10bafdc64a868c961b07c6412ac626808",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_34530419",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-northbound-developer.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T00:35:05Z",
+      "side": 1,
+      "message": "RESTCONF, not RESTconf",
+      "range": {
+        "startLine": 6,
+        "startChar": 45,
+        "endLine": 6,
+        "endChar": 53
+      },
+      "revId": "6f032de10bafdc64a868c961b07c6412ac626808",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_543490dd",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-northbound-developer.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T00:35:05Z",
+      "side": 1,
+      "message": "an",
+      "range": {
+        "startLine": 6,
+        "startChar": 19,
+        "endLine": 6,
+        "endChar": 22
+      },
+      "revId": "6f032de10bafdc64a868c961b07c6412ac626808",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_f45cbc27",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-northbound-developer.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T00:35:05Z",
+      "side": 1,
+      "message": "I don\u0027t think it\u0027s important that it is trying to provide the the same API as Helium, unless it\u0027s actually the same API.",
+      "range": {
+        "startLine": 6,
+        "startChar": 55,
+        "endLine": 8,
+        "endChar": 44
+      },
+      "revId": "6f032de10bafdc64a868c961b07c6412ac626808",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_9441b83b",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-northbound-developer.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T00:35:05Z",
+      "side": 1,
+      "message": "anyone that needs",
+      "range": {
+        "startLine": 10,
+        "startChar": 40,
+        "endLine": 10,
+        "endChar": 53
+      },
+      "revId": "6f032de10bafdc64a868c961b07c6412ac626808",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_544b3059",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-northbound-developer.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T00:35:05Z",
+      "side": 1,
+      "message": "from inside OpenDaylight?",
+      "range": {
+        "startLine": 11,
+        "startChar": 26,
+        "endLine": 11,
+        "endChar": 70
+      },
+      "revId": "6f032de10bafdc64a868c961b07c6412ac626808",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_d420a09d",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-northbound-developer.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T00:35:05Z",
+      "side": 1,
+      "message": "Presumably developers don\u0027t actually care about this information except for the -api, -features, and maybe the -impl right?\n\nThe key would be to ask what somebody who was going to use this would want to know.",
+      "revId": "6f032de10bafdc64a868c961b07c6412ac626808",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_a92261b7",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-northbound-developer.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T00:35:05Z",
+      "side": 1,
+      "message": "adding ,cols\u003d\"10%,50%,10%,10%\" to the options in square brackets will likely make it format a lot nicer",
+      "revId": "6f032de10bafdc64a868c961b07c6412ac626808",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_492f1da2",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-northbound-developer.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T00:35:05Z",
+      "side": 1,
+      "message": "Maybe move action to first since it\u0027s likely what people are most interested in.",
+      "revId": "6f032de10bafdc64a868c961b07c6412ac626808",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_7448ac5b",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-openstack-developer.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T00:35:05Z",
+      "side": 1,
+      "message": "it\u0027s any switch that supports OVSDB, right? Not just vSwitches.",
+      "range": {
+        "startLine": 6,
+        "startChar": 44,
+        "endLine": 6,
+        "endChar": 53
+      },
+      "revId": "6f032de10bafdc64a868c961b07c6412ac626808",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_1475a897",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-openstack-developer.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T00:35:05Z",
+      "side": 1,
+      "message": "a library and a plugin?",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 35
+      },
+      "revId": "6f032de10bafdc64a868c961b07c6412ac626808",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_347a2489",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-openstack-developer.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T00:35:05Z",
+      "side": 1,
+      "message": "I think it\u0027s JSON-RPC",
+      "range": {
+        "startLine": 7,
+        "startChar": 61,
+        "endLine": 7,
+        "endChar": 69
+      },
+      "revId": "6f032de10bafdc64a868c961b07c6412ac626808",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_f4735caf",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-openstack-developer.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T00:35:05Z",
+      "side": 1,
+      "message": "supports OVSDB.",
+      "range": {
+        "startLine": 8,
+        "startChar": 47,
+        "endLine": 8,
+        "endChar": 72
+      },
+      "revId": "6f032de10bafdc64a868c961b07c6412ac626808",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_9468d8bb",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-openstack-developer.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T00:35:05Z",
+      "side": 1,
+      "message": "Many? Almost all is a strong claim.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 10
+      },
+      "revId": "6f032de10bafdc64a868c961b07c6412ac626808",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_149cc8bf",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-openstack-developer.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T00:35:05Z",
+      "side": 1,
+      "message": "native as opposed to what?",
+      "range": {
+        "startLine": 10,
+        "startChar": 20,
+        "endLine": 10,
+        "endChar": 26
+      },
+      "revId": "6f032de10bafdc64a868c961b07c6412ac626808",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_34a1c4f8",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-openstack-developer.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T00:35:05Z",
+      "side": 1,
+      "message": "no capitalization unless you\u0027re going to call it out as the acronym IaaS.",
+      "range": {
+        "startLine": 13,
+        "startChar": 61,
+        "endLine": 13,
+        "endChar": 75
+      },
+      "revId": "6f032de10bafdc64a868c961b07c6412ac626808",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_f4aa7cd3",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-openstack-developer.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T00:35:05Z",
+      "side": 1,
+      "message": "It\u0027s not all of OpenDaylight, but the OVSDB neutron provider, right?",
+      "range": {
+        "startLine": 16,
+        "startChar": 43,
+        "endLine": 16,
+        "endChar": 55
+      },
+      "revId": "6f032de10bafdc64a868c961b07c6412ac626808",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_d4a50005",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-openstack-developer.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T00:35:05Z",
+      "side": 1,
+      "message": "we\u0027ve used northbound and southbound most other places.",
+      "range": {
+        "startLine": 16,
+        "startChar": 22,
+        "endLine": 16,
+        "endChar": 33
+      },
+      "revId": "6f032de10bafdc64a868c961b07c6412ac626808",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_b4acf4ee",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-openstack-developer.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T00:35:05Z",
+      "side": 1,
+      "message": "section?",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 4
+      },
+      "revId": "6f032de10bafdc64a868c961b07c6412ac626808",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_14836857",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-openstack-developer.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T00:35:05Z",
+      "side": 1,
+      "message": "I don\u0027t think you need this trailing +",
+      "range": {
+        "startLine": 21,
+        "startChar": 71,
+        "endLine": 21,
+        "endChar": 73
+      },
+      "revId": "6f032de10bafdc64a868c961b07c6412ac626808",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_3488e470",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-openstack-developer.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T00:35:05Z",
+      "side": 1,
+      "message": "Add a link?",
+      "revId": "6f032de10bafdc64a868c961b07c6412ac626808",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_d47c2075",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-openstack-developer.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T00:35:05Z",
+      "side": 1,
+      "message": "Add a link?",
+      "revId": "6f032de10bafdc64a868c961b07c6412ac626808",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_f4811c4b",
+        "filename": "manuals/install-guide/src/main/asciidoc/ovsdb/ovsdb-openstack-install.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T00:35:05Z",
+      "side": 1,
+      "message": "This makes it sound kind of like a distro of OpenStack. Maybe installing \"OpenDaylight to use the OVSDB project to provide Neutron support for OpenStack\"?",
+      "range": {
+        "startLine": 4,
+        "startChar": 40,
+        "endLine": 4,
+        "endChar": 55
+      },
+      "revId": "6f032de10bafdc64a868c961b07c6412ac626808",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_b49394a2",
+        "filename": "manuals/install-guide/src/main/asciidoc/ovsdb/ovsdb-openstack-install.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T00:35:05Z",
+      "side": 1,
+      "message": "Open vSwitch not OpenVSwitch\n\nAlso, is this true. I don\u0027t think it is. There are lots of vSwitch implementations that make no use of OVS. Be careful.",
+      "revId": "6f032de10bafdc64a868c961b07c6412ac626808",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_d4f3c008",
+        "filename": "manuals/install-guide/src/main/asciidoc/ovsdb/ovsdb-openstack-install.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T00:35:05Z",
+      "side": 1,
+      "message": "Again, this is true in some cases, but not of all SDN.",
+      "revId": "6f032de10bafdc64a868c961b07c6412ac626808",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_f4f83ce7",
+        "filename": "manuals/install-guide/src/main/asciidoc/ovsdb/ovsdb-openstack-install.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T00:35:05Z",
+      "side": 1,
+      "message": "add a space between Database and (OVSDB)",
+      "range": {
+        "startLine": 10,
+        "startChar": 53,
+        "endLine": 10,
+        "endChar": 68
+      },
+      "revId": "6f032de10bafdc64a868c961b07c6412ac626808",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_94dd3873",
+        "filename": "manuals/install-guide/src/main/asciidoc/ovsdb/ovsdb-openstack-install.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T00:35:05Z",
+      "side": 1,
+      "message": "Can we ask Brent if we can copy that information here with attribution?",
+      "range": {
+        "startLine": 10,
+        "startChar": 86,
+        "endLine": 10,
+        "endChar": 133
+      },
+      "revId": "6f032de10bafdc64a868c961b07c6412ac626808",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_54e7b040",
+        "filename": "manuals/install-guide/src/main/asciidoc/ovsdb/ovsdb-openstack-install.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T00:35:05Z",
+      "side": 1,
+      "message": "Do you need a JDK or JRE? I think a JRE.",
+      "revId": "6f032de10bafdc64a868c961b07c6412ac626808",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_b4dab476",
+        "filename": "manuals/install-guide/src/main/asciidoc/ovsdb/ovsdb-openstack-install.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T00:35:05Z",
+      "side": 1,
+      "message": "Is this actually needed to install? I don\u0027t think it is.",
+      "range": {
+        "startLine": 14,
+        "startChar": 2,
+        "endLine": 14,
+        "endChar": 14
+      },
+      "revId": "6f032de10bafdc64a868c961b07c6412ac626808",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_74e42c3b",
+        "filename": "manuals/install-guide/src/main/asciidoc/ovsdb/ovsdb-openstack-install.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T00:35:05Z",
+      "side": 1,
+      "message": "OpenDaylight not Opendaylight.\n\nAlso, what do you mean by \"the neutron plugin\"?",
+      "revId": "6f032de10bafdc64a868c961b07c6412ac626808",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_14d12857",
+        "filename": "manuals/install-guide/src/main/asciidoc/ovsdb/ovsdb-openstack-install.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T00:35:05Z",
+      "side": 1,
+      "message": "for tests or in general as well?",
+      "range": {
+        "startLine": 18,
+        "startChar": 89,
+        "endLine": 18,
+        "endChar": 98
+      },
+      "revId": "6f032de10bafdc64a868c961b07c6412ac626808",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_94c45893",
+        "filename": "manuals/install-guide/src/main/asciidoc/ovsdb/ovsdb-openstack-install.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T00:35:05Z",
+      "side": 1,
+      "message": "for whatever reason [start\u003dX] doesn\u0027t work with our AsciiDoc chain. I\u0027ve started to use normal bullets with star space (* ) instead.\n\nYou can play with other things and see how they format.",
+      "revId": "6f032de10bafdc64a868c961b07c6412ac626808",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_b4cb9471",
+        "filename": "manuals/install-guide/src/main/asciidoc/ovsdb/ovsdb-openstack-install.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T00:35:05Z",
+      "side": 1,
+      "message": "Unless there\u0027s a really good reason, the instructions should presumably use the distribution provided on the software download page for Lithium. That is the one built in integration.",
+      "revId": "6f032de10bafdc64a868c961b07c6412ac626808",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_54c81074",
+        "filename": "manuals/install-guide/src/main/asciidoc/ovsdb/ovsdb-openstack-install.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T00:35:05Z",
+      "side": 1,
+      "message": "Unless there\u0027s a really good reason, the instructions should presumably use the distribution provided on the software download page for Lithium. That is the one built in integration.",
+      "revId": "6f032de10bafdc64a868c961b07c6412ac626808",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_74c50c5a",
+        "filename": "manuals/install-guide/src/main/asciidoc/ovsdb/ovsdb-openstack-install.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T00:35:05Z",
+      "side": 1,
+      "message": "It seems like these two feature installs are all you really need to mention unless I\u0027m totally off.",
+      "revId": "6f032de10bafdc64a868c961b07c6412ac626808",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_14a288ae",
+        "filename": "manuals/install-guide/src/main/asciidoc/ovsdb/ovsdb-openstack-install.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T00:35:05Z",
+      "side": 1,
+      "message": "relating",
+      "range": {
+        "startLine": 117,
+        "startChar": 5,
+        "endLine": 117,
+        "endChar": 13
+      },
+      "revId": "6f032de10bafdc64a868c961b07c6412ac626808",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_f4b03cf6",
+        "filename": "manuals/install-guide/src/main/asciidoc/ovsdb/ovsdb-openstack-install.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T00:35:05Z",
+      "side": 1,
+      "message": "Do you want to ask people to do log:display | grep -i ovsdb or something more precise than parsing through thousands of lines of logs?",
+      "revId": "6f032de10bafdc64a868c961b07c6412ac626808",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_94953842",
+        "filename": "manuals/install-guide/src/main/asciidoc/ovsdb/ovsdb-openstack-install.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T00:35:05Z",
+      "side": 1,
+      "message": "If there\u0027s really no suggestions about troubleshooting, maybe just cut this section.",
+      "revId": "6f032de10bafdc64a868c961b07c6412ac626808",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_b4c15482",
+        "filename": "manuals/install-guide/src/main/asciidoc/ovsdb/ovsdb-openstack-install.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T00:35:05Z",
+      "side": 1,
+      "message": "Delete this section if it\u0027s not applicable.",
+      "revId": "6f032de10bafdc64a868c961b07c6412ac626808",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_b492b455",
+        "filename": "manuals/install-guide/src/main/asciidoc/ovsdb/ovsdb-openstack-install.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T00:35:05Z",
+      "side": 1,
+      "message": "I\u0027m actually pretty sure feature:uninstall doesn\u0027t work.",
+      "range": {
+        "startLine": 133,
+        "startChar": 15,
+        "endLine": 133,
+        "endChar": 52
+      },
+      "revId": "6f032de10bafdc64a868c961b07c6412ac626808",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
