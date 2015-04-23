@@ -1,18 +1,505 @@
-=== Service Function Monitoring
-TBD
+=== Service Function Monitoring Feature User Guide
+
 
 ==== SF Monitoring Overview
-TBD
+The document mainly introduces how to get the service function(SF) description and Monitor data from netconf server. 
 
-==== SF Monitoring Architecture
-TBD
+This part includes three steps:
 
-==== The way of getting SF monitor information
-TBD
+. How to configure netconf server.
+. How to configure SFC.
+. How to get SF description and Monitor data in SFC.
 
-===== SF netconf server configuration
-TBD
+==== How to configure netconf server;
 
-===== ODL configuration
-TBD
+This part mainly introducesS how to set up the model of service-function-description-monitor-report
+in netconf server. You can also use the testtool for test,the link is as follows:
+S
+https://wiki.opendaylight.org/view/Controller_Core_Functionality_Tutorials:Tutorials:Netconf_Mount.
+
+The steps in netconf server:
+
+. Please follow the steps in link below for manual libnetconfd/netopeer installation:
++
+https://wiki.opendaylight.org/view/OpenDaylight_Controller:Config:Examples:Netconf:Manual_netopeer_installation
++
+. Pull Pyang,then install pyang following the file ./pyang/README.
++
+ git clone https://code.google.com/p/pyang/
++
+. Create a folder named service-function-description-monitor-report in 
+/netopeer/server-sl/
++
+ mkdir ./netopeer/server-sl/service-function-description-monitor-report
++
+. Service-function-description-monitor-report.yang can be gotten in /sfc/sfc-model/src/main/yang/service-function-description-monitor-report.yang 
++
+ cp ./sfc/sfc-model/src/main/yang/service-function-description-monitor-report.yang ./netopeer/server-sl/service-function-description-monitor-report/
++
+. The libtool file can be gotten in  /netopeer/server-sl/toaster/
++
+ cp ./netopeer/server-sl/toaster/libtool  ./netopeer/server-sl/service-function-description-monitor-report/
++
+. Generate source files with "lnctool" +
++
+ lnctool -model ./netopeer/server-sl/service-function-description-monitor-report/service-function-description-monitor-report.yang transapi
++
+. Makefile can be gotten in /netopeer/server-sl/toaster/, and it only needs to modify several lines
++
+ cp ./netopeer/server-sl/toaster/Makefile ./netopeer/server-sl/service-function-description-monitor-report/
++
+Change line1, 2 and 24 of Makefile like below code
++
+ PKGNAME = service-function-description-monitor-report
+ TARGET = service-function-description-monitor-report.la
+ ...
+ SRCS = service-function-description-monitor-report.c
++
+. Develop your code to get the SF description and monitor data, then write data into /netopeer/server-sl/ service-function-description-monitor-report/service-function-description-monitor-report.xml. The file format is as follows: 
++
+  <?xml version="1.0" encoding="UTF-8"?>
+  <service-function-description-monitor-report>
+    <SF-description>
+      <mgt-ip-addr>10.0.0.2</mgt-ip-addr>
+      <type>DPI</type>
+      <number-of-dataports>2</number-of-dataports>
+      <capabilities>
+        <supported-packet-rate>5</supported-packet-rate>
+        <supported-bandwidth>10</supported-bandwidth>
+        <supported-ACL-number>2000</supported-ACL-number>
+        <RIB-size>200</RIB-size>
+        <FIB-size>100</FIB-size>
+        <ports-bandwidth>
+          <port-bandwidth>
+            <port-id>1</port-id>
+            <ipaddress>10.0.0.1</ipaddress>
+            <macaddress>00:1e:67:a2:5f:f4</macaddress>
+            <supported-bandwidth>20</supported-bandwidth>
+          </port-bandwidth>
+          <port-bandwidth>
+            <port-id>2</port-id>
+            <ipaddress>10.0.0.2</ipaddress>
+            <macaddress>01:1e:67:a2:5f:f6</macaddress>
+            <supported-bandwidth>10</supported-bandwidth>
+          </port-bandwidth>
+        </ports-bandwidth>
+      </capabilities>
+    </SF-description>
+    <SF-monitoring-info>
+      <liveness>true</liveness>
+      <resource-utilization>
+          <packet-rate-utilization>10</packet-rate-utilization>
+          <bandwidth-utilization>15</bandwidth-utilization>
+          <CPU-utilization>12</CPU-utilization>
+          <memory-utilization>17</memory-utilization>
+          <available-memory>8</available-memory>
+          <RIB-utilization>20</RIB-utilization>
+          <FIB-utilization>25</FIB-utilization>
+          <power-utilization>30</power-utilization>
+          <SF-ports-bandwidth-utilization>
+            <port-bandwidth-utilization>
+              <port-id>1</port-id>
+              <bandwidth-utilization>20</bandwidth-utilization>
+            </port-bandwidth-utilization>
+            <port-bandwidth-utilization>
+              <port-id>2</port-id>
+              <bandwidth-utilization>30</bandwidth-utilization>
+            </port-bandwidth-utilization>
+          </SF-ports-bandwidth-utilization>
+      </resource-utilization>
+    </SF-monitoring-info>
+  </service-function-description-monitor-report>
++
+The path of xml file needs to be defined in /netopeer/server-sl/ service-function-description-monitor-report/service-function-description-monitor-report.c
++
+ #define SF_INFO_XML_PATH "/home/test/netopeer/server-sl/service-function-description-monitor-report/"
++
+. Implement the following RPCs in /netopeer/server-sl/ service-function-description-monitor-report/service-function-description-monitor-report.c
++
+ nc_reply * rpc_get_SF_description (xmlNodePtr input[])
+ nc_reply * rpc_get_SF_monitoring_info (xmlNodePtr input[])
++
+The following code is an example which is implemented based on libnetconfd 0.8.0. 
++
+The code of rpc_get_SF_description is as follows: 
++
+[frame="none"]
+|===
+a|
+-----
+nc_reply * rpc_get_SF_description (xmlNodePtr input[])
+{
+    nc_reply *reply;
+    xmlDocPtr state;
+    xmlNodePtr root;
+    xmlNsPtr ns;
+
+    xmlDocPtr read_doc;
+    xmlNodePtr read_doc_cur;
+    xmlNodePtr port;
+    xmlNodeSetPtr nodeset; 
+    xmlXPathContextPtr data_ctxt;
+    xmlXPathObjectPtr query_result;
+    xmlChar *mgt_ip_address, *sf_num_port, *sf_type, *supported_packet_rate, *supported_bandwidth, 
+      *supported_ACL_number, *RIB_size, *FIB_size, *port_id, *ipaddress, *macaddress, *port_supported_bandwidth;
+
+    int i;
+    state = xmlNewDoc(BAD_CAST "1.0");
+    root = xmlNewDocNode(state, NULL, BAD_CAST "get-SF-description", NULL);
+    xmlDocSetRootElement(state, root);
+    ns = xmlNewNs(root, BAD_CAST "urn.intel.params:xml:ns:sf-desc-mon-rpt", NULL);
+    xmlSetNs(root, ns);
+
+    read_doc = xmlParseFile(SF_INFO_XML_PATH"service-function-description-monitor-report.xml");
+
+    if(read_doc == NULL)
+    {
+        fprintf(stderr,"Document service-function-description-monitor-report.xml not parsed successfully.\n");
+        xmlFreeDoc(read_doc);
+        xmlFreeNode(read_doc_cur);
+        return;
+    }
+
+    read_doc_cur = xmlDocGetRootElement(read_doc);
+
+    if(read_doc_cur == NULL){
+        fprintf(stderr,"Empty document.\n");
+        xmlFreeDoc(read_doc);
+        xmlFreeNode(read_doc_cur);
+        return;
+    }
+
+    if(xmlStrcmp(read_doc_cur->name,(const xmlChar *)"service-function-description-monitor-report")) {
+        fprintf(stderr,"document of the wrong type, root node != service-function-description-monitor-report.\n");
+        xmlFreeDoc(read_doc);
+        xmlFreeNode(read_doc_cur);
+        return;
+    }
+
+    // create xpath evaluation context 
+    if ((data_ctxt = xmlXPathNewContext(read_doc)) == NULL) {
+        fprintf(stderr,"%s: service-function-description-monitor-report configuration data XPath context can not be created.", __func__);
+    }
+
+    xmlNodePtr sf_description = xmlNewNode(NULL, BAD_CAST "SF-description");
+    xmlNodePtr capabilities = xmlNewNode(NULL, BAD_CAST "capabilities");
+    xmlNodePtr ports_bandwidth = xmlNewNode(NULL, BAD_CAST "ports-bandwidth");
+    xmlAddChild(root, sf_description);
+    xmlAddChild(sf_description, capabilities);
+    xmlAddChild(capabilities, ports_bandwidth);
+
+    if ((query_result = xmlXPathEvalExpression(BAD_CAST "//SF-description/mgt-ip-addr", data_ctxt))!=NULL) {
+        mgt_ip_address = xmlNodeListGetString(read_doc, query_result->nodesetval->nodeTab[0]->xmlChildrenNode, 1);
+        xmlNewChild(sf_description, NULL, BAD_CAST "mgt-ip-address", mgt_ip_address);
+    }
+    if ((query_result = xmlXPathEvalExpression(BAD_CAST "//SF-description/number-of-dataports", data_ctxt))!=NULL) {
+        sf_num_port = xmlNodeListGetString(read_doc, query_result->nodesetval->nodeTab[0]->xmlChildrenNode, 1);
+        xmlNewChild(sf_description, NULL, BAD_CAST "number-of-dataports", sf_num_port);
+    }
+    if ((query_result = xmlXPathEvalExpression(BAD_CAST "//SF-description/type", data_ctxt))!=NULL) {
+        sf_type = xmlNodeListGetString(read_doc, query_result->nodesetval->nodeTab[0]->xmlChildrenNode, 1);
+        xmlNewChild(sf_description, NULL, BAD_CAST "type", sf_type);
+    }
+    if ((query_result = xmlXPathEvalExpression(BAD_CAST "//SF-description/capabilities/supported-packet-rate", data_ctxt))!=NULL) {
+        supported_packet_rate = xmlNodeListGetString(read_doc, query_result->nodesetval->nodeTab[0]->xmlChildrenNode, 1);
+        xmlNewChild(capabilities, NULL, BAD_CAST "supported-packet-rate", supported_packet_rate);
+    }
+    if ((query_result = xmlXPathEvalExpression(BAD_CAST "//SF-description/capabilities/supported-bandwidth", data_ctxt))!=NULL) {
+        supported_bandwidth = xmlNodeListGetString(read_doc, query_result->nodesetval->nodeTab[0]->xmlChildrenNode, 1);
+        xmlNewChild(capabilities, NULL, BAD_CAST "supported-bandwidth", supported_bandwidth);
+    }
+    if ((query_result = xmlXPathEvalExpression(BAD_CAST "//SF-description/capabilities/supported-ACL-number", data_ctxt))!=NULL) {
+        supported_ACL_number = xmlNodeListGetString(read_doc, query_result->nodesetval->nodeTab[0]->xmlChildrenNode, 1);
+        xmlNewChild(capabilities, NULL, BAD_CAST "supported-ACL-number", supported_ACL_number);
+    }
+    if ((query_result = xmlXPathEvalExpression(BAD_CAST "//SF-description/capabilities/FIB-size", data_ctxt))!=NULL) {
+        FIB_size = xmlNodeListGetString(read_doc, query_result->nodesetval->nodeTab[0]->xmlChildrenNode, 1);
+        xmlNewChild(capabilities, NULL, BAD_CAST "FIB-size", FIB_size);
+    }
+    if ((query_result = xmlXPathEvalExpression(BAD_CAST "//SF-description/capabilities/RIB-size", data_ctxt))!=NULL) {
+        RIB_size = xmlNodeListGetString(read_doc, query_result->nodesetval->nodeTab[0]->xmlChildrenNode, 1);
+        xmlNewChild(capabilities, NULL, BAD_CAST "RIB-size", RIB_size);	
+    }
+
+    if ((query_result = xmlXPathEvalExpression(BAD_CAST "//SF-description/capabilities/ports-bandwidth/port-bandwidth", data_ctxt))!=NULL) {
+        nodeset = query_result->nodesetval;
+        for (i=0; i < nodeset->nodeNr; i++) {
+            xmlNodePtr port_bandwidth = xmlNewNode(NULL, BAD_CAST "port-bandwidth");
+            xmlAddChild(ports_bandwidth, port_bandwidth);
+            for(port = nodeset->nodeTab[i]->xmlChildrenNode;port != NULL;port = port->next) {
+                if((!xmlStrcmp(port->name,(const xmlChar *)"port-id"))) {
+                    port_id = xmlNodeListGetString(read_doc, port->xmlChildrenNode, 1);
+                    xmlNewChild(port_bandwidth, NULL, BAD_CAST "port-id", port_id);
+                } else if((!xmlStrcmp(port->name, (const xmlChar *)"ipaddress"))) {
+                    ipaddress = xmlNodeListGetString(read_doc, port->xmlChildrenNode, 1);
+                    xmlNewChild(port_bandwidth, NULL, BAD_CAST "ipaddress", ipaddress);
+                } else if((!xmlStrcmp(port->name, (const xmlChar *)"macaddress"))) {
+                    macaddress = xmlNodeListGetString(read_doc, port->xmlChildrenNode, 1);
+                    xmlNewChild(port_bandwidth, NULL, BAD_CAST "macaddress", macaddress);
+                } else if((!xmlStrcmp(port->name, (const xmlChar *)"supported-bandwidth"))) {
+                    port_supported_bandwidth = xmlNodeListGetString(read_doc, port->xmlChildrenNode, 1);
+                    xmlNewChild(port_bandwidth, NULL, BAD_CAST "supported-bandwidth", port_supported_bandwidth);
+                }
+            }
+        }
+    }
+
+    xmlFree(mgt_ip_address);
+    xmlFree(sf_num_port);
+    xmlFree(sf_type);
+    xmlFree(supported_packet_rate);
+    xmlFree(supported_bandwidth); 
+    xmlFree(supported_ACL_number);
+    xmlFree(RIB_size);
+    xmlFree(FIB_size);
+    xmlFree(port_id);
+    xmlFree(ipaddress);
+    xmlFree(macaddress);
+    xmlFree(port_supported_bandwidth);
+
+    reply = (nc_reply *)nc_msg_create(root, "rpc-reply");
+    xmlFreeNode(root);
+    xmlFreeNode(port);
+    xmlFreeNode(read_doc_cur);
+    return reply; 
+}
+-----
+|===
++
+The code of rpc_get_SF_monitor is as follows: 
++
+[frame="none"]
+|===
+a|
+-----
+nc_reply * rpc_get_SF_monitoring_info (xmlNodePtr input[])
+{
+    nc_reply *reply;
+    xmlDocPtr state;
+    xmlNodePtr root;
+    xmlNsPtr ns;
+    
+    xmlDocPtr read_doc;
+    xmlNodePtr read_doc_cur;
+    xmlNodePtr port;
+    xmlNodeSetPtr nodeset; 
+    xmlXPathContextPtr data_ctxt;
+    xmlXPathObjectPtr query_result;
+    xmlChar *liveness, *packet_rate_utilization, *bandwidth_utilization, *CPU_utilization, 
+    *memory_utilization, *available_memory, *RIB_utilization, *FIB_utilization, 
+    *power_utilization, *port_id, *port_bandwidth_utilization;
+
+    int i;
+    state = xmlNewDoc(BAD_CAST "1.0");
+    root = xmlNewDocNode(state, NULL, BAD_CAST "get-SF-monitoring-info", NULL);
+    xmlDocSetRootElement(state, root);
+    ns = xmlNewNs(root, BAD_CAST "urn.intel.params:xml:ns:sf-desc-mon-rpt", NULL);
+    xmlSetNs(root, ns);
+
+    read_doc = xmlParseFile(SF_INFO_XML_PATH"service-function-description-monitor-report.xml");
+
+    if(read_doc == NULL)
+    {
+        fprintf(stderr,"Document service-function-description-monitor-report.xml not parsed successfully.\n");
+        xmlFreeDoc(read_doc);
+        xmlFreeNode(read_doc_cur);
+        return;
+    }
+
+    read_doc_cur = xmlDocGetRootElement(read_doc);
+
+    if(read_doc_cur == NULL){
+        fprintf(stderr,"Empty document.\n");
+        xmlFreeDoc(read_doc);
+        xmlFreeNode(read_doc_cur);
+        return;
+    }
+
+    if(xmlStrcmp(read_doc_cur->name,(const xmlChar *)"service-function-description-monitor-report")) {
+        fprintf(stderr,"document of the wrong type, root node != service-function-description-monitor-report.\n");
+        xmlFreeDoc(read_doc);
+        xmlFreeNode(read_doc_cur);
+        return;
+    }
+
+    // create xpath evaluation context 
+    if ((data_ctxt = xmlXPathNewContext(read_doc)) == NULL) {
+        fprintf(stderr,"%s: service-function-description-monitor-report configuration data XPath context can not be created.", __func__);
+    }
+
+    xmlNodePtr sf_monitoring_info = xmlNewNode(NULL, BAD_CAST "SF-monitoring-info");
+    xmlNodePtr utilization = xmlNewNode(NULL, BAD_CAST "resource-utilization");
+    xmlNodePtr ports_bandwidth_util = xmlNewNode(NULL, BAD_CAST "SF-ports-bandwidth-utilization");
+    xmlAddChild(root, sf_monitoring_info);
+    xmlAddChild(sf_monitoring_info, utilization);
+    xmlAddChild(utilization, ports_bandwidth_util);
+
+    if ((query_result = xmlXPathEvalExpression(BAD_CAST "//SF-monitoring-info/liveness", data_ctxt))!=NULL) {
+        liveness = xmlNodeListGetString(read_doc, query_result->nodesetval->nodeTab[0]->xmlChildrenNode, 1);
+        xmlNewChild(sf_monitoring_info, NULL, BAD_CAST "liveness", liveness);
+    }
+    if ((query_result = xmlXPathEvalExpression(BAD_CAST "//SF-monitoring-info/resource-utilization/packet-rate-utilization", data_ctxt))!=NULL) {
+        packet_rate_utilization = xmlNodeListGetString(read_doc, query_result->nodesetval->nodeTab[0]->xmlChildrenNode, 1);
+        xmlNewChild(utilization, NULL, BAD_CAST "packet-rate-utilization", packet_rate_utilization);
+    }
+    if ((query_result = xmlXPathEvalExpression(BAD_CAST "//SF-monitoring-info/resource-utilization/bandwidth-utilization", data_ctxt))!=NULL) {
+        bandwidth_utilization = xmlNodeListGetString(read_doc, query_result->nodesetval->nodeTab[0]->xmlChildrenNode, 1);
+        xmlNewChild(utilization, NULL, BAD_CAST "bandwidth-utilization", bandwidth_utilization);	
+    }
+    if ((query_result = xmlXPathEvalExpression(BAD_CAST "//SF-monitoring-info/resource-utilization/CPU-utilization", data_ctxt))!=NULL) {
+        CPU_utilization = xmlNodeListGetString(read_doc, query_result->nodesetval->nodeTab[0]->xmlChildrenNode, 1);
+        xmlNewChild(utilization, NULL, BAD_CAST "CPU-utilization", CPU_utilization);
+    }
+    if ((query_result = xmlXPathEvalExpression(BAD_CAST "//SF-monitoring-info/resource-utilization/memory-utilization", data_ctxt))!=NULL) {
+        memory_utilization = xmlNodeListGetString(read_doc, query_result->nodesetval->nodeTab[0]->xmlChildrenNode, 1);
+        xmlNewChild(utilization, NULL, BAD_CAST "memory-utilization", memory_utilization);
+    }
+    if ((query_result = xmlXPathEvalExpression(BAD_CAST "//SF-monitoring-info/resource-utilization/available-memory", data_ctxt))!=NULL) {
+        available_memory = xmlNodeListGetString(read_doc, query_result->nodesetval->nodeTab[0]->xmlChildrenNode, 1);
+        xmlNewChild(utilization, NULL, BAD_CAST "available-memory", available_memory);
+    }
+    if ((query_result = xmlXPathEvalExpression(BAD_CAST "//SF-monitoring-info/resource-utilization/RIB-utilization", data_ctxt))!=NULL) {
+        RIB_utilization = xmlNodeListGetString(read_doc, query_result->nodesetval->nodeTab[0]->xmlChildrenNode, 1);
+        xmlNewChild(utilization, NULL, BAD_CAST "RIB-utilization", RIB_utilization);
+    }
+    if ((query_result = xmlXPathEvalExpression(BAD_CAST "//SF-monitoring-info/resource-utilization/FIB-utilization", data_ctxt))!=NULL) {
+        FIB_utilization = xmlNodeListGetString(read_doc, query_result->nodesetval->nodeTab[0]->xmlChildrenNode, 1);
+        xmlNewChild(utilization, NULL, BAD_CAST "FIB-utilization", FIB_utilization);	
+    }
+    if ((query_result = xmlXPathEvalExpression(BAD_CAST "//SF-monitoring-info/resource-utilization/power-utilization", data_ctxt))!=NULL) {
+        power_utilization = xmlNodeListGetString(read_doc, query_result->nodesetval->nodeTab[0]->xmlChildrenNode, 1);
+        xmlNewChild(utilization, NULL, BAD_CAST "power-utilization", power_utilization);	
+    }
+
+    if ((query_result = xmlXPathEvalExpression(BAD_CAST "//SF-monitoring-info/resource-utilization/SF-ports-bandwidth-utilization/port-bandwidth-utilization", data_ctxt))!=NULL) {
+        nodeset = query_result->nodesetval;
+        for (i=0; i < nodeset->nodeNr; i++) {
+            xmlNodePtr port_bandwidth_util = xmlNewNode(NULL, BAD_CAST "port-bandwidth-utilization");
+            xmlAddChild(ports_bandwidth_util, port_bandwidth_util);
+            for(port = nodeset->nodeTab[i]->xmlChildrenNode;port != NULL;port = port->next) {
+                if((!xmlStrcmp(port->name,(const xmlChar *)"port-id"))) {
+                    port_id = xmlNodeListGetString(read_doc, port->xmlChildrenNode, 1);
+                    xmlNewChild(port_bandwidth_util, NULL, BAD_CAST "port-id", port_id);
+                } else if((!xmlStrcmp(port->name, (const xmlChar *)"bandwidth-utilization"))) {
+                    port_bandwidth_utilization = xmlNodeListGetString(read_doc, port->xmlChildrenNode, 1);
+                    xmlNewChild(port_bandwidth_util, NULL, BAD_CAST "bandwidth-utilization", port_bandwidth_utilization);
+                }
+            }
+        }
+    }
+
+    xmlFree(liveness);
+    xmlFree(packet_rate_utilization);
+    xmlFree(bandwidth_utilization);
+    xmlFree(CPU_utilization);
+    xmlFree(memory_utilization); 
+    xmlFree(available_memory);
+    xmlFree(RIB_utilization);
+    xmlFree(FIB_utilization);
+    xmlFree(power_utilization);
+    xmlFree(port_id);
+    xmlFree(port_bandwidth_utilization);
+
+    reply = (nc_reply *)nc_msg_create(root, "rpc-reply");
+    xmlFreeNode(root);
+    xmlFreeNode(port);
+    xmlFreeNode(read_doc_cur);
+    return reply; 
+}
+-----
+|===
++
+When initialing the netconf server, the service-function-description-monitor-report module needs to be loaded. Add the code in  “main() function of /netopeer/server-sl/main.c” as follows: 
++
+[frame="none"]
+|===
+a|
+-----
+int main(int UNUSED(argc), char** UNUSED(argv))
+{
+    datastore = ncds_new_transapi(NCDS_TYPE_FILE, SERVERCFG_PATH"/toaster.yin", SERVERCFG_PATH"/toaster.so");
+    if (datastore == NULL) {
+        clb_print(NC_VERB_ERROR, "Datastore preparing failed.");
+        return (EXIT_FAILURE);
+    }
+    ...
+    ...    
+    ncds_add_model(SERVERCFG_PATH"service-function-description-monitor-report.yin");
+    ncds_features_enableall("service-function-description-monitor-report");     
+    /* prepare configuration datastore */
+    datastore = ncds_new_transapi(NCDS_TYPE_FILE,  SERVERCFG_PATH"service-function-description-monitor-report.yin", SERVERCFG_PATH"service-function-description-monitor-report.so");
+    if (datastore == NULL) {
+        clb_print(NC_VERB_ERROR, "Datastore preparing failed.");
+        return (EXIT_FAILURE);
+    }
+    ...
+    ...
+}
+-----
+|===
++
+. In /netopeer/server-sl/Makefile, add the code about MODULE_SF_INFO as follows
++
+[frame="none"]
+|===
+a|
+-----
+    ...
+MODULE_SF_INFO = ./service-function-description-monitor-report/
+.PHONY: $(MODULE_SF_INFO)
+
+all: $(NAME) $(MODULE_SF_INFO)
+
+$(MODULE_SF_INFO): $(MODULE_SF_INFO)/Makefile 
+$(MAKE) -C $@
+    ...
+    ...
+$(INSTALL_DATA) $(MODULE)/toaster-schematron.xsl $(SERVERCFG_PATH)/
+
+             $(LIBTOOL) --mode=install cp $(MODULE_SF_INFO)/service-function-description-monitor-report.la $(SERVERCFG_PATH)/;
+            $(INSTALL_DATA) $(MODULE_SF_INFO)/service-function-description-monitor-report.yin $(SERVERCFG_PATH)/;
+            $(INSTALL_DATA) $(MODULE_SF_INFO)/service-function-description-monitor-report-data.rng $(SERVERCFG_PATH)/;
+            $(INSTALL_DATA) $(MODULE_SF_INFO)/service-function-description-monitor-report-gdefs.rng $(SERVERCFG_PATH)/;
+$(INSTALL_DATA) $(MODULE_SF_INFO)/service-function-description-monitor-report-schematron.xsl $(SERVERCFG_PATH)/;
+    ...
+    ...
+         .PHONY: install
+	install: $(NAME) $(MODULE) $(MODULE_SF_INFO)
+    ...
+    ...
+         .PHONY: clean
+         clean:
+	$(MAKE) -C $(MODULE) clean ;
+	$(MAKE) -C $(MODULE_SF_INFO) clean ;
+	rm -rf $(NAME) .obj $(OBJS);
+-----
+|===
+
+==== How to configure SFC;
+Based on the above steps, if you want to access the netconf server, you can do the following steps:
+
+The steps configure SFC
+
+. First enter the SFC
++
+    cd /sfc/sfc-karaf/target/assembly/bin/
+    .karaf
++
+. After the SFC totally starts, you can use two ways for spawning new netconf connector:
+.. https://wiki.opendaylight.org/view/OpenDaylight_Controller:Config:Examples:Netconf#Spawning_Additional_Netconf_Connectors_While_the_Controller_is_Running
+.. https://wiki.opendaylight.org/view/OpenDaylight_Controller:Config:Examples:Netconf#Editing_Netconf_Client_Configuration_by_Creating_Initial_Controller_Config_File
+
+[NOTE]
+===============================
+The name of module should be set as SF manager ip address.
+===============================
+
+==== How to get SF description and Monitor data in SFC
+If you only want to get the SF description and monitor data from netconf server, you can 
+invoke APIs of SfcProviderSfDescriptionMonitorAPI.java. If you not only want to get the
+SF description and monitor data from netconf server, but also write the data into datastore,
+You can invoke the method of putServiceFunctionDescriptionExecutor and putServiceFunctionMonitorExecutor 
+in SfcProviderServiceFunctionAPI.java.
+
+
 

@@ -1,19 +1,154 @@
 === Service Function Monitoring
 
 ==== SF Monitoring Overview
-TBD
+The document mainly introduces the Yang model and APIs of service 
+function(SF) moniter.The SF moniter yang model mainly extends service 
+function yang model.It includes service function description and
+monitor information. In SFC, it providers some APIs which can get
+the data from netconf server, put the data into datastore and read 
+the data from datastore.
 
 ==== SF Monitoring Architecture
-TBD
+SF Monitoring mainly includes two parts:
+
+. service function description information
+
+. service function monitor information.
 
 ==== SF Monitoring YANG model
-TBD
+===== Service function description
+-----------------------------------------------------
+    grouping SF-description {
+        leaf number-of-dataports {
+            type uint32;
+            description "Number of dataports";
+        }
+        container capabilities {
+            leaf supported-packet-rate {
+                type uint32;
+                description "Maximum Mpps supported";
+            }
+            leaf supported-bandwidth {
+                type uint32;
+                description "Maximum Mbps supported ";
+            }
+            leaf supported-ACL-number {
+                type uint32;
+                description "ACL number of the service function";
+            }
+            leaf RIB-size {
+                type uint32;
+                description "Number of Routing Information Table's entries.";
+            }
+            leaf FIB-size {
+                type uint32;
+                description "Number of Forwarding Information Table's entries.";
+            }
+            container ports-bandwidth {
+                list port-bandwidth {
+                    key port-id;
+                    leaf port-id {
+                        type uint32;
+                        description "The id of the port ";
+                    }
+                    leaf ipaddress {
+                        type inet:ipv4-address;
+                        description "IP address of the port";
+                    }
+                    leaf macaddress {
+                       type yang:mac-address;
+                       description "MAC address of the the port";
+                    }
+                    leaf supported-bandwidth {
+                        type uint32;
+                        description "Maximum Mbps supported by the port";
+                    }
+                }
+            }
+        }
+    }
+-----------------------------------------------------
+===== Service function monitor
+-----------------------------------------------------
+    grouping SF-monitoring-info {
+        leaf liveness {
+            type boolean;
+            description "Liveness flag of the service function";
+        }
+        container resource-utilization {
+            leaf packet-rate-utilization {
+                type uint32;
+                description "Percentage of current package rate utilization.";
+            }
+            leaf bandwidth-utilization {
+                type uint32;
+                description "Percentage of bandwidth utilization.";
+            }
+            leaf CPU-utilization {
+                type uint32;
+                description "Percentage of CPU utilization.";
+            }
+            leaf memory-utilization {
+                type uint32;
+                description "Percentage of memory utilization.";
+            }
+            leaf available-memory {
+                type uint32;
+                description "Available memory size of the service function in MB.";
+            }
+            leaf RIB-utilization {
+                type uint32;
+                description "Percentage of Routing Information Table utilization.";
+            }
+            leaf FIB-utilization {
+                type uint32;
+                description "Percentage of Forwarding Information Table utilization.";
+            }
+            leaf power-utilization {
+                type uint32;
+                description "power utilization in W.";
+            }
+            container SF-ports-bandwidth-utilization {
+                list port-bandwidth-utilization {
+                    key port-id;
+                    leaf port-id {
+                       type uint32;
+                       description "The id of the port ";
+                    }
+                    leaf bandwidth-utilization {
+                       type uint32;
+                       description "Percentage of the port's supported bandwidth utilization.";
+                   }
+               }
+            }
+        }
+    }
+-----------------------------------------------------
 
 ==== Key APIs and Interfaces
-TBD
+You can invoke APIs of SfcProviderServiceFunctionAPI.java and SfcProviderSfDescriptionMonitorAPI.java. 
+If you have put the SF description and Monitor data into datastore, you can get them through 
+SPOSTMAN(in chrome browser) or similar tools.
 
-===== API Group 1
-TBD
+===== PUT data of service-function-description-monitor
+If you only want to get the SF description and monitor data from netconf server, you can 
+invoke APIs of SfcProviderSfDescriptionMonitorAPI.java. If you not only want to get the
+SF description and monitor data from netconf server, but also write the data into datastore,
+You can invoke the method of putServiceFunctionDescriptionExecutor and putServiceFunctionMonitorExecutor
+in SfcProviderServiceFunctionAPI.java.
 
-==== API Reference Documentation
-TBD
+[NOTE]
+===============================
+At present, the data of service-function-description-monitor can't be POST into datastore through restconf.
+===============================
+
+===== GET data of service-function-description-monitor
+Issuing a GET request to
+
+    /restconf/operational/service-function:service-functions-state/service-function-state/{name}/ 
+
+with "Content-Type" and "Accept" header attributes set to application/json (if authentication is 
+required by RESTCONF, default is admin/admin).
+
+===== More APIs
+More restconf APIs, you can see http://localhost:8181/apidoc/explorer/index.html.
