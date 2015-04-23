@@ -1,0 +1,1405 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aa0d159_fa81054b",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "should this be Algorithm or Algorithms?",
+      "range": {
+        "startLine": 1,
+        "startChar": 32,
+        "endLine": 1,
+        "endChar": 41
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_9a96c193",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "chose?",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 7
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_5a903995",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "algorithms",
+      "range": {
+        "startLine": 7,
+        "startChar": 70,
+        "endLine": 7,
+        "endChar": 79
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_ba937da2",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "scheduling",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 8
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_7a8df57a",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "provided",
+      "range": {
+        "startLine": 8,
+        "startChar": 39,
+        "endLine": 8,
+        "endChar": 53
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_1aeab10f",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "delete \"the structures\"?",
+      "range": {
+        "startLine": 20,
+        "startChar": 15,
+        "endLine": 20,
+        "endChar": 30
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_daf3e908",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "should really be data store, two words",
+      "range": {
+        "startLine": 20,
+        "startChar": 64,
+        "endLine": 20,
+        "endChar": 73
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_faf825e7",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "should really be data store, two words",
+      "range": {
+        "startLine": 23,
+        "startChar": 11,
+        "endLine": 23,
+        "endChar": 20
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_5ae7d940",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "functions? features?\n\nIt sounds weird for an API to provide APIs",
+      "range": {
+        "startLine": 26,
+        "startChar": 28,
+        "endLine": 26,
+        "endChar": 32
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_9add6173",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "should really be data store, two words",
+      "range": {
+        "startLine": 27,
+        "startChar": 7,
+        "endLine": 27,
+        "endChar": 16
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_bada9d76",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "should really be data store, two words",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 9
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_7ae4153b",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "the enabled?",
+      "range": {
+        "startLine": 33,
+        "startChar": 41,
+        "endLine": 33,
+        "endChar": 48
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_1ad15157",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "is it implementation or implementations?",
+      "range": {
+        "startLine": 34,
+        "startChar": 58,
+        "endLine": 34,
+        "endChar": 73
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_3ad68d50",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "remove the comma",
+      "range": {
+        "startLine": 38,
+        "startChar": 15,
+        "endLine": 38,
+        "endChar": 16
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_daca09a1",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "no period, it\u0027s not a complete sentence",
+      "range": {
+        "startLine": 45,
+        "startChar": 66,
+        "endLine": 45,
+        "endChar": 67
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_facfc5ae",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "no period, it\u0027s not a complete sentence",
+      "range": {
+        "startLine": 46,
+        "startChar": 80,
+        "endLine": 46,
+        "endChar": 81
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_9ac48193",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "don\u0027t capitalize this as none of the others are capitalized",
+      "range": {
+        "startLine": 49,
+        "startChar": 20,
+        "endLine": 49,
+        "endChar": 21
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_bac13d82",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "What is this trying to say? If you\u0027re not using it feel free to cut it, but there needs to be some more context here.",
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_7abbb50e",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "Algorithm or Algorithms?",
+      "range": {
+        "startLine": 1,
+        "startChar": 32,
+        "endLine": 1,
+        "endChar": 41
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_3a3d2d90",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "many is less casual",
+      "range": {
+        "startLine": 6,
+        "startChar": 19,
+        "endLine": 6,
+        "endChar": 23
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_9a4b212b",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "a longer",
+      "range": {
+        "startLine": 7,
+        "startChar": 4,
+        "endLine": 7,
+        "endChar": 11
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_1a5f11e7",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "drop \"e.g.\" if you\u0027re going to list all 4",
+      "range": {
+        "startLine": 9,
+        "startChar": 45,
+        "endLine": 9,
+        "endChar": 50
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_3a644db8",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "allow users to choose?",
+      "range": {
+        "startLine": 10,
+        "startChar": 34,
+        "endLine": 10,
+        "endChar": 40
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_9a72417b",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "A user has?",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 30
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_ba6ffd91",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "Postman (it\u0027s capitalized). Do you want to provide links here.",
+      "range": {
+        "startLine": 27,
+        "startChar": 10,
+        "endLine": 27,
+        "endChar": 17
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_5a6cb99c",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "making",
+      "range": {
+        "startLine": 28,
+        "startChar": 2,
+        "endLine": 28,
+        "endChar": 13
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_7a69758a",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "The RESTCONF Northbound...",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 19
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_1a0631cf",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "The MD-SAL data store...",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 16
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_3a0bedd7",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "algorithms?",
+      "range": {
+        "startLine": 35,
+        "startChar": 75,
+        "endLine": 35,
+        "endChar": 84
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_fa14a5f6",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "A user...",
+      "range": {
+        "startLine": 40,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 13
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_baf61dd6",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "Postman (for Google Chrome)",
+      "range": {
+        "startLine": 44,
+        "startChar": 27,
+        "endLine": 44,
+        "endChar": 49
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_5a0359b8",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "RESTClient (for Mozilla Firefox)",
+      "range": {
+        "startLine": 44,
+        "startChar": 53,
+        "endLine": 44,
+        "endChar": 80
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_1a2dd146",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "Do you need this line?",
+      "range": {
+        "startLine": 46,
+        "startChar": 3,
+        "endLine": 46,
+        "endChar": 38
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_3a320da8",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "drop down menu",
+      "range": {
+        "startLine": 80,
+        "startChar": 27,
+        "endLine": 80,
+        "endChar": 34
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_fa2b452e",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "it gets",
+      "range": {
+        "startLine": 95,
+        "startChar": 6,
+        "endLine": 95,
+        "endChar": 12
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_9a20014b",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "no algorithm",
+      "range": {
+        "startLine": 99,
+        "startChar": 9,
+        "endLine": 99,
+        "endChar": 11
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_1ad4f11e",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "a user",
+      "range": {
+        "startLine": 106,
+        "startChar": 56,
+        "endLine": 106,
+        "endChar": 60
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_3ad9ad57",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "are no",
+      "range": {
+        "startLine": 108,
+        "startChar": 6,
+        "endLine": 108,
+        "endChar": 11
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_dadd2944",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "it is flow-based",
+      "range": {
+        "startLine": 117,
+        "startChar": 49,
+        "endLine": 117,
+        "endChar": 65
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_fae26502",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "a user",
+      "range": {
+        "startLine": 127,
+        "startChar": 56,
+        "endLine": 127,
+        "endChar": 60
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_9ae7a112",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "are no",
+      "range": {
+        "startLine": 129,
+        "startChar": 6,
+        "endLine": 129,
+        "endChar": 11
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_bae4dd0d",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "maybe drop this part since it\u0027s not there in the Random one?",
+      "range": {
+        "startLine": 129,
+        "startChar": 68,
+        "endLine": 130,
+        "endChar": 57
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_7aee55ee",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "delete living?",
+      "range": {
+        "startLine": 137,
+        "startChar": 29,
+        "endLine": 137,
+        "endChar": 35
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_5af119cc",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "obtained from",
+      "range": {
+        "startLine": 137,
+        "startChar": 98,
+        "endLine": 138,
+        "endChar": 2
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_1abb91e6",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "VM",
+      "range": {
+        "startLine": 144,
+        "startChar": 7,
+        "endLine": 144,
+        "endChar": 9
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_3ac0cd4f",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "Set up",
+      "range": {
+        "startLine": 151,
+        "startChar": 3,
+        "endLine": 151,
+        "endChar": 8
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_ba929d55",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "where 2 are SFs of type Firewall and 2 are SFs of type Napt44.",
+      "range": {
+        "startLine": 151,
+        "startChar": 15,
+        "endLine": 151,
+        "endChar": 67
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_da820900",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "Name them...",
+      "range": {
+        "startLine": 151,
+        "startChar": 68,
+        "endLine": 152,
+        "endChar": 8
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_ba793d31",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "Is the intent to move this content into AsciiDoc?",
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_1a907142",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "This doesn\u0027t seem to actually say how to install tools to do this. Am I missing something?",
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_fa9ee555",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "How is somebody supposed to use this data?",
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_7aaad571",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "Presumably we don\u0027t want users to actually have to build it, right?",
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_fab585cd",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "These instructions should be how to run it from the integration distribution and so should really just say what features to install.",
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_bac7fd44",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "add a space before the parenthesis",
+      "range": {
+        "startLine": 221,
+        "startChar": 14,
+        "endLine": 221,
+        "endChar": 19
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_3ae3edda",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "add a space before the parenthis",
+      "range": {
+        "startLine": 238,
+        "startChar": 17,
+        "endLine": 238,
+        "endChar": 22
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_dae769e3",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "same comments on building and running as above",
+      "range": {
+        "startLine": 245,
+        "startChar": 0,
+        "endLine": 246,
+        "endChar": 50
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_faeca5c9",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "Should this be labeled with a file name or a description of where to put it?",
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_9ad1e1fd",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 389,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "Should this be labeled with a file name or a description of where to put it?",
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_bace1d59",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 505,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "I\u0027d recommend using bullets (**) instead of letters (..) when a list is broken up since for whatever reason letters tend not to start up again correctly.",
+      "range": {
+        "startLine": 505,
+        "startChar": 0,
+        "endLine": 505,
+        "endChar": 2
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_7ad8951d",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 512,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "what word is this supposed to be? I\u0027m sure it\u0027s not \"linkd\", but I don\u0027t know what it should be.",
+      "range": {
+        "startLine": 512,
+        "startChar": 68,
+        "endLine": 512,
+        "endChar": 73
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_5adb591b",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 512,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "I\u0027d recommend using bullets (**) instead of letters (..) when a list is broken up since for whatever reason letters tend not to start up again correctly.",
+      "range": {
+        "startLine": 512,
+        "startChar": 0,
+        "endLine": 512,
+        "endChar": 2
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_dafe896b",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 517,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "again, do you mean linkd? is that some term that needs explaining?",
+      "range": {
+        "startLine": 517,
+        "startChar": 20,
+        "endLine": 517,
+        "endChar": 25
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_1a05d179",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-sf-scheduler-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 517,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T14:34:07Z",
+      "side": 1,
+      "message": "algorithm will breadth first search",
+      "range": {
+        "startLine": 516,
+        "startChar": 56,
+        "endLine": 517,
+        "endChar": 15
+      },
+      "revId": "7b3de6bd6a43476bb84129288746a6fe41249964",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
