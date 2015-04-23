@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3aa0d159_7a4bb5b0",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sfc/odl-sfc-ovs-dev.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 2138
+      },
+      "writtenOn": "2015-04-23T15:13:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aa0d159_694bf9b0",
+      "range": {
+        "startLine": 4,
+        "startChar": 41,
+        "endLine": 4,
+        "endChar": 52
+      },
+      "revId": "84f95aa88037e7b7297f177b2cc90eb1ca46dba4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aa0d159_c9e80d7f",
         "filename": "manuals/developer-guide/src/main/asciidoc/sfc/odl-sfc-ovs-dev.adoc",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2015-04-22T19:53:07Z",
       "side": 1,
       "message": "SF and SFF haven\u0027t been defined yet. Likely it makes sense to define SF, SFF and other acronyms in the overview of SFC.",
+      "range": {
+        "startLine": 5,
+        "startChar": 61,
+        "endLine": 5,
+        "endChar": 68
+      },
+      "revId": "84f95aa88037e7b7297f177b2cc90eb1ca46dba4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_1ac87121",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sfc/odl-sfc-ovs-dev.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 2138
+      },
+      "writtenOn": "2015-04-23T15:13:36Z",
+      "side": 1,
+      "message": "That\u0027s why I left it without definition. I will propose patch with acronyms definitions in the overview of SFC as you mentioned.",
+      "parentUuid": "3aa0d159_c9e80d7f",
       "range": {
         "startLine": 5,
         "startChar": 61,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "3aa0d159_3acd2d32",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sfc/odl-sfc-ovs-dev.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 2138
+      },
+      "writtenOn": "2015-04-23T15:13:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aa0d159_a9ffc133",
+      "range": {
+        "startLine": 8,
+        "startChar": 14,
+        "endLine": 8,
+        "endChar": 22
+      },
+      "revId": "84f95aa88037e7b7297f177b2cc90eb1ca46dba4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aa0d159_49fcfd3e",
         "filename": "manuals/developer-guide/src/main/asciidoc/sfc/odl-sfc-ovs-dev.adoc",
         "patchSetId": 3
@@ -82,6 +154,30 @@
       "writtenOn": "2015-04-22T19:53:07Z",
       "side": 1,
       "message": "For example, when a new SFF is created, the SFC-OVS plugin will create a new OVS bridge and when a new OVS bridge is created, the SFC-OVS plugin will create a new SFF\u003e",
+      "range": {
+        "startLine": 8,
+        "startChar": 35,
+        "endLine": 9,
+        "endChar": 29
+      },
+      "revId": "84f95aa88037e7b7297f177b2cc90eb1ca46dba4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_dad1a9ce",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sfc/odl-sfc-ovs-dev.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 2138
+      },
+      "writtenOn": "2015-04-23T15:13:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aa0d159_49fcfd3e",
       "range": {
         "startLine": 8,
         "startChar": 35,
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "3aa0d159_fad6e5c4",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sfc/odl-sfc-ovs-dev.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 2138
+      },
+      "writtenOn": "2015-04-23T15:13:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aa0d159_69f9b94c",
+      "range": {
+        "startLine": 12,
+        "startChar": 13,
+        "endLine": 12,
+        "endChar": 24
+      },
+      "revId": "84f95aa88037e7b7297f177b2cc90eb1ca46dba4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aa0d159_89b0c58c",
         "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-ovs-user.adoc",
         "patchSetId": 3
@@ -134,6 +254,24 @@
     },
     {
       "key": {
+        "uuid": "3aa0d159_9adb21ed",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-ovs-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 2138
+      },
+      "writtenOn": "2015-04-23T15:13:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aa0d159_89b0c58c",
+      "revId": "84f95aa88037e7b7297f177b2cc90eb1ca46dba4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aa0d159_a9ad8133",
         "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-ovs-user.adoc",
         "patchSetId": 3
@@ -145,6 +283,30 @@
       "writtenOn": "2015-04-22T19:53:07Z",
       "side": 1,
       "message": "Open vSwitch",
+      "range": {
+        "startLine": 11,
+        "startChar": 53,
+        "endLine": 11,
+        "endChar": 64
+      },
+      "revId": "84f95aa88037e7b7297f177b2cc90eb1ca46dba4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_bad85df0",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-ovs-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 2138
+      },
+      "writtenOn": "2015-04-23T15:13:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aa0d159_a9ad8133",
       "range": {
         "startLine": 11,
         "startChar": 53,
@@ -180,6 +342,30 @@
     },
     {
       "key": {
+        "uuid": "3aa0d159_5ae599a6",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-ovs-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 2138
+      },
+      "writtenOn": "2015-04-23T15:13:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aa0d159_49aabd1a",
+      "range": {
+        "startLine": 15,
+        "startChar": 13,
+        "endLine": 15,
+        "endChar": 24
+      },
+      "revId": "84f95aa88037e7b7297f177b2cc90eb1ca46dba4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aa0d159_897765d4",
         "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-ovs-user.adoc",
         "patchSetId": 3
@@ -191,6 +377,30 @@
       "writtenOn": "2015-04-22T19:53:07Z",
       "side": 1,
       "message": "did you want to call this out with fixed-width font by putting a + on both sides?",
+      "range": {
+        "startLine": 25,
+        "startChar": 28,
+        "endLine": 25,
+        "endChar": 55
+      },
+      "revId": "84f95aa88037e7b7297f177b2cc90eb1ca46dba4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_fa7265e4",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-ovs-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 2138
+      },
+      "writtenOn": "2015-04-23T15:13:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aa0d159_897765d4",
       "range": {
         "startLine": 25,
         "startChar": 28,
@@ -226,6 +436,30 @@
     },
     {
       "key": {
+        "uuid": "3aa0d159_9a77a1d4",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-ovs-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 2138
+      },
+      "writtenOn": "2015-04-23T15:13:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aa0d159_c96d6d06",
+      "range": {
+        "startLine": 26,
+        "startChar": 12,
+        "endLine": 26,
+        "endChar": 23
+      },
+      "revId": "84f95aa88037e7b7297f177b2cc90eb1ca46dba4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aa0d159_e972a9e4",
         "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-ovs-user.adoc",
         "patchSetId": 3
@@ -237,6 +471,30 @@
       "writtenOn": "2015-04-22T19:53:07Z",
       "side": 1,
       "message": "end with another + to get it to be fixed-width",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 48
+      },
+      "revId": "84f95aa88037e7b7297f177b2cc90eb1ca46dba4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_ba74ddcf",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-ovs-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 2138
+      },
+      "writtenOn": "2015-04-23T15:13:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aa0d159_e972a9e4",
       "range": {
         "startLine": 27,
         "startChar": 0,
@@ -272,6 +530,30 @@
     },
     {
       "key": {
+        "uuid": "3aa0d159_ba5b7d53",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-ovs-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 2138
+      },
+      "writtenOn": "2015-04-23T15:13:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aa0d159_a974a1cf",
+      "range": {
+        "startLine": 38,
+        "startChar": 2,
+        "endLine": 38,
+        "endChar": 13
+      },
+      "revId": "84f95aa88037e7b7297f177b2cc90eb1ca46dba4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aa0d159_c9448d76",
         "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-ovs-user.adoc",
         "patchSetId": 3
@@ -283,6 +565,30 @@
       "writtenOn": "2015-04-22T19:53:07Z",
       "side": 1,
       "message": "RESTCONF",
+      "range": {
+        "startLine": 50,
+        "startChar": 12,
+        "endLine": 50,
+        "endChar": 20
+      },
+      "revId": "84f95aa88037e7b7297f177b2cc90eb1ca46dba4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_5a81198e",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-ovs-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 2138
+      },
+      "writtenOn": "2015-04-23T15:13:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aa0d159_c9448d76",
       "range": {
         "startLine": 50,
         "startChar": 12,
@@ -318,6 +624,30 @@
     },
     {
       "key": {
+        "uuid": "3aa0d159_7a7e55b0",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-ovs-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 2138
+      },
+      "writtenOn": "2015-04-23T15:13:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aa0d159_49815d8e",
+      "range": {
+        "startLine": 63,
+        "startChar": 2,
+        "endLine": 63,
+        "endChar": 13
+      },
+      "revId": "84f95aa88037e7b7297f177b2cc90eb1ca46dba4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aa0d159_697e99b0",
         "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-ovs-user.adoc",
         "patchSetId": 3
@@ -329,6 +659,30 @@
       "writtenOn": "2015-04-22T19:53:07Z",
       "side": 1,
       "message": "Open vSwitch",
+      "range": {
+        "startLine": 84,
+        "startChar": 55,
+        "endLine": 84,
+        "endChar": 66
+      },
+      "revId": "84f95aa88037e7b7297f177b2cc90eb1ca46dba4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_1a4b9188",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-ovs-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 2138
+      },
+      "writtenOn": "2015-04-23T15:13:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aa0d159_697e99b0",
       "range": {
         "startLine": 84,
         "startChar": 55,
@@ -364,6 +718,30 @@
     },
     {
       "key": {
+        "uuid": "3aa0d159_3a50cd31",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-ovs-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 2138
+      },
+      "writtenOn": "2015-04-23T15:13:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aa0d159_094b5588",
+      "range": {
+        "startLine": 90,
+        "startChar": 66,
+        "endLine": 90,
+        "endChar": 70
+      },
+      "revId": "84f95aa88037e7b7297f177b2cc90eb1ca46dba4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aa0d159_29509131",
         "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-ovs-user.adoc",
         "patchSetId": 3
@@ -375,6 +753,30 @@
       "writtenOn": "2015-04-22T19:53:07Z",
       "side": 1,
       "message": "RESTCONF",
+      "range": {
+        "startLine": 91,
+        "startChar": 27,
+        "endLine": 91,
+        "endChar": 35
+      },
+      "revId": "84f95aa88037e7b7297f177b2cc90eb1ca46dba4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_da444976",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-ovs-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 2138
+      },
+      "writtenOn": "2015-04-23T15:13:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aa0d159_29509131",
       "range": {
         "startLine": 91,
         "startChar": 27,
