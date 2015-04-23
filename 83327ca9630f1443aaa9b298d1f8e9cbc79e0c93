@@ -1,0 +1,291 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aa0d159_b4515464",
+        "filename": "manuals/developer-guide/src/main/asciidoc/didm/didm-dev.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T02:07:03Z",
+      "side": 1,
+      "message": "It\u0027s not clear why feature/features is in quotes everywhere. It\u0027s true that we use the word feature to mean Karaf feature pretty much everywhere else, which makes things confusing, but putting it in quotes seems to just make things more confusing.",
+      "revId": "83327ca9630f1443aaa9b298d1f8e9cbc79e0c93",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_d483c0ca",
+        "filename": "manuals/developer-guide/src/main/asciidoc/didm/didm-dev.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T02:07:03Z",
+      "side": 1,
+      "message": "Device-specific",
+      "range": {
+        "startLine": 5,
+        "startChar": 47,
+        "endLine": 5,
+        "endChar": 62
+      },
+      "revId": "83327ca9630f1443aaa9b298d1f8e9cbc79e0c93",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_347f84e2",
+        "filename": "manuals/developer-guide/src/main/asciidoc/didm/didm-dev.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T02:07:03Z",
+      "side": 1,
+      "message": "device-specific",
+      "range": {
+        "startLine": 5,
+        "startChar": 16,
+        "endLine": 5,
+        "endChar": 31
+      },
+      "revId": "83327ca9630f1443aaa9b298d1f8e9cbc79e0c93",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_f4883ce9",
+        "filename": "manuals/developer-guide/src/main/asciidoc/didm/didm-dev.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T02:07:03Z",
+      "side": 1,
+      "message": "is it flow_mod, flowmod, FLOW_MOD, Flowmod, or FlowMod?\n\nThis should be changed everywhere.",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 8
+      },
+      "revId": "83327ca9630f1443aaa9b298d1f8e9cbc79e0c93",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_b46ab418",
+        "filename": "manuals/developer-guide/src/main/asciidoc/didm/didm-dev.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T02:07:03Z",
+      "side": 1,
+      "message": "Device-specific",
+      "range": {
+        "startLine": 9,
+        "startChar": 14,
+        "endLine": 9,
+        "endChar": 29
+      },
+      "revId": "83327ca9630f1443aaa9b298d1f8e9cbc79e0c93",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_147a88f1",
+        "filename": "manuals/developer-guide/src/main/asciidoc/didm/didm-dev.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T02:07:03Z",
+      "side": 1,
+      "message": "Would it be possible to replace this with real text? If not, at least replace it with a TODO.",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 78
+      },
+      "revId": "83327ca9630f1443aaa9b298d1f8e9cbc79e0c93",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_5477b002",
+        "filename": "manuals/developer-guide/src/main/asciidoc/didm/didm-dev.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T02:07:03Z",
+      "side": 1,
+      "message": "controller, no caps needed",
+      "range": {
+        "startLine": 22,
+        "startChar": 59,
+        "endLine": 22,
+        "endChar": 69
+      },
+      "revId": "83327ca9630f1443aaa9b298d1f8e9cbc79e0c93",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_14612839",
+        "filename": "manuals/developer-guide/src/main/asciidoc/didm/didm-dev.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T02:07:03Z",
+      "side": 1,
+      "message": "why is discovery in quotes?",
+      "range": {
+        "startLine": 24,
+        "startChar": 60,
+        "endLine": 24,
+        "endChar": 71
+      },
+      "revId": "83327ca9630f1443aaa9b298d1f8e9cbc79e0c93",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_3466a452",
+        "filename": "manuals/developer-guide/src/main/asciidoc/didm/didm-dev.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T02:07:03Z",
+      "side": 1,
+      "message": "why is manual in quotes?",
+      "range": {
+        "startLine": 26,
+        "startChar": 30,
+        "endLine": 26,
+        "endChar": 38
+      },
+      "revId": "83327ca9630f1443aaa9b298d1f8e9cbc79e0c93",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_f45fdc70",
+        "filename": "manuals/developer-guide/src/main/asciidoc/didm/didm-dev.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T02:07:03Z",
+      "side": 1,
+      "message": "does this want to be it\u0027s own bullet? Like this:\n\n* *Driver Registration*",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 19
+      },
+      "revId": "83327ca9630f1443aaa9b298d1f8e9cbc79e0c93",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_94545855",
+        "filename": "manuals/developer-guide/src/main/asciidoc/didm/didm-dev.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T02:07:03Z",
+      "side": 1,
+      "message": "All previous bullets were noun phrases. Can we make them verb phrases or the last two noun phrases?",
+      "range": {
+        "startLine": 33,
+        "startChar": 4,
+        "endLine": 33,
+        "endChar": 10
+      },
+      "revId": "83327ca9630f1443aaa9b298d1f8e9cbc79e0c93",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_544ed0c2",
+        "filename": "manuals/developer-guide/src/main/asciidoc/didm/didm-dev.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T02:07:03Z",
+      "side": 1,
+      "message": "All previous bullets were noun phrases. Can we make them verb phrases or the last two noun phrases?",
+      "range": {
+        "startLine": 37,
+        "startChar": 4,
+        "endLine": 37,
+        "endChar": 10
+      },
+      "revId": "83327ca9630f1443aaa9b298d1f8e9cbc79e0c93",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_744bccb0",
+        "filename": "manuals/user-guide/src/main/asciidoc/didm/didm-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T02:07:03Z",
+      "side": 1,
+      "message": "See comments on the nearly identical other file.",
+      "revId": "83327ca9630f1443aaa9b298d1f8e9cbc79e0c93",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
