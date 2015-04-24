@@ -1,0 +1,154 @@
+
+L3VPN Service: Provisioning sequence
+-------------------------------------
+
+Prerequisites:
+~~~~~~~~~~~~
+
+1. BGP stack with VRF support needs to downloaded and configured
+
+a. _BGP Configuration paramters:_
+
+    ** configure BGP Router
+
+    - /bgp:bgp-router/ *local-as-identifier*
+
+    - /bgp:bgp-router/ *local-as-number*
+
+    ** Configure Bgp neighbors
+
+    - /bgp:bgp-neighbors/bgp-neighbor/`{as-number}`/ *as-number*
+
+    - /bgp:bgp-neighbors/bgp-neighbor/`{as-number}`/ *ip-address*
+
+
+2. Create pairs of GRE/VxLAN Tunnels (using ovsdb) between each switch and between each switch to the Gateway node
+a. _Create 'l3tunnel' interfaces corresponding to each tunnel in interfaces DS as specified in Step 2 below._
+
+Step 1 : OS Create Neutron Ports and attach VMs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<TBD>
+
+Step 2 : Create Interfaces
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+/if:interfaces/interface/*name* <--- same as node-connector-id/unique name
+
+/if:interfaces/interface/*type* <--- untagged/l2vlan/stacked_vlan/l3tunnel/mpls
+
+/if:interfaces/interface/*enabled* <--- true
+
+/if:interfaces/interface/*of-port-id* <-- dpn: portname
+
+/if:interfaces/interface/*tenant-id* <-- owner of interface (optional)
+
+/if:interfaces/interface/*base-interface* <-- parent interface (optional)
+
+Also populate type specific interface parameters
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+when type = _l2vlan_
+
+/if:interfaces/interface/*vlan-id* <-- vlan tag
+
+when type = _stacked-vlan_
+
+/if:interfaces/interface/*stacked-vlan-id* <-- stag
+
+[quote]
+parent vlan interface must be configured in base-interface
+
+when type = _l3tunnel_
+
+/if:interfaces/interface/*tunnel-type* <-- tunnel-type-gre or tunnel-type-vxlan
+
+/if:interfaces/interface/*local-ip* <-- local Endpoint IpAddress
+
+/if:interfaces/interface/*remote-ip* <-- Remote Endpoint IpAddress
+
+/if:interfaces/interface/*gateway-ip* <-- gateway ip for Remote
+
+when type = _mpls_
+
+/if:interfaces/interface/*labelStack* <-- List of labels
+
+/if:interfaces/interface/*numLabels* <-- number of labels specified
+
+_Following is expected as a result of these configurations_
+
+1. Unique If-index is generated and
+2. 'Interface-state' operational DS is updated
+3. If type is l3tunnel, corresponding Nexthop Group Entry is created
+
+
+Step 2: Create VPN Instance
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/l3vpn:vpn-instances/vpn-instance/ *vpn-instance-name*
+
+/l3vpn:vpn-instances/vpn-instance/ipv4-family/ *route-distinguisher* <-- RD value for VPN
+
+/l3vpn:vpn-instances/vpn-instance/ipv4-family/ *import-route-policy* <-- Provide coma separated list of Import Route_Targets
+
+/l3vpn:vpn-instances/vpn-instance/ipv4-family/ *export-route-policy* <-- Provide coma separated list of Export Route_Targets
+
+_Following is expected as a result of these configurations_
+
+1. VPN ID is allocated and updated in data-store
+2. Corresponding VRF is created in BGP
+3. If there are vpn-interface configurations for this VPN, corresponding action is taken as defined in step 5
+
+Step 5 : Create VPN-Interface and local adjacency
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+_this can be done in two steps as well_
+
+create vpn-interface
+^^^^^^^^^^^^^^^^^^^^
+
+/l3vpn:vpn-interfaces/vpn-interface/*name* <--- same as interface name
+
+/l3vpn:vpn-interfaces/vpn-interface/*vpn-instance-name* <--- vpn_name
+
+Add Adjacencies on vpn-interafce
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+/l3vpn:vpn-interfaces/vpn-interface/_name_/adjacency/*ip_address* <--- of VM(s)
+
+[quote]
+its a list, user can define more than one adjacency on a vpn_interface
+
+/l3vpn:vpn-interfaces/vpn-interface/_name_/adjacency/*mac_address* <--- of VM(s)
+
+[quote]
+its a list, user can define more than one adjacency on a vpn_interface
+
+_Following is expected as a result of these configurations_
+
+1. Prefix label is generated and stored in DS
+2. Ingress table is programmed with flow corresponding to interface
+3. Local Egress Group is created
+4. FIB Entry flow is added to FIB Table in OF pipeline
+5. Prefix is added to BGP for advertisement
+
+Step 6 : BGP pushes route update to FIB YANG Interface
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+/odl-l3vpn:fib-list/fib-entry/ *dst_prefix*
+
+/odl-l3vpn:fib-list/fib-entry/ *route_distinguisher*
+
+/odl-l3vpn:fib-list/fib-entry/ *label* (key)
+
+/odl-l3vpn:fib-list/fib-entry/ *next-hop-ip*
+
+_FIB Manager listens to this change in FIB Data Store and does following_
+
+1. Get nextHop pointer (groupId) from nextHop Manager
+2. Installs the FIB/LFIB entry on all DPNs
+    * If NextHop belongs to this DPN
+        - Add LFIB Table flow
+    * If NextHop belongs to other DPN
+        - Add FIB Table flow
+
+_VPN Manager listens to change in FIB Data Store and does following_
+
+1. Find vpn-instance corresponding to RD
+
+2. Add rout-entry-id to vpn-route-list
