@@ -1,0 +1,335 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aa0d159_cc5c9028",
+        "filename": "manuals/user-guide/src/main/asciidoc/vpnservice/vpnservice-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:27:30Z",
+      "side": 1,
+      "message": "Overall, this winds up being 3 pages which seem pretty tough to follow. I doubt that somebody could follow these instructions without being deeply familiar with the relevant material.\n\nAlso, you appear to be using syntax for headings that is valid, but different from other projects which makes it hard for me to debug why some of your sections aren\u0027t formatting correctly. I find it\u0027s easier t use the \u003ds syntax here: http://powerman.name/doc/asciidoc#_headers",
+      "revId": "6584fe6861a355a7de915d84a62d4f3ad1d52369",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_ec262cba",
+        "filename": "manuals/user-guide/src/main/asciidoc/vpnservice/vpnservice-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:27:30Z",
+      "side": 1,
+      "message": "Do you want the chapter to be called \"provisioning sequence\" or just to describe what you\u0027re doing in the chapter?",
+      "range": {
+        "startLine": 2,
+        "startChar": 15,
+        "endLine": 2,
+        "endChar": 36
+      },
+      "revId": "6584fe6861a355a7de915d84a62d4f3ad1d52369",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_f1184386",
+        "filename": "manuals/user-guide/src/main/asciidoc/vpnservice/vpnservice-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:27:30Z",
+      "side": 1,
+      "message": "Somehow this isn\u0027t formatting as a section, so things start with step 2.",
+      "revId": "6584fe6861a355a7de915d84a62d4f3ad1d52369",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_710c3343",
+        "filename": "manuals/user-guide/src/main/asciidoc/vpnservice/vpnservice-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:27:30Z",
+      "side": 1,
+      "message": "where are these paths relative to?",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 65
+      },
+      "revId": "6584fe6861a355a7de915d84a62d4f3ad1d52369",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_111e0f71",
+        "filename": "manuals/user-guide/src/main/asciidoc/vpnservice/vpnservice-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:27:30Z",
+      "side": 1,
+      "message": "Did you mean for this to be italicized?",
+      "range": {
+        "startLine": 26,
+        "startChar": 3,
+        "endLine": 26,
+        "endChar": 109
+      },
+      "revId": "6584fe6861a355a7de915d84a62d4f3ad1d52369",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_512c97ab",
+        "filename": "manuals/user-guide/src/main/asciidoc/vpnservice/vpnservice-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:27:30Z",
+      "side": 1,
+      "message": "Somehow this isn\u0027t formatting as a section so, things start with Step 2.",
+      "revId": "6584fe6861a355a7de915d84a62d4f3ad1d52369",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_9109bf33",
+        "filename": "manuals/user-guide/src/main/asciidoc/vpnservice/vpnservice-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:27:30Z",
+      "side": 1,
+      "message": "Where are all of these paths relative to?",
+      "revId": "6584fe6861a355a7de915d84a62d4f3ad1d52369",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_b112bb60",
+        "filename": "manuals/user-guide/src/main/asciidoc/vpnservice/vpnservice-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:27:30Z",
+      "side": 1,
+      "message": "This doesn\u0027t format well because the \u003c- tries to translate to an arrow that our toolchain doesn\u0027t produce in PDF well. You can fix that by doing \u003c --- with a space.",
+      "range": {
+        "startLine": 34,
+        "startChar": 32,
+        "endLine": 34,
+        "endChar": 36
+      },
+      "revId": "6584fe6861a355a7de915d84a62d4f3ad1d52369",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_d1174750",
+        "filename": "manuals/user-guide/src/main/asciidoc/vpnservice/vpnservice-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:27:30Z",
+      "side": 1,
+      "message": "why only -- instead of --- at this point?",
+      "range": {
+        "startLine": 40,
+        "startChar": 39,
+        "endLine": 40,
+        "endChar": 41
+      },
+      "revId": "6584fe6861a355a7de915d84a62d4f3ad1d52369",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_3106ab21",
+        "filename": "manuals/user-guide/src/main/asciidoc/vpnservice/vpnservice-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:27:30Z",
+      "side": 1,
+      "message": "This is not being formatted as a section.",
+      "revId": "6584fe6861a355a7de915d84a62d4f3ad1d52369",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_5103370f",
+        "filename": "manuals/user-guide/src/main/asciidoc/vpnservice/vpnservice-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:27:30Z",
+      "side": 1,
+      "message": "Maybe call all of these tags out as bullets to separate them from the normal text?",
+      "revId": "6584fe6861a355a7de915d84a62d4f3ad1d52369",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_8c10c84f",
+        "filename": "manuals/user-guide/src/main/asciidoc/vpnservice/vpnservice-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:27:30Z",
+      "side": 1,
+      "message": "IpAddress?",
+      "range": {
+        "startLine": 67,
+        "startChar": 50,
+        "endLine": 67,
+        "endChar": 52
+      },
+      "revId": "6584fe6861a355a7de915d84a62d4f3ad1d52369",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_ecff0c00",
+        "filename": "manuals/user-guide/src/main/asciidoc/vpnservice/vpnservice-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:27:30Z",
+      "side": 1,
+      "message": "Make this a subsection instead of just italics?",
+      "revId": "6584fe6861a355a7de915d84a62d4f3ad1d52369",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_cc0ed034",
+        "filename": "manuals/user-guide/src/main/asciidoc/vpnservice/vpnservice-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:27:30Z",
+      "side": 1,
+      "message": "expand?",
+      "range": {
+        "startLine": 78,
+        "startChar": 33,
+        "endLine": 78,
+        "endChar": 35
+      },
+      "revId": "6584fe6861a355a7de915d84a62d4f3ad1d52369",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_6c3a1ccf",
+        "filename": "manuals/user-guide/src/main/asciidoc/vpnservice/vpnservice-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:27:30Z",
+      "side": 1,
+      "message": "What happened to steps 3 and 4?",
+      "revId": "6584fe6861a355a7de915d84a62d4f3ad1d52369",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_2c3414dd",
+        "filename": "manuals/user-guide/src/main/asciidoc/vpnservice/vpnservice-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:27:30Z",
+      "side": 1,
+      "message": "If you made the paths bullets, you probably wouldn\u0027t need the indentation from the quote.",
+      "revId": "6584fe6861a355a7de915d84a62d4f3ad1d52369",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_4c3160eb",
+        "filename": "manuals/user-guide/src/main/asciidoc/vpnservice/vpnservice-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:27:30Z",
+      "side": 1,
+      "message": "If you made the paths bullets, you probably wouldn\u0027t need the indentation from the quote.",
+      "revId": "6584fe6861a355a7de915d84a62d4f3ad1d52369",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
