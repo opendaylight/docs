@@ -1,0 +1,1336 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aa0d159_b1dddb44",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bk-developers-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "Can you avoid having an extra space here?",
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_11c04f4f",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/VTN_Manager_Lithium_Hacking.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "You don\u0027t actually need to have the \"[source,perl]\" line above code listing blocks. Just putting them between 4 -s will work.\n\nDo you have to give instructions on how to build and use the Karaf distribution from inside the VTN project? We will be providing the release version of the integration karaf distribution, which should work and is the official released version of OpenDaylight. It would be better if the instructions could be written from that perspective.\n\nIf that\u0027s not possible, then this is fine.",
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_31f1cbcd",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/VTN_Manager_Lithium_Hacking.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "add a space before the parenthesis: \"Manager (Lithium)\"",
+      "range": {
+        "startLine": 1,
+        "startChar": 16,
+        "endLine": 1,
+        "endChar": 32
+      },
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_71ce7385",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/VTN_Manager_Lithium_Hacking.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "Do you need to tell people how to install from source code for the developer\u0027s guide? Shouldn\u0027t they be using the Lithium release downloads instead?",
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_b1b4fbf2",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/VTN_Manager_Lithium_Hacking.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "It\u0027s probably OK to just include the https version, right?",
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_d19e6756",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/VTN_Manager_Lithium_Hacking.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "The way this formats \"Build\" replaces \"Note\" and it looks kind of funny. You could probably remove the \".Build\" line.",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 6
+      },
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_91a0df91",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/VTN_Manager_Lithium_Hacking.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "Did you want this to be a code listing? If so you need to replace remove the asterisks and use the same style as above for the previous cd and mvn lines.",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 13
+      },
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_31ad4b89",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/VTN_Manager_Lithium_Hacking.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "You need a blank line before this and to use NOTE instead of Note if you actually want this to format as a note.",
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_118e0f2f",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/VTN_Manager_Lithium_Hacking.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "Do you actually want this to all be inside a \"NOTE\"?\n\nRight now it is not formatted as a bulleted list because it\u0027s inside the NOTE.",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 88
+      },
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_f1b603dc",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/VTN_Manager_Lithium_Hacking.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "Do you want this to be a single bullet or just a normal paragraph?",
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_51aa5771",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/VTN_Manager_Lithium_Hacking.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "You need a blank line before this if you want it to appear as a code listing.",
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_d1b507ce",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/VTN_Manager_Lithium_Hacking.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "It seems like the REST API is actually documentation for external developers, not people who are looking to hack on the VTN manager. In that case, should it go in another section?",
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_91f53f85",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn-dev.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "You could leave this as VTN or change it to Virtual Tenant Network (VTN). The latter might fit better with how other projects have done things.",
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_71caf350",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn-dev.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "Presumably you want to remove this include (and maybe the .adoc file) since you have a Lithium version of the same content below.",
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_51c1f72c",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "It\u0027s not required, but it\u0027s a lot easier to review docs when they\u0027re line wrapped to about 80 characters.\n\nAvoid using ODL as it\u0027s not formal and instead use the full OpenDaylight in the text.\n\nI\u0027m not sure if I\u0027ve caught all the places you had \"co ordinator\" instead of \"coordinator\" and all the places you had \"OpenDayLight\" instead of \"OpenDaylight\".\n\nLastly, this file should probably be renamed (with git mv) to vtn-overview.adoc.",
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_71f8b37c",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "My guess is that you want to remove this line and just use the chapter heading in vtn-dev.adoc. Then you\u0027d probably wan to reduce the level of headings in this doc.",
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_91c77f45",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "You will want to put blank lines between the paragraphs to get them to format correctly.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 751
+      },
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_31f22b9b",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "You need a space after the period and before OpenDaylight",
+      "range": {
+        "startLine": 9,
+        "startChar": 534,
+        "endLine": 9,
+        "endChar": 548
+      },
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_31c46b3f",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "If you add a width\u003d500 inside the square brackets, it will keep make the image a nicer size for the document.",
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_f12b63e9",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "This seems like a sentence fragment that lost it\u0027s beginning.",
+      "range": {
+        "startLine": 21,
+        "startChar": 247,
+        "endLine": 21,
+        "endChar": 332
+      },
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_b135db47",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "Coordinator should be one word.",
+      "range": {
+        "startLine": 21,
+        "startChar": 456,
+        "endLine": 21,
+        "endChar": 468
+      },
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_51efb7b0",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "for a",
+      "range": {
+        "startLine": 21,
+        "startChar": 78,
+        "endLine": 21,
+        "endChar": 80
+      },
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_913c5f31",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "This should be one word and have a space before the parenthesis: \"Coordinator (TC)\"",
+      "range": {
+        "startLine": 29,
+        "startChar": 14,
+        "endLine": 29,
+        "endChar": 30
+      },
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_5146d7c0",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "An not A",
+      "range": {
+        "startLine": 48,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 1
+      },
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_11184fd2",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "Need a space before VTN Manager.",
+      "range": {
+        "startLine": 48,
+        "startChar": 193,
+        "endLine": 48,
+        "endChar": 204
+      },
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_b10cfb95",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "OpenDaylight not OpenDayLight",
+      "range": {
+        "startLine": 48,
+        "startChar": 241,
+        "endLine": 48,
+        "endChar": 253
+      },
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_3149cbd0",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "OpenDaylight not OpenDayLight",
+      "range": {
+        "startLine": 48,
+        "startChar": 2,
+        "endLine": 48,
+        "endChar": 14
+      },
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_d11187ad",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "One word.",
+      "range": {
+        "startLine": 62,
+        "startChar": 6,
+        "endLine": 62,
+        "endChar": 18
+      },
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_71267318",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "Remove this line.",
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_117fefe1",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "Right now these format as \"the section called \"Web Server\"\" and \"the section called \"VTN Service Java API Library\". If you want to change how they format you can put alternate text after a comma:\n\n\u003c\u003c_web_server,Web Server\u003e\u003e",
+      "range": {
+        "startLine": 73,
+        "startChar": 0,
+        "endLine": 74,
+        "endChar": 35
+      },
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_b1839bcb",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "you probably want to add a comma and the exact link text you want",
+      "range": {
+        "startLine": 88,
+        "startChar": 14,
+        "endLine": 88,
+        "endChar": 47
+      },
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_d188a7e9",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "you can add an option cols\u003d\"X%,Y%\" to this to better balance the two columns. It looks like 30/70 might be a better split than the default 50/50. That would look like:\n\n[options\u003d\"header\",cols\u003d\"30%,70%\"]",
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_916a1f19",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "Again, you probably want to control the exact link text.",
+      "range": {
+        "startLine": 98,
+        "startChar": 158,
+        "endLine": 98,
+        "endChar": 191
+      },
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_f1604337",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "Same advice here with cols\u003d\"X%,Y%\"",
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_b15abb81",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "Again, the links probably want to have their link text set precisely in this table.",
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_314eabc2",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "control link text",
+      "range": {
+        "startLine": 164,
+        "startChar": 25,
+        "endLine": 164,
+        "endChar": 58
+      },
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_514b37b0",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "same advice about cols\u003d",
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_b1d15bcf",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "one word",
+      "range": {
+        "startLine": 193,
+        "startChar": 12,
+        "endLine": 193,
+        "endChar": 25
+      },
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_11cdaf31",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "one word",
+      "range": {
+        "startLine": 195,
+        "startChar": 60,
+        "endLine": 195,
+        "endChar": 72
+      },
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_f1c7e310",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "same advice about cols\u003d",
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_d1d667c5",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "add a space between UPLL and modules",
+      "range": {
+        "startLine": 221,
+        "startChar": 71,
+        "endLine": 221,
+        "endChar": 82
+      },
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_71dbd3ed",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "\"e.g.,\" not \"eg:\"",
+      "range": {
+        "startLine": 222,
+        "startChar": 110,
+        "endLine": 222,
+        "endChar": 113
+      },
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_91d8dff0",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "\"an interface\" or \"interfaces\" not just \"interface\"",
+      "range": {
+        "startLine": 225,
+        "startChar": 10,
+        "endLine": 225,
+        "endChar": 19
+      },
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_31e54ba8",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "You can continue the bullet by replacing this blank line with a line containing only a plus: +",
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_f1ee038b",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "Some with this line, make it a plus: +",
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_b1e87b7d",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "add cols\u003d",
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_7102f33f",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "replace blank line with a +",
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_91ff7f34",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "replace with +",
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_31fc6b3e",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "add cols\u003d",
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_51f9f74b",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "Same with +s on the blank lines and adding cols\u003d",
+      "range": {
+        "startLine": 268,
+        "startChar": 0,
+        "endLine": 272,
+        "endChar": 18
+      },
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_f195a3e4",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "Same with +s on the blank lines and adding cols\u003d",
+      "range": {
+        "startLine": 280,
+        "startChar": 0,
+        "endLine": 288,
+        "endChar": 18
+      },
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_f1bcc36e",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "Normally this is Create/Read/Update/Delete to make it spell CRUD.",
+      "range": {
+        "startLine": 293,
+        "startChar": 26,
+        "endLine": 293,
+        "endChar": 51
+      },
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_11c28fe9",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "Normally this is Create/Read/Update/Delete to make it spell CRUD.",
+      "range": {
+        "startLine": 294,
+        "startChar": 26,
+        "endLine": 294,
+        "endChar": 51
+      },
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_b1b63b89",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "Normally this is Create/Read/Update/Delete to make it spell CRUD.",
+      "range": {
+        "startLine": 295,
+        "startChar": 27,
+        "endLine": 295,
+        "endChar": 52
+      },
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_119b6f19",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "What does DAL stand for? You haven\u0027t used it before.",
+      "range": {
+        "startLine": 303,
+        "startChar": 2,
+        "endLine": 303,
+        "endChar": 5
+      },
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_519017ec",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "Normally this is Create/Read/Update/Delete to make it spell CRUD.",
+      "range": {
+        "startLine": 314,
+        "startChar": 41,
+        "endLine": 314,
+        "endChar": 66
+      },
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_d1a42759",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "add cols\u003d",
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_718993c9",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 357,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "add cols\u003d",
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_91869fb8",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "you probably don\u0027t want a space after the parenthesis",
+      "range": {
+        "startLine": 360,
+        "startChar": 65,
+        "endLine": 360,
+        "endChar": 67
+      },
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_31930bfc",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "you never close these parentheses.",
+      "range": {
+        "startLine": 361,
+        "startChar": 62,
+        "endLine": 361,
+        "endChar": 63
+      },
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_91745fd0",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 401,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "I haven\u0027t been able to figure out how to get bullets inside a table. If you can\u0027t get it to format correctly either, my recommendation is to do inline numbers like: \"(1) Processes the configuration and capability file. (2) Responsible for sending alarm to node manager. (3) Responsible for receiving requests from north bound.\"",
+      "range": {
+        "startLine": 397,
+        "startChar": 9,
+        "endLine": 401,
+        "endChar": 57
+      },
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_517ed7af",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 405,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "specify exact link text",
+      "range": {
+        "startLine": 405,
+        "startChar": 109,
+        "endLine": 405,
+        "endChar": 142
+      },
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_f14a8382",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 416,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "Do you want to leave this on the wiki or migrate it to AsciiDoc? The disadvantage to leaving it on the wiki is that if you change it on the wiki after the Lithium release, then the content will change and it will be hard for a user to to know that they\u0027re looking at newer content.",
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_11e36fda",
+        "filename": "manuals/install-guide/src/main/asciidoc/vtn/vtn-install.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "This is just a copy of the general installation guide. It should be a single chapter explaining just the extra instructions needed for VTN.",
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_b144fb74",
+        "filename": "manuals/user-guide/src/main/asciidoc/bk-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "This should go in the Addons list.",
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_11504f31",
+        "filename": "manuals/user-guide/src/main/asciidoc/vtn/vtn-user.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-24T20:05:56Z",
+      "side": 1,
+      "message": "Do you want this to be Virtual Tenant Network (VTN)?",
+      "revId": "d0df97e6013887f49048424457440faf8f834c97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
