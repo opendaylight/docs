@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aa0d159_55d1e055",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sfc/odl-sfc-load-balance-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 3511
+      },
+      "writtenOn": "2015-04-26T07:44:55Z",
+      "side": 1,
+      "message": "in the randerer-path model",
+      "revId": "466a0fe5df6743d659622b4d3c2818bf2aab7699",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_35d0d44f",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sfc/odl-sfc-load-balance-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 3511
+      },
+      "writtenOn": "2015-04-26T07:44:55Z",
+      "side": 1,
+      "message": "i think that it will be good to have an example for each one of them",
+      "revId": "466a0fe5df6743d659622b4d3c2818bf2aab7699",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_75d65c51",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sfc/odl-sfc-load-balance-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 3511
+      },
+      "writtenOn": "2015-04-26T07:44:55Z",
+      "side": 1,
+      "message": "can be one of the types: ALL, SELECT, INDIRECT, FAST_FAILURE",
+      "revId": "466a0fe5df6743d659622b4d3c2818bf2aab7699",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_15cb58a6",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sfc/odl-sfc-load-balance-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 3511
+      },
+      "writtenOn": "2015-04-26T07:44:55Z",
+      "side": 1,
+      "message": "i added a new attribute (groupId) that is part of my next commit",
+      "revId": "466a0fe5df6743d659622b4d3c2818bf2aab7699",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_f5c10c81",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sfc/odl-sfc-load-balance-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 3511
+      },
+      "writtenOn": "2015-04-26T07:44:55Z",
+      "side": 1,
+      "message": "please add how to create a scenario that will trigger a creation of SP build from groups. (create a path where all elements has a corresponding group)",
+      "revId": "466a0fe5df6743d659622b4d3c2818bf2aab7699",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_95be88fe",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sfc/odl-sfc-load-balance-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 3511
+      },
+      "writtenOn": "2015-04-26T07:44:55Z",
+      "side": 1,
+      "message": "add a section for OpenFlow where we create the groups and apply rules on the switches",
+      "revId": "466a0fe5df6743d659622b4d3c2818bf2aab7699",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_d5c41094",
+        "filename": "manuals/user-guide/src/main/asciidoc/sfc/odl-sfc-load-balance-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 3511
+      },
+      "writtenOn": "2015-04-26T07:44:55Z",
+      "side": 1,
+      "message": "missing type",
+      "revId": "466a0fe5df6743d659622b4d3c2818bf2aab7699",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
