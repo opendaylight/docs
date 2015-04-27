@@ -1,77 +1,36 @@
 == Using the OpenDaylight User Interface (DLUX)
 
-This section introduces you to the OpenDaylight User Experience (DLUX) application. DLUX is an openflow network management application for Opendaylight controller. For detailed information about Opendaylight overview and architecture, see https://wiki.opendaylight.org/view/OpenDaylight_Controller:Overview[Opendaylight Overview], https://wiki.opendaylight.org/view/OpenDaylight_Controller:Architectural_Framework[Opendaylight Architecture]. +
-
-OpendaylightController has two interfaces namely: +
-
-* AD-SAL
-* MD-SAL
-
-Controller receives information from the various https://wiki.opendaylight.org/view/File:ODL-Helium-dependency.png[interdependent modules] through the SAL services. For more information about the SAL services available, see https://wiki.opendaylight.org/view/OpenDaylight_Controller:SAL[SAL Services].
-DLUX also uses the SAL services to obtain network related information and use it to provide network management capabilities.
+This section introduces you to the OpenDaylight User Experience (DLUX) application.
 
 === Getting Started with DLUX
 
-You can either use DLUX as a stand-alone plug-in or integrate with the Opendaylight controller. +
-
-To install DLUX as a standalone application see https://wiki.opendaylight.org/view/OpenDaylight_DLUX:Setup_and_Run[OpenDaylight DLUX:Setup and Run]. +
-
-To integrate with Opendaylight Controller you must enable DLUX Karaf feature. You can enable adsal, md sal and various other bundles within Karaf depending on the features you would like to access using DLUX.
-Each feature can be enabled or disabled separately.
-
-IMPORTANT: Ensure that you have created a topology and enabled MD-SAL feature in the Karaf distribution before you use DLUX for network management.
-
-For more information about enabling the Karaf features for DLUX, see https://wiki.opendaylight.org/view/OpenDaylight_DLUX:DLUX_Karaf_Feature[OpenDaylight DLUX:DLUX Karaf Feature].
+DLUX provides a number of different Karaf features, which you can enable and disable separately. In Lithium they are:
+. odl-dlux-core
+. odl-dlux-node
+. odl-dlux-yangui
+. odl-dlux-yangvisualizer
 
 === Logging In
 
 To log in to DLUX, after installing the application:
 
-'''
-
-
-. Open a browser and enter the login URL. If you have installed DLUX as a stand-alone, then the login URL is http://localhost:9000/DLUX/index.html. However if you have deployed  DLUX with Karaf, then the login URL is  http://\<your IP\>:8181/dlux/index.html.
-NOTE: Ensure that you use the port applicable for the DLUX installation type. *local host* is the IP address of the machine where the application us installed. +
-
+. Open a browser and enter the login URL http://<your-karaf-ip>:8181/index.html in your browser (Chrome is recommended).
 . Login to the application with user ID and password credentials as *admin*.
-NOTE: admin is the only user type available for DLUX in this release.
 
-'''
+NOTE: admin is the only user type available for DLUX in this release.
 
 === Working with DLUX
 
-After you login to DLUX, you will see all the modules that are available for DLUX in the left pane. However the modules disappear if the features are not enabled in the Karaf distribution.
+After you login to DLUX, if you enable only odl-dlux-core feature, you will see only topology application available in the left pane.
 
-To get a complete DLUX feature list, install restconf, odl l2 switch, and switch while you start the DLUX distribution. For more information about enabling features on DLUX, see https://wiki.opendaylight.org/view/OpenDaylight_DLUX:DLUX_Karaf_Feature[OpenDaylight DLUX:DLUX Karaf Feature].
+NOTE: To make sure topology displays all the details, enable the odl-l2switch-switch feature in Karaf.
+
+DLUX has other applications such as node, yang UI and those apps won't show up, until you enable their features odl-dlux-node and odl-dlux-yangui respectively in the Karaf distribution.
 
 .DLUX Modules
 image::dlux-login.png["DLUX Page",width=500]
 
-
-Modules that use the MD SAL based apis are : +
-
-* 	Nodes
-* 	Yang UI
-* 	Topology
-
-Modules that use the AD SAL based apis are: +
-
-*	Connection manager
-*	Container
-*	Network
-*   Flows
-
-NOTE: DLUX enables only those modules, whose APIs are responding. If you enable just the MD-SAL in beginning and then start dlux, only MD-SAL related tabs will be visible. While using the GUI if you enable AD-SAL karaf features, those tabs will appear automatically.
-
-To view features that are enabled:
-
-'''
-
-. Right click on the DLUX page.
-. Select *Inspect Element* and then click *Network*. +
-	A table that contains the list of features and if they are available in the DLUX distribution. The features that are not enabled is highlighted with red font and has status *404 Not Found*.
-
-'''
+NOTE: If you install your application in dlux, they will also show up on the left hand navigation after browser page refresh.
 
 === Viewing Network Statistics
 
