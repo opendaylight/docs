@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aa0d159_97ef5e87",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/VTN_Manager_Lithium_Hacking.adoc",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 396
+      },
+      "writtenOn": "2015-04-30T21:35:05Z",
+      "side": 1,
+      "message": "Colin\u0027s comment for the patch set 6 makes sense to me. I think we should remove this guide from the developer guide.\n\n[FYI] The following wiki page explains what is expected in the developer guide.\n\nhttps://wiki.opendaylight.org/view/CrossProject:Documentation_Group:Lithium_Project_Documentation_Requirements#Kinds_of_Documentation\n\nAnyway, I\u0027ve put some comments since the instructions of the file is wrong.",
+      "revId": "57fdd79cbef9d5b110dc5763e86b61725bede0e3",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_17034e43",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/VTN_Manager_Lithium_Hacking.adoc",
+        "patchSetId": 8
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 396
+      },
+      "writtenOn": "2015-04-30T21:35:05Z",
+      "side": 1,
+      "message": "The extra space should be removed.",
+      "range": {
+        "startLine": 21,
+        "startChar": 59,
+        "endLine": 21,
+        "endChar": 60
+      },
+      "revId": "57fdd79cbef9d5b110dc5763e86b61725bede0e3",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_57a0f642",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/VTN_Manager_Lithium_Hacking.adoc",
+        "patchSetId": 8
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 396
+      },
+      "writtenOn": "2015-04-30T21:35:05Z",
+      "side": 1,
+      "message": "That should be \"manager/dist/karaf\".",
+      "range": {
+        "startLine": 44,
+        "startChar": 14,
+        "endLine": 44,
+        "endChar": 32
+      },
+      "revId": "57fdd79cbef9d5b110dc5763e86b61725bede0e3",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_f7f7c257",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/VTN_Manager_Lithium_Hacking.adoc",
+        "patchSetId": 8
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 396
+      },
+      "writtenOn": "2015-04-30T21:35:05Z",
+      "side": 1,
+      "message": "You are missing }.\n\"${VTN_DIR\" should be \"${VTN_DIR}\".",
+      "range": {
+        "startLine": 44,
+        "startChar": 4,
+        "endLine": 44,
+        "endChar": 13
+      },
+      "revId": "57fdd79cbef9d5b110dc5763e86b61725bede0e3",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_178a6ebf",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/VTN_Manager_Lithium_Hacking.adoc",
+        "patchSetId": 8
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 396
+      },
+      "writtenOn": "2015-04-30T21:35:05Z",
+      "side": 1,
+      "message": "That should be \"manager/dist/karaf\".",
+      "range": {
+        "startLine": 51,
+        "startChar": 14,
+        "endLine": 51,
+        "endChar": 33
+      },
+      "revId": "57fdd79cbef9d5b110dc5763e86b61725bede0e3",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
