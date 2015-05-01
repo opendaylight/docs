@@ -1,0 +1,318 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aa0d159_88ce5fb3",
+        "filename": "manuals/user-guide/src/main/asciidoc/vpnservice/vpnservice-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-01T20:16:52Z",
+      "side": 1,
+      "message": "This makes the guide a \"part\" instead of a section. I think you need to increase your depth by one. I think you want to start with \u003d\u003d like here: http://powerman.name/doc/asciidoc#_headers",
+      "revId": "3ffec1025d0753f20574cabd5028abcf6a440df1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_28c5cb8d",
+        "filename": "manuals/user-guide/src/main/asciidoc/vpnservice/vpnservice-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-01T20:16:52Z",
+      "side": 1,
+      "message": "You don\u0027t need this.",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 13
+      },
+      "revId": "3ffec1025d0753f20574cabd5028abcf6a440df1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_48c0577c",
+        "filename": "manuals/user-guide/src/main/asciidoc/vpnservice/vpnservice-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-01T20:16:52Z",
+      "side": 1,
+      "message": "Make this not all caps to be consistent.",
+      "revId": "3ffec1025d0753f20574cabd5028abcf6a440df1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_e8be03ff",
+        "filename": "manuals/user-guide/src/main/asciidoc/vpnservice/vpnservice-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-01T20:16:52Z",
+      "side": 1,
+      "message": "e.g., VLAN and L3TUNNEL\n\nYou need a comma after \"e.g.\" and etc. is implied because e.g. means you\u0027re giving a list of examples.\n\nAlso, every other place you use l3tunnel instead of L3TUNNEL.",
+      "range": {
+        "startLine": 19,
+        "startChar": 81,
+        "endLine": 19,
+        "endChar": 105
+      },
+      "revId": "3ffec1025d0753f20574cabd5028abcf6a440df1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_08ba4f0a",
+        "filename": "manuals/user-guide/src/main/asciidoc/vpnservice/vpnservice-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-01T20:16:52Z",
+      "side": 1,
+      "message": "cluster-wide",
+      "range": {
+        "startLine": 20,
+        "startChar": 27,
+        "endLine": 20,
+        "endChar": 38
+      },
+      "revId": "3ffec1025d0753f20574cabd5028abcf6a440df1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_a838fba0",
+        "filename": "manuals/user-guide/src/main/asciidoc/vpnservice/vpnservice-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-01T20:16:52Z",
+      "side": 1,
+      "message": "the following?\n\nI\u0027m having trouble parsing this sentence.",
+      "range": {
+        "startLine": 23,
+        "startChar": 117,
+        "endLine": 23,
+        "endChar": 126
+      },
+      "revId": "3ffec1025d0753f20574cabd5028abcf6a440df1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_c83b079b",
+        "filename": "manuals/user-guide/src/main/asciidoc/vpnservice/vpnservice-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-01T20:16:52Z",
+      "side": 1,
+      "message": "The following...",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 9
+      },
+      "revId": "3ffec1025d0753f20574cabd5028abcf6a440df1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_6842f311",
+        "filename": "manuals/user-guide/src/main/asciidoc/vpnservice/vpnservice-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-01T20:16:52Z",
+      "side": 1,
+      "message": "do you want to end this with a comma?",
+      "revId": "3ffec1025d0753f20574cabd5028abcf6a440df1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_284ceb41",
+        "filename": "manuals/user-guide/src/main/asciidoc/vpnservice/vpnservice-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-01T20:16:52Z",
+      "side": 1,
+      "message": "do you want to end this with a comma?",
+      "revId": "3ffec1025d0753f20574cabd5028abcf6a440df1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_8845ff18",
+        "filename": "manuals/user-guide/src/main/asciidoc/vpnservice/vpnservice-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-01T20:16:52Z",
+      "side": 1,
+      "message": "do you want to end this with a comma?",
+      "revId": "3ffec1025d0753f20574cabd5028abcf6a440df1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_4847f71d",
+        "filename": "manuals/user-guide/src/main/asciidoc/vpnservice/vpnservice-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-01T20:16:52Z",
+      "side": 1,
+      "message": "do you want to end this with a comma?",
+      "revId": "3ffec1025d0753f20574cabd5028abcf6a440df1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_e855a3c6",
+        "filename": "manuals/user-guide/src/main/asciidoc/vpnservice/vpnservice-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-01T20:16:52Z",
+      "side": 1,
+      "message": "do you want to end this with a comma?",
+      "revId": "3ffec1025d0753f20574cabd5028abcf6a440df1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_0851efd7",
+        "filename": "manuals/user-guide/src/main/asciidoc/vpnservice/vpnservice-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-01T20:16:52Z",
+      "side": 1,
+      "message": "do you want to end this with a comma?",
+      "revId": "3ffec1025d0753f20574cabd5028abcf6a440df1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_28faabbd",
+        "filename": "manuals/user-guide/src/main/asciidoc/vpnservice/vpnservice-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-01T20:16:52Z",
+      "side": 1,
+      "message": "You\u0027re missing a \u003e.",
+      "range": {
+        "startLine": 128,
+        "startChar": 0,
+        "endLine": 128,
+        "endChar": 15
+      },
+      "revId": "3ffec1025d0753f20574cabd5028abcf6a440df1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_48ca976f",
+        "filename": "manuals/user-guide/src/main/asciidoc/vpnservice/vpnservice-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-01T20:16:52Z",
+      "side": 1,
+      "message": "Whys is this here?",
+      "revId": "3ffec1025d0753f20574cabd5028abcf6a440df1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_08c48f5d",
+        "filename": "manuals/user-guide/src/main/asciidoc/vpnservice/vpnservice-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-01T20:16:52Z",
+      "side": 1,
+      "message": "downloaded?",
+      "range": {
+        "startLine": 138,
+        "startChar": 39,
+        "endLine": 138,
+        "endChar": 49
+      },
+      "revId": "3ffec1025d0753f20574cabd5028abcf6a440df1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
