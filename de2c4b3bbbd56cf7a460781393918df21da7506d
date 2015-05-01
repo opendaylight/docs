@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aa0d159_885bbf2d",
+        "filename": "manuals/developer-guide/src/main/asciidoc/tcpmd5/odl-tcpmd5-all-dev.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-01T19:29:10Z",
+      "side": 1,
+      "message": "The TCP-MD5",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 7
+      },
+      "revId": "de2c4b3bbbd56cf7a460781393918df21da7506d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_a8755b99",
+        "filename": "manuals/developer-guide/src/main/asciidoc/tcpmd5/odl-tcpmd5-all-dev.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-01T19:29:10Z",
+      "side": 1,
+      "message": "I think you want to drop the -- before and after and put a space between the . and the feature name. As it stands, this just doesn\u0027t appear at all.",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 2
+      },
+      "revId": "de2c4b3bbbd56cf7a460781393918df21da7506d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_08b56f30",
+        "filename": "manuals/developer-guide/src/main/asciidoc/tcpmd5/odl-tcpmd5-all-dev.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-01T19:29:10Z",
+      "side": 1,
+      "message": "Can you replace the verbatim text from the template with something TCP-MD5 specific.",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 10
+      },
+      "revId": "de2c4b3bbbd56cf7a460781393918df21da7506d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
