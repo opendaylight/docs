@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aa0d159_48229702",
+        "filename": "manuals/user-guide/src/main/asciidoc/snmp/snmp-user-guide.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-01T21:06:08Z",
+      "side": 1,
+      "message": "Different sections should start with different number of \u003ds to indicate the \"depth\", so I think you\u0027ll want the installation to and northbound APIs to be \u003d\u003d\u003d and the various northbound APIs to be \u003d\u003d\u003d\u003d. You get the idea.",
+      "revId": "ce406bca5c6d8875bcd79b5c6247bcf21014d124",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_483b7738",
+        "filename": "manuals/user-guide/src/main/asciidoc/snmp/snmp-user-guide.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-01T21:06:08Z",
+      "side": 1,
+      "message": "You shouldn\u0027t need to do this. If your feature repository is in integration, it will be in the release karaf distribution already.",
+      "revId": "ce406bca5c6d8875bcd79b5c6247bcf21014d124",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_88397f43",
+        "filename": "manuals/user-guide/src/main/asciidoc/snmp/snmp-user-guide.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-01T21:06:08Z",
+      "side": 1,
+      "message": "I think you only want to install odl-restconf.",
+      "range": {
+        "startLine": 10,
+        "startChar": 58,
+        "endLine": 10,
+        "endChar": 62
+      },
+      "revId": "ce406bca5c6d8875bcd79b5c6247bcf21014d124",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
