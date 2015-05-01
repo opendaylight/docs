@@ -1,14 +1,31 @@
-=== SFC OVS Developer Guide
+=== SFC-OVS Plugin
 
 ==== Overview
-In current state, SFC OVS provides mapping between SFF and OVS Bridge. It automatically configures SFF according to received OVS Bridge data. The next step is the opposite direction: configuring OVS Bridge according to SFF data.
+SFC-OVS provides integration of SFC with Open vSwitch (OVS) devices.
+Integration is realized through mapping of SFC objects (like SF, SFF,
+Classifier, etc.) to OVS objects (like Bridge, TerminationPoint=Port/Interface).
+The mapping takes care of automatic instantiation (setup) of corresponding object
+whenever its counterpart is created. For example, when a new SFF is created,
+the SFC-OVS plugin will create a new OVS bridge and when a new OVS Bridge is
+created, the SFC-OVS plugin will create a new SFF.
 
-==== SFC OVS Architecture
-SFC OVS uses OVSDB MDSAL for communication with Open vSwitch devices.
+==== SFC-OVS Architecture
+SFC-OVS uses the OVSDB MD-SAL Southbound API for getting/writing information
+from/to OVS devices. The core functionality consists of two types of mapping:
+
+a. mapping from OVS to SFC
+** OVS Bridge is mapped to SFF
+** OVS TerminationPoints are mapped to SFF DataPlane locators
+
+b. mapping from SFC to OVS
+** SFF is mapped to OVS Bridge
+** SFF DataPlane locators are mapped to OVS TerminationPoints
+
+.SFC < -- > OVS mapping flow diagram
+image::sfc/sfc-ovs-architecture.png[width=500]
 
 ==== Key APIs and Interfaces
-* Provides API to configure/control OVS through SFC
-* Support for these device types:
-** Service Function Forwarder (SFF)
-** (to be done) Service Function (SF)
-** (to be done) Classifier
+* SFF to OVS mapping API (methods to convert SFF object to OVS Bridge
+and OVS TerminationPoints)
+* OVS to SFF mapping API (methods to convert OVS Bridge and OVS TerminationPoints
+to SFF object)
