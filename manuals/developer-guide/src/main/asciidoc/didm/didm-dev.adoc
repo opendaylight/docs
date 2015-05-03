@@ -1,0 +1,42 @@
+== DIDM Developer Guide
+
+=== Overview
+The Device Identification and Driver Management (DIDM) project addresses the
+need to provide device-specific functionality. Device-specific functionality is
+code that performs a feature, and the code is knowledgeable of the capability
+and limitations of the device. For example, configuring VLANs and adjusting
+FlowMods are features, and there may be different implementations for different
+device types. Device-specific functionality is implemented as Device Drivers.
+Device Drivers need to be associated with the devices they can be used with. To
+determine this association requires the ability to identify the device type.
+
+=== DIDM Architecture
+The DIDM project creates the infrastructure to support the following functions:
+
+ * *Discovery* - Determination that a device exists in the controller
+   management domain and connectivity to the device can be established. For
+   devices that support the OpenFlow protocol, the existing discovery
+   mechanism in OpenDaylight suffices. Devices that do not support OpenFlow
+   will be discovered through manual means such as the operator entering
+   device information via GUI or REST API.
+ * *Identification* – Determination of the device type.
+ * *Driver Registration* – Registration of Device Drivers as routed RPCs.
+ * *Synchronization* – Collection of device information, device configuration,
+   and link (connection) information.
+ * *Data Models for Common Features* – Data models will be defined to
+   perform common features such as VLAN configuration. For example,
+   applications can configure a VLAN by writing the VLAN data to the data store
+   as specified by the common data model.
+ * *RPCs for Common Features* – Configuring VLANs and adjusting
+   FlowMods are example of features. RPCs will be defined that specify the
+   APIs for these features. Drivers implement features for specific devices and
+   support the APIs defined by the RPCs. There may be different Driver
+   implementations for different device types.
+
+TODO: Add more info and diagram. 
+
+=== Key APIs and Interfaces
+TODO
+
+=== API Reference Documentation
+TODO: Provide links to JavaDoc, REST API documentation, etc.
