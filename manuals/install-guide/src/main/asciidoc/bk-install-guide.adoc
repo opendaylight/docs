@@ -3,7 +3,6 @@
 :docinfo:
 
 //////////////////////////
-// BEGIN COMMENT
 [dedication]
 Example Dedication
 ------------------
@@ -44,36 +43,32 @@ OpenDaylight Add-ons
 --
 Optional part introduction goes here.
 --
-// END COMMENT
 //////////////////////////
 
 [preface]
 include::core-release-notes.adoc[OpenDaylight Release Notes]
 
 //////////////////////////
-// BEGIN COMMENT
 Please note and leave the blank line between include statements here.
 
 It is a defensive measure to prevent individual projects' .adoc files
 from eating the next section if they forget to leave a blank line at
 the end of their file.
-// END COMMENT
+//////////////////////////
+include::ch_introduction.adoc[]
 //////////////////////////
 
 include::general_installation.adoc[]
 
 /////////////
-// BEGIN COMMENT
 include::addons/aaa.adoc[]
 
 include::addons/bgpcep.adoc[]
-// END COMMENT
 /////////////
 
 include::addons/defense4all.adoc[]
 
 /////////////
-// BEGIN COMMENT
 include::addons/groupbasedpolicy.adoc[]
 
 include::addons/l2switch.adoc[]
@@ -81,13 +76,7 @@ include::addons/l2switch.adoc[]
 include::addons/lispflow.adoc[]
 
 include::addons/ovsdb.adoc[]
-// END COMMENT
-/////////////
 
-include::ovsdb/ovsdb-install.adoc[]
-
-/////////////
-// BEGIN COMMENT
 include::addons/pcmm.adoc[]
 
 include::addons/plugin2oc.adoc[]
@@ -101,17 +90,13 @@ include::addons/snmp4sdn.adoc[]
 include::addons/ttp.adoc[]
 
 include::addons/vtn.adoc[]
-// END COMMENT
 /////////////
 
 include::addons/yangtools.adoc[]
 
-include::tsdr/tsdr-hbase-install.adoc[]
-
 :numbered!:
 
 //////////////////////////
-// BEGIN COMMENT
 [appendix]
 Example Appendix
 ----------------
@@ -145,7 +130,6 @@ Text at the end of a book describing facts about its production.
 [index]
 Example Index
 -------------
-// END COMMENT
 //////////////////////////
 
 ////////////////////////////////////////////////////////////////
