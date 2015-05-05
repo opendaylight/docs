@@ -1,31 +1,37 @@
+== Getting and Installing OpenDaylight Helium
+
 === System requirements and prerequisites
-* Hardware Requirements: <To be added>
-* Software Requirements:
+* *Hardware Requirements*: <To be added>
+
+* *Software Requirements*:
 If you are using Oracle, JDK version 1.7.0_45 or later is required.
 
 ==== For Execution
 The OpenDaylight controller source files are portable and require a Java 7-compliant JVM to run.
 
 ==== For Development
-Although the OpenDaylight controller is developed as a normal Java project, the controller uses the Xtend language in some instances. While development is possible with bare tools,
-we recommend you that you use Eclipse with the Xtend plugin.
+TBD
 
 === Downloading and installing OpenDaylight Lithium
 The default distribution can be found on the OpenDaylight software download page:
 http://www.opendaylight.org/software/downloads   +
-The distribution (karaf) has no features enabled by default. However, you can install all the features.
+The distribution (Karaf) has no features enabled by default. However, you can install all the features.
 
 NOTE: You cannot enable all the features at the same time.
 
+		 
 ==== Running the karaf distribution 
 To run the karaf distribution:
 
-* Unzip the zip file.
-* Navigate to the directory.
-* run `./bin/karaf`.
+. Unzip the zip file.
+. Navigate to the directory.
+. run `./bin/karaf`.
 
 For Example:
 
+[frame="none"]
+|===
+a|
 ----
 $ ls distribution-karaf-0.3.0-Lithium.zip 
 distribution-karaf-0.3.0-Lithium.zip
@@ -54,38 +60,42 @@ $ ./bin/karaf
 
 
 ----
-Select *tab* for a list of available commands and *[cmd] --help* for help on a specific command.
-Select *ctrl-d* or type *system:shutdown* or *logout* to shutdown OpenDaylight.
-
+Press *tab* for a list of available commands and *[cmd] --help* for help on a specific command.
+Press *ctrl-d* or type *system:shutdown* or *logout* to shutdown OpenDaylight.
+|===
 === Installing the components
-This section describes a list of components in OpenDaylight Lithium and the relevant karaf feature to install in order to enable that component. 
+
+The section describes a list of components in OpenDaylight Lithium and the relevant karaf feature to install in order to enable that component. 
 
 To install a feature use the following command:
 -----
-feature:install+karaf command
+feature:install
 -----
 For Example:
+
 -----
 feature:install <feature-name>
 -----
+
 Multiple features can be installed using the following command:
+
 -----
-feature:install <feature1-name> <feature2-name> ... <feature-name>
+feature:install <feature1-name> <feature2-name> ... <featureN-name>
 -----
 
 .Lithium Components
 In the table a compatibility value of *all* means that it can be run with other features. A value of *self+all* indicates that the feature can be installed with 
 other features with a value of *all*, but not other features with a value of *self+all*.
-[width="80%" col=4, header]
+[options="header",cols="18%,50%,18%,14%"]
 |====
 | Component Name                   | Component Description | Karaf feature name | Compatibility
 | BGPCEP                           | Enables support for BGP LS PCEP | odl-bgpcep-all | all
-| Defense4All                      | Enables DDoS detection and protection | NA, see <<_defense4all,Defense4All>> | all
+| Defense4All                      | Enables DDoS detection and protection | n/a, see <<_defense4all,Defense4All>> | all
 | Group Based Policy               | Enables Endpoint Registry and Policy Repository REST APIs and associated functionality for the Group Based Policy Proof of Concept demonstration | odl-groupbasedpolicy-ofoverlay| self+all
 | L2 Switch                        | Provides L2 (Ethernet) forwarding across connected OppenFlow switches and support for host tracking | odl-l2switch-switch-ui                | self+all
 | LISP Flow Mapping                | Enable LISP control plane services including the mapping system services REST API and LISP protocol SB plugin | odl-lispflowmapping-all               | all
 | MD-SAL Clustering                | Provides support for operating a cluster of OpenDaylight instances | odl-mdsal-clustering                  | special
-| NETCONF over SSH                 | Provides support to manage NETCONF-enabled devices over SSH | odl-netconf-connector-ssh             | all
+| Netconf over SSH                 | Provides support to manage Netconf-enabled devices over SSH | odl-netconf-connector-ssh             | all
 | OpenFlow Flow Programming        | Enables discovery and control of OpenFlow switches and the topology between them | odl-openflowplugin-flow-services-ui   | all
 | OpenFlow Table Type Patterns     | Allows OpenFlow Table Type Patterns to be manually associated with network elements | odl-ttp-all                          |all
 | OVS Management                   | Enables OVS management using OVSDB plugin and its associated OVSDB northbound APIs | odl-ovsdb-all                        | all
@@ -104,14 +114,15 @@ other features with a value of *all*, but not other features with a value of *se
 |====
 
 === Verifying your installation
-To verify your install start the controller. If the controller console comes up, and that means that your controller is up and running.  
+TBD
 
 === Downloading mininet
-Mininet downloads are available at: http://mininet.org .
-The OVS version must be 2.1 or earlier.
+Mininet downloads are available at: http://mininet.org  +
+The OVS version must be 2.1 or earlier.  +
+Need Info
 
 === Installing mininet
-The instructions for installation are available at: http://mininet.org .
+The instructions for installation are available at: http://mininet.org.
 
 === Verifying mininet installation
 To verify your mininet installation run the following command:
@@ -145,46 +156,61 @@ c0
 *** Done
 completed in 0.541 seconds
 
+
 === Installing support for REST APIs
 Most components that offer REST APIs will automatically load the RESTCONF API Support
 component, but if for whatever reason they seem to be missing, you can activate this
 support by installing the `odl-restconf` feature.
 
-=== Making RESTCONF calls
-RESTCONF is a protocol that provides a programmatic interface over HTTP to access data that is defined in a YANG model and stored in data stores defined in the NETCONF protocol.
-RESTCONF protocol is implemented in `sal-rest-connector` artifact that is packed with the karaf bundle. 
-For more information on the RESTCONF protocol, refer to http://tools.ietf.org/html/draft-bierman-netconf-restconf-02
+=== Making RESTCONF calls	
+RESTCONF is a protocol that provides a programmatic interface over HTTP to access data that is defin
+ed in a YANG model and stored in data stores defined in the NETCONF protocol.	
+RESTCONF protocol is implemented in `sal-rest-connector` artifact that is packed with the karaf bund
+le. 	
+For more information on the RESTCONF protocol, refer to http://tools.ietf.org/html/draft-bierman-net
+conf-restconf-02	
 
-RESTCONF allows access to datastores in the controller. 
-The datastores available are:
+RESTCONF allows access to datastores in the controller. 	
+The datastores available are:	
 
-* config - contains data inserted using controller
-* operational - contains other data
+* config - contains data inserted using controller	
+* operational - contains other data	
+
+=== Making a RESCONF call using cURL
+TBD
 
 === Installing the DLUX web interface
-The OpenDaylight web interface; DLUX, draws information from the OpenFlow flow programming and L2 Switch components to display information about the topology of the network, 
-flow statistics, host locations. DLUX is automatically installed when either of the components are installed.
+
+The OpenDaylight web interface; DLUX, draws information from topology and host databases to display information about the topology of the network, 
+flow statistics, host locations. You can either use DLUX as a stand-alone plug-in or integrate with the Opendaylight controller.
+To install DLUX as a standalone application, refer to  https://wiki.opendaylight.org/view/OpenDaylight_DLUX:Setup_and_Run
+To integrate with Opendaylight Controller you must enable DLUX Karaf feature. You can enable AD-SAL, MD-SAL and various other bundles within karaf depending on the features you
+would like to access using DLUX. Each feature can be enabled or disabled separately.
+[Important]
+Ensure that you have created a topology and enabled MD-SAL feature in the Karaf distribution before you use DLUX for network management.
+For more information about enabling the Karaf features for DLUX, refer to https://wiki.opendaylight.org/view/OpenDaylight_DLUX:DLUX_Karaf_Feature
 
 ==== Installing support for REST APIs
-Most components that offer REST APIs automatically loads the RESTCONF API support component. If the REST APIs are missing, 
+Most components that offer REST APIs automatically load the RESTCONF API support component. If the REST APIs are missing, 
 you can activate the support by installing the +odl-restconf+ feature.
 
 ==== Installing MD-SAL clustering
-The MD-SAL clustering feature has "special" compatibility criteria. You *must* installed clustering, before other features are installed. 
+The MD-SAL clustering feature has "special" compatibility criteria. You *must* install clustering, before other features are installed. 
 To install clustering, run the following command on the Karaf CLI console:
+
 ----
 feature:install odl-mdsal-clustering
 ----
 ==== Karaf features list
 To find the complete list of karaf features, run the following command:
+
 ----
 feature:list
 ----
+
 To list the installed karaf features, run the following command:
+
 ----
 feature:list -i
 ----
-=== Project specific installation instructions
-The Defense4All and Yang tools projects provide project-specific installation instructions here. 
-Other projects can either be installed by simply installing the appropriate Karaf features or, in some cases, further instructions can be found in the _User Guide_ or the _Developer Guide_.
 
