@@ -37,6 +37,23 @@
     },
     {
       "key": {
+        "uuid": "3aa0d159_8fff3e67",
+        "filename": "manuals/user-guide/src/main/asciidoc/lacp/lacp-user.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-05T13:43:12Z",
+      "side": 1,
+      "message": "Maybe change this to say: \"Ensure that legacy (non-OpenFlow) switches are configured with LACP mode active with a long timeout to allow for the LACP plugin in OpenDaylight to respond to its messages.\"",
+      "revId": "039f77da7c47d96b46f78e3040614b56e34dd91f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aa0d159_9baf8494",
         "filename": "manuals/user-guide/src/main/asciidoc/lacp/lacp-user.adoc",
         "patchSetId": 5
@@ -72,6 +89,30 @@
       "side": 1,
       "message": "LACP Module only creates LAG by creating the Group-Flow entry.This LAG group needs to associated by flows either by manual or another module (such as L2 module).",
       "parentUuid": "3aa0d159_9baf8494",
+      "range": {
+        "startLine": 18,
+        "startChar": 55,
+        "endLine": 18,
+        "endChar": 172
+      },
+      "revId": "039f77da7c47d96b46f78e3040614b56e34dd91f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_af39da42",
+        "filename": "manuals/user-guide/src/main/asciidoc/lacp/lacp-user.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-05T13:43:12Z",
+      "side": 1,
+      "message": "Maybe change this line to: \"Flows that want to take advantage of LACP-configured Link Aggregation Groups (LAGs) must explicitly use a OpenFlow group table entry created by the LACP plugin. The plugin only creates group table entries, it does not program any flows on its own.\"",
+      "parentUuid": "3aa0d159_fb4ec8c0",
       "range": {
         "startLine": 18,
         "startChar": 55,
