@@ -120,4 +120,18 @@ provider shows it is registering for *all* I*Aware interfaces:
 
 === How to use the Neutron YANG model
 
-To be added
+For each neutron data object, there is an Neutron*Interface defined to allow
+transcriber to write to the MD-SAL configurational datastore. 
+All Neutron*Interface extends AbstractNeutronInterface, in which two methods are defined: +
+
+* one takes the neutron object as input, and will create a data object from it. +
+* one takes an uuid as input, and will create a data object containing the uuid.
+
+----
+protected abstract T toMd(S neutronObject);
+protected abstract T toMd(String uuid);
+----
+
+==== The semantics of the toMD() methods
+Each of the YANG model defined, defines structures containing data. In order to write into the YANG model, each structures has it own builder.
+Regardless the toMD() method, a builder is instantiated allowing the creation of the data object. Each field of the builder is setted with the corresponding value of the Neutron object. 
