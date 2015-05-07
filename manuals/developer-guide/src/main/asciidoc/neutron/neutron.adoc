@@ -120,4 +120,63 @@ provider shows it is registering for *all* I*Aware interfaces:
 
 === How to use the Neutron YANG model
 
-To be added
+For each neutron data object, there is an Neutron*Interface defined within
+the transcriber artifact that will write that object to the MD-SAL
+configurational datastore. +
+All Neutron*Interface extend AbstractNeutronInterface, in which two methods
+are defined: +
+
+* one takes the neutron object as input, and will create a data object from it. +
+* one takes an uuid as input, and will create a data object containing the uuid.
+
+----
+protected abstract T toMd(S neutronObject);
+protected abstract T toMd(String uuid);
+----
+
+In addition the AbstractNeutronInterface class provides several other
+helper methods (addMd, updateMd, removeMd), which handle the actual
+writing to the configuration datastore.
+
+==== The semantics of the toMD() methods
+Each of the Neutron YANG models defines structures containing data.
+Further each YANG-modeled structures has it own builder.
+A particular toMD() method instantiates an instance of the correct
+builder, fills in the properties of the builder from the corresponding
+values of the Neutron object and then creates the YANG-modeled structures
+via the build() method.
+
+As an example, one of the toMD code for Neutron Networks is
+presented below:
+
+----
+    protected Network toMd(NeutronNetwork network) {
+        NetworkBuilder networkBuilder = new NetworkBuilder();
+        networkBuilder.setAdminStateUp(network.getAdminStateUp());
+        if (network.getNetworkName() != null) {
+            networkBuilder.setName(network.getNetworkName());
+        }
+        if (network.getShared() != null) {
+            networkBuilder.setShared(network.getShared());
+        }
+        if (network.getStatus() != null) {
+            networkBuilder.setStatus(network.getStatus());
+        }
+        if (network.getSubnets() != null) {
+            List<Uuid> subnets = new ArrayList<Uuid>();
+            for( String subnet : network.getSubnets()) {
+                subnets.add(toUuid(subnet));
+            }
+            networkBuilder.setSubnets(subnets);
+        }
+        if (network.getTenantID() != null) {
+            networkBuilder.setTenantId(toUuid(network.getTenantID()));
+        }
+        if (network.getNetworkUUID() != null) {
+            networkBuilder.setUuid(toUuid(network.getNetworkUUID()));
+        } else {
+            logger.warn("Attempting to write neutron network without UUID");
+        }
+        return networkBuilder.build();
+    }
+----
