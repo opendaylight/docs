@@ -1,0 +1,38 @@
+== SNBI [Secure Network Bootstraping Infrastructure]
+https://wiki.opendaylight.org/view/SNBI_Architecture_and_Design
+
+=== Overview
+The SNBI project securely and automatically brings up an integrated set of network devices and controllers.
+SNBI uses a zero-touch approach to bootstrapping that leverages manufacturer-installed IEEE 802.1AR certificates to secure even the initial communications.
+SNBI devices and controllers automatically discover each other, get an IP-address assigned, and establish secure IP connectivityA user requests authentication within a domain in which the user has defined roles.
+
+=== Architecture and Components
+Secure bootstrapping: Iteratively discover the connectivity between devices (network elements and controllers) and establish secure IP-connectivity between these devices. Each device in the network is automatically assigned an IP-address and basic IP-routing between the devices is established. As part of the bootstrapping process, a secure communication channel is created and certificates are distributed. Once established, devices and controller can reach each other and bring up control and management protocols. Examples may include Netconf or Openflow and their associated transport connections. Solution components are as follows:
+
+Secure network bootstrapping – device component: The secure discovery service is created as a software package and integrated with the network container reference platform for the devices.
+
+Secure network bootstrapping – controller components:
+SNBI Registrar: The registrar is the trusted entity/anchor for a network domain. It maintains the list of devices which belong to a domain. It decides (based on its policy rules) which devices are admitted to join the domain. The SNBI Registrar also offers certificate management (issue, renew, revoke) using a lightweight implementation of a certificate authority. Certificate management is fully contained in the SNBI solution, hence ease of use and out-of-the-box ínstall of the OpenDaylight solution are maintained.
+
+SNBI Plugin: The secure discovery service is created as a southbound plugin.
+
+==== Terms and definitions in the model
+snbi.yang
+UDI: Unique Device Identifier
+snbi-domain:- container to hold the white list of UDI
+
+=== Configuring SNBI
+To configure the domain and whitelist , execute the RESTCONF API via any REST client.
+
+=== Administering or Managing SNBI
+on karaf concole , install the snbi feature first
+opendaylight-user@root>feature:install odl-snbi-all
+
+To start SNBI with a particular domain
+
+opendaylight-user@root>snbi:start domainname
+
+where domain name is the name of the domain
+
+
+
