@@ -1,4 +1,4 @@
-=== OpenDaylight Controller MD-SAL: Restconf
+=== RESTCONF
 
 ==== Restconf operations overview
 
@@ -22,7 +22,7 @@ Most of the paths of the pathsRestconf endpoints use https://wiki.opendaylight.o
 Module A has node A1. Module B augments node A1 by adding node X. Module C augments node A1 by adding node X. For clarity, it has to be known which node is X (for example: C:X).
 For more details about encoding, see: http://tools.ietf.org/html/draft-bierman-netconf-restconf-02#section-5.3.1[Restconf 02 - Encoding YANG Instance Identifiers in the Request URI.]
 
-=== Mount point
+==== Mount point
 A Node can be behind a mount point. In this case, the URI has to be in format <identifier>/*yang-ext:mount*/<identifier>. The first <identifier> is the path to a mount point and the second <identifier> is the path to a node behind the mount point. A URI can end in a mount point itself by using <identifier>/*yang-ext:mount*. +
 More information on how to actually use mountpoints is available at: https://wiki.opendaylight.org/view/OpenDaylight_Controller:Config:Examples:Netconf[ OpenDaylight Controller:Config:Examples:Netconf].
 
@@ -187,7 +187,7 @@ image::Put.png[width=500]
 
 
 // FIXME: Replace with coretutorials tutorial or point to openflow location
-=== Something practical
+==== Something practical
 
 . Create a new flow on the switch openflow:1 in table 2.
 
