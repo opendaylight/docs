@@ -36,6 +36,14 @@ the end of their file.
 //////////////////////////
 = Overview
 
+// FIXME: Should we use introduction from user manual / installation guide?
+//        are this prerequisites for developers guide? If so, we should document
+//        that explicitly here so we do not need to repeat same text
+//          over-and-over
+
+// FIXME: section_Git_and_Gerrit_Setup.adoc and section_Hacking_from_CLI.adoc
+//        is much more contributor style documentation and not Developer
+//        documentation for folks which wants to build on top of OpenDaylight. 
 include::section_Git_and_Gerrit_Setup.adoc[]
 
 include::section_Hacking_from_CLI.adoc[]
