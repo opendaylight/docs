@@ -1,0 +1,48 @@
+== Adding Components to the OpenDaylight Controller
+
+The following table lists the core set of components that are provided with the OpenDaylight controller:
+
+[options="header"]
+|===
+|Feature|Description
+
+|Clustering Manager|Manages the cache shared across controller instances.
+|Container Manager|Manages network slicing.
+|Switch Manager|Handles the information for southbound devices.
+|Statistics Manager|Collects statistics information.
+|Topology Manager|Builds the network topology.
+|Host Tracker|Monitors connected hosts.
+|Forwarding Rules Manager|Installs flows on southbound devices.
+|ARP Handler|Handles ARP messages.
+|Forwarding Manager|Installs routes and tracks next-hop
+|OpenFlow Plugin|Manages OpenFlow-enabled switches.
+|NETCONF Plugin|Manages NETCONF-enabled switches.
+|===
+
+You can add additional components as needed to extend the controller’s functionality. For a description of the components that are available and installation instructions, see the “Lithium Components” table in the _OpenDaylight Getting Started Guide_.
+
+Click the appropriate link to view usage information for a particular component:
+
+include::bgpcep/odl-bgpcep-bgp-all-user.adoc[BGP]
+
+include::bgpcep/odl-bgpcep-pcep-all-user.adoc[PCEP]
+
+include::sdninterfaceapp/odl-sdninterfaceapp-all-user.adoc[ODL-SDNi]
+
+include::sfc/sfc.adoc[Service Function Chain]
+
+include::snmp/snmp-user-guide.adoc[SNMP]
+
+include::tcpmd5/odl-tcpmd5-all-user.adoc[TCP-MD5]
+
+include::usc/odl-usc-channel-user.adoc[USC]
+
+include::ttp/ttp-cli-tools-user.adoc[TTP]
+
+include::capwap/capwap-user.adoc[CAPWAP] 
+
+include::tsdr/tsdr-hbase-user.adoc[]
+
+include::tsdr/tsdr-h2-user.adoc[]
+
+include::didm/didm-user.adoc[]
