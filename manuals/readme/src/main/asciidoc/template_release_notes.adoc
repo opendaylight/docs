@@ -1,43 +1,93 @@
-== <Project Name> <Release Name> Release Notes
-For example, the title might be "OpenFlow Plugin Lithium Release Notes"
+// Replace any italicized items below with the correct information for your component.
 
-Provide an overview about the high level feature. Explain the smaller
-features developed within the highlevel feature to provide a solution.
-For example,OpenFlow Support could contain sub features such as TLS
-support, Tables, Ports, Queue Configuration, and so on.
+= _Component-Name_ Lithium Release Notes
 
-=== Major Capabilities and Enhancements
-Provide information about the major capabilities this project provides
-in this release. Include those from previous release unless they have
-been deprecated or removed (see below).
+These release notes provide an overview of _component-name_ Lithium and describe the known issues in this release.
 
-==== New Capabilities and Enhancements
-Call out the new capabilities and/or enhancements that are present in
-this release, but were not present in prior releases.
+== Contents
+[%hardbreaks]
+* <<Overview>>
+* <<New Features and Enhancements>>
+* <<Deprecated and Removed Features>>
+* <<Known Issues and Limitations>>
+* <<Open and Resolved Bugs>>
 
-==== Resolved Bugs
-List open and resolved bugs if any.
+== Overview
 
-=== Deprecated and Removed Capabilities
-Provide information about the capabilities that are removed or
-deprecated in this release.
+// Provide an overview of your component here.
+_overview text_
 
-=== Known Limitations
-List any feature limitations that the user must be aware.
+== Prerequisites
 
-==== Open Bugs
-List any remaining open bugs. Ideally provide a short description and a 
-link to the entry in bugzilla.
+Ensure that the following prerequisites are met before you use _component-name_ for the first time or develop any new features for it.
 
-=== Compatibility with Previous Releases
-<optional, required if there's a previous release>
+=== For Operation
 
-Is it compatible? Did anything about how a user or developer would
-consume it change? If so, document it here.
+// List any requirements that need to be met in order to use your component.
+_operation prerequisites_
 
-=== Migration from Previous Releases
-<optional, required if there's a previous release>
+=== For Development
 
-Describe any special step somebody would have to take to migrate from a
-previous release to this one. If migration isn't supported for some
-combinations, state that as well.
+// List any requirements that need to be met in order to develop new features for your component or update existing ones.
+_development prerequisites_
+
+== New Features and Enhancements
+
+// In the following table, briefly describe the new features and feature enhancements provided in this release of your component.
+
+[cols="2*", options="header"] 
+|===
+|Feature|Description
+|_Feature 1 Name_|_Feature 1 Description_
+|_Feature 2 Name_|_Feature 2 Description_
+|_Feature 3 Name_|_Feature 3 Description_
+|_Feature 4 Name_|_Feature 4 Description_
+|_Feature 5 Name_|_Feature 5 Description_
+|===
+
+== Deprecated and Removed Features
+
+// In the following table, briefly describe any features that were deprecated in or removed from this release of your component.
+
+[cols="2*", options="header"] 
+|===
+|Feature|Description
+|_Feature 1 Name_|_Feature 1 Description_
+|_Feature 2 Name_|_Feature 2 Description_
+|_Feature 3 Name_|_Feature 3 Description_
+|_Feature 4 Name_|_Feature 4 Description_
+|_Feature 5 Name_|_Feature 5 Description_
+|===
+
+== Known Issues and Limitations
+
+// List any known issues and limitations for your component that users should be aware of.
+
+. _Issue/Limitation 1_
+. _Issue/Limitation 2_
+. _Issue/Limitation 3_
+
+== Open and Resolved Bugs
+
+// You can either: 1) Describe how to find your component's open bugs in the OpenDaylight bug list; or 2) List the open bugs for your component. Delete the information for the method you don't use.
+
+//method #1
+[%hardbreaks]
+To view all of the active bugs for your component, do the following:
+
+. Open the https://bugs.opendaylight.org/buglist.cgi?bug_severity=blocker&bug_severity=critical&bug_severity=major&bug_severity=normal&bug_severity=minor&bug_severity=trivial&bug_status=UNCONFIRMED&bug_status=CONFIRMED&bug_status=IN_PROGRESS&bug_status=WAITING_FOR_REVIEW&columnlist=product%2Ccomponent%2Cassigned_to%2Cbug_status%2Cresolution%2Cshort_desc%2Cchangeddate%2Ccf_target_milestone&f1=cf_target_milestone&list_id=15952&n1=1&o1=substring&product=controller&query_based_on=&query_format=advanced&resolution=---&v1=Lithium[OpenDaylight bug list].
+. Click the Comp link to sort bugs by component.
+
+// method #2
+=== Open Bugs
+
+. _Bug 1_
+. _Bug 2_
+. _Bug 3_
+
+=== Resolved Bugs
+// List any bugs from a previous release of your component that have been resolved.
+
+. _Bug 1_
+. _Bug 2_
+. _Bug 3_
