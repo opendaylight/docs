@@ -1,0 +1,439 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aa0d159_6da9777a",
+        "filename": "manuals/user-guide/src/main/asciidoc/aaa/aaa-authn-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T21:44:00Z",
+      "side": 1,
+      "message": "Avoid using ODL, use OpenDaylight instead. Also, it\u0027s OpenDaylight not Opendaylight.",
+      "revId": "7e42f9e70576c80308bf3b70dc5e605553654088",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_0dbc73db",
+        "filename": "manuals/user-guide/src/main/asciidoc/aaa/aaa-authn-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T21:44:00Z",
+      "side": 1,
+      "message": "what does \"or isolation\" mean? can we just drop it and make it \"A group of resources\"?",
+      "range": {
+        "startLine": 15,
+        "startChar": 17,
+        "endLine": 15,
+        "endChar": 29
+      },
+      "revId": "7e42f9e70576c80308bf3b70dc5e605553654088",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_4dc91b77",
+        "filename": "manuals/user-guide/src/main/asciidoc/aaa/aaa-authn-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T21:44:00Z",
+      "side": 1,
+      "message": "could we make this just \"...owns or has access...\"? Am I missing some nuance?",
+      "range": {
+        "startLine": 16,
+        "startChar": 27,
+        "endLine": 16,
+        "endChar": 54
+      },
+      "revId": "7e42f9e70576c80308bf3b70dc5e605553654088",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_0da313b3",
+        "filename": "manuals/user-guide/src/main/asciidoc/aaa/aaa-authn-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T21:44:00Z",
+      "side": 1,
+      "message": "\"claim\" is a term that\u0027s used all over and seems to have a technical definition which it would be nice to add here.",
+      "revId": "7e42f9e70576c80308bf3b70dc5e605553654088",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_ad91bf53",
+        "filename": "manuals/user-guide/src/main/asciidoc/aaa/aaa-authn-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T21:44:00Z",
+      "side": 1,
+      "message": "Is it really jut for backward compatibility? My guess is that lots of people will use it in that mode at least for now.\n\nAlso, should this be \"::\" (with no bullet) or \"**\" (to give it its own bullet). I\u0027m not sure, but I wanted to ask.",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 2
+      },
+      "revId": "7e42f9e70576c80308bf3b70dc5e605553654088",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_0d8a331b",
+        "filename": "manuals/user-guide/src/main/asciidoc/aaa/aaa-authn-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T21:44:00Z",
+      "side": 1,
+      "message": "could we move this content into the section instead of as part of the header?",
+      "range": {
+        "startLine": 30,
+        "startChar": 51,
+        "endLine": 30,
+        "endChar": 99
+      },
+      "revId": "7e42f9e70576c80308bf3b70dc5e605553654088",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_4da03b9f",
+        "filename": "manuals/user-guide/src/main/asciidoc/aaa/aaa-authn-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T21:44:00Z",
+      "side": 1,
+      "message": "Should this also be a section with \u003d\u003d\u003d\u003d\u003d in front of it?",
+      "revId": "7e42f9e70576c80308bf3b70dc5e605553654088",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_8da403a7",
+        "filename": "manuals/user-guide/src/main/asciidoc/aaa/aaa-authn-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T21:44:00Z",
+      "side": 1,
+      "message": "This paragraph is really hard to pass in terms of following the \"claim\" vs. the \"request\" vs. the \"token\".",
+      "revId": "7e42f9e70576c80308bf3b70dc5e605553654088",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_ad9f7f4f",
+        "filename": "manuals/user-guide/src/main/asciidoc/aaa/aaa-authn-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T21:44:00Z",
+      "side": 1,
+      "message": "I couldn\u0027t make sense of this.",
+      "revId": "7e42f9e70576c80308bf3b70dc5e605553654088",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_4daefb86",
+        "filename": "manuals/user-guide/src/main/asciidoc/aaa/aaa-authn-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T21:44:00Z",
+      "side": 1,
+      "message": "tokens",
+      "range": {
+        "startLine": 101,
+        "startChar": 11,
+        "endLine": 101,
+        "endChar": 18
+      },
+      "revId": "7e42f9e70576c80308bf3b70dc5e605553654088",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_0db8f3c6",
+        "filename": "manuals/user-guide/src/main/asciidoc/aaa/aaa-authn-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T21:44:00Z",
+      "side": 1,
+      "message": "As far as I can tell this section tells you how to browse to a setting that it suggests you not use and that\u0027s it. Could we remove it?",
+      "range": {
+        "startLine": 103,
+        "startChar": 0,
+        "endLine": 108,
+        "endChar": 154
+      },
+      "revId": "7e42f9e70576c80308bf3b70dc5e605553654088",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_cdb1abe2",
+        "filename": "manuals/user-guide/src/main/asciidoc/aaa/aaa-authn-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T21:44:00Z",
+      "side": 1,
+      "message": "Change to \"Configuring federated authentication\"?",
+      "revId": "7e42f9e70576c80308bf3b70dc5e605553654088",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_edb4a7d2",
+        "filename": "manuals/user-guide/src/main/asciidoc/aaa/aaa-authn-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T21:44:00Z",
+      "side": 1,
+      "message": "I wouldn\u0027t know how to follow these steps. Is the plan to expand on this or would most OpenDaylight users know how to do this and what it means?",
+      "range": {
+        "startLine": 113,
+        "startChar": 0,
+        "endLine": 115,
+        "endChar": 70
+      },
+      "revId": "7e42f9e70576c80308bf3b70dc5e605553654088",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_4dc59b3a",
+        "filename": "manuals/user-guide/src/main/asciidoc/aaa/aaa-authn-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T21:44:00Z",
+      "side": 1,
+      "message": "Pseudocode?",
+      "range": {
+        "startLine": 134,
+        "startChar": 24,
+        "endLine": 134,
+        "endChar": 35
+      },
+      "revId": "7e42f9e70576c80308bf3b70dc5e605553654088",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_6dc0972a",
+        "filename": "manuals/user-guide/src/main/asciidoc/aaa/aaa-authn-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T21:44:00Z",
+      "side": 1,
+      "message": "How?",
+      "revId": "7e42f9e70576c80308bf3b70dc5e605553654088",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_0ddf930e",
+        "filename": "manuals/user-guide/src/main/asciidoc/aaa/aaa-authn-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T21:44:00Z",
+      "side": 1,
+      "message": "Again, how?",
+      "revId": "7e42f9e70576c80308bf3b70dc5e605553654088",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_2de28fd5",
+        "filename": "manuals/user-guide/src/main/asciidoc/aaa/aaa-authn-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T21:44:00Z",
+      "side": 1,
+      "message": "authentication, no caps",
+      "range": {
+        "startLine": 241,
+        "startChar": 10,
+        "endLine": 241,
+        "endChar": 24
+      },
+      "revId": "7e42f9e70576c80308bf3b70dc5e605553654088",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_cde8cbb6",
+        "filename": "manuals/user-guide/src/main/asciidoc/aaa/aaa-authn-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T21:44:00Z",
+      "side": 1,
+      "message": "to",
+      "range": {
+        "startLine": 257,
+        "startChar": 14,
+        "endLine": 257,
+        "endChar": 16
+      },
+      "revId": "7e42f9e70576c80308bf3b70dc5e605553654088",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_edeb47ae",
+        "filename": "manuals/user-guide/src/main/asciidoc/aaa/aaa-authn-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T21:44:00Z",
+      "side": 1,
+      "message": "This tells me nothing.",
+      "range": {
+        "startLine": 260,
+        "startChar": 26,
+        "endLine": 260,
+        "endChar": 68
+      },
+      "revId": "7e42f9e70576c80308bf3b70dc5e605553654088",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_adcd3f5f",
+        "filename": "manuals/user-guide/src/main/asciidoc/aaa/aaa-authn-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T21:44:00Z",
+      "side": 1,
+      "message": "What is authentication policy and how do I configure it?",
+      "range": {
+        "startLine": 264,
+        "startChar": 48,
+        "endLine": 264,
+        "endChar": 69
+      },
+      "revId": "7e42f9e70576c80308bf3b70dc5e605553654088",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_2d8daf31",
+        "filename": "manuals/user-guide/src/main/asciidoc/aaa/aaa-authn-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T21:44:00Z",
+      "side": 1,
+      "message": "If this is planned for the future, maybe it shouldn\u0027t be in the user guide?",
+      "range": {
+        "startLine": 269,
+        "startChar": 0,
+        "endLine": 274,
+        "endChar": 55
+      },
+      "revId": "7e42f9e70576c80308bf3b70dc5e605553654088",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
