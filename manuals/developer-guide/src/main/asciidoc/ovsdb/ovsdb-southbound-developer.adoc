@@ -1,19 +1,277 @@
-== OVSDB MDSAL Southbound Plugin Developer Guide
+== OVSDB MD-SAL Southbound Plugin Developer Guide
 
 === Overview
-TBD
+The OVSDB MD-SAL Southbound plugin provides an MD-SAL based interface to
+Openvswitch systems.  This is done by augmenting the MD-SAL topology Node with
+a YANG model which replicates some (but not all) of the Openvswitch schema.
 
-=== OVSDB MDSAL Southbound Plugin Architecture
-TBD
+=== OVSDB MD-SAL Southbound Plugin Architecture and Operation
+The architecture ond operationa of the OVSDB MD-SAL Southbound plugin will be
+illustrated in the following set of diagrams.
 
-=== Key APIs and Interfaces
-TBD
+==== Connecting to an OVSDB Node
+An OVSDB node is a system which is running the OVS software and is capable of
+being managed by an OVSDB Manager.  OpenDaylight via the OVSDB MD-SAL Southbound
+plugin is capable of operating as an OVSDB Manager.  Depending on the
+configuration of the OVSDB node, the connection of the OVSDB manager can
+be active or passive.
+
+==== Active OVSDB Node Manager Connection
+An active OVSDB Node manager connection is made when OpenDaylight initiates the
+connection to the OVSDB Node.  In order for this to work, the OVSDB Node must
+be configured to be listening on a TCP port for the connection (i.e.
+OpenDaylight is active and the OVSDB Node is passive).  This can be configured
+on the OVSDB Node using the following command:
+
+ ovs-vsctl set-manager ptcp:6640
+
+The following diagram illustrates the sequence of events which occur when
+OpenDaylight initiates an active OVSDB manager connection to an OVSDB Node.
+
+.Active OVSDB Manager Connection
+image::ovsdb-sb-active-connection.jpg[width=500]
+
+Step 1::
+An action is taken to add an OVSDB Node into the OVSDB MD-SAL Southbound
+configuration data store.  An OVSDB Node is an augmentation of a topology node
+and is located under an OVSDB topology node.  The command to create an OVSDB
+Node can be performed via a RESTCONF or from an OpenDaylight plugin.
+Step 2::
+The OVSDB Southbound provider is registered to listen for data change events on
+the portion of the MD-SAL topology data store which contains the OVSDB
+southbound topology node augmentations.  The addtion of an OVSDB Node causes an
+event which is received by the OVSDB Southbound provider.
+Step 3::
+The OVSDB Soutbound provider will initiate a connection to the OVSDB Node using
+the connection information provided in the configuration OVSDB Node (i.e. IP
+address and TCP port number).
+Step 4::
+The OVSDB Southbound provider will add the OVSDB Node to the OVSDB MD-SAL
+operational data store.  The operational data store will contain OVSDB Node
+objects which represent active connections to OVSDB Nodes.
+Step 5::
+The OVSDB Southbound provider requests the schema and databases which are being
+supported by the OVSDB Node.
+Step 6::
+The OVSDB Southbound provider uses the database and schema information to
+construct a monitor request which will cause the OVSDB Node to send OpenDaylight
+any updates which have been made to the OVSDB databases on the OVSDB Node.
+
+
+==== Passive OVSDB Node Manager Connection
+A passive OVSDB Node connection to OpenDaylight is made when the OVSDB Node
+initiates the connection to OpenDaylight.  In order for this to work, the OVSDB
+Node must be configured to connect to the IP address and OVSDB port on which
+OpenDaylight is listening.  This can be configured on the OVSDB Node using
+the following command:
+
+ ovs-vsctl set-manager tcp:<IP address>:6640
+
+The following diagram illustrates the sequence of events which occur when an
+OVSDB Node connects to OpenDaylight.
+
+.Passive OVSDB Manager Connection
+image::ovsdb-sb-passive-connection.jpg[width=500]
+
+Step 1::
+The OVSDB Node initiates a connection to OpenDaylight.
+Step 2::
+The OVSDB Southbound provider will add the OVSDB Node to the OVSDB MD-SAL
+operational data store.  The operational data store will contain OVSDB Node
+objects which represent active connections to OVSDB Nodes.
+Step 3::
+The OVSDB Southbound provider requests the schema and databases which are being
+supported by the OVSDB Node.
+Step 4::
+The OVSDB Southbound provider uses the database and schema information to
+construct a monitor request which will cause the OVSDB Node to send OpenDaylight
+any updates which have been made to the OVSDB databases on the OVSDB Node.
+
+==== OVSDB Node ID in the Southbound Operational MD-SAL 
+Discussion of how the external-ids are used to store an OpenDaylight instance
+identifier.
+
+
+==== OVSDB Changes via OVSDB Southbound Config MD-SAL
+After the connection has been made to an OVSDB Node, changes can be made to the
+OVSDB Node via interaction with the OVSDB Southbound Config MD-SAL.  CRUD
+operations can be made via the RESTCONF interface or via an OpenDaylight plugin
+using the MD-SAL APIs.  The following diagram illustrates the highlevel flow of
+events.
+
+.OVSDB Changes via Southbound Config MD-SAL
+image::ovsdb-sb-config-crud.jpg[width=500]
+
+Step 1::
+A change to the OVSDB Southbound Config MD-SAL is made.  Changes include adding
+or deleting bridges and ports, or setting attributes of OVSDB Nodes, bridges or
+ports.
+Step 2::
+The OVSDB Southbound provider receiveds notification of the changes made to the
+OVSDB Southbound Config MD-SAL data store.
+Step 3::
+As appropriate, OVSDB transactions are contructed and transmitted to the OVSDB
+Node to update the OVSDB database on the OVSDB Node.
+Step 4::
+The OVSDB Node sends update messages to OpenDaylight to indicate the changes
+that have been made to the OVSDB Nodes database.
+Step 5::
+The OVSDB Southbound provider maps the changes received from the OVSDB Node
+into corresponding changes which are made to the OVSDB Southbound Operational
+MD-SAL data store.
+
+==== OVSDB Changes via OVSDB Southbound Config MD-SAL
+Changes to the OVSDB Nodes database may also occur indpendently of OpenDaylight.
+OpenDaylight also receives notifications for these events and updates the
+Southbound operational MD-SAL.  The following diagram illustrates the sequence
+of events.
+
+.OVSDB Changes made directly on the OVSDB Node
+image::ovsdb-sb-oper-crud.jpg
+
+Step 1::
+Changes are made to the OVSDB Node outside of OpenDaylight (e.g. via ovs-vsctl).
+Step 2::
+The OVSDB Node constructs update messages to inform OpenDaylight of the changes
+made to its databases.
+Step 3::
+The OVSDB Southbound provider maps the OVSDB database changes to corresponding
+changes in the OVSDB Southbound operational MD-SAL data store.
+
+==== Openflow controller
+Discussion of how the Openflow controller node is associated with the OVSDB
+southbound model
 
 ==== OVSDB Model
-TBD
+The OVSDB Southbound MD-SAL operates using a YANG model which is based on the
+abstract topology node model.
+https://git.opendaylight.org/gerrit/gitweb?p=yangtools.git;f=model/ietf/ietf-topology/src/main/yang/network-topology%402013-10-21.yang%3Ba=blob[network topology model]
+
+The augmentations for the OVSDB Southbound MD-SAL are defined in the ovsdb.yang
+file.
+https://github.com/opendaylight/ovsdb/blob/master/southbound/southbound-api/src/main/yang/ovsdb.yang[ovsdb.yang]
+
+There are three augmentations:
+
+*ovsdb-node-augmentation*::
+This augments the topology node and maps primarily to the Open_vSwitch table of
+the OVSDB schema.  It contains the following attributes.
+  * *connection-info* - holds the local and remote IP address and TCP port numbers for the OpenDaylight to OVSDB Node connections
+  * *db-version* - version of the OVSDB database
+  * *ovs-version* - version of OVS
+  * *list managed-node-entry* - a list of references to ovsdb-bridge-augmentation nodes, which are the OVS bridges managed by this OVSDB Node
+  * *list datapath-type-entry* - a list of the datapath types supported by the OVSDB Node (e.g. 'system', 'netdev') - depends on newer OVS versions
+  * *list interface-type-entry* - a list of the interface types supported by the OVSDB Node (e.g. 'internal', 'vxlan', 'gre', 'dpdk', etc.) - depends on newer OVS verions
+  * *list openvswitch-external-ids* - a list of the key/value pairs in the Open_vSwitch table external_ids column
+  * *list openvswitch-other-config* - a list of the key/value pairs in the Open_vSwitch table other_config column
+*ovsdb-bridge-augmentation*::
+This augments the topology node and maps to an specific bridge in the OVSDB
+bridge table of the associated OVSDB Node. It contains the following attributes.
+  * *bridge-uuid* - UUID of the OVSDB bridge
+  * *bridge-name* - name of the OVSDB bridge
+  * *bridge-openflow-node-ref* - a reference (instance-identifier) of the Openflow Node associated with this bridge
+  * *list protocol-entry* - the version of Openflow protocol to use with the Openflow controller
+  * *list controller-entry* - a list of controller-uuid and is-connected status of the Openflow controllers associated with this bridge
+  * *datapath-id* - the datapath ID associated with this bridge on the OVSDB Node
+  * *datapath-type* - the datapath type of this bridge
+  * *fail-mode* - the OVSDB fail mode setting of this bridge
+  * *flow-node* - a reference to the flow node corresponding to this bridge
+  * *managed-by* - a reference to the ovsdb-node-augmentation (OVSDB Node) that is managing this bridge
+  * *list bridge-external-ids* - a list of the key/value pairs in the bridge table external_ids column for this bridge
+  * *list bridge-other-configs* - a list of the key/value pairs in the bridge table other_config column for this bridge
+*ovsdb-termination-point-augmentation*::
+This augments the topology termination point model.  The OVSDB Southbound
+MD-SAL uses this model to represent both the OVSDB port and OVSDB interface for
+a given port/interface in the OVSDB schema.  It contains the following
+attributes.
+  * *port-uuid* - 
+  * *interface-uuid* - 
+  * *name* - 
+  * *interface-type* - 
+  * *list options* - 
+  * *ofport* - 
+  * *ofport_request* - 
+  * *vlan-tag* - 
+  * *list trunks* - 
+  * *vlan-mode* - 
+  * *list port-external-ids* - a list of the key/value pairs in the port table external_ids column for this port
+  * *list interface-external-ids* - a list of the key/value pairs in the interface table external_ids interface for this interface
+  * *list port-other-configs* - a list of the key/value pairs in the port table other_config column for this port
+  * *list interface-other-configs* - a list of the key/value pairs in the interface table other_config column for this interface
 
 ==== Tunnel Overlay Model
 TBD
 
-=== API Reference Documentation
+=== Examples of OVSDB Southbound MD-SAL API
+
+==== Connect to an OVSDB Node
+This example RESTCONF command will add an OVSDB Node object to the OVSDB
+Southbound configuration data store and attempt to connect to the OVSDB Host
+located at IP address 10.11.12.1 on TCP port 6640.
+
+ POST http://<host>:8181/restconf/config/network-topology:network-topology/topology/ovsdb:1/
+ Content-Type: application/json
+ {
+   "node": [
+      {
+        "node-id": "ovsdb:HOST1",
+        "connection-info": {
+          "ovsdb:remote-ip": "10.11.12.1",
+          "ovsdb:remote-port": 6640
+        }
+      }
+   ]
+ }
+
+==== Query the OVSDB Southbound Configuration MD-SAL
+Following on from the previous example, if the OVSDB Southbound configuration
+MD-SAL is queried, the RESTCONF command and the resulting reply would look
+something like the following.
+
+ GET http://<host>:8080/restconf/config/network-topology:network-topology/topology/ovsdb:1/
+
+ Application/json data in the reply
+ {
+   "topology": [
+     {
+       "topology-id": "ovsdb:1",
+       "node": [
+         {
+           "node-id": "ovsdb:HOST1",
+           "ovsdb:connection-info": {
+             "remote-port": 6640,
+             "remote-ip": "10.11.12.1"
+           }
+         }
+       ]
+     }
+   ]
+ }
+
+==== Query the OVSDB Southbound Operational MD-SAL
+If the previous example POST command was successful in connecting to the OVSDB
+Node, then eventually the OVSDB Southbound operational MD-SAL will get populated
+with information received via an OVSDB update message from the OVSDB Node.  The
+RESTCONF query and resulting reply would look something like the following.
+
+ http://<host>:8080/restconf/operational/network-topology:network-topology/topology/ovsdb:1/
+
+ Application/json data in the reply
+ TBD - things not working well at time of writing
+
+
+
+==== Add a bridge
 TBD
+
+==== Add a port
+TBD
+
+==== Set attributes
+TBD
+
+==== Delete examples
+TBD
+
+=== Reference Documentation
+http://openvswitch.org/ovs-vswitchd.conf.db.5.pdf[Openvswitch schema]
