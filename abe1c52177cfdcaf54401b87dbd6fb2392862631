@@ -1,0 +1,1858 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aa0d159_4df35b9e",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bk-developers-guide.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "Can you put this in alphabetical order?",
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_90141645",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "Is it DLUX, Dlux or dlux? Just pick one and be consistent.\n\nOn a seemingly related note, there\u0027s a lot of things which should be acronyms that aren\u0027t for example: YANG, CSS, JS, HTML, and URL.",
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_6dee57b6",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "Please describe how to run dlux from the main integration Karaf distribution, which is what will be released, not by cloning the code.\n\nAmong other things, this will not get you the Lithium code every time, but the moving snapshot of post-Litihuim development.",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 131
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_0d2d53fe",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "Provide a description of what brew is and how to get it?",
+      "range": {
+        "startLine": 41,
+        "startChar": 20,
+        "endLine": 41,
+        "endChar": 24
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_2d304f55",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "Delete this?",
+      "range": {
+        "startLine": 51,
+        "startChar": 0,
+        "endLine": 51,
+        "endChar": 91
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_8d4083a6",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "You can assume that how to run the controller is described elsewhere, just start with installing the feature.",
+      "range": {
+        "startLine": 52,
+        "startChar": 0,
+        "endLine": 57,
+        "endChar": 77
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_ed1027aa",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "isntalled,\n\nyou need a comma here not a period",
+      "range": {
+        "startLine": 61,
+        "startChar": 137,
+        "endLine": 61,
+        "endChar": 147
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_cd0d2b92",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "Once",
+      "range": {
+        "startLine": 61,
+        "startChar": 103,
+        "endLine": 61,
+        "endChar": 107
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_ad3bff36",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "This",
+      "range": {
+        "startLine": 61,
+        "startChar": 0,
+        "endLine": 61,
+        "endChar": 2
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_ad221fff",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "The default",
+      "range": {
+        "startLine": 62,
+        "startChar": 56,
+        "endLine": 62,
+        "endChar": 63
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_8d272312",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "access",
+      "range": {
+        "startLine": 62,
+        "startChar": 0,
+        "endLine": 62,
+        "endChar": 6
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_6d1c17c2",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "the Karaf",
+      "range": {
+        "startLine": 64,
+        "startChar": 121,
+        "endLine": 64,
+        "endChar": 126
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_4d211bfa",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "remove \"now\"",
+      "range": {
+        "startLine": 64,
+        "startChar": 33,
+        "endLine": 64,
+        "endChar": 36
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_0d7b13f6",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "I think it should be \"node\" not \"nodes\"",
+      "range": {
+        "startLine": 64,
+        "startChar": 101,
+        "endLine": 64,
+        "endChar": 106
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_cd844bd6",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "You don\u0027t need a space in front of these since they\u0027re already in a listing block.",
+      "range": {
+        "startLine": 68,
+        "startChar": 0,
+        "endLine": 70,
+        "endChar": 34
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_8d6e432e",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "Everything up to here really felt like user documentation, not developer documentation.",
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_ad69bf26",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "Except that this should really be targeting somebody who hasn\u0027t cloned the code unless you *have* to clone the code to build a module.\n\nMaybe provide a link to this directory on the github mirror on the stable/lithium branch, like this: https://github.com/opendaylight/dlux/tree/stable/lithium/modules",
+      "range": {
+        "startLine": 76,
+        "startChar": 0,
+        "endLine": 76,
+        "endChar": 13
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_4d783bf2",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "directory? folder?",
+      "range": {
+        "startLine": 92,
+        "startChar": 23,
+        "endLine": 92,
+        "endChar": 27
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_0d62333e",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "module\u0027s",
+      "range": {
+        "startLine": 93,
+        "startChar": 162,
+        "endLine": 93,
+        "endChar": 168
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_6d73b715",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "which",
+      "range": {
+        "startLine": 93,
+        "startChar": 142,
+        "endLine": 93,
+        "endChar": 145
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_2d65af44",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "dependency",
+      "range": {
+        "startLine": 93,
+        "startChar": 333,
+        "endLine": 93,
+        "endChar": 344
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_cd5beb85",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "these",
+      "range": {
+        "startLine": 95,
+        "startChar": 44,
+        "endLine": 95,
+        "endChar": 49
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_ad50df5e",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": ", which",
+      "range": {
+        "startLine": 97,
+        "startChar": 106,
+        "endLine": 97,
+        "endChar": 113
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_4d4fdbbd",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "see the https://github.com/amdjs/amdjs-api/blob/master/AMD.md[AMD documentation].",
+      "range": {
+        "startLine": 97,
+        "startChar": 157,
+        "endLine": 97,
+        "endChar": 222
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_0dc9d325",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "Add a description of what this is. Maybe \"For example, your module.js file might look like this:\"",
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_edd587b9",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "You sort of say when you\u0027d need to do this and when not, but you don\u0027t say what it is that you\u0027re actually doing.",
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_cdd20bd2",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "It seems like you\u0027re missing a closing }",
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_ad21bfb5",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "I think there\u0027s an extra space here.",
+      "range": {
+        "startLine": 162,
+        "startChar": 1,
+        "endLine": 162,
+        "endChar": 2
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_6d2bb794",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "I don\u0027t see the ID parameter anywhere above, am I missing something?",
+      "range": {
+        "startLine": 164,
+        "startChar": 4,
+        "endLine": 164,
+        "endChar": 16
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_0d1a337d",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "I\u0027m guessing controller is as in MVC, not as in ODL. It\u0027s probably worth noting that you mean a UI controller not an SDN controller given the context.",
+      "range": {
+        "startLine": 167,
+        "startChar": 15,
+        "endLine": 167,
+        "endChar": 25
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_2d1daf73",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "contains",
+      "range": {
+        "startLine": 169,
+        "startChar": 70,
+        "endLine": 169,
+        "endChar": 77
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_cd13eb64",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "that",
+      "range": {
+        "startLine": 169,
+        "startChar": 87,
+        "endLine": 169,
+        "endChar": 90
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_ed16e754",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "controller (no caps)",
+      "range": {
+        "startLine": 177,
+        "startChar": 16,
+        "endLine": 177,
+        "endChar": 27
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_30042214",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "is similar to creating the module.",
+      "range": {
+        "startLine": 179,
+        "startChar": 45,
+        "endLine": 179,
+        "endChar": 70
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_d00a9e20",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "AngularJS\n\nIt\u0027s a proper noun, so it should be capitalized correctly.",
+      "range": {
+        "startLine": 183,
+        "startChar": 54,
+        "endLine": 183,
+        "endChar": 63
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_f00d5a38",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "Karaf, it should be capitalized everywhere",
+      "range": {
+        "startLine": 191,
+        "startChar": 16,
+        "endLine": 191,
+        "endChar": 21
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_70194a78",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "modules\u0027\n\nyou don\u0027t put an s after the apostrophe if the noun is plural.",
+      "range": {
+        "startLine": 197,
+        "startChar": 166,
+        "endLine": 197,
+        "endChar": 175
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_501e8e64",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "Add a link either to github or to the git.opendaylight.org?",
+      "range": {
+        "startLine": 197,
+        "startChar": 121,
+        "endLine": 197,
+        "endChar": 142
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_50352ed8",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "not be an issue",
+      "range": {
+        "startLine": 199,
+        "startChar": 366,
+        "endLine": 199,
+        "endChar": 378
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_d0213ea0",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "Your",
+      "range": {
+        "startLine": 199,
+        "startChar": 189,
+        "endLine": 199,
+        "endChar": 193
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_f0247ab0",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "get",
+      "range": {
+        "startLine": 199,
+        "startChar": 217,
+        "endLine": 199,
+        "endChar": 221
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_302bc283",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "You didn\u0027t put this in quotes before, so don\u0027t now.",
+      "range": {
+        "startLine": 199,
+        "startChar": 156,
+        "endLine": 199,
+        "endChar": 179
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_104fa66c",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "Any",
+      "range": {
+        "startLine": 201,
+        "startChar": 177,
+        "endLine": 201,
+        "endChar": 180
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_10280685",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "This is a tab vs. everything else being a space.",
+      "range": {
+        "startLine": 205,
+        "startChar": 0,
+        "endLine": 205,
+        "endChar": 1
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_504c4e70",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "find the files",
+      "range": {
+        "startLine": 232,
+        "startChar": 302,
+        "endLine": 232,
+        "endChar": 324
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_f0a9dadf",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "HTML, JS or CSS\n\nThese should be capitalized everywhere since they\u0027re acronyms.",
+      "range": {
+        "startLine": 232,
+        "startChar": 158,
+        "endLine": 232,
+        "endChar": 173
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_f05b1a2c",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "RequireJS",
+      "range": {
+        "startLine": 232,
+        "startChar": 181,
+        "endLine": 232,
+        "endChar": 190
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_d0585e34",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "RequireJS",
+      "range": {
+        "startLine": 232,
+        "startChar": 33,
+        "endLine": 232,
+        "endChar": 42
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_b03d92bd",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "the browser",
+      "range": {
+        "startLine": 232,
+        "startChar": 280,
+        "endLine": 232,
+        "endChar": 287
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_9042d63c",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "RequireJS",
+      "range": {
+        "startLine": 232,
+        "startChar": 266,
+        "endLine": 232,
+        "endChar": 275
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_70470a4c",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "reside",
+      "range": {
+        "startLine": 234,
+        "startChar": 126,
+        "endLine": 234,
+        "endChar": 133
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_30798293",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "the browser/RequireJS",
+      "range": {
+        "startLine": 234,
+        "startChar": 371,
+        "endLine": 234,
+        "endChar": 388
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_1076c6a4",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "the above",
+      "range": {
+        "startLine": 234,
+        "startChar": 291,
+        "endLine": 234,
+        "endChar": 296
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_d06ffec3",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "RequireJS",
+      "range": {
+        "startLine": 236,
+        "startChar": 38,
+        "endLine": 236,
+        "endChar": 47
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_109d66bc",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "that url",
+      "range": {
+        "startLine": 236,
+        "startChar": 318,
+        "endLine": 236,
+        "endChar": 321
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_5063eedb",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "RequireJS",
+      "range": {
+        "startLine": 236,
+        "startChar": 216,
+        "endLine": 236,
+        "endChar": 225
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_906976c0",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "the above",
+      "range": {
+        "startLine": 236,
+        "startChar": 138,
+        "endLine": 236,
+        "endChar": 143
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_f0723aac",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "RequireJS",
+      "range": {
+        "startLine": 236,
+        "startChar": 112,
+        "endLine": 236,
+        "endChar": 121
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_705e2a14",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "RequireJS",
+      "range": {
+        "startLine": 236,
+        "startChar": 282,
+        "endLine": 236,
+        "endChar": 291
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_b064b2e5",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "This",
+      "range": {
+        "startLine": 236,
+        "startChar": 187,
+        "endLine": 236,
+        "endChar": 191
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_30a0a2f3",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "AngularJS",
+      "range": {
+        "startLine": 238,
+        "startChar": 26,
+        "endLine": 238,
+        "endChar": 35
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_90b09644",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "dependencies",
+      "range": {
+        "startLine": 240,
+        "startChar": 68,
+        "endLine": 240,
+        "endChar": 78
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_b0ab52d5",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "the browser",
+      "range": {
+        "startLine": 240,
+        "startChar": 226,
+        "endLine": 240,
+        "endChar": 233
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_1084865c",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "are they all factories?",
+      "range": {
+        "startLine": 246,
+        "startChar": 146,
+        "endLine": 246,
+        "endChar": 155
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_70b5ca2f",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "Are these all factories?",
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_d07dbe6f",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "OpenDaylight",
+      "range": {
+        "startLine": 251,
+        "startChar": 69,
+        "endLine": 251,
+        "endChar": 72
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_90973690",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "OpenDaylight",
+      "range": {
+        "startLine": 253,
+        "startChar": 166,
+        "endLine": 253,
+        "endChar": 169
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_10eb2614",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "What do you mean with the \"\u003d\"? Could you convert it into english?",
+      "range": {
+        "startLine": 253,
+        "startChar": 32,
+        "endLine": 253,
+        "endChar": 49
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_90de566c",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "a node?",
+      "range": {
+        "startLine": 254,
+        "startChar": 141,
+        "endLine": 254,
+        "endChar": 145
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_f0f79af3",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "object not objects",
+      "range": {
+        "startLine": 254,
+        "startChar": 78,
+        "endLine": 254,
+        "endChar": 85
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_d0f4def3",
+        "filename": "manuals/developer-guide/src/main/asciidoc/dlux/dlux-core-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "cut \"of\"",
+      "range": {
+        "startLine": 254,
+        "startChar": 36,
+        "endLine": 254,
+        "endChar": 38
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_30d50243",
+        "filename": "manuals/user-guide/src/main/asciidoc/ch-dlux-userguide.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "Either cut this or provide links within the AsciiDoc.",
+      "range": {
+        "startLine": 3,
+        "startChar": 164,
+        "endLine": 3,
+        "endChar": 443
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_10d2465c",
+        "filename": "manuals/user-guide/src/main/asciidoc/ch-dlux-userguide.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "Is it? Isn\u0027t an extensible web-based user interface for OpenDaylight?",
+      "range": {
+        "startLine": 3,
+        "startChar": 84,
+        "endLine": 3,
+        "endChar": 163
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_f0cebab3",
+        "filename": "manuals/user-guide/src/main/asciidoc/ch-dlux-userguide.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "Do we need this?",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 124
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_d0429e0f",
+        "filename": "manuals/user-guide/src/main/asciidoc/ch-dlux-userguide.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "It\u0027s not really to \"integrate\" with OpenDaylight. Maybe say something like: \"DLUX provides a number of different Karaf features, which you can enable and disable separately. In Lithium they are:\" and then give a list?",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 51
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_f0455a17",
+        "filename": "manuals/user-guide/src/main/asciidoc/ch-dlux-userguide.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "Just cut this? In general, avoid links to the wiki as they\u0027ll change and/or go stale.",
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_904c1644",
+        "filename": "manuals/user-guide/src/main/asciidoc/ch-dlux-userguide.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "Cut this",
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_3063c2b2",
+        "filename": "manuals/user-guide/src/main/asciidoc/ch-dlux-userguide.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "Chrome",
+      "range": {
+        "startLine": 23,
+        "startChar": 97,
+        "endLine": 23,
+        "endChar": 103
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_106006a4",
+        "filename": "manuals/user-guide/src/main/asciidoc/ch-dlux-userguide.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "\u003cyour-karaf-ip\u003e\n\nRemoving the spaces will result in the link formatting right.",
+      "range": {
+        "startLine": 23,
+        "startChar": 48,
+        "endLine": 23,
+        "endChar": 63
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_9073b67f",
+        "filename": "manuals/user-guide/src/main/asciidoc/ch-dlux-userguide.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "These are only the default credentials. They can be changed.",
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_d0593eff",
+        "filename": "manuals/user-guide/src/main/asciidoc/ch-dlux-userguide.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "If you put a blank line above this it will actually render as a note.",
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_b047d21c",
+        "filename": "manuals/user-guide/src/main/asciidoc/ch-dlux-userguide.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "Cut this",
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_b06ef294",
+        "filename": "manuals/user-guide/src/main/asciidoc/ch-dlux-userguide.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "Put a blank line above this and make it \"NOTE:\" and it will render as a note.",
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_506d2e97",
+        "filename": "manuals/user-guide/src/main/asciidoc/ch-dlux-userguide.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-05-13T23:58:23Z",
+      "side": 1,
+      "message": "included?\n\nThey\u0027re not really default if they\u0027re not installed by default.",
+      "range": {
+        "startLine": 34,
+        "startChar": 15,
+        "endLine": 34,
+        "endChar": 22
+      },
+      "revId": "abe1c52177cfdcaf54401b87dbd6fb2392862631",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
