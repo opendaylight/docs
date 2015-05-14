@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3aa0d159_39772d3c",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/controller.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 21
+      },
+      "writtenOn": "2015-05-14T11:26:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aa0d159_c9fecd6b",
+      "range": {
+        "startLine": 5,
+        "startChar": 27,
+        "endLine": 5,
+        "endChar": 50
+      },
+      "revId": "fb27f55e39152e2adaab90b4a09ccb4fdbd78aa7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aa0d159_69c1b92d",
         "filename": "manuals/developer-guide/src/main/asciidoc/controller/controller.adoc",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2015-04-22T19:09:27Z",
       "side": 1,
       "message": "its, not it\u0027s",
+      "range": {
+        "startLine": 7,
+        "startChar": 9,
+        "endLine": 7,
+        "endChar": 13
+      },
+      "revId": "fb27f55e39152e2adaab90b4a09ccb4fdbd78aa7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_5972394a",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/controller.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 21
+      },
+      "writtenOn": "2015-05-14T11:26:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aa0d159_69c1b92d",
       "range": {
         "startLine": 7,
         "startChar": 9,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "3aa0d159_19e271d5",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/controller.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 21
+      },
+      "writtenOn": "2015-05-14T11:26:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aa0d159_29e3b1da",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 10
+      },
+      "revId": "fb27f55e39152e2adaab90b4a09ccb4fdbd78aa7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aa0d159_49c4fd3f",
         "filename": "manuals/developer-guide/src/main/asciidoc/controller/controller.adoc",
         "patchSetId": 1
@@ -82,6 +154,30 @@
       "writtenOn": "2015-04-22T19:09:27Z",
       "side": 1,
       "message": "The OpenDaylight Controller is\n\nAlso, all the main bullet points that come after should complete the sentence. So \"...is built\" works, but \"...is provides...\" and \"...is support...\" don\u0027t. Maybe reword it so that you don\u0027t need this line. For example remove the level of each list and turn the first bullet at each level into a sentence.\n\nThe first paragraph would then be: \"The OpenDaylight controller relies on the following technologies:\"",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 12
+      },
+      "revId": "fb27f55e39152e2adaab90b4a09ccb4fdbd78aa7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_999f6150",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/controller.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 21
+      },
+      "writtenOn": "2015-05-14T11:26:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aa0d159_49c4fd3f",
       "range": {
         "startLine": 10,
         "startChar": 0,
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "3aa0d159_39ae4d86",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/controller.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 21
+      },
+      "writtenOn": "2015-05-14T11:26:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aa0d159_49db9d1b",
+      "range": {
+        "startLine": 24,
+        "startChar": 3,
+        "endLine": 24,
+        "endChar": 21
+      },
+      "revId": "fb27f55e39152e2adaab90b4a09ccb4fdbd78aa7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aa0d159_a9f58184",
         "filename": "manuals/developer-guide/src/main/asciidoc/controller/controller.adoc",
         "patchSetId": 1
@@ -128,6 +248,30 @@
       "writtenOn": "2015-04-22T19:09:27Z",
       "side": 1,
       "message": ",  instead of and",
+      "range": {
+        "startLine": 25,
+        "startChar": 61,
+        "endLine": 25,
+        "endChar": 65
+      },
+      "revId": "fb27f55e39152e2adaab90b4a09ccb4fdbd78aa7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_b9e81db5",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/controller.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 21
+      },
+      "writtenOn": "2015-05-14T11:26:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aa0d159_a9f58184",
       "range": {
         "startLine": 25,
         "startChar": 61,
@@ -163,6 +307,30 @@
     },
     {
       "key": {
+        "uuid": "3aa0d159_59a9d979",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/controller.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 21
+      },
+      "writtenOn": "2015-05-14T11:26:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aa0d159_290ad18a",
+      "range": {
+        "startLine": 36,
+        "startChar": 15,
+        "endLine": 36,
+        "endChar": 24
+      },
+      "revId": "fb27f55e39152e2adaab90b4a09ccb4fdbd78aa7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aa0d159_09059579",
         "filename": "manuals/developer-guide/src/main/asciidoc/controller/controller.adoc",
         "patchSetId": 1
@@ -174,6 +342,30 @@
       "writtenOn": "2015-04-22T19:09:27Z",
       "side": 1,
       "message": "HTTP-based",
+      "range": {
+        "startLine": 39,
+        "startChar": 16,
+        "endLine": 39,
+        "endChar": 26
+      },
+      "revId": "fb27f55e39152e2adaab90b4a09ccb4fdbd78aa7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_f9b785d6",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/controller.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 21
+      },
+      "writtenOn": "2015-05-14T11:26:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aa0d159_09059579",
       "range": {
         "startLine": 39,
         "startChar": 16,
