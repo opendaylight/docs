@@ -8,14 +8,14 @@
     <relativePath>../pom.xml</relativePath>
   </parent>
   <modelVersion>4.0.0</modelVersion>
-  <artifactId>installguide</artifactId>
+  <artifactId>getting-started-guide</artifactId>
   <packaging>jar</packaging>
-  <name>OpenDaylight Docs - Manuals - Install Guide</name>
+  <name>OpenDaylight Docs - Manuals - Getting Started Guide</name>
   <properties>
     <!-- This is set by Jenkins according to the branch. -->
     <release.path.name>local</release.path.name>
     <comments.enabled>1</comments.enabled>
-    <bookname>bk-install-guide</bookname>
+    <bookname>bk-getting-started-guide</bookname>
   </properties>
   <!-- ################################################ -->
   <!-- USE "mvn clean generate-sources" to run this POM -->
@@ -83,7 +83,6 @@
             <configuration>
               <profileAudience>enduser</profileAudience>
               <includes>target/generated-docs/${bookname}.xml</includes>
-            <!--  <includes>bk-install-guide.xml</includes> -->
               <generateToc>
                 appendix  toc,title
                 article/appendix  nop
