@@ -10,6 +10,7 @@ device types. Device-specific functionality is implemented as Device Drivers.
 Device Drivers need to be associated with the devices they can be used with. To
 determine this association requires the ability to identify the device type.
 
+
 === DIDM Architecture
 The DIDM project creates the infrastructure to support the following functions:
 
@@ -33,8 +34,51 @@ The DIDM project creates the infrastructure to support the following functions:
    support the APIs defined by the RPCs. There may be different Driver
    implementations for different device types.
 
-=== Configuring DIDM
-TODO
 
-=== Administering or Managing DIDM
-TODO
+=== Installing DIDM
+To install DIDM, download OpenDaylight and use the Karaf console to install the following features:
+----
+odl-didm-identification-api
+
+odl-didm-identification
+
+odl-didm-drivers-api
+----
+
+
+=== Configuring DIDM
+This section shows an example configuration steps for installing a driver (HP 3800 OpenFlow switch driver)
+
+. Repo add DIDM features
+----
+repo-add mvn:org.opendaylight.didm/didm-features/0.1.0-SNAPSHOT/xml/features
+----
+ 
+. Install DIDM features:
+----
+ features:install odl-didm-identification-api
+ features:install odl-didm-identification
+ features:install odl-didm-drivers-api
+----
+ 
+. In order to identify the device, device driver needs to be installed first.
+Identification Manager will be notified when a new device connects to the controller.
+Repo add hp driver
+----
+ repo-add mvn:org.opendaylight.didm.hp/hp-features/0.1.0-SNAPSHOT/xml/features
+----
+ 
+. Install HP driver
+----
+ features:install odl-hp3800
+----
+Now at this point, the driver has written all of the identification information in to the MD-SAL datastore.
+Identification manager should have that information so that it can try to identify the HP 3800 device when it connects to the controller.
+ 
+. Configure the switch and connect it to the controller from Switch CLI.
+
+. Run REST API command to verify the device details:
+----
+http://<CONTROLLER-IP:8181>/restconf/operational/opendaylight-inventory:nodes
+----
+
