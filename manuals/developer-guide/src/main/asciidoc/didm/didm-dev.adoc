@@ -10,6 +10,7 @@ device types. Device-specific functionality is implemented as Device Drivers.
 Device Drivers need to be associated with the devices they can be used with. To
 determine this association requires the ability to identify the device type.
 
+
 === DIDM Architecture
 The DIDM project creates the infrastructure to support the following functions:
 
@@ -33,10 +34,31 @@ The DIDM project creates the infrastructure to support the following functions:
    support the APIs defined by the RPCs. There may be different Driver
    implementations for different device types.
 
-TODO: Add more info and diagram. 
+
+=== Identification process flow
+This section talks about the identification process for an OpenFlow device.
+
+.Manual Discovery
+[NOTE]
+Manual discovery APIs will be made available in the next release for non-OpenFlow devices.
+
+. Device connects to the controller through OpenFlow Plugin discovery
+. Inventory node gets created in config and operational datastores
+. Identification Manager gets notified when the node is created in the operational tree
+. It, then, will try to connect to the device to fetch information in sequence via:
+... OpenFlow
+... SNMP
+... If both fail then it will declare the type "unknown"
+. Augment the operational tree with the device type
+. Device driver is notified when a specific device type augmentation is applied
+. Driver augments the sync data collected 
+. Device driver registers routed RPCs or data change notifications
+
 
 === Key APIs and Interfaces
-TODO
+* User facing APIs become available from individual drivers such as openflow-feature under didm-drivers-api
+* More device specific APIs come from device drivers such as Mininet driver mininet-impl, and HP 3800 driver hp-3800-impl
 
 === API Reference Documentation
-TODO: Provide links to JavaDoc, REST API documentation, etc.
+Go to http://${CONTROLLER-IP}:8181/apidoc/explorer/index.html, and look under DIDM section
+to see all the available REST calls and tables
