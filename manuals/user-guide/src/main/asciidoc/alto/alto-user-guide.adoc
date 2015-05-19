@@ -1,84 +1,134 @@
 == ALTO User Guide
 
 === Overview
-The ALTO project provides support for ''Application Layer Traffic Optimization'' service defined in RFC 7285.
+The ALTO project provides support for __Application Layer Traffic
+Optimization__ services defined in link:https://tools.ietf.org/html/rfc7285[RFC
+7285].
+
+At the version that comes with the Lithium release, ALTO uses the YANG model
+described in link:https://tools.ietf.org/html/draft-shi-alto-yang-model-03[this
+draft].
 
 === ALTO Architecture
 
-* ALTO Main
-** Defines the YANG model for ALTO
-* ALTO Manager
-** A karaf command line tool to load/remove network maps and cost maps
-* ALTO Hosttracker
-** An instance of ALTO service. It will generate a network map and a corresponding cost map based on l2switch
+There are three kinds of ALTO packages in Open Daylight.
 
-(TO BE CONTINUED)
+. **Core**
+The **core** packages are those that define the abstraction of ALTO services.
+Currently there are `alto-model` and `service-api-rfc7285`, which define ALTO
+service in MD-SAL and AD-SAL respectively. Also there is `alto-northbound` which
+provides the ALTO service following the formats defined in RFC 7285.
+. **Basic**
+A majority of **basic** packages are those that provide basic implementations of
+ALTO services. `alto-provider` (for MD-SAL) and `simple-impl` (for AD-SAL)
+belong in this category. There are also some utilities that may come in handy,
+such as `alto-manager`, which provides a karaf command line tool to manipulate
+network maps and cost maps.
+. **Service**
+The packages in the **services** category are those that aims at providing
+useful ALTO instances in real network. There is now `alto-hosttracker`, which
+relies on l2switch and can generate a network map, a corresponding cost map and
+the endpoint cost service as well.
 
-Provide information about feature components and how they work together.
-Also include information about how the feature integrates with
-OpenDaylight. An architecture diagram could help.
+==== MD-SAL v.s. AD-SAL
 
-=== Configuring <feature>
+Even though MD-SAL is quite useful in Open Daylight and there are possibilities
+that AD-SAL might be removed,
+link:https://tools.ietf.org/html/draft-shi-alto-yang-model-03[this document] has
+pointed out that the format defined in RFC 7285 could not be modelled with YANG.
+Thus we have provided a middleware to transform the output data structure into
+RFC7285-compatiable format. The middleware, `simple-imple` is the name, is now
+provided in an AD-SAL way and we will consider implementing it using MD-SAL in
+the future.
 
-Describe how to configure the feature or the project after installation.
-Configuration information could include day-one activities for a project
-such as configuring users, configuring clients/servers and so on.
+=== Configuring ALTO
 
-=== Administering or Managing <feature>
-Include related command reference or  operations that you could perform
-using the feature. For example viewing network statistics, monitoring
-the network,  generating reports, and so on.
+Currently there are not too much extra configurations about ALTO in Open
+Daylight. There are three packages that require their own configuration files,
+including `alto-provider`, `alto-hosttracker` and `simple-impl`. However, the
+only configurable option is the type of the data broker in all three
+configuration files.
 
-NOTE:  Ensure that you create a step procedure whenever required and
-avoid concepts.
+=== Administering or Managing ALTO
 
-For example:
+To enable ALTO, the features must be installed first.
 
-.To configure L2switch components perform the following steps.
-. Step 1:
-. Step 2:
-. Step 3:
+[source,bash]
+karaf > feature:install odl-alto-provider
+karaf > feature:install odl-alto-manager
+feature:install odl-alto-northbound
+feature:install odl-alto-hosttracker
 
-=== Tutorials
-<optional>
-If there is only one tutorial, you skip the "Tutorials" section and
-instead just lead with the single tutorial's name.
+==== Managing Data with RESTCONF
 
-==== <Tutorial Name>
-Ensure that the title starts with a gerund. For example using,
-monitoring, creating, and so on.
+After install `odl-alto-provider` feature in karaf, it is possible to manage
+network-maps and cost-maps using RESTCONF. Since Open Daylight comes with
+link:http://localhost:8181/apidoc/explorer/index.html[an API web service], you
+can view all the operations provided by ALTO.
 
-===== Overview
-An overview of the use case.
+With the example input below you can insert a network map into the data store,
+either by filling the form in the API doc page, or using tools such as `curl`.
 
-===== Prerequisites
-Provide any prerequisite information, assumed knowledge, or environment
-required to execute the use case.
+[source,bash]
+HOST_IP=localhost # IP address of the controller
+CREDENTIAL=admin:admin # username and password for authentication
+BASE_URL=$HOST_IP:8181/restconf/config
+SERVICE_PATH=alto-service:resources/alto-service:network-maps/alto-service:network-map
+RESOURCE_ID=test_odl # Should match the one in the input file
+curl -X PUT -H "content-type:application/yang.data+json" \
+		-d @example-input.json -u $CREDENTIAL \
+		http://$BASE_URL/$SERVICE_PATH/$RESOURCE_ID
 
-===== Target Environment
-Include any topology requirement for the use case. Ideally, provide
-visual (abstract) layout of network diagrams and any other useful visual
-aides.
+[source,json]
+include::example-input.json[]
 
-===== Instructions
-Use case could be a set of configuration procedures. Including
-screenshots to help demonstrate what is happening is especially useful.
-Ensure that you specify them separately. For example:
+Then you can use the following command to see the results:
 
-. *Setting up the VM*
-To set up a VM perform the following steps.
-.. Step 1
-.. Step 2
-.. Step 3
+[source,bash]
+HOST_IP=localhost # IP address of the controller
+CREDENTIAL=admin:admin # username and password for authentication
+BASE_URL=$HOST_IP:8181/restconf/config
+SERVICE_PATH=alto-service:resources/alto-service:network-maps/alto-service:network-map
+RESOURCE_ID=test_odl
+curl -X GET -u $CREDENTIAL http://$BASE_URL/$SERVICE_PATH/$RESOURCE_ID
 
-. *Installing the feature*
-To install the feature perform the following steps.
-.. Step 1
-.. Step 2
-.. Step 3
+Then you can use `DELETE` method to remove the data from the data store.
 
-. *Configuring the environment*
-To configure the system perform the following steps.
-.. Step 1
-.. Step 2
-.. Step 3
+[source,bash]
+HOST_IP=localhost # IP address of the controller
+CREDENTIAL=admin:admin # username and password for authentication
+BASE_URL=$HOST_IP:8181/restconf/config
+SERVICE_PATH=alto-service:resources/alto-service:network-maps/alto-service:network-map
+RESOURCE_ID=test_odl
+curl -X DELETE -u $CREDENTIAL http://$BASE_URL/$SERVICE_PATH/$RESOURCE_ID
+
+==== Using `alto-manager`
+
+The `alto-manager` package provides an karaf command line tool which wraps up
+the functions described in the last section.
+
+[source,bash]
+karaf > alto-create <type> <resource-file>
+karaf > alto-delete <type> <resource-id>
+
+Currently only `network-map` and `cost-map` are supported. Also the resource
+files used in `alto-manager` follow the RFC7285-compatiable format instead of
+RESTCONF format.
+
+Here is an example of how to use `alto-manager` to put a network map into the
+data store.
+
+[source,bash]
+karaf > alto-create network-map example-rfc7285-networkmap.json
+
+[source,xml]
+include::example-rfc7285-networkmap.json[]
+
+==== Using `alto-hosttracker`
+
+`alto-hosttracker` will read data from `l2switch` and generates a network map
+with resource id `hosttracker-network-map` and a cost map with resource id
+`hostracker-cost-map`. It can only work with Openflow-enabled network.
+
+After installing the `odl-alto-hosttracker` feature, the users should be able to
+see the corresponding network map and cost map inserted into the data store.
