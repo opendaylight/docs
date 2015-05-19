@@ -1,40 +1,112 @@
-== <Feature> Developer Guide
+== ALTO Developer Guide ==
 
-=== Overview
-Provide an overview of the feature, what it logical functionality it
-provides and why you might use it as a developer. To be clear the target
-audience for this guide is a developer who will be _using_ the feature
-to build something separate, but _not_ somebody who will be developing
-code for this feature itself.
+=== Overview ===
+The topics of this guide are:
+. How to add alto projects as dependencies;
+. How to put/fetch data from ALTO;
+. How to use customized service implementations.
 
-NOTE: More so than with user guides, the guide may cover more than one
-feature. If that is the case, be sure to list all of the features this
-covers.
+=== Adding ALTO Projects as Dependencies ===
 
-=== <Feature> Architecture
-Provide information about feature components and how they work together.
-Also include information about how the feature integrates with
-OpenDaylight. An architecture diagram could help. This may be the same
-as the diagram used in the user guide, but it should likely be less
-abstract and provide more information that would be applicable to a
-developer.
+Most ALTO packages can be added as dependencies in Maven projects by putting the
+following code in the __pom.xml__ file.
 
-=== Key APIs and Interfaces
-Document the key things a user would want to use. For some features,
-there will only be one logical grouping of APIs. For others there may be
-more than one grouping.
+    <dependency>
+        <groupId>org.opendaylight.alto</groupId>
+        <artifactId>${THE_NAME_OF_THE_PACKAGE_YOU_NEED}</artifactId>
+        <version>${ALTO_VERSION}</version>
+    </dependency>
 
-Assuming the API is MD-SAL- and YANG-based, the APIs will be available
-both via RESTCONF and via Java APIs. Giving a few examples using each is
-likely a good idea.
+The current stable version for ALTO is `0.1.0-SNAPSHOT`.
 
-==== API Group 1
-Provide a description of what the API does and some examples of how to
-use it.
+=== Putting/Fetching data from ALTO ===
 
-==== API Group 2
-Provide a description of what the API does and some examples of how to
-use it.
+==== Using RESTful API ====
+There are two kinds of RESTful APIs for ALTO: the one provided by
+`alto-northbound` which follows the formats defined in
+link:https://tools.ietf.org/html/rfc7285[RFC 7285], and the one provided by
+RESTCONF whose format is defined by the YANG model proposed in
+link:https://tools.ietf.org/html/draft-shi-alto-yang-model-03[this draft]
 
-=== API Reference Documentation
-Provide links to JavaDoc, REST API documentation, etc.
+One way to get the URLs for the resources from `alto-northbound` is to visit
+the IRD service first where there is a `uri` field for every entry. However, the
+IRD service is not yet implemented so currently the developers have to construct
+the URLs themselves. The base URL is `/controller/nb/v2/alto` and below is a list
+of the specific paths defined in `AltoNorthbound.java` in `alto-northbound`
+using Jersey `@Path` annotation:
+
+. `/ird/{rid}`: the path to access __IRD__ services;
+. `/networkmap/{rid}[/{tag}]`: the path to access __Network Map__ services;
+. `/costmap/{rid}[/{tag}[/{mode}/{metric}]]`: the path to access __Cost Map__
+services;
+. `/filtered/networkmap/{rid}[/{tag}]`: the path to access __Filtered Network Map__
+services;
+. `/filtered/costmap/{rid}[/{tag}]`: the path to access __Filtered Cost Map__
+services;
+. `/endpointprop/lookup/{rid}[/{tag}]`: the path to access __Endpoint Property__
+services;
+. `/endpointcost/lookup/{rid}[/{tag}]`: the path to access __Endpoint Cost__
+services.
+
+NOTE: The segments in brackets are optional.
+
+If you want to fetch the data using RESTCONF, it is highly recommended to take a
+look at link:http://localhost:8181/apidoc/explorer/index.html[the `apidoc` page]
+after installing the `alto-model` feature in karaf.
+
+It is also worth pointing out that `alto-northbound` only supports `GET` and
+`POST` operations so it is impossible to manipulate the data through its RESTful
+APIs. To modify the data, use `PUT` and `DELETE` methods with RESTCONF.
+
+NOTE: The current implementation uses the `configuration` data store and that
+enables the developers to modify the data directly through RESTCONF. In the future this
+approach might be disabled in the core packages of ALTO but may still be
+available as an extension.
+
+==== Using AD-SAL ====
+Five interfaces are defined in package `service-api-rfc7285`. Follow the steps
+below to use them:
+. Determine the required service interface: `IRDService`, `NetworkMapService`,
+`CostMapService`, `EndpointPropertyService` or `EndpointCostService`;
+. Use the `ServiceHelper` to get the instance;
+. Call the corresponding methods with appropriate parameters.
+
+==== Using MD-SAL ====
+You can also fetch data from the data store directly. It is a little more
+complex than the other methods but also the most straight-forward way.
+
+First you must get the access to the data store by registering your module with
+a data broker.
+
+Then an `InstanceIdentifier` must be created. Here is an example of how to build
+an `InstanceIdentifier` for a __network map__:
+
+    import org.opendaylight.yang.gen.v1.urn.opendaylight.alto.rev150404.Resources;
+    import org.opendaylight.yang.gen.v1.urn.opendaylight.alto.rev150404.resources.NetworkMaps;
+    import org.opendaylight.yang.gen.v1.urn.opendaylight.alto.rev150404.resources.network.maps.NetworkMap;
+    import org.opendaylight.yang.gen.v1.urn.opendaylight.alto.rev150404.resources.network.maps.NetworkMapKey;
+    ...
+    protected InstanceIdentifier<NetworkMap> getNetworkMapIID(String resource_id) {
+        NetworkMapKey key = new NetworkMapKey(ResourceId.getDefaultInstance(resource_id));
+        InstanceIdentifier<NetworkMap> iid = InstanceIdentifier.builder(Resources.class)
+                                                               .child(NetworkMaps.class)
+                                                               .child(NetworkMap.class, key)
+                                                               .build();
+        return iid;
+    }
+
+With the `InstanceIdentifier` you can use `ReadOnlyTransaction`,
+`WriteTransaction` and `ReadWriteTransaction` to manipulate the data
+accordingly. The `simple-impl` package, which provides some of the AD-SAL APIs
+mentioned above, is using this method to get data from the data store and then
+convert them into RFC7285-compatible objects.
+
+=== Providing Customized Implementation ===
+
+Currently it is very simple to provide a customized network map, the
+only thing you have to do is to put the data into the data store. Cost maps are
+more complex since there are no classes for the cost values by default, you have
+to define it using `augment` in YANG. Here is an example in `alto-hosttracker`.
+
+[source,yang]
+include::augment.yang[]
