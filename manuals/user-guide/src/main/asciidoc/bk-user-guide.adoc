@@ -26,7 +26,11 @@ include::ch-clustering.adoc[Setting Up Clustering on an OpenDaylight Controller]
 
 This second part of the user guide covers project specific usage instructions.
 
+include::alto/alto-user-guide.adoc[ALTO]
+
 include::vtn/vtn-user.adoc[]
+
+include::alto/alto-user-guide.adoc[ALTO]
 
 include::bgpcep/odl-bgpcep-bgp-all-user.adoc[BGP]
 
