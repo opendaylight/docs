@@ -43,12 +43,14 @@ the end of their file.
 
 // FIXME: section_Git_and_Gerrit_Setup.adoc and section_Hacking_from_CLI.adoc
 //        is much more contributor style documentation and not Developer
-//        documentation for folks which wants to build on top of OpenDaylight. 
+//        documentation for folks which wants to build on top of OpenDaylight.
 include::section_Git_and_Gerrit_Setup.adoc[]
 
 include::section_Hacking_from_CLI.adoc[]
 
 = Project-Specific Development Guides
+
+include::alto/alto-developer-guide.adoc[]
 
 include::controller/controller.adoc[Controller]
 
