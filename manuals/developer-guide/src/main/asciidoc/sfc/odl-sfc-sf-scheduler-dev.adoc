@@ -1,16 +1,53 @@
-=== Service Function Scheduler
+=== Service Function Scheduling Algorithms
 
 ==== Overview
-TBD
+When creating the Rendered Service Path (RSP), the earlier release of SFC
+chose the first available service function from a list of service function
+names. Now a new API is introduced to allow developers to develop their own
+schedule algorithms when creating the RSP. There are four scheduling algorithms
+(Random, Round Robin, Load Balance and Shortest Path) are provided as examples
+for the API definition. This guide gives a simple introduction of how to develop
+service function scheduling algorithms based on the current extensible framework.
 
 ==== Architecture
-TBD
+The following figure illustrates the service function selection framework and
+algorithms.
+
+.SF Scheduling Algorithm framework Architecture
+image::sfc-sf-selection-arch.png["SF Selection Architecture",width=500]
+
+The YANG Model defines the Service Function Scheduling Algorithm type
+identities and how they are stored in the MD-SAL data store for the scheduling
+algorithms.
+
+The MD-SAL data store stores all informations for the scheduling algorithms,
+including their types, names, and status.
+
+The API provides some basic APIs to manage the informations stored in the
+MD-SAL data store, like putting new items into it, getting all scheduling
+algorithms, etc.
+
+The RESTCONF API provides APIs to manage the informations stored in the MD-SAL
+data store through RESTful calls.
+
+The Service Function Chain Renderer gets the enabled scheduling algorithm type,
+and schedules the service functions with scheduling algorithm implementation.
 
 ==== Key APIs and Interfaces
-TBD
+While developing a new Service Function Scheduling Algorithm, a new class
+should be added and it should extend the base schedule class
+SfcServiceFunctionSchedulerAPI. And the new class should implement the abstract
+function:
 
-===== API Group 1
-TBD
++public List<String> scheduleServiceFuntions(ServiceFunctionChain chain, int serviceIndex)+.
+
+.input
+* *+ServiceFunctionChain chain+*: the chain which will be rendered
+* *+int serviceIndex+*: the initial service index for this rendered service path
+
+.output
+* *+List<String>+*: a list of service funtion names which scheduled by the
+Service Function Scheduling Algorithm.
 
 ==== API Reference Documentation
-TBD
+Please refer the API docs generated in the mdsal-apidocs.
