@@ -30,6 +30,14 @@ include::bgpcep/odl-bgpcep-bgp-all-user.adoc[BGP]
 
 include::bgpcep/odl-bgpcep-pcep-all-user.adoc[PCEP]
 
+include::groupbasedpolicy/odl-groupbasedpolicy-base-user-guide.adoc[GBP]
+
+include::groupbasedpolicy/groupbasedpolicy-ofoverlay-user-guide.adoc[GBP]
+
+include::groupbasedpolicy/odl-groupbasedpolicy-neutronmapper-user-guide.adoc[GBP]
+
+include::groupbasedpolicy/odl-groupbasedpolicy-opflex-user-guide.adoc[GBP]
+
 include::sfc/sfc.adoc[Service Function Chain]
 
 include::tcpmd5/odl-tcpmd5-all-user.adoc[TCP-MD5]
