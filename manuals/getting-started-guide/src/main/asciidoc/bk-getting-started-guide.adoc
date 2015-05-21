@@ -47,9 +47,6 @@ Optional part introduction goes here.
 // END COMMENT
 //////////////////////////
 
-[preface]
-include::release-notes.adoc[OpenDaylight Release Notes]
-
 //////////////////////////
 // BEGIN COMMENT
 Please note and leave the blank line between include statements here.
@@ -60,9 +57,13 @@ the end of their file.
 // END COMMENT
 //////////////////////////
 
-include::ch_introduction.adoc[]
+include::ch-introduction.adoc[]
+
+include::release-notes.adoc[OpenDaylight Release Notes]
 
 include::general_installation.adoc[]
+
+include::vtn/vtn-install.adoc[]
 
 include::ovsdb/ovsdb-install.adoc[]
 
