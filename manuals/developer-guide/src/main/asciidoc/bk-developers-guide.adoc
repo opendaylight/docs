@@ -58,6 +58,14 @@ include::bgpcep/odl-bgpcep-pcep-all-dev.adoc[PCEP]
 
 include::capwap/capwap-dev.adoc[CAPWAP]
 
+include::groupbasedpolicy/odl-groupbasedpolicy-base-dev.adoc[GBP]
+
+include::groupbasedpolicy/odl-groupbasedpolicy-ofoverlay-dev.adoc[GBP]
+
+include::groupbasedpolicy/odl-groupbasedpolicy-neutronmapper-dev.adoc[GBP]
+
+include::groupbasedpolicy/odl-groupbasedpolicy-opflex-dev.adoc[GBP]
+
 include::iotdm/iotdm-dev.adoc[]
 
 include::lacp/lacp-dev.adoc[]
