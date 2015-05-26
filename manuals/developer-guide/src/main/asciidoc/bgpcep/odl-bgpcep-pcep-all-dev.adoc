@@ -1,40 +1,275 @@
 == PCEP Developer Guide
 
 === Overview
-Provide an overview of the feature, what it logical functionality it
-provides and why you might use it as a developer. To be clear the target
-audience for this guide is a developer who will be _using_ the feature
-to build something separate, but _not_ somebody who will be developing
-code for this feature itself.
-
-NOTE: More so than with user guides, the guide may cover more than one
-feature. If that is the case, be sure to list all of the features this
-covers.
+This section provides an overview of *feature odl-bgpcep-pcep-all* . This
+feature will install everything needed for PCE (Path Computation Element
+Protocol) from establishing the connection, storing information about LSPs
+(Label Switched Paths) and displaying data in network-topology overview.
 
 === PCEP Architecture
-Provide information about feature components and how they work together.
-Also include information about how the feature integrates with
-OpenDaylight. An architecture diagram could help. This may be the same
-as the diagram used in the user guide, but it should likely be less
-abstract and provide more information that would be applicable to a
-developer.
+Each feature represents a module in BGPCEP codebase. Following diagram 
+illustrates how the features are related.
+
+image::bgpcep/pcep-dependency-tree.png[height="450px",width="550px",title="PCEP Dependency Tree"]
 
 === Key APIs and Interfaces
-Document the key things a user would want to use. For some features,
-there will only be one logical grouping of APIs. For others there may be
-more than one grouping.
 
-Assuming the API is MD-SAL- and YANG-based, the APIs will be available
-both via RESTCONF and via Java APIs. Giving a few examples using each is
-likely a good idea.
+==== PCEP
 
-==== API Group 1
-Provide a description of what the API does and some examples of how to
-use it.
+===== Session handling
 
-==== API Group 2
-Provide a description of what the API does and some examples of how to
-use it.
+_32-pcep.xml_ defines only pcep-dispatcher, the parser it should be
+using (global-pcep-extensions), factory for creating session proposals
+(you can create different proposals for different PCCs).
+
+[source,xml]
+----
+ <module>
+  <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:controller:pcep:impl">prefix:pcep-dispatcher-impl</type>
+  <name>global-pcep-dispatcher</name>
+  <pcep-extensions>
+   <type xmlns:pcepspi="urn:opendaylight:params:xml:ns:yang:controller:pcep:spi">pcepspi:extensions</type>
+   <name>global-pcep-extensions</name>
+  </pcep-extensions>
+  <pcep-session-proposal-factory>
+    <type xmlns:pcep="urn:opendaylight:params:xml:ns:yang:controller:pcep">pcep:pcep-session-proposal-factory</type>
+    <name>stateful07-proposal</name>
+  </pcep-session-proposal-factory>
+  <boss-group>
+   <type xmlns:netty="urn:opendaylight:params:xml:ns:yang:controller:netty">netty:netty-threadgroup</type>
+   <name>global-boss-group</name>
+  </boss-group>
+  <worker-group>
+   <type xmlns:netty="urn:opendaylight:params:xml:ns:yang:controller:netty">netty:netty-threadgroup</type>
+   <name>global-worker-group</name>
+  </worker-group>
+ </module>
+----
+
+For user configuration of PCEP, check User Guide.
+
+===== Parser
+
+Base PCEP parser includes messages and attributes from
+http://tools.ietf.org/html/rfc5441[RFC5441],
+http://tools.ietf.org/html/rfc5541[RFC5541],
+http://tools.ietf.org/html/rfc5455[RFC5455],
+http://tools.ietf.org/html/rfc5557[RFC5557] and
+http://tools.ietf.org/html/rfc5521[RFC5521].
+
+===== Registration
+
+As mentioned before, all parsers and serializers need to be registered
+into __Extension provider__. This _Extension provider_ is configured in
+initial configuration of the parser-spi module (__32-pcep.xml__).
+
+[source,xml]
+----
+ <module>
+  <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:controller:pcep:spi">prefix:pcep-extensions-impl</type>
+  <name>global-pcep-extensions</name>
+  <extension>
+   <type xmlns:pcepspi="urn:opendaylight:params:xml:ns:yang:controller:pcep:spi">pcepspi:extension</type>
+   <name>pcep-parser-base</name>
+  </extension>
+  <extension>
+   <type xmlns:pcepspi="urn:opendaylight:params:xml:ns:yang:controller:pcep:spi">pcepspi:extension</type>
+   <name>pcep-parser-ietf-stateful07</name>
+  </extension>
+  <extension>
+   <type xmlns:pcepspi="urn:opendaylight:params:xml:ns:yang:controller:pcep:spi">pcepspi:extension</type>
+   <name>pcep-parser-ietf-initiated00</name>
+  </extension>
+ </module>
+----
+
+* 6: *pcep-parser-base* - will register parsers and serializers
+implemented in pcep-impl module
+
+* 10: *pcep-parser-ietf-stateful07* - will register parsers and
+serializers implemented in stateful07 module
+
+How to register your own extension to PCEP parser, is described in wiki.
+Stateful07 module is a good example of a PCEP parser extension.
+
+Configuration of PCEP parsers specifies one implementation of _Extension
+provider_ that will take care of registering mentioned parser
+extensions:
+https://git.opendaylight.org/gerrit/gitweb?p=bgpcep.git;a=blob;f=pcep/spi/src/main/java/org/opendaylight/protocol/pcep/spi/pojo/SimplePCEPExtensionProviderContext.java;hb=HEAD[SimplePCEPExtensionProviderContext].
+All registries are implemented in package
+https://git.opendaylight.org/gerrit/gitweb?p=bgpcep.git;a=tree;f=pcep/spi/src/main/java/org/opendaylight/protocol/pcep/spi/pojo;hb=HEAD[pcep-spi].
+
+===== Parsing
+
+Parsing of PCEP elements is mostly done as described in the wiki, 
+the only exception is message parsing, that is described here.
+
+In BGP messages, the parsing of first-level elements (path-attributes)
+can be validated in a simple way, as the attributes should be ordered
+chronologically. PCEP, on the other hand, has a strict object order
+policy, that is described in RBNF form in each RFC. Therefore the
+algorithm for parsing here is to parse all objects in order as they
+appear in the message. The parsing of objects and its sub-elements
+conforms the Developer Guide. The result is a list of __PCEPObjects__,
+that is put through validation. _validate()_ methods are present in each
+message parser. Depending on the complexity of the message, it can
+contain either a simple condition (checking the presence of a mandatory
+object) or a full state machine.
+
+In addition to that, PCEP requires sending Error message for each
+documented parsing error. This is handled by creating an empty list of
+messages _errors_ which is then passed as argument throughout whole
+parsing process. If some parser encounters __PCEPDocumentedException__,
+it has the duty to create appropriate PCEP Error message and add it to
+this list. In the end, when the parsing is finished, this list is
+examined and all messages are sent to peer.
+
+Better understanding provides this sequence diagram:
+
+image::bgpcep/pcep-parsing.png[height="450px",width="550px",title="Parsing"]
+
+==== PCEP IETF stateful
+
+This paragraph summarizes module pcep-ietf-stateful07. The term
+_stateful_ refers to
+http://tools.ietf.org/html/draft-ietf-pce-stateful-pce[draft-ietf-pce-stateful-pce]
+and
+http://tools.ietf.org/html/draft-ietf-pce-pce-initiated-lsp[draft-ietf-pce-pce-initiated-lsp]
+in versions draft-ietf-pce-stateful-pce-07 with draft-ietf-pce-pce-initiated-lsp-00.
+
+We will upgrade our implementation, when the stateful draft gets
+promoted to RFC.
+
+Stateful module is implemented as extensions to pcep-base-parser.
+Stateful draft declared new elements as well as additional fields or
+tlvs to known objects. All new elements are defined in yang models, that
+contain augmentations to elements defined in
+https://git.opendaylight.org/gerrit/gitweb?p=bgpcep.git;a=blob;f=pcep/api/src/main/yang/pcep-types.yang;hb=HEAD[pcep-types.yang]
+In case of extending known elements, the _Parser_ class merely extends
+the base class and overrides necessary methods as shown in following
+diagram:
+
+image::bgpcep/validation.png[height="450px",width="550px",title="Extending existing parsers"]
+
+All parsers (including those for newly defined PCEP elements) have to be
+registered via _Activator_ class. This class is present in both modules.
+
+In addition to parsers, stateful module also introduces new session
+proposal. New proposal includes new fields defined in stateful drafts
+for Open object.
+
+==== PCEP segment routing
+
+PCEP Segment Routing is an extension of base PCEP and
+pcep-ietf-stateful-07 extension. The pcep-segment-routing module
+implements
+http://tools.ietf.org/html/draft-ietf-pce-segment-routing-01[draft-ietf-pce-segment-routing-01].
+
+The extension brings new SR-ERO and SR-RRO subobject composed of SID
+(Segment Identifier) and/or NAI (Node or Adjacency Identifier). Segment
+Routing path is carried in the ERO and RRO object, as a list of
+SR-ERO/SR-RRO subobjects ordered by user. The draft defines new TLV -
+SR-PCE-CAPABILITY TLV, carried in Open object, used to negotiate Segment
+Routing ability.
+
+The yang models of subobject, SR-PCE-CAPABILITY TLV and appropriate
+augmentations are defined in
+https://git.opendaylight.org/gerrit/gitweb?p=bgpcep.git;a=blob;f=pcep/segment-routing/src/main/yang/odl-pcep-segment-routing.yang;hb=HEAD/[odl-pcep-segment-routing.yang]. +
+The pcep-segment-routing module includes parsers/serializers for new
+subobject
+(https://git.opendaylight.org/gerrit/gitweb?p=bgpcep.git;a=blob;f=pcep/segment-routing/src/main/java/org/opendaylight/protocol/pcep/segment/routing/SrEroSubobjectParser.java;hb=HEAD[SrEroSubobjectParser])
+and TLV
+(https://git.opendaylight.org/gerrit/gitweb?p=bgpcep.git;a=blob;f=pcep/segment-routing/src/main/java/org/opendaylight/protocol/pcep/segment/routing/SrPceCapabilityTlvParser.java;hb=HEAD[SrPceCapabilityTlvParser]).
+
+The pcep-segment-routing module implements
+http://tools.ietf.org/html/draft-ietf-pce-lsp-setup-type-01[draft-ietf-pce-lsp-setup-type-01],
+too. The draft defines new TLV - Path Setup Type TLV, which value
+indicate path setup signaling technique. The TLV may be included in
+RP/SRP object. For default RSVP-TE signaling protocol, the TLV is
+omitted. For Segment Routing, PST = 1 is defined.
+
+The Path Setup Type TLV is modeled with yang in module
+https://git.opendaylight.org/gerrit/gitweb?p=bgpcep.git;a=blob;f=pcep/api/src/main/yang/pcep-types.yang;hb=HEAD[pcep-types.yang].
+A parser/serializer is implemented in
+https://git.opendaylight.org/gerrit/gitweb?p=bgpcep.git;a=blob;f=pcep/impl/src/main/java/org/opendaylight/protocol/pcep/impl/tlv/PathSetupTypeTlvParser.java;hb=HEAD[PathSetupTypeTlvParser]
+and it is overriden in segment-routing module to provide the aditional
+PST.
+
+==== PCEP Topology
+
+PCEP data is displayed only through one URL that is accessible from the base network-topology URL:
+
+_http://localhost:8181/restconf/operational/network-topology:network-topology/topology/pcep-topology_
+
+Each PCC will be displayed as a node:
+
+[source,xml]
+----
+<node>
+ <path-computation-client>
+  <ip-address>42.42.42.42</ip-address>
+  <state-sync>synchronized</state-sync>
+  <stateful-tlv>
+   <stateful>
+    <initiation>true</initiation>
+    <lsp-update-capability>true</lsp-update-capability>
+   </stateful>
+  </stateful-tlv>
+ </path-computation-client>
+ <node-id>pcc://42.42.42.42</node-id>
+</node>
+</source>
+----
+
+If some tunnels are configured on the network, they would be displayed on the same page, within a node that initiated the tunnel:
+
+[source,xml]
+----
+<node>
+ <path-computation-client>
+  <state-sync>synchronized</state-sync>
+  <stateful-tlv>
+   <stateful>
+    <initiation>true</initiation>
+    <lsp-update-capability>true</lsp-update-capability>
+   </stateful>
+  </stateful-tlv>
+  <reported-lsp>
+   <name>foo</name>
+   <lsp>
+    <operational>down</operational>
+    <sync>false</sync>
+    <ignore>false</ignore>
+    <plsp-id>1</plsp-id>
+    <create>false</create>
+    <administrative>true</administrative>
+    <remove>false</remove>
+    <delegate>true</delegate>
+    <processing-rule>false</processing-rule>
+    <tlvs>
+    <lsp-identifiers>
+      <ipv4>
+       <ipv4-tunnel-sender-address>43.43.43.43</ipv4-tunnel-sender-address>
+       <ipv4-tunnel-endpoint-address>0.0.0.0</ipv4-tunnel-endpoint-address>
+       <ipv4-extended-tunnel-id>0.0.0.0</ipv4-extended-tunnel-id>
+      </ipv4>
+      <tunnel-id>0</tunnel-id>
+      <lsp-id>0</lsp-id>
+     </lsp-identifiers>
+     <symbolic-path-name>
+      <path-name>Zm9v</path-name>
+     </symbolic-path-name>
+    </tlvs>
+   </lsp>
+  </reported-lsp>
+  <ip-address>43.43.43.43</ip-address>
+ </path-computation-client>
+ <node-id>pcc://43.43.43.43</node-id>
+</node>
+----
+
+Note that, _<path-name>_ tag displays tunnel name in Base64 encoding.
 
 === API Reference Documentation
-Provide links to JavaDoc, REST API documentation, etc.
+Javadocs are generated while creating mvn:site 
+and they are located in target/ directory in each module.
