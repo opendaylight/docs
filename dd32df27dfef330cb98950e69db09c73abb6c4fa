@@ -22,6 +22,30 @@
       "revId": "dd32df27dfef330cb98950e69db09c73abb6c4fa",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_17504331",
+        "filename": "manuals/developer-guide/src/main/asciidoc/controller/md-sal-rpc-routing.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 21
+      },
+      "writtenOn": "2015-05-27T15:16:49Z",
+      "side": 1,
+      "message": "Added bit clarification why we opted out to enforcing data store presence of node in MD-SAL.",
+      "parentUuid": "1a9dcd25_3e90bceb",
+      "range": {
+        "startLine": 72,
+        "startChar": 0,
+        "endLine": 74,
+        "endChar": 64
+      },
+      "revId": "dd32df27dfef330cb98950e69db09c73abb6c4fa",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
