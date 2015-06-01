@@ -111,6 +111,29 @@
     },
     {
       "key": {
+        "uuid": "1a9dcd25_5f49f0ce",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/chapter_security_considerations.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 3339
+      },
+      "writtenOn": "2015-06-01T23:37:15Z",
+      "side": 1,
+      "message": "Unfortunately this is really a double edged sword. On one hand, isolation of the controller can reduce the attack surface, but on the other hand it creates a single high-value target for attackers. Since Openflow switches will forward packets to the controller if they don\u0027t match a rule, no amount of isolation will entirely prevent an attacker in the data plane from attacking the control plane. Just such a vulnerability was already found in ONOS - for details see http://www.slideshare.net/davidjorm/opendaylight-brisbane-user-group-opendaylight-security",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 32
+      },
+      "revId": "e8e82f824f5038c4afb5f910b7670490bad7a918",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a9dcd25_6958be56",
         "filename": "manuals/getting-started-guide/src/main/asciidoc/chapter_security_considerations.adoc",
         "patchSetId": 3
