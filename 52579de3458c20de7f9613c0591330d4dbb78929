@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a9dcd25_ff81dc4a",
+        "filename": "manuals/readme/src/main/asciidoc/template_release_notes.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-01T21:36:44Z",
+      "side": 1,
+      "message": "My guess is that release notes want to be a section (\u003d\u003d\u003d), not a chapter (\u003d\u003d) since they\u0027ll appear under a chapter of release notes.",
+      "revId": "52579de3458c20de7f9613c0591330d4dbb78929",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_5f901095",
+        "filename": "manuals/readme/src/main/asciidoc/template_release_notes.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-01T21:36:44Z",
+      "side": 1,
+      "message": "Given that each project has an overview in the user guide and the developer guide, do we need it again here? I\u0027m open to that, but make this should be short and sweet?",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 15
+      },
+      "revId": "52579de3458c20de7f9613c0591330d4dbb78929",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_dfcae0a0",
+        "filename": "manuals/readme/src/main/asciidoc/template_release_notes.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-01T21:36:44Z",
+      "side": 1,
+      "message": "Why is this here?",
+      "revId": "52579de3458c20de7f9613c0591330d4dbb78929",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_bff6f4d5",
+        "filename": "manuals/readme/src/main/asciidoc/template_release_notes.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-01T21:36:44Z",
+      "side": 1,
+      "message": "The only issue with this is that we want to tell people how to retrieve just the bugs that are opened against Lithium.",
+      "range": {
+        "startLine": 70,
+        "startChar": 0,
+        "endLine": 71,
+        "endChar": 48
+      },
+      "revId": "52579de3458c20de7f9613c0591330d4dbb78929",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
