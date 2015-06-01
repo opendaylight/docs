@@ -1,0 +1,313 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a9dcd25_891d0ac0",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/chapter_security_considerations.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-01T18:33:47Z",
+      "side": 1,
+      "message": "Just \"OpenDaylight\" to avoid confusion with the controller project as compared to controller project within OpenDaylight specifically.",
+      "range": {
+        "startLine": 3,
+        "startChar": 70,
+        "endLine": 4,
+        "endChar": 23
+      },
+      "revId": "e8e82f824f5038c4afb5f910b7670490bad7a918",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_894bcaaf",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/chapter_security_considerations.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-01T18:33:47Z",
+      "side": 1,
+      "message": "Security Response Team",
+      "range": {
+        "startLine": 5,
+        "startChar": 58,
+        "endLine": 6,
+        "endChar": 5
+      },
+      "revId": "e8e82f824f5038c4afb5f910b7670490bad7a918",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_29c87621",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/chapter_security_considerations.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-01T18:33:47Z",
+      "side": 1,
+      "message": "Security Response Team",
+      "range": {
+        "startLine": 9,
+        "startChar": 42,
+        "endLine": 9,
+        "endChar": 56
+      },
+      "revId": "e8e82f824f5038c4afb5f910b7670490bad7a918",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_245f3de7",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/chapter_security_considerations.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-01T18:33:47Z",
+      "side": 1,
+      "message": "This section needs to be reworked a bit to talk about threat models, which is I think what it was you were trying to get at. Basically, you can imagine people attacking OpenDaylight from (i) outside the secure network which we recommend you install OpenDaylight in, (ii) inside the secure network or outside if you don\u0027t have such a secure network, and (iii) if they have access to the machine running OpenDaylight.\n\nWe don\u0027t consider case (iii) at all, so maybe we just ignore it or just say that we assume only authorized people can access the machine(s) with OpenDaylight installed.\n\nPotential attacks from case (ii) are things we care about, but they are lower-priority than case (i) since we can mostly assume a restricted set of authorized people could launch those attacks.\n\nCase (i) is what we\u0027re really worried about and that\u0027s really only attacks from the data network via SB protocols, e.g., OpenFlow or NETCONF.",
+      "revId": "e8e82f824f5038c4afb5f910b7670490bad7a918",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_09eeda88",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/chapter_security_considerations.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-01T18:33:47Z",
+      "side": 1,
+      "message": "vulnerabilities that can affect OpenDaylight.",
+      "range": {
+        "startLine": 13,
+        "startChar": 37,
+        "endLine": 13,
+        "endChar": 70
+      },
+      "revId": "e8e82f824f5038c4afb5f910b7670490bad7a918",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_6958be56",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/chapter_security_considerations.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-01T18:33:47Z",
+      "side": 1,
+      "message": "issues",
+      "range": {
+        "startLine": 55,
+        "startChar": 27,
+        "endLine": 55,
+        "endChar": 32
+      },
+      "revId": "e8e82f824f5038c4afb5f910b7670490bad7a918",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_89550a1f",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/chapter_security_considerations.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-01T18:33:47Z",
+      "side": 1,
+      "message": "either being fixed or",
+      "range": {
+        "startLine": 58,
+        "startChar": 64,
+        "endLine": 58,
+        "endChar": 67
+      },
+      "revId": "e8e82f824f5038c4afb5f910b7670490bad7a918",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_49370200",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/chapter_security_considerations.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-01T18:33:47Z",
+      "side": 1,
+      "message": "learn",
+      "range": {
+        "startLine": 61,
+        "startChar": 5,
+        "endLine": 61,
+        "endChar": 9
+      },
+      "revId": "e8e82f824f5038c4afb5f910b7670490bad7a918",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_a95ec643",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/chapter_security_considerations.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-01T18:33:47Z",
+      "side": 1,
+      "message": "You probably want to point here: https://wiki.opendaylight.org/view/Security:Main",
+      "revId": "e8e82f824f5038c4afb5f910b7670490bad7a918",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_04d0014f",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/chapter_security_considerations.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-01T18:33:47Z",
+      "side": 1,
+      "message": "I\u0027m not 100% sure, but I believe that this is superseded by the Karaf information below.",
+      "revId": "e8e82f824f5038c4afb5f910b7670490bad7a918",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_c4c1b981",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/chapter_security_considerations.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-01T18:33:47Z",
+      "side": 1,
+      "message": "cut \"and\"? Shouldn\u0027t it just be \"...(JAAS) in compliance with...\"?",
+      "range": {
+        "startLine": 125,
+        "startChar": 29,
+        "endLine": 125,
+        "endChar": 32
+      },
+      "revId": "e8e82f824f5038c4afb5f910b7670490bad7a918",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_e441550c",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/chapter_security_considerations.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-01T18:33:47Z",
+      "side": 1,
+      "message": "to the OpenDaylight Karaf distribution.",
+      "range": {
+        "startLine": 142,
+        "startChar": 37,
+        "endLine": 143,
+        "endChar": 13
+      },
+      "revId": "e8e82f824f5038c4afb5f910b7670490bad7a918",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_0447a120",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/chapter_security_considerations.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-01T18:33:47Z",
+      "side": 1,
+      "message": "This doesn\u0027t really say how to enable it. We should note that AAA Authentication is enabled by default when the odl-restconf feature is turned on and say where the usernames and passwords are stored.",
+      "revId": "e8e82f824f5038c4afb5f910b7670490bad7a918",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_040fa131",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/chapter_security_considerations.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-01T18:33:47Z",
+      "side": 1,
+      "message": "This isn\u0027t really a way to secure the controller, but a way to secure the network. I don\u0027t think you need to have all this text here. At most, I\u0027d provide a sentence saying to see the user guide for Defense4All assuming they choose to provide one.",
+      "revId": "e8e82f824f5038c4afb5f910b7670490bad7a918",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_c92232b9",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/chapter_security_considerations.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-01T18:33:47Z",
+      "side": 1,
+      "message": "None of this section actually discusses the security implications of clustering. There are actual ones, which are chiefly that the communication between nodes of a cluster are unencrypted and unauthenticated. The result is that when clustering is enabled, you need to make sure that the nodes are only connected to a secured network where no attackers will be trying to read or inject spurious messages within the cluster.",
+      "revId": "e8e82f824f5038c4afb5f910b7670490bad7a918",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
