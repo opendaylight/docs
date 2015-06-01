@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a9dcd25_7f1aac6f",
+        "filename": "manuals/user-guide/src/main/asciidoc/ch-adding-functionality.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-01T21:02:22Z",
+      "side": 1,
+      "message": "*If* we want to add this, we probably want to add it as a book, not a chapter by using \u003d instead of \u003d\u003d.",
+      "revId": "040149e28395548983236c03d455d84d927e7ded",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_3f050411",
+        "filename": "manuals/user-guide/src/main/asciidoc/ch-adding-functionality.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-01T21:02:22Z",
+      "side": 1,
+      "message": "I don\u0027t think this is really true. We ship with nothing enabled by default and this isn\u0027t a complete list of the functionality we ship.",
+      "revId": "040149e28395548983236c03d455d84d927e7ded",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_9f13f85b",
+        "filename": "manuals/user-guide/src/main/asciidoc/ch-adding-functionality.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-01T21:02:22Z",
+      "side": 1,
+      "message": "These are all deprecated in Lithium as part of the AD-SAL and will be removed in Beryllium.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 55
+      },
+      "revId": "040149e28395548983236c03d455d84d927e7ded",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
