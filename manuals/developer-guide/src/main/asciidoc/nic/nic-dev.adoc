@@ -1,0 +1,58 @@
+== Network Intent Composition (NIC) Developer Guide
+
+=== Overview
+The Network Intent Composition (NIC) provides four features:
+
+* odl-nic-core - the basic model and infrastructure for the NIC capabilities
+
+* odl-nic-cli - support for the Karaf console CLI NIC commands
+
+* odl-nic-renderer-vtn - a feature that transforms an intent to a network
+modification using the VTN project
+
+* odl-nic-renderer-gbp - a feature that transforms an intent to a network
+modification using the Group Policy project
+
+_Only a single renderer feature should be installed at a time for the Lithium
+release._
+
+=== odl-nic-core
+This feature supplies the base models for the Network Intent Composition (NIC)
+capability. This includes the definition of intent as well as the configuration
+and operational data trees.
+
+This feature only provides an information model. The interface for NIC is to
+modify the information model via the configuraiton data tree, which will
+trigger the renderer to make the appropriate changes in the controlled
+network.
+
+==== POST / PUT (configuration)
+This operations create instances of an intent in the configuration data tree
+and trigger the creation or modification of an intent.
+
+==== GET (configuration / operational)
+This operation lists all or fetches a single intent from the data tree.
+
+==== DELETE (configuration)
+This operation will cause an intent to be removed from the system and trigger
+any configuration changes on the network rendered from this intent to be
+removed.
+
+=== odl-nic-cli
+This feature provides karaf console CLI command to manipulate the intent
+data model. The CLI essentailly invokes the equivalent data operations.
+
+==== intent:add
+Creates a new intent in the configuration data tree
+
+==== intent:update
+Updates an existing intent in the configuration data tree
+
+==== intent:delete
+Removes an existing intent from the system
+
+==== intent:list
+Lists all the intents in the system
+
+==== intent:show
+Displayes the details of a single intent

@@ -1,0 +1,94 @@
+== Network Intent Composition (NIC) User Guide
+
+=== Overview
+Network Intent Composition (NIC) is an interface that allows clients to
+express a desired state in an implementation-neutral form that will be
+enforced via modification of available resources under the control of
+the OpenDaylight system.
+
+This description is purposely abstract as an intent interface might
+encompass network services, virtual devices, storage, etc.
+
+The intent interface is meant to be a controller-agnostic interface
+so that "intents" are portable across implementations, such as OpenDaylight
+and ONOS. Thus an intent specification should not contain implementation
+or technology specifics.
+
+The intent specification will be implemented by decomposing the intent
+and augmenting it with implementation specifics that are driven by
+local implementation rules, policies, and/or settings.
+
+=== Network Intent Composition (NIC) Architecture
+The core of the NIC architecture is the intent model, which specifies
+the details of the desired state. It is the responsibility of the NIC
+implementation transforms this desired state to the resources under
+the control of OpenDaylight. The component that transforms the
+intent to the implementation is typically referred to as a renderer.
+
+For the Lithium release, multiple, simultaneous renderers will not be supported.
+Instead either the VTN or GBP renderer feature can be installed, but
+not both.
+
+For the Litium release, the only actions supported are "ALLOW" and
+"BLOCK". The "ALLOW" action indicates that traffic can flow between
+the source and destination end points, while "BLOCK" prevents that
+flow; although it is possible that an given implementation may augment
+the available actions with additional actions.
+
+Besides transforming a desired state to an actual state it is the
+responsibility of a renderer to update the operational state tree for
+the NIC data model in OpenDaylight to reflect the intent which the
+renderer implemented.
+
+=== Configuring Network Intent Composition (NIC)
+For the Litium release there is no default implementation of a renderer,
+thus without an additional module installed the NIC will not function.
+
+=== Administering or Managing Network Intent Composition (NIC)
+There is no additional administration of management capabilities
+related to the Network Intent Composition features.
+
+=== Interactions
+A user can interact with the Network Intent Composition (NIC) either
+through the RESTful interface using standard RESTCONF operations and
+syntax or via the Karaf console CLI.
+
+==== REST
+
+===== Configuration
+The Network Intent Composition (NIC) feature supports the following REST
+operations against the configuration data store.
+
+* POST - creates a new instance of an intent in the configuration store,
+which will trigger the realization of that intent. An ID _must_ be specified
+as part of this request as an attribute of the intent.
+
+* PUT - creates or updates an instance of an intent in the configuration store,
+which will trigger the realization of that intent.
+
+* GET - fetches a list of all configured intents or a specific configured
+intent.
+
+* DETELE - removes a configured intent from the configuration store, which
+triggers the removal of the intent from the network.
+
+===== Operational
+The Network Intent Composition (NIC) feature supports the following REST
+operations against the operational data store.
+
+* GET - fetches a list of all operational intents or a specific operational
+intent.
+
+==== Karaf Console CLI
+Using the Karaf console CLI intents can be manipulated. The following Karaf
+console CLI commands are available.
+
+* intent:add <intent-data> - creates a new intent
+
+* intent:update <id> <intent-data> - updates an existing intent
+
+* intent:list - lists all intents in the system
+
+* intent:show <id> - display the details of a specific intent
+
+* intent:delete <id> - removes an intent from the system
