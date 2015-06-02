@@ -1,0 +1,198 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a9dcd25_1fefe888",
+        "filename": "manuals/developer-guide/src/main/asciidoc/didm/didm-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-02T01:34:02Z",
+      "side": 1,
+      "message": "This is complete sentence, it should end with a paragraph.\n\nAlso, it should be non-OpenFlow, not non-openflow.",
+      "revId": "63e41754878d5fcb6374e9f109d92f3fd7754089",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_dfe8a07e",
+        "filename": "manuals/developer-guide/src/main/asciidoc/didm/didm-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-02T01:34:02Z",
+      "side": 1,
+      "message": "OpenFlow Plugin (the name of the project) or openflowplugin (the shortname of the project)",
+      "range": {
+        "startLine": 45,
+        "startChar": 44,
+        "endLine": 45,
+        "endChar": 58
+      },
+      "revId": "63e41754878d5fcb6374e9f109d92f3fd7754089",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_ffed5c8c",
+        "filename": "manuals/developer-guide/src/main/asciidoc/didm/didm-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-02T01:34:02Z",
+      "side": 1,
+      "message": "datastores",
+      "range": {
+        "startLine": 46,
+        "startChar": 56,
+        "endLine": 46,
+        "endChar": 65
+      },
+      "revId": "63e41754878d5fcb6374e9f109d92f3fd7754089",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_9f02183d",
+        "filename": "manuals/developer-guide/src/main/asciidoc/didm/didm-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-02T01:34:02Z",
+      "side": 1,
+      "message": "declare",
+      "range": {
+        "startLine": 51,
+        "startChar": 30,
+        "endLine": 51,
+        "endChar": 37
+      },
+      "revId": "63e41754878d5fcb6374e9f109d92f3fd7754089",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_bfffd433",
+        "filename": "manuals/developer-guide/src/main/asciidoc/didm/didm-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-02T01:34:02Z",
+      "side": 1,
+      "message": "What does this mean?",
+      "revId": "63e41754878d5fcb6374e9f109d92f3fd7754089",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_5ffc903e",
+        "filename": "manuals/developer-guide/src/main/asciidoc/didm/didm-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-02T01:34:02Z",
+      "side": 1,
+      "message": "Can you give an example? Is flow programming an example?",
+      "revId": "63e41754878d5fcb6374e9f109d92f3fd7754089",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_7ff94c4c",
+        "filename": "manuals/user-guide/src/main/asciidoc/didm/didm-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-02T01:34:02Z",
+      "side": 1,
+      "message": "I think this will already be done as part of the Integration Karaf distribution.\n\nAlso, the version will be 0.1.0-Lithium.",
+      "revId": "63e41754878d5fcb6374e9f109d92f3fd7754089",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_ffa47c58",
+        "filename": "manuals/user-guide/src/main/asciidoc/didm/didm-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-02T01:34:02Z",
+      "side": 1,
+      "message": "Since this is exactly the same as above, can you leave it out?",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 62,
+        "endChar": 4
+      },
+      "revId": "63e41754878d5fcb6374e9f109d92f3fd7754089",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_9f89b8cc",
+        "filename": "manuals/user-guide/src/main/asciidoc/didm/didm-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-02T01:34:02Z",
+      "side": 1,
+      "message": "If the intent is for this to be distributed with Lithium, it should be included with the Karaf integration distribution by adding it to the integration features index.\n\nAlso, the version will be 0.1.0-Lithium.",
+      "revId": "63e41754878d5fcb6374e9f109d92f3fd7754089",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_bf86f4b7",
+        "filename": "manuals/user-guide/src/main/asciidoc/didm/didm-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-02T01:34:02Z",
+      "side": 1,
+      "message": "Do a REST GET from this URL to verify the device details?",
+      "revId": "63e41754878d5fcb6374e9f109d92f3fd7754089",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
