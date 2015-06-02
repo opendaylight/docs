@@ -19,6 +19,29 @@
     },
     {
       "key": {
+        "uuid": "1a9dcd25_56b79a86",
+        "filename": "manuals/user-guide/src/main/asciidoc/aaa.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 21
+      },
+      "writtenOn": "2015-06-02T12:02:32Z",
+      "side": 1,
+      "message": "Is this refering to HTTP Basic Auth or in general?",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 22
+      },
+      "revId": "6e7e06483c4a8cd4e4ed5a63970064275ca8b563",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a9dcd25_1342843e",
         "filename": "manuals/user-guide/src/main/asciidoc/aaa.adoc",
         "patchSetId": 3
@@ -59,6 +82,30 @@
     },
     {
       "key": {
+        "uuid": "1a9dcd25_36ac4e35",
+        "filename": "manuals/user-guide/src/main/asciidoc/aaa.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 21
+      },
+      "writtenOn": "2015-06-02T12:02:32Z",
+      "side": 1,
+      "message": "I would suggest using somethink like\n[source, bash]\n----\n\n----\n\nto provide samples.",
+      "parentUuid": "1a9dcd25_333d40bc",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 141
+      },
+      "revId": "6e7e06483c4a8cd4e4ed5a63970064275ca8b563",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a9dcd25_d34bbc57",
         "filename": "manuals/user-guide/src/main/asciidoc/aaa.adoc",
         "patchSetId": 3
@@ -70,6 +117,29 @@
       "writtenOn": "2015-06-02T02:23:01Z",
       "side": 1,
       "message": "Same with the lots of spaces",
+      "revId": "6e7e06483c4a8cd4e4ed5a63970064275ca8b563",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_16b1128f",
+        "filename": "manuals/user-guide/src/main/asciidoc/aaa.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 21
+      },
+      "writtenOn": "2015-06-02T12:02:32Z",
+      "side": 1,
+      "message": "use \n[source,bash]\n----\ncurl -ik -u \u0027admin:admin\u0027 http://localhost:8181/restconf/config/toaster:toaster\n----\n\nTo provide samples.",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 95
+      },
       "revId": "6e7e06483c4a8cd4e4ed5a63970064275ca8b563",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -161,6 +231,52 @@
         "startChar": 28,
         "endLine": 96,
         "endChar": 40
+      },
+      "revId": "6e7e06483c4a8cd4e4ed5a63970064275ca8b563",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_566eba02",
+        "filename": "manuals/user-guide/src/main/asciidoc/aaa.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 21
+      },
+      "writtenOn": "2015-06-02T12:02:32Z",
+      "side": 1,
+      "message": "Add [source, language] to specify in which language sample is provided",
+      "range": {
+        "startLine": 137,
+        "startChar": 0,
+        "endLine": 163,
+        "endChar": 4
+      },
+      "revId": "6e7e06483c4a8cd4e4ed5a63970064275ca8b563",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_767176df",
+        "filename": "manuals/user-guide/src/main/asciidoc/aaa.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 21
+      },
+      "writtenOn": "2015-06-02T12:02:32Z",
+      "side": 1,
+      "message": "[source,json]",
+      "range": {
+        "startLine": 169,
+        "startChar": 0,
+        "endLine": 169,
+        "endChar": 4
       },
       "revId": "6e7e06483c4a8cd4e4ed5a63970064275ca8b563",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
