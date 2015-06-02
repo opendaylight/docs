@@ -1,0 +1,504 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a9dcd25_e7e7123f",
+        "filename": "manuals/user-guide/src/main/asciidoc/lacp/lacp-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-02T19:03:13Z",
+      "side": 1,
+      "message": "demonstrates?\n\nAlso, this is a complete sentence, so it should end with a period.",
+      "range": {
+        "startLine": 45,
+        "startChar": 19,
+        "endLine": 45,
+        "endChar": 36
+      },
+      "revId": "74f3032d063f35033becb3dac64bbaff6d7641e6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_a7d10a59",
+        "filename": "manuals/user-guide/src/main/asciidoc/lacp/lacp-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-02T19:03:13Z",
+      "side": 1,
+      "message": "in Open vSwitch",
+      "range": {
+        "startLine": 52,
+        "startChar": 64,
+        "endLine": 52,
+        "endChar": 78
+      },
+      "revId": "74f3032d063f35033becb3dac64bbaff6d7641e6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_67cb02a6",
+        "filename": "manuals/user-guide/src/main/asciidoc/lacp/lacp-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-02T19:03:13Z",
+      "side": 1,
+      "message": "the below",
+      "range": {
+        "startLine": 52,
+        "startChar": 85,
+        "endLine": 52,
+        "endChar": 90
+      },
+      "revId": "74f3032d063f35033becb3dac64bbaff6d7641e6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_07e31e34",
+        "filename": "manuals/user-guide/src/main/asciidoc/lacp/lacp-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-02T19:03:13Z",
+      "side": 1,
+      "message": "verify, no caps",
+      "range": {
+        "startLine": 52,
+        "startChar": 33,
+        "endLine": 52,
+        "endChar": 39
+      },
+      "revId": "74f3032d063f35033becb3dac64bbaff6d7641e6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_67422212",
+        "filename": "manuals/user-guide/src/main/asciidoc/lacp/lacp-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-02T19:03:13Z",
+      "side": 1,
+      "message": "You probably want to say what people are looking for, I\u0027m assuming they\u0027re looking for a rule with dl_type\u003d0x8809.",
+      "revId": "74f3032d063f35033becb3dac64bbaff6d7641e6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_07ba3e0a",
+        "filename": "manuals/user-guide/src/main/asciidoc/lacp/lacp-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-02T19:03:13Z",
+      "side": 1,
+      "message": "the below",
+      "range": {
+        "startLine": 58,
+        "startChar": 71,
+        "endLine": 58,
+        "endChar": 76
+      },
+      "revId": "74f3032d063f35033becb3dac64bbaff6d7641e6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_e7be32ff",
+        "filename": "manuals/user-guide/src/main/asciidoc/lacp/lacp-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-02T19:03:13Z",
+      "side": 1,
+      "message": "\"switch (s1)\" and \"host (h1)\" with spaces before the parentheses and using the lowercase mininet names.",
+      "range": {
+        "startLine": 58,
+        "startChar": 41,
+        "endLine": 58,
+        "endChar": 64
+      },
+      "revId": "74f3032d063f35033becb3dac64bbaff6d7641e6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_e755d2c6",
+        "filename": "manuals/user-guide/src/main/asciidoc/lacp/lacp-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-02T19:03:13Z",
+      "side": 1,
+      "message": "host (h1)",
+      "range": {
+        "startLine": 63,
+        "startChar": 131,
+        "endLine": 63,
+        "endChar": 139
+      },
+      "revId": "74f3032d063f35033becb3dac64bbaff6d7641e6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_4747e61d",
+        "filename": "manuals/user-guide/src/main/asciidoc/lacp/lacp-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-02T19:03:13Z",
+      "side": 1,
+      "message": "OpenFlow",
+      "range": {
+        "startLine": 63,
+        "startChar": 96,
+        "endLine": 63,
+        "endChar": 104
+      },
+      "revId": "74f3032d063f35033becb3dac64bbaff6d7641e6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_0751ded7",
+        "filename": "manuals/user-guide/src/main/asciidoc/lacp/lacp-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-02T19:03:13Z",
+      "side": 1,
+      "message": "host (h1)",
+      "range": {
+        "startLine": 64,
+        "startChar": 89,
+        "endLine": 64,
+        "endChar": 97
+      },
+      "revId": "74f3032d063f35033becb3dac64bbaff6d7641e6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_6759c2fd",
+        "filename": "manuals/user-guide/src/main/asciidoc/lacp/lacp-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-02T19:03:13Z",
+      "side": 1,
+      "message": "The bond",
+      "range": {
+        "startLine": 64,
+        "startChar": 144,
+        "endLine": 64,
+        "endChar": 148
+      },
+      "revId": "74f3032d063f35033becb3dac64bbaff6d7641e6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_27fadabd",
+        "filename": "manuals/user-guide/src/main/asciidoc/lacp/lacp-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-02T19:03:13Z",
+      "side": 1,
+      "message": "Do these two commands go into mininet or into /etc/modprobe.d/bonding.conf?",
+      "range": {
+        "startLine": 66,
+        "startChar": 0,
+        "endLine": 67,
+        "endChar": 30
+      },
+      "revId": "74f3032d063f35033becb3dac64bbaff6d7641e6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_0768fe85",
+        "filename": "manuals/user-guide/src/main/asciidoc/lacp/lacp-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-02T19:03:13Z",
+      "side": 1,
+      "message": "should this be capitalized? I don\u0027t think so.",
+      "range": {
+        "startLine": 69,
+        "startChar": 66,
+        "endLine": 69,
+        "endChar": 70
+      },
+      "revId": "74f3032d063f35033becb3dac64bbaff6d7641e6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_47f5a6c9",
+        "filename": "manuals/user-guide/src/main/asciidoc/lacp/lacp-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-02T19:03:13Z",
+      "side": 1,
+      "message": "the Mininet VM.",
+      "range": {
+        "startLine": 70,
+        "startChar": 87,
+        "endLine": 70,
+        "endChar": 97
+      },
+      "revId": "74f3032d063f35033becb3dac64bbaff6d7641e6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_e70392b6",
+        "filename": "manuals/user-guide/src/main/asciidoc/lacp/lacp-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-02T19:03:13Z",
+      "side": 1,
+      "message": "host (h1)",
+      "range": {
+        "startLine": 72,
+        "startChar": 114,
+        "endLine": 72,
+        "endChar": 122
+      },
+      "revId": "74f3032d063f35033becb3dac64bbaff6d7641e6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_07ff9eab",
+        "filename": "manuals/user-guide/src/main/asciidoc/lacp/lacp-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-02T19:03:13Z",
+      "side": 1,
+      "message": "the Mininet VM",
+      "range": {
+        "startLine": 72,
+        "startChar": 126,
+        "endLine": 72,
+        "endChar": 136
+      },
+      "revId": "74f3032d063f35033becb3dac64bbaff6d7641e6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_c730d6a0",
+        "filename": "manuals/user-guide/src/main/asciidoc/lacp/lacp-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-02T19:03:13Z",
+      "side": 1,
+      "message": "where does this get entered?",
+      "range": {
+        "startLine": 74,
+        "startChar": 0,
+        "endLine": 81,
+        "endChar": 28
+      },
+      "revId": "74f3032d063f35033becb3dac64bbaff6d7641e6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_67278265",
+        "filename": "manuals/user-guide/src/main/asciidoc/lacp/lacp-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-02T19:03:13Z",
+      "side": 1,
+      "message": "the host (h1) will send LACP packets to the switch (s1).",
+      "range": {
+        "startLine": 83,
+        "startChar": 32,
+        "endLine": 83,
+        "endChar": 99
+      },
+      "revId": "74f3032d063f35033becb3dac64bbaff6d7641e6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_872ace2a",
+        "filename": "manuals/user-guide/src/main/asciidoc/lacp/lacp-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-02T19:03:13Z",
+      "side": 1,
+      "message": "The LACP",
+      "range": {
+        "startLine": 83,
+        "startChar": 101,
+        "endLine": 83,
+        "endChar": 105
+      },
+      "revId": "74f3032d063f35033becb3dac64bbaff6d7641e6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_e71ab216",
+        "filename": "manuals/user-guide/src/main/asciidoc/lacp/lacp-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-02T19:03:13Z",
+      "side": 1,
+      "message": "host (h1)",
+      "range": {
+        "startLine": 83,
+        "startChar": 247,
+        "endLine": 83,
+        "endChar": 255
+      },
+      "revId": "74f3032d063f35033becb3dac64bbaff6d7641e6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_471cc613",
+        "filename": "manuals/user-guide/src/main/asciidoc/lacp/lacp-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-02T19:03:13Z",
+      "side": 1,
+      "message": "host (h1) and switch (s1)",
+      "range": {
+        "startLine": 83,
+        "startChar": 181,
+        "endLine": 83,
+        "endChar": 204
+      },
+      "revId": "74f3032d063f35033becb3dac64bbaff6d7641e6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_0716bef1",
+        "filename": "manuals/user-guide/src/main/asciidoc/lacp/lacp-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-02T19:03:13Z",
+      "side": 1,
+      "message": "switch (s1)",
+      "range": {
+        "startLine": 122,
+        "startChar": 67,
+        "endLine": 122,
+        "endChar": 77
+      },
+      "revId": "74f3032d063f35033becb3dac64bbaff6d7641e6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
