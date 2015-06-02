@@ -2,8 +2,8 @@
 
 === Overview
 See https://wiki.opendaylight.org/view/IoTDM_Overview#Overview
-The onem2m resource tree according to the procedures documented in
-TS0001: OneM2M Functional Architecture, and TS0004: OneM2M Service
+The oneM2M resource tree according to the procedures documented in
+TS0001: oneM2M Functional Architecture, and TS0004: oneM2M Service
 Layer Core Protocol Specification.  The two official methods to
 access the data tree are HTTP and CoAP.  Typically, applications
 access the data tree with HTTP using the procedures outlined
@@ -16,20 +16,37 @@ The karaf feature odl-iotdm-onem2m is required in order to access
 the data tree before apps, and things can access it.
 
 === OneM2M Architecture
- More text to follow
+ The architecture provides a framework that enables the support of
+ the oneM2M resource containment tree. The onem2m-core implements
+ the MDSAL RPCs defined in the onem2m-api yang files. These RPCs
+ enable oneM2M resources to be created, read, updated, and
+ deleted (CRUD), and also enables the management of subscriptions
+ When resources are CRUDed, the onem2m-notifier issues oneM2M
+ notification events to interested subscribers. TS0001: oneM2M
+ Functional Architecture and TS0004:oneM2M Service Layer Protocol
+ are great reference documents to learn details of oneM2M resource
+ types, message flow, formats, and CRUD/N semantics.
+
+ The oneM2M resource tree is modeled in yang and essentially is a
+ meta-model for the tree.  The oneM2M wire protocols allow the
+ resource tree to be constructed via HTTP or CoAP messages that
+ populate nodes in the tree with resource specific attributes.
+ Each oneM2M resource type has semantic behaviour associated with
+ it.  For example: a container resource has attributes which
+ control quotas on how many and how big the collection of data or
+ content instance objects that can exist below it in the tree.
+ Depending on the resource type, the oneM2M core software
+ implements and enforces the resource type specific rules to
+ ensure a well-behaved resource tree.
+
+ The resource tree can be simultaneously accessed by many
+ concurrent applications wishing to manage or access the tree,
+ and also many devices can be reporting in new data or sensor
+ readings into their appropriate place in the tree.
 
 === Key APIs and Interfaces
- More text to follow
+ The API's to access the onem2m datastore are well documented
+ in TS0004 (referred above) found on onem2m.org
 
 RESTconf is available too but generally HTTP and CoAP are used to
 access the oneM2M data tree.
-
-==== HTTP
- More text to follow
-
-==== CoAP
- More text to follow
-
-=== API Reference Documentation
- More text to follow
-
