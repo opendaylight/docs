@@ -1,0 +1,383 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a9dcd25_7f2cecab",
+        "filename": "manuals/developer-guide/src/main/asciidoc/lacp/lacp-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-02T02:12:41Z",
+      "side": 1,
+      "message": "...OpenDaylight LACP (Link Aggregation Control Protocol) project...\n\nReplace ODL with OpenDaylight, add a space before the opening parenthesis and it\u0027s a project not a feature.",
+      "range": {
+        "startLine": 3,
+        "startChar": 4,
+        "endLine": 3,
+        "endChar": 55
+      },
+      "revId": "7b391a9a96087bd977d1fc17b3388dea90f946bd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_1f192888",
+        "filename": "manuals/developer-guide/src/main/asciidoc/lacp/lacp-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-02T02:12:41Z",
+      "side": 1,
+      "message": "switches and hosts should not be capitalized",
+      "range": {
+        "startLine": 5,
+        "startChar": 33,
+        "endLine": 5,
+        "endChar": 50
+      },
+      "revId": "7b391a9a96087bd977d1fc17b3388dea90f946bd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_3f1e6471",
+        "filename": "manuals/developer-guide/src/main/asciidoc/lacp/lacp-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-02T02:12:41Z",
+      "side": 1,
+      "message": "The LACP module?",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 3
+      },
+      "revId": "7b391a9a96087bd977d1fc17b3388dea90f946bd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_ff179c4f",
+        "filename": "manuals/developer-guide/src/main/asciidoc/lacp/lacp-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-02T02:12:41Z",
+      "side": 1,
+      "message": "OpenFlow 1.3+",
+      "range": {
+        "startLine": 9,
+        "startChar": 15,
+        "endLine": 9,
+        "endChar": 28
+      },
+      "revId": "7b391a9a96087bd977d1fc17b3388dea90f946bd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_bf091433",
+        "filename": "manuals/developer-guide/src/main/asciidoc/lacp/lacp-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-02T02:12:41Z",
+      "side": 1,
+      "message": "expand this acronym?",
+      "range": {
+        "startLine": 24,
+        "startChar": 38,
+        "endLine": 24,
+        "endChar": 41
+      },
+      "revId": "7b391a9a96087bd977d1fc17b3388dea90f946bd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_5f06d021",
+        "filename": "manuals/developer-guide/src/main/asciidoc/lacp/lacp-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-02T02:12:41Z",
+      "side": 1,
+      "message": "group, no caps",
+      "range": {
+        "startLine": 28,
+        "startChar": 43,
+        "endLine": 28,
+        "endChar": 48
+      },
+      "revId": "7b391a9a96087bd977d1fc17b3388dea90f946bd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_7f038c0f",
+        "filename": "manuals/developer-guide/src/main/asciidoc/lacp/lacp-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-02T02:12:41Z",
+      "side": 1,
+      "message": "This is a statement, not a question. Remove the \"?\".",
+      "revId": "7b391a9a96087bd977d1fc17b3388dea90f946bd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_9300d402",
+        "filename": "manuals/developer-guide/src/main/asciidoc/lacp/lacp-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-02T02:12:41Z",
+      "side": 1,
+      "message": "group, no caps",
+      "range": {
+        "startLine": 42,
+        "startChar": 13,
+        "endLine": 42,
+        "endChar": 18
+      },
+      "revId": "7b391a9a96087bd977d1fc17b3388dea90f946bd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_530a4c22",
+        "filename": "manuals/developer-guide/src/main/asciidoc/lacp/lacp-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-02T02:12:41Z",
+      "side": 1,
+      "message": "\"P!, P2, ..., P8\" or \"P1-P8\"?",
+      "range": {
+        "startLine": 44,
+        "startChar": 24,
+        "endLine": 44,
+        "endChar": 35
+      },
+      "revId": "7b391a9a96087bd977d1fc17b3388dea90f946bd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_1314c442",
+        "filename": "manuals/developer-guide/src/main/asciidoc/lacp/lacp-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-02T02:12:41Z",
+      "side": 1,
+      "message": "This is not how tables are done in AsciiDoc. See here: http://powerman.name/doc/asciidoc#_tables\n\nMy recommendation is something like:\n\n[options\u003d\"header\"]\n\n|\u003d\u003d\u003d\u003d\u003d\n\n|GroupID    | GroupType | EgressPorts\n\n|\u003cB\u0027castID\u003e | All       | P1,P2,...,P8\n\n|\u003d\u003d\u003d\u003d\u003d",
+      "range": {
+        "startLine": 48,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 37
+      },
+      "revId": "7b391a9a96087bd977d1fc17b3388dea90f946bd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_730d0837",
+        "filename": "manuals/developer-guide/src/main/asciidoc/lacp/lacp-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-02T02:12:41Z",
+      "side": 1,
+      "message": "you need a space after this period",
+      "range": {
+        "startLine": 51,
+        "startChar": 39,
+        "endLine": 51,
+        "endChar": 42
+      },
+      "revId": "7b391a9a96087bd977d1fc17b3388dea90f946bd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_d31dfc67",
+        "filename": "manuals/developer-guide/src/main/asciidoc/lacp/lacp-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-02T02:12:41Z",
+      "side": 1,
+      "message": "Seem my above comment on tables.",
+      "range": {
+        "startLine": 52,
+        "startChar": 0,
+        "endLine": 54,
+        "endChar": 30
+      },
+      "revId": "7b391a9a96087bd977d1fc17b3388dea90f946bd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_932774b6",
+        "filename": "manuals/developer-guide/src/main/asciidoc/lacp/lacp-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-02T02:12:41Z",
+      "side": 1,
+      "message": "...second LAG, LAG2, is formed...",
+      "range": {
+        "startLine": 56,
+        "startChar": 7,
+        "endLine": 56,
+        "endChar": 34
+      },
+      "revId": "7b391a9a96087bd977d1fc17b3388dea90f946bd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_f3183877",
+        "filename": "manuals/developer-guide/src/main/asciidoc/lacp/lacp-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-02T02:12:41Z",
+      "side": 1,
+      "message": "See my above comment on tables.",
+      "range": {
+        "startLine": 58,
+        "startChar": 0,
+        "endLine": 61,
+        "endChar": 29
+      },
+      "revId": "7b391a9a96087bd977d1fc17b3388dea90f946bd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_934e946e",
+        "filename": "manuals/developer-guide/src/main/asciidoc/lacp/lacp-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-02T02:12:41Z",
+      "side": 1,
+      "message": "Should this be titled, how applications can program OpenFlow rules using LACP-created LAG groups?",
+      "revId": "7b391a9a96087bd977d1fc17b3388dea90f946bd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_b32ab07c",
+        "filename": "manuals/developer-guide/src/main/asciidoc/lacp/lacp-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-02T02:12:41Z",
+      "side": 1,
+      "message": "OpenDaylight",
+      "range": {
+        "startLine": 67,
+        "startChar": 0,
+        "endLine": 67,
+        "endChar": 3
+      },
+      "revId": "7b391a9a96087bd977d1fc17b3388dea90f946bd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_732428af",
+        "filename": "manuals/developer-guide/src/main/asciidoc/lacp/lacp-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-02T02:12:41Z",
+      "side": 1,
+      "message": "The OpenFlow",
+      "range": {
+        "startLine": 69,
+        "startChar": 140,
+        "endLine": 69,
+        "endChar": 148
+      },
+      "revId": "7b391a9a96087bd977d1fc17b3388dea90f946bd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
