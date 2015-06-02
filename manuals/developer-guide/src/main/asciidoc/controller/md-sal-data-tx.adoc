@@ -7,7 +7,7 @@ NOTE: *Data tree* usually represents state of the modeled data, usually this
       is state of controller, applications and also external systems (network
       devices).
 
-*Transactions* provides *<<_transaction_isolation, stable and isolated view>>*
+*Transactions* provide *<<_transaction_isolation, stable and isolated view>>*
 from other currently running transactions. The state of running transaction and
 underlying data tree is not affected by other concurrently running transactions.
 
@@ -28,32 +28,32 @@ Read-Only::
     Read-only view is not affected by any subsequent write transactions.
     Read-only transaction is allocated using `newReadOnlyTransaction()`.
 +
-NOTE: If application needs to observe changes itself in data tree, it should use
+NOTE: If an application needs to observe changes itself in data tree, it should use
 *data tree listeners* instead of read-only transactions and polling data tree.
 
-Transactions may be allocated using *data broker* itself or using
-*transaction chain*. In the case of *transaction chain*, new allocated transaction
+Transactions may be allocated using the *data broker* itself or using
+*transaction chain*. In the case of *transaction chain*, the new allocated transaction
 is not based on current state of data tree, but rather on state introduced by
-previous transaction from same chain, even if the commit for previous transaction
-did not yet occured (but transaction was submitted).
+previous transaction from the same chain, even if the commit for previous transaction
+has not yet occurred (but transaction was submitted).
 
 
 ==== Write-Only & Read-Write Transaction
 
-Write-Only and Read-Write transaction provides modification capabilities for
-conceptual data trees.
+Write-Only and Read-Write transactions provide modification capabilities for
+the conceptual data trees.
 
 .Usual workflow for data tree modifications
 1. application allocates new transactions using `newWriteOnlyTransaction()`
    or `newReadWriteTransaction()`.
 2. application <<_modification_of_data_tree,modifies data tree>> using `put`,
-   `merge` and `delete`.
+   `merge` and/or `delete`.
 3. application finishes transaction using <<_submitting_transaction,`submit()`>>,
    which seals transaction and submits it to be processed.
-4. application observes result of transaction commit using blocking or asynchronous
-   way.
+4. application observes the result of the transaction commit using either blocking
+   or asynchronous calls.
 
-The *initial state* of the write transaction is *stable snapshot* of current
+The *initial state* of the write transaction is a *stable snapshot* of the current
 data tree state captured when transaction was created and it's state and
 underlying data tree are not affected by other concurrently running transactions.
 
@@ -105,29 +105,29 @@ Removes a whole subtree from a specified path.
 
 ===== Submitting transaction
 
-Transaction is submitted to be processed and commited using following method:
+Transaction is submitted to be processed and committed using following method:
 
 [source, java]
 ----
 CheckedFuture<Void,TransactionCommitFailedException> submit();
 ----
 
-Applications publishes the changes proposed in the transaction by calling `submit()`
+Applications publish the changes proposed in the transaction by calling `submit()`
 on the transaction.
 This *seals the transaction* (preventing any further writes using this transaction)
 and submits it to be processed and applied to global conceptual data tree.
-Method `submit()` does not block, but rather returns `ListenableFuture`, which
+The `submit()` method does not block, but rather returns `ListenableFuture`, which
 will complete successfully once processing of transaction is finished and changes
-are applied to data tree. If *commit* of data failed, future will fail with
+are applied to data tree. If *commit* of data failed, the future will fail with
 `TransactionFailedException`.
 
 Application may listen on commit state asynchronously using `ListenableFuture`.
 
 [source, java]
 ----
-Futures.addCallback( writeTx.submit(), new FutureCallback<Void>() { <1>
+Futures.addCallback( writeTx.submit(), new FutureCallback<Void>() { // <1>
         public void onSuccess( Void result ) { // <2>
-            LOG.debug("Transaction commited successfuly.");
+            LOG.debug("Transaction committed successfully.");
         }
 
         public void onFailure( Throwable t ) { // <3>
@@ -139,7 +139,7 @@ Futures.addCallback( writeTx.submit(), new FutureCallback<Void>() { <1>
 <1> Submits `writeTx` and registers application provided `FutureCallback`
     on returned future.
 <2> Invoked when future completed successfully - transaction `writeTx` was
-    successfully commited to data tree.
+    successfully committed to data tree.
 <3> Invoked when future failed - commit of transaction `writeTx` failed.
     Supplied exception provides additional details and cause of failure.
 
@@ -161,7 +161,7 @@ try {
 
 ===== Transaction local state
 
-Read-Write transaction maintains transaction-local state, which renders all
+Read-Write transactions maintain transaction-local state, which renders all
 modifications as if they happened, but this is only local to transaction.
 
 Reads from the transaction returns data as if the previous modifications in
@@ -177,7 +177,6 @@ rwRx.put(OPERATIONAL,PATH,B); // <3>
 rwRx.read(OPERATIONAL,PATH).get(); // <4>
 rwRx.put(OPERATIONAL,PATH,C); // <5>
 rwRx.read(OPERATIONAL,PATH).get(); // <6>
-
 ----
 
 <1> Allocates new `ReadWriteTransaction`.
@@ -219,7 +218,7 @@ txAfterCommit.read(OPERATIONAL,PATH).get(); // <9>
 <4> Data tree is updated using read-write transaction, `PATH` contains `B`.
     Change is not public and only local to transaction.
 <5> Read from read-write transaction returns value `B` for `PATH`.
-<6> Submits changes in read-write transaction to be commited to data tree.
+<6> Submits changes in read-write transaction to be committed to data tree.
     Once commit will finish, changes will be published and `PATH` will be
     updated for value `B`. Previously allocated transactions are not affected by
     this change.
@@ -228,10 +227,10 @@ txAfterCommit.read(OPERATIONAL,PATH).get(); // <9>
 <8> Allocates new read-only transaction, which is based on data tree,
     which contains value `B` for `PATH`.
 <9> Read from new read-only transaction return value `B` for `PATH` since
-    read-write transaction was commited.
+    read-write transaction was committed.
 
-NOTE: Examples contains blocking calls on future only to illustrate
-that action happened after other asynchronous action. Use of blocking call
+NOTE: Examples contain blocking calls on future only to illustrate
+that action happened after other asynchronous action. The use of the blocking call
 `ListenableFuture#get()` is discouraged for most use-cases and you should use
 `Futures#addCallback(ListenableFuture, FutureCallback)` to listen asynchronously
 for result.
@@ -239,11 +238,11 @@ for result.
 
 ==== Commit failure scenarios
 
-Transaction commit may fail because of following reasons:
+A transaction commit may fail because of following reasons:
 
 Optimistic Lock Failure::
 Another transaction finished earlier and *modified the same node in a
-non-compatible way*. Commit (and the returned future) will fail
+non-compatible way*. The commit (and the returned future) will fail
 with an `OptimisticLockFailedException`.
 +
 It is the responsibility of the
@@ -263,8 +262,8 @@ retries (2 or 3) to avoid an endless loop.
 ====
 
 Data Validation::
-Data change introduced by this transaction *did not pass validation* by
-commit handlers or data was incorrectly structured. Returned future will
+The data change introduced by this transaction *did not pass validation* by
+commit handlers or data was incorrectly structured. The returned future will
 fail with a `DataValidationFailedException`. User *should not retry* to
 create new transaction with same data, since it probably will fail again.
 
@@ -287,14 +286,14 @@ CheckedFuture<?,?> futureB = txB.submit(); // <4>
 
 <1> Updates `PATH` to value `A` using `txA`
 <2> Updates `PATH` to value `B` using `txB`
-<3> Seals & submits `txA`. Commit will be processed asynchronously and
+<3> Seals & submits `txA`. The commit will be processed asynchronously and
     data tree will be updated to contain value `A` for `PATH`.
-    Returned {@link ListenableFuture} will complete successfully once
+    The returned `ListenableFuture' will complete successfully once
     state is applied to data tree.
 <4> Seals & submits `txB`. Commit of `txB` will fail, because previous transaction
     also modified path in a concurrent way. The state introduced by `txB` will
-    not be applied. Returned `ListenableFuture` will fail
-    with `OptimisticLockFailedException` exception, which indicates to client
+    not be applied. The returned `ListenableFuture` will fail
+    with `OptimisticLockFailedException` exception, which indicates
     that concurrent transaction prevented the submitted transaction from being
     applied.
 
@@ -342,7 +341,7 @@ INFO: Following tables stores numeric values and shows data using `toString()`
 to simplify examples.
 
 .Concurrent change resolution for leaves and leaf-list items
-[cols=",,,",options="header",]
+[options="header"]
 |===========================================================
 |Initial state | tx1  | tx2 | Observable Result
 |Empty |`put(A,1)` |`put(A,2)` |`tx2` will fail, value of `A` is `1`
@@ -358,7 +357,7 @@ to simplify examples.
 |===========================================================
 
 .Concurrent change resolution for containers, lists, list items
-[cols=",,,",options="header",]
+[options="header"]
 |=======================================================================
 |Initial state |`tx1` |`tx2` |Result
 |Empty |put(TOP,[]) |put(TOP,[]) |`tx2` will fail, state is TOP=[]
