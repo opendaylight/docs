@@ -10,7 +10,7 @@ The LACP Project within OpenDaylight implements Link Aggregation Control Protoco
 
 This feature can be enabled in the Karaf console of the OpenDaylight Karaf distribution by issuing the following command:
 
- feature:install odl-lacp-plugin
+ feature:install odl-lacp-ui
 
 [NOTE]
 ====
@@ -42,19 +42,89 @@ The group table entry information for the +<lag-groupid>+ added for the aggregat
 Ports that are associated with an aggregator will have the tag +<lacp-agg-ref>+ updated with valid aggregator information.
 
 === Tutorials
-To be updated later
+The below tutorial would explain the LACP LAG creation for a sample mininet topology
 
-==== <Tutorial Name>
-To be updated later
+==== Sample LACP Topology creation on Mininet
+ sudo mn --controller=remote,ip=<Controller IP> --topo=linear,1 --switch ovsk,protocols=OpenFlow13
 
-===== Overview
-An overview of the use case.
+The above command will create a virtual network consisting of a switch and a host. The switch will be connected to the controller.
 
-===== Prerequisites
-Legacy (non-openflow) switches should be enabled with LACP mode and configured with a long timeout.
+Once the topology is discovered, Verify the LACP PDU flow entry on openvswitch using below command:
 
-===== Target Environment
-To be updated later
+ ovs-ofctl -O OpenFlow13 dump-flows s1
+  OFPST_FLOW reply (OF1.3) (xid=0x2):
+  cookie=0x300000000000001e, duration=60.067s, table=0, n_packets=0, n_bytes=0, priority=5,dl_dst=01:80:c2:00:00:02,dl_type=0x8809 actions=CONTROLLER:65535
 
-===== Instructions
-To be updated 
+Configure an additional link between the switch(S1) and host(H1) using below command on mininet shell to aggregate 2 links:
+
+ mininet> py net.addLink(s1, net.get('h1'))
+ mininet> py s1.attach('s1-eth2')
+
+The LACP module will listen for LACP control packets that are generated from legacy switch (non-openflow enabled). In our example, Host(H1) will act as a LACP packet generator.
+In order to generate the LACP control packets, a bond interface has to be created on the Host(H1) with mode type set to LACP with long-timeout. Bond interface can be created the following way:
+
+        alias bond0 bonding
+        options bonding mode=4
+
+Here mode=4 is referred to LACP and the default timeout is set to Long.
+The above bond configuration has to be updated on /etc/modprobe.d/bonding.conf file on Mininet VM.
+
+Enable bond interface and associate both physical interface h1-eth0 & h1-eth1 as members of the bond interface on Host(H1) on Mininet VM. Port association to Bond interface:
+
+        modprobe bonding
+        ip link add bond0 type bond
+        ip link set bond0 address <bond-mac-address>
+        ip link set h1-eth0 down
+        ip link set h1-eth0 master bond0
+        ip link set h1-eth1 down
+        ip link set h1-eth1 master bond0
+        ip link set bond0 up
+
+Once the bond0 interface is up, LACP packets would be initiated from the Host(H1) to the Switch(S1). LACP Module will then create a LAG through exchange of LACP packets between the Host(H1) and Switch(S1). To view the bond interface output on the Host(H1) side:
+
+ mininet> py net.get('h1').cmd('cat /proc/net/bonding/bond0')
+ Ethernet Channel Bonding Driver: v3.7.1 (April 27, 2011)
+ Bonding Mode: IEEE 802.3ad Dynamic link aggregation
+ Transmit Hash Policy: layer2 (0)
+ MII Status: up
+ MII Polling Interval (ms): 100
+ Up Delay (ms): 0
+ Down Delay (ms): 0
+ 802.3ad info
+ LACP rate: slow
+ Min links: 0
+ Aggregator selection policy (ad_select): stable
+ Active Aggregator Info:
+         Aggregator ID: 1
+         Number of ports: 2
+         Actor Key: 33
+         Partner Key: 27
+         Partner Mac Address: 00:00:00:00:01:01
+ 
+ Slave Interface: h1-eth0
+ MII Status: up
+ Speed: 10000 Mbps
+ Duplex: full
+ Link Failure Count: 0
+ Permanent HW addr: 00:00:00:00:00:11
+ Aggregator ID: 1
+ Slave queue ID: 0
+ 
+ Slave Interface: h1-eth1
+ MII Status: up
+ Speed: 10000 Mbps
+ Duplex: full
+ Link Failure Count: 0
+ Permanent HW addr: 00:00:00:00:00:12
+ Aggregator ID: 1
+ Slave queue ID: 0
+
+A corresponding group table entry would be created on the OpenFlow Switch(S1) with "type" set to "select" to perform the LAG functionality. To view the group entries:
+
+ mininet>ovs-ofctl -O Openflow13 dump-groups s1
+ OFPST_GROUP_DESC reply (OF1.3) (xid=0x2):
+  group_id=60169,type=select,bucket=weight:0,actions=output:1,output:2
+
+To apply the LAG functionality on the switches, the flows should be configured with action set to GroupID instead of output port. A sample add-flow configuration with output action set to GroupId:
+
+ sudo ovs-ofctl -O Openflow13 add-flow s1 dl_type=0x0806,dl_src=SRC_MAC,dl_dst=DST_MAC,actions=group:60169
