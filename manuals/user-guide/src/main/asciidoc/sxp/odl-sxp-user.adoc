@@ -1,0 +1,62 @@
+SXP project is an effort to enhance Opendaylight platform with IP-SGT
+bindings that can be learned from connected SXP-aware network nodes.
+Current implementation supports SXP protocol version 4 according to the
+https://datatracker.ietf.org/doc/draft-smith-kandula-sxp/[Smith, Kandula
+- SXP IETF I-D]. All protocol legacy versions 1-3 are supported as well.
+Additionally, version 4 adds bidirectional connection type as an
+extension of a unidirectional one.
+
+The documentation can be found on project proposal page.
+
+[[project-information]]
+Project Information
+~~~~~~~~~~~~~~~~~~~
+
+https://wiki.opendaylight.org/view/Project_Proposals:SXP[Project
+Proposal]
+
+https://git.opendaylight.org/gerrit/#/q/project:sxp,n,z[Git Patches and
+Reviews]
+
+https://git.opendaylight.org/gerrit/#/admin/projects/sxp,branches[Git
+Branches]
+
+https://bugs.opendaylight.org/describecomponents.cgi?product=sxp[Bugzilla]
+
+https://jenkins.opendaylight.org/sxp/[Jenkins]
+
+https://sonar.opendaylight.org/dashboard/index/45270[Sonar]
+
+https://nexus.opendaylight.org/#nexus-search;quick~sxp[Nexus [1.0
+Helium/1.1 Lithium]]
+
+[cols=",,,,,,,,",options="header",]
+|=======================================================================
+|Release |Release Plan |Release Notes |Release Review |Installation
+Guide |User Guide |Developer Guide |Operations Guide |How-To's/Tutorials
+|Lithium
+|https://wiki.opendaylight.org/view/SXP:Lithium:Release_Plan[Release
+Plan] |- |- |- |- |- |- |-
+|=======================================================================
+
+[[getting-started-for-users]]
+Getting started for users
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+https://wiki.opendaylight.org/view/Project_Proposals:SXP#Architecture[RESTs
+Overview Document]
+
+[[architecture]]
+Architecture
+~~~~~~~~~~~~
+
+https://wiki.opendaylight.org/view/Overview:SXP#Overview[Architecture
+overview]
+
+[[information-for-developers]]
+Information for developers
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+https://wiki.opendaylight.org/view/Project_Proposals:SXP#Architecture[Specification
+and Architecture Document]
+
