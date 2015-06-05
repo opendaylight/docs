@@ -1,0 +1,46 @@
+== SXP Developer Guide
+
+=== Overview
+SXP project is an effort to enhance Opendaylight platform with IP-SGT bindings that can be learned from connected SXP-aware network nodes. Current implementation supports SXP protocol version 4 according to the Smith, Kandula - SXP IETF I-D. All protocol legacy versions 1-3 are supported as well. Additionally, version 4 adds bidirectional connection type as an extension of a unidirectional one.
+
+=== SXP Architecture
+The SXP Server manages all connected clients in separate threads and a common SXP Protocol agreement is used between connected peers. Each SXP network peer is modelled with its pertaining class, i.e. SXP Server represents the SXP Speaker, SXP Listener the Client. The server program creates the ServerSocket object on a specified port and waits until a client starts up and requests connect on the IP address and port of the server. The client program opens a Socket that is connected to the server running on the specified host IP address and port.
+
+SXP Listener maintains connection with its speaker peer. From an opened channel pipeline, all incoming SXP messages are processed by various handlers. Message must be decoded, parsed and validated.
+
+SXP Speaker is a counterpart to the SXP Listener. It maintains a connection with its listener peer and sends composed messages.
+
+SXP Binding Handler extracts the IP-SGT binding from a message and pulls it into the SXP-Database. If an error is detected during the IP-SGT extraction, an appropriate error code and sub-code is selected and an error message is sent back to the connected peer. All transitive messages are routed directly to the output queue of SXP Binding Dispatcher.
+
+IP-SGT Manager handles bindings from multiple connections. If a new data has been added into or deleted from the SXP-Database, or binding’s contributor change is detected, the manager performs an arbitration process above the SXP-Database to resolve the binding duplicity and prevent possible information loops. Finally, it updates the IP-SGT-Master database that consists only of valid and unique bindings, i.e. a single binding per IP address.
+
+The IP-SGT Manager also contains RPCs that can be used by other ODL plugins, or by UI REST calls, to add, update or to delete bindings in or from the Master database.
+
+SXP Binding Dispatcher represents a selector that will solve how many data from the Master database will be sent and when. It is responsible for message content composition based on maximum message length. 
+
+=== Key APIs and Interfaces
+The client-server architecture is implemented within the Netty framework Netty. Netty is Java library and API that simplifies development of network applications. It is primarily aimed at writing highly concurrent asynchronous networked and networking applications and services. 
+
+sxp-controller
+sxp-api
+spx-core
+
+==== sxp-controller
+RPC request handling
+
+==== sxp-api
+Contains data holders and entiies
+
+==== spx-core
+Main logic and core features
+
+=== API Reference Documentation
+https://wiki.opendaylight.org/view/File:SXP_Restconf_Interface_and_Dynamic_Tree.pdf[Restconf Interface and Dynamic Tree]
+
+http://netty.io/4.1/api/index.html[Netty Docs]
+
+https://datatracker.ietf.org/doc/draft-smith-kandula-sxp/[Source-Group Tag eXchange Protocol]
+
+https://wiki.opendaylight.org/view/TCPMD5:Main[TCPMD5]
+
+
