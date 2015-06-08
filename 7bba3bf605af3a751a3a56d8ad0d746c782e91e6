@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a6a9dd7_9831ff0d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T19:37:08Z",
+      "side": 1,
+      "message": "The previous patch sets won\u0027t appear in the git log, so only the last commit message will be there. Thus, you probably want to have this be something meaningful in and of itself, like \"LACP user guide update\"",
+      "revId": "7bba3bf605af3a751a3a56d8ad0d746c782e91e6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_78498b8a",
+        "filename": "manuals/user-guide/src/main/asciidoc/lacp/lacp-user.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T19:37:08Z",
+      "side": 1,
+      "message": "\"Open vSwitch\" or \"ovs-ofctl\"",
+      "range": {
+        "startLine": 52,
+        "startChar": 139,
+        "endLine": 52,
+        "endChar": 150
+      },
+      "revId": "7bba3bf605af3a751a3a56d8ad0d746c782e91e6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_385b1356",
+        "filename": "manuals/user-guide/src/main/asciidoc/lacp/lacp-user.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T19:37:08Z",
+      "side": 1,
+      "message": "This is likely my mistake, but you don\u0027t need the actual \"s",
+      "range": {
+        "startLine": 58,
+        "startChar": 41,
+        "endLine": 58,
+        "endChar": 70
+      },
+      "revId": "7bba3bf605af3a751a3a56d8ad0d746c782e91e6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_d8577725",
+        "filename": "manuals/user-guide/src/main/asciidoc/lacp/lacp-user.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T19:37:08Z",
+      "side": 1,
+      "message": "non",
+      "range": {
+        "startLine": 63,
+        "startChar": 92,
+        "endLine": 63,
+        "endChar": 95
+      },
+      "revId": "7bba3bf605af3a751a3a56d8ad0d746c782e91e6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
