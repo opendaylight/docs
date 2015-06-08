@@ -1,43 +1,59 @@
-== Control And Provisioning of Wireless Access Points (CAPWAP) Protocol Plugin
+== CAPWAP User Guide
+This document describes how to use the Control And Provisioning of Wireless 
+Access Points (CAPWAP) feature in OpenDaylight.  This document contains 
+configuration, administration, and management sections for the feature.
 
 === Overview
-CAPWAP plugin project fills the gap Opendaylight Controller has w.r.t. 
-managing CAPWAP compliant wireless termination point (WTP) network devices 
-present in Enterprises networks. Intelligent applications (e.g. Radio planning, etc) 
-can be developed by taping into the operational states, made available via 
-REST APIs, of WTP network devices.
+CAPWAP feature fills the gap Opendaylight Controller has w.r.t. managing 
+CAPWAP compliant wireless termination point (WTP) network devices present 
+in Enterprises networks. Intelligent applications (e.g. centralized firmware 
+management, Radio planning, etc) can be developed by taping into the 
+WTP network device's operational states via REST APIs.
 
 === CAPWAP Architecture
-TBD: Architecture Diagram
+CAPWAP feature is implemented as a MD-SAL based provider module, which 
+helps discover WTP devices and update their states in the RESTCONF operational DB.
 
 === Scope of CAPWAP Project
 In Lithium release, CAPWAP project aims to only detect the WTPs and store their 
-attributes in operation data store, which will be accessible via REST and JAVA APIs.
+basic attributes in operation data store, which will be accessible via REST 
+and JAVA APIs.
+
+=== Installing CAPWAP
+To install CAPWAP, download OpenDaylight and use the Karaf console to install 
+the following feature:
+
+odl-capwap-ac-rest
 
 === Configuring CAPWAP
 
-TBD: Describe how to configure CAPWAP AC (Multicast groups to listen 
-for WTP Discovery messages, AC Name, AC Descriptor, etc).
+As of Lithium there are no configuration requirements.
 
 === Administering or Managing CAPWAP
 
-TBD: Describe steps for viewing CAPWAP topology and operational data.
+After installing the odl-capwap-ac-rest feature from the Karaf console, users 
+can administer and manage CAPWAP from the APIDOCS explorer.
+
+Go to http://${IPADDRESS}:8181/apidoc/explorer/index.html, sign in, and expand 
+the capwap-impl panel.  From there, users can execute various API calls.
 
 === Tutorials
 
-==== CAPWAP Plugin Bringup Steps
+==== Viewing Discovered WTPs
 
 ===== Overview
 This tutorial can be used as a walk through to understand the steps for 
-starting the CAPWAP feature, doing initial configuration for AC, 
-detecting CAPWAP WTPs, accessing the operation states of WTPs.
+starting the CAPWAP feature, detecting CAPWAP WTPs, accessing the 
+operational states of WTPs.
 
 ===== Prerequisites
-It is assumed that user has access to a hardware/software based CAPWAP compliant WTP.
-
-===== Target Environment
-TBD: Topology Diagram
+It is assumed that user has access to a hardware/software based CAPWAP compliant WTPs 
+and started.
 
 ===== Instructions
-TBD: Describe Steps
-
+* Run the OpenDaylight distribution and install odl-capwap-ac-rest from the Karaf console.
+* Go to http://${IPADDRESS}:8181/apidoc/explorer/index.html 
+* Expand capwap-impl
+* Click /operational/capwap-impl:capwap-ac-root/
+* Click "Try it out"
+* The above step should display list of WTPs discovered using ODL CAPWAP feature.
