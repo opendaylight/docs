@@ -1,0 +1,2005 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a6a9dd7_1d7721d6",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bk-developers-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "Does it makes sense to have a different chapter for each part or does it make sense to have one chapter and then multiple sections?\n\nI\u0027m not arguing one way or the other, I\u0027m just asking the question.",
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_5d44b973",
+        "filename": "manuals/developer-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-base-dev.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "At this point, please either drop this completely or fill in content. I don\u0027t want to risk shipping boilerplate in docs any more than I already am.",
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_7d497d8a",
+        "filename": "manuals/developer-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-neutronmapper-dev.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "At this point, please either drop this completely or fill in content. I don\u0027t want to risk shipping boilerplate in docs any more than I already am.",
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_1d5e4146",
+        "filename": "manuals/developer-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-ofoverlay-dev.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "At this point, please either drop this completely or fill in content. I don\u0027t want to risk shipping boilerplate in docs any more than I already am.",
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_3d5b0556",
+        "filename": "manuals/developer-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-opflex-dev.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "At this point, please either drop this completely or fill in content. I don\u0027t want to risk shipping boilerplate in docs any more than I already am.",
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_dd576925",
+        "filename": "manuals/user-guide/src/main/asciidoc/bk-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "Does it makes sense to have a different chapter for each part or does it make sense to have one chapter and then multiple sections?\n\nI\u0027m not arguing one way or the other, I\u0027m just asking the question.",
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_386553e1",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-base-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "It seems like you should decide on a way to call out \"special\" terms like Contract, Endpoint, Rule, Clause, etc. Right now, you use the word in caps, but my guess is you\u0027d be better off doing something else, e.g., making them *bold*, _italic_, or nothing.",
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_98ffbf01",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-base-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "This wiki page doesn\u0027t really seem to provide much information about the base concepts. Is there a better one? I found this, but even it doesn\u0027t define what a contract is: https://wiki.opendaylight.org/view/Group_Policy:Architecture",
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_fd2b4d92",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-base-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "you haven\u0027t really defined what the \"base feature\" is yet.",
+      "range": {
+        "startLine": 14,
+        "startChar": 23,
+        "endLine": 14,
+        "endChar": 35
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_dd2e89a5",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-base-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "should this be capitalized?",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 9
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_5d127963",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-base-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "...? Finish the sentence.",
+      "range": {
+        "startLine": 29,
+        "startChar": 54,
+        "endLine": 29,
+        "endChar": 66
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_1d0c0142",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-base-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "You need a blank line above this for it format as a list.",
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_d81c576d",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-base-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "caps?",
+      "range": {
+        "startLine": 36,
+        "startChar": 46,
+        "endLine": 36,
+        "endChar": 52
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_f8191b7a",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-base-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "caps?",
+      "range": {
+        "startLine": 36,
+        "startChar": 60,
+        "endLine": 36,
+        "endChar": 68
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_9826dfb9",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-base-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "caps?",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 5
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_b82ba381",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-base-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "OpenFlow?",
+      "range": {
+        "startLine": 43,
+        "startChar": 4,
+        "endLine": 43,
+        "endChar": 16
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_183acfcd",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-base-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "Is this a note to readers or to you guys as you edit things? If the latter can you make it a comment so we don\u0027t accidentally include it?",
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_78250baa",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-base-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "You need a blank line above here to end the NOTE.",
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_383793e5",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-base-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "You need a blank line above this to get the list to start.",
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_f8303bea",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-base-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "caps?",
+      "range": {
+        "startLine": 56,
+        "startChar": 41,
+        "endLine": 56,
+        "endChar": 53
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_b852c311",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-base-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "caps?",
+      "range": {
+        "startLine": 57,
+        "startChar": 47,
+        "endLine": 57,
+        "endChar": 55
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_984d7f75",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-base-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "caps?",
+      "range": {
+        "startLine": 57,
+        "startChar": 27,
+        "endLine": 57,
+        "endChar": 40
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_18416f39",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-base-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "caps?",
+      "range": {
+        "startLine": 102,
+        "startChar": 46,
+        "endLine": 102,
+        "endChar": 57
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_383eb3b9",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-base-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "caps?",
+      "range": {
+        "startLine": 103,
+        "startChar": 0,
+        "endLine": 103,
+        "endChar": 7
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_b8796395",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-base-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "caps?",
+      "range": {
+        "startLine": 162,
+        "startChar": 0,
+        "endLine": 162,
+        "endChar": 37
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_d861b7d4",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-base-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "caps?",
+      "range": {
+        "startLine": 227,
+        "startChar": 26,
+        "endLine": 227,
+        "endChar": 41
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_f85efb11",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-base-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "aps?",
+      "range": {
+        "startLine": 228,
+        "startChar": 25,
+        "endLine": 228,
+        "endChar": 31
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_989b3fc9",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-base-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "\"...are example REST calls...\" since there are two of them.",
+      "range": {
+        "startLine": 228,
+        "startChar": 47,
+        "endLine": 229,
+        "endChar": 4
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_b8a083f5",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-base-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "caps?",
+      "range": {
+        "startLine": 268,
+        "startChar": 4,
+        "endLine": 268,
+        "endChar": 10
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_58a5a702",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-base-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "caps?",
+      "range": {
+        "startLine": 271,
+        "startChar": 28,
+        "endLine": 271,
+        "endChar": 36
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_78aaebd5",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-base-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "caps?",
+      "range": {
+        "startLine": 273,
+        "startChar": 22,
+        "endLine": 273,
+        "endChar": 37
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_18af2fe5",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-base-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "where is it?",
+      "range": {
+        "startLine": 296,
+        "startChar": 4,
+        "endLine": 296,
+        "endChar": 23
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_38ac73ed",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-base-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "caps?",
+      "range": {
+        "startLine": 299,
+        "startChar": 24,
+        "endLine": 299,
+        "endChar": 33
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_98825f51",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-base-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "caps?",
+      "range": {
+        "startLine": 300,
+        "startChar": 56,
+        "endLine": 300,
+        "endChar": 65
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_d8b8d72c",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-base-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "again, where is it?",
+      "range": {
+        "startLine": 300,
+        "startChar": 27,
+        "endLine": 300,
+        "endChar": 41
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_f8b59b31",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-base-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "caps?",
+      "range": {
+        "startLine": 300,
+        "startChar": 4,
+        "endLine": 300,
+        "endChar": 22
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_b8872361",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-base-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "caps?",
+      "range": {
+        "startLine": 301,
+        "startChar": 7,
+        "endLine": 301,
+        "endChar": 15
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_587cc772",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-base-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "Just remove all of this?",
+      "range": {
+        "startLine": 303,
+        "startChar": 0,
+        "endLine": 345,
+        "endChar": 9
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_78818b49",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-neutronmapper-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "See comment before. This doesn\u0027t really give the info you\u0027d like to see.",
+      "range": {
+        "startLine": 10,
+        "startChar": 55,
+        "endLine": 12,
+        "endChar": 52
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_f88cbb81",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-neutronmapper-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "You need a blank line above this to get it to format right",
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_98e9ff1c",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-neutronmapper-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "REST",
+      "range": {
+        "startLine": 25,
+        "startChar": 51,
+        "endLine": 25,
+        "endChar": 55
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_b8ee4321",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-neutronmapper-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "You probably want this image to say \"Group Based Policy\" on the right instead of \"OpenDaylight\"",
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_78f8abe5",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-neutronmapper-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "Since this isn\u0027t a NOTE to the reader, but a really a TODO, could you make this a comment? Something like:\n\n// NOTE: we should describe all of the functionality that we\u0027re\n\n// supporting -- floating IPs, L3 services, etc.",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 45
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_18ddef70",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-neutronmapper-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "cut",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 49
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_38da3379",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-neutronmapper-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "I\u0027m assuming you actually mean OpenStack.",
+      "range": {
+        "startLine": 42,
+        "startChar": 21,
+        "endLine": 42,
+        "endChar": 29
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_d8e69744",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-neutronmapper-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "I\u0027m assuming you actually mean OpenStack.",
+      "range": {
+        "startLine": 44,
+        "startChar": 56,
+        "endLine": 44,
+        "endChar": 64
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_f8e35b31",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-neutronmapper-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "I\u0027m guessing you also mean make sure OVS is running on all nodes.",
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_b8d5e344",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-neutronmapper-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "cut",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 57,
+        "endChar": 65
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_58ca87a2",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-neutronmapper-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "cut all of this or add information",
+      "range": {
+        "startLine": 59,
+        "startChar": 0,
+        "endLine": 118,
+        "endChar": 9
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_b863a3b0",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-ofoverlay-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "Do you want to say \"OfOveraly\" or \"OpenFlow Overlay\"?",
+      "range": {
+        "startLine": 1,
+        "startChar": 22,
+        "endLine": 1,
+        "endChar": 31
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_585847fa",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-ofoverlay-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "caps?",
+      "range": {
+        "startLine": 13,
+        "startChar": 7,
+        "endLine": 13,
+        "endChar": 36
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_580fe7e1",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-ofoverlay-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "I think it\u0027s flow_mod in the OpenFlow spec and the DIDM guys say FlowMod, but I\u0027d go with flow_mod.",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 9
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_38f6b3d8",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-ofoverlay-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "are Data Center and Campus actually \"use cases\" or \"deployment environments\"?",
+      "range": {
+        "startLine": 20,
+        "startChar": 34,
+        "endLine": 20,
+        "endChar": 43
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_d80217b4",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-ofoverlay-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "flow_mods",
+      "range": {
+        "startLine": 25,
+        "startChar": 14,
+        "endLine": 25,
+        "endChar": 23
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_f8ffdba8",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-ofoverlay-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "cut this, it\u0027s redundant",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 61
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_982c9f4c",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-ofoverlay-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "cut",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 49
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_b83163a4",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-ofoverlay-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "beyond",
+      "range": {
+        "startLine": 37,
+        "startChar": 64,
+        "endLine": 37,
+        "endChar": 66
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_5826076a",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-ofoverlay-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "caps?",
+      "range": {
+        "startLine": 39,
+        "startChar": 42,
+        "endLine": 39,
+        "endChar": 51
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_782bcb30",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-ofoverlay-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "caps?",
+      "range": {
+        "startLine": 40,
+        "startChar": 36,
+        "endLine": 40,
+        "endChar": 45
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_18208f48",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-ofoverlay-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "caps?",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 9
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_38e4730c",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-ofoverlay-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "Add a subsection about configuring tunnel ports?\n\n\u003d\u003d\u003d\u003d Configuring Tunnel Ports",
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_f816fbf0",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-ofoverlay-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "flow_mods",
+      "range": {
+        "startLine": 56,
+        "startChar": 60,
+        "endLine": 56,
+        "endChar": 69
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_98d33f38",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-ofoverlay-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "vSwitch",
+      "range": {
+        "startLine": 57,
+        "startChar": 8,
+        "endLine": 57,
+        "endChar": 15
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_d8f0d7cb",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-ofoverlay-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "Add a subsection about configuring tunnel ports?\n\n\u003d\u003d\u003d\u003d Configuring Bridges",
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_98ba5fe0",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-ofoverlay-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "Add a subsection about configuring tunnel ports?\n\n\u003d\u003d\u003d\u003d Configuring Inventory Augmentations",
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_58b4c7f1",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-ofoverlay-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "openflow",
+      "range": {
+        "startLine": 74,
+        "startChar": 4,
+        "endLine": 74,
+        "endChar": 11
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_f8c4bb60",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-ofoverlay-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "Won\u0027t this blow away any other config information in the opendaylight-inventory:nodes subtree?",
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_38923358",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-ofoverlay-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "You can provide an actual link. See here: https://wiki.opendaylight.org/view/CrossProject:Documentation_Group:Tools:AsciiDoc_Tips#Referencing_sections_is_annoying",
+      "range": {
+        "startLine": 109,
+        "startChar": 12,
+        "endLine": 109,
+        "endChar": 62
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_d89e9763",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-ofoverlay-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "caps?",
+      "range": {
+        "startLine": 111,
+        "startChar": 31,
+        "endLine": 111,
+        "endChar": 39
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_f89b5b70",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-ofoverlay-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "does this need to be ofoverlay:port-name?",
+      "range": {
+        "startLine": 127,
+        "startChar": 9,
+        "endLine": 127,
+        "endChar": 18
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_98881f24",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-ofoverlay-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "caps?",
+      "range": {
+        "startLine": 161,
+        "startChar": 23,
+        "endLine": 161,
+        "endChar": 32
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_b88de333",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-ofoverlay-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "Finish this.",
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_58828701",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-ofoverlay-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "You can get the numbering to behave right by putting +s in the right place to avoid breaks in the list. I\u0027ll push a new version of the patches to show how.",
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_b8940338",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-ofoverlay-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "cut",
+      "range": {
+        "startLine": 193,
+        "startChar": 0,
+        "endLine": 195,
+        "endChar": 44
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_38a0f38f",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-ofoverlay-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "Given that the assumption here is that they just downloaded the stuff from the ODL donwnload page, if you refer to the repo, give a link and make sure you refer to the stable/lithium branch. Ideally, avoid referring to the repo in the user guide though.",
+      "range": {
+        "startLine": 198,
+        "startChar": 4,
+        "endLine": 198,
+        "endChar": 25
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_789e6b58",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-ofoverlay-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "link? Preferably to the actual tutorial page, not just the main GBP page.",
+      "range": {
+        "startLine": 200,
+        "startChar": 7,
+        "endLine": 200,
+        "endChar": 35
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_5899276d",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-ofoverlay-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "cut",
+      "range": {
+        "startLine": 202,
+        "startChar": 0,
+        "endLine": 203,
+        "endChar": 50
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_d8ac578f",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-ofoverlay-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "Helium!?",
+      "range": {
+        "startLine": 206,
+        "startChar": 42,
+        "endLine": 206,
+        "endChar": 48
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_f8a91b7c",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-ofoverlay-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "Is it still a PoC?",
+      "range": {
+        "startLine": 206,
+        "startChar": 54,
+        "endLine": 206,
+        "endChar": 70
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_38c79347",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-ofoverlay-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "Group Based Policy",
+      "range": {
+        "startLine": 207,
+        "startChar": 63,
+        "endLine": 208,
+        "endChar": 6
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_d8c3f736",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-ofoverlay-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "cut",
+      "range": {
+        "startLine": 215,
+        "startChar": 0,
+        "endLine": 216,
+        "endChar": 28
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_f8c03b2c",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-ofoverlay-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "cut",
+      "range": {
+        "startLine": 219,
+        "startChar": 0,
+        "endLine": 220,
+        "endChar": 33
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_98dd7f17",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-ofoverlay-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "Open vSwtich",
+      "range": {
+        "startLine": 222,
+        "startChar": 123,
+        "endLine": 222,
+        "endChar": 134
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_58e7e7e4",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-ofoverlay-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "cut",
+      "range": {
+        "startLine": 242,
+        "startChar": 0,
+        "endLine": 244,
+        "endChar": 6
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_78ec2bc8",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-ofoverlay-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "provide a link to the stable/lithium copy of the code either in the ODL gitweb or on the github mirror, e.g., https://git.opendaylight.org/gerrit/gitweb?p\u003dgroupbasedpolicy.git;a\u003dtree;f\u003dutil/testOfOverlay;hb\u003drefs/heads/stable/lithium",
+      "range": {
+        "startLine": 247,
+        "startChar": 25,
+        "endLine": 247,
+        "endChar": 71
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_d8da1717",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-ofoverlay-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "Why is the output for s2 so much longer than s1? Is that expected?",
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_d8f1b796",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-ofoverlay-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 629,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "you probably want to define EG1 and EG2 before here",
+      "range": {
+        "startLine": 629,
+        "startChar": 282,
+        "endLine": 629,
+        "endChar": 292
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_b8308357",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-ofoverlay-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 655,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "ARP and bridging?",
+      "range": {
+        "startLine": 655,
+        "startChar": 201,
+        "endLine": 655,
+        "endChar": 214
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_982b3feb",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-ofoverlay-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 655,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "show",
+      "range": {
+        "startLine": 655,
+        "startChar": 143,
+        "endLine": 655,
+        "endChar": 148
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_383c732f",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-ofoverlay-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 726,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "EG2?",
+      "range": {
+        "startLine": 726,
+        "startChar": 78,
+        "endLine": 726,
+        "endChar": 94
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_183f2f27",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-ofoverlay-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 726,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "EG1?",
+      "range": {
+        "startLine": 726,
+        "startChar": 29,
+        "endLine": 726,
+        "endChar": 45
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_d848d7ce",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-ofoverlay-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 777,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "Maybe put this at the top? Even in the odl-groupbased-base-user-guide.adoc?",
+      "range": {
+        "startLine": 770,
+        "startChar": 0,
+        "endLine": 777,
+        "endChar": 53
+      },
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_985edfe8",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-opflex-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T18:47:49Z",
+      "side": 1,
+      "message": "At this point, please either drop this completely or fill in content. I don\u0027t want to risk shipping boilerplate in docs any more than I already am.",
+      "revId": "a5993e70dc70aa2a968a00637d58fb5450b02de5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
