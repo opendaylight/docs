@@ -1,0 +1,508 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a6a9dd7_18264f17",
+        "filename": "manuals/developer-guide/src/main/asciidoc/alto/alto-developer-guide.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T19:29:51Z",
+      "side": 1,
+      "message": "You need a blank line above this to get it format as a list",
+      "revId": "1cc973139134a2e4cc492b9f17d297523e8100bd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_f81cbbc3",
+        "filename": "manuals/developer-guide/src/main/asciidoc/alto/alto-developer-guide.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T19:29:51Z",
+      "side": 1,
+      "message": "you only need one set of _",
+      "range": {
+        "startLine": 12,
+        "startChar": 22,
+        "endLine": 12,
+        "endChar": 33
+      },
+      "revId": "1cc973139134a2e4cc492b9f17d297523e8100bd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_9879fffe",
+        "filename": "manuals/developer-guide/src/main/asciidoc/alto/alto-developer-guide.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T19:29:51Z",
+      "side": 1,
+      "message": "This will not be true when we release. When we release, it will be 0.1.0-Lithium",
+      "revId": "1cc973139134a2e4cc492b9f17d297523e8100bd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_585a8784",
+        "filename": "manuals/developer-guide/src/main/asciidoc/alto/alto-developer-guide.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T19:29:51Z",
+      "side": 1,
+      "message": "You need a period at the end of the sentence.",
+      "revId": "1cc973139134a2e4cc492b9f17d297523e8100bd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_d84d37c6",
+        "filename": "manuals/developer-guide/src/main/asciidoc/alto/alto-developer-guide.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T19:29:51Z",
+      "side": 1,
+      "message": "Do you want this to be a numbered list or bulleted list? It seems like it should be bulleted which is done by using asterisks (*) instead of periods (.) to start the lines.",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 9
+      },
+      "revId": "1cc973139134a2e4cc492b9f17d297523e8100bd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_f84a7bab",
+        "filename": "manuals/developer-guide/src/main/asciidoc/alto/alto-developer-guide.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T19:29:51Z",
+      "side": 1,
+      "message": "It\u0027s probably a better idea to put this link in text since it\u0027s not always going to be localhost.",
+      "range": {
+        "startLine": 54,
+        "startChar": 20,
+        "endLine": 54,
+        "endChar": 29
+      },
+      "revId": "1cc973139134a2e4cc492b9f17d297523e8100bd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_d8e457ae",
+        "filename": "manuals/developer-guide/src/main/asciidoc/alto/alto-developer-guide.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T19:29:51Z",
+      "side": 1,
+      "message": "You need a blank line above this to get it to correctly render as a list. Also, do you want it to be a numbered list (with .s) or a bulleted list (with *s).",
+      "revId": "1cc973139134a2e4cc492b9f17d297523e8100bd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_98eedf8a",
+        "filename": "manuals/developer-guide/src/main/asciidoc/alto/alto-developer-guide.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T19:29:51Z",
+      "side": 1,
+      "message": "How can it be both \"a little more complex\" and also \"the most straight-forward\"?",
+      "range": {
+        "startLine": 75,
+        "startChar": 54,
+        "endLine": 76,
+        "endChar": 70
+      },
+      "revId": "1cc973139134a2e4cc492b9f17d297523e8100bd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_d8fbf745",
+        "filename": "manuals/developer-guide/src/main/asciidoc/alto/alto-developer-guide.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T19:29:51Z",
+      "side": 1,
+      "message": "you only need one set of _",
+      "range": {
+        "startLine": 82,
+        "startChar": 30,
+        "endLine": 82,
+        "endChar": 45
+      },
+      "revId": "1cc973139134a2e4cc492b9f17d297523e8100bd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_38ff9336",
+        "filename": "manuals/developer-guide/src/main/asciidoc/alto/alto-developer-guide.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T19:29:51Z",
+      "side": 1,
+      "message": "This block wraps around 78 characters and so this is unreadable in the PDF.",
+      "revId": "1cc973139134a2e4cc492b9f17d297523e8100bd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_589fe703",
+        "filename": "manuals/user-guide/src/main/asciidoc/alto/alto-user-guide.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T19:29:51Z",
+      "side": 1,
+      "message": "you only need one set of _",
+      "range": {
+        "startLine": 4,
+        "startChar": 38,
+        "endLine": 5,
+        "endChar": 14
+      },
+      "revId": "1cc973139134a2e4cc492b9f17d297523e8100bd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_d89217f6",
+        "filename": "manuals/user-guide/src/main/asciidoc/alto/alto-user-guide.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T19:29:51Z",
+      "side": 1,
+      "message": "OpenDaylight",
+      "range": {
+        "startLine": 13,
+        "startChar": 42,
+        "endLine": 13,
+        "endChar": 55
+      },
+      "revId": "1cc973139134a2e4cc492b9f17d297523e8100bd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_3886b3ba",
+        "filename": "manuals/user-guide/src/main/asciidoc/alto/alto-user-guide.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T19:29:51Z",
+      "side": 1,
+      "message": "delete? instead just \"There are three ALTO packages in OpenDaylight.\"",
+      "range": {
+        "startLine": 13,
+        "startChar": 16,
+        "endLine": 13,
+        "endChar": 24
+      },
+      "revId": "1cc973139134a2e4cc492b9f17d297523e8100bd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_f88fdbca",
+        "filename": "manuals/user-guide/src/main/asciidoc/alto/alto-user-guide.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T19:29:51Z",
+      "side": 1,
+      "message": "You could provide a link to the L2 Switch docs as explained here: https://wiki.opendaylight.org/view/CrossProject:Documentation_Group:Tools:AsciiDoc_Tips#Referencing_sections_is_annoying",
+      "range": {
+        "startLine": 31,
+        "startChar": 35,
+        "endLine": 31,
+        "endChar": 45
+      },
+      "revId": "1cc973139134a2e4cc492b9f17d297523e8100bd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_b8c163e6",
+        "filename": "manuals/user-guide/src/main/asciidoc/alto/alto-user-guide.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T19:29:51Z",
+      "side": 1,
+      "message": "vs.",
+      "range": {
+        "startLine": 33,
+        "startChar": 12,
+        "endLine": 33,
+        "endChar": 16
+      },
+      "revId": "1cc973139134a2e4cc492b9f17d297523e8100bd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_38ad5332",
+        "filename": "manuals/user-guide/src/main/asciidoc/alto/alto-user-guide.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T19:29:51Z",
+      "side": 1,
+      "message": "Is this section even useful for a user to worry about? Maybe cut it?",
+      "revId": "1cc973139134a2e4cc492b9f17d297523e8100bd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_18b08f8a",
+        "filename": "manuals/user-guide/src/main/asciidoc/alto/alto-user-guide.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T19:29:51Z",
+      "side": 1,
+      "message": "It\u0027s already been removed from OpenDaylight on the master branch of controller.",
+      "range": {
+        "startLine": 35,
+        "startChar": 68,
+        "endLine": 36,
+        "endChar": 33
+      },
+      "revId": "1cc973139134a2e4cc492b9f17d297523e8100bd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_78bbcb72",
+        "filename": "manuals/user-guide/src/main/asciidoc/alto/alto-user-guide.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T19:29:51Z",
+      "side": 1,
+      "message": "modeled",
+      "range": {
+        "startLine": 38,
+        "startChar": 61,
+        "endLine": 38,
+        "endChar": 69
+      },
+      "revId": "1cc973139134a2e4cc492b9f17d297523e8100bd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_d8a9b725",
+        "filename": "manuals/user-guide/src/main/asciidoc/alto/alto-user-guide.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T19:29:51Z",
+      "side": 1,
+      "message": "shouldn\u0027t these two lines start with \"karaf \u003e \" as well?",
+      "range": {
+        "startLine": 58,
+        "startChar": 0,
+        "endLine": 59,
+        "endChar": 36
+      },
+      "revId": "1cc973139134a2e4cc492b9f17d297523e8100bd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_b86883f6",
+        "filename": "manuals/user-guide/src/main/asciidoc/alto/alto-user-guide.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T19:29:51Z",
+      "side": 1,
+      "message": "Since this will not always be at localhost, it likely makes sense to actually provide the link in text.",
+      "range": {
+        "startLine": 66,
+        "startChar": 12,
+        "endLine": 66,
+        "endChar": 21
+      },
+      "revId": "1cc973139134a2e4cc492b9f17d297523e8100bd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_7872ebe6",
+        "filename": "manuals/user-guide/src/main/asciidoc/alto/alto-user-guide.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T19:29:51Z",
+      "side": 1,
+      "message": "json",
+      "range": {
+        "startLine": 124,
+        "startChar": 8,
+        "endLine": 124,
+        "endChar": 11
+      },
+      "revId": "1cc973139134a2e4cc492b9f17d297523e8100bd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_586da703",
+        "filename": "manuals/user-guide/src/main/asciidoc/alto/alto-user-guide.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T19:29:51Z",
+      "side": 1,
+      "message": "OpenFlow",
+      "range": {
+        "startLine": 132,
+        "startChar": 22,
+        "endLine": 132,
+        "endChar": 30
+      },
+      "revId": "1cc973139134a2e4cc492b9f17d297523e8100bd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_18772fd6",
+        "filename": "manuals/user-guide/src/main/asciidoc/alto/example-input.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T19:29:51Z",
+      "side": 1,
+      "message": "This file uses spaces for indentation which makes it format differently than example-rfc7285-networkmap.json, which uses tabs.",
+      "revId": "1cc973139134a2e4cc492b9f17d297523e8100bd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_387473ce",
+        "filename": "manuals/user-guide/src/main/asciidoc/alto/example-rfc7285-networkmap.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T19:29:51Z",
+      "side": 1,
+      "message": "This file uses tabs for indentation which makes it format differently than example-input.json, which uses spaces.",
+      "revId": "1cc973139134a2e4cc492b9f17d297523e8100bd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
