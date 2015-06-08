@@ -1,0 +1,130 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a6a9dd7_bdc155e6",
+        "filename": "manuals/developer-guide/src/main/asciidoc/iotdm/iotdm-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T17:02:56Z",
+      "side": 1,
+      "message": "it\u0027s YANG, not yang everywhere",
+      "revId": "46dc8c042663d987fff5623cfc54086a71d84a51",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_7dedfd8a",
+        "filename": "manuals/developer-guide/src/main/asciidoc/iotdm/iotdm-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T17:02:56Z",
+      "side": 1,
+      "message": "Could you just move that content here? or maybe just drop the link? or maybe move it to the end of the overview section as a last paragraph saying something like: \"For more information, see the https://wiki.opendaylight.org/view/IoTDM_Overview[IoTDM wiki page].",
+      "revId": "46dc8c042663d987fff5623cfc54086a71d84a51",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_fdf82d4b",
+        "filename": "manuals/developer-guide/src/main/asciidoc/iotdm/iotdm-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T17:02:56Z",
+      "side": 1,
+      "message": "This is very disjointed. Replacing it with the overview content from the wiki seems like a good idea.",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 50
+      },
+      "revId": "46dc8c042663d987fff5623cfc54086a71d84a51",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_7da41d57",
+        "filename": "manuals/developer-guide/src/main/asciidoc/iotdm/iotdm-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T17:02:56Z",
+      "side": 1,
+      "message": "you need a period after \"subscriptions\"",
+      "range": {
+        "startLine": 23,
+        "startChar": 51,
+        "endLine": 23,
+        "endChar": 64
+      },
+      "revId": "46dc8c042663d987fff5623cfc54086a71d84a51",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_dd9209f6",
+        "filename": "manuals/developer-guide/src/main/asciidoc/iotdm/iotdm-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T17:02:56Z",
+      "side": 1,
+      "message": "links? You can provide them something like http://link.to.the/document/[text for the link]",
+      "range": {
+        "startLine": 25,
+        "startChar": 47,
+        "endLine": 26,
+        "endChar": 64
+      },
+      "revId": "46dc8c042663d987fff5623cfc54086a71d84a51",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_fda6ed52",
+        "filename": "manuals/developer-guide/src/main/asciidoc/iotdm/iotdm-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T17:02:56Z",
+      "side": 1,
+      "message": "RESTCONF",
+      "range": {
+        "startLine": 51,
+        "startChar": 0,
+        "endLine": 51,
+        "endChar": 8
+      },
+      "revId": "46dc8c042663d987fff5623cfc54086a71d84a51",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
