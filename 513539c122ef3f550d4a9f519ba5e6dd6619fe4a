@@ -1,0 +1,778 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a6a9dd7_6309e02b",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sxp/odl-sxp-dev.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T20:49:50Z",
+      "side": 1,
+      "message": "What does SXP actually do and why would I want to use it as a developer?",
+      "revId": "513539c122ef3f550d4a9f519ba5e6dd6619fe4a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_180c0f42",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sxp/odl-sxp-dev.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T20:49:50Z",
+      "side": 1,
+      "message": "Expand the acronym SXP",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 3
+      },
+      "revId": "513539c122ef3f550d4a9f519ba5e6dd6619fe4a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_58128763",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sxp/odl-sxp-dev.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T20:49:50Z",
+      "side": 1,
+      "message": "OpenDaylight",
+      "range": {
+        "startLine": 4,
+        "startChar": 36,
+        "endLine": 4,
+        "endChar": 48
+      },
+      "revId": "513539c122ef3f550d4a9f519ba5e6dd6619fe4a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_78174b52",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sxp/odl-sxp-dev.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T20:49:50Z",
+      "side": 1,
+      "message": "expand the acronym IP-SGT",
+      "range": {
+        "startLine": 4,
+        "startChar": 63,
+        "endLine": 4,
+        "endChar": 69
+      },
+      "revId": "513539c122ef3f550d4a9f519ba5e6dd6619fe4a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_f8027b0a",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sxp/odl-sxp-dev.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T20:49:50Z",
+      "side": 1,
+      "message": "The current",
+      "range": {
+        "startLine": 4,
+        "startChar": 139,
+        "endLine": 4,
+        "endChar": 146
+      },
+      "revId": "513539c122ef3f550d4a9f519ba5e6dd6619fe4a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_c3046c17",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sxp/odl-sxp-dev.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T20:49:50Z",
+      "side": 1,
+      "message": "Provide a link to the IETF document, e.g., https://tools.ietf.org/html/draft-smith-kandula-sxp-02[this IETF draft]",
+      "range": {
+        "startLine": 4,
+        "startChar": 211,
+        "endLine": 4,
+        "endChar": 241
+      },
+      "revId": "513539c122ef3f550d4a9f519ba5e6dd6619fe4a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_830e7433",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sxp/odl-sxp-dev.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T20:49:50Z",
+      "side": 1,
+      "message": "protocol",
+      "range": {
+        "startLine": 7,
+        "startChar": 82,
+        "endLine": 7,
+        "endChar": 90
+      },
+      "revId": "513539c122ef3f550d4a9f519ba5e6dd6619fe4a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_e31c106d",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sxp/odl-sxp-dev.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T20:49:50Z",
+      "side": 1,
+      "message": "e.g.,",
+      "range": {
+        "startLine": 7,
+        "startChar": 195,
+        "endLine": 7,
+        "endChar": 199
+      },
+      "revId": "513539c122ef3f550d4a9f519ba5e6dd6619fe4a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_6320009c",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sxp/odl-sxp-dev.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T20:49:50Z",
+      "side": 1,
+      "message": "The SXP",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 3
+      },
+      "revId": "513539c122ef3f550d4a9f519ba5e6dd6619fe4a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_832514ad",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sxp/odl-sxp-dev.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T20:49:50Z",
+      "side": 1,
+      "message": "The SXP",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 3
+      },
+      "revId": "513539c122ef3f550d4a9f519ba5e6dd6619fe4a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_233a08ce",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sxp/odl-sxp-dev.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T20:49:50Z",
+      "side": 1,
+      "message": "The SXP",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 3
+      },
+      "revId": "513539c122ef3f550d4a9f519ba5e6dd6619fe4a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_4337fce3",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sxp/odl-sxp-dev.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T20:49:50Z",
+      "side": 1,
+      "message": "The IP-SGT",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 6
+      },
+      "revId": "513539c122ef3f550d4a9f519ba5e6dd6619fe4a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_e333b0f4",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sxp/odl-sxp-dev.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T20:49:50Z",
+      "side": 1,
+      "message": "i.e.,",
+      "range": {
+        "startLine": 15,
+        "startChar": 408,
+        "endLine": 15,
+        "endChar": 412
+      },
+      "revId": "513539c122ef3f550d4a9f519ba5e6dd6619fe4a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_c3522c13",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sxp/odl-sxp-dev.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T20:49:50Z",
+      "side": 1,
+      "message": "SXP-Database",
+      "range": {
+        "startLine": 17,
+        "startChar": 150,
+        "endLine": 17,
+        "endChar": 165
+      },
+      "revId": "513539c122ef3f550d4a9f519ba5e6dd6619fe4a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_a34db874",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sxp/odl-sxp-dev.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T20:49:50Z",
+      "side": 1,
+      "message": "making",
+      "range": {
+        "startLine": 17,
+        "startChar": 83,
+        "endLine": 17,
+        "endChar": 85
+      },
+      "revId": "513539c122ef3f550d4a9f519ba5e6dd6619fe4a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_033104ec",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sxp/odl-sxp-dev.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T20:49:50Z",
+      "side": 1,
+      "message": "OpenDaylight",
+      "range": {
+        "startLine": 17,
+        "startChar": 64,
+        "endLine": 17,
+        "endChar": 67
+      },
+      "revId": "513539c122ef3f550d4a9f519ba5e6dd6619fe4a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_2341a839",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sxp/odl-sxp-dev.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T20:49:50Z",
+      "side": 1,
+      "message": "SXP-Database",
+      "range": {
+        "startLine": 19,
+        "startChar": 84,
+        "endLine": 19,
+        "endChar": 99
+      },
+      "revId": "513539c122ef3f550d4a9f519ba5e6dd6619fe4a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_6357a003",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sxp/odl-sxp-dev.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T20:49:50Z",
+      "side": 1,
+      "message": "The SXP",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 3
+      },
+      "revId": "513539c122ef3f550d4a9f519ba5e6dd6619fe4a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_835c3427",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sxp/odl-sxp-dev.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T20:49:50Z",
+      "side": 1,
+      "message": "decides how many data items",
+      "range": {
+        "startLine": 19,
+        "startChar": 55,
+        "endLine": 19,
+        "endChar": 75
+      },
+      "revId": "513539c122ef3f550d4a9f519ba5e6dd6619fe4a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_0348245a",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sxp/odl-sxp-dev.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T20:49:50Z",
+      "side": 1,
+      "message": "This document is supposed to be talking about the APIs provide by the SXP project, not used by it. Unless you think some developer who was using SXP would want to know this, you can probably cut it.",
+      "revId": "513539c122ef3f550d4a9f519ba5e6dd6619fe4a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_e34ad054",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sxp/odl-sxp-dev.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T20:49:50Z",
+      "side": 1,
+      "message": "You probably want to provide an introduction to this list so that people have some idea what these things are.",
+      "revId": "513539c122ef3f550d4a9f519ba5e6dd6619fe4a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_433e1cba",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sxp/odl-sxp-dev.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T20:49:50Z",
+      "side": 1,
+      "message": "Did you want this to be a list? If so, put an asterisk-space \"* \" in front of each line.",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 8
+      },
+      "revId": "513539c122ef3f550d4a9f519ba5e6dd6619fe4a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_8373d4b0",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sxp/odl-sxp-dev.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T20:49:50Z",
+      "side": 1,
+      "message": "Do you have the source for this? It seems really useful and like the content should be here in this document, but right now even the link from the PDF isn\u0027t working.",
+      "revId": "513539c122ef3f550d4a9f519ba5e6dd6619fe4a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_a374d89c",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sxp/odl-sxp-dev.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T20:49:50Z",
+      "side": 1,
+      "message": "Cut this?",
+      "revId": "513539c122ef3f550d4a9f519ba5e6dd6619fe4a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_c379cc94",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sxp/odl-sxp-dev.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T20:49:50Z",
+      "side": 1,
+      "message": "Move this up to an inline link in the overview.",
+      "revId": "513539c122ef3f550d4a9f519ba5e6dd6619fe4a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_636ec0cb",
+        "filename": "manuals/developer-guide/src/main/asciidoc/sxp/odl-sxp-dev.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T20:49:50Z",
+      "side": 1,
+      "message": "Why is this here? If it matters, make it an inline link when you\u0027re describing it.",
+      "revId": "513539c122ef3f550d4a9f519ba5e6dd6619fe4a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_83aaf4d2",
+        "filename": "manuals/user-guide/src/main/asciidoc/sxp/odl-sxp-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T20:49:50Z",
+      "side": 1,
+      "message": "Everywhere you use ODL, instead say OpenDaylight",
+      "revId": "513539c122ef3f550d4a9f519ba5e6dd6619fe4a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_4365bcdf",
+        "filename": "manuals/user-guide/src/main/asciidoc/sxp/odl-sxp-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T20:49:50Z",
+      "side": 1,
+      "message": "See my comments on odl-sxp-dev.adoc for edits to make here.",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 206
+      },
+      "revId": "513539c122ef3f550d4a9f519ba5e6dd6619fe4a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_a39b78c8",
+        "filename": "manuals/user-guide/src/main/asciidoc/sxp/odl-sxp-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T20:49:50Z",
+      "side": 1,
+      "message": "What\u0027s Byt?",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 3
+      },
+      "revId": "513539c122ef3f550d4a9f519ba5e6dd6619fe4a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_63a56003",
+        "filename": "manuals/user-guide/src/main/asciidoc/sxp/odl-sxp-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T20:49:50Z",
+      "side": 1,
+      "message": "What are these? What would a user care? How would they get to them or call them? What would the returned data look like?",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 52
+      },
+      "revId": "513539c122ef3f550d4a9f519ba5e6dd6619fe4a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_e3b8902c",
+        "filename": "manuals/user-guide/src/main/asciidoc/sxp/odl-sxp-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T20:49:50Z",
+      "side": 1,
+      "message": "Rename this to \"Use cases for SXP\"",
+      "revId": "513539c122ef3f550d4a9f519ba5e6dd6619fe4a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_23af68e5",
+        "filename": "manuals/user-guide/src/main/asciidoc/sxp/odl-sxp-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T20:49:50Z",
+      "side": 1,
+      "message": "Make the examples an actual list by starting each line with an asterisk-space \"* \".",
+      "range": {
+        "startLine": 34,
+        "startChar": 314,
+        "endLine": 34,
+        "endChar": 342
+      },
+      "revId": "513539c122ef3f550d4a9f519ba5e6dd6619fe4a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_03b6e43d",
+        "filename": "manuals/user-guide/src/main/asciidoc/sxp/odl-sxp-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T20:49:50Z",
+      "side": 1,
+      "message": "e.g.",
+      "range": {
+        "startLine": 36,
+        "startChar": 247,
+        "endLine": 36,
+        "endChar": 252
+      },
+      "revId": "513539c122ef3f550d4a9f519ba5e6dd6619fe4a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_a3829850",
+        "filename": "manuals/user-guide/src/main/asciidoc/sxp/odl-sxp-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T20:49:50Z",
+      "side": 1,
+      "message": "e.g.",
+      "range": {
+        "startLine": 42,
+        "startChar": 220,
+        "endLine": 42,
+        "endChar": 225
+      },
+      "revId": "513539c122ef3f550d4a9f519ba5e6dd6619fe4a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_637c8073",
+        "filename": "manuals/user-guide/src/main/asciidoc/sxp/odl-sxp-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T20:49:50Z",
+      "side": 1,
+      "message": "e.g.",
+      "range": {
+        "startLine": 42,
+        "startChar": 568,
+        "endLine": 42,
+        "endChar": 573
+      },
+      "revId": "513539c122ef3f550d4a9f519ba5e6dd6619fe4a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_c3878c60",
+        "filename": "manuals/user-guide/src/main/asciidoc/sxp/odl-sxp-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T20:49:50Z",
+      "side": 1,
+      "message": "quality of service",
+      "range": {
+        "startLine": 42,
+        "startChar": 440,
+        "endLine": 42,
+        "endChar": 458
+      },
+      "revId": "513539c122ef3f550d4a9f519ba5e6dd6619fe4a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
