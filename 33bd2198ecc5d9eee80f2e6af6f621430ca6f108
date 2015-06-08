@@ -1,0 +1,2689 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a6a9dd7_723beceb",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "You probably want to expand this the first time you use it.",
+      "range": {
+        "startLine": 6,
+        "startChar": 54,
+        "endLine": 6,
+        "endChar": 58
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_d2651846",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "The following",
+      "range": {
+        "startLine": 11,
+        "startChar": 53,
+        "endLine": 11,
+        "endChar": 62
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_b260a436",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "the BGPCEP",
+      "range": {
+        "startLine": 11,
+        "startChar": 36,
+        "endLine": 11,
+        "endChar": 42
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_f24dbcc5",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "All the other words here are somewhat comprehensible, but nlri is something my guess is most people won\u0027t know on sight.",
+      "range": {
+        "startLine": 16,
+        "startChar": 46,
+        "endLine": 16,
+        "endChar": 50
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_b2c74412",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "What is this paragraph trying to convey, it doesn\u0027t seem to correspond to a list of the following sections, items in the diagram or anything.",
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_d2cc3838",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "This link will drift over time and not point to the data in stable/lithium.\n\nFor example, this should work: https://git.opendaylight.org/gerrit/gitweb?p\u003dbgpcep.git;a\u003dblob;f\u003dbgp/concepts/src/main/yang/bgp-types.yang;hb\u003drefs/heads/stable/lithium",
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_72d1accc",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "You probably want to keep the period on the previous line to have it format well.",
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_92d6c0c4",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "Same as before, this link will drift over time, you probably want to provide a link to stable/lithium.",
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_72e8cc7c",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "the _Extension provider_\n\nAdd \"the\" and you only need one set of _",
+      "range": {
+        "startLine": 59,
+        "startChar": 5,
+        "endLine": 59,
+        "endChar": 27
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_92ed608e",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "It might make sense to break this line up to make it format better, but I understand if you want to leave it verbatim as it really is in the project.",
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_3202543f",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "It might make sense to break this line up to make it format better, but I understand if you want to leave it verbatim as it really is in the project.",
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_52ffc834",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "It might make sense to break this line up to make it format better, but I understand if you want to leave it verbatim as it really is in the project.",
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_f2a93c25",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "There are no line numbers above, so this might confuse people.",
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_b29504e6",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "the bgp-parser-impl",
+      "range": {
+        "startLine": 79,
+        "startChar": 15,
+        "endLine": 79,
+        "endChar": 30
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_12a71051",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "There are no line numbers above, so this might confuse people.",
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_d29af813",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "the bgp-linkstate",
+      "range": {
+        "startLine": 82,
+        "startChar": 15,
+        "endLine": 82,
+        "endChar": 28
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_d268b8f7",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "This link simply doesn\u0027t work or point to anything.",
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_726d2c04",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "The bgp-linkstate",
+      "range": {
+        "startLine": 86,
+        "startChar": 0,
+        "endLine": 86,
+        "endChar": 13
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_f2805c8d",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "The configuration",
+      "range": {
+        "startLine": 88,
+        "startChar": 0,
+        "endLine": 88,
+        "endChar": 13
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_927240e4",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "Same as above with links that don\u0027t point to stable/lithium",
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_3277b4d6",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "Same as above with links that don\u0027t point to stable/lithium",
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_325ed446",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "The serializing",
+      "range": {
+        "startLine": 97,
+        "startChar": 0,
+        "endLine": 97,
+        "endChar": 11
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_127e30af",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "Given that people don\u0027t have a link to the wiki, this doesn\u0027t make sense.",
+      "range": {
+        "startLine": 97,
+        "startChar": 43,
+        "endLine": 97,
+        "endChar": 67
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_d24f5891",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "Do you mean \"Path Attributes\" or \"PathAttributes\" here?",
+      "range": {
+        "startLine": 100,
+        "startChar": 0,
+        "endLine": 100,
+        "endChar": 14
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_72444c74",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "should this be capitalized?",
+      "range": {
+        "startLine": 102,
+        "startChar": 21,
+        "endLine": 102,
+        "endChar": 27
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_9249e08d",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "a given",
+      "range": {
+        "startLine": 103,
+        "startChar": 39,
+        "endLine": 103,
+        "endChar": 44
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_525b4854",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "ordering",
+      "range": {
+        "startLine": 110,
+        "startChar": 45,
+        "endLine": 110,
+        "endChar": 53
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_f257fc24",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "you only need one set of _",
+      "range": {
+        "startLine": 112,
+        "startChar": 4,
+        "endLine": 112,
+        "endChar": 17
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_1255d01c",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "returns",
+      "range": {
+        "startLine": 119,
+        "startChar": 0,
+        "endLine": 119,
+        "endChar": 15
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_d2367803",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "The BGP RIB",
+      "range": {
+        "startLine": 131,
+        "startChar": 0,
+        "endLine": 131,
+        "endChar": 7
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_322574c2",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "Make this a list or say, \"First,... \u003cstuff\u003e. Second,... \u003cstuff\u003e.\" Right now it\u0027s ambiguous if it\u0027s \"First, BGP listener and speaker session handling. Second, RIB (Route information base) handling.\" or \"First, BGP listener. Second, speaker session handling and RIB (Route information base) handling.\"\n\nAlso, if you define RIB in the first paragraph, you don\u0027t need to expand it again here.",
+      "range": {
+        "startLine": 131,
+        "startChar": 54,
+        "endLine": 132,
+        "endChar": 67
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_522268ba",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "This isn\u0027t a link.",
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_d21d1875",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "a BGP",
+      "range": {
+        "startLine": 166,
+        "startChar": 51,
+        "endLine": 166,
+        "endChar": 54
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_72120c64",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "Expand this acronym.",
+      "range": {
+        "startLine": 170,
+        "startChar": 56,
+        "endLine": 170,
+        "endChar": 59
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_320c9442",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "OpenDaylight",
+      "range": {
+        "startLine": 174,
+        "startChar": 30,
+        "endLine": 174,
+        "endChar": 33
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_9217a051",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "Expand this acronym.",
+      "range": {
+        "startLine": 174,
+        "startChar": 8,
+        "endLine": 174,
+        "endChar": 12
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_f205bc14",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "connections",
+      "range": {
+        "startLine": 179,
+        "startChar": 8,
+        "endLine": 179,
+        "endChar": 18
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_52090830",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "the BGP",
+      "range": {
+        "startLine": 180,
+        "startChar": 12,
+        "endLine": 180,
+        "endChar": 15
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_12039010",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "you only need one set _",
+      "range": {
+        "startLine": 181,
+        "startChar": 25,
+        "endLine": 181,
+        "endChar": 33
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_9dffb101",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "OpenDaylight",
+      "range": {
+        "startLine": 182,
+        "startChar": 26,
+        "endLine": 182,
+        "endChar": 29
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_bd04f515",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "Again this link won\u0027t point to stable/lithium.",
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_5d09192b",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "Again this link won\u0027t point to stable/lithium.",
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_7d0e5d36",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "...represents, in this case, a peer that is allowed to...",
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_3d10e54d",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "Link to stable/lithium",
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_1d3ac1cd",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "\"The strict...\" or \"Our strict...\"",
+      "range": {
+        "startLine": 196,
+        "startChar": 47,
+        "endLine": 196,
+        "endChar": 53
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_3d3785e5",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "Link to stable/lithium",
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_9d4d7175",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "the deafult",
+      "range": {
+        "startLine": 202,
+        "startChar": 10,
+        "endLine": 202,
+        "endChar": 17
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_7d5c1d26",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "You don\u0027t have to define this acronym if you already do it in the first paragraph above.",
+      "range": {
+        "startLine": 207,
+        "startChar": 0,
+        "endLine": 207,
+        "endChar": 28
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_3d3ea5b9",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "The RFC does not define how it should be implemented.",
+      "range": {
+        "startLine": 208,
+        "startChar": 57,
+        "endLine": 209,
+        "endChar": 47
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_dd4a0955",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "the MD-SAL",
+      "range": {
+        "startLine": 210,
+        "startChar": 25,
+        "endLine": 210,
+        "endChar": 32
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_9d74919d",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "you only need one set of _ in each case",
+      "range": {
+        "startLine": 211,
+        "startChar": 9,
+        "endLine": 212,
+        "endChar": 18
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_1d6881b9",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "link to stable/lithium",
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_dd61a9d4",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "link to stable/lithium",
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_ddb8c92c",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "you only need one set of _",
+      "range": {
+        "startLine": 228,
+        "startChar": 0,
+        "endLine": 228,
+        "endChar": 14
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_fd5eed11",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "link to stable/lithium",
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_fdb58d31",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "you only need one set of _",
+      "range": {
+        "startLine": 233,
+        "startChar": 0,
+        "endLine": 233,
+        "endChar": 21
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_9d9b31c9",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "link to stable/lithium",
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_9d825151",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "you only need one set of _",
+      "range": {
+        "startLine": 238,
+        "startChar": 10,
+        "endLine": 238,
+        "endChar": 21
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_bda075f5",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "link to stable/lithium",
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_bd871561",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "you only need one set of _",
+      "range": {
+        "startLine": 242,
+        "startChar": 25,
+        "endLine": 242,
+        "endChar": 40
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_5d7cb972",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "link to stable/lithium",
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_1d964195",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "should NLRI be in caps?",
+      "range": {
+        "startLine": 256,
+        "startChar": 61,
+        "endLine": 256,
+        "endChar": 65
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_7d817d49",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "the form",
+      "range": {
+        "startLine": 256,
+        "startChar": 20,
+        "endLine": 256,
+        "endChar": 24
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_fd8cad81",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "in the",
+      "range": {
+        "startLine": 257,
+        "startChar": 47,
+        "endLine": 257,
+        "endChar": 49
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_bdee3521",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "link to stable/lithium",
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_7df89de5",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "The route",
+      "range": {
+        "startLine": 260,
+        "startChar": 59,
+        "endLine": 260,
+        "endChar": 64
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_1ddde170",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "cut in, just \"version 04.\"",
+      "range": {
+        "startLine": 268,
+        "startChar": 0,
+        "endLine": 268,
+        "endChar": 2
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_3dda2579",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "should nlri be in caps?",
+      "range": {
+        "startLine": 269,
+        "startChar": 43,
+        "endLine": 269,
+        "endChar": 47
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_dde68944",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "in the",
+      "range": {
+        "startLine": 270,
+        "startChar": 21,
+        "endLine": 270,
+        "endChar": 23
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_fde34d31",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "link to stable/lithium",
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_9dd01155",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "link to stable/lithium",
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_bdd5d544",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "link to stable/lithium",
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_bd3cf594",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "\"...is stored...\" instead of \"...also stored...\"",
+      "range": {
+        "startLine": 282,
+        "startChar": 25,
+        "endLine": 282,
+        "endChar": 29
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_fdba6d09",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "cut is, just \"BGP data besides...\"",
+      "range": {
+        "startLine": 282,
+        "startChar": 9,
+        "endLine": 282,
+        "endChar": 11
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_5d41190a",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "conforms to",
+      "range": {
+        "startLine": 283,
+        "startChar": 42,
+        "endLine": 283,
+        "endChar": 50
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_7d465d25",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "PCEP",
+      "range": {
+        "startLine": 5,
+        "startChar": 43,
+        "endLine": 5,
+        "endChar": 46
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_1d4ba12c",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "including",
+      "range": {
+        "startLine": 6,
+        "startChar": 10,
+        "endLine": 6,
+        "endChar": 14
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_dd5449cc",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "The following",
+      "range": {
+        "startLine": 10,
+        "startChar": 53,
+        "endLine": 10,
+        "endChar": 62
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_3d48e52c",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "the BGPCEP",
+      "range": {
+        "startLine": 10,
+        "startChar": 36,
+        "endLine": 10,
+        "endChar": 42
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_bd6395b0",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "change to \"...the parser should be...\"?",
+      "range": {
+        "startLine": 21,
+        "startChar": 44,
+        "endLine": 21,
+        "endChar": 67
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_fd510dd9",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "expand PCC?",
+      "range": {
+        "startLine": 23,
+        "startChar": 50,
+        "endLine": 23,
+        "endChar": 54
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_7d5dfde8",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "It might make sense to break this line up to make it format better, but I understand if you want to leave it verbatim as it really is in the project.",
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_1d72c17c",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "It might make sense to break this line up to make it format better, but I understand if you want to leave it verbatim as it really is in the project.",
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_3d6f8594",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "It might make sense to break this line up to make it format better, but I understand if you want to leave it verbatim as it really is in the project.",
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_dd6be983",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "It might make sense to break this line up to make it format better, but I understand if you want to leave it verbatim as it really is in the project.",
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_fd682d89",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "It might make sense to break this line up to make it format better, but I understand if you want to leave it verbatim as it really is in the project.",
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_9d0571c4",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "The base",
+      "range": {
+        "startLine": 53,
+        "startChar": 0,
+        "endLine": 53,
+        "endChar": 4
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_7d141df5",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "Cut this, just start with \"All parsers...\"\n\nIt was mentioned before, but in a different chapter.",
+      "range": {
+        "startLine": 62,
+        "startChar": 0,
+        "endLine": 62,
+        "endChar": 20
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_bd0ab5d0",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "you only need one set of _",
+      "range": {
+        "startLine": 63,
+        "startChar": 5,
+        "endLine": 63,
+        "endChar": 27
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_5d0fd9e1",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "you only need one set of _",
+      "range": {
+        "startLine": 64,
+        "startChar": 48,
+        "endLine": 64,
+        "endChar": 63
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_1df961c8",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "It might make sense to break this line up to make it format better, but I understand if you want to leave it verbatim as it really is in the project.",
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_dd0209b4",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "It might make sense to break this line up to make it format better, but I understand if you want to leave it verbatim as it really is in the project.",
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_fdffcda8",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "It might make sense to break this line up to make it format better, but I understand if you want to leave it verbatim as it really is in the project.",
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_9d2c914c",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "It might make sense to break this line up to make it format better, but I understand if you want to leave it verbatim as it really is in the project.",
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_bd3155a4",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "Since there are no line numbers above, this might be confusing.",
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_5d26f969",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "Since there are no line numbers above, this might be confusing.",
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_7d2bbd30",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "the PCEP",
+      "range": {
+        "startLine": 92,
+        "startChar": 38,
+        "endLine": 92,
+        "endChar": 42
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_3d1d4510",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "First, it\u0027s better not to link to the wiki from here. Second, you don\u0027t give a link. Third it should be \"in the wiki\" not \"in wiki\".",
+      "range": {
+        "startLine": 92,
+        "startChar": 49,
+        "endLine": 92,
+        "endChar": 72
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_dd19a923",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "make sure this links to the stable/lithium branch",
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_fd16edf0",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "make sure this links to the stable/lithium branch",
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_bdbf15d0",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "again, it\u0027d be better to just cut this and put the content here, but if you\u0027re going to refer to the wiki at least give a link.",
+      "range": {
+        "startLine": 104,
+        "startChar": 40,
+        "endLine": 104,
+        "endChar": 64
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_5db4b9f1",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "expand this acronym",
+      "range": {
+        "startLine": 110,
+        "startChar": 29,
+        "endLine": 110,
+        "endChar": 33
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_ddc76963",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "their",
+      "range": {
+        "startLine": 112,
+        "startChar": 50,
+        "endLine": 112,
+        "endChar": 53
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_fdc4ad60",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "\"...conforms to the Developer Guide.\"\n\nAlso, what do you mean by Developer Guide? Isn\u0027t that this?",
+      "range": {
+        "startLine": 113,
+        "startChar": 0,
+        "endLine": 113,
+        "endChar": 28
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_9da1f1ab",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "you only need one set of _",
+      "range": {
+        "startLine": 113,
+        "startChar": 54,
+        "endLine": 113,
+        "endChar": 69
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_1d95e13f",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "should this be capitalized?",
+      "range": {
+        "startLine": 119,
+        "startChar": 43,
+        "endLine": 119,
+        "endChar": 48
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_dd9e8963",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "should this be capitalized?",
+      "range": {
+        "startLine": 123,
+        "startChar": 43,
+        "endLine": 123,
+        "endChar": 48
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_9d881124",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "section",
+      "range": {
+        "startLine": 133,
+        "startChar": 5,
+        "endLine": 133,
+        "endChar": 14
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_5d827901",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "The stateful",
+      "range": {
+        "startLine": 143,
+        "startChar": 0,
+        "endLine": 143,
+        "endChar": 8
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_7d873d10",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "The stateful",
+      "range": {
+        "startLine": 144,
+        "startChar": 0,
+        "endLine": 144,
+        "endChar": 8
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_3d79c52f",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "TLVs (Type Length Values)",
+      "range": {
+        "startLine": 145,
+        "startChar": 0,
+        "endLine": 145,
+        "endChar": 4
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_9d8fb123",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "make sure this links to the stable/lithium version\n\nAlso you need a period after pcep-types.yang.",
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_7d9e5d58",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "the case",
+      "range": {
+        "startLine": 148,
+        "startChar": 3,
+        "endLine": 148,
+        "endChar": 7
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_ddac498f",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "the _Activator_",
+      "range": {
+        "startLine": 155,
+        "startChar": 15,
+        "endLine": 155,
+        "endChar": 26
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_9db6d1db",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "the stateful",
+      "range": {
+        "startLine": 157,
+        "startChar": 24,
+        "endLine": 157,
+        "endChar": 32
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_5db039dd",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "What new proposal? Provide a link?",
+      "range": {
+        "startLine": 158,
+        "startChar": 10,
+        "endLine": 159,
+        "endChar": 16
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_fdc02d2c",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "expand these acronyms",
+      "range": {
+        "startLine": 168,
+        "startChar": 25,
+        "endLine": 168,
+        "endChar": 42
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_bde2b5d3",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "\"The segment...\" or \"A segment...\"",
+      "range": {
+        "startLine": 169,
+        "startChar": 64,
+        "endLine": 169,
+        "endChar": 71
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_1dd161fb",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "this is a YANGism, you probably want to say something like \"...in an order specified in the message(s).\"",
+      "range": {
+        "startLine": 171,
+        "startChar": 25,
+        "endLine": 171,
+        "endChar": 40
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_ddda0917",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "what\u0027s an \"Open object\"?",
+      "range": {
+        "startLine": 172,
+        "startChar": 34,
+        "endLine": 172,
+        "endChar": 38
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_5dfef96c",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "link to the stable/lithium branch version",
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_7d03bd73",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "link to the stable/lithium branch version",
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_1df8817b",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "link to the stable/lithium branch version",
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_3df54583",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "expand these acronyms",
+      "range": {
+        "startLine": 188,
+        "startChar": 0,
+        "endLine": 188,
+        "endChar": 6
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_9d2b31eb",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "the default",
+      "range": {
+        "startLine": 188,
+        "startChar": 19,
+        "endLine": 188,
+        "endChar": 26
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_ddf1a996",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "expand this acronym and provide a link?",
+      "range": {
+        "startLine": 188,
+        "startChar": 27,
+        "endLine": 188,
+        "endChar": 34
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_dd48c9ce",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "link to the stable/lithium branch version",
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_fd458db3",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "link to the stable/lithium branch version",
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a6a9dd7_9d1251b3",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-pcep-all-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-08T16:30:54Z",
+      "side": 1,
+      "message": "the _\u003cpath-name\u003e_",
+      "range": {
+        "startLine": 271,
+        "startChar": 11,
+        "endLine": 271,
+        "endChar": 24
+      },
+      "revId": "33bd2198ecc5d9eee80f2e6af6f621430ca6f108",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
