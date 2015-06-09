@@ -11,22 +11,105 @@ bundles.
 * topoprocessing-spi - entry point for topoprocessing service (start and close)
 * topoprocessing-impl - contains implemented handlers, listeners and aggregators
 
-*Typical usecase*
+== Aggregation and Filtration
 
-. TopoProcessingProvider instance is created, DataBroker dependency is set
-. TopoProcessingProvider registers TopologyRequestListener (into configuration datastore)
-    - TopologyRequestListener listens on any topology creation or deletion and checks if it contains CorrelationAugment augmentation
-. TopologyRequestListener creates TopologyRequestHandler on new topology request
-    - TopologyRequestHandler translates paths from correlation into InstanceIdentifiers
-. TopologyRequestHandler creates TopologyFiltrator and/or TopologyAggregator (depending on correlation)
-. This step shows, that we can create filtered views on aggregated topologies
-. TopologyRequestHandler registers needed UnderlayTopologyListener(s) (into operational datastore)
-. Data change events are passed for aggregation and/or filtering
-. Overlay topology is passed to TopologyWriter
-. TopologyWriter writes the overlay topology into operational datastore
+=== Terminology
+In the code term Physical Node is used for underlay node and Logical Node for overlay node. 
 
-.architecture schema
-image::topoprocessing/architecture.png["architecture", width=500]
+=== Introduction
+Topology Processing Framework is a framework allowing creation of aggregated topologies or making filtration operations over these topologies. Currently aggregation and filtration of Nodes is supported over topologies augmenting the Topology model. After the request is received, one listener per underlay topology is registered in datastore. Upon change in any of the topologies, particular listener is triggered the change is processed. Two types of correlations (functionalities) are currently supported:
+
+* Agregation
+** Unification
+** Equality
+* Filtration
+** NodeIpFiltration
+
+=== Aggregation
+is an operation which creates aggregated topology out of underlay topologies if the condition for doing so is fulfilled. In the request for aggregated topologies creation, there has to be specified underlay topologies over which the overlay (aggregated) topology will be created and target field on which the aggregation is made.
+
+==== Create overlay node
+New underlay node is firstly inserted into proper Topology store. There is one Topology store per Underlay topology. Then the underlay node is compared (on the target field value) with existing nodes and if equality condition is fulfilled, a new Overlay node is created.
+
+===== Equality case
+For node which doesn't fulfill equality condition, processing finishes after adding the node into Topology store. It will stay there, for future use, ready to create aggregated node with a new underlay node, with which it would satisfy condition to create overlay node.
+
+===== Unification case
+Overlay node is created even for a node, which doesn't fulfill condition for creating overlay node with some other underlay node. It means, overlay node is created for every underlay node, but for those nodes which can create aggregated (overlay) node, this aggregated node is created. 
+
+==== Update node
+Processing of updated underlay node depends on the fact if it's target field has been modified. If this is the case, then:
+
+* if the underlay node belonged to some overlay node, it is withdrawn from this node and then, if the condition of equality on target field is satisfied, it is inserted into some another overlay node.
+* if the node was "standalone" node, it is put into overlay node, if the condition of equality is fulfilled on the new value of target field with some existing underlay node.
+
+===== Unification case
+Every underlay node belongs to some overlay node. Either with some other underlay nodes when they have the same value of target field or otherwise there is one underlay node in an overlay node. 
+
+==== Remove node
+Underlay node is removed from appertaining Topology store and from it's overlay node if it belongs to some.
+
+===== Equality case
+If there is only one underlay node left in the overlay node, the overlay node is removed.
+
+===== Unification case
+In this case, it is allowed to have one underlay node in overlay node. However if this node is removed from its overlay node, the overlay node is removed. 
+
+=== Filtration
+Is an operation which results in creation of overlay topology containing only nodes fulfilling condition set in the request for creating this topology.
+
+==== NodeIpFiltration
+Filtration is based on IP address. If node's IP address fulfills mask set in the value tag of the request, this node is put into result overlay topology.
+
+===== Create node
+For a new node fulfilling IP address mask condition, this node is put into overlay node later written into datastore.
+
+===== Update node
+If IP address of filtrated node's has changed to value still fulfilling the mask's condition, new overlay node is created and this updated node is inserted there. If the new IP address does not comply the mask, the overlay node is simply removed.
+
+===== Remove node
+If underlay node is part of some overlay node, the overlay node is simply removed. 
+
+=== Wrapper, RPC republishing, writing mechanism
+==== Wrapper
+During the process of Aggregation and Filtration, overlay nodes (so called Logical Nodes) were created from underlay nodes (Physical Nodes). In TopologyManager, overlay nodes are put into wrapper. A wrapper is idetified with unique ID and contains list of Logical Nodes. Wrappers are used to deal with transitivity of underlay nodes - which permits grouping of overlay nodes (into wrappers). 
+
+.Classes relationship
+image::topoprocessing/wrapper.png["Classes relationship", width=800]
+
+PN1, PN2, PN3 = Physical Node
+
+LN1, LN2 = Logical Node 
+
+==== RPC republishing
+===== Registration
+All RPC underlay nodes are re-registered under their corresponding wrapper ID. RPCs of underlay nodes (belonging to an overlay node) are gathered, and registered under ID of their wrapper.
+
+===== RPC Call
+When RPC is called on overlay node, this call is delegated to it's underlay nodes, it means this RPC is called on all underlay nodes of this overlay node. 
+
+==== Writing mechanism
+When a wrapper (containing overlay node(s) with it's underlay nodes(s)) is ready to be written into data store, it has to be converted into DOM format. After this translation is done, result is written into datastore. Physical nodes are stored as supporting-nodes.
+In order to user the resources responsibly, writing operation is divided into two steps. Firstly set of threads registers prepared operations (Delete Operation and Put Operation) and one thread makes actual write operation in batch.
+ 
+=== Classes relationships
+
+[1] TopologyRequestHandler instantiates TopologyWriter, TopologyManager. Then according to request initilizes either TopologyAggregator or Topology filtrator.
+
+[2] It creates as many instances of UnderlayTopologyListener as there are underlay topologies
+
+[3] PhysicalNodes are created for relevant income nodes (those having node ID)
+
+[4a] Performs aggregation and creates Logical Nodes
+
+[4b] Performs filtration and creates Logical Nodes
+
+[5] Logical Nodes are put into wrapper
+
+[6] Wrapper is translated into adequate format and written into Datastore
+
+.Classes relationship
+image::topoprocessing/TopologyRequestHandler_classesRelationship.png["Classes relationship", width=800]
 
 === Key APIs and Interfaces
 Basic Provider class is TopoProcessingProvider which provides startup and shutdown
