@@ -54,7 +54,7 @@ logs relating to odl-ovsdb-openstack.
 
 ==== Troubleshooting
 There are no easy way to troubleshoot an installation of odl-ovsdb-openstack. Perhaps a combination of
-log:display | grep -i ovsdb in karaf, Open vSwitch commands (ovs-vsdctl) and openstack logs will be useful but will not
+log:display | grep -i ovsdb in karaf, Open vSwitch commands (ovs-vsctl) and openstack logs will be useful but will not
 explain everything.
 
 === Upgrading From a Previous Release
