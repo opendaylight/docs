@@ -9,34 +9,40 @@
 
 === Clustering Overview
 
-Clustering is a mechanism that enables multiple processes and programs to work together as one entity.  For example, when you go to google.com and search for something, it may seem like your search request is processed by only one web server. In reality, your search request is processed by thousands of web servers connected in a cluster. Similarly, you can have multiple instances of the OpenDaylight controller working together as one entity. There are a number of uses for clustering:
+Clustering is a mechanism that enables multiple processes and programs to work together as one entity.  For example, when you search for something on google.com, it may seem like
+your search request is processed by only one web server. In reality, your search request is processed by thousands of web servers connected in a cluster. 
+Similarly, you can have multiple instances of the OpenDaylight controller working together as one entity. 
 
-* Scaling: If you have multiple controllers running, you can potentially do more work with or store more data on those controllers if they are clustered. You can also break up your data into smaller chunks (known as shards) and either distribute that data across the cluster or perform certain operations on certain members of the cluster.
+Advantages of clustering are:
 
-* High Availability: If you have multiple controllers running and one of them crashes, you would still have the other instances working and available.
+* Scaling: If you have multiple controllers running, you can potentially do more work with or store more data on those controllers if they are clustered. 
+You can also break up your data into smaller chunks (shards) and either distribute that data across the cluster or perform certain operations on certain members of the cluster.
+
+* High Availability: If you have multiple controllers running and one of the controller crashes, you would still have the other instances working and available.
 
 * Data Persistence: You will not lose any data gathered by your controller after a manual restart or a crash.
 
 The following sections describe how to set up clustering on both individual and multiple OpenDaylight controllers.
 
 === Single Node Clustering
-To enable clustering on a single OpenDaylight controller, do the following:
+To enable clustering on a single OpenDaylight controller, perform the following steps:
 
 '''
 
 . Download and unzip a base controller distribution. You must use the new OpenFlow plugin, so download a distribution where the new OpenFlow plugin is either the default or can be enabled.
 . Navigate to the _<Karaf-distribution-location>_/bin directory.
 . Run Karaf: *./karaf*
-. Install the clustering feature: *feature:install odl-mdsal-clustering*
-. If you are using the integration distribution of Karaf, you should also install the open flow plugin flow services: *feature:install odl-openflowplugin-flow-services*
+. Install the clustering feature: *feature:install odl-mdsal-clustering* +
+If you are using the integration distribution of Karaf, you should also install the open flow plugin flow services: *feature:install odl-openflowplugin-flow-services*
 . Install the Jolokia bundle: *install -s mvn:org.jolokia/jolokia-osgi/1.1.5*
 
 '''
 
-After enabling the DistributedDataStore feature in a single instance, you can access the following features:
+After enabling the Distributed datastore feature on a single instance, you can access the following features:
 
 * Data Sharding: The in-memory MD-SAL tree is broken up into a number of smaller sub-trees (inventory, topology, and default).
-* Data Persistence: All of the data available on defined data shards is stored on a disk. By restarting the controller, you can use the persisted data to reinstate those shards to their previous state.
+* Data Persistence: All the data available on defined data shards is stored on a disk. By restarting the controller, you can use the persisted data to reinstate those shards
+ to their previous state.
 
 === Multiple Node Clustering
 
@@ -44,33 +50,38 @@ The following sections describe how to set up multiple node clusters in OpenDayl
 
 ==== Deployment Considerations
 
-Here is some information to keep in mind when you implement clustering:
+To implement clustering, the deployment considerations are as follows:
 
-* When setting up a cluster with multiple nodes, we recommend that you do so with a minimum of three machines. You can set up with a cluster with just two nodes. However, if one of those two nodes go down, the controller will no longer be operational.
+* To set up a cluster with multiple nodes, we recommend that you use a minimum of three machines. You can set up a cluster with just two nodes. 
+However, if one of the two nodes fail, the controller will not be operational.
 
-* Every device that belongs to a cluster needs to have an identifier. For this purpose, OpenDaylight uses the node&#8217;s role. After you define the first node&#8217;s role as _member-1_ in the akka.conf file, OpenDaylight uses _member-1_ to identify that node.
+* Every device that belongs to a cluster needs to have an identifier. For this purpose, OpenDaylight uses the node&#8217;s role. 
+After you define the first node&#8217;s role as _member-1_ in the akka.conf file, OpenDaylight uses _member-1_ to identify that node.
 
-* Data shards are used to house all or a certain segment of a module&#8217;s data. For example, one shard can contain all of a module&#8217;s inventory data while another shard contains all of it&#8217;s topology data. If you do not specify a module in the modules.conf file and do not specify a shard in module-shards.conf, then (by default) all the data is places onto the default shard (which must also be defined in module-shards.conf file). Each shard has replicas configured, and the module-shards.conf file is where you can specify where these replicas reside.
+* Data shards are used to contain all or a certain segment of a module&#8217;s data. For example, one shard can contain all of a module&#8217;s 
+inventory data while another shard contains all of it&#8217;s topology data. If you do not specify a module in the modules.conf file and do not specify a shard in 
+module-shards.conf, then (by default) all the data is places in the default shard (which must also be defined in module-shards.conf file). Each shard has replicas configured, 
+You can specify the details of where the replicas reside in module-shards.conf file.
 
-* Say you have a three node cluster on which HA is enabled. A replica of every defined data shard must be running on all three cluster nodes. This is because OpenDaylight&#8217;s clustering implementation requires a majority of the defined shard replicas to be running in order to function. If you only define data shard replicas on two of the cluster nodes and one of those nodes goes down, the corresponding data shards will not function.
+* If you have a three node cluster with HA (High Availability) enabled,  a replica of every defined data shard must be running on all three cluster nodes. 
+This is because OpenDaylight&#8217;s clustering implementation requires a majority of the defined shard replicas to be running in order to function. 
+If you define data shard replicas on two of the cluster nodes and one of those nodes goes down, the corresponding data shards will not function.
 
-* If you have a three node cluster and have defined replicas for a data shard on each of those nodes, that shard will still function even if only two of the cluster nodes are running. Note that if one of those two nodes go down, your controller will no longer be operational.
+* If you have a three node cluster and have defined replicas for a data shard on each of those nodes, that shard will still function even if  two 
+of the cluster nodes are running. Note that if one of those two nodes go down, your controller will not be operational.
 
-*What considerations need to be made when setting the seed nodes for each member? Why are we referring to multiple seed nodes when you set only one IP address? Can you set multiple seed nodes for functional testing?*
+* It is  recommended that you have multiple seed nodes configured. After a cluster member is started, it sends a message to all of its seed nodes. 
+The cluster member then sends a join command to the first seed node that responds. If none of its seed nodes reply, the cluster member repeats this process until it successfully 
+establishes a connection or it is shut down.
 
-We recommend that you have multiple seed nodes configured. After a cluster member is started, it sends a message to all of its seed nodes. The cluster member then sends a join command to the first seed node that responds. If none of its seed nodes reply, the cluster member repeats this process until it successfully establishes a connection or it is shutdown.
+* After a node is unreachable, it remains down for configurable period of time (10 seconds, by default). 
+Once a node goes down, you need to restart it so that it can rejoin the cluster. Once a restarted node joins a cluster, it will synchronize with the lead node automatically.
 
-*What happens after one node becomes unreachable? Do the other two nodes function normally? When the first node reconnects, does it automatically synchronize with the other nodes?*
-
-After a node becomes unreachable, it remains down for configurable period of time (10 seconds, by default). Once a node goes down, you need to restart it so that it can rejoin the cluster. Once a restarted node joins a cluster, it will synchronize with the lead node automatically.
-
-*Can you run a two node cluster for functional testing?*
-
-For functional testing, yes. For HA testing, you need to run all three nodes.
+* For functional testing, you can run a two node cluster. For HA testing, you need to run all three nodes.
 
 ==== Setting Up a Multiple Node Cluster
 
-To run an OpenDaylight controller in a three node cluster, do the following:
+To run an OpenDaylight controller in a three node cluster, perform the following:
 
 '''
 
@@ -105,14 +116,16 @@ NOTE: The value you need to specify will be different for each node in the clust
    cluster {
      seed-nodes = ["akka.tcp://opendaylight-cluster-data@127.0.0.1:2550"]
 
-.. Find the following section and specify the role for each member node. For example, you could assign the first node with the _member-1_ role, the second node with the _member-2_ role, and the third node with the _member-3_ role.
+.. Find the following section and specify the role for each member node. For example, you could assign the first node with the _member-1_ role, 
+the second node with the _member-2_ role, and the third node with the _member-3_ role.
 
 
      roles = [
        "member-1"
      ]
 
-.. Open the configuration/initial/module-shards.conf file and update the items listed in the following section so that the replicas match roles defined in this host&#8217;s akka.conf file.
+.. Open the configuration/initial/module-shards.conf file and update the items listed in the following section to match replicas with roles defined in this host&#8217;s 
+akka.conf file.
 
                replicas = [
                    "member-1"
@@ -133,7 +146,7 @@ For reference, view a sample akka.conf file here: https://gist.github.com/moizr/
 
 The OpenDaylight controller can now run in a three node cluster. Use any of the three member nodes to access the data residing in the datastore.
 
-Say you want to view information about shard designated as _member-1_ on a node. To do so, query the shard&#8217;s data by making the following HTTP request:
+To view information about shard designated as _member-1_ on a node, query the shard&#8217;s data by sending the following HTTP request:
 
 '''
 
@@ -198,7 +211,7 @@ This request should return the following information:
        }
    }
 
-The key thing here is the name of the shard. Shard names are structured as follows:
+The key information is the name of the shard. Shard names are structured as follows:
 
 _<member-name>_-shard-_<shard-name-as-per-configuration>_-_<store-type>_
 
@@ -215,11 +228,11 @@ To enable HA in a three node cluster:
 
 . Open the configuration/initial/module-shards.conf file on each cluster node.
 . Add _member-2_ and _member-3_ to the replica list for each data shard.
-. Restart all of the nodes. The nodes should automatically sync up with member-1. After some time, the cluster should be ready for operation.
+. Restart all the nodes. The nodes should automatically sync up with member-1. After some time, the cluster should be ready for operation.
 
 '''
 
-When HA is enabled, you must have at least three replicas of every shard. Each node&#8217;s configuration files should look something like this:
+When HA is enabled, you must have at least three replicas of every shard. Each node&#8217;s configuration files should be as follows:
 
    module-shards = [
        {
@@ -276,5 +289,7 @@ When HA is enabled, you must have at least three replicas of every shard. Each n
        }
    ]
 
-When HA is enabled on multiple nodes, shards will replicate the data for those nodes. Whenever the lead replica on a data shard is brought down, another replica takes its place. As a result, the cluster should remain available. To determine which replica is acting as the lead on a data shard, make an HTTP request to obtain the information for a data shard on any of the nodes. The resulting information will indicate which replica is acting as the lead.
+When HA is enabled on multiple nodes, shards replicate the data for those nodes. Whenever the lead replica on a data shard is brought down, 
+another replica takes its place. As a result, the cluster should remain available. To determine which replica is acting as the lead on a data shard, send an HTTP request to obtain 
+the information for a data shard on any of the nodes.
 
