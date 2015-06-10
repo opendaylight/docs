@@ -9,13 +9,14 @@
 
 === XSQL Overview
 
-XSQL is an XML-based query language that describes simple stored procedures which parse XML data, query or update database tables, and compose XML output. It allows you to query tree models as if they were a sequential database. For example, you could run a query that lists all of the ports configured on a particular module and their attributes.
+XSQL is an XML-based query language that describes simple stored procedures which parse XML data, query or update database tables, and compose XML output. XSQL allows you to query 
+tree models like a sequential database. For example, you could run a query that lists all of the ports configured on a particular module and their attributes.
 
-The following sections will cover the XSQL installation process, supported XSQL commands, and the proper way to structure queries.
+The following sections cover the XSQL installation process, supported XSQL commands, and the way to structure queries.
 
 === Installing XSQL
 
-Before you can run commands from the XSQL console, you must first install XSQL onto your system:
+To run commands from the XSQL console, you must first install XSQL on your system:
 
 '''
 
@@ -27,9 +28,9 @@ Before you can run commands from the XSQL console, you must first install XSQL o
 
 === XSQL Console Commands
 
-When entering a command in the XSQL console, structure it as follows: *odl:xsql* _<XSQL command>_
+To enter a command in the XSQL console, structure the command as follows: *odl:xsql* _<XSQL command>_
 
-The following table describes the commands supported in the OpenDaylight Helium release.
+The following table describes the commands supported in the OpenDaylight Lithium, release.
 
 .Supported XSQL Console Commands
 [cols="2",options="headers"]
@@ -38,26 +39,30 @@ The following table describes the commands supported in the OpenDaylight Helium 
 | *r*
 | Repeats the last command you executed.
 | *list vtables*
-| Lists the schema node containers that are currently installed. Whenever an OpenDaylight module is installed, its YANG model is placed in the Schema Context. At that point, the XSQL receives a notification, confirms that the module&#8217;s YANG model resides in the Schema Context, and then maps the model to XSQL by setting up the necessary vtables and vfields. This command is useful when you need to determine vtable information for a query.
+| Lists the schema node containers that are currently installed. Whenever an OpenDaylight module is installed, its YANG model is placed in the schema context. At that point, the 
+XSQL receives a notification, confirms that the module&#8217;s YANG model resides in the schema context and then maps the model to XSQL by setting up the necessary vtables and vfields. 
+This command is useful when you need to determine vtable information for a query.
 | *list vfields* _<vtable name>_
 | Lists the vfields present in a specific vtable. This command is useful when you need to determine vfields information for a query.
 | *jdbc* _<ip address>_
-| When the ODL server is behind a firewall, and the JDBC client cannot connect to the JDBC server, run this command to start the client as if it was a server and establish a connection.
+| When the ODL server is behind a firewall, and the JDBC client cannot connect to the JDBC server, run this command to start the client as a server and establish a connection.
 | *exit*
 | Closes the console.
 | *tocsv*
-| Enables/disables the forwarding of query output as a .csv file.
+| Enables or disables the forwarding of query output as a .csv file.
 | *filename* _<filename>_
-| Specifies the .tocsv file to which query data is exported. If you do not specify a value for this option when the toccsv option is enabled, the filename for the query data file is generated automatically.
+| Specifies the .tocsv file to which the query data is exported. If you do not specify a value for this option when the toccsv option is enabled, the filename for the query 
+data file is generated automatically.
 |==============================================
 
 === XSQL Queries
 
-Using the information provided by the *list vtables* and *list vfields* _<vtable name>_ commands, you can run a query to extract information that meets the criteria you specify. Any query you run should be structured as follows:
+You can run a query to extract information that meets the criteria you specify using the information provided by the *list vtables* and *list vfields* _<vtable name>_ commands. 
+Any query you run should be structured as follows:
 
 *select* _<vfields you want to search for, separated by a comma and a space>_ *from* _<vtables you want to search in, separated by a comma and a space>_ *where* _<criteria>_ **&#8217;**_<criteria operator>_**&#8217;****;**
 
-For example, say you want to search the nodes/node.ID field in the nodes/node-connector table and find every instance of the Hardware-Address object that contains _BA_ in its text string. To do so, you would enter the following query:
+For example, if you want to search the nodes/node ID field in the nodes/node-connector table and find every instance of the Hardware-Address object that contains _BA_ in its text string, enter the following query:
 *Select nodes/node.ID from nodes/node-connector where Hardware-Address like &#8217;%BA%&#8217;;*
 
 The following criteria operators are supported:
@@ -80,9 +85,9 @@ The following criteria operators are supported:
 | *skip* | Use this operator to list matching results from a child node, even if its parent node does not meet the specified criteria. See the following example for more information.
 |==============================================
 
-==== Example: skip Criteria Operator
+==== Example: Skip Criteria Operator
 
-Say you are looking at the following structure and want to determine all of the ports that belong to a YY type module:
+If you are looking at the following structure and want to determine all of the ports that belong to a YY type module:
 
 * Network Element 1
 ** Module 1, Type XX
