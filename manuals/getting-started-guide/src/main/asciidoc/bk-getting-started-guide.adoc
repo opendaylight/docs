@@ -57,6 +57,12 @@ the end of their file.
 // END COMMENT
 //////////////////////////
 
+include::release-notes.adoc[OpenDaylight Release Notes]
+
+include::general_installation.adoc[]
+
+= Getting to know OpenDaylight
+
 include::ch-introduction.adoc[]
 
 include::ch-clustering.adoc[]
@@ -65,9 +71,7 @@ include::ch-dlux.adoc[]
 
 include::ch-xsql-commands.adoc[]
 
-include::release-notes.adoc[OpenDaylight Release Notes]
-
-include::general_installation.adoc[]
+= Project-specific Installation Guides
 
 include::opflex/agent-ovs-install.adoc[]
 
