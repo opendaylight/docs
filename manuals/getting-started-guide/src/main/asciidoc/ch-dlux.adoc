@@ -1,68 +1,116 @@
 == Using the OpenDaylight User Interface (DLUX)
 
-This section introduces you to the OpenDaylight User Experience (DLUX) application.
+This section introduces you to the OpenDaylight User Experience (DLUX) application. DLUX is an OpenFlow network management application for OpenDaylight controller. 
+For detailed information about OpenDaylight overview and architecture, see https://wiki.opendaylight.org/view/OpenDaylight_Controller:Overview[Opendaylight Overview], https://wiki.opendaylight.org/view/OpenDaylight_Controller:Architectural_Framework[Opendaylight Architecture]. +
+
+OpenDaylight Controller has the following interfaces: +
+
+* AD-SAL
+* MD-SAL
+
+Controller receives information from the various https://wiki.opendaylight.org/view/File:ODL-Helium-dependency.png[interdependent modules] through the SAL services. For more information on 
+SAL services available, refer to https://wiki.opendaylight.org/view/OpenDaylight_Controller:SAL[SAL Services].
+DLUX also uses the SAL services to obtain network related information and use it to provide network management capabilities.
 
 === Getting Started with DLUX
 
-DLUX provides a number of different Karaf features, which you can enable and disable separately. In Lithium they are:
-. odl-dlux-core
-. odl-dlux-node
-. odl-dlux-yangui
-. odl-dlux-yangvisualizer
+You can either use DLUX as a stand-alone plug-in or integrate DLUX with the OpenDaylight controller. +
+
+To install DLUX as a standalone application, refer to https://wiki.opendaylight.org/view/OpenDaylight_DLUX:Setup_and_Run[OpenDaylight DLUX:Setup and Run]. +
+
+To integrate DLUX with OpenDaylight controller, you must enable DLUX karaf feature. You can enable AD_SAL, MD_SAL and various other bundles within karaf depending on the features you 
+would like to access using DLUX. Each feature can be enabled or disabled separately.
+
+IMPORTANT: Ensure that you have created a topology and enabled the MD-SAL feature in the karaf distribution before you use DLUX for network management.
+
+For more information on enabling the karaf features for DLUX, refer to https://wiki.opendaylight.org/view/OpenDaylight_DLUX:DLUX_Karaf_Feature[OpenDaylight DLUX:DLUX Karaf Feature].
 
 === Logging In
 
 To log in to DLUX, after installing the application:
 
-. Open a browser and enter the login URL http://<your-karaf-ip>:8181/index.html in your browser (Chrome is recommended).
-. Login to the application with user ID and password credentials as *admin*.
+'''
 
+
+. If you have installed DLUX as a stand-alone, then login using http://localhost:9000/DLUX/index.html. 
+If you have deployed  DLUX with Karaf, then login using http://\<your IP\>:8181/dlux/index.html.
+NOTE: Ensure that you use the port applicable for the DLUX installation type. IP address of the machine where the application is installed is *local host*. +
+
+. Login to the application with the user ID and password credentials as *admin*.
 NOTE: admin is the only user type available for DLUX in this release.
+
+'''
 
 === Working with DLUX
 
-After you login to DLUX, if you enable only odl-dlux-core feature, you will see only topology application available in the left pane.
+When you login to DLUX, all the modules that are available for DLUX is displayed in the left pane. However, the modules disappear if the features are not enabled in the karaf distribution.
 
-NOTE: To make sure topology displays all the details, enable the odl-l2switch-switch feature in Karaf.
-
-DLUX has other applications such as node, yang UI and those apps won't show up, until you enable their features odl-dlux-node and odl-dlux-yangui respectively in the Karaf distribution.
+To obtain the complete DLUX feature list, install RESTCONF, OLD L2 switch, and switch while you start the DLUX distribution. 
+For more information about enabling features on DLUX, refer to https://wiki.opendaylight.org/view/OpenDaylight_DLUX:DLUX_Karaf_Feature[OpenDaylight DLUX:DLUX Karaf Feature].
 
 .DLUX Modules
 image::dlux-login.png["DLUX Page",width=500]
 
-NOTE: If you install your application in dlux, they will also show up on the left hand navigation after browser page refresh.
+
+Modules that use the MD SAL based APIs are : +
+
+* 	Nodes
+* 	Yang UI
+* 	Topology
+
+Modules that use the AD-SAL based APIs are: +
+
+*	Connection manager
+*	Container
+*	Network
+*   Flows
+
+NOTE: DLUX enables only those modules, whose APIs are responding. If you enable just the MD-SAL in the beginning and then start DLUX, 
+only MD-SAL related tabs are displayed. While using the GUI if you enable AD-SAL karaf features, those tabs are displayed automatically.
+
+To view features that are enabled:
+
+'''
+
+. Right click on the DLUX page.
+. Select *Inspect Element* and click *Network*. +
+A table that contains the list of features and if they are available in the DLUX distribution are displayed. 
+The features that are not enabled is highlighted in red font with status *404 Not Found*.
+
+'''
 
 === Viewing Network Statistics
 
-The *Nodes* module on the left pane enables you to view the network statistics and port information for the switches in the network. +
+The *Nodes* module on the left pane enables you to view the network statistics and port information of the switches in the network. +
 
 To use the *Nodes* module:
 
 '''
 
 . Select *Nodes* on the left pane.
-	The right pane displays atable that lists all the nodes, node connectors and the statistics.
+	The right pane displays a table that lists all the nodes, node connectors, and the statistics.
 . Enter a node ID in the *Search Nodes* tab to search by node connectors.
 . Click on the *Node Connector* number to view details such as port ID, port name, number of ports per switch, MAC Address, and so on.
-. Click *Flows* in the Statistics column to view Flow Table Statistics for the particular node like table ID, packet match, active flows and so on.
-. Click *Node Connectors* to view Node Connector Statistics for the particular node ID.
+. Click *Flows* in the statistics column to view Flow Table statistics for the particular node like table ID, packet match, active flows and so on.
+. Click *Node Connectors* to view node connector statistics for the particular node ID.
 
 '''
 
 === Viewing Network Topology
 
-The Topology tab displays a graphical representation of network topology created.
+The Topology tab displays a graphical representation of the network topology created.
 
-NOTE: DLUX UI does not provide ability to add topology information. The Topology should be created using an open flow plugin. Controller stores this information in the database and displays on the DLUX page, when the you connect to the controller using openflow.
+NOTE: DLUX UI does not provide an ability to add topology information. The Topology should be created using an OpenFlow plugin. Controller stores the topology information in the database 
+and displays on the DLUX page, when the you connect to the controller using OpenFlow.
 
 To view network topology:
 
 '''
 
-. Select *Topology* on the left pane. You will view the graphical representation on the right pane.
-	In the diagram blue boxes represent the switches, the black represents the hosts available, and lines represents how switches are connected.
-. Hover your mouse on hosts,links, or switches to view source and destination ports.
-. Zoom in and zoom out using mouse scroll to verify topology for huge topologies.
+. Select *Topology* on the left pane. The graphical representation of the topology is displayed on the right pane.
+	In the diagram blue boxes represent the switches, the black represents the hosts available, and lines represent how switches are connected.
+. Hover your mouse on the hosts, links, or switches to view the source and destination ports.
+. Zoom in and zoom out using the mouse scroll to verify the topology for huge topologies.
 
 '''
 
@@ -71,7 +119,7 @@ image::dlux-topology.png["DLUX Topology Page",width=500]
 
 === Interacting with the Open Daylight Controller (ODL)
 
-The *Yang UI* module enables you to interact with the ODL. For more information about Yang Tools, see https://wiki.opendaylight.org/view/YANG_Tools:Main [YANG_Tools].
+The *Yang UI* module enables you to interact with the ODL. For more information about Yang Tools, refer to https://wiki.opendaylight.org/view/YANG_Tools:Main [YANG_Tools].
 
 .Yang UI
 image::dlux-yang-ui-screen.png["DLUX Yang UI Page",width=500]
@@ -80,34 +128,36 @@ To use Yang UI:
 
 '''
 
-. Select *Yang UI* on the left pane. The right pane is divided in two parts.
+. Select *Yang UI* on the left pane. The right pane is divided in two sections.
 
-. The top part displays a tree of APIs and subAPIs and buttons to call possible functions (GET, POST, PUT, DELETE, …). Not every subAPIs can call every function.
+. The top section displays a tree of APIs and subAPIs and options to call possible functions (GET, POST, PUT, DELETE, …). Not every subAPIs can call every function.
    For example, subAPIs “operational” have GET functionality only.
-	Inputs can be filled from ODL when existing data from ODL is displayed or can be filled by user on the page and sent to ODL. +
+	Inputs can be filled from ODL when existing data from ODL is displayed or you can be fill inputs on the page and sent to ODL. +
 	+
-	Buttons under the API tree are variable. It depends on subAPI specifications. Common buttons are: +
-	 * GET to get data from ODL,
-	 * PUT and POST for sending data to ODL for saving
-	 * DELETE for sending data to ODL for deleting. +
-	 You must specify the xpath for all these operations. This path is displayed in the same row before buttons and it can include text inputs for specific path elements identifiers. +
+	Options under the API tree are variable. It depends on subAPI specifications. The common options are: +
+	 * GET: Get data from ODL,
+	 * PUT and POST: Send data to ODL for saving
+	 * DELETE: Send data to ODL for deleting. +
+	 You must specify the xpath for all these operations. This path is displayed in the same row before the options and it can include text inputs for specific path 
+	 elements identifiers. +
 +
 
 .Yang API Specification
 image::dlux-yang-api-specification.png["DLUX Yang UI API Specification Page",width=500]
 
-. The bottom part of the right pane displays inputs according to the chosen subAPI. Every subAPI is represented by list elements of list statement. It is possible to have a many list elements of one list. +
+. The bottom section of the right pane displays inputs according to the chosen subAPI. Every subAPI is represented by list elements of list statement. 
+It is possible to have a many list elements of one list. +
     +
-	For example, a device can store multiple flows. In this case “flow” is name of the list and every list element is different by a key value. List element of list can obtain other lists.
-	Every list element has a list name, a key name and its value, and a button for removing this list element. Usually the key of the list statement obtains an ID.
-	Inputs can be filled from ODL using GET button from xpath part, or can be filled by user on the page and sent to ODL. +
+	For example, a device can store multiple flows. In this case “flow” is the name of the list and every list element is different by a key value. List element of the list can obtain other lists.
+	Every list element has a list name, a key name and its value, and a button for removing this list element. Usually, the key of the list statement obtains an ID.
+	Inputs can be filled from ODL using GET option from xpath part, or you can fill the inputs on the page and sent to ODL. +
 +
 
 .Yang UI API Specification
 image::dlux-yang-sub-api-screen.png["DLUX Yang UI Sub API Specification Page",width=500]
 
-. Click *Show Preview* button under API tree to display request that will be sent to ODL.
-   A pane is displayed on the right side with text of request when some input is filled.
+. Click *Show Preview* option under API tree to display request that will be sent to ODL.
+   A pane is displayed on the right side with the text of the request when some input is filled.
 
 '''
 
@@ -118,7 +168,7 @@ To display topology:
 '''
 
 . Select subAPI network-topology <topology revision number> -> operational -> network-topology.
-. Get data from ODL by clicking on the “GET” button.
+. Click on the “GET” option to get data from ODL .
 . Click *Display Topology*.
 
 .DLUX Yang Topology
@@ -126,27 +176,30 @@ image::dlux-yang-topology.png["DLUX Yang Topology Page",width=500]
 
 '''
 
-==== Configuring List Elements on the *Yang UI*
+==== Configuring List Elements on the Yang UI
 
-The list is displayed like tree structure with possibility to expand or collapse by the arrow before name of the list. To configure list elements on the Yang UI:
+The list displays a tree structure with an arrow before the name to expand or collapse the list. +
+To configure list elements on the Yang UI:
 
 '''
 
-. To add a new list element with empty inputs use the plus icon-button **+** that is provided after list name. When some list element is added, button with his name and key value is displayed. +
-. To remove several list elements, use the *X* button that is provided after every list element.
+. To add a new list element with empty input use the plus icon-option **+** that is provided after the list name. 
+When a list element is added, an option with the name and key value are displayed. 
+. To remove several list elements, use the *X* option that is provided after every list element.
 +
 
 .DLUX List Elements
 image::dlux-yang-list elements.png[DLUX list elements,width=500]
-. Key of list is one or more inputs, which are used like identifier of list element. All list elements in one list must have different key values. If some elements has the same key values, the new warning icon *!* is displayed near their name buttons.
+. Key of the list is one or more inputs, which are used as an identifier of the list element. All list elements in one list must have different key values. If some elements have the same key values, the new warning icon *!* is displayed near their name options.
 +
 
 .DLUX List Warnings
 image::dlux-yang-list-warning.png[DLUX list warnings,width=500]
-. When the list obtains at least one list element, after *+* icon is icon for selecting the list element displayed. You can choose one of them by clicking the icon. The name button of the list element and name buttons of its neighbours will be displayed in the row list. You can can forward or backward row list of list elements name buttons by clicking on the arrow button on the end of row.
+. When the list obtains at least one list element after *+* is an icon for selecting the list element displayed. You can choose one of them by clicking the icon. The name option of the list element and name options of its neighbours will be displayed in the row list. 
+You can move forward or backward the row list of list elements name options by clicking the arrow option on the end of row.
 +
 
-.DLUX List Button1
-image::dlux-yang-list-button1.png[DLUX list button1,width=500]
+.DLUX List Option1
+image::dlux-yang-list-option1.png[DLUX list button1,width=500]
 
 '''
