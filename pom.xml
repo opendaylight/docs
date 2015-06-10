@@ -16,9 +16,10 @@
   </scm>
   <properties>
     <asciidoctor.version>0.1.4</asciidoctor.version>
+    <current.branch>master</current.branch>
     <nexusproxy>http://nexus.opendaylight.org/content</nexusproxy>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <sitedeploy>${nexusproxy}/sites/site/${project.groupId}/master/${project.artifactId}</sitedeploy>
+    <sitedeploy>${nexusproxy}/sites/site/${project.groupId}/${current.branch}/${project.artifactId}</sitedeploy>
   </properties>
   <modules>
     <module>manuals</module>
