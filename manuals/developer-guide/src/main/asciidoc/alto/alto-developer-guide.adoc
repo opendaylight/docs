@@ -53,7 +53,7 @@ NOTE: The segments in brackets are optional.
 
 If you want to fetch the data using RESTCONF, it is highly recommended to take a
 look at the `apidoc` page
-footnote:[http://{CONTROLLER_IP}:8181/apidoc/explorer/index.html]
+(http://{CONTROLLER_IP}:8181/apidoc/explorer/index.html)
 after installing the `alto-model` feature in karaf.
 
 It is also worth pointing out that `alto-northbound` only supports `GET` and
