@@ -1,0 +1,57 @@
+[[odl-ofp-test-provider-flows_test-provider]]
+==== Flows : Test Provider
+
+Currently, the openflowplugin has a test-provider that allows you to
+push various flows through the system from the OSGI command line. Once
+those flows have been pushed through, you can see them as examples and
+then use them to see in the config what a particular flow example looks
+like.
+
+===== AddFlow : addMDFlow
+
+Run the controller by executing:
+
+--------------------------------------------------------------------------------------------------------------------
+cd openflowplugin/distribution/base/target/distributions-openflowplugin-base-0.0.1-SNAPSHOT-osgipackage/opendaylight
+./run.sh
+--------------------------------------------------------------------------------------------------------------------
+
+Point your mininet to the controller by giving the parameters
+--controller=remote,ip=.
+
+Once you see your node (probably openflow:1 if you've been following
+along) in the inventory, at the OSGI command line try running:
+
+-----------------------
+addMDFlow openflow:1 f#
+-----------------------
+
+Where # is a number between 1 and 80 and openflow:1 is the of the
+switch. This will create one of 80 possible flows. You can confirm that
+they were created on the switch.
+
+===== RemoveFlow : removeMDFlow
+
+Similar to addMDFlow, from the controller OSGi prompt, while your switch
+is connected to the controller, try running:
+
+--------------------------
+removeMDFlow openflow:1 f#
+--------------------------
+
+where # is a number between 1 and 80 and openflow:1 is the of the
+switch. The flow to be deleted should have same flowid and Nodeid as
+used for flow add.
+
+===== ModifyFlow : modifyMDFlow
+
+Similar to addMDFlow, from the controller OSGi prompt, while your switch
+is connected to the controller, try running:
+
+--------------------------
+modifyMDFlow openflow:1 f#
+--------------------------
+
+where # is a number between 1 and 80 and openflow:1 is the of the
+switch. The flow to be deleted should have same flowid and Nodeid as
+used for flow add.
