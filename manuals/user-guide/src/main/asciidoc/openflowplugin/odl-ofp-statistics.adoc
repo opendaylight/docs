@@ -1,44 +1,42 @@
-[[Statistics]]
-=== Statistics
+[[overview]]
+===== Overview
 
-This section contains high level detail about the statistics collection mechanisms in new OpenFlow plugin.
+This page contains high level detail about the statistics collection
+mechanism in new OpenFlow plugin.
 
 [[statistics-collection-in-new-openflow-plugin]]
-==== Statistics collection in OpenFlow plugin
+====== Statistics collection in new OpenFlow plugin
 
-The OpenFlow plugin collects following statistics from OpenFlow enabled
-node(switch):
+New OpenFlow plugin collects following statistics from OpenFlow enabled node(switch): 
 
-1.  Individual Flow Statistics
-2.  Aggregate Flow Statistics
-3.  Flow Table Statistics
-4.  Port Statistics
-5.  Group Description
-6.  Group Statistics
-7.  Meter Configuration
-8.  Meter Statistics
-9.  Queue Statistics
-10. Node Description
-11. Flow Table Features
-12. Port Description
-13. Group Features
-14. Meter Features
+. Individual Flow Statistics
+. Aggregate Flow Statistics
+. Flow Table Statistics
+. Port Statistics
+. Group Description
+. Group Statistics
+. Meter Configuration
+. Meter Statistics
+. Queue Statistics
+. Node Description
+. Flow Table Features
+. Port Description
+. Group Features
+. Meter Features
 
 At a high level statistics collection mechanism is divided into
 following three parts
 
-\1) Statistics related
+. Statistics related
 https://git.opendaylight.org/gerrit/gitweb?p=controller.git;a=tree;f=opendaylight/md-sal/model/model-flow-statistics;h=3488133625ccf18d023bc59aa35c38e922b17d8d;hb=HEAD[YANG
 models, service APIs and notification interfaces] are defined in the
 MD-SAL.
 
-\2) Service APIs (RPCs) defined in yang models are implemented by
+. Service APIs (RPCs) defined in yang models are implemented by
 OpenFlow plugin. Notification interfaces are wired up by OpenFlow plugin
 to MD-SAL.
 
-\3)
-https://git.opendaylight.org/gerrit/gitweb?p=controller.git;a=tree;f=opendaylight/md-sal/statistics-manager;hb=HEAD[Statistics
-Manager Module] : This module use service APIs implemented by OpenFlow
+. Statistics Manager Module: This module use service APIs implemented by OpenFlow
 plugin to send statistics requests to all the connected OpenFlow enabled
 nodes. Module also implements notification interfaces to receive
 statistics response from nodes. Once it receives statistics response, it
@@ -47,7 +45,7 @@ augment all the statistics data to the relevant element of the node
 operational data store.
 
 [[details-of-statistics-collection]]
-==== Details of statistics collection
+====== Details of statistics collection
 
 * Current implementation collects above mentioned statistics (except
 10-14) at a periodic interval of 15 seconds.
@@ -83,7 +81,7 @@ Manager don't send any group & meter related statistics request to
 OpenFlow 1.0 enabled switch.
 
 [[restconf-uris-to-access-statistics-of-various-node-elements]]
-==== RESTCONF Uris to access statistics of various node elements
+====== RESTCONF Uris to access statistics of various node elements
 
 * Aggregate Flow Statistics & Flow Table Statistics
 
@@ -127,3 +125,7 @@ GET  http://<controller-ip>:8080/restconf/operational/opendaylight-inventory:nod
 GET  http://<controller-ip>:8080/restconf/operational/opendaylight-inventory:nodes/node/{node-id}/node-connector/{node-connector-id}/queue/{queue-id}
 -----------------------------------------------------------------------------------------------------------------------------------------------------
 
+[[bugs]]
+====== Bugs
+
+For more details and queuries, please send mail to openflowplugin-dev@lists.opendaylight.org or avishnoi@in.ibm.com If you want to report any bug in statistics collection, please use https://bugs.opendaylight.org[bugzilla].

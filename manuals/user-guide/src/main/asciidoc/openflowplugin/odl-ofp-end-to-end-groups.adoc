@@ -1,15 +1,157 @@
-=== End to End Groups
-
-Needs to be documented.
-
 [[note]]
-==== NOTE
+===== NOTE
 
-Groups were NOT SUPPORTED in the 2.0.0 version of openvswitch. See
+Groups are NOT SUPPORTED in current (2.0.0) version of
+http://www.openvswitch.org/download[openvswitch]. See
 
 * http://openvswitch.org/releases/NEWS-2.0.0
 * http://comments.gmane.org/gmane.linux.network.openvswitch.general/3251
 
-For testing group feature please use for example CPqD virtual switch (https://wiki.opendaylight.org/view/OpenDaylight_OpenFlow_Plugin::End_to_End_Inventory#Setup_CPqD_Openflow_1.3_Soft_Switch).
+For testing group feature please use for example <<odl-ofp-end-to-end-inventory_introduction-introduction,
+CPQD>> virtual switch.
+
+===== Instructions
+====== Learn End to End for Inventory
+
+<<odl-ofp-end-to-end-inventory_introduction-introduction,End to End Inventory>>
+
+====== Check inventory
+
+Run CPqD with support for OF 1.3 as described in <<odl-ofp-end-to-end-inventory_introduction-introduction,End to End Inventory>>
+
+Make sure you see the openflow:1 node come up as described in <<odl-ofp-end-to-end-inventory_introduction-introduction,End to End Inventory>>
+
+====== Group Strategy
+
+Current way to flush a group to switch looks like this: 
+
+. create MD-SAL modeled group and commit it into dataStore using two phase commit
+. FRM gets notified and invokes corresponding rpc (addGroup) on particular service provider (if suitable provider for given node registered)
+. the provider (plugin in this case) transforms MD-SAL modeled group into OF-API modeled group
+. OF-API modeled group is then flushed into OFLibrary
+. OFLibrary encodes group into particular version of wire protocol and sends it to particular switch
+. check on CPqD if group is installed
+
+====== Push your Group
+
+* With PostMan:
+** Set
+*** Content-Type: application/xml
+*** Accept: application/xml
+** Use URL: "http://<ip-address>:8080/restconf/config/opendaylight-inventory:nodes/node/openflow:1/group/1"
+** PUT
+** Use Body:
+
+[source,xml]
+-----
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<group xmlns="urn:opendaylight:flow:inventory">
+    <group-type>group-all</group-type>
+    <buckets>
+        <bucket>
+            <action>
+                <pop-vlan-action/>
+                <order>0</order>
+            </action>
+            <bucket-id>12</bucket-id>
+            <watch_group>14</watch_group>
+            <watch_port>1234</watch_port>
+        </bucket>
+        <bucket>
+            <action>
+                <set-field>
+                    <ipv4-source>100.1.1.1</ipv4-source>
+                </set-field>
+                <order>0</order>
+            </action>
+            <action>
+                <set-field>
+                    <ipv4-destination>200.71.9.5210</ipv4-destination>
+                </set-field>
+                <order>1</order>
+            </action>
+            <bucket-id>13</bucket-id>
+            <watch_group>14</watch_group>
+            <watch_port>1234</watch_port>
+        </bucket>
+    </buckets>
+    <barrier>false</barrier>
+    <group-name>Foo</group-name>
+    <group-id>1</group-id>
+</group>
+-----
+
+NOTE: If you want to try a different group id, make sure the URL and the body stay in sync. For example, if you wanted to try: group-id 20 you'd change the URL to "http://<ip-address>:8080/restconf/config/opendaylight-inventory:nodes/node/openflow:1/group/20" but you would also need to update the <group-id>20</group-id> in the body to match.
+
+NOTE: <ip-address> :Provide the IP Address of the machine on which the controller is running.
 
 
+====== Check for your group on the switch
+
+* See your group on your cpqd switch:
+
+----
+COMMAND: sudo dpctl tcp:127.0.0.1:6000 stats-group
+
+SENDING:
+stat_req{type="grp", flags="0x0", group="all"}
+
+
+RECEIVED:
+stat_repl{type="grp", flags="0x0", stats=[
+{group="1", ref_cnt="0", pkt_cnt="0", byte_cnt="0", cntrs=[{pkt_cnt="0", byte_cnt="0"}, {pkt_cnt="0", byte_cnt="0"}]}]}
+----
+
+====== Check for your group in the controller config via RESTCONF
+
+* See your configured group in POSTMAN with
+** URL http://<ip-address>:8080/restconf/config/opendaylight-inventory:nodes/node/openflow:1/group/1
+** GET
+** You should no longer need to set Accept
+** Note: <ip-address> :Provide the IP Address of the machine on which the controller is running.
+
+====== Look for your group stats in the controller operational data via RESTCONF
+
+* See your operational group stats in POSTMAN with
+** URL http://<ip-address>:8080/restconf/operational/opendaylight-inventory:nodes/node/openflow:1/group/1
+** GET
+** Note: <ip-address> :Provide the IP Address of the machine on which the controller is running.
+
+===== Discovering and testing Group Types
+
+Currently, the openflowplugin has a test-provider that allows you to push various groups through the system from the OSGI command line. Once those groups have been pushed through, you can see them as examples and then use them to see in the config what a particular group example looks like.
+
+===== Using addGroup
+
+From the
+
+----
+cd openflowplugin/distribution/base/target/distributions-openflowplugin-base-0.0.1-SNAPSHOT-osgipackage/opendaylight
+./run.sh
+----
+
+Point your CPqD at the controller as described above.
+
+once you can see your node (probably openflow:1 if you've been following along) in the inventory, at the OSGI command line try running:
+
+----
+addGroup openflow:1
+----
+
+This will install a group in the switch. You can check whether the group is installed or not.
+
+Once you've done that, use
+
+* GET
+* Accept: application/xml
+* URL: "http://<ip-address>:8080/restconf/config/opendaylight-inventory:nodes/node/openflow:1/group/1"
+** Note: <ip-address> :Provide the IP Address of the machine on which the controller is running.
+
+NOTE: Before attempting to PUT a group you have created via addGroup, please change its URL and body to, for example, use group 1 instead of group 2 or another Group Id, so that they don't collide.
+
+NOTE: There are several test command providers and the one handling groups is OpenflowpluginGroupTestCommandProvider. Methods, which can be use as commands in OSGI-console have prefix '_'.
+
+
+===== Example Group
+
+Examples for XML for various Group Types can be found in the test-scripts bundle of the plugin code with names g1.xml, g2.xml and g3.xml. 

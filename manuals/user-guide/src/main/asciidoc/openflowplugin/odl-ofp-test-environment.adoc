@@ -1,7 +1,5 @@
-=== OpenFlow 1.3 Enabled Software Switches / Environment
-
-[[getting-mininet-with-of-1.3]]
-==== Getting Mininet with OF 1.3
+[[odl-ofp-test-environment_top]]
+===== Getting Mininet with OF 1.3
 
 https://www.dropbox.com/s/dbf9a372elqs1s1/mininet-of-1.3.zip[Download
 Mininet VM Upgraded to OF 1.3] (or the
@@ -12,12 +10,10 @@ this on VirtualBox, import this to VMware Player and then export the
 Openflow Protocol Library:OpenVirtualSwitch[Instructions for setting up
 Mininet with OF 1.3].
 
-[[installing-under-virtualbox]]
-===== Installing under VirtualBox
+====== Installing under VirtualBox
 
-.Configuring a host-only adapter
-image:openflowplugin/Host-only-vbox.png[configuring a host-only
-adapter, width= 500]
+.configuring a host-only adapter
+image::openflowplugin/host-only-vbox.png[configuring a host-only adapter,400,335]
 
 For whatever reason, at least on the Mac, NATed interfaces in VirtualBox
 don't actually seem to allow for connections from the host to the VM.
@@ -42,8 +38,7 @@ access to the internet and another that gives you access between your
 mac and the VMs. At least for me, the NATed interface gets a 10.0.2.x
 address and the the host-only interface gets a 192.168.56.x address.
 
-[[your-simplest-choice-use-vagrant]]
-===== Your simplest choice: Use Vagrant
+====== Your simplest choice: Use Vagrant
 
 https://www.virtualbox.org/[Download Virtual Box] and install it
 http://www.vagrantup.com/[Download Vagrant] and install it
@@ -57,15 +52,17 @@ vagrant ssh
 This will leave you sshed into a fully provisioned Ubuntu Trusty box
 with mininet-2.1.0 and OVS 2.0 patches to work with OF 1.3.
 
-[[setup-cpqd-openflow-1.3-soft-switch]]
-==== Setup CPqD Openflow 1.3 Soft Switch
+===== Setup CPqD Openflow 1.3 Soft Switch
 
-Openvswitch (v2.0.0) doesn't support all the openflow 1.3 features, e.g group multipart statistics request. Alternate options is CPqD Openflow 1.3 soft switch. It supports most of the openflow 1.3 features.
+Latest version of Openvswitch (v2.0.0) doesn't support all the openflow
+1.3 features, e.g group multipart statistics request. Alternate options
+is CPqD Openflow 1.3 soft switch, It supports most of the openflow 1.3
+features.
 
 * You can setup the switch as per the instructions given on the
 following URL
 
-`               `https://github.com/CPqD/ofsoftswitch13[`https://github.com/CPqD/ofsoftswitch13`]
+https://github.com/CPqD/ofsoftswitch13[`https://github.com/CPqD/ofsoftswitch13`]
 
 * Fire following command to start the switch
 
@@ -97,7 +94,7 @@ $secchan/ofprotocol tcp:<switch-host>:<switch-port> tcp:<ctrl-host>:<ctrl-port>
 -------------------------------------------------------------------------------
 
 [[commands-to-add-entries-to-various-tables-of-the-switch]]
-===== Commands to add entries to various tables of the switch
+====== Commands to add entries to various tables of the switch
 
 * Add meter
 
@@ -126,7 +123,7 @@ $utilities/dpctl tcp:<ip>:<switch port> queue-mod <port-number> <queue-number> <
 command you figured out while your experiment with the switch.
 
 [[using-the-built-in-wireshark]]
-===== Using the built-in Wireshark
+====== Using the built-in Wireshark
 
 Mininet comes with pre-installed Wireshark, but for some reason it does
 not include the Openflow protocol dissector. You may want to get and
@@ -169,7 +166,7 @@ in the Filter window:
 Start the capture on _any_ port.
 
 [[running-mininet-with-of-1.3]]
-==== Running Mininet with OF 1.3
+===== Running Mininet with OF 1.3
 
 From within the Mininet VM, run:
 
