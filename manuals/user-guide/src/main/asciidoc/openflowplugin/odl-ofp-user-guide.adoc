@@ -1,0 +1,60 @@
+== OpenFlow Plugin Project User Guide
+link to document
+=== Overview and Architecture
+include::odl-ofp-overview-and-architecture.adoc[]
+==== Coverage
+missing document
+
+[[tutorial-how-to]]
+=== Tutorial / How-To
+
+*
+OpenDaylight_OpenFlow_Plugin::Running_controller_with_the_new_OF_plugin[Running
+the controller with the new OpenFlow Plugin]
+* OpenDaylight_OpenFlow_Plugin::Test_Environment[OpenFlow 1.3 Enabled
+Software Switches / Environment]
+* OpenDaylight_OpenFlow_Plugin::End_to_End_Inventory[End to End
+Inventory]
+* OpenDaylight_OpenFlow_Plugin:End_to_End_Flows[End to End Flows]
+* OpenDaylight_OpenFlow_Plugin::End_to_End_Topology[End to End Topology]
+
+* OpenDaylight_OpenFlow_Plugin:End_to_End_Groups[End to End Groups]
+* OpenDaylight_OpenFlow_Plugin:End_to_End_Meters[End to End Meters]
+* OpenDaylight_OpenFlow_Plugin:Statistics[Statistics]
+* OpenDaylight_OpenFlow_Plugin:OF1.3 Enabled Wireshark[OF1.3 Enabled
+Wireshark ]
+
+[[web-graphical-interface]]
+=== Web / Graphical Interface
+
+In the Hydrogen & Helium release, the current Web UI does not support
+the new OpenFlow 1.3 constructs such as groups, meters, new fields in
+the flows, multiple flow tables, etc.
+
+[[command-line-interface]]
+=== Command Line Interface
+
+The following is not exactly CLI - just a set of test commands which can
+be executed on the OSGI console testing various features in OpenFlow 1.3
+spec.
+
+* OpenDaylight_OpenFlow_Plugin:Test_Provider[OSGI Console Test Provider
+Commands: Flows]
+* OpenDaylight_OpenFlow_Plugin_groups:Test_Provider[OSGI Console Test
+Provider Commands: Groups]
+* OpenDaylight_OpenFlow_Plugin_meters:Test_Provider[OSGI Console Test
+Provider Commands: Meters]
+* OpenDaylight_OpenFlow_Plugin_topology_events:Test_Provider[OSGI
+Console Test Provider Commands: Topology Events]
+
+[[programmatic-interface]]
+=== Programmatic Interface
+
+The API is documented in the model documentation under the section
+OpenFlow Services at:
+
+* OpenDaylight_Controller:Config:Model_Reference[Models Documentation
+(OpenFlow Services Section)]
+
+=== Opendaylight OpenFlow Plugin: Troubleshooting
+link to documenbt
