@@ -235,9 +235,11 @@ feature:install odl-netconf-connector-all
 
 To check what modules you have currently configured, check following link:
 http://localhost:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules/
-This URL is also used to POST new configuration. If you want to change any
+This URL is also used to *POST new configuration*. If you want to change any
 other configuration that is listed here, make sure you include the correct
 namespaces. RESTCONF will tell you if some namespace is wrong.
+
+To update  an existing configuration use <b>PUT</b> and give the full path to the element you  wish to update.
 
 It is vital that you respect the order of steps described in user guide.
 
@@ -247,22 +249,26 @@ First, configure RIB. This module is already present in the configuration,
 therefore we change only the parameters we need. In this case, it's
 *bgp-rib-id* and *local-as*.
 
-.*POST:*
+*URL:* _http://127.0.0.1:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules/module/odl-bgp-rib-impl-cfg:bgp-rib/example-bgp-rib_
+
+*PUT:*
 [source,xml]
 ----
 <module xmlns="urn:opendaylight:params:xml:ns:yang:controller:config">
-  <type xmlns:x="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">x:rib-impl</type>
-  <name>example-bgp-rib</name>
-  <bgp-rib-id xmlns="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">192.0.2.2</bgp-rib-id>
-  <local-as xmlns="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">64496</local-as>
+ <type xmlns:x="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">x:rib-impl</type>
+ <name>example-bgp-rib</name>
+ <bgp-rib-id xmlns="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">*192.0.2.2*</bgp-rib-id>
+ <local-as xmlns="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">*64496*</local-as>
 </module>
 ----
 
-IMPORTANT: MIGHT NOT BE NEEDED depending on your BGP router, you might need a
-switch from linkstate attribute type 99 to 29. Check with your router vendor.
-Switch the field to true if your router supports type 29.
+*MIGHT NOT BE NEEDED:* depending on your BGP router, you might need a switch
+from linkstate attribute type 99 to 29. Check with your router vendor. Switch
+the field to _true_ if your router supports type 29.
 
-.*POST:*
+*URL:* _http://127.0.0.1:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules/module/odl-bgp-linkstate-cfg:bgp-linkstate_
+
+*PUT:*
 [source,xml]
 ----
 <module xmlns="urn:opendaylight:params:xml:ns:yang:controller:config">
