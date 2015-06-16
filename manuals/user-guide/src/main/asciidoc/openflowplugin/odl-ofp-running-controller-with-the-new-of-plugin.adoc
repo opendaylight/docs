@@ -1,0 +1,180 @@
+===== Opendaylight Controller Plugin Options
+
+[[odl-ofp-running-controller-with-the-new-of-plugin_top]]
+* Run OpenDaylight controller with the new OpenFlow 1.0/1.3 plugin
+
+There are 2 ways. In integration project the plugin version is
+controlled by startup parameter. Or there is distribution build
+available directly in openflowplugin project.
+
+1.  use *integration* project
+* download and unzip latest build from
+https://nexus.opendaylight.org/content/repositories/opendaylight.snapshot/org/opendaylight/integration/distribution-karaf/0.2.2-SNAPSHOT/
++
+  cd <extracted directory>/bin
+  ./karaf 
++
+* or clone and build *integration* project:
++
+ git clone https://git.opendaylight.org/gerrit/p/integration.git
+ cd integration/distributions/extra/karaf
+ mvn clean install
+ cd ./target/assembly/bin
++
+* and finally run
++
+ ./karaf
++
+2.  use *openflowplugin* project
+* download and unzip latest build from
+https://nexus.opendaylight.org/content/repositories/opendaylight.snapshot/org/opendaylight/openflowplugin/openflowplugin-karaf/0.1.0-SNAPSHOT/
++
+  cd <extracted directory>/bin
+  ./karaf
++
+* or clone and build *openflowplugin* project:
++
+  git clone https://git.opendaylight.org/gerrit/p/openflowplugin.git
+  cd openflowplugin
+  mvn clean install
+  cd ./distribution/karaf/target/assembly/bin/
++  
+* or build whole distribution localy from folder distribution/karaf
+
+ mvn clean install -DskipTests
+
+
+* and run
++
+    ./karaf
++
+
+
+*How to start*
+
+There are all helium features (from features-openflowplugin) duplicated into features-openflowplugin-li. The duplicates got suffix '-li' and provide Lithium codebase functionality.
+
+These are most used:
+
+*    odl-openflowplugin-app-lldp-speaker-li
+*    odl-openflowplugin-flow-services-rest-li
+*    odl-openflowplugin-drop-test-li
+
+In case topology is required then the first one should be installed.
+
+ feature:install odl-openflowplugin-app-lldp-speaker-li
+
+The Li-southbound currently provides:
+
+*    flow management
+*    group management
+*    meter management
+*    statistics polling
+
+*What to log*
+
+In order to see really low level messages enter these in karaf console:
+
+ log:set TRACE org.opendaylight.openflowplugin.openflow.md.core
+ log:set TRACE org.opendaylight.openflowplugin.impl
+
+*How enable topology*
+
+In order for topology to work (fill dataStore/operational with links) there must be LLDP responses delivered back to controller. This requires table-miss-entries. Table-miss-entry is a flow in table.id=0 with low priority, empty match and one output action = send to controller. Having this flow installed on every node will enable for gathering and exporting links between nodes into dataStore/operational. This is done if you use for example l2 switch application.
+
+[source, xml]
+----
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<flow xmlns="urn:opendaylight:flow:inventory">
+   <barrier>false</barrier>
+   <cookie>54</cookie>
+   <flags>SEND_FLOW_REM</flags>
+   <flow-name>FooXf54</flow-name>
+   <hard-timeout>0</hard-timeout>
+   <id>4242</id>
+   <idle-timeout>0</idle-timeout>
+   <installHw>false</installHw>
+   <instructions>
+       <instruction>
+           <apply-actions>
+               <action>
+                   <output-action>
+                       <max-length>65535</max-length>
+                       <output-node-connector>CONTROLLER</output-node-connector>
+                   </output-action>
+                   <order>0</order>
+               </action>
+           </apply-actions>
+           <order>0</order>
+       </instruction>
+   </instructions>
+   <match/>
+   <priority>0</priority>
+   <strict>false</strict>
+   <table_id>0</table_id>
+</flow>
+----
+
+*Enable RESTCONF and Controller GUI*
+
+If you want to use RESTCONF with openflowplugin project, you have to
+install _odl-restconf_ feature to enable that. To install _odl-restconf_
+feature run the following command
+
+-----------------------------------
+karaf#>feature:install odl-restconf
+-----------------------------------
+
+If you want to access the Controller GUI, you have to install
+_odl-dlux-core_ feature to enable that. Run following command to install
+it
+
+------------------------------------
+karaf#>feature:install odl-dlux-core
+------------------------------------
+
+Once you enable the feature, access the Controller GUI using following
+URL
+
+-------------------------------------------
+http://<controller-ip>:8181/dlux/index.html
+-------------------------------------------
+
+
+*Run OpenDaylight controller with the old OpenFlow 1.0-only (old) plugin*
+
+There are 2 ways. In integration project the plugin version is
+controlled by startup parameter. Or there is distribution build
+available directly in controller project.
+
+1.  use *integration/distributions/base* project
+* use the instructions from
+OpenDaylight_OpenFlow_Plugin::Running_controller_with_the_new_OF_plugin#To_run_the_OpenDaylight_controller_with_the_new_OpenFlow_1.0/1.3_(new)_plugin[
+1.0/1.3 plugin], but skip the plugin version parameter:
++
+--------
+./run.sh
+--------
++
+
+2.  use *controller/distribution/opendaylight* project
+* download and unzip latest build from
+https://nexus.opendaylight.org/content/repositories/opendaylight.snapshot/org/opendaylight/controller/distribution.opendaylight/
+
++
+  cd opendaylight
++
+* or clone and build *controller* project:
++
+  git clone https://git.opendaylight.org/gerrit/p/controller.git
+  cd controller/opendaylight/distribution/opendaylight
+  mvn clean install
+  cd target/distribution.opendaylight-osgipackage/opendaylight
++
+* and finally run (there is no version specific option, because the
++
+1.0/1.3 (new) plugin is not available here at all)
++
+
+
+*Give it a minute to come up :)*
