@@ -1,0 +1,51 @@
+[[odl-ofp-test-provider-topoogy_test-provider]]
+==== Topology : Notification
+
+Currently, the openflowplugin has a test-provider that allows you to get
+notifications for the topology related events like Link-Discovered ,
+Link-Removed events.
+
+===== Link Discovered Event : Testing
+
+Run the controller by executing:
+
+--------------------------------------------------------------------------------------------------------------------
+cd openflowplugin/distribution/base/target/distributions-openflowplugin-base-0.0.1-SNAPSHOT-osgipackage/opendaylight
+./run.sh
+--------------------------------------------------------------------------------------------------------------------
+
+Point your mininet to the controller by giving the parameters
+--controller=remote,ip=. Once the controller is connected to the switch,
+Link-Discovered event can be tested by initially configuring the
+specific flows on the switch. For Link Discovered event either
+table-miss flow or LLDP ether-type flow can be configured.
+
+Configuring Table-Miss flow using OpenflowpluginTestCommandProvider
+
+------------------------
+addMDFlow Openflow:1 fTM
+------------------------
+
+as per this
+OpenDaylight_OpenFlow_Plugin:Test_Provider#Flows_:_Test_Provider[link].
+'fTM' is the table-miss scenario here.
+
+Once the table-miss flow is configured through above command, we can see
+the Link-Discovered event in the debug logs on the controller console.
+
+Configuring LLDP ether-type flow using OpenflowpluginTestCommandProvider
+
+------------------------------------
+addMDFlow Openflow:1 0(table-id) f81
+------------------------------------
+
+You can confirm that they were created on the switch.
+
+Once the LLDP ether-type flow is configured through above command, we
+can see the Link-Discovered event in the debug logs on the controller
+console.
+
+===== Link Removed Event : Testing
+
+Having configured either table-miss or lldp ether-type flow on switch,
+once the switch is disconnected we see the Link-Removed event
