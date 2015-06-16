@@ -1,0 +1,83 @@
+===== Intro
+
+Using http://www.wireshark.org/[Wireshark] to monitor traffic on the
+wire is fantastically useful for seeing what's really happening.
+
+[[getting-wireshark]]
+===== Getting Wireshark
+
+The Good News is, the mainstream wireshark now has
+http://wiki.wireshark.org/OpenFlow[support for OpenFlow 1.3]. The bad
+news is it does not appear to have made it into any of the releases yet.
+
+But, you can build it pretty easily on a unix system. Complete
+http://www.wireshark.org/docs/wsdg_html_chunked/[documentation exists].
+
+Here are some pre-built Ubuntu debs:
+
+* https://www.dropbox.com/s/a7d6oxuywd2su39/wireshark-common_1.11.3_i386.deb[wireshark-common]
+* https://www.dropbox.com/s/u6vu8dknnm81qsc/wireshark_1.11.3_i386.deb[wireshark]
+* https://www.dropbox.com/s/d2nwcd7zrkuqxzr/tshark_1.11.3_i386.deb[twireshark]
+* https://www.dropbox.com/s/clohutvy4tckt1y/wireshark-dev_1.11.3_i386.deb[wireshark-dev]
+
+To install them on
+
+--------------------------------------------------
+hagbard@ubuntu:~/Downloads/eclipse$ lsb_release -a
+No LSB modules are available.
+Distributor ID: Ubuntu
+Description:    Ubuntu 12.04.1 LTS
+Release:    12.04
+Codename:   precise
+--------------------------------------------------
+
+Simply type:
+
+-----------------------------------------------------------------------------------------------
+sudo apt-get remove libwireshark-data
+sudo dpkg -i wireshark_1.11.3_i386.deb wireshark-common_1.11.3_i386.deb tshark_1.11.3_i386.deb 
+-----------------------------------------------------------------------------------------------
+
+The "dpkg" command will likely throw dependancy errors. Dependencies can be resolved after running the "dpkg -i" command above by running the following:
+
+----
+apt-get -f install
+----
+
+[[hints-for-using-wireshark-for-of-1.3-traffic]]
+===== Hints for using Wireshark for OF 1.3 traffic
+
+For general instructions on using Wireshark please see their
+http://www.wireshark.org/docs/wsug_html_chunked/[user's guide]
+
+[[enabling-openflow-decode]]
+====== Enabling OpenFlow Decode
+
+At first run go to Edit > Preferences > Protocols > OpenFlow, and select
+your preferred OpenFlow TCP port, and also tick the reassemble flag to
+enable the dissector to correctly display segmented OpenFlow messages.
+
+If you only want to see the OpenFlow 1.3 messages only, use the
+following filter expression:
+
+-----------
+openflow_v4
+-----------
+
+[[following-a-particular-stream]]
+====== Following a particular stream
+
+If you have a lot of switches going, the original filter by port is
+going to be insufficient to make sense of it all. So I would suggest
+picking a packet from a connection that interests you, right clicking on
+it and selecting 'Follow TCP Stream'. This will set a display filter to
+show just that TCP stream.
+
+[[feedback]]
+====== Feedback
+
+If you have bug reports or improvement ideas regarding the OpenFlow
+dissector, feel free to open a ticket at
+https://bugs.wireshark.org/bugzilla/[Wireshark Bugzilla], or send them
+directly to zoltan.lajos.kis@ericsson.com. Don't forget to include a
+pcap trace, if possible.
