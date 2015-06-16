@@ -1,0 +1,77 @@
+[[odl-ofp-test-provider-groups_test-provider]]
+==== Group : Test Provider
+
+Currently, the openflowplugin has a test-provider that allows you to
+push various flows through the system from the OSGI command line. Once
+those flows have been pushed through, you can see them as examples and
+then use them to see in the config what a particular flow example looks
+like.
+
+[[addgroup-addgroup]]
+===== AddGroup : addGroup
+
+Run the controller by executing:
+
+--------------------------------------------------------------------------------------------------------------------
+cd openflowplugin/distribution/base/target/distributions-openflowplugin-base-0.0.1-SNAPSHOT-osgipackage/opendaylight
+./run.sh
+--------------------------------------------------------------------------------------------------------------------
+
+Point your mininet to the controller by giving the parameters
+--controller=remote,ip=.
+
+Once you see your node (probably openflow:1 if you've been following
+along) in the inventory, at the OSGI command line try running:
+
+-------------------------
+addGroup openflow:1 a# g#
+-------------------------
+
+Where # is a number between 1 and 4 for grouptype(g#) and 1 and 28 for
+actiontype(a#). You can confirm that they were created on the switch.
+
+[[removegroup-removegroup]]
+===== RemoveGroup : removeGroup
+
+Run the controller by executing:
+
+--------------------------------------------------------------------------------------------------------------------
+cd openflowplugin/distribution/base/target/distributions-openflowplugin-base-0.0.1-SNAPSHOT-osgipackage/opendaylight
+./run.sh
+--------------------------------------------------------------------------------------------------------------------
+
+Point your mininet at the controller as described above.
+
+Once you see your node (probably openflow:1 if you've been following
+along) in the inventory, at the OSGI command line try running:
+
+----------------------------
+removeGroup openflow:1 a# g#
+----------------------------
+
+Where # is a number between 1 and 4 for grouptype(g#) and 1 and 28 for
+actiontype(a#). GroupId should be same as that used for adding the flow.
+You can confirm that it was removed from the switch.
+
+[[modifygroup-modifygroup]]
+===== ModifyGroup : modifyGroup
+
+Run the controller by executing:
+
+--------------------------------------------------------------------------------------------------------------------
+cd openflowplugin/distribution/base/target/distributions-openflowplugin-base-0.0.1-SNAPSHOT-osgipackage/opendaylight
+./run.sh
+--------------------------------------------------------------------------------------------------------------------
+
+Point your mininet at the controller as described above.
+
+Once you see your node (probably openflow:1 if you've been following
+along) in the inventory, at the OSGI command line try running:
+
+----------------------------
+modifyGroup openflow:1 a# g#
+----------------------------
+
+Where # is a number between 1 and 4 for grouptype(g#) and 1 and 28 for
+actiontype(a#). GroupId should be same as that used for adding the flow.
+You can confirm that it was modified on the switch.

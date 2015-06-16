@@ -1,0 +1,73 @@
+== OpenFlow Plugin Project User Guide
+
+=== Overview and Architecture
+
+==== Overview and Architecture
+include::odl-ofp-overview-and-architecture.adoc[]
+
+==== Coverage
+include::odl-ofp-coverage.adoc[]
+
+=== Tutorial / How-To
+
+==== Running the controller with the new OpenFlow Plugin
+include::odl-ofp-running-controller-with-the-new-of-plugin.adoc[]
+
+==== OpenFlow 1.3 Enabled Software Switches / Environment
+include::odl-ofp-test-environment.adoc[]
+
+==== End to End Inventory
+include::odl-ofp-end-to-end-inventory.adoc[]
+
+==== End to End Flows
+include::odl-ofp-end-to-end-flows.adoc[]
+
+==== End to End Topology
+include::odl-ofp-end-to-end-topology.adoc[]
+
+==== End to End Groups
+include::odl-ofp-end-to-end-groups.adoc[]
+
+==== End to End Meters
+include::odl-ofp-end-to-end-meters.adoc[]
+
+==== Statistics
+include::odl-ofp-statistics.adoc[]
+
+==== OF1.3 Enabled Wireshark
+include::odl-ofp-OF13-enabled-wireshark.adoc[]
+
+=== Web / Graphical Interface
+In the Hydrogen & Helium release, the current Web UI does not support
+the new OpenFlow 1.3 constructs such as groups, meters, new fields in
+the flows, multiple flow tables, etc.
+
+=== Command Line Interface
+The following is not exactly CLI - just a set of test commands which can
+be executed on the OSGI console testing various features in OpenFlow 1.3
+spec.
+
+* <<odl-ofp-test-provider-flows_test-provider,OSGI Console Test Provider Commands: Flows>>
+* <<odl-ofp-test-provider-groups_test-provider,OSGI Console Test Provider Commands: Groups>>
+* <<odl-ofp-test-provider-meters_test-provider,OSGI Console Test Provider Commands: Meters>>
+* <<odl-ofp-test-provider-topoogy_test-provider,OSGI Console Test Provider Commands: Topology Events>>
+
+include::odl-ofp-test-provider-flows.adoc[]
+include::odl-ofp-test-provider-groups.adoc[]
+include::odl-ofp-test-provider-meters.adoc[]
+include::odl-ofp-test-provider-topology.adoc[]
+
+
+=== Programmatic Interface
+The API is documented in the model documentation under the section
+OpenFlow Services at:
+
+* https://wiki.opendaylight.org/view/OpenDaylight_Controller:Config:Model_Reference[Models Documentation (OpenFlow Services Section)]
+
+=== Example flows
+include::odl-ofp-example-flows.adoc[]
+
+=== Opendaylight OpenFlow Plugin: Troubleshooting
+empty section
+
+

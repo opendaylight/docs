@@ -1,0 +1,175 @@
+[[odl-ofp-test-environment_top]]
+===== Getting Mininet with OF 1.3
+
+https://www.dropbox.com/s/dbf9a372elqs1s1/mininet-of-1.3.zip[Download
+Mininet VM Upgraded to OF 1.3] (or the
+https://www.dropbox.com/s/t66vqfqx57a7nhk/mininet-2.1.0-of1.3.zip[newer
+mininet-2.1.0 with OVS-2.0] that works with VMware Player. For using
+this on VirtualBox, import this to VMware Player and then export the
+.vmdk ) or you could build one yourself
+Openflow Protocol Library:OpenVirtualSwitch[Instructions for setting up
+Mininet with OF 1.3].
+
+====== Installing under VirtualBox
+
+.configuring a host-only adapter
+image::openflowplugin/host-only-vbox.png[configuring a host-only adapter,400,335]
+
+For whatever reason, at least on the Mac, NATed interfaces in VirtualBox
+don't actually seem to allow for connections from the host to the VM.
+Instead, you need to configure a host-only network and set it up. Do
+this by:
+
+* Go to the VM's settings in VirtualBox then to network and add a second
+adapter attached to "Host-only Adapter" (see the screenshot to the
+right)
+* Edit the /etc/network/interfaces file to configure the adapter
+properly by adding these two lines
+
+--------------------
+auto eth1
+iface eth1 inet dhcp
+--------------------
+
+* Reboot the VM
+
+At this point you should have two interfaces one which gives you NATed
+access to the internet and another that gives you access between your
+mac and the VMs. At least for me, the NATed interface gets a 10.0.2.x
+address and the the host-only interface gets a 192.168.56.x address.
+
+====== Your simplest choice: Use Vagrant
+
+https://www.virtualbox.org/[Download Virtual Box] and install it
+http://www.vagrantup.com/[Download Vagrant] and install it
+
+-----------------------------------------------
+cd openflowplugin/vagrant/mininet-2.1.0-of-1.3/
+vagrant up
+vagrant ssh
+-----------------------------------------------
+
+This will leave you sshed into a fully provisioned Ubuntu Trusty box
+with mininet-2.1.0 and OVS 2.0 patches to work with OF 1.3.
+
+===== Setup CPqD Openflow 1.3 Soft Switch
+
+Latest version of Openvswitch (v2.0.0) doesn't support all the openflow
+1.3 features, e.g group multipart statistics request. Alternate options
+is CPqD Openflow 1.3 soft switch, It supports most of the openflow 1.3
+features.
+
+* You can setup the switch as per the instructions given on the
+following URL
+
+https://github.com/CPqD/ofsoftswitch13[`https://github.com/CPqD/ofsoftswitch13`]
+
+* Fire following command to start the switch
+
+Start the datapath :
+
+---------------------------------------------------------------------------------------
+$ sudo udatapath/ofdatapath --datapath-id=<dpid> --interfaces=<if-list> ptcp:<port>
+ e.g $ sudo udatapath/ofdatapath --datapath-id=000000000001 --interfaces=ethX ptcp:6680
+---------------------------------------------------------------------------------------
+
+ethX should not be associated with ip address and ipv6 should be
+disabled on it. If you are installing the switch on your local machine,
+you can use following command (for Ubuntu) to create virtual interface.
+
+---------------------------------------------------------------------
+ip link add link ethX address 00:19:d1:29:d2:58 macvlan0 type macvlan
+---------------------------------------------------------------------
+
+ethX - Any existing interface.
+
+Or if you are using mininet VM for installing this switch, you can
+simply add one more adaptor to your VM.
+
+Start Openflow protocol agent:
+
+-------------------------------------------------------------------------------
+$secchan/ofprotocol tcp:<switch-host>:<switch-port> tcp:<ctrl-host>:<ctrl-port>
+ e.g $secchan/ofprotocol tcp:127.0.0.1:6680 tcp:127.0.0.1:6653
+-------------------------------------------------------------------------------
+
+[[commands-to-add-entries-to-various-tables-of-the-switch]]
+====== Commands to add entries to various tables of the switch
+
+* Add meter
+
+----------------------------------------------------------------------------------------
+$utilities/dpctl tcp:<switch-host>:<switch-port> meter-mod cmd=add,meter=1 drop:rate=50 
+----------------------------------------------------------------------------------------
+
+* Add Groups
+
+----------------------------------------------------------------------
+$utilities/dpctl tcp:127.0.0.1:6680 group-mod cmd=add,type=all,group=1
+----------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------
+$utilities/dpctl tcp:127.0.0.1:6680 group-mod cmd=add,type=sel,group=2 weight=10 output:1
+-----------------------------------------------------------------------------------------
+
+* Create queue
+
+--------------------------------------------------------------------------------------------------
+$utilities/dpctl tcp:<ip>:<switch port> queue-mod <port-number> <queue-number> <minimum-bandwidth>
+  e.g - $utilities/dpctl tcp:127.0.0.1:6680 queue-mod 1 1 23
+--------------------------------------------------------------------------------------------------
+
+"dpctl" --help is not very intuitive, so please keep adding any new
+command you figured out while your experiment with the switch.
+
+[[using-the-built-in-wireshark]]
+====== Using the built-in Wireshark
+
+Mininet comes with pre-installed Wireshark, but for some reason it does
+not include the Openflow protocol dissector. You may want to get and
+install it in the _/.wireshark/plugins/_ directory.
+
+First login to your mininet VM
+
+-------------------------------------
+ ssh mininet@<your mininet vm ip> -X 
+-------------------------------------
+
+The -X option in ssh will enable x-session over ssh so that the
+wireshark window can be shown on your host machine's display. when
+prompted, enter the password (mininet).
+
+From the mininet vm shell, set the wireshark capture privileges
+(http://wiki.wireshark.org/CaptureSetup/CapturePrivileges):
+
+----------------------------------------------------------------
+sudo chgrp mininet /usr/bin/dumpcap
+sudo chmod 754 /usr/bin/dumpcap
+sudo setcap 'CAP_NET_RAW+eip CAP_NET_ADMIN+eip' /usr/bin/dumpcap
+----------------------------------------------------------------
+
+Finally, start wireshark:
+
+-----------
+ wireshark 
+-----------
+
+The wireshark window should show up.
+
+To see only Openflow packets, you may want to apply the following filter
+in the Filter window:
+
+------------------------------------------
+ tcp.port == 6633 and tcp.flags.push == 1 
+------------------------------------------
+
+Start the capture on _any_ port.
+
+[[running-mininet-with-of-1.3]]
+===== Running Mininet with OF 1.3
+
+From within the Mininet VM, run:
+
+--------------------------------------------------------------------------------------------------------------------
+ sudo mn --topo single,3  --controller 'remote,ip=<your controller ip>,port=6653' --switch ovsk,protocols=OpenFlow13
+--------------------------------------------------------------------------------------------------------------------
