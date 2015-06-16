@@ -1,0 +1,71 @@
+== OpenFlow Plugin Project User Guide
+
+=== Overview and Architecture
+
+==== Overview and Architecture
+include::odl-ofp-overview-and-architecture.adoc[]
+
+==== Coverage
+include::odl-ofp-coverage.adoc[]
+
+=== Tutorial / How-To
+
+==== Running the controller with the new OpenFlow Plugin
+include::odl-ofp-running-controller-with-the-new-of-plugin.adoc[]
+
+==== OpenFlow 1.3 Enabled Software Switches / Environment
+include::odl-ofp-test-environment.adoc[]
+
+==== End to End Inventory
+missing input
+
+==== End to End Flows
+missing input
+
+==== End to End Topology
+missing input
+
+==== End to End Groups
+missing input
+
+==== End to End Meters
+missing input
+
+==== Statistics
+missing input
+
+==== OF1.3 Enabled Wireshark
+missing input
+
+=== Web / Graphical Interface
+In the Hydrogen & Helium release, the current Web UI does not support
+the new OpenFlow 1.3 constructs such as groups, meters, new fields in
+the flows, multiple flow tables, etc.
+
+=== Command Line Interface
+The following is not exactly CLI - just a set of test commands which can
+be executed on the OSGI console testing various features in OpenFlow 1.3
+spec.
+
+==== OSGI Console Test Provider Commands: Flows
+missing input
+
+==== OSGI Console Test Provider Commands: Groups
+missing input
+
+==== OSGI Console Test Provider Commands: Meters
+missing input
+
+==== OSGI Console Test Provider Commands: Topology Events
+missing input
+
+=== Programmatic Interface
+The API is documented in the model documentation under the section
+OpenFlow Services at:
+
+==== Models Documentation (OpenFlow Services Section)
+missing input
+
+=== Opendaylight OpenFlow Plugin: Troubleshooting
+missing input
+
