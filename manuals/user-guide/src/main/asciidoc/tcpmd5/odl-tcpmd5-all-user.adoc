@@ -220,9 +220,9 @@ CAUTION: You have to introduce modules and services mentioned in the previous se
 
 . Enabling TCPMD5 in BGP configuration:
 +
-[big]#*URL:*# http://localhost:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules/
+[big]#*URL:*# http://localhost:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules/odl-bgp-rib-impl-cfg:bgp-dispatcher-impl/global-bgp-dispatcher
 
-[big]#*POST:*#
+[big]#*PUT:*#
 
 [source,xml]
 ----
@@ -242,9 +242,9 @@ CAUTION: You have to introduce modules and services mentioned in the previous se
 
 . Set password:
 +
-[big]#*URL:*# http://localhost:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules/
+[big]#*URL:*# http://localhost:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules/odl-bgp-rib-impl-cfg:bgp-peer/example-bgp-peer
 
-[big]#*POST:*#
+[big]#*PUT:*#
 
 [source,xml]
 ----
@@ -261,9 +261,9 @@ CAUTION: You have to introduce modules and services mentioned in the previous se
 
 . Enable TCPMD5 in PCEP configuration:
 +
-[big]#*URL:*# http://localhost:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules/
+[big]#*URL:*# http://localhost:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules/odl-pcep-impl-cfg:pcep-dispatcher-impl/global-pcep-dispatcher
 
-[big]#*POST:*#
+[big]#*PUT:*#
 
 [source,xml]
 ----
@@ -283,9 +283,9 @@ CAUTION: You have to introduce modules and services mentioned in the previous se
 
 . Set password:
 +
-[big]#*URL:*# http://localhost:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules/
+[big]#*URL:*# http://localhost:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules/odl-pcep-impl-cfg:pcep-topology-provider/pcep-topology
 
-[big]#*POST:*#
+[big]#*PUT:*#
 [source,xml]
 ----
 <module xmlns="urn:opendaylight:params:xml:ns:yang:controller:config">
