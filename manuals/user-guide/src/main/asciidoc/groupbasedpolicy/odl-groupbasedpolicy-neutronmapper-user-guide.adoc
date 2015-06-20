@@ -1,0 +1,116 @@
+==== Overview
+This section is for Application Developers and Network Administrators
+who are looking to integrate Group Based Policy with OpenStack. It
+explains how the Neutron Mapper feature is a provider for the Neutron
+ML2 OpenDaylight mechanism driver, as well as how architectural
+elements in Neutron are mapped into Group Based Policy constructs.
+Readers should already have an understanding of the Group Based Policy
+architecture, theory of operation, and model elements. For more
+information on these items, please see the Group Based Policy wiki page here:
+https://wiki.opendaylight.org/view/Group_Policy:Main
+
+==== Group Based Policy Neutron Architecture
+The Group Based Policy Neutron Mapper feature is a provider for the
+Neutron Northbound project in OpenDaylight. It allows seamless integration
+with OpenStack's Modular Layer 2 (ML2) plugin.
+
+The following figure shows the major architectural pieces for the
+Group Based Policy Neutron Mapper.
+.Group Based Policy Neutron integration into ODL
+image::groupbasedpolicy/gbp-neutron-mapper.png[width=500]
+
+The OpenDaylight Neutron Service receives REST calls from
+OpenStack's ML2 OpenDaylight Mechanism Driver. The rest calls
+result in calls to the Group Based Policy Neutron Mapper, shown
+in the figure as the "Neutron to GBP translator". This piece
+maps Neutron API calls and parameters onto Group Based Policy
+constructs.
+
+.Group Based Policy Neutron to GBP Mappings
+image::groupbasedpolicy/neutron-gbp-mappings.png[width=250]
+
+NOTE: we should describe all of the functionality that we're
+supporting -- floating IPs, L3 services, etc.
+
+Provide information about feature components and how they work together.
+Also include information about how the feature integrates with
+OpenDaylight. An architecture diagram could help.
+
+==== Configuring Group Based Policy Neutron
+The integration with devstack currently uses the OpenFlow Overlay
+renderer in Group Based Policy.  The renderer expects that the
+appropriate infrastructure is in place. This means that DevStack
+or any provisioning used for OpenStack needs stand up the following:
+
+. Configure br-int on all nodes
+. Configure br-ex on the controller node
+. Set the OVSDB manager to the OpenDaylight controller
+
+The neutron-mapper feature provides an integration with OVSDB, which
+will automatically provision the tunnel ports needed and connect the
+bridges to the controller.
+
+Describe how to configure the feature or the project after installation.
+Configuration information could include day-one activities for a project
+such as configuring users, configuring clients/servers and so on.
+
+==== Administering or Managing GBP Neutron
+This section provides an example configuration
+NOTE: should we describe configuration of local.conf?
+Include related command reference or  operations that you could perform
+using the feature. For example viewing network statistics, monitoring
+the network,  generating reports, and so on.
+
+NOTE:  Ensure that you create a step procedure whenever required and
+avoid concepts.
+
+For example:
+
+.To configure L2switch components perform the following steps.
+. Step 1:
+. Step 2:
+. Step 3:
+
+==== Tutorials
+<optional>
+If there is only one tutorial, you skip the "Tutorials" section and
+instead just lead with the single tutorial's name.
+
+===== <Tutorial Name>
+Ensure that the title starts with a gerund. For example using,
+monitoring, creating, and so on.
+
+====== Overview
+An overview of the use case.
+
+====== Prerequisites
+Provide any prerequisite information, assumed knowledge, or environment
+required to execute the use case.
+
+====== Target Environment
+Include any topology requirement for the use case. Ideally, provide
+visual (abstract) layout of network diagrams and any other useful visual
+aides.
+
+====== Instructions
+Use case could be a set of configuration procedures. Including
+screenshots to help demonstrate what is happening is especially useful.
+Ensure that you specify them separately. For example:
+
+. *Setting up the VM*
+To set up a VM perform the following steps.
+.. Step 1
+.. Step 2
+.. Step 3
+
+. *Installing the feature*
+To install the feature perform the following steps.
+.. Step 1
+.. Step 2
+.. Step 3
+
+. *Configuring the environment*
+To configure the system perform the following steps.
+.. Step 1
+.. Step 2
+.. Step 3
