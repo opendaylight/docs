@@ -1,0 +1,504 @@
+== Group Based Policy User Guide
+
+=== Overview
+OpenDaylight Group Based Policy allows users to express network configuration in a declarative versus imperative way.
+
+This is often described as asking for *"what you want"*, rather than *"how to do it"*.
+
+In order to achieve this Group Based Policy (herein referred to as *GBP*) is an implementation of an *Intent System*.
+
+An *Intent System*:
+
+. is a process around an intent driven data model
+. contains no domain specifics
+. is capable of addressing multiple semantic definitions of intent
+
+To this end, Group Based Policy views an *Intent System* visually as:
+
+.Intent System Process and Policy Surfaces
+image::groupbasedpolicy/IntentSystemPolicySurfaces.png[align="center",width=500]
+
+. *expressed intent* is the entry point into the system.
+. *operational constraints* provide policy for the usage of the system which modulates how the system is consumed. For instance _"All Financial applications must use a specific encryption standard"_.
+. *capabilities and state* are provided by _renderers_. _Renderers_ dynamically provide their capabilities to the core model, allowing the core model to remain non-domain specific.
+. *governance* provides feedback on on the delivery of the _expressed intent_. i.e. _"Did we do what you asked us?"_
+
+By thinking of *Intent Systems* in this way, it enables:
+
+. recursive behaviour. 
+Where _one person's concrete is another's abstract_, intent can be fulfilled through a hierarchical implementation of non-domain specific policy resolution, with domain specifics provided by the _renderers_ at each policy resolution instance.
+For example:
+
+.. To DNS: The name "www.foo.com" is _abstract_, and it's IPv4 address 10.0.0.10 is _concrete_,
+.. To an IP stack: 10.0.0.10 is _abstract_ and the MAC 08:05:04:03:02:01 is _concrete_,
+.. To an Ethernet switch: The MAC 08:05:04:03:02:01 is _abstract_, the resolution to a port in it's CAM table is _concrete_,
+.. To an optical network: The port maybe _abstract_, yet the optical wavelength is _concrete_.
+
+NOTE: _This is a very domain specific analogy, tied to something most readers will understand. It in no way implies the *GBP* should be implemented in an OSI type fashion. The premise is that by implementing a full *Intent System*, the user is freed from a lot of the constraints of _how_ the expressed intent is realised._
+
+It is important to show the overall philosophy of *GBP* as it sets the project's direction.
+
+In the Lithium release of OpenDaylight, *GBP* focused on *expressed intent* and *capabilities*. 
+
+=== Group Based Policy Base Architecture and Value Proposition
+==== Terminology
+In order to explain the fundamental value proposition of *GBP*, an illustrated example is given. In order to do that some terminology must be defined.
+
+The Access Model is the core of the *GBP* Intent System policy resolution process.
+
+.GBP Access Model Terminology - Endpoints, EndpointGroups, Contract
+image::groupbasedpolicy/GBPTerminology1.png[align="center",width=500]
+
+.GBP Access Model Terminology - Subject, Classifier, Action
+image::groupbasedpolicy/GBPTerminology2.png[align="center",width=500]
+
+.GBP Forwarding Model Terminology - L3 Context, L2 Bridge Context, L2 Flood Context, Subnet
+image::groupbasedpolicy/GBPTerminology3.png[align="center",width=500]
+
+. Endpoints: Define concrete uniquely identifiable entities. In Lithium, examples could be a Docker container, or a Neutron port
+. EndpointGroups: Groupings of endpoints, and where contracts are associated as either being "provided" and/or "consumed" by the endpoint group.
+. Contract: Define the subjects which consist of an ordered set of rules, a set of classifiers that must match, then an ordered set of actions to be performed once a match occurs.
+. Subject: Consisting of:
+.. Rules:
+.. Classifiers:
+
+==== Architecture and Value Proposition
+
+*GBP* offers an intent based interface, access via the <<UX,UX>> or via the <<REST,REST API>>.
+
+There are two models in *GBP*:
+
+. the access (or core) model
+. the forwarding model
+
+.GBP Access (or Core) Model
+image::groupbasedpolicy/GBP_AccessModel_simple.png[align="center",width=500]
+
+The _classifier_ and _action_ portions of the model can be thought of as hooks, provided by each _renderer_ with its domain specific capabilities. In *GBP* Lithium, there is one renderer, 
+the _<<OfOverlay,OpenFlow Overlay renderer (OfOverlay).>>_
+
+These hooks are filled with _definitions_ of the types of _features_ the renderer can provide the _subject_, and are called *subject-feature-definitions*.
+
+This means an _expressed intent_ can be fulfilled by, and across, multiple renderers simultaneously, without any specific provisioning from the consumer of *GBP*.
+
+Since *GBP* is implemented in OpenDaylight, which is an SDN controller, it also must address networking. This is done via the _fowarding model_, which is domain specific to networking, but could be applied to many different _types_ of networking.
+
+.GBP Forwarding Model
+image::groupbasedpolicy/GBP_ForwardingModel_simple.png[align="center",width=500]
+
+Each endpoint is provisioned with it's _network-containment_. This can be a:
+
+. subnet
+.. normal IP stack behaviour, where ARP is performed in subnet, and for out of subnet, traffic is sent to default gateway.
+.. a subnet can be a child of any of the below forwarding model contexts, but typically would be a child of a flood-domain
+. L2 flood-domain
+.. allows flooding behaviour.
+.. is a n:1 child of a bridge-domain
+.. can have multiple children
+. L2 bridge-domain
+.. is a layer2 namespace
+.. is the realm where traffic can be sent at layer 2
+.. is a n:1 child of a L3 context
+.. can have multiple children
+. L3 context
+.. is a layer3 namespace
+.. is the realm where traffic is passed at layer 3
+.. is a 1:n child of a tenant
+.. can have multiple children
+
+A simple example of how the access and forwarding models work is as follows:
+
+.GBP Endpoints, EndpointGroups and Contracts
+image::groupbasedpolicy/GBP_Endpoint_EPG_Contract.png[align="center",width=500]
+
+In this example, the *EPG:webservers* is _providing_ the _web_ and _ssh_ contracts. The *EPG:client* is consuming those contracts. *EPG:client* is providing the _any_ contract, which is consumed by *EPG:webservers*.
+
+The _direction_ keyword is always from the perspective of the _provider_ of the contract. In this case contract _web_, being _provided_ by *EPG:webservers*, with the classifier to match TCP destiation port 80, means:
+
+. packets with a TCP destination port of 80
+. sent to (_in_) endpoints in the *EPG:webservers*
+. will be _allowed_.
+
+.GBP Endpoints and the Forwarding Model
+image::groupbasedpolicy/GBP_Endpoint_EPG_Forwarding.png[align="center",width=500]
+
+When the forwarding model is considered in the figure above, it can be shown that even though all endpoints are communicating using a common set of contracts, their forwarding is _contained_ by the forwarding model contexts or namespaces.
+In the example shown, the endpoints associated with a _network-containment_ that has an ultimate parent of _L3Context:Sales_ can only communicate with other endpoints within this L3Context. In this way L3VPN services can be implemented without any impact to the *Intent* of the contract.
+
+The overall architecture, including _<<Neutron,Neutron>>_ domain specific mapping, and the <<OfOverlay,OpenFlow Overlay renderer>> looks as so:
+
+.GBP High Level Lithium Architecture
+image::groupbasedpolicy/GBP_High-levelLithiumArchitecture.png[align="center",width=300]
+
+A major benefit can be seen when mapping domain-specific-languages into the *GBP* access model, and when renderers provide their subject-feature-definitions.
+
+For instance, using the <<Neutron,Neutron Mapper>>, which maps the Neutron API to the *GBP* core model, the mapping can be augmented via the <<UX,UX>> to use <<SFC,Service Function Chaining>>, a capability not currently available in OpenStack Neutron.
+
+When another renderer is added, for instance, NetConf, the same policy can now be leveraged across NetConf devices simultaneously:
+
+.GBP High Level Lithium Architecture - adding a renderer
+image::groupbasedpolicy/GBP_High-levelExtraRenderer.png[align="center",width=300]
+
+As other domain-specfic mappings occur, they too can leverage the same renderers, as the renderers only need to implement the *GBP* access and forwarding models, and the domain-specific mapping need only manage mapping to the access and forwarding models. For instance:
+
+.GBP High Level Lithium Architecture - adding a renderer
+image::groupbasedpolicy/High-levelLithiumArchitectureEvolution2.png[align="center",width=300]
+
+
+=== Using the GBP UX interface [[UX]]
+
+lorem ipsum
+
+=== Using the GBP API [[REST]]
+
+lorem ipsum
+
+=== Using OpenStack with GBP [[Neutron]] 
+
+lorem ipsum
+
+=== Using the GBP OpenFlow Overlay (OfOverlay) renderer [[OfOverlay]]
+
+lorem ipsum
+
+
+=== Using Service Function Chaining (SFC) with GBP [[SFC]]
+
+lorem ipsum
+
+
+=== Contributors
+
+lorem ipsum
+
+
+=== Future work
+
+lorem ipsum
+
+
+=== Demo environment
+
+lorem ipsum
+
+
+
+The base feature for Group Based Policy provides the data model and APIs
+for the Policy Repository and Endpoint Registry. It uses the information
+from these data stores to create the resolved policy, which can be
+
+A policy can only become resolved if the following conditions are met:
+. there is one or more providing Endpoint Groups for the contract
+. there is one ore more consuming Endpoint Groups for the contract
+. there is at least one Endpoint that belongs to each Endpoint Group
+
+The renderers are responsible for registering Tenant and/or Endpoint
+Group membership with the base policy resolver.  The policy resolver
+uses this information to create the resolved policy, which the
+renderers can turn into concrete policy that is enforced.
+
+Renderers use existing southbound plugins in order to enforce
+a given policy. For example, the OpenFlow Overlay renderer uses
+the OpenDaylight plugin to create the flows needed to enforce
+the policy.
+
+NOTE: Should add information on exception repo and operation state
+=== Configuring Group Based Policy
+Configuration for Group Based Policy is divided into the following
+categories
+. Configuration of Tenants and Forwarding Context
+. Configuration of Policy (Contracts, Clauses, Subjects, and Rules)
+. Configuration of Endpoint Groups
+. Configuration of Endpoints
+
+The following is an example REST call to create a Tenant with
+two subnets, each Subnet with its own L2 Flood Domain, both
+of which share the same L2 Bridge Domain and L3 Context.
+----
+PUT http://{{controllerIp}}:8181/restconf/config/policy:tenants/policy:tenant/f5c7d344-d1c7-4208-8531-2c2693657e12
+{
+    "policy:tenant": {
+        "id": "f5c7d344-d1c7-4208-8531-2c2693657e12",
+        "subnet": [
+            {
+                "id": "d2779562-ebf1-45e6-93a4-78e2362bc418",
+                "ip-prefix": "10.0.35.1/24",
+                "parent": "1ddde8d8-c2bc-48d7-8ce0-d78eb6ed4b5b",
+                "virtual-router-ip": "10.0.35.1"
+            },
+            {
+                "id": "2c71d675-693e-406f-899f-12a026eb55f1",
+                "ip-prefix": "10.0.36.1/24",
+                "parent": "03f69af2-481c-4554-97d6-c4fedca5d126",
+                "virtual-router-ip": "10.0.36.1"
+            }
+        ],
+        "l2-flood-domain": [
+            {
+                "id": "1ddde8d8-c2bc-48d7-8ce0-d78eb6ed4b5b",
+                "parent": "7b796915-adf4-4356-b5ca-de005ac410c1"
+            },
+            {
+                "id": "03f69af2-481c-4554-97d6-c4fedca5d126",
+                "parent": "7b796915-adf4-4356-b5ca-de005ac410c1"
+            }
+        ],
+        "l2-bridge-domain": [
+            {
+                "id": "7b796915-adf4-4356-b5ca-de005ac410c1",
+                "parent": "cbe0cc07-b8ff-451d-8171-9eef002a8e80"
+            }
+        ],
+        "l3-context": [
+            {
+                "id": "cbe0cc07-b8ff-451d-8171-9eef002a8e80"
+            }
+        ]
+    }
+}
+----
+The policy can now be configured. There are two parts to the
+policy configuration. The first is the set of Classifiers and
+Actions that are used to enforce the policy. The following is
+an exmample of a REST call to create the classifiers and actions
+needed for the policy.
+
+----
+PUT http://{{controllerIp}}:8181/restconf/config/policy:tenants/policy:tenant/f5c7d344-d1c7-4208-8531-2c2693657e12/subject-feature-instances
+{
+    "subject-feature-instances": {
+        "classifier-instance": [
+            {
+                "name": "icmp",
+                "classifier-definition-id": "79c6fdb2-1e1a-4832-af57-c65baf5c2335",
+                "parameter-value": [
+                    {
+                        "name": "proto",
+                        "int-value": 1
+                    }
+                ]
+            },
+            {
+                "name": "http-dest",
+                "classifier-definition-id": "4250ab32-e8b8-445a-aebb-e1bd2cdd291f",
+                "parameter-value": [
+                    {
+                        "int-value": "6",
+                        "name": "proto"
+                    },
+                    {
+                        "int-value": "80",
+                        "name": "destport"
+                    }
+                ]
+            },
+            {
+                "name": "http-src",
+                "classifier-definition-id": "4250ab32-e8b8-445a-aebb-e1bd2cdd291f",
+                "parameter-value": [
+                    {
+                        "int-value": "6",
+                        "name": "proto"
+                    },
+                    {
+                        "int-value": "80",
+                        "name": "sourceport"
+                    }
+                ]
+            }
+        ],
+        "action-instance": [
+            {
+                "name": "allow1",
+                "action-definition-id": "f942e8fd-e957-42b7-bd18-f73d11266d17"
+            }
+        ]
+    }
+}
+----
+Once the classifiers and actions exist, you construct the policy that
+uses them. The following is an example REST call that creates the
+Contract, Clause, Subjects, and Rules that use these classifiers and actions.
+----
+PUT http://{{controllerIp}}:8181/restconf/config/policy:tenants/policy:tenant/f5c7d344-d1c7-4208-8531-2c2693657e12/contract/22282cca-9a13-4d0c-a67e-a933ebb0b0ae
+{
+    "contract": [
+        {
+            "id": "22282cca-9a13-4d0c-a67e-a933ebb0b0ae",
+            "subject": [
+                {
+                    "name": "allow-icmp-subject",
+                    "rule": [
+                        {
+                            "name": "allow-icmp-rule",
+                            "classifier-ref": [
+                                {
+                                    "name": "icmp"
+                                }
+                            ],
+                            "action-ref": [
+                                {
+                                    "name": "allow1",
+                                    "order": 0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "allow-http-subject",
+                    "rule": [
+                        {
+                            "name": "allow-http-rule",
+                            "classifier-ref": [
+                                {
+                                    "name": "http-dest",
+                                    "direction": "in"
+                                },
+                                {
+                                    "name": "http-src",
+                                    "direction": "out"
+                                }
+                            ],
+                            "action-ref": [
+                                {
+                                    "name": "allow1",
+                                    "order": 0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "clause": [
+                {
+                    "name": "allow-http-clause",
+                    "subject-refs": [
+                        "allow-icmp-subject",
+                        "allow-http-subject"
+                    ]
+                }
+            ]
+        }
+    ]
+}
+----
+The user can then add the Endpoint Groups that they want to manage
+within the scope of this Tenant. The following is an example REST
+call to configure two Endpoint Groups: a web group and a client group.
+----
+PUT http://{{controllerIp}}:8181/restconf/config/policy:tenants/policy:tenant/f5c7d344-d1c7-4208-8531-2c2693657e12/endpoint-group/e593f05d-96be-47ad-acd5-ba81465680d5
+{
+    "endpoint-group": [
+        {
+            "id": "e593f05d-96be-47ad-acd5-ba81465680d5",
+            "network-domain": "49850b5a-684d-4cc0-aafe-95d25c9a4b97",
+            "provider-named-selector": [
+                {
+                    "name": "e593f05d-96be-47ad-acd5-ba81465680d5-1eaf9a67-a171-42a8-9282-71cf702f61dd-22282cca-9a13-4d0c-a67e-a933ebb0b0ae",
+                    "contract": [
+                         "22282cca-9a13-4d0c-a67e-a933ebb0b0ae"
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+PUT http://{{controllerIp}}:8181/restconf/config/policy:tenants/policy:tenant/f5c7d344-d1c7-4208-8531-2c2693657e12/endpoint-group/1eaf9a67-a171-42a8-9282-71cf702f61dd
+{
+    "endpoint-group": [
+        {
+            "id": "1eaf9a67-a171-42a8-9282-71cf702f61dd",
+            "network-domain": "7f43a456-2c99-497b-9ecf-7169be0163b9",
+            "consumer-named-selector": [
+                {
+                    "name": "e593f05d-96be-47ad-acd5-ba81465680d5-1eaf9a67-a171-42a8-9282-71cf702f61dd-22282cca-9a13-4d0c-a67e-a933ebb0b0ae",
+                    "contract": [
+                        "22282cca-9a13-4d0c-a67e-a933ebb0b0ae"
+                    ]
+                }
+            ]
+        }
+    ]
+}
+----
+Note that it's possible to create all of this using a single PUT at
+the Tenant level -- the configuration was broken down into these steps
+in order to make it easier to understand the policy configuration process.
+
+In order to resolve policy, Enpoints must be added to the system.
+The following is an example of a REST call used to add an endpoint that
+belongs to one of the Endpoint Groups previously configured above.
+----
+POST http://{{controllerIp}}:8181/restconf/operations/endpoint:register-endpoint
+{
+    "input": {
+        "endpoint-group": "1eaf9a67-a171-42a8-9282-71cf702f61dd",
+        "network-containment" : "d2779562-ebf1-45e6-93a4-78e2362bc418",
+        "l2-context": "7b796915-adf4-4356-b5ca-de005ac410c1",
+        "mac-address": "00:00:00:00:35:02",
+        "l3-address": [
+            {
+                "ip-address": "10.0.35.2",
+                "l3-context": "cbe0cc07-b8ff-451d-8171-9eef002a8e80"
+            }
+        ],
+        "tenant": "f5c7d344-d1c7-4208-8531-2c2693657e12"
+    }
+}
+----
+
+=== Administering or Managing Group Based Policy
+Group Based Policy provides validation of the configured policy,
+and validated policy is reflected in the operational data store.
+The following REST call allows users to view the validated
+operational policy.
+
+You can also verify the Endpoints that have been registered in
+the Endpoint Registry. The following call reads all the Endpoints
+in the Registry:
+
+=== Tutorials
+<optional>
+If there is only one tutorial, you skip the "Tutorials" section and
+instead just lead with the single tutorial's name.
+
+==== <Tutorial Name>
+Ensure that the title starts with a gerund. For example using,
+monitoring, creating, and so on.
+
+===== Overview
+An overview of the use case.
+
+===== Prerequisites
+Provide any prerequisite information, assumed knowledge, or environment
+required to execute the use case.
+
+===== Target Environment
+Include any topology requirement for the use case. Ideally, provide
+visual (abstract) layout of network diagrams and any other useful visual
+aides.
+
+===== Instructions
+Use case could be a set of configuration procedures. Including
+screenshots to help demonstrate what is happening is especially useful.
+Ensure that you specify them separately. For example:
+
+. *Setting up the VM*
+To set up a VM perform the following steps.
+.. Step 1
+.. Step 2
+.. Step 3
+
+. *Installing the feature*
+To install the feature perform the following steps.
+.. Step 1
+.. Step 2
+.. Step 3
+
+. *Configuring the environment*
+To configure the system perform the following steps.
+.. Step 1
+.. Step 2
+.. Step 3
