@@ -1,0 +1,345 @@
+== Group Based Policy User Guide
+This section is for Application Developers and Network Administrators
+who are looking to use Group Based Policy to manage their network
+infrastructure. Readers should already have an understanding of
+the Group Based Policy architecture, theory of operation, and
+model elements. For more information on these items, please
+see the Group Based Policy wiki page here:
+https://wiki.opendaylight.org/view/Group_Policy:Main
+
+=== Overview
+.Group Based Policy Architecture
+image::groupbasedpolicy/group-based-policy-architecture.png[width=250]
+
+The Group Based Policy base feature provides the functionality that
+is common to all Group Based Policy applications. It provides for
+configuration and resolution of policy, as well as registration of
+Endpoints.
+
+The Group Based Policy base feature is included in other features
+in order to implement a policy system. All renderers include
+the base feature, as do northbound features. The Group Based
+Policy base feature can also be used as a way to learn about
+the basic functionality in Group Based Policy, without having
+to understand how the policy is rendered.
+
+=== Group Based Policy Base Architecture
+The base feature for Group Based Policy provides the data model and APIs
+for the Policy Repository and Endpoint Registry. It uses the information
+from these data stores to create the resolved policy, which can be
+
+A policy can only become resolved if the following conditions are met:
+. there is one or more providing Endpoint Groups for the contract
+. there is one ore more consuming Endpoint Groups for the contract
+. there is at least one Endpoint that belongs to each Endpoint Group
+
+The renderers are responsible for registering Tenant and/or Endpoint
+Group membership with the base policy resolver.  The policy resolver
+uses this information to create the resolved policy, which the
+renderers can turn into concrete policy that is enforced.
+
+Renderers use existing southbound plugins in order to enforce
+a given policy. For example, the OpenFlow Overlay renderer uses
+the OpenDaylight plugin to create the flows needed to enforce
+the policy.
+
+NOTE: Should add information on exception repo and operation state
+=== Configuring Group Based Policy
+Configuration for Group Based Policy is divided into the following
+categories
+. Configuration of Tenants and Forwarding Context
+. Configuration of Policy (Contracts, Clauses, Subjects, and Rules)
+. Configuration of Endpoint Groups
+. Configuration of Endpoints
+
+The following is an example REST call to create a Tenant with
+two subnets, each Subnet with its own L2 Flood Domain, both
+of which share the same L2 Bridge Domain and L3 Context.
+----
+PUT http://{{controllerIp}}:8181/restconf/config/policy:tenants/policy:tenant/f5c7d344-d1c7-4208-8531-2c2693657e12
+{
+    "policy:tenant": {
+        "id": "f5c7d344-d1c7-4208-8531-2c2693657e12",
+        "subnet": [
+            {
+                "id": "d2779562-ebf1-45e6-93a4-78e2362bc418",
+                "ip-prefix": "10.0.35.1/24",
+                "parent": "1ddde8d8-c2bc-48d7-8ce0-d78eb6ed4b5b",
+                "virtual-router-ip": "10.0.35.1"
+            },
+            {
+                "id": "2c71d675-693e-406f-899f-12a026eb55f1",
+                "ip-prefix": "10.0.36.1/24",
+                "parent": "03f69af2-481c-4554-97d6-c4fedca5d126",
+                "virtual-router-ip": "10.0.36.1"
+            }
+        ],
+        "l2-flood-domain": [
+            {
+                "id": "1ddde8d8-c2bc-48d7-8ce0-d78eb6ed4b5b",
+                "parent": "7b796915-adf4-4356-b5ca-de005ac410c1"
+            },
+            {
+                "id": "03f69af2-481c-4554-97d6-c4fedca5d126",
+                "parent": "7b796915-adf4-4356-b5ca-de005ac410c1"
+            }
+        ],
+        "l2-bridge-domain": [
+            {
+                "id": "7b796915-adf4-4356-b5ca-de005ac410c1",
+                "parent": "cbe0cc07-b8ff-451d-8171-9eef002a8e80"
+            }
+        ],
+        "l3-context": [
+            {
+                "id": "cbe0cc07-b8ff-451d-8171-9eef002a8e80"
+            }
+        ]
+    }
+}
+----
+The policy can now be configured. There are two parts to the
+policy configuration. The first is the set of Classifiers and
+Actions that are used to enforce the policy. The following is
+an exmample of a REST call to create the classifiers and actions
+needed for the policy.
+
+----
+PUT http://{{controllerIp}}:8181/restconf/config/policy:tenants/policy:tenant/f5c7d344-d1c7-4208-8531-2c2693657e12/subject-feature-instances
+{
+    "subject-feature-instances": {
+        "classifier-instance": [
+            {
+                "name": "icmp",
+                "classifier-definition-id": "79c6fdb2-1e1a-4832-af57-c65baf5c2335",
+                "parameter-value": [
+                    {
+                        "name": "proto",
+                        "int-value": 1
+                    }
+                ]
+            },
+            {
+                "name": "http-dest",
+                "classifier-definition-id": "4250ab32-e8b8-445a-aebb-e1bd2cdd291f",
+                "parameter-value": [
+                    {
+                        "int-value": "6",
+                        "name": "proto"
+                    },
+                    {
+                        "int-value": "80",
+                        "name": "destport"
+                    }
+                ]
+            },
+            {
+                "name": "http-src",
+                "classifier-definition-id": "4250ab32-e8b8-445a-aebb-e1bd2cdd291f",
+                "parameter-value": [
+                    {
+                        "int-value": "6",
+                        "name": "proto"
+                    },
+                    {
+                        "int-value": "80",
+                        "name": "sourceport"
+                    }
+                ]
+            }
+        ],
+        "action-instance": [
+            {
+                "name": "allow1",
+                "action-definition-id": "f942e8fd-e957-42b7-bd18-f73d11266d17"
+            }
+        ]
+    }
+}
+----
+Once the classifiers and actions exist, you construct the policy that
+uses them. The following is an example REST call that creates the
+Contract, Clause, Subjects, and Rules that use these classifiers and actions.
+----
+PUT http://{{controllerIp}}:8181/restconf/config/policy:tenants/policy:tenant/f5c7d344-d1c7-4208-8531-2c2693657e12/contract/22282cca-9a13-4d0c-a67e-a933ebb0b0ae
+{
+    "contract": [
+        {
+            "id": "22282cca-9a13-4d0c-a67e-a933ebb0b0ae",
+            "subject": [
+                {
+                    "name": "allow-icmp-subject",
+                    "rule": [
+                        {
+                            "name": "allow-icmp-rule",
+                            "classifier-ref": [
+                                {
+                                    "name": "icmp"
+                                }
+                            ],
+                            "action-ref": [
+                                {
+                                    "name": "allow1",
+                                    "order": 0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "allow-http-subject",
+                    "rule": [
+                        {
+                            "name": "allow-http-rule",
+                            "classifier-ref": [
+                                {
+                                    "name": "http-dest",
+                                    "direction": "in"
+                                },
+                                {
+                                    "name": "http-src",
+                                    "direction": "out"
+                                }
+                            ],
+                            "action-ref": [
+                                {
+                                    "name": "allow1",
+                                    "order": 0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "clause": [
+                {
+                    "name": "allow-http-clause",
+                    "subject-refs": [
+                        "allow-icmp-subject",
+                        "allow-http-subject"
+                    ]
+                }
+            ]
+        }
+    ]
+}
+----
+The user can then add the Endpoint Groups that they want to manage
+within the scope of this Tenant. The following is an example REST
+call to configure two Endpoint Groups: a web group and a client group.
+----
+PUT http://{{controllerIp}}:8181/restconf/config/policy:tenants/policy:tenant/f5c7d344-d1c7-4208-8531-2c2693657e12/endpoint-group/e593f05d-96be-47ad-acd5-ba81465680d5
+{
+    "endpoint-group": [
+        {
+            "id": "e593f05d-96be-47ad-acd5-ba81465680d5",
+            "network-domain": "49850b5a-684d-4cc0-aafe-95d25c9a4b97",
+            "provider-named-selector": [
+                {
+                    "name": "e593f05d-96be-47ad-acd5-ba81465680d5-1eaf9a67-a171-42a8-9282-71cf702f61dd-22282cca-9a13-4d0c-a67e-a933ebb0b0ae",
+                    "contract": [
+                         "22282cca-9a13-4d0c-a67e-a933ebb0b0ae"
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+PUT http://{{controllerIp}}:8181/restconf/config/policy:tenants/policy:tenant/f5c7d344-d1c7-4208-8531-2c2693657e12/endpoint-group/1eaf9a67-a171-42a8-9282-71cf702f61dd
+{
+    "endpoint-group": [
+        {
+            "id": "1eaf9a67-a171-42a8-9282-71cf702f61dd",
+            "network-domain": "7f43a456-2c99-497b-9ecf-7169be0163b9",
+            "consumer-named-selector": [
+                {
+                    "name": "e593f05d-96be-47ad-acd5-ba81465680d5-1eaf9a67-a171-42a8-9282-71cf702f61dd-22282cca-9a13-4d0c-a67e-a933ebb0b0ae",
+                    "contract": [
+                        "22282cca-9a13-4d0c-a67e-a933ebb0b0ae"
+                    ]
+                }
+            ]
+        }
+    ]
+}
+----
+Note that it's possible to create all of this using a single PUT at
+the Tenant level -- the configuration was broken down into these steps
+in order to make it easier to understand the policy configuration process.
+
+In order to resolve policy, Enpoints must be added to the system.
+The following is an example of a REST call used to add an endpoint that
+belongs to one of the Endpoint Groups previously configured above.
+----
+POST http://{{controllerIp}}:8181/restconf/operations/endpoint:register-endpoint
+{
+    "input": {
+        "endpoint-group": "1eaf9a67-a171-42a8-9282-71cf702f61dd",
+        "network-containment" : "d2779562-ebf1-45e6-93a4-78e2362bc418",
+        "l2-context": "7b796915-adf4-4356-b5ca-de005ac410c1",
+        "mac-address": "00:00:00:00:35:02",
+        "l3-address": [
+            {
+                "ip-address": "10.0.35.2",
+                "l3-context": "cbe0cc07-b8ff-451d-8171-9eef002a8e80"
+            }
+        ],
+        "tenant": "f5c7d344-d1c7-4208-8531-2c2693657e12"
+    }
+}
+----
+
+=== Administering or Managing Group Based Policy
+Group Based Policy provides validation of the configured policy,
+and validated policy is reflected in the operational data store.
+The following REST call allows users to view the validated
+operational policy.
+
+You can also verify the Endpoints that have been registered in
+the Endpoint Registry. The following call reads all the Endpoints
+in the Registry:
+
+=== Tutorials
+<optional>
+If there is only one tutorial, you skip the "Tutorials" section and
+instead just lead with the single tutorial's name.
+
+==== <Tutorial Name>
+Ensure that the title starts with a gerund. For example using,
+monitoring, creating, and so on.
+
+===== Overview
+An overview of the use case.
+
+===== Prerequisites
+Provide any prerequisite information, assumed knowledge, or environment
+required to execute the use case.
+
+===== Target Environment
+Include any topology requirement for the use case. Ideally, provide
+visual (abstract) layout of network diagrams and any other useful visual
+aides.
+
+===== Instructions
+Use case could be a set of configuration procedures. Including
+screenshots to help demonstrate what is happening is especially useful.
+Ensure that you specify them separately. For example:
+
+. *Setting up the VM*
+To set up a VM perform the following steps.
+.. Step 1
+.. Step 2
+.. Step 3
+
+. *Installing the feature*
+To install the feature perform the following steps.
+.. Step 1
+.. Step 2
+.. Step 3
+
+. *Configuring the environment*
+To configure the system perform the following steps.
+.. Step 1
+.. Step 2
+.. Step 3
