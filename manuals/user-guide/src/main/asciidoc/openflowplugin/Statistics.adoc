@@ -1,0 +1,129 @@
+[[Statistics]]
+=== Statistics
+
+This section contains high level detail about the statistics collection mechanisms in new OpenFlow plugin.
+
+[[statistics-collection-in-new-openflow-plugin]]
+==== Statistics collection in OpenFlow plugin
+
+The OpenFlow plugin collects following statistics from OpenFlow enabled
+node(switch):
+
+1.  Individual Flow Statistics
+2.  Aggregate Flow Statistics
+3.  Flow Table Statistics
+4.  Port Statistics
+5.  Group Description
+6.  Group Statistics
+7.  Meter Configuration
+8.  Meter Statistics
+9.  Queue Statistics
+10. Node Description
+11. Flow Table Features
+12. Port Description
+13. Group Features
+14. Meter Features
+
+At a high level statistics collection mechanism is divided into
+following three parts
+
+\1) Statistics related
+https://git.opendaylight.org/gerrit/gitweb?p=controller.git;a=tree;f=opendaylight/md-sal/model/model-flow-statistics;h=3488133625ccf18d023bc59aa35c38e922b17d8d;hb=HEAD[YANG
+models, service APIs and notification interfaces] are defined in the
+MD-SAL.
+
+\2) Service APIs (RPCs) defined in yang models are implemented by
+OpenFlow plugin. Notification interfaces are wired up by OpenFlow plugin
+to MD-SAL.
+
+\3)
+https://git.opendaylight.org/gerrit/gitweb?p=controller.git;a=tree;f=opendaylight/md-sal/statistics-manager;hb=HEAD[Statistics
+Manager Module] : This module use service APIs implemented by OpenFlow
+plugin to send statistics requests to all the connected OpenFlow enabled
+nodes. Module also implements notification interfaces to receive
+statistics response from nodes. Once it receives statistics response, it
+augment all the statistics data to the relevant element of the node
+(like node-connector, flow, table,group, meter) and store it in MD-SAL
+operational data store.
+
+[[details-of-statistics-collection]]
+==== Details of statistics collection
+
+* Current implementation collects above mentioned statistics (except
+10-14) at a periodic interval of 15 seconds.
+* Statistics mentioned in 10 to 14 are only fetched when any node
+connects to the controller because these statistics are just static
+details about the respective elements.
+* Whenever any new element is added to node (like flow, group, meter,
+queue) it sends statistics request immediately to fetch the latest
+statistics and store it in the operational data store.
+* Whenever any element is deleted from the node, it immediately remove
+the relevant statistics from operational data store.
+* Statistics data are augmented to their respective element stored in
+the configuration data store. E.g Controller installed flows are stored
+in configuration data store. Whenever Statistics Manager receive
+statistics data related to these flow, it search the corresponding flow
+in the configuration data store and augment statistics in the
+corresponding location in operational data store. Similar approach is
+used for other elements of the node.
+* Statistics Manager stores flow statistics as an unaccounted flow
+statistics in operational data store if there is no corresponding flow
+exist in configuration data store. ID format of unaccounted flow
+statistics is as follows - [#UF$TABLE**Unaccounted-flow-count - e.g
+#UF$TABLE*2*1].
+* All the unaccounted flows will be cleaned up periodically after every
+two cycle of flow statistics collection, given that there is no update
+for these flows in the last two cycles.
+* Statistics Manager only entertains statistics response for the request
+sent by itself. User can write its own statistics collector using the
+statistics service APIs and notification defined in yang models, it
+won't effect the functioning of Statistics Manager.
+* OpenFlow 1.0 don't have concept of Meter and Group, so Statistics
+Manager don't send any group & meter related statistics request to
+OpenFlow 1.0 enabled switch.
+
+[[restconf-uris-to-access-statistics-of-various-node-elements]]
+==== RESTCONF Uris to access statistics of various node elements
+
+* Aggregate Flow Statistics & Flow Table Statistics
+
+------------------------------------------------------------------------------------------------------------------
+GET  http://<controller-ip>:8080/restconf/operational/opendaylight-inventory:nodes/node/{node-id}/table/{table-id}
+------------------------------------------------------------------------------------------------------------------
+
+* Individual Flow Statistics from specific table
+
+---------------------------------------------------------------------------------------------------------------------------------
+GET  http://<controller-ip>:8080/restconf/operational/opendaylight-inventory:nodes/node/{node-id}/table/{table-id}/flow/{flow-id}
+---------------------------------------------------------------------------------------------------------------------------------
+
+* Group Features & Meter Features Statistics
+
+-------------------------------------------------------------------------------------------------
+GET  http://<controller-ip>:8080/restconf/operational/opendaylight-inventory:nodes/node/{node-id}
+-------------------------------------------------------------------------------------------------
+
+* Group Description & Group Statistics
+
+------------------------------------------------------------------------------------------------------------------
+GET  http://<controller-ip>:8080/restconf/operational/opendaylight-inventory:nodes/node/{node-id}/group/{group-id}
+------------------------------------------------------------------------------------------------------------------
+
+* Meter Configuration & Meter Statistics
+
+------------------------------------------------------------------------------------------------------------------
+GET  http://<controller-ip>:8080/restconf/operational/opendaylight-inventory:nodes/node/{node-id}/meter/{meter-id}
+------------------------------------------------------------------------------------------------------------------
+
+* Node Connector Statistics
+
+------------------------------------------------------------------------------------------------------------------------------------
+GET  http://<controller-ip>:8080/restconf/operational/opendaylight-inventory:nodes/node/{node-id}/node-connector/{node-connector-id}
+------------------------------------------------------------------------------------------------------------------------------------
+
+* Queue Statistics
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+GET  http://<controller-ip>:8080/restconf/operational/opendaylight-inventory:nodes/node/{node-id}/node-connector/{node-connector-id}/queue/{queue-id}
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
