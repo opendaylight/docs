@@ -1,0 +1,21 @@
+
+[[how-to-hit-restconf-with-postman]]
+=== How to hit RestConf with Postman
+
+Postman is a useful Chrome app which can be used to test REST APIs.
+
+https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm?hl=en[Install
+Postman for Chrome]
+
+In the chrome browser bar enter
+
+--------------
+chrome://apps/
+--------------
+
+And click on Postman.
+
+Enter the URL. Click on the Headers button on the far right. Enter the
+Accept: header. Click on the Basic Auth Tab at the top and setup the
+username and password. Send.
+

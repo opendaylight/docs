@@ -26,6 +26,8 @@ include::ch-clustering.adoc[Setting Up Clustering on an OpenDaylight Controller]
 
 This second part of the user guide covers project specific usage instructions.
 
+include::openflowplugin/openflowplugin-user.adoc[OpenFlow]
+
 include::vtn/vtn-user.adoc[]
 
 include::bgpcep/odl-bgpcep-bgp-all-user.adoc[BGP]
