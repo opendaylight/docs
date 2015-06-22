@@ -1,0 +1,128 @@
+=== Internal message statistics - overview
+
+We need message counts in OFPlugin for testing and diagnosting purposes.
+Expected result contains amount of messages of particular type per unit
+of time.
+
+=== Implemented strategy
+
+There are 2 tasks - collect counts and expose counts. By collecting the
+counts are grouped by message type and checkpoint. Results are exposed
+via log, osgi and jmx.
+
+[[collect]]
+==== Collect
+
+There are following checkpoints where messages are counted while passing
+(defined as enum):
+
+[source, java]
+----
+  /**
+    * statistic groups overall in OFPlugin
+    */
+   enum STATISTIC_GROUP {
+       /** message from switch, enqueued for processing */
+       FROM_SWITCH_ENQUEUED,
+       /** message from switch translated successfully - source */
+       FROM_SWITCH_TRANSLATE_IN_SUCCESS,
+       /** message from switch translated successfully - target */
+       FROM_SWITCH_TRANSLATE_OUT_SUCCESS,
+       /** message from switch where translation failed - source */
+       FROM_SWITCH_TRANSLATE_SRC_FAILURE,
+       /** message from switch finally published into MD-SAL */
+       FROM_SWITCH_PUBLISHED_SUCCESS,
+       /** message from switch - publishing into MD-SAL failed */
+       FROM_SWITCH_PUBLISHED_FAILURE,
+       
+       /** message from MD-SAL to switch via RPC enqueued */
+       TO_SWITCH_ENQUEUED_SUCCESS,
+       /** message from MD-SAL to switch via RPC NOT enqueued */
+       TO_SWITCH_ENQUEUED_FAILED,
+       /** message from MD-SAL to switch - sent to OFJava successfully */
+       TO_SWITCH_SUBMITTED_SUCCESS,
+       /** message from MD-SAL to switch - sent to OFJava but failed*/
+       TO_SWITCH_SUBMITTED_FAILURE
+   }
+----
+
+When a message passes any of those checkpoints then counter assigned to
+corresponding checkpoint and message class is increased by 1.
+
+[[expose-results]]
+==== Expose results
+
+In order to access statistics there are 3 ways:
+
+* osgi command (on demand) - this is considered deprecated
++
+::
+  `osgi> dumpMsgCount`
+* controller console (stats are dumped here each 10 seconds)
++
+::
+  required logback settings :
+  `<logger name="org.opendaylight.openflowplugin.openflow.md.queue.MessageSpyCounterImpl" level="DEBUG"\/>`
+* JMX (via jconsole)
++
+::
+  start OFplugin with -jmx parameter
+  +
+  tab MBeans contains org.opendaylight.controller
+  +
+  RuntimeBean has a msg-spy-service-impl
+  +
+  Operations provides makeMsgStatistics report functionality
+
+[[example-result]]
+===== Example result
+
+    DEBUG o.o.o.s.MessageSpyCounterImpl - FROM_SWITCH_ENQUEUED: MSG[PortStatusMessage] -> +0 | 1
+    DEBUG o.o.o.s.MessageSpyCounterImpl - FROM_SWITCH_ENQUEUED: MSG[MultipartReplyMessage] -> +24 | 81
+    DEBUG o.o.o.s.MessageSpyCounterImpl - FROM_SWITCH_ENQUEUED: MSG[PacketInMessage] -> +8 | 111
+    DEBUG o.o.o.s.MessageSpyCounterImpl - FROM_SWITCH_TRANSLATE_IN_SUCCESS: MSG[PortStatusMessage] -> +0 | 1
+    DEBUG o.o.o.s.MessageSpyCounterImpl - FROM_SWITCH_TRANSLATE_IN_SUCCESS: MSG[MultipartReplyMessage] -> +24 | 81
+    DEBUG o.o.o.s.MessageSpyCounterImpl - FROM_SWITCH_TRANSLATE_IN_SUCCESS: MSG[PacketInMessage] -> +8 | 111
+    DEBUG o.o.o.s.MessageSpyCounterImpl - FROM_SWITCH_TRANSLATE_OUT_SUCCESS: MSG[QueueStatisticsUpdate] -> +3 | 7
+    DEBUG o.o.o.s.MessageSpyCounterImpl - FROM_SWITCH_TRANSLATE_OUT_SUCCESS: MSG[NodeUpdated] -> +0 | 3
+    DEBUG o.o.o.s.MessageSpyCounterImpl - FROM_SWITCH_TRANSLATE_OUT_SUCCESS: MSG[NodeConnectorStatisticsUpdate] -> +3 | 7
+    DEBUG o.o.o.s.MessageSpyCounterImpl - FROM_SWITCH_TRANSLATE_OUT_SUCCESS: MSG[GroupDescStatsUpdated] -> +3 | 7
+    DEBUG o.o.o.s.MessageSpyCounterImpl - FROM_SWITCH_TRANSLATE_OUT_SUCCESS: MSG[FlowsStatisticsUpdate] -> +3 | 19
+    DEBUG o.o.o.s.MessageSpyCounterImpl - FROM_SWITCH_TRANSLATE_OUT_SUCCESS: MSG[PacketReceived] -> +8 | 111
+    DEBUG o.o.o.s.MessageSpyCounterImpl - FROM_SWITCH_TRANSLATE_OUT_SUCCESS: MSG[MeterFeaturesUpdated] -> +0 | 3
+    DEBUG o.o.o.s.MessageSpyCounterImpl - FROM_SWITCH_TRANSLATE_OUT_SUCCESS: MSG[GroupStatisticsUpdated] -> +3 | 7
+    DEBUG o.o.o.s.MessageSpyCounterImpl - FROM_SWITCH_TRANSLATE_OUT_SUCCESS: MSG[GroupFeaturesUpdated] -> +0 | 3
+    DEBUG o.o.o.s.MessageSpyCounterImpl - FROM_SWITCH_TRANSLATE_OUT_SUCCESS: MSG[MeterConfigStatsUpdated] -> +3 | 7
+    DEBUG o.o.o.s.MessageSpyCounterImpl - FROM_SWITCH_TRANSLATE_OUT_SUCCESS: MSG[MeterStatisticsUpdated] -> +3 | 7
+    DEBUG o.o.o.s.MessageSpyCounterImpl - FROM_SWITCH_TRANSLATE_OUT_SUCCESS: MSG[NodeConnectorUpdated] -> +0 | 12
+    DEBUG o.o.o.s.MessageSpyCounterImpl - FROM_SWITCH_TRANSLATE_OUT_SUCCESS: MSG[FlowTableStatisticsUpdate] -> +3 | 8
+    DEBUG o.o.o.s.MessageSpyCounterImpl - FROM_SWITCH_TRANSLATE_SRC_FAILURE: no activity detected
+    DEBUG o.o.o.s.MessageSpyCounterImpl - FROM_SWITCH_PUBLISHED_SUCCESS: MSG[QueueStatisticsUpdate] -> +3 | 7
+    DEBUG o.o.o.s.MessageSpyCounterImpl - FROM_SWITCH_PUBLISHED_SUCCESS: MSG[NodeUpdated] -> +0 | 3
+    DEBUG o.o.o.s.MessageSpyCounterImpl - FROM_SWITCH_PUBLISHED_SUCCESS: MSG[NodeConnectorStatisticsUpdate] -> +3 | 7
+    DEBUG o.o.o.s.MessageSpyCounterImpl - FROM_SWITCH_PUBLISHED_SUCCESS: MSG[GroupDescStatsUpdated] -> +3 | 7
+    DEBUG o.o.o.s.MessageSpyCounterImpl - FROM_SWITCH_PUBLISHED_SUCCESS: MSG[FlowsStatisticsUpdate] -> +3 | 19
+    DEBUG o.o.o.s.MessageSpyCounterImpl - FROM_SWITCH_PUBLISHED_SUCCESS: MSG[PacketReceived] -> +8 | 111
+    DEBUG o.o.o.s.MessageSpyCounterImpl - FROM_SWITCH_PUBLISHED_SUCCESS: MSG[MeterFeaturesUpdated] -> +0 | 3
+    DEBUG o.o.o.s.MessageSpyCounterImpl - FROM_SWITCH_PUBLISHED_SUCCESS: MSG[GroupStatisticsUpdated] -> +3 | 7
+    DEBUG o.o.o.s.MessageSpyCounterImpl - FROM_SWITCH_PUBLISHED_SUCCESS: MSG[GroupFeaturesUpdated] -> +0 | 3
+    DEBUG o.o.o.s.MessageSpyCounterImpl - FROM_SWITCH_PUBLISHED_SUCCESS: MSG[MeterConfigStatsUpdated] -> +3 | 7
+    DEBUG o.o.o.s.MessageSpyCounterImpl - FROM_SWITCH_PUBLISHED_SUCCESS: MSG[MeterStatisticsUpdated] -> +3 | 7
+    DEBUG o.o.o.s.MessageSpyCounterImpl - FROM_SWITCH_PUBLISHED_SUCCESS: MSG[NodeConnectorUpdated] -> +0 | 12
+    DEBUG o.o.o.s.MessageSpyCounterImpl - FROM_SWITCH_PUBLISHED_SUCCESS: MSG[FlowTableStatisticsUpdate] -> +3 | 8
+    DEBUG o.o.o.s.MessageSpyCounterImpl - FROM_SWITCH_PUBLISHED_FAILURE: no activity detected
+    DEBUG o.o.o.s.MessageSpyCounterImpl - TO_SWITCH_ENQUEUED_SUCCESS: MSG[AddFlowInput] -> +0 | 12
+    DEBUG o.o.o.s.MessageSpyCounterImpl - TO_SWITCH_ENQUEUED_FAILED: no activity detected
+    DEBUG o.o.o.s.MessageSpyCounterImpl - TO_SWITCH_SUBMITTED_SUCCESS: MSG[AddFlowInput] -> +0 | 12
+    DEBUG o.o.o.s.MessageSpyCounterImpl - TO_SWITCH_SUBMITTED_FAILURE: no activity detected
+
+[[getting-stats-from-jconsole]]
+===== Getting stats from jconsole
+
+Run
+
+--------
+jconsole
+--------
+
+image::openflowplugin/odl-ofp-ofplugin-debug-stats.png[OFplugin Debug stats.png,title="OFplugin Debug stats.png" width="500"]

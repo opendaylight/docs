@@ -52,8 +52,6 @@ include::developing-app.adoc[]
 
 = Project-Specific Development Guides
 
-include::openflowplugin/openflowplugin-dev.adoc[OpenFlow]
-
 include::alto/alto-developer-guide.adoc[ALTO]
 
 include::bgpcep/odl-bgpcep-bgp-all-dev.adoc[BGP]
@@ -110,6 +108,8 @@ include::ttp/ttp-cli-tools-dev.adoc[]
 include::usc/odl-usc-channel-dev.adoc[]
 
 include::vtn/vtn-dev.adoc[]
+
+include::openflowplugin/odl-ofp-developer-guide.adoc[]
 
 :numbered!:
 
