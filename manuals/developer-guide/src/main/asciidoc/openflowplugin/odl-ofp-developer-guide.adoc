@@ -1,0 +1,78 @@
+[[openflow-plugin-project-developer-guide]]
+== OpenFlow Plugin Project Developer Guide
+
+Below are topics which are developer specific and which have not been
+covered under the user guide. Please follow the OpenFlow plugin user
+guide first.
+
+
+include::odl-ofp-sequence-diagram.adoc[]
+
+include::odl-ofp-config-subsystem.adoc[]
+
+include::odl-ofp-message-spy.adoc[]
+
+// * OpenDaylight_OpenFlow_Plugin:Backlog:Extensibility[Extensibility Framework]
+
+include::odl-ofp-yang-models.adoc[]
+
+include::odl-ofp-feature-tree.adoc[]
+
+include::odl-ofp-wiring-up-notifications.adoc[]
+
+=== Message Order Preservation
+
+Currently it is in openflowplugin java allocated 2*number of processor's core threads (e. g. if machine with controller contain processor with 4 decates cores then for openflow java there si allocated 8 threads). One thread processes all of the messages from one or more devices which are assigned to this thread. Once message is processed then thread is released for processing other message from the same device or from some of dedicated devices.
+
+In comparation to Helium plugin it isn't necessary to keep messages in the specific queues and it isn't necessary to provide special care about correct message processing which come from the same device.
+
+
+// == Tutorial / How-To
+
+// missing content
+
+// * OpenDaylight_OpenFlow_Plugin::Build_Instructions[Build Instructions]
+
+// * OpenDaylight_OpenFlow_Plugin::MininetFromScratch[Mininet from scratch]
+
+// * OpenDaylight_OpenFlow_Plugin::Mininet with multiple controllers[Mininet with multiple controllers]
+
+// * OpenDaylight_OpenFlow_Plugin:Coding_Hints[Coding hints]
+
+// * OpenDaylight_OpenFlow_Plugin::Wiring up Notifications[Wiring up Notifications]
+
+// * OpenDaylight_OpenFlow_Plugin::Python_test_scripts[Python test-scripts]
+
+// * OpenDaylight_OpenFlow_Plugin:Robot_Framework_Tests[Setup robot testing environment]
+
+// * OpenDaylight_OpenFlow_Plugin::LiProposal_dev_setup[Lithium proposal - dev setup]
+
+[[important-dependant-distributions]]
+=== Important dependant distributions
+
+Some projects contain distributions which depends on OFPlugin and can be
+easily broken. In case of upcomming change in OFPlugin capable of
+breaking them (dependency change, configSubsystem change, stinky suspect
+wild hack change.. etc.) these distribution should be tested on (*before
+merge*) :
+
+* ability to start and listen on default openflow ports (6633, 6653)
+* ability to connect mininet with at least tree,2 topology
+* ability to list mininet nodes via restconf
+
+If there are issues, try to retest using OFPlugin without the change in
+order to prove that OFPlugin is the cause. Then either push fixes to
+those distributions or contact developers. This way we can avoid
+blocking people developing against those distributions.
+
+Those distributions are:
+
+* https://git.opendaylight.org/gerrit/gitweb?p=openflowplugin.git;a=tree;f=distribution/karaf;hb=HEAD[local plugin base distro] - it is necessary to build as
++
+ mvn clean install -P create-karaf-archive
++
+
+* https://git.opendaylight.org/gerrit/gitweb?p=integration.git;a=tree;f=distributions/karaf;hb=HEAD[integration base distro]
+
+* https://git.opendaylight.org/gerrit/gitweb?p=ovsdb.git;a=tree;f=karaf;hb=HEAD[ovsdb opendaylight distro]
+
