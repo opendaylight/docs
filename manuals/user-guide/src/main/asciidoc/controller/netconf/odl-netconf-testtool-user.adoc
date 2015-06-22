@@ -1,0 +1,43 @@
+=== NETCONF testtool
+*NETCONF testtool is a set of standalone runnable jars that can:*
+
+* Simulate NETCONF devices(suitable for scale testing)
+* Stress/Performance test NETCONF devices
+* Stress/Performance test RESTCONF devices
+
+These jars are part of OpenDaylight's controller project and are built from the
+NETCONF codebase in OpenDaylight.
+
+TIP: Download testtool from OpenDaylight Nexus at: http://nexus.opendaylight.org/#nexus-search;quick~netconf-testtool
+
+*Nexus contains 3 executable tools:*
+
+* executable.jar - device simulator
+* stress.client.tar.gz - NETCONF stress/performance measuring tool
+* perf-client.jar - RESTCONF stress/performance measuring tool
+
+TIP: Each executable tool provides help. Just invoke +java -jar
+<name-of-the-tool.jar> --help+
+
+==== NETCONF device simulator
+Detailed information for NETCONF device simulator can be found at: https://wiki.opendaylight.org/view/OpenDaylight_Controller:Netconf:Testtool
+////
+TODO migrate the guide from wiki here
+////
+
+==== NETCONF stress/performance measuring tool
+This is basically a NETCONF client that puts NETCONF servers under
+heavy load of NETCONF RPCs and measures the time until a configurable
+amount of them is processed.
+
+////
+TODO add a guide on how to do this with OpenDaylight
+////
+
+==== RESTCONF stress-performance measuring tool
+Very similar to NETCONF stress tool with the difference of using
+RESTCONF protocol instead of NETCONF.
+
+////
+TODO add a guide on how to do this with OpenDaylight
+////
