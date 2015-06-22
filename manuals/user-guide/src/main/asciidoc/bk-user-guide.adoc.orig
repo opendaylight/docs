@@ -15,12 +15,11 @@ This first part of the user guide covers the basic user operations of the OpenDa
 
 include::ch-introduction.adoc[OpenDaylight Controller Overview]
 
-//TODO: these three includes are a hugely ugly hack that needs to go
-include::../../../../getting-started-guide/src/main/asciidoc/ch-dlux.adoc[]
+include::ch-dlux-userguide.adoc[Using the OpenDaylight User Interface (DLUX)]
 
-include::../../../../getting-started-guide/src/main/asciidoc/ch-xsql-commands.adoc[]
+include::ch-xsql-commands.adoc[Running XSQL Console Commands and Queries]
 
-include::../../../../getting-started-guide/src/main/asciidoc/ch-clustering.adoc[]
+include::ch-clustering.adoc[Setting Up Clustering on an OpenDaylight Controller]
 
 = Applications and Plugins
 
@@ -74,6 +73,10 @@ include::ttp/ttp-cli-tools-user.adoc[TTP]
 
 include::usc/odl-usc-channel-user.adoc[USC]
 
+<<<<<<< HEAD
 include::vtn/vtn-user.adoc[]
+=======
+include::sxp/odl-sxp-user.adoc[]
 
 include::controller/netconf/odl-netconf-user.adoc[]
+>>>>>>> Introduce user-guide for netconf
