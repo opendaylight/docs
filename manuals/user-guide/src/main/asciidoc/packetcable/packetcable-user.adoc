@@ -1,0 +1,126 @@
+[[pcmm-user-guide-preliminary]]
+= PCMM User Guide (*Preliminary*)
+
+[[system-overview]]
+== System Overview
+
+These components introduce a DOCSIS QoS Service Flow management using
+the PCMM protocol. The driver component is responsible for the
+PCMM/COPS/PDP functionality required to service requests from
+PacketCable Provider and FlowManager. Requests are transposed into PCMM
+Gate Control messages and transmitted via COPS to the CMTS. This plugin
+adheres to the PCMM/COPS/PDP functionality defined in the CableLabs
+specification. PacketCable solution is an MDSAL compliant component.
+
+image:Screenshot6.png[Screenshot6.png,title="Screenshot6.png"]
+
+image:Odp_diagram_helium_v6.jpg[Odp_diagram_helium_v6.jpg,title="Odp_diagram_helium_v6.jpg"]
+
+[[dependency-map]]
+== Dependency Map
+
+image:ODL-Helium-dependency.png[ODL-Helium-dependency.png,title="ODL-Helium-dependency.png"]
+
+[[packetcable-components]]
+== Packetcable Components
+
+packetcable is comprised of three OpendayLight bundles
+
+[cols=",",options="header",]
+|=======================================================================
+|Bundle |Description
+|packetcable-model |Contains the YANG information model for flows and
+nodes
+
+|packetcable-provider |Provider hosts the model processing, RESTCONF,
+API implementation, and brokers requests to consumer
+
+|packetcable-consumer |Consumer hosts packet codec and sends requests to
+driver
+
+|packetcable-driver |The codec for transforming the model into the
+appropriate PCMM Gate message for flows and CMTS connections.
+|=======================================================================
+
+See
+https://git.opendaylight.org/gerrit/gitweb?p=packetcable.git;a=tree;f=packetcable-model/src/main/yang[YANG
+Model]
+
+[[features-to-install]]
+=== Features to Install
+
+---------------------------------------------------------------------------------------------------------------------------
+opendaylight-user@root>feature:install odl-restconf odl-l2switch-switch odl-dlux-core odl-mdsal-apidocs odl-packetcable-all
+---------------------------------------------------------------------------------------------------------------------------
+
+[[accessing-user-interface-assets]]
+== Accessing User Interface Assets
+
+[[management-ui]]
+=== Management UI
+
+[[install-node.js]]
+==== Install Node.js
+
+Use the following script install_nodejs.sh to guide you through Node.js
+installation on Ubuntu.
+
+-------------------------------------------------
+#!/bin/sh 
+
+sudo apt-get install nodejs nodejs-legacy npm git
+sudo npm -g install grunt
+sudo npm -g install grunt-cli
+sudo npm -g install bower
+sudo npm -g install karma
+sudo npm -g install karma-cli
+-------------------------------------------------
+
+NOTE: Not needed unless running standalone.
+https://wiki.opendaylight.org/view/OpenDaylight_dlux:Setup_and_Run[Setup
+dLux for Development]
+
+http://localhost:8181/dlux/index.html
+
+user: admin
+
+password: admin
+
+Sign in
+
+image:Screenshot4.png[|Dlux Login,title="|Dlux Login"]
+
+Manage Flows
+
+image:Screenshot3.png[|Dlux Flows,title="|Dlux Flows"]
+
+Manage Nodes
+
+image:Screenshot2.png[|Dlux Nodes,title="|Dlux Nodes"]
+
+[[explore-and-exercise-the-packetcable-rest-api]]
+=== Explore and exercise the PacketCable REST API
+
+http://localhost:8181/apidoc/explorer/index.html
+
+link:#RESTCONF_API_Explorer[ See Explorer ]
+
+[[Add CMTS]]
+== Adding a CMTS to OpenDaylight Inventory
+
+Add a CMTS to Opendaylight Inventory
+
+image:Screenshot1.png[Add CMTS using RESTCONF
+Explorer,title="Add CMTS using RESTCONF Explorer"]
+
+[[postman]]
+=== Postman
+
+https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm?hl=en[Configure
+the Chrome browser]
+
+https://git.opendaylight.org/gerrit/gitweb?p=packetcable.git;a=tree;f=packetcable-client[Download
+and import sample packetcable collection]
+
+image:Screenshot5.png[Postman,title="Postman"]
+
