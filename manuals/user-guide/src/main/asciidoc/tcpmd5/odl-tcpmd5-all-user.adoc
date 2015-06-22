@@ -216,7 +216,9 @@ CAUTION: You have to make *separate* POST requests for each module/service!
 
 ==== BGP
 
-CAUTION: You have to introduce modules and services mentioned in the previous section.  Your BGP client needs to be *ALREADY* configured. Check User Guide for BGP. // TODO: link to BGP section
+CAUTION: You have to introduce modules and services mentioned in the previous section.  Your BGP client needs to be *ALREADY* configured. Check User Guide for BGP.
+
+CAUTION: You need to copypaste FULL module in order to replace it. This guide shows you part you need to change.
 
 . Enabling TCPMD5 in BGP configuration:
 +
@@ -237,8 +239,11 @@ CAUTION: You have to introduce modules and services mentioned in the previous se
   <type xmlns:x="urn:opendaylight:params:xml:ns:yang:controller:tcpmd5:netty:cfg">x:md5-server-channel-factory</type>
   <name>md5-server-channel-factory</name>
  </md5-server-channel-factory>
+ ...
 </module>
 ----
+
+CAUTION: You need to copypaste FULL module in order to replace it. This guide shows you part you need to change.
 
 . Set password:
 +
@@ -251,13 +256,16 @@ CAUTION: You have to introduce modules and services mentioned in the previous se
 <module xmlns="urn:opendaylight:params:xml:ns:yang:controller:config">
  <type xmlns:x="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">x:bgp-peer</type>
  <name>example-bgp-peer</name>
- <password xmlns="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">changeme</password> <!--CHANGE THE VALUE -->
+ <password xmlns="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">changeme</password>
+ ...
 </module>
 ----
 
 ==== PCEP
 
 CAUTION: You have to introduce modules and services mentioned in the previous section.
+
+CAUTION: You need to copypaste FULL module in order to replace it. This guide shows you part you need to change.
 
 . Enable TCPMD5 in PCEP configuration:
 +
@@ -278,8 +286,11 @@ CAUTION: You have to introduce modules and services mentioned in the previous se
   <type xmlns:x="urn:opendaylight:params:xml:ns:yang:controller:tcpmd5:netty:cfg">x:md5-server-channel-factory</type>
   <name>md5-server-channel-factory</name>
  </md5-server-channel-factory>
+ ...
 </module>
 ----
+
+CAUTION: You need to copypaste FULL module in order to replace it. This guide shows you part you need to change.
 
 . Set password:
 +
@@ -295,5 +306,6 @@ CAUTION: You have to introduce modules and services mentioned in the previous se
   <address xmlns="urn:opendaylight:params:xml:ns:yang:controller:pcep:topology:provider">192.0.2.2</address> <!--CHANGE THE VALUE -->
   <password>changeme</password> <!--CHANGE THE VALUE -->
  </client>
+ ...
 </module>
 ----
