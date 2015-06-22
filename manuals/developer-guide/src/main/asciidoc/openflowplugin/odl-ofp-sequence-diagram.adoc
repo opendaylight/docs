@@ -1,0 +1,63 @@
+==== Sequence Diagrams
+
+===== Session Establishment
+
+*OpenFlowJava* provides interface #SwitchConnectionHandler# which contains method _onSwitchConnected_ (step 1). This event is:
+
+* raised in *OpenFlowJava* when device is  connected to controller. 
+* caught in #ConnectionManagerImpl# class where is created new instance of #ConnectionContextImpl# (step 1.1) and also instance of #HandshakeManagerImpl# (which uses #HandshakeListenerImpl#) and #ConnectionReadyListenerImpl#.
+
+#ConnectionReadyListenerImpl# contains method _onConnectionReady()_ which is called when connection is prepared. This method starts handsake with device (switch) from openflowplugin site. Handshake can be also started from device site. In this case method _shake()_ from #HandshakeManagerImpl# is called (steps 1.1.1 and 2).
+
+Handshake part consists expect exchange of hello message also from exchange of information about device features (steps 2.1. and 3). This information are requested via #HandshakeManagerImpl#. After receiving device feature #HandshakeListenerImpl# is notifed via _onHanshakeSuccessfull()_ method. Data about device feature, node id and connection state are stored to *ConnectionContext* and method _deviceConnected()_ of #DeviceManagerImpl# is called.
+
+In method _deviceConnected()_ following actions are done:
+
+* new transaction chain is created (step 4.1)
+* new instance of #DeviceContext# is created (step 4.2.2) 
+* device context is initialized. Static context of device is requested via calling of method _createDeviceFeaturesForOF()_. This data consists of table, group, meter features and port description. (step 4.2.1 and 4.2.1.1). In this method is also created instance of #RequestContext# for each type of feature.
+
+Device responses to these requests (step 4.2.1.1) are multipart replies (step 5) which are processed and stored to operational datastore. After it (step 5.1) is in callback (part of _initializeDeviceContext()_ in _deviceConnected()_ methods) called method _onDeviceCtxLevelUp()_ from *StatisticsManager* (step 5.1.1).
+
+In this method it is firstly created new instance of *StatisticsContextImpl* (step 5.1.1.1). On this instance is called method _gatherDynamicStatistics()_ which returns future. In this method are called method for getting dynamic data (flows, tables, groups) from device (step 5.1.1.2, 5.1.1.2.1, 5.1.1.2.1.1) and if everything is OK this data are also stored to operational DS.
+If future is successfull then it is processed (step 6.1.1) in callback in *StatisticsManager* as follows:
+
+* next polling of statistics is scheduled
+* device state is set to synchronized (step 6.1.1.2)
+* the method _onDeviceContextLevelUp()_ in RpcManagerImpl is called
+
+In this method is created new instance of *RequestContextImpl* and are registered implementation of all supported services and is called _onDeviceContextLevelUp()_ in *DeviceManagerImpl* (step 6.1.1.2.1.2) where information about new device is also stored do operational DS (step 6.1.1.2.2)
+
+
+
+
+
+
+image:openflowplugin/odl-ofp-session-establishment.jpg[SessionEstablishment, title="Session establishment", width="600"]
+
+===== Message Lifecycle Diagram
+image::openflowplugin/odl-ofp-message-lifecycle.jpg[MessageLifecycle,title="MessageLifecycle",width="500"]
+
+===== Connection Sequence (Handshake) Diagram
+
+====== Flow Diagram
+
+image::openflowplugin/odl-ofp-handshake.png[Handshake,title="Handshake",width="500"]
+
+====== Sequence Diagram
+
+image::openflowplugin/odl-ofp-of10-switch-handshake-sequence.png[Core Code,title="Core Code",width="500"]
+
+===== Message Order Preservation Diagram
+
+image::openflowplugin/odl-ofp-message-order-preservation.jpg[MessageOrderPreservation,title="MessageOrderPreservation",width="500"]
+
+
+===== Add Flow Sequence Diagram
+
+image::openflowplugin/odl-ofp-add-flow.png[Add flow,title="Add flow",width="500"]
+
+===== Generic Notification Sequence Diagram
+
+image::openflowplugin/odl-ofp-generic-notification.png[Generic notification,title="Generic notification",width="500"]
+
