@@ -247,14 +247,62 @@ First, configure RIB. This module is already present in the configuration,
 therefore we change only the parameters we need. In this case, it's
 *bgp-rib-id* and *local-as*.
 
-.*POST:*
+*URL:* _
+_http://127.0.0.1:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules/module/odl-bgp-rib-impl-cfg:rib-impl/example-bgp-rib_
+
+*PUT:*
 [source,xml]
 ----
 <module xmlns="urn:opendaylight:params:xml:ns:yang:controller:config">
-  <type xmlns:x="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">x:rib-impl</type>
-  <name>example-bgp-rib</name>
-  <bgp-rib-id xmlns="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">192.0.2.2</bgp-rib-id>
-  <local-as xmlns="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">64496</local-as>
+ <type xmlns:x="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">x:rib-impl</type>
+ <name>example-bgp-rib</name>
+ <session-reconnect-strategy xmlns="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">
+  <type xmlns:x="urn:opendaylight:params:xml:ns:yang:controller:protocol:framework">x:reconnect-strategy-factory</type>
+  <name>example-reconnect-strategy-factory</name>
+ </session-reconnect-strategy>
+ <rib-id xmlns="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">example-bgp-rib</rib-id>
+ <extensions xmlns="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">
+  <type xmlns:x="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:spi">x:extensions</type>
+  <name>global-rib-extensions</name>
+ </extensions>
+ <codec-tree-factory xmlns="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">
+  <type xmlns:x="urn:opendaylight:params:xml:ns:yang:controller:md:sal:binding">x:binding-codec-tree-factory</type>
+  <name>runtime-mapping-singleton</name>
+ </codec-tree-factory>
+ <tcp-reconnect-strategy xmlns="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">
+  <type xmlns:x="urn:opendaylight:params:xml:ns:yang:controller:protocol:framework">x:reconnect-strategy-factory</type>
+  <name>example-reconnect-strategy-factory</name>
+ </tcp-reconnect-strategy>
+ <data-provider xmlns="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">
+  <type xmlns:x="urn:opendaylight:params:xml:ns:yang:controller:md:sal:binding">x:binding-async-data-broker</type>
+  <name>pingpong-binding-data-broker</name>
+ </data-provider>
+ <local-as xmlns="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">64496</local-as>
+ <bgp-dispatcher xmlns="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">
+  <type>bgp-dispatcher</type>
+  <name>global-bgp-dispatcher</name>
+ </bgp-dispatcher>
+ <dom-data-provider xmlns="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">
+  <type xmlns:x="urn:opendaylight:params:xml:ns:yang:controller:md:sal:dom">x:dom-async-data-broker</type>
+  <name>pingpong-broker</name>
+ </dom-data-provider>
+ <local-table xmlns="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">
+  <type>bgp-table-type</type>
+  <name>ipv4-unicast</name>
+ </local-table>
+ <local-table xmlns="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">
+  <type>bgp-table-type</type>
+  <name>ipv6-unicast</name>
+ </local-table>
+ <local-table xmlns="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">
+  <type>bgp-table-type</type>
+  <name>linkstate</name>
+ </local-table>
+ <local-table xmlns="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">
+  <type>bgp-table-type</type>
+  <name>flowspec</name>
+ </local-table>
+ <bgp-rib-id xmlns="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">192.0.2.2</bgp-rib-id>
 </module>
 ----
 
@@ -262,7 +310,9 @@ IMPORTANT: MIGHT NOT BE NEEDED depending on your BGP router, you might need a
 switch from linkstate attribute type 99 to 29. Check with your router vendor.
 Switch the field to true if your router supports type 29.
 
-.*POST:*
+*URL:* _http://127.0.0.1:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules/module/odl-bgp-linkstate-cfg:bgp-linkstate/bgp-linkstate_
+
+*PUT:*
 [source,xml]
 ----
 <module xmlns="urn:opendaylight:params:xml:ns:yang:controller:config">
@@ -340,8 +390,6 @@ BGP Best Path Selection algorithm.
  </data-broker>
 </module>
 ----
-
-To populate the RIB through the RESTCONF : //TODO: internal link to Populate RIB
 
 === Tutorials ===
 
