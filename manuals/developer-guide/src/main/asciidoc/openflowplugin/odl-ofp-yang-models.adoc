@@ -1,0 +1,50 @@
+[[yang-models-ans-api]]
+==== Yang models ans API
+
+
+
+[cols=",,",options="header",]
+|=======================
+|Model |DOC
+2+e|*Openflow basic types*
+|link:https://git.opendaylight.org/gerrit/gitweb?p=openflowplugin.git;f=model/model-flow-base/src/main/yang/opendaylight-table-types.yang;a=blob[opendaylight-table-types.yang] 	|link:https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-merge-master/lastSuccessfulBuild/artifact/model/model-flow-base/target/site/models/opendaylight-table-types.html[YangDOC]
+
+|link:https://git.opendaylight.org/gerrit/gitweb?p=openflowplugin.git;f=model/model-flow-base/src/main/yang/opendaylight-action-types.yang;a=blob[opendaylight-action-types.yang]|  	link:https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-merge-master/lastSuccessfulBuild/artifact/model/model-flow-base/target/site/models/opendaylight-action-types.html[YangDOC]
+
+|link:https://git.opendaylight.org/gerrit/gitweb?p=openflowplugin.git;f=model/model-flow-base/src/main/yang/opendaylight-flow-types.yang;a=blob[opendaylight-flow-types.yan]	| 	link:https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-merge-master/lastSuccessfulBuild/artifact/model/model-flow-base/target/site/models/opendaylight-flow-types.html[YangDOC]
+
+|link:https://git.opendaylight.org/gerrit/gitweb?p=openflowplugin.git;f=model/model-flow-base/src/main/yang/opendaylight-meter-types.yang;a=blob[opendaylight-meter-types.yang] 	| 	link:https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-merge-master/lastSuccessfulBuild/artifact/model/model-flow-base/target/site/models/opendaylight-meter-types.html[YangDOC]
+
+|link:https://git.opendaylight.org/gerrit/gitweb?p=openflowplugin.git;f=model/model-flow-base/src/main/yang/opendaylight-group-types.yang;a=blob[opendaylight-group-types.yang]	| 	link:https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-merge-master/lastSuccessfulBuild/artifact/model/model-flow-base/target/site/models/opendaylight-group-types.html[YangDOC]
+
+|link:https://git.opendaylight.org/gerrit/gitweb?p=openflowplugin.git;f=model/model-flow-base/src/main/yang/opendaylight-match-types.yang;a=blob[opendaylight-match-types.yang] 	| 	link:https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-merge-master/lastSuccessfulBuild/artifact/model/model-flow-base/target/site/models/opendaylight-match-types.html[YangDOC]
+
+|link:https://git.opendaylight.org/gerrit/gitweb?p=openflowplugin.git;f=model/model-flow-base/src/main/yang/opendaylight-port-types.yang;a=blob[opendaylight-port-types.yang] 	| 	link:https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-merge-master/lastSuccessfulBuild/artifact/model/model-flow-base/target/site/models/opendaylight-port-types.html[YangDOC]
+
+|link:https://git.opendaylight.org/gerrit/gitweb?p=openflowplugin.git;f=model/model-flow-base/src/main/yang/opendaylight-queue-types.yang;a=blob[opendaylight-queue-types.yang] 	| 	https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-merge-master/lastSuccessfulBuild/artifact/model/model-flow-base/target/site/models/opendaylight-queue-types.html[YangDOC]
+2+e|*Openflow services*
+|sal-table.yang 	| 	YangDOC
+|sal-group.yang 	| 	YangDOC
+|sal-queue.yang 	| 	YangDOC
+|flow-errors.yang 	| 	YangDOC
+|flow-capable-transaction.yang 	| 	YangDOC
+|sal-flow.yang 	| 	YangDOC
+|sal-meter.yang 	| 	YangDOC
+|flow-topology-discovery.yang 	| 	YangDOC
+|node-errors.yang 	| 	YangDOC
+|node-config.yang 	| 	YangDOC
+|sal-echo.yang 	| 	YangDOC
+|sal-port.yang 	| 	YangDOC
+|packet-processing.yang 	| 	YangDOC
+|flow-node-inventory.yang 	| 	YangDOC
+2+e|*Openflow statistics*
+|opendaylight-queue-statistics.yang 	| 	YangDOC
+|opendaylight-flow-table-statistics.yang 	| 	YangDOC
+|opendaylight-port-statistics.yang 	| 	YangDOC
+|opendaylight-statistics-types.yang 	| 	YangDOC
+|opendaylight-group-statistics.yang 	| 	YangDOC
+|opendaylight-flow-statistics.yang 	| 	YangDOC
+|opendaylight-meter-statistics.yang 	| 	YangDOC
+|*Openflow basic types*
+|=======================
+

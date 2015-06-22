@@ -1,0 +1,30 @@
+==== Sequence Diagrams
+
+[[message-lifecycle-diagram]]
+===== Message Lifecycle Diagram
+
+image::openflowplugin/odl-ofp-message-lifecycle.jpg[MessageLifecycle,title="MessageLifecycle",width="500"]
+
+===== Connection Sequence (Handshake) Diagram
+
+====== Flow Diagram
+
+image::openflowplugin/odl-ofp-handshake.png[Handshake,title="Handshake",width="500"]
+
+====== Sequence Diagram
+
+image::openflowplugin/odl-ofp-of10-switch-handshake-sequence.png[Core Code,title="Core Code",width="500"]
+
+===== Message Order Preservation Diagram
+
+image::openflowplugin/odl-ofp-message-order-preservation.jpg[MessageOrderPreservation,title="MessageOrderPreservation",width="500"]
+
+
+===== Add Flow Sequence Diagram
+
+image::openflowplugin/odl-ofp-add-flow.png[Add flow,title="Add flow",width="500"]
+
+===== Generic Notification Sequence Diagram
+
+image::openflowplugin/odl-ofp-generic-notification.png[Generic notification,title="Generic notification",width="500"]
+
