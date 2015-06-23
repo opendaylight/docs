@@ -2,8 +2,6 @@
 
 === Overview
 
-The lispflowmapping-all feature enables the LISP Mapping Service in OpenDaylight.
-
 ==== Locator/ID Separation Protocol
 
 http://tools.ietf.org/html/rfc6830[Locator/ID Separation Protocol (LISP)] is a
@@ -25,7 +23,7 @@ providing:
 * A data plane that specifies how the virtualized network addresses are
   encapsulated in addresses from the underlying physical network.
 * A control plane that stores the mapping of the virtual-to-physical address
-  spaces and the associated forwarding policies and serves this information to
+  spaces, the associated forwarding policies and serves this information to
   the data plane on demand.
 
 Network programmability is achieved by programming forwarding policies such as
@@ -61,7 +59,7 @@ devices must be configured to use this OpenDaylight service as their Map Server
 and/or Map Resolver.
 
 The southbound LISP plugin supports the LISP control protocol (Map-Register,
-Map-Request, Map-Reply messages), and can also be used at register mappings in
+Map-Request, Map-Reply messages), and can also be used to register mappings in
 the OpenDaylight mapping service.
 
 === LISP Flow Mapping Architecture
@@ -74,42 +72,44 @@ image::lispflow-technical-arch-overview-helium.jpg["LISP Mapping Service Interna
 
 A brief description of each module is as follows:
 
-* *DAO:* This layer separates the LISP logic from the database, so that we can
-separate the map server and map resolver from the specific implementation of
-the DHT (Distributed Hash Table). Currently we have an implementation of this
-layer with the controller cluster service as a DHT, but it can be switched to
-any other DHT and you only need to implement the ILISPDAO interface.
+* *DAO (Data Access Object):* This layer separates the LISP logic from the
+  database, so that we can separate the map server and map resolver from the
+  specific implementation of the mapping database. Currently we have an
+  implementation of this layer with an in-memory HashMap, but it can be switched
+  to any other key/value store and you only need to implement the ILispDAO
+  interface.
 
-* *Map Server:* This module processes the adding or registration of keys and
-  mappings. For a detailed specification of LISP Map Server, see
-  http://tools.ietf.org/search/rfc6830[LISP].
+* *Map Server:* This module processes the adding or registration of
+  authentication tokens (keys) and mappings. For a detailed specification of
+  LISP Map Server, see http://tools.ietf.org/search/rfc6830[LISP].
 * *Map Resolver:* This module receives and processes the mapping lookup queries
   and provides the mappings to requester. For a detailed specification of LISP
   Map Server, see http://tools.ietf.org/search/rfc6830[LISP].
 * *Northbound API:* This is part of the OpenDaylight northbound API. This
   module enables defining key-EID associations as well as adding mapping
   information through the Map Server. Key-EID associations can also be queried
-  via this API. The Northbound API also provides capability of querying the
+  via this API. The northbound API also provides capability of querying the
   mapping information for an EID prefix.
 * *Neutron:* This module implements the OpenDaylight Neutron Service APIs. It
   provides integration between the LISP service and the OpenDaylight Neutron
-  service.
+  service, and thus OpenStack.
 * *NETCONF:* This module enables the LISP service to communicate to
   NETCONF-enabled devices through OpenDaylight's NETCONF plugin.
 * *Java API:* The API module exposes the Map Server and Map Resolver
-  capabilities via Java API.
+  capabilities via a Java API.
 * *LISP Southbound Plugin:* This plugin enables data plane devices that support
-  LISP control plane protocol (see LISP) to register and query mappings to the
+  LISP control plane protocol (see  see http://tools.ietf.org/search/rfc6830[LISP])
+  to register and query mappings to the
   LISP Flow Mapping via the LISP control plane protocol.
 
 
 === Configuring LISP Flow Mapping
 
 In order to use the LISP mapping service for registering EID to RLOC mappings
-from NB or SB, keys have to be defined for the EID prefixes first. Once a key
+from northbound or southbound, keys have to be defined for the EID prefixes first. Once a key
 is defined for an EID prefix, it can be used to add mappings for that EID
-prefix multiple times. If the service is going to be used to process Map
-Register messages from the southbound LISP plugin, the same key must be used by
+prefix multiple times. If the service is going to be used to process Map-Register
+messages from the southbound LISP plugin, the same key must be used by
 the data plane device to create the authentication data in the Map-Register
 messages for the associated EID prefix.
 
@@ -139,373 +139,232 @@ This section provides a tutorial demonstrating various features in this service.
 ==== Creating a LISP overlay
 
 This section provides instructions to set up a LISP network of three nodes (one
-"client" node and two "server" nodes) using LISPmob and Open vSwitch (OVS) as
-data plane LISP nodes and the LISP Flow Mapping project from OpenDaylight as
-the LISP programmable mapping system for the LISP network.
+"client" node and two "server" nodes) using LISPmob as data plane LISP nodes
+and the LISP Flow Mapping project from OpenDaylight as the LISP programmable
+mapping system for the LISP network.
 
 ===== Overview
 
 The steps shown below will demonstrate setting up a LISP network between a
-client and two servers. Then performing a failover between the two "server"
+client and two servers, then performing a failover between the two "server"
 nodes.
 
 ===== Prerequisites
 
-NOTE: It is more convenient to use the Postman Chrome browser plugin to edit
-and send the requests. The project git repository hosts a collection of the
-requests that are used in this tutorial in the
-+resources/tutorial/ODL_Summit_LISP_Demo.json+ file. You can import this file
-to Postman by following 'Collections->Import a collection->Import from URL' and
-then entering the following link:
-+https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=blob_plain;f=resources/tutorial/ODL_Summit_LISP_Demo.json;hb=refs/heads/develop+.
+* *OpenDaylight Lithium*
+* *The Postman Chrome App*: the most convenient way to follow along this
+tutorial is to use the https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en[Postman Chrome App]
+to edit and send the requests. The
+project git repository hosts a collection of the requests that are used in this
+tutorial in the +resources/tutorial/Lithium_Tutorial.json.postman_collection+
+file. You can import this file to Postman by clicking 'Import' at the top,
+choosing 'Download from link' and then entering the following URL:
++https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=blob_plain;f=resources/tutorial/Lithium_Tutorial.json.postman_collection;hb=refs/heads/stable/lithium+.
 Alternatively, you can save the file on your machine, or if you have the
-repository checked out, you can import from there. You will need to define some
-variables to point to your OpenDaylight controller instance.
-
-NOTE: It is assumed that commands are executed as the 'root' user.
-
-NOTE: To set up a basic LISP network overlay (no fail-over) without dealing
-      with OVS, you can skip steps 7 and 8 and just use LISPmob as your
-      dataplane. If you do want to test fail-over, but not using OVS, skip
-      steps 7 and 8, but set up LISPmob on *server2* as well, with identical
-      configuration.
+repository checked out, you can import from there. You will need to create a
+new Postman Environment and define some variables within: +controllerHost+ set
+to the hostname or IP address of the machine running the ODL instance, and
++restconfPort+ to 8181, if you didn't modify the default controller settings.
+* LISPmob version 0.4.1 or higher
+* A virtualization platform
 
 ===== Target Environment
 
 The three LISP data plane nodes and the LISP mapping system are assumed to be
-running in Linux virtual machines using the following IPv4 addresses on their
-eth0 interfaces (please adjust configuration files, JSON examples, etc.
-accordingly if you're using another addressing scheme):
+running in Linux virtual machines, which have the +eth0+ interface in NAT mode
+to allow outside internet access and +eth1+ connected to a host-only network,
+with the following IP addresses (please adjust configuration files, JSON
+examples, etc. accordingly if you're using another addressing scheme):
 
 .Nodes in the tutorial
 [align="right",options="header"]
 |===
 | Node          |  Node Type     | IP Address
-| *controller*  |  OpenDaylight  | 10.33.12.32
-| *client*      |  LISPmob       | 10.33.12.35
-| *server1*     |  LISPmob       | 10.33.12.37
-| *server2*     |  Open vSwitch  | 10.33.12.44
+| *controller*  |  OpenDaylight  | 192.168.16.11
+| *client*      |  LISPmob       | 192.168.16.30
+| *server1*     |  LISPmob       | 192.168.16.31
+| *server2*     |  LISPmob       | 192.168.16.32
 |===
 
-Note: While the tutorial uses LISPmob and OVS as the data plane, they could be
-any LISP-enabled HW or SW router (commercial/open source).
+NOTE: While the tutorial uses LISPmob as the data plane, it could be any
+LISP-enabled hardware or software router (commercial/open source).
 
 ===== Instructions
 
-The below steps are using the command line tool cURL to talk to the LISP Flow
-Mapping northbound REST API. This is so that you can see the actual request
-URLs and body content on the page.
+The below steps use the command line tool cURL to talk to the LISP Flow
+Mapping RPC REST API. This is so that you can see the actual request URLs and
+body content on the page.
 
-. Install and run OpenDaylight Helium release on the controller VM. Please
-  follow the general OpenDaylight Helium Installation Guide for this step. Once
-  the OpenDaylight controller is running install the 'odl-openflowplugin-all',
-  'odl-adsal-compatibility-all', 'odl-ovsdb-all', and 'odl-lispflowmapping-all'
-  features from the CLI:
+. Install and run OpenDaylight Lithium release on the controller VM. Please
+  follow the general OpenDaylight Lithium Installation Guide for this step. Once
+  the OpenDaylight controller is running install the 'odl-openflowplugin-all'
+  feature from the Karaf CLI:
 
- feature:install odl-openflowplugin-all odl-adsal-compatibility-all odl-ovsdb-all odl-lispflowmapping-all
-+
-NOTE: If you're not planning on using OVS you can skip the first three and
-install 'odl-lispflowmapping-all' only.
+ feature:install odl-lispflowmapping-all
 +
 It takes quite a while to load and initialize all features and their
 dependencies. It's worth running the command +log:tail+ in the Karaf console to
-see when is the log output winding down, and continue after that.
+see when the log output is winding down, and continue with the tutorial after
+that.
 
-. Install LISPmob on the *client* and *server1* VMs following the installation
-instructions https://github.com/LISPmob/lispmob#software-prerequisites[from the LISPmob README file].
+. Install LISPmob on the *client*, *server1*, and *server2* VMs following the
+installation instructions
+https://github.com/LISPmob/lispmob#software-prerequisites[from the LISPmob
+README file].
 
 . Configure the LISPmob installations from the previous step. Starting from the
 +lispd.conf.example+ file in the distribution, set the EID in each +lispd.conf+
 file from the IP address space selected for your virtual/LISP network. In this
-tutorial the EID of the *client* is set to 1.1.1.1/32, and that of *server1* to
-2.2.2.2/32. Set the RLOC interface in each +lispd.conf+. LISP will determine
-the RLOC (IP address of the corresponding VM) based on this interface. Set the
-Map-Resolver address to the IP address of the *controller*, and on the *client*
-the Map-Server too. On *server1* set the Map-Server to something else, so that
-it doesn't interfere with the mappings on the controller, since we're going to
-program them manually. Modify the "key" parameter in each +lispd.conf+ file to
-a key/password of your choice, 'asdf' in this tutorial. The
-+resources/tutorial+ directory in the 'develop' branch of the project git
-repository has the files used in the tutorial checked in:
-https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=blob_plain;f=resources/tutorial/lispd.conf.client;hb=refs/heads/develop[lispd.conf.client]
-and https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=blob_plain;f=resources/tutorial/lispd.conf.server1;hb=refs/heads/develop[lispd.conf.server1].
-Copy the files to +/root/lispd.conf+ on the respective VMs.
+tutorial the EID of the *client* is set to 1.1.1.1/32, and that of *server1* and
+*server2* to 2.2.2.2/32.
 
-. Define a key and EID prefix association in OpenDaylight using the northbound
-API for both EIDs (1.1.1.1/32 and 2.2.2.2/32).  Run the below commands on the
+. Set the RLOC interface in each +lispd.conf+. LISP will determine
+the RLOC (IP address of the corresponding VM) based on this interface.
+
+. Set the Map-Resolver address to the IP address of the *controller*, and on
+the *client* the Map-Server too. On *server1* and *server2* set the Map-Server
+to something else, so that it doesn't interfere with the mappings on the
+controller, since we're going to program them manually.
+
+. Modify the "key" parameter in each +lispd.conf+ file to a key/password of
+your choice ('password' in this tutorial).
++
+NOTE: The +resources/tutorial+ directory in the 'stable/lithium' branch of the
+project git repository has the files used in the tutorial
+https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=tree;f=resources/tutorial;hb=refs/heads/stable/lithium[checked
+in], so you can just copy the files to +/root/lispd.conf+ on the respective VMs.
++
+. Define a key and EID prefix association in OpenDaylight using the RPC REST
+API for both EIDs (1.1.1.1/32 and 2.2.2.2/32). Run the below commands on the
 *controller* (or any machine that can reach *controller*, by replacing
 'localhost' with the IP address of *controller*).
 
- curl -u "admin":"admin" -H "Content-type: application/json" -X PUT \
-     http://localhost:8080/lispflowmapping/nb/v2/default/key \
-     --data @key1.json
- curl -u "admin":"admin" -H "Content-type: application/json" -X PUT \
-     http://localhost:8080/lispflowmapping/nb/v2/default/key \
-     --data @key2.json
+ curl -u "admin":"admin" -H "Content-type: application/json" -X POST \
+     http://localhost:8181/restconf/operations/lfm-mapping-database:add-key \
+     --data @add-key1.json
+ curl -u "admin":"admin" -H "Content-type: application/json" -X POST \
+     http://localhost:8181/restconf/operations/lfm-mapping-database:add-key \
+     --data @add-key2.json
 
 +
-where the content of the 'key1.json' and 'key2.json' files is the following
-(with different "ipAddress"):
+where the content of the 'add-key1.json' and 'add-key2.json' files is the
+following (with different "Ipv4Address" fields):
 +
 [source,json]
 ----
 {
-  "key" : "asdf",
-  "maskLength" : 32,
-  "address" :
-  {
-    "ipAddress" : "1.1.1.1",
-    "afi" : 1
-  }
+    "input": {
+        "LispAddressContainer": {
+            "Ipv4Address": {
+                "afi": 1,
+                "Ipv4Address": "1.1.1.1"
+            }
+        },
+        "mask-length": 32,
+        "key-type": 1,
+        "authkey": "password"
+   }
 }
 ----
 
 . Verify that the key is added properly by requesting the following URL:
 
- curl -u "admin":"admin" http://localhost:8080/lispflowmapping/nb/v2/default/key/0/1/1.1.1.1/32
- curl -u "admin":"admin" http://localhost:8080/lispflowmapping/nb/v2/default/key/0/1/2.2.2.2/32
+ curl -u "admin":"admin" -H "Content-type: application/json" -X POST \
+     http://localhost:8181/restconf/operations/lfm-mapping-database:get-key \
+     --data @get1.json
+ curl -u "admin":"admin" -H "Content-type: application/json" -X POST \
+     http://localhost:8181/restconf/operations/lfm-mapping-database:get-key \
+     --data @get2.json
+
++
+where the content of the 'get1.json' and 'get2.json' files can be derived from
+the 'add-key{1,2}.json' files by removing the 'key-type' and 'authkey' fields.
+The output for both invocations should look like this:
+
+ {"output":{"authkey":"password"}}
 
 . Run the lispd LISPmob daemon on the *client* and *server1* VMs:
 
  lispd -f /root/lispd.conf
 
-. Prepare the OVS environment on *server2*:
-
- .. Start the ovsdb-server and ovs-vswitchd daemons (or check that your
-    distribution's init scripts already started them)
- .. Start listening for OVSDB manager connections on the standard 6640 TCP port:
-
- ovs-vsctl set-manager "ptcp:6640"
- ovs-vsctl show
-
-+
- .. Create a TAP port for communications with the guest VM.  We'll have another
-    VM inside the *server2* VM, that will be set up with the 2.2.2.2/24 EID. It
-    also needs a ficticious gateway, and a static ARP entry for that gateway,
-    with any MAC address.
-
- tunctl -t tap0
- ifconfig tap0 up
-
-+
- .. Start the guest VM:
-
- modprobe kvm
- kvm -daemonize -vnc :0 -m 128 -net nic,macaddr=00:00:0C:15:C0:A1 \
-     -net tap,ifname=tap0,script=no,downscript=no \
-     -drive file=ubuntu.12-04.x86-64.20120425.static_ip_2.2.2.2.qcow2
-
-+
-. Set up the OVS environment on *server2* using the OpenDaylight northbound API
- .. Connect to the OVSDB management port from OpenDaylight:
-
- curl -u "admin":"admin" -X PUT \
-     http://localhost:8080/controller/nb/v2/connectionmanager/node/server2/address/10.33.12.44/port/6640
-
-+
-You can check if this and the next requests have the desired effect on OVS by
-running the following on *server2*
-
- ovs-vsctl show
-
-+
-It should now show the "Manager" connection as connected
-
- .. Create the bridge +br0+:
-
- curl -u "admin":"admin" -H "Content-type: application/json" -X POST \
-     http://localhost:8080/controller/nb/v2/networkconfig/bridgedomain/bridge/OVS/server2/br0 -d "{}"
-
- .. Add +tap0+ to +br0+:
-
- curl -u "admin":"admin" -H "Content-type: application/json" -X POST \
-     http://localhost:8080/controller/nb/v2/networkconfig/bridgedomain/port/OVS/server2/br0/tap0 -d "{}"
-
-+
- .. Add the +lisp0+ LISP tunneling virtual port to +br0+:
-
- curl -u "admin":"admin" -H "Content-type: application/json" -X POST \
-     http://localhost:8080/controller/nb/v2/networkconfig/bridgedomain/port/OVS/server2/br0/lisp0 -d @lisp0.json
-+
-where 'lisp0.json' has the following content:
-+
-[source,json]
-----
-{
-  "type": "tunnel",
-  "tunnel_type": "lisp",
-  "dest_ip": "10.33.12.35"
-}
-----
-The *dest_ip* parameter sets the tunnel destination to the *client* VM. This
-has to be done manually (from the controller), since OVS doesn't have a LISP
-control plane to fetch mappings.
-
- .. We will now need to set up flows on +br0+ to to steer traffic received on
-    the LISP virtual port in OVS to the VM connected to +tap0+ and vice-versa.
-    For that we will need the node id of the bridge, which is based on its MAC
-    address, which is generated at creation time. So we look at the list of
-    connections on the controller:
-
- curl -u "admin":"admin" http://localhost:8080/controller/nb/v2/connectionmanager/nodes
-+
-The response should look similar to this:
-+
-[literal]
-{"id":"00:00:62:71:36:30:7b:44","type":"OF"}]},{"id":"10.33.12.35","type":"LISP"},{"id":"server2","type":"OVS"}]}
-+
-There are three types of nodes connected to OpenDaylight: one "OF" node (the
-OpenFlow connection to +br0+ on *server2*), one "LISP" node (the *client* VM
-sending LISP Map-Register control messages to the controller which is acting as
-a LISP Map-Server), and one "OVS" node (this is the OVSDB connection to
-*server2*). We will need the id of the "OF" node in order to set up flows.
-
- .. The first flow will decapsulate traffic received from the client VM on
-    *server2* and send it to the guest VM through the +tap0+ port.
-
- curl -u "admin":"admin" -H "Content-type: application/json" -X PUT \
-     http://localhost:8080/controller/nb/v2/flowprogrammer/default/node/OF/00:00:62:71:36:30:7b:44/staticFlow/Decap -d @flow_decap.json
-+
-Make sure that the bridge id after the OF path component of the URL is the id
-from the previous step. It should also be the same on line 6 in
-'flow_decap.json' file (see below), which should have the MAC address of the
-KVM instance started on *server2* on line 11 (+SET_DL_DST+):
-+
-[source,json]
-----
-{
-  "installInHw": "true",
-  "name": "Decap",
-  "node": {
-    "type": "OF",
-    "id": "00:00:62:71:36:30:7b:44"
-  },
-  "priority": "10",
-  "dlDst": "02:00:00:00:00:00",
-  "actions": [
-    "SET_DL_DST=00:00:0c:15:c0:a1",
-    "OUTPUT=1"
-  ]
-}
-----
-
- .. The second flow will encapsulate traffic received from the guest VM on
-    *server2* through the +tap0+ port.
-
- curl -u "admin":"admin" -H "Content-type: application/json" -X PUT \
-     http://localhost:8080/controller/nb/v2/flowprogrammer/default/node/OF/00:00:62:71:36:30:7b:44/staticFlow/Encap -d @flow_encap.json
-+
-The 'flow_encap.json' file should look like this:
-+
-[source,json]
-----
-{
-  "installInHw": "true",
-  "name": "Decap",
-  "node": {
-    "type": "OF",
-    "id": "00:00:62:71:36:30:7b:44"
-  },
-  "priority": "5",
-  "ingressPort": "1",
-  "etherType": "0x0800",
-  "vlanId": "0",
-  "nwDst": "1.1.1.1/32",
-  "actions": [
-    "OUTPUT=2"
-  ]
-}
-----
-
- .. Check if the flows have been created correctly. First, in OpenDaylight
-
- curl -u "admin":"admin" http://localhost:8080/controller/nb/v2/flowprogrammer/default
-+
-And most importantly, on *server2*
-
- ovs-ofctl dump-flows br0 -O OpenFlow13
-
 . The *client* LISPmob node should now register its EID-to-RLOC mapping in
-  OpenDaylight. To verify you can lookup the corresponding EIDs via the northbound API
+  OpenDaylight. To verify you can lookup the corresponding EIDs via the REST API
 
- curl -u "admin":"admin" http://localhost:8080/lispflowmapping/nb/v2/default/mapping/0/1/1.1.1.1/32
+ curl -u "admin":"admin" -H "Content-type: application/json" -X POST \
+     http://localhost:8181/restconf/operations/lfm-mapping-database:get-mapping \
+     --data @get1.json
 
  . Register the EID-to-RLOC mapping of the server EID 2.2.2.2/32 to the
    controller, pointing to *server1* and *server2* with a higher priority for
    *server1*
 
- curl -u "admin":"admin" -H "Content-type: application/json" -X PUT \
-     http://localhost:8080/lispflowmapping/nb/v2/default/mapping \
-     -d @mapping.json
+ curl -u "admin":"admin" -H "Content-type: application/json" -X POST \
+     http://localhost:8181/restconf/operations/lfm-mapping-database:add-mapping \
+     --data @mapping.json
 +
 where the 'mapping.json' file looks like this
 +
 [source,json]
 ----
 {
-"key" : "asdf",
-"mapregister" :
-  {
-  "proxyMapReply" : true,
-  "eidToLocatorRecords" :
-    [
-      {
-      "authoritative" : true,
-      "prefixGeneric" :
-        {
-        "ipAddress" : "2.2.2.2",
-        "afi" : 1
+    "input": {
+        "recordTtl": 1440,
+        "maskLength": 32,
+        "authoritative": true,
+        "LispAddressContainer": {
+            "Ipv4Address": {
+                "afi": 1,
+                "Ipv4Address": "2.2.2.2"
+            }
         },
-      "mapVersion" : 0,
-      "maskLength" : 32,
-      "action" : "NoAction",
-      "locators" :
-        [
-          {
-          "multicastPriority" : 1,
-          "locatorGeneric" :
+        "LocatorRecord": [
             {
-            "ipAddress" : "10.33.12.37",
-            "afi" : 1
+                "name": "server1",
+                "priority": 1,
+                "weight": 1,
+                "multicastPriority": 255,
+                "multicastWeight": 0,
+                "localLocator": true,
+                "rlocProbed": false,
+                "routed": false,
+                "LispAddressContainer": {
+                    "Ipv4Address": {
+                        "afi": 1,
+                        "Ipv4Address": "192.168.16.31"
+                    }
+                }
             },
-          "routed" : true,
-          "multicastWeight" : 0,
-          "rlocProbed" : false,
-          "localLocator" : false,
-          "priority" : 126,
-          "weight" : 1
-          } ,
-          {
-          "multicastPriority" : 1,
-          "locatorGeneric" :
             {
-            "ipAddress" : "10.33.12.44",
-            "afi" : 1
-            },
-          "routed" : true,
-          "multicastWeight" : 0,
-          "rlocProbed" : false,
-          "localLocator" : false,
-          "priority" : 127,
-          "weight" : 1
-          }
-        ],
-      "recordTtl" : 5
-      }
-    ],
-  "keyId" : 0
-  }
+                "name": "server2",
+                "priority": 2,
+                "weight": 1,
+                "multicastPriority": 255,
+                "multicastWeight": 0,
+                "localLocator": true,
+                "rlocProbed": false,
+                "routed": false,
+                "LispAddressContainer": {
+                    "Ipv4Address": {
+                        "afi": 1,
+                        "Ipv4Address": "192.168.16.32"
+                    }
+                }
+            }
+        ]
+    }
 }
 ----
 +
-Here the priority of the second RLOC (10.33.12.44 - *server2*) is 127, a higher
-numeric value than the priority of 10.33.12.37, which is 126. This policy is
+Here the priority of the second RLOC (192.168.16.32 - *server2*) is 2, a higher
+numeric value than the priority of 192.168.16.31, which is 1. This policy is
 saying that *server1* is preferred to *server2* for reaching EID 2.2.2.2/32.
-Note that lower priority has higher preference in LISP.
+Note that lower priority value has higher preference in LISP.
 
  . Verify the correct registration of the 2.2.2.2/32 EID:
 
- curl -u "admin":"admin" http://localhost:8080/lispflowmapping/nb/v2/default/mapping/0/1/2.2.2.2/32
+ curl -u "admin":"admin" -H "Content-type: application/json" -X POST \
+     http://localhost:8181/restconf/operations/lfm-mapping-database:get-mapping \
+     --data @get2.json
 
  . Now the LISP network is up. To verify, log into the *client* VM and ping the server EID:
 
@@ -517,21 +376,21 @@ automatically fail over, even if the mapping for 2.2.2.2/32 has two locators,
 since both locators are still reachable and uses the one with the higher
 priority (lowest priority value). To force a failover, we need to set the
 priority of *server2* to a lower value. Using the file mapping.json above, swap
-the priority values between the two locators and repeat the request from step
-10. You can also repeat step 11 to see if the mapping is correctly registered.
-Not that the previous locators are still present, so you should see a list of
-four locators. If you leave the ping on, and monitor the traffic using
-wireshark you can see that the ping traffic will be diverted from *server1* to
-*server2*.
+the priority values between the two locators and repeat the request from step 11.
+You can also repeat step 12 to see if the mapping is correctly registered.
+If you leave the ping on, and monitor the traffic using wireshark, you can see
+that the ping traffic to 2.2.2.2 will be diverted from the *server1* RLOC to
+the *server2* RLOC.
 +
-With the default OpenDaylight configuration this may take some time, because
-the mapping stays in the *client* map-cache until the TTL expires. LISP has a
+With the default OpenDaylight configuration the failover should be near
+instantaneous (we observed 3 lost pings in the worst case), because of the LISP
 http://tools.ietf.org/html/rfc6830#section-6.6.2[Solicit-Map-Request (SMR) mechanism]
-that can ask a LISP data plane element to update its mapping for a certain EID.
-This is disabled by default, and is controlled by the +lisp.smr+ variable in
-+etc/custom.porperties+. When enabled, any mapping change from the northbound
-will trigger an SMR packet to all data plane elements that have requested the
-mapping in a certain time window.
+that can ask a LISP data plane element to update its mapping for a certain EID
+(enabled by default). It is controlled by the +lisp.smr+ variable in
++etc/custom.porperties+. When enabled, any mapping change from the RPC
+interface will trigger an SMR packet to all data plane elements that have
+requested the mapping in the last 15 minutes. If disabled, ITRs keep their
+mappings until the TTL specified in the Map-Reply expires.
 
 If you used the Postman collection, you will notice an "ELP" mapping. This is
 for supporting service chaining, but it requires a Re-encapsulating Tunnel
@@ -541,18 +400,10 @@ available.
 
 === LISP Flow Mapping Support
 
-For support please contact the lispflowmapping project at:
+For support the lispflowmapping project can be reached by emailing the
+developer mailing list: lispflowmapping-dev@lists.opendaylight.org or on the
+#opendaylight-lispflowmapping IRC channel on irc.freenode.net.
 
-* Lisp Flow Mapping users mailing list: lispflowmapping-users@lists.opendaylight.org
-
-* Lisp Flow Mapping dev mailing list: lispflowmapping-dev@lists.opendaylight.org
-
-You can also reach us at the following channel on IRC:
-
-* #opendaylight-lispflowmapping on irc.freenode.net
-
-Additional information is also available on the wiki:
-
-* https://wiki.opendaylight.org/view/OpenDaylight_Lisp_Flow_Mapping:Main[Lisp Flow Mapping wiki]
+Additional information is also available on the https://wiki.opendaylight.org/view/OpenDaylight_Lisp_Flow_Mapping:Main[Lisp Flow Mapping wiki]
 
 
