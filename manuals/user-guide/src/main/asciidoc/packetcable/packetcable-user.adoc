@@ -1,8 +1,8 @@
 [[pcmm-user-guide-preliminary]]
-= PCMM User Guide (*Preliminary*)
+== PCMM User Guide (*Preliminary*)
 
 [[system-overview]]
-== System Overview
+=== System Overview
 
 These components introduce a DOCSIS QoS Service Flow management using
 the PCMM protocol. The driver component is responsible for the
@@ -17,12 +17,12 @@ image:Screenshot6.png[Screenshot6.png,title="Screenshot6.png"]
 image:Odp_diagram_helium_v6.jpg[Odp_diagram_helium_v6.jpg,title="Odp_diagram_helium_v6.jpg"]
 
 [[dependency-map]]
-== Dependency Map
+=== Dependency Map
 
 image:ODL-Helium-dependency.png[ODL-Helium-dependency.png,title="ODL-Helium-dependency.png"]
 
 [[packetcable-components]]
-== Packetcable Components
+=== Packetcable Components
 
 packetcable is comprised of three OpendayLight bundles
 
@@ -47,20 +47,20 @@ https://git.opendaylight.org/gerrit/gitweb?p=packetcable.git;a=tree;f=packetcabl
 Model]
 
 [[features-to-install]]
-=== Features to Install
+==== Features to Install
 
 ---------------------------------------------------------------------------------------------------------------------------
 opendaylight-user@root>feature:install odl-restconf odl-l2switch-switch odl-dlux-core odl-mdsal-apidocs odl-packetcable-all
 ---------------------------------------------------------------------------------------------------------------------------
 
 [[accessing-user-interface-assets]]
-== Accessing User Interface Assets
+=== Accessing User Interface Assets
 
 [[management-ui]]
-=== Management UI
+==== Management UI
 
 [[install-node.js]]
-==== Install Node.js
+===== Install Node.js
 
 Use the following script install_nodejs.sh to guide you through Node.js
 installation on Ubuntu.
@@ -99,14 +99,14 @@ Manage Nodes
 image:Screenshot2.png[|Dlux Nodes,title="|Dlux Nodes"]
 
 [[explore-and-exercise-the-packetcable-rest-api]]
-=== Explore and exercise the PacketCable REST API
+==== Explore and exercise the PacketCable REST API
 
 http://localhost:8181/apidoc/explorer/index.html
 
 link:#RESTCONF_API_Explorer[ See Explorer ]
 
 [[Add CMTS]]
-== Adding a CMTS to OpenDaylight Inventory
+=== Adding a CMTS to OpenDaylight Inventory
 
 Add a CMTS to Opendaylight Inventory
 
@@ -114,7 +114,7 @@ image:Screenshot1.png[Add CMTS using RESTCONF
 Explorer,title="Add CMTS using RESTCONF Explorer"]
 
 [[postman]]
-=== Postman
+==== Postman
 
 https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm?hl=en[Configure
 the Chrome browser]
