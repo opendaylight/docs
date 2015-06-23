@@ -1,0 +1,52 @@
+== YANG Tools
+:rfc6020: https://tools.ietf.org/html/rfc6020
+:lhotka-yang-json: https://tools.ietf.org/html/draft-lhotka-netmod-yang-json-01
+
+=== Overview
+YANG Tools is set of libraries and tooling providing support for use
+{rfc6020}[YANG] for Java (or other JVM-based language) projects and
+applications.
+
+YANG Tools provides following features in OpenDaylight:
+
+- parsing of YANG sources and
+semantic inference of relationship across YANG models as defined in
+{rfc6020}[RFC6020]
+- representation of YANG-modeled data in Java
+** *Normalized Node* representation - DOM-like tree model, which uses conceptual
+  meta-model more tailored to YANG and OpenDaylight use-cases than a standard XML
+  DOM model allows for.
+** *Java Binding* - concrete data model and classes generated from YANG models,
+  designed to provide compile-time safety when working with YANG-modeled data.
+- serialization / deserialization of YANG-modeled data driven by YANG
+models
+** XML - as defined in {rfc6020}[RFC6020]
+** JSON - as defined in {rfc6020}[draft-lhotka-netmod-yang-json-01]
+** Java Binding to Normalized Node and vice-versa
+- Integration of YANG model parsing into Maven build lifecycle and
+support for third-party generators processing YANG models.
+
+YANG Tools project consists of following logical subsystems:
+
+- *Commons* - Set of general purpose code, which is not specific to YANG, but
+  is also useful outside YANG Tools implementation.
+- *YANG Model and Parser* - YANG semantic model and lexical and semantic parser
+  of YANG models, which creates in-memory cross-referenced represenation of
+  YANG models, which is used by other components to determine their behaviour
+  based on the model.
+- *YANG Data* - Definition of Normalized Node APIs and Data Tree APIs, reference
+  implementation of these APIs and implementation of XML and JSON codecs for
+  Normalized Nodes.
+- *YANG Maven Plugin* - Maven plugin which integrates YANG parser into Maven
+  build lifecycle and provides code-generation framework for components, which
+  wants to generate code or other artefacts based on YANG model.
+- *YANG Java Binding* - Mapping of YANG model to generated Java APIs.
+  Java Binding also references to set of compile-time and runtime components which
+  implements this mapping, provides generation of classes and APIs based on
+  YANG models and integrate these Java Binding objects with **YANG Data** APIs
+  and components.
+
+* *Models* - Set of *IETF* and *YANG Tools* models, with generated Java Bindings
+  so they could be simply consumed outside of *YANG Tools*.
+
+include::yang-java-binding-explained.adoc[]

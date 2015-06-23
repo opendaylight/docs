@@ -1,0 +1,1101 @@
+=== YANG Java Binding: Mapping rules
+This chapter covers the details of mapping YANG to Java.
+
+NOTE: The following source code examples does not show canonical generated
+code, but rather illustrative example. Generated classes and interfaces may
+differ from this examples, but APIs are preserved.
+
+==== General conversion rules
+
+===== Package names of YANG models
+
+The package name consists of the following parts: +
+
+* *Opendaylight prefix* - Specifies the opendaylight prefix. Every package name
+starts with the prefix `org.opendaylight.yang.gen.v`.
+* *Java Binding version* - Specifies the YANG Java Binding version.
+  Curent Binding version is `1`.
+* *Namespace* - Specified by the value of `namespace` substatement.
+   URI is converted to package name structure.
+* *Revision* - Specifies the concatenation of word `rev` and value of `module`
+  substatements `revision` argument value without leading zeros before month and day.
+  For example: `rev201379`
+
+After the package name is generated, we check if it contains any Java keywords
+or starts with a digit. If so, then we add an underscore before the offending
+token.
+
+The following is a list of keywords which are prefixed with underscore:
+
+abstract, assert, boolean, break, byte, case, catch, char, class, const,
+continue, default, double, do, else, enum, extends, false, final, finally,
+float, for, goto, if, implements, import, instanceof, int, interface, long,
+native, new, null, package, private, protected, public, return, short, static,
+strictfp, super, switch, synchronized, this, throw, throws, transient, true, try,
+void, volatile, while
+
+As an example suppose following yang model:
+
+[source, yang]
+----
+module module {
+    namespace "urn:2:case#module";
+    prefix "sbd";
+    organization "OPEN DAYLIGHT";
+    contact "http://www.example.com/";
+    revision 2013-07-09 {
+    }
+}
+----
+
+After applying rules (replacing digits and Java keywords) the resulting
+package name is `org.opendaylight.yang.gen.v1.urn._2._case.module.rev201379`
+
+===== Additional Packages
+
+In cases when YANG statement contain some of specific YANG
+statements additional packages are generated to designate this containment.
+Table below provides details of parent statement and nested statements, which
+yields additional package generation:
+
+[options="header"]
+|===
+|Parent statement  | Substatement
+|`list`  |list, container, choice
+|`container` | list, container, choice
+|`choice` | leaf, list, leaf-list, container, case
+|`case`  | list, container, choice
+|rpc `input` or `output` |  list, container, (choice isn't supported)
+|`notification` |  list, container, (choice isn't supported)
+|`augment`  | list, container, choice, case |
+|===
+
+Substatements are not only mapped to Java setter methods in the interface
+representing the parent statement, but they also generate packages with
+names consisting of the parent statement package name with the parent statement
+name appended.
+
+For example, this YANG model considers the container statement `cont` as the
+direct substatement of the module.
+
+[source, yang]
+----
+container cont {
+  container cont-inner {
+  }
+  list outter-list {
+    list list-in-list {
+    }
+  }
+}
+----
+
+Container `cont` is the parent statement for the substatements
+`cont-inner` and `outter-list`. `list outter-list` is the parent
+statement for substatement `list-in-list`.
+
+Java code is generated in the following structure: +
+
+* `org.opendaylight.yang.gen.v1.urn.module.rev201379` - package contains direct
+   substatements of module statement
+** `Cont.java`
+* `org.opendaylight.yang.gen.v1.urn.module.rev201379.cont` - package contains
+  substatements of `cont` container statement
+** `ContInner.java` - interface representing container `cont-inner`
+** `OutterList.java` - interface representing list `outer-list`
+* `org.opendaylight.yang.gen.v1.urn.module.rev201379.cont.outter.list` - package
+  contains substatements of outter-list list element
+  ** `ListInList.java`
+
+===== Class and interface names
+Some YANG statements are mapped to Java classes and interfaces. The name of YANG
+element may contain various characters which aren't permitted in Java class names.
+Firstly whitespaces are trimmed from YANG name. Next the characters space, -, `
+are deleted and the subsequent letter is capitalized. At the end, first letter is
+capitalized.
+
+For example, 
+`example-name_ without_capitalization` would map to
+`ExampleNameWithoutCapitalization`.
+
+===== Getter and setter names
+In some cases, YANG statements are converted to getter and/or setter methods.
+The process for getter is:
+
+. the name of YANG statement is converted to Java class name style as 
+  <<_class_and_interface_names,explained above>>.
+. the word `get` is added as prefix, if resulting type is `Boolean`, the name
+  is prefixed with `is` prefix instead of `get`.
+. the return type of the getter method is set to Java type representing substatement
+
+The process for setter is:
+
+. the name of YANG statement is converted to Java class name style as
+  <<_class_and_interface_names,explained above>>.
+. the word `set` is added as prefix
+. the input parameter name is set to element's name converted to Java parameter style
+. the return parameter is set to builder type
+
+==== Statement specific mapping
+
+===== module statement
+
+YANG `module` statement is converted to Java as two Java classes.
+Each of the classes is in the separate Java file. The names of Java files are
+composed as follows:
+`<module name><suffix>.java` where `<suffix>` is either data or service.
+
+====== Data Interface
+
+Data Interface has a mapping similar to container, but contains only top level
+nodes defined in module.
+
+Data interface serves only as marker interface for type-safe APIs of
+`InstanceIdentifier`.
+
+====== Service Interface
+
+Service Interface serves to describe RPC contract defined in the module.
+This RPC contract is defined by `rpc` statements.
+
+RPC implementation usually implement this interface and users of the RPCs
+use this interface to invoke RPCs.
+
+===== container statement
+YANG containers are mapped to Java interfaces which extend the Java DataObject and
+Augmentable<container-interface>, where container-interface is the name of the mapped
+interface.
+
+For example, the following YANG:
+
+.YANG model
+[source, yang]
+----
+container cont {
+
+}
+----
+
+is converted into this Java:
+
+.Cont.java
+[source, java]
+----
+public interface Cont extends ChildOf<...>, Augmentable<Cont> {
+}
+----
+
+===== Leaf statement
+Each leaf has to contain at least one type substatement. The leaf is mapped to
+getter method of parent statement with return type equal to type substatement
+value.
+
+For example, the following YANG:
+
+.YANG model
+[source, yang]
+----
+container cont {
+  leaf lf {
+    type string;
+  }
+}
+----
+
+is converted into this Java:
+
+.Cont.java
+[source, java]
+----
+public interface Cont extends DataObject, Augmentable<Cont> {
+    String getLf(); // <1>
+}
+----
+
+<1> Represents `leaf lf`
+
+===== leaf-list statement
+Each leaf-list has to contain one type substatement. The leaf-list is mapped
+to getter method of parent statement with return type equal to List of type
+substatement value.
+
+For example, the following YANG:
+
+.YANG model
+[source, yang]
+----
+container cont {
+    leaf-list lf-lst {
+        type string;
+    }
+}
+----
+
+is converted into this Java:
+
+.Cont.java
+[source, java]
+----
+public interface Cont extends DataObject, Augmentable<Cont> {
+    List<String> getLfLst();
+}
+----
+
+===== list statement
+
+`list` statements are mapped to Java interfaces and a getter method is
+generated in the interface associated with it's parent statement.
+The return type of getter the method is a Java List of objects implementing
+the interface generated corresponding to the `list statement.
+Mapping of `list` substatement to Java:
+
+//[options="header"]
+//|===
+//|Substatement|Mapping to Java
+//|Key|Class
+//|===
+
+For example, the following YANG:
+
+.YANG model
+[source, yang]
+----
+container cont {
+  list outter-list {
+    key "leaf-in-list";
+    leaf number {
+      type uint64;
+    }
+  }
+}
+----
+
+The list statement  `example-list` is mapped to the Java interface `ExampleList` and
+the `Cont` interface (parent of `ExampleList`) contains getter method with return
+type `List<ExampleList>`. The presence of a `key` statement, triggers generation
+of `ExampleListKey`, which may be used to identify item in list.
+
+The end result is this Java:
+
+.OutterList.java
+[source, java]
+----
+package org.opendaylight.yang.gen.v1.urn.module.rev201379.cont;
+
+import org.opendaylight.yangtools.yang.binding.DataObject;
+import org.opendaylight.yangtools.yang.binding.Augmentable;
+import Java.util.List;
+import org.opendaylight.yang.gen.v1.urn.module.rev201379.cont.outter.list.ListInList;
+
+public interface OutterList extends DataObject, Augmentable<OutterList> {
+
+    List<String> getLeafListInList();
+
+    List<ListInList> getListInList();
+
+    /*
+    Returns Primary Key of Yang List Type
+    */
+    OutterListKey getOutterListKey();
+
+}
+----
+
+.OutterListKey.java
+[source, java]
+----
+package org.opendaylight.yang.gen.v1.urn.module.rev201379.cont;
+
+import org.opendaylight.yang.gen.v1.urn.module.rev201379.cont.OutterListKey;
+import Java.math.BigInteger;
+
+public class OutterListKey {
+
+    private BigInteger _leafInList;
+
+    public OutterListKey(BigInteger _leafInList) {
+        super();
+        this_leafInList = _leafInList;
+    }
+
+    public BigInteger getLeafInList() {
+        return _leafInList;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((_leafInList == null) ? 0 : _leafInList.hashCode());
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        OutterListKey other = (OutterListKey) obj;
+        if (_leafInList == null) {
+            if (other._LeafInList != null) {
+                return false;
+            }
+        } else if(!_leafInList.equals(other._leafInList)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("OutterListKey [_leafInList=");
+        builder.append(_leafInList);
+        builder.append("]");
+        return builder.toString();
+    }
+}
+----
+
+===== choice and case statements
+A `choice` element is mapped in mostly the same way a `list` element is. The
+`choice` element is mapped to and interface (marker interface) and a new getter
+method with the return type of a Java `List` of this marker interfaces is added
+to the interface corresponding to the parent statement. Any `case` 
+substatements are mapped to Java interfaces which extend the marker interface.
+
+For example, the following YANG:
+
+.YANG model
+[source, yang]
+----
+container cont {
+    choice example-choice {
+        case foo-case {
+          leaf foo {
+            type string;
+          }
+        }
+        case bar-case {
+            leaf bar {
+              type string;
+            }
+        }
+    }
+}
+----
+
+is converted into this Java:
+
+.Cont.java
+[source, java]
+----
+package org.opendaylight.yang.gen.v1.urn.module.rev201379;
+
+import org.opendaylight.yangtools.yang.binding.DataObject;
+import org.opendaylight.yangtools.yang.binding.Augmentable;
+import org.opendaylight.yang.gen.v1.urn.module.rev201379.cont.ChoiceTest;
+
+public interface Cont extends DataObject, Augmentable<Cont> {
+
+    ExampleChoice getExampleChoice();
+
+}
+----
+
+.ExampleChoice.java
+[source, java]
+----
+package org.opendaylight.yang.gen.v1.urn.module.rev201379.cont;
+
+import org.opendaylight.yangtools.yang.binding.DataObject;
+
+public interface ExampleChoice extends DataContainer {
+}
+----
+
+.FooCase.java
+[source, java]
+----
+package org.opendaylight.yang.gen.v1.urn.module.rev201379.cont.example.choice;
+
+import org.opendaylight.yangtools.yang.binding.DataObject;
+import org.opendaylight.yangtools.yang.binding.Augmentable;
+import org.opendaylight.yang.gen.v1.urn.module.rev201379.cont.ChoiceTest;
+
+public interface FooCase extends ExampleChoice, DataObject, Augmentable<FooCase> {
+
+    String getFoo();
+
+}
+----
+
+.BarCase.java
+[source, java]
+----
+package org.opendaylight.yang.gen.v1.urn.module.rev201379.cont.example.choice;
+
+import org.opendaylight.yangtools.yang.binding.DataObject;
+import org.opendaylight.yangtools.yang.binding.Augmentable;
+import org.opendaylight.yang.gen.v1.urn.module.rev201379.cont.ChoiceTest;
+
+public interface BarCase extends ExampleChoice, DataObject, Augmentable<BarCase> {
+
+    String getBar();
+
+}
+----
+
+===== grouping and uses statements
+`grouping`s are mapped to Java interfaces. `uses` statements in some element
+(using of concrete grouping) are mapped as extension of interface for this
+element with the interface which represents grouping.
+
+For example, the following YANG:
+
+.YANG Model
+[source, yang]
+----
+grouping grp {
+  leaf foo {
+    type string;
+  }
+}
+
+container cont {
+    uses grp;
+}
+----
+
+is converted into this Java:
+
+.Grp.java
+[source, java]
+----
+package org.opendaylight.yang.gen.v1.urn.module.rev201379;
+
+import org.opendaylight.yangtools.yang.binding.DataObject;
+
+public interface Grp extends DataObject {
+
+    String getFoo();
+
+}
+----
+
+.Cont.java
+[source, java]
+----
+package org.opendaylight.yang.gen.v1.urn.module.rev201379;
+
+import org.opendaylight.yangtools.yang.binding.DataObject;
+import org.opendaylight.yangtools.yang.binding.Augmentable;
+
+public interface Cont extends DataObject, Augmentable<Cont>, Grp {
+}
+----
+
+
+===== rpc, input and output statements
+An `rpc` statement is mapped to Java as method of class `ModuleService.java`.
+Any substatements of an `rpc` are mapped as follows:
+
+[options="header"]
+|===
+|Rpc Substatement|Mapping
+|input|presence of input statement triggers generation of interface
+|output|presence of output statement triggers generation of interface
+|===
+
+For example, the following YANG:
+
+.YANG model
+[source, yang]
+----
+rpc rpc-test1 {
+    output {
+        leaf lf-output {
+            type string;
+        }
+    }
+    input {
+        leaf lf-input {
+            type string;
+        }
+    }
+}
+----
+
+is converted into this Java:
+
+.ModuleService.java
+[source, java]
+----
+package org.opendaylight.yang.gen.v1.urn.module.rev201379;
+
+import Java.util.concurrent.Future;
+import org.opendaylight.yangtools.yang.common.RpcResult;
+
+public interface ModuleService {
+
+    Future<RpcResult<RpcTest1Output>> rpcTest1(RpcTest1Input input);
+
+}
+----
+
+.RpcTest1Input.java
+[source, java]
+----
+package org.opendaylight.yang.gen.v1.urn.module.rev201379;
+
+public interface RpcTest1Input {
+
+    String getLfInput();
+
+}
+----
+
+.RpcTest1Output.java
+[source, java]
+----
+package org.opendaylight.yang.gen.v1.urn.module.rev201379;
+
+public interface RpcTest1Output {
+
+    String getLfOutput();
+
+}
+----
+
+
+===== notification statement
+
+`notification` statements are mapped to Java interfaces which extend
+the Notification interface.
+
+For example, the following YANG:
+
+.YANG model
+[source, yang]
+----
+notification notif {
+	}
+----
+
+is converted into this Java:
+
+.Notif.java
+[source, java]
+----
+package org.opendaylight.yang.gen.v1.urn.module.rev201379;
+
+
+import org.opendaylight.yangtools.yang.binding.DataObject;
+import org.opendaylight.yangtools.yang.binding.Augmentable;
+import org.opendaylight.yangtools.yang.binding.Notification;
+
+public interface Notif extends DataObject, Augmentable<Notif>, Notification {
+}
+----
+
+==== augment statement
+`augment` statements are mapped to Java interfaces. The interface starts with
+the same name as the name of augmented interface with a suffix corresponding to
+the order number of augmenting interface. The augmenting interface also extends
+`Augmentation<>` with actual type parameter equal to augmented interface.
+
+For example, the following YANG:
+
+.YANG Model
+[source, yang]
+----
+container cont {
+}
+
+augment "/cont" {
+  leaf additional-value {
+    type string;
+  }
+}
+----
+
+is converted into this Java:
+
+.Cont.java
+[source, java]
+----
+package org.opendaylight.yang.gen.v1.urn.module.rev201379;
+
+import org.opendaylight.yangtools.yang.binding.DataObject;
+import org.opendaylight.yangtools.yang.binding.Augmentable;
+
+public interface Cont extends DataObject, Augmentable<Cont> {
+
+}
+----
+
+.Cont1.java
+[source, java]
+----
+package org.opendaylight.yang.gen.v1.urn.module.rev201379;
+
+import org.opendaylight.yangtools.yang.binding.DataObject;
+import org.opendaylight.yangtools.yang.binding.Augmentation;
+
+public interface Cont1 extends DataObject, Augmentation<Cont> {
+
+}
+----
+
+==== YANG Type mapping
+
+===== typedef statement
+YANG `typedef` statements are mapped to Java classes. A `typedef` may contain following
+substatements:
+
+[options="header"]
+|===
+|Substatement | Behaviour
+|type| determines wrapped type and how class will be generated
+|descripton| Javadoc description
+|units| is not mapped
+|default|is not mapped
+|===
+
+====== Valid Arguments Type
+
+Simple values of type argument are mapped as follows:
+
+[options="header"]
+|===
+|YANG Type |  Java type
+|boolean| Boolean
+|empty| Boolean
+|int8| Byte
+|int16|Short
+|int32|Integer
+|int64|Long
+|string|String or, wrapper class (if pattern substatement is specified)
+|decimal64|Double
+|uint8|Short
+|uint16|Integer
+|uint32|Long
+|uint64|BigInteger
+|binary|byte[]
+|===
+
+Complex values of type argument are mapped as follows:
+
+[options="header"]
+|===
+|Argument Type| Java type
+|enumeration| generated java enum
+|bits| generated class for bits
+|leafref| same type as referenced leaf
+|identityref| Class
+|union| generated java class
+|instance-identifier| `org.opendaylight.yangtools.yang.binding.InstanceIdentifier`
+|===
+
+===== Enumeration Substatement Enum
+The YANG `enumeration` type has to contain some `enum` substatements. An `enumeration` is mapped as Java enum type (standalone class) and every YANG enum substatements is mapped to Java enum's predefined values.
+
+An `enum` statement can have following substatements:
+
+[options="header"]
+|===
+|Enum's Substatement | Java mapping
+|description|is not mapped in API
+|value| mapped as input parameter for every predefined value of enum
+|===
+
+For example, the following YANG:
+
+.YANG model
+[source, yang]
+----
+typedef typedef-enumeration {
+    type enumeration {
+        enum enum1 {
+            description "enum1 description";
+            value 18;
+        }
+        enum enum2 {
+            value 16;
+        }
+        enum enum3 {
+        }
+    }
+}
+----
+
+is converted into this Java:
+
+.TypedefEnumeration.java
+[source, java]
+----
+public enum TypedefEnumeration {
+    Enum1(18),
+    Enum2(16),
+    Enum3(19);
+
+    int value;
+
+    private TypedefEnumeration(int value) {
+        this.value = value;
+    }
+}
+----
+
+===== Bits's Substatement Bit
+The YANG `bits` type has to contain some bit substatements. YANG `bits` is mapped to
+a Java class (standalone class) and every YANG `bits` substatements is mapped to a
+boolean attribute of that class. In addition, the class provides overridden versions
+of the Object methods `hashCode`, `toString`, and `equals`.
+
+For example, the following YANG:
+
+.YANG Model
+[source, yang]
+----
+typedef typedef-bits {
+  type bits {
+    bit first-bit {
+      description "first-bit description";
+        position 15;
+      }
+    bit second-bit;
+  }
+}
+----
+
+is converted into this Java:
+
+.TypedefBits.java
+[source, java]
+----
+public class TypedefBits {
+
+    private Boolean firstBit;
+    private Boolean secondBit;
+
+    public TypedefBits() {
+        super();
+    }
+
+    public Boolean getFirstBit() {
+        return firstBit;
+    }
+
+    public void setFirstBit(Boolean firstBit) {
+        this.firstBit = firstBit;
+    }
+
+    public Boolean getSecondBit() {
+        return secondBit;
+    }
+
+    public void setSecondBit(Boolean secondBit) {
+        this.secondBit = secondBit;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result +
+         ((firstBit == null) ? 0 : firstBit.hashCode());
+        result = prime * result +
+         ((secondBit == null) ? 0 : secondBit.hashCode());
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        TypedefBits other = (TypedefBits) obj;
+        if (firstBit == null) {
+            if (other.firstBit != null) {
+                return false;
+            }
+        } else if(!firstBit.equals(other.firstBit)) {
+            return false;
+        }
+        if (secondBit == null) {
+            if (other.secondBit != null) {
+                return false;
+            }
+        } else if(!secondBit.equals(other.secondBit)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("TypedefBits [firstBit=");
+        builder.append(firstBit);
+        builder.append(", secondBit=");
+        builder.append(secondBit);
+        builder.append("]");
+        return builder.toString();
+    }
+}
+----
+
+===== Union's Substatement Type
+If the type of a `typedef` is `union`, it has to contain `type` substatements.
+The `union typedef` is mapped to class and its `type` substatements are mapped
+to private class members. Every YANG union subtype gets its own Java constructor
+with a parameter which represent just that one attribute.
+
+For example, the following YANG:
+
+.YANG model
+[source, yang]
+----
+typedef typedef-union {
+    type union {
+        type int32;
+        type string;
+    }
+}
+----
+
+is converted into this Java:
+
+.TypdefUnion.java
+[source, java]
+----
+public class TypedefUnion {
+
+    private Integer int32;
+    private String string;
+
+    public TypedefUnion(Integer int32) {
+        super();
+        this.int32 = int32;
+    }
+
+    public TypedefUnion(String string) {
+        super();
+        this.string = string;
+    }
+
+    public Integer getInt32() {
+        return int32;
+    }
+
+    public String getString() {
+        return string;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((int32 == null) ? 0 : int32.hashCode());
+        result = prime * result + ((string == null) ? 0 : string.hashCode());
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        TypedefUnion other = (TypedefUnion) obj;
+        if (int32 == null) {
+            if (other.int32 != null) {
+                return false;
+            }
+        } else if(!int32.equals(other.int32)) {
+            return false;
+        }
+        if (string == null) {
+            if (other.string != null) {
+                return false;
+            }
+        } else if(!string.equals(other.string)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("TypedefUnion [int32=");
+        builder.append(int32);
+        builder.append(", string=");
+        builder.append(string);
+        builder.append("]");
+        return builder.toString();
+    }
+}
+----
+
+===== String Mapping
+The YANG `string` type can contain the substatements `length`
+and `pattern` which are mapped as follows:
+
+[options="header"]
+|===
+|Type substatements  |  Mapping to Java
+| length | not mapped
+| pattern |
+
+. list of string constants = list of patterns +
+. list of Pattern objects +
+. static initialization block where list of Patterns is initialized from list of string of constants
+|===
+
+For example, the following YANG:
+
+.YANG model
+[source, yang]
+----
+typedef typedef-string {
+    type string {
+        length 44;
+        pattern "[a][.]*"
+    }
+}
+----
+
+is converted into this Java:
+
+.TypedefString.java
+[source, java]
+----
+public class TypedefString {
+
+    private static final List<Pattern> patterns = new ArrayList<Pattern>();
+    public static final List<String> PATTERN`CONSTANTS = Arrays.asList("[a][.]*");
+
+    static {
+        for (String regEx : PATTERN`CONSTANTS) {
+            patterns.add(Pattern.compile(regEx));
+        }
+    }
+
+    private String typedefString;
+
+    public TypedefString(String typedefString) {
+        super();
+        // Pattern validation
+        this.typedefString = typedefString;
+    }
+
+    public String getTypedefString() {
+        return typedefString;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((typedefString == null) ? 0 : typedefString.hashCode());
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        TypedefString other = (TypedefString) obj;
+        if (typedefString == null) {
+            if (other.typedefString != null) {
+                return false;
+            }
+        } else if(!typedefString.equals(other.typedefString)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("TypedefString [typedefString=");
+        builder.append(typedefString);
+        builder.append("]");
+        return builder.toString();
+    }
+}
+----
+
+==== identity statement
+The purpose of the `identity` statement is to define a new globally unique,
+abstract, and untyped value.
+
+The `base` substatement argument is the name of existing identity from which
+the new identity is derived.
+
+Given that, an `identity` statement is mapped to Java abstract class and
+any `base` substatements are mapped as `extends` Java keyword.
+The identity name is translated to class name.
+
+For example, the following YANG:
+
+.YANG Model
+[source, yang]
+----
+identity toast-type {
+
+}
+
+identity white-bread {
+   base toast-type;
+}
+----
+
+is converted into this Java:
+
+.ToastType.java
+[source, java]
+----
+public abstract class ToastType extends BaseIdentity {
+    protected ToastType() {
+        super();
+    }
+}
+----
+
+.WhiteBread.java
+[source, java]
+----
+public abstract class WhiteBread extends ToastType {
+    protected WhiteBread() {
+        super();
+    }
+}
+----
