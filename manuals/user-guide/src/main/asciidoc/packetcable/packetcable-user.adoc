@@ -1,8 +1,8 @@
 [[pcmm-user-guide-preliminary]]
-= PCMM User Guide (*Preliminary*)
+== PCMM User Guide (*Preliminary*)
 
 [[system-overview]]
-== System Overview
+=== System Overview
 
 These components introduce a DOCSIS QoS Service Flow management using
 the PCMM protocol. The driver component is responsible for the
@@ -12,21 +12,24 @@ Gate Control messages and transmitted via COPS to the CMTS. This plugin
 adheres to the PCMM/COPS/PDP functionality defined in the CableLabs
 specification. PacketCable solution is an MDSAL compliant component.
 
-image:Screenshot6.png[Screenshot6.png,title="Screenshot6.png"]
+// .OpenDaylight Architecture
+// image:Screenshot6.png[width=500]
 
-image:Odp_diagram_helium_v6.jpg[Odp_diagram_helium_v6.jpg,title="Odp_diagram_helium_v6.jpg"]
+// .OpenDaylight Architecture
+// image:Odp_diagram_helium_v6.jpg[width=500]
 
-[[dependency-map]]
-== Dependency Map
+// [[dependency-map]]
+// === Dependency Map
 
-image:ODL-Helium-dependency.png[ODL-Helium-dependency.png,title="ODL-Helium-dependency.png"]
+// .OpenDaylight Dependencies
+// image:ODL-Helium-dependency.png[width=500]
 
 [[packetcable-components]]
-== Packetcable Components
+=== Packetcable Components
 
-packetcable is comprised of three OpendayLight bundles
+packetcable is comprised of three OpenDaylight bundles
 
-[cols=",",options="header",]
+[options="header"]
 |=======================================================================
 |Bundle |Description
 |packetcable-model |Contains the YANG information model for flows and
@@ -47,20 +50,20 @@ https://git.opendaylight.org/gerrit/gitweb?p=packetcable.git;a=tree;f=packetcabl
 Model]
 
 [[features-to-install]]
-=== Features to Install
+==== Features to Install
 
 ---------------------------------------------------------------------------------------------------------------------------
 opendaylight-user@root>feature:install odl-restconf odl-l2switch-switch odl-dlux-core odl-mdsal-apidocs odl-packetcable-all
 ---------------------------------------------------------------------------------------------------------------------------
 
 [[accessing-user-interface-assets]]
-== Accessing User Interface Assets
+=== Accessing User Interface Assets
 
 [[management-ui]]
-=== Management UI
+==== Management UI
 
 [[install-node.js]]
-==== Install Node.js
+===== Install Node.js
 
 Use the following script install_nodejs.sh to guide you through Node.js
 installation on Ubuntu.
@@ -80,41 +83,34 @@ NOTE: Not needed unless running standalone.
 https://wiki.opendaylight.org/view/OpenDaylight_dlux:Setup_and_Run[Setup
 dLux for Development]
 
-http://localhost:8181/dlux/index.html
+* http://localhost:8181/dlux/index.html
+* user: admin
+* password: admin
 
-user: admin
+.Sign in
+image:Screenshot4.png[width=500]
 
-password: admin
+.Manage Flows
+image:Screenshot3.png[width=500]
 
-Sign in
-
-image:Screenshot4.png[|Dlux Login,title="|Dlux Login"]
-
-Manage Flows
-
-image:Screenshot3.png[|Dlux Flows,title="|Dlux Flows"]
-
-Manage Nodes
-
-image:Screenshot2.png[|Dlux Nodes,title="|Dlux Nodes"]
+.Manage Nodes
+image:Screenshot2.png[width=500]
 
 [[explore-and-exercise-the-packetcable-rest-api]]
-=== Explore and exercise the PacketCable REST API
+==== Explore and exercise the PacketCable REST API
 
 http://localhost:8181/apidoc/explorer/index.html
 
 link:#RESTCONF_API_Explorer[ See Explorer ]
 
 [[Add CMTS]]
-== Adding a CMTS to OpenDaylight Inventory
+=== Adding a CMTS to OpenDaylight Inventory
 
-Add a CMTS to Opendaylight Inventory
-
-image:Screenshot1.png[Add CMTS using RESTCONF
-Explorer,title="Add CMTS using RESTCONF Explorer"]
+.Add a CMTS to OpenDaylight Inventory
+image:Screenshot1.png[width=500]
 
 [[postman]]
-=== Postman
+==== Postman
 
 https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm?hl=en[Configure
 the Chrome browser]
@@ -122,5 +118,6 @@ the Chrome browser]
 https://git.opendaylight.org/gerrit/gitweb?p=packetcable.git;a=tree;f=packetcable-client[Download
 and import sample packetcable collection]
 
-image:Screenshot5.png[Postman,title="Postman"]
+.Postman
+image:Screenshot5.png[width=500]
 
