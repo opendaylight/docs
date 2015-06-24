@@ -1,0 +1,188 @@
+==== Overview
+
+Please refer to the Service Function Chaining project for specifics on SFC provisioning and theory.
+
+*GBP* allows for the use of a chain, by name, in policy.
+
+This takes the form of an _action_ in *GBP*.
+
+Using the <<demo,*GBP* demo and development environment>> as an example:
+
+.GBP and SFC integration environment
+image::groupbasedpolicy/sfc-1-topology.png[align="center",width=500]
+
+In the topology above, a symmetrical chain between H35_2 and H36_3 could take path:
+
+H35_2 to sw1 to sff1 to sf1 to sff1 to sff2 to sf2 to sff2 to sw6 to H36_3
+
+If symmetric chaining was desired, the return path is:
+
+.GBP and SFC symmetric chain environment
+image::groupbasedpolicy/sfc-2-symmetric.png[align="center",width=500]
+
+
+If asymmetric chaining was desired, the return path could be direct, or an *entirely different chain*.
+
+.GBP and SFC assymmetric chain environment
+image::groupbasedpolicy/sfc-3-asymmetric.png[align="center",width=500]
+
+
+All these scenarios are supported by the Lithium integration.
+
+In the *Subject Feature Instance* section of the tenant config, we define the instances of the classifier definitions for ICMP and HTTP:
+----
+        "subject-feature-instances": {
+          "classifier-instance": [
+            {
+              "name": "icmp",
+              "parameter-value": [
+                {
+                  "name": "proto",
+                  "int-value": 1
+                }
+              ]
+            },
+            {
+              "name": "http-dest",
+              "parameter-value": [
+                {
+                  "int-value": "6",
+                  "name": "proto"
+                },
+                {
+                  "int-value": "80",
+                  "name": "destport"
+                }
+              ]
+            },
+            {
+              "name": "http-src",
+              "parameter-value": [
+                {
+                  "int-value": "6",
+                  "name": "proto"
+                },
+                {
+                  "int-value": "80",
+                  "name": "sourceport"
+                }
+              ]
+            }
+          ],
+----
+
+Then the action instances to associate to traffic that matches classifiers are defined. 
+
+Note the _SFC chain name_ must exist in SFC, and is validated against
+the datastore once the tenant configuration is entered, before entering a valid tenant configuration into the operational datastore (which triggers policy resolution).
+
+----
+          "action-instance": [
+            {
+              "name": "chain1",
+              "parameter-value": [
+                {
+                  "name": "sfc-chain-name",
+                  "string-value": "SFCGBP"
+                }
+              ]
+            },
+            {
+              "name": "allow1",
+            }
+          ]
+        },
+----
+
+When ICMP is matched, allow the traffic:
+
+----
+
+        "contract": [
+          {
+            "subject": [
+              {
+                "name": "icmp-subject",
+                "rule": [
+                  {
+                    "name": "allow-icmp-rule",
+                    "order" : 0,
+                    "classifier-ref": [
+                      {
+                        "name": "icmp"
+                      }
+                    ],
+                    "action-ref": [
+                      {
+                        "name": "allow1",
+                        "order": 0
+                      }
+                    ]
+                  }
+                  
+                ]
+              },
+----
+
+When HTTP is matched, *in* to the provider of the contract with a TCP destination port of 80 (HTTP) or the HTTP request. The chain action is triggered, and similarly 
+*out* from the provider for traffic with TCP source port of 80 (HTTP), or the HTTP response.
+
+----
+              {
+                "name": "http-subject",
+                "rule": [
+                  {
+                    "name": "http-chain-rule-in",
+                    "classifier-ref": [
+                      {
+                        "name": "http-dest",
+                        "direction": "in"
+                      }
+                    ],
+                    "action-ref": [
+                      {
+                        "name": "chain1",
+                        "order": 0
+                      }
+                    ]
+                  },
+                  {
+                    "name": "http-chain-rule-out",
+                    "classifier-ref": [
+                      {
+                        "name": "http-src",
+                        "direction": "out"
+                      }
+                    ],
+                    "action-ref": [
+                      {
+                        "name": "chain1",
+                        "order": 0
+                      }
+                    ]
+                  }
+                ]
+              }
+----
+
+To enable asymmetrical chaining, for instance, the user desires that HTTP requests traverse the chain, but the HTTP response does not, the HTTP response is set to _allow_ instead of chain:
+
+----
+
+                  {
+                    "name": "http-chain-rule-out",
+                    "classifier-ref": [
+                      {
+                        "name": "http-src",
+                        "direction": "out"
+                      }
+                    ],
+                    "action-ref": [
+                      {
+                        "name": "allow1",
+                        "order": 0
+                      }
+                    ]
+                  }
+----
+
