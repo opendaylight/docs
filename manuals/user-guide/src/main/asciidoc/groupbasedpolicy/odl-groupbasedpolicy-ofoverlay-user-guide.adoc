@@ -1,0 +1,155 @@
+== Group Based Policy OfOverlay User Guide
+
+=== Overview
+The OpenFlow Overlay (OfOverlay) feature enables the OpenFlow Overlay
+renderer, which creates a network virtualization solution across nodes
+that host OpenvSwitch software switches.  
+
+When this feature is loaded in isolation, the user configures the required
+infrastructure, such as
+
+* instantiating bridges, 
+* attaching hosts to the bridges, 
+* and creating the tunnel ports on the bridges. 
+
+
+
+=== OpenFlow Overlay Architecture
+
+=== Configuring OpenFlow Overlay via REST
+
+test
+
+NOTE: Please see the <<UX,UX>> section on how to configure *GBP* via the GUI.
+
+
+----
+PUT http://{{controllerIp}}:8181/restconf/config/opendaylight-inventory:nodes/
+{
+    "opendaylight-inventory:nodes": {
+        "node": [
+            {
+                "id": "openflow:1", 
+                "ofoverlay:tunnel": [
+                    {
+                        "tunnel-type": "overlay:tunnel-type-vxlan",
+                        "ip": "192.168.194.142",
+                        "port": 4789,
+                        "node-connector-id": "openflow:1:1"
+                    }
+                ]
+            }, 
+            {
+                "id": "openflow:2", 
+                "ofoverlay:tunnel": [
+                    {
+                        "tunnel-type": "overlay:tunnel-type-vxlan",
+                        "ip": "192.168.194.146",
+                        "port": 4789,
+                        "node-connector-id": "openflow:2:1"
+                    }
+                ]
+            }
+        ]
+    }
+}
+----
+
+The following is an example of Endpoint registration using the additional
+"port-name" attribute provided by the OpenFlow Overlay augmentation:
+----
+POST http://{{controllerIp}}:8181/restconf/operations/endpoint:register-endpoint
+{
+    "input": {
+        "endpoint-group": "1eaf9a67-a171-42a8-9282-71cf702f61dd", 
+        "network-containment" : "d2779562-ebf1-45e6-93a4-78e2362bc418",
+        "l2-context": "7b796915-adf4-4356-b5ca-de005ac410c1", 
+        "mac-address": "00:00:00:00:35:02", 
+        "l3-address": [
+            {
+                "ip-address": "10.0.35.2", 
+                "l3-context": "cbe0cc07-b8ff-451d-8171-9eef002a8e80"
+            }
+        ], 
+        "port-name": "vethl-h35_2", 
+        "tenant": "f5c7d344-d1c7-4208-8531-2c2693657e12"
+    }
+}
+----
+
+You should be able to see the location information augmentation
+when reading the endpoint from the datatstore (Endpoint Repository):
+
+----
+GET http://{{controllerIp}}:8181/restconf/operational/endpoint:endpoints/endpoint:endpoint/7b796915-adf4-4356-b5ca-de005ac410c1/00:00:00:00:35:02
+{
+    "endpoint": [
+        {
+            "l2-context": "7b796915-adf4-4356-b5ca-de005ac410c1",
+            "mac-address": "00:00:00:00:35:02",
+            "tenant": "f5c7d344-d1c7-4208-8531-2c2693657e12",
+            "timestamp": 1432216646793,
+            "network-containment": "d2779562-ebf1-45e6-93a4-78e2362bc418",
+            "ofoverlay:port-name": "vethl-h35_2",
+            "ofoverlay:node-connector-id": "openflow:1:2",
+            "ofoverlay:node-id": "openflow:1",
+            "l3-address": [
+                {
+                    "l3-context": "cbe0cc07-b8ff-451d-8171-9eef002a8e80",
+                    "ip-address": "10.0.35.2"
+                }
+            ],
+            "endpoint-group": "1eaf9a67-a171-42a8-9282-71cf702f61dd"
+        }
+    ]
+}
+----
+The augmentations show up as fields with the "ofoverlay:" prefix.
+The OfOverlay renderer determines this dynamically based on the port
+name provided when the Endpoints are registered. In this case, the
+Endpoint lives on the bridge "openflow:1" in the OpenDaylight inventory
+model, on the port "openflow:1:1", again in the inventory model.
+
+The Inventory model can be used to help debug....
+
+
+=== Administering or Managing Group Based Policy OpenFlow Overlay
+To start the OpenFlow Overlay renderer, do the following:
+
+. Start karaf
+. Load the OpenFlow Overlay Renderer feature with restconf
++
+----
+opendaylight-user@root> feature:install odl-groupbasedpolicy-ofoverlay odl-restconf
+----
++
+. Verify that the controller is running
++
+After a few seconds, the controller should be up and the OfOverlay renderer
+should be running. You can verify this using the following command in
+the karaf console:
++
+----
+opendaylight-user@root>log:display | grep OFOverlayRenderer
+----
++
+You should see something like the following:
++
+----
+2015-05-21 09:55:51,712 | INFO  | config-pusher    | OFOverlayRenderer                |
+313 - org.opendaylight.groupbasedpolicy.ofoverlay-renderer - 0.2.0.SNAPSHOT | Initialized OFOverlay renderer
+----
++
+. Configure the vSwitches that will participate in the overlay
+. Register the Endpoints that will participate in the overlay
+. Configure any policy
+
+Include related command reference or  operations that you could perform
+using the feature. For example viewing network statistics, monitoring
+the network,  generating reports, and so on.
+
+=== Tutorials
+
+Comprehensive tutorials, along with a simple demonstration environment leveraging Vagrant 
+can be found on the https://wiki.opendaylight.org/view/Group_Based_Policy_(GBP)[*GBP* wiki]
+
