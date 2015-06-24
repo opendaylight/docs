@@ -1,0 +1,282 @@
+==== Overview
+
+These following components make up this application and are described in more detail in following sections:
+
+* Basic view
+* Governance view
+* Policy Expression view
+* Wizard view
+
+The *GBP* UX is access via: 
+
+ http://<odl controller>:8181/index.html
+
+==== Basic view
+
+Basic view contains 5 navigation buttons which switch user to the desired section of application:
+
+* Governance – switch to the Governance view (middle of graphic has the same function)
+* Renderer configuration – switch to the Policy expression view with Renderers section expanded
+* Policy expression – switch to the Policy expression view with Policy section expanded
+* Operational constraints – placeholder for development in next release
+
+.Basic view
+image::groupbasedpolicy/ui-1-basicview.png[align="center",width=500]
+
+
+==== Governance view
+
+Governance view consists from three columns.
+
+.Governance view
+image::groupbasedpolicy/ui-2-governanceview.png[align="center",width=500]
+
+*Governance view – Basic view – Left column*
+
+In the left column is Health section with Exception and Conflict buttons with no functionality yet. This is a placeholder for development in further releases.
+
+*Governance view – Basic view – Middle column*
+
+In the top half of this section is select box with list of tenants for select. Once the tenant is selected, all sub sections in application operate and display data with actual selected tenant. 
+
+Below the select box are buttons which display Expressed or Delivered policy of Governance section. In the bottom half of this section is select box with list of renderers for select. There is currently only <<OfOverlay,OfOverlay>> renderer available. 
+
+Below the select box is Renderer configuration button, which switch the app into the Policy expression view with Renderers section expanded for performing CRUD operations. Renderer state button display Renderer state view.
+
+*Governance view – Basic view – Right column*
+
+In the bottom part of the right section of Governance view is Home button which switch the app to the Basic view. 
+
+In the top part is situated navigation menu with four main sections. 
+
+Policy expression button expand/collapse sub menu with three main parts of Policy expression. By clicking on sub menu buttons, user will be switched into the Policy expressions view with appropriate section expanded for performing CRUD operations. 
+
+Renderer configuration button switches user into the Policy expressions view. 
+
+Governance button expand/collapse sub menu with four main parts of Governance section. Sub menu buttons of Governance section display appropriate section of Governance view. 
+
+Operational constraints have no functionality yet, and is a placeholder for development in further releases. 
+
+Below the menu is place for view info section which displays info about actual selected element from the topology (explained below).
+
+
+*Governance view – Expressed policy*
+
+In this view are displayed contracts with their consumed and provided EndpointGroups of actual selected tenant, which can be changed in select box in the upper left corner. 
+
+By single-clicking on any contract or EPG, the data of actual selected element will be shown in the right column below the menu. A Manage button launches a display wizard window for managing configuration of items such as <<SFC,Service Function Chaining>>.
+
+
+.Expressed policy
+image::groupbasedpolicy/ui-3-governanceview-expressed.png[align="center",width=500]
+
+
+*Governance view – Delivered policy*
+In this view are displayed subjects with their consumed and provided EndpointGroups of actual selected tenant, which can be changed in select box in the upper left corner. 
+
+By single-clicking on any subject or EPG, the data of actual selected element will be shown in the right column below the menu. 
+
+By double-click on subject the subject detail view will be displayed with subject’s rules of actual selected subject, which can be changed in select box in the upper left corner. 
+
+By single-clicking on rule or subject, the data of actual selected element will be shown in the right column below the menu. 
+
+By double-clicking on EPG in Delivered policy view, the EPG detail view will be displayed with EPG’s endpoints of actual selected EPG, which can be changed in select box in the upper left corner. 
+
+By single-clicking on EPG or endpoint the data of actual selected element will be shown in the right column below the menu.
+
+
+.Delivered policy
+image::groupbasedpolicy/ui-4-governanceview-delivered-0.png[align="center",width=500]
+
+
+
+.Subject detail
+image::groupbasedpolicy/ui-4-governanceview-delivered-1-subject.png[align="center",width=500]
+
+
+.EPG detail
+image::groupbasedpolicy/ui-4-governanceview-delivered-2-epg.png[align="center",width=500]
+
+*Governance view – Renderer state*
+
+In this part are displayed Subject feature definition data with two main parts: Action definition and Classifier definition. 
+
+By clicking on the down/right arrow in the circle is possible to expand/hide data of appropriate container or list. Next to the list node are displayed names of list’s elements where one is always selected and element’s data are shown (blue line under the name). 
+
+By clicking on names of children nodes is possible to select desired node and node’s data will be displayed.
+
+
+.Renderer state
+image::groupbasedpolicy/ui-4-governanceview-renderer.png[align="center",width=500]
+
+==== Policy expression view
+
+In the left part of this view is placed topology of actual selected elements with the buttons for switching between types of topology at the bottom. 
+
+Right column of this view contains four parts. At the top of this column are displayed breadcrumbs with actual position in the application. 
+
+Below the breadcrumbs is select box with list of tenants for select. In the middle part is situated navigation menu, which allows switch to the desired section for performing CRUD operations. 
+
+At the bottom is quick navigation menu with Access Model Wizard button which display Wizard view, Home button which switch application to the Basic view and occasionally Back button, which switch application to the upper section.
+
+*Policy expression  - Navigation menu*
+
+To open Policy expression, select Policy expression from the GBP Home screen.
+
+In the top of navigation box you can select the tenant from the tenants list to activate features addicted to selected tenant.
+
+In the right menu, by default, the Policy menu section is expanded. Subitems of this section are modules for CRUD (creating, reading, updating and deleting) of tenants, EndpointGroups, contracts, L2/L3 objects.
+
+* Section Renderers contains CRUD forms for Classifiers and Actions.
+* Section Endpoints contains CRUD forms for Endpoint and L3 prefix endpoint.
+
+.Navigation menu
+image::groupbasedpolicy/ui-5-expresssion-1.png[height=400]
+
+.CRUD operations
+image::groupbasedpolicy/ui-5-expresssion-2.png[height=400]
+
+
+*Policy expression - Types of topology*
+
+There are three different types of topology:
+
+* Configured topology - EndpointGroups and contracts between them from CONFIG datastore
+* Operational topology - displays same information but is based on operational data. 
+* L2/L3 - displays relationships between L3Contexts, L2 Bridge domains, L2 Flood domains and Subnets.
+
+
+.L2/L3 Topology
+image::groupbasedpolicy/ui-5-expresssion-3.png[align="center",width=500]
+
+
+.Config Topology
+image::groupbasedpolicy/ui-5-expresssion-4.png[align="center",width=500]
+
+
+*Policy expression - CRUD operations*
+
+In this part are described basic flows for viewing, adding, editing and deleting system elements like tenants, EndpointGroups etc.
+
+==== Tenants
+
+To edit tenant objects click the Tenants button in the right menu. You can see the CRUD form containing tenants list and control buttons.
+
+To add new tenant, click the Add button This will display the form for adding a new tenant. After filling tenant attributes Name and Description click Save button. Saving of any object can be performed only if all the object attributes are filled correctly. If some attribute doesn't have correct value, exclamation mark with mouse-over tooltip will be displayed next to the label for the attribute. After saving of tenant the form will be closed and the tenants list will be set to default value.
+
+To view an existing tenant, select the tenant from the select box Tenants list. The view form is read-only and can be closed by clicking cross mark in the top right of the form.
+
+To edit selected tenant, click the Edit button, which will display the edit form for selected tenant. After editing the Name and Description of selected tenant click the Save button to save selected tenant. After saving of tenant the edit form will be closed and the tenants list will be set to default value.
+
+To delete tenant select the tenant from the Tenants list and click Delete button.
+
+To return to the Policy expression click Back button on the bottom of window.
+
+*EndpointGroups*
+
+For managing EndpointGroups (EPG) the tenant from the top Tenants list must be selected.
+
+To add new EPG click Add button and after filling required attributes click Save button. After adding the EPG you can edit it and assign Consumer named selector or Provider named selector to it.
+
+To edit EPG click the Edit button after selecting the EPG from Group list.
+
+To add new Consumer named selector (CNS) click the Add button next to the Consumer named selectors list. While CNS editing you can set one or more contracts for current CNS pressing the Plus button and selecting the contract from the Contracts list. To remove the contract, click on the cross mark next to the contract. Added CNS can be viewed, edited or deleted by selecting from the Consumer named selectors list and clicking the Edit and Delete buttons like with the EPG or tenants.
+
+To add new Provider named selector (PNS) click the Add button next to the Provider named selectors list. While PNS editing you can set one or more contracts for current PNS pressing the Plus button and selecting the contract from the Contracts list. To remove the contract, click on the cross mark next to the contract. Added PNS can be viewed, edited or deleted by selecting from the Provider named selectors list and clicking the Edit and Delete buttons like with the EPG or tenants.
+
+To delete EPG, CNS or PNS select it in selectbox and click the Delete button next to the selectbox.
+
+*Contracts*
+
+For managing contracts the tenant from the top Tenants list must be selected.
+
+To add new Contract click Add button and after filling required fields click Save button.
+
+After adding the Contract user can edit it by selecting in the Contracts list  and clicking Edit button.
+
+To add new Clause click Add button next to the Clause list while editing the contract. While editing the Clause after selecting clause from the Clause list user can assign clause subjects by clicking the Plus button next to the Clause subjects label. Adding and editing action must be submitted by pressing Save button. To manage Subjects you can use CRUD form like with the Clause list.
+
+*L2/L3*
+
+For managing L2/L3 the tenant from the top Tenants list must be selected.
+
+To add L3 Context click the Add button next to the L3 Context list ,which will display the form for adding a new L3 Context. After filling L3 Context attributes click Save button. After saving of L3 Context, form will be closed and the L3 Context list will be set to default value.
+
+To view an existing L3 Context, select the L3 Context from the select box L3 Context list. The view form is read-only and can be closed by clicking cross mark in the top right of the form.
+
+If user wants to edit selected L3 Context, click the Edit button, which will display the edit form for selected L3 Context. After editing click the Save button to save selected L3 Context. After saving of L3 Context, the edit form will be closed and the L3 Context list will be set to default value.
+
+To delete L3 Context, select it from the L3 Context list and click Delete button.
+
+To add L2 Bridge Domain, click the Add button next to the L2 Bridge Domain list. This will display the form for adding a new L2 Bridge Domain. After filling L2 Bridge Domain attributes click Save button. After saving of L2 Bridge Domain, form will be closed and the L2 Bridge Domain list will be set to default value.
+
+To view an existing L2 Bridge Domain, select the L2 Bridge Domain from the select box L2 Bridge Domain list. The view form is read-only and can be closed by clicking cross mark in the top right of the form.
+
+If user wants to edit selected L2 Bridge Domain, click the Edit button, which will display the edit form for selected L2 Bridge Domain. After editing click the Save button to save selected L2 Bridge Domain. After saving of L2 Bridge Domain the edit form will be closed and the L2 Bridge Domain list will be set to default value.
+
+To delete L2 Bridge Domain select it from the L2 Bridge Domain list and click Delete button.
+
+To add L3 Flood Domain, click the Add button next to the L3 Flood Domain list. This will display the form for adding a new L3 Flood Domain. After filling L3 Flood Domain attributes click Save button. After saving of L3 Flood Domain, form will be closed and the L3 Flood Domain list will be set to default value.
+
+To view an existing L3 Flood Domain, select the L3 Flood Domain from the select box L3 Flood Domain list. The view form is read-only and can be closed by clicking cross mark in the top right of the form.
+
+If user wants to edit selected L3 Flood Domain, click the Edit button, which will display the edit form for selected L3 Flood Domain. After editing click the Save button to save selected L3 Flood Domain. After saving of L3 Flood Domain the edit form will be closed and the L3 Flood Domain list will be set to default value.
+
+To delete L3 Flood Domain select it from the L3 Flood Domain list and click Delete button.
+
+To add Subnet click the Add button next to the Subnet list. This will display the form for adding a new Subnet. After filling Subnet attributes click Save button. After saving of Subnet, form will be closed and the Subnet list will be set to default value.
+
+To view an existing Subnet, select the Subnet from the select box Subnet list. The view form is read-only and can be closed by clicking cross mark in the top right of the form.
+
+If user wants to edit selected Subnet, click the Edit button, which will display the edit form for selected Subnet. After editing click the Save button to save selected Subnet. After saving of Subnet the edit form will be closed and the Subnet list will be set to default value.
+
+To delete Subnet select it from the Subnet list and click Delete button.
+
+*Classifiers*
+
+To add Classifier, click the Add button next to the Classifier list. This will display the form for adding a new Classifier. After filling Classifier attributes click Save button. After saving of Classifier, form will be closed and the Classifier list will be set to default value.
+
+To view an existing Classifier, select the Classifier from the select box Classifier list. The view form is read-only and can be closed by clicking cross mark in the top right of the form.
+
+If you want to edit selected Classifier, click the Edit button, which will display the edit form for selected Classifier. After editing click the Save button to save selected Classifier. After saving of Classifier the edit form will be closed and the Classifier list will be set to default value.
+
+To delete Classifier select it from the Classifier list and click Delete button.
+
+*Actions*
+
+To add Action, click the Add button next to the Action list. This will display the form for adding a new Action. After filling Action attributes click Save button. After saving of Action, form will be closed and the Action list will be set to default value.
+
+To view an existing Action, select the Action from the select box Action list. The view form is read-only and can be closed by clicking cross mark in the top right of the form.
+
+If user wants to edit selected Action, click the Edit button, which will display the edit form for selected Action. After editing click the Save button to save selected Action. After saving of Action the edit form will be closed and the Action list will be set to default value.
+
+To delete Action select it from the Action list and click Delete button.
+
+*Endpoint*
+
+To add Endpoint, click the Add button next to the Endpoint list. This will display the form for adding a new Endpoint. To add EndpointGroup assignment click the Plus button next to the label EndpointGroups. To add Condition click Plus button next to the label Condition. To add L3 Address click the Plus button next to the L3 Addresses label. After filling Endpoint attributes click Save button. After saving of Endpoint, form will be closed and the Endpoint list will be set to default value.
+
+To view an existing Endpoint just, the Endpoint from the select box Endpoint list. The view form is read-only and can be closed by clicking cross mark in the top right of the form.
+
+If you want to edit selected Endpoint, click the Edit button, which will display the edit form for selected Endpoint. After editing click the Save button to save selected Endpoint. After saving of Endpoint the edit form will be closed and the Endpoint list will be set to default value.
+
+To delete Endpoint select it from the Endpoint list and click Delete button.
+
+*L3 prefix endpoint*
+
+To add L3 prefix endpoint, click the Add button next to the L3 prefix endpoint list. This will display the form for adding a new Endpoint. To add EndpointGroup assignment, click the Plus button next to the label EndpointGroups. To add Condition, click Plus button next to the label Condition. To add L2 gateway click the Plus button next to the L2 gateways label.  To add L3 gateway, click the Plus button next to the L3 gateways label. After filling L3 prefix endpoint attributes click Save button. After saving of L3 prefix endpoint, form will be closed and the Endpoint list will be set to default value.
+
+To view an existing L3 prefix endpoint, select the Endpoint from the select box L3 prefix endpoint list. The view form is read-only and can be closed by clicking cross mark in the top right of the form.
+
+If you want to edit selected L3 prefix endpoint, click the Edit button, which will display the edit form for selected L3 prefix endpoint. After editing click the Save button to save selected L3 prefix endpoint. After saving of Endpoint the edit form will be closed and the Endpoint list will be set to default value.
+
+To delete Endpoint select it from the L3 prefix endpoint list and click Delete button.
+
+==== Wizard
+
+Wizard provides quick method to send basic data to controller necessary for basic usage of GBP application. It is useful in the case that there aren’t any data in controller. In the first tab is form for create tenant. The second tab is for CRUD operations with contracts and their sub elements such as subjects, rules, clauses, action refs and classifier refs. The last tab is for CRUD operations with EndpointGroups and their CNS and PNS. Created structure of data is possible to send by clicking on Submit button.
+
+
+.Wizard
+image::groupbasedpolicy/ui-6-wizard.png[align="center",width=500]
+
