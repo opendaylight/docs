@@ -1,0 +1,502 @@
+==== Overview
+
+The OpenFlow Overlay (OfOverlay) feature enables the OpenFlow Overlay
+renderer, which creates a network virtualization solution across nodes
+that host OpenvSwitch software switches.  
+
+===== Installing and Pre-requisites
+
+From the karaf console in OpenDaylight:
+
+ feature:install odl-groupbasedpolicy-ofoverlay
+
+This renderer is designed to work with OpenVSwitch (OVS) 2.1+ (although 2.3 is strongly recommended) and OpenFlow 1.3.
+
+When used in conjunction with the <<Neutron,Neutron Mapper feature>> no extra OfOverlay specific setup is required.
+
+When this feature is loaded "standalone", the user is required to configure infrastructure, such as
+
+* instantiating OVS bridges, 
+* attaching hosts to the bridges, 
+* and creating the VXLAN/VXLAN-GPE tunnel ports on the bridges. 
+
+[[offset]]
+In Lithium, the *GBP* OfOverlay renderer also supports a table offset option, to offset the pipeline post-table 0
+
+This is set by changing:
+ <gbp-ofoverlay-table-offset>0</gbp-ofoverlay-table-offset>
+
+in file:
+./distribution-karaf/target/assembly/etc/opendaylight/karaf/15-groupbasedpolicy-ofoverlay.xml
+
+==== OpenFlow Overlay Architecture
+
+These are the primary components of *GBP*. The OfOverlay components are highlighted in red.
+
+.OfOverlay within *GBP*
+image::groupbasedpolicy/ofoverlay-1-components.png[align="center",width=500]
+
+In terms of the inner components of the *GBP* OfOverlay renderer:
+
+.OfOverlay expanded view:
+image::groupbasedpolicy/ofoverlay-2-components.png[align="center",width=500]
+
+*OfOverlay Renderer*
+
+Launches components below:
+
+*Policy Resolver*
+
+Policy resolution is completely domain independent, and the OfOverlay leverages process policy information internally. See <<policyresolution,Policy Resolution process>>.
+
+It listens to inputs to the _Tenants_ configuration datastore, validates tenant input, then writes this to the Tenants operational datastore.
+
+From there an internal notification is generated to the PolicyManager.
+
+In the next release, this will be moving to a non-renderer specific location.
+
+*Endpoint Manager*
+
+The endpoint repository, in Lithium, operates in *orchestrated* mode. This means the user is responsible for the provisioning of endpoints via:
+
+* <<UX,UX/GUI>>
+* REST API
+
+NOTE: When using the <<Neutron,Neutron mapper>> feature, everything is managed transparently via Neutron.
+
+The Endpoint Manager is responsible for listening to Endpoint repository updates and notifying the Switch Manager when a valid Endpoint has been registered.
+
+It also supplies utility functions to the flow pipeline process.
+
+*Switch Manager*
+
+The Switch Manager has been refactored in Lithium to be purely a state manager. 
+
+Switches are in one of 3 states:
+* DISCONNECTED
+* PREPARING
+* READY
+
+*Ready* is denoted by a connected switch:
+
+* having a tunnel interface
+* having at least one endpoint connected.
+
+In this way *GBP* is not writing to switches it has no business to.
+
+*Preparing* simply means the switch has a controller connection but is missing one of the above _complete and necessary_ conditions
+
+*Disconnected* means a previously connected switch is no longer present in the Inventory operational datastore.
+
+.OfOverlay Flow Pipeline
+image::groupbasedpolicy/ofoverlay-3-flowpipeline.png[align="center",width=500]
+
+The OfOverlay leverages Nicira registers as follows:
+
+REG0 = Source EndpointGroup + Tenant ordinal
+REG1 = Source Conditions + Tenant ordinal
+REG2 = Destination EndpointGroup + Tenant ordinal
+REG3 = Destination Conditions + Tenant ordinal
+REG4 = Bridge Domain + Tenant ordinal
+REG5 = Flood Domain + Tenant ordinal
+REG6 = Layer 3 Context + Tenant ordinal
+
+*Port Security*
+
+Table 0 of the OpenFlow pipeline. Responsible for ensuring that only valid connections can send packets into the pipeline:
+
+ cookie=0x0, <snip> , priority=200,in_port=3 actions=goto_table:2
+ cookie=0x0, <snip> , priority=200,in_port=1 actions=goto_table:1
+ cookie=0x0, <snip> , priority=121,arp,in_port=5,dl_src=fa:16:3e:d5:b9:8d,arp_spa=10.1.1.3 actions=goto_table:2
+ cookie=0x0, <snip> , priority=120,ip,in_port=5,dl_src=fa:16:3e:d5:b9:8d,nw_src=10.1.1.3 actions=goto_table:2
+ cookie=0x0, <snip> , priority=115,ip,in_port=5,dl_src=fa:16:3e:d5:b9:8d,nw_dst=255.255.255.255 actions=goto_table:2
+ cookie=0x0, <snip> , priority=112,ipv6 actions=drop
+ cookie=0x0, <snip> , priority=111, ip actions=drop
+ cookie=0x0, <snip> , priority=110,arp actions=drop
+ cookie=0x0, <snip> ,in_port=5,dl_src=fa:16:3e:d5:b9:8d actions=goto_table:2
+ cookie=0x0, <snip> , priority=1 actions=drop
+
+Ingress from tunnel interface, go to Table _Source Mapper_:
+
+ cookie=0x0, <snip> , priority=200,in_port=3 actions=goto_table:2
+
+Ingress from outside, goto Table _Ingress NAT Mapper_:
+
+ cookie=0x0, <snip> , priority=200,in_port=1 actions=goto_table:1
+ 
+ARP from Endpoint, go to Table _Source Mapper_:
+
+ cookie=0x0, <snip> , priority=121,arp,in_port=5,dl_src=fa:16:3e:d5:b9:8d,arp_spa=10.1.1.3 actions=goto_table:2
+
+IPv4 from Endpoint, go to Table _Source Mapper_:
+
+ cookie=0x0, <snip> , priority=120,ip,in_port=5,dl_src=fa:16:3e:d5:b9:8d,nw_src=10.1.1.3 actions=goto_table:2
+
+DHCP DORA from Endpoint, go to Table _Source Mapper_:
+
+ cookie=0x0, <snip> , priority=115,ip,in_port=5,dl_src=fa:16:3e:d5:b9:8d,nw_dst=255.255.255.255 actions=goto_table:2
+ 
+Series of DROP tables with priority set to capture any non-specific traffic that should have matched above:
+
+ cookie=0x0, <snip> , priority=112,ipv6 actions=drop
+ cookie=0x0, <snip> , priority=111, ip actions=drop
+ cookie=0x0, <snip> , priority=110,arp actions=drop 
+
+"L2" catch all traffic not identified above:
+
+ cookie=0x0, <snip> ,in_port=5,dl_src=fa:16:3e:d5:b9:8d actions=goto_table:2
+
+Drop Flow:
+
+ cookie=0x0, <snip> , priority=1 actions=drop
+
+
+*Ingress NAT Mapper*
+
+Table <<offset,_offset_>>+1.
+
+ARP responder for external NAT address:
+
+ cookie=0x0, <snip> , priority=150,arp,arp_tpa=192.168.111.51,arp_op=1 actions=move:NXM_OF_ETH_SRC[]->NXM_OF_ETH_DST[],set_field:fa:16:3e:58:c3:dd->eth_src,load:0x2->NXM_OF_ARP_OP[],move:NXM_NX_ARP_SHA[]->NXM_NX_ARP_THA[],load:0xfa163e58c3dd->NXM_NX_ARP_SHA[],move:NXM_OF_ARP_SPA[]->NXM_OF_ARP_TPA[],load:0xc0a86f33->NXM_OF_ARP_SPA[],IN_PORT
+
+Translate from Outside to Inside and perform same functions as SourceMapper.
+
+ cookie=0x0, <snip> , priority=100,ip,nw_dst=192.168.111.51 actions=set_field:10.1.1.2->ip_dst,set_field:fa:16:3e:58:c3:dd->eth_dst,load:0x2->NXM_NX_REG0[],load:0x1->NXM_NX_REG1[],load:0x4->NXM_NX_REG4[],load:0x5->NXM_NX_REG5[],load:0x7->NXM_NX_REG6[],load:0x3->NXM_NX_TUN_ID[0..31],goto_table:3
+
+*Source Mapper*
+
+Table <<offset,_offset_>>+2.
+
+Determines based on characteristics from the ingress port, which:
+
+* EndpointGroup(s) it belongs to
+* Forwarding context
+* Tunnel VNID ordinal
+
+Establishes tunnels at valid destination switches for ingress.
+
+Ingress Tunnel established at remote node with VNID Ordinal that maps to Source EPG, Forwarding Context etc:
+
+ cookie=0x0, <snip>, priority=150,tun_id=0xd,in_port=3 actions=load:0xc->NXM_NX_REG0[],load:0xffffff->NXM_NX_REG1[],load:0x4->NXM_NX_REG4[],load:0x5->NXM_NX_REG5[],load:0x7->NXM_NX_REG6[],goto_table:3
+
+Maps endpoint to Source EPG, Forwarding Context based on ingress port, and MAC:
+
+ cookie=0x0, <snip> , priority=100,in_port=5,dl_src=fa:16:3e:b4:b4:b1 actions=load:0xc->NXM_NX_REG0[],load:0x1->NXM_NX_REG1[],load:0x4->NXM_NX_REG4[],load:0x5->NXM_NX_REG5[],load:0x7->NXM_NX_REG6[],load:0xd->NXM_NX_TUN_ID[0..31],goto_table:3
+
+Generic drop:
+
+ cookie=0x0, duration=197.622s, table=2, n_packets=0, n_bytes=0, priority=1 actions=drop
+
+*Destination Mapper*
+
+Table <<offset,_offset_>>+3.
+
+Determines based on characteristics of the endpoint:
+
+* EndpointGroup(s) it belongs to
+* Forwarding context
+* Tunnel Destination value
+
+Manages routing based on valid ingress nodes ARP'ing for their default gateway, and matches on either gateway MAC or destination endpoint MAC.
+
+ARP for default gateway for the 10.1.1.0/24 subnet:
+
+ cookie=0x0, <snip> , priority=150,arp,reg6=0x7,arp_tpa=10.1.1.1,arp_op=1 actions=move:NXM_OF_ETH_SRC[]->NXM_OF_ETH_DST[],set_field:fa:16:3e:28:4c:82->eth_src,load:0x2->NXM_OF_ARP_OP[],move:NXM_NX_ARP_SHA[]->NXM_NX_ARP_THA[],load:0xfa163e284c82->NXM_NX_ARP_SHA[],move:NXM_OF_ARP_SPA[]->NXM_OF_ARP_TPA[],load:0xa010101->NXM_OF_ARP_SPA[],IN_PORT
+
+Broadcast traffic destined for GroupTable:
+
+ cookie=0x0, <snip> , priority=140,reg5=0x5,dl_dst=01:00:00:00:00:00/01:00:00:00:00:00 actions=load:0x5->NXM_NX_TUN_ID[0..31],group:5
+ 
+Layer3 destination matching flows, where priority=100+masklength. Since *GBP* now support L3Prefix endpoint, we can set default routes etc:
+
+ cookie=0x0, <snip>, priority=132,ip,reg6=0x7,dl_dst=fa:16:3e:b4:b4:b1,nw_dst=10.1.1.3 actions=load:0xc->NXM_NX_REG2[],load:0x1->NXM_NX_REG3[],load:0x5->NXM_NX_REG7[],set_field:fa:16:3e:b4:b4:b1->eth_dst,dec_ttl,goto_table:4
+
+Layer2 destination matching flows, designed to be caught only after last IP flow (lowest priority IP flow is 100):
+
+ cookie=0x0, duration=323.203s, table=3, n_packets=4, n_bytes=168, priority=50,reg4=0x4,dl_dst=fa:16:3e:58:c3:dd actions=load:0x2->NXM_NX_REG2[],load:0x1->NXM_NX_REG3[],load:0x2->NXM_NX_REG7[],goto_table:4
+
+General drop flow:
+ cookie=0x0, duration=323.207s, table=3, n_packets=6, n_bytes=588, priority=1 actions=drop
+
+*Policy Enforcer*
+
+Table <<offset,_offset_>>+4.
+
+Once the Source and Destination EndpointGroups are assigned, policy is enforced based on resolved rules.
+
+In the case of <<SFC,Service Function Chaining>>, the encapsulation and destination for traffic destined to a chain, is discovered and enforced.
+
+Policy flow, allowing IP traffic between EndpointGroups:
+
+ cookie=0x0, <snip> , priority=64998,ip,reg0=0x8,reg1=0x1,reg2=0xc,reg3=0x1 actions=goto_table:5
+
+*Egress NAT Mapper*
+
+Table <<offset,_offset_>>+5.
+
+Performs NAT function before Egressing OVS instance to the underlay network.
+
+Inside to Outside NAT translation before sending to underlay:
+
+ cookie=0x0, <snip> , priority=100,ip,reg6=0x7,nw_src=10.1.1.2 actions=set_field:192.168.111.51->ip_src,goto_table:6
+
+*External Mapper*
+
+Table <<offset,_offset_>>+6.
+
+Manages post-policy enforcement for endpoint specific destination effects. Specifically for <<SFC,Service Function Chaining>>, which is why we can support both symmetric and asymmetric chains
+and distributed ingress/egress classification.
+
+Generic allow:
+
+ cookie=0x0, <snip>, priority=100 actions=output:NXM_NX_REG7[]
+
+==== Configuring OpenFlow Overlay via REST
+
+NOTE: Please see the <<UX,UX>> section on how to configure *GBP* via the GUI.
+
+*Endpoint*
+
+----
+POST http://{{controllerIp}}:8181/restconf/operations/endpoint:register-endpoint
+{
+    "input": {
+        "endpoint-group": "<epg0>",
+        "endpoint-groups" : ["<epg1>","<epg2>"],
+        "network-containment" : "<fowarding-model-context1>",
+        "l2-context": "<bridge-domain1>", 
+        "mac-address": "<mac1>", 
+        "l3-address": [
+            {
+                "ip-address": "<ipaddress1>", 
+                "l3-context": "<l3_context1>"
+            }
+        ], 
+        "*ofoverlay:port-name*": "<ovs port name>", 
+        "tenant": "<tenant1>"
+    }
+}
+----
+
+NOTE: The usage of "port-name" preceded by "ofoverlay". In OpenDaylight, base datastore objects can be _augmented_. In *GBP*, the base endpoint model has no renderer
+specifics, hence can be leveraged across multiple renderers.
+
+*OVS Augmentations to Inventory*
+
+----
+PUT http://{{controllerIp}}:8181/restconf/config/opendaylight-inventory:nodes/
+{
+    "opendaylight-inventory:nodes": {
+        "node": [
+            {
+                "id": "openflow:123456", 
+                "ofoverlay:tunnel": [
+                    {
+                        "tunnel-type": "overlay:tunnel-type-vxlan",
+                        "ip": "<ip_address_of_ovs>",
+                        "port": 4789,
+                        "node-connector-id": "openflow:123456:1"
+                    }
+                ]
+            }, 
+            {
+                "id": "openflow:654321", 
+                "ofoverlay:tunnel": [
+                    {
+                        "tunnel-type": "overlay:tunnel-type-vxlan",
+                        "ip": "<ip_address_of_ovs>",
+                        "port": 4789,
+                        "node-connector-id": "openflow:654321:1"
+                    }
+                ]
+            }
+        ]
+    }
+}
+----
+
+*Tenants* see <<policyresolution,Policy Resolution>> and <<forwarding,Forwarding Model>> for details:
+
+----
+{
+  "policy:tenant": {
+    "contract": [
+      {
+        "clause": [
+          {
+            "name": "allow-http-clause",
+            "subject-refs": [
+              "allow-http-subject",
+              "allow-icmp-subject"
+            ]
+          }
+        ],
+        "id": "<id>",
+        "subject": [
+          {
+            "name": "allow-http-subject",
+            "rule": [
+              {
+                "classifier-ref": [
+                  {
+                    "direction": "in",
+                    "name": "http-dest"
+                  },
+                  {
+                    "direction": "out",
+                    "name": "http-src"
+                  }
+                ],
+                "action-ref": [
+                  {
+                    "name": "allow1",
+                    "order": 0
+                  }
+                ],
+                "name": "allow-http-rule"
+              }
+            ]
+          },
+          {
+            "name": "allow-icmp-subject",
+            "rule": [
+              {
+                "classifier-ref": [
+                  {
+                    "name": "icmp"
+                  }
+                ],
+                "action-ref": [
+                  {
+                    "name": "allow1",
+                    "order": 0
+                  }
+                ],
+                "name": "allow-icmp-rule"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "endpoint-group": [
+      {
+        "consumer-named-selector": [
+          {
+            "contract": [
+              "<id>"
+            ],
+            "name": "<name>"
+          }
+        ],
+        "id": "<id>",
+        "provider-named-selector": []
+      },
+      {
+        "consumer-named-selector": [],
+        "id": "<id>",
+        "provider-named-selector": [
+          {
+            "contract": [
+              "<id>"
+            ],
+            "name": "<name>"
+          }
+        ]
+      }
+    ],
+    "id": "<id>",
+    "l2-bridge-domain": [
+      {
+        "id": "<id>",
+        "parent": "<id>"
+      }
+    ],
+    "l2-flood-domain": [
+      {
+        "id": "<id>",
+        "parent": "<id>"
+      },
+      {
+        "id": "<id>",
+        "parent": "<id>"
+      }
+    ],
+    "l3-context": [
+      {
+        "id": "<id>"
+      }
+    ],
+    "name": "GBPPOC",
+    "subject-feature-instances": {
+      "classifier-instance": [
+        {
+          "classifier-definition-id": "<id>",
+          "name": "http-dest",
+          "parameter-value": [
+            {
+              "int-value": "6",
+              "name": "proto"
+            },
+            {
+              "int-value": "80",
+              "name": "destport"
+            }
+          ]
+        },
+        {
+          "classifier-definition-id": "<id>",
+          "name": "http-src",
+          "parameter-value": [
+            {
+              "int-value": "6",
+              "name": "proto"
+            },
+            {
+              "int-value": "80",
+              "name": "sourceport"
+            }
+          ]
+        },
+        {
+          "classifier-definition-id": "<id>",
+          "name": "icmp",
+          "parameter-value": [
+            {
+              "int-value": "1",
+              "name": "proto"
+            }
+          ]
+        }
+      ],
+      "action-instance": [
+        {
+          "name": "allow1",
+          "action-definition-id": "<id>"
+        }
+      ]
+    },
+    "subnet": [
+      {
+        "id": "<id>",
+        "ip-prefix": "<ip_prefix>",
+        "parent": "<id>",
+        "virtual-router-ip": "<ip address>"
+      },
+      {
+        "id": "<id>",
+        "ip-prefix": "<ip prefix>",
+        "parent": "<id>",
+        "virtual-router-ip": "<ip address>"
+      }
+    ]
+  }
+}
+----
+
+
+==== Tutorials[[Demo]]
+
+Comprehensive tutorials, along with a demonstration environment leveraging Vagrant 
+can be found on the https://wiki.opendaylight.org/view/Group_Based_Policy_(GBP)[*GBP* wiki]
+
