@@ -49,7 +49,10 @@ Follow the instructions in <<_getting_and_installing_opendaylight_lithium,Gettin
 
 Install Feature
 
-  feature:install odl-vtn-manager-all
+  feature:install odl-vtn-manager-rest odl-vtn-manager-neutron
+
+NOTE: The above command will install all features of VTN Manager.
+      You can install only REST or Neutron also.
 
 ==== VTN Coordinator
 
