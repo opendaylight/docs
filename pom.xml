@@ -67,4 +67,42 @@
      </plugin>
    </plugins>
   </build>
+  <profiles>
+    <profile>
+      <activation>
+        <property>
+          <name>merge</name>
+          <value>true</value>
+        </property>
+      </activation>
+	  <build>
+	    <plugins>
+	       <plugin>
+		      <groupId>org.apache.maven.plugins</groupId>
+		      <artifactId>maven-site-plugin</artifactId>
+		      <executions>
+	  	        <execution>
+	  		      <goals>
+	  		 	    <goal>site</goal>
+	              </goals>
+	  		      <phase>compile</phase>
+	  		    </execution>
+	  		  </executions>
+	       </plugin>
+           <plugin>
+		      <groupId>org.apache.maven.plugins</groupId>
+		      <artifactId>maven-site-plugin</artifactId>
+		      <executions>
+	  	   	    <execution>
+	  		      <goals>
+	  		 	    <goal>deploy</goal>
+	              </goals>
+	  		      <phase>install</phase>
+	  		    </execution>
+		      </executions>
+	       </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 </project>
