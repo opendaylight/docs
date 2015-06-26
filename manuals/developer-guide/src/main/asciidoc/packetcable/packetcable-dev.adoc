@@ -1,14 +1,13 @@
-[[developer-and-testing-preliminary]]
-= PCMM Developer and Testing (*Preliminary*)
+== PCMM Developer and Testing (*Preliminary*)
 
 [[specification]]
-== Specification
+=== Specification
 
 http://www.cablelabs.com/wp-content/uploads/specdocs/PKT-SP-MM-I05-091029.pdf[PacketCable™
 Specification Multimedia Specification PKT-SP-MM-I05-091029]
 
 [[system-overview]]
-== System Overview
+=== System Overview
 
 These components introduce a DOCSIS QoS Service Flow management using
 the PCMM protocol. The driver component is responsible for the
@@ -18,17 +17,17 @@ Gate Control messages and transmitted via COPS to the CMTS. This plugin
 adheres to the PCMM/COPS/PDP functionality defined in the CableLabs
 specification. PacketCable solution is an MDSAL compliant component.
 
-image:Screenshot6.png[Screenshot6.png,title="Screenshot6.png"]
-
-image:Odp_diagram_helium_v6.jpg[Odp_diagram_helium_v6.jpg,title="Odp_diagram_helium_v6.jpg"]
+// image:Screenshot6.png[width=500]
+//
+// image:Odp_diagram_helium_v6.jpg[width=500]
 
 [[packetcable-components]]
-== Packetcable Components
+=== Packetcable Components
 
 packetcable is comprised of three OpendayLight bundles
 
-[cols=",",options="header",]
-|=======================================================================
+[options=="header"]
+|========================================================================
 |Bundle |Description
 |packetcable-model |Contains the YANG information model for flows and
 nodes
@@ -41,33 +40,33 @@ driver
 
 |packetcable-driver |The codec for transforming the model into the
 appropriate PCMM Gate message for flows and CMTS connections.
-|=======================================================================
+|========================================================================
 
 See
-https://git.opendaylight.org/gerrit/gitweb?p=packetcable.git;a=tree;f=packetcable-model/src/main/yang[YANG
+https://github.com/opendaylight/packetcable/tree/stable/lithium/packetcable-model/src/main/yang[YANG
 Model]
 
 [[tell-a-bundle-to-log-debug]]
-=== Tell a Bundle to Log Debug
+==== Tell a Bundle to Log Debug
 
-`   log:set  org.opendaylight.packetcable.packetcable-provider`
+`log:set org.opendaylight.packetcable.packetcable-provider`
 
 [[tools-for-testing]]
-== Tools for Testing
+=== Tools for Testing
 
 [[custom-testsuite]]
-=== Custom Testsuite
+==== Custom Testsuite
 
 Most of the
-[https://wiki.opendaylight.org/view/OpenDaylight_OpenFlow_Plugin::Python_test_scripts
-Openflow tests for RESTCONF] can be adapted for PCMM and service flow
+https://wiki.opendaylight.org/view/OpenDaylight_OpenFlow_Plugin::Python_test_scripts[Openflow tests for RESTCONF]
+can be adapted for PCMM and service flow
 testing.
-https://git.opendaylight.org/gerrit/gitweb?p=packetcable.git;a=tree;f=packetcable-client[Browse
+https://github.com/opendaylight/packetcable/tree/stable/lithium/packetcable-client[Browse
 this folder] for WIP of tests and examples used for minimum acceptance
 testing.
 
 [[restconfapi.py]]
-==== restconfapi.py
+===== restconfapi.py
 
 Scripted series of packetcable actions testing minimum compliance.
 
@@ -78,19 +77,19 @@ Other flows can be formulated and added to create a regression test of
 what kind of flows are interesting for use cases. Multicast?
 
 [[flow_config_perf_pcmm.py]]
-==== flow_config_perf_pcmm.py
+===== flow_config_perf_pcmm.py
 
 For load testing there is this nice tool that could be repurpose to load
 test a CMTS. TODO: Adapt this script for load testing PCMM on a CMTS.
 
 [[yang-ide]]
-=== Yang-IDE
+==== Yang-IDE
 
 https://github.com/xored/yang-ide/wiki/Setup-and-build[Setup and Build
 Yang-IDE for Eclipse]
 
 [[using-wireshark-to-trace-pcmm]]
-== Using Wireshark to Trace PCMM
+=== Using Wireshark to Trace PCMM
 
 1.  To start wireshark with privileges issue the following command:
 +
@@ -101,23 +100,23 @@ sudo wireshark &
 3.  Use the Filter to only display COPS messages by applying “cops” in
 the filter field.
 
-image:Screenshot8.png[Screenshot8.png,title="Screenshot8.png"]
+image:Screenshot8.png[width=500]
 
 [[debugging-and-verifying-dqos-gate-flows-on-the-cmts]]
-== Debugging and Verifying DQoS Gate (Flows) on the CMTS
+=== Debugging and Verifying DQoS Gate (Flows) on the CMTS
 
-http://books.google.com/books?id=zNnCLUa8CHQC&pg=PA701&lpg=PA701&dq=show+packetcable+gate[This
+http://books.google.com/books?id==zNnCLUa8CHQC&pg==PA701&lpg==PA701&dq==show+packetcable+gate[This
 book] serves as a good reference. Below are some of the most useful CMTS
 commands to verify flows have been enabled on the CMTS.
 
 [[cisco]]
-=== Cisco
+==== Cisco
 
 http://www.cisco.com/c/en/us/td/docs/cable/cmts/cmd_ref/b_cmts_cable_cmd_ref.pdf[Cisco
 CMTS Cable Command Reference]
 
 [[find-the-cable-modem]]
-=== Find the Cable Modem
+==== Find the Cable Modem
 
 -----------------------------------------------------------------------------------
 10k2-DSG#show cable modem
@@ -132,7 +131,7 @@ e86d.5271.304f 10.32.115.168   C8/0/10/UB    w-online      6    -0.50  1419   1 
 -----------------------------------------------------------------------------------
 
 [[show-pcmm-plugin-connection]]
-=== Show PCMM Plugin Connection
+==== Show PCMM Plugin Connection
 
 ----------------------------------------------------------------------------
 10k2-DSG#show packetcabl ?
@@ -151,14 +150,14 @@ GC-Addr        GC-Port  Client-Addr    COPS-handle  Version PSID Key PDD-Cfg
 ----------------------------------------------------------------------------
 
 [[show-cops-messages]]
-=== Show COPS Messages
+==== Show COPS Messages
 
 ------------------
 debug cops details
 ------------------
 
 [[use-cm-mac-address-to-list-service-flows]]
-=== Use CM Mac Address to List Service Flows
+==== Use CM Mac Address to List Service Flows
 
 ------------------------------------------------------------------------------------
 10k2-DSG#show cable modem    
@@ -209,14 +208,14 @@ $: Low Latency Queue (aggregated)
 ------------------------------------------------------------------------------------
 
 [[deleting-a-pcmm-gate-message-from-the-cmts]]
-=== Deleting a PCMM Gate Message from the CMTS
+==== Deleting a PCMM Gate Message from the CMTS
 
 ------------------------------------------
 10k2-DSG#test cable dsd  000e.0900.00dd 30
 ------------------------------------------
 
 [[find-service-flows]]
-=== Find service flows
+==== Find service flows
 
 All gate controllers currently connected to the PacketCable client are
 displayed
@@ -227,7 +226,7 @@ show cable modem
 ------------------------------------------------------
 
 [[debug-and-display-pcmm-gate-messages]]
-=== Debug and display PCMM Gate messages
+==== Debug and display PCMM Gate messages
 
 ------------------------------
 debug packetcable gate control
@@ -238,7 +237,7 @@ show packetcable cms
 ------------------------------
 
 [[debug-cops-messages]]
-=== Debug COPS messages
+==== Debug COPS messages
 
 -----------------------------
 debug cops detail
@@ -246,13 +245,13 @@ debug packetcable cops
 debug cable dynamic_qos trace
 -----------------------------
 
-[[arris]]
-=== Arris
-
-Pending
+// [[arris]]
+// ==== Arris
+//
+// Pending
 
 [[integration-verification]]
-== Integration Verification
+=== Integration Verification
 
 Checkout the integration project and perform regression tests.
 
@@ -281,7 +280,7 @@ cd target/assembly/bin
 -----------------------------------------
 
 [[service-wrapper]]
-=== service-wrapper
+==== service-wrapper
 
 Install http://karaf.apache.org/manual/latest/users-guide/wrapper.html
 
