@@ -30,5 +30,32 @@
     <module>user-guide</module>
     <module>howto-openstack</module>
   </modules>
-
+  <profile>
+      <activation>
+        <property>
+          <name>merge</name>
+          <value>true</value>
+        </property>
+      </activation>
+	  <plugin>
+	     <plugin>
+		    <groupId>org.apache.maven.plugins</groupId>
+		    <artifactId>maven-site-plugin</artifactId>
+		 </plugin>
+	  	 <executions>
+	  		<execution>
+	  		   <goals>
+	  		 	   <goal>site</goal>
+	           </goals>
+	  		   <phase>compile</phase>
+	  		</execution>
+	  		<execution>
+	  		   <goals>
+	  		 	   <goal>deploy</goal>
+	           </goals>
+	  		   <phase>install</phase>
+	  		</execution>
+		</executions>
+	   </plugin>
+  </profile>
 </project>
