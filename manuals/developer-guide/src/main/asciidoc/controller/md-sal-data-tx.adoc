@@ -267,7 +267,7 @@ commit handlers or data was incorrectly structured. The returned future will
 fail with a `DataValidationFailedException`. User *should not retry* to
 create new transaction with same data, since it probably will fail again.
 
-====== Example conflict of two transactions
+===== Example conflict of two transactions
 
 This example illustrates two concurrent transactions, which derived from
 same initial state of data tree and proposes conflicting modifications.
