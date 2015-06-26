@@ -315,33 +315,33 @@ VTN provides following operations for various network resources.
 | No
 |===
 
-====== (Example) Connecting the terminal to virtual network
+===== Example usage
 
-The following is an example of the usage to connect the terminal to the network.
+The following is an example of the usage to construct a virtual network.
 
 * Create VTN
 
 ----
    curl --user admin:adminpass -X POST -H 'content-type: application/json'  \
-  -d '{"vtn":{"vtn_name":"VTN1"}}' http://172.1.0.1:8282/vtn-webapi/vtns.json
+  -d '{"vtn":{"vtn_name":"VTN1"}}' http://172.1.0.1:8083/vtn-webapi/vtns.json
 ----
 * Create Controller Information
 
 ----
    curl --user admin:adminpass -X POST -H 'content-type: application/json'  \
   -d '{"controller": {"controller_id":"CONTROLLER1","ipaddr":"172.1.0.1","type":"odc","username":"admin", \
-  "password":"admin","version":"1.0"}}' http://172.1.0.1:8282/vtn-webapi/controllers.json
+  "password":"admin","version":"1.0"}}' http://172.1.0.1:8083/vtn-webapi/controllers.json
 ----
 * Create vBridge under VTN
 
 ----
   curl --user admin:adminpass -X POST -H 'content-type: application/json' \
   -d '{"vbridge":{"vbr_name":"VBR1","controller_id": "CONTROLLER1","domain_id": "(DEFAULT)"}}' \
-  http://172.1.0.1:8282/vtn-webapi/vtns/VTN1/vbridges.json
+  http://172.1.0.1:8083/vtn-webapi/vtns/VTN1/vbridges.json
 ----
-* Create the interface to connect the terminal under vBridge
+* Create the interface under vBridge
 
 ----
   curl --user admin:adminpass -X POST -H 'content-type: application/json' \
-  -d '{"interface":{"if_name":"IF1"}}' http://172.1.0.1:8282/vtn-webapi/vtns/VTN1/vbridges/VBR1/interfaces.json
+  -d '{"interface":{"if_name":"IF1"}}' http://172.1.0.1:8083/vtn-webapi/vtns/VTN1/vbridges/VBR1/interfaces.json
 ----
