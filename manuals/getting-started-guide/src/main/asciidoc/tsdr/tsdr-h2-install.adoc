@@ -1,6 +1,6 @@
 == TSDR H2 Default Datastore Installation Guide
 This document is for the user to install the artifacts that are needed
-for using Time Series Data Repository (TSDR) functionality in the ODL Controller by enabling the default JPA (H2) Datastore. TSDR is new functionality added in OpenDayLight in Lithium Release. 
+for using Time Series Data Repository (TSDR) functionality in the ODL Controller by enabling the default JPA (H2) Datastore. TSDR is new functionality added in OpenDaylight in Lithium Release. 
 
 === Overview
 In Lithium Release the time deries data records of OpenFlow statistics are collected periodically and stored in a persistent store. For non-production usage, the bundled default JPA based datastore (H2) is utilized based on odl-tsdr-all feature installation. The TSDR records get persisted in H2 store in <install folder>/tsdr/ folder by default.  
@@ -12,7 +12,7 @@ There are no additional pre-requisites for TSDR based on default datastore
 No additional steps required for preparation of installing TSDR feature 
 
 === Installing TSDR with default H2 datastore 
-Once Opendaylight distribution is up, from karaf console install the TSDR feature with default datastore (JPA based datastore H2 store used) can be installed by 
+Once OpenDaylight distribution is up, from karaf console install the TSDR feature with default datastore (JPA based datastore H2 store used) can be installed by 
 
 feature:install odl-tsdr-all 
 
