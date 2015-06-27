@@ -1,7 +1,7 @@
 == L3VPN Service: User Guide
 
 === Overview
-L3VPN Service in Opendaylight provides a framework to create L3VPN based on BGP-MP.  It also helps to create Network Virtualization for DC Cloud environment.
+L3VPN Service in OpenDaylight provides a framework to create L3VPN based on BGP-MP.  It also helps to create Network Virtualization for DC Cloud environment.
 
 === Modules & Interfaces
 L3VPN service can be realized using the following modules -
@@ -206,7 +206,7 @@ Create l3tunnel interfaces corresponding to all GRE/VxLAN tunnels created with o
 
 ==== Step 3 : OS Create Neutron Ports and attach VMs
 
-At this step user creates VMs. <TBD>
+At this step user creates VMs.
 
 ==== Step 4 : Create VM Interfaces
 Create l2vlan interfaces corresponding to VM created in step 3

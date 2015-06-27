@@ -220,9 +220,11 @@ used in BGP Best Path Selection algorithm.
 - *target-rib* - RIB ID of existing RIB where the data should be transferred
 - *application-rib-id* - RIB ID of local application RIB (all the routes that you put to OpenDaylight will be displayed here)
 
-To populate RIB use //TODO: internal link to Populate RIB
+//TODO: internal link to Populate RIB
+//To populate RIB use 
 
-In order to get routes advertised to other peers, you have to also configure the peers, as described in section BGP Peer //TODO: internal jump to section?
+//TODO: internal jump to section?
+//In order to get routes advertised to other peers, you have to also configure the peers, as described in section BGP Peer 
 
 === Configuration through RESTCONF ===
 

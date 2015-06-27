@@ -24,7 +24,7 @@ To enable clustering on a single OpenDaylight controller, do the following:
 
 '''
 
-. Download and unzip a base controller distribution. You must use the new openflow plugin, so download a distribution where the new openflow plugin is either the default or can be enabled.
+. Download and unzip a base controller distribution. You must use the new OpenFlow plugin, so download a distribution where the new OpenFlow plugin is either the default or can be enabled.
 . Navigate to the _<Karaf-distribution-location>_/bin directory.
 . Run Karaf: *./karaf*
 . Install the clustering feature: *feature:install odl-mdsal-clustering*
