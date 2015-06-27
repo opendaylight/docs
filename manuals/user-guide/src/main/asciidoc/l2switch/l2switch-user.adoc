@@ -20,9 +20,9 @@ The L2Switch project provides Layer2 switch functionality.
 === Configuring L2Switch
 This sections below give details about the configuration settings for the components that can be configured.
 
-The base distribution configuration files are located in distribution/base/target/distributions-l2switch-base-0.1.0-SNAPSHOT-osgipackage/opendaylight/configuration/initial
+//The base distribution configuration files are located in distribution/base/target/distributions-l2switch-base-0.1.0-SNAPSHOT-osgipackage/opendaylight/configuration/initial
 
-The karaf distribution configuration files are located in distribution/karaf/target/assembly/etc/opendaylight/karaf
+//The karaf distribution configuration files are located in distribution/karaf/target/assembly/etc/opendaylight/karaf
 
 === Configuring Loop Remover
 * 52-loopremover.xml
@@ -125,23 +125,27 @@ The karaf distribution configuration files are located in distribution/karaf/tar
 
 === Running the L2Switch project
 
-==== Check out the project using git
- git clone https://git.opendaylight.org/gerrit/p/l2switch.git
+To run the L2 Switch inside the Lithium OpenDaylight distribution simply install the `odl-l2switch-switch-ui` feature;
 
-The above command will create a directory called "l2switch" with the project.
+ feature:install odl-l2switch-switch-ui
 
-==== Run the distribution
-To run the base distribution, you can use the following command
-
- ./distribution/base/target/distributions-l2switch-base-0.1.0-SNAPSHOT-osgipackage/opendaylight/run.sh
-
-If you need additional resources, you can use these command line arguments:
-
- -Xms1024m -Xmx2048m -XX:PermSize=512m -XX:MaxPermSize=1024m'
-
-To run the karaf distribution, you can use the following command:
-
- ./distribution/karaf/target/assembly/bin/karaf
+//==== Check out the project using git
+// git clone https://git.opendaylight.org/gerrit/p/l2switch.git
+//
+//The above command will create a directory called "l2switch" with the project.
+//
+//==== Run the distribution
+//To run the base distribution, you can use the following command
+//
+// ./distribution/base/target/distributions-l2switch-base-0.1.0-SNAPSHOT-osgipackage/opendaylight/run.sh
+//
+//If you need additional resources, you can use these command line arguments:
+//
+// -Xms1024m -Xmx2048m -XX:PermSize=512m -XX:MaxPermSize=1024m'
+//
+//To run the karaf distribution, you can use the following command:
+//
+// ./distribution/karaf/target/assembly/bin/karaf
 
 === Create a network using mininet
  sudo mn --controller=remote,ip=<Controller IP> --topo=linear,3 --switch ovsk,protocols=OpenFlow13

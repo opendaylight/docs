@@ -1,5 +1,5 @@
 [[pcmm-user-guide-preliminary]]
-== PCMM User Guide (*Preliminary*)
+== PCMM User Guide
 
 [[system-overview]]
 === System Overview
@@ -57,10 +57,10 @@ http://localhost:8181/apidoc/explorer/index.html
 [[Add CMTS]]
 === Adding a CMTS to OpenDaylight Inventory
 
-The RESTConf URLs makes it possible to add a CMTS to OpenDaylight and have it connected.
+The RESTCONF URLs makes it possible to add a CMTS to OpenDaylight and have it connected.
 
 Add a CMTS to OpenDaylight Inventory
-image:Screenshot1.png[width=500,title="Add a CMTS to OpenDaylight Inventory"]
+image:Screenshot1.png[width=500]
 
 [[postman]]
 ==== Postman
@@ -71,6 +71,5 @@ the Chrome browser]
 https://git.opendaylight.org/gerrit/gitweb?p=packetcable.git;a=tree;f=packetcable-client[Download
 and import sample packetcable collection]
 
-
-image:Screenshot5.png[width=500,title="Postman Operations"]
-
+.Postman Operations
+image:Screenshot5.png[width=500]

@@ -10,9 +10,9 @@ SDNiAggregator(controller), SDNi REST API(controller) and SDNiWrapper(bgpcep) ar
 * SDNi REST API: It is a part of controller northbound, which gives the required information by quering SDNiAggregator
 * SDNiWrapper: This component uses the SDNi REST API and gathers the information required to be shared among controllers.
 
-=== Trouble shooting
+=== Troubleshooting
 To work with multiple controllers, change some of the configuration in config.ini file. For example change the listening port of one controller to 6653 and other controller to 6663 in /root/controller/opendaylight/distribution/opendaylight/target/distribution.opendaylight-osgipackage/opendaylight/configuration/config.ini (i.e of.listenPort=6653).
 
-.Open Flow related system parameters
+.OpenFlow related system parameters
 TCP port on which the controller is listening (default 6633) of.listenPort=6653
 
