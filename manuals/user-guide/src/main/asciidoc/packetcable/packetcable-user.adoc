@@ -1,8 +1,6 @@
-[[pcmm-user-guide-preliminary]]
 == PCMM User Guide
 
-[[system-overview]]
-=== System Overview
+=== Overview
 
 These components introduce a DOCSIS QoS Gates management using
 the PCMM protocol. The driver component is responsible for the
@@ -12,58 +10,43 @@ Gate Control messages and transmitted via COPS to the CMTS. This plugin
 adheres to the PCMM/COPS/PDP functionality defined in the CableLabs
 specification. PacketCable solution is an MDSAL compliant component.
 
-// .OpenDaylight Architecture
-// image:Screenshot6.png[width=500]
+=== PacketCable Components
 
-// [[dependency-map]]
-// === Dependency Map
-
-// .OpenDaylight Dependencies
-// image:ODL-Helium-dependency.png[width=500]
-
-[[packetcable-components-qos]]
-=== Packetcable Components (PCMM QoS Gates) 
-
-packetcable is comprised of three OpenDaylight bundles
+PacketCable is comprised of three OpenDaylight bundles:
 
 [options="header"]
-|=======================================================================
+|======
 |Bundle |Description
-|packetcable-policy-server |Plugin that provides PCMM model implementation based on CMTS structure and COPS protocol.
+|packetcable-policy-server | Plugin that provides PCMM model implementation based on CMTS structure and COPS protocol.
+|packetcable-policy-model  | The Model provided provides a direct mapping to the underlying QoS Gates of CMTS.
+|packetcable-driver        | The codec for transforming the model into the appropriate PCMM Gate message for flows and CMTS connections.
+|======
 
-|packetcable-policy-model |The Model provided provides a direct mapping to the underlying QoS Gates of CMTS.
-
-
-|packetcable-driver |The codec for transforming the model into the
-appropriate PCMM Gate message for flows and CMTS connections.
-|=======================================================================
-
-See
+See the PacketCable 
 https://git.opendaylight.org/gerrit/gitweb?p=packetcable.git;a=tree;f=packetcable-model/src/main/yang[YANG
-Model]
+Models].
 
-[[features-to-install]]
-==== Features to Install
+=== Installing PacketCable
 
----------------------------------------------------------------------------------------------------------------------------
-opendaylight-user@root>feature:install odl-restconf odl-l2switch-switch odl-dlux-core odl-mdsal-apidocs odl-packetcable-policy-all
----------------------------------------------------------------------------------------------------------------------------
+To install PacketCable, run the following `feature:install` command from the Karaf CLI
 
-[[explore-and-exercise-the-packetcable-rest-api]]
-==== Explore and exercise the PacketCable REST API
+ feature:install odl-restconf odl-l2switch-switch odl-dlux-core odl-mdsal-apidocs odl-packetcable-policy-all
 
+=== Explore and exercise the PacketCable REST API
+
+To see the PacketCable APIs, browse to this URL:
 http://localhost:8181/apidoc/explorer/index.html
 
-[[Add CMTS]]
+Replace localhost with the IP address or hostname where OpenDaylight is running if you are not running OpenDaylight locally on your machine.
+
 === Adding a CMTS to OpenDaylight Inventory
 
 The RESTCONF URLs makes it possible to add a CMTS to OpenDaylight and have it connected.
 
-Add a CMTS to OpenDaylight Inventory
-image:Screenshot1.png[width=500]
+.Add a CMTS to OpenDaylight Inventory
+image::Screenshot1.png[width=500]
 
-[[postman]]
-==== Postman
+=== Postman
 
 https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm?hl=en[Configure
 the Chrome browser]
@@ -72,4 +55,4 @@ https://git.opendaylight.org/gerrit/gitweb?p=packetcable.git;a=tree;f=packetcabl
 and import sample packetcable collection]
 
 .Postman Operations
-image:Screenshot5.png[width=500]
+image::Screenshot5.png[width=500]
