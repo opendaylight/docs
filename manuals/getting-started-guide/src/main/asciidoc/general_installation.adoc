@@ -111,7 +111,8 @@ feature:install <feature1-name> <feature2-name> ... <featureN-name>
 | SFC over L2                      | Supports implementing SFC using Layer 2 forwarding | odl-sfcofl2                           | all
 | SFC over VXLAN                   | Supports implementing SFC using VXLAN via OVSDB | odl-ovsdb-ovssfc                      | self+all
 | SNMP4SDN                         | Enables monitoring and control of network elements via SNMP | odl-snmp4sdn-all                      | all
-| VTN Manager                      | Enables Virtual Tenant Network support including support for OpenStack Neutron | odl-vtn-manager-all                   | self+all
+| VTN Manager                      | Enables Virtual Tenant Network support | odl-vtn-manager-rest | self+all
+| VTN Manager Neutron              | Enables OpenStack Neutron support of VTN Manager | odl-vtn-manager-neutron | self+all
 |====
 
 In the table a compatibility value of *all* means that it can be run with other features. A value of *self+all* indicates that the feature can be installed with other features with a value of *all*, but not other features with a value of *self+all*.
