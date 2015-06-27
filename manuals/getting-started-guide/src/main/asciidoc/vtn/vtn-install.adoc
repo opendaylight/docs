@@ -16,7 +16,7 @@ It is implemented as two major components
 * <<_vtn_coordinator,VTN Coordinator>>
 
 ==== VTN Manager
-An OpenDaylight Controller Plugin that interacts with other modules to implement the components of the VTN model. It also provides a REST interface to configure VTN components in ODL controller. VTN Manager is implemented as one plugin to the OpenDaylight controller. This provides a REST interface to create/update/delete VTN components. The user command in VTN Coordinator is translated as REST API to VTN Manager by the ODC Driver component. In addition to the above mentioned role, it also provides an implementation to the Openstack L2 Network Functions API.
+An OpenDaylight Controller Plugin that interacts with other modules to implement the components of the VTN model. It also provides a REST interface to configure VTN components in ODL controller. VTN Manager is implemented as one plugin to the OpenDaylight controller. This provides a REST interface to create/update/delete VTN components. The user command in VTN Coordinator is translated as REST API to VTN Manager by the ODC Driver component. In addition to the above mentioned role, it also provides an implementation to the OpenStack L2 Network Functions API.
 
 ==== VTN Coordinator
 

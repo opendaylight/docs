@@ -1,23 +1,5 @@
 == OpenDaylight Release Notes
 
-=== Key Features
-
-A list of the key functionality provided in OpenDaylight Helium can be found in the table in the <<_installing_the_components,section below>>.
-
-////
-The following table describes the key features provided by OpenDaylight Helium.
-
-[cols="2",option="headers"]
-|==============================================
-| *Feature* | *Description*
-|  Maven support | Used to simplify build automation.
-| OSGi framework | Serves as the controller's back-end, allowing it to dynamically load bundles, package JAR files, and bind bundles together when exchanging information.
-| Java interface support | Used by specific bundles to implement call-back functions for events and indicate the awareness of specific states.
-| Model- Driven Service Abstraction Layer (MD-SAL) | Allows the controller to support multiple protocols (such as BGP-LS and OpenFlow) on the southbound interface. Also provides consistent services for modules and applications (which is where the business logic is embedded).
-| Switch Manager | Once a network element has been discovered, its details (such as device type, software version, etc.) are stored by the Switch Manager.
-| High Availability (HA) | The controller supports cluster-based HA, allowing you to connect multiple controllers and configure them to act as one in order to ensure the controller's continuous operation.
-|==============================================
-////
 === Target Environment
 
 ==== For Execution
@@ -28,17 +10,19 @@ run. Certain projects and certain features of some projects may have
 additional requirements. Those are noted in the project-specific
 release notes.
 
-// TODO: Do we want to call out specific projects that have other requirements?
-// * TCP-MD5 requires 64-bit Linux
-// * TSDR requirements for HBase?
-// * SFC requirements for OVS (also lots of Linux I think)
-// * SXP depends on TCP-MD5
-// * SNBI for Linux, Docker, C and other things
-// * OpFlex for lots of things
-// * DLUX many things for development, what browsers?
-// * AAA if you using SSSD which comes with Centos/RHEL
+Projects and features which have known additional requirements are:
+* TCP-MD5 requires 64-bit Linux
+* TSDR has extended requirements for external databases
+* Persistence has extended requirements for external databases
+* SFC requires addition features for certain configurations
+* SXP depends on TCP-MD5 on thus requires 64-bit Linux
+* SNBI has requirements for Linux and Docker
+* OpFlex requires Linux
+* DLUX requires a modern web browser to view the UI
+* AAA when using federation has additional requirements for external tools
+* VTN has components which require Linux
 
-NOTE: If you are using Oracle, JDK version 1.7.0_45 or later is required.
+NOTE: If you are using the Oracle JDK, version 1.7.0_45 or later is required.
 
 ==== For Development
 
@@ -56,6 +40,10 @@ run the application or tool and make the REST calls.
 In some places, OpenDaylight makes use of the Xtend language. While
 Maven will download the appropriate tools to build this, additional
 plugins may be required for IDE support.
+
+The projects with additional requirements for execution typically have
+similar or more extensive additional requirements for development. See
+the project-specific release notes for details.
 
 === Known Issues and Limitations
 
