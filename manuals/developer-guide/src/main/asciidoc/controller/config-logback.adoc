@@ -237,7 +237,7 @@ Now, the runtime bean status attribute will be empty:
     }
 }
 ----
-==== Logback configuration: Netconf
+==== Logback configuration: NETCONF
 
 In this case, NETCONF RPCs are used to configure logback. The Netconf server listens at port 8383. To communicate over TCP, telnet is used. More about NETCONF is available at: http://tools.ietf.org/html/rfc6241. Netconf implementation is a part of the Controller - netconf-subsystem. The RPCs of Netconf are XML, and the operations are mapped to JMX operations.
 * A server re-start is required. The procedure is the same as above.

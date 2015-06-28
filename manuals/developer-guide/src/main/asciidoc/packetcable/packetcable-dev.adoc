@@ -24,7 +24,7 @@ specification. PacketCable solution is an MDSAL compliant component.
 [[packetcable-components]]
 === Packetcable Components
 
-packetcable is comprised of three OpendayLight bundles
+packetcable is comprised of three OpenDaylight bundles
 
 [options=="header"]
 |========================================================================
@@ -80,7 +80,8 @@ what kind of flows are interesting for use cases. Multicast?
 ===== flow_config_perf_pcmm.py
 
 For load testing there is this nice tool that could be repurpose to load
-test a CMTS. TODO: Adapt this script for load testing PCMM on a CMTS.
+test a CMTS. 
+//TODO: Adapt this script for load testing PCMM on a CMTS.
 
 [[yang-ide]]
 ==== Yang-IDE
@@ -312,21 +313,21 @@ OPTIONS
                 (defaults to )
 
 opendaylight-user@root> wrapper:install
-Creating file: /home/user/odl/distribution-karaf-0.2.0-Helium-RC0/bin/karaf-wrapper
-Creating file: /home/user/odl/distribution-karaf-0.2.0-Helium-RC0/bin/karaf-service
-Creating file: /home/user/odl/distribution-karaf-0.2.0-Helium-RC0/etc/karaf-wrapper.conf
-Creating file: /home/user/odl/distribution-karaf-0.2.0-Helium-RC0/lib/libwrapper.so
-Creating file: /home/user/odl/distribution-karaf-0.2.0-Helium-RC0/lib/karaf-wrapper.jar
-Creating file: /home/user/odl/distribution-karaf-0.2.0-Helium-RC0/lib/karaf-wrapper-main.jar
+Creating file: /home/user/odl/distribution-karaf-0.3.0-Lithium/bin/karaf-wrapper
+Creating file: /home/user/odl/distribution-karaf-0.3.0-Lithium/bin/karaf-service
+Creating file: /home/user/odl/distribution-karaf-0.3.0-Lithium/etc/karaf-wrapper.conf
+Creating file: /home/user/odl/distribution-karaf-0.3.0-Lithium/lib/libwrapper.so
+Creating file: /home/user/odl/distribution-karaf-0.3.0-Lithium/lib/karaf-wrapper.jar
+Creating file: /home/user/odl/distribution-karaf-0.3.0-Lithium/lib/karaf-wrapper-main.jar
 
 Setup complete.  You may wish to tweak the JVM properties in the wrapper configuration file:
-/home/user/odl/distribution-karaf-0.2.0-Helium-RC0/etc/karaf-wrapper.conf
+/home/user/odl/distribution-karaf-0.3.0-Lithium/etc/karaf-wrapper.conf
 before installing and starting the service.
 
 
 Ubuntu/Debian Linux system detected:
   To install the service:
-    $ ln -s /home/user/odl/distribution-karaf-0.2.0-Helium-RC0/bin/karaf-service /etc/init.d/
+    $ ln -s /home/user/odl/distribution-karaf-0.3.0-Lithium/bin/karaf-service /etc/init.d/
 
   To start the service when the machine is rebooted:
     $ update-rc.d karaf-service defaults

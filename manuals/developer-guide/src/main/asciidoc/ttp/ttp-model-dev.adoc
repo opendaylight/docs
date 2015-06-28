@@ -33,7 +33,7 @@ APIs.
 
 ==== Java Bindings
 
-TODO: Provide a link to JavaDoc.
+//TODO: Provide a link to JavaDoc.
 
 As stated above there are 3 locations where a Table Type Pattern can be
 placed into the MD-SAL Data Store. They correspond to 3 different REST
@@ -468,7 +468,7 @@ image::ttp-screen2-applied-basic-auth.png[width=500]
 
 After clicking Refresh headers, we can see that a new header
 (+Authorization+) has been created and this will allow us to
-authenticate to make the rest call.
+authenticate to make the REST call.
 
 .PUTting a TTP
 image::ttp-screen3-sent-put.png[width=500]

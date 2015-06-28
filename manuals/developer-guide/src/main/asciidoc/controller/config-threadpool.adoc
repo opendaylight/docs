@@ -135,7 +135,7 @@ The response containing the current configuration: +
 	<commit/>
 </rpc>]]>]]>
 ----
-The Netconf endpoint should respond with ok to edit-config, as well as the commit message: +
+The NETCONF endpoint should respond with ok to edit-config, as well as the commit message: +
 
 ----
 <rpc-reply xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="101">

@@ -93,7 +93,7 @@ $ sudo mn -c
 
 === Using the Simple Forwarding Application
 
-The OpenDaylight Controller includes an application called Simple Forwarding that lets you use the basic services for making forwarding decisions and install flows across all devices on the Openflow network. This application discovers the presence of a host via ARP message and installs dest-only /32 entries across all switches in the network, with the corresponding output ports toward the host.
+The OpenDaylight Controller includes an application called Simple Forwarding that lets you use the basic services for making forwarding decisions and install flows across all devices on the OpenFlow network. This application discovers the presence of a host via ARP message and installs dest-only /32 entries across all switches in the network, with the corresponding output ports toward the host.
 
 . With OpenDaylight Controller and Mininet running as described in previous sections, log into the web interface.
 
