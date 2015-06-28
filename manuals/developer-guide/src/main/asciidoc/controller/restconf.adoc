@@ -1,17 +1,17 @@
-=== OpenDaylight Controller MD-SAL: Restconf
+=== OpenDaylight Controller MD-SAL: RESTCONF
 
-==== Restconf operations overview
+==== RESCONF operations overview
 
-Restconf allows access to datastores in the controller. +
+RESTCONF allows access to datastores in the controller. +
 There are two datastores: +
 
 * Config: Contains data inserted via controller
 * Operational: Contains other data
 
 NOTE: Each request must start with the URI /restconf. +
-Restconf listens on port 8080 for HTTP requests.
+RESTCONF listens on port 8080 for HTTP requests.
 
-Restconf supports *OPTIONS*, *GET*, *PUT*, *POST*, and *DELETE* operations. Request and response data can either be in the XML or JSON format. XML structures according to yang are defined at: http://tools.ietf.org/html/rfc6020[XML-YANG]. JSON structures are defined at: http://tools.ietf.org/html/draft-lhotka-netmod-yang-json-02[JSON-YANG]. Data in the request must have a correctly set *Content-Type* field in the http header with the allowed value of the media type. The media type of the requested data has to be set in the *Accept* field. Get the media types for each resource by calling the OPTIONS operation.
+RESTCONF supports *OPTIONS*, *GET*, *PUT*, *POST*, and *DELETE* operations. Request and response data can either be in the XML or JSON format. XML structures according to yang are defined at: http://tools.ietf.org/html/rfc6020[XML-YANG]. JSON structures are defined at: http://tools.ietf.org/html/draft-lhotka-netmod-yang-json-02[JSON-YANG]. Data in the request must have a correctly set *Content-Type* field in the http header with the allowed value of the media type. The media type of the requested data has to be set in the *Accept* field. Get the media types for each resource by calling the OPTIONS operation.
 Most of the paths of the pathsRestconf endpoints use https://wiki.opendaylight.org/view/OpenDaylight_Controller:MD-SAL:Concepts#Instance_Identifier[Instance Identifier]. +<identifier>+ is used in the explanation of the operations.
 
 *<identifier>* +
@@ -20,11 +20,11 @@ Most of the paths of the pathsRestconf endpoints use https://wiki.opendaylight.o
 * <nodeName> can represent a data node which is a list or container yang built-in type. If the data node is a list, there must be defined keys of the list behind the data node name for example, <nodeName>/<valueOfKey1>/<valueOfKey2>.
 * The format <moduleName>:<nodeName> has to be used in this case as well: +
 Module A has node A1. Module B augments node A1 by adding node X. Module C augments node A1 by adding node X. For clarity, it has to be known which node is X (for example: C:X).
-For more details about encoding, see: http://tools.ietf.org/html/draft-bierman-netconf-restconf-02#section-5.3.1[Restconf 02 - Encoding YANG Instance Identifiers in the Request URI.]
+For more details about encoding, see: http://tools.ietf.org/html/draft-bierman-netconf-restconf-02#section-5.3.1[RESTCONF 02 - Encoding YANG Instance Identifiers in the Request URI.]
 
 ==== Mount point
 A Node can be behind a mount point. In this case, the URI has to be in format <identifier>/*yang-ext:mount*/<identifier>. The first <identifier> is the path to a mount point and the second <identifier> is the path to a node behind the mount point. A URI can end in a mount point itself by using <identifier>/*yang-ext:mount*. +
-More information on how to actually use mountpoints is available at: https://wiki.opendaylight.org/view/OpenDaylight_Controller:Config:Examples:Netconf[ OpenDaylight Controller:Config:Examples:Netconf].
+More information on how to actually use mountpoints is available at: https://wiki.opendaylight.org/view/OpenDaylight_Controller:Config:Examples:Netconf[OpenDaylight Controller:Config:Examples:Netconf].
 
 ==== HTTP methods
 
@@ -144,10 +144,10 @@ NOTE: Even though this is a default for the toasterToastType value in the yang, 
 * Removes the data node in the Config datastore and returns the state about success.
 * <identifier> points to a data node which must be removed.
 
-More information is available in the http://tools.ietf.org/html/draft-bierman-netconf-restconf-02[Restconf RFC].
+More information is available in the http://tools.ietf.org/html/draft-bierman-netconf-restconf-02[RESTCONF RFC].
 
-==== How Restconf works
-Restconf uses these base classes: +
+==== How RESTCONF works
+RESTCONF uses these base classes: +
 
 InstanceIdentifier:: Represents the path in the data tree
 ConsumerSession:: Used for invoking RPCs
@@ -167,7 +167,7 @@ Figure 1 shows the GET operation with URI restconf/config/M:N where M is the mod
 image::Get.png[width=500]
 
 . The requested URI is translated into the InstanceIdentifier which points to the data node. During this translation, the DataSchemaNode that conforms to the data node is obtained. If the data node is behind the mount point, the MountInstance is obtained as well.
-. Restconf asks for the value of the data node from DataBrokerService based on InstanceIdentifier.
+. RESTCONF asks for the value of the data node from DataBrokerService based on InstanceIdentifier.
 . DataBrokerService returns CompositeNode as data.
 . StructuredDataToXmlProvider or StructuredDataToJsonProvider is called based on the *Accept* field from the http request. These two providers can transform CompositeNode regarding DataSchemaNode to an XML or JSON document.
 . XML or JSON is returned as the answer on the request from the client.
@@ -183,7 +183,7 @@ image::Put.png[width=500]
 . Input data is sent to JsonToCompositeNodeProvider or XmlToCompositeNodeProvider. The correct provider is selected based on the Content-Type field from the http request. These two providers can transform input data to CompositeNode. However, this CompositeNode does not contain enough information for transactions.
 . The requested URI is translated into InstanceIdentifier which points to the data node. DataSchemaNode conforming to the data node is obtained during this translation. If the data node is behind the mount point, the MountInstance is obtained as well.
 . CompositeNode can be normalized by adding additional information from DataSchemaNode.
-. Restconf begins the transaction, and puts CompositeNode with InstanceIdentifier into it. The response on the request from the client is the status code which depends on the result from the transaction.
+. RESTCONF begins the transaction, and puts CompositeNode with InstanceIdentifier into it. The response on the request from the client is the status code which depends on the result from the transaction.
 
 
 // FIXME: Replace with coretutorials tutorial or point to openflow location

@@ -35,7 +35,7 @@ switches using OpenFlow 1.3+ group table functionality.
 
 The LAG representing the aggregated multiple physical ports
 are realized in the OpenDaylight controlled switches by creating a
-group table entry (Group table supported from Openflow 1.3 onwards).
+group table entry (Group table supported from OpenFlow 1.3 onwards).
 The group table entry has a group type *Select* and action referring to
 the aggregated physical ports.
 Any data traffic to be sent out through the LAG can be sent

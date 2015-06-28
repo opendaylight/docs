@@ -52,43 +52,48 @@ include::section_Hacking_from_CLI.adoc[]
 
 include::alto/alto-developer-guide.adoc[ALTO]
 
-include::controller/controller.adoc[Controller]
-
 include::bgpcep/odl-bgpcep-bgp-all-dev.adoc[BGP]
 
-include::bgpcep/odl-bgpcep-pcep-all-dev.adoc[PCEP]
-
 include::capwap/capwap-dev.adoc[CAPWAP]
+
+include::controller/controller.adoc[Controller]
+
+include::didm/didm-dev.adoc[]
 
 include::dlux/dlux-core-dev.adoc[]
 
 include::iotdm/iotdm-dev.adoc[]
 
-include::lacp/lacp-dev.adoc[]
-
 include::l2switch/l2switch-dev.adoc[]
+
+include::lacp/lacp-dev.adoc[]
 
 include::nic/nic-dev.adoc[]
 
 include::neutron/neutron.adoc[]
 
+include::sdninterfaceapp/odl-sdninterfaceapp-all-dev.adoc[]
+
 include::openflowjava/odl-openflowjava-protocol-dev.adoc[]
-
-include::opflex/libopflex-dev.adoc[]
-
-include::opflex/genie-dev.adoc[]
 
 include::opflex/agent-ovs-dev.adoc[]
 
+include::opflex/genie-dev.adoc[]
+
+include::opflex/libopflex-dev.adoc[]
+
 include::ovsdb/ovsdb-developer.adoc[]
+
+include::bgpcep/odl-bgpcep-pcep-all-dev.adoc[PCEP]
 
 include::packetcable/packetcable-dev.adoc[Packet Cable PCMM Southbound Plugin]
 
-include::reservation/reservation-dev.adoc[]
+// commenting this out as it contains no content
+//include::reservation/reservation-dev.adoc[]
 
 include::sfc/sfc.adoc[]
 
-include::sdninterfaceapp/odl-sdninterfaceapp-all-dev.adoc[]
+include::sxp/odl-sxp-dev.adoc[]
 
 include::tcpmd5/odl-tcpmd5-all-dev.adoc[TCP-MD5]
 
@@ -100,11 +105,7 @@ include::ttp/ttp-cli-tools-dev.adoc[]
 
 include::usc/odl-usc-channel-dev.adoc[]
 
-include::didm/didm-dev.adoc[]
-
 include::vtn/vtn-dev.adoc[]
-
-include::sxp/odl-sxp-dev.adoc[]
 
 :numbered!:
 

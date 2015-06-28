@@ -27,7 +27,7 @@ Various parts of the system that are not under the configuration subsystem use t
 |===
 
 |Setting | Description
-| yangstore.blacklist=.\*controller.model.* | This regular expression (can be OR-ed using pipe character) tells netconf to exclude the yang files found in the matching bundle symbolic name from the hello message. This is helpful when dealing with a netconf client that has parsing problems.
+| yangstore.blacklist=.\*controller.model.* | This regular expression (can be OR-ed using pipe character) tells NETCONF to exclude the yang files found in the matching bundle symbolic name from the hello message. This is helpful when dealing with a NETCONF client that has parsing problems.
 | netconf.config.persister.* settings  | See '_opendaylight_controller_configuration_initial'.
 | netconf.tcp.address=0.0.0.0 netconf.tcp.port=8383 +
 
@@ -441,7 +441,7 @@ As a part of the configuration subsystem, the purpose of the persister is to sav
 
 ===== Persister implementation
 
-Configuration persister implementation is part of the Controller Netconf. PersisterAggregator class is the implementation of the Presister interface. The functionality is delegated to the storage adapters. Storage adapters are low level persisters that do the heavy lifting for this class. Instances of storage adapters can be injected directly by means of the constructor, or instantiated from a full name of its class provided in a properties file. There can be many persisters configured, and varying numbers of them can be used.
+Configuration persister implementation is part of the Controller NETCONF. PersisterAggregator class is the implementation of the Presister interface. The functionality is delegated to the storage adapters. Storage adapters are low level persisters that do the heavy lifting for this class. Instances of storage adapters can be injected directly by means of the constructor, or instantiated from a full name of its class provided in a properties file. There can be many persisters configured, and varying numbers of them can be used.
 
 *Example of presisters configuration:* +
 ----

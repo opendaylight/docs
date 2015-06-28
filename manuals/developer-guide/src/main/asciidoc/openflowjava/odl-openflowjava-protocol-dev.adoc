@@ -40,8 +40,8 @@ configured in openflowjava-config/src/main/resources/45-openflowjava-stats.xml
 Basic API / SPI classes are ConnectionAdapter (Rpc/notifications) and
 SwitchConnectionProcider (configure, start, shutdown)
 
-=== API Reference Documentation
-Provide links to JavaDoc, REST API documentation, etc.  [TBD]
+//=== API Reference Documentation
+//Provide links to JavaDoc, REST API documentation, etc.  [TBD]
 
 === Installation ===
 Pull the code and import project into your IDE.
@@ -208,7 +208,7 @@ and documented (e.g using MacAddress instead of byte array...)
 Creates channel processing pipeline based on configuration and support.
 
 .TCP Channel pipeline
-image::openflowjava/500px-TCPChannelPipeline.png["TCP Channel pipeline"]
+imageopenflowjava/500px-TCPChannelPipeline.png[width=500]
 
 .Switch Connection Provider
 Implementation of connection point for other projects. Library exposes its
@@ -353,7 +353,7 @@ fulfill the same role as in case of TCP connection / channel pipeline (please
 see above).
 
 .UDP Channel pipeline
-image::openflowjava/500px-UdpChannelPipeline.png["UDP Channel pipeline"]
+image::openflowjava/500px-UdpChannelPipeline.png[width=500]
 
 .UDP Handler
 
@@ -442,7 +442,7 @@ communication
 * [11] Plugin shutdowns the Library when desired
 
 .Library lifecycle
-image::openflowjava/Library_lifecycle.png["Library lifecycle"]
+image::openflowjava/Library_lifecycle.png[width=500]
 
 
 === Statistics collection
@@ -671,7 +671,7 @@ deserializers. For example +IntructionsDeserializer+ needs access to
 OFPIT_WRITE_ACTIONS/OFPIT_APPLY_ACTIONS instructions.
 
 .Deserialization scenario walkthrough
-image::openflowjava/800px-Extensibility.png["Deserialization scenario walkthrough"]
+image::openflowjava/800px-Extensibility.png[width=500]
 
 ==== Detailed walkthrough: Serialization extensibility
 .External interface & class description
@@ -725,7 +725,7 @@ For example IntructionsSerializer needs access to ActionsSerializer in order to
 be able to process OFPIT_WRITE_ACTIONS/OFPIT_APPLY_ACTIONS instructions.
 
 .Serialization scenario walkthrough
-image::openflowjava/800px-Extensibility2.png["Serialization scenario walkthrough"]
+image::openflowjava/800px-Extensibility2.png[width=500]
 
 ==== Internal description
 
@@ -765,7 +765,7 @@ Openflow v1.3. These extensions are registered under registration keys,
 that are shown in table below: 
 
 .*Deserialization*
-[options="header,footer"]
+[options="header",cols="20%,10%,40%,30%"]
 |========================================================================================================================================================
 |Extension type            |OpenFlow|Registration key                                                                 |Utility class
 |Vendor message            |1.0     |ExperimenterIdDeserializerKey(1, experimenterId, ExperimenterMessage.class)      |ExperimenterDeserializerKeyFactory
@@ -793,7 +793,7 @@ table below:
 
 
 .*Serialization*
-[options="header,footer"]
+[options="header",cols="20%,10%,40%,30%"]
 |=============================================================================================================================================================
 |Extension type            |OpenFlow|Registration key                                                                        |Utility class
 |Vendor message            |1.0     |ExperimenterIdSerializerKey<>(1, experimenterId, ExperimenterInput.class)               |ExperimenterSerializerKeyFactory

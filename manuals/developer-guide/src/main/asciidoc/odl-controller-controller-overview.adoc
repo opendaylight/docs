@@ -1,6 +1,6 @@
 == OpenDaylight controller overview
 
-The Open Daylight controller is a JVM software and can be run from any operating system and hardware as long as it supports Java. It is a implementation of the concept of Software Defined Network (SDN).
+The OpenDaylight controller is a JVM software and can be run from any operating system and hardware as long as it supports Java. It is a implementation of the concept of Software Defined Network (SDN).
 
 === Background to the emergence of SDN
 
@@ -24,7 +24,7 @@ SDN consists of a network applications layer on the top written to open API. The
 
 Central to the SDN effort is the controller which provides the ability to deploy software to control the network gear and redeploy as needed. The vision is to have a modular controller with a well published Northbound API for network applications to write towards while utilizing southbound protocols such as OpenFlow to communicate with supported downstream network nodes. The industry and end users will benefit immensely by having an OpenSource controller with contributions from various industry players.
 
-The Open Daylight controller supports not only the OpenFlow protocol but also other open protocols to allow communication with devices which have OpenFlow and/or respective agents. It also includes Northbound APIs to allow customer applications (software) to work with the controller in controlling the network. The customer applications cover a wide spectrum of solutions for solving customer needs across different vertical market segments.
+The OpenDaylight controller supports not only the OpenFlow protocol but also other open protocols to allow communication with devices which have OpenFlow and/or respective agents. It also includes Northbound APIs to allow customer applications (software) to work with the controller in controlling the network. The customer applications cover a wide spectrum of solutions for solving customer needs across different vertical market segments.
 
 The controller architecture supports both the hybrid switch model as well as the classical OpenFlow model of having a fully centralized control plane.
 
@@ -63,7 +63,7 @@ image::SAL.jpg[title="Framework of SAL", alt="Framework of SAL"]
 
 The OSGi framework allows dynamically linking plugins for the evolving southbound protocols. The SAL provides basic services such as device discovery which is used by modules like Topology Manager to build the topology and device capabilities. Services are constructed using the features exposed by the plugins (based on the presence of a plugin and capabilities of a network device). Based on the service request, the SAL maps to the appropriate plugin and uses the most appropriate southbound protocol to interact with a given network device. Each plugin is independent of others and is loosely coupled with the SAL.
 
-NOTE: The OpenFlow 1.0 plugin is currently provided with OpenDaylight and other plugins shown in the images are examples of the extensibility of the SAL framework. The SAL framework is included in the Open Daylight controller contribution.
+NOTE: The OpenFlow 1.0 plugin is currently provided with OpenDaylight and other plugins shown in the images are examples of the extensibility of the SAL framework. The SAL framework is included in the OpenDaylight controller contribution.
 
 === SAL architecture
 
@@ -207,11 +207,11 @@ The following are the OpenDaylight modules. See the relevant sections for an ove
 
 ** Statistics Manager
 
-* MD-SAL Netconf Connector (Southbound Netconf Plugin)
+* MD-SAL NETCONF Connector (Southbound RESTCONF Plugin)
 
-* MD-SAL Restconf Connector (Northbound Restconf Plugin) - an infrastructure component that renders REST APIs for device/service models loaded into the controller
+* MD-SAL RESTCONF Connector (Northbound NETCONF Plugin) - an infrastructure component that renders REST APIs for device/service models loaded into the controller
 
-* Config Subsystem - Netconf/Yang based framework for configuration, performance and fault management of controller infrastructure and plugins deployed into the controller
+* Config Subsystem - NETCONF/YANG based framework for configuration, performance and fault management of controller infrastructure and plugins deployed into the controller
 
 * NSF Adapters - Network Service Function Adapter that allow the MD-SAL based OF1.0/1.3 Plugin to talk with AS-SAL based Network Service Functions
 

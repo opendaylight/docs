@@ -43,7 +43,7 @@ It subscribes to the events from OVS and also implements the neutron requests re
 * Network and Sub-Network Create:
   Whenever a new sub network is created, VTN Manager will handle the same and create a vbridge under the VTN.
 * VM Creation in openstack:
- The interface mentioned as integration bridge in the configuration file, will be added with more interfaces on creation of  a new VM in OpenStack and network is provisioned for it by VTN neutron bundle. The addition of new PORT is captured by VTN Manager and it creates a vbridge interface with port mapping for the particular port.Now, when the VM starts to communicate with other VM's created, VTN Manger will install flows in the OVS and other openflow switches to facilitate communication between VM(s).
+ The interface mentioned as integration bridge in the configuration file, will be added with more interfaces on creation of  a new VM in OpenStack and network is provisioned for it by VTN neutron bundle. The addition of new PORT is captured by VTN Manager and it creates a vbridge interface with port mapping for the particular port.Now, when the VM starts to communicate with other VM's created, VTN Manger will install flows in the OVS and other OpenFlow switches to facilitate communication between VM(s).
 
 NOTE:
   To use this feature, VTN feature should be installed
