@@ -30,8 +30,7 @@ multiple OpenDaylight instances.
 To enable clustering on a single instance of OpenDaylight, perform the
 following steps:
 
-. Download, install, and run OpenDaylight as
-  <<_getting_and_installing_opendaylight_lithium,described above>>
+. Download, unzip, and run the OpenDaylight distribution
 . Install the clustering feature:
 +
  feature:install odl-mdsal-clustering
