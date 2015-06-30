@@ -174,16 +174,20 @@ support by installing the `odl-restconf` feature.
 //
 // TBD
 
-=== Installing the DLUX web interface
-
-The OpenDaylight web interface; DLUX, draws information from topology and host databases to display information about the topology of the network,
-flow statistics, host locations. You can either use DLUX as a stand-alone plug-in or integrate with OpenDaylight.
-To install DLUX as a standalone application, refer to  https://wiki.opendaylight.org/view/OpenDaylight_DLUX:Setup_and_Run
-To integrate with OpenDaylight you must enable DLUX Karaf feature. You can enable AD-SAL, MD-SAL and various other bundles within Karaf depending on the features you
-would like to access using DLUX. Each feature can be enabled or disabled separately.
-[Important]
-Ensure that you have created a topology and enabled MD-SAL feature in the Karaf distribution before you use DLUX for network management.
-For more information about enabling the Karaf features for DLUX, refer to https://wiki.opendaylight.org/view/OpenDaylight_DLUX:DLUX_Karaf_Feature
+// Commenting this out as it appears to be out of date and there is already
+// information about installing and using DLUX above.
+//
+//=== Installing the DLUX web interface
+//
+//The OpenDaylight web interface; DLUX, draws information from topology and host databases to display information about the topology of the network,
+//flow statistics, host locations. You can either use DLUX as a stand-alone plug-in or integrate with OpenDaylight.
+//To install DLUX as a standalone application, refer to  https://wiki.opendaylight.org/view/OpenDaylight_DLUX:Setup_and_Run
+//To integrate with OpenDaylight you must enable DLUX Karaf feature. You can enable AD-SAL, MD-SAL and various other bundles within Karaf depending on the features you
+//would like to access using DLUX. Each feature can be enabled or disabled separately.
+//
+//[IMPORTANT]
+//Ensure that you have created a topology and enabled MD-SAL feature in the Karaf distribution before you use DLUX for network management.
+//For more information about enabling the Karaf features for DLUX, refer to https://wiki.opendaylight.org/view/OpenDaylight_DLUX:DLUX_Karaf_Feature
 
 === Installing MD-SAL clustering
 The MD-SAL clustering feature has "special" compatibility criteria. You *must*
