@@ -52,6 +52,8 @@ include::developing-app.adoc[]
 
 = Project-Specific Development Guides
 
+include::openflowplugin/openflowplugin-user.adoc[OpenFlow]
+
 include::alto/alto-developer-guide.adoc[ALTO]
 
 include::bgpcep/odl-bgpcep-bgp-all-dev.adoc[BGP]
