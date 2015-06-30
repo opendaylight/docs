@@ -1,0 +1,811 @@
+=== End to End Flows
+
+The purpose of this section is to walk you through how to program flows end to end with the openflowplugin using OpenFlow 1.3.
+
+==== Instructions
+
+===== Prerequisites
+1. Learn “End to End” for Inventory
+2. Check inventory:
+* Run mininet with support for OF 1.3 as described in the “End to End Inventory” section.
+* Make sure you see the openflow:1 node come up as described in the “End to End Inventory” section
+
+[[flow-strategy]]
+===== Flow Strategy
+
+Current way to flush a flow to switch looks like this:
+
+1.  Create MD-SAL modeled flow and commit it into dataStore using two
+phase commit (check the MD-SAL FAQ “https://wiki.opendaylight.org/view/OpenDaylight_Controller:MD-SAL:FAQ” for more details)
+2.  FRM gets notified and invokes corresponding rpc (addFlow) on
+particular service provider (if suitable provider for given node
+registered)
+3.  The provider (plugin in this case) transforms MD-SAL modeled flow
+into OF-API modeled flow
+4.  OF-API modeled flow is then flushed into OFLibrary
+5.  OFLibrary encodes flow into particular version of wire protocol and
+sends it to particular switch
+6.  Check on mininet side if flow is set
+
+[[push-your-flow]]
+===== Push your flow
+
+* With PostMan:
+** Set headers:
+*** Content-Type: application/xml
+*** Accept: application/xml
+*** Authentication
+** Use URL: http://<controller
+IP>:8181/restconf/config/opendaylight-inventory:nodes/node/openflow:1/table/0/flow/1
+** PUT
+** Use Body:
+
+---------------------------------------------------------
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<flow xmlns="urn:opendaylight:flow:inventory">
+    <priority>2</priority>
+    <flow-name>Foo</flow-name>
+    <match>
+        <ethernet-match>
+            <ethernet-type>
+                <type>2048</type>
+            </ethernet-type>
+        </ethernet-match>
+        <ipv4-destination>10.0.10.2/24</ipv4-destination>
+    </match>
+    <id>1</id>
+    <table_id>0</table_id>
+    <instructions>
+        <instruction>
+            <order>0</order>
+            <apply-actions>
+                <action>
+                   <order>0</order>
+                   <dec-nw-ttl/>
+                </action>
+            </apply-actions>
+        </instruction>
+    </instructions>
+</flow>
+---------------------------------------------------------
+
+**Note*: If you want to try a different flow id or a different table,
+make sure the URL and the body stay in sync. For example, if you wanted
+to try: table 2 flow 20 you'd change the URL to: http://<controller
+IP>:8181/restconf/config/opendaylight-inventory:nodes/node/openflow:1/table/2/flow/20
+
+but you would also need to update the 20 and 2 in the body of the XML.
+
+Other caveat, we have a known bug with updates, so please only write to
+a given flow id and table id on a given node once at this time until we
+resolve it. Or you can use the DELETE method with the same URL in
+PostMan to delete the flow information on switch and controller cache.
+
+[[check-for-your-flow-on-the-switch]]
+===== Check for your flow on the switch
+
+* See your flow on your mininet:
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+mininet@mininet-vm:~$ sudo ovs-ofctl -O OpenFlow13 dump-flows s1
+OFPST_FLOW reply (OF1.3) (xid=0x2):
+cookie=0x0, duration=7.325s, table=0, n_packets=0, n_bytes=0, idle_timeout=300, hard_timeout=600, send_flow_rem priority=2,ip,nw_dst=10.0.10.0/24 actions=dec_ttl
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+If you want to see the above information from the mininet prompt - use
+"sh" instead of "sudo" i.e. use "sh ovs-ofctl -O OpenFlow13 dump-flows
+s1".
+
+[[check-for-your-flow-in-the-controller-config-via-restconf]]
+===== Check for your flow in the controller config via RESTCONF
+
+* See your configured flow in POSTMAN with
+** URL http://<controller
+IP>:8181/restconf/operational/opendaylight-inventory:nodes/node/openflow:1/table/0/
+** GET
+** You no longer need to set Accept header
+
+Return Response:
+
+  { 
+     "flow-node-inventory:table": [ 
+         { 
+             "flow-node-inventory:id": 0, 
+             "flow-node-inventory:flow": [ 
+                 { 
+                     "flow-node-inventory:priority": 1, 
+                     "flow-node-inventory:id": "10b1a23c-5299-4f7b-83d6-563bab472754", 
+                     "flow-node-inventory:table_id": 0, 
+                     "flow-node-inventory:hard-timeout": 0, 
+                     "flow-node-inventory:idle-timeout": 0, 
+                     "flow-node-inventory:instructions": { 
+                         "flow-node-inventory:instruction": [ 
+                             { 
+                                 "flow-node-inventory:apply-actions": { 
+                                     "flow-node-inventory:action": [ 
+                                         { 
+                                             "flow-node-inventory:output-action": { 
+                                                 "flow-node-inventory:output-node-connector": "openflow:1:1" 
+                                             }, 
+                                             "flow-node-inventory:order": 0 
+                                         } 
+                                     ] 
+                                 }, 
+                                 "flow-node-inventory:order": 0 
+                             } 
+                         ] 
+                     }, 
+                     "flow-node-inventory:match": { 
+                         "flow-node-inventory:ethernet-match": { 
+                             "flow-node-inventory:ethernet-type": { 
+                                 "flow-node-inventory:type": 2048 
+                             } 
+                         }, 
+                         "flow-node-inventory:ipv4-destination": "10.0.0.2" 
+                     }, 
+                     "flow-node-inventory:cookie": 0 
+                 }, 
+                 { 
+                     "flow-node-inventory:priority": 1, 
+                     "flow-node-inventory:id": "020bf359-1299-4da6-b4f7-368bd83b5841", 
+                     "flow-node-inventory:table_id": 0, 
+                     "flow-node-inventory:hard-timeout": 0, 
+                     "flow-node-inventory:idle-timeout": 0, 
+                     "flow-node-inventory:instructions": { 
+                         "flow-node-inventory:instruction": [ 
+                             { 
+                                 "flow-node-inventory:apply-actions": { 
+                                     "flow-node-inventory:action": [ 
+                                         { 
+                                             "flow-node-inventory:output-action": { 
+                                                 "flow-node-inventory:output-node-connector": "openflow:1:1" 
+                                             }, 
+                                             "flow-node-inventory:order": 0 
+                                         } 
+                                     ] 
+                                 }, 
+                                 "flow-node-inventory:order": 0 
+                             } 
+                         ] 
+                     }, 
+                     "flow-node-inventory:match": { 
+                         "flow-node-inventory:ethernet-match": { 
+                             "flow-node-inventory:ethernet-type": { 
+                                 "flow-node-inventory:type": 2048 
+                             } 
+                         }, 
+                         "flow-node-inventory:ipv4-destination": "10.0.0.1" 
+                     }, 
+                     "flow-node-inventory:cookie": 0 
+                 }, 
+                 { 
+                     "flow-node-inventory:priority": 1, 
+                     "flow-node-inventory:id": "42172bfc-9142-4a92-9e90-ee62529b1e85", 
+                     "flow-node-inventory:table_id": 0, 
+                     "flow-node-inventory:hard-timeout": 0, 
+                     "flow-node-inventory:idle-timeout": 0, 
+                     "flow-node-inventory:instructions": { 
+                         "flow-node-inventory:instruction": [ 
+                             { 
+                                 "flow-node-inventory:apply-actions": { 
+                                     "flow-node-inventory:action": [ 
+                                         { 
+                                             "flow-node-inventory:output-action": { 
+                                                 "flow-node-inventory:output-node-connector": "openflow:1:1" 
+                                             }, 
+                                             "flow-node-inventory:order": 0 
+                                         } 
+                                     ] 
+                                 }, 
+                                 "flow-node-inventory:order": 0 
+                             } 
+                         ] 
+                     }, 
+                     "flow-node-inventory:match": { 
+                         "flow-node-inventory:ethernet-match": { 
+                             "flow-node-inventory:ethernet-type": { 
+                                 "flow-node-inventory:type": 2048 
+                             } 
+                         }, 
+                         "flow-node-inventory:ipv4-destination": "10.0.0.3" 
+                     }, 
+                     "flow-node-inventory:cookie": 0 
+                 }, 
+                 { 
+                     "flow-node-inventory:priority": 1, 
+                     "flow-node-inventory:id": "99bf566e-89f3-4c6f-ae9e-e26012ceb1e4", 
+                     "flow-node-inventory:table_id": 0, 
+                     "flow-node-inventory:hard-timeout": 0, 
+                     "flow-node-inventory:idle-timeout": 0, 
+                     "flow-node-inventory:instructions": { 
+                         "flow-node-inventory:instruction": [ 
+                             { 
+                                 "flow-node-inventory:apply-actions": { 
+                                     "flow-node-inventory:action": [ 
+                                         { 
+                                             "flow-node-inventory:output-action": { 
+                                                 "flow-node-inventory:output-node-connector": "openflow:1:1" 
+                                             }, 
+                                             "flow-node-inventory:order": 0 
+                                         } 
+                                     ] 
+                                 }, 
+                                 "flow-node-inventory:order": 0 
+                             } 
+                         ] 
+                     }, 
+                     "flow-node-inventory:match": { 
+                         "flow-node-inventory:ethernet-match": { 
+                             "flow-node-inventory:ethernet-type": { 
+                                 "flow-node-inventory:type": 2048 
+                             } 
+                         }, 
+                         "flow-node-inventory:ipv4-destination": "10.0.0.4" 
+                     }, 
+                     "flow-node-inventory:cookie": 0 
+                 }, 
+                 { 
+                     "flow-node-inventory:priority": 1, 
+                     "flow-node-inventory:id": "019dcc2e-5b4f-44f0-90cc-de490294b862", 
+                     "flow-node-inventory:table_id": 0, 
+                     "flow-node-inventory:hard-timeout": 0, 
+                     "flow-node-inventory:idle-timeout": 0, 
+                     "flow-node-inventory:instructions": { 
+                         "flow-node-inventory:instruction": [ 
+                             { 
+                                 "flow-node-inventory:apply-actions": { 
+                                     "flow-node-inventory:action": [ 
+                                         { 
+                                             "flow-node-inventory:output-action": { 
+                                                 "flow-node-inventory:output-node-connector": "openflow:1:2" 
+                                             }, 
+                                             "flow-node-inventory:order": 0 
+                                         } 
+                                     ] 
+                                 }, 
+                                 "flow-node-inventory:order": 0 
+                             } 
+                         ] 
+                     }, 
+                     "flow-node-inventory:match": { 
+                         "flow-node-inventory:ethernet-match": { 
+                             "flow-node-inventory:ethernet-type": { 
+                                 "flow-node-inventory:type": 2048 
+                             } 
+                         }, 
+                         "flow-node-inventory:ipv4-destination": "10.0.0.5" 
+                     }, 
+                     "flow-node-inventory:cookie": 0 
+                 }, 
+                 { 
+                     "flow-node-inventory:priority": 1, 
+                     "flow-node-inventory:id": "968cf81e-3f16-42f1-8b16-d01ff719c63c", 
+                     "flow-node-inventory:table_id": 0, 
+                     "flow-node-inventory:hard-timeout": 0, 
+                     "flow-node-inventory:idle-timeout": 0, 
+                     "flow-node-inventory:instructions": { 
+                         "flow-node-inventory:instruction": [ 
+                             { 
+                                 "flow-node-inventory:apply-actions": { 
+                                     "flow-node-inventory:action": [ 
+                                         { 
+                                             "flow-node-inventory:output-action": { 
+                                                 "flow-node-inventory:output-node-connector": "openflow:1:2" 
+                                             }, 
+                                             "flow-node-inventory:order": 0 
+                                         } 
+                                     ] 
+                                 }, 
+                                 "flow-node-inventory:order": 0 
+                             } 
+                         ] 
+                     }, 
+                     "flow-node-inventory:match": { 
+                         "flow-node-inventory:ethernet-match": { 
+                             "flow-node-inventory:ethernet-type": { 
+                                 "flow-node-inventory:type": 2048 
+                             } 
+                         }, 
+                         "flow-node-inventory:ipv4-destination": "10.0.0.8" 
+                     }, 
+                     "flow-node-inventory:cookie": 0 
+                 }, 
+                 { 
+                     "flow-node-inventory:priority": 1, 
+                     "flow-node-inventory:id": "1c14ea3c-9dcc-4434-b566-7e99033ea252", 
+                     "flow-node-inventory:table_id": 0, 
+                     "flow-node-inventory:hard-timeout": 0, 
+                     "flow-node-inventory:idle-timeout": 0, 
+                     "flow-node-inventory:instructions": { 
+                         "flow-node-inventory:instruction": [ 
+                             { 
+                                 "flow-node-inventory:apply-actions": { 
+                                     "flow-node-inventory:action": [ 
+                                         { 
+                                             "flow-node-inventory:output-action": { 
+                                                 "flow-node-inventory:output-node-connector": "openflow:1:2" 
+                                             }, 
+                                             "flow-node-inventory:order": 0 
+                                         } 
+                                     ] 
+                                 }, 
+                                 "flow-node-inventory:order": 0 
+                             } 
+                         ] 
+                     }, 
+                     "flow-node-inventory:match": { 
+                         "flow-node-inventory:ethernet-match": { 
+                             "flow-node-inventory:ethernet-type": { 
+                                 "flow-node-inventory:type": 2048 
+                             } 
+                         }, 
+                         "flow-node-inventory:ipv4-destination": "10.0.0.6" 
+                     }, 
+                     "flow-node-inventory:cookie": 0 
+                 }, 
+                 { 
+                     "flow-node-inventory:priority": 1, 
+                     "flow-node-inventory:id": "ed9deeb2-be8f-4b84-bcd8-9d12049383d6", 
+                     "flow-node-inventory:table_id": 0, 
+                     "flow-node-inventory:hard-timeout": 0, 
+                     "flow-node-inventory:idle-timeout": 0, 
+                     "flow-node-inventory:instructions": { 
+                         "flow-node-inventory:instruction": [ 
+                             { 
+                                 "flow-node-inventory:apply-actions": { 
+                                     "flow-node-inventory:action": [ 
+                                         { 
+                                             "flow-node-inventory:output-action": { 
+                                                 "flow-node-inventory:output-node-connector": "openflow:1:2" 
+                                             }, 
+                                             "flow-node-inventory:order": 0 
+                                         } 
+                                     ] 
+                                 }, 
+                                 "flow-node-inventory:order": 0 
+                             } 
+                         ] 
+                     }, 
+                     "flow-node-inventory:match": { 
+                         "flow-node-inventory:ethernet-match": { 
+                             "flow-node-inventory:ethernet-type": { 
+                                 "flow-node-inventory:type": 2048 
+                             } 
+                         }, 
+                         "flow-node-inventory:ipv4-destination": "10.0.0.7" 
+                     }, 
+                     "flow-node-inventory:cookie": 0 
+                 } 
+             ] 
+         } 
+     ] 
+  }  
+
+[[look-for-your-flow-stats-in-the-controller-operational-data-via-restconf]]
+===== Look for your flow stats in the controller operational data via
+RESTCONF
+
+* See your operational flow stats in POSTMAN with
+** URL http://<controller
+IP>:8181/restconf/operational/opendaylight-inventory:nodes/node/openflow:1/table/0/
+** GET
+
+Return Response:
+
+  { 
+     "flow-node-inventory:table": [ 
+         { 
+             "flow-node-inventory:id": 0, 
+             "flow-node-inventory:flow": [ 
+                 { 
+                     "flow-node-inventory:id": "10b1a23c-5299-4f7b-83d6-563bab472754", 
+                     "opendaylight-flow-statistics:flow-statistics": { 
+                         "opendaylight-flow-statistics:cookie": 0, 
+                         "opendaylight-flow-statistics:duration": { 
+                             "opendaylight-flow-statistics:nanosecond": 886000000, 
+                             "opendaylight-flow-statistics:second": 2707 
+                         }, 
+                         "opendaylight-flow-statistics:hard-timeout": 0, 
+                         "opendaylight-flow-statistics:byte-count": 784, 
+                         "opendaylight-flow-statistics:match": { 
+                             "opendaylight-flow-statistics:ethernet-match": { 
+                                 "opendaylight-flow-statistics:ethernet-type": { 
+                                     "opendaylight-flow-statistics:type": 2048 
+                                 } 
+                             }, 
+                             "opendaylight-flow-statistics:ipv4-destination": "10.0.0.2/32" 
+                         }, 
+                         "opendaylight-flow-statistics:priority": 1, 
+                         "opendaylight-flow-statistics:packet-count": 8, 
+                         "opendaylight-flow-statistics:table_id": 0, 
+                         "opendaylight-flow-statistics:idle-timeout": 0, 
+                         "opendaylight-flow-statistics:instructions": { 
+                             "opendaylight-flow-statistics:instruction": [ 
+                                 { 
+                                     "opendaylight-flow-statistics:order": 0, 
+                                     "opendaylight-flow-statistics:apply-actions": { 
+                                         "opendaylight-flow-statistics:action": [ 
+                                             { 
+                                                 "opendaylight-flow-statistics:order": 0, 
+                                                 "opendaylight-flow-statistics:output-action": { 
+                                                     "opendaylight-flow-statistics:output-node-connector": "1", 
+                                                     "opendaylight-flow-statistics:max-length": 0 
+                                                 } 
+                                             } 
+                                         ] 
+                                     } 
+                                 } 
+                             ] 
+                         } 
+                     } 
+                 }, 
+                 { 
+                     "flow-node-inventory:id": "020bf359-1299-4da6-b4f7-368bd83b5841", 
+                     "opendaylight-flow-statistics:flow-statistics": { 
+                         "opendaylight-flow-statistics:cookie": 0, 
+                         "opendaylight-flow-statistics:duration": { 
+                             "opendaylight-flow-statistics:nanosecond": 826000000, 
+                             "opendaylight-flow-statistics:second": 2711 
+                         }, 
+                         "opendaylight-flow-statistics:hard-timeout": 0, 
+                         "opendaylight-flow-statistics:byte-count": 1568, 
+                         "opendaylight-flow-statistics:match": { 
+                             "opendaylight-flow-statistics:ethernet-match": { 
+                                 "opendaylight-flow-statistics:ethernet-type": { 
+                                     "opendaylight-flow-statistics:type": 2048 
+                                 } 
+                             }, 
+                             "opendaylight-flow-statistics:ipv4-destination": "10.0.0.1/32" 
+                         }, 
+                         "opendaylight-flow-statistics:priority": 1, 
+                         "opendaylight-flow-statistics:packet-count": 16, 
+                         "opendaylight-flow-statistics:table_id": 0, 
+                         "opendaylight-flow-statistics:idle-timeout": 0, 
+                         "opendaylight-flow-statistics:instructions": { 
+                             "opendaylight-flow-statistics:instruction": [ 
+                                 { 
+                                     "opendaylight-flow-statistics:order": 0, 
+                                     "opendaylight-flow-statistics:apply-actions": { 
+                                         "opendaylight-flow-statistics:action": [ 
+                                             { 
+                                                 "opendaylight-flow-statistics:order": 0, 
+                                                 "opendaylight-flow-statistics:output-action": { 
+                                                     "opendaylight-flow-statistics:output-node-connector": "1", 
+                                                     "opendaylight-flow-statistics:max-length": 0 
+                                                 } 
+                                             } 
+                                         ] 
+                                     } 
+                                 } 
+                             ] 
+                         } 
+                     } 
+                 }, 
+                 { 
+                     "flow-node-inventory:id": "42172bfc-9142-4a92-9e90-ee62529b1e85", 
+                     "opendaylight-flow-statistics:flow-statistics": { 
+                         "opendaylight-flow-statistics:cookie": 0, 
+                         "opendaylight-flow-statistics:duration": { 
+                             "opendaylight-flow-statistics:nanosecond": 548000000, 
+                             "opendaylight-flow-statistics:second": 2708 
+                         }, 
+                         "opendaylight-flow-statistics:hard-timeout": 0, 
+                         "opendaylight-flow-statistics:byte-count": 784, 
+                         "opendaylight-flow-statistics:match": { 
+                             "opendaylight-flow-statistics:ethernet-match": { 
+                                 "opendaylight-flow-statistics:ethernet-type": { 
+                                     "opendaylight-flow-statistics:type": 2048 
+                                 } 
+                             }, 
+                             "opendaylight-flow-statistics:ipv4-destination": "10.0.0.3/32" 
+                         }, 
+                         "opendaylight-flow-statistics:priority": 1, 
+                         "opendaylight-flow-statistics:packet-count": 8, 
+                         "opendaylight-flow-statistics:table_id": 0, 
+                         "opendaylight-flow-statistics:idle-timeout": 0, 
+                         "opendaylight-flow-statistics:instructions": { 
+                             "opendaylight-flow-statistics:instruction": [ 
+                                 { 
+                                     "opendaylight-flow-statistics:order": 0, 
+                                     "opendaylight-flow-statistics:apply-actions": { 
+                                         "opendaylight-flow-statistics:action": [ 
+                                             { 
+                                                 "opendaylight-flow-statistics:order": 0, 
+                                                 "opendaylight-flow-statistics:output-action": { 
+                                                     "opendaylight-flow-statistics:output-node-connector": "1", 
+                                                     "opendaylight-flow-statistics:max-length": 0 
+                                                 } 
+                                             } 
+                                         ] 
+                                     } 
+                                 } 
+                             ] 
+                         } 
+                     } 
+                 }, 
+                 { 
+                     "flow-node-inventory:id": "99bf566e-89f3-4c6f-ae9e-e26012ceb1e4", 
+                     "opendaylight-flow-statistics:flow-statistics": { 
+                         "opendaylight-flow-statistics:cookie": 0, 
+                         "opendaylight-flow-statistics:duration": { 
+                             "opendaylight-flow-statistics:nanosecond": 296000000, 
+                             "opendaylight-flow-statistics:second": 2710 
+                         }, 
+                         "opendaylight-flow-statistics:hard-timeout": 0, 
+                         "opendaylight-flow-statistics:byte-count": 1274, 
+                         "opendaylight-flow-statistics:match": { 
+                             "opendaylight-flow-statistics:ethernet-match": { 
+                                 "opendaylight-flow-statistics:ethernet-type": { 
+                                     "opendaylight-flow-statistics:type": 2048 
+                                 } 
+                             }, 
+                             "opendaylight-flow-statistics:ipv4-destination": "10.0.0.4/32" 
+                         }, 
+                         "opendaylight-flow-statistics:priority": 1, 
+                         "opendaylight-flow-statistics:packet-count": 13, 
+                         "opendaylight-flow-statistics:table_id": 0, 
+                         "opendaylight-flow-statistics:idle-timeout": 0, 
+                         "opendaylight-flow-statistics:instructions": { 
+                             "opendaylight-flow-statistics:instruction": [ 
+                                 { 
+                                     "opendaylight-flow-statistics:order": 0, 
+                                     "opendaylight-flow-statistics:apply-actions": { 
+                                         "opendaylight-flow-statistics:action": [ 
+                                             { 
+                                                 "opendaylight-flow-statistics:order": 0, 
+                                                 "opendaylight-flow-statistics:output-action": { 
+                                                     "opendaylight-flow-statistics:output-node-connector": "1", 
+                                                     "opendaylight-flow-statistics:max-length": 0 
+                                                 } 
+                                             } 
+                                         ] 
+                                     } 
+                                 } 
+                             ] 
+                         } 
+                     } 
+                 }, 
+                 { 
+                     "flow-node-inventory:id": "019dcc2e-5b4f-44f0-90cc-de490294b862", 
+                     "opendaylight-flow-statistics:flow-statistics": { 
+                         "opendaylight-flow-statistics:cookie": 0, 
+                         "opendaylight-flow-statistics:duration": { 
+                             "opendaylight-flow-statistics:nanosecond": 392000000, 
+                             "opendaylight-flow-statistics:second": 2711 
+                         }, 
+                         "opendaylight-flow-statistics:hard-timeout": 0, 
+                         "opendaylight-flow-statistics:byte-count": 1470, 
+                         "opendaylight-flow-statistics:match": { 
+                             "opendaylight-flow-statistics:ethernet-match": { 
+                                 "opendaylight-flow-statistics:ethernet-type": { 
+                                     "opendaylight-flow-statistics:type": 2048 
+                                 } 
+                             }, 
+                             "opendaylight-flow-statistics:ipv4-destination": "10.0.0.5/32" 
+                         }, 
+                         "opendaylight-flow-statistics:priority": 1, 
+                         "opendaylight-flow-statistics:packet-count": 15, 
+                         "opendaylight-flow-statistics:table_id": 0, 
+                         "opendaylight-flow-statistics:idle-timeout": 0, 
+                         "opendaylight-flow-statistics:instructions": { 
+                             "opendaylight-flow-statistics:instruction": [ 
+                                 { 
+                                     "opendaylight-flow-statistics:order": 0, 
+                                     "opendaylight-flow-statistics:apply-actions": { 
+                                         "opendaylight-flow-statistics:action": [ 
+                                             { 
+                                                 "opendaylight-flow-statistics:order": 0, 
+                                                 "opendaylight-flow-statistics:output-action": { 
+                                                     "opendaylight-flow-statistics:output-node-connector": "2", 
+                                                     "opendaylight-flow-statistics:max-length": 0 
+                                                 } 
+                                             } 
+                                         ] 
+                                     } 
+                                 } 
+                             ] 
+                         } 
+                     } 
+                 }, 
+                 { 
+                     "flow-node-inventory:id": "968cf81e-3f16-42f1-8b16-d01ff719c63c", 
+                     "opendaylight-flow-statistics:flow-statistics": { 
+                         "opendaylight-flow-statistics:cookie": 0, 
+                         "opendaylight-flow-statistics:duration": { 
+                             "opendaylight-flow-statistics:nanosecond": 344000000, 
+                             "opendaylight-flow-statistics:second": 2707 
+                         }, 
+                         "opendaylight-flow-statistics:hard-timeout": 0, 
+                         "opendaylight-flow-statistics:byte-count": 784, 
+                         "opendaylight-flow-statistics:match": { 
+                             "opendaylight-flow-statistics:ethernet-match": { 
+                                 "opendaylight-flow-statistics:ethernet-type": { 
+                                     "opendaylight-flow-statistics:type": 2048 
+                                 } 
+                             }, 
+                             "opendaylight-flow-statistics:ipv4-destination": "10.0.0.8/32" 
+                         }, 
+                         "opendaylight-flow-statistics:priority": 1, 
+                         "opendaylight-flow-statistics:packet-count": 8, 
+                         "opendaylight-flow-statistics:table_id": 0, 
+                         "opendaylight-flow-statistics:idle-timeout": 0, 
+                         "opendaylight-flow-statistics:instructions": { 
+                             "opendaylight-flow-statistics:instruction": [ 
+                                 { 
+                                     "opendaylight-flow-statistics:order": 0, 
+                                     "opendaylight-flow-statistics:apply-actions": { 
+                                         "opendaylight-flow-statistics:action": [ 
+                                             { 
+                                                 "opendaylight-flow-statistics:order": 0, 
+                                                 "opendaylight-flow-statistics:output-action": { 
+                                                     "opendaylight-flow-statistics:output-node-connector": "2", 
+                                                     "opendaylight-flow-statistics:max-length": 0 
+                                                 } 
+                                             } 
+                                         ] 
+                                     } 
+                                 } 
+                             ] 
+                         } 
+                     } 
+                 }, 
+                 { 
+                     "flow-node-inventory:id": "ed9deeb2-be8f-4b84-bcd8-9d12049383d6", 
+                     "opendaylight-flow-statistics:flow-statistics": { 
+                         "opendaylight-flow-statistics:cookie": 0, 
+                         "opendaylight-flow-statistics:duration": { 
+                             "opendaylight-flow-statistics:nanosecond": 577000000, 
+                             "opendaylight-flow-statistics:second": 2706 
+                         }, 
+                         "opendaylight-flow-statistics:hard-timeout": 0, 
+                         "opendaylight-flow-statistics:byte-count": 784, 
+                         "opendaylight-flow-statistics:match": { 
+                             "opendaylight-flow-statistics:ethernet-match": { 
+                                 "opendaylight-flow-statistics:ethernet-type": { 
+                                     "opendaylight-flow-statistics:type": 2048 
+                                 } 
+                             }, 
+                             "opendaylight-flow-statistics:ipv4-destination": "10.0.0.7/32" 
+                         }, 
+                         "opendaylight-flow-statistics:priority": 1, 
+                         "opendaylight-flow-statistics:packet-count": 8, 
+                         "opendaylight-flow-statistics:table_id": 0, 
+                         "opendaylight-flow-statistics:idle-timeout": 0, 
+                         "opendaylight-flow-statistics:instructions": { 
+                             "opendaylight-flow-statistics:instruction": [ 
+                                 { 
+                                     "opendaylight-flow-statistics:order": 0, 
+                                     "opendaylight-flow-statistics:apply-actions": { 
+                                         "opendaylight-flow-statistics:action": [ 
+                                             { 
+                                                 "opendaylight-flow-statistics:order": 0, 
+                                                 "opendaylight-flow-statistics:output-action": { 
+                                                     "opendaylight-flow-statistics:output-node-connector": "2", 
+                                                     "opendaylight-flow-statistics:max-length": 0 
+                                                 } 
+                                             } 
+                                         ] 
+                                     } 
+                                 } 
+                             ] 
+                         } 
+                     } 
+                 }, 
+                 { 
+                     "flow-node-inventory:id": "1c14ea3c-9dcc-4434-b566-7e99033ea252", 
+                     "opendaylight-flow-statistics:flow-statistics": { 
+                         "opendaylight-flow-statistics:cookie": 0, 
+                         "opendaylight-flow-statistics:duration": { 
+                             "opendaylight-flow-statistics:nanosecond": 659000000, 
+                             "opendaylight-flow-statistics:second": 2705 
+                         }, 
+                         "opendaylight-flow-statistics:hard-timeout": 0, 
+                         "opendaylight-flow-statistics:byte-count": 784, 
+                         "opendaylight-flow-statistics:match": { 
+                             "opendaylight-flow-statistics:ethernet-match": { 
+                                 "opendaylight-flow-statistics:ethernet-type": { 
+                                     "opendaylight-flow-statistics:type": 2048 
+                                 } 
+                             }, 
+                             "opendaylight-flow-statistics:ipv4-destination": "10.0.0.6/32" 
+                         }, 
+                         "opendaylight-flow-statistics:priority": 1, 
+                         "opendaylight-flow-statistics:packet-count": 8, 
+                         "opendaylight-flow-statistics:table_id": 0, 
+                         "opendaylight-flow-statistics:idle-timeout": 0, 
+                         "opendaylight-flow-statistics:instructions": { 
+                             "opendaylight-flow-statistics:instruction": [ 
+                                 { 
+                                     "opendaylight-flow-statistics:order": 0, 
+                                     "opendaylight-flow-statistics:apply-actions": { 
+                                         "opendaylight-flow-statistics:action": [ 
+                                             { 
+                                                 "opendaylight-flow-statistics:order": 0, 
+                                                 "opendaylight-flow-statistics:output-action": { 
+                                                     "opendaylight-flow-statistics:output-node-connector": "2", 
+                                                     "opendaylight-flow-statistics:max-length": 0 
+                                                 } 
+                                             } 
+                                         ] 
+                                     } 
+                                 } 
+                             ] 
+                         } 
+                     } 
+                 } 
+             ], 
+             "opendaylight-flow-table-statistics:flow-table-statistics": { 
+                 "opendaylight-flow-table-statistics:active-flows": 8, 
+                 "opendaylight-flow-table-statistics:packets-matched": 97683, 
+                 "opendaylight-flow-table-statistics:packets-looked-up": 101772 
+             } 
+         } 
+     ] 
+  }  
+
+[[discovering-and-testing-new-flow-types]]
+==== Discovering and testing new Flow Types
+
+Currently, the openflowplugin has a test-provider that allows you to
+push various flows through the system from the OSGI command line. Once
+those flows have been pushed through, you can see them as examples and
+then use them to see in the config what a particular flow example looks
+like.
+
+[[using-addmdflow]]
+===== Using addMDFlow
+
+From the
+
+--------------------------------------------------------------------------------------------------------------------
+cd openflowplugin/distribution/base/target/distributions-openflowplugin-base-0.0.1-SNAPSHOT-osgipackage/opendaylight
+./run.sh
+--------------------------------------------------------------------------------------------------------------------
+
+Point your mininet at the controller as described above.
+
+once you can see your node (probably openflow:1 if you've been following
+along) in the inventory, at the OSGI command line try running:
+
+-----------------------
+addMDFlow openflow:1 f#
+-----------------------
+
+Where # is a number between 1 and 80. This will create one of 80
+possible flows. You can go confirm they were created on the switch.
+
+Once you've done that, use
+
+* GET
+* Accept: application/xml
+* URL:
+http://192.168.195.157:8181/restconf/config/opendaylight-inventory:nodes/node/openflow:1/table/2/
+
+To see a full listing of the flows in table 2 (where they will be put).
+If you want to see a particular flow, look at
+
+* URL:
+http://192.168.195.157:8181/restconf/config/opendaylight-inventory:nodes/node/openflow:1/table/2/flow/#
+
+Where # is 123 + the f# you used. So for example, for f22, your url
+would be
+
+* URL:
+http://192.168.195.157:8181/restconf/config/opendaylight-inventory:nodes/node/openflow:1/table/2/flow/145
+
+Note: You may have to trim out some of the sections like that contain
+bitfields and binary types that are not correctly modeled.
+
+Note: Before attempting to PUT a flow you have created via addMDFlow,
+please change its URL and body to, for example, use table 1 instead of
+table 2 or another Flow Id, so you don't collide.
+
+Note: There are several test command providers and the one handling
+flows is *OpenflowpluginTestCommandProvider*. Methods, which can be use
+as *commands in OSGI-console* have prefix '_'.
+
+[[example-flows]]
+==== Example Flows
+
+Examples for XML for various flow matches, instructions & actions can be
+found at https://wiki.opendaylight.org/view/Editing_OpenDaylight_OpenFlow_Plugin:End_to_End_Flows:Example_Flows.
