@@ -25,7 +25,7 @@ http://www.opendaylight.org/software/downloads[Download OpenDaylight]
 . Install the required features with these commands:
 feature:install odl-ovsdb-openstack
 
-===== Sample output from the Karaf console
+==== Sample output from the Karaf console
 ----
 opendaylight-user@root>feature:list -i | grep ovsdb
 odl-ovsdb-southbound-api             | 1.1.0-SNAPSHOT   | x         | odl-ovsdb-southbound-1.1.0-SNAPSHOT
