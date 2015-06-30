@@ -1,0 +1,166 @@
+=== End to End Meters
+
+The purpose of this section is to walk you through how to program meters end to end with the openflowplugin using OpenFlow 1.3.
+
+==== Instructions
+
+===== Prerequisites
+1. Learn “End to End” for Inventory
+2. Check inventory:
+* Run mininet with support for OF 1.3 as described in the “End to End Inventory” section.
+* Make sure you see the openflow:1 node come up as described in the “End to End Inventory” section
+
+
+[[meter-strategy]]
+===== Meter Strategy
+
+Current way to flush a meter to switch looks like this:
+
+1.  create MD-SAL modeled flow and commit it into dataStore using two
+phase commit
+2.  FRM gets notified and invokes corresponding rpc (addMeter) on
+particular service provider (if suitable provider for given node
+registered)
+3.  the provider (plugin in this case) transforms MD-SAL modeled meter
+into OF-API modeled meter
+4.  OF-API modeled meter is then flushed into OFLibrary
+5.  OFLibrary encodes meter into particular version of wire protocol and
+sends it to particular switch
+6.  check on mininet side if meter is installed
+
+[[push-your-meter]]
+===== Push your Meter
+
+* Using PostMan:
+** Set Request Headers
+*** Content-Type: application/xml
+*** Accept: application/xml
+** Use URL:
+http://:8080/restconf/config/opendaylight-inventory:nodes/node/openflow:1/meter/1
+** Method:PUT
+** Request Body:
+
+--------------------------------------------------------------
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<meter xmlns="urn:opendaylight:flow:inventory">
+    <container-name>abcd</container-name>
+    <flags>meter-burst</flags>
+    <meter-band-headers>
+        <meter-band-header>
+            <band-burst-size>444</band-burst-size>
+            <band-id>0</band-id>
+            <band-rate>234</band-rate>
+            <dscp-remark-burst-size>5</dscp-remark-burst-size>
+            <dscp-remark-rate>12</dscp-remark-rate>
+            <prec_level>1</prec_level>
+            <meter-band-types>
+                <flags>ofpmbt-dscp-remark</flags>
+            </meter-band-types>
+        </meter-band-header>
+    </meter-band-headers>
+    <meter-id>1</meter-id>
+    <meter-name>Foo</meter-name>
+</meter>
+--------------------------------------------------------------
+
+* ** Note: If you want to try a different meter id, make sure the URL
+and the body stay in sync. For example, if you wanted to try: meter-id
+20 you'd change the URL to
+
+http://:8080/restconf/config/opendaylight-inventory:nodes/node/openflow:1/meter/20
+
+but you would also need to update the 20 in the body to match.
+
+* ** Note: :Provide the IP Address of the machine on which the
+controller is running.
+
+[[check-for-your-meter-on-the-switch]]
+===== Check for your meter on the switch
+
+* See your meter on your CPqD switch:
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+COMMAND: $ sudo dpctl tcp:127.0.0.1:6000 meter-config
+
+SENDING:
+stat_req{type="mconf", flags="0x0"{meter_id= ffffffff"}
+
+
+RECEIVED:
+stat_repl{type="mconf", flags="0x0", stats=[{meter= c"", flags="4", bands=[{type = dscp_remark, rate="12", burst_size="5", prec_level="1"}]}]}
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+[[check-for-your-meter-in-the-controller-config-via-restconf]]
+===== Check for your meter in the controller config via RESTCONF
+
+* See your configured flow in POSTMAN with
+** URL
+http://:8080/restconf/config/opendaylight-inventory:nodes/node/openflow:1/meter/1
+** Method: GET
+** You should no longer need to set Request Headers for Accept
+** Note: :Provide the IP Address of the machine on which the controller
+is running.
+
+[[look-for-your-meter-stats-in-the-controller-operational-data-via-restconf]]
+===== Look for your meter stats in the controller operational data via
+RESTCONF
+
+* See your operational meter stats in POSTMAN with
+** URL
+http://:8080/restconfig/operational/opendaylight-inventory:nodes/node/openflow:1/meter/1
+** Method: GET
+** Note: :Provide the IP Address of the machine on which the controller
+is running.
+
+[[discovering-and-testing-meter-types]]
+==== Discovering and testing Meter Types
+
+Currently, the openflowplugin has a test-provider that allows you to
+push various meters through the system from the OSGI command line. Once
+those meters have been pushed through, you can see them as examples and
+then use them to see in the config what a particular meter example looks
+like.
+
+[[using-addmeter]]
+===== Using addMeter
+
+From the
+
+--------------------------------------------------------------------------------------------------------------------
+cd openflowplugin/distribution/base/target/distributions-openflowplugin-base-0.0.1-SNAPSHOT-osgipackage/opendaylight
+./run.sh
+--------------------------------------------------------------------------------------------------------------------
+
+Point your CPqD at the controller as described above.
+
+Once you can see your CPqD connected to the controller, at the OSGI
+command line try running:
+
+-------------------
+addMeter openflow:1
+-------------------
+
+Once you've done that, use
+
+* GET
+* Accept: application/xml
+* URL:
+http://:8080/restconf/config/opendaylight-inventory:nodes/node/openflow:1/meter/12
+** Note: :Provide the IP Address of the machine on which the controller
+is running.
+
+Note: Before attempting to PUT a meter you have created via addMeter,
+please change its URL and body to, for example, use meter 1 instead of
+meter 2 or another Meter Id, so you don't collide.
+
+Note: There are several test command providers and the one handling
+Meter is *OpenflowpluginMeterTestCommandProvider*. Methods, which can be
+used as *commands in OSGI-console* have prefix '_'. Examples: addMeter,
+modifyMeter and removeMeter.
+
+[[example-meter]]
+==== Example Meter
+
+Examples for XML for various Meter Types can be found in the
+test-scripts bundle of the plugin code with names m1.xml, m2.xml and
+m3.xml.
