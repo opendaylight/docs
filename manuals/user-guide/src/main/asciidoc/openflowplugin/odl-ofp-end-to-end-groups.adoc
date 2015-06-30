@@ -1,0 +1,15 @@
+=== End to End Groups
+
+Needs to be documented.
+
+[[note]]
+==== NOTE
+
+Groups were NOT SUPPORTED in the 2.0.0 version of openvswitch. See
+
+* http://openvswitch.org/releases/NEWS-2.0.0
+* http://comments.gmane.org/gmane.linux.network.openvswitch.general/3251
+
+For testing group feature please use for example CPqD virtual switch (https://wiki.opendaylight.org/view/OpenDaylight_OpenFlow_Plugin::End_to_End_Inventory#Setup_CPqD_Openflow_1.3_Soft_Switch).
+
+

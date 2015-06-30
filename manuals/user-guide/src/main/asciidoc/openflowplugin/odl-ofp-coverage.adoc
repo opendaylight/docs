@@ -1,0 +1,23 @@
+[[Coverage]]
+=== Protocol Coverage
+
+The things that have been tested and confirmed to work during Hydrogen release are in a GoogleDoc spreadsheet at: https://docs.google.com/spreadsheet/ccc?key=0AtpUuSEP8OyMdHNTZjBoM0VjOE9BcGhHMzk3N19uamc&usp=sharing%23gid=2#gid=0
+
+[[of-1.3-considerations]]
+==== OF 1.3 Considerations
+
+The baseline model is a OF 1.3 model, and the coverage tables primarily
+deal with OF 1.3. However for OF 1.0, we have a column to indicate
+either N/A if it doesn't apply, or whether its been confirmed working.
+
+[[of-1.0-considerations]]
+==== OF 1.0 Considerations
+
+OF 1.0 is being considered as a switch with:
+
+* 1 Table
+* 0 Groups
+* 0 Meters
+* 1 Instruction (Apply Actions)
+* and a limited vocabulary of matches and actions.
+

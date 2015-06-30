@@ -1,0 +1,62 @@
+[[overview]]
+=== Overview
+
+OpenFlow is a vendor-neutral standard communications interface defined
+to enable interaction between the control and forwarding layers of an
+SDN architecture. The OpenFlow plugin project intends to develop a
+plugin to support implementations of the OpenFlow specification as it
+develops and evolves. Specifically the project has developed a plugin
+aiming to support OpenFlow 1.0 and 1.3.x. It can be extended to add
+support for subsequent OpenFlow specifications. The plugin is based on
+the Model Driven Service Abstraction Layer (MD-SAL) architecture
+(https://wiki.opendaylight.org/view/OpenDaylight_Controller:MD-SAL).
+This new OpenFlow 1.0/1.3 MD-SAL based plugin is distinct from the old
+OpenFlow 1.0 plugin which was based on the API driven SAL (AD-SAL)
+architecture.
+
+[[scope]]
+==== Scope
+
+* Southbound plugin and integration of OpenFlow 1.0/1.3.x library
+project
+* Ongoing support and integration of the OpenFlow specification
+* The plugin should be implemented in an easily extensibile manner
+* Protocol verification activities will be performed on supported
+OpenFlow specifications
+
+[[architecture-and-design]]
+==== Architecture and Design
+
+[[functionality]]
+===== Functionality
+
+OpenFlow 1.3 Plugin will support the following functionality
+
+* Connection Handling
+* Session Management
+* State Management.
+* Error Handling.
+* Mapping function(Infrastructure to OF structures).
+* Connection establishment will be handled by OpenFlow library using
+opensource netty.io library.
+* Message handling(Ex: Packet in).
+* Event handling and propagation to upper layers.
+* Plugin will support both MD-SAL and Hard SAL.
+* Will be backward compatible with OF 1.0.
+
+[[activities-in-of-plugin-module]]
+===== Activities in OF plugin module
+
+* OF plugin bundle supports both OF 1.0 and OF 1.3.
+* Integration with OpenFlow library.
+* Integration with corresponding MD-SAL infrastructure.
+* AD-SAL supported as adapter on top of MD-SAL plugin.
+* OF 1.3 and OF 1.0 plugin will be integrated as single bundle.
+
+[[design]]
+==== Design
+
+[[overall-architecture]]
+===== Overall Architecture
+
+image:openflowplugin/Plugin_design.jpg[Plugin Design,title="Plugin Design", width= 500]
