@@ -20,64 +20,9 @@ image::vtn/vtn-overview.png[width=500]
 
 The VTN Coordinator is an external application that provides a REST interface for a user to use the VTN Virtualization. It interacts with VTN Manager plugin to implement the user configuration. It is also capable of multiple controller orchestration. It realizes Virtual Tenant Network (VTN) provisioning in OpenDaylight Controllers (ODC). In the OpenDaylight architecture VTN Coordinator is part of the network application, orchestration and services layer. VTN Coordinator has been implemented as an external application to the OpenDaylight controller. This component is responsible for the VTN virtualization. VTN Coordinator will use the REST interface exposed by the VTN Manger to realize the virtual network using the OpenDaylight controller. It uses OpenDaylight APIs (REST) to construct the virtual network in ODCs. It provides REST APIs for northbound VTN applications and supports virtual networks spanning across multiple ODCs by coordinating across ODCs.
 
-===== OpenDaylight Virtual Tenant Network (VTN) API Overview
-
-The VTN API module is a sub component of the VTN Coordinator and provides the north bound REST API interface for VTN applications. It consists of two subcomponents:
-
-* <<_web_server,Web Server>>
-* <<_vtn_service_java_api_library,VTN Service Java API Library>>
-
-.VTN Coordinator API Architecture
-image::vtn/vtn-coordinator-api-architecture.png[]
-
-====== Web Server
-
-The Web Server module handles the REST APIs received from the VTN applications. It translates the REST APIs to the appropriate Java APIs.
-
-The main functions of this module are:
-
-* Starts via the startup script catalina.sh.
-* VTN Application sends HTTP request to Web server in XML or JSON format.
-* Creates a session and acquire a read/write lock.
-* Invokes the <<_vtn_service_java_api_library,VTN Service Java API Library>> corresponding to the specified URI.
-* Returns the response to the VTN Application.
-
-*WebServer Class Details*
-
-The table below lists the classes available for Web Server module and its descriptions:
-
-[options="header",cols="30%,70%"]
-|===
-| Class Name | Description
-| InitManager |It is a singleton class for executing the acquisition of configuration information from properties file, log initialization, initialization of <<_vtn_service_java_api_library,VTN Service Java API Library>>. +
-Executed by init() of VtnServiceWebAPIServlet.
-| ConfigurationManager | Maintains the configuration information acquired from properties file.
-| VtnServiceCommonUtil | Utility class
-| VtnServiceWebUtil | Utility class
-| VtnServiceWebAPIServlet | Receives HTTP request from VTN Application and calls the method of corresponding VtnServiceWebAPIHandler. +
-Inherits class HttpServlet, and overrides doGet(), doPut(), doDelete(), doPost().
-| VtnServiceWebAPIHandler | Creates JsonObject(com.google.gson) from HTTP request, and calls method of corresponding VtnServiceWebAPIController.
-| VtnServiceWebAPIController | Creates RestResource() class and calls UPLL API/UPPL API through Java API.
-At the time of calling UPLL API/UPPL API, performs the creation/deletion of session, acquisition/release of configuration mode, acquisition/release of read lock by TC API through Java API.
-| DataConverter | Converts  HTTP request to JsonObject and JsonXML to JSON. |
-|===
-
-====== VTN Service Java API Library
-
-It provides the Java API library to communicate with the lower layer modules in the VTN Coordinator.
-
-The main functions of this library are: +
-
-* Creates an IPC client session to the lower layer.
-* Converts the request to IPC framework format.
-* Invokes the lower layer API (i.e. UPPL API, UPLL API, TC API).
-* Returns the response from the lower layer to the web server
-
-* VTN Service Java API Library Class Details
-
 ===== Feature Overview
 
-VTN Coordinator doesn't have Karaf features. 
+VTN Coordinator doesn't have Karaf features.
 
 For VTN Coordinator REST API, please refer: https://wiki.opendaylight.org/view/OpenDaylight_Virtual_Tenant_Network_%28VTN%29:VTN_Coordinator:RestApi
 
@@ -108,7 +53,8 @@ There are three features
 * *odl-vtn-manager-rest* provides VTN Manager's REST API.
 * *odl-vtn-manager-neutron* provides the integration with Neutron interface.
 
-REST API documentation for VTN Manager, please refer: https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-master/lastSuccessfulBuild/artifact/manager/northbound/target/site/wsdocs/rest.html
+REST API documentation for VTN Manager, please refer: 
+https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-stable-lithium/lastSuccessfulBuild/artifact/manager/northbound/target/site/wsdocs/rest.html
 
 For VTN Java API documentation, please visit: https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-master/lastSuccessfulBuild/artifact/manager/api/target/apidocs/index.html
 
