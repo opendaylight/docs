@@ -35,6 +35,9 @@ Follow the instructions in <<_getting_and_installing_opendaylight_lithium,Gettin
 * Arrange a physical/virtual server with any one of the supported 64-bit OS environment.
 ** RHEL 6 / 7 
 ** CentOS 6 / 7
+** Fedora 20 / 21 / 22
+** Ubuntu 14.04
+
 * Install these packages
 
   yum install perl-Digest-SHA uuid libxslt libcurl unixODBC json-c
