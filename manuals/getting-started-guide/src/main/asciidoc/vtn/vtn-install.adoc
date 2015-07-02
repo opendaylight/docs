@@ -33,8 +33,11 @@ Follow the instructions in <<_getting_and_installing_opendaylight_lithium,Gettin
 ==== VTN Coordinator
 
 * Arrange a physical/virtual server with any one of the supported 64-bit OS environment.
-** RHEL 6 / 7 
+** RHEL 6 / 7
 ** CentOS 6 / 7
+** Fedora 20 / 21 / 22
+** Ubuntu 14.04
+
 * Install these packages
 
   yum install perl-Digest-SHA uuid libxslt libcurl unixODBC json-c
@@ -59,7 +62,7 @@ NOTE: The above command will install all features of VTN Manager.
 * Enter into the externalapps directory in the top directory of Lithium
 
   cd distribution-karaf-0.2.1-Lithium-SR1/externalapps
-  
+
 * Run the below command to extract VTN Coordinator from the tar.bz2 file in the externalapps directory.
 
   tar –C/ -jxvf distribution.vtn-coordinator-6.0.0.1-Lithium-SR1-bin.tar.bz2

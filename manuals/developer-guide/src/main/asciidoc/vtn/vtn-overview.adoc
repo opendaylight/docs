@@ -70,14 +70,283 @@ The main functions of this library are: +
 
 * Creates an IPC client session to the lower layer.
 * Converts the request to IPC framework format.
-* Invokes the lower layer API (i.e. UPPL API, UPLL API, TC API).
-* Returns the response from the lower layer to the web server
+* Invokes the lower layer API (i.e., UPPL API, UPLL API, TC API).
+* Returns the response from the lower layer to the web server.
 
 * VTN Service Java API Library Class Details
 
+===== VTN Transaction Coordinator (TC) Overview
+
+The TC module provides the two phase commit coordination functionality for VTN Coordinator components. It consists of two subcomponents
+
+* Transaction Coordinator (TC)
+* Transaction Coordinator Library (TCLIB)
+
+.VTN Transaction Coordinator (TC) Architecture
+image::vtn/vtn-tc-architecture.png[]
+
+====== Transaction Coordinator (TC)
+
+The Transaction Coordinator module implements the two phase commit operation.
+
+The main functions of this module are:
+
+* TC is started from uncd daemon during start-up of VTN Coordinator.
+* Responsible for two phase commit operation in VTN.
+* Receives requests from <<_vtn_service_java_api_library,VTN Service Java API Library>> during Commit and Audit operations.
+* Invokes lower layer TCLIB API (i.e., UPLL API, UPPL API or ODC Driver API) via IPC framework.
+
+*Transaction Coordinator (TC) Class Details*
+
+The table below lists the classes available for TC module and its descriptions:
+
+[options="header",cols="30%,70%"]
+|===
+| Class Name | Description
+| TcModule | Main interface which offers the services to VTN Service library. It also handles state transitions.
+| TcOperations | Base class that services every operation request in TC.
+| TcMsg  | The message to be sent for every operation has different characteristics based on the type of message.
+This base class will provide methods to handle different types of messages to the intended recipients.
+| TcLock  | The exclusion control class, an object of TcLock is contained in TcModule and used for every operation.
+| TcDbHandler  | Utility class for TC database operations.
+| TcTaskqUtil | Utility class for task used in TC for driver triggered audit and read operations.
+|===
+
+====== Transaction Coordinator Library
+
+It provides the Java API library to communicate with the lower layer modules in the VTN Coordinator.
+
+The main functions of this library are: +
+
+* TCLIB will be loaded as a module in UPLL, UPPL and ODC Driver daemon.
+* Responsible for handling messages to the daemons from TC.
+* The daemons will install their handler with TCLIB, the handlers will be invoked on receiving messages from TC.
+
+*Transaction Coordinator Library Class Details*
+
+The table below lists the classes available for Transaction Coordinator library module and its descriptions:
+
+[options="header",cols="30%,70%"]
+|===
+| Class Name | Description
+| TcLibModule  | Main class which handles requests from TC module.
+| TcLibInterface  | Abstract class which every module implements to interact with TC module. Member of TcLibModule.
+| TcLiBMsgUtil  | Internal utility class for extracting session attributes of every request from TC.
+|===
+
+===== VTN OpenDaylight Controller Driver (ODC Driver) Overview
+
+The ODC driver module is a sub component of the VTN Coordinator and provides mechanisms to provision and monitor virtual networks and monitor physical networks in the OpenDaylight controller. ODC driver is started during startup of VTN Coordinator It consists of two sub components:
+
+* Common Driver Framework (CDF)
+* ODC Driver
+
+.VTN ODC Driver Architecture
+image::vtn/vtn-coordinator-odc-driver-architecture.png[]
+
+====== Common Driver Framework (CDF)
+
+CDF provides a controller independent processing of the messages sent from UPLL and UPPL modules.
+
+The main functions of the CDF module are:
+
+* Isolate the driver modules from processing messages sent by UPLL and UPPLmodules.
+* Provide interfaces to the driver module to install their commands for various operations on the controller (Example: VTN creation).
+* Provide controller management and support different types of controllers.
+* Parse messages and invoke driver methods with appropriate parameters.
+* Provide interface for different drivers to install command handlers.
+* Simplify transaction processing with simplified transaction functions for vote and commit operations.
+* Support for parallel update operation across many controllers.
+* The framework can be extended to support all driver modules in a common daemon or individual daemons.
+
+CDF is implemented using the following modules:
+
+* *vtndrvintf*: Implements the features of CDF listed above.
+
+*Class Details*
+The following table lists the class details for vtndrvintf module:
+
+[options="header",cols="30%,70%"]
+|===
+| Class Name | Description
+| VtnDrvIntf | Inherited from Module class and provides the entry point for messages from platform.
+Provides interfaces to add drivers for different types of controllers.
+| KtHandler  | Abstract interface for handling different message types.
+| KtRequestHandler  | Template implementation of KtHandler to process all messages from platform.
+| DriverTxnInterface | Common transaction handling for drivers.
+| ControllerFramework | Provides methods to add/delete/update Controllers to the VTN Coordinator.
+Periodic monitoring of controllers
+|===
+
+* *vtncacheutil*: Utility module that provides interfaces for caching configuration entries to validate as a whole and then later commit
+
+*Class Details*
+The following table lists the class details for vtncacheutil module:
+
+[options="header",cols="30%,70%"]
+|===
+| Class Name | Description
+| keytree  | Cache container that provides interfaces to append config to cache.
+| CommonIterator   | Provides methods to iterate the elements in cache, the option to iterate in VTN hierarchical order is also available.
+|===
+
+====== ODC Driver
+
+The ODC driver module implements the interfaces for controller connection management and virtual network provisioning and monitoring in the ODC controller. The request will be translated to the appropriate REST APIs and sent to the controller.
+ODC driver is capable of translating the VTN Operations as Commands to VTN Manager in the ODL.
+
+The above features are implemented using these modules
+
+* *restjsonutil*: Utility module that provides services for JSON build/parse and handling REST Request/Response.
+
+The following table lists the class details for restjsonutil module:
+
+[options="header",cols="30%,70%"]
+|===
+| Class Name | Description
+| HttpClient | Interface to set up and maintain a connection to an HTTP Web service
+| RestClient | Interface to handle request/response on a REST Interface
+| JsonBuildParse | Interface for building/parsing the JSON strings for communication
+|===
+
+* *odcdriver*:
+
+** Implements the interfaces exposed by CDF.
+** Registers the driver for controllers of type : ODC (OpenDaylight Controllers).
+** Uses the restjsonutil to communicate.
+
+The following table lists the class details for restjsonutil module:
+
+[options="header",cols="30%,70%"]
+|===
+| Class Name | Description
+| OdcModule  | Module implementation of odc driver, registers itself as diver for controllers of ODL type
+| ODCController  | Implements the various methods according to the features of the ODL Controller.
+| ODCVTNCommand  | Handle Create/Update/Delete/Read requests for VTN.
+| ODCVBRCommand  | Handle Create/Update/Delete/Read requests for vBridge .
+| ODCVBRIfCommand | Handle Create/Update/Delete/Read requests for vBridge interfaces.
+|===
+
+===== VTN Unified Provider Logical Layer (UPLL)
+
+The UPLL module is a sub component of the VTN Coordinator and provides the Virtual network provisioning and monitoring functionality. It consists of two sub components:
+
+* Unified Provider Logical Layer (UPLL)
+* Data Abstraction Layer (DAL)
+
+.VTN UPLL Architecture
+image::vtn/vtn-upll-architecture.png[]
+
+====== UPLL Functionalities
+
+The main functions of this module are:
+
+* UPLL is started from lgcnwd daemon during start-up of VTN Coordinator.
+* Interacts with TC, UPPL and ODC Driver using IPC framework.
+* Receives virtual network configuration Create/Update/Delete/Read requests from VTN service.
+* Maintains the start-up, candidate, and running configurations and state information in an external database.
+* Performs the Set-up/Commit/Abort operations as instructed by TC.
+* Connects to southbound controllers via ODC Driver.
+* Constructs and maintains the virtual network topology using the configuration and notifications (events and alarms) received from controller platforms.
+* Supports Audit and Import functionality for the virtual network configurations.
+
+*UPLL Class Details*
+
+The table below lists the classes available for UPLL module and its descriptions:
+
+[options="header",cols="30%,70%"]
+|===
+| Class Name | Description
+| UpllConfigSvc | UpllConfigService is a service layer implementation for UPLL. It provides UPLL service to VTN Service and handles all service requests. It also registers with UPPL and Drivers for notifications.
+| UpllIpcEventHandler | Handler for IPC events.
+| UpllConfigMgr | UpllConfigMgr is the core implementation class for configuration services and   transaction services including audit and import.
+| TcLibIntfImpl | This an implementation class which implements the TcLibInterface provided by TC. This implementation class, for each virtual function, will invoke corresponding UpllConfigMgr function.
+| MoCfgServiceIntf | Interface class for Edit/Read/Control operations.
+| MoTxServiceIntf | Interface class for normal transaction operations.
+| MoAuditServiceIntf | Interface class for audit operations.
+| MoImportServiceIntf | Interface class for import operations.
+| MoDbServiceIntf | Interface class for database operations.
+| MoManager | Base class for Key tree specific implementation.
+| CtrlrMgr| Stores the controllers as notified by Physical. UPLL stores the controller type and "invalid config" alarm status against each known controller type.
+| ConfigVal | Class for value structure of any key type. This class allows list of values to be specified.
+| ConfigKeyVal | Handler for IPC events
+| UpllConfigMgr | Class for additional data after the request/response header in messages corresponding to configuration operations. This class allows nesting of key types and values. For one key type many values can be specified and sequence of such <key, value, …> tuples can be encapsulated with one ConfigKeyVal
+| ConfigNotification | Implements config notification.
+| ConfigNotifier | Implements buffering and sending of config notifications. Also provides API for OperStatus change notification.
+| IpcUtil | Provides various IPC wrappers over the IPC framework.
+| IpctSt | Provides wrappers for data sent over IPC.
+| Key type specific classes | Implements the Key type handling functionality for all key types.
+|===
+
+====== DAL Functionalities
+
+The DAL Module implements the abstraction layer for the Database.
+
+*DAL Class Details*
+
+The table below lists the classes available for DAL module and its descriptions:
+
+[options="header",cols="30%,70%"]
+|===
+| Class Name | Description
+| DalBindColumnInfo | Contains column_info for each column_index ( column_index, app_data_type, dal_data_type, app_array_size). Contains bind_info (app_out_addr, db_in_out_addr, db_match_addr, io_type). Allocates memory in DB and copies input/match application data. Copies result from DB to application data.
+| DalBindInfo | Contains bind_info for all columns in a table (table_index, list of DalBindColumnInfo. Provides API to UPLL to bind the input/output/match address to DB And to copy result back to application.
+| DalCursor | Holds cursor information. Holds cursor data to fetch result one by one in case of multi-result query. Provides API to UPLL to fetch the result from cursor and destroy the cursor. Creation of cursor will be done in DalOdbcMgr based on the Query API.
+| DalQueryBuilder | Contains list of Query Templates and generates Query based on user inputs.
+| DalErrorHandler |Process SQL errors and maps to corresponding DB result code.
+| DalOdbcMgr | Provides APIs to UPLL for Connection/Disconnection, Commit/Rollback operation, Cursor fetch/Close cursor, All Single/Multiple result queries Diff, Copy Queries.
+|===
+
+===== VTN Unified Provider Physical Layer (UPPL)
+
+The UPPL module is a sub component of the VTN Coordinator and provides the Physical network provisioning and monitoring functionality.
+
+.VTN UPPL Architecture
+image::vtn/vtn-coordinator-uppl-architecture.png[]
+
+====== UPPL Functionalities
+
+UPPL provides the following functionalities:
+
+* UPPL is started from phynwd daemon during startup of VTN Coordinator.
+* Interacts with TC, UPLL and ODC Driver using IPC framework.
+* Receives Controller, Domain and Boundary Create/Update/Delete/Read requests from VTN Services.
+* Maintains the startup, candidate, and running configurations and state information in an external database.
+* Performs the setup/commit/abort operations as instructed by TC.
+* Connects to southbound controllers via ODC Driver.
+* Constructs physical topology using the notifications (events and alarms) from controller platform.
+* Informs UPLL about the controller addition/deletion and operational status changes of physical topology objects.
+
+*UPPL Class Details*
+
+The table below lists the classes available for UPPL module and its descriptions:
+
+[options="header",cols="30%,70%"]
+|===
+| Class Name| Description
+| PhysicalLayer | It’s a singleton class which will instantiate other UPPL’s classes. This class will be inherited from base module in order to use the Core features and IPC service handlers.
+| PhysicalCore | Class that is responsible for processing requests from https://wiki.opendaylight.org/view/OpenDaylight_Virtual_Tenant_Network_(VTN):Transaction_Coordinator#Transaction_Coordinator%7C[VTN Transaction Coordinator].
+It also: +
+
+*  Processes the configuration and capability file. +
+*  Responsible for sending alarm to node manager. +
+*  Responsible for receiving requests from north bound. +
+| IPCConnectionManager | It is responsible for processing the requests received via IPC framework. It contains separate classes to process request from VTN_Service_Java_API_library, Unified Provider Logical Layer (UPLL), OpenDaylight Controller Driver. For more information about the modules mentioned, see https://wiki.opendaylight.org/view/Release/Hydrogen/VTN/Developer_Guide[VTN Coordinator Architecture]
+| ODBCManager | It is a singleton class which performs all database services.
+| InternalTransactionCoordinator | It is responsible for parsing the IPC structures and forward it to the various request classes like ConfigurationRequest, ReadRequest, ImportRequest etc.
+| ConfigurationRequest | It is responsible to process the Create, Delete and Update operations received from <<_vtn_service_java_api_library,VTN Service Java API Library>>.
+| ReadRequest | It is responsible to process all the read operations.
+| Kt_Base, Kt_State_Base and respective Kt classes | These classes perform the functionality required for individual key type.
+| TransactionRequest | It is responsible for performing the various functions required for each phase of the Transaction Request received from Transaction Coordinator during User Commit/Abort.
+| AuditRequest | It is responsible for performing functions related to audit request.
+| ImportRequest | It is responsible for performing functions related to import request.
+| SystemStateChangeRequest | It is responsible for performing functions when <<_vtn_coordinator,VTN Coordinator>> state is moved to active or standby.
+| DBConfigurationRequest |It is responsible for processing various Database operations like Save/Clear/Abort
+|===
+
 ===== Feature Overview
 
-VTN Coordinator doesn't have Karaf features. 
+VTN Coordinator doesn't have Karaf features.
 
 For VTN Coordinator REST API, please refer: https://wiki.opendaylight.org/view/OpenDaylight_Virtual_Tenant_Network_%28VTN%29:VTN_Coordinator:RestApi
 
