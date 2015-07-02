@@ -498,7 +498,7 @@ If your peer is configured, you can populate the RIB by making following POST ca
 [source,xml]
 ----
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<ipv4-routes xmlns="urn:opendaylight:params:xml:ns:yang:bgp-rib">
+<ipv4-routes xmlns="urn:opendaylight:params:xml:ns:yang:bgp-inet">
  <ipv4-route>
   <prefix>200.20.160.1/32</prefix>
   <attributes>
