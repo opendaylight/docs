@@ -1,0 +1,70 @@
+== Persistence JPA Developer Guide
+
+=== Overview
+The Persistence Framework provides an implementation of the API defined that makes use of JPA as the underlying database technology.
+This means that the database engine can be replaced by any database to supported by any JPA provider without even impacting the persistence logic. 
+In practice different JPA providers have minor differences that will have to be addressed by the DAO implementations, most of which detected during integration testing though.
+The JPA provider and database information are defined in the META-INF/persistence.xml file; thus to replace any of those, JPA provider and/or database, it is just a matter of updating this file. 
+
+=== JPA Architecture
+The JpaDataStore is instantiated passing the persistence unit name which must be defined at META-INF/persistence.xml. 
+This file must be part of the application’s resources so it is part of the application’s Classpath. A JpaContext is created specifically for a Query and destroyed after the Query is executed.
+
+TBA: Provide a figure showing the static diagram of the JPA implementation of the Data Store API.
+
+=== Key APIs and Interfaces
+TBA
+
+==== JPA Data Store
+* The JPADataStore is an implementation of DataStore APIs.
+* The JpaDataStore is instantiated passing the persistence unit name which must be defined at META-INF/persistence.xml as descried in the JPA specification. 
+* Note: A JpaContext is created specifically for a Query and destroyed after the Query is executed.
+
+==== JPA Data Access Objects (DAO)
+* JpaDao: It must remain state-less so it is thread safe. The generic types in the DAO API include:
+    ** I: Type of the identifiable object’s id. This type should be immutable and it is critical it implements equals() and hashCode() correctly.
+    ** T: Type of the identifiable object ( object to store in the data store).
+    ** P: Type of the entity (an object annotated with {@link javax.persistence.Entity})
+    ** F: Type of the associated filter. A DAO is responsible for translating this filter to any mechanism understood by the underlying database technology. For example, predicates in JPA implementations.
+    ** S: Type of the associated sort attribute or sort key used to construct sort specifications. A DAO is responsible for translating this specification to any mechanism understood by the underlying database technology. For example, ORDER BY clauses in JPA implementations.
+    Example of APIs:
+    ** Get the entities from the data store that match the given filter: findEntities(filter, sortSpecification, context);
+* JpaKeyValueDao: 
+    ** The implementation follows the data transfer pattern.
+    ** Data Transfer Object Pattern: Provides the ability for the transport objects to carry the data between application layers (DTO). 
+    ** A DTO should be a type-safe POJO with object value types for attributes when appropriated.
+    ** The DAO internally use an entity where attributes are directly translated to the database native data types. In this way the internals of the entity are not exposed(For example, changes in column names should not affect the DTO).
+    Example of APIs:
+    ** Creates the given object in the data store: add(objToStore, context)
+    ** Updates the given object in the data store: update(identifiable,context)
+* JpaMappedKeyDao: JPA {@link JpaOffsetPageDao} where the primary key is a mapped to a different type (MacAddress, IpAddress, etc) that must be converted to a type that JPA understands (String, Long, Integer, etc). The generic types in the DAO API include:
+    ** I: Type of the identifiable object's id. This type should be immutable and it is critical it implements {@link Object#equals(Object)} and {@link Object#hashCode()} correctly
+    ** T: Type of the identifiable object (object to store in the data store)
+    ** B: Type of the id used by JPA (Example: String, Long, Integer).
+    ** F: Type of the entity (an object annotated with {@link javax.persistence.Entity})
+    ** S: Type of the associated sort attribute or sort key used to construct sort specifications
+ * JpaOffsetPageDao:
+ * etc,. please refers to the API Java Doc
+Note: In JBA implementations,entities use lazy loading for dependent objects, thus if a query needs no dependents, new methods that return a reduced identifiable with no dependents could be added to subclasses of the DAO API;
+dependents wouldn't be loaded by JPA since they wouldn’t be referenced
+
+ 
+==== JPA Integration Testing Framework
+Integration Testing from JPA Implementation and from Cassandra Implementation can be extended with the Data Store services that make use of databases like H2/HSQDB and Embedded Cassandra Server respectively.
+
+=== Use Case
+Applications consuming the JPA implementation of the persistence framework API would depend on either modules or features.
+* Module dependencies: Common, Persistence, Persistence-jpa, Persistence-test-framework, Persistence-test-framework-jpa
+* Feature dependencies: odl-persistence-api, odl-persistence-jpa-impl
+
+Use case examples for a Network Management application where Device, User, etc,. are model objects below. Please refers to the testapp module for implementation details:.
+ * Provide all functionalities for the Network Device.
+ * Provide methods to discover a network device,
+ * Get all the reachable or unreachable devices,
+ * Get devices by location etc.
+ * Provides all the methods related to a user.
+ * Provides methods to create a user, authenticate a user,
+ * disable a user, get the list of all enabled and disabled users.
+ 
+=== API Reference Documentation 
+https://wiki.opendaylight.org/view/Project_Proposals:Persistence#API_Summary

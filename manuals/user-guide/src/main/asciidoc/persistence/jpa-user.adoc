@@ -1,0 +1,46 @@
+== Persistence JPA User Guide
+
+=== Overview
+These Persistence framework supports the persistence of query-able and non-modeled data using a generic API which isolates the consumer from the complexity of the underlying persistence logic.
+The APIs are designed to be simple, extensible, and general enough to support plugging in different implementations for various databases without requiring the consumer to change their code.
+
+=== <Feature> Architecture
+Persistence provides the following features:
+* odl-persistence-api - The generic persistence API.
+
+* odl-persistence-jpa-impl - JPA implementation support.
+
+* odl-persistence-cassadrda-impl - Cassandra implementation support (not yet integrated with Lithium release).
+
+* odl-persistence-test-app - Example implementation using the persistence APIs to store objects in database.
+
+=== Configuring JPA Data Store
+TBA
+Describe how to configure the feature or the project after installation.
+Configuration information could include day-one activities for a project
+such as configuring users, configuring clients/servers and so on.
+
+=== Administering or Managing Network Intent Composition (NIC)
+There is no additional administration of management capabilities
+related to the Persistence features.
+
+=== Interactions
+A user can interact with the Persistence via the Karaf console. RESTful interface using standard RESTCONF operations is not yet supported for the Litium release.
+In other to use Persistence API and JPA, a user can install the persistence features through Karaf Console, which are already integrated with the Integration Project. 
+
+==== Karaf Console CLI
+Using the Karaf console CLI can be manipulated.
+The following Karaf console CLI commands are available to excise the odl-persistence-test-app which is implemented as an example of the persistence APIs to store objects in database.
+By default, the database is configured with H2 for the test app. To use the odl-persistence-test-app please make sure odl-persistence-all feature is installed in advance.
+
+* user:sign-up <username, password, email> - Creates a user
+* user:sign-in <username, password> - Authenticates a user
+* user:disable <id> - Disables a user
+* user:get-enabled - Gets all enabled users
+* user:get-disabled  - Gets all disabled users
+* networkdevice:discover <ipAddress> - Discovers a network device
+* networkdevice:set-friendly-name <id, friendlyName> -Sets the device's friendly name
+* networkdevice:set-location <id, location> - Sets the device's friendly location
+* networkdevice:get-reachable - Gets the reachable devices
+* networkdevice:get-unreachable - Gets the unreachable devices
+* networkdevice:get-by-location <location> - Gets devices by location

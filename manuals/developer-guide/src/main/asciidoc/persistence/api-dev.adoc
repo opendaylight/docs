@@ -1,0 +1,83 @@
+== Persistence API Developer Guide
+
+=== Overview
+These Persistence framework supports the persistence of query-able and non-modeled data using a generic API which isolates the consumer from the complexity of the underlying persistence logic.
+The APIs are designed to be simple, extensible, and general enough to support plugging in different implementations for various databases without requiring the consumer to change their code.
+
+=== Persistence Architecture
+* The consumer interacts with a generic persistence API which abstracts away the details of working with the underlying database. 
+* Two abstract implementations are currently provided for persisting to SQL (via JPA) and Cassandra databases.
+* The framework can be extended by adding implementations for other types of data stores.
+
+TBA: Provide a figure to illustrate that the persistence layer consumer, normally the business logic, interacts with a persistence API.
+
+Persistence provides the following features:
+* odl-persistence-api - The generic persistence API.
+* odl-persistence-jpa-impl - JPA implementation support.
+* odl-persistence-cassadrda-impl - Cassandra implementation support (not yet integrated with Lithium release).
+* odl-persistence-test-app - Example implementation using the persistence APIs to store objects in database.
+
+=== Key APIs and Interfaces
+TBA
+
+==== Data Store
+* Data Store provides a method to execute a Query which is a command that encapsulates persistent-related operations.
+* Data Store encapsulates and manages the lifecycle of any kind of connection or client needed to interact to the database which is provided to the Query at execution time as context.
+* DataStore service allows abstracting connection strategies. 
+* A Query encapsulates persistence operations and clearly separates concerns between business logic and persistence logic since persistence operations are not mixed with business logic. 
+===== Contexts used in Data Store:
+* For JPA implementations an Entity Manager 
+* For Cassandra implementations a Cassandra Client (Like Astyanax). 
+* For JDBC implementations a database connection.
+
+==== Data Access Object (DAO)
+* DAO provides an abstract interface for commonly used CRUD operations without exposing details of the database
+* DAO provides a mapping from application calls to the persistence layer.
+* DAO Follows an object mapping approach: Objects are stored in the database and data is retrieved as objects as well.
+* DAO receives the context as parameter in all its methods so it remains state-less and thread-safe.
+* DAO Should be created for model objects for which it is natural to have an identity, otherwise a value type relation could be used.
+===== DAO classes:
+* BaseDao defines the basic CRUD operations.
+* KeyValueDao introduces operations that consider the entire set of objects.
+* Dao and PagedDao introduce multi-object operations that require filtering.
+* OffsetPageDao and MarkPageDao are convenient interfaces that pre-map some of the generic parameters
+
+Example: A Network Management application where Switch, Device, User, etc,. are model objects, then a SwitchDao, NetworkDeviceDao and UserDao would provide CRUD operations for such model objects respectively. 
+Each object to store a DAO in charge of doing so is defined. This DAO takes care of the specifics of the object: Defining the attributes (and their database native types) to store, handling filtering and sorting, etc. 
+However, it is up to the implementations to define their own abstractions. If the specifics can be defined in a systematic way, then a single DAO could take care of all objects to store.
+
+==== Data Transfer Object (DTO)
+* DTO is recommended to use the Data Transfer Object (DTO) pattern to transfer data between the persistence layer and its consumers if the underlying database technology follows an ORM.
+* DTO Should be a type-safe POJO with object value types for attributes when appropriated.
+
+==== Filter Conditions
+* A filter could be anything defined by the application, however it will be used across layers.
+* filters are also part of the public API exposed to the business logic.
+* Even though a filter could be anything needed by an application, at the end they represent a set of conditions combined using logical operators.
+* A DAO is responsible for translating this filter to any mechanism understood by the underlying database technology.
+  For example: predicates in JPA implementations or WHERE clauses on SQL-based implementations. The filter is a contract
+
+==== Sort Keys
+* Sort Keys decouples sorting specifications from internals like column names.
+* The DAO is responsible for translating this specification to any mechanism understood by the underlying database technology. 
+  For example:
+  ORDER BY clauses in JPA implementations or SQL-based implementations. The Sort Key defines only the supported attributes to sort by. It is a contract and it is not tied to column names.
+
+==== Reusable Queries
+* A Query is considered a command that encapsulates persistent-related operations. It relies on Data Access Objects (DAOs) as an abstraction that hides details of the database.
+* The reusable queries could be considered a restricted API meant to be used just by the persistence logic 
+  if a Façade i s provided as part of the persistence logic’s API consumed by the business logic.
+
+==== Integration Testing Framework
+* Integration testing is a fundamental part of a persistence layer to validate:
+    ** There is no data loss during the persistence process.
+    ** Data integrity constraints are not violated.
+    ** Filters are correctly translated to the underlying database filtering method.
+    ** Sort specifications are correctly translated to the underlying database sorting clauses.
+* The integration testing infrastructure is used to test DAOs. Abstract test classes require a DataStore to execute queries (implementations of DaoQuery) that will exercise the DAO being tested. 
+* A SearchCase is used to define a test case that involves a Filter and optionally sort specifications.
+  Thus, the same SearchCase is used to test all the methods in the DAO that requires a filter – find, paged find, count and delete. 
+  A SearchCase defines the search space (which can be seen as the content of the table), the Filter and Sort specification to apply, and expected result that represents the objects that match tcriteria.
+
+=== API Reference Documentation
+https://wiki.opendaylight.org/view/Project_Proposals:Persistence#API_Summary
