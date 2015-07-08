@@ -1,0 +1,112 @@
+==== Support for Microsoft SCVMM 2012 R2 with ODL VTN
+
+===== Installing HTTPS in VTN Coordinator
+
+Please go through the below link,
+https://wiki.opendaylight.org/view/OpenDaylight_Virtual_Tenant_Network_(VTN):VTN_Coordinator:Enable_HTTPS_in_VTN_Coordinator#APR_Installation_Step
+
+===== Introduction
+
+System Center Virtual Machine Manager(SCVMM) is Microsoft's virtual machine support center for window's based emulations.
+
+System Center Virtual Machine Manager(SCVMM) is a management solution for the virtualized data center.
+
+You can use it to configure and manage your virtualization host, networking, and storage resources in order to create and deploy virtual machines and services to private clouds that you have created.
+
+VSEM Provider is a plug-in to bridge between Microsoft System Center Virtual Machine Manager(SCVMM) and OpenDaylight Controller.
+
+Microsoft Hyper-V is a server virtualization developed by Microsoft, which provides virtualization services through hypervisor-based emulations.
+
+.Set-Up Diagram
+image::vtn/setup_diagram_SCVMM.png["Setup" ,width= 500]
+
+*The topology used in this set-up is:*
+
+* A System Center Virtual Machine Manager(SCVMM) with VSEM Provider installed and a running VTN Coordinator and OpenDaylight Controller with VTN Feature installed.
+
+* PF1000 virtual switch extension has been installed in the two Hyper-V servers as it implements the openflow capability in Hyper-V.
+
+* Three openflow switches simulated using mininet and connected to Hyper-V.
+
+* Four VM's hosted using System Center Virtual Machine Manager(SCVMM).
+
+*It is implemented as two major components:*
+
+* System Center Virtual Machine Manager(SCVMM)
+
+* OpenDaylight(VTN Feature)
+
+** VTN Coordinator
+
+===== VTN Coordinator
+
+OpenDaylight VTN as Network Service provider for System Center Virtual Machine Manager(SCVMM) where VSEM provider is added in the Network Service which will handle all requests from System Center Virtual Machine Manager(SCVMM) and communicate with the VTN Coordinator.
+
+It is used to manage the network virtualization provided by OpenDaylight.
+
+===== To build VSEM Provider in your machine, Please follow the below steps
+
+* Download maven from the following page http://maven.apache.org/download.cgi and follow the instructions in the page to install maven in your machine.
+
+* Git clone the latest code using the following command git clone
+
+  https://git.opendaylight.org/gerrit/p/vtn.git;(cd vtn; curl -o .git/hooks/commit-msg https://git.opendaylight.org/gerrit/tools/hooks/commit-msg;chmod 755 .git/hooks/commit-msg;git config remote.origin.push HEAD:refs/for/master)
+
+* Please run mvn install command on the top of the application/vsemprovider directory.
+
+===== Prerequisites to create Network Service in SCVMM machine, Please follow the below steps
+
+* ODL_SCVMM_PROVIDER.zip is generated inside *application/vsemprovider/target/* directory and this zip file needs to be copied to SCVMM machine.
+
+* Unzip the ODL_SCVMM_PROVIDER.zip file anywhere in your SCVMM machine.
+
+* Stop SCVMM service from *"service manager->tools->servers->select system center virtual machine manager"* and click stop.
+
+* Go to *"C:/Program Files"* in your SCVMM machine. Inside *"C:/Program Files"*, create a folder named as *"ODLProvider".
+
+* Inside *"C:/Program Files/ODLProvider"*, create a folder named as "Module" in your SCVMM machine.
+
+* Inside "C:/Program Files/ODLProvider/Module", Create two folders named as *"Odl.VSEMProvider"* and *"VSEMOdlUI"* in your SCVMM machine.
+
+* Copy the *"VSEMOdl.dll"* file from *"ODL_SCVMM_PROVIDER/ODL_VSEM_PROVIDER"* to *"C:/Program Files/ODLProvider/Module/Odl.VSEMProvider"* in your SCVMM machine.
+
+* Copy the *"VSEMOdlProvider.psd1"* file from *"application/vsemprovider/VSEMOdlProvider/VSEMOdlProvider.psd1"* to *"C:/Program Files/ODLProvider/Module/Odl.VSEMProvider"* in your SCVMM machine.
+
+* Copy the *"VSEMOdlUI.dll"* file from *"ODL_SCVMM_PROVIDER/ODL_VSEM_PROVIDER_UI"* to *"C:/Program Files/ODLProvider/Module/VSEMOdlUI"* in your SCVMM machine.
+
+* Copy the *"VSEMOdlUI.psd1"* file from *"application/vsemprovider/VSEMOdlUI"* to *"C:/Program Files/ODLProvider/Module/VSEMOdlUI"* in your SCVMM machine.
+
+* Copy the *"reg_entry.reg"* file from *"ODL_SCVMM_PROVIDER/Register_settings"* to your SCVMM desktop and double click the *"reg_entry.reg"* file to install registry entry in your SCVMM machine.
+
+* Download *"PF1000.msi"* from this link, https://www.pf-info.com/License/en/index.php?url=index/index_non_buyer and place into *"C:/Program Files/Switch Extension Drivers"* in your SCVMM machine.
+
+* Start SCVMM service from *"service manager->tools->servers->select system center virtual machine manager"* and click start.
+
+===== System Center Virtual Machine Manager(SCVMM)
+
+It supports two major features,
+
+* Failover Clustering
+* Live Migration
+
+====== Failover Clustering
+
+A single Hyper-V can host a number of virtual machines. If the host were to fail then all of the virtual machines that are running on it will also fail, thereby resulting in a major outage.
+
+Failover clustering treats individual virtual machines as clustered resources. If a host were to fail then clustered virtual machines are able to fail over to a different Hyper-V server where they can continue to run.
+
+====== Live Migration
+
+Live Migration is used to migrate the running virtual machines from one Hyper-V server to another Hyper-V server without any interruptions.
+Please go through the below video for more details,
+
+* https://youtu.be/34YMOTzbNJM
+
+===== SCVMM User Guide
+* Please go through the below link for SCVMM user guide, https://wiki.opendaylight.org/view/File:ODL_SCVMM_USER_GUIDE_final.pdf
+
+* Please go through the below link for more details
+
+** OpenDaylight SCVMM VTN Integration: https://youtu.be/iRt4dxtiz94
+
+** OpenDaylight Congestion Control with SCVMM VTN: https://youtu.be/34YMOTzbNJM
