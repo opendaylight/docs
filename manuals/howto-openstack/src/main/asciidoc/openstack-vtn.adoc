@@ -1,0 +1,51 @@
+=== OpenStack with Virtual Tenant Network
+This section describes using OpenDaylight with the VTN manager feature providing network service for OpenStack. VTN manager utilizes the OVSDB southbound service and Neutron for this implementation. The below diagram depicts the communication of OpenDaylight and two virtual networks connected by an OpenFlow switch using this implementation.
+
+.OpenStack Architecture
+image::vtn/OpenStackDeveloperGuide.png["OpenStack Architecture",width=500]
+
+==== Configuration
+Please see the https://wiki.opendaylight.org/view/Release/Lithium/VTN/User_Guide/OpenStack_Support[VTN OpenStack support guide on the wiki] for details on use and configuration.
+
+===== OpenStack Configuration  Details
+Follow the below steps to configure DevStack with OpenDaylight:
+
+.Control Node
+. Disable nova network and enable Neutron.
+. Enable service odl-compute. (Optionally, you can enable odl-server also, which will download and deploy OpenDaylight in the particular node.)
+. Set ODL_MGR_IP with IP Address of OpenDaylight.
+. Make all network types as local, as there is no support for VLAN in Lithium.
+. Add the OpenDaylight Neutron URL for DevStack to post requests.
+
+.Compute Node
+. To configure compute node follows the steps 2, 3 and 4 described in Control Node above.
+. Very few services are enabled like Neutron, n-cpu and rabbit.
+. The Neutron URL is not needed to be set in compute node.
+. The control node services are added as the service hosts for various services.
+
+For more details: Please refer to https://wiki.openstack.org/wiki/NeutronDevstack
+
+==== Implementation details
+
+===== VTN Manager:
+Install *odl-vtn-manager-neutron* feature which provides the integration with Neutron interface.
+
+ feature:install odl-vtn-manager-neutron
+
+It subscribes to the events from Open vSwitch and also implements the Neutron requests received by OpenDaylight.
+
+===== Functional Behavior
+
+.StartUp:
+* The ML2 implementation for OpenDaylight will ensure that when Open vSwitch is started, the ODL_IP_ADDRESS configured will be set as manager.
+* When OpenDaylight receives the update of the Open vSwitch on port 6640 (manager port), VTN Manager handles the event and adds a bridge with required port mappings to the Open vSwitch at the OpenStack node.
+* When Neutron starts up, a new network create is POSTed to OpenDaylight, for which VTN Manager creates a Virtual Tenant Network.
+* *Network and Sub-Network Create:* Whenever a new sub network is created, VTN Manager will handle the same and create a vbridge under the VTN.
+* *VM Creation in OpenStack:* The interface mentioned as integration bridge in the configuration file will be added with more interfaces on creation of a new VM in OpenStack and the network is provisioned for it by the VTN Neutron feature. The addition of a new port is captured by the VTN Manager and it creates a vbridge interface with port mapping for the particular port. When the VM starts to communicate with other VMs, the VTN Manger will install flows in the Open vSwitch and other OpenFlow switches to facilitate communication between them.
+
+NOTE:
+  To use this feature, VTN feature should be installed
+
+==== Reference
+
+https://wiki.opendaylight.org/images/5/5c/Integration_of_vtn_and_ovsdb_for_helium.pdf
