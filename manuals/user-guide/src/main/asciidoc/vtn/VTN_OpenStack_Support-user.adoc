@@ -378,53 +378,63 @@ image::vtn/Instance_Console.png[Instance Console,width=600]
 .Ping
 image::vtn/Instance_ping.png[Ping,width=600]
 
-
 ===== Verification of Control and Compute Node after VM creation
-The output of sudo ovs-vsctl command after VM creation
-[source]
-  [stack@icehouse-compute-odl devstack]$ sudo ovs-vsctl show  Manager "tcp:192.168.64.73:6640"
-  is_connected: true
-  Bridge br-int
-  Controller "tcp:192.168.64.73:6633"
-  is_connected: true
-  fail_mode: secure
-  Port "tapa2e1ef67-79"
-  Interface "tapa2e1ef67-79"
-  Port "tap5f34d39d-5e"
-  Interface "tap5f34d39d-5e"
-  Port "tapc2858395-f9"
-  Interface "tapc2858395-f9"
-  Port "tapa9ea900a-4b"
-  Interface "tapa9ea900a-4b"
-  Port "tapc63ef3de-53"
-  Interface "tapc63ef3de-53"
-  Port "tap01d51478-8b"
-  Interface "tap01d51478-8b"
-  Port "tapa0b085ab-ce"
-  Interface "tapa0b085ab-ce"
-   Port "tapeab380de-8f"
-  Interface "tapeab380de-8f"
-  Port "tape404538c-0a"
-  Interface "tape404538c-0a"
-  Port "tap2940658d-15"
-  Interface "tap2940658d-15"
-  Port "ens224"
-  Interface "ens224"
-  ovs_version: "2.3.0"
-  <code>[stack@icehouse-controller-odl devstack]$ sudo ovs-vsctl show
-  Manager "tcp:192.168.64.73:6640"
-  is_connected: true
-  Bridge br-int
-  Controller "tcp:192.168.64.73:6633"
-  is_connected: true
-  fail_mode: secure
-  Port "tap71790d18-65"
-  Interface "tap71790d18-65"
-  Port "ens224"
-  Interface "ens224"
-  ovs_version: "2.3.0"
+* Every time a new VM is created, more interfaces are added to the br-int bridge in OVS
+* Use *sudo ovs-vsctl show* to list the number of interfaces added
+* Please visit the dlux GUI to list the new nodes in every switch.
 
-NOTE:In the above scenario more nodes have been created in the compute node
+==== Getting Started with DLUX
+
+Ensure that you have created a topology and enabled MD-SAL feature in the Karaf distribution before you use DLUX for network management.
+
+===== Logging In
+
+To log in to DLUX, after installing the application:
+
+* Open a browser and enter the login URL. If you have installed DLUX as a stand-alone, then the login URL is http://localhost:9000/DLUX/index.html. However if you have deployed  DLUX with Karaf, then the login URL is  http://\<your IP\>:8181/dlux/index.html.
+
+* Login to the application with user ID and password credentials as *admin*.
+
+NOTE: admin is the only user type available for DLUX in this release.
+
+===== Working with DLUX
+
+To get a complete DLUX feature list, install restconf, odl l2 switch, and switch while you start the DLUX distribution.
+
+.DLUX Login
+image::vtn/Dlux_login.png[DLUX GUI,width=600]
+
+NOTE: DLUX enables only those modules, whose APIs are responding. If you enable just the MD-SAL in beginning and then start dlux, only MD-SAL related tabs will be visible. While using the GUI if you enable AD-SAL karaf features, those tabs will appear automatically.
+
+===== Viewing Network Statistics
+
+The *Nodes* module on the left pane enables you to view the network statistics and port information for the switches in the network.
+
+To use the *Nodes* module:
+
+* Select *Nodes* on the left pane.
+
+  The right pane displays a table that lists all the nodes, node connectors and the statistics.
+
+* Enter a node ID in the *Search Nodes* tab to search by node connectors.
+
+* Click on the *Node Connector* number to view details such as port ID, port name, number of ports per switch, MAC Address, and so on.
+
+* Click *Flows* in the Statistics column to view Flow Table Statistics for the particular node like table ID, packet match, active flows and so on.
+
+* Click *Node Connectors* to view Node Connector Statistics for the particular node ID.
+
+===== Viewing Network Topology
+
+To view network topology:
+
+* Select *Topology* on the left pane. You will view the graphical representation on the right pane.
+In the diagram, blue boxes represent the switches,black represents the hosts available, and lines represents how switches are connected.
+
+NOTE: DLUX UI does not provide ability to add topology information. The Topology should be created using an open flow plugin. Controller stores this information in the database and displays on the DLUX page, when the you connect to the controller using openflow.
+
+.Network Topology
+image::vtn/Dlux_topology.png[Network Topology,width=600]
 
 ===== References
 * http://devstack.org/guides/multinode-lab.html

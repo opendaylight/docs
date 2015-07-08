@@ -1,0 +1,53 @@
+=== OpenStack with Virtual Tenant Network
+The implementation  describes ODL controller with VTN manager  feature provides the  network service for OpenStack. VTN manager utilizes the OVSDB southbound service and the neutron for this implementation.The below diagram depicts the communication of ODL Controller and two virtual network connected by a OpenFlow switch using this implementation.
+
+.OpenStack Architecture
+image::vtn/OpenStackDeveloperGuide.png["OpenStack Architecture",width=500]
+
+==== Configuration
+Please refer https://wiki.opendaylight.org/view/Release/Lithium/VTN/User_Guide/OpenStack_Support for the use and configuration.
+
+===== OpenStack Configuration  Details
+Follow the below steps to configure devstack with ODL controller:
+
+.Control Node
+* Disable nova network and enable neutron.
+* Enable service odl-compute (Optionally you can enable odl-server also, which will download and deploy ODL in the particular node).
+* Set ODL_MGR_IP with IP Address of ODL.
+* Make all network types as local, as there is no support for vlan in Helium.
+* Add the ODL neutron URL for devstack to post requests.
+
+.Compute Node
+* To configure Compute node follows the steps b,c and d of Control Node.
+* Very few services are enabled like neutron,n-cpu and rabbit.
+* The neutron URL is not needed to be set in compute node.
+* The Controller node services are added as the service hosts for various services.
+
+For more details: Please refer to https://wiki.openstack.org/wiki/NeutronDevstack
+
+==== Implementation details
+
+===== VTN Manager:
+Install *odl-vtn-manager-neutron* feature which provides the integration with Neutron interface.
+
+  install odl-vtn-manager-neutron
+
+It subscribes to the events from OVS and also implements the neutron requests received by ODL Controller.
+
+===== Functional Behavior
+
+.StartUp:
+* The ML2 implementation for ODL Controller will ensure that when OVS is started, the ODL_IP_ADDRESS configured will be set as manager.
+* When ODL Controller receives the update of the OVS in the port:6640, (Manager port) VTN Manager handles the event and adds a bridge with required port mappings to the Open-V-Switch at openstack node.
+* When neutron starts up, a New Network create is POSTED to ODL, for which VTN Manager creates a VTN.
+* Network and Sub-Network Create:
+  Whenever a new sub network is created, VTN Manager will handle the same and create a vbridge under the VTN.
+* VM Creation in openstack:
+ The interface mentioned as integration bridge in the configuration file, will be added with more interfaces on creation of  a new VM in OpenStack and network is provisioned for it by VTN neutron bundle. The addition of new PORT is captured by VTN Manager and it creates a vbridge interface with port mapping for the particular port.Now, when the VM starts to communicate with other VM's created, VTN Manger will install flows in the OVS and other OpenFlow switches to facilitate communication between VM(s).
+
+NOTE:
+  To use this feature, VTN feature should be installed
+
+==== Reference
+
+https://wiki.opendaylight.org/images/5/5c/Integration_of_vtn_and_ovsdb_for_helium.pdf
