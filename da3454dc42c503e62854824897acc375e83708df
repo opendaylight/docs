@@ -16,6 +16,57 @@
       "revId": "da3454dc42c503e62854824897acc375e83708df",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a7fa997_99d234d1",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn-overview.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 824
+      },
+      "writtenOn": "2015-07-08T18:35:38Z",
+      "side": 1,
+      "message": "Sorry for repeated requests: Can we remove lines 23 to 346 and retain only in the wiki for consumer guide. as the developer needs only the Java API and the REST API",
+      "revId": "da3454dc42c503e62854824897acc375e83708df",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a7fa997_b9d5b0ba",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn-overview.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 380,
+      "author": {
+        "id": 824
+      },
+      "writtenOn": "2015-07-08T18:35:38Z",
+      "side": 1,
+      "message": "These link should point to stable/lithium in the lithium branch (For master the merge-master is okay)",
+      "revId": "da3454dc42c503e62854824897acc375e83708df",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a7fa997_d9a2ecad",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/vtn/vtn-install.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 824
+      },
+      "writtenOn": "2015-07-08T18:35:38Z",
+      "side": 1,
+      "message": "Please remove Ubuntu, it cannot be used for installing the downloaded distro",
+      "revId": "da3454dc42c503e62854824897acc375e83708df",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
