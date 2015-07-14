@@ -67,7 +67,7 @@ uncomment the module containing bgp-peer.
  <holdtimer>180</holdtimer>
  <peer-role>ibgp</peer-role>
  <rib>
-  <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:cfg">prefix:rib</type>
+  <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">prefix:rib-instance</type>
   <name>example-bgp-rib</name>
  </rib>
  ...
@@ -343,7 +343,7 @@ and *peer-role* (if necessary).
  <holdtimer xmlns="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">180</holdtimer>
  <peer-role xmlns="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">ibgp</peer-role>
  <rib xmlns"urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">
-  <type xmlns:x="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:cfg">x:rib</type>
+  <type xmlns:x="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">x:rib-instance</type>
   <name>example-bgp-rib</name>
  </rib>
  <peer-registry xmlns="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">
