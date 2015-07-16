@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a7fa997_385988fe",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 824
+      },
+      "writtenOn": "2015-07-16T19:58:49Z",
+      "side": 1,
+      "message": "Please modify as \"Update VTN SCVMM Support to user guide\"",
+      "revId": "1d46071a3be01fe6a02b78b2cb71e130c3f1f508",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a7fa997_186e0c97",
+        "filename": "manuals/user-guide/src/main/asciidoc/vtn/VTN_OpenStack_Support-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 373,
+      "author": {
+        "id": 824
+      },
+      "writtenOn": "2015-07-16T19:58:49Z",
+      "side": 1,
+      "message": "Please  create  this openstack related changes in a different patch",
+      "revId": "1d46071a3be01fe6a02b78b2cb71e130c3f1f508",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a7fa997_b86cb89d",
+        "filename": "manuals/user-guide/src/main/asciidoc/vtn/VTN_Support_for_Microsoft_SCVMM-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 824
+      },
+      "writtenOn": "2015-07-16T19:58:49Z",
+      "side": 1,
+      "message": "Contents similar as the HowTo PAge? Do we ned this file. Please remove if redundant. Not needed in user guide A Howto is fine",
+      "revId": "1d46071a3be01fe6a02b78b2cb71e130c3f1f508",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
