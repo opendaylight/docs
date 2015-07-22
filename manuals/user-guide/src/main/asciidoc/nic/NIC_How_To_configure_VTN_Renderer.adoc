@@ -1,0 +1,113 @@
+==== How to configure VTN Renderer
+
+The NIC Model provides an abstract model for expressing the desired state and operation of the network.
+
+===== Requirement
+
+* Configure mininet and create a topology:
+
+Replace <Controller IP> based on your environment
+
+----
+$  mininet@mininet-vm:~$ sudo mn --controller=remote,ip=<Controller IP> --topo tree,2
+----
+
+----
+ mininet> net
+ h1 h1-eth0:s2-eth1
+ h2 h2-eth0:s2-eth2
+ h3 h3-eth0:s3-eth1
+ h4 h4-eth0:s3-eth2
+ s1 lo:  s1-eth1:s2-eth3 s1-eth2:s3-eth3
+ s2 lo:  s2-eth1:h1-eth0 s2-eth2:h2-eth0 s2-eth3:s1-eth1
+ s3 lo:  s3-eth1:h3-eth0 s3-eth2:h4-eth0 s3-eth3:s1-eth2
+ c0
+----
+
+===== Downloading and deploy Karaf distribution
+* Get the Lithium Distribution.
+
+* Unzip the  downloaded zip distribution
+
+* To run the Karaf
+
+----
+./bin/karaf
+----
+
+* Once the console is up, type as below to install feature.
+
+----
+feature:install odl-nic-renderer-vtn
+----
+
+===== Configuration
+
+Please execute the following curl commands to test network intent using mininet:
+
+* Create Intent
+
+----
+curl -v --user "admin":"admin" -H "Accept: application/json" -H "Content-type: application/json" -X PUT http://localhost:8181/restconf/config/intent:intents/intent/b9a13232-525e-4d8c-be21-cd65e3436034 -d '{ "intent:intent" : { "intent:id": "b9a13232-525e-4d8c-be21-cd65e3436034", "intent:actions" : [ { "order" : 2, "allow" : {} } ], "intent:subjects" : [ { "order":1 , "end-point-group" : {"name":"10.0.0.1"} }, { "order":2 , "end-point-group" : {"name":"10.0.0.2"}} ] } }'
+----
+
+----
+curl -v --user "admin":"admin" -H "Accept: application/json" -H "Content-type: application/json" -X PUT http://localhost:8181/restconf/config/intent:intents/intent/b9a13232-525e-4d8c-be21-cd65e3436035 -d '{ "intent:intent" : { "intent:id": "b9a13232-525e-4d8c-be21-cd65e3436035", "intent:actions" : [ { "order" : 2, "allow" : {} } ], "intent:subjects" : [ { "order":1 , "end-point-group" : {"name":"10.0.0.2"} }, { "order":2 , "end-point-group" : {"name":"10.0.0.3"}} ] } }'
+----
+
+.Verification
+
+----
+ mininet> pingall
+ Ping: testing ping reachability
+ h1 -> h2 X X
+ h2 -> h1 h3 X
+ h3 -> X h2 X
+ h4 -> X X X
+----
+
+* Update an Intent
+
+----
+curl -v --user "admin":"admin" -H "Accept: application/json" -H "Content-type: application/json" -X PUT http://localhost:8181/restconf/config/intent:intents/intent/b9a13232-525e-4d8c-be21-cd65e3436034 -d '{ "intent:intent" : { "intent:id": "b9a13232-525e-4d8c-be21-cd65e3436034", "intent:actions" : [ { "order" : 2, "block" : {} } ], "intent:subjects" : [ { "order":1 , "end-point-group" : {"name":"10.0.0.1"} }, { "order":2 , "end-point-group" : {"name":"10.0.0.2"}} ] } }'
+----
+
+.Verification
+
+----
+ mininet> pingall
+ Ping: testing ping reachability
+ h1 -> X X X
+ h2 -> X h3 X
+ h3 -> X h2 X
+ h4 -> X X X
+----
+
+NOTE: Old actions and hosts are replaced by the new action and hosts.
+
+* Delete an Intent
+
+----
+curl -v --user "admin":"admin" -H "Accept: application/json" -H     "Content-type: application/json" -X DELETE http://localhost:8181/restconf/config/intent:intents/intent/b9a13232-525e-4d8c-be21-cd65e3436035
+----
+
+.Verification
+----
+ mininet> pingall
+ Ping: testing ping reachability
+ h1 -> X X X
+ h2 -> X X X
+ h3 -> X X X
+ h4 -> X X X
+----
+
+NOTE: Ping between two hosts can also be done using MAC Address
+
+----
+curl -v --user "admin":"admin" -H "Accept: application/json" -H "Content-type: application/json" -X PUT http://localhost:8181/restconf/config/intent:intents/intent/b9a13232-525e-4d8c-be21-cd65e3436035 -d '{ "intent:intent" : { "intent:id": "b9a13232-525e-4d8c-be21-cd65e3436035", "intent:actions" : [ { "order" : 2, "allow" : {} } ], "intent:subjects" : [ { "order":1 , "end-point-group" : {"name":"6e:4f:f7:27:15:c9"} }, { "order":2 , "end-point-group" : {"name":"aa:7d:1f:4a:70:81"}} ] } }'
+----
+
+===== Scripts for reference
+* For Create and Update Intent Shell Script, please refer, https://gist.github.com/vinothgithub15/b6c4a0590515dc838583/
+
+* For Delete Intent Shell Script, please refer, https://gist.github.com/vinothgithub15/61d049120e0748a10e58/
