@@ -388,8 +388,8 @@ BGP Best Path Selection algorithm.
   </target-rib>
  <application-rib-id xmlns="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">example-app-rib</application-rib-id>
  <data-broker xmlns="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:impl">
-  <type xmlns:x="urn:opendaylight:params:xml:ns:yang:controller:md:sal:binding">x:binding-async-data-broker</type>
-  <name>pingpong-binding-data-broker</name>
+  <type xmlns:x="urn:opendaylight:params:xml:ns:yang:controller:md:sal:dom">x:dom-async-data-broker</type>
+  <name>pingpong-broker</name>
  </data-broker>
 </module>
 ----
