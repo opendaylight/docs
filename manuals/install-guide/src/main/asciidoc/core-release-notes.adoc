@@ -30,6 +30,149 @@ The OpenDaylight controller source files are completely portable and only requir
 
 Although the OpenDaylight controller is developed as a normal Java project, it makes heavy use of the Xtend language in some places. While development is possible with bare tools, we recommend you use Eclipse with the Xtend plugin.
 
+=== Helium-SR4 Release Notes
+
+This section details changes and bug fixes between the third Helium Stability Release (Helium-SR3) and the fourth Helium Stability Release (Helium-SR4) of OpenDaylight. First, we list projects with no noteworthy changes followed by a list of the bugs fixed and/or changes for each project.
+
+==== Projects with no noteworthy changes:
+
+The following projects had no noteworthy changes in the Helium-SR4 release:
+
+* Defense4All
+* PacketCable/PCMM
+* SDN Interface Application
+* SNBI
+* SNMP4SDN
+* Service Function Chaining
+* TCP-MD5
+* Table Type Patterns
+
+==== AAA
+
+* https://git.opendaylight.org/gerrit/#/q/aade4d1bc20035963ed73c41a0a8d59da1541bb1[aade4d] https://bugs.opendaylight.org/show_bug.cgi?id=4038[BUG-4038]: Grant Creation is Broken
+* https://git.opendaylight.org/gerrit/#/q/76daf3fdf7248973bfe1401d170e9970a7969aae[76daf3] https://bugs.opendaylight.org/show_bug.cgi?id=4054[BUG-4054]: Federation RuleProcessor utilizes System.out which interferes with karaf
+* https://git.opendaylight.org/gerrit/#/q/bd56e31894210e8543fae1bfad46fde79a2ff4f8[bd56e3] https://bugs.opendaylight.org/show_bug.cgi?id=3323[BUG-3323]: Changing sql queries to prepared statements in idmlite
+* https://git.opendaylight.org/gerrit/#/q/17f513e954112af5643336dcd6f9daa73db75a88[17f513] Upgrade sqlite version for the aaa data store
+* https://git.opendaylight.org/gerrit/#/q/97250fdce233ce1afe68f5aae7853f86ebb2bcfd[97250f] Revert disabling yangtools features-test
+
+==== BGP LS PCEP
+* https://git.opendaylight.org/gerrit/#/q/57cdbcebc3ac5e89a1b9fceb8e03f3a07194bc01[57cdbc] https://bugs.opendaylight.org/show_bug.cgi?id=3780[BUG-3780]: Fixed 41-bgp-example init config file
+* https://git.opendaylight.org/gerrit/#/q/c595fd704d907034c0b70f712314758ad34c85fb[c595fd] https://bugs.opendaylight.org/show_bug.cgi?id=3892[BUG-3892]: added ordered-by user statement to clusterIds
+* https://git.opendaylight.org/gerrit/#/q/a1eeb1b2375abc05f04c475362f14de51d14c308[a1eeb1] https://bugs.opendaylight.org/show_bug.cgi?id=3419[BUG-3419]: fix shutdown of modules
+* https://git.opendaylight.org/gerrit/#/q/fcf0f91bb0f539db8d7dd773a7a03f6738ca3190[fcf0f9] https://bugs.opendaylight.org/show_bug.cgi?id=2959[BUG-2959]: wrong result for selecting high local pref
+
+==== Controller
+* https://git.opendaylight.org/gerrit/#/q/de4ec4fefc774230437de50cc71a7a2ba63a5ab2[de4ec4] https://bugs.opendaylight.org/show_bug.cgi?id=2616[BUG-2616]: NPE in ControllerContext.toQName method
+* https://git.opendaylight.org/gerrit/#/q/eb8bd7c184c0eef0c6c3ffd6c07ca8e6a3cfc2ed[eb8bd7] https://bugs.opendaylight.org/show_bug.cgi?id=3966[BUG-3966]: Fixed issue FLOW_REMOVED is not sent.
+* https://git.opendaylight.org/gerrit/#/q/721fb30c98a7bbd83f8dbaef0d6a5a40634f5253[721fb3] CDS: Changes to Tx abort in Shard
+* https://git.opendaylight.org/gerrit/#/q/829d7f984d88d2a762ce2f7407d5e3f9d3e9edf9[829d7f] CDS: Real snapshot log trimming changes
+* https://git.opendaylight.org/gerrit/#/q/70649161f8e87a2f811031f1a552cecd905f2dee[706491] Fix deadlock in AsyncSshHandlerWriter
+* https://git.opendaylight.org/gerrit/#/q/0eddaf78af4d4c26e759ee854fe306c1864afa44[0eddaf] CDS: Add stress test RPC to the cars model
+* https://git.opendaylight.org/gerrit/#/q/eaa7c0ec2a8180dc6eb8b460e2a5e798e8aae36e[eaa7c0] CDS: Retry front-end transactions on AskTimeoutException
+* https://git.opendaylight.org/gerrit/#/q/e0e9d2373fa97822304cd36fdf42113948b02362[e0e9d2] CDS: Include CAN_COMMIT phase in rate limiter time period
+* https://git.opendaylight.org/gerrit/#/q/5949aefef4be1b9d3bcfec22f0a8d6363932379d[5949ae] https://bugs.opendaylight.org/show_bug.cgi?id=2787[BUG-2787] and https://bugs.opendaylight.org/show_bug.cgi?id=2849[BUG-2849]: Backport from Lithium
+* https://git.opendaylight.org/gerrit/#/q/3ab46aeaf732d246133dc2b3840ff663d1887369[3ab46a] https://bugs.opendaylight.org/show_bug.cgi?id=3570[BUG-3570]: Backport from Lithium
+* https://git.opendaylight.org/gerrit/#/q/b6d45c3a11a09de5a2d40ac811fce87ffea3b522[b6d45c] https://bugs.opendaylight.org/show_bug.cgi?id=2948[BUG-2948]: Backport from Lithium
+* https://git.opendaylight.org/gerrit/#/q/1d8f2adbd489453e9255089a17efc1a20e9c5168[1d8f2a] CDS: Backport in-memory journal log trimming from Li
+* https://git.opendaylight.org/gerrit/#/q/438575db5ab619966e3275c6780073d0fdb12515[438575] CDS: Backport transaction rate limiting
+* https://git.opendaylight.org/gerrit/#/q/803cb592f2bad95c788da90d9dfb2bc8fdb230f2[803cb5] Upgrade to akka 2.3.10
+* https://git.opendaylight.org/gerrit/#/q/03b65b51f677f79d48cd4b8cf20cfdf679c68841[03b65b] https://bugs.opendaylight.org/show_bug.cgi?id=3014[BUG-3014]: On a router_interface_add code assumed the port has null device_owner
+* https://git.opendaylight.org/gerrit/#/q/349b3cde25c5b4d35e7ed1ad0f2d4d2aeeab47d6[349b3c] https://bugs.opendaylight.org/show_bug.cgi?id=3551[BUG-3551]: Introduce custom java.security config file
+* https://git.opendaylight.org/gerrit/#/q/b88e701cd040438276af49d136f3599cbb84cd68[b88e70] Streamline updating out-of-sync follower
+* https://git.opendaylight.org/gerrit/#/q/c221294dc4db3e8c6a134b5bf5bd6e7c03eb9b33[c22129] Minor changes in LibLLDP.
+* https://git.opendaylight.org/gerrit/#/q/6a9b3d0ecd5698d432bccdb2530747052a44eeb6[6a9b3d] Backport AppendEntries optimizations from Lithium
+* https://git.opendaylight.org/gerrit/#/q/eca3e895aa019b3ee505192f4bb00ad6d4266629[eca3e8] Reduce and improve CDS debug logging
+* https://git.opendaylight.org/gerrit/#/q/506aea637c0d615b731502376a0a925ce9d2500d[506aea] Use slf4j Logger instead of akka LoggingAdapter
+* https://git.opendaylight.org/gerrit/#/q/9ca8412dc7b96b4444ede7f099e8a318c3324723[9ca841] Make Election Timeout Factor configurable
+* https://git.opendaylight.org/gerrit/#/q/feb594c27567b50f259af1df4f0eac521c3c0fbf[feb594] https://bugs.opendaylight.org/show_bug.cgi?id=2150[BUG-2150]: Feature wrappers now log parse errors better.
+* https://git.opendaylight.org/gerrit/#/q/b0223081a5fff1bba0c4e642c6b81f79d5d2584b[b02230] https://bugs.opendaylight.org/show_bug.cgi?id=2970[BUG-2970]: Fix GlobalBundleScanningSchemaServiceImpl to get RESOLVED bundles correctly
+* https://git.opendaylight.org/gerrit/#/q/4664a2e359f78c54251d374f88c33fe1df99ce3d[4664a2] https://bugs.opendaylight.org/show_bug.cgi?id=3331[BUG-3331]: RPC input with non-existent namespace causes NullPointerException
+* https://git.opendaylight.org/gerrit/#/q/ec1a72dfc144ed0570108110ba75ca8f96e6966b[ec1a72] https://bugs.opendaylight.org/show_bug.cgi?id=3154[BUG-3154]: Clustering: Journal recovery error on restart
+* https://git.opendaylight.org/gerrit/#/q/8aeac335c61cfc15974ce9cb8be7449adac47a0b[8aeac3] Fix NPE in RaftActor#onRecoveredApplyLogEntries
+* https://git.opendaylight.org/gerrit/#/q/68c9ef7ac581d66a358651e244a9db11843500e1[68c9ef] https://bugs.opendaylight.org/show_bug.cgi?id=3076[BUG-3076]: Redeploy binding mount points
+* https://git.opendaylight.org/gerrit/#/q/6b96a02dac547b44b2ad5812e18a65ccb0e17d8b[6b96a0] https://bugs.opendaylight.org/show_bug.cgi?id=3072[BUG-3072]: Make NeutronRoutersNorthbound.addRouterInterface() idem-potent
+* https://git.opendaylight.org/gerrit/#/q/71079d3a03bfcb1ea5b094c91be9f02ecbe526d9[71079d] https://bugs.opendaylight.org/show_bug.cgi?id=2914[BUG-2914]: TCP Options incorrect
+* https://git.opendaylight.org/gerrit/#/q/3151f72984dd5f28972966276e6837359f6ea0c7[3151f7] https://bugs.opendaylight.org/show_bug.cgi?id=2942[BUG-2942]: odl-mdsal-apidocs feature is not protected through AAA
+* https://git.opendaylight.org/gerrit/#/q/f570944054880daa956aa588963de28f6b7856a0[f57094] Re-enable tests and bump aaa version
+
+==== DLUX
+* https://git.opendaylight.org/gerrit/#/q/775a074ca1dd9c86992694e04e96d48027926a6e[775a07] Update frontend-maven-plugin and karma version
+* https://git.opendaylight.org/gerrit/#/q/dd4b203a3c1d6950d47ef5904c52ea7909661a17[dd4b20] AuthN for apidocs and modules REST embedded in DLUX
+* https://git.opendaylight.org/gerrit/#/q/1a4391e7b23ca167fd907d7fb5c6f13828995e53[1a4391] Re-enable DLUX distribution.
+
+==== Documentation
+* https://git.opendaylight.org/gerrit/#/q/0f04c256437e3b70a2f278e05459df6be5e94667[0f04c2] Fixing links to some gerrit patches
+* https://git.opendaylight.org/gerrit/#/q/ec27d20e57ff48f81cd400e803d1cca3b90b5155[ec27d2] Fixing Helium-SR3 release notes so that all bugs don't point to https://bugs.opendaylight.org/show_bug.cgi?id=1957[BUG-1957]:
+* https://git.opendaylight.org/gerrit/#/q/30aac942b2573897b9f04c8756dfdbf3cd8bdcb0[30aac9] Adding Release Notes for Helium-SR3
+* https://git.opendaylight.org/gerrit/#/q/0f13c940d77cedb67083b9e4570d617059816b2a[0f13c9] Adding Release Notes for Helium-SR2
+
+==== Group Based Policy
+* https://git.opendaylight.org/gerrit/#/q/34645fab467c6ea4bf620900996c1b13a22aa10a[34645f] https://bugs.opendaylight.org/show_bug.cgi?id=3948[BUG-3948]: Add docker POC scripts.
+
+==== Integration
+* https://git.opendaylight.org/gerrit/#/q/3e66920b38b8aa2dca9707a52e2c699e2c01fbbf[3e6692] Move packetcable feature to incompatible list
+* https://git.opendaylight.org/gerrit/#/q/ff1c1400a4f37e431d3c2c9f72823f04e971c3b2[ff1c14] Fix openflow service failing test case
+* https://git.opendaylight.org/gerrit/#/q/5e44541f40910e312b0f4b992466cf034b237957[5e4454] Placing cluster deployer same location as in master
+* https://git.opendaylight.org/gerrit/#/q/c89106c20c3768682751eb8aa5ce4e08eeb73de0[c89106] Adjusting netopeer test to work with any IP and user
+* https://git.opendaylight.org/gerrit/#/q/fe58ae489dc7e0ad0c1472663c2a4decbdf9ec70[fe58ae] Hardening openflow inventory check in stable, same as with master
+* https://git.opendaylight.org/gerrit/#/q/f20eb1e31d898a6b4a4b7ab13391cac8784d530d[f20eb1] Restoring CPqD test cases in stable/helium
+* https://git.opendaylight.org/gerrit/#/q/277c1eabd5faff3bc59b3970f5c42e730345e553[277c1e] Remove plugin2oc from Helium
+* https://git.opendaylight.org/gerrit/#/q/4eeaf79d48db44894ab79e65e2dde2611fac1bfd[4eeaf7] Remove plugin2oc from Helium
+* https://git.opendaylight.org/gerrit/#/q/4066e7ff70b501fe60dacbf487ed081a122fcfe4[4066e7] Fixing netconf test in stable helium
+* https://git.opendaylight.org/gerrit/#/q/a54a40a3f13fd5d8d89bade821671fc3ea9a3e4e[a54a40] Adding netconf test plan
+
+==== L2 Switch
+* https://git.opendaylight.org/gerrit/#/q/0af4434b35073317ba4a60f54379d04ceed2d73e[0af443] Fixing hosttracker's required capability on address tracker
+* https://git.opendaylight.org/gerrit/#/q/ed206ee50debab9fcdb8b179d444af27b2b92891[ed206e] https://bugs.opendaylight.org/show_bug.cgi?id=4050[BUG-4050]: Adding required capability for address-tracker model in host tracker
+* https://git.opendaylight.org/gerrit/#/q/418051901688686a8829924c6e94a550c5fee33e[418051] https://bugs.opendaylight.org/show_bug.cgi?id=4050[BUG-4050]: Add required capabiliy for stp-status-aware-node-connector model
+* https://git.opendaylight.org/gerrit/#/q/22a12c59d488bc5ff65302218e0ac1a5a2b852b1[22a12c] Add hybrid option for sending ARP to Controller & OF Normal
+* https://git.opendaylight.org/gerrit/#/q/b645d0715057ab3180ff243866fdd5f5f1970542[b645d0] https://bugs.opendaylight.org/show_bug.cgi?id=629[BUG-629]: Clear added non-directional links when clearing network graph.
+
+==== LISP Flow Mapping
+* https://git.opendaylight.org/gerrit/#/q/73d83f053c6292e921313f794c26f2464b4a0f3f[73d83f] https://bugs.opendaylight.org/show_bug.cgi?id=3877[BUG-3877]: Fix sending SMR to IPv6 subscribers
+* https://git.opendaylight.org/gerrit/#/q/d551eb0d3ebee2bc307bc306eb413cae8884d241[d551eb] https://bugs.opendaylight.org/show_bug.cgi?id=3657[BUG-3657]: Fix IPv6 transport in southbound plugin
+* https://git.opendaylight.org/gerrit/#/q/f13313a7849d77760c9c53275b86182093bab91f[f13313] https://bugs.opendaylight.org/show_bug.cgi?id=2871[BUG-2871]: Add support for IID mask-len
+* https://git.opendaylight.org/gerrit/#/q/58362d3ebcfff616f98cc3081f2534e96ba0221b[58362d] Avoid Map-Register inconsistencies due to SMR handling exceptions
+* https://git.opendaylight.org/gerrit/#/q/c73bd5097d532a454f0efee520b85d88de0c02c6[c73bd5] https://bugs.opendaylight.org/show_bug.cgi?id=2871[BUG-2871]: Added xtrsiteid flag to map-register header built by MapRegisterSerializer
+
+==== OpenFlow Protocol Library
+* https://git.opendaylight.org/gerrit/#/q/5e43856a92aa98a6063baf5fa9904aad86a76bd5[5e4385] https://bugs.opendaylight.org/show_bug.cgi?id=3356[BUG-3356]: Configurable ChannelOutboundQueue size
+* https://git.opendaylight.org/gerrit/#/q/ee9da5dbb20beef694c80eae7969ec96116ebcf9[ee9da5] https://bugs.opendaylight.org/show_bug.cgi?id=2905[BUG-2905]: TCP Options incorrect
+* https://git.opendaylight.org/gerrit/#/q/e3d8bb156fbc09f6e486a21bac9baa41d5bfad87[e3d8bb] https://bugs.opendaylight.org/show_bug.cgi?id=2866[BUG-2866]: Fixed ipv6 address parsing
+
+==== OpenFlow Plugin
+* https://git.opendaylight.org/gerrit/#/q/c4562dbe3f75644b3d8d173b522414e2df0e24d3[c4562d] https://bugs.opendaylight.org/show_bug.cgi?id=3548[BUG-3548]: LLDP speaker does not start/stop sending LLDP packets on port up/down events
+* https://git.opendaylight.org/gerrit/#/q/4c305a3ffb0fff371596b0bf2bf7f652d0b1b2e0[4c305a] https://bugs.opendaylight.org/show_bug.cgi?id=3792[BUG-3792]: Change default flow timeout values to 0
+* https://git.opendaylight.org/gerrit/#/q/d04fad1811bb3de9444f43fa0d6f145c8aa61397[d04fad] https://bugs.opendaylight.org/show_bug.cgi?id=3041[BUG-3041]: Meter and Meter Config messages not sent when controller starts after the switch
+* https://git.opendaylight.org/gerrit/#/q/f509d36bb7dfff637fe74f8bf820f48b8de015cc[f509d3] https://bugs.opendaylight.org/show_bug.cgi?id=3053[BUG-3053]: /128 should still be a /128, not an IP
+* https://git.opendaylight.org/gerrit/#/q/9262b7b40a1bf6deb5883e3141f432b149e2013a[9262b7] Port description is not getting udpated when port removed from openflow switch
+* https://git.opendaylight.org/gerrit/#/q/eff65e0b719f0c92bebddf9da85c21291eb42a96[eff65e] https://bugs.opendaylight.org/show_bug.cgi?id=2902[BUG-2902]: NPE when apply_action doesn't contain action list
+* https://git.opendaylight.org/gerrit/#/q/fe62109153eb4c1355a68c55b86d26e2b5b47481[fe6210] Re-enable DLUX feature.
+
+==== OVSDB Integration
+* https://git.opendaylight.org/gerrit/#/q/eb4584ccdca5485e23daa76c8c4796c1a4778627[eb4584] https://bugs.opendaylight.org/show_bug.cgi?id=3538[BUG-3538]:
+* https://git.opendaylight.org/gerrit/#/q/dffb4517d2684d49259bc134d2a777ea1cf82c65[dffb45] https://bugs.opendaylight.org/show_bug.cgi?id=2991[BUG-2991]: Handle cases when neutron network has no segmentationId
+* https://git.opendaylight.org/gerrit/#/q/ca18190f21671aa5a5ad5a7269cb8ffdeceba740[ca1819] L3 Bugfix: routing table needs to add rules when destination net is not local
+* https://git.opendaylight.org/gerrit/#/q/e2826545cb3a6dd7c8393af55b62067712ada7da[e28265] https://bugs.opendaylight.org/show_bug.cgi?id=3136[BUG-3136]: Delete output port from instruction should use order instead of index
+* https://git.opendaylight.org/gerrit/#/q/48434af36629d0ebb6e9e3850d0c4bd900992a62[48434a] AbstractServices need unique flowIds in order to avoid rules coalescing
+* https://git.opendaylight.org/gerrit/#/q/9376b627a7e6a83db8a48aed6057223c15682557[9376b6] https://bugs.opendaylight.org/show_bug.cgi?id=3005[BUG-3005]: RoutingService needs special care to keep from rule coalescing
+
+==== Virtual Tenant Networking (VTN)
+* https://git.opendaylight.org/gerrit/#/q/defe42dbb0d7d1707b28a562ba060a7f364a7ee7[defe42] https://bugs.opendaylight.org/show_bug.cgi?id=3716[BUG-3716]: Remaining Fixes.
+* https://git.opendaylight.org/gerrit/#/q/b3bc0a8d605e6e5902e19fc164c2878872b467cc[b3bc0a] https://bugs.opendaylight.org/show_bug.cgi?id=3716[BUG-3716]: Issue in flowfilterentry when new attributes are created during update
+* https://git.opendaylight.org/gerrit/#/q/3436b5db54d0f13a4fe32540a2a88d3f893482d8[3436b5] https://bugs.opendaylight.org/show_bug.cgi?id=3271[BUG-3271]: Flowfilter redirect-action attribute update issue.
+* https://git.opendaylight.org/gerrit/#/q/49ef4f8bd7d05cce74da72dee6dedb724c6d512e[49ef4f] https://bugs.opendaylight.org/show_bug.cgi?id=3109[BUG-3109]: Flowfilter and Flowlist attribute update issue.
+* https://git.opendaylight.org/gerrit/#/q/31dff28ef5031f847bb86c8ee07cb3ec8c193c1e[31dff2] https://bugs.opendaylight.org/show_bug.cgi?id=3949[BUG-3949]: Ignore bogus node change events.
+* https://git.opendaylight.org/gerrit/#/q/8216df1c9d35592e4c42f614d9acc386f1d8f1e0[8216df] https://bugs.opendaylight.org/show_bug.cgi?id=3776[BUG-3776]: Issue in Fedora 22 while starting VTN Coordinator
+* https://git.opendaylight.org/gerrit/#/q/91a64b4329bc4d807b6f999c74d073521ebc74fa[91a64b] https://bugs.opendaylight.org/show_bug.cgi?id=3601[BUG-3601]: Fixed coordinator UT build error on Fedora 22 (x86_64).
+* https://git.opendaylight.org/gerrit/#/q/3a565d2e26954b349f2bc9621c0490bd3cb4fb81[3a565d] https://bugs.opendaylight.org/show_bug.cgi?id=3299[BUG-3299]: Fixed coordinator UT build error on Fedora 21 (x86_64).
+* https://git.opendaylight.org/gerrit/#/q/783a01b4e764d92dc01ed6be704b0232ba14317d[783a01] https://bugs.opendaylight.org/show_bug.cgi?id=2898[BUG-2898]: implemented subnet handler in VTN Manager.
+* https://git.opendaylight.org/gerrit/#/q/c28e14e686da5bae92c15f0d5fc4e55ea947d205[c28e14] https://bugs.opendaylight.org/show_bug.cgi?id=2887[BUG-2887]: Fixed Flowlist entry attribute mismatch
+
+==== YANG Tools
+* https://git.opendaylight.org/gerrit/#/q/2f58c6ed002d66b5c02cf4a607185754fcc48b8f[2f58c6] https://bugs.opendaylight.org/show_bug.cgi?id=3821[BUG-3821]: Augmentation codecs may be loaded after codec creation.
+* https://git.opendaylight.org/gerrit/#/q/d665599a80db334381f8ec19dc5d2e43428aba11[d66559] https://bugs.opendaylight.org/show_bug.cgi?id=2507[BUG-2507]: Malformed JSON - multiline string
+
 === Helium-SR3 Release Notes
 
 This section details changes and bug fixes between the second Helium Stability Release (Helium-SR2) and the third Helium Stability Release (Helium-SR3) of OpenDaylight. First, we list projects with no noteworthy changes followed by a list of the bugs fixed and/or changes for each project.
