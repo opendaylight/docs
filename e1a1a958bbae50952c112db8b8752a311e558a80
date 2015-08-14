@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3a79b1b5_6041d00a",
+        "filename": "manuals/user-guide/src/main/asciidoc/nic/NIC_How_To_configure_VTN_Renderer.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 824
+      },
+      "writtenOn": "2015-08-14T20:57:18Z",
+      "side": 1,
+      "message": "It has been modified such a way to indicate the Lithium release to be downloaded and used",
+      "parentUuid": "3a79b1b5_15d13cfb",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 59
+      },
+      "revId": "e1a1a958bbae50952c112db8b8752a311e558a80",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a79b1b5_d5dae416",
         "filename": "manuals/user-guide/src/main/asciidoc/nic/NIC_How_To_configure_VTN_Renderer.adoc",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2015-08-14T17:22:54Z",
       "side": 1,
       "message": "Move this below to configuration?",
+      "range": {
+        "startLine": 48,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 4
+      },
+      "revId": "e1a1a958bbae50952c112db8b8752a311e558a80",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_80466c22",
+        "filename": "manuals/user-guide/src/main/asciidoc/nic/NIC_How_To_configure_VTN_Renderer.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 824
+      },
+      "writtenOn": "2015-08-14T20:57:18Z",
+      "side": 1,
+      "message": "Since there are multiple renderers, this patch intends to present an example for vtn-renderer. So we added this",
+      "parentUuid": "3a79b1b5_d5dae416",
       "range": {
         "startLine": 48,
         "startChar": 0,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "3a79b1b5_204bd82c",
+        "filename": "manuals/user-guide/src/main/asciidoc/nic/NIC_How_To_configure_VTN_Renderer.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 824
+      },
+      "writtenOn": "2015-08-14T20:57:18Z",
+      "side": 1,
+      "message": "Functional Test Scripts, Modified as reference.",
+      "parentUuid": "3a79b1b5_b5308857",
+      "range": {
+        "startLine": 118,
+        "startChar": 19,
+        "endLine": 118,
+        "endChar": 21
+      },
+      "revId": "e1a1a958bbae50952c112db8b8752a311e558a80",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a79b1b5_55357444",
         "filename": "manuals/user-guide/src/main/asciidoc/nic/NIC_How_To_configure_VTN_Renderer.adoc",
         "patchSetId": 2
@@ -82,6 +154,30 @@
       "writtenOn": "2015-08-14T17:22:54Z",
       "side": 1,
       "message": "Are either of these posted somewhere in the VTN and/or NIC repos? If not, should they be? Would that be a better place to link to?",
+      "range": {
+        "startLine": 119,
+        "startChar": 0,
+        "endLine": 121,
+        "endChar": 108
+      },
+      "revId": "e1a1a958bbae50952c112db8b8752a311e558a80",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_c06304b0",
+        "filename": "manuals/user-guide/src/main/asciidoc/nic/NIC_How_To_configure_VTN_Renderer.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 824
+      },
+      "writtenOn": "2015-08-14T20:57:18Z",
+      "side": 1,
+      "message": "they are  not posted anywhere in the git. Maybe I will remove them from this file now",
+      "parentUuid": "3a79b1b5_55357444",
       "range": {
         "startLine": 119,
         "startChar": 0,
