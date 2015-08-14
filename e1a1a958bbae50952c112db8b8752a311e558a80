@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a79b1b5_15d13cfb",
+        "filename": "manuals/user-guide/src/main/asciidoc/nic/NIC_How_To_configure_VTN_Renderer.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-14T17:22:54Z",
+      "side": 1,
+      "message": "Presumably this works with the Lithium release distribution, that\u0027s what this guide is documenting and it\u0027s already described.\n\nSo, we can cut this.",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 59
+      },
+      "revId": "e1a1a958bbae50952c112db8b8752a311e558a80",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_d5dae416",
+        "filename": "manuals/user-guide/src/main/asciidoc/nic/NIC_How_To_configure_VTN_Renderer.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-14T17:22:54Z",
+      "side": 1,
+      "message": "Move this below to configuration?",
+      "range": {
+        "startLine": 48,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 4
+      },
+      "revId": "e1a1a958bbae50952c112db8b8752a311e558a80",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_b5308857",
+        "filename": "manuals/user-guide/src/main/asciidoc/nic/NIC_How_To_configure_VTN_Renderer.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-14T17:22:54Z",
+      "side": 1,
+      "message": "What\u0027s FT?",
+      "range": {
+        "startLine": 118,
+        "startChar": 19,
+        "endLine": 118,
+        "endChar": 21
+      },
+      "revId": "e1a1a958bbae50952c112db8b8752a311e558a80",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_55357444",
+        "filename": "manuals/user-guide/src/main/asciidoc/nic/NIC_How_To_configure_VTN_Renderer.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-14T17:22:54Z",
+      "side": 1,
+      "message": "Are either of these posted somewhere in the VTN and/or NIC repos? If not, should they be? Would that be a better place to link to?",
+      "range": {
+        "startLine": 119,
+        "startChar": 0,
+        "endLine": 121,
+        "endChar": 108
+      },
+      "revId": "e1a1a958bbae50952c112db8b8752a311e558a80",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
