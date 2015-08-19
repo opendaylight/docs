@@ -2,6 +2,98 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a79b1b5_5855a11b",
+        "filename": "manuals/user-guide/src/main/asciidoc/vtn/VTN_How_To_Support_for_Microsoft_SCVMM.adoc",
+        "patchSetId": 11
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 396
+      },
+      "writtenOn": "2015-08-19T17:14:53Z",
+      "side": 1,
+      "message": "I think you should explain why users need to enable HTTPS for REST API of VTN Coordinator.",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 41
+      },
+      "revId": "445f76c54f61467d0948930aa0f48e9b4a2f04ac",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_785e5d47",
+        "filename": "manuals/user-guide/src/main/asciidoc/vtn/VTN_How_To_Support_for_Microsoft_SCVMM.adoc",
+        "patchSetId": 11
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 396
+      },
+      "writtenOn": "2015-08-19T17:14:53Z",
+      "side": 1,
+      "message": "What is \"your local machine\"?\n\nAre these steps assumed to be executed in a machine in which VTN Coordinator is installed?",
+      "range": {
+        "startLine": 7,
+        "startChar": 43,
+        "endLine": 7,
+        "endChar": 62
+      },
+      "revId": "445f76c54f61467d0948930aa0f48e9b4a2f04ac",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_d849b18c",
+        "filename": "manuals/user-guide/src/main/asciidoc/vtn/VTN_How_To_Support_for_Microsoft_SCVMM.adoc",
+        "patchSetId": 11
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 396
+      },
+      "writtenOn": "2015-08-19T17:14:53Z",
+      "side": 1,
+      "message": "I think this change is for Lithium release. (Though this patch itself is for the master branch for Beryllium release.)\n\nTherefore, I think it does not need to mention about Helium here.",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 162
+      },
+      "revId": "445f76c54f61467d0948930aa0f48e9b4a2f04ac",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_b86dd506",
+        "filename": "manuals/user-guide/src/main/asciidoc/vtn/VTN_How_To_Support_for_Microsoft_SCVMM.adoc",
+        "patchSetId": 11
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 396
+      },
+      "writtenOn": "2015-08-19T17:14:53Z",
+      "side": 1,
+      "message": "I think the Introduction section should go first.",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 145,
+        "endChar": 4
+      },
+      "revId": "445f76c54f61467d0948930aa0f48e9b4a2f04ac",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a79b1b5_78541d54",
         "filename": "manuals/user-guide/src/main/asciidoc/vtn/VTN_How_To_Support_for_Microsoft_SCVMM.adoc",
         "patchSetId": 11
