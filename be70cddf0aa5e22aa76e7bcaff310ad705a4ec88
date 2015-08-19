@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a79b1b5_b774059d",
+        "filename": "manuals/user-guide/src/main/asciidoc/vtn/VTN_How_To_Support_for_Microsoft_SCVMM.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1575
+      },
+      "writtenOn": "2015-08-19T12:46:58Z",
+      "side": 1,
+      "message": "Replace the link with the content.",
+      "parentUuid": "3a79b1b5_e3040717",
+      "revId": "be70cddf0aa5e22aa76e7bcaff310ad705a4ec88",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a79b1b5_8309932e",
         "filename": "manuals/user-guide/src/main/asciidoc/vtn/VTN_How_To_Support_for_Microsoft_SCVMM.adoc",
         "patchSetId": 10
@@ -30,6 +48,30 @@
       "writtenOn": "2015-08-17T21:00:32Z",
       "side": 1,
       "message": "Does this belong in a user guide? Are you expected users to build from source?",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 86
+      },
+      "revId": "be70cddf0aa5e22aa76e7bcaff310ad705a4ec88",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_d7798194",
+        "filename": "manuals/user-guide/src/main/asciidoc/vtn/VTN_How_To_Support_for_Microsoft_SCVMM.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1575
+      },
+      "writtenOn": "2015-08-19T12:46:58Z",
+      "side": 1,
+      "message": "yes, user have to follow the steps.",
+      "parentUuid": "3a79b1b5_8309932e",
       "range": {
         "startLine": 41,
         "startChar": 0,
@@ -59,6 +101,24 @@
     },
     {
       "key": {
+        "uuid": "3a79b1b5_3768f5b9",
+        "filename": "manuals/user-guide/src/main/asciidoc/vtn/VTN_How_To_Support_for_Microsoft_SCVMM.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1575
+      },
+      "writtenOn": "2015-08-19T12:46:58Z",
+      "side": 1,
+      "message": "Changed the link, Link is working.",
+      "parentUuid": "3a79b1b5_231aff6e",
+      "revId": "be70cddf0aa5e22aa76e7bcaff310ad705a4ec88",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a79b1b5_a30e0f33",
         "filename": "manuals/user-guide/src/main/asciidoc/vtn/VTN_How_To_Support_for_Microsoft_SCVMM.adoc",
         "patchSetId": 10
@@ -70,6 +130,30 @@
       "writtenOn": "2015-08-17T21:00:32Z",
       "side": 1,
       "message": "links",
+      "range": {
+        "startLine": 100,
+        "startChar": 30,
+        "endLine": 100,
+        "endChar": 34
+      },
+      "revId": "be70cddf0aa5e22aa76e7bcaff310ad705a4ec88",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_576571df",
+        "filename": "manuals/user-guide/src/main/asciidoc/vtn/VTN_How_To_Support_for_Microsoft_SCVMM.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1575
+      },
+      "writtenOn": "2015-08-19T12:46:58Z",
+      "side": 1,
+      "message": "updated as links.",
+      "parentUuid": "3a79b1b5_a30e0f33",
       "range": {
         "startLine": 100,
         "startChar": 30,
