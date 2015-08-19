@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a79b1b5_78541d54",
+        "filename": "manuals/user-guide/src/main/asciidoc/vtn/VTN_How_To_Support_for_Microsoft_SCVMM.adoc",
+        "patchSetId": 11
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 396
+      },
+      "writtenOn": "2015-08-19T16:45:28Z",
+      "side": 1,
+      "message": "As Colin suggested, I think this should not belong in a user guide.\n\nI think users can get the VSEM provider from the Nexus repository. Therefore, users do not need to build the VSEM provider manually.\nInstead of this steps, The adoc should just provide the link to the VSEM provider of Lithium release on the Nexus repository.",
+      "range": {
+        "startLine": 180,
+        "startChar": 0,
+        "endLine": 187,
+        "endChar": 86
+      },
+      "revId": "445f76c54f61467d0948930aa0f48e9b4a2f04ac",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
