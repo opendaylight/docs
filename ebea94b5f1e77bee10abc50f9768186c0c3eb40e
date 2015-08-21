@@ -1,0 +1,147 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a79b1b5_2d6421b8",
+        "filename": "manuals/developer-guide/src/main/asciidoc/openflowplugin/odl-ofp-developer-guide.adoc",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T18:41:45Z",
+      "side": 1,
+      "message": "The flow here is a bit odd. Starting with a sequence diagram just feels weird. It could use an overview to start and maybe that overview could say what would be covered in what order.",
+      "revId": "ebea94b5f1e77bee10abc50f9768186c0c3eb40e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_6d00d9aa",
+        "filename": "manuals/developer-guide/src/main/asciidoc/openflowplugin/odl-ofp-sequence-diagram.adoc",
+        "patchSetId": 13
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T18:41:45Z",
+      "side": 1,
+      "message": "You don\u0027t really mean diagrams, you really mean \"Common plugin event sequences\" or something.",
+      "revId": "ebea94b5f1e77bee10abc50f9768186c0c3eb40e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_cd580dfd",
+        "filename": "manuals/developer-guide/src/main/asciidoc/openflowplugin/odl-ofp-sequence-diagram.adoc",
+        "patchSetId": 13
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T18:41:45Z",
+      "side": 1,
+      "message": "A brief intro to this section would help. For example:\n\n\"This section will cover the sequence of actions that happen when a switch connects, when the switch handshake happens, and when a flow is installed.\"",
+      "revId": "ebea94b5f1e77bee10abc50f9768186c0c3eb40e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_4d6cfd9c",
+        "filename": "manuals/developer-guide/src/main/asciidoc/openflowplugin/odl-ofp-sequence-diagram.adoc",
+        "patchSetId": 13
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T18:41:45Z",
+      "side": 1,
+      "message": "the OpenFlow plugin",
+      "range": {
+        "startLine": 10,
+        "startChar": 167,
+        "endLine": 10,
+        "endChar": 181
+      },
+      "revId": "ebea94b5f1e77bee10abc50f9768186c0c3eb40e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_0d0605cf",
+        "filename": "manuals/developer-guide/src/main/asciidoc/openflowplugin/odl-ofp-sequence-diagram.adoc",
+        "patchSetId": 13
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T18:41:45Z",
+      "side": 1,
+      "message": "the device",
+      "range": {
+        "startLine": 10,
+        "startChar": 223,
+        "endLine": 10,
+        "endChar": 229
+      },
+      "revId": "ebea94b5f1e77bee10abc50f9768186c0c3eb40e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_2d0bc1d7",
+        "filename": "manuals/developer-guide/src/main/asciidoc/openflowplugin/odl-ofp-sequence-diagram.adoc",
+        "patchSetId": 13
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T18:41:45Z",
+      "side": 1,
+      "message": "I don\u0027t think you need to say \"site\"",
+      "range": {
+        "startLine": 10,
+        "startChar": 230,
+        "endLine": 10,
+        "endChar": 234
+      },
+      "revId": "ebea94b5f1e77bee10abc50f9768186c0c3eb40e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_6d69b98a",
+        "filename": "manuals/developer-guide/src/main/asciidoc/openflowplugin/odl-ofp-sequence-diagram.adoc",
+        "patchSetId": 13
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T18:41:45Z",
+      "side": 1,
+      "message": "I don\u0027t think you need to say \"site\"",
+      "range": {
+        "startLine": 10,
+        "startChar": 182,
+        "endLine": 10,
+        "endChar": 186
+      },
+      "revId": "ebea94b5f1e77bee10abc50f9768186c0c3eb40e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
