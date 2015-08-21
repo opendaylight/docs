@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a79b1b5_4dc87d74",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bk-developers-guide.adoc",
+        "patchSetId": 13
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 62
+      },
+      "writtenOn": "2015-08-21T19:42:17Z",
+      "side": 1,
+      "message": "May be this section should be placed next to OpenFlow Java?",
+      "range": {
+        "startLine": 89,
+        "startChar": 9,
+        "endLine": 89,
+        "endChar": 23
+      },
+      "revId": "ebea94b5f1e77bee10abc50f9768186c0c3eb40e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a79b1b5_2d6421b8",
         "filename": "manuals/developer-guide/src/main/asciidoc/openflowplugin/odl-ofp-developer-guide.adoc",
         "patchSetId": 13
@@ -13,6 +36,24 @@
       "writtenOn": "2015-08-21T18:41:45Z",
       "side": 1,
       "message": "The flow here is a bit odd. Starting with a sequence diagram just feels weird. It could use an overview to start and maybe that overview could say what would be covered in what order.",
+      "revId": "ebea94b5f1e77bee10abc50f9768186c0c3eb40e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_0da285ae",
+        "filename": "manuals/developer-guide/src/main/asciidoc/openflowplugin/odl-ofp-developer-guide.adoc",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 62
+      },
+      "writtenOn": "2015-08-21T19:42:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a79b1b5_2d6421b8",
       "revId": "ebea94b5f1e77bee10abc50f9768186c0c3eb40e",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -138,6 +179,29 @@
         "startChar": 182,
         "endLine": 10,
         "endChar": 186
+      },
+      "revId": "ebea94b5f1e77bee10abc50f9768186c0c3eb40e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_cdb48df4",
+        "filename": "manuals/developer-guide/src/main/asciidoc/openflowplugin/odl-ofp-sequence-diagram.adoc",
+        "patchSetId": 13
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 62
+      },
+      "writtenOn": "2015-08-21T19:42:17Z",
+      "side": 1,
+      "message": "\"This method starts handsake\" - please correct the spelling of handshake.",
+      "range": {
+        "startLine": 10,
+        "startChar": 125,
+        "endLine": 10,
+        "endChar": 131
       },
       "revId": "ebea94b5f1e77bee10abc50f9768186c0c3eb40e",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
