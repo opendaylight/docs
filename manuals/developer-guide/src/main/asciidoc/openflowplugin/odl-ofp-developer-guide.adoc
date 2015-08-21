@@ -1,0 +1,49 @@
+[[openflow-plugin-project-developer-guide]]
+== OpenFlow Plugin Project Developer Guide
+
+This section covers topics which are developer specific and which have not been
+covered in the user guide. Please see the Lithium OpenFlow plugin user
+guide first.
+
+It can be found on https://www.opendaylight.org/downloads[the OpenDaylight software download page].
+
+// include::odl-ofp-sequence-diagram.adoc[]
+
+// include::odl-ofp-config-subsystem.adoc[]
+
+// include::odl-ofp-message-spy.adoc[]
+
+// * OpenDaylight_OpenFlow_Plugin:Backlog:Extensibility[Extensibility Framework]
+
+// include::odl-ofp-yang-models.adoc[]
+
+// include::odl-ofp-feature-tree.adoc[]
+
+// include::odl-ofp-wiring-up-notifications.adoc[]
+
+=== Message Order Preservation
+
+While the Helium release of OpenFlow Plugin relied on queues to ensure messages were delivered in order, subsequent releases instead ensure that all the messages from a given device are delivered using the same thread and thus message order is guaranteed without queues. The OpenFlow plugin allocates a number of threads equal to twice the number of processor cores on machine it is run, e.g., 8 threads if the machine has 4 cores.
+
+NOTE:
+While each device is assigned to one thread, multiple devices can be assigned to the same thread.
+
+// == Tutorial / How-To
+
+// missing content
+
+// * OpenDaylight_OpenFlow_Plugin::Build_Instructions[Build Instructions]
+
+// * OpenDaylight_OpenFlow_Plugin::MininetFromScratch[Mininet from scratch]
+
+// * OpenDaylight_OpenFlow_Plugin::Mininet with multiple controllers[Mininet with multiple controllers]
+
+// * OpenDaylight_OpenFlow_Plugin:Coding_Hints[Coding hints]
+
+// * OpenDaylight_OpenFlow_Plugin::Wiring up Notifications[Wiring up Notifications]
+
+// * OpenDaylight_OpenFlow_Plugin::Python_test_scripts[Python test-scripts]
+
+// * OpenDaylight_OpenFlow_Plugin:Robot_Framework_Tests[Setup robot testing environment]
+
+// * OpenDaylight_OpenFlow_Plugin::LiProposal_dev_setup[Lithium proposal - dev setup]
