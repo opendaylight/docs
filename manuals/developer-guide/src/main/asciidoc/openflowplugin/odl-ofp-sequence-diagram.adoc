@@ -1,0 +1,104 @@
+=== Diagrams
+
+==== Session Establishment
+
+OpenFlowJava provides interface *SwitchConnectionHandler* which contains method _onSwitchConnected_ (step 1). This event is:
+
+* raised in OpenFlowJava when device is  connected to controller. 
+* caught in *ConnectionManagerImpl* class. There is created a new instance of *ConnectionContextImpl* (step 1.1) and also instances of *HandshakeManagerImpl* (which uses *HandshakeListenerImpl*) and *ConnectionReadyListenerImpl*.
+
+*ConnectionReadyListenerImpl* contains method _onConnectionReady()_ which is called when connection is prepared. This method starts handsake with device (switch) from openflowplugin site. Handshake can be also started from device site. In this case method _shake()_ from *HandshakeManagerImpl* is called (steps 1.1.1 and 2).
+
+Handshake part consists (expect exchange of HELLO message) also from exchange of information about device features (steps 2.1. and 3). This information are requested via *HandshakeManagerImpl*. After receiving device feature *HandshakeListenerImpl* is notifed via _onHanshakeSuccessfull()_ method. Data about device feature, node id and connection state are stored to *ConnectionContext* and method _deviceConnected()_ of *DeviceManagerImpl* is called.
+
+In method _deviceConnected()_ following actions are done:
+
+* new transaction chain is created (step 4.1)
+* new instance of *DeviceContext* is created (step 4.2.2) 
+* device context is initialized. Static context of device is requested via calling of method _createDeviceFeaturesForOF<version>()_. This data consists of table, group, meter features and port description. (step 4.2.1 and 4.2.1.1). In this method is also created instance of *RequestContext* for each type of feature.
+
+Device responses to these requests (step 4.2.1.1) are multipart replies (step 5) which are processed and stored to operational datastore. Returning value of method _createDeviceFeaturesForOF<version>()_ is feature which is processed in callback (step 5.1) (part of _initializeDeviceContext()_ in _deviceConnected()_ methods) via calling the method _onDeviceCtxLevelUp()_ from *StatisticsManager* (step 5.1.1).
+
+Following actions are executed in this method:
+- created new instance of *StatisticsContextImpl* (step 5.1.1.1).
+- on this instance is called method _gatherDynamicStatistics()_ which returns future. In this method are called method for getting dynamic data (flows, tables, groups) from device (step 5.1.1.2, 5.1.1.2.1, 5.1.1.2.1.1) and if everything is OK this data are also stored to operational DS.
+If future is successfull then it is processed (step 6.1.1) in callback in *StatisticsManagerImpl* as follows:
+
+* next polling of statistics is scheduled
+* device state is set to synchronized (step 6.1.1.2)
+* the method _onDeviceContextLevelUp()_ in RpcManagerImpl is called
+
+In this method is:
+
+* created new instance of *RequestContextImpl* 
+* implementation of all supported services are registred
+* the method _onDeviceContextLevelUp()_ from *DeviceManagerImpl* is called (step 6.1.1.2.1.2) which cause that information about new device is stored do operational DS (step 6.1.1.2.2)
+
+
+image::openflowplugin/odl-ofp-session-establishment.jpg[SessionEstablishment,title="Session establishment", width="600"]
+
+// ===== Message Lifecycle Diagram
+
+// image::openflowplugin/odl-ofp-message-lifecycle.jpg[MessageLifecycle,title="MessageLifecycle",width="500"]
+
+==== Handshake Diagram
+
+First think which is realized when openflow device is connected to controller is to get some basic information about device and to make som basic agreement. This process is called handshake.
+
+Handshake process start with HELLO OF message which can be emmited either by device or controller. In handshake process there is several scenarios which can be happen:
+
+* If first HELLO message with _version bitmap_ is received then it is possible directly from the  bitmap find out which OF protocol versions are supported by both device and controller. If some matches:
+** are found the highest (newest) protocol *VERSION IS SETTLED*
+** aren't found then device is *DISCONNECTED*
+* If first HELLO message WITHOUT _version bitmap_ is received then STEB-BY-STEP negotiation is done.
+* If second and more HELLO message is received then directly STEP-BY-STEP negotiation is done
+
+STEP-BY-STEP negotiation:
+
+* if last controller proposed version == device received version then *VERSION IS SETTLED*
+* if last controller proposed version != device received version
+** if negotiation stalled - version received from current HELLO is the same as from previous then device is *DISCONNECTED*
+** if negotiotion didn't stalled
+*** if device received version > controller last proposed version then wait for next HELLO (lower version can come)
+*** if device received version < controller last proposed version then controller:
+**** propose new version (the closest lower (or equal) to received version which support also controller) via HELLO message and wait for next HELLO from device
+**** if no lower controller supported version exist then device is disconnected.
+
+After selecting of version we can say that version was settled and controller can ask device for its features. In this point hanshake process ends.
+
+image::openflowplugin/odl-ofp-handshake.png[Handshake process,title="Handshake process",width="500"]
+
+// ====== Sequence Diagram
+
+// image::openflowplugin/odl-ofp-of10-switch-handshake-sequence.png[Core Code,title="Core Code",width="500"]
+
+
+// image::openflowplugin/odl-ofp-message-order-preservation.jpg[MessageOrderPreservation,title="MessageOrderPreservation",width="500"]
+
+
+==== Add Flow Sequence Diagram
+
+Following sequence diagram describe some of steps which are performed to store flow to OF device and afterwards to operational DS.
+
+If user send flow via REST interface (step 1) it will cause that _invokeRpc()_ is called on *RpcBroker*. RpcBroker then look for appropriate implementation of called interface. In this case (step 1.1) is _addFlow()_ method of *SalFlowServiceImpl* called. 
+
+Expect other, this method also contains:
+
+* calling _commitEntry()_ method (step 2) from openflow java which is responsible for sending flow to device
+* creaton of new *RequestContext* via method _createRequestContext()_ (step 3). RequestContext holds result of request. In this case result of storing flow to device.
+* creation of callback. 
+
+Callback method is called when barrier message (step 2.1) is obtained. If storing of flow to device was successfull then rpc result is set to success (step 5). *SalFlowService* contains inside method _addFlow()_ other callback which caught notification from callback for barrier message.
+
+Until now no data regarding flow are stored in operational DS.
+
+StatisticsContext periodically request device for statistics via method _gatherStatistics()_ of *StatisticsGatheringUtil* which is translated to openflow OFPT_MULTIPART_REQUEST - OFPMP_FLOW.
+Response to this request (step 7) is processed in *StatisticsGatheringUtil* class where are flow data obtained from device stored to operational datastore via _writeToTransaction()_ method of *DeviceContext*.
+
+
+image::openflowplugin/odl-ofp-add-flow.png[Add flow,title="Add flow",width="500"]
+
+// ===== Generic Notification Sequence Diagram
+
+// image::openflowplugin/odl-ofp-generic-notification.png[Generic notification,title="Generic notification",width="500"]
+
