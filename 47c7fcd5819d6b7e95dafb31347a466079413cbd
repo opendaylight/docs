@@ -1,0 +1,1349 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a79b1b5_4125b3c0",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bk-developers-guide.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "Please put these in alphabetical order.",
+      "range": {
+        "startLine": 114,
+        "startChar": 0,
+        "endLine": 116,
+        "endChar": 35
+      },
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_01f1fbcc",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/api-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "The",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 5
+      },
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_21ee77ed",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/api-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "queryable",
+      "range": {
+        "startLine": 4,
+        "startChar": 56,
+        "endLine": 4,
+        "endChar": 66
+      },
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_212c37ab",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/api-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "expand JPA for the first use",
+      "range": {
+        "startLine": 9,
+        "startChar": 81,
+        "endLine": 9,
+        "endChar": 84
+      },
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_01c81b73",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/api-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "Either provide the figure or remove this line.",
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_8112eb60",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/api-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "You need a blank line after this to get it to format as a list clearly.",
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_410cd342",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/api-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "If Cassandra isn\u0027t supported in Lithium, should we document it here?",
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_a117e750",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/api-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "These are not sentences and shouldn\u0027t have periods at the end.",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 108
+      },
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_a1b047f5",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/api-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "Remove \"TBA\"",
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_5cacb8ed",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/api-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "It would help to have a short sentence saying what these bullets are. Maybe turn the first bullet into that, e.g., \"The Data Store provides the following main features:\".",
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_3caf7ce5",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/api-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "abstracts",
+      "range": {
+        "startLine": 26,
+        "startChar": 20,
+        "endLine": 26,
+        "endChar": 38
+      },
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_81abcb88",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/api-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "You need a blank line above this to get it to format right.",
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_1cb6403e",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/api-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "What\u0027s a context? Can you elaborate. It sounds like it\u0027s the DB connection.",
+      "range": {
+        "startLine": 28,
+        "startChar": 6,
+        "endLine": 28,
+        "endChar": 14
+      },
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_bc82ac50",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/api-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "If you\u0027re not supporting Cassandra, should this be here?",
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_dc876860",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/api-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "This is the first mention of JDBC, if you also support JDBC, it should be mentioned higher up.",
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_3c969c95",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/api-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "We need a sentence or two explaining what this is a list of.",
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_5206d821",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/api-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "do you mean stateless or immutable?",
+      "range": {
+        "startLine": 37,
+        "startChar": 73,
+        "endLine": 37,
+        "endChar": 83
+      },
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_e1a63fc1",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/api-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "You need a blank line above this to get it to format right.",
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_fc8fc473",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/api-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "\"Network Management\", \"Switch\", \"Device\", and \"User\", should likely not be capitalized.",
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_d2442876",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/api-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "expand POJO at least the first time",
+      "range": {
+        "startLine": 51,
+        "startChar": 28,
+        "endLine": 51,
+        "endChar": 32
+      },
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_925eb044",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/api-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "where appropriate?",
+      "range": {
+        "startLine": 51,
+        "startChar": 72,
+        "endLine": 51,
+        "endChar": 90
+      },
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_3250fc31",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/api-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "aren\u0027t all pojos type safe?",
+      "range": {
+        "startLine": 51,
+        "startChar": 18,
+        "endLine": 51,
+        "endChar": 27
+      },
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_1c8de07b",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/api-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "what are layers?",
+      "range": {
+        "startLine": 54,
+        "startChar": 88,
+        "endLine": 54,
+        "endChar": 94
+      },
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_bce94c1c",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/api-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "This is a sentence fragment. Is there more?",
+      "range": {
+        "startLine": 58,
+        "startChar": 96,
+        "endLine": 58,
+        "endChar": 120
+      },
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_dcee8822",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/api-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "decouple",
+      "range": {
+        "startLine": 61,
+        "startChar": 12,
+        "endLine": 61,
+        "endChar": 21
+      },
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_61922f59",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/api-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "Is the project proposal the right place to link. Is the API not documented elsewhere? Is the API summary from the project proposal going to stay in line with the project?",
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_9289d0cc",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/jpa-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "It would be good to expand JPA clearly here once, e.g., \"The Java Persistence API (JPA)...\"",
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_b2864cb8",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/jpa-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "\"defined above\" as a link?\n\nI think that \"\u003c\u003c_persistence_api_developer_guide,defined above\u003e\u003e\" is the right syntax.",
+      "range": {
+        "startLine": 4,
+        "startChar": 64,
+        "endLine": 4,
+        "endChar": 71
+      },
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_7290b4ec",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/jpa-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "Either add a figure or remove this.",
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_529338fa",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/jpa-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "Remove this?",
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_32c23cea",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/jpa-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "stateless\n\nAlso, do you mean stateless or immutable?",
+      "range": {
+        "startLine": 24,
+        "startChar": 25,
+        "endLine": 24,
+        "endChar": 35
+      },
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_d2b6688a",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/jpa-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "remove the extra space",
+      "range": {
+        "startLine": 26,
+        "startChar": 43,
+        "endLine": 26,
+        "endChar": 44
+      },
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_8d13f55b",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/jpa-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "@link doesn\u0027t render in asciidoc, presumably you got this accidentally by copying javadoc and should remove it?",
+      "range": {
+        "startLine": 27,
+        "startChar": 56,
+        "endLine": 27,
+        "endChar": 61
+      },
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_b2adec33",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/jpa-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "This currently formats as an extensions of the previous bullet. You probably want to add this to next line something like:\n\n\"** _Example of APIs:_ Get the entities from the data store that match the given filter: +findEntities(filter, sortSpecification, context);+\"",
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_927790d4",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/jpa-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "where appropriate?",
+      "range": {
+        "startLine": 35,
+        "startChar": 79,
+        "endLine": 35,
+        "endChar": 95
+      },
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_5281f88d",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/jpa-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "Aren\u0027t all POJOs type safe?",
+      "range": {
+        "startLine": 35,
+        "startChar": 25,
+        "endLine": 35,
+        "endChar": 33
+      },
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_124b8088",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/jpa-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "Expand POJO at least the first time.",
+      "range": {
+        "startLine": 35,
+        "startChar": 35,
+        "endLine": 35,
+        "endChar": 39
+      },
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_b25bac53",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/jpa-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "uses",
+      "range": {
+        "startLine": 36,
+        "startChar": 26,
+        "endLine": 36,
+        "endChar": 29
+      },
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_7255141c",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/jpa-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "Make this it\u0027s own sentence instead of a parenthetical comment.",
+      "range": {
+        "startLine": 36,
+        "startChar": 171,
+        "endLine": 36,
+        "endChar": 235
+      },
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_1264e020",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/jpa-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "See above comment about formatting.",
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_f2404458",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/jpa-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "if you put +s around this, it will format in fixed-width fonts",
+      "range": {
+        "startLine": 38,
+        "startChar": 51,
+        "endLine": 38,
+        "endChar": 75
+      },
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_b222ccb7",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/jpa-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "if you put +s around this, it will format in fixed-width fonts",
+      "range": {
+        "startLine": 39,
+        "startChar": 51,
+        "endLine": 39,
+        "endChar": 79
+      },
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_6d1a1970",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/jpa-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "@link doesn\u0027t render in asciidoc, presumably you got this accidentally by copying javadoc and should remove it?",
+      "range": {
+        "startLine": 40,
+        "startChar": 24,
+        "endLine": 40,
+        "endChar": 29
+      },
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_ad10314f",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/jpa-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "@link doesn\u0027t render in asciidoc, presumably you got this accidentally by copying javadoc and should remove it?",
+      "range": {
+        "startLine": 40,
+        "startChar": 25,
+        "endLine": 40,
+        "endChar": 29
+      },
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_0d27e5b7",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/jpa-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "@link doesn\u0027t render in asciidoc, presumably you got this accidentally by copying javadoc and should remove it?",
+      "range": {
+        "startLine": 41,
+        "startChar": 146,
+        "endLine": 41,
+        "endChar": 151
+      },
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_4d1ddd65",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/jpa-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "@link doesn\u0027t render in asciidoc, presumably you got this accidentally by copying javadoc and should remove it?",
+      "range": {
+        "startLine": 41,
+        "startChar": 112,
+        "endLine": 41,
+        "endChar": 117
+      },
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_2d2c2199",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/jpa-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "@link doesn\u0027t render in asciidoc, presumably you got this accidentally by copying javadoc and should remove it?",
+      "range": {
+        "startLine": 44,
+        "startChar": 56,
+        "endLine": 44,
+        "endChar": 61
+      },
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_cd09ed2d",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/jpa-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "This is a little hard to follow. Maybe just have this as a not outside the bulleted list. Something like:\n\nNOTE: There are other DAOs, e.g., JpaOffsetPageDao, and they can be found in the Javadoc.",
+      "range": {
+        "startLine": 46,
+        "startChar": 0,
+        "endLine": 47,
+        "endChar": 42
+      },
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_ed0e2934",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/jpa-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "You need b blank line above this to prevent it from being rendered as part of the  previous bullet. Also if you want it to be a NOTE in the asciidoc sense you need to make NOTE: all caps.",
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_8d3a15cc",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/jpa-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "I didn\u0027t follow this at all. :-(",
+      "range": {
+        "startLine": 48,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 70
+      },
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_4d4b9d59",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/jpa-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "I don\u0027t really understand how this section is the \"use case\" for persistence. It seems more like a demo application.",
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_ad37d1e2",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/jpa-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "You need a blank line before the list for it format as a list.",
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_4d34fddd",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/jpa-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "You need a blank line before the list for it format as a list.",
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_12bdc068",
+        "filename": "manuals/developer-guide/src/main/asciidoc/persistence/jpa-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "Is the project proposal the right place to link. Is the API not documented elsewhere? Is the API summary from the project proposal going to stay in line with the project?",
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_0d9cc5bf",
+        "filename": "manuals/user-guide/src/main/asciidoc/bk-user-guide.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "Can you put this in alphabetical order in the Ps?",
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_cd6ecdc9",
+        "filename": "manuals/user-guide/src/main/asciidoc/persistence/jpa-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "it\u0027s modeled, just not YANG modeled, right?",
+      "range": {
+        "startLine": 4,
+        "startChar": 71,
+        "endLine": 4,
+        "endChar": 82
+      },
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_2d7ae188",
+        "filename": "manuals/user-guide/src/main/asciidoc/persistence/jpa-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "queryable",
+      "range": {
+        "startLine": 4,
+        "startChar": 56,
+        "endLine": 4,
+        "endChar": 67
+      },
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_0d75a597",
+        "filename": "manuals/user-guide/src/main/asciidoc/persistence/jpa-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "Replace \u003cFeature\u003e with Persistence",
+      "range": {
+        "startLine": 7,
+        "startChar": 4,
+        "endLine": 7,
+        "endChar": 13
+      },
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_2da181f8",
+        "filename": "manuals/user-guide/src/main/asciidoc/persistence/jpa-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "You need a blank line above here to get it to format as a list.",
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_8daf75e3",
+        "filename": "manuals/user-guide/src/main/asciidoc/persistence/jpa-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "Should we even list it then?",
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_adacb1ee",
+        "filename": "manuals/user-guide/src/main/asciidoc/persistence/jpa-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "Remove this or update it with information.",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 65
+      },
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_4db95d2d",
+        "filename": "manuals/user-guide/src/main/asciidoc/persistence/jpa-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "NIC?",
+      "range": {
+        "startLine": 23,
+        "startChar": 30,
+        "endLine": 23,
+        "endChar": 62
+      },
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_0d836557",
+        "filename": "manuals/user-guide/src/main/asciidoc/persistence/jpa-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "Given that you say \"there is none\", maybe just cut this section?",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 36
+      },
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_8d969593",
+        "filename": "manuals/user-guide/src/main/asciidoc/persistence/jpa-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "provided in the Lithium OpenDaylight distribution.",
+      "range": {
+        "startLine": 29,
+        "startChar": 127,
+        "endLine": 29,
+        "endChar": 167
+      },
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_ed81494b",
+        "filename": "manuals/user-guide/src/main/asciidoc/persistence/jpa-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-08-21T17:57:29Z",
+      "side": 1,
+      "message": "order",
+      "range": {
+        "startLine": 29,
+        "startChar": 3,
+        "endLine": 29,
+        "endChar": 8
+      },
+      "revId": "47c7fcd5819d6b7e95dafb31347a466079413cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
