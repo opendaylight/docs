@@ -1,0 +1,101 @@
+=== Event Sequences
+
+==== Session Establishment
+
+The <<_openflow_protocol_library_developer_guide,OpenFlow Protocol Library>> provides interface *SwitchConnectionHandler* which contains method _onSwitchConnected_ (step 1). This event is raised in the OpenFlow Protocol Library when an OpenFlow device connects to OpenDaylight and caught in the *ConnectionManagerImpl* class in the OpenFlow plugin.
+
+There the plugin creates a new instance of the *ConnectionContextImpl* class (step 1.1) and also instances of *HandshakeManagerImpl* (which uses *HandshakeListenerImpl*) and *ConnectionReadyListenerImpl*. *ConnectionReadyListenerImpl* contains method _onConnectionReady()_ which is called when connection is prepared. This method starts the handshake with the OpenFlow device (switch) from the OpenFlow plugin side. Then handshake can be also started from device side. In this case method _shake()_ from *HandshakeManagerImpl* is called (steps 1.1.1 and 2).
+
+The handshake consists of an exchange of HELLO messages in addition to an exchange of device features (steps 2.1. and 3). The handshake is completed by *HandshakeManagerImpl*. After receiving device features, the *HandshakeListenerImpl* is notifed via the _onHanshakeSuccessfull()_ method. After this, the device features, node id and connection state are stored in a *ConnectionContext* and the method _deviceConnected()_ of *DeviceManagerImpl* is called.
+
+When _deviceConnected()_ is called, it does the following:
+
+. creates a new transaction chain (step 4.1)
+. creates a new instance of *DeviceContext* (step 4.2.2) 
+. initializes the device context: the static context of device is populated by calling _createDeviceFeaturesForOF<version>()_ to populate table, group, meter features and port descriptions (step 4.2.1 and 4.2.1.1)
+. creates an instance of *RequestContext* for each type of feature
+
+When the OpenFlow device responds to these requests (step 4.2.1.1) with multipart replies (step 5) they are processed and stored to MD-SAL operational datastore. The  _createDeviceFeaturesForOF<version>()_ method returns a *Future* which is processed in the callback (step 5.1) (part of _initializeDeviceContext()_ in the _deviceConnected()_ method) by calling the method _onDeviceCtxLevelUp()_ from *StatisticsManager* (step 5.1.1).
+
+The call to _createDeviceFeaturesForOF<version>()_:
+. creates a new instance of *StatisticsContextImpl* (step 5.1.1.1).
+
+. calls _gatherDynamicStatistics()_ on that instance which returns a *Future* which will produce a value when done
+.. this method calls methods to get dynamic data (flows, tables, groups) from the device (step 5.1.1.2, 5.1.1.2.1, 5.1.1.2.1.1)
+.. if everything works, this data is also stored in the MD-SAL operational datastore
+
+If the *Future* is successful, it is processed (step 6.1.1) in a callback in *StatisticsManagerImpl* which:
+
+. schedules the next time to poll the device for statistics
+. sets the device state to synchronized (step 6.1.1.2)
+. calls _onDeviceContextLevelUp()_ in *RpcManagerImpl*
+
+The _onDeviceContextLevelUp()_ call:
+
+. creates a new instance of *RequestContextImpl* 
+. registers implementation for supported services
+. calls _onDeviceContextLevelUp()_ in *DeviceManagerImpl* (step 6.1.1.2.1.2) which causes the information about the new device be be written to the MD-SAL operational datastore (step 6.1.1.2.2)
+
+image::openflowplugin/odl-ofp-session-establishment.jpg[SessionEstablishment,title="Session establishment", width="500"]
+
+// ===== Message Lifecycle Diagram
+
+// image::openflowplugin/odl-ofp-message-lifecycle.jpg[MessageLifecycle,title="MessageLifecycle",width="500"]
+
+==== Handshake
+
+The first thing that happens when an OpenFlow device connects to OpenDaylight is that the OpenFlow plugin gathers basic information about the device and establishes agreement on key facts like the version of OpenFlow which will be used. This process is called the handshake.
+
+The handshake starts with HELLO message which can be sent either by the OpenFlow device or the OpenFlow plugin. After this, there are several scenarios which can happen:
+
+. if the first HELLO message contains a _version bitmap_, it is possible to determine if there is a common version of OpenFlow or not:
+.. if there is a single common version use it and the *VERSION IS SETTLED*
+.. if there are more than one common versions, use the highest (newest) protocol and the *VERSION IS SETTLED*
+.. if there are no common versions, the device is *DISCONNECTED*
+. if the first HELLO message does not contain a _version bitmap_, then STEB-BY-STEP negotiation is used
+. if second (or more) HELLO message is received, then STEP-BY-STEP negotiation is used
+
+===== STEP-BY-STEP negotiation:
+
+* if last version proposed by the OpenFlow plugin is the same as the version received from the OpenFlow device, then the *VERSION IS SETTLED*
+* if the version received in the current HELLO message from the device is the same as from previous then negotiation has failed and the device is *DISCONNECTED*
+* if the last version from the device is greater than the last version proposed from the plugin, wait for the next HELLO message in the hope that it will advertise support for a lower version
+* if the last version from the device is is less than the last version proposed from the plugin:
+** propose the highest version the plugin supports that is less than or equal to the version received from the device and wait for the next HELLO message
+** if if the plugin doesn't support a lower version, the device is *DISCONNECTED*
+
+After selecting of version we can say that the *VERSION IS SETTLED* and the OpenFlow plugin can ask device for its features. At this point handshake ends.
+
+image::openflowplugin/odl-ofp-handshake.png[Handshake process,title="Handshake process",width="500"]
+
+// ====== Sequence Diagram
+
+// image::openflowplugin/odl-ofp-of10-switch-handshake-sequence.png[Core Code,title="Core Code",width="500"]
+
+
+// image::openflowplugin/odl-ofp-message-order-preservation.jpg[MessageOrderPreservation,title="MessageOrderPreservation",width="500"]
+
+
+==== Adding a Flow
+
+There are two ways to add a flow in in the OpenFlow plugin: adding it to the MD-SAL config datastore or calling an RPC. Both of these can either be done using the native MD-SAL interfaces or using RESTCONF. This discussion focuses on calling the RPC.
+
+If user send flow via REST interface (step 1) it will cause that _invokeRpc()_ is called on *RpcBroker*. The *RpcBroker* then looks for an appropriate implementation of the interface. In the case of the OpenFlow plugin, this is the _addFlow()_ method of *SalFlowServiceImpl* (step 1.1). The same thing happens if the RPC is called directly from the native MD-SAL interfaces.
+
+The _addFlow()_ method then
+
+. calls the _commitEntry()_ method (step 2) from the OpenFlow Protocol Library which is responsible for sending the flow to the device
+. creates a new *RequestContext* by calling _createRequestContext()_ (step 3)
+. creates a callback to handle any events that happen because of sending the flow to the device
+
+The callback method is triggered when a barrier reply message (step 2.1) is received from the device indicating that the flow was either installed or an appropriate error message was sent. If the flow was successfully sent to the device, the RPC result is set to success (step 5). // *SalFlowService* contains inside method _addFlow()_ other callback which caught notification from callback for barrier message.
+
+At this point, no information pertaining to the flow has been added to the MD-SAL operational datastore. That is accomplished by the periodic gathering of statistics from OpenFlow devices.
+
+The *StatisticsContext* for each given OpenFlow device periodically polls it using _gatherStatistics()_ of *StatisticsGatheringUtil* which issues an OpenFlow OFPT_MULTIPART_REQUEST - OFPMP_FLOW. The response to this request (step 7) is processed in *StatisticsGatheringUtil* class where flow data is written to the MD-SAL operational datastore via the _writeToTransaction()_ method of *DeviceContext*.
+
+image::openflowplugin/odl-ofp-add-flow.png[Add flow,title="Add flow",width="500"]
+
+// ===== Generic Notification Sequence Diagram
+
+// image::openflowplugin/odl-ofp-generic-notification.png[Generic notification,title="Generic notification",width="500"]
