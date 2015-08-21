@@ -1,0 +1,312 @@
+=== Model provided modules by yang
+
+*General model (interfaces)* - openflow-plugin-cfg.yang.
+
+* the provided module is defined (`identity openflow-provider`)
+* and target implementation is assigned (`...OpenflowPluginProvider`)
+
+[source,yang]
+----
+module openflow-provider { 
+   yang-version 1; 
+   namespace "urn:opendaylight:params:xml:ns:yang:openflow:common:config[urn:opendaylight:params:xml:ns:yang:openflow:common:config]"; 
+   prefix "ofplugin-cfg"; 
+ 
+   import config {prefix config; revision-date 2013-04-05; } 
+   description 
+       "openflow-plugin-custom-config"; 
+   revision "2014-03-26" { 
+       description 
+           "Initial revision"; 
+   } 
+   identity openflow-provider{ 
+       base config:service-type; 
+       config:java-class "org.opendaylight.openflowplugin.openflow.md.core.sal.OpenflowPluginProvider"; 
+   } 
+}
+
+----
+
+*Implementation model* - openflow-plugin-cfg-impl.yang
+
+* the implementation of module is defined
+(`identity openflow-provider-impl`)
+** class name of generated implementation is defined
+(ConfigurableOpenFlowProvider)
+* via augmentation the configuration of module is defined:
+** this module requires instance of binding-aware-broker
+(`container binding-aware-broker`)
+** and list of openflow-switch-connection-provider (those are provided
+by openflowjava, one plugin instance will orchester multiple
+openflowjava modules)
+
+[source,yang]
+----
+module openflow-provider-impl { 
+   yang-version 1; 
+   namespace "urn:opendaylight:params:xml:ns:yang:openflow:common:config:impl[urn:opendaylight:params:xml:ns:yang:openflow:common:config:impl]"; 
+   prefix "ofplugin-cfg-impl"; 
+ 
+   import config {prefix config; revision-date 2013-04-05;} 
+   import openflow-provider {prefix openflow-provider;} 
+   import openflow-switch-connection-provider {prefix openflow-switch-connection-provider;revision-date 2014-03-28;} 
+   import opendaylight-md-sal-binding { prefix md-sal-binding; revision-date 2013-10-28;} 
+ 
+ 
+   description 
+       "openflow-plugin-custom-config-impl"; 
+ 
+   revision "2014-03-26" { 
+       description 
+           "Initial revision"; 
+   } 
+ 
+   identity openflow-provider-impl { 
+       base config:module-type; 
+       config:provided-service openflow-provider:openflow-provider; 
+       config:java-name-prefix ConfigurableOpenFlowProvider; 
+   } 
+ 
+   augment "/config:modules/config:module/config:configuration" { 
+       case openflow-provider-impl { 
+           when "/config:modules/config:module/config:type = 'openflow-provider-impl'"; 
+ 
+           container binding-aware-broker { 
+               uses config:service-ref { 
+                   refine type { 
+                       mandatory true; 
+                       config:required-identity md-sal-binding:binding-broker-osgi-registry; 
+                   } 
+               } 
+           } 
+           list openflow-switch-connection-provider { 
+               uses config:service-ref { 
+                   refine type { 
+                       mandatory true; 
+                       config:required-identity openflow-switch-connection-provider:openflow-switch-connection-provider; 
+                   } 
+               } 
+           } 
+       } 
+   } 
+}
+----
+
+=== Generating config and sal classes out of yangs
+
+In order to involve suitable code generators, this is needed in pom:
+
+[source,xml]
+----
+<build> ...
+  <plugins>
+    <plugin>
+      <groupId>org.opendaylight.yangtools</groupId>
+      <artifactId>yang-maven-plugin</artifactId>
+      <executions>
+        <execution>
+          <goals>
+            <goal>generate-sources</goal>
+          </goals>
+          <configuration>
+            <codeGenerators>
+              <generator>
+                <codeGeneratorClass>
+                  org.opendaylight.controller.config.yangjmxgenerator.plugin.JMXGenerator
+                </codeGeneratorClass>
+                <outputBaseDir>${project.build.directory}/generated-sources/config</outputBaseDir>
+                <additionalConfiguration>
+                  <namespaceToPackage1>
+                    urn:opendaylight:params:xml:ns:yang:controller==org.opendaylight.controller.config.yang
+                  </namespaceToPackage1>
+                </additionalConfiguration>
+              </generator>
+              <generator>
+                <codeGeneratorClass>
+                  org.opendaylight.yangtools.maven.sal.api.gen.plugin.CodeGeneratorImpl
+                </codeGeneratorClass>
+                <outputBaseDir>${project.build.directory}/generated-sources/sal</outputBaseDir>
+              </generator>
+              <generator>
+                <codeGeneratorClass>org.opendaylight.yangtools.yang.unified.doc.generator.maven.DocumentationGeneratorImpl</codeGeneratorClass>
+                <outputBaseDir>${project.build.directory}/site/models</outputBaseDir>
+              </generator>
+            </codeGenerators>
+            <inspectDependencies>true</inspectDependencies>
+          </configuration>
+        </execution>
+      </executions>
+      <dependencies>
+        <dependency>
+          <groupId>org.opendaylight.controller</groupId>
+          <artifactId>yang-jmx-generator-plugin</artifactId>
+          <version>0.2.5-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+          <groupId>org.opendaylight.yangtools</groupId>
+          <artifactId>maven-sal-api-gen-plugin</artifactId>
+          <version>${yangtools.version}</version>
+          <type>jar</type>
+        </dependency>
+      </dependencies>
+    </plugin>
+    ...
+----
+
+* JMX generator (target/generated-sources/config)
+* sal CodeGeneratorImpl (target/generated-sources/sal)
+* documentation generator (target/site/models):
+https://jenkins.opendaylight.org/openflowplugin/job/openflowplugin-merge/ws/openflowplugin/target/site/models/openflow-provider.html[openflow-provider.html],
+https://jenkins.opendaylight.org/openflowplugin/job/openflowplugin-merge/ws/openflowplugin/target/site/models/openflow-provider-impl.html[openflow-provider-impl.html]
+
+=== Altering generated files
+
+Those files were generated under src/main/java in package as referred in
+yangs (if exist, generator will not overwrite them):
+
+* ConfigurableOpenFlowProviderModuleFactory
++
+::
+  here the *instantiateModule* methods are extended in order to capture
+  and inject osgi BundleContext into module, so it can be injected into
+  final implementation - *OpenflowPluginProvider*
+  +
+  `module.setBundleContext(bundleContext);`
+* ConfigurableOpenFlowProviderModule
++
+::
+  here the *createInstance* method is extended in order to inject osgi
+  BundleContext into module implementation
+  +
+  `pluginProvider.setContext(bundleContext);`
+
+[[configuration-xml-file]]
+=== Configuration xml file
+
+Configuration file contains
+
+* required capabilities
+** modules definitions from openflowjava
+** modules definitions from openflowplugin
+* modules definition
+** openflow:switch:connection:provider:impl (listening on port 6633,
+name=openflow-switch-connection-provider-legacy-impl)
+** openflow:switch:connection:provider:impl (listening on port 6653,
+name=openflow-switch-connection-provider-default-impl)
+** openflow:common:config:impl (having 2 services (wrapping those 2
+previous modules) and binding-broker-osgi-registry injected)
+* provided services
+** openflow-switch-connection-provider-default
+** openflow-switch-connection-provider-legacy
+** openflow-provider
+
+[source,xml]
+----
+<snapshot>
+ <required-capabilities>
+   <capability>urn:opendaylight:params:xml:ns:yang:openflow:switch:connection:provider:impl?module=openflow-switch-connection-provider-impl&revision=2014-03-28</capability>
+   <capability>urn:opendaylight:params:xml:ns:yang:openflow:switch:connection:provider?module=openflow-switch-connection-provider&revision=2014-03-28</capability>
+   <capability>urn:opendaylight:params:xml:ns:yang:openflow:common:config:impl?module=openflow-provider-impl&revision=2014-03-26</capability>
+   <capability>urn:opendaylight:params:xml:ns:yang:openflow:common:config?module=openflow-provider&revision=2014-03-26</capability>
+ </required-capabilities>
+
+ <configuration>
+
+   
+     <modules xmlns="urn:opendaylight:params:xml:ns:yang:controller:config">
+       <module>
+         <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:openflow:switch:connection:provider:impl">prefix:openflow-switch-connection-provider-impl</type>
+         <name>openflow-switch-connection-provider-default-impl</name>
+         <port>6633</port>
+         <switch-idle-timeout>15000</switch-idle-timeout>
+       </module>
+       <module>
+         <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:openflow:switch:connection:provider:impl">prefix:openflow-switch-connection-provider-impl</type>
+         <name>openflow-switch-connection-provider-legacy-impl</name>
+         <port>6653</port>
+         <switch-idle-timeout>15000</switch-idle-timeout>
+       </module>
+
+
+       <module>
+         <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:openflow:common:config:impl">prefix:openflow-provider-impl</type>
+         <name>openflow-provider-impl</name>
+         
+         <openflow-switch-connection-provider>
+           <type xmlns:ofSwitch="urn:opendaylight:params:xml:ns:yang:openflow:switch:connection:provider">ofSwitch:openflow-switch-connection-provider</type>
+           <name>openflow-switch-connection-provider-default</name>
+         </openflow-switch-connection-provider>
+         <openflow-switch-connection-provider>
+           <type xmlns:ofSwitch="urn:opendaylight:params:xml:ns:yang:openflow:switch:connection:provider">ofSwitch:openflow-switch-connection-provider</type>
+           <name>openflow-switch-connection-provider-legacy</name>
+         </openflow-switch-connection-provider>
+
+
+         <binding-aware-broker>
+           <type xmlns:binding="urn:opendaylight:params:xml:ns:yang:controller:md:sal:binding">binding:binding-broker-osgi-registry</type>
+           <name>binding-osgi-broker</name>
+         </binding-aware-broker>
+       </module>
+     </modules>
+
+     <services xmlns="urn:opendaylight:params:xml:ns:yang:controller:config">
+       <service>
+         <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:openflow:switch:connection:provider">prefix:openflow-switch-connection-provider</type>
+         <instance>
+           <name>openflow-switch-connection-provider-default</name>
+           <provider>/modules/module[type='openflow-switch-connection-provider-impl'][name='openflow-switch-connection-provider-default-impl']</provider>
+         </instance>
+         <instance>
+           <name>openflow-switch-connection-provider-legacy</name>
+           <provider>/modules/module[type='openflow-switch-connection-provider-impl'][name='openflow-switch-connection-provider-legacy-impl']</provider>
+         </instance>
+       </service>
+
+       <service>
+         <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:openflow:common:config">prefix:openflow-provider</type>
+         <instance>
+           <name>openflow-provider</name>
+           <provider>/modules/module[type='openflow-provider-impl'][name='openflow-provider-impl']</provider>
+         </instance>
+       </service>
+     </services>
+   
+
+ </configuration>
+</snapshot>
+----
+ 
+=== API changes
+
+In order to provide multiple instances of modules from openflowjava
+there is an API change. Previously OFPlugin got access to
+SwitchConnectionProvider exposed by OFJava and injected collection of
+configurations so that for each configuration new instance of tcp
+listening server was created. Now those configurations are provided by
+configSubsystem and configured modules (wrapping the original
+SwitchConnectionProvider) are injected into OFPlugin (wrapping
+SwitchConnectionHandler).
+
+=== Providing config file (IT, local distribution/base, integration/distributions/base)
+
+==== openflowplugin-it
+
+Here the whole configuration is contained in one file (controller.xml).
+Required entries needed in order to startup and wire OEPlugin + OFJava
+are simply added there.
+
+==== OFPlugin/distribution/base
+
+Here new config file has been added
+(src/main/resources/configuration/initial/42-openflow-protocol-impl.xml)
+and is being copied to config/initial subfolder of build.
+
+==== integration/distributions/build
+
+In order to push the actual config into config/initial subfolder of
+distributions/base in integration project there was a new artifact in
+OFPlugin created - *openflowplugin-controller-config*, containing only
+the config xml file under src/main/resources. Another change was
+committed into integration project. During build this config xml is
+being extracted and copied to the final folder in order to be accessible
+during controller run.
