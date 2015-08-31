@@ -21,13 +21,17 @@ When this feature is loaded "standalone", the user is required to configure infr
 * and creating the VXLAN/VXLAN-GPE tunnel ports on the bridges. 
 
 [[offset]]
-In Lithium, the *GBP* OfOverlay renderer also supports a table offset option, to offset the pipeline post-table 0
+In Lithium, the *GBP* OfOverlay renderer also supports a table offset option, to offset the pipeline post-table 0.
+The table offset value is stored in config datastore and it may be rewritten in runtime.
 
-This is set by changing:
+A default value is set by changing:
  <gbp-ofoverlay-table-offset>0</gbp-ofoverlay-table-offset>
 
 in file:
 ./distribution-karaf/target/assembly/etc/opendaylight/karaf/15-groupbasedpolicy-ofoverlay.xml
+
+Because of persistence, the default value is used only when the OfOverlay renderer starts and no other
+value has been written before.
 
 ==== OpenFlow Overlay Architecture
 
