@@ -29,6 +29,8 @@ This is set by changing:
 in file:
 ./distribution-karaf/target/assembly/etc/opendaylight/karaf/15-groupbasedpolicy-ofoverlay.xml
 
+The value is passed to OfOverlay render on start. It is then copied into config datastore, but only if it has not already been done before. It is important for persistence handling not to override primary data. After the value is written to datastore, data-change event is triggered for validation and pipeline recreation. The validation has to be done in code, because number of OpenFlow tables and their utilization is a code related matter.
+
 ==== OpenFlow Overlay Architecture
 
 These are the primary components of *GBP*. The OfOverlay components are highlighted in red.
