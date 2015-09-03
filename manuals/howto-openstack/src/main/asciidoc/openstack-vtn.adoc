@@ -4,26 +4,161 @@ This section describes using OpenDaylight with the VTN manager feature providing
 .OpenStack Architecture
 image::vtn/OpenStackDeveloperGuide.png["OpenStack Architecture",width=500]
 
-==== Configuration
-Please see the https://wiki.opendaylight.org/view/Release/Lithium/VTN/User_Guide/OpenStack_Support[VTN OpenStack support guide on the wiki] for details on use and configuration.
+==== Configure OpenStack to work with OpenDaylight(VTN Feature) using PackStack
 
-===== OpenStack Configuration  Details
-Follow the below steps to configure DevStack with OpenDaylight:
+===== Prerequisites to install OpenStack using PackStack
+* Fresh CentOS 7.1 minimal install
+* Use the below commands to disable and remove Network Manager in CentOS 7.1,
++
+....
+# systemctl stop NetworkManager
+# systemctl disable NetworkManager
+....
++
+* To make SELINUX as permissive, please open the file "/etc/sysconfig/selinux" and change it as "SELINUX=permissive".
+* After making selinux as permissive, please restart the CentOS 7.1 machine.
 
-.Control Node
-. Disable nova network and enable Neutron.
-. Enable service odl-compute. (Optionally, you can enable odl-server also, which will download and deploy OpenDaylight in the particular node.)
-. Set ODL_MGR_IP with IP Address of OpenDaylight.
-. Make all network types as local, as there is no support for VLAN in Lithium.
-. Add the OpenDaylight Neutron URL for DevStack to post requests.
+===== Steps to install OpenStack PackStack in CentOS 7.1
 
-.Compute Node
-. To configure compute node follows the steps 2, 3 and 4 described in Control Node above.
-. Very few services are enabled like Neutron, n-cpu and rabbit.
-. The Neutron URL is not needed to be set in compute node.
-. The control node services are added as the service hosts for various services.
+* To install OpenStack juno, use the following command,
+....
+# yum update -y
+# yum -y install https://repos.fedorapeople.org/repos/openstack/openstack-juno/rdo-release-juno-1.noarch.rpm
+....
+* To install the packstack installer, please use the below command,
++
+....
+# yum -y install openstack-packstack
+....
++
+* To create all-in-one setup, please use the below command,
++
+....
+# packstack --allinone --provision-demo=n --provision-all-in-one-ovs-bridge=n (This will end up with Horizon started successfully message)
+....
 
-For more details: Please refer to https://wiki.openstack.org/wiki/NeutronDevstack
+===== Steps to install and deploy OpenDaylight in CentOS 7.1
+* Download the latest lithium distribution code in the below link,
++
+....
+# wget http://nexus.opendaylight.org/content/groups/public/org/opendaylight/integration/distribution-karaf/0.3.0-Lithium/distribution-karaf-0.3.0-Lithium.zip
+....
++
+* Unzip the lithium distribution code by using the below command,
++
+....
+# unzip distribution-karaf-0.3.0-Lithium.zip
+....
++
+* Please do the below steps in the OpenDaylight to change jetty port,
+** Change the jetty port from 8080 to something else as swift proxy of OpenStack is using it.
+** Open the file "etc/jetty.xml" and change the jetty port from 8080 to 8910 (we have used 8910 as jetty port you can use any other number).
+** Start VTN Manager and install odl-vtn-manager-neutron in it.
+** Ensure all the required ports(6633/6653,6640 and 8910) are in the listen mode by using the command "netstat -tunpl" in OpenDaylight.
+
+===== Steps to reconfigure OpenStack in CentOS 7.1
+* Steps to stop Open vSwitch Agent and clean up ovs
++
+....
+# sudo systemctl stop neutron-openvswitch-agent
+# sudo systemctl disable neutron-openvswitch-agent
+# sudo systemctl stop openvswitch
+# sudo rm -rf /var/log/openvswitch/*
+# sudo rm -rf /etc/openvswitch/conf.db
+# sudo systemctl start openvswitch
+# sudo ovs-vsctl show
+....
++
+* Stop Neutron Server
++
+....
+# systemctl stop neutron-server
+....
++
+* Verify that OpenDaylight's ML2 interface is working:
++
+....
+curl -v admin:admin http://{CONTROL_HOST}:{PORT}/controller/nb/v2/neutron/networks
+
+{
+   "networks" : [ ]
+}
+....
++
+If this does not work or gives an error, check Neutron's log file in
++/var/log/neutron/server.log+. Error messages here should give
+some clue as to what the problem is in the connection with OpenDaylight
++
+* Configure Neutron to use OpenDaylight's ML2 driver:
++
+....
+# sudo crudini --set /etc/neutron/plugins/ml2/ml2_conf.ini ml2 mechanism_drivers opendaylight
+# sudo crudini --set /etc/neutron/plugins/ml2/ml2_conf.ini ml2 tenant_network_types local
+# sudo crudini --set /etc/neutron/plugins/ml2/ml2_conf.ini ml2 type_drivers local
+# sudo crudini --set /etc/neutron/dhcp_agent.ini DEFAULT ovs_use_veth True
+
+cat <<EOT | sudo tee -a /etc/neutron/plugins/ml2/ml2_conf.ini > /dev/null
+[ml2_odl]
+password = admin
+username = admin
+url = http://{CONTROL_HOST}:{PORT}/controller/nb/v2/neutron
+EOT
+....
++
+* Reset Neutron's ML2 database
++
+....
+# sudo mysql -e "drop database if exists neutron_ml2;"
+# sudo mysql -e "create database neutron_ml2 character set utf8;"
+# sudo mysql -e "grant all on neutron_ml2.* to 'neutron'@'%';"
+# sudo neutron-db-manage --config-file /usr/share/neutron/neutron-dist.conf --config-file /etc/neutron/neutron.conf --config-file /etc/neutron/plugin.ini upgrade head
+....
++
+* Start Neutron Server
++
+....
+# sudo systemctl start neutron-server
+....
++
+* At this stage, your Open vSwitch configuration should be empty:
++
+....
+[root@dneary-odl-compute2 ~]# ovs-vsctl show
+686989e8-7113-4991-a066-1431e7277e1f
+    ovs_version: "2.3.1"
+....
++
+* Set OpenDaylight as the manager on all nodes
++
+....
+# ovs-vsctl set-manager  tcp:127.0.0.1:6640
+....
++
+* You should now see a section in your Open vSwitch configuration
+  showing that you are connected to the OpenDaylight server, and OpenDaylight
+  will automatically create a br-int bridge:
++
+....
+[root@dneary-odl-compute2 ~]# ovs-vsctl show
+686989e8-7113-4991-a066-1431e7277e1f
+    Manager "tcp:127.0.0.1:6640"
+        is_connected: true
+    Bridge br-int
+        Controller "tcp:127.0.0.1:6633"
+            is_connected: true
+        fail_mode: secure
+        Port "ens33"
+            Interface "ens33"
+    ovs_version: "2.3.1"
+....
++
+* Add the default flow to OVS to forward packets to controller when there is a table-miss,
++
+....
+ovs-ofctl --protocols=OpenFlow13 add-flow br-int priority=0,actions=output:CONTROLLER
+....
++
+* Please see the https://wiki.opendaylight.org/view/Release/Lithium/VTN/User_Guide/Openstack_Packstack_Support[VTN OpenStack PackStack support guide on the wiki] to create VM's from OpenStack Horizon GUI.
 
 ==== Implementation details
 
