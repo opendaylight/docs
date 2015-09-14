@@ -23,6 +23,46 @@
   <build>
     <plugins>
       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>unpack-dependency-asciidoc</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>unpack-dependencies</goal>
+            </goals>
+            <configuration>
+              <!-- this will avoid obvious conflicts -->
+              <includes>*.adoc</includes>
+              <stripVersion>true</stripVersion>
+              <useSubDirectoryPerArtifact>true</useSubDirectoryPerArtifact>
+              <outputDirectory>${basedir}/src/main/asciidoc</outputDirectory>
+              <overWriteSnapshots>true</overWriteSnapshots>
+              <!-- <prependGroupId>true</prependGroupId> -->
+              <!-- <useRepositoryLayout>true</useRepositoryLayout> -->
+            </configuration>
+          </execution>
+          <execution>
+            <id>unpack-dependency-images</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>unpack-dependencies</goal>
+            </goals>
+            <configuration>
+              <!-- this will avoid obvious conflicts -->
+              <includes>**/images/*</includes>
+              <stripVersion>true</stripVersion>
+              <useSubDirectoryPerArtifact>true</useSubDirectoryPerArtifact>
+              <outputDirectory>${basedir}/src/main/resources/images</outputDirectory>
+              <overWriteSnapshots>true</overWriteSnapshots>
+              <!-- <prependGroupId>true</prependGroupId> -->
+              <!-- <useRepositoryLayout>true</useRepositoryLayout> -->
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
          <groupId>org.asciidoctor</groupId>
          <artifactId>asciidoctor-maven-plugin</artifactId>
          <version>${asciidoctor.version}</version>
@@ -142,8 +182,22 @@
                <artifactId>slf4j-api</artifactId>
                <version>1.6.1</version>
            </dependency>
+           <dependency>
+               <groupId>org.opendaylight.ttp</groupId>
+               <artifactId>ttp-docs</artifactId>
+               <version>0.1.2-SNAPSHOT</version>
+           </dependency>
        </dependencies>
      </plugin>
     </plugins>
   </build>
+
+  <dependencies>
+      <dependency>
+          <groupId>org.opendaylight.ttp</groupId>
+          <artifactId>ttp-docs</artifactId>
+          <version>0.1.2-SNAPSHOT</version>
+      </dependency>
+  </dependencies>
+
 </project>
