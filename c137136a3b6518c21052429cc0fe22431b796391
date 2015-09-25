@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a76adc5_0e4611c0",
+        "filename": "manuals/howto-openstack/src/main/asciidoc/openstack-vtn.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-09-25T15:39:28Z",
+      "side": 1,
+      "message": "You probably want to move this out of the command, so it\u0027s valid. Add a line with only a + and then this so that it shows up outside the code region.",
+      "range": {
+        "startLine": 39,
+        "startChar": 78,
+        "endLine": 39,
+        "endChar": 138
+      },
+      "revId": "c137136a3b6518c21052429cc0fe22431b796391",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_ee4875ce",
+        "filename": "manuals/howto-openstack/src/main/asciidoc/openstack-vtn.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-09-25T15:39:28Z",
+      "side": 1,
+      "message": "Do you want to use 0.3.0-Lithium or 0.3.1-Lithium-SR1?",
+      "revId": "c137136a3b6518c21052429cc0fe22431b796391",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_ae127db2",
+        "filename": "manuals/howto-openstack/src/main/asciidoc/openstack-vtn.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-09-25T15:39:28Z",
+      "side": 1,
+      "message": "Is this all one big command? Should it start with a #?\n\nI\u0027m assuming you mean enter the first line as a command and then the rest of the text as input to the command while it\u0027s running. It might be worth calling that out.",
+      "range": {
+        "startLine": 102,
+        "startChar": 0,
+        "endLine": 107,
+        "endChar": 3
+      },
+      "revId": "c137136a3b6518c21052429cc0fe22431b796391",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
