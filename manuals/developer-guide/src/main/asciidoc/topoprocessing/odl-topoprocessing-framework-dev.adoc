@@ -1,23 +1,34 @@
 == Topology Processing Framework Developer Guide
 
 === Overview
-TopoProcessingProvider is entry point for Topology Processing Framework. It requires DataBroker instance. DataBroker is needed for listener registrations. There is TopologyRequestListener which listens on aggregated topology requests (placed into configuration datastore) and UnderlayTopologyListeners which listen on underlay topology data changes (made in operational datastore). TopologyRequestHandler saves toporequest data and provides method for translating path to the specified leaf. When a change in topology occurs, registered UnderlayTopologyListener processes this information for further aggregation and/or filtration. Finally, after overlay topology is created, it is passed to TopologyWriter, which writes this topology into operational datastore.
+Purpose of Topology processing framework is to allow developers to agregate and filter topologies according to defined correlations. It also provides functionality, which you can use to make your own topology model rendering (translation from one model to another, for example from inventory to pure network-topology).
 
 === Topology Processing Framework Architecture
-Contains of topoprocessing-api, topoprocessing-spi and topoprocessing-impl
-bundles.
+Topology processing framework consists from several karaf features:
 
-* topoprocessing-api - contains correlation definitions
+* odl-topoprocessing-framework
+* odl-topoprocessing-inventory
+* odl-topoprocessing-network-topology
+//* odl-topoprocessing-i2rs [TBD when i2rs will be merged to controller]
+* odl-topoprocessing-inventory-rendering
+* odl-topoprocessing-link-computation
+
+Feature odl-topoprocessing-framework contains of topoprocessing-api, topoprocessing-spi and topoprocessing-impl
+bundles. This feature is the core of topology processing framework and is required by all others features.
+
+* topoprocessing-api - contains correlation definitions and definitions required by rendering
 * topoprocessing-spi - entry point for topoprocessing service (start and close)
-* topoprocessing-impl - contains implemented handlers, listeners and aggregators
+* topoprocessing-impl - contains base implementation of handlers, listeners and aggregators
+
+TopoProcessingProvider is entry point for Topology Processing Framework. It requires DataBroker instance. DataBroker is needed for listener registrations. There is TopologyRequestListener which listens on aggregated topology requests (placed into configuration datastore) and UnderlayTopologyListeners which listen on underlay topology data changes (made in operational datastore). TopologyRequestHandler saves toporequest data and provides method for translating path to the specified leaf. When a change in topology occurs, registered UnderlayTopologyListener processes this information for further aggregation and/or filtration. Finally, after overlay topology is created, it is passed to TopologyWriter, which writes this topology into operational datastore.
 
 === Aggregation and Filtration
 
 ==== Terminology
-We use the term Physical Node for nodes in the underlay and Logical Node for nodes in the overlay regardless of whether either is actually a physical network element.
+We use the term underlay item (Physical Node) for items (nodes, links, termination-points) from underlay and overlay item (Logical Node) for items from overlay topologies regardless of whether those are actually physical network elements.
 
 ==== Introduction
-The Topology Processing Framework allows for the creation of aggregated topologies or filtered views of existing topologies. Currently aggregation and filtration of nodes is supported only for topologies augmenting the https://github.com/opendaylight/yangtools/blob/master/model/ietf/ietf-topology/src/main/yang/network-topology%402013-10-21.yang[topology YANG model]. When a request to build an aggregate or filtered topology is received, the framework creates one listener per underlay topology. Whenever any underlay topology changes, its listener is triggered the change is processed. Two types of correlations (functionalities) are currently supported:
+The Topology Processing Framework allows creation of aggregated topologies and filtered views over existing topologies. Currently, aggregation and filtration is supported for topologies that follow https://github.com/opendaylight/yangtools/blob/master/model/ietf/ietf-topology/src/main/yang/network-topology%402013-10-21.yang[network-topology] or opendaylight-inventory model. When a request to create aggregated or filtered topology is received, the framework creates one listener per underlay topology. Whenever any specified underlay topology is changed, appropriate listener is triggered with the change and the change is processed. Two types of correlations (functionalities) are currently supported:
 
 * Aggregation
 ** Unification
@@ -26,55 +37,75 @@ The Topology Processing Framework allows for the creation of aggregated topologi
 ** NodeIpFiltration
 
 ==== Aggregation
-Aggregation is an operation which creates an aggregated node from two or more nodes in the underlay topology if the condition for doing so is fulfilled. Requests for aggregated topologies must specify a list of underlay topologies over which the overlay (aggregated) topology will be created and a target field in the underlay nodes that the framework will check for equality.
+Aggregation is an operation which creates an aggregated item from two or more items in the underlay topology if the aggregation condition is fulfilled. Requests for aggregated topologies must specify a list of underlay topologies over which the overlay (aggregated) topology will be created and a target field in the underlay item that the framework will check for equality.
 
 ===== Create overlay node
-First, each new underlay node is inserted into proper topology (specifically into topology store structure). Once notified of the new node, the framework compares it (using the target field value) with all existing nodes in the specified underlay topologies and if the equality condition is fulfilled, a new overlay node is created containing pointers to all 'equal' underlay nodes.
+First, each new underlay item is inserted into proper topology store. Once the item is stored, the framework compares it (using the target field value) with all stored underlay items from underlay topologies. If there is a target-field match, a new overlay item is created containing pointers to all 'equal' underlay items. The reference to newly created overlay item is set into referenced underlay items.
 
 .Equality case
-In this case, if a node doesn't fulfill the equality condition with any other nodes, processing finishes after adding the node into topology store. It will stay there, for future use, ready to create aggregated node with a new underlay node, with which it would satisfy condition to create overlay node.
+If a item doesn't fulfill the equality condition with any other items, processing finishes after adding the item into topology store. It will stay there, for future use, ready to create aggregated item with a new underlay item, with which it would satisfy condition to create overlay item.
 
 .Unification case
-In this case, an overlay node is created for all underlay nodes, even those which don't fulfill the equality condition with any other nodes. This means than an overlay node is created for every underlay node, but for nodes which satisfy the equality condition, an aggregated node is created.
+An overlay item is created for all underlay items, even those which don't fulfill the equality condition with any other items. This means than an overlay item is created for every underlay item, but for items which satisfy the equality condition, an aggregated item is created.
 
 ===== Update node
-Processing of updated underlay nodes depends on whether the target field has been modified. If this it has been, then:
+Processing of updated underlay items depends on whether the target field has been modified. If yes, then:
 
-* if the underlay node belonged to some overlay node, it is withdrawn from that node and then, if the condition of equality on target field is satisfied, it is inserted into another (possibly the same) overlay node.
-* if the node was a "singleton" node, it is put into overlay node, if the condition of equality is fulfilled on the new value of target field with some existing underlay node
-
-.Unification case
-Every underlay node belongs to some overlay node. Either with some other underlay nodes when they have the same value of target field or otherwise there is one underlay node in an overlay node.
+* if the underlay item belonged to some overlay item, it is removed from that item. Next, if the aggregation condition on target field is satisfied, the item is inserted into other overlay item. If the condition isn't met then:
+** in equality case - the item will not be present in overlay topology.
+** in unification case - the item will create overlay item with single underlay item and this will be written into overlay topology.
+* if the item didn't belong to some overlay item, it is checked again for aggregation with other underlay items.
 
 ===== Remove node
-The underlay node is removed from appertaining topology store and from it's overlay node if it belongs to one.
+The underlay item is removed from corresponding topology store, from it's overlay item (if it belongs to one) and this way it is also removed from overlay topology.
 
 .Equality case
-If there is only one underlay node left in the overlay node, the overlay node is removed.
+If there is only one underlay item left in the overlay item, the overlay item is removed.
 
 .Unification case
-In this case, it is allowed to have one underlay node in overlay node. However if this node is removed from its overlay node, the overlay node is removed.
+The overlay item is removed once it refers to no underlay item.
 
 ==== Filtration
-Filtration is an operation which results in creation of overlay topology containing only nodes fulfilling condition set in the request for creating this topology.
+Filtration is an operation which results in creation of overlay topology containing only items fulfilling conditions set in the topoprocessing request.
 
-===== NodeIpFiltration
-This is filtration is based on IP addresses. If a node's IP address fulfills mask set in the value tag of the request, this node is put into resulting overlay topology.
+===== Create undrelay item
+If created item passes all filtrators and their conditions, then it is stored in TopologyStore and creation notification is delivered into topology manager. No operation otherwise.
 
-.Create node
-For a new node fulfilling IP address mask condition, this node is put into overlay node later written into datastore.
+===== Update underlay item
+If the item is checked for presence in topology store:
 
-.Update node
-If IP address of filtered node has changed to value still fulfilling the mask's condition, a new overlay node is created and this updated node is inserted there. If the new IP address does not fit within the mask, the overlay node is simply removed.
+* if it is present in topology store:
+** if item meets filtering conditions then processUpdatedData notification is triggered
+** else processRemovedData notification is triggered
+* if item isn't present in topology store
+** if item meets filtering conditions then processCreatedData notification is triggered
+** else it is ignored
 
-.Remove node
+===== Remove underlay item
 If underlay node is part of some overlay node, the overlay node is simply removed.
+
+===== Default filter types
+There are seven types of default filtrators defined in the framework:
+
+* Ipv4-address filtrator - checks if specified field is meets ipv4 address + mask criteria
+* Ipv6-address filtrator - checks if specified field is meets ipv6 address + mask criteria
+* Specific number filtrator - check for specific number
+* Specific string filtrator - checks for specific string
+* Range number filtrator - checks if specified field is higher than provided minimum and lower than provided maximum
+* Range string filtrator - checks if specified field is alphabetically greater than provided minimum and alphabetically lower than provided maximum
+* Script filtrator - allows user / application to implement his own Filtrator
+
+===== Register custom filtrator
+There might be some usecase that can't get by with default filtrators. For this case the framework offers the possibility to register custom filtrator.
+
+==== Pre-filtration / filtration & aggregation
+This feature was introduced in order to lower memory and performance demands. Basically it is combination of filtration & aggregation operations. First, uninteresting items are filtered out and then aggregation is performed only on items that passed filtration. This way the framework saves on computer time. PreAggregationFiltrator and TopologyAggregator share the same TopoStoreProvider (and thus topology store) which results in lower memory demands (as underlay items are stored only in one topology store - they aren't stored twice).
 
 === Wrapper, RPC republishing, writing mechanism
 
-During the process of aggregation and filtration, overlay nodes (so called Logical Nodes) were created from underlay nodes (Physical Nodes). In TopologyManager, overlay nodes are put into wrapper. A wrapper is identified with unique ID and contains list of Logical Nodes. Wrappers are used to deal with transitivity of underlay nodes - which permits grouping of overlay nodes (into wrappers).
+During the process of aggregation and filtration, overlay items (so called Logical Nodes) were created from underlay items (Physical Nodes). In topology manager, overlay items are put into wrapper. A wrapper is identified with unique ID and contains list of Logical Nodes. Wrappers are used to deal with transitivity of underlay items - which permits grouping of overlay items (into wrappers).
 
-.Class relationship
+.Wrapper
 image::topoprocessing/wrapper.png[width=500]
 
 PN1, PN2, PN3 = Physical Node
@@ -82,14 +113,14 @@ PN1, PN2, PN3 = Physical Node
 LN1, LN2 = Logical Node
 
 ==== RPC republishing
-All RPC underlay nodes are re-registered under their corresponding wrapper ID. RPCs of underlay nodes (belonging to an overlay node) are gathered, and registered under ID of their wrapper.
+All RPC underlay items are re-registered under their corresponding wrapper ID. RPCs of underlay items (belonging to an overlay item) are gathered, and registered under ID of their wrapper.
 
 ===== RPC Call
-When RPC is called on overlay node, this call is delegated to it's underlay nodes, it means this RPC is called on all underlay nodes of this overlay node.
+When RPC is called on overlay item, this call is delegated to it's underlay items, it means this RPC is called on all underlay items of this overlay item.
 
 ==== Writing mechanism
-When a wrapper (containing overlay node(s) with it's underlay nodes(s)) is ready to be written into data store, it has to be converted into DOM format. After this translation is done, result is written into datastore. Physical nodes are stored as supporting-nodes.
-In order to use resources responsibly, writing is divided into two steps. First, a set of threads registers prepared operations (deletes and puts) and one thread makes actual write operation in batch.
+When a wrapper (containing overlay item(s) with it's underlay item(s)) is ready to be written into data store, it has to be converted into DOM format. After this translation is done, result is written into datastore. Physical nodes are stored as supporting-nodes.
+In order to use resources responsibly, writing operation is divided into two steps. First, a set of threads registers prepared operations (deletes and puts) and one thread makes actual write operation in batch.
 
 === Classes relationships
 
@@ -117,3 +148,30 @@ in DataStores.
 
 //=== API Reference Documentation
 //Provide links to JavaDoc, REST API documentation, etc. [TBD]
+
+=== Model Specific Aproach
+Topology Processing Framework consists from several modules and karaf features, which provide support for different input models. Currently we support network-topology and opendaylight-inventory (we have also prepared support for i2rs once it will be supported by controller). For each of these input models, topoprocessing framework has one module and one Karaf feature.
+
+==== How it works
+.User point of view:
+When you start odl-topoprocessing-framework feature, Topology Processing Framework starts without knowledge how to work with any input model. In order to allow Topology Processing Framework to process some kind of input model, you have to install one (or more) model specific features (these features also start odl-topoprocessing-framework feature if it is not already running). These features inject appropriate logic into odl-topoprocessing-framework feature. From that point, Topology Processing Framework is able to process different kinds of input model (those you install features for).
+
+.Developer point of view:
+Module topoprocessing-impl contains (among other things) classes and interfaces, which are common for every model specific topoprocessing module. These classes and interfaces are implemented and extended by classes in particular model specific module.
+Model specific modules have also one dependency from topoprocessing-spi module - TopoProcessingProvider class. This dependency is injected during installation of model specific feature in Karaf. When model specific feature is started, it calls registerAdapters(adapters) method of injected TopoProcessingProvider object. After this step, Topology Processing Framework is able to use registered model adapters to work with input models.
+
+To achieve described functionality we created ModelAdapter interface. It represents installed feature and provides methods for creating crucial structures specific to each model.
+
+.ModelAdapter interface
+image::topoprocessing/ModelAdapter.png[width=500]
+
+==== Features
+
+* odl-topoprocessing-network-topology - this feature contains logic to work with network-topology model
+* odl-topoprocessing-inventory - this feature contains logic to work with network-topology model
+
+=== Link Computation
+include::odl-topoprocessing-link-computation-dev.adoc[]
+
+=== Topology Rendering Guide - Inventory Rendering
+include::odl-topoprocessing-inventory-rendering-dev.adoc[]
