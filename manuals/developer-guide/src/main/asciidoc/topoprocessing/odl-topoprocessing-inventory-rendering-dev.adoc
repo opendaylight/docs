@@ -1,0 +1,63 @@
+==== Overview
+With incoming release change, which sets opendaylight-Inventory model as deprecated, comes request to render (translate) data from inventory model (whether augmented or not) to another model for further processing. Topology Processing Framework can be adjusted to bring this functionality by implementing several render-specific classes. This chapter is step by step guide how to implement your own topology rendering according to our inventory rendering demo.
+
+==== Use case
+For the purpose of this guide we are going to render following augmented fields from Openflow model:
+
+* from Inventory Node:
+** manufacturer
+** hardware
+** software
+** serial-number
+** description
+** ip-address
+* from Inventory Node-connector:
+** name
+** hardware-address
+** current-speed
+** maximum-speed
+
+We also want to preserve node id and termination-point id from opendaylight-topology-inventory model (which is Network Topology part of Inventory model). 
+
+==== Implementation
+There are two ways to implement support for your specific topology-rendering:
+
+* add module to your project using dependency on Topoprocessing Framework
+* add module to Topoprocessing Framework itself
+
+Regardless of chosen way, successfull implementation requires to fulfill all of the following steps:
+
+===== Step1 - Target model creation
+Because Network Topology doesn't have fields to store all desired data, it is necessary to create new model which will data be rendered to. For this guide we created inventory-rendering model. In picture below is shown how data will be rendered and stored.
+
+.Rendering to inventory-rendering model
+image::topoprocessing/Inventory_Rendering_Use_case.png[width=500]
+
+IMPORTANT: In case of implementing your version of topology-rendering into Topology Processing Framework, source file of model (.yang) must be saved in /topoprocessing-api/src/main/yang folder so corresponding structures can be generated during build and can be accessed from every module through dependecies. 
+
+When target model is created you have to add identifier through which you can set your new model as output model. To do that you have to add another identity item to topology-correlation.yang file. For our inventory-rendering model identity looks like this:
+
+[source,yang]
+----
+identity inventory-rendering-model {
+	description "inventory-rendering.yang";
+	base model;
+}
+----
+
+After that you will be able to set inventory-rendering-model as output model in xml.
+
+===== Step2 - Module and feature creation
+IMPORTANT: This and following steps are based on implemented Model specific approach in Topology Processing Framework. We highly recommend to get familiar with this approach in advance.
+
+To create base module and add it as a feature to karaf in Topology Processing Framework we have made changes contained in following https://git.opendaylight.org/gerrit/#/c/26223/[commit]. Changes in other projects will be probably similar.
+
+//TBD: files table
+
+===== Step3 - Module adapters creation
+There are seven mandatory interfaces or abstract classes that needs to be implemented in each module. They are:
+//TBD
+
+==== Testing
+If you want to test our implementation it is required to apply https://git.opendaylight.org/gerrit/#/c/26612[this patch]. It adds openflowplugin dependency so we can use it in karaf distribution as feature.
+//TBD
