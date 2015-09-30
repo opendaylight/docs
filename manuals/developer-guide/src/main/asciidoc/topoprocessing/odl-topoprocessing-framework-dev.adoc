@@ -16,7 +16,7 @@ Topology processing framework consists from several karaf features:
 Feature odl-topoprocessing-framework contains of topoprocessing-api, topoprocessing-spi and topoprocessing-impl
 bundles. This feature is the core of topology processing framework and is required by all others features.
 
-* topoprocessing-api - contains correlation definitions and definitions required by rendering
+* topoprocessing-api - contains correlation definitions and definitions required by topology rendering
 * topoprocessing-spi - entry point for topoprocessing service (start and close)
 * topoprocessing-impl - contains base implementation of handlers, listeners and aggregators
 
@@ -99,7 +99,7 @@ There are seven types of default filtrators defined in the framework:
 There might be some usecase that can't get by with default filtrators. For this case the framework offers the possibility to register custom filtrator.
 
 ==== Pre-filtration / filtration & aggregation
-This feature was introduced in order to lower memory and performance demands. Basically it is combination of filtration & aggregation operations. First, uninteresting items are filtered out and then aggregation is performed only on items that passed filtration. This way the framework saves on computer time. PreAggregationFiltrator and TopologyAggregator share the same TopoStoreProvider (and thus topology store) which results in lower memory demands (as underlay items are stored only in one topology store - they aren't stored twice).
+This feature was introduced in order to lower memory and performance demands. Basically it is combination of filtration and aggregation operations. First, uninteresting items are filtered out and then aggregation is performed only on items that passed filtration. This way the framework saves on computer time. PreAggregationFiltrator and TopologyAggregator share the same TopoStoreProvider (and thus topology store) which results in lower memory demands (as underlay items are stored only in one topology store - they aren't stored twice).
 
 === Wrapper, RPC republishing, writing mechanism
 
@@ -150,7 +150,7 @@ in DataStores.
 //Provide links to JavaDoc, REST API documentation, etc. [TBD]
 
 === Model Specific Aproach
-Topology Processing Framework consists from several modules and karaf features, which provide support for different input models. Currently we support network-topology and opendaylight-inventory (we have also prepared support for i2rs once it will be supported by controller). For each of these input models, topoprocessing framework has one module and one Karaf feature.
+Topology Processing Framework consists from several modules and karaf features, which provide support for different input models. Currently we support network-topology and opendaylight-topology-inventory (we have also prepared support for i2rs once it will be supported by controller). For each of these input models, topoprocessing framework has one module and one Karaf feature.
 
 ==== How it works
 .User point of view:
@@ -168,7 +168,7 @@ image::topoprocessing/ModelAdapter.png[width=500]
 ==== Features
 
 * odl-topoprocessing-network-topology - this feature contains logic to work with network-topology model
-* odl-topoprocessing-inventory - this feature contains logic to work with network-topology model
+* odl-topoprocessing-inventory - this feature contains logic to work with opendaylight-topology-inventory model
 
 === Link Computation
 include::odl-topoprocessing-link-computation-dev.adoc[]
