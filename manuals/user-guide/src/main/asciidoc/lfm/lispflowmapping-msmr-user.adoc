@@ -223,15 +223,15 @@ useful mostly for debugging.
 
 ==== LISP specific commands
 
-The available lisp commands can always be obtained by `help lisp`. Currently
-they are:
+The available lisp commands can always be obtained by `help mappingservice`.
+Currently they are:
 
-+lisp:addkey+::
++mappingservice:addkey+::
     Add the default password `password` for the IPv4 EID prefix 0.0.0.0/0 (all
     addresses). This is useful when experimenting with southbound devices,
     and using the REST interface would be combersome for whatever reason.
 
-+lisp:mappings+::
++mappingservice:mappings+::
     Show the list of all mappings stored in the internal non-persistent data
     store (the DAO), listing the full data structure. The output is not human
     friendly, but can be used for debugging.
@@ -255,16 +255,16 @@ nodes.
 
 ===== Prerequisites
 
-* *OpenDaylight Lithium*
+* *OpenDaylight Beryllium*
 * *The Postman Chrome App*: the most convenient way to follow along this
   tutorial is to use the
   https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en[Postman
   Chrome App] to edit and send the requests. The project git repository hosts
   a collection of the requests that are used in this tutorial in the
-  +resources/tutorial/Lithium_Tutorial.json.postman_collection+ file. You can
+  +resources/tutorial/Beryllium_Tutorial.json.postman_collection+ file. You can
   import this file to Postman by clicking 'Import' at the top, choosing
   'Download from link' and then entering the following URL:
-  +https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=blob_plain;f=resources/tutorial/Lithium_Tutorial.json.postman_collection;hb=refs/heads/stable/lithium+.
+  +https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=blob_plain;f=resources/tutorial/Beryllium_Tutorial.json.postman_collection;hb=refs/heads/master+.
   Alternatively, you can save the file on your machine, or if you have the
   repository checked out, you can import from there. You will need to create a
   new Postman Environment and define some variables within: +controllerHost+
@@ -306,12 +306,12 @@ The below steps use the command line tool cURL to talk to the LISP Flow
 Mapping RPC REST API. This is so that you can see the actual request URLs and
 body content on the page.
 
- . Install and run OpenDaylight Lithium release on the controller VM. Please
-   follow the general OpenDaylight Lithium Installation Guide for this step.
+ . Install and run OpenDaylight Beryllium release on the controller VM. Please
+   follow the general OpenDaylight Beryllium Installation Guide for this step.
    Once the OpenDaylight controller is running install the
-   'odl-openflowplugin-all' feature from the Karaf CLI:
+   'odl-openflowplugin-msmr' feature from the Karaf CLI:
 
- feature:install odl-lispflowmapping-all
+ feature:install odl-lispflowmapping-msmr
 +
 It takes quite a while to load and initialize all features and their
 dependencies. It's worth running the command +log:tail+ in the Karaf console
@@ -341,9 +341,9 @@ after that.
  . Modify the "key" parameter in each +lispd.conf+ file to a key/password of
    your choice ('password' in this tutorial).
 +
-NOTE: The +resources/tutorial+ directory in the 'stable/lithium' branch of the
+NOTE: The +resources/tutorial+ directory in the 'stable/beryllium' branch of the
       project git repository has the files used in the tutorial
-      https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=tree;f=resources/tutorial;hb=refs/heads/stable/lithium[checked
+      https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=tree;f=resources/tutorial;hb=refs/heads/stable/beryllium[checked
       in], so you can just copy the files to +/root/lispd.conf+ on the
       respective VMs. You will also find the JSON files referenced below in
       the same directory.
@@ -356,7 +356,7 @@ NOTE: The +resources/tutorial+ directory in the 'stable/lithium' branch of the
    'localhost' with the IP address of *controller*).
 
  curl -u "admin":"admin" -H "Content-type: application/json" -X POST \
-     http://localhost:8181/restconf/operations/lfm-mapping-database:add-key \
+     http://localhost:8181/restconf/operations/mappingservice:add-key \
      --data @add-key.json
 
 +
@@ -382,7 +382,7 @@ where the content of the 'add-key.json' file is the following:
  . Verify that the key is added properly by requesting the following URL:
 
  curl -u "admin":"admin" -H "Content-type: application/json" -X POST \
-     http://localhost:8181/restconf/operations/lfm-mapping-database:get-key \
+     http://localhost:8181/restconf/operations/mappingservice:get-key \
      --data @get1.json
 
 +
@@ -401,7 +401,7 @@ output the above invocation should look like this:
    API
 
  curl -u "admin":"admin" -H "Content-type: application/json" -X POST \
-     http://localhost:8181/restconf/operations/lfm-mapping-database:get-mapping \
+     http://localhost:8181/restconf/operations/mappingservice:get-mapping \
      --data @get1.json
 
 +
@@ -414,7 +414,7 @@ tool.
    *server1*
 
  curl -u "admin":"admin" -H "Content-type: application/json" -X POST \
-     http://localhost:8181/restconf/operations/lfm-mapping-database:add-mapping \
+     http://localhost:8181/restconf/operations/mappingservice:add-mapping \
      --data @mapping.json
 +
 where the 'mapping.json' file looks like this:
@@ -478,7 +478,7 @@ Note that lower priority value has higher preference in LISP.
  . Verify the correct registration of the 2.2.2.2/32 EID:
 
  curl -u "admin":"admin" -H "Content-type: application/json" -X POST \
-     http://localhost:8181/restconf/operations/lfm-mapping-database:get-mapping \
+     http://localhost:8181/restconf/operations/mappingservice:get-mapping \
      --data @get2.json
 
 +
@@ -518,7 +518,7 @@ mappings until the TTL specified in the Map-Reply expires.
    achieve that:
 
  curl -u "admin":"admin" -H "Content-type: application/json" -X POST \
-     http://localhost:8181/restconf/operations/lfm-mapping-database:add-mapping \
+     http://localhost:8181/restconf/operations/mappingservice:add-mapping \
      --data @elp.json
 +
 where the 'elp.json' file is as follows:
