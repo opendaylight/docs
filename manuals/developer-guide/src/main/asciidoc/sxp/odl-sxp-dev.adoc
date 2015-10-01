@@ -18,6 +18,8 @@ The IP-SGT Manager also contains RPCs that can be used by other OpenDaylight plu
 
 The SXP Binding Dispatcher represents a selector that will decides how many data from the SXP-database will be sent and when. It is responsible for message content composition based on maximum message length.
 
+The SXP Binding Filters handles filtering of outcoming and incoming IP-SGT bindings according to BGP filtering using ACL and Prefix List syntax for specifiing filter.
+
 === Key APIs and Interfaces
 As this project is fairly small, it provides only few features that install and
 provide all APIs and implementations for this project.
@@ -37,4 +39,4 @@ Main logic and core features
 
 === API Reference Documentation
 https://wiki.opendaylight.org/images/9/91/SXP_Restconf_Interface_and_Dynamic_Tree.pdf[RESTCONF Interface and Dynamic Tree]
-
+https://wiki.opendaylight.org/images/6/6e/SXP_Specification_and_Architecture_v03.pdf[Specification and Architecture]
