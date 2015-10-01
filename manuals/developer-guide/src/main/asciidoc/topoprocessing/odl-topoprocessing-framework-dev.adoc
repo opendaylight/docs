@@ -170,6 +170,9 @@ image::topoprocessing/ModelAdapter.png[width=500]
 * odl-topoprocessing-network-topology - this feature contains logic to work with network-topology model
 * odl-topoprocessing-inventory - this feature contains logic to work with network-topology model
 
+=== Inventory Model Support
+include::odl-topoprocessing-inventory-dev.adoc[]
+
 === Link Computation
 include::odl-topoprocessing-link-computation-dev.adoc[]
 

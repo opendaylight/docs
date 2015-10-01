@@ -1,0 +1,12 @@
+Opendaylight-inventory model contains only nodes and termination-points and information regarding these structures. This model co-operates with network-topology model, where other topology related information is stored. This means that we have to handle two models at once. To support the inventory model InventoryListener and NotificationInterConnector classes were introduced. Please see flow diagrams below:
+
+.Network topology model
+image::topoprocessing/Network_topology_model_flow_diagram.png[width=500]
+
+.Inventory model
+image::topoprocessing/Inventory_model_listener_diagram.png[width=500]
+
+Here we can see that there are InventoryListener and NotificationInterConnector classes added.
+InventoryListener listens on data changes in the inventory model and passes these changes wrapped as an UnderlayItem for further processing to NotificationInterConnector. It doesn't contain node information - it contains leafNode (node based on which aggregation occurs) instead.
+The node information is stored in the topology model, where UnderlayTopologyListener is registered as usually. This listener delivers the missing information.
+Then comes turn for NotificationInterConnector which combines two notifications into complete UnderlayItem (no null values) and delegates this UnderlayItem for further processing (to next TopologyOperator). 
