@@ -1,0 +1,28 @@
+== BMP User Guide ==
+
+=== Overview ===
+
+The OpenDaylight Karaf distribution comes preconfigured with baseline BMP configuration.
+
+- *32-bmp.xml* (initial configuration for BMP messages handler service provider and BMP client/server dispatcher settings)
+- *39-bmp-example.xml* (sample initial configuration for the BMP Monitoring Station application)
+
+=== Configuring BMP ===
+
+The default shipped configuration will start a BMP server on 0.0.0.0:12345.You can change this behavior in *42-bmp-example.xml*:
+
+[source,xml]
+----
+ <module>
+  <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:controller:bmp:impl">prefix:bmp-monitor-impl</type>
+  <name>example-bmp-monitor</name>
+  <!--<binding-address>0.0.0.0</binding-address>-->
+  <binding-port>12345</binding-port>
+  ...
+ </module>
+----
+
+- *binding-address* - adress on which BMP will be started and listen; to change value, out-comment line first
+- *binding-port* - port on which the address will be started and listen
+
+Multiple instances of the BMP monitoring station (*bmp-monitor-impl* module) can be created - *binding-address* and/or *binding-port* must be unique for each BMP monitoring station instance.
