@@ -1,0 +1,19 @@
+== UniMgr Developer Guide
+
+=== UnuMgr Components
+
+UniMgr is comprised of these OpenDaylight bundles
+
+[options=="header"]
+|========================================================================
+|Bundle |Description
+|unimgr-api |Contains the YANG information model for Unis and
+Evcs and provides restconf APIs
+
+|unimgr-impl |Providers wiring of the unimgr model with the southbound plugin
+
+|unimgr-cli |Provides karaf cli interface to CRUD UNIs and EVCs
+|========================================================================
+
+=== API Reference Documentation
+https://wiki.opendaylight.org/view/Unimgr:Documentation#APIs
