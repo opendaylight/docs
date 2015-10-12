@@ -1,0 +1,19 @@
+== NetIDE User Guide
+
+=== Overview
+OpenDaylight's NetIDE project allows users to run SDN applications written for different 
+SDN controllers eg, Floodlight, Ryu on top of OpenDaylight managed infrastructure.
+
+=== NetIDE API
+==== Architecture and Design
+The NetIDE engine follows the ONF's proposed Client/Server SDN Application architecture
+
+==== Core
+The NetIDE Core is a message based system that allows for the exchange of messages between
+OpenDaylight and subscribed Client SDN Controllers
+
+==== Configuration
+Below are the configuration items which can be edited, including their default values.
+
+
+
