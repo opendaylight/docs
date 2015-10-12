@@ -1,0 +1,28 @@
+== NetIDE Developer Guide ==
+
+=== Overview ===
+The NetIDE Network Engine enables portability and cooperation inside a single 
+network by using a client/server multi-controller architecture. Separate 
+“Client SDN Controllers” host the various SDN Applications with their access 
+to the actual physical network abstracted and coordinated through a single 
+“Server SDN Controller”, in this instance OpenDaylight. This allows 
+applications written for Ryu/Floodlight/Pyretic to execute on OpenDaylight 
+managed infrastructure.
+
+The "Network Engine" is modular by design:
+. An OpenDaylight plugin, "shim", sends/receives messages to/from subscribed SDN Client Controllers. This consumes the ODL Openflow Plugin
+. An initial suite of SDN Client Controller "Backends": Floodlight, Ryu, Pyretic. Further controllers may be added over time as the engine is extensible.
+
+=== How to develop with the NetIDE project ===
+
+The NetIDE packages can be added as dependencies in Maven projects by putting the
+following code in the _pom.xml_ file.
+
+    <dependency>
+        <groupId>org.opendaylight.netide</groupId>
+        <artifactId>api</artifactId>
+        <version>${NETIDE_VERSION}</version>
+    </dependency>
+
+The current stable version for NetIDE is `0.1.0-Beryllium`.
+
