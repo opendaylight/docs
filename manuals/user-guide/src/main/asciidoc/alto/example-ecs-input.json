@@ -1,0 +1,14 @@
+{
+  "cost-type": {
+    "cost-mode" : "ordinal",
+    "cost-metric" : "routingcost"
+  },
+  "endpoints" : {
+    "srcs": [ "ipv4:192.0.2.2" ],
+     "dsts": [
+      "ipv4:192.0.2.89",
+      "ipv4:198.51.100.34",
+      "ipv4:203.0.113.45"
+    ]
+  }
+}

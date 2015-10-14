@@ -1,6 +1,6 @@
-    augment "/alto-restconf:resources/alto-restconf:cost-maps/alto-restconf:cost-map/alto-restconf:map/alto-restconf:dst-costs"     {
-        when "/alto-restconf:resources/alto-restconf:cost-maps/alto-restconf:cost-map/alto-restconf:meta/alto-restconf:cost-type/alto-restconf:cost-mode == 'numerical'";
-        leaf cost-in-hosttracker {
-            type int32;
-        }
+augment "/alto-restconf:resources/alto-restconf:cost-maps/alto-restconf:cost-map/alto-restconf:map/alto-restconf:dst-costs"     {
+    when "/alto-restconf:resources/alto-restconf:cost-maps/alto-restconf:cost-map/alto-restconf:meta/alto-restconf:cost-type/alto-restconf:cost-mode == 'numerical'";
+    leaf cost-in-hosttracker {
+        type int32;
     }
+}

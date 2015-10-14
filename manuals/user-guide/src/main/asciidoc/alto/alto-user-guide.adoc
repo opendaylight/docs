@@ -1,11 +1,12 @@
 == ALTO User Guide
 
 === Overview
+
 The ALTO project provides support for _Application Layer Traffic
 Optimization_ services defined in link:https://tools.ietf.org/html/rfc7285[RFC
 7285].
 
-In the Lithium release, ALTO uses the YANG model described in
+In the Beryllium release, ALTO uses the YANG model described in
 link:https://tools.ietf.org/html/draft-shi-alto-yang-model-03[this draft].
 
 === ALTO Architecture
@@ -42,10 +43,7 @@ configuration files.
 To enable ALTO, the features must be installed first.
 
 [source,bash]
-karaf > feature:install odl-alto-provider
-karaf > feature:install odl-alto-manager
-karaf > feature:install odl-alto-northbound
-karaf > feature:install odl-alto-hosttracker
+karaf > feature install alto-release
 
 ==== Managing Data with RESTCONF
 
@@ -123,3 +121,22 @@ It can only work with OpenFlow-enabled networks.
 After installing the `odl-alto-hosttracker` feature, the corresponding network
 map and cost map will be inserted into the data store. Follow the steps in
 <<read-restconf, how to read data with RESTCONF>> to see the contents.
+
+=== Using ALTO service
+
+==== For External Users
+
+Use `curl` to request for ALTO services. Below is an example of using ECS service. With the example input below you can query the cost between the endpoints.
+
+[source,bash]
+HOST_IP=localhost                   # IP address of the controller
+BASE_URL=$HOST_IP:8080/controller/nb/v2/alto
+SERVICE_PATH=endpointcost/lookup
+curl -l -H "Content-type: application/alto-endpointcostparams+json" -X POST -d `cat example-input-ecs.json` $BASE_URL/$SERVICE_PATH -v
+
+[source,json]
+include::example-ecs-input.json[]
+
+==== For Internal users
+
+Either call the RPC directly or process the results with corresponding `ResourceTranslator`.

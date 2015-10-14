@@ -18,7 +18,7 @@ following code in the _pom.xml_ file.
         <version>${ALTO_VERSION}</version>
     </dependency>
 
-The current stable version for ALTO is `0.1.0-Lithium`.
+The current stable version for ALTO is `0.2.0-Beryllium`.
 
 === Putting/Fetching data from ALTO ===
 
@@ -109,10 +109,51 @@ convert them into RFC7285-compatible objects.
 
 === Providing Customized Implementation ===
 
-Currently it is very simple to provide a customized network map, the
+It is very simple to provide a customized network map, the
 only thing you have to do is to put the data into the data store. Cost maps are
 more complex since there are no classes for the cost values by default, you have
 to define it using `augment` in YANG. Here is an example in `alto-hosttracker`.
 
 [source,yang]
 include::augment.yang[]
+
+If you want to use customized service implementations, below is some steps:
+
+==== Add New Data Type
+
+Below is an example of adding a new data type "proxy-cost-type".
+
+. Create package `alto-proxy-cost-type`: define the model for a new cost type like this:
++
+[source,json]
+{
+  "cost-mode": "numerical",
+  "cost-metric": "proxy-cost",
+  "target": "www.opendaylight.org"
+}
++
+. Create package `alto-proxy-cost-translator`: define how to convert a node containing the "proxy-cost-type" into a Java object (Integer/Double/String/…)
+
+==== Add New Service Model
+
+Below is an example of adding a new service model "nonsense service".
+
+. Create package `alto-nonsense-service-model`: define the RPC for the service model. It is recommended to put it under the `alto-nonstandard-service-models` folder
+
+. Create package `alto-nonsense-northbound-route`: define how the northbound should process the nonsense service
+
+==== Add New Service Implementation
+
+Below is an example of adding a new service implementation "ECS".
+
+. Make sure to add the service model and all the data types you need as dependencies
+
+. Implement `AltoEndpointCostService`
+
+. Get the instance of `AltoResourcepoolService` and try `register`
+
+. Try `addRoutedRpcImplementation` to register the current implementation
+
+. Bind the implementation using the current resource identifier
+
+Then you can use your customized service implementations.
