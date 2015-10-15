@@ -1,0 +1,38 @@
+== OVSDB NetVirt Hardware VTEP Installation Guide
+
+=== Overview
+
+TBD
+
+=== Pre Requisites for Installing OVSDB SFC
+* JRE 1.7+
+* A distribution of OpenDaylight
+
+=== Preparing for Installation
+. Download a copy of the latest OpenDaylight release in a Pre-Build archive of your choosing.
+http://www.opendaylight.org/software/downloads[Download OpenDaylight]
+
+
+=== Installing OVSDB NetVirt Hardware VTEP
+. Extract the OpenDaylight distribution somewhere.
+. Navigate to the /bin/ directory
+. Execute the karaf binary file, that should bring up the OpenDaylight console
+. Install the required features with these commands:
+feature:install odl-ovsdb-netvirt-hwvtep
+
+==== Sample output from the Karaf console
+----
+TBD
+----
+
+=== Verifying your Installation
+To verify that the installation was successful, use the log:display command in karaf and check that there are no error
+logs relating to odl-ovsdb-netvirt-hwvtep
+
+==== Troubleshooting
+
+TBD
+
+=== Uninstalling OVSDB NetVirt Hardware VTEP
+. Shutdown the karaf instance: system:shutdown
+. Remove what is in the /data folder of the OpenDaylight Distribution.
