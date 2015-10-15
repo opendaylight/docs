@@ -707,6 +707,12 @@ The following projects had no noteworthy changes in the Lithium-SR2 release:
 * https://git.opendaylight.org/gerrit/#/q/cd7f81ba4ef63fccbd15adbf9b6133c6a4633265[cd7f81] https://bugs.opendaylight.org/show_bug.cgi?id=4072[BUG-4072]: Echo reply missing
 
 ==== OpenFlow Plugin
+Release notes for OpenFlow Plugin.
+
+===== Known Issue
+Using OpenFlow plugin with the alternate performance improvement design karaf feature set (openflow-flow-services-li), the OpenFlow switches are not cleared from operational datastore after disconnect. This problem does not happen with the existing design Karaf feature set (openflow-flow-services). The existing design Karaf feature set is loaded by default and used by all the existing applications/dependent projects in the Lithium release. This issue has been fixed and the fix will be available in Lithium SR-3.
+
+===== Changes / Fixes
 * https://git.opendaylight.org/gerrit/#/q/6836a3730badc570e6b5a314a1a10d5b87bd450b[6836a3] RPC Registration changes for clustering
 * https://git.opendaylight.org/gerrit/#/q/41d5ef27f7548f520ed26f853f0a838fa18ffd5c[41d5ef] Getting latest state from Ownership RPC
 * https://git.opendaylight.org/gerrit/#/q/95dd73433d95de1fc21ebcadea422b041132bf3b[95dd73] RoleManager,SalRoleService Impl and Test
