@@ -9,21 +9,14 @@ For information on OVS, see http://openvswitch.org/[Open vSwitch].
 With OpenStack within the SDN context, controllers and applications interact using two channels: OpenFlow and OVSDB. OpenFlow addresses the forwarding-side of the OVS functionality. OVSDB, on the other hand, addresses the management-plane.
 A simple and concise overview of Open Virtual Switch Database (OVSDB) is available at: http://networkstatic.net/getting-started-ovsdb/
 
-=== Pre Requisites for Installing OVSDB OpenStack
-* JRE 1.7+
-* A distribution of OpenDaylight
-
 === Preparing for Installation
-. Download a copy of the latest OpenDaylight release in a Pre-Build archive of your choosing.
-http://www.opendaylight.org/software/downloads[Download OpenDaylight]
-
+Follow the instructions in <<_getting_and_installing_opendaylight,Getting and Installing OpenDaylight>>.
 
 === Installing OVSDB OpenStack
-. Extract the OpenDaylight distribution somewhere.
-. Navigate to the /bin/ directory
-. Execute the karaf binary file, that should bring up the OpenDaylight console
-. Install the required features with these commands:
+Install the required features with the following command:
+-----
 feature:install odl-ovsdb-openstack
+-----
 
 ==== Sample output from the Karaf console
 ----
@@ -41,8 +34,11 @@ OpenDaylight :: OVSDB :: OpenStack Network Virtual
 ----
 
 === Verifying your Installation
-To verify that the installation was successful, use the log:display command in karaf and check that there are no errors
+To verify that the installation was successful, use the following command in karaf and check that there are no errors
 logs relating to odl-ovsdb-openstack.
+-----
+log:display
+-----
 
 ==== Troubleshooting
 There is no easy way to troubleshoot an installation of odl-ovsdb-openstack. Perhaps a combination of
@@ -50,5 +46,9 @@ log:display | grep -i ovsdb in karaf, Open vSwitch commands (ovs-vsctl) and Open
 explain everything.
 
 === Uninstalling OVSDB OpenStack
-. Shutdown the karaf instance: system:shutdown
+. Shutdown the karaf instance:
++
+-----
+system:shutdown
+-----
 . Remove what is in the /data folder of the OpenDaylight Distribution.
