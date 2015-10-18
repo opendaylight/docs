@@ -3,15 +3,13 @@ This document describes how to use the embedded JPA datastore H2, which is the d
 sections for the feature.
 
 === Overview
-In the Lithium Release of Time Series Data Repository (TSDR), time series metrics corresponding to the OpenFlow statistics are captured. For users trying out things on their laptop or non-production environment, TSDR functionality can be enabled with default datastore H2 by installing the feature odl-tsdr-all.  
+In the Beryllium Release of Time Series Data Repository (TSDR), time series metrics corresponding to the OpenFlow statistics are captured. For users trying out things on their laptop or non-production environment, TSDR functionality can be enabled with default datastore H2 by installing the feature odl-tsdr-all.  
 
 === TSDR Architecture
 The following wiki pages capture the TSDR Model/Architecture 
 
-a. https://wiki.opendaylight.org/view/TSDR_Data_Storage_Service_and_Persistence_with_HBase_Plugin
-b. https://wiki.opendaylight.org/view/TSDR_Data_Collection_Service
+TBD. 
 
-Note in Lithium the DataCollection Service is implemented just for OpenFlow Statistics metrics. 
 
 
 === Configuring TSDR with default datastore H2
