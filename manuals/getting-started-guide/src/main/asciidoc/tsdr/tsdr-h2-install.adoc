@@ -1,43 +1,38 @@
 == TSDR H2 Default Datastore Installation Guide
 This document is for the user to install the artifacts that are needed
-for using Time Series Data Repository (TSDR) functionality in the ODL Controller by enabling the default JPA (H2) Datastore. TSDR is new functionality added in OpenDaylight in Lithium Release. 
+for using Time Series Data Repository (TSDR) functionality in the ODL Controller by enabling the default JPA (H2) Datastore. TSDR is new functionality added in OpenDaylight in Beryllium Release. 
 
 === Overview
-In Lithium Release the time deries data records of OpenFlow statistics are collected periodically and stored in a persistent store. For non-production usage, the bundled default JPA based datastore (H2) is utilized based on odl-tsdr-all feature installation. The TSDR records get persisted in H2 store in <install folder>/tsdr/ folder by default.  
+In Beryllium Release the time series data records of OpenFlow statistics are collected periodically and stored in a persistent store. For non-production usage, the bundled default JPA based datastore (H2) is utilized based on odl-tsdr-all feature installation. The TSDR records get persisted in H2 store in <install folder>/tsdr/ folder by default.  
 
-=== Pre Requisites for Installing TSDR with default H2 datastore 
-There are no additional pre-requisites for TSDR based on default datastore 
+=== Installing TSDR with default H2 datastore
+Once OpenDaylight distribution is up, from the Karaf console install the TSDR feature with default datastore (JPA based datastore H2 store used) can be installed by 
 
-=== Preparing for Installation
-No additional steps required for preparation of installing TSDR feature 
-
-=== Installing TSDR with default H2 datastore 
-Once OpenDaylight distribution is up, from karaf console install the TSDR feature with default datastore (JPA based datastore H2 store used) can be installed by 
-
-feature:install odl-tsdr-all 
+feature:install odl-tsdr-h2-all
 
 This will install all dependency features (and can take sometime) before returning control to the console. 
 
 === Verifying your Installation
 If the feature install was successful you should be able to see the following tsdr commands added 
 
-**tsdr:list 
-**tsdr:purgeAll 
+* tsdr:list
+* tsdr:purgeAll
 
 ==== Troubleshooting
 Check the ../data/log/karaf.log for any exception related to TSDR or JPA related features  
 
 === Post Installation Configuration
-The feature installation takes care of automated configuration of the datasource by installing a file in <install folder>/etc named org.ops4j.datasource-metric.cfg. This contains the default location of <install folder>/tsdr where the H2 datastore files are stored. If you want to change the default location of the datastore files to some other location update the last portion of the url property in the org.ops4j.datasource-metric.cfg and then restart the karaf container 
+The feature installation takes care of automated configuration of the datasource by installing a file in <install folder>/etc named org.ops4j.datasource-metric.cfg. This contains the default location of <install folder>/tsdr where the H2 datastore files are stored. If you want to change the default location of the datastore files to some other location update the last portion of the url property in the org.ops4j.datasource-metric.cfg and then restart the Karaf container 
 
 === Upgrading From a Previous Release
-Lithium being the first release supporting TSDR functionality, only fresh installation is possible.However if you want to move to production usage by enabling the store HBase for TSDR usage, you can do it by uninstalling the TSDR with default H2 datastore, restarting the Karaf container and then enabling the TSDR with HBase store as documented in tsdr-hbase-install.doc  
+Beryllium being the first release supporting TSDR functionality, only fresh installation is possible.However if you want to move to production usage by enabling the store HBase for TSDR usage, you can do it by uninstalling the TSDR with default H2 datastore, restarting the Karaf container and then enabling the TSDR with HBase store as documented in tsdr-hbase-install.doc  
 
 === Uninstalling TSDR with default H2 datastore 
-To uninstall the TSDR functionality with the default store, you need to do the following from karaf console 
-* feature:uninstall odl-tsdr-all 
-* feature:uninstall odl-tsdr-core 
+To uninstall the TSDR functionality with the default store, you need to do the following from Karaf console
+
+* feature:uninstall odl-tsdr-h2-all
+* feature:uninstall odl-tsdr-core
 * feature:uninstall odl-tsdr-H2-persistence
 
-Its recommended to restart the Karaf container after uninstallation of the TSDR functionality with the default store 
+Its recommended to restart the Karaf container after uninstallation of the TSDR functionality with the default store
 
