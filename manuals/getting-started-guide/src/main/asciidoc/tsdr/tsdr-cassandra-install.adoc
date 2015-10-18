@@ -1,0 +1,41 @@
+== TSDR Cassandra Default Datastore Installation Guide
+This document is for the user to install the artifacts that are needed for using Time Series Data Repository (TSDR) functionality in the ODL Controller by enabling the Cassandra Datastore. TSDR is new functionality added in OpenDaylight in Beryllium Release. 
+
+=== Overview
+In Beryllium Release the time deries data records of OpenFlow statistics are collected periodically and stored in a persistent store. For non-production usage, the bundled Cassandra datastore is utilized based on odl-tsdr-all feature installation. The TSDR records get persisted in Cassandra store in <install folder>/tsdr/ folder by default.  
+
+=== Pre Requisites for Installing TSDR with Cassandra datastore
+There are no additional pre-requisites for TSDR based on default datastore
+
+=== Preparing for Installation
+No additional steps required for preparation of installing TSDR feature
+
+=== Installing TSDR with default Cassandra datastore
+Once OpenDaylight distribution is up, from karaf console install the TSDR feature with Cassandra datastore can be installed by 
+
+feature:install odl-tsdr-cassandra-all
+
+This will install all dependency features (and can take sometime) before returning control to the console. 
+
+=== Verifying your Installation
+If the feature install was successful you should be able to see the following tsdr commands added 
+
+**tsdr:list
+**tsdr:purgeAll
+
+==== Troubleshooting
+Check the ../data/log/karaf.log for any exception related to TSDR features
+
+=== Post Installation Configuration
+TBD.
+
+=== Upgrading From a Previous Release
+TBD
+
+=== Uninstalling TSDR with Cassandra datastore
+To uninstall the TSDR functionality with the Cassandra store, you need to do the following from karaf console
+* feature:uninstall odl-tsdr-core
+* feature:uninstall odl-tsdr-Cassandra-persistence
+
+Its recommended to restart the Karaf container after uninstallation of the TSDR functionality with the default store
+

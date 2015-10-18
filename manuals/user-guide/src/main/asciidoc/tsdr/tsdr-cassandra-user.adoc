@@ -1,0 +1,18 @@
+== TSDR Cassandra datastore User Guide
+This document describes how to use the Cassandra data store.  This store captures the  time series data. This document contains configuration, administration, management, using, and troubleshooting sections for the feature.
+
+=== Overview
+In the Beryllium Release of Time Series Data Repository (TSDR), time series metrics corresponding to the OpenFlow statistics are captured. For users trying out things on their laptop or non-production environment, TSDR functionality can be enabled with Cassandra datastore by installing the feature odl-tsdr-cassandra-all.  
+
+=== TSDR Architecture
+The following wiki pages capture the TSDR Model/Architecture
+
+TBD.
+
+=== Configuring TSDR with default datastore Cassandra
+TBD.
+
+=== Administering or Managing TSDR with default datastore Cassandra
+TBD.
+
+
