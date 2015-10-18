@@ -1,11 +1,11 @@
 == TSDR HBase Data Store User Guide
 This document describes how to use HBase to capture time series data
 using Time Series Data Repository (TSDR) feature in the OpenDaylight
-Lithium release. This document contains configuration, administration,
+Beryllium release. This document contains configuration, administration,
 management, usage, and troubleshooting sections for the feature.
 
 === Overview
-The Time Series Data Repository (TSDR) project in OpenDaylight (ODL) creates a framework for collecting, storing, querying, and maintaining time series data in then OpenDaylight SDN controller. TSDR provides the framework for plugging in proper data collectors to collect various time series data and store into TSDR data stores. With a common data model and generic TSDR data persistence APIs, the user could choose various data stores to be plugged into TSDR Persistence framework. In Lithium, two types of data stores are supported: HBase NoSQL database and H2 relational database.
+The Time Series Data Repository (TSDR) project in OpenDaylight (ODL) creates a framework for collecting, storing, querying, and maintaining time series data in then OpenDaylight SDN controller. TSDR provides the framework for plugging in proper data collectors to collect various time series data and store into TSDR data stores. With a common data model and generic TSDR data persistence APIs, the user could choose various data stores to be plugged into TSDR Persistence framework. In Beryllium, two types of data stores are supported: HBase NoSQL database and H2 relational database.
 
 With the capabilities of data collection, storage, query, aggregation, and purging provided by TSDR, network administrators could leverage various data driven appliations built on top of TSDR for security risk detection, performance analysis, operational configuration optimization, traffic engineering, and network analytics with automated intelligence.
 
@@ -22,7 +22,7 @@ TSDR contains the following services and components:
 Data Collection Service handles the collection of time series data into TSDR and hands it over to Data Storage Service. Data Storage Service stores the data into TSDR through TSDR Persistence Layer. TSDR Persistence Layer provides generic Service APIs allowing various data stores to be plugged in. Data Aggregation Service aggregates time series fine-grained raw data into course-grained roll-up data to control the size of the data. Data Purging Service periodically purges both fine-grained raw data and course-granined aggregated data according to user-defined schedules.
 
 
-In Lithium, we implemented Data Collection Service, Data Storage Service, TSDR Persistence Layer, TSDR HBase Data Store, and TSDR H2 Data Store. Among these services and components, time series data is communicated using a common TSDR data model, which is designed and implemented for the abstraction of time series data commonalities. With these functions, TSDR will be able to collect the data from the data sources and store them into one of the TSDR data stores: either HBase Data Store or H2 Data Store. We also provided a simple query command from Karaf console for the user to retrieve TSDR data from the data stores.
+In Beryllium, we implemented Data Collection Service, Data Storage Service, TSDR Persistence Layer, TSDR HBase Data Store, and TSDR H2 Data Store. Among these services and components, time series data is communicated using a common TSDR data model, which is designed and implemented for the abstraction of time series data commonalities. With these functions, TSDR will be able to collect the data from the data sources and store them into one of the TSDR data stores: either HBase Data Store or H2 Data Store. We also provided a simple query command from Karaf console for the user to retrieve TSDR data from the data stores.
 
  
 A future release will contain Data Aggregation service, Data Purging Service, and a full-fledged Data Query Service with Norghbound APIs.
@@ -67,8 +67,6 @@ Similar to other OpenDaylight components and features, TSDR HBase Data Store wri
 
 ** HBase logs
 For HBase system level logs, the user can check standard HBase server logs, which is under <HBase-installation-directory>/logs.
-
-=== Tutorials
 
 ==== How to use TSDR to collect, store, and view OpenFlow Interface Statistics 
 
