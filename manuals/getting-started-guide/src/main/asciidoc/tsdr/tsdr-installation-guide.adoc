@@ -1,0 +1,238 @@
+== TSDR Installation Guide
+This document is for the user to install the artifacts that are needed
+for using Time Series Data Repository (TSDR) functionality in the ODL
+Controller by enabling either an HSQLDB, HBase, or Cassandra Data Store
+(which is a new feature available in OpenDaylight Beryllium release).
+
+
+=== Overview
+The Time Series Data Repository (TSDR) project in OpenDaylight (ODL) creates a framework for collecting, storing, querying, and maintaining time series data in the OpenDaylight SDN controller. It contains  the following services and components:
+
+* Data Collection Service
+* Data Storage Service
+* TSDR Persistence Layer with data stores as plugins
+* TSDR Data Stores
+* Data Query Service
+* Data Aggregation Service
+* Data Purging Service
+
+Data Collection Service handles the collection of time series data into TSDR and hands it over to Data Storage Service. Data Storage Service stores the data into TSDR through TSDR Persistence Layer. TSDR Persistence Layer provides generic Service APIs allowing various data stores to be plugged in. Data Aggregation Service aggregates time series fine-grained raw data into course-grained roll-up data to control the size of the data. Data Purging Service periodically purges both fine-grained raw data and course-granined aggregated data according to user-defined schedules.
+
+In Lithium, we delivered TSDR platforma and framework including Data Collection Service, Data Storage Service, and two datastores as example implementation of the time series data stores that could be plugged into TSDR framework. 
+
+In Beryllium, we added the following features and services in TSDR:
+
+* Rearchitected Data Collection Service and provided a pluggable Data Collection framework to allow various types of data collectors to be plugged into TSDR. 
+* Added Cassandra data store and HSQLDB data store to TSDR, while removed H2 data store because of some technical licensing issues.
+* Added SNMP Data Collector, NetFlow Data Collector, and Syslog Data Collector.
+* Added Purging Service that periodically purges out-of-dataed data from TSDR data stores.
+* Added Query Service to support data queries from RESTFul clients.
+* Added APIs in TSDR NBI to support Grafana integration.
+
+=== Pre Requisites for Installing TSDR
+The hardware requirements are the same as those for standard ODL controller installation.
+
+The software requirements for TSDR HBase Data Store are as follows:
+
+* The supported operating system for TSDR HBase Data Store and Cassandra Data Store is Linux. We do not support TSDR HBase Data Store or Cassandra Data Store on Windows.
+* In the case when the user chooses HBase or Cassandra data store, besides the software that ODL requires, we also require HBase database running on top of Hadoop single node.
+
+No additional software is required for the HSQL Data Stores.
+
+=== Preparing for Installation
+Download HBase (version number to be finalized) from the following website.
+
+http://archive.apache.org/dist/hbase/hbase-0.94.15/
+
+No additional steps required for preparation of installing the TSDR HSQL Data Store.
+
+=== Installing TSDR Data Stores
+To install the default HSQL Data Store:
+Once OpenDaylight distribution is up, from karaf console install the TSDR feature with default datastore (JPA based datastore H2 store used) can be installed by 
+
+feature:install odl-tsdr-hsqldb-all
+
+This will install hsqldb related dependency features (and can take sometime) as well as openflow statistics collector before returning control to the console. 
+
+In the case when other data collectors are needed, the user can install these data collectors using feature:install command. We will cover the details in TSDR User Guide.
+
+
+To install the HBase Data Store:
+Installing TSDR HBase Data Store contains two steps:
+
+    * Installing HBase server, and
+    * Installing TSDR HBase Data Store features from ODL Karaf console.
+
+This installation guide will only cover the first step. For installing TSDR HBase Data Store features, please refer to TSDR HBase Data Store User Guide.
+
+In Beryllium, we only support HBase single node running together on the same machine as ODL controller. Therefore, follow the steps to download and install HBase server onto the same box as where ODL controller is running:
+
+* Create a folder in Linux operating system for the HBase server.
+
+For example, create an hbase directory under /usr/lib:
+
+      mkdir /usr/lib/hbase
+
+* Unzip the downloaded HBase server tar file.
+
+Run the following command to unzip the installation package:
+
+      tar xvf <hbase-installer-name>  /usr/lib/hbase
+
+* Make proper changes in hbase-site.xml
+
+   .. Under <hbase-install-directory>/conf/, there is a hbase-site.xml. Although it is not recommended, an experience user with HBase canmodify the data directory for hbase server to store the data.
+
+   .. Modify the value of the property with name "hbase.rootdir" in the file to reflect the desired file directory for storing hbase data.
+
+The following is an example of the file:
+
+    <configuration>
+      <property>
+        <name>hbase.rootdir</name>
+        <value>file:///usr/lib/hbase/data</value>
+      </property>
+      <property>
+        <name>hbase.zookeeper.property.dataDir</name>
+        <value>/usr/lib/hbase/zookeeper</value>
+      </property>
+    </configuration>
+
+To install the Cassandra Data Store:
+Installing TSDR Cassandra Data Store contains two steps:
+
+    * Installing Cassandra server, and
+    * Installing TSDR Cassandra Data Store features from ODL Karaf console.
+
+This installation guide will only cover the first step. For installing TSDR Cassandra Data Store features, please refer to TSDR Cassandra Data Store User Guide.
+
+In Beryllium, we only support Cassadra single node running together on the same machine as ODL controller. Therefore, follow the steps to download and install Cassandra server onto the same box as where ODL controller is running:
+
+Install Cassandra(latest stable version) by downloading the zip file and untar the tar ball to /cassandra directory on the testing machine.
+
+    mkdir cassandra
+    wget http://www.eu.apache.org/dist/cassandra/2.1.10/apache-cassandra-2.1.10-bin.tar.gz[2.1.10 is current stable version, it can vary]
+    mv apache-cassandra-2.1.10-bin.tar.gz cassandra/
+    cd cassandra
+    tar -xvzf apache-cassandra-2.1.10-bin.tar.gz
+
+Start Cassandra from cassandra directory by running "./apache-cassandra-2.1.10/bin/cassandra"
+
+Start cassandra shell by running "./apache-cassandra-2.1.10/bin/cqlsh " from the above directory.
+
+Start Karaf from ODL integration project.
+
+=== Verifying your Installation
+
+==== To Verify HSQLDB Installation:
+
+If the feature install was successful you should be able to see the following tsdr commands added
+
+** tsdr:list
+** tsdr:purgeAll
+
+==== To Verify HBase Installation:
+
+After the HBase server is properly installed, start hbase server and hbase shell.
+
+.. start hbase server
+
+   cd <hbase-installation-directory>
+   ./start-hbase.sh
+
+.. start hbase shell
+
+   cd <hbase-insatllation-directory>
+   ./hbase shell
+
+==== To Verify Cassandra Installation:
+
+If the feature install was successful you should be able to see the following tsdr commands added 
+
+** tsdr:list
+** tsdr:purgeAll
+
+Run "feature:install odl-tsdr-cassandra" from Karaf.
+
+Run "feature:install odl-tsdr-openflow-statistics-collector" from Karaf.
+
+Run mininet to connect to ODL controller. For example, use the following command to start a three node topology:
+
+  "mn --topo single,3  --controller 'remote,ip=172.17.252.210,port=6653' --switch ovsk,protocols=OpenFlow13"
+
+There are two tables to collect openflow statistics in tsdr namespace ;i.e metricpath and metricval.
+
+- metricpath table contains the unique keys(keya and keyb) for each openflow metric for a node/interface.
+- metricval table contains the timestamp and the counter values for the metric.
+To access the tables got to cqlsh and issue select * from tsdr.tablename ;
+
+==== Troubleshooting
+Check the ../data/log/karaf.log for any exception related to TSDR or JPA related features
+
+=== Post Installation Configuration
+Post Installation Configuration for HSQLDB Data Store:
+
+The feature installation takes care of automated configuration of the datasource by installing a file in <install folder>/etc named org.ops4j.datasource-metric.cfg. This contains the default location of <install folder>/tsdr where the HSQLDB datastore files are stored. If you want to change the default location of the datastore files to some other location update the last portion of the url property in the org.ops4j.datasource-metric.cfg and then restart the karaf container. 
+
+Post Installation Configuration for HBase Data Store:
+
+Please refer to HBase Data Store User Guide.
+
+Post Installation Configuration for Cassandra Data Store:
+For testing syslog:
+
+Run "feature:install odl-tsdr-cassandra" from Karaf.
+
+Run "feature:install odl-tsdr-syslog-collector" from Karaf.
+
+Generate syslog from a any device with controller IP : port 514 as syslog collector . For Example , to Generate syslog from ubuntu syslog daemon
+
+ logger -p facility.severity -n <IP> -u <port> message
+ logger -p local7.debug -n 127.0.0.1 -u 514 Oct 29 18:10:31: ODL: %STKUNIT0-M:CP %IFMGR-5-ASTATE_UP: Changed interface Admin state to up: Te 0/0
+
+There are two tables to collect syslog in tsdr namespace ;i.e metricpath and metriclog.
+
+- metricpath table contains the unique keys(keya and keyb) for each syslog agent
+- metricval table contains the timestamp and <syslog-severity><syslog message>
+To access the tables got to cqlsh and issue select * from tsdr.tablename;
+
+
+=== Upgrading From a Previous Release
+Cassandra is new data store in the Beryllium release.  It must be installed separately from other data store installations.
+It is recommended to do a clean install of all Data Stores when updating to the Beryllium ODL release.
+
+=== Uninstalling TSDR Data Stores
+To uninstall TSDR H2 Data Store:
+
+To uninstall the TSDR functionality with the default store, you need to do the following from karaf console 
+
+* feature:uninstall odl-tsdr-all
+* feature:uninstall odl-tsdr-core
+* feature:uninstall odl-tsdr-hsqldb
+* feature:uninstall odl-tsdr-openflow-statistics-collector
+
+Its recommended to restart the Karaf container after uninstallation of the TSDR functionality with the default store 
+
+To uninstall TSDR HBase Data Store:
+
+To uninstall the TSDR functionality with the HBase data store, you need to do the following from karaf console
+
+* feature:uninstall odl-tsdr-hbase
+* feature:uninstall odl-tsdr-core
+.. stop hbase server
+
+   cd <hbase-installation-directory>
+   ./stop-hbase.sh
+
+.. remove the file directory that contains the HBase server installation.
+
+   rm -r <hbase-installation-directory>
+
+To uninstall TSDR Cassandra Data Store:
+
+To uninstall the TSDR functionality with the Cassandra store, you need to do the following from karaf console
+
+* feature:uninstall odl-tsdr-cassandra
+* feature:uninstall odl-tsdr-core
+
+Its recommended to restart the Karaf container after uninstallation of the TSDR functionality with the default store 
