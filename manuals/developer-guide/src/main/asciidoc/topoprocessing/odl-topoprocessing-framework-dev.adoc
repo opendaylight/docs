@@ -9,7 +9,7 @@ Topology processing framework consists from several karaf features:
 * odl-topoprocessing-framework
 * odl-topoprocessing-inventory
 * odl-topoprocessing-network-topology
-//* odl-topoprocessing-i2rs [TBD when i2rs will be merged to controller]
+* odl-topoprocessing-i2rs
 * odl-topoprocessing-inventory-rendering
 * odl-topoprocessing-link-computation
 
@@ -150,7 +150,7 @@ in DataStores.
 //Provide links to JavaDoc, REST API documentation, etc. [TBD]
 
 === Model Specific Aproach
-Topology Processing Framework consists from several modules and karaf features, which provide support for different input models. Currently we support network-topology and opendaylight-inventory (we have also prepared support for i2rs once it will be supported by controller). For each of these input models, topoprocessing framework has one module and one Karaf feature.
+Topology Processing Framework consists from several modules and karaf features, which provide support for different input models. Currently we support network-topology opendaylight-inventory and i2rs. For each of these input models, topoprocessing framework has one module and one Karaf feature.
 
 ==== How it works
 .User point of view:
@@ -169,6 +169,7 @@ image::topoprocessing/ModelAdapter.png[width=500]
 
 * odl-topoprocessing-network-topology - this feature contains logic to work with network-topology model
 * odl-topoprocessing-inventory - this feature contains logic to work with network-topology model
+* odl-topoprocessing-i2rs - this feature contains logic to work with I2RS model
 
 === Link Computation
 include::odl-topoprocessing-link-computation-dev.adoc[]
