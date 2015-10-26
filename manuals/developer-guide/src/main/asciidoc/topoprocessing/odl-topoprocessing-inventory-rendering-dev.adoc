@@ -1,41 +1,41 @@
-==== Overview
-With incoming release change, which sets opendaylight-Inventory model as deprecated, comes request to render (translate) data from inventory model (whether augmented or not) to another model for further processing. Topology Processing Framework can be adjusted to bring this functionality by implementing several render-specific classes. This chapter is step by step guide how to implement your own topology rendering according to our inventory rendering demo.
+==== Chapter Overview
+In the most recent OpenDaylight release, the opendaylight-inventory model is marked as deprecated. To facilitate migration from it to the network-topology model, there were requests to render (translate) data from inventory model (whether augmented or not) to another model for further processing. The Topology Processing Framework was extended to provide this functionality by implementing several rendering-specific classes. This chapter is a step-by-step guide on how to implement your own topology rendering using our inventory rendering and an example.
 
 ==== Use case
-For the purpose of this guide we are going to render following augmented fields from Openflow model:
+For the purpose of this guide we are going to render the following augmented fields from the OpenFlow model:
 
-* from Inventory Node:
+* from inventory node:
 ** manufacturer
 ** hardware
 ** software
 ** serial-number
 ** description
 ** ip-address
-* from Inventory Node-connector:
+* from inventory node-connector:
 ** name
 ** hardware-address
 ** current-speed
 ** maximum-speed
 
-We also want to preserve node id and termination-point id from opendaylight-topology-inventory model (which is Network Topology part of Inventory model). 
+We also want to preserve the node id and termination-point id from opendaylight-topology-inventory model, which is network-topology part of of the inventory model. 
 
 ==== Implementation
-There are two ways to implement support for your specific topology-rendering:
+There are two ways to implement support for your specific topology rendering:
 
-* add module to your project using dependency on Topoprocessing Framework
-* add module to Topoprocessing Framework itself
+* add a module to your project that depends on the Topology Processing Framework
+* add a module to the Topology Processing Framework itself
 
-Regardless of chosen way, successfull implementation requires to fulfill all of the following steps:
+Regardless, a successful implementation must complete all of the following steps.
 
-===== Step1 - Target model creation
-Because Network Topology doesn't have fields to store all desired data, it is necessary to create new model which will data be rendered to. For this guide we created inventory-rendering model. In picture below is shown how data will be rendered and stored.
+===== Step1 - Target Model Creation
+Because the network-topology mode does not have fields to store all desired data, it is necessary to create new model to render this extra data in to. For this guide we created the inventory-rendering model. The picture below shows how data will be rendered and stored.
 
-.Rendering to inventory-rendering model
+.Rendering to the inventory-rendering model
 image::topoprocessing/Inventory_Rendering_Use_case.png[width=500]
 
-IMPORTANT: In case of implementing your version of topology-rendering into Topology Processing Framework, source file of model (.yang) must be saved in /topoprocessing-api/src/main/yang folder so corresponding structures can be generated during build and can be accessed from every module through dependecies. 
+IMPORTANT: When implementing your version of the topology-rendering model in the Topology Processing Framework, the source file of the model (.yang) must be saved in /topoprocessing-api/src/main/yang folder so corresponding structures can be generated during build and can be accessed from every module through dependencies. 
 
-When target model is created you have to add identifier through which you can set your new model as output model. To do that you have to add another identity item to topology-correlation.yang file. For our inventory-rendering model identity looks like this:
+When the target model is created you have to add an identifier through which you can set your new model as output model. To do that you have to add another identity item to topology-correlation.yang file. For our inventory-rendering model identity looks like this:
 
 [source,yang]
 ----
@@ -45,19 +45,357 @@ identity inventory-rendering-model {
 }
 ----
 
-After that you will be able to set inventory-rendering-model as output model in xml.
+After that you will be able to set inventory-rendering-model as output model in XML.
 
-===== Step2 - Module and feature creation
-IMPORTANT: This and following steps are based on implemented Model specific approach in Topology Processing Framework. We highly recommend to get familiar with this approach in advance.
+===== Step2 - Module and Feature Creation
+IMPORTANT: This and following steps are based on the <<_model_specific_approach,model specific approach>> in the Topology Processing Framework. We highly recommend that you familiarize yourself with this approach in advance.
 
-To create base module and add it as a feature to karaf in Topology Processing Framework we have made changes contained in following https://git.opendaylight.org/gerrit/#/c/26223/[commit]. Changes in other projects will be probably similar.
+To create a base module and add it as a feature to Karaf in the Topology Processing, Framework we made the changes in following https://git.opendaylight.org/gerrit/#/c/26223/[commit]. Changes in other projects will likely be similar.
 
-//TBD: files table
+[options="header"]
+|======
+|File												 |Changes
+|pom.xml											 |add new module to topoprocessing
+|features.xml										 |add feature to topoprocessing
+|features/pom.xml									 |add dependencies needed by features
+|topoprocessing-artifacts/pom.xml					 |add artifact
+|topoprocessing-config/pom.xml						 |add configuration file
+|81-topoprocessing-inventory-rendering-config.xml	 |configuration file for new module
+|topoprocessing-inventory-rendering/pom.xml			 |main pom for new module
+|TopoProcessingProviderIR.java						 |contains startup method which register new model adapter
+|TopoProcessingProviderIRModule.java				 |generated class which contains createInstance method. You should call your startup method from here.
+|TopoProcessingProviderIRModuleFactory.java			 |generated class. You will probably not need to edit this file
+|log4j.xml											 |configuration file for logger
+topoprocessing-inventory-rendering-provider-impl.yang|main yang module. Generated classes are generated according to this yang file
+|======
 
-===== Step3 - Module adapters creation
+===== Step3 - Module Adapters Creation
 There are seven mandatory interfaces or abstract classes that needs to be implemented in each module. They are:
-//TBD
+
+* TopoProcessingProvider - provides module registration
+* ModelAdapter - provides model specific instances
+* TopologyRequestListener - listens on changes in the configure datastore
+* TopologyRequestHandler - processes configuration datastore changes
+* UnderlayTopologyListener - listens for changes in the specific model
+* LinkTransaltor and NodeTranslator - used by OverlayItemTranslator to create NormalizedNodes from OverlayItems
+
+The name convention we used was to add an abbreviation for the specific model to the beginning of implementing class name (e.g. the IRModelAdapter refers to class which implements ModelAdapter in module Inventory Rendering). In the case of the provider class, we put the abbreviation at the end.
+
+[IMPORTANT]
+======
+* In the next sections, we use the terms TopologyRequestListener, TopologyRequestHandler, etc. without a prepended or appended abbreviation because the steps apply regardless of which specific model you are targeting.
+* If you wanted to implement rendering from inventory to network-topology, you can just copy-paste our module and additional changes will be required only in the output part.
+======
+
+*Provider part*
+
+This part is the starting point of the whole module. It is responsible for creating and registering TopologyRequestListeners. It is necessary to create three classes which will import:
+
+* *TopoProcessingProviderModule* - is a generated class from topoprocessing-inventory-rendering-provider-impl.yang (created in previous step, file will appear after first build). Its method `createInstance()` is called at the feature start and must be modified to create an instance of TopoProcessingProvider and calli its `startup(TopoProcessingProvider topoProvider)` function.
+* *TopoProcessingProvider* - in `startup(TopoProcessingProvider topoProvider)` function provides ModelAdapter registration to TopoProcessingProviderImpl.
+* *ModelAdapter* - provides creation of corresponding module specific classes.
+
+*Input part*
+
+This includes the creation of the classes responsible for input data processing. In this case, we had to create five classes implementing:
+
+* *TopologyRequestListener* and *TopologyRequestHandler* - when notified about a change in the configuration datastore, verify if the change contains a topology request (has correlations in it) and creates UnderlayTopologyListeners if needed. The implementation of these classes will differ according to the model in which are correlations saved (network-topology or i2rs). In the case of using network-topology, as the input model, you can use our classes IRTopologyRequestListener and IRTopologyRequestHandler.
+* *UnderlayTopologyListener* - registers underlay listeners according to input model. In our case (listening in the inventory model), we created listeners for the network-topology model and inventory model, and set the NotificationInterConnector as the first operator and set the IRRenderingOperator as the second operator (after NotificationInterConnector). Same as for TopologyRequestListener/Handler, if you are rendering from the inventory model, you can use our class IRUnderlayTopologyListener.
+* *InventoryListener* - a new implementation of this class is required only for inventory input model. This is because the InventoryListener from topoprocessing-impl requires pathIdentifier which is absent in the case of rendering.
+* *TopologyOperator* - replaces classic topoprocessing operator. While the classic operator provides specific operations on topology, the rendering operator just wraps each received UnderlayItem to OverlayItem and sends them to write.
+
+[IMPORTANT]
+======
+For purposes of topology rendering from inventory to network-topology, there are misused fields in UnderlayItem as follows:
+
+* item - contains node from network-topology part of inventory
+* leafItem - contains node from inventory
+
+In case of implementing UnderlayTopologyListener or InventoryListener you have to carefully adjust UnderlayItem creation to these terms. 
+======
+
+*Output part*
+
+The output part of topology rendering is responsible for translating received overlay items to normalized nodes. In the case of inventory rendering, this is where node information from inventory are combined with node information from network-topology. This combined information is stored in our inventory-rendering model normalized node and passed to the writer.
+
+The output part consists of two translators implementing the NodeTranslator and LinkTranslator interfaces.
+
+*NodeTranslator implementation* - The NodeTranslator interface has one `translate(OverlayItemWrapper wrapper)` method. For our purposes, there is one important thing in wrapper - the list of OverlayItems which have one or more common UnderlayItems. Regardless of this list, in the case of rendering it will always contains only one OverlayItem. This item has list of UnderlayItems, but again in case of rendering there will be only one UnderlayItem item in this list. In NodeTranslator, the OverlayItem and corresponding UnderlayItem represent nodes from the translating model.
+
+The UnderlayItem has several attributes. How you will use these attributes in your rendering is up to you, as you create this item in your topology operator. For example, as mentioned above, in our inventory rendering example there is an inventory node normalized node stored in the UnderlayItem leafNode attribute, and we also store node-id from network-topology model in UnderlayItem itemId attribute. You can now use these attributes to build a normalized node for your new model. How to read and create normalized nodes is out of scope of this document. 
+
+*LinkTranslator implementation* - The LinkTranslator interface also has one `translate(OverlayItemWrapper wrapper)` method. In our inventory rendering this method returns `null`, because the inventory model doesn't have links. But if you also need links, this is the place where you should translate it into a normalized node for your model. In LinkTranslator, the OverlayItem and corresponding UnderlayItem represent links from the translating model. As in NodeTranslator, there will be only one OverlayItem and one UnderlayItem in the corresponding lists.
 
 ==== Testing
-If you want to test our implementation it is required to apply https://git.opendaylight.org/gerrit/#/c/26612[this patch]. It adds openflowplugin dependency so we can use it in karaf distribution as feature.
-//TBD
+If you want to test our implementation you must apply https://git.opendaylight.org/gerrit/#/c/26612[this patch]. It adds an OpenFlow Plugin dependency so we can use it in the Karaf distribution as a feature. After adding patch and building the whole framework, you can start Karaf. Next, you have to install necessary features. In our case it is:
+
+`feature:install odl-restconf-noauth odl-topoprocessing-inventory-rendering odl-openflowplugin-southbound-li odl-openflowplugin-nsf-model-li` 
+
+Now you can send messages to REST from any REST client (e.g. Postman in Chrome). Messages have to have following headers:
+
+[options="header"]
+|=====
+|Header		  |Value
+|Content-Type:|application/xml
+|Accept:	  |application/xml
+|username:	  |admin
+|password:	  |admin 
+|=====
+
+Firstly send topology request to http://localhost:8181/restconf/config/network-topology:network-topology/topology/render:1 with method PUT. Example of simple rendering request: 
+
+[source, xml]
+----
+<topology xmlns="urn:TBD:params:xml:ns:yang:network-topology">
+  <topology-id>render:1</topology-id>  
+    <correlations xmlns="urn:opendaylight:topology:correlation" >
+      <output-model>inventory-rendering-model</output-model>
+      <correlation>
+         <correlation-id>1</correlation-id>
+          <type>rendering-only</type>
+          <correlation-item>node</correlation-item>
+          <rendering>
+            <underlay-topology>und-topo:1</underlay-topology>
+        </rendering>
+      </correlation>
+    </correlations>
+</topology>
+----
+This request says that we want create topology with name render:1 and this topology should be stored in the inventory-rendering-model and it should be created from topology flow:1 by node rendering.
+
+Next we send the network-topology part of topology flow:1. So to the URL http://localhost:8181/restconf/config/network-topology:network-topology/topology/und-topo:1 we PUT:
+[source,xml]
+----
+<topology xmlns="urn:TBD:params:xml:ns:yang:network-topology" 
+          xmlns:it="urn:opendaylight:model:topology:inventory"
+          xmlns:i="urn:opendaylight:inventory">
+    <topology-id>und-topo:1</topology-id>
+    <node>
+        <node-id>openflow:1</node-id>
+        <it:inventory-node-ref>
+  	/i:nodes/i:node[i:id="openflow:1"]
+        </it:inventory-node-ref>
+        <termination-point>
+            <tp-id>tp:1</tp-id>
+            <it:inventory-node-connector-ref> 
+                /i:nodes/i:node[i:id="openflow:1"]/i:node-connector[i:id="openflow:1:1"]
+            </it:inventory-node-connector-ref>
+        </termination-point>
+    </node>
+</topology>
+----
+And the last input will be inventory part of topology. To the URL http://localhost:8181/restconf/config/opendaylight-inventory:nodes we PUT:
+[source,xml]
+----
+<nodes 
+    xmlns="urn:opendaylight:inventory">
+    <node>
+        <id>openflow:1</id>
+        <node-connector>
+            <id>openflow:1:1</id>
+            <port-number 
+                xmlns="urn:opendaylight:flow:inventory">1
+            </port-number>
+            <current-speed 
+                xmlns="urn:opendaylight:flow:inventory">10000000
+            </current-speed>
+            <name 
+                xmlns="urn:opendaylight:flow:inventory">s1-eth1
+            </name>
+            <supported 
+                xmlns="urn:opendaylight:flow:inventory">
+            </supported>
+            <current-feature 
+                xmlns="urn:opendaylight:flow:inventory">copper ten-gb-fd
+            </current-feature>
+            <configuration 
+                xmlns="urn:opendaylight:flow:inventory">
+            </configuration>
+            <peer-features 
+                xmlns="urn:opendaylight:flow:inventory">
+            </peer-features>
+            <maximum-speed 
+                xmlns="urn:opendaylight:flow:inventory">0
+            </maximum-speed>
+            <advertised-features 
+                xmlns="urn:opendaylight:flow:inventory">
+            </advertised-features>
+            <hardware-address 
+                xmlns="urn:opendaylight:flow:inventory">0E:DC:8C:63:EC:D1
+            </hardware-address>
+            <state 
+                xmlns="urn:opendaylight:flow:inventory">
+                <link-down>false</link-down>
+                <blocked>false</blocked>
+                <live>false</live>
+            </state>
+            <flow-capable-node-connector-statistics 
+                xmlns="urn:opendaylight:port:statistics">
+                <receive-errors>0</receive-errors>
+                <receive-frame-error>0</receive-frame-error>
+                <receive-over-run-error>0</receive-over-run-error>
+                <receive-crc-error>0</receive-crc-error>
+                <bytes>
+                    <transmitted>595</transmitted>
+                    <received>378</received>
+                </bytes>
+                <receive-drops>0</receive-drops>
+                <duration>
+                    <second>28</second>
+                    <nanosecond>410000000</nanosecond>
+                </duration>
+                <transmit-errors>0</transmit-errors>
+                <collision-count>0</collision-count>
+                <packets>
+                    <transmitted>7</transmitted>
+                    <received>5</received>
+                </packets>
+                <transmit-drops>0</transmit-drops>
+            </flow-capable-node-connector-statistics>
+        </node-connector>
+        <node-connector>
+            <id>openflow:1:LOCAL</id>
+            <port-number 
+                xmlns="urn:opendaylight:flow:inventory">4294967294
+            </port-number>
+            <current-speed 
+                xmlns="urn:opendaylight:flow:inventory">0
+            </current-speed>
+            <name 
+                xmlns="urn:opendaylight:flow:inventory">s1
+            </name>
+            <supported 
+                xmlns="urn:opendaylight:flow:inventory">
+            </supported>
+            <current-feature 
+                xmlns="urn:opendaylight:flow:inventory">
+            </current-feature>
+            <configuration 
+                xmlns="urn:opendaylight:flow:inventory">
+            </configuration>
+            <peer-features 
+                xmlns="urn:opendaylight:flow:inventory">
+            </peer-features>
+            <maximum-speed 
+                xmlns="urn:opendaylight:flow:inventory">0
+            </maximum-speed>
+            <advertised-features 
+                xmlns="urn:opendaylight:flow:inventory">
+            </advertised-features>
+            <hardware-address 
+                xmlns="urn:opendaylight:flow:inventory">BA:63:87:0C:76:41
+            </hardware-address>
+            <state 
+                xmlns="urn:opendaylight:flow:inventory">
+                <link-down>false</link-down>
+                <blocked>false</blocked>
+                <live>false</live>
+            </state>
+            <flow-capable-node-connector-statistics 
+                xmlns="urn:opendaylight:port:statistics">
+                <receive-errors>0</receive-errors>
+                <receive-frame-error>0</receive-frame-error>
+                <receive-over-run-error>0</receive-over-run-error>
+                <receive-crc-error>0</receive-crc-error>
+                <bytes>
+                    <transmitted>576</transmitted>
+                    <received>468</received>
+                </bytes>
+                <receive-drops>0</receive-drops>
+                <duration>
+                    <second>28</second>
+                    <nanosecond>426000000</nanosecond>
+                </duration>
+                <transmit-errors>0</transmit-errors>
+                <collision-count>0</collision-count>
+                <packets>
+                    <transmitted>6</transmitted>
+                    <received>6</received>
+                </packets>
+                <transmit-drops>0</transmit-drops>
+            </flow-capable-node-connector-statistics>
+        </node-connector>
+        <serial-number 
+            xmlns="urn:opendaylight:flow:inventory">None
+        </serial-number>
+        <manufacturer 
+            xmlns="urn:opendaylight:flow:inventory">Nicira, Inc.
+        </manufacturer>
+        <hardware 
+            xmlns="urn:opendaylight:flow:inventory">Open vSwitch
+        </hardware>
+        <software 
+            xmlns="urn:opendaylight:flow:inventory">2.1.3
+        </software>
+        <description 
+            xmlns="urn:opendaylight:flow:inventory">None
+        </description>
+		<ip-address
+			xmlns="urn:opendaylight:flow:inventory">10.20.30.40
+      </ip-address>
+        <meter-features 
+            xmlns="urn:opendaylight:meter:statistics">
+            <max_bands>0</max_bands>
+            <max_color>0</max_color>
+            <max_meter>0</max_meter>
+        </meter-features>
+        <group-features 
+            xmlns="urn:opendaylight:group:statistics">
+            <group-capabilities-supported 
+                xmlns:x="urn:opendaylight:group:types">x:chaining
+            </group-capabilities-supported>
+            <group-capabilities-supported 
+                xmlns:x="urn:opendaylight:group:types">x:select-weight
+            </group-capabilities-supported>
+            <group-capabilities-supported 
+                xmlns:x="urn:opendaylight:group:types">x:select-liveness
+            </group-capabilities-supported>
+            <max-groups>4294967040</max-groups>
+            <actions>67082241</actions>
+            <actions>0</actions>
+        </group-features>
+    </node>
+</nodes>
+----
+After this, the expected result from a GET request to http://127.0.0.1:8181/restconf/operational/network-topology:network-topology is:
+[source,xml]
+----
+<network-topology 
+    xmlns="urn:TBD:params:xml:ns:yang:network-topology">
+    <topology>
+        <topology-id>render:1</topology-id>
+        <node>
+            <node-id>openflow:1</node-id>
+            <node-augmentation 
+                xmlns="urn:opendaylight:topology:inventory:rendering">
+                <ip-address>10.20.30.40</ip-address>
+                <serial-number>None</serial-number>
+                <manufacturer>Nicira, Inc.</manufacturer>
+                <description>None</description>
+                <hardware>Open vSwitch</hardware>
+                <software>2.1.3</software>
+            </node-augmentation>
+            <termination-point>
+                <tp-id>openflow:1:1</tp-id>
+                <tp-augmentation 
+                    xmlns="urn:opendaylight:topology:inventory:rendering">
+                    <hardware-address>0E:DC:8C:63:EC:D1</hardware-address>
+                    <current-speed>10000000</current-speed>
+                    <maximum-speed>0</maximum-speed>
+                    <name>s1-eth1</name>
+                </tp-augmentation>
+            </termination-point>
+            <termination-point>
+                <tp-id>openflow:1:LOCAL</tp-id>
+                <tp-augmentation 
+                    xmlns="urn:opendaylight:topology:inventory:rendering">
+                    <hardware-address>BA:63:87:0C:76:41</hardware-address>
+                    <current-speed>0</current-speed>
+                    <maximum-speed>0</maximum-speed>
+                    <name>s1</name>
+                </tp-augmentation>
+            </termination-point>
+        </node>
+    </topology>
+</network-topology>
+----
