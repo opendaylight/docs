@@ -1,0 +1,75 @@
+==== Chapter Overview
+In this chapter we describe the architecture of the Topology Processing Framework. In the first part, we provide information about available features and basic class relationships. In the second part, we describe our model specific approach, which is used to provide support for different models.
+
+==== Basic Architecture
+The Topology Processing Framework consists of several Karaf features:
+
+* odl-topoprocessing-framework
+* odl-topoprocessing-inventory
+* odl-topoprocessing-network-topology
+* odl-topoprocessing-i2rs
+* odl-topoprocessing-inventory-rendering
+
+The feature odl-topoprocessing-framework contains the topoprocessing-api, topoprocessing-spi and topoprocessing-impl
+bundles. This feature is the core of the Topology Processing Framework and is required by all others features.
+
+* topoprocessing-api - contains correlation definitions and definitions required for rendering
+* topoprocessing-spi - entry point for topoprocessing service (start and close)
+* topoprocessing-impl - contains base implementations of handlers, listeners, aggregators and filtrators
+
+TopoProcessingProvider is the entry point for Topology Processing Framework. It requires a DataBroker instance. The DataBroker is needed for listener registration. There is also the TopologyRequestListener which listens on aggregated topology requests (placed into the configuration datastore) and UnderlayTopologyListeners which listen on underlay topology data changes (made in operational datastore). THe TopologyRequestHandler saves toporequest data and provides a method for translating a path to the specified leaf. When a change in the topology occurs, the registered UnderlayTopologyListener processes this information for further aggregation and/or filtration. Finally, after  an overlay topology is created, it is passed to the TopologyWriter, which writes this topology into operational datastore.
+
+.Class relationship
+image::topoprocessing/TopologyRequestHandler_classesRelationship.png[width=500]
+
+[1] TopologyRequestHandler instantiates TopologyWriter and TopologyManager. Then, according to the request, initializes either TopologyAggregator, TopologyFiltrator or LinkCalculator.
+
+[2] It creates as many instances of UnderlayTopologyListener as there are underlay topologies.
+
+[3] PhysicalNodes are created for relevant incoming nodes (those having node ID).
+
+[4a] It performs aggregation and creates logical nodes.
+
+[4b] It performs filtration and creates logical nodes.
+
+[4c] It performs link computation and creates links between logical nodes.
+
+[5] Logical nodes are put into wrapper.
+
+[6] The wrapper is translated into the appropriate format and written into datastore.
+
+==== Model Specific Approach
+The Topology Processing Framework consists of several modules and Karaf features, which provide support for different input models. Currently we support the network-topology, opendaylight-inventory and i2rs models. For each of these input models, the Topology Processing Framework has one module and one Karaf feature.
+
+===== How it works
+.User point of view:
+When you start the odl-topoprocessing-framework feature, the Topology Processing Framework starts without knowledge how to work with any input models. In order to allow the Topology Processing Framework to process some kind of input model, you must install one (or more) model specific features. Installing these features will also start odl-topoprocessing-framework feature if it is not already running. These features inject appropriate logic into the odl-topoprocessing-framework feature. From that point, the Topology Processing Framework is able to process different kinds of input models, specifically those that you install features for.
+
+.Developer point of view:
+The topoprocessing-impl module contains (among other things) classes and interfaces, which are common for every model specific topoprocessing module. These classes and interfaces are implemented and extended by classes in particular model specific modules.
+Model specific modules also depend on the TopoProcessingProvider class in the topoprocessing-spi module. This dependency is injected during installation of model specific features in Karaf. When a model specific feature is started, it calls the registerAdapters(adapters) method of the injected TopoProcessingProvider object. After this step, the Topology Processing Framework is able to use registered model adapters to work with input models.
+
+To achieve the described functionality we created a ModelAdapter interface. It represents installed feature and provides methods for creating crucial structures specific to each model.
+
+.ModelAdapter interface
+image::topoprocessing/ModelAdapter.png[width=300]
+
+===== Model Specific Features
+
+* odl-topoprocessing-network-topology - this feature contains logic to work with network-topology model
+* odl-topoprocessing-inventory - this feature contains logic to work with opendaylight-inventory model
+* odl-topoprocessing-i2rs - this feature contains logic to work with i2rs model
+
+==== Inventory Model Support
+The opendaylight-inventory model contains only nodes, termination points, information regarding these structures. This model co-operates with network-topology model, where other topology related information is stored. This means that we have to handle two input models at once. To support the inventory model, InventoryListener and NotificationInterConnector classes were introduced. Please see the flow diagrams below.
+
+.Network topology model
+image::topoprocessing/Network_topology_model_flow_diagram.png[width=500]
+
+.Inventory model
+image::topoprocessing/Inventory_model_listener_diagram.png[width=500]
+
+Here we can see the InventoryListener and NotificationInterConnector classes. InventoryListener listens on data changes in the inventory model and passes these changes wrapped as an UnderlayItem for further processing to NotificationInterConnector. It doesn't contain node information - it contains a leafNode (node based on which aggregation occurs) instead.
+The node information is stored in the topology model, where UnderlayTopologyListener is registered as usual. This listener delivers the missing information.
+
+Then the NotificationInterConnector combines the two notifications into a complete UnderlayItem (no null values) and delivers this UnderlayItem for further processing (to next TopologyOperator). 
