@@ -1,8 +1,126 @@
-==== Overview
-During creation of overlay topology, informations about links between nodes are lost. These informations have to be recalculated. Feature odl-topoprocessing-link-computation contains logic required for recalculation of links between nodes.
+==== Chapter Overview
+During topology request processing are created overlay nodes with list of supported underlay nodes. Because these overlay nodes has completely new identifiers, we are loosing all possible links information. That's the reason for implementing Link Computation functionality. It's main purpose is to create new overlay links based on links from underlay topologies and underlay items from overlay items. Required information for Link Computation are provided through Link Computation model (https://git.opendaylight.org/gerrit/gitweb?p=topoprocessing.git;a=blob;f=topoprocessing-api/src/main/yang/topology-link-computation.yang;h=7b7a6af3b93b482673b84550850689cd0def8d24;hb=HEAD[topology-link-computation.yang]).
 
-==== Link computation model
-Here will be link computation model
+==== Link Computation Functionality
+Let's consider two topologies with following components:
 
-==== Link computation calculation
-Here will be desription of link calculation
+Topology 1:
+
+* Node: `node:1:1`
+* Node: `node:1:2`
+* Node: `node:1:3`
+* Link: `link:1:1` (from `node:1:1` to `node:1:2`)
+* Link: `link:1:2` (from `node:1:3` to `node:1:2`)
+
+Topology 2:
+
+* Node: `node:2:1`
+* Node: `node:2:2`
+* Node: `node:2:3`
+* Link: `link:2:1` (from `node:2:1` to `node:2:3`)
+
+Now let's say that we applied some operations over these topolgies that results into aggregating together
+
+* `node:1:1` and `node:2:3` (`node:1`)
+* `node:1:2` and `node:2:2` (`node:2`)
+* `node:1:3` and `node:2:1` (`node:3`)
+
+At this point we can no longer use available links in new topology because of node ID change, so we must create new, overlay, links with source and destination node set to new nodes IDs. It means that `link:1:1` from topolgy 1 will create new link `link:1`. Since original source (`node:1:1`) is already aggregated under `node:1`, it will became source node for `link:1`. Using same method the destination will be `node:2`. And the final output will be three links:
+
+* `link:1`, from `node:1` to `node:2`
+* `link:2`, from `node:3` to `node:2`
+* `link:3`, from `node:3` to `node:1`
+
+.Overlay topology with computed links
+image::topoprocessing/LinkComputation.png[width=461]
+
+==== In-Depth Look
+Main logic behind Link Computation is executed in LinkCalculator operator. Required information are passed to LinkCalculator through LinkComputation section of topology request. This section is defined in topology-link-computation.yang file. Main logic also covers cases when some underlay nodes may not pass through other topology operators.
+
+===== Link Computation Model
+There are three essential information for link computations. All of them are provided within LinkComputation section. These information are:
+
+* output model
+
+[source, yang]
+----
+leaf output-model {
+    type identityref {
+        base topo-corr:model;
+    }
+    description "Desired output model for computed links.";
+}
+----
+
+* overlay topology with new nodes
+
+[source, yang]
+----
+container node-info {
+    leaf node-topology {
+        type string;
+        mandatory true;
+        description "Topology that contains aggregated nodes.
+                     This topology will be used for storing computed links.";
+    }
+    uses topo-corr:input-model-grouping;
+}
+----
+
+* underlay topologies with original links
+
+[source, yang]
+----
+list link-info {
+    key "link-topology input-model";
+    leaf link-topology {
+        type string;
+        mandatory true;
+        description "Topology that contains underlay (base) links.";
+    }
+    leaf aggregated-links {
+        type boolean;
+        description "Defines if link computation should be based on supporting-links.";
+    }
+    uses topo-corr:input-model-grouping;
+}
+----
+
+Whole section is augmented into `network-topology:topology`. By placing this section out of correlations section allows to send link computation request separately from topology operations request.
+
+===== Main Logic
+Taking into consideration that some of underlay nodes may not transform into overlay nodes (they are filtered out for example), we created two possible states for links:
+
+* matched - link is considered as matched when both original source and destination node were transformed to overlay nodes
+* waiting - if original source or destination or both nodes are missing from overlay topology, link is considered as waiting
+
+All links in waiting state are stored in waitingLinks list, already matched links are stored in matchedLinks list and overlay nodes are in storedOverlayNodes list. All processing is based only on informations in these lists.
+Processing created, updated and removed changes are slightly differnet and are descibed in next sections separately. 
+
+*Processing Created Changes*
+
+Created items can be either nodes or links, depending on the type of listener from which they came. In case of link, it is immediately added to waitingLinks and calculation for possible overlay link creations (calculatePossibleLink) is started. we can see flow diagram for this process in following picture:
+
+.Flow diagram of processing created changes
+image::topoprocessing/LinkComputationFlowDiagram.png[width=500]
+
+Searching for source and destination node in calculatePossibleLink method runs over each node in storedOverlayNodes and id's of each supporting nodes are compared against id from underlay link's source and destination node. If there are any node missing links remain in waiting state. If both source and destination nodes are found, corresponding overlay node is recorded as new source or destination and link is removed from waitingLinks and new CalculatedLink is added to matched links. At the end new link (if there is some) is written into the datastore.
+
+In case of created item is overlayNode this is added to storedOverlayNodes and for every link in waitingLinks is started calculatePossibleLink process. 
+
+*Processing Updated Changes*
+
+Difference from processing created changes is that we have three types of updated item. Change in overlay node, change in underlay link referencing to waiting link and change in underlay link referencing to already matched link.
+
+* In case of change in matched link, this must be recalculated and based on process result it will remain matched with new source and destination nodes or will be returned to waiting links. If the link will be moved back to waiting state it also has to be removed from datastore.
+* In case of change in waiting link, this is passed to calculation process and based on result will remain in waiting state or be promoted to matched state.
+* In case of change in overlay node, storedOverlayNodes must be updated properly, all matching links must be recalculated and all waiting links can be passed to calculation process again.
+
+*Processing Removed Changes*
+
+Same as for processing updated changes there can be three types of removed items.
+
+* In case of waiting link removal, the link is just removed from waitingLinks
+* In case of matched link removal, the link is removed from matchingLinks and datastore
+* In case of overlay node removal, the node must be removed form storedOverlayNodes and all matching links must be recalculated
+
