@@ -1,0 +1,76 @@
+==== Chapter Overview
+The Topology Processing Framework allows for the creation of aggregated topologies and filtered views over existing topologies. Currently, aggregation and filtration is supported for topologies that follow https://github.com/opendaylight/yangtools/blob/master/model/ietf/ietf-topology/src/main/yang/network-topology%402013-10-21.yang[network-topology], opendaylight-inventory or i2rs model. When a request to create an aggregated or filtered topology is received, the framework creates one listener per underlay topology. Whenever any specified underlay topology is changed, the appropriate listener is triggered with the change and the change is processed. Two types of correlations (functionalities) are currently supported:
+
+* Aggregation
+** Unification
+** Equality
+* Filtration
+** NodeIpFiltration
+
+==== Terminology
+We use the term underlay item (physical node) for items (nodes, links, termination-points) from underlay and overlay item (logical node) for items from overlay topologies regardless of whether those are actually physical network elements.
+
+==== Aggregation
+Aggregation is an operation which creates an aggregated item from two or more items in the underlay topology if the aggregation condition is fulfilled. Requests for aggregated topologies must specify a list of underlay topologies over which the overlay (aggregated) topology will be created and a target field in the underlay item that the framework will check for equality.
+
+===== Create Overlay Node
+First, each new underlay item is inserted into the proper topology store. Once the item is stored, the framework compares it (using the target field value) with all stored underlay items from underlay topologies. If there is a target-field match, a new overlay item is created containing pointers to all 'equal' underlay items. The reference to newly created overlay item is set into referenced underlay items.
+
+*Equality case:*
+If a item doesn't fulfill the equality condition with any other items, processing finishes after adding the item into topology store. It will stay there, for future use, ready to create aggregated item with a new underlay item, with which it would satisfy condition to create overlay item.
+
+*Unification case:*
+An overlay item is created for all underlay items, even those which don't fulfill the equality condition with any other items. This means than an overlay item is created for every underlay item, but for items which satisfy the equality condition, an aggregated item is created.
+
+===== Update Node
+Processing of updated underlay items depends on whether the target field has been modified. If yes, then:
+
+* if the underlay item belonged to some overlay item, it is removed from that item. Next, if the aggregation condition on target field is satisfied, the item is inserted into other overlay item. If the condition isn't met then:
+** in equality case - the item will not be present in overlay topology.
+** in unification case - the item will create overlay item with single underlay item and this will be written into overlay topology.
+* if the item didn't belong to some overlay item, it is checked again for aggregation with other underlay items.
+
+===== Remove Node
+The underlay item is removed from corresponding topology store, from it's overlay item (if it belongs to one) and this way it is also removed from overlay topology.
+
+*Equality case:*
+If there is only one underlay item left in the overlay item, the overlay item is removed.
+
+*Unification case:*
+The overlay item is removed once it refers to no underlay item.
+
+==== Filtration
+Filtration is an operation which results in creation of overlay topology containing only items fulfilling conditions set in the topoprocessing request.
+
+===== Create Undrelay Item
+If created item passes all filtrators and their conditions, then it is stored in TopologyStore and creation notification is delivered into topology manager. No operation otherwise.
+
+===== Update Underlay Item
+If the item is checked for presence in topology store:
+
+* if it is present in topology store:
+** if item meets filtering conditions then processUpdatedData notification is triggered
+** else processRemovedData notification is triggered
+* if item isn't present in topology store
+** if item meets filtering conditions then processCreatedData notification is triggered
+** else it is ignored
+
+===== Remove Underlay Item
+If underlay node is part of some overlay node, the overlay node is simply removed.
+
+===== Default Filter Types
+There are seven types of default filtrators defined in the framework:
+
+* Ipv4-address filtrator - checks if specified field is meets ipv4 address + mask criteria
+* Ipv6-address filtrator - checks if specified field is meets ipv6 address + mask criteria
+* Specific number filtrator - check for specific number
+* Specific string filtrator - checks for specific string
+* Range number filtrator - checks if specified field is higher than provided minimum and lower than provided maximum
+* Range string filtrator - checks if specified field is alphabetically greater than provided minimum and alphabetically lower than provided maximum
+* Script filtrator - allows user / application to implement his own Filtrator
+
+===== Register Custom Filtrator
+There might be some usecase that can't get by with default filtrators. For this case the framework offers the possibility to register custom filtrator.
+
+==== Pre-Filtration / Filtration & Aggregation
+This feature was introduced in order to lower memory and performance demands. Basically it is combination of filtration & aggregation operations. First, uninteresting items are filtered out and then aggregation is performed only on items that passed filtration. This way the framework saves on computer time. PreAggregationFiltrator and TopologyAggregator share the same TopoStoreProvider (and thus topology store) which results in lower memory demands (as underlay items are stored only in one topology store - they aren't stored twice).
