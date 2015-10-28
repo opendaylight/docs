@@ -242,23 +242,119 @@ NOVNCPROXY_URL="http://<CONTROLLER_NODE_IP_ADDRESS>:6080/vnc_auto.html" #Add Con
 VNCSERVER_LISTEN=$HOST_IP
 VNCSERVER_PROXYCLIENT_ADDRESS=$VNCSERVER_LISTEN
 
+====== Devstack Kilo_Liberty Control Node
+[source]
+#IP Details
+HOST_IP=<CONTROL_NODE_MANAGEMENT_IF_IP_ADDRESS> #Please Add The Control Node IP Address in this line
+SERVICE_HOST=$HOST_IP
+LOGFILE=stack.sh.log
+SCREEN_LOGDIR=/opt/stack/data/log
+LOG_COLOR=False
+disable_service n-net
+enable_service q-svc
+enable_service q-agt
+enable_service q-meta
+disable_service q-l3
+enable_service n-cpu
+enable_service q-dhcp
+enable_service n-cauth
+enable_service neutron
+enable_service tempest
+ADMIN_PASSWORD=labstack
+MYSQL_PASSWORD=supersecret
+RABBIT_PASSWORD=supersecret
+SERVICE_PASSWORD=supersecret
+SERVICE_TOKEN=supersecrettoken
+ENABLE_TENANT_TUNNELS=True
+NEUTRON_CREATE_INITIAL_NETWORKS=False
+#enable_plugin networking-odl http://git.openstack.org/openstack/networking-odl stable/kilo # Please uncomment this line if you
+want to use stable/kilo branch
+#enable_plugin networking-odl http://git.openstack.org/openstack/networking-odl stable/liberty # Please uncomment this line if you
+want to use stable/liberty branch
+ODL_MODE=externalodl
+ODL_MGR_IP=<ODL_IP_ADDRESS> # Please Add the ODL IP Address in this line
+ODL_PORT=8080
+ODL_USERNAME=admin
+ODL_PASSWORD=admin
+OVS_PHYSICAL_BRIDGE=br-int
+Q_OVS_USE_VETH=True
+Q_ML2_TENANT_NETWORK_TYPE=local
+VNCSERVER_PROXYCLIENT_ADDRESS=$SERVICE_HOST
+VNCSERVER_LISTEN=0.0.0.0
+MYSQL_HOST=$SERVICE_HOST
+RABBIT_HOST=$SERVICE_HOST
+GLANCE_HOSTPORT=$SERVICE_HOST:9292
+KEYSTONE_AUTH_HOST=$SERVICE_HOST
+KEYSTONE_SERVICE_HOST=$SERVICE_HOST
+[[post-config|/etc/neutron/plugins/ml2/ml2_conf.ini]]
+[agent]
+minimize_polling=True
+
+====== Devstack Kilo_Liberty Compute Node
+[source]
+#IP Details
+HOST_IP=<COMPUTE_NODE_IP_ADDRESS>
+SERVICE_HOST=<CONTROL_NODE_IP_ADDRESS>
+LOGFILE=stack.sh.log
+SCREEN_LOGDIR=/opt/stack/data/log
+LOG_COLOR=False
+RECLONE=yes # Make it "no" after stacking successfully the first time
+#OFFLINE=True # Uncomment this after stacking successfully the first time
+disable_all_services
+enable_service n-cpu
+NOVA_VNC_ENABLED=True
+ADMIN_PASSWORD=labstack
+MYSQL_PASSWORD=supersecret
+RABBIT_PASSWORD=supersecret
+SERVICE_PASSWORD=supersecret
+SERVICE_TOKEN=supersecrettoken
+ENABLE_TENANT_TUNNELS=True
+NEUTRON_CREATE_INITIAL_NETWORKS=False
+#enable_plugin networking-odl http://git.openstack.org/openstack/networking-odl stable/kilo # Please uncomment this line if you
+want to use stable/kilo branch
+#enable_plugin networking-odl http://git.openstack.org/openstack/networking-odl stable/liberty # Please uncomment this line if you
+want to use stable/liberty branch
+ODL_MODE=compute
+ODL_MGR_IP=<ODL_IP_ADDRESS> # Please Add the ODL IP Address in this line
+ODL_PORT=8080
+ODL_USERNAME=admin
+ODL_PASSWORD=admin
+OVS_PHYSICAL_BRIDGE=br-int
+VNCSERVER_PROXYCLIENT_ADDRESS=$HOST_IP
+VNCSERVER_LISTEN=0.0.0.0
+MYSQL_HOST=$SERVICE_HOST
+RABBIT_HOST=$SERVICE_HOST
+GLANCE_HOSTPORT=$SERVICE_HOST:9292
+KEYSTONE_AUTH_HOST=$SERVICE_HOST
+KEYSTONE_SERVICE_HOST=$SERVICE_HOST
+[[post-config|/etc/neutron/plugins/ml2/ml2_conf.ini]]
+[agent]
+minimize_polling=True
+
 NOTE:
    We have to comment OFFLINE=TRUE in local.conf files, this will make all the installations to happen automatically.
    RECLONE=yes only when we set up the DevStack environment from scratch.
 
 =====  Get Devstack (All nodes)
-Install git application using
+* Install git application using
+** sudo apt-get install git
+* Get devstack
+** git clone https://git.openstack.org/openstack-dev/devstack;
+* Switch to stable/Juno Version branch
+** cd devstack
+** git checkout stable/juno
 
+NOTE:
+   If you want to use stable/kilo Version branch, Please execute the below command in devstack folder
+   
+   
+   git checkout stable/kilo
 
-sudo apt-get install git
-get devstack
-git clone https://git.openstack.org/openstack-dev/devstack;
-
-Switch to stable/Juno Version branch
-
-
-cd devstack
-git checkout stable/juno
+NOTE:
+   If you want to use stable/liberty Version branch, Please execute the below command in devstack folder
+   
+   
+   git checkout stable/liberty
 
 ===== Stack Control Node
 
@@ -266,7 +362,8 @@ git checkout stable/juno
 
   cd devstack in the controller node
 
-* Copy the contents of local.conf (devstack control node)  and save it as "local.conf" in the devstack.
+* Copy the contents of local.conf for juno (devstack control node) from <<_devstack_control,DevStack Control>>  and save it as "local.conf" in the "devstack".
+* Copy the contents of local.conf for kilo and liberty (devstack control node) from <<_devstack_kilo_liberty_control_node,Devstack Kilo_Liberty Control Node>> and save it as "local.conf" in the "devstack".
 * Please modify the IP Address values as required.
 * Stack the node
 
@@ -282,7 +379,8 @@ git checkout stable/juno
 
   cd devstack in the controller node
 
-* Copy the contents of local.conf (devstack compute node)  and save it as local.conf in the 'devstack'''.
+* Copy the contents of local.conf for juno (devstack compute node) from <<_devstack_compute,DevStack Compute>> and save it as "local.conf" in the "devstack".
+* Copy the contents of local.conf file for kilo and liberty (devstack compute node) from <<_devstack_kilo_liberty_compute_node,Devstack Kilo_Liberty Compute Node>> and save it as "local.conf" in the "devstack".
 * Please modify the IP Address values as required.
 * Stack the node
 
@@ -293,6 +391,7 @@ git checkout stable/juno
 * stack.sh prints out This is your host ip: <COMPUTE_NODE_IP_ADDRESS>
 * Execute the command 'sudo ovs-vsctl show' in the control node terminal and verify if the bridge 'br-int'  is created.
 * The output of the ovs-vsctl show will be similar to the one seen in control node.
+
 ===== Additional Verifications
 * Please visit the OpenDaylight DLUX GUI after stacking all the nodes, http://<ODL_IP_ADDRESS>:8181/dlux/index.html. The switches, topology and the ports that are currently read can be validated.
 
