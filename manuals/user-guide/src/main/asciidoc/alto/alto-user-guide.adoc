@@ -1,12 +1,24 @@
 == ALTO User Guide
 
+=== Prerequisites
+
+Please make sure that you install the *Lithium* version of ALTO. You could
+download the latest pre-built file from https://www.opendaylight.org/downloads[here],
+or download the historical releases from https://www.opendaylight.org/software/release-archives[here].
+
+If you want to build ALTO from the source code, you should clone ALTO from
+https://git.opendaylight.org/gerrit/#/admin/projects/alto[Gerrit]
+or https://github.com/opendaylight/alto[GitHub],
+and *checkout to Lithium branch*.
+
 === Overview
+
 The ALTO project provides support for _Application Layer Traffic
-Optimization_ services defined in link:https://tools.ietf.org/html/rfc7285[RFC
+Optimization_ services defined in https://tools.ietf.org/html/rfc7285[RFC
 7285].
 
 In the Lithium release, ALTO uses the YANG model described in
-link:https://tools.ietf.org/html/draft-shi-alto-yang-model-03[this draft].
+https://tools.ietf.org/html/draft-shi-alto-yang-model-03[this draft].
 
 === ALTO Architecture
 
@@ -42,11 +54,14 @@ configuration files.
 To enable ALTO, the features must be installed first.
 
 [source,bash]
+------------------------
 karaf > feature:install odl-alto-provider
 karaf > feature:install odl-alto-manager
 karaf > feature:install odl-alto-northbound
 karaf > feature:install odl-alto-hosttracker
+------------------------
 
+[[manage-data,Managing Data with RESTCONF]]
 ==== Managing Data with RESTCONF
 
 After installing `odl-alto-provider` feature in karaf, it is possible to manage
@@ -58,6 +73,7 @@ With the example input below you can insert a network map into the data store,
 either by filling the form in the API doc page, or by using tools such as `curl`.
 
 [source,bash]
+------------------------
 HOST_IP=localhost                   # IP address of the controller
 CREDENTIAL=admin:admin              # username and password for authentication
 BASE_URL=$HOST_IP:8181/restconf/config
@@ -66,23 +82,32 @@ RESOURCE_ID=test_odl                # Should match the one in the input file
 curl -X PUT -H "content-type:application/yang.data+json" \
             -d @example-input.json -u $CREDENTIAL \
             http://$BASE_URL/$SERVICE_PATH/$RESOURCE_ID
+------------------------
+
+Below is the content of example-input.json.
 
 [source,json]
 include::example-input.json[]
 
+*note*: There need to be no space and newline in your JSON file.
+Please delete all spaces and newlines if you use the example above.
+
 [[read-restconf]]Use the following command to see the results:
 
 [source,bash]
+------------------------
 HOST_IP=localhost                   # IP address of the controller
 CREDENTIAL=admin:admin              # username and password for authentication
 BASE_URL=$HOST_IP:8181/restconf/config
 SERVICE_PATH=alto-service:resources/alto-service:network-maps/alto-service:network-map
 RESOURCE_ID=test_odl
 curl -X GET -u $CREDENTIAL http://$BASE_URL/$SERVICE_PATH/$RESOURCE_ID
+------------------------
 
 Use `DELETE` method to remove the data from the data store.
 
 [source,bash]
+------------------------
 HOST_IP=localhost                   # IP address of the controller
 CREDENTIAL=admin:admin              # username and password for authentication
 BASE_URL=$HOST_IP:8181/restconf/config
@@ -90,28 +115,86 @@ SERVICE_PATH=alto-service:resources/alto-service:network-maps/alto-service:netwo
 RESOURCE_ID=test_odl
 curl -X DELETE -H "content-type:application/yang.data+json" \
                -u $CREDENTIAL http://$BASE_URL/$SERVICE_PATH/$RESOURCE_ID
+------------------------
 
-==== Using `alto-manager`
+==== Managing Data with RestConf API Explorer
+
+Use the command below in Karaf to enable the RestConf API Explorer.
+And you could access this API Explorer from http://<controller-ip>:8181/apidoc/explorer/index.html
+
+[source,bash]
+------------------------
+karaf > feature:install odl-restconf-all
+------------------------
+
+You can find alto-service in the API Explorer and click on it.
+
+Find **/config/alto-service:resources/network-maps/{resourcce-id}/**
+and then click on the one which begins with PUT.
+
+Fill in the value of **resource-id** and the **(config)network-map**.
+Please make sure that the value of resource-id is equal to the value of **"alto-service:resource-id"**
+in the (config)network-map and the input of the (config)network-map is similar to the JSON file showed
+in **Managing Data with RESTCONF**. After that, just click on **try it out!**.
+
+For example, if you use the JSON file showed in <<manage-data, Managing Data with RESTCONF>>,
+you need to fill the value of **resource-id** with **test_odl**.
+
+.Restconf API Explorer For Put a networkmap
+image::alto-put-networkmap.png["Put networkmap image",width=500]
+
+If you receive the response below, you have put the network map into the ALTO successfully!
+
+.Upload the Networkmap successfully
+image::alto-put-success.png["Success image",width=500]
+
+If you want to see the network map that you have put in, you can click on **/config/alto-service:resources/network-maps/{resourcce-id}/**
+which begins with **GET**. Type in your resource-id and click on **try it out!**.
+
+Alternatively, you can also use curl command mentioned in <<manage-data, Managing Data with RESTCONF>> to get the result.
+
+.Check the network map with apidoc
+image::alto-networkmap-result.png["Result image",width=500]
+
+==== Managing Data with `alto-manager`
 
 The `alto-manager` package provides a karaf command line tool which wraps up
 the functions described in the last section.
 
 [source,bash]
-karaf > alto-create <type> <resource-file>
-karaf > alto-delete <type> <resource-id>
+------------------------
+karaf > alto:create <type> <resource-file
+karaf > alto:delete <type> <resource-id>
+------------------------
 
-Currently only `network-map` and `cost-map` are supported. Also the resource
-files used in `alto-manager` follow the RFC7285-compatible format instead of
-RESTCONF format.
+Currently `network-map`, `cost-map` and `endpoint-property-map` are supported.
+Also the resource files used in `alto-manager` follow the RFC7285-compatible format
+instead of RESTCONF format.
 
 The following example shows how to use `alto-manager` to put a network map into
 the data store.
 
 [source,bash]
-karaf > alto-create network-map example-rfc7285-networkmap.json
+------------------------
+karaf > alto:create network-map example-rfc7285-networkmap.json
+------------------------
+
+Below is the content of example-rfc7285-networkmap.json.
 
 [source,json]
 include::example-rfc7285-networkmap.json[]
+
+Use the following command to see the network map you have just put.
+
+[source,bash]
+------------------------
+HOST_IP=localhost                   # IP address of the controller
+BASE_URL=$HOST_IP:8080/controller/nb/v2/alto
+SERVICE_PATH=networkmap
+RESOURCE_ID=test_odl
+curl -X GET -H "Content-type: application/networkmap+json" \
+            http://$BASE_URL/$SERVICE_PATH/$RESOURCE_ID
+------------------------
 
 ==== Using `alto-hosttracker`
 
