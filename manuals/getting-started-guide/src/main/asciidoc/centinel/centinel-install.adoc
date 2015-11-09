@@ -1,0 +1,56 @@
+== Centinel Installation Guide
+This document is for the user to install the artifacts that are needed
+for using Centinel functionality in the ODL Controller by enabling the
+default centinel feature. Centinel is a distributed reliable framework
+for collection, aggregation and analysis of streaming data which is
+added in OpenDaylight Beryllium Release. 
+
+=== Overview
+The Centinel project aims at providing a distributed, reliable framework for efficiently collecting, aggregating and sinking streaming data across Persistence DB and stream analyzers (example: Graylog, Elastic search, Spark, Hive etc.). This framework enables SDN applications/services to receive events from multiple streaming sources (example: Syslog, Thrift, Avro, AMQP, Log4j, HTTP/REST etc).
+
+In Beryllium, we develop "Log Service" and plug-in for log analyzer (i.e. Graylog). Log service will do processing of real time events coming from log analyzer. Additionally, stream collector (flume and sqoop based) that will collect logs from Opendaylight and sink it to persistence service (integrated with TSDR). Also includes Restconf interface to inject events to north bound applications for real-time analytic/network configuration. Centinel User Interface (web interface) will be available to operators to enable rules/alerts/dashboard etc.
+
+
+=== Pre Requisites for Installing Centinel. 
+* Recent Linux distribution - 64bit/4GB RAM
+* Java Virtual Machine 1.7 or above
+* Apache Maven 3.1.1 or above
+
+There are some additional pre-requisites for centinel, which can be done by integrate Graylog server, Apache Drill, Apache Flume and Hbase.
+
+=== Preparing for Installation
+No additional steps required for preparation of installing centinel feature. 
+
+=== Install the following features, for eg. command for installing restconf feature is "feature:install odl-restconf-all"
+<pre>
+odl-mdsal-all
+odl-restconf-all
+odl-centinel-all
+</pre>
+
+=== Installing Centinel with Graylog server, Apache Drill, Apache Flume and Hbase
+(TBD)
+ 
+
+=== Verifying your Installation
+If the feature install was successful you should be able to see the following centinel commands added. 
+
+**centinel:list 
+**centinel:purgeAll 
+
+==== Troubleshooting
+Check the ../data/log/karaf.log for any exception related to Centinel related features  
+
+
+=== Upgrading From a Previous Release
+Beryllium being the first release supporting centinel functionality, only fresh installation is possible. 
+
+=== Uninstalling Centinel with default datastore 
+To uninstall the centinel functionality with the default store, you need to do the following from karaf console 
+* feature:uninstall centinel-all 
+
+Its recommended to restart the Karaf container after uninstallation of the centinel functionality with the default store.
+
+The document will be updated.
+
+

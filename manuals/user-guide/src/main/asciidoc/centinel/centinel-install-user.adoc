@@ -1,0 +1,39 @@
+== Centinel User Guide
+The Centinel project aims at providing a distributed, reliable framework for
+efficiently collecting, aggregating and sinking streaming data across Persistence
+DB and stream analyzers (example: Graylog, Elastic search, Spark, Hive etc.).
+This document contains configuration, administration, management, using
+sections for the feature.
+
+=== Overview
+In the Beryllium Release of Centinel, This framework enables SDN applications/services to receive events from multiple streaming sources (example: Syslog, Thrift, Avro, AMQP, Log4j, HTTP/REST etc) and execute actions like network configuration/batch processing/real-time analytics. Provides Log Service to assist operators running SDN ecosystem by installing the feature odl-centinel-all. 
+
+With the configurations development of "Log Service" and plug-in for log analyzer (i.e. Graylog) will take place. Log service will do processing of real time events coming from log analyzer. Additionally, stream collector (flume and sqoop based) that will collect logs from Opendaylight and sink it to persistence service (integrated with TSDR). Also includes Restconf interface to inject events to north bound applications for real-time analytic/network configuration. Centinel User Interface (web interface) will be available to operators to enable rules/alerts/dashboard etc. 
+
+
+=== Centinel core features
+Core features of Centinel framework are:
+
+* Stream collector - Collecting, aggregating and sinking streaming data
+* Log Service - Listen log stream events coming from log analyzer
+* Log Service - Enables user to configure rules (example: alerts, diagnostic, health, dashboard etc.)
+* Log Service - Performs event processing/analytics
+* User Interface - Enable set-rule, search, visualize, alert, diagnostic, dashboard etc.
+* Adaptor - Log analyzer plug-in to Graylog and a generic data-model to extend to other stream analyzers (Logstash etc.)
+* REST Services - Northbound APIs for Log Service and Steam collector framework
+* Leverages - TSDR persistence service, data query, purging and elastic search
+
+=== Centinel Architecture
+The following wiki pages capture the Centinel Model/Architecture 
+
+a. https://wiki.opendaylight.org/view/Centinel:Main
+b. https://wiki.opendaylight.org/view/Project_Proposals:Centinel
+c. https://wiki.opendaylight.org/images/0/09/Centinel-08132015.pdf
+
+
+
+=== Administering or Managing Centinel with default configuration 
+Once the Centinel default feature (odl-centinel-all) is enabled, the centinel captured OpenFlow statistics metrics can be accessed from Karaf Console by executing the command. 
+
+
+The document will be updated.
