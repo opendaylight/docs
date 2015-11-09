@@ -1,0 +1,24 @@
+== OpenDaylight Controller Shield User Guide
+
+=== Introduction
+This user guide will help to setup the usecplugin for Beryllium release and contains the configuration for settimg up along database.
+
+=== Components
+
+*Controller Shield Database  : This component is used to create and insert the data into the local database (Sqlite).
+*Controller Shield Rest API  : It is a part of controller northbound, which gives the required information by querying Controller Shield RPC.
+*Controller Shield Notification : This component notify the third party applications about the anticipated threat on the controller.
+
+===Running Controller Shield
+
+* Install the following features, for eg. command for installing restconf feature is "feature:install odl-restconf-all"
+<pre>
+odl-restconf-all
+odl-openflowplugin-all
+odl-usecplugin-api
+odl-usecplugin
+</pre>
+
+Please Refer: https://wiki.opendaylight.org/view/Controller_Shield:_Beryllium_User_Guide
+
+

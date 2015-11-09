@@ -1,0 +1,15 @@
+==Overview==
+This project aims to provide deveopment guide for OpenDaylight Controller Shield project. 
+
+=== Prerequisite ===
+* A recent Linux distribution - 64bit/4GB RAM
+* Java Virtual Machine 1.7 or above
+* Apache Maven 3.1.1 or above
+* Mininet VM
+
+Follow the installation steps of controller in https://wiki.opendaylight.org/view/OpenDaylight_Controller:Pulling,_Hacking,_and_Pushing_the_Code_from_the_CLI 
+
+=== How to start and run ===
+* Download the controller distribution and  run the controller using ./karaf command.
+
+The document will be updated
