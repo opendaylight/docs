@@ -164,7 +164,7 @@ along with their AFI number and LCAF type, including the prefix used for
 disambiguation of potential overlap, and examples output.
 
 .LISP Address Formats
-[align="right",options="header",cols="<s,>,>,<,<l"]
+[align="right",options="header",cols="<2s,>,>,<,<4l"]
 |=====
 |         Name           |  AFI  | LCAF |  Prefix  |  Text Rendering
 | No Address             |     0 |    - | no:      | No Address Present
