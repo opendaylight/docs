@@ -1,6 +1,7 @@
 == Getting and Installing OpenDaylight
 
 === Downloading and installing OpenDaylight
+
 The default distribution can be found on the OpenDaylight software
 download page: http://www.opendaylight.org/software/downloads
 
@@ -24,22 +25,22 @@ For Example:
 |===
 a|
 ----
-$ ls distribution-karaf-0.3.0-Lithium.zip
-distribution-karaf-0.3.0-Lithium.zip
-$ unzip distribution-karaf-0.3.0-Lithium.zip
-Archive:  distribution-karaf-0.3.0-Lithium.zip
-   creating: distribution-karaf-0.3.0-Lithium/
-   creating: distribution-karaf-0.3.0-Lithium/configuration/
-   creating: distribution-karaf-0.3.0-Lithium/data/
-   creating: distribution-karaf-0.3.0-Lithium/data/tmp/
-   creating: distribution-karaf-0.3.0-Lithium/deploy/
-   creating: distribution-karaf-0.3.0-Lithium/etc/
-   creating: distribution-karaf-0.3.0-Lithium/externalapps/
+$ ls distribution-karaf-0.4.0-Beryllium.zip
+distribution-karaf-0.4.0-Beryllium.zip
+$ unzip distribution-karaf-0.4.0-Beryllium.zip
+Archive:  distribution-karaf-0.4.0-Beryllium.zip
+   creating: distribution-karaf-0.4.0-Beryllium/
+   creating: distribution-karaf-0.4.0-Beryllium/configuration/
+   creating: distribution-karaf-0.4.0-Beryllium/data/
+   creating: distribution-karaf-0.4.0-Beryllium/data/tmp/
+   creating: distribution-karaf-0.4.0-Beryllium/deploy/
+   creating: distribution-karaf-0.4.0-Beryllium/etc/
+   creating: distribution-karaf-0.4.0-Beryllium/externalapps/
 ...
-  inflating: distribution-karaf-0.3.0-Lithium/bin/start.bat
-  inflating: distribution-karaf-0.3.0-Lithium/bin/status.bat
-  inflating: distribution-karaf-0.3.0-Lithium/bin/stop.bat
-$ cd distribution-karaf-0.3.0-Lithium
+  inflating: distribution-karaf-0.4.0-Beryllium/bin/start.bat
+  inflating: distribution-karaf-0.4.0-Beryllium/bin/status.bat
+  inflating: distribution-karaf-0.4.0-Beryllium/bin/stop.bat
+$ cd distribution-karaf-0.4.0-Beryllium
 $ ./bin/karaf
 
     ________                       ________                .__  .__       .__     __
@@ -58,7 +59,7 @@ $ ./bin/karaf
 
 === Installing the components
 
-The section describes a list of components in OpenDaylight Lithium and
+The section describes a list of components in OpenDaylight Beryllium and
 the relevant Karaf feature to install in order to enable that component.
 
 To install a feature use the following command:
@@ -77,7 +78,7 @@ Multiple features can be installed using the following command:
 feature:install <feature1-name> <feature2-name> ... <featureN-name>
 -----
 
-.Lithium Components
+.Beryllium Components
 [options="header",cols="18%,50%,18%,14%"]
 |====
 | Component Name                     | Component Description | Karaf feature name | Compatibility
@@ -123,7 +124,7 @@ feature:install <feature1-name> <feature2-name> ... <featureN-name>
 
 In the table a compatibility value of *all* means that it can be run with other features. A value of *self+all* indicates that the feature can be installed with other features with a value of *all*, but may interact badly other features with a value of *self+all*.
 
-.Experimental Lithium Components
+.Experimental Beryllium Components
 [options="header",cols="18%,50%,18%,14%"]
 |====
 | Component Name                     | Component Description | Karaf feature name | Compatibility
