@@ -1,7 +1,7 @@
 == SXP Developer Guide
 
 === Overview
-SXP (Source-Group Tag eXchange Protocol) project is an effort to enhance OpenDaylight platform with IP-SGT (IP Address to Source Group Tag) bindings that can be learned from connected SXP-aware network nodes. The current implementation supports SXP protocol version 4 according to the Smith, Kandula - SXP https://tools.ietf.org/html/draft-smith-kandula-sxp-02[IETF draft]. All protocol legacy versions 1-3 are supported as well. Additionally, version 4 adds bidirectional connection type as an extension of a unidirectional one.
+SXP (Source-Group Tag eXchange Protocol) project is an effort to enhance OpenDaylight platform with IP-SGT (IP Address to Source Group Tag) bindings that can be learned from connected SXP-aware network nodes. The current implementation supports SXP protocol version 4 according to the Smith, Kandula - SXP https://tools.ietf.org/html/draft-smith-kandula-sxp-04[IETF draft] and grouping of peers and creating filters based on ACL/Prefix-list syntax for filtering outbound and inbound IP-SGT bindings. All protocol legacy versions 1-3 are supported as well. Additionally, version 4 adds bidirectional connection type as an extension of a unidirectional one.
 
 === SXP Architecture
 The SXP Server manages all connected clients in separate threads and a common SXP protocol agreement is used between connected peers. Each SXP network peer is modelled with its pertaining class, e.g., SXP Server represents the SXP Speaker, SXP Listener the Client. The server program creates the ServerSocket object on a specified port and waits until a client starts up and requests connect on the IP address and port of the server. The client program opens a Socket that is connected to the server running on the specified host IP address and port.
@@ -17,6 +17,8 @@ The IP-SGT Manager handles bindings from multiple connections. If a new data has
 The IP-SGT Manager also contains RPCs that can be used by other OpenDaylight plugins, or by making REST calls, to add, update or to delete bindings in or from the SXP-database.
 
 The SXP Binding Dispatcher represents a selector that will decides how many data from the SXP-database will be sent and when. It is responsible for message content composition based on maximum message length.
+
+The SXP Binding Filters handles filtering of outcoming and incoming IP-SGT bindings according to BGP filtering using ACL and Prefix List syntax for specifiing filter.
 
 === Key APIs and Interfaces
 As this project is fairly small, it provides only few features that install and
@@ -37,4 +39,4 @@ Main logic and core features
 
 === API Reference Documentation
 https://wiki.opendaylight.org/images/9/91/SXP_Restconf_Interface_and_Dynamic_Tree.pdf[RESTCONF Interface and Dynamic Tree]
-
+https://wiki.opendaylight.org/images/6/6e/SXP_Specification_and_Architecture_v03.pdf[Specification and Architecture]

@@ -1,7 +1,7 @@
 == SXP User Guide
 
 === Overview
-SXP (Source-Group Tag eXchange Protocol) project is an effort to enhance OpenDaylight platform with IP-SGT (IP Address to Source Group Tag) bindings that can be learned from connected SXP-aware network nodes. The current implementation supports SXP protocol version 4 according to the Smith, Kandula - SXP https://tools.ietf.org/html/draft-smith-kandula-sxp-02[IETF draft]. All protocol legacy versions 1-3 are supported as well. Additionally, version 4 adds bidirectional connection type as an extension of a unidirectional one.
+SXP (Source-Group Tag eXchange Protocol) project is an effort to enhance OpenDaylight platform with IP-SGT (IP Address to Source Group Tag) bindings that can be learned from connected SXP-aware network nodes. The current implementation supports SXP protocol version 4 according to the Smith, Kandula - SXP https://tools.ietf.org/html/draft-smith-kandula-sxp-04[IETF draft] and grouping of peers and creating filters based on ACL/Prefix-list syntax for filtering outbound and inbound IP-SGT bindings. All protocol legacy versions 1-3 are supported as well. Additionally, version 4 adds bidirectional connection type as an extension of a unidirectional one.
 
 === SXP Architecture
 The SXP Server manages all connected clients in separate threads and a common SXP protocol agreement is used between connected peers. Each SXP network peer is modelled with its pertaining class, e.g., SXP Server represents the SXP Speaker, SXP Listener the Client. The server program creates the ServerSocket object on a specified port and waits until a client starts up and requests connect on the IP address and port of the server. The client program opens a Socket that is connected to the server running on the specified host IP address and port.
@@ -17,6 +17,8 @@ The IP-SGT Manager handles bindings from multiple connections. If a new data has
 The IP-SGT Manager also contains RPCs that can be used by other OpenDaylight plugins, or by making REST calls, to add, update or to delete bindings in or from the SXP-database.
 
 The SXP Binding Dispatcher represents a selector that will decides how many data from the SXP-database will be sent and when. It is responsible for message content composition based on maximum message length.
+
+The SXP Binding Filters handles filtering of outcoming and incoming IP-SGT bindings according to BGP filtering using ACL and Prefix List syntax for specifiing filter.
 
 === Configuring SXP
 The OpenDaylight Karaf distribution comes pre-configured with baseline SXP
@@ -156,6 +158,8 @@ Interoperability between different vendors. Vendors have different policy system
 OpenDaylight can aggregate the binding information from many devices and communicate it to a network element. For example, a firewall can use the IP-SGT binding information to know how to handle IPs based on the group-based ACLs it has set. But to do this with SXP alone, the firewall has to maintain a large number of network connections to get the binding information. This incurs heavy overhead costs to maintain all of the SXP peering and protocol information. OpenDaylight can aggregate the IP-group information so that the firewall need only connect to OpenDaylight. By moving the information flow outside of the network elements to a centralized position, we reduce the overhead of the CPU consumption on the enforcement element. This is a huge savings - it allows the enforcement point to only have to make one connection rather than thousands, so it can concentrate on its primary job of forwarding and enforcing.
 
 OpenDaylight can relay the binding information from one network element to others. Changes in group membership can be propagated more readily through a centralized model. For example, in a security application a particular host (e.g., user or IP Address) may be found to be acting suspiciously or violating established security policies. The defined response is to put the host into a different source group for remediation actions such as a lower quality of service, restricted access to critical servers, or special routing conditions to ensure deeper security enforcement (e.g., redirecting the host’s traffic through an IPS with very restrictive policies). Updated group membership for this host needs to be communicated to multiple network elements as soon as possible; a very efficient and effective method of propagation can be performed using OpenDaylight as a centralized point for relaying the information.
+
+OpenDayLight can create filters for exporting and recieving IP-SGTT bindings used on specific peer groups, thus can provide more complex maintaining of policy groups.
 
 Although the IP-SGT binding is only one specific piece of information, and although SXP is implemented widely in a single vendor’s equipment, bringing the ability of OpenDaylight to process and distribute the bindings, is a very specific immediate useful implementation of policy groups. It would go a long way to develop both the usefulness of OpenDaylight and of policy groups.
 
