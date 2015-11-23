@@ -3,11 +3,37 @@
 ==== Overview
 Description of classifier can be found in: https://datatracker.ietf.org/doc/draft-ietf-sfc-architecture/
 
+There are two types of classifier:
+
+. OpenFlow Classifier
+
+. Iptables Classifier
+
+==== OpenFlow Classifier
+
+OpenFlow Classifier implements the classification criteria based on OpenFlow rules deployed into an OpenFlow switch. An OpenVswitch will take the role of a classifier and performs various encapsulations such NSH, VLAN, MPLS, etc. In existing implementation, classifier can support NSH encapsulation. Matching information is based on ACL for MAC addresses, ports, protocol, IPv4 and IPv6. Supported protocols are TCP, UDP and SCTP. Actions information in the OF rules, shall be forwarding of the encapsulated packets with specific information related to the RSP.
+
+===== Classifier Architecture
+
+OVSDB Southbound interface is used to create an instance of a bridge in a specific location (via IP address). This bridge contains the OpenFlow rules that perform the classification of the packets and react accordingly. OpenFlow Southbound interface is used to translate the ACL information into OF rules within the OVS.
+
+NOTE: in order to create the instance of the bridge that takes the role of a classifier, an "empty" SFF must be created.
+
+===== Configuring Classifier
+. An empty SFF must be created in order to host the ACL that contains the classification information.
+. SFF data plane locator must be configured
+. Classifier interface must be mannually added to SFF bridge.
+
+===== Administering or Managing Classifier
+Classification information is based on MAC addresses, protocol, ports and IP. ACL gathers this information and is assigned to an RSP which turns to be a specific path for a Service Chain.
+
+==== Iptables Classifier
+
 Classifier manages everything from starting the packet listener to creation (and removal) of appropriate ip(6)tables rules and marking received packets accordingly. Its functionality is *available only on Linux* as it leverdges *NetfilterQueue*, which provides access to packets matched by an *iptables* rule. Classifier requires *root privileges* to be able to operate.
 
 So far it is capable of processing ACL for MAC addresses, ports, IPv4 and IPv6. Supported protocols are TCP and UDP.
 
-==== Classifier Architecture
+===== Classifier Architecture
 Python code located in the project repository sfc-py/common/classifier.py.
 
 NOTE: classifier assumes that Rendered Service Path (RSP) *already exists* in ODL when an ACL referencing it is obtained
@@ -23,11 +49,11 @@ Rules are created using appropriate iptables command. If the Access Control Entr
 
 NOTE: iptables *raw* table contains all created rules
 
-==== Configuring Classifier
+===== Configuring Classifier
 Classfier does't need any configuration. +
 Its only requirement is that the *second (2) Netfilter Queue* is not used by any other process and is *avalilable for the classifier*.
 
-==== Administering or Managing Classifier
+===== Administering or Managing Classifier
 Classfier runs alongside sfc_agent, therefore the commad for starting it locally is:
 
 	sudo python3.4 sfc-py/sfc_agent.py --rest --odl-ip-port localhost:8181 --auto-sff-name --nfq-class
