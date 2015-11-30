@@ -1,0 +1,27 @@
+== YANG-PUSH
+
+=== Overview
+The YANG PUBSUB project allows subscriptions to be placed on 
+targeted subtrees of YANG datastores residing on remote devices. 
+Changes in YANG objects within the remote subtree can be pushed
+to an OpenDaylight controller as specified without a requiring
+the controller to make a continuous set of fetch requests.
+
+Detail requirment for subscription defined in {i2rs-pub-sub-requirements} [https://datatracker.ietf.org/doc/draft-ietf-i2rs-pub-sub-requirements/]
+Netconf transport requirments defined in {netconf-yang-push} [netconf-yang-push: https://tools.ietf.org/html/draft-ietf-netconf-yang-push-00]
+Restconf transport requirments defined in {netconf-restconf-yang-push} [https://tools.ietf.org/html/draft-voit-netconf-restconf-yang-push-01]
+
+- YANG-PUSH project provides following features in ODL- Beryllium release:
+*create-subscription* rpc support from ietf-datastore-push@2015-10-15.yang with input extensions based on yangpush.yang model.
+  This RPC enables create subscription on a mountpoint device, which supports {netconf-yang-push} capabilities.  
+
+- Features for Future releases:
+*modify-subscription* rpc support for all mountpoint devices or perticular mountpoint device
+*delete-subscription* rpc support for all mountpoint devices or perticular mountpoint device
+*static subscription* configure a subscription directly using {netconf-yang-push} model.
+
+==== YANG-PUSH API
+TBD: A description of YANG-PUSH  API.
+
+=== API Reference Documentation
+TBD: Provide links to JavaDoc, REST API documentation, etc.
