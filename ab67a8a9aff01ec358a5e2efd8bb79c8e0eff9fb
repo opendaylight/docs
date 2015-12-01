@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5aaae553_d692e4f5",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/ovsdb/ovsdb-hwvtep-install.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 3972
+      },
+      "writtenOn": "2015-12-01T23:51:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aade967_69cc8136",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 78
+      },
+      "revId": "ab67a8a9aff01ec358a5e2efd8bb79c8e0eff9fb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aade967_09d14dcd",
         "filename": "manuals/getting-started-guide/src/main/asciidoc/ovsdb/ovsdb-sfc-install.adoc",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2015-11-12T17:01:08Z",
       "side": 1,
       "message": "All of this is already present above in the guide. Maybe just link to the appropriate sections.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 52
+      },
+      "revId": "ab67a8a9aff01ec358a5e2efd8bb79c8e0eff9fb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aaae553_f68fe0ca",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/ovsdb/ovsdb-sfc-install.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 3972
+      },
+      "writtenOn": "2015-12-01T23:51:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aade967_09d14dcd",
       "range": {
         "startLine": 7,
         "startChar": 0,
