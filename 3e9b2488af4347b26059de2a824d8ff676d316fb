@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aaae553_96630c1a",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/general_installation.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 3972
+      },
+      "writtenOn": "2015-12-01T23:59:45Z",
+      "side": 1,
+      "message": "Recommend deleting \" Beryllium\".  The link is to a list of all releases, the guide clearly for the title release, and it will remove the need to change the title for each release.",
+      "range": {
+        "startLine": 1,
+        "startChar": 39,
+        "endLine": 1,
+        "endChar": 48
+      },
+      "revId": "3e9b2488af4347b26059de2a824d8ff676d316fb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aaae553_b66888f6",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/general_installation.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 3972
+      },
+      "writtenOn": "2015-12-01T23:59:45Z",
+      "side": 1,
+      "message": "See above comment.",
+      "range": {
+        "startLine": 3,
+        "startChar": 44,
+        "endLine": 3,
+        "endChar": 53
+      },
+      "revId": "3e9b2488af4347b26059de2a824d8ff676d316fb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
