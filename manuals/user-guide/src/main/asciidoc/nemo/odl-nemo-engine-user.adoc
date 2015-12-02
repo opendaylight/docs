@@ -1,39 +1,26 @@
 == NEtwork MOdeling (NEMO)
-This section describes how to use the NEMO feature in OpenDaylight
-and contains contains configuration, administration, and management
-sections for the feature.
+With the network becoming more complicated, users and applications must handle more complex configurations to deploy new services. NEMO project aims to simplify the usage of network by providing a new intent northbound interface (NBI). Intent base networking is a new philosophy which allows users to express what they want, rather than how to implement. Except the structure style interface, NEMO project provides a language style interface which is Domain Specific Language (DSL).
+
+Instead of tons of APIs, users/applications just need to describe their intent without caring about complex physical devices and implementation means. The intent will be translated into detailed configurations on the devices in the NEMO engine.
 
 === Overview
-TBD: An overview of the NEMO feature and the use case and the
-audience who will use the feature.
+With the rapid development of network technology, many users have not only the demand for resources, but also the demand for services. To simplify the usage of network, based on the abstraction for network intent, NEMO project provides a unified network model and interface to apply for resources and deploy services on resources. With the new NBI, tenant could operate network resources and orchestrate network processing logic flexibly to construct abundant application. In addition to this, NEMO project provides a NEMO engine to resolve users’ intent, and produce detailed configurations of network devices. This section will present the abstraction model and the implementation mechanism of NEMO engine. 
 
 === NEMO Engine Architecture
-TBD: Information about NEMO Engine components and how they work together.
-Also include information about how the feature integrates with
-OpenDaylight.
+NEMO project provides an integral architecture to resolve handle the intent expressed with NEMO model. The overall architecture includes NBI style, NEMO engine, and renderers to physical network devices. 
 
-=== Configuring NEMO Engine
-TBD: Describe how to configure the NEMO Engine after installation.
+====North bound interface
+NEMO project provides two styles of rest APIs. One is structure style NBI, that is, the rest body will contain data structure defined in NEMO model. The other is language style NBI, that is, the rest body will contain NEMO script which is the combination of data structure. There are two examples to show the difference between these two styles.
 
-=== Administering or Managing NEMO Engine
-TBD: Include related command reference or  operations
-for using the NEMO Engine.
+====NEMO Engine
+This component is the essential part of NEMO engine, which implements the mapping from intent to southbound renderer.
+NEMO engine includes several functions for analyzing and handling intent.
+Create VN Space for each tenant, and prevent the conflict between VN Spaces;
+Check the syntax of users’ input;
+Map intent to virtual network according to specific rules;
+Map virtual network to renderer according physical network resources and status.
+After the handle of NEMO engine, the intent has been translated into detailed requirement for physical network which will be handled further by renderer.
 
-=== Tutorials
-Below are tutorials for NEMO Engine.
+====Renderer
+Renderer is middleware between NEMO engine and physical network devices. It receives the result of network requirement, and translates it into detailed configurations according to the characteristic of devices. And it will issued configurations by individual protocol, such as, OpenFlow, command line, etc. 
 
-==== Using NEMO Engine
-TBD: State the purpose of tutorial
-
-===== Overview
-TBD: An overview of the NEMO tutorial
-
-===== Prerequisites
-TBD: Provide any prerequisite information, assumed knowledge, or environment
-required to execute the use case.
-
-===== Target Environment
-TBD: Include any topology requirement for the use case.
-
-===== Instructions
-TBD: Step by step procedure for using NEMO Engine.
