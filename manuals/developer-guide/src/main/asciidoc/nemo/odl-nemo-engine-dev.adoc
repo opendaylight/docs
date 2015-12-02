@@ -1,19 +1,30 @@
 == NEtwork MOdeling (NEMO)
 
 === Overview
-TBD: Overview of the NEMO feature, what logical functionality it
-provides and why you might use it as a developer.
+With the rapid development of network technology, many users have not only the demand for resources, but also the demand for services. To simplify the usage of the network, based on the abstraction for network intent, the NEMO project provides a unified network model and interface to apply for resources and deploy services on resources. With the new North Bound Interface (NBI), a tenant can operate network resources and orchestrate network processing logic flexibly to construct an abundant application. In addition to this, the NEMO project provides a NEMO engine to resolve users’ intent and produce detailed configurations of network devices. This section will present the abstraction model and the implementation mechanism of NEMO engine.
 
 === NEMO Architecture
-TBD: NEMO components and how they work together.
-Also include information about how the feature integrates with
-OpenDaylight and architecture.
+The NEMO project provides an integral architecture to resolve and handle the intent expressed with NEMO model. The overall architecture includes a North Bound Interface (NBI), NEMO engine, and renderers to physical network devices.
+
+==== North bound interface
+The NEMO project provides two styles of rest APIs. One is structure-style NBI, that is, the rest body will contain data structures defined in the NEMO model. The other is language style NBI, that is, the rest body will contain a NEMO script which is the combination of data structures. There are two examples to show the difference between these two styles.
+
+==== NEMO Engine
+This component is the essential part of NEMO, which implements the mapping from intent to southbound renderer.
+NEMO engine includes several functions for analyzing and handling intent.
+
+* Create VN Space for each tenant, and prevent the conflict between VN Spaces;
+* Check the syntax of users’ input;
+* Map intent to virtual network according to specific rules;
+* Map virtual network to renderer according physical network resources and status.
+
+After being processed by the NEMO engine, the intent has been translated into detailed requirement for physical network which will be handled further by renderer.
+
+==== Renderer
+A renderer is middleware between the NEMO engine and physical network devices. It receives the result of network requirement, and translates it into detailed configurations according to the characteristics of the devices. It will issue configurations by individual protocol, such as, OpenFlow, command line, etc.
 
 === Key APIs and Interfaces
-TBD: Document the key things a user would want to use.
+NEMO project provides a core model to express users’ intent of network usage. 
 
 ==== NEMO Intent API
-TBD: A description of NEMO Intent API.
-
-=== API Reference Documentation
-TBD: Provide links to JavaDoc, REST API documentation, etc.
+The NEMO intent API is published at https://wiki.opendaylight.org/view/NEMO:Reference_Manual
