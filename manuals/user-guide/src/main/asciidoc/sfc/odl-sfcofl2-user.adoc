@@ -1,7 +1,7 @@
-=== SFC OpenFlow Layer 2 Renderer User Guide
+=== SFC OpenFlow Renderer User Guide
 
 ==== Overview
-The Service Function Chaining (SFC) OpenFlow Layer 2 Renderer (SFCOFL2)
+The Service Function Chaining (SFC) OpenFlow Renderer (SFCOFL2)
 implements Service Chaining on OpenFlow switches. It listens for the
 creation of a Rendered Service Path (RSP), and once received it programs
 Service Function Forwarders (SFF) that are hosted on OpenFlow capable
@@ -30,9 +30,11 @@ image::sfc/sfcofl2_architecture.jpg["SFC OpenFlow Renderer High Level Architectu
 ==== SFC OpenFlow Switch Flow pipeline
 The SFC OpenFlow Renderer uses the following tables for its Flow pipeline:
 
-* Table 0, Transport Ingress
-* Table 1, Path Mapper
-* Table 2,  Next Hop
+* Table 0, Classifier
+* Table 1, Transport Ingress
+* Table 2, Path Mapper
+* Table 3, Path Mapper ACL
+* Table 4, Next Hop
 * Table 10, Transport Egress
 
 The OpenFlow Table Pipeline is intended to be generic to work for
@@ -47,6 +49,13 @@ diagram.
 .SFC OpenFlow Renderer Typical Network Topology
 image::sfc/sfcofl2_architecture_nwtopo.jpg["SFC OpenFlow Renderer Typical Network Topology",width=500]
 
+===== Classifier Table detailed
+
+Its possible for the SFF to also act as a classifier. This table maps subscriber
+traffic to RSPs, and is explained in detail in the classifier documentation.
+
+If the SFF is not a classifier, then this table will just have a simple Goto
+Table 1 flow.
 
 ===== Transport Ingress Table detailed
 
@@ -54,20 +63,26 @@ The Transport Ingress table has an entry per expected tunnel transport
 type to be received in a particular SFF, as established in the SFC
 configuration.
 
-Here is an example on SFF1, assuming VLAN is used for the SFF-SF, and the RSP
-tunnel is MPLS:
+Here are two example on SFF1: one where the RSP ingress tunnel is MPLS assuming
+VLAN is used for the SFF-SF, and the other where the RSP ingress tunnel is NSH
+GRE (UDP port 4789):
 
 .Table Transport Ingress
+[width=60%]
 |===
 |Priority |Match | Action
 
 |256
 |EtherType==0x8847 (MPLS unicast)
-|Goto Table 1
+|Goto Table 2
 
 |256
 |EtherType==0x8100 (VLAN)
-|Goto Table 1
+|Goto Table 2
+
+|256
+|EtherType==0x0800,udp,tp_dst==4789 (IP v4)
+|Goto Table 2
 
 |5
 |Match Any
@@ -78,9 +93,10 @@ tunnel is MPLS:
 The Path Mapper table has an entry per expected tunnel transport info
 to be received in a particular SFF, as established in the SFC
 configuration. The tunnel transport info is used to determine the
-RSP Path ID, and is stored in the OpenFlow Metadata.
+RSP Path ID, and is stored in the OpenFlow Metadata. This table is not
+used for NSH, since the RSP Path ID is stored in the NSH header. 
 
-Since most SF nodes wont support tunneling, the IP header DSCP field is
+For SF nodes that dont support NSH tunneling, the IP header DSCP field is
 used to store the RSP Path Id. The RSP Path Id is written to the DSCP
 field in the Transport Egress table for those packets sent to an SF.
 
@@ -91,39 +107,51 @@ Here is an example on SFF1, assuming the following details:
 * The RSP Path 2 (symmetric downlink path) uses MPLS label 101 for ingress and 100 for egress
 
 .Table Path Mapper
+[width=60%]
 |===
 |Priority |Match | Action
 
 |256
 |MPLS Label==100
-|RSP Path=1, Pop MPLS, Goto Table 2
+|RSP Path=1, Pop MPLS, Goto Table 4
 
 |256
 |MPLS Label==101
-|RSP Path=2, Pop MPLS, Goto Table 2
+|RSP Path=2, Pop MPLS, Goto Table 4
 
 |256
 |VLAN ID==1000, IP DSCP==1
-|RSP Path=1, Pop VLAN, Goto Table 2
+|RSP Path=1, Pop VLAN, Goto Table 4
 
 |256
 |VLAN ID==1000, IP DSCP==2
-|RSP Path=2, Pop VLAN, Goto Table 2
+|RSP Path=2, Pop VLAN, Goto Table 4
 
 |5
 |Match Any
-|Drop
+|Goto Table 3
 |===
 
-===== Next Hop Table detailed
-The Next Hop table uses the RSP Path Id and source MAC address to
-determine the destination MAC address.
+===== Path Mapper ACL Table detailed
+This table is only populated when PktIn packets are received from the switch
+for TcpProxy type SFs. These flows are created with an inactivity timer of 60
+seconds and will be automatically deleted upon expiration.
 
-Here is an example on SFF1, assuming SFF1 is connected to SFF2 and
-RSP Path 1 ingress packets come from external to SFC, for which
-we don’t have the source MAC address (MacSrc).
+===== Next Hop Table detailed
+The Next Hop table uses the RSP Path Id and appropriate packet fields to
+determine where to send the packet next. For NSH, only the NSP (Network
+Services Path, RPS ID) and NSI (Network Services Index, next hop) fields
+from the NSH header are needed to determine the VXLAN tunnel destination
+IP. For VLAN or MPLS, then the source MAC address is used to determine
+the destination MAC address.
+
+Here are two examples on SFF1, assuming SFF1 is connected to SFF2. RSP Paths 1
+and 2 are symmetric VLAN paths. RSP Paths 3 and 4 are symmetric NSH paths.
+RSP Path 1 ingress packets come from external to SFC, for which we don’t have
+the source MAC address (MacSrc).
 
 .Table Next Hop
+[width=75%]
 |===
 |Priority |Match | Action
 
@@ -143,6 +171,18 @@ we don’t have the source MAC address (MacSrc).
 |RSP Path==1
 |MacDst=SF1, Goto Table 10
 
+|256
+|nsp=3,nsi=255  (SFF Ingress RSP 3)
+|load:0xa000002->NXM_NX_TUN_IPV4_DST[], Goto Table 10
+
+|256
+|nsp=3,nsi=254  (SFF Ingress from SF, RSP 3)
+|load:0xa00000a->NXM_NX_TUN_IPV4_DST[], Goto Table 10
+
+|256
+|nsp=4,nsi=254  (SFF1 Ingress from SFF2)
+|load:0xa00000a->NXM_NX_TUN_IPV4_DST[], Goto Table 10
+
 |5
 |Match Any
 |Drop
@@ -152,10 +192,13 @@ we don’t have the source MAC address (MacSrc).
 The Transport Egress table prepares egress tunnel information and
 sends the packets out.
 
-Here is an example on SFF1, assuming VLAN is used for the SFF-SF, and the
-RSP tunnel is MPLS:
+Here are two examples on SFF1. RSP Paths 1 and 2 are symmetric MPLS paths that
+use VLAN for the SFF-SF. RSP Paths 3 and 4 are symmetric NSH paths. Since its 
+assumed that switches used for NSH will only have one VXLANport, the NSH
+packets are just sent back where they came from.
 
 .Table Transport Egress
+[width=60%]
 |===
 |Priority |Match | Action
 
@@ -175,6 +218,18 @@ RSP tunnel is MPLS:
 |RSP Path==2
 |Push MPLS Label 100, Port=Ingress
 
+|256
+|nsp=3,nsi=255  (SFF Ingress RSP 3)
+|IN_PORT
+
+|256
+|nsp=3,nsi=254  (SFF Ingress from SF, RSP 3)
+|IN_PORT
+
+|256
+|nsp=4,nsi=254  (SFF1 Ingress from SFF2)
+|IN_PORT
+
 |5
 |Match Any
 |Drop
@@ -184,8 +239,10 @@ RSP tunnel is MPLS:
 To use the SFC OpenFlow Renderer Karaf, at least the following Karaf
 features must be installed.
 
-* odl-openflowplugin-all
-* odl-sfc-core (includes odl-sfc-provider and odl-sfc-model)
+* odl-openflowplugin-nxm-extensions
+* odl-openflowplugin-flow-services
+* odl-sfc-provider
+* odl-sfc-model
 * odl-sfcofl2
 * odl-sfc-ui (optional)
 
@@ -202,26 +259,27 @@ To install a particular feature, use the Karaf `feature:install` command.
 ==== SFCOFL2 Tutorial
 
 ===== Overview
-The following Network Topology diagram shows how to configure SFC to
-create a Service Chain.
+In this tutorial, 2 different encapsulations will be shown: MPLS and NSH. The
+following Network Topology diagram is a logical view of the SFFs and SFs involved
+in creating the Service Chains.
 
 .SFC OpenFlow Renderer Typical Network Topology
 image::sfc/sfcofl2_architecture_nwtopo.jpg["SFC OpenFlow Renderer Typical Network Topology",width=500]
 
 ===== Prerequisites
 To use this example, SFF OpenFlow switches must be created and
-connected as illustrated above. Additionally, The SFs must be
-created and connected to the SFFs.
+connected as illustrated above. Additionally, the SFs must be
+created and connected.
 
 ===== Target Environment
 The target environment is not important, but this use-case was created
-and only tested on Linux.
+and tested on Linux.
 
 ===== Instructions
 The steps to use this tutorial are as follows. The referenced
 configuration in the steps is listed in the following sections.
 
-There are numerous ways to send the configuration. The following
+There are numerous ways to send the configuration. In the following
 configuration chapters, the appropriate `curl` command is shown for
 each configuration to be sent, including the URL.
 
@@ -235,7 +293,7 @@ Steps to configure the SFCOFL2 tutorial:
 
 Once the configuration has been successfully created, query the
 Rendered Service Paths with either the SFC UI or via RESTCONF.
-Notice that the RSP is symetrical, so the following 2 RSPs will
+Notice that the RSP is symmetrical, so the following 2 RSPs will
 be created:
 
 * sfc-path1
@@ -255,7 +313,13 @@ In all the following configuration sections, replace the `${JSON}`
 string with the appropriate JSON configuration. Also, change the
 `localhost` desintation in the URL accordingly.
 
-====== Service Function configuration
+====== SFCOFL2 NSH Tutorial
+
+The following configuration sections show how to create the different elements
+using NSH encapsulation.
+
+*NSH Service Function configuration* +
+
 The Service Function configuration can be sent with the following command:
 
  curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '${JSON}' -X PUT --user admin:admin http://localhost:8181/restconf/config/service-function:service-functions/
@@ -267,7 +331,206 @@ The Service Function configuration can be sent with the following command:
    "service-function": [
      {
        "name": "sf1",
-       "type": "service-function-type:http-header-enrichment",
+       "type": "http-header-enrichment",
+       "nsh-aware": true,
+       "ip-mgmt-address": "10.0.0.2",
+       "sf-data-plane-locator": [
+         {
+           "name": "sf1dpl",
+           "ip": "10.0.0.10",
+           "port": 4789,
+           "transport": "service-locator:vxlan-gpe",
+           "service-function-forwarder": "sff1"
+         }
+       ]
+     },
+     {
+       "name": "sf2",
+       "type": "firewall",
+       "nsh-aware": true,
+       "ip-mgmt-address": "10.0.0.3",
+       "sf-data-plane-locator": [
+         {
+           "name": "sf2dpl",
+            "ip": "10.0.0.20",
+            "port": 4789,
+            "transport": "service-locator:vxlan-gpe",
+           "service-function-forwarder": "sff2"
+         }
+       ]
+     }
+   ]
+ }
+}
+----
+
+*NSH Service Function Forwarder configuration* +
+
+The Service Function Forwarder configuration can be sent with the
+following command:
+
+ curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '${JSON}' -X PUT --user admin:admin http://localhost:8181/restconf/config/service-function-forwarder:service-function-forwarders/
+
+.SFF configuration JSON
+----
+{
+ "service-function-forwarders": {
+   "service-function-forwarder": [
+     {
+       "name": "sff1",
+       "service-node": "openflow:2",
+       "sff-data-plane-locator": [
+         {
+           "name": "sff1dpl",
+           "data-plane-locator":
+           {
+               "ip": "10.0.0.1",
+               "port": 4789,
+               "transport": "service-locator:vxlan-gpe"
+           }
+         }
+       ],
+       "service-function-dictionary": [
+         {
+           "name": "sf1",
+           "sff-sf-data-plane-locator":
+           {
+               "sf-dpl-name": "sf1dpl",
+               "sff-dpl-name": "sff1dpl"
+           }
+         }
+       ]
+     },
+     {
+       "name": "sff2",
+       "service-node": "openflow:3",
+       "sff-data-plane-locator": [
+         {
+           "name": "sff2dpl",
+           "data-plane-locator":
+           {
+               "ip": "10.0.0.2",
+               "port": 4789,
+               "transport": "service-locator:vxlan-gpe"
+           }
+         }
+       ],
+       "service-function-dictionary": [
+         {
+           "name": "sf2",
+           "sff-sf-data-plane-locator":
+           {
+               "sf-dpl-name": "sf2dpl",
+               "sff-dpl-name": "sff2dpl"
+           }
+         }
+       ]
+     }
+   ]
+ }
+}
+----
+
+*NSH Service Function Chain configuration* +
+
+The Service Function Chain configuration can be sent with the following command:
+
+ curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '${JSON}' -X PUT --user admin:admin http://localhost:8181/restconf/config/service-function-chain:service-function-chains/
+
+.SFC configuration JSON
+----
+{
+ "service-function-chains": {
+   "service-function-chain": [
+     {
+       "name": "sfc-chain1",
+       "symmetric": true,
+       "sfc-service-function": [
+         {
+           "name": "hdr-enrich-abstract1",
+           "type": "http-header-enrichment"
+         },
+         {
+           "name": "firewall-abstract1",
+           "type": "firewall"
+         }
+       ]
+     }
+   ]
+ }
+}
+----
+
+*NSH Service Function Path configuration* +
+
+The Service Function Path configuration can be sent with the following command:
+
+ curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '${JSON}' -X PUT --user admin:admin http://localhost:8181/restconf/config/service-function-path:service-function-paths/
+
+.SFP configuration JSON
+----
+{
+  "service-function-paths": {
+    "service-function-path": [
+      {
+        "name": "sfc-path1",
+        "service-chain-name": "sfc-chain1",
+        "transport-type": "service-locator:vxlan-gpe",
+        "symmetric": true
+      }
+    ]
+  }
+}
+----
+
+*NSH Rendered Service Path creation* +
+
+ curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '${JSON}' -X POST --user admin:admin http://localhost:8181/restconf/operations/rendered-service-path:create-rendered-path/
+
+.RSP creation JSON
+----
+{
+ "input": {
+     "name": "sfc-path1",
+     "parent-service-function-path": "sfc-path1",
+     "symmetric": true
+ }
+}
+----
+
+*NSH Rendered Service Path removal* +
+
+The following command can be used to remove a Rendered Service Path
+called `sfc-path1`:
+
+ curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '{"input": {"name": "sfc-path1" } }' -X POST --user admin:admin http://localhost:8181/restconf/operations/rendered-service-path:delete-rendered-path/
+
+*NSH Rendered Service Path Query* +
+
+The following command can be used to query all of the created Rendered Service Paths:
+
+ curl -H "Content-Type: application/json" -H "Cache-Control: no-cache" -X GET --user admin:admin http://localhost:8181/restconf/operational/rendered-service-path:rendered-service-paths/
+
+
+====== SFCOFL2 MPLS Tutorial
+
+The following configuration sections show how to create the different elements
+using MPLS encapsulation.
+
+*MPLS Service Function configuration* +
+
+The Service Function configuration can be sent with the following command:
+
+ curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '${JSON}' -X PUT --user admin:admin http://localhost:8181/restconf/config/service-function:service-functions/
+
+.SF configuration JSON
+----
+{
+ "service-functions": {
+   "service-function": [
+     {
+       "name": "sf1",
+       "type": "http-header-enrichment",
        "nsh-aware": false,
        "ip-mgmt-address": "10.0.0.2",
        "sf-data-plane-locator": [
@@ -282,7 +545,7 @@ The Service Function configuration can be sent with the following command:
      },
      {
        "name": "sf2",
-       "type": "service-function-type:firewall",
+       "type": "firewall",
        "nsh-aware": false,
        "ip-mgmt-address": "10.0.0.3",
        "sf-data-plane-locator": [
@@ -300,7 +563,8 @@ The Service Function configuration can be sent with the following command:
 }
 ----
 
-====== Service Function Forwarder configuration
+*MPLS Service Function Forwarder configuration* +
+
 The Service Function Forwarder configuration can be sent with the
 following command:
 
@@ -340,21 +604,29 @@ following command:
                "mac": "33:33:33:33:33:33",
                "port-id" : "2"
            }
+         },
+         {
+           "name": "toSf1",
+           "data-plane-locator":
+           {
+               "mac": "22:22:22:22:22:22",
+               "vlan-id": 1000,
+               "transport": "service-locator:mac",
+           },
+           "service-function-forwarder-ofs:ofs-port":
+           {
+               "mac": "33:33:33:33:33:33",
+               "port-id" : "3"
+           }
          }
        ],
        "service-function-dictionary": [
          {
            "name": "sf1",
-           "type": "service-function-type:http-header-enrichment",
            "sff-sf-data-plane-locator":
            {
-               "mac": "22:22:22:22:22:22",
-               "vlan-id": 1000,
-               "transport": "service-locator:mac"
-           },
-           "service-function-forwarder-ofs:ofs-port":
-           {
-               "port-id" : "3"
+               "sf-dpl-name": "sf1-sff1",
+               "sff-dpl-name": "toSf1"
            }
          }
        ]
@@ -388,17 +660,29 @@ following command:
                "mac": "66:66:66:66:66:66",
                "port-id" : "2"
            }
+         },
+         {
+           "name": "toSf2",
+           "data-plane-locator":
+           {
+               "mac": "55:55:55:55:55:55",
+               "vlan-id": 2000,
+               "transport": "service-locator:mac"
+           },
+           "service-function-forwarder-ofs:ofs-port":
+           {
+               "port-id" : "3"
+           }
          }
        ],
        "service-function-dictionary": [
          {
            "name": "sf2",
-           "type": "service-function-type:firewall",
            "sff-sf-data-plane-locator":
            {
-               "mac": "55:55:55:55:55:55",
-               "vlan-id": 2000,
-               "transport": "service-locator:mac"
+               "sf-dpl-name": "sf2-sff2",
+               "sff-dpl-name": "toSf2"
+           
            },
            "service-function-forwarder-ofs:ofs-port":
            {
@@ -412,7 +696,8 @@ following command:
 }
 ----
 
-====== Service Function Chain configuration
+*MPLS Service Function Chain configuration* +
+
 The Service Function Chain configuration can be sent with the
 following command:
 
@@ -429,11 +714,11 @@ following command:
        "sfc-service-function": [
          {
            "name": "hdr-enrich-abstract1",
-           "type": "service-function-type:http-header-enrichment"
+           "type": "http-header-enrichment"
          },
          {
            "name": "firewall-abstract1",
-           "type": "service-function-type:firewall"
+           "type": "firewall"
          }
        ]
      }
@@ -442,7 +727,8 @@ following command:
 }
 ----
 
-====== Service Function Path configuration
+*MPLS Service Function Path configuration* +
+
 The Service Function Path configuration can be sent with the following
 command:
 
@@ -464,7 +750,7 @@ command:
 }
 ----
 
-====== Rendered Service Path creation
+*MPLS Rendered Service Path creation* +
 
  curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '${JSON}' -X POST --user admin:admin http://localhost:8181/restconf/operations/rendered-service-path:create-rendered-path/
 
@@ -479,13 +765,15 @@ command:
 }
 ----
 
-====== Rendered Service Path removal
+*MPLS Rendered Service Path removal* +
+
 The following command can be used to remove a Rendered Service Path
 called `sfc-path1`:
 
  curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '{"input": {"name": "sfc-path1" } }' -X POST --user admin:admin http://localhost:8181/restconf/operations/rendered-service-path:delete-rendered-path/
 
-====== Rendered Service Path Query
+*MPLS Rendered Service Path Query* +
+
 The following command can be used to query all of the created Rendered Service Paths:
 
  curl -H "Content-Type: application/json" -H "Cache-Control: no-cache" -X GET --user admin:admin http://localhost:8181/restconf/operational/rendered-service-path:rendered-service-paths/
