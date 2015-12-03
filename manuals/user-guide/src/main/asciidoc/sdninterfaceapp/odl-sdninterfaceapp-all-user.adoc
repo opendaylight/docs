@@ -7,7 +7,7 @@ This user guide will help to setup the ODL-SDNi application for lithium release 
 SDNiAggregator(controller), SDNi REST API(controller) and SDNiWrapper(bgpcep) are the three components in ODL-SDNi App  
 
 * SDNiAggregator: Connects with switch, topology, hosttracker managers of controller to get the topology and other related data.
-* SDNi REST API: It is a part of controller northbound, which gives the required information by quering SDNiAggregator
+* SDNi REST API: It is a part of controller northbound, which gives the required information by quering SDNiAggregator through RESTCONF.
 * SDNiWrapper: This component uses the SDNi REST API and gathers the information required to be shared among controllers.
 
 === Troubleshooting
