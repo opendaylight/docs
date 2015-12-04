@@ -4,13 +4,28 @@ and contains contains configuration, administration, and management
 sections for the feature.
 
 === Overview
-TBD: An overview of the Armoury feature and the use case and the
-audience who will use the feature.
+Just as compute needs to make requests to the controller to get networking
+resources in order to provide its services, so too does the controller
+sometimes need to make requests of the workload manager to get compute
+resources and/or network function (NF) (physical or virtual) orchestration
+to provide its services.
 
 === Armoury Architecture
-TBD: Information about Armoury components and how they work together.
-Also include information about how the feature integrates with
-OpenDaylight.
+There are mainly three components :
+
+* *Armoury Catalog*
+A registry or catalog of the necessary information (images, metadata, templatized
+day 0 config, how to communicate with the NF, etc) to describe the NF to the
+workload manager and/or network function (NF) (physical or virtual) orchestration.
+
+* *Armoury Workload Manager*
+The most minimal possible API to allow applications to request that the workload
+manager start/stop/etc the NF and some information from the workload manager/nf
+orchestrator about the state of the NF.
+
+* *Armoury Driver Registry*
+Example Drivers to talk to various workload managers (OpenStack/Meseophere/Docker/
+Kubernetes/etc).
 
 === Armoury Catalog
 The NF Catalog contains metadata describing a NF.
@@ -25,12 +40,23 @@ for using Armoury Catalog.
 === Armoury Workload Manager
 The Workload Manager defines RPCs to manage instances.
 
-=== Configuring Armoury Workload Manager
+==== Configuring Armoury Workload Manager
 TBD: Describe how to configure Armoury Workload Manager after installation.
 
-=== Administering Armoury Workload Manager
+==== Administering Armoury Workload Manager
 TBD: Include related command reference or operations
 for using Armoury Workload Manager.
+
+=== Armoury Driver Registry
+The Driver Registry Describes the driver that is used to talk with the
+workload manager (OpenStack/Meseophere/Docker/Kubernetes/etc).
+
+==== Configuring Armoury Driver Registry
+TBD: Describe how to configure Armoury Driver Registry.
+
+==== Administering Armoury Driver Registry
+TBD: Include related command reference or operations
+for using Driver Registry.
 
 === Tutorials
 Below are tutorials for Armoury.
@@ -66,3 +92,19 @@ TBD: Include any topology requirement for the use case.
 
 ===== Instructions
 TBD: Step by step procedure for using Armoury Workload Manager.
+
+==== Using Armoury Driver Registry
+TBD: State the purpose of tutorial
+
+===== Overview
+TBD: An overview of the Armoury Driver Registry tutorial
+
+===== Prerequisites
+TBD: Provide any prerequisite information, assumed knowledge, or environment
+required to execute the use case.
+
+===== Target Environment
+TBD: Include any topology requirement for the use case.
+
+===== Instructions
+TBD: Step by step procedure for using Armoury Driver Registry.
