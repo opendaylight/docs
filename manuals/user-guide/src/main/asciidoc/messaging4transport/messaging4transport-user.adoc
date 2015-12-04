@@ -1,0 +1,110 @@
+== Messaging4Transport User Guide
+
+=== Overview
+The OpenDaylight controller is based on an MD-SAL allows the modeling of data, rpcs, and notifications. Because of this model basis, adding new northbound bindings to the controller is simple, and everything modeled becomes exposed automatically. Currently the MD-SAL has restconf NB bindings, where more bindings such as AMQP and XMPP can easily be implemented and integrated. Messaging4Transport attempts to build more northbound interfaces to MD-SAL, with messaging oriented middleware protocols. Messaging4Transport Beryllium offers an AMQP northbound to MD-SAL. 
+
+=== Architecture
+[http://www.amqp.org Advanced Message Queuing Protocol (AMQP)] is an open standard application layer protocol for message-oriented middleware. Messaging4Transport adds [http://www.amqp.org AMQP] bindings to the MD-SAL, which would automatically make all MD-SAL APIs available via that mechanism. Messaging4Transport is built as an independent Karaf feature, that would expose the MD-SAL datatree, rpcs, and notifications via AMQP, when installed. While AMQP is focused for the Beryllium Release, the messaging oriented transport protocols would be considered for the future releases.
+
+
+=== Configuring Messaging4Transport
+
+Download the OpenDaylight Beryllium from the [http://www.opendaylight.org/software/downloads OpenDaylight Downloads Page].
+
+Extract OpenDaylight from the archive.
+
+==== Installing Karaf Features
+
+Start the Karaf console.
+
+<pre>
+[~/distribution-karaf]$ ./bin/karaf
+
+________                       ________                .__  .__       .__     __       
+\_____  \ ______   ____   ____ \______ \ _____  ___.__.|  | |__| ____ |  |___/  |_     
+/   |   \\____ \_/ __ \ /    \ |    |  \\__  \<   |  ||  | |  |/ ___\|  |  \   __\    
+/    |    \  |_> >  ___/|   |  \|    `   \/ __ \\___  ||  |_|  / /_/  >   Y  \  |      
+\_______  /   __/ \___  >___|  /_______  (____  / ____||____/__\___  /|___|  /__|      
+\/|__|        \/     \/        \/     \/\/            /_____/      \/          
+
+
+Hit '<tab>' for a list of available commands
+and '[cmd] --help' for help on a specific command.
+Hit '<ctrl-d>' or type 'system:shutdown' or 'logout' to shutdown OpenDaylight.
+
+opendaylight-user@root>
+</pre>
+
+Install Messaging4Transport by using the karaf console.
+
+<pre>
+opendaylight-user@root>feature:install odl-mdsal-all odl-messaging4transport-api odl-messaging4transport
+</pre>
+
+odl-messaging4transport contains the necessary components to use the Messaging4Transport feature.
+
+
+
+==== ActiveMQ Integration with Karaf
+ActiveMQ broker can be integrated into the Karaf environment. The [http://activemq.apache.org/osgi-integration.html instructions page] is for Karaf 2.x. Please see the [http://karaf.apache.org/manual/latest/update-notes.html Karaf updates page]. Since OpenDaylight Helium is built on Karaf 3.x, the instructions are given below to install and activate ActiveMQ OSGi bundle into Karaf. 
+
+* Installing ActiveMQ in Karaf
+opendaylight-user@root> feature:repo-add activemq 5.9.0
+
+Adding feature url mvn:org.apache.activemq/activemq-karaf/5.9.0/xml/features
+
+
+opendaylight-user@root> feature:list 
+
+activemq-client                 | 5.9.0            |           | activemq-5.9.0                        | ActiveMQ client libraries                         
+activemq                        | 5.9.0            |           | activemq-5.9.0                        | ActiveMQ broker libraries                         
+activemq-broker-noweb           | 5.9.0            |           | activemq-5.9.0                        | Full ActiveMQ broker with default configuration   
+activemq-broker                 | 5.9.0            |           | activemq-5.9.0                        | Full ActiveMQ broker with default configuration an
+activemq-camel                  | 5.9.0            |           | activemq-5.9.0                        |                                                   
+activemq-web-console            | 5.9.0            |           | activemq-5.9.0                        |                                                   
+activemq-blueprint              | 5.9.0            |           | activemq-5.9.0                        |                         
+
+
+opendaylight-user@root>feature:install activemq-broker
+
+Refreshing bundles org.eclipse.jetty.aggregate.jetty-all-server (176), org.ops4j.pax.web.pax-web-runtime (184), org.ops4j.pax.web.pax-web-extender-war (190)
+
+
+* Installing hawtio in [http://hawt.io/getstarted/index.html Karaf]
+
+hawtio provides a user-friendly web user interface, that can be installed optionally to work with the project.
+
+opendaylight-user@root> feature:repo-add hawtio 1.4.51
+
+opendaylight-user@root> feature:install hawtio
+
+
+
+=== Administering or Managing Messaging4Transport
+
+The broker can be a stand-alone or a Karaf-based broker integrated into OpenDaylight. Just install the bundles as shown below for Karaf based integration. In such a case, broker will start with OpenDaylight. The publisher publishes the data tree. At least a dummy listener should be started before the publisher to receive the published messages.
+
+
+You may further configure the broker by modifying the ActiveMQ configuration file in ODL_INSTALLATION_DIR/karaf/target/assembly/etc/org.apache.activemq.server-default.cfg
+
+
+Make sure to set the transport connections in karaf/target/assembly/etc/activemq.xml, which is set by default in ActiveMQ stand-alone implementation; but not in the Karaf implementation.
+
+It is suggested to limit concurrent connections to just 1000. However, probably we will need more concurrency, based on the requirements. Setting it to 100,000 for now.
+
+<transportConnectors>
+<!-- DOS protection, limit concurrent connections to 1000 and frame size to 100MB -->
+<!-- Uncomment whatever necessary. -->
+<transportConnector name="openwire" uri="tcp://0.0.0.0:61616?maximumConnections=100000&amp;wireFormat.maxFrameSize=104857600"/>
+<transportConnector name="amqp" uri="amqp://0.0.0.0:5672?maximumConnections=100000&amp;wireFormat.maxFrameSize=104857600"/>
+<!--transportConnector name="stomp" uri="stomp://0.0.0.0:61613?maximumConnections=100000&amp;wireFormat.maxFrameSize=104857600"/ -->
+<!--transportConnector name="mqtt" uri="mqtt://0.0.0.0:1883?maximumConnections=100000&amp;wireFormat.maxFrameSize=104857600"/ -->
+<!--transportConnector name="ws" uri="ws://0.0.0.0:61614?maximumConnections=100000&amp;wireFormat.maxFrameSize=104857600"/ -->
+</transportConnectors>
+
+
+You may install/re-install the bundle after that and restart the container for the changes to take effort.
+
+MD-SAL will be the publisher that publishes the MD-SAL datatree, rpcs, and notifications via AMQP. Listener can be any consumer that consumes the data tree and the other data published by MD-SAL via the AMQP binding.
+
+Once configured, ActiveMQ console can be accessed from the hawtio web console at [http://localhost:8181/hawtio/] with the credentials karaf/karaf. 
