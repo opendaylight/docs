@@ -1,0 +1,34 @@
+== Messaging4Transport Developer Guide
+
+=== Overview
+Messaging4Transport can be configured such that the datatree, RPCs, and notifications are sent to an external broker, or an integrated broker with OpenDaylight. Messaging4Transport uses ActiveMQ as the default external broker. It further uses AMQP as the messaging protocol for the Beryllium Release.
+
+
+=== Messaging4Transport Architecture
+The ActiveMQ client implementation for AMQP hides the implementation behind the JMS API. ActiveMQ further depends on [https://qpid.apache.org/ QPid] for its AMQP clients and broker. Hence, QPid and JMS bundles are introduced as the dependencies to the odlmq bundle.
+
+
+ActiveMQ also has a [http://stomp.github.io/ STOMP] implementation in the same way through StompJmsConnectionFactory, a JMS mapping and interface for STOMP. [http://activemq.apache.org/openwire.html OpenWire] is a cross-language wire protocol from ActiveMQ. OpenWire implementation of ActiveMQ follows the similar strategy and implementation. With almost no changes to the architecture, and minimal code changes, publishing to STOMP or OpenWire broker implementations (such as ActiveMQ) should be possible, from OpenDaylight/MD-SAL with the odl-mq bundle.
+
+
+There is also an [http://mqtt.org/ MQTT] implementation in Active MQ, which is slightly different in the implementation from AMQP, STOMP, and OpenWire implementations, and does not seem to depend on JMS.
+
+
+=== Key APIs and Interfaces
+Messaging4Transport consists of the messaging4transport feature which offers an AMQP messaging oriented middleware northbound to MD-SAL, as an alternative to the traditional RESTConf northbound.
+
+
+=== Use Cases
+
+Multiple research and industrial use cases of Messaging4Transport has been proposed. Since Messaging4Transport is still in its early stages, many of these use cases are still proof of concepts and novel research publications.
+
+* Software-Defined Buildings
+
+Cassowary is a Middleware Platform for Context-Aware Smart Buildings with Software-Defined Sensor Networks, by leveraging OpenDaylight Messaging4Transport. Messaging4Transport architecture has been extended by Cassowary approach to create a software-defined sensor and actuator network for smart buildings.
+
+* Software-Defined Community Networks
+
+CHIEF is a controller farm for clouds of Software-Defined Community Networks. CHIEF leverages the message-oriented middleware and OpenDaylight Messaging4Transport architecture to create a huge deployment of SDN for community clouds.
+
+The following document contains an updated version of the research efforts based on Messaging4Transport prototypes.
+https://wiki.opendaylight.org/view/Messaging4Transport:Use_Cases
