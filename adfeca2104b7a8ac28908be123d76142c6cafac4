@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aaae553_4c3173eb",
+        "filename": "manuals/developer-guide/src/main/asciidoc/usecplugin/odl-usecplugin-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-12-04T21:33:29Z",
+      "side": 1,
+      "message": "This should be the title of the section, e.g., \"Controller Shield Developer Guide\" or just \"Controller Shield\" since it\u0027s in the Developer Guide.\n\nAlso, I think you need spaces the \u003ds and the title.",
+      "range": {
+        "startLine": 1,
+        "startChar": 2,
+        "endLine": 1,
+        "endChar": 10
+      },
+      "revId": "adfeca2104b7a8ac28908be123d76142c6cafac4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aaae553_0c537b18",
+        "filename": "manuals/developer-guide/src/main/asciidoc/usecplugin/odl-usecplugin-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-12-04T21:33:29Z",
+      "side": 1,
+      "message": "section",
+      "range": {
+        "startLine": 2,
+        "startChar": 5,
+        "endLine": 2,
+        "endChar": 12
+      },
+      "revId": "adfeca2104b7a8ac28908be123d76142c6cafac4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aaae553_cc7323b0",
+        "filename": "manuals/developer-guide/src/main/asciidoc/usecplugin/odl-usecplugin-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-12-04T21:33:29Z",
+      "side": 1,
+      "message": "development",
+      "range": {
+        "startLine": 2,
+        "startChar": 29,
+        "endLine": 2,
+        "endChar": 39
+      },
+      "revId": "adfeca2104b7a8ac28908be123d76142c6cafac4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aaae553_8c3e8bb7",
+        "filename": "manuals/developer-guide/src/main/asciidoc/usecplugin/odl-usecplugin-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-12-04T21:33:29Z",
+      "side": 1,
+      "message": "Is this just the same as for everything in ODL? If so, don\u0027t reiterate it. It\u0027s already in the Getting Started Guide.",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 85
+      },
+      "revId": "adfeca2104b7a8ac28908be123d76142c6cafac4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
