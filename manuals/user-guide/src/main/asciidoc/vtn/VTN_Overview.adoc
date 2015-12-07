@@ -9,7 +9,7 @@ The uniqueness of VTN is a logical abstraction plane. This enables the complete 
 VTN allows the users to define the network with a look and feel of conventional L2/L3 network. Once the network is designed on VTN, it will automatically be mapped into underlying physical network, and then configured on the individual switch leveraging SDN control protocol. The definition of logical plane makes it possible not only to hide the complexity of the underlying network but also to better manage network resources. It achieves reducing reconfiguration time of network services and minimizing network configuration errors.
 
 .VTN Overview
-image::vtn/VTN_Overview.jpg[VTN Overview ,width= 500]
+image::../../resources/images/vtn/VTN_Overview.jpg[VTN Overview ,width= 500]
 
 It is implemented as two major components
 
@@ -91,7 +91,7 @@ It is possible to configure a network which has L2 and L3 transfer function, by 
 The following figure shows an example of a constructed virtual network. VRT is defined as the vRouter, BR1 and BR2 are defined as vBridges. interfaces of the vRouter and vBridges are connected using vLinks.
 
 .VTN Construction
-image::vtn/VTN_Construction.jpg[VTN Construction ,width= 500]
+image::../../resources/images/vtn/VTN_Construction.jpg[VTN Construction ,width= 500]
 
 
 ==== Mapping of Physical Network Resources
@@ -123,7 +123,7 @@ BR2 is mapped to VLAN 200 using VLAN mapping.
 Packets with VLAN tag 200 received from any ports of any OFSs are regarded as those from an interface of BR2.
 
 .VTN Mapping
-image::vtn/VTN_Mapping.jpg[VTN Mapping]
+image::../../resources/images/vtn/VTN_Mapping.jpg[VTN Mapping]
 
 ==== vBridge Functions
 
@@ -190,7 +190,7 @@ If there is any matching condition specified by flow filter when a packet being 
 If the packet matches the condition, the function applies the matching action specified by flow filter. In the example shown in the figure, the function evaluates the matching condition at BR1 and discards the packet if it matches the condition.
 
 .VTN FlowFilter
-image::vtn/VTN_Flow_Filter.jpg[width=500]
+image::../../resources/images/vtn/VTN_Flow_Filter.jpg[width=500]
 
 ==== Multiple SDN Controller Coordination
 
@@ -216,7 +216,7 @@ VTN provides Web APIs. They are implemented by REST architecture and provide the
 User can perform the operations like GET/PUT/POST/DELETE against the virtual network resources (e.g. vBridge or vRouter) by sending a message to VTN through HTTPS communication in XML or JSON format.
 
 .VTN API
-image::vtn/VTN_API.jpg[VTN API]
+image::../../resources/images/vtn/VTN_API.jpg[VTN API]
 
 ===== Function Outline
 
