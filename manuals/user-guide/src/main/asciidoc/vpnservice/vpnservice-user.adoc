@@ -1,7 +1,7 @@
-== L3VPN Service: User Guide
+﻿== L3VPN Service: User Guide
 
 === Overview
-L3VPN Service in OpenDaylight provides a framework to create L3VPN based on BGP-MP.  It also helps to create Network Virtualization for DC Cloud environment.
+L3VPN Service in Opendaylight provides a framework to create L3VPN based on BGP-MP.  It also helps to create Network Virtualization for DC Cloud environment.
 
 === Modules & Interfaces
 L3VPN service can be realized using the following modules -
@@ -14,8 +14,9 @@ L3VPN service can be realized using the following modules -
 . *Interface Manager* : Creates and manages different type of network interfaces, e.g., VLAN, l3tunnel etc.,
 . *Id Manager* : Provides cluster-wide unique ID for a given key. Used by different modules to get unique IDs for different entities.
 . *MD-SAL Util* : Provides interface to MD-SAL. Used by service modules to access MD-SAL Datastore and services.
+. *ITM* : Internal Transport Manager creates and maintains mesh of tunnels of type VxLAN or GRE between Openflow switches forming an overlay transport network
 
-All the above modules can function independently and can be utilized by other services as well. 
+All the above modules can function independently and can be utilized by other services as well.
 
 ==== Configuration Interfaces
 The following modules expose configuration interfaces through which user can configure L3VPN Service.
@@ -23,7 +24,7 @@ The following modules expose configuration interfaces through which user can con
 . BGP Manager
 . VPN Manager
 . Interface Manager
-. FIB Manager
+. ITM
 
 ===== Configuration Interface Details
 
@@ -48,12 +49,11 @@ The following modules expose configuration interfaces through which user can con
 .. Fields :
 ... List of vpn-instance
 .. REST Methods : GET, PUT, DELETE, POST
-. Data Node Path : _/config/l3vpn:vpn-interfaces/vpn-instance_
+. Data Node Path : _/config/l3vpn:vpn-instances/vpn-instance_
 .. Fields :
 ... name
 ... route-distinguisher
-... import-route-policy
-... export-route-policy
+... vpnTargets
 .. REST Methods : GET, PUT, DELETE, POST
 . Data Node Path : _/config/l3vpn:vpn-interfaces/_
 .. Fields :
@@ -76,44 +76,48 @@ The following modules expose configuration interfaces through which user can con
 ... name
 ... type
 ... enabled
-... of-port-id
-... tenant-id
-... base-interface
+... datapath-node-identifier
+... parent-interface
 .. type specific fields
 ... when type = _l2vlan_
 .... vlan-id
+.... vlan-mode
 ... when type = _stacked_vlan_
 .... stacked-vlan-id
-... when type = _l3tunnel_
-.... tunnel-type
-.... local-ip
-.... remote-ip
-.... gateway-ip
+... when type = _tunnel_
+.... internal
+.... tunnel-interface-type
+.... tunnel-source
+.... tunnel-destination
+.... tunnel-gateway
 ... when type = _mpls_
 .... list labelStack
 .... num-labels
 .. REST Methods : GET, PUT, DELETE, POST
 
-.FIB Manager Interface
-. Data Node Path : _/config/odl-fib:fibEntries/vrfTables_
+.ITM Interface
+. Data Node Path : _/config/itm:transport-zones/_
 .. Fields :
-... List of vrfTables
+... List of transport-zone
 .. REST Methods : GET, PUT, DELETE, POST
-. Data Node Path : _/config/odl-fib:fibEntries/vrfTables/`{routeDistinguisher}`/_
+. Data Node Path : _/config/itm:transport-zones/transport-zone_
 .. Fields :
-... route-distinguisher
-... list vrfEntries
-.... destPrefix
-.... label
-.... nexthopAddress
+... zone-name
+... tunnel-type
 .. REST Methods : GET, PUT, DELETE, POST
-. Data Node Path : _/config/odl-fib:fibEntries/ipv4Table_
+. Data Node Path : _/config/itm:transport-zones/transport-zone/subnets_
 .. Fields :
-... list ipv4Entry
-.... destPrefix
-.... nexthopAddress
+... prefix
+... gateway-ip
+... vlan-id
+... List of vteps
 .. REST Methods : GET, PUT, DELETE, POST
-
+. Data Node Path : _/config/itm:transport-zones/transport-zone/subnets/vteps/_
+.. Fields :
+... dpn-id
+... portname
+... ip-address
+.. REST Methods : GET, PUT, DELETE, POST
 
 === Provisioning Sequence & Sample Configurations
 
@@ -134,8 +138,8 @@ Use REST interface to configure L3VPN service
 1. BGP stack with VRF support needs to installed and configured
 a. _Configure BGP as specified in Step 1 below._
 
-2. Create pairs of GRE/VxLAN Tunnels (using ovsdb/ovs-vsctl) between each switch and between each switch to the Gateway node
-a. _Create 'l3tunnel' interfaces corresponding to each tunnel in interfaces DS as specified in Step 2 below._
+2. Create pairs of GRE/VxLAN Tunnels between each switch(internal tunnel) and between each switch to the gateway node(external tunnel).
+a. _Create 'tunnel' interfaces corresponding to each tunnel in interfaces DS as specified in Step 2 below._
 
 ==== Step 1 : Configure BGP
 
@@ -174,26 +178,42 @@ a. _Create 'l3tunnel' interfaces corresponding to each tunnel in interfaces DS a
 -----------------
 
 ==== Step 2 : Create Tunnel Interfaces
-Create l3tunnel interfaces corresponding to all GRE/VxLAN tunnels created with ovsdb (<<prer, refer Prerequisites>>). Use following REST Interface -
+Create tunnels between two switches with the following REST interface
 
-*REST API* : _PUT /config/if:interfaces/if:interfacce_
+*REST API* : _/config/itm:transport-zones/transport-zone_
 
 *Sample JSON Data*
 
 [source,json]
 -----------------
 {
-    "interface": [
-        {
-            "name" : "GRE_192.168.57.101_192.168.57.102",
-            "type" : "odl-interface:l3tunnel",
-            "odl-interface:tunnel-type": "odl-interface:tunnel-type-gre",
-            "odl-interface:local-ip" : "192.168.57.101",
-            "odl-interface:remote-ip" : "192.168.57.102",
-            "odl-interface:portId" : "openflow:1:3",
-            "enabled" : "true"
-        }
+  "transport-zones": {
+    "transport-zone": [
+      {
+        "zone-name": "TZA",
+        "subnets": [
+          {
+            "prefix": "10.0.0.0/29",
+            "vlan-id": 0,
+            "vteps": [
+              {
+                "dpn-id": 1,
+                "portname": "phy0",
+                "ip-address": "192.168.56.102"
+              },
+              {
+                "dpn-id":2,
+                "portname": "phy0",
+                "ip-address": "192.168.56.101"
+              },
+             ],
+            "gateway-ip": "10.0.0.5"
+          }
+        ],
+        "tunnel-type": "GRE"
+      }
     ]
+  }
 }
 
 -----------------
@@ -206,7 +226,7 @@ Create l3tunnel interfaces corresponding to all GRE/VxLAN tunnels created with o
 
 ==== Step 3 : OS Create Neutron Ports and attach VMs
 
-At this step user creates VMs.
+At this step user creates VMs. <TBD>
 
 ==== Step 4 : Create VM Interfaces
 Create l2vlan interfaces corresponding to VM created in step 3
@@ -218,17 +238,16 @@ Create l2vlan interfaces corresponding to VM created in step 3
 [source,json]
 -----------------
 {
-    "interface": [
-        {
-            "name" : "dpn1-dp1.2",
-            "type" : "l2vlan",
-            "odl-interface:of-port-id" : "openflow:1:2",
-            "odl-interface:vlan-id" : "1",
-            "enabled" : "true"
-        }
-    ]
+  "interface": [
+    {
+        "name": "s1-eth1-trunk",
+        "type": "iana-if-type:l2vlan",
+        "l2vlan-mode":"trunk",
+        "odl-interface:parent-interface": "s1-eth1",
+        "enabled": "true"
+    }
+  ]
 }
-
 -----------------
 
 ==== Step 5: Create VPN Instance
@@ -246,8 +265,22 @@ Create l2vlan interfaces corresponding to VM created in step 3
         "vpn-instance-name": "testVpn1",
         "ipv4-family": {
             "route-distinguisher": "4000:1",
-            "export-route-policy": "4000:1,5000:1",
-            "import-route-policy": "4000:1,5000:1",
+            "vpnTargets": {
+                "vpnTarget": [
+                   {
+                        "vrfRTValue": "4000:1",
+                        "vrfRTType": "export_extcommunity"
+                   },
+                   {
+                       "vrfRTValue": "5000:1",
+                       "vrfRTType": "import_extcommunity"
+                   },
+                   {
+                       "vrfRTValue": "6000:1",
+                       "vrfRTType": "both"
+                   }
+                ]
+            }
         }
     }
   ]
@@ -338,3 +371,55 @@ Above steps can be carried out in a single step as following
 4. Prefix is added to BGP for advertisement
 5. BGP pushes route update to FIB YANG Interface
 6. FIB Entry flow is added to FIB Table in OF pipeline
+
+
+=== Using with OpenStack
+
+VPNService now supports orchestration through openstack using the BGPVPN Plugin. This section requires familiarity with OpenStack and ODL configuration. If you are using OpenStack then this is the preferred method as it takes care of lots of configuration you'd need to do manually.
+
+==== Installation
+1. Edit 'etc/custom.properties' and set the following property:
+'vpnservice.bgpspeaker.host.name = <bgpserver-ip>'
+'<bgpserver-ip>' here refers to the IP address of the host where BGP is running.
+
+2. Run ODL and install VPN Service OpenStack
+'feature:install odl-vpnservice-openstack'
+
+==== Devstack Settings
+
+If you already have a working ODL+OpenStack setup you need to add following additional entries in local.conf to enable BGPVPN Plugin
+
+*devstack/local.conf*
+
+[literal]
+--
+enable_plugin networking-bgpvpn https://git.openstack.org/openstack/networking-bgpvpn.git
+
+[[post-config|$NETWORKING_BGPVPN_CONF]]
+[service_providers]
+service_provider=BGPVPN:OpenDaylight:networking_bgpvpn.neutron.services.service_drivers.opendaylight.odl.OpenDaylightBgpvpnDriver:default
+--
+
+OpenStack will by default create bridge `br-int` to which all the VM Ports will be added. You will need `datapath-id` of each Compute Node's `br-int` to setup a tunnel mesh between them. Refer section ITM above on how to create tunnel mesh.
+
+To configure L3VPN with OpenStack you need to create a BGPVPN Instance in OpenStack and then associate with a Neutron Network.
+
+*Creating BGPVPN Instance*
+[literal]
+--
+neutron bgpvpn-create --route-targets 10:4 --import-targets '10:1,10:2,10:3' --route-distinguishers '100:1'  --tenant_id <tenant-id> --name myVpn1
+--
+
+*Associating Network to BGPVPN Instance*
+[literal]
+--
+neutron bgpvpn-net-assoc-create myVpn1 --network <network-id> 
+--
+
+Now you can create VMs as you normally would using `nova boot`. They will get associated to appropriate VPN Instance and VPN Interfaces will be created for them.
+
+==== BGPVPN API Reference documentation
+
+Refer BGPVPN API Reference for more information on how to configure BGPVPN.
+
+* http://docs.openstack.org/developer/networking-bgpvpn/
