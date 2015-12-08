@@ -820,3 +820,196 @@ Using OpenFlow plugin with the alternate performance improvement design karaf fe
 * https://git.opendaylight.org/gerrit/#/q/38f234f903d5bbae11cc171a79ee96602cf1dd0a[38f234] https://bugs.opendaylight.org/show_bug.cgi?id=3859[BUG-3859]: Use of reference keyword in a YANG extension causes YangSyntaxErrorException
 * https://git.opendaylight.org/gerrit/#/q/267961c7f3b195181c57db02cbc739d144b6c896[267961] Use odlparent version for maven-plugin-plugin
 
+=== Lithium-SR3 Release Notes
+
+This page details changes and bug fixes between the Lithium Service Release 2 (Lithium-SR2) and the Lithium Service Release 3 (Lithium-SR3) of OpenDaylight.
+
+==== Projects with no noteworthy changes
+
+The following projects had no noteworthy changes in the Lithium-SR3 release:
+
+* ALTO
+* Control And Provisioning of Wireless Access Points (CAPWAP)
+* Device Identification and Driver Management (DIDM)
+* L2 Switch
+* LISP Flow Mapping
+* Neutron Northbound
+* Network Intent Composition
+* ODL Root Parent
+* OpFlex
+* Packet Cable/PCMM
+* Persistence
+* Reservation
+* SDN Interface Application
+* Service Function Chaining (SFC)
+* Secure Network Bootstrapping Infrastructure (SNBI)
+* SNMP Plugin
+* SNMP4SDN
+* Source-Group Tag eXchange Protocol (SXP)
+* TCP-MD5
+* Topology Processing Framework
+* Unified Secure Channel (USC)
+* VPN Service
+
+==== Authentication, Authorization and Accounting (AAA)
+* https://git.opendaylight.org/gerrit/#/q/84c41933cc14e5ee2e97679341802a7709e222be[84c419] https://bugs.opendaylight.org/show_bug.cgi?id=4430[BUG-4430]: Unclear error message when Basic Authentication has a bad header format
+* https://git.opendaylight.org/gerrit/#/q/86eac0d35d1f164d564496c265877a717eb6bc69[86eac0] https://bugs.opendaylight.org/show_bug.cgi?id=4430[BUG-4430]: Unclear error message when Basic Authentication has a bad header format
+
+==== BGP PCEP
+* https://git.opendaylight.org/gerrit/#/q/04633daf114ccb6e5a8e83f39229d3dc3f41ab36[04633d] https://bugs.opendaylight.org/show_bug.cgi?id=4634[BUG-4634]: Prefix in withdrawn list is not ignored when announced in same msgUpd.
+* https://git.opendaylight.org/gerrit/#/q/5007a6bfd81df2b5ba2ffca02118602cf6c3929d[5007a6] https://bugs.opendaylight.org/show_bug.cgi?id=4622[BUG-4622]: Sending Empty Optional Attributes
+* https://git.opendaylight.org/gerrit/#/q/0e5baad314c8374cc1d0dd4bcce9b2845d32da24[0e5baa] https://bugs.opendaylight.org/show_bug.cgi?id=4593[BUG-4593]: BGP peer registry lookup false negative result
+* https://git.opendaylight.org/gerrit/#/q/7b8330521bb9c66e98245851b9aa39655e63f4f5[7b8330] https://bugs.opendaylight.org/show_bug.cgi?id=3771[BUG-3771]: Use sync on FutureChannels intead of await
+* https://git.opendaylight.org/gerrit/#/q/4be390b23311a304f5b83ad6255b56f787bd59a4[4be390] https://bugs.opendaylight.org/show_bug.cgi?id=3771[BUG-3771]: BGPCEP MD5 Password Fix
+* https://git.opendaylight.org/gerrit/#/q/b294151acc1b53849ed462bc3f8e21e48f139b23[b29415] https://bugs.opendaylight.org/show_bug.cgi?id=4594[BUG-4594]: ISIS PseudoNode NPE
+* https://git.opendaylight.org/gerrit/#/q/61959b0015c0001baab586a14792f7956b6f7992[61959b] Remove duplicate class
+* https://git.opendaylight.org/gerrit/#/q/4a26f2197d031b121eb743064a09dcd90009935b[4a26f2] https://bugs.opendaylight.org/show_bug.cgi?id=4568[BUG-4568]: Extended communities are serialized twice
+* https://git.opendaylight.org/gerrit/#/q/5df4af0626ad392a64940a47ea9676d080854f6a[5df4af] https://bugs.opendaylight.org/show_bug.cgi?id=4581[BUG-4581]: Fix BGP-FS extended communities serializer
+* https://git.opendaylight.org/gerrit/#/q/551afda15ebdd2b242e2c042fcf574c39b87bc5d[551afd] BGP Logs improvement
+* https://git.opendaylight.org/gerrit/#/q/74cc1db1226c81509fbf6f795b9f273e93c19cb2[74cc1d] https://bugs.opendaylight.org/show_bug.cgi?id=4438[BUG-4438]: When delete a route from the app RIB transaction chain brokes
+* https://git.opendaylight.org/gerrit/#/q/e6cdc776146d60ff8c33c12eedda930d8bf03e4d[e6cdc7] https://bugs.opendaylight.org/show_bug.cgi?id=4364[BUG-4364]: data change counter transaction chain
+* https://git.opendaylight.org/gerrit/#/q/d053fb0995c15c392e78d80ceef2f882e938580a[d053fb] https://bugs.opendaylight.org/show_bug.cgi?id=4409[BUG-4409]: Routes to be withdrawn ignored.
+
+==== Controller
+* https://git.opendaylight.org/gerrit/#/q/e3bc5322d7b6d4a46220ca838bd4a1ab403e0350[e3bc53] https://bugs.opendaylight.org/show_bug.cgi?id=4554[BUG-4554]: Ownership is not cleared when all candidates are removed
+* https://git.opendaylight.org/gerrit/#/q/28484d59aa626dd4b32cdeb2d10dbc2c47cc051a[28484d] https://bugs.opendaylight.org/show_bug.cgi?id=4589[BUG-4589]: Handle writing and reading large strings
+* https://git.opendaylight.org/gerrit/#/q/902b16eb6a5c9098124083b3deb2decdb6e29a0c[902b16] https://bugs.opendaylight.org/show_bug.cgi?id=4615[BUG-4615]: Add method on EOS to check if a candidate is registered locally
+* https://git.opendaylight.org/gerrit/#/q/329a5ba683686cba53cc9a59e6eea7f8d495db2d[329a5b] https://bugs.opendaylight.org/show_bug.cgi?id=4563[BUG-4563]: Increase akka seed-node-timeout
+* https://git.opendaylight.org/gerrit/#/q/c9bde204249db7acd55294c2066e1fd3ef833a31[c9bde2] https://bugs.opendaylight.org/show_bug.cgi?id=4521[BUG-4521]: Support milliseconds in event-time notification format
+* https://git.opendaylight.org/gerrit/#/q/818f2e0fdb8706f95de5411f45c1dc7d30e93e33[818f2e] https://bugs.opendaylight.org/show_bug.cgi?id=4560[BUG-4560]: Improve config system logging for debuggability
+* https://git.opendaylight.org/gerrit/#/q/558dd40387dda53d2a9f5d884a3ccb61442798b1[558dd4] update leveldbjni version to support Solaris
+* https://git.opendaylight.org/gerrit/#/q/b3cf2ee574aa20886e0e2fc3273ceb77d3893123[b3cf2e] Fix NPE in EntityOwnerSelectionStrategyConfigReader
+* https://git.opendaylight.org/gerrit/#/q/9c23a45718dc22751e52ec4fd416f92ce593cb37[9c23a4] Implement LeastLoadedCandidateSelectionStrategy
+* https://git.opendaylight.org/gerrit/#/q/2a7203ba98c43a769414be4b7aac7d685df8864a[2a7203] Maintain EntityOwnershipStatistics
+* https://git.opendaylight.org/gerrit/#/q/56c6d3def181437a1f6cf131cefb1449e0603293[56c6d3] Add a mechanism to read the entity owner selection strategies from a config file
+* https://git.opendaylight.org/gerrit/#/q/b68af9e10215a65141d3fe43e78cb3f2ee4022f7[b68af9] Pass in EntityOwnerSelectionStrategyConfig when constructing DistributedEntityOwnershipService
+* https://git.opendaylight.org/gerrit/#/q/3f66261afc4269c546b4ece9c1e6bda9b460272c[3f6626] Pass in EntityOwnerSelectionStrategyConfig when constructing EntityOwnershipShard
+* https://git.opendaylight.org/gerrit/#/q/0adcfafd20c53ad58cff2c0a65508a38922443de[0adcfa] Allow passing of delay to the EntityOwnerElectionStrategy
+* https://git.opendaylight.org/gerrit/#/q/81edfd76f99cae369c117f002716fa5ca2108308[81edfd] Add Delayed Owner selection base on strategy
+* https://git.opendaylight.org/gerrit/#/q/ef703847b30867fdcf0c8fc84bb76d060a3de4e7[ef7038] Return throwable in NeverReconnectStrategy
+* https://git.opendaylight.org/gerrit/#/q/92cdd110a42539c3d5ede9434faf55a7e47f95e6[92cdd1] Introduce EntityOwnerSelectionStrategy
+* https://git.opendaylight.org/gerrit/#/q/641a7e57d6d9686389538b657d72546ee9926183[641a7e] Fix DistributedEntityOwnershipIntegrationTest failure
+* https://git.opendaylight.org/gerrit/#/q/3ee956ee8280665a53a8791476766ee7a8b15bff[3ee956] Re-enable tests and bump aaa version
+
+==== Controller Core Functionality Tutorials
+* https://git.opendaylight.org/gerrit/#/q/377cdb65e9f52dd1d4d5e772453d3eba314f6a2d[377cdb] Delete Python scripts from benchmarks.
+
+==== DLUX
+* https://git.opendaylight.org/gerrit/#/q/29e1e8495fdfd70dc021bf904d3153783e17f6df[29e1e8] Updating maven archetype version to use 2.3 version
+* https://git.opendaylight.org/gerrit/#/q/820b6664a49e7574350405f77416bb6e0382786f[820b66] Re-enable DLUX distribution
+
+==== Documentation
+* https://git.opendaylight.org/gerrit/#/q/6277cb319461ac16d3338bf73cccf42ed6a52f6e[6277cb] Updated kilo and liberty local.conf files for both control and compute nodes in VTN_OpenStack_Support-user.adoc
+* https://git.opendaylight.org/gerrit/#/q/e70097883b19c26844679f30694f7a2fed437f83[e70097] Update Lithium SR2 Release Notes for openflowplugin
+* https://git.opendaylight.org/gerrit/#/q/41cb1b732fbed3754c4c76d353ca57b4bedc96f7[41cb1b] Adding Lithium-SR2 Release Notes
+
+==== Group Based Policy (GBP)
+* https://git.opendaylight.org/gerrit/#/q/696328688562eaef645e715d74314c1ce7e9e7b6[696328] https://bugs.opendaylight.org/show_bug.cgi?id=4620[BUG-4620]: Adding mgmt traffic to Network Services
+* https://git.opendaylight.org/gerrit/#/q/5d58ac389d73ae702cea8231ab3e7b840875c69c[5d58ac] https://bugs.opendaylight.org/show_bug.cgi?id=4487[BUG-4487]: fixing of NPE and moved creation of infrastructure
+* https://git.opendaylight.org/gerrit/#/q/cea50872745c8b70f28482cb3dc6ddd463101596[cea508] https://bugs.opendaylight.org/show_bug.cgi?id=4106[BUG-4106]: tunnel output in group mods
+* https://git.opendaylight.org/gerrit/#/q/a42fd942e4132d79c0e218acb332bdb8ae14ae68[a42fd9] Gbp coverage increased in ./neutron/mapper/mapping/rule
+* https://git.opendaylight.org/gerrit/#/q/759a94b42d13a56aab5bff511244a3ce8580368c[759a94] Gbp coverage increased in ./neutron/mapper/util
+* https://git.opendaylight.org/gerrit/#/q/d6e2d62417776a411938201a52f09715eb68915e[d6e2d6] Gbp coverage increased in ./neutron/mapper/infrastructure
+* https://git.opendaylight.org/gerrit/#/q/9e3747deac60bd923bc568eca320849ff58fd100[9e3747] https://bugs.opendaylight.org/show_bug.cgi?id=4195[BUG-4195]: UT - GBP - NeutronMapper - groupbasedpolicy.neutron.gbp.util     NeutronGbpIidFactoryTest.java(98.3%)
+* https://git.opendaylight.org/gerrit/#/q/cf2258cd762796bfeec329765f702b89bb6c5744[cf2258] Test cases added to neutron-mapper and implementation improved:
+
+==== Integration
+* https://git.opendaylight.org/gerrit/#/q/f1fc5e0dbe3dd195779b917ce7e80f1a5f347462[f1fc5e] Cluster configuration script should copy initial configuration files.
+* https://git.opendaylight.org/gerrit/#/q/7f8f4a3d31cb15b4dfda738657225fbf0a165be6[7f8f4a] Consider snmp4sdn feature not compatible with all
+* https://git.opendaylight.org/gerrit/#/q/988cfae3abb5dbee1f62271eb34d1165f992a874[988cfa] Script to configure cluster params on local ODL installation.
+* https://git.opendaylight.org/gerrit/#/q/438d6c091483eb53de5dd9b75d23d0f6ab4a5cda[438d6c] Move iotdm feature to not-compatible list
+
+==== Internet of Things Data Management (IoTDM)
+* https://git.opendaylight.org/gerrit/#/q/35f3f40c6a73802588aac8d8257004fe5cb394b3[35f3f4] dressed mni/mbs container isseus, simplified attributes/content nadling https://bugs.opendaylight.org/show_bug.cgi?id=3790[BUG-3790]: 
+* https://git.opendaylight.org/gerrit/#/q/87fa2a20ef0d2c6d091cf81906e1c58ab7869bee[87fa2a] ContentInstance fix, and client benchmark and sanity test update
+
+==== Link Aggregation Control Protocol (LACP)
+* https://git.opendaylight.org/gerrit/#/q/002d6f2a5c1d178bb3a66e9cbdbdb450ee6c65da[002d6f] Modified logic to obtain system mac from switchId
+
+==== OpenFlow Protocol Library
+* https://git.opendaylight.org/gerrit/#/q/22d96bf79e25f975b81cd8e95f1ec61378118976[22d96b] https://bugs.opendaylight.org/show_bug.cgi?id=4432[BUG-4432]: NPE problem in OFEncode
+
+==== OpenFlow Plugin
+* https://git.opendaylight.org/gerrit/#/q/b706170bb88018010bde3d8bd84ef1bbf4662943[b70617] https://bugs.opendaylight.org/show_bug.cgi?id=4565[BUG-4565]: queue stats error
+* https://git.opendaylight.org/gerrit/#/q/3fefde67b078e4f7904e73487a5c06e8def5daac[3fefde] Fix for https://bugs.opendaylight.org/show_bug.cgi?id=1395[BUG-1395]: .
+* https://git.opendaylight.org/gerrit/#/q/5a795718938b2d67bc912fdf46495f173ed52d7a[5a7957] https://bugs.opendaylight.org/show_bug.cgi?id=4442[BUG-4442]: PacketOut action headers are not implemented or ignored
+* https://git.opendaylight.org/gerrit/#/q/314858354139384d825a4cdc8b323ed996f1c39d[314858] https://bugs.opendaylight.org/show_bug.cgi?id=4437[BUG-4437]: missing bulk-o-matic-li feature
+* https://git.opendaylight.org/gerrit/#/q/f7ecfd72ee2c63a9169656f0263dd6c6db2f8979[f7ecfd] https://bugs.opendaylight.org/show_bug.cgi?id=3754[BUG-3754]: NPE at org.opendaylight.openflowplugin.openflow.md.core.ConnectionConductorImpl
+* https://git.opendaylight.org/gerrit/#/q/88762d66610048d72d2b7b6e0546ac974a9a80cd[88762d] https://bugs.opendaylight.org/show_bug.cgi?id=4433[BUG-4433]: OF Version 10 does not get ommitted for clustering
+* https://git.opendaylight.org/gerrit/#/q/e185d5ea1f415a053ce7c7aa0a4e15b2b2d7f0c7[e185d5] Re-enable DLUX feature
+* https://git.opendaylight.org/gerrit/#/q/1d0001a664ef206505e8bd6048436a1c4b3681f0[1d0001] Handle cancel txn exception for slaves and device disconnect exception
+* https://git.opendaylight.org/gerrit/#/q/612eefaeb49204bb3fa950d9550087ac7d10ce04[612eef] Inventory Cleanup fails as txn could not be created
+* https://git.opendaylight.org/gerrit/#/q/564ce0006c52141688391ae16e2f0dafe7d9cf37[564ce0] Fix license header violations in legacy
+* https://git.opendaylight.org/gerrit/#/q/715ff667e455f3148ffc27f88cbe4001701fac52[715ff6] Fix license header violations in samples
+* https://git.opendaylight.org/gerrit/#/q/bd0459ec6d872e9a4e9fac2cd224d54ec220cac9[bd0459] Fix license header violations in test-provider
+* https://git.opendaylight.org/gerrit/#/q/e9b48e37625bc5aebe4f3771ba97d72ab35ee7ce[e9b48e] Fix license header violations in test-common
+* https://git.opendaylight.org/gerrit/#/q/89583049808aecf0131280ac19be81ef4958a415[895830] Fix license header violations in applications
+* https://git.opendaylight.org/gerrit/#/q/0a7d67053cfcdc0e3ebc190cc0b62d5945ba70d8[0a7d67] Fix license header violations in extensions/openflowplugin
+* https://git.opendaylight.org/gerrit/#/q/d13b91adca83afeb3a0c8968e3c39ca8a7977ec1[d13b91] Fix license header violations in extensions/openflowjava
+* https://git.opendaylight.org/gerrit/#/q/8c198738365a1ea0935c311243db1464f1bc9e97[8c1987] Fix license header violations in openflowplugin-impl
+* https://git.opendaylight.org/gerrit/#/q/1731e41dac1c9c104a498745770687624350d583[1731e4] Fix license header violations in openflowplugin
+* https://git.opendaylight.org/gerrit/#/q/826fcd6486011370b07dadc9c3050a4f7ed56fa6[826fcd] Fix license header violations in openflowplugin-api
+
+==== OVSDB Integration
+* https://git.opendaylight.org/gerrit/#/q/0257c8e0fb9cfa30a08eb1172944549be92bd849[0257c8] Fixed possible null point exception in node manager entries update code
+* https://git.opendaylight.org/gerrit/#/q/533471b20e93fcf7790f17b5cca80a89694f4255[533471] For controller initiated connection, there is race condition while disconnecting the device from controller, that does not allow one of the non-owner southbound instance to disconnect the device from the plugin. Race condition was occuring because OvsdbConnectionInstance was not stored in the internal cache at correct point in control flow.It gets added when EntityOwnershipChange event happens, so when data change event for disconnection occured, it requires OvsdbConnectionInstance to be in cache to disconnect from the device, but OvsdbConnectionInstance was not in the cache becuse EntityOwnershipService event was not recieved by that non-owner instance.
+* https://git.opendaylight.org/gerrit/#/q/d3c3af5d0ee3074a518909819637755ab5a6a83f[d3c3af] https://bugs.opendaylight.org/show_bug.cgi?id=4611[BUG-4611]: null pointer exception while processing interface event
+* https://git.opendaylight.org/gerrit/#/q/6f740112d77cdf90ed356efb4acfaf95266c2da2[6f7401] UT for remaining classes in ovsdb.southbound.ovsdb.transact
+* https://git.opendaylight.org/gerrit/#/q/73c1e314ed9c0ea7740ddd8cec3281209d709275[73c1e3] UT for ovsdb.southbound transact package
+* https://git.opendaylight.org/gerrit/#/q/c653bc748d56c6e4414ba649edd4f7ff8b5b9f5b[c653bc] Inline variables
+* https://git.opendaylight.org/gerrit/#/q/840b42ab60f0d9c9482358c51db038d42838a591[840b42] Drop redundant type information
+* https://git.opendaylight.org/gerrit/#/q/4123708300baef85801bfbe73e0a66ff478e10ea[412370] Fix up loops
+* https://git.opendaylight.org/gerrit/#/q/ecc16434a9f1ff3a2a5a811ce3bd0b924b94a0a9[ecc164] Boxing/unboxing clean-up
+* https://git.opendaylight.org/gerrit/#/q/91e1ddb6ebbffb7435d923ba82b3d99009e7a63b[91e1dd] Full <> clean-up
+* https://git.opendaylight.org/gerrit/#/q/c731e21b8c652fea53ecaa50f84ace759b5e55a0[c731e2] Remove unused imports
+* https://git.opendaylight.org/gerrit/#/q/2439df076dca156f52f983b70a9f6b6a49401b07[2439df] Remove redundant semi-colons
+* https://git.opendaylight.org/gerrit/#/q/ca617c6565407e7b3e102481d7c79e035893a1a5[ca617c] Clean up enums
+* https://git.opendaylight.org/gerrit/#/q/47b67289eee20911aa03f6d5e917bb85395e434a[47b672] Clean up collections
+* https://git.opendaylight.org/gerrit/#/q/090a9be7dfed64a9ba81d9111ee32735477c161a[090a9b] Ovsdb-UI : Change icon and attempt to fix invisible vxlan
+* https://git.opendaylight.org/gerrit/#/q/83a4991e55cdaf948df0d3303f2fcadf527bf671[83a499] Unit Test for ovsdb southbound OvsdbConnectionManager.java
+* https://git.opendaylight.org/gerrit/#/q/a128c9355ae03d2d53d7c5320737ca09e9f55912[a128c9] Added unit tests for ovsdb/southbound lithium branch
+* https://git.opendaylight.org/gerrit/#/q/3fbbbd92ab986b07f5bcefd5af1224a6ad7ac036[3fbbbd] Add UT for SouthboundMapper and SouthboundProvider
+* https://git.opendaylight.org/gerrit/#/q/41d35eacd128e5a6cb8d0313af3f663a0ba9d4a0[41d35e] https://bugs.opendaylight.org/show_bug.cgi?id=4546[BUG-4546]: Southbound plugin throws java.lang.IllegalStateException  while shutting down and loops forever
+* https://git.opendaylight.org/gerrit/#/q/9dd68f4e4b24100777421e20638caa7f4e9a851d[9dd68f] UT for ovsdb.southbound transact package
+* https://git.opendaylight.org/gerrit/#/q/986ff6519c1d9d22611a501246d172a0cee89a6c[986ff6] Adding code to test the all the supportted interfaces by OVS-DPDK [dpdk, dpdkr, dpdkvhostuser,....others]
+* https://git.opendaylight.org/gerrit/#/q/a1163484bdf80b7e634eb55f7b9a2e3da9f975a4[a11634] Adding code to test the OVS-DPDK datapath type: netdev
+* https://git.opendaylight.org/gerrit/#/q/4216ed2bf65b8c52e381b025ae8b7605d9a9070f[4216ed] Fix ovsdb-ui to use stable/lithium version of commons parent
+* https://git.opendaylight.org/gerrit/#/q/1416f6e3ad03afb537628a159667bba3ad5e3ed8[1416f6] UT for southbound/transactions/md - set 5
+* https://git.opendaylight.org/gerrit/#/q/ebd2c0ab3f5a94385ede971679f2e3b0c7008ea9[ebd2c0] UT for southbound/transactions/md - set 4
+* https://git.opendaylight.org/gerrit/#/q/50eeeb62ae4478bc258b0b4eb8e028920ea3f590[50eeeb] UT for southbound/transactions/md - set 3
+* https://git.opendaylight.org/gerrit/#/q/1dc5e2d2a45d5b60c9bcf9a557268fb5be808937[1dc5e2] UT for southbound/transactions/md - set 2
+* https://git.opendaylight.org/gerrit/#/q/127f2d42253e33c8746515f4aaa0d25c06fef2a2[127f2d] UT for southbound/transactions/md
+* https://git.opendaylight.org/gerrit/#/q/314122924aee8c912eface0b89868c6a07beecf0[314122] UT for SouthboundUtil.java
+* https://git.opendaylight.org/gerrit/#/q/3552a0d581d2e8ec031727d9ec0c84cc934837e8[3552a0] Added Unit Tests for ovsdb/southbound
+* https://git.opendaylight.org/gerrit/#/q/d43cba1cd54745ee018ce6d18e1e29d096c35215[d43cba] Unit test for ovsdb.southbound.ovsdb.transact
+* https://git.opendaylight.org/gerrit/#/q/eb7913590be4e537c716ca39103a0c4babf5c0e3[eb7913] If node joins the cluster after application master instance is selected, it doesn't get any notification about the ownership change of the application, so it does not initiate the ovsdb manager, It should check if any other instance is master instance, if yes, consider itself slave and start the Ovsdb Manager.
+* https://git.opendaylight.org/gerrit/#/q/044899a890d4cc19fd2c41158532ccf8ac8ad959[044899] All TCP & UDP SG Rules : Implementation and Unit tests added.
+* https://git.opendaylight.org/gerrit/#/q/f80bbca1a6459ef0b0a6859a331122b8314e3ca9[f80bbc] Custom ICMP SG Rule: 1)Modification in ICMP matcher 2)Unit Test Improvement (Check added to validate if some values are set properly).
+* https://git.opendaylight.org/gerrit/#/q/68d4d831a5c1e414639eead34a628de3dd320573[68d4d8] Added Security Rule for Custom ICMP
+* https://git.opendaylight.org/gerrit/#/q/cd2d7217f651f7816a3122468f2986f169147c13[cd2d72] https://bugs.opendaylight.org/show_bug.cgi?id=4472[BUG-4472]: netvirt: IlligalArgumentException in NAT provider
+* https://git.opendaylight.org/gerrit/#/q/8807d5ba73561c5b472825e6580bf3d372f8fac9[8807d5] First pass for ovsdb-ui
+* https://git.opendaylight.org/gerrit/#/q/97e8f749247be2b8b2db6dd2f71868da4f1aaab2[97e8f7] Workaround to fix net-virt-it
+* https://git.opendaylight.org/gerrit/#/q/fd44e6a875c671a068162f9e8a013d6b6759b8c4[fd44e6] Fix issue that was causing integration test failure.
+* https://git.opendaylight.org/gerrit/#/q/ccdda2753540c9501fd5baeb99a2e96137225bbd[ccdda2] https://bugs.opendaylight.org/show_bug.cgi?id=4144[BUG-4144]: Periodic ARP resolver should use unicast MAC destination address whenever possible; instead of broadcast
+* https://git.opendaylight.org/gerrit/#/q/4a56354a50918dd44bd07286ec87c1c5b8268584[4a5635] Remove unused code
+* https://git.opendaylight.org/gerrit/#/q/077a73c3161a45859461289d3ebe60bdc0eaa670[077a73] If controller joins the cluster late, and the owner of the device is already decided, EntityOwnershipService won't notify new candidate that register for ownership. Adding a proactive check on the ownership state of the device, so if it's already owned, adding the connection instances in the connection cache.
+
+==== Time Series Data Repository (TSDR)
+* https://git.opendaylight.org/gerrit/#/q/1097ba0ca2c6a9adaafd8ccaafa3d738a502d9a4[1097ba] https://bugs.opendaylight.org/show_bug.cgi?id=4499[BUG-4499]: Interface for RPC isn't visible out of bundle
+
+==== Table Type Patterns (TTP)
+* https://git.opendaylight.org/gerrit/#/q/74f1955a34f88f8ee024ee77a63eb6b5b93cc03a[74f195] https://bugs.opendaylight.org/show_bug.cgi?id=3844[BUG-3844]: Use stderr for user-oriented CLI output
+* https://git.opendaylight.org/gerrit/#/q/03c10d9384f6c14ebac96ab3d0cc2b14f1dd6398[03c10d] removing superfluous groupId
+
+==== Virtual Tenant Network (VTN)
+* https://git.opendaylight.org/gerrit/#/q/87df4ae0c7f5c80cd743f934f9b5ee765d1d8cdd[87df4a] https://bugs.opendaylight.org/show_bug.cgi?id=4427[BUG-4427]: Clear cached flow conditions on transaction cancel.
+
+==== YANG Tools
+* https://git.opendaylight.org/gerrit/#/q/37d9b5aa956b7d8e01be2cf3734ba7d98ae1cc03[37d9b5] https://bugs.opendaylight.org/show_bug.cgi?id=4288[BUG-4288]: check for existing child modification
+* https://git.opendaylight.org/gerrit/#/q/4757b155afab5e686577d6cfc66141029dbe44e7[4757b1] https://bugs.opendaylight.org/show_bug.cgi?id=4556[BUG-4556]: enable DataSchemaContextTrees to be scavenged
+* https://git.opendaylight.org/gerrit/#/q/3ba1acab57f4a7886b9b2720904cea9fa643a89d[3ba1ac] https://bugs.opendaylight.org/show_bug.cgi?id=3799[BUG-3799]: NPE when including a submodule of a more recent revision than the module
+* https://git.opendaylight.org/gerrit/#/q/1012358e6ba7c37609c4afa2d8d9ba45efc4b9a1[101235] https://bugs.opendaylight.org/show_bug.cgi?id=4407[BUG-4407]: Fix Decimal64 range enforcement
+* https://git.opendaylight.org/gerrit/#/q/0b4fafee5db9e92a0a380f16cdf75da156fef67e[0b4faf] https://bugs.opendaylight.org/show_bug.cgi?id=4349[BUG-4349]: Allowed UnkeyedListItem to be start event in Writer.
+* https://git.opendaylight.org/gerrit/#/q/190aadf276c3fdd4e771d90d99e4dad0050cde18[190aad] https://bugs.opendaylight.org/show_bug.cgi?id=4359[BUG-4359]: use WRITE-implied metadata
+* https://git.opendaylight.org/gerrit/#/q/a25259656891f17f0851fe20b0d5af290ea78b29[a25259] https://bugs.opendaylight.org/show_bug.cgi?id=4231[BUG-4231]: Yang tools failing to parse Augmentations under "uses" clause.
+
