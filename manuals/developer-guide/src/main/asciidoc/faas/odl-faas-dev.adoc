@@ -1,0 +1,81 @@
+== Fabric As A Service ==
+
+=== Overview ===
+FaaS (Fabric As A service) defines two layers APIs. 
+* The Top layer is a '''user level logical network''' API which defines services operating on the following abstracted constructs : 
+** logical Port 
+** logical link 
+** logical switch
+** logical router
+** Subnet
+** Rule
+** End Points Location Registration.
+
+Through these constructs, a logical network can be built without users knowing too much details about the real network device, technology and vendor information. Users' network services is decoupled from underneath physical
+network. The benefits from this decoupling is the service is not locked in with any technology or devices. FaaS maps the logical network to the physical network configuration which minimize the manual labour work. As a result, it avoid human error and massively reduces the OPEX for network operators.
+
+* The second layer defines an abstraction layer called '''Fabric''' API. The idea is to abstract network into a topology formed by a collections of fabric objects other than varies of physical devices. 
+Each Fabric object provides a collection of unified services. Those Services is defined in YANG file as in 
+
+<URL> . The unified service defines similar constructs as in user level logical network object model (To to continued).
+
+The top level API enables developer to write applications to map high level  model such as GBP, Intent etc... into a logical network model, while the lower level gives the application more control to individual fabric object level. More importantly the Fabric API is more like SPI (Service Provider API) a fabric provider or vendor can implement the SPI based on its own Fabric technique such as TRILL, SPB etc ...
+
+For how to use first level API operation, please refer to user guide for more details. This doc focuses on the Fabric level API and give detailed describe each API's semantics and example implementation.
+
+=== FaaS Architecture ===
+
+FaaS Architecture is an 3 layered architecture, on the top is the FaaS Application layer, in the middle is the Fabric manager and at the bottom are different types of fabric objects. From bottom up, it is 
+
+* Fabric and its controller (Fabric Controller)
+The Fabric object provides an abstraction of a homogeneous network or portion of the network and also has a built in Fabric controller which provides management plane and control plane for the fabric. 
+The fabric controller implements the services required in Fabric Service and monitor and control the fabric operation.
+
+* Fabric Manager
+Fabric Manager manages all the fabric objects. also Fabric manager acts as a Unified Fabric Controller which provides inter-connect fabric control and configuration 
+Also Fabric Manager is FaaS API service via Which FaaS user level logical network API (the top level API as mentioned prevously) exposed and implemented. 
+
+* FaaS render for GBP (Group Based Policy)
+FaaS render for GBP is an application of FaaS and provides the rendering service between GBP model and logical network model provided by Fabric Manager.
+
+=== Fabric APIs and Interfaces ===
+Fabric object implements 3 categories APIs, namely
+* Resource management API
+* logical network API
+* OAM API 
+
+==== FaaS Resource Management API ====
+The FaaS Resource Management API provides services to allocate and reclaim the network resources provided by Fabric object. Those APIs can be accessed via RESTCONF rendered from YANG in MD-SAL.
+
+* Name: create virtual container 
+** virtual container is an collections of resources allocated to a tenant, for example, a list of physical ports, bandwidth or L2 network or logical routers quantity. etc...
+** http://${IPADDRESS}:8181/restconf/operations/vcontainer-topology:create-vcontainer
+** Description: create a given virtual container.
+
+* Name: assign fabric resource to a virtual container 
+** virtual container is an collections of resources allocated to a tenant, for example, a list of physical ports, bandwidth or L2 network or logical routers quantity. etc...
+** http://${IPADDRESS}:8181/restconf/operations/vc-ld-node:add-vfabric-to-ld-node
+
+* Name: assign appliance to a virtual container 
+** virtual container is an collections of resources allocated to a tenant, for example, a list of physical ports, bandwidth or L2 network or logical routers quantity. etc...
+** http://${IPADDRESS}:8181/restconf/operations/vc-ld-node:add-appliance-to-ld-node
+
+
+* RESTCONF path for Virtual Container Datastore query (note: vcontainer-id equals tenantID for now):
+** http://${IPADDRESS}:8181/restconf/config/network-topology/topology/{vcontainer-id}/vc-topology-attributes/
+** http://${IPADDRESS}:8181/restconf/config/network-topology/topology/{vcontainer-id}/node/{net-node-id}/vc-net-node-attributes
+** http://${IPADDRESS}:8181/restconf/config/network-topology/topology/{vcontainer-id}/node/{ld-node-id}/vc-ld-node-attributes
+
+
+==== FaaS Logical Network Management API ====
+* RESTCONF for creating Logical switch and router 
+** http://${IPADDRESS}:8181/restconf/operations/vc-net-node:create-lne-layer2
+** http://${IPADDRESS}:8181/restconf/operations/vc-net-node:create-lne-layer3
+
+More to come
+
+==== OAM API ====
+TBD
+
+=== API Reference Documentation ===
+GOTO http://${IPADDRESS}:8181/restconf/apidoc/index.html and expand on '''FaaS''' panel for more APIs.

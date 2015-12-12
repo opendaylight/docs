@@ -1,0 +1,141 @@
+==Fabric As A Service== 
+This document describes how to use the Fabric As A Service  (FaaS) 
+feature in OpenDaylight.  This document contains configuration,
+administration, and management sections for the feature.
+
+== Overview ==
+Currently network applications and network administrators mostly rely on lower level interfaces such as CLI, 
+SNMP, OVSDB, NetConf or Openflow to directly configure individual device for network service provisioning. In general, those interfaces 
+are
+ *  Technology oriented, not application orientied.
+ *  Vendor specific
+ *  Individual device oriented, not network oriented.
+ *  Not declarative, complicated and Procedure oriented.
+
+To address the gap between application needs and network interface, there are a few application centric language proposed in ODL such as GBP, NIC, NEMO etc... trying to replace traditional southbound interface to application. Those languages are top-down abstraction and modelling the application requirements in a more application oriented way. After  being involved with GBP development for a while, we feel the top down model still has a quite gap between the model and the underneath network since the existing interfaces to network devices are 
+
+ *  Lack of abstraction of network which make it very hard to map high level abstractions such as GBP, Intent or any application centric north bound APIs
+    to physical network. Often the applications built with these low level interfaces are coupled tightly with underneath technology and make the application's architecture 
+    monolithic, error prone and hard to maintain.
+
+We think a bottom-up abstraction of network can simplify reduce the gap and easy to implement the application centric model. Moreover in some uses cases, an interface with network service oriented are still desired for example from network monitoring/troubleshooting perspective. That's where the Fabric as a Service comes.
+
+== FaaS Architecture ==
+* Fabric and its controller (Fabric Controller)
+The Fabric object provides an abstraction of a homogeneous network or portion of the network and also has a built in Fabric controller which provides management plane and control plane for the fabric. 
+The fabric controller implements the services required in Fabric Service and monitor and control the fabric operation.
+
+* Fabric Manager
+Fabric Manager manages all the fabric objects. also Fabric manager acts as a Unified Fabric Controller which provides inter-connect fabric control and configuration 
+Also Fabric Manager is FaaS API service via Which FaaS user level logical network API (the top level API as mentioned prevously) exposed and implemented. 
+
+* FaaS render for GBP (Group Based Policy)
+FaaS render for GBP is an application of FaaS and provides the rendering service between GBP model and logical network model provided by Fabric Manager.
+
+=== Installing Fabric As A Service ===
+To install FaaS, download OpenDaylight and use the Karaf console
+to install the following feature:
+'''odl-faas-all'''
+
+=== Configuring FaaS ===
+This section gives details about the configuration settings for various components in FaaS.
+
+The FaaS configuration files for the Karaf distribution are located in distribution/karaf/target/assembly/etc/faas
+
+* akka.conf
+** This file contains configuration related to clustering.  Potential configuration properties can be found on the akka website at http://doc.akka.io
+
+*fabric-factory.xml
+*vxlan-fabric.xml
+*vxlan-fabric-ovs-adapter.xml
+** Those 3 files are used to initialize fabric module and located under distribution/karaf/target/assembly/etc/opendaylight/karaf
+
+=== Administering or Managing FaaS ===
+After installing the odl-faas-all feature from the Karaf console, users can administer and manage Fabric resource and FaaS logical network channels from the APIDOCS explorer via RESTCONF
+
+Go to http://${IPADDRESS}:8181/apidoc/explorer/index.html, sign in, and expand the [FaaS?] panel.  From there, users can execute various API calls to test their FaaS deployment such as create virutal container, create fabric,  delete fabric, create/edit logical network elements.
+
+== Tutorials ==
+Below are tutorials for 4  major use cases.
+#  to create and provision a fabric
+#  to allocate resource from the fabric to a tenant
+#  to define a logical network for a tenant. Currently there are two ways to create a logical network 
+##   Create a GBP profile for a tenant and then convert it to a logical network via GBP FaaS render Or
+##   Manually create a logical network via RESTCONF APIs.
+#  to attach or detach an Endpoint to a logical switch or logical router
+
+=== Create a fabric ===
+==== Overview ====
+This tutorial walks users through the process of create a Fabric object
+
+==== Prerequisites ====
+A set of virtual switches (OVS)  have to be  registered or discovered by ODL. Mininet is recommended to create a OVS network. 
+After an OVS network is created, set up the controller IP pointing to ODL IP address in each of the OVS.
+From ODL,   a physical topology can be viewed via ODL DLUX UI or retrieved via RESTCONF API.
+
+==== Instructions ====
+* Run the OpenDaylight distribution and install odl-faas-all from the Karaf console.
+* Go to http://${IPADDRESS}:8181/apidoc/explorer/index.html
+* Get the topology of OVS network after OVS switches are registered in the controller
+* determine the nodes and links to be included in the to-be-defined Fabric object.  
+* Execute create-fabric RESTCONF API with the following json data: {To be provided }
+
+=== Create virtual container for a tenant ===
+The purpose of this tutorial is to allocate network resources to a tenant
+
+==== Overview ====
+This tutorial walks users through the process of create a Fabric
+
+==== Prerequisites ====
+1 or more fabric objects have been created. 
+
+===== Instructions =====
+* Run the OpenDaylight distribution and install odl-faas-all from the Karaf console.
+* Go to http://${IPADDRESS}:8181/apidoc/explorer/index.html 
+* Execute create-vcontainer with the following restconf API and json data: {TBD}
+http://127.0.0.1:8181/restconf/operations/vcontainer-topology:create-vcontainer
+
+After a virtual container is created, fabric resource and appliance resource can be assigned to the container object via the following 
+RESTConf API.
+* http://${IPADDRESS}:8181/restconf/operations/vc-ld-node:add-vfabric-to-ld-node
+* http://${IPADDRESS}:8181/restconf/operations/vc-ld-node:add-appliance-to-ld-node
+
+=== Create a logical network  ===
+==== Overview ====
+This tutorial walks users through the process of create a logical network for a tenant
+
+==== Prerequisites ====
+a virtual container has been created and assigned to the tenant
+
+==== Instructions ====
+* Run the OpenDaylight distribution and install odl-faas-all and GBP faas render feature from the Karaf console.
+* Go to http://${IPADDRESS}:8181/apidoc/explorer/index.html 
+* Execute "create GBP model" via GBP REST API. 
+The GBP model then can be automatically mapped into a logical network. 
+
+===== Or =====
+* Execute "create logical devices" with the following RESTCONF and json data: {TBD}
+RESTCONF API to create a logical switch 
+* http://${IPADDRESS}:8181/restconf/operations/vc-net-node:create-lne-layer2
+RESTCONF API to create a logical router  
+* http://${IPADDRESS}:8181/restconf/operations/vc-net-node:create-lne-layer3
+RESTCONF API to connect two logical devices
+* {To be provided}
+RESTCONF API to add rules on a device level or port level or add chains between two logical routers   
+* {To be provided }
+
+Execute RESTCONF API [To be provided ]To query a logical network,
+
+=== Attach/detach an End Point to a logical device  ===
+==== Overview ====
+This tutorial walks users through the process of registering an End Point to a logical device either logical switch or router.
+The purpose of this API is to inform the FaaS where an endpoint physically attach. The location information consists of the binding information between physical port identifier and logical port information. The logical port is indicated by the endpoint either Layer 2 attribute(MAC address) or Layer 3 attribute (IP address) and logical network ID (VLAN ID). The logical network ID is indirectly indicated the tenant ID since it is mutual exclusive resource allocated to a tenant.  
+
+==== Prerequisites ====
+The logical device has to be created 
+
+==== Instructions ====
+* Run the OpenDaylight distribution and install odl-faas-all from the Karaf console.
+* Go to http://${IPADDRESS}:8181/apidoc/explorer/index.html 
+* Execute "attach end point " with the following RESTCONF API and JSON data: {to be provided}
+
