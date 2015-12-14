@@ -1,0 +1,46 @@
+== OpenDaylight Controller Shield Developer Guide
+
+==Overview==
+The Controller Shield project proposes to create a repository called the Unified-Security Plugin(usecplugin). The Unified-Security Plugin is a general purpose plugin to provide controller security information to north-bound applications
+
+==Architecture==
+
+Please refer project proposal page for more details on architecture(https://wiki.opendaylight.org/view/Project_Proposals:Controller_Shield).
+
+==Getting Started==
+
+=== Prerequisite ===
+Follow the installation steps of controller in https://wiki.opendaylight.org/view/OpenDaylight_Controller:Pulling,_Hacking,_and_Pushing_the_Code_from_the_CLI 
+
+=== Initiating Controller Shield===
+Download the following from OpenDaylight Gerrit links
+
+* Unified-Security Plugin (usecplugin)
+<pre>
+git clone https://git.opendaylight.org/gerrit/usecplugin.git
+OR
+git clone ssh://<username>@git.opendaylight.org:29418/usecplugin.git
+</pre>
+
+=== How to Start and Run===
+The usecplugin is created using MD-SAL archetype(https://wiki.opendaylight.org/view/OpenDaylight_Controller:MD-SAL:Startup_Project_Archetype)
+The folders in the plugin are:
+<pre>
+api/
+artifacts/
+features/
+impl/
+karaf/
+pom.xml
+</pre>
+
+Relevant Files:
+* impl/UsecpluginDataBase.java: For creating the database and function definition for populating the database.
+* impl/PacketHandler.java: To process the incoming packets and maintain the process for watermark levels.
+* impl/UsecpluginProvider.java:To initiate and start the plugin
+
+
+===Related Documents===
+https://wiki.opendaylight.org/view/Controller_Shield:_Beryllium_User_Guide
+
+
