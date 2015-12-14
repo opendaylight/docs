@@ -1,0 +1,84 @@
+== OpenDaylight Controller Shield User Guide
+
+==Introduction===
+The user guide aims to help with the OpenDaylight Controller Shield setup. Repository name for this project it "usecplugin(usec)".
+
+===Audience===
+
+The Unified Security Plugin (UsecPlugin) is developed for ODL controller as an infra that provides a single pane of visibility related to controller security and expose the same to third party, north-bound applications. The security information could be for various purposes such as collating source of different attacks reported in SB plugins / suspected controller intrusions or information about trusted controllers in the network.
+
+===Controller Shield Source code===
+<pre>
+git clone https://git.opendaylight.org/gerrit/usecplugin.git
+OR
+git clone ssh://<username>@git.opendaylight.org:29418/usecplugin.git
+</pre>
+
+===Components===
+The Controller Shield Security Plugin comprises of the following components:
+
+* Controller Shield Database     : This component is used to create and insert the data into the database for third party application.    
+* Controller Shield Rest API     : It is a part of controller northbound, which gives the required information by querying Controller Shield RPC. 
+* Controller Shield RPC          : This component uses the Controller Shield RestAPI and gathers the information from the database.
+* Controller Shield Notification : This component notify the third party applications about the anticipated security threat on the controller.
+
+===Running Controller Shield ===
+
+Following Step should be followed to bring up the controller:
+
+* Download the OpenDaylight distribution release.
+<pre>
+http://www.opendaylight.org/software/downloads
+</pre>
+
+* Run Karaf of the distribution from bin folder<br />
+./karaf
+
+* Install the following features one by one:<br />
+<pre>
+odl-restconf-all
+odl-openflowplugin-all
+odl-usecplugin-api
+odl-usecplugin
+</pre>
+Give some time for the usecplugin to come up. Check Karaf log in /data/log/karaf.log for "Usecplugin session up"
+
+* Run the controller through mininet for testing.
+ <pre>sudo mn --controller=remote</pre>
+
+* Check for a database created in the distribution folder by the name usecplugin:db
+Run the database by giving the following commands
+<pre>
+sqlite3 usecplugin:db
+.tables;
+select *from <table_name>;
+</pre>
+The table_name here is UsecPluginLWM;
+
+===Checking usecplugin Output===
+
+* Check the Controller Shield Rest APIs URL(http://localhost:8181/apidoc/explorer/index.html/)
+The RestConfs are:
+<pre>
+http://localhost:8181/apidoc/explorer/index.html#!/usecplugin%282015-01-05%29/GET_security_get_1
+http://localhost:8181/apidoc/explorer/index.html#!/usecplugin%282015-01-05%29/GET_security_get_5
+http://localhost:8181/apidoc/explorer/index.html#!/usecplugin%282015-01-05%29/GET_security_elements_get_6
+</pre>
+* Check the database for the stored entries. It should be something as below:
+<pre>
+ID|NodeID|NodeConnectorID|SrcIP|DstIP|Protocol|SrcPort|DstPort|PacketSize|DiffTime|UpwardTime|DownwardTime
+1|openflow:1|openflow:1:1|10.0.0.4|10.0.0.3|6|33006|8002|54|56.971000000000004|2015-11-03 11:02:00|2015-11-03 11:02:57
+2|openflow:1|openflow:1:1|10.0.0.4|10.0.0.8|6|8298|8002|54|23.176000000000002|2015-11-03 11:03:20|2015-11-03 11:03:43
+3|openflow:1|openflow:1:1|10.0.0.4|10.0.0.6|6|17859|8002|54|10.875|2015-11-03 10:04:16|2015-11-03 10:04:27
+4|openflow:1|openflow:1:1|10.0.0.1|10.0.0.11|6|3145|8002|54|9.425|2015-11-03 10:06:16|2015-11-03 10:06:26
+5|openflow:1|openflow:1:1|10.0.0.1|10.0.0.11|6|2175|8002|54|14.006|2015-11-02 10:07:14|2015-11-02 10:07:28
+6|openflow:1|openflow:1:1|10.0.0.1|10.0.0.12|6|1530|8002|54|11.887|2015-11-02 11:05:14|2015-11-02 11:05:25
+7|openflow:1|openflow:1:1|10.0.0.5|10.0.0.9|6|32525|8002|54|10.372|2015-11-03 12:11:07|2015-11-03 12:11:17
+</pre>
+===TroubleShooting===
+Open Flow related system parameters.TCP port on which the controller is listening (default 6633) of.listenPort=6653
+
+===Related Documents===
+* https://wiki.opendaylight.org/view/Project_Proposals:Controller_Shield
+* https://wiki.opendaylight.org/view/Controller_Shield:Main
+
