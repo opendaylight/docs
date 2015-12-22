@@ -1,0 +1,73 @@
+[[odl-ofp-test-provider-meters_test-provider]]
+==== Meters : Test Provider
+
+Currently, the openflowplugin has a test-provider that allows you to
+push various flows through the system from the OSGI command line. Once
+those flows have been pushed through, you can see them as examples and
+then use them to see in the config what a particular flow example looks
+like.
+
+===== AddMeter : addMeter
+
+Run the controller by executing:
+
+--------------------------------------------------------------------------------------------------------------------
+cd openflowplugin/distribution/base/target/distributions-openflowplugin-base-0.0.1-SNAPSHOT-osgipackage/opendaylight
+./run.sh
+--------------------------------------------------------------------------------------------------------------------
+
+Point your mininet to the controller by giving the parameters
+--controller=remote,ip=.
+
+Once you see your node (probably openflow:1 if you've been following
+along) in the inventory, at the OSGI command line try running:
+
+-------------------
+addMeter openflow:1
+-------------------
+
+You can now confirm that meter has been created on the switch.
+
+===== RemoveMeter : removeMeter
+
+Run the controller by executing:
+
+--------------------------------------------------------------------------------------------------------------------
+cd openflowplugin/distribution/base/target/distributions-openflowplugin-base-0.0.1-SNAPSHOT-osgipackage/opendaylight
+./run.sh
+--------------------------------------------------------------------------------------------------------------------
+
+Point your mininet to the controller by giving the parameters
+--controller=remote,ip=.
+
+Once you see your node (probably openflow:1 if you've been following
+along) in the inventory, at the OSGI command line try running:
+
+----------------------
+removeMeter openflow:1
+----------------------
+
+The CLI takes care of using the same meterId and nodeId as used for
+meter add. You can confirm that it was removed from the switch.
+
+===== ModifyMeter : modifyMeter
+
+Run the controller by executing:
+
+--------------------------------------------------------------------------------------------------------------------
+cd openflowplugin/distribution/base/target/distributions-openflowplugin-base-0.0.1-SNAPSHOT-osgipackage/opendaylight
+./run.sh
+--------------------------------------------------------------------------------------------------------------------
+
+Point your mininet to the controller by giving the parameters
+--controller=remote,ip=.
+
+Once you see your node (probably openflow:1 if you've been following
+along) in the inventory, at the OSGI command line try running:
+
+----------------------
+modifyMeter openflow:1
+----------------------
+
+The CLI takes care of using the same meterId and nodeId as used for
+meter add. You can confirm that it was modified on the switch.
