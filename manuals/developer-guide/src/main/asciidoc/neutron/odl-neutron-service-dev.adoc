@@ -1,0 +1,98 @@
+== Neutron Service Developer Guide
+
+=== Overview
+This karaf feature provides integration support for OpenStack Neutron
+via the ODL ML2 mechanism driver. Neutron Service is only one of the
+components necessary for openstack integration.
+It defines yang models for openstack neutron data models and northbound
+API via REST API and yang model RESTCONF.
+
+Those developers who wants to add new provider for new openstack neutron
+extensions/services(Neutron constantly adds new extensions/services and ODL
+will keep up with those new things.) need to communicate with this Neutron
+Service or to add models to Neutron Service.
+If you want to add new extensions/services themselves to Neutron Service,
+new Yang data models need to be added. But it's out of scope of this document
+because this guide is a developer who will be _using_ the feature
+to build something separate, but _not_ somebody who will be developing
+code for this feature itself.
+
+=== Neutron Service Architecture
+image::neutron/odl-neutron-service-developer-architecture.png[height="450px", width="550px", title="Neutron Service Architecture"]
+// image original: https://docs.google.com/drawings/d/15xtroJahSFt93K10Zp8AVln_WZgowmhv7MC_2VdZQzg/edit?usp=sharing
+
+Neutron Service defines YANG-models for openstack Neutron integration.
+When openstack admins/users requests changes(creation/update/deletion)
+of neutron resources (e.g. Neutron network, Neutron subnet, Neutron port
+etc...), the corresponding yang model within ODL will be modified.
+The ODL OpenStack will subscribe the changes on those models and
+will be notified those modification through MD-SAL when changes are made.
+Then provide will do actual necessary tasks to realize OpenStack Integration.
+How to realize it (or even not realize it) is up to each providers.
+Neutron Service doesn't care of it.
+
+=== Key APIs and Interfaces
+There are two kind of APIs for providers.
+One is legacy I*Aware interface, another is yang models.
+
+==== The legacy I*Aware interface
+The legacy I*Aware interface has been deprecated. So it isn't discussed
+in this document. Please refer to Lithium neutron documentation.
+
+==== Neutron Yang models
+Neutron service defines Yang models for Neutron. The details can be found
+at
+
+* https://git.opendaylight.org/gerrit/gitweb?p=neutron.git;a=tree;f=model/src/main/yang;hb=HEAD
+
+Basically those models are based on OpenStack Neutron API definitions.
+For exact definitions, openstack neutron source code needs to be refered
+as the above documentation doesn't always cover the necessary details.
+There is nothing special to utilize those Neutron yang models.
+The basic procedure will be
+
+. Subscribe the model
+. response on the data change notification on each models.
+
+[NOTE]
+Unlike the legacy I*Aware interface, there is no way to refuse the request
+configuration at this point. It's future work.
+
+[source,java]
+----
+public class NeutronNetworkChangeListener implements DataChangeListener, AutoCloseable {
+    private ListenerRegistration<DataChangeListener> registration;
+    private DataBroker db;
+
+    public NeutronNetworkChangeListener(DataBroker db){
+        this.db = db;
+        // create identity path to register on service startup
+        InstanceIdentifier<Network> path = InstanceIdentifier
+                .create(Neutron.class)
+                .child(Networks.class)
+                .child(Network.class);
+        LOG.debug("Register listener for Neutron Network model data changes");
+        // register for Data Change Notification
+        registration =
+                this.db.registerDataChangeListener(LogicalDatastoreType.CONFIGURATION, path, this, DataChangeScope.ONE);
+
+    }
+
+    @Override
+    public void onDataChanged(
+            AsyncDataChangeEvent<InstanceIdentifier<?>, DataObject> changes) {
+        LOG.trace("Data changes : {}",changes);
+
+        // handle data change notification
+        Object[] subscribers = NeutronIAwareUtil.getInstances(INeutronNetworkAware.class, this);
+        createNetwork(changes, subscribers);
+        updateNetwork(changes, subscribers);
+        deleteNetwork(changes, subscribers);
+    }
+----
+
+=== API Reference Documentation
+The OpenStack Neutron API references
+
+* http://developer.openstack.org/api-ref-networking-v2.html
+* http://developer.openstack.org/api-ref-networking-v2-ext.html

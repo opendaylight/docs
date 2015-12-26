@@ -1,0 +1,54 @@
+== Neutron Service User Guide
+
+=== Overview
+This karaf feature provides integration support for OpenStack Neutron
+via the ODL ML2 mechanism driver. Neutron Service is only one of the
+components necessary for openstack integration. For those related component
+please refer to documentations of each components.
+
+* https://wiki.openstack.org/wiki/Neutron
+* https://launchpad.net/networking-odl
+* http://git.openstack.org/cgit/openstack/networking-odl/
+* https://wiki.opendaylight.org/view/NeutronNorthbound:Main
+
+==== Use cases and who will use the feature
+If you want openstack integration with OpenDayLight, you will need
+this feature with ODL provider feature like ovsdb/netvirt, group based
+policy, VTN, and lisp mapper. For provider configuration, please refer
+to each documentation. Since Neutron service only provides northbound
+API for openstack neutron ML2 mechanism driver. Without those provider
+feature, neutron service itself isn't useful.
+
+=== Neutron Service feature Architecture
+Neutron service provides northbound API for openstack neutron via
+RESTCONF and also its dedicated REST API.
+it communicates through its yang-model with providers.
+
+image::neutron/odl-neutron-service-architecture.png[height="450px", width="550px", title="Neutron Service Architecture"]
+// image original https://docs.google.com/drawings/d/14CWAo1WQrCMHzNGDeg57P9CiqpkiAE4_njr_0OgAUsw/edit?usp=sharing
+
+
+=== Configuring Neutron Service feature
+As the karaf feature includes everything necessary for communicating
+northbound, no special configuration is needed.
+Usually this feature is used with ODL southbound plugin that implements
+actual network virtualization functionality and openstack neutron.
+The user wants to setup those configurations. Refer to each related
+documentations for each configurations.
+
+=== Administering or Managing odl-neutron-service
+There is no specific configuration regarding to neutron service itself.
+For related configuration, please refer to openstack neutron configuration
+and opendaylight related services which are provider for openstack.
+
+==== installing odl-neutron-service while the controller running
+
+. While OpenDayLight is running, in Karaf prompt, type:
+  feature:install odl-neutron-service.
+. Wait a while until the initialization is done and the controller stabilizes.
+
+
+odl-neutron-services provides only unified interface for openstack neutron.
+It doesn't provide actual functionality for network virtualization.
+Refer to each ODL project documentation for actual configuration with
+openstack neutron.

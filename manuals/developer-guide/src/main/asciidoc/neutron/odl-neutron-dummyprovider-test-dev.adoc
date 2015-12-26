@@ -1,0 +1,16 @@
+== Neutron dummy provider Developer Guide
+
+=== Overview
+
+Neutron dummy provider provides a dummy provider for Neutron service.
+Which consumes legacy Neutron I*Aware interfaces and just return success.
+This serves as a obvious sample implementation for provider of Neutron
+service, test harness for Neutron Service and also place holder when
+openstack provider decides to implement only a part of the services.
+
+=== Neutron dummy provider Architecture
+
+It implements I*Aware interface in trivial way to simply return success
+or log when resource deletion.
+
+* https://git.opendaylight.org/gerrit/gitweb?p=neutron.git;a=tree;f=dummyprovider/src/main/java/org/opendaylight/neutron/dummyprovider;hb=HEAD
