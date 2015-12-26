@@ -1,124 +1,50 @@
 == Neutron Northbound
 
-=== How to Write a SB Neutron Consumer
+=== How to add new API support
+OpenStack neutron is a moving target. It's continuously adding new features
+as new rest API. Here is a basic step to add new API support
 
-In Lithium, there will be two options for SB Neutron Consumers:
+In Neutron north bound project
 
-* Using the legacy I*Aware interfaces
-* Listening for changes via the Neutron YANG model
+* Add new yang model for it under neutron/model/src/main/yang and
+  update neutron.yang
+* Add northbound API for it, and neutron-spi
+** Implement Neutron<New API>.Request.java and Neutron<New API>Norhtbound.java
+   under
+   neutron/northbound-api/src/main/java/org/opendaylight/neutron/northbound/api/
+** Implement INeutron<New API>CRUD.java and new data structure if any under
+   neutron/neutron-spi/src/main/java/org/opendaylight/neutron/spi/
+** update
+   neutron/neutron-spi/src/main/java/org/opendaylight/neutron/spi/NeutronCRUDInterfaces.java
+   to wire new CRUD interface
+** Add unit tests, Neutron<New structure>JAXBTest.java under
+   neutron/neutron-spi/src/test/java/org/opendaylight/neutron/spi/
+* update
+  neutron/northbound-api/src/main/java/org/opendaylight/neutron/northbound/api/NeutronNorthboundRSApplication.java
+  to wire new northbound api to RSApplication
+* Add transcriber, Neutron<New API>Interface.java under
+  transcriber/src/main/java/org/opendaylight/neutron/transcriber/
+* update
+  transcriber/src/main/java/org/opendaylight/neutron/transcriber/NeutronTranscriberProvider.java
+  to wire a new transcriber
+** Add integration tests Neutron<New API>Tests.java
+   under integration/test/src/test/java/org/opendaylight/neutron/e2etest/
+** update integration/test/src/test/java/org/opendaylight/neutron/e2etest/ITNeutronE2E.java
+   to run a newly added tests.
 
-=== How to use the legacy I*Aware interfaces
 
-For each neutron data object, there is an I*Aware interface defined to allow
-southbound providers that don't want to use the MD-SAL to register with the
-Neutron service to be made aware of potential operations on that type of
-object.  For each modification operation (create, update and delete), the
-I*Aware interface defines a pair of calls (The general template
-is shown in the following table, please see javadoc of the specific interface
-for specific details)
+In openstack networking-odl
 
-.I*Aware Methods
-|===
-|Create |Update |Delete
+* Add new driver(or plugin) for new API with tests
 
-|canCreate*()
-|canUpdate*()
-|canDelete*()
 
-|neutron*Created()
-|neutron*Updated()
-|neutron*Deleted()
-|===
+In a SB Neutron Consuer
 
-==== The semantics of the can*() methods
+* implement actual backend to realize those new API by listening related YANG
+  models.
 
-Each of the can*() methods gives a southbound provider a vote on whether a
-proposed change is acceptable or not. A southbound provider that implements
-a particular can*() method is expected to return an HTTP response code as
-its "vote" - values between 200 and 299 are a "yes" vote, other values are
-a "no" vote.  The neutron white board pattern is an all or nothing affair:
-if any one southbound provider votes no on a change, that change is rejected.
 
-For the canCreate*() method, the southbound provider recieves the proposed
-object.  In the case of canDelete*(), the southbound provider recieves the
-current object that will be removed.  Lastly, the canUpdate*() method passed
-the current object and the proposed delta.
-
-==== The semantics of the neutron*() methods
-
-Once all southbound providers vote yes for a particular change, the neutron
-service transcribes the change into its caches/MD-SAL models and then calls
-the appropriate neutron*() method on each registered southbound provider.
-At this point, the southbound provider is expected to meet the request as
-best they can and when they can, taking responsibility for any errors that
-might be incurred (there is no back signalling of errors).  For these calls,
-the modified object is provided in all cases, except for the neutron*Deleted()
-method.  This passes an instance of the deleted object that will be garbage
-collected once all the southbound providers are finished with it.
-
-==== How to register your consumer with the Neutron Service
-
-A southbound provider that wants to register with the neutron service
-via a particular I*Aware interface must first implement that interface.
-Then, in the init class of its Activator method, it should add the name of
-the implemented I*Aware class as an interface that is managed, along with
-the class that implements the interface as the implementation via the
-setInterface method.  The following example from the Neutron test dummy
-provider shows it is registering for *all* I*Aware interfaces:
-
-[source,java]
-----
-    @Override
-    public void init(BundleContext context, DependencyManager manager) throws Exception {
-       manager.add(createComponent().setInterface(new String[] {
-           INeutronFirewallAware.class.getName()}, null)
-           .setImplementation(NeutronFirewallDummyProvider.class));
-       manager.add(createComponent().setInterface(new String[] {
-           INeutronFirewallPolicyAware.class.getName()}, null)
-           .setImplementation(NeutronFirewallPolicyDummyProvider.class));
-       manager.add(createComponent().setInterface(new String[] {
-           INeutronFirewallRuleAware.class.getName()}, null)
-           .setImplementation(NeutronFirewallRuleDummyProvider.class));
-       manager.add(createComponent().setInterface(new String[] {
-           INeutronFloatingIPAware.class.getName()}, null)
-           .setImplementation(NeutronFloatingIPDummyProvider.class));
-       manager.add(createComponent().setInterface(new String[] {
-           INeutronLoadBalancerAware.class.getName()}, null)
-           .setImplementation(NeutronLoadBalancerDummyProvider.class));
-       manager.add(createComponent().setInterface(new String[] {
-           INeutronLoadBalancerHealthMonitorAware.class.getName()}, null)
-           .setImplementation(NeutronLoadBalancerHealthMonitorDummyProvider.class));
-       manager.add(createComponent().setInterface(new String[] {
-           INeutronLoadBalancerListenerAware.class.getName()}, null)
-           .setImplementation(NeutronLoadBalancerListenerDummyProvider.class));
-       manager.add(createComponent().setInterface(new String[] {
-           INeutronLoadBalancerPoolAware.class.getName()}, null)
-           .setImplementation(NeutronLoadBalancerPoolDummyProvider.class));
-       manager.add(createComponent().setInterface(new String[] {
-           INeutronLoadBalancerPoolMemberAware.class.getName()}, null)
-           .setImplementation(NeutronLoadBalancerPoolMemberDummyProvider.class));
-       manager.add(createComponent().setInterface(new String[] {
-           INeutronNetworkAware.class.getName()}, null)
-           .setImplementation(NeutronNetworkDummyProvider.class));
-       manager.add(createComponent().setInterface(new String[] {
-           INeutronPortAware.class.getName()}, null)
-           .setImplementation(NeutronPortDummyProvider.class));
-       manager.add(createComponent().setInterface(new String[] {
-           INeutronRouterAware.class.getName()}, null)
-           .setImplementation(NeutronRouterDummyProvider.class));
-       manager.add(createComponent().setInterface(new String[] {
-           INeutronSecurityGroupAware.class.getName()}, null)
-           .setImplementation(NeutronSecurityGroupDummyProvider.class));
-       manager.add(createComponent().setInterface(new String[] {
-           INeutronSecurityRuleAware.class.getName()}, null)
-           .setImplementation(NeutronSecurityRuleDummyProvider.class));
-       manager.add(createComponent().setInterface(new String[] {
-           INeutronSubnetAware.class.getName()}, null)
-           .setImplementation(NeutronSubnetDummyProvider.class));
-    }
-----
-
-=== How to use the Neutron YANG model
+=== How to write transcriber
 
 For each neutron data object, there is an Neutron*Interface defined within
 the transcriber artifact that will write that object to the MD-SAL
