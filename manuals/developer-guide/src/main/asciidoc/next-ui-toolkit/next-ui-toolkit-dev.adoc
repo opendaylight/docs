@@ -1,0 +1,461 @@
+== NeXt UI Toolkit
+NeXt UI toolkit is an HTML5/JavaScript based toolkit for network web application.
+Provide high performance and high quality framework and network centric topology component.
+
+=== Overview
+Implemented Object-Oriented Programming, could extend properties,methods and view of class.To achieve the maximum multiplexing.
+
+Provide MVVM(Model View ViewModel) mechanism bind model and view. Greatly reduced the view control logic code.
+
+The new way(JSON) to define view, this bring more faster rendering and low performance consumption. Also avoid complex selector expression.
+
+=== Architecture
+NeXt UI Toolkit include NeXt-Core, NeXt-UI, NeXt-Topology three party.
+
+NeXt-Core implement Object-Oriented Programming to define class, the class could extend properties, methods and view.
+
+NeXt-UI implement new way(JSON) to define view and provide MVVM(Model View ViewModel) mechanism bind model and view, high performance view engine.
+
+NeXt-Topology provide network centric topology component, with rich APIs and good user experience. Design for network visualization.
+
+=== NeXt-Core Key APIs
+
+The key APIs is show us how to get started, and how to define a simple class.
+
+*_Define Class with methods_*
+
+Overview of OOP
+[source, javascript]
+----
+nx.define("MyClass", {                  // <1>
+    methods: {
+        hello:function() {              // <2>
+            console.log('Hello World!')
+        }
+    }
+});
+
+var foo = new MyClass();                // <3>
+foo.hello();                            // <4>
+----
+<1> Define a Class that named "MyClass"
+<2> Create a method that named "hello"
+<3> Create "MyClass" instance
+<4> Invoke hello method
+
+*_Rewrite property get and set method_*
+
+You can override property's default behavior by using get/set.
+[source, javascript]
+----
+nx.define('Foo', {
+    properties: {
+        name: {
+            value: 'World!',            // <1>
+            get: function () {          // <2>
+                var name = this._name;
+                return name ? name : 'anonym!'
+            },
+            set: function (inName) {    // <3>
+                var name = inName;
+                if (inName) {
+                    name = inName.toUpperCase();
+                }
+                this._name = name;
+            }
+        }
+    },
+    methods: {
+        hello: function () {
+            console.log('Hello ' + this.name());
+        }
+    }
+});
+
+var foo = new Foo();
+foo.hello();
+
+foo.name('');
+foo.hello();
+
+foo.name('tom');
+foo.hello();
+----
+<1> Default value for name property
+<2> Rewrite get method for name property, get method default value: return this['_'+name];
+<3> Rewrite set method for name property, set method default value: this['_'+name] = inName;
+
+*_Static Class and Static Member_*
+
+You can define a static class by using the "static" keyword or define static members using the "statics" keyword.
+[source, javascript]
+----
+nx.define('Foo', {
+    static:true,                    // <1>
+    properties:{
+        message:{
+            value:'I am Foo.'
+        }
+    },
+    methods:{
+        hello:function() {
+            console.log('Hello World!');
+        }
+    }
+});
+
+console.log(Foo.message());
+Foo.hello();
+
+nx.define('Bar', {
+    statics:{                       // <2>
+        MESSAGE:'I am Bar.',        // <3>
+        hello:function() {          // <4>
+            console.log('Hello World!');
+        }
+    }
+});
+
+console.log(Bar.MESSAGE);
+Bar.hello();
+
+----
+<1> Static keyword will make the entire class is static.
+<2> Statics keyword will batch define static member.
+<3> Define "MESSAGE" static property.
+<4> Define "hello" static method.
+
+*_When property is Object type_*
+
+When you want to use an object as property's default value, this value will be shared by all instances, you should use a method returning the default value to avoid this.
+[source, javascript]
+----
+nx.define("com.cisco.Foo", {
+    properties: {
+        wrongList: {                // <1>
+            value: []
+        },
+        correctList: {              // <2>
+            value: function () {
+                return [];
+            }
+        }
+    }
+});
+var foo1 = new com.cisco.Foo();
+var foo2 = new com.cisco.Foo();
+
+foo1.wrongList().push(1);
+foo2.wrongList().push(2);
+foo1.correctList().push(1);
+foo2.correctList().push(2);
+----
+<1> Wrong to define array type property.
+<2> Correct to define array type property.
+
+*_Inherit Class:Overwrite Constructor_*
+
+You overwrite the constructor by defining a "init" method.
+
+[source, javascript]
+----
+/**
+ * Constructor
+ */
+nx.define("Foo", {
+    methods: {
+        init: function () {         // <1>
+            console.log("I am foo");
+        }
+    }
+});
+var foo = new Foo();
+
+/**
+ * Overwrite constructor
+ */
+nx.define("Bar", Foo, {
+    methods: {
+        init: function () {         // <2>
+            this.inherited();       // <3>
+            console.log("I am bar");
+        }
+    }
+});
+var bar = new Bar();
+----
+<1> SuperClass define constructor method.
+<2> SubClass define constructor method will rewrite super class constructor method.
+<3> Call super class method.
+
+https://developer.cisco.com/site/neXt/document/api-reference-manual/#[NeXt-Core APIs Reference Documentation]
+
+=== NeXt-UI Key APIs
+
+Any ui component is subclass of nx.ui.Component.
+
+*_Define Hello ui component._*
+
+[source, javascript]
+----
+nx.define("Hello", nx.ui.Component, {
+    view: {                             // <1>
+        tag:'div',                      // <2>
+        props: {                        // <3>
+            className: 'container',     // <4>
+            style: {                    // <5>
+                color: '#ff0000',
+                'font-size':'40px'
+            }
+        },
+        content: {                      // <6>
+            tag: 'ul',
+            content: [                  // <7>
+                {
+                    tag: 'li',
+                    content: 'index_0'  // <8>
+                },
+                {
+                    tag: 'li',
+                    content: 'index_1'
+                },
+                {
+                    tag: 'li',
+                    content: 'index_2'
+                }
+            ]
+        }
+    }
+});
+----
+<1> "view" keyword define view for ui component.
+<2> "tag" keyword define current node Document Object Model nodeType.
+<3> "props" keyword define node attribute collection.
+<4> "className" define class attribute.
+<5> "style" define style attribute
+<6> "content" keyword define content for current node, the value type: string, array, object. Current data type of content is object.
+<7> Current data type of content is array.
+<8> Current data type of content is string.
+
+
+=== NeXt-Topology Key APIs
+
+NeXt-Topology is a component for nx.ui.component.
+
+*_Common Topology Model_*
+
+NeXt defines a Common Topology Model (CTM) to allow you to describe your design topology. It follows the Graph abstract data type in the JSON format. Each model has two major properties; nodes and links which refers to a graph's vertices and edges respectively.
+
+[source, javascript]
+----
+var topologyData = {
+    nodes: [...],
+    links: [...]
+};
+----
+
+
+*_Nodes property_*
+
+The nodes property is used to define a collection of nodes. Each node is the json description of one of the nodes in the topology. An x and y coordinate are used to define the position of each subject node.
+
+[source, javascript]
+----
+var topologyData = {
+    nodes: [
+        {"id": 0, "x": 410, "y": 100, "name": "12K-1"},
+        ...
+    ],
+    links:[...]
+};
+----
+
+*_Links property_*
+
+The links property is used to define a collection of links. Each link is a json description of one of the links in the topology.
+Each of your links will have at least two attributes; source and target which are the key of the two nodes that are being connected with the link.
+The node attributes can either be be the node's id or the node's index.
+The link property is also used to describe additional information about the link such as interface/bandwidth/link type.
+Additionally, it can also be used to describe other drawing information, such as the Bézier curvature attributes of the link's representation.
+
+[source, javascript]
+----
+var topologyData = {
+    nodes: [
+        {"id": 0, "x": 410, "y": 100, "name": "12K-1"},
+        {"id": 1, "x": 410, "y": 280, "name": "12K-2"},
+        ...
+    ],
+    links: [
+        {"source": 0, "target": 1},
+        ...
+    ]
+};
+----
+
+*_nodeset property_*
+
+The nodeSet property is used to describe how node's are to be aggregated.
+Each nodeSet is a json description of a group nodes. The nodeSet should has two attributes, namely nodes and root.
+nodes is a collection of node's id while root is the root node of this nodeSet.
+
+[source, javascript]
+----
+var topologyData = {
+    nodes: [
+        {"id": 0, "x": 410, "y": 100, "name": "12K-1"},
+        {"id": 1, "x": 410, "y": 280, "name": "12K-2"},
+        ...
+    ],
+    links: [...],
+    nodeSet:[
+        {"id": 5, "nodes": [0, 1], "root": 0},
+        ...
+    ]
+};
+----
+
+*_Define Basic nx.graphic.Topology._*
+
+[source, javascript]
+----
+var topologyData = {            // <1>
+    nodes: [{
+        "id": 0,
+        "x": 410,
+        "y": 100,
+        "name": "12K-1"
+    }, {
+        "id": 1,
+        "x": 410,
+        "y": 280,
+        "name": "12K-2"
+    }, {
+        "id": 2,
+        "x": 660,
+        "y": 280,
+        "name": "Of-9k-03"
+    }, {
+        "id": 3,
+        "x": 660,
+        "y": 100,
+        "name": "Of-9k-02"
+    }, {
+        "id": 4,
+        "x": 180,
+        "y": 190,
+        "name": "Of-9k-01"
+    }],
+    links: [{
+        "source": 0,
+        "target": 1
+    }, {
+        "source": 1,
+        "target": 2
+    }, {
+        "source": 1,
+        "target": 3
+    }, {
+        "source": 4,
+        "target": 1
+    }, {
+        "source": 2,
+        "target": 3
+    }, {
+        "source": 2,
+        "target": 0
+    }, {
+        "source": 3,
+        "target": 0
+    }, {
+        "source": 3,
+        "target": 0
+    }, {
+        "source": 3,
+        "target": 0
+    }, {
+        "source": 0,
+        "target": 4
+    }, {
+        "source": 0,
+        "target": 4
+    }, {
+        "source": 0,
+        "target": 3
+    }]
+};
+nx.define('Base.Base', nx.ui.Component, {
+    view: {
+        content: {
+            name: 'topo',
+            type: 'nx.graphic.Topology',        // <2>
+            props: {                            // <3>
+                width: 800,
+                height: 800,
+                nodeConfig: {
+                    label: 'model.id'
+                },
+                linkConfig: {
+                    linkType: 'curve'
+                },
+                showIcon: true,
+                data: topologyData              // <4>
+            }
+        }
+    }
+});
+----
+<1> Define the JSON data for topology component, it container nodes and links key, value type is array.
+<2> Create nx.graphic.Topology by JSON data view
+<3> Define props for nx.graphic.Topology instance.
+<4> Set data for topology.
+
+
+*_Define AutoLayout Topology component._*
+
+[source, javascript]
+----
+nx.define('Base.AutoLayout', nx.ui.Component, {
+    view: {
+        content: {
+            name: 'topo',
+            type: 'nx.graphic.Topology',
+            props: {
+                adaptive: true,
+                nodeConfig: {
+                    label: 'model.id'
+                },
+                dataProcessor: 'force',
+                identityKey: 'id',
+                showIcon: false,
+                enableSmartLabel: false,
+                enableGradualScaling: false,
+                supportMultipleLink: false,
+                layoutType: 'auto'              // <1>
+            },
+            events: {
+                'ready': '{#_ready}'
+            }
+        }
+    },
+    methods: {
+        _ready: function(sender, event) {
+            start = new Date();
+            var g = new GraphGenerator();
+            g.generate(100);
+            var topologyData = {
+                nodes: g.nodes,
+                links: g.links
+            };
+            start = new Date();
+            console.log(new Date() - start);
+            sender.setData(topologyData);
+            console.log(new Date() - start);
+        }
+    }
+});
+----
+<1> Define layoutType is "auto";
+
+=== API Reference Documentation
+https://developer.cisco.com/site/neXt/document/api-reference-manual/#[NeXt UI Toolkit APIs Link]

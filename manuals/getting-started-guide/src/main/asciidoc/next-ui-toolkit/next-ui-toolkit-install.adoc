@@ -1,0 +1,310 @@
+== Next UI Toolkit Installation Guide
+
+=== Overview
+
+NeXt UI Toolkit include NeXt-Core, NeXt-UI, NeXt-Topology three party.
+
+NeXt-Core implement Object-Oriented Programming to define class, the class could extend properties, methods and view.
+
+NeXt-UI implement new way(JSON) to define view and provide MVVM(Model View ViewModel) mechanism bind model and view, high performance view engine.
+
+NeXt-Topology provide network centric topology component, with rich APIs and good user experience. Design for network visualization.
+
+=== Browser Compatibility
+
+Webkit kernel version browser.
+
+=== Required Packages
+
+The web page must include next-core.js, that you can define class(sample class, model class, util class).
+Include next-ui.js, develop any web application.
+Include next-topology.js, use topology component in you next web application.
+
+=== Setup Next Template Page
+
+.index.html
+[source, javascript]
+----
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="next/dest/css/next.css">
+        <script src="next/dest/js/next-core.js"></script>
+        <script src="next/dest/js/next-ui.js"></script>
+        <script src="next/dest/js/next-topology.js"></script>
+    </head>
+    <body>
+    </body>
+    <script type="text/javascript">
+        (function (){
+            // code here    // <1>
+        })
+    </script>
+</html>
+----
+<1> Please put your code into here.
+
+=== Start Application
+
+.index.html
+[source, javascript]
+----
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="next/dest/css/next.css">
+        <script src="next/dest/js/next.js"></script>
+        <script src="Shell.js"></script>
+    </head>
+    <body>
+    </body>
+</html>
+----
+
+.Shell.js
+[source, javascript]
+----
+(function (nx) {
+    /**
+     * define application
+     */
+    var Shell = nx.define(nx.ui.Application, {
+        methods: {
+            start: function () {
+                //your application main entry
+                console.log("application started");
+            }
+        }
+    });
+
+    /**
+     * create application instance
+     */
+    var shell = new Shell();
+
+    /**
+     * invoke start method
+     */
+    shell.start();
+})(nx);
+----
+
+=== Build a NeXt application in MVVM pattern
+
+Build a topology application in MVVM pattern
+
+.index.html
+[source, javascript]
+----
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="tutorials/Topology/BasicApplication/css/main.css">
+        <script src="next/dest/js/next.js"></script>
+        <script src="Contact.js"></script>
+        <script src="ContactView.js"></script>
+        <script src="ContactViewModel.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body>
+    </body>
+</html>
+----
+
+.Contact.js
+[source, javascript]
+----
+nx.define('Contact', nx.data.ObservableObject, {
+    properties: {
+        alias: null,
+        firstName: null,
+        lastName: null,
+        fullName: {
+            get: function () {
+                return this.firstName() + ' ' + this.lastName();
+            }
+        },
+        photo: {
+            get: function () {
+                return 'http://wwwin.cisco.com/dir/photo/std/'
+                    + this.alias() + '.jpg'
+            }
+        },
+        email: {
+            get: function () {
+                return this.alias() + '@cisco.com';
+            }
+        }
+    },
+    methods: {
+        init: function (options) {
+            this.inherited();
+            this.sets(options);
+        },
+        showInfo: function () {
+            console.log(JSON.stringify(this.gets(), null, '\t'));
+        }
+    }
+});
+----
+
+.ContactView.js
+[source, javascript]
+----
+nx.define('ContactView', nx.ui.Component, {
+    view: {
+        content: [
+            {
+                tag: 'input',
+                props: {
+                    'class': 'input-search',
+                    value: '{filterKey}',
+                    placeholder: 'Search...'
+                }
+            },
+            {
+                tag: 'ul',
+                props: {
+                    'class': 'contact-list',
+                    template: {
+                        tag: 'li',
+                        events: {
+                            click: '{showInfo}'
+                        },
+                        content: [
+                            {
+                                tag: 'img',
+                                props: {
+                                    src: '{photo}'
+                                }
+                            },
+                            {
+                                tag: 'h3',
+                                content: '{fullName}'
+                            },
+                            {
+                                tag: 'small',
+                                content: '{email}'
+                            }
+                        ]
+                    },
+                    items: '{filteredContacts}'
+                }
+            }
+        ]
+    }
+});
+----
+
+
+.ContactViewModel.js
+[source, javascript]
+----
+nx.define('ContactViewModel', nx.data.ObservableObject, {
+    properties: {
+        contacts: null,
+        filteredContacts: null,
+        filterKey: {
+            get: function () {
+                return this._filterKey;
+            },
+            set: function (value) {
+                this._filterKey = value;
+                this.filter(value);
+            }
+        }
+    },
+    methods: {
+        init: function () {
+            this.inherited();
+            this.contacts(new nx.data.ObservableCollection());
+            this.filteredContacts(new nx.data.ObservableCollection());
+            this.load(contacts);
+        },
+        load: function (contacts) {
+            contacts.forEach(function (item) {
+                this.contacts().add(new Contact(item));
+                this.filter(null);
+            }, this);
+        },
+        filter: function (key) {
+            this.filteredContacts().clear();
+            this.contacts().each(function (contact) {
+                if (!key || contact.fullName().toLowerCase().indexOf(key) >= 0) {
+                    this.filteredContacts().add(contact);
+                }
+            }, this);
+        }
+    }
+});
+
+var contacts = [
+    {
+        "alias": "aaikepae",
+        "firstName": "Abu",
+        "lastName": "Aikepaer"
+    },
+    {
+        "alias": "lkang2",
+        "firstName": "Li",
+        "lastName": "Kang"
+    },
+    {
+        "alias": "siqling",
+        "firstName": "Siqi",
+        "lastName": "Ling"
+    },
+    {
+        "alias": "weqiao",
+        "firstName": "Wei",
+        "lastName": "Qiao"
+    },
+    {
+        "alias": "xiaobshi",
+        "firstName": "Xiaobao",
+        "lastName": "Shi"
+    },
+    {
+        "alias": "taojwu",
+        "firstName": "Taojun",
+        "lastName": "Wu"
+    },
+    {
+        "alias": "edwizhan",
+        "firstName": "Edwin",
+        "lastName": "Zhang"
+    },
+    {
+        "alias": "feizheng",
+        "firstName": "Fei",
+        "lastName": "Zheng"
+    },
+    {
+        "alias": "mizhu2",
+        "firstName": "Ming",
+        "lastName": "Zhu"
+    }
+];
+----
+
+.app.js
+[source, javascript]
+----
+(function (nx) {
+    var App = nx.define(nx.ui.Application, {
+        methods: {
+            start: function () {
+                var model = new ContactViewModel();
+                var view = new ContactView();
+
+                view.model(model);
+                view.attach(this);
+            }
+        }
+    });
+
+    var app = new App();
+    app.start();
+
+})(nx);
+----
