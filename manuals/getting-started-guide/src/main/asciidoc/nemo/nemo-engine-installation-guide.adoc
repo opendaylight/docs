@@ -1,0 +1,55 @@
+== nemo engine Installation Guide
+
+=== Overview
+The guide is used to instruct how to features to install provided by NEMO project.
+
+NEMO project is aimed to simpliy network application, which take use of an uniform model to express users' intent in an intuitive way. NEMO project provides nemo engine to implement the translation from users' intent into specific configuration in physical network. Except providing openflow-renderer which could handle openflow devices, ofsoftswitch, NEMO project also provide cli renderer, which could map users' intent to tradition network devices. It also provide a UI to show resources, intent and mapping information.
+
+=== Preparing for Installation
+Follow the instructions in <<_getting_and_installing_opendaylight,Getting and Installing OpenDaylight>>.
+
+=== Installing features
+If the underlying physical network is OpenFlow network, install the required features with the following command:
+-----
+feature:install odl-nemo-openflow-renderer
+-----
+With this feature, nemo engine and OpenFlow plugin will be installed.
+
+If the underlying physical network are constructed by tradition devices, install the required with the following command:
+-----
+feature:install odl-nemo-cli-renderer
+-----
+With this feature, nemo engine will be installed.
+
+If you want to look at all your resources/intent/vn-pn mapping in an UI, install nemo ui with the following command:
+-----
+feature:install odl-nemo-engine-ui
+-----
+
+==== Sample output from the Karaf console
+-----
+opendaylight-user@root>feature:list | grep nemo
+odl-nemo-api                               | 1.0.0-SNAPSHOT   | x         | odl-nemo-1.0.0-SNAPSHOT                 | OpenDaylight :: NEMO :: API
+odl-nemo-engine                            | 1.0.0-SNAPSHOT   | x         | odl-nemo-1.0.0-SNAPSHOT                 | OpenDaylight :: NEMO :: Engine
+odl-nemo-engine-rest                       | 1.0.0-SNAPSHOT   | x         | odl-nemo-1.0.0-SNAPSHOT                 | OpenDaylight :: NEMO :: Engine :: REST
+odl-nemo-openflow-renderer                 | 1.0.0-SNAPSHOT   | x         | odl-nemo-1.0.0-SNAPSHOT                 | OpenDaylight :: NEMO :: OpenFlow Renderer
+odl-nemo-cli-renderer                      | 1.0.0-SNAPSHOT   | x         | odl-nemo-1.0.0-SNAPSHOT                 | OpenDaylight :: NEMO :: CLI Renderer
+odl-nemo-engine-ui                         | 1.0.0-SNAPSHOT   | x         | odl-nemo-1.0.0-SNAPSHOT                 | OpenDaylight :: NEMO :: Engine :: UI
+-----
+=== Verifying your Installation
+To verify that the installation was successful, use the following command in karaf and check that there are no errors
+logs relating to nemo.
+-----
+log:display | grep error
+-----
+
+==== Troubleshooting
+It's not easy to troubleshooting. You may use the log:display to check which feature is installed failed, however, it is not easy to find which is the problem.
+
+=== Uninstalling features in NEMO
+. Shutdown the karaf instance:
++
+-----
+system:shutdown
+-----
+. start the karaf and clean install features without the features you want to uninstall.
