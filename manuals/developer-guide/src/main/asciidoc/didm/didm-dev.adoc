@@ -33,10 +33,20 @@ The DIDM project creates the infrastructure to support the following functions:
    support the APIs defined by the RPCs. There may be different Driver
    implementations for different device types.
 
-//TODO: Add more info and diagram. 
-//
-//=== Key APIs and Interfaces
-//TODO
-//
-//=== API Reference Documentation
-//TODO: Provide links to JavaDoc, REST API documentation, etc.
+
+=== Key APIs and Interfaces
+* User facing APIs become available from individual drivers such as openflow-feature under odl-didm-drivers
+* More device specific APIs come from device drivers such as Mininet driver odl-didm-ovs-all, and HP 3800 driver odl-didm-hp-all
+=== Run REST adjust-flow command to adjust flows and push to the device
+
+Flow mod driver for HP 3800 device is added in Beryllium release
+This driver adjusts the flows and push the same to the device. 
+This API takes the flow to be adjusted as input and displays the adjusted flow as output in the rest output container.
+Here is the REST API to adjust and push flows to HP 3800 device:
+----
+http://<CONTROLLER-IP:8181>/restconf/operations/openflow-feature:adjust-flow
+----
+
+=== API Reference Documentation
+Go to http://${CONTROLLER-IP}:8181/apidoc/explorer/index.html, and look under DIDM section
+to see all the available REST calls and tables
