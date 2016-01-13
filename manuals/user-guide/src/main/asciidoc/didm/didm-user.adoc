@@ -33,8 +33,60 @@ The DIDM project creates the infrastructure to support the following functions:
    support the APIs defined by the RPCs. There may be different Driver
    implementations for different device types.
 
-//=== Configuring DIDM
-//TODO
-//
-//=== Administering or Managing DIDM
-//TODO
+=== Installing DIDM
+
+To install DIDM, download OpenDaylight and use the Karaf console to install the following features:
+
+* odl-openflowplugin-all
+* odl-didm-all
+
+odl-didm-all installs the following required features:
+
+* odl-didm-ovs-all
+* odl-didm-ovs-impl
+* odl-didm-util
+* odl-didm-identification
+* odl-didm-drivers
+* odl-didm-hp-all
+
+=== Configuring DIDM
+
+This section shows an example configuration steps for installing a driver (HP 3800 OpenFlow switch driver).
+
+=== Install DIDM features:
+
+----
+feature:install odl-didm-identification-api
+feature:install odl-didm-drivers
+----
+
+In order to identify the device, device driver needs to be installed first.
+Identification Manager will be notified when a new device connects to the controller.
+
+=== Install HP driver
+
+feature:install odl-didm-hp-all installs the following features
+
+* odl-didm-util
+* odl-didm-identification
+* odl-didm-drivers
+* odl-didm-hp-all
+* odl-didm-hp-impl
+
+Now at this point, the driver has written all of the identification information in to the MD-SAL datastore.
+The identification manager should have that information so that it can try to identify the HP 3800 device when it connects to the controller.
+
+Configure the switch and connect it to the controller from the switch CLI.
+
+=== Run REST GET command to verify the device details:
+
+http://<CONTROLLER-IP:8181>/restconf/operational/opendaylight-inventory:nodes
+
+=== Run REST adjust-flow command to adjust flows and push to the device
+
+.Flow mod driver for HP 3800 device is added in Beryllium release
+This driver adjusts the flows and push the same to the device. 
+This API takes the flow to be adjusted as input and displays the adjusted flow as output in the REST output container.
+Here is the REST API to adjust and push flows to HP 3800 device:
+
+http://<CONTROLLER-IP:8181>/restconf/operations/openflow-feature:adjust-flow
