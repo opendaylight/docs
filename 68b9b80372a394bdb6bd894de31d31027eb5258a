@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_bc09b82e",
+        "filename": "manuals/user-guide/src/main/asciidoc/neutron/odl-neutron-service-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 3276
+      },
+      "writtenOn": "2016-01-15T10:01:27Z",
+      "side": 1,
+      "message": "Since this doc is intended for end users, I think would be good to have a link to Neutron API reference and a section detailing which of the APIs are supported. Actual support depends on other ODL projects to implement [maybe link to their user docs too?], but would be good to capture ones supported by NN. e.g. L2GW is already supported in NN but there is no backend supporting it in ODL yet.",
+      "revId": "68b9b80372a394bdb6bd894de31d31027eb5258a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
