@@ -5,6 +5,7 @@ The topics of this guide are:
 
 . How to add alto projects as dependencies;
 . How to put/fetch data from ALTO;
+. Basic API and DataType;
 . How to use customized service implementations.
 
 === Adding ALTO Projects as Dependencies ===
@@ -18,11 +19,12 @@ following code in the _pom.xml_ file.
         <version>${ALTO_VERSION}</version>
     </dependency>
 
-The current stable version for ALTO is `0.1.0-Lithium`.
+The current stable version for ALTO is `0.2.0-Beryllium`.
 
 === Putting/Fetching data from ALTO ===
 
 ==== Using RESTful API ====
+
 There are two kinds of RESTful APIs for ALTO: the one provided by
 `alto-northbound` which follows the formats defined in
 link:https://tools.ietf.org/html/rfc7285[RFC 7285], and the one provided by
@@ -32,29 +34,21 @@ link:https://tools.ietf.org/html/draft-shi-alto-yang-model-03[this draft].
 One way to get the URLs for the resources from `alto-northbound` is to visit
 the IRD service first where there is a `uri` field for every entry. However, the
 IRD service is not yet implemented so currently the developers have to construct
-the URLs themselves. The base URL is `/controller/nb/v2/alto` and below is a list
-of the specific paths defined in `AltoNorthbound.java` in `alto-northbound`
+the URLs themselves. The base URL is `/alto` and below is a list
+of the specific paths defined in `alto-core/standard-northbound-route`
 using Jersey `@Path` annotation:
 
 * `/ird/{rid}`: the path to access __IRD__ services;
-* `/networkmap/{rid}[/{tag}]`: the path to access __Network Map__ services;
-* `/costmap/{rid}[/{tag}[/{mode}/{metric}]]`: the path to access __Cost Map__
-services;
-* `/filtered/networkmap/{rid}[/{tag}]`: the path to access __Filtered Network Map__
-services;
-* `/filtered/costmap/{rid}[/{tag}]`: the path to access __Filtered Cost Map__
-services;
-* `/endpointprop/lookup/{rid}[/{tag}]`: the path to access __Endpoint Property__
-services;
-* `/endpointcost/lookup/{rid}[/{tag}]`: the path to access __Endpoint Cost__
-services.
+* `/networkmap/{rid}[/{tag}]`: the path to access __Network Map__ and __Filtered Network Map__ services;
+* `/costmap/{rid}[/{tag}[/{mode}/{metric}]]`: the path to access __Cost Map__ and __Filtered Cost Map__ services;
+* `/endpointprop`: the path to access __Endpoint Property__ services;
+* `/endpointcost`: the path to access __Endpoint Cost__ services.
 
 NOTE: The segments in brackets are optional.
 
 If you want to fetch the data using RESTCONF, it is highly recommended to take a
-look at the `apidoc` page
-(http://{CONTROLLER_IP}:8181/apidoc/explorer/index.html)
-after installing the `alto-model` feature in karaf.
+look at the `apidoc` page (http://{CONTROLLER_IP}:8181/apidoc/explorer/index.html)
+after installing the `odl-alto-release` feature in karaf.
 
 It is also worth pointing out that `alto-northbound` only supports `GET` and
 `POST` operations so it is impossible to manipulate the data through its RESTful
@@ -65,19 +59,11 @@ enables the developers to modify the data directly through RESTCONF. In the futu
 approach might be disabled in the core packages of ALTO but may still be
 available as an extension.
 
-==== Using AD-SAL ====
-Five interfaces are defined in package `service-api-rfc7285`. Follow the steps
-below to use them:
-
-. Determine the required service interface: `IRDService`, `NetworkMapService`,
-`CostMapService`, `EndpointPropertyService` or `EndpointCostService`;
-. Use the `ServiceHelper` to get the instance;
-. Call the corresponding methods with appropriate parameters.
-
 ==== Using MD-SAL ====
-You can also fetch data from the data store directly.
 
-First you must get the access to the data store by registering your module with
+You can also fetch data from the datastore directly.
+
+First you must get the access to the datastore by registering your module with
 a data broker.
 
 Then an `InstanceIdentifier` must be created. Here is an example of how to build
@@ -104,15 +90,38 @@ an `InstanceIdentifier` for a _network map_:
 With the `InstanceIdentifier` you can use `ReadOnlyTransaction`,
 `WriteTransaction` and `ReadWriteTransaction` to manipulate the data
 accordingly. The `simple-impl` package, which provides some of the AD-SAL APIs
-mentioned above, is using this method to get data from the data store and then
+mentioned above, is using this method to get data from the datastore and then
 convert them into RFC7285-compatible objects.
 
-=== Providing Customized Implementation ===
+=== Basic API and DataType
 
-Currently it is very simple to provide a customized network map, the
-only thing you have to do is to put the data into the data store. Cost maps are
-more complex since there are no classes for the cost values by default, you have
-to define it using `augment` in YANG. Here is an example in `alto-hosttracker`.
+.. alto-basic-types: Defines basic types of ALTO protocol.
+
+.. alto-service-model-api: Includes the YANG models for the five basic ALTO services defined in link:https://tools.ietf.org/html/rfc7285[RFC 7285].
+
+.. alto-resourcepool: Manages the meta data of each ALTO service, including capabilities and versions.
+
+.. alto-northbound: Provides the root of RFC7285-compatible services at http://localhost:8080/alto.
+
+.. alto-northbound-route: Provides the root of the network map resources at http://localhost:8080/alto/networkmap/.
+
+=== How to customize service
+
+==== Define new service API
+
+Add a new module in `alto-core/standard-service-models`. For example, we named our
+service model module as `model-example`.
+
+==== Implement service RPC
+
+Add a new module in `alto-basic` to implement a service RPC in `alto-core`.
+
+Currently `alto-core/standard-service-models/model-base` has defined a template of the service RPC.
+You can define your own RPC using `augment` in YANG. Here is an example in `alto-simpleird`.
 
 [source,yang]
 include::augment.yang[]
+
+==== Register northbound route
+
+If necessary, you can add a northbound route module in `alto-core/standard-northbound-routes`.
