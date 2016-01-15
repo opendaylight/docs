@@ -1,125 +1,240 @@
-== ALTO User Guide
+== ALTO User Guide ==
 
-=== Overview
-The ALTO project provides support for _Application Layer Traffic
-Optimization_ services defined in link:https://tools.ietf.org/html/rfc7285[RFC
-7285].
+=== Overview ===
 
-In the Lithium release, ALTO uses the YANG model described in
-link:https://tools.ietf.org/html/draft-shi-alto-yang-model-03[this draft].
+The ALTO project is aimed to provide support for *Application Layer
+Traffic Optimization* services defined in
+https://tools.ietf.org/html/rfc7285[RFC 7285] in OpenDaylight.
 
-=== ALTO Architecture
+This user guide will introduce the three basic services (namely
+`simple-ird`, `manual-maps` and `host-tracker`) which are implemented in
+the Beryllium release, and give instructions on how to configure them to
+provide corresponding ALTO services.
 
-There are three kinds of ALTO packages in OpenDaylight.
+=== How to Identify ALTO Resources ===
 
-. **Core**
-The **core** packages include:
-.. `alto-model`: Defines the YANG model of ALTO services in MD-SAL
-.. `service-api-rfc7285`: Defines interfaces for ALTO services in AD-SAL
-.. `alto-northbound`: Implements the RFC7285-compatible RESTful API
-. **Basic**
-The **basic** packages include:
-.. Basic implementations of ALTO services:
-... `alto-provider`: Implements the services defined in `alto-model`
-... `simple-impl`: Implements the services defined in `service-api-rfc7285`
-.. Utilities:
-... `alto-manager`: Provides a karaf command line tool to manipulate network
-maps and cost maps.
-. **Service**
-The **service** packages include:
-.. `alto-hosttracker`: Generates a network map, a corresponding cost map and
-the endpoint cost service based on <<_l2switch_user_guide, l2switch>>.
+Each ALTO resource can be uniquely identified by a tuple . For each
+resource, a _version-tag_ is used to support historical look-ups.
 
-=== Configuring ALTO
+The formats of _resource-id_ and _version-tag_ are defined in
+https://tools.ietf.org/html/rfc7285#section-10.2[section 10.2] and
+https://tools.ietf.org/html/rfc7285#section-10.3[section 10.3]
+respectively. The _context-id_ is not part of the protocol and we choose
+the same format as a _universal unique identifier_ (UUID) which is
+defined in http://tools.ietf.org/html/rfc4122[RFC 4122].
 
-There are three packages that require their own configuration files,
-including `alto-provider`, `alto-hosttracker` and `simple-impl`. However, the
-only configurable option is the type of the data broker in all three
-configuration files.
+A context is like a namespace for ALTO resources, which eliminates
+_resource-id_ collisions. For simplicity, we also provide a default
+context with the id **000000000000-0000-0000-0000-00000000**.
 
-=== Administering or Managing ALTO
+=== How to Use Simple IRD ===
 
-To enable ALTO, the features must be installed first.
+The simple IRD feature provides a simple _information resource
+directory_ (IRD) service defined in
+https://tools.ietf.org/html/rfc7285#section-9[RFC 7285].
+
+==== Install the Feature ====
+
+To enable simple IRD, run the following command in the karaf CLI:
 
 [source,bash]
-karaf > feature:install odl-alto-provider
-karaf > feature:install odl-alto-manager
-karaf > feature:install odl-alto-northbound
-karaf > feature:install odl-alto-hosttracker
+karaf > feature:install odl-alto-simpleird
 
-==== Managing Data with RESTCONF
+After the feature is successfully installed, a special context will be
+created for all simple IRD resources. The id for this context can be
+seen by executing the following command in a terminal:
 
-After installing `odl-alto-provider` feature in karaf, it is possible to manage
+[source,bash]
+curl -X GET -u admin:admin http://localhost:8181/restconf/operational/alto-simple-ird:information/
+
+==== Create a new IRD ====
+
+To create a new IRD resource, two fields MUST be provided:
+
+* Field **instance-id**: the _resource-id_ of the IRD resource;
+* Field **entry-context**: the context-id for non-IRD entries managed by
+this IRD resource.
+
+Using the following script, one can create an empty IRD resource:
+
+[source,bash]
+#!/bin/bash
+# filename: ird-create
+INSTANCE_ID=$1
+if [ $2 ]; then
+    CONTEXT_ID=$2
+else
+    CONTEXT_ID="00000000-0000-0000-0000-000000000000"
+fi
+URL="`http://localhost:8181/restconf/config/alto-simple-ird:ird-instance-configuration/"$INSTANCE_ID"/[`http://localhost:8181/restconf/config/alto-simple-ird:ird-instance-configuration/"$INSTANCE_ID"/`]`"
+DATA=$(cat template \
+  | sed 's/\$1/'$CONTEXT_ID'/g' \
+  | sed 's/\$2/'$INSTANCE_ID'/g')
+curl -4 -D - -X PUT -u admin:admin \
+  -H "Content-Type: application/json" -d "$(echo $DATA)"\
+  $URL
+
+For example, the following command will create a new IRD named _ird_
+which can accept entries with the default context-id:
+
+[source,bash]
+$ ./ird-create ird 000000000000-0000-0000-0000-00000000
+
+And below is the what the template file looks like:
+
+[source,json]
+{
+    "ird-instance-configuration": {
+        "entry-context": "/alto-resourcepool:context[alto-resourcepool:context-id='$1']",
+        "instance-id": "$2"
+    }
+}
+
+==== Remove an IRD ====
+
+To remove an existing IRD (and all the entries in it), one can use the
+following command in a terminal:
+
+[source,bash]
+curl -X DELETE -u admin:admin http://localhost:8181/restconf/config/alto-simple-ird:ird-instance-configuration/$INSTANCE_ID
+
+==== Add a new entry ====
+
+There are several ways to add entries to an IRD and in this section we
+introduce only the simplest method. Using the following script, one can
+add a new entry to the target IRD.
+
+For each new entry, four parameters MUST be provided:
+
+* Parameter __ird-id__: the _resource-id_ of the target IRD;
+* Parameter __entry-id__: the _resource-id_ of the ALTO service to be
+added;
+* Parameter __context-id__: the _context-id_ of the ALTO service to be
+added, which MUST be identical to the target IRD's __entry-context__;
+* Parameter __location__: either a URI or a relative path to the ALTO
+service.
+
+The following script can be used to add one entry to the target IRD,
+where the relative path is used:
+
+[source,bash]
+#!/bin/bash
+# filename: ird-add-entry
+IRD_ID=$1
+ENTRY_ID=$2
+CONTEXT_ID=$3
+BASE_URL=$4
+URL="`http://localhost:8181/restconf/config/alto-simple-ird:ird-instance-configuration/"$IRD_ID"/ird-configuration-entry/"$ENTRY_ID"/"
+DATA=$(cat template \
+  | sed 's/\$1/'$ENTRY_ID'/g' \
+  | sed 's/\$2/'$CONTEXT_ID'/g' \
+  | sed 's/\$3/'$BASE_URL'/g' )
+curl -4 -D - -X PUT -u admin:admin \
+  -H "Content-Type: application/json" -d "$(echo $DATA)" \
+  $URL
+
+For example, the following command will add a new resource named
+__networkmap__, whose context-id is the default context-id and the base
+URL is /alto/networkmap, to the IRD named __ird__:
+
+[source,bash]
+$ ./ird-add-entry ird networkmap 000000000000-0000-0000-0000-00000000 /alto/networkmap
+
+And below is the template file:
+
+[source,json]
+{
+    "ird-configuration-entry": {
+        "entry-id": "$1",
+        "instance": "/alto-resourcepool:context[alto-resourcepool:context-id='$2']/alto-resourcepool:resource[alto-resourcepool:resource-id='$1']",
+        "path": "$3/$1"
+    }
+}
+
+==== Remove an entry ====
+
+To remove an entry from an IRD, one can use the following one-line
+command:
+
+[source,bash]
+curl -X DELETE -u admin:admin http://localhost:8181/restconf/config/alto-simple-ird:ird-instance-configuration/$IRD_ID/ird-configuration-entry/$ENTRY_ID/
+
+=== How to Use Host-tracker-based ECS ===
+
+As a real instance of ALTO services, *_alto-hosttracker_* reads data
+from *_l2switch_* and generates a network map with resource id
+*_hosttracker-network-map_* and a cost map with resource id
+*_hostracker-cost-map_*. It can only work with OpenFlow-enabled
+networks.
+
+After installing the *_odl-alto-hosttracker_* feature, the corresponding
+network map and cost map will be inserted into the data store.
+
+=== Managing Resource with `alto-resourcepool` ===
+
+After installing `odl-alto-release` feature in Karaf, `alto-resourcepool` feature 
+will be installed automatically. And you can manage all resources in ALTO via 
+RESTCONF APIs provided by `alto-resourcepool`.
+
+With the example bash script below you can get any resource infomation in a
+given context.
+
+[source,bash]
+#!/bin/bash
+RESOURCE_ID=$1
+if [ $2 ] ; then
+	CONTEXT_ID=$2
+else
+	CONTEXT_ID="00000000-0000-0000-0000-000000000000"
+fi
+URL="http://localhost:8181/restconf/operational/alto-resourcepool:context/"$CONTEXT_ID"/alto-resourcepool:resource/"$RESOURCE_ID
+curl -X GET -u admin:admin $URL | python -m json.tool | sed -n '/default-tag/p' | sed 's/.*:.*\"\(.*\)\".*/\1/g'
+
+=== Manual Configuration ===
+
+==== Using RESTCONF API ====
+
+After installing `odl-alto-release` feature in Karaf, it is possible to manage
 network-maps and cost-maps using RESTCONF. Take a look at all the operations
-provided by `alto-model` at the API service page which can be found at
+provided by `resource-config` at the API service page which can be found at
 `http://localhost:8181/apidoc/explorer/index.html`.
 
-With the example input below you can insert a network map into the data store,
-either by filling the form in the API doc page, or by using tools such as `curl`.
+The easiest method to operate network-maps and cost-maps is to modify data broker
+via RESTCONF API directly.
 
-[source,bash]
-HOST_IP=localhost                   # IP address of the controller
-CREDENTIAL=admin:admin              # username and password for authentication
-BASE_URL=$HOST_IP:8181/restconf/config
-SERVICE_PATH=alto-service:resources/alto-service:network-maps/alto-service:network-map
-RESOURCE_ID=test_odl                # Should match the one in the input file
-curl -X PUT -H "content-type:application/yang.data+json" \
-            -d @example-input.json -u $CREDENTIAL \
-            http://$BASE_URL/$SERVICE_PATH/$RESOURCE_ID
+==== Using RPC ====
 
-[source,json]
-include::example-input.json[]
+The `resource-config` package also provides a query RPC to config the resources.
+You can CREATE, UPDATE and DELETE *network-maps* and *cost-maps* via query RPC.
 
-[[read-restconf]]Use the following command to see the results:
+=== Use Case ===
 
-[source,bash]
-HOST_IP=localhost                   # IP address of the controller
-CREDENTIAL=admin:admin              # username and password for authentication
-BASE_URL=$HOST_IP:8181/restconf/config
-SERVICE_PATH=alto-service:resources/alto-service:network-maps/alto-service:network-map
-RESOURCE_ID=test_odl
-curl -X GET -u $CREDENTIAL http://$BASE_URL/$SERVICE_PATH/$RESOURCE_ID
+==== Server Selection ====
 
-Use `DELETE` method to remove the data from the data store.
+One of the key use case for ALTO is server selection. For example, a client (with
+IP address 10.0.0.1) sends a data transferring request to Data Transferring Service
+(DTS). And there are three data replica servers (with IP address 10.60.0.1, 10.60.0.2
+and 10.60.0.3) which can response the request. In this case, DTS can send a query
+request to ALTO server to make server selection decision.
 
-[source,bash]
-HOST_IP=localhost                   # IP address of the controller
-CREDENTIAL=admin:admin              # username and password for authentication
-BASE_URL=$HOST_IP:8181/restconf/config
-SERVICE_PATH=alto-service:resources/alto-service:network-maps/alto-service:network-map
-RESOURCE_ID=test_odl
-curl -X DELETE -H "content-type:application/yang.data+json" \
-               -u $CREDENTIAL http://$BASE_URL/$SERVICE_PATH/$RESOURCE_ID
+Following is an example ALTO query:
 
-==== Using `alto-manager`
-
-The `alto-manager` package provides a karaf command line tool which wraps up
-the functions described in the last section.
-
-[source,bash]
-karaf > alto-create <type> <resource-file>
-karaf > alto-delete <type> <resource-id>
-
-Currently only `network-map` and `cost-map` are supported. Also the resource
-files used in `alto-manager` follow the RFC7285-compatible format instead of
-RESTCONF format.
-
-The following example shows how to use `alto-manager` to put a network map into
-the data store.
-
-[source,bash]
-karaf > alto-create network-map example-rfc7285-networkmap.json
-
-[source,json]
-include::example-rfc7285-networkmap.json[]
-
-==== Using `alto-hosttracker`
-
-As a real instance of ALTO services, `alto-hosttracker` reads data from
-`l2switch` and generates a network map with resource id
-`hosttracker-network-map` and a cost map with resource id `hostracker-cost-map`.
-It can only work with OpenFlow-enabled networks.
-
-After installing the `odl-alto-hosttracker` feature, the corresponding network
-map and cost map will be inserted into the data store. Follow the steps in
-<<read-restconf, how to read data with RESTCONF>> to see the contents.
+[source]
+POST /alto/endpointcost HTTP/1.1
+Host: localhost:8080
+Content-Type: application/alto-endpointcostparams+json
+Accept: application/alto-endpointcost+json,application/alto-error+json
+{
+  "cost-type": {
+    "cost-mode": "ordinal",
+    "cost-metric": "hopcount"
+  },
+  "endpoints": {
+    "srcs": [ "ipv4:10.0.0.1" ],
+    "dsts": [
+      "ipv4:10.60.0.1",
+      "ipv4:10.60.0.2",
+      "ipv4:10.60.0.3"
+  ]
+  }
+}

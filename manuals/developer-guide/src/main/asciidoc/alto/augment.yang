@@ -1,6 +1,26 @@
-    augment "/alto-restconf:resources/alto-restconf:cost-maps/alto-restconf:cost-map/alto-restconf:map/alto-restconf:dst-costs"     {
-        when "/alto-restconf:resources/alto-restconf:cost-maps/alto-restconf:cost-map/alto-restconf:meta/alto-restconf:cost-type/alto-restconf:cost-mode == 'numerical'";
-        leaf cost-in-hosttracker {
-            type int32;
+    grouping "alto-ird-request" {
+        container "ird-request" {
+        }
+    }
+    grouping "alto-ird-response" {
+        container "ird" {
+            container "meta" {
+            }
+            list "resource" {
+                key "resource-id";
+                leaf "resource-id" {
+                    type "alto-types:resource-id";
+                }
+            }
+        }
+    }
+    augment "/base:query/base:input/base:request" {
+        case "ird-request-data" {
+            uses "alto-ird-request";
+        }
+    }
+    augment "/base:query/base:output/base:response" {
+        case "ird-response-data" {
+            uses "alto-ird-response";
         }
     }
