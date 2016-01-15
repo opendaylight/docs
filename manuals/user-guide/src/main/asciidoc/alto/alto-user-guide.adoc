@@ -5,7 +5,7 @@ The ALTO project provides support for _Application Layer Traffic
 Optimization_ services defined in link:https://tools.ietf.org/html/rfc7285[RFC
 7285].
 
-In the Lithium release, ALTO uses the YANG model described in
+In the Beryllium release, ALTO uses the YANG model based on
 link:https://tools.ietf.org/html/draft-shi-alto-yang-model-03[this draft].
 
 === ALTO Architecture
@@ -14,104 +14,50 @@ There are three kinds of ALTO packages in OpenDaylight.
 
 . **Core**
 The **core** packages include:
-.. `alto-model`: Defines the YANG model of ALTO services in MD-SAL
-.. `service-api-rfc7285`: Defines interfaces for ALTO services in AD-SAL
-.. `alto-northbound`: Implements the RFC7285-compatible RESTful API
+.. `alto-northbound`: Implements RESTful API framework
+.. `alto-northbound-routes`: Implements the RFC7285-compatible RESTful API
+.. `alto-resourcepool`: Provides a management module to maintain contexts
+and resources
+.. `alto-standard-types`: Defines basic types of ALTO protocol
+.. `standard-service-models`: Defines the YANG model of ALTO services in MD-SAL
+
 . **Basic**
 The **basic** packages include:
 .. Basic implementations of ALTO services:
-... `alto-provider`: Implements the services defined in `alto-model`
-... `simple-impl`: Implements the services defined in `service-api-rfc7285`
+... `simple-ird`: Implements a simple IRD service
+... `endpointcostservice`: Implements the Endpoint Cost Service
 .. Utilities:
-... `alto-manager`: Provides a karaf command line tool to manipulate network
-maps and cost maps.
-. **Service**
-The **service** packages include:
+... `resource-config`: Provides several interfaces to config networkmap and
+costmap manually.
 .. `alto-hosttracker`: Generates a network map, a corresponding cost map and
 the endpoint cost service based on <<_l2switch_user_guide, l2switch>>.
-
-=== Configuring ALTO
-
-There are three packages that require their own configuration files,
-including `alto-provider`, `alto-hosttracker` and `simple-impl`. However, the
-only configurable option is the type of the data broker in all three
-configuration files.
 
 === Administering or Managing ALTO
 
 To enable ALTO, the features must be installed first.
 
 [source,bash]
-karaf > feature:install odl-alto-provider
-karaf > feature:install odl-alto-manager
-karaf > feature:install odl-alto-northbound
-karaf > feature:install odl-alto-hosttracker
+karaf > feature:install odl-alto-release
 
-==== Managing Data with RESTCONF
+==== Managing Resource with `alto-resourcepool`
 
-After installing `odl-alto-provider` feature in karaf, it is possible to manage
-network-maps and cost-maps using RESTCONF. Take a look at all the operations
-provided by `alto-model` at the API service page which can be found at
-`http://localhost:8181/apidoc/explorer/index.html`.
+After installing `odl-alto-release` feature in karaf, `alto-resourcepool` feature 
+will be installed automatically. And you can manage all resources in ALTO via 
+RESTCONF APIs provided by `alto-resourcepool`.
 
-With the example input below you can insert a network map into the data store,
-either by filling the form in the API doc page, or by using tools such as `curl`.
+With the example bash script below you can get any resource infomation in a
+given context.
 
 [source,bash]
-HOST_IP=localhost                   # IP address of the controller
-CREDENTIAL=admin:admin              # username and password for authentication
-BASE_URL=$HOST_IP:8181/restconf/config
-SERVICE_PATH=alto-service:resources/alto-service:network-maps/alto-service:network-map
-RESOURCE_ID=test_odl                # Should match the one in the input file
-curl -X PUT -H "content-type:application/yang.data+json" \
-            -d @example-input.json -u $CREDENTIAL \
-            http://$BASE_URL/$SERVICE_PATH/$RESOURCE_ID
-
-[source,json]
-include::example-input.json[]
-
-[[read-restconf]]Use the following command to see the results:
-
-[source,bash]
-HOST_IP=localhost                   # IP address of the controller
-CREDENTIAL=admin:admin              # username and password for authentication
-BASE_URL=$HOST_IP:8181/restconf/config
-SERVICE_PATH=alto-service:resources/alto-service:network-maps/alto-service:network-map
-RESOURCE_ID=test_odl
-curl -X GET -u $CREDENTIAL http://$BASE_URL/$SERVICE_PATH/$RESOURCE_ID
-
-Use `DELETE` method to remove the data from the data store.
-
-[source,bash]
-HOST_IP=localhost                   # IP address of the controller
-CREDENTIAL=admin:admin              # username and password for authentication
-BASE_URL=$HOST_IP:8181/restconf/config
-SERVICE_PATH=alto-service:resources/alto-service:network-maps/alto-service:network-map
-RESOURCE_ID=test_odl
-curl -X DELETE -H "content-type:application/yang.data+json" \
-               -u $CREDENTIAL http://$BASE_URL/$SERVICE_PATH/$RESOURCE_ID
-
-==== Using `alto-manager`
-
-The `alto-manager` package provides a karaf command line tool which wraps up
-the functions described in the last section.
-
-[source,bash]
-karaf > alto-create <type> <resource-file>
-karaf > alto-delete <type> <resource-id>
-
-Currently only `network-map` and `cost-map` are supported. Also the resource
-files used in `alto-manager` follow the RFC7285-compatible format instead of
-RESTCONF format.
-
-The following example shows how to use `alto-manager` to put a network map into
-the data store.
-
-[source,bash]
-karaf > alto-create network-map example-rfc7285-networkmap.json
-
-[source,json]
-include::example-rfc7285-networkmap.json[]
+#!/bin/bash
+RESOURCE_ID=$1
+if [ $2 ] ; then
+	CONTEXT_ID=$2
+else
+	CONTEXT_ID="00000000-0000-0000-0000-000000000000"
+fi
+URL="http://localhost:8181/restconf/operational/alto-resourcepool:context/"$CONTEXT_ID"/alto-resourcepool:resource/"$RESOURCE_ID
+curl -X GET -u admin:admin $URL | python -m json.tool | sed -n '/default-tag/p' | sed 's/.*:.*\"\(.*\)\".*/\1/g'
 
 ==== Using `alto-hosttracker`
 
@@ -121,5 +67,62 @@ As a real instance of ALTO services, `alto-hosttracker` reads data from
 It can only work with OpenFlow-enabled networks.
 
 After installing the `odl-alto-hosttracker` feature, the corresponding network
-map and cost map will be inserted into the data store. Follow the steps in
-<<read-restconf, how to read data with RESTCONF>> to see the contents.
+map and cost map will be inserted into the data store.
+
+=== Using `simple-ird`
+
+At the default configuration, `simple-ird` feature will be installed automatically.
+You can use basic ALTO IRD service via RESTCONF API or ALTO northbound.
+
+The following example shows how to use `simple-ird` to get IRD infomation.
+
+get_context_id.sh
+
+[source,bash]
+#!/bin/bash
+COMMAND="curl -4 -X GET -u admin:admin http://localhost:8080/restconf/operational/alto-simple-ird:information"
+if [ $1 ]; then
+    $COMMAND | python -m json.tool
+fi
+$COMMAND | python -m json.tool | sed -n '/.*context-id.*/p' | sed 's/^.*:.*\"\(.*\)\".*/\1/g'
+
+ird-display.sh
+
+[source,bash]
+#!/bin/bash
+RESOURCE_ID=$1
+URL="http://localhost:8181/restconf/config/alto-simple-ird:ird-instance-configuration/"$RESOURCE_ID"/"
+curl -4 -X GET -u admin:admin $URL | python -m json.tool
+
+display-ird.sh
+
+[source,bash]
+#!/bin/bash
+CONTEXT_ID=$(./get_context_id.sh)
+RP_URL="http://localhost:8181/restconf/operational/alto-resourcepool:context/"$CONTEXT_ID
+RESOURCEPOOL=$(curl -4 -X GET -u admin:admin $RP_URL)
+RESOURCES=$(echo $RESOURCEPOOL | python -m json.tool \
+        | sed -n '/.*resource-id.*/p' \
+        | sed 's/.*:.*\"\(.*\)\".*/\1/g')
+for resource in $RESOURCES; do
+    ./ird-display $resource
+done
+
+=== Manual Configuration
+
+==== Using RESTCONF API
+
+After installing `odl-alto-release` feature in karaf, it is possible to manage
+network-maps and cost-maps using RESTCONF. Take a look at all the operations
+provided by `resource-config` at the API service page which can be found at
+`http://localhost:8181/apidoc/explorer/index.html`.
+
+==== Using RPC
+
+The `resource-config` package also provides a query RPC to config the resources.
+You can CREATE, UPDATE and DELETE network-maps and cost-maps via query RPC
+
+=== Basic Endpoint Cost Service
+
+Endpoint Cost Service is a basic service of ALTO. And this service is provided by
+`odl-alto-standard-northbound-route`.
