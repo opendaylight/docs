@@ -32,6 +32,8 @@ include::alto/alto-user-guide.adoc[ALTO]
 
 include::aaa/aaa.adoc[AAA]
 
+include::armoury/odl-armoury-user.adoc[ARMOURY]
+
 include::bgpcep/odl-bgpcep-bgp-all-user.adoc[BGP]
 
 include::capwap/capwap-user.adoc[CAPWAP]
@@ -46,11 +48,19 @@ include::vpnservice/vpnservice-user.adoc[VPN Service]
 
 include::lacp/lacp-user.adoc[LACP]
 
-include::lfm/lispflowmapping-all-user.adoc[LISP flow mapping]
+include::lfm/lispflowmapping-msmr-user.adoc[LISP flow mapping]
+
+include::nemo/odl-nemo-engine-user.adoc[NEMO]
+
+include::netide/odl-netide-user-guide.adoc[NetIDE]
 
 include::nic/nic-user.adoc[NIC]
 
 include::sdninterfaceapp/odl-sdninterfaceapp-all-user.adoc[ODL-SDNi]
+
+include::of-config/ofconfig-user.adoc[OF-CONFIG]
+
+include::openflowplugin/odl-ofp-user-guide.adoc[OpenFlow Plugin]
 
 include::opflex/agent-ovs-user.adoc[]
 
@@ -77,3 +87,5 @@ include::usc/odl-usc-channel-user.adoc[USC]
 include::vtn/vtn-user.adoc[]
 
 include::controller/netconf/odl-netconf-user.adoc[]
+
+include::yang-push/odl-yang-push-user.adoc[YANG-PUSH]

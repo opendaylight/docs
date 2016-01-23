@@ -54,6 +54,8 @@ include::developing-app.adoc[]
 
 include::alto/alto-developer-guide.adoc[ALTO]
 
+include::armoury/odl-armoury-dev.adoc[ARMOURY]
+
 include::bgpcep/odl-bgpcep-bgp-all-dev.adoc[BGP]
 
 include::capwap/capwap-dev.adoc[CAPWAP]
@@ -74,9 +76,15 @@ include::controller/netconf/odl-netconf-dev.adoc[]
 
 include::nic/nic-dev.adoc[]
 
+include::nemo/odl-nemo-engine-dev.adoc[]
+
+include::netide/netide-developer-guide.adoc[]
+
 include::neutron/neutron.adoc[]
 
 include::sdninterfaceapp/odl-sdninterfaceapp-all-dev.adoc[]
+
+include::of-config/of-config-dev.adoc[]
 
 include::openflowjava/odl-openflowjava-protocol-dev.adoc[]
 
@@ -112,6 +120,8 @@ include::usc/odl-usc-channel-dev.adoc[]
 include::vtn/vtn-dev.adoc[]
 
 include::yangtools/yangtools.adoc[]
+
+include::yang-push/odl-yang-push-dev.adoc[YANG-PUSH]
 
 :numbered!:
 
