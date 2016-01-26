@@ -1,0 +1,102 @@
+==== How to configure QoS Attribute Mapping
+
+This section explains how to provision QoS attribute mapping constraint using NIC OF-Renderer.
+
+The QoS attribute mapping currently supports DiffServ. It uses a 6-bit differentiated services code point (DSCP) in the 8-bit differentiated services field (DS field) in the IP header.
+
+[options="header",cols="20%,80%"]
+|===
+| Action | Function
+|Allow | Permits the packet to allow.
+As options, DSCP change is specified.
+|===
+
+Following steps explain QoS Attribute Mapping function:
+
+* Initially configure the QoS profile which contains profile name and DSCP value.
+* When a packet is transferred from a source to destination, the flow builder evaluates whether the transferred packet matches the condition such as action, endpoints in the flow.
+* If the packet matches the endpoints, the flow builder applies the flow matching action and DSCP value.
+
+===== Requirement
+
+Start mininet, and create three switches (s1, s2, and s3) and four hosts (h1, h2, h3, and h4) in it.
+
+Replace <Controller IP> based on your environment.
+
+----
+$  sudo mn --mac --topo tree,2 --controller=remote,ip=<Controller IP>,port=6633
+----
+
+----
+ mininet> net
+ h1 h1-eth0:s2-eth1
+ h2 h2-eth0:s2-eth2
+ h3 h3-eth0:s3-eth1
+ h4 h4-eth0:s3-eth2
+ s1 lo:  s1-eth1:s2-eth3 s1-eth2:s3-eth3
+ s2 lo:  s2-eth1:h1-eth0 s2-eth2:h2-eth0 s2-eth3:s1-eth1
+ s3 lo:  s3-eth1:h3-eth0 s3-eth2:h4-eth0 s3-eth3:s1-eth2
+----
+
+===== Downloading and deploy Karaf distribution
+* Get the Beryllium distribution.
+
+* Unzip the downloaded zip distribution.
+
+* To run the Karaf.
+----
+./bin/karaf
+----
+
+* Once the console is up, type as below to install feature.
+----
+feature:install odl-nic-core-mdsal odl-nic-console odl-nic-listeners
+----
+
+===== Configuration
+
+Please execute the following CLI commands to test network intent using mininet:
+
+* To apply the QoS constraint, configure the QoS profile.
+----
+intent:qosConfig -p <qos_profile_name> -d <valid_dscp_value>
+----
+
+Example:
+----
+intent:qosConfig -p High_Quality -d 46
+----
+NOTE: Valid DSCP value ranges from 0-63.
+
+* To provision the network for the two hosts (h1 and h3), add intents that allows traffic in both directions by execute the following CLI command.
+
+Demonstrates the ALLOW action with constraint QoS and QoS profile name.
+----
+intent:add -a ALLOW -t <DESTINATION_MAC> -f <SOURCE_MAC> -q QOS -p <qos_profile_name>
+----
+
+Example:
+----
+intent:add -a ALLOW -t 00:00:00:00:00:03 -f 00:00:00:00:00:01 -q QOS -p High_Quality
+intent:add -a ALLOW -t 00:00:00:00:00:01 -f 00:00:00:00:00:03 -q QOS -p High_Quality
+----
+
+====== Verification
+
+* As we have applied action type ALLOW now ping should happen between hosts h1 and h3.
+----
+ mininet> h1 ping h3
+ PING 10.0.0.3 (10.0.0.3) 56(84) bytes of data.
+ 64 bytes from 10.0.0.3: icmp_req=1 ttl=64 time=0.984 ms
+ 64 bytes from 10.0.0.3: icmp_req=2 ttl=64 time=0.110 ms
+ 64 bytes from 10.0.0.3: icmp_req=3 ttl=64 time=0.098 ms
+----
+
+* Verification of the flow entry and ensuring the mod_nw_tos is part of actions.
+----
+ mininet> dpctl dump-flows
+ *** s1 ------------------------------------------------------------------------
+ NXST_FLOW reply (xid=0x4):
+ cookie=0x0, duration=21.873s, table=0, n_packets=3, n_bytes=294, idle_age=21, priority=9000,dl_src=00:00:00:00:00:03,dl_dst=00:00:00:00:00:01 actions=NORMAL,mod_nw_tos:184
+ cookie=0x0, duration=41.252s, table=0, n_packets=3, n_bytes=294, idle_age=41, priority=9000,dl_src=00:00:00:00:00:01,dl_dst=00:00:00:00:00:03 actions=NORMAL,mod_nw_tos:184
+----

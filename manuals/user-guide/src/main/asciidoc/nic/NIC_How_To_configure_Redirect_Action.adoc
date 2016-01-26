@@ -1,0 +1,224 @@
+==== How to configure Redirect Action
+
+The section explains the redirect action supported in NIC. The redirect functionality supports forwarding (to redirect) the traffic to a service configured in SFC before forwarding it to the destination.
+
+.REDIRECT SERVICE
+image::nic/Service_Chaining.png[REDIRECT SERVICE,width=400]
+
+Following steps explain Redirect action function:
+
+* Configure the service in SFC using the SFC APIs.
+* Configure the intent with redirect action and the service information where the traffic needs to be redirected.
+* The flows are computed as below
+. First flow entry between the source host connected node and the ingress node of the configured service.
+. Second flow entry between the egress Node id the configured service and the ID and destination host connected host.
+. Third flow entry between the destination host node and the source host node.
+
+
+===== Requirement
+* Save the mininet script as redirect_test.py
+
+https://gist.github.com/vinothgithub15/315d0a427d5afc39f2d7
+
+* Start mininet, and create switches in it.
+
+Replace <Controller IP> based on your environment.
+
+----
+sudo mn --controller=remote,ip=<Controller IP>--custom redirect_test.py --topo mytopo2
+----
+
+----
+ mininet> net
+ h1 h1-eth0:s1-eth1
+ h2 h2-eth0:s1-eth2
+ h3 h3-eth0:s2-eth1
+ h4 h4-eth0:s2-eth2
+ h5 h5-eth0:s2-eth3
+ srvc1 srvc1-eth0:s3-eth3 srvc1-eth1:s4-eth3
+ s1 lo:  s1-eth1:h1-eth0 s1-eth2:h2-eth0 s1-eth3:s2-eth4 s1-eth4:s3-eth2
+ s2 lo:  s2-eth1:h3-eth0 s2-eth2:h4-eth0 s2-eth3:h5-eth0 s2-eth4:s1-eth3 s2-eth5:s4-eth1
+ s3 lo:  s3-eth1:s4-eth2 s3-eth2:s1-eth4 s3-eth3:srvc1-eth0
+ s4 lo:  s4-eth1:s2-eth5 s4-eth2:s3-eth1 s4-eth3:srvc1-eth1
+ c0
+----
+
+===== Downloading and deploy Karaf distribution
+* Get the Beryllium distribution.
+
+* Unzip the downloaded zip distribution.
+
+* To run the Karaf.
+----
+./bin/karaf
+----
+
+* Once the console is up, type as below to install feature.
+----
+feature:install odl-nic-core-mdsal odl-nic-console odl-nic-listeners
+----
+
+===== Configuration
+
+====== Mininet
+
+.CONFIGURATION THE NETWORK IN MININET
+image::nic/Redirect_flow.png[CONFIGURATION OF THE NETWORK]
+
+* Configure srvc1 as service node in the mininet environment.
+
+Please execute the following commands in the mininet console (where mininet script is executed).
+----
+ srvc1 ip addr del 10.0.0.6/8 dev srvc1-eth0
+ srvc1 brctl addbr br0
+ srvc1 brctl addif br0 srvc1-eth0
+ srvc1 brctl addif br0 srvc1-eth1
+ srvc1 ifconfig br0 up
+ srvc1 tc qdisc add dev srvc1-eth1 root netem delay 200ms
+----
+
+====== Configure service in SFC
+The service (srvc1) is configured using SFC REST API. As part of the configuration the ingress and egress node connected the service is configured.
+
+----
+curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '{
+  "service-functions": {
+    "service-function": [
+      {
+        "name": "srvc1",
+        "sf-data-plane-locator": [
+          {
+            "name": "Egress",
+            "service-function-forwarder": "openflow:4"
+          },
+          {
+            "name": "Ingress",
+            "service-function-forwarder": "openflow:3"
+          }
+        ],
+        "nsh-aware": false,
+        "type": "delay"
+      }
+    ]
+  }
+}' -X PUT --user admin:admin http://localhost:8181/restconf/config/service-function:service-functions/
+----
+
+*SFF RESTCONF Request*
+
+Configuring switch and port information for the service functions.
+----
+curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '{
+  "service-function-forwarders": {
+    "service-function-forwarder": [
+      {
+        "name": "openflow:3",
+        "service-node": "OVSDB2",
+        "sff-data-plane-locator": [
+          {
+            "name": "Ingress",
+            "data-plane-locator":
+            {
+                "vlan-id": 100,
+                "mac": "11:11:11:11:11:11",
+                "transport": "service-locator:mac"
+            },
+            "service-function-forwarder-ofs:ofs-port":
+            {
+                "port-id" : "3"
+            }
+          }
+        ],
+        "service-function-dictionary": [
+          {
+            "name": "srvc1",
+            "sff-sf-data-plane-locator":
+            {
+                "sf-dpl-name" : "openflow:3",
+                "sff-dpl-name" : "Ingress"
+            }
+          }
+        ]
+      },
+      {
+        "name": "openflow:4",
+        "service-node": "OVSDB3",
+        "sff-data-plane-locator": [
+          {
+            "name": "Egress",
+            "data-plane-locator":
+            {
+                "vlan-id": 200,
+                "mac": "44:44:44:44:44:44",
+                "transport": "service-locator:mac"
+            },
+            "service-function-forwarder-ofs:ofs-port":
+            {
+                "port-id" : "3"
+            }
+          }
+        ],
+        "service-function-dictionary": [
+          {
+            "name": "srvc1",
+            "sff-sf-data-plane-locator":
+            {
+                "sf-dpl-name" : "openflow:4",
+                "sff-dpl-name" : "Egress"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}' -X PUT --user admin:admin http://localhost:8181/restconf/config/service-function-forwarder:service-function-forwarders/
+----
+
+====== CLI Command
+To provision the network for the two hosts (h1 and h5).
+
+Demonstrates the redirect action with service name srvc1.
+
+----
+intent:add -f <SOURCE_MAC> -t <DESTINATION_MAC> -a REDIRECT -s <SERVICE_NAME>
+----
+
+Example:
+----
+intent:add -f 32:bc:ec:65:a7:d1 -t c2:80:1f:77:41:ed -a REDIRECT -s srvc1
+----
+
+====== Verification
+
+* As we have applied action type redirect now ping should happen between hosts h1 and h5.
+----
+ mininet> h1 ping h5
+ PING 10.0.0.5 (10.0.0.5) 56(84) bytes of data.
+ 64 bytes from 10.0.0.5: icmp_seq=2 ttl=64 time=201 ms
+ 64 bytes from 10.0.0.5: icmp_seq=3 ttl=64 time=200 ms
+ 64 bytes from 10.0.0.5: icmp_seq=4 ttl=64 time=200 ms
+----
+The redirect functionality can be verified by the time taken by the ping operation (200ms). The service srvc1 configured using SFC introduces 200ms delay. As the traffic from h1 to h5 is redirected via the srvc1, the time taken by the traffic from h1 to h5 will take about 200ms.
+
+* Flow entries added to nodes for the redirect action.
+----
+ mininet> dpctl dump-flows
+ *** s1 ------------------------------------------------------------------------
+ NXST_FLOW reply (xid=0x4):
+ cookie=0x0, duration=9.406s, table=0, n_packets=6, n_bytes=588, idle_age=3, priority=9000,in_port=1,dl_src=32:bc:ec:65:a7:d1, dl_dst=c2:80:1f:77:41:ed actions=output:4
+ cookie=0x0, duration=9.475s, table=0, n_packets=6, n_bytes=588, idle_age=3, priority=9000,in_port=3,dl_src=c2:80:1f:77:41:ed, dl_dst=32:bc:ec:65:a7:d1 actions=output:1
+ cookie=0x1, duration=362.315s, table=0, n_packets=144, n_bytes=12240, idle_age=4, priority=9500,dl_type=0x88cc actions=CONTROLLER:65535
+ cookie=0x1, duration=362.324s, table=0, n_packets=4, n_bytes=168, idle_age=3, priority=10000,arp actions=CONTROLLER:65535,NORMAL
+ *** s2 ------------------------------------------------------------------------
+ NXST_FLOW reply (xid=0x4):
+ cookie=0x0, duration=9.503s, table=0, n_packets=6, n_bytes=588, idle_age=3, priority=9000,in_port=3,dl_src=c2:80:1f:77:41:ed, dl_dst=32:bc:ec:65:a7:d1 actions=output:4
+ cookie=0x0, duration=9.437s, table=0, n_packets=6, n_bytes=588, idle_age=3, priority=9000,in_port=5,dl_src=32:bc:ec:65:a7:d1, dl_dst=c2:80:1f:77:41:ed actions=output:3
+ cookie=0x3, duration=362.317s, table=0, n_packets=144, n_bytes=12240, idle_age=4, priority=9500,dl_type=0x88cc actions=CONTROLLER:65535
+ cookie=0x3, duration=362.32s, table=0, n_packets=4, n_bytes=168, idle_age=3, priority=10000,arp actions=CONTROLLER:65535,NORMAL
+ *** s3 ------------------------------------------------------------------------
+ NXST_FLOW reply (xid=0x4):
+ cookie=0x0, duration=9.41s, table=0, n_packets=6, n_bytes=588, idle_age=3, priority=9000,in_port=2,dl_src=32:bc:ec:65:a7:d1, dl_dst=c2:80:1f:77:41:ed actions=output:3
+ *** s4 ------------------------------------------------------------------------
+ NXST_FLOW reply (xid=0x4):
+ cookie=0x0, duration=9.486s, table=0, n_packets=6, n_bytes=588, idle_age=3, priority=9000,in_port=3,dl_src=32:bc:ec:65:a7:d1, dl_dst=c2:80:1f:77:41:ed actions=output:1
+----
