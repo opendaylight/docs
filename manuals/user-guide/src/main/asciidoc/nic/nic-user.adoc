@@ -204,7 +204,7 @@ OPTIONS
 
 === NIC Usage Examples
 
-In addition to the one example here, please see the wiki for more use cases:
-https://wiki.opendaylight.org/view/Network_Intent_Composition:Use_Cases
-
 include::NIC_How_To_configure_VTN_Renderer.adoc[How to configure VTN Renderer]
+include::NIC_How_To_configure_Redirect_Action.adoc[How to configure Redirect Action]
+include::NIC_How_To_configure_QoS_Attribute_Mapping.adoc[How to configure QoS Attribute Mapping]
+include::NIC_How_To_configure_Log_Action.adoc[How to configure Log Action]
