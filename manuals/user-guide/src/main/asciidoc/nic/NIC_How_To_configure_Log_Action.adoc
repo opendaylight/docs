@@ -1,0 +1,84 @@
+==== How to configure Log Action
+
+This section demonstrates log action in OF Renderer. This demonstration aims at enabling communication between two hosts and logging the flow statistics details of the particular traffic.
+
+===== Requirement
+
+Start mininet, and create three switches (s1, s2, and s3) and four hosts (h1, h2, h3, and h4) in it.
+
+Replace <Controller IP> based on your environment.
+
+----
+$  sudo mn --mac --topo single,2 --controller=remote,ip=<Controller IP>
+----
+
+----
+ mininet> net
+ h1 h1-eth0:s2-eth1
+ h2 h2-eth0:s2-eth2
+ h3 h3-eth0:s3-eth1
+ h4 h4-eth0:s3-eth2
+ s1 lo:  s1-eth1:s2-eth3 s1-eth2:s3-eth3
+ s2 lo:  s2-eth1:h1-eth0 s2-eth2:h2-eth0 s2-eth3:s1-eth1
+ s3 lo:  s3-eth1:h3-eth0 s3-eth2:h4-eth0 s3-eth3:s1-eth2
+----
+
+===== Downloading and deploy Karaf distribution
+* Get the Beryllium distribution.
+
+* Unzip the downloaded zip distribution.
+
+* To run the Karaf.
+----
+./bin/karaf
+----
+
+* Once the console is up, type as below to install feature.
+----
+feature:install odl-nic-core-mdsal odl-nic-console odl-nic-listeners
+----
+
+===== Configuration
+
+Please execute the following CLI commands to test network intent using mininet:
+
+* To provision the network for the two hosts (h1 and h3), add intents that allows traffic in both directions by execute the following CLI command.
+----
+intent:add –a ALLOW -t <DESTINATION_MAC> -f <SOURCE_MAC>
+----
+
+Example:
+----
+intent:add -a ALLOW -t 00:00:00:00:00:03 -f 00:00:00:00:00:01
+intent:add -a ALLOW -t 00:00:00:00:00:01 -f 00:00:00:00:00:03
+----
+
+* To log the flow statistics details of the particular traffic.
+----
+intent:add –a LOG -t <DESTINATION_MAC> -f <SOURCE_MAC>
+----
+
+Example:
+----
+intent:add -a LOG -t 00:00:00:00:00:03 -f 00:00:00:00:00:01
+----
+
+====== Verification
+
+* As we have applied action type ALLOW now ping should happen between hosts h1 and h3.
+----
+ mininet> h1 ping h3
+ PING 10.0.0.3 (10.0.0.3) 56(84) bytes of data.
+ 64 bytes from 10.0.0.3: icmp_req=1 ttl=64 time=0.984 ms
+ 64 bytes from 10.0.0.3: icmp_req=2 ttl=64 time=0.110 ms
+ 64 bytes from 10.0.0.3: icmp_req=3 ttl=64 time=0.098 ms
+----
+
+* To view the flow statistics log details such as, byte count, packet count and duration, check the karaf.log.
+----
+2015-12-15 22:56:20,256 | INFO | lt-dispatcher-23 | IntentFlowManager | 264 - org.opendaylight.nic.of-renderer - 1.1.0.SNAPSHOT | Creating block intent for endpoints: source00:00:00:00:00:01 destination 00:00:00:00:00:03
+2015-12-15 22:56:20,252 | INFO | lt-dispatcher-29 | FlowStatisticsListener | 264 - org.opendaylight.nic.of-renderer - 1.1.0.SNAPSHOT | Flow Statistics gathering for Byte Count:Counter64 [_value=238]
+2015-12-15 22:56:20,252 | INFO | lt-dispatcher-29 | FlowStatisticsListener | 264 - org.opendaylight.nic.of-renderer - 1.1.0.SNAPSHOT | Flow Statistics gathering for Packet Count:Counter64 [_value=3]
+2015-12-15 22:56:20,252 | INFO | lt-dispatcher-29 | FlowStatisticsListener | 264 - org.opendaylight.nic.of-renderer - 1.1.0.SNAPSHOT | Flow Statistics gathering for Duration in Nano second:Counter32 [_value=678000000]
+2015-12-15 22:56:20,252 | INFO | lt-dispatcher-29 | FlowStatisticsListener | 264 - org.opendaylight.nic.of-renderer - 1.1.0.SNAPSHOT | Flow Statistics gathering for Duration in Second:Counter32 [_value=49]
+----
