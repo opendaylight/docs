@@ -1,0 +1,52 @@
+=== Simple Mininet topology
+
+[source,python]
+----
+!/usr/bin/python
+
+from mininet.topo import Topo
+
+class SimpleTopology( Topo ):
+    "Simple topology example."
+
+    def __init__( self ):
+        "Create custom topo."
+
+        # <1>
+	Topo.__init__( self )
+
+        # <2>
+        Switch1 = self.addSwitch( 's1' )
+        Switch2 = self.addSwitch( 's2' )
+        Switch3 = self.addSwitch( 's3' )
+        Switch4 = self.addSwitch( 's4' )
+        Host11 = self.addHost( 'h1' )
+        Host12 = self.addHost( 'h2' )
+        Host21 = self.addHost( 'h3' )
+        Host22 = self.addHost( 'h4' )
+        Host23 = self.addHost( 'h5' )
+        Service1 = self.addHost( 'srvc1' ) # <3>
+
+	# <4>
+        self.addLink( Host11, Switch1 )
+        self.addLink( Host12, Switch1 )
+        self.addLink( Host21, Switch2 )
+        self.addLink( Host22, Switch2 )
+        self.addLink( Host23, Switch2 )
+        self.addLink( Switch1, Switch2 )
+        self.addLink( Switch2, Switch4 )
+        self.addLink( Switch4, Switch3 )
+        self.addLink( Switch3, Switch1 )
+        self.addLink( Switch3, Service1 )
+        self.addLink( Switch4, Service1 )
+
+
+topos = { 'simpletopology': ( lambda: SimpleTopology() ) }
+----
+<1> Initialize topology
+<2> Add hosts and switches
+<3> Host used to represent the service
+<4> Add links
+
+[quote]
+Source: https://gist.github.com/vinothgithub15/315d0a427d5afc39f2d7
