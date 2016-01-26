@@ -1,12 +1,20 @@
 ==== How to configure VTN Renderer
 
-The NIC Model provides an abstract model for expressing the desired state and operation of the network.
+The section demonstrates allow or block packets of the traffic within a VTN Renderer, according to the specified flow conditions.
+
+The table below lists the actions to be applied when a packet matches the condition:
+[options="header",cols="20%,80%"]
+|===
+| Action | Function
+|Allow | Permits the packet to allow.
+|Block | Discards the packet to allow.
+|===
 
 ===== Requirement
 
 * Configure mininet and create a topology:
 
-Replace <Controller IP> based on your environment
+Replace <Controller IP> based on your environment.
 
 ----
 $  mininet@mininet-vm:~$ sudo mn --controller=remote,ip=<Controller IP> --topo tree,2
@@ -25,11 +33,11 @@ $  mininet@mininet-vm:~$ sudo mn --controller=remote,ip=<Controller IP> --topo t
 ----
 
 ===== Downloading and deploy Karaf distribution
-* Get the Lithium Distribution.
+* Get the Beryllium Distribution.
 
-* Unzip the  downloaded zip distribution
+* Unzip the downloaded zip distribution.
 
-* To run the Karaf
+* To run the Karaf.
 
 ----
 ./bin/karaf
@@ -38,25 +46,28 @@ $  mininet@mininet-vm:~$ sudo mn --controller=remote,ip=<Controller IP> --topo t
 * Once the console is up, type as below to install feature.
 
 ----
-feature:install odl-nic-renderer-vtn
+feature:install odl-nic-core-mdsal odl-nic-renderer-vtn
 ----
 
 ===== Configuration
 
 Please execute the following curl commands to test network intent using mininet:
 
-* Create Intent
+====== Create Intent
 
+To provision the network for the two hosts(h1 and h2) and demonstrates the action allow.
 ----
 curl -v --user "admin":"admin" -H "Accept: application/json" -H "Content-type: application/json" -X PUT http://localhost:8181/restconf/config/intent:intents/intent/b9a13232-525e-4d8c-be21-cd65e3436034 -d '{ "intent:intent" : { "intent:id": "b9a13232-525e-4d8c-be21-cd65e3436034", "intent:actions" : [ { "order" : 2, "allow" : {} } ], "intent:subjects" : [ { "order":1 , "end-point-group" : {"name":"10.0.0.1"} }, { "order":2 , "end-point-group" : {"name":"10.0.0.2"}} ] } }'
 ----
 
+To provision the network for the two hosts(h2 and h3) and demonstrates the action allow.
 ----
 curl -v --user "admin":"admin" -H "Accept: application/json" -H "Content-type: application/json" -X PUT http://localhost:8181/restconf/config/intent:intents/intent/b9a13232-525e-4d8c-be21-cd65e3436035 -d '{ "intent:intent" : { "intent:id": "b9a13232-525e-4d8c-be21-cd65e3436035", "intent:actions" : [ { "order" : 2, "allow" : {} } ], "intent:subjects" : [ { "order":1 , "end-point-group" : {"name":"10.0.0.2"} }, { "order":2 , "end-point-group" : {"name":"10.0.0.3"}} ] } }'
 ----
 
-.Verification
+====== Verification
 
+As we have applied action type allow now ping should happen between hosts (h1 and h2) and (h2 and h3).
 ----
  mininet> pingall
  Ping: testing ping reachability
@@ -66,14 +77,16 @@ curl -v --user "admin":"admin" -H "Accept: application/json" -H "Content-type: a
  h4 -> X X X
 ----
 
-* Update an Intent
+====== Update the intent
 
+To provision block action that indicates traffic is not allowed between h1 and h2.
 ----
 curl -v --user "admin":"admin" -H "Accept: application/json" -H "Content-type: application/json" -X PUT http://localhost:8181/restconf/config/intent:intents/intent/b9a13232-525e-4d8c-be21-cd65e3436034 -d '{ "intent:intent" : { "intent:id": "b9a13232-525e-4d8c-be21-cd65e3436034", "intent:actions" : [ { "order" : 2, "block" : {} } ], "intent:subjects" : [ { "order":1 , "end-point-group" : {"name":"10.0.0.1"} }, { "order":2 , "end-point-group" : {"name":"10.0.0.2"}} ] } }'
 ----
 
-.Verification
+====== Verification
 
+As we have applied action type block now ping should not happen between hosts (h1 and h2).
 ----
  mininet> pingall
  Ping: testing ping reachability
@@ -85,13 +98,16 @@ curl -v --user "admin":"admin" -H "Accept: application/json" -H "Content-type: a
 
 NOTE: Old actions and hosts are replaced by the new action and hosts.
 
-* Delete an Intent
+====== Delete the intent
 
+Respective intent and the traffics will be deleted.
 ----
 curl -v --user "admin":"admin" -H "Accept: application/json" -H     "Content-type: application/json" -X DELETE http://localhost:8181/restconf/config/intent:intents/intent/b9a13232-525e-4d8c-be21-cd65e3436035
 ----
 
-.Verification
+====== Verification
+
+Deletion of intent and flow.
 ----
  mininet> pingall
  Ping: testing ping reachability
@@ -103,6 +119,7 @@ curl -v --user "admin":"admin" -H "Accept: application/json" -H     "Content-typ
 
 NOTE: Ping between two hosts can also be done using MAC Address
 
+To provision the network for the two hosts(h1 MAC address and h2 MAC address).
 ----
 curl -v --user "admin":"admin" -H "Accept: application/json" -H "Content-type: application/json" -X PUT http://localhost:8181/restconf/config/intent:intents/intent/b9a13232-525e-4d8c-be21-cd65e3436035 -d '{ "intent:intent" : { "intent:id": "b9a13232-525e-4d8c-be21-cd65e3436035", "intent:actions" : [ { "order" : 2, "allow" : {} } ], "intent:subjects" : [ { "order":1 , "end-point-group" : {"name":"6e:4f:f7:27:15:c9"} }, { "order":2 , "end-point-group" : {"name":"aa:7d:1f:4a:70:81"}} ] } }'
 ----
