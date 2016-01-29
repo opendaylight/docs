@@ -20,6 +20,7 @@ The requirements for installing these two are different.Therefore, we recommend 
 *After executing db_setup, you have encountered the error "Failed to setup database"?*
 
 The error could be due to the below reasons
+
 * Access Restriction
 
 The user who owns /usr/local/vtn/ directory and installs VTN Coordinator, can only start db_setup.
@@ -90,7 +91,7 @@ The following activities take place in order during startup
 .If you encounter an erroneous situation where the REST API is always failing.
 
 ----
-  Please ensure the firewall settings for port:8282(Lithium release) or port:8083(Post Lithium release) and enable the same.
+  Please ensure the firewall settings for port:8181(Beryllium release) or port:8083(Post Beryllium release) and enable the same.
 ----
 .How to debug a REST API returning a failure message?
 Please check the /usr/share/java/apache-tomcat-7.0.39/logs/core/core.log for failure details.
