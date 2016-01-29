@@ -42,16 +42,16 @@ image::vtn/OpenStackDeveloperGuide.png["OpenStack Architecture",width=500]
 * This will end up with Horizon started successfully message.
 
 ===== Steps to install and deploy OpenDaylight in CentOS 7.1
-* Download the latest lithium distribution code in the below link,
+* Download the latest Beryllium distribution code in the below link,
 +
 ....
-# wget https://nexus.opendaylight.org/content/groups/public/org/opendaylight/integration/distribution-karaf/0.3.1-Lithium-SR1/distribution-karaf-0.3.1-Lithium-SR1.zip
+# wget https://nexus.opendaylight.org/content/groups/public/org/opendaylight/integration/distribution-karaf/0.4.0-Beryllium-SR1/distribution-karaf-0.4.0-Beryllium-SR1.zip
 ....
 +
-* Unzip the lithium distribution code by using the below command,
+* Unzip the Beryllium distribution code by using the below command,
 +
 ....
-# unzip distribution-karaf-0.3.1-Lithium-SR1.zip
+# unzip distribution-karaf-0.4.0-Beryllium-SR1.zip
 ....
 +
 * Please do the below steps in the OpenDaylight to change jetty port,
@@ -168,7 +168,7 @@ some clue as to what the problem is in the connection with OpenDaylight
 ovs-ofctl --protocols=OpenFlow13 add-flow br-int priority=0,actions=output:CONTROLLER
 ....
 +
-* Please see the https://wiki.opendaylight.org/view/Release/Lithium/VTN/User_Guide/Openstack_Packstack_Support[VTN OpenStack PackStack support guide on the wiki] to create VM's from OpenStack Horizon GUI.
+* Please see the https://wiki.opendaylight.org/view/VTN:Beryllium:User_Guide:OpenStack_PackStack_Support[VTN OpenStack PackStack support guide on the wiki] to create VM's from OpenStack Horizon GUI.
 
 ==== Implementation details
 
