@@ -1,0 +1,190 @@
+==== How to provision virtual L2 Network
+
+===== Overview
+
+This page explains how to provision virtual L2 network using VTN Manager. This page targets Beryllium release, so the procedure described here does not work in other releases.
+
+.EXAMPLE DEMONSTRATING SINGLE CONTROLLER
+image::vtn/vtn-single-controller-topology-example.png[EXAMPLE DEMONSTRATING SINGLE CONTROLLER]
+
+===== Requirements
+
+====== Mininet
+
+* To provision OpenFlow switches, this page uses Mininet. Mininet details and set-up can be referred at the following page:
+https://wiki.opendaylight.org/view/OpenDaylight_Controller:Installation#Using_Mininet
+
+* Start Mininet and create three switches(s1, s2, and s3) and four hosts(h1, h2, h3, and h4) in it.
+
+----
+ mininet@mininet-vm:~$ sudo mn --controller=remote,ip=192.168.0.100 --topo tree,2
+----
+
+NOTE:
+Replace "192.168.0.100" with the IP address of OpenDaylight controller based on your environment.
+
+* you can check the topology that you have created by executing "net" command in the Mininet console.
+
+----
+ mininet> net
+ h1 h1-eth0:s2-eth1
+ h2 h2-eth0:s2-eth2
+ h3 h3-eth0:s3-eth1
+ h4 h4-eth0:s3-eth2
+ s1 lo:  s1-eth1:s2-eth3 s1-eth2:s3-eth3
+ s2 lo:  s2-eth1:h1-eth0 s2-eth2:h2-eth0 s2-eth3:s1-eth1
+ s3 lo:  s3-eth1:h3-eth0 s3-eth2:h4-eth0 s3-eth3:s1-eth2
+----
+
+* In this guide, you will provision the virtual L2 network to establish communication between h1 and h3.
+
+* You need to manually add flow entries to OpenFlow switches in the Mininet. The flow entries are needed to forward packets to controller when there is a table-miss. This configuration is required only in case of Openflow 1.3 or using OVS version(>2.1.1).
+
+----
+ sudo ovs-ofctl add-flow s1 priority=0,actions=output:CONTROLLER
+ sudo ovs-ofctl add-flow s2 priority=0,actions=output:CONTROLLER
+ sudo ovs-ofctl add-flow s3 priority=0,actions=output:CONTROLLER
+----
+
+===== Configuration
+
+To provision the virtual L2 network for the two hosts (h1 and h3), execute REST API provided by VTN Manager as follows. It uses curl command to call the REST API.
+
+* Create a virtual tenant named vtn1 by executing
+  https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn.html#update-vtn[the update-vtn RPC].
+
+----
+curl --user "admin":"admin" -H "Content-type: application/json" -X POST http://localhost:8181/restconf/operations/vtn:update-vtn -d '{"input":{"tenant-name":"vtn1"}}'
+----
+
+* Create a virtual bridge named vbr1 in the tenant vtn1 by executing
+  https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-vbridge.html#update-vbridge[the update-vbridge RPC].
+
+----
+curl --user "admin":"admin" -H "Content-type: application/json" -X POST http://localhost:8181/restconf/operations/vtn-vbridge:update-vbridge -d '{"input":{"tenant-name":"vtn1", "bridge-name":"vbr1"}}'
+----
+
+* Create two interfaces into the virtual bridge by executing
+  https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-vinterface.html#update-vinterface[the update-vinterface RPC].
+
+----
+curl --user "admin":"admin" -H "Content-type: application/json" -X POST http://localhost:8181/restconf/operations/vtn-vinterface:update-vinterface -d '{"input":{"tenant-name":"vtn1", "bridge-name":"vbr1", "interface-name":"if1"}}'
+----
+
+
+----
+curl --user "admin":"admin" -H "Content-type: application/json" -X POST http://localhost:8181/restconf/operations/vtn-vinterface:update-vinterface -d '{"input":{"tenant-name":"vtn1", "bridge-name":"vbr1", "interface-name":"if2"}}'
+----
+
+* Configure two mappings on the created interfaces by executing
+  https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-port-map.html#set-port-map[the set-port-map RPC].
+
+** The interface if1 of the virtual bridge will be mapped to the port "s2-eth1" of the switch "openflow:2" of the Mininet.
+*** The h1 is connected to the port "s2-eth1".
+
+** The interface if2 of the virtual bridge will be mapped to the port "s3-eth1" of the switch "openflow:3" of the Mininet.
+*** The h3 is connected to the port "s3-eth1".
+
+----
+curl --user "admin":"admin" -H "Content-type: application/json" -X POST http://localhost:8181/restconf/operations/vtn-port-map:set-port-map -d '{"input":{"tenant-name":"vtn1", "bridge-name":"vbr1", "interface-name":"if1", "node":"openflow:2", "port-name":"s2-eth1"}}'
+----
+
+
+----
+curl --user "admin":"admin" -H "Content-type: application/json" -X POST http://localhost:8181/restconf/operations/vtn-port-map:set-port-map -d '{"input":{"tenant-name":"vtn1", "bridge-name":"vbr1", "interface-name":"if2", "node":"openflow:3", "port-name":"s3-eth1"}}'
+----
+
+===== Verification
+
+* Please execute ping from h1 to h3 to verify if the virtual L2 network for h1 and h3 is provisioned successfully.
+
+----
+ mininet> h1 ping h3
+ PING 10.0.0.3 (10.0.0.3) 56(84) bytes of data.
+ 64 bytes from 10.0.0.3: icmp_seq=1 ttl=64 time=243 ms
+ 64 bytes from 10.0.0.3: icmp_seq=2 ttl=64 time=0.341 ms
+ 64 bytes from 10.0.0.3: icmp_seq=3 ttl=64 time=0.078 ms
+ 64 bytes from 10.0.0.3: icmp_seq=4 ttl=64 time=0.079 ms
+----
+
+* You can also verify the configuration by executing the following REST API. It shows all configuration in VTN Manager.
+
+----
+curl --user "admin":"admin" -H "Content-type: application/json" -X GET http://localhost:8181/restconf/operational/vtn:vtns/
+----
+
+* The result of the command should be like this.
+
+----
+{
+  "vtns": {
+    "vtn": [
+    {
+      "name": "vtn1",
+        "vtenant-config": {
+          "idle-timeout": 300,
+          "hard-timeout": 0
+        },
+        "vbridge": [
+        {
+          "name": "vbr1",
+          "bridge-status": {
+            "state": "UP",
+            "path-faults": 0
+          },
+          "vbridge-config": {
+            "age-interval": 600
+          },
+          "vinterface": [
+          {
+            "name": "if2",
+            "vinterface-status": {
+              "entity-state": "UP",
+              "state": "UP",
+              "mapped-port": "openflow:3:3"
+            },
+            "vinterface-config": {
+              "enabled": true
+            },
+            "port-map-config": {
+              "vlan-id": 0,
+              "port-name": "s3-eth1",
+              "node": "openflow:3"
+            }
+          },
+          {
+            "name": "if1",
+            "vinterface-status": {
+              "entity-state": "UP",
+              "state": "UP",
+              "mapped-port": "openflow:2:1"
+            },
+            "vinterface-config": {
+              "enabled": true
+            },
+            "port-map-config": {
+              "vlan-id": 0,
+              "port-name": "s2-eth1",
+              "node": "openflow:2"
+            }
+          }
+          ]
+        }
+      ]
+    }
+    ]
+  }
+}
+----
+
+===== Cleaning Up
+
+* You can delete the virtual tenant vtn1 by executing
+https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn.html#remove-vtn[the remove-vtn RPC].
+
+----
+curl --user "admin":"admin" -H "Content-type: application/json" -X POST http://localhost:8181/restconf/operations/vtn:remove-vtn -d '{"input":{"tenant-name":"vtn1"}}'
+----
+
+
+

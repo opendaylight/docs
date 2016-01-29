@@ -2,13 +2,13 @@
 This example demonstrates on how to view a specific VTN Dataflow information.
 
 ===== Configuration
-The same Configuration as Vlan Mapping Example(https://wiki.opendaylight.org/view/OpenDaylight_Virtual_Tenant_Network_(VTN):VTN_Coordinator:RestApi:How_to_test_vlan-map_in_Mininet_environment)
+The same Configuration as Vlan Mapping Example(https://wiki.opendaylight.org/view/VTN:Coordinator:Beryllium:HowTos:How_To_test_vlanmap_using_mininet)
 
 ===== Verification
 Get the VTN Dataflows information
 
 ----
-curl -v -X GET -H 'content-type: application/json' --user 'admin:adminpass' "http://127.0.0.1:8083/vtn-webapi/dataflows?controller_id=controllerone&srcmacaddr=924c.e4a3.a743&vlan_id=300&switch_id=00:00:00:00:00:00:00:02&port_name=s2-eth1"
+curl -X GET -H 'content-type: application/json' --user 'admin:adminpass' "http://127.0.0.1:8083/vtn-webapi/dataflows?controller_id=controllerone&srcmacaddr=924c.e4a3.a743&vlan_id=300&switch_id=openflow:2&port_name=s2-eth1"
 ----
 
 
