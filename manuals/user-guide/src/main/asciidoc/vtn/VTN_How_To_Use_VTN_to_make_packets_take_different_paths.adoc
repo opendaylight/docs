@@ -2,7 +2,7 @@
 This example demonstrates on how to create a specific VTN Path Map information.
 
 .PathMap
-image::vtn/Pathmap.png[pathmap]
+image::vtn/Pathmap.png["Pathmap" ,width= 500]
 
 ===== Requirement
 * Save the mininet script given below as pathmap_test.py and run the mininet script in the mininet environment where Mininet is installed.
@@ -10,8 +10,8 @@ image::vtn/Pathmap.png[pathmap]
 * Create topology using the below mininet script:
 
 ----
-from mininet.topo import Topo
-  class MyTopo( Topo ):
+ from mininet.topo import Topo
+ class MyTopo( Topo ):
     "Simple topology example."
     def __init__( self ):
         "Create custom topo."
@@ -44,6 +44,16 @@ from mininet.topo import Topo
  h1 h1-eth0:s1-eth1
  h2 h2-eth0:s3-eth3
 ----
+
+NOTE: Add the default flow to OVS to forward packets to controller when there is a table-miss:
+
+----
+ovs-ofctl --protocols=OpenFlow13 add-flow <switch-name> priority=0,actions=output:CONTROLLER
+----
+
+These flows need to be added only in case of OpenFlow1.3 or using OVS versions (>2.1.1).
+
+Here the switch name is the switches in the topology such as s1,s2,s3.
 
 * Generate traffic by pinging between hosts h1 and h2 before creating the portmaps respectively
 
