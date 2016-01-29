@@ -27,7 +27,7 @@ image::vtn/setup_diagram_SCVMM.png["Setup" ,width= 500]
 
 * OpenDaylight (VTN Feature)
 
-** VTN Coordinator
+* VTN Coordinator
 
 ===== VTN Coordinator
 
@@ -43,17 +43,17 @@ OpenDaylight VTN as Network Service provider for SCVMM where VSEM provider is ad
 
 * In /usr/bin, create a soft link as "ln –s /usr/bin/apr-1-config /usr/bin/apr-config".
 
-* Extract tomcat under "/usr/share/java" by using the below command "tar -xvf apache-tomcat-7.0.56.tar.gz –C /usr/share/java".
+* Extract tomcat under "/usr/share/java" by using the below command "tar -xvf apache-tomcat-8.0.27.tar.gz –C /usr/share/java".
 
 NOTE:
-Please go through the bleow link to download apache-tomcat-7.0.56.tar.gz file,
-https://archive.apache.org/dist/tomcat/tomcat-7/v7.0.56/bin/
+Please go through the bleow link to download apache-tomcat-8.0.27.tar.gz file,
+https://archive.apache.org/dist/tomcat/tomcat-8/v8.0.27/bin/
 
-* Please go to the directory "cd /usr/share/java/apache-tomcat-7.0.56/bin and unzip tomcat-native.gz using this command "tar -xvf tomcat-native.gz".
+* Please go to the directory "cd /usr/share/java/apache-tomcat-8.0.27/bin and unzip tomcat-native.gz using this command "tar -xvf tomcat-native.gz".
 
-* Go to the directory "cd /usr/share/java/apache-tomcat-7.0.56/bin/tomcat-native-1.1.27-src/jni/native".
+* Go to the directory "cd /usr/share/java/apache-tomcat-8.0.27/bin/tomcat-native-1.1.33-src/jni/native".
 
-* Enter the command "./configure --with-apr=/usr/bin/apr-config".
+* Enter the command "./configure --with-os-type=bin --with-apr=/usr/bin/apr-config".
 
 * Enter the command "make" and "make install".
 
@@ -61,7 +61,7 @@ https://archive.apache.org/dist/tomcat/tomcat-7/v7.0.56/bin/
 
 *Enable HTTP/HTTPS in VTN Coordinator*
 
-Enter the command "system-config-firewall-tui" to enable firewall settings in server.
+Enter the command "firewall-cmd --zone=public --add-port=8083/tcp --permanent" and "firewall-cmd --reload" to enable firewall settings in server.
 
 *Create a CA's private key and a self-signed certificate in server*
 
@@ -167,19 +167,19 @@ curl -X GET -H 'contenttype:application/json' -H 'username:admin' -H 'password:a
 * The response should be like this for both HTTP and HTTPS:
 +
 ----
-{"api_version":{"version":"V1.2"}}
+{"api_version":{"version":"V1.4"}}
 ----
 
 ===== Prerequisites to create Network Service in SCVMM machine, Please follow the below steps
 
 . Please go through the below link to download VSEM Provider zip file,
- https://nexus.opendaylight.org/content/groups/public/org/opendaylight/vtn/application/vtnmanager-vsemprovider/1.0.0-Lithium/vtnmanager-vsemprovider-1.0.0-Lithium-bin.zip
+ https://nexus.opendaylight.org/content/groups/public/org/opendaylight/vtn/application/vtnmanager-vsemprovider/2.0.0-Beryllium/vtnmanager-vsemprovider-2.0.0-Beryllium-bin.zip
 
-. Unzip the vtnmanager-vsemprovider-1.0.0-Lithium-bin.zip file anywhere in your SCVMM machine.
+. Unzip the vtnmanager-vsemprovider-2.0.0-Beryllium-bin.zip file anywhere in your SCVMM machine.
 
 . Stop SCVMM service from *"service manager->tools->servers->select system center virtual machine manager"* and click stop.
 
-. Go to *"C:/Program Files"* in your SCVMM machine. Inside *"C:/Program Files"*, create a folder named as *"ODLProvider".
+. Go to *"C:/Program Files"* in your SCVMM machine. Inside *"C:/Program Files"*, create a folder named as *"ODLProvider"*.
 
 . Inside *"C:/Program Files/ODLProvider"*, create a folder named as "Module" in your SCVMM machine.
 

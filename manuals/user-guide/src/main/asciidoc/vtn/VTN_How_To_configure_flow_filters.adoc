@@ -48,55 +48,66 @@ h2 h2-eth0:s2-eth2
 h3 h3-eth0:s3-eth1
 h4 h4-eth0:s3-eth2
 ----
+
+NOTE: Add the default flow to OVS to forward packets to controller when there is a table-miss:
+
+----
+ovs-ofctl --protocols=OpenFlow13 add-flow <switch-name> priority=0,actions=output:CONTROLLER
+----
+
+These flows need to be added only in case of OpenFlow1.3 or using OVS versions (>2.1.1).
+
+Here the switch name is the switches in the topology such as s1,s2,s3.
+
 ===== Configuration
 * .Create a controller
 
 ----
-curl -v --user admin:adminpass -H 'content-type: application/json' -X POST -d '{"controller": {"controller_id": "controller1", "ipaddr":"10.100.9.61", "type": "odc", "version": "1.0", "auditstatus":"enable"}}' http://127.0.0.1:8083/vtn-webapi/controllers
+curl --user admin:adminpass -H 'content-type: application/json' -X POST -d '{"controller": {"controller_id": "controller1", "ipaddr":"10.100.9.61", "type": "odc", "version": "1.0", "auditstatus":"enable"}}' http://127.0.0.1:8083/vtn-webapi/controllers
 ----
 * Create a VTN
 
 ----
-curl -v --user admin:adminpass -H 'content-type: application/json' -X POST -d '{"vtn" : {"vtn_name":"vtn_one","description":"test VTN" }}' http://127.0.0.1:8083/vtn-webapi/vtns.json
+curl --user admin:adminpass -H 'content-type: application/json' -X POST -d '{"vtn" : {"vtn_name":"vtn_one","description":"test VTN" }}' http://127.0.0.1:8083/vtn-webapi/vtns.json
 ----
 * Create two vBridges
 
 ----
-curl -v --user admin:adminpass -H 'content-type: application/json' -X POST -d '{"vbridge" : {"vbr_name":"vbr_one^C"controller_id":"controller1","domain_id":"(DEFAULT)" }}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn_one/vbridges.json
+curl --user admin:adminpass -H 'content-type: application/json' -X POST -d '{"vbridge" : {"vbr_name":"vbr_one^C"controller_id":"controller1","domain_id":"(DEFAULT)" }}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn_one/vbridges.json
 curl -v --user admin:adminpass -H 'content-type: application/json' -X POST -d '{"vbridge" :
 {"vbr_name":"vbr_two","controller_id":"controller1","domain_id":"(DEFAULT)" }}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn_one/vbridges.json
 ----
 * Create vBridge interfaces
 
 ----
-curl -v --user admin:adminpass -H 'content-type: application/json' -X POST -d '{"interface": {"if_name": "if1","description": "if_desc1"}}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn_one/vbridges/vbr_two/interfaces.json
+curl --user admin:adminpass -H 'content-type: application/json' -X POST -d '{"interface": {"if_name": "if1","description": "if_desc1"}}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn_one/vbridges/vbr_two/interfaces.json
 curl -v --user admin:adminpass -H 'content-type: application/json' -X POST -d '{"interface": {"if_name": "if1","description": "if_desc1"}}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn_one/vbridges/vbr_two/interfaces.json
 ----
 * Configure two mappings on the interfaces
 
 ----
-curl -v --user admin:adminpass -H 'content-type: application/json' -X PUT -d '{"portmap":{"logical_port_id": "PP-OF:00:00:00:00:00:00:00:03-s3-eth1"}}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn_one/vbridges/vbr_two/interfaces/if1/portmap.json
+curl --user admin:adminpass -H 'content-type: application/json' -X PUT -d '{"portmap":{"logical_port_id": "PP-OF:00:00:00:00:00:00:00:03-s3-eth1"}}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn_one/vbridges/vbr_two/interfaces/if1/portmap.json
 curl -v --user admin:adminpass -H 'content-type: application/json' -X PUT -d '{"portmap":{"logical_port_id": "PP-OF:00:00:00:00:00:00:00:02-s2-eth1"}}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn_one/vbridges/vbr_two/interfaces/if2/portmap.json
 ----
 * Create Flowlist
 
 ----
-curl -v --user admin:adminpass -H 'content-type: application/json' -X POST -d '{"flowlist": {"fl_name": "flowlist1", "ip_version":"IP"}}' http://127.0.0.1:8083/vtn-webapi/flowlists.json
+curl --user admin:adminpass -H 'content-type: application/json' -X POST -d '{"flowlist": {"fl_name": "flowlist1", "ip_version":"IP"}}' http://127.0.0.1:8083/vtn-webapi/flowlists.json
 ----
 * Create Flowlistentry
 
 ----
-curl -v --user admin:adminpass -H 'content-type: application/json' -X POST -d '{"flowlistentry": {"seqnum": "233","macethertype": "0x8000","ipdstaddr": "10.0.0.3","ipdstaddrprefix": "2","ipsrcaddr": "10.0.0.2","ipsrcaddrprefix": "2","ipproto": "17","ipdscp": "55","icmptypenum":"232","icmpcodenum": "232"}}' http://127.0.0.1:8083/vtn-webapi/flowlists/flowlist1/flowlistentries.json
+curl --user admin:adminpass -H 'content-type: application/json' -X POST -d '{"flowlistentry": {"seqnum": "233","macethertype": "0x8000","ipdstaddr": "10.0.0.3","ipdstaddrprefix": "2","ipsrcaddr": "10.0.0.2","ipsrcaddrprefix": "2","ipproto": "17","ipdscp": "55","icmptypenum":"232","icmpcodenum": "232"}}' http://127.0.0.1:8083/vtn-webapi/flowlists/flowlist1/flowlistentries.json
 ----
 * Create vBridge Interface Flowfilter
 
 ----
-curl -v --user admin:adminpass -X POST -H 'content-type: application/json' -d '{"flowfilter" : {"ff_type": "in"}}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn_one/vbridges/vbr_two/interfaces/if1/flowfilters.json
+curl --user admin:adminpass -X POST -H 'content-type: application/json' -d '{"flowfilter" : {"ff_type": "in"}}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn_one/vbridges/vbr_two/interfaces/if1/flowfilters.json
 ----
 ===== Flow filter demonstration with DROP action-type
 
 ----
-curl -v --user admin:adminpass -X POST -H 'content-type: application/json' -d '{"flowfilterentry": {"seqnum": "233", "fl_name": "flowlist1", "action_type":"drop", "priority":"3", "dscp":"55" }}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn_one/vbridges/vbr_two/interfaces/if1/flowfilters/in/flowfilterentries.json
+curl --user admin:adminpass -X POST -H 'content-type: application/json' -d '{"flowfilterentry": {"seqnum": "233", "fl_name": "flowlist1", "action_type":"drop", "priority":"3", "dscp":"55" }}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn_one/vbridges/vbr_two/interfaces/if1/flowfilters/in/flowfilterentries.json
 ----
 ===== Verification
 As we have applied the action type "drop" , ping should fail.
@@ -118,7 +129,7 @@ osgi> readflows 0000000000000003
 ===== Flow filter demonstration with PASS action-type
 
 ----
-curl -v --user admin:adminpass -X PUT -H 'content-type: application/json' -d '{"flowfilterentry": {"seqnum": "233", "fl_name": "flowlist1", "action_type":"pass", "priority":"3", "dscp":"55" }}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn_one/vbridges/vbr_two/interfaces/if1/flowfilters/in/flowfilterentries/233.json
+curl --user admin:adminpass -X PUT -H 'content-type: application/json' -d '{"flowfilterentry": {"seqnum": "233", "fl_name": "flowlist1", "action_type":"pass", "priority":"3", "dscp":"55" }}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn_one/vbridges/vbr_two/interfaces/if1/flowfilters/in/flowfilterentries/233.json
 ----
 ===== Verification
 

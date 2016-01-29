@@ -8,26 +8,16 @@ The uniqueness of VTN is a logical abstraction plane. This enables the complete 
 
 VTN allows the users to define the network with a look and feel of conventional L2/L3 network. Once the network is designed on VTN, it will automatically be mapped into underlying physical network, and then configured on the individual switch leverage SDN control protocol. The definition of logical plane makes it possible not only to hide the complexity of the underlying network but also to better manage network resources. It achieves reducing reconfiguration time of network services and minimizing network configuration errors. OpenDaylight Virtual Tenant Network (VTN) is an application that provides multi-tenant virtual network on an SDN controller. It provides API for creating a common virtual network irrespective of the physical network.
 
-It is implemented as two major components
-
-* <<_vtn_coordinator,VTN Coordinator>>
-* <<_vtn_manager,VTN Manager>>
-
 .VTN Architecture
 image::vtn/vtn-overview.png[width=500]
 
-==== VTN Coordinator
+It is implemented as two major components
 
-The VTN Coordinator is an external application that provides a REST interface for a user to use the VTN Virtualization. It interacts with VTN Manager plugin to implement the user configuration. It is also capable of multiple controller orchestration. It realizes Virtual Tenant Network (VTN) provisioning in OpenDaylight Controllers (ODC). In the OpenDaylight architecture VTN Coordinator is part of the network application, orchestration and services layer. VTN Coordinator has been implemented as an external application to the OpenDaylight controller. This component is responsible for the VTN virtualization. VTN Coordinator will use the REST interface exposed by the VTN Manger to realize the virtual network using the OpenDaylight controller. It uses OpenDaylight APIs (REST) to construct the virtual network in ODCs. It provides REST APIs for northbound VTN applications and supports virtual networks spanning across multiple ODCs by coordinating across ODCs.
-
-===== Feature Overview
-
-VTN Coordinator doesn't have Karaf features.
-
-For VTN Coordinator REST API, please refer: https://wiki.opendaylight.org/view/OpenDaylight_Virtual_Tenant_Network_%28VTN%29:VTN_Coordinator:RestApi
+* <<_vtn_manager,VTN Manager>>
+* <<_vtn_coordinator,VTN Coordinator>>
 
 ==== VTN Manager
-An OpenDaylight Controller Plugin that interacts with other modules to implement the components of the VTN model. It also provides a REST interface to configure VTN components in ODL controller. VTN Manager is implemented as one plugin to the OpenDaylight controller. This provides a REST interface to create/update/delete VTN components. The user command in VTN Coordinator is translated as REST API to VTN Manager by the ODC Driver component. In addition to the above mentioned role, it also provides an implementation to the OpenStack L2 Network Functions API.
+An OpenDaylight Controller(ODC) Plugin that interacts with other modules to implement the components of the VTN model. It also provides a REST interface to configure VTN components in ODL controller. VTN Manager is implemented as one plugin to the OpenDaylight controller. This provides a REST interface to create/update/delete VTN components. The user command in VTN Coordinator is translated as REST API to VTN Manager by the ODC Driver component. In addition to the above mentioned role, it also provides an implementation to the OpenStack L2 Network Functions API.
 
 ===== Function Outline
 
@@ -53,12 +43,43 @@ There are three features
 * *odl-vtn-manager-rest* provides VTN Manager's REST API.
 * *odl-vtn-manager-neutron* provides the integration with Neutron interface.
 
-REST API documentation for VTN Manager, please refer: 
-https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-stable-lithium/lastSuccessfulBuild/artifact/manager/northbound/target/site/wsdocs/rest.html
+REST API documentation for VTN Manager, please refer:
+https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/
 
-For VTN Java API documentation, please visit: https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-master/lastSuccessfulBuild/artifact/manager/api/target/apidocs/index.html
+For VTN Java API documentation, please visit: https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/target/apidocs/index.html
 
-VTN Manager API: https://wiki.opendaylight.org/view/OpenDaylight_Virtual_Tenant_Network_%28VTN%29:VTN_Manager:RestApi
+Once the karaf distribution is up, install dlux and apidocs.
 
-=== Usage Examples
+----
+feature:install odl-dlux-all odl-mdsal-apidocs
+----
+
+====== Logging In
+
+To Log in to DLUX, after installing the application:
+
+* Open a browser and enter the login URL as http://10.106.138.252:8181/index.html.
+
+NOTE: Replace "10.106.138.252" with the IP address of OpenDaylight controller based on your environment.
+
+* Login to the application with user ID and password credentials as admin.
+
+NOTE: admin is the only user type available for DLUX in this release.
+
+* In the right hand side frame, click "Yang UI".
+
+YANG documentation for VTN Manager, please refer: https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/
+
+==== VTN Coordinator
+
+The VTN Coordinator is an external application that provides a REST interface for a user to use the VTN Virtualization. It interacts with VTN Manager plugin to implement the user configuration. It is also capable of multiple controller orchestration. It realizes VTN provisioning in OpenDaylight Controller (ODC). In the OpenDaylight architecture VTN Coordinator is part of the network application, orchestration and services layer. VTN Coordinator has been implemented as an external application to the OpenDaylight controller. This component is responsible for the VTN virtualization. VTN Coordinator will use the REST interface exposed by the VTN Manger to realize the virtual network using the OpenDaylight controller. It uses OpenDaylight APIs (REST) to construct the virtual network in ODC. It provides REST APIs for northbound VTN applications and supports virtual networks spanning across multiple ODC by coordinating across ODC.
+
+===== Feature Overview
+
+VTN Coordinator doesn't have Karaf features.
+
+For VTN Coordinator REST API, please refer: https://wiki.opendaylight.org/view/OpenDaylight_Virtual_Tenant_Network_%28VTN%29:VTN_Coordinator:RestApi
+
+==== Usage Examples
 *  https://wiki.OpenDaylight.org/view/OpenDaylight_Virtual_Tenant_Network_(VTN):VTN_Coordinator:RestApi:How_to_configure_L2_Network_with_Single_Controller[L2 Network using Single Controller]
+
