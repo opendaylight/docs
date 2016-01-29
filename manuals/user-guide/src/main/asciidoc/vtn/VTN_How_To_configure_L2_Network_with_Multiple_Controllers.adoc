@@ -72,12 +72,28 @@ curl --user admin:adminpass -H 'content-type: application/json' -X PUT -d '{"por
 ----
 curl --user admin:adminpass -H 'content-type: application/json'  -X PUT -d '{"portmap":{"logical_port_id": "PP-OF:00:00:00:00:00:00:00:05-s5-eth2"}}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn3/vbridges/vbr2/interfaces/if1/portmap.json
 ----
+
 ===== Verification
 Please verify whether Host h2 and Host h6 are pinging.
-* Send packets from h2 to h6
 
+* Send packets from h2 to h6
 
 ----
 mininet> h2 ping h6
 ----
+
+----
+ PING 10.0.0.6 (10.0.0.3) 56(84) bytes of data.
+ 64 bytes from 10.0.0.6: icmp_req=1 ttl=64 time=0.780 ms
+ 64 bytes from 10.0.0.6: icmp_req=2 ttl=64 time=0.079 ms
+----
+
+NOTE: Add the default flow to OVS to forward packets to controller when there is a table-miss:
+----
+ovs-ofctl --protocols=OpenFlow13 add-flow <switch-name> priority=0,actions=output:CONTROLLER
+----
+
+These flows need to be added only in case of OpenFlow1.3 or using OVS versions (>2.1.1).
+
+Here the switch name is the switches in the topology such as s1,s2,s3.
 

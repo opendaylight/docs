@@ -24,6 +24,17 @@ mininet@mininet-vm:~$ sudo mn --controller=remote,ip=<controller-ip> --topo tree
  h1 h1-eth0:s1-eth1
  h2 h2-eth0:s2-eth2
 ----
+
+NOTE: Add the default flow to OVS to forward packets to controller when there is a table-miss:
+
+----
+ovs-ofctl --protocols=OpenFlow13 add-flow <switch-name> priority=0,actions=output:CONTROLLER
+----
+
+These flows need to be added only in case of OpenFlow1.3 or using OVS versions (>2.1.1).
+
+Here the switch name is the switches in the topology such as s1,s2,s3.
+
 ===== Configuration
 
 * Create a Controller
@@ -74,6 +85,9 @@ Please verify whether the Host1 and Host3 are pinging.
 * Send packets from Host1 to Host3
 
 ----
-|mininet> h1 ping h3
+ mininet> h1 ping h3
+ PING 10.0.0.3 (10.0.0.3) 56(84) bytes of data.
+ 64 bytes from 10.0.0.3: icmp_req=1 ttl=64 time=0.780 ms
+ 64 bytes from 10.0.0.3: icmp_req=2 ttl=64 time=0.079 ms
 ----
 
