@@ -16,11 +16,11 @@ It is implemented as two major components
 * <<_vtn_coordinator,VTN Coordinator>>
 
 ==== VTN Manager
-An OpenDaylight Controller Plugin that interacts with other modules to implement the components of the VTN model. It also provides a REST interface to configure VTN components in ODL controller. VTN Manager is implemented as one plugin to the OpenDaylight controller. This provides a REST interface to create/update/delete VTN components. The user command in VTN Coordinator is translated as REST API to VTN Manager by the ODC Driver component. In addition to the above mentioned role, it also provides an implementation to the OpenStack L2 Network Functions API.
+An OpenDaylight Plugin that interacts with other modules to implement the components of the VTN model. It also provides a REST interface to configure VTN components in OpenDaylight. VTN Manager is implemented as one plugin to the OpenDaylight. This provides a REST interface to create/update/delete VTN components. The user command in VTN Coordinator is translated as REST API to VTN Manager by the OpenDaylight Driver component. In addition to the above mentioned role, it also provides an implementation to the OpenStack L2 Network Functions API.
 
 ==== VTN Coordinator
 
-The VTN Coordinator is an external application that provides a REST interface for a user to use the VTN Virtualization. It interacts with VTN Manager plugin to implement the user configuration. It is also capable of multiple controller orchestration. It realizes Virtual Tenant Network (VTN) provisioning in OpenDaylight Controllers (ODC). In the OpenDaylight architecture VTN Coordinator is part of the network application, orchestration and services layer. VTN Coordinator has been implemented as an external application to the OpenDaylight controller. This component is responsible for the VTN virtualization. VTN Coordinator will use the REST interface exposed by the VTN Manger to realize the virtual network using the OpenDaylight controller. It uses OpenDaylight APIs (REST) to construct the virtual network in ODCs. It provides REST APIs for northbound VTN applications and supports virtual networks spanning across multiple ODCs by coordinating across ODCs.
+The VTN Coordinator is an external application that provides a REST interface for an user to use OpenDaylight VTN Virtualization. It interacts with VTN Manager plugin to implement the user configuration. It is also capable of multiple OpenDaylight orchestration. It realizes VTN provisioning in OpenDaylight instances. In the OpenDaylight architecture VTN Coordinator is part of the network application, orchestration and services layer. VTN Coordinator will use the REST interface exposed by the VTN Manger to realize the virtual network using OpenDaylight. It uses OpenDaylight APIs (REST) to construct the virtual network in OpenDaylight instances. It provides REST APIs for northbound VTN applications and supports virtual networks spanning across multiple OpenDaylight by coordinating across OpenDaylight.
 
 === Preparing for Installation
 
@@ -33,13 +33,13 @@ Follow the instructions in <<_getting_and_installing_opendaylight,Getting and In
 ==== VTN Coordinator
 
 * Arrange a physical/virtual server with any one of the supported 64-bit OS environment.
-** RHEL 6 / 7
-** CentOS 6 / 7
+** RHEL 7
+** CentOS 7
 ** Fedora 20 / 21 / 22
 
 * Install these packages
 
-  yum install perl-Digest-SHA uuid libxslt libcurl unixODBC json-c
+  yum install perl-Digest-SHA uuid libxslt libcurl unixODBC json-c bzip2
 
   rpm -ivh http://yum.postgresql.org/9.3/redhat/rhel-6-x86_64/pgdg-redhat93-9.3-1.noarch.rpm
 
@@ -51,20 +51,20 @@ Follow the instructions in <<_getting_and_installing_opendaylight,Getting and In
 
 Install Feature
 
-  feature:install odl-vtn-manager-rest odl-vtn-manager-neutron
+  feature:install odl-vtn-manager-neutron odl-vtn-manager-rest
 
 NOTE: The above command will install all features of VTN Manager.
       You can install only REST or Neutron also.
 
 ==== VTN Coordinator
 
-* Enter into the externalapps directory in the top directory of Lithium
+* Enter into the externalapps directory in the top directory of Beryllium
 
-  cd distribution-karaf-0.2.1-Lithium-SR1/externalapps
+  cd distribution-karaf-0.4.0-Beryllium/externalapps
 
 * Run the below command to extract VTN Coordinator from the tar.bz2 file in the externalapps directory.
 
-  tar –C/ -jxvf distribution.vtn-coordinator-6.0.0.1-Lithium-SR1-bin.tar.bz2
+  tar –C/ -jxvf distribution.vtn-coordinator-6.2.0-Beryllium-bin.tar.bz2
 
 This will install VTN Coordinator to /usr/local/vtn directory.
 The name of the tar.bz2 file name varies depending on the version. Please give the same tar.bz2 file name which is there in your directory.
@@ -93,11 +93,11 @@ The response should be like this, but version might differ:
 
 * In the karaf prompt, type the below command to ensure that vtn packages are installed.
 
-  feature:list i | grep vtn
+  feature:list | grep vtn
 
 * Run any VTN Manager REST API
 
-  curl --user "admin":"admin" -H "Accept: application/json" -H \"Content-type: application/json" -X GET \http://localhost:8282/controller/nb/v2/vtn/default/vtns
+  curl --user "admin":"admin" -H "Accept: application/json" -H "Content-type: application/json" -X GET http://localhost:8181/restconf/operational/vtn:vtns
 
 ==== VTN Coordinator
 
