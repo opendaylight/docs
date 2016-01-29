@@ -27,7 +27,7 @@ image::vtn/setup_diagram_SCVMM.png["Setup" ,width= 500]
 
 * OpenDaylight (VTN Feature)
 
-** VTN Coordinator
+* VTN Coordinator
 
 ===== VTN Coordinator
 
@@ -173,13 +173,13 @@ curl -X GET -H 'contenttype:application/json' -H 'username:admin' -H 'password:a
 ===== Prerequisites to create Network Service in SCVMM machine, Please follow the below steps
 
 . Please go through the below link to download VSEM Provider zip file,
- https://nexus.opendaylight.org/content/groups/public/org/opendaylight/vtn/application/vtnmanager-vsemprovider/1.0.0-Lithium/vtnmanager-vsemprovider-1.0.0-Lithium-bin.zip
+ https://nexus.opendaylight.org/content/groups/public/org/opendaylight/vtn/application/vtnmanager-vsemprovider/2.0.0-Beryllium/vtnmanager-vsemprovider-2.0.0-Beryllium-bin.zip
 
-. Unzip the vtnmanager-vsemprovider-1.0.0-Lithium-bin.zip file anywhere in your SCVMM machine.
+. Unzip the vtnmanager-vsemprovider-2.0.0-Beryllium-bin.zip file anywhere in your SCVMM machine.
 
 . Stop SCVMM service from *"service manager->tools->servers->select system center virtual machine manager"* and click stop.
 
-. Go to *"C:/Program Files"* in your SCVMM machine. Inside *"C:/Program Files"*, create a folder named as *"ODLProvider".
+. Go to *"C:/Program Files"* in your SCVMM machine. Inside *"C:/Program Files"*, create a folder named as *"ODLProvider"*.
 
 . Inside *"C:/Program Files/ODLProvider"*, create a folder named as "Module" in your SCVMM machine.
 

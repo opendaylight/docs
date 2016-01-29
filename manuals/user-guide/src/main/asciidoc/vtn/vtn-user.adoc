@@ -4,7 +4,23 @@ include::VTN_Overview.adoc[VTN Overview]
 
 include::VTN_OpenStack_Support-user.adoc[VTN OpenStack Configuration]
 
-=== VTN Usage Examples
+=== VTN Manager Usage Examples
+
+include::VTN_Manager_How_To_Provision_Virtual_L2_Network.adoc[How to provision virtual L2 Network]
+
+include::VTN_Manager_How_To_test_vlan_map_using_mininet.adoc[How To Test Vlan-map using Mininet Environment]
+
+include::VTN_Manager_How_To_Configure_Service_Function_Chaining_Support.adoc[How To Configure Service Function Chaining Support using Mininet Environmen]
+
+include::VTN_Manager_How_To_View_Dataflows.adoc[How To View Dataflow in VTN Manager]
+
+include::VTN_Manager_How_To_Create_Mac_Map_In_VTN.adoc[How To Create Mac Map In VTN]
+
+include::VTN_Manager_How_To_Configure_Flowfilters.adoc[How To Configure Flow Filters using VTN]
+
+include::VTN_Manager_How_To_Use_VTN_to_change_the_path_of_the_packet_flow.adoc[How To Use VTN to change the path of the packet flow]
+
+=== VTN Coordinator Usage Examples
 
 include::VTN_How_To_configure_L2_Network_with_Single_Controller.adoc[How to configure L2 Network with Single Controller]
 
@@ -23,3 +39,4 @@ include::VTN_How_To_Use_VTN_to_make_packets_take_different_paths.adoc[Change Tra
 include::VTN_How_To_Troubleshoot_Coordinator_Installation.adoc[Troubleshoot VTN Coordinator]
 
 include::VTN_How_To_Support_for_Microsoft_SCVMM.adoc[Support for Microsoft SCVMM 2012 R2 with ODL VTN]
+
