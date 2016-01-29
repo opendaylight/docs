@@ -1,0 +1,282 @@
+==== How To Configure Flowfilters
+
+===== Overview
+
+* This page explains how to provision flowfilter using VTN Manager. This page targets Beryllium release, so the procedure described here does not work in other releases.
+
+* The flow-filter function discards, permits, or redirects packets of the traffic within a VTN, according to specified flow conditions. The table below lists the actions to be applied when a packet matches the condition:
+
+[options="header",cols="30%,70%"]
+|===
+| Action | Function
+| Pass | Permits the packet to loss. +
+As options, packet transfer priority (set priority) and DSCP change (set ip-dscp) is specified.
+| Drop | Discards the packet.
+| Redirect | Redirects the packet to a desired virtual interface. +
+As an option, it is possible to change the MAC address when the packet is transferred.
+|===
+
+.Flow Filter Example
+image::vtn/Flow_filter_example.png["Flow filter example",width=500]
+
+* Following steps explain flow-filter function:
+
+** when a packet is transferred to an interface within a virtual network, the flow-filter function evaluates whether the transferred packet matches the condition specifed in the flow-list.
+
+** If the packet matches the condition, the flow-filter applies the flow-list matching action specified in the flow-filter.
+
+===== Requirements
+
+To apply the packet filter, configure the following:
+
+* Create a flow condition.
+* Specify where to apply the flow-filter, for example VTN, vBridge, or interface of vBridge.
+
+To provision OpenFlow switches, this page uses Mininet. Mininet details and set-up can be referred at the below page:
+https://wiki.opendaylight.org/view/OpenDaylight_Controller:Installation#Using_Mininet
+
+Start Mininet, and create three switches (s1, s2, and s3) and four hosts (h1, h2, h3 and h4) in it.
+
+----
+sudo mn --controller=remote,ip=192.168.0.100 --topo tree,2
+----
+
+NOTE: Replace "192.168.0.100" with the IP address of OpenDaylight controller based on your environment.
+
+You can check the topology that you have created by executing "net" command in the Mininet console.
+
+----
+ mininet> net
+ h1 h1-eth0:s2-eth1
+ h2 h2-eth0:s2-eth2
+ h3 h3-eth0:s3-eth1
+ h4 h4-eth0:s3-eth2
+ s1 lo:  s1-eth1:s2-eth3 s1-eth2:s3-eth3
+ s2 lo:  s2-eth1:h1-eth0 s2-eth2:h2-eth0 s2-eth3:s1-eth1
+ s3 lo:  s3-eth1:h3-eth0 s3-eth2:h4-eth0 s3-eth3:s1-eth2
+----
+
+In this guide, you will provision flowfilters to establish communication between h1 and h3.
+
+NOTE: You need to manually add flow entries to OpenFlow switches in the Mininet. The flow entries are needed to forward packets to controller when there is a table-miss. This configuration is required only in case of OpenFlow 1.3 or using OVS versions (>2.1.1).
+
+----
+sudo ovs-ofctl add-flow s1 priority=0,actions=output:CONTROLLER
+sudo ovs-ofctl add-flow s2 priority=0,actions=output:CONTROLLER
+sudo ovs-ofctl add-flow s3 priority=0,actions=output:CONTROLLER
+----
+
+===== Configuration
+
+To provision the virtual L2 network for the two hosts (h1 and h3), execute REST API provided by VTN Manager as follows. It uses curl command to call the REST API.
+
+* Create a virtual tenant named vtn1 by executing
+  https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn.html#update-vtn[the update-vtn RPC].
+
+----
+curl --user "admin":"admin" -H "Accept: application/json" -H "Content-type: application/json" -X POST http://localhost:8181/restconf/operations/vtn:update-vtn -d '{"input":{"tenant-name":"vtn1","update-mode":"CREATE","operation":"SET","description":"creating vtn","idle-timeout":300,"hard-timeout":0}}'
+----
+
+* Create a virtual bridge named vbr1 in the tenant vtn1 by executing
+  https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-vbridge.html#update-vbridge[the update-vbridge RPC].
+
+----
+curl --user "admin":"admin" -H "Accept: application/json" -H "Content-type: application/json" -X POST http://localhost:8181/restconf/operations/vtn-vbridge:update-vbridge -d '{"input":{"update-mode":"CREATE","operation":"SET","description":"creating vBridge1","tenant-name":"vtn1","bridge-name":"vbr1"}}'
+----
+
+* Create two interfaces into the virtual bridge by executing
+  https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-vinterface.html#update-vinterface[the update-vinterface RPC].
+
+----
+curl --user "admin":"admin" -H "Accept: application/json" -H "Content-type: application/json" -X POST http://localhost:8181/restconf/operations/vtn-vinterface:update-vinterface -d '{"input":{"update-mode":"CREATE","operation":"SET","description":"Creating if1 interface","tenant-name":"vtn1","bridge-name":"vbr1","interface-name":"if1"}}'
+----
+
+
+----
+curl --user "admin":"admin" -H "Accept: application/json" -H "Content-type: application/json" -X POST http://localhost:8181/restconf/operations/vtn-vinterface:update-vinterface -d '{"input":{"update-mode":"CREATE","operation":"SET","description":"Creating if2 interface","tenant-name":"vtn1","bridge-name":"vbr1","interface-name":"if2"}}'
+----
+
+* Configure two mappings on the interfaces by executing
+  https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-port-map.html#set-port-map[the set-port-map RPC].
+
+** The interface if1 of the virtual bridge will be mapped to the port "s2-eth1" of the switch "openflow:2" of the Mininet.
+
+*** The h1 is connected to the port "s2-eth1".
+
+** The interface if2 of the virtual bridge will be mapped to the port "s3-eth1" of the switch "openflow:3" of the Mininet.
+
+*** The h3 is connected to the port "s3-eth1".
+
+----
+curl --user "admin":"admin" -H "Content-type: application/json" -X POST http://localhost:8181/restconf/operations/vtn-port-map:set-port-map -d '{"input":{"tenant-name":"vtn1", "bridge-name":"vbr1", "interface-name":"if1", "node":"openflow:2", "port-name":"s2-eth1"}}'
+----
+
+
+----
+curl --user "admin":"admin" -H "Content-type: application/json" -X POST http://localhost:8181/restconf/operations/vtn-port-map:set-port-map -d '{"input":{"tenant-name":"vtn1", "bridge-name":"vbr1", "interface-name":"if2", "node":"openflow:3", "port-name":"s3-eth1"}}'
+----
+
+* Create flowcondition named cond_1 by executing
+  https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-flow-condition.html#set-flow-condition[the set-flow-condition RPC].
+
+** For option source and destination-network, get inet address of host h1 and h3 from mininet.
+
+----
+curl --user "admin":"admin" -H "Content-type: application/json" -X POST http://localhost:8181/restconf/operations/vtn-flow-condition:set-flow-condition -d '{"input":{"operation":"SET","present":"false","name":"cond_1", "vtn-flow-match":[{"vtn-ether-match":{},"vtn-inet-match":{"source-network":"10.0.0.1/32","protocol":1,"destination-network":"10.0.0.3/32"},"index":"1"}]}}'
+----
+
+* Flowfilter can be applied either in VTN, VBR or VBR Interfaces. Here in this page we provision flowfilter with VBR Interface and demonstrate with action type drop and then pass.
+
+* Flow filter demonstration with DROP action-type. Create Flowfilter in VBR Interface if1 by executing
+  https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-flow-filter.html#set-flow-filter[the set-flow-filter RPC].
+
+----
+curl -v --user "admin":"admin" -H "Accept: application/json" -H "Content-type: application/json" -X POST http://localhost:8181/restconf/operations/vtn-flow-filter:set-flow-filter -d '{"input": {"tenant-name": "vtn1", "bridge-name": "vbr1","interface-name":"if1","vtn-flow-filter":[{"condition":"cond_1","vtn-drop-filter":{},"vtn-flow-action":[{"order": "1","vtn-set-inet-src-action":{"ipv4-address":"10.0.0.1/32"}},{"order": "2","vtn-set-inet-dst-action":{"ipv4-address":"10.0.0.3/32"}}],"index": "1"}]}}'
+----
+
+===== Verification For Packets Drop
+
+* Please execute ping from h1 to h3. As we have applied the action type "drop" , ping should fail as below.
+
+----
+ mininet> h1 ping h3
+ PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+ From 10.0.0.1 icmp_seq=1 Destination Host Unreachable
+ From 10.0.0.1 icmp_seq=2 Destination Host Unreachable
+----
+
+* Flow filter demonstration with PASS action-type. Create Flowfilter in VBR Interface if1 by executing
+  https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-flow-filter.html#set-flow-filter[the set-flow-filter RPC].
+
+----
+curl --user "admin":"admin" -H "Accept: application/json" -H "Content-type: application/json" -X POST http://localhost:8181/restconf/operations/vtn-flow-filter:set-flow-filter -d '{"input": {"tenant-name": "vtn1", "bridge-name": "vbr1","interface-name":"if1","vtn-flow-filter":[{"condition":"cond_1","vtn-pass-filter":{},"vtn-flow-action":[{"order": "1","vtn-set-inet-src-action":{"ipv4-address":"10.0.0.1/32"}},{"order": "2","vtn-set-inet-dst-action":{"ipv4-address":"10.0.0.3/32"}}],"index": "1"}]}}'
+----
+
+===== Verification For Packets Success
+
+* As we have applied action type PASS now ping should happen between hosts h1 and h3.
+
+----
+ mininet> h1 ping h3
+ PING 10.0.0.3 (10.0.0.3) 56(84) bytes of data.
+ 64 bytes from 10.0.0.3: icmp_req=1 ttl=64 time=0.984 ms
+ 64 bytes from 10.0.0.3: icmp_req=2 ttl=64 time=0.110 ms
+ 64 bytes from 10.0.0.3: icmp_req=3 ttl=64 time=0.098 ms
+----
+
+* You can also verify the configurations by executing the following RESTCONF API. It shows all configuration in VTN Manager.
+
+----
+curl -v --user "admin":"admin" -H "Accept: application/json" -H "Content-type: application/json" -X GET http://localhost:8181/restconf/operational/vtn:vtns/vtn/vtn1
+----
+
+----
+{
+  "vtn": [
+  {
+    "name": "vtn1",
+      "vtenant-config": {
+        "hard-timeout": 0,
+        "idle-timeout": 300,
+        "description": "creating vtn"
+      },
+      "vbridge": [
+      {
+        "name": "vbr1",
+        "vbridge-config": {
+          "age-interval": 600,
+          "description": "creating vBridge1"
+        },
+        "bridge-status": {
+          "state": "UP",
+          "path-faults": 0
+        },
+        "vinterface": [
+        {
+          "name": "if1",
+          "vinterface-status": {
+            "mapped-port": "openflow:2:1",
+            "state": "UP",
+            "entity-state": "UP"
+          },
+          "port-map-config": {
+            "vlan-id": 0,
+            "node": "openflow:2",
+            "port-name": "s2-eth1"
+          },
+          "vinterface-config": {
+            "description": "Creating if1 interface",
+            "enabled": true
+          },
+          "vinterface-input-filter": {
+            "vtn-flow-filter": [
+            {
+              "index": 1,
+              "condition": "cond_1",
+              "vtn-flow-action": [
+              {
+                "order": 1,
+                "vtn-set-inet-src-action": {
+                  "ipv4-address": "10.0.0.1/32"
+                }
+              },
+              {
+                "order": 2,
+                "vtn-set-inet-dst-action": {
+                  "ipv4-address": "10.0.0.3/32"
+                }
+              }
+              ],
+                "vtn-pass-filter": {}
+            },
+            {
+              "index": 10,
+              "condition": "cond_1",
+              "vtn-drop-filter": {}
+            }
+            ]
+          }
+        },
+        {
+          "name": "if2",
+          "vinterface-status": {
+            "mapped-port": "openflow:3:1",
+            "state": "UP",
+            "entity-state": "UP"
+          },
+          "port-map-config": {
+            "vlan-id": 0,
+            "node": "openflow:3",
+            "port-name": "s3-eth1"
+          },
+          "vinterface-config": {
+            "description": "Creating if2 interface",
+            "enabled": true
+          }
+        }
+        ]
+      }
+    ]
+  }
+  ]
+}
+----
+
+===== Cleaning Up
+
+* To clean up both VTN and flowcondition.
+
+* You can delete the virtual tenant vtn1 by executing
+  https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn.html#remove-vtn[the remove-vtn RPC].
+
+----
+curl -v --user "admin":"admin" -H "Accept: application/json" -H "Content-type: application/json" -X POST http://localhost:8181/restconf/operations/vtn:remove-vtn -d '{"input":{"tenant-name":"vtn1"}}'
+----
+
+* You can delete the flowcondition cond_1 by executing
+  https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-flow-condition.html#remove-flow-condition[the remove-flow-condition RPC].
+
+----
+curl -v --user "admin":"admin" -H "Accept: application/json" -H "Content-type: application/json" -X POST http://localhost:8181/restconf/operations/vtn-flow-condition:remove-flow-condition -d '{"input":{"name":"cond_1"}}'
+----
+
