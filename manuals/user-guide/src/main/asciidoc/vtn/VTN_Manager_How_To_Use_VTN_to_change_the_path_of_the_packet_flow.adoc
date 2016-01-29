@@ -1,0 +1,321 @@
+==== How to use VTN to change the path of the packet flow
+
+===== Overview
+
+* This page explains how to create specific VTN Pathmap using VTN Manager. This page targets Beryllium release, so the procedure described here does not work in other releases.
+
+.Pathmap
+image::vtn/Pathmap.png["Pathmap",width=500]
+
+===== Requirement
+
+* Save the mininet script given below as pathmap_test.py and run the mininet script in the mininet environment where Mininet is installed.
+
+* Create topology using the below mininet script:
+
+----
+ from mininet.topo import Topo
+  class MyTopo( Topo ):
+    "Simple topology example."
+    def __init__( self ):
+        "Create custom topo."
+        # Initialize topology
+        Topo.__init__( self )
+        # Add hosts and switches
+        leftHost = self.addHost( 'h1' )
+        rightHost = self.addHost( 'h2' )
+        leftSwitch = self.addSwitch( 's1' )
+        middleSwitch = self.addSwitch( 's2' )
+        middleSwitch2 = self.addSwitch( 's4' )
+        rightSwitch = self.addSwitch( 's3' )
+        # Add links
+        self.addLink( leftHost, leftSwitch )
+        self.addLink( leftSwitch, middleSwitch )
+        self.addLink( leftSwitch, middleSwitch2 )
+        self.addLink( middleSwitch, rightSwitch )
+        self.addLink( middleSwitch2, rightSwitch )
+        self.addLink( rightSwitch, rightHost )
+ topos = { 'mytopo': ( lambda: MyTopo() ) }
+----
+
+* After creating new file with the above script start the mininet as below,
+
+----
+sudo mn --controller=remote,ip=10.106.138.124 --custom pathmap_test.py --topo mytopo
+----
+
+NOTE: Replace "10.106.138.124" with the IP address of OpenDaylight controller based on your environment.
+
+----
+ mininet> net
+ h1 h1-eth0:s1-eth1
+ h2 h2-eth0:s3-eth3
+ s1 lo:  s1-eth1:h1-eth0 s1-eth2:s2-eth1 s1-eth3:s4-eth1
+ s2 lo:  s2-eth1:s1-eth2 s2-eth2:s3-eth1
+ s3 lo:  s3-eth1:s2-eth2 s3-eth2:s4-eth2 s3-eth3:h2-eth0
+ s4 lo:  s4-eth1:s1-eth3 s4-eth2:s3-eth2
+ c0
+----
+
+NOTE: You need to manually add flow entries to OpenFlow switches in the Mininet. The flow entries are needed to forward packets to controller when there is a table-miss. This configuration is required only in case of OpenFlow 1.3 or using OVS versions (>2.1.1).
+
+----
+ sudo ovs-ofctl add-flow s1 priority=0,actions=output:CONTROLLER
+ sudo ovs-ofctl add-flow s2 priority=0,actions=output:CONTROLLER
+ sudo ovs-ofctl add-flow s3 priority=0,actions=output:CONTROLLER
+----
+
+* Generate traffic by pinging between host h1 and host h2 before creating the portmaps respectively.
+
+----
+ mininet> h1 ping h2
+ PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+ From 10.0.0.1 icmp_seq=1 Destination Host Unreachable
+ From 10.0.0.1 icmp_seq=2 Destination Host Unreachable
+ From 10.0.0.1 icmp_seq=3 Destination Host Unreachable
+ From 10.0.0.1 icmp_seq=4 Destination Host Unreachable
+----
+
+===== Configuration
+
+* To chnage the path of the packet flow, execute REST API provided by VTN Manager as follows. It uses curl command to call the REST API.
+
+* Create a virtual tenant named vtn1 by executing
+  https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn.html#update-vtn[the update-vtn RPC].
+
+----
+curl --user "admin":"admin" -H "Accept: application/json" -H "Content-type: application/json" -X POST http://localhost:8181/restconf/operations/vtn:update-vtn -d '{"input":{"tenant-name":"vtn1","update-mode":"CREATE","operation":"SET","description":"creating vtn","idle-timeout":300,"hard-timeout":0}}'
+----
+
+* Create a virtual bridge named vbr1 in the tenant vtn1 by executing
+  https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-vbridge.html#update-vbridge[the update-vbridge RPC].
+
+----
+curl --user "admin":"admin" -H "Accept: application/json" -H "Content-type: application/json" -X POST http://localhost:8181/restconf/operations/vtn-vbridge:update-vbridge -d '{"input":{"update-mode":"CREATE","operation":"SET","description":"creating vBridge1","tenant-name":"vtn1","bridge-name":"vbr1"}}'
+----
+
+* Create two interfaces into the virtual bridge by executing
+  https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-vinterface.html#update-vinterface[the update-vinterface RPC].
+
+----
+curl --user "admin":"admin" -H "Accept: application/json" -H "Content-type: application/json" -X POST http://localhost:8181/restconf/operations/vtn-vinterface:update-vinterface -d '{"input":{"update-mode":"CREATE","operation":"SET","description":"Creating if1 interface","tenant-name":"vtn1","bridge-name":"vbr1","interface-name":"if1"}}'
+----
+
+
+----
+curl --user "admin":"admin" -H "Accept: application/json" -H "Content-type: application/json" -X POST http://localhost:8181/restconf/operations/vtn-vinterface:update-vinterface -d '{"input":{"update-mode":"CREATE","operation":"SET","description":"Creating if2 interface","tenant-name":"vtn1","bridge-name":"vbr1","interface-name":"if2"}}'
+----
+
+* Configure two mappings on the interfaces by executing
+  https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-port-map.html#set-port-map[the set-port-map RPC].
+
+** The interface if1 of the virtual bridge will be mapped to the port "s2-eth1" of the switch "openflow:1" of the Mininet.
+
+*** The h1 is connected to the port "s1-eth1".
+
+** The interface if2 of the virtual bridge will be mapped to the port "s3-eth1" of the switch "openflow:3" of the Mininet.
+
+*** The h3 is connected to the port "s3-eth3".
+
+----
+curl --user "admin":"admin" -H "Content-type: application/json" -X POST http://localhost:8181/restconf/operations/vtn-port-map:set-port-map -d '{"input":{"tenant-name":"vtn1", "bridge-name":"vbr1", "interface-name":"if1", "node":"openflow:1", "port-name":"s1-eth1"}}'
+----
+
+----
+curl --user "admin":"admin" -H "Content-type: application/json" -X POST http://localhost:8181/restconf/operations/vtn-port-map:set-port-map -d '{"input":{"tenant-name":"vtn1", "bridge-name":"vbr1", "interface-name":"if2", "node":"openflow:3", "port-name":"s3-eth3"}}'
+----
+
+* Genarate traffic by pinging between host h1 and host h2 after creating the portmaps respectively.
+
+----
+ mininet> h1 ping h2
+ PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+ 64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=0.861 ms
+ 64 bytes from 10.0.0.2: icmp_seq=2 ttl=64 time=0.101 ms
+ 64 bytes from 10.0.0.2: icmp_seq=3 ttl=64 time=0.101 ms
+----
+
+* Get the Dataflows information by executing
+  https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-flow.html#get-data-flow[the get-data-flow RPC].
+
+----
+curl -v --user "admin":"admin" -H "Accept: application/json" -H "Content-type: application/json" -X POST http://localhost:8181/restconf/operations/vtn-flow:get-data-flow -d '{"input":{"tenant-name":"vtn1","mode":"DETAIL","node":"openflow:1","data-flow-port":{"port-id":1,"port-name":"s1-eth1"},"data-flow-source":{"mac-address":"8e:05:4d:4d:1a:df","vlan-id":0}}}'
+----
+
+* Create flowcondition named cond_1 by executing
+  https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-flow-condition.html#set-flow-condition[the set-flow-condition RPC].
+
+** For option source and destination-network, get inet address of host h1 or host h2 from mininet
+
+----
+curl --user "admin":"admin" -H "Content-type: application/json" -X POST http://localhost:8181/restconf/operations/vtn-flow-condition:set-flow-condition -d '{"input":{"operation":"SET","present":"false","name":"cond_1", "vtn-flow-match":[{"vtn-ether-match":{},"vtn-inet-match":{"source-network":"10.0.0.1/32","protocol":1,"destination-network":"10.0.0.2/32"},"index":"1"}]}}'
+----
+
+* Create pathmap with flowcondition cond_1 by executing
+  https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-path-map.html#set-path-map[the set-path-map RPC].
+
+----
+curl --user "admin":"admin" -H "Content-type: application/json" -X POST http://localhost:8181/restconf/operations/vtn-path-map:set-path-map -d '{"input":{"tenant-name":"vtn1","path-map-list":[{"condition":"cond_1","policy":"1","index": "1","idle-timeout":"300","hard-timeout":"0"}]}}'
+----
+
+* Create pathpolicy by executing
+  https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-path-policy.html#set-path-policy[the set-path-policy RPC].
+
+----
+curl --user "admin":"admin" -H "Content-type: application/json" -X POST http://localhost:8181/restconf/operations/vtn-path-policy:set-path-policy -d '{"input":{"operation":"SET","id": "1","default-cost": "10000","vtn-path-cost": [{"port-desc":"openflow:1,3,s1-eth3","cost":"1000"},{"port-desc":"openflow:4,2,s4-eth2","cost":"1000"},{"port-desc":"openflow:3,3,s3-eth3","cost":"100000"}]}}'
+----
+
+===== Verification
+
+* Before applying Path policy get node information by executing get dataflow command.
+
+----
+"data-flow-info": [
+{
+  "physical-route": [
+  {
+    "physical-ingress-port": {
+      "port-name": "s3-eth3",
+        "port-id": "3"
+    },
+      "physical-egress-port": {
+        "port-name": "s3-eth1",
+        "port-id": "1"
+      },
+      "node": "openflow:3",
+      "order": 0
+  },
+  {
+    "physical-ingress-port": {
+      "port-name": "s2-eth2",
+      "port-id": "2"
+    },
+    "physical-egress-port": {
+      "port-name": "s2-eth1",
+      "port-id": "1"
+    },
+    "node": "openflow:2",
+    "order": 1
+  },
+  {
+    "physical-ingress-port": {
+      "port-name": "s1-eth2",
+      "port-id": "2"
+    },
+    "physical-egress-port": {
+      "port-name": "s1-eth1",
+      "port-id": "1"
+    },
+    "node": "openflow:1",
+    "order": 2
+  }
+  ],
+    "data-egress-node": {
+      "interface-name": "if1",
+      "bridge-name": "vbr1",
+      "tenant-name": "vtn1"
+    },
+    "data-egress-port": {
+      "node": "openflow:1",
+      "port-name": "s1-eth1",
+      "port-id": "1"
+    },
+    "data-ingress-node": {
+      "interface-name": "if2",
+      "bridge-name": "vbr1",
+      "tenant-name": "vtn1"
+    },
+    "data-ingress-port": {
+      "node": "openflow:3",
+      "port-name": "s3-eth3",
+      "port-id": "3"
+    },
+    "flow-id": 32
+  },
+}
+----
+
+* After applying Path policy get node information by executing get dataflow command.
+
+----
+"data-flow-info": [
+{
+  "physical-route": [
+  {
+    "physical-ingress-port": {
+      "port-name": "s1-eth1",
+        "port-id": "1"
+    },
+      "physical-egress-port": {
+        "port-name": "s1-eth3",
+        "port-id": "3"
+      },
+      "node": "openflow:1",
+      "order": 0
+  },
+  {
+    "physical-ingress-port": {
+      "port-name": "s4-eth1",
+      "port-id": "1"
+    },
+    "physical-egress-port": {
+      "port-name": "s4-eth2",
+      "port-id": "2"
+    },
+    "node": "openflow:4",
+    "order": 1
+  },
+  {
+    "physical-ingress-port": {
+      "port-name": "s3-eth2",
+      "port-id": "2"
+    },
+    "physical-egress-port": {
+      "port-name": "s3-eth3",
+      "port-id": "3"
+    },
+    "node": "openflow:3",
+    "order": 2
+  }
+  ],
+    "data-egress-node": {
+      "interface-name": "if2",
+      "bridge-name": "vbr1",
+      "tenant-name": "vtn1"
+    },
+    "data-egress-port": {
+      "node": "openflow:3",
+      "port-name": "s3-eth3",
+      "port-id": "3"
+    },
+    "data-ingress-node": {
+      "interface-name": "if1",
+      "bridge-name": "vbr1",
+      "tenant-name": "vtn1"
+    },
+    "data-ingress-port": {
+      "node": "openflow:1",
+      "port-name": "s1-eth1",
+      "port-id": "1"
+    },
+}
+----
+
+===== Cleaning Up
+
+* To clean up both VTN and flowcondition.
+
+* You can delete the virtual tenant vtn1 by executing
+  https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn.html#remove-vtn[the remove-vtn RPC].
+
+----
+curl -v --user "admin":"admin" -H "Accept: application/json" -H "Content-type: application/json" -X POST http://localhost:8181/restconf/operations/vtn:remove-vtn -d '{"input":{"tenant-name":"vtn1"}}'
+----
+
+* You can delete the flowcondition cond_1 by executing
+  https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-flow-condition.html#remove-flow-condition[the remove-flow-condition RPC].
+
+----
+curl -v --user "admin":"admin" -H "Accept: application/json" -H "Content-type: application/json" -X POST http://localhost:8181/restconf/operations/vtn-flow-condition:remove-flow-condition -d '{"input":{"name":"cond_1"}}'
+----
+

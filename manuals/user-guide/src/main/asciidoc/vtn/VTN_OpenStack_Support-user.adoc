@@ -122,6 +122,7 @@ TIP: After running OpenDaylight, please ensure OpenDaylight listens to the ports
 TIP: Please allow the ports in firewall for the devstack to be able to communicate with OpenDaylight.
 
 NOTE:
+
 * 6633/6653 - OpenFlow Ports
 * 6640 - Open vSwitch Manager Port
 * 8282 - Port for REST API
@@ -130,7 +131,7 @@ NOTE:
 
 ===== VTN Devstack Script
 * The local.conf is a user-maintained settings file. This allows all custom settings for DevStack to be contained in a single file. This file is processed strictly in sequence.
-The following datas are needed to be set in the local.conf file:
+The following data are needed to be set in the local.conf file:
 * Set the Host_IP as the detection is unreliable.
 * Set FLOATING_RANGE to a range not used on the local network, i.e. 192.168.1.224/27. This configures IP addresses ending in 225-254 to be used as floating IPs.
 * Set FLAT_INTERFACE to the Ethernet interface that connects the host to your local network. This is the interface that should be configured with the static IP address mentioned above.
@@ -342,7 +343,9 @@ NOTE:
 ** git clone https://git.openstack.org/openstack-dev/devstack;
 * Switch to stable/Juno Version branch
 ** cd devstack
-** git checkout stable/juno
+
+
+   git checkout stable/juno
 
 NOTE:
    If you want to use stable/kilo Version branch, Please execute the below command in devstack folder
@@ -393,7 +396,7 @@ NOTE:
 * The output of the ovs-vsctl show will be similar to the one seen in control node.
 
 ===== Additional Verifications
-* Please visit the OpenDaylight DLUX GUI after stacking all the nodes, http://<ODL_IP_ADDRESS>:8181/dlux/index.html. The switches, topology and the ports that are currently read can be validated.
+* Please visit the OpenDaylight DLUX GUI after stacking all the nodes, http://<ODL_IP_ADDRESS>:8181/index.html. The switches, topology and the ports that are currently read can be validated.
 
 TIP: If the interconnected between the Open vSwitch is not seen, Please bring up the interface for the dataplane manually using the below comamnd
 

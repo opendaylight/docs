@@ -1,0 +1,146 @@
+==== How To View Dataflows
+
+===== Configuration
+
+* To view Dataflow information, configure with VLAN Mapping
+  https://wiki.opendaylight.org/view/VTN:Mananger:How_to_test_Vlan-map_using_mininet.
+
+===== Verification
+
+* Get the Dataflows information by executing
+  https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-flow.html#get-data-flow[the get-data-flow RPC].
+
+----
+curl -v --user "admin":"admin" -H "Accept: application/json" -H "Content-type: application/json" -X POST http://localhost:8181/restconf/operations/vtn-flow:get-data-flow -d '{"input":{"tenant-name":"vtn1","mode":"DETAIL","node":"openflow:1","data-flow-port":{"port-id":1,"port-name":"s3-eth1"},"data-flow-source":{"mac-address":"16:9a:39:bf:ed:4f","vlan-id":200}}}'
+----
+
+----
+{
+  "vtn-flow-table": [
+  {
+    "tenant-name": "Tenant1",
+      "match-flows": [
+      {
+        "condition-key": "node=openflow:3,pri=10,IN_PORT=openflow:3:2,DL_SRC=16:9a:39:bf:ed:4f,
+        DL_DST=b2:55:82:3a:a8:f4,DL_VLAN=200",
+        "flow-id": 130
+      }
+      ],
+        "source-host-flows": [
+        {
+          "mac-address": "16:9a:39:bf:ed:4f",
+          "vlan-id": 200,
+          "flow-id-list": [
+          {
+            "flow-id": 130
+          }
+          ]
+        }
+        ],
+          "node-flows": [
+          {
+            "node": "openflow:3",
+            "flow-id-list": [
+            {
+              "flow-id": 130
+            }
+            ]
+          }
+          ],
+            "port-flows": [
+            {
+              "port": "openflow:3:1",
+              "flow-id-list": [
+              {
+                "flow-id": 130
+              }
+              ]
+            },
+            {
+              "port": "openflow:3:2",
+              "flow-id-list": [
+              {
+                "flow-id": 130
+              }
+              ]
+            }
+            ],
+              "vtn-data-flow": [
+              {
+                "flow-id": 130,
+                "virtual-route": [
+                {
+                  "order": 0,
+                  "reason": "VLANMAPPED",
+                  "virtual-node-path": {
+                    "vlan-map-id": "ANY.200",
+                    "bridge-name": "vBridge1_vlan",
+                    "tenant-name": "Tenant1"
+                  }
+                },
+                {
+                  "order": 1,
+                  "reason": "FORWARDED",
+                  "virtual-node-path": {
+                    "vlan-map-id": "ANY.200",
+                    "bridge-name": "vBridge1_vlan",
+                    "tenant-name": "Tenant1"
+                  }
+                }
+                ],
+                  "path-policy-id": 0,
+                  "vtn-flow-entry": [
+                  {
+                    "order": 0,
+                    "instructions": {
+                      "instruction": [
+                      {
+                        "order": 0,
+                        "apply-actions": {
+                          "action": [
+                          {
+                            "order": 0,
+                            "output-action": {
+                              "max-length": 65535,
+                              "output-node-connector": "openflow:3:1"
+                            }
+                          }
+                          ]
+                        }
+                      }
+                      ]
+                    },
+                    "table_id": 0,
+                    "match": {
+                      "ethernet-match": {
+                        "ethernet-destination": {
+                          "address": "b2:55:82:3a:a8:f4"
+                        },
+                        "ethernet-source": {
+                          "address": "16:9a:39:bf:ed:4f"
+                        }
+                      },
+                      "vlan-match": {
+                        "vlan-id": {
+                          "vlan-id-present": true,
+                          "vlan-id": 200
+                        }
+                      },
+                      "in-port": "openflow:3:2"
+                    },
+                    "node": "openflow:3",
+                    "priority": 10,
+                    "idle-timeout": 300,
+                    "cookie": 9175521290813964000,
+                    "flags": "SEND_FLOW_REM",
+                    "hard-timeout": 0
+                  }
+                ],
+                  "creation-time": 1451329476344
+              }
+            ]
+  }
+  ]
+}
+----
+
