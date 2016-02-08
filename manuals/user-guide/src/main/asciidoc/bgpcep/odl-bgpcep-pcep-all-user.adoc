@@ -27,11 +27,12 @@ The default shipped configuration will start a PCE server on 0.0.0.0:4189. You c
 
 PCEP default configuration is set to conform stateful PCEP extension:
 
-link:http://tools.ietf.org/html/draft-ietf-pce-stateful-pce[draft-ietf-pce-stateful-pce] - in versions 02 and 07
+link:http://tools.ietf.org/html/draft-ietf-pce-stateful-pce-07[draft-ietf-pce-stateful-pce-07] - PCEP Extensions for Stateful PCE and
+https://tools.ietf.org/html/draft-ietf-pce-pce-initiated-lsp-00[draft-ietf-pce-pce-initiated-lsp-00] - PCEP Extensions for PCE-initiated LSP Setup in a Stateful PCE Model
 
 ==== PCEP Segment Routing ====
 
-Conforms link:http://tools.ietf.org/html/draft-ietf-pce-segment-routing-01[draft-eitf-pce-segment-routing] - PCEP extension for Segment Routing
+Conforms link:http://tools.ietf.org/html/draft-ietf-pce-segment-routing-01[draft-ietf-pce-segment-routing] - PCEP extension for Segment Routing
 
 The default configuration file is located in etc/opendaylight/karaf.
 
