@@ -32,8 +32,8 @@ using (global-pcep-extensions), factory for creating session proposals
    <name>global-pcep-extensions</name>
   </pcep-extensions>
   <pcep-session-proposal-factory>
-    <type xmlns:pcep="urn:opendaylight:params:xml:ns:yang:controller:pcep">pcep:pcep-session-proposal-factory</type>
-    <name>stateful07-proposal</name>
+   <type xmlns:pcep="urn:opendaylight:params:xml:ns:yang:controller:pcep">pcep:pcep-session-proposal-factory</type>
+   <name>global-pcep-session-proposal-factory</name>
   </pcep-session-proposal-factory>
   <boss-group>
    <type xmlns:netty="urn:opendaylight:params:xml:ns:yang:controller:netty">netty:netty-threadgroup</type>
@@ -65,38 +65,48 @@ initial configuration of the parser-spi module (_32-pcep.xml_).
 
 [source,xml]
 ----
- <module>
-  <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:controller:pcep:spi">prefix:pcep-extensions-impl</type>
-  <name>global-pcep-extensions</name>
-  <extension>
-   <type xmlns:pcepspi="urn:opendaylight:params:xml:ns:yang:controller:pcep:spi">pcepspi:extension</type>
-   <name>pcep-parser-base</name>
-  </extension>
-  <extension>
-   <type xmlns:pcepspi="urn:opendaylight:params:xml:ns:yang:controller:pcep:spi">pcepspi:extension</type>
-   <name>pcep-parser-ietf-stateful07</name>
-  </extension>
-  <extension>
-   <type xmlns:pcepspi="urn:opendaylight:params:xml:ns:yang:controller:pcep:spi">pcepspi:extension</type>
-   <name>pcep-parser-ietf-initiated00</name>
-  </extension>
- </module>
+<module>
+ <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:controller:pcep:spi">prefix:pcep-extensions-impl</type>
+ <name>global-pcep-extensions</name>
+ <extension>
+  <type xmlns:pcepspi="urn:opendaylight:params:xml:ns:yang:controller:pcep:spi">pcepspi:extension</type>
+  <name>pcep-parser-base</name>
+ </extension>
+ <extension>
+  <type xmlns:pcepspi="urn:opendaylight:params:xml:ns:yang:controller:pcep:spi">pcepspi:extension</type>
+  <name>pcep-parser-ietf-stateful07</name>
+ </extension>
+ <extension>
+  <type xmlns:pcepspi="urn:opendaylight:params:xml:ns:yang:controller:pcep:spi">pcepspi:extension</type>
+  <name>pcep-parser-ietf-initiated00</name>
+ </extension>
+ <extension>
+  <type xmlns:pcepspi="urn:opendaylight:params:xml:ns:yang:controller:pcep:spi">pcepspi:extension</type>
+  <name>pcep-parser-sync-optimizations</name>
+ </extension>
+</module>
 ----
 
 * _pcep-parser-base_ - will register parsers and serializers
 implemented in pcep-impl module
 
 * _pcep-parser-ietf-stateful07_ - will register parsers and
-serializers implemented in stateful07 module
+serializers of draft-ietf-pce-stateful-pce-07 implementation
+
+* _pcep-parser-ietf-initiated00_ - will register parser and
+serializer of draft-ietf-pce-pce-initiated-lsp-00 implementation
+
+* _pcep-parser-sync-optimizations_ -will register parser and
+serializers of draft-ietf-pce-stateful-sync-optimizations-03 implementation
 
 Stateful07 module is a good example of a PCEP parser extension.
 
 Configuration of PCEP parsers specifies one implementation of _Extension
 provider_ that will take care of registering mentioned parser
 extensions:
-https://git.opendaylight.org/gerrit/gitweb?p=bgpcep.git;a=blob;f=pcep/spi/src/main/java/org/opendaylight/protocol/pcep/spi/pojo/SimplePCEPExtensionProviderContext.java;hb=refs/for/stable/lithium[SimplePCEPExtensionProviderContext].
+https://git.opendaylight.org/gerrit/gitweb?p=bgpcep.git;a=blob;f=pcep/spi/src/main/java/org/opendaylight/protocol/pcep/spi/pojo/SimplePCEPExtensionProviderContext.java;hb=refs/for/stable/beryllium[SimplePCEPExtensionProviderContext].
 All registries are implemented in package
-https://git.opendaylight.org/gerrit/gitweb?p=bgpcep.git;a=tree;f=pcep/spi/src/main/java/org/opendaylight/protocol/pcep/spi/pojo;hb=refs/for/stable/lithium[pcep-spi].
+https://git.opendaylight.org/gerrit/gitweb?p=bgpcep.git;a=tree;f=pcep/spi/src/main/java/org/opendaylight/protocol/pcep/spi/pojo;hb=refs/for/stable/beryllium[pcep-spi].
 
 ===== Parsing
 
@@ -142,7 +152,7 @@ The stateful module is implemented as extensions to pcep-base-parser.
 The stateful draft declared new elements as well as additional fields or
 TLVs (type,length,value) to known objects. All new elements are defined in yang models, that
 contain augmentations to elements defined in
-https://git.opendaylight.org/gerrit/gitweb?p=bgpcep.git;a=blob;f=pcep/api/src/main/yang/pcep-types.yang;hb=refs/for/stable/lithium[pcep-types.yang].
+https://git.opendaylight.org/gerrit/gitweb?p=bgpcep.git;a=blob;f=pcep/api/src/main/yang/pcep-types.yang;hb=refs/for/stable/beryllium[pcep-types.yang].
 In the case of extending known elements, the _Parser_ class merely extends
 the base class and overrides necessary methods as shown in following
 diagram:
@@ -172,12 +182,12 @@ Routing ability.
 
 The yang models of subobject, SR-PCE-CAPABILITY TLV and appropriate
 augmentations are defined in
-https://git.opendaylight.org/gerrit/gitweb?p=bgpcep.git;a=blob;f=pcep/segment-routing/src/main/yang/odl-pcep-segment-routing.yang;hb=refs/for/stable/lithium[odl-pcep-segment-routing.yang]. +
+https://git.opendaylight.org/gerrit/gitweb?p=bgpcep.git;a=blob;f=pcep/segment-routing/src/main/yang/odl-pcep-segment-routing.yang;hb=refs/for/stable/beryllium[odl-pcep-segment-routing.yang]. +
 The pcep-segment-routing module includes parsers/serializers for new
 subobject
-(https://git.opendaylight.org/gerrit/gitweb?p=bgpcep.git;a=blob;f=pcep/segment-routing/src/main/java/org/opendaylight/protocol/pcep/segment/routing/SrEroSubobjectParser.java;hb=refs/for/stable/lithium[SrEroSubobjectParser])
+(https://git.opendaylight.org/gerrit/gitweb?p=bgpcep.git;a=blob;f=pcep/segment-routing/src/main/java/org/opendaylight/protocol/pcep/segment/routing/SrEroSubobjectParser.java;hb=refs/for/stable/beryllium[SrEroSubobjectParser])
 and TLV
-(https://git.opendaylight.org/gerrit/gitweb?p=bgpcep.git;a=blob;f=pcep/segment-routing/src/main/java/org/opendaylight/protocol/pcep/segment/routing/SrPceCapabilityTlvParser.java;hb=refs/for/stable/lithium[SrPceCapabilityTlvParser]).
+(https://git.opendaylight.org/gerrit/gitweb?p=bgpcep.git;a=blob;f=pcep/segment-routing/src/main/java/org/opendaylight/protocol/pcep/segment/routing/SrPceCapabilityTlvParser.java;hb=refs/for/stable/beryllium[SrPceCapabilityTlvParser]).
 
 The pcep-segment-routing module implements
 http://tools.ietf.org/html/draft-ietf-pce-lsp-setup-type-01[draft-ietf-pce-lsp-setup-type-01],
@@ -188,11 +198,25 @@ For the default RSVP-TE (Resource Reservation Protocol), the TLV is omitted.
 For Segment Routing, PST = 1 is defined.
 
 The Path Setup Type TLV is modeled with yang in module
-https://git.opendaylight.org/gerrit/gitweb?p=bgpcep.git;a=blob;f=pcep/api/src/main/yang/pcep-types.yang;hb=refs/for/stable/lithium[pcep-types.yang].
+https://git.opendaylight.org/gerrit/gitweb?p=bgpcep.git;a=blob;f=pcep/api/src/main/yang/pcep-types.yang;hb=refs/for/stable/beryllium[pcep-types.yang].
 A parser/serializer is implemented in
-https://git.opendaylight.org/gerrit/gitweb?p=bgpcep.git;a=blob;f=pcep/impl/src/main/java/org/opendaylight/protocol/pcep/impl/tlv/PathSetupTypeTlvParser.java;hb=refs/for/stable/lithium[PathSetupTypeTlvParser]
+https://git.opendaylight.org/gerrit/gitweb?p=bgpcep.git;a=blob;f=pcep/impl/src/main/java/org/opendaylight/protocol/pcep/impl/tlv/PathSetupTypeTlvParser.java;hb=refs/for/stable/beryllium[PathSetupTypeTlvParser]
 and it is overriden in segment-routing module to provide the aditional
 PST.
+
+==== PCEP Synchronization Procedures Optimization
+
+Optimizations of Label Switched Path State Synchronization Procedures for a Stateful PCE draft-ietf-pce-stateful-sync-optimizations-03 specifies following optimizations for state synchronization and the corresponding PCEP procedures and extensions:
+
+* *State Synchronization Avoidance:* To skip state synchronization if the state has survived and not changed during session restart.
+
+* *Incremental State Synchronization:* To do incremental (delta) state synchronization when possible.
+
+* *PCE-triggered Initial Synchronization:* To let PCE control the timing of the initial state synchronization.
+The capability can be applied to both full and incremental state synchronization.
+
+* *PCE-triggered Re-synchronization:* To let PCE re-synchronize the state for sanity check.
+
 
 ==== PCEP Topology
 
