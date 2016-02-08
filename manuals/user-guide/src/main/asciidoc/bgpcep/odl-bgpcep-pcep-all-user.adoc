@@ -27,13 +27,255 @@ The default shipped configuration will start a PCE server on 0.0.0.0:4189. You c
 
 PCEP default configuration is set to conform stateful PCEP extension:
 
-link:http://tools.ietf.org/html/draft-ietf-pce-stateful-pce[draft-ietf-pce-stateful-pce] - in versions 02 and 07
+http://tools.ietf.org/html/draft-ietf-pce-stateful-pce-07[draft-ietf-pce-stateful-pce-07] - PCEP Extensions for Stateful PCE and
+https://tools.ietf.org/html/draft-ietf-pce-pce-initiated-lsp-00[draft-ietf-pce-pce-initiated-lsp-00] - PCEP Extensions for PCE-initiated LSP Setup in a Stateful PCE Model
+https://tools.ietf.org/html/draft-ietf-pce-stateful-sync-optimizations-03 [draft-ietf-pce-stateful-sync-optimizations-03] - Optimizations of Label Switched Path State
+Synchronization Procedures for a Stateful PCE
 
 ==== PCEP Segment Routing ====
 
-Conforms link:http://tools.ietf.org/html/draft-ietf-pce-segment-routing-01[draft-eitf-pce-segment-routing] - PCEP extension for Segment Routing
+Conforms link:http://tools.ietf.org/html/draft-ietf-pce-segment-routing-01[draft-ietf-pce-segment-routing] - PCEP extension for Segment Routing
 
 The default configuration file is located in etc/opendaylight/karaf.
 
 - *33-pcep-segment-routing.xml* - You don't need to edit this file.
 
+=== Tunnel Management ===
+
+Programming tunnels through PCEP is one of the key features of PCEP implementation in OpenDaylight.
+User can create, update and delete tunnel via RESTCONF calls.
+Tunnel (LSP - Label Switched Path) arguments are passed through RESTCONF and generate a PCEP message that is sent to PCC (which is also specified via RESTCONF call).
+PCC sends a response back to ODL. The response is then interpreted and sent to RESTCONF, where, in case of success, the new LSP is displayed.
+
+The PCE Segment Routing Extends draft-ietf-pce-stateful-pce-07 and draft-ietf-pce-pce-initiated-lsp-00, brings new SR-ERO subobject composed of SID (Segment Identifier)
+and/or NAI (Node or Adjacency Identifier). Segment Routing path is carried in the ERO object, as a list of SR-ERO subobjects ordered by user.
+The draft redefines format of messages (PCUpd, PCRpt, PCInitiate) - along with common header, they can hold SPR, LSP and SR-ERO (containing only SR-ERO subobjects) objects.
+
+==== Creating LSP ====
+An LSP in PCEP can be created in one or two steps. Making an add-lsp operation will trigger a Pcinitiate message to PCC.
+
+*URL:* http://localhost:8181/restconf/operations/network-topology-pcep:add-lsp
+
+*Method:* POST
+
+*Content-Type:* application/xml
+
+*Body:*
+
+*PCE Active Stateful:*
+[source,xml]
+----
+<input xmlns="urn:opendaylight:params:xml:ns:yang:topology:pcep">
+ <node>pcc://43.43.43.43</node>
+ <name>update-tunel</name>
+ <arguments>
+  <lsp xmlns="urn:opendaylight:params:xml:ns:yang:pcep:ietf:stateful">
+   <delegate>true</delegate>
+   <administrative>true</administrative>
+  </lsp>
+  <endpoints-obj>
+   <ipv4>
+    <source-ipv4-address>43.43.43.43</source-ipv4-address>
+    <destination-ipv4-address>39.39.39.39</destination-ipv4-address>
+   </ipv4>
+  </endpoints-obj>
+  <ero>
+   <subobject>
+    <loose>false</loose>
+    <ip-prefix><ip-prefix>201.20.160.40/32</ip-prefix></ip-prefix>
+   </subobject>
+   <subobject>
+    <loose>false</loose>
+    <ip-prefix><ip-prefix>195.20.160.39/32</ip-prefix></ip-prefix>
+   </subobject>
+   <subobject>
+    <loose>false</loose>
+    <ip-prefix><ip-prefix>39.39.39.39/32</ip-prefix></ip-prefix>
+   </subobject>
+  </ero>
+ </arguments>
+ <network-topology-ref xmlns:topo="urn:TBD:params:xml:ns:yang:network-topology">/topo:network-topology/topo:topology[topo:topology-id="pcep-topology"]</network-topology-ref>
+</input>
+----
+
+*PCE Segment Routing:*
+[source,xml]
+----
+<input xmlns="urn:opendaylight:params:xml:ns:yang:topology:pcep">
+ <node>pcc://43.43.43.43</node>
+ <name>update-tunnel</name>
+ <arguments>
+  <lsp xmlns="urn:opendaylight:params:xml:ns:yang:pcep:ietf:stateful">
+   <delegate>true</delegate>
+   <administrative>true</administrative>
+  </lsp>
+  <endpoints-obj>
+   <ipv4>
+    <source-ipv4-address>43.43.43.43</source-ipv4-address>
+    <destination-ipv4-address>39.39.39.39</destination-ipv4-address>
+   </ipv4>
+  </endpoints-obj>
+  <path-setup-type xmlns="urn:opendaylight:params:xml:ns:yang:pcep:ietf:stateful">
+   <pst>1</pst>
+  </path-setup-type>
+  <ero>
+   <subobject>
+    <loose>false</loose>
+    <sid-type xmlns="urn:opendaylight:params:xml:ns:yang:pcep:segment:routing">ipv4-node-id</sid-type>
+    <m-flag xmlns="urn:opendaylight:params:xml:ns:yang:pcep:segment:routing">true</m-flag>
+    <sid xmlns="urn:opendaylight:params:xml:ns:yang:pcep:segment:routing">12</sid>
+    <ip-address xmlns="urn:opendaylight:params:xml:ns:yang:pcep:segment:routing">39.39.39.39</ip-address>
+   </subobject>
+  </ero>
+ </arguments>
+ <network-topology-ref xmlns:topo="urn:TBD:params:xml:ns:yang:network-topology">/topo:network-topology/topo:topology[topo:topology-id="pcep-topology"]</network-topology-ref>
+</input>
+----
+
+==== Updating LSP ====
+Making an update-lsp operation will trigger a Pcupd message to PCC. Updating can be used to change or add additional information to the LSP.
+
+You can only successfully update an LSP if you own the delegation. You automatically own the delegation, if you've created the LSP.
+You don't own it, if another PCE created this LSP. In this case PCC is only reporting this LSP for you, as read-only (you'll see <delegate>false</delegate>).
+However ODL won't restrict you from trying to modify the LSP, but you will be stopped by receiving a Pcerr message from PCC.
+
+To revoke delegation, don't forget to set <delegate> to true.
+
+*URL:* http://localhost:8181/restconf/operations/network-topology-pcep:update-lsp
+
+*Method:* POST
+
+*Content-Type:* application/xml
+
+*Body:*
+
+*PCE Active Stateful:*
+[source,xml]
+----
+<input xmlns="urn:opendaylight:params:xml:ns:yang:topology:pcep">
+ <node>pcc://43.43.43.43</node>
+ <name>update-tunel</name>
+ <arguments>
+  <lsp xmlns="urn:opendaylight:params:xml:ns:yang:pcep:ietf:stateful">
+   <delegate>true</delegate>
+   <administrative>true</administrative>
+  </lsp>
+  <ero>
+   <subobject>
+    <loose>false</loose>
+    <ip-prefix><ip-prefix>200.20.160.41/32</ip-prefix></ip-prefix>
+   </subobject>
+   <subobject>
+    <loose>false</loose>
+    <ip-prefix><ip-prefix>196.20.160.39/32</ip-prefix></ip-prefix>
+   </subobject>
+   <subobject>
+    <loose>false</loose>
+    <ip-prefix><ip-prefix>39.39.39.39/32</ip-prefix></ip-prefix>
+   </subobject>
+  </ero>
+ </arguments>
+ <network-topology-ref xmlns:topo="urn:TBD:params:xml:ns:yang:network-topology">/topo:network-topology/topo:topology[topo:topology-id="pcep-topology"]</network-topology-ref>
+</input>
+----
+
+*PCE Segment Routing:*
+[source,xml]
+----
+<input xmlns="urn:opendaylight:params:xml:ns:yang:topology:pcep">
+ <node>pcc://43.43.43.43</node>
+ <name>update-tunnel</name>
+ <arguments>
+  <lsp xmlns="urn:opendaylight:params:xml:ns:yang:pcep:ietf:stateful">
+   <delegate>true</delegate>
+   <administrative>true</administrative>
+  </lsp>
+  <path-setup-type xmlns="urn:opendaylight:params:xml:ns:yang:pcep:ietf:stateful">
+   <pst>1</pst>
+  </path-setup-type>
+  <ero>
+   <subobject>
+    <loose>false</loose>
+    <sid-type xmlns="urn:opendaylight:params:xml:ns:yang:pcep:segment:routing">ipv4-node-id</sid-type>
+    <m-flag xmlns="urn:opendaylight:params:xml:ns:yang:pcep:segment:routing">true</m-flag>
+    <sid xmlns="urn:opendaylight:params:xml:ns:yang:pcep:segment:routing">11</sid>
+    <ip-address xmlns="urn:opendaylight:params:xml:ns:yang:pcep:segment:routing">200.20.160.41</ip-address>
+   </subobject>
+   <subobject>
+    <loose>false</loose>
+    <sid-type xmlns="urn:opendaylight:params:xml:ns:yang:pcep:segment:routing">ipv4-node-id</sid-type>
+    <m-flag xmlns="urn:opendaylight:params:xml:ns:yang:pcep:segment:routing">true</m-flag>
+    <sid xmlns="urn:opendaylight:params:xml:ns:yang:pcep:segment:routing">12</sid>
+    <ip-address xmlns="urn:opendaylight:params:xml:ns:yang:pcep:segment:routing">39.39.39.39</ip-address>
+   </subobject>
+  </ero>
+ </arguments>
+ <network-topology-ref xmlns:topo="urn:TBD:params:xml:ns:yang:network-topology">/topo:network-topology/topo:topology[topo:topology-id="pcep-topology"]</network-topology-ref>
+</input>
+----
+
+==== Removing LSP ====
+Removing LSP from PCC is done via following RESTCONF URL. Making a remove-lsp operation will trigger a Pcinitiate message to PCC, with remove-flag in SRP set to true.
+
+You can only successfully remove an LSP if you own the delegation. You automatically own the delegation, if you've created the LSP.
+You don't own it, if another PCE created this LSP. In this case PCC is only reporting this LSP for you, as read-only (you'll see <delegate>false</delegate>).
+However ODL won't restrict you from trying to remove the LSP, but you will be stopped by receiving a Pcerr message from PCC.
+
+To revoke delegation, don't forget to set <delegate> to true.
+
+*URL:* http://localhost:8181/restconf/operations/network-topology-pcep:remove-lsp
+
+*Method:* POST
+
+*Content-Type:* application/xml
+
+*Body:*
+[source,xml]
+----
+<input xmlns="urn:opendaylight:params:xml:ns:yang:topology:pcep">
+ <node>pcc://43.43.43.43</node>
+ <name>update-tunel</name>
+ <network-topology-ref xmlns:topo="urn:TBD:params:xml:ns:yang:network-topology">/topo:network-topology/topo:topology[topo:topology-id="pcep-topology"]</network-topology-ref>
+</input>
+----
+
+==== PCE Trigger Initial Synchronization ====
+Making an trigger-sync operation will trigger a Pcupd message to PCC with PLSP-ID = 0 and SYNC = 1 in order to trigger the LSP-DB synchronization process.
+
+*URL:* http://localhost:8181/restconf/operations/network-topology-pcep:trigger-sync
+
+*Method:* POST
+
+*Content-Type:* application/xml
+
+*Body:*
+[source,xml]
+----
+<input xmlns="urn:opendaylight:params:xml:ns:yang:topology:pcep">
+ <node>pcc://43.43.43.43</node>
+ <network-topology-ref xmlns:topo="urn:TBD:params:xml:ns:yang:network-topology">/topo:network-topology/topo:topology[topo:topology-id="pcep-topology"]</network-topology-ref>
+</input>
+----
+
+==== PCE-triggered Re-synchronization ====
+Making an trigger-resync operation will trigger a PCUpd message to PCC. The PCE can choose to re-synchronize its entire LSP database or a single LSP.
+
+*URL:* http://localhost:8181/restconf/operations/network-topology-pcep:trigger-sync
+
+*Method:* POST
+
+*Content-Type:* application/xml
+
+*Body:*
+[source,xml]
+----
+<input xmlns="urn:opendaylight:params:xml:ns:yang:topology:pcep">
+ <node>pcc://43.43.43.43</node>
+ <name>re-sync-lsp</name>
+ <network-topology-ref xmlns:topo="urn:TBD:params:xml:ns:yang:network-topology">/topo:network-topology/topo:topology[topo:topology-id="pcep-topology"]</network-topology-ref>
+</input>
+----
+
+==== PCE-triggered LSP database Re-synchronization ====
+
+PCE-triggered LSP database Re-synchronization works same as in PCE Trigger Initial Synchronization.
