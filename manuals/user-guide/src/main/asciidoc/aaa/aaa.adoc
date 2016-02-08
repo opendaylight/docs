@@ -1,305 +1,509 @@
-== Authentication and Authorization Services
+== Authentication, Authorization and Accounting (AAA) Services
 
-=== Authentication Service
-Authentication uses the credentials presented by a user to identify the user.
+The Beryllium AAA services are based on the Apache Shiro Java Security Framework.  The main configuration file for AAA is located at “etc/shiro.ini”.
 
-NOTE: The Authentication user store provided in the Lithium release does not fully support a clustered node deployment. Specifically, the AAA user store provided by the H2 database needs to be synchronized using out of band means. The AAA Token cache is however cluster-capable.
-
-==== Authentication data model
-A user requests authentication within a domain in which the user has defined roles.
-The user chooses either of the following ways to request authentication:
-
-* Provides credentials
-* Creates a token scoped to a domain. In OpenDaylight, a domain is a grouping of resources (direct or indirect, physical, logical, or virtual) for the purpose of access control.
-
-===== Terms and definitions in the model
+=== Terms And Definitions
 Token:: A claim of access to a group of resources on the controller
-Domain:: A group of resources, direct or indirect, physical, logical, or virtual, for the purpose of access control
+Domain:: A group of resources, direct or indirect, physical, logical, or virtual, for the purpose of access control.  ODL recommends using the default “sdn" domain in the Beryllium release.
 User:: A person who either owns or has  access to a resource or group of resources on the controller
 Role:: Opaque representation of a set of permissions, which is merely a unique string as admin or guest
 Credential:: Proof of identity such as username and password, OTP, biometrics, or others
 Client:: A service or application that requires access to the controller
 Claim:: A data set of validated assertions regarding a user, e.g. the role, domain, name, etc.
 
-===== Authentication methods
-There are three ways a user may authenticate in OpenDaylight: +
+=== How to enable AAA
+AAA is enabled through the odl-aaa-shiro feature.
 
-* Basic HTTP Authentication
-** Regular, non-token based, authentication with username/password.
-* Token-based Authentication
-** Direct authentication:  A user presents username/password and a domain the user wishes to access to the controller and obtains a timed (default is 1 hour) scoped access token.  The user then uses this token to access RESTCONF (for example).
-** Federated authentication:  A user presents credentials to a third-party Identity Provider (for example, SSSD) trusted by the controller.  Upon successful authentication, the controller returns a refresh (unscoped) token with a list of domains that the user has access to.  The user then presents this refresh token scoped to a domain that the user has access to obtain a scoped access token.  The user then uses this access token to access RESTCONF (for example).
+=== How to disable AAA
+Edit the “etc/shiro.ini” file and replace the following:
+[source, bash]
+---
+/** = authcBasic
+---
+with
+[source, bash]
+---
+/** = anon
+---
+Then restart the controller.
+
+Note:  This is a change from the Lithium release, in which “etc/org.opendaylight.aaa.authn.cfg” was edited to set “authEnabled=false”.  Please use the “shiro.ini” mechanism to disable AAA going forward.
 
 
-====== Example with token authentication using curl:
+=== How application developers can leverage AAA to provide servlet security
+In order to provide security to a servlet, add the following to the servlet’s web.xml file as the first filter definition:
+[source, xml]
+---
+<context-param>
+  <param-name>shiroEnvironmentClass</param-name>
+  <param-value>org.opendaylight.aaa.shiro.web.env.KarafIniWebEnvironment</param-value>
+</context-param>
 
-(username/password = admin/admin, domain = sdn)
+<listener>
+    <listener-class>org.apache.shiro.web.env.EnvironmentLoaderListener</listener-class>
+</listener>
 
-[source,bash] 
-----
-# Create a token
-curl -ik -d 'grant_type=password&username=admin&password=admin&scope=sdn' http://localhost:8181/oauth2/token
+<filter>
+    <filter-name>ShiroFilter</filter-name>
+    <filter-class>org.opendaylight.aaa.shiro.filters.AAAFilter</filter-class>
+</filter>
 
-# Use the token (e.g.,  ed3e5e05-b5e7-3865-9f63-eb8ed5c87fb9) obtained from above (default token validity is 1 hour):
-curl -ik -H 'Authorization:Bearer ed3e5e05-b5e7-3865-9f63-eb8ed5c87fb9' http://localhost:8181/restconf/config/toaster:toaster
-----
+<filter-mapping>
+    <filter-name>ShiroFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+</filter-mapping>
+---
 
-====== Example with basic HTTP auth using curl: +
+Note:  It is very important to place this AAAFilter as the first javax.servlet.Filter, as Jersey applies Filters in order.  This ensures incoming HTTP/HTTPS requests have proper credentials.
 
-[source,bash] 
----- 
-curl -ik -u 'admin:admin' http://localhost:8181/restconf/config/toaster:toaster
-----
+=== AAA Realms
+The Beryllium AAA plugin utilizes realms to support pluggable authentication & authorization schemes.  There are two basic main types of realms:
+* AuthenticatingRealm
+** Provides no Authorization capability.
+** Users authenticated through this type of realm are treated equally.
+* AuthorizingRealm
+** AuthorizingRealm is a more sophisticated AuthenticatingRealm, which provides the additional mechanisms to distinguish users based on roles.
+** Useful for applications in which different users have different abilities.
 
-==== How the OpenDaylight Authentication Service works
-In direct authentication, a service relationship exists between the user and the OpenDaylight controller. The user and the controller establish trust that allows them to use, and validate credentials.
-The user establishes user identity through credentials.
+ODL Contains Three Realm Implementations
+* TokenAuthRealm
+** An AuthorizingRealm built to bridge the Beryllium Shiro-based AAA service with the Lithium h2-based AAA implementation.
+** Exposes a RESTful web service to manipulate IdM policy on a per-node basis.  If identical AAA policy is desired across a cluster, the backing data store must be synchronized using an out of band method.
+** A python script located at “etc/idmtool” is included to help manipulate data contained in the TokenAuthRealm.
+** Enabled out of the box.
+* ODLJndiLdapRealm
+** An AuthorizingRealm built to extract identity information from IdM data contained on an LDAP server.
+** Extracts group information from LDAP, which is translated into ODL roles.
+** Useful when federating against an existing LDAP server, in which only certain types of users should have certain access privileges.
+** Disabled out of the box.
+* ODLJndiLdapRealmAuthNOnly
+** The same as ODLJndiLdapRealm, except without role extraction.  Thus, all LDAP users have equal authentication and authorization rights.
+** Disabled out of the box.
 
-In direct authentication, a user request progresses through the following steps:
+Note:  More than one Realm implementation can be specified.  Realms are round-robbined until authentication succeeds or all realm sources are exhausted.
 
-. The user requests the controller administrator for a  user account.  
-+
-:: Associated with the user account are user credentials, initially created by the administrator.  OpenDaylight supports only username/password credentials. By default, an administrator account is present in OpenDaylight out-of-the-box with the default username and password being admin/admin.  
-In addition to creating the user account, the controller administrator also assigns roles to that account on one or more domain.  By default, there are two user roles; admin, and user, and there is only one domain; sdn.
-+
-. The user presents credentials in a token request to the token service within a domain.  
-. The request is then passed on to the controller token endpoint.
-. The controller token endpoint uses the credential authentication entity which returns a claim for the client. 
-. The controller token entity transforms the claim (user, domain, and roles) into a token which it then provides to the user.
+==== TokenAuthRealm Configuration
+TokenAuthRealm stores IdM data in an h2 database on each node.  Thus, configuration of a cluster currently requires configuring the desired IdM policy on each node.  There are two supported methods to manipulate the TokenAuthRealm IdM configuration:
+* idmtool Configuration
+* RESTful Web Service Configuration
 
-In federated authentication, with the absence of a direct trust relationship between the user and the service, a third-party Identity Provider (IdP) is used for authentication. Federated authentication relies on third-party identity providers (IdP) to authenticate the user.
+===== idmtool Configuration
+A utility script located at “etc/idmtool” is used to manipulate the TokenAuthRealm IdM policy.  idmtool assumes a single domain (sdn), since multiple domains are not leveraged in the Beryllium release.  General usage information for idmtool is derived through issuing the following command:
+[source, bash]
+---
+$ python etc/idmtool -h
+usage: idmtool [-h] [--target-host TARGET_HOST]
+               user
+               {list-users,add-user,change-password,delete-user,list-domains,list-roles,add-role,delete-role,add-grant,get-grants,delete-grant}
+               ...
 
-The user is authenticated by the trusted IdP and a claim is returned to the OpenDaylight authentication service.  The claim is transformed into an OpenDaylight claim and successively into a token that is passed on to the user. 
+positional arguments:
+  user                  username for BSC node
+  {list-users,add-user,change-password,delete-user,list-domains,list-roles,add-role,delete-role,add-grant,get-grants,delete-grant}
+                        sub-command help
+    list-users          list all users
+    add-user            add a user
+    change-password     change a password
+    delete-user         delete a user
+    list-domains        list all domains
+    list-roles          list all roles
+    add-role            add a role
+    delete-role         delete a role
+    add-grant           add a grant
+    get-grants          get grants for userid on sdn
+    delete-grant        delete a grant
 
-In a federated authentication set-up, the OpenDaylight controller AAA module provides SSSD claim support. SSSD can be used to map users in an external LDAP server to users defined on the OpenDaylight controller.
+optional arguments:
+  -h, --help            show this help message and exit
+  --target-host TARGET_HOST
+                        target host node
+---
+====== Add a user
+[source, bash]
+---
+python etc/idmtool admin add-user newUser
+Password: 
+Enter new password: 
+Re-enter password: 
+add_user(admin)
 
-==== Configuring Authentication service
-Changes to AAA configurations can be made as follows:
+command succeeded!
 
-For Authentication functionality via one of:
+json:
+{
+    "description": "", 
+    "domainid": "sdn", 
+    "email": "", 
+    "enabled": true, 
+    "name": "newUser", 
+    "password": "**********", 
+    "salt": "**********", 
+    "userid": "newUser@sdn"
+}
+---
+Note:  AAA redacts the password and salt fields for security purposes.
 
-* Webconsole
-* CLI (config command in the Karaf shell)
-* Editing the etc/org.opendaylight.aaa.*.cfg files directly
+====== Delete a user
+[source, bash]
+---
+$ python etc/idmtool admin delete-user newUser@sdn
+Password: 
+delete_user(newUser@sdn)
 
-For Token Cache Store settings via one of:
+command succeeded!
+---
+====== List all users
+[source, bash]
+---
+$ python etc/idmtool admin list-users
+Password: 
+list_users
 
-* Editing the 08-authn-config.xml configuration file in etc/opendaylight/karaf
-* Using RESTCONF
+command succeeded!
 
-NOTE: Configurations for AAA are all dynamic and require no restart.
-
-===== Configuring Authentication
-
-To configure features from the Web console: +
-
-. Install the Web console:
-+
-----
-feature:install webconsole
-----
-+
-. On the console (http://localhost:8181/system/console) (default Karaf username/password:  karaf/karaf), go to *OSGi* > *Configuration* > *OpenDaylight AAA Authentication Configuration*.
-.. *Authorized Clients*:  List of software clients that are authorized to access OpenDaylight northbound APIs.
-.. *Enable Authentication*:  Enable or disable authentication. (The default is enable.)
-
-===== Configuring the token store
-. Open in a text editor etc/opendaylight/karaf/08-authn-config.xml
-:: The fields you can configure are as follows:
-.. *timeToLive*: Configure the maximum time, in milliseconds, that tokens are to be cached. Default is 360000.
-. Save the file.
-
-NOTE: When token's are expired, they are lazily removed from the cache.
-
-===== Configuring AAA federation
-
-. On the console, click *OpenDaylight AAA Federation Configuration*.
-. Use the *Custom HTTP Headers* or *Custom HTTP Attributes* fields to specify the HTTP headers or attributes for federated authentication. Normally, additional specification beyond the default is not 
-required.
-
-NOTE: As the changes you make to the configurations are automatically committed when they are saved, no restart of the Authentication service is required.
-
-====== Configuring federated authentication
-Use the following steps to set up federated authentication: +
-
-. Set up an Apache front-end and Apache mods for the OpenDaylight controller.
-. Set up mapping rules (from LDAP users to OpenDaylight users).
-. Use the ClaimAuthFilter in federation to allow claim transformation.
-
-====== Mapping users to roles and domains
-The OpenDaylight authentication service transforms assertions from an external federated IdP into Authentication Service data: +
-
-. The Apache web server which fronts OpenDaylight AAA sends data to SssdAuthFilter.
-. SssdAuthFilter constructs a JSON document from the data.
-. OpenDaylight Authentication Service uses a general purpose transformation mapper to transform the JSON document.
-
-====== Operational model
-The mapping model works as follows: +
-
-. Assertions from an IdP are stored in an associative array.
-. A sequence of rules is applied, and the first rule which returns success is considered a match.
-. Upon success, an associative array of mapped values is returned.
-
-** The mapped values are taken from the local variables set during the rule execution.
-** The definition of the rules and mapped results are expressed in JSON notation.
-
-====== Operational Model: Sample code
-[source,java]
-----
-mapped = null
-foreach rule in rules {
-    result = null
-    initialize rule.variables with pre-defined values
-
-    foreach block in rule.statement_blocks {
-        for statement in block.statements {
-            if statement.verb is exit {
-                result = exit.status
-                break
-            }
-            elif statement.verb is continue {
-                break
-            }
+json:
+{
+    "users": [
+        {
+            "description": "user user", 
+            "domainid": "sdn", 
+            "email": "", 
+            "enabled": true, 
+            "name": "user", 
+            "password": "**********", 
+            "salt": "**********", 
+            "userid": "user@sdn"
+        }, 
+        {
+            "description": "admin user", 
+            "domainid": "sdn", 
+            "email": "", 
+            "enabled": true, 
+            "name": "admin", 
+            "password": "**********", 
+            "salt": "**********", 
+            "userid": "admin@sdn"
         }
-        if result {
-            break
-        }
-    if result == null {
-        result = success
-    }
-if result == success {
-    mapped = rule.mapping(rule.variables)
-}
-return mapped
-----
-
-====== Mapping Users
-A JSON Object acts as a mapping template to produce the final associative array of name/value pairs. The value in a name/value pair can be a constant or a variable.
-An example of a mapping template and rule variables in JSON: +
-Template: +
-[source,json]
-----
-{
-    "organization": "BigCorp.com",
-    "user: "$subject",
-    "roles": "$roles"
-}
-----
-Local variables: +
-[source,json]
-----
-{
-    "subject": "Sally",
-    "roles": ["user", "admin"]
-}
-----
-The final mapped result will be: +
-[source,json]
-----
-{
-    "organization": "BigCorp.com",
-    "user: "Sally",
-    "roles": ["user", "admin"]
-}
-----
-
-====== Example: Splitting a fully qualified username into user and realm components
-Some IdPs return a fully qualified username (for example, principal or subject). The fully qualified username is the concatenation of the user name, separator, and realm name.
-The following example shows the mapped result that returns the user and realm as independent values for the fully qualified username is bob@example.com .
-
-The mapping in JSON: +
-[source,json]
-----
-{
-    "user": "$username",
-    "realm": "$domain"
-}
-----
-The assertion in JSON: +
-[source,json]
-----
-{
-    "Principal": "bob@example.com"
-}
-----
-The rule applied: +
-[source,json]
-----
-[
-    [
-        ["in", "Principal", "assertion"],
-        ["exit", "rule_fails", "if_not_success"],
-        ["regexp", "$assertion[Principal]", (?P<username>\\w+)@(?P<domain>.+)"],
-        ["set", "$username", "$regexp_map[username]"],
-        ["set", "$domain", "$regexp_map[domain]"],
-        ["exit, "rule_succeeds", "always"]
     ]
-]
-----
-The mapped result in JSON: +
-[source,json]
-----
-{
-    "user": "bob",
-    "realm": "example.com"
 }
-----
-Also, users may be granted roles based on their membership in certain groups.
+---
+====== Change a user’s password
+[source, bash]
+---
+$ python etc/idmtool admin change-password admin@sdn
+Password: 
+Enter new password: 
+Re-enter password: 
+change_password(admin)
 
-The Authentication Service allows white lists for users with specific roles. The white lists ensure that users are unconditionally accepted and authorized with specific roles. Users who must be unconditionally denied access can be placed in a black list.
+command succeeded!
 
-=== Administering OpenDaylight Authentication Services
+json:
+{
+    "description": "admin user", 
+    "domainid": "sdn", 
+    "email": "", 
+    "enabled": true, 
+    "name": "admin", 
+    "password": "**********", 
+    "salt": "**********", 
+    "userid": "admin@sdn"
+}
+---
+====== Add a role
+[source, bash]
+---
+$ python etc/idmtool admin add-role network-admin
+Password: 
+add_role(network-admin)
 
-==== Actors in the System
-*OpenDaylight Controller administrator* +
-The OpenDaylight Controller administrator has the following responsibilities:
+command succeeded!
 
-* Author Authentication policies using the IdmLight Service API
-* Provides credentials, usernames and passwords to users who request them
+json:
+{
+    "description": "", 
+    "domainid": "sdn", 
+    "name": "network-admin", 
+    "roleid": "network-admin@sdn"
+}
+---
+====== Delete a role
+[source, bash]
+---
+$ python etc/idmtool admin delete-role network-admin@sdn
+Password: 
+delete_role(network-admin@sdn)
 
-*OpenDaylight resource owners* +
-Resource owners authenticate (either by means of federation or directly providing their own credentials to the controller) to obtain an access token.  This access token can then be used to access resources on the controller.
-An OpenDaylight resource owner enjoys the following privileges:
+command succeeded!
+---
+====== List all roles
+[source, bash]
+---
+$ python etc/idmtool admin list-roles
+Password: 
+list_roles
 
-* Creates, refreshes, or deletes access tokens
-* Gets access tokens from the Secure Token Service
-* Passes secure tokens to resource users
+command succeeded!
 
-*OpenDaylight resource users* +
-Resource users do not need to authenticate: they can access resources if they are given an access tokens by the resource owner.  The default timeout for access tokens is 1 hour (This duration is configurable.).
-An OpenDaylight resource user does the following:
+json:
+{
+    "roles": [
+        {
+            "description": "a role for admins", 
+            "domainid": "sdn", 
+            "name": "admin", 
+            "roleid": "admin@sdn"
+        }, 
+        {
+            "description": "a role for users", 
+            "domainid": "sdn", 
+            "name": "user", 
+            "roleid": "user@sdn"
+        }
+    ]
+}
+---
+====== List all domains
+[source, bash]
+---
+$ python etc/idmtool admin list-domains
+Password: 
+list_domains
 
-*	Gets access tokens either from a resource owner or the controller administrator
-*	Uses tokens at access applications from the north-bound APIs
+command succeeded!
 
-==== System Components
-IdmLight Identity manager:: Stores local user authentication and authorization data, provides an Admin REST API for CRUD operations.
-Pluggable authenticators:: Provides domain-specific authentication mechanisms
-Authenticator:: Authenticates users against and establishes claims
-Authentication Cache:: Caches all authentication states and tokens
-Authentication Filter:: Verifies tokens and extracts claims
-Authentication Manager:: Contains the session token and authentication claim store
+json:
+{
+    "domains": [
+        {
+            "description": "default odl sdn domain", 
+            "domainid": "sdn", 
+            "enabled": true, 
+            "name": "sdn"
+        }
+    ]
+}
+---
+====== Add a grant
+[source, bash]
+---
+$ python etc/idmtool admin add-grant user@sdn admin@sdn
+Password: 
+add_grant(userid=user@sdn,roleid=admin@sdn)
 
+command succeeded!
 
-===== IdmLight Identity manager
-The Light-weight Identity Manager (IdmLight) Stores local user authentication and authorization data, and roles and provides an Admin REST API for CRUD operations on the users/roles/domains database.
-The IdmLight REST API is by default accessed via the {controller baseURI:8181}/auth/v1/ API end point. 
-Access to the API is restricted to authenticated clients only, or those possessing a token:
+json:
+{
+    "domainid": "sdn", 
+    "grantid": "user@sdn@admin@sdn@sdn", 
+    "roleid": "admin@sdn", 
+    "userid": "user@sdn"
+}
+---
+====== Delete a grant
+[source, bash]
+---
+$ python etc/idmtool admin delete-grant user@sdn admin@sdn
+Password: 
+http://localhost:8181/auth/v1/domains/sdn/users/user@sdn/roles/admin@sdn
+delete_grant(userid=user@sdn,roleid=admin@sdn)
 
-Example: To retrieve the users list.
+command succeeded!
+---
+====== Get grants for a user
+[source, bash]
+---
+python etc/idmtool admin get-grants admin@sdn
+Password: 
+get_grants(admin@sdn)
 
-[source,bash] 
----- 
-curl http://admin:admin@localhost:8181/auth/v1/users
-----
+command succeeded!
 
+json:
+{
+    "roles": [
+        {
+            "description": "a role for users", 
+            "domainid": "sdn", 
+            "name": "user", 
+            "roleid": "user@sdn"
+        }, 
+        {
+            "description": "a role for admins", 
+            "domainid": "sdn", 
+            "name": "admin", 
+            "roleid": "admin@sdn"
+        }
+    ]
+}
+---
 
-The following document contains a detailed list of supported CRUD operations allowed by the API:
+===== RESTful Web Service
+The TokenAuthRealm IdM policy is fully configurable through a RESTful web service.  Full documentation for manipulating AAA IdM data is located online (https://wiki.opendaylight.org/images/0/00/AAA_Test_Plan.docx), and a few examples are included in this guide:
 
- https://wiki.opendaylight.org/images/a/ad/AAA_Idmlight_REST_APIs.xlsx
+====== Get All Users
+[source, bash]
+---
+curl http://localhost:8181/auth/v1/users
+OUTPUT:
+{
+    "users": [
+        {
+            "description": "user user", 
+            "domainid": "sdn", 
+            "email": "", 
+            "enabled": true, 
+            "name": "user", 
+            "password": "**********", 
+            "salt": "**********", 
+            "userid": "user@sdn"
+        }, 
+        {
+            "description": "admin user", 
+            "domainid": "sdn", 
+            "email": "", 
+            "enabled": true, 
+            "name": "admin", 
+            "password": "**********", 
+            "salt": "**********", 
+            "userid": "admin@sdn"
+        }
+    ]
+}
+---
+====== Create a User
+[source, bash]
+---
+curl -u admin:admin -X POST -H "Content-Type: application/json" --data-binary @./user.json http://localhost:8181/auth/v1/users
+PAYLOAD:
+{
+    "name": "ryan",
+    "userid": "ryan@sdn",
+    "password": "ryan",
+    "domainid": "sdn",
+    "description": "Ryan's User Account",
+    "email": "ryandgoulding@gmail.com"
+}
 
+OUTPUT:
+{
+    "userid":"ryan@sdn",
+    "name":"ryan",
+    "description":"Ryan's User Account",
+    "enabled":true,
+    "email":"ryandgoulding@gmail.com",
+    "password":"**********","salt":"**********",
+    "domainid":"sdn"
+}
+---
+====== Create an OAuth2 Token For Admin Scoped to SDN
+[source, bash]
+---
+curl -d 'grant_type=password&username=admin&password=a&scope=sdn' http://localhost:8181/oauth2/token
 
-=== OpenDaylight Authorization Service
-The authorization service currently included in OpenDaylight is of an experimental kind and only briefly documented here. 
-Authorization follows successful authentication and is modeled on the Role Based Access Control (RBAC) approach for defining permissions and decide access levels to API resources on the controller.
+OUTPUT:
+{
+    "expires_in":3600,
+    "token_type":"Bearer",
+    "access_token":"5a615fbc-bcad-3759-95f4-ad97e831c730"
+}
+---
+====== Use an OAuth2 Token
+[source, bash]
+---
+curl -H "Authorization: Bearer 5a615fbc-bcad-3759-95f4-ad97e831c730" http://localhost:8181/auth/v1/domains
+{
+    "domains":
+    [
+        {
+            "domainid":"sdn",
+            "name":"sdn”,
+            "description":"default odl sdn domain",
+            "enabled":true
+        }
+    ]
+}
+---
+==== ODLJndiLdapRealm Configuration
+Beryllium adds support for LDAP integration in order to externalize identity management.  To configure LDAP parameters, modify "etc/shiro.ini" parameters to include the ODLJndiLdapRealm:
 
+[source, bash]
+---
+# ODL provides a few LDAP implementations, which are disabled out of the box.
+# ODLJndiLdapRealm includes authorization functionality based on LDAP elements
+# extracted through and LDAP search.  This requires a bit of knowledge about
+# how your LDAP system is setup.  An example is provided below:
+ldapRealm = org.opendaylight.aaa.shiro.realm.ODLJndiLdapRealm
+ldapRealm.userDnTemplate = uid={0},ou=People,dc=DOMAIN,dc=TLD
+ldapRealm.contextFactory.url = ldap://<URL>:389
+ldapRealm.searchBase = dc=DOMAIN,dc=TLD
+ldapRealm.ldapAttributeForComparison = objectClass
+# ...
+# further down in the file...
+# Stacked realm configuration;  realms are round-robbined until authentication succeeds or realm sources are exhausted.
+securityManager.realms = $tokenAuthRealm, $ldapRealm
+---
+This configuration allows federation with an external LDAP server, and the user's ODL role parameters are equivalent to his or her LDAP attributes.  Thus, an LDAP operator can provision attributes for LDAP users that support different ODL role structures.
+
+==== ODLJndiLdapRealmAuthNOnly Configuration
+Edit the "etc/shiro.ini" file and modify the following:
+[source, bash]
+---
+ldapRealm = org.opendaylight.aaa.shiro.realm.ODLJndiLdapRealm
+ldapRealm.userDnTemplate = uid={0},ou=People,dc=DOMAIN,dc=TLD
+ldapRealm.contextFactory.url = ldap://<URL>:389
+# ...
+# further down in the file...
+# Stacked realm configuration;  realms are round-robbined until authentication succeeds or realm sources are exhausted.
+securityManager.realms = $tokenAuthRealm, $ldapRealm
+---
+This is useful for setups where all LDAP users are allowed equal access.
+
+==== Token Store Configuration Parameters
+Edit the file “etc/opendaylight/karaf/08-authn-config.xml” and edit the following:
+.*timeToLive*: Configure the maximum time, in milliseconds, that tokens are to be cached. Default is 360000.
+Save the file.
+
+=== Authorization Configuration
+==== Shiro-Based Authorization
+The Beryllium release of OpenDaylight adds support for Role Based Access Control based on the Apache Shiro permissions system.  Configuration of the authorization system is done offline;  authorization currently cannot be configured after the controller is started.  Thus, Authorization in the Beryllium release is aimed towards supporting coarse-grained security policies, with the aim to provide more robust configuration capabilities in the future.  Shiro-based Authorization is documented on the Apache Shiro website (http://shiro.apache.org/web.html#Web-%7B%7B%5Curls%5C%7D%7D).
+
+==== Enable “admin” Role Based Access to the IdMLight RESTful web service
+Edit the “etc/shiro.ini” configuration file and add “/auth/v1/** = authcBasic, roles[admin]” above the line “/** = authcBasic” within the “urls” section.
+[source, bash]
+---
+/auth/v1/** = authcBasic, roles[admin]
+/** = authcBasic
+---
+This will restrict the idmlight rest endpoints so that a grant for admin role must be present for the requesting user.
+Note:  The ordering of the authorization rules above is important!
+==== AuthZ Broker Facade
+ODL includes an experimental Authorization Broker Facade, which allows finer grained access control for REST endpoints.  Since this feature was not well tested in the Beryllium release, it is recommended to use the Shiro-based mechanism instead, and rely on the Authorization Broker Facade for POC use only.
+===== AuthZ Broker Facade Feature Installation
+To install the authorization broker facade, please issue the following command in the karaf shell:
+[source, bash]
+---
+feature:install odl-restconf odl-aaa-authz
+---
+===== Add an Authorization Rule
+The following shows how one might go about securing the controller so that only admins can access restconf.
+[source, bash]
+---
+curl -u admin:admin -H “Content-Type: application/xml” --data-binary @./rule.json http://localhost:8181/restconf/config/authorization-schema:simple-authorization/policies/RestConfService/
+cat ./rule.json
+{
+    "policies": {
+        "resource": "*",
+        "service":"RestConfService",
+        "role": "admin"
+    }
+}
+---
+=== Accounting Configuration
+All AAA logging is output to the standard karaf.log file.
+[source, bash]
+---
+log:set TRACE org.opendaylight.aaa
+---
+This command enables the most verbose level of logging for AAA components.
