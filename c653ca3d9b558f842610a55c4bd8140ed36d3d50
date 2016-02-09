@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_7569a7bd",
+        "filename": "manuals/user-guide/src/main/asciidoc/vpnservice/vpnservice-user.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 817
+      },
+      "writtenOn": "2016-02-09T18:05:26Z",
+      "side": 1,
+      "message": "use this json\n\"interface\": [\n            {\n                \"name\": \"s1-eth1-trunk\",\n                \"type\": \"iana-if-type:l2vlan\",\n                \"l2vlan-mode\":\"trunk\",\n                \"odl-interface:parent-interface\": \"s1-eth1\",\n                \"enabled\": \"true\"\n            }\n]",
+      "revId": "c653ca3d9b558f842610a55c4bd8140ed36d3d50",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
