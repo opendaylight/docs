@@ -32,7 +32,7 @@ In terms of RFCs, these are supported:
 
 For regular users it is recommended to use RESTCONF + the
 controller-config loopback mountpoint instead of using pure NETCONF.
-How to do that is spesific for each component/module/application
+How to do that is specific for each component/module/application
 in OpenDaylight and can be found in their dedicated user guides
 
 ==== NETCONF server for MD-SAL
@@ -60,10 +60,7 @@ There is also a (by default disabled) TCP endpoint. It is possible
 to start multiple endpoints at the same time either in the initial
 configuration file or while OpenDaylight is running.
 
-The credentials for SSH endpoint can also be configured here, the
-defaults are admin/admin. Credentials in the SSH endpoint are not yet
-managed by the centralized AAA component and have to be configured
-separately.
+Credentials are handled by AAA.
 
 ===== Verifying MD-SAL's NETCONF server
 After the NETCONF server is available it can be examined by e.g. a
