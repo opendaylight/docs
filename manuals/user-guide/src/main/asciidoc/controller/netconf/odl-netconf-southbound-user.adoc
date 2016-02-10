@@ -18,9 +18,10 @@ YANG model that is implemented by the device.*
 TIP: NETCONF southbound can be activated by installing
 +odl-netconf-connector-all+ Karaf feature.
 
-==== Netconf-connector configuration
-There are 2 ways for configuring netconf-connector (as is for any
-other module) NETCONF or RESTCONF. This guide focuses on using RESTCONF.
+==== Netconf-connector configuration with config subsystem
+There are 2 ways for configuring netconf-connector through config subsystem
+(as is for any other module) NETCONF or RESTCONF.
+This guide focuses on using RESTCONF.
 
 ===== Default configuration
 The default configuration contains all the necessary dependencies
@@ -242,6 +243,101 @@ predecessor is the type of that module (In our case the type is
 *sal-netconf-connector* and name *new-netconf-device*). The type and name
 are actually the keys of the module list.
 
+==== Netconf-connector configuration with md-sal
+It is also possible to configure new netconf connectors directly through md-sal
+with the usage of the network-topology model. You can configure new netconf
+connectors both through the netconf server for md-sal(port 2830) or RESTCONF.
+This guide focuses on RESTCONF.
+
+TIP: To enable netconf connector configuration through md-sal install either
+the +odl-netconf-topology+ or +odl-netconf-clustered-topology+ feature.
+We will explain the difference between these features later.
+
+===== Preconditions
+
+. OpenDaylight is running
+. In Karaf, you must have the +odl-netconf-topology+ or +odl-netconf-clustered-topology+
+feature installed.
+. Feature +odl-restconf+ must be installed
+. Wait until log displays following entry:
+----
+Successfully pushed configuration snapshot 02-netconf-topology.xml(odl-netconf-topology,odl-netconf-topology)
+----
+or until
+----
+GET http://localhost:8181/restconf/operational/network-topology:network-topology/topology/topology-netconf/
+----
+
+returns a non-empty response, for example:
+----
+<topology xmlns="urn:TBD:params:xml:ns:yang:network-topology">
+  <topology-id>topology-netconf</topology-id>
+</topology>
+----
+
+===== Spawning new netconf connectors
+To create a new netconf connector you need to send the following request to restconf:
+
+  PUT http://localhost:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/new-netconf-device
+
+Headers:
+
+  Accept: application/xml
+  Content-Type: application/xml
+
+Payload:
+----
+<node xmlns="urn:TBD:params:xml:ns:yang:network-topology">
+  <node-id>new-netconf-device</node-id>
+  <host xmlns="urn:opendaylight:netconf-node-topology">127.0.0.1</host>
+  <port xmlns="urn:opendaylight:netconf-node-topology">17830</port>
+  <username xmlns="urn:opendaylight:netconf-node-topology">admin</username>
+  <password xmlns="urn:opendaylight:netconf-node-topology">admin</password>
+  <tcp-only xmlns="urn:opendaylight:netconf-node-topology">false</tcp-only>
+  <!-- non-mandatory fields with default values, you can safely remove these if you do not wish to override any of these values-->
+  <reconnect-on-changed-schema xmlns="urn:opendaylight:netconf-node-topology">false</reconnect-on-changed-schema>
+  <connection-timeout-millis xmlns="urn:opendaylight:netconf-node-topology">20000</connection-timeout-millis>
+  <max-connection-attempts xmlns="urn:opendaylight:netconf-node-topology">0</max-connection-attempts>
+  <between-attempts-timeout-millis xmlns="urn:opendaylight:netconf-node-topology">2000</between-attempts-timeout-millis>
+  <sleep-factor xmlns="urn:opendaylight:netconf-node-topology">1.5</sleep-factor>
+  <!-- keepalive-delay set to 0 turns off keepalives-->
+  <keepalive-delay xmlns="urn:opendaylight:netconf-node-topology">120</keepalive-delay>
+</node>
+----
+
+Note that the device name in <node-id> element must match the last element of the restconf Url.
+
+===== Reconfiguring an existing connector
+The steps to reconfigure an existing connector are exactly the same as when spawning
+a new connector. The old connection will be disconnected and a new connector with
+the new configuration will be created.
+
+===== Deconfiguring an existing connector
+To remove an already configured netconf connector you need to send the following:
+
+  DELETE http://localhost:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/new-netconf-device
+
+==== Clustered netconf connector
+To spawn netconf connectors that are cluster-aware you need to install the
++odl-netconf-clustered-topology+ karaf feature.
+
+WARNING: The +odl-netconf-topology+ and +odl-netconf-clustered-topology+ features
+are considered *INCOMPATIBLE*. They both manage the same space in the datastore and
+would be doing conflicting writes if installed together.
+
+Configuration of clustered netconf connectors works the same as the configuration
+through the topology model in the previous section.
+
+When a new clustered connector is configured the configuration gets distributed among
+the member nodes and a netconf connector is spawned on each node. From these nodes
+a master is chosen which handles the schema download from the device and all the
+communication with the device. You will be able to read/write to/from the device
+from all slave nodes due to the proxy data brokers implemented.
+
+You can use the +odl-netconf-clustered-topology+ feature in a single node scenario
+aswell but the code that uses akka will be used, so for a scenario where only a
+single node is used, +odl-netconf-topology+ might be preferred.
+
 ==== Netconf-connector utilisation
 Once the connector is up and running, users can utilize the new Mount
 point instance. By using RESTCONF or from their application code. This
@@ -254,10 +350,10 @@ tutorial application *ncmount* that can be found in the coretutorials project:
 ===== Reading data from the device
 Just invoke (no body needed):
 
-GET http://localhost:8080/restconf/operational/network-topology:network-topology/topology/topology-netconf/node/new-netconf-device/yang-ext:mount/
+GET http://localhost:8181/restconf/operational/network-topology:network-topology/topology/topology-netconf/node/new-netconf-device/yang-ext:mount/
 
-This will return the entire content of operation datastore from the
-device. To view just the configuration datastore, change *operational* in
+This will return the entire content of the operational datastore from the
+device. To view only the configuration datastore, change *operational* in
 this URL to *config*.
 
 ===== Writing configuration data to the device
