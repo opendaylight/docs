@@ -2,7 +2,7 @@
 This section is for Application Developers and Network Administrators
 who are looking to integrate Group Based Policy with OpenStack. 
 
-To enable the *GBP* Neutron Mapper feature, at the karaf console:
+To enable the *GBP* Neutron Mapper feature, at the Karaf console:
 
  feature:install odl-groupbasedpolicy-neutronmapper
 
@@ -18,7 +18,7 @@ Base *GBP* feature set, such as policy resolution, data model etc.
 
  odl-groupbasedpolicy-ofoverlay
 
-For Lithium, *GBP* has one renderer, hence this is loaded by default.
+// For Lithium, *GBP* has one renderer, hence this is loaded by default.
 
 REST calls from OpenStack Neutron are by the Neutron NorthBound project.
 
@@ -138,7 +138,7 @@ Assuming the gateway provisioned in the Neutron Subnet command for the external 
 
 *Troubleshooting within GBP*
 
-Logging level for the mapping functionality can be set for package org.opendaylight.groupbasedpolicy.neutron.mapper. An example of enabling TRACE logging level on karaf console:
+Logging level for the mapping functionality can be set for package org.opendaylight.groupbasedpolicy.neutron.mapper. An example of enabling TRACE logging level on Karaf console:
 
  log:set TRACE org.opendaylight.groupbasedpolicy.neutron.mapper
 
