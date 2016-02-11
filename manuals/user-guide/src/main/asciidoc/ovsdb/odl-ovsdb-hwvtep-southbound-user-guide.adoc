@@ -1,0 +1,294 @@
+==== OVSDB Hardware VTEP SouthBound Plugin
+
+===== Overview
+
+Hwvtepsouthbound plugin is used to configure a hardware VTEP which
+implements hardware ovsdb schema. This page will show how to use
+RESTConf API of hwvtepsouthbound. There are two ways to connect to ODL:
+
+.user initiates connection, and
+.switch initiates connection.
+
+Both will be introduced respectively.
+
+===== User Initiates Connection
+
+====== Prerequisite
+
+Configure the hwvtep device/node to listen for the tcp connection in
+passive mode. In addition, management IP and tunnel source IP are also
+configured. After all this configuration is done, a physical switch is
+created automatically by the hwvtep node.
+
+====== Connect to a hwvtep device/node
+
+Send below Restconf request if you want to initiate the connection to a
+hwvtep node from the controller, where listening IP and port of hwvtep
+device/node are provided.
+
+REST API: POST
+http://odl:8181/restconf/config/network-topology:network-topology/topology/hwvtep:1/
+
+  {
+   "network-topology:node": [
+         {
+             "node-id": "hwvtep://192.168.1.115:6640",
+             "hwvtep:connection-info":
+             {
+                 "hwvtep:remote-port": 6640,
+                 "hwvtep:remote-ip": "192.168.1.115"
+             }
+         }
+     ]
+  }
+
+Please replace 'odl' in the URL with the IP address of your OpendayLight
+controller and change '192.168.1.115' to your hwvtep node IP.
+
+**NOTE**: The format of node-id is fixed. It will be one of the two:
+
+User initiates connection from ODL:
+
+ hwvtep://ip:port
+
+Switch initiates connection:
+
+ hwvtep://uuid/<uuid of switch>
+
+The reason for using UUID is that we can distinguish between multiple
+switches if they are behind a NAT.
+
+After this request is completed successfully, we can get the physical
+switch from the operational data store.
+
+REST API: GET
+http://odl:8181/restconf/operational/network-topology:network-topology/topology/hwvtep:1/node/hwvtep:%2F%2F192.168.1.115:6640
+
+There is no body in this request.
+
+The response of the request is:
+
+  {
+     "node": [
+           {
+             "node-id": "hwvtep://192.168.1.115:6640",
+             "hwvtep:switches": [
+               {
+                 "switch-ref": "/network-topology:network-topology/network-topology:topology[network-topology:topology-id='hwvtep:1']/network-topology:node[network-topology:node-id='hwvtep://192.168.1.115:6640/physicalswitch/br0']"
+               }
+             ],
+             "hwvtep:connection-info": {
+               "local-ip": "192.168.92.145",
+               "local-port": 47802,
+               "remote-port": 6640,
+               "remote-ip": "192.168.1.115"
+             }
+           },
+           {
+             "node-id": "hwvtep://192.168.1.115:6640/physicalswitch/br0",
+             "hwvtep:management-ips": [
+               {
+                 "management-ips-key": "192.168.1.115"
+               }
+             ],
+             "hwvtep:physical-switch-uuid": "37eb5abd-a6a3-4aba-9952-a4d301bdf371",
+             "hwvtep:managed-by": "/network-topology:network-topology/network-topology:topology[network-topology:topology-id='hwvtep:1']/network-topology:node[network-topology:node-id='hwvtep://192.168.1.115:6640']",
+             "hwvtep:hwvtep-node-description": "",
+             "hwvtep:tunnel-ips": [
+               {
+                 "tunnel-ips-key": "192.168.1.115"
+               }
+             ],
+             "hwvtep:hwvtep-node-name": "br0"
+           }
+         ]
+  }
+
+If there is a physical switch which has already been created by manual
+configuration, we can get the node-id of the physical switch from this
+response, which is presented in “swith-ref”. If the switch does not
+exist, we need to create the physical switch. Currently, most hwvtep
+devices do not support running multiple switches.
+
+====== Create a physical switch
+
+REST API: POST
+http://odl:8181/restconf/config/network-topology:network-topology/topology/hwvtep:1/
+
+request body:
+
+  {
+   "network-topology:node": [
+         {
+             "node-id": "hwvtep://192.168.1.115:6640/physicalswitch/br0",
+             "hwvtep-node-name": "ps0",
+             "hwvtep-node-description": "",
+             "management-ips": [
+               {
+                 "management-ips-key": "192.168.1.115"
+               }
+             ],
+             "tunnel-ips": [
+               {
+                 "tunnel-ips-key": "192.168.1.115"
+               }
+             ],
+             "managed-by": "/network-topology:network-topology/network-topology:topology[network-topology:topology-id='hwvtep:1']/network-topology:node[network-topology:node-id='hwvtep://192.168.1.115:6640']"
+         }
+     ]
+  }
+
+Note: "managed-by" must provided by user. We can get its value after the
+step 'Connect to a hwvtep device/node' since the node-id of hwvtep
+device is provided by user. "managed-by" is a reference typed of
+instance identifier. Though the instance identifier is a little
+complicated for RestConf, the primary user of hwvtepsouthbound plugin
+will be provider-type code such as NetVirt and the instance identifier
+is much easier to write code for.
+
+====== Create a logical switch
+
+Creating a logical switch is effectively creating a logical network. For
+VxLAN, it is a tunnel network with the same VNI.
+
+REST API: POST
+http://odl:8181/restconf/config/network-topology:network-topology/topology/hwvtep:1/node/hwvtep:%2F%2F192.168.1.115:6640
+
+request body:
+
+  {
+   "logical-switches": [
+         {
+             "hwvtep-node-name": "ls0",
+             "hwvtep-node-description": "",
+             "tunnel-key": "10000"
+          }
+     ]
+  }
+
+====== Create a physical locator
+
+After the VXLAN network is ready, we will add VTEPs to it. A VTEP is
+described by a physical locator.
+
+REST API: POST
+http://odl:8181/restconf/config/network-topology:network-topology/topology/hwvtep:1/node/hwvtep:%2F%2F192.168.1.115:6640
+
+request body:
+
+   {
+    "termination-point": [
+         {
+             "tp-id": "vxlan_over_ipv4:192.168.0.116",
+             "encapsulation-type": "encapsulation-type-vxlan-over-ipv4",
+             "dst-ip": "192.168.0.116"
+             }
+        ]
+   }
+
+The "tp-id" of locator is "\{encapsualation-type}: \{dst-ip}".
+
+Note: As far as we know, the OVSDB database does not allow the insertion
+of a new locator alone. So, no locator is inserted after this request is
+sent. We will trigger off the creation until other entity refer to it,
+such as remote-mcast-macs.
+
+====== Create a remote-mcast-macs entry
+
+After adding a physical locator to a logical switch, we need to create a
+remote-mcast-macs entry to handle unknown traffic.
+
+REST API: POST
+http://odl:8181/restconf/config/network-topology:network-topology/topology/hwvtep:1/node/hwvtep:%2F%2F192.168.1.115:6640
+
+request body:
+
+  {
+   "remote-mcast-macs": [
+         {
+             "mac-entry-key": "00:00:00:00:00:00",
+             "logical-switch-ref": "/network-topology:network-topology/network-topology:topology[network-topology:topology-id='hwvtep:1']/network-topology:node[network-topology:node-id='hwvtep://192.168.1.115:6640']/hwvtep:logical-switches[hwvtep:hwvtep-node-name='ls0']",
+             "locator-set": [
+                  {
+                        "locator-ref": "/network-topology:network-topology/network-topology:topology[network-topology:topology-id='hwvtep:1']/network-topology:node[network-topology:node-id='hwvtep://219.141.189.115:6640']/network-topology:termination-point[network-topology:tp-id='vxlan_over_ipv4:192.168.0.116']"
+                  }
+             ]
+         }
+     ]
+  }
+
+The physical locator 'vxlan_over_ipv4:192.168.0.116' is just created in
+"Create a physical locator". It should be noted that list "locator-set"
+is immutable, that is, we must provide a set of "locator-ref" as a
+whole.
+
+Note: "00:00:00:00:00:00" stands for "unknown-dst" since the type of
+mac-entry-key is yang:mac and does not accept "unknown-dst".
+
+====== Create a physical port
+
+Now we add a physical port into the physical switch
+"hwvtep://192.168.1.115:6640/physicalswitch/br0". The port is attached
+with a physical server or an L2 network and with the vlan 100.
+
+REST API: POST
+http://odl:8181/restconf/config/network-topology:network-topology/topology/hwvtep:1/node/hwvtep:%2F%2F192.168.1.115:6640%2Fphysicalswitch%2Fbr0
+
+  {
+   "network-topology:termination-point": [
+         {
+             "tp-id": "port0",
+             "hwvtep-node-name": "port0",
+             "hwvtep-node-description": "",
+             "vlan-bindings": [
+                 {
+                   "vlan-id-key": "100",
+                   "logical-switch-ref": "/network-topology:network-topology/network-topology:topology[network-topology:topology-id='hwvtep:1']/network-topology:node[network-topology:node-id='hwvtep://192.168.1.115:6640']/hwvtep:logical-switches[hwvtep:hwvtep-node-name='ls0']"
+                 }
+           ]
+         }
+     ]
+  }
+
+At this point, we have completed the basic configuration.
+
+Typically, hwvtep devices learn local MAC addresses automatically. But
+they also support getting MAC address entries from ODL.
+
+====== Create a local-mcast-macs entry
+
+It is similar to 'Create a remote-mcast-macs entry'.
+
+====== Create a remote-ucast-macs
+
+REST API: POST
+http://odl:8181/restconf/config/network-topology:network-topology/topology/hwvtep:1/node/hwvtep:%2F%2F192.168.1.115:6640
+
+  request body:
+
+  {
+   "remote-ucast-macs": [
+         {
+             "mac-entry-key": "11:11:11:11:11:11",
+             "logical-switch-ref": "/network-topology:network-topology/network-topology:topology[network-topology:topology-id='hwvtep:1']/network-topology:node[network-topology:node-id='hwvtep://192.168.1.115:6640']/hwvtep:logical-switches[hwvtep:hwvtep-node-name='ls0']",
+             "ipaddr": "1.1.1.1",
+             "locator-ref": "/network-topology:network-topology/network-topology:topology[network-topology:topology-id='hwvtep:1']/network-topology:node[network-topology:node-id='hwvtep://192.168.1.115:6640']/network-topology:termination-point[network-topology:tp-id='vxlan_over_ipv4:192.168.0.116']"
+         }
+     ]
+  }
+
+====== Create a local-ucast-macs entry
+
+This is similar to 'Create a remote-ucast-macs'.
+
+===== Switch Initiates Connection
+
+We do not need to connect to a hwvtep device/node when the switch
+initiates the connection. After switches connect to ODL successfully, we
+get the node-id's of switches by reading the operational data store.
+Once the node-id of a hwvtep device is received, the remaining steps are
+the same as when the user initiates the connection.
+
+===== References
+
+https://wiki.opendaylight.org/view/User_talk:Pzhang

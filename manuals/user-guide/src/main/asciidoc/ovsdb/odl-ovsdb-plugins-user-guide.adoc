@@ -1,0 +1,17 @@
+=== OVSDB Plugins
+
+==== Overview and Architecture
+
+There are currently two OVSDB Southbound plugins:
+
+* odl-ovsdb-southbound: Implements the OVSDB Open_vSwitch database schema.
+
+* odl-ovsdb-hwvtepsouthbound: Implements the OVSDB hardware_vtep database schema.
+
+These plugins are normally installed and used automatically by higher level applications such as
+odl-ovsdb-openstack; however, they can also be installed separately and used via their REST APIs
+as is described in the following sections.
+
+include::odl-ovsdb-southbound-user-guide.adoc[]
+
+include::odl-ovsdb-hwvtep-southbound-user-guide.adoc[]
