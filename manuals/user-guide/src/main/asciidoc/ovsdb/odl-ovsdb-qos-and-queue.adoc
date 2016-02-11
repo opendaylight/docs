@@ -1,0 +1,478 @@
+=== Overview of Qos and Queue
+The OVSDB plugin provides the capability of managing the Qos
+and Queue tables on an OVS host with Opendaylight configured
+as the OVSDB manager.
+
+==== Qos and Queue Tables in OVSDB
+The OVSDB includes a Qos and Queue table.  Unlike most of the other tables
+in the OVSDB, except the Open_vSwitch table, the Qos and Queue tables are
+"root set" tables, which means that entries, or rows, in these tables are
+not automatically deleted if they can not be reached directly or indirectly
+from the Open_vSwitch table.  This means that Qos entries can exist and be
+managed independently of whether or not they are referenced in a Port entry.
+Similarly, Queue entries can be managed independently of whether or not they are
+referenced by a Qos entry.
+
+
+==== Modelling of Qos and Queue Tables in Opendaylight MD-SAL
+
+Since the Qos and Queue tables are "root set" tables, they are modeled
+in the Opendaylight MD-SAl as lists which are part of the attributes
+of the OVSDB Node model.
+
+The MD-SAL Qos and Queue models have an additonal identifier attribute per
+entry (e.g. "qos-id" or "queue-id") which is not present
+in the OVSDB schema. This identifier is used by the MD-SAL as a key for referencing
+the entry.  If the entry is created originally from the
+configuration MD-SAL, then the value of the identifier is whatever is specified
+by the configuration.  If the entry is created on the OVSDB node and received
+by Opendaylight in an operational update, then the id will be created in 
+the following format.
+
+ "queue-id": "queue://<UUID>"
+ "qos-id": "qos://<UUID>"
+
+The UUID in the above identifiers is the actual UUID of the entry in the
+OVSDB database.
+
+When the Qos or Queue entry is created by the configuration MD-SAL, the
+identifier will be configured as part of the external-ids column of the
+entry.  This will ensure that the corresponding entry that is created
+in the operational MD-SAL uses the same identifier.
+
+ "queues-external-ids": [
+   {
+     "queues-external-id-key": "opendaylight-queue-id",
+     "queues-external-id-value": "QUEUE-1"
+   }
+ ]
+
+See more in the examples that follow in this section.
+
+The Qos schema in OVSDB currently defines two types of Qos entries.
+
+* linux-htb
+* linux-hfsc
+
+These Qos types are defined in the Qos model.  Additional types will
+need to be added to the model in order to be supported.  See the examples
+that folow for how the Qos type is specified in the model.
+
+Qos entries can be configured with addtional attritubes such as "max-rate".
+These are configured via the 'other-config' column of the Qos entry.  Refer
+to OVSDB schema (in the reference section below) for all of the relevant
+attributes that can be configured.  The examples in the rest of this section
+will demonstrate how the other-config column may be configured.
+
+Similarly, the Queue entries may be configured with additional attributes
+via the other-config column.
+
+=== Managing Qos and Queues via Configuration MD-SAL
+This section will show some examples on how to manage Qos and
+Queue entries via the configuration MD-SAL.  The examples will
+be illustrated by using RESTCONF.
+
+A pre-requisite for managing Qos and Queue entries is that the
+OVS host must be present in the configuration MD-SAL.
+
+For the following examples, the following OVS host is configured.
+
+HTTP POST:
+
+ http://{{CONTROLLER-IP}}:8181/restconf/config/network-topology:network-topology/topology/ovsdb:1/
+
+Body:
+
+ {
+   "node": [
+     {
+       "node-id": "ovsdb:HOST1",
+       "connection-info": {
+         "ovsdb:remote-ip": "{{HYPERVISOR-IP}}",
+         "ovsdb:remote-port": "{{HYPERVISOR-OVSDB-PORT}}"
+       }
+     }
+   ]
+ }
+
+Where
+
+ {{CONTROLLER-IP}}          is the IP address of the Opendaylight controller
+ {{HYPERVISOR_IP}}          is the IP address of the OVS host
+ {{HYPERVISOR-OVSDB-PORT}}  is the TCP port of the OVSDB server on the OVS host (e.g. 6640)
+
+This command creates an OVSDB node with the node-id "ovsdb:HOST1".  This OVSDB node will be used in the following
+examples.
+
+Qos and Queue entries can be created and managed without a port, but ultimately, Qos entries are
+associated with a port in order to use them.  For the following examples a test bridge and port will
+be created.
+
+Create the test bridge.
+
+HTTP PUT
+
+ http://{{CONTROLLER-IP}}:8181/restconf/config/network-topology:network-topology/topology/ovsdb:1/node/ovsdb:HOST1%2Fbridge%2Fbr-test
+
+Body:
+
+ {
+   "network-topology:node": [
+     {
+       "node-id": "ovsdb:HOST1/bridge/br-test",
+       "ovsdb:bridge-name": "br-test",
+       "ovsdb:managed-by": "/network-topology:network-topology/network-topology:topology[network-topology:topology-id='ovsdb:1']/network-topology:node[network-topology:node-id='ovsdb:HOST1']"
+     }
+   ]
+ }
+
+Create the test port (which is modeled as a termination point in the Opendaylight MD-SAL).
+
+HTTP PUT:
+
+ http://{{CONTROLLER-IP}}:8181/restconf/config/network-topology:network-topology/topology/ovsdb:1/node/ovsdb:HOST1%2Fbridge%2Fbr-test/termination-point/testport/
+
+Body:
+
+ {
+   "network-topology:termination-point": [
+     {
+       "ovsdb:name": "testport",
+       "tp-id": "testport"
+     }
+   ]
+ }
+
+If all of the previous steps were successful, a query of the operational MD-SAL should look something like the following results.  This indicates that the configuration commands have been successfully instantiated on the OVS host.
+
+HTTP GET:
+
+ http://{{CONTROLLER-IP}}:8181/restconf/operational/network-topology:network-topology/topology/ovsdb:1/node/ovsdb:HOST1%2Fbridge%2Fbr-test
+
+Result Body:
+
+ {
+   "node": [
+     {
+       "node-id": "ovsdb:HOST1/bridge/br-test",
+       "ovsdb:bridge-name": "br-test",
+       "ovsdb:datapath-type": "ovsdb:datapath-type-system",
+       "ovsdb:managed-by": "/network-topology:network-topology/network-topology:topology[network-topology:topology-id='ovsdb:1']/network-topology:node[network-topology:node-id='ovsdb:HOST1']",
+       "ovsdb:datapath-id": "00:00:8e:5d:22:3d:09:49",
+       "ovsdb:bridge-external-ids": [
+         {
+           "bridge-external-id-key": "opendaylight-iid",
+           "bridge-external-id-value": "/network-topology:network-topology/network-topology:topology[network-topology:topology-id='ovsdb:1']/network-topology:node[network-topology:node-id='ovsdb:HOST1/bridge/br-test']"
+         }
+       ],
+       "ovsdb:bridge-uuid": "3d225d8d-d060-4909-93ef-6f4db58ef7cc",
+       "termination-point": [
+         {
+           "tp-id": "br=-est",
+           "ovsdb:port-uuid": "f85f7aa7-4956-40e4-9c94-e6ca2d5cd254",
+           "ovsdb:ofport": 65534,
+           "ovsdb:interface-type": "ovsdb:interface-type-internal",
+           "ovsdb:interface-uuid": "29ff3692-6ed4-4ad7-a077-1edc277ecb1a",
+           "ovsdb:name": "br-test"
+         },
+         {
+           "tp-id": "testport",
+           "ovsdb:port-uuid": "aa79a8e2-147f-403a-9fa9-6ee5ec276f08",
+           "ovsdb:port-external-ids": [
+             {
+               "external-id-key": "opendaylight-iid",
+               "external-id-value": "/network-topology:network-topology/network-topology:topology[network-topology:topology-id='ovsdb:1']/network-topology:node[network-topology:node-id='ovsdb:HOST1/bridge/br-test']/network-topology:termination-point[network-topology:tp-id='testport']"
+             }
+           ],
+           "ovsdb:interface-uuid": "e96f282e-882c-41dd-a870-80e6b29136ac",
+           "ovsdb:name": "testport"
+         }
+       ]
+     }
+   ]
+ }
+
+==== Create Queue
+Create a new Queue in the configuration MD-SAL.
+
+HTTP PUT:
+
+ http://{{CONTROLLER-IP}}:8181/restconf/config/network-topology:network-topology/topology/ovsdb:1/node/ovsdb:HOST1/ovsdb:queues/QUEUE-1/
+
+Body:
+
+ {
+   "ovsdb:queues": [
+     {
+       "queue-id": "QUEUE-1",
+       "dscp": 25,
+       "queues-other-config": [
+         {
+           "queue-other-config-key": "max-rate",
+           "queue-other-config-value": "3600000"
+         }
+       ]
+     }
+   ]
+ }
+
+
+==== Query Queue
+Now query the operational MD-SAL for the Queue entry.
+
+HTTP GET:
+
+ http://{{CONTROLLER-IP}}:8181/restconf/operational/network-topology:network-topology/topology/ovsdb:1/node/ovsdb:HOST1/ovsdb:queues/QUEUE-1/
+
+Result Body:
+
+ {
+   "ovsdb:queues": [
+     {
+       "queue-id": "QUEUE-1",
+       "queues-other-config": [
+         {
+           "queue-other-config-key": "max-rate",
+           "queue-other-config-value": "3600000"
+         }
+       ],
+       "queues-external-ids": [
+         {
+           "queues-external-id-key": "opendaylight-queue-id",
+           "queues-external-id-value": "QUEUE-1"
+         }
+       ],
+       "queue-uuid": "83640357-3596-4877-9527-b472aa854d69",
+       "dscp": 25
+     }
+   ]
+ }
+ 
+==== Create Qos
+
+Create a Qos entry.  Note that the UUID of the Queue entry, obtained by querying the operational MD-SAL of the Queue entry, is
+specified in the queue-list of the Qos entry.  Queue entries may be added to the Qos entry at the creation of the Qos entry, or
+by a subsequent update to the Qos entry.
+
+HTTP PUT:
+
+ http://{{CONTROLLER-IP}}:8181/restconf/config/network-topology:network-topology/topology/ovsdb:1/node/ovsdb:HOST1/ovsdb:qos-entries/QOS-1/
+
+Body:
+
+ {
+   "ovsdb:qos-entries": [
+     {
+       "qos-id": "QOS-1",
+       "qos-type": "ovsdb:qos-type-linux-htb",
+       "qos-other-config": [
+         {
+           "other-config-key": "max-rate",
+           "other-config-value": "4400000"
+         }
+       ],
+       "queue-list": [
+         {
+           "queue-number": "0",
+           "queue-uuid": "83640357-3596-4877-9527-b472aa854d69"
+         }
+       ]
+     }
+   ]
+ }
+
+==== Query Qos
+
+Query the operational MD-SAL for the Qos entry.
+
+HTTP GET:
+
+ http://{{CONTROLLER-IP}}:8181/restconf/operational/network-topology:network-topology/topology/ovsdb:1/node/ovsdb:HOST1/ovsdb:qos-entries/QOS-1/
+
+Result Body:
+
+ {
+   "ovsdb:qos-entries": [
+     {
+       "qos-id": "QOS-1",
+       "qos-other-config": [
+         {
+           "other-config-key": "max-rate",
+           "other-config-value": "4400000"
+         }
+       ],
+       "queue-list": [
+         {
+           "queue-number": 0,
+           "queue-uuid": "83640357-3596-4877-9527-b472aa854d69"
+         }
+       ],
+       "qos-type": "ovsdb:qos-type-linux-htb",
+       "qos-external-ids": [
+         {
+           "qos-external-id-key": "opendaylight-qos-id",
+           "qos-external-id-value": "QOS-1"
+         }
+       ],
+       "qos-uuid": "90ba9c60-3aac-499d-9be7-555f19a6bb31"
+     }
+   ]
+ }
+
+==== Add Qos to a Port
+Update the termination point entry to include the UUID of the Qos entry, obtained by querying the operational MD-SAL, to associate a Qos entry with a port.
+
+HTTP PUT:
+
+ http://{{CONTROLLER-IP}}:8181/restconf/config/network-topology:network-topology/topology/ovsdb:1/node/ovsdb:HOST1%2Fbridge%2Fbr-test/termination-point/testport/
+
+Body:
+
+ {
+   "network-topology:termination-point": [
+     {
+       "ovsdb:name": "testport",
+       "tp-id": "testport",
+       "qos": "90ba9c60-3aac-499d-9be7-555f19a6bb31"
+     }
+   ]
+ }
+
+==== Query the Port
+Query the operational MD-SAL to see how the Qos entry appears in the termination point model.
+
+HTTP GET:
+
+ http://{{CONTROLLER-IP}}:8181/restconf/operational/network-topology:network-topology/topology/ovsdb:1/node/ovsdb:HOST1%2Fbridge%2Fbr-test/termination-point/testport/
+
+Result Body:
+
+ {
+   "termination-point": [
+     {
+       "tp-id": "testport",
+       "ovsdb:port-uuid": "aa79a8e2-147f-403a-9fa9-6ee5ec276f08",
+       "ovsdb:port-external-ids": [
+         {
+           "external-id-key": "opendaylight-iid",
+           "external-id-value": "/network-topology:network-topology/network-topology:topology[network-topology:topology-id='ovsdb:1']/network-topology:node[network-topology:node-id='ovsdb:HOST1/bridge/br-test']/network-topology:termination-point[network-topology:tp-id='testport']"
+         }
+       ],
+       "ovsdb:qos": "90ba9c60-3aac-499d-9be7-555f19a6bb31",
+       "ovsdb:interface-uuid": "e96f282e-882c-41dd-a870-80e6b29136ac",
+       "ovsdb:name": "testport"
+     }
+   ]
+ }
+
+
+==== Query the OVSDB Node
+Query the operational MD-SAL for the OVS host to see how the Qos and Queue entries appear as lists in the OVS Node model.
+
+HTTP GET:
+
+ http://{{CONTROLLER-IP}}:8181/restconf/operational/network-topology:network-topology/topology/ovsdb:1/node/ovsdb:HOST1/
+
+Result Body (edited to only show information relevant to the Qos and Queue entries) :
+
+ {
+   "node": [
+     {
+       "node-id": "ovsdb:HOST1",
+       <content edited out>
+       "ovsdb:queues": [
+         {
+           "queue-id": "QUEUE-1",
+           "queues-other-config": [
+             {
+               "queue-other-config-key": "max-rate",
+               "queue-other-config-value": "3600000"
+             }
+           ],
+           "queues-external-ids": [
+             {
+               "queues-external-id-key": "opendaylight-queue-id",
+               "queues-external-id-value": "QUEUE-1"
+             }
+           ],
+           "queue-uuid": "83640357-3596-4877-9527-b472aa854d69",
+           "dscp": 25
+         }
+       ],
+       "ovsdb:qos-entries": [
+         {
+           "qos-id": "QOS-1",
+           "qos-other-config": [
+             {
+               "other-config-key": "max-rate",
+               "other-config-value": "4400000"
+             }
+           ],
+           "queue-list": [
+             {
+               "queue-number": 0,
+               "queue-uuid": "83640357-3596-4877-9527-b472aa854d69"
+             }
+           ],
+           "qos-type": "ovsdb:qos-type-linux-htb",
+           "qos-external-ids": [
+             {
+               "qos-external-id-key": "opendaylight-qos-id",
+               "qos-external-id-value": "QOS-1"
+             }
+           ],
+           "qos-uuid": "90ba9c60-3aac-499d-9be7-555f19a6bb31"
+         }
+       ]
+       <content edited out>
+     }
+   ]
+ }
+
+
+==== Remove Qos from a Port
+This example removes a Qos entry from the termination point and associated port.  Note that this is a PUT command on the termination point with the
+Qos attribute absent.  Other attributes of the termination point should be included in the body of the command so that they are not inadvertantly removed.
+
+HTTP PUT:
+
+ http://{{CONTROLLER-IP}}:8181/restconf/config/network-topology:network-topology/topology/ovsdb:1/node/ovsdb:HOST1%2Fbridge%2Fbr-test/termination-point/testport/
+
+Body:
+
+ {
+   "network-topology:termination-point": [
+     {
+       "ovsdb:name": "testport",
+       "tp-id": "testport"
+     }
+   ]
+ }
+
+==== Remove a Queue from Qos
+
+This example removes the specific Queue entry from the queue list in the Qos entry.  The queue entry is specified by the queue number, which is "0" in this example.
+
+HTTP DELETE:
+
+ http://{{CONTROLLER-IP}}:8181/restconf/config/network-topology:network-topology/topology/ovsdb:1/node/ovsdb:HOST1/ovsdb:qos-entries/QOS-1/queue-list/0/
+
+==== Remove Queue
+Once all references to a specific queue entry have been removed from Qos entries, the Queue itself can be removed.
+
+HTTP DELETE:
+
+ http://{{CONTROLLER-IP}}:8181/restconf/config/network-topology:network-topology/topology/ovsdb:1/node/ovsdb:HOST1/ovsdb:queues/QUEUE-1/
+
+==== Remove Qos
+The Qos entry may be removed when it is no longer referenced by any ports.
+
+HTTP DELETE:
+
+ http://{{CONTROLLER-IP}}:8181/restconf/config/network-topology:network-topology/topology/ovsdb:1/node/ovsdb:HOST1/ovsdb:qos-entries/QOS-1/
+
+
+=== References
+http://openvswitch.org/ovs-vswitchd.conf.db.5.pdf[Openvswitch schema]
+
+https://github.com/opendaylight/ovsdb/blob/stable/beryllium/resources/commons/Qos-and-Queue-Collection.json.postman_collection[Qos and Queue Postman Collection]
