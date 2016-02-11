@@ -1,10 +1,159 @@
-== OVSDB Service Function Chaining Developer Guide
+=== OVSDB Service Function Chaining Developer Guide
 
-=== Overview
+==== Overview
+The OVSDB NetVirtSfc provides a classification and traffic steering component when integrated with OpenStack. Please refer to the Service Function Chaining project for the theory and programming of service chains.
 
-TBD
+==== Installing the NetVirt SFC Feature
+Install the odl-ovsdb-sfc feature. The feature will also ensure that the odl-ovsdb-openstack feature as well as the openflowplugin, neutron and sfc features are installed.
 
-=== OVSDB Hardware VTEP Architecture
+---
+feature:install odl-ovsdb-sfc-ui
+---
 
-TBD
+Verify the required features are installed:
 
+---
+opendaylight-user@root>feature:list -i | grep ovsdb
+
+odl-ovsdb-southbound-api             | 1.2.1-SNAPSHOT   | x         | odl-ovsdb-southbound-1.2.1-SNAPSHOT     | OpenDaylight :: southbound :: api
+odl-ovsdb-southbound-impl            | 1.2.1-SNAPSHOT   | x         | odl-ovsdb-southbound-1.2.1-SNAPSHOT     | OpenDaylight :: southbound :: impl
+odl-ovsdb-southbound-impl-rest       | 1.2.1-SNAPSHOT   | x         | odl-ovsdb-southbound-1.2.1-SNAPSHOT     | OpenDaylight :: southbound :: impl :: REST
+odl-ovsdb-southbound-impl-ui         | 1.2.1-SNAPSHOT   | x         | odl-ovsdb-southbound-1.2.1-SNAPSHOT     | OpenDaylight :: southbound :: impl :: UI
+odl-ovsdb-library                    | 1.2.1-SNAPSHOT   | x         | odl-ovsdb-library-1.2.1-SNAPSHOT        | OpenDaylight :: library
+odl-ovsdb-openstack                  | 1.2.1-SNAPSHOT   | x         | ovsdb-1.2.1-SNAPSHOT                    | OpenDaylight :: OVSDB :: OpenStack Network Virtual
+odl-ovsdb-sfc-api                    | 1.2.1-SNAPSHOT   | x         | odl-ovsdb-sfc-1.2.1-SNAPSHOT            | OpenDaylight :: ovsdb-sfc :: api
+odl-ovsdb-sfc                        | 1.2.1-SNAPSHOT   | x         | odl-ovsdb-sfc-1.2.1-SNAPSHOT            | OpenDaylight :: ovsdb-sfc
+odl-ovsdb-sfc-rest                   | 1.2.1-SNAPSHOT   | x         | odl-ovsdb-sfc-1.2.1-SNAPSHOT            | OpenDaylight :: ovsdb-sfc :: REST
+odl-ovsdb-sfc-ui                     | 1.2.1-SNAPSHOT   | x         | odl-ovsdb-sfc-1.2.1-SNAPSHOT            | OpenDaylight :: ovsdb-sfc :: UI
+
+opendaylight-user@root>feature:list -i | grep sfc
+odl-sfc-model                        | 0.2.0-SNAPSHOT   | x         | odl-sfc-0.2.0-SNAPSHOT                  | OpenDaylight :: sfc :: Model
+odl-sfc-provider                     | 0.2.0-SNAPSHOT   | x         | odl-sfc-0.2.0-SNAPSHOT                  | OpenDaylight :: sfc :: Provider
+odl-sfc-provider-rest                | 0.2.0-SNAPSHOT   | x         | odl-sfc-0.2.0-SNAPSHOT                  | OpenDaylight :: sfc :: Provider
+odl-sfc-ovs                          | 0.2.0-SNAPSHOT   | x         | odl-sfc-0.2.0-SNAPSHOT                  | OpenDaylight :: OpenvSwitch
+odl-sfcofl2                          | 0.2.0-SNAPSHOT   | x         | odl-sfc-0.2.0-SNAPSHOT                  | OpenDaylight :: sfcofl2
+odl-ovsdb-sfc-test                   | 1.2.1-SNAPSHOT   | x         | odl-ovsdb-sfc-test1.2.1-SNAPSHOT        | OpenDaylight :: ovsdb-sfc-test
+odl-ovsdb-sfc-api                    | 1.2.1-SNAPSHOT   | x         | odl-ovsdb-sfc-1.2.1-SNAPSHOT            | OpenDaylight :: ovsdb-sfc :: api
+odl-ovsdb-sfc                        | 1.2.1-SNAPSHOT   | x         | odl-ovsdb-sfc-1.2.1-SNAPSHOT            | OpenDaylight :: ovsdb-sfc
+odl-ovsdb-sfc-rest                   | 1.2.1-SNAPSHOT   | x         | odl-ovsdb-sfc-1.2.1-SNAPSHOT            | OpenDaylight :: ovsdb-sfc :: REST
+odl-ovsdb-sfc-ui                     | 1.2.1-SNAPSHOT   | x         | odl-ovsdb-sfc-1.2.1-SNAPSHOT            | OpenDaylight :: ovsdb-sfc :: UI
+
+opendaylight-user@root>feature:list -i | grep neutron
+odl-neutron-service                  | 0.6.0-SNAPSHOT   | x         | odl-neutron-0.6.0-SNAPSHOT              | OpenDaylight :: Neutron :: API
+odl-neutron-northbound-api           | 0.6.0-SNAPSHOT   | x         | odl-neutron-0.6.0-SNAPSHOT              | OpenDaylight :: Neutron :: Northbound
+odl-neutron-spi                      | 0.6.0-SNAPSHOT   | x         | odl-neutron-0.6.0-SNAPSHOT              | OpenDaylight :: Neutron :: API
+odl-neutron-transcriber              | 0.6.0-SNAPSHOT   | x         | odl-neutron-0.6.0-SNAPSHOT              | OpenDaylight :: Neutron :: Implementation
+---
+
+==== OVSDB NetVirt Service Function Chaining Example
+The architecture within OpenDaylight can be seen in the following figure:
+
+.OpenDaylight OVSDB NetVirt SFC Architecture
+image::ovsdb/ODL_SFC_Architecture.png[]
+
+Tacker is a Virtual Network Functions Manager that is responsible for orchestrating the Service Function Chaining. Tacker is responsible for generating templates for Virtual Network Functions for OpenStack to instantiate the Service Functions. Tacker also uses the RESTCONF interfaces of OpenDaylight to create the Service Function Chains.
+
+==== Classification
+OVSDB NetVirt SFC implements the classification for the chains. The classification steers traffic from the tenant overlay to the chain overlay and back to the tenant overlay.
+
+An Access Control List used by NetVirtSFC to create the classifier is shown below. This is an example of classifying HTTP traffic using the tcp port 80. In this example the user would have created a Service Function Chain with the name "http-sfc" as well as all the associated Service Functions and Service Function Forwarders for the chain.
+
+---
+http://localhost:8181/restconf/config/ietf-access-control-list:access-lists
+
+{
+    "access-lists": {
+        "acl": [
+            {
+                "acl-name": "http-acl",
+                "access-list-entries": {
+                    "ace": [
+                        {
+                            "rule-name": "http-rule",
+                            "matches": {
+                                "source-port-range": {
+                                    "lower-port": 0,
+                                    "upper-port": 0
+                                },
+                                "protocol": 6,
+                                "destination-port-range": {
+                                    "lower-port": 80,
+                                    "upper-port": 80
+                                }
+                            },
+                            "actions": {
+                                "netvirt-sfc-acl:sfc-name": "http-sfc"
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}
+---
+
+When the chain is rendered using the Rendered Service Path RPC, NetvirtSfc will add the classification flows. The classification flows are shown below. The list shown has been modified to remove the NetVirt tenant overlay flows. The classification flow is identified with the cookie: 0x1110010000040255. The 6th digit of the cookie identifies the flow type as the classifier. The last 8 digits identify the chain with the first four digits indicating the NSH NSP and the last four digits identifying the NSH NSI. In this case the chain is identified with an NSP of 4 and the NSI is 255 to indicate the beginning of the chain.
+
+---
+sudo ovs-ofctl --protocol=OpenFlow13 dump-flows br-int
+OFPST_FLOW reply (OF1.3) (xid=0x2):
+ cookie=0x0, duration=17.157s, table=0, n_packets=0, n_bytes=0, priority=6 actions=goto_table:1
+ cookie=0x14, duration=10.692s, table=0, n_packets=0, n_bytes=0, priority=400,udp,in_port=4,tp_dst=6633 actions=LOCAL
+ cookie=0x0, duration=17.134s, table=0, n_packets=0, n_bytes=0, dl_type=0x88cc actions=CONTROLLER:65535
+ cookie=0x14, duration=10.717s, table=0, n_packets=0, n_bytes=0, priority=350,nsp=4 actions=goto_table:152
+ cookie=0x14, duration=10.688s, table=0, n_packets=0, n_bytes=0, priority=400,udp,nw_dst=10.2.1.1,tp_dst=6633 actions=output:4
+ cookie=0x0, duration=17.157s, table=1, n_packets=0, n_bytes=0, priority=0 actions=goto_table:11
+ cookie=0x1110070000040254, duration=10.608s, table=1, n_packets=0, n_bytes=0, priority=40000,reg0=0x1,nsp=4,nsi=254,in_port=1 actions=goto_table:21
+ cookie=0x0, duration=17.157s, table=11, n_packets=0, n_bytes=0, priority=0 actions=goto_table:21
+ cookie=0x1110060000040254, duration=10.625s, table=11, n_packets=0, n_bytes=0, nsp=4,nsi=254,in_port=4 actions=load:0x1->NXM_NX_REG0[],move:NXM_NX_NSH_C2[]->NXM_NX_TUN_ID[0..31],resubmit(1,1)
+ cookie=0x1110010000040255, duration=10.615s, table=11, n_packets=0, n_bytes=0, tcp,reg0=0x1,tp_dst=80 actions=move:NXM_NX_TUN_ID[0..31]->NXM_NX_NSH_C2[],set_nshc1:0xc0a83246,set_nsp:0x4,set_nsi:255,load:0xa020101->NXM_NX_TUN_IPV4_DST[],load:0x4->NXM_NX_TUN_ID[0..31],resubmit(,0)
+ cookie=0x0, duration=17.157s, table=21, n_packets=0, n_bytes=0, priority=0 actions=goto_table:31
+ cookie=0x1110040000000000, duration=10.765s, table=21, n_packets=0, n_bytes=0, priority=1024,arp,in_port=LOCAL,arp_tpa=10.2.1.1,arp_op=1 actions=move:NXM_OF_ETH_SRC[]->NXM_OF_ETH_DST[],set_field:f6:00:00:0f:00:01->eth_src,load:0x2->NXM_OF_ARP_OP[],move:NXM_NX_ARP_SHA[]->NXM_NX_ARP_THA[],move:NXM_OF_ARP_SPA[]->NXM_OF_ARP_TPA[],load:0xf600000f0001->NXM_NX_ARP_SHA[],load:0xa020101->NXM_OF_ARP_SPA[],IN_PORT
+ cookie=0x0, duration=17.157s, table=31, n_packets=0, n_bytes=0, priority=0 actions=goto_table:41
+ cookie=0x0, duration=17.157s, table=41, n_packets=0, n_bytes=0, priority=0 actions=goto_table:51
+ cookie=0x0, duration=17.157s, table=51, n_packets=0, n_bytes=0, priority=0 actions=goto_table:61
+ cookie=0x0, duration=17.142s, table=61, n_packets=0, n_bytes=0, priority=0 actions=goto_table:71
+ cookie=0x0, duration=17.140s, table=71, n_packets=0, n_bytes=0, priority=0 actions=goto_table:81
+ cookie=0x0, duration=17.116s, table=81, n_packets=0, n_bytes=0, priority=0 actions=goto_table:91
+ cookie=0x0, duration=17.116s, table=91, n_packets=0, n_bytes=0, priority=0 actions=goto_table:101
+ cookie=0x0, duration=17.107s, table=101, n_packets=0, n_bytes=0, priority=0 actions=goto_table:111
+ cookie=0x0, duration=17.083s, table=111, n_packets=0, n_bytes=0, priority=0 actions=drop
+ cookie=0x14, duration=11.042s, table=150, n_packets=0, n_bytes=0, priority=5 actions=goto_table:151
+ cookie=0x14, duration=11.027s, table=151, n_packets=0, n_bytes=0, priority=5 actions=goto_table:152
+ cookie=0x14, duration=11.010s, table=152, n_packets=0, n_bytes=0, priority=5 actions=goto_table:158
+ cookie=0x14, duration=10.668s, table=152, n_packets=0, n_bytes=0, priority=650,nsp=4,nsi=255 actions=load:0xa020101->NXM_NX_TUN_IPV4_DST[],goto_table:158
+ cookie=0x14, duration=10.995s, table=158, n_packets=0, n_bytes=0, priority=5 actions=drop
+ cookie=0xba5eba11ba5eba11, duration=10.645s, table=158, n_packets=0, n_bytes=0, priority=751,nsp=4,nsi=255,in_port=4 actions=move:NXM_NX_NSH_C1[]->NXM_NX_NSH_C1[],move:NXM_NX_NSH_C2[]->NXM_NX_NSH_C2[],move:NXM_NX_TUN_ID[0..31]->NXM_NX_TUN_ID[0..31],IN_PORT
+ cookie=0xba5eba11ba5eba11, duration=10.590s, table=158, n_packets=0, n_bytes=0, priority=751,nsp=4,nsi=254,in_port=4 actions=move:NXM_NX_NSI[]->NXM_NX_NSI[],move:NXM_NX_NSP[]->NXM_NX_NSP[],move:NXM_NX_NSH_C1[]->NXM_NX_TUN_IPV4_DST[],move:NXM_NX_NSH_C2[]->NXM_NX_TUN_ID[0..31],IN_PORT
+ cookie=0xba5eba11ba5eba11, duration=10.640s, table=158, n_packets=0, n_bytes=0, priority=750,nsp=4,nsi=255 actions=move:NXM_NX_NSH_C1[]->NXM_NX_NSH_C1[],move:NXM_NX_NSH_C2[]->NXM_NX_NSH_C2[],move:NXM_NX_TUN_ID[0..31]->NXM_NX_TUN_ID[0..31],output:4
+ cookie=0xba5eba11ba5eba11, duration=10.571s, table=158, n_packets=0, n_bytes=0, priority=761,nsp=4,nsi=254,nshc1=3232248390,in_port=4 actions=move:NXM_NX_NSI[]->NXM_NX_NSI[],move:NXM_NX_NSP[]->NXM_NX_NSP[],move:NXM_NX_NSH_C1[]->NXM_NX_TUN_IPV4_DST[],move:NXM_NX_NSH_C2[]->NXM_NX_TUN_ID[0..31],set_nshc1:0,resubmit(,11)
+---
+
+==== Configuration
+Some configuration is required due to application coexistence for the OpenFlow programming. The SFC project programs flows for the SFC overlay and NetVirt programs flows for the tenant overlay. Coexistence is achieved by each application owning a unique set of tables and providing a simple handoff between the tables.
+
+First configure NetVirt to use table 1 as it's starting table:
+
+---
+http://localhost:8181/restconf/config/netvirt-providers-config:netvirt-providers-config
+
+{
+    "netvirt-providers-config": {
+        "table-offset": 1
+    }
+}
+---
+
+Next configure SFC to start at table 150 and configure the table handoff. The configuration starts SFC at table 150 and sets the handoff to table 11 which is the NetVirt SFC classification table.
+
+---
+http://localhost:8181/restconf/config/sfc-of-renderer:sfc-of-renderer-config
+
+{
+    "sfc-of-renderer-config": {
+        "sfc-of-app-egress-table-offset": 11,
+        "sfc-of-table-offset": 150
+    }
+}
+---

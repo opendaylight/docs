@@ -1,0 +1,193 @@
+[[ovsdb-library-developer-guide]]
+=== OVSDB Library Developer Guide
+
+[[overview]]
+==== Overview
+
+The OVSDB library manages the Netty connections to network nodes and
+handles bidirectional JSON-RPC messages. It not only provides OVSDB
+protocol functionality to OpenDaylight OVSDB plugin but also can be used
+as standalone JAVA library for OVSDB protocol.
+
+The main responsibilities of OVSDB library include:
+
+* Manage connections to peers
+* Marshal and unmarshal JSON Strings to JSON objects.
+* Marshal and unmarshal JSON Strings from and to the Network Element.
+
+[[connection-service]]
+==== Connection Service
+
+The OVSDB library provides connection management through the OvsdbConnection
+interface. The OvsdbConnection interface provides OVSDB connection
+management APIs which include both active and passive connections. From
+the library perspective, active OVSDB connections are initiated from the
+controller to OVS nodes while passive OVSDB connections are initiated
+from OVS nodes to the controller. In the active connection scenario
+an application needs to provide the IP address and listening port of OVS nodes
+to the library management API. On the other hand, the library management API
+only requires the info of the controller listening port in the passive
+connection scenario.
+
+For a passive connection scenario, the library also provides a connection
+event listener through the OvsdbConnectionListener interface. The listener
+interface has connected() and disconnected() methods to notify an
+application when a new passive connection is established or an existing
+connection is terminated.
+
+[[ssl-connection]]
+==== SSL Connection
+
+In addition to a regular TCP connection, the OvsdbConnection interface
+also provides a connection management API for an SSL connection. To start
+an OVSDB connection with SSL, an application will need to provide a Java
+SSLContext object to the management API. There are different ways
+to create a Java SSLContext, but in most cases a Java KeyStore with
+certificate and private key provided by the application is required.
+Detailed steps about how to create a Java SSLContext is out of the scope of
+this document and can be found in the Java documentation for
+http://goo.gl/5svszT[JAVA Class SSlContext].
+
+In the active connection scenario, the library uses the given SSLContext to
+create a Java SSLEngine and configures the SSL engine with the client mode for
+SSL handshaking. Normally clients are not required to authenticate
+themselves.
+
+In the passive connection scenario, the library uses the given SSLContext to
+create a Java SSLEngine which will operate in server mode for SSL
+handshaking. For security reasons, the SSLv3 protocol and some cipher suites
+are disabled. Currently the OVSDB server only supports the
+TLS_RSA_WITH_AES_128_CBC_SHA cipher suite and the following protocols:
+SSLv2Hello, TLSv1, TLSv1.1, TLSv1.2.
+
+The SSL engine is also configured to operate on two-way authentication
+mode for passive connection scenarios, i.e., the OVSDB server (controller)
+will authenticate clients (OVS nodes) and clients (OVS nodes) are also
+required to authenticate the server (controller). In the two-way
+authentication mode, an application should keep a trust manager to store
+the certificates of trusted clients and initialize a Java SSLContext with this
+trust manager. Thus during the SSL handshaking process the OVSDB server
+(controller) can use the trust manager to verify clients and only accept
+connection requests from trusted clients. On the other hand, users should
+also configure OVS nodes to authenticate the controller. Open vSwitch
+already supports this functionality in the ovsdb-server command with option
+`--ca-cert=cacert.pem` and `--bootstrap-ca-cert=cacert.pem`. On the OVS
+node, a user can use the option `--ca-cert=cacert.pem` to specify a controller
+certificate directly and the node will only allow connections to the
+controller with the specified certificate. If the OVS node runs ovsdb-server
+with option `--bootstrap-ca-cert=cacert.pem`, it will authenticate the
+controller with the specified certificate cacert.pem. If the certificate
+file doesn’t exist, it will attempt to obtain a certificate from the
+peer (controller) on its first SSL connection and save it to the named
+PEM file `cacert.pem`. Here is an example of ovsdb-server with
+`--bootstrap-ca-cert=cacert.pem` option:
+
+`ovsdb-server --pidfile --detach --log-file --remote punix:/var/run/openvswitch/db.sock --remote=db:hardware_vtep,Global,managers --private-key=/etc/openvswitch/ovsclient-privkey.pem -- certificate=/etc/openvswitch/ovsclient-cert.pem --bootstrap-ca-cert=/etc/openvswitch/vswitchd.cacert`
+
+[[ovsdb-protocol-transactions]]
+==== OVSDB protocol transactions
+
+The OVSDB protocol defines the RPC transaction methods in RFC 7047.
+The following RPC methods are supported in OVSDB protocol:
+
+* List databases
+* Get schema
+* Transact
+* Cancel
+* Monitor
+* Update notification
+* Monitor cancellation
+* Lock operations
+* Locked notification
+* Stolen notification
+* Echo
+
+According to RFC 7047, an OVSDB server must implement all methods, and
+an OVSDB client is only required to implement the "Echo" method and
+otherwise free to implement whichever methods suit its needs. However,
+the OVSDB library currently doesn’t support all RPC methods. For the "Echo"
+method, the library can handle "Echo" messages from a peer and send a JSON
+response message back, but the library doesn’t support actively sending an
+"Echo" JSON request to a peer. Other unsupported RPC methods are listed
+below:
+
+* Cancel
+* Lock operations
+* Locked notification
+* Stolen notification
+
+In the OVSDB library the RPC methods are defined in the Java interface OvsdbRPC.
+The library also provides a high-level interface OvsdbClient as the main
+interface to interact with peers through the OVSDB protocol. In the passive
+connection scenario, each connection will have a corresponding
+OvsdbClient object, and the application can obtain the OvsdbClient
+object through connection listener callback methods. In other words, if
+the application implements the OvsdbConnectionListener interface, it will
+get notifications of connection status changes with the corresponding
+OvsdbClient object of that connection.
+
+[[ovsdb-database-operations]]
+==== OVSDB database operations
+
+RFC 7047 also defines database operations, such as insert, delete, and
+update, to be performed as part of a "transact" RPC request. The OVSDB
+library defines the data operations in Operations.java and provides
+the TransactionBuilder class to help build "transact" RPC requests. To build
+a JSON-RPC transact request message, the application can obtain
+the TransactionBuilder object through a transactBuilder() method in
+the OvsdbClient interface.
+
+The TransactionBuilder class provides the following methods to help build
+transactions:
+
+* getOperations(): Get the list of operations in this transaction.
+* add(): Add data operation to this transaction.
+* build(): Return the list of operations in this transaction. This is the
+same as the getOperations() method.
+* execute(): Send the JSON RPC transaction to peer.
+* getDatabaseSchema(): Get the database schema of this transaction.
+
+If the application wants to build and send a "transact" RPC request to
+modify OVSDB tables on a peer, it can take the following steps:
+
+. Statically import parameter "op" in Operations.java
++
+`import static org.opendaylight.ovsdb.lib.operations.Operations.op;`
++
+. Obtain transaction builder through transacBuilder() method in
+OvsdbClient:
++
+`TransactionBuilder transactionBuilder = ovsdbClient.transactionBuilder(dbSchema);`
++
+. Add operations to transaction builder:
++
+`transactionBuilder.add(op.insert(schema, row));`
++
+. Send transaction to peer and get JSON RPC response:
++
+`operationResults = transactionBuilder.execute().get();`
++
+NOTE:
+Although the "select" operation is supported in the OVSDB library, the
+library implementation is a little different from RFC 7047. In RFC 7047,
+section 5.2.2 describes the "select" operation as follows:
++
+“The "rows" member of the result is an array of objects. Each object
+corresponds to a matching row, with each column specified in "columns"
+as a member, the column's name as the member name, and its value as the
+member value. If "columns" is not specified, all the table's columns are
+included (including the internally generated "_uuid" and "_version"
+columns).”
++
+The OVSDB library implementation always requires the column’s name in the
+"columns" field of a JSON message. If the "columns" field is not
+specified, none of the table’s columns are included. If the application
+wants to get the table entry with all columns, it needs to specify all
+the columns’ names in the "columns" field.
+
+[[reference-documentation]]
+==== Reference Documentation
+
+RFC 7047 The Open vSwitch Databse Management Protocol
+https://tools.ietf.org/html/rfc7047
+
