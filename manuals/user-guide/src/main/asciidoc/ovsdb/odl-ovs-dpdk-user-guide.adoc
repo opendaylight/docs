@@ -1,0 +1,162 @@
+==== Using OVS with DPDK hosts and OVSDB NetVirt
+
+The Data Plane Development Kit (http://dpdk.org/[DPDK]) is a userspace set
+of libraries and drivers designed for fast packet processing.  The userspace
+datapath variant of OVS can be built with DPDK enabled to provide the
+performance features of DPDK to Open vSwitch (OVS).  In the 2.4.0 version of OVS, the
+Open_vSwtich table schema was enhanced to include the lists 'datapath-types' and
+'interface-types'.  When the OVS with DPDK variant of OVS is running, the
+'inteface-types' list will include DPDK interface types such as 'dpdk' and 'dpdkvhostuser'.
+The OVSDB Southbound Plugin includes this information in the OVSDB YANG model
+in the MD-SAL, so when a specific OVS host is running OVS with DPDK, it is possible
+for NetVirt to detect that information by checking that DPDK interface types are
+included in the list of supported interface types.
+
+For example, query the operational MD-SAL for OVSDB nodes:
+
+HTTP GET:
+
+ http://{{CONTROLLER-IP}}:8181/restconf/operational/network-topology:network-topology/topology/ovsdb:1/
+
+Result Body:
+
+ {
+   "topology": [
+     {
+       "topology-id": "ovsdb:1",
+       "node": [
+         < content edited out >
+         {
+           "node-id": "ovsdb://uuid/f9b58b6d-04db-459a-b914-fff82b738aec",
+           < content edited out >
+           "ovsdb:interface-type-entry": [
+             {
+               "interface-type": "ovsdb:interface-type-ipsec-gre"
+             },
+             {
+               "interface-type": "ovsdb:interface-type-internal"
+             },
+             {
+               "interface-type": "ovsdb:interface-type-system"
+             },
+             {
+               "interface-type": "ovsdb:interface-type-patch"
+             },
+             {
+               "interface-type": "ovsdb:interface-type-dpdkvhostuser"
+             },
+             {
+               "interface-type": "ovsdb:interface-type-dpdk"
+             },
+             {
+               "interface-type": "ovsdb:interface-type-dpdkr"
+             },
+             {
+               "interface-type": "ovsdb:interface-type-vxlan"
+             },
+             {
+               "interface-type": "ovsdb:interface-type-lisp"
+             },
+             {
+               "interface-type": "ovsdb:interface-type-geneve"
+             },
+             {
+               "interface-type": "ovsdb:interface-type-gre"
+             },
+             {
+               "interface-type": "ovsdb:interface-type-tap"
+             },
+             {
+               "interface-type": "ovsdb:interface-type-stt"
+             }
+           ],
+           < content edited out >
+           "ovsdb:datapath-type-entry": [
+             {
+               "datapath-type": "ovsdb:datapath-type-netdev"
+             },
+             {
+               "datapath-type": "ovsdb:datapath-type-system"
+             }
+           ],
+           < content edited out >
+         },
+         < content edited out >
+       ]
+     }
+   ]
+ }
+
+This example illustrates the output of an OVS with DPDK host because
+the list of interface types includes types supported by DPDK.
+
+Bridges on OVS with DPDK hosts need to be created with the 'netdev' datapath type
+and DPDK specific ports need to be created with the appropriate interface type.
+The OpenDaylight OVSDB Southbound Plugin supports these attributes.
+
+The OpenDaylight NetVirt application checks whether the OVS host is using OVS with DPDK
+when creating the bridges that are expected to be present on the host, e.g. 'br-int'.
+
+Following are some tips for supporting hosts using OVS with DPDK when using NetVirt as the Neutron service
+provider and 'devstack' to deploy Openstack.
+
+In addition to the 'networking-odl' ML2 plugin, enable the 'networking-odl-dpdk' plugin in 'local.conf'.
+
+ For working with Openstack Liberty
+ enable_plugin networking-odl https://github.com/FedericoRessi/networking-odl integration/liberty
+ enable_plugin networking-ovs-dpdk https://github.com/openstack/networking-ovs-dpdk stable/liberty
+
+ For working with Openstack Mitaka (or later) branch
+ enable_plugin networking-odl https://github.com/openstack/networking-odl
+ enable_plugin networking-ovs-dpdk https://github.com/openstack/networking-ovs-dpdk
+
+The order of these plugin lines is important.  The 'networking-odl' plugin will install and
+setup 'openvswitch'.  The 'networking-ovs-dpdk' plugin will install OVS with DPDK.  Note, the 'networking-ovs-dpdk'
+plugin is only being used here to setup OVS with DPDK.  The 'networking-odl' plugin will be used as the Neutron ML2 driver.
+
+For VXLAN tenant network support, the NetVirt application interacts with OVS with DPDK host in the same way as OVS hosts
+using the kernel datapath by creating VXLAN ports on 'br-int' to communicate with other tunnel endpoints.  The IP address
+for the local tunnel endpoint may be configured in the 'local.conf' file.  For example:
+
+ ODL_LOCAL_IP=192.100.200.10
+
+NetVirt will use this information to configure the VXLAN port on 'br-int'.  On a host with the OVS kernel datapath, it
+is expected that there will be a networking interface configured with this IP address.  On an OVS with DPDK host, an OVS
+bridge is created and a DPDK port is added to the bridge.  The local tunnel endpoint address is then assigned to the
+bridge port of the bridge.  So, for example, if the physical network interface is associated with 'eth0' on the host,
+a bridge named 'br-eth0' could be created.  The DPDK port, such as 'dpdk0' (per the naming conventions of OVS with DPDK), is
+added to bridge 'br-eth0'.  The local tunnel endpoint address is assigned to the network interface 'br-eth0' which is
+attached to bridge 'br-eth0'.  All of this setup is not done by NetVirt.  The 'networking-ovs-dpdk' can be made to
+perform this setup by putting configuration like the following in 'local.conf'.
+
+ ODL_LOCAL_IP=192.168.200.9
+ ODL_PROVIDER_MAPPINGS=physnet1:eth0,physnet2:eht1
+ OVS_DPDK_PORT_MAPPINGS=eth0:br-eth0,eth1:br-ex
+ OVS_BRIDGE_MAPPINGS=physnet1:br-eth0,physnet2:br-ex
+
+The above settings associate the host networking interface 'eth0' with bridge 'br-eth0'.  The 'networking-ovs-dpdk' plugin
+will determine the DPDK port name associated with 'eth0' and add it to the bridge 'br-eth0'.  If using the NetVirt L3 support,
+these settings will enable setup of the 'br-ex' bridge and attach the DPDK port associated with network interface 'eth1' to it.
+
+The following settings are included in 'local.conf' to specify specific attributes associated with OVS with DPDK.  These are
+used by the 'networking-ovs-dpdk' plugin to configure OVS with DPDK.
+
+ OVS_DATAPATH_TYPE=netdev
+ OVS_NUM_HUGEPAGES=8192
+ OVS_DPDK_MEM_SEGMENTS=8192
+ OVS_HUGEPAGE_MOUNT_PAGESIZE=2M
+ OVS_DPDK_RTE_LIBRTE_VHOST=y
+ OVS_DPDK_MODE=compute
+
+Once the stack is up and running virtual machines may be deployed on OVS with DPDK hosts.  The 'networking-odl' plugin handles
+ensuring that 'dpdkvhostuser' interfaces are utilized by Nova instead of the default 'tap' interface.  The 'dpdkvhostuser' interface
+provides the best performance for VMs on OVS with DPDK hosts.
+
+A Nova flavor is created for VMs that may be deployed on OVS with DPDK hosts.
+
+ nova flavor-create largepage-flavor 1002 1024 4 1
+ nova flavor-key 1002 set "hw:mem_page_size=large"
+
+Then, just specify the flavor when creating a VM.
+
+ nova boot --flavor largepage-flavor --image cirros-0.3.4-x86_64-uec --nic net-id=<NET ID VALUE> vm-name
