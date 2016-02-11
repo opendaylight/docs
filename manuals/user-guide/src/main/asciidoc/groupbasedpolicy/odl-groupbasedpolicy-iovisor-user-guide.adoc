@@ -1,0 +1,14 @@
+==== Overview
+
+The IoVisor renderer feature enables container endpoints (Docker, LXC) to leverage GBP policies.
+
+The renderer interacts with a IoVisor module from the Linux Foundation Iovisor project
+
+===== Installing and Pre-requisites
+
+From the karaf console in OpenDaylight:
+
+ feature:install odl-groupbasedpolicy-iovisor odl-restconf
+
+
+Installation details, usage etc for the Iovisor GBP module can be found https://github.com/iovisor/iomodules[*IoVisor* github repo for IoModules]

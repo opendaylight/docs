@@ -1,0 +1,13 @@
+==== Overview
+
+The FaaS renderer feature enables leveraging the FaaS project as a GBP renderer.
+
+===== Installing and Pre-requisites
+
+From the karaf console in OpenDaylight:
+
+ feature:install odl-groupbasedpolicy-faas
+
+More information about FaaS can be found https://wiki.opendaylight.org/view/FaaS:GBPIntegration
+
+
