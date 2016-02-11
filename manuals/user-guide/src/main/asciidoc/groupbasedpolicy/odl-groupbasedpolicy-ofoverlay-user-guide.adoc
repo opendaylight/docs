@@ -2,7 +2,7 @@
 
 The OpenFlow Overlay (OfOverlay) feature enables the OpenFlow Overlay
 renderer, which creates a network virtualization solution across nodes
-that host OpenvSwitch software switches.  
+that host OpenvSwitch software switches.
 
 ===== Installing and Pre-requisites
 
@@ -16,9 +16,9 @@ When used in conjunction with the <<Neutron,Neutron Mapper feature>> no extra Of
 
 When this feature is loaded "standalone", the user is required to configure infrastructure, such as
 
-* instantiating OVS bridges, 
-* attaching hosts to the bridges, 
-* and creating the VXLAN/VXLAN-GPE tunnel ports on the bridges. 
+* instantiating OVS bridges,
+* attaching hosts to the bridges,
+* and creating the VXLAN/VXLAN-GPE tunnel ports on the bridges.
 
 [[offset]]
 In Lithium, the *GBP* OfOverlay renderer also supports a table offset option, to offset the pipeline post-table 0.
@@ -83,7 +83,7 @@ It also supplies utility functions to the flow pipeline process.
 
 *Switch Manager*
 
-The Switch Manager has been refactored in Lithium to be purely a state manager. 
+The Switch Manager has been refactored in Lithium to be purely a state manager.
 
 Switches are in one of 3 states:
 
@@ -137,7 +137,7 @@ Ingress from tunnel interface, go to Table _Source Mapper_:
 Ingress from outside, goto Table _Ingress NAT Mapper_:
 
  cookie=0x0, <snip> , priority=200,in_port=1 actions=goto_table:1
- 
+
 ARP from Endpoint, go to Table _Source Mapper_:
 
  cookie=0x0, <snip> , priority=121,arp,in_port=5,dl_src=fa:16:3e:d5:b9:8d,arp_spa=10.1.1.3 actions=goto_table:2
@@ -149,12 +149,12 @@ IPv4 from Endpoint, go to Table _Source Mapper_:
 DHCP DORA from Endpoint, go to Table _Source Mapper_:
 
  cookie=0x0, <snip> , priority=115,ip,in_port=5,dl_src=fa:16:3e:d5:b9:8d,nw_dst=255.255.255.255 actions=goto_table:2
- 
+
 Series of DROP tables with priority set to capture any non-specific traffic that should have matched above:
 
  cookie=0x0, <snip> , priority=112,ipv6 actions=drop
  cookie=0x0, <snip> , priority=111, ip actions=drop
- cookie=0x0, <snip> , priority=110,arp actions=drop 
+ cookie=0x0, <snip> , priority=110,arp actions=drop
 
 "L2" catch all traffic not identified above:
 
@@ -220,7 +220,7 @@ ARP for default gateway for the 10.1.1.0/24 subnet:
 Broadcast traffic destined for GroupTable:
 
  cookie=0x0, <snip> , priority=140,reg5=0x5,dl_dst=01:00:00:00:00:00/01:00:00:00:00:00 actions=load:0x5->NXM_NX_TUN_ID[0..31],group:5
- 
+
 Layer3 destination matching flows, where priority=100+masklength. Since *GBP* now support L3Prefix endpoint, we can set default routes etc:
 
  cookie=0x0, <snip>, priority=132,ip,reg6=0x7,dl_dst=fa:16:3e:b4:b4:b1,nw_dst=10.1.1.3 actions=load:0xc->NXM_NX_REG2[],load:0x1->NXM_NX_REG3[],load:0x5->NXM_NX_REG7[],set_field:fa:16:3e:b4:b4:b1->eth_dst,dec_ttl,goto_table:4
@@ -278,15 +278,15 @@ POST http://{{controllerIp}}:8181/restconf/operations/endpoint:register-endpoint
         "endpoint-group": "<epg0>",
         "endpoint-groups" : ["<epg1>","<epg2>"],
         "network-containment" : "<fowarding-model-context1>",
-        "l2-context": "<bridge-domain1>", 
-        "mac-address": "<mac1>", 
+        "l2-context": "<bridge-domain1>",
+        "mac-address": "<mac1>",
         "l3-address": [
             {
-                "ip-address": "<ipaddress1>", 
+                "ip-address": "<ipaddress1>",
                 "l3-context": "<l3_context1>"
             }
-        ], 
-        "*ofoverlay:port-name*": "<ovs port name>", 
+        ],
+        "*ofoverlay:port-name*": "<ovs port name>",
         "tenant": "<tenant1>"
     }
 }
@@ -303,7 +303,7 @@ PUT http://{{controllerIp}}:8181/restconf/config/opendaylight-inventory:nodes/
     "opendaylight-inventory:nodes": {
         "node": [
             {
-                "id": "openflow:123456", 
+                "id": "openflow:123456",
                 "ofoverlay:tunnel": [
                     {
                         "tunnel-type": "overlay:tunnel-type-vxlan",
@@ -312,9 +312,9 @@ PUT http://{{controllerIp}}:8181/restconf/config/opendaylight-inventory:nodes/
                         "node-connector-id": "openflow:123456:1"
                     }
                 ]
-            }, 
+            },
             {
-                "id": "openflow:654321", 
+                "id": "openflow:654321",
                 "ofoverlay:tunnel": [
                     {
                         "tunnel-type": "overlay:tunnel-type-vxlan",
@@ -511,6 +511,6 @@ PUT http://{{controllerIp}}:8181/restconf/config/opendaylight-inventory:nodes/
 
 ==== Tutorials[[Demo]]
 
-Comprehensive tutorials, along with a demonstration environment leveraging Vagrant 
+Comprehensive tutorials, along with a demonstration environment leveraging Vagrant
 can be found on the https://wiki.opendaylight.org/view/Group_Based_Policy_(GBP)[*GBP* wiki]
 

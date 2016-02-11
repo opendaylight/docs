@@ -31,7 +31,7 @@ By thinking of *Intent Systems* in this way, it enables:
 +
 By focusing on *Model. Process. Automation*, a consistent policy resolution process enables for mapping between the *expressed intent* and renderers responsible for providing the capabilities of implementing that intent.
 
-* recursive/intent level-independent behaviour. 
+* recursive/intent level-independent behaviour.
 +
 Where _one person's concrete is another's abstract_, intent can be fulfilled through a hierarchical implementation of non-domain specific policy resolution. Domain specifics are provided by the _renderers_, and exposed via the API, at each policy resolution instance.
 For example:
@@ -46,7 +46,7 @@ The premise is that by implementing a full *Intent System*, the user is freed fr
 
 It is important to show the overall philosophy of *GBP* as it sets the project's direction.
 
-In the Lithium release of OpenDaylight, *GBP* focused on *expressed intent* and *capabilities*. 
+In the Beryllium release of OpenDaylight, *GBP* focused on *expressed intent*, *refactoring of how renderers consume and publish Subject Feature Definitions for multi-renderer support*.
 
 === GBP Base Architecture and Value Proposition
 ==== Terminology
@@ -63,29 +63,29 @@ image::groupbasedpolicy/GBPTerminology2.png[align="center",width=500]
 .GBP Forwarding Model Terminology - L3 Context, L2 Bridge Context, L2 Flood Context/Domain, Subnet
 image::groupbasedpolicy/GBPTerminology3.png[align="center",width=500]
 
-* Endpoints: 
+* Endpoints:
 +
-Define concrete uniquely identifiable entities. In Lithium, examples could be a Docker container, or a Neutron port
-* EndpointGroups: 
+Define concrete uniquely identifiable entities. In Beryllium, examples could be a Docker container, or a Neutron port
+* EndpointGroups:
 +
 EndpointGroups are sets of endpoints that share a common set of policies. EndpointGroups can participate in contracts that determine the kinds of communication that are allowed. EndpointGroups _consume_ and _provide_ contracts.
 They also expose both _requirements and capabilities_, which are labels that help to determine how contracts will be applied. An EndpointGroup can specify a parent EndpointGroup from which it inherits.
 
-* Contracts: 
+* Contracts:
 +
-Contracts determine which endpoints can communicate and in what way. Contracts between pairs of EndpointGroups are selected by the contract selectors defined by the EndpointGroup. 
-Contracts expose qualities, which are labels that can help EndpointGroups to select contracts. Once the contract is selected, 
-contracts have clauses that can match against requirements and capabilities exposed by EndpointGroups, as well as any conditions 
+Contracts determine which endpoints can communicate and in what way. Contracts between pairs of EndpointGroups are selected by the contract selectors defined by the EndpointGroup.
+Contracts expose qualities, which are labels that can help EndpointGroups to select contracts. Once the contract is selected,
+contracts have clauses that can match against requirements and capabilities exposed by EndpointGroups, as well as any conditions
 that may be set on endpoints, in order to activate subjects that can allow specific kinds of communication. A contract is allowed to specify a parent contract from which it inherits.
 
 * Subject
 +
-Subjects describe some aspect of how two endpoints are allowed to communicate. Subjects define an ordered list of rules that will match against the traffic and perform any necessary actions on that traffic. 
+Subjects describe some aspect of how two endpoints are allowed to communicate. Subjects define an ordered list of rules that will match against the traffic and perform any necessary actions on that traffic.
 No communication is allowed unless a subject allows that communication.
 
 * Clause
 +
-Clauses are defined as part of a contract. Clauses determine how a contract should be applied to particular endpoints and EndpointGroups. Clauses can match against requirements and capabilities exposed by EndpointGroups, 
+Clauses are defined as part of a contract. Clauses determine how a contract should be applied to particular endpoints and EndpointGroups. Clauses can match against requirements and capabilities exposed by EndpointGroups,
 as well as any conditions that may be set on endpoints. Matching clauses define some set of subjects which can be applied to the communication between the pairs of endpoints.
 
 ==== Architecture and Value Proposition
@@ -100,7 +100,7 @@ There are two models in *GBP*:
 .GBP Access (or Core) Model
 image::groupbasedpolicy/GBP_AccessModel_simple.png[align="center",width=500]
 
-The _classifier_ and _action_ portions of the model can be thought of as hooks, with their definition provided by each _renderer_ about its domain specific capabilities. In *GBP* Lithium, there is one renderer, 
+The _classifier_ and _action_ portions of the model can be thought of as hooks, with their definition provided by each _renderer_ about its domain specific capabilities. In *GBP* Beryllium, there is one renderer,
 the _<<OfOverlay,OpenFlow Overlay renderer (OfOverlay).>>_
 
 These hooks are filled with _definitions_ of the types of _features_ the renderer can provide the _subject_, and are called *subject-feature-definitions*.
@@ -150,32 +150,32 @@ The _direction_ keyword is always from the perspective of the _provider_ of the 
 .GBP Endpoints and the Forwarding Model
 image::groupbasedpolicy/GBP_Endpoint_EPG_Forwarding.png[align="center",width=300]
 
-When the forwarding model is considered in the figure above, it can be seen that even though all endpoints are communicating using a common set of contracts, 
+When the forwarding model is considered in the figure above, it can be seen that even though all endpoints are communicating using a common set of contracts,
 their forwarding is _contained_ by the forwarding model contexts or namespaces.
-In the example shown, the endpoints associated with a _network-containment_ that has an ultimate parent of _L3Context:Sales_ can only communicate with other endpoints within this L3Context. 
+In the example shown, the endpoints associated with a _network-containment_ that has an ultimate parent of _L3Context:Sales_ can only communicate with other endpoints within this L3Context.
 In this way L3VPN services can be implemented without any impact to the *Intent* of the contract.
 
 ===== High-level implementation Architecture
 
 The overall architecture, including _<<Neutron,Neutron>>_ domain specific mapping, and the <<OfOverlay,OpenFlow Overlay renderer>> looks as so:
 
-.GBP High Level Lithium Architecture
-image::groupbasedpolicy/GBP_High-levelLithiumArchitecture.png[align="center",width=300]
+.GBP High Level Beryllium Architecture
+image::groupbasedpolicy/GBP_High-levelBerylliumArchitecture.png[align="center",width=300]
 
-The major benefit of this architecture is that the mapping of the domain-specific-language is completely separate and independent of the underlying renderer implementation. 
+The major benefit of this architecture is that the mapping of the domain-specific-language is completely separate and independent of the underlying renderer implementation.
 
-For instance, using the <<Neutron,Neutron Mapper>>, which maps the Neutron API to the *GBP* core model, any contract automatically generated from this mapping can be augmented via the <<UX,UX>> 
+For instance, using the <<Neutron,Neutron Mapper>>, which maps the Neutron API to the *GBP* core model, any contract automatically generated from this mapping can be augmented via the <<UX,UX>>
 to use <<SFC,Service Function Chaining>>, a capability not currently available in OpenStack Neutron.
 
 When another renderer is added, for instance, NetConf, the same policy can now be leveraged across NetConf devices simultaneously:
 
-.GBP High Level Lithium Architecture - adding a renderer
+.GBP High Level Beryllium Architecture - adding a renderer
 image::groupbasedpolicy/GBP_High-levelExtraRenderer.png[align="center",width=300]
 
 As other domain-specific mappings occur, they too can leverage the same renderers, as the renderers only need to implement the *GBP* access and forwarding models, and the domain-specific mapping need only manage mapping to the access and forwarding models. For instance:
 
-.GBP High Level Lithium Architecture - adding a renderer
-image::groupbasedpolicy/High-levelLithiumArchitectureEvolution2.png[align="center",width=300]
+.GBP High Level Beryllium Architecture - adding a renderer
+image::groupbasedpolicy/High-levelBerylliumArchitectureEvolution2.png[align="center",width=300]
 
 In summary, the *GBP* architecture:
 
@@ -189,10 +189,10 @@ In summary, the *GBP* architecture:
 
 The first step in policy resolution is to select the contracts that are in scope.
 
-EndpointGroups participate in contracts either as a _provider_ or as a _consumer_ of a contract. Each EndpointGroup can participate in many contracts at the same time, but for each contract it can be in only one role at a time.  
+EndpointGroups participate in contracts either as a _provider_ or as a _consumer_ of a contract. Each EndpointGroup can participate in many contracts at the same time, but for each contract it can be in only one role at a time.
 In addition, there are two ways for an EndpointGroup to select a contract: either with either a:
 
-* _named selector_ 
+* _named selector_
 +
 Named selectors simply select a specific contract by its contract ID.
 * target selector.
@@ -201,7 +201,7 @@ Target selectors allow for additional flexibility by matching against _qualities
 
 Thus, there are a total of 4 kinds of contract selector:
 
-* provider named selector 
+* provider named selector
 +
 Select a contract by contract ID, and participate as a provider.
 
@@ -217,7 +217,7 @@ Select a contract by contract ID, and participate as a consumer.
 +
 Match against a contract's target with a quality matcher, and participate as a consumer.
 
-To determine which contracts are in scope, contracts are found where either the source EndpointGroup selects a contract as either a provider or consumer, 
+To determine which contracts are in scope, contracts are found where either the source EndpointGroup selects a contract as either a provider or consumer,
 while the destination EndpointGroup matches against the same contract in the corresponding role.  So if endpoint _x_ in EndpointGroup _X_ is communicating with endpoint _y_
 in EndpointGroup _Y_, a contract _C_ is in scope if either _X_ selects _C_ as a provider and _Y_ selects _C_ as a consumer, or vice versa.
 
@@ -232,6 +232,8 @@ The end result of the contract selection phase can be thought of as a set of tup
 * The consumer EndpointGroup ID
 * The name of the selector in the consumer EndpointGroup that was used to select the contract, called the _matching consumer selector._
 
+The result is then stored in the datastore under *Resolved Policy*.
+
 ===== Subject Selection
 
 The second phase in policy resolution is to determine which subjects are in scope.
@@ -243,14 +245,14 @@ EndpointGroups have capabilities and requirements, while endpoints have conditio
 
 ===== Requirements and Capabilities
 
-When acting as a _provider_, EndpointGroups expose _capabilities,_ which are labels representing specific pieces of functionality that can be exposed to other 
+When acting as a _provider_, EndpointGroups expose _capabilities,_ which are labels representing specific pieces of functionality that can be exposed to other
 EndpointGroups that may meet functional requirements of those EndpointGroups.
 
 When acting as a _consumer_, EndpointGroups expose _requirements_, which are labels that represent that the EndpointGroup requires some specific piece of functionality.
 
 As an example, we might create a capability called "user-database" which indicates that an EndpointGroup contains endpoints that implement a database of users.
 
-We might create a requirement also called "user-database" to indicate an EndpointGroup contains endpoints that will need to communicate with the endpoints that expose this service.  
+We might create a requirement also called "user-database" to indicate an EndpointGroup contains endpoints that will need to communicate with the endpoints that expose this service.
 
 Note that in this example the requirement and capability have the same name, but the user need not follow this convention.
 
@@ -266,12 +268,12 @@ Endpoints can have _conditions_, which are labels representing some relevant pie
 
 An example of a condition might be "malware-detected," or "authentication-succeeded."  Conditions are used to affect how that particular endpoint can communicate.
 
-To continue with our example, the "malware-detected" condition might cause an endpoint's connectivity to be cut off, while "authentication-succeeded" might open up communication with services 
+To continue with our example, the "malware-detected" condition might cause an endpoint's connectivity to be cut off, while "authentication-succeeded" might open up communication with services
 that require an endpoint to be first authenticated and then forward its authentication credentials.
 
 ===== Clauses
 
-Clauses perform the actual selection of subjects.  
+Clauses perform the actual selection of subjects.
 A clause has lists of matchers in two categories. In order for a clause to become active, all lists of matchers must match.
 A matching clause will select all the subjects referenced by the clause.
 Note that an empty list of matchers counts as a match.
@@ -292,7 +294,7 @@ Matches against conditions on endpoints in the consumer EndpointGroup
 
 * Consumer Endpoint Identification Constraint
 +
-Label based criteria for matching against endpoints. In Lithium this can be used to label endpoints based on IpPrefix.
+Label based criteria for matching against endpoints. In Beryllium this can be used to label endpoints based on IpPrefix.
 
 The second category is the provider matchers, which match against the provider EndpointGroup and endpoints.  The provider matchers are:
 
@@ -310,22 +312,22 @@ Matches against conditions on endpoints in the provider EndpointGroup
 
 * Consumer Endpoint Identification Constraint
 +
-Label based criteria for matching against endpoints. In Lithium this can be used to label endpoints based on IpPrefix.
+Label based criteria for matching against endpoints. In Beryllium this can be used to label endpoints based on IpPrefix.
 
 Clauses have a list of subjects that apply when all the matchers in the clause match.  The output of the subject selection phase logically is a set of subjects that are in scope for any particular pair of endpoints.
 
 ===== Rule Application
 
-Now subjects have been selected that apply to the traffic between a particular set of endpoints, policy can be applied to allow endpoints to communicate.  
-The applicable subjects from the previous step will each contain a set of rules.  
+Now subjects have been selected that apply to the traffic between a particular set of endpoints, policy can be applied to allow endpoints to communicate.
+The applicable subjects from the previous step will each contain a set of rules.
 
-Rules consist of a set of _classifiers_ and a set of _actions_.  Classifiers match against traffic between two endpoints.  
+Rules consist of a set of _classifiers_ and a set of _actions_.  Classifiers match against traffic between two endpoints.
 An example of a classifier would be something that matches against all TCP traffic on port 80, or one that matches against HTTP traffic containing a particular cookie.
 Actions are specific actions that need to be taken on the traffic before it reaches its destination.
 Actions could include tagging or encapsulating the traffic in some way, redirecting the traffic, or applying a <<SFC,service function chain>>.
 
-Rules, subjects, and actions have an _order_ parameter, where a lower order value means that a particular item will be applied first.  
-All rules from a particular subject will be applied before the rules of any other subject, and all actions from a particular rule will be applied before the actions from another rule.  
+Rules, subjects, and actions have an _order_ parameter, where a lower order value means that a particular item will be applied first.
+All rules from a particular subject will be applied before the rules of any other subject, and all actions from a particular rule will be applied before the actions from another rule.
 If more than item has the same order parameter, ties are broken with a lexicographic ordering of their names, with earlier names having logically lower order.
 
 ====== Matchers [[Matchers]]
@@ -348,16 +350,16 @@ used in clauses during the subject selection phase to match against conditions o
 A matcher is, at its heart, fairly simple.  It will contain a list of label names, along with a _match type_.
 The match type can be either:
 
-* "all" 
+* "all"
 +
 which means the matcher matches when all of its labels match
 
 * "any"
 +
 which means the matcher matches when any of its labels match,
-* "none" 
+* "none"
 +
-which means the matcher matches when none of its labels match.  
+which means the matcher matches when none of its labels match.
 
 Note a _match all_ matcher can be made by matching against an empty set of labels with a match type of "all."
 
@@ -366,10 +368,10 @@ For capability and requirement matchers, this is a selector name.  If the name f
 
 ===== Inheritance [[Inheritance]]
 
-Some objects in the system include references to parents, from which they will inherit definitions. 
-The graph of parent references must be loop free. When resolving names, the resolution system must detect loops and raise an exception. 
+Some objects in the system include references to parents, from which they will inherit definitions.
+The graph of parent references must be loop free. When resolving names, the resolution system must detect loops and raise an exception.
 Objects that are part of these loops may be considered as though they are not defined at all.
-Generally, inheritance works by simply importing the objects in the parent into the child object. When there are objects with the same name in the child object, 
+Generally, inheritance works by simply importing the objects in the parent into the child object. When there are objects with the same name in the child object,
 then the child object will override the parent object according to rules which are specific to the type of object. We'll next explore the detailed rules for inheritance for each type of object
 
 *EndpointGroups*
@@ -405,18 +407,18 @@ The rules in the parent subject will be added to the rules in the child subject.
 *Clauses*
 
 Clauses cannot themselves have a parent clause, but it may inherit from a clause with the same name as the clause in a parent contract.
-The list of subject references in the parent clause will be added to the list of subject references in the child clause. This is just a union operation. 
+The list of subject references in the parent clause will be added to the list of subject references in the child clause. This is just a union operation.
 A subject reference that refers to a subject name in the parent contract might have that name overridden in the child contract.
-Each of the matchers in the clause are also inherited by the child clause. 
+Each of the matchers in the clause are also inherited by the child clause.
 Matchers in the child of the same name and type as a matcher from the parent will inherit from and override the parent matcher. See below under Matchers for more information.
 
 *Matchers*
 
-Matchers include quality matchers, condition matchers, requirement matchers, and capability matchers. 
-Matchers cannot themselves have parent matchers, but when there is a matcher of the same name and type in the parent object, 
+Matchers include quality matchers, condition matchers, requirement matchers, and capability matchers.
+Matchers cannot themselves have parent matchers, but when there is a matcher of the same name and type in the parent object,
 then the matcher in the child object will inherit and override the behavior of the matcher in the parent object.
 The match type, if specified in the child, overrides the value specified in the parent.
-Labels are also inherited from the parent object. If there is a label with the same name in the child object, this does not have any semantic effect except if the label has its inclusion-rule parameter set to "exclude." 
+Labels are also inherited from the parent object. If there is a label with the same name in the child object, this does not have any semantic effect except if the label has its inclusion-rule parameter set to "exclude."
 In this case, then the label should be ignored for the purpose of matching. Otherwise, the label with the same name will completely override the label from the parent.
 
 === Using the GBP UX interface [[UX]]
@@ -439,13 +441,13 @@ It is recommended to use either:
 
 If the REST API must be used, and the above resources are not sufficient:
 
-* feature:install odl-mdsal-apidocs or odl-dlux-yangui
-* browse to: http://<odl-controller>:8181/apidoc/explorer/index.html
+* feature:install odl-dlux-yangui
+* browse to: http://<odl-controller>:8181/index.html and select YangUI from the left menu.
 
-to explore the various *GBP* REST options 
+to explore the various *GBP* REST options
 
 
-=== Using OpenStack with GBP [[Neutron]] 
+=== Using OpenStack with GBP [[Neutron]]
 
 
 include::odl-groupbasedpolicy-neutronmapper-user-guide.adoc[]
@@ -457,7 +459,19 @@ include::odl-groupbasedpolicy-neutronmapper-user-guide.adoc[]
 include::odl-groupbasedpolicy-ofoverlay-user-guide.adoc[]
 
 
-=== Using Service Function Chaining (SFC) with GBP [[SFC]]
+=== Using the GBP eBPF Iovisor Agent renderer [[IoVisor]]
+
+
+include::odl-groupbasedpolicy-iovisor-user-guide.adoc[]
+
+
+=== Using the GBP FaaS renderer [[FaaS]]
+
+
+include::odl-groupbasedpolicy-faas-user-guide.adoc[]
+
+
+=== Using Service Function Chaining (SFC) with GBP Neutron Mapper and OfOverlay [[SFC]]
 
 
 include::odl-groupbasedpolicy-sfc-user-guide.adoc[]
@@ -465,7 +479,7 @@ include::odl-groupbasedpolicy-sfc-user-guide.adoc[]
 
 === Demo/Development environment[[demo]]
 
-The *GBP* project for Lithium has two demo/development environments. 
+The *GBP* project for Beryllium has two demo/development environments.
 
 * Docker based GBP and GBP+SFC integration Vagrant environment
 * DevStack based GBP+Neutron integration Vagrant environment
