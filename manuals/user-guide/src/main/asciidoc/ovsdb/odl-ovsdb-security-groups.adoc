@@ -1,0 +1,271 @@
+[[security-groups]]
+==== Security groups
+
+The security group in openstack helps to filter packets based on
+policies configured. The current implementation in openstack uses
+iptables to realize security groups. In Opendaylight instead of iptable
+rules, ovs flows are used. This will remove the many layers of
+bridges/ports required in iptable implementation.
+
+The current rules are applied on the basis of the following attributes:
+ingress/egress, protocol, port range, and prefix. In the pipeline, table
+40 is used for egress acl and table 90 for ingress acl rules.
+
+[[stateful-implementation]]
+===== Stateful Implementation
+
+The security group is implemented in two modes, stateful and stateless.
+Stateful can be enabled by setting false to true in
+etc/opendaylight/karaf/netvirt-impl-default-config.xml
+
+The stateful implementation uses the conntrack capabilities of ovs and
+tracks an existing connection. This mode requires OVS2.5 and linux
+kernel 4.3. The ovs which is integrated with netfilter framework tracks
+the connection using the five tuple(layer-3 protocol, source address,
+destination address, layer-4 protocol, layer-4 key). The connection
+state is independent of the upper level state of connection oriented
+protocols like TCP, and even connectionless protocols like UDP will have
+a pseudo state. With this implementation OVS sends the packet to the
+netfilter framework to know whether there is an entry for to the
+connection. netfilter will return the packet to OVS with the appropriate
+flag set. Below are the states we are interested in:
+
+  -trk - The packet was never send to netfilter framework
+
+  +trk+est - It is already known and connection which was allowed previously, 
+  pass it to the next table.
+
+  +trk+new - This is a new connection. So if there is a specific rule in the 
+  table which allows this traffic with a commit action an entry will be made 
+  in the netfilter framework. If there is no  specific rule to allow this 
+  traffic the packet will be dropped.
+
+So, by default, a packet is be dropped unless there is a rule to allow
+the packet.
+
+[[stateless-implementation]]
+===== Stateless Implementation
+
+The stateless mode is for OVS 2.4 and below where connection tracking is
+not supported. Here we have pseudo-connection tracking using the TCP SYN
+flag. Other than TCP packets, all protocol packets is allowed by
+default. For TCP packets, the SYN packets will be dropped by default
+unless there is a specific rule which allows TCP SYN packets to a
+particular port.
+
+[[fixed-rules]]
+===== Fixed Rules
+
+The SecurityGroup are associated with the vm port when the vm is
+spawned. By default a set of rules are applied to the vm port referred
+to as fixed security group rule. This includes the DHCP rules the ARP
+rule and the conntrack rules. The conntrack rules will be inserted only
+in the stateful mode.
+
+[[dhcp-rules]]
+====== DHCP rules
+
+The DHCP rules added to the vm port when a vm is spawned. The fixed DHCP
+rules are
+
+* Allow DHCP server traffic ingress.
+
+  cookie=0x0, duration=36.848s, table=90, n_packets=2, n_bytes=717,
+  priority=61006,udp,dl_src=fa:16:3e:a1:f9:d0,
+  tp_src=67,tp_dst=68 actions=goto_table:100
+
+  cookie=0x0, duration=36.566s, table=90, n_packets=0, n_bytes=0, 
+  priority=61006,udp6,dl_src=fa:16:3e:a1:f9:d0,
+  tp_src=547,tp_dst=546 actions=goto_table:100  
+
+* Allow DHCP client traffic egress.
+
+  cookie=0x0, duration=2165.596s, table=40, n_packets=2, n_bytes=674, 
+  priority=61012,udp,tp_src=68,tp_dst=67 actions=goto_table:50
+
+  cookie=0x0, duration=2165.513s, table=40, n_packets=0, n_bytes=0, 
+  priority=61012,udp6,tp_src=546,tp_dst=547 actions=goto_table:50
+
+* Prevent DHCP server traffic from the vm port.(DHCP Spoofing)
+
+  cookie=0x0, duration=34.711s, table=40, n_packets=0, n_bytes=0, 
+  priority=61011,udp,in_port=2,tp_src=67,tp_dst=68 actions=drop
+
+  cookie=0x0, duration=34.519s, table=40, n_packets=0, n_bytes=0, 
+  priority=61011,udp6,in_port=2,tp_src=547,tp_dst=546 actions=drop
+
+[[arp-rules]]
+====== Arp rules
+
+The default arp rules allows the arp traffic to go in and out of the vm
+port.
+
+  cookie=0x0, duration=35.015s, table=40, n_packets=10, n_bytes=420, 
+  priority=61010,arp,arp_sha=fa:16:3e:93:88:60 actions=goto_table:50
+
+  cookie=0x0, duration=35.582s, table=90, n_packets=1, n_bytes=42, 
+  priority=61010,arp,arp_tha=fa:16:3e:93:88:60 actions=goto_table:100
+
+[[conntrack-rules]]
+====== Conntrack rules
+
+These rules are inserted only in stateful mode. The conntrack rules use
+the netfilter framework to track packets. The below rules are added to
+leverage it.
+
+* If a packet is not tracked(connection state –trk) it is send it to the
+netfilter for tracking
+* If the packet is already tracked (netfilter filter returns connection
+state +trk,+est) and if the connection is established, then allow the
+packet to go through the pipeline.
+* The third rule is the default drop rule which will drop the packet, if
+the packet is tracked and new(netfilter filter returns connection state
++trk,+new). This rule has lower priority than the custom rules which
+shall be added.
+
+  cookie=0x0, duration=35.015s table=40,priority=61021,in_port=3,
+  ct_state=-trk,action=ct"("table=0")"
+
+  cookie=0x0, duration=35.015s table=40,priority=61020,in_port=3,
+  ct_state=+trk+est,action=goto_table:50
+
+  cookie=0x0, duration=35.015s table=40,priority=36002,in_port=3,
+  ct_state=+new,actions=drop
+
+  cookie=0x0, duration=35.015s table=90,priority=61022,
+  dl_dst=fa:16:3e:0d:8d:21,ct_state=+trk+est,action=goto_table:100
+
+  cookie=0x0, duration=35.015s table=90,priority=61021,
+  dl_dst=fa:16:3e:0d:8d:21,ct_state=-trk,action=ct"("table=0")"
+
+  cookie=0x0, duration=35.015s table=90,priority=36002,
+  dl_dst=fa:16:3e:0d:8d:21,ct_state=+new,actions=drop
+
+[[tcp-syn-rule]]
+====== TCP SYN Rule
+
+This rule is inserted in stateless mode only. This rule will drop TCP
+SYN packet by default
+
+[[custom-security-groups]]
+===== Custom Security Groups
+
+     User can add security groups in openstack via command line or UI. When we associate this security group with a vm the flows related to each security group will be added in the related tables. A preconfigured security group called the default security group is available in neutron db.   
+
+[[stateful]]
+====== Stateful
+
+If connection tracking is enabled the match will have connection state
+and the action will have commit along with goto. The commit will send
+the packet to the netfilter framework to cache the entry. After a
+commit, for the next packet of this connection netfilter will return
++trk+est and the packet will match the fixed conntrack rule and get
+forwarded to next table.
+
+  cookie=0x0, duration=202.516s, table=40, n_packets=0, n_bytes=0,
+  priority=61007,ct_state=+new+trk,icmp,dl_src=fa:16:3e:ee:a5:ec,
+  nw_dst=0.0.0.0/24,icmp_type=2,icmp_code=4 actions=ct(commit),goto_table:50
+
+  cookie=0x0, duration=60.701s, table=90, n_packets=0, n_bytes=0, 
+  priority=61007,ct_state=+new+trk,udp,dl_dst=fa:16:3e:22:59:2f,
+  nw_src=10.100.5.3,tp_dst=2222 actions=ct(commit),goto_table:100
+
+  cookie=0x0, duration=58.988s, table=90, n_packets=0, n_bytes=0, 
+  priority=61007,ct_state=+new+trk,tcp,dl_dst=fa:16:3e:22:59:2f,
+  nw_src=10.100.5.3,tp_dst=1111 actions=ct(commit),goto_table:100  
+
+[[stateless]]
+====== Stateless
+
+If the mode is stateless the match will have only the parameter
+specified in the security rule and a goto in the action. The ct_state
+and commit action will be missing.
+
+  cookie=0x0, duration=13211.171s, table=40, n_packets=0, n_bytes=0, 
+  priority=61007,icmp,dl_src=fa:16:3e:93:88:60,nw_dst=0.0.0.0/24,
+  icmp_type=2,icmp_code=4 actions=goto_table:50
+
+  cookie=0x0, duration=199.674s, table=90, n_packets=0, n_bytes=0, 
+  priority=61007,udp,dl_dst=fa:16:3e:dc:49:ff,nw_src=10.100.5.3,tp_dst=2222 
+  actions=goto_table:100
+
+  cookie=0x0, duration=199.780s, table=90, n_packets=0, n_bytes=0, 
+  priority=61007,tcp,dl_dst=fa:16:3e:93:88:60,nw_src=10.100.5.4,tp_dst=3333 
+  actions=goto_table:100  
+
+[[tcpudp-port-range]]
+====== TCP/UDP Port Range
+
+The TCP/UDP port range is supported with the help of port mask. This
+will dramatically reduce the number of flows required to cover a port
+range. The below 7 rules can cover a port range from 333 to 777.
+
+  cookie=0x0, duration=56.129s, table=90, n_packets=0, n_bytes=0, 
+  priority=61007,udp,dl_dst=fa:16:3e:f9:2c:42,nw_src=0.0.0.0/24,
+  tp_dst=0x200/0xff00 actions=goto_table:100
+
+  cookie=0x0, duration=55.805s, table=90, n_packets=0, n_bytes=0, 
+  priority=61007,udp,dl_dst=fa:16:3e:f9:2c:42,nw_src=0.0.0.0/24,
+  tp_dst=0x160/0xffe0 actions=goto_table:100
+
+  cookie=0x0, duration=55.587s, table=90, n_packets=0, n_bytes=0, 
+  priority=61007,udp,dl_dst=fa:16:3e:f9:2c:42,nw_src=0.0.0.0/24,
+  tp_dst=0x300/0xfff8 actions=goto_table:100
+
+  cookie=0x0, duration=55.437s, table=90, n_packets=0, n_bytes=0, 
+  priority=61007,udp,dl_dst=fa:16:3e:f9:2c:42,nw_src=0.0.0.0/24,
+  tp_dst=0x150/0xfff0 actions=goto_table:100
+
+  cookie=0x0, duration=55.282s, table=90, n_packets=0, n_bytes=0, 
+  priority=61007,udp,dl_dst=fa:16:3e:f9:2c:42,nw_src=0.0.0.0/24,
+  tp_dst=0x14e/0xfffe actions=goto_table:100
+
+  cookie=0x0, duration=54.063s, table=90, n_packets=0, n_bytes=0, 
+  priority=61007,udp,dl_dst=fa:16:3e:f9:2c:42,nw_src=0.0.0.0/24,
+  tp_dst=0x308/0xfffe actions=goto_table:100
+
+  cookie=0x0, duration=55.130s, table=90, n_packets=0, n_bytes=0, 
+  priority=61007,udp,dl_dst=fa:16:3e:f9:2c:42,nw_src=0.0.0.0/24,
+  tp_dst=333 actions=goto_table:100  
+
+[[cidrremote-security-group]]
+===== CIDR/Remote Security Group
+
+  When adding a security group we can select the rule to applicable to a 
+  set of CIDR or to a set of VMs which has a particular security group 
+  associated with it. 
+
+If CIDR is selected there will be only one flow rule added allowing the
+traffic from/to the IP’s belonging to that CIDR.
+
+  cookie=0x0, duration=202.516s, table=40, n_packets=0, n_bytes=0,
+  priority=61007,ct_state=+new+trk,icmp,dl_src=fa:16:3e:ee:a5:ec,
+  nw_dst=0.0.0.0/24,icmp_type=2,icmp_code=4 actions=ct(commit),goto_table:50  
+
+If a remote security group is selected a flow will be inserted for every
+vm which has that security group associated.
+
+  cookie=0x0, duration=60.701s, table=90, n_packets=0, n_bytes=0, 
+  priority=61007,ct_state=+new+trk,udp,dl_dst=fa:16:3e:22:59:2f,
+  nw_src=10.100.5.3,tp_dst=2222    actions=ct(commit),goto_table:100
+
+  cookie=0x0, duration=58.988s, table=90, n_packets=0, n_bytes=0, 
+  priority=61007,ct_state=+new+trk,tcp,dl_dst=fa:16:3e:22:59:2f,
+  nw_src=10.100.5.3,tp_dst=1111 actions=ct(commit),goto_table:100  
+
+[[rules-supported-in-odl]]
+===== Rules supported in ODL
+
+The following rules are supported in the current implementation. The
+direction (ingress/egress) is always expected.
+
+.Table Supported Rules
+|====
+|Protocol |Port Range |IP Prefix |Remote Security Group supported
+|Any |Any |Any |Yes
+|TCP |1 - 65535 |0.0.0.0/0 |Yes
+|UDP |1 - 65535 |0.0.0.0/0 |Yes
+|ICMP |Any |0.0.0.0/0 |Yes
+|====
+
+Note : IPV6 and port-range feature is not supported as of today

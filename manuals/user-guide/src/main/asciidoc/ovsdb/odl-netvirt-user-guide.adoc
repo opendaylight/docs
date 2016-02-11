@@ -1,0 +1,49 @@
+=== NetVirt
+
+The OVSDB NetVirt project delivers two major pieces of functionality:
+
+. The OVSDB Southbound Protocol, and
+. NetVirt, a network virtualization solution.
+
+The following diagram shows the system-level architecture of OVSDB NetVirt in
+an OpenStack-based solution.
+
+.OVSDB NetVirt Architecture
+image::ovsdb/ovsdb-netvirt-architecture.jpg[align="center",width=250]
+
+NetVirt is a network virtualization solution that is a Neutron service provider, and therefore supports
+the OpenStack Neutron Networking API and extensions.
+
+The OVSDB component implements the OVSDB protocol (RFC 7047), as well as
+plugins to support OVSDB Schemas, such as the Open_vSwitch database schema and
+the hardware_vtep database schema.
+
+NetVirt has MDSAL-based interfaces with Neutron on the northbound side, and
+OVSDB and OpenFlow plugins on the southbound side.
+
+OVSDB NetVirt currently supports Open vSwitch virtual switches
+via OpenFlow and OVSDB.  Work is underway to support hardware gateways.
+
+NetVirt services are enabled by installing the odl-ovsdb-openstack feature using the following command:
+
+ feature:install odl-ovsdb-openstack
+
+To enable NetVirt's distributed Layer 3 routing services, the following line must be uncommented in the etc/custom.properties
+file in the OpenDaylight distribution prior to starting karaf:
+
+ ovsdb.l3.fwd.enabled=yes
+
+To start the OpenDaylight controller, run the following application in your distribution:
+
+ bin/karaf
+
+More details about using NetVirt with OpenStack can be found in the following places:
+
+. The "OpenDaylight and OpenStack" guide, and
+. https://wiki.opendaylight.org/view/OVSDB_Integration:Main#Getting_Started_with_OpenDaylight_OVSDB_Plugin_Network_Virtualization[Getting Started with OpenDaylight OVSDB Plugin Network Virtualization]
+
+Some additional details about using OpenStack Security Groups and the Data Plane Development Kit (DPDK) are provided below.
+
+include::odl-ovsdb-security-groups.adoc[]
+
+include::odl-ovs-dpdk-user-guide.adoc[]
