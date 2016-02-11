@@ -27,7 +27,7 @@ If asymmetric chaining was desired, the return path could be direct, or an *enti
 image::groupbasedpolicy/sfc-3-asymmetric.png[align="center",width=500]
 
 
-All these scenarios are supported by the Lithium integration.
+All these scenarios are supported by the integration.
 
 In the *Subject Feature Instance* section of the tenant config, we define the instances of the classifier definitions for ICMP and HTTP:
 ----
