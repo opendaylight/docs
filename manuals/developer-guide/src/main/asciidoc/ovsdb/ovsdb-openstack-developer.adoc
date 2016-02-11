@@ -1,6 +1,6 @@
-== OVSDB Openstack Developer Guide
+=== OVSDB Openstack Developer Guide
 
-=== Overview
+==== Overview
 The Open vSwitch database (OVSDB) Plugin component for OpenDaylight implements
 the OVSDB  https://tools.ietf.org/html/rfc7047[RFC 7047] management protocol
 that allows the southbound configuration of switches that support OVSDB. The
@@ -19,7 +19,7 @@ OpenDaylight manages the network flows for the OpenStack compute nodes via
 the OVSDB project, with the south-bound plugin. This section describes how to
 set that up, and how to tell when everything is working.
 
-=== OVSDB Openstack Architecture
+==== OVSDB Openstack Architecture
 The OpenStack integration architecture uses the following technologies: +
 
 * https://tools.ietf.org/html/rfc7047[RFC 7047] - The Open vSwitch Database Management Protocol
