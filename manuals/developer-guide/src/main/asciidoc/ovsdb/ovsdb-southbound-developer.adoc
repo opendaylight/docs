@@ -1,23 +1,23 @@
-== OVSDB MD-SAL Southbound Plugin Developer Guide
+=== OVSDB MD-SAL Southbound Plugin Developer Guide
 
-=== Overview
+==== Overview
 The Open vSwitch Database (OVSDB) Model Driven Service Abstraction Layer
-(MD-SAL) Southbound plugin provides an MD-SAL based interface to
+(MD-SAL) Southbound Plugin provides an MD-SAL based interface to
 Open vSwitch systems.  This is done by augmenting the MD-SAL topology node with
 a YANG model which replicates some (but not all) of the Open vSwitch schema.
 
-=== OVSDB MD-SAL Southbound Plugin Architecture and Operation
+==== OVSDB MD-SAL Southbound Plugin Architecture and Operation
 The architecture and operation of the OVSDB MD-SAL Southbound plugin is
 illustrated in the following set of diagrams.
 
-==== Connecting to an OVSDB Node
+===== Connecting to an OVSDB Node
 An OVSDB node is a system which is running the OVS software and is capable of
-being managed by an OVSDB Manager.  The OVSDB MD-SAL Southbound plugin in
+being managed by an OVSDB manager.  The OVSDB MD-SAL Southbound plugin in
 OpenDaylight is capable of operating as an OVSDB manager.  Depending on the
 configuration of the OVSDB node, the connection of the OVSDB manager can
 be active or passive.
 
-===== Active OVSDB Node Manager Workflow
+====== Active OVSDB Node Manager Workflow
 An active OVSDB node manager connection is made when OpenDaylight initiates the
 connection to the OVSDB node.  In order for this to work, you must configure the
 OVSDB node to listen on a TCP port for the connection (i.e.
@@ -58,7 +58,7 @@ construct a monitor request which causes the OVSDB node to send the controller
 any updates made to the OVSDB databases on the OVSDB node.
 
 
-===== Passive OVSDB Node Manager Workflow
+====== Passive OVSDB Node Manager Workflow
 A passive OVSDB node connection to OpenDaylight is made when the OVSDB node
 initiates the connection to OpenDaylight.  In order for this to work, you must
 configure the OVSDB node to connect to the IP address and OVSDB port on which
@@ -87,7 +87,7 @@ The OVSDB Southbound provider uses the database and schema information to
 construct a monitor request which causes the OVSDB node to send back
 any updates which have been made to the OVSDB databases on the OVSDB node.
 
-==== OVSDB Node ID in the Southbound Operational MD-SAL
+===== OVSDB Node ID in the Southbound Operational MD-SAL
 When OpenDaylight initiates an active connection to an OVSDB node, it
 writes an external-id to the Open_vSwitch table on the OVSDB node.  The
 external-id is an OpenDaylight instance identifier which identifies the
@@ -119,11 +119,11 @@ the following command.
 
  $ sudo ovs-vsctl remove open_vswitch . external-id "opendaylight-iid"
 
-==== OVSDB Changes by using OVSDB Southbound Config MD-SAL
+===== OVSDB Changes by using OVSDB Southbound Config MD-SAL
 After the connection has been made to an OVSDB node, you can make changes to the
 OVSDB node by using the OVSDB Southbound Config MD-SAL.  You can
 make CRUD operations by using the RESTCONF interface or by a plugin
-using the MD-SAL APIs.  The following diagram illustrates the highlevel flow of
+using the MD-SAL APIs.  The following diagram illustrates the high-level flow of
 events.
 
 .OVSDB Changes by using the Southbound Config MD-SAL
@@ -147,7 +147,7 @@ The OVSDB Southbound provider maps the changes received from the OVSDB node
 into corresponding changes made to the OVSDB Southbound Operational
 MD-SAL data store.
 
-==== Detecting changes in OVSDB coming from outside OpenDaylight
+===== Detecting changes in OVSDB coming from outside OpenDaylight
 Changes to the OVSDB nodes database may also occur independently of OpenDaylight.
 OpenDaylight also receives notifications for these events and updates the
 Southbound operational MD-SAL.  The following diagram illustrates the sequence
@@ -169,7 +169,7 @@ changes in the OVSDB Southbound operational MD-SAL data store.
 // Discussion of how the OpenFlow controller node is associated with the OVSDB
 // southbound model
 
-==== OVSDB Model
+===== OVSDB Model
 The OVSDB Southbound MD-SAL operates using a YANG model which is based on the
 abstract topology node model found in the 
 https://github.com/opendaylight/yangtools/blob/stable/lithium/model/ietf/ietf-topology/src/main/yang/network-topology%402013-10-21.yang[network topology model].
@@ -225,9 +225,9 @@ attributes.
   * *list port-other-configs* - a list of the key/value pairs in the port table other_config column for this port
   * *list interface-other-configs* - a list of the key/value pairs in the interface table other_config column for this interface
 
-=== Examples of OVSDB Southbound MD-SAL API
+==== Examples of OVSDB Southbound MD-SAL API
 
-==== Connect to an OVSDB Node
+===== Connect to an OVSDB Node
 This example RESTCONF command adds an OVSDB node object to the OVSDB
 Southbound configuration data store and attempts to connect to the OVSDB host
 located at the IP address 10.11.12.1 on TCP port 6640.
@@ -246,7 +246,7 @@ located at the IP address 10.11.12.1 on TCP port 6640.
    ]
  }
 
-==== Query the OVSDB Southbound Configuration MD-SAL
+===== Query the OVSDB Southbound Configuration MD-SAL
 Following on from the previous example, if the OVSDB Southbound configuration
 MD-SAL is queried, the RESTCONF command and the resulting reply is similar
 to the following example.
@@ -295,5 +295,5 @@ to the following example.
 // ==== Delete examples
 // TBD
 
-=== Reference Documentation
+==== Reference Documentation
 http://openvswitch.org/ovs-vswitchd.conf.db.5.pdf[Openvswitch schema]
