@@ -1,0 +1,78 @@
+== SNMP4SDN Installation Guide
+=== Overview
+We propose a southbound plugin that can control the off-the-shelf commodity Ethernet switches for the purpose of building SDN using Ethernet switches. For Ethernet switches, forwarding table, VLAN table, and ACL are where one can install flow configuration on, and this is done via SNMP and CLI in the proposed plugin. In addition, some settings required for Ethernet switches in SDN, e.g. disabling STP and flooding, etc, are proposed .
+
+.SNMP4SDN as an OpenDaylight southbound plugin 
+image::snmp4sdn_in_odl_architecture.jpg["SNMP4SDN as an OpenDaylight southbound plugin",width=400]
+
+=== Configuration
+Just follow the steps:
+
+==== Prepare the switch list database file
+A sample is https://wiki.opendaylight.org/view/SNMP4SDN:switch_list_file[here], and we suggest to save it as '/etc/snmp4sdn_swdb.csv' so that SNMP4SDN Plugin can automatically load this file. Note that the first line is title and should not be removed.
+
+==== Prepare the vendor-specific configuration file
+A sample is https://wiki.opendaylight.org/view/SNMP4SDN:snmp4sdn_VendorSpecificSwitchConfig_file[here], and we suggest to save it as '/etc/snmp4sdn_VendorSpecificSwitchConfig.xml' so that SNMP4SDN Plugin can automatically load this file.
+
+=== Install SNMP4SDN Plugin
+If using SNMP4SDN Plugin provided in OpenDaylight release, just do the following:
+
+Launch Karaf in Linux console:
+----
+cd <Beryllium_controller_directory>/bin
+(for example, cd distribution-karaf-x.x.x-Beryllium/bin)
+----
+----
+./karaf
+----
+Then in Karaf console:
+----
+feature:install odl-snmp4sdn-all
+----
+
+=== Tutorial
+==== Load switch list
+For initialization, we need to feed SNMP4SDN Plugin the switch list. Actually SNMP4SDN Plugin automatically try to load the switch list at /etc/snmp4sdn_swdb.csv if there is. If so, this step could be skipped.
+In Karaf console, execute:
+----
+snmp4sdn:ReadDB <switch_list_path>
+(For example, snmp4sdn:ReadDB /etc/snmp4sdn_swdb.csv)
+(in Windows OS, For example, snmp4sdn:ReadDB D://snmp4sdn_swdb.csv)
+----
+A sample is https://wiki.opendaylight.org/view/SNMP4SDN:switch_list_file[here], and we suggest to save it as '/etc/snmp4sdn_swdb.csv' so that SNMP4SDN Plugin can automatically load this file. Note that the first line is title and should not be removed.
+
+==== Show switch list
+----
+snmp4sdn:PrintDB
+----
+
+==== Topology Service
+===== Execute topology discovery
+SNMP4SDN Plugin automatically execute topology discovery when start up. One may use the following commands to invoke topology discovery manually. Wait for seconds to complete. 
+----
+snmp4sdn:TopoDiscover
+----
+For more commands please refer to https://wiki.opendaylight.org/view/SNMP4SDN:User_Guide#Topology_Service[User Guide - Topology Service].
+
+===== Show the topology
+
+SNMP4SDN Plugin supports to show topology via REST API.
+
+In Linux console executes:
+
+* Show topology
+----
+curl --user "admin":"admin" -H "Accept: application/json" -H "Content-type: application/json" -X POST http://localhost:8181/restconf/operations/topology:get-edge-list
+----
+For more commands please refer to https://wiki.opendaylight.org/view/SNMP4SDN:User_Guide#Show_the_topology[User Guide - Show the topology].
+
+==== Flow configuration
+SNMP4SDN supports to add entry on FDB/VLAN/ACL tables via REST API. The detail commands please refer to https://wiki.opendaylight.org/view/SNMP4SDN:User_Guide#Flow_configuration[User Guide - Flow configuration].
+
+==== Special configuration
+SNMP4SDN supports to configure STP, ARP, etc, via REST API. The detail commands please refer to https://wiki.opendaylight.org/view/SNMP4SDN:User_Guide#Special_configuration[User Guide - Special configuration]
+
+=== Help
+* https://wiki.opendaylight.org/view/SNMP4SDN:Main[SNMP4SDN Wiki]
+* SNMP4SDN Mailing List (https://lists.opendaylight.org/mailman/listinfo/snmp4sdn-users[user], https://lists.opendaylight.org/mailman/listinfo/snmp4sdn-dev[developer])
+* https://wiki.opendaylight.org/view/SNMP4SDN:User_Guide#Troubleshooting[Troubleshooting in Wiki]

@@ -86,8 +86,6 @@ include::sdninterfaceapp/odl-sdninterfaceapp-all-dev.adoc[]
 
 include::openflowjava/odl-openflowjava-protocol-dev.adoc[]
 
-include::openflowplugin/odl-ofp-developer-guide.adoc[]
-
 include::opflex/agent-ovs-dev.adoc[]
 
 include::opflex/genie-dev.adoc[]
@@ -104,6 +102,8 @@ include::packetcable/packetcable-dev.adoc[Packet Cable PCMM Southbound Plugin]
 //include::reservation/reservation-dev.adoc[]
 
 include::sfc/sfc.adoc[]
+
+include::snmp4sdn/snmp4sdn-developer.adoc[SNMP4SDN]
 
 include::sxp/odl-sxp-dev.adoc[]
 
