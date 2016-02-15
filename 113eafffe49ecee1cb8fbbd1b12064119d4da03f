@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_63a8ba77",
+        "filename": "manuals/user-guide/src/main/asciidoc/lfm/lispflowmapping-msmr-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 491
+      },
+      "writtenOn": "2016-02-15T23:49:09Z",
+      "side": 1,
+      "message": "s/DELUX/DLUX/",
+      "revId": "113eafffe49ecee1cb8fbbd1b12064119d4da03f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_c3b8a6ca",
+        "filename": "manuals/user-guide/src/main/asciidoc/lfm/lispflowmapping-msmr-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 491
+      },
+      "writtenOn": "2016-02-15T23:49:09Z",
+      "side": 1,
+      "message": "Since this is not user facing, we shouldn\u0027t include it. Developers who need this feature as a dependency can figure it out (or we document it in the developer guide). If we keep it, we should also mention odl-lispflowmapping-mappingservice-shell, which add some basic CLI functions.",
+      "revId": "113eafffe49ecee1cb8fbbd1b12064119d4da03f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
