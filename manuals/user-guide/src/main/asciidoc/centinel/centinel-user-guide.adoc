@@ -1,0 +1,81 @@
+== Centinel User Guide
+The Centinel project aims at providing a distributed, reliable framework for
+efficiently collecting, aggregating and sinking streaming data across Persistence
+DB and stream analyzers (example: Graylog, Elastic search, Spark, Hive etc.).
+This document contains configuration, administration, management, using
+sections for the feature.
+
+=== Overview
+In the Beryllium Release of Centinel, this framework enables SDN applications/services to receive events from multiple streaming sources (e.g., Syslog, Thrift, Avro, AMQP, Log4j, HTTP/REST) and execute actions like network configuration/batch processing/real-time analytics. It also provides a Log Service to assist operators running SDN ecosystem by installing the feature odl-centinel-all.
+
+With the configurations development of "Log Service" and plug-in for log analyzer (e.g., Graylog) will take place. Log service will do processing of real time events coming from log analyzer. Additionally, stream collector (Flume and Sqoop based) that will collect logs from OpenDaylight and sink it to persistence service (integrated with TSDR). Also includes RESTCONF interface to inject events to north bound applications for real-time analytic/network configuration. Centinel User Interface (web interface) will be available to operators to enable rules/alerts/dashboard.
+
+=== Centinel core features
+The core features of the Centinel framework are:
+
+Stream collector:: Collecting, aggregating and sinking streaming data
+Log Service:: Listen log stream events coming from log analyzer
+Log Service:: Enables user to configure rules (e.g., alerts, diagnostic, health, dashboard)
+Log Service:: Performs event processing/analytics
+User Interface:: Enable set-rule, search, visualize, alert, diagnostic, dashboard etc.
+Adaptor:: Log analyzer plug-in to Graylog and a generic data-model to extend to other stream analyzers (e.g., Logstash)
+REST Service:: Northbound APIs for Log Service and Steam collector framework
+Leverages:: TSDR persistence service, data query, purging and elastic search
+
+=== Centinel Architecture
+The following wiki pages capture the Centinel Model/Architecture
+
+a. https://wiki.opendaylight.org/view/Centinel:Main
+b. https://wiki.opendaylight.org/view/Project_Proposals:Centinel
+c. https://wiki.opendaylight.org/images/0/09/Centinel-08132015.pdf
+
+
+
+=== Administering or Managing Centinel with default configuration
+
+==== Prerequisites
+
+. Check whether Graylog is up and running and plugins deployed as mentioned in http://opendaylight.readthedocs.io/en/stable-beryllium/getting-started-guide/index.html[installation guide].
+
+. Check whether HBase is up and respective tables and column families as mentioned in http://opendaylight.readthedocs.io/en/stable-beryllium/getting-started-guide/index.html[installation guide] are created.
+
+. Check if apache flume is up and running.
+
+. Check if apache drill is up and running.
+
+==== Running Centinel
+
+The following steps should be followed to bring up the controller:
+
+. Download the Centinel OpenDaylight distribution release from below link: http://www.opendaylight.org/software/downloads
+
+. Run Karaf of the distribution from bin folder
++
+  ./karaf
++
+. Install the centinel features using below command:
++
+  feature:install odl-centinel-all
++
+. Give some time for the centinel to come up.
+
+==== User Actions
+
+. *Log In:* User logs into the Centinel with required credentials using following URL: http://localhost:8181/index.html
+
+. *Create Rule:*
+
+.. Select Centinel sub-tree present in left side and go to Rule tab.
+
+.. Create Rule with title and description.
+
+.. Configure flow rule on the stream to filter the logs accordingly for, e.g., `bundle_name=org.opendaylight.openflow-plugin`
+
+. *Set Alarm Condition:* Configure alarm condition, e.g., message-count-rule such that if 10 messages comes on a stream (e.g., The OpenFlow Plugin) in last 1 minute with an alert is generated.
+
+. *Subscription:* User can subscribe to the rule and alarm condition by entering the http details or email-id in subscription textfield by clicking on
+the subscribe button.
+
+. *Create Dashboard:* Configure dashboard for stream and alert widgets. Alarm and Stream count will be updated in corresponding widget in Dashboard.
+
+. *Event Tab:* Intercepted Logs, Alarms and Raw Logs in Event Tab will be displayed by selecting the appropriate radio button. User can also filter the searched data using SQL query in the search box.
