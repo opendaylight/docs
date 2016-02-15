@@ -68,7 +68,7 @@ The following figure shows the various LISP Flow Mapping modules.
 
 .LISP Mapping Service Internal Architecture
 
-image::lispflow-technical-arch-overview-helium.jpg["LISP Mapping Service Internal Architecture", width=460]
+image::ODL_lfm_Be_component.jpg["LISP Mapping Service Internal Architecture", width=460]
 
 A brief description of each module is as follows:
 
@@ -85,20 +85,23 @@ A brief description of each module is as follows:
 * *Map Resolver:* This module receives and processes the mapping lookup queries
   and provides the mappings to requester. For a detailed specification of LISP
   Map Server, see http://tools.ietf.org/search/rfc6830[LISP].
-* *Northbound API:* This is part of the OpenDaylight northbound API. This
+* *RPC/RESTCONF:* This is the auto-generated RESTCONF-based northbound API. This
   module enables defining key-EID associations as well as adding mapping
-  information through the Map Server. Key-EID associations can also be queried
-  via this API. The northbound API also provides capability of querying the
-  mapping information for an EID prefix.
+  information through the Map Server. Key-EID associations and mappings can also
+  be queried via this API.
+* *GUI:* This module enables adding and querying the mapping service through a
+  GUI based on ODL DELUX. 
 * *Neutron:* This module implements the OpenDaylight Neutron Service APIs. It
   provides integration between the LISP service and the OpenDaylight Neutron
   service, and thus OpenStack.
-* *NETCONF:* This module enables the LISP service to communicate to
-  NETCONF-enabled devices through OpenDaylight's NETCONF plugin.
 * *Java API:* The API module exposes the Map Server and Map Resolver
   capabilities via a Java API.
+* *LISP Proto:* This module includes LISP protocol dependent data types and
+  associated processing.
+* *In Memory DB:* This module includes the in memory database implementation of
+  the mapping service.
 * *LISP Southbound Plugin:* This plugin enables data plane devices that support
-  LISP control plane protocol (see  see http://tools.ietf.org/search/rfc6830[LISP])
+  LISP control plane protocol (see http://tools.ietf.org/search/rfc6830[LISP])
   to register and query mappings to the
   LISP Flow Mapping via the LISP control plane protocol.
 
@@ -114,8 +117,8 @@ the data plane device to create the authentication data in the Map-Register
 messages for the associated EID prefix.
 
 The +etc/custom.properties+ file in the Karaf distribution allows configuration
-of several OpenDaylight parameters.  The LISP service has two properties that
-can be adjusted: +lisp.mappingOverwrite+ and +lisp.smr+.
+of several OpenDaylight parameters.  The LISP service has the following properties
+that can be adjusted:
 
 *lisp.mappingOverwrite* (default: 'true')::
     Configures handling of mapping updates.  When set to 'true' (default) a
@@ -144,6 +147,21 @@ can be adjusted: +lisp.mappingOverwrite+ and +lisp.smr+.
     the first hop.  The 'replace' setting adds a new RLOC using the same
     algorithm as the 'both' setting, but using the origin priority of the ELP
     RLOC, which is removed from the mapping.
+*lisp.lookupPolicy* (default: 'northboundFirst')::
+    Configures the mapping lookup algorithm. When set to 'northboundFirst' 
+    mappings programmed through the northbound API will take precedence. If 
+    no northbound programmed mappings exist, then the mapping service will 
+    return mappings registered through the southbound plugin, if any exists.
+    When set to 'northboundAndSouthbound' the mapping programmed by the
+    northbound is returned, updated by the up/down status of these mappings
+    as reported by the southbound (if existing).
+*lisp.mappingMerge* (default: 'false')::
+    Configures the merge policy on the southbound registrations through the
+    LISP SB Plugin. When set to 'false', only the latest mapping registered
+    through the SB plugin is valid in the southbound mapping database,
+    independent of which device it came from. When set to 'true', mappings
+    for the same EID registered by different devices are merged together and
+    a union of the locators is maintained as the valid mapping for that EID.
 
 === Textual Conventions for LISP Address Formats
 
@@ -236,6 +254,27 @@ Currently they are:
     store (the DAO), listing the full data structure. The output is not human
     friendly, but can be used for debugging.
 
+
+=== LISP Flow Mapping Karaf Features
+
+LISP Flow Mapping has the following Karaf features that can be installed from
+the Karaf console:
+
++odl-lispflowmapping-msmr+::
+    This includes the core features required to use the LISP Flow Mapping Service
+    such as mapping service and the LISP southbound plugin.
+
++odl-lispflowmapping-ui+::
+    This includes the GUI module for the LISP Mapping Service.
+
++odl-lispflowmapping-neutron+::
+    This is the experimental Neutron provider module for LISP mapping service.
+
++odl-lispflowmapping-southbound+::
+    This includes the LISP southbound plugin only, and is useful if another ODL 
+    service wants to use LISP as a SB plugin.
+
+
 === Tutorials
 
 This section provides a tutorial demonstrating various features in this service.
@@ -309,7 +348,7 @@ body content on the page.
  . Install and run OpenDaylight Beryllium release on the controller VM. Please
    follow the general OpenDaylight Beryllium Installation Guide for this step.
    Once the OpenDaylight controller is running install the
-   'odl-openflowplugin-msmr' feature from the Karaf CLI:
+   'odl-lispflowmapping-msmr' feature from the Karaf CLI:
 
  feature:install odl-lispflowmapping-msmr
 +
