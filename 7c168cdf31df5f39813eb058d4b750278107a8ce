@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_246cf834",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1018
+      },
+      "writtenOn": "2016-02-16T20:11:24Z",
+      "side": 1,
+      "message": "I think it might be better to put this in separated line and the line should begin with \"\\1.\"",
+      "range": {
+        "startLine": 151,
+        "startChar": 56,
+        "endLine": 151,
+        "endChar": 58
+      },
+      "revId": "7c168cdf31df5f39813eb058d4b750278107a8ce",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
