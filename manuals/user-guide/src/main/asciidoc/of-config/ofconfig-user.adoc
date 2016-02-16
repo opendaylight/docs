@@ -1,0 +1,193 @@
+*Table of Contents*
+
+*Introduction 
+..............................................................................................................  
+xx*
+
+*Check out the project using git 
+...............................................................................  
+xx*
+
+*Run the distribution 
+.................................................................................................  
+xx*
+
+*Configuration on the OVS supporting OF-CONFIG
+..............................................   xx*
+
+*Connection Establishment between the Capable/Logical Switch and the
+OF-CONFIG*
+
+* 
+.................................................................................................
+.......................................xx*
+
+*Configuration On Capable
+Switch.................................................................................
+xx*
+
+*Miscellaneous
+Functions............................................................................................... 
+xx*
+
+ 
+
+Introduction
+------------
+
+OF-CONFIG defines an OpenFlow switch as an abstraction called an
+OpenFlow Logical Switch. The OF-CONFIG protocol enables configuration of
+essential artifacts of an OpenFlow Logical Switch so that an OpenFlow
+controller can communicate and control the OpenFlow Logical switch via
+the OpenFlow protocol. OF-CONFIG introduces an operating context for one
+or more OpenFlow data paths called an OpenFlow Capable Switch for one or
+more switches. An OpenFlow Capable Switch is intended to be equivalent
+to an actual physical or virtual network element (e.g. an Ethernet
+switch) which is hosting one or more OpenFlow data paths by partitioning
+a set of OpenFlow related resources such as ports and queues among the
+hosted OpenFlow data paths. The OF-CONFIG protocol enables dynamic
+association of the OpenFlow related resources of an OpenFlow Capable
+Switch with specific OpenFlow Logical Switches which are being hosted on
+the OpenFlow Capable Switch. OF-­CONFIG does not specify or report how
+the partitioning of resources on an OpenFlow Capable Switch is achieved.
+OF-­CONFIG assumes that resources such as ports and queues are
+partitioned amongst multiple OpenFlow Logical Switches such that each
+OpenFlow Logical Switch can assume full control over the resources that
+is assigned to it.
+
+Check out the project using git
+-------------------------------
+
+Git clone https://git.opendaylight.org/gerrit/of-config
+
+The above command will create a directory called "of-config " with the
+project.
+
+Run the distribution
+--------------------
+
+To run the OF-CONFIG, you can use the following command:
+
+\1) Run the controller as below:
+
+./distribution/karaf/target/assembly/bin/karaf
+
+\2) start the of-conf feature as below:
+
+feature:install odl-of-config-all
+
+Configuration on the OVS supporting OF-CONFIG
+---------------------------------------------
+
+The introduction of configuring the OVS can be referred to:
+
+_https://github.com/openvswitch/of-config._
+
+Connection Establishment between the Capable/Logical Switch and the
+OF-CONFIG
+-----------------------------------------------------------------------------
+
+javascript:void(0);[*Preparation*]*:*
+
+The OF-CONFIG is an application which is based on the NETCONF. So the
+switches supporting OF-CONFIG can also access the OpenDaylight
+controller using the functions provided by NETCONF. This is the
+preparation step before connecting to the OF-CONFIG. How to access the
+switch to the OpenDaylight controller using the NETCONF can be referred
+to the guide of the NETCONF (please see the link as below).
+
+      
+https://wiki.opendaylight.org/view/OpenDaylight_Controller:Config:Examples:Netconf[_https://wiki.opendaylight.org/view/OpenDaylight_Controller:Config:Examples:Netconf_]__
+
+       Also, an example is given as below:
+
+[width="100%",cols="<100%",]
+|=========================
+|[multiblock cell omitted]
+|=========================
+
+* *
+
+*Execution:*
+
+Now the switches supporting the of-conf and they have connected to the
+controller using NETCONF as described in preparation phase, the
+OF-CONFIG can check whether the switch can support the OF-CONFIG by
+reading the capability list in NETCONF.
+
+The OF-CONFIG will get the information of the capable switch and logical
+switch via the NETCONF connection, and creates separate topologies for
+the capable and logical switches in the OpenDaylight Topology module.
+
+The Connection between the capable/ logical switches and OF-CONFIG is
+finished.
+
+Configuration On Capable Switch
+-------------------------------
+
+The OF-CONFIG can provide the configurations shown in the table as
+below.
+
+[width="99%",cols="<16%,<14%,<14%,<14%,<14%,<14%,<14%",]
+|=======================================================================
+|*Short Name* |*Description* |*Type (at M2)* |*Type (at M3)* |*Type
+(release)* |*Contract* |*Supporting Code*
+
+|sync-conf-ocs |Synchronize the configuration with Openflow Capable
+Switch |Tentative |Provisional |[multiblock cell omitted]
+|[multiblock cell omitted] |[multiblock cell omitted]
+
+|modify-controller-connection |Modify the configuration of controller
+connection in Openflow Logic Switch |[multiblock cell omitted]
+|Provisional |[multiblock cell omitted] |[multiblock cell omitted]
+|[multiblock cell omitted]
+
+|create-tls |Create TLS tuunel for Openflow Logic Switch and controller,
+and configure authentication certificate |[multiblock cell omitted]
+|Provisional |[multiblock cell omitted] |[multiblock cell omitted]
+|[multiblock cell omitted]
+
+|opt-flowtable |Operate flow table of Openflow Logic Switch
+|[multiblock cell omitted] |Provisional |[multiblock cell omitted]
+|[multiblock cell omitted] |[multiblock cell omitted]
+
+|config-tunnel |Configure tunnel in Openflow Logic Switch
+|[multiblock cell omitted] |Provisional |[multiblock cell omitted]
+|[multiblock cell omitted] |[multiblock cell omitted]
+
+|config-port |Configure port and queue in Openflow Capable Switch
+|[multiblock cell omitted] |Provisional |[multiblock cell omitted]
+|[multiblock cell omitted] |[multiblock cell omitted]
+
+|config-ols-basic |Configure some basic item in Openflow Logic Switch,
+such as dpid and lost-connection-behavior |[multiblock cell omitted]
+|Provisional |[multiblock cell omitted] |[multiblock cell omitted]
+|[multiblock cell omitted]
+|=======================================================================
+
+ 
+
+Here is an example showing how to make the configuration to
+modify-controller-connection on the capable switch using the OF-CONFIG.
+The other configurations can follow the same way of the example.
+
+*Example:* modify-controller-connection
+
+[width="100%",cols="<100%",]
+|=========================
+|[multiblock cell omitted]
+|=========================
+
+ 
+
+Notes: this configuration can execute via the NETCONF, which can be
+referred to the introduction in the wiki_:_
+
+https://wiki.opendaylight.org/view/Controller_Core_Functionality_Tutorials:Tutorials:Netconf_Mount[_https://wiki.opendaylight.org/view/Controller_Core_Functionality_Tutorials:Tutorials:Netconf_Mount_]__
+
+Miscellaneous Functions
+-----------------------
+
+None.
+
+ 
