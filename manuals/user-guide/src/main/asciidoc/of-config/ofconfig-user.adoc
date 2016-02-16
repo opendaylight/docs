@@ -1,0 +1,69 @@
+== OF-CONFIG User Guide ==
+
+=== Overview ===
+OF-CONFIG defines an OpenFlow switch as an abstraction called an
+OpenFlow Logical Switch. The OF-CONFIG protocol enables configuration of
+essential artifacts of an OpenFlow Logical Switch so that an OpenFlow
+controller can communicate and control the OpenFlow Logical switch via
+the OpenFlow protocol. OF-CONFIG introduces an operating context for one
+or more OpenFlow data paths called an OpenFlow Capable Switch for one or
+more switches. An OpenFlow Capable Switch is intended to be equivalent
+to an actual physical or virtual network element (e.g. an Ethernet
+switch) which is hosting one or more OpenFlow data paths by partitioning
+a set of OpenFlow related resources such as ports and queues among the
+hosted OpenFlow data paths. The OF-CONFIG protocol enables dynamic
+association of the OpenFlow related resources of an OpenFlow Capable
+Switch with specific OpenFlow Logical Switches which are being hosted on
+the OpenFlow Capable Switch. OF-CONFIG does not specify or report how
+the partitioning of resources on an OpenFlow Capable Switch is achieved.
+OF-CONFIG assumes that resources such as ports and queues are
+partitioned amongst multiple OpenFlow Logical Switches such that each
+OpenFlow Logical Switch can assume full control over the resources that
+is assigned to it.
+
+=== How to start ===
+- start OF-CONFIG feature as below:
++
+ feature:install odl-of-config-all
+
+=== Configuration on the OVS supporting OF-CONFIG ===
+
+NOTE: OVS is not supported by OF-CONFIG temporarily because
+the OpenDaylight version of OF-CONFIG is 1.2 while the OVS version of OF-CONFIG is not standard.
+
+The introduction of configuring the OVS can be referred to:
+
+_https://github.com/openvswitch/of-config._
+
+=== Connection Establishment between the Capable/Logical Switch and OF-CONFIG ===
+
+The OF-CONFIG protocol is based on NETCONF. So the
+switches supporting OF-CONFIG can also access OpenDaylight
+using the functions provided by NETCONF. This is the
+preparation step before connecting to OF-CONFIG. How to access the
+switch to OpenDaylight using the NETCONF can be referred
+to the <<_southbound_netconf_connector,NETCONF Southbound User Guide>> or
+https://wiki.opendaylight.org/view/OpenDaylight_Controller:Config:Examples:Netconf[NETCONF Southbound examples on the wiki].
+
+Now the switches supporting OF-CONFIG and they have connected to the
+controller using NETCONF as described in preparation phase.
+OF-CONFIG can check whether the switch can support OF-CONFIG by
+reading the capability list in NETCONF.
+
+The OF-CONFIG will get the information of the capable switch and logical
+switch via the NETCONF connection, and creates separate topologies for
+the capable and logical switches in the OpenDaylight Topology module.
+
+The Connection between the capable/logical switches and OF-CONFIG is
+finished.
+
+=== Configuration On Capable Switch ===
+Here is an example showing how to make the configuration to
+modify-controller-connection on the capable switch using OF-CONFIG.
+Other configurations can follow the same way of the example.
+
+- Example: modify-controller-connection
+
+NOTE: this configuration can execute via the NETCONF, which can be
+referred to the <<_southbound_netconf_connector,NETCONF Southbound User Guide>> or
+https://wiki.opendaylight.org/view/OpenDaylight_Controller:Config:Examples:Netconf[NETCONF Southbound examples on the wiki].
