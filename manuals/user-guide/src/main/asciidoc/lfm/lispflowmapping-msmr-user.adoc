@@ -264,18 +264,15 @@ nodes.
   +resources/tutorial/Beryllium_Tutorial.json.postman_collection+ file. You can
   import this file to Postman by clicking 'Import' at the top, choosing
   'Download from link' and then entering the following URL:
-  +https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=blob_plain;f=resources/tutorial/Beryllium_Tutorial.json.postman_collection;hb=refs/heads/master+.
+  +https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=blob_plain;f=resources/tutorial/Beryllium_Tutorial.json.postman_collection;hb=refs/heads/stable/beryllium+.
   Alternatively, you can save the file on your machine, or if you have the
   repository checked out, you can import from there. You will need to create a
   new Postman Environment and define some variables within: +controllerHost+
   set to the hostname or IP address of the machine running the ODL instance,
   and +restconfPort+ to 8181, if you didn't modify the default controller
   settings.
-* *LISPmob version 0.5.x*  At the time of this writing this version has not
-  been reelased yet, but it is available in the 'experimental' branch in the
-  project's https://github.com/LISPmob/lispmob/tree/experimental[Git
-  repository].  The README.md lists the dependencies needed to build it from
-  source.
+* *LISPmob version 0.5.x*  The README.md lists the dependencies needed to
+  build it from source.
 * *A virtualization platform*
 
 ===== Target Environment
@@ -356,7 +353,7 @@ NOTE: The +resources/tutorial+ directory in the 'stable/beryllium' branch of the
    'localhost' with the IP address of *controller*).
 
  curl -u "admin":"admin" -H "Content-type: application/json" -X POST \
-     http://localhost:8181/restconf/operations/mappingservice:add-key \
+     http://localhost:8181/restconf/operations/odl-mappingservice:add-key \
      --data @add-key.json
 
 +
@@ -366,31 +363,30 @@ where the content of the 'add-key.json' file is the following:
 ----
 {
     "input": {
-        "LispAddressContainer": {
-            "Ipv4Address": {
-                "afi": 1,
-                "Ipv4Address": "1.1.1.1"
-            }
+        "eid": {
+            "address-type": "ietf-lisp-address-types:ipv4-prefix-afi",
+            "ipv4-prefix": "1.1.1.1/32"
         },
-        "mask-length": 32,
-        "key-type": 1,
-        "authkey": "password"
-   }
+        "mapping-authkey": {
+            "key-string": "password",
+            "key-type": 1
+        }
+    }
 }
 ----
 
  . Verify that the key is added properly by requesting the following URL:
 
  curl -u "admin":"admin" -H "Content-type: application/json" -X POST \
-     http://localhost:8181/restconf/operations/mappingservice:get-key \
+     http://localhost:8181/restconf/operations/odl-mappingservice:get-key \
      --data @get1.json
 
 +
 where the content of the 'get1.json' file can be derived from the
-'add-key.json' file by removing the 'key-type' and 'authkey' fields.  The
-output the above invocation should look like this:
+'add-key.json' file by removing the 'mapping-authkey' field.  The output the
+above invocation should look like this:
 
- {"output":{"authkey":"password"}}
+ {"output":{"mapping-authkey":{"key-type":1,"key-string":"password"}}}
 
  . Run the +lispd+ LISPmob daemon on all VMs:
 
@@ -401,7 +397,7 @@ output the above invocation should look like this:
    API
 
  curl -u "admin":"admin" -H "Content-type: application/json" -X POST \
-     http://localhost:8181/restconf/operations/mappingservice:get-mapping \
+     http://localhost:8181/restconf/operations/odl-mappingservice:get-mapping \
      --data @get1.json
 
 +
@@ -414,7 +410,7 @@ tool.
    *server1*
 
  curl -u "admin":"admin" -H "Content-type: application/json" -X POST \
-     http://localhost:8181/restconf/operations/mappingservice:add-mapping \
+     http://localhost:8181/restconf/operations/odl-mappingservice:add-mapping \
      --data @mapping.json
 +
 where the 'mapping.json' file looks like this:
@@ -423,49 +419,45 @@ where the 'mapping.json' file looks like this:
 ----
 {
     "input": {
-        "recordTtl": 1440,
-        "maskLength": 32,
-        "authoritative": true,
-        "LispAddressContainer": {
-            "Ipv4Address": {
-                "afi": 1,
-                "Ipv4Address": "2.2.2.2"
-            }
-        },
-        "LocatorRecord": [
-            {
-                "name": "server1",
-                "priority": 1,
-                "weight": 1,
-                "multicastPriority": 255,
-                "multicastWeight": 0,
-                "localLocator": true,
-                "rlocProbed": false,
-                "routed": false,
-                "LispAddressContainer": {
-                    "Ipv4Address": {
-                        "afi": 1,
-                        "Ipv4Address": "192.168.16.31"
-                    }
-                }
+        "mapping-record": {
+            "recordTtl": 1440,
+            "action": "NoAction",
+            "authoritative": true,
+            "eid": {
+                "address-type": "ietf-lisp-address-types:ipv4-prefix-afi",
+                "ipv4-prefix": "2.2.2.2/32"
             },
-            {
-                "name": "server2",
-                "priority": 2,
-                "weight": 1,
-                "multicastPriority": 255,
-                "multicastWeight": 0,
-                "localLocator": true,
-                "rlocProbed": false,
-                "routed": false,
-                "LispAddressContainer": {
-                    "Ipv4Address": {
-                        "afi": 1,
-                        "Ipv4Address": "192.168.16.32"
+            "LocatorRecord": [
+                {
+                    "locator-id": "server1",
+                    "priority": 1,
+                    "weight": 1,
+                    "multicastPriority": 255,
+                    "multicastWeight": 0,
+                    "localLocator": true,
+                    "rlocProbed": false,
+                    "routed": true,
+                    "rloc": {
+                        "address-type": "ietf-lisp-address-types:ipv4-afi",
+                        "ipv4": "192.168.16.31"
+                    }
+                },
+                {
+                    "locator-id": "server2",
+                    "priority": 2,
+                    "weight": 1,
+                    "multicastPriority": 255,
+                    "multicastWeight": 0,
+                    "localLocator": true,
+                    "rlocProbed": false,
+                    "routed": true,
+                    "rloc": {
+                        "address-type": "ietf-lisp-address-types:ipv4-afi",
+                        "ipv4": "192.168.16.32"
                     }
                 }
-            }
-        ]
+            ]
+        }
     }
 }
 ----
@@ -478,7 +470,7 @@ Note that lower priority value has higher preference in LISP.
  . Verify the correct registration of the 2.2.2.2/32 EID:
 
  curl -u "admin":"admin" -H "Content-type: application/json" -X POST \
-     http://localhost:8181/restconf/operations/mappingservice:get-mapping \
+     http://localhost:8181/restconf/operations/odl-mappingservice:get-mapping \
      --data @get2.json
 
 +
@@ -495,7 +487,7 @@ the 'Ipv4Address' field from '1.1.1.1' to '2.2.2.2'.
    locators, since both locators are still reachable and uses the one with the
    higher priority (lowest priority value). To force a failover, we need to
    set the priority of *server2* to a lower value. Using the file mapping.json
-   above, swap the priority values between the two locators (lines 15 and 31
+   above, swap the priority values between the two locators (lines 14 and 28
    in 'mapping.json') and repeat the request from step 11.  You can also
    repeat step 12 to see if the mapping is correctly registered.  If you leave
    the ping on, and monitor the traffic using wireshark, you can see that the
@@ -509,8 +501,9 @@ LISP http://tools.ietf.org/html/rfc6830#section-6.6.2[Solicit-Map-Request
 for a certain EID (enabled by default). It is controlled by the +lisp.smr+
 variable in +etc/custom.porperties+. When enabled, any mapping change from the
 RPC interface will trigger an SMR packet to all data plane elements that have
-requested the mapping in the last 15 minutes. If disabled, ITRs keep their
-mappings until the TTL specified in the Map-Reply expires.
+requested the mapping in the last 24 hours (this value was chosen because it's
+the default TTL of Cisco IOS xTR mapping registrations). If disabled, ITRs
+keep their mappings until the TTL specified in the Map-Reply expires.
 
  . To add a service chain into the path from the client to the server, we can
    use an Explicit Locator Path, specifying the *service-node* as the first
@@ -518,7 +511,7 @@ mappings until the TTL specified in the Map-Reply expires.
    achieve that:
 
  curl -u "admin":"admin" -H "Content-type: application/json" -X POST \
-     http://localhost:8181/restconf/operations/mappingservice:add-mapping \
+     http://localhost:8181/restconf/operations/odl-mappingservice:add-mapping \
      --data @elp.json
 +
 where the 'elp.json' file is as follows:
@@ -527,59 +520,44 @@ where the 'elp.json' file is as follows:
 ----
 {
     "input": {
-        "recordTtl": 1440,
-        "maskLength": 32,
-        "authoritative": true,
-        "LispAddressContainer": {
-            "Ipv4Address": {
-                "afi": 1,
-                "Ipv4Address": "2.2.2.2"
-            }
-        },
-        "LocatorRecord": [
-            {
-                "name": "ELP",
-                "priority": 1,
-                "weight": 1,
-                "multicastPriority": 255,
-                "multicastWeight": 0,
-                "localLocator": true,
-                "rlocProbed": false,
-                "routed": false,
-                "LispAddressContainer": {
-                    "LcafTrafficEngineeringAddr": {
-                        "afi": 16387,
-                        "lcafType": 10,
-                        "Hops": [
-                            {
-                                "name": "service-node",
-                                "lookup": false,
-                                "RLOCProbe": false,
-                                "strict": true,
-                                "hop": {
-                                    "Ipv4Address": {
-                                        "afi": 1,
-                                        "Ipv4Address": "192.168.16.33"
-                                    }
+        "mapping-record": {
+            "recordTtl": 1440,
+            "action": "NoAction",
+            "authoritative": true,
+            "eid": {
+                "address-type": "ietf-lisp-address-types:ipv4-prefix-afi",
+                "ipv4-prefix": "2.2.2.2/32"
+            },
+            "LocatorRecord": [
+                {
+                    "locator-id": "ELP",
+                    "priority": 1,
+                    "weight": 1,
+                    "multicastPriority": 255,
+                    "multicastWeight": 0,
+                    "localLocator": true,
+                    "rlocProbed": false,
+                    "routed": true,
+                    "rloc": {
+                        "address-type": "ietf-lisp-address-types:explicit-locator-path-lcaf",
+                        "explicit-locator-path": {
+                            "hop": [
+                                {
+                                    "hop-id": "service-node",
+                                    "address": "192.168.16.33",
+                                    "lrs-bits": "strict"
+                                },
+                                {
+                                    "hop-id": "server1",
+                                    "address": "192.168.16.31",
+                                    "lrs-bits": "strict"
                                 }
-                            },
-                            {
-                                "name": "server1",
-                                "lookup": false,
-                                "RLOCProbe": false,
-                                "strict": true,
-                                "hop": {
-                                    "Ipv4Address": {
-                                        "afi": 1,
-                                        "Ipv4Address": "192.168.16.31"
-                                    }
-                                }
-                            }
-                        ]
+                            ]
+                        }
                     }
                 }
-            }
-        ]
+            ]
+        }
     }
 }
 ----
