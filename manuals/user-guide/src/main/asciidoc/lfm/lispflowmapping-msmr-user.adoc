@@ -197,6 +197,7 @@ disambiguation of potential overlap, and examples output.
 | Explicit Locator Path  | 16387 |   10 | elp:     | {192.0.2.1->192.0.2.2\|lps->192.0.2.3}
 | Source/Destination Key | 16387 |   12 | srcdst:  | 192.0.2.1/32\|192.0.2.2/32
 | Key/Value Address Pair | 16387 |   15 | kv:      | 192.0.2.1=>192.0.2.2
+| Service Path           | 16387 |  N/A | sp:      | 42(3)
 |=====
 
 Please note that the forward slash character `/` typically separating IPv4 and
