@@ -1,38 +1,50 @@
-== OVSDB NetVirt Hardware VTEP Installation Guide
+== OVSDB Hardware VTEP Southbound Installation Guide
 
 === Overview
-
-TBD
+This guide is geared towards installing OpenDaylight to use the OVSDB hwvtepsouthbound plugin to provide support for the OVSDB hw_vtep schema. More information about the hw_vtep schema can be found out http://openvswitch.org/docs/vtep.5.pdf.
 
 === Preparing for Installation
 Follow the instructions in <<_getting_and_installing_opendaylight,Getting and Installing OpenDaylight>>.
 
-=== Installing OVSDB NetVirt Hardware VTEP
+=== Installing OVSDB Hardware VTEP Southbound
 Install the required features with the following command:
 -----
-feature:install odl-ovsdb-netvirt-hwvtep
+feature:install odl-ovsdb-hwvtepsouthbound-ui
 -----
 
-==== Sample output from the Karaf console
-----
-TBD
-----
+NOTE: Do not attempt to use the hwvtepsouthbound and southbound plugins both connected to the same OVSDB node as conflicts can occur.
 
 === Verifying your Installation
-To verify that the installation was successful, use the following command in karaf and check that there
-are no error logs relating to odl-ovsdb-netvirt-hwvtep
------
+To verify that the installation was successful, use the following commands in karaf and verify that the required features have been installed:
+----
+opendaylight-user@root>feature:list -i | grep ovsdb
+odl-ovsdb-hwvtepsouthbound-api  | 1.2.1-Beryllium  | x         | odl-ovsdb-hwvtepsouthbound-1.2.1-Beryllium | OpenDaylight :: hwvtepsouthbound :: api
+odl-ovsdb-hwvtepsouthbound      | 1.2.1-Beryllium  | x         | odl-ovsdb-hwvtepsouthbound-1.2.1-Beryllium | OpenDaylight :: hwvtepsouthbound
+odl-ovsdb-hwvtepsouthbound-rest | 1.2.1-Beryllium  | x         | odl-ovsdb-hwvtepsouthbound-1.2.1-Beryllium | OpenDaylight :: hwvtepsouthbound :: REST
+odl-ovsdb-hwvtepsouthbound-ui   | 1.2.1-Beryllium  | x         | odl-ovsdb-hwvtepsouthbound-1.2.1-Beryllium | OpenDaylight :: hwvtepsouthbound :: UI
+odl-ovsdb-library               | 1.2.1-Beryllium  | x         | odl-ovsdb-library-1.2.1-Beryllium          | OpenDaylight :: library
+----
+
+Use the following command in karaf to view the logs. Verify that there are no errors logs relating to `odl-ovsdb-hwvtepsouthbound-ui`.
+
+----
 log:display
------
+----
 
-==== Troubleshooting
+Look for the following log to indicate that the `odl-ovsdb-hwvtepsouthbound-ui` feature has been fully installed:
+----
+Successfully pushed configuration snapshot hwvtepsouthbound.xml(odl-ovsdb-hwvtepsouthbound-ui,odl-ovsdb-hwvtepsouthbound-ui)
+----
 
-TBD
+=== Uninstalling OVSDB OpenStack
+==== Feature Uninstall
+Uninstall the `odl-ovsdb-hwvtepsouthbound-ui` feature by using the following command:
+----
+feature:uninstall odl-ovsdb-hwvtepsouthbound-ui
+----
 
-=== Uninstalling OVSDB NetVirt Hardware VTEP
-. Shutdown the karaf instance: 
-+
------
-system:shutdown
------
-. Remove what is in the /data folder of the OpenDaylight Distribution.
+==== Cleaning and Resetting the State
+Use the following command to clean and reset the working state before starting OpenDaylight again:
+----
+rm -rf data/* journal/* snapshots/*
+----

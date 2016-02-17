@@ -1,0 +1,55 @@
+== OVSDB Southbound Installation Guide
+
+=== Overview
+This guide is geared towards installing OpenDaylight to use the OVSDB southbound plugin to provide support for the OVSDB Open_vSwitch schema. More information about the Open_vSwitch schema can be found out openvswitch.org/ovs-vswitchd.conf.db.5.pdf.
+
+The Open vSwitch Database (OVSDB) Model Driven Service Abstraction Layer
+(MD-SAL) Southbound plugin provides an MD-SAL based interface to
+Open vSwitch systems.  This is done by augmenting the MD-SAL topology node with
+a YANG model which replicates some (but not all) of the Open vSwitch schema.
+
+=== Preparing for Installation
+Follow the instructions in <<_getting_and_installing_opendaylight,Getting and Installing OpenDaylight>>.
+
+=== Installing OVSDB Southbound
+Install the required features with the following command:
+-----
+feature:install odl-ovsdb-southbound-impl-ui
+-----
+
+NOTE: Do not attempt to use the hwvtepsouthbound and southbound plugins both connected to the same OVSDB node as conflicts can occur.
+
+=== Verifying your Installation
+To verify that the installation was successful, use the following commands in karaf and verify that the required features have been installed:
+----
+opendaylight-user@root>feature:list -i | grep ovsdb
+odl-ovsdb-library               | 1.2.1-Beryllium  | x         | odl-ovsdb-library-1.2.1-Beryllium    | OpenDaylight :: library
+odl-ovsdb-southbound-api        | 1.2.1-Beryllium  | x         | odl-ovsdb-southbound-1.2.1-Beryllium | OpenDaylight :: southbound :: api
+odl-ovsdb-southbound-impl       | 1.2.1-Beryllium  | x         | odl-ovsdb-southbound-1.2.1-Beryllium | OpenDaylight :: southbound :: impl
+odl-ovsdb-southbound-impl-rest  | 1.2.1-Beryllium  | x         | odl-ovsdb-southbound-1.2.1-Beryllium | OpenDaylight :: southbound :: impl :: REST
+odl-ovsdb-southbound-impl-ui    | 1.2.1-Beryllium  | x         | odl-ovsdb-southbound-1.2.1-Beryllium | OpenDaylight :: southbound :: impl :: UI
+----
+
+Use the following command in karaf to view the logs. Verify that there are no errors logs relating to `odl-ovsdb-southbound-impl-ui`.
+
+----
+log:display
+----
+
+Look for the following log to indicate that the `odl-ovsdb-southbound-impl-ui` feature has been fully installed:
+----
+Pushing configuration snapshot southbound-impl-default-config.xml(odl-ovsdb-southbound-impl-ui,odl-ovsdb-southbound-impl-ui)
+----
+
+=== Uninstalling OVSDB OpenStack
+==== Feature Uninstall
+Uninstall the `odl-ovsdb-southbound-impl-ui` feature by using the following command:
+----
+feature:uninstall odl-ovsdb-southbound-impl-ui
+----
+
+==== Cleaning and Resetting the State
+Use the following command to clean and reset the working state before starting OpenDaylight again:
+----
+rm -rf data/* journal/* snapshots/*
+----

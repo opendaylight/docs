@@ -1,7 +1,8 @@
 
 include::ovsdb-openstack-install.adoc[]
 
-include::ovsdb-sfc-install.adoc[]
-
 include::ovsdb-hwvtep-install.adoc[]
 
+include::ovsdb-southbound-install.adoc[]
+
+include::ovsdb-sfc-install.adoc[]
