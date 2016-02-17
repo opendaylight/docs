@@ -2,7 +2,7 @@
 
 // NOTE: If you are editing this file, please try to keep it in sync
 //       with the wiki here:
-// https://wiki.opendaylight.org/view/Simultaneous_Release/Lithium/Release_Notes
+// https://wiki.opendaylight.org/view/Simultaneous_Release/Beryllium/Release_Notes
 
 === Target Environment
 
@@ -54,10 +54,9 @@ the project-specific release notes for details.
 Other than as noted in project-specific release notes, we know of the
 following limitations:
 
-. Migration from Helium to Lithium has not been extensively tested. The
-per-project release notes include migration and compatibility
-information when it is known. Broader support is anticipated in a later
-Lithium service release.
+. Migration from Helium and Lithium to Beryllium has not been
+extensively tested. The per-project release notes include migration and
+compatibility information when it is known.
 . There are scales beyond which the controller has been unreliable when
 collecting flow statistics from OpenFlow switches. In tests, these
 issues became apparent when managing thousands of OpenFlow
@@ -67,48 +66,12 @@ switches, however this may vary depending on deployment and use cases.
 
 For the release notes of individual projects, please see the following pages on the OpenDaylight Wiki.
 
-* https://wiki.opendaylight.org/view/AAA:Lithium_Release_Notes[Authentication, Authorization and Accounting (AAA)]
-* https://wiki.opendaylight.org/view/ALTO:Lithium:Release_Notes[ALTO]
-* https://wiki.opendaylight.org/view/BGP_LS_PCEP:Lithium_Release_Notes[BGP PCEP]
-* https://wiki.opendaylight.org/view/OpenDaylight_Controller:Lithium:Release_Notes[Controller]
-* https://wiki.opendaylight.org/view/CAPWAP:Lithium:Release_Notes[Control And Provisioning of Wireless Access Points (CAPWAP)]
-* https://wiki.opendaylight.org/view/DIDM:_Lithium_Release_Notes[Device Identification and Driver Management (DIDM)]
-* https://wiki.opendaylight.org/view/OpenDaylight_dlux:Lithium_Release_Notes[DLUX]
-* https://wiki.opendaylight.org/view/Group_Based_Policy_(GBP)/Releases/Lithium/Release_Notes[Group Based Policy (GPB)]
-* https://wiki.opendaylight.org/view/Iotdm:Lithium_Release_Notes[Internet of Things Data Management (IoTDM)]
-* https://wiki.opendaylight.org/view/L2_Switch:Lithium:Release_Notes[L2 Switch]
-* https://wiki.opendaylight.org/view/LACP:Lithium:Release_Notes[Link Aggregation Control Protocol (LACP)]
-* https://wiki.opendaylight.org/view/OpenDaylight_Lisp_Flow_Mapping:Lithium_Release_Notes[LISP Flow Mapping]
-* https://wiki.opendaylight.org/view/Network_Intent_Composition:Lithium_Release_Notes[Network Intent Composition]
-* https://wiki.opendaylight.org/view/NeutronNorthbound:LithiumReleaseNotes[Neutron Northbound]
-* https://wiki.opendaylight.org/view/ODL_Root_Parent:Lithium_Release_Notes[ODL Root Parent]
-* https://wiki.opendaylight.org/view/OpFlex:Lithium_Release_Notes[OpFlex]
-* https://wiki.opendaylight.org/view/OpenDaylight_OpenFlow_Plugin:Lithium_Release_Notes[OpenFlow Plugin]
-* https://wiki.opendaylight.org/view/Openflow_Protocol_Library:Release_Notes:Lithium_Release_Notes[OpenFlow Protocol Library]
-* https://wiki.opendaylight.org/view/OpenDaylight_OVSDB:Lithium_Release_Notes[OVSDB Integration]
-* https://wiki.opendaylight.org/view/PacketCablePCMM:LithiumReleaseNotes[Packet Cable/PCMM]
-* https://wiki.opendaylight.org/view/Persistence:Lithium_Release_Notes[Persistence]
-* https://wiki.opendaylight.org/view/Reservation:Lithium_Release_Notes[Reservation]
-* https://wiki.opendaylight.org/view/ODL-SDNi:Lithium_Release_Notes[SDN Interface Application]
-* https://wiki.opendaylight.org/view/SNBI_Lithium_Release_Notes[Secure Network Bootstrapping Infrastructure (SNBI)]
-* https://wiki.opendaylight.org/view/SNMP4SDN:Lithium_Release_Note[SNMP4SDN]
-* https://wiki.opendaylight.org/view/SNMP_Plugin:Lithium_Release_Notes[SNMP Plugin]
-* https://wiki.opendaylight.org/view/SXP:Lithium:Release_Notes[Secure tag eXchange Protocol (SXP)]
-* https://wiki.opendaylight.org/view/Service_Function_Chaining:Lithium_Release_Notes[Service Function Chaining (SFC)]
-* https://wiki.opendaylight.org/view/TCPMD5:Lithium_Release_Notes[TCP-MD5]
-* https://wiki.opendaylight.org/view/TSDR:Lithium:Release_Notes[Time Series Data Repository (TSDR)]
-* https://wiki.opendaylight.org/view/Table_Type_Patterns/Lithium/Release_Notes[Table Type Patterns (TTP)]
-* https://wiki.opendaylight.org/view/Topology_Processing_Framework:Lithium_Release_Notes[Topology Processing Framework]
-* https://wiki.opendaylight.org/view/USC:Lithium:Release_Notes[Unified Secure Channel (USC)]
-* https://wiki.opendaylight.org/view/Vpnservice:Lithium_Release_Notes[VPN Service]
-* https://wiki.opendaylight.org/view/OpenDaylight_Virtual_Tenant_Network_(VTN):Lithium_Release_Notes[Virtual Tenant Network (VTN)]
-* https://wiki.opendaylight.org/view/YANG_Tools:Lithium:Release_Notes[YANG Tools]
+TBD: add Beryllium release notes
 
 ==== Projects without Release Notes
 
-The following projects participated in Lithium, but intentionally do not have release notes.
+The following projects participated in Beryllium, but intentionally do not have release notes.
 
 * *Documentation Project* produced this and the other downloadable documentation
 * *Integration Group* hosted the OpenDaylight-wide tests and main release distribution
-** *Controller Core Functionality Tutorials* provided a single test suite (dsbenchmark) that was used as part of integration testing
-* *Release Engineering - autorelease* was used to build the Lithium release artifacts and including the main release download.
+* *Release Engineering - autorelease* was used to build the Beryllium release artifacts and including the main release download.
