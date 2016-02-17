@@ -3,7 +3,7 @@
 === Overview
 This guide is geared towards installing OpenDaylight to use the OVSDB project to provide Neutron support for OpenStack.
 
-Open vSwitch (OVS) is generally accepted as the unofficial standard for Virtual Switching in the Open hypervisor based solutions.
+Open vSwitch (OVS) is generally accepted as the unofficial standard for Virtual Switching in the open hypervisor based solutions.
 For information on OVS, see http://openvswitch.org/[Open vSwitch].
 
 With OpenStack within the SDN context, controllers and applications interact using two channels: OpenFlow and OVSDB. OpenFlow addresses the forwarding-side of the OVS functionality. OVSDB, on the other hand, addresses the management-plane.
@@ -12,43 +12,77 @@ A simple and concise overview of Open Virtual Switch Database (OVSDB) is availab
 === Preparing for Installation
 Follow the instructions in <<_getting_and_installing_opendaylight,Getting and Installing OpenDaylight>>.
 
+NOTE: By default the ODL OVSDB L3 forwarding is disabled. Enable the functionality by editing the `ovsdb.l3.fwd.enabled` setting and setting it to `yes`.
+
+----
+vi etc/custom.properties
+
+ovsdb.l3.fwd.enabled=yes
+----
+
 === Installing OVSDB OpenStack
 Install the required features with the following command:
+
 -----
 feature:install odl-ovsdb-openstack
 -----
 
-==== Sample output from the Karaf console
-----
-opendaylight-user@root>feature:list -i | grep ovsdb
-odl-ovsdb-southbound-api             | 1.1.0-SNAPSHOT   | x         | odl-ovsdb-southbound-1.1.0-SNAPSHOT
-OpenDaylight :: southbound :: api
-odl-ovsdb-southbound-impl            | 1.1.0-SNAPSHOT   | x         | odl-ovsdb-southbound-1.1.0-SNAPSHOT
-OpenDaylight :: southbound :: impl
-odl-ovsdb-southbound-impl-rest       | 1.1.0-SNAPSHOT   | x         | odl-ovsdb-southbound-1.1.0-SNAPSHOT
-OpenDaylight :: southbound :: impl :: REST
-odl-ovsdb-southbound-impl-ui         | 1.1.0-SNAPSHOT   | x         | odl-ovsdb-southbound-1.1.0-SNAPSHOT
-OpenDaylight :: southbound :: impl :: UI
-odl-ovsdb-openstack                  | 1.1.0-SNAPSHOT   | x         | ovsdb-1.1.0-SNAPSHOT
-OpenDaylight :: OVSDB :: OpenStack Network Virtual
-----
+Recognize that for the feature to fully install requires installing other required features and may take 30-60s as those other features are automatically installed. The karaf prompt will return before the feature is fully installed.
 
 === Verifying your Installation
-To verify that the installation was successful, use the following command in karaf and check that there are no errors
-logs relating to odl-ovsdb-openstack.
------
-log:display
------
+To verify that the installation was successful, use the following commands in karaf and verify that the required features have been installed:
 
-==== Troubleshooting
-There is no easy way to troubleshoot an installation of odl-ovsdb-openstack. Perhaps a combination of
-log:display | grep -i ovsdb in karaf, Open vSwitch commands (ovs-vsctl) and OpenStack logs will be useful but will not
-explain everything.
+----
+opendaylight-user@root>feature:list -i | grep ovsdb
+odl-ovsdb-openstack               | 1.2.1-Beryllium  | x         | ovsdb-1.2.1-Beryllium                    | OpenDaylight :: OVSDB :: OpenStack Network Virtual
+odl-ovsdb-library                 | 1.2.1-Beryllium  | x         | odl-ovsdb-library-1.2.1-Beryllium        | OpenDaylight :: library
+odl-ovsdb-southbound-api          | 1.2.1-Beryllium  | x         | odl-ovsdb-southbound-1.2.1-Beryllium     | OpenDaylight :: southbound :: api
+odl-ovsdb-southbound-impl         | 1.2.1-Beryllium  | x         | odl-ovsdb-southbound-1.2.1-Beryllium     | OpenDaylight :: southbound :: impl
+odl-ovsdb-southbound-impl-rest    | 1.2.1-Beryllium  | x         | odl-ovsdb-southbound-1.2.1-Beryllium     | OpenDaylight :: southbound :: impl :: REST
+odl-ovsdb-southbound-impl-ui      | 1.2.1-Beryllium  | x         | odl-ovsdb-southbound-1.2.1-Beryllium     | OpenDaylight :: southbound :: impl :: UI
+
+opendaylight-user@root>feature:list -i | grep neutron
+odl-neutron-service               | 0.6.0-Beryllium  | x         | odl-neutron-0.6.0-Beryllium              | OpenDaylight :: Neutron :: API
+odl-neutron-northbound-api        | 0.6.0-Beryllium  | x         | odl-neutron-0.6.0-Beryllium              | OpenDaylight :: Neutron :: Northbound
+odl-neutron-spi                   | 0.6.0-Beryllium  | x         | odl-neutron-0.6.0-Beryllium              | OpenDaylight :: Neutron :: API
+odl-neutron-transcriber           | 0.6.0-Beryllium  | x         | odl-neutron-0.6.0-Beryllium              | OpenDaylight :: Neutron :: Implementation
+
+opendaylight-user@root>feature:list -i | grep openflowplugin
+odl-openflowplugin-southbound     | 0.2.0-Beryllium  | x         | openflowplugin-0.2.0-Beryllium           | OpenDaylight :: Openflow Plugin :: SouthBound
+odl-openflowplugin-nsf-services   | 0.2.0-Beryllium  | x         | openflowplugin-0.2.0-Beryllium           | OpenDaylight :: OpenflowPlugin :: NSF :: Services
+odl-openflowplugin-nsf-model      | 0.2.0-Beryllium  | x         | openflowplugin-0.2.0-Beryllium           | OpenDaylight :: OpenflowPlugin :: NSF :: Model
+odl-openflowplugin-nxm-extensions | 0.2.0-Beryllium  | x         | openflowplugin-extension-0.2.0-Beryllium | OpenDaylight :: Openflow Plugin :: Nicira Extensio
+----
+
+Use the following command in karaf to view the logs. Verify that there are no errors logs relating to `odl-ovsdb-openstack`.
+----
+log:display
+----
+
+Look for the following log to indicate that the `odl-ovsdb-openstack` feature has been fully installed:
+----
+Successfully pushed configuration snapshot netvirt-providers-impl-default-config.xml(odl-ovsdb-openstack,odl-ovsdb-openstack)
+----
+
+=== Troubleshooting
+Reference the following link to the OVSDB NetVirt project wiki. The link has very helpful information for understanding the OVSDB Network Virtualization project:
+
+* a link to a tutorial describing the project, it's goals, features and architecture.
+* a link to a VirtualBox OVA file containing an all-in-one setup that you can simply import and see the OpenDaylight and OpenStack integration in action.
+* slides describing how to use the OVA, run the demo and how to debug.
+* a link to a Youtube presentation covering the slides and demo.
+
+https://wiki.opendaylight.org/view/OVSDB_Integration:Main#Getting_Started_with_OpenDaylight_OVSDB_Plugin_Network_Virtualization
 
 === Uninstalling OVSDB OpenStack
-. Shutdown the karaf instance:
-+
------
-system:shutdown
------
-. Remove what is in the /data folder of the OpenDaylight Distribution.
+==== Feature Uninstall
+Uninstall the `odl-ovsdb-openstack` feature by using the following command:
+----
+feature:uninstall odl-ovsdb-openstack
+----
+
+==== Cleaning and Resetting the State
+Use the following command to clean and reset the working state before starting OpenDaylight again:
+----
+rm -rf data/* journal/* snapshots/*
+----

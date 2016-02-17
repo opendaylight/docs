@@ -1,37 +1,79 @@
-== OVSDB Service Function Chaining Installation Guide
+== OVSDB NetVirt Service Function Chaining Installation Guide
 
 === Overview
-
-TBD
+This guide is geared towards installing OpenDaylight to use the OVSDB NetVirt Service Function Chaining. The NetVirt SFC features builds on the the OVSDB OpenStack and SFC features to provide a classification and traffic steering component when integrated with OpenStack. Please refer to the Service Function Chaining project for the theory and programming of service chains.
 
 === Preparing for Installation
 Follow the instructions in <<_getting_and_installing_opendaylight,Getting and Installing OpenDaylight>>.
 
-=== Installing OVSDB Service Function Chaining
+=== Installing OVSDB NetVirt Service Function Chaining
 Install the required features with the following command:
 -----
 feature:install odl-ovsdb-sfc-ui
 -----
 
-==== Sample output from the Karaf console
-----
-TBD
-----
-
 === Verifying your Installation
-To verify that the installation was successful, use the following command in karaf and check that there are
-no error logs relating to odl-ovsdb-sfc
------
-log:display
------
-==== Troubleshooting
+To verify that the installation was successful, use the following commands in karaf and verify that the required features have been installed:
+----
+opendaylight-user@root>feature:list -i | grep ovsdb
 
-TBD
+odl-ovsdb-southbound-api             | 1.2.1-SNAPSHOT   | x         | odl-ovsdb-southbound-1.2.1-SNAPSHOT     | OpenDaylight :: southbound :: api
+odl-ovsdb-southbound-impl            | 1.2.1-SNAPSHOT   | x         | odl-ovsdb-southbound-1.2.1-SNAPSHOT     | OpenDaylight :: southbound :: impl
+odl-ovsdb-southbound-impl-rest       | 1.2.1-SNAPSHOT   | x         | odl-ovsdb-southbound-1.2.1-SNAPSHOT     | OpenDaylight :: southbound :: impl :: REST
+odl-ovsdb-southbound-impl-ui         | 1.2.1-SNAPSHOT   | x         | odl-ovsdb-southbound-1.2.1-SNAPSHOT     | OpenDaylight :: southbound :: impl :: UI
+odl-ovsdb-library                    | 1.2.1-SNAPSHOT   | x         | odl-ovsdb-library-1.2.1-SNAPSHOT        | OpenDaylight :: library
+odl-ovsdb-openstack                  | 1.2.1-SNAPSHOT   | x         | ovsdb-1.2.1-SNAPSHOT                    | OpenDaylight :: OVSDB :: OpenStack Network Virtual
+odl-ovsdb-sfc-api                    | 1.2.1-SNAPSHOT   | x         | odl-ovsdb-sfc-1.2.1-SNAPSHOT            | OpenDaylight :: ovsdb-sfc :: api
+odl-ovsdb-sfc                        | 1.2.1-SNAPSHOT   | x         | odl-ovsdb-sfc-1.2.1-SNAPSHOT            | OpenDaylight :: ovsdb-sfc
+odl-ovsdb-sfc-rest                   | 1.2.1-SNAPSHOT   | x         | odl-ovsdb-sfc-1.2.1-SNAPSHOT            | OpenDaylight :: ovsdb-sfc :: REST
+odl-ovsdb-sfc-ui                     | 1.2.1-SNAPSHOT   | x         | odl-ovsdb-sfc-1.2.1-SNAPSHOT            | OpenDaylight :: ovsdb-sfc :: UI
+
+opendaylight-user@root>feature:list -i | grep sfc
+odl-sfc-model                        | 0.2.0-SNAPSHOT   | x         | odl-sfc-0.2.0-SNAPSHOT                  | OpenDaylight :: sfc :: Model
+odl-sfc-provider                     | 0.2.0-SNAPSHOT   | x         | odl-sfc-0.2.0-SNAPSHOT                  | OpenDaylight :: sfc :: Provider
+odl-sfc-provider-rest                | 0.2.0-SNAPSHOT   | x         | odl-sfc-0.2.0-SNAPSHOT                  | OpenDaylight :: sfc :: Provider
+odl-sfc-ovs                          | 0.2.0-SNAPSHOT   | x         | odl-sfc-0.2.0-SNAPSHOT                  | OpenDaylight :: OpenvSwitch
+odl-sfcofl2                          | 0.2.0-SNAPSHOT   | x         | odl-sfc-0.2.0-SNAPSHOT                  | OpenDaylight :: sfcofl2
+odl-ovsdb-sfc-test                   | 1.2.1-SNAPSHOT   | x         | odl-ovsdb-sfc-test1.2.1-SNAPSHOT        | OpenDaylight :: ovsdb-sfc-test
+odl-ovsdb-sfc-api                    | 1.2.1-SNAPSHOT   | x         | odl-ovsdb-sfc-1.2.1-SNAPSHOT            | OpenDaylight :: ovsdb-sfc :: api
+odl-ovsdb-sfc                        | 1.2.1-SNAPSHOT   | x         | odl-ovsdb-sfc-1.2.1-SNAPSHOT            | OpenDaylight :: ovsdb-sfc
+odl-ovsdb-sfc-rest                   | 1.2.1-SNAPSHOT   | x         | odl-ovsdb-sfc-1.2.1-SNAPSHOT            | OpenDaylight :: ovsdb-sfc :: REST
+odl-ovsdb-sfc-ui                     | 1.2.1-SNAPSHOT   | x         | odl-ovsdb-sfc-1.2.1-SNAPSHOT            | OpenDaylight :: ovsdb-sfc :: UI
+
+opendaylight-user@root>feature:list -i | grep neutron
+odl-neutron-service                  | 0.6.0-SNAPSHOT   | x         | odl-neutron-0.6.0-SNAPSHOT              | OpenDaylight :: Neutron :: API
+odl-neutron-northbound-api           | 0.6.0-SNAPSHOT   | x         | odl-neutron-0.6.0-SNAPSHOT              | OpenDaylight :: Neutron :: Northbound
+odl-neutron-spi                      | 0.6.0-SNAPSHOT   | x         | odl-neutron-0.6.0-SNAPSHOT              | OpenDaylight :: Neutron :: API
+odl-neutron-transcriber              | 0.6.0-SNAPSHOT   | x         | odl-neutron-0.6.0-SNAPSHOT              | OpenDaylight :: Neutron :: Implementation
+----
+
+Use the following command in karaf to view the logs. Verify that there are no errors logs relating to `odl-ovsdb-sfc-ui`.
+
+----
+log:display
+----
+
+Look for the following log to indicate that the `odl-ovsdb-sfc-ui` feature has been fully installed:
+----
+Successfully pushed configuration snapshot openstack.net-virt-sfc.xml(odl-ovsdb-sfc-ui,odl-ovsdb-sfc-ui)
+----
 
 === Uninstalling OVSDB Service Function Chaining
-. Shutdown the karaf instance: 
-+
------
-system:shutdown
------
-. Remove what is in the /data folder of the OpenDaylight Distribution.
+==== Feature Uninstall
+Uninstall the `odl-ovsdb-sfc-ui` feature by using the following command:
+----
+feature:uninstall odl-ovsdb-sfc-ui
+----
+
+==== Cleaning and Resetting the State
+Use the following command to clean and reset the working state before starting OpenDaylight again:
+----
+rm -rf data/* journal/* snapshots/*
+----
+
+=== Demos
+There are two available demos that can be used to easily test and verify the OVSDB NetVirt SFC implementation. The first demo includes integration with OpenStack and Tacker. The second is a standalone demo composed of various VM's to mimic much of the OpenStack and Tacker functionality. Use the two links below to find more information:
+
+* https://github.com/trozet/sfc-random
+* https://github.com/opendaylight/ovsdb/tree/master/resources/demo/netvirtsfc-env
+
