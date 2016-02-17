@@ -12,25 +12,24 @@ specification. PacketCable solution is an MDSAL compliant component.
 
 === PacketCable Components
 
-PacketCable is comprised of three OpenDaylight bundles:
+PacketCable is comprised of two OpenDaylight bundles:
 
 [options="header"]
 |======
 |Bundle |Description
-|packetcable-policy-server | Plugin that provides PCMM model implementation based on CMTS structure and COPS protocol.
-|packetcable-policy-model  | The Model provided provides a direct mapping to the underlying QoS Gates of CMTS.
-|packetcable-driver        | The codec for transforming the model into the appropriate PCMM Gate message for flows and CMTS connections.
+|odl-packetcable-policy-server | Plugin that provides PCMM model implementation based on CMTS structure and COPS protocol.
+|odl-packetcable-policy-model  | The Model provided provides a direct mapping to the underlying QoS Gates of CMTS.
 |======
 
 See the PacketCable 
-https://git.opendaylight.org/gerrit/gitweb?p=packetcable.git;a=tree;f=packetcable-model/src/main/yang[YANG
+https://git.opendaylight.org/gerrit/gitweb?p=packetcable.git;a=tree;f=packetcable-policy-model/src/main/yang[YANG
 Models].
 
 === Installing PacketCable
 
 To install PacketCable, run the following `feature:install` command from the Karaf CLI
 
- feature:install odl-restconf odl-l2switch-switch odl-dlux-core odl-mdsal-apidocs odl-packetcable-policy-all
+ feature:install odl-packetcable-policy-server-all odl-restconf odl-mdsal-apidocs
 
 === Explore and exercise the PacketCable REST API
 
@@ -39,19 +38,14 @@ http://localhost:8181/apidoc/explorer/index.html
 
 Replace localhost with the IP address or hostname where OpenDaylight is running if you are not running OpenDaylight locally on your machine.
 
-=== Adding a CMTS to OpenDaylight Inventory
-
-The RESTCONF URLs makes it possible to add a CMTS to OpenDaylight and have it connected.
-
-.Add a CMTS to OpenDaylight Inventory
-image::Screenshot1.png[width=500]
+NOTE: Prior to setting any PCMM gates, a CCAP must first be added. 
 
 === Postman
 
-https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm?hl=en[Configure
-the Chrome browser]
+https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm?hl=en[Install
+the Chrome extension]
 
-https://git.opendaylight.org/gerrit/gitweb?p=packetcable.git;a=tree;f=packetcable-client[Download
+https://git.opendaylight.org/gerrit/gitweb?p=packetcable.git;a=tree;f=packetcable-policy-server/doc/restconf-samples[Download
 and import sample packetcable collection]
 
 .Postman Operations
