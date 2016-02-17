@@ -1,10 +1,10 @@
-== PCMM Developer and Testing (*Preliminary*)
+== PacketCable Developer Guide
 
-[[specification]]
-=== Specification
+[[pcmm-specification]]
+=== PCMM Specification
 
-http://www.cablelabs.com/wp-content/uploads/specdocs/PKT-SP-MM-I05-091029.pdf[PacketCable™
-Specification Multimedia Specification PKT-SP-MM-I05-091029]
+http://www.cablelabs.com/specification/packetcable-multimedia-specification[PacketCable™
+ Multimedia Specification]
 
 [[system-overview]]
 === System Overview
@@ -13,78 +13,60 @@ These components introduce a DOCSIS QoS Service Flow management using
 the PCMM protocol. The driver component is responsible for the
 PCMM/COPS/PDP functionality required to service requests from
 PacketCable Provider and FlowManager. Requests are transposed into PCMM
-Gate Control messages and transmitted via COPS to the CMTS. This plugin
+Gate Control messages and transmitted via COPS to the CCAP/CMTS. This plugin
 adheres to the PCMM/COPS/PDP functionality defined in the CableLabs
 specification. PacketCable solution is an MDSAL compliant component.
 
-// image:Screenshot6.png[width=500]
-//
-// image:Odp_diagram_helium_v6.jpg[width=500]
-
 [[packetcable-components]]
-=== Packetcable Components
+=== PacketCable Components
 
-packetcable is comprised of three OpenDaylight bundles
+The packetcable maven project is comprised of several modules.
 
-[options=="header"]
-|========================================================================
-|Bundle |Description
-|packetcable-model |Contains the YANG information model for flows and
-nodes
 
-|packetcable-provider |Provider hosts the model processing, RESTCONF,
-API implementation, and brokers requests to consumer
+[options="header"]
+|=======================
+|Bundle                    |Description
+|packetcable-driver        |A common module that containts the COPS stack and 
+                            manages all connections to CCAPS/CMTSes.
+|packetcable-emulator      |A basic CCAP emulator to facilitate testing the
+                            the plugin when no physical CCAP is avaible.
+|packetcable-policy-karaf  |Generates a Karaf distribution with a config that
+                            loads all the packetcable features at runtime.
+|packetcable-policy-model  |Contains the YANG information model.
+|packetcable-policy-server |Provider hosts the model processing, RESTCONF,
+                            and API implementation.
+|=======================
 
-|packetcable-consumer |Consumer hosts packet codec and sends requests to
-driver
 
-|packetcable-driver |The codec for transforming the model into the
-appropriate PCMM Gate message for flows and CMTS connections.
-|========================================================================
+[[loging-levels]]
+==== Setting Logging Levels
+From the Karaf console
 
-See
-https://github.com/opendaylight/packetcable/tree/stable/lithium/packetcable-model/src/main/yang[YANG
-Model]
-
-[[tell-a-bundle-to-log-debug]]
-==== Tell a Bundle to Log Debug
-
-`log:set org.opendaylight.packetcable.packetcable-provider`
+    log:set <LEVEL> (<PACKAGE>|<BUNDLE>)
+    Example
+    log:set DEBUG org.opendaylight.packetcable.packetcable-policy-server
 
 [[tools-for-testing]]
 === Tools for Testing
 
-[[custom-testsuite]]
-==== Custom Testsuite
+[[postman]]
+==== Postman REST client for Chrome
 
-Most of the
-https://wiki.opendaylight.org/view/OpenDaylight_OpenFlow_Plugin::Python_test_scripts[Openflow tests for RESTCONF]
-can be adapted for PCMM and service flow
-testing.
-https://github.com/opendaylight/packetcable/tree/stable/lithium/packetcable-client[Browse
-this folder] for WIP of tests and examples used for minimum acceptance
-testing.
+https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm?hl=en[Install
+the Chrome extension]
 
-[[restconfapi.py]]
-===== restconfapi.py
+https://git.opendaylight.org/gerrit/gitweb?p=packetcable.git;a=tree;f=packetcable-policy-server/doc/restconf-samples[Download
+and import sample packetcable collection]
 
-Scripted series of packetcable actions testing minimum compliance.
-
-For example, adding a CMTS, adding IPv4 flow, delete flow and delete
-CMTS.
-
-Other flows can be formulated and added to create a regression test of
-what kind of flows are interesting for use cases. Multicast?
-
-[[flow_config_perf_pcmm.py]]
-===== flow_config_perf_pcmm.py
-
-For load testing there is this nice tool that could be repurpose to load
-test a CMTS. 
-//TODO: Adapt this script for load testing PCMM on a CMTS.
+[[view-rest-api]]
+==== View Rest API
+1. Install the `odl-mdsal-apidocs` feature from the karaf console.
+2. Open http://localhost:8181/apidoc/explorer/index.html default dev build user/pass is admin/admin
+3. Navigate to the PacketCable section.
 
 [[yang-ide]]
 ==== Yang-IDE
+Editing yang can be done in any text editor but Yang-IDE will help prevent mistakes.
 
 https://github.com/xored/yang-ide/wiki/Setup-and-build[Setup and Build
 Yang-IDE for Eclipse]
@@ -104,11 +86,10 @@ the filter field.
 image:Screenshot8.png[width=500]
 
 [[debugging-and-verifying-dqos-gate-flows-on-the-cmts]]
-=== Debugging and Verifying DQoS Gate (Flows) on the CMTS
+=== Debugging and Verifying DQoS Gate (Flows) on the CCAP/CMTS
 
-http://books.google.com/books?id==zNnCLUa8CHQC&pg==PA701&lpg==PA701&dq==show+packetcable+gate[This
-book] serves as a good reference. Below are some of the most useful CMTS
-commands to verify flows have been enabled on the CMTS.
+Below are some of the most useful CCAP/CMTS commands to verify flows have been
+enabled on the CMTS.
 
 [[cisco]]
 ==== Cisco
