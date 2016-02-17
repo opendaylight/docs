@@ -2,8 +2,6 @@
 
 To aid in testing and diagnosis, the OpenFlow plugin provides information about the number and rate of different internal events.
 
-=== Implemented strategy
-
 The implementation does two things: collects event counts and exposes counts. Event counts are grouped by message type, e.g., *PacketInMessage*, and checkpoint, e.g., _TO_SWITCH_ENQUEUED_SUCCESS_. Once gathered, the results are logged as well as being exposed using OSGi command line (deprecated) and JMX.
 
 [[collect]]
