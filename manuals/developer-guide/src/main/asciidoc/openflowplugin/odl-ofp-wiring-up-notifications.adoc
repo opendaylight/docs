@@ -1,0 +1,98 @@
+=== Wiring up notifications
+
+==== Introduction
+
+We need to translate OpenFlow messages coming up from the
+<<_openflow_protocol_library_developer_guide,OpenFlow Protocol Library>>
+into MD-SAL Notification objects and then publish them to the
+MD-SAL.
+
+[[mechanics]]
+==== Mechanics
+
+.  Create a Translator class
+.  Register the Translator
+.  Register the notificationPopListener to handle your Notification
+Objects
+
+[[create-a-translator-class]]
+===== Create a Translator class
+
+You can see an example in
+https://git.opendaylight.org/gerrit/gitweb?p=openflowplugin.git;a=blob;f=openflowplugin/src/main/java/org/opendaylight/openflowplugin/openflow/md/core/translator/PacketInTranslator.java;hb=refs/heads/stable/beryllium[PacketInTranslator.java].
+
+First, simply create the class
+
+---------------------------------------------------------------------------------------------
+public class PacketInTranslator implements IMDMessageTranslator<OfHeader, List<DataObject>> {
+---------------------------------------------------------------------------------------------
+
+Then implement the translate function:
+
+---------------------------------------------------------------------------------------------
+public class PacketInTranslator implements IMDMessageTranslator<OfHeader, List<DataObject>> {
+
+    protected static final Logger LOG = LoggerFactory
+            .getLogger(PacketInTranslator.class);
+    @Override
+    public PacketReceived translate(SwitchConnectionDistinguisher cookie,
+            SessionContext sc, OfHeader msg) { 
+            ...
+    }
+---------------------------------------------------------------------------------------------
+
+Make sure to check that you are dealing with the expected type and cast
+it:
+
+---------------------------------------------------------------------------
+if(msg instanceof PacketInMessage) {
+    PacketInMessage message = (PacketInMessage)msg;
+    List<DataObject> list = new CopyOnWriteArrayList<DataObject>();
+---------------------------------------------------------------------------
+
+Do your transation work and return
+
+-------------------------------------------------------------
+PacketReceived pktInEvent = pktInBuilder.build();
+list.add(pktInEvent);
+return list;
+-------------------------------------------------------------
+
+[[register-your-translator-class]]
+===== Register your Translator Class
+
+Next you need to go to
+https://git.opendaylight.org/gerrit/gitweb?p=openflowplugin.git;a=blob;f=openflowplugin/src/main/java/org/opendaylight/openflowplugin/openflow/md/core/MDController.java;hb=refs/heads/stable/beryllium[MDController.java]
+and in init() add register your Translator:
+
+-----------------------------------------------------------------------------------
+public void init() {
+        LOG.debug("Initializing!");
+        messageTranslators = new ConcurrentHashMap<>();
+        popListeners = new ConcurrentHashMap<>();
+        //TODO: move registration to factory
+        addMessageTranslator(ErrorMessage.class, OF10, new ErrorTranslator());
+        addMessageTranslator(ErrorMessage.class, OF13, new ErrorTranslator());
+        addMessageTranslator(PacketInMessage.class,OF10, new PacketInTranslator());
+        addMessageTranslator(PacketInMessage.class,OF13, new PacketInTranslator());
+-----------------------------------------------------------------------------------
+
+Notice that there is a separate registration for each of OpenFlow 1.0 and OpenFlow 1.3.
+Basically, you indicate the type of OpenFlow Protocol Library message you wish to
+translate for, the OpenFlow version, and an instance of your Translator.
+
+[[register-your-md-sal-message-for-notification-to-the-md-sal]]
+===== Register your MD-SAL Message for Notification to the MD-SAL
+
+Now, also in MDController.init() register to have the
+notificationPopListener handle your MD-SAL Message:
+
+---------------------------------------------------------------------------------------
+addMessagePopListener(PacketReceived.class, new NotificationPopListener<DataObject>());
+---------------------------------------------------------------------------------------
+
+[[you-are-done]]
+===== You are done
+
+That's all there is to it. Now when a message comes up from the
+OpenFlow Protocol Library, it will be translated and published to the MD-SAL.
