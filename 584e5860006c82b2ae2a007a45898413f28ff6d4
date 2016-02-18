@@ -1,0 +1,418 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_04856a59",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn-overview.adoc",
+        "patchSetId": 8
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-18T16:31:43Z",
+      "side": 1,
+      "message": "do you use the term ODC elsewhere? If not, I\u0027d suggest just dropping this and saying \"An OpenDaylight plugin...\"",
+      "range": {
+        "startLine": 20,
+        "startChar": 16,
+        "endLine": 20,
+        "endChar": 31
+      },
+      "revId": "584e5860006c82b2ae2a007a45898413f28ff6d4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_447bf27a",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn-overview.adoc",
+        "patchSetId": 8
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-18T16:31:43Z",
+      "side": 1,
+      "message": "This is going to be the wrong IP for users. Maybe say \u003cOpenDaylight-IP\u003e?",
+      "range": {
+        "startLine": 61,
+        "startChar": 51,
+        "endLine": 61,
+        "endChar": 65
+      },
+      "revId": "584e5860006c82b2ae2a007a45898413f28ff6d4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_24806e45",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn-overview.adoc",
+        "patchSetId": 8
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-18T16:31:43Z",
+      "side": 1,
+      "message": "delete \"controller\"",
+      "range": {
+        "startLine": 63,
+        "startChar": 67,
+        "endLine": 63,
+        "endChar": 77
+      },
+      "revId": "584e5860006c82b2ae2a007a45898413f28ff6d4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_84985ac1",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn-overview.adoc",
+        "patchSetId": 8
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-18T16:31:43Z",
+      "side": 1,
+      "message": "default user",
+      "range": {
+        "startLine": 67,
+        "startChar": 24,
+        "endLine": 67,
+        "endChar": 33
+      },
+      "revId": "584e5860006c82b2ae2a007a45898413f28ff6d4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_a4e2be2c",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn-overview.adoc",
+        "patchSetId": 8
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-18T16:31:43Z",
+      "side": 1,
+      "message": "Delete this, it looks like it\u0027s almost a verbatim repeat of earlier sentences in the same paragraph.",
+      "range": {
+        "startLine": 75,
+        "startChar": 433,
+        "endLine": 75,
+        "endChar": 587
+      },
+      "revId": "584e5860006c82b2ae2a007a45898413f28ff6d4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_64955686",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn-overview.adoc",
+        "patchSetId": 8
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-18T16:31:43Z",
+      "side": 1,
+      "message": "delete the",
+      "range": {
+        "startLine": 75,
+        "startChar": 96,
+        "endLine": 75,
+        "endChar": 99
+      },
+      "revId": "584e5860006c82b2ae2a007a45898413f28ff6d4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_44401207",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn-overview.adoc",
+        "patchSetId": 8
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-18T16:31:43Z",
+      "side": 1,
+      "message": "OpenDaylight",
+      "range": {
+        "startLine": 75,
+        "startChar": 792,
+        "endLine": 75,
+        "endChar": 795
+      },
+      "revId": "584e5860006c82b2ae2a007a45898413f28ff6d4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_644a7627",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn-overview.adoc",
+        "patchSetId": 8
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-18T16:31:43Z",
+      "side": 1,
+      "message": "OpenDaylight instances",
+      "range": {
+        "startLine": 75,
+        "startChar": 933,
+        "endLine": 75,
+        "endChar": 936
+      },
+      "revId": "584e5860006c82b2ae2a007a45898413f28ff6d4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_c48ee278",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn-overview.adoc",
+        "patchSetId": 8
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-18T16:31:43Z",
+      "side": 1,
+      "message": "OpenDaylight",
+      "range": {
+        "startLine": 75,
+        "startChar": 283,
+        "endLine": 75,
+        "endChar": 312
+      },
+      "revId": "584e5860006c82b2ae2a007a45898413f28ff6d4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_043a8a98",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn-overview.adoc",
+        "patchSetId": 8
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-18T16:31:43Z",
+      "side": 1,
+      "message": "OpenDaylight",
+      "range": {
+        "startLine": 75,
+        "startChar": 694,
+        "endLine": 75,
+        "endChar": 721
+      },
+      "revId": "584e5860006c82b2ae2a007a45898413f28ff6d4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_844dfa40",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn-overview.adoc",
+        "patchSetId": 8
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-18T16:31:43Z",
+      "side": 1,
+      "message": "controllers",
+      "range": {
+        "startLine": 75,
+        "startChar": 906,
+        "endLine": 75,
+        "endChar": 909
+      },
+      "revId": "584e5860006c82b2ae2a007a45898413f28ff6d4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_c45382e0",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn-overview.adoc",
+        "patchSetId": 8
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-18T16:31:43Z",
+      "side": 1,
+      "message": "refer to",
+      "range": {
+        "startLine": 81,
+        "startChar": 37,
+        "endLine": 81,
+        "endChar": 42
+      },
+      "revId": "584e5860006c82b2ae2a007a45898413f28ff6d4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_a450fed4",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/vtn/vtn-install.adoc",
+        "patchSetId": 8
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-18T16:31:43Z",
+      "side": 1,
+      "message": "delete",
+      "range": {
+        "startLine": 19,
+        "startChar": 16,
+        "endLine": 19,
+        "endChar": 32
+      },
+      "revId": "584e5860006c82b2ae2a007a45898413f28ff6d4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_e465e6b5",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/vtn/vtn-install.adoc",
+        "patchSetId": 8
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-18T16:31:43Z",
+      "side": 1,
+      "message": "OpenDaylight",
+      "range": {
+        "startLine": 23,
+        "startChar": 786,
+        "endLine": 23,
+        "endChar": 789
+      },
+      "revId": "584e5860006c82b2ae2a007a45898413f28ff6d4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_0461eaa8",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/vtn/vtn-install.adoc",
+        "patchSetId": 8
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-18T16:31:43Z",
+      "side": 1,
+      "message": "OpenDaylight instances",
+      "range": {
+        "startLine": 23,
+        "startChar": 900,
+        "endLine": 23,
+        "endChar": 903
+      },
+      "revId": "584e5860006c82b2ae2a007a45898413f28ff6d4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_6471d675",
+        "filename": "manuals/user-guide/src/main/asciidoc/vtn/VTN_OpenStack_Support-user.adoc",
+        "patchSetId": 8
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-18T16:31:43Z",
+      "side": 1,
+      "message": "I don\u0027t think you need/want this to be formatted as a code snippet, so removing the ---- before and after would help.",
+      "range": {
+        "startLine": 93,
+        "startChar": 0,
+        "endLine": 95,
+        "endChar": 4
+      },
+      "revId": "584e5860006c82b2ae2a007a45898413f28ff6d4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_c46a6280",
+        "filename": "manuals/user-guide/src/main/asciidoc/vtn/VTN_OpenStack_Support-user.adoc",
+        "patchSetId": 8
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-18T16:31:43Z",
+      "side": 1,
+      "message": "how do you expect people to log out?",
+      "range": {
+        "startLine": 104,
+        "startChar": 3,
+        "endLine": 104,
+        "endChar": 9
+      },
+      "revId": "584e5860006c82b2ae2a007a45898413f28ff6d4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_a4675eb6",
+        "filename": "manuals/user-guide/src/main/asciidoc/vtn/VTN_Overview.adoc",
+        "patchSetId": 8
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-18T16:31:43Z",
+      "side": 1,
+      "message": "delete",
+      "range": {
+        "startLine": 20,
+        "startChar": 16,
+        "endLine": 20,
+        "endChar": 32
+      },
+      "revId": "584e5860006c82b2ae2a007a45898413f28ff6d4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
