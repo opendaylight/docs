@@ -1,17 +1,17 @@
 == ODL-SDNi User Guide
 
 === Introduction
-This user guide will help to setup the ODL-SDNi application for lithium release and contains the examples configuration using ODL-BGPCEP.
+This user guide will help to setup the ODL-SDNi application for Beryllium release and contains the examples configuration using ODL-BGPCEP.
 
 === Components
-SDNiAggregator(controller), SDNi REST API(controller) and SDNiWrapper(bgpcep) are the three components in ODL-SDNi App  
+SDNiAggregator(controller), SDNi API(controller) and SDNiWrapper(bgpcep) are the three components in ODL-SDNi App  
 
-* SDNiAggregator: Connects with switch, topology, hosttracker managers of controller to get the topology and other related data.
-* SDNi REST API: It is a part of controller northbound, which gives the required information by quering SDNiAggregator through RESTCONF.
-* SDNiWrapper: This component uses the SDNi REST API and gathers the information required to be shared among controllers.
+* SDNiAggregator: Connects with Mdsal datastore of controller to get the topology and QoS related data.
+* SDNi API: It is a part of controller northbound, which gives the required information by quering SDNiAggregator through RESTCONF.
+* SDNiWrapper: This component uses the SDNi Aggregator and gathers the information required to be shared among controllers.
 
 === Troubleshooting
-To work with multiple controllers, change some of the configuration in config.ini file. For example change the listening port of one controller to 6653 and other controller to 6663 in /root/controller/opendaylight/distribution/opendaylight/target/distribution.opendaylight-osgipackage/opendaylight/configuration/config.ini (i.e of.listenPort=6653).
+To work with multiple controllers, change some of the configuration in custom.properties file. For example change the listening port of two controllers to 6653 in /root/sdninterfaceapp/karaf/target/assembly/etc/custom.properties (i.e of.listenPort=6653).
 
 .OpenFlow related system parameters
 TCP port on which the controller is listening (default 6633) of.listenPort=6653
