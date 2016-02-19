@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_d63e908b",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn-overview.adoc",
+        "patchSetId": 8
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 4038
+      },
+      "writtenOn": "2016-02-19T09:37:40Z",
+      "side": 1,
+      "message": "Removed \"OpenDaylight Controler(ODC)\" in this line and instead of that i have added \"OpenDaylight\".",
+      "parentUuid": "9a3d3df0_04856a59",
+      "range": {
+        "startLine": 20,
+        "startChar": 16,
+        "endLine": 20,
+        "endChar": 31
+      },
+      "revId": "584e5860006c82b2ae2a007a45898413f28ff6d4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_447bf27a",
         "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn-overview.adoc",
         "patchSetId": 8
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_36409c06",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn-overview.adoc",
+        "patchSetId": 8
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 4038
+      },
+      "writtenOn": "2016-02-19T09:37:40Z",
+      "side": 1,
+      "message": "Removed wrong IP and inserted \"OpenDaylight-IP\" instead of wrong IP.",
+      "parentUuid": "9a3d3df0_447bf27a",
+      "range": {
+        "startLine": 61,
+        "startChar": 51,
+        "endLine": 61,
+        "endChar": 65
+      },
+      "revId": "584e5860006c82b2ae2a007a45898413f28ff6d4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_24806e45",
         "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn-overview.adoc",
         "patchSetId": 8
@@ -59,6 +107,30 @@
       "writtenOn": "2016-02-18T16:31:43Z",
       "side": 1,
       "message": "delete \"controller\"",
+      "range": {
+        "startLine": 63,
+        "startChar": 67,
+        "endLine": 63,
+        "endChar": 77
+      },
+      "revId": "584e5860006c82b2ae2a007a45898413f28ff6d4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_16459816",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn-overview.adoc",
+        "patchSetId": 8
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 4038
+      },
+      "writtenOn": "2016-02-19T09:37:40Z",
+      "side": 1,
+      "message": "Removed controller in this line.",
+      "parentUuid": "9a3d3df0_24806e45",
       "range": {
         "startLine": 63,
         "startChar": 67,
@@ -255,6 +327,174 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_f60754c8",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn-overview.adoc",
+        "patchSetId": 8
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 4038
+      },
+      "writtenOn": "2016-02-19T09:37:40Z",
+      "side": 1,
+      "message": "Removed the similar contents in this line.",
+      "parentUuid": "9a3d3df0_a4e2be2c",
+      "range": {
+        "startLine": 75,
+        "startChar": 433,
+        "endLine": 75,
+        "endChar": 587
+      },
+      "revId": "584e5860006c82b2ae2a007a45898413f28ff6d4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_9667e8b6",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn-overview.adoc",
+        "patchSetId": 8
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 4038
+      },
+      "writtenOn": "2016-02-19T09:37:40Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "9a3d3df0_844dfa40",
+      "range": {
+        "startLine": 75,
+        "startChar": 906,
+        "endLine": 75,
+        "endChar": 909
+      },
+      "revId": "584e5860006c82b2ae2a007a45898413f28ff6d4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_d665f0b5",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn-overview.adoc",
+        "patchSetId": 8
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 4038
+      },
+      "writtenOn": "2016-02-19T09:37:40Z",
+      "side": 1,
+      "message": "Removed \"OpenDaylight Controller(ODC)\", instead of it i have added \"OpenDaylight\".",
+      "parentUuid": "9a3d3df0_44401207",
+      "range": {
+        "startLine": 75,
+        "startChar": 792,
+        "endLine": 75,
+        "endChar": 795
+      },
+      "revId": "584e5860006c82b2ae2a007a45898413f28ff6d4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_7674e467",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn-overview.adoc",
+        "patchSetId": 8
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 4038
+      },
+      "writtenOn": "2016-02-19T09:37:40Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "9a3d3df0_644a7627",
+      "range": {
+        "startLine": 75,
+        "startChar": 933,
+        "endLine": 75,
+        "endChar": 936
+      },
+      "revId": "584e5860006c82b2ae2a007a45898413f28ff6d4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_b66aec7e",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn-overview.adoc",
+        "patchSetId": 8
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 4038
+      },
+      "writtenOn": "2016-02-19T09:37:40Z",
+      "side": 1,
+      "message": "Removed \"the\" in this line, instead of it i have added \"OpenDaylight\".",
+      "parentUuid": "9a3d3df0_64955686",
+      "range": {
+        "startLine": 75,
+        "startChar": 96,
+        "endLine": 75,
+        "endChar": 99
+      },
+      "revId": "584e5860006c82b2ae2a007a45898413f28ff6d4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_d60cd0ef",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn-overview.adoc",
+        "patchSetId": 8
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 4038
+      },
+      "writtenOn": "2016-02-19T09:37:40Z",
+      "side": 1,
+      "message": "Removed \"ODC\", instead of it i have added \"OpenDaylight\".",
+      "parentUuid": "9a3d3df0_c48ee278",
+      "range": {
+        "startLine": 75,
+        "startChar": 283,
+        "endLine": 75,
+        "endChar": 312
+      },
+      "revId": "584e5860006c82b2ae2a007a45898413f28ff6d4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_f660f4a6",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn-overview.adoc",
+        "patchSetId": 8
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 4038
+      },
+      "writtenOn": "2016-02-19T09:37:40Z",
+      "side": 1,
+      "message": "Removed \"the\" in this line, instead of it i have added \"OpenDaylight\".",
+      "parentUuid": "9a3d3df0_043a8a98",
+      "range": {
+        "startLine": 75,
+        "startChar": 694,
+        "endLine": 75,
+        "endChar": 721
+      },
+      "revId": "584e5860006c82b2ae2a007a45898413f28ff6d4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_c45382e0",
         "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn-overview.adoc",
         "patchSetId": 8
@@ -278,6 +518,30 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_360edce5",
+        "filename": "manuals/developer-guide/src/main/asciidoc/vtn/vtn-overview.adoc",
+        "patchSetId": 8
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 4038
+      },
+      "writtenOn": "2016-02-19T09:37:40Z",
+      "side": 1,
+      "message": "Added \"refer to\" in this line.",
+      "parentUuid": "9a3d3df0_c45382e0",
+      "range": {
+        "startLine": 81,
+        "startChar": 37,
+        "endLine": 81,
+        "endChar": 42
+      },
+      "revId": "584e5860006c82b2ae2a007a45898413f28ff6d4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_a450fed4",
         "filename": "manuals/getting-started-guide/src/main/asciidoc/vtn/vtn-install.adoc",
         "patchSetId": 8
@@ -289,6 +553,30 @@
       "writtenOn": "2016-02-18T16:31:43Z",
       "side": 1,
       "message": "delete",
+      "range": {
+        "startLine": 19,
+        "startChar": 16,
+        "endLine": 19,
+        "endChar": 32
+      },
+      "revId": "584e5860006c82b2ae2a007a45898413f28ff6d4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_b6014cb1",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/vtn/vtn-install.adoc",
+        "patchSetId": 8
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 4038
+      },
+      "writtenOn": "2016-02-19T09:37:40Z",
+      "side": 1,
+      "message": "Removed Controller in this line.",
+      "parentUuid": "9a3d3df0_a450fed4",
       "range": {
         "startLine": 19,
         "startChar": 16,
@@ -347,6 +635,54 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_d63330a9",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/vtn/vtn-install.adoc",
+        "patchSetId": 8
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 4038
+      },
+      "writtenOn": "2016-02-19T09:37:40Z",
+      "side": 1,
+      "message": "Removed \"ODC\", instead of it i have added \"OpenDaylight instances\".",
+      "parentUuid": "9a3d3df0_0461eaa8",
+      "range": {
+        "startLine": 23,
+        "startChar": 900,
+        "endLine": 23,
+        "endChar": 903
+      },
+      "revId": "584e5860006c82b2ae2a007a45898413f28ff6d4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_36253c5c",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/vtn/vtn-install.adoc",
+        "patchSetId": 8
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 4038
+      },
+      "writtenOn": "2016-02-19T09:37:40Z",
+      "side": 1,
+      "message": "Removed \"ODC\", instead of it i have added \"OpenDaylight\".",
+      "parentUuid": "9a3d3df0_e465e6b5",
+      "range": {
+        "startLine": 23,
+        "startChar": 786,
+        "endLine": 23,
+        "endChar": 789
+      },
+      "revId": "584e5860006c82b2ae2a007a45898413f28ff6d4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_6471d675",
         "filename": "manuals/user-guide/src/main/asciidoc/vtn/VTN_OpenStack_Support-user.adoc",
         "patchSetId": 8
@@ -358,6 +694,30 @@
       "writtenOn": "2016-02-18T16:31:43Z",
       "side": 1,
       "message": "I don\u0027t think you need/want this to be formatted as a code snippet, so removing the ---- before and after would help.",
+      "range": {
+        "startLine": 93,
+        "startChar": 0,
+        "endLine": 95,
+        "endChar": 4
+      },
+      "revId": "584e5860006c82b2ae2a007a45898413f28ff6d4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_b6182c1f",
+        "filename": "manuals/user-guide/src/main/asciidoc/vtn/VTN_OpenStack_Support-user.adoc",
+        "patchSetId": 8
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 4038
+      },
+      "writtenOn": "2016-02-19T09:37:40Z",
+      "side": 1,
+      "message": "Removed code snipped format.",
+      "parentUuid": "9a3d3df0_6471d675",
       "range": {
         "startLine": 93,
         "startChar": 0,
@@ -393,6 +753,30 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_d6da104b",
+        "filename": "manuals/user-guide/src/main/asciidoc/vtn/VTN_OpenStack_Support-user.adoc",
+        "patchSetId": 8
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 4038
+      },
+      "writtenOn": "2016-02-19T09:37:40Z",
+      "side": 1,
+      "message": "Removed the logout sentence in this line beacuse user doesn\u0027t need to logout to see the \"90-vtn-neutron.xml\" contents.",
+      "parentUuid": "9a3d3df0_c46a6280",
+      "range": {
+        "startLine": 104,
+        "startChar": 3,
+        "endLine": 104,
+        "endChar": 9
+      },
+      "revId": "584e5860006c82b2ae2a007a45898413f28ff6d4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_a4675eb6",
         "filename": "manuals/user-guide/src/main/asciidoc/vtn/VTN_Overview.adoc",
         "patchSetId": 8
@@ -404,6 +788,30 @@
       "writtenOn": "2016-02-18T16:31:43Z",
       "side": 1,
       "message": "delete",
+      "range": {
+        "startLine": 20,
+        "startChar": 16,
+        "endLine": 20,
+        "endChar": 32
+      },
+      "revId": "584e5860006c82b2ae2a007a45898413f28ff6d4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_162ab82b",
+        "filename": "manuals/user-guide/src/main/asciidoc/vtn/VTN_Overview.adoc",
+        "patchSetId": 8
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 4038
+      },
+      "writtenOn": "2016-02-19T09:37:40Z",
+      "side": 1,
+      "message": "Removed Controller in this line.",
+      "parentUuid": "9a3d3df0_a4675eb6",
       "range": {
         "startLine": 20,
         "startChar": 16,
