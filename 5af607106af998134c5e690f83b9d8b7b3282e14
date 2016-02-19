@@ -1,0 +1,1861 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_23e05bcc",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "the OvsdbConnection",
+      "range": {
+        "startLine": 21,
+        "startChar": 53,
+        "endLine": 21,
+        "endChar": 68
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_c3bfefa8",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "The OVSDB",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 5
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_03e557dc",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "The...",
+      "range": {
+        "startLine": 22,
+        "startChar": 11,
+        "endLine": 22,
+        "endChar": 26
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_43ebdfaf",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "an...",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 11
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_a3d3cb02",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "the...",
+      "range": {
+        "startLine": 28,
+        "startChar": 3,
+        "endLine": 28,
+        "endChar": 10
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_83d047f7",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "the...",
+      "range": {
+        "startLine": 29,
+        "startChar": 55,
+        "endLine": 29,
+        "endChar": 62
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_e3d95323",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "the...",
+      "range": {
+        "startLine": 32,
+        "startChar": 4,
+        "endLine": 32,
+        "endChar": 11
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_c3d6cff0",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "a...",
+      "range": {
+        "startLine": 32,
+        "startChar": 59,
+        "endLine": 32,
+        "endChar": 69
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_2307bb83",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "the...",
+      "range": {
+        "startLine": 33,
+        "startChar": 23,
+        "endLine": 33,
+        "endChar": 46
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_030c37a4",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "an...",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 11
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_63fd436e",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "a...",
+      "range": {
+        "startLine": 41,
+        "startChar": 17,
+        "endLine": 41,
+        "endChar": 24
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_4302bf6f",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "a...",
+      "range": {
+        "startLine": 42,
+        "startChar": 14,
+        "endLine": 42,
+        "endChar": 24
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_83f7a78a",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "an...",
+      "range": {
+        "startLine": 42,
+        "startChar": 44,
+        "endLine": 42,
+        "endChar": 47
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_e3f03393",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "an...",
+      "range": {
+        "startLine": 43,
+        "startChar": 27,
+        "endLine": 43,
+        "endChar": 38
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_a3faab72",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "an...",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 43,
+        "endChar": 5
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_c3ed2fb9",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "a",
+      "range": {
+        "startLine": 43,
+        "startChar": 60,
+        "endLine": 43,
+        "endChar": 62
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_03339763",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "are",
+      "range": {
+        "startLine": 44,
+        "startChar": 47,
+        "endLine": 44,
+        "endChar": 55
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_6334234a",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "cases",
+      "range": {
+        "startLine": 45,
+        "startChar": 39,
+        "endLine": 45,
+        "endChar": 43
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_232e9bfb",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "Java",
+      "range": {
+        "startLine": 45,
+        "startChar": 10,
+        "endLine": 45,
+        "endChar": 14
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_a3410bab",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "a...",
+      "range": {
+        "startLine": 47,
+        "startChar": 33,
+        "endLine": 47,
+        "endChar": 37
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_43391f40",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "Detailed",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 47,
+        "endChar": 6
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_833e8726",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "the Java documentation for",
+      "range": {
+        "startLine": 48,
+        "startChar": 34,
+        "endLine": 48,
+        "endChar": 42
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_c3440fb9",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "the...",
+      "range": {
+        "startLine": 51,
+        "startChar": 48,
+        "endLine": 51,
+        "endChar": 53
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_e34793ba",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "the...",
+      "range": {
+        "startLine": 51,
+        "startChar": 3,
+        "endLine": 51,
+        "endChar": 9
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_031a77cb",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "configures",
+      "range": {
+        "startLine": 52,
+        "startChar": 26,
+        "endLine": 52,
+        "endChar": 35
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_2315fb9b",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "a...",
+      "range": {
+        "startLine": 52,
+        "startChar": 7,
+        "endLine": 52,
+        "endChar": 11
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_630b837d",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "in",
+      "range": {
+        "startLine": 52,
+        "startChar": 51,
+        "endLine": 52,
+        "endChar": 55
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_4310ffa7",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "the...",
+      "range": {
+        "startLine": 56,
+        "startChar": 53,
+        "endLine": 56,
+        "endChar": 58
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_a328ebe2",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "a...",
+      "range": {
+        "startLine": 57,
+        "startChar": 7,
+        "endLine": 57,
+        "endChar": 11
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_8325e70a",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "in",
+      "range": {
+        "startLine": 57,
+        "startChar": 41,
+        "endLine": 57,
+        "endChar": 43
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_c31b6fc8",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "the...",
+      "range": {
+        "startLine": 58,
+        "startChar": 34,
+        "endLine": 58,
+        "endChar": 39
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_e31e73ba",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "reasons",
+      "range": {
+        "startLine": 58,
+        "startChar": 26,
+        "endLine": 58,
+        "endChar": 32
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_237cdbeb",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "the...",
+      "range": {
+        "startLine": 60,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 28
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_0381d7c3",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "the...",
+      "range": {
+        "startLine": 60,
+        "startChar": 46,
+        "endLine": 60,
+        "endChar": 55
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_638263c9",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "i.e.,",
+      "range": {
+        "startLine": 64,
+        "startChar": 38,
+        "endLine": 64,
+        "endChar": 41
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_43875fd7",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "delete \"l\"",
+      "range": {
+        "startLine": 65,
+        "startChar": 61,
+        "endLine": 65,
+        "endChar": 62
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_a36f4b2a",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "an...",
+      "range": {
+        "startLine": 67,
+        "startChar": 21,
+        "endLine": 67,
+        "endChar": 32
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_836cc736",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "a...",
+      "range": {
+        "startLine": 68,
+        "startChar": 47,
+        "endLine": 68,
+        "endChar": 51
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_e375d3fa",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "the...",
+      "range": {
+        "startLine": 69,
+        "startChar": 31,
+        "endLine": 69,
+        "endChar": 42
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_23633b43",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "the...",
+      "range": {
+        "startLine": 71,
+        "startChar": 60,
+        "endLine": 71,
+        "endChar": 64
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_c3724f10",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "requests",
+      "range": {
+        "startLine": 71,
+        "startChar": 11,
+        "endLine": 71,
+        "endChar": 18
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_0368b71b",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "Open vSwitch",
+      "range": {
+        "startLine": 72,
+        "startChar": 57,
+        "endLine": 72,
+        "endChar": 68
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_6359c38d",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "the...",
+      "range": {
+        "startLine": 73,
+        "startChar": 39,
+        "endLine": 73,
+        "endChar": 44
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_435e3f77",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "the...",
+      "range": {
+        "startLine": 74,
+        "startChar": 64,
+        "endLine": 74,
+        "endChar": 67
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_a3562b5a",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "a...",
+      "range": {
+        "startLine": 75,
+        "startChar": 6,
+        "endLine": 75,
+        "endChar": 10
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_e34cb3ca",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "a...",
+      "range": {
+        "startLine": 75,
+        "startChar": 60,
+        "endLine": 75,
+        "endChar": 70
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_8353276a",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "the...",
+      "range": {
+        "startLine": 75,
+        "startChar": 19,
+        "endLine": 75,
+        "endChar": 25
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_c349afb8",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "connections",
+      "range": {
+        "startLine": 76,
+        "startChar": 50,
+        "endLine": 76,
+        "endChar": 60
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_23ca1b1b",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "the...",
+      "range": {
+        "startLine": 77,
+        "startChar": 16,
+        "endLine": 77,
+        "endChar": 25
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_03cf172b",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "the...",
+      "range": {
+        "startLine": 90,
+        "startChar": 27,
+        "endLine": 90,
+        "endChar": 30
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_43d59fb7",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": ":\n\nonly a colon, no period",
+      "range": {
+        "startLine": 91,
+        "startChar": 53,
+        "endLine": 91,
+        "endChar": 55
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_63d0a3c9",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "The...",
+      "range": {
+        "startLine": 91,
+        "startChar": 0,
+        "endLine": 91,
+        "endChar": 9
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_83da07e6",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "the...",
+      "range": {
+        "startLine": 108,
+        "startChar": 61,
+        "endLine": 108,
+        "endChar": 67
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_a3dd8be2",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "the...",
+      "range": {
+        "startLine": 108,
+        "startChar": 0,
+        "endLine": 108,
+        "endChar": 5
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_e3e313a2",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "messages",
+      "range": {
+        "startLine": 109,
+        "startChar": 38,
+        "endLine": 109,
+        "endChar": 45
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_23f17b6b",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "a...",
+      "range": {
+        "startLine": 109,
+        "startChar": 65,
+        "endLine": 109,
+        "endChar": 69
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_c3e08f98",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "a...",
+      "range": {
+        "startLine": 109,
+        "startChar": 51,
+        "endLine": 109,
+        "endChar": 55
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_03f6f762",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "an...",
+      "range": {
+        "startLine": 111,
+        "startChar": 0,
+        "endLine": 111,
+        "endChar": 6
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_63e703ad",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "a...",
+      "range": {
+        "startLine": 111,
+        "startChar": 23,
+        "endLine": 111,
+        "endChar": 27
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_a3046b4a",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "the...",
+      "range": {
+        "startLine": 119,
+        "startChar": 3,
+        "endLine": 119,
+        "endChar": 8
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_8301673a",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "the...",
+      "range": {
+        "startLine": 119,
+        "startChar": 48,
+        "endLine": 119,
+        "endChar": 52
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_e3faf341",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "the...",
+      "range": {
+        "startLine": 120,
+        "startChar": 64,
+        "endLine": 120,
+        "endChar": 68
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_c3f7ef57",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "peers",
+      "range": {
+        "startLine": 121,
+        "startChar": 27,
+        "endLine": 121,
+        "endChar": 31
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_23985b1b",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "the...",
+      "range": {
+        "startLine": 121,
+        "startChar": 59,
+        "endLine": 121,
+        "endChar": 66
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_039d570b",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "an",
+      "range": {
+        "startLine": 123,
+        "startChar": 24,
+        "endLine": 123,
+        "endChar": 27
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_43a3df4e",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "the...",
+      "range": {
+        "startLine": 126,
+        "startChar": 50,
+        "endLine": 126,
+        "endChar": 63
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_639ee308",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "a...",
+      "range": {
+        "startLine": 126,
+        "startChar": 4,
+        "endLine": 126,
+        "endChar": 16
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_a38bcbc1",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "for",
+      "range": {
+        "startLine": 127,
+        "startChar": 19,
+        "endLine": 127,
+        "endChar": 21
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_838847c6",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "The...",
+      "range": {
+        "startLine": 133,
+        "startChar": 61,
+        "endLine": 133,
+        "endChar": 66
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_e39153f2",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "the...",
+      "range": {
+        "startLine": 135,
+        "startChar": 0,
+        "endLine": 135,
+        "endChar": 18
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_c38ecfcf",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "requests",
+      "range": {
+        "startLine": 135,
+        "startChar": 54,
+        "endLine": 135,
+        "endChar": 61
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_23bfbb62",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "a...",
+      "range": {
+        "startLine": 137,
+        "startChar": 0,
+        "endLine": 137,
+        "endChar": 18
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_03c437f3",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "the...",
+      "range": {
+        "startLine": 137,
+        "startChar": 34,
+        "endLine": 137,
+        "endChar": 49
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_63b5437d",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "the...",
+      "range": {
+        "startLine": 138,
+        "startChar": 0,
+        "endLine": 138,
+        "endChar": 11
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_43babf6e",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "the...",
+      "range": {
+        "startLine": 140,
+        "startChar": 38,
+        "endLine": 140,
+        "endChar": 47
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_a3b2ab91",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "transactions",
+      "range": {
+        "startLine": 141,
+        "startChar": 0,
+        "endLine": 141,
+        "endChar": 11
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_e3a83322",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "Is build() really the same as getOperations()?",
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_23669b2a",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "take the",
+      "range": {
+        "startLine": 151,
+        "startChar": 36,
+        "endLine": 151,
+        "endChar": 38
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_c3a52f48",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "a...",
+      "range": {
+        "startLine": 151,
+        "startChar": 23,
+        "endLine": 151,
+        "endChar": 27
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_036b97f2",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "the...",
+      "range": {
+        "startLine": 181,
+        "startChar": 19,
+        "endLine": 181,
+        "endChar": 23
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_636c2309",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ovsdb/ovsdb-library-developer.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-19T22:13:59Z",
+      "side": 1,
+      "message": "in the",
+      "range": {
+        "startLine": 184,
+        "startChar": 15,
+        "endLine": 184,
+        "endChar": 17
+      },
+      "revId": "5af607106af998134c5e690f83b9d8b7b3282e14",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
