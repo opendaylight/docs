@@ -113,15 +113,13 @@ Notifications are always in XML format and look like this:
         <data-change-event>
             <path xmlns:meae="http://netconfcentral.org/ns/toaster">/meae:toaster</path>
             <operation>updated</operation>
+            <data>
+                <!-- updated data -->
+            </data>
         </data-change-event>
     </data-changed-notification>
 </notification>
 ----
-
-NOTE: Notifications never contain data. They only contain information
-      about the path that was changed and what kind of operation
-      executed on that path. If you need data you should execute a
-      RESTCONF GET request on the path that was changed.
 
 ==== Example use case
 
