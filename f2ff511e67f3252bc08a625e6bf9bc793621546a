@@ -1,0 +1,3177 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_192f8440",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-netvirt-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "is this the name of the project these days?",
+      "range": {
+        "startLine": 3,
+        "startChar": 4,
+        "endLine": 3,
+        "endChar": 25
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_59258c5a",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-netvirt-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "Karaf",
+      "range": {
+        "startLine": 32,
+        "startChar": 56,
+        "endLine": 32,
+        "endChar": 61
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_392a482c",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-netvirt-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "This is documented elsewhere and you probably don\u0027t need to document it here.",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 38,
+        "endChar": 10
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_99227450",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovs-dpdk-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "Open vSwitch (OVS)",
+      "range": {
+        "startLine": 5,
+        "startChar": 20,
+        "endLine": 5,
+        "endChar": 23
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_791fb008",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovs-dpdk-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "presumably you want a generic \u003ccontroller-ip\u003e here",
+      "range": {
+        "startLine": 19,
+        "startChar": 8,
+        "endLine": 19,
+        "endChar": 29
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_d9187c20",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovs-dpdk-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "OpenDaylight",
+      "range": {
+        "startLine": 95,
+        "startChar": 4,
+        "endLine": 95,
+        "endChar": 16
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_19d66428",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovs-dpdk-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "OpenDaylight NetVirt",
+      "range": {
+        "startLine": 97,
+        "startChar": 4,
+        "endLine": 97,
+        "endChar": 24
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_39e1a8fe",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovs-dpdk-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "NetVirt",
+      "range": {
+        "startLine": 100,
+        "startChar": 76,
+        "endLine": 100,
+        "endChar": 83
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_f9daa04a",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovs-dpdk-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "Is it master branch or Mitaka? Mitaka will be right for longer, right?",
+      "range": {
+        "startLine": 109,
+        "startChar": 28,
+        "endLine": 109,
+        "endChar": 41
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_59dc6c46",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovs-dpdk-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "NetVirt",
+      "range": {
+        "startLine": 117,
+        "startChar": 38,
+        "endLine": 117,
+        "endChar": 45
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_99e9d4e8",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovs-dpdk-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "NetVirt",
+      "range": {
+        "startLine": 123,
+        "startChar": 0,
+        "endLine": 123,
+        "endChar": 7
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_79e69016",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovs-dpdk-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "NetVirt",
+      "range": {
+        "startLine": 129,
+        "startChar": 64,
+        "endLine": 129,
+        "endChar": 71
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_d9efdce7",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovs-dpdk-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "NetVirt",
+      "range": {
+        "startLine": 138,
+        "startChar": 107,
+        "endLine": 138,
+        "endChar": 114
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_d9c6bc67",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-hwvtep-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "This file could use a good proofread.",
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_b9ec98f4",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-hwvtep-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "Is that really what you want to call it? All one word with no spaces or capitalization?",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 16
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_f9c10055",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-hwvtep-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "RESTCONF",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 8
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_19bdc4d8",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-hwvtep-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "you need a space after the periods to get an ordered list",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 29
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_59b3cc09",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-hwvtep-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "TCP",
+      "range": {
+        "startLine": 18,
+        "startChar": 51,
+        "endLine": 18,
+        "endChar": 54
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_39b888e4",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-hwvtep-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "Huh?",
+      "range": {
+        "startLine": 19,
+        "startChar": 14,
+        "endLine": 21,
+        "endChar": 41
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_79cdf084",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-hwvtep-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "the...",
+      "range": {
+        "startLine": 25,
+        "startChar": 5,
+        "endLine": 25,
+        "endChar": 10
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_99d0b420",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-hwvtep-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "RESTCONF",
+      "range": {
+        "startLine": 25,
+        "startChar": 11,
+        "endLine": 25,
+        "endChar": 19
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_b9c3f855",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-security-groups.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "OpenStack",
+      "range": {
+        "startLine": 4,
+        "startChar": 22,
+        "endLine": 4,
+        "endChar": 31
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_f9a8e08e",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-security-groups.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "OpenStack",
+      "range": {
+        "startLine": 5,
+        "startChar": 51,
+        "endLine": 5,
+        "endChar": 60
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_99971448",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-security-groups.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "iptables",
+      "range": {
+        "startLine": 6,
+        "startChar": 64,
+        "endLine": 6,
+        "endChar": 71
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_39afe895",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-security-groups.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "OpenDaylight",
+      "range": {
+        "startLine": 6,
+        "startChar": 40,
+        "endLine": 6,
+        "endChar": 52
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_7994d042",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-security-groups.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "Open vSwitch or OVS",
+      "range": {
+        "startLine": 7,
+        "startChar": 7,
+        "endLine": 7,
+        "endChar": 10
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_d99d1c68",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-security-groups.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "iptables",
+      "range": {
+        "startLine": 8,
+        "startChar": 26,
+        "endLine": 8,
+        "endChar": 33
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_198b0420",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-security-groups.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "ingress/egress what? port?",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 14
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_59810cfa",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-security-groups.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "ACL",
+      "range": {
+        "startLine": 12,
+        "startChar": 51,
+        "endLine": 12,
+        "endChar": 54
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_f98f4028",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-security-groups.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "ACL",
+      "range": {
+        "startLine": 12,
+        "startChar": 22,
+        "endLine": 12,
+        "endChar": 25
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_3986c813",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-security-groups.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "OVS",
+      "range": {
+        "startLine": 21,
+        "startChar": 63,
+        "endLine": 21,
+        "endChar": 66
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_997ef417",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-security-groups.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "Linux",
+      "range": {
+        "startLine": 22,
+        "startChar": 61,
+        "endLine": 22,
+        "endChar": 66
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_797b3028",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-security-groups.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "OVS",
+      "range": {
+        "startLine": 23,
+        "startChar": 16,
+        "endLine": 23,
+        "endChar": 19
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_d974fc37",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-security-groups.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "space before paren",
+      "range": {
+        "startLine": 24,
+        "startChar": 35,
+        "endLine": 24,
+        "endChar": 36
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_b9713846",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-security-groups.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "key? what\u0027s a key?",
+      "range": {
+        "startLine": 25,
+        "startChar": 47,
+        "endLine": 25,
+        "endChar": 50
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_1992e44b",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-security-groups.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "The netfilter framework",
+      "range": {
+        "startLine": 30,
+        "startChar": 12,
+        "endLine": 30,
+        "endChar": 21
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_f996203e",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-security-groups.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "you probably want these to be a bulleted list by putting an asterisk space at the beginning of each paragraph instead of having them indented and formatted like code snippets",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 37
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_5998ec69",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-security-groups.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "are",
+      "range": {
+        "startLine": 51,
+        "startChar": 51,
+        "endLine": 51,
+        "endChar": 53
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_399d285a",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-security-groups.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "VM",
+      "range": {
+        "startLine": 59,
+        "startChar": 42,
+        "endLine": 59,
+        "endChar": 44
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_79a2109a",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-security-groups.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "\"SecurityGroup is\" or \"SecurityGroups are\"\n\nAlso it\u0027s the first time you use that capitalization. Is there a reason or should it be two uncapitalized words like everywhere else?",
+      "range": {
+        "startLine": 59,
+        "startChar": 4,
+        "endLine": 59,
+        "endChar": 21
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_99a554a4",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-security-groups.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "VM",
+      "range": {
+        "startLine": 59,
+        "startChar": 59,
+        "endLine": 59,
+        "endChar": 61
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_d9ab5c73",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-security-groups.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "VM",
+      "range": {
+        "startLine": 60,
+        "startChar": 54,
+        "endLine": 60,
+        "endChar": 56
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_b9a81878",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-security-groups.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "rules,",
+      "range": {
+        "startLine": 61,
+        "startChar": 56,
+        "endLine": 61,
+        "endChar": 61
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_f9bd80b8",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-security-groups.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "VM",
+      "range": {
+        "startLine": 68,
+        "startChar": 43,
+        "endLine": 68,
+        "endChar": 45
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_19b944cc",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-security-groups.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "VM",
+      "range": {
+        "startLine": 68,
+        "startChar": 28,
+        "endLine": 68,
+        "endChar": 30
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_59af4c7d",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-security-groups.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "space before paren",
+      "range": {
+        "startLine": 89,
+        "startChar": 46,
+        "endLine": 89,
+        "endChar": 48
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_39b408d0",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-security-groups.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "ARP",
+      "range": {
+        "startLine": 98,
+        "startChar": 7,
+        "endLine": 98,
+        "endChar": 10
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_d9c23c33",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-security-groups.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "VM",
+      "range": {
+        "startLine": 100,
+        "startChar": 69,
+        "endLine": 100,
+        "endChar": 71
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_79c97058",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-security-groups.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "ARP",
+      "range": {
+        "startLine": 100,
+        "startChar": 33,
+        "endLine": 100,
+        "endChar": 36
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_99cc346c",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-security-groups.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "ARP",
+      "range": {
+        "startLine": 100,
+        "startChar": 12,
+        "endLine": 100,
+        "endChar": 15
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_b9bf78a9",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-security-groups.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "space before paren",
+      "range": {
+        "startLine": 116,
+        "startChar": 28,
+        "endLine": 116,
+        "endChar": 29
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_19e024cc",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-security-groups.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "space before paren",
+      "range": {
+        "startLine": 122,
+        "startChar": 29,
+        "endLine": 122,
+        "endChar": 30
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_59e62ce9",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-security-groups.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "default.\n\nadd a period",
+      "range": {
+        "startLine": 148,
+        "startChar": 14,
+        "endLine": 148,
+        "endChar": 21
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_19078483",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-security-groups.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "Neutron",
+      "range": {
+        "startLine": 153,
+        "startChar": 278,
+        "endLine": 153,
+        "endChar": 285
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_f9e460e2",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-security-groups.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "Don\u0027t start with whitespace. The whole line gets treated as a code snippet.",
+      "range": {
+        "startLine": 153,
+        "startChar": 0,
+        "endLine": 153,
+        "endChar": 5
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_b9d658ef",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-security-groups.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "DB?",
+      "range": {
+        "startLine": 153,
+        "startChar": 286,
+        "endLine": 153,
+        "endChar": 288
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_d9d99c23",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-security-groups.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "VM",
+      "range": {
+        "startLine": 153,
+        "startChar": 116,
+        "endLine": 153,
+        "endChar": 118
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_79d050f6",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-security-groups.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "I think you mean GUI. The CLI is a UI.",
+      "range": {
+        "startLine": 153,
+        "startChar": 67,
+        "endLine": 153,
+        "endChar": 69
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_99d39403",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-security-groups.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "A user",
+      "range": {
+        "startLine": 153,
+        "startChar": 5,
+        "endLine": 153,
+        "endChar": 9
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_39eb68b1",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-security-groups.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "OpenStack",
+      "range": {
+        "startLine": 153,
+        "startChar": 37,
+        "endLine": 153,
+        "endChar": 46
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_59fd8c6d",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-security-groups.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "This whole paragraph needs to not use leading whitespace or it gets formatted like a code snippet.",
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_f90bc08b",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-security-groups.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "CIDR prefixes? CIDR stands for Classless Inter-Domain Routing, so \"a set of CIDR\" doesn\u0027t make sense.",
+      "range": {
+        "startLine": 235,
+        "startChar": 9,
+        "endLine": 235,
+        "endChar": 13
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_3902486f",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-security-groups.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "CIDR prefix?",
+      "range": {
+        "startLine": 239,
+        "startChar": 43,
+        "endLine": 239,
+        "endChar": 47
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_99fa7473",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-security-groups.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "VM",
+      "range": {
+        "startLine": 246,
+        "startChar": 0,
+        "endLine": 246,
+        "endChar": 2
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_79f7b08b",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-security-groups.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "OpenDaylight",
+      "range": {
+        "startLine": 257,
+        "startChar": 25,
+        "endLine": 257,
+        "endChar": 28
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_59346c49",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-security-groups.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "If you instead say:\n\nNOTE:\nIPv6 and port-range features are not supported in the Beryllium release.\n\nIt will format more nicely.",
+      "range": {
+        "startLine": 271,
+        "startChar": 0,
+        "endLine": 271,
+        "endChar": 63
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_3939a841",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "pick a capitalization and use it throughout. I\u0027d suggest \"OVSDB Southbound Plugin\", but it\u0027s up to you as long as you\u0027re consistent.",
+      "range": {
+        "startLine": 1,
+        "startChar": 5,
+        "endLine": 1,
+        "endChar": 28
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_9941d4ab",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "other places say Open_vSwitch. I\u0027d just like it to be consistent.",
+      "range": {
+        "startLine": 5,
+        "startChar": 26,
+        "endLine": 5,
+        "endChar": 38
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_793e9029",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "Open_vSwitch?",
+      "range": {
+        "startLine": 8,
+        "startChar": 69,
+        "endLine": 8,
+        "endChar": 81
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_d947dcba",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "YANG",
+      "range": {
+        "startLine": 10,
+        "startChar": 12,
+        "endLine": 10,
+        "endChar": 16
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_b94498b7",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "stable/beryllium, right?",
+      "range": {
+        "startLine": 14,
+        "startChar": 47,
+        "endLine": 14,
+        "endChar": 61
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_1915c49b",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "stable/beryllium, riht?",
+      "range": {
+        "startLine": 17,
+        "startChar": 43,
+        "endLine": 17,
+        "endChar": 57
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_f91900d8",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "QoS",
+      "range": {
+        "startLine": 33,
+        "startChar": 33,
+        "endLine": 33,
+        "endChar": 36
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_590bcc7c",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "QoS",
+      "range": {
+        "startLine": 33,
+        "startChar": 60,
+        "endLine": 33,
+        "endChar": 63
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_197ca4eb",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "QoS",
+      "range": {
+        "startLine": 70,
+        "startChar": 24,
+        "endLine": 70,
+        "endChar": 27
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_b91bf8c8",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "Can\u0027t we just say\" \"To install the OVSDB Southbound Plugin, use the following command at the Karaf console:\n\n feature:install odl-ovsdb-southbound-impl-ui\"",
+      "range": {
+        "startLine": 74,
+        "startChar": 0,
+        "endLine": 85,
+        "endChar": 68
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_5982acc8",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "you probably don\u0027t want a leading space here",
+      "range": {
+        "startLine": 108,
+        "startChar": 0,
+        "endLine": 108,
+        "endChar": 1
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_f980e0c1",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "OpenDaylight",
+      "range": {
+        "startLine": 108,
+        "startChar": 53,
+        "endLine": 108,
+        "endChar": 65
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_3987e8d8",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "OpenDaylight",
+      "range": {
+        "startLine": 110,
+        "startChar": 6,
+        "endLine": 110,
+        "endChar": 18
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_996f142b",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "an",
+      "range": {
+        "startLine": 114,
+        "startChar": 0,
+        "endLine": 114,
+        "endChar": 3
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_796cd035",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "OpenDaylight",
+      "range": {
+        "startLine": 115,
+        "startChar": 28,
+        "endLine": 115,
+        "endChar": 40
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_d9751cfb",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "you probably don\u0027t want a space before this line. You can do something like +{{OVS-HOST-IP}}+ to get it to be formatted with fixed-width fonts.",
+      "range": {
+        "startLine": 151,
+        "startChar": 0,
+        "endLine": 151,
+        "endChar": 1
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_b972d80e",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "a",
+      "range": {
+        "startLine": 154,
+        "startChar": 36,
+        "endLine": 154,
+        "endChar": 39
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_19630443",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "{{CONTROLLER-IP}} to be consistent?",
+      "range": {
+        "startLine": 254,
+        "startChar": 32,
+        "endLine": 254,
+        "endChar": 47
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_59590c8d",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "OpenFlow",
+      "range": {
+        "startLine": 341,
+        "startChar": 88,
+        "endLine": 341,
+        "endChar": 96
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_f967404b",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "OpenDaylight",
+      "range": {
+        "startLine": 341,
+        "startChar": 51,
+        "endLine": 341,
+        "endChar": 63
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_395ec876",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "OpenDaylight",
+      "range": {
+        "startLine": 364,
+        "startChar": 7,
+        "endLine": 364,
+        "endChar": 19
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_59d0ecc8",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "OpenDaylight",
+      "range": {
+        "startLine": 364,
+        "startChar": 95,
+        "endLine": 364,
+        "endChar": 107
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_9956f45a",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "OpenFlow",
+      "range": {
+        "startLine": 364,
+        "startChar": 20,
+        "endLine": 364,
+        "endChar": 28
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_39d528b9",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "We\u0027re missing an HTTP GET here.",
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_99dd54e3",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 549,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "QoS",
+      "range": {
+        "startLine": 549,
+        "startChar": 18,
+        "endLine": 549,
+        "endChar": 21
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_19f1446b",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 550,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "QoS",
+      "range": {
+        "startLine": 550,
+        "startChar": 57,
+        "endLine": 550,
+        "endChar": 60
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_79da10e9",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 551,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "OpenDaylight",
+      "range": {
+        "startLine": 551,
+        "startChar": 37,
+        "endLine": 551,
+        "endChar": 49
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_d9e35ca2",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 554,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "QoS",
+      "range": {
+        "startLine": 554,
+        "startChar": 7,
+        "endLine": 554,
+        "endChar": 10
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_b9e01897",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 555,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "QoS",
+      "range": {
+        "startLine": 555,
+        "startChar": 21,
+        "endLine": 555,
+        "endChar": 24
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_f9f58057",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 556,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "QoS",
+      "range": {
+        "startLine": 556,
+        "startChar": 49,
+        "endLine": 556,
+        "endChar": 52
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_59e74cac",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 559,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "QoS",
+      "range": {
+        "startLine": 559,
+        "startChar": 46,
+        "endLine": 559,
+        "endChar": 49
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_39ec088f",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 562,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "QoS",
+      "range": {
+        "startLine": 562,
+        "startChar": 16,
+        "endLine": 562,
+        "endChar": 19
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_9904344b",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 565,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "QoS",
+      "range": {
+        "startLine": 565,
+        "startChar": 20,
+        "endLine": 565,
+        "endChar": 23
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_79017037",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 567,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "QoS",
+      "range": {
+        "startLine": 567,
+        "startChar": 10,
+        "endLine": 567,
+        "endChar": 13
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_b9f77858",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 568,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "SAL",
+      "range": {
+        "startLine": 568,
+        "startChar": 23,
+        "endLine": 568,
+        "endChar": 26
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_d9fa3c42",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 568,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "OpenDaylight",
+      "range": {
+        "startLine": 568,
+        "startChar": 7,
+        "endLine": 568,
+        "endChar": 19
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_1998241b",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 569,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "node",
+      "range": {
+        "startLine": 569,
+        "startChar": 13,
+        "endLine": 569,
+        "endChar": 17
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_f99c6011",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 571,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "QoS",
+      "range": {
+        "startLine": 571,
+        "startChar": 11,
+        "endLine": 571,
+        "endChar": 14
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_599e2c08",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 586,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "QoS",
+      "range": {
+        "startLine": 586,
+        "startChar": 9,
+        "endLine": 586,
+        "endChar": 12
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_798850c5",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 600,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "QoS",
+      "range": {
+        "startLine": 600,
+        "startChar": 55,
+        "endLine": 600,
+        "endChar": 58
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_39a36850",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 600,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "QoS",
+      "range": {
+        "startLine": 600,
+        "startChar": 4,
+        "endLine": 600,
+        "endChar": 7
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_b98e58ce",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 605,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "QoS",
+      "range": {
+        "startLine": 605,
+        "startChar": 6,
+        "endLine": 605,
+        "endChar": 9
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_19bf8462",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 605,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "QoS",
+      "range": {
+        "startLine": 605,
+        "startChar": 35,
+        "endLine": 605,
+        "endChar": 38
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_f9c3c0ea",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 607,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "QoS",
+      "range": {
+        "startLine": 607,
+        "startChar": 23,
+        "endLine": 607,
+        "endChar": 26
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_59b58c7c",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 609,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "QoS",
+      "range": {
+        "startLine": 609,
+        "startChar": 0,
+        "endLine": 609,
+        "endChar": 3
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_99b27492",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 610,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "QoS",
+      "range": {
+        "startLine": 610,
+        "startChar": 58,
+        "endLine": 610,
+        "endChar": 61
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_79afb02a",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 618,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "QoS",
+      "range": {
+        "startLine": 618,
+        "startChar": 15,
+        "endLine": 618,
+        "endChar": 18
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_d9a87c22",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 619,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "QoS",
+      "range": {
+        "startLine": 619,
+        "startChar": 54,
+        "endLine": 619,
+        "endChar": 57
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_b9a5b848",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 622,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "QoS",
+      "range": {
+        "startLine": 622,
+        "startChar": 127,
+        "endLine": 622,
+        "endChar": 130
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_1966642a",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 622,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "no space before closing paren",
+      "range": {
+        "startLine": 622,
+        "startChar": 160,
+        "endLine": 622,
+        "endChar": 161
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_f96aa0ec",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 624,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "QoS",
+      "range": {
+        "startLine": 624,
+        "startChar": 29,
+        "endLine": 624,
+        "endChar": 32
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_596c6c08",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 651,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "You probably wan this as a list not as a code snippet, but that\u0027s just me.",
+      "range": {
+        "startLine": 649,
+        "startChar": 0,
+        "endLine": 651,
+        "endChar": 91
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_3971a8e0",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 656,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "QoS",
+      "range": {
+        "startLine": 656,
+        "startChar": 0,
+        "endLine": 656,
+        "endChar": 3
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_9979d4ca",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 800,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "QoS",
+      "range": {
+        "startLine": 800,
+        "startChar": 14,
+        "endLine": 800,
+        "endChar": 17
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_797690d8",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 802,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "QoS",
+      "range": {
+        "startLine": 802,
+        "startChar": 9,
+        "endLine": 802,
+        "endChar": 12
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_d97fdca9",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 803,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "QoS",
+      "range": {
+        "startLine": 803,
+        "startChar": 35,
+        "endLine": 803,
+        "endChar": 38
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_f9510037",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 803,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "QoS",
+      "range": {
+        "startLine": 803,
+        "startChar": 114,
+        "endLine": 803,
+        "endChar": 117
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_194dc49a",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 803,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "QoS",
+      "range": {
+        "startLine": 803,
+        "startChar": 81,
+        "endLine": 803,
+        "endChar": 84
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_b97c98b6",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 804,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "QoS",
+      "range": {
+        "startLine": 804,
+        "startChar": 30,
+        "endLine": 804,
+        "endChar": 33
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_5943cc6b",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 833,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "QoS",
+      "range": {
+        "startLine": 833,
+        "startChar": 13,
+        "endLine": 833,
+        "endChar": 16
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_39488886",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 835,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "QoS",
+      "range": {
+        "startLine": 835,
+        "startChar": 37,
+        "endLine": 835,
+        "endChar": 40
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_795df046",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 872,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "QoS",
+      "range": {
+        "startLine": 872,
+        "startChar": 133,
+        "endLine": 872,
+        "endChar": 136
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_9960b402",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 872,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "QoS",
+      "range": {
+        "startLine": 872,
+        "startChar": 62,
+        "endLine": 872,
+        "endChar": 65
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_d956bc29",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 919,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "use lowercase node?",
+      "range": {
+        "startLine": 919,
+        "startChar": 110,
+        "endLine": 919,
+        "endChar": 114
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_b953f837",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 925,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "no space",
+      "range": {
+        "startLine": 925,
+        "startChar": 83,
+        "endLine": 925,
+        "endChar": 84
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_1934a4fa",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 982,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "QoS",
+      "range": {
+        "startLine": 982,
+        "startChar": 14,
+        "endLine": 982,
+        "endChar": 17
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_f938e0f0",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 983,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "QoS",
+      "range": {
+        "startLine": 983,
+        "startChar": 23,
+        "endLine": 983,
+        "endChar": 26
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_593aace7",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 984,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "QoS",
+      "range": {
+        "startLine": 984,
+        "startChar": 0,
+        "endLine": 984,
+        "endChar": 3
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_393fe8d7",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 1001,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "QoS",
+      "range": {
+        "startLine": 1001,
+        "startChar": 27,
+        "endLine": 1001,
+        "endChar": 30
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_7924d0c4",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 1003,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "QoS",
+      "range": {
+        "startLine": 1003,
+        "startChar": 73,
+        "endLine": 1003,
+        "endChar": 76
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_d92d1caa",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 1010,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "QoS",
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_b92ad88d",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 1016,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "QoS",
+      "range": {
+        "startLine": 1016,
+        "startChar": 14,
+        "endLine": 1016,
+        "endChar": 17
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_191b0482",
+        "filename": "manuals/user-guide/src/main/asciidoc/ovsdb/odl-ovsdb-southbound-user-guide.adoc",
+        "patchSetId": 10
+      },
+      "lineNbr": 1017,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:12:26Z",
+      "side": 1,
+      "message": "QoS",
+      "range": {
+        "startLine": 1017,
+        "startChar": 4,
+        "endLine": 1017,
+        "endChar": 7
+      },
+      "revId": "f2ff511e67f3252bc08a625e6bf9bc793621546a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
