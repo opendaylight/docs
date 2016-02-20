@@ -1,0 +1,1021 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_f4f0e7ff",
+        "filename": "manuals/developer-guide/src/main/asciidoc/messaging4transport/messaging4transport-developer.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:44:58Z",
+      "side": 1,
+      "message": "data tree or datatree?",
+      "range": {
+        "startLine": 4,
+        "startChar": 52,
+        "endLine": 4,
+        "endChar": 60
+      },
+      "revId": "86c8fdda2828ebaac31eddc7140624ff8481e7ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_d4e5e338",
+        "filename": "manuals/developer-guide/src/main/asciidoc/messaging4transport/messaging4transport-developer.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:44:58Z",
+      "side": 1,
+      "message": "Java Message Service (JMS)",
+      "range": {
+        "startLine": 8,
+        "startChar": 80,
+        "endLine": 8,
+        "endChar": 83
+      },
+      "revId": "86c8fdda2828ebaac31eddc7140624ff8481e7ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_94c6bb98",
+        "filename": "manuals/developer-guide/src/main/asciidoc/messaging4transport/messaging4transport-developer.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:44:58Z",
+      "side": 1,
+      "message": "is it odlmq or odl-mq?",
+      "range": {
+        "startLine": 8,
+        "startChar": 252,
+        "endLine": 8,
+        "endChar": 257
+      },
+      "revId": "86c8fdda2828ebaac31eddc7140624ff8481e7ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_94dfdb68",
+        "filename": "manuals/developer-guide/src/main/asciidoc/messaging4transport/messaging4transport-developer.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:44:58Z",
+      "side": 1,
+      "message": "URLs need to be references like this is AsciiDoc:\n\nhttps://qpid.apache.org/[QPid]",
+      "range": {
+        "startLine": 8,
+        "startChar": 117,
+        "endLine": 8,
+        "endChar": 148
+      },
+      "revId": "86c8fdda2828ebaac31eddc7140624ff8481e7ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_f4d74749",
+        "filename": "manuals/developer-guide/src/main/asciidoc/messaging4transport/messaging4transport-developer.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:44:58Z",
+      "side": 1,
+      "message": "URL format wrong",
+      "range": {
+        "startLine": 11,
+        "startChar": 157,
+        "endLine": 11,
+        "endChar": 208
+      },
+      "revId": "86c8fdda2828ebaac31eddc7140624ff8481e7ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_54c9d3aa",
+        "filename": "manuals/developer-guide/src/main/asciidoc/messaging4transport/messaging4transport-developer.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:44:58Z",
+      "side": 1,
+      "message": "The OpenWire",
+      "range": {
+        "startLine": 11,
+        "startChar": 258,
+        "endLine": 11,
+        "endChar": 266
+      },
+      "revId": "86c8fdda2828ebaac31eddc7140624ff8481e7ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_14d3cb60",
+        "filename": "manuals/developer-guide/src/main/asciidoc/messaging4transport/messaging4transport-developer.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:44:58Z",
+      "side": 1,
+      "message": "What\u0027s STOMP?",
+      "range": {
+        "startLine": 11,
+        "startChar": 150,
+        "endLine": 11,
+        "endChar": 155
+      },
+      "revId": "86c8fdda2828ebaac31eddc7140624ff8481e7ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_34cecfb4",
+        "filename": "manuals/developer-guide/src/main/asciidoc/messaging4transport/messaging4transport-developer.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:44:58Z",
+      "side": 1,
+      "message": "is it old-mq or odlmq?",
+      "range": {
+        "startLine": 11,
+        "startChar": 541,
+        "endLine": 11,
+        "endChar": 547
+      },
+      "revId": "86c8fdda2828ebaac31eddc7140624ff8481e7ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_b4e2df2c",
+        "filename": "manuals/developer-guide/src/main/asciidoc/messaging4transport/messaging4transport-developer.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:44:58Z",
+      "side": 1,
+      "message": "URL format wrong",
+      "range": {
+        "startLine": 11,
+        "startChar": 21,
+        "endLine": 11,
+        "endChar": 51
+      },
+      "revId": "86c8fdda2828ebaac31eddc7140624ff8481e7ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_74c33789",
+        "filename": "manuals/developer-guide/src/main/asciidoc/messaging4transport/messaging4transport-developer.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:44:58Z",
+      "side": 1,
+      "message": "URL format wrong",
+      "range": {
+        "startLine": 14,
+        "startChar": 17,
+        "endLine": 14,
+        "endChar": 40
+      },
+      "revId": "86c8fdda2828ebaac31eddc7140624ff8481e7ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_d4bcc308",
+        "filename": "manuals/developer-guide/src/main/asciidoc/messaging4transport/messaging4transport-developer.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:44:58Z",
+      "side": 1,
+      "message": "ActiveMQ",
+      "range": {
+        "startLine": 14,
+        "startChar": 59,
+        "endLine": 14,
+        "endChar": 68
+      },
+      "revId": "86c8fdda2828ebaac31eddc7140624ff8481e7ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_b4b93f17",
+        "filename": "manuals/developer-guide/src/main/asciidoc/messaging4transport/messaging4transport-developer.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:44:58Z",
+      "side": 1,
+      "message": "RESTCONF",
+      "range": {
+        "startLine": 18,
+        "startChar": 174,
+        "endLine": 18,
+        "endChar": 182
+      },
+      "revId": "86c8fdda2828ebaac31eddc7140624ff8481e7ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_143aab98",
+        "filename": "manuals/developer-guide/src/main/asciidoc/messaging4transport/messaging4transport-developer.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:44:58Z",
+      "side": 1,
+      "message": "if you put a single plus (+) on this line it will keep the list running",
+      "revId": "86c8fdda2828ebaac31eddc7140624ff8481e7ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_34452f17",
+        "filename": "manuals/developer-guide/src/main/asciidoc/messaging4transport/messaging4transport-developer.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:44:58Z",
+      "side": 1,
+      "message": "link?",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 9
+      },
+      "revId": "86c8fdda2828ebaac31eddc7140624ff8481e7ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_944d1b41",
+        "filename": "manuals/developer-guide/src/main/asciidoc/messaging4transport/messaging4transport-developer.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:44:58Z",
+      "side": 1,
+      "message": "I don\u0027t think any of these words need to be capitalized",
+      "range": {
+        "startLine": 27,
+        "startChar": 15,
+        "endLine": 27,
+        "endChar": 106
+      },
+      "revId": "86c8fdda2828ebaac31eddc7140624ff8481e7ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_f43e278b",
+        "filename": "manuals/developer-guide/src/main/asciidoc/messaging4transport/messaging4transport-developer.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:44:58Z",
+      "side": 1,
+      "message": "if you put a single plus (+) on this line it will keep the list running",
+      "revId": "86c8fdda2828ebaac31eddc7140624ff8481e7ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_5440b306",
+        "filename": "manuals/developer-guide/src/main/asciidoc/messaging4transport/messaging4transport-developer.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:44:58Z",
+      "side": 1,
+      "message": "if you put a single plus (+) on this line it will keep the list running",
+      "revId": "86c8fdda2828ebaac31eddc7140624ff8481e7ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_d45323e0",
+        "filename": "manuals/developer-guide/src/main/asciidoc/messaging4transport/messaging4transport-developer.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:44:58Z",
+      "side": 1,
+      "message": "I don\u0027t think any of these words need to be capitalized",
+      "range": {
+        "startLine": 31,
+        "startChar": 41,
+        "endLine": 31,
+        "endChar": 76
+      },
+      "revId": "86c8fdda2828ebaac31eddc7140624ff8481e7ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_744a1727",
+        "filename": "manuals/developer-guide/src/main/asciidoc/messaging4transport/messaging4transport-developer.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:44:58Z",
+      "side": 1,
+      "message": "link?",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 5
+      },
+      "revId": "86c8fdda2828ebaac31eddc7140624ff8481e7ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_74405734",
+        "filename": "manuals/user-guide/src/main/asciidoc/messaging4transport/messaging4transport-user.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:44:58Z",
+      "side": 1,
+      "message": "while",
+      "range": {
+        "startLine": 4,
+        "startChar": 294,
+        "endLine": 4,
+        "endChar": 299
+      },
+      "revId": "86c8fdda2828ebaac31eddc7140624ff8481e7ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_5456f306",
+        "filename": "manuals/user-guide/src/main/asciidoc/messaging4transport/messaging4transport-user.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:44:58Z",
+      "side": 1,
+      "message": "RPCs",
+      "range": {
+        "startLine": 4,
+        "startChar": 79,
+        "endLine": 4,
+        "endChar": 83
+      },
+      "revId": "86c8fdda2828ebaac31eddc7140624ff8481e7ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_94435b41",
+        "filename": "manuals/user-guide/src/main/asciidoc/messaging4transport/messaging4transport-user.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:44:58Z",
+      "side": 1,
+      "message": "RESTCONF northbound",
+      "range": {
+        "startLine": 4,
+        "startChar": 272,
+        "endLine": 4,
+        "endChar": 283
+      },
+      "revId": "86c8fdda2828ebaac31eddc7140624ff8481e7ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_149e2bb9",
+        "filename": "manuals/user-guide/src/main/asciidoc/messaging4transport/messaging4transport-user.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:44:58Z",
+      "side": 1,
+      "message": "other",
+      "range": {
+        "startLine": 7,
+        "startChar": 496,
+        "endLine": 7,
+        "endChar": 499
+      },
+      "revId": "86c8fdda2828ebaac31eddc7140624ff8481e7ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_d46043d1",
+        "filename": "manuals/user-guide/src/main/asciidoc/messaging4transport/messaging4transport-user.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:44:58Z",
+      "side": 1,
+      "message": "just delete this",
+      "range": {
+        "startLine": 7,
+        "startChar": 429,
+        "endLine": 7,
+        "endChar": 445
+      },
+      "revId": "86c8fdda2828ebaac31eddc7140624ff8481e7ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_54a43307",
+        "filename": "manuals/user-guide/src/main/asciidoc/messaging4transport/messaging4transport-user.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:44:58Z",
+      "side": 1,
+      "message": "delete this",
+      "range": {
+        "startLine": 7,
+        "startChar": 563,
+        "endLine": 7,
+        "endChar": 566
+      },
+      "revId": "86c8fdda2828ebaac31eddc7140624ff8481e7ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_7467b7e9",
+        "filename": "manuals/user-guide/src/main/asciidoc/messaging4transport/messaging4transport-user.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:44:58Z",
+      "side": 1,
+      "message": "RPCs",
+      "range": {
+        "startLine": 7,
+        "startChar": 397,
+        "endLine": 7,
+        "endChar": 401
+      },
+      "revId": "86c8fdda2828ebaac31eddc7140624ff8481e7ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_b45dbf17",
+        "filename": "manuals/user-guide/src/main/asciidoc/messaging4transport/messaging4transport-user.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:44:58Z",
+      "side": 1,
+      "message": "the focus",
+      "range": {
+        "startLine": 7,
+        "startChar": 461,
+        "endLine": 7,
+        "endChar": 468
+      },
+      "revId": "86c8fdda2828ebaac31eddc7140624ff8481e7ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_946a3bb1",
+        "filename": "manuals/user-guide/src/main/asciidoc/messaging4transport/messaging4transport-user.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:44:58Z",
+      "side": 1,
+      "message": "exposes",
+      "range": {
+        "startLine": 7,
+        "startChar": 362,
+        "endLine": 7,
+        "endChar": 375
+      },
+      "revId": "86c8fdda2828ebaac31eddc7140624ff8481e7ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_f4a2a7fb",
+        "filename": "manuals/user-guide/src/main/asciidoc/messaging4transport/messaging4transport-user.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:44:58Z",
+      "side": 1,
+      "message": "will",
+      "range": {
+        "startLine": 7,
+        "startChar": 539,
+        "endLine": 7,
+        "endChar": 544
+      },
+      "revId": "86c8fdda2828ebaac31eddc7140624ff8481e7ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_546d53cb",
+        "filename": "manuals/user-guide/src/main/asciidoc/messaging4transport/messaging4transport-user.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:44:58Z",
+      "side": 1,
+      "message": "see above on how to format hyperlinks",
+      "range": {
+        "startLine": 7,
+        "startChar": 168,
+        "endLine": 7,
+        "endChar": 194
+      },
+      "revId": "86c8fdda2828ebaac31eddc7140624ff8481e7ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_d4496361",
+        "filename": "manuals/user-guide/src/main/asciidoc/messaging4transport/messaging4transport-user.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:44:58Z",
+      "side": 1,
+      "message": "This is the wrong AsciiDoc format, it needs to be http://www.amqp.org[Advanced Message Queuing Protocol (AMQP)]",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 62
+      },
+      "revId": "86c8fdda2828ebaac31eddc7140624ff8481e7ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_34a9afdf",
+        "filename": "manuals/user-guide/src/main/asciidoc/messaging4transport/messaging4transport-user.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:44:58Z",
+      "side": 1,
+      "message": "This is described above.",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 38
+      },
+      "revId": "86c8fdda2828ebaac31eddc7140624ff8481e7ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_d43203f1",
+        "filename": "manuals/user-guide/src/main/asciidoc/messaging4transport/messaging4transport-user.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:44:58Z",
+      "side": 1,
+      "message": "This should just be one line which says \"to install this, use this command:\n\n feature:install \u003cfeature-name\u003e\"",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 0
+      },
+      "revId": "86c8fdda2828ebaac31eddc7140624ff8481e7ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_94b19b49",
+        "filename": "manuals/user-guide/src/main/asciidoc/messaging4transport/messaging4transport-user.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:44:58Z",
+      "side": 1,
+      "message": "See above about URL formatting.",
+      "range": {
+        "startLine": 50,
+        "startChar": 66,
+        "endLine": 50,
+        "endChar": 134
+      },
+      "revId": "86c8fdda2828ebaac31eddc7140624ff8481e7ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_74ae97e7",
+        "filename": "manuals/user-guide/src/main/asciidoc/messaging4transport/messaging4transport-user.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:44:58Z",
+      "side": 1,
+      "message": "See above about URL formatting.",
+      "range": {
+        "startLine": 50,
+        "startChar": 168,
+        "endLine": 50,
+        "endChar": 244
+      },
+      "revId": "86c8fdda2828ebaac31eddc7140624ff8481e7ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_d4b7a338",
+        "filename": "manuals/user-guide/src/main/asciidoc/messaging4transport/messaging4transport-user.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:44:58Z",
+      "side": 1,
+      "message": "Is this done automatically by Messaging4Transport? It should be right in which case the single feature:install above should do all of this.",
+      "range": {
+        "startLine": 52,
+        "startChar": 0,
+        "endLine": 80,
+        "endChar": 46
+      },
+      "revId": "86c8fdda2828ebaac31eddc7140624ff8481e7ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_b4b49f35",
+        "filename": "manuals/user-guide/src/main/asciidoc/messaging4transport/messaging4transport-user.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:44:58Z",
+      "side": 1,
+      "message": "This should all be indented by a space to get it to format as a code snippet.",
+      "range": {
+        "startLine": 96,
+        "startChar": 0,
+        "endLine": 104,
+        "endChar": 22
+      },
+      "revId": "86c8fdda2828ebaac31eddc7140624ff8481e7ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_14858b59",
+        "filename": "manuals/user-guide/src/main/asciidoc/messaging4transport/messaging4transport-user.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:44:58Z",
+      "side": 1,
+      "message": "need to install/re-install",
+      "range": {
+        "startLine": 107,
+        "startChar": 8,
+        "endLine": 107,
+        "endChar": 26
+      },
+      "revId": "86c8fdda2828ebaac31eddc7140624ff8481e7ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_547b937a",
+        "filename": "manuals/user-guide/src/main/asciidoc/messaging4transport/messaging4transport-user.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:44:58Z",
+      "side": 1,
+      "message": "data tree or datatree? I don\u0027t care which, but being consistent would be really good.",
+      "range": {
+        "startLine": 109,
+        "startChar": 55,
+        "endLine": 109,
+        "endChar": 63
+      },
+      "revId": "86c8fdda2828ebaac31eddc7140624ff8481e7ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_94987bc1",
+        "filename": "manuals/user-guide/src/main/asciidoc/messaging4transport/messaging4transport-user.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:44:58Z",
+      "side": 1,
+      "message": "The listener",
+      "range": {
+        "startLine": 109,
+        "startChar": 99,
+        "endLine": 109,
+        "endChar": 107
+      },
+      "revId": "86c8fdda2828ebaac31eddc7140624ff8481e7ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_34808f45",
+        "filename": "manuals/user-guide/src/main/asciidoc/messaging4transport/messaging4transport-user.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:44:58Z",
+      "side": 1,
+      "message": "RPCs",
+      "range": {
+        "startLine": 109,
+        "startChar": 65,
+        "endLine": 109,
+        "endChar": 69
+      },
+      "revId": "86c8fdda2828ebaac31eddc7140624ff8481e7ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_7495f785",
+        "filename": "manuals/user-guide/src/main/asciidoc/messaging4transport/messaging4transport-user.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:44:58Z",
+      "side": 1,
+      "message": "The MD-SAL",
+      "range": {
+        "startLine": 109,
+        "startChar": 0,
+        "endLine": 109,
+        "endChar": 6
+      },
+      "revId": "86c8fdda2828ebaac31eddc7140624ff8481e7ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_d48e8378",
+        "filename": "manuals/user-guide/src/main/asciidoc/messaging4transport/messaging4transport-user.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:44:58Z",
+      "side": 1,
+      "message": "the ActiveMQ",
+      "range": {
+        "startLine": 111,
+        "startChar": 17,
+        "endLine": 111,
+        "endChar": 25
+      },
+      "revId": "86c8fdda2828ebaac31eddc7140624ff8481e7ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_b48bff66",
+        "filename": "manuals/user-guide/src/main/asciidoc/messaging4transport/messaging4transport-user.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:44:58Z",
+      "side": 1,
+      "message": "See above about URL formatting.",
+      "range": {
+        "startLine": 111,
+        "startChar": 81,
+        "endLine": 111,
+        "endChar": 112
+      },
+      "revId": "86c8fdda2828ebaac31eddc7140624ff8481e7ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_14ec6b29",
+        "filename": "manuals/user-guide/src/main/asciidoc/messaging4transport/messaging4transport-user.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-20T20:44:58Z",
+      "side": 1,
+      "message": "Where?",
+      "range": {
+        "startLine": 113,
+        "startChar": 137,
+        "endLine": 113,
+        "endChar": 194
+      },
+      "revId": "86c8fdda2828ebaac31eddc7140624ff8481e7ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
