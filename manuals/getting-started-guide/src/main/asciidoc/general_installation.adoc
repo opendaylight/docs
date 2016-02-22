@@ -78,59 +78,106 @@ Multiple features can be installed using the following command:
 feature:install <feature1-name> <feature2-name> ... <featureN-name>
 -----
 
-// .Beryllium Components
-// [options="header",cols="18%,50%,18%,14%"]
-// |====
-// | Component Name                     | Component Description | Karaf feature name | Compatibility
-// | ALTO                               | Enable support for Application-Layer Traffic Optimization | odl-alto-all | self+all
-// | BGP                                | Enables support for BGP | odl-bgpcep-bgp-all | all
-// | CAPWAP                             | Enables control of supported wireless APs | odl-capwap-ac-rest | all
-// | DIDM                               | Device Identification and Driver Management | odl-didm-identification-api, odl-didm-identification, and odl-didm-drivers-api | all
-// | Group Based Policy                 | Enable Endpoint Registry and Policy Repository REST APIs and associated functionality for Group Based Policy | odl-groupbasedpolicy-ofoverlay | self+all
-// | Internet of Things Data Management | Enables support for the oneM2M specification | odl-iotdm-onem2m | all
-// | L2 Switch                          | Provides L2 (Ethernet) forwarding across connected OppenFlow switches and support for host tracking | odl-l2switch-switch-ui | self+all
-// | LACP                               | Enable support for the Link Aggregation Control Protocol | odl-lacp-ui | self+all
-// | LISP Flow Mapping                  | Enable LISP control plane services including the mapping system services REST API and LISP protocol SB plugin | odl-lispflowmapping-all | all
-// | MD-SAL Clustering                  | Provides support for operating a cluster of OpenDaylight instances | odl-mdsal-clustering | special
-// | NETCONF over SSH                   | Provides support to manage NETCONF-enabled devices over SSH | odl-netconf-connector-ssh | all
-// | Network Intent Composition         | Enable support for high-level network control via intents | odl-nic-core | self+all
-// | OVS Management                     | Enables OVS management using OVSDB plugin and its associated OVSDB northbound APIs | odl-ovsdb-all | all
-// | OVSDB OpenStack Neutron            | OpenStack Network Virtualization using OpenDaylight's OVSDB support | odl-ovsdb-openstack | self+all
-// | OpFlex                             | Enables support for the OpFlex protocol | special (see user/developer guide) | all
-// | OpenFlow Flow Programming          | Enables discovery and control of OpenFlow switches and the topology between them | odl-openflowplugin-flow-services-ui | all
-// | OpenFlow Table Type Patterns       | Allows OpenFlow Table Type Patterns to be manually associated with network elements | odl-ttp-all | all
-// | PCEP                               | Enables support for PCEP | odl-bgpcep-pcep-all | all
-// | Packetcable PCMM                   | Enables flow-based dynamic QoS management of CMTS using in the DOCSIS infrastructure | odl-packetcable-all | self+all
-// | Packetcable Policy Server          | Enables support for the PacketCable policy server | odl-packetcable-policy-server-all | self+all
-// | RESTCONF API Support               | Enables REST API access to the MD-SAL including the data store | odl-restconf | all
-// | SDN Interface                      | Provides support for interaction and sharing of state between (non-clustered) OpenDaylight instances | odl-sdninterfaceapp-all | all
-// | SFC over L2                        | Supports implementing SFC using Layer 2 forwarding | odl-sfcofl2 | self+all
-// | SFC over LISP                      | Supports implementing SFC using LISP | odl-sfclisp | all
-// | SFC over REST                      | Supports implementing SFC using REST CRUD operations on network elements | odl-sfc-sb-rest | all
-// | SFC over VXLAN                     | Supports implementing SFC using VXLAN tunnels | odl-sfc-ovs | self+all
-// | SNMP Plugin                        | Enables monitoring and control of network elements via SNMP | odl-snmp-plugin | all
-// | SNMP4SDN                           | Enables OpenFlow-like control of network elements via SNMP | odl-snmp4sdn-all | all
-// | SSSD Federated Authentication      | Enable support for federated authentication using SSSD | odl-aaa-sssd-plugin | all
-// | Secure Networking Bootstrap        | Defines a SNBI domain and associated white lists of devices to be accommodated to the domain | odl-snbi-all | self+all
-// | Secure tag eXchange Protocol (SXP) | Enables distribution of shared tags to network devices | odl-sxp-controller | all
-// | Service Flow Chaining (SFC)        | Enables support for applying chains of network services to certain traffic | odl-sfc-all | all
-// | Time Series Data Repository (TSDR) | Enables historical tracking of OpenFlow statistics | odl-tsdr-all | self+all
-// | Topology Processing Framework      | Enables merged and filtered views of network topologies | odl-topoprocessing-framework | all
-// | Unified Secure Channel (USC)       | Enables support for secure, remote connections to network devices | odl-usc-channel-ui | all
-// | VPN Service                        | Enables support for OpenStack VPNaaS | odl-vpnservice-core | all
-// | VTN Manager                        | Enables Virtual Tenant Network support | odl-vtn-manager-rest | self+all
-// | VTN Manager Neutron                | Enables OpenStack Neutron support of VTN Manager | odl-vtn-manager-neutron | self+all
-// |====
-// 
-// In the table a compatibility value of *all* means that it can be run with other features. A value of *self+all* indicates that the feature can be installed with other features with a value of *all*, but may interact badly other features with a value of *self+all*.
-// 
-// .Experimental Beryllium Components
-// [options="header",cols="18%,50%,18%,14%"]
-// |====
-// | Component Name                     | Component Description | Karaf feature name | Compatibility
-// | Persistence                        | Enables saving of data to external databases | odl-persistence-api | self+all
-// | Reservation                        | Enables bandwidth calendaring using the TL1 protocol | odl-reservation-models | all
-// |====
+.Beryllium Features
+
+[options="header",cols="18%,50%,18%,14%"]
+|====
+| Associated Project Name, if applicable                   | Feature Description | Karaf feature name | Compatibility
+| AAA                | Enables model for authorization, authentication, and accounting functions | odl-aaa-shiro | all
+| ALTO                               | Enables support for Application-Layer Traffic Optimization | odl-alto-all | self+all    
+| BGPCEP |  Enables support for BGP | odl-bgpcep-pcep | all
+| BGP             | Provides support for Border Gateway Protocol (including Linkstate Distribution) as a source of L3 topology information | odl-bgpcep-bgp | all
+| BMP            | Provides support for BGP Monitoring Protocol as a monitoring station    | odl-bgpcep-bmp     | all 
+| CAPWAP                             | Enables control of supported wireless APs | odl-capwap-ac-rest | all
+| Controller Shield        | Install the two features below one after another to provide controller security information to northbound applications            |             |    
+|    Controller Shield Feature 1        | Loads the Controller Shield related APIs    | odl-usecplugin-api    | all
+| Controller Shield Feature 2            | Loads the feature implementation of Controller Shield  | odl-usecplugin  | all    
+| DIDM                               | Device Identification and Driver Management | odl-didm-identification-api, odl-didm-identification, and odl-didm-drivers-api | all
+| DLUX            | Provides an intuitive graphical user interface for OpenDaylight |  odl-dlux-all    | all
+|FaaS            | Creates a common abstraction layer on top of a physical network so northbound APIs or services can be more easily mapped onto the physical network as a concrete device configuration    |  Has three features    | 
+| FaaS Feature 1    | The container that defines all the modules and features except odl-restconf    |  odl-faas-all         | self+all        
+| FaaS Feature 2    | Implements fabric manager module, which handles northbound Fabric API requests, manages fabric objects and the abstracted topology formed by  fabric objects, as well as network resource management            | odl-faas-fabricmgr    | self+all
+| FaaS Feature 3        | Renders logical network model into fabric services which are mapped to physical network configuration        | odl-faas-uln-mapper        | self+all
+| Group Based Policy                 | Enables Endpoint Registry and Policy Repository REST APIs and associated functionality for Group Based Policy | odl-groupbasedpolicy-ofoverlay | self+all
+| Internet of Things Data Management | Enables support for the oneM2M specification | odl-iotdm-onem2m | all
+| L2 Switch                          | Provides L2 (Ethernet) forwarding across connected OpenFlow switches and support for host tracking | odl-l2switch-switch-ui | self+all
+| LACP                               | Enables support for the Link Aggregation Control Protocol | odl-lacp-ui | self+all
+| LISP Flow Mapping                  | Enables LISP control plane services including the mapping system services REST API and LISP protocol SB plugin | odl-lispflowmapping-msmr | all
+| MD-SAL Clustering                  | Provides support for operating a cluster of OpenDaylight instances | odl-mdsal-clustering | special
+| NEMO        |  Has two features to enable network users/applications to describe their demands for network resources, services, and logical operations    |            |
+| NEMO Feature 1     | Provides intent mapping and implementation with CLI for legacy devices    |    odl-nemo-openflow-cli    |  all
+| NEMO Feature 2    | Provides intent mapping and implementation for OpenFlow devices    | odl-nemo-cli-render | all
+| NetIDE        | Enables portability and cooperation inside a single network by using a client/server multi-controller architecture    |    odl-netide-rest        | all
+| NETCONF over SSH                   | Provides support to manage NETCONF-enabled devices over SSH | odl-netconf-connector-ssh | all
+| OF-CONFIG            | Enables remote configuration of OpenFlow datapaths    | odl-of-config-rest     | all        
+| OpenDaylight Controller:Main  | Provides clustering features for MD-SAL    |        |
+| OVSDB OpenStack Neutron            | OpenStack Network Virtualization using OpenDaylight's OVSDB support | odl-ovsdb-openstack | all
+| OVSDB Southbound | OVSDB MDSAL southbound plugin for the Open_vSwitch schema | odl-ovsdb-southbound-impl-ui | all
+| OVSDB HWVTEP Southbound | OVSDB MDSAL hwvtep southbound plugin for the hw_vtep schema | odl-ovsdb-hwvtepsouthbound-ui | all
+| OVSDB NetVirt SFC | OVSDB NetVirt support for SFC | odl-ovsdb-sfc-ui | all
+| OVSDB NetVirt UI | OVSDB DLUX UI | odl-ovsdb-ui | all
+| OpenFlow Flow Programming          | Enables discovery and control of OpenFlow switches and the topology between them | odl-openflowplugin-flow-services-ui | all
+| OpenFlow Table Type Patterns       | Allows OpenFlow Table Type Patterns to be manually associated with network elements | odl-ttp-all | all
+| Packetcable PCMM                   | Enables flow-based dynamic QoS management of CMTS use in the DOCSIS infrastructure | odl-packetcable-all | self+all
+| Packetcable Policy Server          | Enables support for the PacketCable policy server | odl-packetcable-policy-server-all | self+all
+| PCEP                               | Enables support for PCEP | odl-bgpcep-pcep-all | all
+| RESTCONF API Support               | Enables REST API access to the MD-SAL including the data store | odl-restconf | all
+| SDNinterface                      | Provides support for interaction and sharing of state between (non-clustered) OpenDaylight instances | odl-sdninterfaceapp-all | all
+| SFC over L2                        | Supports implementing SFC using Layer 2 forwarding | odl-sfcofl2 | self+all
+| SFC over LISP                      | Supports implementing SFC using LISP | odl-sfclisp | all
+| SFC over REST                      | Supports implementing SFC using REST CRUD operations on network elements | odl-sfc-sb-rest | all
+| SFC over VXLAN                     | Supports implementing SFC using VXLAN tunnels | odl-sfc-ovs | self+all
+| SNMP Plugin                        | Enables monitoring and control of network elements via SNMP | odl-snmp-plugin | all
+| SNMP4SDN                           | Enables OpenFlow-like control of network elements via SNMP | odl-snmp4sdn-all | all
+| SSSD Federated Authentication      | Enables support for federated authentication using SSSD | odl-aaa-sssd-plugin | all
+| Secure Networking Bootstrap        | Defines a SNBi domain and associated white lists of devices to be accommodated to the domain | odl-snbi-all | self+all
+| Secure tag eXchange Protocol (SXP) | Enables distribution of shared tags to network devices | odl-sxp-controller | all
+| Service Function Chaining (SFC)        | Enables support for applying chains of network services to certain traffic | odl-sfc-all | all
+| Time Series Data Repository (TSDR) | Enables historical tracking of OpenFlow statistics | odl-tsdr-all | self+all
+| Topology Processing Framework      | Enables merged and filtered views of network topologies | odl-topoprocessing-framework | all
+| Unified Secure Channel (USC)       | Enables support for secure, remote connections to network devices | odl-usc-channel-ui | all
+| VPN Service                        | Enables support for OpenStack VPNaaS | odl-vpnservice-core | all
+| VTN Manager                        | Enables Virtual Tenant Network support | odl-vtn-manager-rest | self+all
+| VTN Manager Neutron                | Enables OpenStack Neutron support of VTN Manager | odl-vtn-manager-neutron | self+all
+|====
+
+
+==== Other Beryllium features
+
+.Other Beryllium features
+[options="header",cols="18%,50%,18%,14%"]
+|====
+| Feature Name                     | Description | Feature name | Compatibility
+| OpFlex    | Provides OpFlex Agent for Open VSwitch to enforce network policy, such as GBP, for locally-attached virtual machines or containers    |         | all
+| NeXt            | Provides a network-centric topology UI    | odl-next        | all
+|====
+
+
+==== Beryllium experimental features
+The following functionality is labeled as experimental in OpenDaylight Beryllium and should be used accordingly. In general, it is not supposed to be used in production unless its limitations are well understood by those deploying it.
+
+
+.Experimental Beryllium Features
+[options="header",cols="18%,50%,18%,14%"]
+|====
+| Feature Name                     | Description | Karaf feature name | Compatibility
+| LISP Flow Mapping OpenStack Network Virtualization   | Experimental support for OpenStack Neutron virtualization | odl-lispflowmapping-neutron | self+all
+Messaging4Transport        | Introduces an AMQP Northbound to MD-SAL    | Has two features |        |
+|    Feature 1     |        | odl-messaging4transport-api |    self+all    
+|    Feature 2    | Provides the AMQP-based messaging oriented northbound APIs for OpenDaylight MD-SAL    |  odl-messaging4transport |  self+all
+| NIC            | Provides abstraction layer for communicating network intentions        | There are four Karaf features for NIC            |     
+| Feature 1    | Provides distributed intent mapping service and intent REST API to apps for CRUD     |   odl-nic-core-hazelcast        | all
+| Feature 2         | Provides distributed intent mapping service, implemented using MD-SAL    | odl-nic-core-mdsal    | all
+| Feature 3    |  Provides a Karaf CLI extension for intent CRUD operations and mapping service operations    | odl-nic-console | all
+| Feature 4 - Four  NIC renderers        | Provide specific implementations to render the Intent (only one renderer supported at at time  |     | 
+|           |  Virtual Tenant Network Renderer     | odl-nic-renderer-vtn       |    self+all
+|        | Group Based Policy Renderer    | odl-nic-renderer-gbp        | self+all 
+|        | OpenFlow Renderer        | odl-nic-renderer-of     | self+all
+|        | NEtwork MOdeling Renderer    |  odl-nic-renderer-nemo    | self+all
+| UNI Manager        | Initiates the development of data models and APIs to facilitate configuration and provisioning connectivity services    for OpenDaylight applications and services    | odl-unimgr     | all
+| YANG PUBSUB     |   Allows subscriptions to be placed on targeted subtrees of YANG datastores residing on remote devices to obviate the need for OpenDaylight to make continuous fetch requests     | odl-yangpush-rest | all
+|====
+
 
 ==== Listing available features
 To find the complete list of Karaf features, run the following command:
