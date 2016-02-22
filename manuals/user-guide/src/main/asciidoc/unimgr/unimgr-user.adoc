@@ -1,0 +1,78 @@
+== UNI Manager Plug In Project
+
+=== Overview
+The version of the UNI Manager (UNIMgr) plug-in included in OpenDaylight
+Beryllium release is experimental, serving as a proof-of-concept (PoC) for using
+features of OpenDaylight to provision networked elements with attributes
+satisfying Metro Ethernet Forum (MEF) requirements for delivery of Carrier
+Ethernet service. This initial version of UNIMgr does not enable the full set
+of MEF-defined functionality for Carrier Ethernet service. UNI Manager adheres
+to a minimum set of functionality defined by MEF 7.2 and 10.2 specifications.
+
+UNIMgr receives a request from applications to create an Ethernet Private Line
+(EPL) private Ethernet connection between two endpoints on the network. The
+request must include the IP addresses of the endpoints and a class of service
+identifier.
+
+UNI Manager plug-in translates the request for EPL service into (a) configuring
+two instances of Open vSwitch (OVS), each instance running in one of the
+UNI endpoints, with two ports and a bridge between the ports, and (b) creating a
+GRE tunnel to provide a private connection between the endpoints. This initial
+version of UNIMgr uses only OVSDB on its southbound interface to send
+configuration commands.
+
+UNIMgr also accepts a bits per second datarate parameter, which is translated
+to an OVSDB command to limit the rate at which the OVS instances will forward
+data traffic.
+
+The YANG module used to create the UNIMgr plug-in models MEF-defined UNI and
+Ethernet Virtual Connection (EVC) attributes but does not include the full set
+of UNI and EVC attributes. And of the attributes modeled in the YANG module
+only a subset of them are implemented in the UNIMgr listener code translating
+the Operational data tree to OVSDB commands. The YANG module used to develop
+the PoC UNIMgr plug-in is cl-unimgr-mef.yang. A copy of this module is
+available in the odl-unimgr-api bundle of the UNIMgr project.
+
+Limitations of the PoC version of UNI Manager in OpenDaylight Beryllium include
+those listed below:
+* Uses only OVSDB southbound interface of OpenDaylight
+* Only uses UNI ID, IP Address, and speed UNI attributes
+* Only uses a subset of EVC per UNI attributes
+* Does not use MEF Class of Service or Bandwidth Profile attributes
+* Configures only Open vSwitch network elements
+
+Opportunities for evolution of the UNI Manager plug in include using complete
+MEF Service Layer and MEF Resource Layer YANG models and supporting other
+OpenDaylight southbound protocols like NetConf and OpenFlow.
+
+=== UNI Manager Components
+
+UNI Manager is comprised of the following OpenDaylight Karaf features:
+
+[width="60%",frame="topbot"]
+|======================
+|odl-unimgr-api          | OpenDaylight :: UniMgr :: api
+|odl-unimgr              | OpenDaylight :: UniMgr
+|odl-unimgr-console      | OpenDaylight :: UniMgr :: CLI
+|odl-unimgr-rest         | OpenDaylight :: UniMgr :: REST
+|odl-unimgr-ui           | OpenDaylight :: UniMgr :: UI
+|======================
+
+=== Installing UNI Manager Plug-in
+
+After launching OpenDaylight install the feature for the UNI Manager plug-in.
+From the karaf command prompt execute the following command to install
+the UNI Manager plug-in:
+
+ $ feature:install odl-manager-ui
+
+=== Explore and exercise the UNI Manager REST API
+
+To see the UNI Manager APIs, browse to this URL:
+http://localhost:8181/apidoc/explorer/index.html
+
+Replace localhost with the IP address or hostname where OpenDaylight is
+running if you are not running OpenDaylight locally on your machine.
+
+See also the UNI Manager Developer's Guide for a full list and description of
+UNI Manager POSTMAN calls.
