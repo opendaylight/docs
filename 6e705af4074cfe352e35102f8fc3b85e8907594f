@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_0fbf3662",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_24251809",
+      "range": {
+        "startLine": 8,
+        "startChar": 192,
+        "endLine": 30,
+        "endChar": 56
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_841ea4b9",
         "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
         "patchSetId": 12
@@ -36,6 +60,30 @@
       "writtenOn": "2016-02-17T02:16:33Z",
       "side": 1,
       "message": "Just remove this?",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 89
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_efc3f2ea",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_841ea4b9",
       "range": {
         "startLine": 33,
         "startChar": 0,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_2fbafa6d",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_641ba0ca",
+      "range": {
+        "startLine": 37,
+        "startChar": 93,
+        "endLine": 37,
+        "endChar": 169
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_c47b8cf3",
         "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
         "patchSetId": 12
@@ -82,6 +154,30 @@
       "writtenOn": "2016-02-17T02:16:33Z",
       "side": 1,
       "message": "or Cassandra?",
+      "range": {
+        "startLine": 38,
+        "startChar": 123,
+        "endLine": 38,
+        "endChar": 128
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_8fb22692",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_c47b8cf3",
       "range": {
         "startLine": 38,
         "startChar": 123,
@@ -111,6 +207,24 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_6f5d2247",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Yes.",
+      "parentUuid": "9a3d3df0_a48008c1",
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_e48690da",
         "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
         "patchSetId": 12
@@ -122,6 +236,30 @@
       "writtenOn": "2016-02-17T02:16:33Z",
       "side": 1,
       "message": "If you put pluses (+) around this it will format in fixed-width font.",
+      "range": {
+        "startLine": 53,
+        "startChar": 0,
+        "endLine": 53,
+        "endChar": 35
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_6fafe22a",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_e48690da",
       "range": {
         "startLine": 53,
         "startChar": 0,
@@ -157,6 +295,30 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_cfa8ae22",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_446f7c2b",
+      "range": {
+        "startLine": 57,
+        "startChar": 125,
+        "endLine": 57,
+        "endChar": 170
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_782fc088",
         "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
         "patchSetId": 12
@@ -174,6 +336,24 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_afa56a48",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_782fc088",
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_d84fec69",
         "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
         "patchSetId": 12
@@ -185,6 +365,30 @@
       "writtenOn": "2016-02-17T02:16:33Z",
       "side": 1,
       "message": "Isn\u0027t that just a single feature:install command. Does it make sense to send them to the user guide for that?",
+      "range": {
+        "startLine": 66,
+        "startChar": 56,
+        "endLine": 66,
+        "endChar": 152
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_0f66162a",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_d84fec69",
       "range": {
         "startLine": 66,
         "startChar": 56,
@@ -312,6 +516,78 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_4f6c9e08",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_38409833",
+      "range": {
+        "startLine": 68,
+        "startChar": 122,
+        "endLine": 68,
+        "endChar": 125
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_8f7986ca",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_b854a8ff",
+      "range": {
+        "startLine": 68,
+        "startChar": 36,
+        "endLine": 68,
+        "endChar": 42
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_2f715ae0",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_5843dc41",
+      "range": {
+        "startLine": 68,
+        "startChar": 190,
+        "endLine": 68,
+        "endChar": 221
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_9849e462",
         "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
         "patchSetId": 12
@@ -358,6 +634,54 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_cf7f0eaa",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_9849e462",
+      "range": {
+        "startLine": 84,
+        "startChar": 107,
+        "endLine": 84,
+        "endChar": 117
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_6f76c2d8",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_7846a050",
+      "range": {
+        "startLine": 84,
+        "startChar": 134,
+        "endLine": 84,
+        "endChar": 143
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_d876cca3",
         "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
         "patchSetId": 12
@@ -375,6 +699,24 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_af7c4ab6",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_d876cca3",
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_b87b088b",
         "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
         "patchSetId": 12
@@ -386,6 +728,30 @@
       "writtenOn": "2016-02-17T02:16:33Z",
       "side": 1,
       "message": "Again, is it worth sending them to the user guide for a single command? Is it more than that?",
+      "range": {
+        "startLine": 107,
+        "startChar": 56,
+        "endLine": 107,
+        "endChar": 160
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_0f4d769a",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_b87b088b",
       "range": {
         "startLine": 107,
         "startChar": 56,
@@ -467,6 +833,78 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_4f43fe6b",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_586abcb3",
+      "range": {
+        "startLine": 109,
+        "startChar": 190,
+        "endLine": 109,
+        "endChar": 228
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_ef513237",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_186dd4cc",
+      "range": {
+        "startLine": 109,
+        "startChar": 91,
+        "endLine": 109,
+        "endChar": 105
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_2f483a86",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_f87110a9",
+      "range": {
+        "startLine": 109,
+        "startChar": 125,
+        "endLine": 109,
+        "endChar": 128
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_3867f8ea",
         "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
         "patchSetId": 12
@@ -478,6 +916,30 @@
       "writtenOn": "2016-02-17T02:16:33Z",
       "side": 1,
       "message": "Cassandra (latest",
+      "range": {
+        "startLine": 111,
+        "startChar": 8,
+        "endLine": 111,
+        "endChar": 25
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_8f606602",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_3867f8ea",
       "range": {
         "startLine": 111,
         "startChar": 8,
@@ -513,6 +975,30 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_cf56ee29",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_9860c4d0",
+      "range": {
+        "startLine": 119,
+        "startChar": 52,
+        "endLine": 119,
+        "endChar": 93
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_785d0015",
         "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
         "patchSetId": 12
@@ -524,6 +1010,30 @@
       "writtenOn": "2016-02-17T02:16:33Z",
       "side": 1,
       "message": "it probably makes sense to format this the same as the steps above with indented text.",
+      "range": {
+        "startLine": 121,
+        "startChar": 33,
+        "endLine": 121,
+        "endChar": 71
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_af53aa37",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_785d0015",
       "range": {
         "startLine": 121,
         "startChar": 33,
@@ -559,6 +1069,30 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_0f3456fa",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_d89d2cbe",
+      "range": {
+        "startLine": 123,
+        "startChar": 0,
+        "endLine": 123,
+        "endChar": 41
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_b8a2e8fa",
         "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
         "patchSetId": 12
@@ -570,6 +1104,24 @@
       "writtenOn": "2016-02-17T02:16:33Z",
       "side": 1,
       "message": "This is much more complex and involved than the previous two. Was that intentional or should you have another section on verifying collection of statistics that talks about mininet and everything?\n\nYou could also drop that part and move it to the user guide.",
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_6b2355a7",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_b8a2e8fa",
       "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -599,6 +1151,30 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_cb3b81cf",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "removed this paragraph since we should use tsdr:list to verify the installation for all data stores, instead of using specific ways for verifying a particular type of data store.",
+      "parentUuid": "9a3d3df0_18a4b406",
+      "range": {
+        "startLine": 163,
+        "startChar": 69,
+        "endLine": 163,
+        "endChar": 74
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_f8a8f0dc",
         "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
         "patchSetId": 12
@@ -610,6 +1186,30 @@
       "writtenOn": "2016-02-17T02:16:33Z",
       "side": 1,
       "message": "what are keya and keyb?",
+      "range": {
+        "startLine": 165,
+        "startChar": 43,
+        "endLine": 165,
+        "endChar": 58
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_ab38bdd3",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "removed this paragraph with the same reason as above.",
+      "parentUuid": "9a3d3df0_f8a8f0dc",
       "range": {
         "startLine": 165,
         "startChar": 43,
@@ -662,6 +1262,30 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_0b3289f1",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "removed this paragraph with the same reason as above.",
+      "parentUuid": "9a3d3df0_38aed8e6",
+      "range": {
+        "startLine": 167,
+        "startChar": 44,
+        "endLine": 167,
+        "endChar": 74
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_78b4e034",
         "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
         "patchSetId": 12
@@ -673,6 +1297,24 @@
       "writtenOn": "2016-02-17T02:16:33Z",
       "side": 1,
       "message": "This should probably be another section with \u003d\u003d\u003d\u003d",
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_ab3f1db3",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_78b4e034",
       "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -702,6 +1344,30 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_0b49e95f",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_98b7243a",
+      "range": {
+        "startLine": 175,
+        "startChar": 463,
+        "endLine": 175,
+        "endChar": 468
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_d8840c60",
         "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
         "patchSetId": 12
@@ -719,6 +1385,24 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_2b7b0d8d",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_d8840c60",
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_b8894877",
         "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
         "patchSetId": 12
@@ -730,6 +1414,24 @@
       "writtenOn": "2016-02-17T02:16:33Z",
       "side": 1,
       "message": "This should probably be another section with \u003d\u003d\u003d\u003d",
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_8b6cd9d1",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Removed post installation configuration for Cassandra data store since there\u0027s no configuration available from Cassandra data store in Beryllium. The syslog testing steps are irrelevant to \u0027post installation configuration for Cassandra data store\u0027.",
+      "parentUuid": "9a3d3df0_b8894877",
       "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -805,6 +1507,78 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_cb69c1bf",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "removed the entire syslog testing section.",
+      "parentUuid": "9a3d3df0_5898fcbf",
+      "range": {
+        "startLine": 188,
+        "startChar": 97,
+        "endLine": 188,
+        "endChar": 98
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_6b7195a7",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "removed the entire syslog testing section.",
+      "parentUuid": "9a3d3df0_187b147c",
+      "range": {
+        "startLine": 188,
+        "startChar": 39,
+        "endLine": 188,
+        "endChar": 63
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_ab66fdea",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "removed the entire syslog testing section.",
+      "parentUuid": "9a3d3df0_f87f5064",
+      "range": {
+        "startLine": 188,
+        "startChar": 83,
+        "endLine": 188,
+        "endChar": 84
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_38953887",
         "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
         "patchSetId": 12
@@ -828,6 +1602,30 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_0b60c9cd",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "removed the entire syslog testing section.",
+      "parentUuid": "9a3d3df0_38953887",
+      "range": {
+        "startLine": 193,
+        "startChar": 56,
+        "endLine": 193,
+        "endChar": 61
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_988e0478",
         "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
         "patchSetId": 12
@@ -839,6 +1637,30 @@
       "writtenOn": "2016-02-17T02:16:33Z",
       "side": 1,
       "message": "what are keya and keyb",
+      "range": {
+        "startLine": 195,
+        "startChar": 43,
+        "endLine": 195,
+        "endChar": 58
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_eb5c851b",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "removed the entire syslog testing section.",
+      "parentUuid": "9a3d3df0_988e0478",
       "range": {
         "startLine": 195,
         "startChar": 43,
@@ -885,6 +1707,48 @@
       "writtenOn": "2016-02-17T02:16:33Z",
       "side": 1,
       "message": "This needs blank line above it to avoid being part of the previous bullet.",
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_2ba2edfc",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "removed the entire syslog testing section.",
+      "parentUuid": "9a3d3df0_d8eb6c11",
+      "range": {
+        "startLine": 197,
+        "startChar": 44,
+        "endLine": 197,
+        "endChar": 73
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_4b9db1bb",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "removed this syslog testing section.",
+      "parentUuid": "9a3d3df0_788b4068",
       "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -960,6 +1824,78 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_6ba875db",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_18f2f405",
+      "range": {
+        "startLine": 201,
+        "startChar": 17,
+        "endLine": 201,
+        "endChar": 19
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_abad5deb",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_f8f630f8",
+      "range": {
+        "startLine": 201,
+        "startChar": 33,
+        "endLine": 201,
+        "endChar": 49
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_cbb0a145",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_b8f028ff",
+      "range": {
+        "startLine": 201,
+        "startChar": 0,
+        "endLine": 201,
+        "endChar": 5
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_58df5c69",
         "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
         "patchSetId": 12
@@ -971,6 +1907,30 @@
       "writtenOn": "2016-02-17T02:16:33Z",
       "side": 1,
       "message": "reinstall",
+      "range": {
+        "startLine": 202,
+        "startChar": 18,
+        "endLine": 202,
+        "endChar": 32
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_8ba339ff",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_58df5c69",
       "range": {
         "startLine": 202,
         "startChar": 18,
@@ -1000,6 +1960,24 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_0bb7293b",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_38dc1873",
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_98e5643a",
         "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
         "patchSetId": 12
@@ -1011,6 +1989,24 @@
       "writtenOn": "2016-02-17T02:16:33Z",
       "side": 1,
       "message": "This seems like it wants to be a new section with \u003d\u003d\u003d\u003d",
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_ebb3e54a",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_98e5643a",
       "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -1034,6 +2030,41 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_4b84915d",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/tsdr/tsdr-installation-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_78e22030",
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_eb99257a",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "r",
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_b8d7884a",
         "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
         "patchSetId": 12
@@ -1045,6 +2076,30 @@
       "writtenOn": "2016-02-17T02:16:33Z",
       "side": 1,
       "message": "data stores",
+      "range": {
+        "startLine": 2,
+        "startChar": 64,
+        "endLine": 2,
+        "endChar": 75
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_0b8e0979",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_b8d7884a",
       "range": {
         "startLine": 2,
         "startChar": 64,
@@ -1080,6 +2135,30 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_4bebf112",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_d8d24c5b",
+      "range": {
+        "startLine": 9,
+        "startChar": 77,
+        "endLine": 10,
+        "endChar": 35
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_18c954ac",
         "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
         "patchSetId": 12
@@ -1103,6 +2182,30 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_2bf02dfd",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_18c954ac",
+      "range": {
+        "startLine": 11,
+        "startChar": 72,
+        "endLine": 11,
+        "endChar": 76
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_f8cd90b8",
         "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
         "patchSetId": 12
@@ -1114,6 +2217,30 @@
       "writtenOn": "2016-02-17T02:16:33Z",
       "side": 1,
       "message": "data stores",
+      "range": {
+        "startLine": 12,
+        "startChar": 5,
+        "endLine": 12,
+        "endChar": 16
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_8bf17903",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_f8cd90b8",
       "range": {
         "startLine": 12,
         "startChar": 5,
@@ -1172,6 +2299,54 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_6bf6b5fa",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_58c63c9b",
+      "range": {
+        "startLine": 13,
+        "startChar": 15,
+        "endLine": 13,
+        "endChar": 20
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_cbdee16c",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_98bc4408",
+      "range": {
+        "startLine": 13,
+        "startChar": 67,
+        "endLine": 13,
+        "endChar": 71
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_38c3788a",
         "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
         "patchSetId": 12
@@ -1183,6 +2358,30 @@
       "writtenOn": "2016-02-17T02:16:33Z",
       "side": 1,
       "message": "persistence",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 11
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_abdb9d7a",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_38c3788a",
       "range": {
         "startLine": 14,
         "startChar": 0,
@@ -1218,6 +2417,30 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_8bc859a9",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_78b98014",
+      "range": {
+        "startLine": 15,
+        "startChar": 54,
+        "endLine": 15,
+        "endChar": 63
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_d839aca5",
         "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
         "patchSetId": 12
@@ -1229,6 +2452,30 @@
       "writtenOn": "2016-02-17T02:16:33Z",
       "side": 1,
       "message": "can",
+      "range": {
+        "startLine": 18,
+        "startChar": 49,
+        "endLine": 18,
+        "endChar": 54
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_6bcd15b7",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_d839aca5",
       "range": {
         "startLine": 18,
         "startChar": 49,
@@ -1258,6 +2505,24 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_8b5699cc",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_b83e688a",
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_18403406",
         "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
         "patchSetId": 12
@@ -1269,6 +2534,30 @@
       "writtenOn": "2016-02-17T02:16:33Z",
       "side": 1,
       "message": "The Data",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 4
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_2b3e6d8c",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_18403406",
       "range": {
         "startLine": 36,
         "startChar": 0,
@@ -1321,6 +2610,24 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_2b65cdb4",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_f844701c",
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_185794cb",
         "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
         "patchSetId": 12
@@ -1367,6 +2674,54 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_6b44f51a",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_185794cb",
+      "range": {
+        "startLine": 38,
+        "startChar": 37,
+        "endLine": 38,
+        "endChar": 41
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_cb4c2145",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_f85bd0f3",
+      "range": {
+        "startLine": 38,
+        "startChar": 13,
+        "endLine": 38,
+        "endChar": 17
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_58747c67",
         "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
         "patchSetId": 12
@@ -1378,6 +2733,30 @@
       "writtenOn": "2016-02-17T02:16:33Z",
       "side": 1,
       "message": "The Data",
+      "range": {
+        "startLine": 39,
+        "startChar": 60,
+        "endLine": 39,
+        "endChar": 64
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_eb4f6532",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_58747c67",
       "range": {
         "startLine": 39,
         "startChar": 60,
@@ -1413,6 +2792,30 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_4b6011a5",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_3871b876",
+      "range": {
+        "startLine": 41,
+        "startChar": 38,
+        "endLine": 41,
+        "endChar": 42
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_986a847f",
         "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
         "patchSetId": 12
@@ -1424,6 +2827,30 @@
       "writtenOn": "2016-02-17T02:16:33Z",
       "side": 1,
       "message": "the Data",
+      "range": {
+        "startLine": 46,
+        "startChar": 20,
+        "endLine": 46,
+        "endChar": 24
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_8b3fb986",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_986a847f",
       "range": {
         "startLine": 46,
         "startChar": 20,
@@ -1459,6 +2886,30 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_ab49dd32",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_7867c0b7",
+      "range": {
+        "startLine": 50,
+        "startChar": 74,
+        "endLine": 51,
+        "endChar": 2
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_d807ecc8",
         "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
         "patchSetId": 12
@@ -1470,6 +2921,30 @@
       "writtenOn": "2016-02-17T02:16:33Z",
       "side": 1,
       "message": "delete this",
+      "range": {
+        "startLine": 52,
+        "startChar": 22,
+        "endLine": 52,
+        "endChar": 28
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_0b53a9e2",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_d807ecc8",
       "range": {
         "startLine": 52,
         "startChar": 22,
@@ -1499,6 +2974,24 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_6b5b55f6",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_b80ca8ee",
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_180e74e5",
         "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
         "patchSetId": 12
@@ -1510,6 +3003,24 @@
       "writtenOn": "2016-02-17T02:16:33Z",
       "side": 1,
       "message": "This seems like it should be a new section with \u003d\u003d\u003d\u003d",
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_ab70bd72",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_180e74e5",
       "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -1562,6 +3073,54 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_eb6645ba",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_58fbdcc0",
+      "range": {
+        "startLine": 70,
+        "startChar": 42,
+        "endLine": 70,
+        "endChar": 44
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_0b6a8980",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_38f898c2",
+      "range": {
+        "startLine": 70,
+        "startChar": 48,
+        "endLine": 70,
+        "endChar": 75
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_f812b007",
         "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
         "patchSetId": 12
@@ -1573,6 +3132,24 @@
       "writtenOn": "2016-02-17T02:16:33Z",
       "side": 1,
       "message": "This seems like it should be a new section with \u003d\u003d\u003d\u003d",
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_cb73817e",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_f812b007",
       "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -1625,6 +3202,30 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_4b0771ca",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_78fea0af",
+      "range": {
+        "startLine": 93,
+        "startChar": 164,
+        "endLine": 93,
+        "endChar": 228
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_d82ecc42",
         "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
         "patchSetId": 12
@@ -1636,6 +3237,30 @@
       "writtenOn": "2016-02-17T02:16:33Z",
       "side": 1,
       "message": "Should you just delete all of this? I think it was already said up above.",
+      "range": {
+        "startLine": 95,
+        "startChar": 0,
+        "endLine": 107,
+        "endChar": 149
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_2b0cadec",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_d82ecc42",
       "range": {
         "startLine": 95,
         "startChar": 0,
@@ -1665,6 +3290,24 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_8b0df9ea",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_b83308aa",
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_1825d45b",
         "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
         "patchSetId": 12
@@ -1676,6 +3319,24 @@
       "writtenOn": "2016-02-17T02:16:33Z",
       "side": 1,
       "message": "This should probably be a new section with \u003d\u003d\u003d\u003d",
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_6bb7d5f5",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_1825d45b",
       "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -1728,6 +3389,30 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_4bbc91dc",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_5822bc52",
+      "range": {
+        "startLine": 153,
+        "startChar": 82,
+        "endLine": 153,
+        "endChar": 90
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_f8291038",
         "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
         "patchSetId": 12
@@ -1739,6 +3424,24 @@
       "writtenOn": "2016-02-17T02:16:33Z",
       "side": 1,
       "message": "This should probably be a new section with \u003d\u003d\u003d\u003d",
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_2bc14d54",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_f8291038",
       "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -1768,6 +3471,30 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_8bb21904",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_9818c41f",
+      "range": {
+        "startLine": 169,
+        "startChar": 0,
+        "endLine": 172,
+        "endChar": 225
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_b8dae849",
         "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
         "patchSetId": 12
@@ -1779,6 +3506,24 @@
       "writtenOn": "2016-02-17T02:16:33Z",
       "side": 1,
       "message": "This probably wants to be one level less, e.g., use \u003d\u003d\u003d instead of \u003d\u003d\u003d\u003d",
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_6b12350a",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_b8dae849",
       "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -1802,6 +3547,24 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_cbfa61bc",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_18dcb445",
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_f8e0f0fb",
         "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
         "patchSetId": 12
@@ -1813,6 +3576,24 @@
       "writtenOn": "2016-02-17T02:16:33Z",
       "side": 1,
       "message": "This probably wants to be one level less, e.g., use \u003d\u003d\u003d\u003d instead of \u003d\u003d\u003d\u003d\u003d",
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_abf71dd2",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_f8e0f0fb",
       "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -1836,6 +3617,24 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_0b01e9ae",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_58e91ce5",
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_38e6d815",
         "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
         "patchSetId": 12
@@ -1847,6 +3646,24 @@
       "writtenOn": "2016-02-17T02:16:33Z",
       "side": 1,
       "message": "This probably wants to be one level less, e.g., use \u003d\u003d\u003d\u003d instead of \u003d\u003d\u003d\u003d\u003d",
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_ebfda5b2",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_38e6d815",
       "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -1876,6 +3693,30 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_4b2e5144",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_98ef24e9",
+      "range": {
+        "startLine": 278,
+        "startChar": 8,
+        "endLine": 278,
+        "endChar": 31
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_78ece0f3",
         "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
         "patchSetId": 12
@@ -1893,6 +3734,24 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_2b330dac",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_78ece0f3",
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_d8bc0cdf",
         "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
         "patchSetId": 12
@@ -1904,6 +3763,30 @@
       "writtenOn": "2016-02-17T02:16:33Z",
       "side": 1,
       "message": "is it PORTSTATS or PortStats?",
+      "range": {
+        "startLine": 295,
+        "startChar": 13,
+        "endLine": 295,
+        "endChar": 22
+      },
+      "revId": "6e705af4074cfe352e35102f8fc3b85e8907594f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_8b24d960",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
+        "patchSetId": 12
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-02-22T08:30:12Z",
+      "side": 1,
+      "message": "it is \u0027PORTSTATS\u0027. We use all upper case chars for data category names.",
+      "parentUuid": "9a3d3df0_d8bc0cdf",
       "range": {
         "startLine": 295,
         "startChar": 13,
