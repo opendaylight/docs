@@ -8,70 +8,95 @@
 
 ==== For Execution
 
-The OpenDaylight Karaf container, OSGi bundles, and Java class files
-are portable and should run on any Java 7- or Java 8-compliant JVM to
-run. Certain projects and certain features of some projects may have
-additional requirements. Those are noted in the project-specific
-release notes.
+OpenDaylight runs on any Java 7 - or Java 8 - compliant JVM; however, certain Karaf features may have additional requirements, which are cited in the release notes for projects that use those features. If you are using an Oracle JDK, use version 1.7.0_45 or later. Please refer to links below.
 
-Projects and features which have known additional requirements are:
-* TCP-MD5 requires 64-bit Linux
-* TSDR has extended requirements for external databases
-* Persistence has extended requirements for external databases
-* SFC requires addition features for certain configurations
-* SXP depends on TCP-MD5 on thus requires 64-bit Linux
-* SNBI has requirements for Linux and Docker
-* OpFlex requires Linux
-* DLUX requires a modern web browser to view the UI
-* AAA when using federation has additional requirements for external tools
-* VTN has components which require Linux
+Features with additional requirements are:
 
-NOTE: If you are using the Oracle JDK, version 1.7.0_45 or later is required.
+* BGPCEP depends on TCPMD5 so requires 64-bit Linux
+* SDN depends on BGPCEP, which in turn depends onTCPMD5 so it also requires 64-bit Linux
+* TCPMD5 - Requires 64-bit Linux
+* TSDR - Has extended requirements for external databases
+* SFC -  Requires addition features for certain configurations
+* SXP - Depends on TCPMD5 so requires 64-bit Linux
+* SNBI - Has requirements for Linux and Docker
+* OpFlex - Requires Linux
+* DLUX - Requires a current web browser to view the UI
+* AAA - Has additional requirements for external tools when using federation
 
-==== For Development
+==== For Developers
 
-OpenDaylight is written primarily in Java project and primarily uses
-Maven as a build tool Consequently the two main requirements to develop
-projects within OpenDaylight are:
+OpenDaylight is written primarily in Java and uses Maven as a build tool. The main requirements for developing features within OpenDaylight are the following: 
 
 * A Java 7- or Java 8-compliant JDK
-* Maven 3.1.1 or later
+* Maven 3.1.1 or later 
 
-Applications and tools built on top of OpenDaylight using it's REST
-APIs should have no special requirements beyond whatever is needed to
-run the application or tool and make the REST calls.
+Note: Applications and tools built on top of OpenDaylight using its REST APIs should have no special requirements beyond that needed to run the application or tool and make the REST calls. 
 
-In some places, OpenDaylight makes use of the Xtend language. While
-Maven will download the appropriate tools to build this, additional
-plugins may be required for IDE support.
-
-The projects with additional requirements for execution typically have
-similar or more extensive additional requirements for development. See
-the project-specific release notes for details.
+Note: In some places, OpenDaylight uses the Xtend language, and while Maven will download the appropriate tools to build this, additional plugins may be required for IDE support. 
 
 === Known Issues and Limitations
 
-Other than as noted in project-specific release notes, we know of the
-following limitations:
+Other than as noted in specific projects’ release notes that are listed below, we know of the following limitations: 
 
-. Migration from Helium and Lithium to Beryllium has not been
-extensively tested. The per-project release notes include migration and
-compatibility information when it is known.
-. There are scales beyond which the controller has been unreliable when
-collecting flow statistics from OpenFlow switches. In tests, these
-issues became apparent when managing thousands of OpenFlow
-switches, however this may vary depending on deployment and use cases.
+* Migration from Lithium to Beryllium has not been extensively tested. The project release notes include migration and compatibility information when it is known. 
+* OpenDaylight has been unreliable at very high scales when collecting flow statistics from OpenFlow switches. These issues became apparent in tests when managing thousands of OpenFlow switches, but outcomes may vary depending on deployment and use cases. 
 
-=== Project-specific Release Notes
+=== Project Specific Release Notes
 
 For the release notes of individual projects, please see the following pages on the OpenDaylight Wiki.
 
-TBD: add Beryllium release notes
+* https://wiki.opendaylight.org/view/AAA:Beryllium_Release_Notes[Authentication, Authorization and Accounting (AAA)]
+* https://wiki.opendaylight.org/view/ALTO:Beryllium:Release_Notes[ALTO]
+* https://wiki.opendaylight.org/view/BGP_LS_PCEP:Beryllium_Release_Notes[BGP PCEP]
+* https://wiki.opendaylight.org/view/CAPWAP:Beryllium:Release_Notes[Control And Provisioning of Wireless Access Points (CAPWAP)]
+* https://wiki.opendaylight.org/view/Centinel:Beryllium:Release_Notes[Centinel]
+* https://wiki.opendaylight.org/view/OpenDaylight_Controller:Beryllium:Release_Notes[Controller]
+* https://wiki.opendaylight.org/view/Controller_Shield:_Beryllium_Release_Notes[Controller Shield]
+* https://wiki.opendaylight.org/view/DIDM:_Beryllium_Release_Notes[Device Identification and Driver Management (DIDM)]
+* https://wiki.opendaylight.org/view/OpenDaylight_DLUX:Beryllium:Release_Notes[DLUX]
+* https://wiki.opendaylight.org/view/FaaS:Beryllium_Release_Notes[Fabric As A Service (FaaS)]
+* https://wiki.opendaylight.org/view/Group_Based_Policy_(GBP)/Releases/Beryllium:Beryllium_Release_Notes[Group Based Policy (GPB)]
+* https://wiki.opendaylight.org/view/Iotdm:Beryllium_Release_Notes[Internet of Things Data Management (IoTDM)]
+* https://wiki.opendaylight.org/view/L2_Switch:Beryllium:Release_Notes[L2 Switch]
+* https://wiki.opendaylight.org/view/LACP:Beryllium:Release_Notes[Link Aggregation Control Protocol (LACP)]
+* https://wiki.opendaylight.org/view/OpenDaylight_Lisp_Flow_Mapping:Beryllium_Release_Notes[LISP Flow Mapping]
+* https://wiki.opendaylight.org/view/MD-SAL:Beryllium:Release_Notes[MD-SAL]
+* https://wiki.opendaylight.org/view/Messaging4Transport:Beryllium:Release_Notes[Messaging4Transport]
+* https://wiki.opendaylight.org/view/NeXt:Beryllium_Release_Notes[NeXt UI Toolkit (NeXt)]
+* https://wiki.opendaylight.org/view/NEMO:Beryllium:Release_Notes[NEtwork MOdeling (NEMO)]
+* https://wiki.opendaylight.org/view/OpenDaylight_NETCONF:Beryllium_Release_Notes[NETCONF]
+* https://wiki.opendaylight.org/view/NetIDE:Release_Notes[NetIDE]
+* https://wiki.opendaylight.org/view/Network_Intent_Composition:Release_Notes[Network Intent Composition (NIC)]
+* https://wiki.opendaylight.org/view/NeutronNorthbound:Beryllium:Release_Notes[Neutron Northbound]
+* https://wiki.opendaylight.org/view/ODL-SDNi:Beryllium_Release_Notes[SDN Interface Application (SDNi)]
+* https://wiki.opendaylight.org/view/ODL_Root_Parent:Beryllium:Release_Notes[ODL Root Parent]
+* https://wiki.opendaylight.org/view/OF-CONFIG:Beryllium:Release_Notes[OpenFlow Configuration Protocol (OF-CONFIG)]
+* https://wiki.opendaylight.org/view/OpFlex:Beryllium_Release_Notes[OpFlex]
+* https://wiki.opendaylight.org/view/OpenDaylight_OpenFlow_Plugin:Beryllium_Release_Notes[OpenFlow Plugin]
+* https://wiki.opendaylight.org/view/Openflow_Protocol_Library:Release_Notes:Beryllium_Release_Notes[OpenFlow Protocol Library]
+* https://wiki.opendaylight.org/view/OpenDaylight_OVSDB:Beryllium_Release_Notes[OVSDB Integration]
+* https://wiki.opendaylight.org/view/PacketCablePCMM:BerylliumReleaseNotes[Packet Cable/PCMM]
+* https://wiki.opendaylight.org/view/Service_Function_Chaining:Beryllium_Release_Notes[Service Function Chaining (SFC)]
+* https://wiki.opendaylight.org/view/SNBI_Berrylium_Release_Notes[Secure Network Bootstrapping Infrastructure (SNBI)]
+* https://wiki.opendaylight.org/view/SNMP_Plugin:SNMP_Plugin:Beryllium_Release_Notes[SNMP Plugin]
+* https://wiki.opendaylight.org/view/SNMP4SDN:Beryllium_Release_Note[SNMP4SDN]
+* https://wiki.opendaylight.org/view/SXP:Beryllium:Release_Notes[Secure tag eXchange Protocol (SXP)]
+* https://wiki.opendaylight.org/view/TCPMD5:Beryllium_Release_Notes[TCP-MD5]
+* https://wiki.opendaylight.org/view/Topology_Processing_Framework:BERYLLIUM_Release_Notes[Topology Processing Framework]
+* https://wiki.opendaylight.org/view/TSDR:Beryllium:Release_Notes[Time Series Data Repository (TSDR)]
+* https://wiki.opendaylight.org/view/Table_Type_Patterns/Beryllium/Release_Notes[Table Type Patterns (TTP)]
+* https://wiki.opendaylight.org/view/USC:Beryllium:Release_Notes[Unified Secure Channel (USC)]
+* https://wiki.opendaylight.org/view/Unimgr:BerylliumReleaseNotes[User Network Interface Manager (UNIMGR)]
+* https://wiki.opendaylight.org/view/Vpnservice:Beryllium_Release_Notes[VPN Service]
+* https://wiki.opendaylight.org/view/VTN:Beryllium:Release_Notes[Virtual Tenant Network (VTN)]
+* https://wiki.opendaylight.org/view/YANG_PUBSUB:_Beryllium_Release_Notes[Yang YANG PUBSUB]
+* https://wiki.opendaylight.org/view/YANG_Tools:Beryllium:Release_Notes[YANG Tools]
 
 ==== Projects without Release Notes
 
 The following projects participated in Beryllium, but intentionally do not have release notes.
 
-* *Documentation Project* produced this and the other downloadable documentation
-* *Integration Group* hosted the OpenDaylight-wide tests and main release distribution
-* *Release Engineering - autorelease* was used to build the Beryllium release artifacts and including the main release download.
+* *Documentation Project* produced this and the other downloadable documentation.
+* *Integration - Distribution Project* hosted the OpenDaylight-wide tests and main release distribution.
+* *Release Engineering - Autorelease Project* was used to build the Beryllium release artifacts including the main release download.
+
