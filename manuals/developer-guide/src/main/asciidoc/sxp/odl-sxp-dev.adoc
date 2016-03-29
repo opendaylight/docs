@@ -12,13 +12,11 @@ The SXP Speaker is a counterpart to the SXP Listener. It maintains a connection 
 
 The SXP Binding Handler extracts the IP-SGT binding from a message and pulls it into the SXP-Database. If an error is detected during the IP-SGT extraction, an appropriate error code and sub-code is selected and an error message is sent back to the connected peer. All transitive messages are routed directly to the output queue of SXP Binding Dispatcher.
 
-The IP-SGT Manager handles bindings from multiple connections. If a new data has been added into or deleted from the SXP-Database, or binding’s contributor change is detected, the manager performs an arbitration process above the SXP-Database to resolve the binding duplicity and prevent possible information loops. Finally, it updates the IP-SGT-Master database that consists only of valid and unique bindings, i.e., a single binding per IP address.
-
-The IP-SGT Manager also contains RPCs that can be used by other OpenDaylight plugins, or by making REST calls, to add, update or to delete bindings in or from the SXP-database.
-
 The SXP Binding Dispatcher represents a selector that will decides how many data from the SXP-database will be sent and when. It is responsible for message content composition based on maximum message length.
 
-The SXP Binding Filters handles filtering of outcoming and incoming IP-SGT bindings according to BGP filtering using ACL and Prefix List syntax for specifiing filter.
+The SXP Binding Filters handles filtering of outgoing and incoming IP-SGT bindings according to BGP filtering using ACL and Prefix List syntax for specifying filter or based on Peer-sequence length.
+
+The SXP Domains feature provides isolation of SXP peers and bindings learned between them, also exchange of Bindings is possible across SXP-Domains by ACL, Prefix List or Peer-Sequence filters
 
 === Key APIs and Interfaces
 As this project is fairly small, it provides only few features that install and
@@ -32,7 +30,7 @@ provide all APIs and implementations for this project.
 RPC request handling
 
 ==== sxp-api
-Contains data holders and entiies
+Contains data holders and entities
 
 ==== spx-core
 Main logic and core features

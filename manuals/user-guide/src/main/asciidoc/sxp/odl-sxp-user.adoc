@@ -12,17 +12,15 @@ The SXP Speaker is a counterpart to the SXP Listener. It maintains a connection 
 
 The SXP Binding Handler extracts the IP-SGT binding from a message and pulls it into the SXP-Database. If an error is detected during the IP-SGT extraction, an appropriate error code and sub-code is selected and an error message is sent back to the connected peer. All transitive messages are routed directly to the output queue of SXP Binding Dispatcher.
 
-The IP-SGT Manager handles bindings from multiple connections. If a new data has been added into or deleted from the SXP-Database, or binding’s contributor change is detected, the manager performs an arbitration process above the SXP-Database to resolve the binding duplicity and prevent possible information loops. Finally, it updates the IP-SGT-Master database that consists only of valid and unique bindings, i.e., a single binding per IP address.
-
-The IP-SGT Manager also contains RPCs that can be used by other OpenDaylight plugins, or by making REST calls, to add, update or to delete bindings in or from the SXP-database.
-
 The SXP Binding Dispatcher represents a selector that will decides how many data from the SXP-database will be sent and when. It is responsible for message content composition based on maximum message length.
 
-The SXP Binding Filters handles filtering of outcoming and incoming IP-SGT bindings according to BGP filtering using ACL and Prefix List syntax for specifiing filter.
+The SXP Binding Filters handles filtering of outgoing and incoming IP-SGT bindings according to BGP filtering using ACL and Prefix List syntax for specifying filter or based on Peer-sequence length.
+
+The SXP Domains feature provides isolation of SXP peers and bindings learned between them, also exchange of Bindings is possible across SXP-Domains by ACL, Prefix List or Peer-Sequence filters
 
 === Configuring SXP
-The OpenDaylight Karaf distribution comes pre-configured with baseline SXP
-configuration.
+The OpenDaylight Karaf distribution comes pre-configured with baseline SXP configuration.
+Configuration of SXP Nodes is also possible via NETCONF.
 
 - *22-sxp-controller-one-node.xml* (defines the basic parameters)
 
@@ -33,7 +31,8 @@ By RPC (response is XML document containing requested data or operation status):
 POST http://127.0.0.1:8181/restconf/operations/sxp-controller:get-connections
 [source,xml]
 ----
-<input xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<input xmlns:xsi="urn:opendaylight:sxp:controller">
+ <domain-name>global</domain-name>
  <requested-node>0.0.0.100</requested-node>
 </input>
 ----
@@ -41,14 +40,14 @@ POST http://127.0.0.1:8181/restconf/operations/sxp-controller:get-connections
 POST http://127.0.0.1:8181/restconf/operations/sxp-controller:add-connection
 [source,xml]
 ----
-<input xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<input xmlns:xsi="urn:opendaylight:sxp:controller">
+ <requested-node>0.0.0.100</requested-node>
+ <domain-name>global</domain-name>
  <connections>
   <connection>
-   <!--vpn>vpn1</vpn-->
    <peer-address>172.20.161.50</peer-address>
-   <!--source-ip></source-ip-->
    <tcp-port>64999</tcp-port>
-   <!-- Password setup: default | none -->
+   <!-- Password setup: default | none leave empty -->
    <password>default</password>
    <!-- Mode: speaker/listener/both -->
    <mode>speaker</mode>
@@ -62,11 +61,9 @@ POST http://127.0.0.1:8181/restconf/operations/sxp-controller:add-connection
    </connection-timers>
   </connection>
   <connection>
-   <!--vpn>vpn1</vpn-->
    <peer-address>172.20.161.178</peer-address>
-   <!--source-ip></source-ip-->
    <tcp-port>64999</tcp-port>
-   <!-- Password setup: default | none -->
+   <!-- Password setup: default | none leave empty-->
    <password>default</password>
    <!-- Mode: speaker/listener/both -->
    <mode>listener</mode>
@@ -75,7 +72,6 @@ POST http://127.0.0.1:8181/restconf/operations/sxp-controller:add-connection
    <!-- Timers setup: 0 to disable specific timer usability, the default value will be used -->
    <connection-timers>
     <!-- Listener -->
-    <!-- NON-CONFIGURABLE delete-hold-down-time -->
     <reconciliation-time>120</reconciliation-time>
     <hold-time>90</hold-time>
     <hold-time-min>90</hold-time-min>
@@ -90,7 +86,9 @@ POST http://127.0.0.1:8181/restconf/operations/sxp-controller:add-connection
 POST http://127.0.0.1:8181/restconf/operations/sxp-controller:delete-connection
 [source,xml]
 ----
-<input xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<input xmlns:xsi="urn:opendaylight:sxp:controller">
+ <requested-node>0.0.0.100</requested-node>
+ <domain-name>global</domain-name>
  <peer-address>172.20.161.50</peer-address>
 </input>
 ----
@@ -98,7 +96,9 @@ POST http://127.0.0.1:8181/restconf/operations/sxp-controller:delete-connection
 POST http://127.0.0.1:8181/restconf/operations/sxp-controller:add-entry
 [source,xml]
 ----
-<input xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<input xmlns:xsi="urn:opendaylight:sxp:controller">
+ <requested-node>0.0.0.100</requested-node>
+ <domain-name>global</domain-name>
  <ip-prefix>192.168.2.1/32</ip-prefix>
  <sgt>20</sgt >
 </input>
@@ -107,7 +107,9 @@ POST http://127.0.0.1:8181/restconf/operations/sxp-controller:add-entry
 POST http://127.0.0.1:8181/restconf/operations/sxp-controller:update-entry
 [source,xml]
 ----
-<input xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<input xmlns:xsi="urn:opendaylight:sxp:controller">
+ <requested-node>0.0.0.100</requested-node>
+ <domain-name>global</domain-name>
  <original-binding>
   <ip-prefix>192.168.2.1/32</ip-prefix>
   <sgt>20</sgt>
@@ -122,12 +124,14 @@ POST http://127.0.0.1:8181/restconf/operations/sxp-controller:update-entry
 POST http://127.0.0.1:8181/restconf/operations/sxp-controller:delete-entry
 [source,xml]
 ----
-<input xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<input xmlns:xsi="urn:opendaylight:sxp:controller">
+ <requested-node>0.0.0.100</requested-node>
+ <domain-name>global</domain-name>
  <ip-prefix>192.168.3.1/32</ip-prefix>
  <sgt>30</sgt >
 </input>
 ----
-* Get Node Bindings 
+* Get Node Bindings
 +
 This RPC gets particular device bindings. An SXP-aware node is identified with a unique Node-ID. If a user requests bindings
 for a Speaker 20.0.0.2, the RPC will search for an appropriate path, which contains 20.0.0.2 Node-ID, within locally learnt
@@ -135,16 +139,180 @@ SXP data in the SXP database and replies with associated bindings.
 POST http://127.0.0.1:8181/restconf/operations/sxp-controller:get-node-bindings
 [source,xml]
 ----
-<input xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<input xmlns:xsi="urn:opendaylight:sxp:controller">
  <requested-node>20.0.0.2</requested-node>
+ <bindings-range>all</bindings-range>
+ <domain-name>global</domain-name>
 </input>
 ----
 * Get Binding SGTs
 POST http://127.0.0.1:8181/restconf/operations/sxp-controller:get-binding-sgts
 [source,xml]
 ----
-<input xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<input xmlns:xsi="urn:opendaylight:sxp:controller">
+ <requested-node>0.0.0.100</requested-node>
+ <domain-name>global</domain-name>
  <ip-prefix>192.168.12.2/32</ip-prefix>
+</input>
+----
+* Add PeerGroup with or without filters to node.
+POST http://127.0.0.1:8181/restconf/operations/sxp-controller:add-peer-group
+[source,xml]
+----
+<input xmlns="urn:opendaylight:sxp:controller">
+ <requested-node>127.0.0.1</requested-node>
+ <sxp-peer-group>
+  <name>TEST</name>
+  <sxp-peers>
+  </sxp-peers>
+  <sxp-filter>
+   <filter-type>outbound</filter-type>
+   <acl-entry>
+    <entry-type>deny</entry-type>
+    <entry-seq>1</entry-seq>
+    <sgt-start>1</sgt-start>
+    <sgt-end>100</sgt-end>
+   </acl-entry>
+   <acl-entry>
+    <entry-type>permit</entry-type>
+    <entry-seq>45</entry-seq>
+    <matches>1</matches>
+    <matches>3</matches>
+    <matches>5</matches>
+   </acl-entry>
+  </sxp-filter>
+ </sxp-peer-group>
+</input>
+----
+* Delete PeerGroup with peer-group-name from node request-node.
+POST http://127.0.0.1:8181/restconf/operations/sxp-controller:delete-peer-group
+[source,xml]
+----
+<input xmlns="urn:opendaylight:sxp:controller">
+ <requested-node>127.0.0.1</requested-node>
+ <peer-group-name>TEST</peer-group-name>
+</input>
+----
+* Get PeerGroup with peer-group-name from node request-node.
+POST http://127.0.0.1:8181/restconf/operations/sxp-controller:get-peer-group
+[source,xml]
+----
+<input xmlns="urn:opendaylight:sxp:controller">
+ <requested-node>127.0.0.1</requested-node>
+ <peer-group-name>TEST</peer-group-name>
+</input>
+----
+* Add Filter to peer group on node request-node.
+POST http://127.0.0.1:8181/restconf/operations/sxp-controller:add-filter
+[source,xml]
+----
+<input xmlns="urn:opendaylight:sxp:controller">
+ <requested-node>127.0.0.1</requested-node>
+ <peer-group-name>TEST</peer-group-name>
+ <sxp-filter>
+  <filter-type>outbound</filter-type>
+  <acl-entry>
+   <entry-type>deny</entry-type>
+   <entry-seq>1</entry-seq>
+   <sgt-start>1</sgt-start>
+   <sgt-end>100</sgt-end>
+  </acl-entry>
+  <acl-entry>
+   <entry-type>permit</entry-type>
+   <entry-seq>45</entry-seq>
+   <matches>1</matches>
+   <matches>3</matches>
+   <matches>5</matches>
+  </acl-entry>
+ </sxp-filter>
+</input>
+----
+* Delete Filter from peer group on node request-node.
+POST http://127.0.0.1:8181/restconf/operations/sxp-controller:delete-filter
+[source,xml]
+----
+<input xmlns="urn:opendaylight:sxp:controller">
+ <requested-node>127.0.0.1</requested-node>
+ <peer-group-name>TEST</peer-group-name>
+ <filter-type>outbound</filter-type>
+</input>
+----
+* Update Filter of the same type in peer group on node request-node.
+POST http://127.0.0.1:8181/restconf/operations/sxp-controller:update-filter
+[source,xml]
+----
+<input xmlns="urn:opendaylight:sxp:controller">
+ <requested-node>127.0.0.1</requested-node>
+ <peer-group-name>TEST</peer-group-name>
+ <sxp-filter>
+  <filter-type>outbound</filter-type>
+  <acl-entry>
+   <entry-type>deny</entry-type>
+   <entry-seq>1</entry-seq>
+   <sgt-start>1</sgt-start>
+   <sgt-end>100</sgt-end>
+  </acl-entry>
+  <acl-entry>
+   <entry-type>permit</entry-type>
+   <entry-seq>45</entry-seq>
+   <matches>1</matches>
+   <matches>3</matches>
+   <matches>5</matches>
+  </acl-entry>
+ </sxp-filter>
+</input>
+----
+* Add new SXP aware Node
+POST http://127.0.0.1:8181/restconf/operations/sxp-controller:add-node
+[source,xml]
+----
+<input xmlns="urn:opendaylight:sxp:controller">
+    <node-id>1.1.1.1</node-id>
+    <source-ip>0.0.0.0</source-ip>
+    <timers>
+        <retry-open-time>5</retry-open-time>
+        <hold-time-min-acceptable>120</hold-time-min-acceptable>
+        <delete-hold-down-time>120</delete-hold-down-time>
+        <hold-time-min>90</hold-time-min>
+        <reconciliation-time>120</reconciliation-time>
+        <hold-time>90</hold-time>
+        <hold-time-max>180</hold-time-max>
+        <keep-alive-time>30</keep-alive-time>
+    </timers>
+    <mapping-expanded>150</mapping-expanded>
+    <security>
+        <password>password</password>
+    </security>
+    <tcp-port>64999</tcp-port>
+    <version>version4</version>
+    <description>ODL SXP Controller</description>
+    <master-database></master-database>
+</input>
+----
+* Delete SXP aware node
+POST http://127.0.0.1:8181/restconf/operations/sxp-controller:delete-node
+[source,xml]
+----
+<input xmlns="urn:opendaylight:sxp:controller">
+ <node-id>1.1.1.1</node-id>
+</input>
+----
+* Add SXP Domain on node request-node.
+POST http://127.0.0.1:8181/restconf/operations/sxp-controller:add-domain
+[source,xml]
+----
+<input xmlns="urn:opendaylight:sxp:controller">
+  <node-id>1.1.1.1</node-id>
+  <domain-name>global</domain-name>
+</input>
+----
+* Delete SXP Domain on node request-node.
+POST http://127.0.0.1:8181/restconf/operations/sxp-controller:delete-domain
+[source,xml]
+----
+<input xmlns="urn:opendaylight:sxp:controller">
+ <node-id>1.1.1.1</node-id>
+ <domain-name>global</domain-name>
 </input>
 ----
 
@@ -159,7 +327,7 @@ OpenDaylight can aggregate the binding information from many devices and communi
 
 OpenDaylight can relay the binding information from one network element to others. Changes in group membership can be propagated more readily through a centralized model. For example, in a security application a particular host (e.g., user or IP Address) may be found to be acting suspiciously or violating established security policies. The defined response is to put the host into a different source group for remediation actions such as a lower quality of service, restricted access to critical servers, or special routing conditions to ensure deeper security enforcement (e.g., redirecting the host’s traffic through an IPS with very restrictive policies). Updated group membership for this host needs to be communicated to multiple network elements as soon as possible; a very efficient and effective method of propagation can be performed using OpenDaylight as a centralized point for relaying the information.
 
-OpenDayLight can create filters for exporting and recieving IP-SGTT bindings used on specific peer groups, thus can provide more complex maintaining of policy groups.
+OpenDayLight can create filters for exporting and receiving IP-SGT bindings used on specific peer groups, thus can provide more complex maintaining of policy groups.
 
 Although the IP-SGT binding is only one specific piece of information, and although SXP is implemented widely in a single vendor’s equipment, bringing the ability of OpenDaylight to process and distribute the bindings, is a very specific immediate useful implementation of policy groups. It would go a long way to develop both the usefulness of OpenDaylight and of policy groups.
 
