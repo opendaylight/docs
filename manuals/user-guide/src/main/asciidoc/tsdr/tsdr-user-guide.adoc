@@ -345,4 +345,18 @@ For HBase and Cassandra data stores, the database level logs are written into HB
 ** Cassandra log
 *** Cassandra log is under {cassandra.logdir}/system.log. The default {cassandra.logdir} is /var/log/cassandra/.
 
+=== Security
 
+TSDR gets it's information from a variety of sources, which can be secured in different ways.
+
+** OpenFlow Security
+*** The OpenFlow plugin, which can be configured with Transport Layer Security (TLS).
+
+** SNMP Security
+*** The SNMP version3 has security support. However, since ODL SNMP plugin does not support version3, we (TSDR) will not have security support at this moment.
+
+** NetFlow Security
+*** NetFlow, which cannot be configured with security so we recommend making sure it flows only over a secured management network.
+
+** Syslog Security
+*** Syslog, which cannot be configured with security so we recommend making sure it flows only over a secured management network.
