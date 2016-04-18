@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa57193c_bac9d15c",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-04-18T00:12:53Z",
+      "side": 1,
+      "message": "suggest rewording to \u0027the data\u0027",
+      "range": {
+        "startLine": 350,
+        "startChar": 10,
+        "endLine": 350,
+        "endChar": 26
+      },
+      "revId": "cd809d8bd4358146c7aa0fde4c7bdd19254002f7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa57193c_fac34936",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-04-18T00:12:53Z",
+      "side": 1,
+      "message": "The OpenFlow data can be configured with Transport Layer Security (TLS) since the OpenFlow Plugin that TSDR depends on provides this security support.",
+      "range": {
+        "startLine": 353,
+        "startChar": 4,
+        "endLine": 353,
+        "endChar": 85
+      },
+      "revId": "cd809d8bd4358146c7aa0fde4c7bdd19254002f7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa57193c_9ac68d48",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 3105
+      },
+      "writtenOn": "2016-04-18T00:12:53Z",
+      "side": 1,
+      "message": "However, since ODL SNMP Plugin that TSDR depends on does not support version 3..",
+      "range": {
+        "startLine": 356,
+        "startChar": 44,
+        "endLine": 356,
+        "endChar": 102
+      },
+      "revId": "cd809d8bd4358146c7aa0fde4c7bdd19254002f7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
