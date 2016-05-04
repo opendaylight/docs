@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa57193c_0784b5d2",
+        "filename": "manuals/developer-guide/src/main/asciidoc/lispflowmapping/odl-lispflowmapping-map-register-cache.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 654
+      },
+      "writtenOn": "2016-05-04T07:42:25Z",
+      "side": 1,
+      "message": "The goal of the developer guide is that other developers that want to contribute in the future can use the guide to better understand the code, what/how, and why it does it the way it does. So there is no need to refer to the trello card, or original state as once the patch is merged this information is stale.  Please remove these.",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 194
+      },
+      "revId": "5b950fba34f5db23a0a3c8285de5489b9a6526c3",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa57193c_e788a1e9",
+        "filename": "manuals/developer-guide/src/main/asciidoc/lispflowmapping/odl-lispflowmapping-map-register-cache.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 654
+      },
+      "writtenOn": "2016-05-04T07:42:25Z",
+      "side": 1,
+      "message": "No need as information will be stale soon. Please remove.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 82
+      },
+      "revId": "5b950fba34f5db23a0a3c8285de5489b9a6526c3",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa57193c_476d0d32",
+        "filename": "manuals/developer-guide/src/main/asciidoc/lispflowmapping/odl-lispflowmapping-map-register-cache.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 654
+      },
+      "writtenOn": "2016-05-04T07:42:25Z",
+      "side": 1,
+      "message": "once you remove the two parts mentioned above, you can rename everything up to hear as Feature Overview.",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 98
+      },
+      "revId": "5b950fba34f5db23a0a3c8285de5489b9a6526c3",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa57193c_276a991a",
+        "filename": "manuals/developer-guide/src/main/asciidoc/lispflowmapping/odl-lispflowmapping-map-register-cache.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 654
+      },
+      "writtenOn": "2016-05-04T07:42:25Z",
+      "side": 1,
+      "message": "(style note) Please make sure the file has only up to 120 characters in each line.",
+      "range": {
+        "startLine": 16,
+        "startChar": 92,
+        "endLine": 16,
+        "endChar": 109
+      },
+      "revId": "5b950fba34f5db23a0a3c8285de5489b9a6526c3",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
