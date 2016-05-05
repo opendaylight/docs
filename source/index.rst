@@ -12,7 +12,7 @@ Contents:
    :maxdepth: 2
 
    getting-started-guide/index
-
+   submodules/releng/builder/docs/index
 
 Indices and tables
 ==================
