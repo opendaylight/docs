@@ -17,7 +17,7 @@
   <properties>
     <asciidoctor.version>0.1.4</asciidoctor.version>
     <current.branch>master</current.branch>
-    <nexusproxy>http://nexus.opendaylight.org/content</nexusproxy>
+    <nexusproxy>https://nexus.opendaylight.org/content</nexusproxy>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <sitedeploy>${nexusproxy}/sites/site/${project.groupId}/${current.branch}/${project.artifactId}</sitedeploy>
   </properties>
