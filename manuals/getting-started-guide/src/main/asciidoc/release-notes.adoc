@@ -444,3 +444,340 @@ The following projects had no noteworthy changes in the Beryllium-SR1 Release:
 * https://git.opendaylight.org/gerrit/#/q/9375dcb5e3056382f79c0b973ce4bce02551cc4c[9375dc] https://bugs.opendaylight.org/show_bug.cgi?id=5335[BUG-5335]: augmenting a mandatory node on a presence container
 * https://git.opendaylight.org/gerrit/#/q/4ad3612cb95e3aa811ddd5d1aa76bc93052bf7cd[4ad361] https://bugs.opendaylight.org/show_bug.cgi?id=5437[BUG-5437]: Issue accessing mounted device supporting OpenConfig BGP.
 
+=== Beryllium-SR2 Release Notes
+
+This page details changes and bug fixes between the Beryllium Stability Release 1 (Beryllium-SR1) and the Beryllium Stability Release 2 (Beryllium-SR2) of OpenDaylight.
+
+==== Projects with no noteworthy changes
+
+The following projects had no noteworthy changes in the Beryllium-SR2 Release:
+
+* ALTO
+* Centinel
+* Controller Shield
+* DLUX
+* Device Identification and Driver Management (DIDM)
+* Messaging4Transport
+* NeXt UI Toolkit
+* NetIDE
+* OpenFlow Protocol Library
+* SDN Interface Application (SDNi)
+* Secure Network Bootstrapping Infrastructure (SNBI)
+* Table Type Patterns (TTP)
+* User Network Interface Manager (UNIMGR)
+* YANG PUBSUB
+
+==== Authentication, Authorization and Accounting (AAA)
+===== Migration
+Between Beryllium and Beryllium-SR2, https://bugs.opendaylight.org/show_bug.cgi?id=5654[BUG-5654] was discovered and fixed.  https://bugs.opendaylight.org/show_bug.cgi?id=5654[BUG-5654] is caused by the insertion of illegal characters into the hashed password for the AAA idmlight database.  This issue was fixed, and if you are upgrading from Beryllium to Beryllium-SR2, it is recommended to delete the idmlight.db.mv.db database file in karaf home directory, restart the karaf process, and allow the database to regenerate automatically.  Note:  this will restore the default credentials, which should be changed immediately.
+
+===== Changes / Fixes
+* https://git.opendaylight.org/gerrit/#/q/f7f1ff5f9875c646bdb72c11d57ba1c4c09bb54e[f7f1ff] Add a generic ShiroFilter for use with non-RESTCONF servlets
+* https://git.opendaylight.org/gerrit/#/q/bc18b67d404c2174f064beb5f7a1e2ac448315aa[bc18b6] Add unit test for aaa-idmlight using jersey test framework
+* https://git.opendaylight.org/gerrit/#/q/0e01fd09f4dc9e7b4284d9913f89292a168f6a5a[0e01fd] Lower log level for unsuccessful OAuth2 Requests to debug
+* https://git.opendaylight.org/gerrit/#/q/735ae44952cd149fecffbc486187437c21d7f648[735ae4] Fix ant paths so that subpaths are represented
+* https://git.opendaylight.org/gerrit/#/q/be81e2c43665c5988c7ba9e27f0c14906833db3d[be81e2] Fix https://bugs.opendaylight.org/show_bug.cgi?id=5654[BUG-5654] - SHA256 hashing sometimes output a string that contains illegal characters
+* https://git.opendaylight.org/gerrit/#/q/de16fd7fe707b614e038ff2d177760c25795a501[de16fd] Do not install or deploy the karaf artifact
+* https://git.opendaylight.org/gerrit/#/q/0d95c0714be688a90b4c5cb383d04fc2bd1756c4[0d95c0] https://bugs.opendaylight.org/show_bug.cgi?id=5493[BUG-5493] idmtool script doesnt honor target-hostname argument
+* https://git.opendaylight.org/gerrit/#/q/46897178700d1334750633d4361794f9f8fe2079[468971] AAA idmlight REST endpoints should use AAAFilter
+* https://git.opendaylight.org/gerrit/#/q/8c1534e828ce91891f2e439091cfc2ea37285e8b[8c1534] https://bugs.opendaylight.org/show_bug.cgi?id=5474[BUG-5474] Accounting Log for Un/Successful Auth Attempts
+
+==== BGP PCEP
+* https://git.opendaylight.org/gerrit/#/q/7ba23c4e34532017cc0925aebb43f5147042dc73[7ba23c] Replace custom Java error message with standard PCEP error message for LSP object missing error.
+* https://git.opendaylight.org/gerrit/#/q/1ea86f315cff66e15fae581b81b04b7b65a3624e[1ea86f] Remove unused java test files
+* https://git.opendaylight.org/gerrit/#/q/54e12560f5b823a24da39c4f9cbe274fb88f30ca[54e125] https://bugs.opendaylight.org/show_bug.cgi?id=5558[BUG-5558] - Closing session after a large RIB is sent kills BGPCEP
+* https://git.opendaylight.org/gerrit/#/q/d407438261e74b43d0b49f710b4dce89eccee58f[d40743] https://bugs.opendaylight.org/show_bug.cgi?id=5688[BUG-5688]: Add Null Checker for args in Stateful07TopologySessionListener
+* https://git.opendaylight.org/gerrit/#/q/b7671f314432477bfe24a32ddf2a040df8f1ad4d[b7671f] https://bugs.opendaylight.org/show_bug.cgi?id=5703[BUG-5703]: New file gets created under benchmark-app resources dir after build
+* https://git.opendaylight.org/gerrit/#/q/0466b3261cb6661d2754a9ece5a52f92ce1aa041[0466b3] Add Java apidocs link to Maven Site menu
+* https://git.opendaylight.org/gerrit/#/q/c3d74674d4c5e2098680ba54c018a9a08eeba400[c3d746] https://bugs.opendaylight.org/show_bug.cgi?id=5623[BUG-5623] - BGP-LS Topology provider is not able to handle MPLS TE LSP NLRI Type
+* https://git.opendaylight.org/gerrit/#/q/8dfcd422dca2cc9aac9a741b158a3c2126cf71bf[8dfcd4] https://bugs.opendaylight.org/show_bug.cgi?id=5566[BUG-5566]:  BGP listener TCP MD5 support is not working
+* https://git.opendaylight.org/gerrit/#/q/6022d55d3e22cb773e37499c99e0c1c8aedbc1ad[6022d5] Enable Maven Site generation
+* https://git.opendaylight.org/gerrit/#/q/31eee63a56769598d42cf7652ad7343f709228f4[31eee6] Fix missing javadoc strings
+* https://git.opendaylight.org/gerrit/#/q/c5bbccfdf80ca62d780c412f88af1754871fc20b[c5bbcc] Remove redundant javadoc/sources configuration
+* https://git.opendaylight.org/gerrit/#/q/1ecadb10cc05f3ecdd12e48655ffe916415b8dc4[1ecadb] Enable Maven Site generation
+* https://git.opendaylight.org/gerrit/#/q/6bc130034f9065b41ad3973ef90877f95be3d59f[6bc130] https://bugs.opendaylight.org/show_bug.cgi?id=5030[BUG-5030]: BGP Benchmark app - unit tests
+* https://git.opendaylight.org/gerrit/#/q/e1ca3256c06cee1b30913ebd171f195c793cc2dc[e1ca32] https://bugs.opendaylight.org/show_bug.cgi?id=5564[BUG-5564]: BGP-LS: Bad handling of unknown NLRI type cause NPE
+* https://git.opendaylight.org/gerrit/#/q/30f5ad103e75b00aad1b91023f383d90fd9d94ac[30f5ad] Remove unused class in bgp-rib
+* https://git.opendaylight.org/gerrit/#/q/4a3e1595445dad87ab6f6990961639a0046dcd0f[4a3e15] https://bugs.opendaylight.org/show_bug.cgi?id=4488[BUG-4488]: Metadata not available for modification NodeModification
+* https://git.opendaylight.org/gerrit/#/q/c1d773731c031a1775fbda56a5551ecdca3a8e55[c1d773] https://bugs.opendaylight.org/show_bug.cgi?id=4731[BUG-4731]: Routes from BGP application peer not populated to example-ipv4-topology in case of zero routes initial POST request
+* https://git.opendaylight.org/gerrit/#/q/c536a6cea582a90af3644a8f21886a2d0ee508be[c536a6] https://bugs.opendaylight.org/show_bug.cgi?id=5467[BUG-5467] - BGP-LS topology provider NPE
+
+==== Control And Provisioning of Wireless Access Points (CAPWAP)
+* https://git.opendaylight.org/gerrit/#/q/e07cdceb3f7b5373aa59fadb284492f24b2e7842[e07cdc] Do not deploy the karaf artifact
+
+==== Controller
+===== Notes
+Developers are encouraged to utilize karaf-parent as a parent for local karaf distributions.  Although this will not affect Beryllium based releases, it is best practice to use karaf-parent as it pulls in several dependencies needed to run ODL's core services.  In Boron based releases, karaf-parent contains dependencies that are not normally included in the default karaf distribution.
+
+===== Changes / Fixes
+* https://git.opendaylight.org/gerrit/#/q/8f72284f3808328604bdff7f91a6999094f7c6d7[8f7228] https://bugs.opendaylight.org/show_bug.cgi?id=5690[BUG-5690] : No owner present even when entity has a candidate
+* https://git.opendaylight.org/gerrit/#/q/0f541601dc063e0761267c54be0a9fc58091df05[0f5416] Fix ApplyState elapsed time check
+* https://git.opendaylight.org/gerrit/#/q/d8f662fd3bd955cadc61b3a7c7a054c89631d236[d8f662] https://bugs.opendaylight.org/show_bug.cgi?id=5656[BUG-5656] : Entity ownership candidates not removed consistently on leadership change
+* https://git.opendaylight.org/gerrit/#/q/69ca63911e1e3ef544e555d4c487d03831b40390[69ca63] Default shard-journal-recovery-log-batch-size to 1
+* https://git.opendaylight.org/gerrit/#/q/f93b17ba71874d70af4c243017eed23c3a36e63c[f93b17] https://bugs.opendaylight.org/show_bug.cgi?id=5613[BUG-5613] - unregister candidates on node restart When EntityOwnershipShard receives CandidateAdded for local candidate before any local registration happes it means a restart of a local node must have happned and the candiates are not registered yet.
+* https://git.opendaylight.org/gerrit/#/q/1157d5bc442a5e0fde8ea9ad23ff89042ebe15e7[1157d5] https://bugs.opendaylight.org/show_bug.cgi?id=5625[BUG-5625]: Fix OutOfMemoryError in YangStoreSnapshot
+* https://git.opendaylight.org/gerrit/#/q/297aaef77a2f6d6f3279baa6ce385ded133e68f7[297aae] Add **/yang-gen-config/** to checkstyle ignore path
+* https://git.opendaylight.org/gerrit/#/q/3d876db82932d4d5fa0e9997aeddfdfab985ff62[3d876d] Add yang-jmx-generator dependency
+* https://git.opendaylight.org/gerrit/#/q/2653419eea6056777757cac04010326db44225db[265341] Enlarge critical section to cover processNextTransaction()
+* https://git.opendaylight.org/gerrit/#/q/3d2d08de83c8ae36338188de15c1a426b7015478[3d2d08] https://bugs.opendaylight.org/show_bug.cgi?id=5485[BUG-5485]: Improve DataTreeModification pruning on recovery
+* https://git.opendaylight.org/gerrit/#/q/c5280b90df2befa159c4e8fdb5f588e57de70ebc[c5280b] https://bugs.opendaylight.org/show_bug.cgi?id=5460[BUG-5460]: Fix snaphots on follower
+* https://git.opendaylight.org/gerrit/#/q/29f8ac5fe0cc867e9656772b3ddc4d54c8641729[29f8ac] Stop logging complete data tree on prepare/commit failure
+
+==== Documentation
+* https://git.opendaylight.org/gerrit/#/q/af917573d85886ab845aa28fa62bc180e74be9fb[af9175] SNMP4SDN Project Documents: get started guide, user guide, developer guide
+* https://git.opendaylight.org/gerrit/#/q/fbb752fc622f20a186bc88527cf6a6782732d948[fbb752] Updates to sfcofl2
+* https://git.opendaylight.org/gerrit/#/q/ca13b4e798c3874a31af550730d529451d1dcdda[ca13b4] Adding Beryllium-SR1 Release Notes
+* https://git.opendaylight.org/gerrit/#/q/fb675eb0c48a2bac22533726fa73c5807ff8fd02[fb675e] BGPCEP: BMP docs
+* https://git.opendaylight.org/gerrit/#/q/dfe2d7b1cab8237f97376b243da290125530243d[dfe2d7] Adding Unimgr User Guide
+* https://git.opendaylight.org/gerrit/#/q/56e2f5783f363e3a647cf93a0bc348ee72d3bb31[56e2f5] TSDR Beryllium documentation.
+
+==== Fabric As A Service (FaaS)
+* https://git.opendaylight.org/gerrit/#/q/56925d2b72167a1e95f550002415dfd6b4daf282[56925d] Inherit nexusproxy property from odlparent
+* https://git.opendaylight.org/gerrit/#/q/20445d2963598cf8a235beaa4c678ebe28d6f7d1[20445d] Do not deploy the karaf artifact
+
+==== Group Based Policy (GPB)
+* https://git.opendaylight.org/gerrit/#/q/ef89efcf9e4cd9eea52d4806d70a01a117d6aacc[ef89ef] Fixes for tests failing on Jenkins autorelease job
+* https://git.opendaylight.org/gerrit/#/q/05738a22e97f157193d7625a550813eb9ec3ccc4[05738a] https://bugs.opendaylight.org/show_bug.cgi?id=5510[BUG-5510] - Modifying DataTreeChangeHandler
+* https://git.opendaylight.org/gerrit/#/q/f8b3b2820472f68e21ebac3d5d75ecb08426af85[f8b3b2] GBP core tests improvements
+* https://git.opendaylight.org/gerrit/#/q/0e2b797a7f3cdcb6ea9182cac89d820f13f50ae1[0e2b79] https://bugs.opendaylight.org/show_bug.cgi?id=5749[BUG-5749] - cannot resolve L2 ep for ext GW
+* https://git.opendaylight.org/gerrit/#/q/e1fa96e3dbf623113c37ee5f9afee3818000e277[e1fa96] https://bugs.opendaylight.org/show_bug.cgi?id=5617[BUG-5617]: policy enforcer symmetric action chain fix
+* https://git.opendaylight.org/gerrit/#/q/696e3f1afef2b4b18c9b7fc829738c9b1396aa55[696e3f] Do not deploy the karaf artifact
+* https://git.opendaylight.org/gerrit/#/q/619e7bf903b9f096af6617432350b9e8b5ff072a[619e7b] https://bugs.opendaylight.org/show_bug.cgi?id=5617[BUG-5617]: Added UT for GroupTable and ChainActionFlows
+* https://git.opendaylight.org/gerrit/#/q/7157d3673b7126ad2fdc47404c49cef536a42d9d[7157d3] https://bugs.opendaylight.org/show_bug.cgi?id=5617[BUG-5617]: OfOverlay Refactoring - Destination mapper
+* https://git.opendaylight.org/gerrit/#/q/03b73375eebe439b3a5c46d7d24f28f4d84bae18[03b733] https://bugs.opendaylight.org/show_bug.cgi?id=5617[BUG-5617]: OfOverlay refactoring - Source Mapper
+* https://git.opendaylight.org/gerrit/#/q/7333c2731fac9e071d4c672db594fb9cd51c4e7b[7333c2] https://bugs.opendaylight.org/show_bug.cgi?id=5617[BUG-5617]: ExternalMapper refactoring
+* https://git.opendaylight.org/gerrit/#/q/8295e43618129efc23483589e22054493aff6cef[8295e4] https://bugs.opendaylight.org/show_bug.cgi?id=5617[BUG-5617]: policy enforcer refactor
+* https://git.opendaylight.org/gerrit/#/q/b1e73f03aec13db7df1d4ad8eb4388248413d086[b1e73f] https://bugs.opendaylight.org/show_bug.cgi?id=5409[BUG-5409] - setting orders in single rule contract
+* https://git.opendaylight.org/gerrit/#/q/81a5334b11512adfacc2f4d05d75d2caf7bd2c02[81a533] https://bugs.opendaylight.org/show_bug.cgi?id=5483[BUG-5483] - added support for num values in rules
+* https://git.opendaylight.org/gerrit/#/q/cd20b0c07de8de86c10d63ce374955b2140e7571[cd20b0] https://bugs.opendaylight.org/show_bug.cgi?id=5510[BUG-5510] - making sure that br-int is created
+* https://git.opendaylight.org/gerrit/#/q/488d8eb812f5f7a7375b26b54e68a9427ee92920[488d8e] OfOverlayRefactoring - IngressNatMapper + EgressNatMapper
+* https://git.opendaylight.org/gerrit/#/q/3e2119a5e3fc75918511dc273b6830cf33e65fd3[3e2119] OfOverlay refactoring initial + PortSecurity
+
+==== Integration/Distribution
+* https://git.opendaylight.org/gerrit/#/q/cf0b0d85f48964bfb5ad1caa10ca540286bcf8fc[cf0b0d] adding ability to define custom sharding in cluster deploy
+* https://git.opendaylight.org/gerrit/#/q/7bc9cdb3a236e30ab1ffab8d83b5fcb0aeae18f8[7bc9cd] Reenable the netvirtsfc feature
+* https://git.opendaylight.org/gerrit/#/q/a3702de67c776ecce1dc885b1fc4b3ec675ffb0d[a3702d] Split netvirt from ovsdb
+* https://git.opendaylight.org/gerrit/#/q/2713e4f7a18cf546de3831977d47281ef6b3827c[2713e4] Uncommented centinel features from feature.xml
+* https://git.opendaylight.org/gerrit/#/q/4506acb1342404eb5d219549b4f99665af9207df[4506ac] ignore Idea iml project files
+* https://git.opendaylight.org/gerrit/#/q/5ad2565bbc81c19018eab87d0291e00b410c78de[5ad256] Make features-test pom.xml use versions from properties
+* https://git.opendaylight.org/gerrit/#/q/75d08dbcef503c9d9e4c82fd50ec4c0c156b72ee[75d08d] Make all features use version properties
+* https://git.opendaylight.org/gerrit/#/q/e59f4d64bf07b82b800b764b6c61508a81eef2b9[e59f4d] Add tox.ini file to enable python verification
+
+==== Internet of Things Data Management (IoTDM)
+* https://git.opendaylight.org/gerrit/#/q/8ec0229c9b02088b818368bc9e22be4452fa5f9f[8ec022] Do not deploy the karaf artifact
+* https://git.opendaylight.org/gerrit/#/q/8c277c8ec1e0de43b20eb6c4b9e794e8fe1019c8[8c277c] Support different notification type. Update only return response changed value. support ExpirationTime part 1. support Container's MaxInstanceAge. Fix the ConcurrentModificationException #####BUGwhen retrieve an expirad child. merge John's onem2m2all.
+* https://git.opendaylight.org/gerrit/#/q/2d3d90d08910838a834ff97c3e0c7d80d18f8b8d[2d3d90] Add a kitchen-sink onem2mall project for a convenient karaf dist with core plus all plugins.
+* https://git.opendaylight.org/gerrit/#/q/40e0959493c02486227eaaaf5e0c32d41b489e8b[40e095] Added http header support to simple-adapter
+* https://git.opendaylight.org/gerrit/#/q/da4cdeae5a79d0bf5a7d69a77595ad53ad081542[da4cde] Support building with org.json 20090211
+* https://git.opendaylight.org/gerrit/#/q/95309405b503c510b18fdcd8e939c21c4fad7b16[953094] Added a tsdr, and simple adapter plugin plus a onenm2m data store listener
+
+==== L2 Switch
+* https://git.opendaylight.org/gerrit/#/q/bfd397b0d3bf9fa02307fe957c0aa6a4bf696b4c[bfd397] https://bugs.opendaylight.org/show_bug.cgi?id=5640[BUG-5640] AddressTracker depends on PacketHandler
+* https://git.opendaylight.org/gerrit/#/q/aab9f7eec7acdc1272af0df90bad49c612e04447[aab9f7] Do not deploy the karaf artifact
+* https://git.opendaylight.org/gerrit/#/q/1bc4ea45ae91b117efaae9864a9c24f17ee6d129[1bc4ea] https://bugs.opendaylight.org/show_bug.cgi?id=5620[BUG-5620] - NPE while processing onArpPacketReceived yang notification
+* https://git.opendaylight.org/gerrit/#/q/a7bc87170795723f926f04deaa21c28de5ba7299[a7bc87] #####BUG 2897 Handle packet decode and publish notification on separate thread Replace tabs with spaces in modified code
+
+==== LISP Flow Mapping
+* https://git.opendaylight.org/gerrit/#/q/7ec98d8fda003babf74f208e3e54a0900450a650[7ec98d] JUnit test - MultiTableMapCacheTest
+* https://git.opendaylight.org/gerrit/#/q/d0d96d3a2387ea2a11e2a03f65c15e19c96cfda2[d0d96d] https://bugs.opendaylight.org/show_bug.cgi?id=5705[BUG-5705]: Fix removing a subscriber from an Iterator
+* https://git.opendaylight.org/gerrit/#/q/cef64837c4e9dd487dea1c088b8bd2ce6ba27251[cef648] Performance: make an expensive LOG conditional
+* https://git.opendaylight.org/gerrit/#/q/c6651d197627a8bb68f8d9904f4181b09b516fa7[c6651d] Update Nexus links to HTTPS
+* https://git.opendaylight.org/gerrit/#/q/1599a274f2c60e264580ebed26dcc85509067b68[1599a2] https://bugs.opendaylight.org/show_bug.cgi?id=5624[BUG-5624]: Fix NPE when removing mappings
+* https://git.opendaylight.org/gerrit/#/q/1bf480b8c7247ebdbb1dd4a03b79ea35b67dc051[1bf480] https://bugs.opendaylight.org/show_bug.cgi?id=5554[BUG-5554]: Remove ipPrefixFor() method from MaskUtil
+* https://git.opendaylight.org/gerrit/#/q/43b8033a97257b24046e8106460fb573f1d69a7e[43b803] JUnit test - LispAddressStringifierTest
+* https://git.opendaylight.org/gerrit/#/q/bd5da5a93c6a3a15e7ba0d4b33226e655221a601[bd5da5] JUnit test - LispSimpleAddressStringifierTest
+* https://git.opendaylight.org/gerrit/#/q/94d58d5f7c7fcc3f42a5a94d1275f10cc2a3190e[94d58d] Re-enable tests on mappingservice.implementation
+* https://git.opendaylight.org/gerrit/#/q/1a6e62441b27488420fefc76bab8eb0f076dc232[1a6e62] Add back ignored tests in LispAddressUtilTest
+* https://git.opendaylight.org/gerrit/#/q/a7410fcfc8baefdeb15bbdf9be999fa893549b69[a7410f] https://bugs.opendaylight.org/show_bug.cgi?id=5554[BUG-5554]: Normalize Source/Dest EIDs too
+* https://git.opendaylight.org/gerrit/#/q/9944ca10a61a838bcc1f50aae13f6ab09f001124[9944ca] JUnit test - MultiTableMapCacheTest
+* https://git.opendaylight.org/gerrit/#/q/9ec1f63e800ee28edca7280ed197fcd706233c60[9ec1f6] JUnit test - FlatMapCacheTest
+* https://git.opendaylight.org/gerrit/#/q/437c5cc668ae51184743259d2bb3c5e237ebc4b6[437c5c] https://bugs.opendaylight.org/show_bug.cgi?id=5547[BUG-5547]: MultiTableMapCache#getAuthenticationKey returning null with SourceDestKey address type
+* https://git.opendaylight.org/gerrit/#/q/7627e28d253e767f05ab376f1a127ed60d8bdb24[7627e2] https://bugs.opendaylight.org/show_bug.cgi?id=5520[BUG-5520]: Fix LispSimpleAddressStrngifier always returning null
+
+==== Link Aggregation Control Protocol (LACP)
+* https://git.opendaylight.org/gerrit/#/q/ebb9dddbc848590a591b1a07894731061df247fa[ebb9dd] Do not deploy the karaf artifact
+
+==== MD-SAL
+===== Migration
+https://bugs.opendaylight.org/show_bug.cgi?id=5837[BUG-5837]: Between Beryllium-SR1 and Beryllium-SR2, it was discovered that mdsal-binding-dom-codec equality check did not consider augmentations.  The "equals()" method was fixed to make the appropriate augmentation check.  Developers should be aware that binding equals implementation was corrected in Beryllium-SR2.
+
+===== Changes / Fixes
+* https://git.opendaylight.org/gerrit/#/q/bbb707d67bf55f055c2c8790392f2fab03233a1d[bbb707] Check augments for equality in LazyDataObject
+* https://git.opendaylight.org/gerrit/#/q/79afbee4fa8f910f66cf42a2316eb73774fadf0e[79afbe] https://bugs.opendaylight.org/show_bug.cgi?id=5524[BUG-5524]: NPE in BA->BI serialization
+* https://git.opendaylight.org/gerrit/#/q/378867f5f5b303e51bf07abaac4f322319e93123[378867] Do not depend on java-api-generator
+* https://git.opendaylight.org/gerrit/#/q/ed5badff28c34ee91797ae774d222c423bae6fd3[ed5bad] Do not use compile dependency for embedded code
+* https://git.opendaylight.org/gerrit/#/q/4cbf2322088e583e7e15a3b5107d72188f53bf01[4cbf23] Add ipPrefixFor() methods to IetfInetUtil
+
+==== NETCONF
+* https://git.opendaylight.org/gerrit/#/q/5c47dd4769e22dc8234ac000a3aab787459cdec1[5c47dd] Use mounted device schema context when resolving mounted device rpc path
+* https://git.opendaylight.org/gerrit/#/q/3a904b45d2b6a5f8108f0c88c6cea7716bf316fc[3a904b] https://bugs.opendaylight.org/show_bug.cgi?id=4577[BUG-4577] Allow specification of a distinct schema cache directory per netconf device
+* https://git.opendaylight.org/gerrit/#/q/63129bc3b31fc1333f09cf9c1b0506b165febfef[63129b] https://bugs.opendaylight.org/show_bug.cgi?id=3708[BUG-3708] - APIdoc explorer URLs contain extra 'node' in REST calls
+* https://git.opendaylight.org/gerrit/#/q/8ee90d8eccb8bead5e8acd7c540b079c78797643[8ee90d] add partial match for non-module capabilities - to enable deviations in base capabilities
+* https://git.opendaylight.org/gerrit/#/q/8db2a97dbef9f0a3c2cdee4ed8a81d899c7fc5cc[8db2a9] Implement SchemaLocationBuilder for ietf-netconf-monitoring
+* https://git.opendaylight.org/gerrit/#/q/0b1fe175952e33000b7517fc95667527474f1710[0b1fe1] https://bugs.opendaylight.org/show_bug.cgi?id=5509[BUG-5509]: HTTP Patch in Restconf doesn't support general absolute or relative target xpath
+* https://git.opendaylight.org/gerrit/#/q/0b500aba7662adf7a9a3ab40ce278690783756b2[0b500a] https://bugs.opendaylight.org/show_bug.cgi?id=4940[BUG-4940] - correctly implement default-request-timeout-millis
+* https://git.opendaylight.org/gerrit/#/q/75c126cc751bc77a0f516a36179c0c056bf49ae9[75c126] https://bugs.opendaylight.org/show_bug.cgi?id=5580[BUG-5580] - RestPerfClient: Invalid requests rate reported when a thread times out
+* https://git.opendaylight.org/gerrit/#/q/d5fd8502695784afd851c7d7b9dab703da72ab51[d5fd85] https://bugs.opendaylight.org/show_bug.cgi?id=5638[BUG-5638] switch netconf to use odl-aaa-shiro isntead of odl-aaa-authn
+* https://git.opendaylight.org/gerrit/#/q/f9a440713559f77639435682751faa593189c50d[f9a440] Netconf-topology module unit tests
+* https://git.opendaylight.org/gerrit/#/q/cfc8347783cdfaae58f529c8a4c3e4a22419e917[cfc834] https://bugs.opendaylight.org/show_bug.cgi?id=5475[BUG-5475] - File descriptor leak on netconf connector reconnects
+* https://git.opendaylight.org/gerrit/#/q/1e8b89a012bbaf8b37d3270b68ca860e6389a8cd[1e8b89] https://bugs.opendaylight.org/show_bug.cgi?id=5413[BUG-5413] -  RestPerfClient: Hang on java.util.concurrent.CancellationException.
+
+==== NEtwork MOdeling (NEMO)
+* https://git.opendaylight.org/gerrit/#/q/2c1c67d3538ca53594e93e6d2ab5e4e4a3fa06dc[2c1c67] Do not deploy the karaf artifact
+* https://git.opendaylight.org/gerrit/#/q/960c564bb02bc18b478db82f6b69d1014a2be684[960c56] Use jacoco version from odlparent
+
+==== Network Intent Composition (NIC)
+* https://git.opendaylight.org/gerrit/#/q/40bc0e01b89df8d950452dd5aa7450c9527edd6e[40bc0e] Added CreateSetFieldDestinationMacAddress Action
+* https://git.opendaylight.org/gerrit/#/q/2c125bdbae1c646080f25f7a2721e68b8c182c48[2c125b] https://bugs.opendaylight.org/show_bug.cgi?id=5568[BUG-5568]: EthernetType IPv4
+* https://git.opendaylight.org/gerrit/#/q/76f0d7f2f0f0a20b13212ffb3f62a176b175b960[76f0d7] https://bugs.opendaylight.org/show_bug.cgi?id=5501[BUG-5501] - Fix for QoS Constraint.
+* https://git.opendaylight.org/gerrit/#/q/d4b4b760cdab28e1bd242a5f8d3112cb7b838bd0[d4b4b7] https://bugs.opendaylight.org/show_bug.cgi?id=5565[BUG-5565]: Support for remove flow in redirect action.
+
+==== Neutron Northbound
+* https://git.opendaylight.org/gerrit/#/q/f87f03d755b50d68fc3e14c028eae1455cc1a9a8[f87f03] https://bugs.opendaylight.org/show_bug.cgi?id=4815[BUG-4815] - Server error with transaction chain failed
+* https://git.opendaylight.org/gerrit/#/q/a2224960dcf436ddc30b97be66912245d8c5236a[a22249] Added PortSecurity attribute support
+* https://git.opendaylight.org/gerrit/#/q/fef017e40ee9d6d69e3c0dfc150ea789080ec6ca[fef017] https://bugs.opendaylight.org/show_bug.cgi?id=5478[BUG-5478] - northbound: improve 404 check on update/delete
+* https://git.opendaylight.org/gerrit/#/q/be30ccce3267022e1b513ae63dacbc190fe2576e[be30cc] https://bugs.opendaylight.org/show_bug.cgi?id=5478[BUG-5478] - Null values on security-group-rule-delete and security-group-delete
+* https://git.opendaylight.org/gerrit/#/q/f2578bfa2cb6dfa38893c47dd4a2dfd81f1a0c9d[f2578b] Do not deploy the karaf artifact
+* https://git.opendaylight.org/gerrit/#/q/70a6aaac6216a125f07c9d6c4359c5a8c52b9b72[70a6aa] https://bugs.opendaylight.org/show_bug.cgi?id=4550[BUG-4550] - always rebuild security group rule in security group
+
+==== ODL Root Parent
+* https://git.opendaylight.org/gerrit/#/q/3a8cff2c5291a16f0f9f0e62fa821919e4c79ab9[3a8cff] Update settings.xml to use https
+* https://git.opendaylight.org/gerrit/#/q/61ef8535e84add42227360f46ecf443d9f3dc0bf[61ef85] Switch to https for Nexus communication
+
+==== OVSDB Integration
+* https://git.opendaylight.org/gerrit/#/q/be55daa2c25b4b9a64e2a01cef7494d47046095a[be55da] https://bugs.opendaylight.org/show_bug.cgi?id=5809[BUG-5809]: allow TP updates from ovs to be reflected in operational
+* https://git.opendaylight.org/gerrit/#/q/0f8fa4f61cb9b264b45156eb2c4f3e998c6be6ed[0f8fa4] https://bugs.opendaylight.org/show_bug.cgi?id=4644[BUG-4644]: TerminationPoint not remove from switch if termination point is added to the existing bridge which was already present before OVSDB node got connected to the controller. Plugin was not able to delete the termination point because it was not able to find the connection client and the parent bridge from the data store change notification on termination point delete.
+* https://git.opendaylight.org/gerrit/#/q/7f408e032a56f8e1e0090cbafa52da443d0480e1[7f408e] https://bugs.opendaylight.org/show_bug.cgi?id=5556[BUG-5556]: Unable to delete mac entries
+* https://git.opendaylight.org/gerrit/#/q/bf8462e9af23c8d87f0207b7944f713c57672cc9[bf8462] split it-utils: ovsdb-it-utils + netvirt-it-utils
+* https://git.opendaylight.org/gerrit/#/q/ef41755638d123f6007158c4b634a9145801ff0f[ef4175] Disable netvirt
+* https://git.opendaylight.org/gerrit/#/q/b623bf33a2ac654e8a1327bbe449efbbb43a14ad[b623bf] Switch from fig to docker-compose
+* https://git.opendaylight.org/gerrit/#/q/f29fea866569dac44572955e8b0023507967f01c[f29fea] OVS 2.5.1 docker image in fig.yml
+* https://git.opendaylight.org/gerrit/#/q/4703114d551e0baabf7e89f0bcbba1b23d74abd8[470311] Test for NetvirtSFC config
+* https://git.opendaylight.org/gerrit/#/q/5542d5e50bebf06a65a7a4742c971a0a5e976540[5542d5] ItUtils needs compile scope on Beryllium
+* https://git.opendaylight.org/gerrit/#/q/ad36780546ecbe1adbf9f081fca0f1eca7287713[ad3678] https://bugs.opendaylight.org/show_bug.cgi?id=5291[BUG-5291]:Flows are not removed from control and compute nodes.
+* https://git.opendaylight.org/gerrit/#/q/f6ec0a0129f55687c959d06c854174dafdfe6ce5[f6ec0a] Use stateless transaction commands
+* https://git.opendaylight.org/gerrit/#/q/79fdcb757f1feb9c569cde8ce6368dc25701aaed[79fdcb] Port changes for ItUtils to Beryllium
+* https://git.opendaylight.org/gerrit/#/q/56063392622394ac5bf5d5badb182408b376d362[560633] Split listeners from data processors
+* https://git.opendaylight.org/gerrit/#/q/0fd0c148cfe0a8d23395ed00d7b563ebe676cd21[0fd0c1] https://bugs.opendaylight.org/show_bug.cgi?id=5648[BUG-5648] - delete qos and queues from udpates
+* https://git.opendaylight.org/gerrit/#/q/2f08c920c1186238b8893c05d4624dfa97192b35[2f08c9] Use PerClass to force a new container per test class
+* https://git.opendaylight.org/gerrit/#/q/6bad8b6128261e5f9acaf3b4ca17ed0405d684b8[6bad8b] Fixes for LibraryIT timing out
+* https://git.opendaylight.org/gerrit/#/q/e2db6936b61cc95e27c3f752914ee541b52ec5ec[e2db69] Fixed NPE thrown while switch initiated connection disconnects from controller
+* https://git.opendaylight.org/gerrit/#/q/60cc4cf3b523d0e81d2056b6c55b3965df6154d3[60cc4c] it-utils should be only included for IT
+* https://git.opendaylight.org/gerrit/#/q/1e7909b50f56087f3555e74831565a090287e356[1e7909] Skip IT tests for Autoattach CRUD for supported schema
+* https://git.opendaylight.org/gerrit/#/q/078f3e527cf3ea0214cb22ed1c1dd8404e7a0510[078f3e] https://bugs.opendaylight.org/show_bug.cgi?id=5221[BUG-5221] - passive connection not reconnected if ovs service is restarted
+* https://git.opendaylight.org/gerrit/#/q/f81c4cbf41fc3102cc5b5caa187bdb2a3599e116[f81c4c] Added conntrack matches and Refactored code
+* https://git.opendaylight.org/gerrit/#/q/9c797a6cd37cd2479b2a38e5fe30f17762ac369c[9c797a] https://bugs.opendaylight.org/show_bug.cgi?id=5456[BUG-5456]:DHCP port ARP flows not removed in compute node.
+* https://git.opendaylight.org/gerrit/#/q/01609417ed3d0df549dac3db02f7cbbcf831c9b6[016094] Re-enable SingleFeatureTest
+* https://git.opendaylight.org/gerrit/#/q/009bc32b9b370ad0725851c368fab29fafdc46e1[009bc3] Use controller.mdsal.version when appropriate
+* https://git.opendaylight.org/gerrit/#/q/c28194411cbe5b346688cefdd3488a45b6c0daec[c28194] Refactor IT code for re-use...
+* https://git.opendaylight.org/gerrit/#/q/f475b55079d567befe5a59f0ee27a50fa5b99239[f475b5] Re-enable netvirt-sfc
+* https://git.opendaylight.org/gerrit/#/q/4ee6860045dcfa683f9968ad04e0fb143e219a5a[4ee686] Add IT test for checking earlier schema versions for autoattach
+* https://git.opendaylight.org/gerrit/#/q/6cd3267a574b2e976ba5889a2399ee6175201bce[6cd326] Remove skip install for ovsdb karaf
+* https://git.opendaylight.org/gerrit/#/q/8a45ed90723068bfc6e7debadd45877599e1110b[8a45ed] Remove skip install for library karaf
+* https://git.opendaylight.org/gerrit/#/q/f36e919dcb49d4194b1f236b39beb101501b4d21[f36e91] Remove skip install for hwvtepsouthbound and southbound karaf
+* https://git.opendaylight.org/gerrit/#/q/3c8d53c1eb697d2aee404f53bfea148fac120e18[3c8d53] https://bugs.opendaylight.org/show_bug.cgi?id=5549[BUG-5549]: HWVTEP exception when connecting to older devices
+* https://git.opendaylight.org/gerrit/#/q/1b6d3cdb494c43f2aa019b939f43bbcd109197d7[1b6d3c] https://bugs.opendaylight.org/show_bug.cgi?id=5542[BUG-5542] - Southbound plugin doesn't allow controller initiated re-connection
+* https://git.opendaylight.org/gerrit/#/q/d3c87bdb4e55decc641530501ac3924f7ce1794d[d3c87b] Do not install or deploy the karaf artifact
+* https://git.opendaylight.org/gerrit/#/q/c642b5494bdd6162f765e0ec121a31956f902b0c[c642b5] https://bugs.opendaylight.org/show_bug.cgi?id=5542[BUG-5542] - Southbound plugin doesn't allow controller initiated re-connection
+* https://git.opendaylight.org/gerrit/#/q/2c2e9e6acccb69ba5de2154a0bead8fa70dd3caa[2c2e9e] https://bugs.opendaylight.org/show_bug.cgi?id=5514[BUG-5514]: McastMac entries not added correctly
+* https://git.opendaylight.org/gerrit/#/q/dd001a318008055c81a71cbfcf066eaa12f045d2[dd001a] https://bugs.opendaylight.org/show_bug.cgi?id=5435[BUG-5435] - Arp flows are not getting installed properly in compute nodes
+* https://git.opendaylight.org/gerrit/#/q/0e7417dbe573a08672baa7846d3ef5a5c82b1d25[0e7417] Scripts to pretty print ovs flows and odl logs
+
+==== OpenFlow Configuration Protocol (OF-CONFIG)
+* https://git.opendaylight.org/gerrit/#/q/aff583a20049c79cc31980dd5ded2521c205a6e6[aff583] Do not deploy the karaf artifact
+
+==== OpenFlow Plugin
+* https://git.opendaylight.org/gerrit/#/q/6d3d8d90ee3157674aef49b82f8cd066cbca3d50[6d3d8d] https://bugs.opendaylight.org/show_bug.cgi?id=5523[BUG-5523] Lifecycle conductor changes
+* https://git.opendaylight.org/gerrit/#/q/ad58df74e532390dfc108b3d32afcf1e39a91c9b[ad58df] https://bugs.opendaylight.org/show_bug.cgi?id=5523[BUG-5523] CloseConnection changes
+* https://git.opendaylight.org/gerrit/#/q/e8031ce4b783b1499725dc0c453eff7e75d2c2dc[e8031c] https://bugs.opendaylight.org/show_bug.cgi?id=5523[BUG-5523] RoleManager changes
+* https://git.opendaylight.org/gerrit/#/q/f63634692e69988d3869919352dd4ee1fdc033ba[f63634] Do not deploy the karaf artifact
+* https://git.opendaylight.org/gerrit/#/q/4ae4209a42505b39e01de1b4625c801c7cead168[4ae420] https://bugs.opendaylight.org/show_bug.cgi?id=5523[BUG-5523] RoleCtx changes
+* https://git.opendaylight.org/gerrit/#/q/d257aa9bb0fcf4a2346df0ae08eca26a0e31c632[d257aa] https://bugs.opendaylight.org/show_bug.cgi?id=5523[BUG-5523] Add onDeviceContextLevelDown for Statistics and Rpc Managers
+* https://git.opendaylight.org/gerrit/#/q/6af937afba83b1a4800e3c65c0d0c32de81fc22a[6af937] https://bugs.opendaylight.org/show_bug.cgi?id=5523[BUG-5523] DeviceManager handler for connection and disconnection too
+* https://git.opendaylight.org/gerrit/#/q/4614264ccf2dc1d9f9f67246f5ad8d546a7d844b[461426] https://bugs.opendaylight.org/show_bug.cgi?id=5523[BUG-5523] - DeviceContext additional functionality
+* https://git.opendaylight.org/gerrit/#/q/e27f3af11009d085518be491e96b29bf7cf9f7de[e27f3a] https://bugs.opendaylight.org/show_bug.cgi?id=5523[BUG-5523] - API changes
+* https://git.opendaylight.org/gerrit/#/q/480655ec49cc0842bbc1317745a3e80af1b296cb[480655] https://bugs.opendaylight.org/show_bug.cgi?id=5534[BUG-5534]:RoleService does not take care of rpc errors
+* https://git.opendaylight.org/gerrit/#/q/3fea9616431dbe066242272f6a8f0cb34cd728f0[3fea96] https://bugs.opendaylight.org/show_bug.cgi?id=5562[BUG-5562] - Ipv4 L3-ArbitraryMask patch Current code expects the Arbitrary Mask to be normalized from switch. Example:- 3.3.3.3/255.0.255.0 to 3.0.3.0/255.0.255.0 Not all switches normalizes arbitrary bit mask in the flows when they are injected. Example:- 3.3.3.3/255.0.255.0 to 3.3.3.3/255.0.255.0 This patch ensures that the operational data store is in congruent with the flows that are shown on the switch. Patch is built on checking the mask & comparing the normalized stores & stats flows which ensures Ipv4 L3-ArbitraryMask works independant of how the switches normalizes the ip addresses when flows are pushed.
+* https://git.opendaylight.org/gerrit/#/q/c1ad635ffba1d7116a59e491b5ffc36abf4c6572[c1ad63] https://bugs.opendaylight.org/show_bug.cgi?id=5489[BUG-5489] Group Delete not working with ovs2.5
+* https://git.opendaylight.org/gerrit/#/q/12905ce6e0092c635c03b2609a69fa82335b7aad[12905c] https://bugs.opendaylight.org/show_bug.cgi?id=5551[BUG-5551]:Audit of Connection Events
+* https://git.opendaylight.org/gerrit/#/q/752f11bb74f374da6b3ae5690fb467a24776bae8[752f11] https://bugs.opendaylight.org/show_bug.cgi?id=5486[BUG-5486]:Device disconnected handers on disconnection get closed in no particular order
+* https://git.opendaylight.org/gerrit/#/q/aa9cbc203391532ad6f9eae8b83594f0dc09265f[aa9cbc] https://bugs.opendaylight.org/show_bug.cgi?id=5521[BUG-5521] - flows reconciliation
+
+==== Packet Cable/PCMM
+* https://git.opendaylight.org/gerrit/#/q/52cd7940fe73443fe33ebcd98a608f8827ad3969[52cd79] Remove nexusproxy property
+
+==== SNMP Plugin
+* https://git.opendaylight.org/gerrit/#/q/671d0f2c3765f52da1ce383034d9999bd5c68373[671d0f] Remove executable bit from pom.xml
+
+==== SNMP4SDN
+* https://git.opendaylight.org/gerrit/#/q/4a66ce2b5bf15e5a1ef96258e023f91b3586a938[4a66ce] Do not install or deploy the karaf artifact
+* https://git.opendaylight.org/gerrit/#/q/56aacc6c96d5a95c6e5c9176fdc94ba68b50f158[56aacc] Fix mix OS formatting in pom.xml
+
+==== Secure tag eXchange Protocol (SXP)
+* https://git.opendaylight.org/gerrit/#/q/a0ffe6182232fc46b7df80772c7546ee278d16fb[a0ffe6] https://bugs.opendaylight.org/show_bug.cgi?id=5695[BUG-5695] - Both mode does not set Capabilities
+* https://git.opendaylight.org/gerrit/#/q/330d6962c773df02ff5600072c863e7f4d31fc78[330d69] Do not install or deploy the karaf artifact
+
+==== Service Function Chaining
+* https://git.opendaylight.org/gerrit/#/q/f1c2b6bde6e6be6024d7771f04c28af68c0bcf76[f1c2b6] Support building with org.json 20090211
+* https://git.opendaylight.org/gerrit/#/q/f42f5fbdcc59a22e1f6964b74df8cc39043be184[f42f5f] Use https for Nexus in SFC project
+* https://git.opendaylight.org/gerrit/#/q/0e5b4aef502c787fd62d5146f4eae8fdcf45c03b[0e5b4a] Do not deploy the karaf artifact
+
+==== TCP-MD5
+* https://git.opendaylight.org/gerrit/#/q/684738ed3e2465de53adcb032297d2bf7c84f8a2[684738] Enable Maven Site generation
+* https://git.opendaylight.org/gerrit/#/q/f7e9cbb35fc22f2a4b1cbdfa00e9176f4f01cf0e[f7e9cb] Use odlparent version for maven-dependency-plugin
+
+==== Time Series Data Repository (TSDR)
+* https://git.opendaylight.org/gerrit/#/q/a5711fca9e4ac6b1edf84fabea7104284f630898[a5711f] Remove executable bit from pom.xml file
+
+==== Topology Processing Framework
+* https://git.opendaylight.org/gerrit/#/q/ff97cd08f713c2a21f289a01657dfe430d53758d[ff97cd] fix for https://bugs.opendaylight.org/show_bug.cgi?id=5165[BUG-5165]
+* https://git.opendaylight.org/gerrit/#/q/0ce0aea0ae03344dc6dd8083eb493ff40387e2e7[0ce0ae] fix for https://bugs.opendaylight.org/show_bug.cgi?id=5784[BUG-5784]
+* https://git.opendaylight.org/gerrit/#/q/9db28254deae8f62412993d32aa657bf06308f6b[9db282] Test class OverlayItemTranslatorTest for class OverlayItemTranslator
+* https://git.opendaylight.org/gerrit/#/q/e95ef7de282ae75ccc18cf0d20050051d36f31b9[e95ef7] fix for https://bugs.opendaylight.org/show_bug.cgi?id=5190[BUG-5190]
+* https://git.opendaylight.org/gerrit/#/q/a60cc4f6d7e41275991fc0fd4918ddb93b82cdca[a60cc4] fix for https://bugs.opendaylight.org/show_bug.cgi?id=5188[BUG-5188]
+* https://git.opendaylight.org/gerrit/#/q/b0908b29e74b53004a0acb1fa7750e7b759168f6[b0908b] https://bugs.opendaylight.org/show_bug.cgi?id=5458[BUG-5458] (fix)
+* https://git.opendaylight.org/gerrit/#/q/e7747ee492951b7aba877db5774cd8e0a446d00c[e7747e] fix for https://bugs.opendaylight.org/show_bug.cgi?id=5448[BUG-5448]
+* https://git.opendaylight.org/gerrit/#/q/7e871a1cacfc7c739aaaf800b4c6a07cc84f17d5[7e871a] Bugfix for bug4761
+* https://git.opendaylight.org/gerrit/#/q/1767b04e20955ee40edad4fe139bd02c4bd83bcc[1767b0] Fix for https://bugs.opendaylight.org/show_bug.cgi?id=4674[BUG-4674]
+* https://git.opendaylight.org/gerrit/#/q/81b4d32704cda0af995c8f1850acd4bbfb4544c5[81b4d3] bugfix 5262
+* https://git.opendaylight.org/gerrit/#/q/553f1f275bcbf2cd2d5722a0ab4b0643598638ed[553f1f] Do not install or deploy the karaf artifact
+* https://git.opendaylight.org/gerrit/#/q/109e581e371c96c3b406f6ccdb391263594c893f[109e58] update to bugfix 5401
+* https://git.opendaylight.org/gerrit/#/q/16a5ee6bb3f00a874cbcedcdf7df5fc2665883c5[16a5ee] https://bugs.opendaylight.org/show_bug.cgi?id=5398[BUG-5398]. Fix for inventory model.
+* https://git.opendaylight.org/gerrit/#/q/d349be69edbce8e02783114db03ce896d46f09a9[d349be] bugfix 5401
+* https://git.opendaylight.org/gerrit/#/q/0ae76519fc8ca0718834cf44bf4a8c554a85667a[0ae765] Fix for https://bugs.opendaylight.org/show_bug.cgi?id=5398[BUG-5398] (network topology)
+* https://git.opendaylight.org/gerrit/#/q/5831df56d8b41eed38ca9ce32dcc4ace88506e3a[5831df] SpecificValueFiltrator bugfix
+
+==== Unified Secure Channel (USC)
+* https://git.opendaylight.org/gerrit/#/q/e84138692a59634d6d39ade45913ab49e67cc144[e84138] Update references to scala asJavaList
+* https://git.opendaylight.org/gerrit/#/q/b8c85129cf999a74f36a5159aeb78b3ce14239c9[b8c851] Do not deploy the karaf artifact
+
+==== VPN Service
+* https://git.opendaylight.org/gerrit/#/q/7d6707de2dc4d4e1f15b90cbf3ffc7cce701fb46[7d6707] https://bugs.opendaylight.org/show_bug.cgi?id=4644[BUG-4644] : Reverting workaround for Tunnel deletion issue
+* https://git.opendaylight.org/gerrit/#/q/4ace1c0f2d3611db025df38e30a1c39964d7c689[4ace1c] https://bugs.opendaylight.org/show_bug.cgi?id=5463[BUG-5463] : Fixing datapath-id changing behaviour seen while testing with mininet
+* https://git.opendaylight.org/gerrit/#/q/08f7361c4774d179d909007e92fa5a4158637e2f[08f736] https://bugs.opendaylight.org/show_bug.cgi?id=5463[BUG-5463] : dpID coming as null during ovsdbbridge add DCN
+* https://git.opendaylight.org/gerrit/#/q/b015936b52c8b913352f745afadd0e56e0e20790[b01593] Fix contains deleting the last Elan-Interface present in CSS    1) Updating the Remote broadcast group when new VM is added to the Host CSS    2) NFix for NPE in ELANPacketInHandler
+* https://git.opendaylight.org/gerrit/#/q/cef49e6b968dc2ef72e9269ae7ee4d4a79697993[cef49e] Fixing Braodcast stroms
+* https://git.opendaylight.org/gerrit/#/q/52b23487da4e7f116b81b2260cd6885e08d9f145[52b234] Remove features-ovsdb
+* https://git.opendaylight.org/gerrit/#/q/2e445de726f951ede65892fc4f2b47dc1de9ec1b[2e445d] Do not deploy the karaf artifact
+* https://git.opendaylight.org/gerrit/#/q/28ce76845a5a50b2e9ebe55d5e8fec8cbdb2b770[28ce76] https://bugs.opendaylight.org/show_bug.cgi?id=5570[BUG-5570] : Fixes for VLAN interfaces creation and DHCP for ELAN datapath
+
+==== Virtual Tenant Network (VTN)
+* https://git.opendaylight.org/gerrit/#/q/b147b1c63b790ba130331b97fd925483d84138a4[b147b1] Fixed sonar warnings.
+* https://git.opendaylight.org/gerrit/#/q/e2bbab47f3f0718f465bc78e6e2bb686fa8eb2da[e2bbab] https://bugs.opendaylight.org/show_bug.cgi?id=5609[BUG-5609]: Fixed issue with fetching vtn dataflows.
+* https://git.opendaylight.org/gerrit/#/q/15205b1255635fb51ffd27737407e389824b6821[15205b] https://bugs.opendaylight.org/show_bug.cgi?id=5530[BUG-5530]: Fixed flowfilter Import/Audit issue in delete operation
+* https://git.opendaylight.org/gerrit/#/q/7b3a2441a5dc939d16113dae63d26d8524fc0576[7b3a24] Fixed dependencies in features-vtn-manager POM.
+* https://git.opendaylight.org/gerrit/#/q/1999834a6998ca214a11261e0eb2bc8e20a0a73d[199983] https://bugs.opendaylight.org/show_bug.cgi?id=5724[BUG-5724]: Improve log messages that indicate configuration changes.
+* https://git.opendaylight.org/gerrit/#/q/7e956a9d862f8e43da91bfcdcb7a8d60cbe1ea3d[7e956a] https://bugs.opendaylight.org/show_bug.cgi?id=5715[BUG-5715]: Fixed incorrect log record for modified vBridge configuration.
+* https://git.opendaylight.org/gerrit/#/q/25e76c2940b1f37f303469b3e0308c242c8a4c49[25e76c] Remove features-ovsdb
+* https://git.opendaylight.org/gerrit/#/q/6b73e23d3dd7f1a1dfd62ec6c3a377233541d061[6b73e2] Inherit nexusproxy property from odlparent
+* https://git.opendaylight.org/gerrit/#/q/0b2d7f1790f5f161fa69d7183719fb539ef1f859[0b2d7f] Use mockito-core instead of mockito-all.
+* https://git.opendaylight.org/gerrit/#/q/ce838cd158963d16d8aafb8cbfbb51937f6200fd[ce838c] https://bugs.opendaylight.org/show_bug.cgi?id=5616[BUG-5616]: Fixed #####BUGin next-flow-id initialization.
+
+==== YANG Tools
+* https://git.opendaylight.org/gerrit/#/q/44ab9151e3401072bfc9a99853b1c41579f393e4[44ab91] Add test scope for junit
+* https://git.opendaylight.org/gerrit/#/q/743bf1fe59701637a9f0de1705b9ba88f349fa78[743bf1] https://bugs.opendaylight.org/show_bug.cgi?id=5567[BUG-5567] NPE - invoking of equals on nullable element
+* https://git.opendaylight.org/gerrit/#/q/90378c9ce40d83350802a41e57bbd34bb4d71742[90378c] https://bugs.opendaylight.org/show_bug.cgi?id=5531[BUG-5531]: Can't get complete YIN schema on Windows
+* https://git.opendaylight.org/gerrit/#/q/9c8e1b0cd23fed1e3f883e85e54a42c603c48c2c[9c8e1b] https://bugs.opendaylight.org/show_bug.cgi?id=5504[BUG-5504]: use Object.toString() without overrides in precondition
+* https://git.opendaylight.org/gerrit/#/q/8a55083db823d07a808ba61c1b2c2f19f684d4c1[8a5508] https://bugs.opendaylight.org/show_bug.cgi?id=5396[BUG-5396]: Regex processing of yang models is broken.
+* https://git.opendaylight.org/gerrit/#/q/d7e7abf4f539179cc0bcdb45606c19ef48aadb87[d7e7ab] https://bugs.opendaylight.org/show_bug.cgi?id=5550[BUG-5550] - Omit the check of mandatory nodes in uses-augment
+
