@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa57193c_855b7686",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2016-05-17T03:58:46Z",
+      "side": 1,
+      "message": "Only need docs here.",
+      "revId": "d0cd55663c848c4234e7a223f68f74712739942e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa57193c_655e2278",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2016-05-17T03:58:46Z",
+      "side": 1,
+      "message": "The docs project only has docs, there is no source code to run unit tests against or validate pep8 so there is no need to configure any of these sections. [flake8] [testenv:pep8] [testenv] should all be removed.",
+      "revId": "d0cd55663c848c4234e7a223f68f74712739942e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
