@@ -1,0 +1,31 @@
+== NATApp User Guide
+The NATApp User Guide contains information about configuration, administration,
+management, using and troubleshooting the feature.
+
+=== Overview
+NATApp provides network different types of address translation functionality for Opendaylight. 
+After installing this feature, network administrators can select the type of NAT functionality
+they want to enable by sending a REST API command. Subsequently, the user may enter the gloabl IP addresses 
+to the Yand Data Store through REST APIs. When an Opendaylight managed enterprise network
+with local IPs tries to connect to external networks such as Internet, NATApp comes
+into play and installs appropriate flow rules at the OpenFlow switch for bidirectional
+NAT translation. 
+
+=== NATApp Architecture
+NATApp listens on OpenFlow southbound interface for Packet_In messages. The application parses
+the message for header information. If the received message has a local IP address the application
+installs rules on the OpenFlow switch for network address translation from local to global IP addresses.
+NATApp has NATPacketHandler class that implements the PacketProcessing interface to override the 
+OnPacketReceived notification by which the application is notified of Packet_In messages.
+
+=== Configuring NATApp
+
+Not Applicable
+
+=== Administering or Managing NATApp
+Use REST API in the following format for entering global IP addresses.
+
+Http POST command to http://
+
+=== Tutorials
+Will provided later.
