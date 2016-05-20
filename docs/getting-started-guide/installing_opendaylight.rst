@@ -112,7 +112,91 @@ release notes:
 
 Beryllium features
 ------------------
-.. image:: images/be-features-1.png
+
+.. list-table:: Beryllium features
+    :widths: 10 25 10 5
+    :header-rows: 1
+
+    * - Feature Name
+      - Feature Description
+      - Karaf feature name
+      - Compatibility
+
+    * - Authentication
+      - Enables authentication with support for federation using Apache Shiro
+      - odl-aaa-shiro
+      - all
+
+    * - BGP
+      - Provides support for Border Gateway Protocol (including Link-State
+        Distribution) as a source of L3 topology information
+      - odl-bgpcep-bgp
+      - all
+
+    * - BMP
+      - Provides support for BGP Monitoring Protocol as a monitoring station
+      - odl-bgpcep-bmp
+      - all
+
+    * - DIDM
+      - Device Identification and Driver Management
+      - odl-didm-all
+      - all
+
+    * - Centinel
+      - Provides interfaces for streaming analytics
+      - odl-centinel-all
+      - all
+
+    * - DLUX
+      - Provides an intuitive graphical user interface for OpenDaylight
+      - odl-dlux-all
+      - all
+    * - Fabric as a Service (Faas)
+      - Creates a common abstraction layer on top of a physical network so
+        northbound APIs or services can be more easiliy mapped onto the
+        physical network as a concrete device configuration
+      - odl-faas-all
+      - all
+
+    * - Group Based Policy
+      - Enables Endpoint Registry and Policy Repository REST APIs and associated
+        functionality for Group Based Policy with the default renderer for
+        OpenFlow renderers
+      - odl-groupbasedpolicy-ofoverlay
+      - all
+
+    * - GBP User Interface
+      - Enables a web-based user interface for Group Based Policy
+      - odl-groupbasedpolicyi-ui
+      - all
+
+    * - GBP FaaS renderer
+      - Enables the Fabric as a Service renderer for Group Based Policy
+      - odl-groupbasedpolicy-faas
+      - self+all
+
+    * - GBP Neutron Support
+      - Provides OpenStack Neutron support using Group Based Policy
+      - odl-groupbasedpolicy-neutronmapper
+      - all
+
+    * - L2 Switch
+      - Provides L2 (Ethernet) forwarding across connected OpenFlow switches and
+        support for host tracking
+      - odl-l2switch-switch-ui
+      - self+all
+
+    * - LACP
+      - Enables support for the Link Aggregation Control Protocol
+      - odl-lacp-ui
+      - self+all
+
+    * - LISP Flow Mapping
+      - Enables LISP control plane services including the mapping system
+        services REST API and LISP protocol SB plugin
+      - odl-lispflowmapping-msmr
+      - all
 
 .. image:: images/be-features-2.png
 
