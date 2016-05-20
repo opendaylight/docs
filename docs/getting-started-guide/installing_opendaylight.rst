@@ -402,9 +402,118 @@ Beryllium and should be used accordingly. In general, it is not supposed to be
 used in production unless its limitations are well understood by those
 deploying it.
 
-.. image:: images/be-exp-features-1.png
+.. list-table:: Other Beryllium features
+    :widths: 10 25 10 5
+    :header-rows: 1
 
-.. image:: images/be-exp-features-2.png
+    * - Feature Name
+      - Feature Description
+      - Karaf feature name
+      - Compatibility
+
+    * - Authorization
+      - Enables configurable role-based authorization
+      - odl-aaa-authz
+      - all
+
+    * - ALTO
+      - Enables support for Application-Layer Traffic Optimization
+      - odl-alto-core
+      - self+all
+
+    * - CAPWAP
+      - Enables control of supported wireless APs
+      - odl-capwap-ac-rest
+      - all
+
+    * - Clustered Authentication
+      - Enables the use of the MD-SAL clustered data store for the
+        authentication database
+      - odl-aaa-authn-mdsal-cluster
+      - all
+
+    * - Controller Shield
+      - Provides controller security information to northbound applications
+      - odl-usecplugin
+      - all
+
+    * - GBP IO Visor Renderer
+      - Provides support for rendering Group Based Policy to IO Visor
+      - odl-groupbasedpolicy-iovisor
+      - all
+
+    * - Internet of Things Data Management
+      - Enables support for the oneM2M specification
+      - odl-iotdm-onem2m
+      - all
+
+    * - LISP Flow Mapping OpenStack Network Virtualization
+      - Experimental support for OpenStack Neutron virtualization
+      - odl-lispflowmapping-neutron
+      - self+all
+
+    * - Messaging4Transport
+      - Introduces an AMQP Northbound to MD-SAL
+      - odl-messaging4transport
+      - all
+
+    * - Network Intent Composition (NIC)
+      - Provides abstraction layer for communcating network intents (including
+        a distributed intent mapping service REST API) using either Hazelcast
+        or the MD-SAL as the backing data store for intents
+      - odl-nic-core-hazelcast or odl-nic-core-mdsal
+      - all
+
+    * - NIC Console
+      - Provides a Karaf CLI extension for intent CRUD operations and mapping
+        service operations
+      - odl-nic-console
+      - all
+
+    * - NIC VTN renderer
+      - Virtual Tenant Network renderer for Network Intent Composition
+      - odl-nic-renderer-vtn
+      - self+all
+
+    * - NIC GBP renderer
+      - Group Based Policy renderer for Network Intent Composition
+      - odl-nic-renderer-gbp
+      - self+all
+
+    * - NIC OpenFlow renderer
+      - OpenFlow renderer for Network Intent Composition
+      - odl-nic-renderer-of
+      - self+all
+
+    * - NIC NEMO renderer
+      - NEtwork MOdeling renderer for Network Intent Composition
+      - odl-nic-renderer-nemo
+      - self+all
+
+    * - OVSDB NetVirt UI
+      - OVSDB DLUX UI
+      - odl-ovsdb-ui
+      - all
+
+    * - Secure Networking Bootstrap
+      - Defines a SNBi domain and associated white lists of devices to be
+        accommodated to the domain
+      - odl-snbi-all
+      - self+all
+
+    * - UNI Manager
+      - Initiates the development of data models and APIs to facilitate
+        configuration and provisioning connectivity services for OpenDaylight
+        applications and services
+      - odl-unimgr
+      - all
+
+    * - YANG PUBSUB
+      - Allows subscriptions to be placed on targeted subtrees of YANG
+        datastores residing on remote devices to obviate the need for
+        OpenDaylight to make continuous fetch requests
+      - odl-yangpush-rest
+      - all
 
 Install support for REST APIs
 -----------------------------
