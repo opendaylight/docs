@@ -1,0 +1,27 @@
+== Usecplugin-AAA User Guide
+The Usecplugin User Guide contains information about configuration, administration,
+management, using and troubleshooting the feature.
+
+=== Overview
+AAA plugin provides authorization, authentication and accounting services to OpenDaylight. A user logs in to
+OpenDaylight through the username and password provided by AAA plugin.
+Usecplugin-AAA collects and stores information about both successful and failed login attempts to OpenDaylight.
+
+
+=== Usecplugin-AAA Architecture
+AAA plugin creates log messages about successful and failed login attempts to OpenDaylight.
+Usecplugin-AAA continuously reads this log file and checks for either successful and failed attempt information.
+Whenever Usecpluin-AAA identifies a new attempt entry in the log file it is stored
+in Yang Data Store and its own log file.
+
+=== Configuring Usecplugin-AAA
+
+Not Applicable
+
+=== Administering or Managing Usecplugin-AAA
+Use REST API in the following format for entering global IP addresses.
+
+Http POST command to http://
+
+=== Tutorials
+Will provided later.
