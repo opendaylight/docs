@@ -12,6 +12,7 @@ Contents:
    :maxdepth: 2
 
    getting-started-guide/index
+   opendaylight-with-openstack/index
    submodules/releng/builder/docs/index
 
 Indices and tables
