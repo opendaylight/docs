@@ -333,12 +333,42 @@ Beryllium features
         Syslog, and OpenDaylight (controller) metrics
       - odl-tsdr-openflow-statistics-collector,
         odl-tsdr-netflow-statistics-collector,
-        odl-tsdr-snmp-data-collector, odl-tsdr-syslog-collector,
+        odl-tsdr-snmp-data-collector,
+        odl-tsdr-syslog-collector,
         odl-tsdr-controller-metrics-collector
       - all
 
+    * - TSDR Data Stores
+      - Enables support for TSDR data stores including HSQLDB, HBase, and
+        Cassandra
+      - odl-tsdr-hsqldb, odl-tsdr-hbase, or odl-tsdr-cassandra
+      - all
 
-.. image:: images/be-features-3.png
+    * - Topology Processing Framework
+      - Enables merged and filtered views of network topologies
+      - odl-topoprocessing-framework
+      - all
+
+    * - Unified Secure Channel (USC)
+      - Enables support for secure, remote connections to network devices
+      - odl-usc-channel-ui
+      - all
+
+    * - VPN Service
+      - Enables support for OpenStack VPNaaS
+      - odl-vpnservice-core
+      - all
+
+    * - VTN Manager
+      - Enables Virtual Tenant Network support
+      - odl-vtn-manager-rest
+      - self+all
+
+    * - VTN Manager Neutron
+      - Enables OpenStack Neutron support of VTN Manager
+      - odl-vtn-manager-neutron
+      - self+all
+
 
 Other Beryllium features
 ------------------------
