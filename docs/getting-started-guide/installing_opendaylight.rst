@@ -372,7 +372,28 @@ Beryllium features
 
 Other Beryllium features
 ------------------------
-.. image:: images/be-nonfeatures.png
+
+.. list-table:: Other Beryllium features
+    :widths: 10 25 10 5
+    :header-rows: 1
+
+    * - Feature Name
+      - Feature Description
+      - Karaf feature name
+      - Compatibility
+
+    * - OpFlex
+      - Provides OpFlex agent for Open vSwitch to enforce network policy, such
+        as GBP, for locally-attached virtual machines or containers
+      - n/a
+      - all
+
+    * - NeXt
+      - Provides a developer toolkit for designing network-centric topology
+        user interfaces
+      - n/a
+      - all
+
 
 Experimental Beryllium Features
 -------------------------------
