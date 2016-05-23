@@ -198,7 +198,145 @@ Beryllium features
       - odl-lispflowmapping-msmr
       - all
 
-.. image:: images/be-features-2.png
+    * - NEMO CLI
+      - Provides intent mappings and implementation with CLI for legacy devices
+      - odl-nemo-cli-renderer
+      - all
+
+    * - NEMO OpenFlow
+      - Provides intent mapping and implementation for OpenFlow devices
+      - odl-nemo-openflow-renderer
+      - self+all
+
+    * - NetIDE
+      - Enables portabilty and cooperation inside a single network by using a
+        client/server multi-controller architecture
+      - odl-netide-rest
+      - all
+
+    * - NETCONF over SSH
+      - Provides support to manage NETCONF-enabled devices over SSH
+      - odl-netconf-connector-ssh
+      - all
+
+    * - OF-CONFIG
+      - Enables remote configuration of OpenFlow datapaths
+      - odl-of-config-rest
+      - all
+
+    * - OVSDB OpenStack Neutron
+      - OpenStack Network Virtualization using OpenDaylight's OVSDB support
+      - odl-ovsdb-openstack
+      - all
+
+    * - OVSDB Southbound
+      - OVSDB MDSAL southbound plugin for Open_vSwitch schema
+      - odl-ovsdb-southbound-impl-ui
+      - all
+
+    * - OVSDB HWVTEP Southbound
+      - OVSDB MDSAL hwvtep southbound plugin for the hw_vtep schema
+      - odl-ovsdb-hwvtepsouthbound-ui
+      - all
+
+    * - OVSDB NetVirt SFC
+      - OVSDB NetVirt support for SFC
+      - odl-ovsdb-sfc-ui
+      - all
+
+    * - OpenFlow Flow Programming
+      - Enables discovery and control of OpenFlow switches and the topoology
+        between them
+      - odl-openflowplugin-flow-services-ui
+      - all
+
+    * - OpenFlow Table Type Patterns
+      - Allows OpenFlow Table Type Patterns to be manually associated with
+        network elements
+      - odl-ttp-all
+      - all
+
+    * - Packetcable PCMM
+      - Enables flow-based dynamic QoS management of CMTS use in the DOCSIS
+        infrastructure and a policy server
+      - odl-packetcable-policy-server
+      - self+all
+
+    * - PCEP
+      - Enables support for PCEP
+      - odl-bgpcep-pcep
+      - all
+
+    * - RESTCONF API Support
+      - Enables REST API access to the MD-SAL including the data store
+      - odl-restconf
+      - all
+
+    * - SDNinterface
+      - Provides support for interaction and sharing of state between
+        (non-clustered) OpenDaylight instances
+      - odl-sdninterfaceapp-all
+      - all
+
+    * - SFC over L2
+      - Supports implementing Service Function Chaining using Layer 2
+        forwarding
+      - odl-sfcofl2
+      - self+all
+
+    * - SFC over LISP
+      - Supports implementing Service Function Chaining using LISP
+      - odl-sfclisp
+      - all
+
+    * - SFC over REST
+      - Supports implementing Service Function Chaining using REST CRUD
+        operations on network elements
+      - odl-sfc-sb-rest
+      - all
+
+    * - SFC over VXLAN
+      - Supports implementing Service Function Chaining using VXLAN tunnels
+      - odl-sfc-ovs
+      - self+all
+
+    * - SNMP Plugin
+      - Enables monitoring and control of network elements via SNMP
+      - odl-snmp-plugin
+      - all
+
+    * - SNMP4SDN
+      - Enables OpenFlow-like control of network elements via SNMP
+      - odl-snmp4sdn-all
+      - all
+
+    * - SSSD Federated Authentication
+      - Enables support for federated authentication using SSSD
+      - odl-aaa-sssd-plugin
+      - all
+
+    * - Secure tag eXchange Protocol (SXP)
+      - Enables distribution of shared tags to network devices
+      - odl-sxp-controller
+      - all
+
+    * - Time Series Data Repository (TSDR)
+      - Enables support for storing and querying time series data with the
+        default data collector for OpenFlow statistics the default data store
+        for HSQLDB
+      - odl-tsdr-hsqldb-all
+      - all
+
+    * - TSDR Data Collectors
+      - Enables support for various TSDR data sources (collectors) including
+        OpenFlow statistics, NetFlow statistics, NetFlow statistics, SNMP data,
+        Syslog, and OpenDaylight (controller) metrics
+      - odl-tsdr-openflow-statistics-collector,
+        odl-tsdr-netflow-statistics-collector,
+        odl-tsdr-snmp-data-collector, odl-tsdr-syslog-collector,
+        odl-tsdr-controller-metrics-collector
+      - all
+
 
 .. image:: images/be-features-3.png
 
