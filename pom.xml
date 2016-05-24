@@ -49,22 +49,22 @@
         <version>0.1.0</version>
       </plugin>
       <plugin>
-       <groupId>org.apache.maven.plugins</groupId>
-       <artifactId>maven-site-plugin</artifactId>
-       <version>3.1</version>
-       <dependencies>
-           <dependency>
-               <groupId>org.apache.maven.wagon</groupId>
-               <artifactId>wagon-webdav-jackrabbit</artifactId>
-               <version>2.2</version>
-           </dependency>
-           <dependency>
-               <groupId>org.slf4j</groupId>
-               <artifactId>slf4j-api</artifactId>
-               <version>1.6.1</version>
-           </dependency>
-       </dependencies>
-     </plugin>
-   </plugins>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+        <version>3.1</version>
+        <dependencies>
+          <dependency>
+            <groupId>org.apache.maven.wagon</groupId>
+            <artifactId>wagon-webdav-jackrabbit</artifactId>
+            <version>2.2</version>
+          </dependency>
+          <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.6.1</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+    </plugins>
   </build>
 </project>
