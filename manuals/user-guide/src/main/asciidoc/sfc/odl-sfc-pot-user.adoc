@@ -1,0 +1,145 @@
+=== SFC Proof of Transit User Guide
+
+:SFCPOT: SFC Proof of Transit
+
+==== Overview
+Early Service Function Chaining (SFC) Proof of Transit ({SFCPOT})
+implements Service Chaining Proof of Transit functionality on
+capable switches.  After the creation of an Rendered Service
+Path (RSP), a user can configure to enable SFC proof of transit
+on the selected RSP to effect the proof of transit.
+
+Common acronyms used in the following sections:
+
+* SF - Service Function
+* SFF - Service Function Forwarder
+* SFC - Service Function Chain
+* SFP - Service Function Path
+* RSP - Rendered Service Path
+* SFCPOT - Service Function Chain Proof of Transit
+
+==== SFC Proof of Transit Architecture
+When {SFCPOT} is initialized, all required listeners are registered
+to handle incoming data. It involves +SfcPotNodeListener+ which stores
+data about all node devices including their mountpoints (used here
+as databrokers), +SfcPotRSPDataListener+, +RenderedPathListener+.
++RenderedPathListener+ is used to listen for RSP changes.
++SfcPotRSPDataListener+ implements RPC services to enable or disable
+SFC Proof of Transit on a particular RSP.  When the {SFCPOT} is invoked,
+RSP listeners and service implementations are setup to receive SFCPOT
+configurations.  When a user configures via a POST RPC call to enable
+SFCPOT on a particular RSP, the configuration drives the creation of
+necessary augmentations to the RSP to effect the SFCPOT configurations.
+
+==== SFC Proof of Transit details
+Several deployments use traffic engineering, policy routing,
+segment routing or service function chaining (SFC) to steer packets
+through a specific set of nodes. In certain cases regulatory obligations
+or a compliance policy require to prove that all packets that are
+supposed to follow a specific path are indeed being forwarded across
+the exact set of nodes specified. I.e. if a packet flow is supposed to
+go through a series of service functions or network nodes, it has to
+be proven that all packets of the flow actually went through the
+service chain or collection of nodes specified by the policy.
+In case the packets of a flow weren't appropriately processed, a
+proof of transit egress device would be required to identify the policy
+violation and take corresponding actions (e.g. drop or redirect the packet,
+send an alert etc.) corresponding to the policy.
+
+The SFCPOT approach is based on meta-data which is added to every packet.
+The meta data is updated at every hop and is used to verify whether
+a packet traversed all required nodes. A particular path is either
+described by a set of secret keys, or a set of shares of a single
+secret. Nodes on the path retrieve their individual keys or shares
+of a key (using for e.g. Shamir's Shared Sharing Secret scheme) from
+a central controller. The complete key set is only known to the
+verifier- which is typically the ultimate node on a path that
+requires proof of transit. Each node in the path uses its secret or share
+of the secret to update the meta-data of the packets as the packets
+pass through the node. When the verifier receives a packet, it can use
+its key(s) along with the meta-data to validate whether the packet
+traversed the service chain correctly.
+
+==== SFC Proof of Transit entities
+In order to implement SFC Proof of Transit for a service function chain,
+an RSP is a pre-requisite to identify the SFC to enable SFC PoT
+on.  SFC Proof of Transit for a particular RSP is enabled by an RPC request
+to the controller along with necessary parameters to control some of the
+aspects of the SFC Proof of Transit process.
+
+The RPC handler identifies the RSP and generates SFC Proof of Transit
+parameters like secret share, secret etc., and adds the generated SFCPOT
+configuration parameters to SFC main as well as the various SFC hops.
+The last node in the SFC is configured as a verifier node to allow SFCPOT
+Proof of Transit process to be completed.
+
+The SFCPOT configuration generators and related handling are done by
++SfcPotAPI+, +SfcPotConfigGenerator+,
++SfcPotListener+, +SfcPotPolyAPI+,
++SfcPotPolyClassAPI+ and +SfcPotPolyClass+.
+
+==== Administering {SFCPOT}
+To use the SFC Proof of Transit Karaf, at least the following Karaf
+features must be installed:
+
+* odl-sfc-model
+* odl-sfc-provider
+* odl-sfc-netconf
+* odl-restconf
+* odl-netconf-topology
+* odl-netconf-connector-all
+* odl-sfc-pot
+
+==== {SFCPOT} Tutorial
+
+===== Overview
+This tutorial is a simple example how to configure Service Function Chain
+Proof of Transit using SFC POT feature.
+
+===== Preconditions
+To enable a device to handle SFC Proof of Transit, it is expected that the netconf server
+device advertise capability as under ioam-scv.yang present under src/main/yang folder of
+sfc-pot feature.  It is also expected that netconf notifications be enabled and its
+support capability advertised as capabilities.
+
+It is also expected that the devices are netconf mounted and available in the
+topology-netconf store.
+
+===== Instructions
+When SFC Proof of Transit is installed, all netconf nodes in topology-netconf are
+processed and all capable nodes with accessible mountpoints are cached.
+
+First step is to create the required RSP as usually done.
+
+Once RSP name is avaiable it is used to send a POST RPC to the controller similar to
+below:
+
+----
+
+POST ./restconf/operations/sfc-ioam-nb-pot:enable-sfc-ioam-pot-rendered-path
+
+{
+  "input": {
+    "sfc-ioam-pot-rsp-name": "rsp1"
+  }
+}
+
+----
+
+The following can be used to disable the SFC Proof of Transit on an RSP which removes
+the augmentations and stores back the RSP without the SFCPOT enabled features and also
+sending down a delete configuration to the SFCPOT configuration sub-tree in the nodes.
+
+----
+
+POST ./restconf/operations/sfc-ioam-nb-pot:disable-sfc-ioam-pot-rendered-path
+
+{
+  "input": {
+    "sfc-ioam-pot-rsp-name": "rsp1"
+  }
+}
+
+----
+
+:SFCPOT!:
