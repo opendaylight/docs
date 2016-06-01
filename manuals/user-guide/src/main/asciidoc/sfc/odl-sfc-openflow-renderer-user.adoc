@@ -1,7 +1,9 @@
 === SFC OpenFlow Renderer User Guide
 
+:SFCOFRNDR: SFC OF Renderer
+
 ==== Overview
-The Service Function Chaining (SFC) OpenFlow Renderer (SFCOFL2)
+The Service Function Chaining (SFC) OpenFlow Renderer ({SFCOFRNDR})
 implements Service Chaining on OpenFlow switches. It listens for the
 creation of a Rendered Service Path (RSP), and once received it programs
 Service Function Forwarders (SFF) that are hosted on OpenFlow capable
@@ -16,11 +18,11 @@ Common acronyms used in the following sections:
 * RSP - Rendered Service Path
 
 ==== SFC OpenFlow Renderer Architecture
-The SFCOFL2 is invoked after a RSP is created using an MD-SAL listener
-called +SfcL2RspDataListener+. Upon SFCOFL2 initialization, the
-+SfcL2RspDataListener+ registers itself to listen for RSP changes.
-When invoked, the +SfcL2RspDataListener+ processes the RSP and calls
-the +SfcL2FlowProgrammerOFImpl+ to create the necessary flows in the
+The {SFCOFRNDR} is invoked after a RSP is created using an MD-SAL listener
+called +SfcOfRspDataListener+. Upon {SFCOFRNDR} initialization, the
++SfcOfRspDataListener+ registers itself to listen for RSP changes.
+When invoked, the +SfcOfRspDataListener+ processes the RSP and calls
+the +SfcOfFlowProgrammerImpl+ to create the necessary flows in the
 Service Function Forwarders configured in the RSP. Refer to the
 following diagram for more details.
 
@@ -235,7 +237,7 @@ packets are just sent back where they came from.
 |Drop
 |===
 
-==== Administering SFCOFL2
+==== Administering {SFCOFRNDR}
 To use the SFC OpenFlow Renderer Karaf, at least the following Karaf
 features must be installed.
 
@@ -243,7 +245,7 @@ features must be installed.
 * odl-openflowplugin-flow-services
 * odl-sfc-provider
 * odl-sfc-model
-* odl-sfcofl2
+* odl-sfc-openflow-renderer
 * odl-sfc-ui (optional)
 
 The following command can be used to view all of the currently installed Karaf features:
@@ -256,7 +258,7 @@ Or, pipe the command to a grep to see a subset of the currently installed Karaf 
 
 To install a particular feature, use the Karaf `feature:install` command.
 
-==== SFCOFL2 Tutorial
+==== {SFCOFRNDR} Tutorial
 
 ===== Overview
 In this tutorial, 2 different encapsulations will be shown: MPLS and NSH. The
@@ -283,7 +285,7 @@ There are numerous ways to send the configuration. In the following
 configuration chapters, the appropriate `curl` command is shown for
 each configuration to be sent, including the URL.
 
-Steps to configure the SFCOFL2 tutorial:
+Steps to configure the {SFCOFRNDR} tutorial:
 
 . Send the `SF` RESTCONF configuration
 . Send the `SFF` RESTCONF configuration
@@ -313,7 +315,7 @@ In all the following configuration sections, replace the `${JSON}`
 string with the appropriate JSON configuration. Also, change the
 `localhost` desintation in the URL accordingly.
 
-====== SFCOFL2 NSH Tutorial
+====== {SFCOFRNDR} NSH Tutorial
 
 The following configuration sections show how to create the different elements
 using NSH encapsulation.
@@ -512,7 +514,7 @@ The following command can be used to query all of the created Rendered Service P
  curl -H "Content-Type: application/json" -H "Cache-Control: no-cache" -X GET --user admin:admin http://localhost:8181/restconf/operational/rendered-service-path:rendered-service-paths/
 
 
-====== SFCOFL2 MPLS Tutorial
+====== {SFCOFRNDR} MPLS Tutorial
 
 The following configuration sections show how to create the different elements
 using MPLS encapsulation.
@@ -777,4 +779,9 @@ called `sfc-path1`:
 The following command can be used to query all of the created Rendered Service Paths:
 
  curl -H "Content-Type: application/json" -H "Cache-Control: no-cache" -X GET --user admin:admin http://localhost:8181/restconf/operational/rendered-service-path:rendered-service-paths/
+
+
+
+
+:SFCOFRNDR!:
 
