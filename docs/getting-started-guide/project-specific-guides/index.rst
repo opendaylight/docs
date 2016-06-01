@@ -8,3 +8,5 @@ Project-Specific Installation Guides
    ovsdb-openstack
    tsdr
    vtn
+   yangide
+
