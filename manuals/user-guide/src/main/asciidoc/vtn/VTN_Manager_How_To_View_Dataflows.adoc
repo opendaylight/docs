@@ -1,0 +1,246 @@
+==== How To View Dataflows
+
+===== Overview
+
+This page explains how to view Dataflows using VTN Manager. This page targets Beryllium release, so the procedure described here does not work in other releases.
+
+Dataflow feature enables retrieval and display of data flows in the openflow network. The data flows can be retrieved based on an openflow switch or a switch port or a L2 source host.
+
+The flow information provided by this feature are
+
+* Location of virtual node which maps the incoming packet and outgoing packets.
+
+* Location of physical switch port where incoming and outgoing packets is sent and received.
+
+* A sequence of physical route info which represents the packet route in the physical network.
+
+===== Configuration
+
+* To view Dataflow information, configure with VLAN Mapping
+  https://wiki.opendaylight.org/view/VTN:Mananger:How_to_test_Vlan-map_using_mininet.
+
+===== Verification
+
+After creating vlan mapping configuration from the above page, execute as below in mininet to get switch details.
+
+----
+ mininet> net
+ h1 h1-eth0.200:s1-eth1
+ h2 h2-eth0.300:s2-eth2
+ h3 h3-eth0.200:s2-eth3
+ h4 h4-eth0.300:s2-eth4
+ h5 h5-eth0.200:s3-eth2
+ h6 h6-eth0.300:s3-eth3
+ s1 lo:  s1-eth1:h1-eth0.200 s1-eth2:s2-eth1 s1-eth3:s3-eth1
+ s2 lo:  s2-eth1:s1-eth2 s2-eth2:h2-eth0.300 s2-eth3:h3-eth0.200 s2-eth4:h4-eth0.300
+ s3 lo:  s3-eth1:s1-eth3 s3-eth2:h5-eth0.200 s3-eth3:h6-eth0.300
+ c0
+ mininet>
+----
+
+Please execute ping from h1 to h3 to check hosts reachability.
+
+----
+ mininet> h1 ping h3
+ PING 10.0.0.3 (10.0.0.3) 56(84) bytes of data.
+ 64 bytes from 10.0.0.3: icmp_seq=1 ttl=64 time=11.4 ms
+ 64 bytes from 10.0.0.3: icmp_seq=2 ttl=64 time=0.654 ms
+ 64 bytes from 10.0.0.3: icmp_seq=3 ttl=64 time=0.093 ms
+----
+
+Parallely execute below Restconf command to get data flow information of node "openflow:1" and its port "s1-eth1".
+
+* Get the Dataflows information by executing
+  https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-flow.html#get-data-flow[the get-data-flow RPC].
+
+----
+curl --user "admin":"admin" -H "Content-type: application/json" -X POST http://localhost:8181/restconf/operations/vtn-flow:get-data-flow -d '{"input":{"tenant-name":"vtn1","mode":"DETAIL","node":"openflow:1","data-flow-port":{"port-id":"1","port-name":"s1-eth1"}}}'
+----
+
+----
+{
+  "output": {
+    "data-flow-info": [
+    {
+      "averaged-data-flow-stats": {
+        "packet-count": 1.1998800119988002,
+          "start-time": 1455241209151,
+          "end-time": 1455241219152,
+          "byte-count": 117.58824117588242
+      },
+        "physical-route": [
+        {
+          "physical-ingress-port": {
+            "port-name": "s2-eth3",
+            "port-id": "3"
+          },
+          "physical-egress-port": {
+            "port-name": "s2-eth1",
+            "port-id": "1"
+          },
+          "node": "openflow:2",
+          "order": 0
+        },
+        {
+          "physical-ingress-port": {
+            "port-name": "s1-eth2",
+            "port-id": "2"
+          },
+          "physical-egress-port": {
+            "port-name": "s1-eth1",
+            "port-id": "1"
+          },
+          "node": "openflow:1",
+          "order": 1
+        }
+      ],
+        "data-egress-node": {
+          "bridge-name": "vbr1",
+          "tenant-name": "vtn1"
+        },
+        "hard-timeout": 0,
+        "idle-timeout": 300,
+        "data-flow-stats": {
+          "duration": {
+            "nanosecond": 640000000,
+            "second": 362
+          },
+          "packet-count": 134,
+          "byte-count": 12932
+        },
+        "data-egress-port": {
+          "node": "openflow:1",
+          "port-name": "s1-eth1",
+          "port-id": "1"
+        },
+        "data-ingress-node": {
+          "bridge-name": "vbr1",
+          "tenant-name": "vtn1"
+        },
+        "data-ingress-port": {
+          "node": "openflow:2",
+          "port-name": "s2-eth3",
+          "port-id": "3"
+        },
+        "creation-time": 1455240855753,
+        "data-flow-match": {
+          "vtn-ether-match": {
+            "vlan-id": 200,
+            "source-address": "6a:ff:e2:81:86:bb",
+            "destination-address": "26:9f:82:70:ec:66"
+          }
+        },
+        "virtual-route": [
+        {
+          "reason": "VLANMAPPED",
+          "virtual-node-path": {
+            "bridge-name": "vbr1",
+            "tenant-name": "vtn1"
+          },
+          "order": 0
+        },
+        {
+          "reason": "FORWARDED",
+          "virtual-node-path": {
+            "bridge-name": "vbr1",
+            "tenant-name": "vtn1"
+          },
+          "order": 1
+        }
+      ],
+        "flow-id": 16
+    },
+    {
+      "averaged-data-flow-stats": {
+        "packet-count": 1.1998800119988002,
+        "start-time": 1455241209151,
+        "end-time": 1455241219152,
+        "byte-count": 117.58824117588242
+      },
+      "physical-route": [
+      {
+        "physical-ingress-port": {
+          "port-name": "s1-eth1",
+          "port-id": "1"
+        },
+        "physical-egress-port": {
+          "port-name": "s1-eth2",
+          "port-id": "2"
+        },
+        "node": "openflow:1",
+        "order": 0
+      },
+      {
+        "physical-ingress-port": {
+          "port-name": "s2-eth1",
+          "port-id": "1"
+        },
+        "physical-egress-port": {
+          "port-name": "s2-eth3",
+          "port-id": "3"
+        },
+        "node": "openflow:2",
+        "order": 1
+      }
+      ],
+        "data-egress-node": {
+          "bridge-name": "vbr1",
+          "tenant-name": "vtn1"
+        },
+        "hard-timeout": 0,
+        "idle-timeout": 300,
+        "data-flow-stats": {
+          "duration": {
+            "nanosecond": 587000000,
+            "second": 362
+          },
+          "packet-count": 134,
+          "byte-count": 12932
+        },
+        "data-egress-port": {
+          "node": "openflow:2",
+          "port-name": "s2-eth3",
+          "port-id": "3"
+        },
+        "data-ingress-node": {
+          "bridge-name": "vbr1",
+          "tenant-name": "vtn1"
+        },
+        "data-ingress-port": {
+          "node": "openflow:1",
+          "port-name": "s1-eth1",
+          "port-id": "1"
+        },
+        "creation-time": 1455240855747,
+        "data-flow-match": {
+          "vtn-ether-match": {
+            "vlan-id": 200,
+            "source-address": "26:9f:82:70:ec:66",
+            "destination-address": "6a:ff:e2:81:86:bb"
+          }
+        },
+        "virtual-route": [
+        {
+          "reason": "VLANMAPPED",
+          "virtual-node-path": {
+            "bridge-name": "vbr1",
+            "tenant-name": "vtn1"
+          },
+          "order": 0
+        },
+        {
+          "reason": "FORWARDED",
+          "virtual-node-path": {
+            "bridge-name": "vbr1",
+            "tenant-name": "vtn1"
+          },
+          "order": 1
+        }
+      ],
+        "flow-id": 15
+    }
+    ]
+  }
+}
+----
+

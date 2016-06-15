@@ -1,0 +1,178 @@
+==== How To Create Mac Map In VTN
+
+===== Overview
+
+* This page demonstrates Mac Mapping. This demonstration aims at enabling communication between two hosts and denying communication of particular host by associating a Vbridge to the hosts and configuring Mac Mapping (mac address) to the Vbridge.
+
+* This page targets Beryllium release, so the procedure described here does not work in other releases.
+
+.Single Controller Mapping
+image::vtn/Single_Controller_Mapping.png["Single_Controller_Mapping",width=500]
+
+===== Requirement
+
+====== Configure mininet and create a topology
+
+* https://wiki.opendaylight.org/view/OpenDaylight_Virtual_Tenant_Network_(VTN):Scripts:Mininet#Network_with_Multiple_Hosts_for_Service_Function_Chain[Script for emulating network with multiple hosts].
+* Before executing the mininet script, please confirm Controller is up and running.
+* Run the mininet script.
+* Replace <path> and <Controller IP> based on your environment.
+
+----
+sudo mn --controller=remote,ip=<Controller IP> --custom <path>\topo_handson.py --topo mytopo2
+----
+
+----
+mininet> net
+h11 h11-eth0:s1-eth1
+h12 h12-eth0:s1-eth2
+h21 h21-eth0:s2-eth1
+h22 h22-eth0:s2-eth2
+h23 h23-eth0:s2-eth3
+srvc1 srvc1-eth0:s3-eth3 srvc1-eth1:s4-eth3
+srvc2 srvc2-eth0:s3-eth4 srvc2-eth1:s4-eth4
+s1 lo:  s1-eth1:h11-eth0 s1-eth2:h12-eth0 s1-eth3:s2-eth4 s1-eth4:s3-eth2
+s2 lo:  s2-eth1:h21-eth0 s2-eth2:h22-eth0 s2-eth3:h23-eth0 s2-eth4:s1-eth3 s2-eth5:s4-eth1
+s3 lo:  s3-eth1:s4-eth2 s3-eth2:s1-eth4 s3-eth3:srvc1-eth0 s3-eth4:srvc2-eth0
+s4 lo:  s4-eth1:s2-eth5 s4-eth2:s3-eth1 s4-eth3:srvc1-eth1 s4-eth4:srvc2-eth1
+----
+
+NOTE:
+You need to manually add flow entries to OpenFlow switches in the Mininet. The flow entries are needed to forward packets to controller when there is a table-miss. This configuration is required only in case of OpenFlow 1.3 or using OVS versions (>2.1.1).
+
+----
+sudo ovs-ofctl add-flow s1 priority=0,actions=output:CONTROLLER
+sudo ovs-ofctl add-flow s2 priority=0,actions=output:CONTROLLER
+sudo ovs-ofctl add-flow s3 priority=0,actions=output:CONTROLLER
+sudo ovs-ofctl add-flow s4 priority=0,actions=output:CONTROLLER
+----
+
+===== Configuration
+
+To create Mac Map in VTN, execute REST API provided by VTN Manager as follows. It uses curl command to call REST API.
+
+* Create a virtual tenant named Tenant1 by executing
+  https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn.html#update-vtn[the update-vtn RPC].
+
+----
+curl --user "admin":"admin" -H "Content-type: application/json" -X POST http://localhost:8181/restconf/operations/vtn:update-vtn -d '{"input":{"tenant-name":"Tenant1"}}'
+----
+
+* Create a virtual bridge named vBridge1 in the tenant Tenant1 by executing
+  https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-vbridge.html#update-vbridge[the update-vbridge RPC].
+
+----
+curl --user "admin":"admin" -H "Content-type: application/json" -X POST http://localhost:8181/restconf/operations/vtn-vbridge:update-vbridge -d '{"input":{"tenant-name":"Tenant1","bridge-name":"vBridge1"}}'
+----
+
+* Configuring Mac Mappings on the vBridge1 by giving the mac address of host h12 and host h22 as follows to allow the communication by executing
+  https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-mac-map.html#set-mac-map[the set-mac-map RPC].
+
+----
+curl --user "admin":"admin" -H "Content-type: application/json" -X POST http://localhost:8181/restconf/operations/vtn-mac-map:set-mac-map -d '{"input":{"operation":"SET","allowed-hosts":["de:05:40:c4:96:76@0","62:c5:33:bc:d7:4e@0"],"tenant-name":"Tenant1","bridge-name":"vBridge1"}}'
+----
+
+NOTE: Mac Address of host h12 and host h22 can be obtained with the following command in mininet.
+
+----
+ mininet> h12 ifconfig
+ h12-eth0  Link encap:Ethernet  HWaddr 62:c5:33:bc:d7:4e
+ inet addr:10.0.0.2  Bcast:10.255.255.255  Mask:255.0.0.0
+ inet6 addr: fe80::60c5:33ff:febc:d74e/64 Scope:Link
+----
+
+----
+ mininet> h22 ifconfig
+ h22-eth0  Link encap:Ethernet  HWaddr de:05:40:c4:96:76
+ inet addr:10.0.0.4  Bcast:10.255.255.255  Mask:255.0.0.0
+ inet6 addr: fe80::dc05:40ff:fec4:9676/64 Scope:Link
+----
+
+* MAC Mapping will not be activated just by configuring it, a two end communication needs to be established to activate Mac Mapping.
+
+* Ping host h22 from host h12 in mininet, the ping will not happen between the hosts as only one way activation is enabled.
+
+----
+ mininet> h12 ping h22
+ PING 10.0.0.4 (10.0.0.4) 56(84) bytes of data.
+ From 10.0.0.2 icmp_seq=1 Destination Host Unreachable
+ From 10.0.0.2 icmp_seq=2 Destination Host Unreachable
+----
+
+* Ping host h12 from host h22 in mininet, now the ping communication will take place as the two end communication is enabled.
+
+----
+ mininet> h22 ping h12
+ PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+ 64 bytes from 10.0.0.2: icmp_req=1 ttl=64 time=91.8 ms
+ 64 bytes from 10.0.0.2: icmp_req=2 ttl=64 time=0.510 ms
+----
+
+* After two end communication enabled, now host h12 can ping host h22
+
+----
+ mininet> h12 ping h22
+ PING 10.0.0.4 (10.0.0.4) 56(84) bytes of data.
+ 64 bytes from 10.0.0.4: icmp_req=1 ttl=64 time=0.780 ms
+ 64 bytes from 10.0.0.4: icmp_req=2 ttl=64 time=0.079 ms
+----
+
+===== Verification
+
+* To view the configured Mac Map of allowed host execute the following command.
+
+----
+curl --user "admin":"admin" -H "Content-type: application/json" -X GET http://localhost:8181/restconf/operational/vtn:vtns/vtn/Tenant1/vbridge/vBridge1/mac-map
+----
+
+----
+{
+  "mac-map": {
+    "mac-map-status": {
+      "mapped-host": [
+      {
+        "mac-address": "c6:44:22:ba:3e:72",
+          "vlan-id": 0,
+          "port-id": "openflow:1:2"
+      },
+      {
+        "mac-address": "f6:e0:43:b6:3a:b7",
+        "vlan-id": 0,
+        "port-id": "openflow:2:2"
+      }
+      ]
+    },
+      "mac-map-config": {
+        "allowed-hosts": {
+          "vlan-host-desc-list": [
+          {
+            "host": "c6:44:22:ba:3e:72@0"
+          },
+          {
+            "host": "f6:e0:43:b6:3a:b7@0"
+          }
+          ]
+        }
+      }
+  }
+}
+----
+
+NOTE:
+When Deny is configured a broadcast message is sent to all the hosts connected to the vBridge, so a two end communication need not be establihed like allow, the hosts can communicate directly without any two way communication enabled.
+
+. To Deny host h23 communication from hosts connected on vBridge1, the following configuration can be applied.
+
+----
+curl --user "admin":"admin" -H "Content-type: application/json" -X POST http://localhost:8181/restconf/operations/vtn-mac-map:set-mac-map -d '{"input":{"operation": "SET", "denied-hosts": ["0a:d3:ea:3d:8f:a5@0"],"tenant-name": "Tenant1","bridge-name": "vBridge1"}}'
+----
+
+===== Cleaning Up
+
+* You can delete the virtual tenant Tenant1 by executing
+  https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn.html#remove-vtn[the remove-vtn RPC].
+
+----
+curl --user "admin":"admin" -H "Content-type: application/json" -X POST http://localhost:8181/restconf/operations/vtn:remove-vtn -d '{"input":{"tenant-name":"Tenant1"}}'
+----
+
