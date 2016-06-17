@@ -2,7 +2,7 @@
 
 This guide describes how to set up OpenStack for integration with OpenDaylight Controller.
 
-While OpenDaylight Controller provides several ways to integrate with OpenStack, this guide focus on the way which uses VTN features available on OpenDaylight controller.In the integration, VTN Manager work as network service provider for OpenStack.
+While OpenDaylight Controller provides several ways to integrate with OpenStack, this guide focus on the way which uses VTN features available on OpenDaylight. In the integration, VTN Manager work as network service provider for OpenStack.
 
 VTN Manager features, enable OpenStack to work in pure OpenFlow environment in which all switches in data plane are OpenFlow switch.
 
@@ -82,11 +82,38 @@ NOTE: The entries for eth1 are not mandatory, If not set, we may have to manuall
 - Login again and check the output of ifconfig to ensure that both interfaces are listed
 
 ====  OpenDaylight Settings and Execution
-=====  vtn.ini
- * VTN uses the configuration parameters from  'vtn.ini' file for the OpenStack integration.
+
+=====  VTN Configuration for OpenStack Integration:
+
+ * VTN uses the configuration parameters from  "90-vtn-neutron.xml" file for the OpenStack integration.
  * These values will be set for the OpenvSwitch, in all the participating OpenStack nodes.
- * A configuration file 'vtn.ini'''' needs to be created manually in the 'configuration' directory.
- * The contents of 'vtn.ini' should be as follows:
+ * A configuration file "90-vtn-neutron.xml" will be generated automatically by following the below steps,
+ * Download the latest Beryllium karaf distribution from the below link,
+
+
+   http://www.opendaylight.org/software/downloads
+
+
+ * cd "distribution-karaf-0.4.0-Beryllium" and run karaf by using the following command "./bin/karaf".
+ * Install the below feature to generate "90-vtn-neutron.xml",
+
+----
+ feature:install odl-vtn-manager-neutron
+----
+
+ * Check "90-vtn-neutron.xml" file from the following path "distribution-karaf-0.4.0-Beryllium/etc/opendaylight/karaf/".
+
+TIP: After running OpenDaylight, please ensure OpenDaylight listens to the ports:6633,6653, 6640 and 8080
+
+TIP: Please allow the ports in firewall for the devstack to be able to communicate with OpenDaylight.
+
+NOTE:
+
+* 6633/6653 - OpenFlow Ports
+* 6640 - Open vSwitch Manager Port
+* 8282 - Port for REST API
+
+ * The contents of "90-vtn-neutron.xml" should be as follows:
 
 
 bridgename=br-int
@@ -95,7 +122,7 @@ protocols=OpenFlow13
 failmode=secure
 
  * The values of the configuration parameters must be changed based on the user environment.
- * Especially, "portname" should be carefully configured, because if the value is wrong, OpenDaylight controller fails to forward packets.
+ * Especially, "portname" should be carefully configured, because if the value is wrong, OpenDaylight fails to forward packets.
  * Other parameters works fine as is for general use cases.
  ** bridgename
  *** The name of the bridge in Open vSwitch, that will be created by OpenDaylight Controller.
@@ -103,7 +130,7 @@ failmode=secure
  ** portname
  *** The name of the port that will be created in the vbridge in Open vSwitch.
  *** This must be the same name of the interface of OpenStack Nodes which is used for interconnecting OpenStack Nodes in data plane.(in our case:eth1)
- *** By default, if vtn.ini is not created, VTN uses ens33 as portname.
+ *** By default, if 90-vtn-neutron.xml is not created, VTN uses ens33 as portname.
  ** protocols
  *** OpenFlow protocol through which OpenFlow Switch and Controller communicate.
  *** The values can be OpenFlow13 or OpenFlow10.
@@ -111,26 +138,11 @@ failmode=secure
  *** The value can be "standalone" or "secure".
  *** Please use "secure" for general use cases.
 
-====  Start OpenDaylight
-
- * Please install the feature *odl-vtn-manager-neutron* that provides the integration with Neutron interface.
-
-feature:install odl-vtn-manager-neutron
-
-TIP: After running OpenDaylight, please ensure OpenDaylight listens to the ports:6633,6653, 6640 and 8080
-
-TIP: Please allow the ports in firewall for the devstack to be able to communicate with OpenDaylight.
-
-NOTE:
-* 6633/6653 - OpenFlow Ports
-* 6640 - Open vSwitch Manager Port
-* 8282 - Port for REST API
-
 ====  Devstack Setup
 
 ===== VTN Devstack Script
 * The local.conf is a user-maintained settings file. This allows all custom settings for DevStack to be contained in a single file. This file is processed strictly in sequence.
-The following datas are needed to be set in the local.conf file:
+The following data are needed to be set in the local.conf file:
 * Set the Host_IP as the detection is unreliable.
 * Set FLOATING_RANGE to a range not used on the local network, i.e. 192.168.1.224/27. This configures IP addresses ending in 225-254 to be used as floating IPs.
 * Set FLAT_INTERFACE to the Ethernet interface that connects the host to your local network. This is the interface that should be configured with the static IP address mentioned above.
@@ -342,18 +354,20 @@ NOTE:
 ** git clone https://git.openstack.org/openstack-dev/devstack;
 * Switch to stable/Juno Version branch
 ** cd devstack
-** git checkout stable/juno
+
+
+   git checkout stable/juno
 
 NOTE:
    If you want to use stable/kilo Version branch, Please execute the below command in devstack folder
-   
-   
+
+
    git checkout stable/kilo
 
 NOTE:
    If you want to use stable/liberty Version branch, Please execute the below command in devstack folder
-   
-   
+
+
    git checkout stable/liberty
 
 ===== Stack Control Node
@@ -393,7 +407,7 @@ NOTE:
 * The output of the ovs-vsctl show will be similar to the one seen in control node.
 
 ===== Additional Verifications
-* Please visit the OpenDaylight DLUX GUI after stacking all the nodes, http://<ODL_IP_ADDRESS>:8181/dlux/index.html. The switches, topology and the ports that are currently read can be validated.
+* Please visit the OpenDaylight DLUX GUI after stacking all the nodes, http://<ODL_IP_ADDRESS>:8181/index.html. The switches, topology and the ports that are currently read can be validated.
 
 TIP: If the interconnected between the Open vSwitch is not seen, Please bring up the interface for the dataplane manually using the below comamnd
 
