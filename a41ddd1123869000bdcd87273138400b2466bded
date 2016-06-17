@@ -1,0 +1,234 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba51214e_94776002",
+        "filename": "manuals/user-guide/src/main/asciidoc/nic/NIC_How_To_configure_Log_Action.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-06-17T14:06:47Z",
+      "side": 1,
+      "message": "This part seems the same same as all the other How Tos, can we combine them into one section at the top?",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 4
+      },
+      "revId": "a41ddd1123869000bdcd87273138400b2466bded",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba51214e_543f8825",
+        "filename": "manuals/user-guide/src/main/asciidoc/nic/NIC_How_To_configure_QoS_Attribute_Mapping.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-06-17T14:06:47Z",
+      "side": 1,
+      "message": "be forwarded normally, but allows for packet header fields, e.g., DSCP, to be modified.",
+      "range": {
+        "startLine": 10,
+        "startChar": 31,
+        "endLine": 11,
+        "endChar": 37
+      },
+      "revId": "a41ddd1123869000bdcd87273138400b2466bded",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba51214e_343c942f",
+        "filename": "manuals/user-guide/src/main/asciidoc/nic/NIC_How_To_configure_QoS_Attribute_Mapping.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-06-17T14:06:47Z",
+      "side": 1,
+      "message": "The following",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 9
+      },
+      "revId": "a41ddd1123869000bdcd87273138400b2466bded",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba51214e_346ad41a",
+        "filename": "manuals/user-guide/src/main/asciidoc/nic/NIC_How_To_configure_QoS_Attribute_Mapping.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-06-17T14:06:47Z",
+      "side": 1,
+      "message": "This part seems the same same as all the other How Tos, can we combine them into one section at the top?",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 54,
+        "endChar": 4
+      },
+      "revId": "a41ddd1123869000bdcd87273138400b2466bded",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba51214e_944920d3",
+        "filename": "manuals/user-guide/src/main/asciidoc/nic/NIC_How_To_configure_Redirect_Action.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-06-17T14:06:47Z",
+      "side": 1,
+      "message": "The following",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 9
+      },
+      "revId": "a41ddd1123869000bdcd87273138400b2466bded",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba51214e_74460cc1",
+        "filename": "manuals/user-guide/src/main/asciidoc/nic/NIC_How_To_configure_Redirect_Action.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-06-17T14:06:47Z",
+      "side": 1,
+      "message": "Does it make sense to move this into the NIC repository in the long run?",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 59
+      },
+      "revId": "a41ddd1123869000bdcd87273138400b2466bded",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba51214e_d41278b3",
+        "filename": "manuals/user-guide/src/main/asciidoc/nic/NIC_How_To_configure_Redirect_Action.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-06-17T14:06:47Z",
+      "side": 1,
+      "message": "Since this is the same in all the How To docs, does it make sense to move it up to the top?",
+      "range": {
+        "startLine": 46,
+        "startChar": 0,
+        "endLine": 59,
+        "endChar": 4
+      },
+      "revId": "a41ddd1123869000bdcd87273138400b2466bded",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba51214e_d479d8fd",
+        "filename": "manuals/user-guide/src/main/asciidoc/nic/NIC_How_To_configure_VTN_Renderer.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-06-17T14:06:47Z",
+      "side": 1,
+      "message": "be forwarded normally.",
+      "range": {
+        "startLine": 9,
+        "startChar": 31,
+        "endLine": 9,
+        "endChar": 36
+      },
+      "revId": "a41ddd1123869000bdcd87273138400b2466bded",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba51214e_b47ee4e2",
+        "filename": "manuals/user-guide/src/main/asciidoc/nic/NIC_How_To_configure_VTN_Renderer.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-06-17T14:06:47Z",
+      "side": 1,
+      "message": "preventing it from being forwarded.",
+      "range": {
+        "startLine": 10,
+        "startChar": 29,
+        "endLine": 10,
+        "endChar": 37
+      },
+      "revId": "a41ddd1123869000bdcd87273138400b2466bded",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba51214e_f4885ce9",
+        "filename": "manuals/user-guide/src/main/asciidoc/nic/NIC_How_To_configure_VTN_Renderer.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-06-17T14:06:47Z",
+      "side": 1,
+      "message": "This part seems the same same as all the other How Tos, can we combine them into one section at the top?",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 4
+      },
+      "revId": "a41ddd1123869000bdcd87273138400b2466bded",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
