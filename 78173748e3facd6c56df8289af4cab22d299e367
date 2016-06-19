@@ -1,4 +1,22 @@
 {
   "pushCert": "certificate version 0.1\npusher F566C9B1 1466186900 -0400\npushee ssh://git.opendaylight.org:29418/docs.git\nnonce 1466186900-86085CE8187182F761A3D919FDA62E0C41F12A4A\n\n0000000000000000000000000000000000000000 78173748e3facd6c56df8289af4cab22d299e367 refs/publish/master/32529\n-----BEGIN PGP SIGNATURE-----\nVersion: GnuPG v1\n\niQIcBAABAgAGBQJXZDyUAAoJEF3VDEv1ZsmxreQP/iBfAJmXELM2M3asV+SGbU7k\nK1dsmAuTPv8BzOfs+y4OgyJvF4Hz5VpUIGWtmiZu3zD7kBZrNkRAtESK/68o1chn\nHDHk7HJEGU8WT1H4F/Nso9zwY7z0+6B8X+Vas6VtoBuj3Ib17f8jlIkR6CgAvD05\ndq4oEA4/C7PTwhnIbV14O6TJgF/xVF1POL+H1fv0a1ktS42vF8+Z/THoyeXEGPyj\n+wONTKCUnTqgj1AGq3SJXJ+IDoTXPCXdsrYxGyvb+FmwPKJYMzTw9ORc2Dc3woKv\njw5LZ2vzN+x0Tx3EMarEx2cjARVgif12MeWN6DazmPpkbrKqizOfXOW1/taT3mPA\nG10/TCjJvKD2ffT9FZjWcevADozMCQ6+bXQLYrbAGeBhPVpGGQhpPimKxEJGoa1g\nn7Xda9PHMOgkNkr11foVLYlpqJsOxj+2v8LJcaBe9sOPWBckZFTz0F12lbSsqcaJ\nyR5CKhxmvSCb9B00EwjId7T6MH44gFohnmfRywjzP4kg83atwawPrqUelznkerOS\ns+rYNJ0FVPrymLJwFGM4l9N/FxP8jRE6gG65nnhGo5dXDjw1KXXs8R+npcLBczXq\nVoPKprQi/aahE6J4WB/TmSKQ5vyswrzREdkSP8bIx1l19WKQNVQVmEIEJ801xVE2\n2qt/v6w6GMVcSGl1/Hu+\n\u003da+0S\n-----END PGP SIGNATURE-----\n",
-  "comments": []
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba51214e_7a90b5ec",
+        "filename": "manuals/user-guide/src/main/asciidoc/didm/didm-user.adoc",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3994
+      },
+      "writtenOn": "2016-06-19T15:58:04Z",
+      "side": 1,
+      "message": "I\u0027m not sure about the change sin both files. The contents in green below were already aded in Be release right?",
+      "revId": "78173748e3facd6c56df8289af4cab22d299e367",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
 }
