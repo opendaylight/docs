@@ -1,4 +1,39 @@
 {
   "pushCert": "certificate version 0.1\npusher F566C9B1 1466456935 -0400\npushee ssh://git.opendaylight.org:29418/docs.git\nnonce 1466456935-42146BB1BA0477A18DD0F230B28CD844F43E2E41\n\n0000000000000000000000000000000000000000 1b876399a3924b1535ade82ef2b3b25d58c424af refs/publish/master/31228\n-----BEGIN PGP SIGNATURE-----\nVersion: GnuPG v1\n\niQIcBAABAgAGBQJXaFtnAAoJEF3VDEv1ZsmxrHwP/jxC/KQD7YEZjlpaUa9g9MmF\n9O9QI3iYb1kne5sPhA+hsEI9D5THph3OFgPANrs5TbzxmuayZinYtuJDvCbcmeDY\nGEqqQjQc/RMfTaulY2yZtADfCYG7SAJrIiX57TgTQDKGmTIzHaXSKpMwqlcFXAic\nnMlMcnLdt363wOvPqfgJcN84oJbYy9/FIfOKY4EtHN2vBBE9ge4i1dcd77lhJEcG\n8ElzSMOlt0oAt2GjCZjcdo2mvAuKD7h3ILLWCifngidJty6H/X7iMJdsIIQxnrQC\nwDaF0aqZteFWhes/7SQpGW2tAl6DHpCdvIJiSzwGQ3bAoabTNJWvw6LbC3n0TVlT\nA9W05jNkMr8tmbBuxeE2KQSE6U8KaMW+c+Asok7dfnKppt9yVgXnFdsWHc7+wzlK\nziZjltM+TJRasnWkmRfYrSq3lp0TUr0U8w2OCWSvEQQZiQMzEpNHTp3/+2dHIrnJ\nD9FAmnFd3qbgCSjLD4tpxSdjlzUN75t/DhQLkEsQOfMF3IbgkeHOpR+c/5MJsX+6\nYY2GMlJjDJHx6KDH7LPp2+U6/aZQCtmZ1fnbxIVm+ZPDm424N+5DckgYLQzLvs8B\nbzylkXgUheioNgaT0IS/ACy99nBM5l8LpYJOHDZZr4GBFB82zVRGDkXZCS8PtKcg\nvop46ucBYjZm5mfUOrwm\n\u003dvgVY\n-----END PGP SIGNATURE-----\n",
-  "comments": []
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba51214e_29b559ee",
+        "filename": "manuals/developer-guide/src/main/asciidoc/faas/odl-faas-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-06-20T21:10:40Z",
+      "side": 1,
+      "message": "Is it coming?",
+      "revId": "1b876399a3924b1535ade82ef2b3b25d58c424af",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba51214e_09ba15de",
+        "filename": "manuals/developer-guide/src/main/asciidoc/faas/odl-faas-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-06-20T21:10:40Z",
+      "side": 1,
+      "message": "Is it coming?",
+      "revId": "1b876399a3924b1535ade82ef2b3b25d58c424af",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
 }
