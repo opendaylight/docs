@@ -1,4 +1,39 @@
 {
   "pushCert": "certificate version 0.1\npusher F566C9B1 1466454544 -0400\npushee ssh://git.opendaylight.org:29418/docs.git\nnonce 1466454544-DDB5BB7CE1304E79F0DB432D841DFB921B9B3638\n\n0000000000000000000000000000000000000000 b77cee1ac48e213ba96fdfb0dcc59c1eab2df70e refs/publish/master/32399\n-----BEGIN PGP SIGNATURE-----\nVersion: GnuPG v1\n\niQIcBAABAgAGBQJXaFIQAAoJEF3VDEv1ZsmxWzsP+gOnP+/hfEdU7KDMUABK8LAz\nwPPbWy0swbDSgdb6RaadbHBI3S71ZFGRoPhVu8OzHjpWwrclx2vHz5wY9Tjodj5R\nUpYxEdNBFhHICB2FUt2q0tgtF0efLUm+WCzevWmcRpcoAXE3Sl632M81FOritNep\nWtsqMJZ1h7nDThNZhZYtceKaUea2GyOWkg0+p/LSV+cT8EezC5yRGE+KsbCWdTTE\nglaCtUxPsTCHfA4vGep7ixlugX4YV+WudanzmLssa66rtUYhqUUY28ue9WpeIZzH\nKDzPu+wmPxXhPE8TPsHv6rNKzpRdHzDjowdzm5BhvUfHI4z+g77qlp9H0mbO0Yhi\n6wlpWIEtWhyT5+D0dRlIKIbHXDQZJ3ZTH5ZVdmjt6Zqcko3Df4+OMHwp1/BdeNL2\nJXnXRzDVgAQ6sEMp/7/z4lrRwCj3JeONwl5PTfgAuFzlRw0FuYVoZfFYErpLkxGJ\nyTYOIHv7AKu82f0/GaPhdSLI6Ibz6u/MW8fPR9A77G/61K15CwjyzpgJ8Ci6dzvX\n/rkw2lCKE0WbWHzYr9UGKkaZsmhSjhAIdHfWukf+7+gITTXl3NWBh3Mb77S4xhGX\nCbxtGxf86IaqsLS+zxBvDInyURD55cUtQELOfxyaaBYWjFOZp8X7FUHBIv8Z46qd\ntdkxj5OWW33IQ7gEi3kD\n\u003d8Iip\n-----END PGP SIGNATURE-----\n",
-  "comments": []
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba51214e_0915f5f0",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/bk-getting-started-guide.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-06-20T20:31:35Z",
+      "side": 1,
+      "message": "Maybe remove this, see other comment.",
+      "revId": "b77cee1ac48e213ba96fdfb0dcc59c1eab2df70e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba51214e_69f911c8",
+        "filename": "manuals/getting-started-guide/src/main/asciidoc/nemo/nemo-engine-installation-guide.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-06-20T20:31:35Z",
+      "side": 1,
+      "message": "Do you actually need this part of the guide at all? In general, all you\u0027re doing is describing the 3 features. Instead, we have a patch that lists all the features available here: https://git.opendaylight.org/gerrit/#/c/35206/\n\nIt avoids duplicating a lot of extra information.\n\nMy suggestion would be to remove this part in favor of that.",
+      "revId": "b77cee1ac48e213ba96fdfb0dcc59c1eab2df70e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
 }
