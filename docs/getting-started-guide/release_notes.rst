@@ -1,12 +1,11 @@
-== OpenDaylight Release Notes
+Release Notes
+=============
 
-// NOTE: If you are editing this file, please try to keep it in sync
-//       with the wiki here:
-// https://wiki.opendaylight.org/view/Simultaneous_Release/Beryllium/Release_Notes
+Target Environment
+------------------
 
-=== Target Environment
-
-==== For Execution
+For Execution
+^^^^^^^^^^^^^
 
 The OpenDaylight Karaf container, OSGi bundles, and Java class files
 are portable and should run on any Java 7- or Java 8-compliant JVM to
@@ -15,6 +14,7 @@ additional requirements. Those are noted in the project-specific
 release notes.
 
 Projects and features which have known additional requirements are:
+
 * TCP-MD5 requires 64-bit Linux
 * TSDR has extended requirements for external databases
 * Persistence has extended requirements for external databases
@@ -26,15 +26,14 @@ Projects and features which have known additional requirements are:
 * AAA when using federation has additional requirements for external tools
 * VTN has components which require Linux
 
-NOTE: If you are using the Oracle JDK, version 1.7.0_45 or later is required.
-
-==== For Development
+For Development
+^^^^^^^^^^^^^^^
 
 OpenDaylight is written primarily in Java project and primarily uses
 Maven as a build tool Consequently the two main requirements to develop
 projects within OpenDaylight are:
 
-* A Java 7- or Java 8-compliant JDK
+* A Java 8-compliant JDK
 * Maven 3.1.1 or later
 
 Applications and tools built on top of OpenDaylight using it's REST
@@ -49,29 +48,32 @@ The projects with additional requirements for execution typically have
 similar or more extensive additional requirements for development. See
 the project-specific release notes for details.
 
-=== Known Issues and Limitations
+Known Issues and Limitations
+----------------------------
 
 Other than as noted in project-specific release notes, we know of the
 following limitations:
 
-. Migration from Helium and Lithium to Beryllium has not been
-extensively tested. The per-project release notes include migration and
-compatibility information when it is known.
-. There are scales beyond which the controller has been unreliable when
-collecting flow statistics from OpenFlow switches. In tests, these
-issues became apparent when managing thousands of OpenFlow
-switches, however this may vary depending on deployment and use cases.
+* Migration from Helium, Lithium and Beryllium to Boron has not been
+  extensively tested. The per-project release notes include migration and
+  compatibility information when it is known.
+* There are scales beyond which the controller has been unreliable when
+  collecting flow statistics from OpenFlow switches. In tests, these
+  issues became apparent when managing thousands of OpenFlow
+  switches, however this may vary depending on deployment and use cases.
 
-=== Project-specific Release Notes
+Project-specific Release Notes
+------------------------------
 
 For the release notes of individual projects, please see the following pages on the OpenDaylight Wiki.
 
-TBD: add Beryllium release notes
+TBD: add Boron release notes
 
-==== Projects without Release Notes
+Projects without Release Notes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The following projects participated in Beryllium, but intentionally do not have release notes.
+The following projects participated in Boron, but intentionally do not have release notes.
 
-* *Documentation Project* produced this and the other downloadable documentation
-* *Integration Group* hosted the OpenDaylight-wide tests and main release distribution
-* *Release Engineering - autorelease* was used to build the Beryllium release artifacts and including the main release download.
+* **Documentation Project** produced this and the other downloadable documentation
+* **Integration Group** hosted the OpenDaylight-wide tests and main release distribution
+* **Release Engineering - autorelease** was used to build the Boron release artifacts and including the main release download.
