@@ -1,4 +1,22 @@
 {
   "pushCert": "certificate version 0.1\npusher F566C9B1 1466191451 -0400\npushee ssh://git.opendaylight.org:29418/docs.git\nnonce 1466191451-08D2A2245202AAD24A5E6440E9705A1418882075\n\n0000000000000000000000000000000000000000 85fe747ce9ad8c0f5379462cec07d79429c47388 refs/publish/stable/lithium/openflowplugin\n-----BEGIN PGP SIGNATURE-----\nVersion: GnuPG v1\n\niQIcBAABAgAGBQJXZE5bAAoJEF3VDEv1ZsmxOqsP/2b+9HsN9igPYc0fCByJdrO2\nqHL6SAxKSuXXNmglp/WxARau7bRcVPoDjGMdQyaPlSIxNcUkcOGRooY7mYgE5AzI\n3/SC6c/W02y9mYX64ke8BWGLU49777ePRvzxMuDk4ebnpQV0EJJ/vz2i7UPtvPRV\nGs0z8u180jVQQndHxNtMW3WNyQnLIGUtudJQJpjVhJVLB92VrUU0YdEsUFNytFsZ\nWHvAgg4M376E3I83YjM/MG6p6avvhvo+vJzrcn65VtQCpwjXaClgY0/asXNj2m3F\naySYnM7HJCYikwRF0ROAJ1sLhp1nW0T89RtBBLNK1TKpMq2p5xaEFpeps6sLrtqy\nWiaJl9SWgQl8g42Qh2LGpIF/x5zTFHJAIsDWtQgEtmUewEv3y/i84WsmOFCwXt3y\noDR9UXEzbz8A9Q/Oq8OVW8Nq41dOF/LWYKbKxUZcVfbimFoO9H8l6QK7KTdfmdev\nUCYhRMsfBYraRD0e0L/G43bSGjZFHHpNGt6wjyelvNei6ajCrTlYCnYq8y67amhF\nYo/YM/zrsZ50esIWEojwYenVPYlOXwpfY1CWO5N9wEW03P8OFOgWfmof1VCWcosh\nX+O7rav0FP5xVSO7xGkFpgRZQO7Xx//hDcbECLQB2OAGryzMsnFeQE0vrXePTmvU\nPtuqla8sz/BB7WhFhNWv\n\u003d4GYt\n-----END PGP SIGNATURE-----\n",
-  "comments": []
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba51214e_4f3a4ace",
+        "filename": "manuals/developer-guide/src/main/asciidoc/openflowplugin/odl-ofp-config-subsystem.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2016-06-21T19:51:15Z",
+      "side": 1,
+      "message": "Please cleanup trailing whitespace in this file.",
+      "revId": "85fe747ce9ad8c0f5379462cec07d79429c47388",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
 }
