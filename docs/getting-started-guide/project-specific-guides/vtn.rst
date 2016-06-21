@@ -1,6 +1,8 @@
-== VTN Installation Guide
+VTN Installation Guide
+======================
 
-=== Overview
+Overview
+--------
 
 OpenDaylight Virtual Tenant Network (VTN) is an application that provides multi-tenant virtual network on an SDN controller.
 
@@ -12,100 +14,128 @@ VTN allows the users to define the network with a look and feel of conventional 
 
 It is implemented as two major components
 
-* <<_vtn_manager,VTN Manager>>
-* <<_vtn_coordinator,VTN Coordinator>>
+* :ref:`vtn_manager`
+* :ref:`vtn_coordinator`
 
-==== VTN Manager
+.. _vtn_manager:
+
+VTN Manager
+^^^^^^^^^^^
+
 An OpenDaylight Plugin that interacts with other modules to implement the components of the VTN model. It also provides a REST interface to configure VTN components in OpenDaylight. VTN Manager is implemented as one plugin to the OpenDaylight. This provides a REST interface to create/update/delete VTN components. The user command in VTN Coordinator is translated as REST API to VTN Manager by the OpenDaylight Driver component. In addition to the above mentioned role, it also provides an implementation to the OpenStack L2 Network Functions API.
 
-==== VTN Coordinator
+.. _vtn_coordinator:
+
+VTN Coordinator
+^^^^^^^^^^^^^^^
 
 The VTN Coordinator is an external application that provides a REST interface for an user to use OpenDaylight VTN Virtualization. It interacts with VTN Manager plugin to implement the user configuration. It is also capable of multiple OpenDaylight orchestration. It realizes VTN provisioning in OpenDaylight instances. In the OpenDaylight architecture VTN Coordinator is part of the network application, orchestration and services layer. VTN Coordinator will use the REST interface exposed by the VTN Manger to realize the virtual network using OpenDaylight. It uses OpenDaylight APIs (REST) to construct the virtual network in OpenDaylight instances. It provides REST APIs for northbound VTN applications and supports virtual networks spanning across multiple OpenDaylight by coordinating across OpenDaylight.
 
-=== Preparing for Installation
+Preparing for Installation
+--------------------------
 
-==== VTN Coordinator
+VTN Manager
+^^^^^^^^^^^
 
-* Arrange a physical/virtual server with any one of the supported 64-bit OS environment.
-** RHEL 7
-** CentOS 7
-** Fedora 20 / 21 / 22
+Follow the instructions in :ref:`install_odl`.
 
-* Install these packages
+VTN Coordinator
+^^^^^^^^^^^^^^^
 
-  yum install perl-Digest-SHA uuid libxslt libcurl unixODBC json-c bzip2
+#. Arrange a physical/virtual server with any one of the supported 64-bit OS environment.
 
-  rpm -ivh http://yum.postgresql.org/9.3/redhat/rhel-6-x86_64/pgdg-redhat93-9.3-1.noarch.rpm
+   * RHEL 7
+   * CentOS 7
+   * Fedora 20 / 21 / 22
 
-  yum install postgresql93-libs postgresql93 postgresql93-server postgresql93-contrib postgresql93-odbc
+#. Install these packages::
 
-=== Installing VTN
+      yum install perl-Digest-SHA uuid libxslt libcurl unixODBC json-c bzip2
+      rpm -ivh http://yum.postgresql.org/9.3/redhat/rhel-6-x86_64/pgdg-redhat93-9.3-1.noarch.rpm
+      yum install postgresql93-libs postgresql93 postgresql93-server postgresql93-contrib postgresql93-odbc
 
-==== VTN Manager
+Installing VTN
+--------------
 
-Install Feature
+VTN Manager
+^^^^^^^^^^^
 
-  feature:install odl-vtn-manager-neutron odl-vtn-manager-rest
+Install Feature::
 
-NOTE: The above command will install all features of VTN Manager.
-      You can install only REST or Neutron also.
+   feature:install odl-vtn-manager-neutron odl-vtn-manager-rest
 
-==== VTN Coordinator
+.. note:: The above command will install all features of VTN Manager.
+          You can install only REST or Neutron also.
 
-* Enter into the externalapps directory in the top directory of Beryllium
+VTN Coordinator
+^^^^^^^^^^^^^^^
 
-  cd distribution-karaf-0.4.0-Beryllium/externalapps
+* Enter into the externalapps directory in the top directory of Beryllium::
 
-* Run the below command to extract VTN Coordinator from the tar.bz2 file in the externalapps directory.
+     cd distribution-karaf-0.4.0-Beryllium/externalapps
 
-  tar –C/ -jxvf distribution.vtn-coordinator-6.2.0-Beryllium-bin.tar.bz2
+* Run the below command to extract VTN Coordinator from the tar.bz2 file in the externalapps directory::
+
+     tar –C/ -jxvf distribution.vtn-coordinator-6.2.0-Beryllium-bin.tar.bz2
 
 This will install VTN Coordinator to /usr/local/vtn directory.
 The name of the tar.bz2 file name varies depending on the version. Please give the same tar.bz2 file name which is there in your directory.
 
-* Configuring database for VTN Coordinator
+* Configuring database for VTN Coordinator::
 
-  /usr/local/vtn/sbin/db_setup
+     /usr/local/vtn/sbin/db_setup
 
-* To start the Coordinator
+* To start the Coordinator::
 
-  /usr/local/vtn/bin/vtn_start
+     /usr/local/vtn/bin/vtn_start
 
 Using VTN REST API:
 
-Get the version of VTN REST API using the below command, and make sure the setup is working.
+Get the version of VTN REST API using the below command, and make sure the setup is working::
 
-  curl --user admin:adminpass -H 'content-type: application/json' -X GET http://<VTN_COORDINATOR_IP_ADDRESS>:8083/vtn-webapi/api_version.json
+   curl --user admin:adminpass -H 'content-type: application/json' -X GET http://<VTN_COORDINATOR_IP_ADDRESS>:8083/vtn-webapi/api_version.json
 
-The response should be like this, but version might differ:
+The response should be like this, but version might differ::
 
-  {"api_version":{"version":"V1.2"}}
+   {"api_version":{"version":"V1.2"}}
 
-=== Verifying your Installation
+Verifying your Installation
+---------------------------
 
-==== VTN Manager
+VTN Manager
+^^^^^^^^^^^
 
-* In the karaf prompt, type the below command to ensure that vtn packages are installed.
+* In the karaf prompt, type the below command to ensure that vtn packages are installed::
 
-  feature:list | grep vtn
+     feature:list | grep vtn
 
-* Run any VTN Manager REST API
+* Run any VTN Manager REST API::
 
-  curl --user "admin":"admin" -H "Accept: application/json" -H "Content-type: application/json" -X GET http://localhost:8181/restconf/operational/vtn:vtns
+     curl --user "admin":"admin" -H "Accept: application/json" -H "Content-type: application/json" -X GET http://localhost:8181/restconf/operational/vtn:vtns
 
-==== VTN Coordinator
+VTN Coordinator
+^^^^^^^^^^^^^^^
 
-* ps –ef | grep unc will list all the vtn apps
-* Run any REST API for VTN Coordinator version
+.. code-block:: shell
 
-=== Uninstalling VTN
+   ps –ef | grep unc will list all the vtn apps
+   Run any REST API for VTN Coordinator version
 
-==== VTN Manager
+Uninstalling VTN
+----------------
 
-  Feature:uninstall odl-vtnmanager-all
+VTN Manager
+^^^^^^^^^^^
 
-==== VTN Coordinator
+.. code-block:: shell
 
-  /usr/local/vtn/bin/vtn_stop
+   feature:uninstall odl-vtnmanager-all
 
-  Remove the usr/local/vtn folder
+VTN Coordinator
+^^^^^^^^^^^^^^^
+
+#. Stop VTN::
+
+      /usr/local/vtn/bin/vtn_stop
+
+#. Remove the ``usr/local/vtn`` folder

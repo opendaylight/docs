@@ -70,16 +70,6 @@ include::ch-clustering.adoc[]
 
 include::chapter_security_considerations.adoc[]
 
-= Project-specific Installation Guides
-
-include::opflex/agent-ovs-install.adoc[]
-
-include::ovsdb/ovsdb-install.adoc[]
-
-include::tsdr/tsdr-installation-guide.adoc[]
-
-include::vtn/vtn-install.adoc[]
-
 :numbered!:
 
 //////////////////////////

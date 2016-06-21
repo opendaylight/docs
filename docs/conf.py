@@ -291,6 +291,7 @@ linkcheck_ignore = [
     'https://jenkins.opendaylight.org/releng',
     'https://jenkins.opendaylight.org/sandbox',
     'http://\$CONTROL_HOST:8181/dlux/index.html',
+    'http://\$your-karaf-ip:8181/index.html',
     # The '#' in the path makes sphinx think it's an anchor
     'https://git.opendaylight.org/gerrit/#/admin/projects/releng/builder',
 ]
