@@ -1,4 +1,22 @@
 {
   "pushCert": "certificate version 0.1\npusher F566C9B1 1466550411 -0700\npushee ssh://git.opendaylight.org:29418/docs.git\nnonce 1466550388-D0EF294A85071FDD6A4564B185A7E173B27C9B71\n\n0000000000000000000000000000000000000000 5822bb249849b0d7433bdc2d84fd6d59f6641d18 refs/publish/master/YangIDEFirstDrafts\n-----BEGIN PGP SIGNATURE-----\nVersion: GnuPG v1\n\niQIcBAABAgAGBQJXaciLAAoJEF3VDEv1ZsmxiZQP/168WQ+Tnu/EobfBllzUCHrL\nA1+DxKqyo6b0lJ6Zn8l+NfFxA+BVoeQ4yCxNSsYUMpuc+HZMLD0itI9gO7posRgP\nx6UIKZJ9ITTDMZqbATfX0B9hvN/a2jg88QXGsvDe2/lGvY4qyewjrmCixFr8KP27\nxHHlVVy6QRXtdjDHSk2uf7eSAoqP+wlu+DGansV3Icy4ggUzw0GDPV61+KDBf+On\nwbTQKZBM56ihtDYhu9b4dIzbS7ZPhUVhj8+cw09M9mLB3JHgAF161gBrH7uIFm/M\nQv2Ny+NcPb0IYU0N8zUDQCNfzz7zDNnwC6Lv3NDbZ2z3BNMyG7REpJB0RvcxlQo4\nRhv92si47dF1ltFm574P1RQ0oKPGooqkvr4qxFEvDSW5I4odgEuhoiXlotdUBtEP\nlu/pNDhbO5S+DkVl/Ng0wh/tpGlpDPQFwbbjtDHmFaci2bwfYkR61HN3n0ut9V1h\n+DADZ4Gf09X9lHS5k9/V3O1J+mbzhZKU18TVYsu7dozGOvQ/rPOd10zYkaK/18bm\nLiXtzeFOAZmx0cTeKZQEIGY0Pe+C+pFfL37Vn0GxCPJNvikg1/6DQ49qx6nJQlbX\nVjWDvQqkFeLFBY1TVWMCnqW5/PnPLCsyC+dULdOEyyhJX+i/8UdWqXGf7X3GAFaN\nMwzJhxOU2UBeAIphwfq+\n\u003dxCrQ\n-----END PGP SIGNATURE-----\n",
-  "comments": []
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba51214e_6fc58e5a",
+        "filename": "docs/getting-started-guide/project-specific-guides/yangide.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 3576
+      },
+      "writtenOn": "2016-06-21T23:12:50Z",
+      "side": 1,
+      "message": "This is obviously wrong, but I believe this hasn\u0027t been determined yet.",
+      "revId": "5822bb249849b0d7433bdc2d84fd6d59f6641d18",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
 }
