@@ -9,9 +9,6 @@ For information on OVS, see http://openvswitch.org/[Open vSwitch].
 With OpenStack within the SDN context, controllers and applications interact using two channels: OpenFlow and OVSDB. OpenFlow addresses the forwarding-side of the OVS functionality. OVSDB, on the other hand, addresses the management-plane.
 A simple and concise overview of Open Virtual Switch Database (OVSDB) is available at: http://networkstatic.net/getting-started-ovsdb/
 
-=== Preparing for Installation
-Follow the instructions in <<_getting_and_installing_opendaylight,Getting and Installing OpenDaylight>>.
-
 === Installing OVSDB OpenStack
 Install the required features with the following command:
 -----

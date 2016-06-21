@@ -13,3 +13,4 @@ Getting Started Guide
    other_features
    api
    installing_opendaylight
+   release_notes
