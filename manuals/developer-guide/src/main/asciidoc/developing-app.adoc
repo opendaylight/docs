@@ -23,7 +23,7 @@ This example requires the following.
 ** Java 7- or Java 8-compliant JDK
 ** An appropriate Maven settings.xml file. A simple way to get the default OpenDaylight settings.xml file is:
 +
- cp -n ~/.m2/settings.xml{,.orig} ; \wget -q -O - https://raw.githubusercontent.com/opendaylight/odlparent/stable/lithium/settings.xml > ~/.m2/settings.xml
+ cp -n ~/.m2/settings.xml{,.orig} ; \wget -q -O - https://raw.githubusercontent.com/opendaylight/odlparent/stable/beryllium/settings.xml > ~/.m2/settings.xml
 
 NOTE: If you are using Linux or Mac OS X as your development OS, your local repository is ~/.m2/repository. For other platforms the local repository location will vary.
 
