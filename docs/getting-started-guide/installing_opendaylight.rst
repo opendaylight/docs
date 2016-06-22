@@ -522,23 +522,3 @@ Install support for REST APIs
 Most components that offer REST APIs will automatically load the RESTCONF API
 Support component, but if for whatever reason they seem to be missing, install
 the “odl-restconf” feature to activate this support.
-
-
-Install the DLUX interface
---------------------------
-OpenDaylight’s DLUX web interface draws information from topology and host
-databases to display information about the topology of the network, flow
-statistics, and host locations.
-
-To integrate with OpenDaylight you must enable the DLUX Karaf feature. Each
-feature can be enabled or disabled separately. Ensure that you have created a
-topology and enabled the MD-SAL feature in the Karaf distribution before you
-use DLUX for network management. For more information about enabling the Karaf
-features for DLUX, refer to Enable_DLUX_Feature_.
-
-MD-SAL clustering
------------------
-In the Beryllium release and newer, the odl-mdsal-broker installs MD-SAL
-clustering automatically.
-
-.. _Enable_DLUX_Feature: https://wiki.opendaylight.org/view/DLUX:Beryllium_System_Test_Plan#Enabling_The_Feature
