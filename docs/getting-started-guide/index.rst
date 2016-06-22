@@ -16,3 +16,5 @@ Getting Started Guide
    release_notes
    project-specific-guides/index
    common-features/index
+   security_considerations
+
