@@ -15,12 +15,11 @@ This first part of the user guide covers the basic user operations of the OpenDa
 
 include::ch-introduction.adoc[OpenDaylight Controller Overview]
 
-//TODO: these three includes are a hugely ugly hack that needs to go
-include::../../../../getting-started-guide/src/main/asciidoc/ch-dlux.adoc[]
+include::ch-dlux.adoc[]
 
-include::../../../../getting-started-guide/src/main/asciidoc/ch-xsql-commands.adoc[]
+include::ch-xsql-commands.adoc[]
 
-include::../../../../getting-started-guide/src/main/asciidoc/ch-clustering.adoc[]
+include::ch-clustering.adoc[]
 
 = Applications and Plugins
 
