@@ -6,14 +6,21 @@
 Welcome to the OpenDaylight Handbook!
 =====================================
 
+This handbook provides details on various aspects of OpenDaylight from the user
+guides to the developer guides and tries to act as a single point of contact
+for all documentation related articles in OpenDaylight. If you would like to
+contribute to the Handbook please refer to the :ref:`documentation-guide`.
+
 Contents:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
+
 
    getting-started-guide/index
    opendaylight-with-openstack/index
    submodules/releng/builder/docs/index
+   documentation
 
 Indices and tables
 ==================
