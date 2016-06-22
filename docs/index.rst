@@ -11,6 +11,7 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
+   documentation
    getting-started-guide/index
    opendaylight-with-openstack/index
    submodules/releng/builder/docs/index
