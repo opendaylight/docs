@@ -15,9 +15,9 @@ bundles. This feature is the core of the Topology Processing Framework and is re
 
 * topoprocessing-api - contains correlation definitions and definitions required for rendering
 * topoprocessing-spi - entry point for topoprocessing service (start and close)
-* topoprocessing-impl - contains base implementations of handlers, listeners, aggregators and filtrators
+* topoprocessing-impl - contains base implementations of handlers, listeners, aggregators and filters
 
-TopoProcessingProvider is the entry point for Topology Processing Framework. It requires a DataBroker instance. The DataBroker is needed for listener registration. There is also the TopologyRequestListener which listens on aggregated topology requests (placed into the configuration datastore) and UnderlayTopologyListeners which listen on underlay topology data changes (made in operational datastore). THe TopologyRequestHandler saves toporequest data and provides a method for translating a path to the specified leaf. When a change in the topology occurs, the registered UnderlayTopologyListener processes this information for further aggregation and/or filtration. Finally, after  an overlay topology is created, it is passed to the TopologyWriter, which writes this topology into operational datastore.
+TopoProcessingProvider is the entry point for Topology Processing Framework. It requires a DataBroker instance. The DataBroker is needed for listener registration. There is also the TopologyRequestListener which listens on aggregated topology requests (placed into the configuration datastore) and UnderlayTopologyListeners which listen on underlay topology data changes (made in operational datastore). The TopologyRequestHandler saves toporequest data and provides a method for translating a path to the specified leaf. When a change in the topology occurs, the registered UnderlayTopologyListener processes this information for further aggregation and/or filtration. Finally, after an overlay topology is created, it is passed to the TopologyWriter, which writes this topology into operational datastore.
 
 .Class relationship
 image::topoprocessing/TopologyRequestHandler_classesRelationship.png[width=500]

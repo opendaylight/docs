@@ -1,11 +1,10 @@
 ==== Chapter Overview
-The Topology Processing Framework allows for the creation of aggregated topologies and filtered views over existing topologies. Currently, aggregation and filtration is supported for topologies that follow https://github.com/opendaylight/yangtools/blob/master/model/ietf/ietf-topology/src/main/yang/network-topology%402013-10-21.yang[network-topology], opendaylight-inventory or i2rs model. When a request to create an aggregated or filtered topology is received, the framework creates one listener per underlay topology. Whenever any specified underlay topology is changed, the appropriate listener is triggered with the change and the change is processed. Two types of correlations (functionalities) are currently supported:
+The Topology Processing Framework allows the creation of aggregated topologies and filtered views over existing topologies. Currently, aggregation and filtration is supported for topologies that follow https://github.com/opendaylight/yangtools/blob/master/model/ietf/ietf-topology/src/main/yang/network-topology%402013-10-21.yang[network-topology], opendaylight-inventory or i2rs model. When a request to create an aggregated or filtered topology is received, the framework creates one listener per underlay topology. Whenever any specified underlay topology is changed, the appropriate listener is triggered with the change and the change is processed. Two types of correlations (functionalities) are currently supported:
 
 * Aggregation
 ** Unification
 ** Equality
 * Filtration
-** NodeIpFiltration
 
 ==== Terminology
 We use the term underlay item (physical node) for items (nodes, links, termination-points) from underlay and overlay item (logical node) for items from overlay topologies regardless of whether those are actually physical network elements.
@@ -17,7 +16,7 @@ Aggregation is an operation which creates an aggregated item from two or more it
 First, each new underlay item is inserted into the proper topology store. Once the item is stored, the framework compares it (using the target field value) with all stored underlay items from underlay topologies. If there is a target-field match, a new overlay item is created containing pointers to all 'equal' underlay items. The newly created overlay item is also given new references to its supporting underlay items.
 
 .Equality case:
-If a item doesn't fulfill the equality condition with any other items, processing finishes after adding the item into topology store. It will stay there for future use, ready to create an aggregated item with a new underlay item, with which it would satisfy the equality condition.
+If an item doesn't fulfill the equality condition with any other items, processing finishes after adding the item into topology store. It will stay there for future use, ready to create an aggregated item with a new underlay item, with which it would satisfy the equality condition.
 
 .Unification case:
 An overlay item is created for all underlay items, even those which don't fulfill the equality condition with any other items. This means than an overlay item is created for every underlay item, but for items which satisfy the equality condition, an aggregated item is created.
@@ -60,15 +59,15 @@ First, the updated item is checked for presence in topology store:
 If an underlay node is supporting some overlay node, the overlay node is simply removed.
 
 ===== Default Filter Types
-There are seven types of default filtrators defined in the framework:
+There are seven types of default filters defined in the framework:
 
-* IPv4-address filtrator - checks if specified field is meets IPv4 address + mask criteria
-* IPv6-address filtrator - checks if specified field is meets IPv6 address + mask criteria
-* Specific number filtrator - check for specific number
-* Specific string filtrator - checks for specific string
-* Range number filtrator - checks if specified field is higher than provided minimum and lower than provided maximum
-* Range string filtrator - checks if specified field is alphabetically greater than provided minimum and alphabetically lower than provided maximum
-* Script filtrator - allows a user or application to implement their own filtrator
+* IPv4-address filter - checks if specified field meets IPv4 address + mask criteria
+* IPv6-address filter - checks if specified field meets IPv6 address + mask criteria
+* Specific number filter - check for specific number
+* Specific string filter - checks for specific string
+* Range number filter - checks if specified field is higher than provided minimum and lower than provided maximum
+* Range string filter - checks if specified field is alphabetically greater than provided minimum and alphabetically lower than provided maximum
+* Script filter - allows a user or application to implement their own filtrator
 
 ===== Register Custom Filtrator
 There might be some use case that cannot be achieved with the default filtrators. In these cases, the framework offers the possibility for a user or application to register a custom filtrator.

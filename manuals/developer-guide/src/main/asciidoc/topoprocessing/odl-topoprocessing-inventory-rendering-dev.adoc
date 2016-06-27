@@ -17,7 +17,7 @@ For the purpose of this guide we are going to render the following augmented fie
 ** current-speed
 ** maximum-speed
 
-We also want to preserve the node id and termination-point id from opendaylight-topology-inventory model, which is network-topology part of of the inventory model. 
+We also want to preserve the node ID and termination-point ID from opendaylight-topology-inventory model, which is network-topology part of the inventory model. 
 
 ==== Implementation
 There are two ways to implement support for your specific topology rendering:
@@ -28,7 +28,7 @@ There are two ways to implement support for your specific topology rendering:
 Regardless, a successful implementation must complete all of the following steps.
 
 ===== Step1 - Target Model Creation
-Because the network-topology mode does not have fields to store all desired data, it is necessary to create new model to render this extra data in to. For this guide we created the inventory-rendering model. The picture below shows how data will be rendered and stored.
+Because the network-topology node does not have fields to store all desired data, it is necessary to create new model to render this extra data in to. For this guide we created the inventory-rendering model. The picture below shows how data will be rendered and stored.
 
 .Rendering to the inventory-rendering model
 image::topoprocessing/Inventory_Rendering_Use_case.png[width=500]
@@ -74,7 +74,7 @@ There are seven mandatory interfaces or abstract classes that needs to be implem
 
 * TopoProcessingProvider - provides module registration
 * ModelAdapter - provides model specific instances
-* TopologyRequestListener - listens on changes in the configure datastore
+* TopologyRequestListener - listens on changes in the configuration datastore
 * TopologyRequestHandler - processes configuration datastore changes
 * UnderlayTopologyListener - listens for changes in the specific model
 * LinkTransaltor and NodeTranslator - used by OverlayItemTranslator to create NormalizedNodes from OverlayItems
@@ -84,7 +84,7 @@ The name convention we used was to add an abbreviation for the specific model to
 [IMPORTANT]
 ======
 * In the next sections, we use the terms TopologyRequestListener, TopologyRequestHandler, etc. without a prepended or appended abbreviation because the steps apply regardless of which specific model you are targeting.
-* If you wanted to implement rendering from inventory to network-topology, you can just copy-paste our module and additional changes will be required only in the output part.
+* If you want to implement rendering from inventory to network-topology, you can just copy-paste our module and additional changes will be required only in the output part.
 ======
 
 *Provider part*
