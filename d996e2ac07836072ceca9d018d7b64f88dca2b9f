@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a561d44_b4e8b97d",
+        "filename": "manuals/developer-guide/src/main/asciidoc/unimgr/odl-unimgr-channel-dev",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2567
+      },
+      "writtenOn": "2016-06-28T20:01:13Z",
+      "side": 1,
+      "message": "You might want to consider using code blocks, otherwise, the formatting of the code will not come out as you expect.  Also consider building the docs and viewing the output to ensure the formatting is as desired: http://powerman.name/doc/asciidoc",
+      "revId": "d996e2ac07836072ceca9d018d7b64f88dca2b9f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_54ccbd35",
+        "filename": "manuals/developer-guide/src/main/asciidoc/unimgr/odl-unimgr-channel-dev",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 2567
+      },
+      "writtenOn": "2016-06-28T20:01:13Z",
+      "side": 1,
+      "message": "You can\u0027t have empty sections: https://wiki.opendaylight.org/view/Documentation/Tools/AsciiDoc_Tips#You_can.27t_have_empty_sections",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 29
+      },
+      "revId": "d996e2ac07836072ceca9d018d7b64f88dca2b9f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_f4da31e8",
+        "filename": "manuals/developer-guide/src/main/asciidoc/unimgr/odl-unimgr-channel-dev",
+        "patchSetId": 5
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 2567
+      },
+      "writtenOn": "2016-06-28T20:01:13Z",
+      "side": 1,
+      "message": "You can\u0027t have empty sections: https://wiki.opendaylight.org/view/Documentation/Tools/AsciiDoc_Tips#You_can.27t_have_empty_sections",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 38
+      },
+      "revId": "d996e2ac07836072ceca9d018d7b64f88dca2b9f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_d4d72dbe",
+        "filename": "manuals/developer-guide/src/main/asciidoc/unimgr/odl-unimgr-channel-dev",
+        "patchSetId": 5
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 2567
+      },
+      "writtenOn": "2016-06-28T20:01:13Z",
+      "side": 1,
+      "message": "\"were made\"",
+      "range": {
+        "startLine": 28,
+        "startChar": 130,
+        "endLine": 28,
+        "endChar": 140
+      },
+      "revId": "d996e2ac07836072ceca9d018d7b64f88dca2b9f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
