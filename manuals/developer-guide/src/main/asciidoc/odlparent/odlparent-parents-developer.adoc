@@ -1,0 +1,22 @@
+=== Parent POMs
+
+==== Overview
+The ODL Parent component for OpenDaylight provides a number of Maven parent POMs which allow Maven projects to be
+easily integrated in the OpenDaylight ecosystem.
+Technically, the aim of projects in OpenDaylight is to produce Karaf features, and these parent projects provide common
+support for the different types of projects involved.
+
+These parent projects are: +
+
+* +odlparent-lite+ — the basic parent POM for Maven modules which don't produce artifacts (_e.g._ aggregator POMs)
+* +odlparent+ — the common parent POM for Maven modules containing Java code
+* +bundle-parent+ — the parent POM for Maven modules producing OSGi bundles
+* +features-parent+ — the parent POM for Maven modules producing Karaf features
+
+include::odlparent-odlparent-lite-developer.adoc[]
+
+include::odlparent-odlparent-developer.adoc[]
+
+include::odlparent-bundle-parent-developer.adoc[]
+
+include::odlparent-features-parent-developer.adoc[]

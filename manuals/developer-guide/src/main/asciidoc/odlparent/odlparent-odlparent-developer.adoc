@@ -1,0 +1,91 @@
+==== odlparent
+This inherits from +odlparent-lite+ and mainly provides dependency and plugin management for OpenDaylight projects.
+
+If you use any of the following libraries, you should rely on +odlparent+ to provide the appropriate versions: +
+
+* Akka (and Scala)
+* Apache Commons: +
+** +commons-codec+
+** +commons-fileupload+
+** +commons-io+
+** +commons-lang+
+** +commons-lang3+
+** +commons-net+
+* Apache Shiro
+* Guava
+* JAX-RS with Jersey
+* JSON processing: +
+** GSON
+** Jackson
+* Logging: +
+** Logback
+** SLF4J
+* Netty
+* OSGi: +
+** Apache Felix
+** core OSGi dependencies (+core+, +compendium+...)
+* Testing: +
+** Hamcrest
+** JSON assert
+** JUnit
+** Mockito
+** Pax Exam
+** PowerMock
+* XML/XSL: +
+** Xerces
+** XML APIs
+
+[NOTE]
+This list isn't exhaustive.
+It's also not cast in stone; if you'd like to add a new dependency (or migrate a dependency), please contact
+https://lists.opendaylight.org/mailman/listinfo/odlparent-dev[the mailing list].
+
++odlparent+ also enforces some Checkstyle verification rules. In particular, it enforces the common license header
+used in all OpenDaylight code:
+
+--------------------------------------
+/*
+ * Copyright © ${year} ${holder} and others.  All rights reserved.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ * and is available at http://www.eclipse.org/legal/epl-v10.html
+ */
+--------------------------------------
+
+where “+${year}+” is initially the first year of publication, then (after a year has passed) the first and latest years
+of publication, separated by commas (_e.g._ “2014, 2016”), and “+${holder}+” is the initial copyright holder (typically,
+the first author's employer).
+“All rights reserved” is optional.
+
+If you need to disable this license check, _e.g._ for files imported under another license (EPL-compatible of course),
+you can override the +maven-checkstyle-plugin+ configuration. +features-test+ does this for its
++CustomBundleUrlStreamHandlerFactory+ class, which is ASL-licensed:
+
+--------------------------------------
+<plugin>
+    <artifactId>maven-checkstyle-plugin</artifactId>
+    <executions>
+        <execution>
+            <id>check-license</id>
+            <goals>
+                <goal>check</goal>
+            </goals>
+            <phase>process-sources</phase>
+            <configuration>
+                <configLocation>check-license.xml</configLocation>
+                <headerLocation>EPL-LICENSE.regexp.txt</headerLocation>
+                <includeResources>false</includeResources>
+                <includeTestResources>false</includeTestResources>
+                <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
+                <excludes>
+                    <!-- Skip Apache Licensed files -->
+                    org/opendaylight/odlparent/featuretest/CustomBundleUrlStreamHandlerFactory.java
+                </excludes>
+                <failsOnError>false</failsOnError>
+                <consoleOutput>true</consoleOutput>
+            </configuration>
+        </execution>
+    </executions>
+</plugin>
+--------------------------------------
