@@ -1,0 +1,8 @@
+==== bundle-parent
+This inherits from +odlparent+ and enables functionality useful for OSGi bundles: +
+
+* +maven-javadoc-plugin+ is activated, to build the Javadoc JAR;
+* +maven-source-plugin+ is activated, to build the source JAR;
+* +maven-bundle-plugin+ is activated (including extensions), to build OSGi bundles (using the “bundle” packaging).
+
+In addition to this, JUnit is included as a default dependency in “test” scope.

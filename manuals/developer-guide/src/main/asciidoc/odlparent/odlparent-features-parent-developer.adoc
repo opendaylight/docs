@@ -1,0 +1,36 @@
+==== features-parent
+This inherits from +odlparent+ and enables functionality useful for Karaf features: +
+
+* +karaf-maven-plugin+ is activated, to build Karaf features — but for OpenDaylight, projects need to use “jar”
+  packaging (**not** “kar”);
+* +features.xml+ files are processed from templates stored in +src/main/features/features.xml+;
+* Karaf features are tested after build to ensure they can be activated in a Karaf container.
+
+The +features.xml+ processing allows versions to be ommitted from certain feature dependencies, and replaced with
+“+{{VERSION}}+”. For example:
+
+--------------------------------------
+<features name="odl-mdsal-${project.version}" xmlns="http://karaf.apache.org/xmlns/features/v1.2.0"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.2.0 http://karaf.apache.org/xmlns/features/v1.2.0">
+
+    <repository>mvn:org.opendaylight.odlparent/features-odlparent/{{VERSION}}/xml/features</repository>
+
+    [...]
+    <feature name='odl-mdsal-broker-local' version='${project.version}' description="OpenDaylight :: MDSAL :: Broker">
+        <feature version='${yangtools.version}'>odl-yangtools-common</feature>
+        <feature version='${mdsal.version}'>odl-mdsal-binding-dom-adapter</feature>
+        <feature version='${mdsal.model.version}'>odl-mdsal-models</feature>
+        <feature version='${project.version}'>odl-mdsal-common</feature>
+        <feature version='${config.version}'>odl-config-startup</feature>
+        <feature version='${config.version}'>odl-config-netty</feature>
+        <feature version='[3.3.0,4.0.0)'>odl-lmax</feature>
+        [...]
+        <bundle>mvn:org.opendaylight.controller/sal-dom-broker-config/{{VERSION}}</bundle>
+        <bundle start-level="40">mvn:org.opendaylight.controller/blueprint/{{VERSION}}</bundle>
+        <configfile finalname="${config.configfile.directory}/${config.mdsal.configfile}">mvn:org.opendaylight.controller/md-sal-config/{{VERSION}}/xml/config</configfile>
+    </feature>
+--------------------------------------
+
+As illustrated, versions can be ommitted in this way for repository dependencies, bundle dependencies and configuration
+files. They must be specified traditionally (either hard-coded, or using Maven properties) for feature dependencies.
