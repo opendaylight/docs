@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a561d44_39366204",
+        "filename": "manuals/developer-guide/src/main/asciidoc/odlparent/odlparent-bundle-parent-developer.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 3675
+      },
+      "writtenOn": "2016-06-28T16:56:48Z",
+      "side": 1,
+      "message": "TYPO: extensions",
+      "range": {
+        "startLine": 6,
+        "startChar": 48,
+        "endLine": 6,
+        "endChar": 58
+      },
+      "revId": "ca9e9319ab86bfe878623d65bf5a3599ba9e6b03",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a561d44_d9af662a",
         "filename": "manuals/developer-guide/src/main/asciidoc/odlparent/odlparent-features-developer.adoc",
         "patchSetId": 1
@@ -49,6 +72,23 @@
     },
     {
       "key": {
+        "uuid": "9a561d44_f92b4a92",
+        "filename": "manuals/developer-guide/src/main/asciidoc/odlparent/odlparent-features-developer.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 3675
+      },
+      "writtenOn": "2016-06-28T16:56:48Z",
+      "side": 1,
+      "message": "this is missing the version tag, although the version shouldn\u0027t be specified here, I think the tag should be mentioned",
+      "revId": "ca9e9319ab86bfe878623d65bf5a3599ba9e6b03",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a561d44_996dee07",
         "filename": "manuals/developer-guide/src/main/asciidoc/odlparent/odlparent-features-parent-developer.adoc",
         "patchSetId": 1
@@ -89,6 +129,29 @@
         "startChar": 68,
         "endLine": 2,
         "endChar": 75
+      },
+      "revId": "ca9e9319ab86bfe878623d65bf5a3599ba9e6b03",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_391dc274",
+        "filename": "manuals/developer-guide/src/main/asciidoc/odlparent/odlparent-features-parent-developer.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 3675
+      },
+      "writtenOn": "2016-06-28T16:56:48Z",
+      "side": 1,
+      "message": "doesn\u0027t seem required",
+      "range": {
+        "startLine": 5,
+        "startChar": 27,
+        "endLine": 5,
+        "endChar": 45
       },
       "revId": "ca9e9319ab86bfe878623d65bf5a3599ba9e6b03",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
