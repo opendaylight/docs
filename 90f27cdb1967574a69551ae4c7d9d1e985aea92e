@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a561d44_7dbc3d6d",
+        "filename": "manuals/developer-guide/src/main/asciidoc/odlparent/odlparent-odlparent-developer.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2016-06-29T21:13:45Z",
+      "side": 1,
+      "message": "How about adding more from https://wiki.opendaylight.org/view/OpenDaylight_Java_Style#Checkstyle as well here?\n\nPS: I\u0027d like to contribute myself to formal documentation, but am currently holding back just editing a JIRA like this, because I believe ODL Doc currently is not yet being \"surfaced\" automatically in a useful form.  I therefore contribute only to the Wiki now.  I refuse to maintain documentation in two place. I will contribute doc once we can see the resulting HTML easily built for review, and see the result under docs.opendaylight.org immediately after the merge. At that stage, I\u0027ll start to remove things from the Wiki and leave links to docs.opendaylight.org in it instead.",
+      "revId": "90f27cdb1967574a69551ae4c7d9d1e985aea92e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_1d7421fc",
+        "filename": "manuals/developer-guide/src/main/asciidoc/odlparent/odlparent-odlparent-lite-developer.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2016-06-29T21:13:45Z",
+      "side": 1,
+      "message": "Thanks for the shoutout! ;-)",
+      "revId": "90f27cdb1967574a69551ae4c7d9d1e985aea92e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
