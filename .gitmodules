@@ -2,3 +2,7 @@
 	path = docs/submodules/releng/builder
 	url = ../releng/builder
 	branch = master
+[submodule "docs/submodules/integration/test"]
+	path = docs/submodules/integration/test
+	url = ../integration/test/
+	branch = master
