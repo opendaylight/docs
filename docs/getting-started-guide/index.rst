@@ -15,3 +15,4 @@ Getting Started Guide
    installing_opendaylight
    release_notes
    project-specific-guides/index
+   common-features/index
