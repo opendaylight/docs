@@ -295,3 +295,9 @@ linkcheck_ignore = [
     # The '#' in the path makes sphinx think it's an anchor
     'https://git.opendaylight.org/gerrit/#/admin/projects/releng/builder',
 ]
+
+# Build integration stuff
+import subprocess
+
+subprocess.call(["./build-integration-robot-libdoc.sh"])
+
