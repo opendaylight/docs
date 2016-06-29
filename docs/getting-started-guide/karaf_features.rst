@@ -328,6 +328,7 @@ Functionality of TDSR includes:
   TSDR through REST APIs
 * NBI integration with Grafana - Allows visualization of data collected in TSDR
   using Grafana
+* Data Aggregation Service - Periodically aggregates raw data into larger time granularities
 * Data Purging Service - Periodically purges data from TSDR
 * Data Collection Framework - Data Collection framework to allow plugging in of
   various types of collectors
@@ -337,7 +338,9 @@ Functionality of TDSR includes:
   introduced in Beryllium
 * Cassandra data store - Cassandra implementation of TSDR SPIs
 * NetFlow data collector - Collect NetFlow data from network elements
+* NetFlowV9 - version 9 Netflow collector
 * SNMP Data Collector - Integrates with SNMP plugin to bring SNMP data into TSDR
+* sFlowCollector - Collects sFlow data from network elements
 * Syslog data collector - Collects syslog data from network elements
 
 TSDR has multiple features to enable the functionality above. To begin,
@@ -352,6 +355,7 @@ Then select any “collectors” you want to use:
 * odl-tsdr-openflow-statistics-collector
 * odl-tsdr-netflow-statistics-collector
 * odl-tsdr-controller-metrics-collector
+* odl-tsdr-sflow-statistics-collector
 * odl-tsdr-snmp-data-collector
 * odl-tsdr-syslog-collector
 
