@@ -15,6 +15,61 @@ Known issues and limitations
 Install OpenDaylight
 --------------------
 
+Downloading and installing OpenDaylight
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The default distribution can be found on the OpenDaylight software
+download page: http://www.opendaylight.org/software/downloads
+
+The Karaf distribution has no features enabled by default. However, all
+of the features are available to be installed.
+
+.. note:: For compatibility reasons, you cannot enable all the features
+          simultaneously. We try to document known incompatibilities in
+          the `Install the Karaf features`_ section below.
+
+Running the karaf distribution
+""""""""""""""""""""""""""""""
+
+To run the Karaf distribution:
+
+#. Unzip the zip file.
+#. Navigate to the directory.
+#. run ``./bin/karaf``.
+
+For Example::
+
+   $ ls distribution-karaf-0.4.0-Beryllium.zip
+   distribution-karaf-0.4.0-Beryllium.zip
+   $ unzip distribution-karaf-0.4.0-Beryllium.zip
+   Archive:  distribution-karaf-0.4.0-Beryllium.zip
+      creating: distribution-karaf-0.4.0-Beryllium/
+      creating: distribution-karaf-0.4.0-Beryllium/configuration/
+      creating: distribution-karaf-0.4.0-Beryllium/data/
+      creating: distribution-karaf-0.4.0-Beryllium/data/tmp/
+      creating: distribution-karaf-0.4.0-Beryllium/deploy/
+      creating: distribution-karaf-0.4.0-Beryllium/etc/
+      creating: distribution-karaf-0.4.0-Beryllium/externalapps/
+   ...
+     inflating: distribution-karaf-0.4.0-Beryllium/bin/start.bat
+     inflating: distribution-karaf-0.4.0-Beryllium/bin/status.bat
+     inflating: distribution-karaf-0.4.0-Beryllium/bin/stop.bat
+   $ cd distribution-karaf-0.4.0-Beryllium
+   $ ./bin/karaf
+   
+       ________                       ________                .__  .__       .__     __
+       \_____  \ ______   ____   ____ \______ \ _____  ___.__.\|  \| \|__\| ____ \|  \|___/  \|_
+        /   \|   \\____ \_/ __ \ /    \ \|    \|  \\__  \<   \|  \|\|  \| \|  \|/ ___\\|  \|  \   __\
+       /    \|    \  \|_> >  ___/\|   \|  \\|    `   \/ __ \\___  \|\|  \|_\|  / /_/  >   Y  \  \|
+       \_______  /   __/ \___  >___\|  /_______  (____  / ____\|\|____/__\___  /\|___\|  /__\|
+               \/\|__\|        \/     \/        \/     \/\/            /_____/      \/
+
+
+
+* Press ``tab`` for a list of available commands
+* Typing ``[cmd] --help`` will show help for a specific command.
+* Press ``ctrl-d`` or type ``system:shutdown`` or ``logout`` to shutdown OpenDaylight.
+
 Install the Karaf features
 --------------------------
 To install a feature, use the following command, where feature1 is the feature
@@ -31,10 +86,10 @@ You can install multiple features using the following command::
    simultaneously. The table below documents feature installation names and
    known incompatibilities.Compatibility values indicate the following:
 
-* *all* - the feature can be run with other features.
-* *self+all* - the feature can be installed with other features with a value of
-  *all*, but may interact badly with other features that have a value of
-  *self+all*. Not every combination has been tested.
+* **all** - the feature can be run with other features.
+* **self+all** - the feature can be installed with other features with a value of
+  **all**, but may interact badly with other features that have a value of
+  **self+all**. Not every combination has been tested.
 
 Uninstalling features
 ^^^^^^^^^^^^^^^^^^^^^
