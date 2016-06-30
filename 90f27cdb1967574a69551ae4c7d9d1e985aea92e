@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a561d44_de78df2d",
+        "filename": "manuals/developer-guide/src/main/asciidoc/odlparent/odlparent-odlparent-developer.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2016-06-30T07:54:59Z",
+      "side": 1,
+      "message": "Thanks, I\u0027ll add some more Checkstyle info in a subsequent patch.\n\nAs far as double contributions go, I agree with you; but having documentation in this form is a requirement for ODL projects, and it serves a slightly different purpose compared to the wiki (at least, in the latter\u0027s current form): it\u0027s released with the projects, and remains a fixed document for a specific release. To get the same effect with the wiki we\u0027d need to maintain multiple pages (Beryllium, Boron, Carbon etc.).",
+      "parentUuid": "9a561d44_7dbc3d6d",
+      "revId": "90f27cdb1967574a69551ae4c7d9d1e985aea92e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a561d44_1d7421fc",
         "filename": "manuals/developer-guide/src/main/asciidoc/odlparent/odlparent-odlparent-lite-developer.adoc",
         "patchSetId": 3
