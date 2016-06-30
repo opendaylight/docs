@@ -22,4 +22,4 @@ Then simply run tox and open the html produced via your favourite web browser.
 .. code-block:: bash
 
     tox -edocs
-    firefox .tox/docs/tmp/html/index.html
+    firefox docs/_build/html/index.html
