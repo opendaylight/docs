@@ -61,7 +61,7 @@ To implement clustering, the deployment considerations are as follows:
 
 * If you have a three node cluster and would like to be able to tolerate any
   single node crashing, a replica of every defined data shard must be running
-  on all three cluster nodes. 
+  on all three cluster nodes.
 
   .. note:: This is because OpenDaylight's clustering implementation requires a
             majority of the defined shard replicas to be running in order to
@@ -105,10 +105,10 @@ do the following on each machine:
    Find every instance of the following lines and replace _127.0.0.1_ with the
    hostname or IP address of the machine on which this file resides and
    OpenDaylight will run::
-   
+
       netty.tcp {
         hostname = "127.0.0.1"
-   
+
    .. note:: The value you need to specify will be different for each node in the
              cluster.
 
@@ -161,25 +161,25 @@ Sample ``akka.conf`` file::
        mailbox-type = "org.opendaylight.controller.cluster.common.actor.MeteredBoundedMailbox"
        mailbox-capacity = 1000
        mailbox-push-timeout-time = 100ms
-     }	
-    
+     }
+
      metric-capture-enabled = true
-    
+
      akka {
        loglevel = "DEBUG"
        loggers = ["akka.event.slf4j.Slf4jLogger"]
-    
+
        actor {
-    
+
          provider = "akka.cluster.ClusterActorRefProvider"
          serializers {
                    java = "akka.serialization.JavaSerializer"
                    proto = "akka.remote.serialization.ProtobufSerializer"
                  }
-    
+
                  serialization-bindings {
                      "com.google.protobuf.Message" = proto
-    
+
                  }
        }
        remote {
@@ -192,36 +192,36 @@ Sample ``akka.conf`` file::
            receive-buffer-size = 52428800
          }
        }
-    
+
        cluster {
          seed-nodes = ["akka.tcp://opendaylight-cluster-data@10.194.189.96:2550"]
-    
+
          auto-down-unreachable-after = 10s
-    
+
          roles = [
            "member-1"
          ]
-    
+
        }
      }
    }
-    
+
    odl-cluster-rpc {
      bounded-mailbox {
        mailbox-type = "org.opendaylight.controller.cluster.common.actor.MeteredBoundedMailbox"
        mailbox-capacity = 1000
        mailbox-push-timeout-time = 100ms
      }
-    
+
      metric-capture-enabled = true
-    
+
      akka {
        loglevel = "INFO"
        loggers = ["akka.event.slf4j.Slf4jLogger"]
-    
+
        actor {
          provider = "akka.cluster.ClusterActorRefProvider"
-    
+
        }
        remote {
          log-remote-lifecycle-events = off
@@ -230,10 +230,10 @@ Sample ``akka.conf`` file::
            port = 2551
          }
        }
-    
+
        cluster {
          seed-nodes = ["akka.tcp://opendaylight-cluster-rpc@10.194.189.96:2551"]
-    
+
          auto-down-unreachable-after = 10s
        }
      }
@@ -295,3 +295,72 @@ Sample ``module-shards.conf`` file::
             ]
        }
    ]
+
+Clustering Scripts
+------------------
+
+OpenDaylight includes some scripts to help with the clustering configuration.
+
+.. note::
+
+    Scripts are stored in the OpenDaylight distribution/bin folder, and
+    maintained in the distribution project
+    `repository <https://git.opendaylight.org/gerrit/p/integration/distribution>`_
+    in the folder distribution-karaf/src/main/assembly/bin/.
+
+Configure Cluster Script
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+This script is used to configure the cluster parameters (e.g. akka.conf,
+module-shards.conf) on a member of the controller cluster. The user should
+restart the node to apply the changes.
+
+.. note::
+
+    The script can be used at any time, even before the controller is started
+    for the first time.
+
+Usage::
+
+    bin/configure_cluster.sh <index> <seed_nodes_list>
+
+* index: Integer within 1..N, where N is the number of seed nodes. This indicates
+  which controller node (1..N) is configured by the script.
+* seed_nodes_list: List of seed nodes (IP address), separated by comma or space.
+
+The IP address at the provided index should belong to the member executing
+the script. When running this script on multiple seed nodes, keep the
+seed_node_list the same, and vary the index from 1 through N.
+
+Optionally, shards can be configured in a more granular way by modifying the
+file "custom_shard_configs.txt" in the same folder as this tool. Please see
+that file for more details.
+
+Example::
+
+    bin/configure_cluster.sh 2 192.168.0.1 192.168.0.2 192.168.0.3
+
+The above command will configure the member 2 (IP address 192.168.0.2) of a
+cluster made of 192.168.0.1 192.168.0.2 192.168.0.3.
+
+Set Persistence Script
+^^^^^^^^^^^^^^^^^^^^^^
+
+This script is used to enable or disable the config datastore persistence. The
+default state is enabled but there are cases where persistence may not be
+required or even desired. The user should restart the node to apply the changes.
+
+.. note::
+
+  The script can be used at any time, even before the controller is started
+  for the first time.
+
+Usage::
+
+    bin/set_persistence.sh <on/off>
+
+Example::
+
+    bin/set_persistence.sh off
+
+The above command will disable the config datastore persistence.
