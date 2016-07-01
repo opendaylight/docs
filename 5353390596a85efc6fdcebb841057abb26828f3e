@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a561d44_fcacc637",
+        "filename": "manuals/user-guide/src/main/asciidoc/ocpplugin/ocp-user-guide.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-01T05:36:49Z",
+      "side": 1,
+      "message": "This seems to assume that a user will have cloned the OCP git repository, which isn\u0027t something we typically assume of users. Is it intended to be distributed with the Boron ODL distribution in a way that we could describe it that way? If not, you probably want to provide instructions on how to clone the repository.",
+      "range": {
+        "startLine": 125,
+        "startChar": 3,
+        "endLine": 125,
+        "endChar": 22
+      },
+      "revId": "5353390596a85efc6fdcebb841057abb26828f3e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
