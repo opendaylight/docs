@@ -120,8 +120,10 @@ image::ocpplugin/plugin-config.jpg[OCP plugin configuration, 550, 449]
 === Test Environment
 The OCP Plugin project contains a simple OCP agent for testing purposes; the agent has been designed specifically to act as a fake radio head device, giving you an idea of what it would look like during the OCP handshake taking place between the OCP agent and the ODL controller (OCP plugin).
 
-To run the simple OCP agent, you have to first compile it (assuming you have JDK 1.7 or above installed already):
+To run the simple OCP agent, you have to first clone the ocpplugin repo and compile it (assuming you have JDK 1.7 or
+above installed already):
 ----
+git clone https://git.opendaylight.org/gerrit/ocpplugin <ocpplugin-src-dir>
 cd <ocpplugin-src-dir>/simple-agent
 javac src/main/java/org/opendaylight/ocpplugin/OcpAgent.java
 ----
