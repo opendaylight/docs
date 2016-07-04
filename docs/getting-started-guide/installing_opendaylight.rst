@@ -522,3 +522,28 @@ Install support for REST APIs
 Most components that offer REST APIs will automatically load the RESTCONF API
 Support component, but if for whatever reason they seem to be missing, install
 the “odl-restconf” feature to activate this support.
+
+Known issues
+------------
+
+Karaf running on Windows 10
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Windows 10 cannot be identify by Karaf (equinox).
+Issue occurs during installation of karaf features eg.
+....
+opendaylight-user@root>feature:install odl-restconf
+Error executing command: Can't install feature odl-restconf/0.0.0:
+Could not start bundle mvn:org.fusesource.leveldbjni/leveldbjni-all/1.8-odl in feature(s) odl-akka-leveldb-0.7: The bundle "org.fusesource.leveldbjni.leveldbjni-all_1.8.0 [300]" could not be resolved. Reason: No match found for native code: META-INF/native/windows32/leveldbjni.dll; processor=x86; osname=Win32, META-INF/native/windows64/leveldbjni.dll; processor=x86-64; osname=Win32, META-INF/native/osx/libleveldbjni.jnilib; processor=x86; osname=macosx, META-INF/native/osx/libleveldbjni.jnilib; processor=x86-64; osname=macosx, META-INF/native/linux32/libleveldbjni.so; processor=x86; osname=Linux, META-INF/native/linux64/libleveldbjni.so; processor=x86-64; osname=Linux, META-INF/native/sunos64/amd64/libleveldbjni.so; processor=x86-64; osname=SunOS, META-INF/native/sunos64/sparcv9/libleveldbjni.so; processor=sparcv9; osname=SunOS
+....
+Workaround is to add 
+....
+org.osgi.framework.os.name = Win32
+....
+to the karaf file
+....
+etc/system.properties
+....
+The workaround and further info are in this thread:
+http://stackoverflow.com/questions/35679852/karaf-exception-is-thrown-while-installing-org-fusesource-leveldbjni
+
