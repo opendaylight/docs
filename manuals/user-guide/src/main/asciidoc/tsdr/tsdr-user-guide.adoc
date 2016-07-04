@@ -360,3 +360,32 @@ TSDR gets the data from a variety of sources, which can be secured in different 
 
 ** Syslog Security
 *** Syslog, which cannot be configured with security so we recommend making sure it flows only over a secured management network.
+
+=== Support multiple data stores simultaneously at runtime
+
+TSDR supports running multiple data stores simultaneously at runtim. For example, it is possible to configure TSDR to push log type of data into Cassandra data store, while pushing metrics type of data into HBase.
+
+When you install one TSDR data store from karaf console, such as using feature:install odl-tsdr-hsqldb, a properties file will be generated under <Karaf-distribution-directory>/etc/. For example, when you install hsqldb, a file called tsdr-persistence-hsqldb.properties is generated under that directory. 
+
+By default, all the types of data are supported in the data store. For example, the default content of tsdr-persistence-hsqldb.properties is as follows:
+
+ metric-persistency=true
+ log-persistency=true
+ binary-persistency=true
+
+When the user would like to use different data stores to support different types of data, he/she could enable or disable a particular type of data persistence in the data stores by configuring the properties file accordingly.
+
+For example, if the user would like to store the log type of data in HBase, and store the metric and binary type of data in Cassandra, he/she needs to install both hbase and cassandra data stores from Karaf console. Then the user needs to modify the properties file under <Karaf-distribution-directory>/etc as follows:
+
+* tsdr-persistence-hbase.properties
+
+ metric-persistency=false
+ log-persistency=true
+ binary-persistency=true
+
+
+* tsdr-persistence-cassandra.properties
+
+ metric-psersistency=true
+ log-persistency=false
+ binary-persistency=false
