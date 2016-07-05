@@ -1,4 +1,177 @@
 {
   "pushCert": "certificate version 0.1\npusher F566C9B1 1467736153 -0400\npushee ssh://git.opendaylight.org:29418/docs.git\nnonce 1467736153-EA22FFF35170E0529DF095088D6265F12301AB9C\n\n0000000000000000000000000000000000000000 17a6c6c7a9537732433576a9a5f707cce1c89042 refs/publish/master/(HEAD\n-----BEGIN PGP SIGNATURE-----\nVersion: GnuPG v1\n\niQIcBAABAgAGBQJXe+BZAAoJEF3VDEv1ZsmxK14P/jeu1DNXAOxPa9IQq2kJKeVJ\nNHdP1vpxyxvSzmhv6VW1oRfJH0lGMwymV5XUVgLJyYrTeocryZOZgBnZioT7JLY+\n+hslJy41cb0GobmK/ybiMC14fKHo7V8rTWysm+tXjc1eIpeedSrxewmraY3gIPcF\n7diNrq5LNILi3WdgNGxRAL2hbP95nRIAAOzaxz4muQLVmLaRa9Rg6usLkWeDH2aH\nJGbcATs8qpFnvPdUYwhrd8R1vk4BXG7MNAiPu3eBFcGIUumyU1/r70awGIcUePiz\nsmt/6CPnbJfYgNIBsLpsv6piyiIg1lbmu5Vf+Nms2YGrAb0JWgvZQYFMKeokppLd\nbP506rXFgAjcZprI7nNN5RlbHTsF1aHOWxJGPbQQPHy+INbktRZvGb6ouCRmZb5r\nins+9FVvjtUAvCBhuQs+C0nMan/+SGIbcBY5hz1Hhy2xQS3XAOFvyVwY9TN4hwnq\nZYnCBkgUbIWgUun1A7W8bxiI2wl+L7HrAFbVLWEtWIgzK/Kvim9Fl75aPyMwd1Q9\nDjptJX1OPvK20BRp6gweZk9Y0RyF5PLM2ofDu5ZyC8L5ivZWjGfdlMYTlh8NqQE9\npqnuRzEiaseVlmCQVNIyL/s8OZQ70N8POgi7ZKWZPDIDXkdSCUY3fzCpA++/1wQE\n7TEQeM7t4+O2XFqOGsMA\n\u003dQTOv\n-----END PGP SIGNATURE-----\n",
-  "comments": []
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a561d44_26e45f0c",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-05T16:33:37Z",
+      "side": 1,
+      "message": "putting a space before this to format it as a code block might be nice",
+      "revId": "17a6c6c7a9537732433576a9a5f707cce1c89042",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_86f1ebcf",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-05T16:33:37Z",
+      "side": 1,
+      "message": "putting a space before this to format it as a code block might be nice",
+      "revId": "17a6c6c7a9537732433576a9a5f707cce1c89042",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_c6bac3e0",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 369,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-05T16:33:37Z",
+      "side": 1,
+      "message": "cut, just \"log data\"",
+      "range": {
+        "startLine": 369,
+        "startChar": 127,
+        "endLine": 369,
+        "endChar": 135
+      },
+      "revId": "17a6c6c7a9537732433576a9a5f707cce1c89042",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_46e7d312",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 369,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-05T16:33:37Z",
+      "side": 1,
+      "message": "runtime",
+      "range": {
+        "startLine": 369,
+        "startChar": 61,
+        "endLine": 369,
+        "endChar": 67
+      },
+      "revId": "17a6c6c7a9537732433576a9a5f707cce1c89042",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_a6bfcfcf",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 369,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-05T16:33:37Z",
+      "side": 1,
+      "message": "cut, just \"metric data\"",
+      "range": {
+        "startLine": 369,
+        "startChar": 189,
+        "endLine": 369,
+        "endChar": 197
+      },
+      "revId": "17a6c6c7a9537732433576a9a5f707cce1c89042",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_06b5dbed",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-05T16:33:37Z",
+      "side": 1,
+      "message": "put in backtics to highlight, e.g., `feature:install odl-tsdr-hsqldb`",
+      "range": {
+        "startLine": 371,
+        "startChar": 71,
+        "endLine": 371,
+        "endChar": 102
+      },
+      "revId": "17a6c6c7a9537732433576a9a5f707cce1c89042",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_66ee57ee",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-05T16:33:37Z",
+      "side": 1,
+      "message": "Karaf",
+      "range": {
+        "startLine": 371,
+        "startChar": 42,
+        "endLine": 371,
+        "endChar": 47
+      },
+      "revId": "17a6c6c7a9537732433576a9a5f707cce1c89042",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_e6b9c7ea",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-user-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-05T16:33:37Z",
+      "side": 1,
+      "message": "trailing whitespace",
+      "range": {
+        "startLine": 371,
+        "startChar": 304,
+        "endLine": 371,
+        "endChar": 305
+      },
+      "revId": "17a6c6c7a9537732433576a9a5f707cce1c89042",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
 }
