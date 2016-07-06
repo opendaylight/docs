@@ -1,4 +1,39 @@
 {
   "pushCert": "certificate version 0.1\npusher F566C9B1 1467745556 -0400\npushee ssh://git.opendaylight.org:29418/docs.git\nnonce 1467745556-641C96ADB7678B1C3B35F7EC32FD59D94B45DDE4\n\n0000000000000000000000000000000000000000 78be198fa176d35002c419ad24506ea8407d8b6c refs/publish/master/40962\n-----BEGIN PGP SIGNATURE-----\nVersion: GnuPG v1\n\niQIcBAABAgAGBQJXfAUUAAoJEF3VDEv1ZsmxTX4P+waUIapSVKRiRWd8N+a6MiDN\nmf0H4JmGKMv+zLVqBYjSPvYcOkZhJFw4YvjmQjj6jDRsrjACUprOIW0N1NPJmu2J\n1BW1YQZkLttDkm2eBV4SEC4rYQpK3TgZwti6MAP20sljOU0HxxyPEE8UhCusAtl2\njR+AKRnLi/d+VsIUyqir8NwLNJE4wHpIfRXfRypw2cejhl4bFkAb2OaJSxR/ds0r\ntevZ/7cLeOlB4STuvl6DBmZoba+BzDp97ZlBhqnwYXIVBfu2Txc1cdL8ozwNPydN\nDnMeryhrlokWBcyPR9ojteE0CZ/v3K3zvf06kclOE/AyBDvC4V2bXVUWM/4arDDX\ncxQfdoqhqCSwSpqH3QP4M7MHn7Ja1kQ1j+qfyWiGW1ZQ07uj0jVvrO0iBEmoxqOR\nMwnZnKrypDH4bgXO2Yq8IlI2nuPZkZyIB33t19JpijqYJ7m4mSqOHwJm9PNUwYzI\nYE5XW6XvJx5iXSqw7l/ZsQTaNaoUjJn6ECsYNstAwj6j7DTzEjHa+DmcR+ZiHzBT\ne1ALa+siDVK2klG5VOTrdJ9ZFBPFeiOHBdEoSOwmbSQKKDS4P2Yl/rjvHp8pTCWZ\n69cp4hhPNTwh4xu93Yc77t0Xv8A/3y6zF27WqE45iFbw8CRh7ah/QQM7acyw8upc\nlcsHV6pc6APOkRkbFjrF\n\u003dkG7Q\n-----END PGP SIGNATURE-----\n",
-  "comments": []
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a561d44_199c15c0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2016-07-06T20:15:27Z",
+      "side": 1,
+      "message": "Should be worded \"Enhance the Documentation Guide\". The Linux Kernel project recommends that people write in present-tense, imperative-style which helps cut down on characters used especially in the first line where space is limited.",
+      "revId": "78be198fa176d35002c419ad24506ea8407d8b6c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_b95fe90d",
+        "filename": "docs/documentation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2016-07-06T20:15:27Z",
+      "side": 1,
+      "message": "Looks a merge comment was accidently left around.",
+      "revId": "78be198fa176d35002c419ad24506ea8407d8b6c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
 }
