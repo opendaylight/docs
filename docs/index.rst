@@ -11,21 +11,45 @@ guides to the developer guides and tries to act as a single point of contact
 for all documentation related articles in OpenDaylight. If you would like to
 contribute to the Handbook please refer to the :ref:`documentation-guide`.
 
-Contents:
+Content for OpenDaylight Users
+------------------------------
+
+The following content is intended for people who would like to deploy, use, or
+just learn more about OpenDaylight.
 
 .. toctree::
    :maxdepth: 1
 
-
    getting-started-guide/index
    opendaylight-with-openstack/index
+
+
+.. Uncomment this when we have reST content targeting developers
+.. Content for OpenDaylight Developers
+.. -----------------------------------
+..
+.. The Following content is intended for developers building applications or code
+.. on top of OpenDaylight, but who do not plan to modify OpenDaylight code
+.. itself.
+
+
+Content for OpenDaylight Contributors
+-------------------------------------
+
+The following content is intended for developers who either currently
+participate in the development of OpenDaylight or would like to start.
+
+.. toctree::
+   :maxdepth: 1
+
    submodules/releng/builder/docs/index
    submodules/integration/test/docs/index
    documentation
 
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+.. Commenting the below out until we actually use it
+.. Indices and tables
+.. ==================
+..
+.. * :ref:`genindex`
+.. * :ref:`modindex`
+.. * :ref:`search`
