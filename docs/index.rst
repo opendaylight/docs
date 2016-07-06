@@ -20,8 +20,9 @@ Contents:
    getting-started-guide/index
    opendaylight-with-openstack/index
    submodules/releng/builder/docs/index
-   submodules/integration/test/docs/index
    documentation
+..   commented out for now as there is no index.rst here
+..   submodules/integration/test/docs/index
 
 Indices and tables
 ==================
