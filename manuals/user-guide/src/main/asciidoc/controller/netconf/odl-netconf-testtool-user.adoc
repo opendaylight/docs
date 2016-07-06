@@ -1,14 +1,14 @@
 === NETCONF testtool
 *NETCONF testtool is a set of standalone runnable jars that can:*
 
-* Simulate NETCONF devices(suitable for scale testing)
+* Simulate NETCONF devices (suitable for scale testing)
 * Stress/Performance test NETCONF devices
 * Stress/Performance test RESTCONF devices
 
 These jars are part of OpenDaylight's controller project and are built from the
 NETCONF codebase in OpenDaylight.
 
-TIP: Download testtool from OpenDaylight Nexus at: http://nexus.opendaylight.org/#nexus-search;quick~netconf-testtool
+TIP: Download testtool from OpenDaylight Nexus at: https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/netconf/netconf-testtool/1.0.2-Beryllium-SR2/
 
 *Nexus contains 3 executable tools:*
 

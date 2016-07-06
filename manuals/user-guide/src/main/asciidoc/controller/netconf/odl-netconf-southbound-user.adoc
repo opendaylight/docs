@@ -1,17 +1,17 @@
 === Southbound (netconf-connector)
-NETCONF southbound plugin is capable of connecting to remote NETCONF
-devices and expose their configuration/operational datastores, rpcs and
+The NETCONF southbound plugin is capable of connecting to remote NETCONF
+devices and exposing their configuration/operational datastores, RPCs and
 notifications as MD-SAL mount points. These mount points allow
 applications and remote users (over RESTCONF) to interact with the
 mounted devices.
 
 In terms of RFCs, the connector supports:
 
-* http://tools.ietf.org/html/rfc6241[RFC-6241],
-* https://tools.ietf.org/html/rfc5277[RFC-5277],
-* https://tools.ietf.org/html/rfc6022[RFC-6022],
+* http://tools.ietf.org/html/rfc6241[RFC-6241]
+* https://tools.ietf.org/html/rfc5277[RFC-5277]
+* https://tools.ietf.org/html/rfc6022[RFC-6022]
 
-*Netconf-connector is fully model driven (utilising YANG modeling language) so in addition to
+*Netconf-connector is fully model-driven (utilizing the YANG modeling language) so in addition to
 the above RFCs, it supports any data/RPC/notifications described by a
 YANG model that is implemented by the device.*
 
@@ -19,8 +19,8 @@ TIP: NETCONF southbound can be activated by installing
 +odl-netconf-connector-all+ Karaf feature.
 
 ==== Netconf-connector configuration
-There are 2 ways for configuring netconf-connector (as is for any
-other module) NETCONF or RESTCONF. This guide focuses on using RESTCONF.
+There are 2 ways for configuring netconf-connector:
+NETCONF or RESTCONF. This guide focuses on using RESTCONF.
 
 ===== Default configuration
 The default configuration contains all the necessary dependencies
@@ -37,7 +37,7 @@ Preconditions:
 
 . OpenDaylight is running
 . In Karaf, you must have the netconf-connector installed (at the
-  Karaf prompt, type: feature:install odl-netconf-connector-all); the
+  Karaf prompt, type: `feature:install odl-netconf-connector-all`); the
   loopback NETCONF mountpoint will be automatically configured and
   activated
 . Wait until log displays following entry:
@@ -50,8 +50,9 @@ request to RESTCONF:
 POST http://localhost:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules
 
 *Headers*:
-Accept application/xml
-Content-Type application/xml
+
+* Accept application/xml
+* Content-Type application/xml
 
 ----
 <module xmlns="urn:opendaylight:params:xml:ns:yang:controller:config">
@@ -104,7 +105,7 @@ subtree. This metadata can be found at:
 
 GET http://localhost:8181/restconf/operational/network-topology:network-topology/
 
-Information about connection status, device capabilities etc. can be
+Information about connection status, device capabilities, etc. can be
 found there.
 
 ===== Connecting to a device not supporting NETCONF monitoring
@@ -152,7 +153,7 @@ yang-module-capabilities and this attribute can contain a list of
 attribute, it is possible to override the "yang-module-based"
 capabilities reported in HELLO message of the device. To do this, we
 need to modify the configuration of netconf-connector by adding this
-xml (It needs to be added next to the address, port, username etc.
+XLM (It needs to be added next to the address, port, username etc.
 configuration elements):
 
 ----
@@ -242,14 +243,14 @@ predecessor is the type of that module (In our case the type is
 *sal-netconf-connector* and name *new-netconf-device*). The type and name
 are actually the keys of the module list.
 
-==== Netconf-connector utilisation
-Once the connector is up and running, users can utilize the new Mount
+==== Netconf-connector utilization
+Once the connector is up and running, users can utilize the new mount
 point instance. By using RESTCONF or from their application code. This
 chapter deals with using RESTCONF and more information for app
 developers can be found in the developers guide or in the official
 tutorial application *ncmount* that can be found in the coretutorials project:
 
-* https://github.com/opendaylight/coretutorials/tree/stable/lithium/ncmount
+* https://github.com/opendaylight/coretutorials/tree/stable/beryllum/ncmount
 
 ===== Reading data from the device
 Just invoke (no body needed):
@@ -318,8 +319,8 @@ https://github.com/cesnet/netopeer[Netopeer] (an open-source NETCONF server) can
 testing/exploring NETCONF southbound in OpenDaylight.
 
 ===== Netopeer installation
-https://www.docker.com/[Docker] container with netopeer will be used
-in this guid. To install docker and start the
+A https://www.docker.com/[Docker] container with netopeer will be used
+in this guide. To install Docker and start the
 https://index.docker.io/u/dockeruser/netopeer/[netopeer image] perform
 following steps:
 
@@ -347,9 +348,9 @@ Preconditions:
 Now just follow the chapter:
 <<_spawning_additional_netconf_connectors_while_the_controller_is_running, Spawning netconf-connector>>. In the payload change the:
 
-* name to e.g. netopeer
-* usernam/password to your system credentials
-* ip to localhost
+* name, e.g., to netopeer
+* username/password to your system credentials
+* ip	 to localhost
 * port to 1831.
 
 After netopeer is mounted successfully, its configuration can be read
