@@ -1,4 +1,74 @@
 {
   "pushCert": "certificate version 0.1\npusher F566C9B1 1467828817 -0400\npushee ssh://git.opendaylight.org:29418/docs.git\nnonce 1467828817-CB3C40CFD545B015CCB31D7B7F48FEEEC4E1FD9E\n\n0000000000000000000000000000000000000000 22f95e8adb4fa6e6c72b8ae1c511ed0b1319b521 refs/publish/master/34063\n-----BEGIN PGP SIGNATURE-----\nVersion: GnuPG v1\n\niQIcBAABAgAGBQJXfUpRAAoJEF3VDEv1ZsmxYwMP/0xsNnl3bNDkLofMt4ltiCjI\n9XQZ6Uq4lu2jtQQRicxaBsNNhhNWH/54L7svCzGt6kTHJrHZw29u0DkdV/2gJA0c\n/5YNxTSJNXpIBn3b534yA76kpXntrDx2BRJ45Oj6/Pm7KrFPFD2tGnOI8/C9uarL\neLVMg6QJM190Rn2RhnNvaLLq/x3imQTN9A8ffZGNHPWh8IdtA3gXwYXFftAGvdAd\nPAUR1XmQuImSRsFqrNDqLRxTP/gNrxg6R0NhnuNCHZx79/X9Cl0AGt+gN5HXxFEl\nFCD9VrCkITpDvMmaw1++D2tUnAKlHEG1yPdrQ2sZKcFVa/3R764r581eQt/F1OzZ\nbvWqHd7e5SsJODmIuOkKVd+qKFP3PCv/dANd2WL0nll0ywgHDw0OZs9K9/CGnKxN\nsahZkmA4dMeIeZrJ053Wv+2i1LxzH+rO+S/jHPCfDpT26UvMuRCyeuL8sbj39zad\n7tpf3ZBFI7JLcUnEiOiDG2iTkx8Y+RyclQynOxK6YIjG8WPcwRrn0hbQjIEP4lsH\nSIXwEbWQB3dUCy7OJkON3KNAxJP+oJksnYbF+0ocsafHOyVrQ3evOxwKP3lgo2gb\nU2KBXiMyy7YTSov05okLKdNHQpxgWFtwfyw/XLXaKqJYMmN4qja5rtq7D6/lJ8F+\n213HJC1h5MlJGK5aekDT\n\u003dRvRc\n-----END PGP SIGNATURE-----\n",
-  "comments": []
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a561d44_2ec8b121",
+        "filename": "manuals/developer-guide/src/main/asciidoc/snbi/odl-snbi-dev.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-06T18:21:13Z",
+      "side": 1,
+      "message": "Would it help to have a link to Unstrung?",
+      "range": {
+        "startLine": 68,
+        "startChar": 324,
+        "endLine": 68,
+        "endChar": 332
+      },
+      "revId": "22f95e8adb4fa6e6c72b8ae1c511ed0b1319b521",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_0ecded31",
+        "filename": "manuals/developer-guide/src/main/asciidoc/snbi/odl-snbi-dev.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-06T18:21:13Z",
+      "side": 1,
+      "message": "Would it help to have a link to StrongSwan?",
+      "range": {
+        "startLine": 69,
+        "startChar": 70,
+        "endLine": 69,
+        "endChar": 80
+      },
+      "revId": "22f95e8adb4fa6e6c72b8ae1c511ed0b1319b521",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_6ed2a9d3",
+        "filename": "manuals/user-guide/src/main/asciidoc/snbi/odl-snbi-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-06T18:21:13Z",
+      "side": 1,
+      "message": "Mostly, we don\u0027t call it the swagger interface, but actually the apidocs. It might be nice to be consistent and do the same here. Maybe also a link to the URL?",
+      "range": {
+        "startLine": 239,
+        "startChar": 37,
+        "endLine": 239,
+        "endChar": 44
+      },
+      "revId": "22f95e8adb4fa6e6c72b8ae1c511ed0b1319b521",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
 }
