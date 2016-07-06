@@ -63,6 +63,8 @@ include::ocpplugin/ocp-user-guide.adoc[OCP]
 
 include::sdninterfaceapp/odl-sdninterfaceapp-all-user.adoc[ODL-SDNi]
 
+include::controller/netconf/odl-netconf-user.adoc[]
+
 include::openflowplugin/odl-ofp-user-guide.adoc[OpenFlow Plugin]
 
 include::opflex/agent-ovs-user.adoc[]
@@ -90,8 +92,6 @@ include::unimgr/unimgr-user.adoc[]
 include::usc/odl-usc-channel-user.adoc[USC]
 
 include::vtn/vtn-user.adoc[]
-
-include::controller/netconf/odl-netconf-user.adoc[]
 
 include::yangide/yangide-user.adoc[]
 
