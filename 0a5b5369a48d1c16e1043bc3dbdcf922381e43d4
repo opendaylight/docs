@@ -1,0 +1,245 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a561d44_0e3ded8f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-06T16:49:30Z",
+      "side": 1,
+      "message": "It would be useful if this said \"Boron Documentation...\"",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 13
+      },
+      "revId": "0a5b5369a48d1c16e1043bc3dbdcf922381e43d4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_6ecbc9a5",
+        "filename": "manuals/developer-guide/src/main/asciidoc/usecplugin/odl-usecplugin-aaa-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-06T16:49:30Z",
+      "side": 1,
+      "message": "is it Usecplugin or USecPlugin?",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 10
+      },
+      "revId": "0a5b5369a48d1c16e1043bc3dbdcf922381e43d4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_4ed08550",
+        "filename": "manuals/developer-guide/src/main/asciidoc/usecplugin/odl-usecplugin-aaa-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-06T16:49:30Z",
+      "side": 1,
+      "message": "You need a blank line above this for it format right. This list is probably better done as a definition list like this:\n\nUsecpluginAAAProvider:: Provider class for Usecplugin-AAA feature implementation.\n\nUsecpluginAAANotifImpl:: Logs notification information which can be seen by log:display at the Karaf terminal\n\n...",
+      "revId": "0a5b5369a48d1c16e1043bc3dbdcf922381e43d4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_2e38b19f",
+        "filename": "manuals/developer-guide/src/main/asciidoc/usecplugin/odl-usecplugin-aaa-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-06T16:49:30Z",
+      "side": 1,
+      "message": "YANG",
+      "range": {
+        "startLine": 24,
+        "startChar": 36,
+        "endLine": 24,
+        "endChar": 40
+      },
+      "revId": "0a5b5369a48d1c16e1043bc3dbdcf922381e43d4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_ae72017a",
+        "filename": "manuals/developer-guide/src/main/asciidoc/usecplugin/odl-usecplugin-openflow-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-06T16:49:30Z",
+      "side": 1,
+      "message": "Same as before, Usecplugin or USecPlugin?",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 10
+      },
+      "revId": "0a5b5369a48d1c16e1043bc3dbdcf922381e43d4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_ce69358d",
+        "filename": "manuals/developer-guide/src/main/asciidoc/usecplugin/odl-usecplugin-openflow-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-06T16:49:30Z",
+      "side": 1,
+      "message": "Is this actually true? Won\u0027t that mess up forwarding in the network? Is it just on Packet_In? If so, this is confusing.",
+      "range": {
+        "startLine": 9,
+        "startChar": 69,
+        "endLine": 9,
+        "endChar": 103
+      },
+      "revId": "0a5b5369a48d1c16e1043bc3dbdcf922381e43d4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_ee6cf99e",
+        "filename": "manuals/developer-guide/src/main/asciidoc/usecplugin/odl-usecplugin-openflow-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-06T16:49:30Z",
+      "side": 1,
+      "message": "Same as before, probably using a definition list is better and you need a blank line before this.",
+      "revId": "0a5b5369a48d1c16e1043bc3dbdcf922381e43d4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_6e10e901",
+        "filename": "manuals/user-guide/src/main/asciidoc/usecplugin/odl-usecplugin-aaa-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-06T16:49:30Z",
+      "side": 1,
+      "message": "Just remove this is if it\u0027s n/a.",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 14
+      },
+      "revId": "0a5b5369a48d1c16e1043bc3dbdcf922381e43d4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_4e1525f0",
+        "filename": "manuals/user-guide/src/main/asciidoc/usecplugin/odl-usecplugin-openflow-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-06T16:49:30Z",
+      "side": 1,
+      "message": "high water?",
+      "range": {
+        "startLine": 12,
+        "startChar": 13,
+        "endLine": 12,
+        "endChar": 18
+      },
+      "revId": "0a5b5369a48d1c16e1043bc3dbdcf922381e43d4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_aef961ca",
+        "filename": "manuals/user-guide/src/main/asciidoc/usecplugin/odl-usecplugin-openflow-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-06T16:49:30Z",
+      "side": 1,
+      "message": "YANG",
+      "range": {
+        "startLine": 13,
+        "startChar": 10,
+        "endLine": 13,
+        "endChar": 14
+      },
+      "revId": "0a5b5369a48d1c16e1043bc3dbdcf922381e43d4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_ce0015ad",
+        "filename": "manuals/user-guide/src/main/asciidoc/usecplugin/odl-usecplugin-openflow-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-06T16:49:30Z",
+      "side": 1,
+      "message": "Just cut if it\u0027s n/a, but wont you need information to configure things like the high water mark?",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 14
+      },
+      "revId": "0a5b5369a48d1c16e1043bc3dbdcf922381e43d4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
