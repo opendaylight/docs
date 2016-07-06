@@ -1,0 +1,7 @@
+== OF-CONFIG: User Guide
+
+=== Overview
+OF-CONFIG defines an OpenFlow switch as an abstraction called an OpenFlow Logical Switch. The OF-CONFIG protocol enables configuration of essential artifacts of an OpenFlow Logical Switch so that an OpenFlow controller can communicate and control the OpenFlow Logical switch via the OpenFlow protocol. OF-CONFIG introduces an operating context for one or more OpenFlow data paths called an OpenFlow Capable Switch for one or more switches. An OpenFlow Capable Switch is intended to be equivalent to an actual physical or virtual network element (e.g. an Ethernet switch) which is hosting one or more OpenFlow data paths by partitioning a set of OpenFlow related resources such as ports and queues among the hosted OpenFlow data paths. The OF-CONFIG protocol enables dynamic association of the OpenFlow related resources of an OpenFlow Capable Switch with specific OpenFlow Logical Switches which are being hosted on the OpenFlow Capable Switch. OF-­CONFIG does not specify or report how the partitioning of resources on an OpenFlow Capable Switch is achieved. OF-­CONFIG assumes that resources such as ports and queues are partitioned amongst multiple OpenFlow Logical Switches such that each OpenFlow Logical Switch can assume full control over the resources that is assigned to it.
+
+See https://wiki.opendaylight.org/view/OF-CONFIG:Beryllium:User_Guide#Overview for details.
+
