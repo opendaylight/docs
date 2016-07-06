@@ -1,17 +1,17 @@
 === Southbound (netconf-connector)
-NETCONF southbound plugin is capable of connecting to remote NETCONF
-devices and expose their configuration/operational datastores, rpcs and
+The NETCONF southbound plugin is capable of connecting to remote NETCONF
+devices and exposing their configuration/operational datastores, RPCs and
 notifications as MD-SAL mount points. These mount points allow
 applications and remote users (over RESTCONF) to interact with the
 mounted devices.
 
 In terms of RFCs, the connector supports:
 
-* http://tools.ietf.org/html/rfc6241[RFC-6241],
-* https://tools.ietf.org/html/rfc5277[RFC-5277],
-* https://tools.ietf.org/html/rfc6022[RFC-6022],
+* http://tools.ietf.org/html/rfc6241[RFC-6241]
+* https://tools.ietf.org/html/rfc5277[RFC-5277]
+* https://tools.ietf.org/html/rfc6022[RFC-6022]
 
-*Netconf-connector is fully model driven (utilising YANG modeling language) so in addition to
+*Netconf-connector is fully model-driven (utilizing the YANG modeling language) so in addition to
 the above RFCs, it supports any data/RPC/notifications described by a
 YANG model that is implemented by the device.*
 
@@ -19,8 +19,8 @@ TIP: NETCONF southbound can be activated by installing
 +odl-netconf-connector-all+ Karaf feature.
 
 ==== Netconf-connector configuration
-There are 2 ways for configuring netconf-connector (as is for any
-other module) NETCONF or RESTCONF. This guide focuses on using RESTCONF.
+There are 2 ways for configuring netconf-connector:
+NETCONF or RESTCONF. This guide focuses on using RESTCONF.
 
 ===== Default configuration
 The default configuration contains all the necessary dependencies
@@ -37,7 +37,7 @@ Preconditions:
 
 . OpenDaylight is running
 . In Karaf, you must have the netconf-connector installed (at the
-  Karaf prompt, type: feature:install odl-netconf-connector-all); the
+  Karaf prompt, type: `feature:install odl-netconf-connector-all`); the
   loopback NETCONF mountpoint will be automatically configured and
   activated
 . Wait until log displays following entry:
@@ -49,9 +49,10 @@ request to RESTCONF:
 
 POST http://localhost:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules
 
-*Headers*:
-Accept application/xml
-Content-Type application/xml
+Headers:
+
+* Accept application/xml
+* Content-Type application/xml
 
 ----
 <module xmlns="urn:opendaylight:params:xml:ns:yang:controller:config">
@@ -104,7 +105,7 @@ subtree. This metadata can be found at:
 
 GET http://localhost:8181/restconf/operational/network-topology:network-topology/
 
-Information about connection status, device capabilities etc. can be
+Information about connection status, device capabilities, etc. can be
 found there.
 
 ===== Connecting to a device not supporting NETCONF monitoring
@@ -152,7 +153,7 @@ yang-module-capabilities and this attribute can contain a list of
 attribute, it is possible to override the "yang-module-based"
 capabilities reported in HELLO message of the device. To do this, we
 need to modify the configuration of netconf-connector by adding this
-xml (It needs to be added next to the address, port, username etc.
+XML (It needs to be added next to the address, port, username etc.
 configuration elements):
 
 ----
@@ -242,14 +243,113 @@ predecessor is the type of that module (In our case the type is
 *sal-netconf-connector* and name *new-netconf-device*). The type and name
 are actually the keys of the module list.
 
-==== Netconf-connector utilisation
-Once the connector is up and running, users can utilize the new Mount
+==== Netconf-connector configuration with MD-SAL
+It is also possible to configure new NETCONF connectors directly through MD-SAL
+with the usage of the network-topology model. You can configure new NETCONF
+connectors both through the NETCONF server for MD-SAL (port 2830) or RESTCONF.
+This guide focuses on RESTCONF.
+
+TIP: To enable NETCONF connector configuration through MD-SAL install either
+the +odl-netconf-topology+ or +odl-netconf-clustered-topology+ feature.
+We will explain the difference between these features later.
+
+===== Preconditions
+
+. OpenDaylight is running
+. In Karaf, you must have the +odl-netconf-topology+ or +odl-netconf-clustered-topology+
+feature installed.
+. Feature +odl-restconf+ must be installed
+. Wait until log displays following entry:
++
+----
+Successfully pushed configuration snapshot 02-netconf-topology.xml(odl-netconf-topology,odl-netconf-topology)
+----
++
+or until
++
+----
+GET http://localhost:8181/restconf/operational/network-topology:network-topology/topology/topology-netconf/
+----
++
+returns a non-empty response, for example:
++
+----
+<topology xmlns="urn:TBD:params:xml:ns:yang:network-topology">
+  <topology-id>topology-netconf</topology-id>
+</topology>
+----
+
+===== Spawning new NETCONF connectors
+To create a new NETCONF connector you need to send the following request to RESTCONF:
+
+  PUT http://localhost:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/new-netconf-device
+
+Headers:
+
+* Accept: application/xml
+* Content-Type: application/xml
+
+Payload:
+----
+<node xmlns="urn:TBD:params:xml:ns:yang:network-topology">
+  <node-id>new-netconf-device</node-id>
+  <host xmlns="urn:opendaylight:netconf-node-topology">127.0.0.1</host>
+  <port xmlns="urn:opendaylight:netconf-node-topology">17830</port>
+  <username xmlns="urn:opendaylight:netconf-node-topology">admin</username>
+  <password xmlns="urn:opendaylight:netconf-node-topology">admin</password>
+  <tcp-only xmlns="urn:opendaylight:netconf-node-topology">false</tcp-only>
+  <!-- non-mandatory fields with default values, you can safely remove these if you do not wish to override any of these values-->
+  <reconnect-on-changed-schema xmlns="urn:opendaylight:netconf-node-topology">false</reconnect-on-changed-schema>
+  <connection-timeout-millis xmlns="urn:opendaylight:netconf-node-topology">20000</connection-timeout-millis>
+  <max-connection-attempts xmlns="urn:opendaylight:netconf-node-topology">0</max-connection-attempts>
+  <between-attempts-timeout-millis xmlns="urn:opendaylight:netconf-node-topology">2000</between-attempts-timeout-millis>
+  <sleep-factor xmlns="urn:opendaylight:netconf-node-topology">1.5</sleep-factor>
+  <!-- keepalive-delay set to 0 turns off keepalives-->
+  <keepalive-delay xmlns="urn:opendaylight:netconf-node-topology">120</keepalive-delay>
+</node>
+----
+
+Note that the device name in <node-id> element must match the last element of the restconf URL.
+
+===== Reconfiguring an existing connector
+The steps to reconfigure an existing connector are exactly the same as when spawning
+a new connector. The old connection will be disconnected and a new connector with
+the new configuration will be created.
+
+===== Deleting an existing connector
+To remove an already configured NETCONF connector you need to send the following:
+
+  DELETE http://localhost:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/new-netconf-device
+
+==== Clustered NETCONF connector
+To spawn NETCONF connectors that are cluster-aware you need to install the
++odl-netconf-clustered-topology+ karaf feature.
+
+WARNING: The +odl-netconf-topology+ and +odl-netconf-clustered-topology+ features
+are considered *INCOMPATIBLE*. They both manage the same space in the datastore and
+would issue conflicting writes if installed together.
+
+Configuration of clustered NETCONF connectors works the same as the configuration
+through the topology model in the previous section.
+
+When a new clustered connector is configured the configuration gets distributed among
+the member nodes and a NETCONF connector is spawned on each node. From these nodes
+a master is chosen which handles the schema download from the device and all the
+communication with the device. You will be able to read/write to/from the device
+from all slave nodes due to the proxy data brokers implemented.
+
+You can use the +odl-netconf-clustered-topology+ feature in a single node scenario
+as well but the code that uses akka will be used, so for a scenario where only a
+single node is used, +odl-netconf-topology+ might be preferred.
+
+==== Netconf-connector utilization
+Once the connector is up and running, users can utilize the new mount
 point instance. By using RESTCONF or from their application code. This
 chapter deals with using RESTCONF and more information for app
 developers can be found in the developers guide or in the official
 tutorial application *ncmount* that can be found in the coretutorials project:
 
-* https://github.com/opendaylight/coretutorials/tree/stable/lithium/ncmount
+* https://github.com/opendaylight/coretutorials/tree/stable/beryllum/ncmount
 
 ===== Reading data from the device
 Just invoke (no body needed):
@@ -318,8 +418,8 @@ https://github.com/cesnet/netopeer[Netopeer] (an open-source NETCONF server) can
 testing/exploring NETCONF southbound in OpenDaylight.
 
 ===== Netopeer installation
-https://www.docker.com/[Docker] container with netopeer will be used
-in this guid. To install docker and start the
+A https://www.docker.com/[Docker] container with netopeer will be used
+in this guide. To install Docker and start the
 https://index.docker.io/u/dockeruser/netopeer/[netopeer image] perform
 following steps:
 
@@ -347,8 +447,8 @@ Preconditions:
 Now just follow the chapter:
 <<_spawning_additional_netconf_connectors_while_the_controller_is_running, Spawning netconf-connector>>. In the payload change the:
 
-* name to e.g. netopeer
-* usernam/password to your system credentials
+* name, e.g., to netopeer
+* username/password to your system credentials
 * ip to localhost
 * port to 1831.
 
