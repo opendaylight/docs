@@ -1,13 +1,14 @@
 == NETCONF User Guide
 
 === Overview
-NETCONF is an XML based protocol used for configuration and monitoring
-of devices in the network. The base NETCONF protocol is described in
+NETCONF is an XML-based protocol used for configuration and monitoring
+devices in the network. The base NETCONF protocol is described in
 http://tools.ietf.org/html/rfc6241[RFC-6241].
 
 .NETCONF in OpenDaylight:
-OpenDaylight controller supports NETCONF protocol as a northbound server
-as well as a southbound plugin.
+OpenDaylight supports the NETCONF protocol as a northbound server
+as well as a southbound plugin. It also includes a set of test tools
+for simulating NETCONF devices and clients.
 
 include::odl-netconf-southbound-user.adoc[]
 

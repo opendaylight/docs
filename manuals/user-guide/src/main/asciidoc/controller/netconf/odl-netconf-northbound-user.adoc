@@ -1,15 +1,15 @@
 === Northbound (NETCONF servers)
 OpenDaylight provides 2 types of NETCONF servers:
 
-* *NETCONF server for config-subsystem(listening by default on port
+* *NETCONF server for config-subsystem (listening by default on port
   1830)*
   ** Serves as a default interface for config-subsystem and allows
-  users to spawn/reconfigure/destroy modules(or applications) in OpenDaylight
-* *NETCONF server for MD-SAL(listening by default on port 2830)*
+  users to spawn/reconfigure/destroy modules (or applications) in OpenDaylight
+* *NETCONF server for MD-SAL (listening by default on port 2830)*
 ** Serves as an alternative interface for MD-SAL (besides RESTCONF)
   and allows users to read/write data from MD-SAL's datastore and to
   invoke its rpcs (NETCONF notifications are not available in the
-  Lithium release of OpenDaylight)
+  Beryllium release of OpenDaylight)
 
 NOTE: The reason for having 2 NETCONF servers is that config-subsystem and
 MD-SAL are 2 different components of OpenDaylight and require different
@@ -23,17 +23,17 @@ NETCONF manner.
 
 In terms of RFCs, these are supported:
 
-* http://tools.ietf.org/html/rfc6241[RFC-6241],
-* https://tools.ietf.org/html/rfc5277[RFC-5277],
+* http://tools.ietf.org/html/rfc6241[RFC-6241]
+* https://tools.ietf.org/html/rfc5277[RFC-5277]
 * https://tools.ietf.org/html/rfc6470[RFC-6470]
 ** (partially, only the
-  schema-change notification is available in Lithium release)
-* https://tools.ietf.org/html/rfc6022[RFC-6022],
+  schema-change notification is available in Beryllium release)
+* https://tools.ietf.org/html/rfc6022[RFC-6022]
 
 For regular users it is recommended to use RESTCONF + the
 controller-config loopback mountpoint instead of using pure NETCONF.
 How to do that is spesific for each component/module/application
-in OpenDaylight and can be found in their dedicated user guides
+in OpenDaylight and can be found in their dedicated user guides.
 
 ==== NETCONF server for MD-SAL
 This NETCONF server is just a generic interface to MD-SAL in OpenDaylight.
@@ -44,10 +44,10 @@ by MD-SAL.
 
 In terms of RFCs, these are supported:
 
-* http://tools.ietf.org/html/rfc6241[RFC-6241],
-* https://tools.ietf.org/html/rfc6022[RFC-6022],
+* http://tools.ietf.org/html/rfc6241[RFC-6241]
+* https://tools.ietf.org/html/rfc6022[RFC-6022]
 
-Notifications over NETCONF are not supported in the Lithium release.
+Notifications over NETCONF are not supported in the Beryllium release.
 
 TIP: Install NETCONF northbound for MD-SAL by installing feature:
 +odl-netconf-mdsal+ in karaf. Default binding port is *2830*.
@@ -66,7 +66,7 @@ managed by the centralized AAA component and have to be configured
 separately.
 
 ===== Verifying MD-SAL's NETCONF server
-After the NETCONF server is available it can be examined by e.g. a
+After the NETCONF server is available it can be examined by a
 command line ssh tool:
 
 ----
@@ -74,7 +74,7 @@ ssh admin@localhost -p 2830 -s netconf
 ----
 
 The server will respond by sending its HELLO message and can be used
-as a regular NETCONF server from now on.
+as a regular NETCONF server from then on.
 
 ===== Mounting the MD-SAL's NETCONF server
 To perform this operation, just spawn a new netconf-connector as described in
