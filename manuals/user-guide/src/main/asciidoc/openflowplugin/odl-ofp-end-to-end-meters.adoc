@@ -90,7 +90,7 @@ stat_repl{type="mconf", flags="0x0", stats=[{meter= c"", flags="4", bands=[{type
 ----------------------------------------------------------------------------------------------------------------------------------------------
 
 [[check-for-your-meter-in-the-controller-config-via-restconf]]
-====== Check for your meter in the controller config via RESTCONF
+===== Check for your meter in the controller config via RESTCONF
 
 * See your configured flow in POSTMAN with
 ** URL
@@ -101,7 +101,7 @@ stat_repl{type="mconf", flags="0x0", stats=[{meter= c"", flags="4", bands=[{type
 is running.
 
 [[look-for-your-meter-stats-in-the-controller-operational-data-via-restconf]]
-====== Look for your meter stats in the controller operational data via RESTCONF
+===== Look for your meter stats in the controller operational data via RESTCONF
 
 * See your operational meter stats in POSTMAN with
 ** URL
