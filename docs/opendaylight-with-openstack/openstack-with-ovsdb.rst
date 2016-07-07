@@ -159,7 +159,7 @@ Open vSwitch config and set OpenDaylight to manage the switch:
 
 .. image:: images/dlux-with-switches.png
 
-* If something has gone wrong, check <code>data/log/karaf.log</code> under
+* If something has gone wrong, check ``data/log/karaf.log`` under
   the OpenDaylight distribution directory. If you do not see any interesting
   log entries, set logging for OVSDB to TRACE level inside Karaf and try again:
 
@@ -178,8 +178,8 @@ First, ensure that port 8080 (which will be used by OpenDaylight to listen
 for REST calls) is available. By default, swift-proxy-service listens on the
 same port, and you may need to move it (to another port or another host), or
 disable that service. I moved it to port 8081 by editing
-<code>/etc/swift/proxy-server.conf</code> and
-<code>/etc/cinder/cinder.conf</code>, modifying iptables appropriately, and
+``/etc/swift/proxy-server.conf`` and
+``/etc/cinder/cinder.conf``, modifying iptables appropriately, and
 restarting swift-proxy-service and OpenDaylight.
 
 * Configure Neutron to use OpenDaylight's ML2 driver:
@@ -227,7 +227,7 @@ Verifying it works
     }
 
 If this does not work or gives an error, check Neutron's log file in
-<code>/var/log/neutron/server.log</code>. Error messages here should give
+``/var/log/neutron/server.log``. Error messages here should give
 some clue as to what the problem is in the connection with OpenDaylight
 
 * Create a net, subnet, router, connect ports, and start an instance using
