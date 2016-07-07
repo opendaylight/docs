@@ -57,6 +57,8 @@ include::messaging4transport/messaging4transport-user.adoc[Messaging4Transport]
 
 include::nemo/odl-nemo-engine-user.adoc[NEMO]
 
+include::controller/netconf/odl-netconf-user.adoc[]
+
 include::netide/odl-netide-user-guide.adoc[NetIDE]
 
 include::nic/nic-user.adoc[NIC]
@@ -92,8 +94,6 @@ include::unimgr/unimgr-user.adoc[]
 include::usc/odl-usc-channel-user.adoc[USC]
 
 include::vtn/vtn-user.adoc[]
-
-include::controller/netconf/odl-netconf-user.adoc[]
 
 include::yangide/yangide-user.adoc[]
 
