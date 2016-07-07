@@ -305,3 +305,4 @@ linkcheck_ignore = [
 import subprocess
 
 subprocess.call(["./build-integration-robot-libdoc.sh"])
+subprocess.call(["./generate-javaapidoc.sh"])
