@@ -2,6 +2,7 @@
 
 projects="
 aaa
+netconf
 odlparent
 "
 
