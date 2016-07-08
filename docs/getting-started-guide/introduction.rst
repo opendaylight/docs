@@ -1,5 +1,6 @@
+************
 Introduction
-============
+************
 
 The OpenDaylight project is an open source platform for Software Defined
 Networking (SDN) that uses open protocols to provide centralized, programmatic
@@ -23,7 +24,7 @@ understand how to set up your networking environment. The guide then takes you
 through the installation process.
 
 What’s different about OpenDaylight
------------------------------------
+===================================
 
 Major distinctions of OpenDaylight’s SDN compared to traditional SDN options are
 the following:
@@ -50,7 +51,7 @@ the following:
    SDN programs.
 
 What you’ll find in this guide
-------------------------------
+==============================
 
 To set up your environment, you first install OpenDaylight followed by the
 Apache Karaf features that offer the functionality you require. The OpenDaylight
