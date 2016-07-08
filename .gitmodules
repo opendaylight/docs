@@ -6,6 +6,10 @@
 	path = docs/submodules/integration/test
 	url = ../integration/test
 	branch = master
+[submodule "docs/submodules/aaa"]
+	path = docs/submodules/aaa
+	url = ../aaa
+	branch = master
 [submodule "docs/submodules/odlparent"]
 	path = docs/submodules/odlparent
 	url = ../odlparent
