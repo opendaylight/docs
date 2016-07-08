@@ -1,4 +1,11 @@
 #!/bin/bash
 
-javasphinx-apidoc --update --title "aaa" -o javadoc/aaa submodules/aaa
-javasphinx-apidoc --update --title "odlparent" -o javadoc/odlparent submodules/odlparent
+projects="
+aaa
+odlparent
+"
+
+for project in $projects
+do
+    javasphinx-apidoc --update --title "$project" -o javadoc/$project submodules/$project
+done
