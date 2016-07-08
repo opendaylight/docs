@@ -30,7 +30,15 @@ import sphinx_bootstrap_theme
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['javasphinx']
+extensions = []
+
+javasphinx_available = False
+try:
+     import javasphinx
+     javasphinx_available = True
+     extensions.append('javasphinx')
+except ImportError, e:
+     pass
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -305,4 +313,6 @@ linkcheck_ignore = [
 import subprocess
 
 subprocess.call(["./build-integration-robot-libdoc.sh"])
-subprocess.call(["./generate-javaapidoc.sh"])
+
+if javasphinx_available:
+    subprocess.call(["./generate-javaapidoc.sh"])
