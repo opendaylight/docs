@@ -10,6 +10,10 @@
 	path = docs/submodules/aaa
 	url = ../aaa
 	branch = master
+[submodule "docs/submodules/netconf"]
+	path = docs/submodules/netconf
+	url = ../netconf
+	branch = master
 [submodule "docs/submodules/odlparent"]
 	path = docs/submodules/odlparent
 	url = ../odlparent
