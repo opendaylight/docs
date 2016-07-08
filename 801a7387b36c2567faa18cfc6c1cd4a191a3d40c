@@ -1,4 +1,125 @@
 {
   "pushCert": "certificate version 0.1\npusher F566C9B1 1468011964 -0400\npushee ssh://git.opendaylight.org:29418/docs.git\nnonce 1468011964-97A079B1E4C68E4216B2D5131E9D48D4609724AC\n\n0000000000000000000000000000000000000000 801a7387b36c2567faa18cfc6c1cd4a191a3d40c refs/publish/stable/beryllium/34286\n-----BEGIN PGP SIGNATURE-----\nVersion: GnuPG v1\n\niQIcBAABAgAGBQJXgBW8AAoJEF3VDEv1ZsmxFTQP/1DPfq2XkISGPLgI6O8zA1Oe\nzcFjZQ/cgMviQlpEbhVIoYkJkg4+qluNh/cLtnx40QqoVkTvf1VzAP0MZkSMkK1j\nyV95Vv0YRjkykMoFahqg6s/EqwTsqlrHyBWG/MDjDYa+9BbegEZ4cmGO5vCedS0y\n8HYhAeiYMXmZmABX/Wt8102LsDlRvoHNyacHVDY6BzR75/iK4BuUDJgK9puIDVqd\nwkEcF3J1t57fAz0IT9NaphRHFLVSOxVsTY1Z2CautzicoZbZtb1jrE06Cy8BfUHo\nO85cAv+bkuZEo2ZakJmc7KCclHkrVtnPrm3Cau0ygcRR8jvm9V6AckaGv+TJQz96\napSDrWujw5O80E0Wwc56iI/wLMMkRTgJvFteNT5Iif656UpZsRae5MVzFb94+Cpj\napSF4AqRJwRZZv3i1pZ+vs/CKLCfc7JkxOdndeybmP3vfVwA98eHoFWoS4dRwBpJ\necAu7GJbwTYj+WLZ7CLBGo1dU/ws08pjR30A4VTEFM9o3ru0McTvSGf/KxcK2P7b\niNGmPBrcs+swoFbeD7xbMTa6ZwB9j6JJiKhivn4pRdkTj7HbdNh8PK3QYIvh+4Id\n4RBUBsczArvacH/bAKlmC2w+XBPr8XIN2ZQOpJG4YOCZRnfSPY8GiusrpGbwQZFG\n/TRFPp/y2QD8qC3w+bG7\n\u003dyvt0\n-----END PGP SIGNATURE-----\n",
-  "comments": []
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a561d44_d37ef1e3",
+        "filename": "manuals/developer-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-dev.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-08T21:12:59Z",
+      "side": 1,
+      "message": "This section isn\u0027t nearly as clean or nice as the user guide. It\u0027s more or less an incoherent bag of facts without much structure as to what you\u0027re trying to explain, to who, or why.\n\nMaybe we can work on it in another patch?",
+      "revId": "801a7387b36c2567faa18cfc6c1cd4a191a3d40c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_73260518",
+        "filename": "manuals/user-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-08T21:12:59Z",
+      "side": 1,
+      "message": "As far as I know, there is no installation guide for BGP...",
+      "range": {
+        "startLine": 232,
+        "startChar": 41,
+        "endLine": 232,
+        "endChar": 66
+      },
+      "revId": "801a7387b36c2567faa18cfc6c1cd4a191a3d40c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_931d99c0",
+        "filename": "manuals/user-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-08T21:12:59Z",
+      "side": 1,
+      "message": "The body here sure looks like a whole module and not just changing the parameters you need...",
+      "range": {
+        "startLine": 252,
+        "startChar": 10,
+        "endLine": 252,
+        "endChar": 47
+      },
+      "revId": "801a7387b36c2567faa18cfc6c1cd4a191a3d40c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_f37975fd",
+        "filename": "manuals/user-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-08T21:12:59Z",
+      "side": 1,
+      "message": "As stated above, it looked like you configured the whole module there too.",
+      "range": {
+        "startLine": 345,
+        "startChar": 62,
+        "endLine": 346,
+        "endChar": 36
+      },
+      "revId": "801a7387b36c2567faa18cfc6c1cd4a191a3d40c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_53230105",
+        "filename": "manuals/user-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-08T21:12:59Z",
+      "side": 1,
+      "message": "You need a URL here",
+      "revId": "801a7387b36c2567faa18cfc6c1cd4a191a3d40c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_b3209df8",
+        "filename": "manuals/user-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 403,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-08T21:12:59Z",
+      "side": 1,
+      "message": "You need a URL here",
+      "revId": "801a7387b36c2567faa18cfc6c1cd4a191a3d40c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
 }
