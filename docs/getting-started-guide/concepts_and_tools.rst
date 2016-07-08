@@ -1,5 +1,6 @@
+*******************************
 OpenDaylight concepts and tools
-===============================
+*******************************
 
 In this section we discuss some of the concepts and tools you encounter with
 basic use of OpenDaylight. The guide walks you through the installation process

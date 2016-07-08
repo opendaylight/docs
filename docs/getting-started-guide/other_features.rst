@@ -1,14 +1,15 @@
+**************
 Other features
-==============
+**************
 
 OpFlex
-------
+======
 Provides the OpenDaylight OpFlex Agent , which is a policy agent that works
 with Open vSwitch (OVS), to enforce network policy, e.g., from Group-Based
 Policy, for locally-attached virtual machines or containers.
 
 Network embedded Experience (NeXt)
-----------------------------------
+==================================
 Provides a network-centric topology UI that offers visualizations of the
 following:
 

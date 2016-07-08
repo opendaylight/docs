@@ -1,18 +1,19 @@
+**********************************
 OpenDaylight Experimental Features
-==================================
+**********************************
 
 .. contents::
    :depth: 1
    :local:
 
 Messaging4Transport
--------------------
+===================
 Adds AMQP bindings to the MD-SAL, which makes all MD-SAL APIs available via
 that mechanism. AMQP bindings integration exposes the MD-SAL datatree, rpcs,
 and notifications via AMQP, when installed.
 
 Network Intent Composition (NIC)
---------------------------------
+================================
 Offers an interface with an abstraction layer for you to communicate
 “intentions,” i.e., what you expect from the network.  The Intent model, which
 is part of NIC's core architecture, describes your networking services
@@ -43,13 +44,13 @@ NIC has four features:
   * Network MOdeling Renderer
 
 UNI Manager Plug-in (Unimgr)
-----------------------------
+============================
 Formed to initiate the development of data models and APIs that facilitate
 OpenDaylight software applications’ and/or service orchestrators’ ability to
 configure and provision connectivity services.
 
 YANG-PUBSUB
------------
+===========
 An experimental feature Plugin that allows subscriptions to be placed on
 targeted subtrees of YANG datastores residing on remote devices. Changes in
 YANG objects within the remote subtree can be pushed to OpenDaylight as

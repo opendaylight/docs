@@ -1,11 +1,12 @@
+*************
 Release Notes
-=============
+*************
 
 Target Environment
-------------------
+==================
 
 For Execution
-^^^^^^^^^^^^^
+-------------
 
 The OpenDaylight Karaf container, OSGi bundles, and Java class files
 are portable and should run on any Java 7- or Java 8-compliant JVM to
@@ -27,7 +28,7 @@ Projects and features which have known additional requirements are:
 * VTN has components which require Linux
 
 For Development
-^^^^^^^^^^^^^^^
+---------------
 
 OpenDaylight is written primarily in Java project and primarily uses
 Maven as a build tool Consequently the two main requirements to develop
@@ -49,7 +50,7 @@ similar or more extensive additional requirements for development. See
 the project-specific release notes for details.
 
 Known Issues and Limitations
-----------------------------
+============================
 
 Other than as noted in project-specific release notes, we know of the
 following limitations:
@@ -65,7 +66,7 @@ following limitations:
 .. _proj_rel_notes:
 
 Project-specific Release Notes
-------------------------------
+==============================
 
 For the release notes of individual projects, please see the following pages on the OpenDaylight Wiki.
 
@@ -113,7 +114,7 @@ TBD: add Boron release notes
 * YANG_Tools_
 
 Projects without Release Notes
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------
 
 The following projects participated in Boron, but intentionally do not have release notes.
 

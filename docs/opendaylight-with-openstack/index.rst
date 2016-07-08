@@ -1,8 +1,10 @@
+#################################
 OpenDaylight with Openstack Guide
-=================================
+#################################
 
+********
 Overview
---------
+********
 
 OpenStack_ is a popular open source Infrastructure
 as a service project, covering compute, storage and network management.
@@ -11,8 +13,9 @@ Modular Layer 2 (ML2) north-bound plug-in. OpenDaylight manages the network
 flows for the OpenStack compute nodes via the OVSDB south-bound plug-in. This
 page describes how to set that up, and how to tell when everything is working.
 
+********************
 Installing OpenStack
---------------------
+********************
 
 Installing OpenStack is out of scope for this document, but to get started, it
 is useful to have a minimal multi-node OpenStack deployment.
@@ -30,9 +33,9 @@ configuration, create two instances on a private subnet bridging to your
 public network, and verify that you can connect to them, and that they can
 see each other.
 
-
+***********************
 Installing OpenDaylight
------------------------
+***********************
 
 .. toctree::
    :maxdepth: 1
