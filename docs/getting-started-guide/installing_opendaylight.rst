@@ -1,7 +1,8 @@
 .. _install_odl:
 
+***********************
 Installing OpenDaylight
-=======================
+***********************
 
 You complete the following steps to install your networking environment, with
 specific instructions provided in the subsections below.
@@ -13,10 +14,10 @@ Known issues and limitations
 
 
 Install OpenDaylight
---------------------
+====================
 
 Downloading and installing OpenDaylight
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------------
 
 The default distribution can be found on the OpenDaylight software
 download page: http://www.opendaylight.org/software/downloads
@@ -29,7 +30,7 @@ of the features are available to be installed.
           the `Install the Karaf features`_ section below.
 
 Running the karaf distribution
-""""""""""""""""""""""""""""""
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To run the Karaf distribution:
 
@@ -56,7 +57,7 @@ For Example::
      inflating: distribution-karaf-0.4.0-Beryllium/bin/stop.bat
    $ cd distribution-karaf-0.4.0-Beryllium
    $ ./bin/karaf
-   
+
        ________                       ________                .__  .__       .__     __
        \_____  \ ______   ____   ____ \______ \ _____  ___.__.\|  \| \|__\| ____ \|  \|___/  \|_
         /   \|   \\____ \_/ __ \ /    \ \|    \|  \\__  \<   \|  \|\|  \| \|  \|/ ___\\|  \|  \   __\
@@ -71,7 +72,7 @@ For Example::
 * Press ``ctrl-d`` or type ``system:shutdown`` or ``logout`` to shutdown OpenDaylight.
 
 Install the Karaf features
---------------------------
+==========================
 To install a feature, use the following command, where feature1 is the feature
 name listed in the table below::
 
@@ -92,7 +93,7 @@ You can install multiple features using the following command::
   **self+all**. Not every combination has been tested.
 
 Uninstalling features
-^^^^^^^^^^^^^^^^^^^^^
+---------------------
 To uninstall a feature, you must shut down OpenDaylight, delete the data
 directory, and start OpenDaylight up again.
 
@@ -100,7 +101,7 @@ directory, and start OpenDaylight up again.
    is not supported and can cause unexpected and undesirable behavior.
 
 Listing available features
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------
 To find the complete list of Karaf features, run the following command::
 
     feature:list
@@ -113,7 +114,7 @@ Features to implement networking functionality provide release notes, which
 you can find in the :ref:`proj_rel_notes` section.
 
 Karaf running on Windows 10
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------
 
 Windows 10 cannot be identify by Karaf (equinox).
 Issue occurs during installation of karaf features e.g.::
@@ -122,7 +123,7 @@ Issue occurs during installation of karaf features e.g.::
    Error executing command: Can't install feature odl-restconf/0.0.0:
    Could not start bundle mvn:org.fusesource.leveldbjni/leveldbjni-all/1.8-odl in feature(s) odl-akka-leveldb-0.7: The bundle "org.fusesource.leveldbjni.leveldbjni-all_1.8.0 [300]" could not be resolved. Reason: No match found for native code: META-INF/native/windows32/leveldbjni.dll; processor=x86; osname=Win32, META-INF/native/windows64/leveldbjni.dll; processor=x86-64; osname=Win32, META-INF/native/osx/libleveldbjni.jnilib; processor=x86; osname=macosx, META-INF/native/osx/libleveldbjni.jnilib; processor=x86-64; osname=macosx, META-INF/native/linux32/libleveldbjni.so; processor=x86; osname=Linux, META-INF/native/linux64/libleveldbjni.so; processor=x86-64; osname=Linux, META-INF/native/sunos64/amd64/libleveldbjni.so; processor=x86-64; osname=SunOS, META-INF/native/sunos64/sparcv9/libleveldbjni.so; processor=sparcv9; osname=SunOS
 
-Workaround is to add 
+Workaround is to add
 
    org.osgi.framework.os.name = Win32
 
@@ -135,7 +136,7 @@ http://stackoverflow.com/questions/35679852/karaf-exception-is-thrown-while-inst
 
 
 Beryllium features
-------------------
+==================
 
 .. list-table:: Beryllium features
     :widths: 10 25 10 5
@@ -395,7 +396,7 @@ Beryllium features
 
 
 Other Beryllium features
-------------------------
+========================
 
 .. list-table:: Other Beryllium features
     :widths: 10 25 10 5
@@ -420,7 +421,7 @@ Other Beryllium features
 
 
 Experimental Beryllium Features
--------------------------------
+===============================
 The following functionality is labeled as experimental in OpenDaylight
 Beryllium and should be used accordingly. In general, it is not supposed to be
 used in production unless its limitations are well understood by those
@@ -540,7 +541,7 @@ deploying it.
       - all
 
 Install support for REST APIs
------------------------------
+=============================
 Most components that offer REST APIs will automatically load the RESTCONF API
 Support component, but if for whatever reason they seem to be missing, install
 the “odl-restconf” feature to activate this support.
