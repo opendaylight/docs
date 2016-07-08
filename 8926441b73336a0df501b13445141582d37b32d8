@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a561d44_13eea988",
+        "filename": "docs/documentation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-08T21:28:17Z",
+      "side": 1,
+      "message": "I\u0027m going with the 2 command version because that will make it the same as if you had already cloned. Unless clone --recursive makes it so git pull updates all of them.",
+      "parentUuid": "9a561d44_33276d66",
+      "revId": "8926441b73336a0df501b13445141582d37b32d8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a561d44_7320c549",
         "filename": "docs/documentation.rst",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "9a561d44_53ff8134",
+        "filename": "docs/documentation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-08T21:28:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a561d44_7320c549",
+      "revId": "8926441b73336a0df501b13445141582d37b32d8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a561d44_b31a5d15",
         "filename": "docs/documentation.rst",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2016-07-08T19:47:55Z",
       "side": 1,
       "message": "Need to wrap the text here it\u0027s too long.\n\nRunning just \"tox\" actually tells python to default to running unit tests against our project but since docs doesn\u0027t have any code there is no unit tests to actually run.",
+      "revId": "8926441b73336a0df501b13445141582d37b32d8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_b3fc1d40",
+        "filename": "docs/documentation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-08T21:28:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a561d44_b31a5d15",
       "revId": "8926441b73336a0df501b13445141582d37b32d8",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
