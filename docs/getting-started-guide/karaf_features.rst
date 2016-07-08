@@ -1,5 +1,6 @@
+***************************
 OpenDaylight Karaf Features
-===========================
+***************************
 
 This section provides brief descriptions of the most commonly used Karaf
 features developed by OpenDaylight project teams. They are presented in
@@ -11,7 +12,7 @@ that lists installation commands and compatibility follow.
    :local:
 
 AAA
----
+===
 Standards-compliant Authentication, Authorization and Accounting Services.
 RESTCONF is the most common consumer of AAA, which installs the AAA features
 automatically.  AAA provides:
@@ -22,7 +23,7 @@ automatically.  AAA provides:
 The Beryllium release of AAA includes experimental support for having the database of users and credentials stored in the cluster-aware MD-SAL datastore.
 
 ALTO
-----
+====
 Implements the Application-Layer Traffic Optimization (ALTO) base IETF protocol
 to provide network information to applications. It defines abstractions and
 services to enable simplified network views and network services to guide
@@ -39,24 +40,24 @@ application usage of network resources and includes five services:
    amongst endpoints.
 
 Border Gateway Protocol (including Link-state Distribution (BGP)
-----------------------------------------------------------------
+================================================================
 Is a southbound plugin that provides support for Border Gateway Protocol
 (including Link-state Distribution) as a source of L3 topology information.
 
 Border Gateway Monitoring Protocol (BMP)
-----------------------------------------
+========================================
 Is a southbound plugin that provides support for BGP Monitoring Protocol as a
 monitoring station.
 
 Control and Provisioning of Wireless Access Points (CAPWAP)
------------------------------------------------------------
+===========================================================
 Enables OpenDaylight to manage CAPWAP-compliant wireless termination point (WTP)
 network devices. Intelligent applications, e.g., radio planning, can be
 developed by tapping into the operational states made available via REST APIs of
 WTP network devices.
 
 Controller Shield
------------------
+=================
 Creates a repository called the Unified-Security Plugin (USecPlugin) to provide
 controller security information to northbound applications, such as the
 following:
@@ -68,7 +69,7 @@ following:
 Information collected at the plugin may also be used to configure firewalls and create IP blacklists for the network.
 
 Device Identification and Driver Management (DIDM)
---------------------------------------------------
+==================================================
 Provides device-specific functionality, which means that code enabling a feature
 understands the capability and limitations of the device it runs on. For
 example, configuring VLANs and adjusting FlowMods are features, and there may be
@@ -76,7 +77,7 @@ different implementations for different device types. Device-specific
 functionality is implemented as Device Drivers.
 
 DLUX
-----
+====
 Web based OpenDaylight user interface that includes:
 
 * An MD-SAL flow viewer
@@ -84,13 +85,13 @@ Web based OpenDaylight user interface that includes:
 * A tool box and YANG model that execute queries and visualize the YANG tree
 
 Fabric as a Service (FaaS)
---------------------------
+==========================
 Creates a common abstraction layer on top of a physical network so northbound
 APIs or services can be more easily mapped onto the physical network as a
 concrete device configuration.
 
 Group Based Policy (GBP)
-------------------------
+========================
 Defines an application-centric policy model for OpenDaylight that separates
 information about application connectivity requirements from information about
 the underlying details of the network infrastructure. Provides support for:
@@ -100,18 +101,18 @@ the underlying details of the network infrastructure. Provides support for:
 * OFOverlay support for NAT, table offsets
 
 Internet of Things Data Management (IoTDM)
-------------------------------------------
+==========================================
 Developing a data-centric middleware to act as a oneM2M_-compliant IoT Data
 Broker (IoTDB) and enable authorized applications to retrieve IoT data uploaded
 by any device.
 
 Link Aggregation Control Protocol (LACP)
-----------------------------------------
+========================================
 LACP can auto-discover and aggregate multiple links between an
 OpenDaylight-controlled network and LACP-enabled endpoints or switches.
 
 Location Identifier Separation Protocol (LISP) Flow Mapping Service (LISP)
---------------------------------------------------------------------------
+==========================================================================
 LISP (RFC6830) enables separation of Endpoint Identity (EID) from Routing
 Location (RLOC) by defining an overlay in the EID space, which is mapped to the
 underlying network in the RLOC space.
@@ -128,14 +129,14 @@ southbound LISP plugin enables LISP data plane devices to interact with
 OpenDaylight via the LISP protocol.
 
 NEMO
-----
+====
 Is a Domain Specific Language (DSL) for the abstraction of network models and
 identification of operation patterns. NEMO enables network users/applications to
 describe their demands for network resources, services, and logical operations
 in an intuitive way that can be explained and executed by a language engine.
 
 NETCONF
--------
+=======
 Offers four features:
 
 * odl-netconf-mdsal: NETCONF Northbound for MD-SAL and applications
@@ -146,7 +147,7 @@ Offers four features:
 * odl-restconf: RESTCONF Northbound for MD-SAL and applications
 
 NetIDE
-------
+======
 Enables portability and cooperation inside a single network by using a
 client/server multi-controller architecture. It provides an interoperability
 layer allowing SDN Applications written for other SDN Controllers to run on
@@ -162,7 +163,7 @@ OpenDaylight. NetIDE details:
   engine.
 
 OVSDB-based Network Virtualization Services
--------------------------------------------
+===========================================
 Several services and plugins in OpenDaylight work together to provide simplified
 integration with the OpenStack Neutron framework. These services enable
 OpenStack to offload network processing to OpenDaylight while enabling
@@ -208,11 +209,11 @@ OpenStack, including support for:
 * Network Virtualization User interface for DLUX
 
 OpenFlow Configuration Protocol (OF-CONFIG)
--------------------------------------------
+===========================================
 Provides a process for an Operation Context containing an OpenFlow Switch that uses OF-CONFIG to communicate with an OpenFlow Configuration Point, enabling remote configuration of OpenFlow datapaths.
 
 OpenFlow plugin
----------------
+===============
 Supports connecting to OpenFlow-enabled network devices via the OpenFlow
 specification. It currently supports OpenFlow versions 1.0 and 1.3.2.
 
@@ -221,13 +222,13 @@ Beryllium also includes preliminary support for the Table Type Patterns and
 OF-CONFIG specifications.
 
 Path Computation Element Protocol (PCEP)
-----------------------------------------
+========================================
 Is a southbound plugin that provides support for performing Create, Read,
 Update, and Delete (CRUD) operations on Multiprotocol Label Switching (MPLS)
 tunnels in the underlying network.
 
 Secure Network Bootstrapping Interface (SNBi)
----------------------------------------------
+=============================================
 Leverages manufacturer-installed IEEE 802.1AR certificates to secure initial
 communications for a zero-touch approach to bootstrapping using Docker. SNBi
 devices and controllers automatically do the following:
@@ -255,7 +256,7 @@ You can also use the device type and domain information to initiate controller
 federation processes.
 
 Service Function Chaining (SFC)
--------------------------------
+===============================
 Provides the ability to define an ordered list of network services (e.g.
 firewalls, load balancers) that are then "stitched" together in the network to
 create a service chain. SFC provides the chaining logic and APIs necessary for
@@ -274,7 +275,7 @@ application for defining such chains. It includes:
 * Integration with OpenDaylight OVSDB NetVirt project
 
 SNMP Plugin
------------
+===========
 The SNMP southbound plugin allows applications acting as an SNMP Manager to
 interact with devices that support an SNMP agent. The SNMP plugin implements a
 general SNMP implementation, which differs from the SNMP4SDN as that project
@@ -283,14 +284,14 @@ making an SNMP-enabled device emulate some features of an OpenFlow-enabled
 device.
 
 SNMP4SDN
---------
+========
 Provides a southbound SNMP plugin to optimize delivery of SDN controller
 benefits to traditional/legacy ethernet switches through the SNMP interface. It
 offers support for flow configuration on ACLs and enables flow configuration
 via REST API and multi-vendor support.
 
 Source-Group Tag Exchange Protocol (SXP)
-----------------------------------------
+========================================
 Enables creation of a tag that allows you to filter traffic instead of using
 protocol-specific information like addresses and ports. Via SXP an external
 entity creates the tags, assigns them to traffic appropriately, and publishes
@@ -311,13 +312,13 @@ definition and automation can be extended through OpenDaylight for other
 services and networking devices.
 
 Topology Processing Framework
------------------------------
+=============================
 Provides a framework for simplified aggregation and topology data query to
 enable a unified topology view, including multi-protocol, Underlay, and
 Overlay resources.
 
 Time Series Data Repository (TSDR)
-----------------------------------
+==================================
 Creates a framework for collecting, storing, querying, and maintaining time
 series data in OpenDaylight. You can leverage various data-driven applications
 built on top of TSDR when you install a datastore and at least one collector.
@@ -362,7 +363,7 @@ Then select any “collectors” you want to use:
 See these TSDR_Directions_ for more information.
 
 Unified Secure Channel (USC)
-----------------------------
+============================
 Provides a central server to coordinate encrypted communications between
 endpoints. Its client-side agent informs the controller about its encryption
 capabilities and can be instructed to encrypt select flows based on business
@@ -375,7 +376,7 @@ centralize the coordination of encryption across a wide array of endpoint and
 device types.
 
 VPN Service
------------
+===========
 Implements the infrastructure services required to support L3 VPN service. It
 initially leverages open source routing applications as pluggable components.
 L3 services include:
@@ -398,7 +399,7 @@ The VPN Service offers:
 * Network Overlay solution necessary for a Datacenter/Cloud environment
 
 Virtual Tenant Network (VTN)
-----------------------------
+============================
 Provides multi-tenant virtual network on an SDN controller, allowing you to
 define the network with a look and feel of a conventional L2/L3 network. Once
 the network is designed on VTN, it automatically maps into the underlying

@@ -1,7 +1,8 @@
 .. _documentation-guide:
 
+###################
 Documentation Guide
-===================
+###################
 
 This guide provides details on how to contribute to the OpenDaylight
 documentation. OpenDaylight currently uses a mix of AsciiDoc_ and
@@ -13,7 +14,7 @@ offers similar syntax to Markdown which is familiar to large numbers of
 people.
 
 reStructuredText-based Documentation
-------------------------------------
+====================================
 
 When using reStructuredText, we try to follow the python documentation
 style guide. See:
@@ -37,7 +38,7 @@ browser as follows:
     firefox docs/_build/html/index.html
 
 Directory Structure
-^^^^^^^^^^^^^^^^^^^
+-------------------
 
 The directory structure for the reStructuredText documentation is
 rooted in the ``docs`` directory inside the ``docs`` ``git``
@@ -99,7 +100,7 @@ table of contents is the root of the files that are included.
           the end of the file name.
 
 Troubleshooting
-^^^^^^^^^^^^^^^
+---------------
 
 If you see an error like this::
 
@@ -120,14 +121,14 @@ Also, you may notice errors like these when building::
 They can be ignored. This is an artifact of our building documentation for the robot test framework customizations OpenDaylight has and is being tracked as `BUG-6159 <https://bugs.opendaylight.org/show_bug.cgi?id=6159>`_. More information can be found there.
 
 AsciiDoc-based Documentation
-----------------------------
+============================
 
 Information on the AsciiDoc tools and build system can be found here:
 
    https://wiki.opendaylight.org/view/Documentation/Tools
 
 Directory Structure
-^^^^^^^^^^^^^^^^^^^
+-------------------
 
 The AsciiDoc documentation is all located in the ``manuals`` directory
 of the ``docs`` ``git`` repository. An example of the directory
@@ -174,10 +175,10 @@ itself and it contains a ``pom.xml`` file saying how to build it, a
 ``src/main/resources`` directory containing images.
 
 Migration from AsciiDoc to ReStructuredText
--------------------------------------------
+===========================================
 
 Automatically
-^^^^^^^^^^^^^
+-------------
 
 In theory, Pandoc_ can convert from DocBook to reStructuredText and we
 produce DocBook as part of our build chain from AsciiDoctor. In
@@ -185,7 +186,7 @@ practice, for modest-sized migrations doing things by hand works fairly
 well.
 
 By Hand
-^^^^^^^
+-------
 
 Converting from AsciiDoc to reStructuredText is usually pretty
 straightforward and involves looking up the basic syntax for what you
@@ -197,7 +198,7 @@ Also, because of how fast Sphinx builds, and how fast it is to refresh
 the HTML documentation rapid iteration is very easy.
 
 Bold/Italics/Verbatim Formatting
-""""""""""""""""""""""""""""""""
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This is mostly minor syntax issues. In AsciiDoc you do inline
 formatting something like this::
@@ -209,7 +210,7 @@ In reStructuredText, things are slightly different::
    **bold** *italic* ``verbatim``
 
 Images
-""""""
+^^^^^^
 
 Image formats change from something like::
 

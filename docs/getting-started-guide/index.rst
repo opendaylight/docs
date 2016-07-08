@@ -1,5 +1,6 @@
+#####################
 Getting Started Guide
-=====================
+#####################
 
 .. toctree::
    :maxdepth: 1
@@ -17,4 +18,3 @@ Getting Started Guide
    project-specific-guides/index
    common-features/index
    security_considerations
-

@@ -1,5 +1,6 @@
+************************************
 Project-Specific Installation Guides
-====================================
+************************************
 
 .. toctree::
    :maxdepth: 1
@@ -10,4 +11,3 @@ Project-Specific Installation Guides
    tsdr
    vtn
    yangide
-
