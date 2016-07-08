@@ -1,0 +1,57 @@
+== Cardinal- OpenDaylight Monitoring as a Service 
+
+=== Overview
+Cardinal (OpenDaylight Monitoring as a Service) enables SDN Controller - OpenDaylight (ODL) and the underlying software defined network to be remotely monitored by deployed Network Management Systems (NMS) or Analytics suite. In the Boron release, Cardinal will add
+
+.OpenDaylight MIB
+.Enable ODL diagnostics/monitoring to be exposed across SNMP (v2c, v3) and REST north-bound
+.Extend ODL System health, Karaf parameter and feature info, ODL plugin scalability and network parameters and
+.Support autonomous notifications (SNMP Traps)
+
+=== Cardinal Architecture
+Cardinal architecture can be found at the below link:
+
+https://wiki.opendaylight.org/images/8/89/Cardinal-ODL_Monitoring_as_a_Service_V2.pdf
+
+=== Key APIs and Interfaces
+There are 2 main apis for requesting snmpget request of the Karaf info and System info.
+Project realted apis can be found at the respective project page.
+
+==== Cardinal API
+There are basically 2 GET apis
+
+===== System Info apis
+To get the snmp mib variables info using the snmpget request, run karaf, than install feature using:
+ 
+	Feature:install odl-cardinal
+	Feature:install odl-Restconf-all
+
+Open the REST interface and using the basic authentication, set the request the REST apis for system info as:
+
+	http://localhost:8181/restconf/operational/cardinal:CardinalSystemInfo/
+
+You should get the response codse of the same as 200 OK witht the following output as:
+
+{
+  "CardinalSystemInfo": {
+    "odlSystemMemUsage": " 9",
+    "odlSystemSysInfo": " Opendaylight Node Information",
+    "odlSystemOdlUptime": " 00:29",
+    "odlSystemCpuUsage": " 271",
+    "odlSystemHostAddress": " Address of the Host should come up"
+  }
+}
+
+===== Karaf Info apis
+To get the snmp mib variables of karaf-info using the snmpget request, run karaf, than install feature using:
+ 
+	Feature:install odl-cardinal
+	Feature:install odl-Restconf-all
+
+Open the REST interface and using the basic authentication, set the request the REST apis for system info as:
+
+	http://localhost:8181/restconf/operational/cardinal-karaf:CardinalKarafInfo/
+
+you should get the values of the karaf info variables.
+
+
