@@ -1,5 +1,6 @@
-javadoc
-=======
+######################
+Java API Documentation
+######################
 
 .. toctree::
    :maxdepth: 1
