@@ -1,26 +1,26 @@
-== OVSDB Openstack Developer Guide
+=== OVSDB Openstack Developer Guide
 
-=== Overview
-The Open vSwitch database (OVSDB) Plugin component for OpenDaylight implements
+==== Overview
+The Open vSwitch database (OVSDB) Southbound Plugin component for OpenDaylight implements
 the OVSDB  https://tools.ietf.org/html/rfc7047[RFC 7047] management protocol
 that allows the southbound configuration of switches that support OVSDB. The
-component comprises a library and a plugin usages. The OVSDB protocol
+component comprises a library and a plugin. The OVSDB protocol
 uses JSON-RPC calls to manipulate a physical or virtual switch that supports OVSDB.
 Many vendors support OVSDB on various hardware platforms.
 The OpenDaylight controller uses the library project to interact with an OVS
 instance.
 
-http://www.openstack.org[OpenStack] is a popular open source infrastructure
-as a service project, covering compute, storage and network management.
+http://www.openstack.org[OpenStack] is a popular open source Infrastructure
+as a Service (IaaS) project, covering compute, storage and network management.
 OpenStack can use OpenDaylight as its network management provider through the
-Neutron API, which acts as a northbound for OpenStack. The providers for
-the Neutron API are in the OVSDB Net-virt piece of OVSDB.
+Neutron API, which acts as a northbound for OpenStack. the OVSDB NetVirt piece
+of the OVSDB project is a provider for the Neutron API in OpenDaylight.
 OpenDaylight manages the network flows for the OpenStack compute nodes via
 the OVSDB project, with the south-bound plugin. This section describes how to
 set that up, and how to tell when everything is working.
 
-=== OVSDB Openstack Architecture
-The OpenStack integration architecture uses the following technologies: +
+==== OVSDB Openstack Architecture
+The OpenStack integration architecture uses the following technologies:
 
 * https://tools.ietf.org/html/rfc7047[RFC 7047] - The Open vSwitch Database Management Protocol
 * http://www.opennetworking.org/images/stories/downloads/sdn-resources/onf-specifications/openflow/openflow-switch-v1.3.4.pdf[OpenFlow v1.3]

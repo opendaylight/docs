@@ -1,37 +1,39 @@
-== OVSDB Integration
-The Open vSwitch database (OVSDB) Plugin component for OpenDaylight implements the OVSDB  https://tools.ietf.org/html/rfc7047[RFC 7047] management protocol that allows the southbound configuration of vSwitches. The component comprises a library and various plugin usages.
-The OVSDB protocol uses JSON/RPC calls to manipulate a physical or virtual switch that has OVSDB attached to it. Almost all vendors support OVSDB on various hardware platforms. The OpenDaylight controller uses the native OVSDB implementation to manipulate the Open vSwitch database. 
+=== OVSDB Integration
+The Open vSwitch database (OVSDB) Southbound Plugin component for OpenDaylight implements
+the OVSDB  https://tools.ietf.org/html/rfc7047[RFC 7047] management protocol
+that allows the southbound configuration of switches that support OVSDB. The
+component comprises a library and a plugin. The OVSDB protocol
+uses JSON-RPC calls to manipulate a physical or virtual switch that supports OVSDB.
+Many vendors support OVSDB on various hardware platforms.
+The OpenDaylight controller uses the library project to interact with an OVS
+instance.
 
-NOTE: Read the OVSDB User Guide before you begin development.
+NOTE:
+Read the OVSDB User Guide before you begin development.
 
-=== OpenDaylight OVSDB integration
+==== OpenDaylight OVSDB integration
+The OpenStack integration architecture uses the following technologies:
 
-For information on how the GRE-endpoint destination IP address is communicated to the controller, see https://docs.google.com/presentation/d/19ua9U6nFJSO0wtenWmJUEzUFmib8ClTkkHTgZ_BvaMk/edit?pli=1#slide=id.g17727178e_180[Neutron and ODL interactions].
+* https://tools.ietf.org/html/rfc7047[RFC 7047] - The Open vSwitch Database Management Protocol
+* http://www.opennetworking.org/images/stories/downloads/sdn-resources/onf-specifications/openflow/openflow-switch-v1.3.4.pdf[OpenFlow v1.3]
+* https://wiki.openstack.org/wiki/Neutron/ML2[OpenStack Neutron ML2 Plugin]
 
-The OpenStack integration architecture uses the following technologies: +
-
-* https://tools.ietf.org/html/rfc7047[RFC 7047] and http://datatracker.ietf.org/doc/rfc7047/[The Open vSwitch Database Management Protocol]
-* OpenFlow v1.3
-* OpenStack Neutron ML2 Plugin
-
-==== Getting the code
-----
-export ODL_USERNAME=<username for the account you created at OpenDaylight>
-git clone ssh://${ODL_USERNAME}@git.opendaylight.org:29418/ovsdb.git;(cd ovsdb; scp -p -P 29418 ${ODL_USERNAME}@git.opendaylight.org:hooks/commit-msg .git/hooks/;chmod 755 .git/hooks/commit-msg;git config remote.origin.push HEAD:refs/for/master)
-----
-
-==== OpenDaylight Mechanism Driver for Openstack Neutron ML2
+===== OpenDaylight Mechanism Driver for Openstack Neutron ML2
 This code is a part of OpenStack and is available at: https://github.com/openstack/neutron/blob/master/neutron/plugins/ml2/drivers/mechanism_odl.py
+
+The ODL neutron driver implementation can be found at: https://github.com/openstack/networking-odl
 
 To make changes to this code, please read about https://wiki.openstack.org/wiki/NeutronDevelopment[Neutron Development].
 
-Before submitting the code, run the following tests: +
+Before submitting the code, run the following tests:
+
 ----
 tox -e py27
 tox -e pep8
 ----
-==== Importing the code in to Eclipse or IntelliJ
-Check out either of the following: +
+
+===== Importing the code in to Eclipse or IntelliJ
+To import code, look at either of the following pages:
 
 * https://wiki.opendaylight.org/view/Eclipse_Setup[Getting started with Eclipse]
 * https://wiki.opendaylight.org/view/OpenDaylight_Controller:Developing_With_Intellij[Developing with Intellij]
@@ -41,57 +43,63 @@ image::OVSDB_Eclipse.png[]
 
 * To ensure that a project in Eclipse does not have a conflicting name in the workspace, select Advanced > Name Template > [groupId].[artifactId] when importing the project.
 
-==== Browsing the code
+===== Browsing the code
 The code is mirrored to https://github.com/opendaylight/ovsdb[GitHub] to make reading code online easier. 
 
-==== Source code organization
+===== Source code organization
 
-The OVSDB project generates 3 x Karaf Modules:
+The OVSDB project generates the following Karaf modules:
 
-    ovsdb  -- all ovsdb related artifacts
-    of-nxm-extensions  -- openflow nxm extensions
-    ovs-sfc  -- openflow service chainning function
-
-Both of-nxm-extensions and ovs-sfc are expected to be moved out of the ovsdb source tree in the future.
+* ovsdb.karaf  -- all openstack netvirt related artifacts
+* ovsdb.library-karaf -- the OVSDB library reference implementation
+* ovsdb.openstack.net-virt-sfc-karaf  -- openflow service function chaining
+* ovsdb.hwvtepsouthbound-karaf -- the hw_vtep schema southbound plugin
+* ovsdb.southbound-karaf - the Open_vSwitch schema plugin
 
 Following are a brief descriptions on directories you will find a the root ovsdb/ directory:
 
-* _commons_ contains the parent POM file for Maven project which is used to get consistency of settings across the project. 
+* _commons_ contains the parent POM file for Maven project which is used to get consistency of settings across the project.
 
-* _distribution_ contains the OVSDB distribution. For OSGI, this is the latest Virtualization Edition pulled from the Integration project with your local OVSDB artifacts added. This gives developers the ability to run the controller for testing. 
-For Karaf, this is the latest Karaf bundle pulled from the Integration project, with your local OVSDB Karaf bundles mentioned above.
+* _features_ contains all the Karaf related feature files.
 
-* _openstack_ contains the northbound handlers for Neutron used by OVSDB, as well as their providers.
+* _hwvtepsouthbound_ contains the hw_vtep southbound plugin.
 
-* _resources_ contains useful scripts, How-To's and other resources.
+* _karaf_ contains the ovsdb library and southbound and OpenStack bundles for the OpenStack integration.
 
-* _schemas_ contains the OVSDB schemas that are implemented in ODL.
+* _library_ contains a schema-independent library that is a reference implementation for RFC 7047.
 
-* _utils_ contains helper functions used for handling MD-SAL OpenFlow implementation.
+* _openstack_ contains the northbound handlers for Neutron used by OVSDB, as well as their providers. The NetVirt SFC implementation is also located here.
 
-=== Building and running OVSDB
+* _ovsdb-ui_ contains the DLUX implementation for displaying network virtualization.
+
+* _resources_ contains useful scripts, how-tos, demos and other resources.
+
+* _schemas_ contains the OVSDB schemas that are implemented in OpenDaylight.
+
+* _southbound_ contains the plugin for converting from the OVSDB protocol to MD-SAL and vice-versa.
+
+* _utils_ contains a collection of utilities for using the OpenFlow plugin, southbound, Neutron and other helper methods.
+
+==== Building and running OVSDB
 *Prerequisites* +
 
 * JDK 1.7+
 * Maven 3+
 
 [[ovsdbBuildSteps]]
-==== Building a Karaf feature and deploying it in an Opendaylight Karaf distribution +
-This is a new method for Opendaylight distribution wherein there are no defined editions such 
-as Base, Virtualization, or SP editions.  The end-customer can choose to deploy the required feature based on user deployment needs.
-
+===== Building a Karaf feature and deploying it in an Opendaylight Karaf distribution +
 . From the root ovsdb/ directory, run *mvn clean install*.
-. Unzip the distribution-karaf-<VERSION_NUMBER>-SNAPSHOT.zip file created from step 1 in the directory ovsdb/distribution/opendaylight-karaf/target:
+. Unzip the karaf-<VERSION_NUMBER>-SNAPSHOT.zip file created from step 1 in the directory ovsdb/karaf/target/:
 ----
-unzip distribution-karaf-<VERSION_NUMBER>-SNAPSHOT.zip
+unzip karaf-<VERSION_NUMBER>-SNAPSHOT.zip
 ----
-==== Downloading OVSDB's Karaf distribution +
+===== Downloading OVSDB's Karaf distribution +
 Instead of building, you can download the latest OVSDB distribution from the Nexus server. The link for that is:
 ----
-http://nexus.opendaylight.org/content/repositories/opendaylight.snapshot/org/opendaylight/ovsdb/distribution.ovsdb/1.2.0-SNAPSHOT/
+https://nexus.opendaylight.org/content/repositories/opendaylight.snapshot/org/opendaylight/ovsdb/karaf/1.3.0-SNAPSHOT/
 ----
 
-==== Running Karaf feature from OVSDB's Karaf distribution +
+===== Running Karaf feature from OVSDB's Karaf distribution +
 
 [[ovsdbStartingOdl]]
 . Start ODL, from the unzipped directory
@@ -103,48 +111,32 @@ bin/karaf
 feature:install odl-ovsdb-openstack
 ----
 
-For ovsdb northbound, you will also need to invoke
-----
-feature:install odl-ovsdb-northbound
-----
-===== Sample output from the Karaf console
+====== Sample output from the Karaf console
 ----
 opendaylight-user@root>feature:list | grep -i ovsdb 
-odl-ovsdb-all                    | 1.0.0-SNAPSHOT      |           | ovsdb-1.0.0-SNAPSHOT        
-OpenDaylight :: OVSDB :: all 
-odl-ovsdb-library                | 1.0.0-SNAPSHOT      | x         | ovsdb-1.0.0-SNAPSHOT        
-OVSDB :: Library 
-odl-ovsdb-schema-openvswitch     | 1.0.0-SNAPSHOT      | x         | ovsdb-1.0.0-SNAPSHOT        
-OVSDB :: Schema :: Open_vSwitch 
-odl-ovsdb-schema-hardwarevtep    | 1.0.0-SNAPSHOT      | x         | ovsdb-1.0.0-SNAPSHOT        
-OVSDB :: Schema :: hardware_vtep
-odl-ovsdb-plugin                 | 1.0.0-SNAPSHOT      | x         | ovsdb-1.0.0-SNAPSHOT        
-OpenDaylight :: OVSDB :: Plugin
-odl-ovsdb-northbound             | 0.6.0-SNAPSHOT      |           | ovsdb-1.0.0-SNAPSHOT        
-OpenDaylight :: OVSDB :: Northbound 
-odl-ovsdb-openstack              | 1.0.0-SNAPSHOT      | x         | ovsdb-1.0.0-SNAPSHOT        
-OpenDaylight :: OVSDB :: OpenStack Network Virtual 
-odl-ovsdb-ovssfc                 | 0.0.1-SNAPSHOT      |           | ovsdb-0.0.1-SNAPSHOT        
-OpenDaylight :: OVSDB :: OVS Service Function Chai
-odl-openflow-nxm-extensions      | 0.0.3-SNAPSHOT      | x         | ovsdb-0.0.3-SNAPSHOT        
-OpenDaylight :: Openflow :: Nicira Extensions
+opendaylight-user@root>feature:list -i | grep ovsdb
+odl-ovsdb-southbound-api          | 1.2.1-SNAPSHOT   | x         | odl-ovsdb-southbound-1.2.1-SNAPSHOT     | OpenDaylight :: southbound :: api
+odl-ovsdb-southbound-impl         | 1.2.1-SNAPSHOT   | x         | odl-ovsdb-southbound-1.2.1-SNAPSHOT     | OpenDaylight :: southbound :: impl
+odl-ovsdb-southbound-impl-rest    | 1.2.1-SNAPSHOT   | x         | odl-ovsdb-southbound-1.2.1-SNAPSHOT     | OpenDaylight :: southbound :: impl :: REST
+odl-ovsdb-southbound-impl-ui      | 1.2.1-SNAPSHOT   | x         | odl-ovsdb-southbound-1.2.1-SNAPSHOT     | OpenDaylight :: southbound :: impl :: UI
+odl-ovsdb-library                 | 1.2.1-SNAPSHOT   | x         | odl-ovsdb-library-1.2.1-SNAPSHOT        | OpenDaylight :: library
+odl-ovsdb-openstack               | 1.2.1-SNAPSHOT   | x         | ovsdb-1.2.1-SNAPSHOT                    | OpenDaylight :: OVSDB :: OpenStack Network Virtual
 ----
 
-==== Testing patches
+===== Testing patches
 It is recommended that you test your patches locally before submission.
- 
-==== Neutron integration
+
+===== Neutron integration
 To test patches to the Neutron integration, you need a http://devstack.org/guides/multinode-lab.html[Multi-Node Devstack Setup]. The ``resources`` folder contains sample ``local.conf`` files.
 
-==== Open vSwitch
+===== Open vSwitch
 To test patches to the library, you will need a working http://openvswitch.org/[Open vSwitch]. Packages are available for most Linux distributions. If you would like to run multiple versions of Open vSwitch for testing you can use https://github.com/dave-tucker/docker-ovs[docker-ovs] to run Open vSwitch in https://www.docker.com/[Docker] containers. 
 
-==== Mininet
+===== Mininet
 http://mininet.org/[Mininet] is another useful resource for testing patches. Mininet creates multiple Open vSwitches connected in a configurable topology. 
 
-==== Vagrant
-
-The Vagrant file in the root of the OVSDB source code provides an easy way to create VMs for tests. 
+===== Vagrant
+The Vagrant file in the root of the OVSDB source code provides an easy way to create VMs for tests.
 
 * To install Vagrant on your machine, follow the steps at: https://docs.vagrantup.com/v2/installation/[Installing Vagrant].
 
@@ -186,8 +178,8 @@ vagrant ssh mininet
 vagrant destroy
 ----
 
-=== OVSDB integration design
-==== Resources
+==== OVSDB integration design
+===== Resources
 See the following: +
 
 * http://networkheresy.com/2012/09/15/remembering-the-management-plane/[Network Heresy]
@@ -196,15 +188,16 @@ See the OVSDB YouTube Channel for getting started videos and other tutorials: +
 
 * http://www.youtube.com/channel/UCMYntfZ255XGgYFrxCNcAzA[ODL OVSDB Youtube Channel]
 * https://wiki.opendaylight.org/view/OVSDB_Integration:Mininet_OVSDB_Tutorial[Mininet OVSDB Tutorial]
+* https://wiki.opendaylight.org/view/OVSDB_Integration:Main#Getting_Started_with_OpenDaylight_OVSDB_Plugin_Network_Virtualization[OVSDB Getting Started]
 
-=== OpenDaylight OVSDB southbound plugin architecture and design
+==== OpenDaylight OVSDB southbound plugin architecture and design
 OpenVSwitch (OVS) is generally accepted as the unofficial standard for Virtual Switching in the Open hypervisor based solutions. Every other Virtual Switch implementation, properietery or otherwise, uses OVS in some form.
 For information on OVS, see http://openvswitch.org/[Open vSwitch].
 
 In Software Defined Networking (SDN), controllers and applications interact using two channels: OpenFlow and OVSDB. OpenFlow addresses the forwarding-side of the OVS functionality. OVSDB, on the other hand, addresses the management-plane. 
 A simple and concise overview of Open Virtual Switch Database(OVSDB) is available at: http://networkstatic.net/getting-started-ovsdb/
 
-==== Overview of OpenDaylight Controller architecture
+===== Overview of OpenDaylight Controller architecture
 The OpenDaylight controller platform is designed as a highly modular and plugin based middleware that serves various network applications in a variety of use-cases. The modularity is achieved through the Java OSGi framework. The controller consists of many Java OSGi bundles that work together to provide the required
  controller functionalities. 
  
@@ -223,7 +216,7 @@ Each of the SouthBound Plugins serves a different purpose, with some overlapping
 For example, the OpenFlow plugin might serve the Data-Plane needs of an OVS element, while the OVSDB plugin can serve the management plane needs of the same OVS element.
 As the Openflow Plugin talks OpenFlow protocol with the OVS element, the OVSDB plugin will use OVSDB schema over JSON-RPC transport.
 
-=== OVSDB southbound plugin
+==== OVSDB southbound plugin
 The http://tools.ietf.org/html/draft-pfaff-ovsdb-proto-02[Open vSwitch Database Management Protocol-draft-02] and http://openvswitch.org/ovs-vswitchd.conf.db.5.pdf[Open vSwitch Manual] provide theoretical information about OVSDB.
 The OVSDB protocol draft is generic enough to lay the groundwork on Wire Protocol and Database Operations, and the OVS Manual currently covers 13 tables leaving space for future OVS expansion, and vendor expansions on proprietary implementations.
 The OVSDB Protocol is a database records transport protocol using JSON RPC1.0. For information on the protocol structure, see http://networkstatic.net/getting-started-ovsdb/[Getting Started with OVSDB].
@@ -237,32 +230,16 @@ The OpenDaylight OVSDB southbound plugin consists of one or more OSGi bundles ad
 * OVSDB to OpenFlow plugin mapping service 
 * Inventory Service 
 
-=== Connection service
-One of the primary services that most southbound plugins provide to SAL in Opendaylight and NSF is Connection Service. The service provides protocol specific connectivity to network elements, and supports the connectivity management services as specified by the OpenDaylight Connection Manager. 
+==== Connection service
+One of the primary services that most southbound plugins provide in Opendaylight a Connection Service. The service provides protocol specific connectivity to network elements, and supports the connectivity management services as specified by the OpenDaylight Connection Manager.
 The connectivity services include: +
 
 * Connection to a specified element given IP-address, L4-port, and other connectivity options (such as authentication,...) 
 * Disconnection from an element 
 * Handling Cluster Mode change notifications to support the OpenDaylight Clustering/High-Availability feature 
 
-By default, the ovsdb-server process running on the hypervisor listens on TCP port 6632 (This is configurable.). The Connection Service takes the connectivity parameters from the connection manager, including the IP-address and TCP-Port for connections. Owing to the many benefits it provides, Connection Service will use the Netty framework (http://netty.io/) for connectivity purposes. 
-Every successful connection to a network element will result in a Node object (Refer to OpenDaylight SAL Node.java) with the type = "OVSDB" and value = User-Readable Name of the Connection as specified by the Connection Manager. This Node object is returned to the OpenDaylight Connection Manager and the application that invoked the Connect() functionality. 
-----
-IPluginInConnectionService : public Node connect(String identifier, Map<ConnectionConstants, String> params)
-----
-Any subsequent interaction with this network element through any of the SAL services (Connection, Configuration, and others) will be by means of this Node Object. This Node object will be added to the Inventory maintained and managed by the Inventory Service of the plugin. The Node object will also assist with the OVSDB to Openflow mapping. 
-
-The Node and its "Name" holds the key to the stateful Netty Socket handler maintained under the Connection Object created during the connect() call. The Channel concept of the Netty framework provides the much needed abstraction on the pipelining. With this Channel Pipelining and the asynchronous event handling, the message handling process gets better streamlined and understood. It also makes easier the replacement or manipulation of the pipeline functions in a more controlled fashion.
-
-.Connection to OVSDB server
-image::ConnectionService.png[]
-
-.Successful connection handling
-image::ConnectionServiceReturn.png[]
-
-=== Network Configuration Service
-
-The goal of the OpenDaylight Network Configuration services is to provide complete management plane solutions needed to successfully install, configure, and deploy the various SDN based network services. These are generic services which can be implemented in part or full by any south-bound protocol plugin. 
+==== Network Configuration Service
+The goal of the OpenDaylight Network Configuration services is to provide complete management plane solutions needed to successfully install, configure, and deploy the various SDN based network services. These are generic services which can be implemented in part or full by any south-bound protocol plugin.
 The south-bound plugins can be either of the following: +
 
 * The new network virtualization protocol plugins such as OVSDB JSON-RPC
@@ -270,45 +247,7 @@ The south-bound plugins can be either of the following: +
 
 The above definition, and more information on Network Configuration Services, is available at : https://wiki.opendaylight.org/view/OpenDaylight_Controller:NetworkConfigurationServices 
 
-The current default OVSDB schemas support the Layer2 Bridge Domain services as defined in the Networkconfig.bridgedomain component. 
-
-* Create Bridge Domain: createBridgeDomain(Node node, String bridgeIdentifier, Map<ConfigConstants, Object> params) 
-* Delete Bridge Domain: deleteBridgeDomain(Node node, String bridgeIdentifier) 
-* Add configurations to a Bridge Domain: addBridgeDomainConfig(Node node, String bridgeIdentifier, Map<ConfigConstants, Object> params) 
-* Delete Bridge Domain Configuration: removeBridgeDomainConfig(Node node, String bridgeIdentifier, Map<ConfigConstants, Object> params) 
-* Associate a port to a Bridge Domain: addPort(Node node, String bridgeIdentifier, String portIdentifier, Map<ConfigConstants, Object> params); 
-* Disassociate a port from a Bridge Domain: deletePort(Node node, String bridgeIdentifier, String portIdentifier) 
-* Add configurations to a Node Connector / Port: addPortConfig(Node node, String bridgeIdentifier, String portIdentifier, Map<ConfigConstants, Object> params) 
-* Remove configurations from a Node Connector: removePortConfig(Node node, String bridgeIdentifier, String portIdentifier, Map<ConfigConstants, Object> params) 
-
-The above services are defined as generalized entities in SAL in order to ensure their compatibility with all relevant southBound plugins equally. Hence, the OVSDB plugin must derive appropriate specific configurations from a generalized request. For example: addPort() or addPortConfig() SAL service call takes in a params option which is a Map structure with a Constant Key. 
-These ConfigConstants are defined in SAL network configuration service: +
-----
-public enum ConfigConstants {
-    TYPE("type"),
-    VLAN("Vlan"),
-    VLAN_MODE("vlan_mode"),
-    TUNNEL_TYPE("Tunnel Type"),
-    SOURCE_IP("Source IP"),
-    DEST_IP("Destination IP"),
-    MACADDRESS("MAC Address"),
-    INTERFACE_IDENTIFIER("Interface Identifier"),
-    MGMT("Management"),
-    CUSTOM("Custom Configurations");
-}
-----
-These are mapped to the appropriate OVSDB configurations. So, if the request is to create a VXLAN tunnel with src-ip=x.x.x.x, dst-ip=y.y.y.y, then the params Map structure may contain:
-----
-{
-TYPE = "tunnel",
-TUNNEL_TYPE = "vxlan",
-SOURCE_IP="x.x.x.x",
-DEST_IP="y.y.y.y"
-}
-----
-NOTE: All of the APIs take in the Node parameter which is the Node value returned by the connect() method explained in <<_connection_service>>.
-
-==== Bidirectional JSON-RPC library
+===== Bidirectional JSON-RPC library
 The OVSDB plugin implements a Bidirectional JSON-RPC library.  It is easy to design the library as a module that manages the Netty connection towards the Element. 
 
 The main responsibilities of this Library are: +
@@ -316,27 +255,27 @@ The main responsibilities of this Library are: +
 * Demarshal and marshal JSON Strings to JSON objects 
 * Demarshal and marshal JSON Strings from and to the Network Element.
 
-==== OVSDB Schema definitions and Object mappers
+===== OVSDB Schema definitions and Object mappers
 The OVSDB Schema definitions and Object Mapping layer sits above the JSON-RPC library. It maps the generic JSON objects to OVSDB schema POJOs (Plain Old Java Object) and vice-versa. This layer mostly provides the Java Object definition for the corresponding OVSDB schema (13 of them) and also will provide much more friendly API abstractions on top of these object data. This helps in hiding the JSON semantics from the functional modules such as Configuration Service and Tunnel management.
 
-On the demarshaling side, the mapping logic differentiates the Request and Response messages as follows : +
+On the demarshaling side the mapping logic differentiates the Request and Response messages as follows : +
 
 * Request messages are mapped by its "method" 
 * Response messages are mapped by their IDs which were originally populated by the Request message.
 The JSON semantics of these OVSDB schema is quite complex.
 The following figures summarize two of the end-to-end scenarios: +
 
-.End-to-end handling of a Create Bridge request 
+.End-to-end handling of a Create Bridge request
 image::ConfigurationService-example1.png[width=500]
 
 .End-to-end handling of a monitor response
 image::MonitorResponse.png[width=500]
 
-==== Overlay tunnel management
+===== Overlay tunnel management
 
 Network Virtualization using OVS is achieved through Overlay Tunnels. The actual Type of the Tunnel may be GRE, VXLAN, or STT. The differences in the encapsulation and configuration decide the tunnel types. Establishing a tunnel using configuration service requires just the sending of OVSDB messages towards the ovsdb-server. However, the scaling issues that would arise on the state management at the data-plane (using OpenFlow) can get challenging. Also, this module can assist in various optimizations in the presence of Gateways. It can also help in providing Service guarantees for the VMs using these overlays with the help of underlay orchestration. 
 
-==== OVSDB to OpenFlow plugin mapping service
+===== OVSDB to OpenFlow plugin mapping service
 The connect() of the ConnectionService  would result in a Node that represents an ovsdb-server. The CreateBridgeDomain() Configuration on the above Node would result in creating an OVS bridge. This OVS Bridge is an OpenFlow Agent for the OpenDaylight OpenFlow plugin with its own Node represented as (example) OF|xxxx.yyyy.zzzz. 
 Without any help from the OVSDB plugin, the Node Mapping Service of the Controller platform would not be able to map the following: +
 ----
@@ -344,13 +283,7 @@ Without any help from the OVSDB plugin, the Node Mapping Service of the Controll
 ----
 Without such mapping, it would be extremely difficult for the applications to manage and maintain such nodes. This Mapping Service provided by the OVSDB plugin would essentially help in providing more value added services to the orchestration layers that sit atop the Northbound APIs (such as OpenStack). 
 
-==== Inventory service
-
-Inventory Service provides a simple database of all the nodes managed and maintained by the OVSDB plugin on a given controller. For optimization purposes, it can also provide enhanced services to the OVSDB to OpenFlow mapping service by maintaining the following mapping owing to the static nature of this operation. +
-----
-{OVSDB_NODE + BRIDGE_IDENTFIER} <---> {OF_NODE}
-----
-=== OpenDaylight OVSDB Developer Getting Started Video Series
+==== OpenDaylight OVSDB Developer Getting Started Video Series
 The video series were started to help developers bootstrap into OVSDB development.
 
 * http://www.youtube.com/watch?v=ieB645oCIPs[OpenDaylight OVSDB Developer Getting Started]
@@ -358,13 +291,15 @@ The video series were started to help developers bootstrap into OVSDB developmen
 * http://www.youtube.com/watch?v=xgevyaQ12cg[OpenDaylight OVSDB Developer Getting Started - Java APIs]
 * http://www.youtube.com/watch?v=NayuY6J-AMA[OpenDaylight OVSDB Developer Getting Started - OpenStack Integration OpenFlow v1.0]
 
-==== Other developer tutorials
+===== Other developer tutorials
 
+* https://docs.google.com/presentation/d/1KIuNDuUJGGEV37Zk9yzx9OSnWExt4iD2Z7afycFLf_I/edit?usp=sharing[OVSDB NetVirt Tutorial]
+* https://www.youtube.com/watch?v=2axNKHvt5MY&list=PL8F5jrwEpGAiJG252ShQudYeodGSsks2l&index=43[Youtube of OVSDB NetVirt tutorial]
 * https://wiki.opendaylight.org/view/OVSDB:OVSDB_OpenStack_Guide[OVSDB OpenFlow v1.3 Neutron ML2 Integration]
 * http://networkstatic.net/getting-started-ovsdb/[Open vSwitch Database Table Explanations and Simple Jackson Tutorial]
 
-=== OVSDB integration: New features
-==== Schema independent library
+==== OVSDB integration: New features
+===== Schema independent library
 The OVS connection is a node which can have multiple databases. Each database is represented by a schema. A single connection can have multiple schemas.
 OSVDB supports multiple schemas. Currently, these are two schemas available in the
 OVSDB, but there is no restriction on the number of schemas. Owing to the Northbound v3 API, no code changes in ODL are needed for supporting additional schemas.
@@ -374,22 +309,7 @@ Schemas: +
 *  openvswitch : Schema wrapper that represents http://openvswitch.org/ovs-vswitchd.conf.db.5.pdf
 *  hardwarevtep: Schema wrapper that represents http://openvswitch.org/docs/vtep.5.pdf
 
-==== Northbound API v3
-OVSDB supports Northbound API v3 which allows external access to all ODL OVSDB databases or schemas.
-The general syntax for that API follows this format:
-----
-http://{{controllerHost}}:{{controllerPort}}/ovsdb/nb/v3/node/{{OVS|HOST}}/database
----- 
-For more information on Northbound REST API see: +
-https://docs.google.com/spreadsheets/d/11Rp5KSNTcrvOD4HadCnXDCUdJq_TZ5RgoQ6qSHf_xkw/edit?usp=sharing
- 
-The key differences between Northbound API v2 and v3 include: +
- 
-* Support for schema independence
-* Formal restful style API, which includes consistent URL navigation for nodes and tables
-* Ability to create interfaces and ports within a single rest call. To allow that, the JSON in the body can include distinct parts like interface and port
-
-==== Port security
+===== Port security
 Based on the fact that security rules can be obtained from a port object, OVSDB can apply Open Flow rules. These rules will match on what types of traffic the Openstack tenant VM is allowed to use.
  
 Support for security groups is very experimental. There are limitations in determining the state of flows in the Open vSwitch. See http://%20https//www.youtube.com/watch?v=DSop2uLJZS8[Open vSwitch and the Intelligent Edge] from Justin Petit for a deep dive into the challenges we faced creating a flow based port security implementation. The current set of rules that will be installed only supports filtering of the TCP protocol. This is because via a Nicira TCP_Flag read we can match on a flows TCP_SYN flag, and permit or deny the flow based on the Neutron port security rules. If rules are requested for ICMP and UDP, they are ignored until greater visibility from the Linux kernel is available as outlined in the OpenStack presentation mentioned earlier. 
@@ -400,8 +320,7 @@ Through the ML2 interface, Neutron security rules are available in the port obje
 
 The current rules are applied on the basis of the following attributes: ingress/egress, tcp protocol, port range, and prefix.
  
-===== OpenStack workflow
-
+====== OpenStack workflow
 . Create a stack.
 . Add the network and subnet. 
 . Add the Security Group and Rules.
@@ -420,7 +339,7 @@ nova boot --flavor m1.tiny \
 --nic net-id=$(neutron net-list | grep 'vxlan2' | awk '{print $2}') vxlan2 \
 --security-groups group1
 ----
-===== Examples: Rules supported
+====== Examples: Rules supported
 ----
 neutron security-group-create group2 --description "Group 2"
 neutron security-group-rule-create --direction ingress --protocol tcp --port-range-min 54 group2
@@ -454,7 +373,7 @@ neutron security-group-rule-create --direction egress --protocol tcp --port-rang
 ----
 *Reference gist*:https://gist.github.com/anonymous/1543a410d57f491352c8[Gist]
 
-===== Security group rules supported in ODL 
+====== Security group rules supported in ODL 
 The following rules formata are supported in the current implementation. The direction (ingress/egress) is always expected. Rules are implemented such that tcp-syn packets that do not satisfy the rules are dropped.
 [cols="3", width="60%"]
 |===
@@ -465,19 +384,18 @@ The following rules formata are supported in the current implementation. The dir
 |TCP |x |Any
 |TCP |Any |Any
 |===
-===== Limitations
 
-* Soon, conntrack will be supported by OVS. Until then, TCP flags are used as way of checking for connection state. Specifically, that is done by matching on the TCP-SYN flag. 
+====== Limitations
+* Soon, conntrack will be supported by OVS. Until then, TCP flags are used as way of checking for connection state. Specifically, that is done by matching on the TCP-SYN flag.
 * The param '--port-range-max' in 'security-group-rule-create' is not used until the implementation uses contrack. 
 * No UDP/ICMP specific match support is provided.
 * No IPv6 support is provided.
 
-==== L3 forwarding
+===== L3 forwarding
 OVSDB extends support for the usage of an ODL-Neutron-driver so that OVSDB can configure OF 1.3 rules to route IPv4 packets. The driver eliminates the need for the router of the L3 Agent. In order to accomplish that, OVS 2.1 or a newer version is required.
 OVSDB also supports inbound/outbound NAT, floating IPs.
 
-===== Starting OVSDB and OpenStack
-
+====== Starting OVSDB and OpenStack
 . Build or download OVSDB distribution, as mentioned in <<ovsdbBuildSteps,building a Karaf feature section>>.
 . http://docs.vagrantup.com/v2/installation/index.html[Install Vagrant].
 
@@ -523,8 +441,8 @@ cd odl-neutron-drivers
 vagrant ssh devstack-compute-1
 cd ~/devstack && ./stack.sh
 ----
-===== OpenStack workflow
 
+====== OpenStack workflow
 .Sample workflow
 image::L3FwdSample.png[height=250]
 
@@ -581,9 +499,8 @@ nova boot --poll --flavor m1.nano --image $(nova image-list | grep 'cirros-0.3.2
  --key-name demo_key host20
 ----
 
-===== Limitations
-
-* To use this feature, you need OVS 2.1 or newer version. 
+====== Limitations
+* To use this feature, you need OVS 2.1 or newer version.
 * Owing to OF limitations, icmp responses due to routing failures, like ttl expired or host unreacheable, are not generated.
 * The MAC address of the default route is not automatically mapped. In order to route to L3 destinations outside the networks of the tenant, the manual configuration of the default route is necessary. To provide the MAC address of the default route, use ovsdb.l3gateway.mac in file configuration/config.ini ; 
 * This feature is Tech preview, which depends on later versions of OpenStack to be used without the provided neutron-driver. 
@@ -594,12 +511,12 @@ nova boot --poll --flavor m1.nano --image $(nova image-list | grep 'cirros-0.3.2
 * odl-neutron-driver: https://github.com/dave-tucker/odl-neutron-drivers
 * OF rules example: http://dtucker.co.uk/hack/building-a-router-with-openvswitch.html
 
-==== LBaaS
+===== LBaaS
 Load-Balancing-as-a-Service (LBaaS) creates an Open vSwitch powered L3-L4 stateless load-balancer in a virtualized network environment so that individual TCP connections destined to a designated virtual IP (VIP) are sent to the appropriate servers (that is to say, serving app VMs). The load-balancer works in a session-preserving, proactive manner without involving the controller during flow setup.
 
 A Neutron northbound interface is provided to create a VIP which will map to a pool of servers (that is to say, members) within a subnet. The pools consist of members identified by an IP address. The goal is to closely match the API to the OpenStack LBaaS v2 API: http://docs.openstack.org/api/openstack-network/2.0/content/lbaas_ext.html.
 
-===== Creating an OpenStack workflow
+====== Creating an OpenStack workflow
 . Create a subnet. 
 . Create a floating VIP 'A' that maps to a private VIP 'B'. 
 . Create a Loadbalancer pool 'X'. 
@@ -620,13 +537,12 @@ neutron lb-member-create --address 10.0.0.13 --protocol-port 80 http-pool
 neutron lb-vip-create --name http-vip --protocol-port 80 --protocol HTTP --subnet-id XYZ http-pool
 ----
 
-===== Implementation
+====== Implementation
 
 The current implementation of the proactive stateless load-balancer was made using "multipath" action in the Open vSwitch. The "multipath" action takes a max_link parameter value (which is same as the number of pool members) as input, and performs a hash of the fields to get a value between (0, max_link). The value of the hash is used as an index to select a pool member to handle that session. 
 
-==== Open vSwitch rules
-
-Assuming that table=20 contains all the rules to forward the traffic destined for a specific destination MAC address, the following are the rules needed to be programmed in the LBaaS service table=10. The programmed rules makes the translation from the VIP to a different pool member for every session. 
+===== Open vSwitch rules
+Assuming that table=20 contains all the rules to forward the traffic destined for a specific destination MAC address, the following are the rules needed to be programmed in the LBaaS service table=10. The programmed rules makes the translation from the VIP to a different pool member for every session.
 
 * Proactive forward rules:
 ----
@@ -640,10 +556,11 @@ sudo ovs-ofctl -O OpenFlow13 add-flow s1 table=10,reg0=1,nw_dst=10.0.0.5,ip,reg1
 ----
 sudo ovs-ofctl -O OpenFlow13 add-flow s1 table=10,ip,tcp,tp_src=80,actions=mod_dl_src:00:00:00:00:00:05,mod_nw_src:10.0.0.5,goto_table:20
 ---- 
-===== OVSDB project code
+
+====== OVSDB project code
 The current implementation handles all neutron calls in the net-virt/LBaaSHandler.java code, and makes calls to the net-virt-providers/LoadBalancerService to program appropriate flowmods. The rules are updated whenever there is a change in the Neutron LBaaS settings. There is no cache of state kept in the net-virt or providers. 
 
-===== Limitations
+====== Limitations
 Owing to the inflexibility of the multipath action, the existing LBaaS implementation comes with some limitations: 
 
 * TCP, HTTP or HTTPS are supported protocols for the pool. (Caution: You can lose access to the members if you assign {Proto:TCP, Port:22} to LB) 
