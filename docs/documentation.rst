@@ -19,7 +19,7 @@ reStructuredText-based Documentation
 When using reStructuredText, we try to follow the python documentation
 style guide. See:
 
-    https://docs.python.org/devguide/documenting.html
+   https://docs.python.org/devguide/documenting.html
 
 To build and review the reStructuredText documentation locally you must
 have installed locally:
@@ -29,13 +29,19 @@ have installed locally:
 
 Which both should be available in most distribution's package managers.
 
-Then simply run tox and open the html produced via your favourite web
+Then simply run tox and open the html produced via your favorite web
 browser as follows:
 
 .. code-block:: bash
 
-    tox -edocs
-    firefox docs/_build/html/index.html
+   git clone https://git.opendaylight.org/gerrit/docs
+   git submodule init
+   git submodule update
+   tox -edocs
+   firefox docs/_build/html/index.html
+
+.. note:: Make sure to run `tox -edocs` and not just `tox`. See `Make
+          sure you run tox -edocs`_
 
 Directory Structure
 -------------------
@@ -133,6 +139,9 @@ the chapter should use::
 Troubleshooting
 ---------------
 
+Make sure you've cloned submodules
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 If you see an error like this::
 
    ./build-integration-robot-libdoc.sh: line 6: cd: submodules/integration/test/csit/libraries: No such file or directory
@@ -143,20 +152,43 @@ It means that you haven't pulled down the git submodule for the integration/test
    git submodule init
    git submodule update
 
-Also, you may notice errors like these when building::
+In some cases, you might wind up with submodules which are somehow out-of-sync and in that case, the easiest way to fix it is delete the submodules directory and then re-clone the submodules::
 
-   Importing test library '/Users/ckd/git-reps/docs/docs/submodules/integration/test/csit/libraries/AAAJsonUtils.py' failed: ImportError: No module named jsonpath
+   rm -rf docs/submodules/
+   git submodule init
+   git submodule update
 
-   sed: 1: "SxpLib.robot.html": invalid command code S
+.. warning:: This will delete any local changes or information you made
+             in the submodules. This should only be the case if you
+             manually edited files in that directory.
 
-They can be ignored. This is an artifact of our building documentation for the robot test framework customizations OpenDaylight has and is being tracked as `BUG-6159 <https://bugs.opendaylight.org/show_bug.cgi?id=6159>`_. More information can be found there.
+Make sure you run tox -edocs
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If you see an error like::
+
+   ERROR:   docs: could not install deps [-rrequirements.txt]; v = InvocationError('/Users/ckd/git-reps/docs/.tox/docs/bin/pip install -rrequirements.txt (see /Users/ckd/git-reps/docs/.tox/docs/log/docs-1.log)', 1)
+   ERROR:   docs-linkcheck: could not install deps [-rrequirements.txt]; v = InvocationError('/Users/ckd/git-reps/docs/.tox/docs-linkcheck/bin/pip install -rrequirements.txt (see /Users/ckd/git-reps/docs/.tox/docs-linkcheck/log/docs-linkcheck-1.log)', 1)
+
+It usually means you ran `tox` and not `tox -edocs`, which will result in running jobs inside submodules which aren't supported by the environment defined by the `requirements.txt` file in the documentation tox setup. Just run tox -edocs and it should be fine.
+
+Clear your tox directory and try again
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Sometimes, tox will not detect when your ``requirements.txt`` file has
+changed and so will try to run things without the correct dependencies.
+This usually manifests as ``No module named X`` errors or
+an ``ExtensionError`` and can be fixed by deleting the ``.tox``
+directory and building again::
+
+   rm -rf .tox
+   tox -edocs
 
 AsciiDoc-based Documentation
 ============================
 
 Information on the AsciiDoc tools and build system can be found here:
-
-   https://wiki.opendaylight.org/view/Documentation/Tools
+https://wiki.opendaylight.org/view/Documentation/Tools
 
 Directory Structure
 -------------------
