@@ -1,5 +1,6 @@
+***********************
 Security Considerations
-=======================
+***********************
 
 This document discusses the various security issues that might affect
 OpenDaylight. The document also lists specific recommendations to
@@ -11,7 +12,7 @@ OpenDaylight, and if necessary, contact the Security Response Team,
 which is tasked with identifying and resolving security threats.
 
 Overview of OpenDaylight Security
----------------------------------
+=================================
 
 There are many different kinds of security vulnerabilities that could affect
 an OpenDaylight deployment, but this guide focuses on those where (a) the
@@ -58,7 +59,7 @@ security advantages of OpenDaylight.
   a well-defined process for reporting and dealing with them.
 
 OpenDaylight Security Resources
--------------------------------
+===============================
 
 * If you have any security issues, you can send a mail to
   *security@lists.opendaylight.org*.
@@ -71,7 +72,7 @@ OpenDaylight Security Resources
   refer to https://wiki.opendaylight.org/view/Security:Main
 
 Deployment Recommendations
---------------------------
+==========================
 
 We recommend that you follow the deployment guidelines in setting up
 OpenDaylight to minimize security threats.
@@ -95,7 +96,7 @@ OpenDaylight to minimize security threats.
   traffic from the data network to the management network.
 
 Securing OSGi bundles
----------------------
+=====================
 
 OSGi is a Java-specific framework that improves the way that Java classes
 interact within a single JVM. It provides an enhanced version of the
@@ -129,7 +130,7 @@ security model to add the following features:
 For more information, refer to http://www.osgi.org/Main/HomePage.
 
 Securing the Karaf container
-----------------------------
+============================
 
 Apache Karaf is a OSGi-based runtime platform which provides a lightweight
 container for OpenDaylight and applications. Apache Karaf uses
@@ -172,14 +173,14 @@ configuration options may be applied to the OpenDaylight Karaf distribution.
   https://karaf.apache.org/manual/latest/security.
 
 Disabling the remote shutdown port
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------------
 
 You can lock down your deployment post installation. Set
 ``karaf.shutdown.port=-1`` in ``etc/custom.properties`` or ``etc/config.properties`` to
 disable the remote shutdown port.
 
 Securing Southbound Plugins
----------------------------
+===========================
 
 Many individual southbound plugins provide mechanisms to secure their
 communication with network devices. For example, the OpenFlow plugin supports
@@ -191,7 +192,7 @@ When deploying OpenDaylight, you should carefully investigate the secure
 mechanisms to connect to devices using the relevant plugins.
 
 Securing OpenDaylight using AAA
--------------------------------
+===============================
 
 AAA stands for Authentication, Authorization, and Accounting. All three of
 can help improve the security posture of and OpenDaylight deployment. In this
@@ -207,7 +208,7 @@ By default, OpenDaylight has only one user account with the username and
 password *admin*. This should be changed before deploying OpenDaylight.
 
 Security Considerations for Clustering
---------------------------------------
+======================================
 
 While OpenDaylight clustering provides many benefits including high
 availability, scale-out performance, and data durability, it also opens a new
