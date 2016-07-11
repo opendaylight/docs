@@ -1,0 +1,71 @@
+[[yang-models-ans-api]]
+=== Yang models and API
+
+
+
+[cols="3a,a", width="100%",options="header",]
+|=======================
+|Model |DOC
+2+e|*Openflow basic types*
+|link:https://git.opendaylight.org/gerrit/gitweb?p=openflowplugin.git;f=model/model-flow-base/src/main/yang/opendaylight-table-types.yang;a=blob;hb=refs/heads/stable/boron[opendaylight-table-types.yang] |link:https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-merge-boron/lastSuccessfulBuild/artifact/model/model-flow-base/target/site/models/opendaylight-table-types.html[YangDOC]
+
+|link:https://git.opendaylight.org/gerrit/gitweb?p=openflowplugin.git;f=model/model-flow-base/src/main/yang/opendaylight-action-types.yang;a=blob;hb=refs/heads/stable/boron[opendaylight-action-types.yang]|  	link:https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-merge-boron/lastSuccessfulBuild/artifact/model/model-flow-base/target/site/models/opendaylight-action-types.html[YangDOC]
+
+|link:https://git.opendaylight.org/gerrit/gitweb?p=openflowplugin.git;f=model/model-flow-base/src/main/yang/opendaylight-flow-types.yang;a=blob;hb=refs/heads/stable/boron[opendaylight-flow-types.yan]	| 	link:https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-merge-boron/lastSuccessfulBuild/artifact/model/model-flow-base/target/site/models/opendaylight-flow-types.html[YangDOC]
+
+|link:https://git.opendaylight.org/gerrit/gitweb?p=openflowplugin.git;f=model/model-flow-base/src/main/yang/opendaylight-meter-types.yang;a=blob;hb=refs/heads/stable/boron[opendaylight-meter-types.yang] 	| 	link:https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-merge-boron/lastSuccessfulBuild/artifact/model/model-flow-base/target/site/models/opendaylight-meter-types.html[YangDOC]
+
+|link:https://git.opendaylight.org/gerrit/gitweb?p=openflowplugin.git;f=model/model-flow-base/src/main/yang/opendaylight-group-types.yang;a=blob;hb=refs/heads/stable/boron[opendaylight-group-types.yang]	| 	link:https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-merge-boron/lastSuccessfulBuild/artifact/model/model-flow-base/target/site/models/opendaylight-group-types.html[YangDOC]
+
+|link:https://git.opendaylight.org/gerrit/gitweb?p=openflowplugin.git;f=model/model-flow-base/src/main/yang/opendaylight-match-types.yang;a=blob;hb=refs/heads/stable/boron[opendaylight-match-types.yang] 	| 	link:https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-merge-boron/lastSuccessfulBuild/artifact/model/model-flow-base/target/site/models/opendaylight-match-types.html[YangDOC]
+
+|link:https://git.opendaylight.org/gerrit/gitweb?p=openflowplugin.git;f=model/model-flow-base/src/main/yang/opendaylight-port-types.yang;a=blob;hb=refs/heads/stable/boron[opendaylight-port-types.yang] 	| 	link:https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-merge-boron/lastSuccessfulBuild/artifact/model/model-flow-base/target/site/models/opendaylight-port-types.html[YangDOC]
+
+|link:https://git.opendaylight.org/gerrit/gitweb?p=openflowplugin.git;f=model/model-flow-base/src/main/yang/opendaylight-queue-types.yang;a=blob;hb=refs/heads/stable/boron[opendaylight-queue-types.yang] 	| 	link:https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-merge-boron/lastSuccessfulBuild/artifact/model/model-flow-base/target/site/models/opendaylight-queue-types.html[YangDOC]
+2+e|*Openflow services*
+|link:https://git.opendaylight.org/gerrit/gitweb?p=openflowplugin.git;f=model/model-flow-service/src/main/yang/sal-table.yang;a=blob;hb=refs/heads/stable/boron[sal-table.yang] 	| 	link:https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-merge-boron/lastSuccessfulBuild/artifact/model/model-flow-service/target/site/models/sal-table.html[YangDOC]
+
+|link:https://git.opendaylight.org/gerrit/gitweb?p=openflowplugin.git;f=model/model-flow-service/src/main/yang/sal-group.yang;a=blob;hb=refs/heads/stable/boron[sal-group.yang] 	| 	link:https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-merge-boron/lastSuccessfulBuild/artifact/model/model-flow-service/target/site/models/sal-group.html[YangDOC]
+
+|link:https://git.opendaylight.org/gerrit/gitweb?p=openflowplugin.git;f=model/model-flow-service/src/main/yang/sal-queue.yang;a=blob;hb=refs/heads/stable/boron[sal-queue.yang] 	| 	link:https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-merge-boron/lastSuccessfulBuild/artifact/model/model-flow-service/target/site/models/sal-queue.html[YangDOC]
+
+|link:https://git.opendaylight.org/gerrit/gitweb?p=openflowplugin.git;f=model/model-flow-service/src/main/yang/flow-errors.yang;a=blob;hb=refs/heads/stable/boron[flow-errors.yang] 	| 	link:https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-merge-boron/lastSuccessfulBuild/artifact/model/model-flow-service/target/site/models/flow-errors.html[YangDOC]
+
+|link:https://git.opendaylight.org/gerrit/gitweb?p=openflowplugin.git;f=model/model-flow-service/src/main/yang/flow-capable-transaction.yang;a=blob;hb=refs/heads/stable/boron[flow-capable-transaction.yang] 	| 	link:https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-merge-boron/lastSuccessfulBuild/artifact/model/model-flow-service/target/site/models/flow-capable-transaction.html[YangDOC]
+
+|link:https://git.opendaylight.org/gerrit/gitweb?p=openflowplugin.git;f=model/model-flow-service/src/main/yang/sal-flow.yang;a=blob;hb=refs/heads/stable/boron[sal-flow.yang] 	| 	link:https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-merge-boron/lastSuccessfulBuild/artifact/model/model-flow-service/target/site/models/sal-flow.html[YangDOC]
+
+|link:https://git.opendaylight.org/gerrit/gitweb?p=openflowplugin.git;f=model/model-flow-service/src/main/yang/sal-meter.yang;a=blob;hb=refs/heads/stable/boron[sal-meter.yang] 	| 	link:https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-merge-boron/lastSuccessfulBuild/artifact/model/model-flow-service/target/site/models/sal-meter.html[YangDOC]
+
+|link:https://git.opendaylight.org/gerrit/gitweb?p=openflowplugin.git;f=model/model-flow-service/src/main/yang/flow-topology-discovery.yang;a=blob;hb=refs/heads/stable/boron[flow-topology-discovery.yang] 	| 	link:https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-merge-boron/lastSuccessfulBuild/artifact/model/model-flow-service/target/site/models/flow-topology-discovery.html[YangDOC]
+
+|link:https://git.opendaylight.org/gerrit/gitweb?p=openflowplugin.git;f=model/model-flow-service/src/main/yang/node-errors.yang;a=blob;hb=refs/heads/stable/boron[node-errors.yang] 	| 	link:https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-merge-boron/lastSuccessfulBuild/artifact/model/model-flow-service/target/site/models/node-errors.html[YangDOC]
+
+|link:https://git.opendaylight.org/gerrit/gitweb?p=openflowplugin.git;f=model/model-flow-service/src/main/yang/node-config.yang;a=blob;hb=refs/heads/stable/boron[node-config.yang] 	| 	link:https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-merge-boron/lastSuccessfulBuild/artifact/model/model-flow-service/target/site/models/node-config.html[YangDOC]
+
+|link:https://git.opendaylight.org/gerrit/gitweb?p=openflowplugin.git;f=model/model-flow-service/src/main/yang/sal-echo.yang;a=blob;hb=refs/heads/stable/boron[sal-echo.yang] 	| 	link:https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-merge-boron/lastSuccessfulBuild/artifact/model/model-flow-service/target/site/models/sal-echo.html[YangDOC]
+
+|link:https://git.opendaylight.org/gerrit/gitweb?p=openflowplugin.git;f=model/model-flow-service/src/main/yang/sal-port.yang;a=blob;hb=refs/heads/stable/boron[sal-port.yang] 	| 	link:https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-merge-boron/lastSuccessfulBuild/artifact/model/model-flow-service/target/site/models/sal-port.html[YangDOC]
+
+|link:https://git.opendaylight.org/gerrit/gitweb?p=openflowplugin.git;f=model/model-flow-service/src/main/yang/packet-processing.yang;a=blob;hb=refs/heads/stable/boron[packet-processing.yang] 	| 	link:https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-merge-boron/lastSuccessfulBuild/artifact/model/model-flow-service/target/site/models/packet-processing.html[YangDOC]
+
+|link:https://git.opendaylight.org/gerrit/gitweb?p=openflowplugin.git;f=model/model-flow-service/src/main/yang/flow-node-inventory.yang;a=blob;hb=refs/heads/stable/boron[flow-node-inventory.yang] 	| 	link:https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-merge-boron/lastSuccessfulBuild/artifact/model/model-flow-service/target/site/models/flow-node-inventory.html[YangDOC]
+
+2+e|*Openflow statistics*
+|link:https://git.opendaylight.org/gerrit/gitweb?p=openflowplugin.git;f=model/model-flow-statistics/src/main/yang/opendaylight-queue-statistics.yang;a=blob;hb=refs/heads/stable/boron[opendaylight-queue-statistics.yang] 	| 	link:https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-merge-boron/lastSuccessfulBuild/artifact/model/model-flow-statistics/target/site/models/opendaylight-queue-statistics.html[YangDOC]
+
+|link:https://git.opendaylight.org/gerrit/gitweb?p=openflowplugin.git;f=model/model-flow-statistics/src/main/yang/opendaylight-flow-table-statistics.yang;a=blob;hb=refs/heads/stable/boron[opendaylight-flow-table-statistics.yang] 	| 	link:https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-merge-boron/lastSuccessfulBuild/artifact/model/model-flow-statistics/target/site/models/opendaylight-flow-table-statistics.html[YangDOC]
+
+|link:https://git.opendaylight.org/gerrit/gitweb?p=openflowplugin.git;f=model/model-flow-statistics/src/main/yang/opendaylight-port-statistics.yang;a=blob;hb=refs/heads/stable/boron[opendaylight-port-statistics.yang] 	| 	link:https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-merge-boron/lastSuccessfulBuild/artifact/model/model-flow-statistics/target/site/models/opendaylight-port-statistics.html[YangDOC]
+
+|link:https://git.opendaylight.org/gerrit/gitweb?p=openflowplugin.git;f=model/model-flow-statistics/src/main/yang/opendaylight-statistics-types.yang;a=blob;hb=refs/heads/stable/boron[opendaylight-statistics-types.yang] 	| 	link:https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-merge-boron/lastSuccessfulBuild/artifact/model/model-flow-statistics/target/site/models/opendaylight-statistics-types.html[YangDOC]
+
+|link:https://git.opendaylight.org/gerrit/gitweb?p=openflowplugin.git;f=model/model-flow-statistics/src/main/yang/opendaylight-group-statistics.yang;a=blob;hb=refs/heads/stable/boron[opendaylight-group-statistics.yang] 	| 	link:https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-merge-boron/lastSuccessfulBuild/artifact/model/model-flow-statistics/target/site/models/opendaylight-group-statistics.html[YangDOC]
+
+|link:https://git.opendaylight.org/gerrit/gitweb?p=openflowplugin.git;f=model/model-flow-statistics/src/main/yang/opendaylight-flow-statistics.yang;a=blob;hb=refs/heads/stable/boron[opendaylight-flow-statistics.yang] 	| 	link:https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-merge-boron/lastSuccessfulBuild/artifact/model/model-flow-statistics/target/site/models/opendaylight-flow-statistics.html[YangDOC]
+
+|link:https://git.opendaylight.org/gerrit/gitweb?p=openflowplugin.git;f=model/model-flow-statistics/src/main/yang/opendaylight-meter-statistics.yang;a=blob;hb=refs/heads/stable/boron[opendaylight-meter-statistics.yang] 	| 	link:https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-merge-boron/lastSuccessfulBuild/artifact/model/model-flow-statistics/target/site/models/opendaylight-meter-statistics.html[YangDOC]
+
+|*Openflow basic types*
+|=======================
+
