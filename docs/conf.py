@@ -318,5 +318,6 @@ subprocess.call(["./build-integration-robot-libdoc.sh"])
 
 # Disable javasphinx generation until we have a solution to long build
 # times. readthedocs timesout after 902 seconds.
+subprocess.call(["rm","-rf","javadoc"])
 # if javasphinx_available:
 #     subprocess.call(["./generate-javaapidoc.sh"])
