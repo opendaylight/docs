@@ -32,13 +32,15 @@ import sphinx_bootstrap_theme
 # ones.
 extensions = []
 
-javasphinx_available = False
-try:
-     import javasphinx
-     javasphinx_available = True
-     extensions.append('javasphinx')
-except ImportError, e:
-     pass
+# Disable javasphinx generation until we have a solution to long build
+# times. readthedocs timesout after 902 seconds.
+# javasphinx_available = False
+# try:
+#      import javasphinx
+#      javasphinx_available = True
+#      extensions.append('javasphinx')
+# except ImportError, e:
+#      pass
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
