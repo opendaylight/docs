@@ -1,0 +1,19 @@
+==== Chapter Overview
+During the process of aggregation and filtration, overlay items (so called logical nodes) were created from underlay items (physical nodes). In the topology manager, overlay items are put into a wrapper. A wrapper is identified with unique ID and contains list of logical nodes. Wrappers are used to deal with transitivity of underlay items - which permits grouping of overlay items (into wrappers).
+
+.Wrapper
+image::topoprocessing/wrapper.png[width=500]
+
+PN1, PN2, PN3 = physical nodes
+
+LN1, LN2 = logical nodes
+
+==== RPC Republishing
+All RPCs registered to handle underlay items are re-registered under their corresponding wrapper ID. RPCs of underlay items (belonging to an overlay item) are gathered, and registered under ID of their wrapper.
+
+===== RPC Call
+When RPC is called on overlay item, this call is delegated to it's underlay items, this means that the RPC is called on all underlay items of this overlay item.
+
+==== Writing Mechanism
+When a wrapper (containing overlay item(s) with it's underlay item(s)) is ready to be written into data store, it has to be converted into DOM format. After this translation is done, the result is written into datastore. Physical nodes are stored as supporting-nodes.
+In order to use resources responsibly, writing operation is divided into two steps. First, a set of threads registers prepared operations (deletes and puts) and one thread makes actual write operation in batch.
