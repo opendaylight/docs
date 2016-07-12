@@ -54,8 +54,6 @@ include::developing-app.adoc[]
 
 include::alto/alto-developer-guide.adoc[ALTO]
 
-include::armoury/odl-armoury-dev.adoc[ARMOURY]
-
 include::bgpcep/odl-bgpcep-bgp-all-dev.adoc[BGP]
 
 include::bgpcep/odl-bgpcep-bmp-dev.adoc[BGP]
@@ -73,8 +71,6 @@ include::iotdm/iotdm-dev.adoc[]
 include::l2switch/l2switch-dev.adoc[]
 
 include::lacp/lacp-dev.adoc[]
-
-include::messaging4transport/messaging4transport-developer.adoc[]
 
 include::controller/netconf/odl-netconf-dev.adoc[]
 
@@ -112,8 +108,6 @@ include::sfc/sfc.adoc[]
 include::snmp4sdn/snmp4sdn-developer.adoc[SNMP4SDN]
 
 include::sxp/odl-sxp-dev.adoc[]
-
-include::tcpmd5/odl-tcpmd5-all-dev.adoc[TCP-MD5]
 
 include::topoprocessing/odl-topoprocessing-framework-dev.adoc[]
 
