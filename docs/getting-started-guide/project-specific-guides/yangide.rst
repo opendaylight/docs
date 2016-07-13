@@ -50,6 +50,27 @@ Eclipse will prompt you to restart Eclipse.  Do that.
 
 Installation is complete at this point.
 
+Network Connections
+^^^^^^^^^^^^^^^^^^^
+
+If the installation failed with an indication that it couldn't reach
+the internet, then your work computer may be behind a firewall.
+You'll need to go to the "Network Connections" section of the Eclipse
+preferences (Menubar: "Window"->"Preferences"->"General"->"Network
+Connections").
+
+Before you make these changes, you'll need to know the host and port
+of your outbound proxy server.
+
+On the "Network Connections" page, you should select "Manual" in the
+"Active Provider" dropdown, then edit the "HTTP" and "HTTPS" rows in
+the table, setting the host and port of the outbound proxy server.
+
+If the proxy server requires authentication, turn on the "Requires
+Authentication" checkbox and enter the required userid and password
+fields.  If you don't know whether your proxy server requires
+authentication, it probably does not.
+
 Verifying your Installation
 ---------------------------
 
@@ -120,7 +141,55 @@ problems, ask questions on the "yangide-dev" mailing list.
 Post Installation Configuration
 -------------------------------
 
-No post-installation steps are required.
+Setting Proxy Used For Maven
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If your work computer sits behind a firewall, you will have had to put
+information about your firewall in the "Network Connections" section
+of the Eclipse preferences.  That would have allowed you to at least
+obtain the plugin and install it into Eclipse.
+
+Much of the functionality of YangIDE uses Maven internally.  You do
+not need to be a Maven expert to use this functionality, but you will
+need to add a few more lines of configuration so that Maven can get
+through the firewall.  Maven, even when running inside Eclipse, as it
+is when you're using YangIDE, does not use the Eclipse "Network
+Connection" settings to reach the internet.  You have to set the proxy
+server information in a different place for Maven.
+
+Maven looks for a file at "$HOME/.m2/settings.xml" (Linux) or
+"%HOME%\.m2\settings.xml" (Windows).  If the ".m2" folder doesn't
+exist, you'll need to create it.  If the "settings.xml" file does not
+exist, you should create it with the following contents::
+
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+  <proxies>
+    <proxy>
+      <id>proxy</id>
+      <active>true</active>
+      <protocol>http</protocol>
+      <host>FULLY QUALIFIED NAME OF PROXY HOST</host>
+      <port>PROXY PORT</port>
+    </proxy>
+    <proxy>
+      <id>proxy2</id>
+      <active>true</active>
+      <protocol>https</protocol>
+      <host>FULLY QUALIFIED NAME OF PROXY HOST</host>
+      <port>PROXY PORT</port>
+    </proxy>
+  </proxies>
+</settings>
+
+Replace "FULLY QUALIFIED NAME OF PROXY HOST" and "PROXY PORT" with the
+host and port of your proxy server.
+
+If the "settings.xml" file already existed, then you'll need to edit
+it, inserting the "proxies" element from the above sample at an
+appropriate place.
 
 Upgrading From a Previous Release
 ---------------------------------
