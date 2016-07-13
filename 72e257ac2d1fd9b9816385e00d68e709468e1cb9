@@ -1,0 +1,607 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a561d44_375f4b43",
+        "filename": "docs/getting-started-guide/project-specific-guides/cardinal.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-13T01:48:51Z",
+      "side": 1,
+      "message": "Do you actually need an installation guide? My guess is no.\n\nThe only thing other than the name of the feature is that it requires TSDR HBase, but then doesn\u0027t even mention the feature to install or any instructions.",
+      "revId": "72e257ac2d1fd9b9816385e00d68e709468e1cb9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_175a0750",
+        "filename": "docs/getting-started-guide/project-specific-guides/cardinal.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-13T01:48:51Z",
+      "side": 1,
+      "message": "What follows?",
+      "range": {
+        "startLine": 17,
+        "startChar": 59,
+        "endLine": 17,
+        "endChar": 67
+      },
+      "revId": "72e257ac2d1fd9b9816385e00d68e709468e1cb9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_7759c359",
+        "filename": "docs/getting-started-guide/project-specific-guides/cardinal.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-13T01:48:51Z",
+      "side": 1,
+      "message": "Is this just so that you have something to monitor or to monitor ODL with?",
+      "revId": "72e257ac2d1fd9b9816385e00d68e709468e1cb9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_b7323b0e",
+        "filename": "docs/getting-started-guide/project-specific-guides/cardinal.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-13T01:48:51Z",
+      "side": 1,
+      "message": "Verify",
+      "range": {
+        "startLine": 48,
+        "startChar": 3,
+        "endLine": 48,
+        "endChar": 9
+      },
+      "revId": "72e257ac2d1fd9b9816385e00d68e709468e1cb9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_d73fefd4",
+        "filename": "manuals/developer-guide/src/main/asciidoc/cardinal/odl-cardinal-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-13T01:48:51Z",
+      "side": 1,
+      "message": "cut? just \"...enables OpenDaylight...\"",
+      "range": {
+        "startLine": 4,
+        "startChar": 55,
+        "endLine": 4,
+        "endChar": 73
+      },
+      "revId": "72e257ac2d1fd9b9816385e00d68e709468e1cb9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_37262bcf",
+        "filename": "manuals/developer-guide/src/main/asciidoc/cardinal/odl-cardinal-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-13T01:48:51Z",
+      "side": 1,
+      "message": "cut? just \"...OpenDaylight and...\"",
+      "range": {
+        "startLine": 4,
+        "startChar": 86,
+        "endLine": 4,
+        "endChar": 92
+      },
+      "revId": "72e257ac2d1fd9b9816385e00d68e709468e1cb9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_973577f9",
+        "filename": "manuals/developer-guide/src/main/asciidoc/cardinal/odl-cardinal-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-13T01:48:51Z",
+      "side": 1,
+      "message": "You need a space after the . to make it an ordered list.",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 46
+      },
+      "revId": "72e257ac2d1fd9b9816385e00d68e709468e1cb9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_172167b4",
+        "filename": "manuals/developer-guide/src/main/asciidoc/cardinal/odl-cardinal-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-13T01:48:51Z",
+      "side": 1,
+      "message": "The Cardinal...",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 8
+      },
+      "revId": "72e257ac2d1fd9b9816385e00d68e709468e1cb9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_572bdf93",
+        "filename": "manuals/developer-guide/src/main/asciidoc/cardinal/odl-cardinal-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-13T01:48:51Z",
+      "side": 1,
+      "message": "What APIs? What project page?",
+      "range": {
+        "startLine": 18,
+        "startChar": 28,
+        "endLine": 18,
+        "endChar": 64
+      },
+      "revId": "72e257ac2d1fd9b9816385e00d68e709468e1cb9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_7730a301",
+        "filename": "manuals/developer-guide/src/main/asciidoc/cardinal/odl-cardinal-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-13T01:48:51Z",
+      "side": 1,
+      "message": "APIs",
+      "range": {
+        "startLine": 18,
+        "startChar": 16,
+        "endLine": 18,
+        "endChar": 20
+      },
+      "revId": "72e257ac2d1fd9b9816385e00d68e709468e1cb9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_b7199b8a",
+        "filename": "manuals/developer-guide/src/main/asciidoc/cardinal/odl-cardinal-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-13T01:48:51Z",
+      "side": 1,
+      "message": "Just cut this and start with the System info API at level \u003d\u003d\u003d\u003d",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 30
+      },
+      "revId": "72e257ac2d1fd9b9816385e00d68e709468e1cb9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_971c5779",
+        "filename": "manuals/developer-guide/src/main/asciidoc/cardinal/odl-cardinal-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-13T01:48:51Z",
+      "side": 1,
+      "message": "APIs",
+      "range": {
+        "startLine": 23,
+        "startChar": 18,
+        "endLine": 23,
+        "endChar": 22
+      },
+      "revId": "72e257ac2d1fd9b9816385e00d68e709468e1cb9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_f7131364",
+        "filename": "manuals/developer-guide/src/main/asciidoc/cardinal/odl-cardinal-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-13T01:48:51Z",
+      "side": 1,
+      "message": "no caps",
+      "range": {
+        "startLine": 26,
+        "startChar": 1,
+        "endLine": 26,
+        "endChar": 2
+      },
+      "revId": "72e257ac2d1fd9b9816385e00d68e709468e1cb9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_370d8b3f",
+        "filename": "manuals/developer-guide/src/main/asciidoc/cardinal/odl-cardinal-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-13T01:48:51Z",
+      "side": 1,
+      "message": "no caps, and I think it\u0027s odl-restconf",
+      "range": {
+        "startLine": 27,
+        "startChar": 21,
+        "endLine": 27,
+        "endChar": 22
+      },
+      "revId": "72e257ac2d1fd9b9816385e00d68e709468e1cb9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_d716cf54",
+        "filename": "manuals/developer-guide/src/main/asciidoc/cardinal/odl-cardinal-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-13T01:48:51Z",
+      "side": 1,
+      "message": "no caps",
+      "range": {
+        "startLine": 27,
+        "startChar": 1,
+        "endLine": 27,
+        "endChar": 2
+      },
+      "revId": "72e257ac2d1fd9b9816385e00d68e709468e1cb9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_b2008902",
+        "filename": "manuals/developer-guide/src/main/asciidoc/cardinal/odl-cardinal-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-13T01:48:51Z",
+      "side": 1,
+      "message": "you need a space before each line of this or it will format as one big paragraph.",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 43,
+        "endChar": 1
+      },
+      "revId": "72e257ac2d1fd9b9816385e00d68e709468e1cb9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_9203c50c",
+        "filename": "manuals/developer-guide/src/main/asciidoc/cardinal/odl-cardinal-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-13T01:48:51Z",
+      "side": 1,
+      "message": "\u003d\u003d\u003d\u003d Karaf Info APIs",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 5
+      },
+      "revId": "72e257ac2d1fd9b9816385e00d68e709468e1cb9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_b227e9b5",
+        "filename": "manuals/developer-guide/src/main/asciidoc/cardinal/odl-cardinal-dev.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-13T01:48:51Z",
+      "side": 1,
+      "message": "This is exactly the same as above. Cut it and just put somewhere near the top: \"This assumes you already have the odl-cardinal and odl-restconf features installed. You can do that by entering the following at the Karaf console:\"",
+      "range": {
+        "startLine": 46,
+        "startChar": 1,
+        "endLine": 49,
+        "endChar": 33
+      },
+      "revId": "72e257ac2d1fd9b9816385e00d68e709468e1cb9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_922aa57c",
+        "filename": "manuals/user-guide/src/main/asciidoc/cardinal/odl-cardinal-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-13T01:48:51Z",
+      "side": 1,
+      "message": "OpenDaylight",
+      "range": {
+        "startLine": 1,
+        "startChar": 13,
+        "endLine": 1,
+        "endChar": 25
+      },
+      "revId": "72e257ac2d1fd9b9816385e00d68e709468e1cb9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_f22161a0",
+        "filename": "manuals/user-guide/src/main/asciidoc/cardinal/odl-cardinal-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-13T01:48:51Z",
+      "side": 1,
+      "message": "capitalize?",
+      "range": {
+        "startLine": 2,
+        "startChar": 38,
+        "endLine": 2,
+        "endChar": 46
+      },
+      "revId": "72e257ac2d1fd9b9816385e00d68e709468e1cb9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_d2241db1",
+        "filename": "manuals/user-guide/src/main/asciidoc/cardinal/odl-cardinal-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-13T01:48:51Z",
+      "side": 1,
+      "message": "...OpenDaylight...",
+      "range": {
+        "startLine": 7,
+        "startChar": 56,
+        "endLine": 7,
+        "endChar": 91
+      },
+      "revId": "72e257ac2d1fd9b9816385e00d68e709468e1cb9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_323bd9d2",
+        "filename": "manuals/user-guide/src/main/asciidoc/cardinal/odl-cardinal-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-13T01:48:51Z",
+      "side": 1,
+      "message": "See previous comment about lists.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 46
+      },
+      "revId": "72e257ac2d1fd9b9816385e00d68e709468e1cb9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_123695e7",
+        "filename": "manuals/user-guide/src/main/asciidoc/cardinal/odl-cardinal-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-13T01:48:51Z",
+      "side": 1,
+      "message": "The Cardinal...",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 8
+      },
+      "revId": "72e257ac2d1fd9b9816385e00d68e709468e1cb9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_723551d9",
+        "filename": "manuals/user-guide/src/main/asciidoc/cardinal/odl-cardinal-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-13T01:48:51Z",
+      "side": 1,
+      "message": "You need a blank line before and after to get this to format right.",
+      "revId": "72e257ac2d1fd9b9816385e00d68e709468e1cb9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_52300de8",
+        "filename": "manuals/user-guide/src/main/asciidoc/cardinal/odl-cardinal-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-13T01:48:51Z",
+      "side": 1,
+      "message": "Again, you need spaces after the .s",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 29
+      },
+      "revId": "72e257ac2d1fd9b9816385e00d68e709468e1cb9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_b24ec96d",
+        "filename": "manuals/user-guide/src/main/asciidoc/cardinal/odl-cardinal-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-13T01:48:51Z",
+      "side": 1,
+      "message": "CLI",
+      "range": {
+        "startLine": 39,
+        "startChar": 53,
+        "endLine": 39,
+        "endChar": 56
+      },
+      "revId": "72e257ac2d1fd9b9816385e00d68e709468e1cb9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_92510511",
+        "filename": "manuals/user-guide/src/main/asciidoc/cardinal/odl-cardinal-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-13T01:48:51Z",
+      "side": 1,
+      "message": "APIs",
+      "range": {
+        "startLine": 70,
+        "startChar": 49,
+        "endLine": 70,
+        "endChar": 53
+      },
+      "revId": "72e257ac2d1fd9b9816385e00d68e709468e1cb9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
