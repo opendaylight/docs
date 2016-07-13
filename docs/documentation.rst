@@ -17,9 +17,7 @@ reStructuredText-based Documentation
 ====================================
 
 When using reStructuredText, we try to follow the python documentation
-style guide. See:
-
-   https://docs.python.org/devguide/documenting.html
+style guide. See: https://docs.python.org/devguide/documenting.html
 
 To build and review the reStructuredText documentation locally you must
 have installed locally:
@@ -35,6 +33,7 @@ browser as follows:
 .. code-block:: bash
 
    git clone https://git.opendaylight.org/gerrit/docs
+   cd docs
    git submodule update --init
    tox -edocs
    firefox docs/_build/html/index.html
