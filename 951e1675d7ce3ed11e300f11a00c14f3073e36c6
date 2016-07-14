@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a561d44_20641e48",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-14T12:45:32Z",
+      "side": 1,
+      "message": "should this be {toxinidir}/docs/_build/html? or maybe even use a variable?",
+      "range": {
+        "startLine": 10,
+        "startChar": 38,
+        "endLine": 10,
+        "endChar": 56
+      },
+      "revId": "951e1675d7ce3ed11e300f11a00c14f3073e36c6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
