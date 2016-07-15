@@ -49,41 +49,53 @@ h3 h3-eth0:s3-eth1
 h4 h4-eth0:s3-eth2
 ----
 
-NOTE: Add the default flow to OVS to forward packets to controller when there is a table-miss:
+NOTE: For Beryllium release version If you are using Beryllium release version you need to manually add flow entries to OpenFlow switches in the Mininet. The flow entries are needed to forward packets to controller when there is a table-miss. This configuration is required only in case of OpenFlow 1.3 or using OVS versions (>2.1.1).
 
 ----
-ovs-ofctl --protocols=OpenFlow13 add-flow <switch-name> priority=0,actions=output:CONTROLLER
+sudo ovs-ofctl add-flow s1 priority=0,actions=output:CONTROLLER
+sudo ovs-ofctl add-flow s2 priority=0,actions=output:CONTROLLER
+sudo ovs-ofctl add-flow s3 priority=0,actions=output:CONTROLLER
 ----
 
-These flows need to be added only in case of OpenFlow1.3 or using OVS versions (>2.1.1).
-
-Here the switch name is the switches in the topology such as s1,s2,s3.
+NOTE: For Beryllium SR1 and later version no need to execute the above flow add commands to OF1.3+ switches if you use Beryllium SR1 or later versions. Since, VTN Manager itself installs the table-miss flow entry to the OF1.3+ switches so that unmatched packets are punted to the controller.
 
 ===== Configuration
-* .Create a controller
+* Create a Controller named controller1 and mention its ip-address in the below create-controller command.
 
 ----
 curl --user admin:adminpass -H 'content-type: application/json' -X POST -d '{"controller": {"controller_id": "controller1", "ipaddr":"10.100.9.61", "type": "odc", "version": "1.0", "auditstatus":"enable"}}' http://127.0.0.1:8083/vtn-webapi/controllers
 ----
-* Create a VTN
+* Create a VTN named vtn_one by executing the create-vtn command
 
 ----
 curl --user admin:adminpass -H 'content-type: application/json' -X POST -d '{"vtn" : {"vtn_name":"vtn_one","description":"test VTN" }}' http://127.0.0.1:8083/vtn-webapi/vtns.json
 ----
-* Create two vBridges
+* Create a vBridge named vbr_two in the vtn1 by executing the create-vbr command.
 
 ----
 curl --user admin:adminpass -H 'content-type: application/json' -X POST -d '{"vbridge" : {"vbr_name":"vbr_one^C"controller_id":"controller1","domain_id":"(DEFAULT)" }}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn_one/vbridges.json
 curl -v --user admin:adminpass -H 'content-type: application/json' -X POST -d '{"vbridge" :
 {"vbr_name":"vbr_two","controller_id":"controller1","domain_id":"(DEFAULT)" }}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn_one/vbridges.json
 ----
-* Create vBridge interfaces
+* Create two Interfaces named if1 and if2 into the vbr_two
 
 ----
 curl --user admin:adminpass -H 'content-type: application/json' -X POST -d '{"interface": {"if_name": "if1","description": "if_desc1"}}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn_one/vbridges/vbr_two/interfaces.json
 curl -v --user admin:adminpass -H 'content-type: application/json' -X POST -d '{"interface": {"if_name": "if1","description": "if_desc1"}}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn_one/vbridges/vbr_two/interfaces.json
 ----
-* Configure two mappings on the interfaces
+
+* Get the list of logical ports configured
+
+----
+curl --user admin:adminpass -H 'content-type: application/json' -X GET  http://127.0.0.1:8083/vtn-webapi/controllers/controllerone/domains/\(DEFAULT\)/logical_ports.json
+----
+* Configure two mappings on each of the interfaces by executing the below command.
+
+The interface if1 of the virtual bridge will be mapped to the port "s2-eth1" of the switch "openflow:2" of the Mininet.
+The h1 is connected to the port "s2-eth1".
+
+The interface if2 of the virtual bridge will be mapped to the port "s3-eth1" of the switch "openflow:3" of the Mininet.
+The h3 is connected to the port "s3-eth1".
 
 ----
 curl --user admin:adminpass -H 'content-type: application/json' -X PUT -d '{"portmap":{"logical_port_id": "PP-OF:00:00:00:00:00:00:00:03-s3-eth1"}}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn_one/vbridges/vbr_two/interfaces/if1/portmap.json
@@ -119,13 +131,6 @@ From 10.0.0.1 icmp_seq=1 Destination Host Unreachable
 From 10.0.0.1 icmp_seq=2 Destination Host Unreachable
 ----
 
-In controller you can see the DROP action type information as below, here action as DROP.
-osgi> readflows 0000000000000003
-
-----
-[FlowOnNode[flow =Flow[match = Match [fields={DL_VLAN=DL_VLAN(0), IN_PORT=IN_PORT(OF|1@OF|00:00:00:00:00:00:00:03), DL_DST=DL_DST(4e:08:1d:a6:05:08), DL_SRC=DL_SRC(be:15:00:a4:96:13)}, matches=15], actions = [DROP], priority = 10, id = 0, idleTimeout = 0, hardTimeout = 300], tableId = 0, sec = 18, nsec = 475000000, pkt = 20, byte = 1232], FlowOnNode[flow =Flow[match = Match [fields={DL_VLAN=DL_VLAN(0), IN_PORT=IN_PORT(OF|3@OF|00:00:00:00:00:00:00:03), DL_DST=DL_DST(be:15:00:a4:96:13), DL_SRC=DL_SRC(4e:08:1d:a6:05:08)}, matches=15], actions = [OUTPUT[OF|1@OF|00:00:00:00:00:00:00:03]], priority = 10, id = 0, idleTimeout = 0, hardTimeout = 0], tableId = 0, sec = 18, nsec = 489000000, pkt = 10, byte = 812]]
-----
-
 ===== Flow filter demonstration with PASS action-type
 
 ----
@@ -141,8 +146,3 @@ PING 10.0.0.3 (10.0.0.3) 56(84) bytes of data.
 64 bytes from 10.0.0.3: icmp_req=3 ttl=64 time=0.098 ms
 ----
 
-In controller you can see the PASS action type information by executing the following command:
-
-----
- osgi> readflows 0000000000000003
-----
