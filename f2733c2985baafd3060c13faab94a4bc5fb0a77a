@@ -22,6 +22,30 @@
       "revId": "f2733c2985baafd3060c13faab94a4bc5fb0a77a",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_041645f1",
+        "filename": "manuals/developer-guide/src/main/asciidoc/topoprocessing/odl-topoprocessing-architecture-dev.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 4630
+      },
+      "writtenOn": "2016-07-15T18:10:59Z",
+      "side": 1,
+      "message": "In your comment in this change https://git.opendaylight.org/gerrit/#/c/28802/4 (Feb 21) you proposed to move to using the term filter instead of filtrator. So we changed it to filter. In code we use, unfortunately, filtrators.",
+      "parentUuid": "9a561d44_845c15ef",
+      "range": {
+        "startLine": 18,
+        "startChar": 94,
+        "endLine": 18,
+        "endChar": 101
+      },
+      "revId": "f2733c2985baafd3060c13faab94a4bc5fb0a77a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
