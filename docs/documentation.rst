@@ -13,11 +13,111 @@ documentation that can be easily versioned alongside the code. It also
 offers similar syntax to Markdown which is familiar to large numbers of
 people.
 
+.. contents:: Contents
+   :depth: 1
+   :local:
+
+Style Guide
+===========
+
+This section serves two purposes:
+
+#. A guide for those writing documentation to follow.
+#. A guide for those reviewing documentation.
+
+That being said, assuming that the content is usable, the bias should
+be toward merging it rather than blocking on relatively minor edits.
+
+Formatting Preferences
+^^^^^^^^^^^^^^^^^^^^^^
+
+In general, the documentation team has focused on trying to make sure
+that the instructions are comprehensible, but not being overly pedantic
+about these things. Along those lines, while we would prefer the
+following, generally they aren't a reason to -1 in and of themselves:
+
+* No trailing whitespace
+* Line wrapping at something reasonable, i.e., 72–100 characters
+
+Key terms
+^^^^^^^^^
+
+* Functionality: something useful a project provides abstractly
+* Feature: a Karaf feature that somebody could install
+* Project: a project within OpenDaylight, projects ship features to
+  provide functionality
+* OpenDaylight: this refers to the software we release, use this in
+  place of OpenDaylight controller, the OpenDaylight controller, not
+  ODL, not ODC
+
+  * Since there is a controller project within OpenDaylight, using
+    other terms is hard.
+
+Common writing style mistakes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* In per-project user documentation, you should never say *git clone*,
+  but should assume people have downloaded and installed the controller
+  per the getting started guide and start with ``feautre:install
+  <something>``
+* Avoid statements which are true about part of OpenDaylight, but not
+  generally true.
+
+  * For example: "OpenDaylight is a NETCONF controller." It is, but
+    that is not all it is.
+
+* In general, developer documentation should target external developers
+  to your project so should talk about what APIs you have and how they
+  could use them. It *should not* document how to contribute to your
+  project.
+
+Grammar Preferences
+"""""""""""""""""""
+
+* Avoid contractions: use cannot instead of can't, it is instead of
+  it's, and the like.
+
+Things to get right with spacing and capitalization
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*Note that all of these apply when using them in text. If they are used
+as part of URL, class name, or something similar, use the actual
+capitalization and spacing.*
+
+* ACL: not Acl or acl
+* API: not api
+* ARP: not Arp or arp
+* datastore: not data store, Data Store, or DataStore (unless it's a
+  class/object name)
+* IPsec, not IPSEC or ipsec
+* IPv4 or IPv6: not Ipv4, Ipv6, ipv4, ipv6, IPV4, or IPV6
+* Karaf: not karaf
+* Linux: not LINUX or linux
+* NETCONF: not Netconf or netconf
+* Neutron: not neutron
+* OSGi: not osgi or OSGI
+* Open vSwitch: not OpenvSwitch, OpenVSwitch, or Open V Switch, etc.
+* OpenDaylight: not Opendaylight, Open Daylight, or OpenDayLight, etc.
+
+  * also avoid abbreviations like ODL and ODC
+
+* OpenFlow: not Openflow, Open Flow, openflow, etc.
+* OpenStack: not Open Stack or Openstack
+* QoS: not Qos, QOS, or qos
+* RESTCONF: not Restconf or restconf
+* RPC not Rpc or rpc
+* URL not Url or url
+* VM: not Vm or vm
+* YANG: not Yang or yang
+
 reStructuredText-based Documentation
 ====================================
 
 When using reStructuredText, we try to follow the python documentation
 style guide. See: https://docs.python.org/devguide/documenting.html
+
+The best reference for reStrucutedText syntax seems to be the Sphinx
+Primer on reStructuredText_.
 
 To build and review the reStructuredText documentation locally you must
 have installed locally:
@@ -106,8 +206,8 @@ table of contents is the root of the files that are included.
 Documentation Layout and Style
 ------------------------------
 
-As mentioned previously we try to follow the python documentation style guide
-which defines a few types of sections::
+As mentioned previously we try to follow the python documentation style
+guide which defines a few types of sections::
 
     # with overline, for parts
     * with overline, for chapters
@@ -145,7 +245,8 @@ If you see an error like this::
    ./build-integration-robot-libdoc.sh: line 6: cd: submodules/integration/test/csit/libraries: No such file or directory
    Resource file '*.robot' does not exist.
 
-It means that you haven't pulled down the git submodule for the integration/test project. The fastest way to do that is::
+It means that you haven't pulled down the git submodule for the
+integration/test project. The fastest way to do that is::
 
    git submodule update --init
 
@@ -238,6 +339,23 @@ itself and it contains a ``pom.xml`` file saying how to build it, a
 ``src/main/asciidoc`` directory with AsciiDoc source files and a
 ``src/main/resources`` directory containing images.
 
+Troubleshooting
+---------------
+
+See `AsciiDoc Tips
+<https://wiki.opendaylight.org/view/Documentation/Tools/AsciiDoc_Tips>`_
+on the wiki for more information.
+
+Common AsciiDoc mistakes
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+See also [[Documentation/Tools/AsciiDoc Tips|AsciiDoc Tips and Tricks]]
+
+* Lists that get formatted incorrectly because of no blank line above
+  the list.
+* Numbered lists that are formatted incorrectly and every bullet winds
+  up being 1
+
 Migration from AsciiDoc to ReStructuredText
 ===========================================
 
@@ -285,7 +403,8 @@ To something like::
 
    .. image:: images/dlux-default.png
 
-A helpful regular expression for automating the replacements is something like::
+A helpful regular expression for automating the replacements is
+something like::
 
    search: ^( *)\.(.+)\n +image::(.+)\[(.+),width=(\d+)\]
    replace: $1.. figure:: images/dlux/$3\n$1   :width: $5\n\n$1   $2
