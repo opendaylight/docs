@@ -37,14 +37,15 @@ Replace "192.168.64.13" with the IP address of OpenDaylight controller based on 
  c0
 ----
 
-NOTE:
-You need to manually add flow entries to OpenFlow switches in the Mininet. The flow entries are needed to forward packets to controller when there is a table-miss. This configuration is required only in case of OpenFlow 1.3 or using OVS versions (>2.1.1).
+Note: If you are using Beryllium release version you need to manually add flow entries to OpenFlow switches in the Mininet. The flow entries are needed to forward packets to controller when there is a table-miss. This configuration is required only in case of OpenFlow 1.3 or using OVS versions (>2.1.1).
 
 ----
  sudo ovs-ofctl add-flow s1 priority=0,actions=output:CONTROLLER
  sudo ovs-ofctl add-flow s2 priority=0,actions=output:CONTROLLER
  sudo ovs-ofctl add-flow s3 priority=0,actions=output:CONTROLLER
 ----
+
+Note: For Beryllium SR1 and later version no need to execute the above flow add commands to OF1.3+ switches if you use Beryllium SR1 or later versions. Since, VTN Manager itself installs the table-miss flow entry to the OF1.3+ switches so that unmatched packets are punted to the controller.
 
 ===== Configuration
 
