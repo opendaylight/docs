@@ -6,15 +6,15 @@ Here is the Example for vBridge Interface Mapping with Multi-controller using mi
 image::vtn/MutiController_Example_diagram.png["EXAMPLE DEMONSTRATING MULTIPLE CONTROLLERS",width=600]
 
 ===== Requirements
-* Configure multiple controllers using the mininet script given below: https://wiki.opendaylight.org/view/OpenDaylight_Virtual_Tenant_Network_%28VTN%29:Scripts:Mininet#Network_with_Multiple_Paths_for_delivering_packets
+* Configure multiple controllers using the mininet script given below: https://wiki.opendaylight.org/view/OpenDaylight_Virtual_Tenant_Network_%28VTN%29:Scripts:Mininet#Network_with_multiple_switches_and_OpenFlow_controllers
 
 ===== Configuration
-* Create a VTN
+* Create a VTN named vtn3 by executing the create-vtn command
 
 ----
 curl --user admin:adminpass -H 'content-type: application/json'  -X POST -d '{"vtn" : {"vtn_name":"vtn3"}}' http://127.0.0.1:8083/vtn-webapi/vtns.json
 ----
-* Create two Controllers
+* Create two Controllers named odc1 and odc2 with its ip-address in the below create-controller command.
 
 ----
 curl --user admin:adminpass -H 'content-type: application/json'  -X POST -d '{"controller": {"controller_id": "odc1", "ipaddr":"10.100.9.52", "type": "odc", "version": "1.0", "auditstatus":"enable"}}' http://127.0.0.1:8083/vtn-webapi/controllers.json
@@ -32,7 +32,7 @@ curl --user admin:adminpass -H 'content-type: application/json'  -X POST -d '{"c
 ----
 curl --user admin:adminpass -H 'content-type: application/json'  -X POST -d '{"vbridge" : {"vbr_name":"vbr2","controller_id":"odc2","domain_id":"(DEFAULT)" }}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn3/vbridges.json
 ----
-* Create vBridge Interfaces
+* Create two Interfaces if1, if2 for the two vBridges vbr1 and vbr2.
 
 ----
 curl --user admin:adminpass -H 'content-type: application/json'  -X POST -d '{"interface": {"if_name": "if1"}}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn3/vbridges/vbr1/interfaces.json
@@ -54,7 +54,7 @@ curl --user admin:adminpass -H 'content-type: application/json'  -X POST -d '{"i
 ----
 curl --user admin:adminpass -H 'content-type: application/json' -X GET http://127.0.0.1:8083/vtn-webapi/controllers/odc1/domains/\(DEFAULT\)/logical_ports/detail.json
 ----
-* Create boundary and vLink
+* Create boundary and vLink for the two controllers
 
 ----
 curl --user admin:adminpass -H 'content-type: application/json'   -X POST -d '{"boundary": {"boundary_id": "b1", "link": {"controller1_id": "odc1", "domain1_id": "(DEFAULT)", "logical_port1_id": "PP-OF:00:00:00:00:00:00:00:01-s1-eth3", "controller2_id": "odc2", "domain2_id": "(DEFAULT)", "logical_port2_id": "PP-OF:00:00:00:00:00:00:00:04-s4-eth3"}}}' http://127.0.0.1:8083/vtn-webapi/boundaries.json
@@ -63,7 +63,13 @@ curl --user admin:adminpass -H 'content-type: application/json'   -X POST -d '{"
 ----
 curl --user admin:adminpass -H 'content-type: application/json'  -X POST -d '{"vlink": {"vlk_name": "vlink1" , "vnode1_name": "vbr1", "if1_name":"if2", "vnode2_name": "vbr2", "if2_name": "if2", "boundary_map": {"boundary_id":"b1","vlan_id": "50"}}}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn3/vlinks.json
 ----
-* Configure port-map on the interfaces
+* Configure two mappings on each of the interfaces by executing the below command.
+
+The interface if1 of the vbr1 will be mapped to the port "s2-eth2" of the switch "openflow:2" of the Mininet.
+The h2 is connected to the port "s2-eth2".
+
+The interface if2 of the vbr2 will be mapped to the port "s5-eth2" of the switch "openflow:5" of the Mininet.
+The h6 is connected to the port "s5-eth2".
 
 ----
 curl --user admin:adminpass -H 'content-type: application/json' -X PUT -d '{"portmap":{"logical_port_id": "PP-OF:00:00:00:00:00:00:00:02-s2-eth2"}}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn3/vbridges/vbr1/interfaces/if1/portmap.json
@@ -87,13 +93,4 @@ mininet> h2 ping h6
  64 bytes from 10.0.0.6: icmp_req=1 ttl=64 time=0.780 ms
  64 bytes from 10.0.0.6: icmp_req=2 ttl=64 time=0.079 ms
 ----
-
-NOTE: Add the default flow to OVS to forward packets to controller when there is a table-miss:
-----
-ovs-ofctl --protocols=OpenFlow13 add-flow <switch-name> priority=0,actions=output:CONTROLLER
-----
-
-These flows need to be added only in case of OpenFlow1.3 or using OVS versions (>2.1.1).
-
-Here the switch name is the switches in the topology such as s1,s2,s3.
 
