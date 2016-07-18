@@ -58,14 +58,6 @@ You can check the topology that you have created by executing "net" command in t
 
 In this guide, you will provision flowfilters to establish communication between h1 and h3.
 
-NOTE: You need to manually add flow entries to OpenFlow switches in the Mininet. The flow entries are needed to forward packets to controller when there is a table-miss. This configuration is required only in case of OpenFlow 1.3 or using OVS versions (>2.1.1).
-
-----
-sudo ovs-ofctl add-flow s1 priority=0,actions=output:CONTROLLER
-sudo ovs-ofctl add-flow s2 priority=0,actions=output:CONTROLLER
-sudo ovs-ofctl add-flow s3 priority=0,actions=output:CONTROLLER
-----
-
 ===== Configuration
 
 To provision the virtual L2 network for the two hosts (h1 and h3), execute REST API provided by VTN Manager as follows. It uses curl command to call the REST API.

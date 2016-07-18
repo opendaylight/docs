@@ -49,17 +49,6 @@ sudo mn --controller=remote,ip=<Controller IP> --custom <path>\topo_handson.py -
 .Mininet Configuration
 image::vtn/Mininet_Configuration.png["Mininet Configuration",width=500]
 
-====== Install flow entries
-
-* In mininet environment, install the following flow entries to send PACKET_IN to the controller.
-
-----
- $ sudo ovs-ofctl add-flow s1 priority=0,actions=output:CONTROLLER
- $ sudo ovs-ofctl add-flow s2 priority=0,actions=output:CONTROLLER
- $ sudo ovs-ofctl add-flow s3 priority=0,actions=output:CONTROLLER
- $ sudo ovs-ofctl add-flow s4 priority=0,actions=output:CONTROLLER
-----
-
 ====== Configure service nodes
 
 * Please execute the following commands in the mininet console where mininet script is executed.
