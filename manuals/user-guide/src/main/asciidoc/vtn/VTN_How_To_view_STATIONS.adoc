@@ -28,44 +28,52 @@ mininet> net
  64 bytes from 10.0.0.2: icmp_req=2 ttl=64 time=13.2 ms
 ----
 
-NOTE: Add the default flow to OVS to forward packets to controller when there is a table-miss:
+NOTE: If you are using Beryllium release version you need to manually add flow entries to OpenFlow switches in the Mininet. The flow entries are needed to forward packets to controller when there is a table-miss. This configuration is required only in case of OpenFlow 1.3 or using OVS versions (>2.1.1).
 
 ----
-ovs-ofctl --protocols=OpenFlow13 add-flow <switch-name> priority=0,actions=output:CONTROLLER
+ sudo ovs-ofctl add-flow s1 priority=0,actions=output:CONTROLLER
+ sudo ovs-ofctl add-flow s2 priority=0,actions=output:CONTROLLER
+ sudo ovs-ofctl add-flow s3 priority=0,actions=output:CONTROLLER
+ sudo ovs-ofctl add-flow s4 priority=0,actions=output:CONTROLLER
 ----
 
-These flows need to be added only in case of OpenFlow1.3 or using OVS versions (>2.1.1).
-
-Here the switch name is the switches in the topology such as s1,s2,s3.
+NOTE: For Beryllium SR1 and later version no need to execute the above flow add commands to OF1.3+ switches if you use Beryllium SR1 or later versions. Since, VTN Manager itself installs the table-miss flow entry to the OF1.3+ switches so that unmatched packets are punted to the controller.
 
 ===== Configuration
 
-* Create Controller
+* Create a Controller named controllerone and mention its ip-address in the below create-controller command
 
 ----
 curl --user admin:adminpass -H 'content-type: application/json' -X POST -d '{"controller": {"controller_id": "controllerone", "ipaddr":"10.100.9.61", "type": "odc", "version": "1.0", "auditstatus":"enable"}}' http://127.0.0.1:8083/vtn-webapi/controllers.json
 ----
 
-* Create a VTN
+* Create a VTN named vtn1 by executing the create-vtn command
 
 ----
 curl --user admin:adminpass -H 'content-type: application/json' -X POST -d '{"vtn" : {"vtn_name":"vtn1","description":"test VTN" }}' http://127.0.0.1:8083/vtn-webapi/vtns.json
 ----
 
-* Create a vBridge in the VTN
+* Create a vBridge named vBridge1 in the vtn1 by executing the create-vbr command.
 
 ----
 curl --user admin:adminpass -H 'content-type: application/json' -X POST -d '{"vbridge" : {"vbr_name":"vBridge1","controller_id":"controllerone","domain_id":"(DEFAULT)" }}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn1/vbridges.json
 ----
 
-* Create two Interfaces into the vBridge
+* Create two Interfaces named if1 and if2 into the vBridge1
 
 ----
 curl --user admin:adminpass -H 'content-type: application/json' -X POST -d '{"interface": {"if_name": "if1","description": "if_desc1"}}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn1/vbridges/vBridge1/interfaces.json
 curl -v --user admin:adminpass -H 'content-type: application/json' -X POST -d '{"interface": {"if_name": "if2","description": "if_desc2"}}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn1/vbridges/vBridge1/interfaces.json
 ----
 
-* Configure two mappings on the interfaces
+* Configure two mappings on each of the interfaces by executing the below command.
+
+The interface if1 of the virtual bridge will be mapped to the port "s1-eth1" of the switch "openflow:1" of the Mininet.
+The h1 is connected to the port "s1-eth1".
+
+The interface if2 of the virtual bridge will be mapped to the port "s1-eth2" of the switch "openflow:1" of the Mininet.
+The h2 is connected to the port "s1-eth2".
+
 
 ----
 curl --user admin:adminpass -H 'content-type: application/json' -X PUT -d '{"portmap":{"logical_port_id": "PP-OF:00:00:00:00:00:00:00:01-s1-eth1"}}' http://127.0.0.1:8083/vtn-webapi/vtns/vtn1/vbridges/vBridge1/interfaces/if1/portmap.json
