@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a561d44_ade80b11",
+        "filename": "manuals/user-guide/src/main/asciidoc/vpnservice/vpnservice-user.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-19T20:26:52Z",
+      "side": 1,
+      "message": "This looks like some kind of non-printing character... can we remove it. It was stopping the file from creating a new chapter...\n\nIt turns out it was \u003cU+FEFF\u003e and I\u0027ve removed it. I\u0027ll push the change next.",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 1
+      },
+      "revId": "93d497a81b30c0649a1c5bfb36df4ad7a17076cf",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
