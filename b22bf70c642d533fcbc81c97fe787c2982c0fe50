@@ -1,4 +1,315 @@
 {
   "pushCert": "certificate version 0.1\npusher F566C9B1 1468960047 -0400\npushee ssh://git.opendaylight.org:29418/docs.git\nnonce 1468960047-5F95DAC79928F47A504BEF33C9F47D7AD0B260E0\n\n0000000000000000000000000000000000000000 b22bf70c642d533fcbc81c97fe787c2982c0fe50 refs/publish/master/30978\n-----BEGIN PGP SIGNATURE-----\nVersion: GnuPG v1\n\niQIcBAABAgAGBQJXjo0vAAoJEF3VDEv1ZsmxlOoQAK/OsIYPASHimUzTD1xqVQ7w\n4U7FKaX8g3blHA8H832mzhFTN24b5p1taFkRqFZQvC805gOlUdbTlIAn8FwCyOfi\nVJUnxPwU4Sm7kDMW9JtxEQy21cM2UxlSDWGY0JnS6p9sVkwr6R3Eig6wQD6WhRAT\nqD1bFaDZKZlFpc2P9BvyjEIY1URWMMS+Gr2cyEW50uokJJT5nXoMVnxnfJapgVeZ\nbh/74wkfZ3+1dHRxWkoPZ+nQYaooxND5GbE61ipZdMpihofPTPZVu0p01mE9ZhxA\nPxemhIhvUECpT1mxkCqoPj7cmY0idMLfX7QsJCx68u0j7/N26WwvyvTLSN56UxWR\nu0n1Wxt6oBcxR4JfoC9CWWqbtjwvo//nS8kabwWrIEi3cANdYXJ0HJFWqOV4VZ/B\nUzfAaDRWe0MbrbTz2wiw/ZKlTicSt3XSOqHL9kIAUd3yoIZ4PW3YNLfL0euRjRwC\nh7dBTgcjk5RYfaeYtKs1LdyUPU9bhWABwakTaZV2klZng1NAlFcuxN6DgCyqa2iR\nIqwi3nGAZvnDzF1nzy/3KDqpN5C1UJuNMBwwygP2Mg0BzYao4J9iGIT1ykVg2+yP\nLLp+wv7QyLAxUjXrLA+jKE4E88uIcbBCEXaSy/ArK/dHgAz6oFqsnS3DCqGeD86N\nQkRvLfEJ8BKL+mXu3hf/\n\u003diM6l\n-----END PGP SIGNATURE-----\n",
-  "comments": []
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a561d44_8da9c77d",
+        "filename": "manuals/user-guide/src/main/asciidoc/vpnservice/vpnservice-user.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-19T20:38:04Z",
+      "side": 1,
+      "message": "OpenFlow",
+      "range": {
+        "startLine": 17,
+        "startChar": 104,
+        "endLine": 17,
+        "endChar": 112
+      },
+      "revId": "b22bf70c642d533fcbc81c97fe787c2982c0fe50",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_0db5b7cc",
+        "filename": "manuals/user-guide/src/main/asciidoc/vpnservice/vpnservice-user.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-19T20:38:04Z",
+      "side": 1,
+      "message": "space before paren",
+      "range": {
+        "startLine": 141,
+        "startChar": 55,
+        "endLine": 141,
+        "endChar": 58
+      },
+      "revId": "b22bf70c642d533fcbc81c97fe787c2982c0fe50",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_6dcb9353",
+        "filename": "manuals/user-guide/src/main/asciidoc/vpnservice/vpnservice-user.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-19T20:38:04Z",
+      "side": 1,
+      "message": "A this point, this shouldn\u0027t be TBD.",
+      "range": {
+        "startLine": 229,
+        "startChar": 30,
+        "endLine": 229,
+        "endChar": 36
+      },
+      "revId": "b22bf70c642d533fcbc81c97fe787c2982c0fe50",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_cde1ffd1",
+        "filename": "manuals/user-guide/src/main/asciidoc/vpnservice/vpnservice-user.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-19T20:38:04Z",
+      "side": 1,
+      "message": "you would",
+      "range": {
+        "startLine": 378,
+        "startChar": 256,
+        "endLine": 378,
+        "endChar": 260
+      },
+      "revId": "b22bf70c642d533fcbc81c97fe787c2982c0fe50",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_adc5ab3d",
+        "filename": "manuals/user-guide/src/main/asciidoc/vpnservice/vpnservice-user.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-19T20:38:04Z",
+      "side": 1,
+      "message": "OpenDaylight",
+      "range": {
+        "startLine": 378,
+        "startChar": 134,
+        "endLine": 378,
+        "endChar": 137
+      },
+      "revId": "b22bf70c642d533fcbc81c97fe787c2982c0fe50",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_4dc68f4a",
+        "filename": "manuals/user-guide/src/main/asciidoc/vpnservice/vpnservice-user.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-19T20:38:04Z",
+      "side": 1,
+      "message": "OpenStack",
+      "range": {
+        "startLine": 378,
+        "startChar": 46,
+        "endLine": 378,
+        "endChar": 55
+      },
+      "revId": "b22bf70c642d533fcbc81c97fe787c2982c0fe50",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_2de99bb8",
+        "filename": "manuals/user-guide/src/main/asciidoc/vpnservice/vpnservice-user.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 381,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-19T20:38:04Z",
+      "side": 1,
+      "message": "you probably want this to be inside `s or +s instead of \u0027s since that will produce fixed-width fonts.",
+      "range": {
+        "startLine": 381,
+        "startChar": 8,
+        "endLine": 381,
+        "endChar": 31
+      },
+      "revId": "b22bf70c642d533fcbc81c97fe787c2982c0fe50",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_ed05e37a",
+        "filename": "manuals/user-guide/src/main/asciidoc/vpnservice/vpnservice-user.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-19T20:38:04Z",
+      "side": 1,
+      "message": "If you put a blank line before and after this and put any whitespace before it, it will format as a listing. Alternatively use `s or +s to format in fixed width.",
+      "revId": "b22bf70c642d533fcbc81c97fe787c2982c0fe50",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_cd08df93",
+        "filename": "manuals/user-guide/src/main/asciidoc/vpnservice/vpnservice-user.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 383,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-19T20:38:04Z",
+      "side": 1,
+      "message": "same here with +s or `s instead of \u0027s.",
+      "range": {
+        "startLine": 383,
+        "startChar": 0,
+        "endLine": 383,
+        "endChar": 16
+      },
+      "revId": "b22bf70c642d533fcbc81c97fe787c2982c0fe50",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_2d007b66",
+        "filename": "manuals/user-guide/src/main/asciidoc/vpnservice/vpnservice-user.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-19T20:38:04Z",
+      "side": 1,
+      "message": "OpenDaylight",
+      "range": {
+        "startLine": 385,
+        "startChar": 7,
+        "endLine": 385,
+        "endChar": 10
+      },
+      "revId": "b22bf70c642d533fcbc81c97fe787c2982c0fe50",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_0d03f773",
+        "filename": "manuals/user-guide/src/main/asciidoc/vpnservice/vpnservice-user.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-19T20:38:04Z",
+      "side": 1,
+      "message": "Same here with a blank line above and whitespace on the at the beginning of the line or using `s instead of \u0027s.",
+      "revId": "b22bf70c642d533fcbc81c97fe787c2982c0fe50",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_6df9d37f",
+        "filename": "manuals/user-guide/src/main/asciidoc/vpnservice/vpnservice-user.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-19T20:38:04Z",
+      "side": 1,
+      "message": "OpenDaylight",
+      "range": {
+        "startLine": 390,
+        "startChar": 30,
+        "endLine": 390,
+        "endChar": 33
+      },
+      "revId": "b22bf70c642d533fcbc81c97fe787c2982c0fe50",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_adf3eb9c",
+        "filename": "manuals/user-guide/src/main/asciidoc/vpnservice/vpnservice-user.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 403,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-19T20:38:04Z",
+      "side": 1,
+      "message": "compute nodes\u0027",
+      "range": {
+        "startLine": 403,
+        "startChar": 126,
+        "endLine": 403,
+        "endChar": 141
+      },
+      "revId": "b22bf70c642d533fcbc81c97fe787c2982c0fe50",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_ed2cc304",
+        "filename": "manuals/user-guide/src/main/asciidoc/vpnservice/vpnservice-user.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 403,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-19T20:38:04Z",
+      "side": 1,
+      "message": "set up",
+      "range": {
+        "startLine": 403,
+        "startChar": 153,
+        "endLine": 403,
+        "endChar": 158
+      },
+      "revId": "b22bf70c642d533fcbc81c97fe787c2982c0fe50",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
 }
