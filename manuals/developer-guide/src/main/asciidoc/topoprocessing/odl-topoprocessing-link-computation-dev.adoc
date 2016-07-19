@@ -1,5 +1,5 @@
 ==== Chapter Overview
-During the topology request processing, we create overlay nodes with lists of supporting underlay nodes. Because these overlay nodes have completely new identifiers, we lose link information. To regain this link information, we provide Link Computation functionality. Its main purpose is to create new overlay links based on the links from the underlay topologies and underlay items from overlay items. The required information for Link Computation is provided via the Link Computation model in (https://git.opendaylight.org/gerrit/gitweb?p=topoprocessing.git;a=blob;f=topoprocessing-api/src/main/yang/topology-link-computation.yang;hb=refs/heads/stable/beryllium[topology-link-computation.yang]).
+During processing the topology request, we create overlay nodes with lists of supporting underlay nodes. Because these overlay nodes have completely new identifiers, we lose link information. To regain this link information, we provide Link Computation functionality. Its main purpose is to create new overlay links based on the links from the underlay topologies and underlay items from overlay items. The required information for Link Computation is provided via the Link Computation model in (https://git.opendaylight.org/gerrit/gitweb?p=topoprocessing.git;a=blob;f=topoprocessing-api/src/main/yang/topology-link-computation.yang;hb=refs/heads/stable/beryllium[topology-link-computation.yang]).
 
 ==== Link Computation Functionality
 Let us consider two topologies with following components:
@@ -118,7 +118,7 @@ The difference from processing created items is that we have three possible type
 
 *Processing Removed items*
 
-Same as for processing updated item there can be three types of removed items:
+Same as for processing updated item. There can be three types of removed items:
 
 * In case of waiting link removal, the link is just removed from waitingLinks
 * In case of matched link removal, the link is removed from matchingLinks and datastore
