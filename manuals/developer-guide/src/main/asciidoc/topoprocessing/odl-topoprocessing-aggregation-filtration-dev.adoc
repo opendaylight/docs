@@ -19,7 +19,7 @@ First, each new underlay item is inserted into the proper topology store. Once t
 If an item doesn't fulfill the equality condition with any other items, processing finishes after adding the item into topology store. It will stay there for future use, ready to create an aggregated item with a new underlay item, with which it would satisfy the equality condition.
 
 .Unification case:
-An overlay item is created for all underlay items, even those which don't fulfill the equality condition with any other items. This means than an overlay item is created for every underlay item, but for items which satisfy the equality condition, an aggregated item is created.
+An overlay item is created for all underlay items, even those which don't fulfill the equality condition with any other items. This means that an overlay item is created for every underlay item, but for items which satisfy the equality condition, an aggregated item is created.
 
 ===== Update Node
 Processing of updated underlay items depends on whether the target field has been modified. If yes, then:
@@ -63,10 +63,10 @@ There are seven types of default filtrators defined in the framework:
 
 * IPv4-address filtrator - checks if specified field meets IPv4 address + mask criteria
 * IPv6-address filtrator - checks if specified field meets IPv6 address + mask criteria
-* Specific number filtrator - check for specific number
+* Specific number filtrator - checks for specific number
 * Specific string filtrator - checks for specific string
-* Range number filtrator - checks if specified field is higher than provided minimum and lower than provided maximum
-* Range string filtrator - checks if specified field is alphabetically greater than provided minimum and alphabetically lower than provided maximum
+* Range number filtrator - checks if specified field is higher than provided minimum (inclusive) and lower than provided maximum (inclusive)
+* Range string filtrator - checks if specified field is alphabetically greater than provided minimum (inclusive) and alphabetically lower than provided maximum (inclusive)
 * Script filtrator - allows a user or application to implement their own filtrator
 
 ===== Register Custom Filtrator
