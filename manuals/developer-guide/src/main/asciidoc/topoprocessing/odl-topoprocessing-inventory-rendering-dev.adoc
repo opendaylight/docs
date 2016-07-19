@@ -50,7 +50,7 @@ After that you will be able to set inventory-rendering-model as output model in 
 ===== Step2 - Module and Feature Creation
 IMPORTANT: This and following steps are based on the <<_model_specific_approach,model specific approach>> in the Topology Processing Framework. We highly recommend that you familiarize yourself with this approach in advance.
 
-To create a base module and add it as a feature to Karaf in the Topology Processing, Framework we made the changes in following https://git.opendaylight.org/gerrit/#/c/26223/[commit]. Changes in other projects will likely be similar.
+To create a base module and add it as a feature to Karaf in the Topology Processing Framework we made the changes in following https://git.opendaylight.org/gerrit/#/c/26223/[commit]. Changes in other projects will likely be similar.
 
 [options="header"]
 |======
@@ -91,7 +91,7 @@ The name convention we used was to add an abbreviation for the specific model to
 
 This part is the starting point of the whole module. It is responsible for creating and registering TopologyRequestListeners. It is necessary to create three classes which will import:
 
-* *TopoProcessingProviderModule* - is a generated class from topoprocessing-inventory-rendering-provider-impl.yang (created in previous step, file will appear after first build). Its method `createInstance()` is called at the feature start and must be modified to create an instance of TopoProcessingProvider and calli its `startup(TopoProcessingProvider topoProvider)` function.
+* *TopoProcessingProviderModule* - is a generated class from topoprocessing-inventory-rendering-provider-impl.yang (created in previous step, file will appear after first build). Its method `createInstance()` is called at the feature start and must be modified to create an instance of TopoProcessingProvider and call its `startup(TopoProcessingProvider topoProvider)` function.
 * *TopoProcessingProvider* - in `startup(TopoProcessingProvider topoProvider)` function provides ModelAdapter registration to TopoProcessingProviderImpl.
 * *ModelAdapter* - provides creation of corresponding module specific classes.
 
@@ -122,14 +122,14 @@ The output part consists of two translators implementing the NodeTranslator and 
 
 *NodeTranslator implementation* - The NodeTranslator interface has one `translate(OverlayItemWrapper wrapper)` method. For our purposes, there is one important thing in wrapper - the list of OverlayItems which have one or more common UnderlayItems. Regardless of this list, in the case of rendering it will always contains only one OverlayItem. This item has list of UnderlayItems, but again in case of rendering there will be only one UnderlayItem item in this list. In NodeTranslator, the OverlayItem and corresponding UnderlayItem represent nodes from the translating model.
 
-The UnderlayItem has several attributes. How you will use these attributes in your rendering is up to you, as you create this item in your topology operator. For example, as mentioned above, in our inventory rendering example there is an inventory node normalized node stored in the UnderlayItem leafNode attribute, and we also store node-id from network-topology model in UnderlayItem itemId attribute. You can now use these attributes to build a normalized node for your new model. How to read and create normalized nodes is out of scope of this document. 
+The UnderlayItem has several attributes. How you will use these attributes in your rendering is up to you, as you create this item in your topology operator. For example, as mentioned above, in our inventory rendering example is an inventory node normalized node stored in the UnderlayItem leafNode attribute, and we also store node-id from network-topology model in UnderlayItem itemId attribute. You can now use these attributes to build a normalized node for your new model. How to read and create normalized nodes is out of scope of this document. 
 
 *LinkTranslator implementation* - The LinkTranslator interface also has one `translate(OverlayItemWrapper wrapper)` method. In our inventory rendering this method returns `null`, because the inventory model doesn't have links. But if you also need links, this is the place where you should translate it into a normalized node for your model. In LinkTranslator, the OverlayItem and corresponding UnderlayItem represent links from the translating model. As in NodeTranslator, there will be only one OverlayItem and one UnderlayItem in the corresponding lists.
 
 ==== Testing
 If you want to test our implementation you must apply https://git.opendaylight.org/gerrit/#/c/26612[this patch]. It adds an OpenFlow Plugin dependency so we can use it in the Karaf distribution as a feature. After adding patch and building the whole framework, you can start Karaf. Next, you have to install necessary features. In our case it is:
 
-`feature:install odl-restconf-noauth odl-topoprocessing-inventory-rendering odl-openflowplugin-southbound-li odl-openflowplugin-nsf-model-li` 
+`feature:install odl-restconf-noauth odl-topoprocessing-inventory-rendering odl-openflowplugin-southbound odl-openflowplugin-nsf-model` 
 
 Now you can send messages to REST from any REST client (e.g. Postman in Chrome). Messages have to have following headers:
 
