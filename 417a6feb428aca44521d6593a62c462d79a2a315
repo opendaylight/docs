@@ -1,0 +1,124 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a561d44_6d42733f",
+        "filename": "manuals/user-guide/src/main/asciidoc/yangide/yangide-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-19T19:43:27Z",
+      "side": 1,
+      "message": "Is it YangIDE or Yang IDE?\n\nAlso, it should generally be YANG, not Yang when used normally.\n\nGenerally, avoid contractions. So it\u0027s \u003d\u003e it is, don\u0027t \u003d\u003e do not...\n\nIt would be good to be consistent about group id vs. Group ID vs. Group Id vs. Group id unless you\u0027re saying the exact text that will appear in a window. Same with Artifact ID.",
+      "revId": "417a6feb428aca44521d6593a62c462d79a2a315",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_4d3defba",
+        "filename": "manuals/user-guide/src/main/asciidoc/yangide/yangide-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-19T19:43:27Z",
+      "side": 1,
+      "message": "You need a blank line above this to get the formatting to come out right.",
+      "revId": "417a6feb428aca44521d6593a62c462d79a2a315",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_ad4c8b71",
+        "filename": "manuals/user-guide/src/main/asciidoc/yangide/yangide-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-19T19:43:27Z",
+      "side": 1,
+      "message": "missed closing \"",
+      "range": {
+        "startLine": 113,
+        "startChar": 45,
+        "endLine": 113,
+        "endChar": 46
+      },
+      "revId": "417a6feb428aca44521d6593a62c462d79a2a315",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_8d47074b",
+        "filename": "manuals/user-guide/src/main/asciidoc/yangide/yangide-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-19T19:43:27Z",
+      "side": 1,
+      "message": "Unless somebody is developing actual YANG files to go in OpenDaylight, in which case the group ID has to be org.opendaylight.\u003cprojectShortName\u003e or a descendant.",
+      "range": {
+        "startLine": 120,
+        "startChar": 32,
+        "endLine": 121,
+        "endChar": 24
+      },
+      "revId": "417a6feb428aca44521d6593a62c462d79a2a315",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_4d64cfe4",
+        "filename": "manuals/user-guide/src/main/asciidoc/yangide/yangide-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-19T19:43:27Z",
+      "side": 1,
+      "message": "Again, you need a blank line before the list to get it to format right.",
+      "revId": "417a6feb428aca44521d6593a62c462d79a2a315",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_cd9f3fb3",
+        "filename": "manuals/user-guide/src/main/asciidoc/yangide/yangide-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-19T19:43:27Z",
+      "side": 1,
+      "message": "Until you actually add the content, it\u0027s probably better to not mention it.",
+      "range": {
+        "startLine": 352,
+        "startChar": 38,
+        "endLine": 353,
+        "endChar": 8
+      },
+      "revId": "417a6feb428aca44521d6593a62c462d79a2a315",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
