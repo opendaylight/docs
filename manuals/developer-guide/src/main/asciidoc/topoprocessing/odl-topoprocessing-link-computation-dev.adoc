@@ -25,7 +25,7 @@ Now let's say that we applied some operations over these topologies that results
 * `node:1:2` and `node:2:2` (`node:2`)
 * `node:1:3` and `node:2:1` (`node:3`)
 
-At this point we can no longer use available links in new topology because of the node ID change, so we must create new overlay links with source and destination node set to new nodes IDs. It means that `link:1:1` from topology 1 will create new link `link:1`. Since original source (`node:1:1`) is already aggregated under `node:1`, it will became source node for `link:1`. Using same method the destination will be `node:2`. And the final output will be three links:
+At this point we can no longer use available links in new topology because of the node ID change, so we must create new overlay links with source and destination node set to new nodes IDs. It means that `link:1:1` from topology 1 will create new link `link:1`. Since original source (`node:1:1`) is already aggregated under `node:1`, it will become source node for `link:1`. Using same method the destination will be `node:2`. And the final output will be three links:
 
 * `link:1`, from `node:1` to `node:2`
 * `link:2`, from `node:3` to `node:2`
@@ -99,12 +99,12 @@ Processing created, updated and removed underlay items is slightly different and
 
 *Processing Created Items*
 
-Created items can be either nodes or links, depending on the type of listener from which they came. In the case of a link, it is immediately added to waitingLinks and calculation for possible overlay link creations (calculatePossibleLink) is started. The flow diagram for this process is show in the following picture:
+Created items can be either nodes or links, depending on the type of listener from which they came. In the case of a link, it is immediately added to waitingLinks and calculation for possible overlay link creations (calculatePossibleLink) is started. The flow diagram for this process is shown in the following picture:
 
 .Flow diagram of processing created items
 image::topoprocessing/LinkComputationFlowDiagram.png[width=500]
 
-Searching for the source and destination nodes in the calculatePossibleLink method runs over each node in storedOverlayNodes and the ids of each supporting node is compared against ids from the underlay link's source and destination nodes. If there are any nodes missing, the link remains in the waiting state. If both the source and destination nodes are found, the corresponding overlay nodes is recorded as the new source and destination. The link is then removed from waitingLinks and a new CalculatedLink is added to the matched links. At the end, the new link (if it exists) is written into the datastore.
+Searching for the source and destination nodes in the calculatePossibleLink method runs over each node in storedOverlayNodes and the IDs of each supporting node is compared against IDs from the underlay link's source and destination nodes. If there are any nodes missing, the link remains in the waiting state. If both the source and destination nodes are found, the corresponding overlay nodes is recorded as the new source and destination. The link is then removed from waitingLinks and a new CalculatedLink is added to the matched links. At the end, the new link (if it exists) is written into the datastore.
 
 If the created item is an overlayNode, this is added to storedOverlayNodes and we call calculatePossibleLink for every link in waitingLinks. 
 
@@ -112,7 +112,7 @@ If the created item is an overlayNode, this is added to storedOverlayNodes and w
 
 The difference from processing created items is that we have three possible types of updated items: overlay nodes, waiting underlay links, and matched underlay links.
 
-* In the case of a change in a matched link, this must be recalculated and based the result it will either be matched with new source and destination or will be returned to waiting links. If the link is moved back to a waiting state, it must also be removed from the datastore.
+* In the case of a change in a matched link, this must be recalculated and based on the result it will either be matched with new source and destination or will be returned to waiting links. If the link is moved back to a waiting state, it must also be removed from the datastore.
 * In the case of change in a waiting link, it is passed to the calculation process and based on the result will either remain in waiting state or be promoted to the matched state.
 * In the case of a change in an overlay node, storedOverlayNodes must be updated properly and all links must be recalculated in case of changes.
 
