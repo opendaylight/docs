@@ -1,0 +1,34 @@
+=== Clustering in LISP Flow Mapping
+Dcumentation regarding setting up a 3-node OpenDaylight cluster is described at following  https://wiki.opendaylight.org/view/Running_and_testing_an_OpenDaylight_Cluster#Three-node_cluster[odl wiki page].
+
+To turn on clustering in LISP Flow Mapping it is necessary:
+
+* run script *deploy.py* script. This script is in https://git.opendaylight.org/gerrit/integration/test[integration-test] project placed at _tools/clustering/cluster-deployer/deploy.py_. A whole deploy.py command can looks like:
+=======
+{path_to_integration_test_project}/tools/clustering/cluster-deployer/*deploy.py* +
+--*distribution* {path_to_distribution_in_zip_format} +
+--*rootdir* {dir_at_remote_host_where_copy_odl_distribution}  +
+--*hosts* {IP1},{IP2},{IP3} +
+--*clean* +
+--*template* lispflowmapping +
+--*rf* 3 +
+--*user* {user_name_of_remote_hosts} +
+--*password* {password_to_remote_hosts}
+=======
+Running this script will cause that specified *distribution* to be deployed to remote *hosts* specified through their IP adresses with using credentials (*user* and *password*). The distribution will be copied to specified *rootdir*. As part of the deployment, a *template* which contains a set of controller files which are different from standard ones. In this case it is specified in +
+_{path_to_integration_test_project}/tools/clustering/cluster-deployer/lispflowmapping_ directory. +
+Lispflowmapping templates are part of integration-test project. There are 5 template files: +
+
+* akka.conf.template
+* jolokia.xml.template
+* module-shards.conf.template
+* modules.conf.template
+* org.apache.karaf.features.cfg.template	
+
+After copying the distribution, it is unzipped and started on all of specified *hosts* in cluster aware manner.
+
+==== Remarks
+It is necessary to have:
+
+* *unzip* program installed on all of the host
+* set all remote hosts /etc/sudoers files to not *requiretty* (should only be matter of  debian hosts)
