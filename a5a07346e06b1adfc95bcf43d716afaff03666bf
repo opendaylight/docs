@@ -1,0 +1,255 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a561d44_1c116305",
+        "filename": "docs_autotranslation/split.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-20T13:59:57Z",
+      "side": 1,
+      "message": "Is there a way to do this without hard coding the list of titles? It seems like we\u0027d want to split at a certain header depth, right? So, whatever the pandoc-converted reST uses for either chapter or section. My guess is that will be a line of \u003ds, -s, ^s, or \"s. You could even make that character configurable.",
+      "revId": "a5a07346e06b1adfc95bcf43d716afaff03666bf",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_5c73db7f",
+        "filename": "docs_autotranslation/split.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-20T13:59:57Z",
+      "side": 1,
+      "message": "Trailing whitespace.",
+      "revId": "a5a07346e06b1adfc95bcf43d716afaff03666bf",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_9c1bb31a",
+        "filename": "docs_autotranslation/split.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-20T13:59:57Z",
+      "side": 1,
+      "message": "this isn\u0027t printLines, but getLines since it doesn\u0027t print",
+      "range": {
+        "startLine": 36,
+        "startChar": 4,
+        "endLine": 36,
+        "endChar": 14
+      },
+      "revId": "a5a07346e06b1adfc95bcf43d716afaff03666bf",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_bcd79722",
+        "filename": "docs_autotranslation/split.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-20T13:59:57Z",
+      "side": 1,
+      "message": "This can be replaced with a use of the in operator:\n\n\u0027/\u0027 in str",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 62,
+        "endChar": 13
+      },
+      "revId": "a5a07346e06b1adfc95bcf43d716afaff03666bf",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_fc5c6fef",
+        "filename": "docs_autotranslation/split.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-20T13:59:57Z",
+      "side": 1,
+      "message": "Trailing whitespace.",
+      "revId": "a5a07346e06b1adfc95bcf43d716afaff03666bf",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_3ce38706",
+        "filename": "docs_autotranslation/split.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-20T13:59:57Z",
+      "side": 1,
+      "message": "can you just do:\n\npath \u003d guidesDirectory+\u0027/\u0027+str\nos.makedirs(path)",
+      "range": {
+        "startLine": 65,
+        "startChar": 1,
+        "endLine": 79,
+        "endChar": 10
+      },
+      "revId": "a5a07346e06b1adfc95bcf43d716afaff03666bf",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_5ccf5b7f",
+        "filename": "docs_autotranslation/split.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-20T13:59:57Z",
+      "side": 1,
+      "message": "Can we use some nice, human-readable name for the guides instead of just a number? Presumably this would be pretty easy by changing guides to be a dictionary from number to name.",
+      "revId": "a5a07346e06b1adfc95bcf43d716afaff03666bf",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_1cb683fa",
+        "filename": "docs_autotranslation/split.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-20T13:59:57Z",
+      "side": 1,
+      "message": "presumably you want to open the files outside the loop",
+      "range": {
+        "startLine": 86,
+        "startChar": 0,
+        "endLine": 91,
+        "endChar": 62
+      },
+      "revId": "a5a07346e06b1adfc95bcf43d716afaff03666bf",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_fcb8efe6",
+        "filename": "docs_autotranslation/split.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-20T13:59:57Z",
+      "side": 1,
+      "message": "and close them outside the loop",
+      "revId": "a5a07346e06b1adfc95bcf43d716afaff03666bf",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_3cca676e",
+        "filename": "docs_autotranslation/split.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-20T13:59:57Z",
+      "side": 1,
+      "message": "You probably want this to be line_num or line_number to make it easier to understand what it is compared to line which use to be the text.",
+      "revId": "a5a07346e06b1adfc95bcf43d716afaff03666bf",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_7cc4df5e",
+        "filename": "docs_autotranslation/split.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-20T13:59:57Z",
+      "side": 1,
+      "message": "this should be lineNumbers to make it more obvious it\u0027s an array",
+      "range": {
+        "startLine": 116,
+        "startChar": 0,
+        "endLine": 116,
+        "endChar": 10
+      },
+      "revId": "a5a07346e06b1adfc95bcf43d716afaff03666bf",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_9c6d739b",
+        "filename": "docs_autotranslation/split.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-20T13:59:57Z",
+      "side": 1,
+      "message": "Is it possible to get a blank line without the file being over?",
+      "revId": "a5a07346e06b1adfc95bcf43d716afaff03666bf",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_dca24bad",
+        "filename": "docs_autotranslation/split.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-20T13:59:57Z",
+      "side": 1,
+      "message": "You do line-1 when you do lineNumber.append here and then you do a -1 again when you use it in getGuides() on lines 43-54.\n\nPresumably you should just do a -2 once here and then add a comment to explain that you\u0027re rewinding past the two lines of header.",
+      "revId": "a5a07346e06b1adfc95bcf43d716afaff03666bf",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
