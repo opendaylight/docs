@@ -1,4 +1,298 @@
 {
   "pushCert": "certificate version 0.1\npusher F566C9B1 1469041232 -0400\npushee ssh://git.opendaylight.org:29418/docs.git\nnonce 1469041208-60D65B260F760137B93B3D767DBD44A70B68DED4\n\n0000000000000000000000000000000000000000 af5858571f81964d5cad54269b0507bcb47c24ce refs/publish/stable/beryllium/unimgr\n-----BEGIN PGP SIGNATURE-----\nVersion: GnuPG v1\n\niQIcBAABAgAGBQJXj8pQAAoJEF3VDEv1ZsmxIQ4P+wXaXdfn60yaQtnxLpPfzvk2\nSNSEcMxjXrashMYOadBoiN6SgyRN5GIhVufYBQOeaNFdTw4fbOhr9f3rTdznCHS0\nM7ke0pbzM3WUVIiKwC3fRcRBUF/gVTE5tF8occgDiXggkL6hyE0D7PBhWjv6AfmW\nAMlFCqjJjJ1xQF5tSCZYG6+D0ZSz/fwj0KzNc6OOZdXVMkPP2tmmcZR2/UWFNbOa\nzWBGoDWf9Z99hiJU+j82OKATUgw5zBMH0dKkblBPw3fYxq8kbmnmUoST+0Tu1+gQ\nAIlbdTGr2YmttMLKXPAFZpr17HGteG0rEB9ZJ5V7TP+w2cIye1eCGLPLQQ6uuAAm\nKCXbR+Qk7dWsuwKDA4zC5Caksxbmnx2GV8A7KcQxT9kGVPFQk2EHOTcDuemXIfri\nGdq208kQXS6f4Y8J493IP/6HzGng3Wg0JYkJv52+O+psw2ZsNJ+VEcqsBTr8CDwf\ncrePnf3SxBUAHRvF+qxjYH0NVJ8+NJm5e6GSoQgD+qeP0/qElFbr5FvKiC6mtGIi\nkCthxuync3eDML5hyz3SrkQ3e1QhCVqG1q6JXX4ftLXMmdPu/b88KIGlGGpNrNpV\nMuGcof5O7Vl9eahZKNCUHRd6DS1vG8Mb9qOWnMcJK5ROXhqIebt5lYAYoM8S5orc\nairk60h7WSMnLLAbl934\n\u003dv5It\n-----END PGP SIGNATURE-----\n",
-  "comments": []
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a561d44_2237e24f",
+        "filename": "manuals/developer-guide/src/main/asciidoc/unimgr/odl-unimgr-channel-dev.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-20T19:22:59Z",
+      "side": 1,
+      "message": "LANs?",
+      "range": {
+        "startLine": 12,
+        "startChar": 182,
+        "endLine": 12,
+        "endChar": 186
+      },
+      "revId": "af5858571f81964d5cad54269b0507bcb47c24ce",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_023a9e35",
+        "filename": "manuals/developer-guide/src/main/asciidoc/unimgr/odl-unimgr-channel-dev.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-20T19:22:59Z",
+      "side": 1,
+      "message": "LANs?",
+      "range": {
+        "startLine": 12,
+        "startChar": 289,
+        "endLine": 12,
+        "endChar": 293
+      },
+      "revId": "af5858571f81964d5cad54269b0507bcb47c24ce",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_82450eb5",
+        "filename": "manuals/developer-guide/src/main/asciidoc/unimgr/odl-unimgr-channel-dev.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-20T19:22:59Z",
+      "side": 1,
+      "message": "cut, I don\u0027t think the \" +\" does anything",
+      "range": {
+        "startLine": 16,
+        "startChar": 382,
+        "endLine": 16,
+        "endChar": 384
+      },
+      "revId": "af5858571f81964d5cad54269b0507bcb47c24ce",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_6240baa5",
+        "filename": "manuals/developer-guide/src/main/asciidoc/unimgr/odl-unimgr-channel-dev.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-20T19:22:59Z",
+      "side": 1,
+      "message": "probably better to not talk about the release name unless you have to to keep documentation from having to be updated every 6 months",
+      "range": {
+        "startLine": 16,
+        "startChar": 3,
+        "endLine": 16,
+        "endChar": 12
+      },
+      "revId": "af5858571f81964d5cad54269b0507bcb47c24ce",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_423bf637",
+        "filename": "manuals/developer-guide/src/main/asciidoc/unimgr/odl-unimgr-channel-dev.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-20T19:22:59Z",
+      "side": 1,
+      "message": "Open vSwitch (OVS), no _",
+      "range": {
+        "startLine": 16,
+        "startChar": 54,
+        "endLine": 16,
+        "endChar": 66
+      },
+      "revId": "af5858571f81964d5cad54269b0507bcb47c24ce",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_a24ad2c2",
+        "filename": "manuals/developer-guide/src/main/asciidoc/unimgr/odl-unimgr-channel-dev.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-20T19:22:59Z",
+      "side": 1,
+      "message": "leverages",
+      "range": {
+        "startLine": 16,
+        "startChar": 281,
+        "endLine": 16,
+        "endChar": 289
+      },
+      "revId": "af5858571f81964d5cad54269b0507bcb47c24ce",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_e2132ab6",
+        "filename": "manuals/developer-guide/src/main/asciidoc/unimgr/odl-unimgr-channel-dev.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-20T19:22:59Z",
+      "side": 1,
+      "message": "cut",
+      "range": {
+        "startLine": 18,
+        "startChar": 69,
+        "endLine": 18,
+        "endChar": 72
+      },
+      "revId": "af5858571f81964d5cad54269b0507bcb47c24ce",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_c216e6a6",
+        "filename": "manuals/developer-guide/src/main/asciidoc/unimgr/odl-unimgr-channel-dev.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-20T19:22:59Z",
+      "side": 1,
+      "message": "cut",
+      "range": {
+        "startLine": 19,
+        "startChar": 52,
+        "endLine": 19,
+        "endChar": 54
+      },
+      "revId": "af5858571f81964d5cad54269b0507bcb47c24ce",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_220ec28d",
+        "filename": "manuals/developer-guide/src/main/asciidoc/unimgr/odl-unimgr-channel-dev.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-20T19:22:59Z",
+      "side": 1,
+      "message": "you need a blank line above this list for it to format right",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 75
+      },
+      "revId": "af5858571f81964d5cad54269b0507bcb47c24ce",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_62271a13",
+        "filename": "manuals/developer-guide/src/main/asciidoc/unimgr/odl-unimgr-channel-dev.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-20T19:22:59Z",
+      "side": 1,
+      "message": "demonstrations",
+      "range": {
+        "startLine": 22,
+        "startChar": 116,
+        "endLine": 22,
+        "endChar": 129
+      },
+      "revId": "af5858571f81964d5cad54269b0507bcb47c24ce",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_a22132fd",
+        "filename": "manuals/developer-guide/src/main/asciidoc/unimgr/odl-unimgr-channel-dev.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-20T19:22:59Z",
+      "side": 1,
+      "message": "are these MB or Mb? My guess is Mb.\n\nAlso, do you want this to be literal text or a list? My guess is a list.",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 4
+      },
+      "revId": "af5858571f81964d5cad54269b0507bcb47c24ce",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_626efa30",
+        "filename": "manuals/developer-guide/src/main/asciidoc/unimgr/odl-unimgr-channel-dev.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-20T19:22:59Z",
+      "side": 1,
+      "message": "why was this 1 above and [null] here?",
+      "range": {
+        "startLine": 145,
+        "startChar": 24,
+        "endLine": 145,
+        "endChar": 30
+      },
+      "revId": "af5858571f81964d5cad54269b0507bcb47c24ce",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_4250165e",
+        "filename": "manuals/developer-guide/src/main/asciidoc/unimgr/odl-unimgr-channel-dev.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-20T19:22:59Z",
+      "side": 1,
+      "message": "Missing \u003d\u003d\u003d\u003d",
+      "revId": "af5858571f81964d5cad54269b0507bcb47c24ce",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
 }
