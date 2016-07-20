@@ -1,0 +1,27 @@
+=== Clustering in lispflowmapping
+Base documentation regarding transformation of not clustered ODL aplication to clustered application is described at following  https://wiki.opendaylight.org/view/Running_and_testing_an_OpenDaylight_Cluster#Three-node_cluster[odl wiki page]. This page describe how to set up 3-node-cluster.
+
+To turn on clustering in lispflowmapping it is necessary:
+
+* run script *deploy.py* script. This script is in https://git.opendaylight.org/gerrit/integration/test[integration-test] project placed at _tools/clustering/cluster-deployer/deploy.py_. Whole deploy.py command can looks like:
+=======
+{path_to_integration_test_project}/tools/clustering/cluster-deployer/*deploy.py* +
+--*distribution* {path_to_distribution_in_zip_format} +
+--*rootdir* {dir_at_remote_host_where_copy_odl_distribution}  +
+--*hosts* {IP1},{IP2},{IP3} +
+--*clean* +
+--*template* lispflowmapping +
+--*rf* 3 +
+--*user* {user_name_of_remote_hosts} +
+--*password* {password_to_remote_hosts}
+=======
+Run of this script will cause that specified *distribution* will be deployed to remote *hosts* specified through their IP adresses with using credentials (*user* and *password*). Distribution will be copied to specified *rootdir*. During copying will be used specific *template* which contains set of controller files which are different from standard one. In this case it is specified in +
+_{path_to_integration_test_project}/tools/clustering/cluster-deployer/lispflowmapping_ directory. +
+Following https://git.opendaylight.org/gerrit/42136[patch] is adding lispflowmapping template to integration-test project. +
+After copying distribution it is unwrapped and started on all of specified *hosts* in cluster aware manner.
+
+==== Remarks
+It is necessary to have:
+
+* *unzip* program installed on all of the host
+* set all remote hosts /etc/sudoers files to not *requiretty* (should be matter of debian hosts)
