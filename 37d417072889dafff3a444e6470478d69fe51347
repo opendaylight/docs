@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a561d44_bbeb0f12",
+        "filename": "manuals/user-guide/src/main/asciidoc/lfm/lispflowmapping-clustering-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 491
+      },
+      "writtenOn": "2016-07-22T14:43:58Z",
+      "side": 1,
+      "message": "Since this patch is not going to be merged, I think it\u0027s not ok to reference it in the documentation like this. Either we remove the other changes from the patch, and keep only the tempates, and ask for merge, or we put the templates to some other place.",
+      "revId": "37d417072889dafff3a444e6470478d69fe51347",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
