@@ -25,11 +25,11 @@ implementation transforms this desired state to the resources under
 the control of OpenDaylight. The component that transforms the
 intent to the implementation is typically referred to as a renderer.
 
-For the Lithium release, multiple, simultaneous renderers will not be supported.
+For the Boron release, multiple, simultaneous renderers will not be supported.
 Instead either the VTN or GBP renderer feature can be installed, but
 not both.
 
-For the Litium release, the only actions supported are "ALLOW" and
+For the Boron release, the only actions supported are "ALLOW" and
 "BLOCK". The "ALLOW" action indicates that traffic can flow between
 the source and destination end points, while "BLOCK" prevents that
 flow; although it is possible that an given implementation may augment
@@ -41,7 +41,7 @@ the NIC data model in OpenDaylight to reflect the intent which the
 renderer implemented.
 
 === Configuring Network Intent Composition (NIC)
-For the Litium release there is no default implementation of a renderer,
+For the Boron release there is no default implementation of a renderer,
 thus without an additional module installed the NIC will not function.
 
 === Administering or Managing Network Intent Composition (NIC)
@@ -63,13 +63,10 @@ operations against the configuration data store.
 which will trigger the realization of that intent. An ID _must_ be specified
 as part of this request as an attribute of the intent.
 
-* PUT - creates or updates an instance of an intent in the configuration store,
-which will trigger the realization of that intent.
-
 * GET - fetches a list of all configured intents or a specific configured
 intent.
 
-* DETELE - removes a configured intent from the configuration store, which
+* DELETE - removes a configured intent from the configuration store, which
 triggers the removal of the intent from the network.
 
 ===== Operational
@@ -80,19 +77,134 @@ operations against the operational data store.
 intent.
 
 ==== Karaf Console CLI
-Using the Karaf console CLI intents can be manipulated. The following Karaf
-console CLI commands are available.
+This feature provides karaf console CLI command to manipulate the intent
+data model. The CLI essentailly invokes the equivalent data operations.
 
-* intent:add <intent-data> - creates a new intent
+===== intent:add
 
-* intent:update <id> <intent-data> - updates an existing intent
+Creates a new intent in the configuration data tree
 
-* intent:list - lists all intents in the system
+----
+DESCRIPTION
+        intent:add
 
-* intent:show <id> - display the details of a specific intent
+    Adds an intent to the controller.
 
-* intent:delete <id> - removes an intent from the system
+Examples: --actions [ALLOW] --from <subject> --to <subject>
+          --actions [BLOCK] --from <subject>
+
+SYNTAX
+        intent:add [options]
+
+OPTIONS
+        -a, --actions
+                Action to be performed.
+                -a / --actions BLOCK/ALLOW
+                (defaults to [BLOCK])
+        --help
+                Display this help message
+        -t, --to
+                Second Subject.
+                -t / --to <subject>
+                (defaults to any)
+        -f, --from
+                First subject.
+                -f / --from <subject>
+                (defaults to any)
+----
+
+===== intent:delete
+Removes an existing intent from the system
+
+----
+DESCRIPTION
+        intent:remove
+
+    Removes an intent from the controller.
+
+SYNTAX
+        intent:remove id
+
+ARGUMENTS
+        id  Intent Id
+----
+
+===== intent:list
+Lists all the intents in the system
+
+----
+DESCRIPTION
+        intent:list
+
+    Lists all intents in the controller.
+
+SYNTAX
+        intent:list [options]
+
+OPTIONS
+        -c, --config
+                List Configuration Data (optional).
+                -c / --config <ENTER>
+        --help
+                Display this help message
+----
+
+===== intent:show
+Displayes the details of a single intent
+
+----
+DESCRIPTION
+        intent:show
+
+    Shows detailed information about an intent.
+
+SYNTAX
+        intent:show id
+
+ARGUMENTS
+        id  Intent Id
+----
+
+
+===== intent:map
+
+List/Add/Delete current state from/to the mapping service.
+
+----
+DESCRIPTION
+        intent:map
+
+        List/Add/Delete current state from/to the mapping service.
+
+SYNTAX
+        intent:map [options]
+
+         Examples: --list, -l [ENTER], to retrieve all keys.
+                   --add-key <key> [ENTER], to add a new key with empty contents.
+                   --del-key <key> [ENTER], to remove a key with it's values."
+                   --add-key <key> --value [<value 1>, <value 2>, ...] [ENTER],
+                     to add a new key with some values (json format).
+OPTIONS
+       --help
+           Display this help message
+       -l, --list
+           List values associated with a particular key.
+       -l / --filter <regular expression> [ENTER]
+       --add-key
+           Adds a new key to the mapping service.
+       --add-key <key name> [ENTER]
+       --value
+           Specifies which value should be added/delete from the mapping service.
+       --value "key=>value"... --value "key=>value" [ENTER]
+           (defaults to [])
+       --del-key
+           Deletes a key from the mapping service.
+       --del-key <key name> [ENTER]
+----
 
 === NIC Usage Examples
+
+In addition to the one example here, please see the wiki for more use cases:
+https://wiki.opendaylight.org/view/Network_Intent_Composition:Use_Cases
 
 include::NIC_How_To_configure_VTN_Renderer.adoc[How to configure VTN Renderer]
