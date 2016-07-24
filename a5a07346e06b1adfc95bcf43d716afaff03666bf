@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a561d44_d6906745",
+        "filename": "docs_autotranslation/split.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 5748
+      },
+      "writtenOn": "2016-07-24T22:30:45Z",
+      "side": 1,
+      "message": "The list stores the name of the generated guide files. I hard coded because I wanted to make the filenames of new guides consistent with the old asciidoc guides. \nSure I can split the big reST file to chapters but to store all the chapter files in same directory seems to be very messy. What I proposed is to split the big reST file to chapters and save chapters from same guide into one directory named as the guide name.",
+      "parentUuid": "9a561d44_1c116305",
+      "revId": "a5a07346e06b1adfc95bcf43d716afaff03666bf",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a561d44_5c73db7f",
         "filename": "docs_autotranslation/split.py",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "9a561d44_db9d285b",
+        "filename": "docs_autotranslation/split.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5748
+      },
+      "writtenOn": "2016-07-24T22:30:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a561d44_5c73db7f",
+      "revId": "a5a07346e06b1adfc95bcf43d716afaff03666bf",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a561d44_9c1bb31a",
         "filename": "docs_autotranslation/split.py",
         "patchSetId": 1
@@ -47,6 +83,30 @@
       "writtenOn": "2016-07-20T13:59:57Z",
       "side": 1,
       "message": "this isn\u0027t printLines, but getLines since it doesn\u0027t print",
+      "range": {
+        "startLine": 36,
+        "startChar": 4,
+        "endLine": 36,
+        "endChar": 14
+      },
+      "revId": "a5a07346e06b1adfc95bcf43d716afaff03666bf",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_3ba424a5",
+        "filename": "docs_autotranslation/split.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 5748
+      },
+      "writtenOn": "2016-07-24T22:30:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a561d44_9c1bb31a",
       "range": {
         "startLine": 36,
         "startChar": 4,
@@ -82,6 +142,30 @@
     },
     {
       "key": {
+        "uuid": "9a561d44_bb903444",
+        "filename": "docs_autotranslation/split.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 5748
+      },
+      "writtenOn": "2016-07-24T22:30:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a561d44_bcd79722",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 62,
+        "endChar": 13
+      },
+      "revId": "a5a07346e06b1adfc95bcf43d716afaff03666bf",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a561d44_fc5c6fef",
         "filename": "docs_autotranslation/split.py",
         "patchSetId": 1
@@ -93,6 +177,24 @@
       "writtenOn": "2016-07-20T13:59:57Z",
       "side": 1,
       "message": "Trailing whitespace.",
+      "revId": "a5a07346e06b1adfc95bcf43d716afaff03666bf",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_1b9fa051",
+        "filename": "docs_autotranslation/split.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 5748
+      },
+      "writtenOn": "2016-07-24T22:30:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a561d44_fc5c6fef",
       "revId": "a5a07346e06b1adfc95bcf43d716afaff03666bf",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -122,6 +224,30 @@
     },
     {
       "key": {
+        "uuid": "9a561d44_5bc0f829",
+        "filename": "docs_autotranslation/split.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 5748
+      },
+      "writtenOn": "2016-07-24T22:30:45Z",
+      "side": 1,
+      "message": "The str \u003d directory + filename, so I need to get the substring before last \u0027/\u0027.",
+      "parentUuid": "9a561d44_3ce38706",
+      "range": {
+        "startLine": 65,
+        "startChar": 1,
+        "endLine": 79,
+        "endChar": 10
+      },
+      "revId": "a5a07346e06b1adfc95bcf43d716afaff03666bf",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a561d44_5ccf5b7f",
         "filename": "docs_autotranslation/split.py",
         "patchSetId": 1
@@ -139,6 +265,24 @@
     },
     {
       "key": {
+        "uuid": "9a561d44_bb2cb403",
+        "filename": "docs_autotranslation/split.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 5748
+      },
+      "writtenOn": "2016-07-24T22:30:45Z",
+      "side": 1,
+      "message": "The number is just the index. The relationship between textList and guides is as follows:\ntextList[0] contains the text that should be saved to guides[0].",
+      "parentUuid": "9a561d44_5ccf5b7f",
+      "revId": "a5a07346e06b1adfc95bcf43d716afaff03666bf",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a561d44_1cb683fa",
         "filename": "docs_autotranslation/split.py",
         "patchSetId": 1
@@ -150,6 +294,30 @@
       "writtenOn": "2016-07-20T13:59:57Z",
       "side": 1,
       "message": "presumably you want to open the files outside the loop",
+      "range": {
+        "startLine": 86,
+        "startChar": 0,
+        "endLine": 91,
+        "endChar": 62
+      },
+      "revId": "a5a07346e06b1adfc95bcf43d716afaff03666bf",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_9b2f30f6",
+        "filename": "docs_autotranslation/split.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 5748
+      },
+      "writtenOn": "2016-07-24T22:30:45Z",
+      "side": 1,
+      "message": "The relationship between textList and guides is as follows:\ntextList[0] contains the text that should be saved to guides[0].",
+      "parentUuid": "9a561d44_1cb683fa",
       "range": {
         "startLine": 86,
         "startChar": 0,
@@ -219,6 +387,30 @@
     },
     {
       "key": {
+        "uuid": "9a561d44_d307c7c8",
+        "filename": "docs_autotranslation/split.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 5748
+      },
+      "writtenOn": "2016-07-24T22:30:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a561d44_7cc4df5e",
+      "range": {
+        "startLine": 116,
+        "startChar": 0,
+        "endLine": 116,
+        "endChar": 10
+      },
+      "revId": "a5a07346e06b1adfc95bcf43d716afaff03666bf",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a561d44_9c6d739b",
         "filename": "docs_autotranslation/split.py",
         "patchSetId": 1
@@ -230,6 +422,24 @@
       "writtenOn": "2016-07-20T13:59:57Z",
       "side": 1,
       "message": "Is it possible to get a blank line without the file being over?",
+      "revId": "a5a07346e06b1adfc95bcf43d716afaff03666bf",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_7367dbb7",
+        "filename": "docs_autotranslation/split.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 5748
+      },
+      "writtenOn": "2016-07-24T22:30:45Z",
+      "side": 1,
+      "message": "According to python documentation, readline() returns \u0027\u0027 when the end of file has been reached",
+      "parentUuid": "9a561d44_9c6d739b",
       "revId": "a5a07346e06b1adfc95bcf43d716afaff03666bf",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
