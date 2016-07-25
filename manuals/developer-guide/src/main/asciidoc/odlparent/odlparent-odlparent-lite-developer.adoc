@@ -1,0 +1,45 @@
+==== odlparent-lite
+This is the base parent for all OpenDaylight Maven projects and modules. It provides the following, notably to allow
+publishing artifacts to Maven Central: +
+
+* license information;
+* organization information;
+* issue management information (a link to our Bugzilla);
+* continuous integration information (a link to our Jenkins setup);
+* default Maven plugins (+maven-clean-plugin+, +maven-deploy-plugin+, +maven-install-plugin+,
+  +maven-javadoc-plugin+ with HelpMojo support, +maven-project-info-reports-plugin+, +maven-site-plugin+ with
+  Asciidoc support, +jdepend-maven-plugin+);
+* distribution management information.
+
+It also defines two profiles which help during development:
+
+* +q+ (+-Pq+), the quick profile, which disables tests, code coverage, Javadoc generation, code analysis, etc. —
+  anything which isn't necessary to build the bundles and features (see
+  http://blog2.vorburger.ch/2016/06/improve-maven-build-speed-with-q.html[this blog post] for details);
+* +addInstallRepositoryPath+ (+-DaddInstallRepositoryPath=.../karaf/system+) which can be used to drop a bundle
+  in the appropriate Karaf location, to enable hot-reloading of bundles during development (see
+  http://blog2.vorburger.ch/2016/06/maven-install-into-additional.html[this blog post] for details).
+
+For modules which don't produce any useful artifacts (_e.g._ aggregator POMs), you should add the following to avoid
+processing artifacts:
+
+--------------------------------------
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-deploy-plugin</artifactId>
+            <configuration>
+                <skip>true</skip>
+            </configuration>
+        </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-install-plugin</artifactId>
+            <configuration>
+                <skip>true</skip>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+--------------------------------------

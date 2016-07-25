@@ -1,0 +1,72 @@
+=== Features
+
+The ODL Parent component for OpenDaylight provides a number of Karaf features which can be used by other Karaf features
+to use certain third-party upstream dependencies.
+
+These features are: +
+
+* Akka features (in the +features-akka+ repository): +
+** +odl-akka-all+ — all Akka bundles;
+** +odl-akka-scala+ — Scala runtime for OpenDaylight;
+** +odl-akka-system+ — Akka actor framework bundles;
+** +odl-akka-clustering+ — Akka clustering bundles and dependencies;
+** +odl-akka-leveldb+ — LevelDB;
+** +odl-akka-persistence+ — Akka persistence;
+* general third-party features (in the +features-odlparent+ repository):
+** +odl-netty+ — all Netty bundles;
+** +odl-guava+ — Guava;
+** +odl-lmax+ — LMAX Disruptor.
+
+To use these, you need to declare a dependency on the appropriate repository in your +features.xml+ file:
+
+--------------------------------------
+<repository>mvn:org.opendaylight.odlparent/features-odlparent/{{VERSION}}/xml/features</repository>
+--------------------------------------
+
+and then include the feature, _e.g._:
+
+--------------------------------------
+<feature name='odl-mdsal-broker-local' version='${project.version}' description="OpenDaylight :: MDSAL :: Broker">
+    [...]
+    <feature version='[3.3.0,4.0.0)'>odl-lmax</feature>
+    [...]
+</feature>
+--------------------------------------
+
+You also need to depend on the features repository in your POM:
+
+--------------------------------------
+<dependency>
+    <groupId>org.opendaylight.odlparent</groupId>
+    <artifactId>features-odlparent</artifactId>
+    <classifier>features</classifier>
+    <type>xml</type>
+</dependency>
+--------------------------------------
+
+assuming the appropriate dependency management:
+
+--------------------------------------
+<dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.opendaylight.odlparent</groupId>
+            <artifactId>odlparent-artifacts</artifactId>
+            <version>1.7.0-SNAPSHOT</version>
+            <scope>import</scope>
+            <type>pom</type>
+        </dependency>
+    </dependencies>
+</dependencyManagement>
+--------------------------------------
+
+(the version number there is appropriate for Boron). For the time being you also need to depend separately on the
+individual JARs as compile-time dependencies to build your dependent code; the relevant dependencies are managed in
++odlparent+'s dependency management.
+
+The suggested version ranges are as follows: +
+
+* +odl-netty+: +[4.0.37,4.1.0)+ or +[4.0.37,5.0.0)+;
+* +odl-guava+: +[18,19)+ (if your code is ready for it, +[19,20)+ is also available, but the current default version of
+  Guava in OpenDaylight is 18);
+* +odl-lmax+: +[3.3.4,4.0.0)+
