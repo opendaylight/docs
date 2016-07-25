@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a561d44_1faf7e7e",
+        "filename": "docs_autotranslation/split.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-25T14:40:50Z",
+      "side": 1,
+      "message": "Do you need this return? I actually don\u0027t know.",
+      "revId": "140379a92a6ab4fa02a75f3161f5e003a9a89356",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_9fc26e32",
+        "filename": "docs_autotranslation/split.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-25T14:40:50Z",
+      "side": 1,
+      "message": "Is just trying to open the file again in the except: block likely to work?",
+      "range": {
+        "startLine": 84,
+        "startChar": 0,
+        "endLine": 85,
+        "endChar": 58
+      },
+      "revId": "140379a92a6ab4fa02a75f3161f5e003a9a89356",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_5ffa9675",
+        "filename": "docs_autotranslation/split.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-25T14:40:50Z",
+      "side": 1,
+      "message": "I still think it would be better if we had -2 here and a comment and then just used the value when you\u0027re splitting things apart up above.",
+      "revId": "140379a92a6ab4fa02a75f3161f5e003a9a89356",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
