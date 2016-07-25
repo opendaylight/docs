@@ -1,0 +1,164 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a561d44_bfc3f2eb",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ocpplugin/ocp-developer-guide.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-25T18:29:15Z",
+      "side": 1,
+      "message": "OpenDaylight, we try to avoid using ODL or ODL controller",
+      "range": {
+        "startLine": 4,
+        "startChar": 31,
+        "endLine": 4,
+        "endChar": 49
+      },
+      "revId": "3a84278cad06bda010e45090a833b21f1f9d3dac",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_9f91cef3",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ocpplugin/ocp-developer-guide.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-25T18:29:15Z",
+      "side": 1,
+      "message": "It would be good to expand the acronym.",
+      "range": {
+        "startLine": 4,
+        "startChar": 9,
+        "endLine": 4,
+        "endChar": 12
+      },
+      "revId": "3a84278cad06bda010e45090a833b21f1f9d3dac",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_ffb9ea79",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ocpplugin/ocp-developer-guide.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-25T18:29:15Z",
+      "side": 1,
+      "message": "Expand this acronym the first time?",
+      "range": {
+        "startLine": 20,
+        "startChar": 25,
+        "endLine": 20,
+        "endChar": 28
+      },
+      "revId": "3a84278cad06bda010e45090a833b21f1f9d3dac",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_1aaaec84",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ocpplugin/ocp-developer-guide.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-25T18:29:15Z",
+      "side": 1,
+      "message": "Do you want this to be an image or inline formatted code. It looks like it would be pretty easy to do inline code.",
+      "revId": "3a84278cad06bda010e45090a833b21f1f9d3dac",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_7ac32857",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ocpplugin/ocp-developer-guide.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-25T18:29:15Z",
+      "side": 1,
+      "message": "OK",
+      "range": {
+        "startLine": 57,
+        "startChar": 97,
+        "endLine": 57,
+        "endChar": 99
+      },
+      "revId": "3a84278cad06bda010e45090a833b21f1f9d3dac",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_faae1897",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ocpplugin/ocp-developer-guide.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-25T18:29:15Z",
+      "side": 1,
+      "message": "Do you want this to be an image or inline formatted code. It looks like it would be pretty easy to do inline code.",
+      "revId": "3a84278cad06bda010e45090a833b21f1f9d3dac",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_1a814cfb",
+        "filename": "manuals/developer-guide/src/main/asciidoc/ocpplugin/ocp-developer-guide.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-25T18:29:15Z",
+      "side": 1,
+      "message": "This table winds up formatting strangely in the PDF with the time overflowing into the last column. You might try setting the relative column widths by doing:\n\n[options\u003d\"header\",cols\u003d\"1,1,2,2,1\"]",
+      "revId": "3a84278cad06bda010e45090a833b21f1f9d3dac",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_1f9e5e07",
+        "filename": "manuals/user-guide/src/main/asciidoc/ocpplugin/ocp-user-guide.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-25T18:29:15Z",
+      "side": 1,
+      "message": "Generally, we try to avoid asking users to clone repositories and run code, but this looks to be a test tool. Is this compiled and released into Nexus anywhere you could ask people to download?",
+      "revId": "3a84278cad06bda010e45090a833b21f1f9d3dac",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
