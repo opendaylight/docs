@@ -33,6 +33,37 @@ The DIDM project creates the infrastructure to support the following functions:
    support the APIs defined by the RPCs. There may be different Driver
    implementations for different device types.
 
+=== Atrium Support
+
+The Atrium implements an open source router that speaks BGP
+to other routers, and forwards packets received on one port/vlan to another,
+based on the next-hop learnt via BGP peering. A BGP peering application for the
+Open Daylight Controller and a new model for flow objective drivers for switches
+integrated with the Open Daylight Atrium distribution was developed for this
+project. The implementation has the same level of feature partly that was
+introduced by the Atrium 2015/A distribution on the ONOS controller. An overview
+of the architecture is available at here (https://github.com/onfsdn/atrium-docs/wiki/ODL-Based-Atrium-Router-16A).
+
+Atrium stack is implemented in OpenDaylight using Atrium and DIDM project.
+Atrium project provides the application implementation for BGP
+peering and the DIDM project provides implementation for FlowObjectives.
+FlowObjective provides an abstraction layer and present the pipeline agnostic
+api to application to consume.
+
+==== FlowObjective
+Flow Objectives describe an SDN application’s objective (or intention) behind a
+flow it is sending to a device.
+
+Application communicates the flow installation requirement using Flow
+Objectives. DIDM drivers translates the Flow Objectives to device specific flows
+as per the device pipeline.
+
+There are three FlowObjectives (already implemented in ONOS controller) :
+
+* Filtering Objective
+* Next Objective
+* Forwarding Objective
+
 === Installing DIDM
 
 To install DIDM, download OpenDaylight and use the Karaf console to install the following features:
@@ -85,8 +116,27 @@ http://<CONTROLLER-IP:8181>/restconf/operational/opendaylight-inventory:nodes
 === Run REST adjust-flow command to adjust flows and push to the device
 
 .Flow mod driver for HP 3800 device is added in Beryllium release
-This driver adjusts the flows and push the same to the device. 
+This driver adjusts the flows and push the same to the device.
 This API takes the flow to be adjusted as input and displays the adjusted flow as output in the REST output container.
 Here is the REST API to adjust and push flows to HP 3800 device:
 
 http://<CONTROLLER-IP:8181>/restconf/operations/openflow-feature:adjust-flow
+
+=== FlowObjectives API
+
+FlowObjective presents the OpenFlow pipeline agnostic API to Application to
+consume. Application communicate their intent behind installation of flow to
+Drivers using the FlowObjective. Driver translates the FlowObjective in device
+specific flows and uses the OpenFlowPlugin to install the flows to the device.
+
+==== Filter Objective
+
+http://<CONTROLLER-IP>:8181/restconf/operations/atrium-flow-objective:filter
+
+==== Next Objective
+
+http://<CONTROLLER-IP>:8181/restconf/operations/atrium-flow-objective:next
+
+==== Forward Objective
+
+http://<CONTROLLER-IP>:8181/restconf/operations/atrium-flow-objective:forward
