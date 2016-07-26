@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a561d44_b3c68666",
+        "filename": "docs_autotranslation/index.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-26T18:49:59Z",
+      "side": 1,
+      "message": "My guess is still you just want to drop this file. Alternatively, you could make it so that your split.py automatically updated it when you run things.",
+      "revId": "94dcf6332d9e23e374e13a0d50973ac5918f8644",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_f3a3deaf",
+        "filename": "docs_autotranslation/split.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-26T18:49:59Z",
+      "side": 1,
+      "message": "do you need this? it\u0027s different than the check above.",
+      "range": {
+        "startLine": 110,
+        "startChar": 32,
+        "endLine": 110,
+        "endChar": 38
+      },
+      "revId": "94dcf6332d9e23e374e13a0d50973ac5918f8644",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
