@@ -1,0 +1,315 @@
+=== SFC IOS XE Renderer User Guide
+
+:SFCIOSXERNDR: SFC IOS-XE renderer
+
+==== Overview
+The early Service Function Chaining (SFC) renderer for IOS-XE devices
+({SFCIOSXERNDR}) implements Service Chaining functionality on IOS-XE
+capable switches. It listens for the creation of a Rendered Service
+Path (RSP) and sets up Service Function Forwarders (SFF) that are hosted
+on IOS-XE switches to steer traffic through the service chain.
+
+Common acronyms used in the following sections:
+
+* SF - Service Function
+* SFF - Service Function Forwarder
+* SFC - Service Function Chain
+* SP - Service Path
+* SFP - Service Function Path
+* RSP - Rendered Service Path
+* LSF - Local Service Forwarder
+* RSF - Remote Service Forwarder
+
+==== SFC IOS-XE Renderer Architecture
+When the {SFCIOSXERNDR} is initialized, all required listeners are registered
+to handle incoming data. It involves CSR/IOS-XE +NodeListener+ which stores
+data about all configurable devices including their mountpoints (used here
+as databrokers), +ServiceFunctionListener+, +ServiceForwarderListener+
+(see mapping) and +RenderedPathListener+ used to listen for
+RSP changes. When the {SFCIOSXERNDR} is invoked, +RenderedPathListener+ calls
+the +IosXeRspProcessor+ which processes the RSP change and creates all necessary
+Service Paths and Remote Service Forwarders (if necessary) on IOS-XE devices.
+
+==== Service Path details
+Each Service Path is defined by index (represented by NSP) and contains
+service path entries. Each entry has appropriate service index
+(NSI) and definition of next hop. Next hop can be Service Function, different
+Service Function Forwarder or definition of end of chain - terminate. After
+terminating, the packet is sent to destination. If a SFF is defined as a next hop,
+it has to be present on device in the form of Remote Service Forwarder.
+RSFs are also created during RSP processing.
+
+Example of Service Path:
+
+ service-chain service-path 200
+    service-index 255 service-function firewall-1
+    service-index 254 service-function dpi-1
+    service-index 253 terminate
+
+==== Mapping to IOS-XE SFC entities
+Renderer contains mappers for SFs and SFFs. IOS-XE capable device is using its
+own definition of Service Functions and Service Function Forwarders according to
+appropriate .yang file.
++ServiceFunctionListener+ serves as a listener for SF changes. If SF appears in
+datastore, listener extracts its management ip address and looks into cached IOS-XE
+nodes. If some of available nodes match, Service function is mapped
+in +IosXeServiceFunctionMapper+ to be understandable by IOS-XE device and it's
+written into device's config.
++ServiceForwarderListener+ is used in a similar way. All SFFs with suitable
+management ip address it mapped in +IosXeServiceForwarderMapper+. Remapped SFFs
+are configured as a Local Service Forwarders. It is not possible to directly create
+Remote Service Forwarder using IOS-XE renderer. RSF is created only during RSP processing.
+
+==== Administering {SFCIOSXERNDR}
+To use the SFC IOS-XE Renderer Karaf, at least the following Karaf
+features must be installed:
+
+* odl-aaa-shiro
+* odl-sfc-model
+* odl-sfc-provider
+* odl-restconf
+* odl-netconf-topology
+* odl-sfc-ios-xe-renderer
+
+==== {SFCIOSXERNDR} Tutorial
+
+===== Overview
+This tutorial is a simple example how to create Service Path on IOS-XE capable device
+using IOS-XE renderer
+
+===== Preconditions
+To connect to IOS-XE device, it is necessary to use several modified yang models and override
+device's ones. All .yang files are in the +Yang/netconf+ folder in the +sfc-ios-xe-renderer module+ in
+the SFC project. These files have to be copied to the +cache/schema+ directory, before
+Karaf is started. After that, custom capabilities have to be sent to network-topology:
+
+----
+PUT ./config/network-topology:network-topology/topology/topology-netconf/node/<device-name>
+
+<node xmlns="urn:TBD:params:xml:ns:yang:network-topology">
+  <node-id>device-name</node-id>
+  <host xmlns="urn:opendaylight:netconf-node-topology">device-ip</host>
+  <port xmlns="urn:opendaylight:netconf-node-topology">2022</port>
+  <username xmlns="urn:opendaylight:netconf-node-topology">login</username>
+  <password xmlns="urn:opendaylight:netconf-node-topology">password</password>
+  <tcp-only xmlns="urn:opendaylight:netconf-node-topology">false</tcp-only>
+  <keepalive-delay xmlns="urn:opendaylight:netconf-node-topology">0</keepalive-delay>
+  <yang-module-capabilities xmlns="urn:opendaylight:netconf-node-topology">
+     <override>true</override>
+     <capability xmlns="urn:opendaylight:netconf-node-topology">
+        urn:ietf:params:xml:ns:yang:ietf-inet-types?module=ietf-inet-types&amp;revision=2013-07-15
+     </capability>
+     <capability xmlns="urn:opendaylight:netconf-node-topology">
+        urn:ietf:params:xml:ns:yang:ietf-yang-types?module=ietf-yang-types&amp;revision=2013-07-15
+     </capability>
+     <capability xmlns="urn:opendaylight:netconf-node-topology">
+        urn:ios?module=ned&amp;revision=2016-03-08
+     </capability>
+     <capability xmlns="urn:opendaylight:netconf-node-topology">
+        http://tail-f.com/yang/common?module=tailf-common&amp;revision=2015-05-22
+     </capability>
+     <capability xmlns="urn:opendaylight:netconf-node-topology">
+        http://tail-f.com/yang/common?module=tailf-meta-extensions&amp;revision=2013-11-07
+     </capability>
+     <capability xmlns="urn:opendaylight:netconf-node-topology">
+        http://tail-f.com/yang/common?module=tailf-cli-extensions&amp;revision=2015-03-19
+     </capability>
+  </yang-module-capabilities>
+</node>
+----
+
+NOTE: The device name in the URL and in the XML must match.
+
+===== Instructions
+When the IOS-XE renderer is installed, all NETCONF nodes in topology-netconf are
+processed and all capable nodes with accessible mountpoints are cached.
+The first step is to create LSF on node.
+
++Service Function Forwarder configuration+
+
+----
+PUT ./config/service-function-forwarder:service-function-forwarders
+
+{
+    "service-function-forwarders": {
+        "service-function-forwarder": [
+            {
+                "name": "CSR1Kv-2",
+                "ip-mgmt-address": "172.25.73.23",
+                "sff-data-plane-locator": [
+                    {
+                        "name": "CSR1Kv-2-dpl",
+                        "data-plane-locator": {
+                            "transport": "service-locator:vxlan-gpe",
+                            "port": 6633,
+                            "ip": "10.99.150.10"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}
+----
+
+If the IOS-XE node with appropriate management IP exists, this configuration
+is mapped and LSF is created on the device. The same approach is used for
+Service Functions.
+
+----
+PUT ./config/service-function:service-functions
+
+{
+    "service-functions": {
+        "service-function": [
+            {
+                "name": "Firewall",
+                "ip-mgmt-address": "172.25.73.23",
+                "type": "service-function-type: firewall",
+                "nsh-aware": true,
+                "sf-data-plane-locator": [
+                    {
+                        "name": "firewall-dpl",
+                        "port": 6633,
+                        "ip": "12.1.1.2",
+                        "transport": "service-locator:gre",
+                        "service-function-forwarder": "CSR1Kv-2"
+                    }
+                ]
+            },
+            {
+                "name": "Dpi",
+                "ip-mgmt-address": "172.25.73.23",
+                "type":"service-function-type: dpi",
+                "nsh-aware": true,
+                "sf-data-plane-locator": [
+                    {
+                        "name": "dpi-dpl",
+                        "port": 6633,
+                        "ip": "12.1.1.1",
+                        "transport": "service-locator:gre",
+                        "service-function-forwarder": "CSR1Kv-2"
+                    }
+                ]
+            },
+            {
+                "name": "Qos",
+                "ip-mgmt-address": "172.25.73.23",
+                "type":"service-function-type: qos",
+                "nsh-aware": true,
+                "sf-data-plane-locator": [
+                    {
+                        "name": "qos-dpl",
+                        "port": 6633,
+                        "ip": "12.1.1.4",
+                        "transport": "service-locator:gre",
+                        "service-function-forwarder": "CSR1Kv-2"
+                    }
+                ]
+            }
+        ]
+    }
+}
+----
+
+All these SFs are configured on the same device as the LSF. The next step is to
+prepare Service Function Chain. SFC is symmetric.
+
+----
+PUT ./config/service-function-chain:service-function-chains/
+
+{
+    "service-function-chains": {
+        "service-function-chain": [
+            {
+                "name": "CSR3XSF",
+                "symmetric": "true",
+                "sfc-service-function": [
+                    {
+                        "name": "Firewall",
+                        "type": "service-function-type: firewall"
+                    },
+                    {
+                        "name": "Dpi",
+                        "type": "service-function-type: dpi"
+                    },
+                    {
+                        "name": "Qos",
+                        "type": "service-function-type: qos"
+                    }
+                ]
+            }
+        ]
+    }
+}
+----
+
+Service Function Path:
+
+----
+PUT ./config/service-function-path:service-function-paths/
+
+{
+    "service-function-paths": {
+        "service-function-path": [
+            {
+                "name": "CSR3XSF-Path",
+                "service-chain-name": "CSR3XSF",
+                "starting-index": 255,
+                "symmetric": "true"
+            }
+        ]
+    }
+}
+----
+
+Without a classifier, there is possibility to POST RSP directly.
+
+----
+POST ./operations/rendered-service-path:create-rendered-path
+
+{
+  "input": {
+      "name": "CSR3XSF-Path-RSP",
+      "parent-service-function-path": "CSR3XSF-Path",
+      "symmetric": true
+  }
+}
+----
+
+The resulting configuration:
+
+----
+!
+service-chain service-function-forwarder local
+  ip address 10.99.150.10
+!
+service-chain service-function firewall
+ip address 12.1.1.2
+  encapsulation gre enhanced divert
+!
+service-chain service-function dpi
+ip address 12.1.1.1
+  encapsulation gre enhanced divert
+!
+service-chain service-function qos
+ip address 12.1.1.4
+  encapsulation gre enhanced divert
+!
+service-chain service-path 1
+  service-index 255 service-function firewall
+  service-index 254 service-function dpi
+  service-index 253 service-function qos
+  service-index 252 terminate
+!
+service-chain service-path 2
+  service-index 255 service-function qos
+  service-index 254 service-function dpi
+  service-index 253 service-function firewall
+  service-index 252 terminate
+!
+----
+
+Service Path 1 is direct, Service Path 2 is reversed. Path numbers may vary.
+
+:SFCIOSXERNDR!:

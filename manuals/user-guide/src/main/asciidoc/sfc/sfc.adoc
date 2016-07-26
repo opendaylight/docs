@@ -10,7 +10,13 @@ include::odl-sfc-ovs-user.adoc[SFC OVS User guide]
 
 include::odl-sfc-classifier-user.adoc[SFC Classifier configuration User guide]
 
-include::odl-sfcofl2-user.adoc[SFC OpenFlow Renderer user guide]
+// SFC Renderers
+include::odl-sfc-openflow-renderer-user.adoc[SFC OpenFlow Renderer]
+
+include::odl-sfc-iosxe-renderer-user.adoc[SFC IOS XE Renderer]
+
+include::odl-sfc-vpp-renderer-user.adoc[SFC VPP Renderer]
+// SFC Renderers
 
 include::odl-sfc-sf-scheduler-user.adoc[Service Function selection scheduler]
 
@@ -18,3 +24,5 @@ include::odl-sfc-sf-scheduler-user.adoc[Service Function selection scheduler]
 // include::odl-sfc-sf-monitoring-user.adoc[Service Function Monitoring]
 
 include::odl-sfc-load-balance-user.adoc[Service Function Grouping and Load Balancing user guide]
+
+include::odl-sfc-pot-user.adoc[SFC Proof of Transit]
