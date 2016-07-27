@@ -1,7 +1,8 @@
 == OCP Plugin Developer Guide
-This document is intended for both OCP agent developers and ODL service/application developers.
+This document is intended for both OCP (ORI [Open Radio Interface] C&M [Control and Management]
+Protocol) agent developers and OpenDaylight service/application developers.
 It describes essential information needed to implement an OCP agent that is capable of interoperating
-with the OCP plugin running in the ODL controller, including the OCP connection establishment and
+with the OCP plugin running in OpenDaylight, including the OCP connection establishment and
 state machines used on both ends of the connection. It also provides a detailed description of the
 northbound/southbound APIs that the OCP plugin exposes to allow automation and programmability.
 
@@ -13,7 +14,7 @@ plugin will allow applications acting as a Radio Equipment Control (REC) to inte
 with RRHs that support an OCP agent.
 
 .OCP southbound plugin
-image::ocpplugin/ocp-sb-plugin.jpg[OCP southbound plugin, 550, 350]
+image::ocpplugin/ocp-sb-plugin.jpg[OCP southbound plugin,width=500]
 
 === Architecture
 OCP is a vendor-neutral standard communications interface defined to enable control and management
@@ -24,7 +25,7 @@ The OCP Plugin project consists of three main components: OCP southbound plugin,
 and OCP service. For details on each of them, refer to the OCP Plugin User Guide.
 
 .Overall architecture
-image::ocpplugin/plugin-design.jpg[Overall architecture, 550, 284]
+image::ocpplugin/plugin-design.jpg[Overall architecture,width=500]
 
 === Connection Establishment
 The OCP layer is transported over a TCP/IP connection established between the RE and the REC.
@@ -51,10 +52,25 @@ By nature the Hello message is a new type of indication, and it contains support
 ID and serial number as shown below.
 
 .Hello message
-image::ocpplugin/hello-message.jpg[Hello message, 550, 166]
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<msg xmlns="http://uri.etsi.org/ori/002-2/v4.1.1">
+  <header>
+    <msgType>IND</msgType>
+    <msgUID>0</msgUID>
+  </header>
+  <body>
+    <helloInd>
+      <version>4.1.1</version>
+      <vendorId>XYZ</vendorId>
+      <serialNumber>ABC123</serialNumber>
+    </helloInd>
+  </body>
+</msg>
+----
 
 ==== Ack Message
-Hello from the OCP agent will always make the OCP plugin respond with ACK. In case everything is ok,
+Hello from the OCP agent will always make the OCP plugin respond with ACK. In case everything is OK,
 it will be ACK(OK). In case something is wrong, it will be ACK(FAIL).
 
 If the OCP agent receives ACK(OK), it goes to Established state. If the OCP agent receives ACK(FAIL),
@@ -66,17 +82,30 @@ it goes to Maintenance state. The failure code and reason of ACK(FAIL) are defin
 The result inside Ack message indicates OK or FAIL with different reasons.
 
 .Ack message
-image::ocpplugin/ack-message.jpg[Ack message, 550, 166]
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<msg xmlns="http://uri.etsi.org/ori/002-2/v4.1.1">
+  <header>
+    <msgType>ACK</msgType>
+    <msgUID>0</msgUID>
+  </header>
+  <body>
+    <helloAck>
+      <result>FAIL_OCP_VERSION</result>
+    </helloAck>
+  </body>
+</msg>
+----
 
 ==== State Machines
 The following figures illustrate the Finite State Machine (FSM) of the OCP agent and OCP plugin
 for new connection procedure.
 
 .OCP agent state machine
-image::ocpplugin/ocpagent-state-machine.jpg[OCP agent state machine, 550, 320]
+image::ocpplugin/ocpagent-state-machine.jpg[OCP agent state machine,width=500]
 
 .OCP plugin state machine
-image::ocpplugin/ocpplugin-state-machine.jpg[OCP plugin state machine, 550, 317]
+image::ocpplugin/ocpplugin-state-machine.jpg[OCP plugin state machine,width=500]
 
 === Northbound APIs
 There are ten exposed northbound APIs: health-check, set-time, re-reset, get-param,
@@ -90,7 +119,7 @@ Default URL: http://localhost:8181/restconf/operations/ocp-service:health-check-
 
 ===== POST Input
 
-[options="header"]
+[options="header",cols="2,1,2,2,1"]
 |=======
 |Field Name | Type | Description | Example | Required?
 | nodeId | String | Inventory node reference for OCP radio head | ocp:MTI-101-200 | Yes
@@ -111,7 +140,7 @@ Default URL: http://localhost:8181/restconf/operations/ocp-service:health-check-
 
 ===== POST Output
 
-[options="header"]
+[options="header",cols="1,1,2"]
 |=======
 |Field Name | Type | Description
 | result | String, enumerated | Common default result codes
@@ -134,7 +163,7 @@ Default URL: http://localhost:8181/restconf/operations/ocp-service:set-time-nb
 
 ===== POST Input
 
-[options="header"]
+[options="header",cols="1,1,2,2,1"]
 |=======
 |Field Name | Type | Description | Example | Required?
 | nodeId | String | Inventory node reference for OCP radio head | ocp:MTI-101-200 | Yes
@@ -155,7 +184,7 @@ Default URL: http://localhost:8181/restconf/operations/ocp-service:set-time-nb
 
 ===== POST Output
 
-[options="header"]
+[options="header",cols="1,1,2"]
 |=======
 |Field Name | Type | Description
 | result | String, enumerated | Common default result codes + FAIL_INVALID_TIMEDATA
@@ -177,7 +206,7 @@ Default URL: http://localhost:8181/restconf/operations/ocp-service:re-reset-nb
 
 ===== POST Input
 
-[options="header"]
+[options="header",cols="1,1,2,2,1"]
 |=======
 |Field Name | Type | Description | Example | Required?
 | nodeId | String | Inventory node reference for OCP radio head | ocp:MTI-101-200 | Yes
@@ -196,7 +225,7 @@ Default URL: http://localhost:8181/restconf/operations/ocp-service:re-reset-nb
 
 ===== POST Output
 
-[options="header"]
+[options="header",cols="1,1,2"]
 |=======
 |Field Name | Type | Description
 | result | String, enumerated | Common default result codes
@@ -221,7 +250,7 @@ Default URL: http://localhost:8181/restconf/operations/ocp-service:get-param-nb
 
 ===== POST Input
 
-[options="header"]
+[options="header",cols="1,1,2,2,1"]
 |=======
 |Field Name | Type | Description | Example | Required?
 | nodeId | String | Inventory node reference for OCP radio head | ocp:MTI-101-200 | Yes
@@ -244,7 +273,7 @@ Default URL: http://localhost:8181/restconf/operations/ocp-service:get-param-nb
 
 ===== POST Output
 
-[options="header"]
+[options="header",cols="1,1,2"]
 |=======
 |Field Name | Type | Description
 | id | String | Object ID
@@ -281,7 +310,7 @@ Default URL: http://localhost:8181/restconf/operations/ocp-service:modify-param-
 
 ===== POST Input
 
-[options="header"]
+[options="header",cols="1,1,2,2,1"]
 |=======
 |Field Name | Type | Description | Example | Required?
 | nodeId | String | Inventory node reference for OCP radio head | ocp:MTI-101-200 | Yes
@@ -310,7 +339,7 @@ Default URL: http://localhost:8181/restconf/operations/ocp-service:modify-param-
 
 ===== POST Output
 
-[options="header"]
+[options="header",cols="1,1,2"]
 |=======
 |Field Name | Type | Description
 | objId | String | Object ID
@@ -345,7 +374,7 @@ Default URL: http://localhost:8181/restconf/operations/ocp-service:create-obj-nb
 
 ===== POST Input
 
-[options="header"]
+[options="header",cols="1,1,2,2,1"]
 |=======
 |Field Name | Type | Description | Example | Required?
 | nodeId | String | Inventory node reference for OCP radio head | ocp:MTI-101-200 | Yes
@@ -374,7 +403,7 @@ Default URL: http://localhost:8181/restconf/operations/ocp-service:create-obj-nb
 
 ===== POST Output
 
-[options="header"]
+[options="header",cols="1,1,2"]
 |=======
 |Field Name | Type | Description
 | objId | String | Object ID
@@ -409,7 +438,7 @@ Default URL: http://localhost:8181/restconf/operations/ocp-service:delete-obj-nb
 
 ===== POST Input
 
-[options="header"]
+[options="header",cols="1,1,2,2,1"]
 |=======
 |Field Name | Type | Description | Example | Required?
 | nodeId | String | Inventory node reference for OCP radio head | ocp:MTI-101-200 | Yes
@@ -430,7 +459,7 @@ Default URL: http://localhost:8181/restconf/operations/ocp-service:delete-obj-nb
 
 ===== POST Output
 
-[options="header"]
+[options="header",cols="1,1,2"]
 |=======
 |Field Name | Type | Description
 | result | String, enumerated | Common default result codes + "FAIL_UNKNOWN_OBJECT",
@@ -456,7 +485,7 @@ Default URL: http://localhost:8181/restconf/operations/ocp-service:get-state-nb
 
 ===== POST Input
 
-[options="header"]
+[options="header",cols="2,1,2,2,1"]
 |=======
 |Field Name | Type | Description | Example | Required?
 | nodeId | String | Inventory node reference for OCP radio head | ocp:MTI-101-200 | Yes
@@ -481,7 +510,7 @@ Default URL: http://localhost:8181/restconf/operations/ocp-service:get-state-nb
 
 ===== POST Output
 
-[options="header"]
+[options="header",cols="1,1,2"]
 |=======
 |Field Name | Type | Description
 | id | String | Object ID
@@ -524,7 +553,7 @@ Default URL: http://localhost:8181/restconf/operations/ocp-service:modify-state-
 
 ===== POST Input
 
-[options="header"]
+[options="header",cols="1,1,2,2,1"]
 |=======
 |Field Name | Type | Description | Example | Required?
 | nodeId | String | Inventory node reference for OCP radio head | ocp:MTI-101-200 | Yes
@@ -550,7 +579,7 @@ Default URL: http://localhost:8181/restconf/operations/ocp-service:modify-state-
 
 ===== POST Output
 
-[options="header"]
+[options="header",cols="1,1,2"]
 |=======
 |Field Name | Type | Description
 | objId | String | Object ID
@@ -583,7 +612,7 @@ Default URL: http://localhost:8181/restconf/operations/ocp-service:get-fault-nb
 
 ===== POST Input
 
-[options="header"]
+[options="header",cols="1,1,2,2,1"]
 |=======
 |Field Name | Type | Description | Example | Required?
 | nodeId | String | Inventory node reference for OCP radio head | ocp:MTI-101-200 | Yes
@@ -606,7 +635,7 @@ Default URL: http://localhost:8181/restconf/operations/ocp-service:get-fault-nb
 
 ===== POST Output
 
-[options="header"]
+[options="header",cols="1,1,2"]
 |=======
 |Field Name | Type | Description
 | result | String, enumerated | Common default result codes + "FAIL_UNKNOWN_OBJECT", "FAIL_VALUE_OUTOF_RANGE"
@@ -658,7 +687,7 @@ resource model.
 === Java Interfaces (Southbound APIs)
 The southbound APIs provide concrete implementation of the following OCP elementary functions:  health-check,
 set-time, re-reset, get-param, modify-param, create-obj, delete-obj, get-state, modify-state and get-fault.
-Any ODL services/applications (of course, including OCP service) wanting to speak OCP to radio heads will
+Any OpenDaylight services/applications (of course, including OCP service) wanting to speak OCP to radio heads will
 need to use them.
 
 ==== SalDeviceMgmtService

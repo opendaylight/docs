@@ -15,8 +15,8 @@ image::ocpplugin/ocp-sb-plugin.jpg[OCP southbound plugin, 550, 350]
 
 It is foreseen that, in 5G, C-RAN will use the packet-based Transport-SDN (T-SDN) as the
 fronthaul network to transport both control plane and user plane data between RRHs and
-BBUs. As a result, the addition of the OCP plugin to the ODL controller will make it
-possible to build an RRH controller on top of ODL to centrally manage deployed RRHs,
+BBUs. As a result, the addition of the OCP plugin to OpenDaylight will make it
+possible to build an RRH controller on top of OpenDaylight to centrally manage deployed RRHs,
 as well as integrating the RRH controller with T-SDN on one single platform, achieving
 the joint RRH and fronthaul network provisioning in C-RAN.
 
@@ -88,7 +88,7 @@ The OCP Plugin project has two top level Karaf features, odl-ocpplugin-all and o
 * odl-ocpplugin-app-ocp-service
 * odl-ocpjava-protocol
 
-The OCP service (odl-ocpplugin-app-ocp-service), together with the OCP southbound (odl-ocpplugin-southbound) and OCP protocol library (odl-ocpjava-protocol), provides the ODL controller with basic OCP v4.1.1 functionality.
+The OCP service (odl-ocpplugin-app-ocp-service), together with the OCP southbound (odl-ocpplugin-southbound) and OCP protocol library (odl-ocpjava-protocol), provides OpenDaylight with basic OCP v4.1.1 functionality.
 
 There are two ways to interact with OCP service: one is via RESTCONF (programmatic) and the other is using DLUX web interface (manual), so you have to install the following features to enable RESTCONF and DLUX.
 ----
@@ -118,24 +118,21 @@ As of Boron, there are the following settings that are configurable:
 image::ocpplugin/plugin-config.jpg[OCP plugin configuration, 550, 449]
 
 === Test Environment
-The OCP Plugin project contains a simple OCP agent for testing purposes; the agent has been designed specifically to act as a fake radio head device, giving you an idea of what it would look like during the OCP handshake taking place between the OCP agent and the ODL controller (OCP plugin).
+The OCP Plugin project contains a simple OCP agent for testing purposes; the agent has been designed specifically to act as a fake radio head device, giving you an idea of what it would look like during the OCP handshake taking place between the OCP agent and OpenDaylight (OCP plugin).
 
-To run the simple OCP agent, you have to first clone the ocpplugin repo and compile it (assuming you have JDK 1.7 or
-above installed already):
+To run the simple OCP agent, you have to first download its JAR file from OpenDaylight Nexus Repository.
 ----
-git clone https://git.opendaylight.org/gerrit/ocpplugin <ocpplugin-src-dir>
-cd <ocpplugin-src-dir>/simple-agent
-javac src/main/java/org/opendaylight/ocpplugin/OcpAgent.java
+wget https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/ocpplugin/simple-agent/0.1.0-Boron/simple-agent-0.1.0-Boron.jar
 ----
-Then run the agent with no arguments and it should display the usage that lists the expected arguments.
+Then run the agent with no arguments (assuming you already have JDK 1.8 or above installed) and it should display the usage that lists the expected arguments.
 ----
-java -cp src/main/java org.opendaylight.ocpplugin.OcpAgent
+java -classpath simple-agent-0.1.0-Boron.jar org.opendaylight.ocpplugin.OcpAgent
 
 Usage: java org.opendaylight.ocpplugin.OcpAgent <controller's ip address> <port number> <vendor id> <serial number>
 ----
 Here is an example:
 ----
-java -cp src/main/java org.opendaylight.ocpplugin.OcpAgent 127.0.0.1 1033 XYZ 123
+java -classpath simple-agent-0.1.0-Boron.jar org.opendaylight.ocpplugin.OcpAgent 127.0.0.1 1033 XYZ 123
 ----
 
 === Web / Graphical Interface
