@@ -1,4 +1,28 @@
 {
   "pushCert": "certificate version 0.1\npusher F566C9B1 1469712203 -0400\npushee ssh://git.opendaylight.org:29418/docs.git\nnonce 1469712203-F5939C10B0DBAF7A372BB009C0C20829915C6FB4\n\n0000000000000000000000000000000000000000 257ec5bf498ca2bcd763eba037467161ba37217c refs/publish/master/I0e881b73a30113905b92144166be672c26c6a4f2\n-----BEGIN PGP SIGNATURE-----\nVersion: GnuPG v1\n\niQIcBAABAgAGBQJXmgdLAAoJEF3VDEv1ZsmxLLAP/RSipX3t85grkRlswgiThrLv\nvR1pDuWv6LGrP8fbYPeHDbp3i1idJonuLcqGF05yS9WnaGXu0QcEnGkylSxptB10\nZpoT6/9ZAJM9NLf/Z2hueZaWDc6xbt98FQRUHHTFqo2RMCGkW4F3mzWixI/42aC3\nhmjRY4G7LtIsrzrD+2efJvJwzoPb0DI5gWTKMYoer6ApeqH1qr1mXroiVWz4v5LO\n9C9DKpeWohG36Lg9maEzRrvn/QTZ0pd+x5wX6VkL/xIxwbpAqxaF4zixFpv23nIX\nsgAur9rDANXcSTmbE4lD4TOERazffXvQ3kqxKXHQ1QcTBA3GT8Zmpo/K4XxVgCZr\nznlF27dusmjSHqQGSX7//IayF3/iQQcPPCg+RQrHawiBqx3OaemGMsdHWQ08CxUM\nFrO8TrhVkQ4Fkf24Ik+Y2j3JSkHuf9IQFUhy0esiFQhvTtXrdCEIedvhtlssehxN\nN7SjYgmAo7pKbzhzhhYZVbSZgpAyxdjASD7c5HNA1KrAbJPmbaFIjbJEAAyErsdI\nVAi2NHbHfEp22ltt6Ncw+yERHrAvMrAfdtYLe/Yt5X2g/s1jZEE9Cm2NhEkgdjUP\nqn8twNWpml69ZGQw7G5VdPjs/wbY5IYfGdUgjkSY4TRYlILjYNK3njP1ldgIIplR\nwIQayb8coNuB0MlVbYjn\n\u003dSyAR\n-----END PGP SIGNATURE-----\n",
-  "comments": []
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a561d44_ac529b64",
+        "filename": "manuals/user-guide/src/main/asciidoc/usecplugin/odl-usecplugin-aaa-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-07-28T13:24:48Z",
+      "side": 1,
+      "message": "What\u0027s the URI to issue these RPCs to?",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 114
+      },
+      "revId": "257ec5bf498ca2bcd763eba037467161ba37217c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
 }
