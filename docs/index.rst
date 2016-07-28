@@ -46,6 +46,7 @@ participate in the development of OpenDaylight or would like to start.
    submodules/integration/test/docs/index
    documentation
    submodules/spectrometer/docs/index
+   release-process/index
 
 .. Commenting the below out until we actually use it
 .. Indices and tables
