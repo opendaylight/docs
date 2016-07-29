@@ -40,7 +40,7 @@ module openflow-provider {
 ** this module requires instance of binding-aware-broker
 (`container binding-aware-broker`)
 ** and list of openflow-switch-connection-provider (those are provided
-by openflowjava, one plugin instance will orchester multiple
+by openflowjava, one plugin instance will orchestrate multiple
 openflowjava modules)
 
 [source,yang]
