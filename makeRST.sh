@@ -4,8 +4,8 @@
 # converting  asciidoc to reStructedText automatically using
 # asciidoctor maven plug in and pandoc (http://www.pandoc.org/).
 #
-# Please make sure you have pandoc (http://www.pandoc.org/) and sphinx
-# (http://www.sphinx-doc.org/) installed.
+# Please make sure you have pandoc (http://www.pandoc.org/), sphinx
+# (http://www.sphinx-doc.org/) and sphinx-bootstrap-theme(https://ryan-roemer.github.io/sphinx-bootstrap-theme/) installed.
 
 cwd=$(pwd)
 cp -r $cwd/docs/getting-started-guide $cwd/docs_autotranslation/getting-started-guide
@@ -22,6 +22,9 @@ for i in $docs
 	pandoc -f docbook -t rst -s *.xml -o index.rst
  done
 
+cd $cwd/docs_autotranslation
+./split.py -i developer-guide/index.rst
+./split.py -i user-guide/index.rst
 
 sphinx-build -b html $cwd/docs_autotranslation $cwd/docs_autotranslation/html
 
