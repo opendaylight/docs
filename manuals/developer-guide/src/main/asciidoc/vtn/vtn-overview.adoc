@@ -73,6 +73,59 @@ YANG documentation for VTN Manager, please refer to: https://jenkins.opendayligh
 ==== VTN Coordinator
 
 The VTN Coordinator is an external application that provides a REST interface for an user to use OpenDaylight VTN Virtualization. It interacts with VTN Manager plugin to implement the user configuration. It is also capable of multiple OpenDaylight orchestration. It realizes VTN provisioning in OpenDaylight instances. In the OpenDaylight architecture VTN Coordinator is part of the network application, orchestration and services layer. VTN Coordinator will use the REST interface exposed by the VTN Manger to realize the virtual network using OpenDaylight. It uses OpenDaylight APIs (REST) to construct the virtual network in OpenDaylight instances. It provides REST APIs for northbound VTN applications and supports virtual networks spanning across multiple OpenDaylight by coordinating across OpenDaylight.
+VTN Coordinator Components
+* Transaction Coordinator
+* Unified Provider Physical Layer (UPPL)
+* Unified Provider Logical LAyer (UPLL)
+* OpenDaylight Controller Diver (ODC Driver)
+
+===== OpenDaylight Virtual Tenant Network (VTN) API Overview
+
+The VTN API module is a sub component of the VTN Coordinator and provides the north bound REST API interface for VTN applications. It consists of two subcomponents:
+* Web Server
+* VTN service Java API Library
+
+.VTN-Coordinator_api-architechture
+image::vtn/Vtn-coordinator-api-architecture.png[width=500]
+
+====== Web Server
+
+The Web Server module handles the REST APIs received from the VTN applications. It translates the REST APIs to the appropriate Java APIs.
+The main functions of this module are:
+* Starts via the startup script catalina.sh.
+* VTN Application sends HTTP request to Web server in XML or JSON format.
+* Creates a session and acquire a read/write lock.
+* Invokes the VTN Service Java API Library corresponding to the specified URI.
+* Returns the response to the VTN Application.
+
+====== WebServer Class Details
+The table below lists the classes available for Web Server module and its descriptions:
+
+[options="header"]
+|===
+| Class Name | Description
+| Init Manager | It is a singleton class for executing the acquisition of configuration information from properties file, log initialization, initialization of VTN Service Java API Library. Executed by init() of VtnServiceWebAPIServlet.
+| Configuration Manager | Maintains the configuration information acquired from properties file.
+| VtnServiceCommonUtil | Utility class
+| VtnServiceWebUtil | Utility class
+| VtnServiceWebAPIServlet | Receives HTTP request from VTN Application and calls the method of corresponding VtnServiceWebAPIHandler.
+Inherits class HttpServlet, and overrides doGet(), doPut(), doDelete(), doPost().
+| VtnServiceWebAPIHandler | Creates JsonObject(com.google.gson) from HTTP request, and calls method of corresponding VtnServiceWebAPIController.
+| VtnServiceWebAPIController | Creates RestResource() class and calls UPLL API/UPPL API through Java API.
+At the time of calling UPLL API/UPPL API, performs the creation/deletion of session, acquisition/release of configuration mode, acquisition/release of read lock by TC API through Java API.
+| Data Converter | Converts HTTP request to JsonObject and JsonXML to JSON.
+
+|===
+
+====== VTN Service Java API Library
+It provides the Java API library to communicate with the lower layer modules in the VTN Coordinator.
+The main functions of this library are:
+* Creates an IPC client session to the lower layer.
+* Converts the request to IPC framework format.
+* Invokes the lower layer API (i.e. UPPL API, UPLL API, TC API).
+* Returns the response from the lower layer to the web server
+* VTN Service Java API Library Class Details
+
 
 ===== Feature Overview
 
