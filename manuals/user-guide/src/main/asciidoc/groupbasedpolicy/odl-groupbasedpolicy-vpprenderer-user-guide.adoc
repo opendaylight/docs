@@ -1,0 +1,73 @@
+=== GBP VPP Renderer User Guide
+
+:GBPVPPRNDR: GBP VPP renderer
+
+==== Overview
+{GBPVPPRNDR} implements functionalities for Vector Packet processing (VPP) devices. It allows processing of endpoinds connected to these devices. It listens for the creation of VPP endpoint and according to specified poilicies it configures the physical VPP devices. It allows to create Vhost and Tap interfaces and assigning them to Bridge Domain (BD) according to the policy.
+
+.Common acronyms used in the following sections:
+[horizontal]
+VPP:: Vector packet processing.
+BD:: Bridge domain.
+TAP:: Virtual only interface with no physical hardware.
+VHOST:: Virtual host virtual interface.
+
+==== {GBPVPPRNDR} Architecture
+When {GBPVPPRNDR} is initialized, it registers itself to Renderer Manager. After that {GBPVPPRNDR} provides services for VPP devices, which need to be registered with this renderer. After the VPP devices are registered with {GBPVPPRNDR}, they can be configured and renderer listens on VPP Endpoint changes. The change in endpoints or policy invokes {GBPVPPRNDR} which then configures VPP devices.
+
+==== Administering {GBPVPPRNDR}
+To use the {GBPVPPRNDR} Karaf, at least the following Karaf
+features must be installed:
+
+* odl-netconf-all
+* odl-restconf
+* odl-groupbasedpolicy-vpp
+* odl-groupbasedpolicy-neutron-vpp-mapper
+* odl-vbd-api
+
+==== VPP endpoint details
+Each VPP endpoint is defined by context (type, id), address (type, id) and it contains several fields according to its type. For example field "vpp-node-path" stores the path to the VPP device on which the particullar VPP endpoint needs to be configured.
+
+
+.Example of VPP endpoint (Vhost):
+----
+{
+    "context-type": "l2-l3-forwarding:l2-bridge-domain",
+    "context-id": "e86740a2-042c-4e64-a43b-cc224e0d5240",
+    "address-type": "l2-l3-forwarding:mac-address-type",
+    "address": "fa:16:3e:8e:9b:77",
+    "vpp-node-path": "/network-topology:network-topology/network-topology:topology[network-topology:topology-id='topology-netconf']/network-topology:node[network-topology:node-id='vpp1']",
+    "vpp-interface-name": "neutron_port_15fcb2c2-a714-438a-92ce-d6cdedf366ff",
+    "socket": "/tmp/socket_15fcb2c2-a714-438a-92ce-d6cdedf366ff",
+    "description": "neutron port"
+}
+----
+.Example of VPP endpoint (Tap):
+----
+{
+    "context-type": "l2-l3-forwarding:l2-bridge-domain",
+    "context-id": "e86740a2-042c-4e64-a43b-cc224e0d5240",
+    "address-type": "l2-l3-forwarding:mac-address-type",
+    "address": "fa:16:3e:87:76:14",
+    "vpp-node-path": "/network-topology:network-topology/network-topology:topology[network-topology:topology-id='topology-netconf']/network-topology:node[network-topology:node-id='vpp1']",
+    "vpp-interface-name": "neutron_port_8a930a52-78cf-4759-9766-5f3fceafb9f4",
+    "physical-address": "fa:16:3e:87:76:14",
+    "name": "tap8a930a52-78",
+    "description": "neutron port"
+}
+----
+
+==== {GBPVPPRNDR} Tutorial
+
+===== Overview
+This tutorial is a simple example how to create Vhost and TAP interface on a VPP device using VPP renderer.
+
+===== Preconditions
+Let's assume that we have one VPP capable device named _"vpp1"_ and we are going to use both example VPP endpoints from above. One of which represents a TAP port and the other a VHOST user interface. Both of them are going to be created on the same node (vpp1) as you can see in vpp-node-path parameter.
+
+===== Instructions
+When VPP renderer is installed, all netconf nodes in topology-netconf are
+processed and all VPP capable nodes are registered to VPP renderer.
+
+
+:GBPVPPRNDR!:
