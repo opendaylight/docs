@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "7a6b29fe_30d83853",
+        "filename": "manuals/user-guide/src/main/asciidoc/lfm/lispflowmapping-clustering-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 491
+      },
+      "writtenOn": "2016-08-02T00:11:29Z",
+      "side": 1,
+      "message": "s/Dcumentation/Documentation/",
+      "revId": "b2f31200909276549fdd62e25e6489a995b4b646",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a561d44_36c9ad26",
         "filename": "manuals/user-guide/src/main/asciidoc/lfm/lispflowmapping-clustering-user.adoc",
         "patchSetId": 2
@@ -13,6 +30,24 @@
       "writtenOn": "2016-07-31T02:20:34Z",
       "side": 1,
       "message": "I don\u0027t see that in the repo here:\nhttps://git.opendaylight.org/gerrit/gitweb?p\u003dintegration/test.git;a\u003dtree;f\u003dtools/clustering/cluster-deployer;hb\u003dHEAD",
+      "revId": "b2f31200909276549fdd62e25e6489a995b4b646",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_90ddcc45",
+        "filename": "manuals/user-guide/src/main/asciidoc/lfm/lispflowmapping-clustering-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 491
+      },
+      "writtenOn": "2016-08-02T00:11:29Z",
+      "side": 1,
+      "message": "Jozef, can you please work with the integration team to include the lispflowmapping template into the official repo and make any changes to the script in such a way that it is acceptable for them in a general way?",
+      "parentUuid": "9a561d44_36c9ad26",
       "revId": "b2f31200909276549fdd62e25e6489a995b4b646",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
