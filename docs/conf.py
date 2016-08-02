@@ -311,13 +311,17 @@ linkcheck_ignore = [
     'https://git.opendaylight.org/gerrit/#/admin/projects/releng/builder',
 ]
 
-# Build integration stuff
-import subprocess
+import platform
+if platform.system() != 'Windows':
 
-subprocess.call(["./build-integration-robot-libdoc.sh"])
+    # Build integration stuff
+    import subprocess
 
-# Disable javasphinx generation until we have a solution to long build
-# times. readthedocs timesout after 902 seconds.
-subprocess.call(["rm","-rf","javadoc"])
-# if javasphinx_available:
-#     subprocess.call(["./generate-javaapidoc.sh"])
+    subprocess.call(["./build-integration-robot-libdoc.sh"])
+
+    # Disable javasphinx generation until we have a solution to long build
+    # times. readthedocs timesout after 902 seconds.
+    subprocess.call(["rm","-rf","javadoc"])
+    # if javasphinx_available:
+    #     subprocess.call(["./generate-javaapidoc.sh"])
+
