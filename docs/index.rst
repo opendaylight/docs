@@ -46,6 +46,7 @@ participate in the development of OpenDaylight or would like to start.
    submodules/integration/test/docs/index
    documentation
    release-process/index
+   javadoc
 
 .. Commenting the below out until we actually use it
 .. Indices and tables
