@@ -1,8 +1,6 @@
 #!/bin/bash
 
 projects="
-aaa
-netconf
 odlparent
 "
 
