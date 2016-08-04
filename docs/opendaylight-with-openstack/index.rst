@@ -42,6 +42,7 @@ Installing OpenDaylight
 
    openstack-with-ovsdb
    openstack-with-gbp
+   openstack-with-gbp-vpp
    openstack-with-vtn
 
 .. _OpenStack: https://www.openstack.org/
