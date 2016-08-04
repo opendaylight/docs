@@ -1,4 +1,39 @@
 {
   "pushCert": "certificate version 0.1\npusher F566C9B1 1470147227 -0400\npushee ssh://git.opendaylight.org:29418/docs.git\nnonce 1470147227-27628C69737DAA90BE5E883A891D9C4B74C5FFF6\n\n0000000000000000000000000000000000000000 3fab978578813a6d476dbdd4dbdbd8364d10ef88 refs/for/master\n-----BEGIN PGP SIGNATURE-----\nVersion: GnuPG v1\n\niQIcBAABAgAGBQJXoKqbAAoJEF3VDEv1ZsmxsJAP/RbDaZYrTUsEi/0xVkCoiZLg\nwXTEmYJ/m/AZ8R4CRMBRubrtBWpexlSXzhKz6ak1o2pED13qO62ZaluKsinvKH2x\nvmjKLrja3pRKSSMG4Mm1Pjjeu1FZfLcrZJsZYhNm9plbPHI5ErIaL65fffDUsJFA\ndE7Sbt4d+c/nSygdB+wp/yLJGu3HdIQh1HUFYq0b0WzE2LJBiTFvBQnK7b6oKN5W\nF0ex0W1c4qhR/QBNvTE7BrtRMqSxaN70F1cEnArgsE8mJ2nVUWJUSD4jR0fByQlD\nAzIVk7hjljc73COkLgfVREMaRvjSwyHbb9cWTTfh1vRSKlOW4yoMJixggmFjL1u6\nzjq8gYIyU/0nT0d2mbNw3+LfjZTiuJeVgZWtBujHVPurIgmJJrxhcem3KMb6Ak2k\ngwp1FFrzMJM/K2UN0DBl0YwqS9c4MA6oij4DV5EFQSUUcvOjBtXOPIkRwcsAygcr\nQ7TwYLbfsJ4A8gErOEr2ngX5LOmm9wc5/4D/tal8j0GX1D5Cc++LunzW3zDm3wtF\nIz+qA0n+SamwziY5ZokIeukOp166rZqQd5S/Z+pBjAyjACX8pydaQPQDILJ5u99w\nvw+XzLqL/QcHNJ+YBctzD81z3/uvqrlLHRe7W2M2uGeHESEZtNl72cu9Iqmsm+G8\nAo9A3cAdnYuUDDmKCmxP\n\u003dPFKQ\n-----END PGP SIGNATURE-----\n",
-  "comments": []
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a6b29fe_18d8b71c",
+        "filename": "docs_autotranslation/split.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2016-08-04T00:00:55Z",
+      "side": 1,
+      "message": "Use the print() function as it will allow us to run this script on python3 as well as python2.",
+      "revId": "3fab978578813a6d476dbdd4dbdbd8364d10ef88",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_38dbf31c",
+        "filename": "makeRST.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2016-08-04T00:00:55Z",
+      "side": 1,
+      "message": "no need to indent do and done. Also please use 4 spaces instead of tabs.",
+      "revId": "3fab978578813a6d476dbdd4dbdbd8364d10ef88",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
 }
