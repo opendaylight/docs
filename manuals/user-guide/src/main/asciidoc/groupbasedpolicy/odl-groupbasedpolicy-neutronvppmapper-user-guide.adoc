@@ -1,0 +1,85 @@
+:SUBJECT: Neutron VPP Mapper
+
+=== Neutron VPP mapper User Guide
+
+==== Overview
+{SUBJECT} implements features for support policy-based routing for OpenStack Neutron interface involving VPP devices.
+
+==== Architecture
+{SUBJECT} listens to Neutron Store data change events, as well as being able to access directly the store, and is responsible for converting Neutron data specifically required to render a VPP node configuration with a given End Point, e.g. the virtual host interface name assigned to a vhostuser socket. The mapped data is stored in the VPP info data store.
+
+==== Administering Neutron VPP Mapper
+To use the {SUBJECT} in Karaf, at least the following Karaf features must be installed:
+
+* odl-netconf-all
+* odl-restconf
+* odl-groupbasedpolicy-vpp
+* odl-groupbasedpolicy-neutron-vpp-mapper
+* odl-vbd-api
+
+==== Initial pre-requisites
+A topology should exist in config DS.
+
+.Example:
+----
+{
+    "network-topology":{
+       "topology":[
+            {
+                "topology-id":"datacentre",
+                "node":[
+                    {
+                       "node-id":"dut2",
+                       "vlan-tunnel:super-interface":"GigabitEthernet0/9/0",
+                       "termination-point":[
+                            {
+                                "tp-id":"GigabitEthernet0/9/0",
+                                "neutron-provider-topology:physical-interface":{
+                                    "interface-name":"GigabitEthernet0/9/0"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
+----
+
+
+==== Processing Neutron Configuration
+`NeutronListener` listens to the changes in Neutron datatree in Config DS. It filters the changes, processing only `network` and `port` entities.
+
+For a `network` entity it is checked that it has `physical-network` parameter set (i.e., it is backed-up by a physical network), and that `network-type` is `vlan-network`, and if this check has passed, a related bridge domain is created in VPP Renderer config DS (http://{{controller}}:{{port}}/restconf/config/vpp-renderer:config), referenced to network by `vlan` field containing the same value as `neutron-provider-ext:segmentation-id` of network created by Neutron.
+
+For a `port` entity it is checked that `vif-type` contains `"vhostuser"` substring, and that `device-owner` contains a specific substring, namely `"compute"`, `"router"` or `"dhcp"`.
+
+In case of `"compute"` substring, a `vhost-user` is written to VPP Renderer config DS.
+
+In case of `"dhcp"` or `"router"`, a `tap` is written to VPP Renderer config DS.
+
+==== Input/output examples
+
+.Creating network
+----
+PUT http://localhost:8181/restconf/config/neutron:neutron/networks/network/43282482-a677-4102-87d6-90708f30a115
+
+{
+    "network": [
+        {
+            "uuid": "43282482-a677-4102-87d6-90708f30a115",
+            "tenant-id": "94836b88-0e56-4150-aaa7-60f1c2b67faa",
+            "neutron-provider-ext:segmentation-id": "2016",
+            "neutron-provider-ext:network-type": "neutron-networks:network-type-vlan",
+            "neutron-provider-ext:physical-network": "dr-external",
+            "neutron-L3-ext:external": true,
+            "name": "drexternal",
+            "shared": false,
+            "admin-state-up": true,
+            "status": "ACTIVE"
+        }
+    ]
+}
+----
+
