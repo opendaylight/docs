@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7a6b29fe_4348702d",
+        "filename": "docs_autotranslation/index.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5748
+      },
+      "writtenOn": "2016-08-05T20:58:17Z",
+      "side": 1,
+      "message": "I copied these two guides from the manual translated source to make the generated html more complete.",
+      "parentUuid": "7a6b29fe_e3e9bc1b",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 36
+      },
+      "revId": "07ea1f0a82dd3043e015e3350d02212eaae3923a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a6b29fe_a3906496",
         "filename": "makeRST.sh",
         "patchSetId": 11
