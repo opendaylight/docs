@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a6b29fe_3a55a01d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2016-08-05T05:33:33Z",
+      "side": 1,
+      "message": "There\u0027s a proper structure to a commit message you should follow. Otherwise git tools will break and not be able to display the commit message correct (I\u0027m actually surprised Gerrit didn\u0027t fail to parse here but maybe it\u0027s because you put everything into a single block of text).\n\nThe first line should be \u003c52 characters short subject line of the patch, followed by a blank line before the commit message body. After the commit message body another blank line and then all the metadata in the last block. I usually follow the advice on this blog post on how to write commit messages:\n\nhttp://chris.beams.io/posts/git-commit/",
+      "revId": "79965541feeb5007c520ef775bf96794dd835042",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
