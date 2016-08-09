@@ -20,6 +20,7 @@ Releasing OpenDaylight
 ======================
 
 - Nexus: click release for staging repo **(Helpdesk)**
+- Nexus: click release for gpgsign repo (created above in Preparations) **(Helpdesk)**
 - Send email to Helpdesk with binary URL to update website **(Helpdesk)**
 - Send email to TSC and Release mailing lists announcing release binaries location **(Release Engineering Team)**
 - Checkout autorelease and switch to release branch eg stable/boron
