@@ -26,7 +26,19 @@ Process
   **(Release Engineering Team)**
 - Contribute .gitreview updates to stable/boron
   **(Release Engineering Team)**
+
+  .. code-block:: bash
+
+      git submodule foreach sed -i -e 's#defaultbranch=master#defaultbranch=stable/boron#' .gitreview
+      git submodule foreach git commit -asm "Update .gitreview to stable/boron"
+
 - Version bump master by 0.1.0
   **(Release Engineering Team)**
+
+  .. code-block:: bash
+
+      git submodule foreach version.sh bump Boron
+      git submodule foreach git commit -asm "Bump versions by 0.1.0 for next dev cycle"
+
 - Re-enable Submit permission on master branch
   **(Helpdesk)**
