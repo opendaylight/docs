@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7a6b29fe_1c640b21",
+        "filename": "manuals/user-guide/src/main/asciidoc/nic/NIC_How_To_configure_Log_Action.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 3741
+      },
+      "writtenOn": "2016-08-09T22:59:28Z",
+      "side": 1,
+      "message": "I agree, all those changes will be send on the next patch.\nThanks!\nWe\u0027ll create a new file called: NIC_requirements.adoc with this content.",
+      "parentUuid": "ba51214e_94776002",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 4
+      },
+      "revId": "a41ddd1123869000bdcd87273138400b2466bded",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba51214e_543f8825",
         "filename": "manuals/user-guide/src/main/asciidoc/nic/NIC_How_To_configure_QoS_Attribute_Mapping.adoc",
         "patchSetId": 4
@@ -36,6 +60,30 @@
       "writtenOn": "2016-06-17T14:06:47Z",
       "side": 1,
       "message": "be forwarded normally, but allows for packet header fields, e.g., DSCP, to be modified.",
+      "range": {
+        "startLine": 10,
+        "startChar": 31,
+        "endLine": 11,
+        "endChar": 37
+      },
+      "revId": "a41ddd1123869000bdcd87273138400b2466bded",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_1c4b6b88",
+        "filename": "manuals/user-guide/src/main/asciidoc/nic/NIC_How_To_configure_QoS_Attribute_Mapping.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 3741
+      },
+      "writtenOn": "2016-08-09T22:59:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba51214e_543f8825",
       "range": {
         "startLine": 10,
         "startChar": 31,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "7a6b29fe_5c45e36e",
+        "filename": "manuals/user-guide/src/main/asciidoc/nic/NIC_How_To_configure_QoS_Attribute_Mapping.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 3741
+      },
+      "writtenOn": "2016-08-09T22:59:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba51214e_343c942f",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 9
+      },
+      "revId": "a41ddd1123869000bdcd87273138400b2466bded",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba51214e_346ad41a",
         "filename": "manuals/user-guide/src/main/asciidoc/nic/NIC_How_To_configure_QoS_Attribute_Mapping.adoc",
         "patchSetId": 4
@@ -82,6 +154,30 @@
       "writtenOn": "2016-06-17T14:06:47Z",
       "side": 1,
       "message": "This part seems the same same as all the other How Tos, can we combine them into one section at the top?",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 54,
+        "endChar": 4
+      },
+      "revId": "a41ddd1123869000bdcd87273138400b2466bded",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_fc4f8f90",
+        "filename": "manuals/user-guide/src/main/asciidoc/nic/NIC_How_To_configure_QoS_Attribute_Mapping.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 3741
+      },
+      "writtenOn": "2016-08-09T22:59:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba51214e_346ad41a",
       "range": {
         "startLine": 20,
         "startChar": 0,
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "7a6b29fe_1727c4b7",
+        "filename": "manuals/user-guide/src/main/asciidoc/nic/NIC_How_To_configure_Redirect_Action.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 3741
+      },
+      "writtenOn": "2016-08-09T22:59:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba51214e_944920d3",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 9
+      },
+      "revId": "a41ddd1123869000bdcd87273138400b2466bded",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba51214e_74460cc1",
         "filename": "manuals/user-guide/src/main/asciidoc/nic/NIC_How_To_configure_Redirect_Action.adoc",
         "patchSetId": 4
@@ -128,6 +248,30 @@
       "writtenOn": "2016-06-17T14:06:47Z",
       "side": 1,
       "message": "Does it make sense to move this into the NIC repository in the long run?",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 59
+      },
+      "revId": "a41ddd1123869000bdcd87273138400b2466bded",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_d71d4c68",
+        "filename": "manuals/user-guide/src/main/asciidoc/nic/NIC_How_To_configure_Redirect_Action.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 3741
+      },
+      "writtenOn": "2016-08-09T22:59:28Z",
+      "side": 1,
+      "message": "A new .adoc was created containing this topology",
+      "parentUuid": "ba51214e_74460cc1",
       "range": {
         "startLine": 21,
         "startChar": 0,
@@ -163,6 +307,30 @@
     },
     {
       "key": {
+        "uuid": "7a6b29fe_dc061320",
+        "filename": "manuals/user-guide/src/main/asciidoc/nic/NIC_How_To_configure_Redirect_Action.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 3741
+      },
+      "writtenOn": "2016-08-09T22:59:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba51214e_d41278b3",
+      "range": {
+        "startLine": 46,
+        "startChar": 0,
+        "endLine": 59,
+        "endChar": 4
+      },
+      "revId": "a41ddd1123869000bdcd87273138400b2466bded",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba51214e_d479d8fd",
         "filename": "manuals/user-guide/src/main/asciidoc/nic/NIC_How_To_configure_VTN_Renderer.adoc",
         "patchSetId": 4
@@ -174,6 +342,30 @@
       "writtenOn": "2016-06-17T14:06:47Z",
       "side": 1,
       "message": "be forwarded normally.",
+      "range": {
+        "startLine": 9,
+        "startChar": 31,
+        "endLine": 9,
+        "endChar": 36
+      },
+      "revId": "a41ddd1123869000bdcd87273138400b2466bded",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_f72b2880",
+        "filename": "manuals/user-guide/src/main/asciidoc/nic/NIC_How_To_configure_VTN_Renderer.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 3741
+      },
+      "writtenOn": "2016-08-09T22:59:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba51214e_d479d8fd",
       "range": {
         "startLine": 9,
         "startChar": 31,
@@ -209,6 +401,30 @@
     },
     {
       "key": {
+        "uuid": "7a6b29fe_57213c9e",
+        "filename": "manuals/user-guide/src/main/asciidoc/nic/NIC_How_To_configure_VTN_Renderer.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 3741
+      },
+      "writtenOn": "2016-08-09T22:59:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba51214e_b47ee4e2",
+      "range": {
+        "startLine": 10,
+        "startChar": 29,
+        "endLine": 10,
+        "endChar": 37
+      },
+      "revId": "a41ddd1123869000bdcd87273138400b2466bded",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba51214e_f4885ce9",
         "filename": "manuals/user-guide/src/main/asciidoc/nic/NIC_How_To_configure_VTN_Renderer.adoc",
         "patchSetId": 4
@@ -220,6 +436,30 @@
       "writtenOn": "2016-06-17T14:06:47Z",
       "side": 1,
       "message": "This part seems the same same as all the other How Tos, can we combine them into one section at the top?",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 4
+      },
+      "revId": "a41ddd1123869000bdcd87273138400b2466bded",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_372640b8",
+        "filename": "manuals/user-guide/src/main/asciidoc/nic/NIC_How_To_configure_VTN_Renderer.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 3741
+      },
+      "writtenOn": "2016-08-09T22:59:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba51214e_f4885ce9",
       "range": {
         "startLine": 13,
         "startChar": 0,
