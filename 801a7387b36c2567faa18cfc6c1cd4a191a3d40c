@@ -43,6 +43,30 @@
     },
     {
       "key": {
+        "uuid": "7a6b29fe_2826dab7",
+        "filename": "manuals/user-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2016-08-10T15:20:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a561d44_73260518",
+      "range": {
+        "startLine": 232,
+        "startChar": 41,
+        "endLine": 232,
+        "endChar": 66
+      },
+      "revId": "801a7387b36c2567faa18cfc6c1cd4a191a3d40c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a561d44_931d99c0",
         "filename": "manuals/user-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-user.adoc",
         "patchSetId": 3
@@ -54,6 +78,30 @@
       "writtenOn": "2016-07-08T21:12:59Z",
       "side": 1,
       "message": "The body here sure looks like a whole module and not just changing the parameters you need...",
+      "range": {
+        "startLine": 252,
+        "startChar": 10,
+        "endLine": 252,
+        "endChar": 47
+      },
+      "revId": "801a7387b36c2567faa18cfc6c1cd4a191a3d40c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_28ab7ad9",
+        "filename": "manuals/user-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2016-08-10T15:20:22Z",
+      "side": 1,
+      "message": "The full module is needed even for an update. Usually, user want to change the local AS Numer and BGP-ID.",
+      "parentUuid": "9a561d44_931d99c0",
       "range": {
         "startLine": 252,
         "startChar": 10,
@@ -106,6 +154,24 @@
     },
     {
       "key": {
+        "uuid": "7a6b29fe_48f4f6f1",
+        "filename": "manuals/user-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2016-08-10T15:20:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a561d44_53230105",
+      "revId": "801a7387b36c2567faa18cfc6c1cd4a191a3d40c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a561d44_b3209df8",
         "filename": "manuals/user-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-user.adoc",
         "patchSetId": 3
@@ -117,6 +183,24 @@
       "writtenOn": "2016-07-08T21:12:59Z",
       "side": 1,
       "message": "You need a URL here",
+      "revId": "801a7387b36c2567faa18cfc6c1cd4a191a3d40c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_28f9bae9",
+        "filename": "manuals/user-guide/src/main/asciidoc/bgpcep/odl-bgpcep-bgp-all-user.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 403,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2016-08-10T15:20:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a561d44_b3209df8",
       "revId": "801a7387b36c2567faa18cfc6c1cd4a191a3d40c",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
