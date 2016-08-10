@@ -15,7 +15,8 @@ include::odl-sfc-openflow-renderer-user.adoc[SFC OpenFlow Renderer]
 
 include::odl-sfc-iosxe-renderer-user.adoc[SFC IOS XE Renderer]
 
-include::odl-sfc-vpp-renderer-user.adoc[SFC VPP Renderer]
+// Removed the VPP renderer since it's not there
+// include::odl-sfc-vpp-renderer-user.adoc[SFC VPP Renderer]
 // SFC Renderers
 
 include::odl-sfc-sf-scheduler-user.adoc[Service Function selection scheduler]
