@@ -342,14 +342,12 @@ itself and it contains a ``pom.xml`` file saying how to build it, a
 Troubleshooting
 ---------------
 
-See `AsciiDoc Tips
-<https://wiki.opendaylight.org/view/Documentation/Tools/AsciiDoc_Tips>`_
-on the wiki for more information.
+See `AsciiDoc Tips`_ on the wiki for more information.
 
 Common AsciiDoc mistakes
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-See also [[Documentation/Tools/AsciiDoc Tips|AsciiDoc Tips and Tricks]]
+See also `AsciiDoc Tips`_.
 
 * Lists that get formatted incorrectly because of no blank line above
   the list.
@@ -419,3 +417,4 @@ something like::
 .. _Documentation Group: https://wiki.opendaylight.org/view/Documentation/
 .. _RelEng/Builder: https://wiki.opendaylight.org/view/RelEng/Builder
 .. _Pandoc: http://pandoc.org/
+.. _AsciiDoc Tips: https://wiki.opendaylight.org/view/Documentation/Tools/AsciiDoc_Tips
