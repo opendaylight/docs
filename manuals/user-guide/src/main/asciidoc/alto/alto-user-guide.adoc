@@ -7,9 +7,12 @@ Traffic Optimization* services defined in
 https://tools.ietf.org/html/rfc7285[RFC 7285] in OpenDaylight.
 
 This user guide will introduce the three basic services (namely
-`simple-ird`, `manual-maps` and `host-tracker`) which are implemented in
+`simple-ird`, `manual-maps` and `host-tracker`) which are implemented since
 the Beryllium release, and give instructions on how to configure them to
 provide corresponding ALTO services.
+
+A new feature named `simple-pce` (**Simple Path Computation Engine**) is
+added into Boron release as an ALTO extension service.
 
 === How to Identify ALTO Resources ===
 
@@ -206,6 +209,23 @@ via RESTCONF API directly.
 
 The `resource-config` package also provides a query RPC to config the resources.
 You can CREATE, UPDATE and DELETE *network-maps* and *cost-maps* via query RPC.
+
+=== Simple Path Computation Engine ===
+
+The `simple-pce` module provides a simple path computation engine for ALTO and other
+projects. It supports basic CRUD (create, read, update, delete) operations to manage
+L2 and L3 routing with/without rate limitation. This module is an independent
+feature, so you can follow the instruction below to install it independently.
+
+[source,bash]
+karaf > feature:install odl-alto-extenstion
+
+NOTE: The rate limitation meter requires OpenFlow 1.3 support.
+
+==== Basic Usage with RESTCONF API ====
+
+You can use the simple path computation engine with RESTCONF API, which is defined
+in the YANG model https://git.opendaylight.org/gerrit/gitweb?p=alto.git;a=blob;f=alto-extensions/simple-pce/api/src/main/yang/alto-spce.yang;h=f5bbe6744f7dfba493edd275aa18114e363727ab;hb=refs/heads/stable/boron[here].
 
 === Use Case ===
 
