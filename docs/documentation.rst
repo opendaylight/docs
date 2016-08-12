@@ -29,7 +29,7 @@ That being said, assuming that the content is usable, the bias should
 be toward merging it rather than blocking on relatively minor edits.
 
 Formatting Preferences
-^^^^^^^^^^^^^^^^^^^^^^
+----------------------
 
 In general, the documentation team has focused on trying to make sure
 that the instructions are comprehensible, but not being overly pedantic
@@ -40,7 +40,7 @@ following, generally they aren't a reason to -1 in and of themselves:
 * Line wrapping at something reasonable, i.e., 72–100 characters
 
 Key terms
-^^^^^^^^^
+---------
 
 * Functionality: something useful a project provides abstractly
 * Feature: a Karaf feature that somebody could install
@@ -54,7 +54,7 @@ Key terms
     other terms is hard.
 
 Common writing style mistakes
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------
 
 * In per-project user documentation, you should never say *git clone*,
   but should assume people have downloaded and installed the controller
@@ -72,7 +72,7 @@ Common writing style mistakes
   project.
 
 Grammar Preferences
-"""""""""""""""""""
+^^^^^^^^^^^^^^^^^^^
 
 * Avoid contractions: use cannot instead of can't, it is instead of
   it's, and the like.
