@@ -1,5 +1,5 @@
 YANG IDE Installation Guide
-==========================
+===========================
 
 Overview
 --------
@@ -11,7 +11,7 @@ references the appropriate OpenDaylight dependencies, along with a
 sample Yang model file (acme-system.yang).
 
 Pre Requisites for Installing YANG IDE
--------------------------------------
+--------------------------------------
 
 * YANG IDE has the same hardware requirements as the Eclipse IDE, which
   is about the same as the hardware requirements for Java 7.
@@ -35,7 +35,7 @@ the correct platform (for instance, 32-bit or 64-bit).
 
 
 Installing YANG IDE
-------------------
+-------------------
 
 The YANG IDE plugin can be installed by using the public update site URL
 provided, which is http://abc.def .
@@ -198,7 +198,7 @@ If you already had the "YANG IDE" plugin from "Xored", you will need to
 uninstall that plugin before you install this one.
 
 Uninstalling YANG IDE
---------------------
+---------------------
 
 Uninstalling the YANG IDE plugin is the same as uninstalling any other Eclipse plugin.
 
