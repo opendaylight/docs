@@ -38,8 +38,35 @@ The DIDM project creates the infrastructure to support the following functions:
 
 === Key APIs and Interfaces
 
+==== FlowObjective API
+
+Following are the list of the APIs to create the flow objectives to install the
+flow rule in openflow switch in pipeline agnostic way. Currently these APIs are
+getting cosumed by Atrium project.
+
+Install the Forwarding Objective:
+
+---
+http://localhost:8181/restconf/operations/atrium-flow-objective:forward
+---
+
+Install the Filter Objective
+
+---
+http://localhost:8181/restconf/operations/atrium-flow-objective:filter
+---
+
+
+Install the Next Objective:
+
+---
+http://localhost:8181/restconf/operations/atrium-flow-objective:next
+---
+
+==== Flow mod driver API
+
 The Beryllium release includes a flow mod driver for the HP 3800.
-This driver adjusts the flows and push the same to the device. 
+This driver adjusts the flows and push the same to the device.
 This API takes the flow to be adjusted as input and displays the adjusted flow as output in the REST output container.
 Here is the REST API to adjust and push flows to HP 3800 device:
 
