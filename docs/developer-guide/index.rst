@@ -15,10 +15,13 @@ Project-specific Developer Guides
 .. toctree:: 
    :maxdepth: 1 
 
+   bgp-developer-guide
+   bgp-monitoring-protocol-developer-guide
+   pcep-developer-guide
+
+.. Uncomment and move these up as we go
 ..  alto-developer-guide
 ..   atrium-developer-guide
-..   bgp-developer-guide
-..   bgp-monitoring-protocol-developer-guide
 ..   capwap-developer-guide
 ..   cardinal_-opendaylight-monitoring-as-a-service
 ..   controller
@@ -43,7 +46,6 @@ Project-specific Developer Guides
 ..   opflex-genie-developer-guide
 ..   opflex-libopflex-developer-guide
 ..   ovsdb-netvirt
-..   pcep-developer-guide
 ..   packetcable-developer-guide
 ..   service-function-chaining
 ..   snmp4sdn-developer-guide
