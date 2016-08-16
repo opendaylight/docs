@@ -1,4 +1,189 @@
 {
   "pushCert": "certificate version 0.1\npusher F566C9B1 1471368672 -0400\npushee ssh://git.opendaylight.org:29418/docs.git\nnonce 1471368672-0CD708F2B926C861CFB5F5EF5B9540E91EC238D1\n\n0000000000000000000000000000000000000000 a2a221eefe6a05d2e8a1be698335ba0fcd9410cc refs/publish/master/43116\n-----BEGIN PGP SIGNATURE-----\nVersion: GnuPG v1\n\niQIcBAABAgAGBQJXs03gAAoJEF3VDEv1Zsmx73cQAInz6qtm/ZII1rqDzA2BrayA\nQeK3r+uTGqtRuiJ6tdxJRY6p015fp9BAHqL36o/4E3Acsj76mdM7BxS2hH04cvT4\nouPv8N4U8o0IXT7wb2arckwC2nAKK8/mt5PImOcq3gvPnHGkL+TNPnx2On67DXGK\n2ubCWo36N++4lYXvUEltNP/cE3Ht3AiM76JbGl4/mBVwpi6Ue4vUV4mEvH5tMGmk\nccxsTWhuE+JtkS0jPwVRJ93MhZo4uNirBm7IHdwlZ9g5aXEzFwTPPaPU0lB8YJ8+\nLBR5qXMnJtKAtjX2+4klH8UMr0vc984/3d3w/+JmNt1QBAb3D81dkEkESeZYRZBQ\nqFD5tA6uq7oM3UF6yEJdqGDYV77tPqz9WC99d9dO3tYlCjwOj1VArAD6XyJY09rD\nuAhaBJNfoedunCl+zUi2nidBAda1LS7ueL7jFoVe098ZLU/Ng/T/ODx9uYAGsxIH\nbhDGvuz6waFjp2378CmwcHGYvXkg9uoOCLwXWQhD1fKIS9yyqcLIgFXfuQa9YGOr\nHWgnA4qDSn/4POYNMfI2xwCwoFvztDEUaUIsyKm2DbMBxOlZFJ6L+DSmhdmIEdFl\nMTnunOlR9bZusozL2V7NsZKzEtqYKge6FlB/uwBkSlpb9aixx3a9PjDci31q9fNH\nbNzvo7bUmrgWIbgbLEP1\n\u003dQZkm\n-----END PGP SIGNATURE-----\n",
-  "comments": []
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a6b29fe_76641722",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-gbp-vpp.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 3547
+      },
+      "writtenOn": "2016-08-16T19:08:36Z",
+      "side": 1,
+      "message": "Please explain more.\nWhat is neutron vpp mapper responsible for?\nWho is the consumer of neutron-vpp-mappers output? Where are the output data written?",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 126
+      },
+      "revId": "a2a221eefe6a05d2e8a1be698335ba0fcd9410cc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_f60ca744",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-gbp-vpp.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 3547
+      },
+      "writtenOn": "2016-08-16T19:08:36Z",
+      "side": 1,
+      "message": "if they match certain criteria, see \u003creference\u003e",
+      "range": {
+        "startLine": 10,
+        "startChar": 318,
+        "endLine": 10,
+        "endChar": 370
+      },
+      "revId": "a2a221eefe6a05d2e8a1be698335ba0fcd9410cc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_f67787d2",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-gbp-vpp.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 3547
+      },
+      "writtenOn": "2016-08-16T19:08:36Z",
+      "side": 1,
+      "message": "That is a long sentence. Please divide relationships between GBP components from data description.\nPlease add a picture explaining components and data.",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 316
+      },
+      "revId": "a2a221eefe6a05d2e8a1be698335ba0fcd9410cc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_d6724be2",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-gbp-vpp.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 3547
+      },
+      "writtenOn": "2016-08-16T19:08:36Z",
+      "side": 1,
+      "message": "Why do we need to put data into topology?",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 45
+      },
+      "revId": "a2a221eefe6a05d2e8a1be698335ba0fcd9410cc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_76325711",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-gbp-vpp.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 3547
+      },
+      "writtenOn": "2016-08-16T19:08:36Z",
+      "side": 1,
+      "message": "It\u0027s more currenly supported than filtered.",
+      "range": {
+        "startLine": 52,
+        "startChar": 84,
+        "endLine": 52,
+        "endChar": 158
+      },
+      "revId": "a2a221eefe6a05d2e8a1be698335ba0fcd9410cc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_963f33d6",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-gbp-vpp.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 3547
+      },
+      "writtenOn": "2016-08-16T19:08:36Z",
+      "side": 1,
+      "message": "or flat. in that case vlan specific parameters are not filled out.",
+      "range": {
+        "startLine": 54,
+        "startChar": 163,
+        "endLine": 54,
+        "endChar": 178
+      },
+      "revId": "a2a221eefe6a05d2e8a1be698335ba0fcd9410cc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_09194479",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-gbp-vpp.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 3547
+      },
+      "writtenOn": "2016-08-16T19:08:36Z",
+      "side": 1,
+      "message": "Openstack writes these data, please make it more clear. Creating sounds like a user input.",
+      "range": {
+        "startLine": 67,
+        "startChar": 0,
+        "endLine": 67,
+        "endChar": 16
+      },
+      "revId": "a2a221eefe6a05d2e8a1be698335ba0fcd9410cc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_e93a08cc",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-gbp-vpp.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 3547
+      },
+      "writtenOn": "2016-08-16T19:08:36Z",
+      "side": 1,
+      "message": "Nicely explained.",
+      "range": {
+        "startLine": 91,
+        "startChar": 0,
+        "endLine": 91,
+        "endChar": 136
+      },
+      "revId": "a2a221eefe6a05d2e8a1be698335ba0fcd9410cc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
 }
