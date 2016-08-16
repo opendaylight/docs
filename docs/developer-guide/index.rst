@@ -15,7 +15,7 @@ Project-specific Developer Guides
 .. toctree:: 
    :maxdepth: 1 
 
-..  alto-developer-guide
+   alto-developer-guide
 ..   atrium-developer-guide
 ..   bgp-developer-guide
 ..   bgp-monitoring-protocol-developer-guide
