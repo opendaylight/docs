@@ -24,13 +24,17 @@ just learn more about OpenDaylight.
    opendaylight-with-openstack/index
 
 
-.. Uncomment this when we have reST content targeting developers
-.. Content for OpenDaylight Developers
-.. -----------------------------------
-..
-.. The Following content is intended for developers building applications or code
-.. on top of OpenDaylight, but who do not plan to modify OpenDaylight code
-.. itself.
+Content for OpenDaylight Developers
+-----------------------------------
+
+The Following content is intended for developers building applications or code
+on top of OpenDaylight, but who do not plan to modify OpenDaylight code
+itself.
+
+.. toctree::
+   :maxdepth: 1
+
+   developer-guide/index
 
 
 Content for OpenDaylight Contributors
