@@ -34,21 +34,10 @@ It is a defensive measure to prevent individual projects' .adoc files
 from eating the next section if they forget to leave a blank line at
 the end of their file.
 //////////////////////////
-= Overview
 
-// FIXME: Should we use introduction from user manual / installation guide?
-//        are this prerequisites for developers guide? If so, we should document
-//        that explicitly here so we do not need to repeat same text
-//          over-and-over
+A significant amount of this guide has been migrated to: http://docs.opendaylight.org/en/stable-boron/developer-guide/index.html
 
-// FIXME: section_Git_and_Gerrit_Setup.adoc and section_Hacking_from_CLI.adoc
-//        is much more contributor style documentation and not Developer
-//        documentation for folks which wants to build on top of OpenDaylight.
-include::section_Git_and_Gerrit_Setup.adoc[]
-
-include::section_Hacking_from_CLI.adoc[]
-
-include::developing-app.adoc[]
+Please look there as well as here for any content.
 
 = Project-Specific Development Guides
 
