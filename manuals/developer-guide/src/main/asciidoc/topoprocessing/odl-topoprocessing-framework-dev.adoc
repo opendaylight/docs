@@ -1,27 +1,3 @@
 == Topology Processing Framework Developer Guide
 
-=== Overview
-The Topology Processing Framework allows developers to aggregate and filter topologies according to defined correlations. It also provides functionality, which you can use to make your own topology model by automating the translation from one model to another. For example to translate from the opendaylight-inventory model to only using the network-topology model.
-
-=== Architecture
-include::odl-topoprocessing-architecture-dev.adoc[]
-
-=== Aggregation and Filtration
-include::odl-topoprocessing-aggregation-filtration-dev.adoc[]
-
-=== Link Computation
-include::odl-topoprocessing-link-computation-dev.adoc[]
-
-=== Wrapper, RPC Republishing, Writing Mechanism
-include::odl-topoprocessing-wrapper-rpc-writing-dev.adoc[]
-
-=== Topology Rendering Guide - Inventory Rendering
-include::odl-topoprocessing-inventory-rendering-dev.adoc[]
-
-=== Key APIs and Interfaces
-The basic provider class is TopoProcessingProvider which provides startup and shutdown
-methods. Otherwise, the framework communicates via requests and outputs stored
-in the MD-SAL datastores.
-
-=== API Reference Documentation
-You can find API examples on https://wiki.opendaylight.org/view/Topology_Processing_Framework:Developer_Guide:End_to_End_Example[this wiki page].
+This content has been migrated to: http://docs.opendaylight.org/en/stable-boron/developer-guide/topology-processing-framework-developer-guide.html
