@@ -1,0 +1,228 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a6b29fe_e73fcf23",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-vpprenderer-user-guide.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3547
+      },
+      "writtenOn": "2016-08-17T08:13:38Z",
+      "side": 1,
+      "message": "Please don\u0027t forget to explain at least:\nbridge domains - what is it made of, what types do we support\nprovider/tenant networking\nhow does tap port look like - vppctl sh int and ifconfig\n\nAlso please link the guide to docs / docs/opendaylight-with-openstack/index.rst",
+      "revId": "9d374f6bf586715cd37955a51d3c94a2c20b824d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_87b41bd2",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-vpprenderer-user-guide.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 3547
+      },
+      "writtenOn": "2016-08-17T08:13:38Z",
+      "side": 1,
+      "message": "Don\u0027t want to be too strict on details but I\u0027d say it configures them. it\u0027s more clear.",
+      "range": {
+        "startLine": 6,
+        "startChar": 13,
+        "endLine": 6,
+        "endChar": 39
+      },
+      "revId": "9d374f6bf586715cd37955a51d3c94a2c20b824d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_47e163cf",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-vpprenderer-user-guide.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 3547
+      },
+      "writtenOn": "2016-08-17T08:13:38Z",
+      "side": 1,
+      "message": "It never talks to them directly. What do you mean by providing services? It\u0027s more about configuration via HC using netconf session. A picture would also bring more light.",
+      "range": {
+        "startLine": 16,
+        "startChar": 75,
+        "endLine": 16,
+        "endChar": 132
+      },
+      "revId": "9d374f6bf586715cd37955a51d3c94a2c20b824d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_27c5473c",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-vpprenderer-user-guide.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 3547
+      },
+      "writtenOn": "2016-08-17T08:13:38Z",
+      "side": 1,
+      "message": "Different topic, please explain in another sentence/section.",
+      "range": {
+        "startLine": 16,
+        "startChar": 261,
+        "endLine": 16,
+        "endChar": 305
+      },
+      "revId": "9d374f6bf586715cd37955a51d3c94a2c20b824d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_e7d18ffc",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-vpprenderer-user-guide.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 3547
+      },
+      "writtenOn": "2016-08-17T08:13:38Z",
+      "side": 1,
+      "message": "already installed by odl-groupbasedpolicy-vpp",
+      "range": {
+        "startLine": 22,
+        "startChar": 1,
+        "endLine": 22,
+        "endChar": 17
+      },
+      "revId": "9d374f6bf586715cd37955a51d3c94a2c20b824d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_27dc2712",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-vpprenderer-user-guide.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 3547
+      },
+      "writtenOn": "2016-08-17T08:13:38Z",
+      "side": 1,
+      "message": "only if we want to use Openstack. It also installs odl-groupbasedpolicy-vpp.",
+      "range": {
+        "startLine": 25,
+        "startChar": 2,
+        "endLine": 25,
+        "endChar": 41
+      },
+      "revId": "9d374f6bf586715cd37955a51d3c94a2c20b824d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_07d76bee",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-vpprenderer-user-guide.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 3547
+      },
+      "writtenOn": "2016-08-17T08:13:38Z",
+      "side": 1,
+      "message": "let\u0027s suggest to install this feature first since GBP depends on it.",
+      "range": {
+        "startLine": 26,
+        "startChar": 2,
+        "endLine": 26,
+        "endChar": 13
+      },
+      "revId": "9d374f6bf586715cd37955a51d3c94a2c20b824d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_e7f86f7e",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-vpprenderer-user-guide.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 3547
+      },
+      "writtenOn": "2016-08-17T08:13:38Z",
+      "side": 1,
+      "message": "i would say \"certain\". Please explain all of them or make sure that description in yang is sufficient and can be referenced.",
+      "range": {
+        "startLine": 29,
+        "startChar": 87,
+        "endLine": 29,
+        "endChar": 94
+      },
+      "revId": "9d374f6bf586715cd37955a51d3c94a2c20b824d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_47084391",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-vpprenderer-user-guide.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 3547
+      },
+      "writtenOn": "2016-08-17T08:13:38Z",
+      "side": 1,
+      "message": "If not already documented in existing guide, please add some description for base-endpoint and refer to it from here.",
+      "range": {
+        "startLine": 29,
+        "startChar": 32,
+        "endLine": 29,
+        "endChar": 70
+      },
+      "revId": "9d374f6bf586715cd37955a51d3c94a2c20b824d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_672c5f03",
+        "filename": "manuals/user-guide/src/main/asciidoc/groupbasedpolicy/odl-groupbasedpolicy-vpprenderer-user-guide.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 3547
+      },
+      "writtenOn": "2016-08-17T08:13:38Z",
+      "side": 1,
+      "message": "rest output can be attached.",
+      "range": {
+        "startLine": 70,
+        "startChar": 40,
+        "endLine": 70,
+        "endChar": 66
+      },
+      "revId": "9d374f6bf586715cd37955a51d3c94a2c20b824d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
