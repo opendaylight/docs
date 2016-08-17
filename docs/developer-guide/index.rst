@@ -29,7 +29,6 @@ Project-specific Developer Guides
    lacp-developer-guide
    netconf-developer-guide
    network-intent-composition-(nic)-developer-guide
-   network-modeling-(nemo)
    netide-developer-guide
    neutron-service-developer-guide
    neutron-northbound
