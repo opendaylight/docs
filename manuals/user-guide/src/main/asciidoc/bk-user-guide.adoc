@@ -7,25 +7,11 @@
 include::core-release-notes.adoc[OpenDaylight Release Notes]
 /////
 
-= Getting Started with OpenDaylight
+A significant amount of this guide has been migrated to: http://docs.opendaylight.org/en/stable-boron/user-guide/index.html
 
-[partintro]
-
-This first part of the user guide covers the basic user operations of the OpenDaylight Release using the generic base functionality.
-
-include::ch-introduction.adoc[OpenDaylight Controller Overview]
-
-include::ch-dlux.adoc[]
-
-include::ch-xsql-commands.adoc[]
-
-include::ch-clustering.adoc[]
+Please look there as well as here for any content.
 
 = Applications and Plugins
-
-[partintro]
-
-This second part of the user guide covers project specific usage instructions.
 
 include::alto/alto-user-guide.adoc[ALTO]
 

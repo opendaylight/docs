@@ -21,6 +21,7 @@ just learn more about OpenDaylight.
    :maxdepth: 1
 
    getting-started-guide/index
+   user-guide/index
    opendaylight-with-openstack/index
 
 
