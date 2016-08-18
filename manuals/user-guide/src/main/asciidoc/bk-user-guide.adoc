@@ -11,15 +11,9 @@ include::core-release-notes.adoc[OpenDaylight Release Notes]
 
 [partintro]
 
-This first part of the user guide covers the basic user operations of the OpenDaylight Release using the generic base functionality.
+Much of the content in this guide has been migrated to: http://docs.opendaylight.org/en/stable-boron/user-guide/
 
-include::ch-introduction.adoc[OpenDaylight Controller Overview]
-
-include::ch-dlux.adoc[]
-
-include::ch-xsql-commands.adoc[]
-
-include::ch-clustering.adoc[]
+If something seems missing or out of date, look there as well.
 
 = Applications and Plugins
 
