@@ -46,6 +46,7 @@ participate in the development of OpenDaylight or would like to start.
 .. toctree::
    :maxdepth: 1
 
+   gerrit
    submodules/releng/builder/docs/index
    submodules/integration/test/docs/index
    documentation
