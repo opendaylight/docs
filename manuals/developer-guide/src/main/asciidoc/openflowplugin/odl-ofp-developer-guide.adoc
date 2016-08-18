@@ -13,6 +13,10 @@ include::odl-ofp-config-subsystem.adoc[]
 
 include::odl-ofp-message-spy.adoc[]
 
+include::odl-ofp-forwardingrules-sync.adoc[]
+
+include::odl-ofp-singleton-cluster-aproach.adoc[]
+
 // * OpenDaylight_OpenFlow_Plugin:Backlog:Extensibility[Extensibility Framework]
 
 include::odl-ofp-yang-models.adoc[]
