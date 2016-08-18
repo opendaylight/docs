@@ -1,0 +1,544 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a6b29fe_76852ccf",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-08-18T13:29:56Z",
+      "side": 1,
+      "message": "Added OpenFlow documentation",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 19
+      },
+      "revId": "2530bd2bea765b43b6f1073d5db71589aa6ff882",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_5688f0e6",
+        "filename": "manuals/developer-guide/src/main/asciidoc/openflowplugin/odl-ofp-forwardingrules-sync.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-08-18T13:29:56Z",
+      "side": 1,
+      "message": "datastore",
+      "range": {
+        "startLine": 15,
+        "startChar": 25,
+        "endLine": 15,
+        "endChar": 27
+      },
+      "revId": "2530bd2bea765b43b6f1073d5db71589aa6ff882",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_9669e827",
+        "filename": "manuals/developer-guide/src/main/asciidoc/openflowplugin/odl-ofp-forwardingrules-sync.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-08-18T13:29:56Z",
+      "side": 1,
+      "message": "operational",
+      "range": {
+        "startLine": 25,
+        "startChar": 18,
+        "endLine": 25,
+        "endChar": 22
+      },
+      "revId": "2530bd2bea765b43b6f1073d5db71589aa6ff882",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_b66ea42d",
+        "filename": "manuals/developer-guide/src/main/asciidoc/openflowplugin/odl-ofp-forwardingrules-sync.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-08-18T13:29:56Z",
+      "side": 1,
+      "message": "datatstore",
+      "range": {
+        "startLine": 25,
+        "startChar": 23,
+        "endLine": 25,
+        "endChar": 25
+      },
+      "revId": "2530bd2bea765b43b6f1073d5db71589aa6ff882",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_f64f7cbb",
+        "filename": "manuals/developer-guide/src/main/asciidoc/openflowplugin/odl-ofp-forwardingrules-sync.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-08-18T13:29:56Z",
+      "side": 1,
+      "message": "changes made in bulk",
+      "range": {
+        "startLine": 50,
+        "startChar": 111,
+        "endLine": 50,
+        "endChar": 126
+      },
+      "revId": "2530bd2bea765b43b6f1073d5db71589aa6ff882",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_765c0c7f",
+        "filename": "manuals/developer-guide/src/main/asciidoc/openflowplugin/odl-ofp-forwardingrules-sync.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-08-18T13:29:56Z",
+      "side": 1,
+      "message": "Forwarding Rules Sync (FRS)",
+      "range": {
+        "startLine": 50,
+        "startChar": 76,
+        "endLine": 50,
+        "endChar": 79
+      },
+      "revId": "2530bd2bea765b43b6f1073d5db71589aa6ff882",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_9650c85f",
+        "filename": "manuals/developer-guide/src/main/asciidoc/openflowplugin/odl-ofp-forwardingrules-sync.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-08-18T13:29:56Z",
+      "side": 1,
+      "message": "uses a",
+      "range": {
+        "startLine": 50,
+        "startChar": 80,
+        "endLine": 50,
+        "endChar": 87
+      },
+      "revId": "2530bd2bea765b43b6f1073d5db71589aa6ff882",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_b6550452",
+        "filename": "manuals/developer-guide/src/main/asciidoc/openflowplugin/odl-ofp-forwardingrules-sync.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-08-18T13:29:56Z",
+      "side": 1,
+      "message": "uses an incremental strategy with",
+      "range": {
+        "startLine": 50,
+        "startChar": 17,
+        "endLine": 50,
+        "endChar": 40
+      },
+      "revId": "2530bd2bea765b43b6f1073d5db71589aa6ff882",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_3662943e",
+        "filename": "manuals/developer-guide/src/main/asciidoc/openflowplugin/odl-ofp-forwardingrules-sync.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-08-18T13:29:56Z",
+      "side": 1,
+      "message": "Forwarding Rules Manager (FRM)",
+      "range": {
+        "startLine": 50,
+        "startChar": 13,
+        "endLine": 50,
+        "endChar": 16
+      },
+      "revId": "2530bd2bea765b43b6f1073d5db71589aa6ff882",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_d64a40ab",
+        "filename": "manuals/developer-guide/src/main/asciidoc/openflowplugin/odl-ofp-forwardingrules-sync.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-08-18T13:29:56Z",
+      "side": 1,
+      "message": "Boron",
+      "range": {
+        "startLine": 54,
+        "startChar": 15,
+        "endLine": 54,
+        "endChar": 20
+      },
+      "revId": "2530bd2bea765b43b6f1073d5db71589aa6ff882",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_36c9f426",
+        "filename": "manuals/developer-guide/src/main/asciidoc/openflowplugin/odl-ofp-forwardingrules-sync.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-08-18T13:29:56Z",
+      "side": 1,
+      "message": "the MD-SAL",
+      "range": {
+        "startLine": 72,
+        "startChar": 69,
+        "endLine": 72,
+        "endChar": 74
+      },
+      "revId": "2530bd2bea765b43b6f1073d5db71589aa6ff882",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_f6fdbc3b",
+        "filename": "manuals/developer-guide/src/main/asciidoc/openflowplugin/odl-ofp-singleton-cluster-aproach.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-08-18T13:29:56Z",
+      "side": 1,
+      "message": "does not",
+      "range": {
+        "startLine": 11,
+        "startChar": 216,
+        "endLine": 11,
+        "endChar": 221
+      },
+      "revId": "2530bd2bea765b43b6f1073d5db71589aa6ff882",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_364c549e",
+        "filename": "manuals/developer-guide/src/main/asciidoc/openflowplugin/odl-ofp-singleton-cluster-aproach.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-08-18T13:29:56Z",
+      "side": 1,
+      "message": "Entity Ownership Service (EOS)",
+      "range": {
+        "startLine": 11,
+        "startChar": 182,
+        "endLine": 11,
+        "endChar": 185
+      },
+      "revId": "2530bd2bea765b43b6f1073d5db71589aa6ff882",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_166838f4",
+        "filename": "manuals/developer-guide/src/main/asciidoc/openflowplugin/odl-ofp-singleton-cluster-aproach.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-08-18T13:29:56Z",
+      "side": 1,
+      "message": "Unless we describe how we used the EOS elsewhere, this is more confusing than helpful.",
+      "range": {
+        "startLine": 11,
+        "startChar": 151,
+        "endLine": 11,
+        "endChar": 293
+      },
+      "revId": "2530bd2bea765b43b6f1073d5db71589aa6ff882",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_d6f8804b",
+        "filename": "manuals/developer-guide/src/main/asciidoc/openflowplugin/odl-ofp-singleton-cluster-aproach.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-08-18T13:29:56Z",
+      "side": 1,
+      "message": "of",
+      "range": {
+        "startLine": 11,
+        "startChar": 240,
+        "endLine": 11,
+        "endChar": 245
+      },
+      "revId": "2530bd2bea765b43b6f1073d5db71589aa6ff882",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_96fe0837",
+        "filename": "manuals/developer-guide/src/main/asciidoc/openflowplugin/odl-ofp-singleton-cluster-aproach.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-08-18T13:29:56Z",
+      "side": 1,
+      "message": "The plugin does not",
+      "range": {
+        "startLine": 11,
+        "startChar": 151,
+        "endLine": 11,
+        "endChar": 163
+      },
+      "revId": "2530bd2bea765b43b6f1073d5db71589aa6ff882",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_369734ee",
+        "filename": "manuals/developer-guide/src/main/asciidoc/openflowplugin/odl-ofp-singleton-cluster-aproach.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-08-18T13:29:56Z",
+      "side": 1,
+      "message": "you don\u0027t need combine leading whitespace and ----\n\nIt\u0027s actually not clear why this is code and not a list",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 22
+      },
+      "revId": "2530bd2bea765b43b6f1073d5db71589aa6ff882",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_b6b18491",
+        "filename": "manuals/developer-guide/src/main/asciidoc/openflowplugin/odl-ofp-singleton-cluster-aproach.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-08-18T13:29:56Z",
+      "side": 1,
+      "message": "I think this wants to be a section header.",
+      "revId": "2530bd2bea765b43b6f1073d5db71589aa6ff882",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_766fecfd",
+        "filename": "manuals/developer-guide/src/main/asciidoc/openflowplugin/odl-ofp-singleton-cluster-aproach.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-08-18T13:29:56Z",
+      "side": 1,
+      "message": "managed",
+      "range": {
+        "startLine": 29,
+        "startChar": 91,
+        "endLine": 29,
+        "endChar": 98
+      },
+      "revId": "2530bd2bea765b43b6f1073d5db71589aa6ff882",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_f6abfc1a",
+        "filename": "manuals/developer-guide/src/main/asciidoc/openflowplugin/odl-ofp-singleton-cluster-aproach.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-08-18T13:29:56Z",
+      "side": 1,
+      "message": "Without a link to when we described how it used to work, this is just confusing.",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 81
+      },
+      "revId": "2530bd2bea765b43b6f1073d5db71589aa6ff882",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_5672b0e5",
+        "filename": "manuals/developer-guide/src/main/asciidoc/openflowplugin/odl-ofp-singleton-cluster-aproach.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-08-18T13:29:56Z",
+      "side": 1,
+      "message": "I think this wants to be a section header.",
+      "revId": "2530bd2bea765b43b6f1073d5db71589aa6ff882",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_b67864c5",
+        "filename": "manuals/developer-guide/src/main/asciidoc/openflowplugin/odl-ofp-singleton-cluster-aproach.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-08-18T13:29:56Z",
+      "side": 1,
+      "message": "longer",
+      "range": {
+        "startLine": 32,
+        "startChar": 13,
+        "endLine": 32,
+        "endChar": 17
+      },
+      "revId": "2530bd2bea765b43b6f1073d5db71589aa6ff882",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_5649108a",
+        "filename": "manuals/developer-guide/src/main/asciidoc/openflowplugin/odl-ofp-singleton-cluster-aproach.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-08-18T13:29:56Z",
+      "side": 1,
+      "message": "does not need to and cannot",
+      "range": {
+        "startLine": 32,
+        "startChar": 55,
+        "endLine": 32,
+        "endChar": 78
+      },
+      "revId": "2530bd2bea765b43b6f1073d5db71589aa6ff882",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_965a884e",
+        "filename": "manuals/developer-guide/src/main/asciidoc/openflowplugin/odl-ofp-singleton-cluster-aproach.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-08-18T13:29:56Z",
+      "side": 1,
+      "message": "speeds",
+      "range": {
+        "startLine": 36,
+        "startChar": 160,
+        "endLine": 36,
+        "endChar": 165
+      },
+      "revId": "2530bd2bea765b43b6f1073d5db71589aa6ff882",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
