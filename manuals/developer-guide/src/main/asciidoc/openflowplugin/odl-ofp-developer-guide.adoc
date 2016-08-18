@@ -21,6 +21,10 @@ include::odl-ofp-feature-tree.adoc[]
 
 include::odl-ofp-wiring-up-notifications.adoc[]
 
+include::odl-ofp-forwardingrules-sync.adoc[]
+
+include::odl-ofp-singleton-cluster-aproach.adoc[]
+
 === Message Order Preservation
 
 While the Helium release of OpenFlow Plugin relied on queues to ensure messages were delivered in order, subsequent releases instead ensure that all the messages from a given device are delivered using the same thread and thus message order is guaranteed without queues. The OpenFlow plugin allocates a number of threads equal to twice the number of processor cores on machine it is run, e.g., 8 threads if the machine has 4 cores.
