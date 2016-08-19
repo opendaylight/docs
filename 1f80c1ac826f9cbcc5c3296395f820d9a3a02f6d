@@ -1,4 +1,79 @@
 {
   "pushCert": "certificate version 0.1\npusher F566C9B1 1471544390 -0400\npushee ssh://git.opendaylight.org:29418/docs.git\nnonce 1471544388-4D5A59B82CDD94929663452B9D09F101F216B8AD\n\n0000000000000000000000000000000000000000 1f80c1ac826f9cbcc5c3296395f820d9a3a02f6d refs/publish/master/44238\n-----BEGIN PGP SIGNATURE-----\nVersion: GnuPG v1\n\niQIcBAABAgAGBQJXtfxGAAoJEF3VDEv1ZsmxxHIQAKER2O4IB6hg7DmDcfdpRmHQ\n/sDv9I2y+87+RDuKy5pUL0CkUB1q6GpsrEQ+1+peEA7tP8kYOOnkOmWd1+BfFDKF\ndxEagyGToixjf+3aBDMCviDlnoo6kjhQjbk9o0D+ZU7rNKqca0KGPHwag+liKp54\nSna0dTnongsuh8UE54pEfGQzrWL6vgkNBtfddSWOzh3HoQC0mv2i87mLAjDY0tea\nqsO7/Rp52phdS+38qHDKf4/51o5ajaB7ZdJFZjLsEBYYsNt0BqPeAX6N7t5qfLCF\ne5XoW+/Sv699Vt/Z8E3Wa1MlK6vqgW6JJZZWIimVS+XIgFZQzvkOmseWK3bNcoOw\nDdxPxhQpacienh9eHqXDhyQas8ntY2rrQYLatcWaX52rXX6Zh85ZIiGxWCLA2RgL\nifrBM6KI44zRVks7111hG2+2R9zT9/S5vKdxNub7uelNW8PSvBoxgYqDkUeoAh6b\nymaeaKV7RmrQ21mEEwLIYkA5JFFp/ggeioprgk0wLtDdi+VRy3AOV7ToROLX8+kF\nsmUPdZBQDe85hsYhNl26yokSqwkUExt3YcZYzDghSP5hLPFcF/YgI2JiKZRFC1qn\nJ9mvB6qzgIDfqYzDXuFF/mRDwf5JocnVMOY8ClWCAej85TX0ndo5PzSUEJAXnR2T\nXvIKKfcaGKRSz4vcR/Eh\n\u003dCMlQ\n-----END PGP SIGNATURE-----\n",
-  "comments": []
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a6b29fe_b8edeaf1",
+        "filename": "manuals/developer-guide/src/main/asciidoc/openflowplugin/odl-ofp-forwardingrules-sync.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 62
+      },
+      "writtenOn": "2016-08-19T16:43:10Z",
+      "side": 1,
+      "message": "Please make this as \"Application: Forwarding Rules Synchronizer\" instead of \"Applications forwarding rules-sync\"",
+      "range": {
+        "startLine": 1,
+        "startChar": 4,
+        "endLine": 1,
+        "endChar": 16
+      },
+      "revId": "1f80c1ac826f9cbcc5c3296395f820d9a3a02f6d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_18a33eb3",
+        "filename": "manuals/developer-guide/src/main/asciidoc/openflowplugin/odl-ofp-forwardingrules-sync.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 62
+      },
+      "writtenOn": "2016-08-19T16:43:10Z",
+      "side": 1,
+      "message": "Please add a section here describing in a paragraph \"What is FRS?\". What is the purpose? Also high level description on how it is implemented in 2-3 sentences.",
+      "revId": "1f80c1ac826f9cbcc5c3296395f820d9a3a02f6d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_98962e4b",
+        "filename": "manuals/developer-guide/src/main/asciidoc/openflowplugin/odl-ofp-forwardingrules-sync.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 62
+      },
+      "writtenOn": "2016-08-19T16:43:10Z",
+      "side": 1,
+      "message": "Please also indicate whether FRS is on or off by default.",
+      "revId": "1f80c1ac826f9cbcc5c3296395f820d9a3a02f6d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_b89b2a71",
+        "filename": "manuals/developer-guide/src/main/asciidoc/openflowplugin/odl-ofp-singleton-cluster-aproach.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 62
+      },
+      "writtenOn": "2016-08-19T16:43:10Z",
+      "side": 1,
+      "message": "Again: Please add a small section here describing in a paragraph \"What is Cluster Singleton?\". What is the purpose? Also high level description on how it is implemented in 2-3 sentences. It is described down in the document - however for someone wanting a quick idea what is this new clustering fix in Boron it will be good to have.",
+      "revId": "1f80c1ac826f9cbcc5c3296395f820d9a3a02f6d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
 }
