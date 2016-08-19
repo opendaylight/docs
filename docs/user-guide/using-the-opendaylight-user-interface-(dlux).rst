@@ -22,7 +22,7 @@ To log in to DLUX, after installing the application:
 
 2. Login to the application with your username and password credentials.
 
-    **Note**
+.. note::
 
     OpenDaylight’s default credentials are *admin* for both the username
     and password.
@@ -33,7 +33,7 @@ Working with DLUX
 After you login to DLUX, if you enable only odl-dlux-core feature, you
 will see only topology application available in the left pane.
 
-    **Note**
+.. note::
 
     To make sure topology displays all the details, enable the
     odl-l2switch-switch feature in Karaf.
@@ -47,7 +47,7 @@ odl-dlux-yangui respectively in the Karaf distribution.
 
    DLUX Modules
 
-    **Note**
+.. note::
 
     If you install your application in dlux, they will also show up on
     the left hand navigation after browser page refresh.
@@ -82,7 +82,7 @@ Viewing Network Topology
 The Topology tab displays a graphical representation of network topology
 created.
 
-    **Note**
+.. note::
 
     DLUX does not allow for editing or adding topology information. The
     topology is generated and edited in other modules, e.g., the
@@ -128,7 +128,7 @@ To use Yang UI:
 2. The top part displays a tree of APIs, subAPIs, and buttons to call
    possible functions (GET, POST, PUT, and DELETE).
 
-       **Note**
+   .. note::
 
 .. note:: every subAPI can call every function. For example, subAPIs in
        the *operational* store have GET functionality only.
