@@ -26,6 +26,30 @@
     },
     {
       "key": {
+        "uuid": "7a6b29fe_a273f713",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-gbp-vpp.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1987
+      },
+      "writtenOn": "2016-08-19T12:01:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a6b29fe_76641722",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 126
+      },
+      "revId": "a2a221eefe6a05d2e8a1be698335ba0fcd9410cc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a6b29fe_f60ca744",
         "filename": "docs/opendaylight-with-openstack/openstack-with-gbp-vpp.rst",
         "patchSetId": 12
@@ -72,6 +96,54 @@
     },
     {
       "key": {
+        "uuid": "7a6b29fe_e264cf4a",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-gbp-vpp.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1987
+      },
+      "writtenOn": "2016-08-19T12:01:13Z",
+      "side": 1,
+      "message": "Text fixed, so picture is not needed",
+      "parentUuid": "7a6b29fe_f67787d2",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 316
+      },
+      "revId": "a2a221eefe6a05d2e8a1be698335ba0fcd9410cc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_0262ab3d",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-gbp-vpp.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1987
+      },
+      "writtenOn": "2016-08-19T12:01:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a6b29fe_f60ca744",
+      "range": {
+        "startLine": 10,
+        "startChar": 318,
+        "endLine": 10,
+        "endChar": 370
+      },
+      "revId": "a2a221eefe6a05d2e8a1be698335ba0fcd9410cc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a6b29fe_d6724be2",
         "filename": "docs/opendaylight-with-openstack/openstack-with-gbp-vpp.rst",
         "patchSetId": 12
@@ -83,6 +155,30 @@
       "writtenOn": "2016-08-16T19:08:36Z",
       "side": 1,
       "message": "Why do we need to put data into topology?",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 45
+      },
+      "revId": "a2a221eefe6a05d2e8a1be698335ba0fcd9410cc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_225fe773",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-gbp-vpp.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1987
+      },
+      "writtenOn": "2016-08-19T12:01:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a6b29fe_d6724be2",
       "range": {
         "startLine": 21,
         "startChar": 0,
@@ -118,6 +214,30 @@
     },
     {
       "key": {
+        "uuid": "7a6b29fe_22d6c7c5",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-gbp-vpp.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1987
+      },
+      "writtenOn": "2016-08-19T12:01:13Z",
+      "side": 1,
+      "message": "No, currently there are only NetworkAware and PortAware.",
+      "parentUuid": "7a6b29fe_76325711",
+      "range": {
+        "startLine": 52,
+        "startChar": 84,
+        "endLine": 52,
+        "endChar": 158
+      },
+      "revId": "a2a221eefe6a05d2e8a1be698335ba0fcd9410cc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a6b29fe_963f33d6",
         "filename": "docs/opendaylight-with-openstack/openstack-with-gbp-vpp.rst",
         "patchSetId": 12
@@ -129,6 +249,30 @@
       "writtenOn": "2016-08-16T19:08:36Z",
       "side": 1,
       "message": "or flat. in that case vlan specific parameters are not filled out.",
+      "range": {
+        "startLine": 54,
+        "startChar": 163,
+        "endLine": 54,
+        "endChar": 178
+      },
+      "revId": "a2a221eefe6a05d2e8a1be698335ba0fcd9410cc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_02f0eb65",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-gbp-vpp.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1987
+      },
+      "writtenOn": "2016-08-19T12:01:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a6b29fe_963f33d6",
       "range": {
         "startLine": 54,
         "startChar": 163,
@@ -164,6 +308,30 @@
     },
     {
       "key": {
+        "uuid": "7a6b29fe_42eae375",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-gbp-vpp.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1987
+      },
+      "writtenOn": "2016-08-19T12:01:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a6b29fe_09194479",
+      "range": {
+        "startLine": 67,
+        "startChar": 0,
+        "endLine": 67,
+        "endChar": 16
+      },
+      "revId": "a2a221eefe6a05d2e8a1be698335ba0fcd9410cc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a6b29fe_e93a08cc",
         "filename": "docs/opendaylight-with-openstack/openstack-with-gbp-vpp.rst",
         "patchSetId": 12
@@ -175,6 +343,30 @@
       "writtenOn": "2016-08-16T19:08:36Z",
       "side": 1,
       "message": "Nicely explained.",
+      "range": {
+        "startLine": 91,
+        "startChar": 0,
+        "endLine": 91,
+        "endChar": 136
+      },
+      "revId": "a2a221eefe6a05d2e8a1be698335ba0fcd9410cc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_82035b41",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-gbp-vpp.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1987
+      },
+      "writtenOn": "2016-08-19T12:01:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a6b29fe_e93a08cc",
       "range": {
         "startLine": 91,
         "startChar": 0,
