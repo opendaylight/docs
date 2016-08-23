@@ -934,14 +934,45 @@ only one OverlayItem and one UnderlayItem in the corresponding lists.
 Testing
 ~~~~~~~
 
-If you want to test our implementation you must apply `this
-patch <https://git.opendaylight.org/gerrit/#/c/26612>`__. It adds an
-OpenFlow Plugin dependency so we can use it in the Karaf distribution as
-a feature. After adding patch and building the whole framework, you can
-start Karaf. Next, you have to install necessary features. In our case
-it is:
+If you want to test topoprocessing with some manually created underlay
+topologies (like in this guide), than you have to tell Topoprocessing
+to listen for underlay topologies on Configuration datastore
+instead of Operational.
 
-``feature:install odl-restconf-noauth odl-topoprocessing-inventory-rendering odl-openflowplugin-southbound odl-openflowplugin-nsf-model``
+| You can do this in this config file
+| ``<topoprocessing_directory>/topoprocessing-config/src/main/resources/80-topoprocessing-config.xml``.
+| Here you have to change
+| ``<datastore-type>OPERATIONAL</datastore-type>``
+| to
+| ``<datastore-type>CONFIGURATION</datastore-type>``.
+
+
+Also you have to add dependency required to test "inventory" topologies.
+
+| In ``<topoprocessing_directory>/features/pom.xml``
+| add ``<openflowplugin.version>latest_snapshot</openflowplugin.version>`` 
+  to properties section
+| and add this dependency to dependencies section
+
+.. code:: xml
+
+	<dependency>
+		<groupId>org.opendaylight.openflowplugin</groupId>
+		<artifactId>features-openflowplugin</artifactId>
+		<version>${openflowplugin.version}</version>
+		<classifier>features</classifier><type>xml</type>
+	</dependency>
+	
+``latest_snapshot`` in ``<openflowplugin.version>`` replace with latest snapshot, which can be found `here <https://nexus.opendaylight.org/content/repositories/opendaylight.snapshot/org/opendaylight/openflowplugin/openflowplugin/>`__.
+	
+| And in ``<topoprocessing_directory>/features/src/main/resources/features.xml``
+| add ``<repository>mvn:org.opendaylight.openflowplugin/features-openflowplugin/${openflowplugin.version}/xml/features</repository>``
+  to repositories section.
+
+Now after you rebuild project and start Karaf, you can install necessary features.
+
+| You can install all with one command:
+| ``feature:install odl-restconf-noauth odl-topoprocessing-inventory-rendering odl-openflowplugin-southbound odl-openflowplugin-nsf-model``
 
 Now you can send messages to REST from any REST client (e.g. Postman in
 Chrome). Messages have to have following headers:
@@ -1227,6 +1258,12 @@ is:
             </node>
         </topology>
     </network-topology>
+	
+Use Cases
+---------
+
+You can find use case examples on `this wiki page 
+<https://wiki.opendaylight.org/view/Topology_Processing_Framework:Developer_Guide:Use_Case_Tutorial>`__.
 
 Key APIs and Interfaces
 -----------------------
@@ -1239,5 +1276,5 @@ API Reference Documentation
 ---------------------------
 
 You can find API examples on `this wiki
-page <https://wiki.opendaylight.org/view/Topology_Processing_Framework:Developer_Guide:End_to_End_Example>`__.
+page <https://wiki.opendaylight.org/view/Topology_Processing_Framework:Developer_Guide:REST_API_Specification>`__.
 
