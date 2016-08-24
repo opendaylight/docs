@@ -1,0 +1,234 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a6b29fe_300f2330",
+        "filename": "docs/developer-guide/topology-processing-framework-developer-guide.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 937,
+      "author": {
+        "id": 4630
+      },
+      "writtenOn": "2016-08-24T08:12:18Z",
+      "side": 1,
+      "message": "Please don\u0027t use this everywhere. Just use it where it is necessary. For example this whole paragraph don\u0027t need it. Just put empty line before \"| You can do...\"",
+      "range": {
+        "startLine": 937,
+        "startChar": 0,
+        "endLine": 937,
+        "endChar": 2
+      },
+      "revId": "c3dafb9c0d46acd73145ad8263ca62d0332e7270",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_901ef761",
+        "filename": "docs/developer-guide/topology-processing-framework-developer-guide.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 942,
+      "author": {
+        "id": 4630
+      },
+      "writtenOn": "2016-08-24T08:12:18Z",
+      "side": 1,
+      "message": "Here you can put \"| \" so it will be on new line",
+      "range": {
+        "startLine": 942,
+        "startChar": 0,
+        "endLine": 942,
+        "endChar": 2
+      },
+      "revId": "c3dafb9c0d46acd73145ad8263ca62d0332e7270",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_70199b78",
+        "filename": "docs/developer-guide/topology-processing-framework-developer-guide.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 944,
+      "author": {
+        "id": 4630
+      },
+      "writtenOn": "2016-08-24T08:12:18Z",
+      "side": 1,
+      "message": "as above",
+      "range": {
+        "startLine": 944,
+        "startChar": 0,
+        "endLine": 944,
+        "endChar": 2
+      },
+      "revId": "c3dafb9c0d46acd73145ad8263ca62d0332e7270",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_d027cfb4",
+        "filename": "docs/developer-guide/topology-processing-framework-developer-guide.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 945,
+      "author": {
+        "id": 4630
+      },
+      "writtenOn": "2016-08-24T08:12:18Z",
+      "side": 1,
+      "message": "as above",
+      "range": {
+        "startLine": 945,
+        "startChar": 0,
+        "endLine": 945,
+        "endChar": 2
+      },
+      "revId": "c3dafb9c0d46acd73145ad8263ca62d0332e7270",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_b02a137c",
+        "filename": "docs/developer-guide/topology-processing-framework-developer-guide.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 946,
+      "author": {
+        "id": 4630
+      },
+      "writtenOn": "2016-08-24T08:12:18Z",
+      "side": 1,
+      "message": "as above",
+      "range": {
+        "startLine": 946,
+        "startChar": 0,
+        "endLine": 946,
+        "endChar": 2
+      },
+      "revId": "c3dafb9c0d46acd73145ad8263ca62d0332e7270",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_6d8f04cd",
+        "filename": "docs/developer-guide/topology-processing-framework-developer-guide.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 952,
+      "author": {
+        "id": 4630
+      },
+      "writtenOn": "2016-08-24T08:12:18Z",
+      "side": 1,
+      "message": "That\u0027s not true, this is part related to \"Downloading whole ODL karaf distribution\" section.\nhttps://wiki.opendaylight.org/view/Topology_Processing_Framework:Developer_Guide:Use_Case_Tutorial#Downloading_whole_ODL_karaf_distribution\n\nHere should be things from this \"Cloning Topoprocessing repository\" section\nhttps://wiki.opendaylight.org/view/Topology_Processing_Framework:Developer_Guide:Use_Case_Tutorial#Cloning_Topoprocessing_repository",
+      "range": {
+        "startLine": 948,
+        "startChar": 2,
+        "endLine": 952,
+        "endChar": 62
+      },
+      "revId": "c3dafb9c0d46acd73145ad8263ca62d0332e7270",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_503bbfd0",
+        "filename": "docs/developer-guide/topology-processing-framework-developer-guide.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 954,
+      "author": {
+        "id": 4630
+      },
+      "writtenOn": "2016-08-24T08:12:18Z",
+      "side": 1,
+      "message": "Remove, put empty line after this line",
+      "range": {
+        "startLine": 954,
+        "startChar": 0,
+        "endLine": 954,
+        "endChar": 2
+      },
+      "revId": "c3dafb9c0d46acd73145ad8263ca62d0332e7270",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_303603e8",
+        "filename": "docs/developer-guide/topology-processing-framework-developer-guide.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 956,
+      "author": {
+        "id": 4630
+      },
+      "writtenOn": "2016-08-24T08:12:18Z",
+      "side": 1,
+      "message": "add \"| \"",
+      "range": {
+        "startLine": 956,
+        "startChar": 0,
+        "endLine": 956,
+        "endChar": 2
+      },
+      "revId": "c3dafb9c0d46acd73145ad8263ca62d0332e7270",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_adc0fce0",
+        "filename": "docs/developer-guide/topology-processing-framework-developer-guide.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 956,
+      "author": {
+        "id": 4630
+      },
+      "writtenOn": "2016-08-24T08:12:18Z",
+      "side": 1,
+      "message": "Currently it is 0.4.0-SNAPSHOT. Maybe it will be better substitute this version with some string like \"latest_snapshot\" and then add description how to find \"latest_snapshot\" of openflowplugin",
+      "range": {
+        "startLine": 956,
+        "startChar": 34,
+        "endLine": 956,
+        "endChar": 35
+      },
+      "revId": "c3dafb9c0d46acd73145ad8263ca62d0332e7270",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_303d63bc",
+        "filename": "docs/developer-guide/topology-processing-framework-developer-guide.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 973,
+      "author": {
+        "id": 4630
+      },
+      "writtenOn": "2016-08-24T08:12:18Z",
+      "side": 1,
+      "message": "Remove this and add empty line after this line",
+      "range": {
+        "startLine": 973,
+        "startChar": 0,
+        "endLine": 973,
+        "endChar": 2
+      },
+      "revId": "c3dafb9c0d46acd73145ad8263ca62d0332e7270",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
