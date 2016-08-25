@@ -1607,7 +1607,7 @@ https://jenkins.opendaylight.org/controller/job/controller-merge/lastSuccessfulB
 [source,xml]
 ------------------------------------------------------------------------
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<flow 
+<flow
     xmlns="urn:opendaylight:flow:inventory">
     <flow-name>push-mpls-action</flow-name>
     <instructions>
@@ -1666,7 +1666,7 @@ https://jenkins.opendaylight.org/controller/job/controller-merge/lastSuccessfulB
 [source,xml]
 ------------------------------------------------------------------------
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<flow 
+<flow
     xmlns="urn:opendaylight:flow:inventory">
     <flow-name>push-mpls-action</flow-name>
     <instructions>
@@ -1724,7 +1724,7 @@ fix]
 [source,xml]
 ------------------------------------------------------------------------
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<flow 
+<flow
     xmlns="urn:opendaylight:flow:inventory">
     <flow-name>FooXf10</flow-name>
     <instructions>
@@ -1767,5 +1767,111 @@ fix]
     <hard-timeout>0</hard-timeout>
     <priority>10</priority>
     <table_id>0</table_id>
+</flow>
+------------------------------------------------------------------------
+
+[[learn]]
+====== Learn
+* Nicira extension defined in https://github.com/osrg/openvswitch/blob/master/include/openflow/nicira-ext.h 
+* Example section is - https://github.com/osrg/openvswitch/blob/master/include/openflow/nicira-ext.h#L788
+
+[source,xml]
+------------------------------------------------------------------------
+<flow>
+  <id>ICMP_Ingress258a5a5ad-08a8-4ff7-98f5-ef0b96ca3bb8</id>
+  <hard-timeout>0</hard-timeout>
+  <idle-timeout>0</idle-timeout>
+  <match>
+    <ethernet-match>
+      <ethernet-type>
+        <type>2048</type>
+      </ethernet-type>
+    </ethernet-match>
+    <metadata>
+      <metadata>2199023255552</metadata>
+      <metadata-mask>2305841909702066176</metadata-mask>
+    </metadata>
+    <ip-match>
+      <ip-protocol>1</ip-protocol>
+    </ip-match>
+  </match>
+  <cookie>110100480</cookie>
+  <instructions>
+    <instruction>
+      <order>0</order>
+      <apply-actions>
+        <action>
+          <order>1</order>
+          <nx-resubmit
+            xmlns="urn:opendaylight:openflowplugin:extension:nicira:action">
+            <table>220</table>
+          </nx-resubmit>
+        </action>
+        <action>
+          <order>0</order>
+          <nx-learn
+            xmlns="urn:opendaylight:openflowplugin:extension:nicira:action">
+            <idle-timeout>60</idle-timeout>
+            <fin-idle-timeout>0</fin-idle-timeout>
+            <hard-timeout>60</hard-timeout>
+            <flags>0</flags>
+            <table-id>41</table-id>
+            <priority>61010</priority>
+            <fin-hard-timeout>0</fin-hard-timeout>
+            <flow-mods>
+              <flow-mod-add-match-from-value>
+                <src-ofs>0</src-ofs>
+                <value>2048</value>
+                <src-field>1538</src-field>
+                <flow-mod-num-bits>16</flow-mod-num-bits>
+              </flow-mod-add-match-from-value>
+            </flow-mods>
+            <flow-mods>
+              <flow-mod-add-match-from-field>
+                <src-ofs>0</src-ofs>
+                <dst-ofs>0</dst-ofs>
+                <dst-field>4100</dst-field>
+                <src-field>3588</src-field>
+                <flow-mod-num-bits>32</flow-mod-num-bits>
+              </flow-mod-add-match-from-field>
+            </flow-mods>
+            <flow-mods>
+              <flow-mod-add-match-from-field>
+                <src-ofs>0</src-ofs>
+                <dst-ofs>0</dst-ofs>
+                <dst-field>518</dst-field>
+                <src-field>1030</src-field>
+                <flow-mod-num-bits>48</flow-mod-num-bits>
+              </flow-mod-add-match-from-field>
+            </flow-mods>
+            <flow-mods>
+              <flow-mod-add-match-from-field>
+                <src-ofs>0</src-ofs>
+                <dst-ofs>0</dst-ofs>
+                <dst-field>3073</dst-field>
+                <src-field>3073</src-field>
+                <flow-mod-num-bits>8</flow-mod-num-bits>
+              </flow-mod-add-match-from-field>
+            </flow-mods>
+            <flow-mods>
+              <flow-mod-copy-value-into-field>
+                <dst-ofs>0</dst-ofs>
+                <value>1</value>
+                <dst-field>65540</dst-field>
+                <flow-mod-num-bits>8</flow-mod-num-bits>
+              </flow-mod-copy-value-into-field>
+            </flow-mods>
+            <cookie>110100480</cookie>
+          </nx-learn>
+        </action>
+      </apply-actions>
+    </instruction>
+  </instructions>
+  <installHw>true</installHw>
+  <barrier>false</barrier>
+  <strict>false</strict>
+  <priority>61010</priority>
+  <table_id>253</table_id>
+  <flow-name>ACL</flow-name>
 </flow>
 ------------------------------------------------------------------------
