@@ -1,0 +1,107 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a6b29fe_2d405e33",
+        "filename": "manuals/developer-guide/src/main/asciidoc/openflowplugin/odl-ofp-developer-guide.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-08-28T17:43:10Z",
+      "side": 1,
+      "message": "The includes got removed again. Please add back.",
+      "revId": "35e171bd0f38cb39f724e8de7474e04357b9198f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_cd760aa4",
+        "filename": "manuals/developer-guide/src/main/asciidoc/openflowplugin/odl-ofp-forwardingrules-sync.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-08-28T17:43:10Z",
+      "side": 1,
+      "message": "mechanism",
+      "range": {
+        "startLine": 10,
+        "startChar": 167,
+        "endLine": 10,
+        "endChar": 176
+      },
+      "revId": "35e171bd0f38cb39f724e8de7474e04357b9198f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_8d49b262",
+        "filename": "manuals/developer-guide/src/main/asciidoc/openflowplugin/odl-ofp-forwardingrules-sync.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-08-28T17:43:10Z",
+      "side": 1,
+      "message": "space before parens",
+      "range": {
+        "startLine": 10,
+        "startChar": 29,
+        "endLine": 10,
+        "endChar": 34
+      },
+      "revId": "35e171bd0f38cb39f724e8de7474e04357b9198f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_6d46d650",
+        "filename": "manuals/developer-guide/src/main/asciidoc/openflowplugin/odl-ofp-forwardingrules-sync.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-08-28T17:43:10Z",
+      "side": 1,
+      "message": "all, really all?",
+      "range": {
+        "startLine": 10,
+        "startChar": 112,
+        "endLine": 10,
+        "endChar": 115
+      },
+      "revId": "35e171bd0f38cb39f724e8de7474e04357b9198f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_4d6afab3",
+        "filename": "manuals/developer-guide/src/main/asciidoc/openflowplugin/odl-ofp-forwardingrules-sync.adoc",
+        "patchSetId": 6
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-08-28T17:43:10Z",
+      "side": 1,
+      "message": "Did you intent to decrease the section level here? I think not since that would make a new section in this chapter called \"FRS additions\" instead of nesting it under \"Application: Forwarding Rules Synchronizer\".",
+      "revId": "35e171bd0f38cb39f724e8de7474e04357b9198f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
