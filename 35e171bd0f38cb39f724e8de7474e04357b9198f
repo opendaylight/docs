@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "7a6b29fe_502731ca",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2016-08-29T14:05:05Z",
+      "side": 1,
+      "message": "Commit messages should be written in present-tense, imperative-style. It saves us character space in the first line. Here\u0027s a good read on why properly formatted commit messages are important:\n\nhttp://chris.beams.io/posts/git-commit/",
+      "revId": "35e171bd0f38cb39f724e8de7474e04357b9198f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a6b29fe_2d405e33",
         "filename": "manuals/developer-guide/src/main/asciidoc/openflowplugin/odl-ofp-developer-guide.adoc",
         "patchSetId": 6
