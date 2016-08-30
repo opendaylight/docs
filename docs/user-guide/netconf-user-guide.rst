@@ -190,7 +190,7 @@ Netconf-connector has an optional configuration attribute called
 yang-module-capabilities and this attribute can contain a list of "YANG
 module based" capabilities. So by setting this configuration attribute,
 it is possible to override the "yang-module-based" capabilities reported
-in HELLO message of the device. To do this, we need to modify the
+in HELLO messagel of the device. To do this, we need to modify the
 configuration of netconf-connector by adding this XML (It needs to be
 added next to the address, port, username etc. configuration elements):
 
@@ -390,6 +390,26 @@ following:
 ::
 
     DELETE http://localhost:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/new-netconf-device
+
+Connecting to a device supporting only netconf 1.0
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+OpenDaylight is schema-based distribution and heavily depends on YANG
+models. However some legacy netconf devices are not schema-based and
+implements just RFC 4741. This type of devices does not utilize YANG
+models internally and OpenDaylight does not know how to communicate
+with such devices, how to validate data, what the semantics of data are,
+etc..
+
+NETCONF connector can communicate also with these devices, but the
+trade-offs are worsened possibilities in utilization of netconf
+mountpoints. Using RESTCONF with such devices is not suported. Also
+communicating with schemaless devices from application code is slightly
+different.
+
+To connect to schemaless device, there is a optional configuration option
+in netconf-node-topology model called schemaless. You have to set this
+option to true.
 
 Clustered NETCONF connector
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
