@@ -24,6 +24,7 @@ Project-specific Developer Guides
    controller
    didm-developer-guide
    dlux
+   infrautils-developer-guide
    iotdm-developer-guide
    l2switch-developer-guide
    lacp-developer-guide
