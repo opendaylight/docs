@@ -1503,6 +1503,85 @@ Tutorials
 A DevStack demo environment can be found on the `**GBP**
 wiki <https://wiki.opendaylight.org/view/Group_Based_Policy_(GBP)>`__.
 
+GBP Renderer manager
+--------------------
+
+Overview
+~~~~~~~~
+
+The GBP Renderer manager is an integral part of **GBP** base module.
+It dispatches information about endpoints'
+policy configuration to specific device renderer
+by writing a renderer policy configuration into the
+registered renderer's policy store.
+
+Installing and Pre-requisites
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Renderer manager is integrated into GBP base module,
+so no additional installation is required.
+
+Architecture
+~~~~~~~~~~~~
+
+Renderer manager gets data notifications about:
+
+- Endoints (base-endpoint.yang)
+
+- EndpointLocations (base-endpoint.yang)
+
+- ResolvedPolicies (resolved-policy.yang)
+
+- Forwarding (forwarding.yang)
+
+Based on data from notifications it creates a configuration task for
+specific renderers by writing a renderer policy configuration into the
+registered renderer's policy store.
+Configuration is stored to CONF data store as Renderers (renderer.yang).
+
+Configuration is signed with version number which is incremented by every change.
+All renderers are supposed to be on the same version. Renderer manager waits
+for all renderers to respond with version update in OPER data store.
+After a version of every renderer in OPER data store has the same value
+as the one in CONF data store,
+renderer manager moves to the next configuration with incremented version.
+
+GBP Location manager
+--------------------
+
+Overview
+~~~~~~~~
+
+Location manager monitors information about Endpoint Location providers
+(see endpoint-location-provider.yang) and manages Endpoint locations in OPER data store accordingly.
+
+Installing and Pre-requisites
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Location manager is integrated into GBP base module,
+so no additional installation is required.
+
+Architecture
+~~~~~~~~~~~~
+
+The endpoint-locations container in OPER data store (see base-endpoint.yang)
+contains two lists for two types of EP location,
+namely address-endpoint-location and containment-endpoint-location.
+LocationResolver is a class that processes Location providers in CONF data store
+and puts location information to OPER data store.
+
+When a new Location provider is created in CONF data store, its Address EP locations
+are being processed first, and their info is stored locally in accordance with processed
+Location provider's priority. Then a location of type "absolute" with the highest priority
+is selected for an EP, and is put in OPER data store. If Address EP locations contain
+locations of type "relative", those are put to OPER data store.
+
+If current Location provider contains Containment EP locations of type "relative",
+then those are put to OPER data store.
+
+Similarly, when a Location provider is deleted, information of its locations
+is removed from the OPER data store.
+
 Using the GBP OpenFlow Overlay (OfOverlay) renderer
 ---------------------------------------------------
 
