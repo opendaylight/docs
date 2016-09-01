@@ -1503,6 +1503,49 @@ Tutorials
 A DevStack demo environment can be found on the `**GBP**
 wiki <https://wiki.opendaylight.org/view/Group_Based_Policy_(GBP)>`__.
 
+GBP Renderer manager
+--------------------
+
+Overview
+~~~~~~~~
+
+The GBP Renderer manager is an integral part of **GBP** base module.
+It dispatches information about endpoints'
+policy configuration to specific device renderer
+by writing a renderer policy configuration into the
+registered renderer's policy store.
+
+Installing and Pre-requisites
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Renderer manager is integrated into GBP base module,
+so no additional installation is required.
+
+Architecture
+~~~~~~~~~~~~
+
+Renderer manager gets data notifications about:
+
+- Endoints (base-endpoint.yang)
+
+- EndpointLocations (base-endpoint.yang)
+
+- ResolvedPolicies (resolved-policy.yang)
+
+- Forwarding (forwarding.yang)
+
+Based on data from notifications it creates a configuration task for
+specific renderers by writing a renderer policy configuration into the
+registered renderer's policy store.
+Configuration is stored to CONF data store as Renderers (renderer.yang).
+
+Configuration is signed with version number which is incremented by every change.
+All renderers are supposed to be on the same version. Renderer manager waits
+for all renderers to respond with version update in OPER data store.
+After a version of every renderer in OPER data store has the same value
+as the one in CONF data store,
+renderer manager moves to the next configuration with incremented version.
+
 Using the GBP OpenFlow Overlay (OfOverlay) renderer
 ---------------------------------------------------
 
