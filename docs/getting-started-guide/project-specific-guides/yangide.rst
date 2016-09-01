@@ -38,7 +38,7 @@ Installing YANG IDE
 -------------------
 
 The YANG IDE plugin can be installed by using the public update site URL
-provided, which is http://abc.def .
+provided, which is https://nexus.opendaylight.org/content/sites/p2repos/org.opendaylight.yangide/release/ .
 
 While in Eclipse, select "Help" from the menu bar and select "Install
 New Software ...".  On the resulting "Install" dialog, click the
