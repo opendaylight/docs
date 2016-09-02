@@ -35,6 +35,7 @@ Project-specific User Guides
    l3vpn-service_-user-guide
    link-aggregation-control-protocol-user-guide
    lisp-flow-mapping-user-guide
+   nemo-user-guide
    netconf-user-guide
    netide-user-guide
    neutron-service-user-guide
