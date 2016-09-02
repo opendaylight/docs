@@ -28,6 +28,7 @@ Project-specific Developer Guides
    iotdm-developer-guide
    l2switch-developer-guide
    lacp-developer-guide
+   ../user-guide/lisp-flow-mapping-user-guide
    netconf-developer-guide
    network-intent-composition-(nic)-developer-guide
    netide-developer-guide
