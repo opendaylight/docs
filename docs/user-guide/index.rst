@@ -30,6 +30,7 @@ Project-specific User Guides
    cardinal_-opendaylight-monitoring-as-a-service
    centinel-user-guide
    didm-user-guide
+   genius-user-guide
    group-based-policy-user-guide
    l2switch-user-guide
    l3vpn-service_-user-guide
