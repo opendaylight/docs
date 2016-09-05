@@ -48,6 +48,7 @@ Project-specific Developer Guides
    pcep-developer-guide
    packetcable-developer-guide
    service-function-chaining
+   snbi-developer-guide
    snmp4sdn-developer-guide
    sxp-developer-guide
    topology-processing-framework-developer-guide
