@@ -86,7 +86,7 @@ Content
 
 The contents of a PUT or POST should be a OpenDaylight Table Type
 Pattern. An example of one is provided below. The example can also be
-found at ```parser/sample-TTP-from-tests.ttp`` in the TTP git
+found at `parser/sample-TTP-from-tests.ttp in the TTP git
 repository <https://git.opendaylight.org/gerrit/gitweb?p=ttp.git;a=blob;f=parser/sample-TTP-from-tests.ttp;h=45130949b25c6f86b750959d27d04ec2208935fb;hb=HEAD>`__.
 
 **Sample Table Type Pattern (json).**
