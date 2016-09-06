@@ -83,8 +83,9 @@ command.
      "Content-type: application/json" -X GET \
      http://localhost:8181/restconf/operational/vtn:vtns
 
-REST API documentation for VTN Manager, please refer to:
-https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/
+REST Conf documentation for VTN Manager, please refer to:
+https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/apidocs/index.html
+
 
 VTN Coordinator
 ~~~~~~~~~~~~~~~
@@ -600,13 +601,13 @@ VTN Configuration for OpenStack Integration:
 -  A configuration file "90-vtn-neutron.xml" will be generated
    automatically by following the below steps,
 
--  Download the latest Beryllium karaf distribution from the below link,
+-  Download the latest Boron karaf distribution from the below link,
 
    ::
 
        http://www.opendaylight.org/software/downloads
 
--  cd "distribution-karaf-0.4.0-Beryllium" and run karaf by using the
+-  cd "distribution-karaf-0.5.0-Boron" and run karaf by using the
    following command "./bin/karaf".
 
 -  Install the below feature to generate "90-vtn-neutron.xml"
@@ -617,7 +618,7 @@ VTN Configuration for OpenStack Integration:
 
 -  Logout from the karaf console and Check "90-vtn-neutron.xml" file
    from the following path
-   "distribution-karaf-0.4.0-Beryllium/etc/opendaylight/karaf/".
+   "distribution-karaf-0.5.0-Boron/etc/opendaylight/karaf/".
 
 -  The contents of "90-vtn-neutron.xml" should be as follows:
 
@@ -1028,7 +1029,7 @@ view the graphical representation on the right pane.
     DLUX UI does not provide ability to add topology information. The
     Topology should be created using an open flow plugin. Controller
     stores this information in the database and displays on the DLUX
-    page, when the you connect to the controller using openflow.
+    page, when the you connect to the controller using OpenFlow.
 
 .. figure:: ./images/vtn/Dlux_topology.png
    :alt: Topology
@@ -1060,7 +1061,7 @@ Overview
 ^^^^^^^^
 
 This page explains how to provision virtual L2 network using VTN
-Manager. This page targets Beryllium release, so the procedure described
+Manager. This page targets Boron release, so the procedure described
 here does not work in other releases.
 
 .. figure:: ./images/vtn/How_to_provision_virtual_L2_network.png
@@ -1115,7 +1116,7 @@ execute REST API provided by VTN Manager as follows. It uses curl
 command to call the REST API.
 
 -  Create a virtual tenant named vtn1 by executing `the update-vtn
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn.html#update-vtn>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn.html#update-vtn>`__.
 
 ::
 
@@ -1123,7 +1124,7 @@ command to call the REST API.
 
 -  Create a virtual bridge named vbr1 in the tenant vtn1 by executing
    `the update-vbridge
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-vbridge.html#update-vbridge>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-vbridge.html#update-vbridge>`__.
 
 ::
 
@@ -1131,7 +1132,7 @@ command to call the REST API.
 
 -  Create two interfaces into the virtual bridge by executing `the
    update-vinterface
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-vinterface.html#update-vinterface>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-vinterface.html#update-vinterface>`__.
 
 ::
 
@@ -1143,7 +1144,7 @@ command to call the REST API.
 
 -  Configure two mappings on the created interfaces by executing `the
    set-port-map
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-port-map.html#set-port-map>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-port-map.html#set-port-map>`__.
 
    -  The interface if1 of the virtual bridge will be mapped to the port
       "s2-eth1" of the switch "openflow:2" of the Mininet.
@@ -1253,7 +1254,7 @@ Cleaning Up
 ^^^^^^^^^^^
 
 -  You can delete the virtual tenant vtn1 by executing `the remove-vtn
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn.html#remove-vtn>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn.html#remove-vtn>`__.
 
 ::
 
@@ -1266,7 +1267,7 @@ Overview
 ^^^^^^^^
 
 This page explains how to test Vlan-map in a multi host scenario using
-mininet. This page targets Beryllium release, so the procedure described
+mininet. This page targets Boron release, so the procedure described
 here does not work in other releases.
 
 .. figure:: ./images/vtn/vlanmap_using_mininet.png
@@ -1320,7 +1321,7 @@ Configuration
 To test vlan-map, execute REST API provided by VTN Manager as follows.
 
 -  Create a virtual tenant named vtn1 by executing `the update-vtn
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn.html#update-vtn>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn.html#update-vtn>`__.
 
 ::
 
@@ -1328,7 +1329,7 @@ To test vlan-map, execute REST API provided by VTN Manager as follows.
 
 -  Create a virtual bridge named vbr1 in the tenant vtn1 by executing
    `the update-vbridge
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-vbridge.html#update-vbridge>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-vbridge.html#update-vbridge>`__.
 
 ::
 
@@ -1336,7 +1337,7 @@ To test vlan-map, execute REST API provided by VTN Manager as follows.
 
 -  Configure a vlan map with vlanid 200 for vBridge vbr1 by executing
    `the add-vlan-map
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-vlan-map.html#add-vlan-map>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-vlan-map.html#add-vlan-map>`__.
 
 ::
 
@@ -1344,7 +1345,7 @@ To test vlan-map, execute REST API provided by VTN Manager as follows.
 
 -  Create a virtual bridge named vbr2 in the tenant vtn1 by executing
    `the update-vbridge
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-vbridge.html#update-vbridge>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-vbridge.html#update-vbridge>`__.
 
 ::
 
@@ -1352,7 +1353,7 @@ To test vlan-map, execute REST API provided by VTN Manager as follows.
 
 -  Configure a vlan map with vlanid 300 for vBridge vbr2 by executing
    `the add-vlan-map
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-vlan-map.html#add-vlan-map>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-vlan-map.html#add-vlan-map>`__.
 
 ::
 
@@ -1451,7 +1452,7 @@ Cleaning Up
 ^^^^^^^^^^^
 
 -  You can delete the virtual tenant vtn1 by executing `the remove-vtn
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn.html#remove-vtn>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn.html#remove-vtn>`__.
 
 ::
 
@@ -1464,7 +1465,7 @@ Overview
 ^^^^^^^^
 
 This page explains how to configure VTN Manager for Service Chaining.
-This page targets Beryllium release, so the procedure described here
+This page targets Boron release, so the procedure described here
 does not work in other releases.
 
 .. figure:: ./images/vtn/Service_Chaining_With_One_Service.png
@@ -1476,7 +1477,7 @@ Requirements
 ^^^^^^^^^^^^
 
 -  Please refer to the `Installation
-   Pages <https://wiki.opendaylight.org/view/VTN:Beryllium:Installation_Guide>`__
+   Pages <https://wiki.opendaylight.org/view/VTN:Boron:Installation_Guide>`__
    to run ODL with VTN Feature enabled.
 
 -  Please ensure Bridge-Utils package is installed in mininet
@@ -1576,7 +1577,7 @@ Please execute the below commands in controller
 .. note::
 
     The below commands are for the difference in behavior of Manager in
-    Beryllium topology. The Link below has the details for this bug:
+    Boron topology. The Link below has the details for this bug:
     https://bugs.opendaylight.org/show_bug.cgi?id=3818.
 
 ::
@@ -1584,7 +1585,7 @@ Please execute the below commands in controller
     curl --user admin:admin -H 'content-type: application/json' -H 'ipaddr:127.0.0.1' -X PUT http://localhost:8181/restconf/config/vtn-static-topology:vtn-static-topology/static-edge-ports -d '{"static-edge-ports": {"static-edge-port": [ {"port": "openflow:3:3"}, {"port": "openflow:3:4"}, {"port": "openflow:4:3"}, {"port": "openflow:4:4"}]}}'
 
 -  Create a virtual tenant named vtn1 by executing `the update-vtn
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn.html#update-vtn>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn.html#update-vtn>`__.
 
 ::
 
@@ -1592,7 +1593,7 @@ Please execute the below commands in controller
 
 -  Create a virtual bridge named vbr1 in the tenant vtn1 by executing
    `the update-vbridge
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-vbridge.html#update-vbridge>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-vbridge.html#update-vbridge>`__.
 
 ::
 
@@ -1600,7 +1601,7 @@ Please execute the below commands in controller
 
 -  Create interface if1 into the virtual bridge vbr1 by executing `the
    update-vinterface
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-vinterface.html#update-vinterface>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-vinterface.html#update-vinterface>`__.
 
 ::
 
@@ -1608,7 +1609,7 @@ Please execute the below commands in controller
 
 -  Configure port mapping on the interface by executing `the
    set-port-map
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-port-map.html#set-port-map>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-port-map.html#set-port-map>`__.
 
    -  The interface if1 of the virtual bridge will be mapped to the port
       "s1-eth2" of the switch "openflow:1" of the Mininet.
@@ -1621,7 +1622,7 @@ Please execute the below commands in controller
 
 -  Create interface if2 into the virtual bridge vbr1 by executing `the
    update-vinterface
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-vinterface.html#update-vinterface>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-vinterface.html#update-vinterface>`__.
 
 ::
 
@@ -1629,7 +1630,7 @@ Please execute the below commands in controller
 
 -  Configure port mapping on the interface by executing `the
    set-port-map
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-port-map.html#set-port-map>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-port-map.html#set-port-map>`__.
 
    -  The interface if2 of the virtual bridge will be mapped to the port
       "s2-eth2" of the switch "openflow:2" of the Mininet.
@@ -1642,7 +1643,7 @@ Please execute the below commands in controller
 
 -  Create interface if3 into the virtual bridge vbr1 by executing `the
    update-vinterface
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-vinterface.html#update-vinterface>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-vinterface.html#update-vinterface>`__.
 
 ::
 
@@ -1650,7 +1651,7 @@ Please execute the below commands in controller
 
 -  Configure port mapping on the interfaces by executing `the
    set-port-map
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-port-map.html#set-port-map>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-port-map.html#set-port-map>`__.
 
    -  The interface if3 of the virtual bridge will be mapped to the port
       "s2-eth3" of the switch "openflow:2" of the Mininet.
@@ -1666,7 +1667,7 @@ Traffic filtering
 
 -  Create flowcondition named cond\_1 by executing `the
    set-flow-condition
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-flow-condition.html#set-flow-condition>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-flow-condition.html#set-flow-condition>`__.
 
    -  For option source and destination-network, get inet address of
       host h12(src) and h22(dst) from mininet.
@@ -1677,7 +1678,7 @@ Traffic filtering
 
 -  Flow filter demonstration with DROP action-type. Create Flowfilter in
    VBR Interface if1 by executing `the set-flow-filter
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-flow-filter.html#set-flow-filter>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-flow-filter.html#set-flow-filter>`__.
 
 ::
 
@@ -1700,7 +1701,7 @@ With One Service
 
 -  Create a virtual terminal named vt\_srvc1\_1 in the tenant vtn1 by
    executing `the update-vterminal
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-vterminal.html#update-vterminal>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-vterminal.html#update-vterminal>`__.
 
 ::
 
@@ -1708,7 +1709,7 @@ With One Service
 
 -  Create interface IF into the virtual terminal vt\_srvc1\_1 by
    executing `the update-vinterface
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-vinterface.html#update-vinterface>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-vinterface.html#update-vinterface>`__.
 
 ::
 
@@ -1716,7 +1717,7 @@ With One Service
 
 -  Configure port mapping on the interfaces by executing `the
    set-port-map
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-port-map.html#set-port-map>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-port-map.html#set-port-map>`__.
 
    -  The interface IF of the virtual terminal will be mapped to the
       port "s3-eth3" of the switch "openflow:3" of the Mininet.
@@ -1729,7 +1730,7 @@ With One Service
 
 -  Create a virtual terminal named vt\_srvc1\_2 in the tenant vtn1 by
    executing `the update-vterminal
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-vterminal.html#update-vterminal>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-vterminal.html#update-vterminal>`__.
 
 ::
 
@@ -1737,7 +1738,7 @@ With One Service
 
 -  Create interface IF into the virtual terminal vt\_srvc1\_2 by
    executing `the update-vinterface
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-vinterface.html#update-vinterface>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-vinterface.html#update-vinterface>`__.
 
 ::
 
@@ -1745,7 +1746,7 @@ With One Service
 
 -  Configure port mapping on the interfaces by executing `the
    set-port-map
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-port-map.html#set-port-map>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-port-map.html#set-port-map>`__.
 
    -  The interface IF of the virtual terminal will be mapped to the
       port "s4-eth3" of the switch "openflow:4" of the Mininet.
@@ -1758,7 +1759,7 @@ With One Service
 
 -  Create flowcondition named cond\_1 by executing `the
    set-flow-condition
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-flow-condition.html#set-flow-condition>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-flow-condition.html#set-flow-condition>`__.
 
    -  For option source and destination-network, get inet address of
       host h12(src) and h22(dst) from mininet.
@@ -1769,7 +1770,7 @@ With One Service
 
 -  Create flowcondition named cond\_any by executing `the
    set-flow-condition
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-flow-condition.html#set-flow-condition>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-flow-condition.html#set-flow-condition>`__.
 
 ::
 
@@ -1778,7 +1779,7 @@ With One Service
 -  Flow filter demonstration with redirect action-type. Create
    Flowfilter in virtual terminal vt\_srvc1\_2 interface IF by executing
    `the set-flow-filter
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-flow-filter.html#set-flow-filter>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-flow-filter.html#set-flow-filter>`__.
 
    -  Flowfilter redirects vt\_srvc1\_2 to bridge1-IF2
 
@@ -1789,7 +1790,7 @@ With One Service
 -  Flow filter demonstration with redirect action-type. Create
    Flowfilter in vbridge vbr1 interface if1 by executing `the
    set-flow-filter
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-flow-filter.html#set-flow-filter>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-flow-filter.html#set-flow-filter>`__.
 
    -  Flow filter redirects Bridge1-IF1 to vt\_srvc1\_1
 
@@ -1831,7 +1832,7 @@ With two services
 
 -  Create a virtual terminal named vt\_srvc2\_1 in the tenant vtn1 by
    executing `the update-vterminal
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-vterminal.html#update-vterminal>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-vterminal.html#update-vterminal>`__.
 
 ::
 
@@ -1839,7 +1840,7 @@ With two services
 
 -  Create interface IF into the virtual terminal vt\_srvc2\_1 by
    executing `the update-vinterface
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-vinterface.html#update-vinterface>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-vinterface.html#update-vinterface>`__.
 
 ::
 
@@ -1847,7 +1848,7 @@ With two services
 
 -  Configure port mapping on the interfaces by executing `the
    set-port-map
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-port-map.html#set-port-map>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-port-map.html#set-port-map>`__.
 
    -  The interface IF of the virtual terminal will be mapped to the
       port "s3-eth4" of the switch "openflow:3" of the Mininet.
@@ -1860,7 +1861,7 @@ With two services
 
 -  Create a virtual terminal named vt\_srvc2\_2 in the tenant vtn1 by
    executing `the update-vterminal
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-vterminal.html#update-vterminal>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-vterminal.html#update-vterminal>`__.
 
 ::
 
@@ -1868,7 +1869,7 @@ With two services
 
 -  Create interfaces IF into the virtual terminal vt\_srvc2\_2 by
    executing `the update-vinterface
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-vinterface.html#update-vinterface>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-vinterface.html#update-vinterface>`__.
 
 ::
 
@@ -1876,7 +1877,7 @@ With two services
 
 -  Configure port mapping on the interfaces by executing `the
    set-port-map
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-port-map.html#set-port-map>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-port-map.html#set-port-map>`__.
 
    -  The interface IF of the virtual terminal will be mapped to the
       port "s4-eth4" of the switch "openflow:4" of the mininet.
@@ -1890,7 +1891,7 @@ With two services
 -  Flow filter demonstration with redirect action-type. Create
    Flowfilter in virtual terminal vt\_srvc2\_2 interface IF by executing
    `the set-flow-filter
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-flow-filter.html#set-flow-filter>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-flow-filter.html#set-flow-filter>`__.
 
    -  Flow filter redirects vt\_srvc2\_2 to Bridge1-IF2.
 
@@ -1901,7 +1902,7 @@ With two services
 -  Flow filter demonstration with redirect action-type. Create
    Flowfilter in virtual terminal vt\_srvc2\_2 interface IF by executing
    `the set-flow-filter
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-flow-filter.html#set-flow-filter>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-flow-filter.html#set-flow-filter>`__.
 
    -  Flow filter redirects vt\_srvc1\_2 to vt\_srvc2\_1.
 
@@ -2186,7 +2187,7 @@ Cleaning Up
 -  To clean up both VTN and flowconditions.
 
 -  You can delete the virtual tenant vtn1 by executing `the remove-vtn
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn.html#remove-vtn>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn.html#remove-vtn>`__.
 
 ::
 
@@ -2194,7 +2195,7 @@ Cleaning Up
 
 -  You can delete the flowcondition cond\_1 and cond\_any by executing
    `the remove-flow-condition
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-flow-condition.html#remove-flow-condition>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-flow-condition.html#remove-flow-condition>`__.
 
 ::
 
@@ -2211,11 +2212,11 @@ Overview
 ^^^^^^^^
 
 This page explains how to view Dataflows using VTN Manager. This page
-targets Beryllium release, so the procedure described here does not work
+targets Boron release, so the procedure described here does not work
 in other releases.
 
 Dataflow feature enables retrieval and display of data flows in the
-openflow network. The data flows can be retrieved based on an openflow
+OpenFlow network. The data flows can be retrieved based on an OpenFlow
 switch or a switch port or a L2 source host.
 
 The flow information provided by this feature are
@@ -2270,7 +2271,7 @@ Parallely execute below Restconf command to get data flow information of
 node "openflow:1" and its port "s1-eth1".
 
 -  Get the Dataflows information by executing `the get-data-flow
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-flow.html#get-data-flow>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-flow.html#get-data-flow>`__.
 
 ::
 
@@ -2474,7 +2475,7 @@ Overview
    particular host by associating a Vbridge to the hosts and configuring
    Mac Mapping (mac address) to the Vbridge.
 
--  This page targets Beryllium release, so the procedure described here
+-  This page targets Boron release, so the procedure described here
    does not work in other releases.
 
 .. figure:: ./images/vtn/Single_Controller_Mapping.png
@@ -2524,7 +2525,7 @@ To create Mac Map in VTN, execute REST API provided by VTN Manager as
 follows. It uses curl command to call REST API.
 
 -  Create a virtual tenant named Tenant1 by executing `the update-vtn
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn.html#update-vtn>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn.html#update-vtn>`__.
 
 ::
 
@@ -2532,7 +2533,7 @@ follows. It uses curl command to call REST API.
 
 -  Create a virtual bridge named vBridge1 in the tenant Tenant1 by
    executing `the update-vbridge
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-vbridge.html#update-vbridge>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-vbridge.html#update-vbridge>`__.
 
 ::
 
@@ -2541,7 +2542,7 @@ follows. It uses curl command to call REST API.
 -  Configuring Mac Mappings on the vBridge1 by giving the mac address of
    host h12 and host h22 as follows to allow the communication by
    executing `the set-mac-map
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-mac-map.html#set-mac-map>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-mac-map.html#set-mac-map>`__.
 
 ::
 
@@ -2660,7 +2661,7 @@ Cleaning Up
 
 -  You can delete the virtual tenant Tenant1 by executing `the
    remove-vtn
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn.html#remove-vtn>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn.html#remove-vtn>`__.
 
 ::
 
@@ -2673,7 +2674,7 @@ Overview
 ^^^^^^^^
 
 -  This page explains how to provision flowfilter using VTN Manager.
-   This page targets Beryllium release, so the procedure described here
+   This page targets Boron release, so the procedure described here
    does not work in other releases.
 
 -  The flow-filter function discards, permits, or redirects packets of
@@ -2764,7 +2765,7 @@ execute REST API provided by VTN Manager as follows. It uses curl
 command to call the REST API.
 
 -  Create a virtual tenant named vtn1 by executing `the update-vtn
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn.html#update-vtn>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn.html#update-vtn>`__.
 
 ::
 
@@ -2772,7 +2773,7 @@ command to call the REST API.
 
 -  Create a virtual bridge named vbr1 in the tenant vtn1 by executing
    `the update-vbridge
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-vbridge.html#update-vbridge>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-vbridge.html#update-vbridge>`__.
 
 ::
 
@@ -2780,7 +2781,7 @@ command to call the REST API.
 
 -  Create two interfaces into the virtual bridge by executing `the
    update-vinterface
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-vinterface.html#update-vinterface>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-vinterface.html#update-vinterface>`__.
 
 ::
 
@@ -2792,7 +2793,7 @@ command to call the REST API.
 
 -  Configure two mappings on the interfaces by executing `the
    set-port-map
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-port-map.html#set-port-map>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-port-map.html#set-port-map>`__.
 
    -  The interface if1 of the virtual bridge will be mapped to the port
       "s2-eth1" of the switch "openflow:2" of the Mininet.
@@ -2814,7 +2815,7 @@ command to call the REST API.
 
 -  Create flowcondition named cond\_1 by executing `the
    set-flow-condition
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-flow-condition.html#set-flow-condition>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-flow-condition.html#set-flow-condition>`__.
 
    -  For option source and destination-network, get inet address of
       host h1 and h3 from mininet.
@@ -2829,7 +2830,7 @@ command to call the REST API.
 
 -  Flow filter demonstration with DROP action-type. Create Flowfilter in
    VBR Interface if1 by executing `the set-flow-filter
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-flow-filter.html#set-flow-filter>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-flow-filter.html#set-flow-filter>`__.
 
 ::
 
@@ -2851,7 +2852,7 @@ Configuration for pass filter
 
 -  Update the flow filter to pass the packets by executing `the
    set-flow-filter
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-flow-filter.html#set-flow-filter>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-flow-filter.html#set-flow-filter>`__.
 
 ::
 
@@ -2976,7 +2977,7 @@ Cleaning Up
 -  To clean up both VTN and flowcondition.
 
 -  You can delete the virtual tenant vtn1 by executing `the remove-vtn
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn.html#remove-vtn>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn.html#remove-vtn>`__.
 
 ::
 
@@ -2984,7 +2985,7 @@ Cleaning Up
 
 -  You can delete the flowcondition cond\_1 by executing `the
    remove-flow-condition
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-flow-condition.html#remove-flow-condition>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-flow-condition.html#remove-flow-condition>`__.
 
 ::
 
@@ -2997,7 +2998,7 @@ Overview
 ^^^^^^^^
 
 -  This page explains how to create specific VTN Pathmap using VTN
-   Manager. This page targets Beryllium release, so the procedure
+   Manager. This page targets Boron release, so the procedure
    described here does not work in other releases.
 
 .. figure:: ./images/vtn/Pathmap.png
@@ -3080,7 +3081,7 @@ Configuration
    VTN Manager as follows. It uses curl command to call the REST API.
 
 -  Create a virtual tenant named vtn1 by executing `the update-vtn
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn.html#update-vtn>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn.html#update-vtn>`__.
 
 ::
 
@@ -3088,7 +3089,7 @@ Configuration
 
 -  Create a virtual bridge named vbr1 in the tenant vtn1 by executing
    `the update-vbridge
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-vbridge.html#update-vbridge>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-vbridge.html#update-vbridge>`__.
 
 ::
 
@@ -3096,7 +3097,7 @@ Configuration
 
 -  Create two interfaces into the virtual bridge by executing `the
    update-vinterface
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-vinterface.html#update-vinterface>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-vinterface.html#update-vinterface>`__.
 
 ::
 
@@ -3108,7 +3109,7 @@ Configuration
 
 -  Configure two mappings on the interfaces by executing `the
    set-port-map
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-port-map.html#set-port-map>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-port-map.html#set-port-map>`__.
 
    -  The interface if1 of the virtual bridge will be mapped to the port
       "s2-eth1" of the switch "openflow:1" of the Mininet.
@@ -3140,7 +3141,7 @@ Configuration
      64 bytes from 10.0.0.2: icmp_seq=3 ttl=64 time=0.101 ms
 
 -  Get the Dataflows information by executing `the get-data-flow
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-flow.html#get-data-flow>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-flow.html#get-data-flow>`__.
 
 ::
 
@@ -3148,7 +3149,7 @@ Configuration
 
 -  Create flowcondition named cond\_1 by executing `the
    set-flow-condition
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-flow-condition.html#set-flow-condition>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-flow-condition.html#set-flow-condition>`__.
 
    -  For option source and destination-network, get inet address of
       host h1 or host h2 from mininet
@@ -3159,14 +3160,14 @@ Configuration
 
 -  Create pathmap with flowcondition cond\_1 by executing `the
    set-path-map
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-path-map.html#set-path-map>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-path-map.html#set-path-map>`__.
 
 ::
 
     curl --user "admin":"admin" -H "Content-type: application/json" -X POST http://localhost:8181/restconf/operations/vtn-path-map:set-path-map -d '{"input":{"tenant-name":"vtn1","path-map-list":[{"condition":"cond_1","policy":"1","index": "1","idle-timeout":"300","hard-timeout":"0"}]}}'
 
 -  Create pathpolicy by executing `the set-path-policy
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-path-policy.html#set-path-policy>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-path-policy.html#set-path-policy>`__.
 
 ::
 
@@ -3317,7 +3318,7 @@ Cleaning Up
 -  To clean up both VTN and flowcondition.
 
 -  You can delete the virtual tenant vtn1 by executing `the remove-vtn
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn.html#remove-vtn>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn.html#remove-vtn>`__.
 
 ::
 
@@ -3325,7 +3326,7 @@ Cleaning Up
 
 -  You can delete the flowcondition cond\_1 by executing `the
    remove-flow-condition
-   RPC <https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/vtn-flow-condition.html#remove-flow-condition>`__.
+   RPC <https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-flow-condition.html#remove-flow-condition>`__.
 
 ::
 
@@ -4355,7 +4356,7 @@ failing..**
 
 ::
 
-      Please ensure the firewall settings for port:8181(Beryllium release) or port:8083(Post Beryllium release) and enable the same.
+      Please ensure the firewall settings for port:8181 (Beryllium release) or port:8083 (Post Beryllium release) and enable the same.
 
 **How to debug a REST API returning a failure message?.**
 
@@ -4633,9 +4634,9 @@ Prerequisites to create Network Service in SCVMM machine, Please follow the belo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1.  Please go through the below link to download VSEM Provider zip file,
-    https://nexus.opendaylight.org/content/groups/public/org/opendaylight/vtn/application/vtnmanager-vsemprovider/2.0.0-Beryllium/vtnmanager-vsemprovider-2.0.0-Beryllium-bin.zip
+    https://nexus.opendaylight.org/content/groups/public/org/opendaylight/vtn/application/vtnmanager-vsemprovider/1.2.0-Boron/vtnmanager-vsemprovider-1.2.0-Boron-bin.zip
 
-2.  Unzip the vtnmanager-vsemprovider-2.0.0-Beryllium-bin.zip file
+2.  Unzip the vtnmanager-vsemprovider-1.2.0-Boron-bin.zip file
     anywhere in your SCVMM machine.
 
 3.  Stop SCVMM service from **"service manager→tools→servers→select
