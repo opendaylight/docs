@@ -106,11 +106,12 @@ There are three features
 -  **odl-vtn-manager-neutron** provides the integration with Neutron
    interface.
 
-REST API documentation for VTN Manager, please refer to:
-https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/
+REST Conf documentation for VTN Manager, please refer to:
+https://logs.opendaylight.org/releng/jenkins092/vtn-periodic-boron/23/archives/manager/model/target/site/models/
+
 
 For VTN Java API documentation, please refer to:
-https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/target/apidocs/index.html
+https://logs.opendaylight.org/releng/jenkins092/vtn-periodic-boron/1/archives/manager/api/target/apidocs/
 
 Once the Karaf distribution is up, install dlux and apidocs.
 
@@ -141,7 +142,7 @@ To Log in to DLUX, after installing the application:
 -  In the right hand side frame, click "Yang UI".
 
 YANG documentation for VTN Manager, please refer to:
-https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-merge-beryllium/lastSuccessfulBuild/artifact/manager/model/target/site/models/
+https://logs.opendaylight.org/releng/jenkins092/vtn-periodic-boron/23/archives/manager/model/target/site/models/
 
 VTN Coordinator
 ~~~~~~~~~~~~~~~
