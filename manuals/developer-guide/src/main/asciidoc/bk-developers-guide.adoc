@@ -104,6 +104,8 @@ include::packetcable/packetcable-dev.adoc[Packet Cable PCMM Southbound Plugin]
 // commenting this out as it contains no content
 //include::reservation/reservation-dev.adoc[]
 
+include::faas/odl-faas-dev.adoc[]
+
 include::sfc/sfc.adoc[]
 
 include::snbi/odl-snbi-dev.adoc[]
