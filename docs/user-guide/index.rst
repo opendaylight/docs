@@ -50,6 +50,7 @@ Project-specific User Guides
    pcep-user-guide
    packetcable-user-guide
    service-function-chaining
+   snbi-user-guide
    snmp-plugin-user-guide
    snmp4sdn-user-guide
    sxp-user-guide
