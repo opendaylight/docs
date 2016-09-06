@@ -70,13 +70,13 @@ Install Feature::
 VTN Coordinator
 ^^^^^^^^^^^^^^^
 
-* Enter into the externalapps directory in the top directory of Beryllium::
+* Enter into the externalapps directory in the top directory of Boron::
 
-     cd distribution-karaf-0.4.0-Beryllium/externalapps
+     cd distribution-karaf-0.5.0-Boron/externalapps
 
 * Run the below command to extract VTN Coordinator from the tar.bz2 file in the externalapps directory::
 
-     tar –C/ -jxvf distribution.vtn-coordinator-6.2.0-Beryllium-bin.tar.bz2
+     tar –C/ -jxvf distribution.vtn-coordinator-6.2.0-Boron-bin.tar.bz2
 
 This will install VTN Coordinator to /usr/local/vtn directory.
 The name of the tar.bz2 file name varies depending on the version. Please give the same tar.bz2 file name which is there in your directory.
