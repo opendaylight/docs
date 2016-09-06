@@ -56,18 +56,18 @@ Steps to install OpenStack PackStack in CentOS 7.1
 Steps to install and deploy OpenDaylight in CentOS 7.1
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Download the latest Lithium distribution code in the below link,
+* Download the latest Boron distribution code in the below link,
 
 .. code-block:: bash
 
-    wget https://nexus.opendaylight.org/content/groups/public/org/opendaylight/integration/distribution-karaf/0.3.4-Lithium-SR4/distribution-karaf-0.3.4-Lithium-SR4.zip
+    wget https://nexus.opendaylight.org/content/groups/public/org/opendaylight/integration/distribution-karaf/0.5.0-Boron/distribution-karaf-0.5.0-Boron.zip
 
 
-* Unzip the lithium distribution code by using the below command,
+* Unzip the Boron distribution code by using the below command,
 
 .. code-block:: bash
 
-    unzip distribution-karaf-0.3.4-Lithium-SR4.zip
+    unzip distribution-karaf-0.5.0-Boron.zip
 
 * Please do the below steps in the OpenDaylight to change jetty port,
 

@@ -70,13 +70,13 @@ Install Feature::
 VTN Coordinator
 ^^^^^^^^^^^^^^^
 
-* Enter into the externalapps directory in the top directory of Beryllium::
+* To get the Boron distribution for VTN coordinator download the latest "tar.bz2" file from the below link::
 
-     cd distribution-karaf-0.4.0-Beryllium/externalapps
+     https://nexus.opendaylight.org/content/repositories/opendaylight.snapshot/org/opendaylight/vtn/distribution.vtn-coordinator/6.3.0-SNAPSHOT/
 
-* Run the below command to extract VTN Coordinator from the tar.bz2 file in the externalapps directory::
+* Run the below command to extract VTN Coordinator from the tar.bz2 file::
 
-     tar –C/ -jxvf distribution.vtn-coordinator-6.2.0-Beryllium-bin.tar.bz2
+     tar –C/ -jxvf distribution.vtn-coordinator-6.3.0-Boron-bin.tar.bz2
 
 This will install VTN Coordinator to /usr/local/vtn directory.
 The name of the tar.bz2 file name varies depending on the version. Please give the same tar.bz2 file name which is there in your directory.
