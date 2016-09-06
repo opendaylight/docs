@@ -24,6 +24,7 @@ Project-specific Developer Guides
    controller
    didm-developer-guide
    dlux
+   fabric-as-a-service
    infrautils-developer-guide
    iotdm-developer-guide
    l2switch-developer-guide
