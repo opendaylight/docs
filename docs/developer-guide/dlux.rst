@@ -42,7 +42,7 @@ DLUX Modules
 DLUX modules are the individual features such as nodes and topology.
 Each module has a defined structure and you can find all existing
 modules at
-https://github.com/opendaylight/dlux/tree/stable/lithium/modules.
+https://github.com/opendaylight/dlux/tree/stable/boron/modules.
 
 Module Structure
 ~~~~~~~~~~~~~~~~
@@ -241,14 +241,14 @@ its own blueprint.xml to place its configuration.
 
 1. Create a maven project to place blueprint configuration. For
    reference, take a look at topology bundle, present at
-   https://github.com/opendaylight/dlux/tree/stable/lithium/bundles/topology.
+   https://github.com/opendaylight/dlux/tree/stable/boron/bundles/topology.
    All the existing DLUX modules' configurations are available under
    bundles directory of DLUX code.
 
 2. In pom.xml, you have to add a maven plugin to unpack your module code
    under generated-resources of this project. For reference, you can
    check pom.xml of dlux/bundles/topology at
-   https://github.com/opendaylight/dlux/tree/stable/lithium/bundles/topology.
+   https://github.com/opendaylight/dlux/tree/stable/boron/bundles/topology.
    Your bundle will eventually get deployed in Karaf as feature, so your
    bundle should contain all your module code. If you want to combine
    module and bundle project, that should not be an issue either.

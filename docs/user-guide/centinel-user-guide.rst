@@ -10,7 +10,7 @@ administration, management, using sections for the feature.
 Overview
 --------
 
-In the Beryllium Release of Centinel, this framework enables SDN
+In this release of Centinel, this framework enables SDN
 applications/services to receive events from multiple streaming sources
 (e.g., Syslog, Thrift, Avro, AMQP, Log4j, HTTP/REST) and execute actions
 like network configuration/batch processing/real-time analytics. It also
@@ -78,11 +78,11 @@ Prerequisites
 
 1. Check whether Graylog is up and running and plugins deployed as
    mentioned in `installation
-   guide <http://opendaylight.readthedocs.io/en/stable-beryllium/getting-started-guide/index.html>`__.
+   guide <https://opendaylight.readthedocs.io/en/stable-boron/getting-started-guide/project-specific-guides/centinel.html>`__.
 
 2. Check whether HBase is up and respective tables and column families
    as mentioned in `installation
-   guide <http://opendaylight.readthedocs.io/en/stable-beryllium/getting-started-guide/index.html>`__
+   guide <https://opendaylight.readthedocs.io/en/stable-boron/getting-started-guide/project-specific-guides/centinel.html>`__
    are created.
 
 3. Check if apache flume is up and running.

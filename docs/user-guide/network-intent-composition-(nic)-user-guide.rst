@@ -257,7 +257,7 @@ Replace <Controller IP> based on your environment.
 Downloading and deploy Karaf distribution
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Get the Beryllium distribution.
+-  Get the Boron distribution.
 
 -  Unzip the downloaded zip distribution.
 

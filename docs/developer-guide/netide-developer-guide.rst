@@ -76,7 +76,7 @@ putting the following code in the *pom.xml* file.
         <version>${NETIDE_VERSION}</version>
     </dependency>
 
-The current stable version for NetIDE is ``0.1.0-Beryllium``.
+The current stable version for NetIDE is ``0.2.0-Boron``.
 
 Protocol specification
 ~~~~~~~~~~~~~~~~~~~~~~

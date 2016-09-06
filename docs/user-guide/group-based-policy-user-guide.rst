@@ -83,7 +83,7 @@ By thinking of **Intent Systems** in this way, it enables:
 It is important to show the overall philosophy of **GBP** as it sets the
 project’s direction.
 
-In the Beryllium release of OpenDaylight, **GBP** focused on **expressed
+In this release of OpenDaylight, **GBP** focused on **expressed
 intent**, **refactoring of how renderers consume and publish Subject
 Feature Definitions for multi-renderer support**.
 
@@ -120,7 +120,7 @@ resolution process.
 
 -  Endpoints:
 
-   Define concrete uniquely identifiable entities. In Beryllium,
+   Define concrete uniquely identifiable entities. In this release,
    examples could be a Docker container, or a Neutron port
 
 -  EndpointGroups:
@@ -184,7 +184,7 @@ There are two models in **GBP**:
 
 The *classifier* and *action* portions of the model can be thought of as
 hooks, with their definition provided by each *renderer* about its
-domain specific capabilities. In **GBP** Beryllium, there is one
+domain specific capabilities. In **GBP** for this release, there is one
 renderer, the *`OpenFlow Overlay renderer (OfOverlay). <#OfOverlay>`__*
 
 These hooks are filled with *definitions* of the types of *features* the
@@ -290,9 +290,9 @@ specific mapping, and the `OpenFlow Overlay renderer <#OfOverlay>`__
 looks as so:
 
 .. figure:: ./images/groupbasedpolicy/GBP_High-levelBerylliumArchitecture.png
-   :alt: GBP High Level Beryllium Architecture
+   :alt: GBP High Level Architecture
 
-   GBP High Level Beryllium Architecture
+   GBP High Level Architecture
 
 The major benefit of this architecture is that the mapping of the
 domain-specific-language is completely separate and independent of the
@@ -308,9 +308,9 @@ When another renderer is added, for instance, NetConf, the same policy
 can now be leveraged across NetConf devices simultaneously:
 
 .. figure:: ./images/groupbasedpolicy/GBP_High-levelExtraRenderer.png
-   :alt: GBP High Level Beryllium Architecture - adding a renderer
+   :alt: GBP High Level Architecture - adding a renderer
 
-   GBP High Level Beryllium Architecture - adding a renderer
+   GBP High Level Architecture - adding a renderer
 
 As other domain-specific mappings occur, they too can leverage the same
 renderers, as the renderers only need to implement the **GBP** access
@@ -318,9 +318,9 @@ and forwarding models, and the domain-specific mapping need only manage
 mapping to the access and forwarding models. For instance:
 
 .. figure:: ./images/groupbasedpolicy/High-levelBerylliumArchitectureEvolution2.png
-   :alt: GBP High Level Beryllium Architecture - adding a renderer
+   :alt: GBP High Level Architecture - adding a renderer
 
-   GBP High Level Beryllium Architecture - adding a renderer
+   GBP High Level Architecture - adding a renderer
 
 In summary, the **GBP** architecture:
 
@@ -496,7 +496,7 @@ consumer EndpointGroup and endpoints. The consumer matchers are:
 
 -  Consumer Endpoint Identification Constraint
 
-   Label based criteria for matching against endpoints. In Beryllium
+   Label based criteria for matching against endpoints. In this release
    this can be used to label endpoints based on IpPrefix.
 
 The second category is the provider matchers, which match against the
@@ -516,7 +516,7 @@ provider EndpointGroup and endpoints. The provider matchers are:
 
 -  Consumer Endpoint Identification Constraint
 
-   Label based criteria for matching against endpoints. In Beryllium
+   Label based criteria for matching against endpoints. In this release
    this can be used to label endpoints based on IpPrefix.
 
 Clauses have a list of subjects that apply when all the matchers in the
@@ -2467,7 +2467,7 @@ HTTP response is set to *allow* instead of chain:
 Demo/Development environment
 ----------------------------
 
-The **GBP** project for Beryllium has two demo/development environments.
+The **GBP** project for this release has two demo/development environments.
 
 -  Docker based GBP and GBP+SFC integration Vagrant environment
 

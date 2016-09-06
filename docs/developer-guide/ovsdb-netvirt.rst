@@ -87,7 +87,7 @@ The OVSDB project generates the following Karaf modules:
 
 -  ovsdb.library-karaf — the OVSDB library reference implementation
 
--  ovsdb.openstack.net-virt-sfc-karaf  — openflow service function
+-  ovsdb.openstack.net-virt-sfc-karaf  — OpenFlow service function
    chaining
 
 -  ovsdb.hwvtepsouthbound-karaf — the hw\_vtep schema southbound plugin
@@ -138,7 +138,7 @@ Building and running OVSDB
 
 -  Maven 3+
 
-Building a Karaf feature and deploying it in an Opendaylight Karaf distribution
+Building a Karaf feature and deploying it in an OpenDaylight Karaf distribution
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. From the root ovsdb/ directory, run **mvn clean install**.
@@ -169,7 +169,7 @@ Running Karaf feature from OVSDB’s Karaf distribution
 
     bin/karaf
 
-1. Once karaf has started, and you see the Opendaylight ascii art in the
+1. Once karaf has started, and you see the OpenDaylight ascii art in the
    console, the last step is to start the OVSDB plugin framework with
    the following command in the karaf console:
 
@@ -347,7 +347,7 @@ Service functions.
 Each of the SouthBound Plugins serves a different purpose, with some
 overlapping. For example, the OpenFlow plugin might serve the Data-Plane
 needs of an OVS element, while the OVSDB plugin can serve the management
-plane needs of the same OVS element. As the Openflow Plugin talks
+plane needs of the same OVS element. As the OpenFlow Plugin talks
 OpenFlow protocol with the OVS element, the OVSDB plugin will use OVSDB
 schema over JSON-RPC transport.
 
@@ -387,7 +387,7 @@ Connection service
 ~~~~~~~~~~~~~~~~~~
 
 | One of the primary services that most southbound plugins provide in
-  Opendaylight a Connection Service. The service provides protocol
+  OpenDaylight a Connection Service. The service provides protocol
   specific connectivity to network elements, and supports the
   connectivity management services as specified by the OpenDaylight
   Connection Manager. The connectivity services include:
@@ -576,7 +576,7 @@ OpenStack presentation mentioned earlier.
 Using the port security groups of Neutron, one can add rules that
 restrict the network access of the tenants. The OVSDB Neutron
 integration checks the port security rules configured, and apply them by
-means of openflow rules.
+means of OpenFlow rules.
 
 Through the ML2 interface, Neutron security rules are available in the
 port object, following this scope: Neutron Port → Security Group →
@@ -1415,10 +1415,10 @@ OVSDB Model
 
 The OVSDB Southbound MD-SAL operates using a YANG model which is based
 on the abstract topology node model found in the `network topology
-model <https://github.com/opendaylight/yangtools/blob/stable/lithium/model/ietf/ietf-topology/src/main/yang/network-topology%402013-10-21.yang>`__.
+model <https://github.com/opendaylight/yangtools/blob/stable/boron/model/ietf/ietf-topology/src/main/yang/network-topology%402013-10-21.yang>`__.
 
 The augmentations for the OVSDB Southbound MD-SAL are defined in the
-`ovsdb.yang <https://github.com/opendaylight/ovsdb/blob/stable/lithium/southbound/southbound-api/src/main/yang/ovsdb.yang>`__
+`ovsdb.yang <https://github.com/opendaylight/ovsdb/blob/stable/boron/southbound/southbound-api/src/main/yang/ovsdb.yang>`__
 file.
 
 There are three augmentations:

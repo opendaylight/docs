@@ -389,7 +389,7 @@ purpose is to create new overlay links based on the links from the
 underlay topologies and underlay items from overlay items. The required
 information for Link Computation is provided via the Link Computation
 model in
-(`topology-link-computation.yang <https://git.opendaylight.org/gerrit/gitweb?p=topoprocessing.git;a=blob;f=topoprocessing-api/src/main/yang/topology-link-computation.yang;hb=refs/heads/stable/beryllium>`__).
+(`topology-link-computation.yang <https://git.opendaylight.org/gerrit/gitweb?p=topoprocessing.git;a=blob;f=topoprocessing-api/src/main/yang/topology-link-computation.yang;hb=refs/heads/stable/boron>`__).
 
 Link Computation Functionality
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

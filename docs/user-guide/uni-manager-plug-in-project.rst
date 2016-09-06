@@ -5,7 +5,7 @@ Overview
 --------
 
 The version of the UNI Manager (UNIMgr) plug-in included in OpenDaylight
-Beryllium release is experimental, serving as a proof-of-concept (PoC)
+Boron release is experimental, serving as a proof-of-concept (PoC)
 for using features of OpenDaylight to provision networked elements with
 attributes satisfying Metro Ethernet Forum (MEF) requirements for
 delivery of Carrier Ethernet service. This initial version of UNIMgr
@@ -38,7 +38,7 @@ The YANG module used to develop the PoC UNIMgr plug-in is
 cl-unimgr-mef.yang. A copy of this module is available in the
 odl-unimgr-api bundle of the UNIMgr project.
 
-Limitations of the PoC version of UNI Manager in OpenDaylight Beryllium
+Limitations of the PoC version of UNI Manager in OpenDaylight Boron
 include those listed below: \* Uses only OVSDB southbound interface of
 OpenDaylight \* Only uses UNI ID, IP Address, and speed UNI attributes
 \* Only uses a subset of EVC per UNI attributes \* Does not use MEF

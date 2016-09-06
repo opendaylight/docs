@@ -5,7 +5,7 @@ This document is for the user to install the artifacts that are needed
 for using Centinel functionality in the OpenDaylight by enabling the
 default Centinel feature. Centinel is a distributed reliable framework
 for collection, aggregation and analysis of streaming data which is
-added in OpenDaylight Beryllium Release.
+added in this OpenDaylight release.
 
 Overview
 --------
@@ -17,7 +17,7 @@ Spark, Hive). This framework enables SDN applications/services to
 receive events from multiple streaming sources
 (e.g., Syslog, Thrift, Avro, AMQP, Log4j, HTTP/REST).
 
-In Beryllium, we develop a "Log Service" and plug-in for log analyzer (e.g., Graylog).
+In this release, we develop a "Log Service" and plug-in for log analyzer (e.g., Graylog).
 The Log service process real time events coming from log analyzer.
 Additionally, we provide stream collector (Flume- and Sqoop-based) that collects logs
 from OpenDaylight and sinks them to persistence service (integrated with TSDR).
@@ -330,7 +330,7 @@ Check the ``../data/log/karaf.log`` for any exception related to Centinel relate
 Upgrading From a Previous Release
 ---------------------------------
 
-Beryllium being the first release supporting Centinel functionality, only fresh installation is possible.
+Only fresh installation is supported.
 
 Uninstalling Centinel
 ---------------------
