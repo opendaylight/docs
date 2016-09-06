@@ -1,0 +1,51 @@
+=== Cluster singleton approach in plugin
+
+==== Basics
+
+===== Description
+
+The existing OpenDaylight service deployment model assumes symmetric clusters, where all services are activated on all nodes in the cluster. However, many services require that there is a single active service instance per cluster. We call such services 'singleton services'. The Entity Ownership Service (EOS) represents the base Leadership choice for one Entity instance. Every Cluster Singleton service *type* must have its own Entity and every Cluster Singleton service *instance* must have its own Entity Candidate. Every registered Entity Candidate should be notified about its actual role. All this "work" is done by MD-SAL so the Openflowplugin need "only" to register as service in *SingletonClusteringServiceProvider* given by MD-SAL.
+
+===== Change against using EOS service listener
+
+In this new clustering singleton approach plugin uses API from the MD-SAL project: SingletonClusteringService which comes with three methods.
+
+    instantiateServiceInstance()
+    closeServiceInstance()
+    getIdentifier()
+
+This service has to be registered to a SingletonClusteringServiceProvider from MD-SAL which take care if mastership is changed in cluster environment. 
+
+First method in SingletonClusteringService is being called when the cluster node becomes a MASTER. Second is being called when status changes to SLAVE or device is disconnected from cluster. Last method plugins returns NodeId as ServiceGroupIdentifier
+Startup after device is connected
+
+On the start up the plugin we need to initialize first four managers for each working area providing information and services
+
+* Device manager
+* RPC manager
+* Role manager
+* Statistics manager
+
+After connection the device the listener Device manager get the event and start up to creating the context for this connection.
+Startup after device connection
+
+Services are managed by SinlgetonClusteringServiceProvider from MD-SAL project. So in startup we simply create a instance of LifecycleService and register all contexts into it.
+
+==== Role change
+
+Plugin is no longer registered as Entity Ownership Service (EOS) listener therefore does not need to and cannot respond on EOS ownership changes.
+
+===== Service start
+
+Services start asynchronously but the start is managed by LifecycleService. If something goes wrong LifecycleService stop starting services in context and this speeds up the reconnect process. But the services haven't changed and plugin need to start all this:
+
+*    Activating transaction chain manager
+*    Initial gathering of device statistics
+*    Initial submit to DS
+*    Sending role MASTER to device
+*    RPC services registration
+*    Statistics gathering start
+
+===== Service stop
+
+If closeServiceInstance occurred plugin just simply try to store all unsubmitted transactions and close the transaction chain manager, stop RPC services, stop Statistics gathering and after that all unregister txEntity from EOS. 
