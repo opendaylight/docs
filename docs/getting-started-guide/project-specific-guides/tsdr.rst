@@ -43,7 +43,7 @@ Once OpenDaylight distribution is up, from karaf console install the HSQLDB data
 
    feature:install odl-tsdr-hsqldb-all
 
-This will install hsqldb related dependency features (and can take sometime) as well as openflow statistics collector before returning control to the console.
+This will install hsqldb related dependency features (and can take sometime) as well as OpenFlow statistics collector before returning control to the console.
 
 
 Installing HBase Data Store
@@ -54,7 +54,7 @@ Installing TSDR HBase Data Store contains two steps:
 #. Installing HBase server, and
 #. Installing TSDR HBase Data Store features from ODL Karaf console.
 
-In Beryllium, we only support HBase single node running together on the same machine as OpenDaylight. Therefore, follow the steps to download and install HBase server onto the same machine as where OpenDaylight is running:
+In this release, we only support HBase single node running together on the same machine as OpenDaylight. Therefore, follow the steps to download and install HBase server onto the same machine as where OpenDaylight is running:
 
 #. Create a folder in Linux operating system for the HBase server. For example, create an hbase directory under ``/usr/lib``::
 
@@ -109,7 +109,7 @@ Installing TSDR Cassandra Data Store contains two steps:
 #. Installing Cassandra server, and
 #. Installing TSDR Cassandra Data Store features from ODL Karaf console.
 
-In Beryllium, we only support Cassadra single node running together on the same machine as OpenDaylight. Therefore, follow these steps to download and install Cassandra server onto the same machine as where OpenDaylight is running:
+In this release, we only support Cassadra single node running together on the same machine as OpenDaylight. Therefore, follow these steps to download and install Cassandra server onto the same machine as where OpenDaylight is running:
 
 #. Install Cassandra (latest stable version) by downloading the zip file and untar the tar ball to cassandra/ directory on the testing machine::
 
@@ -138,12 +138,12 @@ Verifying your Installation
 
 After the TSDR data store is installed, no matter whether it is HBase data store, Cassandra data store, or HSQLDB data store, the user can verify the installation with the following steps.
 
-#. Verify if the following two tsdr commands are available from Karaf console::
+#. Verify if the following two TSDR commands are available from Karaf console::
 
       tsdr:list
       tsdr:purgeAll
 
-#. Verify if openflow statisitcs data can be received successfully:
+#. Verify if OpenFlow statistics data can be received successfully:
 
    #. Run "feature:install odl-tsdr-openflow-statistics-collector" from Karaf.
 

@@ -25,7 +25,7 @@ below.
   below are the ones you’re most likely to use when creating your network
   environment.
 
-  As a short example of installing a Karaf feature, OpenDaylight Beryllium
+  As a short example of installing a Karaf feature, OpenDaylight
   offers Application Layer Traffic Optimization (ALTO). The Karaf feature to
   install ALTO is odl-alto-all. On the Karaf console, the command to install it
   is:

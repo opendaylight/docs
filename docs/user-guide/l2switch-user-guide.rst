@@ -299,7 +299,7 @@ Configuring L2Switch Main
 Running the L2Switch project
 ----------------------------
 
-To run the L2 Switch inside the Lithium OpenDaylight distribution simply
+To run the L2 Switch inside the OpenDaylight distribution simply
 install the ``odl-l2switch-switch-ui`` feature;
 
 ::

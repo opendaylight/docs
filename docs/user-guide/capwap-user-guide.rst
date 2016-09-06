@@ -25,7 +25,7 @@ operational datastore.
 Scope of CAPWAP Project
 -----------------------
 
-In the Lithium release, CAPWAP project aims to only detect the WTPs and
+In this release, CAPWAP project aims to only detect the WTPs and
 store their basic attributes in the operational data store, which is
 accessible via REST and JAVA APIs.
 
@@ -40,7 +40,7 @@ odl-capwap-ac-rest
 Configuring CAPWAP
 ------------------
 
-As of Lithium, there are no configuration requirements.
+As of this release, there are no configuration requirements.
 
 Administering or Managing CAPWAP
 --------------------------------

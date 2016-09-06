@@ -75,7 +75,7 @@ Install the Next Objective:
 Flow mod driver API
 ~~~~~~~~~~~~~~~~~~~
 
-The Beryllium release includes a flow mod driver for the HP 3800. This
+This release includes a flow mod driver for the HP 3800. This
 driver adjusts the flows and push the same to the device. This API takes
 the flow to be adjusted as input and displays the adjusted flow as
 output in the REST output container. Here is the REST API to adjust and

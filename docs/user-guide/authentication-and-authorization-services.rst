@@ -59,13 +59,6 @@ with
 
 Then restart the karaf process.
 
-.. note::
-
-    This is a change from the Lithium release, in which
-    “etc/org.opendaylight.aaa.authn.cfg” was edited to set
-    “authEnabled=false”. Please use the “shiro.ini” mechanism to disable
-    AAA going forward.
-
 How application developers can leverage AAA to provide servlet security
 -----------------------------------------------------------------------
 
@@ -128,7 +121,7 @@ ODL Contains Four Implementations
 -  TokenAuthRealm
 
    -  An AuthorizingRealm built to bridge the Shiro-based AAA service
-      with the Lithium h2-based AAA implementation.
+      with the h2-based AAA implementation.
 
    -  Exposes a RESTful web service to manipulate IdM policy on a
       per-node basis. If identical AAA policy is desired across a
@@ -627,7 +620,7 @@ Shiro-Based Authorization
 OpenDaylight AAA has support for Role Based Access Control based on the
 Apache Shiro permissions system. Configuration of the authorization
 system is done offline; authorization currently cannot be configured
-after the controller is started. Thus, Authorization in the Beryllium
+after the controller is started. Thus, Authorization in this
 release is aimed towards supporting coarse-grained security policies,
 with the aim to provide more robust configuration capabilities in the
 future. Shiro-based Authorization is documented on the Apache Shiro
