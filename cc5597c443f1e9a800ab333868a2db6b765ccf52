@@ -1,4 +1,51 @@
 {
   "pushCert": "certificate version 0.1\npusher F566C9B1 1473193378 -0400\npushee ssh://git.opendaylight.org:29418/docs.git\nnonce 1473193378-A001DA63A186218A7A18523D682777913384258E\n\n0000000000000000000000000000000000000000 cc5597c443f1e9a800ab333868a2db6b765ccf52 refs/for/master\n-----BEGIN PGP SIGNATURE-----\nVersion: GnuPG v2\n\niQIcBAABCAAGBQJXzyWiAAoJEF3VDEv1ZsmxScwQAKhECqdkUDOnyVDO69avHr9I\nPxAtyha71OqzFg1nzm2oDCTEsVG5JZ04hqg7DrqS0smCLdfLatbpxJ/2rVX8IcRU\n9sDMfhfG9GIDsMHrY5b90DkEBJhVRGuTwFlF5leA4Ep+1naAWxPKVAzn+ATDkypk\n3JJKwa4b3f8SF7RRUqcgZQNaJy7/vrNPzMPR4h6HgSiQga2UHRvskiQO4tqVHQ10\n3haMTIABmJEiHhx9t1v8sN2PwfwQPIZiLnSebClE2psCDJUsi7gfFXyHjool4H5M\ncLDNaSuqmbxoJ5BHg3s0HbCk3g9lk9idmeHZhThijGdNMusApm6FxIh8ibmR2DCT\nbozDyVFNi9Wa3/izje6vVhzBDmMmHPZ6tTTYCXuutyHX1B30TiSluzw25VYPj8Y5\n0FicnSfMU3ZnZ0i91WG6X0cANvum2M+KA6Iw3D2v8xF3sF2EieRAhrnICQcFeOVb\nOxTJjU8oiPJ4o2cKpTYNTe1pAVBPMbGpKbL1Sw7uVU2s4KF2DgAQACtKJG2YaYBZ\nBdHrtg6VoDfVUpFbDfLZPwHJiy+YrDuvbd2RKU7HJC8V1YOp+QebPF1QZSTSXD/A\n7j5RKBzvQyhYc3IG0tBn+1++whDlT+NLmdmNOtmcOV66CV7DLma9I0QCIKrZcb9U\n5/H3mmVtJNfxY8BZGuvi\n\u003dCwqW\n-----END PGP SIGNATURE-----\n",
-  "comments": []
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a6b29fe_45ebcd12",
+        "filename": "docs/getting-started-guide/project-specific-guides/vtn.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-09-06T20:24:53Z",
+      "side": 1,
+      "message": "Is 6.2.0 the right version?",
+      "range": {
+        "startLine": 79,
+        "startChar": 48,
+        "endLine": 79,
+        "endChar": 53
+      },
+      "revId": "cc5597c443f1e9a800ab333868a2db6b765ccf52",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_85f16503",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-vtn.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-09-06T20:24:53Z",
+      "side": 1,
+      "message": "Is this still right? Up to date?",
+      "range": {
+        "startLine": 247,
+        "startChar": 72,
+        "endLine": 247,
+        "endChar": 79
+      },
+      "revId": "cc5597c443f1e9a800ab333868a2db6b765ccf52",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
 }
