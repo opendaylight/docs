@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "7a6b29fe_9860aba6",
+        "filename": "docs/developer-guide/virtual-tenant-network-(vtn).rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2016-09-07T15:17:24Z",
+      "side": 1,
+      "message": "Should be:\n\nhttps://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/apidocs/index.html",
+      "revId": "87bfd056aaac725215e7fd4bfd92ac2367673ede",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a6b29fe_186adbb2",
         "filename": "docs/developer-guide/virtual-tenant-network-(vtn).rst",
         "patchSetId": 5
@@ -25,6 +42,47 @@
     },
     {
       "key": {
+        "uuid": "7a6b29fe_f849df31",
+        "filename": "docs/developer-guide/virtual-tenant-network-(vtn).rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2016-09-07T15:17:24Z",
+      "side": 1,
+      "message": "Should be:\n\nhttps://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/apidocs",
+      "parentUuid": "7a6b29fe_186adbb2",
+      "range": {
+        "startLine": 114,
+        "startChar": 67,
+        "endLine": 114,
+        "endChar": 68
+      },
+      "revId": "87bfd056aaac725215e7fd4bfd92ac2367673ede",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_b85be7f4",
+        "filename": "docs/developer-guide/virtual-tenant-network-(vtn).rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2016-09-07T15:17:24Z",
+      "side": 1,
+      "message": "Should be:\n\nhttps://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/apidocs/index.html",
+      "revId": "87bfd056aaac725215e7fd4bfd92ac2367673ede",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a6b29fe_5860d3ce",
         "filename": "docs/getting-started-guide/project-specific-guides/vtn.rst",
         "patchSetId": 5
@@ -42,6 +100,91 @@
     },
     {
       "key": {
+        "uuid": "7a6b29fe_b812c706",
+        "filename": "docs/user-guide/virtual-tenant-network-(vtn).rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2016-09-07T15:17:24Z",
+      "side": 1,
+      "message": "Should be:\n\nhttps://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/apidocs/index.html",
+      "revId": "87bfd056aaac725215e7fd4bfd92ac2367673ede",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_d824e361",
+        "filename": "docs/user-guide/virtual-tenant-network-(vtn).rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 1257,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2016-09-07T15:17:24Z",
+      "side": 1,
+      "message": "Should be:\n\nhttps://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn.html",
+      "revId": "87bfd056aaac725215e7fd4bfd92ac2367673ede",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_b8292739",
+        "filename": "docs/user-guide/virtual-tenant-network-(vtn).rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 1324,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2016-09-07T15:17:24Z",
+      "side": 1,
+      "message": "Should be:\n\nhttps://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn.html",
+      "revId": "87bfd056aaac725215e7fd4bfd92ac2367673ede",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_f81eff0a",
+        "filename": "docs/user-guide/virtual-tenant-network-(vtn).rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 1332,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2016-09-07T15:17:24Z",
+      "side": 1,
+      "message": "Should be:\n\nhttps://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-vbridge.html",
+      "revId": "87bfd056aaac725215e7fd4bfd92ac2367673ede",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_98d54b1e",
+        "filename": "docs/user-guide/virtual-tenant-network-(vtn).rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 1340,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2016-09-07T15:17:24Z",
+      "side": 1,
+      "message": "Should be:\n\nhttps://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-vlan-map.html",
+      "revId": "87bfd056aaac725215e7fd4bfd92ac2367673ede",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a6b29fe_385d1716",
         "filename": "docs/user-guide/virtual-tenant-network-(vtn).rst",
         "patchSetId": 5
@@ -53,6 +196,58 @@
       "writtenOn": "2016-09-07T15:03:19Z",
       "side": 1,
       "message": "It looks like you didn\u0027t get all of the links...",
+      "revId": "87bfd056aaac725215e7fd4bfd92ac2367673ede",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_d8db434d",
+        "filename": "docs/user-guide/virtual-tenant-network-(vtn).rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 1348,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2016-09-07T15:17:24Z",
+      "side": 1,
+      "message": "Should be:\n\nhttps://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-vbridge.html",
+      "parentUuid": "7a6b29fe_385d1716",
+      "revId": "87bfd056aaac725215e7fd4bfd92ac2367673ede",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_b8e007fb",
+        "filename": "docs/user-guide/virtual-tenant-network-(vtn).rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 1356,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2016-09-07T15:17:24Z",
+      "side": 1,
+      "message": "Should be:\n\nhttps://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn-vlan-map.html",
+      "revId": "87bfd056aaac725215e7fd4bfd92ac2367673ede",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_f8e55f09",
+        "filename": "docs/user-guide/virtual-tenant-network-(vtn).rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 1455,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2016-09-07T15:17:24Z",
+      "side": 1,
+      "message": "Should be:\n\nhttps://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/models/vtn.html",
       "revId": "87bfd056aaac725215e7fd4bfd92ac2367673ede",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
