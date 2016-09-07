@@ -37,6 +37,7 @@ Project-specific Developer Guides
    netide-developer-guide
    neutron-service-developer-guide
    neutron-northbound
+   next-developer-guide
    odl-parent-developer-guide
    ocp-plugin-developer-guide
    odl-sdni-developer-guide
