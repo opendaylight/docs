@@ -58,6 +58,8 @@ Project-specific Developer Guides
    ttp-cli-tools-developer-guide
    uni-manager-plug-in-developer-guide
    unified-secure-channel
+   usecplugin-aaa-developer-guide
+   usecplugin-openflow-developer-guide
    virtual-tenant-network-(vtn)
    yang-tools
    yang-push-developer-guide
