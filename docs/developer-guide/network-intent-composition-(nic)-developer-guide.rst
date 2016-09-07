@@ -17,7 +17,7 @@ The Network Intent Composition (NIC) provides four features:
 -  odl-nic-console: Provides a karaf CLI extension for intent CRUD
    operations and mapping service operations.
 
--  odl-nic-renderer-of - Generic Openflow Renderer.
+-  odl-nic-renderer-of - Generic OpenFlow Renderer.
 
 -  odl-nic-renderer-vtn - a feature that transforms an intent to a
    network modification using the VTN project
@@ -263,7 +263,7 @@ illustrated in the diagram below:
    MPLS VPN Service Diagram
 
 where PE (Provider Edge) and P (Provider) switches are managed by
-Opendaylight. In NIC’s terminology the endpoints are the PE switches.
+OpenDaylight. In NIC’s terminology the endpoints are the PE switches.
 There could be many P switches between the PEs.
 
 In order for NIC to recognize endpoints as MPLS endpoints, the user is
@@ -277,7 +277,7 @@ mapping service to include the below properties:
 3. Switch-Port: Ingress (or Egress) for source (or Destination) endpoint
    of the source (or Destination) PE
 
-An intent:add between two MPLS endpoints renders Openflow rules for: 1.
+An intent:add between two MPLS endpoints renders OpenFlow rules for: 1.
 push/pop labels to the MPLS endpoint nodes after an IPv4 Prefix match.
 2. forward to port rule after MPLS label match to all the switches that
 form the shortest path between the endpoints (calculated using Dijkstra
@@ -414,7 +414,7 @@ How to use it?
        intent:add -f uva -t eur -a ALLOW
        intent:add -f eur -t uva -a ALLOW
 
-5. Verify by running ovs command on mininet if the flows were pushed
+5. Verify by running ovs-ofctl command on mininet if the flows were pushed
    correctly to the nodes that form the shortest path.
 
    Example:

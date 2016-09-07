@@ -5,14 +5,14 @@ OpenStack with OVSDB
 
 * On the control host, `Download
   the latest OpenDaylight release <ODL_Downloads_>`_ (at the time of writing,
-  this is Beryllium-SR2)
+  this is Boron)
 * Uncompress it as root, and start OpenDaylight (you can start OpenDaylight
   by running karaf directly, but exiting from the shell will shut it down):
 
 .. code-block:: bash
 
-    tar xvfz distribution-karaf-0.4.2-Beryllium-SR2.tar.gz
-    cd distribution-karaf-0.4.2-Beryllium-SR2
+    tar xvfz distribution-karaf-0.5.0-Boron.tar.gz
+    cd distribution-karaf-0.5.0-Boron
     ./bin/start # Start OpenDaylight as a server process
 
 * Connect to the Karaf shell, and install the odl-ovsdb-openstack bundle,

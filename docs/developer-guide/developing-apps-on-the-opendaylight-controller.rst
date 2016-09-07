@@ -39,7 +39,7 @@ This example requires the following.
 
       ::
 
-          cp -n ~/.m2/settings.xml{,.orig} ; \wget -q -O - https://raw.githubusercontent.com/opendaylight/odlparent/stable/lithium/settings.xml > ~/.m2/settings.xml
+          cp -n ~/.m2/settings.xml{,.orig} ; \wget -q -O - https://raw.githubusercontent.com/opendaylight/odlparent/stable/boron/settings.xml > ~/.m2/settings.xml
 
 .. note::
 

@@ -360,7 +360,7 @@ a client and two servers, then performing a failover between the two
 Prerequisites
 ^^^^^^^^^^^^^
 
--  **OpenDaylight Beryllium**
+-  **OpenDaylight Boron**
 
 -  **The Postman Chrome App**: the most convenient way to follow along
    this tutorial is to use the `Postman Chrome
@@ -371,7 +371,7 @@ Prerequisites
    file. You can import this file to Postman by clicking *Import* at the
    top, choosing *Download from link* and then entering the following
    URL:
-   ``https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=blob_plain;f=resources/tutorial/Beryllium_Tutorial.json.postman_collection;hb=refs/heads/stable/beryllium``.
+   ``https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=blob_plain;f=resources/tutorial/Beryllium_Tutorial.json.postman_collection;hb=refs/heads/stable/boron``.
    Alternatively, you can save the file on your machine, or if you have
    the repository checked out, you can import from there. You will need
    to create a new Postman Environment and define some variables within:
@@ -422,8 +422,8 @@ The below steps use the command line tool cURL to talk to the LISP Flow
 Mapping RPC REST API. This is so that you can see the actual request
 URLs and body content on the page.
 
-1.  Install and run OpenDaylight Beryllium release on the controller VM.
-    Please follow the general OpenDaylight Beryllium Installation Guide
+1.  Install and run OpenDaylight Boron release on the controller VM.
+    Please follow the general OpenDaylight Boron Installation Guide
     for this step. Once the OpenDaylight controller is running install
     the *odl-lispflowmapping-msmr* feature from the Karaf CLI:
 
@@ -463,10 +463,10 @@ URLs and body content on the page.
 
     .. note::
 
-        The ``resources/tutorial`` directory in the *stable/beryllium*
+        The ``resources/tutorial`` directory in the *stable/boron*
         branch of the project git repository has the files used in the
         tutorial `checked
-        in <https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=tree;f=resources/tutorial;hb=refs/heads/stable/beryllium>`__,
+        in <https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=tree;f=resources/tutorial;hb=refs/heads/stable/boron>`__,
         so you can just copy the files to ``/root/lispd.conf`` on the
         respective VMs. You will also find the JSON files referenced
         below in the same directory.

@@ -159,8 +159,8 @@ Launch Karaf in Linux console:
 
 ::
 
-    cd <Beryllium_controller_directory>/bin
-    (for example, cd distribution-karaf-x.x.x-Beryllium/bin)
+    cd <Boron_controller_directory>/bin
+    (for example, cd distribution-karaf-x.x.x-Boron/bin)
 
 ::
 

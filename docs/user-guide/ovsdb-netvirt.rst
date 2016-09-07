@@ -70,13 +70,13 @@ Security groups
 
 The security group in openstack helps to filter packets based on
 policies configured. The current implementation in openstack uses
-iptables to realize security groups. In Opendaylight instead of iptable
+iptables to realize security groups. In OpenDaylight instead of iptable
 rules, ovs flows are used. This will remove the many layers of
 bridges/ports required in iptable implementation.
 
 The current rules are applied on the basis of the following attributes:
 ingress/egress, protocol, port range, and prefix. In the pipeline, table
-40 is used for egress acl and table 90 for ingress acl rules.
+40 is used for egress ACL and table 90 for ingress ACL rules.
 
 Stateful Implementation
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -99,19 +99,19 @@ flag set. Below are the states we are interested in:
 
 ::
 
-    -trk - The packet was never send to netfilter framework
+    -trk - The packet was never send to netfilter framework
 
 ::
 
-    +trk+est - It is already known and connection which was allowed previously, 
-    pass it to the next table.
+    +trk+est - It is already known and connection which was allowed previously, 
+    pass it to the next table.
 
 ::
 
-    +trk+new - This is a new connection. So if there is a specific rule in the 
-    table which allows this traffic with a commit action an entry will be made 
-    in the netfilter framework. If there is no  specific rule to allow this 
-    traffic the packet will be dropped.
+    +trk+new - This is a new connection. So if there is a specific rule in the 
+    table which allows this traffic with a commit action an entry will be made 
+    in the netfilter framework. If there is no  specific rule to allow this 
+    traffic the packet will be dropped.
 
 So, by default, a packet is be dropped unless there is a rule to allow
 the packet.
@@ -145,38 +145,38 @@ rules are
 
    ::
 
-       cookie=0x0, duration=36.848s, table=90, n_packets=2, n_bytes=717,
+       cookie=0x0, duration=36.848s, table=90, n_packets=2, n_bytes=717,
        priority=61006,udp,dl_src=fa:16:3e:a1:f9:d0,
-       tp_src=67,tp_dst=68 actions=goto_table:100
+       tp_src=67,tp_dst=68 actions=goto_table:100
 
    ::
 
-       cookie=0x0, duration=36.566s, table=90, n_packets=0, n_bytes=0, 
+       cookie=0x0, duration=36.566s, table=90, n_packets=0, n_bytes=0, 
        priority=61006,udp6,dl_src=fa:16:3e:a1:f9:d0,
-       tp_src=547,tp_dst=546 actions=goto_table:100
+       tp_src=547,tp_dst=546 actions=goto_table:100
 
 -  Allow DHCP client traffic egress.
 
    ::
 
-       cookie=0x0, duration=2165.596s, table=40, n_packets=2, n_bytes=674, 
-       priority=61012,udp,tp_src=68,tp_dst=67 actions=goto_table:50
+       cookie=0x0, duration=2165.596s, table=40, n_packets=2, n_bytes=674, 
+       priority=61012,udp,tp_src=68,tp_dst=67 actions=goto_table:50
 
    ::
 
-       cookie=0x0, duration=2165.513s, table=40, n_packets=0, n_bytes=0, 
-       priority=61012,udp6,tp_src=546,tp_dst=547 actions=goto_table:50
+       cookie=0x0, duration=2165.513s, table=40, n_packets=0, n_bytes=0, 
+       priority=61012,udp6,tp_src=546,tp_dst=547 actions=goto_table:50
 
 -  Prevent DHCP server traffic from the vm port.(DHCP Spoofing)
 
    ::
 
-       cookie=0x0, duration=34.711s, table=40, n_packets=0, n_bytes=0, 
+       cookie=0x0, duration=34.711s, table=40, n_packets=0, n_bytes=0, 
        priority=61011,udp,in_port=2,tp_src=67,tp_dst=68 actions=drop
 
    ::
 
-       cookie=0x0, duration=34.519s, table=40, n_packets=0, n_bytes=0, 
+       cookie=0x0, duration=34.519s, table=40, n_packets=0, n_bytes=0, 
        priority=61011,udp6,in_port=2,tp_src=547,tp_dst=546 actions=drop
 
 Arp rules
@@ -187,13 +187,13 @@ port.
 
 ::
 
-    cookie=0x0, duration=35.015s, table=40, n_packets=10, n_bytes=420, 
+    cookie=0x0, duration=35.015s, table=40, n_packets=10, n_bytes=420, 
     priority=61010,arp,arp_sha=fa:16:3e:93:88:60 actions=goto_table:50
 
 ::
 
-    cookie=0x0, duration=35.582s, table=90, n_packets=1, n_bytes=42, 
-    priority=61010,arp,arp_tha=fa:16:3e:93:88:60 actions=goto_table:100
+    cookie=0x0, duration=35.582s, table=90, n_packets=1, n_bytes=42, 
+    priority=61010,arp,arp_tha=fa:16:3e:93:88:60 actions=goto_table:100
 
 Conntrack rules
 '''''''''''''''
@@ -216,32 +216,32 @@ leverage it.
 
    ::
 
-       cookie=0x0, duration=35.015s table=40,priority=61021,in_port=3,
+       cookie=0x0, duration=35.015s table=40,priority=61021,in_port=3,
        ct_state=-trk,action=ct"("table=0")"
 
    ::
 
-       cookie=0x0, duration=35.015s table=40,priority=61020,in_port=3,
+       cookie=0x0, duration=35.015s table=40,priority=61020,in_port=3,
        ct_state=+trk+est,action=goto_table:50
 
    ::
 
-       cookie=0x0, duration=35.015s table=40,priority=36002,in_port=3,
+       cookie=0x0, duration=35.015s table=40,priority=36002,in_port=3,
        ct_state=+new,actions=drop
 
    ::
 
-       cookie=0x0, duration=35.015s table=90,priority=61022,
+       cookie=0x0, duration=35.015s table=90,priority=61022,
        dl_dst=fa:16:3e:0d:8d:21,ct_state=+trk+est,action=goto_table:100
 
    ::
 
-       cookie=0x0, duration=35.015s table=90,priority=61021,
+       cookie=0x0, duration=35.015s table=90,priority=61021,
        dl_dst=fa:16:3e:0d:8d:21,ct_state=-trk,action=ct"("table=0")"
 
    ::
 
-       cookie=0x0, duration=35.015s table=90,priority=36002,
+       cookie=0x0, duration=35.015s table=90,priority=36002,
        dl_dst=fa:16:3e:0d:8d:21,ct_state=+new,actions=drop
 
 TCP SYN Rule
@@ -255,7 +255,7 @@ Custom Security Groups
 
 ::
 
-       User can add security groups in openstack via command line or UI. When we associate this security group with a vm the flows related to each security group will be added in the related tables. A preconfigured security group called the default security group is available in neutron db. 
+       User can add security groups in openstack via command line or UI. When we associate this security group with a vm the flows related to each security group will be added in the related tables. A preconfigured security group called the default security group is available in neutron db. 
 
 Stateful
 ''''''''
@@ -269,21 +269,21 @@ forwarded to next table.
 
 ::
 
-    cookie=0x0, duration=202.516s, table=40, n_packets=0, n_bytes=0,
+    cookie=0x0, duration=202.516s, table=40, n_packets=0, n_bytes=0,
     priority=61007,ct_state=+new+trk,icmp,dl_src=fa:16:3e:ee:a5:ec,
-    nw_dst=0.0.0.0/24,icmp_type=2,icmp_code=4 actions=ct(commit),goto_table:50
+    nw_dst=0.0.0.0/24,icmp_type=2,icmp_code=4 actions=ct(commit),goto_table:50
 
 ::
 
-    cookie=0x0, duration=60.701s, table=90, n_packets=0, n_bytes=0, 
+    cookie=0x0, duration=60.701s, table=90, n_packets=0, n_bytes=0, 
     priority=61007,ct_state=+new+trk,udp,dl_dst=fa:16:3e:22:59:2f,
-    nw_src=10.100.5.3,tp_dst=2222 actions=ct(commit),goto_table:100
+    nw_src=10.100.5.3,tp_dst=2222 actions=ct(commit),goto_table:100
 
 ::
 
-    cookie=0x0, duration=58.988s, table=90, n_packets=0, n_bytes=0, 
+    cookie=0x0, duration=58.988s, table=90, n_packets=0, n_bytes=0, 
     priority=61007,ct_state=+new+trk,tcp,dl_dst=fa:16:3e:22:59:2f,
-    nw_src=10.100.5.3,tp_dst=1111 actions=ct(commit),goto_table:100
+    nw_src=10.100.5.3,tp_dst=1111 actions=ct(commit),goto_table:100
 
 Stateless
 '''''''''
@@ -294,20 +294,20 @@ and commit action will be missing.
 
 ::
 
-    cookie=0x0, duration=13211.171s, table=40, n_packets=0, n_bytes=0, 
+    cookie=0x0, duration=13211.171s, table=40, n_packets=0, n_bytes=0, 
     priority=61007,icmp,dl_src=fa:16:3e:93:88:60,nw_dst=0.0.0.0/24,
-    icmp_type=2,icmp_code=4 actions=goto_table:50
+    icmp_type=2,icmp_code=4 actions=goto_table:50
 
 ::
 
-    cookie=0x0, duration=199.674s, table=90, n_packets=0, n_bytes=0, 
-    priority=61007,udp,dl_dst=fa:16:3e:dc:49:ff,nw_src=10.100.5.3,tp_dst=2222 
+    cookie=0x0, duration=199.674s, table=90, n_packets=0, n_bytes=0, 
+    priority=61007,udp,dl_dst=fa:16:3e:dc:49:ff,nw_src=10.100.5.3,tp_dst=2222 
     actions=goto_table:100
 
 ::
 
-    cookie=0x0, duration=199.780s, table=90, n_packets=0, n_bytes=0, 
-    priority=61007,tcp,dl_dst=fa:16:3e:93:88:60,nw_src=10.100.5.4,tp_dst=3333 
+    cookie=0x0, duration=199.780s, table=90, n_packets=0, n_bytes=0, 
+    priority=61007,tcp,dl_dst=fa:16:3e:93:88:60,nw_src=10.100.5.4,tp_dst=3333 
     actions=goto_table:100
 
 TCP/UDP Port Range
@@ -319,78 +319,78 @@ range. The below 7 rules can cover a port range from 333 to 777.
 
 ::
 
-    cookie=0x0, duration=56.129s, table=90, n_packets=0, n_bytes=0, 
+    cookie=0x0, duration=56.129s, table=90, n_packets=0, n_bytes=0, 
     priority=61007,udp,dl_dst=fa:16:3e:f9:2c:42,nw_src=0.0.0.0/24,
-    tp_dst=0x200/0xff00 actions=goto_table:100
+    tp_dst=0x200/0xff00 actions=goto_table:100
 
 ::
 
-    cookie=0x0, duration=55.805s, table=90, n_packets=0, n_bytes=0, 
+    cookie=0x0, duration=55.805s, table=90, n_packets=0, n_bytes=0, 
     priority=61007,udp,dl_dst=fa:16:3e:f9:2c:42,nw_src=0.0.0.0/24,
-    tp_dst=0x160/0xffe0 actions=goto_table:100
+    tp_dst=0x160/0xffe0 actions=goto_table:100
 
 ::
 
-    cookie=0x0, duration=55.587s, table=90, n_packets=0, n_bytes=0, 
+    cookie=0x0, duration=55.587s, table=90, n_packets=0, n_bytes=0, 
     priority=61007,udp,dl_dst=fa:16:3e:f9:2c:42,nw_src=0.0.0.0/24,
-    tp_dst=0x300/0xfff8 actions=goto_table:100
+    tp_dst=0x300/0xfff8 actions=goto_table:100
 
 ::
 
-    cookie=0x0, duration=55.437s, table=90, n_packets=0, n_bytes=0, 
+    cookie=0x0, duration=55.437s, table=90, n_packets=0, n_bytes=0, 
     priority=61007,udp,dl_dst=fa:16:3e:f9:2c:42,nw_src=0.0.0.0/24,
-    tp_dst=0x150/0xfff0 actions=goto_table:100
+    tp_dst=0x150/0xfff0 actions=goto_table:100
 
 ::
 
-    cookie=0x0, duration=55.282s, table=90, n_packets=0, n_bytes=0, 
+    cookie=0x0, duration=55.282s, table=90, n_packets=0, n_bytes=0, 
     priority=61007,udp,dl_dst=fa:16:3e:f9:2c:42,nw_src=0.0.0.0/24,
-    tp_dst=0x14e/0xfffe actions=goto_table:100
+    tp_dst=0x14e/0xfffe actions=goto_table:100
 
 ::
 
-    cookie=0x0, duration=54.063s, table=90, n_packets=0, n_bytes=0, 
+    cookie=0x0, duration=54.063s, table=90, n_packets=0, n_bytes=0, 
     priority=61007,udp,dl_dst=fa:16:3e:f9:2c:42,nw_src=0.0.0.0/24,
-    tp_dst=0x308/0xfffe actions=goto_table:100
+    tp_dst=0x308/0xfffe actions=goto_table:100
 
 ::
 
-    cookie=0x0, duration=55.130s, table=90, n_packets=0, n_bytes=0, 
+    cookie=0x0, duration=55.130s, table=90, n_packets=0, n_bytes=0, 
     priority=61007,udp,dl_dst=fa:16:3e:f9:2c:42,nw_src=0.0.0.0/24,
-    tp_dst=333 actions=goto_table:100
+    tp_dst=333 actions=goto_table:100
 
 CIDR/Remote Security Group
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ::
 
-    When adding a security group we can select the rule to applicable to a 
-    set of CIDR or to a set of VMs which has a particular security group 
-    associated with it. 
+    When adding a security group we can select the rule to applicable to a 
+    set of CIDR or to a set of VMs which has a particular security group 
+    associated with it. 
 
 If CIDR is selected there will be only one flow rule added allowing the
 traffic from/to the IP’s belonging to that CIDR.
 
 ::
 
-    cookie=0x0, duration=202.516s, table=40, n_packets=0, n_bytes=0,
+    cookie=0x0, duration=202.516s, table=40, n_packets=0, n_bytes=0,
     priority=61007,ct_state=+new+trk,icmp,dl_src=fa:16:3e:ee:a5:ec,
-    nw_dst=0.0.0.0/24,icmp_type=2,icmp_code=4 actions=ct(commit),goto_table:50
+    nw_dst=0.0.0.0/24,icmp_type=2,icmp_code=4 actions=ct(commit),goto_table:50
 
 If a remote security group is selected a flow will be inserted for every
 vm which has that security group associated.
 
 ::
 
-    cookie=0x0, duration=60.701s, table=90, n_packets=0, n_bytes=0, 
+    cookie=0x0, duration=60.701s, table=90, n_packets=0, n_bytes=0, 
     priority=61007,ct_state=+new+trk,udp,dl_dst=fa:16:3e:22:59:2f,
-    nw_src=10.100.5.3,tp_dst=2222    actions=ct(commit),goto_table:100
+    nw_src=10.100.5.3,tp_dst=2222    actions=ct(commit),goto_table:100
 
 ::
 
-    cookie=0x0, duration=58.988s, table=90, n_packets=0, n_bytes=0, 
+    cookie=0x0, duration=58.988s, table=90, n_packets=0, n_bytes=0, 
     priority=61007,ct_state=+new+trk,tcp,dl_dst=fa:16:3e:22:59:2f,
-    nw_src=10.100.5.3,tp_dst=1111 actions=ct(commit),goto_table:100
+    nw_src=10.100.5.3,tp_dst=1111 actions=ct(commit),goto_table:100
 
 Rules supported in ODL
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -654,10 +654,10 @@ OVSDB YANG Model
 
 The OVSDB Southbound Plugin provides a YANG model which is based on the
 abstract `network topology
-model <https://github.com/opendaylight/yangtools/blob/stable/beryllium/yang/yang-parser-impl/src/test/resources/ietf/network-topology%402013-10-21.yang>`__.
+model <https://github.com/opendaylight/yangtools/blob/stable/boron/yang/yang-parser-impl/src/test/resources/ietf/network-topology%402013-10-21.yang>`__.
 
 The details of the OVSDB YANG model are defined in the
-`ovsdb.yang <https://github.com/opendaylight/ovsdb/blob/stable/beryllium/southbound/southbound-api/src/main/yang/ovsdb.yang>`__
+`ovsdb.yang <https://github.com/opendaylight/ovsdb/blob/stable/boron/southbound/southbound-api/src/main/yang/ovsdb.yang>`__
 file.
 
 The OVSDB YANG model defines three augmentations:
@@ -1429,7 +1429,7 @@ Managing QoS and Queues via Configuration MD-SAL
 This section will show some examples on how to manage QoS and Queue
 entries via the configuration MD-SAL. The examples will be illustrated
 by using RESTCONF (see `QoS and Queue Postman
-Collection <https://github.com/opendaylight/ovsdb/blob/stable/beryllium/resources/commons/Qos-and-Queue-Collection.json.postman_collection>`__
+Collection <https://github.com/opendaylight/ovsdb/blob/stable/boron/resources/commons/Qos-and-Queue-Collection.json.postman_collection>`__
 ).
 
 A pre-requisite for managing QoS and Queue entries is that the OVS host
@@ -1929,7 +1929,7 @@ References
 schema <http://openvswitch.org/ovs-vswitchd.conf.db.5.pdf>`__
 
 `OVSDB and Netvirt Postman
-Collection <https://github.com/opendaylight/ovsdb/blob/stable/beryllium/resources/commons>`__
+Collection <https://github.com/opendaylight/ovsdb/blob/stable/boron/resources/commons>`__
 
 OVSDB Hardware VTEP SouthBound Plugin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1969,19 +1969,19 @@ http://odl:8181/restconf/config/network-topology:network-topology/topology/hwvte
 ::
 
     {
-     "network-topology:node": [
-           {
-               "node-id": "hwvtep://192.168.1.115:6640",
-               "hwvtep:connection-info":
-               {
-                   "hwvtep:remote-port": 6640,
-                   "hwvtep:remote-ip": "192.168.1.115"
-               }
-           }
-       ]
+     "network-topology:node": [
+           {
+               "node-id": "hwvtep://192.168.1.115:6640",
+               "hwvtep:connection-info":
+               {
+                   "hwvtep:remote-port": 6640,
+                   "hwvtep:remote-ip": "192.168.1.115"
+               }
+           }
+       ]
     }
 
-Please replace *odl* in the URL with the IP address of your OpendayLight
+Please replace *odl* in the URL with the IP address of your OpenDaylight
 controller and change *192.168.1.115* to your hwvtep node IP.
 
 **NOTE**: The format of node-id is fixed. It will be one of the two:
@@ -1990,13 +1990,13 @@ User initiates connection from ODL:
 
 ::
 
-     hwvtep://ip:port
+     hwvtep://ip:port
 
 Switch initiates connection:
 
 ::
 
-     hwvtep://uuid/<uuid of switch>
+     hwvtep://uuid/<uuid of switch>
 
 The reason for using UUID is that we can distinguish between multiple
 switches if they are behind a NAT.
@@ -2014,39 +2014,39 @@ The response of the request is:
 ::
 
     {
-       "node": [
-             {
-               "node-id": "hwvtep://192.168.1.115:6640",
-               "hwvtep:switches": [
-                 {
-                   "switch-ref": "/network-topology:network-topology/network-topology:topology[network-topology:topology-id='hwvtep:1']/network-topology:node[network-topology:node-id='hwvtep://192.168.1.115:6640/physicalswitch/br0']"
-                 }
-               ],
-               "hwvtep:connection-info": {
-                 "local-ip": "192.168.92.145",
-                 "local-port": 47802,
-                 "remote-port": 6640,
-                 "remote-ip": "192.168.1.115"
-               }
-             },
-             {
-               "node-id": "hwvtep://192.168.1.115:6640/physicalswitch/br0",
-               "hwvtep:management-ips": [
-                 {
-                   "management-ips-key": "192.168.1.115"
-                 }
-               ],
-               "hwvtep:physical-switch-uuid": "37eb5abd-a6a3-4aba-9952-a4d301bdf371",
-               "hwvtep:managed-by": "/network-topology:network-topology/network-topology:topology[network-topology:topology-id='hwvtep:1']/network-topology:node[network-topology:node-id='hwvtep://192.168.1.115:6640']",
-               "hwvtep:hwvtep-node-description": "",
-               "hwvtep:tunnel-ips": [
-                 {
-                   "tunnel-ips-key": "192.168.1.115"
-                 }
-               ],
-               "hwvtep:hwvtep-node-name": "br0"
-             }
-           ]
+       "node": [
+             {
+               "node-id": "hwvtep://192.168.1.115:6640",
+               "hwvtep:switches": [
+                 {
+                   "switch-ref": "/network-topology:network-topology/network-topology:topology[network-topology:topology-id='hwvtep:1']/network-topology:node[network-topology:node-id='hwvtep://192.168.1.115:6640/physicalswitch/br0']"
+                 }
+               ],
+               "hwvtep:connection-info": {
+                 "local-ip": "192.168.92.145",
+                 "local-port": 47802,
+                 "remote-port": 6640,
+                 "remote-ip": "192.168.1.115"
+               }
+             },
+             {
+               "node-id": "hwvtep://192.168.1.115:6640/physicalswitch/br0",
+               "hwvtep:management-ips": [
+                 {
+                   "management-ips-key": "192.168.1.115"
+                 }
+               ],
+               "hwvtep:physical-switch-uuid": "37eb5abd-a6a3-4aba-9952-a4d301bdf371",
+               "hwvtep:managed-by": "/network-topology:network-topology/network-topology:topology[network-topology:topology-id='hwvtep:1']/network-topology:node[network-topology:node-id='hwvtep://192.168.1.115:6640']",
+               "hwvtep:hwvtep-node-description": "",
+               "hwvtep:tunnel-ips": [
+                 {
+                   "tunnel-ips-key": "192.168.1.115"
+                 }
+               ],
+               "hwvtep:hwvtep-node-name": "br0"
+             }
+           ]
     }
 
 If there is a physical switch which has already been created by manual
@@ -2066,24 +2066,24 @@ request body:
 ::
 
     {
-     "network-topology:node": [
-           {
-               "node-id": "hwvtep://192.168.1.115:6640/physicalswitch/br0",
-               "hwvtep-node-name": "ps0",
-               "hwvtep-node-description": "",
-               "management-ips": [
-                 {
-                   "management-ips-key": "192.168.1.115"
-                 }
-               ],
-               "tunnel-ips": [
-                 {
-                   "tunnel-ips-key": "192.168.1.115"
-                 }
-               ],
-               "managed-by": "/network-topology:network-topology/network-topology:topology[network-topology:topology-id='hwvtep:1']/network-topology:node[network-topology:node-id='hwvtep://192.168.1.115:6640']"
-           }
-       ]
+     "network-topology:node": [
+           {
+               "node-id": "hwvtep://192.168.1.115:6640/physicalswitch/br0",
+               "hwvtep-node-name": "ps0",
+               "hwvtep-node-description": "",
+               "management-ips": [
+                 {
+                   "management-ips-key": "192.168.1.115"
+                 }
+               ],
+               "tunnel-ips": [
+                 {
+                   "tunnel-ips-key": "192.168.1.115"
+                 }
+               ],
+               "managed-by": "/network-topology:network-topology/network-topology:topology[network-topology:topology-id='hwvtep:1']/network-topology:node[network-topology:node-id='hwvtep://192.168.1.115:6640']"
+           }
+       ]
     }
 
 Note: "managed-by" must provided by user. We can get its value after the
@@ -2108,13 +2108,13 @@ request body:
 ::
 
     {
-     "logical-switches": [
-           {
-               "hwvtep-node-name": "ls0",
-               "hwvtep-node-description": "",
-               "tunnel-key": "10000"
-            }
-       ]
+     "logical-switches": [
+           {
+               "hwvtep-node-name": "ls0",
+               "hwvtep-node-description": "",
+               "tunnel-key": "10000"
+            }
+       ]
     }
 
 Create a physical locator
@@ -2130,15 +2130,15 @@ request body:
 
 ::
 
-     {
-      "termination-point": [
-           {
-               "tp-id": "vxlan_over_ipv4:192.168.0.116",
-               "encapsulation-type": "encapsulation-type-vxlan-over-ipv4",
-               "dst-ip": "192.168.0.116"
-               }
-          ]
-     }
+     {
+      "termination-point": [
+           {
+               "tp-id": "vxlan_over_ipv4:192.168.0.116",
+               "encapsulation-type": "encapsulation-type-vxlan-over-ipv4",
+               "dst-ip": "192.168.0.116"
+               }
+          ]
+     }
 
 The "tp-id" of locator is "{encapsualation-type}: {dst-ip}".
 
@@ -2161,17 +2161,17 @@ request body:
 ::
 
     {
-     "remote-mcast-macs": [
-           {
-               "mac-entry-key": "00:00:00:00:00:00",
-               "logical-switch-ref": "/network-topology:network-topology/network-topology:topology[network-topology:topology-id='hwvtep:1']/network-topology:node[network-topology:node-id='hwvtep://192.168.1.115:6640']/hwvtep:logical-switches[hwvtep:hwvtep-node-name='ls0']",
-               "locator-set": [
-                    {
-                          "locator-ref": "/network-topology:network-topology/network-topology:topology[network-topology:topology-id='hwvtep:1']/network-topology:node[network-topology:node-id='hwvtep://219.141.189.115:6640']/network-topology:termination-point[network-topology:tp-id='vxlan_over_ipv4:192.168.0.116']"
-                    }
-               ]
-           }
-       ]
+     "remote-mcast-macs": [
+           {
+               "mac-entry-key": "00:00:00:00:00:00",
+               "logical-switch-ref": "/network-topology:network-topology/network-topology:topology[network-topology:topology-id='hwvtep:1']/network-topology:node[network-topology:node-id='hwvtep://192.168.1.115:6640']/hwvtep:logical-switches[hwvtep:hwvtep-node-name='ls0']",
+               "locator-set": [
+                    {
+                          "locator-ref": "/network-topology:network-topology/network-topology:topology[network-topology:topology-id='hwvtep:1']/network-topology:node[network-topology:node-id='hwvtep://219.141.189.115:6640']/network-topology:termination-point[network-topology:tp-id='vxlan_over_ipv4:192.168.0.116']"
+                    }
+               ]
+           }
+       ]
     }
 
 The physical locator *vxlan\_over\_ipv4:192.168.0.116* is just created
@@ -2195,19 +2195,19 @@ http://odl:8181/restconf/config/network-topology:network-topology/topology/hwvte
 ::
 
     {
-     "network-topology:termination-point": [
-           {
-               "tp-id": "port0",
-               "hwvtep-node-name": "port0",
-               "hwvtep-node-description": "",
-               "vlan-bindings": [
-                   {
-                     "vlan-id-key": "100",
-                     "logical-switch-ref": "/network-topology:network-topology/network-topology:topology[network-topology:topology-id='hwvtep:1']/network-topology:node[network-topology:node-id='hwvtep://192.168.1.115:6640']/hwvtep:logical-switches[hwvtep:hwvtep-node-name='ls0']"
-                   }
-             ]
-           }
-       ]
+     "network-topology:termination-point": [
+           {
+               "tp-id": "port0",
+               "hwvtep-node-name": "port0",
+               "hwvtep-node-description": "",
+               "vlan-bindings": [
+                   {
+                     "vlan-id-key": "100",
+                     "logical-switch-ref": "/network-topology:network-topology/network-topology:topology[network-topology:topology-id='hwvtep:1']/network-topology:node[network-topology:node-id='hwvtep://192.168.1.115:6640']/hwvtep:logical-switches[hwvtep:hwvtep-node-name='ls0']"
+                   }
+             ]
+           }
+       ]
     }
 
 At this point, we have completed the basic configuration.
@@ -2233,14 +2233,14 @@ http://odl:8181/restconf/config/network-topology:network-topology/topology/hwvte
 ::
 
     {
-     "remote-ucast-macs": [
-           {
-               "mac-entry-key": "11:11:11:11:11:11",
-               "logical-switch-ref": "/network-topology:network-topology/network-topology:topology[network-topology:topology-id='hwvtep:1']/network-topology:node[network-topology:node-id='hwvtep://192.168.1.115:6640']/hwvtep:logical-switches[hwvtep:hwvtep-node-name='ls0']",
-               "ipaddr": "1.1.1.1",
-               "locator-ref": "/network-topology:network-topology/network-topology:topology[network-topology:topology-id='hwvtep:1']/network-topology:node[network-topology:node-id='hwvtep://192.168.1.115:6640']/network-topology:termination-point[network-topology:tp-id='vxlan_over_ipv4:192.168.0.116']"
-           }
-       ]
+     "remote-ucast-macs": [
+           {
+               "mac-entry-key": "11:11:11:11:11:11",
+               "logical-switch-ref": "/network-topology:network-topology/network-topology:topology[network-topology:topology-id='hwvtep:1']/network-topology:node[network-topology:node-id='hwvtep://192.168.1.115:6640']/hwvtep:logical-switches[hwvtep:hwvtep-node-name='ls0']",
+               "ipaddr": "1.1.1.1",
+               "locator-ref": "/network-topology:network-topology/network-topology:topology[network-topology:topology-id='hwvtep:1']/network-topology:node[network-topology:node-id='hwvtep://192.168.1.115:6640']/network-topology:termination-point[network-topology:tp-id='vxlan_over_ipv4:192.168.0.116']"
+           }
+       ]
     }
 
 Create a local-ucast-macs entry

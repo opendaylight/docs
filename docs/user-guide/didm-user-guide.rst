@@ -159,7 +159,7 @@ Run REST GET command to verify the device details:
 Run REST adjust-flow command to adjust flows and push to the device
 -------------------------------------------------------------------
 
-**Flow mod driver for HP 3800 device is added in Beryllium release.**
+**Flow mod driver for HP 3800 device**
 
 This driver adjusts the flows and push the same to the device. This API
 takes the flow to be adjusted as input and displays the adjusted flow as

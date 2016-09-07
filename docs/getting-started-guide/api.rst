@@ -11,6 +11,6 @@ becomes available.
 * odlparent_
 * yangtools_
 
-.. _mdsal: https://nexus.opendaylight.org/content/sites/site/org.opendaylight.mdsal/beryllium/apidocs/
-.. _odlparent: https://nexus.opendaylight.org/content/sites/site/org.opendaylight.odlparent/beryllium/apidocs/index.html
-.. _yangtools: https://nexus.opendaylight.org/content/sites/site/org.opendaylight.yangtools/beryllium/apidocs/index.html
+.. _mdsal: https://nexus.opendaylight.org/content/sites/site/org.opendaylight.mdsal/boron/apidocs/
+.. _odlparent: https://nexus.opendaylight.org/content/sites/site/org.opendaylight.odlparent/boron/apidocs/index.html
+.. _yangtools: https://nexus.opendaylight.org/content/sites/site/org.opendaylight.yangtools/boron/apidocs/index.html

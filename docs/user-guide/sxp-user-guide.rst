@@ -426,7 +426,7 @@ soon as possible; a very efficient and effective method of propagation
 can be performed using OpenDaylight as a centralized point for relaying
 the information.
 
-OpenDayLight can create filters for exporting and receiving IP-SGT
+OpenDaylight can create filters for exporting and receiving IP-SGT
 bindings used on specific peer groups, thus can provide more complex
 maintaining of policy groups.
 

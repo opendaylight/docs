@@ -600,7 +600,7 @@ OpenDaylight provides 2 types of NETCONF servers:
    -  Serves as an alternative interface for MD-SAL (besides RESTCONF)
       and allows users to read/write data from MD-SAL’s datastore and to
       invoke its rpcs (NETCONF notifications are not available in the
-      Beryllium release of OpenDaylight)
+      Boron release of OpenDaylight)
 
 .. note::
 
@@ -625,7 +625,7 @@ In terms of RFCs, these are supported:
 -  `RFC-6470 <https://tools.ietf.org/html/rfc6470>`__
 
    -  (partially, only the schema-change notification is available in
-      Beryllium release)
+      Boron release)
 
 -  `RFC-6022 <https://tools.ietf.org/html/rfc6022>`__
 
@@ -650,7 +650,7 @@ In terms of RFCs, these are supported:
 
 -  `draft-ietf-netconf-yang-library-06 <https://tools.ietf.org/html/draft-ietf-netconf-yang-library-06>`__
 
-Notifications over NETCONF are not supported in the Beryllium release.
+Notifications over NETCONF are not supported in the Boron release.
 
     **Tip**
 
@@ -724,7 +724,7 @@ from the NETCONF codebase in OpenDaylight.
     **Tip**
 
     Download testtool from OpenDaylight Nexus at:
-    https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/netconf/netconf-testtool/1.0.2-Beryllium-SR2/
+    https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/netconf/netconf-testtool/1.1.0-Boron/
 
 **Nexus contains 3 executable tools:**
 
@@ -775,7 +775,7 @@ Downloading testtool
 Netconf-testtool is now part of default maven build profile for
 controller and can be also downloaded from nexus. The executable jar for
 testtool can be found at:
-`nexus-artifacts <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/netconf/netconf-testtool/1.0.2-Beryllium-SR2/>`__
+`nexus-artifacts <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/netconf/netconf-testtool/1.1.0-Boron/>`__
 
 Running testtool
 ^^^^^^^^^^^^^^^^

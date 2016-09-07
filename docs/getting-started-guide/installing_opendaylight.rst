@@ -40,22 +40,22 @@ To run the Karaf distribution:
 
 For Example::
 
-   $ ls distribution-karaf-0.4.0-Beryllium.zip
-   distribution-karaf-0.4.0-Beryllium.zip
-   $ unzip distribution-karaf-0.4.0-Beryllium.zip
-   Archive:  distribution-karaf-0.4.0-Beryllium.zip
-      creating: distribution-karaf-0.4.0-Beryllium/
-      creating: distribution-karaf-0.4.0-Beryllium/configuration/
-      creating: distribution-karaf-0.4.0-Beryllium/data/
-      creating: distribution-karaf-0.4.0-Beryllium/data/tmp/
-      creating: distribution-karaf-0.4.0-Beryllium/deploy/
-      creating: distribution-karaf-0.4.0-Beryllium/etc/
-      creating: distribution-karaf-0.4.0-Beryllium/externalapps/
+   $ ls distribution-karaf-0.5.x-Boron.zip
+   distribution-karaf-0.5.x-Boron.zip
+   $ unzip distribution-karaf-0.5.x-Boron.zip
+   Archive:  distribution-karaf-0.5.x-Boron.zip
+      creating: distribution-karaf-0.5.x-Boron/
+      creating: distribution-karaf-0.5.x-Boron/configuration/
+      creating: distribution-karaf-0.5.x-Boron/data/
+      creating: distribution-karaf-0.5.x-Boron/data/tmp/
+      creating: distribution-karaf-0.5.x-Boron/deploy/
+      creating: distribution-karaf-0.5.x-Boron/etc/
+      creating: distribution-karaf-0.5.x-Boron/externalapps/
    ...
-     inflating: distribution-karaf-0.4.0-Beryllium/bin/start.bat
-     inflating: distribution-karaf-0.4.0-Beryllium/bin/status.bat
-     inflating: distribution-karaf-0.4.0-Beryllium/bin/stop.bat
-   $ cd distribution-karaf-0.4.0-Beryllium
+     inflating: distribution-karaf-0.5.x-Boron/bin/start.bat
+     inflating: distribution-karaf-0.5.x-Boron/bin/status.bat
+     inflating: distribution-karaf-0.5.x-Boron/bin/stop.bat
+   $ cd distribution-karaf-0.5.x-Boron
    $ ./bin/karaf
 
        ________                       ________                .__  .__       .__     __
@@ -135,10 +135,10 @@ The workaround and further info are in this thread:
 http://stackoverflow.com/questions/35679852/karaf-exception-is-thrown-while-installing-org-fusesource-leveldbjni
 
 
-Beryllium features
-==================
+Karaf OpenDaylight Features
+===========================
 
-.. list-table:: Beryllium features
+.. list-table:: Karaf OpenDaylight features
     :widths: 10 25 10 5
     :header-rows: 1
 
@@ -395,10 +395,10 @@ Beryllium features
       - self+all
 
 
-Other Beryllium features
-========================
+Other OpenDaylight features
+===========================
 
-.. list-table:: Other Beryllium features
+.. list-table:: Other OpenDaylight features
     :widths: 10 25 10 5
     :header-rows: 1
 
@@ -420,14 +420,14 @@ Other Beryllium features
       - all
 
 
-Experimental Beryllium Features
-===============================
-The following functionality is labeled as experimental in OpenDaylight
-Beryllium and should be used accordingly. In general, it is not supposed to be
+Experimental OpenDaylight Features
+==================================
+The following functionality is labeled as experimental in this OpenDaylight
+release and should be used accordingly. In general, it is not supposed to be
 used in production unless its limitations are well understood by those
 deploying it.
 
-.. list-table:: Other Beryllium features
+.. list-table:: Other features
     :widths: 10 25 10 5
     :header-rows: 1
 

@@ -28,7 +28,7 @@ Base **GBP** feature set, such as policy resolution, data model etc.
 
     odl-groupbasedpolicy-ofoverlay
 
-For Lithium, **GBP** has one renderer, hence this is loaded by default.
+For this release, **GBP** has one renderer, hence this is loaded by default.
 
 REST calls from OpenStack Neutron are by the Neutron NorthBound project.
 

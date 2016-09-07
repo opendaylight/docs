@@ -312,21 +312,21 @@ Install http://karaf.apache.org/manual/latest/users-guide/wrapper.html
                     (defaults to )
 
     opendaylight-user@root> wrapper:install
-    Creating file: /home/user/odl/distribution-karaf-0.3.0-Lithium/bin/karaf-wrapper
-    Creating file: /home/user/odl/distribution-karaf-0.3.0-Lithium/bin/karaf-service
-    Creating file: /home/user/odl/distribution-karaf-0.3.0-Lithium/etc/karaf-wrapper.conf
-    Creating file: /home/user/odl/distribution-karaf-0.3.0-Lithium/lib/libwrapper.so
-    Creating file: /home/user/odl/distribution-karaf-0.3.0-Lithium/lib/karaf-wrapper.jar
-    Creating file: /home/user/odl/distribution-karaf-0.3.0-Lithium/lib/karaf-wrapper-main.jar
+    Creating file: /home/user/odl/distribution-karaf-0.5.0-Boron/bin/karaf-wrapper
+    Creating file: /home/user/odl/distribution-karaf-0.5.0-Boron/bin/karaf-service
+    Creating file: /home/user/odl/distribution-karaf-0.5.0-Boron/etc/karaf-wrapper.conf
+    Creating file: /home/user/odl/distribution-karaf-0.5.0-Boron/lib/libwrapper.so
+    Creating file: /home/user/odl/distribution-karaf-0.5.0-Boron/lib/karaf-wrapper.jar
+    Creating file: /home/user/odl/distribution-karaf-0.5.0-Boron/lib/karaf-wrapper-main.jar
 
     Setup complete.  You may wish to tweak the JVM properties in the wrapper configuration file:
-    /home/user/odl/distribution-karaf-0.3.0-Lithium/etc/karaf-wrapper.conf
+    /home/user/odl/distribution-karaf-0.5.0-Boron/etc/karaf-wrapper.conf
     before installing and starting the service.
 
 
     Ubuntu/Debian Linux system detected:
       To install the service:
-        $ ln -s /home/user/odl/distribution-karaf-0.3.0-Lithium/bin/karaf-service /etc/init.d/
+        $ ln -s /home/user/odl/distribution-karaf-0.5.0-Boron/bin/karaf-service /etc/init.d/
 
       To start the service when the machine is rebooted:
         $ update-rc.d karaf-service defaults
