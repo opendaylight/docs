@@ -59,6 +59,8 @@ Project-specific User Guides
    ttp-cli-tools-user-guide
    uni-manager-plug-in-project
    unified-secure-channel
+   usecplugin-aaa-user-guide
+   usecplugin-openflow-user-guide
    virtual-tenant-network-(vtn)
    yang-ide-user-guide
    yang-push
