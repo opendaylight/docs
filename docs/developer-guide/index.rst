@@ -23,6 +23,7 @@ Project-specific Developer Guides
    cardinal_-opendaylight-monitoring-as-a-service
    controller
    didm-developer-guide
+   distribution-version
    dlux
    fabric-as-a-service
    infrautils-developer-guide
