@@ -31,7 +31,7 @@ application called **ncmount** in the ``coretutorials`` OpenDaylight
 project. It can be found on the github mirror of OpenDaylight’s
 repositories:
 
--  https://github.com/opendaylight/coretutorials/tree/stable/lithium/ncmount
+-  https://github.com/opendaylight/coretutorials/tree/stable/boron/ncmount
 
 or checked out from the official OpenDaylight repository:
 
@@ -144,7 +144,7 @@ The implementation of the callback from MD-SAL when the data change can
 be found in the
 ``onDataChanged(AsyncDataChangeEvent<InstanceIdentifier<?>, DataObject>
 change)`` callback of `NcmountProvider
-class <https://github.com/opendaylight/coretutorials/blob/stable/lithium/ncmount/impl/src/main/java/ncmount/impl/NcmountProvider.java>`__.
+class <https://github.com/opendaylight/coretutorials/blob/stable/boron/ncmount/impl/src/main/java/ncmount/impl/NcmountProvider.java>`__.
 
 Reading data from the device
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^

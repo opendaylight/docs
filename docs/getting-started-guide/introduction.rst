@@ -67,6 +67,6 @@ following organization:
 #. OpenDaylight concepts and tools
 #. Explanations of OpenDaylight Apache Karaf features and other features that
    extend network functionality
-#. OpenDaylight Beryllium system requirements and Release Notes
+#. OpenDaylight system requirements and Release Notes
 #. OpenDaylight installation instructions
 #. Feature tables with installation names and compatibility notes

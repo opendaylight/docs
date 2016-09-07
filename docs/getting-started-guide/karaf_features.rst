@@ -20,7 +20,7 @@ automatically.  AAA provides:
 * Support for persistent data stores
 * Federation and SSO with OpenStack Keystone
 
-The Beryllium release of AAA includes experimental support for having the database of users and credentials stored in the cluster-aware MD-SAL datastore.
+This release of AAA includes experimental support for having the database of users and credentials stored in the cluster-aware MD-SAL datastore.
 
 ALTO
 ====
@@ -182,11 +182,11 @@ OpenStack, including support for:
     is now available.
 
 * Clustering - Full support for clustering and High Availability (HA) is
-  available in the OpenDaylight Beryllium release. In particular, the OVSDB
+  available in the this OpenDaylight release. In particular, the OVSDB
   southbound plugin supports clustering that any application can use, and the
   Openstack network integration with OpenDaylight (through OVSDB Net-Virt) has
   full clustering support. While there is no specific limit on cluster size, a
-  3-node cluster has been tested extensively as part of the Beryllium release.
+  3-node cluster has been tested extensively as part of the release.
 
 * Security Groups - Security Group support is available and implemented using
   OpenFlow rules that provide superior functionality and performance over
@@ -203,8 +203,7 @@ OpenStack, including support for:
 * Service Function Chaining
 
 * Open vSwitch southbound support for quality of service and Queue configuration
-  Load Balancer as service (LBaaS) with Distributed Virtual Router, as offered
-  in the Lithium release
+  Load Balancer as service (LBaaS) with Distributed Virtual Router
 
 * Network Virtualization User interface for DLUX
 
@@ -218,7 +217,7 @@ Supports connecting to OpenFlow-enabled network devices via the OpenFlow
 specification. It currently supports OpenFlow versions 1.0 and 1.3.2.
 
 In addition to support for the core OpenFlow specification, OpenDaylight
-Beryllium also includes preliminary support for the Table Type Patterns and
+also includes preliminary support for the Table Type Patterns and
 OF-CONFIG specifications.
 
 Path Computation Element Protocol (PCEP)
@@ -335,8 +334,6 @@ Functionality of TDSR includes:
   various types of collectors
 * HSQL data store - Replacement of H2 data store to remove third party
   component dependency from TSDR
-* Enhancement of existing data stores including HBase to support new features
-  introduced in Beryllium
 * Cassandra data store - Cassandra implementation of TSDR SPIs
 * NetFlow data collector - Collect NetFlow data from network elements
 * NetFlowV9 - version 9 Netflow collector
