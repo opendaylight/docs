@@ -122,71 +122,6 @@ Tutorial / How-To
 Running the controller with the new OpenFlow Plugin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Opendaylight Controller Plugin Options
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
--  Run OpenDaylight controller with the new OpenFlow 1.0/1.3 plugin
-
-There are 2 ways. In integration project the plugin version is
-controlled by startup parameter. Or there is distribution build
-available directly in openflowplugin project.
-
-1. use **integration** project
-
-   -  download and unzip latest build from
-      https://nexus.opendaylight.org/content/repositories/opendaylight.snapshot/org/opendaylight/integration/distribution-karaf/0.2.2-SNAPSHOT/
-
-      ::
-
-          cd <extracted directory>/bin
-          ./karaf
-
-   -  or clone and build **integration** project:
-
-      ::
-
-          git clone https://git.opendaylight.org/gerrit/p/integration.git
-          cd integration/distributions/extra/karaf
-          mvn clean install
-          cd ./target/assembly/bin
-
-   -  and finally run
-
-      ::
-
-          ./karaf
-
-2. use **openflowplugin** project
-
-   -  download and unzip latest build from
-      https://nexus.opendaylight.org/content/repositories/opendaylight.snapshot/org/opendaylight/openflowplugin/openflowplugin-karaf/0.1.0-SNAPSHOT/
-
-      ::
-
-          cd <extracted directory>/bin
-          ./karaf
-
-   -  or clone and build **openflowplugin** project:
-
-      ::
-
-          git clone https://git.opendaylight.org/gerrit/p/openflowplugin.git
-          cd openflowplugin
-          mvn clean install
-          cd ./distribution/karaf/target/assembly/bin/
-
-   -  or build whole distribution localy from folder distribution/karaf
-
-      ::
-
-          mvn clean install -DskipTests
-
-   -  and run
-
-      ::
-
-          ./karaf
-
 **How to start**
 
 There are all helium features (from features-openflowplugin) duplicated
@@ -292,47 +227,6 @@ URL
 ::
 
     http://<controller-ip>:8181/dlux/index.html
-
-**Run OpenDaylight controller with the old OpenFlow 1.0-only (old)
-plugin**
-
-There are 2 ways. In integration project the plugin version is
-controlled by startup parameter. Or there is distribution build
-available directly in controller project.
-
-1. use **integration/distributions/base** project
-
-   -  use the instructions from
-      OpenDaylight\_OpenFlow\_Plugin::Running\_controller\_with\_the\_new\_OF\_plugin#To\_run\_the\_OpenDaylight\_controller\_with\_the\_new\_OpenFlow\_1.0/1.3\_(new)\_plugin[
-      1.0/1.3 plugin], but skip the plugin version parameter:
-
-      ::
-
-          ./run.sh
-
-2. use **controller/distribution/opendaylight** project
-
-   -  download and unzip latest build from
-      https://nexus.opendaylight.org/content/repositories/opendaylight.snapshot/org/opendaylight/controller/distribution.opendaylight/
-
-      ::
-
-          cd opendaylight
-
-   -  or clone and build **controller** project:
-
-      ::
-
-          git clone https://git.opendaylight.org/gerrit/p/controller.git
-          cd controller/opendaylight/distribution/opendaylight
-          mvn clean install
-          cd target/distribution.opendaylight-osgipackage/opendaylight
-
-   -  and finally run (there is no version specific option, because the
-
-      1.0/1.3 (new) plugin is not available here at all)
-
-**Give it a minute to come up :)**
 
 OpenFlow 1.3 Enabled Software Switches / Environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2450,10 +2344,6 @@ Match Examples
 The format of the XML that describes OpenFlow matches is determined by
 the opendaylight-match-types yang model: .
 
-The RESTCONF documentation for the match-types yang model can be found
-at
-`opendaylight-match-types.html <https://jenkins.opendaylight.org/controller/job/controller-merge/lastSuccessfulBuild/artifact/opendaylight/md-sal/model/model-flow-base/target/site/models/opendaylight-match-types.html>`__
-
 IPv4 Dest Address
 ^^^^^^^^^^^^^^^^^
 
@@ -3455,10 +3345,6 @@ Actions
 
 The format of the XML that describes OpenFlow actions is determined by
 the opendaylight-action-types yang model: .
-
-The RESTCONF documentation for the match-types yang model can be found
-at
-`opendaylight-action-types.html <https://jenkins.opendaylight.org/controller/job/controller-merge/lastSuccessfulBuild/artifact/opendaylight/md-sal/model/model-flow-base/target/site/models/opendaylight-action-types.html>`__
 
 Apply Actions
 ^^^^^^^^^^^^^

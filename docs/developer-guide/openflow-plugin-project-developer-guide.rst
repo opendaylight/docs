@@ -375,10 +375,6 @@ In order to involve suitable code generators, this is needed in pom:
 
 -  sal CodeGeneratorImpl (target/generated-sources/sal)
 
--  documentation generator (target/site/models):
-   `openflow-provider.html <https://jenkins.opendaylight.org/openflowplugin/job/openflowplugin-merge/ws/openflowplugin/target/site/models/openflow-provider.html>`__,
-   `openflow-provider-impl.html <https://jenkins.opendaylight.org/openflowplugin/job/openflowplugin-merge/ws/openflowplugin/target/site/models/openflow-provider-impl.html>`__
-
 Altering generated files
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -938,402 +934,165 @@ txEntity from EOS.
 Yang models and API
 -------------------
 
-+--------------------------------------------------------+-------------------+
-| Model                                                  | DOC               |
-+========================================================+===================+
++--------------------------------------------------------+
+| Model                                                  |
++========================================================+
 | ***Openflow basic types***                             |
-+--------------------------------------------------------+-------------------+
-| `opendaylight-table-types.yang <https://git.opendaylig | `YangDOC <https:/ |
-| ht.org/gerrit/gitweb?p=openflowplugin.git;f=model/mode | /jenkins.opendayl |
-| l-flow-base/src/main/yang/opendaylight-table-types.yan | ight.org/releng/v |
-| g;a=blob;hb=refs/heads/stable/boron>`__                | iew/openflowplugi |
-|                                                        | n/job/openflowplu |
-|                                                        | gin-merge-boron/l |
-|                                                        | astSuccessfulBuil |
-|                                                        | d/artifact/model/ |
-|                                                        | model-flow-base/t |
-|                                                        | arget/site/models |
-|                                                        | /opendaylight-tab |
-|                                                        | le-types.html>`__ |
-+--------------------------------------------------------+-------------------+
-| `opendaylight-action-types.yang <https://git.opendayli | `YangDOC <https:/ |
-| ght.org/gerrit/gitweb?p=openflowplugin.git;f=model/mod | /jenkins.opendayl |
-| el-flow-base/src/main/yang/opendaylight-action-types.y | ight.org/releng/v |
-| ang;a=blob;hb=refs/heads/stable/boron>`__              | iew/openflowplugi |
-|                                                        | n/job/openflowplu |
-|                                                        | gin-merge-boron/l |
-|                                                        | astSuccessfulBuil |
-|                                                        | d/artifact/model/ |
-|                                                        | model-flow-base/t |
-|                                                        | arget/site/models |
-|                                                        | /opendaylight-act |
-|                                                        | ion-types.html>`_ |
-|                                                        | _                 |
-+--------------------------------------------------------+-------------------+
-| `opendaylight-flow-types.yan <https://git.opendaylight | `YangDOC <https:/ |
-| .org/gerrit/gitweb?p=openflowplugin.git;f=model/model- | /jenkins.opendayl |
-| flow-base/src/main/yang/opendaylight-flow-types.yang;a | ight.org/releng/v |
-| =blob;hb=refs/heads/stable/boron>`__                   | iew/openflowplugi |
-|                                                        | n/job/openflowplu |
-|                                                        | gin-merge-boron/l |
-|                                                        | astSuccessfulBuil |
-|                                                        | d/artifact/model/ |
-|                                                        | model-flow-base/t |
-|                                                        | arget/site/models |
-|                                                        | /opendaylight-flo |
-|                                                        | w-types.html>`__  |
-+--------------------------------------------------------+-------------------+
-| `opendaylight-meter-types.yang <https://git.opendaylig | `YangDOC <https:/ |
-| ht.org/gerrit/gitweb?p=openflowplugin.git;f=model/mode | /jenkins.opendayl |
-| l-flow-base/src/main/yang/opendaylight-meter-types.yan | ight.org/releng/v |
-| g;a=blob;hb=refs/heads/stable/boron>`__                | iew/openflowplugi |
-|                                                        | n/job/openflowplu |
-|                                                        | gin-merge-boron/l |
-|                                                        | astSuccessfulBuil |
-|                                                        | d/artifact/model/ |
-|                                                        | model-flow-base/t |
-|                                                        | arget/site/models |
-|                                                        | /opendaylight-met |
-|                                                        | er-types.html>`__ |
-+--------------------------------------------------------+-------------------+
-| `opendaylight-group-types.yang <https://git.opendaylig | `YangDOC <https:/ |
-| ht.org/gerrit/gitweb?p=openflowplugin.git;f=model/mode | /jenkins.opendayl |
-| l-flow-base/src/main/yang/opendaylight-group-types.yan | ight.org/releng/v |
-| g;a=blob;hb=refs/heads/stable/boron>`__                | iew/openflowplugi |
-|                                                        | n/job/openflowplu |
-|                                                        | gin-merge-boron/l |
-|                                                        | astSuccessfulBuil |
-|                                                        | d/artifact/model/ |
-|                                                        | model-flow-base/t |
-|                                                        | arget/site/models |
-|                                                        | /opendaylight-gro |
-|                                                        | up-types.html>`__ |
-+--------------------------------------------------------+-------------------+
-| `opendaylight-match-types.yang <https://git.opendaylig | `YangDOC <https:/ |
-| ht.org/gerrit/gitweb?p=openflowplugin.git;f=model/mode | /jenkins.opendayl |
-| l-flow-base/src/main/yang/opendaylight-match-types.yan | ight.org/releng/v |
-| g;a=blob;hb=refs/heads/stable/boron>`__                | iew/openflowplugi |
-|                                                        | n/job/openflowplu |
-|                                                        | gin-merge-boron/l |
-|                                                        | astSuccessfulBuil |
-|                                                        | d/artifact/model/ |
-|                                                        | model-flow-base/t |
-|                                                        | arget/site/models |
-|                                                        | /opendaylight-mat |
-|                                                        | ch-types.html>`__ |
-+--------------------------------------------------------+-------------------+
-| `opendaylight-port-types.yang <https://git.opendayligh | `YangDOC <https:/ |
-| t.org/gerrit/gitweb?p=openflowplugin.git;f=model/model | /jenkins.opendayl |
-| -flow-base/src/main/yang/opendaylight-port-types.yang; | ight.org/releng/v |
-| a=blob;hb=refs/heads/stable/boron>`__                  | iew/openflowplugi |
-|                                                        | n/job/openflowplu |
-|                                                        | gin-merge-boron/l |
-|                                                        | astSuccessfulBuil |
-|                                                        | d/artifact/model/ |
-|                                                        | model-flow-base/t |
-|                                                        | arget/site/models |
-|                                                        | /opendaylight-por |
-|                                                        | t-types.html>`__  |
-+--------------------------------------------------------+-------------------+
-| `opendaylight-queue-types.yang <https://git.opendaylig | `YangDOC <https:/ |
-| ht.org/gerrit/gitweb?p=openflowplugin.git;f=model/mode | /jenkins.opendayl |
-| l-flow-base/src/main/yang/opendaylight-queue-types.yan | ight.org/releng/v |
-| g;a=blob;hb=refs/heads/stable/boron>`__                | iew/openflowplugi |
-|                                                        | n/job/openflowplu |
-|                                                        | gin-merge-boron/l |
-|                                                        | astSuccessfulBuil |
-|                                                        | d/artifact/model/ |
-|                                                        | model-flow-base/t |
-|                                                        | arget/site/models |
-|                                                        | /opendaylight-que |
-|                                                        | ue-types.html>`__ |
-+--------------------------------------------------------+-------------------+
++--------------------------------------------------------+
+| `opendaylight-table-types.yang <https://git.opendaylig |
+| ht.org/gerrit/gitweb?p=openflowplugin.git;f=model/mode |
+| l-flow-base/src/main/yang/opendaylight-table-types.yan |
+| g;a=blob;hb=refs/heads/stable/boron>`__                |
++--------------------------------------------------------+
+| `opendaylight-action-types.yang <https://git.opendayli |
+| ght.org/gerrit/gitweb?p=openflowplugin.git;f=model/mod |
+| el-flow-base/src/main/yang/opendaylight-action-types.y |
+| ang;a=blob;hb=refs/heads/stable/boron>`__              |
++--------------------------------------------------------+
+| `opendaylight-flow-types.yan <https://git.opendaylight |
+| .org/gerrit/gitweb?p=openflowplugin.git;f=model/model- |
+| flow-base/src/main/yang/opendaylight-flow-types.yang;a |
+| =blob;hb=refs/heads/stable/boron>`__                   |
++--------------------------------------------------------+
+| `opendaylight-meter-types.yang <https://git.opendaylig |
+| ht.org/gerrit/gitweb?p=openflowplugin.git;f=model/mode |
+| l-flow-base/src/main/yang/opendaylight-meter-types.yan |
+| g;a=blob;hb=refs/heads/stable/boron>`__                |
++--------------------------------------------------------+
+| `opendaylight-group-types.yang <https://git.opendaylig |
+| ht.org/gerrit/gitweb?p=openflowplugin.git;f=model/mode |
+| l-flow-base/src/main/yang/opendaylight-group-types.yan |
+| g;a=blob;hb=refs/heads/stable/boron>`__                |
++--------------------------------------------------------+
+| `opendaylight-match-types.yang <https://git.opendaylig |
+| ht.org/gerrit/gitweb?p=openflowplugin.git;f=model/mode |
+| l-flow-base/src/main/yang/opendaylight-match-types.yan |
+| g;a=blob;hb=refs/heads/stable/boron>`__                |
++--------------------------------------------------------+
+| `opendaylight-port-types.yang <https://git.opendayligh |
+| t.org/gerrit/gitweb?p=openflowplugin.git;f=model/model |
+| -flow-base/src/main/yang/opendaylight-port-types.yang; |
+| a=blob;hb=refs/heads/stable/boron>`__                  |
++--------------------------------------------------------+
+| `opendaylight-queue-types.yang <https://git.opendaylig |
+| ht.org/gerrit/gitweb?p=openflowplugin.git;f=model/mode |
+| l-flow-base/src/main/yang/opendaylight-queue-types.yan |
+| g;a=blob;hb=refs/heads/stable/boron>`__                |
++--------------------------------------------------------+
 | ***Openflow services***                                |
-+--------------------------------------------------------+-------------------+
-| `sal-table.yang <https://git.opendaylight.org/gerrit/g | `YangDOC <https:/ |
-| itweb?p=openflowplugin.git;f=model/model-flow-service/ | /jenkins.opendayl |
-| src/main/yang/sal-table.yang;a=blob;hb=refs/heads/stab | ight.org/releng/v |
-| le/boron>`__                                           | iew/openflowplugi |
-|                                                        | n/job/openflowplu |
-|                                                        | gin-merge-boron/l |
-|                                                        | astSuccessfulBuil |
-|                                                        | d/artifact/model/ |
-|                                                        | model-flow-servic |
-|                                                        | e/target/site/mod |
-|                                                        | els/sal-table.htm |
-|                                                        | l>`__             |
-+--------------------------------------------------------+-------------------+
-| `sal-group.yang <https://git.opendaylight.org/gerrit/g | `YangDOC <https:/ |
-| itweb?p=openflowplugin.git;f=model/model-flow-service/ | /jenkins.opendayl |
-| src/main/yang/sal-group.yang;a=blob;hb=refs/heads/stab | ight.org/releng/v |
-| le/boron>`__                                           | iew/openflowplugi |
-|                                                        | n/job/openflowplu |
-|                                                        | gin-merge-boron/l |
-|                                                        | astSuccessfulBuil |
-|                                                        | d/artifact/model/ |
-|                                                        | model-flow-servic |
-|                                                        | e/target/site/mod |
-|                                                        | els/sal-group.htm |
-|                                                        | l>`__             |
-+--------------------------------------------------------+-------------------+
-| `sal-queue.yang <https://git.opendaylight.org/gerrit/g | `YangDOC <https:/ |
-| itweb?p=openflowplugin.git;f=model/model-flow-service/ | /jenkins.opendayl |
-| src/main/yang/sal-queue.yang;a=blob;hb=refs/heads/stab | ight.org/releng/v |
-| le/boron>`__                                           | iew/openflowplugi |
-|                                                        | n/job/openflowplu |
-|                                                        | gin-merge-boron/l |
-|                                                        | astSuccessfulBuil |
-|                                                        | d/artifact/model/ |
-|                                                        | model-flow-servic |
-|                                                        | e/target/site/mod |
-|                                                        | els/sal-queue.htm |
-|                                                        | l>`__             |
-+--------------------------------------------------------+-------------------+
-| `flow-errors.yang <https://git.opendaylight.org/gerrit | `YangDOC <https:/ |
-| /gitweb?p=openflowplugin.git;f=model/model-flow-servic | /jenkins.opendayl |
-| e/src/main/yang/flow-errors.yang;a=blob;hb=refs/heads/ | ight.org/releng/v |
-| stable/boron>`__                                       | iew/openflowplugi |
-|                                                        | n/job/openflowplu |
-|                                                        | gin-merge-boron/l |
-|                                                        | astSuccessfulBuil |
-|                                                        | d/artifact/model/ |
-|                                                        | model-flow-servic |
-|                                                        | e/target/site/mod |
-|                                                        | els/flow-errors.h |
-|                                                        | tml>`__           |
-+--------------------------------------------------------+-------------------+
-| `flow-capable-transaction.yang <https://git.opendaylig | `YangDOC <https:/ |
-| ht.org/gerrit/gitweb?p=openflowplugin.git;f=model/mode | /jenkins.opendayl |
-| l-flow-service/src/main/yang/flow-capable-transaction. | ight.org/releng/v |
-| yang;a=blob;hb=refs/heads/stable/boron>`__             | iew/openflowplugi |
-|                                                        | n/job/openflowplu |
-|                                                        | gin-merge-boron/l |
-|                                                        | astSuccessfulBuil |
-|                                                        | d/artifact/model/ |
-|                                                        | model-flow-servic |
-|                                                        | e/target/site/mod |
-|                                                        | els/flow-capable- |
-|                                                        | transaction.html> |
-|                                                        | `__               |
-+--------------------------------------------------------+-------------------+
-| `sal-flow.yang <https://git.opendaylight.org/gerrit/gi | `YangDOC <https:/ |
-| tweb?p=openflowplugin.git;f=model/model-flow-service/s | /jenkins.opendayl |
-| rc/main/yang/sal-flow.yang;a=blob;hb=refs/heads/stable | ight.org/releng/v |
-| /boron>`__                                             | iew/openflowplugi |
-|                                                        | n/job/openflowplu |
-|                                                        | gin-merge-boron/l |
-|                                                        | astSuccessfulBuil |
-|                                                        | d/artifact/model/ |
-|                                                        | model-flow-servic |
-|                                                        | e/target/site/mod |
-|                                                        | els/sal-flow.html |
-|                                                        | >`__              |
-+--------------------------------------------------------+-------------------+
-| `sal-meter.yang <https://git.opendaylight.org/gerrit/g | `YangDOC <https:/ |
-| itweb?p=openflowplugin.git;f=model/model-flow-service/ | /jenkins.opendayl |
-| src/main/yang/sal-meter.yang;a=blob;hb=refs/heads/stab | ight.org/releng/v |
-| le/boron>`__                                           | iew/openflowplugi |
-|                                                        | n/job/openflowplu |
-|                                                        | gin-merge-boron/l |
-|                                                        | astSuccessfulBuil |
-|                                                        | d/artifact/model/ |
-|                                                        | model-flow-servic |
-|                                                        | e/target/site/mod |
-|                                                        | els/sal-meter.htm |
-|                                                        | l>`__             |
-+--------------------------------------------------------+-------------------+
-| `flow-topology-discovery.yang <https://git.opendayligh | `YangDOC <https:/ |
-| t.org/gerrit/gitweb?p=openflowplugin.git;f=model/model | /jenkins.opendayl |
-| -flow-service/src/main/yang/flow-topology-discovery.ya | ight.org/releng/v |
-| ng;a=blob;hb=refs/heads/stable/boron>`__               | iew/openflowplugi |
-|                                                        | n/job/openflowplu |
-|                                                        | gin-merge-boron/l |
-|                                                        | astSuccessfulBuil |
-|                                                        | d/artifact/model/ |
-|                                                        | model-flow-servic |
-|                                                        | e/target/site/mod |
-|                                                        | els/flow-topology |
-|                                                        | -discovery.html>` |
-|                                                        | __                |
-+--------------------------------------------------------+-------------------+
-| `node-errors.yang <https://git.opendaylight.org/gerrit | `YangDOC <https:/ |
-| /gitweb?p=openflowplugin.git;f=model/model-flow-servic | /jenkins.opendayl |
-| e/src/main/yang/node-errors.yang;a=blob;hb=refs/heads/ | ight.org/releng/v |
-| stable/boron>`__                                       | iew/openflowplugi |
-|                                                        | n/job/openflowplu |
-|                                                        | gin-merge-boron/l |
-|                                                        | astSuccessfulBuil |
-|                                                        | d/artifact/model/ |
-|                                                        | model-flow-servic |
-|                                                        | e/target/site/mod |
-|                                                        | els/node-errors.h |
-|                                                        | tml>`__           |
-+--------------------------------------------------------+-------------------+
-| `node-config.yang <https://git.opendaylight.org/gerrit | `YangDOC <https:/ |
-| /gitweb?p=openflowplugin.git;f=model/model-flow-servic | /jenkins.opendayl |
-| e/src/main/yang/node-config.yang;a=blob;hb=refs/heads/ | ight.org/releng/v |
-| stable/boron>`__                                       | iew/openflowplugi |
-|                                                        | n/job/openflowplu |
-|                                                        | gin-merge-boron/l |
-|                                                        | astSuccessfulBuil |
-|                                                        | d/artifact/model/ |
-|                                                        | model-flow-servic |
-|                                                        | e/target/site/mod |
-|                                                        | els/node-config.h |
-|                                                        | tml>`__           |
-+--------------------------------------------------------+-------------------+
-| `sal-echo.yang <https://git.opendaylight.org/gerrit/gi | `YangDOC <https:/ |
-| tweb?p=openflowplugin.git;f=model/model-flow-service/s | /jenkins.opendayl |
-| rc/main/yang/sal-echo.yang;a=blob;hb=refs/heads/stable | ight.org/releng/v |
-| /boron>`__                                             | iew/openflowplugi |
-|                                                        | n/job/openflowplu |
-|                                                        | gin-merge-boron/l |
-|                                                        | astSuccessfulBuil |
-|                                                        | d/artifact/model/ |
-|                                                        | model-flow-servic |
-|                                                        | e/target/site/mod |
-|                                                        | els/sal-echo.html |
-|                                                        | >`__              |
-+--------------------------------------------------------+-------------------+
-| `sal-port.yang <https://git.opendaylight.org/gerrit/gi | `YangDOC <https:/ |
-| tweb?p=openflowplugin.git;f=model/model-flow-service/s | /jenkins.opendayl |
-| rc/main/yang/sal-port.yang;a=blob;hb=refs/heads/stable | ight.org/releng/v |
-| /boron>`__                                             | iew/openflowplugi |
-|                                                        | n/job/openflowplu |
-|                                                        | gin-merge-boron/l |
-|                                                        | astSuccessfulBuil |
-|                                                        | d/artifact/model/ |
-|                                                        | model-flow-servic |
-|                                                        | e/target/site/mod |
-|                                                        | els/sal-port.html |
-|                                                        | >`__              |
-+--------------------------------------------------------+-------------------+
-| `packet-processing.yang <https://git.opendaylight.org/ | `YangDOC <https:/ |
-| gerrit/gitweb?p=openflowplugin.git;f=model/model-flow- | /jenkins.opendayl |
-| service/src/main/yang/packet-processing.yang;a=blob;hb | ight.org/releng/v |
-| =refs/heads/stable/boron>`__                           | iew/openflowplugi |
-|                                                        | n/job/openflowplu |
-|                                                        | gin-merge-boron/l |
-|                                                        | astSuccessfulBuil |
-|                                                        | d/artifact/model/ |
-|                                                        | model-flow-servic |
-|                                                        | e/target/site/mod |
-|                                                        | els/packet-proces |
-|                                                        | sing.html>`__     |
-+--------------------------------------------------------+-------------------+
-| `flow-node-inventory.yang <https://git.opendaylight.or | `YangDOC <https:/ |
-| g/gerrit/gitweb?p=openflowplugin.git;f=model/model-flo | /jenkins.opendayl |
-| w-service/src/main/yang/flow-node-inventory.yang;a=blo | ight.org/releng/v |
-| b;hb=refs/heads/stable/boron>`__                       | iew/openflowplugi |
-|                                                        | n/job/openflowplu |
-|                                                        | gin-merge-boron/l |
-|                                                        | astSuccessfulBuil |
-|                                                        | d/artifact/model/ |
-|                                                        | model-flow-servic |
-|                                                        | e/target/site/mod |
-|                                                        | els/flow-node-inv |
-|                                                        | entory.html>`__   |
-+--------------------------------------------------------+-------------------+
++--------------------------------------------------------+
+| `sal-table.yang <https://git.opendaylight.org/gerrit/g |
+| itweb?p=openflowplugin.git;f=model/model-flow-service/ |
+| src/main/yang/sal-table.yang;a=blob;hb=refs/heads/stab |
+| le/boron>`__                                           |
++--------------------------------------------------------+
+| `sal-group.yang <https://git.opendaylight.org/gerrit/g |
+| itweb?p=openflowplugin.git;f=model/model-flow-service/ |
+| src/main/yang/sal-group.yang;a=blob;hb=refs/heads/stab |
+| le/boron>`__                                           |
++--------------------------------------------------------+
+| `sal-queue.yang <https://git.opendaylight.org/gerrit/g |
+| itweb?p=openflowplugin.git;f=model/model-flow-service/ |
+| src/main/yang/sal-queue.yang;a=blob;hb=refs/heads/stab |
+| le/boron>`__                                           |
++--------------------------------------------------------+
+| `flow-errors.yang <https://git.opendaylight.org/gerrit |
+| /gitweb?p=openflowplugin.git;f=model/model-flow-servic |
+| e/src/main/yang/flow-errors.yang;a=blob;hb=refs/heads/ |
+| stable/boron>`__                                       |
++--------------------------------------------------------+
+| `flow-capable-transaction.yang <https://git.opendaylig |
+| ht.org/gerrit/gitweb?p=openflowplugin.git;f=model/mode |
+| l-flow-service/src/main/yang/flow-capable-transaction. |
+| yang;a=blob;hb=refs/heads/stable/boron>`__             |
++--------------------------------------------------------+
+| `sal-flow.yang <https://git.opendaylight.org/gerrit/gi |
+| tweb?p=openflowplugin.git;f=model/model-flow-service/s |
+| rc/main/yang/sal-flow.yang;a=blob;hb=refs/heads/stable |
+| /boron>`__                                             |
++--------------------------------------------------------+
+| `sal-meter.yang <https://git.opendaylight.org/gerrit/g |
+| itweb?p=openflowplugin.git;f=model/model-flow-service/ |
+| src/main/yang/sal-meter.yang;a=blob;hb=refs/heads/stab |
+| le/boron>`__                                           |
++--------------------------------------------------------+
+| `flow-topology-discovery.yang <https://git.opendayligh |
+| t.org/gerrit/gitweb?p=openflowplugin.git;f=model/model |
+| -flow-service/src/main/yang/flow-topology-discovery.ya |
+| ng;a=blob;hb=refs/heads/stable/boron>`__               |
++--------------------------------------------------------+
+| `node-errors.yang <https://git.opendaylight.org/gerrit |
+| /gitweb?p=openflowplugin.git;f=model/model-flow-servic |
+| e/src/main/yang/node-errors.yang;a=blob;hb=refs/heads/ |
+| stable/boron>`__                                       |
++--------------------------------------------------------+
+| `node-config.yang <https://git.opendaylight.org/gerrit |
+| /gitweb?p=openflowplugin.git;f=model/model-flow-servic |
+| e/src/main/yang/node-config.yang;a=blob;hb=refs/heads/ |
+| stable/boron>`__                                       |
++--------------------------------------------------------+
+| `sal-echo.yang <https://git.opendaylight.org/gerrit/gi |
+| tweb?p=openflowplugin.git;f=model/model-flow-service/s |
+| rc/main/yang/sal-echo.yang;a=blob;hb=refs/heads/stable |
+| /boron>`__                                             |
++--------------------------------------------------------+
+| `sal-port.yang <https://git.opendaylight.org/gerrit/gi |
+| tweb?p=openflowplugin.git;f=model/model-flow-service/s |
+| rc/main/yang/sal-port.yang;a=blob;hb=refs/heads/stable |
+| /boron>`__                                             |
++--------------------------------------------------------+
+| `packet-processing.yang <https://git.opendaylight.org/ |
+| gerrit/gitweb?p=openflowplugin.git;f=model/model-flow- |
+| service/src/main/yang/packet-processing.yang;a=blob;hb |
+| =refs/heads/stable/boron>`__                           |
++--------------------------------------------------------+
+| `flow-node-inventory.yang <https://git.opendaylight.or |
+| g/gerrit/gitweb?p=openflowplugin.git;f=model/model-flo |
+| w-service/src/main/yang/flow-node-inventory.yang;a=blo |
+| b;hb=refs/heads/stable/boron>`__                       |
++--------------------------------------------------------+
 | ***Openflow statistics***                              |
-+--------------------------------------------------------+-------------------+
-| `opendaylight-queue-statistics.yang <https://git.opend | `YangDOC <https:/ |
-| aylight.org/gerrit/gitweb?p=openflowplugin.git;f=model | /jenkins.opendayl |
-| /model-flow-statistics/src/main/yang/opendaylight-queu | ight.org/releng/v |
-| e-statistics.yang;a=blob;hb=refs/heads/stable/boron>`_ | iew/openflowplugi |
-| _                                                      | n/job/openflowplu |
-|                                                        | gin-merge-boron/l |
-|                                                        | astSuccessfulBuil |
-|                                                        | d/artifact/model/ |
-|                                                        | model-flow-statis |
-|                                                        | tics/target/site/ |
-|                                                        | models/opendaylig |
-|                                                        | ht-queue-statisti |
-|                                                        | cs.html>`__       |
-+--------------------------------------------------------+-------------------+
-| `opendaylight-flow-table-statistics.yang <https://git. | `YangDOC <https:/ |
-| opendaylight.org/gerrit/gitweb?p=openflowplugin.git;f= | /jenkins.opendayl |
-| model/model-flow-statistics/src/main/yang/opendaylight | ight.org/releng/v |
-| -flow-table-statistics.yang;a=blob;hb=refs/heads/stabl | iew/openflowplugi |
-| e/boron>`__                                            | n/job/openflowplu |
-|                                                        | gin-merge-boron/l |
-|                                                        | astSuccessfulBuil |
-|                                                        | d/artifact/model/ |
-|                                                        | model-flow-statis |
-|                                                        | tics/target/site/ |
-|                                                        | models/opendaylig |
-|                                                        | ht-flow-table-sta |
-|                                                        | tistics.html>`__  |
-+--------------------------------------------------------+-------------------+
-| `opendaylight-port-statistics.yang <https://git.openda | `YangDOC <https:/ |
-| ylight.org/gerrit/gitweb?p=openflowplugin.git;f=model/ | /jenkins.opendayl |
-| model-flow-statistics/src/main/yang/opendaylight-port- | ight.org/releng/v |
-| statistics.yang;a=blob;hb=refs/heads/stable/boron>`__  | iew/openflowplugi |
-|                                                        | n/job/openflowplu |
-|                                                        | gin-merge-boron/l |
-|                                                        | astSuccessfulBuil |
-|                                                        | d/artifact/model/ |
-|                                                        | model-flow-statis |
-|                                                        | tics/target/site/ |
-|                                                        | models/opendaylig |
-|                                                        | ht-port-statistic |
-|                                                        | s.html>`__        |
-+--------------------------------------------------------+-------------------+
-| `opendaylight-statistics-types.yang <https://git.opend | `YangDOC <https:/ |
-| aylight.org/gerrit/gitweb?p=openflowplugin.git;f=model | /jenkins.opendayl |
-| /model-flow-statistics/src/main/yang/opendaylight-stat | ight.org/releng/v |
-| istics-types.yang;a=blob;hb=refs/heads/stable/boron>`_ | iew/openflowplugi |
-| _                                                      | n/job/openflowplu |
-|                                                        | gin-merge-boron/l |
-|                                                        | astSuccessfulBuil |
-|                                                        | d/artifact/model/ |
-|                                                        | model-flow-statis |
-|                                                        | tics/target/site/ |
-|                                                        | models/opendaylig |
-|                                                        | ht-statistics-typ |
-|                                                        | es.html>`__       |
-+--------------------------------------------------------+-------------------+
-| `opendaylight-group-statistics.yang <https://git.opend | `YangDOC <https:/ |
-| aylight.org/gerrit/gitweb?p=openflowplugin.git;f=model | /jenkins.opendayl |
-| /model-flow-statistics/src/main/yang/opendaylight-grou | ight.org/releng/v |
-| p-statistics.yang;a=blob;hb=refs/heads/stable/boron>`_ | iew/openflowplugi |
-| _                                                      | n/job/openflowplu |
-|                                                        | gin-merge-boron/l |
-|                                                        | astSuccessfulBuil |
-|                                                        | d/artifact/model/ |
-|                                                        | model-flow-statis |
-|                                                        | tics/target/site/ |
-|                                                        | models/opendaylig |
-|                                                        | ht-group-statisti |
-|                                                        | cs.html>`__       |
-+--------------------------------------------------------+-------------------+
-| `opendaylight-flow-statistics.yang <https://git.openda | `YangDOC <https:/ |
-| ylight.org/gerrit/gitweb?p=openflowplugin.git;f=model/ | /jenkins.opendayl |
-| model-flow-statistics/src/main/yang/opendaylight-flow- | ight.org/releng/v |
-| statistics.yang;a=blob;hb=refs/heads/stable/boron>`__  | iew/openflowplugi |
-|                                                        | n/job/openflowplu |
-|                                                        | gin-merge-boron/l |
-|                                                        | astSuccessfulBuil |
-|                                                        | d/artifact/model/ |
-|                                                        | model-flow-statis |
-|                                                        | tics/target/site/ |
-|                                                        | models/opendaylig |
-|                                                        | ht-flow-statistic |
-|                                                        | s.html>`__        |
-+--------------------------------------------------------+-------------------+
-| `opendaylight-meter-statistics.yang <https://git.opend | `YangDOC <https:/ |
-| aylight.org/gerrit/gitweb?p=openflowplugin.git;f=model | /jenkins.opendayl |
-| /model-flow-statistics/src/main/yang/opendaylight-mete | ight.org/releng/v |
-| r-statistics.yang;a=blob;hb=refs/heads/stable/boron>`_ | iew/openflowplugi |
-| _                                                      | n/job/openflowplu |
-|                                                        | gin-merge-boron/l |
-|                                                        | astSuccessfulBuil |
-|                                                        | d/artifact/model/ |
-|                                                        | model-flow-statis |
-|                                                        | tics/target/site/ |
-|                                                        | models/opendaylig |
-|                                                        | ht-meter-statisti |
-|                                                        | cs.html>`__       |
-+--------------------------------------------------------+-------------------+
++--------------------------------------------------------+
+| `opendaylight-queue-statistics.yang <https://git.opend |
+| aylight.org/gerrit/gitweb?p=openflowplugin.git;f=model |
+| /model-flow-statistics/src/main/yang/opendaylight-queu |
+| e-statistics.yang;a=blob;hb=refs/heads/stable/boron>`_ |
+| _                                                      |
++--------------------------------------------------------+
+| `opendaylight-flow-table-statistics.yang <https://git. |
+| opendaylight.org/gerrit/gitweb?p=openflowplugin.git;f= |
+| model/model-flow-statistics/src/main/yang/opendaylight |
+| -flow-table-statistics.yang;a=blob;hb=refs/heads/stabl |
+| e/boron>`__                                            |
++--------------------------------------------------------+
+| `opendaylight-port-statistics.yang <https://git.openda |
+| ylight.org/gerrit/gitweb?p=openflowplugin.git;f=model/ |
+| model-flow-statistics/src/main/yang/opendaylight-port- |
+| statistics.yang;a=blob;hb=refs/heads/stable/boron>`__  |
++--------------------------------------------------------+
+| `opendaylight-statistics-types.yang <https://git.opend |
+| aylight.org/gerrit/gitweb?p=openflowplugin.git;f=model |
+| /model-flow-statistics/src/main/yang/opendaylight-stat |
+| istics-types.yang;a=blob;hb=refs/heads/stable/boron>`_ |
+| _                                                      |
++--------------------------------------------------------+
+| `opendaylight-group-statistics.yang <https://git.opend |
+| aylight.org/gerrit/gitweb?p=openflowplugin.git;f=model |
+| /model-flow-statistics/src/main/yang/opendaylight-grou |
+| p-statistics.yang;a=blob;hb=refs/heads/stable/boron>`_ |
+| _                                                      |
++--------------------------------------------------------+
+| `opendaylight-flow-statistics.yang <https://git.openda |
+| ylight.org/gerrit/gitweb?p=openflowplugin.git;f=model/ |
+| model-flow-statistics/src/main/yang/opendaylight-flow- |
+| statistics.yang;a=blob;hb=refs/heads/stable/boron>`__  |
++--------------------------------------------------------+
+| `opendaylight-meter-statistics.yang <https://git.opend |
+| aylight.org/gerrit/gitweb?p=openflowplugin.git;f=model |
+| /model-flow-statistics/src/main/yang/opendaylight-mete |
+| r-statistics.yang;a=blob;hb=refs/heads/stable/boron>`_ |
+| _                                                      |
++--------------------------------------------------------+
 
 Karaf feature tree
 ------------------
