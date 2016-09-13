@@ -81,7 +81,7 @@ LISP Flow Mapping Architecture
 The following figure shows the various LISP Flow Mapping modules.
 
 .. figure:: ./images/ODL_lfm_Be_component.jpg
-   :alt: LISP Mapping Service Internal Architecture
+:alt: LISP Mapping Service Internal Architecture
 
    LISP Mapping Service Internal Architecture
 
@@ -481,8 +481,8 @@ URLs and body content on the page.
 
     ::
 
-        curl -u "admin":"admin" -H "Content-type: application/json" -X POST \
-            http://localhost:8181/restconf/operations/odl-mappingservice:add-key \
+        curl -u "admin":"admin" -H "Content-type: application/json" -X PUT \
+            http://localhost:8181/restconf/config/odl-mappingservice:mapping-database/virtual-network-identifier/0/authentication-key/ipv4:1.1.1.1%2f32/ \
             --data @add-key.json
 
     where the content of the *add-key.json* file is the following:
@@ -490,7 +490,8 @@ URLs and body content on the page.
     .. code:: json
 
         {
-            "input": {
+            "authentication-key": {
+                "eid-uri": "ipv4:1.1.1.1/32",
                 "eid": {
                     "address-type": "ietf-lisp-address-types:ipv4-prefix-afi",
                     "ipv4-prefix": "1.1.1.1/32"
@@ -507,17 +508,28 @@ URLs and body content on the page.
 
     ::
 
-        curl -u "admin":"admin" -H "Content-type: application/json" -X POST \
-            http://localhost:8181/restconf/operations/odl-mappingservice:get-key \
-            --data @get1.json
+        curl -u "admin":"admin" -H "Content-type: application/json" -X GET \
+            http://localhost:8181/restconf/config/odl-mappingservice:mapping-database/virtual-network-identifier/0/authentication-key/ipv4:1.1.1.1%2f32/
 
-    where the content of the *get1.json* file can be derived from the
-    *add-key.json* file by removing the *mapping-authkey* field. The
-    output the above invocation should look like this:
+    The output the above invocation should look like this:
 
     ::
 
-        {"output":{"mapping-authkey":{"key-type":1,"key-string":"password"}}}
+        {
+            "authentication-key":[
+                {
+                    "eid-uri":"ipv4:1.1.1.1/32",
+                    "eid":{
+                        "ipv4-prefix":"1.1.1.1/32",
+                        "address-type":"ietf-lisp-address-types:ipv4-prefix-afi"
+                    },
+                    "mapping-authkey":{
+                        "key-string":"password"
+                        ,"key-type":1
+                    }
+                }
+            ]
+        }
 
 9.  Run the ``lispd`` LISPmob daemon on all VMs:
 
@@ -531,9 +543,8 @@ URLs and body content on the page.
 
     ::
 
-        curl -u "admin":"admin" -H "Content-type: application/json" -X POST \
-            http://localhost:8181/restconf/operations/odl-mappingservice:get-mapping \
-            --data @get1.json
+        curl -u "admin":"admin" -H "Content-type: application/json" -X GET \
+            http://localhost:8181/restconf/config/odl-mappingservice:mapping-database/virtual-network-identifier/0/mapping/ipv4:1.1.1.1%2f32/southbound/
 
     An alternative way for retrieving mappings from ODL using the
     southbound interface is using the
@@ -545,8 +556,8 @@ URLs and body content on the page.
 
     ::
 
-        curl -u "admin":"admin" -H "Content-type: application/json" -X POST \
-            http://localhost:8181/restconf/operations/odl-mappingservice:add-mapping \
+        curl -u "admin":"admin" -H "Content-type: application/json" -X PUT \
+            http://localhost:8181/restconf/config/odl-mappingservice:mapping-database/virtual-network-identifier/0/mapping/ipv4:2.2.2.2%2f32/northbound/ \
             --data @mapping.json
 
     where the *mapping.json* file looks like this:
@@ -554,7 +565,9 @@ URLs and body content on the page.
     .. code:: json
 
         {
-            "input": {
+            "mapping": {
+                "eid-uri": "ipv4:2.2.2.2/32",
+                "origin": "northbound",
                 "mapping-record": {
                     "recordTtl": 1440,
                     "action": "NoAction",
@@ -607,12 +620,8 @@ URLs and body content on the page.
 
     ::
 
-        curl -u "admin":"admin" -H "Content-type: application/json" -X POST \
-            http://localhost:8181/restconf/operations/odl-mappingservice:get-mapping \
-            --data @get2.json
-
-    where *get2.json* can be derived from *get1.json* by changing the
-    content of the *Ipv4Address* field from *1.1.1.1* to *2.2.2.2*.
+        curl -u "admin":"admin" -H "Content-type: application/json" -X GET \
+            http://localhost:8181/restconf/config/odl-mappingservice:mapping-database/virtual-network-identifier/0/mapping/ipv4:2.2.2.2%2f32/northbound/
 
 13. Now the LISP network is up. To verify, log into the **client** VM
     and ping the server EID:
@@ -655,8 +664,8 @@ URLs and body content on the page.
 
     ::
 
-        curl -u "admin":"admin" -H "Content-type: application/json" -X POST \
-            http://localhost:8181/restconf/operations/odl-mappingservice:add-mapping \
+        curl -u "admin":"admin" -H "Content-type: application/json" -X PUT \
+            http://localhost:8181/restconf/config/odl-mappingservice:mapping-database/virtual-network-identifier/0/mapping/ipv4:2.2.2.2%2f32/northbound/ \
             --data @elp.json
 
     where the *elp.json* file is as follows:
@@ -664,7 +673,9 @@ URLs and body content on the page.
     .. code:: json
 
         {
-            "input": {
+            "mapping": {
+                "eid-uri": "ipv4:2.2.2.2/32",
+                "origin": "northbound",
                 "mapping-record": {
                     "recordTtl": 1440,
                     "action": "NoAction",
