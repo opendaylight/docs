@@ -42,7 +42,7 @@ Flow Mapping project in OpenDaylight and how it can be used to enable
 advanced SDN and NFV use cases.
 
 LISP data plane Tunnel Routers are available at
-`LISPmob.org <http://LISPmob.org/>`__ in the open source community on
+`OpenOverlayRouter.org <http://www.openoverlayrouter.org/>`__ in the open source community on
 the following platforms:
 
 -  Linux
@@ -52,7 +52,7 @@ the following platforms:
 -  OpenWRT
 
 For more details and support for LISP data plane software please visit
-`the LISPmob web site <http://LISPmob.org/>`__.
+`the OOR web site <http://www.openoverlayrouter.org/>`__.
 
 LISP Flow Mapping Service
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -346,7 +346,7 @@ Creating a LISP overlay
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 This section provides instructions to set up a LISP network of three
-nodes (one "client" node and two "server" nodes) using LISPmob as data
+nodes (one "client" node and two "server" nodes) using OOR as data
 plane LISP nodes and the LISP Flow Mapping project from OpenDaylight as
 the LISP programmable mapping system for the LISP network.
 
@@ -379,7 +379,7 @@ Prerequisites
    running the ODL instance, and ``restconfPort`` to 8181, if you didn’t
    modify the default controller settings.
 
--  **LISPmob version 0.5.x** The README.md lists the dependencies needed
+-  **OOR version 1.0 or later** The README.md lists the dependencies needed
    to build it from source.
 
 -  **A virtualization platform**
@@ -399,20 +399,20 @@ you’re using another addressing scheme):
 +==========================+==========================+==========================+
 | **controller**           | OpenDaylight             | 192.168.16.11            |
 +--------------------------+--------------------------+--------------------------+
-| **client**               | LISPmob                  | 192.168.16.30            |
+| **client**               | OOR                      | 192.168.16.30            |
 +--------------------------+--------------------------+--------------------------+
-| **server1**              | LISPmob                  | 192.168.16.31            |
+| **server1**              | OOR                      | 192.168.16.31            |
 +--------------------------+--------------------------+--------------------------+
-| **server2**              | LISPmob                  | 192.168.16.32            |
+| **server2**              | OOR                      | 192.168.16.32            |
 +--------------------------+--------------------------+--------------------------+
-| **service-node**         | LISPmob                  | 192.168.16.33            |
+| **service-node**         | OOR                      | 192.168.16.33            |
 +--------------------------+--------------------------+--------------------------+
 
 Table: Nodes in the tutorial
 
 .. note::
 
-    While the tutorial uses LISPmob as the data plane, it could be any
+    While the tutorial uses OOR as the data plane, it could be any
     LISP-enabled hardware or software router (commercial/open source).
 
 Instructions
@@ -436,19 +436,21 @@ URLs and body content on the page.
     Karaf console to see when the log output is winding down, and
     continue with the tutorial after that.
 
-2.  Install LISPmob on the **client**, **server1**, **server2**, and
+2.  Install OOR on the **client**, **server1**, **server2**, and
     **service-node** VMs following the installation instructions `from
-    the LISPmob README
-    file <https://github.com/LISPmob/lispmob#software-prerequisites>`__.
+    the OOR README
+    file <https://github.com/OpenOverlayRouter/oor#software-prerequisites>`__.
 
-3.  Configure the LISPmob installations from the previous step. Starting
-    from the ``lispd.conf.example`` file in the distribution, set the
-    EID in each ``lispd.conf`` file from the IP address space selected
+3.  Configure the OOR installations from the previous step. Take a look
+    at the ``oor.conf.example`` to get a general idea of the structure
+    of the conf file. First, check if the file ``/etc/oor.conf`` exists.
+    If the file doesn't exist, create the file ``/etc/oor.conf``. Set the
+    EID in ``/etc/oor.conf`` file from the IP address space selected
     for your virtual/LISP network. In this tutorial the EID of the
     **client** is set to 1.1.1.1/32, and that of **server1** and
     **server2** to 2.2.2.2/32.
 
-4.  Set the RLOC interface to ``eth1`` in each ``lispd.conf`` file. LISP
+4.  Set the RLOC interface to ``eth1`` in each ``oor.conf`` file. LISP
     will determine the RLOC (IP address of the corresponding VM) based
     on this interface.
 
@@ -458,7 +460,7 @@ URLs and body content on the page.
     that it doesn’t interfere with the mappings on the controller, since
     we’re going to program them manually.
 
-6.  Modify the "key" parameter in each ``lispd.conf`` file to a
+6.  Modify the "key" parameter in each ``oor.conf`` file to a
     key/password of your choice (*password* in this tutorial).
 
     .. note::
@@ -466,8 +468,8 @@ URLs and body content on the page.
         The ``resources/tutorial`` directory in the *stable/boron*
         branch of the project git repository has the files used in the
         tutorial `checked
-        in <https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=tree;f=resources/tutorial;hb=refs/heads/stable/boron>`__,
-        so you can just copy the files to ``/root/lispd.conf`` on the
+        in (will be updated) <https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=tree;f=resources/tutorial;hb=refs/heads/stable/boron>`__,
+        so you can just copy the files to ``/etc/oor.conf`` on the
         respective VMs. You will also find the JSON files referenced
         below in the same directory.
 
@@ -531,13 +533,15 @@ URLs and body content on the page.
             ]
         }
 
-9.  Run the ``lispd`` LISPmob daemon on all VMs:
+9.  Run the ``oor`` OOR daemon on all VMs:
 
     ::
 
-        lispd -f /root/lispd.conf
+        oor -f /etc/oor.conf
 
-10. The **client** LISPmob node should now register its EID-to-RLOC
+    For more information on accessing OOR logs, take a look at
+    `OOR README <https://github.com/OpenOverlayRouter/oor#readme>`__
+10. The **client** OOR node should now register its EID-to-RLOC
     mapping in OpenDaylight. To verify you can lookup the corresponding
     EIDs via the REST API
 
@@ -719,7 +723,7 @@ URLs and body content on the page.
 
     After the mapping for 2.2.2.2/32 is updated with the above, the ICMP
     traffic from **client** to **server1** will flow through the
-    **service-node**. You can confirm this in the LISPmob logs, or by
+    **service-node**. You can confirm this in the OOR logs, or by
     sniffing the traffic on either the **service-node** or **server1**.
     Note that service chains are unidirectional, so unless another ELP
     mapping is added for the return traffic, packets will go from
@@ -738,7 +742,7 @@ URLs and body content on the page.
     The ping from the **client** should now have stopped.
 
     In this case the ACL is done on the destination RLOC. There is an
-    effort underway in the LISPmob community to allow filtering on EIDs,
+    effort underway in the OOR community to allow filtering on EIDs,
     which is the more logical place to apply ACLs.
 
 17. To delete the rule and restore connectivity on the service chain,
