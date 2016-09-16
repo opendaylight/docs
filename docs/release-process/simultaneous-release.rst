@@ -23,7 +23,7 @@ Releasing OpenDaylight
 - Nexus: click release for gpgsign repo (created above in Preparations) **(Helpdesk)**
 - Send email to Helpdesk with binary URL to update website **(Helpdesk)**
 - Send email to TSC and Release mailing lists announcing release binaries location **(Release Engineering Team)**
-- Checkout autorelease and switch to release branch eg stable/boron
+- Checkout autorelease and switch to release branch eg stable/carbon
   **(Release Engineering Team)**
 - Make sure your git repo is setup to push (use git-review)
 
@@ -43,20 +43,20 @@ Releasing OpenDaylight
 
     .. code-block:: bash
 
-        ../scripts/patch-odl-release.sh /tmp/patches Boron
-        git review -y -t Boron
-        git push gerrit release/boron
+        ../scripts/patch-odl-release.sh /tmp/patches Carbon
+        git review -y -t Carbon
+        git push gerrit release/carbon
 
 - Tag autorelease too
 
     .. code-block:: bash
 
-        git submodule foreach git checkout release/beryllium
+        git submodule foreach git checkout release/carbon
         git add [add each project individually to not pull in extra]
-        git commit -sm "Release Beryllium"
-        git tag -asm "OpenDaylight Beryllium release" release/beryllium
-        git review -y -t Beryllium
-        git push gerrit release/beryllium
+        git commit -sm "Release Carbon"
+        git tag -asm "OpenDaylight Carbon release" release/carbon
+        git review -y -t Carbon
+        git push gerrit release/carbon
 
 - Generate release notes (???)
 - Send email to release/tsc/dev notifying tagging and version bump complete **(Release Engineering Team)**
