@@ -50,12 +50,12 @@ Releasing OpenDaylight
 
     .. code-block:: bash
 
-        git submodule foreach git checkout release/beryllium
+        git submodule foreach git checkout release/boron
         git add [add each project individually to not pull in extra]
-        git commit -sm "Release Beryllium"
-        git tag -asm "OpenDaylight Beryllium release" release/beryllium
-        git review -y -t Beryllium
-        git push gerrit release/beryllium
+        git commit -sm "Release Boron"
+        git tag -asm "OpenDaylight Boron release" release/boron
+        git review -y -t Boron
+        git push gerrit release/boron
 
 - Generate release notes (???)
 - Send email to release/tsc/dev notifying tagging and version bump complete **(Release Engineering Team)**
