@@ -809,33 +809,120 @@ SalFlatBatchService
 FRS uses service with implemented barrier waiting logic between
 dependent objects
 
-SalFlatBatchService for FRS
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Service: SalFlatBatchService
+----------------------------
+
+Basics
+~~~~~~
 
 SalFlatBatchService was created along forwardingrules-sync application
-as the service that should application used by default. This service
-uses only one input with bag of flow/group/meter objects and their
-common add/update/remove action. So you practically send only one input
-(of specific bags) to this service.
+as the service that should application used by default. This service uses
+only one input with bag of flow/group/meter objects and their common
+add/update/remove action. So you practically send only one input (of specific
+bags) to this service.
+
+-  interface: *org.opendaylight.yang.gen.v1.urn.opendaylight.flat.batch.service.rev160321.SalFlatBatchService*
+
+-  implementation: *org.opendaylight.openflowplugin.impl.services.SalFlatBatchServiceImpl*
+
+-  method: *processFlatBatch(input)*
+
+-  input: *org.opendaylight.yang.gen.v1.urn.opendaylight.flat.batch.service.rev160321.ProcessFlatBatchInput*
+
+Usage benefits
+^^^^^^^^^^^^^^
+
+-  possibility to use only one input bag with particular failure analysis preserved
+
+-  automatic barrier decision (chain+wait)
+
+-  less RPC routing in cluster environment (since one call encapsulates all others)
+
+ProcessFlatBatchInput
+~~~~~~~~~~~~~~~~~~~~~
+
+Input for SalFlatBatchService (ProcessFlatBatchInput object) consists of:
+
+-  node - NodeRef
+-  batch steps - List<Batch> - defined action + bag of objects + order for failures analysis
+   -  BatchChoice - yang-modeled action choice (e.g. FlatBatchAddFlowCase)
+   containing batch bag of objects (e.g. flows to be added)
+   -  BatchOrder - (integer) order of batch step (should be incremented by single action)
+-  exitOnFirstError - boolean flag
 
 Workflow
-^^^^^^^^
+~~~~~~~~
+#. prepare **list of steps** based on input
 
--  prepare plan of actions
+#. **mark barriers** in steps where needed
 
-   -  mark actions where the barrier is needed before continue
+#. prepare particular **F/G/M-batch** service calls from **Flat-batch** steps
 
--  run appropriate service calls
+   #. F/G/M-batch services encapsulate bulk of single service calls
 
-   -  start all actions that can be run simultaneously
+   #. they actually chain barrier after processing all single calls if actual step is marked
+   as barrier-needed
 
-   -  if there is barrier-needed mark, wait for all fired jobs and only
-      then continue with the next action
+#. **chain** futures and **start** executing
 
-error handling:
+   #. start all actions that can be run simultaneously (chain all on one starting point)
 
--  there is flag to stop process on the first error (default set to
-   false)
+   #. in case there is a step marked as barrier-needed
+
+      #. wait for all fired jobs up to one with barrier
+
+      #. merge rpc results (status, errors, batch failures) into single one
+
+      #. the latest job with barrier is new starting point for chaining
+
+Services encapsulation
+^^^^^^^^^^^^^^^^^^^^^^
+
+ -  SalFlatBatchService
+   -  SalFlowBatchService
+      -  SalFlowService
+   -  SalGroupBatchService
+      -  SalGroupService
+   -  SalMeterBatchService
+      -  SalMeterService
+
+Barrier decision
+^^^^^^^^^^^^^^^^
+
+ -  decide on actual step and all previous steps since the latest barrier
+
+ -  if condition in table below is satisfied the latest step before actual is marked as barrier-needed
+
++----------------+-------------------------+
+| actual step    | previous steps contain  |
++================+=========================+
+| FLOW_ADD or    | GROUP_ADD or            |
+| FLOW_UPDATE    | METER_ADD               |
++================+=========================+
+| GROUP_ADD      | GROUP_ADD or            |
+|                | GROUP_UPDATE            |
++================+=========================+
+| GROUP_REMOVE   | FLOW_UPDATE or          |
+|                | FLOW_REMOVE or          |
+|                | GROUP_UPDATE or         |
+|                | GROUP_REMOVE            |
++================+=========================+
+| METER_REMOVE   | FLOW_UPDATE or          |
+|                | FLOW_REMOVE             |
++================+=========================+
+
+Error handling
+^^^^^^^^^^^^^^
+
+There is flag in ProcessFlatBatchInput to stop process on the first error.
+
+ -  *true* - if partial step is not successful stop whole processing
+
+ -  *false* (default) - try to process all steps regardless partial results
+
+If error occurs in any of partial steps upper FlatBatchService call will return as unsuccessful in both cases.
+However every partial error is attached to general flat batch result along with BatchFailure (contains BatchOrder
+and BatchItemIdChoice to identify failed step).
 
 Cluster singleton approach in plugin
 ------------------------------------
