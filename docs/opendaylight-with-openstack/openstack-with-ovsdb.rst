@@ -27,7 +27,7 @@ OpenStack with OVSDB
   the dlux interface on http://$CONTROL_HOST:8181/dlux/index.html - the
   default username and password is "admin/admin" (see screenshot below)
 
-.. image:: images/dlux-default.png
+.. figure:: images/dlux-default.png
 
 Ensuring OpenStack network state is clean
 -----------------------------------------
@@ -157,7 +157,7 @@ Open vSwitch config and set OpenDaylight to manage the switch:
 * If you reload DLUX, you should now see that all of your Open vSwitch nodes
   are now connected to OpenDaylight
 
-.. image:: images/dlux-with-switches.png
+.. figure:: images/dlux-with-switches.png
 
 * If something has gone wrong, check ``data/log/karaf.log`` under
   the OpenDaylight distribution directory. If you do not see any interesting
