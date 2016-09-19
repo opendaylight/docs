@@ -203,4 +203,4 @@ Setting up gpg-agent on a Mac
    your gpg-agent to run a GUI window to ask for your passphrase and
    give you an option to save your passphrase in the keychain.
 
-   .. image:: images/pinentry-mac.png
+   .. figure:: images/pinentry-mac.png

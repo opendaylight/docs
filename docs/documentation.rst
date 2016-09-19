@@ -399,7 +399,7 @@ Image formats change from something like::
 
 To something like::
 
-   .. image:: images/dlux-default.png
+   .. figure:: images/dlux-default.png
 
 A helpful regular expression for automating the replacements is
 something like::
