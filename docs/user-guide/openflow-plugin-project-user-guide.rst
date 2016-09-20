@@ -100,7 +100,7 @@ Coverage
 ^^^^^^^^
 
 Coverage has been moved to a `GoogleDoc
-Spreadshee <https://docs.google.com/spreadsheet/ccc?key=0AtpUuSEP8OyMdHNTZjBoM0VjOE9BcGhHMzk3N19uamc&usp=sharing%23gid=2#gid=0>`__
+Spreadsheet <https://docs.google.com/spreadsheet/ccc?key=0AtpUuSEP8OyMdHNTZjBoM0VjOE9BcGhHMzk3N19uamc&usp=sharing%23gid=2#gid=0>`__
 
 OF 1.3 Considerations
 ^^^^^^^^^^^^^^^^^^^^^
@@ -118,6 +118,8 @@ matches and actions.
 
 Tutorial / How-To
 -----------------
+
+.. _ofp-running-new-plugin:
 
 Running the controller with the new OpenFlow Plugin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -334,6 +336,8 @@ available directly in controller project.
 
 **Give it a minute to come up :)**
 
+.. _ofp-test-environment:
+
 OpenFlow 1.3 Enabled Software Switches / Environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -407,7 +411,7 @@ features.
 -  You can setup the switch as per the instructions given on the
    following URL
 
-```https://github.com/CPqD/ofsoftswitch13`` <https://github.com/CPqD/ofsoftswitch13>`__
+`https://github.com/CPqD/ofsoftswitch13 <https://github.com/CPqD/ofsoftswitch13>`__
 
 -  Fire following command to start the switch
 
@@ -519,6 +523,8 @@ From within the Mininet VM, run:
 
      sudo mn --topo single,3  --controller 'remote,ip=<your controller ip>,port=6653' --switch ovsk,protocols=OpenFlow13
 
+.. _ofp-e2e-inv:
+
 End to End Inventory
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -606,18 +612,14 @@ Instructions
 Learn End to End for Inventory
 ''''''''''''''''''''''''''''''
 
-`End to End
-Inventory <#odl-ofp-end-to-end-inventory_introduction-introduction>`__
+See :ref:`ofp-e2e-inv`
 
 Check inventory
 '''''''''''''''
 
--  Run mininet with support for OF 1.3 as described in `End to End
-   Inventory <#odl-ofp-end-to-end-inventory_introduction-introduction>`__
+-  Run mininet with support for OF 1.3 as described in :ref:`ofp-e2e-inv`
 
--  Make sure you see the openflow:1 node come up as described in `End to
-   End
-   Inventory <#odl-ofp-end-to-end-inventory_introduction-introduction>`__
+-  Make sure you see the openflow:1 node come up as described in :ref:`ofp-e2e-inv`
 
 Flow Strategy
 '''''''''''''
@@ -725,8 +727,7 @@ Check for your flow in the controller config via RESTCONF
 
 -  See your configured flow in POSTMAN with
 
-   -  URL `http://<controller <http://<controller>`__
-      IP>:8181/restconf/operational/opendaylight-inventory:nodes/node/openflow:1/table/0/
+   -  URL http://<controller IP>:8181/restconf/operational/opendaylight-inventory:nodes/node/openflow:1/table/0/
 
    -  GET
 
@@ -1444,7 +1445,7 @@ Example Flows
 ^^^^^^^^^^^^^
 
 Examples for XML for various flow matches, instructions & actions can be
-found in following section `here <#odl-ofp-example-flows_overview>`__
+found in following section :ref:`here <ofp-example-flows>`.
 
 End to End Topology
 ~~~~~~~~~~~~~~~~~~~
@@ -1458,11 +1459,11 @@ Manager working end to end with the openflowplugin using OpenFlow 1.3.
 Basically, you will learn how to:
 
 1. Run the Base/Virtualization/Service provider Edition with the new
-   openflowplugin: `Running the controller with the new OpenFlow
-   Plugin <#odl-ofp-running-controller-with-the-new-of-plugin_top>`__
+   openflowplugin: :ref:`Running the controller with the new OpenFlow
+   Plugin <ofp-running-new-plugin>`
 
-2. Start mininet to use OF 1.3: `OpenFlow 1.3 Enabled Software Switches
-   / Environment <#odl-ofp-test-environment_top>`__
+2. Start mininet to use OF 1.3: :ref:`OpenFlow 1.3 Enabled Software Switches
+   / Environment <ofp-test-environment>`
 
 3. Use RESTCONF to see the topology information.
 
@@ -1529,8 +1530,7 @@ Groups are NOT SUPPORTED in current (2.0.0) version of
 -  http://comments.gmane.org/gmane.linux.network.openvswitch.general/3251
 
 For testing group feature please use for example
-`CPQD <#odl-ofp-end-to-end-inventory_introduction-introduction>`__
-virtual switch.
+CPQD virtual switch in the :ref:`ofp-e2e-inv` section.
 
 Instructions
 ^^^^^^^^^^^^
@@ -1538,18 +1538,14 @@ Instructions
 Learn End to End for Inventory
 ''''''''''''''''''''''''''''''
 
-`End to End
-Inventory <#odl-ofp-end-to-end-inventory_introduction-introduction>`__
+:ref:`ofp-e2e-inv`
 
 Check inventory
 '''''''''''''''
 
-Run CPqD with support for OF 1.3 as described in `End to End
-Inventory <#odl-ofp-end-to-end-inventory_introduction-introduction>`__
+Run CPqD with support for OF 1.3 as described in :ref:`ofp-e2e-inv`
 
-Make sure you see the openflow:1 node come up as described in `End to
-End
-Inventory <#odl-ofp-end-to-end-inventory_introduction-introduction>`__
+Make sure you see the openflow:1 node come up as described in :ref:`ofp-e2e-inv`
 
 Group Strategy
 ''''''''''''''
@@ -1666,7 +1662,7 @@ Check for your group in the controller config via RESTCONF
 -  See your configured group in POSTMAN with
 
    -  URL
-      `http://<ip-address>:8080/restconf/config/opendaylight-inventory:nodes/node/openflow:1/group/1 <http://<ip-address>:8080/restconf/config/opendaylight-inventory:nodes/node/openflow:1/group/1>`__
+      http://<ip-address>:8080/restconf/config/opendaylight-inventory:nodes/node/openflow:1/group/1
 
    -  GET
 
@@ -1681,7 +1677,7 @@ Look for your group stats in the controller operational data via RESTCONF
 -  See your operational group stats in POSTMAN with
 
    -  URL
-      `http://<ip-address>:8080/restconf/operational/opendaylight-inventory:nodes/node/openflow:1/group/1 <http://<ip-address>:8080/restconf/operational/opendaylight-inventory:nodes/node/openflow:1/group/1>`__
+      http://<ip-address>:8080/restconf/operational/opendaylight-inventory:nodes/node/openflow:1/group/1
 
    -  GET
 
@@ -1759,18 +1755,14 @@ Instructions
 Learn End to End for Inventory
 ''''''''''''''''''''''''''''''
 
--  `End to End
-   Inventory <#odl-ofp-end-to-end-inventory_introduction-introduction>`__
+-  :ref:`ofp-e2e-inv`
 
 Check inventory
 '''''''''''''''
 
--  Run mininet with support for OF 1.3 as described in `End to End
-   Inventory <#odl-ofp-end-to-end-inventory_introduction-introduction>`__
+-  Run mininet with support for OF 1.3 as described in :ref:`ofp-e2e-inv`
 
--  Make sure you see the openflow:1 node come up as described in `End to
-   End
-   Inventory <#odl-ofp-end-to-end-inventory_introduction-introduction>`__
+-  Make sure you see the openflow:1 node come up as described in :ref:`ofp-e2e-inv`
 
 Meter Strategy
 ''''''''''''''
@@ -2125,17 +2117,19 @@ The following is not exactly CLI - just a set of test commands which can
 be executed on the OSGI console testing various features in OpenFlow 1.3
 spec.
 
--  `OSGI Console Test Provider Commands:
-   Flows <#odl-ofp-test-provider-flows_test-provider>`__
+-  :ref:`OSGI Console Test Provider Commands:
+   Flows <ofp-test-provider-flows>`
 
--  `OSGI Console Test Provider Commands:
-   Groups <#odl-ofp-test-provider-groups_test-provider>`__
+-  :ref:`OSGI Console Test Provider Commands:
+   Groups <ofp-test-provider-groups>`
 
--  `OSGI Console Test Provider Commands:
-   Meters <#odl-ofp-test-provider-meters_test-provider>`__
+-  :ref:`OSGI Console Test Provider Commands:
+   Meters <ofp-test-provider-meters>`
 
--  `OSGI Console Test Provider Commands: Topology
-   Events <#odl-ofp-test-provider-topoogy_test-provider>`__
+-  :ref:`OSGI Console Test Provider Commands: Topology
+   Events <ofp-test-provider-topology>`
+
+.. _ofp-test-provider-flows:
 
 Flows : Test Provider
 ~~~~~~~~~~~~~~~~~~~~~
@@ -2197,6 +2191,8 @@ is connected to the controller, try running:
 where # is a number between 1 and 80 and openflow:1 is the of the
 switch. The flow to be deleted should have same flowid and Nodeid as
 used for flow add.
+
+.. _ofp-test-provider-groups:
 
 Group : Test Provider
 ~~~~~~~~~~~~~~~~~~~~~
@@ -2276,6 +2272,8 @@ Where # is a number between 1 and 4 for grouptype(g#) and 1 and 28 for
 actiontype(a#). GroupId should be same as that used for adding the flow.
 You can confirm that it was modified on the switch.
 
+.. _ofp-test-provider-meters:
+
 Meters : Test Provider
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -2353,6 +2351,8 @@ along) in the inventory, at the OSGI command line try running:
 The CLI takes care of using the same meterId and nodeId as used for
 meter add. You can confirm that it was modified on the switch.
 
+.. _ofp-test-provider-topology:
+
 Topology : Notification
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -2415,6 +2415,8 @@ OpenFlow Services at:
 
 -  `Models Documentation (OpenFlow Services
    Section) <https://wiki.opendaylight.org/view/OpenDaylight_Controller:Config:Model_Reference>`__
+
+.. _ofp-example-flows:
 
 Example flows
 -------------

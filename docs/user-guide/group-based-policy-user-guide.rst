@@ -101,8 +101,7 @@ The Access Model is the core of the **GBP** Intent System policy
 resolution process.
 
 .. figure:: ./images/groupbasedpolicy/GBPTerminology1.png
-   :alt: GBP Access Model Terminology - Endpoints, EndpointGroups,
-   Contract
+   :alt: GBP Access Model Terminology - Endpoints, EndpointGroups, Contract
 
    GBP Access Model Terminology - Endpoints, EndpointGroups, Contract
 
@@ -112,8 +111,7 @@ resolution process.
    GBP Access Model Terminology - Subject, Classifier, Action
 
 .. figure:: ./images/groupbasedpolicy/GBPTerminology3.png
-   :alt: GBP Forwarding Model Terminology - L3 Context, L2 Bridge
-   Context, L2 Flood Context/Domain, Subnet
+   :alt: GBP Forwarding Model Terminology - L3 Context, L2 Bridge Context, L2 Flood Context/Domain, Subnet
 
    GBP Forwarding Model Terminology - L3 Context, L2 Bridge Context, L2
    Flood Context/Domain, Subnet
@@ -167,9 +165,9 @@ resolution process.
 Architecture and Value Proposition
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**GBP** offers an intent based interface, accessed via the `UX <#UX>`__,
+**GBP** offers an intent based interface, accessed via the :ref:`UX <gbp-ux>`,
 via the `REST API <#REST>`__ or directly from a domain-specific-language
-such as `Neutron <#Neutron>`__ through a mapping interface.
+such as :ref:`Neutron <gbp-neutron>` through a mapping interface.
 
 There are two models in **GBP**:
 
@@ -185,7 +183,7 @@ There are two models in **GBP**:
 The *classifier* and *action* portions of the model can be thought of as
 hooks, with their definition provided by each *renderer* about its
 domain specific capabilities. In **GBP** for this release, there is one
-renderer, the *`OpenFlow Overlay renderer (OfOverlay). <#OfOverlay>`__*
+renderer, the :ref:`OpenFlow Overlay renderer (OfOverlay). <gbp-of-overlay>`
 
 These hooks are filled with *definitions* of the types of *features* the
 renderer can provide the *subject*, and are called
@@ -285,8 +283,8 @@ impact to the **Intent** of the contract.
 High-level implementation Architecture
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The overall architecture, including *`Neutron <#Neutron>`__* domain
-specific mapping, and the `OpenFlow Overlay renderer <#OfOverlay>`__
+The overall architecture, including :ref:`Neutron <gbp-neutron>` domain
+specific mapping, and the :ref:`OpenFlow Overlay renderer <gbp-of-overlay>`
 looks as so:
 
 .. figure:: ./images/groupbasedpolicy/GBP_High-levelBerylliumArchitecture.png
@@ -298,10 +296,10 @@ The major benefit of this architecture is that the mapping of the
 domain-specific-language is completely separate and independent of the
 underlying renderer implementation.
 
-For instance, using the `Neutron Mapper <#Neutron>`__, which maps the
+For instance, using the :ref:`Neutron Mapper <gbp-neutron>`, which maps the
 Neutron API to the **GBP** core model, any contract automatically
-generated from this mapping can be augmented via the `UX <#UX>`__ to use
-`Service Function Chaining <#SFC>`__, a capability not currently
+generated from this mapping can be augmented via the :ref:`UX <gbp-ux>` to use
+:ref:`Service Function Chaining <gbp-sfc>`, a capability not currently
 available in OpenStack Neutron.
 
 When another renderer is added, for instance, NetConf, the same policy
@@ -538,7 +536,7 @@ port 80, or one that matches against HTTP traffic containing a
 particular cookie. Actions are specific actions that need to be taken on
 the traffic before it reaches its destination. Actions could include
 tagging or encapsulating the traffic in some way, redirecting the
-traffic, or applying a `service function chain <#SFC>`__.
+traffic, or applying a :ref:`service function chain <gbp-sfc>`.
 
 Rules, subjects, and actions have an *order* parameter, where a lower
 order value means that a particular item will be applied first. All
@@ -694,6 +692,8 @@ to "exclude." In this case, then the label should be ignored for the
 purpose of matching. Otherwise, the label with the same name will
 completely override the label from the parent.
 
+.. _gbp-ux:
+
 Using the GBP UX interface
 --------------------------
 
@@ -764,7 +764,7 @@ operate and display data with actual selected tenant.
 Below the select box are buttons which display Expressed or Delivered
 policy of Governance section. In the bottom half of this section is
 select box with list of renderers for select. There is currently only
-`OfOverlay <#OfOverlay>`__ renderer available.
+:ref:`OfOverlay <gbp-of-overlay>` renderer available.
 
 Below the select box is Renderer configuration button, which switch the
 app into the Policy expression view with Renderers section expanded for
@@ -805,7 +805,7 @@ box in the upper left corner.
 By single-clicking on any contract or EPG, the data of actual selected
 element will be shown in the right column below the menu. A Manage
 button launches a display wizard window for managing configuration of
-items such as `Service Function Chaining <#SFC>`__.
+items such as :ref:`Service Function Chaining <gbp-sfc>`.
 
 .. figure:: ./images/groupbasedpolicy/ui-3-governanceview-expressed.png
    :alt: Expressed policy
@@ -1208,9 +1208,9 @@ Using the GBP API
 
 Please see:
 
--  `Using the GBP OpenFlow Overlay (OfOverlay) renderer <#OfOverlay>`__
+-  :ref:`gbp-of-overlay`
 
--  `Policy Resolution <#policyresolution>`__
+-  `Policy Resolution`_
 
 -  `Forwarding Model <#forwarding>`__
 
@@ -1218,9 +1218,9 @@ Please see:
 
 It is recommended to use either:
 
--  `Neutron mapper <#Neutron>`__
+-  `Neutron mapper <gbp-neutron>`
 
--  `the UX <#UX>`__
+-  :ref:`the UX <gbp-ux>`
 
 If the REST API must be used, and the above resources are not
 sufficient:
@@ -1228,10 +1228,12 @@ sufficient:
 -  feature:install odl-dlux-yangui
 
 -  browse to:
-   `http://<odl-controller>:8181/index.html <http://<odl-controller>:8181/index.html>`__
+   ``http://<odl-controller>:8181/index.html``
    and select YangUI from the left menu.
 
 to explore the various **GBP** REST options
+
+.. _gbp-neutron:
 
 Using OpenStack with GBP
 ------------------------
@@ -1270,7 +1272,7 @@ Base **GBP** feature set, such as policy resolution, data model etc.
 REST calls from OpenStack Neutron are by the Neutron NorthBound project.
 
 **GBP** provides the implementation of the `Neutron V2.0
-API <http://developer.openstack.org/api-ref-networking-v2.html>`__.
+API <http://developer.openstack.org/api-ref-networking-v2.html>`_.
 
 Features
 ~~~~~~~~
@@ -1419,7 +1421,7 @@ seamlessly added to the namespace.
 **Neutron FloatingIP**
 
 When associated with a Neutron Port, this leverages the
-`OfOverlay <#OfOverlay>`__ renderer’s NAT capabilities.
+:ref:`OfOverlay <gbp-of-overlay>` renderer’s NAT capabilities.
 
 A dedicated *external* interface on each Nova compute host allows for
 disitributed external access. Each Nova instance associated with a
@@ -1429,7 +1431,7 @@ of Neutron distributed routing functionality.
 
 Assuming the gateway provisioned in the Neutron Subnet command for the
 external network is reachable, the combination of **GBP** Neutron Mapper
-and `OfOverlay renderer <#OfOverlay>`__ will automatically ARP for this
+and :ref:`OfOverlay renderer <gbp-of-overlay>` will automatically ARP for this
 default gateway, requiring no user intervention.
 
 **Troubleshooting within GBP**
@@ -1477,8 +1479,8 @@ Configuring GBP Neutron
 No intervention passed initial OpenStack setup is required by the user.
 
 More information about configuration can be found in our DevStack demo
-environment on the `**GBP**
-wiki <https://wiki.opendaylight.org/view/Group_Based_Policy_(GBP)>`__.
+environment on the `GBP
+wiki <https://wiki.opendaylight.org/view/Group_Based_Policy_(GBP)>`_.
 
 Administering or Managing GBP Neutron
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1486,9 +1488,9 @@ Administering or Managing GBP Neutron
 For consistencies sake, all provisioning should be performed via the
 Neutron API. (CLI or Horizon).
 
-The mapped policies can be augmented via the **GBP** `UX <#UX>`__, to:
+The mapped policies can be augmented via the **GBP** :ref:`UX <gbp-ux>`, to:
 
--  Enable `Service Function Chaining <#SFC>`__
+-  Enable :ref:`Service Function Chaining <gbp-sfc>`
 
 -  Add endpoints from outside of Neutron i.e. VMs/containers not
    provisioned in OpenStack
@@ -1500,8 +1502,8 @@ The mapped policies can be augmented via the **GBP** `UX <#UX>`__, to:
 Tutorials
 ~~~~~~~~~
 
-A DevStack demo environment can be found on the `**GBP**
-wiki <https://wiki.opendaylight.org/view/Group_Based_Policy_(GBP)>`__.
+A DevStack demo environment can be found on the `GBP
+wiki <https://wiki.opendaylight.org/view/Group_Based_Policy_(GBP)>`_.
 
 GBP Renderer manager
 --------------------
@@ -1582,6 +1584,8 @@ then those are put to OPER data store.
 Similarly, when a Location provider is deleted, information of its locations
 is removed from the OPER data store.
 
+.. _gbp-of-overlay:
+
 Using the GBP OpenFlow Overlay (OfOverlay) renderer
 ---------------------------------------------------
 
@@ -1604,7 +1608,7 @@ From the Karaf console in OpenDaylight:
 This renderer is designed to work with OpenVSwitch (OVS) 2.1+ (although
 2.3 is strongly recommended) and OpenFlow 1.3.
 
-When used in conjunction with the `Neutron Mapper feature <#Neutron>`__
+When used in conjunction with the :ref:`Neutron Mapper feature <gbp-neutron>`
 no extra OfOverlay specific setup is required.
 
 When this feature is loaded "standalone", the user is required to
@@ -1615,6 +1619,8 @@ configure infrastructure, such as
 -  attaching hosts to the bridges,
 
 -  and creating the VXLAN/VXLAN-GPE tunnel ports on the bridges.
+
+.. _gbp-offset:
 
 The **GBP** OfOverlay renderer also supports a table offset option, to
 offset the pipeline post-table 0. The value of table offset is stored in
@@ -1665,7 +1671,7 @@ Launches components below:
 
 Policy resolution is completely domain independent, and the OfOverlay
 leverages process policy information internally. See `Policy Resolution
-process <#policyresolution>`__.
+process <Policy Resolution>`_.
 
 It listens to inputs to the *Tenants* configuration datastore, validates
 tenant input, then writes this to the Tenants operational datastore.
@@ -1680,13 +1686,13 @@ location.
 The endpoint repository operates in **orchestrated** mode. This means
 the user is responsible for the provisioning of endpoints via:
 
--  `UX/GUI <#UX>`__
+-  :ref:`UX/GUI <gbp-ux>`
 
 -  REST API
 
     **Note**
 
-    When using the `Neutron mapper <#Neutron>`__ feature, everything is
+    When using the :ref:`Neutron mapper <gbp-neutron>` feature, everything is
     managed transparently via Neutron.
 
 The Endpoint Manager is responsible for listening to Endpoint repository
@@ -1813,7 +1819,7 @@ Drop Flow:
 
 **Ingress NAT Mapper**
 
-Table `*offset* <#offset>`__\ +1.
+Table :ref:`offset <gbp-offset>` +1.
 
 ARP responder for external NAT address:
 
@@ -1830,7 +1836,7 @@ SourceMapper.
 
 **Source Mapper**
 
-Table `*offset* <#offset>`__\ +2.
+Table :ref:`offset <gbp-offset>` +2.
 
 Determines based on characteristics from the ingress port, which:
 
@@ -1864,7 +1870,7 @@ Generic drop:
 
 **Destination Mapper**
 
-Table `*offset* <#offset>`__\ +3.
+Table :ref:`offset <gbp-offset>` +3.
 
 Determines based on characteristics of the endpoint:
 
@@ -1908,12 +1914,12 @@ n\_bytes=588, priority=1 actions=drop
 
 **Policy Enforcer**
 
-Table `*offset* <#offset>`__\ +4.
+Table :ref:`offset <gbp-offset>` +4.
 
 Once the Source and Destination EndpointGroups are assigned, policy is
 enforced based on resolved rules.
 
-In the case of `Service Function Chaining <#SFC>`__, the encapsulation
+In the case of :ref:`Service Function Chaining <gbp-sfc>`, the encapsulation
 and destination for traffic destined to a chain, is discovered and
 enforced.
 
@@ -1925,7 +1931,7 @@ Policy flow, allowing IP traffic between EndpointGroups:
 
 **Egress NAT Mapper**
 
-Table `*offset* <#offset>`__\ +5.
+Table :ref:`offset <gbp-offset>` +5.
 
 Performs NAT function before Egressing OVS instance to the underlay
 network.
@@ -1938,10 +1944,10 @@ Inside to Outside NAT translation before sending to underlay:
 
 **External Mapper**
 
-Table `*offset* <#offset>`__\ +6.
+Table :ref:`offset <gbp-offset>` +6.
 
 Manages post-policy enforcement for endpoint specific destination
-effects. Specifically for `Service Function Chaining <#SFC>`__, which is
+effects. Specifically for :ref:`Service Function Chaining <gbp-sfc>`, which is
 why we can support both symmetric and asymmetric chains and distributed
 ingress/egress classification.
 
@@ -1956,7 +1962,7 @@ Configuring OpenFlow Overlay via REST
 
     **Note**
 
-    Please see the `UX <#UX>`__ section on how to configure **GBP** via
+    Please see the :ref:`UX <gbp-ux>` section on how to configure **GBP** via
     the GUI.
 
 **Endpoint**
@@ -2023,7 +2029,7 @@ Configuring OpenFlow Overlay via REST
         }
     }
 
-**Tenants** see `Policy Resolution <#policyresolution>`__ and
+**Tenants** see `Policy Resolution`_ and
 `Forwarding Model <#forwarding>`__ for details:
 
 ::
@@ -2207,7 +2213,7 @@ Tutorials
 ~~~~~~~~~
 
 Comprehensive tutorials, along with a demonstration environment
-leveraging Vagrant can be found on the `**GBP**
+leveraging Vagrant can be found on the `GBP
 wiki <https://wiki.opendaylight.org/view/Group_Based_Policy_(GBP)>`__
 
 Using the GBP eBPF IO Visor Agent renderer
@@ -2232,8 +2238,8 @@ From the Karaf console in OpenDaylight:
     feature:install odl-groupbasedpolicy-iovisor odl-restconf
 
 Installation details, usage, and other information for the IO Visor GBP
-module can be found here: `**IO Visor** github repo for IO
-Modules <https://github.com/iovisor/iomodules>`__
+module can be found here: `IO Visor github repo for IO
+Modules <https://github.com/iovisor/iomodules>`_
 
 Using the GBP FaaS renderer
 ---------------------------
@@ -2256,6 +2262,8 @@ From the Karaf console in OpenDaylight:
 More information about FaaS can be found here:
 https://wiki.opendaylight.org/view/FaaS:GBPIntegration
 
+.. _gbp-sfc:
+
 Using Service Function Chaining (SFC) with GBP Neutron Mapper and OfOverlay
 ---------------------------------------------------------------------------
 
@@ -2269,7 +2277,7 @@ SFC provisioning and theory.
 
 This takes the form of an *action* in **GBP**.
 
-Using the `**GBP** demo and development environment <#demo>`__ as an
+Using the `GBP demo and development environment <#demo>`__ as an
 example:
 
 .. figure:: ./images/groupbasedpolicy/sfc-1-topology.png
@@ -2474,5 +2482,5 @@ The **GBP** project for this release has two demo/development environments.
 -  DevStack based GBP+Neutron integration Vagrant environment
 
 `Demo @ GBP
-wiki <https://wiki.opendaylight.org/view/Group_Based_Policy_(GBP)/Consumability/Demo>`__
+wiki <https://wiki.opendaylight.org/view/Group_Based_Policy_(GBP)/Consumability/Demo>`_
 
