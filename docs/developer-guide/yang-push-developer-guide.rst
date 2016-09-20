@@ -115,7 +115,3 @@ API Reference Documentation
 
 Javadocs are generated while creating mvn:site and they are located in
 target/ directory in each module.
-
-.. |Openstack Integration| image:: ./images/openstack_integration.png
-.. |Screenshot8| image:: ./images/Screenshot8.png
-   :width: 500px
