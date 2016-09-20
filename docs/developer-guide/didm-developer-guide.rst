@@ -59,17 +59,17 @@ Currently these APIs are getting consumed by Atrium project.
 
 Install the Forwarding Objective:
 
-`http://<CONTROLLER-IP>:8181/restconf/operations/atrium-flow-objective:forward <http://<CONTROLLER-IP>:8181/restconf/operations/atrium-flow-objective:forward>`__
+http://<CONTROLLER-IP>:8181/restconf/operations/atrium-flow-objective:forward
 ---
 
 Install the Filter Objective
 
-`http://<CONTROLLER-IP>:8181/restconf/operations/atrium-flow-objective:filter <http://<CONTROLLER-IP>:8181/restconf/operations/atrium-flow-objective:filter>`__
+http://<CONTROLLER-IP>:8181/restconf/operations/atrium-flow-objective:filter
 ---
 
 Install the Next Objective:
 
-`http://<CONTROLLER-IP>:8181/restconf/operations/atrium-flow-objective:next <http://<CONTROLLER-IP>:8181/restconf/operations/atrium-flow-objective:next>`__
+http://<CONTROLLER-IP>:8181/restconf/operations/atrium-flow-objective:next
 ---
 
 Flow mod driver API
@@ -217,7 +217,7 @@ API Reference Documentation
 ---------------------------
 
 Go to
-`http://${controller-ip}:8181/apidoc/explorer/index.html <http://${controller-ip}:8181/apidoc/explorer/index.html>`__,
+http://${controller-ip}:8181/apidoc/explorer/index.html,
 and look under DIDM section to see all the available REST calls and
 tables
 

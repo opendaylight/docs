@@ -14,7 +14,7 @@ OVSDB. Many vendors support OVSDB on various hardware platforms. The
 OpenDaylight controller uses the library project to interact with an OVS
 instance.
 
-    **Note**
+.. note::
 
     Read the OVSDB User Guide before you begin development.
 
@@ -165,17 +165,17 @@ Running Karaf feature from OVSDB’s Karaf distribution
 
 1. Start ODL, from the unzipped directory
 
-::
+   ::
 
-    bin/karaf
+      bin/karaf
 
-1. Once karaf has started, and you see the OpenDaylight ascii art in the
+2. Once karaf has started, and you see the OpenDaylight ascii art in the
    console, the last step is to start the OVSDB plugin framework with
    the following command in the karaf console:
 
-::
+   ::
 
-    feature:install odl-ovsdb-openstack
+      feature:install odl-ovsdb-openstack
 
 Sample output from the Karaf console
 ''''''''''''''''''''''''''''''''''''
@@ -233,33 +233,33 @@ way to create VMs for tests.
 
 1. Start the controller.
 
-::
+   ::
 
-    vagrant up devstack-control
-    vagrant ssh devstack-control
-    cd devstack
-    ./stack.sh
+       vagrant up devstack-control
+       vagrant ssh devstack-control
+       cd devstack
+       ./stack.sh
 
-1. Run the following:
+2. Run the following:
 
-::
+   ::
 
-    vagrant up devstack-compute-1
-    vagrant ssh devstack-compute-1
-    cd devstack
-    ./stack.sh
+       vagrant up devstack-compute-1
+       vagrant ssh devstack-compute-1
+       cd devstack
+       ./stack.sh
 
-1. To start testing, create a new VM.
+3. To start testing, create a new VM.
 
-::
+   ::
 
-    nova boot --flavor m1.tiny --image $(nova image-list | grep 'cirros-0.3.1-x86_64-uec\s' | awk '{print $2}') --nic net-id=$(neutron net-list | grep private | awk '{print $2}') test
+       nova boot --flavor m1.tiny --image $(nova image-list | grep 'cirros-0.3.1-x86_64-uec\s' | awk '{print $2}') --nic net-id=$(neutron net-list | grep private | awk '{print $2}') test
+   
+   To create three, use the following:
 
-To create three, use the following:
+   ::
 
-::
-
-    nova boot --flavor m1.tiny --image $(nova image-list | grep 'cirros-0.3.1-x86_64-uec\s' | awk '{print $2}') --nic net-id=$(neutron net-list | grep private | awk '{print $2}') --num-instances 3 test
+       nova boot --flavor m1.tiny --image $(nova image-list | grep 'cirros-0.3.1-x86_64-uec\s' | awk '{print $2}') --nic net-id=$(neutron net-list | grep private | awk '{print $2}') --num-instances 3 test
 
 **To get a mininet installation for testing:.**
 
@@ -594,25 +594,25 @@ OpenStack workflow
 
 3. Add the Security Group and Rules.
 
-    **Note**
+   .. note::
 
-    This is no different than what users normally do in regular
-    openstack deployments.
+      This is no different than what users normally do in regular
+      OpenStack deployments.
 
-::
+   ::
 
-    neutron security-group-create group1 --description "Group 1"
-    neutron security-group-list
-    neutron security-group-rule-create --direction ingress --protocol tcp group1
+      neutron security-group-create group1 --description "Group 1"
+      neutron security-group-list
+      neutron security-group-rule-create --direction ingress --protocol tcp group1
 
-1. Start the tenant, specifying the security-group.
+4. Start the tenant, specifying the security-group.
 
-::
+   ::
 
-    nova boot --flavor m1.tiny \
-    --image $(nova image-list | grep 'cirros-0.3.1-x86_64-uec\s' | awk '{print $2}') \
-    --nic net-id=$(neutron net-list | grep 'vxlan2' | awk '{print $2}') vxlan2 \
-    --security-groups group1
+      nova boot --flavor m1.tiny \
+      --image $(nova image-list | grep 'cirros-0.3.1-x86_64-uec\s' | awk '{print $2}') \
+      --nic net-id=$(neutron net-list | grep 'vxlan2' | awk '{print $2}') vxlan2 \
+      --security-groups group1
 
 Examples: Rules supported
 '''''''''''''''''''''''''
@@ -655,12 +655,12 @@ Examples: Rules supported
     neutron security-group-rule-create --direction egress --protocol tcp --port-range-min 443 --remote-ip-prefix 172.16.240.128/25 group7
 
 **Reference
-gist**:https://gist.github.com/anonymous/1543a410d57f491352c8[Gist]
+gist**: `Gist <https://gist.github.com/anonymous/1543a410d57f491352c8>`__
 
 Security group rules supported in ODL
 '''''''''''''''''''''''''''''''''''''
 
-The following rules formata are supported in the current implementation.
+The following rules formats are supported in the current implementation.
 The direction (ingress/egress) is always expected. Rules are implemented
 such that tcp-syn packets that do not satisfy the rules are dropped.
 
@@ -708,56 +708,56 @@ Starting OVSDB and OpenStack
 2. `Install
    Vagrant <http://docs.vagrantup.com/v2/installation/index.html>`__.
 
-1. Enable the L3 Forwarding feature:
+3. Enable the L3 Forwarding feature:
 
-::
+   ::
 
-    echo 'ovsdb.l3.fwd.enabled=yes' >> ./opendaylight/configuration/config.ini
-    echo 'ovsdb.l3gateway.mac=${GATEWAY_MAC}' >> ./configuration/config.ini
+      echo 'ovsdb.l3.fwd.enabled=yes' >> ./opendaylight/configuration/config.ini
+      echo 'ovsdb.l3gateway.mac=${GATEWAY_MAC}' >> ./configuration/config.ini
 
-1. Run the following commands to get the odl neutron drivers:
+4. Run the following commands to get the odl neutron drivers:
 
-::
+   ::
 
-    git clone https://github.com/dave-tucker/odl-neutron-drivers.git
-    cd odl-neutron-drivers
-    vagrant up devstack-control devstack-compute-1
+      git clone https://github.com/dave-tucker/odl-neutron-drivers.git
+      cd odl-neutron-drivers
+      vagrant up devstack-control devstack-compute-1
 
-1. Use ssh to go to the control node, and clone odl-neutron-drivers
+5. Use ssh to go to the control node, and clone odl-neutron-drivers
    again:
 
-::
+   ::
 
-    vagrant ssh devstack-control
-    git clone https://github.com/dave-tucker/odl-neutron-drivers.git
-    cd odl-neutron-drivers
-    sudo python setup.py install
-    *leave this shell open*
+      vagrant ssh devstack-control
+      git clone https://github.com/dave-tucker/odl-neutron-drivers.git
+      cd odl-neutron-drivers
+      sudo python setup.py install
+      *leave this shell open*
 
-1. Start odl, as mentioned in `running Karaf feature
+6. Start odl, as mentioned in `running Karaf feature
    section <#ovsdbStartingOdl>`__.
 
-2. To see processing of neutron event related to L3, do this from
+7. To see processing of neutron event related to L3, do this from
    prompt:
 
-::
+   ::
 
-    log:set debug org.opendaylight.ovsdb.openstack.netvirt.impl.NeutronL3Adapter
+      log:set debug org.opendaylight.ovsdb.openstack.netvirt.impl.NeutronL3Adapter
 
-1. From shell, do one of the following: open on ssh into control node or
+8. From shell, do one of the following: open on ssh into control node or
    vagrant ssh devstack-control.
 
-::
+   ::
 
-    cd ~/devstack && ./stack.sh
+      cd ~/devstack && ./stack.sh
 
-1. From a new shell in the host system, run the following:
+9. From a new shell in the host system, run the following:
 
-::
+   ::
 
-    cd odl-neutron-drivers
-    vagrant ssh devstack-compute-1
-    cd ~/devstack && ./stack.sh
+      cd odl-neutron-drivers
+      vagrant ssh devstack-compute-1
+      cd ~/devstack && ./stack.sh
 
 OpenStack workflow
 ''''''''''''''''''
@@ -773,62 +773,52 @@ figure above.
 1. Set up authentication. From shell on stack control or vagrant ssh
    devstack-control:
 
-::
+   ::
 
-    source openrc admin admin
+      source openrc admin admin
 
-::
+      rm -f id_rsa_demo* ; ssh-keygen -t rsa -b 2048 -N  -f id_rsa_demo
+      nova keypair-add --pub-key  id_rsa_demo.pub  demo_key
+      # nova keypair-list
 
-    rm -f id_rsa_demo* ; ssh-keygen -t rsa -b 2048 -N  -f id_rsa_demo
-     nova keypair-add --pub-key  id_rsa_demo.pub  demo_key
-     # nova keypair-list
+2. Create two networks and two subnets.
 
-1. Create two networks and two subnets.
+   ::
 
-::
+      neutron net-create net1 --tenant-id $(keystone tenant-list | grep '\s'admin | awk '{print $2}') \
+      --provider:network_type gre --provider:segmentation_id 555
 
-    neutron net-create net1 --tenant-id $(keystone tenant-list | grep '\s'admin | awk '{print $2}') \
-     --provider:network_type gre --provider:segmentation_id 555
+      neutron subnet-create --tenant-id $(keystone tenant-list | grep '\s'admin | awk '{print $2}') \
+      net1 10.0.0.0/16 --name subnet1 --dns-nameserver 8.8.8.8
 
-::
+      neutron net-create net2 --tenant-id $(keystone tenant-list | grep '\s'admin | awk '{print $2}') \
+      --provider:network_type gre --provider:segmentation_id 556
 
-    neutron subnet-create --tenant-id $(keystone tenant-list | grep '\s'admin | awk '{print $2}') \
-    net1 10.0.0.0/16 --name subnet1 --dns-nameserver 8.8.8.8
+      neutron subnet-create --tenant-id $(keystone tenant-list | grep '\s'admin | awk '{print $2}') \
+      net2 20.0.0.0/16 --name subnet2 --dns-nameserver 8.8.8.8
 
-::
+3. Create a router, and add an interface to each of the two subnets.
 
-    neutron net-create net2 --tenant-id $(keystone tenant-list | grep '\s'admin | awk '{print $2}') \
-     --provider:network_type gre --provider:segmentation_id 556
+   ::
 
-::
-
-    neutron subnet-create --tenant-id $(keystone tenant-list | grep '\s'admin | awk '{print $2}') \
-     net2 20.0.0.0/16 --name subnet2 --dns-nameserver 8.8.8.8
-
-1. Create a router, and add an interface to each of the two subnets.
-
-::
-
-    neutron router-create demorouter --tenant-id $(keystone tenant-list | grep '\s'admin | awk '{print $2}')
-     neutron router-interface-add demorouter subnet1
-     neutron router-interface-add demorouter subnet2
+      neutron router-create demorouter --tenant-id $(keystone tenant-list | grep '\s'admin | awk '{print $2}')
+      neutron router-interface-add demorouter subnet1
+      neutron router-interface-add demorouter subnet2
      # neutron router-port-list demorouter
 
-1. Create two tenant instances.
+4. Create two tenant instances.
 
-::
+   ::
 
-    nova boot --poll --flavor m1.nano --image $(nova image-list | grep 'cirros-0.3.2-x86_64-uec\s' | awk '{print $2}') \
-     --nic net-id=$(neutron net-list | grep -w net1 | awk '{print $2}'),v4-fixed-ip=10.0.0.10 \
-     --availability-zone nova:devstack-control \
-     --key-name demo_key host10
+      nova boot --poll --flavor m1.nano --image $(nova image-list | grep 'cirros-0.3.2-x86_64-uec\s' | awk '{print $2}') \
+      --nic net-id=$(neutron net-list | grep -w net1 | awk '{print $2}'),v4-fixed-ip=10.0.0.10 \
+      --availability-zone nova:devstack-control \
+      --key-name demo_key host10
 
-::
-
-    nova boot --poll --flavor m1.nano --image $(nova image-list | grep 'cirros-0.3.2-x86_64-uec\s' | awk '{print $2}') \
-     --nic net-id=$(neutron net-list | grep -w net2 | awk '{print $2}'),v4-fixed-ip=20.0.0.20 \
-     --availability-zone nova:devstack-compute-1 \
-     --key-name demo_key host20
+      nova boot --poll --flavor m1.nano --image $(nova image-list | grep 'cirros-0.3.2-x86_64-uec\s' | awk '{print $2}') \
+      --nic net-id=$(neutron net-list | grep -w net2 | awk '{print $2}'),v4-fixed-ip=20.0.0.20 \
+      --availability-zone nova:devstack-compute-1 \
+      --key-name demo_key host20
 
 Limitations
 '''''''''''
@@ -882,25 +872,25 @@ Creating an OpenStack workflow
 
 3. Create a Loadbalancer pool *X*.
 
-::
+   ::
 
-    neutron lb-pool-create --name http-pool --lb-method ROUND_ROBIN --protocol HTTP --subnet-id XYZ
+      neutron lb-pool-create --name http-pool --lb-method ROUND_ROBIN --protocol HTTP --subnet-id XYZ
 
-1. Create a Loadbalancer pool member *Y* and associate with pool *X*.
+4. Create a Loadbalancer pool member *Y* and associate with pool *X*.
 
-::
+   ::
 
-    neutron lb-member-create --address 10.0.0.10 --protocol-port 80 http-pool
-    neutron lb-member-create --address 10.0.0.11 --protocol-port 80 http-pool
-    neutron lb-member-create --address 10.0.0.12 --protocol-port 80 http-pool
-    neutron lb-member-create --address 10.0.0.13 --protocol-port 80 http-pool
+      neutron lb-member-create --address 10.0.0.10 --protocol-port 80 http-pool
+      neutron lb-member-create --address 10.0.0.11 --protocol-port 80 http-pool
+      neutron lb-member-create --address 10.0.0.12 --protocol-port 80 http-pool
+      neutron lb-member-create --address 10.0.0.13 --protocol-port 80 http-pool
 
-1. Create a Loadbalancer instance *Z*, and associate pool *X* and VIP
+5. Create a Loadbalancer instance *Z*, and associate pool *X* and VIP
    *B* with it.
 
-::
+   ::
 
-    neutron lb-vip-create --name http-vip --protocol-port 80 --protocol HTTP --subnet-id XYZ http-pool
+      neutron lb-vip-create --name http-vip --protocol-port 80 --protocol HTTP --subnet-id XYZ http-pool
 
 Implementation
 ''''''''''''''
@@ -923,19 +913,19 @@ member for every session.
 
 -  Proactive forward rules:
 
-::
+   ::
 
-    sudo ovs-ofctl -O OpenFlow13 add-flow s1 "table=10,reg0=0,ip,nw_dst=10.0.0.5,actions=load:0x1->NXM_NX_REG0[[]],multipath(symmetric_l4, 1024, modulo_n, 4, 0, NXM_NX_REG1[0..12]),resubmit(,10)"
-    sudo ovs-ofctl -O OpenFlow13 add-flow s1 table=10,reg0=1,nw_dst=10.0.0.5,ip,reg1=0,actions=mod_dl_dst:00:00:00:00:00:10,mod_nw_dst:10.0.0.10,goto_table:20
-    sudo ovs-ofctl -O OpenFlow13 add-flow s1 table=10,reg0=1,nw_dst=10.0.0.5,ip,reg1=1,actions=mod_dl_dst:00:00:00:00:00:11,mod_nw_dst:10.0.0.11,goto_table:20
-    sudo ovs-ofctl -O OpenFlow13 add-flow s1 table=10,reg0=1,nw_dst=10.0.0.5,ip,reg1=2,actions=mod_dl_dst:00:00:00:00:00:12,mod_nw_dst:10.0.0.12,goto_table:20
-    sudo ovs-ofctl -O OpenFlow13 add-flow s1 table=10,reg0=1,nw_dst=10.0.0.5,ip,reg1=3,actions=mod_dl_dst:00:00:00:00:00:13,mod_nw_dst:10.0.0.13,goto_table:20
+      sudo ovs-ofctl -O OpenFlow13 add-flow s1 "table=10,reg0=0,ip,nw_dst=10.0.0.5,actions=load:0x1->NXM_NX_REG0[[]],multipath(symmetric_l4, 1024, modulo_n, 4, 0, NXM_NX_REG1[0..12]),resubmit(,10)"
+      sudo ovs-ofctl -O OpenFlow13 add-flow s1 table=10,reg0=1,nw_dst=10.0.0.5,ip,reg1=0,actions=mod_dl_dst:00:00:00:00:00:10,mod_nw_dst:10.0.0.10,goto_table:20
+      sudo ovs-ofctl -O OpenFlow13 add-flow s1 table=10,reg0=1,nw_dst=10.0.0.5,ip,reg1=1,actions=mod_dl_dst:00:00:00:00:00:11,mod_nw_dst:10.0.0.11,goto_table:20
+      sudo ovs-ofctl -O OpenFlow13 add-flow s1 table=10,reg0=1,nw_dst=10.0.0.5,ip,reg1=2,actions=mod_dl_dst:00:00:00:00:00:12,mod_nw_dst:10.0.0.12,goto_table:20
+      sudo ovs-ofctl -O OpenFlow13 add-flow s1 table=10,reg0=1,nw_dst=10.0.0.5,ip,reg1=3,actions=mod_dl_dst:00:00:00:00:00:13,mod_nw_dst:10.0.0.13,goto_table:20
 
 -  Proactive reverse rules:
 
-::
+   ::
 
-    sudo ovs-ofctl -O OpenFlow13 add-flow s1 table=10,ip,tcp,tp_src=80,actions=mod_dl_src:00:00:00:00:00:05,mod_nw_src:10.0.0.5,goto_table:20
+      sudo ovs-ofctl -O OpenFlow13 add-flow s1 table=10,ip,tcp,tp_src=80,actions=mod_dl_src:00:00:00:00:00:05,mod_nw_src:10.0.0.5,goto_table:20
 
 OVSDB project code
 ''''''''''''''''''
@@ -1159,7 +1149,7 @@ modify OVSDB tables on a peer, it can take the following steps:
 
    ``operationResults = transactionBuilder.execute().get();``
 
-       **Note**
+   .. note::
 
        Although the "select" operation is supported in the OVSDB
        library, the library implementation is a little different from
@@ -1631,7 +1621,9 @@ The OpenStack integration architecture uses the following technologies:
 -  `OpenStack Neutron ML2
    Plugin <https://wiki.openstack.org/wiki/Neutron/ML2>`__
 
-|Openstack Integration|
+.. figure:: images/openstack_integration.png
+
+   OpenStack Integration
 
 OVSDB Service Function Chaining Developer Guide
 -----------------------------------------------
@@ -1651,80 +1643,41 @@ Install the odl-ovsdb-sfc feature. The feature will also ensure that the
 odl-ovsdb-openstack feature as well as the openflowplugin, neutron and
 sfc features are installed.
 
-feature:install odl-ovsdb-sfc-ui ---
+``feature:install odl-ovsdb-sfc-ui``
 
 Verify the required features are installed:
 
-opendaylight-user@root>feature:list -i \| grep ovsdb
+::
 
-odl-ovsdb-southbound-api \| 1.2.1-SNAPSHOT \| x \|
-odl-ovsdb-southbound-1.2.1-SNAPSHOT \| OpenDaylight
-    southbound :: api
+   opendaylight-user@root>feature:list -i | grep ovsdb
+   odl-ovsdb-southbound-api | 1.2.1-SNAPSHOT | x | odl-ovsdb-southbound-1.2.1-SNAPSHOT | OpenDaylight southbound :: api
+   odl-ovsdb-southbound-impl | 1.2.1-SNAPSHOT | x | odl-ovsdb-southbound-1.2.1-SNAPSHOT | OpenDaylight :: southbound impl
+   odl-ovsdb-southbound-impl-rest | 1.2.1-SNAPSHOT | x | odl-ovsdb-southbound-1.2.1-SNAPSHOT | OpenDaylight :: southbound :: impl REST
+   odl-ovsdb-southbound-impl-ui | 1.2.1-SNAPSHOT | x | odl-ovsdb-southbound-1.2.1-SNAPSHOT | OpenDaylight :: southbound :: impl UI
+   odl-ovsdb-library | 1.2.1-SNAPSHOT | x | odl-ovsdb-library-1.2.1-SNAPSHOT | OpenDaylight library
+   odl-ovsdb-openstack | 1.2.1-SNAPSHOT | x | ovsdb-1.2.1-SNAPSHOT | OpenDaylight :: OVSDB OpenStack Network Virtual
+   odl-ovsdb-sfc-api | 1.2.1-SNAPSHOT | x | odl-ovsdb-sfc-1.2.1-SNAPSHOT | OpenDaylight :: ovsdb-sfc api
+   odl-ovsdb-sfc | 1.2.1-SNAPSHOT | x | odl-ovsdb-sfc-1.2.1-SNAPSHOT | OpenDaylight ovsdb-sfc
+   odl-ovsdb-sfc-rest | 1.2.1-SNAPSHOT | x | odl-ovsdb-sfc-1.2.1-SNAPSHOT | OpenDaylight :: ovsdb-sfc REST
+   odl-ovsdb-sfc-ui | 1.2.1-SNAPSHOT | x | odl-ovsdb-sfc-1.2.1-SNAPSHOT | OpenDaylight :: ovsdb-sfc UI
 
-odl-ovsdb-southbound-impl \| 1.2.1-SNAPSHOT \| x \|
-odl-ovsdb-southbound-1.2.1-SNAPSHOT \| OpenDaylight :: southbound
-    impl
+   opendaylight-user@root>feature:list -i | grep sfc
+   odl-sfc-model | 0.2.0-SNAPSHOT | x | odl-sfc-0.2.0-SNAPSHOT | OpenDaylight :: sfc :: Model
+   odl-sfc-provider | 0.2.0-SNAPSHOT | x | odl-sfc-0.2.0-SNAPSHOT | OpenDaylight :: sfc :: Provider
+   odl-sfc-provider-rest | 0.2.0-SNAPSHOT | x | odl-sfc-0.2.0-SNAPSHOT | OpenDaylight :: sfc :: Provider
+   odl-sfc-ovs | 0.2.0-SNAPSHOT | x | odl-sfc-0.2.0-SNAPSHOT | OpenDaylight :: OpenvSwitch
+   odl-sfcofl2 | 0.2.0-SNAPSHOT | x | odl-sfc-0.2.0-SNAPSHOT | OpenDaylight :: sfcofl2
+   odl-ovsdb-sfc-test | 1.2.1-SNAPSHOT | x | odl-ovsdb-sfc-test1.2.1-SNAPSHOT | OpenDaylight :: ovsdb-sfc-test
+   odl-ovsdb-sfc-api | 1.2.1-SNAPSHOT | x | odl-ovsdb-sfc-1.2.1-SNAPSHOT | OpenDaylight :: ovsdb-sfc :: api
+   odl-ovsdb-sfc | 1.2.1-SNAPSHOT | x | odl-ovsdb-sfc-1.2.1-SNAPSHOT | OpenDaylight :: ovsdb-sfc
+   odl-ovsdb-sfc-rest | 1.2.1-SNAPSHOT | x | odl-ovsdb-sfc-1.2.1-SNAPSHOT | OpenDaylight :: ovsdb-sfc :: REST
+   odl-ovsdb-sfc-ui | 1.2.1-SNAPSHOT | x | odl-ovsdb-sfc-1.2.1-SNAPSHOT | OpenDaylight :: ovsdb-sfc :: UI
 
-odl-ovsdb-southbound-impl-rest \| 1.2.1-SNAPSHOT \| x \|
-odl-ovsdb-southbound-1.2.1-SNAPSHOT \| OpenDaylight :: southbound ::
-impl
-    REST
-
-odl-ovsdb-southbound-impl-ui \| 1.2.1-SNAPSHOT \| x \|
-odl-ovsdb-southbound-1.2.1-SNAPSHOT \| OpenDaylight :: southbound ::
-impl
-    UI
-
-odl-ovsdb-library \| 1.2.1-SNAPSHOT \| x \|
-odl-ovsdb-library-1.2.1-SNAPSHOT \| OpenDaylight
-    library
-
-odl-ovsdb-openstack \| 1.2.1-SNAPSHOT \| x \| ovsdb-1.2.1-SNAPSHOT \|
-OpenDaylight :: OVSDB
-    OpenStack Network Virtual
-
-odl-ovsdb-sfc-api \| 1.2.1-SNAPSHOT \| x \| odl-ovsdb-sfc-1.2.1-SNAPSHOT
-\| OpenDaylight :: ovsdb-sfc
-    api
-
-odl-ovsdb-sfc \| 1.2.1-SNAPSHOT \| x \| odl-ovsdb-sfc-1.2.1-SNAPSHOT \|
-OpenDaylight
-    ovsdb-sfc
-
-odl-ovsdb-sfc-rest \| 1.2.1-SNAPSHOT \| x \|
-odl-ovsdb-sfc-1.2.1-SNAPSHOT \| OpenDaylight :: ovsdb-sfc
-    REST
-
-odl-ovsdb-sfc-ui \| 1.2.1-SNAPSHOT \| x \| odl-ovsdb-sfc-1.2.1-SNAPSHOT
-\| OpenDaylight :: ovsdb-sfc
-    UI
-
-opendaylight-user@root>feature:list -i \| grep sfc odl-sfc-model \|
-0.2.0-SNAPSHOT \| x \| odl-sfc-0.2.0-SNAPSHOT \| OpenDaylight :: sfc ::
-Model odl-sfc-provider \| 0.2.0-SNAPSHOT \| x \| odl-sfc-0.2.0-SNAPSHOT
-\| OpenDaylight :: sfc :: Provider odl-sfc-provider-rest \|
-0.2.0-SNAPSHOT \| x \| odl-sfc-0.2.0-SNAPSHOT \| OpenDaylight :: sfc ::
-Provider odl-sfc-ovs \| 0.2.0-SNAPSHOT \| x \| odl-sfc-0.2.0-SNAPSHOT \|
-OpenDaylight :: OpenvSwitch odl-sfcofl2 \| 0.2.0-SNAPSHOT \| x \|
-odl-sfc-0.2.0-SNAPSHOT \| OpenDaylight :: sfcofl2 odl-ovsdb-sfc-test \|
-1.2.1-SNAPSHOT \| x \| odl-ovsdb-sfc-test1.2.1-SNAPSHOT \| OpenDaylight
-:: ovsdb-sfc-test odl-ovsdb-sfc-api \| 1.2.1-SNAPSHOT \| x \|
-odl-ovsdb-sfc-1.2.1-SNAPSHOT \| OpenDaylight :: ovsdb-sfc :: api
-odl-ovsdb-sfc \| 1.2.1-SNAPSHOT \| x \| odl-ovsdb-sfc-1.2.1-SNAPSHOT \|
-OpenDaylight :: ovsdb-sfc odl-ovsdb-sfc-rest \| 1.2.1-SNAPSHOT \| x \|
-odl-ovsdb-sfc-1.2.1-SNAPSHOT \| OpenDaylight :: ovsdb-sfc :: REST
-odl-ovsdb-sfc-ui \| 1.2.1-SNAPSHOT \| x \| odl-ovsdb-sfc-1.2.1-SNAPSHOT
-\| OpenDaylight :: ovsdb-sfc :: UI
-
-opendaylight-user@root>feature:list -i \| grep neutron
-odl-neutron-service \| 0.6.0-SNAPSHOT \| x \| odl-neutron-0.6.0-SNAPSHOT
-\| OpenDaylight :: Neutron :: API odl-neutron-northbound-api \|
-0.6.0-SNAPSHOT \| x \| odl-neutron-0.6.0-SNAPSHOT \| OpenDaylight ::
-Neutron :: Northbound odl-neutron-spi \| 0.6.0-SNAPSHOT \| x \|
-odl-neutron-0.6.0-SNAPSHOT \| OpenDaylight :: Neutron :: API
-odl-neutron-transcriber \| 0.6.0-SNAPSHOT \| x \|
-odl-neutron-0.6.0-SNAPSHOT \| OpenDaylight :: Neutron :: Implementation
----
+   opendaylight-user@root>feature:list -i | grep neutron
+   odl-neutron-service | 0.6.0-SNAPSHOT | x | odl-neutron-0.6.0-SNAPSHOT | OpenDaylight :: Neutron :: API
+   odl-neutron-northbound-api | 0.6.0-SNAPSHOT | x | odl-neutron-0.6.0-SNAPSHOT | OpenDaylight :: Neutron :: Northbound
+   odl-neutron-spi | 0.6.0-SNAPSHOT | x | odl-neutron-0.6.0-SNAPSHOT | OpenDaylight :: Neutron :: API
+   odl-neutron-transcriber | 0.6.0-SNAPSHOT | x | odl-neutron-0.6.0-SNAPSHOT | OpenDaylight :: Neutron :: Implementation
 
 OVSDB NetVirt Service Function Chaining Example
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1758,11 +1711,38 @@ Service Functions and Service Function Forwarders for the chain.
 
 http://localhost:8181/restconf/config/ietf-access-control-list:access-lists
 
-{ "access-lists": { "acl": [ { "acl-name": "http-acl",
-"access-list-entries": { "ace": [ { "rule-name": "http-rule", "matches":
-{ "source-port-range": { "lower-port": 0, "upper-port": 0 }, "protocol":
-6, "destination-port-range": { "lower-port": 80, "upper-port": 80 } },
-"actions": { "netvirt-sfc-acl:sfc-name": "http-sfc" } } ] } } ] } } ---
+::
+
+   {
+     "access-lists": {
+       "acl": [
+         {
+           "acl-name": "http-acl",
+           "access-list-entries": {
+             "ace": [
+               {
+                 "rule-name": "http-rule",
+                 "matches": {
+                   "source-port-range": {
+                     "lower-port": 0,
+                     "upper-port": 0
+                   },
+                   "protocol": 6,
+                   "destination-port-range": {
+                     "lower-port": 80,
+                     "upper-port": 80
+                   }
+                 },
+                 "actions": {
+                   "netvirt-sfc-acl:sfc-name": "http-sfc"
+                 }
+               }
+             ]
+           }
+         }
+       ]
+     }
+   }
 
 When the chain is rendered using the Rendered Service Path RPC,
 NetvirtSfc will add the classification flows. The classification flows
@@ -1774,69 +1754,41 @@ the first four digits indicating the NSH NSP and the last four digits
 identifying the NSH NSI. In this case the chain is identified with an
 NSP of 4 and the NSI is 255 to indicate the beginning of the chain.
 
-sudo ovs-ofctl --protocol=OpenFlow13 dump-flows br-int OFPST\_FLOW reply
-(OF1.3) (xid=0x2): cookie=0x0, duration=17.157s, table=0, n\_packets=0,
-n\_bytes=0, priority=6 actions=goto\_table:1 cookie=0x14,
-duration=10.692s, table=0, n\_packets=0, n\_bytes=0,
-priority=400,udp,in\_port=4,tp\_dst=6633 actions=LOCAL cookie=0x0,
-duration=17.134s, table=0, n\_packets=0, n\_bytes=0, dl\_type=0x88cc
-actions=CONTROLLER:65535 cookie=0x14, duration=10.717s, table=0,
-n\_packets=0, n\_bytes=0, priority=350,nsp=4 actions=goto\_table:152
-cookie=0x14, duration=10.688s, table=0, n\_packets=0, n\_bytes=0,
-priority=400,udp,nw\_dst=10.2.1.1,tp\_dst=6633 actions=output:4
-cookie=0x0, duration=17.157s, table=1, n\_packets=0, n\_bytes=0,
-priority=0 actions=goto\_table:11 cookie=0x1110070000040254,
-duration=10.608s, table=1, n\_packets=0, n\_bytes=0,
-priority=40000,reg0=0x1,nsp=4,nsi=254,in\_port=1 actions=goto\_table:21
-cookie=0x0, duration=17.157s, table=11, n\_packets=0, n\_bytes=0,
-priority=0 actions=goto\_table:21 cookie=0x1110060000040254,
-duration=10.625s, table=11, n\_packets=0, n\_bytes=0,
-nsp=4,nsi=254,in\_port=4
-actions=load:0x1→NXM\_NX\_REG0[],move:NXM\_NX\_NSH\_C2[]→NXM\_NX\_TUN\_ID[0..31],resubmit(1,1)
-cookie=0x1110010000040255, duration=10.615s, table=11, n\_packets=0,
-n\_bytes=0, tcp,reg0=0x1,tp\_dst=80
-actions=move:NXM\_NX\_TUN\_ID[0..31]→NXM\_NX\_NSH\_C2[],set\_nshc1:0xc0a83246,set\_nsp:0x4,set\_nsi:255,load:0xa020101→NXM\_NX\_TUN\_IPV4\_DST[],load:0x4→NXM\_NX\_TUN\_ID[0..31],resubmit(,0)
-cookie=0x0, duration=17.157s, table=21, n\_packets=0, n\_bytes=0,
-priority=0 actions=goto\_table:31 cookie=0x1110040000000000,
-duration=10.765s, table=21, n\_packets=0, n\_bytes=0,
-priority=1024,arp,in\_port=LOCAL,arp\_tpa=10.2.1.1,arp\_op=1
-actions=move:NXM\_OF\_ETH\_SRC[]→NXM\_OF\_ETH\_DST[],set\_field:f6:00:00:0f:00:01→eth\_src,load:0x2→NXM\_OF\_ARP\_OP[],move:NXM\_NX\_ARP\_SHA[]→NXM\_NX\_ARP\_THA[],move:NXM\_OF\_ARP\_SPA[]→NXM\_OF\_ARP\_TPA[],load:0xf600000f0001→NXM\_NX\_ARP\_SHA[],load:0xa020101→NXM\_OF\_ARP\_SPA[],IN\_PORT
-cookie=0x0, duration=17.157s, table=31, n\_packets=0, n\_bytes=0,
-priority=0 actions=goto\_table:41 cookie=0x0, duration=17.157s,
-table=41, n\_packets=0, n\_bytes=0, priority=0 actions=goto\_table:51
-cookie=0x0, duration=17.157s, table=51, n\_packets=0, n\_bytes=0,
-priority=0 actions=goto\_table:61 cookie=0x0, duration=17.142s,
-table=61, n\_packets=0, n\_bytes=0, priority=0 actions=goto\_table:71
-cookie=0x0, duration=17.140s, table=71, n\_packets=0, n\_bytes=0,
-priority=0 actions=goto\_table:81 cookie=0x0, duration=17.116s,
-table=81, n\_packets=0, n\_bytes=0, priority=0 actions=goto\_table:91
-cookie=0x0, duration=17.116s, table=91, n\_packets=0, n\_bytes=0,
-priority=0 actions=goto\_table:101 cookie=0x0, duration=17.107s,
-table=101, n\_packets=0, n\_bytes=0, priority=0 actions=goto\_table:111
-cookie=0x0, duration=17.083s, table=111, n\_packets=0, n\_bytes=0,
-priority=0 actions=drop cookie=0x14, duration=11.042s, table=150,
-n\_packets=0, n\_bytes=0, priority=5 actions=goto\_table:151
-cookie=0x14, duration=11.027s, table=151, n\_packets=0, n\_bytes=0,
-priority=5 actions=goto\_table:152 cookie=0x14, duration=11.010s,
-table=152, n\_packets=0, n\_bytes=0, priority=5 actions=goto\_table:158
-cookie=0x14, duration=10.668s, table=152, n\_packets=0, n\_bytes=0,
-priority=650,nsp=4,nsi=255
-actions=load:0xa020101→NXM\_NX\_TUN\_IPV4\_DST[],goto\_table:158
-cookie=0x14, duration=10.995s, table=158, n\_packets=0, n\_bytes=0,
-priority=5 actions=drop cookie=0xba5eba11ba5eba11, duration=10.645s,
-table=158, n\_packets=0, n\_bytes=0,
-priority=751,nsp=4,nsi=255,in\_port=4
-actions=move:NXM\_NX\_NSH\_C1[]→NXM\_NX\_NSH\_C1[],move:NXM\_NX\_NSH\_C2[]→NXM\_NX\_NSH\_C2[],move:NXM\_NX\_TUN\_ID[0..31]→NXM\_NX\_TUN\_ID[0..31],IN\_PORT
-cookie=0xba5eba11ba5eba11, duration=10.590s, table=158, n\_packets=0,
-n\_bytes=0, priority=751,nsp=4,nsi=254,in\_port=4
-actions=move:NXM\_NX\_NSI[]→NXM\_NX\_NSI[],move:NXM\_NX\_NSP[]→NXM\_NX\_NSP[],move:NXM\_NX\_NSH\_C1[]→NXM\_NX\_TUN\_IPV4\_DST[],move:NXM\_NX\_NSH\_C2[]→NXM\_NX\_TUN\_ID[0..31],IN\_PORT
-cookie=0xba5eba11ba5eba11, duration=10.640s, table=158, n\_packets=0,
-n\_bytes=0, priority=750,nsp=4,nsi=255
-actions=move:NXM\_NX\_NSH\_C1[]→NXM\_NX\_NSH\_C1[],move:NXM\_NX\_NSH\_C2[]→NXM\_NX\_NSH\_C2[],move:NXM\_NX\_TUN\_ID[0..31]→NXM\_NX\_TUN\_ID[0..31],output:4
-cookie=0xba5eba11ba5eba11, duration=10.571s, table=158, n\_packets=0,
-n\_bytes=0, priority=761,nsp=4,nsi=254,nshc1=3232248390,in\_port=4
-actions=move:NXM\_NX\_NSI[]→NXM\_NX\_NSI[],move:NXM\_NX\_NSP[]→NXM\_NX\_NSP[],move:NXM\_NX\_NSH\_C1[]→NXM\_NX\_TUN\_IPV4\_DST[],move:NXM\_NX\_NSH\_C2[]→NXM\_NX\_TUN\_ID[0..31],set\_nshc1:0,resubmit(,11)
----
+::
+
+   sudo ovs-ofctl --protocol=OpenFlow13 dump-flows br-int
+   OFPST_FLOW reply (OF1.3) (xid=0x2):
+    cookie=0x0, duration=17.157s, table=0, n_packets=0, n_bytes=0, priority=6 actions=goto_table:1
+    cookie=0x14, duration=10.692s, table=0, n_packets=0, n_bytes=0, priority=400,udp,in_port=4,tp_dst=6633 actions=LOCAL
+    cookie=0x0, duration=17.134s, table=0, n_packets=0, n_bytes=0, dl_type=0x88cc actions=CONTROLLER:65535
+    cookie=0x14, duration=10.717s, table=0, n_packets=0, n_bytes=0, priority=350,nsp=4 actions=goto_table:152
+    cookie=0x14, duration=10.688s, table=0, n_packets=0, n_bytes=0, priority=400,udp,nw_dst=10.2.1.1,tp_dst=6633 actions=output:4
+    cookie=0x0, duration=17.157s, table=1, n_packets=0, n_bytes=0, priority=0 actions=goto_table:11
+    cookie=0x1110070000040254, duration=10.608s, table=1, n_packets=0, n_bytes=0, priority=40000,reg0=0x1,nsp=4,nsi=254,in_port=1 actions=goto_table:21
+    cookie=0x0, duration=17.157s, table=11, n_packets=0, n_bytes=0, priority=0 actions=goto_table:21
+    cookie=0x1110060000040254, duration=10.625s, table=11, n_packets=0, n_bytes=0, nsp=4,nsi=254,in_port=4 actions=load:0x1->NXM_NX_REG0[],move:NXM_NX_NSH_C2[]->NXM_NX_TUN_ID[0..31],resubmit(1,1)
+    cookie=0x1110010000040255, duration=10.615s, table=11, n_packets=0, n_bytes=0, tcp,reg0=0x1,tp_dst=80 actions=move:NXM_NX_TUN_ID[0..31]->NXM_NX_NSH_C2[],set_nshc1:0xc0a83246,set_nsp:0x4,set_nsi:255,load:0xa020101->NXM_NX_TUN_IPV4_DST[],load:0x4->NXM_NX_TUN_ID[0..31],resubmit(,0)
+    cookie=0x0, duration=17.157s, table=21, n_packets=0, n_bytes=0, priority=0 actions=goto_table:31
+    cookie=0x1110040000000000, duration=10.765s, table=21, n_packets=0, n_bytes=0, priority=1024,arp,in_port=LOCAL,arp_tpa=10.2.1.1,arp_op=1 actions=move:NXM_OF_ETH_SRC[]->NXM_OF_ETH_DST[],set_field:f6:00:00:0f:00:01->eth_src,load:0x2->NXM_OF_ARP_OP[],move:NXM_NX_ARP_SHA[]->NXM_NX_ARP_THA[],move:NXM_OF_ARP_SPA[]->NXM_OF_ARP_TPA[],load:0xf600000f0001->NXM_NX_ARP_SHA[],load:0xa020101->NXM_OF_ARP_SPA[],IN_PORT
+    cookie=0x0, duration=17.157s, table=31, n_packets=0, n_bytes=0, priority=0 actions=goto_table:41
+    cookie=0x0, duration=17.157s, table=41, n_packets=0, n_bytes=0, priority=0 actions=goto_table:51
+    cookie=0x0, duration=17.157s, table=51, n_packets=0, n_bytes=0, priority=0 actions=goto_table:61
+    cookie=0x0, duration=17.142s, table=61, n_packets=0, n_bytes=0, priority=0 actions=goto_table:71
+    cookie=0x0, duration=17.140s, table=71, n_packets=0, n_bytes=0, priority=0 actions=goto_table:81
+    cookie=0x0, duration=17.116s, table=81, n_packets=0, n_bytes=0, priority=0 actions=goto_table:91
+    cookie=0x0, duration=17.116s, table=91, n_packets=0, n_bytes=0, priority=0 actions=goto_table:101
+    cookie=0x0, duration=17.107s, table=101, n_packets=0, n_bytes=0, priority=0 actions=goto_table:111
+    cookie=0x0, duration=17.083s, table=111, n_packets=0, n_bytes=0, priority=0 actions=drop
+    cookie=0x14, duration=11.042s, table=150, n_packets=0, n_bytes=0, priority=5 actions=goto_table:151
+    cookie=0x14, duration=11.027s, table=151, n_packets=0, n_bytes=0, priority=5 actions=goto_table:152
+    cookie=0x14, duration=11.010s, table=152, n_packets=0, n_bytes=0, priority=5 actions=goto_table:158
+    cookie=0x14, duration=10.668s, table=152, n_packets=0, n_bytes=0, priority=650,nsp=4,nsi=255 actions=load:0xa020101->NXM_NX_TUN_IPV4_DST[],goto_table:158
+    cookie=0x14, duration=10.995s, table=158, n_packets=0, n_bytes=0, priority=5 actions=drop
+    cookie=0xba5eba11ba5eba11, duration=10.645s, table=158, n_packets=0, n_bytes=0, priority=751,nsp=4,nsi=255,in_port=4 actions=move:NXM_NX_NSH_C1[]->NXM_NX_NSH_C1[],move:NXM_NX_NSH_C2[]->NXM_NX_NSH_C2[],move:NXM_NX_TUN_ID[0..31]->NXM_NX_TUN_ID[0..31],IN_PORT
+    cookie=0xba5eba11ba5eba11, duration=10.590s, table=158, n_packets=0, n_bytes=0, priority=751,nsp=4,nsi=254,in_port=4 actions=move:NXM_NX_NSI[]->NXM_NX_NSI[],move:NXM_NX_NSP[]->NXM_NX_NSP[],move:NXM_NX_NSH_C1[]->NXM_NX_TUN_IPV4_DST[],move:NXM_NX_NSH_C2[]->NXM_NX_TUN_ID[0..31],IN_PORT
+    cookie=0xba5eba11ba5eba11, duration=10.640s, table=158, n_packets=0, n_bytes=0, priority=750,nsp=4,nsi=255 actions=move:NXM_NX_NSH_C1[]->NXM_NX_NSH_C1[],move:NXM_NX_NSH_C2[]->NXM_NX_NSH_C2[],move:NXM_NX_TUN_ID[0..31]->NXM_NX_TUN_ID[0..31],output:4
+    cookie=0xba5eba11ba5eba11, duration=10.571s, table=158, n_packets=0, n_bytes=0, priority=761,nsp=4,nsi=254,nshc1=3232248390,in_port=4 actions=move:NXM_NX_NSI[]->NXM_NX_NSI[],move:NXM_NX_NSP[]->NXM_NX_NSP[],move:NXM_NX_NSH_C1[]->NXM_NX_TUN_IPV4_DST[],move:NXM_NX_NSH_C2[]->NXM_NX_TUN_ID[0..31],set_nshc1:0,resubmit(,11)
+
 
 Configuration
 ~~~~~~~~~~~~~
@@ -1851,7 +1803,7 @@ First configure NetVirt to use table 1 as it’s starting table:
 
 http://localhost:8181/restconf/config/netvirt-providers-config:netvirt-providers-config
 
-{ "netvirt-providers-config": { "table-offset": 1 } } ---
+``{ "netvirt-providers-config": { "table-offset": 1 } }``
 
 Next configure SFC to start at table 150 and configure the table
 handoff. The configuration starts SFC at table 150 and sets the handoff
@@ -1859,8 +1811,7 @@ to table 11 which is the NetVirt SFC classification table.
 
 http://localhost:8181/restconf/config/sfc-of-renderer:sfc-of-renderer-config
 
-{ "sfc-of-renderer-config": { "sfc-of-app-egress-table-offset": 11,
-"sfc-of-table-offset": 150 } } ---
+``{ "sfc-of-renderer-config": { "sfc-of-app-egress-table-offset": 11, "sfc-of-table-offset": 150 } }``
 
 OVSDB Hardware VTEP Developer Guide
 -----------------------------------

@@ -189,7 +189,7 @@ RETRIEVE UNI
 ~~~~~~~~~~~~
 
 GET
-`http://<host-ip>:8181/restconf/operational/network-topology:network-topology/topology/unimgr:uni/node/<uni-id> <http://<host-ip>:8181/restconf/operational/network-topology:network-topology/topology/unimgr:uni/node/<uni-id>>`__
+http://<host-ip>:8181/restconf/operational/network-topology:network-topology/topology/unimgr:uni/node/<uni-id>
 
 Response : 200
 

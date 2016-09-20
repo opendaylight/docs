@@ -14,8 +14,8 @@ Event Sequences
 Session Establishment
 ~~~~~~~~~~~~~~~~~~~~~
 
-The `OpenFlow Protocol
-Library <#_openflow_protocol_library_developer_guide>`__ provides
+The :ref:`OpenFlow Protocol
+Library <openflow-protocol-library>` provides
 interface **SwitchConnectionHandler** which contains method
 *onSwitchConnected* (step 1). This event is raised in the OpenFlow
 Protocol Library when an OpenFlow device connects to OpenDaylight and
@@ -941,7 +941,7 @@ Yang models and API
 +--------------------------------------------------------+-------------------+
 | Model                                                  | DOC               |
 +========================================================+===================+
-| ***Openflow basic types***                             |
+| ***Openflow basic types***                             |                   |
 +--------------------------------------------------------+-------------------+
 | `opendaylight-table-types.yang <https://git.opendaylig | `YangDOC <https:/ |
 | ht.org/gerrit/gitweb?p=openflowplugin.git;f=model/mode | /jenkins.opendayl |
@@ -968,12 +968,11 @@ Yang models and API
 |                                                        | arget/site/models |
 |                                                        | /opendaylight-act |
 |                                                        | ion-types.html>`_ |
-|                                                        | _                 |
 +--------------------------------------------------------+-------------------+
-| `opendaylight-flow-types.yan <https://git.opendaylight | `YangDOC <https:/ |
-| .org/gerrit/gitweb?p=openflowplugin.git;f=model/model- | /jenkins.opendayl |
-| flow-base/src/main/yang/opendaylight-flow-types.yang;a | ight.org/releng/v |
-| =blob;hb=refs/heads/stable/boron>`__                   | iew/openflowplugi |
+| `opendaylight-flow-types.yang <https://git.opendayligh | `YangDOC <https:/ |
+| t.org/gerrit/gitweb?p=openflowplugin.git;f=model/model | /jenkins.opendayl |
+| -flow-base/src/main/yang/opendaylight-flow-types.yang; | ight.org/releng/v |
+| a=blob;hb=refs/heads/stable/boron>`__                  | iew/openflowplugi |
 |                                                        | n/job/openflowplu |
 |                                                        | gin-merge-boron/l |
 |                                                        | astSuccessfulBuil |
@@ -1048,7 +1047,7 @@ Yang models and API
 |                                                        | /opendaylight-que |
 |                                                        | ue-types.html>`__ |
 +--------------------------------------------------------+-------------------+
-| ***Openflow services***                                |
+| ***Openflow services***                                |                   |
 +--------------------------------------------------------+-------------------+
 | `sal-table.yang <https://git.opendaylight.org/gerrit/g | `YangDOC <https:/ |
 | itweb?p=openflowplugin.git;f=model/model-flow-service/ | /jenkins.opendayl |
@@ -1113,8 +1112,8 @@ Yang models and API
 |                                                        | model-flow-servic |
 |                                                        | e/target/site/mod |
 |                                                        | els/flow-capable- |
-|                                                        | transaction.html> |
-|                                                        | `__               |
+|                                                        | transaction.htm   |
+|                                                        | l>`__             |
 +--------------------------------------------------------+-------------------+
 | `sal-flow.yang <https://git.opendaylight.org/gerrit/gi | `YangDOC <https:/ |
 | tweb?p=openflowplugin.git;f=model/model-flow-service/s | /jenkins.opendayl |
@@ -1126,8 +1125,8 @@ Yang models and API
 |                                                        | d/artifact/model/ |
 |                                                        | model-flow-servic |
 |                                                        | e/target/site/mod |
-|                                                        | els/sal-flow.html |
-|                                                        | >`__              |
+|                                                        | els/sal-flow.htm  |
+|                                                        | l>`__             |
 +--------------------------------------------------------+-------------------+
 | `sal-meter.yang <https://git.opendaylight.org/gerrit/g | `YangDOC <https:/ |
 | itweb?p=openflowplugin.git;f=model/model-flow-service/ | /jenkins.opendayl |
@@ -1153,8 +1152,8 @@ Yang models and API
 |                                                        | model-flow-servic |
 |                                                        | e/target/site/mod |
 |                                                        | els/flow-topology |
-|                                                        | -discovery.html>` |
-|                                                        | __                |
+|                                                        | -discovery.htm    |
+|                                                        | l>`__             |
 +--------------------------------------------------------+-------------------+
 | `node-errors.yang <https://git.opendaylight.org/gerrit | `YangDOC <https:/ |
 | /gitweb?p=openflowplugin.git;f=model/model-flow-servic | /jenkins.opendayl |
@@ -1192,8 +1191,8 @@ Yang models and API
 |                                                        | d/artifact/model/ |
 |                                                        | model-flow-servic |
 |                                                        | e/target/site/mod |
-|                                                        | els/sal-echo.html |
-|                                                        | >`__              |
+|                                                        | els/sal-echo.htm  |
+|                                                        | l>`__             |
 +--------------------------------------------------------+-------------------+
 | `sal-port.yang <https://git.opendaylight.org/gerrit/gi | `YangDOC <https:/ |
 | tweb?p=openflowplugin.git;f=model/model-flow-service/s | /jenkins.opendayl |
@@ -1205,8 +1204,8 @@ Yang models and API
 |                                                        | d/artifact/model/ |
 |                                                        | model-flow-servic |
 |                                                        | e/target/site/mod |
-|                                                        | els/sal-port.html |
-|                                                        | >`__              |
+|                                                        | els/sal-port.htm  |
+|                                                        | l>`__             |
 +--------------------------------------------------------+-------------------+
 | `packet-processing.yang <https://git.opendaylight.org/ | `YangDOC <https:/ |
 | gerrit/gitweb?p=openflowplugin.git;f=model/model-flow- | /jenkins.opendayl |
@@ -1234,7 +1233,7 @@ Yang models and API
 |                                                        | els/flow-node-inv |
 |                                                        | entory.html>`__   |
 +--------------------------------------------------------+-------------------+
-| ***Openflow statistics***                              |
+| ***Openflow statistics***                              |                   |
 +--------------------------------------------------------+-------------------+
 | `opendaylight-queue-statistics.yang <https://git.opend | `YangDOC <https:/ |
 | aylight.org/gerrit/gitweb?p=openflowplugin.git;f=model | /jenkins.opendayl |
@@ -1353,8 +1352,8 @@ Wiring up notifications
 Introduction
 ~~~~~~~~~~~~
 
-We need to translate OpenFlow messages coming up from the `OpenFlow
-Protocol Library <#_openflow_protocol_library_developer_guide>`__ into
+We need to translate OpenFlow messages coming up from the :ref:`OpenFlow
+Protocol Library <openflow-protocol-library>` into
 MD-SAL Notification objects and then publish them to the MD-SAL.
 
 Mechanics

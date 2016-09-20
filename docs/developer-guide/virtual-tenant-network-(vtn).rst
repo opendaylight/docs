@@ -38,9 +38,11 @@ virtual network irrespective of the physical network.
 
 It is implemented as two major components
 
--  `VTN Manager <#_vtn_manager>`__
+-  :ref:`vtn-manager`
 
--  `VTN Coordinator <#_vtn_coordinator>`__
+-  :ref:`vtn-coordinator`
+
+.. _vtn-manager:
 
 VTN Manager
 ~~~~~~~~~~~
@@ -91,7 +93,7 @@ Components:
 |                          |                          | rdinator:RestApi:L2_Netw |
 |                          |                          | ork_Example_Using_VTN_Vi |
 |                          |                          | rtualization>`__         |
-|                          |                          |   for usage.             |
+|                          |                          | for usage.               |
 +--------------------------+--------------------------+--------------------------+
 
 Feature Overview
@@ -125,7 +127,7 @@ Logging In
 To Log in to DLUX, after installing the application:
 
 -  Open a browser and enter the login URL as
-   `http://<OpenDaylight-IP>:8181/index.html <http://<OpenDaylight-IP>:8181/index.html>`__.
+   http://<OpenDaylight-IP>:8181/index.html
 
 .. note::
 
@@ -143,6 +145,8 @@ To Log in to DLUX, after installing the application:
 
 YANG documentation for VTN Manager, please refer to:
 https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/apidocs/index.html
+
+.. _vtn-coordinator:
 
 VTN Coordinator
 ~~~~~~~~~~~~~~~
