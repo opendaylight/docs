@@ -63,102 +63,75 @@ following limitations:
   issues became apparent when managing thousands of OpenFlow
   switches, however this may vary depending on deployment and use cases.
 
+Major Changes
+=============
+
+* `Bug 2594 <https://bugs.opendaylight.org/show_bug.cgi?id=2594>`_
+  Restconf PUT now returns 201 status code instead of 200 when a resource has been created.
+  Before, when creating new resource with PUT method, status code 200 OK is returned.
+  But RESTCONF Protocol draft-bierman-netconf-restconf-04 says:
+  Consistent with [RFC2616], if the PUT method creates a new resource,
+  a "201 Created" Status-Line is returned.  If an existing resource is
+  modified, either "200 OK" or "204 No Content" are returned.
+
 .. _proj_rel_notes:
 
-Project-specific Release Notes
+Project Specific Release Notes
 ==============================
 
 For the release notes of individual projects, please see the following pages on the OpenDaylight Wiki.
 
-TBD: add Boron release notes
+* `ALTO <https://wiki.opendaylight.org/view/ALTO:Boron:Release_Notes>`_
+* `Atrium Router <https://wiki.opendaylight.org/view/Atrium:Boron_Release_Notes>`_
+* `Authentication, Authorization and Accounting (AAA) <https://wiki.opendaylight.org/view/AAA:Boron:Release_Notes>`_
+* `BGP PCEP <https://wiki.opendaylight.org/view/BGP_LS_PCEP:Boron_Release_Notes>`_
+* `Cardinal <https://wiki.opendaylight.org/view/Cardinal:Boron:Release_Notes>`_
+* `Centinel <https://wiki.opendaylight.org/view/Centinel:Boron:Release_Notes>`_
+* `Control And Provisioning of Wireless Access Points (CAPWAP) <https://wiki.opendaylight.org/view/CAPWAP:Boron:Release_Notes>`_
+* `Controller <https://wiki.opendaylight.org/view/OpenDaylight_Controller:Boron:Release_Notes>`_
+* `Controller Shield <https://wiki.opendaylight.org/view/Controller_Shield:Boron_Release_Notes>`_
+* `DLUX <https://wiki.opendaylight.org/view/OpenDaylight_DLUX:Boron:Release_Notes>`_
+* `Device Identification and Driver Management (DIDM) <https://wiki.opendaylight.org/view/DIDM:_Boron_Release_Notes>`_
+* `Documentation <https://wiki.opendaylight.org/view/Documentation/Boron/Release_Notes>`_
+* `Energy Management Plugin <https://wiki.opendaylight.org/view/Eman:Boron_Release_Notes>`_
+* `Fabric As A Service (FaaS) <https://wiki.opendaylight.org/view/FaaS:Boron_Release_Notes>`_
+* `Genius <https://wiki.opendaylight.org/view/Genius:Boron:Release_Note>`_
+* `Group Based Policy (GBP) <https://wiki.opendaylight.org/view/Group_Based_Policy_(GBP)/Releases/Boron/Release_review>`_
+* `Honeycomb Virtual Bridge Domain <https://wiki.opendaylight.org/view/Honeycomb/vbd:Boron:Release_Notes>`_
+* `Infrastructure Utilities <https://wiki.opendaylight.org/view/Infrastructure_Utilities:BoronReleaseNotes>`_
+* `Integration/Distribution <https://wiki.opendaylight.org/view/Integration/Distribution/Boron_Release_Notes>`_
+* `Internet of Things Data Management (IoTDM) <https://wiki.opendaylight.org/view/Iotdm:Boron_Release_Notes>`_
+* `L2 Switch <https://wiki.opendaylight.org/view/L2_Switch:Boron:Release_Notes>`_
+* `LISP Flow Mapping <https://wiki.opendaylight.org/view/OpenDaylight_Lisp_Flow_Mapping:Boron_Release_Notes>`_
+* `Link Aggregation Control Protocol (LACP) <https://wiki.opendaylight.org/view/LACP:Release_Notes>`_
+* `MD-SAL <https://wiki.opendaylight.org/view/MD-SAL:Boron:Release_Notes>`_
+* `NAT Application Plugin <https://wiki.opendaylight.org/view/NATApp_Plugin:Boron_Release_Notes>`_
+* `NETCONF <https://wiki.opendaylight.org/view/NETCONF:Boron:Release_Notes>`_
+* `NEtwork MOdeling (NEMO) <https://wiki.opendaylight.org/view/NEMO:Boron:Release_Notes>`_
+* `NeXt UI Toolkit <https://wiki.opendaylight.org/view/NeXt:Boron_Release_Notes>`_
+* `NetIDE <https://wiki.opendaylight.org/view/NetIDE:Boron_Release_Notes>`_
+* `Network Intent Composition (NIC) <https://wiki.opendaylight.org/view/Network_Intent_Composition:Boron:Release_Notes>`_
+* `Network Virtualization <https://wiki.opendaylight.org/view/NetVirt:Boron_Release_Notes>`_
+* `Neutron Northbound <https://wiki.opendaylight.org/view/NeutronNorthbound:Boron:Release_Notes>`_
+* `ODL Root Parent <https://wiki.opendaylight.org/view/ODL_Parent:Boron:Release_Notes>`_
+* `ORI C&M Protocol (OCP) <https://wiki.opendaylight.org/view/OCP_Plugin:Boron_Release_Notes>`_
+* `OVSDB Integration <https://wiki.opendaylight.org/view/OpenDaylight_OVSDB:Boron_Release_Notes>`_
+* `OpenFlow Configuration Protocol (OF-CONFIG) <https://wiki.opendaylight.org/view/OF-CONFIG:Boron:Release_Notes>`_
+* `OpenFlow Plugin <https://wiki.opendaylight.org/view/OpenDaylight_OpenFlow_Plugin:Boron_Release_Notes>`_
+* `OpenFlow Protocol Library <https://wiki.opendaylight.org/view/Openflow_Protocol_Library:Release_Notes:Boron_Release_Notes>`_
+* `Packet Cable/PCMM <https://wiki.opendaylight.org/view/PacketCablePCMM:BoronReleaseNotes>`_
+* `SDN Interface Application (SDNi) <https://wiki.opendaylight.org/view/ODL-SDNi:Boron_Release_Notes>`_
+* `SNMP Plugin <https://wiki.opendaylight.org/view/SNMP_Plugin:Boron:Release_Notes>`_
+* `SNMP4SDN <https://wiki.opendaylight.org/view/SNMP4SDN:Boron_Release_Note>`_
+* `Secure Network Bootstrapping Infrastructure (SNBI) <https://wiki.opendaylight.org/view/SNBI_Boron_Release_Notes>`_
+* `Secure tag eXchange Protocol (SXP) <https://wiki.opendaylight.org/view/SXP:Boron:Release_Notes>`_
+* `Service Function Chaining <https://wiki.opendaylight.org/view/Service_Function_Chaining:Boron_Release_Notes>`_
+* `Table Type Patterns (TTP) <https://wiki.opendaylight.org/view/Table_Type_Patterns/Boron/Release_Notes>`_
+* `Time Series Data Repository (TSDR) <https://wiki.opendaylight.org/view/Boron_Release_Notes>`_
+* `Topology Processing Framework <https://wiki.opendaylight.org/view/Topology_Processing_Framework:BORON_Release_Notes>`_
+* `Unified Secure Channel (USC) <https://wiki.opendaylight.org/view/USC:Boron:Release_Notes>`_
+* `User Network Interface Manager (UNIMGR) <https://wiki.opendaylight.org/view/Unimgr:BoronReleaseNotes>`_
+* `Virtual Tenant Network (VTN) <https://wiki.opendaylight.org/view/VTN:Boron:Release_Notes>`_
+* `YANG PUBSUB <https://wiki.opendaylight.org/view/YANG_PUBSUB:Boron:Release_Notes>`_
+* `YANG Tools <https://wiki.opendaylight.org/view/YANG_Tools:Boron:Release_Notes>`_
 
-* Authentication, Authorization and Accounting (AAA_)
-* ALTO_
-* BGPCEP_
-* Controller_
-* Control And Provisioning of Wireless Access Points (CAPWAP_)
-* Identification and Driver Management (DIDM_)
-* DLUX_
-* FaaS_
-* Group_Based_Policy_ (GPB)
-* Internet of Things Data Management (IoTDM_)
-* L2_Switch_
-* Link Aggregation Control Protocol (LACP_)
-* LISP_Flow_Mapping_
-* MDSAL_
-* NEMO_
-* NETCONF_
-* NetIDE_
-* NeXt_
-* Network Intent Composition (NIC_)
-* Neutron_Northbound_
-* OF-Config_
-* OpFlex_
-* OpenFlow_Plugin_
-* OpenFlow_Protocol_Library_
-* OVSDB_Netvirt_
-* Packet_Cable_ / PCMM
-* SDN_Interface_Application_
-* Secure Network Bootstrapping Infrastructure (SNBI_)
-* SNMP4SDN_
-* SNMP_Plugin_
-* Secure tag eXchange Protocol (SXP_)
-* Service Function Chaining (SFC_)
-* TCPMD5_
-* Time Series Data Repository (TSDR_)
-* Table Type Patterns (TTP_)
-* Topology_Processing_Framework_
-* Unified Secure Channel (USC_)
-* VPN_Service_
-* Virtual Tenant Network (VTN_)
-* YANG_Tools_
-
-Projects without Release Notes
-------------------------------
-
-The following projects participated in Boron, but intentionally do not have release notes.
-
-* **Documentation Project** produced this and the other downloadable documentation
-* **Integration Group** hosted the OpenDaylight-wide tests and main release distribution
-* **Release Engineering - autorelease** was used to build the Boron release artifacts and including the main release download.
-
-.. _AAA: https://wiki.opendaylight.org/view/AAA:Boron_Release_Notes
-.. _ALTO: https://wiki.opendaylight.org/view/ALTO:Boron:Release_Notes
-.. _BGPCEP: https://wiki.opendaylight.org/view/BGP_LS_PCEP:Boron_Release_Notes
-.. _CAPWAP: https://wiki.opendaylight.org/view/CAPWAP:Boron:Release_Notes
-.. _Controller: https://wiki.opendaylight.org/view/OpenDaylight_Controller:Boron:Release_Notes
-.. _DIDM: https://wiki.opendaylight.org/view/DIDM:_Boron_Release_Notes
-.. _DLUX: https://wiki.opendaylight.org/view/OpenDaylight_DLUX:Boron:Release_Notes
-.. _FaaS: https://wiki.opendaylight.org/view/FaaS:Boron_Release_Notes
-.. _Group_Based_Policy: https://wiki.opendaylight.org/view/Group_Based_Policy_(GBP)/Releases/Boron:Boron_Release_Notes
-.. _IoTDM: https://wiki.opendaylight.org/view/Iotdm:Boron_Release_Notes
-.. _L2_Switch: https://wiki.opendaylight.org/view/L2_Switch:Boron:Release_Notes
-.. _LACP: https://wiki.opendaylight.org/view/LACP:Boron:Release_Notes
-.. _LISP_Flow_Mapping: https://wiki.opendaylight.org/view/OpenDaylight_Lisp_Flow_Mapping:Boron_Release_Notes
-.. _MDSAL: https://wiki.opendaylight.org/view/MD-SAL:Boron:Release_Notes
-.. _NEMO: https://wiki.opendaylight.org/view/NEMO:Boron:Release_Notes
-.. _NETCONF: https://wiki.opendaylight.org/view/OpenDaylight_NETCONF:Boron_Release_Notes
-.. _NetIDE: https://wiki.opendaylight.org/view/NetIDE:Release_Notes
-.. _NeXt: https://wiki.opendaylight.org/view/NeXt:Boron_Release_Notes
-.. _NIC: https://wiki.opendaylight.org/view/Network_Intent_Composition:Release_Notes
-.. _Neutron_Northbound: https://wiki.opendaylight.org/view/NeutronNorthbound:Boron:Release_Notes
-.. _OF-Config: https://wiki.opendaylight.org/view/OF-CONFIG:Boron:Release_Notes
-.. _OpFlex: https://wiki.opendaylight.org/view/OpFlex:Boron_Release_Notes
-.. _OpenFlow_Plugin: https://wiki.opendaylight.org/view/OpenDaylight_OpenFlow_Plugin:Boron_Release_Notes
-.. _OpenFlow_Protocol_Library: https://wiki.opendaylight.org/view/Openflow_Protocol_Library:Release_Notes:Boron_Release_Notes
-.. _OVSDB_Netvirt: https://wiki.opendaylight.org/view/OpenDaylight_OVSDB:Boron_Release_Notes
-.. _Packet_Cable: https://wiki.opendaylight.org/view/PacketCablePCMM:BoronReleaseNotes
-.. _SDN_Interface_Application: https://wiki.opendaylight.org/view/ODL-SDNi:Boron_Release_Notes
-.. _SNBI: https://wiki.opendaylight.org/view/SNBI_Berrylium_Release_Notes
-.. _SNMP4SDN: https://wiki.opendaylight.org/view/SNMP4SDN:Boron_Release_Note
-.. _SNMP_Plugin: https://wiki.opendaylight.org/view/SNMP_Plugin:SNMP_Plugin:Boron_Release_Notes
-.. _SXP: https://wiki.opendaylight.org/view/SXP:Boron:Release_Notes
-.. _SFC: https://wiki.opendaylight.org/view/Service_Function_Chaining:Boron_Release_Notes
-.. _TCPMD5: https://wiki.opendaylight.org/view/TCPMD5:Boron_Release_Notes
-.. _TSDR: https://wiki.opendaylight.org/view/TSDR:Boron:Release_Notes
-.. _TTP: https://wiki.opendaylight.org/view/Table_Type_Patterns/Boron/Release_Notes
-.. _Topology_Processing_Framework: https://wiki.opendaylight.org/view/Topology_Processing_Framework:Boron_Release_Notes
-.. _USC: https://wiki.opendaylight.org/view/USC:Boron:Release_Notes
-.. _VPN_Service: https://wiki.opendaylight.org/view/Vpnservice:Boron_Release_Notes
-.. _VTN: https://wiki.opendaylight.org/view/VTN:Boron:Release_Notes
-.. _YANG_Tools: https://wiki.opendaylight.org/view/YANG_Tools:Boron:Release_Notes
