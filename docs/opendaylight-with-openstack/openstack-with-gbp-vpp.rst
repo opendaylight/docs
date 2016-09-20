@@ -67,7 +67,7 @@ In case of ``"vlan-network"``, the ``vlan`` field contains the same value as ``n
 In case of ``"flat"``, the VLAN specific parameters are not filled out.
 
 .. note:: In case of VXLAN network (i.e. ``network-type`` is ``"vxlan-network"``), no information is actually written
-into VPP Renderer datastore, as VXLAN is used for tenant-network (so no packets are going outside). Instead, VPP Renderer looks up GBP flood domains corresponding to existing VPP bridge domains trying to establish a VXLAN tunnel between them.
+   into VPP Renderer datastore, as VXLAN is used for tenant-network (so no packets are going outside). Instead, VPP Renderer looks up GBP flood domains corresponding to existing VPP bridge domains trying to establish a VXLAN tunnel between them.
 
 For a ``port`` entity it is checked that ``vif-type`` contains ``"vhostuser"`` substring, and that ``device-owner`` contains a specific substring, namely ``"compute"``, ``"router"`` or ``"dhcp"``.
 

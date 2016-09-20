@@ -1,3 +1,5 @@
+.. _openflow-protocol-library:
+
 OpenFlow Protocol Library Developer Guide
 =========================================
 

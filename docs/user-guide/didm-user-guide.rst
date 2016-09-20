@@ -154,7 +154,7 @@ CLI.
 Run REST GET command to verify the device details:
 --------------------------------------------------
 
-`http://<CONTROLLER-IP:8181>/restconf/operational/opendaylight-inventory:nodes <http://<CONTROLLER-IP:8181>/restconf/operational/opendaylight-inventory:nodes>`__
+http://<CONTROLLER-IP:8181>/restconf/operational/opendaylight-inventory:nodes
 
 Run REST adjust-flow command to adjust flows and push to the device
 -------------------------------------------------------------------
@@ -166,7 +166,7 @@ takes the flow to be adjusted as input and displays the adjusted flow as
 output in the REST output container. Here is the REST API to adjust and
 push flows to HP 3800 device:
 
-`http://<CONTROLLER-IP:8181>/restconf/operations/openflow-feature:adjust-flow <http://<CONTROLLER-IP:8181>/restconf/operations/openflow-feature:adjust-flow>`__
+http://<CONTROLLER-IP:8181>/restconf/operations/openflow-feature:adjust-flow
 
 FlowObjectives API
 ------------------
@@ -180,15 +180,15 @@ install the flows to the device.
 Filter Objective
 ~~~~~~~~~~~~~~~~
 
-`http://<CONTROLLER-IP>:8181/restconf/operations/atrium-flow-objective:filter <http://<CONTROLLER-IP>:8181/restconf/operations/atrium-flow-objective:filter>`__
+http://<CONTROLLER-IP>:8181/restconf/operations/atrium-flow-objective:filter
 
 Next Objective
 ~~~~~~~~~~~~~~
 
-`http://<CONTROLLER-IP>:8181/restconf/operations/atrium-flow-objective:next <http://<CONTROLLER-IP>:8181/restconf/operations/atrium-flow-objective:next>`__
+http://<CONTROLLER-IP>:8181/restconf/operations/atrium-flow-objective:next
 
 Forward Objective
 ~~~~~~~~~~~~~~~~~
 
-`http://<CONTROLLER-IP>:8181/restconf/operations/atrium-flow-objective:forward <http://<CONTROLLER-IP>:8181/restconf/operations/atrium-flow-objective:forward>`__
+http://<CONTROLLER-IP>:8181/restconf/operations/atrium-flow-objective:forward
 

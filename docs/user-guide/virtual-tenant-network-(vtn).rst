@@ -34,9 +34,9 @@ and minimizing network configuration errors.
 
 It is implemented as two major components
 
--  `VTN Manager <#_vtn_manager>`__
+-  `VTN Manager`
 
--  `VTN Coordinator <#_vtn_coordinator>`__
+-  `VTN Coordinator`
 
 VTN Manager
 ~~~~~~~~~~~
@@ -752,7 +752,7 @@ Verify Control Node stacking
 ''''''''''''''''''''''''''''
 
 -  stack.sh prints out Horizon is now available at
-   `http://<CONTROL\_NODE\_IP\_ADDRESS>:8080/ <http://<CONTROL_NODE_IP_ADDRESS>:8080/>`__
+   http://<CONTROL\_NODE\_IP\_ADDRESS>:8080/
 
 -  Execute the command *sudo ovs-vsctl show* in the control node
    terminal and verify if the bridge *br-int* is created.
@@ -812,7 +812,7 @@ Additional Verifications
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 -  Please visit the OpenDaylight DLUX GUI after stacking all the nodes,
-   `http://<ODL\_IP\_ADDRESS>:8181/index.html <http://<ODL_IP_ADDRESS>:8181/index.html>`__.
+   http://<ODL\_IP\_ADDRESS>:8181/index.html.
    The switches, topology and the ports that are currently read can be
    validated.
 
@@ -837,7 +837,7 @@ Create VM from Devstack Horizon GUI
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 -  Login to
-   `http://<CONTROL\_NODE\_IP>:8080/ <http://<CONTROL_NODE_IP>:8080/>`__
+   http://<CONTROL\_NODE\_IP>:8080/
    to check the horizon GUI.
 
 .. figure:: ./images/vtn/OpenStackGui.png
@@ -968,7 +968,7 @@ To log in to DLUX, after installing the application: \* Open a browser
 and enter the login URL. If you have installed DLUX as a stand-alone,
 then the login URL is http://localhost:9000/DLUX/index.html. However if
 you have deployed DLUX with Karaf, then the login URL is
-`http://\\<your <http://\<your>`__ IP\\>:8181/dlux/index.html. \* Login
+http://<your IP>:8181/dlux/index.html. \* Login
 to the application with user ID and password credentials as admin.
 NOTE:admin is the only user type available for DLUX in this release.
 
@@ -1271,8 +1271,7 @@ mininet. This page targets Boron release, so the procedure described
 here does not work in other releases.
 
 .. figure:: ./images/vtn/vlanmap_using_mininet.png
-   :alt: Example that demonstrates vlanmap testing in Mininet
-   Environment
+   :alt: Example that demonstrates vlanmap testing in Mininet Environment
 
    Example that demonstrates vlanmap testing in Mininet Environment
 
@@ -3568,8 +3567,7 @@ Overview
 This example explains how to test vlan-map in a multi host scenario.
 
 .. figure:: ./images/vtn/vlanmap_using_mininet.png
-   :alt: Example that demonstrates vlanmap testing in Mininet
-   Environment
+   :alt: Example that demonstrates vlanmap testing in Mininet Environment
 
    Example that demonstrates vlanmap testing in Mininet Environment
 
