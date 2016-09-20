@@ -29,7 +29,7 @@ At a high level, SNBI architecture consists of the following components:
 
 -  SNBI Forwarding Element (FE)
 
-.. figure:: ./images/snbi/snbi_arch.png
+.. figure:: images/snbi/snbi_arch.png
    :alt: SNBI Architecture Diagram
 
    SNBI Architecture Diagram
