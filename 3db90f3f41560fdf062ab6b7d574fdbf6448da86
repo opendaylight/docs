@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a6b29fe_a6c71d63",
+        "filename": "docs/getting-started-guide/release_notes.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2567
+      },
+      "writtenOn": "2016-09-20T23:04:01Z",
+      "side": 1,
+      "message": "Agreed. I have added new section on \"Major Changes\" with bullet point on Restconf response code.  (originally I wanted to call Migration Efforts, but seems like migration efforts is the wrong phrase.  See my email for more details on naming of \"Migration Efforts\").  I will work with other projects to add additional major changes (OpenFlowPlugin Li design, Karaf Upgrade, Neutron API changes).  These will be in another patch once projects reply to my request for text content.",
+      "parentUuid": "7a6b29fe_0671b1a7",
+      "revId": "3db90f3f41560fdf062ab6b7d574fdbf6448da86",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a6b29fe_a64a7d52",
         "filename": "docs/getting-started-guide/release_notes.rst",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2016-09-20T20:57:31Z",
       "side": 1,
       "message": "Should this be release notes or release review?",
+      "revId": "3db90f3f41560fdf062ab6b7d574fdbf6448da86",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_86c2e150",
+        "filename": "docs/getting-started-guide/release_notes.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 2567
+      },
+      "writtenOn": "2016-09-20T23:04:01Z",
+      "side": 1,
+      "message": "Agreed.  Fixed in latest patch.",
+      "parentUuid": "7a6b29fe_a64a7d52",
       "revId": "3db90f3f41560fdf062ab6b7d574fdbf6448da86",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "7a6b29fe_e6a475bb",
+        "filename": "docs/getting-started-guide/release_notes.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 2567
+      },
+      "writtenOn": "2016-09-20T23:04:01Z",
+      "side": 1,
+      "message": "Agreed.  Fixed in latest patch.",
+      "parentUuid": "7a6b29fe_8645c144",
+      "revId": "3db90f3f41560fdf062ab6b7d574fdbf6448da86",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a6b29fe_e677559e",
         "filename": "docs/getting-started-guide/release_notes.rst",
         "patchSetId": 1
@@ -64,6 +118,30 @@
       "writtenOn": "2016-09-20T20:57:31Z",
       "side": 1,
       "message": "extra h",
+      "range": {
+        "startLine": 120,
+        "startChar": 118,
+        "endLine": 120,
+        "endChar": 119
+      },
+      "revId": "3db90f3f41560fdf062ab6b7d574fdbf6448da86",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_c6a7b9bb",
+        "filename": "docs/getting-started-guide/release_notes.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 2567
+      },
+      "writtenOn": "2016-09-20T23:04:01Z",
+      "side": 1,
+      "message": "Agreed.  Fixed in latest patch.",
+      "parentUuid": "7a6b29fe_e677559e",
       "range": {
         "startLine": 120,
         "startChar": 118,
