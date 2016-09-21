@@ -6,12 +6,6 @@ OpenDaylight Experimental Features
    :depth: 1
    :local:
 
-Messaging4Transport
-===================
-Adds AMQP bindings to the MD-SAL, which makes all MD-SAL APIs available via
-that mechanism. AMQP bindings integration exposes the MD-SAL datatree, rpcs,
-and notifications via AMQP, when installed.
-
 Network Intent Composition (NIC)
 ================================
 Offers an interface with an abstraction layer for you to communicate
