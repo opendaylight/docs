@@ -372,29 +372,6 @@ for multiple platforms and device types, enabling USC and OpenDaylight to
 centralize the coordination of encryption across a wide array of endpoint and
 device types.
 
-VPN Service
-===========
-Implements the infrastructure services required to support L3 VPN service. It
-initially leverages open source routing applications as pluggable components.
-L3 services include:
-
-* The L3 VPN Manager
-* MP-BGP Routing Stack
-* MPLS Label Manager
-* NextHop Manager
-* FIB Service & Openstack Neutron Service
-
-The VPN Service offers:
-
-* An API for L3 VPN Services
-* Integration with open source routing suites, including Quagga & Ryu
-* OpenStack Integration with BGPVPN_Blueprint_ for end-to-end integration
-* OpenStack Neutron integration
-* VPN Service upstreamed as part of SDN-distributed routing and the VPN (SDNVPN)
-  project of Open Platform for NFV project (OPNFV) (available in Brahmaputra
-  release)
-* Network Overlay solution necessary for a Datacenter/Cloud environment
-
 Virtual Tenant Network (VTN)
 ============================
 Provides multi-tenant virtual network on an SDN controller, allowing you to

@@ -379,11 +379,6 @@ Karaf OpenDaylight Features
       - odl-usc-channel-ui
       - all
 
-    * - VPN Service
-      - Enables support for OpenStack VPNaaS
-      - odl-vpnservice-core
-      - all
-
     * - VTN Manager
       - Enables Virtual Tenant Network support
       - odl-vtn-manager-rest
@@ -476,11 +471,6 @@ deploying it.
       - Experimental support for OpenStack Neutron virtualization
       - odl-lispflowmapping-neutron
       - self+all
-
-    * - Messaging4Transport
-      - Introduces an AMQP Northbound to MD-SAL
-      - odl-messaging4transport
-      - all
 
     * - Network Intent Composition (NIC)
       - Provides abstraction layer for communcating network intents (including
