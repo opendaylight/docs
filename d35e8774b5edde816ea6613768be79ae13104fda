@@ -1,0 +1,187 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a6b29fe_150f1238",
+        "filename": "docs/user-guide/bgp-user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 3443
+      },
+      "writtenOn": "2016-09-22T15:57:27Z",
+      "side": 1,
+      "message": "duplicated",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 57,
+        "endChar": 87
+      },
+      "revId": "d35e8774b5edde816ea6613768be79ae13104fda",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_bb0baf22",
+        "filename": "docs/user-guide/bgp-user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 3443
+      },
+      "writtenOn": "2016-09-22T15:57:27Z",
+      "side": 1,
+      "message": "/restconf",
+      "revId": "d35e8774b5edde816ea6613768be79ae13104fda",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_dbc94bad",
+        "filename": "docs/user-guide/bgp-user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 374,
+      "author": {
+        "id": 3443
+      },
+      "writtenOn": "2016-09-22T15:57:27Z",
+      "side": 1,
+      "message": "what about path-id?",
+      "revId": "d35e8774b5edde816ea6613768be79ae13104fda",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_bbcc4fbc",
+        "filename": "docs/user-guide/bgp-user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 3443
+      },
+      "writtenOn": "2016-09-22T15:57:27Z",
+      "side": 1,
+      "message": "**Destination**",
+      "range": {
+        "startLine": 375,
+        "startChar": 3,
+        "endLine": 375,
+        "endChar": 14
+      },
+      "revId": "d35e8774b5edde816ea6613768be79ae13104fda",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_614a0456",
+        "filename": "docs/user-guide/bgp-user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 622,
+      "author": {
+        "id": 3443
+      },
+      "writtenOn": "2016-09-22T15:57:27Z",
+      "side": 1,
+      "message": "application",
+      "range": {
+        "startLine": 622,
+        "startChar": 72,
+        "endLine": 622,
+        "endChar": 83
+      },
+      "revId": "d35e8774b5edde816ea6613768be79ae13104fda",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_41b3884c",
+        "filename": "docs/user-guide/bgp-user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 624,
+      "author": {
+        "id": 3443
+      },
+      "writtenOn": "2016-09-22T15:57:27Z",
+      "side": 1,
+      "message": "\"override existing\"  can bring to misunderstanding.\n\nparaphrase to something more simple like\n\"This concept allows user to advertise new routes to all connected remote peer.\" for example",
+      "range": {
+        "startLine": 624,
+        "startChar": 0,
+        "endLine": 624,
+        "endChar": 115
+      },
+      "revId": "d35e8774b5edde816ea6613768be79ae13104fda",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_8132c0a4",
+        "filename": "docs/user-guide/bgp-user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 794,
+      "author": {
+        "id": 3443
+      },
+      "writtenOn": "2016-09-22T15:57:27Z",
+      "side": 1,
+      "message": "and effective-rib-in..",
+      "revId": "d35e8774b5edde816ea6613768be79ae13104fda",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_411428e8",
+        "filename": "docs/user-guide/bgp-user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 795,
+      "author": {
+        "id": 3443
+      },
+      "writtenOn": "2016-09-22T15:57:27Z",
+      "side": 1,
+      "message": "I think we should introduce some small header between each case/demo or space at least to have a clear separation of each start/ending of each.",
+      "revId": "d35e8774b5edde816ea6613768be79ae13104fda",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_e1dc5448",
+        "filename": "docs/user-guide/bgp-user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 870,
+      "author": {
+        "id": 3443
+      },
+      "writtenOn": "2016-09-22T15:57:27Z",
+      "side": 1,
+      "message": "missing removal of all routes at once, and update of a route",
+      "range": {
+        "startLine": 870,
+        "startChar": 0,
+        "endLine": 870,
+        "endChar": 71
+      },
+      "revId": "d35e8774b5edde816ea6613768be79ae13104fda",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
