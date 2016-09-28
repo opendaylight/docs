@@ -1,8 +1,8 @@
 Service Function Chaining
 =========================
 
-OpenDaylight Service Function Chaining (SFC) Overiew
-----------------------------------------------------
+OpenDaylight Service Function Chaining (SFC) Overview
+-----------------------------------------------------
 
 OpenDaylight Service Function Chaining (SFC) provides the ability to
 define an ordered list of a network services (e.g. firewalls, load
