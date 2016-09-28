@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "7a6b29fe_09f6cb5c",
+        "filename": "docs/user-guide/bgp-user-guide.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 570,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2016-09-28T10:09:59Z",
+      "side": 1,
+      "message": "generalize to RR configuration, mention option to set cluster-id in global configuration",
+      "range": {
+        "startLine": 570,
+        "startChar": 0,
+        "endLine": 570,
+        "endChar": 36
+      },
+      "revId": "3f016fea34aa7bfaee45885b8464ec3a191284a6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_29fbc747",
+        "filename": "docs/user-guide/bgp-user-guide.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 572,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2016-09-28T10:09:59Z",
+      "side": 1,
+      "message": "route reflector",
+      "range": {
+        "startLine": 572,
+        "startChar": 47,
+        "endLine": 572,
+        "endChar": 55
+      },
+      "revId": "3f016fea34aa7bfaee45885b8464ec3a191284a6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a6b29fe_68a780bd",
         "filename": "docs/user-guide/bgp-user-guide.rst",
         "patchSetId": 4
