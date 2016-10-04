@@ -11,10 +11,10 @@ Preparations
 After release candidate is built gpg sign artifacts using odlsign-bulk script in
 **releng/builder/scripts**.
 
-.. code-block:: bash
+    .. code-block:: bash
 
-    cd scripts/
-    ./odlsign-bulk <staging-repo-id>  # eg. autorelease-1367
+        cd scripts/
+        ./odlsign-bulk <staging-repo-id>  # eg. autorelease-1367
 
 Releasing OpenDaylight
 ======================
