@@ -19,6 +19,10 @@ After release candidate is built gpg sign artifacts using odlsign-bulk script in
 Releasing OpenDaylight
 ======================
 
+- Block submit permissions for registered users and elevate RE's committer rights on gerrit.
+
+    .. figure:: images/gerrit-update-committer-rights.png
+
 - Nexus: click release for staging repo **(Helpdesk)**
 - Nexus: click release for gpgsign repo (created above in Preparations) **(Helpdesk)**
 - Send email to Helpdesk with binary URL to update website **(Helpdesk)**
