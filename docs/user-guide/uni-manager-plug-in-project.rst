@@ -1,59 +1,49 @@
-UNI Manager Plug In Project
-===========================
+User Network Interface Manager Plug-in (Unimgr)
+===============================================
 
 Overview
 --------
 
-The version of the UNI Manager (UNIMgr) plug-in included in OpenDaylight
-Boron release is experimental, serving as a proof-of-concept (PoC)
-for using features of OpenDaylight to provision networked elements with
-attributes satisfying Metro Ethernet Forum (MEF) requirements for
-delivery of Carrier Ethernet service. This initial version of UNIMgr
-does not enable the full set of MEF-defined functionality for Carrier
-Ethernet service. UNI Manager adheres to a minimum set of functionality
-defined by MEF 7.2 and 10.2 specifications.
+The User Network Interface Manager (Unimgr) is an experimental/proof of concept
+(PoC) project formed to initiate the development of data models and APIs
+facilitating the use by software applications and/or service orchestrators of
+OpenDaylight to configure and provision connectivity services, in particular
+Carrier Ethernet services as defined by Metro Ethernet Forum (MEF), in physical
+or virtual network elements.
 
-UNIMgr receives a request from applications to create an Ethernet
-Private Line (EPL) private Ethernet connection between two endpoints on
-the network. The request must include the IP addresses of the endpoints
-and a class of service identifier.
+MEF as defined the LSO Reference Architecture for the management and control of
+domains and entities that enable cooperative LSO capabilities across one or
+more service provider networks. The architecture also identifies the Management
+Interface Reference Points (LSO Reference Points), the logical points of
+interaction between specific functional management components. These LSO
+Reference Points are further defined by interface profiles and instantiated by
+APIs.
 
-UNI Manager plug-in translates the request for EPL service into (a)
-configuring two instances of Open vSwitch (OVS), each instance running
-in one of the UNI endpoints, with two ports and a bridge between the
-ports, and (b) creating a GRE tunnel to provide a private connection
-between the endpoints. This initial version of UNIMgr uses only OVSDB on
-its southbound interface to send configuration commands.
+The LSO High Level Management Reference Architecture is shown below.  Note that
+this is a functional architecture that does not describe how the management
+components are implemented (e.g., single vs. multiple instances), but rather
+identifies management components that provide logical functionality as well as
+the points of interaction among them.
 
-UNIMgr also accepts a bits per second datarate parameter, which is
-translated to an OVSDB command to limit the rate at which the OVS
-instances will forward data traffic.
+Unimgr provides support for both the Legato as well as the Presto interfaces.
+These interface, and the APIs associated with them, are defined by YANG models
+developed within MEF in collaboration with ONF and IETF. For the Boron release,
+these are as follows:
 
-The YANG module used to create the UNIMgr plug-in models MEF-defined UNI
-and Ethernet Virtual Connection (EVC) attributes but does not include
-the full set of UNI and EVC attributes. And of the attributes modeled in
-the YANG module only a subset of them are implemented in the UNIMgr
-listener code translating the Operational data tree to OVSDB commands.
-The YANG module used to develop the PoC UNIMgr plug-in is
-cl-unimgr-mef.yang. A copy of this module is available in the
-odl-unimgr-api bundle of the UNIMgr project.
+Legato YANG modules:
+https://git.opendaylight.org/gerrit/gitweb?p=unimgr.git;a=tree;f=legato-api/src/main/yang;hb=refs/heads/stable/boron
 
-Limitations of the PoC version of UNI Manager in OpenDaylight Boron
-include those listed below: \* Uses only OVSDB southbound interface of
-OpenDaylight \* Only uses UNI ID, IP Address, and speed UNI attributes
-\* Only uses a subset of EVC per UNI attributes \* Does not use MEF
-Class of Service or Bandwidth Profile attributes \* Configures only Open
-vSwitch network elements
+Presto YANG modules:
+https://git.opendaylight.org/gerrit/gitweb?p=unimgr.git;a=tree;f=presto-api/src/main/yang;hb=refs/heads/stable/boron
 
-Opportunities for evolution of the UNI Manager plug in include using
-complete MEF Service Layer and MEF Resource Layer YANG models and
-supporting other OpenDaylight southbound protocols like NetConf and
-OpenFlow.
+An application/user can interact with Unimgr at either the service
+orchestration layer (Legato) or the network resource provisioning layer
+(Presto).
 
-UNI Manager Components
-----------------------
+Unimgr Components
+-----------------
 
-UNI Manager is comprised of the following OpenDaylight Karaf features:
+Unimgr is comprised of the following OpenDaylight Karaf features:
 
 +--------------------------------------+--------------------------------------+
 | odl-unimgr-api                       | OpenDaylight :: UniMgr :: api        |
@@ -67,26 +57,23 @@ UNI Manager is comprised of the following OpenDaylight Karaf features:
 | odl-unimgr-ui                        | OpenDaylight :: UniMgr :: UI         |
 +--------------------------------------+--------------------------------------+
 
-Installing UNI Manager Plug-in
-------------------------------
+Installing Unimgr
+-----------------
 
-After launching OpenDaylight install the feature for the UNI Manager
-plug-in. From the karaf command prompt execute the following command to
-install the UNI Manager plug-in:
+After launching OpenDaylight, install the feature for Unimgr.  From the karaf
+command prompt execute the following command:
 
 ::
 
-    $ feature:install odl-manager-ui
+    $ feature:install odl-unimgr-ui
 
-Explore and exercise the UNI Manager REST API
----------------------------------------------
+Explore and exercise the Unimgr REST API
+----------------------------------------
 
-To see the UNI Manager APIs, browse to this URL:
+To see the Unimgr API, browse to this URL:
 http://localhost:8181/apidoc/explorer/index.html
 
 Replace localhost with the IP address or hostname where OpenDaylight is
 running if you are not running OpenDaylight locally on your machine.
 
-See also the UNI Manager Developer’s Guide for a full list and
-description of UNI Manager POSTMAN calls.
-
+See also the Unimgr Developer Guide for a full listing of the API.
