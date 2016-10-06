@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a6b29fe_ca11455f",
+        "filename": "docs/user-guide/packetcable-user-guide.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 6258
+      },
+      "writtenOn": "2016-10-06T23:02:00Z",
+      "side": 1,
+      "message": "I would recommend using the \"note\" in the following format as per sphinx-docs: \n\n.. note::\nAn especially important bit of information about an API that a user should be aware of when using whatever bit of API the note pertains to. The content of the directive should be written in complete sentences and include all appropriate punctuation.\n\nExample:\n\n.. note::\n\n   This function is not suitable for sending spam e-mails.\n\nref: http://www.sphinx-doc.org/en/stable/markup/para.html",
+      "range": {
+        "startLine": 253,
+        "startChar": 0,
+        "endLine": 253,
+        "endChar": 120
+      },
+      "revId": "5e05837d3789d599d8679cddeb2de6c82405dac2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
