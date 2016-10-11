@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "7a6b29fe_44736115",
+        "filename": "docs/user-guide/bgp-user-guide.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 1720,
+      "author": {
+        "id": 3443
+      },
+      "writtenOn": "2016-10-11T11:06:38Z",
+      "side": 1,
+      "message": "IPV6",
+      "range": {
+        "startLine": 1720,
+        "startChar": 93,
+        "endLine": 1720,
+        "endChar": 99
+      },
+      "revId": "95b5ba255bd34ba3cf69efbf367e6e9cd83ba2c4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_644dbdc4",
+        "filename": "docs/user-guide/bgp-user-guide.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 2499,
+      "author": {
+        "id": 3443
+      },
+      "writtenOn": "2016-10-11T11:06:38Z",
+      "side": 1,
+      "message": "\u003cafi-safi-name xmlns:x\u003d\"http://openconfig.net/yang/bgp-types\"\u003e",
+      "range": {
+        "startLine": 2488,
+        "startChar": 0,
+        "endLine": 2499,
+        "endChar": 30
+      },
+      "revId": "95b5ba255bd34ba3cf69efbf367e6e9cd83ba2c4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a6b29fe_5ef21770",
         "filename": "docs/user-guide/bgp-user-guide.rst",
         "patchSetId": 8
