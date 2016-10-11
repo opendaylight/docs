@@ -72,7 +72,7 @@ By thinking of **Intent Systems** in this way, it enables:
    -  To an optical network: The port maybe *abstract*, yet the optical
       wavelength is *concrete*.
 
-    **Note**
+.. note::
 
     *This is a very domain specific analogy, tied to something most
     readers will understand. It in no way implies the **GBP** should be
@@ -1690,7 +1690,7 @@ the user is responsible for the provisioning of endpoints via:
 
 -  REST API
 
-    **Note**
+.. note::
 
     When using the :ref:`Neutron mapper <gbp-neutron>` feature, everything is
     managed transparently via Neutron.
@@ -1960,7 +1960,7 @@ Generic allow:
 Configuring OpenFlow Overlay via REST
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    **Note**
+.. note::
 
     Please see the :ref:`UX <gbp-ux>` section on how to configure **GBP** via
     the GUI.
@@ -1988,7 +1988,7 @@ Configuring OpenFlow Overlay via REST
         }
     }
 
-    **Note**
+.. note::
 
     The usage of "port-name" preceded by "ofoverlay". In OpenDaylight,
     base datastore objects can be *augmented*. In **GBP**, the base
