@@ -296,6 +296,20 @@ directory and building again::
    rm -rf .tox
    tox -edocs
 
+Builds on Read the Docs
+^^^^^^^^^^^^^^^^^^^^^^^
+
+It appears as though the Read the Docs builds don't automatically clear
+the file structure between builds and clones. The result is that you
+may have to clean up the state of old runs of the build script.
+
+As an example, this patch:
+https://git.opendaylight.org/gerrit/41679
+
+Finally fixed the fact that our builds for failing because they were
+taking too long by removing directories of generated javadoc that were
+present from previous runs.
+
 AsciiDoc-based Documentation
 ============================
 
