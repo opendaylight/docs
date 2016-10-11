@@ -233,9 +233,19 @@ the chapter should use::
     ^, for subsubsections
     ", for paragraphs
 
-
 Troubleshooting
 ---------------
+
+Nested formatting doesn't work
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+As stated in the reStructuredText_ guide, inline markup for bold,
+italic, and fixed-width can't be nested. Further, it can't be mixed
+with hyperlinks, so you can't have bold text link somewhere.
+
+This is tracked in a `Docutils FAQ question
+<http://docutils.sourceforge.net/FAQ.html#is-nested-inline-markup-possible>`,
+but there is no clear current plan to fix this.
 
 Make sure you've cloned submodules
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
