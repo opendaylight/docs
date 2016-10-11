@@ -38,7 +38,7 @@ language) so in addition to the above RFCs, it supports any
 data/RPC/notifications described by a YANG model that is implemented by
 the device.**
 
-    **Tip**
+.. tip::
 
     NETCONF southbound can be activated by installing
     ``odl-netconf-connector-all`` Karaf feature.
@@ -173,7 +173,7 @@ this device there is this capability reported:
 **For such devices you only need to put the schema into folder
 cache/schema inside your Karaf distribution.**
 
-    **Important**
+.. important::
 
     The file with YANG schema for ietf-inet-types has to be called
     ietf-inet-types@2010-09-24.yang. It is the required naming format of
@@ -299,7 +299,7 @@ MD-SAL with the usage of the network-topology model. You can configure
 new NETCONF connectors both through the NETCONF server for MD-SAL (port
 2830) or RESTCONF. This guide focuses on RESTCONF.
 
-    **Tip**
+.. tip::
 
     To enable NETCONF connector configuration through MD-SAL install
     either the ``odl-netconf-topology`` or
@@ -419,7 +419,7 @@ Clustered NETCONF connector
 To spawn NETCONF connectors that are cluster-aware you need to install
 the ``odl-netconf-clustered-topology`` karaf feature.
 
-    **Warning**
+.. warning::
 
     The ``odl-netconf-topology`` and ``odl-netconf-clustered-topology``
     features are considered **INCOMPATIBLE**. They both manage the same
@@ -490,7 +490,7 @@ http://localhost:8181/restconf/config/network-topology:network-topology/topology
 
 Should return 200 response code with no body.
 
-    **Tip**
+.. tip::
 
     This call is transformed into a couple of NETCONF RPCs. Resulting
     NETCONF RPCs that go directly to the device can be found in the
@@ -652,7 +652,7 @@ In terms of RFCs, these are supported:
 
 Notifications over NETCONF are not supported in the Boron release.
 
-    **Tip**
+.. tip::
 
     Install NETCONF northbound for MD-SAL by installing feature:
     ``odl-netconf-mdsal`` in karaf. Default binding port is **2830**.
@@ -721,7 +721,7 @@ NETCONF testtool
 These jars are part of OpenDaylight’s controller project and are built
 from the NETCONF codebase in OpenDaylight.
 
-    **Tip**
+.. tip::
 
     Download testtool from OpenDaylight Nexus at:
     https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/netconf/netconf-testtool/1.1.0-Boron/
@@ -734,7 +734,7 @@ from the NETCONF codebase in OpenDaylight.
 
 -  perf-client.jar - RESTCONF stress/performance measuring tool
 
-    **Tip**
+.. tip::
 
     Each executable tool provides help. Just invoke ``java -jar
     <name-of-the-tool.jar> --help``
@@ -1099,7 +1099,7 @@ Editing data for simulated device
 
        http://localhost:8181/restconf/operational/network-topology:network-topology/topology/topology-netconf/node/17830-sim-device/yang-ext:mount/
 
-    **Warning**
+.. warning::
 
     Data will be mirrored in operational datastore only when using the
     default simple datastore.

@@ -455,7 +455,7 @@ Optimistic Lock Failure
     It is the responsibility of the caller to create a new transaction
     and submit the same modification again in order to update data tree.
 
-        **Warning**
+    .. warning::
 
         ``OptimisticLockFailedException`` usually exposes **multiple
         writers** to the same data subtree, which may conflict on same

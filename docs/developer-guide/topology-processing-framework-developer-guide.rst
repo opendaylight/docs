@@ -715,7 +715,7 @@ picture below shows how data will be rendered and stored.
 
    Rendering to the inventory-rendering model
 
-    **Important**
+.. important::
 
     When implementing your version of the topology-rendering model in
     the Topology Processing Framework, the source file of the model
@@ -741,7 +741,7 @@ model in XML.
 Step2 - Module and Feature Creation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-    **Important**
+.. important::
 
     This and following steps are based on the `model specific
     approach <#_model_specific_approach>`__ in the Topology Processing
@@ -813,7 +813,7 @@ IRModelAdapter refers to class which implements ModelAdapter in module
 Inventory Rendering). In the case of the provider class, we put the
 abbreviation at the end.
 
-    **Important**
+.. important::
 
     -  In the next sections, we use the terms TopologyRequestListener,
        TopologyRequestHandler, etc. without a prepended or appended
@@ -877,7 +877,7 @@ processing. In this case, we had to create five classes implementing:
    the rendering operator just wraps each received UnderlayItem to
    OverlayItem and sends them to write.
 
-    **Important**
+.. important::
 
     For purposes of topology rendering from inventory to
     network-topology, there are misused fields in UnderlayItem as
