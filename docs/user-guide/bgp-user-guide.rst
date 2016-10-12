@@ -253,10 +253,6 @@ BGP Peering
 To exchange routing information between two BGP systems (peers), it is required to configure a peering on both BGP speakers first.
 This mean that each BGP speaker has a white list of neighbors, representing remote peers, with which the peering is allowed.
 BGP uses TCP as its transport protocol, by default listens on port 179.
-
-.. important:: OpenDaylight BGP plugin is configured to listen on port *1790*, due to privileged ports restriction for non-root users.
-   One of the workarounds is to use port redirection.
-
 The TCP connection is established between two peers and they exchange messages to open and confirm the connection parameters followed by routes exchange.
 
 Here is a sample basic neighbor configuration:
@@ -303,6 +299,37 @@ Here is a sample basic neighbor configuration:
 @line 12: Wait for peers to issue requests to open a BGP session, rather than initiating sessions from the local router. Default value is **false**.
 
 @line 16: Explicitly designate the peer as internal or external. Default value is **INTERNAL**.
+
+
+BGP Server
+''''''''''''''''''''''''''''''
+
+OpenDaylight BGP plugin is configured to listen on port *1790*, due to privileged ports restriction for non-root users.
+One of the workarounds is to use port redirection. In case other port is desired to be used instead, we can reconfigure it:
+
+Here is a sample of bgp port listening re-configuration:
+
+**URL:** ``/restconf/config/bgp-peer-acceptor-config:bgp-peer-acceptor-config/default``
+
+**Method:** ``PUT``
+
+**Content-Type:** ``application/xml``
+
+**Request Body:**
+
+.. code-block:: xml
+   :linenos:
+       :emphasize-lines: 3,4
+
+   <bgp-peer-acceptor-config xmlns="urn:opendaylight:params:xml:ns:yang:controller:config">
+       <config-name xmlns="urn:opendaylight:params:xml:ns:yang:bgp-peer-acceptor-config">default</config-name>
+        <binding-address xmlns="urn:opendaylight:params:xml:ns:yang:bgp-peer-acceptor-config">0.0.0.0</binding-address>
+        <binding-port xmlns="urn:opendaylight:params:xml:ns:yang:bgp-peer-acceptor-config">1791</binding-port>
+   </bgp-peer-acceptor-config>
+
+3. Binding address: By default is 0.0.0.0, so it is not a mandatory field.
+
+4. Binding Port: Port were BGP Server will listen.
 
 -----
 
