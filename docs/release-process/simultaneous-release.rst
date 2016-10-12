@@ -69,7 +69,7 @@ Releasing OpenDaylight
         git checkout `cat /tmp/patches/taglist.log | grep autorelease | awk '{print $2}'`
         git submodule foreach git checkout release/carbon
         git add [add each project individually to not pull in extra]
-        git commit -asSm "Release carbon"
+        git commit -asSm "Release Carbon"
         git tag -asm "OpenDaylight Carbon release" release/carbon
         git review -y -t Carbon
         git push gerrit release/carbon
