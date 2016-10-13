@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a6b29fe_03879810",
+        "filename": "requirements.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2016-10-13T04:09:33Z",
+      "side": 1,
+      "message": "We pinned 1.4.4 because 1.4.5 causes a build issue. I recall upstream fixed the issue in 1.4.6 though so if we can confirm we should probably bump it to sphinx\u003e\u003d1.4.6",
+      "revId": "4fd3748a23375cf64d861d5ea219624c85419f8c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
