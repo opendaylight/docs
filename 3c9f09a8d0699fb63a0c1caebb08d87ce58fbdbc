@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a6b29fe_03b958e9",
+        "filename": "docs/release-process/simultaneous-release.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2016-10-13T03:05:54Z",
+      "side": 1,
+      "message": "I missed out on reviewing the previous patch but considering that we\u0027re passing commit \"-a\" below do we still need the git add here?",
+      "range": {
+        "startLine": 71,
+        "startChar": 7,
+        "endLine": 71,
+        "endChar": 29
+      },
+      "revId": "3c9f09a8d0699fb63a0c1caebb08d87ce58fbdbc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
