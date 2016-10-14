@@ -820,7 +820,7 @@ Additional Verifications
 
     http://<controller-ip>:8181/index.html
 
-    **Tip**
+.. tip::
 
     If the interconnected between the Open vSwitch is not seen, Please
     bring up the interface for the dataplane manually using the below

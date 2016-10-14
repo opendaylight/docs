@@ -620,7 +620,7 @@ this commands.
 TLS Support
 -----------
 
-    **Note**
+.. note::
 
     see OpenFlow Plugin Developper Guide
 
