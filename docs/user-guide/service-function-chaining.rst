@@ -39,7 +39,7 @@ Overview
 
 SFC User Interface (SFC-UI) is based on Dlux project. It provides an
 easy way to create, read, update and delete configuration stored in
-Datastore. Moreover, it shows the status of all SFC features (e.g
+datastore. Moreover, it shows the status of all SFC features (e.g
 installed, uninstalled) and Karaf log messages as well.
 
 SFC-UI Architecture
@@ -57,17 +57,17 @@ Configuring SFC-UI
 
 1. Run ODL distribution (run karaf)
 
-2. In karaf console execute: ``feature:install odl-sfc-ui``
+2. In Karaf console execute: ``feature:install odl-sfc-ui``
 
 3. Visit SFC-UI on: ``http://<odl_ip_address>:8181/sfc/index.html``
 
-SFC Southbound REST Plugin
+SFC Southbound REST Plug-in
 --------------------------
 
 Overview
 ~~~~~~~~
 
-The Southbound REST Plugin is used to send configuration from DataStore
+The Southbound REST Plug-in is used to send configuration from datastore
 down to network devices supporting a REST API (i.e. they have a
 configured REST URI). It supports POST/PUT/DELETE operations, which are
 triggered accordingly by changes in the SFC data stores.
@@ -82,27 +82,27 @@ triggered accordingly by changes in the SFC data stores.
 
 -  Service Function Schedule Type (SFST)
 
--  Service Function Forwader (SFF)
+-  Service Function Forwarder (SFF)
 
 -  Rendered Service Path (RSP)
 
-Southbound REST Plugin Architecture
+Southbound REST Plug-in Architecture
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-From the user perspective, the REST plugin is another SFC Southbound
-plugin used to communicate with network devices.
+From the user perspective, the REST plug-in is another SFC Southbound
+plug-in used to communicate with network devices.
 
 .. figure:: ./images/sfc/sb-rest-architecture-user.png
-   :alt: Soutbound REST Plugin integration into ODL
+   :alt: Southbound REST Plug-in integration into ODL
 
-   Soutbound REST Plugin integration into ODL
+   Southbound REST Plug-in integration into ODL
 
 Configuring Southbound REST Plugin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Run ODL distribution (run karaf)
 
-2. In karaf console execute: ``feature:install odl-sfc-sb-rest``
+2. In Karaf console execute: ``feature:install odl-sfc-sb-rest``
 
 3. Configure REST URIs for SF/SFF through SFC User Interface or RESTCONF
    (required configuration steps can be found in the tutorial stated
@@ -111,7 +111,7 @@ Configuring Southbound REST Plugin
 Tutorial
 ~~~~~~~~
 
-Comprehensive tutorial on how to use the Southbound REST Plugin and how
+Comprehensive tutorial on how to use the Southbound REST Plug-in and how
 to control network devices with it can be found on:
 https://wiki.opendaylight.org/view/Service_Function_Chaining:Main#SFC_101
 
@@ -126,9 +126,9 @@ Integration is realized through mapping of SFC objects (like SF, SFF,
 Classifier, etc.) to OVS objects (like Bridge,
 TerminationPoint=Port/Interface). The mapping takes care of automatic
 instantiation (setup) of corresponding object whenever its counterpart
-is created. For example, when a new SFF is created, the SFC-OVS plugin
+is created. For example, when a new SFF is created, the SFC-OVS plug-in
 will create a new OVS bridge and when a new OVS Bridge is created, the
-SFC-OVS plugin will create a new SFF.
+SFC-OVS plug-in will create a new SFF.
 
 The feature is intended for SFC users willing to use Open vSwitch as
 underlying network infrastructure for deploying RSPs (Rendered Service
@@ -139,7 +139,7 @@ SFC-OVS Architecture
 
 SFC-OVS uses the OVSDB MD-SAL Southbound API for getting/writing
 information from/to OVS devices. From the user perspective SFC-OVS acts
-as a layer between SFC DataStore and OVSDB.
+as a layer between SFC datastore and OVSDB.
 
 .. figure:: ./images/sfc/sfc-ovs-architecture-user.png
    :alt: SFC-OVS integration into ODL
@@ -151,7 +151,7 @@ Configuring SFC-OVS
 
 1. Run ODL distribution (run karaf)
 
-2. In karaf console execute: ``feature:install odl-sfc-ovs``
+2. In Karaf console execute: ``feature:install odl-sfc-ovs``
 
 3. Configure Open vSwitch to use ODL as a manager, using following
    command: ``ovs-vsctl set-manager tcp:<odl_ip_address>:6640``
@@ -165,10 +165,10 @@ Verifying mapping from OVS to SFF
 Overview
 ''''''''
 
-This tutorial shows the usual workflow when OVS configuration is
+This tutorial shows the usual work flow when OVS configuration is
 transformed to corresponding SFC objects (in this case SFF).
 
-Prerequisities
+Prerequisites
 ''''''''''''''
 
 -  Open vSwitch installed (ovs-vsctl command available in shell)
@@ -205,7 +205,7 @@ Overview
 This tutorial shows the usual workflow during creation of OVS Bridge
 with use of SFC APIs.
 
-Prerequisities
+Prerequisites
 ''''''''''''''
 
 -  Open vSwitch installed (ovs-vsctl command available in shell)
@@ -298,7 +298,7 @@ Configuring Classifier
 
 2. SFF data plane locator must be configured
 
-3. Classifier interface must be mannually added to SFF bridge.
+3. Classifier interface must be manually added to SFF bridge.
 
 Administering or Managing Classifier
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -345,7 +345,7 @@ and forwarded to a related SFF, which knows how to traverse the RSP.
 
 Rules are created using appropriate iptables command. If the Access
 Control Entry (ACE) rule is MAC address related both iptables and
-ip6tabeles rules re issued. If ACE rule is IPv4 address related, only
+IPv6 tables rules re issued. If ACE rule is IPv4 address related, only
 iptables rules are issued, same for IPv6.
 
 .. note::
@@ -362,7 +362,7 @@ Configuring Classifier
 Administering or Managing Classifier
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Classfier runs alongside sfc\_agent, therefore the commad for starting
+Classifier runs alongside sfc\_agent, therefore the command for starting
 it locally is:
 
 ::
@@ -533,7 +533,7 @@ Next Hop Table detailed
 The Next Hop table uses the RSP Path Id and appropriate packet fields to
 determine where to send the packet next. For NSH, only the NSP (Network
 Services Path, RSP ID) and NSI (Network Services Index, next hop) fields
-from the NSH header are needed to determine the VXLAN tunnel destination
+from the NSH header are needed to determine the VxLAN tunnel destination
 IP. For VLAN or MPLS, then the source MAC address is used to determine
 the destination MAC address.
 
@@ -579,7 +579,7 @@ the packets out.
 Here are two examples on SFF1. RSP Paths 1 and 2 are symmetric MPLS
 paths that use VLAN for the SFF-SF. RSP Paths 3 and 4 are symmetric NSH
 paths. Since it is assumed that switches used for NSH will only have one
-VXLANport, the NSH packets are just sent back where they came from.
+VXLAN port, the NSH packets are just sent back where they came from.
 
 +----------+--------------------------------+--------------------------------+
 | Priority | Match                          | Action                         |
@@ -716,7 +716,7 @@ commands, assuming SFF1 is called ``s1`` and SFF2 is called ``s2``.
 
 In all the following configuration sections, replace the ``${JSON}``
 string with the appropriate JSON configuration. Also, change the
-``localhost`` desintation in the URL accordingly.
+``localhost`` destination in the URL accordingly.
 
 SFC OF Renderer NSH Tutorial
 ''''''''''''''''''''''''''''
@@ -2155,7 +2155,7 @@ service-functions.json:
       }
     }
 
-The depolyed topology like this:
+The deployed topology like this:
 
 ::
 
@@ -2466,7 +2466,7 @@ mountpoints are cached.
 
 First step is to create the required RSP as usually done.
 
-Once RSP name is avaiable it is used to send a POST RPC to the
+Once RSP name is available it is used to send a POST RPC to the
 controller similar to below:
 
 ::
@@ -2494,3 +2494,202 @@ the SFCPOT configuration sub-tree in the nodes.
       }
     }
 
+Logical Service Function Forwarder
+----------------------------------
+
+Overview
+~~~~~~~~
+
+Rationale
+^^^^^^^^^
+
+When the current SFC is deployed in a cloud environment, it is assumed that each
+switch connected to a Service Function is configured as a Service Function Forwarder and
+each Service Function is connected to its Service Function Forwarder depending on the
+Compute Node where the Virtual Machine is located.
+
+.. figure:: ./images/sfc/sfc-in-cloud.png
+   :alt: Deploying SFC in Cloud Environments
+
+As shown in the picture above, this solution allows the basic cloud use cases to be fulfilled,
+as for example, the ones required in OPNFV Brahmaputra, however, some advanced use cases
+like the transparent migration of VMs can not be implemented. The Logical Service Function Forwarder
+enables the following advanced use cases:
+
+1. Service Function mobility without service disruption
+2. Service Functions load balancing and failover
+
+As shown in the picture below, the Logical Service Function Forwarder concept extends the current
+SFC northbound API to provide an abstraction of the underlying Data Center infrastructure.
+The Data Center underlaying network can be abstracted by a single SFF. This single SFF uses
+the logical port UUID as data plane locator to connect SFs globally and in a location-transparent manner.
+SFC co-operates with the Netvirt and `Genius <./genius-user-guide.html>`__ projects to track the
+location of the SF's logical ports.
+
+.. figure:: ./images/sfc/single-logical-sff-concept.png
+   :alt: Single Logical SFF concept
+
+The SFC internally distributes the necessary flow state over the relevant switches based on the
+internal Data Center topology and the deployment of SFs.
+
+Changes in data model
+~~~~~~~~~~~~~~~~~~~~~
+The Logical Service Function Forwarder concept extends the current SFC northbound API to provide
+an abstraction of the underlying Data Center infrastructure.
+
+The Logical SFF simplifies the configuration of the current SFC data model by reducing the number
+of parameters to be be configured in every SFF, since the controller will discover those parameters
+by interacting with the services offered by the `Genius <./genius-user-guide.html>`__ project.
+
+The following picture shows the Logical SFF data model. The model gets simplified as most of the
+configuration parameters of the current SFC data model are discovered in runtime. The complete
+YANG model can be found here `logical SFF model
+<https://github.com/opendaylight/sfc/blob/master/sfc-model/src/main/yang/service-function-forwarder-logical.yang>`__.
+
+.. figure:: ./images/sfc/logical-sff-datamodel.png
+   :alt: Logical SFF data model
+
+How to configure the Logical SFF
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The following are examples to configure the Logical SFF:
+
+::
+
+    curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '${JSON}' -X PUT --user admin:admin http://localhost:8181/restconf/config/service-node:service-nodes/
+
+**Service Nodes JSON.**
+
+::
+
+    {
+    "service-nodes": {
+        "service-node": [
+            {
+                "name": "classifier1",
+                "service-function": [
+                ],
+                "ip-mgmt-address": "192.168.1.10"
+            },
+            {
+                "name": "sf1",
+                "service-function": [
+                    "dpi-1"
+                ],
+                "ip-mgmt-address": "192.168.1.30"
+            },
+            {
+                "name": "sf2",
+                "service-function": [
+                    "firewall-1"
+                ],
+                "ip-mgmt-address": "192.168.1.40"
+            },
+            {
+                "name": "classifier2",
+                "service-function": [
+                ],
+                "ip-mgmt-address": "192.168.1.60"
+            }
+        ]
+    }
+    }
+
+::
+
+    curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '${JSON}' -X PUT --user admin:admin http://localhost:8181/restconf/config/restconf/config/service-function:service-functions/
+
+**Service Functions JSON.**
+
+::
+
+    {
+    "service-functions": {
+        "service-function": [
+            {
+                "name": "dpi-1",
+                "ip-mgmt-address": "192.168.1.30",
+                "rest-uri": "http://192.168.1.30:5000",
+                "type": "dpi",
+                "nsh-aware": "true",
+                "sf-data-plane-locator": [
+                    {
+                        "name": "dpi-1-dpl",
+                        "interface-name": "e0fffc12-a46e-4575-bf36-8383c8edefed",
+                        "service-function-forwarder": "sfflogical1"
+                    }
+                ]
+            },
+            {
+                "name": "firewall-1",
+                "ip-mgmt-address": "192.168.1.40",
+                "rest-uri": "http://192.168.1.40:5000",
+                "type": "firewall",
+                "nsh-aware": "true",
+                "sf-data-plane-locator": [
+                    {
+                        "name": "firewall-1-dpl",
+                        "interface-name": "952a5486-d1a5-40cd-a7c1-cc61e59a2b36",
+                        "service-function-forwarder": "sfflogical1"
+                    }
+                ]
+            }
+        ]
+    }
+    }
+
+::
+
+    curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '${JSON}' -X PUT --user admin:admin http://localhost:8181/restconf/config/service-function-forwarder:service-function-forwarders/
+
+**Service Function Forwarders JSON.**
+
+::
+
+    {
+    "service-function-forwarders": {
+        "service-function-forwarder": [
+           {
+                "name": "sfflogical1"
+            }
+        ]
+    }
+    }
+
+::
+
+    curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '${JSON}' -X PUT --user admin:admin http://localhost:8181/restconf/config/service-function-chain:service-function-chains/
+
+**Service Function Chains JSON.**
+
+::
+
+    {
+    "service-function-chains": {
+        "service-function-chain": [
+            {
+                "name": "SFC1",
+                "symmetric": "true",
+                "sfc-service-function": [
+                    {
+                        "name": "dpi-abstract1",
+                        "type": "dpi"
+                    },
+                    {
+                        "name": "firewall-abstract1",
+                        "type": "firewall"
+                    }
+                ]
+            },
+            {
+                "name": "SFC2",
+                "symmetric": "true",
+                "sfc-service-function": [
+                    {
+                        "name": "dpi-abstract1",
+                        "type": "dpi"
+                    }
+                ]
+            }
+        ]
+    }
+    }
