@@ -17,7 +17,7 @@ the network and an end-user application for defining such chains.
 
 -  SCF - Service Classifier Function
 
--  SF - Service Function
+-  SF  - Service Function
 
 -  SFC - Service Function Chain
 
@@ -43,7 +43,7 @@ https://datatracker.ietf.org/doc/draft-ietf-sfc-architecture/
 Classifier manages everything from starting the packet listener to
 creation (and removal) of appropriate ip(6)tables rules and marking
 received packets accordingly. Its functionality is **available only on
-Linux** as it leverdges **NetfilterQueue**, which provides access to
+Linux** as it leverages **NetfilterQueue**, which provides access to
 packets matched by an **iptables** rule. Classifier requires **root
 privileges** to be able to operate.
 
@@ -75,7 +75,7 @@ and forwarded to a related SFF, which knows how to traverse the RSP.
 
 Rules are created using appropriate iptables command. If the Access
 Control Entry (ACE) rule is MAC address related both iptables and
-ip6tabeles rules re issued. If ACE rule is IPv4 address related, only
+IPv6 tables rules re issued. If ACE rule is IPv4 address related, only
 iptables rules are issued, same for IPv6.
 
 .. note::
@@ -126,7 +126,7 @@ API Reference Documentation
 
 See: sfc-model/src/main/yang/service-function-classifier.yang
 
-SFC-OVS Plugin
+SFC-OVS Plug-in
 --------------
 
 Overview
@@ -137,9 +137,9 @@ Integration is realized through mapping of SFC objects (like SF, SFF,
 Classifier, etc.) to OVS objects (like Bridge,
 TerminationPoint=Port/Interface). The mapping takes care of automatic
 instantiation (setup) of corresponding object whenever its counterpart
-is created. For example, when a new SFF is created, the SFC-OVS plugin
+is created. For example, when a new SFF is created, the SFC-OVS plug-in
 will create a new OVS bridge and when a new OVS Bridge is created, the
-SFC-OVS plugin will create a new SFF.
+SFC-OVS plug-in will create a new SFF.
 
 SFC-OVS Architecture
 ~~~~~~~~~~~~~~~~~~~~
@@ -180,7 +180,7 @@ SFC Southbound REST Plugin
 Overview
 ~~~~~~~~
 
-The Southbound REST Plugin is used to send configuration from DataStore
+The Southbound REST Plug-in is used to send configuration from DataStore
 down to network devices supporting a REST API (i.e. they have a
 configured REST URI). It supports POST/PUT/DELETE operations, which are
 triggered accordingly by changes in the SFC data stores.
@@ -195,11 +195,11 @@ triggered accordingly by changes in the SFC data stores.
 
 -  Service Function Schedule Type (SFST)
 
--  Service Function Forwader (SFF)
+-  Service Function Forwarder (SFF)
 
 -  Rendered Service Path (RSP)
 
-Southbound REST Plugin Architecture
+Southbound REST Plug-in Architecture
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. **listeners** - used to listen on changes in the SFC data stores
@@ -211,9 +211,9 @@ Southbound REST Plugin Architecture
    JSON-encoded data down to these devices
 
 .. figure:: ./images/sfc/sb-rest-architecture.png
-   :alt: Southbound REST Plugin Architecture diagram
+   :alt: Southbound REST Plug-in Architecture diagram
 
-   Southbound REST Plugin Architecture diagram
+   Southbound REST Plug-in Architecture diagram
 
 Key APIs and Interfaces
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -221,7 +221,7 @@ Key APIs and Interfaces
 The plugin provides Southbound REST API designated to listening REST
 devices. It supports POST/PUT/DELETE operations. The operation (with
 corresponding JSON-encoded data) is sent to unique REST URL belonging to
-certain datatype.
+certain data type.
 
 -  Access Control List (ACL):
    ``http://<host>:<port>/config/ietf-acl:access-lists/access-list/``
@@ -379,11 +379,40 @@ abstract function:
 -  **``int serviceIndex``**: the initial service index for this rendered
    service path
 
--  **``List<String>``**: a list of service funtion names which scheduled
+-  **``List<String>``**: a list of service function names which scheduled
    by the Service Function Scheduling Algorithm.
 
 API Reference Documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Please refer the API docs generated in the mdsal-apidocs.
+
+
+Logical SFF
+-----------
+
+Overview
+~~~~~~~~
+For cloud environments, SFC Northbound API must be agnostic to the underlying Data Center infrastructure (compute nodes, switches…) avoiding to configure each virtual switch as an SFF, hence the whole Data Center is configured as a unique logical SFF.
+
+Changes in Data Model
+~~~~~~~~~~~~~~~~~~~~~
+The Logical SFF simplifies the configuration of the current SFC data model by reducing the number of parameters to be be configured in every SFF, since the controller will discover those parameters by interacting with the services offered by the Genius project. 
+
+How to configure the Logical SFF
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The Logical SFF will use several services from the Genius project to interact with the underlying network.
+
+Logical SFF internals
+~~~~~~~~~~~~~~~~~~~~~
+
+Interaction with Genius
+~~~~~~~~~~~~~~~~~~~~~~~
+The Logical SFF will use several services from the Genius project to interact with the underlying network.
+
+1. Interaction with Interface Tunnel Manager (ITM)
+
+2. Interaction with the Interface Manager
+
+3. Interaction with Resource Manager 
 
