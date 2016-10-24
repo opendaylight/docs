@@ -39,7 +39,7 @@ Overview
 
 SFC User Interface (SFC-UI) is based on Dlux project. It provides an
 easy way to create, read, update and delete configuration stored in
-Datastore. Moreover, it shows the status of all SFC features (e.g
+datastore. Moreover, it shows the status of all SFC features (e.g
 installed, uninstalled) and Karaf log messages as well.
 
 SFC-UI Architecture
@@ -67,7 +67,7 @@ SFC Southbound REST Plugin
 Overview
 ~~~~~~~~
 
-The Southbound REST Plugin is used to send configuration from DataStore
+The Southbound REST Plug-in is used to send configuration from datastore
 down to network devices supporting a REST API (i.e. they have a
 configured REST URI). It supports POST/PUT/DELETE operations, which are
 triggered accordingly by changes in the SFC data stores.
@@ -86,7 +86,7 @@ triggered accordingly by changes in the SFC data stores.
 
 -  Rendered Service Path (RSP)
 
-Southbound REST Plugin Architecture
+Southbound REST Plug-in Architecture
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 From the user perspective, the REST plugin is another SFC Southbound
@@ -139,7 +139,7 @@ SFC-OVS Architecture
 
 SFC-OVS uses the OVSDB MD-SAL Southbound API for getting/writing
 information from/to OVS devices. From the user perspective SFC-OVS acts
-as a layer between SFC DataStore and OVSDB.
+as a layer between SFC datastore and OVSDB.
 
 .. figure:: ./images/sfc/sfc-ovs-architecture-user.png
    :alt: SFC-OVS integration into ODL
@@ -168,7 +168,7 @@ Overview
 This tutorial shows the usual workflow when OVS configuration is
 transformed to corresponding SFC objects (in this case SFF).
 
-Prerequisities
+Prerequisites
 ''''''''''''''
 
 -  Open vSwitch installed (ovs-vsctl command available in shell)
@@ -2466,7 +2466,7 @@ mountpoints are cached.
 
 First step is to create the required RSP as usually done.
 
-Once RSP name is avaiable it is used to send a POST RPC to the
+Once RSP name is available it is used to send a POST RPC to the
 controller similar to below:
 
 ::
@@ -2493,4 +2493,31 @@ the SFCPOT configuration sub-tree in the nodes.
         "sfc-ioam-pot-rsp-name": "rsp1"
       }
     }
+
+Logical SFF
+-----------
+
+Overview
+~~~~~~~~
+For cloud environments, SFC Northbound API must be agnostic to the underlying Data Center infrastructure (compute nodes, switches…) avoiding to configure each virtual switch as an SFF, hence the whole Data Center is configured as a unique logical SFF.
+
+Use cases
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The Logical SFF is designed to abstract complex configuration of switches deployed on data centers and even cross-data center.
+
+Changes in Data Model
+~~~~~~~~~~~~~~~~~~~~~
+The Logical SFF simplifies the configuration of the current SFC data model by reducing the number of parameters to be be configured in every SFF, since the controller will discover those parameters by interacting with the services offered by the Genius project.
+
+How to configure the Logical SFF
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The following are examples to configure the Logical SFF:
+
+::
+
+::
+
+::
+
+
 
