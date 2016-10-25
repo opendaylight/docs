@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a682502_6d8f7024",
+        "filename": "docs/user-guide/bgp-user-guide.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2016-10-25T20:28:20Z",
+      "side": 1,
+      "message": "New sub-section content is ok, but it is breaking \"BGP Peering\" section hierarchy...i.e. move it between \"Protocol Configuration\" and \"BGP Peering\" sections. Also move sentence \"BGP uses TCP as its transport protocol, by default listens on port 179.\" from \"BGP Peering\" into the \"BGP Server\" section.",
+      "range": {
+        "startLine": 304,
+        "startChar": 0,
+        "endLine": 305,
+        "endChar": 10
+      },
+      "revId": "ddc93b38499e980b4671091647cef6c046982fc6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
