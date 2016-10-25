@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "5a682502_5e4a2484",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 396,
+      "author": {
+        "id": 6419
+      },
+      "writtenOn": "2016-10-25T08:51:34Z",
+      "side": 1,
+      "message": "newline(s)",
+      "range": {
+        "startLine": 396,
+        "startChar": 100,
+        "endLine": 396,
+        "endChar": 251
+      },
+      "revId": "5890b8716109d340eb856328ce0b23d93bf3b2b6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a682502_de7634d8",
         "filename": "docs/developer-guide/service-function-chaining.rst",
         "patchSetId": 1
@@ -41,6 +64,98 @@
         "startChar": 0,
         "endLine": 400,
         "endChar": 262
+      },
+      "revId": "5890b8716109d340eb856328ce0b23d93bf3b2b6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_9e12fc60",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 6419
+      },
+      "writtenOn": "2016-10-25T08:51:34Z",
+      "side": 1,
+      "message": "in fact, you provision/configure a single \u0027logical\u0027 sff, rather than having to provision/configure individual SFFs",
+      "range": {
+        "startLine": 400,
+        "startChar": 78,
+        "endLine": 400,
+        "endChar": 111
+      },
+      "revId": "5890b8716109d340eb856328ce0b23d93bf3b2b6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_3e4f6894",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 6419
+      },
+      "writtenOn": "2016-10-25T08:51:34Z",
+      "side": 1,
+      "message": "newline(s)",
+      "range": {
+        "startLine": 400,
+        "startChar": 100,
+        "endLine": 400,
+        "endChar": 262
+      },
+      "revId": "5890b8716109d340eb856328ce0b23d93bf3b2b6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_7e49e08a",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 404,
+      "author": {
+        "id": 6419
+      },
+      "writtenOn": "2016-10-25T08:51:34Z",
+      "side": 1,
+      "message": "not sure how this has been done throughout the rest of the docs: should we \"reference\" the project somehow (but to what? wiki? ?... )",
+      "range": {
+        "startLine": 404,
+        "startChar": 51,
+        "endLine": 404,
+        "endChar": 57
+      },
+      "revId": "5890b8716109d340eb856328ce0b23d93bf3b2b6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_be08982e",
+        "filename": "docs/user-guide/service-function-chaining.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 2506,
+      "author": {
+        "id": 6419
+      },
+      "writtenOn": "2016-10-25T08:51:34Z",
+      "side": 1,
+      "message": "I like this description better",
+      "range": {
+        "startLine": 2506,
+        "startChar": 0,
+        "endLine": 2506,
+        "endChar": 126
       },
       "revId": "5890b8716109d340eb856328ce0b23d93bf3b2b6",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
