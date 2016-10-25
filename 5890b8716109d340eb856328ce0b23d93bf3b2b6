@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a682502_9e6ddc07",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 396,
+      "author": {
+        "id": 5927
+      },
+      "writtenOn": "2016-10-25T08:41:58Z",
+      "side": 1,
+      "message": "agnostic in an IT context means \"works on top of a variety of\", which is not the case (we only work on top of one Data Center type \u003d\u003d openstack). Maybe it is better \"SFC Northbound API must not expose underlying...\"",
+      "range": {
+        "startLine": 396,
+        "startChar": 51,
+        "endLine": 396,
+        "endChar": 59
+      },
+      "revId": "5890b8716109d340eb856328ce0b23d93bf3b2b6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_de7634d8",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 5927
+      },
+      "writtenOn": "2016-10-25T08:41:58Z",
+      "side": 1,
+      "message": "General comment: I think line breaks should be used. Not sure if they are mandatory (at least they are used across the previous doc version), but even if not required, not using them makes Gerrit review really annoying",
+      "range": {
+        "startLine": 400,
+        "startChar": 0,
+        "endLine": 400,
+        "endChar": 262
+      },
+      "revId": "5890b8716109d340eb856328ce0b23d93bf3b2b6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
