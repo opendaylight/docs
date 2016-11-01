@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a65312a_8fa11fac",
+        "filename": "docs/release-process/simultaneous-release.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2016-11-01T14:08:18Z",
+      "side": 1,
+      "message": "If we want to be clever with Bash 4 we can do:\n\nexport RELEASE\u003dBeryllium-SR4\necho ${RELEASE,,}\nberyllium-sr4\n\n\nSo then you\u0027d change all instances of \u003crelease\u003e below to ${RELEASE,,} for lowercase and all instances of release-name with ${RELEASE} for the version with the uppercase first character and SR number.",
+      "revId": "c5c88397210419498ea166e9ef3e178f5feecfcf",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_8f88ff23",
+        "filename": "docs/release-process/simultaneous-release.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2016-11-01T14:08:18Z",
+      "side": 1,
+      "message": "Instead of 2 commands we can combine them into 1 with:\n\n  git submodule update --init",
+      "range": {
+        "startLine": 39,
+        "startChar": 8,
+        "endLine": 40,
+        "endChar": 28
+      },
+      "revId": "c5c88397210419498ea166e9ef3e178f5feecfcf",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_0f950f40",
+        "filename": "docs/release-process/simultaneous-release.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2016-11-01T14:08:18Z",
+      "side": 1,
+      "message": "Did you mean \u003crelease\u003e here?",
+      "range": {
+        "startLine": 66,
+        "startChar": 32,
+        "endLine": 66,
+        "endChar": 46
+      },
+      "revId": "c5c88397210419498ea166e9ef3e178f5feecfcf",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_6f8da331",
+        "filename": "docs/release-process/simultaneous-release.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2016-11-01T14:08:18Z",
+      "side": 1,
+      "message": "why split into separate options rather than keeping the previous single -asSm option. Saves us a few characters.",
+      "range": {
+        "startLine": 76,
+        "startChar": 19,
+        "endLine": 76,
+        "endChar": 29
+      },
+      "revId": "c5c88397210419498ea166e9ef3e178f5feecfcf",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
