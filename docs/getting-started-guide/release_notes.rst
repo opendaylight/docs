@@ -686,3 +686,177 @@ YANG Tools
 * `87edd5 <https://git.opendaylight.org/gerrit/#/q/87edd5c3bb219df62aa3bd30b1ed49cc25fd7c47>`_ `BUG-5446 <https://bugs.opendaylight.org/show_bug.cgi?id=5446>`_: Yangtools UnionStringCodec is not consistent with BinaryStringCodec
 * `2ade6e <https://git.opendaylight.org/gerrit/#/q/2ade6e056733b6fbbdfb00c61597dc4c2cce0119>`_ `BUG-5484 <https://bugs.opendaylight.org/show_bug.cgi?id=5484>`_: Fix of Yang statement lexer
 
+Beryllium-SR4 Release Notes
+===========================
+
+This page details changes and bug fixes between the Beryllium Stability Release 3 (Beryllium-SR3) and the Beryllium Stability Release 4 (Beryllium-SR4) of OpenDaylight.
+
+Projects with No Noteworthy Changes
+-----------------------------------
+
+The following projects had no noteworthy changes in the Beryllium-SR4 Release:
+
+* ALTO
+* Centinel
+* Control And Provisioning of Wireless Access Points (CAPWAP)
+* Controller Shield
+* DLUX
+* Device Identification and Driver Management (DIDM)
+* Fabric As A Service (FaaS)
+* Group Based Policy (GBP)
+* Internet of Things Data Management (IoTDM)
+* Link Aggregation Control Protocol (LACP)
+* Messaging4Transport
+* NEtwork MOdeling (NEMO)
+* NeXt UI Toolkit
+* NetIDE
+* Network Intent Composition (NIC)
+* Neutron Northbound
+* Packet Cable/PCMM
+* SDN Interface Application (SDNi)
+* SNMP Plugin
+* SNMP4SDN
+* Secure Network Bootstrapping Infrastructure (SNBI)
+* Secure tag eXchange Protocol (SXP)
+* Service Function Chaining
+* TCP-MD5
+* Time Series Data Repository (TSDR)
+* User Network Interface Manager (UNIMGR)
+* VPN Service
+* YANG PUBSUB
+
+Authentication, Authorization and Accounting (AAA)
+--------------------------------------------------
+* `a7853f <https://git.opendaylight.org/gerrit/#/q/a7853f2dbc2f96d1f8c86137c46702930186f99b>`_ Auto-detect secure HTTP in the idmtool script
+* `cbb7e9 <https://git.opendaylight.org/gerrit/#/q/cbb7e900b23f2855303273d48132aa81ba12d098>`_ Add support for Active Directory to AAA
+* `9c9c51 <https://git.opendaylight.org/gerrit/#/q/9c9c51d0147f1d79ce02c217ba034b3b54f893d3>`_ Add groupRolesMap configuration option for ODLJndiLdapRealm
+* `f6a970 <https://git.opendaylight.org/gerrit/#/q/f6a9702f4f0067c6ada1f635ac24093ab710dcf7>`_ Do not override odlparent's version declaration
+
+BGP PCEP
+--------
+* `0cc5a7 <https://git.opendaylight.org/gerrit/#/q/0cc5a72db4b9161549cd30115d1624a0ac5b1741>`_ `BUG-6810 <https://bugs.opendaylight.org/show_bug.cgi?id=6810>`_: Fix intermintent Be BmpMonitorImplTest failure
+* `a67ad3 <https://git.opendaylight.org/gerrit/#/q/a67ad321f4041bae0d15425b930848acd1907039>`_ `BUG-6739 <https://bugs.opendaylight.org/show_bug.cgi?id=6739>`_ - Throw exception while Installing odl-bgpcep-bgp-all feature
+* `cb5d14 <https://git.opendaylight.org/gerrit/#/q/cb5d141544093edf0acdbfdd73ca66758c66b819>`_ `BUG-6585 <https://bugs.opendaylight.org/show_bug.cgi?id=6585>`_: BGP ChannelOutputLimiter waits forever
+* `e65e13 <https://git.opendaylight.org/gerrit/#/q/e65e1378acfdef6ab6f7e2fe115e7af716237281>`_ `BUG-6662 <https://bugs.opendaylight.org/show_bug.cgi?id=6662>`_: On connection reset by peer, sometimes re-connection attempt stops after HoldTimer expired error
+* `a47f8b <https://git.opendaylight.org/gerrit/#/q/a47f8beb566f5af1ecc9fb99e2d3ebd87d8cf414>`_ `BUG-6568 <https://bugs.opendaylight.org/show_bug.cgi?id=6568>`_ - Termination Point Type is never set in BGP-LS topology
+* `b549f6 <https://git.opendaylight.org/gerrit/#/q/b549f6e3d20b59268ab9d5b604923ab3cc57e4aa>`_ `BUG-6507 <https://bugs.opendaylight.org/show_bug.cgi?id=6507>`_: MalformedObjectNameException while configuring OpenConfig BGP IPv6 neighbor - Since colon is not a valid character for MBean key, replace colon in   IPv6 neighbor address with dash while creating BGP Peer module name - Convert neighbor IPv6 address and key which is derieved from it to   to normalized notation (full-form and leading 0s removed) to match with   similar conversion for BGP Peer module done in BGPPeerModule#getNormalizedHost
+* `2074c9 <https://git.opendaylight.org/gerrit/#/q/2074c9147bd3eed95865de32ad6531993423acd3>`_ `BUG-5922 <https://bugs.opendaylight.org/show_bug.cgi?id=5922>`_: inbound IPv6 connection fails if address has zero groups in it - Convert the remote IPv6 address to normalized notation (full-form and leading 0s removed)   so that comparision with configured BGP Peer address works - BGP Peer address is converted to this form in BGPPeerModule#getNormalizedHost
+* `bf4a8c <https://git.opendaylight.org/gerrit/#/q/bf4a8c121cf69b122e60c46900c6713293e1c4e5>`_ `BUG-6242 <https://bugs.opendaylight.org/show_bug.cgi?id=6242>`_: PCRpt received with bandwidth reoptimization object leads to loop causing OOM - added bandwidth reoptimization object to the list of possible objects in PCRpt message - gracefully handle condition where unexpected object is present in received message - updated unit-tests
+* `badc28 <https://git.opendaylight.org/gerrit/#/q/badc28433c01c80375c1dcf9d70334c2d2acdf60>`_ `BUG-6330 <https://bugs.opendaylight.org/show_bug.cgi?id=6330>`_: Fix race condition when reinstalling App Peer
+* `9b3951 <https://git.opendaylight.org/gerrit/#/q/9b395104cbc00c1549b1013fd612b5db31486b1d>`_ `BUG-6342 <https://bugs.opendaylight.org/show_bug.cgi?id=6342>`_: Link-state topology takes long time to get updated - When large number of prefixes are present for node, repeated re-writing of node causes slowness - Avoid writing the entire node again when prefix or termination-point information for that node changes - Just write the modified information in such cases
+
+Controller
+----------
+* `31364d <https://git.opendaylight.org/gerrit/#/q/31364db92f4024f01fc46b5acc8c2c218b59015c>`_ `BUG-6348 <https://bugs.opendaylight.org/show_bug.cgi?id=6348>`_ : car:stop-stress-test RPC to return success & failure counters
+* `c17f2e <https://git.opendaylight.org/gerrit/#/q/c17f2ed4c5b03cb7176797ed700c9adcf46e4bab>`_ Fix missing LeaderStateChanged event
+
+Integration/Distribution
+------------------------
+* `67eb4f <https://git.opendaylight.org/gerrit/#/q/67eb4fba266ecd61934f994b0ea8a6811512fec5>`_ Added a variation of the 'configure-cluster.sh' script that does not require the 'index' parameter. The script determines the local machine's IP address and checks whether it's present in 'seed_nodes_list'. The script also determines the index based on the local IP address.
+* `e30ccb <https://git.opendaylight.org/gerrit/#/q/e30ccbdf421e0c892cecc4b35fe7d9428055507e>`_ Set 2nd version for autorelease scripting
+* `04d0d9 <https://git.opendaylight.org/gerrit/#/q/04d0d91c656da2c5ff1573e6cb3646a3d68e0113>`_ Add script to enable/disable config datastore persistence
+
+L2 Switch
+---------
+* `e8a730 <https://git.opendaylight.org/gerrit/#/q/e8a730b81353ababe7b1f24fc88bb58ec3c33b4c>`_ `BUG-6655 <https://bugs.opendaylight.org/show_bug.cgi?id=6655>`_ - arphandler unable to flood arp packet
+* `ae78b3 <https://git.opendaylight.org/gerrit/#/q/ae78b3c8e1a77ef5f72f420030a5c501c32f4e1b>`_ `BUG-6751 <https://bugs.opendaylight.org/show_bug.cgi?id=6751>`_ - l2switch project build failed in stable/beryllium
+
+LISP Flow Mapping
+-----------------
+* `093ff7 <https://git.opendaylight.org/gerrit/#/q/093ff7e2ad38145f74c4dae0239da6f992a95e18>`_ `BUG-6634 <https://bugs.opendaylight.org/show_bug.cgi?id=6634>`_: Neutron - PortHandler throws NPE / Berryllium
+
+MD-SAL
+------
+* `18138b <https://git.opendaylight.org/gerrit/#/q/18138bdcc25ce5eb256d73d9907999d8c0b8a67c>`_ `BUG-2332 <https://bugs.opendaylight.org/show_bug.cgi?id=2332>`_: BindingMapping to camel split also on forward slash
+* `c91e99 <https://git.opendaylight.org/gerrit/#/q/c91e99d4f7b8dbb659501c5bbe1a58d4660f9cf5>`_ `BUG-6184 <https://bugs.opendaylight.org/show_bug.cgi?id=6184>`_: Workaround for namespaces with URL with trailing slash
+* `c3ce38 <https://git.opendaylight.org/gerrit/#/q/c3ce387cd71e7627211c9924699b6b83480f3e85>`_ `BUG-6126 <https://bugs.opendaylight.org/show_bug.cgi?id=6126>`_: Use importedName for java.lang types in ClassTemplate
+
+NETCONF
+-------
+* `ce1ff7 <https://git.opendaylight.org/gerrit/#/q/ce1ff7d32bac06b024d08a7f57ae68081f37c925>`_ Do a proper disconnect when deleting a connector.
+* `c1b194 <https://git.opendaylight.org/gerrit/#/q/c1b194eddf290c46e4558c83f2a21feb5b4453d2>`_ `BUG-6272 <https://bugs.opendaylight.org/show_bug.cgi?id=6272>`_ - support RESTCONF PATCH for mounted NETCONF nodes
+* `5eccda <https://git.opendaylight.org/gerrit/#/q/5eccda85a5bc248582cab2f596c8fd455aab67dc>`_ `BUG-6256 <https://bugs.opendaylight.org/show_bug.cgi?id=6256>`_ - OpenDaylight RESTCONF XML selects wrong YANG model for southbound NETCONF
+* `75c307 <https://git.opendaylight.org/gerrit/#/q/75c3077e96415288ca4af0e73bd782570d08d3f8>`_ `BUG-6797 <https://bugs.opendaylight.org/show_bug.cgi?id=6797>`_ - Fix deadlock on cached schema-changed notifications
+* `2278a4 <https://git.opendaylight.org/gerrit/#/q/2278a420dbac7a4aa1756af2f07e24605180c94b>`_ Add unit tests for sal-netconf-connector
+* `40cfb8 <https://git.opendaylight.org/gerrit/#/q/40cfb83c427d112987b36f6eb66f104268d446f9>`_ `BUG-6198 <https://bugs.opendaylight.org/show_bug.cgi?id=6198>`_ - Use sal-netconf-connector to connet device costs too much time
+
+Network Virtualization
+----------------------
+* `8b4b26 <https://git.opendaylight.org/gerrit/#/q/8b4b26a96f2d9187e71d39fdff68272a007d7fed>`_ `BUG-6066 <https://bugs.opendaylight.org/show_bug.cgi?id=6066>`_ - Updated the logging.
+
+ODL Root Parent
+---------------
+* `90cddb <https://git.opendaylight.org/gerrit/#/q/90cddb488097a44550d3ff0ac0678d3f63d8aa3f>`_ `BUG-6187 <https://bugs.opendaylight.org/show_bug.cgi?id=6187>`_: Force more maven resolution in karaf-plugin
+
+OVSDB Integration
+-----------------
+* `c8a3d9 <https://git.opendaylight.org/gerrit/#/q/c8a3d9f2745961902ea6c1f4f01f9d4c4cf14236>`_ `BUG-6692 <https://bugs.opendaylight.org/show_bug.cgi?id=6692>`_: use non-deprecated firstKeyOf() variant
+* `cb5076 <https://git.opendaylight.org/gerrit/#/q/cb5076dd67ce1b2f590dee96caf7ba91b5d3a944>`_ `BUG-6692 <https://bugs.opendaylight.org/show_bug.cgi?id=6692>`_: clean up MonitorRequestBuilder
+* `192e4f <https://git.opendaylight.org/gerrit/#/q/192e4fba348a685dc7c793b040a96c3cb7b5d3a8>`_ Clean up SouthboundConstants
+* `5af9c8 <https://git.opendaylight.org/gerrit/#/q/5af9c80ca01a8f27ea0526808c21e5a5fd2b6f20>`_ Fix clear bug related to "num" in JSON Node [Guava instead JDK Optional]
+* `9c60c1 <https://git.opendaylight.org/gerrit/#/q/9c60c12d2e0cae8206678a7301598dd9b027aa15>`_ Fixed inappropriate WARN message.
+* `f7c33a <https://git.opendaylight.org/gerrit/#/q/f7c33a32a906fb802c7f7e78c0c2d4ccf39c4153>`_ `BUG-6475 <https://bugs.opendaylight.org/show_bug.cgi?id=6475>`_: Removed unnecessary read operations.
+* `4a6da8 <https://git.opendaylight.org/gerrit/#/q/4a6da8db95dd7dbf1d62966e2de6bd3d6c69deea>`_ `BUG-6472 <https://bugs.opendaylight.org/show_bug.cgi?id=6472>`_ - JsonRpcEndpoint Reaper Thread's daemon property is not set
+* `4767c3 <https://git.opendaylight.org/gerrit/#/q/4767c3013a52514f4c6ce0870c501e428a397631>`_ `BUG-6454 <https://bugs.opendaylight.org/show_bug.cgi?id=6454>`_: ProcUtils stdout should be grouped together
+* `d7fca5 <https://git.opendaylight.org/gerrit/#/q/d7fca5cf6b43bdcec94ca0463050b1d4b4e8b450>`_ `BUG-6463 <https://bugs.opendaylight.org/show_bug.cgi?id=6463>`_ - Monitoring _version column on the ovsdb table is generating huge updates from switch
+* `b662df <https://git.opendaylight.org/gerrit/#/q/b662dfaa9ab43014948c150aa70bd218ee300e82>`_ Filter out monitor updates for some columns
+* `a28379 <https://git.opendaylight.org/gerrit/#/q/a28379ea695e27d0d8924a5b57538327e22661c2>`_ `BUG-6332 <https://bugs.opendaylight.org/show_bug.cgi?id=6332>`_ - Conflicting modification Exception for topology path
+* `473f90 <https://git.opendaylight.org/gerrit/#/q/473f9010571fe235708336a239fa84fae6915565>`_ `BUG-6336 <https://bugs.opendaylight.org/show_bug.cgi?id=6336>`_ using single tx for logical switch, macs
+* `466e0a <https://git.opendaylight.org/gerrit/#/q/466e0a25b61fcc84c4eb85efa886cc3948a3008a>`_ `BUG-6352 <https://bugs.opendaylight.org/show_bug.cgi?id=6352>`_ - [SR3] RPC timeout in JsonRPCEndpoint is not configurable
+* `130c4c <https://git.opendaylight.org/gerrit/#/q/130c4c4a0aa2c78349e181aa3b8177055d8af94d>`_ added support for switch/port fault status for hwvtep schema changes.
+* `f2aa35 <https://git.opendaylight.org/gerrit/#/q/f2aa355838532cb3976c502e681fd1f95c7a7457>`_ Docker-compose files for hwvtep IT, ovs 2.4/2.5
+* `93474c <https://git.opendaylight.org/gerrit/#/q/93474c4f0fd62f66331c3bad43f79ea1b41d1fd2>`_ `BUG-5951 <https://bugs.opendaylight.org/show_bug.cgi?id=5951>`_ - Termination point config reconciliation
+
+OpenFlow Configuration Protocol (OF-CONFIG)
+-------------------------------------------
+* `c70c3b <https://git.opendaylight.org/gerrit/#/q/c70c3bbc7dd45c44c86f5313fee509bdbece5b63>`_ Add the OF_CONFIG_OVS capabilities
+
+OpenFlow Plugin
+---------------
+* `375e02 <https://git.opendaylight.org/gerrit/#/q/375e02cd2ae2d0972b7ae30cd7a8cacdbd5d4636>`_ `BUG-6118 <https://bugs.opendaylight.org/show_bug.cgi?id=6118>`_: making the OFentityListener aware of the InJeopardy() flag
+* `e308cf <https://git.opendaylight.org/gerrit/#/q/e308cffe51a34c491229ebfe60239d8b6d04d305>`_ `BUG-6513 <https://bugs.opendaylight.org/show_bug.cgi?id=6513>`_ Remove FD from registry immediately
+* `a606e2 <https://git.opendaylight.org/gerrit/#/q/a606e219b7ef7f7dd4403d5ede79adbef988436b>`_ Fix Ipv6 format compression
+* `7f7514 <https://git.opendaylight.org/gerrit/#/q/7f75143b610fa885e69a8f39f919b354d2e1760d>`_ `BUG-6059 <https://bugs.opendaylight.org/show_bug.cgi?id=6059>`_: Moving Statistics Manager to DTCL
+* `42292d <https://git.opendaylight.org/gerrit/#/q/42292d6b6830566bba8e498c474a7d4e6835e58a>`_ `BUG-6086 <https://bugs.opendaylight.org/show_bug.cgi?id=6086>`_ - Bulk-o-matic add flow RPC does not work
+* `5d23e3 <https://git.opendaylight.org/gerrit/#/q/5d23e3548d40abdaceaa43d5eb8336fc196a5334>`_ Device*Registry quickfix - add* failed
+* `7ed2bb <https://git.opendaylight.org/gerrit/#/q/7ed2bb68d80ef21494e69172bf9580c070b0b0e4>`_  `BUG-6058 <https://bugs.opendaylight.org/show_bug.cgi?id=6058>`_:Currently the Operational Datastore does not get cleaned up and the  switch continues to persist if the node that is connected to the switch goes  down. The patch addresses it.
+* `940142 <https://git.opendaylight.org/gerrit/#/q/94014221014bed0b8c4d2029d5cab412f4eff233>`_ Move empty match constant into OFConstants
+
+OpenFlow Protocol Library
+-------------------------
+* `5ef255 <https://git.opendaylight.org/gerrit/#/q/5ef255bd25362dd4c3334bfe921e8f96a899fe8e>`_ `BUG-6646 <https://bugs.opendaylight.org/show_bug.cgi?id=6646>`_ Fix infinite reschedule of flush
+* `caca77 <https://git.opendaylight.org/gerrit/#/q/caca7710a7e8b3122eb19108e62b782f5d56ba52>`_ `BUG-6638 <https://bugs.opendaylight.org/show_bug.cgi?id=6638>`_ Failed entries marked as completed also counted as completed
+* `5e8b6a <https://git.opendaylight.org/gerrit/#/q/5e8b6a2c5218b2ea22343ec889ad7e7fb4112530>`_ `BUG-6744 <https://bugs.opendaylight.org/show_bug.cgi?id=6744>`_ - the parameters of the function of registerMeterBandSerializer need to be more refined
+* `f93dde <https://git.opendaylight.org/gerrit/#/q/f93ddeaf5e4f25a0a47438786777d13c9b95e46d>`_ `BUG-6674 <https://bugs.opendaylight.org/show_bug.cgi?id=6674>`_ - the key of the serialization function registered by the vendor is not refinement enough
+
+Table Type Patterns (TTP)
+-------------------------
+* `541801 <https://git.opendaylight.org/gerrit/#/q/541801bba645379fff52e95637902b7e8a6a5955>`_ Create non-root ttp-parent
+
+Topology Processing Framework
+-----------------------------
+* `c02b04 <https://git.opendaylight.org/gerrit/#/q/c02b04b243926b2cab22ed1f012811bece0b789e>`_ Fix for `BUG-6263 <https://bugs.opendaylight.org/show_bug.cgi?id=6263>`_
+* `02894e <https://git.opendaylight.org/gerrit/#/q/02894e56b785f676736f7f087428a66f024a9db4>`_ `BUG-6152 <https://bugs.opendaylight.org/show_bug.cgi?id=6152>`_ fix
+
+Unified Secure Channel (USC)
+----------------------------
+* `bcebca <https://git.opendaylight.org/gerrit/#/q/bcebcaf11c2fa044d4c8ef8859ebea14a48a02ef>`_ Do not override odlparent version of maven dependecy plugin
+
+Virtual Tenant Network (VTN)
+----------------------------
+* `4e8bb1 <https://git.opendaylight.org/gerrit/#/q/4e8bb12b742dae1a8550ccbb2f443d1dd3f928c7>`_ `BUG-6846 <https://bugs.opendaylight.org/show_bug.cgi?id=6846>`_: Fixed bug in VTN Coordinator shutdown sequence.
+* `744b2e <https://git.opendaylight.org/gerrit/#/q/744b2e08ff6711fbdc8def66e63c79b76e748749>`_ `BUG-6632 <https://bugs.opendaylight.org/show_bug.cgi?id=6632>`_: Fixed VTN coordinator build error on Fedora 24.
+* `c565c5 <https://git.opendaylight.org/gerrit/#/q/c565c571ee979bdc85bff7ccee35a956a169525f>`_ Enable Maven Site for VTN
+
+YANG Tools
+----------
+* `07a461 <https://git.opendaylight.org/gerrit/#/q/07a461a735316f15f9a78455e1c1c3caf91b2a3e>`_ `BUG-4456 <https://bugs.opendaylight.org/show_bug.cgi?id=4456>`_: add RecursiveExtensionResolver
+* `de990f <https://git.opendaylight.org/gerrit/#/q/de990fa7c7840a1ac964a48f00aff1358eaec562>`_ `BUG-6757 <https://bugs.opendaylight.org/show_bug.cgi?id=6757>`_: revert fix for `BUG-4456 <https://bugs.opendaylight.org/show_bug.cgi?id=4456>`_
+* `354c04 <https://git.opendaylight.org/gerrit/#/q/354c0475d65f0382e6c52b86b98f5c9f3b1a5e74>`_ `BUG-6771 <https://bugs.opendaylight.org/show_bug.cgi?id=6771>`_: Problem with typedefs nested in augment
+* `107826 <https://git.opendaylight.org/gerrit/#/q/107826f9cd33c98f7e021e7147f1806e25b9c074>`_ `BUG-6410 <https://bugs.opendaylight.org/show_bug.cgi?id=6410>`_: Fixed initialization of typedefs in rpc
+* `531010 <https://git.opendaylight.org/gerrit/#/q/5310106cd4db53a3033a085ff95545d4a2841db4>`_ `BUG-6180 <https://bugs.opendaylight.org/show_bug.cgi?id=6180>`_ - Parser: Backslash double-quote in double-quoted string not recognized
+* `75c484 <https://git.opendaylight.org/gerrit/#/q/75c484d83489bb183af2cd61a02d4a82412efdf2>`_ `BUG-6497 <https://bugs.opendaylight.org/show_bug.cgi?id=6497>`_: Do not lose augmentation statement order
+* `6d051f <https://git.opendaylight.org/gerrit/#/q/6d051fb473374c133474d2e90aa68663ae948763>`_ `BUG-6497 <https://bugs.opendaylight.org/show_bug.cgi?id=6497>`_: Do not lose augmentation statement order
+* `37962d <https://git.opendaylight.org/gerrit/#/q/37962d89fbd4032653b3918921181377c855b598>`_ `BUG-6414 <https://bugs.opendaylight.org/show_bug.cgi?id=6414>`_: Fixed DataNodeIterator's traverseModule method
+* `0ecc2d <https://git.opendaylight.org/gerrit/#/q/0ecc2d30b89f24062c6c459a8601198348cee7d0>`_ `BUG-5884 <https://bugs.opendaylight.org/show_bug.cgi?id=5884>`_: Augmenting a choice without a case results in no getter
+
