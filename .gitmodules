@@ -9,15 +9,15 @@
 [submodule "docs/submodules/aaa"]
 	path = docs/submodules/aaa
 	url = ../aaa
-	branch = master
+	branch = .
 [submodule "docs/submodules/netconf"]
 	path = docs/submodules/netconf
 	url = ../netconf
-	branch = master
+	branch = .
 [submodule "docs/submodules/odlparent"]
 	path = docs/submodules/odlparent
 	url = ../odlparent
-	branch = master
+	branch = .
 [submodule "source/submodules/spectrometer"]
 	path = docs/submodules/spectrometer
 	url = ../spectrometer
