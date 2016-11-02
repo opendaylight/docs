@@ -310,6 +310,23 @@ Finally fixed the fact that our builds for failing because they were
 taking too long by removing directories of generated javadoc that were
 present from previous runs.
 
+Adding project documentation
+============================
+
+There are 2 choices for adding project documentation and which method a project
+chooses depends on if they would like the docs to live in the OpenDaylight
+Documentation project repo, or in the project's own repo.
+
+Using OpenDaylight Documentation Repo
+-------------------------------------
+
+aksdlfjlsd
+
+Initializing Documentation in Project Repo
+------------------------------------------
+
+lksafj
+
 AsciiDoc-based Documentation
 ============================
 
