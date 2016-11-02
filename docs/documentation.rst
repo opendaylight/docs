@@ -14,7 +14,7 @@ offers similar syntax to Markdown which is familiar to large numbers of
 people.
 
 .. contents:: Contents
-   :depth: 1
+   :depth: 2
    :local:
 
 Style Guide
@@ -432,7 +432,269 @@ something like::
    replace: $1.. figure:: images/dlux/$3\n$1   :width: $5\n\n$1   $2
 
 
+Project Documentation Requirements
+==================================
 
+Submitting Documentation Outlines (M3)
+--------------------------------------
+
+#. Determine the features your project will have and which ones will be
+   ''user-facing''.
+
+   * In general, a feature is user-facing if it creates functionality that a
+     user would direction interact with.
+   * For example, <tt>odl-openflowplugin-flow-services-ui</tt> is likely
+     user-facing since it installs user-facing OpenFlow features, while
+     <tt>odl-openflowplugin-flow-services</tt> is not because it provides only
+     developer-facing features.
+
+#. Determine pieces of documentation you need provide based on the features
+   your project will have and which ones will be user-facing.
+
+   * The kinds of required documentation can be found below in the
+     [[#Requirements for projects|requirements for projects]] section.
+   * Note that you might need to create multiple different documents for the
+     same kind of documentation. For example, the controller project will
+     likely want to have a developer section for the config subsystem as well
+     as a for the MD-SAL.
+
+#. Clone the docs repo: ``git clone https://git.opendaylight.org/gerrit/docs``
+#. For each piece of documentation find the corresponding template in the docs repo.
+
+   * For user documentation: ``docs.git/manuals/readme/src/main/asciidoc/template_user_guide.adoc``
+   * For developer documentation: ``docs.git/manuals/readme/src/main/asciidoc/template_developer_guide.adoc``
+   * For installation documentation (if any): ``docs.git/manuals/readme/src/main/asciidoc/template_installation_guide.adoc``
+
+#. Copy the template into the appropriate directory for your project.
+
+   * For user documentation: ``docs.git/manuals/user-guide/src/main/asciidoc/${project-shortname}/${feature-name}-user.adoc``
+   * For developer documentation: ``docs.git/manuals/developer-guide/src/main/asciidoc/${project-shortname}/${feature-name}-dev.adoc``
+   * For installation documentation (if any): ``docs.git/manuals/install-guide/src/main/asciidoc/${project-shortname}/${feature-name}-install.adoc``
+
+#. Edit the template to fill in the outline of what you will provide using the
+   suggestions in the template.
+
+   * DO NOT leave any sections blank as blank sections will cause build errors.
+
+#. Link the template into the appropriate core adoc file
+
+   * For user documentation: ``docs.git/manuals/user-guide/src/main/asciidoc/bk-user-guide.adoc``
+   * For developer documentation: ``docs.git/manuals/developer-guide/src/main/asciidoc/bk-developers-guide.adoc``
+   * For installation documentation (if any): ``docs.git/manuals/install-guide/src/main/asciidoc/bk-install-guide.adoc``
+   * Add a line like:
+
+     .. code-block:: none
+
+        include::${project-shortname}/${feature-name}-user.adoc[]
+
+   * Make sure there is a blank line between your include statement and any others as this prevents sections from running into each other.
+
+#. Make sure the documentation project still builds.
+
+   * Run ``mvn clean install`` from the root of the cloned docs repo.
+
+     * After that, you should be able to find the PDF and HTML version of the
+       docs. Use ``find . -name *.pdf`` to find the PDF and the HTML is
+       always at ``target/docbkx/webhelp/${manual-name}/index.html``.
+
+   * The `AsciiDoc tips <https://wiki.opendaylight.org/view/CrossProject:Documentation_Group:Tools:AsciiDoc_Tips>`_
+     page provide common errors and solutions.
+   * If you still have problems e-mail the documentation group at
+     documentation@lists.opendaylight.org
+
+#. Commit and submit the patch
+
+   #. Commit using:
+
+      .. code-block:: bash
+
+         git add --all && git commit -sm "Documentation outline for ${project-shortname}"
+
+   #. Submit using:
+
+      .. code-block:: bash
+
+         git review
+
+      See the `Git-review Workflow <https://wiki.opendaylight.org/view/Git-review_Workflow>`_
+      page if you don't have git-review installed.
+
+#. Wait for the patch to be merged or to get feedback
+
+   * If you get feedback, make the requested changes and resubmit the patch.
+   * When you resubmit the patch, it's helpful if you also post a +0 reply to
+     the gerrit saying what patch set you just submitted and what you fixed in
+     the patch set.
+   * The documentation team will also be creating (or asking projects to
+     create) small groups of 2-4 projects that will peer review each other's
+     documentation. Patches which have seen a few cycles of peer review will be
+     prioritized for review and merge by the documentation team.
+
+Expected Output From Documentation Project
+------------------------------------------
+
+The expected output is (at least) 3 PDFs and equivalent web-based documentation:
+
+* User/Operator Guide
+* Developer Guide
+* Installation Guide
+
+These guides will consist of "front matter" produced by the documentation group
+and the per-project/per-feature documentation provided by the projects. Note
+that this is intended to be who is responsible for the documentation and should
+not be interpreted as preventing people not normally in the documentation group
+from helping with "front matter" nor preventing people from the documentation
+group from helping with per-project/per-feature documentation.
+
+Boron Project Documentation Requirements
+----------------------------------------
+
+.. _kinds-of-docs:
+
+Kinds of Documentation
+^^^^^^^^^^^^^^^^^^^^^^
+
+These are the expected kinds of documentation and target audiences for each kind.
+
+* **User/Operator:** for people looking to use the feature w/o writing code
+
+  * Should include an overview of the project/feature
+  * Should include description of availbe configuration options and what they do
+
+* **Developer:** for people looking to use the feature in code w/o modifying it
+
+  * Should include API documentation, e.g., enunciate for REST, Javadoc for
+    Java, ??? for RESTCONF/models
+
+* **Contributor:** for people looking to extend or modify the feature's source
+  code
+
+  .. note:
+
+     should be documented on the wiki not in asciidoc
+
+* **Installation:** for people looking for instructions to install the feature
+  after they have downloaded the ODL release
+
+  .. note:
+
+     audience is the same as User/Operator docs
+
+  * For most projects, this will be just a list of top-level features and
+    options
+
+    * As an example, l2switch-switch as the top-level feature with the -rest
+      and -ui options
+    * We'd also like them to note if the options should be checkboxes (i.e.,
+      they can each be turned on/off independently) or a drop down (i.e., at
+      most one can be selected)
+    * What other top-level features in the release are incompatible with each
+      feature
+    * This will likely be presented as a table in the documentation and the
+      data will likely also be consumed by automated installers/configurators/downloaders
+
+  * For some projects, there is extra installation instructions (for external
+    components) and/or configuration
+
+    * In that case, there will be a (sub)section in the documentation
+      describing this process.
+
+* **HowTo/Tutorial:** walk throughs and examples that are not general-purpose
+  documentation
+
+  * Generally, these should be done as a (sub)section of either user/operator
+    or developer documentation.
+  * If they are especially long or complex, they may belong on their own
+
+* **Release Notes:**
+
+  * Release notes are required as part of each project's release review. They
+    must also be translated into AsciiDoc for inclusion in the formal
+    documentation.
+
+Requirements for projects
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Projects MUST do the following
+
+* Provide `AsciiDoc-format <https://wiki.opendaylight.org/view/CrossProject:Documentation_Group:Tools:AsciiDoc_Tips>`_ documentation including
+
+  * Developer documentation for every feature
+
+    * Most projects will want to logically nest the documentation for
+      individual features under a single project-wide chapter or section
+    * This can be provided as a single .adoc file or multiple .adoc files if
+      the features fall into different groups
+    * This should start with ~300 word overview of the project and include
+      references to any automatically-generated API documentation as well as
+      more general developer information (see
+      :ref:`kinds-of-docs`).
+
+  * User/Operator documentation for every every user-facing feature (if any)
+
+    * ''Note: This should be per-feature, not per-project. User's shouldn't have to know which project a feature came from.''
+    * Intimately related features, e.g., l2switch-switch, l2switch-switch-rest, and l2switch-switch-ui, can be documented as one noting the differences
+    * This can be provided as a single .adoc file or multiple .adoc files if the features fall into different groups
+
+  * Installation documentation
+
+    * Most projects will simply provide a list of user-facing features and options. See [[#Kinds of Documentation|Kinds of Documentation]] above.
+
+  * Release Notes (both on the wiki and AsciiDoc) as part of the release review.
+
+* This documentation will be contributed to the docs repo (or possibly imported from the project's own repo with tooling that is under development)
+
+  * Projects MAY be ENCOURGAGED to instead provide this from their own repository if the tooling is developed
+  * Projects choosing to meet the requirement this way MUST provide a patch to docs repo to import the project's documentation
+
+* Projects MUST cooperate with the documentation group on edits and enhancements to documentation
+
+  * Note that the documentation team will also be creating (or asking projects to create) small groups of 2-4 projects that will peer review each other's documentation. Patches which have seen a few cycles of peer review will be prioritized for review and merge by the documentation team.
+
+Timeline for Deliverables from Projects
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* **M3:** Documentation Started
+
+  * Identified the kinds of documentation that will be provided and for what
+    features
+
+    * Release Notes are not required until release reviews at **RC2**
+
+  * Created the appropriate .adoc files in the docs repository (or their own
+    repository if the tooling is available)
+  * Have an outline for the expected documentation in those .adoc files
+    including the relevant (sub)sections and a sentence or two explaining what
+    will go there
+
+    * Obviusly, providing actual documentation in the (sub)sections is
+      encouraged and meets this requirement
+
+  * Milestone readout should include
+
+    #. the list of kinds of documentation
+    #. the list of corresponding .adoc files and their location, e.g., repo and
+       path
+    #. the list of commits creating those .adoc files
+    #. the current word counts of those .adoc files
+
+* **M4:** Documentation Continues
+
+  * The readout at M4 should include the word counts of all .adoc files with
+    links to commits
+  * The goal is to have draft documentation complete so that the documentation
+    group can comment on it.
+
+* **M5:** Documentation Complete
+
+ * All (sub)sections in all .adoc files have complete, readable, usable content.
+ * Ideally, there should have been some interaction with the documentation
+   group about any suggested edits and enhancements
+
+* **RC2:** Release notes
+
+  * Projects must provide release notes as .adoc pushed to integration (or
+    locally in the project's repository if the tooling is developed)
 
 
 .. _AsciiDoc: http://www.methods.co.nz/asciidoc/
