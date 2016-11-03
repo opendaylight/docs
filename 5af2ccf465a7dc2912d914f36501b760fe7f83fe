@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a65312a_065b3155",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 409,
+      "author": {
+        "id": 6230
+      },
+      "writtenOn": "2016-11-03T14:45:38Z",
+      "side": 1,
+      "message": "I don\u0027t understand (yet) how logical SFF enables load balancing and failover. So far, what I see is reducing configuration requirements and VM migration. Service function mobility does produce a (minor) disruption.",
+      "revId": "5af2ccf465a7dc2912d914f36501b760fe7f83fe",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_864f4192",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 6230
+      },
+      "writtenOn": "2016-11-03T14:45:38Z",
+      "side": 1,
+      "message": "I am not sure that describing the relationship between Logical SFF and Netvirt as co-operation is precise. I would probably only mention Genius here, Netvirt is more of an enabler.",
+      "revId": "5af2ccf465a7dc2912d914f36501b760fe7f83fe",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_81528b11",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 438,
+      "author": {
+        "id": 6230
+      },
+      "writtenOn": "2016-11-03T14:45:38Z",
+      "side": 1,
+      "message": "Does it make sense to say the same things on the developer guide \u0026 user guide?",
+      "range": {
+        "startLine": 400,
+        "startChar": 0,
+        "endLine": 438,
+        "endChar": 31
+      },
+      "revId": "5af2ccf465a7dc2912d914f36501b760fe7f83fe",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_c125a3ac",
+        "filename": "docs/user-guide/service-function-chaining.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 2530,
+      "author": {
+        "id": 6230
+      },
+      "writtenOn": "2016-11-03T14:45:38Z",
+      "side": 1,
+      "message": "Same comments as the developer guide.",
+      "range": {
+        "startLine": 2519,
+        "startChar": 0,
+        "endLine": 2530,
+        "endChar": 35
+      },
+      "revId": "5af2ccf465a7dc2912d914f36501b760fe7f83fe",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
