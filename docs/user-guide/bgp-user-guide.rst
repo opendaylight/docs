@@ -1074,6 +1074,151 @@ Consequently, route disappears from programmable RIB, *Application Peer's* RIBs,
 
 .. note:: Routes stored in programmable RIB are persisted on OpendDaylight shutdown and restored after the re-start.
 
+BGP Protocol Configuration Loader
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+BGP Protocol Configuration Loader allows user to define static initial configuration for BGP protocol instance.
+Service will detect the creation of new configuration files following the pattern "protocols-*.xml" under the path "etc/opendaylight/bgp".
+Once the file is processed, defined configuration will be available on configuration Data Store.
+
+.. note:: If the BGP instance is already present, no update or configuration will be applied.
+
+**PATH:** ``etc/opendaylight/bgp/protocols-config.xml``
+
+.. code-block:: xml
+
+    <protocols xmlns="http://openconfig.net/yang/network-instance">
+        <protocol>
+            <name>example-bgp-rib</name>
+            <identifier xmlns:x="http://openconfig.net/yang/policy-types">x:BGP</identifier>
+            <bgp xmlns="urn:opendaylight:params:xml:ns:yang:bgp:openconfig-extensions">
+                <global>
+                    <config>
+                        <router-id>192.0.2.2</router-id>
+                        <as>64496</as>
+                        <!-- if cluster-id is not present, it's value is the same as bgp-id -->
+                        <!-- <route-reflector-cluster-id>192.0.2.3</route-reflector-cluster-id> -->
+                        <!-- <read-only-limit>120</read-only-limit>-->
+                    </config>
+                    <afi-safis>
+                        <afi-safi>
+                            <afi-safi-name xmlns:x="http://openconfig.net/yang/bgp-types">x:IPV4-UNICAST</afi-safi-name>
+                            <!--Advertise N Paths
+                            <receive>true</receive>
+                            <send-max>2</send-max>-->
+                        </afi-safi>
+                        <afi-safi>
+                            <afi-safi-name xmlns:x="http://openconfig.net/yang/bgp-types">x:IPV6-UNICAST</afi-safi-name>
+                        </afi-safi>
+                        <afi-safi>
+                            <afi-safi-name xmlns:x="http://openconfig.net/yang/bgp-types">x:IPV4-LABELLED-UNICAST</afi-safi-name>
+                        </afi-safi>
+                        <afi-safi>
+                            <afi-safi-name xmlns:x="http://openconfig.net/yang/bgp-types">x:IPV6-LABELLED-UNICAST</afi-safi-name>
+                        </afi-safi>
+                        <afi-safi>
+                            <afi-safi-name xmlns:x="http://openconfig.net/yang/bgp-types">x:L3VPN-IPV4-UNICAST</afi-safi-name>
+                        </afi-safi>
+                        <afi-safi>
+                            <afi-safi-name xmlns:x="http://openconfig.net/yang/bgp-types">x:L3VPN-IPV6-UNICAST</afi-safi-name>
+                        </afi-safi>
+                        <afi-safi>
+                            <afi-safi-name xmlns:x="http://openconfig.net/yang/bgp-types">x:L2VPN-EVPN</afi-safi-name>
+                        </afi-safi>
+                        <afi-safi>
+                            <afi-safi-name>LINKSTATE</afi-safi-name>
+                        </afi-safi>
+                        <afi-safi>
+                            <afi-safi-name>IPV4-FLOW</afi-safi-name>
+                        </afi-safi>
+                        <afi-safi>
+                            <afi-safi-name>IPV6-FLOW</afi-safi-name>
+                        </afi-safi>
+                        <afi-safi>
+                            <afi-safi-name>IPV4-L3VPN-FLOW</afi-safi-name>
+                        </afi-safi>
+                        <afi-safi>
+                            <afi-safi-name>IPV6-L3VPN-FLOW</afi-safi-name>
+                        </afi-safi>
+                    </afi-safis>
+                </global>
+                <neighbors xmlns="urn:opendaylight:params:xml:ns:yang:bgp:openconfig-extensions">
+                    <neighbor xmlns="urn:opendaylight:params:xml:ns:yang:bgp:openconfig-extensions">
+                        <neighbor-address>192.0.2.1</neighbor-address>
+                        <config>
+                            <peer-type>INTERNAL</peer-type>
+                            <peer-as>64496</peer-as>
+                        </config>
+                        <transport>
+                            <config>
+                                <remote-port>179</remote-port>
+                                <passive-mode>true</passive-mode>
+                            </config>
+                        </transport>
+                        <timers>
+                            <config>
+                                <hold-time>180</hold-time>
+                                <connect-retry>10</connect-retry>
+                            </config>
+                        </timers>
+                        <route-reflector>
+                            <config>
+                                <route-reflector-client>false</route-reflector-client>
+                            </config>
+                        </route-reflector>
+                        <afi-safis>
+                            <afi-safi>
+                                <afi-safi-name xmlns:x="http://openconfig.net/yang/bgp-types">x:IPV4-UNICAST</afi-safi-name>
+                                <!--Advertise N Paths
+                                <receive>true</receive>
+                                <send-max>0</send-max>-->
+                            </afi-safi>
+                            <afi-safi>
+                                <afi-safi-name xmlns:x="http://openconfig.net/yang/bgp-types">x:IPV6-UNICAST</afi-safi-name>
+                            </afi-safi>
+                            <afi-safi>
+                                <afi-safi-name xmlns:x="http://openconfig.net/yang/bgp-types">x:IPV4-LABELLED-UNICAST</afi-safi-name>
+                            </afi-safi>
+                            <afi-safi>
+                                <afi-safi-name xmlns:x="http://openconfig.net/yang/bgp-types">x:IPV6-LABELLED-UNICAST</afi-safi-name>
+                            </afi-safi>
+                            <afi-safi>
+                                <afi-safi-name xmlns:x="http://openconfig.net/yang/bgp-types">x:L3VPN-IPV4-UNICAST</afi-safi-name>
+                            </afi-safi>
+                            <afi-safi>
+                                <afi-safi-name xmlns:x="http://openconfig.net/yang/bgp-types">x:L3VPN-IPV6-UNICAST</afi-safi-name>
+                            </afi-safi>
+                            <afi-safi>
+                                <afi-safi-name xmlns:x="http://openconfig.net/yang/bgp-types">x:L2VPN-EVPN</afi-safi-name>
+                            </afi-safi>
+                            <afi-safi>
+                                <afi-safi-name>LINKSTATE</afi-safi-name>
+                            </afi-safi>
+                            <afi-safi>
+                                <afi-safi-name>IPV4-FLOW</afi-safi-name>
+                            </afi-safi>
+                            <afi-safi>
+                                <afi-safi-name>IPV6-FLOW</afi-safi-name>
+                            </afi-safi>
+                            <afi-safi>
+                                <afi-safi-name>IPV4-L3VPN-FLOW</afi-safi-name>
+                            </afi-safi>
+                            <afi-safi>
+                                <afi-safi-name>IPV6-L3VPN-FLOW</afi-safi-name>
+                            </afi-safi>
+                        </afi-safis>
+                    </neighbor>
+                    <neighbor xmlns="urn:opendaylight:params:xml:ns:yang:bgp:openconfig-extensions">
+                        <neighbor-address>192.0.2.6</neighbor-address>
+                        <config>
+                            <peer-group>application-peers</peer-group>
+                        </config>
+                    </neighbor>
+                </neighbors>
+            </bgp>
+        </protocol>
+    </protocols>
+
 BGP pipeline
 ^^^^^^^^^^^^
 .. figure:: ./images/bgpcep/bgp-pipeline.png
@@ -4382,6 +4527,43 @@ A sample output below represents a two node topology with two unidirectional lin
            </igp-link-attributes>
        </link>
    </topology>
+
+BGP Network Topology Configuration Loader
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+BGP Network Topology Configuration Loader allows user to define static initial configuration for BGP topology instance.
+Service will detect the creation of new configuration files following the pattern "network-topology-*.xml" under the path "etc/opendaylight/bgp".
+Once the file is processed, defined configuration will be available on configuration Data Store.
+
+.. note:: If the BGP topology instance is already present, no update or configuration will be applied.
+
+**PATH:** ``etc/opendaylight/bgp/network-topology-config.xml``
+
+.. code-block:: xml
+
+    <network-topology xmlns="urn:TBD:params:xml:ns:yang:network-topology">
+        <topology>
+            <topology-id>example-ipv4-topology</topology-id>
+            <topology-types>
+                <bgp-ipv4-reachability-topology xmlns="urn:opendaylight:params:xml:ns:yang:odl-bgp-topology-types"/>
+            </topology-types>
+            <rib-id xmlns="urn:opendaylight:params:xml:ns:yang:odl-bgp-topology-config">example-bgp-rib</rib-id>
+        </topology>
+        <topology>
+            <topology-id>example-ipv6-topology</topology-id>
+            <topology-types>
+                <bgp-ipv6-reachability-topology xmlns="urn:opendaylight:params:xml:ns:yang:odl-bgp-topology-types"/>
+            </topology-types>
+            <rib-id xmlns="urn:opendaylight:params:xml:ns:yang:odl-bgp-topology-config">example-bgp-rib</rib-id>
+        </topology>
+        <topology>
+            <topology-id>example-linkstate-topology</topology-id>
+            <topology-types>
+                <bgp-linkstate-topology xmlns="urn:opendaylight:params:xml:ns:yang:odl-bgp-topology-types"/>
+            </topology-types>
+            <rib-id xmlns="urn:opendaylight:params:xml:ns:yang:odl-bgp-topology-config">example-bgp-rib</rib-id>
+        </topology>
+    </network-topology>
 
 Test Tools
 ----------
