@@ -36,6 +36,7 @@ itself.
    :maxdepth: 1
 
    developer-guide/index
+   submodules/netvirt/docs/index
 
 
 Content for OpenDaylight Contributors
