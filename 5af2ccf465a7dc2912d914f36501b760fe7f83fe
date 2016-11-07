@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a65312a_df0e1034",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 409,
+      "author": {
+        "id": 5861
+      },
+      "writtenOn": "2016-11-07T09:17:06Z",
+      "side": 1,
+      "message": "The Logical SFF enables/eases the LB and failover use cases, although there is not enough.\n\nI\u0027ll replace without by minor.",
+      "parentUuid": "3a65312a_065b3155",
+      "revId": "5af2ccf465a7dc2912d914f36501b760fe7f83fe",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a65312a_864f4192",
         "filename": "docs/developer-guide/service-function-chaining.rst",
         "patchSetId": 3
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "3a65312a_5f1a006f",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 5861
+      },
+      "writtenOn": "2016-11-07T09:17:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a65312a_864f4192",
+      "revId": "5af2ccf465a7dc2912d914f36501b760fe7f83fe",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a65312a_81528b11",
         "filename": "docs/developer-guide/service-function-chaining.rst",
         "patchSetId": 3
@@ -47,6 +83,30 @@
       "writtenOn": "2016-11-03T14:45:38Z",
       "side": 1,
       "message": "Does it make sense to say the same things on the developer guide \u0026 user guide?",
+      "range": {
+        "startLine": 400,
+        "startChar": 0,
+        "endLine": 438,
+        "endChar": 31
+      },
+      "revId": "5af2ccf465a7dc2912d914f36501b760fe7f83fe",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_3f3aa4cd",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 438,
+      "author": {
+        "id": 5861
+      },
+      "writtenOn": "2016-11-07T09:17:06Z",
+      "side": 1,
+      "message": "I think both guides should be the somehow self-contained, and the model is important both for developers and users.",
+      "parentUuid": "3a65312a_81528b11",
       "range": {
         "startLine": 400,
         "startChar": 0,
