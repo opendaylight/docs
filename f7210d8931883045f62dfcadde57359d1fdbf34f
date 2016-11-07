@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a65312a_423fc725",
+        "filename": "docs/release-process/simultaneous-release.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2016-11-07T13:09:24Z",
+      "side": 1,
+      "message": "Why do we need this extra variable?\n\nAs far as I can tell ${RELEASE,,} should lowercase the release for us. I\u0027m not understanding the need for a RELEASE-UPSTREAM?",
+      "range": {
+        "startLine": 31,
+        "startChar": 18,
+        "endLine": 31,
+        "endChar": 34
+      },
+      "revId": "f7210d8931883045f62dfcadde57359d1fdbf34f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
