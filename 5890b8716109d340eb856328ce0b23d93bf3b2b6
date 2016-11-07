@@ -186,6 +186,30 @@
     },
     {
       "key": {
+        "uuid": "3a65312a_ee2b8392",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 404,
+      "author": {
+        "id": 5861
+      },
+      "writtenOn": "2016-11-07T09:17:06Z",
+      "side": 1,
+      "message": "Yes, we need to replace this by a link to the Genius documentation.",
+      "parentUuid": "5a682502_7e49e08a",
+      "range": {
+        "startLine": 404,
+        "startChar": 51,
+        "endLine": 404,
+        "endChar": 57
+      },
+      "revId": "5890b8716109d340eb856328ce0b23d93bf3b2b6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a682502_be08982e",
         "filename": "docs/user-guide/service-function-chaining.rst",
         "patchSetId": 1
