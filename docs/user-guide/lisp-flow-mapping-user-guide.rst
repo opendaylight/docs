@@ -340,10 +340,17 @@ Tutorials
 ---------
 
 This section provides a tutorial demonstrating various features in this
-service.
+service. There are currently two ways to create LISP overlays.
 
-Creating a LISP overlay
-~~~~~~~~~~~~~~~~~~~~~~~
+1.  Using `Open Overlay Router (OOR) <https://github.com/OpenOverlayRouter/oor#overview>`__
+
+2.  Using FD.io's `Overlay Network Engine (ONE) <https://wiki.fd.io/view/ONE>`__
+
+Both have different approaches to create the overlay but ultimately do the
+same job. Details of both approached have been explained below.
+
+Creating a LISP overlay with OOR
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This section provides instructions to set up a LISP network of three
 nodes (one "client" node and two "server" nodes) using OOR as data
@@ -371,7 +378,7 @@ Prerequisites
    file. You can import this file to Postman by clicking *Import* at the
    top, choosing *Download from link* and then entering the following
    URL:
-   ``https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=blob_plain;f=resources/tutorial/Beryllium_Tutorial.json.postman_collection;hb=refs/heads/stable/boron``.
+   `<https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=blob_plain;f=resources/tutorial/Beryllium_Tutorial.json.postman_collection;hb=refs/heads/stable/boron>`__.
    Alternatively, you can save the file on your machine, or if you have
    the repository checked out, you can import from there. You will need
    to create a new Postman Environment and define some variables within:
@@ -761,6 +768,380 @@ URLs and body content on the page.
         iptables -D OUTPUT --dst 192.168.16.31 -j DROP
 
     which should restore connectivity.
+
+
+Creating a simple LISP overlay with ONE
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Overlay Network Engine (ONE) is a VPP project that enables programmable
+dynamic Software Defined overlays. Details about this project can be
+found in `ONE wiki <https://wiki.fd.io/view/ONE>`__.
+
+The steps shown below will demonstrate setting up a LISP network between
+a client and a server using VPP. This is a simpler topology compared to
+the previous one. We demonstrate how to use VPP lite to build a simple/
+toy IP4 LISP overlay on an Ubuntu host using namespaces and af_packet
+interfaces. All configuration files used in the tutorials can be found
+`here <https://gerrit.fd.io/r/gitweb?p=one.git;a=tree;f=tutorial;hb=HEAD>`__.
+
+Prerequisites
+^^^^^^^^^^^^^
+
+-  **OpenDaylight Boron**
+
+-  **The Postman Chrome App**: the most convenient way to follow along
+   this tutorial is to use the `Postman Chrome
+   App <https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en>`__
+   to edit and send the requests. The project git repository hosts a
+   collection of the requests that are used in this tutorial in the
+   ``resources/tutorial/Beryllium_Tutorial.json.postman_collection``
+   file. You can import this file to Postman by clicking *Import* at the
+   top, choosing *Download from link* and then entering the following
+   URL:
+   `<https://gerrit.fd.io/r/gitweb?p=one.git;a=blob;f=tutorial/odl-one-config.json.postman_collection;hb=HEAD>`__.
+   Alternatively, you can save the file on your machine, or if you have
+   the repository checked out, you can import from there. You will need
+   to create a new Postman Environment and define some variables within:
+   ``controllerHost`` set to the hostname or IP address of the machine
+   running the ODL instance, and ``restconfPort`` to 8181, if you didn’t
+   modify the default controller settings.
+
+-  **Vagrant** (optional): the most convenient way to Create and configure
+   lightweight, reproducible, and portable development environments.
+   Download it from `Vagrant website <https://www.vagrantup.com/downloads.html>`__
+   and follow the setup instruction.
+
+-  Ubuntu host with bridge-utils and ethtool installed, in case you don't
+   want to use Vagrant. With network namespaces, you can have different and
+   separate instances of network interfaces and routing tables that operate
+   independent of each other.
+
+Target Environment
+^^^^^^^^^^^^^^^^^^
+
+Unlike the case with OOR, we use network namespace functionality oof Linux
+to create the overlay in this case. With network namespaces, you can have
+different and separate instances of network interfaces and routing tables
+that operate independent of each other.
+
++--------------------------+--------------------------+--------------------------+
+| Node                     | Node Type                | IP Address               |
++==========================+==========================+==========================+
+| **controller**           | OpenDaylight             | 6.0.3.100                |
++--------------------------+--------------------------+--------------------------+
+| **client**               | VPP                      | 6.0.2.2                  |
++--------------------------+--------------------------+--------------------------+
+| **server**               | VPP                      | 6.0.4.4                  |
++--------------------------+--------------------------+--------------------------+
+
+Table: Nodes in the tutorial
+
+The figure below gives a sketch of network topology that will be used in the tutorial.
+
+.. figure:: ./images/one_ODL_architecture.png
+   :alt: Network architecture of the tutorial for VPP
+
+Instructions
+^^^^^^^^^^^^
+
+Follow the instructions below sequentially.
+
+1.  Install and run OpenDaylight Boron release on the controller VM.
+    Please follow the general OpenDaylight Boron Installation Guide
+    for this step. Once the OpenDaylight controller is running install
+    the *odl-lispflowmapping-msmr* feature from the Karaf CLI:
+
+    ::
+
+        feature:install odl-lispflowmapping-msmr
+
+    It takes quite a while to load and initialize all features and their
+    dependencies. It’s worth running the command ``log:tail`` in the
+    Karaf console to see when the log output is winding down, and
+    continue with the tutorial after that.
+
+2.  Please follow the instructions from `FD.io guide for setting up Vagrant for VPP
+    <https://wiki.fd.io/view/DEV/Setting_Up_Vagrant>`__.
+
+3.  Pull the VPP codes anonymously using:
+    ::
+
+        git clone https://gerrit.fd.io/r/vpp
+
+4.  Then, use the vagrant file from repository to build virtual machine
+    with proper environment.
+    ::
+
+        cd vpp/build-root/vagrant/
+        vagrant up
+        vagrant ssh
+
+5.  In case there is any error from ``vagrant up``, try ``vargant ssh``. if
+    it works, no worries. If it still doesn't work, you can try any Ubuntu
+    machine. And follow the instructions from below.
+
+    1. Clone the codes in ``/`` directory. So, the codes will be in ``/vpp``.
+
+    2. Run the following commands:
+        ::
+
+            make distclean
+            ./bootstrap.sh
+            make V=0 PLATFORM=vpp TAG=vpp install-deb
+            sudo dpkg -i /vpp/build-root/*.deb
+
+    Alternative and more detailed build instructions can be found in
+    `VPP's wiki <https://wiki.fd.io/view/VPP/Build,_install,_and_test_images>`__
+6.  By now, you should have a Ubuntu VM with VPP repository in ``/vpp``
+    with ``sudo`` access. Now, We need VPP Lite build. The following commands
+    builds VPP Lite.
+    ::
+
+        cd /vpp
+        export PLATFORM=vpp_lite
+        make build
+
+    Successful build create the binary in ``/vpp/build-root/install-vpp_lite_debug-native/vpp/bin``
+
+7.  Install bridge-utils and ethtool if needed by using following commands:
+    ::
+
+       sudo apt-get install bridge-utils ethtool
+
+8.  Now, we will add conf files for vpp. We will have two VPP instances
+    running in different network namespaces. We will two conf files and we will
+    add them in ``/etc/vpp/lite`` directory. Create two files ``vpp1.conf``
+    and ``vpp2.conf``.
+    Contents of the first file, ``vpp1.conf`` is following:
+    ::
+
+       create host-interface name vpp1
+       set int state host-vpp1 up
+       set int ip address host-vpp1 6.0.2.1/24
+
+       create host-interface name intervpp1
+       set int state host-intervpp1 up
+       set int ip address host-intervpp1 6.0.3.1/24
+
+       lisp enable
+
+       lisp locator-set add ls1 iface host-intervpp1 p 1 w 1
+       lisp eid-table add eid 6.0.2.0/24 locator-set ls1
+       lisp map-resolver add 6.0.3.100
+
+    The content of the second file, ``vpp2.conf`` is following:
+    ::
+
+       create host-interface name vpp2
+       set int state host-vpp2 up
+       set int ip address host-vpp2 6.0.4.1/24
+
+       create host-interface name intervpp2
+       set int state host-intervpp2 up
+       set int ip address host-intervpp2 6.0.3.2/24
+
+       lisp enable
+
+       lisp locator-set add ls1 iface host-intervpp2 p 1 w 1
+       lisp eid-table add eid 6.0.4.0/24 locator-set ls1
+       lisp map-resolver add 6.0.3.100
+
+9.  Then, we create the topology by using network namespaces. For that,
+    we will write a shell script. The content of the shell script should
+    look like:
+    ::
+
+       # path to vpp executable and configurations folder
+       VPP_LITE_BIN=/vpp/build-root/install-vpp_lite_debug-native/vpp/bin/vpp
+       VPP_LITE_CONF=/etc/vpp/lite/
+       # make sure there are no vpp instances running
+       pkill vpp
+
+       # delete previous incarnations if they exist
+       ip netns exec intervppns ifconfig vppbr down
+       ip netns exec intervppns brctl delbr vppbr
+       ip link del dev veth_vpp1 &> /dev/null
+       ip link del dev veth_vpp2 &> /dev/null
+       ip link del dev veth_intervpp1 &> /dev/null
+       ip link del dev veth_intervpp2 &> /dev/null
+       ip link del dev veth_odl &> /dev/null
+       ip netns del vppns1 &> /dev/null
+       ip netns del vppns2 &> /dev/null
+       ip netns del intervppns &> /dev/null
+
+       if [ "$1" == "clean" ] ; then
+           exit 0;
+       fi
+
+       sleep 1
+
+       # create vpp to clients and inter-vpp namespaces
+       ip netns add vppns1
+       ip netns add vppns2
+       ip netns add intervppns
+
+       # create vpp and odl interfaces and set them in intervppns
+       ip link add veth_intervpp1 type veth peer name intervpp1
+       ip link add veth_intervpp2 type veth peer name intervpp2
+       ip link add veth_odl type veth peer name odl
+       ip link set dev intervpp1 up
+       ip link set dev intervpp2 up
+       ip link set dev odl up
+       ip link set dev veth_intervpp1 up netns intervppns
+       ip link set dev veth_intervpp2 up netns intervppns
+       ip link set dev veth_odl up netns intervppns
+
+       # create bridge in intervppns and add vpp and odl interfaces
+       ip netns exec intervppns brctl addbr vppbr
+       ip netns exec intervppns brctl addif vppbr veth_intervpp1
+       ip netns exec intervppns brctl addif vppbr veth_intervpp2
+       ip netns exec intervppns brctl addif vppbr veth_odl
+       ip netns exec intervppns ifconfig vppbr up
+
+       # create and configure 1st veth client to vpp pair
+       ip link add veth_vpp1 type veth peer name vpp1
+       ip link set dev vpp1 up
+       ip link set dev veth_vpp1 up netns vppns1
+
+       ip netns exec vppns1 \
+         bash -c "
+           ip link set dev lo up
+           ip addr add 6.0.2.2/24 dev veth_vpp1
+           ip route add 6.0.4.0/24 via 6.0.2.1
+       "
+
+       # create and configure 2nd veth client to vpp pair
+       ip link add veth_vpp2 type veth peer name vpp2
+       ip link set dev vpp2 up
+       ip link set dev veth_vpp2 up netns vppns2
+
+       ip netns exec vppns2 \
+         bash -c "
+           ip link set dev lo up
+           ip addr add 6.0.4.4/24 dev veth_vpp2
+           ip route add 6.0.2.0/24 via 6.0.4.1
+       "
+
+       # set odl iface ip and disable checksum offloading
+       ifconfig odl 6.0.3.100/24
+       ethtool --offload  odl rx off tx off
+
+        # start vpp1 and vpp2 in separate chroot
+       sudo $VPP_LITE_BIN                              \
+         unix { log /tmp/vpp1.log cli-listen           \
+                localhost:5002 full-coredump           \
+                exec $VPP_LITE_CONF/vpp1.conf }        \
+                api-trace { on } api-segment {prefix xtr1}
+
+       sudo $VPP_LITE_BIN                              \
+         unix { log /tmp/vpp2.log cli-listen           \
+                localhost:5003 full-coredump           \
+                exec $VPP_LITE_CONF/vpp2.conf}         \
+                api-trace { on } api-segment {prefix xtr2}
+
+10. In this example, VPP doesn't make any south bound map registers.
+    So, we control the mapping directly from North bound. For that, we need
+    to add the mappings from north bound.
+
+    Register EID-to-RLOC mapping of the Client EID 6.0.2.0/24.
+    ::
+
+        curl -u "admin":"admin" -H "Content-type: application/json" -X PUT \
+            http://localhost:8181/restconf/config/odl-mappingservice:mapping-database/virtual-network-identifier/0/mapping/ipv4:6.0.2.0%2f24/northbound/ \
+            --data @mapping1.json
+
+    Content of mapping1.json:
+    ::
+
+        {
+            "mapping": {
+                "eid-uri": "ipv4:6.0.2.0/24",
+                "origin": "northbound",
+                "mapping-record": {
+                    "recordTtl": 1440,
+                    "action": "NoAction",
+                    "authoritative": true,
+                    "eid": {
+                        "address-type": "ietf-lisp-address-types:ipv4-prefix-afi",
+                        "ipv4-prefix": "6.0.2.0/24"
+                    },
+                    "LocatorRecord": [
+                        {
+                            "locator-id": "ISP1",
+                            "priority": 1,
+                            "weight": 1,
+                            "multicastPriority": 255,
+                            "multicastWeight": 0,
+                            "localLocator": true,
+                            "rlocProbed": false,
+                            "routed": true,
+                            "rloc": {
+                                "address-type": "ietf-lisp-address-types:ipv4-afi",
+                                "ipv4": "6.0.3.1"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+
+    Similarly add EID-to-RLOC mapping of the Server EID 6.0.2.0/24.
+    ::
+
+        curl -u "admin":"admin" -H "Content-type: application/json" -X PUT \
+            http://localhost:8181/restconf/config/odl-mappingservice:mapping-database/virtual-network-identifier/0/mapping/ipv4:6.0.4.0%2f24/northbound/ \
+            --data @mapping2.json
+
+    Content of mapping2.json:
+    ::
+
+        {
+            "mapping": {
+                "eid-uri": "ipv4:6.0.4.0/24",
+                "origin": "northbound",
+                "mapping-record": {
+                    "recordTtl": 1440,
+                    "action": "NoAction",
+                    "authoritative": true,
+                    "eid": {
+                        "address-type": "ietf-lisp-address-types:ipv4-prefix-afi",
+                        "ipv4-prefix": "6.0.4.0/24"
+                    },
+                    "LocatorRecord": [
+                        {
+                            "locator-id": "ISP1",
+                            "priority": 1,
+                            "weight": 1,
+                            "multicastPriority": 255,
+                            "multicastWeight": 0,
+                            "localLocator": true,
+                            "rlocProbed": false,
+                            "routed": true,
+                            "rloc": {
+                                "address-type": "ietf-lisp-address-types:ipv4-afi",
+                                "ipv4": "6.0.3.2"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+
+    The postman collections and json files regarding these can be found
+    in `here <https://gerrit.fd.io/r/gitweb?p=one.git;a=tree;f=tutorial;hb=HEAD>`__.
+    Even though there is no south bound registration for mapping, using
+    northbound policy we can specify mappings, when Client requests for
+    the Server eid, Client gets a reply from ODL.
+
+11. Assuming all files have been created and ODL has been configured as
+    explained above, execute the host script you've created or the ``setup_lisp_topo.sh``
+    script from `here <https://gerrit.fd.io/r/gitweb?p=one.git;a=tree;f=tutorial;hb=HEAD>`__.
+
+12. If all goes well, you can now test connectivity between the two namespaces with:
+    ::
+
+        sudo ip netns exec vppns1 ping 6.0.4.4
+
 
 LISP Flow Mapping Support
 -------------------------
