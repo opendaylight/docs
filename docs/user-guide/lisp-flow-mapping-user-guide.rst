@@ -340,10 +340,17 @@ Tutorials
 ---------
 
 This section provides a tutorial demonstrating various features in this
-service.
+service. We have included tutorials using two forwarding platforms:
 
-Creating a LISP overlay
-~~~~~~~~~~~~~~~~~~~~~~~
+1.  Using `Open Overlay Router (OOR) <https://github.com/OpenOverlayRouter/oor#overview>`__
+
+2.  Using `FD.io <https://wiki.fd.io/view/ONE>`__
+
+Both have different approaches to create the overlay but ultimately do the
+same job. Details of both approaches have been explained below.
+
+Creating a LISP overlay with OOR
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This section provides instructions to set up a LISP network of three
 nodes (one "client" node and two "server" nodes) using OOR as data
@@ -367,11 +374,11 @@ Prerequisites
    App <https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en>`__
    to edit and send the requests. The project git repository hosts a
    collection of the requests that are used in this tutorial in the
-   ``resources/tutorial/Beryllium_Tutorial.json.postman_collection``
+   ``resources/tutorial/OOR/Beryllium_Tutorial.json.postman_collection``
    file. You can import this file to Postman by clicking *Import* at the
    top, choosing *Download from link* and then entering the following
    URL:
-   ``https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=blob_plain;f=resources/tutorial/Beryllium_Tutorial.json.postman_collection;hb=refs/heads/stable/boron``.
+   `<https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=blob_plain;f=resources/tutorial/Beryllium_Tutorial.json.postman_collection;hb=refs/heads/stable/boron>`__.
    Alternatively, you can save the file on your machine, or if you have
    the repository checked out, you can import from there. You will need
    to create a new Postman Environment and define some variables within:
@@ -473,10 +480,10 @@ URLs and body content on the page.
 
     .. note::
 
-        The ``resources/tutorial`` directory in the *stable/boron*
+        The ``resources/tutorial/OOR`` directory in the *stable/boron*
         branch of the project git repository has the files used in the
         tutorial `checked
-        in <https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=tree;f=resources/tutorial;hb=refs/heads/master>`__,
+        in <https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=tree;f=resources/tutorial/OOR;hb=refs/heads/master>`__,
         so you can just copy the files to ``/etc/oor.conf`` on the
         respective VMs. You will also find the JSON files referenced
         below in the same directory.
@@ -761,6 +768,305 @@ URLs and body content on the page.
         iptables -D OUTPUT --dst 192.168.16.31 -j DROP
 
     which should restore connectivity.
+
+
+Creating a simple LISP overlay with FD.io
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In this section, we use the Overlay Network Engine (ONE) project in FD.io
+to facilitate fully scripted setup and testing of a LISP/VXLAN-GPE network.
+Overlay Network Engine (ONE) is a VPP project that enables programmable
+dynamic Software Defined overlays. Details about this project can be
+found in `ONE wiki <https://wiki.fd.io/view/ONE>`__.
+
+The steps shown below will demonstrate setting up a LISP network between
+a client and a server using VPP. We demonstrate how to use VPP lite to
+build a IP4 LISP overlay on an Ubuntu host using namespaces and af_packet
+interfaces. All configuration files used in the tutorials can be found
+`here <https://gerrit.fd.io/r/gitweb?p=one.git;a=tree;f=tutorial;hb=HEAD>`__.
+
+Prerequisites
+^^^^^^^^^^^^^
+
+-  **OpenDaylight Boron**
+
+-  **The Postman Chrome App**: the most convenient way to follow along
+   this tutorial is to use the `Postman Chrome
+   App <https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en>`__
+   to edit and send the requests. The project git repository hosts a
+   collection of the requests that are used in this tutorial in the
+   ``resources/tutorial/FD_io/lfm_vpp.postman_collection.json``
+   file. You can import this file to Postman by clicking *Import* at the
+   top, choosing *Download from link* and then entering the following
+   URL:
+   `<https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=blob;f=resources/tutorial/FD_io/lfm_vpp.postman_collection.json;hb=HEAD>`__.
+   Alternatively, you can save the file on your machine, or if you have
+   the repository checked out, you can import from there. You will need
+   to create a new Postman Environment and define some variables within:
+   ``controllerHost`` set to the hostname or IP address of the machine
+   running the ODL instance, and ``restconfPort`` to 8181, if you didn’t
+   modify the default controller settings.
+
+-  **Vagrant** (optional): the most convenient way to Create and configure
+   lightweight, reproducible, and portable development environments.
+   Download it from `Vagrant website <https://www.vagrantup.com/downloads.html>`__
+   and follow the setup instruction.
+
+-  Ubuntu host with bridge-utils and ethtool installed, in case you don't
+   want to use Vagrant. With network namespaces, you can have different and
+   separate instances of network interfaces and routing tables that operate
+   independent of each other.
+
+Target Environment
+^^^^^^^^^^^^^^^^^^
+
+Unlike the case with OOR, we use network namespace functionality of Linux
+to create the overlay in this case.
+
++--------------------------+--------------------------+--------------------------+
+| Node                     | Node Type                | IP Address               |
++==========================+==========================+==========================+
+| **controller**           | OpenDaylight             | 6.0.3.100                |
++--------------------------+--------------------------+--------------------------+
+| **client**               | VPP                      | 6.0.2.2                  |
++--------------------------+--------------------------+--------------------------+
+| **server**               | VPP                      | 6.0.4.4                  |
++--------------------------+--------------------------+--------------------------+
+| **service node**         | VPP                      | 6.0.3.3                  |
++--------------------------+--------------------------+--------------------------+
+
+Table: Nodes in the tutorial
+
+The figure below gives a sketch of network topology that will be used in the tutorial.
+
+.. figure:: ./images/one_ODL_architecture.png
+   :alt: Network architecture of the tutorial for FD.io
+
+Instructions
+^^^^^^^^^^^^
+
+Follow the instructions below sequentially.
+
+1.  Install Vagrant. To install vagrant, follow the vagrant official
+    instruction form `here <https://www.vagrantup.com/>`__ or follow
+    `FD.io guide for setting up Vagrant for VPP <https://wiki.fd.io/view/DEV/Setting_Up_Vagrant>`__.
+
+2.  Pull the VPP codes anonymously using:
+    ::
+
+        git clone https://gerrit.fd.io/r/vpp
+
+3.  Then, use the vagrant file from repository to build virtual machine
+    with proper environment.
+    ::
+
+        cd vpp/build-root/vagrant/
+        vagrant up
+        vagrant ssh
+
+4.  In case there is any error from ``vagrant up``, try ``vargant ssh``. if
+    it works, no worries. If it still doesn't work, you can try any Ubuntu Virtual
+    Machine. Or sometimes there is an issue with the Vagrant properly copying
+    the VPP repo code from the host VM after the first installation. In that
+    case ``/vpp`` doesn't exist.f And follow the instructions
+    from below.
+
+    1. Clone the codes in ``/`` directory. So, the codes will be in ``/vpp``.
+
+    2. Run the following commands:
+        ::
+
+            make distclean
+            ./bootstrap.sh
+            make V=0 PLATFORM=vpp TAG=vpp install-deb
+            sudo dpkg -i /vpp/build-root/*.deb
+
+    Alternative and more detailed build instructions can be found in
+    `VPP's wiki <https://wiki.fd.io/view/VPP/Build,_install,_and_test_images>`__
+5.  By now, you should have a Ubuntu VM with VPP repository in ``/vpp``
+    with ``sudo`` access. Now, We need VPP Lite build. The following commands
+    builds VPP Lite.
+    ::
+
+        cd /vpp
+        export PLATFORM=vpp_lite
+        make build
+
+    Successful build create the binary in ``/vpp/build-root/install-vpp_lite_debug-native/vpp/bin``
+
+6.  Install bridge-utils and ethtool if needed by using following commands:
+    ::
+
+       sudo apt-get install bridge-utils ethtool
+
+7.  Now, install and run OpenDaylight Boron release on the VM. Please
+    follow the general OpenDaylight Boron Installation Guide for this
+    step. Before running OpenDayLight, we need to change the configuration
+    for RTR to work. Update ``etc/custom.properties`` with the ``lisp.elpPolicy``
+    to be replce.
+    ::
+
+        lisp.elpPolicy = replace
+
+    Then, run OpenDaylight. For details regarding configuring LISP
+    Flow Mapping, please take a look at `here <http://docs.opendaylight.org/en/stable-boron/user-guide/lisp-flow-mapping-user-guide.html#configuring-lisp-flow-mapping>`__.
+    Once the OpenDaylight controller is running install the *odl-lispflowmapping-msmr*
+    feature from the Karaf CLI:
+
+    ::
+
+        feature:install odl-lispflowmapping-msmr
+
+    It may take quite a while to load and initialize all features and their
+    dependencies. It’s worth running the command ``log:tail`` in the
+    Karaf console to see when the log output is winding down, and
+    continue with the tutorial after that.
+
+8.  For setting up VPP, get the files from ``resources/tutorial/FD_io``
+    folder of the lispflowmapping repo. The files can also be found `here
+    <https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=tree;f=resources/tutorial/FD_io;hb=refs/heads/master>`__.
+    Copy the ``vpp1.config``, ``vpp2.config`` and ``rtr.config`` files in
+    ``/etc/vpp/lite/``.
+
+9.  In this example, VPP doesn't make any southbound map registers to ODL.
+    So, we add the mappings directly from northbound. For that, we need
+    to add the mappings to ODL via RESTCONF API.
+
+    Register EID-to-RLOC mapping of the Client EID 6.0.2.0/24.
+    ::
+
+        curl -u "admin":"admin" -H "Content-type: application/json" -X PUT \
+            http://localhost:8181/restconf/config/odl-mappingservice:mapping-database/virtual-network-identifier/0/mapping/ipv4:6.0.2.0%2f24/northbound/ \
+            --data @epl1.json
+
+    Content of epl1.json:
+
+    .. code:: json
+
+        {
+            "mapping": {
+                "eid-uri": "ipv4:6.0.2.0/24",
+                "origin": "northbound",
+                "mapping-record": {
+                    "recordTtl": 1440,
+                    "action": "NoAction",
+                    "authoritative": true,
+                    "eid": {
+                            "address-type": "ietf-lisp-address-types:ipv4-prefix-afi",
+                            "ipv4-prefix": "6.0.2.0/24"
+                    },
+                    "LocatorRecord": [
+                        {
+                            "locator-id": "ELP",
+                            "priority": 1,
+                            "weight": 1,
+                            "multicastPriority": 255,
+                            "multicastWeight": 0,
+                            "localLocator": true,
+                            "rlocProbed": false,
+                            "routed": false,
+                            "rloc": {
+                                "address-type": "ietf-lisp-address-types:explicit-locator-path-lcaf",
+                                "explicit-locator-path": {
+                                    "hop": [
+                                        {
+                                            "hop-id": "Hop 1",
+                                            "address": "6.0.3.3",
+                                            "lrs-bits": "lookup rloc-probe strict"
+                                        },
+                                        {
+                                            "hop-id": "Hop 2",
+                                            "address": "6.0.3.1",
+                                            "lrs-bits": "lookup strict"
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+
+
+    Similarly add EID-to-RLOC mapping of the Server EID 6.0.4.0/24.
+    ::
+
+        curl -u "admin":"admin" -H "Content-type: application/json" -X PUT \
+            http://localhost:8181/restconf/config/odl-mappingservice:mapping-database/virtual-network-identifier/0/mapping/ipv4:6.0.4.0%2f24/northbound/ \
+            --data @epl2.json
+
+    Content of elp2.json:
+
+    .. code:: json
+
+        {
+            "mapping": {
+                "eid-uri": "ipv4:6.0.4.0/24",
+                "origin": "northbound",
+                "mapping-record": {
+                    "recordTtl": 1440,
+                    "action": "NoAction",
+                    "authoritative": true,
+                    "eid": {
+                            "address-type": "ietf-lisp-address-types:ipv4-prefix-afi",
+                            "ipv4-prefix": "6.0.4.0/24"
+                    },
+                    "LocatorRecord": [
+                        {
+                            "locator-id": "ELP",
+                            "priority": 1,
+                            "weight": 1,
+                            "multicastPriority": 255,
+                            "multicastWeight": 0,
+                            "localLocator": true,
+                            "rlocProbed": false,
+                            "routed": false,
+                            "rloc": {
+                                "address-type": "ietf-lisp-address-types:explicit-locator-path-lcaf",
+                                "explicit-locator-path": {
+                                    "hop": [
+                                        {
+                                            "hop-id": "Hop 1",
+                                            "address": "6.0.3.3",
+                                            "lrs-bits": "lookup rloc-probe strict"
+                                        },
+                                        {
+                                            "hop-id": "Hop 2",
+                                            "address": "6.0.3.2",
+                                            "lrs-bits": "lookup strict"
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+
+    The json files regarding these can be found in `here
+    <https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=tree;f=resources/tutorial/FD_io;hb=refs/heads/master>`__.
+    Even though there is no south bound registration for mapping to ODL, using
+    northbound policy we can specify mappings, when Client requests for
+    the Server eid, Client gets a reply from ODL.
+
+11. Assuming all files have been created and ODL has been configured as
+    explained above, execute the host script you've created or the ``topology_setup.sh``
+    script from `here <https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=tree;f=resources/tutorial/FD_io;hb=refs/heads/master>`__.
+
+12. If all goes well, you can now test connectivity between the namespaces with:
+    ::
+
+        sudo ip netns exec vpp-ns1 ping 6.0.4.4
+
+13. Traffic and control plane message exchanges can be checked with a wireshark
+    listening on the odl interface.
+14. **Important**: Delete the topology by running the ``topology_setup.sh``
+    with ``clean`` argument.
+    ::
+
+        sudo ./topology_setup.sh clean
 
 LISP Flow Mapping Support
 -------------------------
