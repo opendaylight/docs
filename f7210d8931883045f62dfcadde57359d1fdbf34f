@@ -22,6 +22,30 @@
       "revId": "f7210d8931883045f62dfcadde57359d1fdbf34f",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_93812f92",
+        "filename": "docs/release-process/simultaneous-release.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2016-11-08T00:14:12Z",
+      "side": 1,
+      "message": "Ok in that case we can simplify this to:\n\n export BRANCH\u003d${RELEASE//-*}\n\nThen call ${BRANCH,,} when we want to lowercase it.",
+      "parentUuid": "3a65312a_423fc725",
+      "range": {
+        "startLine": 31,
+        "startChar": 18,
+        "endLine": 31,
+        "endChar": 34
+      },
+      "revId": "f7210d8931883045f62dfcadde57359d1fdbf34f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
