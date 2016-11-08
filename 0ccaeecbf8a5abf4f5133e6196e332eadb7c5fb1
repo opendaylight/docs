@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a65312a_8dcbcb71",
+        "filename": "docs/release-process/project-lifecycle.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2016-11-08T19:57:59Z",
+      "side": 1,
+      "message": "The overline and underline needs to match the columns of the words. So should be fixed to:\n\n *****************\n Project lifecycle\n *****************",
+      "revId": "0ccaeecbf8a5abf4f5133e6196e332eadb7c5fb1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_edc87f76",
+        "filename": "docs/release-process/project-lifecycle.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2016-11-08T19:57:59Z",
+      "side": 1,
+      "message": "Typo: Simultaneous",
+      "range": {
+        "startLine": 6,
+        "startChar": 24,
+        "endLine": 6,
+        "endChar": 37
+      },
+      "revId": "0ccaeecbf8a5abf4f5133e6196e332eadb7c5fb1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_0da7bbbe",
+        "filename": "docs/release-process/project-lifecycle.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2016-11-08T19:57:59Z",
+      "side": 1,
+      "message": "Probably should bold this \"**non-existent**\" to make it stand out as the continuation line in reStructuredText just means to continue the line as if it\u0027s one line.",
+      "range": {
+        "startLine": 13,
+        "startChar": 2,
+        "endLine": 13,
+        "endChar": 14
+      },
+      "revId": "0ccaeecbf8a5abf4f5133e6196e332eadb7c5fb1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_4db1b3f7",
+        "filename": "docs/release-process/project-lifecycle.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2016-11-08T19:57:59Z",
+      "side": 1,
+      "message": "typo: requirements",
+      "range": {
+        "startLine": 42,
+        "startChar": 34,
+        "endLine": 42,
+        "endChar": 47
+      },
+      "revId": "0ccaeecbf8a5abf4f5133e6196e332eadb7c5fb1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
