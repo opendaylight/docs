@@ -55,6 +55,7 @@ participate in the development of OpenDaylight or would like to start.
    release-process/index
    submodules/spectrometer/docs/index
    javadoc
+   submodules/genius/docs/index
 
 .. Commenting the below out until we actually use it
 .. Indices and tables
