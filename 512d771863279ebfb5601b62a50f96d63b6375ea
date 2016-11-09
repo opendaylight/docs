@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a65312a_19837957",
+        "filename": "docs/documentation.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 622,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-11-09T17:57:22Z",
+      "side": 1,
+      "message": "We probably want to change this to reST, but we can do that in a subsequent patch.",
+      "revId": "512d771863279ebfb5601b62a50f96d63b6375ea",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_b9b6c53b",
+        "filename": "docs/documentation.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 695,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-11-09T17:57:22Z",
+      "side": 1,
+      "message": "the indentation here is wrong, it needs to be one more space over",
+      "range": {
+        "startLine": 693,
+        "startChar": 0,
+        "endLine": 695,
+        "endChar": 51
+      },
+      "revId": "512d771863279ebfb5601b62a50f96d63b6375ea",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
