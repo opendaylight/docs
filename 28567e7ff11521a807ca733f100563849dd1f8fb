@@ -1,0 +1,372 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a65312a_0aa2f6ad",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 654
+      },
+      "writtenOn": "2016-11-11T04:29:24Z",
+      "side": 1,
+      "message": "Change to \" two forwarding platforms are included in this tutorial:",
+      "range": {
+        "startLine": 343,
+        "startChar": 9,
+        "endLine": 343,
+        "endChar": 62
+      },
+      "revId": "28567e7ff11521a807ca733f100563849dd1f8fb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_ea8dfa32",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 654
+      },
+      "writtenOn": "2016-11-11T04:29:24Z",
+      "side": 1,
+      "message": "Please remove the highlighted section, leaving only \"Using FD.io\".  Only the test code is in ONE as of now, the features are in VPP. Link can stay as is.",
+      "range": {
+        "startLine": 347,
+        "startChar": 15,
+        "endLine": 347,
+        "endChar": 47
+      },
+      "revId": "28567e7ff11521a807ca733f100563849dd1f8fb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_2ab1b2f8",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 773,
+      "author": {
+        "id": 654
+      },
+      "writtenOn": "2016-11-11T04:29:24Z",
+      "side": 1,
+      "message": "Please replace highlighted section with \"using FD.io\"",
+      "range": {
+        "startLine": 773,
+        "startChar": 31,
+        "endLine": 773,
+        "endChar": 39
+      },
+      "revId": "28567e7ff11521a807ca733f100563849dd1f8fb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_8a7c4622",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 776,
+      "author": {
+        "id": 654
+      },
+      "writtenOn": "2016-11-11T04:29:24Z",
+      "side": 1,
+      "message": "Please add here: \"In this section, we use the Overlay Network Engine (ONE) project in FD.io to facilitate fully scripted setup and testing of a LISP/VXLAN-GPE network.\"",
+      "range": {
+        "startLine": 776,
+        "startChar": 0,
+        "endLine": 776,
+        "endChar": 1
+      },
+      "revId": "28567e7ff11521a807ca733f100563849dd1f8fb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_0a2cb601",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 782,
+      "author": {
+        "id": 654
+      },
+      "writtenOn": "2016-11-11T04:29:24Z",
+      "side": 1,
+      "message": "I think it is best if we use and show the test_smr_rtr_disjoint.sh test instead. This one starts form a simple client server topology, then adds an intermediate hop connecting a v4 underlay to a v6 underlay.",
+      "range": {
+        "startLine": 781,
+        "startChar": 33,
+        "endLine": 782,
+        "endChar": 71
+      },
+      "revId": "28567e7ff11521a807ca733f100563849dd1f8fb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_caad9e8a",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 822,
+      "author": {
+        "id": 654
+      },
+      "writtenOn": "2016-11-11T04:29:24Z",
+      "side": 1,
+      "message": "oof \u003d\u003e of",
+      "range": {
+        "startLine": 822,
+        "startChar": 65,
+        "endLine": 822,
+        "endChar": 66
+      },
+      "revId": "28567e7ff11521a807ca733f100563849dd1f8fb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_aaaae26d",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 825,
+      "author": {
+        "id": 654
+      },
+      "writtenOn": "2016-11-11T04:29:24Z",
+      "side": 1,
+      "message": "Please remove. Repeated just above/",
+      "range": {
+        "startLine": 823,
+        "startChar": 36,
+        "endLine": 825,
+        "endChar": 38
+      },
+      "revId": "28567e7ff11521a807ca733f100563849dd1f8fb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_2ab6d2d9",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 864,
+      "author": {
+        "id": 654
+      },
+      "writtenOn": "2016-11-11T04:29:24Z",
+      "side": 1,
+      "message": "I think this step is not needed. regular Vagrant install should work.",
+      "range": {
+        "startLine": 863,
+        "startChar": 0,
+        "endLine": 864,
+        "endChar": 56
+      },
+      "revId": "28567e7ff11521a807ca733f100563849dd1f8fb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_6ac72a46",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 896,
+      "author": {
+        "id": 654
+      },
+      "writtenOn": "2016-11-11T04:29:24Z",
+      "side": 1,
+      "message": "Sometimes there is an issue with the Vagrant properly copying the VPP repo code from the host VM  after the first installation. Easiest is to do another clone here if it wasn\u0027t there.",
+      "range": {
+        "startLine": 895,
+        "startChar": 63,
+        "endLine": 896,
+        "endChar": 73
+      },
+      "revId": "28567e7ff11521a807ca733f100563849dd1f8fb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_2aed32c4",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 1040,
+      "author": {
+        "id": 654
+      },
+      "writtenOn": "2016-11-11T04:29:24Z",
+      "side": 1,
+      "message": "I think just cloning the ONE repo is much easier. Since this is an ODL tutorial, details of VPP can be avoided which makes the tutorial easier. Please follow https://wiki.fd.io/view/ONE/Functional_Tests_Guide as below:\ngit clone https://gerrit.fd.io/r/one\nGo to tests folder\ncd one/tests/data_plane/vpp_lite_topo/\nTo run the test step-by-step, edit the test file in ./tests/test_smr_rtr_disjoint.sh and add to the test function call, typically the last line in the script, \"wait\" as a parameter.\nThen run:\nsudo WAIT\u003d1 ./tests/test_smr_rtr_disjoint.sh",
+      "range": {
+        "startLine": 911,
+        "startChar": 4,
+        "endLine": 1040,
+        "endChar": 58
+      },
+      "revId": "28567e7ff11521a807ca733f100563849dd1f8fb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_8ad1e6fd",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 1042,
+      "author": {
+        "id": 654
+      },
+      "writtenOn": "2016-11-11T04:29:24Z",
+      "side": 1,
+      "message": "to ODL.",
+      "range": {
+        "startLine": 1042,
+        "startChar": 67,
+        "endLine": 1042,
+        "endChar": 68
+      },
+      "revId": "28567e7ff11521a807ca733f100563849dd1f8fb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_cadbde19",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 1043,
+      "author": {
+        "id": 654
+      },
+      "writtenOn": "2016-11-11T04:29:24Z",
+      "side": 1,
+      "message": "control -\u003e add",
+      "range": {
+        "startLine": 1043,
+        "startChar": 11,
+        "endLine": 1043,
+        "endChar": 18
+      },
+      "revId": "28567e7ff11521a807ca733f100563849dd1f8fb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_0a05d679",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 1043,
+      "author": {
+        "id": 654
+      },
+      "writtenOn": "2016-11-11T04:29:24Z",
+      "side": 1,
+      "message": "mapping \u003d\u003e mappings",
+      "range": {
+        "startLine": 1043,
+        "startChar": 23,
+        "endLine": 1043,
+        "endChar": 30
+      },
+      "revId": "28567e7ff11521a807ca733f100563849dd1f8fb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_4a9a2e64",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 1044,
+      "author": {
+        "id": 654
+      },
+      "writtenOn": "2016-11-11T04:29:24Z",
+      "side": 1,
+      "message": "to ODL.",
+      "range": {
+        "startLine": 1044,
+        "startChar": 40,
+        "endLine": 1044,
+        "endChar": 41
+      },
+      "revId": "28567e7ff11521a807ca733f100563849dd1f8fb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_4affce67",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 1044,
+      "author": {
+        "id": 654
+      },
+      "writtenOn": "2016-11-11T04:29:24Z",
+      "side": 1,
+      "message": "replace with: to ODL via RESTCONF API.",
+      "range": {
+        "startLine": 1043,
+        "startChar": 40,
+        "endLine": 1044,
+        "endChar": 41
+      },
+      "revId": "28567e7ff11521a807ca733f100563849dd1f8fb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_aaef82af",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 1137,
+      "author": {
+        "id": 654
+      },
+      "writtenOn": "2016-11-11T04:29:24Z",
+      "side": 1,
+      "message": "I think it is best to use test_smr_rtr_disjoint.sh instead.",
+      "range": {
+        "startLine": 1137,
+        "startChar": 68,
+        "endLine": 1137,
+        "endChar": 89
+      },
+      "revId": "28567e7ff11521a807ca733f100563849dd1f8fb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
