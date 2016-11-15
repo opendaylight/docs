@@ -533,7 +533,7 @@ Next Hop Table detailed
 The Next Hop table uses the RSP Path Id and appropriate packet fields to
 determine where to send the packet next. For NSH, only the NSP (Network
 Services Path, RSP ID) and NSI (Network Services Index, next hop) fields
-from the NSH header are needed to determine the VxLAN tunnel destination
+from the NSH header are needed to determine the VXLAN tunnel destination
 IP. For VLAN or MPLS, then the source MAC address is used to determine
 the destination MAC address.
 
