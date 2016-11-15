@@ -437,6 +437,14 @@ YANG model can be found here `logical SFF model
 .. figure:: ./images/sfc/logical-sff-datamodel.png
    :alt: Logical SFF data model
 
+There are other minor changes in the data model; the SFC encapsulation type has been added or moved in the following files:
+
+-  `RSP data model <https://github.com/opendaylight/sfc/blob/master/sfc-model/src/main/yang/rendered-service-path.yang>`__
+   
+-  `SFP data model <https://github.com/opendaylight/sfc/blob/master/sfc-model/src/main/yang/service-function-path.yang>`__
+
+-  `Service Locator data model <https://github.com/opendaylight/sfc/blob/master/sfc-model/src/main/yang/service-locator.yang>`__
+
 Interaction with Genius
 ~~~~~~~~~~~~~~~~~~~~~~~
 As shown in the following picture, SFC will interact with Genius project's services to provide the
@@ -452,6 +460,3 @@ The following are the main Genius' services used by SFC:
 2. Interaction with the Interface Manager
 
 3. Interaction with Resource Manager
-
-
-
