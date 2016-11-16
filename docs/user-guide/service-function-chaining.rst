@@ -2552,48 +2552,6 @@ YANG model can be found here `logical SFF model
 How to configure the Logical SFF
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The following are examples to configure the Logical SFF:
-
-::
-
-    curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '${JSON}' -X PUT --user admin:admin http://localhost:8181/restconf/config/service-node:service-nodes/
-
-**Service Nodes JSON.**
-
-::
-
-    {
-    "service-nodes": {
-        "service-node": [
-            {
-                "name": "classifier1",
-                "service-function": [
-                ],
-                "ip-mgmt-address": "192.168.1.10"
-            },
-            {
-                "name": "sf1",
-                "service-function": [
-                    "dpi-1"
-                ],
-                "ip-mgmt-address": "192.168.1.30"
-            },
-            {
-                "name": "sf2",
-                "service-function": [
-                    "firewall-1"
-                ],
-                "ip-mgmt-address": "192.168.1.40"
-            },
-            {
-                "name": "classifier2",
-                "service-function": [
-                ],
-                "ip-mgmt-address": "192.168.1.60"
-            }
-        ]
-    }
-    }
-
 ::
 
     curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '${JSON}' -X PUT --user admin:admin http://localhost:8181/restconf/config/restconf/config/service-function:service-functions/
@@ -2606,29 +2564,28 @@ The following are examples to configure the Logical SFF:
     "service-functions": {
         "service-function": [
             {
-                "name": "dpi-1",
-                "ip-mgmt-address": "192.168.1.30",
-                "rest-uri": "http://192.168.1.30:5000",
-                "type": "dpi",
-                "nsh-aware": "true",
-                "sf-data-plane-locator": [
-                    {
-                        "name": "dpi-1-dpl",
-                        "interface-name": "e0fffc12-a46e-4575-bf36-8383c8edefed",
-                        "service-function-forwarder": "sfflogical1"
-                    }
-                ]
-            },
-            {
                 "name": "firewall-1",
-                "ip-mgmt-address": "192.168.1.40",
-                "rest-uri": "http://192.168.1.40:5000",
                 "type": "firewall",
                 "nsh-aware": "true",
                 "sf-data-plane-locator": [
                     {
-                        "name": "firewall-1-dpl",
-                        "interface-name": "952a5486-d1a5-40cd-a7c1-cc61e59a2b36",
+                        "name": "firewall-dpl",
+                        "interface-name": "eccb57ae-5a2e-467f-823e-45d7bb2a6a9a",
+                        "transport": "service-locator:eth-nsh",
+                        "service-function-forwarder": "sfflogical1"
+
+                    }
+                ]
+            },
+            {
+                "name": "dpi-1",
+                "type": "dpi",
+                "nsh-aware": "true",
+                "sf-data-plane-locator": [
+                    {
+                        "name": "dpi-dpl",
+                        "interface-name": "df15ac52-e8ef-4e9a-8340-ae0738aba0c0",
+                        "transport": "service-locator:eth-nsh",
                         "service-function-forwarder": "sfflogical1"
                     }
                 ]
@@ -2693,3 +2650,29 @@ The following are examples to configure the Logical SFF:
         ]
     }
     }
+
+
+::
+
+    curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '${JSON}' -X PUT --user admin:admin http://localhost:8182/restconf/config/service-function-chain:service-function-paths/
+
+**Service Function Paths JSON.**
+
+::
+
+    {
+    "service-function-paths": {
+        "service-function-path": [
+            {
+                "name": "SFP1",
+                "service-chain-name": "SFC1",
+                "starting-index": 255,
+                "symmetric": "true",
+                "context-metadata": "NSH1",
+                "transport-type": "service-locator:vxlan-gpe"
+
+            }
+        ]
+    }
+    }
+
