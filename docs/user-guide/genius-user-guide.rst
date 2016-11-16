@@ -11,8 +11,8 @@ interference-free co-existence with other applications using Genius.
 Modules and Interfaces
 ----------------------
 
-In the the first phase delivered in OpenDaylight Boron release, Genius
-provides following modules — 
+In the first phase delivered in OpenDaylight Boron release, Genius
+provides following modules —
 
 -  Modules providing a common view of network interfaces for different
    services
@@ -130,7 +130,7 @@ Creating L2 port interfaces
 '''''''''''''''''''''''''''
 
 Interfaces on normal L2 ports (e.g. Neutron tap ports) are created with
-type *l2vlan* and *l2vlan-mode* as *transparent*. This type of interfce
+type *l2vlan* and *l2vlan-mode* as *transparent*. This type of interface
 classifies packets passing through a particular L2 (OpenFlow) port. In
 dataplane, packets belonging to this interface are classified by
 matching in-port against the of-port-id assigned to the base port as
@@ -228,9 +228,9 @@ contains the service binding configuration data model.
 An application can bind services to a particular interface by
 configuring MD-SAL data node at path /config/interface-service-binding.
 Binding services on interface allows particular service to pull traffic
-arriving on that interafce depending upon the a service priority.
+arriving on that interface depending upon the service priority.
 Service modules can specify openflow-rules to be applied on the packet
-belonging to the inetrface. Usually these rules include sending the
+belonging to the interface. Usually these rules include sending the
 packet to specific service table/pipeline. Service modules are
 responsible for sending the packet back (if not consumed) to service
 dispatcher table, for next service to process the packet.
