@@ -460,3 +460,52 @@ The following are the main Genius' services used by SFC:
 2. Interaction with the Interface Manager
 
 3. Interaction with Resource Manager
+
+Architecture
+~~~~~~~~~~~~
+Feature 'odl-sfc-genius' functionally enables SFC integration with Genius. This allows configuring a Logical SFF
+and SFs attached to this Logical SFF via logical interfaces (i.e. neutron ports) that are registered with Genius.
+
+Service Binding
+^^^^^^^^^^^^^^^
+As soon as a Service Function associated to the Logical SFF is involved in a Rendered Service Path, SFC service is
+bound to its logical interface. This has the effect of forwarding every incoming packet from the Service Function
+to the SFC pipeline of the attached switch, as long as it is not consumed by a different bound service with higher
+priority.
+
+Service Terminating Action
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+As soon as SFC service is bound to the interface of a Service Function for the first time on a specific switch, a
+terminating service action is configured on that switch. This has the effect of forwarding every incoming packet from
+a different switch to the SFC pipeline as long as the traffic is vxlan encapsulated on VNI 0.
+
+.. figure:: ./images/sfc/odl-sfc-genius-at-rsp-render.png
+   :alt: odl-sfc-genius at RSP render
+
+   SFC genius module interaction with Genius at RSP creation.
+
+.. figure:: ./images/sfc/odl-sfc-genius-at-rsp-removal.png
+   :alt: odl-sfc-genius at RSP removal
+
+   SFC genius module interaction with Genius at RSP removal.
+
+Path Rendering
+^^^^^^^^^^^^^^
+During path rendering, Genius is queried to obtain needed information, such as:
+
+- Location of a logical interface on the data-plane.
+- Tunnel interface for a specific pair of source and destination switches.
+- Egress openflow actions to output packets to a specific interface.
+
+VM migration
+^^^^^^^^^^^^
+Upon VM migration, it's logical interface is first unregistered and the registered with Genius, possibly at a new
+physical location. 'odl-sfc-genius' reacts to this by re-rendering all the RSPs on which the associated SF
+participates, if any.
+
+.. figure:: ./images/sfc/odl-sfc-genius-at-vm-migration.png
+   :alt: odl-sfc-genius at VM migration
+
+   SFC genius module at VM migration.
+
+
