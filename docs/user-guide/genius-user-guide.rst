@@ -1,3 +1,5 @@
+.. _genius-user-guide:
+
 Genius User Guide
 =================
 
