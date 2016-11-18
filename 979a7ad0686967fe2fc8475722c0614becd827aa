@@ -2,6 +2,75 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a65312a_c2960c94",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 474,
+      "author": {
+        "id": 5861
+      },
+      "writtenOn": "2016-11-18T20:10:49Z",
+      "side": 1,
+      "message": "We might reference the Genius pipeline from here for further details.",
+      "range": {
+        "startLine": 471,
+        "startChar": 0,
+        "endLine": 474,
+        "endChar": 9
+      },
+      "revId": "979a7ad0686967fe2fc8475722c0614becd827aa",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_a291509c",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 480,
+      "author": {
+        "id": 5861
+      },
+      "writtenOn": "2016-11-18T20:10:49Z",
+      "side": 1,
+      "message": "I would add here: the following sequence diagrams shows how the process take place.",
+      "range": {
+        "startLine": 478,
+        "startChar": 0,
+        "endLine": 480,
+        "endChar": 93
+      },
+      "revId": "979a7ad0686967fe2fc8475722c0614becd827aa",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_02912499",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 488,
+      "author": {
+        "id": 5861
+      },
+      "writtenOn": "2016-11-18T20:10:49Z",
+      "side": 1,
+      "message": "A single paragraph explaining what the sequence diagram is illustrating.",
+      "range": {
+        "startLine": 482,
+        "startChar": 0,
+        "endLine": 488,
+        "endChar": 38
+      },
+      "revId": "979a7ad0686967fe2fc8475722c0614becd827aa",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a65312a_eea5f947",
         "filename": "docs/developer-guide/service-function-chaining.rst",
         "patchSetId": 1
