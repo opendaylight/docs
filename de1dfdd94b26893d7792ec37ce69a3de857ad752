@@ -119,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "3a65312a_bdd171fd",
+        "filename": "docs/user-guide/pcep-user-guide.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2016-11-20T15:58:08Z",
+      "side": 1,
+      "message": "It is correct - please see the name of RFC 5440 https://tools.ietf.org/html/rfc5440",
+      "parentUuid": "3a65312a_fad04ff9",
+      "range": {
+        "startLine": 20,
+        "startChar": 137,
+        "endLine": 20,
+        "endChar": 140
+      },
+      "revId": "de1dfdd94b26893d7792ec37ce69a3de857ad752",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a65312a_7add5f14",
         "filename": "docs/user-guide/pcep-user-guide.rst",
         "patchSetId": 8
@@ -130,6 +154,30 @@
       "writtenOn": "2016-11-01T20:32:03Z",
       "side": 1,
       "message": "what\u0027s a TED?",
+      "range": {
+        "startLine": 22,
+        "startChar": 52,
+        "endLine": 22,
+        "endChar": 55
+      },
+      "revId": "de1dfdd94b26893d7792ec37ce69a3de857ad752",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_9dcc7563",
+        "filename": "docs/user-guide/pcep-user-guide.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2016-11-20T15:58:08Z",
+      "side": 1,
+      "message": "Done - Traffic Engineering Database",
+      "parentUuid": "3a65312a_7add5f14",
       "range": {
         "startLine": 22,
         "startChar": 52,
@@ -165,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "3a65312a_fddbe918",
+        "filename": "docs/user-guide/pcep-user-guide.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2016-11-20T15:58:08Z",
+      "side": 1,
+      "message": "Not really acronym, rather the example of network resources source.",
+      "parentUuid": "3a65312a_bafed769",
+      "range": {
+        "startLine": 36,
+        "startChar": 43,
+        "endLine": 36,
+        "endChar": 66
+      },
+      "revId": "de1dfdd94b26893d7792ec37ce69a3de857ad752",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a65312a_9a031b73",
         "filename": "docs/user-guide/pcep-user-guide.rst",
         "patchSetId": 8
@@ -176,6 +248,30 @@
       "writtenOn": "2016-11-01T20:32:03Z",
       "side": 1,
       "message": "What is this?",
+      "range": {
+        "startLine": 43,
+        "startChar": 2,
+        "endLine": 43,
+        "endChar": 6
+      },
+      "revId": "de1dfdd94b26893d7792ec37ce69a3de857ad752",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_ddd6edf0",
+        "filename": "docs/user-guide/pcep-user-guide.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2016-11-20T15:58:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a65312a_9a031b73",
       "range": {
         "startLine": 43,
         "startChar": 2,
@@ -211,6 +307,30 @@
     },
     {
       "key": {
+        "uuid": "3a65312a_3d05617a",
+        "filename": "docs/user-guide/pcep-user-guide.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 634,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2016-11-20T15:58:08Z",
+      "side": 1,
+      "message": "Abbreviation added at line 20, where Traffic Engineering is mentioned for the first time.",
+      "parentUuid": "3a65312a_7a79dffb",
+      "range": {
+        "startLine": 634,
+        "startChar": 75,
+        "endLine": 634,
+        "endChar": 78
+      },
+      "revId": "de1dfdd94b26893d7792ec37ce69a3de857ad752",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a65312a_5a7ea3e5",
         "filename": "docs/user-guide/pcep-user-guide.rst",
         "patchSetId": 8
@@ -222,6 +342,30 @@
       "writtenOn": "2016-11-01T20:32:03Z",
       "side": 1,
       "message": "TE?",
+      "range": {
+        "startLine": 935,
+        "startChar": 90,
+        "endLine": 935,
+        "endChar": 92
+      },
+      "revId": "de1dfdd94b26893d7792ec37ce69a3de857ad752",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_1d086590",
+        "filename": "docs/user-guide/pcep-user-guide.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 935,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2016-11-20T15:58:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a65312a_5a7ea3e5",
       "range": {
         "startLine": 935,
         "startChar": 90,
@@ -257,6 +401,30 @@
     },
     {
       "key": {
+        "uuid": "3a65312a_7dffd967",
+        "filename": "docs/user-guide/pcep-user-guide.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 943,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2016-11-20T15:58:08Z",
+      "side": 1,
+      "message": "Record Route Object",
+      "parentUuid": "3a65312a_ba8377cb",
+      "range": {
+        "startLine": 943,
+        "startChar": 38,
+        "endLine": 943,
+        "endChar": 41
+      },
+      "revId": "de1dfdd94b26893d7792ec37ce69a3de857ad752",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a65312a_fa6ccf38",
         "filename": "docs/user-guide/pcep-user-guide.rst",
         "patchSetId": 8
@@ -268,6 +436,30 @@
       "writtenOn": "2016-11-01T20:32:03Z",
       "side": 1,
       "message": "this looks misformatted compared to the earlier output.",
+      "range": {
+        "startLine": 967,
+        "startChar": 0,
+        "endLine": 982,
+        "endChar": 47
+      },
+      "revId": "de1dfdd94b26893d7792ec37ce69a3de857ad752",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_5d02dd6f",
+        "filename": "docs/user-guide/pcep-user-guide.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 982,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2016-11-20T15:58:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a65312a_fa6ccf38",
       "range": {
         "startLine": 967,
         "startChar": 0,
