@@ -460,3 +460,61 @@ The following are the main Genius' services used by SFC:
 2. Interaction with the Interface Manager
 
 3. Interaction with Resource Manager
+
+Classifier impacts
+~~~~~~~~~~~~~~~~~~
+
+This section explains the changes made to the SFC classifier, thus enabling it 
+to attach to Logical SFFs. 
+
+Refer to the following image to better understand the concept, and the required
+steps to implement the feature.
+
+.. figure:: ./images/sfc/sfc-classifier-genius-integration.png
+   :alt: Classifier integration w/ genius
+
+   SFC classifier integration with Genius.
+
+As stated in the `User Guide <../user-guide/service-function-chaining.html#classifier-impacts>`__,
+the classifier needs to be provisioned using logical interfaces as attachment
+points. 
+
+When that happens, MDSAL will trigger an event in the scf-openflow feature, 
+which is responsible for installing the classifier flows in the classifier 
+switches.
+
+The first step of the process, is to bind the interfaces to classify in Genius,
+in order for the desired traffic (originating from the VMs having the 
+provisioned attachment-points) to enter the SFC pipeline. This will make traffic 
+reach table 82 (SFC classifier table), comming from table 0 (table managed by 
+genius, shared by all applications).
+
+The next step, is deciding which flows to install in the SFC classifier table. 
+A table-miss flow will be installed, having a MatchAny clause, whose action is 
+to jump to genius's egress dispatcher table. This enables traffic intended for
+other applications to still be processed. 
+
+The flow that allows the SFC pipeline to continue is added next, having higher 
+match priority than the table-miss flow. This flow has two responsabilities: 
+
+1. **Push the NSH header, along w/ its metadata (required within the SFC pipeline)**
+
+   Features the specified ACL matches as match criteria (alongside the priority)
+   ,and push NSH / NSH metadata Actions into the Action list.
+
+2. **Advance the SFC pipeline**
+
+   Forward the traffic to the first Service Function in the RSP. This steers 
+   packets into the SFC domain, and how it is done depends on wheather the 
+   classifier is co-located with the first service function the specified RSP. 
+   Should the classifier be co-located (i.e. in the same compute node), a 
+   new instruction is appended to the flow, telling all matches to jump to 
+   the transport ingress table.
+   If not, Genius's tunnel manager service is queried to get the tunnel 
+   interface connecting the classifier node with the compute node where the 
+   first Service Function is located, and finally, Genius's interface manager 
+   service is queried asking for instructions on how to reach that tunnel 
+   interface. 
+   These actions are then appended the the push NSH / push NSH metadata Action 
+   list, and written in an Apply-Actions Instruction into the datastore.
+

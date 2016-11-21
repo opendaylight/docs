@@ -2651,7 +2651,6 @@ The following are examples to configure the Logical SFF:
     }
     }
 
-
 ::
 
     curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '${JSON}' -X PUT --user admin:admin http://localhost:8182/restconf/config/service-function-chain:service-function-paths/
@@ -2675,4 +2674,133 @@ The following are examples to configure the Logical SFF:
         ]
     }
     }
+
+Classifier impacts
+~~~~~~~~~~~~~~~~~~
+
+As previously mentioned, in the `Logical SFF rationale <./service-function-chaining.html#rationale>`__,
+the Logical SFF feature relies on Genius to get the dataplane IDs of the 
+openflow switches, in order to properly steer the traffic through the chain.
+
+Since one of the classifier's objectives is to steer the packets *into* the 
+SFC domain, the classifier has to be aware of where the first Service 
+Function is located - if it migrates somewhere else, the classifier table 
+has to be updated accordingly, thus enabling the seemless migration of Service 
+Functions.
+
+For this feature, mobility of the client VM is out of scope, and should be 
+managed by its high-availability module, or VNF manager.
+
+Keep in mind that classification *always* occur in the compute-node where 
+the client VM (i.e. traffic origin) is running.
+
+How to attach the classifier to a Logical SFF 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In order to leverage this functionality, the classifier has to be configured 
+using a Logical SFF as an attachment-point, specifying within it the neutron 
+port to classify. 
+
+The following examples show how to configure an ACL, and a classifier having
+a Logical SFF as an attachment-point:
+
+**Configure an ACL**
+
+The following ACL enables traffic intended for port 80 within the subnetwork 
+192.168.2.0/24, for RSP1 and RSP1-Reverse. 
+
+::
+
+        {
+          "access-lists": {
+            "acl": [
+              {
+                "acl-name": "ACL1",
+                "acl-type": "ietf-access-control-list:ipv4-acl",
+                "access-list-entries": {
+                  "ace": [
+                    {
+                      "rule-name": "ACE1",
+                      "actions": {
+                        "service-function-acl:rendered-service-path": "RSP1"
+                      },
+                      "matches": {
+                        "destination-ipv4-network": "192.168.2.0/24",
+                        "source-ipv4-network": "192.168.2.0/24",
+                        "protocol": "6",
+                        "source-port-range": {
+                            "lower-port": 0
+                        },
+                        "destination-port-range": {
+                            "lower-port": 80
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "acl-name": "ACL2",
+                "acl-type": "ietf-access-control-list:ipv4-acl",
+                "access-list-entries": {
+                  "ace": [
+                    {
+                      "rule-name": "ACE2",
+                      "actions": {
+                        "service-function-acl:rendered-service-path": "RSP1-Reverse"
+                      },
+                      "matches": {
+                        "destination-ipv4-network": "192.168.2.0/24",
+                        "source-ipv4-network": "192.168.2.0/24",
+                        "protocol": "6",
+                        "source-port-range": {
+                            "lower-port": 80
+                        },
+                        "destination-port-range": {
+                            "lower-port": 0
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+
+::
+
+  curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '${JSON}' -X PUT --user admin:admin http://localhost:8181/restconf/config/ietf-access-control-list:access-lists/
+
+**Configure a classifier JSON**
+
+The following JSON provisions a classifier, having a Logical SFF as an 
+attachment point. The value of the field 'interface' is where you 
+indicate the neutron ports of the VMs you want to classify.
+
+::
+
+        {
+          "service-function-classifiers": {
+            "service-function-classifier": [
+              {
+                "name": "Classifier1",
+                "scl-service-function-forwarder": [
+                  {
+                    "name": "sfflogical1",
+                    "interface": "09a78ba3-78ba-40f5-a3ea-1ce708367f2b"
+                  }
+                ],
+                "acl": {
+                    "name": "ACL1",
+                    "type": "ietf-access-control-list:ipv4-acl"
+                 }
+              }
+            ]
+          }
+        }
+
+::
+
+  curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '${JSON}' -X PUT --user admin:admin http://localhost:8181/restconf/config/service-function-classifier:service-function-classifiers/
 
