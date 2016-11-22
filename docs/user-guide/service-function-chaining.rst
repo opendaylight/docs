@@ -533,7 +533,7 @@ Next Hop Table detailed
 The Next Hop table uses the RSP Path Id and appropriate packet fields to
 determine where to send the packet next. For NSH, only the NSP (Network
 Services Path, RSP ID) and NSI (Network Services Index, next hop) fields
-from the NSH header are needed to determine the VxLAN tunnel destination
+from the NSH header are needed to determine the VXLAN tunnel destination
 IP. For VLAN or MPLS, then the source MAC address is used to determine
 the destination MAC address.
 
@@ -2573,11 +2573,11 @@ The following are examples to configure the Logical SFF:
                         "interface-name": "eccb57ae-5a2e-467f-823e-45d7bb2a6a9a",
                         "transport": "service-locator:eth-nsh",
                         "service-function-forwarder": "sfflogical1"
-                        
+
                     }
                 ]
             },
-                        {
+            {
                 "name": "dpi-1",
                 "type": "dpi",
                 "nsh-aware": "true",
@@ -2670,9 +2670,362 @@ The following are examples to configure the Logical SFF:
                 "symmetric": "true",
                 "context-metadata": "NSH1",
                 "transport-type": "service-locator:vxlan-gpe"
-
-            }
-        ] 
-    } 
+        ]
     }
+    }
+	
+As a result of above configuration, ODL renders the needed flows in all involved SFFs. Those flows implement:
+
+-  Two Rendered Service Path:
+
+	-  dpi-1 (SF1), firewall-1 (SF2)
+        -  firewall-1 (SF2), dpi-1 (SF1)
+
+-  The communication between SFFs and SFs based on eth-nsh
+
+-  The communication between SFFs based on vxlan-gpe
+
+The following picture shows a topology and traffic flow (in green) which corresponds to the above configuration.
+
+.. figure:: ./images/sfc/single-logical-sff-example.png
+   :alt: Logical SFF Example
+   :width: 800px
+   :height: 600px
+
+   Logical SFF Example
+
+
+
+The Logical SFF functionality allows the ODL to find out the SFFs holding the SFs involved in a path. In this example 
+the SFFs affected are Node3 and Node4 then the controller renders the flows containing NSH parameters just in those SFFs.
+
+Here you have all the flows rendered in Node 3 and Node4 where you can see flows implewmenting NSH protocol; on the other hand,
+the rest of nodes no holding SFs involved in the paths (Node1, Node2 and Node5) do not contain NSH specific flows.
+
+
+**Rendered Flows Node 3**
+
+::
+
+ cookie=0x8000001, duration=195.752s, table=0, n_packets=260, n_bytes=18993, priority=5,in_port=1 actions=write_metadata:0xa0000000001/0xfffff0000000001,goto_table:36
+ cookie=0x8000001, duration=195.686s, table=0, n_packets=263, n_bytes=19113, priority=5,in_port=2 actions=write_metadata:0xb0000000001/0xfffff0000000001,goto_table:36
+ cookie=0x8000000, duration=195.009s, table=0, n_packets=5, n_bytes=390, priority=4,in_port=3 actions=write_metadata:0x80000000000/0xffffff0000000001,goto_table:17
+ cookie=0x8000001, duration=194.721s, table=0, n_packets=261, n_bytes=19106, priority=5,in_port=4 actions=write_metadata:0xd0000000001/0xfffff0000000001,goto_table:36
+ cookie=0x8000001, duration=194.254s, table=0, n_packets=261, n_bytes=18981, priority=5,in_port=5 actions=write_metadata:0xf0000000001/0xfffff0000000001,goto_table:36
+ cookie=0x8000001, duration=186.921s, table=0, n_packets=251, n_bytes=18258, priority=5,in_port=6 actions=write_metadata:0x100000000001/0xfffff0000000001,goto_table:36
+ cookie=0x8000001, duration=184.769s, table=0, n_packets=251, n_bytes=18360, priority=5,in_port=7 actions=write_metadata:0x1a0000000001/0xfffff0000000001,goto_table:36
+ cookie=0x8000001, duration=176.637s, table=0, n_packets=236, n_bytes=17221, priority=5,in_port=8 actions=write_metadata:0x250000000001/0xfffff0000000001,goto_table:36
+ cookie=0x8000001, duration=176.212s, table=0, n_packets=238, n_bytes=17361, priority=5,in_port=9 actions=write_metadata:0x290000000001/0xfffff0000000001,goto_table:36
+ cookie=0x8030000, duration=59.478s, table=17, n_packets=0, n_bytes=0, priority=4,metadata=0x80000000000/0xffffff0000000000 actions=write_metadata:0x6000080000000000/0xfffffffffffffffe,goto_table:83
+ cookie=0x8040000, duration=59.478s, table=17, n_packets=0, n_bytes=0, priority=6,metadata=0x6000080000000000/0xffffff0000000000 actions=write_metadata:0x7000081388000000/0xfffffffffffffffe,goto_table:50
+ cookie=0x8000000, duration=196.814s, table=17, n_packets=0, n_bytes=0, priority=0,metadata=0x5000000000000000/0xf000000000000000 actions=write_metadata:0x6000000000000000/0xf000000000000000,goto_table:80
+ cookie=0x6800000, duration=196.852s, table=18, n_packets=0, n_bytes=0, priority=0 actions=goto_table:38
+ cookie=0x1080000, duration=196.843s, table=19, n_packets=0, n_bytes=0, priority=100,arp,arp_op=2 actions=CONTROLLER:65535,resubmit(,17)
+ cookie=0x1080000, duration=196.842s, table=19, n_packets=0, n_bytes=0, priority=100,arp,arp_op=1 actions=CONTROLLER:65535,resubmit(,17)
+ cookie=0x1080000, duration=196.838s, table=19, n_packets=0, n_bytes=0, priority=0 actions=resubmit(,17)
+ cookie=0x1030000, duration=196.838s, table=20, n_packets=0, n_bytes=0, priority=0 actions=goto_table:80
+ cookie=0x8000004, duration=196.837s, table=22, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535
+ cookie=0x9000008, duration=194.119s, table=36, n_packets=0, n_bytes=0, priority=5,tun_id=0x8 actions=load:0x800->NXM_NX_REG6[],resubmit(,220)
+ cookie=0x9001388, duration=194.120s, table=36, n_packets=4, n_bytes=280, priority=5,tun_id=0x1388 actions=write_actions(group:209999)
+ cookie=0x9000000, duration=59.557s, table=36, n_packets=95, n_bytes=10687, priority=5,tun_id=0 actions=goto_table:83
+ cookie=0x6900000, duration=196.770s, table=40, n_packets=0, n_bytes=0, priority=0 actions=drop
+ cookie=0x6900000, duration=196.744s, table=41, n_packets=0, n_bytes=0, priority=62020,ct_state=-new+est-rel-inv+trk actions=resubmit(,17)
+ cookie=0x6900000, duration=196.728s, table=41, n_packets=0, n_bytes=0, priority=62020,ct_state=-new-est+rel-inv+trk actions=resubmit(,17)
+ cookie=0x6900000, duration=196.722s, table=41, n_packets=0, n_bytes=0, priority=36007,ct_state=+new+trk actions=drop
+ cookie=0x6900000, duration=196.706s, table=41, n_packets=0, n_bytes=0, priority=36007,ct_state=+inv+trk actions=drop
+ cookie=0x6900000, duration=196.759s, table=41, n_packets=0, n_bytes=0, priority=0 actions=drop
+ cookie=0x4000000, duration=196.793s, table=45, n_packets=0, n_bytes=0, priority=0 actions=resubmit(,17)
+ cookie=0x8051388, duration=194.146s, table=50, n_packets=2, n_bytes=140, priority=20,metadata=0x81388000000/0xfffffffff000000,dl_src=6e:e0:06:b4:c5:1e actions=goto_table:51
+ cookie=0x8050000, duration=196.874s, table=50, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535,goto_table:51
+ cookie=0x8031388, duration=194.132s, table=51, n_packets=0, n_bytes=0, priority=20,metadata=0x1388000000/0xffff000000,dl_dst=6e:e0:06:b4:c5:1e actions=load:0x800->NXM_NX_REG6[],resubmit(,220)
+ cookie=0x8031388, duration=193.267s, table=51, n_packets=0, n_bytes=0, priority=20,metadata=0x1388000000/0xffff000000,dl_dst=c2:16:56:fb:55:98 actions=set_field:0x1->tun_id,output:4
+ cookie=0x8031388, duration=193.056s, table=51, n_packets=0, n_bytes=0, priority=20,metadata=0x1388000000/0xffff000000,dl_dst=0a:e0:94:01:59:2c actions=set_field:0x2->tun_id,output:5
+ cookie=0x8031388, duration=183.414s, table=51, n_packets=0, n_bytes=0, priority=20,metadata=0x1388000000/0xffff000000,dl_dst=02:14:84:5e:a8:5d actions=set_field:0x11->tun_id,output:7
+ cookie=0x8031388, duration=174.276s, table=51, n_packets=0, n_bytes=0, priority=20,metadata=0x1388000000/0xffff000000,dl_dst=fa:f6:8b:da:f3:c0 actions=set_field:0x1e->tun_id,output:9
+ cookie=0x8030000, duration=196.829s, table=51, n_packets=2, n_bytes=140, priority=0 actions=goto_table:52
+ cookie=0x8701388, duration=194.105s, table=52, n_packets=2, n_bytes=140, priority=5,metadata=0x1388000000/0xffff000001 actions=write_actions(group:210000)
+ cookie=0x8800008, duration=194.104s, table=55, n_packets=2, n_bytes=140, priority=10,tun_id=0x8,metadata=0x80000000000/0xfffff0000000000 actions=drop
+ cookie=0x8800008, duration=194.105s, table=55, n_packets=4, n_bytes=280, priority=9,tun_id=0x8 actions=load:0x800->NXM_NX_REG6[],resubmit(,220)
+ cookie=0x6800000, duration=196.882s, table=60, n_packets=0, n_bytes=0, priority=0 actions=resubmit(,17)
+ cookie=0x1030000, duration=196.837s, table=80, n_packets=0, n_bytes=0, priority=0 actions=resubmit(,17)
+ cookie=0x14, duration=59.264s, table=83, n_packets=0, n_bytes=0, priority=250,nsp=5 actions=goto_table:86
+ cookie=0x14, duration=59.194s, table=83, n_packets=0, n_bytes=0, priority=250,nsp=8388613 actions=goto_table:86
+ cookie=0x14, duration=59.264s, table=83, n_packets=95, n_bytes=10687, priority=5 actions=drop
+ cookie=0x14, duration=59.264s, table=84, n_packets=0, n_bytes=0, priority=5 actions=goto_table:85
+ cookie=0x14, duration=59.264s, table=85, n_packets=0, n_bytes=0, priority=5 actions=goto_table:86
+ cookie=0x14, duration=59.257s, table=86, n_packets=0, n_bytes=0, priority=550,nsi=254,nsp=5 actions=load:0x8e0a37cc9094->NXM_NX_ENCAP_ETH_SRC[],load:0x6ee006b4c51e->NXM_NX_ENCAP_ETH_DST[],goto_table:87
+ cookie=0x14, duration=59.189s, table=86, n_packets=0, n_bytes=0, priority=550,nsi=255,nsp=8388613 actions=load:0x8e0a37cc9094->NXM_NX_ENCAP_ETH_SRC[],load:0x6ee006b4c51e->NXM_NX_ENCAP_ETH_DST[],goto_table:87
+ cookie=0x14, duration=59.257s, table=86, n_packets=0, n_bytes=0, priority=5 actions=goto_table:87
+ cookie=0xba5eba1100000203, duration=59.213s, table=87, n_packets=0, n_bytes=0, priority=650,nsi=253,nsp=5 actions=pop_nsh,set_field:6e:e0:06:b4:c5:1e->eth_src,resubmit(,17)
+ cookie=0xba5eba1100000201, duration=59.213s, table=87, n_packets=0, n_bytes=0, priority=650,nsi=254,nsp=5 actions=load:0x800->NXM_NX_REG6[],resubmit(,220)
+ cookie=0xba5eba1100000201, duration=59.188s, table=87, n_packets=0, n_bytes=0, priority=650,nsi=255,nsp=8388613 actions=load:0x800->NXM_NX_REG6[],resubmit(,220)
+ cookie=0xba5eba1100000201, duration=59.182s, table=87, n_packets=0, n_bytes=0, priority=650,nsi=254,nsp=8388613 actions=set_field:0->tun_id,output:6
+ cookie=0x14, duration=59.213s, table=87, n_packets=0, n_bytes=0, priority=5 actions=drop
+ cookie=0x8000007, duration=194.879s, table=220, n_packets=4, n_bytes=280, priority=7,reg6=0x800 actions=output:3
+ cookie=0x6900000, duration=196.793s, table=251, n_packets=0, n_bytes=0, priority=0 actions=drop
+ cookie=0x6900000, duration=196.697s, table=252, n_packets=0, n_bytes=0, priority=62020,ct_state=-new+est-rel-inv+trk actions=resubmit(,220)
+ cookie=0x6900000, duration=196.691s, table=252, n_packets=0, n_bytes=0, priority=62020,ct_state=-new-est+rel-inv+trk actions=resubmit(,220)
+ cookie=0x6900000, duration=196.682s, table=252, n_packets=0, n_bytes=0, priority=36007,ct_state=+new+trk actions=drop
+ cookie=0x6900000, duration=196.674s, table=252, n_packets=0, n_bytes=0, priority=36007,ct_state=+inv+trk actions=drop
+ cookie=0x6900000, duration=196.778s, table=252, n_packets=0, n_bytes=0, priority=0 actions=drop
+ 
+**Rendered Flows Node 4**
+
+::
+ 
+ cookie=0x8000001, duration=196.160s, table=0, n_packets=261, n_bytes=19059, priority=5,in_port=1 actions=write_metadata:0x130000000001/0xfffff0000000001,goto_table:36
+ cookie=0x8000001, duration=196.127s, table=0, n_packets=265, n_bytes=19245, priority=5,in_port=2 actions=write_metadata:0x140000000001/0xfffff0000000001,goto_table:36
+ cookie=0x8000001, duration=196.107s, table=0, n_packets=264, n_bytes=19257, priority=5,in_port=3 actions=write_metadata:0x150000000001/0xfffff0000000001,goto_table:36
+ cookie=0x8000000, duration=195.369s, table=0, n_packets=5, n_bytes=390, priority=4,in_port=4 actions=write_metadata:0x110000000000/0xffffff0000000001,goto_table:17
+ cookie=0x8000001, duration=195.219s, table=0, n_packets=260, n_bytes=19040, priority=5,in_port=5 actions=write_metadata:0x170000000001/0xfffff0000000001,goto_table:36
+ cookie=0x8000001, duration=194.472s, table=0, n_packets=261, n_bytes=19059, priority=5,in_port=6 actions=write_metadata:0x1b0000000001/0xfffff0000000001,goto_table:36
+ cookie=0x8000001, duration=194.445s, table=0, n_packets=262, n_bytes=19047, priority=5,in_port=7 actions=write_metadata:0x1c0000000001/0xfffff0000000001,goto_table:36
+ cookie=0x8000001, duration=186.750s, table=0, n_packets=249, n_bytes=18173, priority=5,in_port=8 actions=write_metadata:0x1f0000000001/0xfffff0000000001,goto_table:36
+ cookie=0x8000001, duration=186.243s, table=0, n_packets=251, n_bytes=18360, priority=5,in_port=9 actions=write_metadata:0x260000000001/0xfffff0000000001,goto_table:36
+ cookie=0x8030000, duration=69.334s, table=17, n_packets=0, n_bytes=0, priority=4,metadata=0x110000000000/0xffffff0000000000 actions=write_metadata:0x6000110000000000/0xfffffffffffffffe,goto_table:83
+ cookie=0x8040000, duration=69.331s, table=17, n_packets=0, n_bytes=0, priority=6,metadata=0x6000110000000000/0xffffff0000000000 actions=write_metadata:0x7000111388000000/0xfffffffffffffffe,goto_table:50
+ cookie=0x8000000, duration=197.124s, table=17, n_packets=0, n_bytes=0, priority=0,metadata=0x5000000000000000/0xf000000000000000 actions=write_metadata:0x6000000000000000/0xf000000000000000,goto_table:80
+ cookie=0x6800000, duration=197.174s, table=18, n_packets=0, n_bytes=0, priority=0 actions=goto_table:38
+ cookie=0x1080000, duration=197.152s, table=19, n_packets=0, n_bytes=0, priority=100,arp,arp_op=1 actions=CONTROLLER:65535,resubmit(,17)
+ cookie=0x1080000, duration=197.151s, table=19, n_packets=0, n_bytes=0, priority=100,arp,arp_op=2 actions=CONTROLLER:65535,resubmit(,17)
+ cookie=0x1080000, duration=197.144s, table=19, n_packets=0, n_bytes=0, priority=0 actions=resubmit(,17)
+ cookie=0x1030000, duration=197.144s, table=20, n_packets=0, n_bytes=0, priority=0 actions=goto_table:80
+ cookie=0x8000004, duration=197.143s, table=22, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535
+ cookie=0x9000011, duration=193.235s, table=36, n_packets=0, n_bytes=0, priority=5,tun_id=0x11 actions=load:0x1100->NXM_NX_REG6[],resubmit(,220)
+ cookie=0x9001388, duration=193.235s, table=36, n_packets=2, n_bytes=140, priority=5,tun_id=0x1388 actions=write_actions(group:209999)
+ cookie=0x9000000, duration=69.432s, table=36, n_packets=112, n_bytes=12600, priority=5,tun_id=0 actions=goto_table:83
+ cookie=0x6900000, duration=197.086s, table=40, n_packets=0, n_bytes=0, priority=0 actions=drop
+ cookie=0x6900000, duration=197.061s, table=41, n_packets=0, n_bytes=0, priority=62020,ct_state=-new+est-rel-inv+trk actions=resubmit(,17)
+ cookie=0x6900000, duration=197.019s, table=41, n_packets=0, n_bytes=0, priority=62020,ct_state=-new-est+rel-inv+trk actions=resubmit(,17)
+ cookie=0x6900000, duration=197.019s, table=41, n_packets=0, n_bytes=0, priority=36007,ct_state=+new+trk actions=drop
+ cookie=0x6900000, duration=196.959s, table=41, n_packets=0, n_bytes=0, priority=36007,ct_state=+inv+trk actions=drop
+ cookie=0x6900000, duration=197.081s, table=41, n_packets=0, n_bytes=0, priority=0 actions=drop
+ cookie=0x4000000, duration=197.132s, table=45, n_packets=0, n_bytes=0, priority=0 actions=resubmit(,17)
+ cookie=0x8051388, duration=193.239s, table=50, n_packets=2, n_bytes=140, priority=20,metadata=0x111388000000/0xfffffffff000000,dl_src=02:14:84:5e:a8:5d actions=goto_table:51
+ cookie=0x8050000, duration=197.157s, table=50, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535,goto_table:51
+ cookie=0x8031388, duration=193.239s, table=51, n_packets=0, n_bytes=0, priority=20,metadata=0x1388000000/0xffff000000,dl_dst=c2:16:56:fb:55:98 actions=set_field:0x1->tun_id,output:5
+ cookie=0x8031388, duration=193.239s, table=51, n_packets=0, n_bytes=0, priority=20,metadata=0x1388000000/0xffff000000,dl_dst=0a:e0:94:01:59:2c actions=set_field:0x2->tun_id,output:7
+ cookie=0x8031388, duration=193.239s, table=51, n_packets=0, n_bytes=0, priority=20,metadata=0x1388000000/0xffff000000,dl_dst=6e:e0:06:b4:c5:1e actions=set_field:0x8->tun_id,output:6
+ cookie=0x8031388, duration=193.239s, table=51, n_packets=0, n_bytes=0, priority=20,metadata=0x1388000000/0xffff000000,dl_dst=02:14:84:5e:a8:5d actions=load:0x1100->NXM_NX_REG6[],resubmit(,220)
+ cookie=0x8031388, duration=184.375s, table=51, n_packets=0, n_bytes=0, priority=20,metadata=0x1388000000/0xffff000000,dl_dst=fa:f6:8b:da:f3:c0 actions=set_field:0x1e->tun_id,output:9
+ cookie=0x8030000, duration=197.106s, table=51, n_packets=2, n_bytes=140, priority=0 actions=goto_table:52
+ cookie=0x8701388, duration=193.235s, table=52, n_packets=2, n_bytes=140, priority=5,metadata=0x1388000000/0xffff000001 actions=write_actions(group:210000)
+ cookie=0x8800011, duration=193.224s, table=55, n_packets=2, n_bytes=140, priority=10,tun_id=0x11,metadata=0x110000000000/0xfffff0000000000 actions=drop
+ cookie=0x8800011, duration=193.234s, table=55, n_packets=2, n_bytes=140, priority=9,tun_id=0x11 actions=load:0x1100->NXM_NX_REG6[],resubmit(,220)
+ cookie=0x6800000, duration=197.189s, table=60, n_packets=0, n_bytes=0, priority=0 actions=resubmit(,17)
+ cookie=0x1030000, duration=197.136s, table=80, n_packets=0, n_bytes=0, priority=0 actions=resubmit(,17)
+ cookie=0x14, duration=69.040s, table=83, n_packets=0, n_bytes=0, priority=250,nsp=5 actions=goto_table:86
+ cookie=0x14, duration=69.008s, table=83, n_packets=0, n_bytes=0, priority=250,nsp=8388613 actions=goto_table:86
+ cookie=0x14, duration=69.040s, table=83, n_packets=112, n_bytes=12600, priority=5 actions=drop
+ cookie=0x14, duration=69.040s, table=84, n_packets=0, n_bytes=0, priority=5 actions=goto_table:85
+ cookie=0x14, duration=69.040s, table=85, n_packets=0, n_bytes=0, priority=5 actions=goto_table:86
+ cookie=0x14, duration=69.040s, table=86, n_packets=0, n_bytes=0, priority=550,nsi=255,nsp=5 actions=load:0xbea93873f4fa->NXM_NX_ENCAP_ETH_SRC[],load:0x214845ea85d->NXM_NX_ENCAP_ETH_DST[],goto_table:87
+ cookie=0x14, duration=69.005s, table=86, n_packets=0, n_bytes=0, priority=550,nsi=254,nsp=8388613 actions=load:0xbea93873f4fa->NXM_NX_ENCAP_ETH_SRC[],load:0x214845ea85d->NXM_NX_ENCAP_ETH_DST[],goto_table:87
+ cookie=0x14, duration=69.040s, table=86, n_packets=0, n_bytes=0, priority=5 actions=goto_table:87
+ cookie=0xba5eba1100000201, duration=69.029s, table=87, n_packets=0, n_bytes=0, priority=650,nsi=255,nsp=5 actions=load:0x1100->NXM_NX_REG6[],resubmit(,220)
+ cookie=0xba5eba1100000201, duration=69.029s, table=87, n_packets=0, n_bytes=0, priority=650,nsi=254,nsp=5 actions=set_field:0->tun_id,output:1
+ cookie=0xba5eba1100000201, duration=68.999s, table=87, n_packets=0, n_bytes=0, priority=650,nsi=254,nsp=8388613 actions=load:0x1100->NXM_NX_REG6[],resubmit(,220)
+ cookie=0xba5eba1100000203, duration=68.996s, table=87, n_packets=0, n_bytes=0, priority=650,nsi=253,nsp=8388613 actions=pop_nsh,set_field:02:14:84:5e:a8:5d->eth_src,resubmit(,17)
+ cookie=0x14, duration=69.028s, table=87, n_packets=0, n_bytes=0, priority=5 actions=drop
+ cookie=0x8000007, duration=195.224s, table=220, n_packets=2, n_bytes=140, priority=7,reg6=0x1100 actions=output:4
+ cookie=0x6900000, duration=197.133s, table=251, n_packets=0, n_bytes=0, priority=0 actions=drop
+ cookie=0x6900000, duration=196.959s, table=252, n_packets=0, n_bytes=0, priority=62020,ct_state=-new+est-rel-inv+trk actions=resubmit(,220)
+ cookie=0x6900000, duration=196.959s, table=252, n_packets=0, n_bytes=0, priority=62020,ct_state=-new-est+rel-inv+trk actions=resubmit(,220)
+ cookie=0x6900000, duration=196.959s, table=252, n_packets=0, n_bytes=0, priority=36007,ct_state=+new+trk actions=drop
+ cookie=0x6900000, duration=196.959s, table=252, n_packets=0, n_bytes=0, priority=36007,ct_state=+inv+trk actions=drop
+ cookie=0x6900000, duration=197.111s, table=252, n_packets=0, n_bytes=0, priority=0 actions=drop
+ 
+An interesting scenario to show the Logical SFF strength is the migration of a SF from a compute node to another. 
+The ODL will learn the new topology by itself them it will re-render the new flows to the new SFFS affected. 
+
+
+
+  
+.. figure:: ./images/sfc/single-logical-sff-example-migration.png
+   :alt: Logical SFF - SF Migration Example
+   :width: 800px
+   :height: 600px
+
+   Logical SFF - SF Migration Example
+
+
+In our example, SF2 is moved from Node4 to Node2 then ODL removes NSH specific flows from Node4 and puts them in Node2.
+Check below flows showing this effect.   
+
+**Rendered Flows Node 3 After Migration**
+
+::
+
+ cookie=0x8000001, duration=405.701s, table=0, n_packets=542, n_bytes=39579, priority=5,in_port=1 actions=write_metadata:0xa0000000001/0xfffff0000000001,goto_table:36
+ cookie=0x8000001, duration=405.635s, table=0, n_packets=546, n_bytes=39681, priority=5,in_port=2 actions=write_metadata:0xb0000000001/0xfffff0000000001,goto_table:36
+ cookie=0x8000000, duration=404.958s, table=0, n_packets=5, n_bytes=390, priority=4,in_port=3 actions=write_metadata:0x80000000000/0xffffff0000000001,goto_table:17
+ cookie=0x8000001, duration=404.670s, table=0, n_packets=544, n_bytes=39758, priority=5,in_port=4 actions=write_metadata:0xd0000000001/0xfffff0000000001,goto_table:36
+ cookie=0x8000001, duration=404.203s, table=0, n_packets=543, n_bytes=39483, priority=5,in_port=5 actions=write_metadata:0xf0000000001/0xfffff0000000001,goto_table:36
+ cookie=0x8000001, duration=396.870s, table=0, n_packets=532, n_bytes=38778, priority=5,in_port=6 actions=write_metadata:0x100000000001/0xfffff0000000001,goto_table:36
+ cookie=0x8000001, duration=394.718s, table=0, n_packets=532, n_bytes=38880, priority=5,in_port=7 actions=write_metadata:0x1a0000000001/0xfffff0000000001,goto_table:36
+ cookie=0x8000001, duration=386.586s, table=0, n_packets=515, n_bytes=37609, priority=5,in_port=8 actions=write_metadata:0x250000000001/0xfffff0000000001,goto_table:36
+ cookie=0x8000001, duration=386.161s, table=0, n_packets=517, n_bytes=37749, priority=5,in_port=9 actions=write_metadata:0x290000000001/0xfffff0000000001,goto_table:36
+ cookie=0x8030000, duration=269.427s, table=17, n_packets=0, n_bytes=0, priority=4,metadata=0x80000000000/0xffffff0000000000 actions=write_metadata:0x6000080000000000/0xfffffffffffffffe,goto_table:83
+ cookie=0x8040000, duration=269.427s, table=17, n_packets=0, n_bytes=0, priority=6,metadata=0x6000080000000000/0xffffff0000000000 actions=write_metadata:0x7000081388000000/0xfffffffffffffffe,goto_table:50
+ cookie=0x8000000, duration=406.763s, table=17, n_packets=0, n_bytes=0, priority=0,metadata=0x5000000000000000/0xf000000000000000 actions=write_metadata:0x6000000000000000/0xf000000000000000,goto_table:80
+ cookie=0x6800000, duration=406.801s, table=18, n_packets=0, n_bytes=0, priority=0 actions=goto_table:38
+ cookie=0x1080000, duration=406.792s, table=19, n_packets=0, n_bytes=0, priority=100,arp,arp_op=2 actions=CONTROLLER:65535,resubmit(,17)
+ cookie=0x1080000, duration=406.791s, table=19, n_packets=0, n_bytes=0, priority=100,arp,arp_op=1 actions=CONTROLLER:65535,resubmit(,17)
+ cookie=0x1080000, duration=406.787s, table=19, n_packets=0, n_bytes=0, priority=0 actions=resubmit(,17)
+ cookie=0x1030000, duration=406.787s, table=20, n_packets=0, n_bytes=0, priority=0 actions=goto_table:80
+ cookie=0x8000004, duration=406.786s, table=22, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535
+ cookie=0x9000008, duration=404.068s, table=36, n_packets=0, n_bytes=0, priority=5,tun_id=0x8 actions=load:0x800->NXM_NX_REG6[],resubmit(,220)
+ cookie=0x9001388, duration=404.068s, table=36, n_packets=4, n_bytes=280, priority=5,tun_id=0x1388 actions=write_actions(group:209999)
+ cookie=0x9000000, duration=269.505s, table=36, n_packets=431, n_bytes=48487, priority=5,tun_id=0 actions=goto_table:83
+ cookie=0x6900000, duration=406.718s, table=40, n_packets=0, n_bytes=0, priority=0 actions=drop
+ cookie=0x6900000, duration=406.692s, table=41, n_packets=0, n_bytes=0, priority=62020,ct_state=-new+est-rel-inv+trk actions=resubmit(,17)
+ cookie=0x6900000, duration=406.676s, table=41, n_packets=0, n_bytes=0, priority=62020,ct_state=-new-est+rel-inv+trk actions=resubmit(,17)
+ cookie=0x6900000, duration=406.670s, table=41, n_packets=0, n_bytes=0, priority=36007,ct_state=+new+trk actions=drop
+ cookie=0x6900000, duration=406.654s, table=41, n_packets=0, n_bytes=0, priority=36007,ct_state=+inv+trk actions=drop
+ cookie=0x6900000, duration=406.707s, table=41, n_packets=0, n_bytes=0, priority=0 actions=drop
+ cookie=0x4000000, duration=406.741s, table=45, n_packets=0, n_bytes=0, priority=0 actions=resubmit(,17)
+ cookie=0x8051388, duration=404.094s, table=50, n_packets=2, n_bytes=140, priority=20,metadata=0x81388000000/0xfffffffff000000,dl_src=6e:e0:06:b4:c5:1e actions=goto_table:51
+ cookie=0x8050000, duration=406.822s, table=50, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535,goto_table:51
+ cookie=0x8031388, duration=404.080s, table=51, n_packets=0, n_bytes=0, priority=20,metadata=0x1388000000/0xffff000000,dl_dst=6e:e0:06:b4:c5:1e actions=load:0x800->NXM_NX_REG6[],resubmit(,220)
+ cookie=0x8031388, duration=403.215s, table=51, n_packets=0, n_bytes=0, priority=20,metadata=0x1388000000/0xffff000000,dl_dst=c2:16:56:fb:55:98 actions=set_field:0x1->tun_id,output:4
+ cookie=0x8031388, duration=403.004s, table=51, n_packets=0, n_bytes=0, priority=20,metadata=0x1388000000/0xffff000000,dl_dst=0a:e0:94:01:59:2c actions=set_field:0x2->tun_id,output:5
+ cookie=0x8031388, duration=384.224s, table=51, n_packets=0, n_bytes=0, priority=20,metadata=0x1388000000/0xffff000000,dl_dst=fa:f6:8b:da:f3:c0 actions=set_field:0x1e->tun_id,output:9
+ cookie=0x8031388, duration=64.193s, table=51, n_packets=0, n_bytes=0, priority=20,metadata=0x1388000000/0xffff000000,dl_dst=02:14:84:5e:a8:5d actions=set_field:0x11->tun_id,output:5
+ cookie=0x8030000, duration=406.777s, table=51, n_packets=2, n_bytes=140, priority=0 actions=goto_table:52
+ cookie=0x8701388, duration=404.053s, table=52, n_packets=2, n_bytes=140, priority=5,metadata=0x1388000000/0xffff000001 actions=write_actions(group:210000)
+ cookie=0x8800008, duration=404.052s, table=55, n_packets=2, n_bytes=140, priority=10,tun_id=0x8,metadata=0x80000000000/0xfffff0000000000 actions=drop
+ cookie=0x8800008, duration=404.053s, table=55, n_packets=4, n_bytes=280, priority=9,tun_id=0x8 actions=load:0x800->NXM_NX_REG6[],resubmit(,220)
+ cookie=0x6800000, duration=406.830s, table=60, n_packets=0, n_bytes=0, priority=0 actions=resubmit(,17)
+ cookie=0x1030000, duration=406.785s, table=80, n_packets=0, n_bytes=0, priority=0 actions=resubmit(,17)
+ cookie=0x14, duration=64.044s, table=83, n_packets=0, n_bytes=0, priority=250,nsp=5 actions=goto_table:86
+ cookie=0x14, duration=63.947s, table=83, n_packets=0, n_bytes=0, priority=250,nsp=8388613 actions=goto_table:86
+ cookie=0x14, duration=269.212s, table=83, n_packets=431, n_bytes=48487, priority=5 actions=drop
+ cookie=0x14, duration=269.212s, table=84, n_packets=0, n_bytes=0, priority=5 actions=goto_table:85
+ cookie=0x14, duration=269.212s, table=85, n_packets=0, n_bytes=0, priority=5 actions=goto_table:86
+ cookie=0x14, duration=64.044s, table=86, n_packets=0, n_bytes=0, priority=550,nsi=254,nsp=5 actions=load:0x8e0a37cc9094->NXM_NX_ENCAP_ETH_SRC[],load:0x6ee006b4c51e->NXM_NX_ENCAP_ETH_DST[],goto_table:87
+ cookie=0x14, duration=63.947s, table=86, n_packets=0, n_bytes=0, priority=550,nsi=255,nsp=8388613 actions=load:0x8e0a37cc9094->NXM_NX_ENCAP_ETH_SRC[],load:0x6ee006b4c51e->NXM_NX_ENCAP_ETH_DST[],goto_table:87
+ cookie=0x14, duration=269.205s, table=86, n_packets=0, n_bytes=0, priority=5 actions=goto_table:87
+ cookie=0xba5eba1100000201, duration=64.034s, table=87, n_packets=0, n_bytes=0, priority=650,nsi=254,nsp=5 actions=load:0x800->NXM_NX_REG6[],resubmit(,220)
+ cookie=0xba5eba1100000203, duration=64.034s, table=87, n_packets=0, n_bytes=0, priority=650,nsi=253,nsp=5 actions=pop_nsh,set_field:6e:e0:06:b4:c5:1e->eth_src,resubmit(,17)
+ cookie=0xba5eba1100000201, duration=63.947s, table=87, n_packets=0, n_bytes=0, priority=650,nsi=255,nsp=8388613 actions=load:0x800->NXM_NX_REG6[],resubmit(,220)
+ cookie=0xba5eba1100000201, duration=63.942s, table=87, n_packets=0, n_bytes=0, priority=650,nsi=254,nsp=8388613 actions=set_field:0->tun_id,output:2
+ cookie=0x14, duration=269.161s, table=87, n_packets=0, n_bytes=0, priority=5 actions=drop
+ cookie=0x8000007, duration=404.827s, table=220, n_packets=4, n_bytes=280, priority=7,reg6=0x800 actions=output:3
+ cookie=0x6900000, duration=406.741s, table=251, n_packets=0, n_bytes=0, priority=0 actions=drop
+ cookie=0x6900000, duration=406.645s, table=252, n_packets=0, n_bytes=0, priority=62020,ct_state=-new+est-rel-inv+trk actions=resubmit(,220)
+ cookie=0x6900000, duration=406.639s, table=252, n_packets=0, n_bytes=0, priority=62020,ct_state=-new-est+rel-inv+trk actions=resubmit(,220)
+ cookie=0x6900000, duration=406.630s, table=252, n_packets=0, n_bytes=0, priority=36007,ct_state=+new+trk actions=drop
+ cookie=0x6900000, duration=406.622s, table=252, n_packets=0, n_bytes=0, priority=36007,ct_state=+inv+trk actions=drop
+ cookie=0x6900000, duration=406.726s, table=252, n_packets=0, n_bytes=0, priority=0 actions=drop
+
+**Rendered Flows Node 2 After Migration**
+
+::
+
+ cookie=0x8000001, duration=407.010s, table=0, n_packets=545, n_bytes=39824, priority=5,in_port=1 actions=write_metadata:0x40000000001/0xfffff0000000001,goto_table:36
+ cookie=0x8000000, duration=406.283s, table=0, n_packets=5, n_bytes=390, priority=4,in_port=2 actions=write_metadata:0x20000000000/0xffffff0000000001,goto_table:17
+ cookie=0x8000001, duration=405.591s, table=0, n_packets=544, n_bytes=39758, priority=5,in_port=3 actions=write_metadata:0x60000000001/0xfffff0000000001,goto_table:36
+ cookie=0x8000001, duration=399.180s, table=0, n_packets=536, n_bytes=39136, priority=5,in_port=4 actions=write_metadata:0x70000000001/0xfffff0000000001,goto_table:36
+ cookie=0x8000001, duration=397.549s, table=0, n_packets=537, n_bytes=39257, priority=5,in_port=5 actions=write_metadata:0xc0000000001/0xfffff0000000001,goto_table:36
+ cookie=0x8000001, duration=388.987s, table=0, n_packets=521, n_bytes=38052, priority=5,in_port=6 actions=write_metadata:0x160000000001/0xfffff0000000001,goto_table:36
+ cookie=0x8000001, duration=387.586s, table=0, n_packets=523, n_bytes=38239, priority=5,in_port=7 actions=write_metadata:0x190000000001/0xfffff0000000001,goto_table:36
+ cookie=0x8000001, duration=380.303s, table=0, n_packets=508, n_bytes=37053, priority=5,in_port=8 actions=write_metadata:0x1d0000000001/0xfffff0000000001,goto_table:36
+ cookie=0x8000001, duration=379.003s, table=0, n_packets=509, n_bytes=37174, priority=5,in_port=9 actions=write_metadata:0x280000000001/0xfffff0000000001,goto_table:36
+ cookie=0x8000000, duration=57.227s, table=0, n_packets=0, n_bytes=0, priority=4,in_port=10 actions=write_metadata:0x110000000000/0xffffff0000000001,goto_table:17
+ cookie=0x8040000, duration=405.419s, table=17, n_packets=3, n_bytes=230, priority=6,metadata=0x20000000000/0xffffff0000000000 actions=write_metadata:0x7000021388000000/0xfffffffffffffffe,goto_table:50
+ cookie=0x8040000, duration=57.208s, table=17, n_packets=0, n_bytes=0, priority=6,metadata=0x6000110000000000/0xffffff0000000000 actions=write_metadata:0x7000111388000000/0xfffffffffffffffe,goto_table:50
+ cookie=0x8030000, duration=57.208s, table=17, n_packets=0, n_bytes=0, priority=4,metadata=0x110000000000/0xffffff0000000000 actions=write_metadata:0x6000110000000000/0xfffffffffffffffe,goto_table:83
+ cookie=0x8000000, duration=407.919s, table=17, n_packets=0, n_bytes=0, priority=0,metadata=0x5000000000000000/0xf000000000000000 actions=write_metadata:0x6000000000000000/0xf000000000000000,goto_table:80
+ cookie=0x6800000, duration=407.988s, table=18, n_packets=0, n_bytes=0, priority=0 actions=goto_table:38
+ cookie=0x1080000, duration=408.009s, table=19, n_packets=0, n_bytes=0, priority=100,arp,arp_op=2 actions=CONTROLLER:65535,resubmit(,17)
+ cookie=0x1080000, duration=408.002s, table=19, n_packets=0, n_bytes=0, priority=100,arp,arp_op=1 actions=CONTROLLER:65535,resubmit(,17)
+ cookie=0x1080000, duration=408.009s, table=19, n_packets=0, n_bytes=0, priority=0 actions=resubmit(,17)
+ cookie=0x1030000, duration=408s, table=20, n_packets=0, n_bytes=0, priority=0 actions=goto_table:80
+ cookie=0x8000004, duration=407.990s, table=22, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535
+ cookie=0x9001388, duration=405.442s, table=36, n_packets=6, n_bytes=420, priority=5,tun_id=0x1388 actions=write_actions(group:209999)
+ cookie=0x9000002, duration=405.441s, table=36, n_packets=0, n_bytes=0, priority=5,tun_id=0x2 actions=load:0x200->NXM_NX_REG6[],resubmit(,220)
+ cookie=0x9000000, duration=56.989s, table=36, n_packets=96, n_bytes=10848, priority=5,tun_id=0 actions=goto_table:83
+ cookie=0x9000011, duration=56.988s, table=36, n_packets=0, n_bytes=0, priority=5,tun_id=0x11 actions=load:0x1100->NXM_NX_REG6[],resubmit(,220)
+ cookie=0x6900000, duration=407.953s, table=40, n_packets=0, n_bytes=0, priority=0 actions=drop
+ cookie=0x6900000, duration=407.892s, table=41, n_packets=0, n_bytes=0, priority=62020,ct_state=-new+est-rel-inv+trk actions=resubmit(,17)
+ cookie=0x6900000, duration=407.865s, table=41, n_packets=0, n_bytes=0, priority=62020,ct_state=-new-est+rel-inv+trk actions=resubmit(,17)
+ cookie=0x6900000, duration=407.854s, table=41, n_packets=0, n_bytes=0, priority=36007,ct_state=+new+trk actions=drop
+ cookie=0x6900000, duration=407.844s, table=41, n_packets=0, n_bytes=0, priority=36007,ct_state=+inv+trk actions=drop
+ cookie=0x6900000, duration=407.942s, table=41, n_packets=0, n_bytes=0, priority=0 actions=drop
+ cookie=0x4000000, duration=407.980s, table=45, n_packets=0, n_bytes=0, priority=0 actions=resubmit(,17)
+ cookie=0x8051388, duration=405.454s, table=50, n_packets=3, n_bytes=230, priority=20,metadata=0x21388000000/0xfffffffff000000,dl_src=0a:e0:94:01:59:2c actions=goto_table:51
+ cookie=0x8051388, duration=56.989s, table=50, n_packets=0, n_bytes=0, priority=20,metadata=0x111388000000/0xfffffffff000000,dl_src=02:14:84:5e:a8:5d actions=goto_table:51
+ cookie=0x8050000, duration=407.929s, table=50, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535,goto_table:51
+ cookie=0x8031388, duration=405.454s, table=51, n_packets=0, n_bytes=0, priority=20,metadata=0x1388000000/0xffff000000,dl_dst=0a:e0:94:01:59:2c actions=load:0x200->NXM_NX_REG6[],resubmit(,220)
+ cookie=0x8031388, duration=404.163s, table=51, n_packets=0, n_bytes=0, priority=20,metadata=0x1388000000/0xffff000000,dl_dst=c2:16:56:fb:55:98 actions=set_field:0x1->tun_id,output:3
+ cookie=0x8031388, duration=396.072s, table=51, n_packets=0, n_bytes=0, priority=20,metadata=0x1388000000/0xffff000000,dl_dst=6e:e0:06:b4:c5:1e actions=set_field:0x8->tun_id,output:5
+ cookie=0x8031388, duration=377.251s, table=51, n_packets=0, n_bytes=0, priority=20,metadata=0x1388000000/0xffff000000,dl_dst=fa:f6:8b:da:f3:c0 actions=set_field:0x1e->tun_id,output:9
+ cookie=0x8031388, duration=56.989s, table=51, n_packets=0, n_bytes=0, priority=20,metadata=0x1388000000/0xffff000000,dl_dst=02:14:84:5e:a8:5d actions=load:0x1100->NXM_NX_REG6[],resubmit(,220)
+ cookie=0x8030000, duration=407.878s, table=51, n_packets=3, n_bytes=230, priority=0 actions=goto_table:52
+ cookie=0x8701388, duration=405.441s, table=52, n_packets=3, n_bytes=230, priority=5,metadata=0x1388000000/0xffff000001 actions=write_actions(group:210000)
+ cookie=0x8800002, duration=405.431s, table=55, n_packets=3, n_bytes=230, priority=10,tun_id=0x2,metadata=0x20000000000/0xfffff0000000000 actions=drop
+ cookie=0x8800011, duration=56.988s, table=55, n_packets=0, n_bytes=0, priority=10,tun_id=0x11,metadata=0x110000000000/0xfffff0000000000 actions=drop
+ cookie=0x8800002, duration=405.437s, table=55, n_packets=6, n_bytes=420, priority=9,tun_id=0x2 actions=load:0x200->NXM_NX_REG6[],resubmit(,220)
+ cookie=0x8800011, duration=56.988s, table=55, n_packets=0, n_bytes=0, priority=9,tun_id=0x11 actions=load:0x1100->NXM_NX_REG6[],resubmit(,220)
+ cookie=0x6800000, duration=408.039s, table=60, n_packets=0, n_bytes=0, priority=0 actions=resubmit(,17)
+ cookie=0x1030000, duration=407.990s, table=80, n_packets=0, n_bytes=0, priority=0 actions=resubmit(,17)
+ cookie=0x14, duration=56.856s, table=83, n_packets=0, n_bytes=0, priority=250,nsp=5 actions=goto_table:86
+ cookie=0x14, duration=56.755s, table=83, n_packets=0, n_bytes=0, priority=250,nsp=8388613 actions=goto_table:86
+ cookie=0x14, duration=56.848s, table=83, n_packets=96, n_bytes=10848, priority=5 actions=drop
+ cookie=0x14, duration=56.848s, table=84, n_packets=0, n_bytes=0, priority=5 actions=goto_table:85
+ cookie=0x14, duration=56.848s, table=85, n_packets=0, n_bytes=0, priority=5 actions=goto_table:86
+ cookie=0x14, duration=56.847s, table=86, n_packets=0, n_bytes=0, priority=550,nsi=255,nsp=5 actions=load:0xbea93873f4fa->NXM_NX_ENCAP_ETH_SRC[],load:0x214845ea85d->NXM_NX_ENCAP_ETH_DST[],goto_table:87
+ cookie=0x14, duration=56.755s, table=86, n_packets=0, n_bytes=0, priority=550,nsi=254,nsp=8388613 actions=load:0xbea93873f4fa->NXM_NX_ENCAP_ETH_SRC[],load:0x214845ea85d->NXM_NX_ENCAP_ETH_DST[],goto_table:87
+ cookie=0x14, duration=56.842s, table=86, n_packets=0, n_bytes=0, priority=5 actions=goto_table:87
+ cookie=0xba5eba1100000201, duration=56.823s, table=87, n_packets=0, n_bytes=0, priority=650,nsi=255,nsp=5 actions=load:0x1100->NXM_NX_REG6[],resubmit(,220)
+ cookie=0xba5eba1100000201, duration=56.823s, table=87, n_packets=0, n_bytes=0, priority=650,nsi=254,nsp=5 actions=set_field:0->tun_id,output:4
+ cookie=0xba5eba1100000201, duration=56.755s, table=87, n_packets=0, n_bytes=0, priority=650,nsi=254,nsp=8388613 actions=load:0x1100->NXM_NX_REG6[],resubmit(,220)
+ cookie=0xba5eba1100000203, duration=56.750s, table=87, n_packets=0, n_bytes=0, priority=650,nsi=253,nsp=8388613 actions=pop_nsh,set_field:02:14:84:5e:a8:5d->eth_src,resubmit(,17)
+ cookie=0x14, duration=56.842s, table=87, n_packets=0, n_bytes=0, priority=5 actions=drop
+ cookie=0x8000007, duration=406.169s, table=220, n_packets=6, n_bytes=420, priority=7,reg6=0x200 actions=output:2
+ cookie=0x8000007, duration=56.989s, table=220, n_packets=0, n_bytes=0, priority=7,reg6=0x1100 actions=output:10
+ cookie=0x6900000, duration=407.983s, table=251, n_packets=0, n_bytes=0, priority=0 actions=drop
+ cookie=0x6900000, duration=407.827s, table=252, n_packets=0, n_bytes=0, priority=62020,ct_state=-new+est-rel-inv+trk actions=resubmit(,220)
+ cookie=0x6900000, duration=407.813s, table=252, n_packets=0, n_bytes=0, priority=62020,ct_state=-new-est+rel-inv+trk actions=resubmit(,220)
+ cookie=0x6900000, duration=407.802s, table=252, n_packets=0, n_bytes=0, priority=36007,ct_state=+new+trk actions=drop
+ cookie=0x6900000, duration=407.779s, table=252, n_packets=0, n_bytes=0, priority=36007,ct_state=+inv+trk actions=drop
+ cookie=0x6900000, duration=407.965s, table=252, n_packets=0, n_bytes=0, priority=0 actions=drop
+
+
+**Rendered Flows Node 4 After Migration**
+
+::
+
+ cookie=0x8000001, duration=382.155s, table=0, n_packets=508, n_bytes=37100, priority=5,in_port=1 actions=write_metadata:0x130000000001/0xfffff0000000001,goto_table:36
+ cookie=0x8000001, duration=382.122s, table=0, n_packets=513, n_bytes=37278, priority=5,in_port=2 actions=write_metadata:0x140000000001/0xfffff0000000001,goto_table:36
+ cookie=0x8000001, duration=382.102s, table=0, n_packets=513, n_bytes=37430, priority=5,in_port=3 actions=write_metadata:0x150000000001/0xfffff0000000001,goto_table:36
+ cookie=0x8000001, duration=381.214s, table=0, n_packets=509, n_bytes=37213, priority=5,in_port=5 actions=write_metadata:0x170000000001/0xfffff0000000001,goto_table:36
+ cookie=0x8000001, duration=380.467s, table=0, n_packets=511, n_bytes=37298, priority=5,in_port=6 actions=write_metadata:0x1b0000000001/0xfffff0000000001,goto_table:36
+ cookie=0x8000001, duration=380.440s, table=0, n_packets=509, n_bytes=37014, priority=5,in_port=7 actions=write_metadata:0x1c0000000001/0xfffff0000000001,goto_table:36
+ cookie=0x8000001, duration=372.745s, table=0, n_packets=501, n_bytes=36544, priority=5,in_port=8 actions=write_metadata:0x1f0000000001/0xfffff0000000001,goto_table:36
+ cookie=0x8000001, duration=372.238s, table=0, n_packets=499, n_bytes=36467, priority=5,in_port=9 actions=write_metadata:0x260000000001/0xfffff0000000001,goto_table:36
+ cookie=0x8000000, duration=383.119s, table=17, n_packets=0, n_bytes=0, priority=0,metadata=0x5000000000000000/0xf000000000000000 actions=write_metadata:0x6000000000000000/0xf000000000000000,goto_table:80
+ cookie=0x6800000, duration=383.169s, table=18, n_packets=0, n_bytes=0, priority=0 actions=goto_table:38
+ cookie=0x1080000, duration=383.146s, table=19, n_packets=0, n_bytes=0, priority=100,arp,arp_op=1 actions=CONTROLLER:65535,resubmit(,17)
+ cookie=0x1080000, duration=383.145s, table=19, n_packets=0, n_bytes=0, priority=100,arp,arp_op=2 actions=CONTROLLER:65535,resubmit(,17)
+ cookie=0x1080000, duration=383.138s, table=19, n_packets=0, n_bytes=0, priority=0 actions=resubmit(,17)
+ cookie=0x1030000, duration=383.138s, table=20, n_packets=0, n_bytes=0, priority=0 actions=goto_table:80
+ cookie=0x8000004, duration=383.137s, table=22, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535
+ cookie=0x6900000, duration=383.080s, table=40, n_packets=0, n_bytes=0, priority=0 actions=drop
+ cookie=0x6900000, duration=383.055s, table=41, n_packets=0, n_bytes=0, priority=62020,ct_state=-new+est-rel-inv+trk actions=resubmit(,17)
+ cookie=0x6900000, duration=383.013s, table=41, n_packets=0, n_bytes=0, priority=62020,ct_state=-new-est+rel-inv+trk actions=resubmit(,17)
+ cookie=0x6900000, duration=383.013s, table=41, n_packets=0, n_bytes=0, priority=36007,ct_state=+new+trk actions=drop
+ cookie=0x6900000, duration=382.953s, table=41, n_packets=0, n_bytes=0, priority=36007,ct_state=+inv+trk actions=drop
+ cookie=0x6900000, duration=383.075s, table=41, n_packets=0, n_bytes=0, priority=0 actions=drop
+ cookie=0x4000000, duration=383.126s, table=45, n_packets=0, n_bytes=0, priority=0 actions=resubmit(,17)
+ cookie=0x8050000, duration=383.151s, table=50, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535,goto_table:51
+ cookie=0x8030000, duration=383.100s, table=51, n_packets=2, n_bytes=140, priority=0 actions=goto_table:52
+ cookie=0x6800000, duration=383.183s, table=60, n_packets=0, n_bytes=0, priority=0 actions=resubmit(,17)
+ cookie=0x1030000, duration=383.130s, table=80, n_packets=0, n_bytes=0, priority=0 actions=resubmit(,17)
+ cookie=0x6900000, duration=383.127s, table=251, n_packets=0, n_bytes=0, priority=0 actions=drop
+ cookie=0x6900000, duration=382.953s, table=252, n_packets=0, n_bytes=0, priority=62020,ct_state=-new+est-rel-inv+trk actions=resubmit(,220)
+ cookie=0x6900000, duration=382.953s, table=252, n_packets=0, n_bytes=0, priority=62020,ct_state=-new-est+rel-inv+trk actions=resubmit(,220)
+ cookie=0x6900000, duration=382.953s, table=252, n_packets=0, n_bytes=0, priority=36007,ct_state=+new+trk actions=drop
+ cookie=0x6900000, duration=382.953s, table=252, n_packets=0, n_bytes=0, priority=36007,ct_state=+inv+trk actions=drop
+ cookie=0x6900000, duration=383.105s, table=252, n_packets=0, n_bytes=0, priority=0 actions=drop
 
