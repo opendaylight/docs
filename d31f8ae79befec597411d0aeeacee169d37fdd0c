@@ -69,6 +69,120 @@
       "revId": "d31f8ae79befec597411d0aeeacee169d37fdd0c",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_ae3c96e3",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 486,
+      "author": {
+        "id": 6327
+      },
+      "writtenOn": "2016-11-22T10:39:15Z",
+      "side": 1,
+      "message": "I would remove the commas in this line",
+      "range": {
+        "startLine": 486,
+        "startChar": 29,
+        "endLine": 486,
+        "endChar": 30
+      },
+      "revId": "d31f8ae79befec597411d0aeeacee169d37fdd0c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_2e308600",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 489,
+      "author": {
+        "id": 6327
+      },
+      "writtenOn": "2016-11-22T10:39:15Z",
+      "side": 1,
+      "message": "reach or reaches?",
+      "range": {
+        "startLine": 489,
+        "startChar": 5,
+        "endLine": 489,
+        "endChar": 6
+      },
+      "revId": "d31f8ae79befec597411d0aeeacee169d37fdd0c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_8e16fa53",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 492,
+      "author": {
+        "id": 6327
+      },
+      "writtenOn": "2016-11-22T10:39:15Z",
+      "side": 1,
+      "message": "I would remove this comma",
+      "revId": "d31f8ae79befec597411d0aeeacee169d37fdd0c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_0e02ea0a",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 6327
+      },
+      "writtenOn": "2016-11-22T10:39:15Z",
+      "side": 1,
+      "message": "I would change:\n,and push NSH / NSH metadata\nBy:\nand push NSH header containing NSH metadata",
+      "revId": "d31f8ae79befec597411d0aeeacee169d37fdd0c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_6900b801",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 509,
+      "author": {
+        "id": 6327
+      },
+      "writtenOn": "2016-11-22T10:39:15Z",
+      "side": 1,
+      "message": "I think \"in\" is missed",
+      "revId": "d31f8ae79befec597411d0aeeacee169d37fdd0c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_890d543a",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 518,
+      "author": {
+        "id": 6327
+      },
+      "writtenOn": "2016-11-22T10:39:15Z",
+      "side": 1,
+      "message": "I would replace:\nthe the push NSH / push NSH metadata\nBy:\nto the push NSH and push NSH metadata",
+      "revId": "d31f8ae79befec597411d0aeeacee169d37fdd0c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
