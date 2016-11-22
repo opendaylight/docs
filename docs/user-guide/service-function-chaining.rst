@@ -2678,6 +2678,112 @@ The following are examples to configure the Logical SFF:
 
 .. _sfc-user-guide-classifier-impacts:
 
+As a result of above configuration, OpenDaylight renders the needed flows in all involved SFFs. Those flows implement:
+
+- Two Rendered Service Paths:
+
+  - dpi-1 (SF1), firewall-1 (SF2)
+  - firewall-1 (SF2), dpi-1 (SF1)
+
+- The communication between SFFs and SFs based on eth-nsh
+
+- The communication between SFFs based on vxlan-gpe
+
+The following picture shows a topology and traffic flow (in green) which corresponds to the above configuration.
+
+.. figure:: ./images/sfc/single-logical-sff-example.png
+   :alt: Logical SFF Example
+   :width: 800px
+   :height: 600px
+
+   Logical SFF Example
+
+
+
+The Logical SFF functionality allows OpenDaylight to find out the SFFs holding the SFs involved in a path. In this example
+the SFFs affected are Node3 and Node4 thus the controller renders the flows containing NSH parameters just in those SFFs.
+
+Here you have the new flows rendered in Node3 and Node4 which implement the NSH protocol. Every Rendered Service Path is represented
+by an NSP value. We provisioned a symmetric RSP so we get two NSPs: 8388613 and 5. Node3 holds the first SF of NSP 8388613 and 
+the last SF of NSP 5. Node 4 holds the first SF of NSP 5 and the last SF of NSP 8388613. Both Node3 and Node4 will pop the NSH header 
+when the received packet has gone through the last SF of its path.
+
+
+**Rendered flows Node 3**
+
+::
+
+ cookie=0x14, duration=59.264s, table=83, n_packets=0, n_bytes=0, priority=250,nsp=5 actions=goto_table:86
+ cookie=0x14, duration=59.194s, table=83, n_packets=0, n_bytes=0, priority=250,nsp=8388613 actions=goto_table:86
+ cookie=0x14, duration=59.257s, table=86, n_packets=0, n_bytes=0, priority=550,nsi=254,nsp=5 actions=load:0x8e0a37cc9094->NXM_NX_ENCAP_ETH_SRC[],load:0x6ee006b4c51e->NXM_NX_ENCAP_ETH_DST[],goto_table:87
+ cookie=0x14, duration=59.189s, table=86, n_packets=0, n_bytes=0, priority=550,nsi=255,nsp=8388613 actions=load:0x8e0a37cc9094->NXM_NX_ENCAP_ETH_SRC[],load:0x6ee006b4c51e->NXM_NX_ENCAP_ETH_DST[],goto_table:87
+ cookie=0xba5eba1100000203, duration=59.213s, table=87, n_packets=0, n_bytes=0, priority=650,nsi=253,nsp=5 actions=pop_nsh,set_field:6e:e0:06:b4:c5:1e->eth_src,resubmit(,17)
+ cookie=0xba5eba1100000201, duration=59.213s, table=87, n_packets=0, n_bytes=0, priority=650,nsi=254,nsp=5 actions=load:0x800->NXM_NX_REG6[],resubmit(,220)
+ cookie=0xba5eba1100000201, duration=59.188s, table=87, n_packets=0, n_bytes=0, priority=650,nsi=255,nsp=8388613 actions=load:0x800->NXM_NX_REG6[],resubmit(,220)
+ cookie=0xba5eba1100000201, duration=59.182s, table=87, n_packets=0, n_bytes=0, priority=650,nsi=254,nsp=8388613 actions=set_field:0->tun_id,output:6
+
+**Rendered Flows Node 4**
+
+::
+
+ cookie=0x14, duration=69.040s, table=83, n_packets=0, n_bytes=0, priority=250,nsp=5 actions=goto_table:86
+ cookie=0x14, duration=69.008s, table=83, n_packets=0, n_bytes=0, priority=250,nsp=8388613 actions=goto_table:86
+ cookie=0x14, duration=69.040s, table=86, n_packets=0, n_bytes=0, priority=550,nsi=255,nsp=5 actions=load:0xbea93873f4fa->NXM_NX_ENCAP_ETH_SRC[],load:0x214845ea85d->NXM_NX_ENCAP_ETH_DST[],goto_table:87
+ cookie=0x14, duration=69.005s, table=86, n_packets=0, n_bytes=0, priority=550,nsi=254,nsp=8388613 actions=load:0xbea93873f4fa->NXM_NX_ENCAP_ETH_SRC[],load:0x214845ea85d->NXM_NX_ENCAP_ETH_DST[],goto_table:87
+ cookie=0xba5eba1100000201, duration=69.029s, table=87, n_packets=0, n_bytes=0, priority=650,nsi=255,nsp=5 actions=load:0x1100->NXM_NX_REG6[],resubmit(,220)
+ cookie=0xba5eba1100000201, duration=69.029s, table=87, n_packets=0, n_bytes=0, priority=650,nsi=254,nsp=5 actions=set_field:0->tun_id,output:1
+ cookie=0xba5eba1100000201, duration=68.999s, table=87, n_packets=0, n_bytes=0, priority=650,nsi=254,nsp=8388613 actions=load:0x1100->NXM_NX_REG6[],resubmit(,220)
+ cookie=0xba5eba1100000203, duration=68.996s, table=87, n_packets=0, n_bytes=0, priority=650,nsi=253,nsp=8388613 actions=pop_nsh,set_field:02:14:84:5e:a8:5d->eth_src,resubmit(,17)
+
+
+An interesting scenario to show the Logical SFF strength is the migration of a SF from a compute node to another. 
+The OpenDaylight will learn the new topology by itself, then it will re-render the new flows to the new SFFs affected. 
+
+.. figure:: ./images/sfc/single-logical-sff-example-migration.png
+   :alt: Logical SFF - SF Migration Example
+   :width: 800px
+   :height: 600px
+
+   Logical SFF - SF Migration Example
+
+
+In our example, SF2 is moved from Node4 to Node2 then OpenDaylight removes NSH specific flows from Node4 and puts them in Node2.
+Check below flows showing this effect. Now Node3 keeps holding the first SF of NSP 8388613 and the last SF of NSP 5;
+but Node2 becomes the new holder of the first SF of NSP 5 and the last SF of NSP 8388613.
+
+
+**Rendered Flows Node 3 After Migration**
+
+::
+
+ cookie=0x14, duration=64.044s, table=83, n_packets=0, n_bytes=0, priority=250,nsp=5 actions=goto_table:86
+ cookie=0x14, duration=63.947s, table=83, n_packets=0, n_bytes=0, priority=250,nsp=8388613 actions=goto_table:86
+ cookie=0x14, duration=64.044s, table=86, n_packets=0, n_bytes=0, priority=550,nsi=254,nsp=5 actions=load:0x8e0a37cc9094->NXM_NX_ENCAP_ETH_SRC[],load:0x6ee006b4c51e->NXM_NX_ENCAP_ETH_DST[],goto_table:87
+ cookie=0x14, duration=63.947s, table=86, n_packets=0, n_bytes=0, priority=550,nsi=255,nsp=8388613 actions=load:0x8e0a37cc9094->NXM_NX_ENCAP_ETH_SRC[],load:0x6ee006b4c51e->NXM_NX_ENCAP_ETH_DST[],goto_table:87
+ cookie=0xba5eba1100000201, duration=64.034s, table=87, n_packets=0, n_bytes=0, priority=650,nsi=254,nsp=5 actions=load:0x800->NXM_NX_REG6[],resubmit(,220)
+ cookie=0xba5eba1100000203, duration=64.034s, table=87, n_packets=0, n_bytes=0, priority=650,nsi=253,nsp=5 actions=pop_nsh,set_field:6e:e0:06:b4:c5:1e->eth_src,resubmit(,17)
+ cookie=0xba5eba1100000201, duration=63.947s, table=87, n_packets=0, n_bytes=0, priority=650,nsi=255,nsp=8388613 actions=load:0x800->NXM_NX_REG6[],resubmit(,220)
+ cookie=0xba5eba1100000201, duration=63.942s, table=87, n_packets=0, n_bytes=0, priority=650,nsi=254,nsp=8388613 actions=set_field:0->tun_id,output:2
+
+**Rendered Flows Node 2 After Migration**
+
+::
+
+ cookie=0x14, duration=56.856s, table=83, n_packets=0, n_bytes=0, priority=250,nsp=5 actions=goto_table:86
+ cookie=0x14, duration=56.755s, table=83, n_packets=0, n_bytes=0, priority=250,nsp=8388613 actions=goto_table:86
+ cookie=0x14, duration=56.847s, table=86, n_packets=0, n_bytes=0, priority=550,nsi=255,nsp=5 actions=load:0xbea93873f4fa->NXM_NX_ENCAP_ETH_SRC[],load:0x214845ea85d->NXM_NX_ENCAP_ETH_DST[],goto_table:87
+ cookie=0x14, duration=56.755s, table=86, n_packets=0, n_bytes=0, priority=550,nsi=254,nsp=8388613 actions=load:0xbea93873f4fa->NXM_NX_ENCAP_ETH_SRC[],load:0x214845ea85d->NXM_NX_ENCAP_ETH_DST[],goto_table:87
+ cookie=0xba5eba1100000201, duration=56.823s, table=87, n_packets=0, n_bytes=0, priority=650,nsi=255,nsp=5 actions=load:0x1100->NXM_NX_REG6[],resubmit(,220)
+ cookie=0xba5eba1100000201, duration=56.823s, table=87, n_packets=0, n_bytes=0, priority=650,nsi=254,nsp=5 actions=set_field:0->tun_id,output:4
+ cookie=0xba5eba1100000201, duration=56.755s, table=87, n_packets=0, n_bytes=0, priority=650,nsi=254,nsp=8388613 actions=load:0x1100->NXM_NX_REG6[],resubmit(,220)
+ cookie=0xba5eba1100000203, duration=56.750s, table=87, n_packets=0, n_bytes=0, priority=650,nsi=253,nsp=8388613 actions=pop_nsh,set_field:02:14:84:5e:a8:5d->eth_src,resubmit(,17)
+
+**Rendered Flows Node 4 After Migration**
+
+::
+
+ -- No flows for NSH processing --
+
 Classifier impacts
 ~~~~~~~~~~~~~~~~~~
 
@@ -2807,4 +2913,5 @@ indicate the neutron ports of the VMs you want to classify.
 ::
 
   curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '${JSON}' -X PUT --user admin:admin http://localhost:8181/restconf/config/service-function-classifier:service-function-classifiers/
+
 
