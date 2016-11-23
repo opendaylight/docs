@@ -5,13 +5,11 @@ Documentation Guide
 ###################
 
 This guide provides details on how to contribute to the OpenDaylight
-documentation. OpenDaylight currently uses a mix of AsciiDoc_ and
-reStructuredText_ for documentation, although the `Documentation
-Group`_ is generally trying to move toward using reStructuredText_ and
-Sphinx_ to build it as it is widely-used to provide both HTML and pdf
-documentation that can be easily versioned alongside the code. It also
-offers similar syntax to Markdown which is familiar to large numbers of
-people.
+documentation. OpenDaylight currently uses reStructuredText_ for
+documentation and Sphinx_ to build it as it is widely-used to provide
+both HTML and pdf documentation that can be easily versioned alongside
+the code. It also offers similar syntax to Markdown which is familiar
+to large numbers of people.
 
 .. contents:: Contents
    :depth: 2
@@ -309,128 +307,6 @@ https://git.opendaylight.org/gerrit/41679
 Finally fixed the fact that our builds for failing because they were
 taking too long by removing directories of generated javadoc that were
 present from previous runs.
-
-AsciiDoc-based Documentation
-============================
-
-Information on the AsciiDoc tools and build system can be found here:
-https://wiki.opendaylight.org/view/Documentation/Tools
-
-Directory Structure
--------------------
-
-The AsciiDoc documentation is all located in the ``manuals`` directory
-of the ``docs`` ``git`` repository. An example of the directory
-structure on June 28th, 2016 can be seen here::
-
-   $ tree -L 4
-   .
-   ├── common
-   │   └── app_support.xml
-   ├── developer-guide
-   │   ├── pom.xml
-   │   └── src
-   │       └── main
-   │           ├── asciidoc
-   │           └── resources
-   ├── getting-started-guide
-   │   ├── pom.xml
-   │   └── src
-   │       └── main
-   │           ├── asciidoc
-   │           └── resources
-   ├── howto-openstack
-   │   ├── pom.xml
-   │   └── src
-   │       └── main
-   │           ├── asciidoc
-   │           └── resources
-   ├── pom.xml
-   ├── readme
-   │   ├── pom.xml
-   │   └── src
-   │       └── main
-   │           └── asciidoc
-   └── user-guide
-       ├── pom.xml
-       └── src
-           └── main
-               ├── asciidoc
-               └── resources
-
-Each of the top-level directories under ``manuals`` is a whole guide by
-itself and it contains a ``pom.xml`` file saying how to build it, a
-``src/main/asciidoc`` directory with AsciiDoc source files and a
-``src/main/resources`` directory containing images.
-
-Troubleshooting
----------------
-
-See `AsciiDoc Tips`_ on the wiki for more information.
-
-Common AsciiDoc mistakes
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-See also `AsciiDoc Tips`_.
-
-* Lists that get formatted incorrectly because of no blank line above
-  the list.
-* Numbered lists that are formatted incorrectly and every bullet winds
-  up being 1
-
-Migration from AsciiDoc to ReStructuredText
-===========================================
-
-Automatically
--------------
-
-In theory, Pandoc_ can convert from DocBook to reStructuredText and we
-produce DocBook as part of our build chain from AsciiDoctor. In
-practice, for modest-sized migrations doing things by hand works fairly
-well.
-
-By Hand
--------
-
-Converting from AsciiDoc to reStructuredText is usually pretty
-straightforward and involves looking up the basic syntax for what you
-want to do by looking it up in the reStructuredText_ guide.
-
-The differences are usually minor and fast to change.
-
-Also, because of how fast Sphinx builds, and how fast it is to refresh
-the HTML documentation rapid iteration is very easy.
-
-Bold/Italics/Verbatim Formatting
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-This is mostly minor syntax issues. In AsciiDoc you do inline
-formatting something like this::
-
-   *bold* _italic_ +verbatim+ `verbatim`
-
-In reStructuredText, things are slightly different::
-
-   **bold** *italic* ``verbatim``
-
-Images
-^^^^^^
-
-Image formats change from something like::
-
-   .OpenStack Architecture
-   image::vtn/OpenStackDeveloperGuide.png["OpenStack Architecture",width=500]
-
-To something like::
-
-   .. figure:: images/dlux-default.png
-
-A helpful regular expression for automating the replacements is
-something like::
-
-   search: ^( *)\.(.+)\n +image::(.+)\[(.+),width=(\d+)\]
-   replace: $1.. figure:: images/dlux/$3\n$1   :width: $5\n\n$1   $2
-
 
 Project Documentation Requirements
 ==================================
