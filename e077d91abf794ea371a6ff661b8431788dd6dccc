@@ -134,6 +134,24 @@
     },
     {
       "key": {
+        "uuid": "3a65312a_b47ec7ac",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 781,
+      "author": {
+        "id": 6491
+      },
+      "writtenOn": "2016-11-23T19:30:08Z",
+      "side": 1,
+      "message": "Yes, it is.",
+      "parentUuid": "3a65312a_3ee3bb08",
+      "revId": "e077d91abf794ea371a6ff661b8431788dd6dccc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a65312a_1ebb5fe6",
         "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
         "patchSetId": 1
@@ -145,6 +163,24 @@
       "writtenOn": "2016-11-09T16:01:39Z",
       "side": 1,
       "message": "Again, is this link going to be the right one over time?",
+      "revId": "e077d91abf794ea371a6ff661b8431788dd6dccc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_d481c390",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 797,
+      "author": {
+        "id": 6491
+      },
+      "writtenOn": "2016-11-23T19:30:08Z",
+      "side": 1,
+      "message": "Thanks for pointing this out. This is a copy paste from an upper portion. I will also update that place. BTW, the link is right.",
+      "parentUuid": "3a65312a_1ebb5fe6",
       "revId": "e077d91abf794ea371a6ff661b8431788dd6dccc",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -231,6 +267,30 @@
       "writtenOn": "2016-11-09T16:01:39Z",
       "side": 1,
       "message": "stray tab?",
+      "range": {
+        "startLine": 1054,
+        "startChar": 12,
+        "endLine": 1054,
+        "endChar": 13
+      },
+      "revId": "e077d91abf794ea371a6ff661b8431788dd6dccc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_b44b67af",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1054,
+      "author": {
+        "id": 6491
+      },
+      "writtenOn": "2016-11-23T19:30:08Z",
+      "side": 1,
+      "message": "Though it doesn\u0027t matter, but thanks for pointing this out.",
+      "parentUuid": "3a65312a_5e831704",
       "range": {
         "startLine": 1054,
         "startChar": 12,
