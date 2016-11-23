@@ -1,0 +1,273 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a65312a_6314504e",
+        "filename": "docs/user-guide/service-function-chaining.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-11-23T19:23:16Z",
+      "side": 1,
+      "message": "It would be good to fix the trailing whitespace.",
+      "revId": "553c382da4b297e99491edd27d9794e46e3d7fb4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_a32668cc",
+        "filename": "docs/user-guide/service-function-chaining.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 2679,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-11-23T19:23:16Z",
+      "side": 1,
+      "message": "OpenDaylight",
+      "range": {
+        "startLine": 2679,
+        "startChar": 36,
+        "endLine": 2679,
+        "endChar": 39
+      },
+      "revId": "553c382da4b297e99491edd27d9794e46e3d7fb4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_43403456",
+        "filename": "docs/user-guide/service-function-chaining.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 2684,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-11-23T19:23:16Z",
+      "side": 1,
+      "message": "this needs to be shifted left until the \"- dpi-1...\" starts with the - directly under the T in \"- Two Rendered...\"",
+      "range": {
+        "startLine": 2683,
+        "startChar": 0,
+        "endLine": 2684,
+        "endChar": 40
+      },
+      "revId": "553c382da4b297e99491edd27d9794e46e3d7fb4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_e3306003",
+        "filename": "docs/user-guide/service-function-chaining.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 2692,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-11-23T19:23:16Z",
+      "side": 1,
+      "message": "What\u0027s a CSS in this figure? It\u0027s not defined anywhere in the document.\n\nAlso the figure should call it OpenDaylight not OpenDayLight.",
+      "revId": "553c382da4b297e99491edd27d9794e46e3d7fb4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_c32ba492",
+        "filename": "docs/user-guide/service-function-chaining.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 2701,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-11-23T19:23:16Z",
+      "side": 1,
+      "message": "OpenDaylight",
+      "range": {
+        "startLine": 2701,
+        "startChar": 37,
+        "endLine": 2701,
+        "endChar": 44
+      },
+      "revId": "553c382da4b297e99491edd27d9794e46e3d7fb4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_231a587d",
+        "filename": "docs/user-guide/service-function-chaining.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 2704,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-11-23T19:23:16Z",
+      "side": 1,
+      "message": "implementing",
+      "range": {
+        "startLine": 2704,
+        "startChar": 81,
+        "endLine": 2704,
+        "endChar": 94
+      },
+      "revId": "553c382da4b297e99491edd27d9794e46e3d7fb4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_031d9c73",
+        "filename": "docs/user-guide/service-function-chaining.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 2705,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-11-23T19:23:16Z",
+      "side": 1,
+      "message": "not",
+      "range": {
+        "startLine": 2705,
+        "startChar": 18,
+        "endLine": 2705,
+        "endChar": 20
+      },
+      "revId": "553c382da4b297e99491edd27d9794e46e3d7fb4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_660bbe25",
+        "filename": "docs/user-guide/service-function-chaining.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 2708,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-11-23T19:23:16Z",
+      "side": 1,
+      "message": "What am I actually looking for in these dumps? Can you help a potential use understand?",
+      "revId": "553c382da4b297e99491edd27d9794e46e3d7fb4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_e307c01a",
+        "filename": "docs/user-guide/service-function-chaining.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 2841,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-11-23T19:23:16Z",
+      "side": 1,
+      "message": "SFFs",
+      "range": {
+        "startLine": 2841,
+        "startChar": 94,
+        "endLine": 2841,
+        "endChar": 98
+      },
+      "revId": "553c382da4b297e99491edd27d9794e46e3d7fb4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_83088c2e",
+        "filename": "docs/user-guide/service-function-chaining.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 2841,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-11-23T19:23:16Z",
+      "side": 1,
+      "message": ", then",
+      "range": {
+        "startLine": 2841,
+        "startChar": 45,
+        "endLine": 2841,
+        "endChar": 50
+      },
+      "revId": "553c382da4b297e99491edd27d9794e46e3d7fb4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_a30dc840",
+        "filename": "docs/user-guide/service-function-chaining.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 2841,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-11-23T19:23:16Z",
+      "side": 1,
+      "message": "OpenDaylight",
+      "range": {
+        "startLine": 2841,
+        "startChar": 0,
+        "endLine": 2841,
+        "endChar": 7
+      },
+      "revId": "553c382da4b297e99491edd27d9794e46e3d7fb4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_c302840a",
+        "filename": "docs/user-guide/service-function-chaining.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 2843,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-11-23T19:23:16Z",
+      "side": 1,
+      "message": "Same comments as the figure above: what\u0027s a CSS and OpenDaylight vs. OpenDayLight.",
+      "revId": "553c382da4b297e99491edd27d9794e46e3d7fb4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_460e8235",
+        "filename": "docs/user-guide/service-function-chaining.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 2854,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-11-23T19:23:16Z",
+      "side": 1,
+      "message": "What should have changed? Can you help a potential user understand what they\u0027re looking for?",
+      "revId": "553c382da4b297e99491edd27d9794e46e3d7fb4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
