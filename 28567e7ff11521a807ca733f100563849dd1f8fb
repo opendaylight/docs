@@ -186,6 +186,30 @@
     },
     {
       "key": {
+        "uuid": "3a65312a_1fd7cfee",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 864,
+      "author": {
+        "id": 6491
+      },
+      "writtenOn": "2016-11-23T19:30:08Z",
+      "side": 1,
+      "message": "The FD.io guide just simply write the instructions for a simple vagrant setup with only caching enabled to facilitate faster vm rebuild, nothing fancy. Still if you want, I can change it.",
+      "parentUuid": "3a65312a_2ab6d2d9",
+      "range": {
+        "startLine": 863,
+        "startChar": 0,
+        "endLine": 864,
+        "endChar": 56
+      },
+      "revId": "28567e7ff11521a807ca733f100563849dd1f8fb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a65312a_6ac72a46",
         "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
         "patchSetId": 3
@@ -197,6 +221,30 @@
       "writtenOn": "2016-11-11T04:29:24Z",
       "side": 1,
       "message": "Sometimes there is an issue with the Vagrant properly copying the VPP repo code from the host VM  after the first installation. Easiest is to do another clone here if it wasn\u0027t there.",
+      "range": {
+        "startLine": 895,
+        "startChar": 63,
+        "endLine": 896,
+        "endChar": 73
+      },
+      "revId": "28567e7ff11521a807ca733f100563849dd1f8fb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_7f052379",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 896,
+      "author": {
+        "id": 6491
+      },
+      "writtenOn": "2016-11-23T19:30:08Z",
+      "side": 1,
+      "message": "I have addressed this situation in the point above.",
+      "parentUuid": "3a65312a_6ac72a46",
       "range": {
         "startLine": 895,
         "startChar": 63,
