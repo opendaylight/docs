@@ -233,6 +233,51 @@ the chapter should use::
     ^, for subsubsections
     ", for paragraphs
 
+Referencing Sections
+^^^^^^^^^^^^^^^^^^^^
+
+It's pretty common to want to reference another location in the
+OpenDaylight documentation and it's pretty easy to do with
+reStructuredText. This is a quick primer, more information is in the
+`Sphinx section on Cross-referencing arbitrary locations
+<http://www.sphinx-doc.org/en/stable/markup/inline.html#ref-role>`_.
+
+Within a single document, you can reference another section simply by::
+
+   This is a reference to `The title of a section`_
+
+Assuming that somewhere else in the same file there a is a section
+title something like::
+
+   The title of a section
+   ^^^^^^^^^^^^^^^^^^^^^^
+
+It's typically better to use ``:ref:`` syntax and labels to provide
+links as they work across files and are resilient to sections being
+renamed. First, you need to create a label something like::
+
+   .. _a-label:
+
+   The title of a section
+   ^^^^^^^^^^^^^^^^^^^^^^
+
+.. note:: The underscore (_) before the label is required.
+
+Then you can reference the section anywhere by simply doing::
+
+    This is a reference to :ref:`a-label`
+
+or::
+
+    This is a reference to :ref:`a section I really liked <a-label>`
+
+.. note:: When using ``:ref:``-style links, you don't need a trailing
+          underscore (_).
+
+Because the labels have to be unique, it usually makes sense to prefix
+the labels with the project name to help share the label space, e.g.,
+``sfc-user-guide`` instead of just ``user-guide``.
+
 Troubleshooting
 ---------------
 
@@ -244,7 +289,7 @@ italic, and fixed-width can't be nested. Further, it can't be mixed
 with hyperlinks, so you can't have bold text link somewhere.
 
 This is tracked in a `Docutils FAQ question
-<http://docutils.sourceforge.net/FAQ.html#is-nested-inline-markup-possible>`,
+<http://docutils.sourceforge.net/FAQ.html#is-nested-inline-markup-possible>`_,
 but there is no clear current plan to fix this.
 
 Make sure you've cloned submodules
