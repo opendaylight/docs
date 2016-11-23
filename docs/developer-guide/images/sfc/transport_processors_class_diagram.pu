@@ -1,0 +1,14 @@
+@startuml
+SfcRspTransportProcessorBase <|-- SfcRspProcessorVlan
+SfcRspTransportProcessorBase <|-- SfcRspProcessorMpls
+SfcRspTransportProcessorBase <|-- SfcRspProcessorNshVxgpe
+SfcRspTransportProcessorBase <|-- SfcRspProcessorLogicalSff
+SfcOfRspProcessor --> SfcRspTransportProcessorBase
+
+SfcRspTransportProcessorBase : configureTransportIngressFlows()
+SfcRspTransportProcessorBase : configurePathMapperFlows()
+SfcRspTransportProcessorBase : configureNextHopFlows()
+SfcRspTransportProcessorBase : configureTransportEgressFlows()
+
+caption Transport processors used by the Rsp Processor (simplified)
+@enduml

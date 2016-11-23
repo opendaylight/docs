@@ -1,0 +1,33 @@
+@startuml
+object SffGraphEntry_0 {
+srcSff=INGRESS
+srcDpnId=
+dstSff=logical_sff
+dstDpnId=13344991351
+sf=SF1
+pathId=3315
+serviceIndex=255
+}
+object SffGraphEntry_1 {
+srcSff=logical_sff
+srcDpnId=13344991351
+dstSff=logical_sff
+dstDpnId=4439600374
+sf=SF2
+pathId=3315
+serviceIndex=254
+}
+object SffGraphEntry_2 {
+srcSff=logical_sff
+dstDpnId=4439600374
+dstSff=EGRESS
+dstDpnId=
+sf=
+pathId=3315
+serviceIndex=253
+}
+
+SffGraphEntry_0 -right-> SffGraphEntry_1
+SffGraphEntry_1 -right-> SffGraphEntry_2
+caption Example graph for a RSP including two different SFs that are configured using a Logical SFF. \n It can be observed that the service functions SF1, SF2 are hosted in different compute nodes
+@enduml
