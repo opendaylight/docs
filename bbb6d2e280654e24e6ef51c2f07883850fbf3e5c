@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a65312a_23d5381c",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 451,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-11-23T17:02:27Z",
+      "side": 1,
+      "message": "Do you want to make this an actual list? You can do that something like:\n\n 1. **Construction of the auxiliary rendering graph**\n\n    When starting the...\n\n 2. **New transport processor**\n\n    Transport processors...\n\nMaking sure to get the indentation of the paragraphs that are supposed to be under the same bullet correct. You can also use #. instead of 1. and 2. so that you don\u0027t have to worry about keeping the numbers right.",
+      "revId": "bbb6d2e280654e24e6ef51c2f07883850fbf3e5c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a65312a_c09b9a70",
         "filename": "docs/developer-guide/service-function-chaining.rst",
         "patchSetId": 1
@@ -30,6 +47,29 @@
       "writtenOn": "2016-11-23T14:08:03Z",
       "side": 1,
       "message": "I\u0027d put this in the end of the sentence - the SFC renderer will also retrieve (from Genius) the data plane nodes identifiers for the involved switches, storing them in the graph, for instance.",
+      "revId": "bbb6d2e280654e24e6ef51c2f07883850fbf3e5c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_63df303c",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 462,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-11-23T17:02:27Z",
+      "side": 1,
+      "message": "If you stay with the ^^^^^ make sure the title and number of ^^^^^ line up.",
+      "range": {
+        "startLine": 461,
+        "startChar": 0,
+        "endLine": 462,
+        "endChar": 28
+      },
       "revId": "bbb6d2e280654e24e6ef51c2f07883850fbf3e5c",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -82,6 +122,145 @@
     },
     {
       "key": {
+        "uuid": "3a65312a_a3e828e3",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 465,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-11-23T17:02:27Z",
+      "side": 1,
+      "message": "I think you mean DPIDs, not dpn-ids, right?",
+      "range": {
+        "startLine": 465,
+        "startChar": 482,
+        "endLine": 465,
+        "endChar": 489
+      },
+      "revId": "bbb6d2e280654e24e6ef51c2f07883850fbf3e5c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_63b610fc",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 465,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-11-23T17:02:27Z",
+      "side": 1,
+      "message": "+100 to that. This paragraph is really, really, REALLY dense.",
+      "parentUuid": "3a65312a_a0a49ea6",
+      "range": {
+        "startLine": 465,
+        "startChar": 79,
+        "endLine": 465,
+        "endChar": 586
+      },
+      "revId": "bbb6d2e280654e24e6ef51c2f07883850fbf3e5c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_23bc18dc",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 475,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-11-23T17:02:27Z",
+      "side": 1,
+      "message": "Should it be ITM? Is that defined somewhere?",
+      "range": {
+        "startLine": 475,
+        "startChar": 12,
+        "endLine": 475,
+        "endChar": 15
+      },
+      "revId": "bbb6d2e280654e24e6ef51c2f07883850fbf3e5c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_03bf5cd1",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 475,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-11-23T17:02:27Z",
+      "side": 1,
+      "message": "It\u0027s not between the identifiers, but the actual nodes, right?",
+      "range": {
+        "startLine": 475,
+        "startChar": 131,
+        "endLine": 475,
+        "endChar": 158
+      },
+      "revId": "bbb6d2e280654e24e6ef51c2f07883850fbf3e5c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_43b954e8",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 477,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-11-23T17:02:27Z",
+      "side": 1,
+      "message": "Genius\u0027s",
+      "range": {
+        "startLine": 477,
+        "startChar": 69,
+        "endLine": 477,
+        "endChar": 76
+      },
+      "revId": "bbb6d2e280654e24e6ef51c2f07883850fbf3e5c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_e3f220d1",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 477,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-11-23T17:02:27Z",
+      "side": 1,
+      "message": "These should be one space less indented to format right.",
+      "range": {
+        "startLine": 475,
+        "startChar": 0,
+        "endLine": 477,
+        "endChar": 95
+      },
+      "revId": "bbb6d2e280654e24e6ef51c2f07883850fbf3e5c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a65312a_80f40288",
         "filename": "docs/developer-guide/service-function-chaining.rst",
         "patchSetId": 1
@@ -98,6 +277,29 @@
         "startChar": 93,
         "endLine": 487,
         "endChar": 100
+      },
+      "revId": "bbb6d2e280654e24e6ef51c2f07883850fbf3e5c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_a3cf887e",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 491,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-11-23T17:02:27Z",
+      "side": 1,
+      "message": "DPID? DPNID? dpn-id? You need to pick one and stick with it. If you really mean OpenFlow DPID, you should use DPID.",
+      "range": {
+        "startLine": 491,
+        "startChar": 51,
+        "endLine": 491,
+        "endChar": 56
       },
       "revId": "bbb6d2e280654e24e6ef51c2f07883850fbf3e5c",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
