@@ -1,0 +1,296 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a65312a_c38c4482",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-11-23T16:33:23Z",
+      "side": 1,
+      "message": "It would be nice if we could fix all the trailing whitespace.",
+      "revId": "0c9c6d62829d1aa15220f4e19f1ec7f81f9b65d7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_43cf94b0",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 474,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-11-23T16:33:23Z",
+      "side": 1,
+      "message": "with",
+      "range": {
+        "startLine": 474,
+        "startChar": 32,
+        "endLine": 474,
+        "endChar": 34
+      },
+      "revId": "0c9c6d62829d1aa15220f4e19f1ec7f81f9b65d7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_a3c5c88f",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 474,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-11-23T16:33:23Z",
+      "side": 1,
+      "message": "Genius",
+      "range": {
+        "startLine": 474,
+        "startChar": 35,
+        "endLine": 474,
+        "endChar": 41
+      },
+      "revId": "0c9c6d62829d1aa15220f4e19f1ec7f81f9b65d7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_c3b56432",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 478,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-11-23T16:33:23Z",
+      "side": 1,
+      "message": "It\u0027s better to add a label and the do a :ref:`label` so that way it\u0027s not bound to the HTML output and will work in the PDFs too.\n\nThere are good examples here:\nhttps://git.opendaylight.org/gerrit/gitweb?p\u003ddocs.git;a\u003dblob;f\u003ddocs/user-guide/group-based-policy-user-guide.rst;h\u003df0344a9f33534017d5f967f02c9aa3a27e822dff;hb\u003dHEAD\n\nThe basic idea is to create a label with a single line like:\n.. _your-label:\n\nand then reference it with :ref:`your-label` or :ref:`link text \u003cyour-label\u003e`\n\nIt might also make sense to prefix the labels with the project name to help share the label space, so :ref:`sfc-user-guide`.",
+      "range": {
+        "startLine": 478,
+        "startChar": 17,
+        "endLine": 478,
+        "endChar": 97
+      },
+      "revId": "0c9c6d62829d1aa15220f4e19f1ec7f81f9b65d7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_83d9ac85",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 482,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-11-23T16:33:23Z",
+      "side": 1,
+      "message": "sfc",
+      "range": {
+        "startLine": 482,
+        "startChar": 54,
+        "endLine": 482,
+        "endChar": 57
+      },
+      "revId": "0c9c6d62829d1aa15220f4e19f1ec7f81f9b65d7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_83c08c7d",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 490,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-11-23T16:33:23Z",
+      "side": 1,
+      "message": "Genius",
+      "range": {
+        "startLine": 490,
+        "startChar": 0,
+        "endLine": 490,
+        "endChar": 6
+      },
+      "revId": "0c9c6d62829d1aa15220f4e19f1ec7f81f9b65d7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_e3bfc0f9",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 494,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-11-23T16:33:23Z",
+      "side": 1,
+      "message": "Genius",
+      "range": {
+        "startLine": 494,
+        "startChar": 11,
+        "endLine": 494,
+        "endChar": 17
+      },
+      "revId": "0c9c6d62829d1aa15220f4e19f1ec7f81f9b65d7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_e3e86012",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 500,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-11-23T16:33:23Z",
+      "side": 1,
+      "message": "with",
+      "range": {
+        "startLine": 500,
+        "startChar": 32,
+        "endLine": 500,
+        "endChar": 34
+      },
+      "revId": "0c9c6d62829d1aa15220f4e19f1ec7f81f9b65d7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_23d2585c",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 511,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-11-23T16:33:23Z",
+      "side": 1,
+      "message": "Did you want a new paragraph here? If so, you need a blank line above it.",
+      "revId": "0c9c6d62829d1aa15220f4e19f1ec7f81f9b65d7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_03d59c42",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 514,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-11-23T16:33:23Z",
+      "side": 1,
+      "message": "Did you want a new paragraph here? If so, you need a blank line above it.",
+      "revId": "0c9c6d62829d1aa15220f4e19f1ec7f81f9b65d7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_63cc50bd",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 519,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-11-23T16:33:23Z",
+      "side": 1,
+      "message": "Did you want a new paragraph here? If so, you need a blank line above it.",
+      "revId": "0c9c6d62829d1aa15220f4e19f1ec7f81f9b65d7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_43467424",
+        "filename": "docs/user-guide/service-function-chaining.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-11-23T16:33:23Z",
+      "side": 1,
+      "message": "It would be nice to fix the trailing whitespace.",
+      "revId": "0c9c6d62829d1aa15220f4e19f1ec7f81f9b65d7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_6343b014",
+        "filename": "docs/user-guide/service-function-chaining.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 2681,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-11-23T16:33:23Z",
+      "side": 1,
+      "message": "see comment on developer guide part about how to do :ref: linking correctly.",
+      "range": {
+        "startLine": 2681,
+        "startChar": 32,
+        "endLine": 2681,
+        "endChar": 102
+      },
+      "revId": "0c9c6d62829d1aa15220f4e19f1ec7f81f9b65d7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_a34ca843",
+        "filename": "docs/user-guide/service-function-chaining.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 2683,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-11-23T16:33:23Z",
+      "side": 1,
+      "message": "OpenFlow",
+      "range": {
+        "startLine": 2683,
+        "startChar": 0,
+        "endLine": 2683,
+        "endChar": 8
+      },
+      "revId": "0c9c6d62829d1aa15220f4e19f1ec7f81f9b65d7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
