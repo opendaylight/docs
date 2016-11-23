@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a65312a_03cc7c34",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 480,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-11-23T18:24:05Z",
+      "side": 1,
+      "message": "vxlan, VxLAN, VXLAN?",
+      "range": {
+        "startLine": 480,
+        "startChar": 65,
+        "endLine": 480,
+        "endChar": 70
+      },
+      "revId": "9111c1feeac091e846cb1914d7f2db4ef90f83b5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_c3e1e49b",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 492,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-11-23T18:24:05Z",
+      "side": 1,
+      "message": "Maybe I\u0027m just strange, but I found these figures hard to follow...\n\nAlso, why is the MD-SAL rendered as a stick figure person?",
+      "range": {
+        "startLine": 484,
+        "startChar": 0,
+        "endLine": 492,
+        "endChar": 60
+      },
+      "revId": "9111c1feeac091e846cb1914d7f2db4ef90f83b5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_e3e6a0b3",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 495,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-11-23T18:24:05Z",
+      "side": 1,
+      "message": "It\u0027s better to add a label and the do a :ref:`label` so that way it\u0027s not bound to the HTML output and will work in the PDFs too.\n\nThere are good examples here:\nhttps://git.opendaylight.org/gerrit/gitweb?p\u003ddocs.git;a\u003dblob;f\u003ddocs/user-guide/group-based-policy-user-guide.rst;h\u003df0344a9f33534017d5f967f02c9aa3a27e822dff;hb\u003dHEAD\n\nThe basic idea is to create a label with a single line like:\n.. _your-label:\n\nand then reference it with :ref:`your-label` or :ref:`link text \u003cyour-label\u003e`\n\nIt might also make sense to prefix the labels with the project name to help share the label space, so :ref:`sfc-user-guide`.",
+      "range": {
+        "startLine": 494,
+        "startChar": 81,
+        "endLine": 495,
+        "endChar": 40
+      },
+      "revId": "9111c1feeac091e846cb1914d7f2db4ef90f83b5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_63ea9076",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-11-23T18:24:05Z",
+      "side": 1,
+      "message": "OpenFlow",
+      "range": {
+        "startLine": 503,
+        "startChar": 9,
+        "endLine": 503,
+        "endChar": 17
+      },
+      "revId": "9111c1feeac091e846cb1914d7f2db4ef90f83b5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
