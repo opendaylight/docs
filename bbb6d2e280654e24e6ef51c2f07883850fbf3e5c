@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a65312a_89642de6",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 451,
+      "author": {
+        "id": 5927
+      },
+      "writtenOn": "2016-11-24T09:53:14Z",
+      "side": 1,
+      "message": "I changed exactly to that, thanks!. The #. autonumbering doesn\u0027t seem to work for some reason but it\u0027s ok for this short list",
+      "parentUuid": "3a65312a_23d5381c",
+      "revId": "bbb6d2e280654e24e6ef51c2f07883850fbf3e5c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a65312a_c09b9a70",
         "filename": "docs/developer-guide/service-function-chaining.rst",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2016-11-23T14:08:03Z",
       "side": 1,
       "message": "I understood it, it is quite well explained, but required a couple of tries before understanding it.\n\nshorter paragraph maybe ?",
+      "revId": "bbb6d2e280654e24e6ef51c2f07883850fbf3e5c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_c95e2512",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 453,
+      "author": {
+        "id": 5927
+      },
+      "writtenOn": "2016-11-24T09:53:14Z",
+      "side": 1,
+      "message": "Separated into two paragraphs + small rewrite, hope it is clearer now",
+      "parentUuid": "3a65312a_c09b9a70",
       "revId": "bbb6d2e280654e24e6ef51c2f07883850fbf3e5c",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "3a65312a_89ab8dd5",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 457,
+      "author": {
+        "id": 5927
+      },
+      "writtenOn": "2016-11-24T09:53:14Z",
+      "side": 1,
+      "message": "Done, also small rewrite for making the paragraph clearer",
+      "parentUuid": "3a65312a_40878a0f",
+      "revId": "bbb6d2e280654e24e6ef51c2f07883850fbf3e5c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a65312a_63df303c",
         "filename": "docs/developer-guide/service-function-chaining.rst",
         "patchSetId": 1
@@ -70,6 +124,24 @@
         "endLine": 462,
         "endChar": 28
       },
+      "revId": "bbb6d2e280654e24e6ef51c2f07883850fbf3e5c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_e9ba0122",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 462,
+      "author": {
+        "id": 5927
+      },
+      "writtenOn": "2016-11-24T09:53:14Z",
+      "side": 1,
+      "message": "Changed to the suggested ** ** notation",
+      "parentUuid": "3a65312a_63df303c",
       "revId": "bbb6d2e280654e24e6ef51c2f07883850fbf3e5c",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -169,6 +241,78 @@
     },
     {
       "key": {
+        "uuid": "3a65312a_09877d62",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 465,
+      "author": {
+        "id": 5927
+      },
+      "writtenOn": "2016-11-24T09:53:14Z",
+      "side": 1,
+      "message": "Well, this comes from Genius, which api\u0027s use the term dpn-id (from data plane node identifier, actually a synonym for openflow DPID) in most situations. I\u0027ll change all uses to \"DPID\" for consistency\u0027s sake",
+      "parentUuid": "3a65312a_a3e828e3",
+      "revId": "bbb6d2e280654e24e6ef51c2f07883850fbf3e5c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_c98c6582",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 465,
+      "author": {
+        "id": 5927
+      },
+      "writtenOn": "2016-11-24T09:53:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a65312a_2091ae47",
+      "revId": "bbb6d2e280654e24e6ef51c2f07883850fbf3e5c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_a9de496b",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 465,
+      "author": {
+        "id": 5927
+      },
+      "writtenOn": "2016-11-24T09:53:14Z",
+      "side": 1,
+      "message": "Rewritten for clarity, using shorter sentences and removing transport/encapsulation details",
+      "parentUuid": "3a65312a_a0a49ea6",
+      "revId": "bbb6d2e280654e24e6ef51c2f07883850fbf3e5c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_89d9cd85",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 465,
+      "author": {
+        "id": 5927
+      },
+      "writtenOn": "2016-11-24T09:53:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a65312a_63b610fc",
+      "revId": "bbb6d2e280654e24e6ef51c2f07883850fbf3e5c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a65312a_23bc18dc",
         "filename": "docs/developer-guide/service-function-chaining.rst",
         "patchSetId": 1
@@ -209,6 +353,42 @@
         "endLine": 475,
         "endChar": 158
       },
+      "revId": "bbb6d2e280654e24e6ef51c2f07883850fbf3e5c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_49e21504",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 475,
+      "author": {
+        "id": 5927
+      },
+      "writtenOn": "2016-11-24T09:53:14Z",
+      "side": 1,
+      "message": "This is a Genius module, you\u0027re right it was not previously defined. I\u0027ll change it to the module actual name. In case you ask, I also wonder how \"Overlay Tunnel Manager\" module ended up being abbreviated to ITM :)",
+      "parentUuid": "3a65312a_23bc18dc",
+      "revId": "bbb6d2e280654e24e6ef51c2f07883850fbf3e5c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_29d2395c",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 475,
+      "author": {
+        "id": 5927
+      },
+      "writtenOn": "2016-11-24T09:53:14Z",
+      "side": 1,
+      "message": "Yes, but in this case I\u0027m describing the use of a Genius api which uses DPIDs as input parameters, so I think explicitly mentioning the identifiers is more representative. Changed to DPIDs for consistency.",
+      "parentUuid": "3a65312a_03bf5cd1",
       "revId": "bbb6d2e280654e24e6ef51c2f07883850fbf3e5c",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -261,6 +441,24 @@
     },
     {
       "key": {
+        "uuid": "3a65312a_a9e809e3",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 477,
+      "author": {
+        "id": 5927
+      },
+      "writtenOn": "2016-11-24T09:53:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a65312a_43b954e8",
+      "revId": "bbb6d2e280654e24e6ef51c2f07883850fbf3e5c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a65312a_80f40288",
         "filename": "docs/developer-guide/service-function-chaining.rst",
         "patchSetId": 1
@@ -284,6 +482,24 @@
     },
     {
       "key": {
+        "uuid": "3a65312a_e9f201d1",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 487,
+      "author": {
+        "id": 5927
+      },
+      "writtenOn": "2016-11-24T09:53:14Z",
+      "side": 1,
+      "message": "Done. Also changed the opening \"is performed\" for avoiding repetition",
+      "parentUuid": "3a65312a_80f40288",
+      "revId": "bbb6d2e280654e24e6ef51c2f07883850fbf3e5c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a65312a_a3cf887e",
         "filename": "docs/developer-guide/service-function-chaining.rst",
         "patchSetId": 1
@@ -301,6 +517,24 @@
         "endLine": 491,
         "endChar": 56
       },
+      "revId": "bbb6d2e280654e24e6ef51c2f07883850fbf3e5c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_c9ed85f1",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 491,
+      "author": {
+        "id": 5927
+      },
+      "writtenOn": "2016-11-24T09:53:14Z",
+      "side": 1,
+      "message": "I\u0027m changing all uses to DPID",
+      "parentUuid": "3a65312a_a3cf887e",
       "revId": "bbb6d2e280654e24e6ef51c2f07883850fbf3e5c",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
