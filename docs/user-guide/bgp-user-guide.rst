@@ -3865,6 +3865,24 @@ To enable ADD-PATH capability in BGP plugin, first configure BGP speaker instanc
 
 @line 14: Defines path selection strategy: *send-max* > 1 -> Advertise N Paths or *send-max* = 0 -> Advertise All Paths
 
+Here is an example for update a specific family with enable ADD-PATH capability
+
+**URL:** ``/restconf/config/openconfig-network-instance:network-instances/network-instance/global-bgp/openconfig-network-instance:protocols/protocol/openconfig-policy-types:BGP/bgp-example/bgp/global/afi-safis/afi-safi/openconfig-bgp-types:IPV4%2DUNICAST``
+
+**Method:** ``PUT``
+
+**Content-Type:** ``application/xml``
+
+**Request Body:**
+
+.. code-block:: xml
+
+   <afi-safi xmlns="urn:opendaylight:params:xml:ns:yang:bgp:openconfig-extensions">
+      <afi-safi-name xmlns:x="http://openconfig.net/yang/bgp-types">x:IPV4-UNICAST</afi-safi-name>
+      <receive>true</receive>
+      <send-max>0</send-max>
+   </afi-safi>
+
 BGP Peer
 ''''''''
 Here is an example for BGP peer configuration with enabled ADD-PATH capability.
@@ -3885,17 +3903,33 @@ Here is an example for BGP peer configuration with enabled ADD-PATH capability.
            <afi-safi>
                <afi-safi-name xmlns:x="http://openconfig.net/yang/bgp-types">x:IPV4-LABELLED-UNICAST</afi-safi-name>
            </afi-safi>
-               <afi-safis>
-                   <afi-safi>
-                       <afi-safi-name xmlns:x="http://openconfig.net/yang/bgp-types">x:IPV4-UNICAST</afi-safi-name>
-                       <receive>true</receive>
-                       <send-max>0</send-max>
-                   </afi-safi>
-               </afi-safis>
+           <afi-safi>
+               <afi-safi-name xmlns:x="http://openconfig.net/yang/bgp-types">x:IPV4-UNICAST</afi-safi-name>
+               <receive>true</receive>
+               <send-max>0</send-max>
+           </afi-safi>
        </afi-safis>
    </neighbor>
 
 .. note:: The path selection strategy is not configurable on per peer basis. The send-max presence indicates a willingness to send ADD-PATH NLRIs to the neighbor.
+
+Here is an example for update specific family BGP peer configuration with enabled ADD-PATH capability.
+
+**URL:** ``/restconf/config/openconfig-network-instance:network-instances/network-instance/global-bgp/openconfig-network-instance:protocols/protocol/openconfig-policy-types:BGP/bgp-example/bgp/neighbors/neighbor/192.0.2.1/afi-safis/afi-safi/openconfig-bgp-types:IPV4%2DUNICAST``
+
+**Method:** ``PUT``
+
+**Content-Type:** ``application/xml``
+
+**Request Body:**
+
+.. code-block:: xml
+
+   <afi-safi xmlns="urn:opendaylight:params:xml:ns:yang:bgp:openconfig-extensions">
+      <afi-safi-name xmlns:x="http://openconfig.net/yang/bgp-types">x:IPV4-UNICAST</afi-safi-name>
+      <receive>true</receive>
+      <send-max>0</send-max>
+   </afi-safi>
 
 Usage
 ^^^^^
