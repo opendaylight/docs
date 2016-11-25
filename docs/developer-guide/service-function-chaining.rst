@@ -445,6 +445,53 @@ There are other minor changes in the data model; the SFC encapsulation type has 
 
 -  `Service Locator data model <https://github.com/opendaylight/sfc/blob/master/sfc-model/src/main/yang/service-locator.yang>`__
 
+RSP Rendering changes for paths using the Logical SFF
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. **Construction of the auxiliary rendering graph**
+
+   When starting the rendering of a RSP, the SFC renderer builds an auxiliary graph with information about the required hops for traffic traversing the path. RSP processing is achieved by iteratively evaluating each of the entries in the graph, writing the required flows in the proper switch for each hop.
+
+   It is important to note that the graph includes both traffic ingress (i.e. traffic entering into the first SF) and traffic egress (i.e. traffic leaving the chain from the last SF) as hops. Therefore, the number of entries in the graph equals the number of SFs in the chain plus one.
+
+   .. figure:: ./images/sfc/sfc-genius-example-auxiliary-graph.png
+
+   The process of rendering a chain when the switches involved are part of the Logical SFF also starts with the construction of the hop graph. The difference is that when the SFs used in the chain are using a logical interface, the SFC renderer will also retrieve from Genius the DPIDs for the switches, storing them in the graph. In this context, those switches are the ones in the compute nodes each SF is hosted on at the time the chain is rendered. 
+
+   .. figure:: ./images/sfc/sfc-genius-example-auxiliary-graph-logical-sff.png
+
+#. **New transport processor**
+
+   Transport processors are classes which calculate and write the correct flows for a chain. Each transport processor specializes on writing the flows for a given combination of transport type and SFC encapsulation. 
+
+   A specific transport processor has been created for paths using a Logical SFF. A particularity of this transport processor is that its use is not only determined by the transport / SFC encapsulation combination, but also because the chain is using a Logical SFF. The actual condition evaluated for selecting the Logical SFF transport processor is that the SFs in the chain are using logical interface locators, and that the DPIDs for those locators can be successfully retrieved from Genius.
+
+   .. figure:: ./images/sfc/transport_processors_class_diagram.png
+
+   The main differences between the Logical SFF transport processor and other processors are the following: 
+
+   - Instead of srcSff, dstSff fields in the hops graph (which are all equal in a path using a Logical SFF), the Logical SFF transport processor uses previously stored srcDpnId, dstDpnId fields in order to know whether an actual hop between compute nodes must be performed or not (it is possible that two consecutive SFs are collocated in the same compute node). 
+
+   - When a hop between switches really has to be performed, it relies on Genius for getting the actions to perform that hop. The retrieval of those actions involve two steps: 
+
+     - First, Genius' Overlay Tunnel Manager module is used in order to retrieve the target interface for a jump between the source and the destination DPIDs. 
+
+     - Then, egress instructions for that interface are retrieved from Genius's Interface Manager.
+
+   - There are no next hop rules between compute nodes, only egress instructions (the transport zone tunnels have all the required routing information).
+
+   - Next hop information towards SFs uses mac adresses which are also retrieved from the Genius datastore.
+
+   - The Logical SFF transport processor performs NSH decapsulation in the last switch of the chain. 
+
+#. **Post-rendering update of the operational data model**
+
+   When the rendering of a chain finishes successfully, the Logical SFF Transport Processor perform two operational datastore modifications in order to provide some relevant runtime information about the chain. The exposed information is the following: 
+
+   - Rendered Service Path state: when the chain uses a Logical SFF, DPIDs for the switches in the compute nodes on which the SFs participating in the chain are hosted are added to the hop information.
+
+   - SFF state: A new list of all RSPs which use each DPID is has been added. It is updated on each RSP addition / deletion. 
+
 Interaction with Genius
 ~~~~~~~~~~~~~~~~~~~~~~~
 As shown in the following picture, SFC will interact with Genius project's services to provide the
