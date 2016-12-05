@@ -43,7 +43,7 @@ the components that can be configured.
 Configuring Loop Remover
 ------------------------
 
--  52-loopremover.xml
+-  l2switch/loopremover/implementation/src/main/yang/loop-remover-config.yang
 
    -  is-install-lldp-flow
 
@@ -51,6 +51,8 @@ Configuring Loop Remover
          controller will be installed on each switch
 
       -  "false" means this flow will not be installed
+
+      -  default value is true
 
    -  lldp-flow-table-id
 
@@ -60,12 +62,16 @@ Configuring Loop Remover
       -  This field is only relevant when "is-install-lldp-flow" is set
          to "true"
 
+      -  default value is 0
+
    -  lldp-flow-priority
 
       -  The LLDP flow will be installed with the specified priority
 
       -  This field is only relevant when "is-install-lldp-flow" is set
          to "true"
+
+      -  default value is 100
 
    -  lldp-flow-idle-timeout
 
@@ -75,6 +81,8 @@ Configuring Loop Remover
       -  This field is only relevant when "is-install-lldp-flow" is set
          to "true"
 
+      -  default value is 0
+
    -  lldp-flow-hard-timeout
 
       -  The LLDP flow will timeout (removed from the switch) after *x*
@@ -82,6 +90,8 @@ Configuring Loop Remover
 
       -  This field is only relevant when "is-install-lldp-flow" is set
          to "true"
+
+      -  default value is 0
 
    -  graph-refresh-delay
 
@@ -99,10 +109,12 @@ Configuring Loop Remover
       -  A lower value has the advantage of handling network topology
          changes quicker, at the cost of doing more computation.
 
+      -  default value is 1000
+
 Configuring Arp Handler
 -----------------------
 
--  54-arphandler.xml
+-  l2switch/arphandler/src/main/yang/arp-handler-config.yang
 
    -  is-proactive-flood-mode
 
@@ -125,6 +137,8 @@ Configuring Arp Handler
             requests & replies) and the ARP process takes longer than if
             there were flood flows.
 
+      -  default value is true
+
    -  flood-flow-table-id
 
       -  The flood flow will be installed on the specified flow table of
@@ -133,12 +147,16 @@ Configuring Arp Handler
       -  This field is only relevant when "is-proactive-flood-mode" is
          set to "true"
 
+      -  default value is 0
+
    -  flood-flow-priority
 
       -  The flood flow will be installed with the specified priority
 
       -  This field is only relevant when "is-proactive-flood-mode" is
          set to "true"
+
+      -  default value is 2
 
    -  flood-flow-idle-timeout
 
@@ -148,6 +166,8 @@ Configuring Arp Handler
       -  This field is only relevant when "is-proactive-flood-mode" is
          set to "true"
 
+      -  default value is 0
+
    -  flood-flow-hard-timeout
 
       -  The flood flow will timeout (removed from the switch) after *x*
@@ -155,6 +175,8 @@ Configuring Arp Handler
 
       -  This field is only relevant when "is-proactive-flood-mode" is
          set to "true"
+
+      -  default value is 0
 
    -  arp-flow-table-id
 
@@ -164,12 +186,16 @@ Configuring Arp Handler
       -  This field is only relevant when "is-proactive-flood-mode" is
          set to "false"
 
+      -  default value is 0
+
    -  arp-flow-priority
 
       -  The ARP flow will be installed with the specified priority
 
       -  This field is only relevant when "is-proactive-flood-mode" is
          set to "false"
+
+      -  default value is 1
 
    -  arp-flow-idle-timeout
 
@@ -178,6 +204,8 @@ Configuring Arp Handler
 
       -  This field is only relevant when "is-proactive-flood-mode" is
          set to "false"
+
+      -  default value is 0
 
    -  arp-flow-hard-timeout
 
@@ -188,10 +216,12 @@ Configuring Arp Handler
       -  This field is only relevant when "is-proactive-flood-mode" is
          set to "false"
 
+      -  default value is 0
+
 Configuring Address Tracker
 ---------------------------
 
--  56-addresstracker.xml
+-  l2switch/addresstracker/implementation/src/main/yang/address-tracker-config.yang
 
    -  timestamp-update-interval
 
@@ -205,16 +235,20 @@ Configuring Address Tracker
       -  A lower value has the advantage of knowing how fresh an address
          is.
 
+      -  default value is 600000
+
    -  observe-addresses-from
 
       -  IP and MAC addresses can be observed/learned from ARP, IPv4,
          and IPv6 packets. Set which packets to make these observations
          from.
 
+      -  default value is arp
+
 Configuring L2Switch Main
 -------------------------
 
--  58-l2switchmain.xml
+-  l2switch/l2switch-main/src/main/yang/l2switch-config.yang
 
    -  is-install-dropall-flow
 
@@ -224,6 +258,8 @@ Configuring L2Switch Main
 
       -  "false" means this flow will not be installed
 
+      -  default value is true
+
    -  dropall-flow-table-id
 
       -  The dropall flow will be installed on the specified flow table
@@ -232,12 +268,16 @@ Configuring L2Switch Main
       -  This field is only relevant when "is-install-dropall-flow" is
          set to "true"
 
+      -  default value is 0
+
    -  dropall-flow-priority
 
       -  The dropall flow will be installed with the specified priority
 
       -  This field is only relevant when "is-install-dropall-flow" is
          set to "true"
+
+      -  default value is 0
 
    -  dropall-flow-idle-timeout
 
@@ -247,6 +287,8 @@ Configuring L2Switch Main
       -  This field is only relevant when "is-install-dropall-flow" is
          set to "true"
 
+      -  default value is 0
+
    -  dropall-flow-hard-timeout
 
       -  The dropall flow will timeout (removed from the switch) after
@@ -254,6 +296,8 @@ Configuring L2Switch Main
 
       -  This field is only relevant when "is-install-dropall-flow" is
          set to "true"
+
+      -  default value is 0
 
    -  is-learning-only-mode
 
@@ -265,6 +309,8 @@ Configuring L2Switch Main
          and install flows on the switches to optimize traffic.
          Currently, MAC-to-MAC flows are installed.
 
+      -  default value is false
+
    -  reactive-flow-table-id
 
       -  The reactive flow will be installed on the specified flow table
@@ -273,12 +319,16 @@ Configuring L2Switch Main
       -  This field is only relevant when "is-learning-only-mode" is set
          to "false"
 
+      -  default value is 0
+
    -  reactive-flow-priority
 
       -  The reactive flow will be installed with the specified priority
 
       -  This field is only relevant when "is-learning-only-mode" is set
          to "false"
+
+      -  default value is 10
 
    -  reactive-flow-idle-timeout
 
@@ -288,6 +338,8 @@ Configuring L2Switch Main
       -  This field is only relevant when "is-learning-only-mode" is set
          to "false"
 
+      -  default value is 600
+
    -  reactive-flow-hard-timeout
 
       -  The reactive flow will timeout (removed from the switch) after
@@ -295,6 +347,8 @@ Configuring L2Switch Main
 
       -  This field is only relevant when "is-learning-only-mode" is set
          to "false"
+
+      -  default value is 300
 
 Running the L2Switch project
 ----------------------------
