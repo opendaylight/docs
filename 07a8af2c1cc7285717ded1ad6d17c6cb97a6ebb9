@@ -1,0 +1,170 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a622d24_5a8dff30",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 3276
+      },
+      "writtenOn": "2016-12-05T06:12:52Z",
+      "side": 1,
+      "message": "The \u0027\u003d\u0027 should end at \u0027t\u0027 of netvirt.",
+      "revId": "07a8af2c1cc7285717ded1ad6d17c6cb97a6ebb9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_da910f54",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 3276
+      },
+      "writtenOn": "2016-12-05T06:12:52Z",
+      "side": 1,
+      "message": "A sub-heading with title \u0027Installing OpenDaylight\u0027 or \u0027Installing OpenDaylight with netvirt\u0027 might work better.",
+      "revId": "07a8af2c1cc7285717ded1ad6d17c6cb97a6ebb9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_ba8253fe",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 3276
+      },
+      "writtenOn": "2016-12-05T06:12:52Z",
+      "side": 1,
+      "message": "Might be good to have a toctree in this doc at the top. Thoughts?",
+      "revId": "07a8af2c1cc7285717ded1ad6d17c6cb97a6ebb9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_3a9f6361",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 3276
+      },
+      "writtenOn": "2016-12-05T06:12:52Z",
+      "side": 1,
+      "message": "do we still need all these individually? esp odl-adsal-northbound etc?",
+      "range": {
+        "startLine": 24,
+        "startChar": 4,
+        "endLine": 24,
+        "endChar": 191
+      },
+      "revId": "07a8af2c1cc7285717ded1ad6d17c6cb97a6ebb9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_7a88bb22",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 3276
+      },
+      "writtenOn": "2016-12-05T06:12:52Z",
+      "side": 1,
+      "message": "Should be images/netvirt as per the patch.",
+      "range": {
+        "startLine": 30,
+        "startChar": 12,
+        "endLine": 30,
+        "endChar": 26
+      },
+      "revId": "07a8af2c1cc7285717ded1ad6d17c6cb97a6ebb9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_9a87970f",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 3276
+      },
+      "writtenOn": "2016-12-05T06:12:52Z",
+      "side": 1,
+      "message": "images/netvirt",
+      "range": {
+        "startLine": 171,
+        "startChar": 12,
+        "endLine": 171,
+        "endChar": 27
+      },
+      "revId": "07a8af2c1cc7285717ded1ad6d17c6cb97a6ebb9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_fa7b2b27",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 3276
+      },
+      "writtenOn": "2016-12-05T06:12:52Z",
+      "side": 1,
+      "message": "Troubleshooting might be a better term.",
+      "range": {
+        "startLine": 311,
+        "startChar": 0,
+        "endLine": 311,
+        "endChar": 9
+      },
+      "revId": "07a8af2c1cc7285717ded1ad6d17c6cb97a6ebb9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_da78ef2d",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 3276
+      },
+      "writtenOn": "2016-12-05T06:12:52Z",
+      "side": 1,
+      "message": "nitpick: whitespaces.",
+      "range": {
+        "startLine": 322,
+        "startChar": 0,
+        "endLine": 322,
+        "endChar": 3
+      },
+      "revId": "07a8af2c1cc7285717ded1ad6d17c6cb97a6ebb9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
