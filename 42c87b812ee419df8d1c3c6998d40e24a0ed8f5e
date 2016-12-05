@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a622d24_e7443376",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2016-12-05T22:23:18Z",
+      "side": 1,
+      "message": "This summary is too generic and one cannot determine the changes from this title. I think a better summary would be:\n\n Update l2switch variable locations and default values",
+      "revId": "42c87b812ee419df8d1c3c6998d40e24a0ed8f5e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_874f3f92",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2016-12-05T22:23:18Z",
+      "side": 1,
+      "message": "typo: variables",
+      "range": {
+        "startLine": 9,
+        "startChar": 54,
+        "endLine": 9,
+        "endChar": 63
+      },
+      "revId": "42c87b812ee419df8d1c3c6998d40e24a0ed8f5e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_a74a3b81",
+        "filename": "docs/submodules/releng/builder",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2016-12-05T22:23:18Z",
+      "side": 1,
+      "message": "Not sure why this was modified. Can you update the patch to not include an update to releng/builder\u0027s metadata?",
+      "revId": "42c87b812ee419df8d1c3c6998d40e24a0ed8f5e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
