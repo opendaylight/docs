@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "1a622d24_9d4aec81",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 3276
+      },
+      "writtenOn": "2016-12-06T10:34:59Z",
+      "side": 1,
+      "message": "Yep. Docmentation is generated for each branch.\n\nMaster: http://docs.opendaylight.org/en/latest/\nBoron: http://docs.opendaylight.org/en/stable-boron/\n\nShould check with Colin if we want this to go into stable/boron. Would be good to just link to https://www.opendaylight.org/downloads here. Each release gets added in there.",
+      "parentUuid": "1a622d24_dde744e3",
+      "range": {
+        "startLine": 13,
+        "startChar": 10,
+        "endLine": 13,
+        "endChar": 19
+      },
+      "revId": "c4efb3d1fce18b1f3ee68589dd7af8864a0e295c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a622d24_bd2528ad",
         "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
         "patchSetId": 6
@@ -148,6 +172,24 @@
       "side": 1,
       "message": "do you mean emphasize-lines? trying it out now.\nI\u0027m sure this can be styled much nicer by the way. trying to set a base and then we can all improve it.",
       "parentUuid": "1a622d24_1d3a5ccd",
+      "revId": "c4efb3d1fce18b1f3ee68589dd7af8864a0e295c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_dd446476",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 3276
+      },
+      "writtenOn": "2016-12-06T10:34:59Z",
+      "side": 1,
+      "message": "Agree.",
+      "parentUuid": "1a622d24_bd036872",
       "revId": "c4efb3d1fce18b1f3ee68589dd7af8864a0e295c",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
