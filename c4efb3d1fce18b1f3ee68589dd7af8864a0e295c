@@ -1,0 +1,124 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a622d24_626c919d",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2016-12-06T01:59:40Z",
+      "side": 1,
+      "message": "and set the br-int controller to ${CONTROL_HOST}:6633 and should show as connected.",
+      "revId": "c4efb3d1fce18b1f3ee68589dd7af8864a0e295c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_4269958a",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2016-12-06T01:59:40Z",
+      "side": 1,
+      "message": "ok, you mention it here so maybe it\u0027s enough.",
+      "range": {
+        "startLine": 163,
+        "startChar": 2,
+        "endLine": 163,
+        "endChar": 22
+      },
+      "revId": "c4efb3d1fce18b1f3ee68589dd7af8864a0e295c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_820a8dd0",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2016-12-06T01:59:40Z",
+      "side": 1,
+      "message": "you are asking for trouble here :)",
+      "range": {
+        "startLine": 178,
+        "startChar": 31,
+        "endLine": 178,
+        "endChar": 59
+      },
+      "revId": "c4efb3d1fce18b1f3ee68589dd7af8864a0e295c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_6203f1b8",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2016-12-06T01:59:40Z",
+      "side": 1,
+      "message": "that console log we use in CSIT is pretty handy too, letting you know if your instance is even sending a request.",
+      "revId": "c4efb3d1fce18b1f3ee68589dd7af8864a0e295c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_420075aa",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2016-12-06T01:59:40Z",
+      "side": 1,
+      "message": "there should be a full mesh, so one vxlan tunnel from each openstack node to the other.",
+      "range": {
+        "startLine": 333,
+        "startChar": 4,
+        "endLine": 333,
+        "endChar": 67
+      },
+      "revId": "c4efb3d1fce18b1f3ee68589dd7af8864a0e295c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_a22ce94b",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2016-12-06T01:59:40Z",
+      "side": 1,
+      "message": "is this the right doc to give some basic descriptions of what the flow tables should look like (and what they do) on each node?",
+      "revId": "c4efb3d1fce18b1f3ee68589dd7af8864a0e295c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
