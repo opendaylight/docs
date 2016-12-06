@@ -2,6 +2,46 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a622d24_dd20e49d",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 3276
+      },
+      "writtenOn": "2016-12-06T07:53:12Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this then go to stable/boron so it shows up in Boron docs? Master version should reflect current master cycle [Carbon]. Or plan to cherry pick and edit later?\n\n@Colin: Thoughts?",
+      "range": {
+        "startLine": 13,
+        "startChar": 10,
+        "endLine": 13,
+        "endChar": 19
+      },
+      "revId": "c4efb3d1fce18b1f3ee68589dd7af8864a0e295c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_bd2528ad",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 3276
+      },
+      "writtenOn": "2016-12-06T07:53:12Z",
+      "side": 1,
+      "message": "nitpick: ODL guideline is 72-100 characters, so can probably use more columns.",
+      "revId": "c4efb3d1fce18b1f3ee68589dd7af8864a0e295c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a622d24_626c919d",
         "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
         "patchSetId": 6
@@ -13,6 +53,23 @@
       "writtenOn": "2016-12-06T01:59:40Z",
       "side": 1,
       "message": "and set the br-int controller to ${CONTROL_HOST}:6633 and should show as connected.",
+      "revId": "c4efb3d1fce18b1f3ee68589dd7af8864a0e295c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_1d3a5ccd",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 3276
+      },
+      "writtenOn": "2016-12-06T07:53:12Z",
+      "side": 1,
+      "message": "Suggestion: You can highlight specific lines to call attention to them.",
       "revId": "c4efb3d1fce18b1f3ee68589dd7af8864a0e295c",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -59,6 +116,23 @@
         "endLine": 178,
         "endChar": 59
       },
+      "revId": "c4efb3d1fce18b1f3ee68589dd7af8864a0e295c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_3d3118ed",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 3276
+      },
+      "writtenOn": "2016-12-06T07:53:12Z",
+      "side": 1,
+      "message": "Suggestion: Add the change that is needed. I believe it is\n\n          \u003cSet name\u003d\"port\"\u003e\n            \u003cProperty name\u003d\"jetty.port\" default\u003d\"8080\" /\u003e\n          \u003c/Set\u003e",
       "revId": "c4efb3d1fce18b1f3ee68589dd7af8864a0e295c",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
