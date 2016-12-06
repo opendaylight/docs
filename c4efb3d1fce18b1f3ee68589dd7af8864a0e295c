@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1a622d24_dde744e3",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 670
+      },
+      "writtenOn": "2016-12-06T10:19:44Z",
+      "side": 1,
+      "message": "No idea, didn\u0027t realize there were branches.\nDoes docs.opendaylight.org actually allow you to move between branches? Or does it show the latest stable by default?\n\nIn any case this means the latest downloadable release (not snapshot). We don\u0027t have that for Carbon yet (unless we want to link directly to nexus)",
+      "parentUuid": "1a622d24_dd20e49d",
+      "range": {
+        "startLine": 13,
+        "startChar": 10,
+        "endLine": 13,
+        "endChar": 19
+      },
+      "revId": "c4efb3d1fce18b1f3ee68589dd7af8864a0e295c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a622d24_bd2528ad",
         "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
         "patchSetId": 6
@@ -36,6 +60,24 @@
       "writtenOn": "2016-12-06T07:53:12Z",
       "side": 1,
       "message": "nitpick: ODL guideline is 72-100 characters, so can probably use more columns.",
+      "revId": "c4efb3d1fce18b1f3ee68589dd7af8864a0e295c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_fdcde05e",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 670
+      },
+      "writtenOn": "2016-12-06T10:19:44Z",
+      "side": 1,
+      "message": "I can refactor this later. It seems the generated file ignores our newlines anyways.\n72-100 is a pretty loose guideline - do we want everything to use the max 100 where it makes sense?",
+      "parentUuid": "1a622d24_bd2528ad",
       "revId": "c4efb3d1fce18b1f3ee68589dd7af8864a0e295c",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -59,6 +101,24 @@
     },
     {
       "key": {
+        "uuid": "1a622d24_3dd8f81c",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 670
+      },
+      "writtenOn": "2016-12-06T10:19:44Z",
+      "side": 1,
+      "message": "thanks added some text",
+      "parentUuid": "1a622d24_626c919d",
+      "revId": "c4efb3d1fce18b1f3ee68589dd7af8864a0e295c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a622d24_1d3a5ccd",
         "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
         "patchSetId": 6
@@ -70,6 +130,24 @@
       "writtenOn": "2016-12-06T07:53:12Z",
       "side": 1,
       "message": "Suggestion: You can highlight specific lines to call attention to them.",
+      "revId": "c4efb3d1fce18b1f3ee68589dd7af8864a0e295c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_bd036872",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 670
+      },
+      "writtenOn": "2016-12-06T10:19:44Z",
+      "side": 1,
+      "message": "do you mean emphasize-lines? trying it out now.\nI\u0027m sure this can be styled much nicer by the way. trying to set a base and then we can all improve it.",
+      "parentUuid": "1a622d24_1d3a5ccd",
       "revId": "c4efb3d1fce18b1f3ee68589dd7af8864a0e295c",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -122,6 +200,30 @@
     },
     {
       "key": {
+        "uuid": "1a622d24_7d30b056",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 670
+      },
+      "writtenOn": "2016-12-06T10:19:44Z",
+      "side": 1,
+      "message": "yeah I copied it from the old guide - we should really work towards having a readable karaf log though so I think it should stay. no point in hiding our mess :)",
+      "parentUuid": "1a622d24_820a8dd0",
+      "range": {
+        "startLine": 178,
+        "startChar": 31,
+        "endLine": 178,
+        "endChar": 59
+      },
+      "revId": "c4efb3d1fce18b1f3ee68589dd7af8864a0e295c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a622d24_3d3118ed",
         "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
         "patchSetId": 6
@@ -133,6 +235,24 @@
       "writtenOn": "2016-12-06T07:53:12Z",
       "side": 1,
       "message": "Suggestion: Add the change that is needed. I believe it is\n\n          \u003cSet name\u003d\"port\"\u003e\n            \u003cProperty name\u003d\"jetty.port\" default\u003d\"8080\" /\u003e\n          \u003c/Set\u003e",
+      "revId": "c4efb3d1fce18b1f3ee68589dd7af8864a0e295c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_fd3b2036",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 670
+      },
+      "writtenOn": "2016-12-06T10:19:44Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "1a622d24_3d3118ed",
       "revId": "c4efb3d1fce18b1f3ee68589dd7af8864a0e295c",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -190,6 +310,24 @@
       "writtenOn": "2016-12-06T01:59:40Z",
       "side": 1,
       "message": "is this the right doc to give some basic descriptions of what the flow tables should look like (and what they do) on each node?",
+      "revId": "c4efb3d1fce18b1f3ee68589dd7af8864a0e295c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_1d025c3e",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 670
+      },
+      "writtenOn": "2016-12-06T10:19:44Z",
+      "side": 1,
+      "message": "yeah, a bit more advanced\nshould probably link to a more advanced doc (or section) about internals",
+      "parentUuid": "1a622d24_a22ce94b",
       "revId": "c4efb3d1fce18b1f3ee68589dd7af8864a0e295c",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
