@@ -4668,10 +4668,10 @@ This application is part of the OpenDaylight Karaf distribution.
 
 Configuration
 '''''''''''''
-As a first step install BGP, RESTCONF and NETCONF connector plugin, then configure *Application Peer*.
+As a first step install BGP and RESTCONF, then configure *Application Peer*.
 Install ``odl-bgpcep-bgp-benchmark`` feature and reconfigure BGP Application Peer Benchmark application as per following:
 
-**URL:** ``/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules/module/odl-bgp-benchmark-cfg:app-peer-benchmark/bgp-app-peer-benchmark``
+**URL:** ``/restconf/config/odl-bgp-app-peer-benchmark-config:config``
 
 **Method:** ``PUT``
 
@@ -4683,21 +4683,11 @@ Install ``odl-bgpcep-bgp-benchmark`` feature and reconfigure BGP Application Pee
    :linenos:
    :emphasize-lines: 12
 
-   <module xmlns="urn:opendaylight:params:xml:ns:yang:controller:config">
-       <type xmlns:x="urn:opendaylight:params:xml:ns:yang:controller:odl-bgp-benchmark-cfg">x:app-peer-benchmark</type>
-       <name>bgp-app-peer-benchmark</name>
-       <binding-data-broker xmlns="urn:opendaylight:params:xml:ns:yang:controller:odl-bgp-benchmark-cfg">
-           <type xmlns:x="urn:opendaylight:params:xml:ns:yang:controller:md:sal:binding">x:binding-async-data-broker</type>
-           <name>pingpong-binding-data-broker</name>
-       </binding-data-broker>
-       <rpc-registry xmlns="urn:opendaylight:params:xml:ns:yang:controller:odl-bgp-benchmark-cfg">
-           <type xmlns:x="urn:opendaylight:params:xml:ns:yang:controller:md:sal:binding">x:binding-rpc-registry</type>
-           <name>binding-rpc-broker</name>
-       </rpc-registry>
-       <app-rib-id xmlns="urn:opendaylight:params:xml:ns:yang:controller:odl-bgp-benchmark-cfg">10.25.1.9</app-rib-id>
-   </module>
+   <odl-bgp-app-peer-benchmark-config xmlns="urn:opendaylight:params:xml:ns:yang:odl-bgp-app-peer-benchmark-config">
+      <app-peer-id xmlns="urn:opendaylight:params:xml:ns:yang:odl-bgp-app-peer-benchmark-config">10.25.1.9</app-peer-id>
+   </odl-bgp-app-peer-benchmark-config>
 
-@line 12: The *Application Peer* identifier.
+@line 2: The *Application Peer* identifier.
 
 .. warning:: This configuration will be moved to configuration datastore in Carbon release.
 
