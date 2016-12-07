@@ -36,6 +36,7 @@ itself.
    :maxdepth: 1
 
    developer-guide/index
+   submodules/infrautils/docs/index
    submodules/netvirt/docs/index
 
 
