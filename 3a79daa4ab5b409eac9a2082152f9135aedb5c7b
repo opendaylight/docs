@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a622d24_77744cfd",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 654
+      },
+      "writtenOn": "2016-12-07T04:37:51Z",
+      "side": 1,
+      "message": "approaches",
+      "range": {
+        "startLine": 350,
+        "startChar": 35,
+        "endLine": 350,
+        "endChar": 36
+      },
+      "revId": "3a79daa4ab5b409eac9a2082152f9135aedb5c7b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_b768a4f6",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 784,
+      "author": {
+        "id": 654
+      },
+      "writtenOn": "2016-12-07T04:37:51Z",
+      "side": 1,
+      "message": "remove please. Also, this is not simple overlay anymore,  it includes intermediary hops, similar to the OOR one. So perhaps update to say: build a network of three VXLAN/LISP-GPE nodes: a client, a server, and an intermediary hop between the two, illustrating a hop-by-hop path engineering.",
+      "range": {
+        "startLine": 784,
+        "startChar": 15,
+        "endLine": 784,
+        "endChar": 18
+      },
+      "revId": "3a79daa4ab5b409eac9a2082152f9135aedb5c7b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_377494ce",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 798,
+      "author": {
+        "id": 654
+      },
+      "writtenOn": "2016-12-07T04:37:51Z",
+      "side": 1,
+      "message": "needs update, files have been moved. Also, for the VPP case I think you didnt create a postman collection, just separate json files... a postman collection would definitely be better.",
+      "range": {
+        "startLine": 798,
+        "startChar": 3,
+        "endLine": 798,
+        "endChar": 68
+      },
+      "revId": "3a79daa4ab5b409eac9a2082152f9135aedb5c7b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_777e0cb0",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 929,
+      "author": {
+        "id": 654
+      },
+      "writtenOn": "2016-12-07T04:37:51Z",
+      "side": 1,
+      "message": "one word",
+      "range": {
+        "startLine": 929,
+        "startChar": 42,
+        "endLine": 929,
+        "endChar": 53
+      },
+      "revId": "3a79daa4ab5b409eac9a2082152f9135aedb5c7b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_d74a8082",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 930,
+      "author": {
+        "id": 654
+      },
+      "writtenOn": "2016-12-07T04:37:51Z",
+      "side": 1,
+      "message": "one word",
+      "range": {
+        "startLine": 930,
+        "startChar": 42,
+        "endLine": 930,
+        "endChar": 52
+      },
+      "revId": "3a79daa4ab5b409eac9a2082152f9135aedb5c7b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_b74f0492",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 931,
+      "author": {
+        "id": 654
+      },
+      "writtenOn": "2016-12-07T04:37:51Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 931,
+        "startChar": 24,
+        "endLine": 931,
+        "endChar": 28
+      },
+      "revId": "3a79daa4ab5b409eac9a2082152f9135aedb5c7b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
