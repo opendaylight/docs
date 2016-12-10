@@ -22,3 +22,7 @@
 	path = docs/submodules/spectrometer
 	url = ../spectrometer
 	branch = master
+[submodule "docs/submodules/ovsdb"]
+	path = docs/submodules/ovsdb
+	url = ../ovsdb
+	branch = .
