@@ -1,13 +1,13 @@
-L2Switch User Guide
-===================
+L2 Switch User Guide
+====================
 
 Overview
 --------
 
-The L2Switch project provides Layer2 switch functionality.
+The L2 Switch project provides Layer2 switch functionality.
 
-L2Switch Architecture
----------------------
+L2 Switch Architecture
+----------------------
 
 -  Packet Handler
 
@@ -30,18 +30,23 @@ L2Switch Architecture
 
    -  Tracks the locations of hosts in the network
 
--  L2Switch Main
+-  L2 Switch Main
 
    -  Installs flows on each switch based on network traffic
 
-Configuring L2Switch
---------------------
+Configurable parameters in L2 Switch
+------------------------------------
 
-This sections below give details about the configuration settings for
+The sections below give details about the configuration settings for
 the components that can be configured.
 
-Configuring Loop Remover
-------------------------
+The process to change the configuration has been changed with
+the introduction of Blueprint in the Boron release. Please
+refer to :ref:`l2switch-change-config` for an
+example illustrating how to change the configurations.
+
+Configurable parameters in Loop Remover
+---------------------------------------
 
 -  l2switch/loopremover/implementation/src/main/yang/loop-remover-config.yang
 
@@ -111,8 +116,8 @@ Configuring Loop Remover
 
       -  default value is 1000
 
-Configuring Arp Handler
------------------------
+Configurable parameters in Arp Handler
+--------------------------------------
 
 -  l2switch/arphandler/src/main/yang/arp-handler-config.yang
 
@@ -218,8 +223,8 @@ Configuring Arp Handler
 
       -  default value is 0
 
-Configuring Address Tracker
----------------------------
+Configurable parameters in Address Tracker
+------------------------------------------
 
 -  l2switch/addresstracker/implementation/src/main/yang/address-tracker-config.yang
 
@@ -245,8 +250,8 @@ Configuring Address Tracker
 
       -  default value is arp
 
-Configuring L2Switch Main
--------------------------
+Configurable parameters in L2 Switch Main
+-----------------------------------------
 
 -  l2switch/l2switch-main/src/main/yang/l2switch-config.yang
 
@@ -301,11 +306,11 @@ Configuring L2Switch Main
 
    -  is-learning-only-mode
 
-      -  "true" means that the L2Switch will only be learning addresses.
+      -  "true" means that the L2 Switch will only be learning addresses.
          No additional flows to optimize network traffic will be
          installed.
 
-      -  "false" means that the L2Switch will react to network traffic
+      -  "false" means that the L2 Switch will react to network traffic
          and install flows on the switches to optimize traffic.
          Currently, MAC-to-MAC flows are installed.
 
@@ -350,8 +355,59 @@ Configuring L2Switch Main
 
       -  default value is 300
 
-Running the L2Switch project
-----------------------------
+.. _l2switch-change-config:
+
+Change configuration in L2 Switch
+---------------------------------
+
+.. note:: For more information on Blueprint in OpenDaylight, see `this wiki page <https://wiki.opendaylight.org/view/Using_Blueprint>`_.
+
+The following is an example on how to change the configurations of the L2 Switch components.
+
+**Use Case:** Change the L2 switch from proactive flood mode to reactive mode.
+
+**Option 1:** (external xml file)
+
+#. Navigate to etc folder under download distribution
+#. Create following directory structure::
+
+      mkdir - p opendaylight/datastore/initial/config
+
+#. Create a new xml file corresponding to ``<yang module name>_<container name>.xml``::
+
+      vi arp-handler-config_arp-handler-config.xml
+
+#. Add following contents to the created file::
+
+      <?xml version="1.0" encoding="UTF-8"?>
+        <arp-handler-config xmlns="urn:opendaylight:packet:arp-handler-config">
+        <is-proactive-flood-mode>false</is-proactive-flood-mode>
+      </arp-handler-config>
+
+#. Restart the controller which injects the configurations.
+
+**Option 2:** (REST URL)
+
+#. Make the following REST call
+
+   * *URL:* ``http://{{LOCALIP}}:8181/restconf/config/arp-handler-config:arp-handler-config/``
+   * *Content-Type:* application/json
+   * *Body*::
+   
+         {
+           "arp-handler-config":
+           {
+             "is-proactive-flood-mode":false
+           }
+         }
+
+   * *Expected Result:* 201 Created
+
+#. Restart the controller to see updated configurations. With out a restart
+   new configurations will be merged with old configurations which is not desirable.
+
+Running the L2 Switch
+---------------------
 
 To run the L2 Switch inside the OpenDaylight distribution simply
 install the ``odl-l2switch-switch-ui`` feature;
