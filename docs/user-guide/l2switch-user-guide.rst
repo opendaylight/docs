@@ -34,13 +34,18 @@ L2Switch Architecture
 
    -  Installs flows on each switch based on network traffic
 
-Configuring L2Switch
+Configurable parameters in L2Switch
 --------------------
 
-This sections below give details about the configuration settings for
-the components that can be configured.
+Sections below give details about the configuration settings for
+the components that can be configured.		
 
-Configuring Loop Remover
+Process to change the configuration has been changed with 
+BluePrint introduction from Boron release. Please 
+refer to section "Change configuration in L2Switch" for an
+example illustrating how to change the configurations.
+
+Configurable parameters in Loop Remover
 ------------------------
 
 -  l2switch/loopremover/implementation/src/main/yang/loop-remover-config.yang
@@ -111,7 +116,7 @@ Configuring Loop Remover
 
       -  default value is 1000
 
-Configuring Arp Handler
+Configurable parameters in Arp Handler
 -----------------------
 
 -  l2switch/arphandler/src/main/yang/arp-handler-config.yang
@@ -218,7 +223,7 @@ Configuring Arp Handler
 
       -  default value is 0
 
-Configuring Address Tracker
+Configurable parameters in Address Tracker
 ---------------------------
 
 -  l2switch/addresstracker/implementation/src/main/yang/address-tracker-config.yang
@@ -245,7 +250,7 @@ Configuring Address Tracker
 
       -  default value is arp
 
-Configuring L2Switch Main
+Configurable parameters in L2Switch Main
 -------------------------
 
 -  l2switch/l2switch-main/src/main/yang/l2switch-config.yang
@@ -349,6 +354,82 @@ Configuring L2Switch Main
          to "false"
 
       -  default value is 300
+
+
+Change configuration in L2Switch
+----------------------------
+
+Instructions on how to use blueprint are illustrated over here - https://wiki.opendaylight.org/view/Using_Blueprint
+
+Following is an example on how to change the configurations in l2switch project.
+
+Use Case:-
+
+	- Change the l2switch project from proactive flood mode to reactive mode.
+
+
+
+Option 1:- (external xml file)
+
+::
+
+    Navigate to etc folder under download distribution
+
+::
+
+    Create following directory structure 
+	mkdir - p opendaylight/datastore/initial/config
+
+::
+
+    Create a new xml file corresponding to <yang module name>_<container name>.xml
+	vi arp-handler-config_arp-handler-config.xml
+
+::
+
+    Add following contents to the created file 
+	<?xml version="1.0" encoding="UTF-8"?>
+		<arp-handler-config xmlns="urn:opendaylight:packet:arp-handler-config">
+  		<is-proactive-flood-mode>false</is-proactive-flood-mode>
+	</arp-handler-config>
+
+::
+
+    Restart the controller which injects the configurations.
+
+
+
+Option 2:- (REST url)
+
+::
+
+     url:- http://{{LOCALIP}}:8181/restconf/config/arp-handler-config:arp-handler-config/
+
+::
+
+    Content-Type :-
+	application/json
+
+::
+
+    Body:- 
+	{
+	"arp-handler-config":
+	 	{
+		"is-proactive-flood-mode":false
+		}
+	}
+
+::
+
+    Expected Result:- 
+	201 Created
+
+::
+
+    Restart the controller to see updated configurations. With out a restart 
+    new configurations will be merged with old configurations which is not desirable.
+
 
 Running the L2Switch project
 ----------------------------
