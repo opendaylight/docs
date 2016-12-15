@@ -40,8 +40,8 @@ Installing OpenDaylight
 .. toctree::
    :maxdepth: 1
 
-   openstack-with-netvirt
    openstack-with-ovsdb
+   ../submodules/netvirt/docs/openstack-guide/index
    openstack-with-gbp
    openstack-with-gbp-vpp
    openstack-with-vtn

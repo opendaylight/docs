@@ -6,6 +6,7 @@ Project-Specific Installation Guides
    :maxdepth: 1
 
    centinel
+   ../submodules/netvirt/docs/getting-started-guide/index
    opflex
    ovsdb-openstack
    tsdr
