@@ -42,6 +42,7 @@ Project-specific User Guides
    netconf-user-guide
    netide-user-guide
    neutron-service-user-guide
+   ../submodules/netvirt/docs/user-guide/index
    network-intent-composition-(nic)-user-guide
    ocp-plugin-user-guide
    odl-sdni-user-guide

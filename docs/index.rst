@@ -58,6 +58,7 @@ participate in the development of OpenDaylight or would like to start.
    javadoc
    submodules/genius/docs/index
    submodules/infrautils/docs/index
+   submodules/netvirt/docs/contributor-guide/index
 
 .. Commenting the below out until we actually use it
 .. Indices and tables
