@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1a622d24_70c0aee0",
+        "filename": "docs/opendaylight-with-openstack/index.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 670
+      },
+      "writtenOn": "2016-12-15T16:06:36Z",
+      "side": 1,
+      "message": "Probably not as it is planned to be deprecated in the future.\nNeed to at least change it to mention it is the legacy implementation to be deprecated or remove it. Sam WDYT?",
+      "parentUuid": "1a622d24_efc5013e",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 23
+      },
+      "revId": "4f4dd9a4bf8b26281e9e77802fc5b0f14920b8dc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a622d24_8f2c4d04",
         "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
         "patchSetId": 13
@@ -36,6 +60,24 @@
       "writtenOn": "2016-12-15T00:55:39Z",
       "side": 1,
       "message": "There are lots of formatting issues here. I recommend building the docs and looking at the output as described here:\nhttp://docs.opendaylight.org/en/latest/documentation.html#restructuredtext-based-documentation",
+      "revId": "4f4dd9a4bf8b26281e9e77802fc5b0f14920b8dc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_90646a23",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 670
+      },
+      "writtenOn": "2016-12-15T16:06:36Z",
+      "side": 1,
+      "message": "Thanks. Will do this next.",
+      "parentUuid": "1a622d24_8f2c4d04",
       "revId": "4f4dd9a4bf8b26281e9e77802fc5b0f14920b8dc",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -59,6 +101,24 @@
     },
     {
       "key": {
+        "uuid": "1a622d24_704eee97",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 670
+      },
+      "writtenOn": "2016-12-15T16:06:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a622d24_afeb09af",
+      "revId": "4f4dd9a4bf8b26281e9e77802fc5b0f14920b8dc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a622d24_4fdcf512",
         "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
         "patchSetId": 13
@@ -76,6 +136,24 @@
     },
     {
       "key": {
+        "uuid": "1a622d24_d0454271",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 670
+      },
+      "writtenOn": "2016-12-15T16:06:36Z",
+      "side": 1,
+      "message": "Done replaced ** with ^^",
+      "parentUuid": "1a622d24_4fdcf512",
+      "revId": "4f4dd9a4bf8b26281e9e77802fc5b0f14920b8dc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a622d24_2fd7f9ee",
         "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
         "patchSetId": 13
@@ -87,6 +165,30 @@
       "writtenOn": "2016-12-15T00:55:39Z",
       "side": 1,
       "message": "OpenDaylight",
+      "range": {
+        "startLine": 38,
+        "startChar": 49,
+        "endLine": 38,
+        "endChar": 52
+      },
+      "revId": "4f4dd9a4bf8b26281e9e77802fc5b0f14920b8dc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_b0488688",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 670
+      },
+      "writtenOn": "2016-12-15T16:06:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a622d24_2fd7f9ee",
       "range": {
         "startLine": 38,
         "startChar": 49,
@@ -122,6 +224,30 @@
     },
     {
       "key": {
+        "uuid": "1a622d24_105fba42",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 670
+      },
+      "writtenOn": "2016-12-15T16:06:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a622d24_6f08d191",
+      "range": {
+        "startLine": 50,
+        "startChar": 9,
+        "endLine": 50,
+        "endChar": 13
+      },
+      "revId": "4f4dd9a4bf8b26281e9e77802fc5b0f14920b8dc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a622d24_4ff3559e",
         "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
         "patchSetId": 13
@@ -139,6 +265,24 @@
     },
     {
       "key": {
+        "uuid": "1a622d24_9032aa0e",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 670
+      },
+      "writtenOn": "2016-12-15T16:06:36Z",
+      "side": 1,
+      "message": "I actually think it doesn\u0027t, but I agree it looks better, fixed.\nWe also need some convention on maximum line lengths, perhaps we can use some formatter?",
+      "parentUuid": "1a622d24_4ff3559e",
+      "revId": "4f4dd9a4bf8b26281e9e77802fc5b0f14920b8dc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a622d24_cf364552",
         "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
         "patchSetId": 13
@@ -150,6 +294,30 @@
       "writtenOn": "2016-12-15T00:55:39Z",
       "side": 1,
       "message": "OpenDaylight",
+      "range": {
+        "startLine": 106,
+        "startChar": 59,
+        "endLine": 106,
+        "endChar": 62
+      },
+      "revId": "4f4dd9a4bf8b26281e9e77802fc5b0f14920b8dc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_f0203eb2",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 670
+      },
+      "writtenOn": "2016-12-15T16:06:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a622d24_cf364552",
       "range": {
         "startLine": 106,
         "startChar": 59,
@@ -185,6 +353,30 @@
     },
     {
       "key": {
+        "uuid": "1a622d24_10269ace",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 670
+      },
+      "writtenOn": "2016-12-15T16:06:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a622d24_af1029a9",
+      "range": {
+        "startLine": 130,
+        "startChar": 28,
+        "endLine": 130,
+        "endChar": 33
+      },
+      "revId": "4f4dd9a4bf8b26281e9e77802fc5b0f14920b8dc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a622d24_0f279d13",
         "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
         "patchSetId": 13
@@ -196,6 +388,30 @@
       "writtenOn": "2016-12-15T00:55:39Z",
       "side": 1,
       "message": "I think this wants to be sub-note for the above bullet, so \n\n * If you see...\n \n   .. note::\n \n      There might be...\n \n      .. code-block:: bash\n \n         setenforce...",
+      "range": {
+        "startLine": 161,
+        "startChar": 0,
+        "endLine": 167,
+        "endChar": 76
+      },
+      "revId": "4f4dd9a4bf8b26281e9e77802fc5b0f14920b8dc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_50301201",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 670
+      },
+      "writtenOn": "2016-12-15T16:06:36Z",
+      "side": 1,
+      "message": "Done, I wonder if a code-block works inside a note - will verify later",
+      "parentUuid": "1a622d24_0f279d13",
       "range": {
         "startLine": 161,
         "startChar": 0,
@@ -225,6 +441,24 @@
     },
     {
       "key": {
+        "uuid": "1a622d24_302bd695",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 670
+      },
+      "writtenOn": "2016-12-15T16:06:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a622d24_ef2181fd",
+      "revId": "4f4dd9a4bf8b26281e9e77802fc5b0f14920b8dc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a622d24_af394943",
         "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
         "patchSetId": 13
@@ -236,6 +470,30 @@
       "writtenOn": "2016-12-15T00:55:39Z",
       "side": 1,
       "message": "OpenDaylight",
+      "range": {
+        "startLine": 182,
+        "startChar": 20,
+        "endLine": 182,
+        "endChar": 23
+      },
+      "revId": "4f4dd9a4bf8b26281e9e77802fc5b0f14920b8dc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_d0138264",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 670
+      },
+      "writtenOn": "2016-12-15T16:06:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a622d24_af394943",
       "range": {
         "startLine": 182,
         "startChar": 20,
@@ -271,6 +529,30 @@
     },
     {
       "key": {
+        "uuid": "1a622d24_b016c653",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 670
+      },
+      "writtenOn": "2016-12-15T16:06:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a622d24_0f403da4",
+      "range": {
+        "startLine": 195,
+        "startChar": 147,
+        "endLine": 195,
+        "endChar": 150
+      },
+      "revId": "4f4dd9a4bf8b26281e9e77802fc5b0f14920b8dc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a622d24_ef3a2133",
         "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
         "patchSetId": 13
@@ -282,6 +564,30 @@
       "writtenOn": "2016-12-15T00:55:39Z",
       "side": 1,
       "message": "OpenDaylight",
+      "range": {
+        "startLine": 203,
+        "startChar": 107,
+        "endLine": 203,
+        "endChar": 110
+      },
+      "revId": "4f4dd9a4bf8b26281e9e77802fc5b0f14920b8dc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_100dfa3e",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 670
+      },
+      "writtenOn": "2016-12-15T16:06:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a622d24_ef3a2133",
       "range": {
         "startLine": 203,
         "startChar": 107,
@@ -340,6 +646,30 @@
     },
     {
       "key": {
+        "uuid": "1a622d24_5007721c",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 670
+      },
+      "writtenOn": "2016-12-15T16:06:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a622d24_2f4539b3",
+      "range": {
+        "startLine": 217,
+        "startChar": 86,
+        "endLine": 217,
+        "endChar": 89
+      },
+      "revId": "4f4dd9a4bf8b26281e9e77802fc5b0f14920b8dc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a622d24_2f1c19c1",
         "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
         "patchSetId": 13
@@ -351,6 +681,30 @@
       "writtenOn": "2016-12-15T00:55:39Z",
       "side": 1,
       "message": "does this really all want to be a code block, it seems like no.",
+      "range": {
+        "startLine": 221,
+        "startChar": 0,
+        "endLine": 236,
+        "endChar": 61
+      },
+      "revId": "4f4dd9a4bf8b26281e9e77802fc5b0f14920b8dc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_e4588334",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 670
+      },
+      "writtenOn": "2016-12-15T16:06:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a622d24_2f1c19c1",
       "range": {
         "startLine": 221,
         "startChar": 0,
@@ -386,6 +740,30 @@
     },
     {
       "key": {
+        "uuid": "1a622d24_c45bc72c",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 670
+      },
+      "writtenOn": "2016-12-15T16:06:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a622d24_8f7a8def",
+      "range": {
+        "startLine": 253,
+        "startChar": 15,
+        "endLine": 253,
+        "endChar": 18
+      },
+      "revId": "4f4dd9a4bf8b26281e9e77802fc5b0f14920b8dc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a622d24_6f7d71e7",
         "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
         "patchSetId": 13
@@ -397,6 +775,30 @@
       "writtenOn": "2016-12-15T00:55:39Z",
       "side": 1,
       "message": "this doesn\u0027t want to be indented or it formats as a code-block in a block quote",
+      "range": {
+        "startLine": 256,
+        "startChar": 0,
+        "endLine": 260,
+        "endChar": 12
+      },
+      "revId": "4f4dd9a4bf8b26281e9e77802fc5b0f14920b8dc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_24427b3e",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 670
+      },
+      "writtenOn": "2016-12-15T16:06:36Z",
+      "side": 1,
+      "message": "You mean the extra space I had in indentation? Removed now.\nor did you mean not put it in a bash code-block at all?",
+      "parentUuid": "1a622d24_6f7d71e7",
       "range": {
         "startLine": 256,
         "startChar": 0,
@@ -432,6 +834,30 @@
     },
     {
       "key": {
+        "uuid": "1a622d24_043dbfbb",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 670
+      },
+      "writtenOn": "2016-12-15T16:06:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a622d24_cf8485d6",
+      "range": {
+        "startLine": 317,
+        "startChar": 0,
+        "endLine": 318,
+        "endChar": 106
+      },
+      "revId": "4f4dd9a4bf8b26281e9e77802fc5b0f14920b8dc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a622d24_af8789d6",
         "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
         "patchSetId": 13
@@ -443,6 +869,30 @@
       "writtenOn": "2016-12-15T00:55:39Z",
       "side": 1,
       "message": "network? or is net right?",
+      "range": {
+        "startLine": 320,
+        "startChar": 11,
+        "endLine": 320,
+        "endChar": 14
+      },
+      "revId": "4f4dd9a4bf8b26281e9e77802fc5b0f14920b8dc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_644c7371",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 670
+      },
+      "writtenOn": "2016-12-15T16:06:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a622d24_af8789d6",
       "range": {
         "startLine": 320,
         "startChar": 11,
@@ -472,6 +922,24 @@
     },
     {
       "key": {
+        "uuid": "1a622d24_4447b74b",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 670
+      },
+      "writtenOn": "2016-12-15T16:06:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a622d24_0f6e7d2f",
+      "revId": "4f4dd9a4bf8b26281e9e77802fc5b0f14920b8dc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a622d24_ef686123",
         "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
         "patchSetId": 13
@@ -483,6 +951,30 @@
       "writtenOn": "2016-12-15T00:55:39Z",
       "side": 1,
       "message": "put it in ``...``?",
+      "range": {
+        "startLine": 383,
+        "startChar": 14,
+        "endLine": 383,
+        "endChar": 35
+      },
+      "revId": "4f4dd9a4bf8b26281e9e77802fc5b0f14920b8dc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_8478af90",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 383,
+      "author": {
+        "id": 670
+      },
+      "writtenOn": "2016-12-15T16:06:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a622d24_ef686123",
       "range": {
         "startLine": 383,
         "startChar": 14,
@@ -518,6 +1010,30 @@
     },
     {
       "key": {
+        "uuid": "1a622d24_c472a7ac",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 670
+      },
+      "writtenOn": "2016-12-15T16:06:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a622d24_4f7875f2",
+      "range": {
+        "startLine": 388,
+        "startChar": 0,
+        "endLine": 393,
+        "endChar": 101
+      },
+      "revId": "4f4dd9a4bf8b26281e9e77802fc5b0f14920b8dc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a622d24_4f4fd5bd",
         "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
         "patchSetId": 13
@@ -529,6 +1045,30 @@
       "writtenOn": "2016-12-15T00:55:39Z",
       "side": 1,
       "message": "VXLAN?",
+      "range": {
+        "startLine": 410,
+        "startChar": 11,
+        "endLine": 410,
+        "endChar": 16
+      },
+      "revId": "4f4dd9a4bf8b26281e9e77802fc5b0f14920b8dc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_6463d3dc",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 410,
+      "author": {
+        "id": 670
+      },
+      "writtenOn": "2016-12-15T16:06:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a622d24_4f4fd5bd",
       "range": {
         "startLine": 410,
         "startChar": 11,
@@ -564,6 +1104,30 @@
     },
     {
       "key": {
+        "uuid": "1a622d24_e4a6c30f",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 670
+      },
+      "writtenOn": "2016-12-15T16:06:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a622d24_2f737916",
+      "range": {
+        "startLine": 412,
+        "startChar": 0,
+        "endLine": 413,
+        "endChar": 158
+      },
+      "revId": "4f4dd9a4bf8b26281e9e77802fc5b0f14920b8dc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a622d24_8f61ed3b",
         "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
         "patchSetId": 13
@@ -575,6 +1139,30 @@
       "writtenOn": "2016-12-15T00:55:39Z",
       "side": 1,
       "message": "This should all be indented under things.\n\nAlso, is the weird cascading indentation of the code in the code-block intentional?",
+      "range": {
+        "startLine": 415,
+        "startChar": 0,
+        "endLine": 435,
+        "endChar": 36
+      },
+      "revId": "4f4dd9a4bf8b26281e9e77802fc5b0f14920b8dc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_24b0bb42",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 435,
+      "author": {
+        "id": 670
+      },
+      "writtenOn": "2016-12-15T16:06:36Z",
+      "side": 1,
+      "message": "Yeah that weird cascading indentation is from the original output of the ovs-appctl command. Fixed it a bit.",
+      "parentUuid": "1a622d24_8f61ed3b",
       "range": {
         "startLine": 415,
         "startChar": 0,
@@ -621,6 +1209,24 @@
     },
     {
       "key": {
+        "uuid": "1a622d24_0492df9e",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 445,
+      "author": {
+        "id": 670
+      },
+      "writtenOn": "2016-12-15T16:06:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a622d24_6f645149",
+      "revId": "4f4dd9a4bf8b26281e9e77802fc5b0f14920b8dc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a622d24_af5e6974",
         "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
         "patchSetId": 13
@@ -632,6 +1238,30 @@
       "writtenOn": "2016-12-15T00:55:39Z",
       "side": 1,
       "message": "this should be indented 2 spaces over to fall under the bullet",
+      "range": {
+        "startLine": 444,
+        "startChar": 0,
+        "endLine": 460,
+        "endChar": 45
+      },
+      "revId": "4f4dd9a4bf8b26281e9e77802fc5b0f14920b8dc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_64911399",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 460,
+      "author": {
+        "id": 670
+      },
+      "writtenOn": "2016-12-15T16:06:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a622d24_af5e6974",
       "range": {
         "startLine": 444,
         "startChar": 0,
@@ -661,6 +1291,24 @@
     },
     {
       "key": {
+        "uuid": "1a622d24_448cd77f",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 463,
+      "author": {
+        "id": 670
+      },
+      "writtenOn": "2016-12-15T16:06:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a622d24_cf5be585",
+      "revId": "4f4dd9a4bf8b26281e9e77802fc5b0f14920b8dc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a622d24_2f4a59ac",
         "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
         "patchSetId": 13
@@ -684,6 +1332,30 @@
     },
     {
       "key": {
+        "uuid": "1a622d24_a4ea0b0d",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 464,
+      "author": {
+        "id": 670
+      },
+      "writtenOn": "2016-12-15T16:06:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a622d24_2f4a59ac",
+      "range": {
+        "startLine": 464,
+        "startChar": 44,
+        "endLine": 464,
+        "endChar": 49
+      },
+      "revId": "4f4dd9a4bf8b26281e9e77802fc5b0f14920b8dc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a622d24_8fc8cd23",
         "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
         "patchSetId": 13
@@ -695,6 +1367,30 @@
       "writtenOn": "2016-12-15T00:55:39Z",
       "side": 1,
       "message": "VXLAN",
+      "range": {
+        "startLine": 465,
+        "startChar": 30,
+        "endLine": 465,
+        "endChar": 35
+      },
+      "revId": "4f4dd9a4bf8b26281e9e77802fc5b0f14920b8dc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_84ed4f28",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 465,
+      "author": {
+        "id": 670
+      },
+      "writtenOn": "2016-12-15T16:06:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a622d24_8fc8cd23",
       "range": {
         "startLine": 465,
         "startChar": 30,
@@ -753,6 +1449,54 @@
     },
     {
       "key": {
+        "uuid": "1a622d24_c4f747f4",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 476,
+      "author": {
+        "id": 670
+      },
+      "writtenOn": "2016-12-15T16:06:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a622d24_8f13adb7",
+      "range": {
+        "startLine": 476,
+        "startChar": 12,
+        "endLine": 476,
+        "endChar": 15
+      },
+      "revId": "4f4dd9a4bf8b26281e9e77802fc5b0f14920b8dc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_e4f403f4",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 476,
+      "author": {
+        "id": 670
+      },
+      "writtenOn": "2016-12-15T16:06:36Z",
+      "side": 1,
+      "message": "thanks, added some more info - we can add more later",
+      "parentUuid": "1a622d24_6fcbb11e",
+      "range": {
+        "startLine": 476,
+        "startChar": 86,
+        "endLine": 476,
+        "endChar": 98
+      },
+      "revId": "4f4dd9a4bf8b26281e9e77802fc5b0f14920b8dc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a622d24_cfd2c5d1",
         "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
         "patchSetId": 13
@@ -764,6 +1508,24 @@
       "writtenOn": "2016-12-15T00:55:39Z",
       "side": 1,
       "message": "what is this doing? add something explaining why you\u0027re running this and what people are looking for?",
+      "revId": "4f4dd9a4bf8b26281e9e77802fc5b0f14920b8dc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_24defb6d",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 479,
+      "author": {
+        "id": 670
+      },
+      "writtenOn": "2016-12-15T16:06:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a622d24_cfd2c5d1",
       "revId": "4f4dd9a4bf8b26281e9e77802fc5b0f14920b8dc",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -793,6 +1555,30 @@
     },
     {
       "key": {
+        "uuid": "1a622d24_44e33733",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 482,
+      "author": {
+        "id": 670
+      },
+      "writtenOn": "2016-12-15T16:06:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a622d24_6f1611a9",
+      "range": {
+        "startLine": 482,
+        "startChar": 112,
+        "endLine": 482,
+        "endChar": 115
+      },
+      "revId": "4f4dd9a4bf8b26281e9e77802fc5b0f14920b8dc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a622d24_ef4fc1bc",
         "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
         "patchSetId": 13
@@ -804,6 +1590,30 @@
       "writtenOn": "2016-12-15T00:55:39Z",
       "side": 1,
       "message": "This should be 2 spaces to the right to format under the right bullet.",
+      "range": {
+        "startLine": 485,
+        "startChar": 0,
+        "endLine": 491,
+        "endChar": 205
+      },
+      "revId": "4f4dd9a4bf8b26281e9e77802fc5b0f14920b8dc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_a4d16b59",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 491,
+      "author": {
+        "id": 670
+      },
+      "writtenOn": "2016-12-15T16:06:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a622d24_ef4fc1bc",
       "range": {
         "startLine": 485,
         "startChar": 0,
@@ -855,6 +1665,54 @@
         "startChar": 0,
         "endLine": 498,
         "endChar": 64
+      },
+      "revId": "4f4dd9a4bf8b26281e9e77802fc5b0f14920b8dc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_e4cb63a3",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 498,
+      "author": {
+        "id": 670
+      },
+      "writtenOn": "2016-12-15T16:06:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a622d24_cfe805b7",
+      "range": {
+        "startLine": 496,
+        "startChar": 0,
+        "endLine": 498,
+        "endChar": 64
+      },
+      "revId": "4f4dd9a4bf8b26281e9e77802fc5b0f14920b8dc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_84d42f48",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 498,
+      "author": {
+        "id": 670
+      },
+      "writtenOn": "2016-12-15T16:06:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a622d24_cf0da592",
+      "range": {
+        "startLine": 498,
+        "startChar": 13,
+        "endLine": 498,
+        "endChar": 16
       },
       "revId": "4f4dd9a4bf8b26281e9e77802fc5b0f14920b8dc",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
