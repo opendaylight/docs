@@ -7,7 +7,6 @@ Project-Specific Installation Guides
 
    centinel
    opflex
-   ovsdb-openstack
    tsdr
    vtn
    yangide
