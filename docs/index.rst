@@ -37,7 +37,7 @@ itself.
 
    developer-guide/index
    submodules/infrautils/docs/index
-   submodules/netvirt/docs/index
+   submodules/netvirt/docs/developer-guide/index
    submodules/ovsdb/docs/index
 
 
@@ -58,6 +58,7 @@ participate in the development of OpenDaylight or would like to start.
    submodules/spectrometer/docs/index
    javadoc
    submodules/genius/docs/index
+   submodules/netvirt/docs/contributor-guide/index
 
 .. Commenting the below out until we actually use it
 .. Indices and tables
