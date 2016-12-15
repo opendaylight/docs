@@ -40,7 +40,6 @@ Installing OpenDaylight
 .. toctree::
    :maxdepth: 1
 
-   openstack-with-ovsdb
    openstack-with-gbp
    openstack-with-gbp-vpp
    openstack-with-vtn
