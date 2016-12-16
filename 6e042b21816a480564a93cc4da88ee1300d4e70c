@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a622d24_b87a28ef",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2016-12-16T14:45:32Z",
+      "side": 1,
+      "message": "This is superfluous as the body of a commit message is a description. If it helps you can think of commit messages like an email.\n\n1st line is the subject line\n2nd line is a blank line to separate subject and body\n3rd line is the body of your message where you can put in your detailed description of the subject.\n\nHope this helps.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 13
+      },
+      "revId": "6e042b21816a480564a93cc4da88ee1300d4e70c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
