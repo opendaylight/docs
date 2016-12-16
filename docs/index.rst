@@ -36,7 +36,6 @@ itself.
    :maxdepth: 1
 
    developer-guide/index
-   submodules/infrautils/docs/index
    submodules/netvirt/docs/index
    submodules/ovsdb/docs/index
 
@@ -58,6 +57,7 @@ participate in the development of OpenDaylight or would like to start.
    submodules/spectrometer/docs/index
    javadoc
    submodules/genius/docs/index
+   submodules/infrautils/docs/index
 
 .. Commenting the below out until we actually use it
 .. Indices and tables
