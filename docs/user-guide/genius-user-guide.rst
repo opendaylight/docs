@@ -220,6 +220,8 @@ MPLSoverGRE.
         ]
     }
 
+.. _genius-user-guide-binding-services:
+
 Binding services on interface
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
