@@ -10,6 +10,10 @@
 	path = docs/submodules/integration/test
 	url = ../integration/test
 	branch = master
+[submodule "docs/submodules/integration/packaging"]
+	path = docs/submodules/integration/packaging
+	url = ../integration/packaging
+	branch = master
 [submodule "docs/submodules/aaa"]
 	path = docs/submodules/aaa
 	url = ../aaa
