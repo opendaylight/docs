@@ -17,7 +17,7 @@ Logging In
 To log in to DLUX, after installing the application:
 
 1. Open a browser and enter the login URL
-   http://<your-karaf-ip>:8181/index.htm
+   http://<your-karaf-ip>:8181/index.html
    in your browser (Chrome is recommended).
 
 2. Login to the application with your username and password credentials.
