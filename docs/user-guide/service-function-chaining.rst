@@ -409,6 +409,8 @@ RSP. Refer to the following diagram for more details.
 
    SFC OpenFlow Renderer High Level Architecture
 
+.. _sfc-user-guide-sfc-of-pipeline:
+
 SFC OpenFlow Switch Flow pipeline
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -2914,4 +2916,21 @@ indicate the neutron ports of the VMs you want to classify.
 
   curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '${JSON}' -X PUT --user admin:admin http://localhost:8181/restconf/config/service-function-classifier:service-function-classifiers/
 
+.. _sfc-user-guide-pipeline-impacts:
 
+SFC pipeline impacts
+~~~~~~~~~~~~~~~~~~~~
+
+After binding SFC service with a particular interface by means of Genius, as explained in the :ref:`Genius User Guide <genius-user-guide-binding-services>`,
+the entry point in the SFC pipeline will be table 82 (SFC_TRANSPORT_CLASSIFIER_TABLE), and from that point, packet
+processing will be similar to the :ref:`SFC OpenFlow pipeline <sfc-user-guide-sfc-of-pipeline>`, just with another set
+of specific tables for the SFC service.
+
+This picture shows the SFC pipeline after service integration with Genius:
+
+.. figure:: ./images/sfc/LSFF_pipeline.png
+   :alt: SFC Logical SFF OpenFlow pipeline
+
+   SFC Logical SFF OpenFlow pipeline
+
+   
