@@ -283,6 +283,24 @@
     },
     {
       "key": {
+        "uuid": "1a622d24_1494ae35",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-12-23T19:24:31Z",
+      "side": 1,
+      "message": "I couldn\u0027t agree more on that. In general, I try not to grump too much, but I think we tolerate up to 100 characters.",
+      "parentUuid": "1a622d24_9032aa0e",
+      "revId": "4f4dd9a4bf8b26281e9e77802fc5b0f14920b8dc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a622d24_cf364552",
         "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
         "patchSetId": 13
@@ -412,6 +430,30 @@
       "side": 1,
       "message": "Done, I wonder if a code-block works inside a note - will verify later",
       "parentUuid": "1a622d24_0f279d13",
+      "range": {
+        "startLine": 161,
+        "startChar": 0,
+        "endLine": 167,
+        "endChar": 76
+      },
+      "revId": "4f4dd9a4bf8b26281e9e77802fc5b0f14920b8dc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_749b6267",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-12-23T19:24:31Z",
+      "side": 1,
+      "message": "It does blocks can be nested arbitrarily as far as I can tell.",
+      "parentUuid": "1a622d24_50301201",
       "range": {
         "startLine": 161,
         "startChar": 0,
@@ -799,6 +841,30 @@
       "side": 1,
       "message": "You mean the extra space I had in indentation? Removed now.\nor did you mean not put it in a bash code-block at all?",
       "parentUuid": "1a622d24_6f7d71e7",
+      "range": {
+        "startLine": 256,
+        "startChar": 0,
+        "endLine": 260,
+        "endChar": 12
+      },
+      "revId": "4f4dd9a4bf8b26281e9e77802fc5b0f14920b8dc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_549e2657",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-netvirt.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-12-23T19:24:31Z",
+      "side": 1,
+      "message": "The extra spaces in front had it formatted like a block quote in addition to a code-block, which looked weird. This looks better now.",
+      "parentUuid": "1a622d24_24427b3e",
       "range": {
         "startLine": 256,
         "startChar": 0,
