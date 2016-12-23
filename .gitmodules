@@ -38,3 +38,7 @@
 	path = docs/submodules/ovsdb
 	url = ../ovsdb
 	branch = .
+[submodule "docs/submodules/integration/packaging"]
+	path = docs/submodules/integration/packaging
+	url = ../integration/packaging
+	branch = master
