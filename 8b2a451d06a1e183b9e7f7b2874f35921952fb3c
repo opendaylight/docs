@@ -1,0 +1,377 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a622d24_d41cf6c3",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-12-23T22:03:46Z",
+      "side": 1,
+      "message": "OpenDaylight",
+      "range": {
+        "startLine": 386,
+        "startChar": 15,
+        "endLine": 386,
+        "endChar": 18
+      },
+      "revId": "8b2a451d06a1e183b9e7f7b2874f35921952fb3c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_342d6aff",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 778,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-12-23T22:03:46Z",
+      "side": 1,
+      "message": "expand. also maybe add a link?",
+      "range": {
+        "startLine": 778,
+        "startChar": 34,
+        "endLine": 778,
+        "endChar": 37
+      },
+      "revId": "8b2a451d06a1e183b9e7f7b2874f35921952fb3c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_14302e55",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 779,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-12-23T22:03:46Z",
+      "side": 1,
+      "message": "no caps",
+      "range": {
+        "startLine": 779,
+        "startChar": 8,
+        "endLine": 779,
+        "endChar": 24
+      },
+      "revId": "8b2a451d06a1e183b9e7f7b2874f35921952fb3c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_7437e24e",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 808,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-12-23T22:03:46Z",
+      "side": 1,
+      "message": "Does it make sense to put these at the top of the tutorials section so it\u0027s not replicated in two different places?",
+      "range": {
+        "startLine": 791,
+        "startChar": 0,
+        "endLine": 808,
+        "endChar": 42
+      },
+      "revId": "8b2a451d06a1e183b9e7f7b2874f35921952fb3c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_543aa636",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 811,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-12-23T22:03:46Z",
+      "side": 1,
+      "message": "This isn\u0027t a sentence and doesn\u0027t actually seem relevant to the tutorial. Maybe just cut it?",
+      "range": {
+        "startLine": 810,
+        "startChar": 27,
+        "endLine": 811,
+        "endChar": 68
+      },
+      "revId": "8b2a451d06a1e183b9e7f7b2874f35921952fb3c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_b4405aa6",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 813,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-12-23T22:03:46Z",
+      "side": 1,
+      "message": "instructions",
+      "range": {
+        "startLine": 813,
+        "startChar": 24,
+        "endLine": 813,
+        "endChar": 35
+      },
+      "revId": "8b2a451d06a1e183b9e7f7b2874f35921952fb3c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_f44ad2c3",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 857,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-12-23T22:03:46Z",
+      "side": 1,
+      "message": "Do you need this step assuming it\u0027s already spelled out in the prereqs?",
+      "range": {
+        "startLine": 855,
+        "startChar": 0,
+        "endLine": 857,
+        "endChar": 100
+      },
+      "revId": "8b2a451d06a1e183b9e7f7b2874f35921952fb3c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_d44516b4",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 874,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-12-23T22:03:46Z",
+      "side": 1,
+      "message": "no caps",
+      "range": {
+        "startLine": 873,
+        "startChar": 75,
+        "endLine": 874,
+        "endChar": 11
+      },
+      "revId": "8b2a451d06a1e183b9e7f7b2874f35921952fb3c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_34144a9f",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 876,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-12-23T22:03:46Z",
+      "side": 1,
+      "message": "something bad happened here",
+      "range": {
+        "startLine": 876,
+        "startChar": 31,
+        "endLine": 876,
+        "endChar": 44
+      },
+      "revId": "8b2a451d06a1e183b9e7f7b2874f35921952fb3c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_14178ea4",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 905,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-12-23T22:03:46Z",
+      "side": 1,
+      "message": "It seems like this should either be here or in the prereqs, but not both, unless you guys think differently.",
+      "range": {
+        "startLine": 902,
+        "startChar": 0,
+        "endLine": 905,
+        "endChar": 48
+      },
+      "revId": "8b2a451d06a1e183b9e7f7b2874f35921952fb3c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_740ec28e",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 908,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-12-23T22:03:46Z",
+      "side": 1,
+      "message": "probably, you want this to be a link, something like :ref:`install_odl`.",
+      "range": {
+        "startLine": 908,
+        "startChar": 15,
+        "endLine": 908,
+        "endChar": 60
+      },
+      "revId": "8b2a451d06a1e183b9e7f7b2874f35921952fb3c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_541106ab",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 917,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-12-23T22:03:46Z",
+      "side": 1,
+      "message": "you probably want this to be a link to the section not the html docs so it also works in PDF. You can do that using the instructions here:\nhttp://www.sphinx-doc.org/en/stable/markup/inline.html#ref-role\n\nBasically, you need to put a label over the section something like:\n\n  .. _lfm_config:\n\nThen reference it by doing:\n\n  :ref:`lfm_config`",
+      "range": {
+        "startLine": 917,
+        "startChar": 46,
+        "endLine": 917,
+        "endChar": 170
+      },
+      "revId": "8b2a451d06a1e183b9e7f7b2874f35921952fb3c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_b427ba11",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 932,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-12-23T22:03:46Z",
+      "side": 1,
+      "message": "Are you sure you want this to point to master?",
+      "revId": "8b2a451d06a1e183b9e7f7b2874f35921952fb3c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_94227eff",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 1054,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-12-23T22:03:46Z",
+      "side": 1,
+      "message": "Again, does this want to be master or stable/boron? or stable/carbon?",
+      "revId": "8b2a451d06a1e183b9e7f7b2874f35921952fb3c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_347baaf6",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 1055,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-12-23T22:03:46Z",
+      "side": 1,
+      "message": "OpenDaylight",
+      "range": {
+        "startLine": 1055,
+        "startChar": 68,
+        "endLine": 1055,
+        "endChar": 71
+      },
+      "revId": "8b2a451d06a1e183b9e7f7b2874f35921952fb3c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_f42132fc",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 1061,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-12-23T22:03:46Z",
+      "side": 1,
+      "message": "Again, master?",
+      "revId": "8b2a451d06a1e183b9e7f7b2874f35921952fb3c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_748522cf",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 1074,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-12-23T22:03:46Z",
+      "side": 1,
+      "message": "you can do this with .. important:: to get Sphinx/reST formatting of the block.",
+      "range": {
+        "startLine": 1070,
+        "startChar": 0,
+        "endLine": 1074,
+        "endChar": 38
+      },
+      "revId": "8b2a451d06a1e183b9e7f7b2874f35921952fb3c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
