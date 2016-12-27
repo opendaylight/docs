@@ -666,6 +666,11 @@ To use this example, SFF OpenFlow switches must be created and connected
 as illustrated above. Additionally, the SFs must be created and
 connected.
 
+Note that RSP symmetry depends on Service Function Path symmetric field,
+if present.
+If not, the RSP will be symmetric if any of the SFs involved in the chain
+has the bidirectional field set to true.
+
 Target Environment
 ^^^^^^^^^^^^^^^^^^
 
@@ -745,7 +750,6 @@ command:
          {
            "name": "sf1",
            "type": "http-header-enrichment",
-           "nsh-aware": true,
            "ip-mgmt-address": "10.0.0.2",
            "sf-data-plane-locator": [
              {
@@ -760,7 +764,6 @@ command:
          {
            "name": "sf2",
            "type": "firewall",
-           "nsh-aware": true,
            "ip-mgmt-address": "10.0.0.3",
            "sf-data-plane-locator": [
              {
@@ -864,7 +867,6 @@ command:
        "service-function-chain": [
          {
            "name": "sfc-chain1",
-           "symmetric": true,
            "sfc-service-function": [
              {
                "name": "hdr-enrich-abstract1",
@@ -919,8 +921,7 @@ command:
     {
      "input": {
          "name": "sfc-path1",
-         "parent-service-function-path": "sfc-path1",
-         "symmetric": true
+         "parent-service-function-path": "sfc-path1"
      }
     }
 
@@ -967,7 +968,6 @@ command:
          {
            "name": "sf1",
            "type": "http-header-enrichment",
-           "nsh-aware": false,
            "ip-mgmt-address": "10.0.0.2",
            "sf-data-plane-locator": [
              {
@@ -982,7 +982,6 @@ command:
          {
            "name": "sf2",
            "type": "firewall",
-           "nsh-aware": false,
            "ip-mgmt-address": "10.0.0.3",
            "sf-data-plane-locator": [
              {
@@ -1152,7 +1151,6 @@ command:
        "service-function-chain": [
          {
            "name": "sfc-chain1",
-           "symmetric": true,
            "sfc-service-function": [
              {
                "name": "hdr-enrich-abstract1",
@@ -1207,8 +1205,7 @@ command:
     {
      "input": {
          "name": "sfc-path1",
-         "parent-service-function-path": "sfc-path1",
-         "symmetric": true
+         "parent-service-function-path": "sfc-path1"
      }
     }
 
@@ -1438,7 +1435,6 @@ approach is used for Service Functions.
                     "name": "Firewall",
                     "ip-mgmt-address": "172.25.73.23",
                     "type": "service-function-type: firewall",
-                    "nsh-aware": true,
                     "sf-data-plane-locator": [
                         {
                             "name": "firewall-dpl",
@@ -1453,7 +1449,6 @@ approach is used for Service Functions.
                     "name": "Dpi",
                     "ip-mgmt-address": "172.25.73.23",
                     "type":"service-function-type: dpi",
-                    "nsh-aware": true,
                     "sf-data-plane-locator": [
                         {
                             "name": "dpi-dpl",
@@ -1468,7 +1463,6 @@ approach is used for Service Functions.
                     "name": "Qos",
                     "ip-mgmt-address": "172.25.73.23",
                     "type":"service-function-type: qos",
-                    "nsh-aware": true,
                     "sf-data-plane-locator": [
                         {
                             "name": "qos-dpl",
@@ -1484,7 +1478,7 @@ approach is used for Service Functions.
     }
 
 All these SFs are configured on the same device as the LSF. The next
-step is to prepare Service Function Chain. SFC is symmetric.
+step is to prepare Service Function Chain.
 
 ::
 
@@ -1495,7 +1489,6 @@ step is to prepare Service Function Chain. SFC is symmetric.
             "service-function-chain": [
                 {
                     "name": "CSR3XSF",
-                    "symmetric": "true",
                     "sfc-service-function": [
                         {
                             "name": "Firewall",
@@ -1543,8 +1536,7 @@ Without a classifier, there is possibility to POST RSP directly.
     {
       "input": {
           "name": "CSR3XSF-Path-RSP",
-          "parent-service-function-path": "CSR3XSF-Path",
-          "symmetric": true
+          "parent-service-function-path": "CSR3XSF-Path"
       }
     }
 
@@ -2075,8 +2067,7 @@ service-functions.json:
               }
             ],
             "name": "napt44-1",
-            "type": "service-function-type:napt44",
-            "nsh-aware": true
+            "type": "service-function-type:napt44"
           },
           {
             "rest-uri": "http://localhost:10002",
@@ -2090,8 +2081,7 @@ service-functions.json:
               }
             ],
             "name": "napt44-2",
-            "type": "service-function-type:napt44",
-            "nsh-aware": true
+            "type": "service-function-type:napt44"
           },
           {
             "rest-uri": "http://localhost:10003",
@@ -2105,8 +2095,7 @@ service-functions.json:
               }
             ],
             "name": "firewall-1",
-            "type": "service-function-type:firewall",
-            "nsh-aware": true
+            "type": "service-function-type:firewall"
           },
           {
             "rest-uri": "http://localhost:10004",
@@ -2120,8 +2109,7 @@ service-functions.json:
               }
             ],
             "name": "firewall-2",
-            "type": "service-function-type:firewall",
-            "nsh-aware": true
+            "type": "service-function-type:firewall"
           },
           {
             "rest-uri": "http://localhost:10005",
@@ -2135,8 +2123,7 @@ service-functions.json:
               }
             ],
             "name": "test-server",
-            "type": "service-function-type:dpi",
-            "nsh-aware": true
+            "type": "service-function-type:dpi"
           },
           {
             "rest-uri": "http://localhost:10006",
@@ -2150,8 +2137,7 @@ service-functions.json:
               }
             ],
             "name": "test-client",
-            "type": "service-function-type:dpi",
-            "nsh-aware": true
+            "type": "service-function-type:dpi"
           }
         ]
       }
@@ -2569,7 +2555,6 @@ The following are examples to configure the Logical SFF:
             {
                 "name": "firewall-1",
                 "type": "firewall",
-                "nsh-aware": "true",
                 "sf-data-plane-locator": [
                     {
                         "name": "firewall-dpl",
@@ -2583,7 +2568,6 @@ The following are examples to configure the Logical SFF:
             {
                 "name": "dpi-1",
                 "type": "dpi",
-                "nsh-aware": "true",
                 "sf-data-plane-locator": [
                     {
                         "name": "dpi-dpl",
@@ -2628,7 +2612,6 @@ The following are examples to configure the Logical SFF:
         "service-function-chain": [
             {
                 "name": "SFC1",
-                "symmetric": "true",
                 "sfc-service-function": [
                     {
                         "name": "dpi-abstract1",
@@ -2642,7 +2625,6 @@ The following are examples to configure the Logical SFF:
             },
             {
                 "name": "SFC2",
-                "symmetric": "true",
                 "sfc-service-function": [
                     {
                         "name": "dpi-abstract1",
