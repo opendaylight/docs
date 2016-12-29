@@ -217,6 +217,28 @@ html_static_path = ['_static']
 # implements a search results scorer. If empty, the default will be used.
 #html_search_scorer = 'scorer.js'
 
+
+def status_of_this_version_():
+    """Returns whether this release is supported or unsupported
+
+    TODO: get tags using subprocess and 'git tag -l' and add the logic in
+          other function for checking supported versions from release/*
+          ans stable/*
+
+    Presently, this is done just for demonstrating a patch for showing
+    warning header
+    """
+
+    if version == 'Boron' or version == 'Carbon':
+        return 'supported'
+    else:
+        return 'unsupported'
+
+
+html_context = dict(
+    status_of_this_version=status_of_this_version_(),
+    )
+
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'OpenDaylightDocumentationdoc'
 
