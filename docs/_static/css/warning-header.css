@@ -1,0 +1,17 @@
+#outdated_warning {
+  background-color: #f2dede;
+  width: 100%;
+  padding: 8px 20px 8px;
+  text-align: center;
+  font-size: 14px;
+  color: #a94442;
+}
+
+#deprecated_warning {
+  background-color: #fcf8e3;
+  width: 100%;
+  padding: 8px 20px 8px;
+  text-align: center;
+  font-size: 14px;
+  color: #8a6d3b;
+}
