@@ -39,3 +39,7 @@ if platform.system() != 'Windows':
     import subprocess
 
     subprocess.call(["./generate-milestone-status.sh"])
+
+html_context = {
+    'version_status': 'supported',
+}
