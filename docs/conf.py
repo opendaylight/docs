@@ -221,6 +221,28 @@ html_sidebars = {
 # implements a search results scorer. If empty, the default will be used.
 #html_search_scorer = 'scorer.js'
 
+
+def get_version_status():
+    """Returns whether this release is supported or unsupported
+
+    TODO: get tags using subprocess and 'git tag -l' and add the logic in
+          other function for checking supported versions from release/*
+          ans stable/*
+
+    Presently, this is done just for demonstrating a patch for showing
+    warning header
+    """
+    supported_versions = ['Boron', 'Carbon', 'Nitrogen']
+    if version in supported_versions:
+        return 'supported'
+    else:
+        return 'unsupported'
+
+
+html_context = dict(
+    version_status=get_version_status(),
+    )
+
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'OpenDaylightDocumentationdoc'
 
