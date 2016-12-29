@@ -217,6 +217,20 @@ html_static_path = ['_static']
 # implements a search results scorer. If empty, the default will be used.
 #html_search_scorer = 'scorer.js'
 
+
+def status_of_this_version_():
+    """Returns whether this release is supported or unsupported
+    """
+    if version is 'Boron':
+        return 'supported'
+    else:
+        return 'unsupported'
+
+
+html_context = dict(
+    status_of_this_version=status_of_this_version_(),
+    )
+
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'OpenDaylightDocumentationdoc'
 
