@@ -38,3 +38,7 @@ linkcheck_ignore = [
 
 nitpicky = True
 release = version
+
+html_context = {
+    'version_status': 'supported',
+}
