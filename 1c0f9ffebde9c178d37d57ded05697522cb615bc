@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a622d24_1ad326d7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-01-03T19:43:09Z",
+      "side": 1,
+      "message": "This is not a correctly formatted commit message. Please refer to this link for best practices on how to construct effective commit messages:\n\nhttp://chris.beams.io/posts/git-commit/",
+      "revId": "1c0f9ffebde9c178d37d57ded05697522cb615bc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_fad58ab9",
+        "filename": "docs/submodules/aaa",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-01-03T19:43:09Z",
+      "side": 1,
+      "message": "Please do not submit changes to submodules as part of your patch.",
+      "revId": "1c0f9ffebde9c178d37d57ded05697522cb615bc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
