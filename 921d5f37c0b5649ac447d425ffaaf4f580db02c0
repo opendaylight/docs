@@ -16,6 +16,24 @@
       "revId": "921d5f37c0b5649ac447d425ffaaf4f580db02c0",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_a8f8fe49",
+        "filename": "docs/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 773
+      },
+      "writtenOn": "2017-01-03T13:40:30Z",
+      "side": 1,
+      "message": "Both links were already in the current docs - one here and then one in the developer guide. Maybe this one here should just be netvirt/docs/index and keep the one in developer-guide as netvirt/docs/developer-guide/index? Would that be better?",
+      "parentUuid": "1a622d24_1607a81d",
+      "revId": "921d5f37c0b5649ac447d425ffaaf4f580db02c0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
