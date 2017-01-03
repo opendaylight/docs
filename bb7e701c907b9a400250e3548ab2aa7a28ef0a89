@@ -22,6 +22,30 @@
       "revId": "bb7e701c907b9a400250e3548ab2aa7a28ef0a89",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_e6905a45",
+        "filename": "docs/user-guide/ovsdb-user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 773
+      },
+      "writtenOn": "2017-01-03T13:45:53Z",
+      "side": 1,
+      "message": "Are you saying break the sentence? The full sentence is below:\n\nThe OVSDB project implements the OVSDB protocol (RFC 7047), as well as plugins to support OVSDB Schemas, such as the Open\\_vSwitch database schema and the hardware\\_vtep database schema.",
+      "parentUuid": "1a622d24_011e4463",
+      "range": {
+        "startLine": 4,
+        "startChar": 63,
+        "endLine": 4,
+        "endChar": 70
+      },
+      "revId": "bb7e701c907b9a400250e3548ab2aa7a28ef0a89",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
