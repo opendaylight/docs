@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a622d24_7849755f",
+        "filename": "docs/getting-started-guide/common-features/clustering.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 797
+      },
+      "writtenOn": "2017-01-06T23:38:33Z",
+      "side": 1,
+      "message": "Would it be more clear to call this section \"Cluster Monitoring\"? Also in the same section we could mention some tools that use jolokia to monitor the cluster like:\n\nhttps://github.com/opendaylight/integration-test/tree/master/tools/clustering/cluster-monitor",
+      "revId": "34d4b3b30982a4f921ccb69f37613c6b2aadf425",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
