@@ -364,3 +364,143 @@ Example::
     bin/set_persistence.sh off
 
 The above command will disable the config datastore persistence.
+
+Exploring Shard Information
+---------------------------
+
+OpenDaylight exposes shard information via MBeans, which can be explored with
+JConsole, VisualVM, or other JMX clients, or exposed via a REST API using
+`Jolokia <https://jolokia.org/features-nb.html>`_, provided by the
+``odl-jolokia`` Karaf feature. This is convenient, due to a significant focus
+on REST in OpenDaylight. In case the feature is not available, loading Jolokia
+can be achieved by installing the bundle directly::
+
+    bundle:install mvn:org.jolokia/jolokia-osgi/1.3.5
+
+The basic URI that lists a schema of all available MBeans, but not their
+content itself is::
+
+    GET  /jolokia/list
+
+To read the information about the shards local to the queried OpenDaylight
+instance use the following REST calls. For the config datastore::
+
+    GET  /jolokia/read/org.opendaylight.controller:type=DistributedConfigDatastore,Category=ShardManager,name=shard-manager-config
+
+For the operational datastore::
+
+    GET  /jolokia/read/org.opendaylight.controller:type=DistributedOperationalDatastore,Category=ShardManager,name=shard-manager-operational
+
+The output contains information on shards present on the node::
+
+    {
+      "request": {
+        "mbean": "org.opendaylight.controller:Category=ShardManager,name=shard-manager-operational,type=DistributedOperationalDatastore",
+        "type": "read"
+      },
+      "value": {
+        "LocalShards": [
+          "member-1-shard-default-operational",
+          "member-1-shard-entity-ownership-operational",
+          "member-1-shard-topology-operational",
+          "member-1-shard-inventory-operational",
+          "member-1-shard-toaster-operational"
+        ],
+        "SyncStatus": true,
+        "MemberName": "member-1"
+      },
+      "timestamp": 1483738005,
+      "status": 200
+    }
+
+The exact names from the "LocalShards" lists are needed for further
+exploration, as they will be used as part of the URI to look up detailed info
+on a particular shard. An example output for the
+``member-1-shard-default-operational`` looks like this::
+
+    {
+      "request": {
+        "mbean": "org.opendaylight.controller:Category=Shards,name=member-1-shard-default-operational,type=DistributedOperationalDatastore",
+        "type": "read"
+      },
+      "value": {
+        "ReadWriteTransactionCount": 0,
+        "SnapshotIndex": 4,
+        "InMemoryJournalLogSize": 1,
+        "ReplicatedToAllIndex": 4,
+        "Leader": "member-1-shard-default-operational",
+        "LastIndex": 5,
+        "RaftState": "Leader",
+        "LastCommittedTransactionTime": "2017-01-06 13:19:00.135",
+        "LastApplied": 5,
+        "LastLeadershipChangeTime": "2017-01-06 13:18:37.605",
+        "LastLogIndex": 5,
+        "PeerAddresses": "member-3-shard-default-operational: akka.tcp://opendaylight-cluster-data@192.168.16.3:2550/user/shardmanager-operational/member-3-shard-default-operational, member-2-shard-default-operational: akka.tcp://opendaylight-cluster-data@192.168.16.2:2550/user/shardmanager-operational/member-2-shard-default-operational",
+        "WriteOnlyTransactionCount": 0,
+        "FollowerInitialSyncStatus": false,
+        "FollowerInfo": [
+          {
+            "timeSinceLastActivity": "00:00:00.320",
+            "active": true,
+            "matchIndex": 5,
+            "voting": true,
+            "id": "member-3-shard-default-operational",
+            "nextIndex": 6
+          },
+          {
+            "timeSinceLastActivity": "00:00:00.320",
+            "active": true,
+            "matchIndex": 5,
+            "voting": true,
+            "id": "member-2-shard-default-operational",
+            "nextIndex": 6
+          }
+        ],
+        "FailedReadTransactionsCount": 0,
+        "StatRetrievalTime": "810.5 μs",
+        "Voting": true,
+        "CurrentTerm": 1,
+        "LastTerm": 1,
+        "FailedTransactionsCount": 0,
+        "PendingTxCommitQueueSize": 0,
+        "VotedFor": "member-1-shard-default-operational",
+        "SnapshotCaptureInitiated": false,
+        "CommittedTransactionsCount": 6,
+        "TxCohortCacheSize": 0,
+        "PeerVotingStates": "member-3-shard-default-operational: true, member-2-shard-default-operational: true",
+        "LastLogTerm": 1,
+        "StatRetrievalError": null,
+        "CommitIndex": 5,
+        "SnapshotTerm": 1,
+        "AbortTransactionsCount": 0,
+        "ReadOnlyTransactionCount": 0,
+        "ShardName": "member-1-shard-default-operational",
+        "LeadershipChangeCount": 1,
+        "InMemoryJournalDataSize": 450
+      },
+      "timestamp": 1483740350,
+      "status": 200
+    }
+
+The output helps identifying shard state (leader/follower, voting/non-voting),
+peers, follower details if the shard is a leader, and other
+statistics/counters.
+
+Geo-distributed Active/Backup Setup
+-----------------------------------
+
+An OpenDaylight cluster works best when the latency between the nodes is very
+small, which practically means they should be in the same datacenter. It is
+however desirable to have the possibility to fail over to a different
+datacenter, in case all nodes become unreachable. To achieve that, the cluster
+can be expanded with nodes in a different datacenter, but in a way that
+doesn't affect latency of the primary nodes. To do that, shards in the backup
+nodes must be in "non-voting" state.
+
+The API to manipulate voting states on shards is defined as RPCs in the
+`cluster-admin.yang <https://git.opendaylight.org/gerrit/gitweb?p=controller.git;a=blob;f=opendaylight/md-sal/sal-cluster-admin-api/src/main/yang/cluster-admin.yang>`_
+file in the *controller* project.
+
+.. todo::
+
+  Give examples of usage, especially a typical fail-over scenario.
