@@ -8,7 +8,6 @@ OpenStack with NetVirt
 Installing OpenDaylight on an existing OpenStack
 ------------------------------------------------
 * On the control host, `Download the latest OpenDaylight release <https://www.opendaylight.org/software/downloads>`_
-  (at the time of writing, the latest release is Boron SR1).
 * Uncompress it as root, and start OpenDaylight (you can start OpenDaylight
   by running karaf directly, but exiting from the shell will shut it down):
 
@@ -24,12 +23,73 @@ Installing OpenDaylight on an existing OpenStack
   .. code-block:: bash
 
       ./bin/client # Connect to OpenDaylight with the client
-      opendaylight-user@root> feature:install odl-netvirt-openstack odl-dlux-ui odl-mdsal-apidocs
+      opendaylight-user@root> feature:install odl-netvirt-openstack odl-dlux-core odl-mdsal-apidocs
 
 * If everything is installed correctly, you should now be able to log in to the dlux interface on
   http://CONTROL_HOST:8181/index.html - the default username and password is "admin/admin" (see screenshot below)
 
   .. figure:: images/netvirt/dlux-login.png
+
+Optional - Advanced OpenDaylight Installation - Configurations and Clustering
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+* ACL Implementation - Security Groups - Stateful:
+
+  * Default implementation used is stateful, requiring OVS compiled with conntrack modules.
+  * This requires using a linux kernel that is >= 4.3
+  * To check if OVS is running with conntrack support:
+
+    .. code-block:: bash
+
+       root@devstack:~/# lsmod | grep conntrack | grep openvswitch
+         nf_conntrack          106496  9 xt_CT,openvswitch,nf_nat,nf_nat_ipv4,xt_conntrack,nf_conntrack_netlink,xt_connmark,nf_conntrack_ipv4,nf_conntrack_ipv6
+
+  * If the conntrack modules are not installed for OVS, either recompile/install an OVS version with conntrack support, or alternatively configure OpenDaylight to use a non-stateful implementation.
+  * OpenvSwitch 2.5 with conntrack support can be acquired from this repository for yum based linux distributions:
+
+    .. code-block:: bash
+
+       yum install -y http://rdoproject.org/repos/openstack-newton/rdo-release-newton.rpm
+       yum install -y --nogpgcheck openvswitch
+
+* ACL Implementations - Alternative options:
+
+  * "learn" - semi-stateful implementation that does not require conntrack support. This is the most complete non-conntrack implementation.
+  * "stateless" - naive security group implementation for TCP connections only.
+  * "transparent" - no security group support. all traffic is allowed, this is the recommended mode if you don't need to use security groups at all.
+
+  * To configure one of these alternative implementations, the following needs to be done prior to running OpenDaylight:
+
+    .. code-block:: bash
+
+       mkdir -p <ODL_FOLDER>/etc/opendaylight/datastore/initial/config/
+       export CONFFILE=\`find <ODL_FOLDER> -name "\*aclservice\*config.xml"\`
+       cp \CONFFILE <ODL_FOLDER>/etc/opendaylight/datastore/initial/config/netvirt-aclservice-config.xml
+       sed -i s/stateful/<learn/transparent>/ <ODL_FOLDER>/etc/opendaylight/datastore/initial/config/netvirt-aclservice-config.xml
+       cat <ODL_FOLDER>/etc/opendaylight/datastore/initial/config/netvirt-aclservice-config.xml
+
+* Running multiple OpenDaylight controllers in a cluster:
+
+  * For redundancy, it is possible to run OpenDaylight in a 3-node cluster.
+  * More info on Clustering available `here <http://docs.opendaylight.org/en/latest/getting-started-guide/common-features/clustering.html>`_.
+  * To configure OpenDaylight in clustered mode, run <ODL_FOLDER>/bin/configure_cluster.sh on each node prior to running OpenDaylight.
+    This script is used to configure cluster parameters on this controller. The user should restart controller to apply changes.
+
+    .. code-block:: bash
+
+       Usage: ./configure_cluster.sh <index> <seed_nodes_list>
+       - index: Integer within 1..N, where N is the number of seed nodes.
+       - seed_nodes_list: List of seed nodes, separated by comma or space.
+
+  * The address at the provided index should belong this controller.
+    When running this script on multiple seed nodes, keep the seed_node_list same,
+    and vary the index from 1 through N.
+
+  * Optionally, shards can be configured in a more granular way by modifying the file
+    "custom_shard_configs.txt" in the same folder as this tool.
+    Please see that file for more details.
+
+  .. note::
+     OpenDaylight should be restarted after applying any of the above changes via configuration files.
 
 Ensuring OpenStack network state is clean
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -179,65 +239,13 @@ Open vSwitch config and set OpenDaylight to manage the switch:
 
      log:set TRACE netvirt
 
-Optional - Advanced OpenDaylight Installation - Clustering and Configurations
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-* ACL Implementation - Security Groups - Stateful:
-
-  * Default implementation used is stateful, requiring OVS compiled with conntrack modules.
-  * This requires using a linux kernel that is >= 4.3
-  * To check if OVS is running with conntrack support:
-
-    .. code-block:: bash
-
-       root@devstack:~/# lsmod | grep conntrack | grep openvswitch
-         nf_conntrack          106496  9 xt_CT,openvswitch,nf_nat,nf_nat_ipv4,xt_conntrack,nf_conntrack_netlink,xt_connmark,nf_conntrack_ipv4,nf_conntrack_ipv6
-
-  * If the conntrack modules are not installed for OVS, either recompile/install an OVS version with conntrack support, or alternatively configure OpenDaylight to use a non-stateful implementation.
-
-* ACL Implementations - Alternative options:
-
-  * "learn" - semi-stateful implementation that does not require conntrack support. This is the most complete non-conntrack implementation.
-  * "stateless" - naive security group implementation for TCP connections only.
-  * "transparent" - no security group support. all traffic is allowed, this is the recommended mode if you don't need to use security groups at all.
-
-  * To configure one of these alternative implementations, the following needs to be done prior to running OpenDaylight:
-
-    .. code-block:: bash
-
-       mkdir -p <ODL_FOLDER>/etc/opendaylight/datastore/initial/config/
-       export CONFFILE=\`find <ODL_FOLDER> -name "\*aclservice\*config.xml"\`
-       cp \CONFFILE <ODL_FOLDER>/etc/opendaylight/datastore/initial/config/netvirt-aclservice-config.xml
-       sed -i s/stateful/<learn/transparent>/ <ODL_FOLDER>/etc/opendaylight/datastore/initial/config/netvirt-aclservice-config.xml
-       cat <ODL_FOLDER>/etc/opendaylight/datastore/initial/config/netvirt-aclservice-config.xml
-
-* Running multiple OpenDaylight controllers in a cluster:
-
-  * For redundancy, it is possible to run OpenDaylight in a 3-node cluster.
-  * More info on Clustering available `here <http://docs.opendaylight.org/en/latest/getting-started-guide/common-features/clustering.html>`_.
-  * To configure OpenDaylight in clustered mode, run <ODL_FOLDER>/bin/configure_cluster.sh on each node prior to running OpenDaylight.
-    This script is used to configure cluster parameters on this controller. The user should restart controller to apply changes.
-
-    .. code-block:: bash
-
-       Usage: ./configure_cluster.sh <index> <seed_nodes_list>
-       - index: Integer within 1..N, where N is the number of seed nodes.
-       - seed_nodes_list: List of seed nodes, separated by comma or space.
-
-  * The address at the provided index should belong this controller.
-    When running this script on multiple seed nodes, keep the seed_node_list same, 
-    and vary the index from 1 through N.
-
-  * Optionally, shards can be configured in a more granular way by modifying the file 
-    "custom_shard_configs.txt" in the same folder as this tool. 
-    Please see that file for more details.
-
 Configuring Neutron to use OpenDaylight
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Once you have configured the vSwitches to connect to OpenDaylight, you can
 now ensure that OpenStack Neutron is using OpenDaylight.
 
 This requires the neutron networking-odl module to be installed.
-``pip install networking-odl``
+| ``pip install networking-odl``
 
 First, ensure that port 8080 (which will be used by OpenDaylight to listen
 for REST calls) is available. By default, swift-proxy-service listens on the
@@ -279,6 +287,14 @@ by modifying the ``jetty.port`` property value in ``etc/jetty.conf``.
   .. code-block:: bash
 
      crudini --set /etc/neutron/plugins/dhcp_agent.ini DEFAULT force_metadata True
+
+  .. note::
+     | If the OpenStack version being used is Newton, this workaround should be applied,
+     | configuring the Neutron DHCP agent to use vsctl as the OVSDB interface:
+
+     .. code-block:: bash
+
+        crudini --set /etc/neutron/plugins/dhcp_agent.ini OVS ovsdb_interface vsctl
 
 * Reset Neutron's ML2 database
 
@@ -345,7 +361,7 @@ Adding an external network for floating IP connectivity
 Installing OpenStack and OpenDaylight using DevStack
 ----------------------------------------------------
 The easiest way to load and OpenStack setup using OpenDaylight is by using devstack, which does all the steps mentioned in previous sections.
-``git clone https://git.openstack.org/openstack-dev/devstack``
+| ``git clone https://git.openstack.org/openstack-dev/devstack``
 
 * The following lines need to be added to your local.conf:
 
@@ -487,4 +503,6 @@ Useful Links
 ------------
 * `NetVirt Tables Pipeline <https://docs.google.com/presentation/d/15h4ZjPxblI5Pz9VWIYnzfyRcQrXYxA1uUoqJsgA53KM>`_
 * `NetVirt Wiki Page <https://wiki.opendaylight.org/view/NetVirt>`_
+* `NetVirt Basic Tutorial (OpenDaylight Summit 2016) <https://docs.google.com/presentation/d/1VLzRIOEptSOY1b0w4PezRIQ0gF5vx7GyLKECWXRV5mE>`_
+* `NetVirt Advanced Tutorial (OpenDaylight Summit 2016) <https://docs.google.com/presentation/d/13K8Z1kl5XFZrWqBToMwFISSAPOKfzd3m9BtVcb-YAWs>`_
 * `Other OpenDaylight Documentation <http://docs.opendaylight.org/>`_
