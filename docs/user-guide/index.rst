@@ -48,7 +48,7 @@ Project-specific User Guides
    of-config-user-guide
    openflow-plugin-project-user-guide
    opflex-agent-ovs-user-guide
-   ovsdb-netvirt
+   ovsdb-user-guide
    pcep-user-guide
    packetcable-user-guide
    service-function-chaining
