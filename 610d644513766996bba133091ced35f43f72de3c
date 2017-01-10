@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a622d24_18167755",
+        "filename": "docs/user-guide/service-function-chaining.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1951,
+      "author": {
+        "id": 2039
+      },
+      "writtenOn": "2017-01-10T10:54:42Z",
+      "side": 1,
+      "message": "I know this doesnt relate to your changes, but I just realized that the \"sff-sf-data-plane-locator\"\u0027s are configured in a really old, non-supported way. Can you also fix these.",
+      "range": {
+        "startLine": 1935,
+        "startChar": 0,
+        "endLine": 1951,
+        "endChar": 15
+      },
+      "revId": "610d644513766996bba133091ced35f43f72de3c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_580bcf29",
+        "filename": "docs/user-guide/service-function-chaining.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1979,
+      "author": {
+        "id": 2039
+      },
+      "writtenOn": "2017-01-10T10:54:42Z",
+      "side": 1,
+      "message": "Same comment here.",
+      "range": {
+        "startLine": 1979,
+        "startChar": 0,
+        "endLine": 1979,
+        "endChar": 46
+      },
+      "revId": "610d644513766996bba133091ced35f43f72de3c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_b804a318",
+        "filename": "docs/user-guide/service-function-chaining.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 2021,
+      "author": {
+        "id": 2039
+      },
+      "writtenOn": "2017-01-10T10:54:42Z",
+      "side": 1,
+      "message": "Same comment.",
+      "range": {
+        "startLine": 2021,
+        "startChar": 0,
+        "endLine": 2021,
+        "endChar": 46
+      },
+      "revId": "610d644513766996bba133091ced35f43f72de3c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
