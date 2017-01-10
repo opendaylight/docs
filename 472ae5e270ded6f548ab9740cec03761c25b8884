@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a622d24_ca89c176",
+        "filename": "docs/developer-guide/index.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-01-10T20:00:34Z",
+      "side": 1,
+      "message": "Can we remove the reference to the netvirt developer guide from the main index.rst (where it also is today)?",
+      "revId": "472ae5e270ded6f548ab9740cec03761c25b8884",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_6a986dc0",
+        "filename": "docs/developer-guide/index.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-01-10T20:00:34Z",
+      "side": 1,
+      "message": "For what it\u0027s worth, this currently is a section called \"NetVirt Documentation\" and should really be \"NetVirt Developer Guide\".\n\nAlso, it\u0027s empty.",
+      "revId": "472ae5e270ded6f548ab9740cec03761c25b8884",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_4a95b185",
+        "filename": "docs/index.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-01-10T20:00:34Z",
+      "side": 1,
+      "message": "The title of this is also \"NetVirt Documentation\" which will be pretty confusing. It\u0027s also empty.",
+      "revId": "472ae5e270ded6f548ab9740cec03761c25b8884",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_caf0a100",
+        "filename": "docs/user-guide/index.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-01-10T20:00:34Z",
+      "side": 1,
+      "message": "This is empty?",
+      "revId": "472ae5e270ded6f548ab9740cec03761c25b8884",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
