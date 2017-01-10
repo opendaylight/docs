@@ -48,7 +48,7 @@ Project-specific Developer Guides
    opflex-agent-ovs-developer-guide
    opflex-genie-developer-guide
    opflex-libopflex-developer-guide
-   ovsdb-netvirt
+   ovsdb-developer-guide
    pcep-developer-guide
    packetcable-developer-guide
    service-function-chaining
