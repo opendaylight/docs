@@ -37,7 +37,6 @@ itself.
 
    developer-guide/index
    submodules/netvirt/docs/index
-   submodules/ovsdb/docs/index
 
 
 Content for OpenDaylight Contributors
