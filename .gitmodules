@@ -2,43 +2,54 @@
 	path = docs/submodules/releng/builder
 	url = ../releng/builder
 	branch = master
+	ignore = dirty
 [submodule "docs/submodules/infrautils"]
 	path = docs/submodules/infrautils
 	url = ../infrautils
 	branch = .
+	ignore = dirty
 [submodule "docs/submodules/integration/test"]
 	path = docs/submodules/integration/test
 	url = ../integration/test
 	branch = master
+	ignore = dirty
 [submodule "docs/submodules/aaa"]
 	path = docs/submodules/aaa
 	url = ../aaa
 	branch = .
+	ignore = dirty
 [submodule "docs/submodules/netconf"]
 	path = docs/submodules/netconf
 	url = ../netconf
 	branch = .
+	ignore = dirty
 [submodule "docs/submodules/odlparent"]
 	path = docs/submodules/odlparent
 	url = ../odlparent
 	branch = .
+	ignore = dirty
 [submodule "source/submodules/spectrometer"]
 	path = docs/submodules/spectrometer
 	url = ../spectrometer
 	branch = master
+	ignore = dirty
 [submodule "docs/submodules/netvirt"]
 	path = docs/submodules/netvirt
 	url = ../netvirt
 	branch = .
+	ignore = dirty
 [submodule "docs/submodules/genius"]
 	path = docs/submodules/genius
 	url = ../genius
 	branch = .
+	ignore = dirty
 [submodule "docs/submodules/ovsdb"]
 	path = docs/submodules/ovsdb
 	url = ../ovsdb
 	branch = .
+	ignore = dirty
 [submodule "docs/submodules/integration/packaging"]
 	path = docs/submodules/integration/packaging
 	url = ../integration/packaging
 	branch = master
+	ignore = dirty
