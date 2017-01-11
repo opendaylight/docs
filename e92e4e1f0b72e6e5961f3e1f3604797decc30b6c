@@ -25,6 +25,23 @@
     },
     {
       "key": {
+        "uuid": "1a622d24_72397fd6",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 797,
+      "author": {
+        "id": 491
+      },
+      "writtenOn": "2017-01-11T12:09:39Z",
+      "side": 1,
+      "message": "Chrome apps will be discontinued soon, and Postman is now available as a standalone app. Please link to that instead, to avoid needing to update this part soon.",
+      "revId": "e92e4e1f0b72e6e5961f3e1f3604797decc30b6c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a622d24_75c6969b",
         "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
         "patchSetId": 7
@@ -71,6 +88,74 @@
     },
     {
       "key": {
+        "uuid": "1a622d24_d23213f1",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 850,
+      "author": {
+        "id": 491
+      },
+      "writtenOn": "2017-01-11T12:09:39Z",
+      "side": 1,
+      "message": "s/codes/code/",
+      "revId": "e92e4e1f0b72e6e5961f3e1f3604797decc30b6c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_b28b1767",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 870,
+      "author": {
+        "id": 491
+      },
+      "writtenOn": "2017-01-11T12:09:39Z",
+      "side": 1,
+      "message": "s/codes/code/  (twice)",
+      "revId": "e92e4e1f0b72e6e5961f3e1f3604797decc30b6c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_92225b50",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 872,
+      "author": {
+        "id": 491
+      },
+      "writtenOn": "2017-01-11T12:09:39Z",
+      "side": 1,
+      "message": "It is not clear from context that the below commands have to be run in /vpp/build-root. It\u0027s easy to figure out, but for n00bs it may be better to spell it out explicitly ;) (Either in the text, or by adding `cd /vpp/build-root` as a command at the top.)",
+      "revId": "e92e4e1f0b72e6e5961f3e1f3604797decc30b6c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_b21b17c9",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 902,
+      "author": {
+        "id": 491
+      },
+      "writtenOn": "2017-01-11T12:09:39Z",
+      "side": 1,
+      "message": "s/replce/replace/",
+      "revId": "e92e4e1f0b72e6e5961f3e1f3604797decc30b6c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a622d24_95b9b217",
         "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
         "patchSetId": 7
@@ -88,6 +173,41 @@
         "endLine": 923,
         "endChar": 129
       },
+      "revId": "e92e4e1f0b72e6e5961f3e1f3604797decc30b6c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_0da46eb8",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 923,
+      "author": {
+        "id": 491
+      },
+      "writtenOn": "2017-01-11T12:09:39Z",
+      "side": 1,
+      "message": "Vina, this link is to the lispflowmapping repo, not vpp, and the rST documentation is now version specific, meaning users can select the ODL version on docs.opendaylight.org. It now shows Boron, so the above link should probably be against our stable/boron branch. I cherry-picked the FD.io tutorial patches to Boron (they weren\u0027t), so the link could be changed to https://git.opendaylight.org/gerrit/gitweb?p\u003dlispflowmapping.git;a\u003dtree;f\u003dresources/tutorial/FD_io;hb\u003drefs/heads/stable/boron",
+      "parentUuid": "1a622d24_95b9b217",
+      "revId": "e92e4e1f0b72e6e5961f3e1f3604797decc30b6c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_f2f58f57",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1044,
+      "author": {
+        "id": 491
+      },
+      "writtenOn": "2017-01-11T12:09:39Z",
+      "side": 1,
+      "message": "s/json/JSON/",
       "revId": "e92e4e1f0b72e6e5961f3e1f3604797decc30b6c",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -117,6 +237,41 @@
     },
     {
       "key": {
+        "uuid": "1a622d24_4daae685",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1045,
+      "author": {
+        "id": 491
+      },
+      "writtenOn": "2017-01-11T12:09:39Z",
+      "side": 1,
+      "message": "Now it can be changed.",
+      "parentUuid": "1a622d24_35409e06",
+      "revId": "e92e4e1f0b72e6e5961f3e1f3604797decc30b6c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_12f12b6b",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1046,
+      "author": {
+        "id": 491
+      },
+      "writtenOn": "2017-01-11T12:09:39Z",
+      "side": 1,
+      "message": "s/south bound/southbound/\ns/OpenDayLight/OpenDaylight/ -- see http://docs.opendaylight.org/en/stable-boron/documentation.html#common-writing-style-mistakes",
+      "revId": "e92e4e1f0b72e6e5961f3e1f3604797decc30b6c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a622d24_1545a216",
         "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
         "patchSetId": 7
@@ -134,6 +289,24 @@
         "endLine": 1052,
         "endChar": 147
       },
+      "revId": "e92e4e1f0b72e6e5961f3e1f3604797decc30b6c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_eda8128f",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1052,
+      "author": {
+        "id": 491
+      },
+      "writtenOn": "2017-01-11T12:09:39Z",
+      "side": 1,
+      "message": "Now it can be changed.",
+      "parentUuid": "1a622d24_1545a216",
       "revId": "e92e4e1f0b72e6e5961f3e1f3604797decc30b6c",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
