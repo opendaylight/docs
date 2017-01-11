@@ -16,6 +16,24 @@
       "revId": "0bc913b5973e28c94d0e8e13eb7b67fb68ad3bfe",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_61e7f3ac",
+        "filename": "docs/opendaylight-with-openstack/index.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 773
+      },
+      "writtenOn": "2017-01-11T01:52:41Z",
+      "side": 1,
+      "message": "This one I wasn\u0027t totally sure about since this is the old netvirt way of doing things. My thoughts were to leave this here for now so we can get these patches moving. I will push another patch to remove this and add it to the netvirt docs.",
+      "parentUuid": "1a622d24_5efd726d",
+      "revId": "0bc913b5973e28c94d0e8e13eb7b67fb68ad3bfe",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
