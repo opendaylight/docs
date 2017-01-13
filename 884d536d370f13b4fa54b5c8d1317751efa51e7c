@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a622d24_d0a4c14c",
+        "filename": "docs/getting-started-guide/common-features/clustering.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 551,
+      "author": {
+        "id": 1842
+      },
+      "writtenOn": "2017-01-13T06:48:22Z",
+      "side": 1,
+      "message": "If it\u0027s an unplanned outage where the primary voting nodes are down, the \"flip\" rpc must be sent to a backup non-voting node. In this case there are no shard leaders to carry out the voting changes. However there is a special case whereby if the node that receives the rpc is non-voting and is to be changed to voting and there\u0027s no leader, it will apply the voting changes locally and attempt to become the leader. If successful, it persists the voting changes and replicates them to the remaining nodes.\n\nWhen the primary site is fixed and you want to fail back to it, you must be careful when bringing the site back up. Because it was down when the voting states were flipped on the secondary, its persisted database won\u0027t contain those changes. If brought back up in that state, the nodes will think they\u0027re still voting. If the nodes have connectivity to the secondary site, they should follow the leader in the secondary site and sync with it. However if this does not happen then the primary site may elect its own leader thereby partitioning the 2 clusters, which can lead to undesirable results.  Therefore it is recommended to either clean the databases (ie journal and snapshots directory) on the primary nodes before bringing them back up or restore them from a recent backup of the secondary site.",
+      "revId": "884d536d370f13b4fa54b5c8d1317751efa51e7c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a622d24_f0f9fd4e",
         "filename": "docs/getting-started-guide/common-features/clustering.rst",
         "patchSetId": 5
