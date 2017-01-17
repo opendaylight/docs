@@ -147,14 +147,6 @@ The ``etc/custom.properties`` file in the Karaf distribution allows
 configuration of several OpenDaylight parameters. The LISP service has
 the following properties that can be adjusted:
 
-**lisp.mappingOverwrite** (default: *true*)
-    Configures handling of mapping updates. When set to *true* (default)
-    a mapping update (either through the southbound plugin via a
-    Map-Register message or through a northbound API PUT REST call) the
-    existing RLOC set associated to an EID prefix is overwritten. When
-    set to *false*, the RLOCs of the update are merged to the existing
-    set.
-
 **lisp.smr** (default: *false*)
     Enables/disables the `Solicit-Map-Request
     (SMR) <http://tools.ietf.org/html/rfc6830#section-6.6.2>`__
