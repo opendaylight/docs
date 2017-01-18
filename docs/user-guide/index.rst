@@ -26,6 +26,7 @@ Project-specific User Guides
    atrium-user-guide
    bgp-user-guide
    bgp-monitoring-protocol-user-guide
+   bier-user-guide
    capwap-user-guide
    cardinal_-opendaylight-monitoring-as-a-service
    centinel-user-guide
