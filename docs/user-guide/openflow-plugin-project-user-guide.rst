@@ -1,3 +1,5 @@
+.. _ofp-user-guide:
+
 OpenFlow Plugin Project User Guide
 ==================================
 
