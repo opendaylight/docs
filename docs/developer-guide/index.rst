@@ -19,6 +19,7 @@ Project-specific Developer Guides
    atrium-developer-guide
    bgp-developer-guide
    bgp-monitoring-protocol-developer-guide
+   bier-developer-guide
    capwap-developer-guide
    cardinal_-opendaylight-monitoring-as-a-service
    controller
