@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a622d24_b4f11e97",
+        "filename": "docs/getting-started-guide/common-features/clustering.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 374,
+      "author": {
+        "id": 491
+      },
+      "writtenOn": "2017-01-19T10:03:17Z",
+      "side": 0,
+      "message": "I made a mistake here. There is no odl-jolokia feature provided by OpenDaylight. But there is a `jolokia` feature provided by Karaf itself. So s/odl-jolokia/jolokia/ above.",
+      "revId": "45a0feb4b7c798b7614440b44d2b3e31466f3f90",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
