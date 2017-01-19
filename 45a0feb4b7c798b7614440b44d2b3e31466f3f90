@@ -16,6 +16,24 @@
       "revId": "45a0feb4b7c798b7614440b44d2b3e31466f3f90",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_9feb5bdb",
+        "filename": "docs/getting-started-guide/common-features/clustering.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 374,
+      "author": {
+        "id": 2046
+      },
+      "writtenOn": "2017-01-19T11:58:09Z",
+      "side": 0,
+      "message": "\u003e There is no odl-jolokia feature provided by OpenDaylight.\n\nThere is [0].\n\n\u003e there is a `jolokia` feature provided by Karaf itself.\n\nOh, I was not aware of that one [1]. It uses version 1.3.0 [2] of jolokia-osgi for Karaf 3.0.8 and 1.3.3 for 4.0.8.\n\nThe difference between jolokia and odl-jolokia is in the default configuration used. Looking at the ODL config file [3] I think we should keep recommending odl-jolokia.\n\nIt may be a good idea to for odl-jolokia to rely on Karaf jolokia as a base, and only override the config. But I do not think that is pressing enough for opening a Bug\n\n\n[0] https://github.com/opendaylight/controller/blob/master/features/extras/src/main/features/features.xml#L21-L25\n\n[1] https://github.com/apache/karaf/blob/karaf-3.0.8/assemblies/features/standard/src/main/feature/feature.xml#L208-L216\n\n[2] https://github.com/apache/karaf/blob/karaf-3.0.8/pom.xml#L155\n\n[3] https://github.com/opendaylight/controller/blob/master/opendaylight/commons/jolokia/src/main/resources/org.jolokia.osgi.cfg",
+      "parentUuid": "1a622d24_b4f11e97",
+      "revId": "45a0feb4b7c798b7614440b44d2b3e31466f3f90",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
