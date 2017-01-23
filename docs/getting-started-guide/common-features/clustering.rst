@@ -372,10 +372,7 @@ OpenDaylight exposes shard information via MBeans, which can be explored with
 JConsole, VisualVM, or other JMX clients, or exposed via a REST API using
 `Jolokia <https://jolokia.org/features-nb.html>`_, provided by the
 ``odl-jolokia`` Karaf feature. This is convenient, due to a significant focus
-on REST in OpenDaylight. In case the feature is not available, loading Jolokia
-can be achieved by installing the bundle directly::
-
-    bundle:install mvn:org.jolokia/jolokia-osgi/1.3.5
+on REST in OpenDaylight.
 
 The basic URI that lists a schema of all available MBeans, but not their
 content itself is::
