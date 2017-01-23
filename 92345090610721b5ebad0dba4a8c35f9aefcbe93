@@ -1,0 +1,466 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fafc7978_594a5484",
+        "filename": "docs/user-guide/bgp-user-guide.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-01-23T22:00:18Z",
+      "side": 1,
+      "message": "Please go through and fix the response/request body headers to be right as well as adding :linenos: and :emphasize-lines: as appropriate to code-blocks.",
+      "revId": "92345090610721b5ebad0dba4a8c35f9aefcbe93",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_599534e3",
+        "filename": "docs/user-guide/bgp-user-guide.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 4177,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-01-23T22:00:18Z",
+      "side": 1,
+      "message": "This comes out of nowhere. What is doing this? My suggestion I think is:\n\n\"The OpenDaylight BGP implementation provides a set of APIs (described below), that give he its operational state refreshed periodically, by default every 5 seconds.\n\nThe following APIs describe what is available starting with how to change the default refresh rate.\"",
+      "range": {
+        "startLine": 4176,
+        "startChar": 0,
+        "endLine": 4177,
+        "endChar": 35
+      },
+      "revId": "92345090610721b5ebad0dba4a8c35f9aefcbe93",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_399af014",
+        "filename": "docs/user-guide/bgp-user-guide.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 4212,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-01-23T22:00:18Z",
+      "side": 1,
+      "message": "Is this a Request Body or a Response Body? I think the latter.",
+      "revId": "92345090610721b5ebad0dba4a8c35f9aefcbe93",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_1981ec8f",
+        "filename": "docs/user-guide/bgp-user-guide.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 4215,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-01-23T22:00:18Z",
+      "side": 1,
+      "message": "If you\u0027re going to want to refer to line numbers, make sure to add \":linenos:\" as an indented line below the \"code-block\" line.\n\nYou can also add an \":emphasize-lines: 2,4,6\" line or something like to highlight lines, although this would be a bad example since you\u0027d highlight 4 of the 6 lines.",
+      "revId": "92345090610721b5ebad0dba4a8c35f9aefcbe93",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_999f9c03",
+        "filename": "docs/user-guide/bgp-user-guide.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 4240,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-01-23T22:00:18Z",
+      "side": 1,
+      "message": "Is this a Request Body or a Response Body? I think the latter.",
+      "revId": "92345090610721b5ebad0dba4a8c35f9aefcbe93",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_f954e822",
+        "filename": "docs/user-guide/bgp-user-guide.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 4264,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-01-23T22:00:18Z",
+      "side": 1,
+      "message": "aren\u0027t these just containers, do you really want to highlight them?",
+      "range": {
+        "startLine": 4262,
+        "startChar": 0,
+        "endLine": 4264,
+        "endChar": 47
+      },
+      "revId": "92345090610721b5ebad0dba4a8c35f9aefcbe93",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_79a47857",
+        "filename": "docs/user-guide/bgp-user-guide.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 4281,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-01-23T22:00:18Z",
+      "side": 1,
+      "message": "Is this a Request Body or a Response Body? I think the latter.",
+      "revId": "92345090610721b5ebad0dba4a8c35f9aefcbe93",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_993b1ceb",
+        "filename": "docs/user-guide/bgp-user-guide.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 4298,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-01-23T22:00:18Z",
+      "side": 1,
+      "message": "Aren\u0027t these just containers.",
+      "range": {
+        "startLine": 4296,
+        "startChar": 0,
+        "endLine": 4298,
+        "endChar": 49
+      },
+      "revId": "92345090610721b5ebad0dba4a8c35f9aefcbe93",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_39367004",
+        "filename": "docs/user-guide/bgp-user-guide.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 4302,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-01-23T22:00:18Z",
+      "side": 1,
+      "message": "This seems like a useless highlight since it\u0027s literally just ....",
+      "revId": "92345090610721b5ebad0dba4a8c35f9aefcbe93",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_d98804c9",
+        "filename": "docs/user-guide/bgp-user-guide.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 4315,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-01-23T22:00:18Z",
+      "side": 1,
+      "message": "Is this a Request Body or a Response Body? I think the latter.",
+      "revId": "92345090610721b5ebad0dba4a8c35f9aefcbe93",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_9c094a2f",
+        "filename": "docs/user-guide/bgp-user-guide.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 4347,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-01-23T22:00:18Z",
+      "side": 1,
+      "message": "What\u0027s the difference between \"BGP Neighbor Families Operational State\" and \"BGP Neighbor Family Operational State\"? I see that they are different URLs, but I don\u0027t understand how they\u0027re different and why very much.",
+      "revId": "92345090610721b5ebad0dba4a8c35f9aefcbe93",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_b98540af",
+        "filename": "docs/user-guide/bgp-user-guide.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 4359,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-01-23T22:00:18Z",
+      "side": 1,
+      "message": "Is this a Request Body or a Response Body? I think the latter.",
+      "revId": "92345090610721b5ebad0dba4a8c35f9aefcbe93",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_dc12b257",
+        "filename": "docs/user-guide/bgp-user-guide.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 4392,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-01-23T22:00:18Z",
+      "side": 1,
+      "message": "Seems useless.",
+      "range": {
+        "startLine": 4390,
+        "startChar": 0,
+        "endLine": 4392,
+        "endChar": 47
+      },
+      "revId": "92345090610721b5ebad0dba4a8c35f9aefcbe93",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_5c26c2bb",
+        "filename": "docs/user-guide/bgp-user-guide.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 4402,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-01-23T22:00:18Z",
+      "side": 1,
+      "message": "Should this say \"True if the peer supports graceful restart.\" and \"True if we support graceful restart.\"?",
+      "range": {
+        "startLine": 4400,
+        "startChar": 0,
+        "endLine": 4402,
+        "endChar": 50
+      },
+      "revId": "92345090610721b5ebad0dba4a8c35f9aefcbe93",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_1993acfb",
+        "filename": "docs/user-guide/bgp-user-guide.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 4416,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-01-23T22:00:18Z",
+      "side": 1,
+      "message": "Is this a Request Body or a Response Body? I think the latter.",
+      "revId": "92345090610721b5ebad0dba4a8c35f9aefcbe93",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_59bc146d",
+        "filename": "docs/user-guide/bgp-user-guide.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 4459,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-01-23T22:00:18Z",
+      "side": 1,
+      "message": "Is this a Request Body or a Response Body? I think the latter.",
+      "revId": "92345090610721b5ebad0dba4a8c35f9aefcbe93",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_99b67c89",
+        "filename": "docs/user-guide/bgp-user-guide.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 4485,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-01-23T22:00:18Z",
+      "side": 1,
+      "message": "Is this a Request Body or a Response Body? I think the latter.",
+      "revId": "92345090610721b5ebad0dba4a8c35f9aefcbe93",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_7c2586aa",
+        "filename": "docs/user-guide/bgp-user-guide.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 4501,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-01-23T22:00:18Z",
+      "side": 1,
+      "message": "missing a colon",
+      "range": {
+        "startLine": 4501,
+        "startChar": 6,
+        "endLine": 4501,
+        "endChar": 7
+      },
+      "revId": "92345090610721b5ebad0dba4a8c35f9aefcbe93",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_79bbd872",
+        "filename": "docs/user-guide/bgp-user-guide.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 4515,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-01-23T22:00:18Z",
+      "side": 1,
+      "message": "Is this a Request Body or a Response Body? I think the latter.",
+      "revId": "92345090610721b5ebad0dba4a8c35f9aefcbe93",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_d9af642a",
+        "filename": "docs/user-guide/bgp-user-guide.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 4539,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-01-23T22:00:18Z",
+      "side": 1,
+      "message": "Is this a Request Body or a Response Body? I think the latter.",
+      "revId": "92345090610721b5ebad0dba4a8c35f9aefcbe93",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_bc36cee5",
+        "filename": "docs/user-guide/bgp-user-guide.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 4556,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-01-23T22:00:18Z",
+      "side": 1,
+      "message": "Is this a standard BGP term? It sounds like an oxymoron.",
+      "range": {
+        "startLine": 4556,
+        "startChar": 41,
+        "endLine": 4556,
+        "endChar": 55
+      },
+      "revId": "92345090610721b5ebad0dba4a8c35f9aefcbe93",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_f9a6a852",
+        "filename": "docs/user-guide/bgp-user-guide.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 4568,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-01-23T22:00:18Z",
+      "side": 1,
+      "message": "Is this a Request Body or a Response Body? I think the latter.",
+      "revId": "92345090610721b5ebad0dba4a8c35f9aefcbe93",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_7c5c6626",
+        "filename": "docs/user-guide/bgp-user-guide.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 4583,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-01-23T22:00:18Z",
+      "side": 1,
+      "message": "These seem useless.",
+      "range": {
+        "startLine": 4581,
+        "startChar": 0,
+        "endLine": 4583,
+        "endChar": 51
+      },
+      "revId": "92345090610721b5ebad0dba4a8c35f9aefcbe93",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_bc3d2ebe",
+        "filename": "docs/user-guide/bgp-user-guide.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 4587,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-01-23T22:00:18Z",
+      "side": 1,
+      "message": "You should probably put this 2nd if you start with \"Same...\" or just change the discussion so that the details are here and the total prefixes starts \"Same...\"",
+      "range": {
+        "startLine": 4587,
+        "startChar": 9,
+        "endLine": 4587,
+        "endChar": 13
+      },
+      "revId": "92345090610721b5ebad0dba4a8c35f9aefcbe93",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
