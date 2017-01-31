@@ -5,13 +5,11 @@ Documentation Guide
 ###################
 
 This guide provides details on how to contribute to the OpenDaylight
-documentation. OpenDaylight currently uses a mix of AsciiDoc_ and
-reStructuredText_ for documentation, although the `Documentation
-Group`_ is generally trying to move toward using reStructuredText_ and
-Sphinx_ to build it as it is widely-used to provide both HTML and pdf
-documentation that can be easily versioned alongside the code. It also
-offers similar syntax to Markdown which is familiar to large numbers of
-people.
+documentation. OpenDaylight currently uses reStructuredText_ for
+documentation and Sphinx_ to build it as it is widely-used to provide
+both HTML and pdf documentation that can be easily versioned alongside
+the code. It also offers similar syntax to Markdown which is familiar
+to large numbers of people.
 
 .. contents:: Contents
    :depth: 2
@@ -109,6 +107,8 @@ capitalization and spacing.*
 * URL not Url or url
 * VM: not Vm or vm
 * YANG: not Yang or yang
+
+.. _docs-rst:
 
 reStructuredText-based Documentation
 ====================================
@@ -233,6 +233,54 @@ the chapter should use::
     ^, for subsubsections
     ", for paragraphs
 
+Referencing Sections
+^^^^^^^^^^^^^^^^^^^^
+
+It's pretty common to want to reference another location in the
+OpenDaylight documentation and it's pretty easy to do with
+reStructuredText. This is a quick primer, more information is in the
+`Sphinx section on Cross-referencing arbitrary locations
+<http://www.sphinx-doc.org/en/stable/markup/inline.html#ref-role>`_.
+
+Within a single document, you can reference another section simply by::
+
+   This is a reference to `The title of a section`_
+
+Assuming that somewhere else in the same file there a is a section
+title something like::
+
+   The title of a section
+   ^^^^^^^^^^^^^^^^^^^^^^
+
+It's typically better to use ``:ref:`` syntax and labels to provide
+links as they work across files and are resilient to sections being
+renamed. First, you need to create a label something like::
+
+   .. _a-label:
+
+   The title of a section
+   ^^^^^^^^^^^^^^^^^^^^^^
+
+.. note:: The underscore (_) before the label is required.
+
+Then you can reference the section anywhere by simply doing::
+
+    This is a reference to :ref:`a-label`
+
+or::
+
+    This is a reference to :ref:`a section I really liked <a-label>`
+
+.. note:: When using ``:ref:``-style links, you don't need a trailing
+          underscore (_).
+
+Because the labels have to be unique, it usually makes sense to prefix
+the labels with the project name to help share the label space, e.g.,
+``sfc-user-guide`` instead of just ``user-guide``.
+
+
+.. _docs-rst-troubleshooting:
+
 Troubleshooting
 ---------------
 
@@ -244,7 +292,7 @@ italic, and fixed-width can't be nested. Further, it can't be mixed
 with hyperlinks, so you can't have bold text link somewhere.
 
 This is tracked in a `Docutils FAQ question
-<http://docutils.sourceforge.net/FAQ.html#is-nested-inline-markup-possible>`,
+<http://docutils.sourceforge.net/FAQ.html#is-nested-inline-markup-possible>`_,
 but there is no clear current plan to fix this.
 
 Make sure you've cloned submodules
@@ -310,128 +358,6 @@ Finally fixed the fact that our builds for failing because they were
 taking too long by removing directories of generated javadoc that were
 present from previous runs.
 
-AsciiDoc-based Documentation
-============================
-
-Information on the AsciiDoc tools and build system can be found here:
-https://wiki.opendaylight.org/view/Documentation/Tools
-
-Directory Structure
--------------------
-
-The AsciiDoc documentation is all located in the ``manuals`` directory
-of the ``docs`` ``git`` repository. An example of the directory
-structure on June 28th, 2016 can be seen here::
-
-   $ tree -L 4
-   .
-   ├── common
-   │   └── app_support.xml
-   ├── developer-guide
-   │   ├── pom.xml
-   │   └── src
-   │       └── main
-   │           ├── asciidoc
-   │           └── resources
-   ├── getting-started-guide
-   │   ├── pom.xml
-   │   └── src
-   │       └── main
-   │           ├── asciidoc
-   │           └── resources
-   ├── howto-openstack
-   │   ├── pom.xml
-   │   └── src
-   │       └── main
-   │           ├── asciidoc
-   │           └── resources
-   ├── pom.xml
-   ├── readme
-   │   ├── pom.xml
-   │   └── src
-   │       └── main
-   │           └── asciidoc
-   └── user-guide
-       ├── pom.xml
-       └── src
-           └── main
-               ├── asciidoc
-               └── resources
-
-Each of the top-level directories under ``manuals`` is a whole guide by
-itself and it contains a ``pom.xml`` file saying how to build it, a
-``src/main/asciidoc`` directory with AsciiDoc source files and a
-``src/main/resources`` directory containing images.
-
-Troubleshooting
----------------
-
-See `AsciiDoc Tips`_ on the wiki for more information.
-
-Common AsciiDoc mistakes
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-See also `AsciiDoc Tips`_.
-
-* Lists that get formatted incorrectly because of no blank line above
-  the list.
-* Numbered lists that are formatted incorrectly and every bullet winds
-  up being 1
-
-Migration from AsciiDoc to ReStructuredText
-===========================================
-
-Automatically
--------------
-
-In theory, Pandoc_ can convert from DocBook to reStructuredText and we
-produce DocBook as part of our build chain from AsciiDoctor. In
-practice, for modest-sized migrations doing things by hand works fairly
-well.
-
-By Hand
--------
-
-Converting from AsciiDoc to reStructuredText is usually pretty
-straightforward and involves looking up the basic syntax for what you
-want to do by looking it up in the reStructuredText_ guide.
-
-The differences are usually minor and fast to change.
-
-Also, because of how fast Sphinx builds, and how fast it is to refresh
-the HTML documentation rapid iteration is very easy.
-
-Bold/Italics/Verbatim Formatting
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-This is mostly minor syntax issues. In AsciiDoc you do inline
-formatting something like this::
-
-   *bold* _italic_ +verbatim+ `verbatim`
-
-In reStructuredText, things are slightly different::
-
-   **bold** *italic* ``verbatim``
-
-Images
-^^^^^^
-
-Image formats change from something like::
-
-   .OpenStack Architecture
-   image::vtn/OpenStackDeveloperGuide.png["OpenStack Architecture",width=500]
-
-To something like::
-
-   .. figure:: images/dlux-default.png
-
-A helpful regular expression for automating the replacements is
-something like::
-
-   search: ^( *)\.(.+)\n +image::(.+)\[(.+),width=(\d+)\]
-   replace: $1.. figure:: images/dlux/$3\n$1   :width: $5\n\n$1   $2
-
-
 Project Documentation Requirements
 ==================================
 
@@ -461,44 +387,53 @@ Submitting Documentation Outlines (M3)
 #. Clone the docs repo: ``git clone https://git.opendaylight.org/gerrit/docs``
 #. For each piece of documentation find the corresponding template in the docs repo.
 
-   * For user documentation: ``docs.git/manuals/readme/src/main/asciidoc/template_user_guide.adoc``
-   * For developer documentation: ``docs.git/manuals/readme/src/main/asciidoc/template_developer_guide.adoc``
-   * For installation documentation (if any): ``docs.git/manuals/readme/src/main/asciidoc/template_installation_guide.adoc``
+   * For user documentation: ``docs.git/docs/templates/template-user-guide.rst``
+   * For developer documentation: ``ddocs/templates/template-developer-guide.rst``
+   * For installation documentation (if any): ``docs/templates/template-install-guide.rst``
+
+   .. note:: You can find the rendered templates here:
+
+             .. toctree::
+                :maxdepth: 1
+
+                templates/template-user-guide
+                templates/template-developer-guide
+                templates/template-install-guide.rst
+
 
 #. Copy the template into the appropriate directory for your project.
 
-   * For user documentation: ``docs.git/manuals/user-guide/src/main/asciidoc/${project-shortname}/${feature-name}-user.adoc``
-   * For developer documentation: ``docs.git/manuals/developer-guide/src/main/asciidoc/${project-shortname}/${feature-name}-dev.adoc``
-   * For installation documentation (if any): ``docs.git/manuals/install-guide/src/main/asciidoc/${project-shortname}/${feature-name}-install.adoc``
+   * For user documentation: ``docs.git/docs/user-guide/${feature-name}-user-guide.rst``
+   * For developer documentation: ``docs.git/docs/developer-guide/${feature-name}-developer-guide.rst``
+   * For installation documentation (if any): ``docs.git/docs/getting-started-guide/project-specific-guides/${project-name}.rst``
+
+   .. note:: These naming conventions aren't set in stone, but do help. If you
+             think there's a better name, use it and we'll give feedback on the
+             gerrit patch.
 
 #. Edit the template to fill in the outline of what you will provide using the
-   suggestions in the template.
+   suggestions in the template. If you feel like a section isn't needed, feel
+   free to omit it.
 
-   * DO NOT leave any sections blank as blank sections will cause build errors.
+#. Link the template into the appropriate core rst file
 
-#. Link the template into the appropriate core adoc file
-
-   * For user documentation: ``docs.git/manuals/user-guide/src/main/asciidoc/bk-user-guide.adoc``
-   * For developer documentation: ``docs.git/manuals/developer-guide/src/main/asciidoc/bk-developers-guide.adoc``
-   * For installation documentation (if any): ``docs.git/manuals/install-guide/src/main/asciidoc/bk-install-guide.adoc``
-   * Add a line like:
-
-     .. code-block:: none
-
-        include::${project-shortname}/${feature-name}-user.adoc[]
-
-   * Make sure there is a blank line between your include statement and any others as this prevents sections from running into each other.
+   * For user documentation: ``docs.git/docs/user-guide/index.rst``
+   * For developer documentation: ``docs.git/docs/developer-guide/index.rst``
+   * For installation documentation (if any): ``docs.git/docs/getting-started-guide/project-specific-guides/index.rst``
+   * In each file, it should be pretty clear what line you need to add. In
+     general if you have an rst file ``project-name.rst``, you include it by
+     adding a new line ``project-name`` without the ``.rst`` at the end.
 
 #. Make sure the documentation project still builds.
 
-   * Run ``mvn clean install`` from the root of the cloned docs repo.
+   * Run ``tox -edocs`` from the root of the cloned docs repo.
 
-     * After that, you should be able to find the PDF and HTML version of the
-       docs. Use ``find . -name *.pdf`` to find the PDF and the HTML is
-       always at ``target/docbkx/webhelp/${manual-name}/index.html``.
+     * After that, you should be able to find the HTML version of the
+       docs at ``docs.git/docs/_build/html/index.html``.
+     * See :ref:`docs-rst` for more details about building the docs.
 
-   * The `AsciiDoc tips <https://wiki.opendaylight.org/view/CrossProject:Documentation_Group:Tools:AsciiDoc_Tips>`_
-     page provide common errors and solutions.
+   * The :ref:`reStructuredText Troubleshooting <docs-rst-troubleshooting>`
+     section provides common errors and solutions.
    * If you still have problems e-mail the documentation group at
      documentation@lists.opendaylight.org
 
@@ -571,7 +506,7 @@ These are the expected kinds of documentation and target audiences for each kind
 
   .. note:
 
-     should be documented on the wiki not in asciidoc
+     should be documented on the wiki not in reStructuredText
 
 * **Installation:** for people looking for instructions to install the feature
   after they have downloaded the ODL release
@@ -609,7 +544,7 @@ These are the expected kinds of documentation and target audiences for each kind
 * **Release Notes:**
 
   * Release notes are required as part of each project's release review. They
-    must also be translated into AsciiDoc for inclusion in the formal
+    must also be translated into reStructuredText for inclusion in the formal
     documentation.
 
 .. _requirements-for-projects:
@@ -619,13 +554,13 @@ Requirements for projects
 
 Projects MUST do the following
 
-* Provide `AsciiDoc-format <https://wiki.opendaylight.org/view/CrossProject:Documentation_Group:Tools:AsciiDoc_Tips>`_ documentation including
+* Provide reStructuredText documentation including
 
   * Developer documentation for every feature
 
     * Most projects will want to logically nest the documentation for
       individual features under a single project-wide chapter or section
-    * This can be provided as a single .adoc file or multiple .adoc files if
+    * This can be provided as a single .rst file or multiple .rst files if
       the features fall into different groups
     * This should start with ~300 word overview of the project and include
       references to any automatically-generated API documentation as well as
@@ -636,14 +571,14 @@ Projects MUST do the following
 
     * ''Note: This should be per-feature, not per-project. User's shouldn't have to know which project a feature came from.''
     * Intimately related features, e.g., l2switch-switch, l2switch-switch-rest, and l2switch-switch-ui, can be documented as one noting the differences
-    * This can be provided as a single .adoc file or multiple .adoc files if the features fall into different groups
+    * This can be provided as a single .rst file or multiple .rst files if the features fall into different groups
 
   * Installation documentation
 
     * Most projects will simply provide a list of user-facing features and
       options. See :ref:`kinds-of-docs` above.
 
-  * Release Notes (both on the wiki and AsciiDoc) as part of the release review.
+  * Release Notes (both on the wiki and reStructuredText) as part of the release review.
 
 * This documentation will be contributed to the docs repo (or possibly imported from the project's own repo with tooling that is under development)
 
@@ -664,9 +599,9 @@ Timeline for Deliverables from Projects
 
     * Release Notes are not required until release reviews at **RC2**
 
-  * Created the appropriate .adoc files in the docs repository (or their own
+  * Created the appropriate .rst files in the docs repository (or their own
     repository if the tooling is available)
-  * Have an outline for the expected documentation in those .adoc files
+  * Have an outline for the expected documentation in those .rst files
     including the relevant (sub)sections and a sentence or two explaining what
     will go there
 
@@ -676,34 +611,32 @@ Timeline for Deliverables from Projects
   * Milestone readout should include
 
     #. the list of kinds of documentation
-    #. the list of corresponding .adoc files and their location, e.g., repo and
+    #. the list of corresponding .rst files and their location, e.g., repo and
        path
-    #. the list of commits creating those .adoc files
-    #. the current word counts of those .adoc files
+    #. the list of commits creating those .rst files
+    #. the current word counts of those .rst files
 
 * **M4:** Documentation Continues
 
-  * The readout at M4 should include the word counts of all .adoc files with
+  * The readout at M4 should include the word counts of all .rst files with
     links to commits
   * The goal is to have draft documentation complete so that the documentation
     group can comment on it.
 
 * **M5:** Documentation Complete
 
-  * All (sub)sections in all .adoc files have complete, readable, usable content.
+  * All (sub)sections in all .rst files have complete, readable, usable content.
   * Ideally, there should have been some interaction with the documentation
     group about any suggested edits and enhancements
 
 * **RC2:** Release notes
 
-  * Projects must provide release notes as .adoc pushed to integration (or
+  * Projects must provide release notes as .rst pushed to integration (or
     locally in the project's repository if the tooling is developed)
 
 
-.. _AsciiDoc: http://www.methods.co.nz/asciidoc/
 .. _Sphinx: http://www.sphinx-doc.org/en/stable/
 .. _reStructuredText: http://www.sphinx-doc.org/en/stable/rest.html
 .. _Documentation Group: https://wiki.opendaylight.org/view/Documentation/
 .. _RelEng/Builder: https://wiki.opendaylight.org/view/RelEng/Builder
 .. _Pandoc: http://pandoc.org/
-.. _AsciiDoc Tips: https://wiki.opendaylight.org/view/Documentation/Tools/AsciiDoc_Tips
