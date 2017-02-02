@@ -18,6 +18,7 @@ Processes
    :maxdepth: 1
 
    autorelease
+   project-lifecycle
    branch-cutting
    simultaneous-release
 
