@@ -1,13 +1,26 @@
+# Build
 target
+
+# IntelliJ
 .idea
 *.iml
 *.ipr
 *.iws
-*~
-.DS_Store
+
+# Eclipse
+.project
+.classpath
+.settings/
 
 # Python
 .tox/
 __pycache__/
 *.pyc
 docs/javadoc/
+
+# Emacs
+*~
+\#*\#
+
+# MacOS
+.DS_Store
