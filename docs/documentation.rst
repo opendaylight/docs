@@ -203,6 +203,67 @@ table of contents is the root of the files that are included.
 .. note:: When including rst files using ``toctree`` omit the .rst at
           the end of the file name.
 
+Adding a submodule
+^^^^^^^^^^^^^^^^^^
+
+If you want to import a project underneath the documentation project so
+that the docs can be kept in the separate repo, you can do it using the
+``git submodule add`` command as follows::
+
+  git submodule add -b master ../integration/packaging docs/submodules/integration/packaging
+  git commit -s
+
+.. note:: Most projects will not want to use ``-b master``, but instead
+          use the branch ``.``, which will make track whatever branch
+          of the documentation project you happen to be on.
+
+          Unfortunately, ``-b .`` doesn't work, so you have to manually
+          edit the ``.gitmodules`` file to add ``branch = .`` and then
+          commit it. Something like::
+
+            <edit the .gitmodules file>
+            git add .gitmodules
+            git commit --amend
+
+When you're done you should have a git commit something like::
+
+  $ git show
+  commit 7943ce2cb41cd9d36ce93ee9003510ce3edd7fa9
+  Author: Daniel Farrell <dfarrell@redhat.com>
+  Date:   Fri Dec 23 14:45:44 2016 -0500
+
+      Add Int/Pack to git submodules for RTD generation
+
+      Change-Id: I64cd36ca044b8303cb7fc465b2d91470819a9fe6
+      Signed-off-by: Daniel Farrell <dfarrell@redhat.com>
+
+  diff --git a/.gitmodules b/.gitmodules
+  index 91201bf6..b56e11c8 100644
+  --- a/.gitmodules
+  +++ b/.gitmodules
+  @@ -38,3 +38,7 @@
+          path = docs/submodules/ovsdb
+          url = ../ovsdb
+          branch = .
+  +[submodule "docs/submodules/integration/packaging"]
+  +       path = docs/submodules/integration/packaging
+  +       url = ../integration/packaging
+  +       branch = master
+  diff --git a/docs/submodules/integration/packaging b/docs/submodules/integration/packaging
+  new file mode 160000
+  index 00000000..fd5a8185
+  --- /dev/null
+  +++ b/docs/submodules/integration/packaging
+  @@ -0,0 +1 @@
+  +Subproject commit fd5a81853e71d45945471d0f91bbdac1a1444386
+
+As usual, you can push it to Gerrit with ``git review``.
+
+.. important:: It's critical that the Gerrit patch be merged before the
+               git commit hash of the submodule changes. Otherwise,
+               Gerrit won't be able to automatically keep it up-to-date
+               for you.
+
 Documentation Layout and Style
 ------------------------------
 
