@@ -53,3 +53,7 @@
 	url = ../integration/packaging
 	branch = master
 	ignore = dirty
+[submodule "docs/submodules/federation"]
+	path = docs/submodules/federation
+	url = ../federation
+	branch = master
