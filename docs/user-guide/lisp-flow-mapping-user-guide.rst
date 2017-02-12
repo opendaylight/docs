@@ -507,6 +507,7 @@ URLs and body content on the page.
                 "eid-uri": "ipv4:1.1.1.1/32",
                 "eid": {
                     "address-type": "ietf-lisp-address-types:ipv4-prefix-afi",
+                    "virtual-network-id": 0,
                     "ipv4-prefix": "1.1.1.1/32"
                 },
                 "mapping-authkey": {
