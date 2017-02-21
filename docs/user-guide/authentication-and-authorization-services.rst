@@ -1,46 +1,84 @@
 Authentication, Authorization and Accounting (AAA) Services
 ===========================================================
 
-The Boron AAA services are based on the Apache Shiro Java Security
-Framework. The main configuration file for AAA is located at
-“etc/shiro.ini” relative to the ODL karaf home directory.
+Overview
+--------
+
+Authentication, Authorization and Accounting (AAA) is a term for a
+framework controlling access to resources, enforcing policies to use
+those resources and auditing their usage. These processes are the
+fundamental building blocks for effective network management and security.
+
+Authentication provides a way of identifying a user, typically by
+having the user enter a valid user name and valid password before access
+is granted. The process of authentication is based on each user having a unique
+set of criteria for gaining access. The AAA framework compares a user's
+authentication credentials with other user credentials stored in a database.
+If the credentials match, the user is granted access to the network.
+If the credentials don't match, authentication fails and access is denied.
+
+Authorization is the process of finding out what an authenticated user is
+allowed to do within the system, which tasks can do, which API can call, etc.
+The authorization process determines whether the user has the authority
+to perform such actions.
+
+Accounting is the process of logging the activity of an authenticated user,
+for example, the amount of data a user has sent and/or received during a
+session, which APIs called, etc.
 
 Terms And Definitions
----------------------
+^^^^^^^^^^^^^^^^^^^^^
+
+AAA
+    Authentication, Authorization and Accounting.
 
 Token
-    A claim of access to a group of resources on the controller
+    A claim of access to a group of resources on the controller.
 
 Domain
     A group of resources, direct or indirect, physical, logical, or
-    virtual, for the purpose of access control. ODL recommends using the
-    default “sdn" domain in the Boron release.
+    virtual, for the purpose of access control.
 
 User
     A person who either owns or has access to a resource or group of
-    resources on the controller
+    resources on the controller.
 
 Role
     Opaque representation of a set of permissions, which is merely a
-    unique string as admin or guest
+    unique string as admin or guest.
 
 Credential
-    Proof of identity such as username and password, OTP, biometrics, or
-    others
+    Proof of identity such as user name and password, OTP, biometrics, or
+    others.
 
 Client
-    A service or application that requires access to the controller
+    A service or application that requires access to the controller.
 
 Claim
     A data set of validated assertions regarding a user, e.g. the role,
     domain, name, etc.
 
+Idp
+    Identity Provider.
+
+Security Framework for AAA services
+-----------------------------------
+
+Since Boron release, the OpenDaylight's AAA services are based on the
+`Apache Shiro <https://shiro.apache.org/>`_ Java Security Framework. The main
+configuration file for AAA is located at “etc/shiro.ini” relative to the
+OpenDaylight Karaf home directory.
+
+
 How to enable AAA
 -----------------
 
-AAA is enabled through installing the odl-aaa-shiro feature.
-odl-aaa-shiro is automatically installed as part of the odl-restconf
-offering.
+AAA is enabled through installing the odl-aaa-shiro feature. The vast majority
+of OpenDaylight's northbound APIs (and all RESTCONF APIs) are protected by AAA
+by default when installing the +odl-restconf+ feature, since the odl-aaa-shiro
+is automatically installed as part of them. In the cases that APIs are *not*
+protected by AAA, this will be noted in the per-project release notes.
+
 
 How to disable AAA
 ------------------
@@ -57,47 +95,12 @@ with
 
     /** = anon
 
-Then restart the karaf process.
-
-How application developers can leverage AAA to provide servlet security
------------------------------------------------------------------------
-
-In order to provide security to a servlet, add the following to the
-servlet’s web.xml file as the first filter definition:
-
-::
-
-    <context-param>
-      <param-name>shiroEnvironmentClass</param-name>
-      <param-value>org.opendaylight.aaa.shiro.web.env.KarafIniWebEnvironment</param-value>
-    </context-param>
-
-    <listener>
-        <listener-class>org.apache.shiro.web.env.EnvironmentLoaderListener</listener-class>
-    </listener>
-
-    <filter>
-        <filter-name>ShiroFilter</filter-name>
-        <filter-class>org.opendaylight.aaa.shiro.filters.AAAShiroFilter</filter-class>
-    </filter>
-
-    <filter-mapping>
-        <filter-name>AAAShiroFilter</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
-
-.. note::
-
-    It is very important to place this AAAShiroFilter as the first
-    javax.servlet.Filter, as Jersey applies Filters in the order they
-    appear within web.xml. Placing the AAAShiroFilter first ensures
-    incoming HTTP/HTTPS requests have proper credentials before any
-    other filtering is attempted.
+Then restart the Karaf process.
 
 AAA Realms
 ----------
 
-AAA plugin utilizes realms to support pluggable authentication &
+AAA plugin utilizes the Shiro Realms to support pluggable authentication &
 authorization schemes. There are two parent types of realms:
 
 -  AuthenticatingRealm
@@ -114,9 +117,9 @@ authorization schemes. There are two parent types of realms:
       based on roles.
 
    -  Useful for applications in which roles determine allowed
-      cabilities.
+      capabilities.
 
-ODL Contains Four Implementations
+OpenDaylight contains four implementations:
 
 -  TokenAuthRealm
 
@@ -131,15 +134,15 @@ ODL Contains Four Implementations
    -  A python script located at “etc/idmtool” is included to help
       manipulate data contained in the TokenAuthRealm.
 
-   -  Enabled out of the box.
+   -  Enabled out of the box. This is the realm configured by default.
 
 -  ODLJndiLdapRealm
 
    -  An AuthorizingRealm built to extract identity information from IdM
       data contained on an LDAP server.
 
-   -  Extracts group information from LDAP, which is translated into ODL
-      roles.
+   -  Extracts group information from LDAP, which is translated into
+      OpenDaylight roles.
 
    -  Useful when federating against an existing LDAP server, in which
       only certain types of users should have certain access privileges.
@@ -154,34 +157,38 @@ ODL Contains Four Implementations
 
    -  Disabled out of the box.
 
--  ActiveDirectoryRealm
+-  ODLActiveDirectoryRealm
+
+   - Wraps the generic ActiveDirectoryRealm provided by Shiro. This allows for
+     enhanced logging as well as isolation of all realms in a single package,
+     which enables easier import by consuming servlets.
 
 .. note::
 
-    More than one Realm implementation can be specified. Realms are
-    attempted in order until authentication succeeds or all realm
-    sources are exhausted.
+    More than one Realm implementation can be specified. Realms are attempted
+    in order until authentication succeeds or all realm sources are exhausted.
+
 
 TokenAuthRealm Configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+The TokenAuthRealm is the default Authorization Realm deployed in OpenDaylight.
 TokenAuthRealm stores IdM data in an h2 database on each node. Thus,
-configuration of a cluster currently requires configuring the desired
-IdM policy on each node. There are two supported methods to manipulate
-the TokenAuthRealm IdM configuration:
+configuration of a cluster currently requires configuring the desired IdM policy
+on each node. There are two supported methods to manipulate the TokenAuthRealm
+IdM configuration:
 
--  idmtool Configuration
+-  idmtool configuration tool
 
--  RESTful Web Service Configuration
+-  RESTful Web Service configuration
 
-idmtool Configuration
-^^^^^^^^^^^^^^^^^^^^^
+TokenAuthRealm Configuration using the idmtool
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A utility script located at “etc/idmtool” is used to manipulate the
-TokenAuthRealm IdM policy. idmtool assumes a single domain (sdn), since
-multiple domains are not leveraged in the Boron release. General usage
-information for idmtool is derived through issuing the following
-command:
+TokenAuthRealm IdM policy. idmtool assumes a single domain, the default one
+(sdn), since multiple domains are not supported in the Boron release. General
+usage information for idmtool is derived through issuing the following command:
 
 ::
 
@@ -456,8 +463,8 @@ Get grants for a user
         ]
     }
 
-RESTful Web Service
-^^^^^^^^^^^^^^^^^^^
+TokenAuthRealm configuration using the RESTful Web Service
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The TokenAuthRealm IdM policy is fully configurable through a RESTful
 web service. Full documentation for manipulating AAA IdM data is located
@@ -557,7 +564,7 @@ Use an OAuth2 Token
     }
 
 ODLJndiLdapRealm Configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 LDAP integration is provided in order to externalize identity
 management. To configure LDAP parameters, modify "etc/shiro.ini"
@@ -565,7 +572,7 @@ parameters to include the ODLJndiLdapRealm:
 
 ::
 
-    # ODL provides a few LDAP implementations, which are disabled out of the box.
+    # OpenDaylight provides a few LDAP implementations, which are disabled out of the box.
     # ODLJndiLdapRealm includes authorization functionality based on LDAP elements
     # extracted through and LDAP search.  This requires a bit of knowledge about
     # how your LDAP system is setup.  An example is provided below:
@@ -581,13 +588,13 @@ parameters to include the ODLJndiLdapRealm:
     securityManager.realms = $tokenAuthRealm, $ldapRealm
 
 This configuration allows federation with an external LDAP server, and
-the user’s ODL role parameters are mapped to corresponding LDAP
+the user’s OpenDaylight role parameters are mapped to corresponding LDAP
 attributes as specified by the groupRolesMap. Thus, an LDAP operator can
-provision attributes for LDAP users that support different ODL role
+provision attributes for LDAP users that support different OpenDaylight role
 structures.
 
 ODLJndiLdapRealmAuthNOnly Configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Edit the "etc/shiro.ini" file and modify the following:
 
@@ -615,7 +622,7 @@ Authorization Configuration
 ---------------------------
 
 Shiro-Based Authorization
-~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 OpenDaylight AAA has support for Role Based Access Control based on the
 Apache Shiro permissions system. Configuration of the authorization
@@ -645,42 +652,6 @@ role must be present for the requesting user.
 
     The ordering of the authorization rules above is important!
 
-AuthZ Broker Facade
-~~~~~~~~~~~~~~~~~~~
-
-ODL includes an experimental Authorization Broker Facade, which allows
-finer grained access control for REST endpoints. Since this feature was
-not well tested in the Boron release, it is recommended to use the
-Shiro-based mechanism instead, and rely on the Authorization Broker
-Facade for POC use only.
-
-AuthZ Broker Facade Feature Installation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-To install the authorization broker facade, please issue the following
-command in the karaf shell:
-
-::
-
-    feature:install odl-restconf odl-aaa-authz
-
-Add an Authorization Rule
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The following shows how one might go about securing the controller so
-that only admins can access restconf.
-
-::
-
-    curl -u admin:admin -H “Content-Type: application/xml” --data-binary @./rule.json http://localhost:8181/restconf/config/authorization-schema:simple-authorization/policies/RestConfService/
-    cat ./rule.json
-    {
-        "policies": {
-            "resource": "*",
-            "service":"RestConfService",
-            "role": "admin"
-        }
-    }
 
 Accounting Configuration
 ------------------------
@@ -691,6 +662,5 @@ All AAA logging is output to the standard karaf.log file.
 
     log:set TRACE org.opendaylight.aaa
 
-This command enables the most verbose level of logging for AAA
+This Karaf's CLI command enables the most verbose level of logging for AAA
 components.
-
