@@ -1,15 +1,42 @@
 Authentication, Authorization and Accounting (AAA) Services
 ===========================================================
 
-The Boron AAA services are based on the Apache Shiro Java Security
-Framework. The main configuration file for AAA is located at
-“etc/shiro.ini” relative to the ODL karaf home directory.
+Overview
+--------
+
+Authentication, Authorization and Accounting (AAA) is a term for a
+framework controlling access to resources, enforcing policies and
+auditing usage. These combined processes are considered important for
+effective network management and security.
+
+Authentication provides a way of identifying a user, typically by
+having the user enter a valid user name and valid password before access
+is granted.
+
+The process of authentication is based on each user having a unique set
+of criteria for gaining access. The AAA framework compares a user's
+authentication credentials with other user credentials stored in a database.
+If the credentials match, the user is granted access to the network.
+If the credentials are at variance, authentication fails and access is denied.
+
+Following authentication, a user must gain authorization for doing certain
+tasks or call certain APIs. The authorization process determines whether
+the user has the authority to perform such actions. Authorization is the process
+of enforcing policies.
+
+Accounting measures the resources a user consumes during access. This can include
+the amount of system time or the amount of data a user has sent and/or received
+during a session. Accounting is carried out by logging of session statistics and
+usage information.
 
 Terms And Definitions
----------------------
+^^^^^^^^^^^^^^^^^^^^^
+
+AAA
+    Authentication, Authorization and Accounting.
 
 Token
-    A claim of access to a group of resources on the controller
+    A claim of access to a group of resources on the controller.
 
 Domain
     A group of resources, direct or indirect, physical, logical, or
@@ -18,29 +45,38 @@ Domain
 
 User
     A person who either owns or has access to a resource or group of
-    resources on the controller
+    resources on the controller.
 
 Role
     Opaque representation of a set of permissions, which is merely a
-    unique string as admin or guest
+    unique string as admin or guest.
 
 Credential
-    Proof of identity such as username and password, OTP, biometrics, or
-    others
+    Proof of identity such as user name and password, OTP, biometrics, or
+    others.
 
 Client
-    A service or application that requires access to the controller
+    A service or application that requires access to the controller.
 
 Claim
     A data set of validated assertions regarding a user, e.g. the role,
     domain, name, etc.
 
+
+Security Framework for AAA services
+-----------------------------------
+
+The Boron AAA services are based on the `Apache Shiro <https://shiro.apache.org/>`_ Java Security
+Framework. The main configuration file for AAA is located at
+“etc/shiro.ini” relative to the ODL karaf home directory.
+
+
 How to enable AAA
 -----------------
 
-AAA is enabled through installing the odl-aaa-shiro feature.
-odl-aaa-shiro is automatically installed as part of the odl-restconf
-offering.
+AAA is enabled through installing the odl-aaa-shiro feature. The vast majority of OpenDaylight's northbound APIs (and all RESTCONF APIs) are protected by AAA by default when installing
+the +odl-restconf+ feature, since the odl-aaa-shiro is automatically installed as part of them. In the cases that APIs are *not* protected by AAA, this will be noted in the per-project release notes.
+
 
 How to disable AAA
 ------------------
