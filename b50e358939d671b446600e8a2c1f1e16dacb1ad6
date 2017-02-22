@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "fafc7978_cea270fc",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5861
+      },
+      "writtenOn": "2017-02-22T21:27:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fafc7978_535d8b46",
+      "range": {
+        "startLine": 20,
+        "startChar": 19,
+        "endLine": 20,
+        "endChar": 34
+      },
+      "revId": "b50e358939d671b446600e8a2c1f1e16dacb1ad6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fafc7978_b3567728",
         "filename": "docs/user-guide/authentication-and-authorization-services.rst",
         "patchSetId": 1
@@ -59,6 +83,30 @@
       "writtenOn": "2017-02-21T19:42:37Z",
       "side": 1,
       "message": "cut this? it comes out of left field. For example, what\u0027s a policy?",
+      "range": {
+        "startLine": 24,
+        "startChar": 52,
+        "endLine": 25,
+        "endChar": 22
+      },
+      "revId": "b50e358939d671b446600e8a2c1f1e16dacb1ad6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_2ea4dc06",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 5861
+      },
+      "writtenOn": "2017-02-22T21:27:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fafc7978_b3567728",
       "range": {
         "startLine": 24,
         "startChar": 52,
@@ -94,6 +142,30 @@
     },
     {
       "key": {
+        "uuid": "fafc7978_0ea918df",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 5861
+      },
+      "writtenOn": "2017-02-22T21:27:49Z",
+      "side": 1,
+      "message": "Yes, I used that link as source of inspiration, so I will rework this paragraph so that we do not need to add a Reference s section.",
+      "parentUuid": "fafc7978_f333df11",
+      "range": {
+        "startLine": 27,
+        "startChar": 1,
+        "endLine": 29,
+        "endChar": 17
+      },
+      "revId": "b50e358939d671b446600e8a2c1f1e16dacb1ad6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fafc7978_d3385bf1",
         "filename": "docs/user-guide/authentication-and-authorization-services.rst",
         "patchSetId": 1
@@ -105,6 +177,30 @@
       "writtenOn": "2017-02-21T19:42:37Z",
       "side": 1,
       "message": "I would say \"Since ${Release}, AAA services have been based on...\" or just \"AAA services are based on...\" so that it doesn\u0027t need to be updated every release.",
+      "range": {
+        "startLine": 69,
+        "startChar": 4,
+        "endLine": 69,
+        "endChar": 9
+      },
+      "revId": "b50e358939d671b446600e8a2c1f1e16dacb1ad6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_6eb1c446",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 5861
+      },
+      "writtenOn": "2017-02-22T21:27:49Z",
+      "side": 1,
+      "message": "The original paragraph stated Boron as the first release which introduced the Shiro Framework.",
+      "parentUuid": "fafc7978_d3385bf1",
       "range": {
         "startLine": 69,
         "startChar": 4,
@@ -151,6 +247,30 @@
       "writtenOn": "2017-02-21T19:42:37Z",
       "side": 1,
       "message": "Karaf",
+      "range": {
+        "startLine": 71,
+        "startChar": 36,
+        "endLine": 71,
+        "endChar": 41
+      },
+      "revId": "b50e358939d671b446600e8a2c1f1e16dacb1ad6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_0e80f844",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 5861
+      },
+      "writtenOn": "2017-02-22T21:27:49Z",
+      "side": 1,
+      "message": "Changed in other places as well.",
+      "parentUuid": "fafc7978_333a87e7",
       "range": {
         "startLine": 71,
         "startChar": 36,
