@@ -16,6 +16,7 @@ Project-specific Developer Guides
    :maxdepth: 1
 
    alto-developer-guide
+   authentication-and-authorization-services
    bgp-developer-guide
    bgp-monitoring-protocol-developer-guide
    bier-developer-guide
