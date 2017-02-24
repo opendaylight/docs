@@ -475,7 +475,7 @@ URLs and body content on the page.
 
 5.  Set the Map-Resolver address to the IP address of the
     **controller**, and on the **client** the Map-Server too. On
-    **server1** and **server2** set the Map-Server to something else, so
+    **server1** and **server2** remove the Map-Server configuration, so
     that it doesn’t interfere with the mappings on the controller, since
     we’re going to program them manually.
 
@@ -567,7 +567,7 @@ URLs and body content on the page.
     ::
 
         curl -u "admin":"admin" -H "Content-type: application/json" -X GET \
-            http://localhost:8181/restconf/config/odl-mappingservice:mapping-database/virtual-network-identifier/0/mapping/ipv4:1.1.1.1%2f32/southbound/
+            http://localhost:8181/restconf/operational/odl-mappingservice:mapping-database/virtual-network-identifier/0/mapping/ipv4:1.1.1.1%2f32/southbound/
 
     An alternative way for retrieving mappings from OpenDaylight using the
     southbound interface is using the
