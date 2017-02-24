@@ -17,6 +17,7 @@ Project-specific Developer Guides
 
    alto-developer-guide
    atrium-developer-guide
+   authentication-and-authorization-services
    bgp-developer-guide
    bgp-monitoring-protocol-developer-guide
    capwap-developer-guide
