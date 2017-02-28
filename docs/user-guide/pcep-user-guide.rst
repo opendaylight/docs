@@ -133,7 +133,7 @@ The OpenDaylight PCEP implementation is supporting TCP MD5 for authentication.
 Sample configuration below shows how to set authentication password for a particular PCC.
 It is required to install ``odl-netconf-connector-ssh`` feature first.
 
-**URL:** ``/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules/module/odl-pcep-impl-cfg:pcep-topology-provider/pcep-topology``
+**URL:** ``/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules/module/odl-pcep-topology-provider-cfg:pcep-topology-provider/pcep-topology``
 
 **Method:** ``PUT``
 
