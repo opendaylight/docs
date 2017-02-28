@@ -95,41 +95,6 @@ with
 
 Then restart the Karaf process.
 
-How application developers can leverage AAA to provide servlet security
------------------------------------------------------------------------
-
-In order to provide security to a servlet, add the following to the
-servlet’s web.xml file as the first filter definition:
-
-::
-
-    <context-param>
-      <param-name>shiroEnvironmentClass</param-name>
-      <param-value>org.opendaylight.aaa.shiro.web.env.KarafIniWebEnvironment</param-value>
-    </context-param>
-
-    <listener>
-        <listener-class>org.apache.shiro.web.env.EnvironmentLoaderListener</listener-class>
-    </listener>
-
-    <filter>
-        <filter-name>ShiroFilter</filter-name>
-        <filter-class>org.opendaylight.aaa.shiro.filters.AAAShiroFilter</filter-class>
-    </filter>
-
-    <filter-mapping>
-        <filter-name>AAAShiroFilter</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
-
-.. note::
-
-    It is very important to place this AAAShiroFilter as the first
-    javax.servlet.Filter, as Jersey applies Filters in the order they
-    appear within web.xml. Placing the AAAShiroFilter first ensures
-    incoming HTTP/HTTPS requests have proper credentials before any
-    other filtering is attempted.
-
 AAA Realms
 ----------
 
