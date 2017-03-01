@@ -1,0 +1,211 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fafc7978_61d9ae21",
+        "filename": "docs/developer-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 3635
+      },
+      "writtenOn": "2017-03-01T14:37:42Z",
+      "side": 1,
+      "message": "Please specifically mention OAuth2 token authentication as well, as it is actually already implemented in AAA.",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 74
+      },
+      "revId": "85c21ceaa0771b8d1893b98e5638a378b88d4db8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_21d32605",
+        "filename": "docs/developer-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 3635
+      },
+      "writtenOn": "2017-03-01T14:37:42Z",
+      "side": 1,
+      "message": "Remove this space.",
+      "range": {
+        "startLine": 21,
+        "startChar": 77,
+        "endLine": 21,
+        "endChar": 78
+      },
+      "revId": "85c21ceaa0771b8d1893b98e5638a378b88d4db8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_214166a9",
+        "filename": "docs/developer-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 3635
+      },
+      "writtenOn": "2017-03-01T14:37:42Z",
+      "side": 1,
+      "message": "Sort of... in ODL\u0027s case, we use RBAC, not user based.  So practically, authorization is the process that determines whether the user has the role necessary to perform such actions.",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 24
+      },
+      "revId": "85c21ceaa0771b8d1893b98e5638a378b88d4db8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_c1017a6b",
+        "filename": "docs/developer-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 3635
+      },
+      "writtenOn": "2017-03-01T14:37:42Z",
+      "side": 1,
+      "message": "Okay well this hasn\u0027t happened thus far...  Every project should be protected at this point.",
+      "range": {
+        "startLine": 77,
+        "startChar": 44,
+        "endLine": 78,
+        "endChar": 70
+      },
+      "revId": "85c21ceaa0771b8d1893b98e5638a378b88d4db8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_41ed8ab6",
+        "filename": "docs/developer-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 3635
+      },
+      "writtenOn": "2017-03-01T14:37:42Z",
+      "side": 1,
+      "message": "This is not the recommended method anymore-- we want to heavily influence people to use the MDSALDynamicAuthorizationFilter.  It is configurable through the aaa model.",
+      "range": {
+        "startLine": 222,
+        "startChar": 0,
+        "endLine": 236,
+        "endChar": 63
+      },
+      "revId": "85c21ceaa0771b8d1893b98e5638a378b88d4db8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_01f7028c",
+        "filename": "docs/developer-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 3635
+      },
+      "writtenOn": "2017-03-01T14:37:42Z",
+      "side": 1,
+      "message": "This has been removed actually.",
+      "range": {
+        "startLine": 238,
+        "startChar": 0,
+        "endLine": 245,
+        "endChar": 24
+      },
+      "revId": "85c21ceaa0771b8d1893b98e5638a378b88d4db8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_61f08e91",
+        "filename": "docs/developer-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 3635
+      },
+      "writtenOn": "2017-03-01T14:37:42Z",
+      "side": 1,
+      "message": "Remove this.",
+      "range": {
+        "startLine": 247,
+        "startChar": 0,
+        "endLine": 255,
+        "endChar": 46
+      },
+      "revId": "85c21ceaa0771b8d1893b98e5638a378b88d4db8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_8132d25c",
+        "filename": "docs/developer-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 3635
+      },
+      "writtenOn": "2017-03-01T14:37:42Z",
+      "side": 1,
+      "message": "remove this.",
+      "range": {
+        "startLine": 257,
+        "startChar": 0,
+        "endLine": 273,
+        "endChar": 5
+      },
+      "revId": "85c21ceaa0771b8d1893b98e5638a378b88d4db8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_c1385a3f",
+        "filename": "docs/developer-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 3635
+      },
+      "writtenOn": "2017-03-01T14:37:42Z",
+      "side": 1,
+      "message": "Missing information from the README concerning how to set up un/successful logging of REST requests using the AAA AuthenticationListener.",
+      "range": {
+        "startLine": 275,
+        "startChar": 0,
+        "endLine": 285,
+        "endChar": 11
+      },
+      "revId": "85c21ceaa0771b8d1893b98e5638a378b88d4db8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
