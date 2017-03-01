@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "fafc7978_41f74a59",
+        "filename": "docs/developer-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5861
+      },
+      "writtenOn": "2017-03-01T15:08:14Z",
+      "side": 1,
+      "message": "This is just an overview section (it is the same in User Guide) . I\u0027ll add the OAuth2 token authentication mechanism described here in a section following this one called: \"AAA Framework implementation\". I\u0027ll use the information from this link:\nhttps://github.com/opendaylight/aaa/blob/master/README.md",
+      "parentUuid": "fafc7978_61d9ae21",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 74
+      },
+      "revId": "85c21ceaa0771b8d1893b98e5638a378b88d4db8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fafc7978_21d32605",
         "filename": "docs/developer-guide/authentication-and-authorization-services.rst",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2017-03-01T14:37:42Z",
       "side": 1,
       "message": "Remove this space.",
+      "range": {
+        "startLine": 21,
+        "startChar": 77,
+        "endLine": 21,
+        "endChar": 78
+      },
+      "revId": "85c21ceaa0771b8d1893b98e5638a378b88d4db8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_a19716eb",
+        "filename": "docs/developer-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5861
+      },
+      "writtenOn": "2017-03-01T15:08:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fafc7978_21d32605",
       "range": {
         "startLine": 21,
         "startChar": 77,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "fafc7978_a1bef662",
+        "filename": "docs/developer-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5861
+      },
+      "writtenOn": "2017-03-01T15:08:14Z",
+      "side": 1,
+      "message": "RBAC might be considered as a type of authority. I just wanted to have this Overview section as agnostic as posible. I mention RBAC in the Authorization section.",
+      "parentUuid": "fafc7978_214166a9",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 24
+      },
+      "revId": "85c21ceaa0771b8d1893b98e5638a378b88d4db8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fafc7978_c1017a6b",
         "filename": "docs/developer-guide/authentication-and-authorization-services.rst",
         "patchSetId": 1
@@ -82,6 +154,30 @@
       "writtenOn": "2017-03-01T14:37:42Z",
       "side": 1,
       "message": "Okay well this hasn\u0027t happened thus far...  Every project should be protected at this point.",
+      "range": {
+        "startLine": 77,
+        "startChar": 44,
+        "endLine": 78,
+        "endChar": 70
+      },
+      "revId": "85c21ceaa0771b8d1893b98e5638a378b88d4db8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_81c3f2eb",
+        "filename": "docs/developer-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 5861
+      },
+      "writtenOn": "2017-03-01T15:08:14Z",
+      "side": 1,
+      "message": "Should I remove it then?",
+      "parentUuid": "fafc7978_c1017a6b",
       "range": {
         "startLine": 77,
         "startChar": 44,
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "fafc7978_81513238",
+        "filename": "docs/developer-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 5861
+      },
+      "writtenOn": "2017-03-01T15:08:14Z",
+      "side": 1,
+      "message": "I just kept it from the original version. I thought the Idmlight component is the server counterpart for the idmtool, shouldn\u0027t be there even if we add a new section describing and recommending the new mechanism based on the MDSALDynamicAuthorizationFilter?",
+      "parentUuid": "fafc7978_41ed8ab6",
+      "range": {
+        "startLine": 222,
+        "startChar": 0,
+        "endLine": 236,
+        "endChar": 63
+      },
+      "revId": "85c21ceaa0771b8d1893b98e5638a378b88d4db8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fafc7978_01f7028c",
         "filename": "docs/developer-guide/authentication-and-authorization-services.rst",
         "patchSetId": 1
@@ -128,6 +248,30 @@
       "writtenOn": "2017-03-01T14:37:42Z",
       "side": 1,
       "message": "This has been removed actually.",
+      "range": {
+        "startLine": 238,
+        "startChar": 0,
+        "endLine": 245,
+        "endChar": 24
+      },
+      "revId": "85c21ceaa0771b8d1893b98e5638a378b88d4db8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_e142be66",
+        "filename": "docs/developer-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 5861
+      },
+      "writtenOn": "2017-03-01T15:08:14Z",
+      "side": 1,
+      "message": "Ok, I\u0027ll remove it and I\u0027ll do the same in the User Guide.",
+      "parentUuid": "fafc7978_01f7028c",
       "range": {
         "startLine": 238,
         "startChar": 0,
@@ -163,6 +307,30 @@
     },
     {
       "key": {
+        "uuid": "fafc7978_c147ba75",
+        "filename": "docs/developer-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 5861
+      },
+      "writtenOn": "2017-03-01T15:08:14Z",
+      "side": 1,
+      "message": "Ok, I\u0027ll remove it and I\u0027ll do the same in the User Guide.",
+      "parentUuid": "fafc7978_61f08e91",
+      "range": {
+        "startLine": 247,
+        "startChar": 0,
+        "endLine": 255,
+        "endChar": 46
+      },
+      "revId": "85c21ceaa0771b8d1893b98e5638a378b88d4db8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fafc7978_8132d25c",
         "filename": "docs/developer-guide/authentication-and-authorization-services.rst",
         "patchSetId": 1
@@ -186,6 +354,30 @@
     },
     {
       "key": {
+        "uuid": "fafc7978_015d4247",
+        "filename": "docs/developer-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 5861
+      },
+      "writtenOn": "2017-03-01T15:08:14Z",
+      "side": 1,
+      "message": "Ok, I\u0027ll remove it and I\u0027ll do the same in the User Guide.",
+      "parentUuid": "fafc7978_8132d25c",
+      "range": {
+        "startLine": 257,
+        "startChar": 0,
+        "endLine": 273,
+        "endChar": 5
+      },
+      "revId": "85c21ceaa0771b8d1893b98e5638a378b88d4db8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fafc7978_c1385a3f",
         "filename": "docs/developer-guide/authentication-and-authorization-services.rst",
         "patchSetId": 1
@@ -197,6 +389,30 @@
       "writtenOn": "2017-03-01T14:37:42Z",
       "side": 1,
       "message": "Missing information from the README concerning how to set up un/successful logging of REST requests using the AAA AuthenticationListener.",
+      "range": {
+        "startLine": 275,
+        "startChar": 0,
+        "endLine": 285,
+        "endChar": 11
+      },
+      "revId": "85c21ceaa0771b8d1893b98e5638a378b88d4db8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_4153ca38",
+        "filename": "docs/developer-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 5861
+      },
+      "writtenOn": "2017-03-01T15:08:14Z",
+      "side": 1,
+      "message": "I\u0027ll add all the information found in this link:\n\nhttps://github.com/opendaylight/aaa/blob/master/README.md",
+      "parentUuid": "fafc7978_c1385a3f",
       "range": {
         "startLine": 275,
         "startChar": 0,
