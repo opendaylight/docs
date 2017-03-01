@@ -18,6 +18,11 @@
 	url = ../aaa
 	branch = .
 	ignore = dirty
+[submodule "docs/submodules/coe"]
+	path = docs/submodules/coe
+	url = ../coe
+	branch = .
+	ignore = dirty
 [submodule "docs/submodules/netconf"]
 	path = docs/submodules/netconf
 	url = ../netconf
