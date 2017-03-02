@@ -57,3 +57,8 @@
 	path = docs/submodules/federation
 	url = ../federation
 	branch = master
+[submodule "docs/submodules/coe"]
+	path = docs/submodules/coe
+	url = ../coe
+	branch = .
+	ignore = dirty
