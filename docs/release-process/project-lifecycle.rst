@@ -21,28 +21,28 @@ progress to the following state.
   The recognized project is willing to participate, but its current codebase is
   not passing its own merge job, or the project artifacts are otherwise
   unavailable in Nexus.
-- **failing-distribution-check**
-  Merge job passes, but project distribution-check job is either not defined
-  or failing.
 - **not-in-autorelease**
-  Project distribution-check passes, but the project is not added to
-  autorelease (git submodule, maven module)
+  Project merge job passes, but the project is not added to
+  autorelease (git submodule, maven module, validate-autorelease job passes).
 - **repo-not-in-integration**
   Project is added do autorelease, but integration/distribution:features-index
-  is not listing all its feature repositories.
+  is not listing all its public feature repositories.
+- **distribution-check-not-passing**
+  Project is in autorelease, but its distribution-check job
+  is either not running, or it is failing for any reason.
 - **feature-not-in-integration**
-  Feature repositories are referenced, but some user-facing features are absent
-  from integration/distribution:features-test
+  Feature repositories are referenced, distribution-check job is passing,
+  but some user-facing features are absent from integration/distribution:features-test
 - **feature-is-experimental**
-  All user-facing features are in features-test, but at least one corresponding
-  functiona CSIT jobs does not meet integration/test requirements.
+  All user-facing features are in features-test, but at least one of the corresponding
+  functional CSIT jobs does not meet integration/test requirements.
 - **ready**
 
 .. note::
 
    A project may change its state in both directions, this list is to make sure
-   a project is not left in an invalid state, for example present in
-   autorelease but without passing distribution-check job.
+   a project is not left in an invalid state, for example distribution referencing
+   feature repositories, but without passing distribution-check job.
 
 .. todo::
 
