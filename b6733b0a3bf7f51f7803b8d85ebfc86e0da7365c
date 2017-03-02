@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fafc7978_c06b2a83",
+        "filename": "docs/developer-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6419
+      },
+      "writtenOn": "2017-03-02T11:30:07Z",
+      "side": 1,
+      "message": "authorization",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 14
+      },
+      "revId": "b6733b0a3bf7f51f7803b8d85ebfc86e0da7365c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_40261a69",
+        "filename": "docs/developer-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 6419
+      },
+      "writtenOn": "2017-03-02T11:30:07Z",
+      "side": 1,
+      "message": "I think this belongs in the user guide... You\u0027re telling how to configure the authz service - meant for a user/administrator.",
+      "range": {
+        "startLine": 259,
+        "startChar": 0,
+        "endLine": 266,
+        "endChar": 20
+      },
+      "revId": "b6733b0a3bf7f51f7803b8d85ebfc86e0da7365c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_00d7f224",
+        "filename": "docs/developer-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 6419
+      },
+      "writtenOn": "2017-03-02T11:30:07Z",
+      "side": 1,
+      "message": "I also think this is better suited for the user guide, as you\u0027re explaining how to configure accounting",
+      "range": {
+        "startLine": 292,
+        "startChar": 0,
+        "endLine": 302,
+        "endChar": 75
+      },
+      "revId": "b6733b0a3bf7f51f7803b8d85ebfc86e0da7365c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
