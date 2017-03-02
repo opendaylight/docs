@@ -1,0 +1,159 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fafc7978_5dc8c754",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6327
+      },
+      "writtenOn": "2017-03-02T10:33:06Z",
+      "side": 1,
+      "message": "It should be \"Authorization\"",
+      "revId": "d1461cae072b9f8201e40f1a85e1eb7e0cf5c856",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_9dd50fe7",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 6327
+      },
+      "writtenOn": "2017-03-02T10:33:06Z",
+      "side": 1,
+      "message": "Also southbound?",
+      "range": {
+        "startLine": 75,
+        "startChar": 18,
+        "endLine": 75,
+        "endChar": 33
+      },
+      "revId": "d1461cae072b9f8201e40f1a85e1eb7e0cf5c856",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_fd07fb7f",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 6327
+      },
+      "writtenOn": "2017-03-02T10:33:06Z",
+      "side": 1,
+      "message": "odl-restconf-all",
+      "range": {
+        "startLine": 76,
+        "startChar": 31,
+        "endLine": 76,
+        "endChar": 45
+      },
+      "revId": "d1461cae072b9f8201e40f1a85e1eb7e0cf5c856",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_bd1f33b6",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 6327
+      },
+      "writtenOn": "2017-03-02T10:33:06Z",
+      "side": 1,
+      "message": "it\u0027s not clear to me. Suggestion: to grant access to resources based on users role",
+      "range": {
+        "startLine": 114,
+        "startChar": 46,
+        "endLine": 115,
+        "endChar": 20
+      },
+      "revId": "d1461cae072b9f8201e40f1a85e1eb7e0cf5c856",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_7d294be5",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 6327
+      },
+      "writtenOn": "2017-03-02T10:33:06Z",
+      "side": 1,
+      "message": "abilities or capabilities?",
+      "range": {
+        "startLine": 118,
+        "startChar": 6,
+        "endLine": 118,
+        "endChar": 16
+      },
+      "revId": "d1461cae072b9f8201e40f1a85e1eb7e0cf5c856",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_3d8343cd",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 6327
+      },
+      "writtenOn": "2017-03-02T10:33:06Z",
+      "side": 1,
+      "message": "Nowadays is not the case because all realms are attempted no matter authentication succeeds in a previous one or not",
+      "range": {
+        "startLine": 166,
+        "startChar": 57,
+        "endLine": 167,
+        "endChar": 77
+      },
+      "revId": "d1461cae072b9f8201e40f1a85e1eb7e0cf5c856",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_1da2bf4a",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 646,
+      "author": {
+        "id": 6327
+      },
+      "writtenOn": "2017-03-02T10:33:06Z",
+      "side": 1,
+      "message": "I would include an example oy uri restriction:\n# Restrict AAA-Certificate REST APIs to Admin role\n/config/aaa-cert-mdsal** \u003d authcBasic, roles[admin]\n/operational/aaa-cert-mdsal** \u003d authcBasic, roles[admin]\n/operations/aaa-cert-rpc** \u003d authcBasic, roles[admin]",
+      "range": {
+        "startLine": 646,
+        "startChar": 0,
+        "endLine": 646,
+        "endChar": 46
+      },
+      "revId": "d1461cae072b9f8201e40f1a85e1eb7e0cf5c856",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
