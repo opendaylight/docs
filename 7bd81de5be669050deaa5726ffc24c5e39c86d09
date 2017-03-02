@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fafc7978_cefb5b45",
+        "filename": "docs/submodules/coe",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2046
+      },
+      "writtenOn": "2017-03-02T15:40:32Z",
+      "side": 1,
+      "message": "This results in ordinary file (as opposed to directory for \"git submodule --init\" to populate.\n\nLooking at separately cloned coe repo, the commit hash should currently be: 78420bf91c15874ad27c24f1c57ad78ec93d67b8",
+      "revId": "7bd81de5be669050deaa5726ffc24c5e39c86d09",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
