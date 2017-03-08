@@ -2147,6 +2147,26 @@ To enable BGP-LS support in BGP plugin, first configure BGP speaker instance:
        </bgp>
    </protocol>
 
+Linkstate path attribute
+''''''''''''''''''''''''
+IANA allocation for BGP-LS path attribute is TYPE 29.
+Some older BGP-LS implementations might still require earliest asigned allocation TYPE 99.
+To use TYPE = 99, you need to set value bellow to false.
+
+**URL:** ``/restconf/config/bgp-linkstate-app-config:bgp-linkstate-app-config``
+
+**Method:** ``PUT``
+
+**Content-Type:** ``application/xml``
+
+**Request Body:**
+
+.. code-block:: xml
+
+   <bgp-linkstate-app-config xmlns="urn:opendaylight:params:xml:ns:yang:controller:bgp:linkstate-app-config">
+       <iana-linkstate-attribute-type>false</iana-linkstate-attribute-type>
+   </bgp-linkstate-app-config>
+
 BGP Peer
 ''''''''
 Here is an example for BGP peer configuration with enabled BGP-LS family.
