@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fafc7978_4048b3cb",
+        "filename": "docs/user-guide/bgp-user-guide.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 2154,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2017-03-08T14:20:37Z",
+      "side": 1,
+      "message": "Just to make it more clear: The earliest BGP-LS path attribute code was 99, later changed to 29, which is now official (since BGP-LS has become internet standard) - https://www.iana.org/assignments/bgp-parameters/bgp-parameters.xhtml#bgp-parameters-2\n\nSome older BGP-LS implementations might still require code 99.",
+      "range": {
+        "startLine": 2152,
+        "startChar": 0,
+        "endLine": 2154,
+        "endChar": 56
+      },
+      "revId": "7720dc6a99f34f308765e0b6a7d358f6f8d6d7a9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
