@@ -30,7 +30,7 @@ sys.path.insert(0, os.path.abspath('submodules/spectrometer/server'))
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['sphinx.ext.autodoc']
+extensions = ['sphinx.ext.autodoc','sphinx.ext.graphviz']
 
 # Disable javasphinx generation until we have a solution to long build
 # times. readthedocs timesout after 902 seconds.
