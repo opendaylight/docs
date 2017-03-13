@@ -22,3 +22,4 @@ Processes
    namespace
    branch-cutting
    simultaneous-release
+   milestone-readouts
