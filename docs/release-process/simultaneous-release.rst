@@ -63,7 +63,8 @@ Releasing OpenDaylight
 
     .. code-block:: bash
 
-        ../scripts/patch-odl-release.sh /tmp/patches ${RELEASE}
+        pip install lftools
+        lftools version patch ${RELEASE}
         git review -y -t ${RELEASE}
         git push gerrit release/${RELEASE,,}
 
