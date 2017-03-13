@@ -1440,6 +1440,21 @@ previous step.
 
 -  OPERATION: GET
 
+The subscription call may be modified with the following query parameters defined in the RESTCONF RFC:
+
+-  `filter <https://tools.ietf.org/html/draft-ietf-netconf-restconf-05#section-4.8.6>`__
+
+-  `start-time <https://tools.ietf.org/html/draft-ietf-netconf-restconf-05#section-4.8.7>`__
+
+-  `end-time <https://tools.ietf.org/html/draft-ietf-netconf-restconf-05#section-4.8.8>`__
+
+In addition, the following ODL extension query parameter is supported:
+
+:odl-leaf-nodes-only:
+  If this parameter is set to "true", create and update notifications will only 
+  contain the leaf nodes modified instead of the entire subscription subtree.
+  This can help in reducing the size of the notifications.
+
 The expected response status is 200 OK and response body should be
 empty. You will get your WebSocket location from **Location** header of
 response. For example in our particular toaster example location header
