@@ -21,5 +21,6 @@ Processes
    project-lifecycle
    branch-cutting
    simultaneous-release
+   milestone-readouts
 
 .. _OpenStack: https://www.openstack.org/
