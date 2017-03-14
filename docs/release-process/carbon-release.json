@@ -1,0 +1,31 @@
+{
+	"start": "10/20/2016",
+	"name": "Carbon",
+	"milestones": [
+		"M1",
+		"M2",
+		"M3",
+		"M4",
+		"M5"
+	],
+	"weeks_between_milestones": 4,
+	"offset_in_weeks": 2,
+	"offsets": [
+		"0",
+		"1",
+		"2"
+	],
+	"RCs": [
+		"RC0",
+		"RC1",
+		"RC2",
+		"RC3"
+	],
+	"weeks_before_first_RC": 2,
+	"weeks_between_RCs": 1,
+	"holidays": [
+		"11/24/2016",
+		"12/25/2016",
+		"1/1/2017"
+	]
+}
