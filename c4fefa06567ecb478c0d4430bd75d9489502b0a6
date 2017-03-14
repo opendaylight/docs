@@ -1,4 +1,22 @@
 {
   "pushCert": "certificate version 0.1\npusher F566C9B1 1489462110 -0400\npushee ssh://git.opendaylight.org:29418/docs.git\nnonce 1489462110-0C6D4918FA51656BA3FEF83E24AFC010E65E7302\n\n0000000000000000000000000000000000000000 c4fefa06567ecb478c0d4430bd75d9489502b0a6 refs/publish/master/53253\n-----BEGIN PGP SIGNATURE-----\nVersion: GnuPG v2\n\niQIcBAABCAAGBQJYx2NeAAoJEF3VDEv1ZsmxBucP/jTQU+k4YvMwH8bzn4F4pWdz\nSvT+Iv4VWElj0MKPhbEBH64wehMsUk9Pj1ybAz4Af9Xh914arRyk/WL2YpwrXUpb\nSec3ogaQNYuSQcxfSspjYbk4EMPII/yKf8kJt2hBd267okweBFHZkGIjKkYRy6LA\nTuEudlSUZZCAR+P+cnlWV2tjOJEq0xwhelF2/NqWy6n+jEmTTVBGnLXNMEKmfSyl\n7O4wwD7YHlZPQkJ6J0WrtlRJPKlHxNX1PbRVK/ANRdyXL1qZQG0y/CY54pAwe44O\n9XY1y94tkEtMFazfq3uO7WRSv1n/fELslrswZkBpLcJAHPwsl28QRLxy9bQofHUN\nilGI6UWcePI2OlKJ3IfFrCcIg7fEkV2cSkS6Lz2KSQQjilWBynvQ83v7WV4s4HI9\nTu3PgcbPFKblxBG9GXutElMDR6cOyChJqqwRWivasi15rB02KDAw6rP9QSlZ0EUs\nZszdAByiuQfi3TJalxHx876LDjYZkj34L2kVZ4BrgVJbxkJ8qqByzXAEQpVPjQZD\niYZcgm0824SI8RQlE5sMnnuFACOnXddJMy9a28IpINJJFV14WBcn+D7iHTMVGj4i\nBDFOYmaV+MX7JMAyLe/ltRWtHGARtVF7DhG6MNgnNWYKwox0l4xb4bGkU30uBZSa\ncPKPsuAudpHUlupqC1rX\n\u003d1G3N\n-----END PGP SIGNATURE-----\n",
-  "comments": []
+  "comments": [
+    {
+      "key": {
+        "uuid": "fafc7978_cc6683ee",
+        "filename": "docs/release-process/release_schedule.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2017-03-14T06:21:26Z",
+      "side": 1,
+      "message": "adding a quick two liner describing the number of offsets and \nweeks per milestone to the output would be helpful",
+      "revId": "c4fefa06567ecb478c0d4430bd75d9489502b0a6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
 }
