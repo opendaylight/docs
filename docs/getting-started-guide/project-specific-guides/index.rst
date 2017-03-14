@@ -10,4 +10,3 @@ Project-Specific Installation Guides
    opflex
    tsdr
    vtn
-   yangide
