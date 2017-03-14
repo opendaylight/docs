@@ -34,7 +34,6 @@ Project-specific User Guides
    genius-user-guide
    group-based-policy-user-guide
    l2switch-user-guide
-   l3vpn-service_-user-guide
    link-aggregation-control-protocol-user-guide
    lisp-flow-mapping-user-guide
    natapp-user-guide
