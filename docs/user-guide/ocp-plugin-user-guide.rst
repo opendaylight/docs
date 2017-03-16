@@ -54,15 +54,15 @@ The OCP Plugin project includes:
 
    -  Fault management
 
-   -  Software management (not implemented as of Boron)
+   -  Software management (not yet implemented)
 
 -  Indication processing
 
--  Logging (not implemented as of Boron)
+-  Logging (not yet implemented)
 
--  AISG/Iuant interface message tunnelling (not implemented as of Boron)
+-  AISG/Iuant interface message tunnelling (not yet implemented)
 
--  ALD connection management (not implemented as of Boron)
+-  ALD connection management (not yet implemented)
 
 Architecture and Design
 -----------------------
@@ -182,7 +182,7 @@ Configuring the OCP plugin can be done via its configuration file,
 62-ocpplugin.xml, which can be found in the
 <odl-install-dir>/etc/opendaylight/karaf/ directory.
 
-As of Boron, there are the following settings that are configurable:
+There are the following settings that are configurable:
 
 1. **port** specifies the port number on which the OCP plugin listens
    for connection requests
@@ -219,7 +219,7 @@ from OpenDaylight Nexus Repository.
 
 ::
 
-    wget https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/ocpplugin/simple-agent/0.1.0-Boron/simple-agent-0.1.0-Boron.jar
+    wget https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/ocpplugin/simple-agent/0.1.0-${version}/simple-agent-0.1.0-${version}.jar
 
 Then run the agent with no arguments (assuming you already have JDK 1.8
 or above installed) and it should display the usage that lists the
@@ -227,7 +227,7 @@ expected arguments.
 
 ::
 
-    java -classpath simple-agent-0.1.0-Boron.jar org.opendaylight.ocpplugin.OcpAgent
+    java -classpath simple-agent-0.1.0-${version}.jar org.opendaylight.ocpplugin.OcpAgent
 
     Usage: java org.opendaylight.ocpplugin.OcpAgent <controller's ip address> <port number> <vendor id> <serial number>
 
@@ -235,7 +235,7 @@ Here is an example:
 
 ::
 
-    java -classpath simple-agent-0.1.0-Boron.jar org.opendaylight.ocpplugin.OcpAgent 127.0.0.1 1033 XYZ 123
+    java -classpath simple-agent-0.1.0-${version}.jar org.opendaylight.ocpplugin.OcpAgent 127.0.0.1 1033 XYZ 123
 
 Web / Graphical Interface
 -------------------------
