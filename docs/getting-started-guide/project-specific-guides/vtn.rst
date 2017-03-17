@@ -51,7 +51,7 @@ VTN Coordinator
 #. Install these packages::
 
       yum install perl-Digest-SHA uuid libxslt libcurl unixODBC json-c bzip2
-      rpm -ivh http://yum.postgresql.org/9.3/redhat/rhel-6-x86_64/pgdg-redhat93-9.3-1.noarch.rpm
+      rpm -ivh http://yum.postgresql.org/9.3/redhat/rhel-6-x86_64/pgdg-redhat93-9.3-3.noarch.rpm
       yum install postgresql93-libs postgresql93 postgresql93-server postgresql93-contrib postgresql93-odbc
 
 Installing VTN
