@@ -7,9 +7,7 @@ Required Packages
 You'll need to install the following packages and their dependencies:
 
 * libuv
-* openvswitch-gbp
-* openvswitch-gbp-lib
-* openvswitch-gbp-kmod
+* openvswitch
 * libopflex
 * libmodelgbp
 * agent-ovs

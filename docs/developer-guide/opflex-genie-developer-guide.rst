@@ -20,6 +20,5 @@ API Reference Documentation
 ---------------------------
 
 Complete API documentation for the generated libmodelgbp can be found
-here:
-https://jenkins.opendaylight.org/opflex/job/opflex-merge/ws/libopflex/doc/html/index.html
+in doc/html/index.html in any build
 

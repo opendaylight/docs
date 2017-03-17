@@ -419,6 +419,6 @@ deallocating them.
 API Reference Documentation
 ---------------------------
 
-Complete API documentation can be found through doxygen here:
-https://jenkins.opendaylight.org/opflex/job/opflex-merge/ws/libopflex/doc/html/index.html
+Complete API documentation can be found by in doc/html/index.html in
+any build.
 
