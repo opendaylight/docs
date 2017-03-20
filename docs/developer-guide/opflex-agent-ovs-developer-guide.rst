@@ -30,11 +30,13 @@ The key components are:
 
 -  PolicyManager - Keep track of and index policies
 
--  FlowManager - render policies to OVS
+-  IntFlowManager - render policies to OVS integration bridge
+
+-  AccessFlowManager - render policies to OVS access bridge
 
 API Reference Documentation
 ---------------------------
 
-Internal API documentation can be found here:
-https://jenkins.opendaylight.org/opflex/job/opflex-merge/ws/agent-ovs/doc/html/index.html
+Internal API documentation can be found by in doc/html/index.html in
+any build.
 
