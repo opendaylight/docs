@@ -603,6 +603,13 @@ nodes (requiring reboot)::
 No input required, but this RPC needs to be sent to the new node, to instruct
 it to replicate all shards from the cluster.
 
+.. note::
+
+  While the cluster admin API allows adding and removing shards dynamically,
+  the ``module-shard.conf`` and ``modules.conf`` files are still used on
+  startup to define the initial configuration of shards. Modifications from
+  the use of the API are not stored to those static files, but to the journal.
+
 .. _cluster_backup_restore:
 
 Backing Up and Restoring the Datastore
