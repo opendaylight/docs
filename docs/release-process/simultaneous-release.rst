@@ -13,8 +13,8 @@ After release candidate is built gpg sign artifacts using odlsign-bulk script in
 
 .. code-block:: bash
 
-    cd scripts/
-    ./odlsign-bulk <staging-repo-id>  # eg. autorelease-1367
+        cd scripts/
+        ./odlsign-bulk STAGING_REPO_ID  # eg. autorelease-1367
 
 Releasing OpenDaylight
 ======================
@@ -30,7 +30,7 @@ Releasing OpenDaylight
 
         git review -s
 
-- Download patches from Jenkins build page
+- Download patches (\*.bundle files and taglist.log.gz) from log server.
 
     .. code-block:: bash
 

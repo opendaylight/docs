@@ -21,5 +21,3 @@ Processes
    project-lifecycle
    branch-cutting
    simultaneous-release
-
-.. _OpenStack: https://www.openstack.org/
