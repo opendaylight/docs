@@ -1,0 +1,22 @@
+[reStructuredText]
+bears = RSTcheckBear
+files = **/*.rst
+ignore = .*/**,
+    docs/developer-guide/**,
+    docs/documentation.rst,
+    docs/getting-started-guide/**,
+    docs/opendaylight-with-openstack/**,
+    docs/submodules/aaa/**,
+    docs/submodules/coe/**,
+    docs/submodules/federation/**,
+    docs/submodules/genius/**,
+    docs/submodules/infrautils/**,
+    docs/submodules/integration/**,
+    docs/submodules/netconf/**,
+    docs/submodules/netvirt/**,
+    docs/submodules/odlparent/**,
+    docs/submodules/ovsdb/**,
+    docs/submodules/releng/**,
+    docs/submodules/spectrometer/**,
+    docs/templates/template-user-guide.rst,
+    docs/user-guide/**
