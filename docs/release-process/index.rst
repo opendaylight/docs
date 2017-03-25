@@ -22,5 +22,3 @@ Processes
    namespace
    branch-cutting
    simultaneous-release
-
-.. _OpenStack: https://www.openstack.org/
