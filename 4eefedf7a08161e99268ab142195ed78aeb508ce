@@ -38,6 +38,41 @@
     },
     {
       "key": {
+        "uuid": "fafc7978_a1f2da98",
+        "filename": "docs/developer-guide/bier-developer-guide.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-03-27T16:28:29Z",
+      "side": 1,
+      "message": "The tabs are in the JSON examples. The \".. _bier-dev-guide:\" is to create the label that you can use to refer to the dev guide from the user guide. It would be good if we kept that.",
+      "parentUuid": "fafc7978_0a4b082c",
+      "revId": "4eefedf7a08161e99268ab142195ed78aeb508ce",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_81351648",
+        "filename": "docs/developer-guide/bier-developer-guide.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-03-27T16:28:29Z",
+      "side": 1,
+      "message": "Here and every time later, the idea is that the \u003ds or -s should go the length of the header.",
+      "revId": "4eefedf7a08161e99268ab142195ed78aeb508ce",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fafc7978_d45889fc",
         "filename": "docs/developer-guide/bier-developer-guide.rst",
         "patchSetId": 4
