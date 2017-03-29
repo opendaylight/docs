@@ -44,7 +44,7 @@ Signing Gerrit Commits
 
    .. code-block:: bash
 
-      brew install gpg2 # if you don't have homebrew, get that here: http://brew.sh/
+      brew install gpg2  # If you don't have homebrew, get that here: http://brew.sh/
       gpg2 --gen-key
       # pick 1 for "RSA and RSA"
       # enter 4096 to creat a 4096-bit key
@@ -62,19 +62,19 @@ Signing Gerrit Commits
       # uid       [ultimate] Colin Dixon <colin at colindixon.com>
       # sub   4096R/DC1497E1 2015-04-06 [expires: 2017-04-05]
       # you're looking for the part after 4096R, which is your key ID
-      gpg2 --send-keys <key-id>
-      # in the above example, the key-id would be F566C9B1
+      gpg2 --send-keys $KEY_ID
+      # in the above example, the $KEY_ID would be F566C9B1
       # you should see output like this:
       # gpg: sending key F566C9B1 to hkp server keys.gnupg.net
 
    If you're trying to participate in an OpenDaylight keysigning, then
-   send the output of ``gpg2 --fingerprint <key-id>`` to
+   send the output of ``gpg2 --fingerprint $KEY_ID`` to
    keysigning@opendaylight.org
 
    .. code-block:: bash
 
-      gpg2 --fingerprint <key-id>
-      # in the above example, the key-id would be F566C9B1
+      gpg2 --fingerprint $KEY_ID
+      # in the above example, the $KEY_ID would be F566C9B1
       # in my case, the output was:
       # pub   4096R/F566C9B1 2015-04-06 [expires: 2017-04-05]
       #       Key fingerprint = 7C37 02AC D651 1FA7 9209  48D3 5DD5 0C4B F566 C9B1
@@ -96,7 +96,7 @@ Signing Gerrit Commits
 
       .. code-block:: bash
 
-         gpg --export -a <fingerprint>
+         gpg --export -a $FINGER_PRINT
          # e.g., gpg --export -a F566C9B1
          # in my case the output looked like:
          # -----BEGIN PGP PUBLIC KEY BLOCK-----
@@ -114,13 +114,13 @@ Signing Gerrit Commits
    d. Copy the output from the above command, paste it into the box,
       and click Add
 
-3. Set up your git to sign commits and push signatures
+4. Set up your git to sign commits and push signatures
 
    .. code-block:: bash
 
       git config commit.gpgsign true
       git config push.gpgsign true
-      git config user.signingkey <fingerprint>
+      git config user.signingkey $FINGER_PRINT
       # e.g., git config user.signingkey F566C9B1
 
    .. note:: you can do this instead with ``git commit -S``
@@ -128,7 +128,7 @@ Signing Gerrit Commits
       on the CLI instead of configuring it in config if you
       want to control which commits use your signature.
 
-4. Commit and push a change
+5. Commit and push a change
 
    a. change a file
    b. ``git commit -asm "test commit"``
@@ -156,7 +156,7 @@ Signing Gerrit Commits
             ``ssh://ckd@git.opendaylight.org:29418/<repo>.git``
             where repo is something like docs or controller
 
-5. Verify that your commit is signed by going to the change in Gerrit
+6. Verify that your commit is signed by going to the change in Gerrit
    and checking for a green check (instead of a blue ?) next to your
    name.
 
