@@ -116,7 +116,9 @@ do the following on each machine:
    address of any of the machines that will be part of the cluster::
 
       cluster {
-        seed-nodes = ["akka.tcp://opendaylight-cluster-data@127.0.0.1:2550"]
+        seed-nodes = ["akka.tcp://opendaylight-cluster-data@127.0.0.1:2550", 
+                      <url-to-cluster-member-2>,
+                      <url-to-cluster-member-3>]
 
 #. Find the following section and specify the role for each member node. Here
    we assign the first node with the *member-1* role, the second node with the
@@ -194,7 +196,9 @@ Sample ``akka.conf`` file::
        }
 
        cluster {
-         seed-nodes = ["akka.tcp://opendaylight-cluster-data@10.194.189.96:2550"]
+         seed-nodes = ["akka.tcp://opendaylight-cluster-data@10.194.189.96:2550",
+                       "akka.tcp://opendaylight-cluster-data@10.194.189.98:2550",
+                       "akka.tcp://opendaylight-cluster-data@10.194.189.101:2550"]
 
          auto-down-unreachable-after = 10s
 
