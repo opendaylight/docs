@@ -3,8 +3,8 @@ Developer Guide
 
 Overview
 --------
-.. toctree:: 
-   :maxdepth: 1 
+.. toctree::
+   :maxdepth: 1
 
    getting-started-with-git-and-gerrit
    pulling-and-pushing-the-code-from-the-cli
@@ -12,8 +12,8 @@ Overview
 
 Project-specific Developer Guides
 ---------------------------------
-.. toctree:: 
-   :maxdepth: 1 
+.. toctree::
+   :maxdepth: 1
 
    alto-developer-guide
    bgp-developer-guide

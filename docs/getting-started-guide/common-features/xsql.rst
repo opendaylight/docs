@@ -72,7 +72,7 @@ XSQL Queries
 ------------
 
 You can run a query to extract information that meets the criteria you specify
-using the information provided by the *list vtables* and *list vfields* 
+using the information provided by the *list vtables* and *list vfields*
 _<vtable name>_ commands.  Any query you run should be structured as follows:
 
 *select* _<vfields you want to search for, separated by a comma and a space>_

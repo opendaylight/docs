@@ -2685,8 +2685,8 @@ The Logical SFF functionality allows OpenDaylight to find out the SFFs holding t
 the SFFs affected are Node3 and Node4 thus the controller renders the flows containing NSH parameters just in those SFFs.
 
 Here you have the new flows rendered in Node3 and Node4 which implement the NSH protocol. Every Rendered Service Path is represented
-by an NSP value. We provisioned a symmetric RSP so we get two NSPs: 8388613 and 5. Node3 holds the first SF of NSP 8388613 and 
-the last SF of NSP 5. Node 4 holds the first SF of NSP 5 and the last SF of NSP 8388613. Both Node3 and Node4 will pop the NSH header 
+by an NSP value. We provisioned a symmetric RSP so we get two NSPs: 8388613 and 5. Node3 holds the first SF of NSP 8388613 and
+the last SF of NSP 5. Node 4 holds the first SF of NSP 5 and the last SF of NSP 8388613. Both Node3 and Node4 will pop the NSH header
 when the received packet has gone through the last SF of its path.
 
 
@@ -2717,8 +2717,8 @@ when the received packet has gone through the last SF of its path.
  cookie=0xba5eba1100000203, duration=68.996s, table=87, n_packets=0, n_bytes=0, priority=650,nsi=253,nsp=8388613 actions=pop_nsh,set_field:02:14:84:5e:a8:5d->eth_src,resubmit(,17)
 
 
-An interesting scenario to show the Logical SFF strength is the migration of a SF from a compute node to another. 
-The OpenDaylight will learn the new topology by itself, then it will re-render the new flows to the new SFFs affected. 
+An interesting scenario to show the Logical SFF strength is the migration of a SF from a compute node to another.
+The OpenDaylight will learn the new topology by itself, then it will re-render the new flows to the new SFFs affected.
 
 .. figure:: ./images/sfc/single-logical-sff-example-migration.png
    :alt: Logical SFF - SF Migration Example
@@ -2914,4 +2914,4 @@ This picture shows the SFC pipeline after service integration with Genius:
 
    SFC Logical SFF OpenFlow pipeline
 
-   
+

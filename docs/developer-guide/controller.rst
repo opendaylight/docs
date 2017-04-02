@@ -311,12 +311,12 @@ Application may listen on commit state asynchronously using
 
 .. code:: java
 
-    Futures.addCallback( writeTx.submit(), new FutureCallback<Void>() { 
-            public void onSuccess( Void result ) { 
+    Futures.addCallback( writeTx.submit(), new FutureCallback<Void>() {
+            public void onSuccess( Void result ) {
                 LOG.debug("Transaction committed successfully.");
             }
 
-            public void onFailure( Throwable t ) { 
+            public void onFailure( Throwable t ) {
                 LOG.error("Commit failed.",e);
             }
         });
@@ -337,8 +337,8 @@ If application need to block till commit is finished it may use
 .. code:: java
 
     try {
-        writeTx.submit().checkedGet(); 
-    } catch (TransactionCommitFailedException e) { 
+        writeTx.submit().checkedGet();
+    } catch (TransactionCommitFailedException e) {
         LOG.error("Commit failed.",e);
     }
 
@@ -362,13 +362,13 @@ Let assume initial state of data tree for ``PATH`` is ``A``.
 
 .. code:: java
 
-    ReadWriteTransaction rwTx = broker.newReadWriteTransaction(); 
+    ReadWriteTransaction rwTx = broker.newReadWriteTransaction();
 
-    rwRx.read(OPERATIONAL,PATH).get(); 
-    rwRx.put(OPERATIONAL,PATH,B); 
-    rwRx.read(OPERATIONAL,PATH).get(); 
-    rwRx.put(OPERATIONAL,PATH,C); 
-    rwRx.read(OPERATIONAL,PATH).get(); 
+    rwRx.read(OPERATIONAL,PATH).get();
+    rwRx.put(OPERATIONAL,PATH,B);
+    rwRx.read(OPERATIONAL,PATH).get();
+    rwRx.put(OPERATIONAL,PATH,C);
+    rwRx.read(OPERATIONAL,PATH).get();
 
 -  Allocates new ``ReadWriteTransaction``.
 
@@ -395,16 +395,16 @@ Lets assume initial state of data tree for ``PATH`` is ``A``.
 
 .. code:: java
 
-    ReadOnlyTransaction txRead = broker.newReadOnlyTransaction(); 
-    ReadWriteTransaction txWrite = broker.newReadWriteTransaction(); 
+    ReadOnlyTransaction txRead = broker.newReadOnlyTransaction();
+    ReadWriteTransaction txWrite = broker.newReadWriteTransaction();
 
-    txRead.read(OPERATIONAL,PATH).get(); 
-    txWrite.put(OPERATIONAL,PATH,B); 
-    txWrite.read(OPERATIONAL,PATH).get(); 
-    txWrite.submit().get(); 
-    txRead.read(OPERATIONAL,PATH).get(); 
-    txAfterCommit = broker.newReadOnlyTransaction(); 
-    txAfterCommit.read(OPERATIONAL,PATH).get(); 
+    txRead.read(OPERATIONAL,PATH).get();
+    txWrite.put(OPERATIONAL,PATH,B);
+    txWrite.read(OPERATIONAL,PATH).get();
+    txWrite.submit().get();
+    txRead.read(OPERATIONAL,PATH).get();
+    txAfterCommit = broker.newReadOnlyTransaction();
+    txAfterCommit.read(OPERATIONAL,PATH).get();
 
 -  Allocates read only transaction, which is based on data tree which
    contains value ``A`` for ``PATH``.
@@ -486,11 +486,11 @@ same initial state of data tree and proposes conflicting modifications.
     WriteTransaction txA = broker.newWriteTransaction();
     WriteTransaction txB = broker.newWriteTransaction();
 
-    txA.put(CONFIGURATION, PATH, A);    
-    txB.put(CONFIGURATION, PATH, B);     
+    txA.put(CONFIGURATION, PATH, A);
+    txB.put(CONFIGURATION, PATH, B);
 
-    CheckedFuture<?,?> futureA = txA.submit(); 
-    CheckedFuture<?,?> futureB = txB.submit(); 
+    CheckedFuture<?,?> futureA = txA.submit();
+    CheckedFuture<?,?> futureB = txB.submit();
 
 -  Updates ``PATH`` to value ``A`` using ``txA``
 
@@ -1451,7 +1451,7 @@ The subscription call may be modified with the following query parameters define
 In addition, the following ODL extension query parameter is supported:
 
 :odl-leaf-nodes-only:
-  If this parameter is set to "true", create and update notifications will only 
+  If this parameter is set to "true", create and update notifications will only
   contain the leaf nodes modified instead of the entire subscription subtree.
   This can help in reducing the size of the notifications.
 

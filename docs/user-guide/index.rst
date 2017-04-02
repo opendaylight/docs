@@ -7,8 +7,8 @@ Overview
 This first part of the user guide covers the basic user operations of
 the OpenDaylight Release using the generic base functionality.
 
-.. toctree:: 
-   :maxdepth: 1 
+.. toctree::
+   :maxdepth: 1
 
    opendaylight-controller-overview
    using-the-opendaylight-user-interface-(dlux)
@@ -18,8 +18,8 @@ the OpenDaylight Release using the generic base functionality.
 Project-specific User Guides
 ----------------------------
 
-.. toctree:: 
-   :maxdepth: 1 
+.. toctree::
+   :maxdepth: 1
 
    alto-user-guide
    authentication-and-authorization-services
