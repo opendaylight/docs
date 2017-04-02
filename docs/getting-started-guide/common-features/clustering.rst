@@ -592,3 +592,30 @@ it to replicate all shards from the cluster.
   startup to define the initial configuration of shards. Modifications from
   the use of the API are not stored to those static files, but to the journal.
 
+Extra Configuration Options
+---------------------------
+
+============================================== ================= ======= ==============================================================================================================================================================================
+Name                                           Type              Default Description
+============================================== ================= ======= ==============================================================================================================================================================================
+max-shard-data-change-executor-queue-size      uint32 (1..max)   1000    The maximum queue size for each shard's data store data change notification executor.
+max-shard-data-change-executor-pool-size       uint32 (1..max)   20      The maximum thread pool size for each shard's data store data change notification executor.
+max-shard-data-change-listener-queue-size      uint32 (1..max)   1000    The maximum queue size for each shard's data store data change listener.
+max-shard-data-store-executor-queue-size       uint32 (1..max)   5000    The maximum queue size for each shard's data store executor.
+shard-transaction-idle-timeout-in-minutes      uint32 (1..max)   10      The maximum amount of time a shard transaction can be idle without receiving any messages before it self-destructs.
+shard-snapshot-batch-count                     uint32 (1..max)   20000   The minimum number of entries to be present in the in-memory journal log before a snapshot is to be taken.
+shard-snapshot-data-threshold-percentage       uint8 (1..100)    12      The percentage of Runtime.totalMemory() used by the in-memory journal log before a snapshot is to be taken
+shard-hearbeat-interval-in-millis              uint16 (100..max) 500     The interval at which a shard will send a heart beat message to its remote shard.
+operation-timeout-in-seconds                   uint16 (5..max)   5       The maximum amount of time for akka operations (remote or local) to complete before failing.
+shard-journal-recovery-log-batch-size          uint32 (1..max)   5000    The maximum number of journal log entries to batch on recovery for a shard before committing to the data store.
+shard-transaction-commit-timeout-in-seconds    uint32 (1..max)   30      The maximum amount of time a shard transaction three-phase commit can be idle without receiving the next messages before it aborts the transaction
+shard-transaction-commit-queue-capacity        uint32 (1..max)   20000   The maximum allowed capacity for each shard's transaction commit queue.
+shard-initialization-timeout-in-seconds        uint32 (1..max)   300     The maximum amount of time to wait for a shard to initialize from persistence on startup before failing an operation (eg transaction create and change listener registration).
+shard-leader-election-timeout-in-seconds       uint32 (1..max)   30      The maximum amount of time to wait for a shard to elect a leader before failing an operation (eg transaction create).
+enable-metric-capture                          boolean           false   Enable or disable metric capture.
+bounded-mailbox-capacity                       uint32 (1..max)   1000    Max queue size that an actor's mailbox can reach
+persistent                                     boolean           true    Enable or disable data persistence
+shard-isolated-leader-check-interval-in-millis uint32 (1..max)   5000    the interval at which the leader of the shard will check if its majority followers are active and term itself as isolated
+============================================== ================= ======= ==============================================================================================================================================================================
+
+These configuration options are included in the etc/org.opendaylight.controller.cluster.datastore.cfg configuration file.
