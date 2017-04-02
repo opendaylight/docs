@@ -118,6 +118,7 @@ html_theme = 'bootstrap'
 #html_theme_options = {}
 html_theme_options = {
     'bootswatch_theme': "united",
+    'source_link_position': "footer",
 }
 
 # Add any paths that contain custom themes here, relative to this directory.
