@@ -51,3 +51,9 @@ ignore_length_regex = Signed-off-by,
     Co-authored-by,
     http://,
     https://
+
+[shell]
+bears = ShellCheckBear
+files = **.sh
+ignore = .**,
+    docs/submodules/**,
