@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da01753e_9a1cb115",
+        "filename": "docs/release-process/milestone-readouts.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-02T22:59:33Z",
+      "side": 1,
+      "message": "The problem with this change is that the line above \"Karaf Features Defined\" resets the count. I think we need to figure out how to deal with that.",
+      "range": {
+        "startLine": 152,
+        "startChar": 0,
+        "endLine": 152,
+        "endChar": 1
+      },
+      "revId": "0a42a6d949e8c0041cec301440b9d4c470640b24",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
