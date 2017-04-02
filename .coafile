@@ -1,3 +1,11 @@
+[Git]
+bears = GitCommitBear
+ignore_length_regex = Signed-off-by,
+    Also-by,
+    Co-authored-by,
+    http://,
+    https://
+
 [Markdown]
 bears = MarkdownBear
 files = **/*.md
@@ -28,3 +36,4 @@ ignore = .*/**,
     docs/submodules/spectrometer/**,
     docs/templates/template-user-guide.rst,
     docs/user-guide/**
+
