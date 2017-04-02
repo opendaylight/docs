@@ -149,7 +149,7 @@ Functionality Freeze:
 
 Karaf Features Defined:
 
-4. Are all your project's features that are intended for release added to the features.xml and
+#. Are all your project's features that are intended for release added to the features.xml and
    checked into integration git repository. Yes/No (please provide link to the gerrit patch)
 #. List all top-level, user-facing, and stable Karaf features for your project.
 
@@ -158,7 +158,7 @@ Karaf Features Defined:
 
 Documentation:
 
-6. List the kinds of documentation you will provide including at least:
+#. List the kinds of documentation you will provide including at least:
 
    * One user/operator guide section per user-facing feature.
    * One developer guide per top-level feature.
@@ -170,7 +170,7 @@ Documentation:
 
 Integration and Test:
 
-8. Have you started automated system testing for your top-level features. Yes/No
+#. Have you started automated system testing for your top-level features. Yes/No
 
    * If yes, link to test report
    * If no, why?
@@ -184,7 +184,7 @@ Integration and Test:
 
 Project Specific:
 
-10. Were there any project-specific deliverables planned for this milestone? Yes/No
+#. Were there any project-specific deliverables planned for this milestone? Yes/No
 
     * If so, were they delivered? Yes/No
 
@@ -265,7 +265,7 @@ M5: Code Freeze
 
 Stables Features (Only for Projects with Stable Features)
 
-7. Do your stable features fulfill quality requirements (i.e. unit and/or integration test coverage
+#. Do your stable features fulfill quality requirements (i.e. unit and/or integration test coverage
    of at least 75%)? (Yes/No)
 
    * (If yes, link to sonar report)
