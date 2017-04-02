@@ -18,6 +18,9 @@ __pycache__/
 *.pyc
 docs/javadoc/
 
+# Vim
+.*.sw?
+
 # Emacs
 *~
 \#*\#
