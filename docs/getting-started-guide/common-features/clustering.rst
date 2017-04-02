@@ -85,6 +85,53 @@ To implement clustering, the deployment considerations are as follows:
   that it can rejoin the cluster. Once a restarted node joins a cluster, it
   will synchronize with the lead node automatically.
 
+Clustering Scripts
+------------------
+
+OpenDaylight includes some scripts to help with the clustering configuration.
+
+.. note::
+
+    Scripts are stored in the OpenDaylight distribution/bin folder, and
+    maintained in the distribution project
+    `repository <https://git.opendaylight.org/gerrit/p/integration/distribution>`_
+    in the folder distribution-karaf/src/main/assembly/bin/.
+
+Configure Cluster Script
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+This script is used to configure the cluster parameters (e.g. akka.conf,
+module-shards.conf) on a member of the controller cluster. The user should
+restart the node to apply the changes.
+
+.. note::
+
+    The script can be used at any time, even before the controller is started
+    for the first time.
+
+Usage::
+
+    bin/configure_cluster.sh <index> <seed_nodes_list>
+
+* index: Integer within 1..N, where N is the number of seed nodes. This indicates
+  which controller node (1..N) is configured by the script.
+* seed_nodes_list: List of seed nodes (IP address), separated by comma or space.
+
+The IP address at the provided index should belong to the member executing
+the script. When running this script on multiple seed nodes, keep the
+seed_node_list the same, and vary the index from 1 through N.
+
+Optionally, shards can be configured in a more granular way by modifying the
+file "custom_shard_configs.txt" in the same folder as this tool. Please see
+that file for more details.
+
+Example::
+
+    bin/configure_cluster.sh 2 192.168.0.1 192.168.0.2 192.168.0.3
+
+The above command will configure the member 2 (IP address 192.168.0.2) of a
+cluster made of 192.168.0.1 192.168.0.2 192.168.0.3.
+
 Setting Up a Multiple Node Cluster
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -299,53 +346,6 @@ Sample ``module-shards.conf`` file::
             ]
        }
    ]
-
-Clustering Scripts
-------------------
-
-OpenDaylight includes some scripts to help with the clustering configuration.
-
-.. note::
-
-    Scripts are stored in the OpenDaylight distribution/bin folder, and
-    maintained in the distribution project
-    `repository <https://git.opendaylight.org/gerrit/p/integration/distribution>`_
-    in the folder distribution-karaf/src/main/assembly/bin/.
-
-Configure Cluster Script
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-This script is used to configure the cluster parameters (e.g. akka.conf,
-module-shards.conf) on a member of the controller cluster. The user should
-restart the node to apply the changes.
-
-.. note::
-
-    The script can be used at any time, even before the controller is started
-    for the first time.
-
-Usage::
-
-    bin/configure_cluster.sh <index> <seed_nodes_list>
-
-* index: Integer within 1..N, where N is the number of seed nodes. This indicates
-  which controller node (1..N) is configured by the script.
-* seed_nodes_list: List of seed nodes (IP address), separated by comma or space.
-
-The IP address at the provided index should belong to the member executing
-the script. When running this script on multiple seed nodes, keep the
-seed_node_list the same, and vary the index from 1 through N.
-
-Optionally, shards can be configured in a more granular way by modifying the
-file "custom_shard_configs.txt" in the same folder as this tool. Please see
-that file for more details.
-
-Example::
-
-    bin/configure_cluster.sh 2 192.168.0.1 192.168.0.2 192.168.0.3
-
-The above command will configure the member 2 (IP address 192.168.0.2) of a
-cluster made of 192.168.0.1 192.168.0.2 192.168.0.3.
 
 Set Persistence Script
 ^^^^^^^^^^^^^^^^^^^^^^
