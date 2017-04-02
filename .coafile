@@ -43,3 +43,11 @@ ignore = .**,
 use_spaces = True
 enforce_newline_at_EOF = False
 default_actions = SpaceConsistencyBear: ApplyPatchAction
+
+[git]
+bears = GitCommitBear
+ignore_length_regex = Signed-off-by,
+    Also-by,
+    Co-authored-by,
+    http://,
+    https://
