@@ -7,5 +7,6 @@ Common OpenDaylight Features
 
    dlux
    clustering
+   persistence_and_backup
    xsql
    version
