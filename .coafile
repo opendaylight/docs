@@ -37,3 +37,9 @@ ignore = .*/**,
     docs/templates/template-user-guide.rst,
     docs/user-guide/**
 
+[Shell]
+bears = ShellCheckBear
+files = **.sh
+ignore = .**,
+    docs/submodules/**,
+
