@@ -147,25 +147,25 @@ need to modify)::
    "opflex": {
        // The globally unique policy domain for this agent.
        "domain": "[CHANGE ME]",
-   
+
        // The unique name in the policy domain for this agent.
        "name": "[CHANGE ME]",
-   
+
        // a list of peers to connect to, by hostname and port.  One
-       // peer, or an anycast pseudo-peer, is sufficient to bootstrap 
+       // peer, or an anycast pseudo-peer, is sufficient to bootstrap
        // the connection without needing an exhaustive list of all
        // peers.
        "peers": [
            {"hostname": "10.0.0.30", "port": 8009}
        ],
-   
+
        "ssl": {
            // SSL mode.  Possible values:
            // disabled: communicate without encryption
            // encrypted: encrypt but do not verify peers
            // secure: encrypt and verify peer certificates
            "mode": "encrypted",
-   
+
            // The path to a directory containing trusted certificate
            // authority public certificates, or a file containing a
            // specific CA certificate.
@@ -186,22 +186,22 @@ console, but unless the configuration is unusual, it will be
        // hardware fabric such as ACI
        "stitched-mode": {
            "ovs-bridge-name": "br0",
-       
+
            // Set encapsulation type.  Must set either vxlan or vlan.
            "encap": {
                // Encapsulate traffic with VXLAN.
                "vxlan" : {
                    // The name of the tunnel interface in OVS
                    "encap-iface": "br0_vxlan0",
-       
+
                    // The name of the interface whose IP should be used
                    // as the source IP in encapsulated traffic.
                    "uplink-iface": "eth0.4093",
-       
+
                    // The vlan tag, if any, used on the uplink interface.
                    // Set to zero or omit if the uplink is untagged.
                    "uplink-vlan": 4093,
-   
+
                    // The IP address used for the destination IP in
                    // the encapsulated traffic.  This should be an
                    // anycast IP address understood by the upstream
@@ -216,11 +216,11 @@ console, but unless the configuration is unusual, it will be
                    // Enable virtual distributed router.  Set to true
                    // to enable or false to disable.  Default true.
                    "enabled": true,
-      
+
                    // Override MAC address for virtual router.
                    // Default is "00:22:bd:f8:19:ff"
                    "mac": "00:22:bd:f8:19:ff",
-      
+
                    // Configure IPv6-related settings for the virtual
                    // router
                    "ipv6" : {
@@ -230,20 +230,20 @@ console, but unless the configuration is unusual, it will be
                        "router-advertisement": true
                    }
                },
-      
+
                // Configure virtual distributed DHCP server
                "virtual-dhcp": {
                    // Enable virtual distributed DHCP server.  Set to
                    // true to enable or false to disable.  Default
                    // true.
                    "enabled": true,
-      
+
                    // Override MAC address for virtual dhcp server.
                    // Default is "00:22:bd:f8:19:ff"
                    "mac": "00:22:bd:f8:19:ff"
                }
            },
-   
+
            // Location to store cached IDs for managing flow state
            "flowid-cache-dir": "DEFAULT_FLOWID_CACHE_DIR"
        }

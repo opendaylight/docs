@@ -1,14 +1,14 @@
 [Markdown]
 bears = MarkdownBear
-files = **/*.md
-ignore = .*/**,
+files = **.md
+ignore = .**,
     docs/submodules/**
 max_line_length = 120
 
 [reStructuredText]
 bears = RSTcheckBear
-files = **/*.rst
-ignore = .*/**,
+files = **.rst
+ignore = .**,
     docs/developer-guide/**,
     docs/documentation.rst,
     docs/getting-started-guide/**,
@@ -28,3 +28,18 @@ ignore = .*/**,
     docs/submodules/spectrometer/**,
     docs/templates/template-user-guide.rst,
     docs/user-guide/**
+
+[spacing]
+bears = SpaceConsistencyBear
+files = **
+ignore = .**,
+    docs/submodules/**,
+    **.png,
+    **.jpg,
+    **.ico,
+    **.sw?,
+    **Makefile,
+    **.bat
+use_spaces = True
+enforce_newline_at_EOF = False
+default_actions = SpaceConsistencyBear: ApplyPatchAction
