@@ -250,7 +250,7 @@ PacketCable REST API Usage Examples
             }
      }
 
-.. note:: 
+.. note::
     A "null" in the error information means that the CCAP connection has been disconnected as a result of a RPC SET.
 
 * GATES "CONFIG" DATASTORE API STRUCTURE CHANGED
