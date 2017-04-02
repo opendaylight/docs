@@ -23,7 +23,6 @@ Project-specific User Guides
 
    alto-user-guide
    authentication-and-authorization-services
-   atrium-user-guide
    bgp-user-guide
    bgp-monitoring-protocol-user-guide
    bier-user-guide
@@ -37,7 +36,6 @@ Project-specific User Guides
    l2switch-user-guide
    link-aggregation-control-protocol-user-guide
    lisp-flow-mapping-user-guide
-   natapp-user-guide
    nemo-user-guide
    netconf-user-guide
    netide-user-guide
@@ -53,7 +51,6 @@ Project-specific User Guides
    pcep-user-guide
    packetcable-user-guide
    service-function-chaining
-   snbi-user-guide
    snmp-plugin-user-guide
    snmp4sdn-user-guide
    sxp-user-guide
@@ -61,8 +58,4 @@ Project-specific User Guides
    ttp-cli-tools-user-guide
    uni-manager-plug-in-project
    unified-secure-channel
-   usecplugin-aaa-user-guide
-   usecplugin-openflow-user-guide
    virtual-tenant-network-(vtn)
-   yang-ide-user-guide
-   yang-push

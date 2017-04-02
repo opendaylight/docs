@@ -16,7 +16,6 @@ Project-specific Developer Guides
    :maxdepth: 1 
 
    alto-developer-guide
-   atrium-developer-guide
    bgp-developer-guide
    bgp-monitoring-protocol-developer-guide
    bier-developer-guide
@@ -32,7 +31,6 @@ Project-specific Developer Guides
    l2switch-developer-guide
    lacp-developer-guide
    ../user-guide/lisp-flow-mapping-user-guide
-   natapp-developer-guide
    nemo-developer-guide
    netconf-developer-guide
    network-intent-composition-(nic)-developer-guide
@@ -40,7 +38,6 @@ Project-specific Developer Guides
    ../submodules/netvirt/docs/developer-guide/index
    neutron-service-developer-guide
    neutron-northbound
-   next-developer-guide
    odl-parent-developer-guide
    ocp-plugin-developer-guide
    odl-sdni-developer-guide
@@ -54,7 +51,6 @@ Project-specific Developer Guides
    pcep-developer-guide
    packetcable-developer-guide
    service-function-chaining
-   snbi-developer-guide
    snmp4sdn-developer-guide
    sxp-developer-guide
    topology-processing-framework-developer-guide
@@ -62,8 +58,6 @@ Project-specific Developer Guides
    ttp-cli-tools-developer-guide
    uni-manager-plug-in-developer-guide
    unified-secure-channel
-   usecplugin-aaa-developer-guide
-   usecplugin-openflow-developer-guide
    virtual-tenant-network-(vtn)
    yang-tools
    yang-push-developer-guide
