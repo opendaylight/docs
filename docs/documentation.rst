@@ -1,5 +1,3 @@
-.. _documentation-guide:
-
 ###################
 Documentation Guide
 ###################
@@ -107,8 +105,6 @@ capitalization and spacing.*
 * URL not Url or url
 * VM: not Vm or vm
 * YANG: not Yang or yang
-
-.. _docs-rst:
 
 reStructuredText-based Documentation
 ====================================
@@ -340,8 +336,6 @@ the labels with the project name to help share the label space, e.g.,
 ``sfc-user-guide`` instead of just ``user-guide``.
 
 
-.. _docs-rst-troubleshooting:
-
 Troubleshooting
 ---------------
 
@@ -545,8 +539,6 @@ group from helping with per-project/per-feature documentation.
 Boron Project Documentation Requirements
 ----------------------------------------
 
-.. _kinds-of-docs:
-
 Kinds of Documentation
 ^^^^^^^^^^^^^^^^^^^^^^
 
@@ -607,8 +599,6 @@ These are the expected kinds of documentation and target audiences for each kind
   * Release notes are required as part of each project's release review. They
     must also be translated into reStructuredText for inclusion in the formal
     documentation.
-
-.. _requirements-for-projects:
 
 Requirements for projects
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -698,6 +688,4 @@ Timeline for Deliverables from Projects
 
 .. _Sphinx: http://www.sphinx-doc.org/en/stable/
 .. _reStructuredText: http://www.sphinx-doc.org/en/stable/rest.html
-.. _Documentation Group: https://wiki.opendaylight.org/view/Documentation/
 .. _RelEng/Builder: https://wiki.opendaylight.org/view/RelEng/Builder
-.. _Pandoc: http://pandoc.org/

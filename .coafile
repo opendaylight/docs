@@ -10,7 +10,6 @@ bears = RSTcheckBear
 files = **.rst
 ignore = .**,
     docs/developer-guide/**,
-    docs/documentation.rst,
     docs/getting-started-guide/**,
     docs/opendaylight-with-openstack/**,
     docs/release-process/milestone-readouts.rst,
