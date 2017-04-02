@@ -1,5 +1,3 @@
-.. _documentation-guide:
-
 ###################
 Documentation Guide
 ###################
