@@ -320,7 +320,7 @@ if platform.system() != 'Windows':
     # Build integration stuff
     import subprocess
 
-    subprocess.call(["./build-integration-robot-libdoc.sh"])
+    subprocess.call(["./build-integration-robot-docs.sh"])
 
     # Disable javasphinx generation until we have a solution to long build
     # times. readthedocs timesout after 902 seconds.
