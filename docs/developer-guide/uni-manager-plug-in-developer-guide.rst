@@ -1,30 +1,31 @@
 User Network Interface Manager Plug-in (Unimgr) Developer Guide
 ===============================================================
 
-User Network Interface Manager Plug-in (Unimgr) is an experimental/proof of
-concept (PoC) project formed to initiate the development of data models and
-APIs facilitating the use by software applications and/or service orchestrators
-of OpenDaylight to configure and provision connectivity services, in particular
-Carrier Ethernet services as defined by Metro Ethernet Forum (MEF), in physical
-or virtual network elements.
+Overview
+--------
 
-Functionality
--------------
+The User Network Interface (UNI) Manager project within OpenDaylight provides
+data models and APIs that enable software applications and service
+orchestrators to configure and provision connectivity services; in particular,
+Carrier Ethernet services as defined by MEF Forum, in physical and virtual
+network elements. 
+
+Unimgr Architecture
+-------------------
 
 Unimgr provides support for both service orchestration, via the Legato API, and
 network resource provisioning, via the Presto API.  These APIs, and the
 interfaces they provide, are defined by YANG models developed within MEF in
 collaboration with ONF and IETF. An application/user can interact with Unimgr
-at ether layer.  For the Boron release, the YANG models are as follows:
+at either layer.  For the Carbon release, the YANG models are as follows:
 
-Legato YANG models
-------------------
+Key APIs and Interfaces
+-----------------------
 
+Legato YANG models:
 https://git.opendaylight.org/gerrit/gitweb?p=unimgr.git;a=tree;f=legato-api/src/main/yang;hb=refs/heads/stable/boron
 
-Presto YANG models
-------------------
-
+Presto YANG models:
 https://git.opendaylight.org/gerrit/gitweb?p=unimgr.git;a=tree;f=presto-api/src/main/yang;hb=refs/heads/stable/boron
 
 Legato API Tree
