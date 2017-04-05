@@ -97,6 +97,8 @@ command on the terminal window of Linux machine:
 ::
 
     netstat -anp | grep "161"
+    netstat -anp | grep "2001"
+    netstat -anp | grep "2003"
 
 If the grep on the \`\`snmpd\`\` port is successful than SNMP daemon is
 up and working.
@@ -128,3 +130,16 @@ For snmpwalk use the below command:
 
     snmpwalk -v2c -c public localhost SNMPv2-SMI::experimental
 
+For tabular data (netconf devices), snmpwalk use the
+below command:
+
+::
+
+   snmpwalk -v2c -c public localhost:2001 SNMPv2-SMI::experimental
+
+For tabular data (openflow devices), snmpwalk use the
+below command:
+
+::
+
+   snmpwalk -v2c -c public localhost:2003 SNMPv2-SMI::experimental
