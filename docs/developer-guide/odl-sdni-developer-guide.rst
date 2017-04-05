@@ -21,11 +21,12 @@ ODL-SDNi Architecture
    aggregator.The RESTCONF protocol operates on a conceptual datastore
    defined with the YANG data modeling language.
 
--  SDNi Wrapper: SDNi BGP Wrapper will be responsible for the sharing
+-  SDNi Wrapper: SDNi Wrapper will be responsible for the sharing
    and collecting information to/from federated controllers.
 
 -  SDNi UI:This component displays the SDN controllers connected to each
    other.
+
 
 SDNi Aggregator
 ---------------
@@ -42,48 +43,40 @@ SDNi Aggregator
 -  The SDNiAggregator creates a topology structure.This structure is
    populated by the various network funtions.
 
-SDNi API
---------
 
-Topology and QoS data is fetched from SDNiAggregator through RESTCONF.
+SDNi API Reference Documentation
+--------------------------------
 
-`http://${controlleripaddress}:8181/apidoc/explorer/index.html <http://${controlleripaddress}:8181/apidoc/explorer/index.html>`__
+ i.    http://${ipaddress}:8181/restconf/operations/opendaylight-sdni-topology-msg:getTopology
+        - Fetches the topology data
 
-`http://${ipaddress}:8181/restconf/operations/opendaylight-sdni-topology-msg:getAllPeerTopology <http://${ipaddress}:8181/restconf/operations/opendaylight-sdni-topology-msg:getAllPeerTopology>`__
+ ii.   http://${ipaddress}:8181/restconf/operations/opendaylight-sdni-topology-msg:getAllPeerTopology
+        -  Fetches the peers topology data
 
-**Peer Topology Data:** Controller IP Address, Links, Nodes, Link
-Bandwidths, MAC Address of switches, Latency, Host IP address.
+ iii.  http://${ipaddress}:8181/restconf/operations/opendaylight-sdni-qos-msg:get-all-node-connectors-statistics
+        -  Fetches the QoS data
 
-`http://${ipaddress}:8181/restconf/operations/opendaylight-sdni-qos-msg:get-all-node-connectors-statistics <http://${ipaddress}:8181/restconf/operations/opendaylight-sdni-qos-msg:get-all-node-connectors-statistics>`__
+ iv.   http://${ipaddress}:8181/restconf/operations/opendaylight-sdni-qos-msg:get-all-peer-node-connectors-statistics 
+        -  Fetches the peers QoS data
 
-**QOS Data:** Node, Port, Transmit Packets, Receive Packets, Collision
-Count, Receive Frame Error, Receive Over Run Error, Receive Crc Error
+ v.    http://${ipaddress}:8181/restconf/operations/opendaylight-sdni-wrapper:add-peer-controllers
+        -  Configures peer controller to SDNi
 
-`http://${ipaddress}:8181/restconf/operations/opendaylight-sdni-qos-msg:get-all-peer-node-connectors-statistics <http://${ipaddress}:8181/restconf/operations/opendaylight-sdni-qos-msg:get-all-peer-node-connectors-statistics>`__
+ vi.   http://${ipaddress}:8181/restconf/operations/opendaylight-sdni-wrapper:remove-peer-controllers
+        -  Removes configured peer controller from SDNi
 
-**Peer QOS Data:** Node, Port, Transmit Packets, Receive Packets,
-Collision Count, Receive Frame Error, Receive Over Run Error, Receive
-Crc Error
+ vii.  http://${ipaddress}:8181/restconf/operations/opendaylight-sdni-wrapper:get-configured-sdni-peers
+        -  Lists the configured peer controllers in SDNi
+
+ viii. http://${ipaddress}:8181/restconf/operations/opendaylight-sdni-wrapper:add-trusted-controllers
+        -  Marks controller as trusted 
+
 
 SDNi Wrapper
 ------------
 
-.. figure:: ./images/SDNiWrapper.png
-   :alt: SDNiWrapper
+-  SDNiWrapper facilitates the peer controller configuration. The controller’s network capabilities through SDNiAggregator are fetched and sent to the configured peer controllers. 
 
-   SDNiWrapper
-
--  SDNiWrapper is an extension of ODL-BGPCEP where SDNi topology data is
-   exchange along with the Update NLRI message. Refer
-   http://tools.ietf.org/html/draft-ietf-idr-ls-distribution-04 for more
-   information on NLRI.
-
--  SDNiWrapper gets the controller’s network capabilities through SDNi
-   Aggregator and serialize it in Update NLRI message. This NLRI message
-   will get exchange between the clustered controllers through
-   BGP-UPDATE message. Similarly peer controller’s UPDATE message is
-   received and unpacked then format to SDNi Network capability data,
-   which will be stored for further purpose.
 
 SDNi UI
 -------
@@ -91,12 +84,4 @@ SDNi UI
 This component displays the SDN controllers connected to each other.
 
 http://localhost:8181/index.html#/sdniUI/sdnController
-
-API Reference Documentation
----------------------------
-
-Go to
-`http://${controlleripaddress}:8181/apidoc/explorer/index.html <http://${controlleripaddress}:8181/apidoc/explorer/index.html>`__,
-sign in, and expand the opendaylight-sdni panel. From there, users can
-execute various API calls to test their SDNi deployment.
 
