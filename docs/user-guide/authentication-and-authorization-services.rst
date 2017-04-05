@@ -61,6 +61,9 @@ Claim
 IdP
     Identity Provider.
 
+TLS
+    Transport Layer Security
+
 Security Framework for AAA services
 -----------------------------------
 
@@ -801,3 +804,165 @@ It is possible to add custom AuthenticationListener(s) to the Shiro-based
 configuration, allowing different ways to listen for successful/unsuccessful
 authentication attempts. Custom AuthenticationListener(s) must implement
 the org.apache.shiro.authc.AuthenticationListener interface.
+
+Certificate Management
+----------------------
+
+The **Certificate Management Service** is used to manage the keystores and 
+certificates at the OpenDaylight distribution to easily provides the TLS
+communication.
+
+The Certificate Management Service managing two keystores:
+
+1. **OpenDaylight Keystore** which holds the OpenDaylight distribution
+   certificate self sign certificate or signed certificate from a root CA based
+   on generated certificate request.
+
+2. **Trust Keystore** which holds all the network nodes certificates that shall
+   to communicate with the OpenDaylight distribution through TLS communication.
+
+The Certificate Management Service stores the keystores (OpenDaylight & Trust)
+as *.jks* files under configuration/ssl/ directory. Also the keystores
+could be stored at the MD-SAL datastore in case OpenDaylight distribution
+running at cluster environment. When the keystores are stored at MD-SAL, 
+the Certificate Management Service rely on the **Encryption-Service** to encrypt
+the keystore data before storing it to MD-SAL and decrypted at runtime.
+
+How to use the Certificate Management Service to manage the TLS communication
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The following are the steps to configure the TLS communication:
+
+1. After starting the distribution, the *odl-aaa-cert* feature has to get
+installed. Use the following command at Karaf CLI to check.
+
+.. code-block:: bash
+
+  opendaylight-user@root>feature:list -i | grep aaa-cert
+  odl-aaa-cert | 0.5.0-SNAPSHOT | x | odl-aaa-0.5.0-SNAPSHOT | OpenDaylight :: AAA :: aaa certificate Service
+
+2. The initial configuration of the Certificate Manager Service exists under
+the distribution directory etc/opendaylight/datastore/initial/config/aaa-cert-config.xml.
+
+.. code-block:: xml
+
+  <aaa-cert-service-config xmlns="urn:opendaylight:yang:aaa:cert">
+    <use-config>false</use-config>
+    <use-mdsal>false</use-mdsal>
+    <bundle-name>opendaylight</bundle-name>
+    <ctlKeystore>
+      <name>ctl.jks</name>
+      <alias>controller</alias>
+      <store-password>storePassword</store-password>
+      <dname>CN=ODL, OU=Dev, O=LinuxFoundation, L=QC Montreal, C=CA</dname>
+      <validity>365</validity>
+      <key-alg>RSA</key-alg>
+      <sign-alg>SHA1WithRSAEncryption</sign-alg>
+       <keysize>1024</keysize>
+       <cipher-suites>
+         <suite-name />
+       </cipher-suites>
+    </ctlKeystore>
+    <trustKeystore>
+      <name>truststore.jks</name>
+      <store-password>storePassword</store-password>
+    </trustKeystore>
+  </aaa-cert-service-config>
+
+
+Now as it is explained above, the Certificate Manager Service support two mode
+of operations; cluster mode and single mode. To use the single mode change the
+use-config to true and it is recommended as long as there is no need for
+cluster environment. To use the cluster mode change the use-config and
+use-mdsal configurations to true and the keystores will be stored and shard
+across the cluster nodes within the MD-SAL datastore.
+
+The initial initial **<store-password>** configuration should be changed to
+secure the distribution environment. Also it is important to change the
+**Encryption Service** configuration if the Certificate Manager Service is using
+cluster mode.
+
+The cipher suites can be restricted by changing the **<cipher-suites>**
+configuration, however, the JDK has to be upgraded by installing the `Java
+Cryptography Extension
+<http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html>`_
+policy.
+
+.. code-block:: xml
+
+  <cipher-suites>
+    <suite-name>TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384</suite-name>
+  </cipher-suites>
+    <cipher-suites>
+  <suite-name>TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384</suite-name>
+    </cipher-suites>
+  <cipher-suites>
+    <suite-name>TLS_DHE_RSA_WITH_AES_256_GCM_SHA384</suite-name>
+  </cipher-suites>
+
+3. The new configurations will take affect after restarting the distribution.
+
+4. Now to add or get certificate to the OpenDaylight and Trust keystores, the
+Certificate Manager Service provides the following RPCs.
+
+::
+
+  a) Set the node certificate that will communicate with OpeDaylight through TLS
+  connection.
+  POST /operations/aaa-cert-rpc:setNodeCertifcate
+  {
+    "input": {
+      "node-cert": "string",
+      "node-alias": "string"
+    }
+  }
+
+::
+
+  b) Get the node certificate based on node alias.
+  POST /operations/aaa-cert-rpc:getNodeCertifcate
+  {
+    "input": {
+      "node-alias": "string"
+    }
+  }
+
+::
+
+  c) Get the OpeDaylight keystore certificate.
+  POST /operations/aaa-cert-rpc:getODLCertificate
+  {
+    output {
+      odl-cert "string"
+    }
+  }
+
+::
+
+  d) Generate a certificate request from the OpeDaylight keystore to be signed
+  by a CA.
+  POST /operations/aaa-cert-rpc:getODLCertificateReq
+  {
+    output {
+      odl-cert-req "string"
+    }
+  }
+  
+::
+
+  e) Set the OpeDaylight certificate, the certificate should be generated
+  based on a certificate request generated from the ODL keystore otherwise the
+  certificated will not be added.
+  POST /operations/aaa-cert-rpc:setODLCertificate
+  {
+    "input": {
+      "odl-cert-alias": "string",
+      "odl-cert": "string"
+    }
+  }
+
+.. note::
+
+  The Certificate Manager Service RPCs are allowed only to the Role Admin Users
+  and it could be completely disabled through the shiro.ini config file. Check
+  the URL section at the shiro.ini.
