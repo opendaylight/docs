@@ -801,3 +801,10 @@ It is possible to add custom AuthenticationListener(s) to the Shiro-based
 configuration, allowing different ways to listen for successful/unsuccessful
 authentication attempts. Custom AuthenticationListener(s) must implement
 the org.apache.shiro.authc.AuthenticationListener interface.
+
+Certificate Management
+----------------------
+
+The Certificate Management Service is used to manage the keystores and 
+certificates at the OpenDaylight distribution to easily provides the TLS
+communication.
