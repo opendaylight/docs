@@ -29,15 +29,19 @@ https://wiki.opendaylight.org/images/8/89/Cardinal-ODL_Monitoring_as_a_Service_V
 Key APIs and Interfaces
 -----------------------
 
-There are 2 main APIs for requesting snmpget request of the Karaf info
-and System info. To expose these APIs, it assumes that you already have
-the ``odl-cardinal`` and ``odl-restconf`` features installed. You can do
-that by entering the following at the Karaf console:
+There are 6 main APIs for requesting snmpget request of the Karaf info,
+System info, Openflow devices and Netconf Devices. To expose these APIs,
+it assumes that you already have the ``odl-cardinal`` and ``odl-restconf``
+features installed. You can do that by entering the following at the Karaf console:
 
 ::
 
     feature:install odl-cardinal
     feature:install odl-restconf-all
+    feature:install odl-l2switch-switch
+    feature:install odl-netconf-all
+    feature:install odl-netconf-connector-all
+    feature:install odl-netconf-mdsal
 
 System Info APIs
 ~~~~~~~~~~~~~~~~
@@ -124,3 +128,111 @@ following output as:
       }
     }
 
+OpenFlowInfo Apis
+~~~~~~~~~~~~~~~~~
+
+Open the REST interface and using the basic authentication, execute REST APIs for system info as:
+
+http://localhost:8181/restconf/operational/cardinal-openflow:Devices
+
+You should get the response code of the same as 200 OK with the following output as:
+
+::
+
+    {
+        "Devices": {
+            "openflow": [
+                {
+                    "macAddress": "6a:80:ef:06:d3:46",
+                    "status": "Connected",
+                    "flowStats": " ",
+                    "interface": "s1",
+                    "manufacturer": "Nicira, Inc.",
+                    "nodeName": "openflow:1:LOCAL",
+                    "meterStats": " "
+                },
+                {
+                    "macAddress": "32:56:c7:41:5d:9a",
+                    "status": "Connected",
+                    "flowStats": " ",
+                    "interface": "s2-eth2",
+                    "manufacturer": "Nicira, Inc.",
+                    "nodeName": "openflow:2:2",
+                    "meterStats": " "
+                },
+                {
+                    "macAddress": "36:a8:3b:fe:e2:21",
+                    "status": "Connected",
+                    "flowStats": " ",
+                    "interface": "s3-eth1",
+                    "manufacturer": "Nicira, Inc.",
+                    "nodeName": "openflow:3:1",
+                    "meterStats": " "
+                }
+            ]
+        }
+    }
+
+
+Configuration for Netconf Devices:-
+
+1. To configure or update a netconf-connector via topology you need to send following request to Restconf:
+
+::
+
+    Method: PUT
+    URI: http://localhost:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/new-netconf-device
+    Headers:
+    Accept: application/xml
+    Content-Type: application/xml
+
+Payload:
+
+.. code-block:: xml
+
+    <node xmlns="urn:TBD:params:xml:ns:yang:network-topology">
+      <node-id>new-netconf-device</node-id>
+      <host xmlns="urn:opendaylight:netconf-node-topology">127.0.0.1</host>
+      <port xmlns="urn:opendaylight:netconf-node-topology">17830</port>
+      <username xmlns="urn:opendaylight:netconf-node-topology">admin</username>
+      <password xmlns="urn:opendaylight:netconf-node-topology">admin</password>
+      <tcp-only xmlns="urn:opendaylight:netconf-node-topology">false</tcp-only>
+      <keepalive-delay xmlns="urn:opendaylight:netconf-node-topology">0</keepalive-delay>
+    </node>
+
+2. To delete a netconf connector issue a DELETE request to the following url:
+URI:http://localhost:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/new-netconf-device
+
+NetConf Info Apis
+Open the REST interface and using the basic authentication, execute REST APIs for system info as:
+
+http://localhost:8181/restconf/operational/cardinal-netconf:Devices
+
+You should get the response code of the same as 200 OK with the following output as:
+
+::
+
+    {
+        "Devices": {
+            "netconf": [
+                {
+                    "status": "connecting",
+                    "host": "127.0.0.1",
+                    "nodeId": "new-netconf-device1",
+                    "port": "17830"
+                },
+                {
+                    "status": "connecting",
+                    "host": "127.0.0.1",
+                    "nodeId": "new-netconf-device",
+                    "port": "17830"
+                },
+                {
+                    "status": "connecting",
+                    "host": "127.0.0.1",
+                    "nodeId": "controller-config",
+                    "port": "1830"
+                }
+            ]
+        }
+    }
