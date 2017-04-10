@@ -288,10 +288,10 @@ Simple Mininet topology
         def __init__( self ):
             "Create custom topo."
 
-            
+
         Topo.__init__( self )
 
-            
+
             Switch1 = self.addSwitch( 's1' )
             Switch2 = self.addSwitch( 's2' )
             Switch3 = self.addSwitch( 's3' )
@@ -301,9 +301,9 @@ Simple Mininet topology
             Host21 = self.addHost( 'h3' )
             Host22 = self.addHost( 'h4' )
             Host23 = self.addHost( 'h5' )
-            Service1 = self.addHost( 'srvc1' ) 
+            Service1 = self.addHost( 'srvc1' )
 
-        
+
             self.addLink( Host11, Switch1 )
             self.addLink( Host12, Switch1 )
             self.addLink( Host21, Switch2 )
