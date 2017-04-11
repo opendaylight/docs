@@ -23,6 +23,30 @@
       "revId": "e5a8776684bc6c7b0c3dea2bc2ec23c3dae51065",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_6fc75b46",
+        "filename": "docs/getting-started-guide/common-features/persistence_and_backup.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2017-04-11T23:40:26Z",
+      "side": 1,
+      "message": "thanks for catching this.\n\nthis should fix it:\nhttps://git.opendaylight.org/gerrit/#/c/54817/",
+      "parentUuid": "da01753e_421a5218",
+      "range": {
+        "startLine": 31,
+        "startChar": 40,
+        "endLine": 31,
+        "endChar": 45
+      },
+      "revId": "e5a8776684bc6c7b0c3dea2bc2ec23c3dae51065",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
