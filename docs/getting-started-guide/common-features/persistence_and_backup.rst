@@ -13,13 +13,17 @@ required or even desired. The user should restart the node to apply the changes.
   The script can be used at any time, even before the controller is started
   for the first time.
 
-Usage::
+Usage:
 
-    bin/set_persistence.sh <on/off>
+.. code-block:: bash
 
-Example::
+   bin/set_persistence.sh <on/off>
 
-    bin/set_persistence.sh off
+Example:
+
+.. code-block:: bash
+
+   bin/set_persistence.sh off
 
 The above command will disable the config datastore persistence.
 
@@ -28,9 +32,9 @@ The above command will disable the config datastore persistence.
 Backing Up and Restoring the Datastore
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The same cluster-admin API that is used above for managing shard voting states
-has an RPC allowing backup of the datastore in a single node, taking only the
-file name as a parameter::
+The same cluster-admin API described in the :ref:`cluster guide <cluster_admin_api>`
+for managing shard voting states has an RPC allowing backup of the datastore in a single
+node, taking only the file name as a parameter::
 
     POST  /restconf/operations/cluster-admin:backup-datastore
 
