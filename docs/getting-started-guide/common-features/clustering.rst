@@ -471,6 +471,8 @@ that takes advantage of the above MBeans exposed via Jolokia, and the
 *systemmetrics* project offers a DLUX based UI to display the same
 information.
 
+.. _cluster_admin_api:
+
 Geo-distributed Active/Backup Setup
 -----------------------------------
 
@@ -618,34 +620,4 @@ persistent                                     boolean           true    Enable 
 shard-isolated-leader-check-interval-in-millis uint32 (1..max)   5000    the interval at which the leader of the shard will check if its majority followers are active and term itself as isolated
 ============================================== ================= ======= ==============================================================================================================================================================================
 
-These configuration options are included in the 05-clustering.xml configuration file (found in etc/opendaylight/karaf)
-in sections that look like the example below. Note that these options can be separately specified for both the config
-and the operational datastores.
-
-.. code-block:: xml
-
-   <module>
-       <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:controller:config:distributed-datastore-provider">prefix:distributed-config-datastore-provider</type>
-       <name>distributed-config-store-module</name>
-       <config-schema-service>
-           <type xmlns:dom="urn:opendaylight:params:xml:ns:yang:controller:md:sal:dom">dom:schema-service</type>
-           <name>yang-schema-service</name>
-       </config-schema-service>
-       <config-properties>
-            <persistent>false</persistent>
-       </config-properties>
-    </module>
-
-.. code-block:: xml
-
-   <module>
-       <type xmlns:prefix="urn:opendaylight:params:xml:ns:yang:controller:config:distributed-datastore-provider">prefix:distributed-operational-datastore-provider</type>
-       <name>distributed-operational-store-module</name>
-       <operational-schema-service>
-           <type xmlns:dom="urn:opendaylight:params:xml:ns:yang:controller:md:sal:dom">dom:schema-service</type>
-           <name>yang-schema-service</name>
-       </operational-schema-service>
-       <operational-properties>
-            <persistent>false</persistent>
-       </operational-properties>
-   </module>
+These configuration options are included in the etc/org.opendaylight.controller.cluster.datastore.cfg configuration file.
