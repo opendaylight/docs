@@ -471,6 +471,8 @@ that takes advantage of the above MBeans exposed via Jolokia, and the
 *systemmetrics* project offers a DLUX based UI to display the same
 information.
 
+.. _cluster_admin_api:
+
 Geo-distributed Active/Backup Setup
 -----------------------------------
 

@@ -28,9 +28,9 @@ The above command will disable the config datastore persistence.
 Backing Up and Restoring the Datastore
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The same cluster-admin API that is used above for managing shard voting states
-has an RPC allowing backup of the datastore in a single node, taking only the
-file name as a parameter::
+The same cluster-admin API described in the :ref:`cluster guide <cluster_admin_api>`
+for managing shard voting states has an RPC allowing backup of the datastore in a single
+node, taking only the file name as a parameter::
 
     POST  /restconf/operations/cluster-admin:backup-datastore
 
