@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da01753e_c790eb97",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 883,
+      "author": {
+        "id": 4013
+      },
+      "writtenOn": "2017-04-12T14:13:26Z",
+      "side": 1,
+      "message": "this is not the case now. The password becomes randomly generated when the aaa-cert feature installed and no need to change it. Same also for the Encryption Service, wiki is not updated",
+      "range": {
+        "startLine": 880,
+        "startChar": 0,
+        "endLine": 883,
+        "endChar": 13
+      },
+      "revId": "2fba0d1e05ba01adfd60919798d3d00449dd08cf",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
