@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "da01753e_e731afa3",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 856,
+      "author": {
+        "id": 5861
+      },
+      "writtenOn": "2017-04-12T14:29:46Z",
+      "side": 1,
+      "message": "Mohamed, is this field still valid now that the password is randomly generated?",
+      "range": {
+        "startLine": 856,
+        "startChar": 6,
+        "endLine": 856,
+        "endChar": 52
+      },
+      "revId": "2fba0d1e05ba01adfd60919798d3d00449dd08cf",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_4727db64",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 868,
+      "author": {
+        "id": 5861
+      },
+      "writtenOn": "2017-04-12T14:29:46Z",
+      "side": 1,
+      "message": "Mohamed, is this field still valid now that the password is randomly generated?",
+      "range": {
+        "startLine": 868,
+        "startChar": 6,
+        "endLine": 868,
+        "endChar": 52
+      },
+      "revId": "2fba0d1e05ba01adfd60919798d3d00449dd08cf",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da01753e_c790eb97",
         "filename": "docs/user-guide/authentication-and-authorization-services.rst",
         "patchSetId": 4
@@ -13,6 +59,30 @@
       "writtenOn": "2017-04-12T14:13:26Z",
       "side": 1,
       "message": "this is not the case now. The password becomes randomly generated when the aaa-cert feature installed and no need to change it. Same also for the Encryption Service, wiki is not updated",
+      "range": {
+        "startLine": 880,
+        "startChar": 0,
+        "endLine": 883,
+        "endChar": 13
+      },
+      "revId": "2fba0d1e05ba01adfd60919798d3d00449dd08cf",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_c703cbb6",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 883,
+      "author": {
+        "id": 5861
+      },
+      "writtenOn": "2017-04-12T14:29:46Z",
+      "side": 1,
+      "message": "Should I then just replace this paragraph with \"the initial password become randomly generated when the aaa-cert feature is installed\"?",
+      "parentUuid": "da01753e_c790eb97",
       "range": {
         "startLine": 880,
         "startChar": 0,
