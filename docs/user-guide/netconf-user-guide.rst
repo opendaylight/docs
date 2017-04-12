@@ -1266,3 +1266,150 @@ XML
 
 This will register YANGLIB provided sources as a fallback schemas for
 particular mount point.
+
+NETCONF Call Home
+-----------------
+
+.. important::
+
+    The call home feature is experimental and will change in a future
+    release. In particular, the Yang models will change to those specified
+    in the RFC.
+
+Installation
+------------
+
+ODL Call-Home server is installed in Karaf by installing karaf feature
+``odl-netconf-callhome-ssh``. RESTCONF feature is recommended for
+configuring Call Home & testing its functionality.
+
+::
+
+  feature:install odl-netconf-callhome-ssh
+
+
+.. note::
+
+    In order to test Call Home functionality we recommend Netopeer.
+    See `Netopeer Call Home <https://github.com/CESNET/netopeer/wiki/CallHome>`__ to learn how to enable call-home on Netopeer.
+
+Global Configuration
+--------------------
+
+Configuring global credentials
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ODL Call-Home server allows user to configure global credentials, which
+will be used for devices which does not have device-specific credentials
+configured.
+
+This is done by creating
+``/odl-netconf-callhome-server:netconf-callhome-server/global/credentials``
+with username and passwords specified.
+
+*Configuring global username & passwords to try*
+
+.. code-block:: http
+
+    PUT
+    /restconf/config/odl-netconf-callhome-server:netconf-callhome-server/global/credentials
+    HTTP/1.1 Content-Type: application/json Accept: application/json
+
+.. code-block:: json
+
+    {
+       "credentials":
+       {
+          "username": "example",
+          "passwords": [ "first-password-to-try", "second-password-to-try" ]
+        }
+    }
+
+Configuring to accept any ssh server key using global credentials
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+By default Netconf Call-Home Server accepts only incoming connections
+from allowed devices
+``/odl-netconf-callhome-server:netconf-callhome-server/allowed-devices``,
+if user desire to allow all incoming connections, it is possible to set
+``accept-all-ssh-keys`` to ``true`` in
+``/odl-netconf-callhome-server:netconf-callhome-server/global``.
+
+The name of this devices in ``netconf-topology`` will be in format
+``ip-address:port``. For naming devices see Device-Specific
+Configuration.
+
+*Allowing unknown devices to connect*
+
+.. code-block:: http
+
+  POST
+  /restconf/config/odl-netconf-callhome-server:netconf-callhome-server/global
+  HTTP/1.1
+  Content-Type: application/json
+  Accept: application/json
+
+.. code-block:: json
+
+  {
+     "accept-all-ssh-keys": true
+  }
+
+Device-Specific Configuration
+-----------------------------
+
+Allowing Device & Configuring Name
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Netconf Call Home Server uses device provided SSH server key (host key)
+to identify device. The pairing of name and server key is configured in
+``/odl-netconf-callhome-server:netconf-callhome-server/allowed-devices``.
+
+*Example of configuring device*
+
+.. code-block:: http
+
+  PUT
+  /restconf/config/odl-netconf-callhome-server:netconf-callhome-server/allowed-devices/device/example
+  HTTP/1.1
+  Content-Type: application/json
+  Accept: application/json
+
+.. code-block:: json
+
+  {
+    "device": {
+      "unique-id": "example",
+      "ssh-host-key": "AAAAB3NzaC1yc2EAAAADAQABAAABAQDHoH1jMjltOJnCt999uaSfc48ySutaD3ISJ9fSECe1Spdq9o9mxj0kBTTTq+2V8hPspuW75DNgN+V/rgJeoUewWwCAasRx9X4eTcRrJrwOQKzb5Fk+UKgQmenZ5uhLAefi2qXX/agFCtZi99vw+jHXZStfHm9TZCAf2zi+HIBzoVksSNJD0VvPo66EAvLn5qKWQD4AdpQQbKqXRf5/W8diPySbYdvOP2/7HFhDukW8yV/7ZtcywFUIu3gdXsrzwMnTqnATSLPPuckoi0V2jd8dQvEcu1DY+rRqmqu0tEkFBurlRZDf1yhNzq5xWY3OXcjgDGN+RxwuWQK3cRimcosH"
+    }
+  }
+
+Configuring Device with Device-specific Credentials
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Call Home Server also allows to configure credentials per device basis,
+this is done by introducing ``credentials`` container into
+device-specific configuration. Format is same as in global credentials.
+
+*Configuring Device with Credentials*
+
+.. code-block:: http
+
+  PUT
+  /restconf/config/odl-netconf-callhome-server:netconf-callhome-server/allowed-devices/device/example
+  HTTP/1.1
+  Content-Type: application/json
+  Accept: application/json
+
+.. code-block:: json
+
+  {
+    "device": {
+      "unique-id": "example",
+      "credentials": {
+        "username": "example",
+        "passwords": [ "password" ]
+      },
+      "ssh-host-key": "AAAAB3NzaC1yc2EAAAADAQABAAABAQDHoH1jMjltOJnCt999uaSfc48ySutaD3ISJ9fSECe1Spdq9o9mxj0kBTTTq+2V8hPspuW75DNgN+V/rgJeoUewWwCAasRx9X4eTcRrJrwOQKzb5Fk+UKgQmenZ5uhLAefi2qXX/agFCtZi99vw+jHXZStfHm9TZCAf2zi+HIBzoVksSNJD0VvPo66EAvLn5qKWQD4AdpQQbKqXRf5/W8diPySbYdvOP2/7HFhDukW8yV/7ZtcywFUIu3gdXsrzwMnTqnATSLPPuckoi0V2jd8dQvEcu1DY+rRqmqu0tEkFBurlRZDf1yhNzq5xWY3OXcjgDGN+RxwuWQK3cRimcosH"
+    }
+  }
