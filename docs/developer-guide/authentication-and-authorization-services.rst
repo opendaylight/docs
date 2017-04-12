@@ -439,3 +439,146 @@ It is possible to add custom AuthenticationListener(s) to the Shiro-based
 configuration, allowing different ways to listen for successful/unsuccessful
 authentication attempts. Custom AuthenticationListener(s) must implement
 the org.apache.shiro.authc.AuthenticationListener interface.
+
+Certificate Management
+----------------------
+
+The **Certificate Management Service** is used to manage the keystores and 
+certificates at the OpenDaylight distribution to easily provides the TLS
+communication.
+
+The Certificate Management Service managing two keystores:
+
+1. **OpenDaylight Keystore** which holds the OpenDaylight distribution
+   certificate self sign certificate or signed certificate from a root CA based
+   on generated certificate request.
+
+2. **Trust Keystore** which holds all the network nodes certificates that shall
+   to communicate with the OpenDaylight distribution through TLS communication.
+
+The Certificate Management Service stores the keystores (OpenDaylight & Trust)
+as *.jks* files under configuration/ssl/ directory. Also the keystores
+could be stored at the MD-SAL datastore in case OpenDaylight distribution
+running at cluster environment. When the keystores are stored at MD-SAL,
+the Certificate Management Service rely on the **Encryption-Service** to encrypt
+the keystore data before storing it to MD-SAL and decrypted at runtime.
+
+How to use the Certificate Management Service to manage the TLS communication
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The following are the steps to configure the TLS communication within your
+feature or module:
+
+1. It is assumed that there exists an already created OpenDaylight distribution
+project following `this guide <https://wiki.opendaylight.org/view/OpenDaylight_Controller:MD-SAL:Startup_Project_Archetype#Part_1_-_Build_with_a_simple_.27Example.27_module>`_.
+
+2. In the implementation bundle the following artifact must be added to its
+*pom.xml* file as dependency.
+
+.. code-block:: xml
+
+  <dependency>
+    <groupId>org.opendaylight.aaa</groupId>
+    <artifactId>aaa-cert</artifactId>
+    <version>0.5.0-SNAPSHOT</version>
+  </dependency>
+
+3. Using the provider class in the implementation bundle needs to define a
+variable holding the Certificate Manager Service as in the following example:
+
+.. code-block:: java
+
+  import org.opendaylight.aaa.cert.api.ICertificateManager;
+  import org.opendaylight.controller.md.sal.binding.api.DataBroker;
+   
+  public class UseCertManagerExampleProvider {
+    private final DataBroker dataBroker;
+    private final ICertificateManager caManager;
+     
+    public EncSrvExampleProvider(final DataBroker dataBroker, final ICertificateManager caManager) {
+      this.dataBroker = dataBroker;
+      this.caManager = caManager;
+    }
+    public SSLEngine createSSLEngine() {
+      final SSLContext sslContext = caManager.getServerContext();
+      if (sslContext != null) {
+        final SSLEngine sslEngine = sslContext.createSSLEngine();
+        sslEngine.setEnabledCipherSuites(caManager.getCipherSuites());
+        // DO the Implementation
+        return sslEngine;
+      }
+    }
+    public void init() {
+        // TODO
+    }
+    public void close() {
+        // TODO
+    }
+  }
+
+4. The Certificate Manager Service provides two main methods that are needed to
+establish the *SSLEngine* object, *getServerContext()* and *getCipherSuites()*
+as the above example shows. It also provides other methods such as
+*getODLKeyStore()* and *getTrustKeyStore()* that gives access to the
+OpenDaylight and Trust keystores.
+
+5. Now the *ICertificateManager* need to be passed as an argument to the
+*UseCertManagerExampleProvider* within the implementation bundle blueprint
+configuration. The following example shows how:
+
+.. code-block:: xml
+
+  <blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+    xmlns:odl="http://opendaylight.org/xmlns/blueprint/v1.0.0"
+    odl:use-default-for-reference-types="true">
+    <reference id="dataBroker"
+      interface="org.opendaylight.controller.md.sal.binding.api.DataBroker"
+      odl:type="default" />
+    <reference id="aaaCertificateManager"
+      interface="org.opendaylight.aaa.cert.api.ICertificateManager"
+      odl:type="default-certificate-manager" />
+    <bean id="provider"
+      class="org.opendaylight.UseCertManagerExample.impl.UseCertManagerExampleProvider"
+      init-method="init" destroy-method="close">
+      <argument ref="dataBroker" />
+      <argument ref="aaaCertificateManager" />
+    </bean>
+  </blueprint>
+  
+6. After finishing the bundle implementation the feature module needs to be
+updated to include the *aaa-cert* feature in its feature bundle pom.xml file.
+
+.. code-block:: xml
+
+  <properties>
+    <aaa.version>0.5.0-SNAPSHOT</aaa.version>
+  </properties>
+  <dependency>
+    <groupId>org.opendaylight.aaa</groupId>
+    <artifactId>features-aaa</artifactId>
+    <version>${aaa.version}</version>
+    <classifier>features</classifier>
+    <type>xml</type>
+  </dependency>
+
+7. Now, in the feature.xml file add the Certificate Manager Service feature and
+its repository.
+
+.. code-block:: xml
+
+  <repository>mvn:org.opendaylight.aaa/features-aaa/{VERSION}/xml/features</repository>
+
+The Certificate Manager Service feature can be included inside the
+implementation bundle feature as shown in the following example:
+
+.. code-block:: xml
+
+  <feature name='odl-UseCertManagerExample' version='${project.version}'
+    description='OpenDaylight :: UseCertManagerExample'>
+    <feature version='${mdsal.version}'>odl-mdsal-broker</feature>
+    <feature version='${aaa.version}'>odl-aaa-cert</feature>
+    <bundle>mvn:org.opendaylight.UseCertManagerExample/UseCertManagerExample-impl/{VERSION}</bundle>
+  </feature>
+
+8. Now the project can be built and the OpenDaylight distribution started to 
+continue with the configuration process. See the User Guide for more details.
