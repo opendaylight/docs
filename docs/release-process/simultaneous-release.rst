@@ -23,6 +23,10 @@ Releasing OpenDaylight
 
     .. figure:: images/gerrit-update-committer-rights.png
 
+    .. note::
+
+       Enable Exclusive checkbox
+
 - Export ${RELEASE} and ${BUILDNUM} with current release name and build number.
 
        .. code-block:: bash
@@ -41,7 +45,7 @@ Releasing OpenDaylight
 
         git checkout -b stable/${BRANCH,,} origin/stable/${BRANCH,,}
         git submodule update --init
-        git submodule foreach git checkout stable/${BRANCH,,} origin/stable/${BRANCH,,}
+        git submodule foreach git checkout -b stable/${BRANCH,,} origin/stable/${BRANCH,,}
 
 - Make sure your git repo is setup to push (use git-review)
 
@@ -64,6 +68,7 @@ Releasing OpenDaylight
     .. code-block:: bash
 
         pip install lftools
+        source <path/to/>lftools/bin/activate
         lftools version patch ${RELEASE}
         git review -y -t ${RELEASE}
         git push gerrit release/${RELEASE,,}
@@ -78,6 +83,7 @@ Releasing OpenDaylight
         git submodule foreach git checkout release/${RELEASE,,}
         git commit -asSm "Release ${RELEASE}"
         git tag -asm "OpenDaylight ${RELEASE} release" release/${RELEASE,,}
+        git review -s
         git push gerrit release/${RELEASE,,}
 
 - Re-enable submit permissions for registered users and disable elevated RE committer rights on gerrit.
