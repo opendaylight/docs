@@ -57,6 +57,7 @@ Client
 Claim
     A data set of validated assertions regarding a user, e.g. the role,
     domain, name, etc.
+
 IdP
     Identity Provider.
 
@@ -68,13 +69,13 @@ Building
 ^^^^^^^^
 Get the code:
 
-::
+.. code-block:: bash
 
     git clone https://git.opendaylight.org/gerrit/aaa
 
 Build it:
 
-::
+.. code-block:: bash
 
     cd aaa && mvn clean install
 
@@ -96,7 +97,7 @@ Pushing changes
 The following are basic instructions to push your contributions to the project's
 GIT repository:
 
-::
+.. code-block:: bash
 
     git add .
     git commit -s
@@ -118,7 +119,6 @@ Known limitations
 The database (H2) used by ODL AAA Authentication store is not-cluster enabled.
 When deployed in a clustered environment each node needs to have its AAA user
 file synchronized using out of band means.
-
 
 How to enable AAA
 -----------------
@@ -151,7 +151,7 @@ How application developers can leverage AAA to provide servlet security
 In order to provide security to a servlet, add the following to the
 servlet’s web.xml file as the first filter definition:
 
-::
+.. code-block:: xml
 
     <context-param>
       <param-name>shiroEnvironmentClass</param-name>
@@ -277,7 +277,7 @@ The H2 database provides an optional front-end Web interface, which can be very
 useful for new users. From the KARAF_HOME directory, you can run the following
 command to enable the user interface:
 
-::
+.. code-block:: bash
 
     java -cp ./data/cache/org.eclipse.osgi/bundles/217/1/.cp/h2-1.4.185.jar
         org.h2.tools.Server -trace -pg -web -webAllowOthers -baseDir `pwd`
