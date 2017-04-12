@@ -64,6 +64,9 @@ IdP
 TLS
     Transport Layer Security
 
+CLI
+    Command Line Interface
+
 Security Framework for AAA services
 -----------------------------------
 
@@ -964,3 +967,43 @@ Certificate Manager Service provides the following RPCs.
   The Certificate Manager Service RPCs are allowed only to the Role Admin Users
   and it could be completely disabled through the shiro.ini config file. Check
   the URL section at the shiro.ini.
+
+Encryption Service
+------------------
+
+The **AAA Encryption Service** is used to encrypt the OpenDaylight's users'
+passwords and TLS communication certificates. This section shows how to use the
+AAA Encryption Service with an OpenDaylight distribution project to encrypt data.
+
+The following are the steps to configure the Encryption Service:
+
+1. After starting the distribution, the *aaa-encryption-service* feature has to
+get installed. Use the following command at Karaf CLI to check.
+
+.. code-block:: bash
+
+  opendaylight-user@root>feature:list -i | grep aaa-encryption-service
+  odl-aaa-encryption-service | 0.5.0-SNAPSHOT | x | odl-aaa-0.5.0-SNAPSHOT | OpenDaylight :: AAA :: Encryption Service
+
+2. The initial configuration of the Encryption Service exists under the
+distribution directory etc/opendaylight/datastore/initial/config/aaa-encrypt-service-config.xml
+
+.. code-block:: xml
+
+  <aaa-encrypt-service-config xmlns="config:aaa:authn:encrypt:service:config">
+    <encrypt-key/>
+    <encrypt-salt/>
+    <encrypt-method>PBKDF2WithHmacSHA1</encrypt-method>
+    <encrypt-type>AES</encrypt-type>
+    <encrypt-iteration-count>32768</encrypt-iteration-count>
+    <encrypt-key-length>128</encrypt-key-length>
+    <cipher-transforms>AES/CBC/PKCS5Padding</cipher-transforms>
+  </aaa-encrypt-service-config>
+
+.. note::
+
+Both the initial encryption key and encryption salt become randomly generated
+when the *aaa-encryption-service* feature is installed.
+
+3. Finally the new configurations will take affect after restarting the
+distribution.
