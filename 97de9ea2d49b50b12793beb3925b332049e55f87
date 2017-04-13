@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "da01753e_4fd7e923",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 994,
+      "author": {
+        "id": 5861
+      },
+      "writtenOn": "2017-04-13T18:03:07Z",
+      "side": 1,
+      "message": "Should we replace it by \u003cencrypt-key/\u003e?",
+      "range": {
+        "startLine": 994,
+        "startChar": 4,
+        "endLine": 994,
+        "endChar": 40
+      },
+      "revId": "97de9ea2d49b50b12793beb3925b332049e55f87",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_efe7bd10",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 995,
+      "author": {
+        "id": 5861
+      },
+      "writtenOn": "2017-04-13T18:03:07Z",
+      "side": 1,
+      "message": "Should we replace it by \u003cencrypt-salt/\u003e?",
+      "range": {
+        "startLine": 995,
+        "startChar": 4,
+        "endLine": 995,
+        "endChar": 81
+      },
+      "revId": "97de9ea2d49b50b12793beb3925b332049e55f87",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da01753e_492fe9f6",
         "filename": "docs/user-guide/authentication-and-authorization-services.rst",
         "patchSetId": 2
@@ -13,6 +59,30 @@
       "writtenOn": "2017-04-13T13:55:32Z",
       "side": 1,
       "message": "both are now randomly generated at aaa-encryption-service installation.",
+      "range": {
+        "startLine": 1005,
+        "startChar": 0,
+        "endLine": 1006,
+        "endChar": 27
+      },
+      "revId": "97de9ea2d49b50b12793beb3925b332049e55f87",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_0f1681f1",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 1006,
+      "author": {
+        "id": 5861
+      },
+      "writtenOn": "2017-04-13T18:03:07Z",
+      "side": 1,
+      "message": "I\u0027ll replace this paragraph.",
+      "parentUuid": "da01753e_492fe9f6",
       "range": {
         "startLine": 1005,
         "startChar": 0,
