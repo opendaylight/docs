@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "da01753e_f25e8644",
+        "filename": "docs/release-process/simultaneous-release.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 6258
+      },
+      "writtenOn": "2017-04-13T21:58:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da01753e_72b736d9",
+      "range": {
+        "startLine": 71,
+        "startChar": 8,
+        "endLine": 71,
+        "endChar": 45
+      },
+      "revId": "ccbcb22cf9fc36430858495304a5c579fc6281a9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da01753e_32c5ae3c",
         "filename": "docs/release-process/simultaneous-release.rst",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2017-04-13T21:18:38Z",
       "side": 1,
       "message": "git review -s only ever needs to be done once. And it should be done before you git commit so that the git-hooks it sets up are applied to the commit messages. Putting it here makes it skip that part.\n\nIf we\u0027re going to remind people to setup their git-review tool then it should be done right after git clone is performed ideally.",
+      "range": {
+        "startLine": 86,
+        "startChar": 8,
+        "endLine": 86,
+        "endChar": 21
+      },
+      "revId": "ccbcb22cf9fc36430858495304a5c579fc6281a9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_32592e5b",
+        "filename": "docs/release-process/simultaneous-release.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 6258
+      },
+      "writtenOn": "2017-04-13T21:58:39Z",
+      "side": 1,
+      "message": "From a docs usability point, its better to have it assuming that a new user is trying the steps above with a freshly cloned repo.",
+      "parentUuid": "da01753e_32c5ae3c",
       "range": {
         "startLine": 86,
         "startChar": 8,
