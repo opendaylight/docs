@@ -964,3 +964,173 @@ Certificate Manager Service provides the following RPCs.
   The Certificate Manager Service RPCs are allowed only to the Role Admin Users
   and it could be completely disabled through the shiro.ini config file. Check
   the URL section at the shiro.ini.
+
+
+Encryption Service
+------------------
+
+The **AAA Encryption Service** is used to encrypt the OpenDaylight's users'
+passwords and TLS communication certificates. This section shows how to use the
+AAA Encryption Service with an OpenDaylight distribution project to encrypt data.
+
+The following are the steps to configure the Encryption Service:
+
+1. After starting the distribution, the *aaa-encryption-service* feature has to
+   get installed. Use the following command at Karaf CLI to check.
+
+   .. code-block:: bash
+
+      opendaylight-user@root>feature:list -i | grep aaa-encryption-service
+      odl-aaa-encryption-service | 0.5.0-SNAPSHOT | x | odl-aaa-0.5.0-SNAPSHOT | OpenDaylight :: AAA :: Encryption Service
+
+2. The initial configuration of the Encryption Service exists under the
+   distribution directory etc/opendaylight/datastore/initial/config/aaa-encrypt-service-config.xml
+
+   .. code-block:: xml
+
+      <aaa-encrypt-service-config xmlns="config:aaa:authn:encrypt:service:config">
+        <encrypt-key/>
+        <encrypt-salt/>
+        <encrypt-method>PBKDF2WithHmacSHA1</encrypt-method>
+        <encrypt-type>AES</encrypt-type>
+        <encrypt-iteration-count>32768</encrypt-iteration-count>
+        <encrypt-key-length>128</encrypt-key-length>
+        <cipher-transforms>AES/CBC/PKCS5Padding</cipher-transforms>
+      </aaa-encrypt-service-config>
+
+   .. note::
+
+      Both the initial encryption key and encryption salt become randomly generated
+      when the *aaa-encryption-service* feature is installed.
+
+3. Finally the new configurations will take affect after restarting the
+   distribution.
+
+
+Using the AAA Command Line Interface (CLI)
+------------------------------------------
+
+The AAA offers a CLI through the Karaf's console. This CLI allows the user to
+configure and use some of the functionalities provided by AAA.
+
+The AAA CLI exists under the **odl-aaa-cli** feature. This feature can be
+installed by executing the following command.
+
+::
+
+  feature:install odl-aaa-cli
+
+To check that the installation of the feature succeeded type "aaa" and press
+*tab* to see the list of available commands under the *aaa* scope.
+
+::
+
+  opendaylight-user@root>aaa:
+  aaa:change-user-pwd  aaa:gen-cert-req   aaa:get-cipher-suites aaa:get-node-cert   aaa:get-odl-cert
+
+Change the OpenDaylight user password
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The *change-user-pwd* command allows for changing the OpenDaylight users
+password. It takes the user name as argument then will ask for the given user
+current password.
+
+::
+
+  aaa:change-user-pwd -user admin
+  Enter current password:
+  Enter new password:
+  admin's password has been changed
+
+Certificate Management Service commands
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The following commands are related to TLS Certificate Management Service.
+
+Generate Certificate Request
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Generate certificate request command will generate a certificate request based
+on the generated OpenDaylight keystore and print it on the Karaf CLI. It takes
+the keystore password as argument.
+
+::
+
+  aaa:gen-cert-req -storepass storePassword
+  -----BEGIN CERTIFICATE REQUEST-----
+  MIIBlzCCAQACAQAwWTELMAkGA1UEBhMCQ0ExFDASBgNVBAcMC1FDIE1vbnRyZWFsMRgwFgYDVQQKDA
+  9MaW51eEZvdW5kYXRpb24xDDAKBgNVBAsMA0RldjEMMAoGA1UEAwwDT0RMMIGfMA0GCSqGSIb3DQEB
+  AQUAA4GNADCBiQKBgQCCmLW6j+JLYJM5yAMwscw/CHqPnp5elPa1YtQsHKEAvp1I+mLVtHKZeXeteA
+  kyp6ORxw6KQ515fcDyQVrRJiSM15jUd27UaFq5ku0+qJeG+Qh2btx+cvNSE7/+cgUWWosKz4Aff5F5
+  FqR62jLUTNzqCvoaTbZaOnLYVq+O2dYyZwIDAQABMA0GCSqGSIb3DQEBBQUAA4GBADhDr4Jm7gVm/o
+  p861/FShyw1ZZscxOEl2TprJZiTO6sn3sLptQZv8v52Z+Jm5dAgr7L46c97Xfa+0j6Y4LXNb0f88lL
+  RG8PxGbk6Tqbjqc0WS+U1Ibc/rcPK4HEN/bcYCn+Na1gLBaFXUPg08ozG6MwqFNeS5Z0jz1W0D9/oiao
+  -----END CERTIFICATE REQUEST-----
+
+Get OpenDaylight Certificate
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The *get-odl-certificate* command will print the OpenDaylight certificate at the
+Karaf CLI. It takes the keystore password as argument.
+
+::
+
+  aaa:get-odl-cert -storepass storePassword
+  -----BEGIN CERTIFICATE-----
+  MIICKTCCAZKgAwIBAgIEI75RWDANBgkqhkiG9w0BAQUFADBZMQwwCgYDVQQDDANPREwxDDAKBgNVBA
+  sMA0RldjEYMBYGA1UECgwPTGludXhGb3VuZGF0aW9uMRQwEgYDVQQHDAtRQyBNb250cmVhbDELMAkG
+  A1UEBhMCQ0EwHhcNMTYxMTMwMTYyNDE3WhcNMTcxMTMwMTYyNDE3WjBZMQwwCgYDVQQDDANPREwxDD
+  AKBgNVBAsMA0RldjEYMBYGA1UECgwPTGludXhGb3VuZGF0aW9uMRQwEgYDVQQHDAtRQyBNb250cmVh
+  bDELMAkGA1UEBhMCQ0EwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAIKYtbqP4ktgkznIAzCxzD
+  8Ieo+enl6U9rVi1CwcoQC+nUj6YtW0cpl5d614CTKno5HHDopDnXl9wPJBWtEmJIzXmNR3btRoWrmS
+  7T6ol4b5CHZu3H5y81ITv/5yBRZaiwrPgB9/kXkWpHraMtRM3OoK+hpNtlo6cthWr47Z1jJnAgMBAA
+  EwDQYJKoZIhvcNAQEFBQADgYEAL9DK/P/yEBre3Mg3bICAUAvSvZic+ydDmigWLsY4J3UzKdV2f1jI
+  s+rQTEgtlHShBf/ed546D49cp3XEzYrcxgILhGXDziCrUK0K1TiYqPTp6FLijjdydGlPpwuMyyV5Y0
+  iDiRclWuPz2fHbs8WQOWNs6VQ+WaREXtEsEC4qgSo=
+  -----END CERTIFICATE-----
+
+Get Cipher Suites
+~~~~~~~~~~~~~~~~~
+
+The *get-cipher-suites* command shows the cipher suites supported by the
+OpenDaylight TLS communication.
+
+::
+
+  aaa:get-cipher-suites
+  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+  TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
+  TLS_DHE_RSA_WITH_AES_256_GCM_SHA384
+
+Get Node Certificate
+~~~~~~~~~~~~~~~~~~~~
+
+The *get-node-cert* command prints a certificate for a given network node alias.
+This command is useful to check if the network node certificate has been added
+properly to the truest keystore. It takes the keystore password and the
+certificate alias as arguments.
+
+::
+
+  aaa:get-node-cert -storepass storePassword -alias ovs1
+  -----BEGIN CERTIFICATE-----
+  MIICKTCCAZKgAwIBAgIEI75RWDANBgkqhkiG9w0BAQUFADBZMQwwCgYDVQQDDANPREwxDDAKBgNVBA
+  sMA0RldjEYMBYGA1UECgwPTGludXhGb3VuZGF0aW9uMRQwEgYDVQQHDAtRQyBNb250cmVhbDELMAkG
+  A1UEBhMCQ0EwHhcNMTYxMTMwMTYyNDE3WhcNMTcxMTMwMTYyNDE3WjBZMQwwCgYDVQQDDANPREwxDD
+  AKBgNVBAsMA0RldjEYMBYGA1UECgwPTGludXhGb3VuZGF0aW9uMRQwEgYDVQQHDAtRQyBNb250cmVh
+  bDELMAkGA1UEBhMCQ0EwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAIKYtbqP4ktgkznIAzCxzD
+  8Ieo+enl6U9rVi1CwcoQC+nUj6YtW0cpl5d614CTKno5HHDopDnXl9wPJBWtEmJIzXmNR3btRoWrmS
+  7T6ol4b5CHZu3H5y81ITv/5yBRZaiwrPgB9/kXkWpHraMtRM3OoK+hpNtlo6cthWr47Z1jJnAgMBAA
+  EwDQYJKoZIhvcNAQEFBQADgYEAL9DK/P/yEBre3Mg3bICAUAvSvZic+ydDmigWLsY4J3UzKdV2f1jI
+  s+rQTEgtlHShBf/ed546D49cp3XEzYrcxgILhGXDziCrUK0K1TiYqPTp6FLijjdydGlPpwuMyyV5Y0
+  iDiRclWuPz2fHbs8WQOWNs6VQ+WaREXtEsEC4qgSo=
+  -----END CERTIFICATE-----
+
+.. note::
+
+  It is strongly recommended to run the history clear command after you execute
+  all the AAA CLI commands so Karaf logs stay clean from any adversary.
+
+  ::
+  
+    history -c
