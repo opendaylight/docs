@@ -522,7 +522,7 @@ as the above example shows. It also provides other methods such as
 *getODLKeyStore()* and *getTrustKeyStore()* that gives access to the
 OpenDaylight and Trust keystores.
 
-5. Now the *ICertificateManager* need to be passed as an argument to the
+5. Now the *ICertificateManager* needs to be passed as an argument to the
 *UseCertManagerExampleProvider* within the implementation bundle blueprint
 configuration. The following example shows how:
 
@@ -581,4 +581,117 @@ implementation bundle feature as shown in the following example:
   </feature>
 
 8. Now the project can be built and the OpenDaylight distribution started to 
+continue with the configuration process. See the User Guide for more details.
+
+Encryption Service
+------------------
+
+The **AAA Encryption Service** is used to encrypt the OpenDaylight users'
+passwords and TLS communication certificates. This section shows how to use the
+AAA Encryption Service with an OpenDaylight distribution project to encrypt data.
+
+1. It is assumed that there exists an already created OpenDaylight distribution
+project following `this guide <https://wiki.opendaylight.org/view/OpenDaylight_Controller:MD-SAL:Startup_Project_Archetype#Part_1_-_Build_with_a_simple_.27Example.27_module>`_.
+
+2. In the implementation bundle the following artifact must be added to its
+*pom.xml* file as dependency.
+
+.. code-block:: xml
+
+  <dependency>
+    <groupId>org.opendaylight.aaa</groupId>
+    <artifactId>aaa-encrypt-service</artifactId>
+    <version>0.5.0-SNAPSHOT</version>
+  </dependency>
+
+3. Using the provider class in the implementation bundle needs to define a
+variable holding the Encryption Service as in the following example:
+
+.. code-block:: java
+
+  import org.opendaylight.aaa.encrypt.AAAEncryptionService;
+  import org.opendaylight.controller.md.sal.binding.api.DataBroker;
+
+  public class EncSrvExampleProvider {
+  private final DataBroker dataBroker;
+    private final AAAEncryptionService encryService;
+
+    public EncSrvExampleProvider(final DataBroker dataBroker, final AAAEncryptionService encryService) {
+      this.dataBroker = dataBroker;
+      this.encryService = encryService;
+    }
+    public void init() {
+      // TODO
+    }
+    public void close() {
+      // TODO
+    }
+  }
+
+The AAAEncryptionService can be used to encrypt and decrypt any data based on
+project's needs.
+
+4. Now the *AAAEncryptionService* needs to be passed as an argument to the
+*EncSrvExampleProvider* within the implementation bundle blueprint
+configuration. The following example shows how:
+
+.. code-block:: xml
+
+  <blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+    xmlns:odl="http://opendaylight.org/xmlns/blueprint/v1.0.0"
+    odl:use-default-for-reference-types="true">
+    <reference id="dataBroker"
+      interface="org.opendaylight.controller.md.sal.binding.api.DataBroker"
+      odl:type="default" />
+    <reference id="encryService" interface="org.opendaylight.aaa.encrypt.AAAEncryptionService"/>
+    <bean id="provider"
+      class="org.opendaylight.EncSrvExample.impl.EncSrvExampleProvider"
+      init-method="init" destroy-method="close">
+      <argument ref="dataBroker" />
+      <argument ref="encryService" />
+    </bean>
+  </blueprint>
+
+5. After finishing the bundle implementation the feature module needs to be
+updated to include the *aaa-encryption-service* feature in its feature bundle
+pom.xml file.
+
+.. code-block:: xml
+
+  <dependency>
+    <groupId>org.opendaylight.aaa</groupId>
+    <artifactId>features-aaa</artifactId>
+    <version>${aaa.version}</version>
+    <classifier>features</classifier>
+    <type>xml</type>
+  </dependency>
+
+It is also necessary to add the *aaa.version* in the properties section:
+
+.. code-block:: xml
+
+  <properties>
+    <aaa.version>0.5.0-SNAPSHOT</aaa.version>
+  </properties>
+
+6. Now, in the feature.xml file add the Encryption Service feature and its
+repository.
+
+.. code-block:: xml
+
+  <repository>mvn:org.opendaylight.aaa/features-aaa/{VERSION}/xml/features</repository>
+
+The Encryption Service feature can be included inside the implementation bundle
+feature as shown in the following example:
+
+.. code-block:: xml
+
+  <feature name='odl-EncSrvExample' version='${project.version}' description='OpenDaylight :: EncSrvExample'>
+    <feature version='${mdsal.version}'>odl-mdsal-broker</feature>
+    <feature version='${aaa.version}'>odl-aaa-encryption-service</feature>
+    <feature version='${project.version}'>odl-EncSrvExample-api</feature>
+    <bundle>mvn:org.opendaylight.EncSrvExample/EncSrvExample-impl/{VERSION}</bundle>
+  </feature>
+
+7. Now the project can be built and the OpenDaylight distribution started to
 continue with the configuration process. See the User Guide for more details.
