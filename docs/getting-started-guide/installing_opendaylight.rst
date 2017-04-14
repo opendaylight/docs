@@ -51,7 +51,7 @@ For Example::
       creating: distribution-karaf-0.5.x-Boron/deploy/
       creating: distribution-karaf-0.5.x-Boron/etc/
       creating: distribution-karaf-0.5.x-Boron/externalapps/
-   ...
+
      inflating: distribution-karaf-0.5.x-Boron/bin/start.bat
      inflating: distribution-karaf-0.5.x-Boron/bin/status.bat
      inflating: distribution-karaf-0.5.x-Boron/bin/stop.bat
@@ -346,27 +346,39 @@ Karaf OpenDaylight Features
       - all
 
     * - Time Series Data Repository (TSDR)
-      - Enables support for storing and querying time series data with the
-        default data collector for OpenFlow statistics the default data store
-        for HSQLDB
-      - odl-tsdr-hsqldb-all
+      - Enables support for collecting, storing and querying time series data.
+        TSDR supports several collection features to collect the following
+        data;  OpenFlow statistics, NETFLOW statistics, sFlow statistics,
+        OpenFlow Controller metrics, SNMP data, SysLog data, RestConf data.
+        TSDR supports the following data stores; HSQLDB, HBase, Cassandra.
+        TSDR supports the default OpenDaylight RESTCONF and API interfaces and an
+        ElasticSearch interface for all data stores.
+      - odl-tsdr-core, odl-tsdr-hsqldb
       - all
 
     * - TSDR Data Collectors
-      - Enables support for various TSDR data sources (collectors) including
-        OpenFlow statistics, NetFlow statistics, NetFlow statistics, SNMP data,
-        Syslog, and OpenDaylight (controller) metrics
+      - TSDR collector features include support for collecting the following
+        data. OpenFlow statistics, NETFLOW statistics, sFlow statistics,
+        OpenFlow Controller metrics, SNMP data, SysLog data, RESTCONF data.
       - odl-tsdr-openflow-statistics-collector,
         odl-tsdr-netflow-statistics-collector,
+        odl-tsdr-sflow-statistics-collector,
+        odl-tsdr-controller-metrics-collector,
         odl-tsdr-snmp-data-collector,
         odl-tsdr-syslog-collector,
-        odl-tsdr-controller-metrics-collector
+        odl-tsdr-restconf-collector
       - all
 
     * - TSDR Data Stores
-      - Enables support for TSDR data stores including HSQLDB, HBase, and
+      - TSDR enables support for the following data stores; HSQLDB, HBase,
         Cassandra
       - odl-tsdr-hsqldb, odl-tsdr-hbase, or odl-tsdr-cassandra
+      - all
+
+    * - TSDR Data Query
+      - TSDR supports the default OpenDaylight RESTCONF and ODL API interfaces
+        for queries to all data stores.  It also supports an integrated ElasticSearch query.
+      - odl-tsdr-elasticsearch
       - all
 
     * - Topology Processing Framework
