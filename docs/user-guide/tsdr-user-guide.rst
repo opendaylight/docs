@@ -3,8 +3,8 @@ TSDR User Guide
 
 This document describes how to use HSQLDB, HBase, and Cassandra data
 stores to capture time series data using Time Series Data Repository
-(TSDR) features in OpenDaylight. This document contains configuration,
-administration, management, usage, and troubleshooting sections for the
+(TSDR) features in OpenDaylight.  This document contains configuration,
+administration, management, usage, and troubleshooting sections for these
 features.
 
 Overview
@@ -12,19 +12,19 @@ Overview
 
 The Time Series Data Repository (TSDR) project in OpenDaylight (ODL)
 creates a framework for collecting, storing, querying, and maintaining
-time series data. TSDR provides the framework for plugging in proper
+time series data.  TSDR provides the framework for plugging in
 data collectors to collect various time series data and store the data
 into TSDR Data Stores. With a common data model and generic TSDR data
 persistence APIs, the user can choose various data stores to be plugged
 into the TSDR persistence framework. Currently, three types of data
-stores are supported: HSQLDB relational database, HBase NoSQL database,
-and Cassandra NoSQL database.
+stores are supported: HSQLDB relational database (default installed),
+HBase NoSQL database and Cassandra NoSQL database.
 
 With the capabilities of data collection, storage, query, aggregation,
 and purging provided by TSDR, network administrators can leverage
-various data driven appliations built on top of TSDR for security risk
+various data driven applications built on top of TSDR for security risk
 detection, performance analysis, operational configuration optimization,
-traffic engineering, and network analytics with automated intelligence.
+traffic engineering and network analytics with automated intelligence.
 
 TSDR Architecture
 -----------------
@@ -54,22 +54,22 @@ Layer. The TSDR Persistence Layer provides generic Service APIs allowing
 various data stores to be plugged in. The Data Aggregation Service
 aggregates time series fine-grained raw data into course-grained roll-up
 data to control the size of the data. The Data Purging Service
-periodically purges both fine-grained raw data and course-granined
+periodically purges both fine-grained raw data and course-grained
 aggregated data according to user-defined schedules.
 
-We have implemented The Data Collection Service, Data Storage Service,
-TSDR Persistence Layer, TSDR HSQLDB Data Store, TSDR HBase Data Store,
-and TSDR Cassandra Datastore. Among these services and components, time
-series data is communicated using a common TSDR data model, which is
-designed and implemented for the abstraction of time series data
-commonalities. With these functions, TSDR is able to collect the data
-from the data sources and store them into one of the TSDR data stores:
-HSQLDB Data Store, HBase Data Store or Cassandra Data Store. Besides a
-simple query command from Karaf console to retrieve data from the TSDR
-data stores, we also provided a Data Query Service for the user to use
-REST API to query the data from the data stores. Moreover, the user can
-use Grafana, which is a time series visualization tool to view the data
-stored in TSDR in various charting formats.
+TSDR provides component-based services on a common data model. These
+services include the data collection service, data storage service and
+data query service.  The TSDR data storage service supports HSQLDB
+(the default datastore), HBASE and Cassandra datastores.  Between these
+services and components, time series data is communicated using a common
+TSDR data model.  This data model is designed around the abstraction of
+time series data commonalities. With these services, TSDR is able
+to collect the data from the data sources and store them into one of
+the TSDR data stores; HSQLDB, HBase and Cassandra datastores.  Data can
+be retrieved with the Data Query service using the default OpenDaylight
+RestConf interface or its ODL API interface.  TSDR also has integrated
+support for ElasticSearch capabilities.  TSDR data can also be viewed
+directly with Grafana for time series visualization or various chart formats.
 
 Configuring TSDR Data Stores
 ----------------------------
@@ -221,20 +221,23 @@ associated feature install commands:
 
        feature:install odl-tsdr-openflow-statistics-collector
 
--  SNMP Data Collector
-
-   ::
-
-       feature:install odl-tsdr-snmp-data-collector
-
 -  NetFlow Data Collector
 
    ::
 
        feature:install odl-tsdr-netflow-statistics-collector
 
--  sFlow Data Collector feature:install
-   odl-tsdr-sflow-statistics-colletor
+-  sFlow Data Collector
+
+   ::
+
+       feature:install odl-tsdr-sflow-statistics-colletor
+
+-  SNMP Data Collector
+
+   ::
+
+       feature:install odl-tsdr-snmp-data-collector
 
 -  Syslog Data Collector
 
@@ -247,6 +250,13 @@ associated feature install commands:
    ::
 
        feature:install odl-tsdr-controller-metrics-collector
+
+-  Web Activity Collector
+
+   ::
+
+       feature:install odl-tsdr-restconf-collector
+
 
 In order to use controller metrics collector, the user needs to install
 Sigar library.
@@ -417,6 +427,8 @@ application/json" "http://localhost:8181/tsdr/logs/query"
 --data-urlencode "tsdrkey=[NID=][DC=NETFLOW][RK=]" --data-urlencode
 "from=0" --data-urlencode "until=240000000000"\|more
 
+ElasticSearch Integration and use
+
 Grafana integration with TSDR
 -----------------------------
 
@@ -492,7 +504,7 @@ Instructions
          *remote,ip=172.17.252.210,port=6653* --switch
          ovsk,protocols=OpenFlow13
 
--  Install tsdr hbase feature from Karaf:
+-  Install TSDR hbase feature from Karaf:
 
    -  feature:install odl-tsdr-hbase
 
@@ -511,6 +523,164 @@ from the HBase Data Store. If there are too many rows, you can use
 By tabbing after "tsdr:list", you will see all the supported data
 categories. For example, "tsdr:list FlowStats" will output the Flow
 statistics data collected from the switch(es).
+
+
+ElasticSearch
+-------------
+
+Setting Up the environment
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To setup and run the TSDR data store ElasticSearch feature, you need to have
+an ElasticSearch node (or a cluster of such nodes) running. You can use a
+customized ElasticSearch docker image for this purpose.
+
+Your ElasticSearch setup must have the "Delete By Query Plugin" installed.
+Without this, some of the elk functionality won't work properly.
+
+Note: for the remainder of this document, we will use "elk" to refer to the
+TSDR data store ElasticSearch feature.
+
+Creating a custom ElasticSearch docker image
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+(You can skip this section if you already have an instance of ElasticSearch running)
+
+- Run the following set of commands:
+   - cat << EOF > Dockerfile FROM elasticsearch:2
+
+   - RUN /usr/share/elasticsearch/bin/plugin install --batch delete-by-query EOF
+
+To build the image, run the following command in the directory where the Dockerfile was created:
+- docker build . -t elasticsearch-dd
+
+You can check whether the image was properly created by running:
+- docker images
+
+This should print all your container images including the elasticsearch-dd.
+
+Now we can create and run a container from our image by typing:
+
+- docker run -d -p 9200:9200 -p 9300:9300 --name elk-dd elasticsearch-dd
+
+To see whether the container is running, run the following command:
+
+- docker ps
+
+The output should include a row with elk-dd in the NAMES column.
+To check the std out of this container use
+
+- docker logs elk-dd
+
+Installing the Frinx distribution
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For testing you can use your own ODL distibution or use the Frinx distribution.
+
+You can use a Frinx distribution for testing.
+Follow this link for instructions on downloading and installing the Frinx
+distribution.
+
+Refer to URL:
+https://frinx.io/frinx-documents/frinx-odl-base-feature-content-rel-1-4-1.html
+
+Running the ElasticSearch feature
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Once the features have been installed, you can change some of its properties. For
+example, to setup the url where your ElasticSearch installation runs,
+change the serverUrl parameter in the tsdr-persistence-elasticsearch.properties file.
+
+All the data are stored into the tsdr index under a type. The metric data are
+stored under the metric type and the log data are store under the log type.
+You can modify the tsdr-persistence-elasticsearch_metric_mapping.json or the
+tsdr-persistence-elasticsearch_log_mapping.json file to change or tune the
+mapping for those types. The changes in those files will be promoted after
+the feature is reloaded or the distribution is restarted.
+All the configuration files are located int the etc directory of the distribution.
+
+Testing the setup
+~~~~~~~~~~~~~~~~~
+
+We can now test whether the setup is correct by downloading and installing mininet,
+which we use to send some data to the running ElasticSearch instance.
+
+- Installing the necessary features
+
+   - start Opendaylight
+
+   - feature:install odl-restconf odl-l2switch-switch odl-tsdr-core odl-tsdr-openflow-statistics-collector
+
+   - feature:install odl-tsdr-elasticsearch
+
+We can check whether the distribution is now listening on port 6653:
+
+- netstat -an | grep 66
+
+- Run mininet
+
+   - sudo mn --topo single,3 --controller 'remote,ip=distro_ip,port=6653' --switch ovsk,protocols=OpenFlow13
+
+where the distro_ip is the IP address of the machine where the Frinx distribution is running. This command will create three hosts connected to one OpenFlow capable switch.
+
+We can check if data was stored by ElasticSearch in TSDR by running the
+following command:
+
+- tsdr:list FLOWTABLESTATS
+
+The output should look similar to the following:
+[NID=openflow:1][DC=FLOWTABLESTATS][MN=ActiveFlows][RK=Node:openflow:1,Table:50][TS=1473427383598][3]
+[NID=openflow:1][DC=FLOWTABLESTATS][MN=PacketMatch][RK=Node:openflow:1,Table:50][TS=1473427383598][12]
+[NID=openflow:1][DC=FLOWTABLESTATS][MN=PacketLookup][RK=Node:openflow:1,Table:50][TS=1473427383598][12]
+[NID=openflow:1][DC=FLOWTABLESTATS][MN=ActiveFlows][RK=Node:openflow:1,Table:80][TS=1473427383598][3]
+[NID=openflow:1][DC=FLOWTABLESTATS][MN=PacketMatch][RK=Node:openflow:1,Table:80][TS=1473427383598][17]
+[NID=openflow:1][DC=FLOWTABLESTATS][MN=PacketMatch][RK=Node:openflow:1,Table:246][TS=1473427383598][19]
+...
+
+- Or you can query your ElasticSearch instance:
+
+   ::
+
+      curl -XPOST "http://elasticseach_ip:9200/_search?pretty" -d'{ "from": 0, "size": 10000, "query": { "match_all": {} } }'
+
+The elasticseach_ip is the IP address of the server where the ElasticSearch is running.
+
+
+Web Activity Collector
+----------------------
+
+The Web Activity Collector runs like any other TSDR collector and is also
+configurable to reduce the amount of collected GET requests.
+
+- Start your OpenDaylight karaf instance and load your test features.
+- To start the Web Activity Collector. (RESTCONF collector)
+
+  ::
+
+    feature:install odl-restconf odl-tsdr-restconf-collector
+
+How to test the RESTCONF Collector
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Install some other feature that has a RESTCONF interface, for example. "odl-tsdr-syslog-collector"
+- Issue a RESTCONF command that uses either POST,PUT or DELETE.
+  For example, you could call the register-filter RPC of tsdr-syslog-collector.
+- Look up data in TSDR database from Karaf.
+
+  ::
+
+    tsdr:list RESTCONF
+
+- You should see the request that you have sent, along with its information (URL, HTTP method, requesting IP address and request body)
+- Try to send a GET request, then check again, your request should not be registered, because the collector does not register GET requests by default.
+- Open the file: "etc/tsdr.restconf.collector.cfg", and add GET to the list of METHODS_TO_LOG, so that it becomes:
+
+- METHODS_TO_LOG=POST,PUT,DELETE,GET
+
+   - Try again to issue your GET request, and check if it was recorded this time, it should be recorder.
+   - Try manipulating the other properties (PATHS_TO_LOG (which URLs do we want to log from), REMOTE_ADDRESSES_TO_LOG (which requesting IP addresses do we want to log from) and CONTENT_TO_LOG (what should be in the request's body in order to log it)), and see if the requests are getting logged.
+   - Try providing invalid properties (unknown methods for the METHODS_TO_LOG parameter, or the same method repeated multiple times, and invalid regular expressions for the other parameters), then check karaf's log using "log:display". It should tell you that the value is invalid, and that it will use the default value instead.
+
 
 Troubleshooting
 ---------------
