@@ -93,6 +93,30 @@
       "revId": "ccbcb22cf9fc36430858495304a5c579fc6281a9",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_5ecb191e",
+        "filename": "docs/release-process/simultaneous-release.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-14T18:26:54Z",
+      "side": 1,
+      "message": "Then if you would like to make the assumption that the user has to clone a fresh repo. Then please add steps on how to clone a fresh repo and run git review after it so that the order of operations is correct. Running `git review -s` after we\u0027ve already did a git commit will miss the git hooks and thus does not correctly added the Change-Ids to the commit messages.",
+      "parentUuid": "da01753e_32592e5b",
+      "range": {
+        "startLine": 86,
+        "startChar": 8,
+        "endLine": 86,
+        "endChar": 21
+      },
+      "revId": "ccbcb22cf9fc36430858495304a5c579fc6281a9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
