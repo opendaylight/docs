@@ -242,3 +242,132 @@ To uninstall the TSDR functionality with the Cassandra store,
      rm <cassandra-installation-directory>
 
 It is recommended to restart the Karaf container after uninstallation of the TSDR data store.
+
+ElasticSearch
+-------------
+
+Setting Up the environment
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To setup and run the TSDR data store ElasticSearch feature, you need to have
+an ElasticSearch node (or a cluster of such nodes) running. You can use a
+customized ElasticSearch docker image for this purpose.
+
+Your ElasticSearch setup must have the "Delete By Query Plugin" installed.
+Without this, some of the elk functionality won't work properly.
+
+Note: for the remainder of this document, we will use "elk" to refer to the
+TSDR data store ElasticSearch feature.
+
+Creating a custom ElasticSearch docker image
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+(You can skip this section if you already have an instance of ElasticSearch running)
+
+- Run the following set of commands:
+   - cat << EOF > Dockerfile FROM elasticsearch:2
+
+   - RUN /usr/share/elasticsearch/bin/plugin install --batch delete-by-query EOF
+
+To build the image, run the following command in the directory where the Dockerfile was created:
+- docker build . -t elasticsearch-dd
+
+You can check whether the image was properly created by running:
+- docker images
+
+This should print all your container images including the elasticsearch-dd.
+
+Now we can create and run a container from our image by typing:
+
+- docker run -d -p 9200:9200 -p 9300:9300 --name elk-dd elasticsearch-dd
+
+To see whether the container is running, run the following command:
+
+- docker ps
+
+The output should include a row with elk-dd in the NAMES column.
+To check the std out of this container use
+
+- docker logs elk-dd
+
+Installing the Frinx distribution
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For testing you can use your own ODL distibution or use the Frinx distribution.
+
+You can use a Frinx distribution for testing.
+Follow this link for instructions on downloading and installing the Frinx
+distribution.
+
+Refer to URL:
+https://frinx.io/frinx-documents/frinx-odl-base-feature-content-rel-1-4-1.html
+
+Running the ElasticSearch feature
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Once the features have been installed, you can change some of its properties. For
+example, to setup the url where your ElasticSearch installation runs,
+change the serverUrl parameter in the tsdr-persistence-elasticsearch.properties file.
+
+All the data are stored into the tsdr index under a type. The metric data are
+stored under the metric type and the log data are store under the log type.
+You can modify the tsdr-persistence-elasticsearch_metric_mapping.json or the
+tsdr-persistence-elasticsearch_log_mapping.json file to change or tune the
+mapping for those types. The changes in those files will be promoted after
+the feature is reloaded or the distribution is restarted.
+All the configuration files are located int the etc directory of the distribution.
+
+Testing the setup
+~~~~~~~~~~~~~~~~~
+We can now test whether the setup is correct by downloading and installing mininet,
+which we use to send some data to the running ElasticSearch instance.
+
+- Installing the necessary features
+
+   - start Opendaylight
+
+   - feature:install odl-restconf odl-l2switch-switch odl-tsdr-core odl-tsdr-openflow-statistics-collector
+
+   - feature:install odl-tsdr-elasticsearch
+
+We can check whether the distribution is now listening on port 6653:
+
+- netstat -an | grep 66
+
+- Run mininet
+
+   - sudo mn --topo single,3 --controller 'remote,ip=distro_ip,port=6653' --switch ovsk,protocols=OpenFlow13
+
+where the distro_ip is the IP address of the machine where the Frinx distribution is running. This command will create three hosts connected to one OpenFlow capable switch.
+
+We can check if data was stored by ElasticSearch in TSDR by running the
+following command:
+
+- tsdr:list FLOWTABLESTATS
+
+The output should look similar to the following:
+[NID=openflow:1][DC=FLOWTABLESTATS][MN=ActiveFlows][RK=Node:openflow:1,Table:50][TS=1473427383598][3]
+[NID=openflow:1][DC=FLOWTABLESTATS][MN=PacketMatch][RK=Node:openflow:1,Table:50][TS=1473427383598][12]
+[NID=openflow:1][DC=FLOWTABLESTATS][MN=PacketLookup][RK=Node:openflow:1,Table:50][TS=1473427383598][12]
+[NID=openflow:1][DC=FLOWTABLESTATS][MN=ActiveFlows][RK=Node:openflow:1,Table:80][TS=1473427383598][3]
+[NID=openflow:1][DC=FLOWTABLESTATS][MN=PacketMatch][RK=Node:openflow:1,Table:80][TS=1473427383598][17]
+[NID=openflow:1][DC=FLOWTABLESTATS][MN=PacketMatch][RK=Node:openflow:1,Table:246][TS=1473427383598][19]
+...
+
+Or you can query your ElasticSearch instance:
+
+- curl -XPOST "http://elasticseach_ip:9200/_search?pretty" -d'{ "from": 0, "size": 10000, "query": { "match_all": {} } }'
+
+The elasticseach_ip is the IP address of the server where the ElasticSearch is running.
+
+
+Web Activity Collector
+----------------------
+
+The Web Activity Collector records the meaningful REST requests made through the
+OpenDaylight RESTCONF interface.
+
+
+
+
+
