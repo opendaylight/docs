@@ -242,3 +242,6 @@ To uninstall the TSDR functionality with the Cassandra store,
      rm <cassandra-installation-directory>
 
 It is recommended to restart the Karaf container after uninstallation of the TSDR data store.
+
+
+.. include:: ../../user-guide/tsdr-elastic-search.rst

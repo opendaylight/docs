@@ -3,8 +3,8 @@ TSDR User Guide
 
 This document describes how to use HSQLDB, HBase, and Cassandra data
 stores to capture time series data using Time Series Data Repository
-(TSDR) features in OpenDaylight. This document contains configuration,
-administration, management, usage, and troubleshooting sections for the
+(TSDR) features in OpenDaylight.  This document contains configuration,
+administration, management, usage, and troubleshooting sections for these
 features.
 
 Overview
@@ -12,19 +12,19 @@ Overview
 
 The Time Series Data Repository (TSDR) project in OpenDaylight (ODL)
 creates a framework for collecting, storing, querying, and maintaining
-time series data. TSDR provides the framework for plugging in proper
+time series data.  TSDR provides the framework for plugging in
 data collectors to collect various time series data and store the data
 into TSDR Data Stores. With a common data model and generic TSDR data
 persistence APIs, the user can choose various data stores to be plugged
 into the TSDR persistence framework. Currently, three types of data
-stores are supported: HSQLDB relational database, HBase NoSQL database,
-and Cassandra NoSQL database.
+stores are supported: HSQLDB relational database (default installed),
+HBase NoSQL database and Cassandra NoSQL database.
 
 With the capabilities of data collection, storage, query, aggregation,
 and purging provided by TSDR, network administrators can leverage
-various data driven appliations built on top of TSDR for security risk
+various data driven applications built on top of TSDR for security risk
 detection, performance analysis, operational configuration optimization,
-traffic engineering, and network analytics with automated intelligence.
+traffic engineering and network analytics with automated intelligence.
 
 TSDR Architecture
 -----------------
@@ -54,22 +54,22 @@ Layer. The TSDR Persistence Layer provides generic Service APIs allowing
 various data stores to be plugged in. The Data Aggregation Service
 aggregates time series fine-grained raw data into course-grained roll-up
 data to control the size of the data. The Data Purging Service
-periodically purges both fine-grained raw data and course-granined
+periodically purges both fine-grained raw data and course-grained
 aggregated data according to user-defined schedules.
 
-We have implemented The Data Collection Service, Data Storage Service,
-TSDR Persistence Layer, TSDR HSQLDB Data Store, TSDR HBase Data Store,
-and TSDR Cassandra Datastore. Among these services and components, time
-series data is communicated using a common TSDR data model, which is
-designed and implemented for the abstraction of time series data
-commonalities. With these functions, TSDR is able to collect the data
-from the data sources and store them into one of the TSDR data stores:
-HSQLDB Data Store, HBase Data Store or Cassandra Data Store. Besides a
-simple query command from Karaf console to retrieve data from the TSDR
-data stores, we also provided a Data Query Service for the user to use
-REST API to query the data from the data stores. Moreover, the user can
-use Grafana, which is a time series visualization tool to view the data
-stored in TSDR in various charting formats.
+TSDR provides component-based services on a common data model. These
+services include the data collection service, data storage service and
+data query service.  The TSDR data storage service supports HSQLDB
+(the default datastore), HBASE and Cassandra datastores.  Between these
+services and components, time series data is communicated using a common
+TSDR data model.  This data model is designed around the abstraction of
+time series data commonalities. With these services, TSDR is able
+to collect the data from the data sources and store them into one of
+the TSDR data stores; HSQLDB, HBase and Cassandra datastores.  Data can
+be retrieved with the Data Query service using the default OpenDaylight
+RestConf interface or its ODL API interface.  TSDR also has integrated
+support for ElasticSearch capabilities.  TSDR data can also be viewed
+directly with Grafana for time series visualization or various chart formats.
 
 Configuring TSDR Data Stores
 ----------------------------
@@ -221,20 +221,23 @@ associated feature install commands:
 
        feature:install odl-tsdr-openflow-statistics-collector
 
--  SNMP Data Collector
-
-   ::
-
-       feature:install odl-tsdr-snmp-data-collector
-
 -  NetFlow Data Collector
 
    ::
 
        feature:install odl-tsdr-netflow-statistics-collector
 
--  sFlow Data Collector feature:install
-   odl-tsdr-sflow-statistics-colletor
+-  sFlow Data Collector
+
+   ::
+
+       feature:install odl-tsdr-sflow-statistics-colletor
+
+-  SNMP Data Collector
+
+   ::
+
+       feature:install odl-tsdr-snmp-data-collector
 
 -  Syslog Data Collector
 
@@ -247,6 +250,13 @@ associated feature install commands:
    ::
 
        feature:install odl-tsdr-controller-metrics-collector
+
+-  Web Activity Collector
+
+   ::
+
+       feature:install odl-tsdr-restconf-collector
+
 
 In order to use controller metrics collector, the user needs to install
 Sigar library.
@@ -417,6 +427,8 @@ application/json" "http://localhost:8181/tsdr/logs/query"
 --data-urlencode "tsdrkey=[NID=][DC=NETFLOW][RK=]" --data-urlencode
 "from=0" --data-urlencode "until=240000000000"\|more
 
+ElasticSearch Integration and use
+
 Grafana integration with TSDR
 -----------------------------
 
@@ -492,7 +504,7 @@ Instructions
          *remote,ip=172.17.252.210,port=6653* --switch
          ovsk,protocols=OpenFlow13
 
--  Install tsdr hbase feature from Karaf:
+-  Install TSDR hbase feature from Karaf:
 
    -  feature:install odl-tsdr-hbase
 
@@ -511,6 +523,10 @@ from the HBase Data Store. If there are too many rows, you can use
 By tabbing after "tsdr:list", you will see all the supported data
 categories. For example, "tsdr:list FlowStats" will output the Flow
 statistics data collected from the switch(es).
+
+
+.. include:: tsdr-elastic-search.rst
+
 
 Troubleshooting
 ---------------
@@ -614,4 +630,3 @@ console. Then the user needs to modify the properties file under
        metric-psersistency=true
        log-persistency=false
        binary-persistency=false
-

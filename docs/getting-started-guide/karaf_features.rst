@@ -326,6 +326,7 @@ Functionality of TDSR includes:
 
 * Data Query Service - For external data-driven applications to query data from
   TSDR through REST APIs
+* ElasticSearch - Use external elastic search engine with TSDR integrated support.
 * NBI integration with Grafana - Allows visualization of data collected in TSDR
   using Grafana
 * Data Aggregation Service - Periodically aggregates raw data into larger time granularities
@@ -337,9 +338,10 @@ Functionality of TDSR includes:
 * Cassandra data store - Cassandra implementation of TSDR SPIs
 * NetFlow data collector - Collect NetFlow data from network elements
 * NetFlowV9 - version 9 Netflow collector
-* SNMP Data Collector - Integrates with SNMP plugin to bring SNMP data into TSDR
 * sFlowCollector - Collects sFlow data from network elements
+* SNMP Data Collector - Integrates with SNMP plugin to bring SNMP data into TSDR
 * Syslog data collector - Collects syslog data from network elements
+* Web Activity data collector - Collects ODL RESTCONF queries made to TSDR
 
 TSDR has multiple features to enable the functionality above. To begin,
 select one of these data stores:
@@ -352,10 +354,15 @@ Then select any “collectors” you want to use:
 
 * odl-tsdr-openflow-statistics-collector
 * odl-tsdr-netflow-statistics-collector
-* odl-tsdr-controller-metrics-collector
 * odl-tsdr-sflow-statistics-collector
+* odl-tsdr-controller-metrics-collector
 * odl-tsdr-snmp-data-collector
 * odl-tsdr-syslog-collector
+* odl-tsdr-restconf-collector
+
+Enable ElasticSearch support:
+
+* odl-tsdr-elasticsearch
 
 See these TSDR_Directions_ for more information.
 
