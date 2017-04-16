@@ -2317,45 +2317,6 @@ SFC Proof of Transit User Guide
 Overview
 ~~~~~~~~
 
-Early Service Function Chaining (SFC) Proof of Transit (SFC Proof of
-Transit) implements Service Chaining Proof of Transit functionality on
-capable switches. After the creation of an Rendered Service Path (RSP),
-a user can configure to enable SFC proof of transit on the selected RSP
-to effect the proof of transit.
-
-Common acronyms used in the following sections:
-
--  SF - Service Function
-
--  SFF - Service Function Forwarder
-
--  SFC - Service Function Chain
-
--  SFP - Service Function Path
-
--  RSP - Rendered Service Path
-
--  SFCPOT - Service Function Chain Proof of Transit
-
-SFC Proof of Transit Architecture
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-When SFC Proof of Transit is initialized, all required listeners are
-registered to handle incoming data. It involves ``SfcPotNodeListener``
-which stores data about all node devices including their mountpoints
-(used here as databrokers), ``SfcPotRSPDataListener``,
-``RenderedPathListener``. ``RenderedPathListener`` is used to listen for
-RSP changes. ``SfcPotRSPDataListener`` implements RPC services to enable
-or disable SFC Proof of Transit on a particular RSP. When the SFC Proof
-of Transit is invoked, RSP listeners and service implementations are
-setup to receive SFCPOT configurations. When a user configures via a
-POST RPC call to enable SFCPOT on a particular RSP, the configuration
-drives the creation of necessary augmentations to the RSP to effect the
-SFCPOT configurations.
-
-SFC Proof of Transit details
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 Several deployments use traffic engineering, policy routing, segment
 routing or service function chaining (SFC) to steer packets through a
 specific set of nodes. In certain cases regulatory obligations or a
@@ -2370,19 +2331,72 @@ would be required to identify the policy violation and take
 corresponding actions (e.g. drop or redirect the packet, send an alert
 etc.) corresponding to the policy.
 
-The SFCPOT approach is based on meta-data which is added to every
-packet. The meta data is updated at every hop and is used to verify
-whether a packet traversed all required nodes. A particular path is
-either described by a set of secret keys, or a set of shares of a single
-secret. Nodes on the path retrieve their individual keys or shares of a
-key (using for e.g. Shamir’s Shared Sharing Secret scheme) from a
-central controller. The complete key set is only known to the verifier-
-which is typically the ultimate node on a path that requires proof of
-transit. Each node in the path uses its secret or share of the secret to
-update the meta-data of the packets as the packets pass through the
-node. When the verifier receives a packet, it can use its key(s) along
-with the meta-data to validate whether the packet traversed the service
-chain correctly.
+Service Function Chaining (SFC) Proof of Transit (SFC PoT)
+implements Service Chaining Proof of Transit functionality on capable
+network devices.  Proof of Transit defines mechanisms to securely
+prove that traffic transited the defined path.  After the creation of an
+Rendered Service Path (RSP), a user can configure to enable SFC proof
+of transit on the selected RSP to effect the proof of transit.
+
+To ensure that the data traffic follows a specified path or a function
+chain, meta-data is added to user traffic in the form of a header.  The
+meta-data is based on a 'share of a secret' and provisioned by the SFC
+PoT configuration from ODL over a secure channel to each of the nodes
+in the SFC.  This meta-data is updated at each of the service-hop while
+a designated node called the verifier checks whether the collected
+meta-data allows the retrieval of the secret.
+
+The following diagram shows the overview and essentially utilizes Shamir's
+secret sharing algorithm, where each service is given a point on the
+curve and when the packet travels through each service, it collects these
+points (meta-data) and a verifier node tries to re-construct the curve
+using the collected points, thus verifying that the packet traversed
+through all the service functions along the chain.
+
+.. figure:: ./images/sfc/sfc-pot-intro.png
+   :alt: SFC Proof of Transit overview
+
+   SFC Proof of Transit overview
+
+Transport options for different protocols includes a new TLV in SR header
+for Segment Routing, NSH Type-2 meta-data, IPv6 extension headers, IPv4
+variants and for VXLAN-GPE.  More details are captured in the following
+link.
+
+In-situ OAM: https://github.com/CiscoDevNet/iOAM
+
+Common acronyms used in the following sections:
+
+-  SF - Service Function
+
+-  SFF - Service Function Forwarder
+
+-  SFC - Service Function Chain
+
+-  SFP - Service Function Path
+
+-  RSP - Rendered Service Path
+
+-  SFC PoT - Service Function Chain Proof of Transit
+
+
+SFC Proof of Transit Architecture
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+SFC PoT feature is implemented as a two-part implementation with a
+north-bound handler that augments the RSP while a south-bound renderer
+auto-generates the required parameters and passes it on to the nodes
+that belong to the SFC.
+
+The north-bound feature is enabled via odl-sfc-pot feature while the
+south-bound renderer is enabled via the odl-sfc-pot-netconf-renderer
+feature.  For the purposes of SFC PoT handling, both features must be
+installed.
+
+RPC handlers to augment the RSP are part of ``SfcPotRpc`` while the
+RSP augmentation to enable or disable SFC PoT feature is done via
+``SfcPotRspProcessor``.
+
 
 SFC Proof of Transit entities
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2393,15 +2407,10 @@ Proof of Transit for a particular RSP is enabled by an RPC request to
 the controller along with necessary parameters to control some of the
 aspects of the SFC Proof of Transit process.
 
-The RPC handler identifies the RSP and generates SFC Proof of Transit
-parameters like secret share, secret etc., and adds the generated SFCPOT
-configuration parameters to SFC main as well as the various SFC hops.
-The last node in the SFC is configured as a verifier node to allow
-SFCPOT Proof of Transit process to be completed.
-
-The SFCPOT configuration generators and related handling are done by
-``SfcPotAPI``, ``SfcPotConfigGenerator``, ``SfcPotListener``,
-``SfcPotPolyAPI``, ``SfcPotPolyClassAPI`` and ``SfcPotPolyClass``.
+The RPC handler identifies the RSP and adds PoT feature meta-data like
+enable/disable, number of PoT profiles, profiles refresh parameters etc.,
+that directs the south-bound renderer appropriately when RSP changes
+are noticed via call-backs in the renderer handlers.
 
 Administering SFC Proof of Transit
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2423,6 +2432,10 @@ features must be installed:
 
 -  odl-sfc-pot
 
+Please note that the odl-sfc-pot-netconf-renderer or other renderers in future
+must be installed for the feature to take full-effect.  The details of the renderer
+features are described in other parts of this document.
+
 SFC Proof of Transit Tutorial
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -2436,10 +2449,13 @@ Preconditions
 ^^^^^^^^^^^^^
 
 To enable a device to handle SFC Proof of Transit, it is expected that
-the netconf server device advertise capability as under ioam-scv.yang
-present under src/main/yang folder of sfc-pot feature. It is also
-expected that netconf notifications be enabled and its support
-capability advertised as capabilities.
+the NETCONF node device advertise capability as under ioam-sb-pot.yang
+present under sfc-model/src/main/yang folder. It is also expected that base
+NETCONF support be enabled and its support capability advertised as capabilities.
+
+NETCONF support:``urn:ietf:params:netconf:base:1.0``
+
+PoT support: ``(urn:cisco:params:xml:ns:yang:sfc-ioam-sb-pot?revision=2017-01-12)sfc-ioam-sb-pot``
 
 It is also expected that the devices are netconf mounted and available
 in the topology-netconf store.
@@ -2447,39 +2463,143 @@ in the topology-netconf store.
 Instructions
 ^^^^^^^^^^^^
 
-When SFC Proof of Transit is installed, all netconf nodes in
-topology-netconf are processed and all capable nodes with accessible
-mountpoints are cached.
+When SFC Proof of Transit is installed, all netconf nodes in topology-netconf
+are processed and all capable nodes with accessible mountpoints are cached.
 
-First step is to create the required RSP as usually done.
+First step is to create the required RSP as is usually done using RSP creation
+steps in SFC main.
 
 Once RSP name is available it is used to send a POST RPC to the
 controller similar to below:
 
-::
+POST -
+http://ODL-IP:8181/restconf/operations/sfc-ioam-nb-pot:enable-sfc-ioam-pot-rendered-path/
 
-    POST ./restconf/operations/sfc-ioam-nb-pot:enable-sfc-ioam-pot-rendered-path
+.. code-block:: json
 
     {
-      "input": {
-        "sfc-ioam-pot-rsp-name": "rsp1"
-      }
+        "input":
+        {
+            "sfc-ioam-pot-rsp-name": "sfc-path-3sf3sff",
+            "ioam-pot-enable":true,
+            "ioam-pot-num-profiles":2,
+            "ioam-pot-bit-mask":"bits32",
+            "refresh-period-time-units":"milliseconds",
+            "refresh-period-value":5000
+        }
     }
 
 The following can be used to disable the SFC Proof of Transit on an RSP
-which removes the augmentations and stores back the RSP without the
-SFCPOT enabled features and also sending down a delete configuration to
-the SFCPOT configuration sub-tree in the nodes.
+which disables the PoT feature.
 
-::
+POST -
+http://ODL-IP:8181/restconf/operations/sfc-ioam-nb-pot:disable-sfc-ioam-pot-rendered-path/
 
-    POST ./restconf/operations/sfc-ioam-nb-pot:disable-sfc-ioam-pot-rendered-path
+.. code-block:: json
 
     {
-      "input": {
-        "sfc-ioam-pot-rsp-name": "rsp1"
-      }
+        "input":
+        {
+            "sfc-ioam-pot-rsp-name": "sfc-path-3sf3sff",
+        }
     }
+
+SFC PoT NETCONF Renderer User Guide
+-----------------------------------
+
+Overview
+~~~~~~~~
+
+The SFC Proof of Transit (PoT) NETCONF renderer implements SFC Proof of
+Transit functionality on NETCONF-capable devices, that have advertised
+support for in-situ OAM (iOAM) support.
+
+It listens for an update to an existing RSP with enable or disable proof of
+transit support and adds the auto-generated SFC PoT configuration parameters
+to all the SFC hop nodes.  The last node in the SFC is configured as a
+verifier node to allow SFC PoT process to be completed.
+
+Common acronyms are used as below:
+
+- SF - Service Function
+
+- SFC - Service Function Chain
+
+- RSP - Rendered Service Path
+
+- SFF - Service Function Forwarder
+
+
+Mapping to SFC entities
+~~~~~~~~~~~~~~~~~~~~~~~
+
+The renderer module listens to RSP updates in ``SfcPotNetconfRSPListener``
+and triggers configuration generation in ``SfcPotNetconfIoam`` class.  Node
+arrival and leaving are managed via ``SfcPotNetconfNodeManager`` and
+``SfcPotNetconfNodeListener``.  In addition there is a timer thread that
+runs to generate configuration periodically to refresh the profiles in the
+nodes that are part of the SFC.
+
+
+Administering SFC PoT NETCONF Renderer
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To use the SFC Proof of Transit Karaf, the following Karaf features must
+be installed:
+
+-  odl-sfc-model
+
+-  odl-sfc-provider
+
+-  odl-sfc-netconf
+
+-  odl-restconf-all
+
+-  odl-netconf-topology
+
+-  odl-netconf-connector-all
+
+-  odl-sfc-pot
+
+-  odl-sfc-pot-netconf-renderer
+
+
+SFC PoT NETCONF Renderer Tutorial
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Overview
+^^^^^^^^
+
+This tutorial is a simple example how to enable SFC PoT on NETCONF-capable
+devices.
+
+Preconditions
+^^^^^^^^^^^^^
+
+The NETCONF-capable device will have to support sfc-ioam-sb-pot.yang file.
+
+It is expected that a NETCONF-capable VPP device has Honeycomb (Hc2vpp)
+Java-based agent that helps to translate between NETCONF and VPP internal
+APIs.
+
+More details are here:
+In-situ OAM: https://github.com/CiscoDevNet/iOAM
+
+Steps
+^^^^^
+When the SFC PoT NETCONF renderer module is installed, all NETCONF nodes in
+topology-netconf are processed and all sfc-ioam-sb-pot yang capable nodes
+with accessible mountpoints are cached.
+
+The first step is to create RSP for the SFC as per SFC guidelines above.
+
+Enable SFC PoT is done on the RSP via RESTCONF to the ODL as outlined above.
+
+Internally, the NETCONF renderer will act on the callback to a modified RSP
+that has PoT enabled.
+
+In-situ OAM algorithms for auto-generation of SFC PoT parameters are
+generated automatically and sent to these nodes via NETCONF.
 
 Logical Service Function Forwarder
 ----------------------------------
@@ -2913,5 +3033,3 @@ This picture shows the SFC pipeline after service integration with Genius:
    :alt: SFC Logical SFF OpenFlow pipeline
 
    SFC Logical SFF OpenFlow pipeline
-
-
