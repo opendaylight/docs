@@ -1,0 +1,164 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da01753e_357d93b2",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 416,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T00:25:23Z",
+      "side": 1,
+      "message": "Surround with backticks so that it appears as a command.\n\n``feature:install odl-sfc-pot``",
+      "range": {
+        "startLine": 416,
+        "startChar": 16,
+        "endLine": 416,
+        "endChar": 43
+      },
+      "revId": "2dc530766dd3c146ab2ac074fc19596f42488ad0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_954b9f86",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 418,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T00:25:23Z",
+      "side": 1,
+      "message": "Surround with backticks so that it appears as a command.",
+      "range": {
+        "startLine": 418,
+        "startChar": 33,
+        "endLine": 418,
+        "endChar": 77
+      },
+      "revId": "2dc530766dd3c146ab2ac074fc19596f42488ad0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_d5452771",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 424,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T00:25:23Z",
+      "side": 1,
+      "message": "I\u0027m not sure how to improve the below but imo the list of wall text is very difficult to read.\n\nSee:\nhttps://logs.opendaylight.org/releng/jenkins092/docs-verify-rtd-nitrogen/54/archives/docs/_build/html/developer-guide/service-function-chaining.html#details",
+      "range": {
+        "startLine": 424,
+        "startChar": 0,
+        "endLine": 424,
+        "endChar": 48
+      },
+      "revId": "2dc530766dd3c146ab2ac074fc19596f42488ad0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_754efb97",
+        "filename": "docs/developer-guide/service-function-chaining.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 439,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T00:25:23Z",
+      "side": 1,
+      "message": "Notes in Sphinx are done via the \".. note::\" directive.",
+      "range": {
+        "startLine": 438,
+        "startChar": 31,
+        "endLine": 439,
+        "endChar": 64
+      },
+      "revId": "2dc530766dd3c146ab2ac074fc19596f42488ad0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_75355bf6",
+        "filename": "docs/user-guide/service-function-chaining.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 2478,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T00:25:23Z",
+      "side": 1,
+      "message": ".. code-block:: json",
+      "revId": "2dc530766dd3c146ab2ac074fc19596f42488ad0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_95327f0e",
+        "filename": "docs/user-guide/service-function-chaining.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 2481,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T00:25:23Z",
+      "side": 1,
+      "message": "trailing whitespace",
+      "revId": "2dc530766dd3c146ab2ac074fc19596f42488ad0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_b53fc3d5",
+        "filename": "docs/user-guide/service-function-chaining.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 2498,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T00:25:23Z",
+      "side": 1,
+      "message": ".. code-block:: json",
+      "revId": "2dc530766dd3c146ab2ac074fc19596f42488ad0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_d53c07e5",
+        "filename": "docs/user-guide/service-function-chaining.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 2501,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T00:25:23Z",
+      "side": 1,
+      "message": "trailing whitespace.",
+      "revId": "2dc530766dd3c146ab2ac074fc19596f42488ad0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
