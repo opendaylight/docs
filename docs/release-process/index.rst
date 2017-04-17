@@ -19,5 +19,6 @@ Processes
 
    autorelease
    project-lifecycle
+   namespace
    branch-cutting
    simultaneous-release
