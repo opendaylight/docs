@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da01753e_28a9b67b",
+        "filename": "docs/release-process/branch-cutting.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T02:50:50Z",
+      "side": 1,
+      "message": "NEXT is probably a better word here.",
+      "range": {
+        "startLine": 19,
+        "startChar": 14,
+        "endLine": 19,
+        "endChar": 25
+      },
+      "revId": "191ce9b71979ee7e0c08fab3ff0516d51d38bab3",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_4877da3a",
+        "filename": "docs/release-process/branch-cutting.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T02:50:50Z",
+      "side": 1,
+      "message": "different",
+      "range": {
+        "startLine": 24,
+        "startChar": 24,
+        "endLine": 24,
+        "endChar": 33
+      },
+      "revId": "191ce9b71979ee7e0c08fab3ff0516d51d38bab3",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_28725649",
+        "filename": "docs/release-process/branch-cutting.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T02:50:50Z",
+      "side": 1,
+      "message": "I probably wouldn\u0027t mark this as another step but rather a continuation of the previous step. So if you prefix with 2 spaces it will be inside of the same section as the previous step.",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 43,
+        "endChar": 1
+      },
+      "revId": "191ce9b71979ee7e0c08fab3ff0516d51d38bab3",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_6893be4f",
+        "filename": "docs/release-process/branch-cutting.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T02:50:50Z",
+      "side": 1,
+      "message": "${CURR_RELEASE,,}",
+      "range": {
+        "startLine": 90,
+        "startChar": 42,
+        "endLine": 90,
+        "endChar": 47
+      },
+      "revId": "191ce9b71979ee7e0c08fab3ff0516d51d38bab3",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_a89da65b",
+        "filename": "docs/release-process/branch-cutting.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T02:50:50Z",
+      "side": 1,
+      "message": "${NEXT_RELEASE,,}\n\nI\u0027d probably spell out branch-cut too. It might not be obvious to the reader that br means branch.",
+      "range": {
+        "startLine": 96,
+        "startChar": 45,
+        "endLine": 96,
+        "endChar": 53
+      },
+      "revId": "191ce9b71979ee7e0c08fab3ff0516d51d38bab3",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_e89e8e53",
+        "filename": "docs/release-process/branch-cutting.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T02:50:50Z",
+      "side": 1,
+      "message": "same as above.",
+      "range": {
+        "startLine": 100,
+        "startChar": 22,
+        "endLine": 100,
+        "endChar": 37
+      },
+      "revId": "191ce9b71979ee7e0c08fab3ff0516d51d38bab3",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_a8b486d1",
+        "filename": "docs/release-process/branch-cutting.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T02:50:50Z",
+      "side": 1,
+      "message": "One needs to activate the the virtualenv before running pip install otherwise pip installs to the system libraries rather than into the virtualenv.\n\nIf we\u0027re going to document how to activate a virutualenv we should document how to create one too.",
+      "range": {
+        "startLine": 111,
+        "startChar": 8,
+        "endLine": 111,
+        "endChar": 45
+      },
+      "revId": "191ce9b71979ee7e0c08fab3ff0516d51d38bab3",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}

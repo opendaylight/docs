@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da01753e_e877ae39",
+        "filename": "docs/release-process/branch-cutting.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T02:50:50Z",
+      "side": 0,
+      "message": "I don\u0027t like that these markers are being removed. It clearly identifies for each step which group of people can be called in to help with this step. Usually it\u0027s an LF releng person but I don\u0027t want LF to become the single point of failure for these tasks. It\u0027s nice to have clearly identifiable groups of people that the community can call in when the release engineer is not available. This was the purpose of why we had **(GROUP)** for every step.",
+      "range": {
+        "startLine": 18,
+        "startChar": 2,
+        "endLine": 18,
+        "endChar": 33
+      },
+      "revId": "4f24c4c4489b1c7b648eb6e5059c1adbda19baca",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
