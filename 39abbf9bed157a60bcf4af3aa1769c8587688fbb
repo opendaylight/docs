@@ -1,0 +1,642 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da01753e_a8800647",
+        "filename": "docs/getting-started-guide/installing_opendaylight.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T01:18:28Z",
+      "side": 1,
+      "message": "Should be colon.",
+      "range": {
+        "startLine": 351,
+        "startChar": 12,
+        "endLine": 351,
+        "endChar": 13
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_48ba3a24",
+        "filename": "docs/getting-started-guide/installing_opendaylight.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T01:18:28Z",
+      "side": 1,
+      "message": "This would be more readable as a list.",
+      "range": {
+        "startLine": 351,
+        "startChar": 15,
+        "endLine": 352,
+        "endChar": 74
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_28b53631",
+        "filename": "docs/getting-started-guide/installing_opendaylight.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T01:18:28Z",
+      "side": 1,
+      "message": "Lists usually start with a colon rather than a semi-colon.",
+      "range": {
+        "startLine": 353,
+        "startChar": 47,
+        "endLine": 353,
+        "endChar": 48
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_68861e67",
+        "filename": "docs/getting-started-guide/installing_opendaylight.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T01:18:28Z",
+      "side": 1,
+      "message": "This would be more readable as a list.",
+      "range": {
+        "startLine": 361,
+        "startChar": 16,
+        "endLine": 362,
+        "endChar": 75
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_c87d8a70",
+        "filename": "docs/getting-started-guide/installing_opendaylight.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 373,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T01:18:28Z",
+      "side": 1,
+      "message": "Should be colon.",
+      "range": {
+        "startLine": 373,
+        "startChar": 58,
+        "endLine": 373,
+        "endChar": 59
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_08979291",
+        "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T01:18:28Z",
+      "side": 1,
+      "message": "Use the note directive:\n\n.. note::",
+      "range": {
+        "startLine": 259,
+        "startChar": 0,
+        "endLine": 259,
+        "endChar": 4
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_e8916e9b",
+        "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T01:18:28Z",
+      "side": 1,
+      "message": "This isn\u0027t a list so shouldn\u0027t start with a dash here.",
+      "range": {
+        "startLine": 267,
+        "startChar": 0,
+        "endLine": 267,
+        "endChar": 1
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_48919a98",
+        "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T01:18:28Z",
+      "side": 1,
+      "message": "This would look better as a code-block:\n\n.. code-block:: bash",
+      "range": {
+        "startLine": 268,
+        "startChar": 0,
+        "endLine": 270,
+        "endChar": 80
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_288c167f",
+        "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T01:18:28Z",
+      "side": 1,
+      "message": "code-block",
+      "range": {
+        "startLine": 273,
+        "startChar": 2,
+        "endLine": 273,
+        "endChar": 36
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_88ea620d",
+        "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T01:18:28Z",
+      "side": 1,
+      "message": "code-block",
+      "range": {
+        "startLine": 276,
+        "startChar": 2,
+        "endLine": 276,
+        "endChar": 15
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_68ed7e25",
+        "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T01:18:28Z",
+      "side": 1,
+      "message": "code-block",
+      "range": {
+        "startLine": 282,
+        "startChar": 2,
+        "endLine": 282,
+        "endChar": 72
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_c8f46af4",
+        "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T01:18:28Z",
+      "side": 1,
+      "message": "code-block",
+      "range": {
+        "startLine": 286,
+        "startChar": 2,
+        "endLine": 286,
+        "endChar": 11
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_a8f766f4",
+        "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T01:18:28Z",
+      "side": 1,
+      "message": "code-block",
+      "range": {
+        "startLine": 291,
+        "startChar": 2,
+        "endLine": 291,
+        "endChar": 20
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_28e37634",
+        "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T01:18:28Z",
+      "side": 1,
+      "message": "italics for emphasis",
+      "range": {
+        "startLine": 310,
+        "startChar": 38,
+        "endLine": 310,
+        "endChar": 79
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_e8d84e81",
+        "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T01:18:28Z",
+      "side": 1,
+      "message": "italics for emphasis",
+      "range": {
+        "startLine": 310,
+        "startChar": 11,
+        "endLine": 310,
+        "endChar": 20
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_88d1c259",
+        "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T01:18:28Z",
+      "side": 1,
+      "message": "italics for emphasis",
+      "range": {
+        "startLine": 314,
+        "startChar": 19,
+        "endLine": 314,
+        "endChar": 69
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_68d45e47",
+        "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T01:18:28Z",
+      "side": 1,
+      "message": "italics for emphasis",
+      "range": {
+        "startLine": 314,
+        "startChar": 73,
+        "endLine": 315,
+        "endChar": 47
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_c8cbcaa3",
+        "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T01:18:28Z",
+      "side": 1,
+      "message": "Instead of a prefix dash have a suffix colon so that the blew line looks like a list of the above line rather than a list of lists.",
+      "range": {
+        "startLine": 326,
+        "startChar": 0,
+        "endLine": 326,
+        "endChar": 35
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_a8ce46b2",
+        "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T01:18:28Z",
+      "side": 1,
+      "message": "code-block",
+      "range": {
+        "startLine": 336,
+        "startChar": 2,
+        "endLine": 336,
+        "endChar": 23
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_08c5d28d",
+        "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T01:18:28Z",
+      "side": 1,
+      "message": "no need for prefix dash",
+      "range": {
+        "startLine": 338,
+        "startChar": 2,
+        "endLine": 338,
+        "endChar": 13
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_e8bfaefa",
+        "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T01:18:28Z",
+      "side": 1,
+      "message": "code-block",
+      "range": {
+        "startLine": 340,
+        "startChar": 5,
+        "endLine": 340,
+        "endChar": 108
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_48bfdafb",
+        "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T01:18:28Z",
+      "side": 1,
+      "message": "wrap at 80 columns",
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_28ba560a",
+        "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T01:18:28Z",
+      "side": 1,
+      "message": "code-block",
+      "range": {
+        "startLine": 347,
+        "startChar": 2,
+        "endLine": 347,
+        "endChar": 26
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_c842aa0f",
+        "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T01:18:28Z",
+      "side": 1,
+      "message": "Use a literal block",
+      "range": {
+        "startLine": 350,
+        "startChar": 0,
+        "endLine": 356,
+        "endChar": 3
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_a845a618",
+        "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T01:18:28Z",
+      "side": 1,
+      "message": "code-block",
+      "range": {
+        "startLine": 360,
+        "startChar": 2,
+        "endLine": 360,
+        "endChar": 121
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_084cb241",
+        "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 388,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T01:18:28Z",
+      "side": 1,
+      "message": "literal block",
+      "range": {
+        "startLine": 388,
+        "startChar": 2,
+        "endLine": 388,
+        "endChar": 36
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_e8468e20",
+        "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 392,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T01:18:28Z",
+      "side": 1,
+      "message": "wrap at 80 columns",
+      "range": {
+        "startLine": 390,
+        "startChar": 0,
+        "endLine": 392,
+        "endChar": 329
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_4856bad3",
+        "filename": "docs/user-guide/tsdr-user-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 529,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T01:18:28Z",
+      "side": 1,
+      "message": "This entire section is a copy of what\u0027s in the getting-started-guide we can probably do some sort of include here so that we don\u0027t retype the same stuff.",
+      "range": {
+        "startLine": 528,
+        "startChar": 0,
+        "endLine": 529,
+        "endChar": 13
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
