@@ -388,6 +388,127 @@ API Reference Documentation
 Please refer the API docs generated in the mdsal-apidocs.
 
 
+SFC Proof of Transit Developer Guide
+------------------------------------
+
+Overview
+~~~~~~~~
+SFC Proof of Transit implements the in-situ OAM (iOAM) Proof of Transit
+verification for SFCs and other paths.  The implementation is broadly
+divided into the North-bound (NB) and the South-bound (SB) side of the
+application.  The NB side is primarily charged with augmenting the RSP
+with user-inputs for enabling the PoT on the RSP, while the SB side is
+dedicated to auto-generated SFC PoT parameters, periodic refresh of these
+parameters and delivering the parameters to the NETCONF and iOAM capable
+nodes (eg. VPP instances).
+
+Architecture
+~~~~~~~~~~~~
+The following diagram gives the high level overview of the different parts.
+
+.. figure:: ./images/sfc-pot-int-arch.png
+   :alt: SFC Proof of Transit Internal Architecture
+
+   SFC Proof of Transit Internal Architecture
+
+The Proof of Transit feature is enabled by two sub-features:
+
+1. ODL SFC PoT: ``feature:install odl-sfc-pot``
+
+2. ODL SFC PoT NETCONF Renderer: ``feature:install odl-sfc-pot-netconf-renderer``
+
+
+Details
+~~~~~~~
+
+The following classes and handlers are involved.
+
+1. The class (SfcPotRpc) sets up RPC handlers for enabling the feature.
+
+2. There are new RPC handlers for two new RPCs
+   (EnableSfcIoamPotRenderedPath and DisableSfcIoamPotRenderedPath) and
+   effected via SfcPotRspProcessor class.
+
+3. When a user configures via a POST RPC call to enable Proof of Transit
+   on a particular SFC (via the Rendered Service Path), the configuration
+   drives the creation of necessary augmentations to the RSP
+   (to modify the RSP) to effect the Proof of Transit configurations.
+
+4. The augmentation meta-data added to the RSP are defined in the
+   sfc-ioam-nb-pot.yang file.
+
+   .. note::
+
+      There are no auto generated configuration parameters added to the RSP to
+      avoid RSP bloat.
+
+5. Adding SFC Proof of Transit meta-data to the RSP is done in the
+   SfcPotRspProcessor class.
+
+6. Once the RSP is updated, the RSP data listeners in the SB renderer modules
+   (odl-sfc-pot-netconf-renderer) will listen to the RSP changes and send
+   out configurations to the necessary network nodes that are part of the SFC.
+
+7. The configurations are handled mainly in the SfcPotAPI,
+   SfcPotConfigGenerator, SfcPotPolyAPI, SfcPotPolyClass and
+   SfcPotPolyClassAPI classes.
+
+8. There is a sfc-ioam-sb-pot.yang file that shows the format of the iOAM
+   PoT configuration data sent to each node of the SFC.
+
+9. A timer is started based on the “ioam-pot-refresh-period” value in the
+   SB renderer module that handles configuration
+   refresh periodically.
+
+10. The SB and timer handling are done in the odl-sfc-pot-netconf-renderer module.
+    Note: This is NOT done in the NB odl-sfc-pot module to avoid periodic
+    updates to the RSP itself.
+
+11. ODL creates a new profile of a set of keys and secrets at a constant rate
+    and updates an internal data store with the configuration.  The controller
+    labels the configurations per RSP as “even” or “odd” – and the controller
+    cycles between “even” and “odd” labeled profiles.   The rate at which these
+    profiles are communicated to the nodes is configurable and in future,
+    could be automatic based on profile usage.  Once the profile has been
+    successfully communicated to all nodes (all Netconf transactions completed),
+    the controller sends an “enable pot-profile” request to the ingress node.
+
+12. The nodes are to maintain two profiles (an even and an odd pot-profile).
+    One profile is currently active and in use, and one profile is about to
+    get used.  A flag in the packet is indicating whether the odd or even
+    pot-profile is to be used by a node. This is to ensure that during profile
+    change we’re not disrupting the service. I.e. if the “odd” profile is
+    active, the controller can communicate the “even” profile to all nodes
+    and only if all the nodes have received it, the controller will tell
+    the ingress node to switch to the “even” profile. Given that the
+    indicator travels within the packet, all nodes will switch to the
+    “even” profile. The “even” profile gets active on all nodes – and nodes
+    are ready to receive a new “odd” profile.
+
+13. HashedTimerWheel implementation is used to support the periodic
+    configuration refresh.  The default refresh is 5 seconds to start with.
+
+14. Depending on the last updated profile, the odd or the even profile is
+    updated in the fresh timer pop and the configurations are sent down
+    appropriately.
+
+15. SfcPotTimerQueue, SfcPotTimerWheel, SfcPotTimerTask, SfcPotTimerData
+    and SfcPotTimerThread are the classes that handle the Proof of
+    Transit protocol profile refresh implementation.
+
+16. The RSP data store is NOT being changed periodically and the timer
+    and configuration refresh modules are present in the SB renderer module
+    handler and hence there are are no scale or RSP churn issues
+    affecting the design.
+
+The following diagram gives the overall sequence diagram of the interactions
+between the different classes.
+
+.. figure:: ./images/sfc-pot-time-seq.png
+   :alt: SFC Proof of Transit Sequence Diagram
+
+   SFC Proof of Transit Sequence Diagram
+
 Logical Service Function Forwarder
 ----------------------------------
 
