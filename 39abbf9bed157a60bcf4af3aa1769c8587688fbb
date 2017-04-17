@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "da01753e_08e832e1",
+        "filename": "docs/getting-started-guide/installing_opendaylight.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T02:08:22Z",
+      "side": 1,
+      "message": "This can be said simply \"TSDR supports the following collection data\".",
+      "range": {
+        "startLine": 350,
+        "startChar": 8,
+        "endLine": 351,
+        "endChar": 12
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da01753e_48ba3a24",
         "filename": "docs/getting-started-guide/installing_opendaylight.rst",
         "patchSetId": 6
@@ -71,6 +94,30 @@
     },
     {
       "key": {
+        "uuid": "da01753e_48f23ad3",
+        "filename": "docs/getting-started-guide/installing_opendaylight.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T02:08:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da01753e_28b53631",
+      "range": {
+        "startLine": 353,
+        "startChar": 47,
+        "endLine": 353,
+        "endChar": 48
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da01753e_68861e67",
         "filename": "docs/getting-started-guide/installing_opendaylight.rst",
         "patchSetId": 6
@@ -87,6 +134,53 @@
         "startChar": 16,
         "endLine": 362,
         "endChar": 75
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_28ed36f0",
+        "filename": "docs/getting-started-guide/installing_opendaylight.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T02:08:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da01753e_68861e67",
+      "range": {
+        "startLine": 361,
+        "startChar": 16,
+        "endLine": 362,
+        "endChar": 75
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_e8e20e00",
+        "filename": "docs/getting-started-guide/installing_opendaylight.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 369,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T02:08:22Z",
+      "side": 1,
+      "message": "Better as a list.",
+      "range": {
+        "startLine": 363,
+        "startChar": 9,
+        "endLine": 369,
+        "endChar": 35
       },
       "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
@@ -117,6 +211,23 @@
     },
     {
       "key": {
+        "uuid": "da01753e_a8e12600",
+        "filename": "docs/getting-started-guide/karaf_features.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T02:08:22Z",
+      "side": 1,
+      "message": "Need a new line after Enable ElasticSearch support if we want the list to generate. Otherwise this all appears on one line.",
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da01753e_08979291",
         "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
         "patchSetId": 6
@@ -140,6 +251,53 @@
     },
     {
       "key": {
+        "uuid": "da01753e_a85c86ee",
+        "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T02:08:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da01753e_08979291",
+      "range": {
+        "startLine": 259,
+        "startChar": 0,
+        "endLine": 259,
+        "endChar": 4
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_c8590a00",
+        "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T02:08:22Z",
+      "side": 1,
+      "message": "ElasticSearch data store...",
+      "range": {
+        "startLine": 260,
+        "startChar": 5,
+        "endLine": 260,
+        "endChar": 29
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da01753e_e8916e9b",
         "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
         "patchSetId": 6
@@ -151,6 +309,30 @@
       "writtenOn": "2017-04-17T01:18:28Z",
       "side": 1,
       "message": "This isn\u0027t a list so shouldn\u0027t start with a dash here.",
+      "range": {
+        "startLine": 267,
+        "startChar": 0,
+        "endLine": 267,
+        "endChar": 1
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_08731281",
+        "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T02:08:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da01753e_e8916e9b",
       "range": {
         "startLine": 267,
         "startChar": 0,
@@ -186,6 +368,30 @@
     },
     {
       "key": {
+        "uuid": "da01753e_e86dee9a",
+        "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T02:08:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da01753e_48919a98",
+      "range": {
+        "startLine": 268,
+        "startChar": 0,
+        "endLine": 270,
+        "endChar": 80
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da01753e_288c167f",
         "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
         "patchSetId": 6
@@ -197,6 +403,30 @@
       "writtenOn": "2017-04-17T01:18:28Z",
       "side": 1,
       "message": "code-block",
+      "range": {
+        "startLine": 273,
+        "startChar": 2,
+        "endLine": 273,
+        "endChar": 36
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_486d1a98",
+        "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T02:08:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da01753e_288c167f",
       "range": {
         "startLine": 273,
         "startChar": 2,
@@ -232,6 +462,30 @@
     },
     {
       "key": {
+        "uuid": "da01753e_28689686",
+        "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T02:08:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da01753e_88ea620d",
+      "range": {
+        "startLine": 276,
+        "startChar": 2,
+        "endLine": 276,
+        "endChar": 15
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da01753e_68ed7e25",
         "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
         "patchSetId": 6
@@ -243,6 +497,30 @@
       "writtenOn": "2017-04-17T01:18:28Z",
       "side": 1,
       "message": "code-block",
+      "range": {
+        "startLine": 282,
+        "startChar": 2,
+        "endLine": 282,
+        "endChar": 72
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_8806e2cc",
+        "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T02:08:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da01753e_68ed7e25",
       "range": {
         "startLine": 282,
         "startChar": 2,
@@ -278,6 +556,30 @@
     },
     {
       "key": {
+        "uuid": "da01753e_6809fedc",
+        "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T02:08:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da01753e_c8f46af4",
+      "range": {
+        "startLine": 286,
+        "startChar": 2,
+        "endLine": 286,
+        "endChar": 11
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da01753e_a8f766f4",
         "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
         "patchSetId": 6
@@ -289,6 +591,30 @@
       "writtenOn": "2017-04-17T01:18:28Z",
       "side": 1,
       "message": "code-block",
+      "range": {
+        "startLine": 291,
+        "startChar": 2,
+        "endLine": 291,
+        "endChar": 20
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_c810ea03",
+        "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T02:08:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da01753e_a8f766f4",
       "range": {
         "startLine": 291,
         "startChar": 2,
@@ -347,6 +673,30 @@
     },
     {
       "key": {
+        "uuid": "da01753e_4804fabf",
+        "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T02:08:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da01753e_e8d84e81",
+      "range": {
+        "startLine": 310,
+        "startChar": 11,
+        "endLine": 310,
+        "endChar": 20
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da01753e_88d1c259",
         "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
         "patchSetId": 6
@@ -358,6 +708,30 @@
       "writtenOn": "2017-04-17T01:18:28Z",
       "side": 1,
       "message": "italics for emphasis",
+      "range": {
+        "startLine": 314,
+        "startChar": 19,
+        "endLine": 314,
+        "endChar": 69
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_e8f4ced0",
+        "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T02:08:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da01753e_88d1c259",
       "range": {
         "startLine": 314,
         "startChar": 19,
@@ -393,6 +767,30 @@
     },
     {
       "key": {
+        "uuid": "da01753e_08faf2bc",
+        "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T02:08:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da01753e_68d45e47",
+      "range": {
+        "startLine": 314,
+        "startChar": 73,
+        "endLine": 315,
+        "endChar": 47
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da01753e_c8cbcaa3",
         "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
         "patchSetId": 6
@@ -416,6 +814,53 @@
     },
     {
       "key": {
+        "uuid": "da01753e_28fff6ab",
+        "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T02:08:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da01753e_c8cbcaa3",
+      "range": {
+        "startLine": 326,
+        "startChar": 0,
+        "endLine": 326,
+        "endChar": 35
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_882d4249",
+        "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T02:08:22Z",
+      "side": 1,
+      "message": "code-block",
+      "range": {
+        "startLine": 328,
+        "startChar": 0,
+        "endLine": 332,
+        "endChar": 43
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da01753e_a8ce46b2",
         "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
         "patchSetId": 6
@@ -427,6 +872,30 @@
       "writtenOn": "2017-04-17T01:18:28Z",
       "side": 1,
       "message": "code-block",
+      "range": {
+        "startLine": 336,
+        "startChar": 2,
+        "endLine": 336,
+        "endChar": 23
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_2816d6f1",
+        "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T02:08:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da01753e_a8ce46b2",
       "range": {
         "startLine": 336,
         "startChar": 2,
@@ -462,6 +931,30 @@
     },
     {
       "key": {
+        "uuid": "da01753e_481b5a1b",
+        "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T02:08:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da01753e_08c5d28d",
+      "range": {
+        "startLine": 338,
+        "startChar": 2,
+        "endLine": 338,
+        "endChar": 13
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da01753e_e8bfaefa",
         "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
         "patchSetId": 6
@@ -473,6 +966,30 @@
       "writtenOn": "2017-04-17T01:18:28Z",
       "side": 1,
       "message": "code-block",
+      "range": {
+        "startLine": 340,
+        "startChar": 5,
+        "endLine": 340,
+        "endChar": 108
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_e81b2e1a",
+        "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T02:08:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da01753e_e8bfaefa",
       "range": {
         "startLine": 340,
         "startChar": 5,
@@ -502,6 +1019,24 @@
     },
     {
       "key": {
+        "uuid": "da01753e_0821524d",
+        "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T02:08:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da01753e_48bfdafb",
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da01753e_28ba560a",
         "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
         "patchSetId": 6
@@ -513,6 +1048,30 @@
       "writtenOn": "2017-04-17T01:18:28Z",
       "side": 1,
       "message": "code-block",
+      "range": {
+        "startLine": 347,
+        "startChar": 2,
+        "endLine": 347,
+        "endChar": 26
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_a82ac629",
+        "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T02:08:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da01753e_28ba560a",
       "range": {
         "startLine": 347,
         "startChar": 2,
@@ -548,6 +1107,30 @@
     },
     {
       "key": {
+        "uuid": "da01753e_6830de9e",
+        "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T02:08:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da01753e_c842aa0f",
+      "range": {
+        "startLine": 350,
+        "startChar": 0,
+        "endLine": 356,
+        "endChar": 3
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da01753e_a845a618",
         "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
         "patchSetId": 6
@@ -559,6 +1142,30 @@
       "writtenOn": "2017-04-17T01:18:28Z",
       "side": 1,
       "message": "code-block",
+      "range": {
+        "startLine": 360,
+        "startChar": 2,
+        "endLine": 360,
+        "endChar": 121
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_c8274a63",
+        "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T02:08:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da01753e_a845a618",
       "range": {
         "startLine": 360,
         "startChar": 2,
@@ -594,6 +1201,30 @@
     },
     {
       "key": {
+        "uuid": "da01753e_68d73e24",
+        "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 388,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T02:08:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da01753e_084cb241",
+      "range": {
+        "startLine": 388,
+        "startChar": 2,
+        "endLine": 388,
+        "endChar": 36
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da01753e_e8468e20",
         "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
         "patchSetId": 6
@@ -617,6 +1248,30 @@
     },
     {
       "key": {
+        "uuid": "da01753e_88d42221",
+        "filename": "docs/getting-started-guide/project-specific-guides/tsdr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 392,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T02:08:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da01753e_e8468e20",
+      "range": {
+        "startLine": 390,
+        "startChar": 0,
+        "endLine": 392,
+        "endChar": 329
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da01753e_4856bad3",
         "filename": "docs/user-guide/tsdr-user-guide.rst",
         "patchSetId": 6
@@ -628,6 +1283,30 @@
       "writtenOn": "2017-04-17T01:18:28Z",
       "side": 1,
       "message": "This entire section is a copy of what\u0027s in the getting-started-guide we can probably do some sort of include here so that we don\u0027t retype the same stuff.",
+      "range": {
+        "startLine": 528,
+        "startChar": 0,
+        "endLine": 529,
+        "endChar": 13
+      },
+      "revId": "39abbf9bed157a60bcf4af3aa1769c8587688fbb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_68629eae",
+        "filename": "docs/user-guide/tsdr-user-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 529,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-17T02:08:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da01753e_4856bad3",
       "range": {
         "startLine": 528,
         "startChar": 0,
