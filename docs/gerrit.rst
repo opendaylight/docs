@@ -2,24 +2,500 @@
 Gerrit Guide
 ############
 
-How to push to Gerrit
-=====================
+Overview of Git and Gerrit
+==========================
 
-It is highly recommended to use ssh to push to Gerrit to push code to Gerrit.
-In the event that you cannot use ssh such as corporate firewall blocking you
-then falling back to pushing via https should work.
+Git is an opensource distributed version control system (dvcs) written
+in the C language and originally developed by Linus Torvalds and others
+to manage the Linux kernel. In Git, there is no central copy of the
+repository. After you have cloned the repository, you have a functioning
+copy of the source code with all the branches and tagged releases, in
+your local repository.
 
-Using ssh to push to Gerrit
----------------------------
+Gerrit is an opensource web-based collaborative code review tool that
+integrates with Git. It was developed at Google by Shawn Pearce. Gerrit
+provides a framework for reviewing code commits before they are accepted
+into the code base. Changes can be uploaded to Gerrit by any user.
+However, the changes are not made a part of the project until a code
+review is completed. Gerrit is also a good collaboration tool for
+storing the conversations that occur around the code commits.
 
-# TODO
+The OpenDaylight source code is hosted in a repository in Git.
+Developers must use Gerrit to commit code to the OpenDaylight
+repository.
+
+.. note::
+
+   For more information on Git, see http://git-scm.com/. For more
+   information on Gerrit, see https://code.google.com/p/gerrit/.
+
+Prerequisites
+=============
+
+Before you get started, you should have:
+
+* an OpenDaylight account (sign up `here
+  <https://identity.opendaylight.org/carbon/user-registration/index.jsp?region=region1&item=user_registration_menu>`_)
+  See `Creating an OpenDaylight Account`_ below for detailed instructions.
+* git installed (see: http://www.git-scm.com/downloads)
+* git configured with your name, e-mail address and editor
+
+  .. code-block:: bash
+
+     git config --global user.name "Firstname Lastname"
+     git config --global user.email "email@address.com"
+     git config --global core.editor "text-editor-name"
+
+  .. note:: Your name and e-mail address (including capitalization) must match what you entered
+            when creating your OpenDaylight account.
+
+* an ssh public/private key pair (see the good `Github docs on generating ssh keys
+  <https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/>`_)
+
+  * that is registered the OpenDaylight Gerrit server. See `Registering your SSH key with Gerrit`_
+    below for detailed instructions.
+
+* git-review installed (see: https://www.mediawiki.org/wiki/Gerrit/git-review#Installation)
+
+
+Setting up Each Git Repository
+==============================
+
+When you clone a new repository:
+
+.. code-block:: bash
+
+   git clone https://git.opendaylight.org/gerrit/${project-short-name}
+
+For example to clone the Documentation repository:
+
+.. code-block:: bash
+
+   git clone https://git.opendaylight.org/gerrit/docs
+
+
+Common Gerrit Tasks
+===================
+
+The following sections describe the most common tasks you will need to complete while authoring
+your project’s documentation.
+
+Submitting a New Patch
+----------------------
+
+#. On your machine, open a shell and switch to the directory with the git repository. Assuming
+   you are using the docs repository:
+
+   .. code-block:: bash
+
+      cd docs
+
+#. To remove any dependencies on other files you are working on, check out the appropriate branch:
+
+   .. code-block::
+
+      git checkout <remote-branch-name>            # will switch to the branch
+
+   .. note:: normally, ``<remote-branch-name>`` should be master, but during a release, the
+             <branch> will switch to stable/<release-name>, e.g., stable/lithium at some point.
+             Also, if you are updating an existing release check out that branch.
+
+   .. note:: If you see an error like``error: pathspec 'stable/helium' did not match any file(s)
+             known to git.``, try this command instead:
+
+             .. code-block::
+
+                git checkout -b <remote-branch-name> origin/<remote-branch-name>
+
+             .. note:: This should only be necessary once.
+
+#. Get a copy of the latest files from the server:
+
+   .. code-block::
+
+      git pull                                     # will get all the changes from the server
+      git reset --hard origin/<remote-branch-name> # (optional) will undo any local changes you've
+                                                   #(accidentally) made to <remote-branch-name>
+
+#. Create a new branch for your work:
+
+   .. code-block::
+
+      git checkout -b <local-branch-name>
+
+   .. note:: Spaces are not allowed in ``<local-branch-name>``.
+
+#. Create new files or edit existing files, as needed.
+#. Commit the files you have worked on:
+
+   * If you've created any new files, run:
+
+     .. code-block::
+
+        git add <filename>
+
+   * To commit existing files you edited, run:
+
+     * ``git commit -as``
+     * Your default terminal text editor will open.
+
+       .. note:: The -as options instruct git to commit all of the files you have edited (``-a``)
+                 and sign your commit request with your email address and name (``-s``). The
+                 sign-off is to indicate that you agree with this statement::
+
+                      Developer's Certificate of Origin 1.1
+
+                         By making a contribution to this project, I certify that:
+
+                         (a) The contribution was created in whole or in part by me and I
+                             have the right to submit it under the open source license
+                             indicated in the file; or
+
+                         (b) The contribution is based upon previous work that, to the best
+                             of my knowledge, is covered under an appropriate open source
+                             license and I have the right under that license to submit that
+                             work with modifications, whether created in whole or in part
+                             by me, under the same open source license (unless I am
+                             permitted to submit under a different license), as indicated
+                             in the file; or
+
+                         (c) The contribution was provided directly to me by some other
+                             person who certified (a), (b) or (c) and I have not modified
+                             it.
+
+                         (d) I understand and agree that this project and the contribution
+                             are public and that a record of the contribution (including all
+                             personal information I submit with it, including my sign-off) is
+                             maintained indefinitely and may be redistributed consistent with
+                             this project or the open source license(s) involved.
+
+   * Add a brief description of the changes you have made to the beginning of the commit request
+     and then save the request.
+
+#. Submit your files for review:
+
+   * ``git review``
+   * You will receive 2 emails from Gerrit Code Review: The first indicating that a build to
+     incorporate your changes has started; and the second indicating whether the build was created
+     successfully.
+
+#. Determine your patch’s change number:
+
+   * Open either of the emails you received after submitting your files for review.
+   * Locate the following line in the terminal: ``To view, visit <patch URL>``
+
+     .. note:: The number at the end of this URL is your patch’s change number. You will need
+               this in order to make updates to the patch later.
+
+Updating an Existing Patch
+--------------------------
+
+#. On your machine, open a shell and switch to the directory containing the repository:
+   ``cd <repository-name>``, e.g., ``cd docs``
+#. Download the patch you want to update: ``git review -d <change number>``
+#. | (Optional) View information on the latest changes made to that patch:
+   | To view the files that were edited, run ``git show``
+   | To view a listing of the files that were edited and the number of lines in those files that
+     were edited, run ``git show --stat``
+#. Make the necessary changes to the patch’s files.
+#. Commit your changes:
+
+   #. To commit a patch you originally authored, run ``git commit -a --amend``
+   #. | To commit a patch authored by somebody else (for example, after you reviewed someone
+        else’s files and provided feedback), run
+      | ``git commit -as --amend --author="Firstname Lastname <email address>"``
+      | Your default text editor opens.
+   #. | Update the current patch description and then save the commit request.
+      | If you are updating another persons’s patch, be sure to give that person credit in the
+      | description so people will know who originally authored the files in question.
+
+#. | Submit your files for review:
+   | ``git review``
+
+You will receive 2 emails from Gerrit Code Review: the first indicating that a build to incorporate
+your changes has started; and the second indicating whether the build was created successfully.
+
+Code Review
+===========
+
+All contributions to OpenDaylight git repositories use Gerrit for code review.
+
+The code review process is meant to provide constructive feedback about a proposed change.
+Committers and interested contributors will review the change, give their feedback, propose
+revisions and work with the change author through iterations of the patch until it's ready to be
+merged.
+
+Feedback is provided and the change is managed via the Gerrit web UI.
+
+.. figure:: images/gerrit-web-ui.png
+
+            Wide view of a change via the Gerrit web UI
+
+Pre-review
+----------
+
+Many times, change authors will want to push changes to Gerrit before they are actually ready for
+review. This is a good practice and is encouraged. It has been the experience of Integration/* so
+far that pushing early and often tends to reduce the amount of work overall.
+
+.. note:: This is not required and in some projects, not encouraged, but the general idea of making
+          sure patches are ready for review when submitted is a good one.
+
+.. note:: While in draft state, Gerrit triggers, e.g., verify Jenkins jobs, won't run by default.
+          You can trigger them despite it being a draft by adding ``jenkins-releng`` as a reviewer.
+          You may need to do a recheck by replying with a comment containing recheck to trigger the
+          jobs after adding the reviewer.
+
+To mark an uploaded change as not ready for attention by committers and interested contributors (in
+order of preference), either mark the Gerrit a draft, vote -1 on it yourself or modify the commit
+message with "WIP" ("Work in Progress").
+
+Don't add committers to the Reviewers list for a change while it's in the pre-review state, as it
+adds noise to their review queue.
+
+Review
+------
+
+Once an author wants a change to be reviewed, they need to take some actions to put it on the radar
+of the committers.
+
+If the change is marked as a draft, you'll need to publish it. This can be done from the Gerrit web
+UI.
+
+.. figure:: images/gerrit-publish-button.png
+
+            Gerrit Web UI button to publish a draft change.
+
+Remove your -1 vote if you've marked it with one. If you think the patch is ready to be merged,
+vote +1. If there isn't an automated job to test your change and vote +1/-1 for Verified, you'll
+need to do as much testing yourself as possible and then manually vote +1 to Verified. You can
+also vote +1 for Verified if you've done testing in addition to any automated tests. Describing
+the testing you did or didn't do is typically helpful.
+
+.. figure:: images/gerrit-voting-interface.png
+
+            Gerrit voting interface, exposed by the Reply button.
+
+Once the change is published and you've voted for it to be merged, add the people who need to
+review/merge the change to the Gerrit Reviewers list. For Integration/Packaging, add all of our
+committers (Daniel Farrell, Jamo Luhrsen, Thanh Ha) in addition to any other relevant contributors.
+The auto-complete for this Gerrit UI field is somewhat flaky, but typing the full name from the
+start typically works.
+
+.. figure:: images/gerrit-reviewers-interface.png
+
+            Gerrit Reviewers list with Int/Pack committers added
+
+Reviewers will give feedback via Gerrit comments or inline against the diff.
+
+.. figure:: images/gerrit-inline-feedback.png
+
+            Gerrit inline feedback about a typo
+
+Updated versions of the proposed change should be pushed as new patchesets to the same Gerrit,
+either by the original submitter or other contributors. Amending proposed changes owned by others
+while reviewing may be more efficient than documenting the problem, -1ing, waiting for the original
+submitter to make the changes, re-reviewing and merging.
+
+Changes can be downloaded for local manipulation and then re-uploaded with updates via git-review.
+See `Updating an Existing Patch`_ above. Once you have re-uploaded the patch the Gerrit web UI for
+the proposed change will reflect the new patcheset.
+
+.. figure:: images/gerrit-patch-update-history.png
+
+            Gerrit history showing a patch update
+
+Reviewers will use the diff between the last time time they gave review and the current patchset
+to quickly understand updates, speeding the code review process.
+
+.. figure:: images/gerrit-diff-menu.png
+
+            Gerrit diff menu
+
+Iterative feedback continues until consensus is reached (typically: all active reviewers +1/+2 and
+no -1s, definitely no -2s), at least one committer +2s and a committer merges the change.
+
+.. figure:: images/gerrit-code-review-votes.png
+
+            Gerrit code review votes
+
+Merge
+-----
+
+Integration/Packaging doesn't currently use release branches (like stable/beryllium), as some
+OpenDaylight projects do. Changes just need to be merged to master, there's no need to worry about
+cherry-picks.
+
+Setting up Gerrit
+=================
+
+Creating an OpenDaylight Account
+--------------------------------
+
+1. Using a Google Chrome or Mozilla Firefox browser, go to
+   https://git.opendaylight.org/gerrit
+
+   The main page shows existing Gerrit requests. These are patches that
+   have been pushed to the repository and not yet verified, reviewed, and
+   merged.
+
+   .. note::
+
+      If you already have an OpenDaylight account, you can click **Sign
+      In** in the top right corner of the page and follow the instructions
+      to enter the OpenDaylight page.
+
+   .. figure:: images/gerrit-sign-in.jpg
+               :alt: Signing in to OpenDaylight account
+
+               Signing in to OpenDaylight account
+
+1. If you do not have an existing OpenDaylight account, click **Account
+   signup/management** on the top bar of the main Gerrit page.
+
+   The **WS02 Identity Server** page is displayed.
+
+   .. figure:: images/gerrit-setup.jpg
+               :alt: Gerrit Account signup/management link
+
+               Gerrit Account signup/management link
+
+1. In the **WS02 Identity Server** page, click **Sign-up** in the left
+   pane.
+
+   There is also an option to authenticate your sign in with OpenID. This
+   option is not described in this document.
+
+   .. figure:: images/gerrit-sign-up.jpg
+               :alt: Sign-up link for Gerrit account
+
+               Sign-up link for Gerrit account
+
+1. Click on the **Sign-up with User Name/Password** image on the right
+   pane to continue to the actual sign-up page.
+
+   .. figure:: images/gerrit-signup-image.jpg
+               :alt: Sign-up with User Name/Password Image
+
+               Sign-up with User Name/Password Image
+
+1. Fill out the details in the account creation form and then click
+   **Submit**.
+
+   .. figure:: images/gerrit-form-details.jpg
+               :alt: Filling out the details
+
+               Filling out the details
+
+You now have an OpenDaylight account that can be used with Gerrit to
+pull the OpenDaylight code.
+
+Generating SSH keys for your system
+-----------------------------------
+
+You must have SSH keys for your system to register with your Gerrit
+account. The method for generating SSH keys is different for different
+types of operating systems.
+
+The key you register with Gerrit must be identical to the one you will
+use later to pull or edit the code. For example, if you have a
+development VM which has a different UID login and keygen than that of
+your laptop, the SSH key you generate for the VM is different from the
+laptop. If you register the SSH key generated on your VM with Gerrit and
+do not reuse it on your laptop when using Git on the laptop, the pull
+fails.
+
+.. note::
+
+    For more information on SSH keys for Ubuntu, see
+    https://help.ubuntu.com/community/SSH/OpenSSH/Keys. For generating
+    SSH keys for Windows, see
+    https://help.github.com/articles/generating-ssh-keys.
+
+For a system running Ubuntu operating system, follow the steps below:
+
+1. Run the following command::
+
+    mkdir ~/.ssh
+    chmod 700 ~/.ssh
+    ssh-keygen -t rsa
+
+1. You are prompted for a location to save the keys, and a passphrase
+   for the keys.
+
+This passphrase protects your private key while it is stored on the hard
+drive. You must use the passphrase to use the keys every time you need
+to login to a key-based system::
+
+    Generating public/private rsa key pair.
+    Enter file in which to save the key (/home/b/.ssh/id_rsa):
+    Enter passphrase (empty for no passphrase):
+    Enter same passphrase again:
+    Your identification has been saved in /home/b/.ssh/id_rsa.
+    Your public key has been saved in /home/b/.ssh/id_rsa.pub.
+
+Your public key is now available as **.ssh/id\_rsa.pub** in your home
+folder.
+
+Registering your SSH key with Gerrit
+------------------------------------
+
+1. Using a Google Chrome or Mozilla Firefox browser, go to
+   https://git.opendaylight.org/gerrit.
+
+1. Click **Sign In** to access the OpenDaylight repository.
+
+.. figure:: images/gerrit-sign-in.jpg
+   :alt: Signin in to OpenDaylight repository
+
+   Signin in to OpenDaylight repository
+
+1. Click your name in the top right corner of the window and then click
+   **Settings**.
+
+The **Settings** page is displayed.
+
+.. figure:: images/gerrit-settings.jpg
+   :alt: Settings page for your Gerrit account
+
+   Settings page for your Gerrit account
+
+1. Click **SSH Public Keys** under **Settings**.
+
+2. Click **Add Key**.
+
+3. In the **Add SSH Public Key** text box, paste the contents of your
+   **id\_rsa.pub** file and then click **Add**.
+
+.. figure:: images/gerrit-ssh-keys.jpg
+   :alt: Adding your SSH key
+
+   Adding your SSH key
+
+To verify your SSH key is working correctly, try using an SSH client to
+connect to Gerrit’s SSHD port::
+
+    $ ssh -p 29418 <sshusername>@git.opendaylight.org
+    Enter passphrase for key '/home/cisco/.ssh/id_rsa':
+    ****    Welcome to Gerrit Code Review    ****
+    Hi <user>, you have successfully connected over SSH.
+    Unfortunately, interactive shells are disabled.
+    To clone a hosted Git repository, use: git clone ssh://<user>@git.opendaylight.org:29418/REPOSITORY_NAME.git
+    Connection to git.opendaylight.org closed.
+
+You can now proceed to either Pulling, Hacking, and Pushing the Code
+from the CLI or Pulling, Hacking, and Pushing the Code from Eclipse
+depending on your implementation.
 
 Using https to push to Gerrit
------------------------------
+=============================
+
+It is highly recommended to use ssh to push to Gerrit. In the event that you cannot use ssh, e.g.,
+a corporate firewall is blocking blocking you, then falling back to pushing via https should work.
 
 Gerrit does not allow you to use your regular account credentials when pushing
-via https. Instead it requires you to first generate a http password via the
-Web U and use that as the password when pushing via https.
+via https. Instead it requires you to first generate a http password via the Gerrit
+Web UI and use that as the password when pushing via https.
 
 .. figure:: images/gerrit-https-password-setup.png
 
@@ -33,6 +509,9 @@ To do this:
 
 Gerrit will then generate a random password which you will need to use as your
 password when using git to push code to Gerrit via https.
+
+TODO: How do you actually push to Gerrit over https? Do you need to have the right
+branch in the URL? Does git review work?
 
 Signing Gerrit Commits
 ======================
@@ -204,3 +683,4 @@ Setting up gpg-agent on a Mac
    give you an option to save your passphrase in the keychain.
 
    .. figure:: images/pinentry-mac.png
+
