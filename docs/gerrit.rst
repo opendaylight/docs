@@ -2,6 +2,161 @@
 Gerrit Guide
 ############
 
+Prerequisites
+=============
+
+Before you get started, you should have:
+
+* an OpenDaylight account (sign up `here 
+  <https://identity.opendaylight.org/carbon/user-registration/index.jsp?region=region1&item=user_registration_menu>`_)
+* git installed (see: http://www.git-scm.com/downloads)
+* git configured with your name, e-mail address and editor
+
+  .. code-block:: bash
+
+     git config --global user.name "Firstname Lastname"
+     git config --global user.email "email@address.com"
+     git config --global core.editor "text-editor-name"
+
+  .. note:: Your name and e-mail address (including capitalization) must match what you entered
+            when creating your OpenDaylight account.
+
+* an ssh public/private key pair (see the good `Github docs on generating ssh keys
+  <https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/>`_)
+
+  * that is registered the OpenDaylight Gerrit server (see `this old wiki page
+    <https://wiki.opendaylight.org/view/OpenDaylight_Controller:Gerrit_Setup#Registering_your_SSH_key_with_Gerrit>`_)
+
+* git-review installed (see: https://www.mediawiki.org/wiki/Gerrit/git-review#Installation)
+
+
+Setting up Each Git Repository
+==============================
+
+When you clone a new repository:
+
+.. code-block:: bash
+
+   git clone https://git.opendaylight.org/gerrit/${project-short-name}
+
+For example to clone the Documentation repository:
+
+.. code-block:: bash
+
+   git clone https://git.opendaylight.org/gerrit/docs
+
+
+Common Gerrit Tasks
+===================
+
+The following sections describe the most common tasks you will need to complete while authoring your project’s documentation.
+
+Submitting a New Patch
+----------------------
+
+#. On your machine, open a shell and switch to the docs directory
+
+   .. code-block:: bash
+
+      cd docs
+
+#. To remove any dependencies on other files you are working on, check out the appropriate branch:
+
+   .. code-block:: bash
+
+      git checkout <remote-branch-name>            # will switch to the branch
+
+   .. note:: normally, ``<remote-branch-name>`` should be master, but during a release, the <branch> will switch to stable/<release-name>, e.g., stable/lithium at some point
+
+   .. note:: If you see an error like ``error: pathspec 'stable/helium' did not match any file(s) known to git.``, try this command instead:
+
+             .. code-block:: bash
+
+                git checkout -b <remote-branch-name> origin/<remote-branch-name>
+
+             .. note:: This should only be necessary once.
+
+#. Get a copy of the latest files from the server:
+
+   .. code-block:: bash
+
+      git pull                                     # will get all the changes from the server
+      git reset --hard origin/<remote-branch-name> # (optional) will undo any local changes you've (accidentally) made to <remote-branch-name>
+
+#. Create a new branch for your work:
+
+   .. code-block:: bash
+
+      git checkout -b <local-branch-name>
+
+   .. note:: Spaces are not allowed in ``<local-branch-name>``.
+
+#. Create new files or edit existing files, as needed.
+#. Commit the files you have worked on:
+
+   * If you've created any new files, run:
+
+     .. code-block:: bash
+
+        git add <filename>
+
+   * To commit existing files you edited, run:
+
+     * ``git commit -as``
+     * Your default terminal text editor will open.
+
+       .. note:: The -as options instruct git to commit all of the files you have edited (-a) and sign your commit request with your email address and name (-s).
+
+   * Add a brief description of the changes you have made to the beginning of the commit request and then save the request.
+
+#. Submit your files for review:
+
+   * ``git review``
+   * You will receive 2 emails from Gerrit Code Review: The first indicating that a build to incorporate your changes has started; and the second indicating whether the build was created successfully.
+
+#. Determine your patch’s change number:
+
+   * Open either of the emails you received after submitting your files for review.
+   * Locate the following line in the terminal: ``To view, visit <patch URL>``
+
+      * The number at the end of this URL is your patch’s change number. You will need this in order to make updates to the patch later.
+
+Updating an Existing Patch
+--------------------------
+
+#. On your machine, open a shell and switch to the docs directory: ``cd docs``
+#. Download the patch you want to update: ```git review -d <change number>```
+#. | (Optional) View information on the latest changes made to that patch:
+   | To view the files that were edited, run ``git show``
+   | To view a listing of the files that were edited and the number of lines in those files that were edited, run ``git show --stat``
+#. Make the necessary changes to the patch’s files.
+#. Commit your changes:
+
+   #. To commit a patch you originally authored, run ``git commit -a --amend``
+   #. | To commit a patch authored by another writer (for example, after you reviewed someone else’s files and provided feedback), run
+      | ``git commit -as --amend --author="Firstname Lastname <email address>"``
+      | Your default text editor opens.
+   #. | Update the current patch description and then save the commit request.
+      | If you are updating another writer’s patch, be sure to give that writer credit in the description so people will know who originally authored the files in question.
+
+#. | Submit your files for review:
+   | ``git review``
+
+You will receive 2 emails from Gerrit Code Review: the first indicating that a build to incorporate your changes has started; and the second indicating whether the build was created successfully.
+
+Generating Documentation
+------------------------
+
+#. | Open a shell and switch to the main directory for the documentation deliverable you want to generate.
+   | For example, if you want to generate a user guide, you would run the following command: ``cd docs/manuals/user-guide``
+#. | Run the following command to generate the deliverable: ``mvn install``
+   | By default, 2 versions of your deliverable are generated: an HTML version and a PDF version. You can access them from the following folder:
+   | docs/manuals/deliverable-name/target/docbkx/webhelp/deliverable-filename/.
+
+To view a page that describes common AsciiDoc errors and how to deal with them, click [[CrossProject:Documentation_Group:Tools:AsciiDoc_Tips|here]].
+
+
+
 How to push to Gerrit
 =====================
 
