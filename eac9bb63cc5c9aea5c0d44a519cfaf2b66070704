@@ -85,6 +85,161 @@
       "revId": "eac9bb63cc5c9aea5c0d44a519cfaf2b66070704",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_a0abf61c",
+        "filename": "docs/user-guide/tsdr-elastic-search.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-04-18T20:34:59Z",
+      "side": 1,
+      "message": "where is this file?",
+      "range": {
+        "startLine": 84,
+        "startChar": 40,
+        "endLine": 84,
+        "endChar": 83
+      },
+      "revId": "eac9bb63cc5c9aea5c0d44a519cfaf2b66070704",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_c0b0ba8d",
+        "filename": "docs/user-guide/tsdr-elastic-search.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-04-18T20:34:59Z",
+      "side": 1,
+      "message": "Is it TSDR or tsdr? We should be consistent.",
+      "range": {
+        "startLine": 86,
+        "startChar": 33,
+        "endLine": 86,
+        "endChar": 37
+      },
+      "revId": "eac9bb63cc5c9aea5c0d44a519cfaf2b66070704",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_00abe21d",
+        "filename": "docs/user-guide/tsdr-elastic-search.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-04-18T20:34:59Z",
+      "side": 1,
+      "message": "where are these files?",
+      "range": {
+        "startLine": 88,
+        "startChar": 19,
+        "endLine": 89,
+        "endChar": 49
+      },
+      "revId": "eac9bb63cc5c9aea5c0d44a519cfaf2b66070704",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_e0a5fe47",
+        "filename": "docs/user-guide/tsdr-elastic-search.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-04-18T20:34:59Z",
+      "side": 1,
+      "message": "OpenDaylight",
+      "range": {
+        "startLine": 104,
+        "startChar": 10,
+        "endLine": 104,
+        "endChar": 22
+      },
+      "revId": "eac9bb63cc5c9aea5c0d44a519cfaf2b66070704",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_c0771ad3",
+        "filename": "docs/user-guide/tsdr-elastic-search.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-04-18T20:34:59Z",
+      "side": 1,
+      "message": "shouldn\u0027t this be 6653, I know it used to be 6633 and that why you have this here, but since you don\u0027t mention 6633, maybe do the full grep for 6653?",
+      "range": {
+        "startLine": 112,
+        "startChar": 22,
+        "endLine": 112,
+        "endChar": 24
+      },
+      "revId": "eac9bb63cc5c9aea5c0d44a519cfaf2b66070704",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_0082c293",
+        "filename": "docs/user-guide/tsdr-elastic-search.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-04-18T20:34:59Z",
+      "side": 1,
+      "message": "OpenDaylight",
+      "range": {
+        "startLine": 120,
+        "startChar": 63,
+        "endLine": 120,
+        "endChar": 68
+      },
+      "revId": "eac9bb63cc5c9aea5c0d44a519cfaf2b66070704",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_e07cdeb7",
+        "filename": "docs/user-guide/tsdr-user-guide.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-04-18T20:34:59Z",
+      "side": 1,
+      "message": "Why is this line here? I don\u0027t get it.",
+      "revId": "eac9bb63cc5c9aea5c0d44a519cfaf2b66070704",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
