@@ -8,8 +8,7 @@ Overview
 .. toctree::
    :maxdepth: 1
 
-   getting-started-with-git-and-gerrit
-   pulling-and-pushing-the-code-from-the-cli
+   ../gerrit
    developing-apps-on-the-opendaylight-controller
 
 Project-specific Developer Guides
