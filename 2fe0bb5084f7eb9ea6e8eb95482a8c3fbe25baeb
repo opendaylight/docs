@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da01753e_03eda7ef",
+        "filename": "docs/release-process/branch-cutting.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 2046
+      },
+      "writtenOn": "2017-04-19T16:00:25Z",
+      "side": 1,
+      "message": "Lowercase.\nAlso lines 21, 31, 33.",
+      "range": {
+        "startLine": 20,
+        "startChar": 26,
+        "endLine": 20,
+        "endChar": 27
+      },
+      "revId": "2fe0bb5084f7eb9ea6e8eb95482a8c3fbe25baeb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_039be772",
+        "filename": "docs/release-process/branch-cutting.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 2046
+      },
+      "writtenOn": "2017-04-19T16:00:25Z",
+      "side": 1,
+      "message": "$NEXT_RELEASE",
+      "range": {
+        "startLine": 104,
+        "startChar": 43,
+        "endLine": 104,
+        "endChar": 51
+      },
+      "revId": "2fe0bb5084f7eb9ea6e8eb95482a8c3fbe25baeb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_63a2b3af",
+        "filename": "docs/release-process/branch-cutting.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 2046
+      },
+      "writtenOn": "2017-04-19T16:00:25Z",
+      "side": 1,
+      "message": "Move this before line 67. I have seen projects starting to merge Nitrogen code to master branch (thus creating conflicts on Carbon versioned artifacts) as soon as they noticed line 85 has been executed.",
+      "range": {
+        "startLine": 111,
+        "startChar": 2,
+        "endLine": 111,
+        "endChar": 15
+      },
+      "revId": "2fe0bb5084f7eb9ea6e8eb95482a8c3fbe25baeb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_e3950341",
+        "filename": "docs/release-process/branch-cutting.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 2046
+      },
+      "writtenOn": "2017-04-19T16:00:25Z",
+      "side": 1,
+      "message": "Before this, it would be good to post \"recheck\" on every open Gerrit change on master branch (of affected projects). Otherwise any patch set with $CURR_RELEASE versions keeps its Verified+1 (possibly future one if a verify job is still running) even if it should have $NEXT_RELEASE versions now (and presumable fail the re-triggered verify).",
+      "range": {
+        "startLine": 135,
+        "startChar": 2,
+        "endLine": 135,
+        "endChar": 11
+      },
+      "revId": "2fe0bb5084f7eb9ea6e8eb95482a8c3fbe25baeb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
