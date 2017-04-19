@@ -16,10 +16,17 @@ After release candidate is built gpg sign artifacts using odlsign-bulk script in
     cd scripts/
     ./odlsign-bulk STAGING_REPO_ID  # eg. autorelease-1367
 
+Verify the distribution-karaf file with the signature.
+
+.. code-block:: bash
+
+    gpg2 --verify distribution-karaf-x.y.z-${RELEASE}.tar.gz.asc distribution-karaf-x.y.z-${RELEASE}.tar.gz
+
+
 Releasing OpenDaylight
 ======================
 
-- Block submit permissions for registered users and elevate RE's committer rights on gerrit.
+- Block submit permissions for registered users and elevate RE's committer rights on gerrit. **(Helpdesk)**
 
   .. figure:: images/gerrit-update-committer-rights.png
 
