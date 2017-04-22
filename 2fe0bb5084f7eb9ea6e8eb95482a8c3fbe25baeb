@@ -48,6 +48,29 @@
     },
     {
       "key": {
+        "uuid": "da01753e_f3877ed5",
+        "filename": "docs/release-process/branch-cutting.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-04-22T09:26:36Z",
+      "side": 1,
+      "message": "I just realized this should actually be CURR_RELEASE.\n\nWe\u0027re not branch cutting nitrogen. We\u0027re branch cutting Carbon. Nitrogen\u0027s branch cut won\u0027t happen until next year.",
+      "range": {
+        "startLine": 108,
+        "startChar": 23,
+        "endLine": 108,
+        "endChar": 35
+      },
+      "revId": "2fe0bb5084f7eb9ea6e8eb95482a8c3fbe25baeb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da01753e_63a2b3af",
         "filename": "docs/release-process/branch-cutting.rst",
         "patchSetId": 6
