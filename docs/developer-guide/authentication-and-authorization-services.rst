@@ -200,9 +200,9 @@ authorization schemes. There are two parent types of realms:
       based on roles.
 
    -  Useful for applications in which roles determine allowed
-      cabilities.
+      capabilities.
 
-OpenDaylight contains four implementations:
+OpenDaylight contains five implementations:
 
 -  TokenAuthRealm
 
@@ -242,14 +242,27 @@ OpenDaylight contains four implementations:
 
 -  ODLActiveDirectoryRealm
 
-   - Wraps the generic ActiveDirectoryRealm provided by Shiro. This allows for
-     enhanced logging as well as isolation of all realms in a single package,
-     which enables easier import by consuming servlets.
+   -  Wraps the generic ActiveDirectoryRealm provided by Shiro. This allows for
+      enhanced logging as well as isolation of all realms in a single package,
+      which enables easier import by consuming servlets.
+      
+   -  Disabled out of the box.
+
+-  KeystoneAuthRealm
+
+   -  This realm authenticates OpenDaylight users against the OpenStack's
+      Keystone server by using the
+      `Keystone's Identity API v3 <https://developer.openstack.org/api-ref/identity/v3/>`_
+      or later.
+     
+   - Disabled out of the box.
 
 .. note::
 
     More than one Realm implementation can be specified. Realms are attempted
     in order until authentication succeeds or all realm sources are exhausted.
+    Edit the **securityManager.realms = $tokenAuthRealm** property in shiro.ini
+    and add all the realms needed separated by commas.
 
 TokenAuthRealm
 ^^^^^^^^^^^^^^
@@ -310,6 +323,36 @@ How it works
 
 This is useful for setups where all LDAP users are allowed equal access.
 
+KeystoneAuthRealm
+^^^^^^^^^^^^^^^^^
+
+How it works
+~~~~~~~~~~~~
+
+This realm authenticates OpenDaylight users against the OpenStack's Keystone
+server. This realm uses the
+`Keystone's Identity API v3 <https://developer.openstack.org/api-ref/identity/v3/>`_
+or later.
+
+.. figure:: ./images/aaa/keystonerealm-authentication.png
+   :alt: KeystoneAuthRealm authentication mechanism
+
+   KeystoneAuthRealm authentication/authorization mechanism
+
+As can shown on the above diagram, once configured, all the RESTCONF APIs calls
+will require sending **user**, **password** and optionally **domain** (1). Those
+credentials are used to authenticate the call against the Keystone server (2) and,
+if the authentication succeeds, the call will proceed to the MDSAL (3). The
+credentials must be provisioned in advance within the Keystone Server. The user
+and password are mandatory, while the domain is optional, in case it is not
+provided within the REST call, the realm will default to (**Default**),
+which is hard-coded. The default domain can be also configured through the
+*shiro.ini* file (see the :doc:`AAA User Guide <../user-guide/authentication-and-authorization-services>`).
+
+The protocol between the Controller and the Keystone Server (2) can be either
+HTTPS or HTTP. In order to use HTTPS the Keystone Server's certificate
+must be exported and imported on the Controller (see the :ref:`Certificate Management <Certificate Management>` section).
+
 Authorization Configuration
 ---------------------------
 
@@ -318,7 +361,7 @@ roughly similar in behavior:
 
 - Shiro-Based Authorization
 
-- MDAL-Based Dynamic Authorization
+- MDSAL-Based Dynamic Authorization
 
 .. note::
 
