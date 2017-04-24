@@ -653,6 +653,65 @@ Edit the "etc/shiro.ini" file and modify the following:
     # Stacked realm configuration;  realms are round-robbined until authentication succeeds or realm sources are exhausted.
     securityManager.realms = $tokenAuthRealm, $ldapRealm
 
+KeystoneAuthRealm
+^^^^^^^^^^^^^^^^^
+
+How it works
+~~~~~~~~~~~~
+
+This realm authenticates OpenDaylight users against the OpenStack's Keystone
+server. This realm uses the
+`Keystone's Identity API v3 <https://developer.openstack.org/api-ref/identity/v3/>`_
+or later.
+
+.. figure:: ./images/aaa/keystonerealm-authentication.png
+   :alt: KeystoneAuthRealm authentication mechanism
+
+   KeystoneAuthRealm authentication/authorization mechanism
+
+As can shown on the above diagram, once configured, all the RESTCONF APIs calls
+will require sending **user**, **password** and optionally **domain** (1). Those
+credentials are used to authenticate the call against the Keystone server (2) and,
+if the authentication succeeds, the call will proceed to the MDAL (3). The
+credentials must be provisioned in advance within the Keystone Server. The user
+and password are mandatory, while the domain is optional, in case it is not
+provided within the REST call, the realm will use the default one (**Default**),
+which is hard-coded. The default domain can be also configured through the
+*shiro.ini* file (see the :doc:`AAA User Guide <../user-guide/authentication-and-authorization-services>`).
+
+The protocol between the Controller and the Keystone Server (2) can be either
+HTTPS or HTTP. In order to use HTTPS the Keystone Server's certificate
+must be exported and imported on the Controller (see the :ref:`Certificate Management <certificate-management>` section).
+
+Configuring KeystoneAuthRealm
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Edit the "etc/shiro.ini" file and modify the following:
+
+::
+
+    # The KeystoneAuthRealm allows for authentication/authorization against an
+    # OpenStack's Keystone server. It uses the Identity's API v3 or later.
+    keystoneAuthRealm = org.opendaylight.aaa.shiro.realm.KeystoneAuthRealm
+    # The URL where the Keystone server exposes the Identity's API v3 the URL
+    # can be either HTTP or HTTPS and it is mandatory for this realm.
+    keystoneAuthRealm.url = https://<host>:<port>
+    # Optional parameter to make the realm verify the certificates in case of HTTPS
+    #keystoneAuthRealm.sslVerification = true
+    # Optional parameter to set up a default domain for requests using credentials
+    # without domain, uncomment in case you want a different value from the hard-coded
+    # one "Default"
+    #keystoneAuthRealm.defaultDomain = Default
+
+Once configured the realm, the mandatory fields are the fully quallified name of
+the class implementing the realm *keystoneAuthRealm* and the endpoint where the
+Keystone Server is listening *keystoneAuthRealm.url*.
+
+The optional parameter *keystoneAuthRealm.sslVerification* specifies whether the
+realm has to verify the SSL certificate or not. The optional parameter
+*keystoneAuthRealm.defaultDomain* allows to use a different default domain from
+the hard-coded one *"Default"*.
+
 Authorization Configuration
 ---------------------------
 
@@ -808,6 +867,7 @@ configuration, allowing different ways to listen for successful/unsuccessful
 authentication attempts. Custom AuthenticationListener(s) must implement
 the org.apache.shiro.authc.AuthenticationListener interface.
 
+.. _certificate-management:
 Certificate Management
 ----------------------
 
