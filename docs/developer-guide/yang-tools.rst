@@ -282,30 +282,27 @@ work.
 Mode with active resolution of if-features makes yang statements
 containing an if-feature statement conditional based on the supported
 features. These features are provided in the form of a QName-based
-java.util.function.Predicate object. In the example below, only two
+java.util.Set object. In the example below, only two
 features are supported: example-feature-1 and example-feature-2. The
-Predicate which contains this information is passed to the method
+Set which contains this information is passed to the method
 newBuild() and the mode is activated.
 
 .. code:: java
 
-    Predicate<QName> isFeatureSupported == qName -> {
-        Set<QName> supportedFeatures == new HashSet<>();
-        supportedFeatures.add(QName.create("example-namespace", "2016-08-31", "example-feature-1"));
-        supportedFeatures.add(QName.create("example-namespace", "2016-08-31", "example-feature-2"));
-        return supportedFeatures.contains(qName);
-    }
+    Set<QName> supportedFeatures = ImmutableSet.of(
+        QName.create("example-namespace", "2016-08-31", "example-feature-1"),
+        QName.create("example-namespace", "2016-08-31", "example-feature-2"));
 
-    CrossSourceStatementReactor.BuildAction reactor == YangInferencePipeline.RFC6020_REACTOR.newBuild(isFeatureSupported);
+    CrossSourceStatementReactor.BuildAction reactor = YangInferencePipeline.RFC6020_REACTOR.newBuild(supportedFeatures);
 
-In case when no features should be supported, you should provide a
-Predicate<QName> object whose test() method just returns false.
+In case when no features should be supported, you should provide an
+empty Set<QName> object.
 
 .. code:: java
 
-    Predicate<QName> isFeatureSupported == qName -> false;
+    Set<QName> supportedFeatures = ImmutableSet.of();
 
-    CrossSourceStatementReactor.BuildAction reactor == YangInferencePipeline.RFC6020_REACTOR.newBuild(isFeatureSupported);
+    CrossSourceStatementReactor.BuildAction reactor = YangInferencePipeline.RFC6020_REACTOR.newBuild(supportedFeatures);
 
 When this mode is not activated, all features in the processed YANG
 sources are supported.
