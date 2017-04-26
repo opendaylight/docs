@@ -31,6 +31,7 @@ Project-specific User Guides
    cardinal_-opendaylight-monitoring-as-a-service
    centinel-user-guide
    didm-user-guide
+   Eman-user-guide
    fabric-as-a-service
    genius-user-guide
    group-based-policy-user-guide
