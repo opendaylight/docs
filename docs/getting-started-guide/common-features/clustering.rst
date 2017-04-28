@@ -163,7 +163,7 @@ do the following on each machine:
    address of any of the machines that will be part of the cluster::
 
       cluster {
-        seed-nodes = ["akka.tcp://opendaylight-cluster-data@127.0.0.1:2550",
+        seed-nodes = ["akka.tcp://opendaylight-cluster-data@${IP_OF_MEMBER1}:2550",
                       <url-to-cluster-member-2>,
                       <url-to-cluster-member-3>]
 
@@ -250,7 +250,7 @@ Sample ``akka.conf`` file::
          auto-down-unreachable-after = 10s
 
          roles = [
-           "member-1"
+           "member-2"
          ]
 
        }
