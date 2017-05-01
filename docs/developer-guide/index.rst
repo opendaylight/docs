@@ -26,7 +26,7 @@ Project-specific Developer Guides
    didm-developer-guide
    distribution-version
    dlux
-   Eman-developer-guide
+   eman-developer-guide
    fabric-as-a-service
    infrautils-developer-guide
    iotdm-developer-guide
