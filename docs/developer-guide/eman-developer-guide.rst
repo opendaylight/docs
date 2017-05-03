@@ -61,7 +61,7 @@ Operational API
 Via MD-SAL, the following endpoint provides access to previously
 captured power measurements.
 
-Note: "eo" indicates "energy object" as per the IETF Information Model
+.. note:: "eo" indicates "energy object" as per the IETF Information Model
 
 operational::
 
@@ -79,12 +79,12 @@ A set of RPCs enable interactions with devices.
 
 get-eoAttribute enables query on an individual attribute of a energy object.::
 
- get-eoAttribute 
- 
+ get-eoAttribute
+
     deviceIP indicates IP address of target device
     attribute indicates name of requested attribute
 
-Note: future releases will provide a enumeration of allowed names. 
+.. note:: future releases will provide a enumeration of allowed names.
 The supported name are:
 
     * eoPower
@@ -100,7 +100,7 @@ The supported name are:
 
 set-eoAttribute enables sending a commend to an energy object.::
 
- set-eoAttribute 
+ set-eoAttribute
 
     deviceIP. IP address of target device
     attribute. string indicating name of attribute. Currently, no attributes
