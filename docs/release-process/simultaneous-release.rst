@@ -32,7 +32,7 @@ Releasing OpenDaylight
 
   .. note::
 
-     Enable Exclusive checkbox
+     Enable **Exclusive** checkbox for the submit button to override any existing persmissions.
 
 - Export ${RELEASE} and ${BUILDNUM} with current release name and build number.
 
