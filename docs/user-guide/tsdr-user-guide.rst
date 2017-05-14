@@ -1,3 +1,5 @@
+.. _tsdr-user-guide:
+
 TSDR User Guide
 ===============
 
