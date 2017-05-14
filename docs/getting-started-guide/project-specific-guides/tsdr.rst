@@ -1,3 +1,5 @@
+.. _tsdr-install-guide:
+
 TSDR Installation Guide
 =======================
 
