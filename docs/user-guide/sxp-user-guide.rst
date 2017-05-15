@@ -4,12 +4,12 @@ SXP User Guide
 Overview
 --------
 
-SXP (Source-Group Tag eXchange Protocol) project is an effort to enhance
+SXP (Scalable-Group Tag eXchange Protocol) project is an effort to enhance
 OpenDaylight platform with IP-SGT (IP Address to Source Group Tag)
 bindings that can be learned from connected SXP-aware network nodes. The
 current implementation supports SXP protocol version 4 according to the
 Smith, Kandula - SXP `IETF
-draft <https://tools.ietf.org/html/draft-smith-kandula-sxp-04>`__ and
+draft <https://tools.ietf.org/html/draft-smith-kandula-sxp-05>`__ and
 grouping of peers and creating filters based on ACL/Prefix-list syntax
 for filtering outbound and inbound IP-SGT bindings. All protocol legacy
 versions 1-3 are supported as well. Additionally, version 4 adds
@@ -375,6 +375,19 @@ status):
      <node-id>1.1.1.1</node-id>
      <domain-name>global</domain-name>
     </input>
+
+-  Add Route Adds route to leader Node. PUT
+   http://127.0.0.1:8181/restconf/config/sxp-cluster-route:sxp-cluster-route/
+
+::
+
+    <sxp-cluster-route xmlns="urn:opendaylight:sxp:cluster:route">
+        <routing-definition>
+            <ip-address>80.12.43.2</ip-address>
+            <interface>eth1:0</interface>
+            <netmask>255.255.255.0</netmask>
+        </routing-definition>
+    </sxp-cluster-route>
 
 Use cases for SXP
 ~~~~~~~~~~~~~~~~~

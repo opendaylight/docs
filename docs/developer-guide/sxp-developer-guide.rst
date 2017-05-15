@@ -4,12 +4,12 @@ SXP Developer Guide
 Overview
 --------
 
-SXP (Source-Group Tag eXchange Protocol) project is an effort to enhance
+SXP (Scalable-Group Tag eXchange Protocol) project is an effort to enhance
 OpenDaylight platform with IP-SGT (IP Address to Source Group Tag)
 bindings that can be learned from connected SXP-aware network nodes. The
 current implementation supports SXP protocol version 4 according to the
 Smith, Kandula - SXP `IETF
-draft <https://tools.ietf.org/html/draft-smith-kandula-sxp-04>`__ and
+draft <https://tools.ietf.org/html/draft-smith-kandula-sxp-05>`__ and
 grouping of peers and creating filters based on ACL/Prefix-list syntax
 for filtering outbound and inbound IP-SGT bindings. All protocol legacy
 versions 1-3 are supported as well. Additionally, version 4 adds
@@ -59,11 +59,18 @@ Key APIs and Interfaces
 As this project is fairly small, it provides only few features that
 install and provide all APIs and implementations for this project.
 
+-  sxp-route
+
 -  sxp-controller
 
 -  sxp-api
 
 -  spx-core
+
+sxp-route
+~~~~~~~~~
+
+Performs managing of SXP devices in cluster environment
 
 sxp-controller
 ~~~~~~~~~~~~~~
@@ -86,5 +93,5 @@ API Reference Documentation
 `RESTCONF Interface and Dynamic
 Tree <https://wiki.opendaylight.org/images/9/91/SXP_Restconf_Interface_and_Dynamic_Tree.pdf>`__
 `Specification and
-Architecture <https://wiki.opendaylight.org/images/6/6e/SXP_Specification_and_Architecture_v03.pdf>`__
+Architecture <https://wiki.opendaylight.org/images/4/44/SXP_Specification_and_Architecture_v05.pdf>`__
 
