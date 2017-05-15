@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba068154_683e32ba",
+        "filename": "docs/getting-started-guide/project-release-notes/sample-release-notes.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-05-15T16:41:32Z",
+      "side": 1,
+      "message": "remove this entire \"About this Document\" section...",
+      "range": {
+        "startLine": 22,
+        "startChar": 31,
+        "endLine": 22,
+        "endChar": 43
+      },
+      "revId": "2b3b52992a6b8ef37ab918937f8d0cf35d1201b5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_072cba98",
         "filename": "docs/getting-started-guide/project-release-notes/sample-release-notes.rst",
         "patchSetId": 2
@@ -13,6 +36,30 @@
       "writtenOn": "2017-05-12T21:26:49Z",
       "side": 1,
       "message": "Can we remove this section completely (not just comment out but delete the line)?  Let\u0027s strive for less unnecessary clutter.  I mean, typically projects simply say \"No Architectural Issues\" without any meaningful explanations.",
+      "range": {
+        "startLine": 62,
+        "startChar": 0,
+        "endLine": 62,
+        "endChar": 23
+      },
+      "revId": "2b3b52992a6b8ef37ab918937f8d0cf35d1201b5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_48588e32",
+        "filename": "docs/getting-started-guide/project-release-notes/sample-release-notes.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-05-15T16:41:32Z",
+      "side": 1,
+      "message": "+1 let\u0027s remove it.",
+      "parentUuid": "ba068154_072cba98",
       "range": {
         "startLine": 62,
         "startChar": 0,
