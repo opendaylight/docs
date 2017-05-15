@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba068154_c8b91e30",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-05-15T16:50:03Z",
+      "side": 1,
+      "message": "No need to duplicate the summary line.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 44
+      },
+      "revId": "79afbd55ce88dc243e61d80b58df7739895f4952",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_28826a4f",
+        "filename": "docs/user-guide/pcep-user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1315,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-05-15T16:50:03Z",
+      "side": 1,
+      "message": "line 2 and 3?",
+      "range": {
+        "startLine": 1315,
+        "startChar": 20,
+        "endLine": 1315,
+        "endChar": 25
+      },
+      "revId": "79afbd55ce88dc243e61d80b58df7739895f4952",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
