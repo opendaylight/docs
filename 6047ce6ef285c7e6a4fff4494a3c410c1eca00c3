@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba068154_88c43693",
+        "filename": "docs/developer-guide/controller.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 844,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-05-15T16:56:26Z",
+      "side": 1,
+      "message": "RPCs\n\nI think we are not intending to use RPC as a possession here?",
+      "range": {
+        "startLine": 844,
+        "startChar": 0,
+        "endLine": 844,
+        "endChar": 5
+      },
+      "revId": "6047ce6ef285c7e6a4fff4494a3c410c1eca00c3",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_68dab279",
+        "filename": "docs/developer-guide/controller.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 847,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-05-15T16:56:26Z",
+      "side": 1,
+      "message": "there is",
+      "range": {
+        "startLine": 847,
+        "startChar": 8,
+        "endLine": 847,
+        "endChar": 18
+      },
+      "revId": "6047ce6ef285c7e6a4fff4494a3c410c1eca00c3",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_48cb6ea5",
+        "filename": "docs/developer-guide/controller.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 850,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-05-15T16:56:26Z",
+      "side": 1,
+      "message": "are not\n\nMaybe an opinion but I think it\u0027s better to avoid using things like \u0027s \u0027t in documentation as writing the full 2 words out makes it more clear to the reader.",
+      "range": {
+        "startLine": 850,
+        "startChar": 34,
+        "endLine": 850,
+        "endChar": 40
+      },
+      "revId": "6047ce6ef285c7e6a4fff4494a3c410c1eca00c3",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
