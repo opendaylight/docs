@@ -62,7 +62,7 @@ Autorelease
 
   .. note::
 
-     Enable Exclusive checkbox override any existing persmissions.
+     Enable **Exclusive** checkbox for the submit button to override any existing persmissions.
 
 - Setup releng/autorelease repository.
   **(Release Engineering Team)**
