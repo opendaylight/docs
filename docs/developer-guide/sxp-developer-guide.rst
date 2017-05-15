@@ -1,3 +1,5 @@
+.. _sxp-developer-guide-reference:
+
 SXP Developer Guide
 ===================
 
