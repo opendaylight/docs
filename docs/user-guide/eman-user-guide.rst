@@ -1,3 +1,5 @@
+.. _eman-user-guide:
+
 eman User Guide
 ===============
 

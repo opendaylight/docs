@@ -1,3 +1,5 @@
+.. _eman-dev-guide:
+
 eman Developer Guide
 ====================
 
