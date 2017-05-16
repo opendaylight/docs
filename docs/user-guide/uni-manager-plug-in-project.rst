@@ -1,3 +1,5 @@
+.. _unimgr-user-guide:
+
 User Network Interface Manager Plug-in (Unimgr) User Guide
 ==========================================================
 
