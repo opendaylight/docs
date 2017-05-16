@@ -1,3 +1,5 @@
+.. _opflex-genie-dev-guide:
+
 OpFlex genie Developer Guide
 ============================
 
@@ -21,4 +23,3 @@ API Reference Documentation
 
 Complete API documentation for the generated libmodelgbp can be found
 in doc/html/index.html in any build
-
