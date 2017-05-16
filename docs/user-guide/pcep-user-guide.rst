@@ -1258,6 +1258,71 @@ with optional input parameters:
     --triggered-re-sync
       PCE-triggered re-synchronization capability enabled.
 
+Data Change Counter Tool
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Data Change Counter tool registers a Data Change Listener to a specified topology's subtree.
+This will allow us to know the quantity of changes produced under it, with each data change event counter will be incremented.
+
+Installation
+''''''''''''
+Installing data change counter tool
+
+.. code-block:: console
+
+   feature:install odl-restconf odl-bgpcep-data-change-counter
+
+Configuration
+'''''''''''''
+Once we set the configuration, a new data change counter will be created and registers to example-linkstate-topology.
+
+.. important:: **Clustering** - Each Counter Identifier should be unique.
+
+**URL:** ``/restconf/config/odl-data-change-counter-config:data-change-counter-config/data-change-counter``
+
+**Method:** ``PUT``
+
+**Content-Type:** ``application/xml``
+
+**Request Body:**
+
+.. code-block:: xml
+   :linenos:
+   :emphasize-lines: 2,3
+
+   <data-change-counter-config xmlns="urn:opendaylight:params:xml:ns:yang:bgpcep:data-change-counter-config">
+       <counter-id>data-change-counter</counter-id>
+       <topology-name>example-linkstate-topology</topology-name>
+   </data-change-counter-config>
+
+@line 2: **Counter Id** - Unique counter change identifier.
+
+@line 3: **Topology Name** - An identifier for a topology.
+
+Usage
+'''''
+
+Counter state for topology
+
+**URL:** ``/restconf/operational/data-change-counter:data-change-counter/counter/data-change-counter``
+
+**Method:** ``GET``
+
+**Response Body:**
+
+.. code-block:: xml
+   :linenos:
+   :emphasize-lines: 2,3
+
+   <counter xmlns="urn:opendaylight:params:xml:ns:yang:bgp-data-change-counter">
+       <id>data-change-counter</id>
+       <count>0</count>
+   </counter>
+
+@line 2: **Counter Id** - Unique counter change identifier.
+
+@line 3: **Count** - Number of changes under registered topology's subtree.
+
 Troubleshooting
 ---------------
 This section offers advices in a case OpenDaylight PCEP plugin is not working as expected.
