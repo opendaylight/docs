@@ -24,21 +24,24 @@ These parent projects are:
 -  ``bundle-parent`` — the parent POM for Maven modules producing OSGi
    bundles
 
--  ``single-feature-parent`` — the parent POM for Maven modules producing
-   a single Karaf feature
-
--  ``feature-repo-parent`` — the parent POM for Maven modules producing
-   feature repositories
-
--  ``karaf4-parent`` — the parent POM for Maven modules producing Karaf 4
-   distributions
-
-The following parent projects are deprecated:
+The following parent projects are deprecated, but still used in Carbon:
 
 -  ``feature-parent`` — the parent POM for Maven modules producing
    Karaf 3 feature repositories
 
 -  ``karaf-parent`` — the parent POM for Maven modules producing Karaf 3
+   distributions
+
+The following parent projects are new in Carbon, for Karaf 4 support (which
+won’t be complete until Nitrogen):
+
+-  ``single-feature-parent`` — the parent POM for Maven modules producing
+   a single Karaf 4 feature
+
+-  ``feature-repo-parent`` — the parent POM for Maven modules producing
+   Karaf 4 feature repositories
+
+-  ``karaf4-parent`` — the parent POM for Maven modules producing Karaf 4
    distributions
 
 odlparent-lite
@@ -251,11 +254,67 @@ OSGi bundles:
 In addition to this, JUnit is included as a default dependency in “test”
 scope.
 
+features-parent
+~~~~~~~~~~~~~~~
+
+This inherits from ``odlparent`` and enables functionality useful for
+Karaf features:
+
+-  ``karaf-maven-plugin`` is activated, to build Karaf features — but
+   for OpenDaylight, projects need to use “jar” packaging (**not**
+   “feature” or “kar”);
+
+-  ``features.xml`` files are processed from templates stored in
+   ``src/main/features/features.xml``;
+
+-  Karaf features are tested after build to ensure they can be activated
+   in a Karaf container.
+
+The ``features.xml`` processing allows versions to be ommitted from
+certain feature dependencies, and replaced with “\ ``{{version}}``\ ”.
+For example:
+
+::
+
+    <features name="odl-mdsal-${project.version}" xmlns="http://karaf.apache.org/xmlns/features/v1.2.0"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.2.0 http://karaf.apache.org/xmlns/features/v1.2.0">
+
+        <repository>mvn:org.opendaylight.odlparent/features-odlparent/{{VERSION}}/xml/features</repository>
+
+        [...]
+        <feature name='odl-mdsal-broker-local' version='${project.version}' description="OpenDaylight :: MDSAL :: Broker">
+            <feature version='${yangtools.version}'>odl-yangtools-common</feature>
+            <feature version='${mdsal.version}'>odl-mdsal-binding-dom-adapter</feature>
+            <feature version='${mdsal.model.version}'>odl-mdsal-models</feature>
+            <feature version='${project.version}'>odl-mdsal-common</feature>
+            <feature version='${config.version}'>odl-config-startup</feature>
+            <feature version='${config.version}'>odl-config-netty</feature>
+            <feature version='[3.3.0,4.0.0)'>odl-lmax</feature>
+            [...]
+            <bundle>mvn:org.opendaylight.controller/sal-dom-broker-config/{{VERSION}}</bundle>
+            <bundle start-level="40">mvn:org.opendaylight.controller/blueprint/{{VERSION}}</bundle>
+            <configfile finalname="${config.configfile.directory}/${config.mdsal.configfile}">mvn:org.opendaylight.controller/md-sal-config/{{VERSION}}/xml/config</configfile>
+        </feature>
+
+As illustrated, versions can be ommitted in this way for repository
+dependencies, bundle dependencies and configuration files. They must be
+specified traditionally (either hard-coded, or using Maven properties)
+for feature dependencies.
+
+karaf-parent
+~~~~~~~~~~~~
+
+This allows building a Karaf 3 distribution, typically for local testing
+purposes. Any runtime-scoped feature dependencies will be included in the
+distribution, and the ``karaf.localFeature`` property can be used to
+specify the boot feature (in addition to ``standard``).
+
 single-feature-parent
 ~~~~~~~~~~~~~~~~~~~~~
 
 This inherits from ``odlparent`` and enables functionality useful for
-Karaf features:
+Karaf 4 features:
 
 -  ``karaf-maven-plugin`` is activated, to build Karaf features, typically
    with “feature” packaging (“kar” is also supported);
@@ -283,7 +342,7 @@ feature-repo-parent
 ~~~~~~~~~~~~~~~~~~~
 
 This inherits from ``odlparent`` and enables functionality useful for
-Karaf feature repositories. It follows the same principles as
+Karaf 4 feature repositories. It follows the same principles as
 ``single-feature-parent``, but is designed specifically for repositories
 and should be used only for this type of artifacts.
 
@@ -298,42 +357,110 @@ purposes. Any runtime-scoped feature dependencies will be included in the
 distribution, and the ``karaf.localFeature`` property can be used to
 specify the boot feature (in addition to ``standard``).
 
-Features
---------
+Features (for Karaf 3)
+----------------------
 
-The ODL Parent component for OpenDaylight provides a number of Karaf
-features which can be used by other Karaf features to use certain
+The ODL Parent component for OpenDaylight provides a number of Karaf 3
+features which can be used by other Karaf 3 features to use certain
 third-party upstream dependencies.
 
 These features are:
 
--  Akka features (in the ``features4-akka`` repository):
+-  Akka features (in the ``features-akka`` repository):
 
-   -  ``odl4-akka-all`` — all Akka bundles;
+   -  ``odl-akka-all`` — all Akka bundles;
 
-   -  ``odl4-akka-scala-2.11`` — Scala runtime for OpenDaylight;
+   -  ``odl-akka-scala-2.11`` — Scala runtime for OpenDaylight;
 
-   -  ``odl4-akka-system-2.4`` — Akka actor framework bundles;
+   -  ``odl-akka-system-2.4`` — Akka actor framework bundles;
 
-   -  ``odl4-akka-clustering-2.4`` — Akka clustering bundles and
+   -  ``odl-akka-clustering-2.4`` — Akka clustering bundles and
       dependencies;
 
-   -  ``odl4-akka-leveldb-0.7`` — LevelDB;
+   -  ``odl-akka-leveldb-0.7`` — LevelDB;
 
-   -  ``odl4-akka-persistence-2.4`` — Akka persistence;
+   -  ``odl-akka-persistence-2.4`` — Akka persistence;
 
--  general third-party features (in the ``features4-odlparent``
+-  general third-party features (in the ``features-odlparent``
    repository):
 
-   -  ``odl4-netty-4`` — all Netty bundles;
+   -  ``odl-netty-4`` — all Netty bundles;
 
-   -  ``odl4-guava-18`` — Guava 18;
+   -  ``odl-guava-18`` — Guava 18;
 
-   -  ``odl4-guava-21`` — Guava 21 (not indended for use in Carbon);
+   -  ``odl-guava-21`` — Guava 21 (not indended for use in Carbon);
 
-   -  ``odl4-lmax-3`` — LMAX Disruptor;
+   -  ``odl-lmax-3`` — LMAX Disruptor;
 
-   -  ``odl4-triemap-0.2`` — Concurrent Trie HashMap;
+   -  ``odl-triemap-0.2`` — Concurrent Trie HashMap.
+
+To use these, you need to declare a dependency on the appropriate
+repository in your ``features.xml`` file:
+
+::
+
+    <repository>mvn:org.opendaylight.odlparent/features-odlparent/{{VERSION}}/xml/features</repository>
+
+and then include the feature, *e.g.*:
+
+::
+
+    <feature name='odl-mdsal-broker-local' version='${project.version}' description="OpenDaylight :: MDSAL :: Broker">
+        [...]
+        <feature version='[3.3.0,4.0.0)'>odl-lmax</feature>
+        [...]
+    </feature>
+
+You also need to depend on the features repository in your POM:
+
+::
+
+    <dependency>
+        <groupId>org.opendaylight.odlparent</groupId>
+        <artifactId>features-odlparent</artifactId>
+        <classifier>features</classifier>
+        <type>xml</type>
+    </dependency>
+
+assuming the appropriate dependency management:
+
+::
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.opendaylight.odlparent</groupId>
+                <artifactId>odlparent-artifacts</artifactId>
+                <version>1.8.0-SNAPSHOT</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+(the version number there is appropriate for Carbon). For the time being
+you also need to depend separately on the individual JARs as
+compile-time dependencies to build your dependent code; the relevant
+dependencies are managed in ``odlparent``'s dependency management.
+
+| The suggested version ranges are as follows:
+
+-  ``odl-netty``: ``[4.0.37,4.1.0)`` or ``[4.0.37,5.0.0)``;
+
+-  ``odl-guava``: ``[18,19)`` (if your code is ready for it, ``[19,20)``
+   is also available, but the current default version of Guava in
+   OpenDaylight is 18);
+
+-  ``odl-lmax``: ``[3.3.4,4.0.0)``
+
+Features (for Karaf 4)
+----------------------
+
+There are equivalent features to all the Karaf 3 features, for Karaf 4.
+The repositories use “features4” instead of “features”, and the features
+use “odl4” instead of “odl”.
+
+The following new features are specific to Karaf 4:
 
 -  Karaf wrapper features (also in the ``features4-odlparent``
    repository) — these can be used to pull in a Karaf feature
@@ -375,4 +502,6 @@ assuming the appropriate dependency management:
         </dependencies>
     </dependencyManagement>
 
-(the version number there is appropriate for Carbon).
+(the version number there is appropriate for Carbon). We no longer use version
+ranges, the feature dependencies all use the ``odlparent`` version (but you
+should rely on the artifacts POM).
