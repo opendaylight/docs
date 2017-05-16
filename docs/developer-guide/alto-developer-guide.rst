@@ -1,3 +1,5 @@
+.. _alto-developer-guide
+
 ALTO Developer Guide
 ====================
 
@@ -191,4 +193,3 @@ Register northbound route
 
 If necessary, you can add a northbound route module in
 ``alto-core/standard-northbound-routes``.
-
