@@ -1,3 +1,5 @@
+.. neutron-service-developer-guide:
+
 Neutron Service Developer Guide
 ===============================
 
