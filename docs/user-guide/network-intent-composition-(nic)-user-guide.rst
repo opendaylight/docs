@@ -1,3 +1,5 @@
+.. _nic-user-guide:
+
 Network Intent Composition (NIC) User Guide
 ===========================================
 
