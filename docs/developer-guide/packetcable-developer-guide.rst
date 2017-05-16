@@ -1,3 +1,5 @@
+.. _packetcable-dev-guide:
+
 PacketCable Developer Guide
 ===========================
 
@@ -342,4 +344,3 @@ Install http://karaf.apache.org/manual/latest/users-guide/wrapper.html
 
       To uninstall the service :
         $ rm /etc/init.d/karaf-service
-
