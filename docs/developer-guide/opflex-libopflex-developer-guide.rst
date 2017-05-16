@@ -1,3 +1,5 @@
+.. _opflex-libopflex-dev-guide:
+
 OpFlex libopflex Developer Guide
 ================================
 
@@ -421,4 +423,3 @@ API Reference Documentation
 
 Complete API documentation can be found by in doc/html/index.html in
 any build.
-
