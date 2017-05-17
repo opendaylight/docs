@@ -1,3 +1,4 @@
+.. _bgp-developer-guide:
 BGP Developer Guide
 ===================
 
