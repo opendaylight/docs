@@ -1,3 +1,5 @@
+.. _sdni-dev-guide:
+
 ODL-SDNi Developer Guide
 ========================
 
@@ -99,4 +101,3 @@ Go to
 `http://${controlleripaddress}:8181/apidoc/explorer/index.html <http://${controlleripaddress}:8181/apidoc/explorer/index.html>`__,
 sign in, and expand the opendaylight-sdni panel. From there, users can
 execute various API calls to test their SDNi deployment.
-
