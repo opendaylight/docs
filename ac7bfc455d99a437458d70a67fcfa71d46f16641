@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba068154_125fc142",
+        "filename": "docs/getting-started-guide/project-release-notes/cardinal.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2017-05-17T23:11:14Z",
+      "side": 1,
+      "message": "the csit patch is merged, but does not cover any real\nfunctionality.\n\nmore importantly the JJB side of the work needs to be done\nto get this job running in CSIT. you can email integration-dev\nfor help on that, if you need it.\n\neven with a job to run this merged csit patch, we still need\nto be listed as experimental as the coverage is not adequate.",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 58
+      },
+      "revId": "ac7bfc455d99a437458d70a67fcfa71d46f16641",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
