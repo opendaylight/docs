@@ -1,3 +1,4 @@
+.. _didm-developer-guide:
 DIDM Developer Guide
 ====================
 
@@ -49,6 +50,8 @@ functions:
 
 Key APIs and Interfaces
 -----------------------
+
+.. _didm-flow-objective-api:
 
 FlowObjective API
 ~~~~~~~~~~~~~~~~~
