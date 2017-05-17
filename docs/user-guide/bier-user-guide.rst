@@ -1,3 +1,5 @@
+.. _bier-user-guide:
+
 BIER User Guide
 ===============
 
