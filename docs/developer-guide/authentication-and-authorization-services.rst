@@ -1,3 +1,5 @@
+.. _aaa-dev-guide:
+
 Authentication, Authorization and Accounting (AAA) Services
 ===========================================================
 
