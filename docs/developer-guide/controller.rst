@@ -52,6 +52,8 @@ data using following model-driven protocols:
    manipulate YANG modeled data and invoke YANG modeled RPCs, using XML
    or JSON as payload format.
 
+.. _mdsal_dev_guide:
+
 MD-SAL Overview
 ---------------
 
