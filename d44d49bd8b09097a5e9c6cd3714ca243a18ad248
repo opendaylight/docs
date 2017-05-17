@@ -42,6 +42,24 @@
     },
     {
       "key": {
+        "uuid": "ba068154_325125d9",
+        "filename": "docs/getting-started-guide/project-release-notes/controller.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1842
+      },
+      "writtenOn": "2017-05-17T21:28:08Z",
+      "side": 1,
+      "message": "There\u0027s many but most are pulled in by odl-mdsal-broker. This is the one that\u0027s pulled in - I\u0027m not about to enumerate all of them",
+      "parentUuid": "ba068154_cfcbd6a3",
+      "revId": "d44d49bd8b09097a5e9c6cd3714ca243a18ad248",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_efbfbafa",
         "filename": "docs/getting-started-guide/project-release-notes/controller.rst",
         "patchSetId": 1
@@ -53,6 +71,24 @@
       "writtenOn": "2017-05-17T19:40:11Z",
       "side": 1,
       "message": "Probably want to know that securing Akka is outside the scope of this project, but should be considered by people deploying it.",
+      "revId": "d44d49bd8b09097a5e9c6cd3714ca243a18ad248",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_925f31e5",
+        "filename": "docs/getting-started-guide/project-release-notes/controller.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1842
+      },
+      "writtenOn": "2017-05-17T21:28:08Z",
+      "side": 1,
+      "message": "Not sure I follow. If you have specific changes here you want, can you push a patch?",
+      "parentUuid": "ba068154_efbfbafa",
       "revId": "d44d49bd8b09097a5e9c6cd3714ca243a18ad248",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -76,6 +112,24 @@
     },
     {
       "key": {
+        "uuid": "ba068154_d259b9ff",
+        "filename": "docs/getting-started-guide/project-release-notes/controller.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1842
+      },
+      "writtenOn": "2017-05-17T21:28:08Z",
+      "side": 1,
+      "message": "just what I said - no migration issues. How else should I word it?",
+      "parentUuid": "ba068154_6ff2aa70",
+      "revId": "d44d49bd8b09097a5e9c6cd3714ca243a18ad248",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_afec9290",
         "filename": "docs/getting-started-guide/project-release-notes/controller.rst",
         "patchSetId": 1
@@ -93,6 +147,24 @@
     },
     {
       "key": {
+        "uuid": "ba068154_12734181",
+        "filename": "docs/getting-started-guide/project-release-notes/controller.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1842
+      },
+      "writtenOn": "2017-05-17T21:28:08Z",
+      "side": 1,
+      "message": "Not that I know of.  controller has impls - APIs are in mainly in md-sal project except for the \"legacy\" controller ones that haven\u0027t changed.",
+      "parentUuid": "ba068154_afec9290",
+      "revId": "d44d49bd8b09097a5e9c6cd3714ca243a18ad248",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_cfe91682",
         "filename": "docs/getting-started-guide/project-release-notes/controller.rst",
         "patchSetId": 1
@@ -104,6 +176,24 @@
       "writtenOn": "2017-05-17T19:40:11Z",
       "side": 1,
       "message": "There\u0027s really no changes in how things are configured?",
+      "revId": "d44d49bd8b09097a5e9c6cd3714ca243a18ad248",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_526dc997",
+        "filename": "docs/getting-started-guide/project-release-notes/controller.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1842
+      },
+      "writtenOn": "2017-05-17T21:28:08Z",
+      "side": 1,
+      "message": "not that I know of",
+      "parentUuid": "ba068154_cfe91682",
       "revId": "d44d49bd8b09097a5e9c6cd3714ca243a18ad248",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
