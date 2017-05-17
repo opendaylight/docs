@@ -1,3 +1,5 @@
+.. _vtn-openstack-dev-guide:
+
 OpenStack with Virtual Tenant Network
 =====================================
 

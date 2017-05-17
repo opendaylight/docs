@@ -1,3 +1,5 @@
+.. _vtn-user-guide:
+
 Virtual Tenant Network (VTN)
 ============================
 
@@ -4720,4 +4722,3 @@ SCVMM User Guide
 
    -  OpenDaylight Congestion Control with SCVMM VTN:
       https://youtu.be/34YMOTzbNJM
-
