@@ -1,3 +1,5 @@
+.. _ocpplugin-dev-guide:
+
 OCP Plugin Developer Guide
 ==========================
 
@@ -1155,4 +1157,3 @@ Notification to the MD-SAL.
         void onFaultInd(FaultInd notification);
 
     }
-
