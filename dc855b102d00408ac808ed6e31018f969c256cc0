@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba068154_fd7773d2",
+        "filename": "docs/getting-started-guide/project-release-notes/netconf.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-17T16:44:10Z",
+      "side": 1,
+      "message": "Should these be documented here?",
+      "range": {
+        "startLine": 70,
+        "startChar": 0,
+        "endLine": 86,
+        "endChar": 22
+      },
+      "revId": "dc855b102d00408ac808ed6e31018f969c256cc0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_1d7d17b2",
+        "filename": "docs/getting-started-guide/project-release-notes/netconf.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-17T16:44:10Z",
+      "side": 1,
+      "message": "Would be good to have reST",
+      "range": {
+        "startLine": 105,
+        "startChar": 0,
+        "endLine": 111,
+        "endChar": 116
+      },
+      "revId": "dc855b102d00408ac808ed6e31018f969c256cc0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_5d4e7f97",
+        "filename": "docs/getting-started-guide/project-release-notes/netconf.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-17T16:44:10Z",
+      "side": 1,
+      "message": "Does this mean there\u0027s no state in the data store that needs to be migrated?",
+      "revId": "dc855b102d00408ac808ed6e31018f969c256cc0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
