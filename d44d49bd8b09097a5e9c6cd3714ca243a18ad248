@@ -1,0 +1,112 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba068154_afce52b2",
+        "filename": "docs/getting-started-guide/project-release-notes/controller.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-17T19:40:11Z",
+      "side": 1,
+      "message": "Remove.",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 52
+      },
+      "revId": "d44d49bd8b09097a5e9c6cd3714ca243a18ad248",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_cfcbd6a3",
+        "filename": "docs/getting-started-guide/project-release-notes/controller.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-17T19:40:11Z",
+      "side": 1,
+      "message": "Is this the only one?",
+      "revId": "d44d49bd8b09097a5e9c6cd3714ca243a18ad248",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_efbfbafa",
+        "filename": "docs/getting-started-guide/project-release-notes/controller.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-17T19:40:11Z",
+      "side": 1,
+      "message": "Probably want to know that securing Akka is outside the scope of this project, but should be considered by people deploying it.",
+      "revId": "d44d49bd8b09097a5e9c6cd3714ca243a18ad248",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_6ff2aa70",
+        "filename": "docs/getting-started-guide/project-release-notes/controller.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-17T19:40:11Z",
+      "side": 1,
+      "message": "As in, migration isn\u0027t possible or migration is trivial. I think it\u0027s the former.",
+      "revId": "d44d49bd8b09097a5e9c6cd3714ca243a18ad248",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_afec9290",
+        "filename": "docs/getting-started-guide/project-release-notes/controller.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-17T19:40:11Z",
+      "side": 1,
+      "message": "There\u0027s really no API changes from Boron?",
+      "revId": "d44d49bd8b09097a5e9c6cd3714ca243a18ad248",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_cfe91682",
+        "filename": "docs/getting-started-guide/project-release-notes/controller.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-17T19:40:11Z",
+      "side": 1,
+      "message": "There\u0027s really no changes in how things are configured?",
+      "revId": "d44d49bd8b09097a5e9c6cd3714ca243a18ad248",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
