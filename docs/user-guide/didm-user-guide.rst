@@ -1,3 +1,4 @@
+.. _didm-user-guide:
 DIDM User Guide
 ===============
 

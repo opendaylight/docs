@@ -1,3 +1,4 @@
+.. _didm-developer-guide:
 DIDM Developer Guide
 ====================
 
@@ -47,6 +48,7 @@ functions:
    devices and support the APIs defined by the RPCs. There may be
    different Driver implementations for different device types.
 
+.. _flowObjective-api:
 Key APIs and Interfaces
 -----------------------
 
