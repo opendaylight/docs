@@ -1,0 +1,187 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba068154_621c8278",
+        "filename": "docs/getting-started-guide/project-release-notes/bgp-ls-pcep.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-17T14:55:00Z",
+      "side": 1,
+      "message": "It would be better to have these links point to the sections in the docs via reST links instead of to code in the git repos.",
+      "range": {
+        "startLine": 42,
+        "startChar": 0,
+        "endLine": 52,
+        "endChar": 189
+      },
+      "revId": "80cd247a562bc47ca48dfab06dbde2fdf90a373b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_a2166a53",
+        "filename": "docs/getting-started-guide/project-release-notes/bgp-ls-pcep.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-17T14:55:00Z",
+      "side": 1,
+      "message": "Should you comment that MD5 is believed insecure?",
+      "range": {
+        "startLine": 57,
+        "startChar": 72,
+        "endLine": 57,
+        "endChar": 75
+      },
+      "revId": "80cd247a562bc47ca48dfab06dbde2fdf90a373b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_4207be1c",
+        "filename": "docs/getting-started-guide/project-release-notes/bgp-ls-pcep.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-17T14:55:00Z",
+      "side": 1,
+      "message": "This is not going to format right.",
+      "range": {
+        "startLine": 74,
+        "startChar": 0,
+        "endLine": 75,
+        "endChar": 40
+      },
+      "revId": "80cd247a562bc47ca48dfab06dbde2fdf90a373b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_22027a0b",
+        "filename": "docs/getting-started-guide/project-release-notes/bgp-ls-pcep.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-17T14:55:00Z",
+      "side": 1,
+      "message": "I take it no?",
+      "revId": "80cd247a562bc47ca48dfab06dbde2fdf90a373b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_9d0d873a",
+        "filename": "docs/getting-started-guide/project-release-notes/bgp-ls-pcep.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-17T14:55:00Z",
+      "side": 1,
+      "message": "Add a short description.",
+      "revId": "80cd247a562bc47ca48dfab06dbde2fdf90a373b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_fd13f359",
+        "filename": "docs/getting-started-guide/project-release-notes/bgp-ls-pcep.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-17T14:55:00Z",
+      "side": 1,
+      "message": "I assume none? Then say so.",
+      "revId": "80cd247a562bc47ca48dfab06dbde2fdf90a373b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_dd0eef31",
+        "filename": "docs/getting-started-guide/project-release-notes/bgp-ls-pcep.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-17T14:55:00Z",
+      "side": 1,
+      "message": "this will not format as a list",
+      "range": {
+        "startLine": 112,
+        "startChar": 0,
+        "endLine": 151,
+        "endChar": 33
+      },
+      "revId": "80cd247a562bc47ca48dfab06dbde2fdf90a373b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_1d199779",
+        "filename": "docs/getting-started-guide/project-release-notes/bgp-ls-pcep.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-17T14:55:00Z",
+      "side": 1,
+      "message": "I think this won\u0027t format the way you want.",
+      "revId": "80cd247a562bc47ca48dfab06dbde2fdf90a373b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_3d1e1b64",
+        "filename": "docs/getting-started-guide/project-release-notes/bgp-ls-pcep.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-17T14:55:00Z",
+      "side": 1,
+      "message": "Remove.",
+      "range": {
+        "startLine": 165,
+        "startChar": 0,
+        "endLine": 168,
+        "endChar": 50
+      },
+      "revId": "80cd247a562bc47ca48dfab06dbde2fdf90a373b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
