@@ -1,3 +1,5 @@
+.. _ocpplugin-user-guide:
+
 OCP Plugin User Guide
 =====================
 
@@ -295,4 +297,3 @@ the form of both northbound and southbound APIs, including:
 
 The API is documented in the OCP Plugin Developer Guide under the
 section Southbound API and Northbound API, respectively.
-
