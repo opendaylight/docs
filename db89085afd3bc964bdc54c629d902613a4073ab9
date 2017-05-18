@@ -1,0 +1,101 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba068154_3a2d7747",
+        "filename": "docs/getting-started-guide/project-release-notes/netvirt.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T15:58:25Z",
+      "side": 1,
+      "message": "\u003ds should line up with title",
+      "revId": "db89085afd3bc964bdc54c629d902613a4073ab9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_1a30739d",
+        "filename": "docs/getting-started-guide/project-release-notes/netvirt.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T15:58:25Z",
+      "side": 1,
+      "message": "reST links with :ref: would be a lot better: http://www.sphinx-doc.org/en/stable/markup/inline.html#cross-referencing-arbitrary-locations",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 126
+      },
+      "revId": "db89085afd3bc964bdc54c629d902613a4073ab9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_7a27ff64",
+        "filename": "docs/getting-started-guide/project-release-notes/netvirt.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T15:58:25Z",
+      "side": 1,
+      "message": "Since, in general, migration from Boron to Carbon isn\u0027t supported, I assume that the same is true here.",
+      "revId": "db89085afd3bc964bdc54c629d902613a4073ab9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_5a2afb2c",
+        "filename": "docs/getting-started-guide/project-release-notes/netvirt.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T15:58:25Z",
+      "side": 1,
+      "message": "No API changes or anything?",
+      "revId": "db89085afd3bc964bdc54c629d902613a4073ab9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_fa1acf15",
+        "filename": "docs/getting-started-guide/project-release-notes/netvirt.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T15:58:25Z",
+      "side": 1,
+      "message": "Anything specific you want to call out because it\u0027s important?",
+      "range": {
+        "startLine": 61,
+        "startChar": 0,
+        "endLine": 69,
+        "endChar": 280
+      },
+      "revId": "db89085afd3bc964bdc54c629d902613a4073ab9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
