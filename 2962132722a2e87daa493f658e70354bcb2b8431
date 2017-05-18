@@ -213,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "ba068154_fe776639",
+        "filename": "docs/getting-started-guide/project-release-notes/vtn.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 396
+      },
+      "writtenOn": "2017-05-18T11:57:07Z",
+      "side": 1,
+      "message": "This is a section which explains security considerations. Therefore, you should explain security considerations here.\n\nAs written in the page you refers, if VTN has any external interfaces other than RESTCONF and the external interfaces have security considerations, you need to write that considerations here. Just writing \"Uses the RESTCONF port of ODL\" does\u0027t give clear ideas to most of users about what kind of security considerations VTN has.\n\n\nYou write \"No Issues\" below. If that is true, only thing you need to write in this section is \"No Issues\", I think. In that case you should remove this line. If you think \"Use the RESTCONF port of ODL\" has some security issues, you need to explain why this would be security issues and need to remove the line \"No Issues\".",
+      "parentUuid": "ba068154_25c4415e",
+      "range": {
+        "startLine": 50,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 31
+      },
+      "revId": "2962132722a2e87daa493f658e70354bcb2b8431",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_c521f5a0",
         "filename": "docs/getting-started-guide/project-release-notes/vtn.rst",
         "patchSetId": 1
