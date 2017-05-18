@@ -82,6 +82,29 @@
     },
     {
       "key": {
+        "uuid": "ba068154_6313da0d",
+        "filename": "docs/getting-started-guide/project-release-notes/of-config-release-notes.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2017-05-18T23:19:11Z",
+      "side": 1,
+      "message": "I don\u0027t remember the details of this, but if this is\ntruly the case you can send an email to integration-dev\nto recap and submit a patch (or ask us to) to delete \nyour existing NOOP csit jobs. at this point they are just\nusing needless cycles on an already busy infra",
+      "range": {
+        "startLine": 47,
+        "startChar": 48,
+        "endLine": 47,
+        "endChar": 119
+      },
+      "revId": "66f0ed6d4f8c9efb4f3d07606fa35de1bd105989",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_c341e63a",
         "filename": "docs/getting-started-guide/project-release-notes/of-config-release-notes.rst",
         "patchSetId": 2
