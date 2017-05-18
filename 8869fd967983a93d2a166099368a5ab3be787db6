@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba068154_da49cbb8",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2017-05-18T17:01:10Z",
+      "side": 1,
+      "message": "The reason i want to keep is because it can be individually used by user to write their own implementation, so i believe they should be aware of it.",
+      "parentUuid": "ba068154_9a90e34f",
+      "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_7aac1fa1",
         "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
         "patchSetId": 3
@@ -30,6 +48,30 @@
       "writtenOn": "2017-05-18T16:15:14Z",
       "side": 1,
       "message": "YANG",
+      "range": {
+        "startLine": 12,
+        "startChar": 54,
+        "endLine": 12,
+        "endChar": 58
+      },
+      "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_1acb531f",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2017-05-18T17:01:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_7aac1fa1",
       "range": {
         "startLine": 12,
         "startChar": 54,
@@ -88,6 +130,54 @@
     },
     {
       "key": {
+        "uuid": "ba068154_5d45d515",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2017-05-18T17:01:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_1aa513b5",
+      "range": {
+        "startLine": 13,
+        "startChar": 46,
+        "endLine": 13,
+        "endChar": 110
+      },
+      "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_7d425911",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2017-05-18T17:01:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_5aaf9b94",
+      "range": {
+        "startLine": 13,
+        "startChar": 8,
+        "endLine": 13,
+        "endChar": 12
+      },
+      "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_ba95e741",
         "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
         "patchSetId": 3
@@ -99,6 +189,30 @@
       "writtenOn": "2017-05-18T16:15:14Z",
       "side": 1,
       "message": "the YANG",
+      "range": {
+        "startLine": 14,
+        "startChar": 49,
+        "endLine": 14,
+        "endChar": 53
+      },
+      "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_1d3b4d9d",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2017-05-18T17:01:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_ba95e741",
       "range": {
         "startLine": 14,
         "startChar": 49,
@@ -128,6 +242,24 @@
     },
     {
       "key": {
+        "uuid": "ba068154_ba8967cc",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2017-05-18T17:01:10Z",
+      "side": 1,
+      "message": "it loads the yang models, so in my understanding it is.",
+      "parentUuid": "ba068154_fa9f6f5d",
+      "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_da9a6b6d",
         "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
         "patchSetId": 3
@@ -151,6 +283,30 @@
     },
     {
       "key": {
+        "uuid": "ba068154_da8eebcf",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2017-05-18T17:01:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_da9a6b6d",
+      "range": {
+        "startLine": 19,
+        "startChar": 17,
+        "endLine": 21,
+        "endChar": 106
+      },
+      "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_9a77433b",
         "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
         "patchSetId": 3
@@ -162,6 +318,30 @@
       "writtenOn": "2017-05-18T16:15:14Z",
       "side": 1,
       "message": "use reST-style hyperlink",
+      "range": {
+        "startLine": 28,
+        "startChar": 27,
+        "endLine": 28,
+        "endChar": 91
+      },
+      "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_3abd7769",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2017-05-18T17:01:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_9a77433b",
       "range": {
         "startLine": 28,
         "startChar": 27,
@@ -220,6 +400,54 @@
     },
     {
       "key": {
+        "uuid": "ba068154_7a6edf02",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2017-05-18T17:01:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_7a9a5f64",
+      "range": {
+        "startLine": 29,
+        "startChar": 112,
+        "endLine": 29,
+        "endChar": 116
+      },
+      "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_7ab7ff86",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2017-05-18T17:01:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_3a90d742",
+      "range": {
+        "startLine": 29,
+        "startChar": 2,
+        "endLine": 29,
+        "endChar": 54
+      },
+      "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_3a89f726",
         "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
         "patchSetId": 3
@@ -231,6 +459,30 @@
       "writtenOn": "2017-05-18T16:15:14Z",
       "side": 1,
       "message": "These should probably be their own list.",
+      "range": {
+        "startLine": 35,
+        "startChar": 17,
+        "endLine": 37,
+        "endChar": 106
+      },
+      "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_3d38d19f",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2017-05-18T17:01:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_3a89f726",
       "range": {
         "startLine": 35,
         "startChar": 17,
@@ -266,6 +518,30 @@
     },
     {
       "key": {
+        "uuid": "ba068154_5a715bdf",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2017-05-18T17:01:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_1a8cf334",
+      "range": {
+        "startLine": 50,
+        "startChar": 17,
+        "endLine": 52,
+        "endChar": 106
+      },
+      "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_baa3279d",
         "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
         "patchSetId": 3
@@ -289,6 +565,30 @@
     },
     {
       "key": {
+        "uuid": "ba068154_ddb9c516",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2017-05-18T17:01:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_baa3279d",
+      "range": {
+        "startLine": 60,
+        "startChar": 2,
+        "endLine": 60,
+        "endChar": 69
+      },
+      "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_9a9e2353",
         "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
         "patchSetId": 3
@@ -300,6 +600,30 @@
       "writtenOn": "2017-05-18T16:15:14Z",
       "side": 1,
       "message": "use reST-style hyperlink",
+      "range": {
+        "startLine": 74,
+        "startChar": 42,
+        "endLine": 74,
+        "endChar": 109
+      },
+      "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_ba77a7d3",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2017-05-18T17:01:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_9a9e2353",
       "range": {
         "startLine": 74,
         "startChar": 42,
@@ -358,6 +682,54 @@
     },
     {
       "key": {
+        "uuid": "ba068154_9a72a3e1",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2017-05-18T17:01:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_1aba33c0",
+      "range": {
+        "startLine": 75,
+        "startChar": 116,
+        "endLine": 75,
+        "endChar": 120
+      },
+      "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_fa812f90",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2017-05-18T17:01:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_faadaf89",
+      "range": {
+        "startLine": 75,
+        "startChar": 6,
+        "endLine": 75,
+        "endChar": 58
+      },
+      "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_ba7cc721",
         "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
         "patchSetId": 3
@@ -369,6 +741,30 @@
       "writtenOn": "2017-05-18T16:15:14Z",
       "side": 1,
       "message": "These should probably be their own list.",
+      "range": {
+        "startLine": 106,
+        "startChar": 17,
+        "endLine": 108,
+        "endChar": 106
+      },
+      "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_7da6d911",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2017-05-18T17:01:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_ba7cc721",
       "range": {
         "startLine": 106,
         "startChar": 17,
@@ -404,6 +800,30 @@
     },
     {
       "key": {
+        "uuid": "ba068154_fdbe49fe",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2017-05-18T17:01:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_7ab1bfe0",
+      "range": {
+        "startLine": 113,
+        "startChar": 0,
+        "endLine": 119,
+        "endChar": 118
+      },
+      "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_5ab4bbd0",
         "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
         "patchSetId": 3
@@ -415,6 +835,30 @@
       "writtenOn": "2017-05-18T16:15:14Z",
       "side": 1,
       "message": "So yes, SB connections over OVBSDB.",
+      "range": {
+        "startLine": 124,
+        "startChar": 59,
+        "endLine": 124,
+        "endChar": 61
+      },
+      "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_bdafa1e2",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2017-05-18T17:01:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_5ab4bbd0",
       "range": {
         "startLine": 124,
         "startChar": 59,
@@ -444,6 +888,24 @@
     },
     {
       "key": {
+        "uuid": "ba068154_da7c2bb8",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2017-05-18T17:01:10Z",
+      "side": 1,
+      "message": "not in docs yet, but we do have wiki page, that i can link here.",
+      "parentUuid": "ba068154_baca074d",
+      "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_9ac5833f",
         "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
         "patchSetId": 3
@@ -467,6 +929,30 @@
     },
     {
       "key": {
+        "uuid": "ba068154_3d00d100",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2017-05-18T17:01:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_9ac5833f",
+      "range": {
+        "startLine": 133,
+        "startChar": 112,
+        "endLine": 133,
+        "endChar": 114
+      },
+      "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_dabf0ba9",
         "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
         "patchSetId": 3
@@ -478,6 +964,24 @@
       "writtenOn": "2017-05-18T16:15:14Z",
       "side": 1,
       "message": "This seems to be a contradiction. Migration isn\u0027t possible, but nothing is changed? I\u0027m guessing migration isn\u0027t possible because data can\u0027t be migrated.",
+      "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_ba5e8743",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2017-05-18T17:01:10Z",
+      "side": 1,
+      "message": "my bad.",
+      "parentUuid": "ba068154_dabf0ba9",
       "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -541,6 +1045,24 @@
     },
     {
       "key": {
+        "uuid": "ba068154_fa064f1f",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2017-05-18T17:01:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_bad167fd",
+      "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_9acc6363",
         "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
         "patchSetId": 3
@@ -564,6 +1086,30 @@
     },
     {
       "key": {
+        "uuid": "ba068154_ba0cc743",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2017-05-18T17:01:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_9acc6363",
+      "range": {
+        "startLine": 178,
+        "startChar": 0,
+        "endLine": 180,
+        "endChar": 63
+      },
+      "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_fadbef18",
         "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
         "patchSetId": 3
@@ -575,6 +1121,24 @@
       "writtenOn": "2017-05-18T16:15:14Z",
       "side": 1,
       "message": "Add blank line above for formatting.",
+      "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_9a07431d",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2017-05-18T17:01:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_fadbef18",
       "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
