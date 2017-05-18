@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba068154_031e4e63",
+        "filename": "docs/getting-started-guide/project-release-notes/bier.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-05-18T22:11:35Z",
+      "side": 1,
+      "message": "Needs to line up with the title. (Needs 1 more \u003d on top and bottom).",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 37
+      },
+      "revId": "c6ee477ee8aa9cd4f2bdfe90868549ff7969bc1c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_e3186a77",
+        "filename": "docs/getting-started-guide/project-release-notes/bier.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-05-18T22:11:35Z",
+      "side": 1,
+      "message": "Needs to lineup with the title.",
+      "revId": "c6ee477ee8aa9cd4f2bdfe90868549ff7969bc1c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_a335c2dc",
+        "filename": "docs/getting-started-guide/project-release-notes/bier.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-05-18T22:11:35Z",
+      "side": 1,
+      "message": "Link to Guide. Should be formatted something like:\n\n:ref:`Guide name \u003cguide-label-name\u003e`\nWhere the \u003cguide-label-name\u003e is something like:\n\n.. _guide-label-name:\n\nProject User Guide\n\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\n....\n\n\nAs described here:\nhttp://www.sphinx-doc.org/en/stable/markup/inline.html#cross-referencing-arbitrary-locations",
+      "range": {
+        "startLine": 23,
+        "startChar": 3,
+        "endLine": 23,
+        "endChar": 95
+      },
+      "revId": "c6ee477ee8aa9cd4f2bdfe90868549ff7969bc1c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_c33a86cc",
+        "filename": "docs/getting-started-guide/project-release-notes/bier.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-05-18T22:11:35Z",
+      "side": 1,
+      "message": "Remove this.",
+      "range": {
+        "startLine": 99,
+        "startChar": 0,
+        "endLine": 103,
+        "endChar": 50
+      },
+      "revId": "c6ee477ee8aa9cd4f2bdfe90868549ff7969bc1c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
