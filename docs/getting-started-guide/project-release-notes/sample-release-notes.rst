@@ -22,6 +22,12 @@ About this Document
    When copying, please remove this entire "About this Document" section and
    simply fill out the next sections.
 
+.. important::
+
+   Please do not remove any sections. Also, short sentences are better than
+   "n/a" or "none" as it is often confusing as to whether that means there are
+   no issues or you simply didn't think about or address anything.
+
 ============
 Project Name
 ============
@@ -30,7 +36,7 @@ Major Features
 ==============
 
 For each top-level feature, identify the name, url, description, etc.
-User-facing features are used directly by end users.
+User-facing features are used directly by end users. Remove this paragraph.
 
 Feature Name
 ------------
@@ -57,11 +63,21 @@ document is under review, provide a link to the change in Gerrit.
 
 * **User Guide(s):**
 
-  * `Guide Name <URL>`_
+  * Link to Guide. Should be formatted something like::
+
+      :ref:`Link title <label-name>`.
+
+    As described in `Cross-referencing arbitrary locations
+    <http://www.sphinx-doc.org/en/stable/markup/inline.html#cross-referencing-arbitrary-locations>`_.
 
 * **Developer Guide(s):**
 
-  * `Guide Name <URL>`_
+  * Link to Guide. Should be formatted something like::
+
+      :ref:`Link title <label-name>`.
+
+    As described in `Cross-referencing arbitrary locations
+    <http://www.sphinx-doc.org/en/stable/markup/inline.html#cross-referencing-arbitrary-locations>`_.
 
 Security Considerations
 =======================
@@ -87,8 +103,16 @@ Migration
 
 * Is is possible migrate from the previous release? If so, how?
 
+.. note:: This is asking if somebody can move from an installation of the
+          previous release while keeping data. This isn't currently, natively
+          supported in Opendaylight, so if it's possible, it is because of
+          some project-speicific work and instructions which should be
+          explained here.
+
 Compatiblity
 ------------
+
+.. Please include a short description of any changes not just a link to a patch
 
 * Is this release compatible with the previous release?
 * Any API changes?
@@ -97,10 +121,14 @@ Compatiblity
 Bugs Fixed
 ----------
 
+.. Please include a short description of any bugs not just the link.
+
 * List of bugs fixed since the previous release
 
 Known Issues
 ------------
+
+.. Please include a short description of any bugs not just the link.
 
 * List key known issues with workarounds
 * `Link to Open Bugs <URL>`_
