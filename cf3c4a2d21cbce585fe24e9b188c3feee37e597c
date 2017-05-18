@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba068154_45c5053b",
+        "filename": "docs/getting-started-guide/project-release-notes/genius.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2017-05-18T04:48:53Z",
+      "side": 1,
+      "message": "we need some system test for this, which is hard, but\nnot impossible. I think that is a requirement to mark\nthis \u0027No\u0027",
+      "range": {
+        "startLine": 36,
+        "startChar": 20,
+        "endLine": 36,
+        "endChar": 22
+      },
+      "revId": "cf3c4a2d21cbce585fe24e9b188c3feee37e597c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_25c0c129",
+        "filename": "docs/getting-started-guide/project-release-notes/genius.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2017-05-18T04:48:53Z",
+      "side": 1,
+      "message": "I think it would be beneficial to note here the different\nways genius is being validated in netvirt CSIT.",
+      "revId": "cf3c4a2d21cbce585fe24e9b188c3feee37e597c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
