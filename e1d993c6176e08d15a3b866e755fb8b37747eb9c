@@ -1,0 +1,158 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba068154_e05d0017",
+        "filename": "docs/getting-started-guide/project-release-notes/genius.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T19:07:00Z",
+      "side": 1,
+      "message": "I\u0027m still not clear if these tests are for all features or just this one.",
+      "revId": "e1d993c6176e08d15a3b866e755fb8b37747eb9c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_a063f8db",
+        "filename": "docs/getting-started-guide/project-release-notes/genius.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T19:07:00Z",
+      "side": 1,
+      "message": "You want to make these a sub-list with a blank line above and then * in front of each line with * right under the * in \"**CSIT…\"",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 93
+      },
+      "revId": "e1d993c6176e08d15a3b866e755fb8b37747eb9c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_60a910df",
+        "filename": "docs/getting-started-guide/project-release-notes/genius.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T19:07:00Z",
+      "side": 1,
+      "message": "These links should use :ref: reST-style links so that they link to the right branch and also move if the sections move. See: http://www.sphinx-doc.org/en/stable/markup/inline.html#cross-referencing-arbitrary-locations",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 59,
+        "endChar": 147
+      },
+      "revId": "e1d993c6176e08d15a3b866e755fb8b37747eb9c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_c0af1ce2",
+        "filename": "docs/getting-started-guide/project-release-notes/genius.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T19:07:00Z",
+      "side": 1,
+      "message": "These links should use :ref: reST-style links so that they link to the right branch and also move if the sections move. See: http://www.sphinx-doc.org/en/stable/markup/inline.html#cross-referencing-arbitrary-locations",
+      "revId": "e1d993c6176e08d15a3b866e755fb8b37747eb9c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_a0aad8cf",
+        "filename": "docs/getting-started-guide/project-release-notes/genius.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T19:07:00Z",
+      "side": 1,
+      "message": "These links should use :ref: reST-style links so that they link to the right branch and also move if the sections move. See: http://www.sphinx-doc.org/en/stable/markup/inline.html#cross-referencing-arbitrary-locations",
+      "revId": "e1d993c6176e08d15a3b866e755fb8b37747eb9c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_00bac422",
+        "filename": "docs/getting-started-guide/project-release-notes/genius.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T19:07:00Z",
+      "side": 1,
+      "message": "These links should use :ref: reST-style links so that they link to the right branch and also move if the sections move. See: http://www.sphinx-doc.org/en/stable/markup/inline.html#cross-referencing-arbitrary-locations",
+      "revId": "e1d993c6176e08d15a3b866e755fb8b37747eb9c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_e0b4e036",
+        "filename": "docs/getting-started-guide/project-release-notes/genius.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T19:07:00Z",
+      "side": 1,
+      "message": "Is this supposed to link to patch test jobs?",
+      "range": {
+        "startLine": 115,
+        "startChar": 0,
+        "endLine": 117,
+        "endChar": 132
+      },
+      "revId": "e1d993c6176e08d15a3b866e755fb8b37747eb9c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_2086e865",
+        "filename": "docs/getting-started-guide/project-release-notes/genius.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T19:07:00Z",
+      "side": 1,
+      "message": "This section is here because (a) some projects really can be migrated because the either are stateless or have done the work and (b) for the future when the base install has a migration story.",
+      "revId": "e1d993c6176e08d15a3b866e755fb8b37747eb9c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
