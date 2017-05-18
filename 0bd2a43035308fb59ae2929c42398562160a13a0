@@ -22,6 +22,52 @@
       "revId": "0bd2a43035308fb59ae2929c42398562160a13a0",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_25ee01b5",
+        "filename": "docs/getting-started-guide/project-release-notes/netvirt.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2017-05-18T05:01:09Z",
+      "side": 1,
+      "message": "just fyi/support for the \"no\"\n\nall failures we are seeing in the CSIT jobs should map to an\n open bug. After blocker bugs are fixed, failures may still\ncrop up, but will be attributed to some non-blocker and open\nbug.",
+      "range": {
+        "startLine": 16,
+        "startChar": 20,
+        "endLine": 16,
+        "endChar": 22
+      },
+      "revId": "0bd2a43035308fb59ae2929c42398562160a13a0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_05f93d80",
+        "filename": "docs/getting-started-guide/project-release-notes/netvirt.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2017-05-18T05:01:09Z",
+      "side": 1,
+      "message": "we have the other jobs, we should be proud of.\n\nv1, learn, transparent",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 148
+      },
+      "revId": "0bd2a43035308fb59ae2929c42398562160a13a0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
