@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ba068154_c8f46cf4",
+        "filename": "docs/getting-started-guide/project-release-notes/iotdm.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 5876
+      },
+      "writtenOn": "2017-05-18T08:27:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_0f695ebe",
+      "range": {
+        "startLine": 60,
+        "startChar": 0,
+        "endLine": 68,
+        "endChar": 20
+      },
+      "revId": "5ab0b65f427a3ba92688b8ab2c57521bb07194ae",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_ef633adb",
         "filename": "docs/getting-started-guide/project-release-notes/iotdm.rst",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2017-05-17T17:08:02Z",
       "side": 1,
       "message": "Same as above, is this a security issue?",
+      "range": {
+        "startLine": 70,
+        "startChar": 0,
+        "endLine": 78,
+        "endChar": 20
+      },
+      "revId": "5ab0b65f427a3ba92688b8ab2c57521bb07194ae",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_e8d85081",
+        "filename": "docs/getting-started-guide/project-release-notes/iotdm.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 5876
+      },
+      "writtenOn": "2017-05-18T08:27:38Z",
+      "side": 1,
+      "message": "Yes, that\u0027s true, I\u0027ve updated the security considerations.",
+      "parentUuid": "ba068154_ef633adb",
       "range": {
         "startLine": 70,
         "startChar": 0,
@@ -65,6 +113,24 @@
     },
     {
       "key": {
+        "uuid": "ba068154_a89da85b",
+        "filename": "docs/getting-started-guide/project-release-notes/iotdm.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 5876
+      },
+      "writtenOn": "2017-05-18T08:27:38Z",
+      "side": 1,
+      "message": "Sure, I\u0027ve added a sentence to the main page:\nhttps://wiki.opendaylight.org/view/IoTDM:Main",
+      "parentUuid": "ba068154_fd265315",
+      "revId": "5ab0b65f427a3ba92688b8ab2c57521bb07194ae",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_7d1383b8",
         "filename": "docs/getting-started-guide/project-release-notes/iotdm.rst",
         "patchSetId": 3
@@ -76,6 +142,24 @@
       "writtenOn": "2017-05-17T17:08:02Z",
       "side": 1,
       "message": "Any plans to migrate to reST?",
+      "revId": "5ab0b65f427a3ba92688b8ab2c57521bb07194ae",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_e8c5f03d",
+        "filename": "docs/getting-started-guide/project-release-notes/iotdm.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 5876
+      },
+      "writtenOn": "2017-05-18T08:27:38Z",
+      "side": 1,
+      "message": "Not yet, but I\u0027ve at least created tasks on Bugzilla:\n8499 - Update IoTDM project wiki\n8500 - Migrate our documentation to reST",
+      "parentUuid": "ba068154_7d1383b8",
       "revId": "5ab0b65f427a3ba92688b8ab2c57521bb07194ae",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -99,6 +183,24 @@
     },
     {
       "key": {
+        "uuid": "ba068154_28c09829",
+        "filename": "docs/getting-started-guide/project-release-notes/iotdm.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 5876
+      },
+      "writtenOn": "2017-05-18T08:27:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_8f4eee6d",
+      "revId": "5ab0b65f427a3ba92688b8ab2c57521bb07194ae",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_2f30a2e7",
         "filename": "docs/getting-started-guide/project-release-notes/iotdm.rst",
         "patchSetId": 3
@@ -110,6 +212,24 @@
       "writtenOn": "2017-05-17T17:08:02Z",
       "side": 1,
       "message": "New para, blank line above.",
+      "revId": "5ab0b65f427a3ba92688b8ab2c57521bb07194ae",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_88dee40f",
+        "filename": "docs/getting-started-guide/project-release-notes/iotdm.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 5876
+      },
+      "writtenOn": "2017-05-18T08:27:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_2f30a2e7",
       "revId": "5ab0b65f427a3ba92688b8ab2c57521bb07194ae",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -133,6 +253,24 @@
     },
     {
       "key": {
+        "uuid": "ba068154_881384b7",
+        "filename": "docs/getting-started-guide/project-release-notes/iotdm.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 5876
+      },
+      "writtenOn": "2017-05-18T08:27:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_8f754e9a",
+      "revId": "5ab0b65f427a3ba92688b8ab2c57521bb07194ae",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_8f9c2ec2",
         "filename": "docs/getting-started-guide/project-release-notes/iotdm.rst",
         "patchSetId": 3
@@ -144,6 +282,30 @@
       "writtenOn": "2017-05-17T17:08:02Z",
       "side": 1,
       "message": "Should be indented.",
+      "range": {
+        "startLine": 104,
+        "startChar": 0,
+        "endLine": 106,
+        "endChar": 97
+      },
+      "revId": "5ab0b65f427a3ba92688b8ab2c57521bb07194ae",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_28e1b89a",
+        "filename": "docs/getting-started-guide/project-release-notes/iotdm.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 5876
+      },
+      "writtenOn": "2017-05-18T08:27:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_8f9c2ec2",
       "range": {
         "startLine": 104,
         "startChar": 0,
@@ -179,6 +341,30 @@
     },
     {
       "key": {
+        "uuid": "ba068154_88ef0487",
+        "filename": "docs/getting-started-guide/project-release-notes/iotdm.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 5876
+      },
+      "writtenOn": "2017-05-18T08:27:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_cfa63610",
+      "range": {
+        "startLine": 109,
+        "startChar": 0,
+        "endLine": 112,
+        "endChar": 68
+      },
+      "revId": "5ab0b65f427a3ba92688b8ab2c57521bb07194ae",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_0fb03e42",
         "filename": "docs/getting-started-guide/project-release-notes/iotdm.rst",
         "patchSetId": 3
@@ -190,6 +376,24 @@
       "writtenOn": "2017-05-17T17:08:02Z",
       "side": 1,
       "message": "Should be indented.",
+      "revId": "5ab0b65f427a3ba92688b8ab2c57521bb07194ae",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_68f2a070",
+        "filename": "docs/getting-started-guide/project-release-notes/iotdm.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 5876
+      },
+      "writtenOn": "2017-05-18T08:27:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_0fb03e42",
       "revId": "5ab0b65f427a3ba92688b8ab2c57521bb07194ae",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -219,6 +423,30 @@
     },
     {
       "key": {
+        "uuid": "ba068154_e8fdf03c",
+        "filename": "docs/getting-started-guide/project-release-notes/iotdm.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 5876
+      },
+      "writtenOn": "2017-05-18T08:27:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_8f838e55",
+      "range": {
+        "startLine": 123,
+        "startChar": 0,
+        "endLine": 124,
+        "endChar": 18
+      },
+      "revId": "5ab0b65f427a3ba92688b8ab2c57521bb07194ae",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_2fb54231",
         "filename": "docs/getting-started-guide/project-release-notes/iotdm.rst",
         "patchSetId": 3
@@ -236,6 +464,24 @@
     },
     {
       "key": {
+        "uuid": "ba068154_48fd1c3a",
+        "filename": "docs/getting-started-guide/project-release-notes/iotdm.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 5876
+      },
+      "writtenOn": "2017-05-18T08:27:38Z",
+      "side": 1,
+      "message": "Updated",
+      "parentUuid": "ba068154_2fb54231",
+      "revId": "5ab0b65f427a3ba92688b8ab2c57521bb07194ae",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_cf7d9670",
         "filename": "docs/getting-started-guide/project-release-notes/iotdm.rst",
         "patchSetId": 3
@@ -247,6 +493,24 @@
       "writtenOn": "2017-05-17T17:08:02Z",
       "side": 1,
       "message": "Indent.",
+      "revId": "5ab0b65f427a3ba92688b8ab2c57521bb07194ae",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_8896e4ee",
+        "filename": "docs/getting-started-guide/project-release-notes/iotdm.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 5876
+      },
+      "writtenOn": "2017-05-18T08:27:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_cf7d9670",
       "revId": "5ab0b65f427a3ba92688b8ab2c57521bb07194ae",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -276,6 +540,30 @@
     },
     {
       "key": {
+        "uuid": "ba068154_6899001f",
+        "filename": "docs/getting-started-guide/project-release-notes/iotdm.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 5876
+      },
+      "writtenOn": "2017-05-18T08:27:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_0f979e91",
+      "range": {
+        "startLine": 137,
+        "startChar": 0,
+        "endLine": 138,
+        "endChar": 28
+      },
+      "revId": "5ab0b65f427a3ba92688b8ab2c57521bb07194ae",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_ef917a9b",
         "filename": "docs/getting-started-guide/project-release-notes/iotdm.rst",
         "patchSetId": 3
@@ -287,6 +575,24 @@
       "writtenOn": "2017-05-17T17:08:02Z",
       "side": 1,
       "message": "Any?",
+      "revId": "5ab0b65f427a3ba92688b8ab2c57521bb07194ae",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_c8a0ec45",
+        "filename": "docs/getting-started-guide/project-release-notes/iotdm.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 5876
+      },
+      "writtenOn": "2017-05-18T08:27:38Z",
+      "side": 1,
+      "message": "Yes, only modified or new added.",
+      "parentUuid": "ba068154_ef917a9b",
       "revId": "5ab0b65f427a3ba92688b8ab2c57521bb07194ae",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -316,6 +622,30 @@
     },
     {
       "key": {
+        "uuid": "ba068154_c8b74c85",
+        "filename": "docs/getting-started-guide/project-release-notes/iotdm.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 5876
+      },
+      "writtenOn": "2017-05-18T08:27:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_8fea6e0d",
+      "range": {
+        "startLine": 150,
+        "startChar": 0,
+        "endLine": 155,
+        "endChar": 22
+      },
+      "revId": "5ab0b65f427a3ba92688b8ab2c57521bb07194ae",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_6fed8a25",
         "filename": "docs/getting-started-guide/project-release-notes/iotdm.rst",
         "patchSetId": 3
@@ -327,6 +657,24 @@
       "writtenOn": "2017-05-17T17:08:02Z",
       "side": 1,
       "message": "Remove if none.",
+      "revId": "5ab0b65f427a3ba92688b8ab2c57521bb07194ae",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_c813cc64",
+        "filename": "docs/getting-started-guide/project-release-notes/iotdm.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 5876
+      },
+      "writtenOn": "2017-05-18T08:27:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_6fed8a25",
       "revId": "5ab0b65f427a3ba92688b8ab2c57521bb07194ae",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
