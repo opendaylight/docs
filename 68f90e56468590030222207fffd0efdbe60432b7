@@ -2,6 +2,69 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba068154_c37c4623",
+        "filename": "docs/getting-started-guide/project-release-notes/packetcable.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2017-05-18T23:57:51Z",
+      "side": 1,
+      "message": "it\u0027s \"odl-packetcable-policy-server-all\" right? can you\nwrite that explicitly here?",
+      "revId": "68f90e56468590030222207fffd0efdbe60432b7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_03776e3b",
+        "filename": "docs/getting-started-guide/project-release-notes/packetcable.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2017-05-18T23:57:51Z",
+      "side": 1,
+      "message": "csit reliably passes, and there seems to be additional\ntesting activities (see qa section) against actual CMTS \ndevices to give the project confidence.\n\nso if the project feels that their csit is giving\nadequate coverage combined with their non-csit \nmanual testing we can stick with this.",
+      "range": {
+        "startLine": 20,
+        "startChar": 20,
+        "endLine": 20,
+        "endChar": 22
+      },
+      "revId": "68f90e56468590030222207fffd0efdbe60432b7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_e3718a45",
+        "filename": "docs/getting-started-guide/project-release-notes/packetcable.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2017-05-18T23:57:51Z",
+      "side": 1,
+      "message": "if there were any kind of official report to link to for\nthese other non-csit system tests, it would be nice to \ninclude here.",
+      "range": {
+        "startLine": 49,
+        "startChar": 0,
+        "endLine": 52,
+        "endChar": 22
+      },
+      "revId": "68f90e56468590030222207fffd0efdbe60432b7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_43833656",
         "filename": "docs/getting-started-guide/project-release-notes/packetcable.rst",
         "patchSetId": 3
