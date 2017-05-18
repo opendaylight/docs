@@ -1,0 +1,198 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba068154_f9902050",
+        "filename": "docs/getting-started-guide/project-release-notes/sfc.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T13:32:23Z",
+      "side": 1,
+      "message": "I think this is the operative part for below. We don\u0027t necessarily want to list all features, but the features somebody reading the release notes would be interested in.",
+      "revId": "1e6be3c32f98507ee8aad1ac8dcff4e35b184b47",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_591b2c1b",
+        "filename": "docs/getting-started-guide/project-release-notes/sfc.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T13:32:23Z",
+      "side": 1,
+      "message": "Probably want to make this a section with -s under it.",
+      "revId": "1e6be3c32f98507ee8aad1ac8dcff4e35b184b47",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_1921a44d",
+        "filename": "docs/getting-started-guide/project-release-notes/sfc.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T13:32:23Z",
+      "side": 1,
+      "message": "Do you think you need to go into this?",
+      "range": {
+        "startLine": 129,
+        "startChar": 0,
+        "endLine": 206,
+        "endChar": 105
+      },
+      "revId": "1e6be3c32f98507ee8aad1ac8dcff4e35b184b47",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_391628f2",
+        "filename": "docs/getting-started-guide/project-release-notes/sfc.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T13:32:23Z",
+      "side": 1,
+      "message": "Probably want to make this a section with -s under it.",
+      "revId": "1e6be3c32f98507ee8aad1ac8dcff4e35b184b47",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_99d47421",
+        "filename": "docs/getting-started-guide/project-release-notes/sfc.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T13:32:23Z",
+      "side": 1,
+      "message": "Thanks for calling this out.",
+      "range": {
+        "startLine": 211,
+        "startChar": 0,
+        "endLine": 212,
+        "endChar": 80
+      },
+      "revId": "1e6be3c32f98507ee8aad1ac8dcff4e35b184b47",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_79d71024",
+        "filename": "docs/getting-started-guide/project-release-notes/sfc.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T13:32:23Z",
+      "side": 1,
+      "message": "Would be good to use reST links.",
+      "range": {
+        "startLine": 220,
+        "startChar": 0,
+        "endLine": 224,
+        "endChar": 121
+      },
+      "revId": "1e6be3c32f98507ee8aad1ac8dcff4e35b184b47",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_b9e17800",
+        "filename": "docs/getting-started-guide/project-release-notes/sfc.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T13:32:23Z",
+      "side": 1,
+      "message": "Does n/a mean you didn\u0027t think about them or that there are none?",
+      "revId": "1e6be3c32f98507ee8aad1ac8dcff4e35b184b47",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_b9b858e6",
+        "filename": "docs/getting-started-guide/project-release-notes/sfc.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T13:32:23Z",
+      "side": 1,
+      "message": "Would be good to have more detail on the system tests, but not needed.",
+      "revId": "1e6be3c32f98507ee8aad1ac8dcff4e35b184b47",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_79a550b4",
+        "filename": "docs/getting-started-guide/project-release-notes/sfc.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T13:32:23Z",
+      "side": 1,
+      "message": "Should be indented under \"In\" above to format right.",
+      "revId": "1e6be3c32f98507ee8aad1ac8dcff4e35b184b47",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_d9ac3ca3",
+        "filename": "docs/getting-started-guide/project-release-notes/sfc.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T13:32:23Z",
+      "side": 1,
+      "message": "Should be indented under \"In\" above to format right.",
+      "range": {
+        "startLine": 300,
+        "startChar": 0,
+        "endLine": 301,
+        "endChar": 200
+      },
+      "revId": "1e6be3c32f98507ee8aad1ac8dcff4e35b184b47",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
