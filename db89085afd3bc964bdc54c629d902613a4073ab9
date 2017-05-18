@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba068154_1a935350",
+        "filename": "docs/getting-started-guide/project-release-notes/netvirt.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 773
+      },
+      "writtenOn": "2017-05-18T16:15:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_3a2d7747",
+      "revId": "db89085afd3bc964bdc54c629d902613a4073ab9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_1a30739d",
         "filename": "docs/getting-started-guide/project-release-notes/netvirt.rst",
         "patchSetId": 3
@@ -30,6 +48,30 @@
       "writtenOn": "2017-05-18T15:58:25Z",
       "side": 1,
       "message": "reST links with :ref: would be a lot better: http://www.sphinx-doc.org/en/stable/markup/inline.html#cross-referencing-arbitrary-locations",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 126
+      },
+      "revId": "db89085afd3bc964bdc54c629d902613a4073ab9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_daa8ab79",
+        "filename": "docs/getting-started-guide/project-release-notes/netvirt.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 773
+      },
+      "writtenOn": "2017-05-18T16:15:37Z",
+      "side": 1,
+      "message": "Let me take a spin on this",
+      "parentUuid": "ba068154_1a30739d",
       "range": {
         "startLine": 22,
         "startChar": 0,
@@ -59,6 +101,24 @@
     },
     {
       "key": {
+        "uuid": "ba068154_3ab737da",
+        "filename": "docs/getting-started-guide/project-release-notes/netvirt.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 773
+      },
+      "writtenOn": "2017-05-18T16:15:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_7a27ff64",
+      "revId": "db89085afd3bc964bdc54c629d902613a4073ab9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_5a2afb2c",
         "filename": "docs/getting-started-guide/project-release-notes/netvirt.rst",
         "patchSetId": 3
@@ -76,6 +136,24 @@
     },
     {
       "key": {
+        "uuid": "ba068154_fac48f41",
+        "filename": "docs/getting-started-guide/project-release-notes/netvirt.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 773
+      },
+      "writtenOn": "2017-05-18T16:15:37Z",
+      "side": 1,
+      "message": "The main feature, openstack integration, uses the neutron apis so those have changed. There are internal models that are exposed via restconf that have changed - we can document that here if needed, but for all these changes they are documented in the blueprint specs above in the docs. Would that be helpful to add a comment here to reference them?",
+      "parentUuid": "ba068154_5a2afb2c",
+      "revId": "db89085afd3bc964bdc54c629d902613a4073ab9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_fa1acf15",
         "filename": "docs/getting-started-guide/project-release-notes/netvirt.rst",
         "patchSetId": 3
@@ -87,6 +165,30 @@
       "writtenOn": "2017-05-18T15:58:25Z",
       "side": 1,
       "message": "Anything specific you want to call out because it\u0027s important?",
+      "range": {
+        "startLine": 61,
+        "startChar": 0,
+        "endLine": 69,
+        "endChar": 280
+      },
+      "revId": "db89085afd3bc964bdc54c629d902613a4073ab9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_3a05777a",
+        "filename": "docs/getting-started-guide/project-release-notes/netvirt.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 773
+      },
+      "writtenOn": "2017-05-18T16:15:37Z",
+      "side": 1,
+      "message": "Bug wise beyond the blockers which we hope to have fixed, the rest are a wide range of corner cases. None are significant to stand out.",
+      "parentUuid": "ba068154_fa1acf15",
       "range": {
         "startLine": 61,
         "startChar": 0,
