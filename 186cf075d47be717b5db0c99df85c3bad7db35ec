@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba068154_f4c5c53d",
+        "filename": "docs/getting-started-guide/project-release-notes/alto.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T14:47:21Z",
+      "side": 1,
+      "message": "This hasn\u0027t really helped. You should use reST links like this:\nhttp://www.sphinx-doc.org/en/stable/markup/inline.html#cross-referencing-arbitrary-locations",
+      "revId": "186cf075d47be717b5db0c99df85c3bad7db35ec",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_54c5b13a",
+        "filename": "docs/getting-started-guide/project-release-notes/alto.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T14:47:21Z",
+      "side": 1,
+      "message": "This hasn\u0027t really helped. You should use reST links like this:\nhttp://www.sphinx-doc.org/en/stable/markup/inline.html#cross-referencing-arbitrary-locations",
+      "revId": "186cf075d47be717b5db0c99df85c3bad7db35ec",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_d4e881b6",
+        "filename": "docs/getting-started-guide/project-release-notes/alto.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T14:47:21Z",
+      "side": 1,
+      "message": "This seems like it should go in compatibility and a note should be here saying that migration with data from Boron to Carbon isn\u0027t supported.",
+      "range": {
+        "startLine": 53,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 78
+      },
+      "revId": "186cf075d47be717b5db0c99df85c3bad7db35ec",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_b4eb3daf",
+        "filename": "docs/getting-started-guide/project-release-notes/alto.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T14:47:21Z",
+      "side": 1,
+      "message": "Does this have any known negative consequences?",
+      "revId": "186cf075d47be717b5db0c99df85c3bad7db35ec",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
