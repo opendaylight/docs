@@ -1,0 +1,209 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba068154_19736481",
+        "filename": "docs/getting-started-guide/project-release-notes/netide.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T13:25:35Z",
+      "side": 1,
+      "message": "YANG",
+      "range": {
+        "startLine": 12,
+        "startChar": 54,
+        "endLine": 12,
+        "endChar": 58
+      },
+      "revId": "ae43edf728e07d7738bfcbf343624e40c4517424",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_596dec97",
+        "filename": "docs/getting-started-guide/project-release-notes/netide.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T13:25:35Z",
+      "side": 1,
+      "message": "Is this actually user facing or developer facing?",
+      "revId": "ae43edf728e07d7738bfcbf343624e40c4517424",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_3968e886",
+        "filename": "docs/getting-started-guide/project-release-notes/netide.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T13:25:35Z",
+      "side": 1,
+      "message": "Does it make sense to just mention this feature since it encompasses the other two?",
+      "revId": "ae43edf728e07d7738bfcbf343624e40c4517424",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_796270ae",
+        "filename": "docs/getting-started-guide/project-release-notes/netide.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T13:25:35Z",
+      "side": 1,
+      "message": "Would be good if these were reST links: http://www.sphinx-doc.org/en/stable/markup/inline.html#ref-role",
+      "range": {
+        "startLine": 50,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 120
+      },
+      "revId": "ae43edf728e07d7738bfcbf343624e40c4517424",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_992d9449",
+        "filename": "docs/getting-started-guide/project-release-notes/netide.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T13:25:35Z",
+      "side": 1,
+      "message": "Test coverage?",
+      "revId": "ae43edf728e07d7738bfcbf343624e40c4517424",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_990634cd",
+        "filename": "docs/getting-started-guide/project-release-notes/netide.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T13:25:35Z",
+      "side": 1,
+      "message": "Remove empty bullet.",
+      "revId": "ae43edf728e07d7738bfcbf343624e40c4517424",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_d910bc03",
+        "filename": "docs/getting-started-guide/project-release-notes/netide.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T13:25:35Z",
+      "side": 1,
+      "message": "This is really asking if somebody can move from an installation of Boron to an installation with Carbon and keep any state/data. I think the answer might be yes in that you keep no state in the datastore, but I could be wrong.",
+      "range": {
+        "startLine": 77,
+        "startChar": 52,
+        "endLine": 79,
+        "endChar": 35
+      },
+      "revId": "ae43edf728e07d7738bfcbf343624e40c4517424",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_b913380c",
+        "filename": "docs/getting-started-guide/project-release-notes/netide.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T13:25:35Z",
+      "side": 1,
+      "message": "Add a colon to the line before or another blank line above to format right.",
+      "revId": "ae43edf728e07d7738bfcbf343624e40c4517424",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_19fa44bd",
+        "filename": "docs/getting-started-guide/project-release-notes/netide.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T13:25:35Z",
+      "side": 1,
+      "message": "Add a colon to the line before or another blank line above to format right.",
+      "revId": "ae43edf728e07d7738bfcbf343624e40c4517424",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_f9f4a0d0",
+        "filename": "docs/getting-started-guide/project-release-notes/netide.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T13:25:35Z",
+      "side": 1,
+      "message": "Say none if none, but my don\u0027t you use OpenFlow?",
+      "revId": "ae43edf728e07d7738bfcbf343624e40c4517424",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_5904ccbf",
+        "filename": "docs/getting-started-guide/project-release-notes/netide.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T13:25:35Z",
+      "side": 1,
+      "message": "Indent under \"Describe to format right.\"",
+      "revId": "ae43edf728e07d7738bfcbf343624e40c4517424",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
