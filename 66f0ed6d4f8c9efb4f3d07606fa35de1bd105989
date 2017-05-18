@@ -1,0 +1,130 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba068154_e32fca86",
+        "filename": "docs/getting-started-guide/project-release-notes/of-config-release-notes.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-05-18T22:14:55Z",
+      "side": 1,
+      "message": "Whitespace.",
+      "range": {
+        "startLine": 12,
+        "startChar": 117,
+        "endLine": 12,
+        "endChar": 118
+      },
+      "revId": "66f0ed6d4f8c9efb4f3d07606fa35de1bd105989",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_434e9670",
+        "filename": "docs/getting-started-guide/project-release-notes/of-config-release-notes.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-05-18T22:14:55Z",
+      "side": 1,
+      "message": "Link to Guide. Should be formatted something like:\n:ref:`Guide name \u003cguide-label-name\u003e`\nWhere the \u003cguide-label-name\u003e is something like:\n.. _guide-label-name:\nProject User Guide\n\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\n....\n\nAs described here:\nhttp://www.sphinx-doc.org/en/stable/markup/inline.html#cross-referencing-arbitrary-locations",
+      "revId": "66f0ed6d4f8c9efb4f3d07606fa35de1bd105989",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_2351d20e",
+        "filename": "docs/getting-started-guide/project-release-notes/of-config-release-notes.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-05-18T22:14:55Z",
+      "side": 1,
+      "message": "According to sonar your coverage is 71.4% so should be stated here rather than N/A.",
+      "range": {
+        "startLine": 43,
+        "startChar": 108,
+        "endLine": 43,
+        "endChar": 111
+      },
+      "revId": "66f0ed6d4f8c9efb4f3d07606fa35de1bd105989",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_83587e33",
+        "filename": "docs/getting-started-guide/project-release-notes/of-config-release-notes.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-05-18T22:14:55Z",
+      "side": 1,
+      "message": "Please wrap this line at 80 characters.",
+      "revId": "66f0ed6d4f8c9efb4f3d07606fa35de1bd105989",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_c341e63a",
+        "filename": "docs/getting-started-guide/project-release-notes/of-config-release-notes.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-05-18T22:14:55Z",
+      "side": 1,
+      "message": "Is there a link to this standard?",
+      "range": {
+        "startLine": 87,
+        "startChar": 1,
+        "endLine": 87,
+        "endChar": 15
+      },
+      "revId": "66f0ed6d4f8c9efb4f3d07606fa35de1bd105989",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_635bda2e",
+        "filename": "docs/getting-started-guide/project-release-notes/of-config-release-notes.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-05-18T22:14:55Z",
+      "side": 1,
+      "message": "Remove this",
+      "range": {
+        "startLine": 97,
+        "startChar": 0,
+        "endLine": 100,
+        "endChar": 50
+      },
+      "revId": "66f0ed6d4f8c9efb4f3d07606fa35de1bd105989",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
