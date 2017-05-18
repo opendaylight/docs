@@ -1,3 +1,5 @@
+.. _odl-parent-developer-guide:
+
 ODL Parent Developer Guide
 ==========================
 
