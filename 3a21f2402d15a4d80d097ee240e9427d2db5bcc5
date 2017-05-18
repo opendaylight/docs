@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba068154_9ac9037c",
+        "filename": "docs/getting-started-guide/project-release-notes/controller.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-05-18T16:01:18Z",
+      "side": 1,
+      "message": "Should line up with title",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 12
+      },
+      "revId": "3a21f2402d15a4d80d097ee240e9427d2db5bcc5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_da50abd6",
         "filename": "docs/getting-started-guide/project-release-notes/controller.rst",
         "patchSetId": 4
@@ -30,6 +53,29 @@
       "writtenOn": "2017-05-18T16:01:06Z",
       "side": 1,
       "message": "I would say \"Yes, akka uses port 2550 and by default communicates with unencrypted, unauthenticated messages. Securing akka communication isn\u0027t described here, but those concerned should look here...\" with a link.",
+      "revId": "3a21f2402d15a4d80d097ee240e9427d2db5bcc5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_3abbb7e6",
+        "filename": "docs/getting-started-guide/project-release-notes/controller.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-05-18T16:01:18Z",
+      "side": 1,
+      "message": "Links need to be between \u003c\u003e brackets or they will not correctly render.",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 79
+      },
       "revId": "3a21f2402d15a4d80d097ee240e9427d2db5bcc5",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -122,6 +168,23 @@
       "writtenOn": "2017-05-18T15:53:48Z",
       "side": 1,
       "message": "Trailing whitespace would be nice to remove if possible.",
+      "revId": "3a21f2402d15a4d80d097ee240e9427d2db5bcc5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_7ab53fed",
+        "filename": "docs/getting-started-guide/project-release-notes/controller.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-05-18T16:01:18Z",
+      "side": 1,
+      "message": "Does not correctly render Maybe format:\n\n `Link name \u003curl\u003e`_",
       "revId": "3a21f2402d15a4d80d097ee240e9427d2db5bcc5",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
