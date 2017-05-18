@@ -1,3 +1,5 @@
+.. _lispflowmapping-user-guide:
+
 LISP Flow Mapping User Guide
 ============================
 
@@ -361,7 +363,7 @@ a client and two servers, then performing a failover between the two
 Prerequisites
 ^^^^^^^^^^^^^
 
--  **OpenDaylight Boron**
+-  **OpenDaylight Carbon**
 
 .. _instructions:
 
@@ -374,7 +376,7 @@ Prerequisites
    file. You can import this file to Postman by clicking *Import* at the
    top, choosing *Download from link* and then entering the following
    URL:
-   `<https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=blob_plain;f=resources/tutorial/OOR/Beryllium_Tutorial.json.postman_collection;hb=refs/heads/stable/boron>`__.
+   `<https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=blob_plain;f=resources/tutorial/OOR/Beryllium_Tutorial.json.postman_collection;hb=refs/heads/stable/carbon>`__.
    Alternatively, you can save the file on your machine, or if you have
    the repository checked out, you can import from there. You will need
    to create a new Postman Environment and define some variables within:
@@ -433,8 +435,8 @@ The below steps use the command line tool cURL to talk to the LISP Flow
 Mapping RPC REST API. This is so that you can see the actual request
 URLs and body content on the page.
 
-1.  Install and run OpenDaylight Boron release on the controller VM.
-    Please follow the general OpenDaylight Boron Installation Guide
+1.  Install and run OpenDaylight Carbon release on the controller VM.
+    Please follow the general OpenDaylight Carbon Installation Guide
     for this step. Once the OpenDaylight controller is running install
     the *odl-lispflowmapping-msmr* feature from the Karaf CLI:
 
@@ -476,10 +478,10 @@ URLs and body content on the page.
 
     .. note::
 
-        The ``resources/tutorial/OOR`` directory in the *stable/boron*
+        The ``resources/tutorial/OOR`` directory in the *stable/carbon*
         branch of the project git repository has the files used in the
         tutorial `checked
-        in <https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=tree;f=resources/tutorial/OOR;hb=refs/heads/stable/boron>`__,
+        in <https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=tree;f=resources/tutorial/OOR;hb=refs/heads/stable/carbon>`__,
         so you can just copy the files to ``/etc/oor.conf`` on the
         respective VMs. You will also find the JSON files referenced
         below in the same directory.
@@ -784,7 +786,7 @@ interfaces. All configuration files used in the tutorials can be found
 Prerequisites
 ^^^^^^^^^^^^^
 
--  **OpenDaylight Boron**
+-  **OpenDaylight Carbon**
 
 -  **The Postman Chrome App**: Please follow the instructions_ and import
    postman collection from the following URL: `<https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=blob;f=resources/tutorial/FD_io/lfm_vpp.postman_collection.json;hb=HEAD>`__.
@@ -876,8 +878,8 @@ Follow the instructions below sequentially.
 
        sudo apt-get install bridge-utils ethtool
 
-6.  Now, install and run OpenDaylight Boron release on the VM. Please
-    follow the general OpenDaylight Boron Installation Guide for this
+6.  Now, install and run OpenDaylight Carbon release on the VM. Please
+    follow the general OpenDaylight Carbon Installation Guide for this
     step from :ref:`install_odl`. Before running OpenDaylight, we need
     to change the configuration for RTR to work. Update ``etc/custom.properties``
     with the ``lisp.elpPolicy`` to be replace.
@@ -901,7 +903,7 @@ Follow the instructions below sequentially.
 
 7.  For setting up VPP, get the files from ``resources/tutorial/FD_io``
     folder of the lispflowmapping repo. The files can also be found `here
-    <https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=tree;f=resources/tutorial/FD_io;hb=refs/heads/stable/boron>`__.
+    <https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=tree;f=resources/tutorial/FD_io;hb=refs/heads/stable/carbon>`__.
     Copy the ``vpp1.config``, ``vpp2.config`` and ``rtr.config`` files in
     ``/etc/vpp/lite/``.
 
@@ -1023,14 +1025,14 @@ Follow the instructions below sequentially.
         }
 
     The JSON files regarding these can be found in `here
-    <https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=tree;f=resources/tutorial/FD_io;hb=refs/heads/stable/boron>`__.
+    <https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=tree;f=resources/tutorial/FD_io;hb=refs/heads/stable/carbon>`__.
     Even though there is no southbound registration for mapping to OpenDaylight, using
     northbound policy we can specify mappings, when Client requests for
     the Server eid, Client gets a reply from OpenDaylight.
 
 9.  Assuming all files have been created and OpenDaylight has been configured as
     explained above, execute the host script you've created or the ``topology_setup.sh``
-    script from `here <https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=tree;f=resources/tutorial/FD_io;hb=refs/heads/stable/boron>`__.
+    script from `here <https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=tree;f=resources/tutorial/FD_io;hb=refs/heads/stable/carbon>`__.
 
 10. If all goes well, you can now test connectivity between the namespaces with:
     ::
