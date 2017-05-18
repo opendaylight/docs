@@ -139,6 +139,29 @@
     },
     {
       "key": {
+        "uuid": "ba068154_942719b6",
+        "filename": "docs/getting-started-guide/project-release-notes/unimgr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-05-18T14:03:32Z",
+      "side": 1,
+      "message": "Link needs to be in \u003cLink\u003e brackets or it won\u0027t render properly.",
+      "range": {
+        "startLine": 91,
+        "startChar": 24,
+        "endLine": 91,
+        "endChar": 85
+      },
+      "revId": "3217d5810ab2e934c65d227773d2e20c6990e6ba",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_9938f4a1",
         "filename": "docs/getting-started-guide/project-release-notes/unimgr.rst",
         "patchSetId": 6
