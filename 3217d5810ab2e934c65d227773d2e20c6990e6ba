@@ -1,0 +1,158 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba068154_59e84c10",
+        "filename": "docs/getting-started-guide/project-release-notes/unimgr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T13:19:19Z",
+      "side": 1,
+      "message": "I would just leave this out.",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 30
+      },
+      "revId": "3217d5810ab2e934c65d227773d2e20c6990e6ba",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_39e3c834",
+        "filename": "docs/getting-started-guide/project-release-notes/unimgr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T13:19:19Z",
+      "side": 1,
+      "message": "It would be better if these were reST links: http://www.sphinx-doc.org/en/stable/markup/inline.html#ref-role",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 38,
+        "endChar": 235
+      },
+      "revId": "3217d5810ab2e934c65d227773d2e20c6990e6ba",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_99d1145a",
+        "filename": "docs/getting-started-guide/project-release-notes/unimgr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T13:19:19Z",
+      "side": 1,
+      "message": "Probably better to say \"No known security issues.\" instead of just \"None\" since somebody could interpret none as either \"we don\u0027t know of any issues\" or \"we didn\u0027t think about security at all\"",
+      "revId": "3217d5810ab2e934c65d227773d2e20c6990e6ba",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_79d43047",
+        "filename": "docs/getting-started-guide/project-release-notes/unimgr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T13:19:19Z",
+      "side": 1,
+      "message": "Test coverage?",
+      "revId": "3217d5810ab2e934c65d227773d2e20c6990e6ba",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_19c5248e",
+        "filename": "docs/getting-started-guide/project-release-notes/unimgr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T13:19:19Z",
+      "side": 1,
+      "message": "Seems like these are failing now despite passing in the past…",
+      "revId": "3217d5810ab2e934c65d227773d2e20c6990e6ba",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_d9cb9ca3",
+        "filename": "docs/getting-started-guide/project-release-notes/unimgr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T13:19:19Z",
+      "side": 1,
+      "message": "Anything about how you tested it manually?",
+      "revId": "3217d5810ab2e934c65d227773d2e20c6990e6ba",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_39baa80a",
+        "filename": "docs/getting-started-guide/project-release-notes/unimgr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T13:19:19Z",
+      "side": 1,
+      "message": "Links?",
+      "range": {
+        "startLine": 85,
+        "startChar": 0,
+        "endLine": 86,
+        "endChar": 16
+      },
+      "revId": "3217d5810ab2e934c65d227773d2e20c6990e6ba",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_9938f4a1",
+        "filename": "docs/getting-started-guide/project-release-notes/unimgr.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T13:19:19Z",
+      "side": 1,
+      "message": "Remove if no major shifts.",
+      "revId": "3217d5810ab2e934c65d227773d2e20c6990e6ba",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
