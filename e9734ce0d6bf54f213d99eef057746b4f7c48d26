@@ -1,0 +1,266 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba068154_3a329710",
+        "filename": "docs/getting-started-guide/project-release-notes/lispflowmapping.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T16:48:37Z",
+      "side": 1,
+      "message": "Under and over characters should match titles in length.",
+      "revId": "e9734ce0d6bf54f213d99eef057746b4f7c48d26",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_1a3513f7",
+        "filename": "docs/getting-started-guide/project-release-notes/lispflowmapping.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T16:48:37Z",
+      "side": 1,
+      "message": "Needs to be indented one more space. Should ideally be a :ref: reST-style link. See: http://www.sphinx-doc.org/en/stable/markup/inline.html#cross-referencing-arbitrary-locations",
+      "revId": "e9734ce0d6bf54f213d99eef057746b4f7c48d26",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_7a3c1fe3",
+        "filename": "docs/getting-started-guide/project-release-notes/lispflowmapping.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T16:48:37Z",
+      "side": 1,
+      "message": "Do you have installation or developer guides?",
+      "revId": "e9734ce0d6bf54f213d99eef057746b4f7c48d26",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_5a167b56",
+        "filename": "docs/getting-started-guide/project-release-notes/lispflowmapping.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T16:48:37Z",
+      "side": 1,
+      "message": "Link?",
+      "range": {
+        "startLine": 51,
+        "startChar": 35,
+        "endLine": 51,
+        "endChar": 47
+      },
+      "revId": "e9734ce0d6bf54f213d99eef057746b4f7c48d26",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_ba25e7c3",
+        "filename": "docs/getting-started-guide/project-release-notes/lispflowmapping.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T16:48:37Z",
+      "side": 1,
+      "message": "Trailing whitespace.",
+      "revId": "e9734ce0d6bf54f213d99eef057746b4f7c48d26",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_fd1da967",
+        "filename": "docs/getting-started-guide/project-release-notes/lispflowmapping.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T16:48:37Z",
+      "side": 1,
+      "message": "Since the MD-SAL data store doesn\u0027t automatically migrate data, it probably doesn\u0027t actually work unless you export data and re-import it using RESTCONF in both directions, right? Have you tested that?",
+      "revId": "e9734ce0d6bf54f213d99eef057746b4f7c48d26",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_dd18a577",
+        "filename": "docs/getting-started-guide/project-release-notes/lispflowmapping.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T16:48:37Z",
+      "side": 1,
+      "message": "Indent two spaces.",
+      "revId": "e9734ce0d6bf54f213d99eef057746b4f7c48d26",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_3d2731b8",
+        "filename": "docs/getting-started-guide/project-release-notes/lispflowmapping.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T16:48:37Z",
+      "side": 1,
+      "message": "Indent two spaces.",
+      "revId": "e9734ce0d6bf54f213d99eef057746b4f7c48d26",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_1d2a2d7e",
+        "filename": "docs/getting-started-guide/project-release-notes/lispflowmapping.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T16:48:37Z",
+      "side": 1,
+      "message": "Indent two spaces. Also trailing whitespace.",
+      "revId": "e9734ce0d6bf54f213d99eef057746b4f7c48d26",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_5d24b5ae",
+        "filename": "docs/getting-started-guide/project-release-notes/lispflowmapping.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T16:48:37Z",
+      "side": 1,
+      "message": "None is probably better.",
+      "revId": "e9734ce0d6bf54f213d99eef057746b4f7c48d26",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_dd2f0587",
+        "filename": "docs/getting-started-guide/project-release-notes/lispflowmapping.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T16:48:37Z",
+      "side": 1,
+      "message": "link?",
+      "range": {
+        "startLine": 125,
+        "startChar": 88,
+        "endLine": 125,
+        "endChar": 95
+      },
+      "revId": "e9734ce0d6bf54f213d99eef057746b4f7c48d26",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_fd3489df",
+        "filename": "docs/getting-started-guide/project-release-notes/lispflowmapping.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T16:48:37Z",
+      "side": 1,
+      "message": "link?",
+      "range": {
+        "startLine": 125,
+        "startChar": 76,
+        "endLine": 125,
+        "endChar": 83
+      },
+      "revId": "e9734ce0d6bf54f213d99eef057746b4f7c48d26",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_9d357ddd",
+        "filename": "docs/getting-started-guide/project-release-notes/lispflowmapping.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T16:48:37Z",
+      "side": 1,
+      "message": "link?",
+      "range": {
+        "startLine": 128,
+        "startChar": 85,
+        "endLine": 128,
+        "endChar": 105
+      },
+      "revId": "e9734ce0d6bf54f213d99eef057746b4f7c48d26",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_bd3a01cb",
+        "filename": "docs/getting-started-guide/project-release-notes/lispflowmapping.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T16:48:37Z",
+      "side": 1,
+      "message": "No major shifts?",
+      "revId": "e9734ce0d6bf54f213d99eef057746b4f7c48d26",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
