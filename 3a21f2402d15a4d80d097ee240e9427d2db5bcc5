@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba068154_da50abd6",
+        "filename": "docs/getting-started-guide/project-release-notes/controller.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T15:53:48Z",
+      "side": 1,
+      "message": "Missing documentation links.",
+      "revId": "3a21f2402d15a4d80d097ee240e9427d2db5bcc5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_9a6d839c",
+        "filename": "docs/getting-started-guide/project-release-notes/controller.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T15:53:48Z",
+      "side": 1,
+      "message": "I think this is saying, migration should be possible because there is no state stored in the data store and all configuration files should still work and be valid. If so, maybe you should say that. Otherwise, maybe say while migration from Boron to Carbon may be possible, but isn\u0027t supported.",
+      "revId": "3a21f2402d15a4d80d097ee240e9427d2db5bcc5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_54a0119f",
         "filename": "docs/getting-started-guide/project-release-notes/controller.rst",
         "patchSetId": 4
@@ -13,6 +47,92 @@
       "writtenOn": "2017-05-18T14:36:56Z",
       "side": 1,
       "message": "We are not ready for artery in carbon and I don\u0027t think we should advertise it.",
+      "revId": "3a21f2402d15a4d80d097ee240e9427d2db5bcc5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_da670bb6",
+        "filename": "docs/getting-started-guide/project-release-notes/controller.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T15:53:48Z",
+      "side": 1,
+      "message": "Experimental and preview are probably OK, but I\u0027m fine with either.",
+      "parentUuid": "ba068154_54a0119f",
+      "revId": "3a21f2402d15a4d80d097ee240e9427d2db5bcc5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_fa6c8f9e",
+        "filename": "docs/getting-started-guide/project-release-notes/controller.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T15:53:48Z",
+      "side": 1,
+      "message": "Trailing whitespace would be nice to remove if possible.",
+      "revId": "3a21f2402d15a4d80d097ee240e9427d2db5bcc5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_3a0617cf",
+        "filename": "docs/getting-started-guide/project-release-notes/controller.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T15:53:48Z",
+      "side": 1,
+      "message": "I assume none, and not N/A. There\u0027s nothing major we need to call out?",
+      "revId": "3a21f2402d15a4d80d097ee240e9427d2db5bcc5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_1a0993dd",
+        "filename": "docs/getting-started-guide/project-release-notes/controller.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T15:53:48Z",
+      "side": 1,
+      "message": "Trailing whitespace.",
+      "revId": "3a21f2402d15a4d80d097ee240e9427d2db5bcc5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_7a109f01",
+        "filename": "docs/getting-started-guide/project-release-notes/controller.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T15:53:48Z",
+      "side": 1,
+      "message": "Any significant shifts?",
       "revId": "3a21f2402d15a4d80d097ee240e9427d2db5bcc5",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
