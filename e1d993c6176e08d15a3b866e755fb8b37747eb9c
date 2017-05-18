@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba068154_c0c43c94",
+        "filename": "docs/getting-started-guide/project-release-notes/genius.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 3276
+      },
+      "writtenOn": "2017-05-18T19:51:39Z",
+      "side": 1,
+      "message": "From template it is not clear how I would distinguish between the two if I wanted to.Made some edits, let me know if makes it clear enough.",
+      "parentUuid": "ba068154_e05d0017",
+      "revId": "e1d993c6176e08d15a3b866e755fb8b37747eb9c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_a063f8db",
         "filename": "docs/getting-started-guide/project-release-notes/genius.rst",
         "patchSetId": 5
@@ -42,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "ba068154_a0bf78fb",
+        "filename": "docs/getting-started-guide/project-release-notes/genius.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 3276
+      },
+      "writtenOn": "2017-05-18T19:51:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_a063f8db",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 93
+      },
+      "revId": "e1d993c6176e08d15a3b866e755fb8b37747eb9c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_60a910df",
         "filename": "docs/getting-started-guide/project-release-notes/genius.rst",
         "patchSetId": 5
@@ -53,6 +95,30 @@
       "writtenOn": "2017-05-18T19:07:00Z",
       "side": 1,
       "message": "These links should use :ref: reST-style links so that they link to the right branch and also move if the sections move. See: http://www.sphinx-doc.org/en/stable/markup/inline.html#cross-referencing-arbitrary-locations",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 59,
+        "endChar": 147
+      },
+      "revId": "e1d993c6176e08d15a3b866e755fb8b37747eb9c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_2009c8dd",
+        "filename": "docs/getting-started-guide/project-release-notes/genius.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 3276
+      },
+      "writtenOn": "2017-05-18T19:51:39Z",
+      "side": 1,
+      "message": "I\u0027ve done the changes across the document but can\u0027t be sure if it works or not till I see the generated doc.",
+      "parentUuid": "ba068154_60a910df",
       "range": {
         "startLine": 57,
         "startChar": 0,
@@ -139,6 +205,30 @@
     },
     {
       "key": {
+        "uuid": "ba068154_e067c0b5",
+        "filename": "docs/getting-started-guide/project-release-notes/genius.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 3276
+      },
+      "writtenOn": "2017-05-18T19:51:39Z",
+      "side": 1,
+      "message": "Isn\u0027t QA supposed to cover all sort of testings? Yes, these patch test jobs run Netvirt CSIT against Genius patches. Genius code is tested through Netvirt CSIT. Should this just link to netvirt CSIT jobs? I chose this coz the naming makes the genius link rather clear. This is part of our QA as no Genius patch is merged unless it passes Netvirt CSIT.",
+      "parentUuid": "ba068154_e0b4e036",
+      "range": {
+        "startLine": 115,
+        "startChar": 0,
+        "endLine": 117,
+        "endChar": 132
+      },
+      "revId": "e1d993c6176e08d15a3b866e755fb8b37747eb9c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_2086e865",
         "filename": "docs/getting-started-guide/project-release-notes/genius.rst",
         "patchSetId": 5
@@ -150,6 +240,24 @@
       "writtenOn": "2017-05-18T19:07:00Z",
       "side": 1,
       "message": "This section is here because (a) some projects really can be migrated because the either are stateless or have done the work and (b) for the future when the base install has a migration story.",
+      "revId": "e1d993c6176e08d15a3b866e755fb8b37747eb9c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_40068ccf",
+        "filename": "docs/getting-started-guide/project-release-notes/genius.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 3276
+      },
+      "writtenOn": "2017-05-18T19:51:39Z",
+      "side": 1,
+      "message": "okay. will mark this as no for now.",
+      "parentUuid": "ba068154_2086e865",
       "revId": "e1d993c6176e08d15a3b866e755fb8b37747eb9c",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
