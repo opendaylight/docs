@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ba068154_549491e1",
+        "filename": "docs/getting-started-guide/project-release-notes/openflowjava.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 556
+      },
+      "writtenOn": "2017-05-18T15:19:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_f41b051a",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 52
+      },
+      "revId": "9888d5a08c51a384c4ef8167ac553a8788e2d271",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_1421694d",
         "filename": "docs/getting-started-guide/project-release-notes/openflowjava.rst",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2017-05-18T14:34:11Z",
       "side": 1,
       "message": "Should this just be removed?",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 46
+      },
+      "revId": "9888d5a08c51a384c4ef8167ac553a8788e2d271",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_348f4dce",
+        "filename": "docs/getting-started-guide/project-release-notes/openflowjava.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 556
+      },
+      "writtenOn": "2017-05-18T15:19:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_1421694d",
       "range": {
         "startLine": 11,
         "startChar": 0,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "ba068154_94bd596b",
+        "filename": "docs/getting-started-guide/project-release-notes/openflowjava.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 556
+      },
+      "writtenOn": "2017-05-18T15:19:02Z",
+      "side": 1,
+      "message": "found only developers guide",
+      "parentUuid": "ba068154_f4e2e5ff",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 97
+      },
+      "revId": "9888d5a08c51a384c4ef8167ac553a8788e2d271",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_34ed8df0",
         "filename": "docs/getting-started-guide/project-release-notes/openflowjava.rst",
         "patchSetId": 2
@@ -82,6 +154,30 @@
       "writtenOn": "2017-05-18T14:34:11Z",
       "side": 1,
       "message": "OpenFlow",
+      "range": {
+        "startLine": 46,
+        "startChar": 2,
+        "endLine": 46,
+        "endChar": 10
+      },
+      "revId": "9888d5a08c51a384c4ef8167ac553a8788e2d271",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_74c0b5e0",
+        "filename": "docs/getting-started-guide/project-release-notes/openflowjava.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 556
+      },
+      "writtenOn": "2017-05-18T15:19:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_34ed8df0",
       "range": {
         "startLine": 46,
         "startChar": 2,
@@ -111,6 +207,24 @@
     },
     {
       "key": {
+        "uuid": "ba068154_d4b7e184",
+        "filename": "docs/getting-started-guide/project-release-notes/openflowjava.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 556
+      },
+      "writtenOn": "2017-05-18T15:19:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_74bef5d5",
+      "revId": "9888d5a08c51a384c4ef8167ac553a8788e2d271",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_d4b521ef",
         "filename": "docs/getting-started-guide/project-release-notes/openflowjava.rst",
         "patchSetId": 2
@@ -122,6 +236,24 @@
       "writtenOn": "2017-05-18T14:34:11Z",
       "side": 1,
       "message": "This is because it\u0027s stateless so migration is trivial? Is there any configuration that needs to be migrated?",
+      "revId": "9888d5a08c51a384c4ef8167ac553a8788e2d271",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_54abf11c",
+        "filename": "docs/getting-started-guide/project-release-notes/openflowjava.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 556
+      },
+      "writtenOn": "2017-05-18T15:19:02Z",
+      "side": 1,
+      "message": "configuration contains only port numbers and connection parameters which did not change between releases",
+      "parentUuid": "ba068154_d4b521ef",
       "revId": "9888d5a08c51a384c4ef8167ac553a8788e2d271",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -145,6 +277,24 @@
     },
     {
       "key": {
+        "uuid": "ba068154_74671526",
+        "filename": "docs/getting-started-guide/project-release-notes/openflowjava.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 556
+      },
+      "writtenOn": "2017-05-18T15:19:02Z",
+      "side": 1,
+      "message": "no - there is only the karaf4 feature change",
+      "parentUuid": "ba068154_34c46d5e",
+      "revId": "9888d5a08c51a384c4ef8167ac553a8788e2d271",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_14cfa980",
         "filename": "docs/getting-started-guide/project-release-notes/openflowjava.rst",
         "patchSetId": 2
@@ -156,6 +306,24 @@
       "writtenOn": "2017-05-18T14:34:11Z",
       "side": 1,
       "message": "This link is not formatted correctly. the URL needs to be in \u003c\u003e",
+      "revId": "9888d5a08c51a384c4ef8167ac553a8788e2d271",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_d46ec100",
+        "filename": "docs/getting-started-guide/project-release-notes/openflowjava.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 556
+      },
+      "writtenOn": "2017-05-18T15:19:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_14cfa980",
       "revId": "9888d5a08c51a384c4ef8167ac553a8788e2d271",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -179,6 +347,24 @@
     },
     {
       "key": {
+        "uuid": "ba068154_147849c3",
+        "filename": "docs/getting-started-guide/project-release-notes/openflowjava.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 556
+      },
+      "writtenOn": "2017-05-18T15:19:02Z",
+      "side": 1,
+      "message": "unfortunately not",
+      "parentUuid": "ba068154_94a279ac",
+      "revId": "9888d5a08c51a384c4ef8167ac553a8788e2d271",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_f4c9457a",
         "filename": "docs/getting-started-guide/project-release-notes/openflowjava.rst",
         "patchSetId": 2
@@ -190,6 +376,24 @@
       "writtenOn": "2017-05-18T14:34:11Z",
       "side": 1,
       "message": "This link is not formatted correctly. the URL needs to be in \u003c\u003e",
+      "revId": "9888d5a08c51a384c4ef8167ac553a8788e2d271",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_f472e5e1",
+        "filename": "docs/getting-started-guide/project-release-notes/openflowjava.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 556
+      },
+      "writtenOn": "2017-05-18T15:19:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_f4c9457a",
       "revId": "9888d5a08c51a384c4ef8167ac553a8788e2d271",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -213,6 +417,24 @@
     },
     {
       "key": {
+        "uuid": "ba068154_5482d194",
+        "filename": "docs/getting-started-guide/project-release-notes/openflowjava.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 556
+      },
+      "writtenOn": "2017-05-18T15:19:02Z",
+      "side": 1,
+      "message": "you mean that rst engine might try to put kind of thumbnail here because of pdf target type?",
+      "parentUuid": "ba068154_d4ac01a3",
+      "revId": "9888d5a08c51a384c4ef8167ac553a8788e2d271",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_b4afbd93",
         "filename": "docs/getting-started-guide/project-release-notes/openflowjava.rst",
         "patchSetId": 2
@@ -224,6 +446,24 @@
       "writtenOn": "2017-05-18T14:34:11Z",
       "side": 1,
       "message": "This link is not formatted correctly. the URL needs to be in \u003c\u003e",
+      "revId": "9888d5a08c51a384c4ef8167ac553a8788e2d271",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_347d8db2",
+        "filename": "docs/getting-started-guide/project-release-notes/openflowjava.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 556
+      },
+      "writtenOn": "2017-05-18T15:19:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_b4afbd93",
       "revId": "9888d5a08c51a384c4ef8167ac553a8788e2d271",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
