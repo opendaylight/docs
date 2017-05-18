@@ -99,6 +99,24 @@
     },
     {
       "key": {
+        "uuid": "ba068154_1a087390",
+        "filename": "docs/getting-started-guide/project-release-notes/controller.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1842
+      },
+      "writtenOn": "2017-05-18T16:27:00Z",
+      "side": 1,
+      "message": "It\u0027s saying there are no issues with migration from Boron to Carbon in terms of the controller project. I stand by my statement as is.  If you think it should be different, feel free to change it.",
+      "parentUuid": "ba068154_9a6d839c",
+      "revId": "3a21f2402d15a4d80d097ee240e9427d2db5bcc5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_5ab83be5",
         "filename": "docs/getting-started-guide/project-release-notes/controller.rst",
         "patchSetId": 4
@@ -157,6 +175,24 @@
     },
     {
       "key": {
+        "uuid": "ba068154_fa200ff9",
+        "filename": "docs/getting-started-guide/project-release-notes/controller.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1842
+      },
+      "writtenOn": "2017-05-18T16:27:00Z",
+      "side": 1,
+      "message": "Artery won\u0027t work at all if enabled due to these settings in the factory conf:\n\n  maximum-frame-size \u003d 1 GiB\n  maximum-large-frame-size \u003d 1 GiB\n\nThese blow up on startup which is why we disabled artery (we actually should\u0027ve removed these entries as well). Artery really should not be used in Carbon due to the much smaller message sizes it imposes.",
+      "parentUuid": "ba068154_da670bb6",
+      "revId": "3a21f2402d15a4d80d097ee240e9427d2db5bcc5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_fa6c8f9e",
         "filename": "docs/getting-started-guide/project-release-notes/controller.rst",
         "patchSetId": 4
@@ -202,6 +238,24 @@
       "writtenOn": "2017-05-18T15:53:48Z",
       "side": 1,
       "message": "I assume none, and not N/A. There\u0027s nothing major we need to call out?",
+      "revId": "3a21f2402d15a4d80d097ee240e9427d2db5bcc5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_9afd833e",
+        "filename": "docs/getting-started-guide/project-release-notes/controller.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1842
+      },
+      "writtenOn": "2017-05-18T16:27:00Z",
+      "side": 1,
+      "message": "Well I copied this from another one.  I really can\u0027t recall if there\u0027s any known issues in areas I\u0027m familiar with. The problem with trying to do this all at the end of the release is that it\u0027s hard to remember.  RN really needs to be a living document throughout the release in some form (or scraped from bugs at the end via special tags) - this is how it was done with commercial products I\u0027ve worked in the past.",
+      "parentUuid": "ba068154_3a0617cf",
       "revId": "3a21f2402d15a4d80d097ee240e9427d2db5bcc5",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
