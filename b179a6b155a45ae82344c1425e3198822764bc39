@@ -1,0 +1,232 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba068154_d4136164",
+        "filename": "docs/getting-started-guide/project-release-notes/genius.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T15:31:53Z",
+      "side": 1,
+      "message": "I think you want to remove the h\u003d",
+      "range": {
+        "startLine": 19,
+        "startChar": 127,
+        "endLine": 19,
+        "endChar": 170
+      },
+      "revId": "b179a6b155a45ae82344c1425e3198822764bc39",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_f407851b",
+        "filename": "docs/getting-started-guide/project-release-notes/genius.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T15:31:53Z",
+      "side": 1,
+      "message": "Do you need both the -rest and -ui?",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 23
+      },
+      "revId": "b179a6b155a45ae82344c1425e3198822764bc39",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_3a00d700",
+        "filename": "docs/getting-started-guide/project-release-notes/genius.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T15:31:53Z",
+      "side": 1,
+      "message": "Is this for all of them? If so, put it at the top?",
+      "revId": "b179a6b155a45ae82344c1425e3198822764bc39",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_7a0a5f22",
+        "filename": "docs/getting-started-guide/project-release-notes/genius.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T15:31:53Z",
+      "side": 1,
+      "message": "No leading _ for all links. There are a lot of them below too.",
+      "revId": "b179a6b155a45ae82344c1425e3198822764bc39",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_da18ab77",
+        "filename": "docs/getting-started-guide/project-release-notes/genius.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T15:31:53Z",
+      "side": 1,
+      "message": "#. to get format correctly",
+      "range": {
+        "startLine": 83,
+        "startChar": 0,
+        "endLine": 86,
+        "endChar": 30
+      },
+      "revId": "b179a6b155a45ae82344c1425e3198822764bc39",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_fa4bef56",
+        "filename": "docs/getting-started-guide/project-release-notes/genius.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T15:31:53Z",
+      "side": 1,
+      "message": "Be consistent with N/A vs N.A.",
+      "revId": "b179a6b155a45ae82344c1425e3198822764bc39",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_1a2a337e",
+        "filename": "docs/getting-started-guide/project-release-notes/genius.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T15:31:53Z",
+      "side": 1,
+      "message": "Are these on the wiki or in docs? They should really be as reST in docs and link using reST :ref: links: http://www.sphinx-doc.org/en/stable/markup/inline.html#cross-referencing-arbitrary-locations",
+      "range": {
+        "startLine": 97,
+        "startChar": 0,
+        "endLine": 101,
+        "endChar": 98
+      },
+      "revId": "b179a6b155a45ae82344c1425e3198822764bc39",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_5a5b1b2e",
+        "filename": "docs/getting-started-guide/project-release-notes/genius.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T15:31:53Z",
+      "side": 1,
+      "message": "the patch test job isn\u0027t a CSIT, is it?",
+      "revId": "b179a6b155a45ae82344c1425e3198822764bc39",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_ba41673b",
+        "filename": "docs/getting-started-guide/project-release-notes/genius.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T15:31:53Z",
+      "side": 1,
+      "message": "By default you can\u0027t migrate because we don\u0027t have a way to migrate with data in the data store. I take it from this that migration isn\u0027t possible.",
+      "revId": "b179a6b155a45ae82344c1425e3198822764bc39",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_9a3c63c1",
+        "filename": "docs/getting-started-guide/project-release-notes/genius.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T15:31:53Z",
+      "side": 1,
+      "message": "Why is this N/A instead of None or No?",
+      "revId": "b179a6b155a45ae82344c1425e3198822764bc39",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_da46eb4e",
+        "filename": "docs/getting-started-guide/project-release-notes/genius.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T15:31:53Z",
+      "side": 1,
+      "message": "Is this N/A or none?",
+      "revId": "b179a6b155a45ae82344c1425e3198822764bc39",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_3a757798",
+        "filename": "docs/getting-started-guide/project-release-notes/genius.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T15:31:53Z",
+      "side": 1,
+      "message": "No shifts?",
+      "revId": "b179a6b155a45ae82344c1425e3198822764bc39",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
