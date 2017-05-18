@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "ba068154_1abeb3d4",
+        "filename": "docs/getting-started-guide/project-release-notes/controller.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T16:01:06Z",
+      "side": 1,
+      "message": "I would say \"Yes, akka uses port 2550 and by default communicates with unencrypted, unauthenticated messages. Securing akka communication isn\u0027t described here, but those concerned should look here...\" with a link.",
+      "revId": "3a21f2402d15a4d80d097ee240e9427d2db5bcc5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_9a6d839c",
         "filename": "docs/getting-started-guide/project-release-notes/controller.rst",
         "patchSetId": 4
@@ -30,6 +47,29 @@
       "writtenOn": "2017-05-18T15:53:48Z",
       "side": 1,
       "message": "I think this is saying, migration should be possible because there is no state stored in the data store and all configuration files should still work and be valid. If so, maybe you should say that. Otherwise, maybe say while migration from Boron to Carbon may be possible, but isn\u0027t supported.",
+      "revId": "3a21f2402d15a4d80d097ee240e9427d2db5bcc5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_5ab83be5",
+        "filename": "docs/getting-started-guide/project-release-notes/controller.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T16:01:06Z",
+      "side": 1,
+      "message": "If this is true because the APIs are now in the MD-SAL project, you should probably note that with a link to the MD-SAL release notes/review.",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 51,
+        "endChar": 6
+      },
       "revId": "3a21f2402d15a4d80d097ee240e9427d2db5bcc5",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
