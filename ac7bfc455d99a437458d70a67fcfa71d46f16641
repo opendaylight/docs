@@ -134,6 +134,29 @@
     },
     {
       "key": {
+        "uuid": "ba068154_fabe4ffe",
+        "filename": "docs/getting-started-guide/project-release-notes/cardinal.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-05-18T15:44:13Z",
+      "side": 1,
+      "message": "Also we should be linking to a Jenkins job rather than a patch in Gerrit.",
+      "range": {
+        "startLine": 16,
+        "startChar": 17,
+        "endLine": 16,
+        "endChar": 58
+      },
+      "revId": "ac7bfc455d99a437458d70a67fcfa71d46f16641",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_59f32c9e",
         "filename": "docs/getting-started-guide/project-release-notes/cardinal.rst",
         "patchSetId": 2
