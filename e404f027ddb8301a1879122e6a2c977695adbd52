@@ -1,0 +1,124 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba068154_c5361552",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2017-05-18T05:19:21Z",
+      "side": 1,
+      "message": "don\u0027t put gate jobs here. those are potentially (hopefully)\npolluted. just -upstream- which is on the next line.\n\napplies below too.",
+      "range": {
+        "startLine": 19,
+        "startChar": 89,
+        "endLine": 19,
+        "endChar": 93
+      },
+      "revId": "e404f027ddb8301a1879122e6a2c977695adbd52",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_457865f2",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2017-05-18T05:19:21Z",
+      "side": 1,
+      "message": "missing a \u0027-\u0027",
+      "revId": "e404f027ddb8301a1879122e6a2c977695adbd52",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_8561ad3b",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2017-05-18T05:19:21Z",
+      "side": 1,
+      "message": "so, I *think* we have something here already and they have\nsome level of something or other happening.\n\nThey are running under the netvirt project. example [0]\n\nbringing in odl-netivrt-openstack is bringing in\nodl-ovsdb-hwvtep-soutbound-api and \nodl-ovsdb-hwvtep-southbound\n\nThey were running and failing with what looked like legit\nproblems, then faced infra issues for a while, but they are\nback and failing and need some attention. so, maybe the\ncomment is that csit is running, but failures are unknown\nand hopefully addressed in nitro?\n\n\n[0] https://jenkins.opendaylight.org/releng/view/netvirt/job/netvirt-csit-hwvtep-1node-openstack-newton-nodl-v2-upstream-stateful-carbon",
+      "range": {
+        "startLine": 66,
+        "startChar": 17,
+        "endLine": 67,
+        "endChar": 8
+      },
+      "revId": "e404f027ddb8301a1879122e6a2c977695adbd52",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_2573a116",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2017-05-18T05:19:21Z",
+      "side": 1,
+      "message": "\u0027-\u0027",
+      "revId": "e404f027ddb8301a1879122e6a2c977695adbd52",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_a55e7174",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2017-05-18T05:19:21Z",
+      "side": 1,
+      "message": "there is also -ui that is not listed in this doc, which\nmight need to be. and -test, which may not be an end\nuser top-level feature, but I don\u0027t really know.\n\nAlso, to circle back to the \"we already have some\ncsit\" above, I don\u0027t know of anything that brings in\nthese -rest or -ui features in csit. just the netvirt\njobs that bring in the -api",
+      "range": {
+        "startLine": 84,
+        "startChar": 27,
+        "endLine": 84,
+        "endChar": 31
+      },
+      "revId": "e404f027ddb8301a1879122e6a2c977695adbd52",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_65648949",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2017-05-18T05:19:21Z",
+      "side": 1,
+      "message": "-",
+      "revId": "e404f027ddb8301a1879122e6a2c977695adbd52",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
