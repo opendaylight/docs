@@ -58,8 +58,9 @@ document is under review, provide a link to the change in Gerrit.
 * **Installation Guide(s):**
 
   * `Guide Name <URL>`_
-  * *Note: for most projects this should not be needed since it should just be
-    feature:install <feature-name>*
+
+    .. note: for most projects this should not be needed since it should just
+             be ``feature:install <feature-name>``.
 
 * **User Guide(s):**
 
