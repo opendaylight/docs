@@ -42,6 +42,29 @@
     },
     {
       "key": {
+        "uuid": "ba068154_435fb6e5",
+        "filename": "docs/getting-started-guide/project-release-notes/bier.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2017-05-18T23:15:33Z",
+      "side": 1,
+      "message": "two things, in order to have this:\n\n1) the -all- job has some sporadic (but very frequent) failures. The karaf.log looks like something is broken.\nwhat is the bug and it\u0027s severity?\n\n2) can you confidently say that you have adequate coverage\nof odl-bier-all (and what it delivers) with the 21 test cases\nin the suite?",
+      "range": {
+        "startLine": 12,
+        "startChar": 20,
+        "endLine": 12,
+        "endChar": 22
+      },
+      "revId": "c6ee477ee8aa9cd4f2bdfe90868549ff7969bc1c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_a335c2dc",
         "filename": "docs/getting-started-guide/project-release-notes/bier.rst",
         "patchSetId": 8
