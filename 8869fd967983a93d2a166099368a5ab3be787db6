@@ -1,0 +1,583 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba068154_9a90e34f",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T16:15:14Z",
+      "side": 1,
+      "message": "It seems like maybe you could drop this feature as being not \"major\" and it gets installed by impl, right?",
+      "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_7aac1fa1",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T16:15:14Z",
+      "side": 1,
+      "message": "YANG",
+      "range": {
+        "startLine": 12,
+        "startChar": 54,
+        "endLine": 12,
+        "endChar": 58
+      },
+      "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_1aa513b5",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T16:15:14Z",
+      "side": 1,
+      "message": "`link text \u003curl\u003e`_",
+      "range": {
+        "startLine": 13,
+        "startChar": 46,
+        "endLine": 13,
+        "endChar": 110
+      },
+      "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_5aaf9b94",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T16:15:14Z",
+      "side": 1,
+      "message": "YANG",
+      "range": {
+        "startLine": 13,
+        "startChar": 8,
+        "endLine": 13,
+        "endChar": 12
+      },
+      "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_ba95e741",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T16:15:14Z",
+      "side": 1,
+      "message": "the YANG",
+      "range": {
+        "startLine": 14,
+        "startChar": 49,
+        "endLine": 14,
+        "endChar": 53
+      },
+      "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_fa9f6f5d",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T16:15:14Z",
+      "side": 1,
+      "message": "Is it?",
+      "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_da9a6b6d",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T16:15:14Z",
+      "side": 1,
+      "message": "These should probably be their own list.",
+      "range": {
+        "startLine": 19,
+        "startChar": 17,
+        "endLine": 21,
+        "endChar": 106
+      },
+      "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_9a77433b",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T16:15:14Z",
+      "side": 1,
+      "message": "use reST-style hyperlink",
+      "range": {
+        "startLine": 28,
+        "startChar": 27,
+        "endLine": 28,
+        "endChar": 91
+      },
+      "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_7a9a5f64",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T16:15:14Z",
+      "side": 1,
+      "message": "YANG",
+      "range": {
+        "startLine": 29,
+        "startChar": 112,
+        "endLine": 29,
+        "endChar": 116
+      },
+      "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_3a90d742",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T16:15:14Z",
+      "side": 1,
+      "message": "use reST-style hyperlink",
+      "range": {
+        "startLine": 29,
+        "startChar": 2,
+        "endLine": 29,
+        "endChar": 54
+      },
+      "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_3a89f726",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T16:15:14Z",
+      "side": 1,
+      "message": "These should probably be their own list.",
+      "range": {
+        "startLine": 35,
+        "startChar": 17,
+        "endLine": 37,
+        "endChar": 106
+      },
+      "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_1a8cf334",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T16:15:14Z",
+      "side": 1,
+      "message": "These should probably be their own list.",
+      "range": {
+        "startLine": 50,
+        "startChar": 17,
+        "endLine": 52,
+        "endChar": 106
+      },
+      "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_baa3279d",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T16:15:14Z",
+      "side": 1,
+      "message": "use reST-style hyperlink",
+      "range": {
+        "startLine": 60,
+        "startChar": 2,
+        "endLine": 60,
+        "endChar": 69
+      },
+      "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_9a9e2353",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T16:15:14Z",
+      "side": 1,
+      "message": "use reST-style hyperlink",
+      "range": {
+        "startLine": 74,
+        "startChar": 42,
+        "endLine": 74,
+        "endChar": 109
+      },
+      "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_faadaf89",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T16:15:14Z",
+      "side": 1,
+      "message": "use reST-style hyperlink",
+      "range": {
+        "startLine": 75,
+        "startChar": 6,
+        "endLine": 75,
+        "endChar": 58
+      },
+      "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_1aba33c0",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T16:15:14Z",
+      "side": 1,
+      "message": "YANF",
+      "range": {
+        "startLine": 75,
+        "startChar": 116,
+        "endLine": 75,
+        "endChar": 120
+      },
+      "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_ba7cc721",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T16:15:14Z",
+      "side": 1,
+      "message": "These should probably be their own list.",
+      "range": {
+        "startLine": 106,
+        "startChar": 17,
+        "endLine": 108,
+        "endChar": 106
+      },
+      "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_7ab1bfe0",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T16:15:14Z",
+      "side": 1,
+      "message": "Would be good to use :ref: style links. See: http://www.sphinx-doc.org/en/stable/markup/inline.html#cross-referencing-arbitrary-locations",
+      "range": {
+        "startLine": 113,
+        "startChar": 0,
+        "endLine": 119,
+        "endChar": 118
+      },
+      "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_5ab4bbd0",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T16:15:14Z",
+      "side": 1,
+      "message": "So yes, SB connections over OVBSDB.",
+      "range": {
+        "startLine": 124,
+        "startChar": 59,
+        "endLine": 124,
+        "endChar": 61
+      },
+      "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_baca074d",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T16:15:14Z",
+      "side": 1,
+      "message": "Is there a guide for this?",
+      "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_9ac5833f",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T16:15:14Z",
+      "side": 1,
+      "message": "57%",
+      "range": {
+        "startLine": 133,
+        "startChar": 112,
+        "endLine": 133,
+        "endChar": 114
+      },
+      "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_dabf0ba9",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T16:15:14Z",
+      "side": 1,
+      "message": "This seems to be a contradiction. Migration isn\u0027t possible, but nothing is changed? I\u0027m guessing migration isn\u0027t possible because data can\u0027t be migrated.",
+      "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_3ade1712",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T16:15:14Z",
+      "side": 1,
+      "message": "Short summary of what changed?",
+      "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_7ae89fb4",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T16:15:14Z",
+      "side": 1,
+      "message": "Any that you want to call out as major?",
+      "range": {
+        "startLine": 155,
+        "startChar": 0,
+        "endLine": 166,
+        "endChar": 350
+      },
+      "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_bad167fd",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T16:15:14Z",
+      "side": 1,
+      "message": "It would be good to have a blank line above this for formatting.",
+      "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_9acc6363",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T16:15:14Z",
+      "side": 1,
+      "message": "Use proper hyperlink format.",
+      "range": {
+        "startLine": 178,
+        "startChar": 0,
+        "endLine": 180,
+        "endChar": 63
+      },
+      "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_fadbef18",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-18T16:15:14Z",
+      "side": 1,
+      "message": "Add blank line above for formatting.",
+      "revId": "8869fd967983a93d2a166099368a5ab3be787db6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
