@@ -1,3 +1,5 @@
+.. _ofconfig-dev-guide:
+
 OF-CONFIG Developer Guide
 =========================
 
