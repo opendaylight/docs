@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ba068154_5a395b40",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2017-05-18T16:22:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_c5361552",
+      "range": {
+        "startLine": 19,
+        "startChar": 89,
+        "endLine": 19,
+        "endChar": 93
+      },
+      "revId": "e404f027ddb8301a1879122e6a2c977695adbd52",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_457865f2",
         "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
         "patchSetId": 1
@@ -42,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "ba068154_9a68e322",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2017-05-18T16:22:49Z",
+      "side": 1,
+      "message": "this is the exact feature name from pom.xml, it doesn\u0027t have -",
+      "parentUuid": "ba068154_457865f2",
+      "revId": "e404f027ddb8301a1879122e6a2c977695adbd52",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_8561ad3b",
         "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
         "patchSetId": 1
@@ -53,6 +95,30 @@
       "writtenOn": "2017-05-18T05:19:21Z",
       "side": 1,
       "message": "so, I *think* we have something here already and they have\nsome level of something or other happening.\n\nThey are running under the netvirt project. example [0]\n\nbringing in odl-netivrt-openstack is bringing in\nodl-ovsdb-hwvtep-soutbound-api and \nodl-ovsdb-hwvtep-southbound\n\nThey were running and failing with what looked like legit\nproblems, then faced infra issues for a while, but they are\nback and failing and need some attention. so, maybe the\ncomment is that csit is running, but failures are unknown\nand hopefully addressed in nitro?\n\n\n[0] https://jenkins.opendaylight.org/releng/view/netvirt/job/netvirt-csit-hwvtep-1node-openstack-newton-nodl-v2-upstream-stateful-carbon",
+      "range": {
+        "startLine": 66,
+        "startChar": 17,
+        "endLine": 67,
+        "endChar": 8
+      },
+      "revId": "e404f027ddb8301a1879122e6a2c977695adbd52",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_da726b10",
+        "filename": "docs/getting-started-guide/project-release-notes/ovsdb.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2017-05-18T16:22:49Z",
+      "side": 1,
+      "message": "i added it in the Quality Assurance colum for reference.",
+      "parentUuid": "ba068154_8561ad3b",
       "range": {
         "startLine": 66,
         "startChar": 17,
