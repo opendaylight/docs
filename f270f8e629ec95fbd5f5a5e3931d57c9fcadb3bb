@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba068154_03c92e78",
+        "filename": "docs/getting-started-guide/project-release-notes/odl-sdni-release-notes.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2017-05-18T23:42:20Z",
+      "side": 1,
+      "message": "there is not proper CSIT. this needs to be \"Yes\"",
+      "range": {
+        "startLine": 17,
+        "startChar": 20,
+        "endLine": 17,
+        "endChar": 22
+      },
+      "revId": "f270f8e629ec95fbd5f5a5e3931d57c9fcadb3bb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_a3c9427b",
+        "filename": "docs/getting-started-guide/project-release-notes/odl-sdni-release-notes.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2017-05-18T23:42:20Z",
+      "side": 1,
+      "message": "this is not doing anything. if you have no plans to add\nreal CSIT, we should remove the job completely to save\ncycles in an already busy infra",
+      "range": {
+        "startLine": 57,
+        "startChar": 22,
+        "endLine": 57,
+        "endChar": 83
+      },
+      "revId": "f270f8e629ec95fbd5f5a5e3931d57c9fcadb3bb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
