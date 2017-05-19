@@ -1,3 +1,5 @@
+.. _ttp_model_dev_guide:
+
 TTP Model Developer Guide
 =========================
 
