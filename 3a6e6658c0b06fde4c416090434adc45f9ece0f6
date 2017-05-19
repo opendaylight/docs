@@ -1,0 +1,153 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba068154_cf72a710",
+        "filename": "docs/getting-started-guide/project-release-notes/l2switch.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T14:22:57Z",
+      "side": 1,
+      "message": "Is this the only feature. Presumably people care about both l2switch-switch and l2swithc-hosttracker, right?",
+      "revId": "3a6e6658c0b06fde4c416090434adc45f9ece0f6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_ef77ab00",
+        "filename": "docs/getting-started-guide/project-release-notes/l2switch.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T14:22:57Z",
+      "side": 1,
+      "message": "I\u0027ll let jamo confirm this.",
+      "range": {
+        "startLine": 12,
+        "startChar": 20,
+        "endLine": 12,
+        "endChar": 22
+      },
+      "revId": "3a6e6658c0b06fde4c416090434adc45f9ece0f6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_8f689f22",
+        "filename": "docs/getting-started-guide/project-release-notes/l2switch.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T14:22:57Z",
+      "side": 1,
+      "message": "Make this a list by putting a blank line before them and then space space star space (\"  * \")in front of them.",
+      "range": {
+        "startLine": 13,
+        "startChar": 17,
+        "endLine": 24,
+        "endChar": 93
+      },
+      "revId": "3a6e6658c0b06fde4c416090434adc45f9ece0f6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_0f64af47",
+        "filename": "docs/getting-started-guide/project-release-notes/l2switch.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T14:22:57Z",
+      "side": 1,
+      "message": "For whatever reason, these links aren\u0027t working. See: https://logs.opendaylight.org/releng/jenkins092/docs-verify-rtd-nitrogen/316/archives/docs/_build/html/getting-started-guide/project-release-notes/l2switch.html.gz",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 62
+      },
+      "revId": "3a6e6658c0b06fde4c416090434adc45f9ece0f6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_4f5eb777",
+        "filename": "docs/getting-started-guide/project-release-notes/l2switch.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T14:22:57Z",
+      "side": 1,
+      "message": "There are customized interfaces? Of what?",
+      "range": {
+        "startLine": 40,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 8
+      },
+      "revId": "3a6e6658c0b06fde4c416090434adc45f9ece0f6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_af548354",
+        "filename": "docs/getting-started-guide/project-release-notes/l2switch.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T14:22:57Z",
+      "side": 1,
+      "message": "Is it? How? Do you just have no state and so it can be automatically re-populated?",
+      "revId": "3a6e6658c0b06fde4c416090434adc45f9ece0f6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_8f4fffbd",
+        "filename": "docs/getting-started-guide/project-release-notes/l2switch.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T14:22:57Z",
+      "side": 1,
+      "message": "I think this is talking about formal standards, e.g., SNMP or IS-IS, so I think we can skip this stuff and just say none.",
+      "range": {
+        "startLine": 87,
+        "startChar": 0,
+        "endLine": 98,
+        "endChar": 55
+      },
+      "revId": "3a6e6658c0b06fde4c416090434adc45f9ece0f6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
