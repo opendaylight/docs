@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "ba068154_639d9a59",
+        "filename": "docs/getting-started-guide/project-release-notes/eman.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2017-05-19T00:06:27Z",
+      "side": 1,
+      "message": "you do have a skeleton csit job that we can remove if you\nhave no plans to enhance it to actually test something\nto do with eman.",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 47,
+        "endChar": 31
+      },
+      "revId": "8c7bd5362164577e52d99a15c8c702eeaec1af8e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_63f75af6",
         "filename": "docs/getting-started-guide/project-release-notes/eman.rst",
         "patchSetId": 2
