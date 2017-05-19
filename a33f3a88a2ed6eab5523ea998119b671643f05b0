@@ -22,6 +22,30 @@
       "revId": "a33f3a88a2ed6eab5523ea998119b671643f05b0",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_54164a56",
+        "filename": "docs/getting-started-guide/project-release-notes/odlparent.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2017-05-19T13:01:31Z",
+      "side": 1,
+      "message": "Yeah that’s what I thought too, but Sonar wasn’t displaying the coverage for me yesterday. Fixed.",
+      "parentUuid": "ba068154_20c0a8df",
+      "range": {
+        "startLine": 34,
+        "startChar": 78,
+        "endLine": 34,
+        "endChar": 99
+      },
+      "revId": "a33f3a88a2ed6eab5523ea998119b671643f05b0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
