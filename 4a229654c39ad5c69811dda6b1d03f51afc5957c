@@ -1,0 +1,330 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba068154_018f63cd",
+        "filename": "docs/getting-started-guide/project-release-notes/nic.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T16:29:33Z",
+      "side": 1,
+      "message": "Are all of these \"major\" features of NIC or can we drop some? Is there some standard top-level feature that installs most of the others?",
+      "revId": "4a229654c39ad5c69811dda6b1d03f51afc5957c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_a1a01744",
+        "filename": "docs/getting-started-guide/project-release-notes/nic.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T16:29:33Z",
+      "side": 1,
+      "message": "These should all line up with the length of the title.",
+      "revId": "4a229654c39ad5c69811dda6b1d03f51afc5957c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_c1d6fbc2",
+        "filename": "docs/getting-started-guide/project-release-notes/nic.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T16:29:33Z",
+      "side": 1,
+      "message": "stable/carbon",
+      "range": {
+        "startLine": 11,
+        "startChar": 126,
+        "endLine": 11,
+        "endChar": 130
+      },
+      "revId": "4a229654c39ad5c69811dda6b1d03f51afc5957c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_e1b05f8d",
+        "filename": "docs/getting-started-guide/project-release-notes/nic.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T16:29:33Z",
+      "side": 1,
+      "message": "MD-SAL not MDSAL everywhere",
+      "range": {
+        "startLine": 12,
+        "startChar": 74,
+        "endLine": 12,
+        "endChar": 79
+      },
+      "revId": "4a229654c39ad5c69811dda6b1d03f51afc5957c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_21e6e7b4",
+        "filename": "docs/getting-started-guide/project-release-notes/nic.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T16:29:33Z",
+      "side": 1,
+      "message": "stable/carbon",
+      "range": {
+        "startLine": 22,
+        "startChar": 129,
+        "endLine": 22,
+        "endChar": 133
+      },
+      "revId": "4a229654c39ad5c69811dda6b1d03f51afc5957c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_01e1239a",
+        "filename": "docs/getting-started-guide/project-release-notes/nic.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T16:29:33Z",
+      "side": 1,
+      "message": "stable/carbon",
+      "range": {
+        "startLine": 35,
+        "startChar": 135,
+        "endLine": 35,
+        "endChar": 139
+      },
+      "revId": "4a229654c39ad5c69811dda6b1d03f51afc5957c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_61ef4f88",
+        "filename": "docs/getting-started-guide/project-release-notes/nic.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T16:29:33Z",
+      "side": 1,
+      "message": "stable/carbon",
+      "range": {
+        "startLine": 46,
+        "startChar": 125,
+        "endLine": 46,
+        "endChar": 129
+      },
+      "revId": "4a229654c39ad5c69811dda6b1d03f51afc5957c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_41f20b70",
+        "filename": "docs/getting-started-guide/project-release-notes/nic.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T16:29:33Z",
+      "side": 1,
+      "message": "stable/carbon",
+      "range": {
+        "startLine": 58,
+        "startChar": 127,
+        "endLine": 58,
+        "endChar": 131
+      },
+      "revId": "4a229654c39ad5c69811dda6b1d03f51afc5957c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_21ab871e",
+        "filename": "docs/getting-started-guide/project-release-notes/nic.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T16:29:33Z",
+      "side": 1,
+      "message": "Is there any documentation in reST.",
+      "revId": "4a229654c39ad5c69811dda6b1d03f51afc5957c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_a16e57ff",
+        "filename": "docs/getting-started-guide/project-release-notes/nic.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T16:29:33Z",
+      "side": 1,
+      "message": "Security",
+      "range": {
+        "startLine": 74,
+        "startChar": 0,
+        "endLine": 74,
+        "endChar": 8
+      },
+      "revId": "4a229654c39ad5c69811dda6b1d03f51afc5957c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_813fd3d5",
+        "filename": "docs/getting-started-guide/project-release-notes/nic.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T16:29:33Z",
+      "side": 1,
+      "message": "Link?",
+      "revId": "4a229654c39ad5c69811dda6b1d03f51afc5957c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_c120bbb2",
+        "filename": "docs/getting-started-guide/project-release-notes/nic.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T16:29:33Z",
+      "side": 1,
+      "message": "Is there data that must be migrated? how? I\u0027m guessing you\u0027d need to document that.",
+      "revId": "4a229654c39ad5c69811dda6b1d03f51afc5957c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_a47dc570",
+        "filename": "docs/getting-started-guide/project-release-notes/nic.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T16:29:33Z",
+      "side": 1,
+      "message": "Say none if none.",
+      "revId": "4a229654c39ad5c69811dda6b1d03f51afc5957c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_04b5b130",
+        "filename": "docs/getting-started-guide/project-release-notes/nic.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T16:29:33Z",
+      "side": 1,
+      "message": "Say none if none.",
+      "range": {
+        "startLine": 118,
+        "startChar": 0,
+        "endLine": 119,
+        "endChar": 28
+      },
+      "revId": "4a229654c39ad5c69811dda6b1d03f51afc5957c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_44edf924",
+        "filename": "docs/getting-started-guide/project-release-notes/nic.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T16:29:33Z",
+      "side": 1,
+      "message": "Say none if none.",
+      "revId": "4a229654c39ad5c69811dda6b1d03f51afc5957c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_e4dd0d72",
+        "filename": "docs/getting-started-guide/project-release-notes/nic.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T16:29:33Z",
+      "side": 1,
+      "message": "Give link and say if anything changed.",
+      "range": {
+        "startLine": 139,
+        "startChar": 0,
+        "endLine": 140,
+        "endChar": 69
+      },
+      "revId": "4a229654c39ad5c69811dda6b1d03f51afc5957c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
