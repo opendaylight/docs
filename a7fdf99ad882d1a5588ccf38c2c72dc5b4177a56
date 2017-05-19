@@ -1,0 +1,371 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba068154_ef032bb6",
+        "filename": "docs/getting-started-guide/project-release-notes/snmp4sdn.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T13:54:00Z",
+      "side": 1,
+      "message": "The over/under characters around titles/sections should match in length.",
+      "revId": "a7fdf99ad882d1a5588ccf38c2c72dc5b4177a56",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_8ff41fd0",
+        "filename": "docs/getting-started-guide/project-release-notes/snmp4sdn.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T13:54:00Z",
+      "side": 1,
+      "message": "Is this useful beyond the normal snmp4sdn below? Maybe remove it.",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 19
+      },
+      "revId": "a7fdf99ad882d1a5588ccf38c2c72dc5b4177a56",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_6f273b65",
+        "filename": "docs/getting-started-guide/project-release-notes/snmp4sdn.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T13:54:00Z",
+      "side": 1,
+      "message": "should remove the h\u003d and an hb\u003dstable/carbon so it points the right place",
+      "range": {
+        "startLine": 21,
+        "startChar": 143,
+        "endLine": 21,
+        "endChar": 230
+      },
+      "revId": "a7fdf99ad882d1a5588ccf38c2c72dc5b4177a56",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_2f2d3347",
+        "filename": "docs/getting-started-guide/project-release-notes/snmp4sdn.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T13:54:00Z",
+      "side": 1,
+      "message": "If you have no CSIT, this must be yes.",
+      "range": {
+        "startLine": 25,
+        "startChar": 20,
+        "endLine": 25,
+        "endChar": 22
+      },
+      "revId": "a7fdf99ad882d1a5588ccf38c2c72dc5b4177a56",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_8f1b7f1b",
+        "filename": "docs/getting-started-guide/project-release-notes/snmp4sdn.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T13:54:00Z",
+      "side": 1,
+      "message": "Remove.",
+      "revId": "a7fdf99ad882d1a5588ccf38c2c72dc5b4177a56",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_af20034a",
+        "filename": "docs/getting-started-guide/project-release-notes/snmp4sdn.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T13:54:00Z",
+      "side": 1,
+      "message": "Remove if there are no installation guides.",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 38,
+        "endChar": 0
+      },
+      "revId": "a7fdf99ad882d1a5588ccf38c2c72dc5b4177a56",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_ef1a0b16",
+        "filename": "docs/getting-started-guide/project-release-notes/snmp4sdn.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T13:54:00Z",
+      "side": 1,
+      "message": "It would be good to use the reST :ref: style links to labels so they work within branches and if things are renamed. See: http://www.sphinx-doc.org/en/stable/markup/inline.html#ref-role",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 124
+      },
+      "revId": "a7fdf99ad882d1a5588ccf38c2c72dc5b4177a56",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_0fd78f24",
+        "filename": "docs/getting-started-guide/project-release-notes/snmp4sdn.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T13:54:00Z",
+      "side": 1,
+      "message": "Are there other interfaces than RESTCONF? Does it only connect to switches via SNMP, but not listen?",
+      "revId": "a7fdf99ad882d1a5588ccf38c2c72dc5b4177a56",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_cf1587e6",
+        "filename": "docs/getting-started-guide/project-release-notes/snmp4sdn.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T13:54:00Z",
+      "side": 1,
+      "message": "SMNP",
+      "range": {
+        "startLine": 50,
+        "startChar": 86,
+        "endLine": 50,
+        "endChar": 90
+      },
+      "revId": "a7fdf99ad882d1a5588ccf38c2c72dc5b4177a56",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_4fe197fd",
+        "filename": "docs/getting-started-guide/project-release-notes/snmp4sdn.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T13:54:00Z",
+      "side": 1,
+      "message": "Please add links.",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 32
+      },
+      "revId": "a7fdf99ad882d1a5588ccf38c2c72dc5b4177a56",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_2fbb73e6",
+        "filename": "docs/getting-started-guide/project-release-notes/snmp4sdn.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T13:54:00Z",
+      "side": 1,
+      "message": "First, this won\u0027t format right, you need a blank line above it. Second, this is really about migration from an old installation of OpenDaylight to a new one. Since we don\u0027t automatically support data migration, this usually isn\u0027t possible. Do you have have no state or some other reason why migration should be possible?",
+      "revId": "a7fdf99ad882d1a5588ccf38c2c72dc5b4177a56",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_0fbe6fd4",
+        "filename": "docs/getting-started-guide/project-release-notes/snmp4sdn.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T13:54:00Z",
+      "side": 1,
+      "message": "Need blank lines separating each line to get correct formatting. See the output here: https://logs.opendaylight.org/releng/jenkins092/docs-verify-rtd-nitrogen/314/archives/docs/_build/html/getting-started-guide/project-release-notes/snmp4sdn.html.gz",
+      "range": {
+        "startLine": 69,
+        "startChar": 0,
+        "endLine": 74,
+        "endChar": 4
+      },
+      "revId": "a7fdf99ad882d1a5588ccf38c2c72dc5b4177a56",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_6fb57bed",
+        "filename": "docs/getting-started-guide/project-release-notes/snmp4sdn.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T13:54:00Z",
+      "side": 1,
+      "message": "Need blank lines separating each line to get correct formatting. See the output here: https://logs.opendaylight.org/releng/jenkins092/docs-verify-rtd-nitrogen/314/archives/docs/_build/html/getting-started-guide/project-release-notes/snmp4sdn.html.gz",
+      "range": {
+        "startLine": 85,
+        "startChar": 0,
+        "endLine": 87,
+        "endChar": 156
+      },
+      "revId": "a7fdf99ad882d1a5588ccf38c2c72dc5b4177a56",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_4fb877e5",
+        "filename": "docs/getting-started-guide/project-release-notes/snmp4sdn.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T13:54:00Z",
+      "side": 1,
+      "message": "Need blank lines separating each line to get correct formatting. See the output here: https://logs.opendaylight.org/releng/jenkins092/docs-verify-rtd-nitrogen/314/archives/docs/_build/html/getting-started-guide/project-release-notes/snmp4sdn.html.gz",
+      "range": {
+        "startLine": 92,
+        "startChar": 0,
+        "endLine": 93,
+        "endChar": 6
+      },
+      "revId": "a7fdf99ad882d1a5588ccf38c2c72dc5b4177a56",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_efc84b76",
+        "filename": "docs/getting-started-guide/project-release-notes/snmp4sdn.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T13:54:00Z",
+      "side": 1,
+      "message": "Doesn\u0027t this mean you implement parts of the SNMP protocol?",
+      "range": {
+        "startLine": 99,
+        "startChar": 54,
+        "endLine": 99,
+        "endChar": 58
+      },
+      "revId": "a7fdf99ad882d1a5588ccf38c2c72dc5b4177a56",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_8fc9bf7b",
+        "filename": "docs/getting-started-guide/project-release-notes/snmp4sdn.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T13:54:00Z",
+      "side": 1,
+      "message": "Need blank lines separating each line to get correct formatting. See the output here: https://logs.opendaylight.org/releng/jenkins092/docs-verify-rtd-nitrogen/314/archives/docs/_build/html/getting-started-guide/project-release-notes/snmp4sdn.html.gz",
+      "range": {
+        "startLine": 98,
+        "startChar": 0,
+        "endLine": 99,
+        "endChar": 90
+      },
+      "revId": "a7fdf99ad882d1a5588ccf38c2c72dc5b4177a56",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_cfc3c755",
+        "filename": "docs/getting-started-guide/project-release-notes/snmp4sdn.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T13:54:00Z",
+      "side": 1,
+      "message": "need \u003c\u003e around this URL to format right",
+      "range": {
+        "startLine": 104,
+        "startChar": 24,
+        "endLine": 104,
+        "endChar": 87
+      },
+      "revId": "a7fdf99ad882d1a5588ccf38c2c72dc5b4177a56",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
