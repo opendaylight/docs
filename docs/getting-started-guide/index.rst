@@ -1,3 +1,5 @@
+.. _getting_started_guide:
+
 #####################
 Getting Started Guide
 #####################
