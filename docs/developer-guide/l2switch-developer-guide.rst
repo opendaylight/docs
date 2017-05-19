@@ -1,3 +1,5 @@
+.. _l2switch-dev-guide:
+
 L2Switch Developer Guide
 ========================
 
