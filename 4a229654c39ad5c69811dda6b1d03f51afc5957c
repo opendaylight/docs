@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba068154_f5181577",
+        "filename": "docs/getting-started-guide/project-release-notes/nic.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 3741
+      },
+      "writtenOn": "2017-05-19T23:57:13Z",
+      "side": 1,
+      "message": "Hi Colin,\n\nThanks for your tip, I\u0027ve created a new patch for \u0027stable/carbon\u0027 with a new feature: odl-nic-all. It\u0027ll be used to replace those major features.\n\nI put you as reviewer. It follows the patch:\nhttps://git.opendaylight.org/gerrit/#/c/57576/1\n\nOnce we have that patch merged into \u0027stable/carbon\u0027 I\u0027ll update this patch.\n\nregards,",
+      "parentUuid": "ba068154_018f63cd",
+      "revId": "4a229654c39ad5c69811dda6b1d03f51afc5957c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_a1a01744",
         "filename": "docs/getting-started-guide/project-release-notes/nic.rst",
         "patchSetId": 3
