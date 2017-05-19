@@ -42,6 +42,29 @@
     },
     {
       "key": {
+        "uuid": "ba068154_61274fb7",
+        "filename": "docs/getting-started-guide/project-release-notes/lacp.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 2567
+      },
+      "writtenOn": "2017-05-19T14:59:44Z",
+      "side": 1,
+      "message": "Please change Experimental\u003dYes",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 22
+      },
+      "revId": "1fd2c2ab277965126943ec1b8851e145544b94b2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_4f3fd7d6",
         "filename": "docs/getting-started-guide/project-release-notes/lacp.rst",
         "patchSetId": 1
@@ -53,6 +76,29 @@
       "writtenOn": "2017-05-19T14:46:29Z",
       "side": 1,
       "message": "Trailing whitespace.",
+      "revId": "1fd2c2ab277965126943ec1b8851e145544b94b2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_412a0b7f",
+        "filename": "docs/getting-started-guide/project-release-notes/lacp.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 2567
+      },
+      "writtenOn": "2017-05-19T14:59:44Z",
+      "side": 1,
+      "message": "Are there any plans to generate guides for LACP in the future?",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 10
+      },
       "revId": "1fd2c2ab277965126943ec1b8851e145544b94b2",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -76,6 +122,75 @@
     },
     {
       "key": {
+        "uuid": "ba068154_a12137a1",
+        "filename": "docs/getting-started-guide/project-release-notes/lacp.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 2567
+      },
+      "writtenOn": "2017-05-19T14:59:44Z",
+      "side": 1,
+      "message": "We need to elaborate on the migration here.",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 3
+      },
+      "revId": "1fd2c2ab277965126943ec1b8851e145544b94b2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_8124f3af",
+        "filename": "docs/getting-started-guide/project-release-notes/lacp.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 2567
+      },
+      "writtenOn": "2017-05-19T14:59:44Z",
+      "side": 1,
+      "message": "We need to elaborate on the compatibility here.",
+      "range": {
+        "startLine": 50,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 21
+      },
+      "revId": "1fd2c2ab277965126943ec1b8851e145544b94b2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_e13a1fcc",
+        "filename": "docs/getting-started-guide/project-release-notes/lacp.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 2567
+      },
+      "writtenOn": "2017-05-19T14:59:44Z",
+      "side": 1,
+      "message": "Link to bugs?",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 17
+      },
+      "revId": "1fd2c2ab277965126943ec1b8851e145544b94b2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_6100ef01",
         "filename": "docs/getting-started-guide/project-release-notes/lacp.rst",
         "patchSetId": 1
@@ -87,6 +202,63 @@
       "writtenOn": "2017-05-19T14:50:34Z",
       "side": 1,
       "message": "Need a blank line before the next heading.",
+      "revId": "1fd2c2ab277965126943ec1b8851e145544b94b2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_c1355bdc",
+        "filename": "docs/getting-started-guide/project-release-notes/lacp.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 2567
+      },
+      "writtenOn": "2017-05-19T14:59:44Z",
+      "side": 1,
+      "message": "Links to bugs in bugzilla?",
+      "range": {
+        "startLine": 60,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 17
+      },
+      "revId": "1fd2c2ab277965126943ec1b8851e145544b94b2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_213547da",
+        "filename": "docs/getting-started-guide/project-release-notes/lacp.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 2567
+      },
+      "writtenOn": "2017-05-19T14:59:44Z",
+      "side": 1,
+      "message": "I believe LACP has no plans to support in the future, right?",
+      "revId": "1fd2c2ab277965126943ec1b8851e145544b94b2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_41516b0d",
+        "filename": "docs/getting-started-guide/project-release-notes/lacp.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 2567
+      },
+      "writtenOn": "2017-05-19T14:59:44Z",
+      "side": 1,
+      "message": "I recall LACP did implement a standard protocol.",
       "revId": "1fd2c2ab277965126943ec1b8851e145544b94b2",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
