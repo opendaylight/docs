@@ -52,14 +52,15 @@ Feature Name
 Documentation
 =============
 
-Please provide the URL to each document at docs.opendaylight.org. If the
-document is under review, provide a link to the change in Gerrit.
+.. Please provide the URL to each document at docs.opendaylight.org. If the
+.. document is under review, provide a link to the change in Gerrit.
 
 * **Installation Guide(s):**
 
   * `Guide Name <URL>`_
-  * *Note: for most projects this should not be needed since it should just be
-    feature:install <feature-name>*
+
+    .. note: for most projects this should not be needed since it should just
+             be ``feature:install <feature-name>``.
 
 * **User Guide(s):**
 
@@ -112,14 +113,14 @@ Migration
           some project-speicific work and instructions which should be
           explained here. Remove this note.
 
-Compatiblity
-------------
+Compatibility
+-------------
 
 .. Please include a short description of any changes not just a link to a patch
 
 * Is this release compatible with the previous release?
 * Any API changes?
-* Any configuraiton changes?
+* Any configuration changes?
 
 Bugs Fixed
 ----------
