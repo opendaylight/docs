@@ -1,3 +1,5 @@
+.. _lacp-user-guide:
+
 Link Aggregation Control Protocol User Guide
 ============================================
 
