@@ -1,3 +1,5 @@
+.. _ttp_cli_tools_dev_guide:
+
 TTP CLI Tools Developer Guide
 =============================
 
