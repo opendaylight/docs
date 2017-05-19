@@ -42,6 +42,30 @@
     },
     {
       "key": {
+        "uuid": "ba068154_23939250",
+        "filename": "docs/getting-started-guide/project-release-notes/packetcable.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2017-05-19T00:03:02Z",
+      "side": 1,
+      "message": "actually, after looking more closely I think the CSIT\nis only excercising the NB Rest interface and not so\nsubstantial as I thought.\n\nI don\u0027t think there is adequate coverage here. If the \n3rd party CSIT has a valid report and gives the community\nconfidence that it\u0027s validating this feature we can \nkeep this as \"no\" otherwise we should move to \"yes\"",
+      "parentUuid": "ba068154_03776e3b",
+      "range": {
+        "startLine": 20,
+        "startChar": 20,
+        "endLine": 20,
+        "endChar": 22
+      },
+      "revId": "68f90e56468590030222207fffd0efdbe60432b7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_e3718a45",
         "filename": "docs/getting-started-guide/project-release-notes/packetcable.rst",
         "patchSetId": 3
