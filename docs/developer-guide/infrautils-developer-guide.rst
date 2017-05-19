@@ -1,3 +1,5 @@
+.. _infrautils-dev-guide:
+
 Infrautils
 ==========
 
