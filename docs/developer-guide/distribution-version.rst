@@ -1,3 +1,5 @@
+.. _dist-version:
+
 Distribution Version reporting
 ==============================
 

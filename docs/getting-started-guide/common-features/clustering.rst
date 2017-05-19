@@ -85,6 +85,8 @@ To implement clustering, the deployment considerations are as follows:
   that it can rejoin the cluster. Once a restarted node joins a cluster, it
   will synchronize with the lead node automatically.
 
+.. _getting-started-clustering-scripts:
+
 Clustering Scripts
 ------------------
 
