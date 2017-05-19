@@ -2,6 +2,218 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba068154_4feb57b0",
+        "filename": "docs/getting-started-guide/project-release-notes/yangtools.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T14:10:53Z",
+      "side": 1,
+      "message": "RFC",
+      "range": {
+        "startLine": 12,
+        "startChar": 29,
+        "endLine": 12,
+        "endChar": 32
+      },
+      "revId": "c962afeea44d007a8ce8d7014a3d0322664fef9c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_6fe8dbb4",
+        "filename": "docs/getting-started-guide/project-release-notes/yangtools.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T14:10:53Z",
+      "side": 1,
+      "message": "YANG",
+      "range": {
+        "startLine": 12,
+        "startChar": 18,
+        "endLine": 12,
+        "endChar": 22
+      },
+      "revId": "c962afeea44d007a8ce8d7014a3d0322664fef9c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_afd123fd",
+        "filename": "docs/getting-started-guide/project-release-notes/yangtools.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T14:10:53Z",
+      "side": 1,
+      "message": ", i.e.,",
+      "range": {
+        "startLine": 15,
+        "startChar": 46,
+        "endLine": 15,
+        "endChar": 51
+      },
+      "revId": "c962afeea44d007a8ce8d7014a3d0322664fef9c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_0f082f90",
+        "filename": "docs/getting-started-guide/project-release-notes/yangtools.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T14:10:53Z",
+      "side": 1,
+      "message": "Need an hb\u003dstable/carbon",
+      "revId": "c962afeea44d007a8ce8d7014a3d0322664fef9c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_8fcc1f63",
+        "filename": "docs/getting-started-guide/project-release-notes/yangtools.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T14:10:53Z",
+      "side": 1,
+      "message": "YANG Tools",
+      "range": {
+        "startLine": 29,
+        "startChar": 53,
+        "endLine": 29,
+        "endChar": 62
+      },
+      "revId": "c962afeea44d007a8ce8d7014a3d0322664fef9c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_cfd627f1",
+        "filename": "docs/getting-started-guide/project-release-notes/yangtools.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T14:10:53Z",
+      "side": 1,
+      "message": "Presumably the request should be done out-of-band and this can be updated to reflect the request being granted or not and the experimental status can be updated.",
+      "range": {
+        "startLine": 27,
+        "startChar": 17,
+        "endLine": 30,
+        "endChar": 36
+      },
+      "revId": "c962afeea44d007a8ce8d7014a3d0322664fef9c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_6fff3b68",
+        "filename": "docs/getting-started-guide/project-release-notes/yangtools.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T14:10:53Z",
+      "side": 1,
+      "message": "Need an hb\u003dstable/carbon",
+      "revId": "c962afeea44d007a8ce8d7014a3d0322664fef9c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_2f05337a",
+        "filename": "docs/getting-started-guide/project-release-notes/yangtools.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T14:10:53Z",
+      "side": 1,
+      "message": "Same as above.",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 43,
+        "endChar": 36
+      },
+      "revId": "c962afeea44d007a8ce8d7014a3d0322664fef9c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_4f023770",
+        "filename": "docs/getting-started-guide/project-release-notes/yangtools.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T14:10:53Z",
+      "side": 1,
+      "message": "Need an hb\u003dstable/carbon",
+      "revId": "c962afeea44d007a8ce8d7014a3d0322664fef9c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_aff8037d",
+        "filename": "docs/getting-started-guide/project-release-notes/yangtools.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T14:10:53Z",
+      "side": 1,
+      "message": "If you have CSIT and they pass isn\u0027t this not experimental?",
+      "range": {
+        "startLine": 52,
+        "startChar": 20,
+        "endLine": 52,
+        "endChar": 23
+      },
+      "revId": "c962afeea44d007a8ce8d7014a3d0322664fef9c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_034c8e6f",
         "filename": "docs/getting-started-guide/project-release-notes/yangtools.rst",
         "patchSetId": 5
