@@ -1,0 +1,146 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba068154_2f1373b9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T14:18:10Z",
+      "side": 1,
+      "message": "This needs to be \u003c50 characters",
+      "revId": "b1f3ea4b5bc1e34fa444e3b3a4d2da8cbd46d29c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_0f166fa7",
+        "filename": "docs/getting-started-guide/project-release-notes/odl-sdni-release-notes.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T14:18:10Z",
+      "side": 1,
+      "message": "would be good to remove trailing whitespace",
+      "range": {
+        "startLine": 17,
+        "startChar": 23,
+        "endLine": 17,
+        "endChar": 24
+      },
+      "revId": "b1f3ea4b5bc1e34fa444e3b3a4d2da8cbd46d29c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_4f1077a8",
+        "filename": "docs/getting-started-guide/project-release-notes/odl-sdni-release-notes.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T14:18:10Z",
+      "side": 1,
+      "message": "Presumably you are opening BGP connections. How are/should they be secured?",
+      "revId": "b1f3ea4b5bc1e34fa444e3b3a4d2da8cbd46d29c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_af264314",
+        "filename": "docs/getting-started-guide/project-release-notes/odl-sdni-release-notes.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T14:18:10Z",
+      "side": 1,
+      "message": "blank line above here",
+      "revId": "b1f3ea4b5bc1e34fa444e3b3a4d2da8cbd46d29c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_ef204bf9",
+        "filename": "docs/getting-started-guide/project-release-notes/odl-sdni-release-notes.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T14:18:10Z",
+      "side": 1,
+      "message": "Test coverage %?",
+      "revId": "b1f3ea4b5bc1e34fa444e3b3a4d2da8cbd46d29c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_0f7dcfe7",
+        "filename": "docs/getting-started-guide/project-release-notes/odl-sdni-release-notes.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T14:18:10Z",
+      "side": 1,
+      "message": "What happened to the migration section? See here for what it should describe: https://github.com/opendaylight/docs/blob/master/docs/getting-started-guide/project-release-notes/sample-release-notes.rst#migration",
+      "revId": "b1f3ea4b5bc1e34fa444e3b3a4d2da8cbd46d29c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_6f845bd4",
+        "filename": "docs/getting-started-guide/project-release-notes/odl-sdni-release-notes.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T14:18:10Z",
+      "side": 1,
+      "message": "Short description?",
+      "revId": "b1f3ea4b5bc1e34fa444e3b3a4d2da8cbd46d29c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_4f87d7d7",
+        "filename": "docs/getting-started-guide/project-release-notes/odl-sdni-release-notes.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T14:18:10Z",
+      "side": 1,
+      "message": "Don\u0027t you use BGP? What RFCs?",
+      "revId": "b1f3ea4b5bc1e34fa444e3b3a4d2da8cbd46d29c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
