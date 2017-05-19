@@ -65,6 +65,30 @@
     },
     {
       "key": {
+        "uuid": "ba068154_c3ca864e",
+        "filename": "docs/getting-started-guide/project-release-notes/bier.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6854
+      },
+      "writtenOn": "2017-05-19T01:31:01Z",
+      "side": 1,
+      "message": "1?We have confirmed the bug reason and prepared to fix it.\nIn the meantime,we added the template as the patch shown.\nhttps://git.opendaylight.org/gerrit/#/c/54756/\nBut it is failed,we can not tell why.\nOr we could only fix the bug first.What is your advice.\n2)We have done our best to test odl-bier-all and it have adequate coverage about controller except netconf.",
+      "parentUuid": "ba068154_435fb6e5",
+      "range": {
+        "startLine": 12,
+        "startChar": 20,
+        "endLine": 12,
+        "endChar": 22
+      },
+      "revId": "c6ee477ee8aa9cd4f2bdfe90868549ff7969bc1c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_a335c2dc",
         "filename": "docs/getting-started-guide/project-release-notes/bier.rst",
         "patchSetId": 8
