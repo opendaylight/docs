@@ -25,6 +25,52 @@
     },
     {
       "key": {
+        "uuid": "ba068154_afa3e39c",
+        "filename": "docs/getting-started-guide/project-release-notes/of-config-release-notes.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T14:05:30Z",
+      "side": 1,
+      "message": "OF-CONFIG",
+      "range": {
+        "startLine": 12,
+        "startChar": 100,
+        "endLine": 12,
+        "endChar": 109
+      },
+      "revId": "66f0ed6d4f8c9efb4f3d07606fa35de1bd105989",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_8f9edf52",
+        "filename": "docs/getting-started-guide/project-release-notes/of-config-release-notes.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T14:05:30Z",
+      "side": 1,
+      "message": "N/A or none?",
+      "range": {
+        "startLine": 16,
+        "startChar": 17,
+        "endLine": 16,
+        "endChar": 20
+      },
+      "revId": "66f0ed6d4f8c9efb4f3d07606fa35de1bd105989",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_434e9670",
         "filename": "docs/getting-started-guide/project-release-notes/of-config-release-notes.rst",
         "patchSetId": 2
@@ -36,6 +82,41 @@
       "writtenOn": "2017-05-18T22:14:55Z",
       "side": 1,
       "message": "Link to Guide. Should be formatted something like:\n:ref:`Guide name \u003cguide-label-name\u003e`\nWhere the \u003cguide-label-name\u003e is something like:\n.. _guide-label-name:\nProject User Guide\n\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\n....\n\nAs described here:\nhttp://www.sphinx-doc.org/en/stable/markup/inline.html#cross-referencing-arbitrary-locations",
+      "revId": "66f0ed6d4f8c9efb4f3d07606fa35de1bd105989",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_cfa8e779",
+        "filename": "docs/getting-started-guide/project-release-notes/of-config-release-notes.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T14:05:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_434e9670",
+      "revId": "66f0ed6d4f8c9efb4f3d07606fa35de1bd105989",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_2fb7f3d9",
+        "filename": "docs/getting-started-guide/project-release-notes/of-config-release-notes.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T14:05:30Z",
+      "side": 1,
+      "message": "Presumably you just use NETCONF, is that right? Probably worth noting that and saying that thus the required security is provided in the NETCONF project.",
       "revId": "66f0ed6d4f8c9efb4f3d07606fa35de1bd105989",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -98,6 +179,63 @@
         "startChar": 48,
         "endLine": 47,
         "endChar": 119
+      },
+      "revId": "66f0ed6d4f8c9efb4f3d07606fa35de1bd105989",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_0fbaefbf",
+        "filename": "docs/getting-started-guide/project-release-notes/of-config-release-notes.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T14:05:30Z",
+      "side": 1,
+      "message": "This probably means it\u0027s not supported unless the project has no state stored in the data store—which I guess is possible.",
+      "revId": "66f0ed6d4f8c9efb4f3d07606fa35de1bd105989",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_6fb1fbe0",
+        "filename": "docs/getting-started-guide/project-release-notes/of-config-release-notes.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T14:05:30Z",
+      "side": 1,
+      "message": "Short description?",
+      "revId": "66f0ed6d4f8c9efb4f3d07606fa35de1bd105989",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_afcac34c",
+        "filename": "docs/getting-started-guide/project-release-notes/of-config-release-notes.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T14:05:30Z",
+      "side": 1,
+      "message": "If there are none, say \"None\"",
+      "range": {
+        "startLine": 73,
+        "startChar": 0,
+        "endLine": 74,
+        "endChar": 28
       },
       "revId": "66f0ed6d4f8c9efb4f3d07606fa35de1bd105989",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
