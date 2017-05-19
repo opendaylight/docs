@@ -133,6 +133,8 @@ security model to add the following features:
 
 For more information, refer to http://www.osgi.org/Main/HomePage.
 
+.. _securing-karaf:
+
 Securing the Karaf container
 ============================
 
