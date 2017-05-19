@@ -1,3 +1,5 @@
+.. _l2switch-user-guide:
+
 L2 Switch User Guide
 ====================
 
