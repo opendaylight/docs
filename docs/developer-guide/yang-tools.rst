@@ -1,3 +1,5 @@
+.. _yangtools-developer-guide:
+
 YANG Tools Developer Guide
 ==========================
 
