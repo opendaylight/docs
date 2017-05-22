@@ -1,0 +1,239 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a0b7d60_95912455",
+        "filename": "docs/getting-started-guide/project-release-notes/lacp.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-22T15:29:22Z",
+      "side": 1,
+      "message": "This should agree with LACP in length, e.g.,\n\n \u003d\u003d\u003d\u003d\n LACP\n \u003d\u003d\u003d\u003d",
+      "revId": "0e1d92123f861555c47e4bfa0af4631973f7a6c0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a0b7d60_b5942845",
+        "filename": "docs/getting-started-guide/project-release-notes/lacp.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-22T15:29:22Z",
+      "side": 1,
+      "message": "This isn\u0027t a Karaf feature. What are the major Karaf feature for LACP?",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 16
+      },
+      "revId": "0e1d92123f861555c47e4bfa0af4631973f7a6c0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a0b7d60_d59bac70",
+        "filename": "docs/getting-started-guide/project-release-notes/lacp.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-22T15:29:22Z",
+      "side": 1,
+      "message": "Need a blank line above this for it format right.",
+      "revId": "0e1d92123f861555c47e4bfa0af4631973f7a6c0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a0b7d60_15941436",
+        "filename": "docs/getting-started-guide/project-release-notes/lacp.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-22T15:29:22Z",
+      "side": 1,
+      "message": "Link to Guide. Should be formatted something like:\n\n :ref:`Guide name \u003cguide-label-name\u003e`\n\nWhere the \u003cguide-label-name\u003e is something like:\n\n .. _guide-label-name:\n Project User Guide\n \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\n ....\n\nAs described here:\nhttp://www.sphinx-doc.org/en/stable/markup/inline.html#cross-referencing-arbitrary-locations",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 86
+      },
+      "revId": "0e1d92123f861555c47e4bfa0af4631973f7a6c0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a0b7d60_b5a26898",
+        "filename": "docs/getting-started-guide/project-release-notes/lacp.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-22T15:29:22Z",
+      "side": 1,
+      "message": "Give some context as to what this is an a test coverage percentage, e.g.,\n\n `Link to Sonar report \u003chttps://sonar.opendaylight.org/overview?id\u003d43929\u003e` (76.8% code coverage)",
+      "revId": "0e1d92123f861555c47e4bfa0af4631973f7a6c0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a0b7d60_959f6450",
+        "filename": "docs/getting-started-guide/project-release-notes/lacp.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-22T15:29:22Z",
+      "side": 1,
+      "message": "are",
+      "range": {
+        "startLine": 48,
+        "startChar": 51,
+        "endLine": 48,
+        "endChar": 53
+      },
+      "revId": "0e1d92123f861555c47e4bfa0af4631973f7a6c0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a0b7d60_f5acf08e",
+        "filename": "docs/getting-started-guide/project-release-notes/lacp.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-22T15:29:22Z",
+      "side": 1,
+      "message": "API",
+      "range": {
+        "startLine": 48,
+        "startChar": 57,
+        "endLine": 48,
+        "endChar": 60
+      },
+      "revId": "0e1d92123f861555c47e4bfa0af4631973f7a6c0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a0b7d60_d5a9ec7c",
+        "filename": "docs/getting-started-guide/project-release-notes/lacp.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-22T15:29:22Z",
+      "side": 1,
+      "message": "bugs",
+      "range": {
+        "startLine": 52,
+        "startChar": 3,
+        "endLine": 52,
+        "endChar": 6
+      },
+      "revId": "0e1d92123f861555c47e4bfa0af4631973f7a6c0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a0b7d60_35b678dd",
+        "filename": "docs/getting-started-guide/project-release-notes/lacp.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-22T15:29:22Z",
+      "side": 1,
+      "message": "known issues",
+      "range": {
+        "startLine": 56,
+        "startChar": 3,
+        "endLine": 56,
+        "endChar": 8
+      },
+      "revId": "0e1d92123f861555c47e4bfa0af4631973f7a6c0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a0b7d60_75b000de",
+        "filename": "docs/getting-started-guide/project-release-notes/lacp.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-22T15:29:22Z",
+      "side": 1,
+      "message": "Short description and link?",
+      "range": {
+        "startLine": 64,
+        "startChar": 0,
+        "endLine": 64,
+        "endChar": 13
+      },
+      "revId": "0e1d92123f861555c47e4bfa0af4631973f7a6c0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a0b7d60_55b5fccb",
+        "filename": "docs/getting-started-guide/project-release-notes/lacp.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-22T15:29:22Z",
+      "side": 1,
+      "message": "\u003e`_",
+      "range": {
+        "startLine": 69,
+        "startChar": 100,
+        "endLine": 69,
+        "endChar": 102
+      },
+      "revId": "0e1d92123f861555c47e4bfa0af4631973f7a6c0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
