@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7af0899e_7d446374",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 786,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-23T19:57:38Z",
+      "side": 1,
+      "message": "you actually on need one _, but that\u0027s fine",
+      "range": {
+        "startLine": 786,
+        "startChar": 44,
+        "endLine": 786,
+        "endChar": 46
+      },
+      "revId": "c9d092e807ba66ddc2b0944c6379c3ebfce616ef",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af0899e_5d49a78a",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 789,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-23T19:57:38Z",
+      "side": 1,
+      "message": "you probably want hb\u003dstable/carbon",
+      "range": {
+        "startLine": 789,
+        "startChar": 174,
+        "endLine": 789,
+        "endChar": 178
+      },
+      "revId": "c9d092e807ba66ddc2b0944c6379c3ebfce616ef",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af0899e_bd5d2b4b",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 1105,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-23T19:57:38Z",
+      "side": 1,
+      "message": "link?\n\n :ref:`install_odl`\n\nshould work",
+      "range": {
+        "startLine": 1105,
+        "startChar": 30,
+        "endLine": 1105,
+        "endChar": 61
+      },
+      "revId": "c9d092e807ba66ddc2b0944c6379c3ebfce616ef",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
