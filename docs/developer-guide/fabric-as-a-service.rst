@@ -1,3 +1,5 @@
+.. _faas_dev_guide:
+
 Fabric As A Service
 ===================
 
