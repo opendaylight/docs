@@ -81,7 +81,10 @@ Documentation
 =============
 
 There is some outdated documentation at our wiki page: https://wiki.opendaylight.org/view/IoTDM:Main
-Some more actual developers documentation can be found in source code as README files.
+
+Some general information can be found in developer guide for IoTDM Boron, see :ref:`iotdm_boron_developer_guide`.
+
+There is more actual developers documentation as README files in IoTDM's sources.
 
 Security Considerations
 =======================

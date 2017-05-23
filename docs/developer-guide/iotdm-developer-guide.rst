@@ -1,3 +1,5 @@
+.. _iotdm_boron_developer_guide:
+
 IoTDM Developer Guide
 =====================
 
