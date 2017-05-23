@@ -1,3 +1,5 @@
+.. _iotdm_dev_guide:
+
 IoTDM Developer Guide
 =====================
 
