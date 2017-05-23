@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7af0899e_577226e6",
+        "filename": "docs/getting-started-guide/project-release-notes/bgp-ls-pcep.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-23T15:47:06Z",
+      "side": 1,
+      "message": "Link to Guide. Should be formatted something like:\n\n :ref:`Guide name \u003cguide-label-name\u003e`\n\nWhere the \u003cguide-label-name\u003e is something like:\n\n .. _guide-label-name:\n Project User Guide\n \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\n ....\n\nAs described here:\nhttp://www.sphinx-doc.org/en/stable/markup/inline.html#cross-referencing-arbitrary-locations",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 52,
+        "endChar": 110
+      },
+      "revId": "3289a2198e3eb0709d38353932c3359ee947238f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af0899e_f780728d",
+        "filename": "docs/getting-started-guide/project-release-notes/bgp-ls-pcep.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-23T15:47:06Z",
+      "side": 1,
+      "message": "So, is there no state stored in the datastore for bgpcep? Because if there is, then you would need to describe how to migrate it, right?",
+      "revId": "3289a2198e3eb0709d38353932c3359ee947238f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
