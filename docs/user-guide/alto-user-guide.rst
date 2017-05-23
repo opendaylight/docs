@@ -1,3 +1,5 @@
+.. _alto-user-guide
+
 ALTO User Guide
 ===============
 
@@ -302,4 +304,3 @@ Following is an example ALTO query:
       ]
       }
     }
-
