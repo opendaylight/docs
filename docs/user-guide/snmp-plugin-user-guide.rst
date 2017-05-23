@@ -1,3 +1,5 @@
+.. _snmp-user-guide:
+
 SNMP Plugin User Guide
 ======================
 
