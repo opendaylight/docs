@@ -1,3 +1,5 @@
+.. _opflex-agent-ovs-dev-guide:
+
 OpFlex agent-ovs Developer Guide
 ================================
 
@@ -39,4 +41,3 @@ API Reference Documentation
 
 Internal API documentation can be found by in doc/html/index.html in
 any build.
-
