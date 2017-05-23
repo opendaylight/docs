@@ -1,3 +1,5 @@
+.. _sfc-user-guide:
+
 Service Function Chaining
 =========================
 
