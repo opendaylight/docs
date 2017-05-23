@@ -45,6 +45,30 @@
       "revId": "6b3d8dc3b97a7092982e851d77b7268dde57a7a1",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a0b7d60_38182d84",
+        "filename": "docs/user-guide/lisp-flow-mapping-user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 784,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-23T19:57:38Z",
+      "side": 1,
+      "message": "You can\u0027t have nested inline formatting in reST. It\u0027s a known limitation.",
+      "parentUuid": "ba068154_dd357a47",
+      "range": {
+        "startLine": 783,
+        "startChar": 3,
+        "endLine": 784,
+        "endChar": 46
+      },
+      "revId": "6b3d8dc3b97a7092982e851d77b7268dde57a7a1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
