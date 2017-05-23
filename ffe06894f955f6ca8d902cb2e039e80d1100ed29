@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "7af0899e_e2454eb4",
+        "filename": "docs/getting-started-guide/project-release-notes/genius.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-23T16:51:30Z",
+      "side": 1,
+      "message": "*",
+      "range": {
+        "startLine": 62,
+        "startChar": 0,
+        "endLine": 62,
+        "endChar": 1
+      },
+      "revId": "ffe06894f955f6ca8d902cb2e039e80d1100ed29",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_c05efc44",
         "filename": "docs/getting-started-guide/project-release-notes/genius.rst",
         "patchSetId": 6
@@ -13,6 +36,29 @@
       "writtenOn": "2017-05-18T21:38:53Z",
       "side": 1,
       "message": "please put a note here regarding the fact that genius \nfunctionality is implicitly (or explicitly, maybe) tested\nin the somewhat extensive csit in the netvirt project.\nthat does give some confidence to the quality of genius.\n\nif you agree...",
+      "revId": "ffe06894f955f6ca8d902cb2e039e80d1100ed29",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af0899e_4260a235",
+        "filename": "docs/getting-started-guide/project-release-notes/genius.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-23T16:51:30Z",
+      "side": 1,
+      "message": "OpenDaylight",
+      "range": {
+        "startLine": 135,
+        "startChar": 8,
+        "endLine": 135,
+        "endChar": 20
+      },
       "revId": "ffe06894f955f6ca8d902cb2e039e80d1100ed29",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
