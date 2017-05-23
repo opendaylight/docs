@@ -54,11 +54,11 @@ eman relies upon the presence of SNMP agents.
 The following describes a way to install and configure an SNMP simulator
 on localhost.
 
-on MAC OS, open terminal
+on macOS, open terminal
 
 1. Install snmpsim.::
 
-    $ sudo apt install snmpsim
+    $ sudo easy_install -n snmpsim
 
 2. configure filesystem::
 
