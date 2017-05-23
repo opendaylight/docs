@@ -60,6 +60,9 @@ Claim
     A data set of validated assertions regarding a user, e.g. the role,
     domain, name, etc.
 
+Grant
+    It is the entity associating a user with his role and domain.
+
 IdP
     Identity Provider.
 
@@ -1076,3 +1079,304 @@ The following are the steps to configure the Encryption Service:
 
 3. Finally the new configurations will take affect after restarting the
    distribution.
+
+Using the AAA Command Line Interface (CLI)
+------------------------------------------
+The AAA offers a CLI through the Karaf's console. This CLI allows the user to
+configure and use some of the functionalities provided by AAA.
+
+The AAA CLI exists under the **odl-aaa-cli** feature. This feature can be
+installed by executing the following command.
+
+::
+
+  feature:install odl-aaa-cli
+
+To check that the installation of the feature succeeded type "aaa" and press
+*tab* to see the list of available commands under the *aaa* scope.
+
+::
+
+  opendaylight-user@root>aaa:
+  aaa:add-domain           aaa:add-grant            aaa:add-role             aaa:add-user
+  aaa:change-user-pwd      aaa:export-keystores     aaa:gen-cert-req         aaa:get-cipher-suites
+  aaa:get-domains          aaa:get-node-cert        aaa:get-odl-cert         aaa:get-roles
+  aaa:get-tls-protocols    aaa:get-users            aaa:import-keystores     aaa:remove-domain
+  aaa:remove-grant         aaa:remove-role          aaa:remove-user
+
+Add a User
+^^^^^^^^^^
+
+The *add-user* command allows for adding an OpenDaylight user. The following
+user parameters can be specified.
+
+::
+
+  aaa:add-user --name <user name>
+               --roleName <role>
+               --userDescription <user description>
+               --email <user email>
+               --domainName <domain name>
+
+List available Users
+^^^^^^^^^^^^^^^^^^^^
+
+The *get-users* command list all the available users within the Controller.
+
+::
+
+  aaa:get-users
+
+    user
+    admin
+
+Remove a User
+^^^^^^^^^^^^^
+
+The *remove-user* command allows for removing an OpenDaylight user. The command
+needs the user name as parameter.
+
+::
+
+  aaa:remove-user --name <user name>
+
+Change the OpenDaylight user password
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The *change-user-pwd* command allows for changing the OpenDaylight user's
+password. It takes the user name as argument then will ask for the given user
+current password.
+
+::
+
+  aaa:change-user-pwd -user admin
+    Enter current password:
+    Enter new password:
+    admin's password has been changed
+
+Add a Role
+^^^^^^^^^^
+
+The *add-role* command allows for adding a role to the Controller.
+
+::
+
+  aaa:add-role --name <role name>
+               --desc <role description>
+               --domainName <domain name>
+
+List available Roles
+^^^^^^^^^^^^^^^^^^^^
+
+The *get-roles* command list all the available roles within the controller.
+
+::
+
+  aaa:get-roles
+
+    user
+    admin
+
+Remove a Role
+^^^^^^^^^^^^^
+
+The *remove-role* command allows for removing an OpenDaylight role. The command
+needs the role name as parameter.  The role will be removed from those users who
+have it.
+
+::
+
+  aaa:remove-role --name <role name>
+
+Add a Domain
+^^^^^^^^^^^^
+
+The *add-domain* command allows for adding a domain to the Controller.
+
+::
+
+  aaa:add-domain --name <domain name>
+                 --desc <domain description>
+
+List available Domains
+^^^^^^^^^^^^^^^^^^^^^^
+
+The *get-domains* command list all the available domains within the controller.
+The system asks for the administrator credentials to execute this command.
+
+::
+
+  aaa:get-domains
+
+    sdn
+
+Remove a Domain
+^^^^^^^^^^^^^^^
+
+The *remove-domain* command allows for removing an OpenDaylight role. The command
+needs the domain name as parameter.
+
+::
+
+  aaa:remove-domain --name <domain name>
+
+Add a Grant
+^^^^^^^^^^^
+
+The *add-grant* command allows for creating a grant for an existing user. The
+command returns a grant id for that user.
+
+::
+
+  aaa:add-grant --userName <user name>
+                --domainName <domain name>
+                --roleName <role name>
+
+Remove a Grant
+^^^^^^^^^^^^^^
+
+The *remove-grant* command allows for removing an OpenDaylight grant. This command
+needs the user name, domain and and role as parameters.
+
+::
+
+  aaa:remove-grant --userName <user name>
+                   --domainName <domain name>
+                   --roleName <role name>
+
+Generate Certificate Request
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Generate certificate request command will generate a certificate request based
+on the generated OpenDaylight keystore and print it on the Karaf CLI. The system
+asks for the keystore password.
+
+::
+
+  aaa:gen-cert-req
+
+  -----BEGIN CERTIFICATE REQUEST-----
+  MIIBlzCCAQACAQAwWTELMAkGA1UEBhMCQ0ExFDASBgNVBAcMC1FDIE1vbnRyZWFsMRgwFgYDVQQKDA
+  9MaW51eEZvdW5kYXRpb24xDDAKBgNVBAsMA0RldjEMMAoGA1UEAwwDT0RMMIGfMA0GCSqGSIb3DQEB
+  AQUAA4GNADCBiQKBgQCCmLW6j+JLYJM5yAMwscw/CHqPnp5elPa1YtQsHKEAvp1I+mLVtHKZeXeteA
+  kyp6ORxw6KQ515fcDyQVrRJiSM15jUd27UaFq5ku0+qJeG+Qh2btx+cvNSE7/+cgUWWosKz4Aff5F5
+  FqR62jLUTNzqCvoaTbZaOnLYVq+O2dYyZwIDAQABMA0GCSqGSIb3DQEBBQUAA4GBADhDr4Jm7gVm/o
+  p861/FShyw1ZZscxOEl2TprJZiTO6sn3sLptQZv8v52Z+Jm5dAgr7L46c97Xfa+0j6Y4LXNb0f88lL
+  RG8PxGbk6Tqbjqc0WS+U1Ibc/rcPK4HEN/bcYCn+Na1gLBaFXUPg08ozG6MwqFNeS5Z0jz1W0D9/oiao
+  -----END CERTIFICATE REQUEST-----
+
+Get OpenDaylight Certificate
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The *get-odl-certificate* command will print the OpenDaylight certificate at the
+Karaf CLI. The system asks for the keystore password.
+
+::
+
+  aaa:get-odl-cert -storepass <store_password>
+
+  -----BEGIN CERTIFICATE-----
+  MIICKTCCAZKgAwIBAgIEI75RWDANBgkqhkiG9w0BAQUFADBZMQwwCgYDVQQDDANPREwxDDAKBgNVBA
+  sMA0RldjEYMBYGA1UECgwPTGludXhGb3VuZGF0aW9uMRQwEgYDVQQHDAtRQyBNb250cmVhbDELMAkG
+  A1UEBhMCQ0EwHhcNMTYxMTMwMTYyNDE3WhcNMTcxMTMwMTYyNDE3WjBZMQwwCgYDVQQDDANPREwxDD
+  AKBgNVBAsMA0RldjEYMBYGA1UECgwPTGludXhGb3VuZGF0aW9uMRQwEgYDVQQHDAtRQyBNb250cmVh
+  bDELMAkGA1UEBhMCQ0EwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAIKYtbqP4ktgkznIAzCxzD
+  8Ieo+enl6U9rVi1CwcoQC+nUj6YtW0cpl5d614CTKno5HHDopDnXl9wPJBWtEmJIzXmNR3btRoWrmS
+  7T6ol4b5CHZu3H5y81ITv/5yBRZaiwrPgB9/kXkWpHraMtRM3OoK+hpNtlo6cthWr47Z1jJnAgMBAA
+  EwDQYJKoZIhvcNAQEFBQADgYEAL9DK/P/yEBre3Mg3bICAUAvSvZic+ydDmigWLsY4J3UzKdV2f1jI
+  s+rQTEgtlHShBf/ed546D49cp3XEzYrcxgILhGXDziCrUK0K1TiYqPTp6FLijjdydGlPpwuMyyV5Y0
+  iDiRclWuPz2fHbs8WQOWNs6VQ+WaREXtEsEC4qgSo=
+  -----END CERTIFICATE-----
+
+Get Cipher Suites
+^^^^^^^^^^^^^^^^^
+
+The *get-cipher-suites* command shows the cipher suites supported by the
+JVM used by the OpenDaylight controller in TLS communication. For example, here
+are the `Default Ciphers Suites in JDK 8 <http://docs.oracle.com/javase/8/docs/technotes/guides/security/StandardNames.html#ciphersuites>`_.
+
+::
+
+  aaa:get-cipher-suites
+
+    TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+    TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
+    TLS_DHE_RSA_WITH_AES_256_GCM_SHA384
+
+Get TLS Protocols
+^^^^^^^^^^^^^^^^^
+
+The *get-tls-protocols* command shows the TLS protocols supported by the
+JVM used by the OpenDaylight controller. For example, the JDK 8 supports the
+following TLS protocols: TLSv1.2 (default), TLSv1.1, TLSv1 and SSLv3.
+
+::
+
+  aaa:get-tls-protocols
+
+    TLS_KRB5_WITH_RC4_128_SHA
+    TLS_KRB5_WITH_RC4_128_MD5
+    TLS_KRB5_WITH_3DES_EDE_CBC_SHA
+    TLS_KRB5_WITH_3DES_EDE_CBC_MD5
+    TLS_KRB5_WITH_DES_CBC_SHA
+
+Get Node Certificate
+^^^^^^^^^^^^^^^^^^^^
+
+The *get-node-cert* command prints a certificate for a given network node alias.
+This command is useful to check if the network node certificate has been added
+properly to the truest keystore. It takes the certificate alias as arguments.
+
+::
+
+  aaa:get-node-cert -alias ovs1
+  -----BEGIN CERTIFICATE-----
+  MIICKTCCAZKgAwIBAgIEI75RWDANBgkqhkiG9w0BAQUFADBZMQwwCgYDVQQDDANPREwxDDAKBgNVBA
+  sMA0RldjEYMBYGA1UECgwPTGludXhGb3VuZGF0aW9uMRQwEgYDVQQHDAtRQyBNb250cmVhbDELMAkG
+  A1UEBhMCQ0EwHhcNMTYxMTMwMTYyNDE3WhcNMTcxMTMwMTYyNDE3WjBZMQwwCgYDVQQDDANPREwxDD
+  AKBgNVBAsMA0RldjEYMBYGA1UECgwPTGludXhGb3VuZGF0aW9uMRQwEgYDVQQHDAtRQyBNb250cmVh
+  bDELMAkGA1UEBhMCQ0EwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAIKYtbqP4ktgkznIAzCxzD
+  8Ieo+enl6U9rVi1CwcoQC+nUj6YtW0cpl5d614CTKno5HHDopDnXl9wPJBWtEmJIzXmNR3btRoWrmS
+  7T6ol4b5CHZu3H5y81ITv/5yBRZaiwrPgB9/kXkWpHraMtRM3OoK+hpNtlo6cthWr47Z1jJnAgMBAA
+  EwDQYJKoZIhvcNAQEFBQADgYEAL9DK/P/yEBre3Mg3bICAUAvSvZic+ydDmigWLsY4J3UzKdV2f1jI
+  s+rQTEgtlHShBf/ed546D49cp3XEzYrcxgILhGXDziCrUK0K1TiYqPTp6FLijjdydGlPpwuMyyV5Y0
+  iDiRclWuPz2fHbs8WQOWNs6VQ+WaREXtEsEC4qgSo=
+  -----END CERTIFICATE-----
+
+Export Keystores
+^^^^^^^^^^^^^^^^
+
+The *export-keystores* command exports the default MD-SAL Keystores to .jks
+files in the default directory for keystores (configuration/ssl/).
+
+::
+
+  aaa:export-keystores
+
+    Default directory for keystores is configuration/ssl/
+
+Import Keystores
+^^^^^^^^^^^^^^^^
+
+The *import-keystores* command imports the default MD-SAL Keystores. The
+keystores (odl and trust) should exist under default SSL directory
+(configuration/ssl/).
+
+.. code-block:: bash
+
+  aaa:import-keystores --trustKeystoreName <name of the trust keystore>
+                       --trustKeystorePwd <password for the trust keystore>
+                       --odlKeystoreName <name of the ODL keystore>
+                       --odlKeystorePwd <password for the ODL keystore>
+                       --odlKeystoreAlias <alias of the ODL keystore>
+                       --tlsProtocols <list of TLS protocols separated by ','>
+                       --cipherSuites <list of Cipher suites separated by ','>
+
+.. warning::
+
+  It is strongly recommended to run the history clear command after you execute
+  all the AAA CLI commands so Karaf logs stay clean from any adversary.
+
+  ::
+
+    history -c
