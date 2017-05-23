@@ -1,0 +1,256 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7af0899e_fd9213f5",
+        "filename": "docs/getting-started-guide/project-release-notes/distribution.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-23T19:50:32Z",
+      "side": 1,
+      "message": "Do you want to include this in the release notes. It seems very ODL-internal, but maybe I\u0027m wrong.",
+      "revId": "c99d40ce2ff3857632722e863b901542789200e8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af0899e_bdcd2b89",
+        "filename": "docs/getting-started-guide/project-release-notes/distribution.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-23T19:50:32Z",
+      "side": 1,
+      "message": "I think you want to remove the h\u003d everywhere so it automatically drifts ahead with stable/carbon",
+      "range": {
+        "startLine": 11,
+        "startChar": 147,
+        "endLine": 11,
+        "endChar": 189
+      },
+      "revId": "c99d40ce2ff3857632722e863b901542789200e8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af0899e_dd8f57cb",
+        "filename": "docs/getting-started-guide/project-release-notes/distribution.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-23T19:50:32Z",
+      "side": 1,
+      "message": "Do you want to include this in the release notes. It seems very ODL-internal, but maybe I\u0027m wrong.",
+      "revId": "c99d40ce2ff3857632722e863b901542789200e8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af0899e_3dbc9b6c",
+        "filename": "docs/getting-started-guide/project-release-notes/distribution.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-23T19:50:32Z",
+      "side": 1,
+      "message": "Link to Guide. Should be formatted something like:\n\n :ref:`Guide name \u003cguide-label-name\u003e`\n\nWhere the \u003cguide-label-name\u003e is something like:\n\n .. _guide-label-name:\n Project User Guide\n \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\n ....\n\nAs described here:\nhttp://www.sphinx-doc.org/en/stable/markup/inline.html#cross-referencing-arbitrary-locations",
+      "range": {
+        "startLine": 61,
+        "startChar": 0,
+        "endLine": 71,
+        "endChar": 110
+      },
+      "revId": "c99d40ce2ff3857632722e863b901542789200e8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af0899e_1dc1dfe4",
+        "filename": "docs/getting-started-guide/project-release-notes/distribution.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-23T19:50:32Z",
+      "side": 1,
+      "message": "Link to Karaf security page?",
+      "revId": "c99d40ce2ff3857632722e863b901542789200e8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af0899e_5dbb6772",
+        "filename": "docs/getting-started-guide/project-release-notes/distribution.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-23T19:50:32Z",
+      "side": 1,
+      "message": "Does it make sense to migrate this to the docs project as part of the release notes?",
+      "revId": "c99d40ce2ff3857632722e863b901542789200e8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af0899e_bdafeb2a",
+        "filename": "docs/getting-started-guide/project-release-notes/distribution.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-23T19:50:32Z",
+      "side": 1,
+      "message": "I think you can remove this.",
+      "range": {
+        "startLine": 89,
+        "startChar": 0,
+        "endLine": 90,
+        "endChar": 35
+      },
+      "revId": "c99d40ce2ff3857632722e863b901542789200e8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af0899e_9dacaf37",
+        "filename": "docs/getting-started-guide/project-release-notes/distribution.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-23T19:50:32Z",
+      "side": 1,
+      "message": "NETCONF",
+      "range": {
+        "startLine": 114,
+        "startChar": 42,
+        "endLine": 114,
+        "endChar": 49
+      },
+      "revId": "c99d40ce2ff3857632722e863b901542789200e8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af0899e_fda97325",
+        "filename": "docs/getting-started-guide/project-release-notes/distribution.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-23T19:50:32Z",
+      "side": 1,
+      "message": "NETCONF",
+      "range": {
+        "startLine": 115,
+        "startChar": 12,
+        "endLine": 115,
+        "endChar": 19
+      },
+      "revId": "c99d40ce2ff3857632722e863b901542789200e8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af0899e_1d68bff4",
+        "filename": "docs/getting-started-guide/project-release-notes/distribution.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-23T19:50:32Z",
+      "side": 1,
+      "message": "RESTCONF",
+      "range": {
+        "startLine": 124,
+        "startChar": 53,
+        "endLine": 124,
+        "endChar": 61
+      },
+      "revId": "c99d40ce2ff3857632722e863b901542789200e8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af0899e_3d63fb1b",
+        "filename": "docs/getting-started-guide/project-release-notes/distribution.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-23T19:50:32Z",
+      "side": 1,
+      "message": "NETCONF",
+      "range": {
+        "startLine": 124,
+        "startChar": 21,
+        "endLine": 124,
+        "endChar": 28
+      },
+      "revId": "c99d40ce2ff3857632722e863b901542789200e8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af0899e_dda63753",
+        "filename": "docs/getting-started-guide/project-release-notes/distribution.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-23T19:50:32Z",
+      "side": 1,
+      "message": "NETCONF",
+      "range": {
+        "startLine": 124,
+        "startChar": 2,
+        "endLine": 124,
+        "endChar": 9
+      },
+      "revId": "c99d40ce2ff3857632722e863b901542789200e8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
