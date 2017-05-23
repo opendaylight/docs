@@ -1,3 +1,5 @@
+.. _snmp4sdn-user-guide:
+
 SNMP4SDN User Guide
 ===================
 
@@ -627,4 +629,3 @@ Help
 -  Latest
    `troubleshooting <https://wiki.opendaylight.org/view/SNMP4SDN:User_Guide#Troubleshooting>`__
    in Wiki
-

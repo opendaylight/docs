@@ -1,3 +1,5 @@
+.. _snmp4sdn-dev-guide:
+
 SNMP4SDN Developer Guide
 ========================
 
@@ -250,4 +252,3 @@ Help
 
 -  `Latest troubleshooting in
    Wiki <https://wiki.opendaylight.org/view/SNMP4SDN:User_Guide#Troubleshooting>`__
-
