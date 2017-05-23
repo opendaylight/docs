@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7af0899e_7d26236a",
+        "filename": "docs/getting-started-guide/project-release-notes/sxp.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-23T18:40:01Z",
+      "side": 1,
+      "message": "It would be good to migrate this to the reST at some point, but it seems like it\u0027s mostly covered in the user guide.",
+      "revId": "ddfa66b62a5c97b4a79af451ec6b314d8d551bf6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af0899e_fd0213b3",
+        "filename": "docs/getting-started-guide/project-release-notes/sxp.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-23T18:40:01Z",
+      "side": 1,
+      "message": "Link to Guide. Should be formatted something like:\n\n :ref:`Guide name \u003cguide-label-name\u003e`\n\nWhere the \u003cguide-label-name\u003e is something like:\n\n .. _guide-label-name:\n Project User Guide\n \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\n ....\n\nAs described here:\nhttp://www.sphinx-doc.org/en/stable/markup/inline.html#cross-referencing-arbitrary-locations",
+      "range": {
+        "startLine": 71,
+        "startChar": 0,
+        "endLine": 75,
+        "endChar": 108
+      },
+      "revId": "ddfa66b62a5c97b4a79af451ec6b314d8d551bf6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
