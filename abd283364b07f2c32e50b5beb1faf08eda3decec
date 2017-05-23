@@ -16,6 +16,24 @@
       "revId": "abd283364b07f2c32e50b5beb1faf08eda3decec",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af0899e_11bb8ec5",
+        "filename": "docs/developer-guide/controller.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 845,
+      "author": {
+        "id": 3127
+      },
+      "writtenOn": "2017-05-23T11:06:46Z",
+      "side": 1,
+      "message": "Controller dev guide, so all rpcs that are provided by the controller itself, mounted rpcs are handled by the projects that provide the mountpoint.",
+      "parentUuid": "9a0b7d60_980f992e",
+      "revId": "abd283364b07f2c32e50b5beb1faf08eda3decec",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
