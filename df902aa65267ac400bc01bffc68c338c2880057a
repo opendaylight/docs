@@ -1,0 +1,180 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7af0899e_02be9aff",
+        "filename": "docs/getting-started-guide/project-release-notes/didm.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-23T16:16:29Z",
+      "side": 1,
+      "message": "NA or none?",
+      "revId": "df902aa65267ac400bc01bffc68c338c2880057a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af0899e_0255fac5",
+        "filename": "docs/getting-started-guide/project-release-notes/didm.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-23T16:16:29Z",
+      "side": 1,
+      "message": "Link to Guide. Should be formatted something like:\n\n :ref:`Guide name \u003cguide-label-name\u003e`\n\nWhere the \u003cguide-label-name\u003e is something like:\n\n .. _guide-label-name:\n Project User Guide\n \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\n ....\n\nAs described here:\nhttp://www.sphinx-doc.org/en/stable/markup/inline.html#cross-referencing-arbitrary-locations",
+      "revId": "df902aa65267ac400bc01bffc68c338c2880057a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af0899e_e251ced9",
+        "filename": "docs/getting-started-guide/project-release-notes/didm.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-23T16:16:29Z",
+      "side": 1,
+      "message": "Link to Guide. Should be formatted something like:\n\n :ref:`Guide name \u003cguide-label-name\u003e`\n\nWhere the \u003cguide-label-name\u003e is something like:\n\n .. _guide-label-name:\n Project User Guide\n \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\n ....\n\nAs described here:\nhttp://www.sphinx-doc.org/en/stable/markup/inline.html#cross-referencing-arbitrary-locations",
+      "revId": "df902aa65267ac400bc01bffc68c338c2880057a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af0899e_425ee2ea",
+        "filename": "docs/getting-started-guide/project-release-notes/didm.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-23T16:16:29Z",
+      "side": 1,
+      "message": "Code coverage %?",
+      "revId": "df902aa65267ac400bc01bffc68c338c2880057a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af0899e_8258cafb",
+        "filename": "docs/getting-started-guide/project-release-notes/didm.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-23T16:16:29Z",
+      "side": 1,
+      "message": "Should link directly to here:\nhttps://jenkins.opendaylight.org/releng/view/didm/job/didm-csit-1node-discovery-only-carbon/\nAlso it\u0027s failing…",
+      "revId": "df902aa65267ac400bc01bffc68c338c2880057a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af0899e_c2713279",
+        "filename": "docs/getting-started-guide/project-release-notes/didm.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-23T16:16:29Z",
+      "side": 1,
+      "message": "What do you test? How much do you test it?",
+      "revId": "df902aa65267ac400bc01bffc68c338c2880057a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af0899e_a26ea694",
+        "filename": "docs/getting-started-guide/project-release-notes/didm.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-23T16:16:29Z",
+      "side": 1,
+      "message": "This is about migration from Boron to Carbon? Is this supported because DIDM has no state?",
+      "revId": "df902aa65267ac400bc01bffc68c338c2880057a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af0899e_420542c1",
+        "filename": "docs/getting-started-guide/project-release-notes/didm.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-23T16:16:29Z",
+      "side": 1,
+      "message": "Also presumably OVS, right?",
+      "range": {
+        "startLine": 83,
+        "startChar": 45,
+        "endLine": 83,
+        "endChar": 105
+      },
+      "revId": "df902aa65267ac400bc01bffc68c338c2880057a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af0899e_820f2ae1",
+        "filename": "docs/getting-started-guide/project-release-notes/didm.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-23T16:16:29Z",
+      "side": 1,
+      "message": "Link?",
+      "revId": "df902aa65267ac400bc01bffc68c338c2880057a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af0899e_6214bef5",
+        "filename": "docs/getting-started-guide/project-release-notes/didm.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-23T16:16:29Z",
+      "side": 1,
+      "message": "Were there any major changes in what was delivered vs. what was promised?",
+      "revId": "df902aa65267ac400bc01bffc68c338c2880057a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
