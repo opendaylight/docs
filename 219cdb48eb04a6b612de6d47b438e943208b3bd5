@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "7af0899e_82d1eacf",
+        "filename": "docs/getting-started-guide/project-release-notes/infrautils.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-23T17:00:41Z",
+      "side": 1,
+      "message": "\u003ds and titles should line up",
+      "revId": "219cdb48eb04a6b612de6d47b438e943208b3bd5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af0899e_62d67ec7",
+        "filename": "docs/getting-started-guide/project-release-notes/infrautils.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-23T17:00:41Z",
+      "side": 1,
+      "message": "-s and title should line up",
+      "revId": "219cdb48eb04a6b612de6d47b438e943208b3bd5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_6fd29bd3",
         "filename": "docs/getting-started-guide/project-release-notes/infrautils.rst",
         "patchSetId": 2
@@ -37,6 +71,30 @@
       "side": 1,
       "message": "waiting on system tests waiver from Jamo:\nhttps://lists.opendaylight.org/pipermail/infrautils-dev/2017-May/000295.html",
       "parentUuid": "ba068154_6fd29bd3",
+      "range": {
+        "startLine": 15,
+        "startChar": 20,
+        "endLine": 15,
+        "endChar": 22
+      },
+      "revId": "219cdb48eb04a6b612de6d47b438e943208b3bd5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af0899e_22cc7635",
+        "filename": "docs/getting-started-guide/project-release-notes/infrautils.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-23T17:00:41Z",
+      "side": 1,
+      "message": "It seems like this is still incomplete.",
+      "parentUuid": "ba068154_af8923cc",
       "range": {
         "startLine": 15,
         "startChar": 20,
