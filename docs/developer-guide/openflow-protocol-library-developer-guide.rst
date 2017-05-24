@@ -1,4 +1,4 @@
-.. _openflow-protocol-library:
+.. _openflow-protocol-library-dev-guide:
 
 OpenFlow Protocol Library Developer Guide
 =========================================
