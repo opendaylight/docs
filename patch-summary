@@ -1,5 +1,6 @@
 [dashboard]
-  description = Documentation Patch Summary
+  title = Documentation Patch Summary
+  description = Summarized view of patches pending in documentation
 [section "Open Docs Patches"]
   query = project:docs status:open NOT label:Code-Review label:Verified
 [section "Reviewed Docs Patches Waiting For New Patch Sets"]
