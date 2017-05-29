@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afa9182_b501c23b",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 1094,
+      "author": {
+        "id": 6419
+      },
+      "writtenOn": "2017-05-29T14:56:21Z",
+      "side": 1,
+      "message": "This is repeated. \n\nAnd I am kind of wondering if it is even helpful.",
+      "range": {
+        "startLine": 1092,
+        "startChar": 0,
+        "endLine": 1094,
+        "endChar": 66
+      },
+      "revId": "3d6d358510e3b36aa94d628d717581bbbfe0ea3e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afa9182_d5f8ce4b",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 1275,
+      "author": {
+        "id": 6419
+      },
+      "writtenOn": "2017-05-29T14:56:21Z",
+      "side": 1,
+      "message": "this is the default value - at least for boron - releases.\n\nI\u0027d recommend doing something like: \u003cstore_password\u003e instead.",
+      "range": {
+        "startLine": 1275,
+        "startChar": 30,
+        "endLine": 1275,
+        "endChar": 43
+      },
+      "revId": "3d6d358510e3b36aa94d628d717581bbbfe0ea3e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
