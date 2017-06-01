@@ -63,6 +63,25 @@ following limitations:
   issues became apparent when managing thousands of OpenFlow
   switches, however this may vary depending on deployment and use cases.
 
+Security Advisories
+-------------------
+
+All OpenDaylight Security Advisories can be found on the `Security Advisories
+wiki page <https://wiki.opendaylight.org/view/Security:Advisories>`_. Of
+particular note to OpenDaylight Boron users are:
+
+* CVE-2017-1000359
+* CVE-2017-1000360
+* CVE-2017-1000357
+* CVE-2017-1000358
+* CVE-2017-1000361
+
+There are known and documented mitigations described on the Security Advisory
+page linked above. Because of the efficacy of the mitigations, we do not intend
+to release another version of Beryllium to address them. Instead, we encourage
+all of those who are using Beryllium to carefully understand the mitigations in
+the context of their deployments.
+
 Major Changes
 =============
 
