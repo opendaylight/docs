@@ -71,6 +71,11 @@ For Example::
 * Typing ``[cmd] --help`` will show help for a specific command.
 * Press ``ctrl-d`` or type ``system:shutdown`` or ``logout`` to shutdown OpenDaylight.
 
+.. note:: Please take a look at the :ref:`security_deployment_recommendations`
+          and following sections under :ref:`security_considerations` if you're
+          planning on running OpenDaylight outside of an isolated test lab
+          environment.
+
 Install the Karaf features
 ==========================
 To install a feature, use the following command, where feature1 is the feature
