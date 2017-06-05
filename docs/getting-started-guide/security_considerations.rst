@@ -1,3 +1,5 @@
+.. _security_considerations:
+
 ***********************
 Security Considerations
 ***********************
@@ -66,10 +68,12 @@ OpenDaylight Security Resources
 
 * For the list of current OpenDaylight security issues that are either being
   fixed or resolved, refer to
-  https://wiki.opendaylight.org/view/Security_Advisories.
+  https://wiki.opendaylight.org/view/Security:Advisories.
 
 * To learn more about the OpenDaylight security issues policies and procedure,
   refer to https://wiki.opendaylight.org/view/Security:Main
+
+.. _security_deployment_recommendations:
 
 Deployment Recommendations
 ==========================
