@@ -843,6 +843,76 @@ Line 112: We register salFlowService1 as implementation for nodeOne.
 The salFlowService1 will be executed only for RPCs which contains
 Instance Identifier for foo:node:1.
 
+.. _mdsal_txns_rpcs_best_practices:
+
+MD-SAL Transactions and RPCs Best Practices
+-------------------------------------------
+
+RPCs vs. Data Store Writes and Data Change Listeners
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* In general, if you are calling between systems, use RPCs
+* There should in general only use writes instead of RPCs if there will
+  be only a single writer or well-coordinated writers. Otherwise, you
+  can wind up with write conflicts.
+* A good example of this is OpenFlow plugin where you call RPCs on
+  nodes, which then results in it being forwarded in the cluster to a
+  place that does an ordered, managed write into the data store.
+* The goal is avoid write conflicts from multiple writers.
+
+Performance Implications
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+* Is there a difference between RPCs and write/DCLs for performance?
+
+Caches and DCLs
+~~~~~~~~~~~~~~~
+
+* Many times in code, we have a DCL which when it gets an event, then
+  immediately triggers a data store read. This is (a) slow and (b) not
+  causally safe.
+
+  * If you get a data change event and then do a read, then the data
+    from the two different sources won't necessarily be consistent.
+  * You have two correct options:
+
+    #. Use the DataChangeEvent as a trigger to do a read transaction,
+       but do not look at the data in the DataChangeEvent at all.
+
+       * This has the advantage that it will give you a consistent view
+         of everything you read.
+       * This has the disadvantage that it basically wastes the extra
+         information in the data change event.
+       * It also means that you will not necessarily see the the
+         intermediate states of the datastore between each change.
+
+    #. Use a single DataChangeListener to register to listen on
+       multiple sub-trees, which will guarantee order of the events.
+
+       * This means that you need to keep a local "cache" or really
+         copy of the data that you care about.
+
+       .. important:: This exists and does that in the MD-SAL, but does
+                      not work with the clustered data store which is
+                      what loads by default.
+
+Transaction Chains
+~~~~~~~~~~~~~~~~~~
+
+* This allows you to have a local timeline of ordered transactions as
+  you commit them.
+
+* PingPongDataBroker
+
+Goals of the Database
+~~~~~~~~~~~~~~~~~~~~~
+
+* The OpenDaylight MD-SAL data store is designed to be a real-time
+  database not a traditional database of record.
+
+* You should be using the singleton service to advertise RPC providers
+* Don't use entity ownership service directly
+
 OpenDaylight Controller MD-SAL: RESTCONF
 ----------------------------------------
 
