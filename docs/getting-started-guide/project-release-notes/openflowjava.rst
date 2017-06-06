@@ -34,7 +34,7 @@ Documentation
 
 * **Developer Guide(s):**
 
-  * `developer guide <https://git.opendaylight.org/gerrit/gitweb?p=docs.git;a=blob;f=docs/developer-guide/openflow-protocol-library-developer-guide.rst;h=37a8fcd85f0a2111ae59a7e2e74d60cd3ce5e110;hb=refs/heads/master>`_
+  * :ref:`developer guide <openflow-protocol-library-dev-guide>`
 
 Security Considerations
 =======================
