@@ -1,0 +1,107 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afa9182_791d77bd",
+        "filename": "docs/getting-started-guide/project-release-notes/unimgr.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-06-06T19:46:58Z",
+      "side": 1,
+      "message": "Delete this line.",
+      "revId": "eb1aca47ec8c7491bb3752ffdbd3ad1e6254f8a9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afa9182_d9790bfe",
+        "filename": "docs/getting-started-guide/project-release-notes/unimgr.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-06-06T19:46:58Z",
+      "side": 1,
+      "message": "Link to Guide. Should be formatted something like:\n\n :ref:`Guide name \u003cguide-label-name\u003e`\n\nWhere the \u003cguide-label-name\u003e is something like:\n\n .. _guide-label-name:\n \n Project User Guide\n \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\n ....\n\nAs described here:\nhttp://www.sphinx-doc.org/en/stable/markup/inline.html#cross-referencing-arbitrary-locations",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 235
+      },
+      "revId": "eb1aca47ec8c7491bb3752ffdbd3ad1e6254f8a9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afa9182_b97ebfe2",
+        "filename": "docs/getting-started-guide/project-release-notes/unimgr.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-06-06T19:46:58Z",
+      "side": 1,
+      "message": "no caps",
+      "range": {
+        "startLine": 42,
+        "startChar": 9,
+        "endLine": 42,
+        "endChar": 17
+      },
+      "revId": "eb1aca47ec8c7491bb3752ffdbd3ad1e6254f8a9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afa9182_198433d3",
+        "filename": "docs/getting-started-guide/project-release-notes/unimgr.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-06-06T19:46:58Z",
+      "side": 1,
+      "message": "Would be good to say \"(49.4% test coverage)\"",
+      "revId": "eb1aca47ec8c7491bb3752ffdbd3ad1e6254f8a9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afa9182_f98847e9",
+        "filename": "docs/getting-started-guide/project-release-notes/unimgr.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-06-06T19:46:58Z",
+      "side": 1,
+      "message": "Should be in `s with an _ after like the link below to render right.",
+      "range": {
+        "startLine": 84,
+        "startChar": 0,
+        "endLine": 85,
+        "endChar": 63
+      },
+      "revId": "eb1aca47ec8c7491bb3752ffdbd3ad1e6254f8a9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
