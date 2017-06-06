@@ -1,3 +1,5 @@
+.. _vtn-dev-guide:
+
 Virtual Tenant Network (VTN)
 ============================
 
@@ -280,4 +282,3 @@ Usage Examples
 
 -  `L2 Network using Single
    Controller <https://wiki.OpenDaylight.org/view/OpenDaylight_Virtual_Tenant_Network_(VTN):VTN_Coordinator:RestApi:How_to_configure_L2_Network_with_Single_Controller>`__
-

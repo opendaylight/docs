@@ -1,3 +1,5 @@
+.. _vtn-install-guide:
+
 VTN Installation Guide
 ======================
 
