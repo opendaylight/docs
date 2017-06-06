@@ -2,11 +2,10 @@
   title = Documentation Patch Summary
   description = Summarized view of patches pending in documentation
 [section "Open Docs Patches"]
-  query = project:docs status:open NOT label:Code-Review label:Verified
+  query = project:docs status:open NOT label:Code-Review<0 label:Verified>0
 [section "Reviewed Docs Patches Waiting For New Patch Sets"]
-  query = project:docs status:open label:Code-Review-1 NOT label:Verified
+  query = project:docs status:open label:Code-Review-1 NOT label:Verified<0
 [section "Docs Patches Failing/Pending Verify"]
-  query = project:docs status:open (NOT label:Verified OR label:Verified OR label:Code-Review-2)
+  query = project:docs status:open (NOT label:Verified OR label:Verified<0 OR label:Code-Review-2)
 [section "Recently Merged Docs Patches"]
   query = project:docs status:merged NOT age:1week
-
