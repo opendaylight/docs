@@ -363,7 +363,8 @@ a client and two servers, then performing a failover between the two
 Prerequisites
 ^^^^^^^^^^^^^
 
--  **OpenDaylight Carbon**
+-  **The OpenDaylight Karaf Distribution** (`download
+   <https://www.opendaylight.org/downloads>`_)
 
 .. _instructions:
 
@@ -423,11 +424,6 @@ The figure below gives a sketch of network topology that will be used in the tut
 In LISP terminology **client**, **server1** and **server2** are mobile nodes (MN in OOR),
 **controller** is a MS/MR and **service-node** is a RTR.
 
-.. note::
-
-    While the tutorial uses OOR as the data plane, it could be any
-    LISP-enabled hardware or software router (commercial/open source).
-
 Instructions
 ^^^^^^^^^^^^
 
@@ -435,8 +431,8 @@ The below steps use the command line tool cURL to talk to the LISP Flow
 Mapping RPC REST API. This is so that you can see the actual request
 URLs and body content on the page.
 
-1.  Install and run OpenDaylight Carbon release on the controller VM.
-    Please follow the general OpenDaylight Carbon Installation Guide
+1.  Install and run the OpenDaylight distribution on the controller VM.
+    Please follow the general OpenDaylight Installation Guide
     for this step. Once the OpenDaylight controller is running install
     the *odl-lispflowmapping-msmr* feature from the Karaf CLI:
 
@@ -478,13 +474,12 @@ URLs and body content on the page.
 
     .. note::
 
-        The ``resources/tutorial/OOR`` directory in the *stable/carbon*
-        branch of the project git repository has the files used in the
-        tutorial `checked
-        in <https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=tree;f=resources/tutorial/OOR;hb=refs/heads/stable/carbon>`__,
-        so you can just copy the files to ``/etc/oor.conf`` on the
-        respective VMs. You will also find the JSON files referenced
-        below in the same directory.
+        The ``resources/tutorial/OOR`` directory in the project git repository
+        has the files used in the tutorial `checked in
+        <https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=tree;f=resources/tutorial/OOR;hb=refs/heads/stable/carbon>`_,
+        so you can just copy the files to ``/etc/oor.conf`` on the respective
+        VMs. You will also find the JSON files referenced below in the same
+        directory.
 
 7.  Define a key and EID prefix association in OpenDaylight using the
     RPC REST API for the **client** EID (1.1.1.1/32) to allow
@@ -565,7 +560,7 @@ URLs and body content on the page.
 
     An alternative way for retrieving mappings from OpenDaylight using the
     southbound interface is using the
-    ```lig`` <https://github.com/davidmeyer/lig>`__ open source tool.
+    `lig <https://github.com/davidmeyer/lig>`__ open source tool.
 
 11. Register the EID-to-RLOC mapping of the server EID 2.2.2.2/32 to the
     controller, pointing to **server1** and **server2** with a higher
@@ -781,15 +776,16 @@ The steps shown below will demonstrate setting up a LISP network between
 a client and a server using VPP. We demonstrate how to use VPP lite to
 build a IP4 LISP overlay on an Ubuntu host using namespaces and af_packet
 interfaces. All configuration files used in the tutorials can be found
-`here <https://gerrit.fd.io/r/gitweb?p=one.git;a=tree;f=tutorial;hb=HEAD>`__.
+`here <https://gerrit.fd.io/r/gitweb?p=one.git;a=tree;f=tutorial>`__.
 
 Prerequisites
 ^^^^^^^^^^^^^
 
--  **OpenDaylight Carbon**
+-  **The OpenDaylight Karaf Distribution** (`download
+   <https://www.opendaylight.org/downloads>`_)
 
 -  **The Postman Chrome App**: Please follow the instructions_ and import
-   postman collection from the following URL: `<https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=blob;f=resources/tutorial/FD_io/lfm_vpp.postman_collection.json;hb=HEAD>`__.
+   postman collection from the following URL: `<https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=blob;f=resources/tutorial/FD_io/lfm_vpp.postman_collection.json;hb=refs/heads/stable/carbon>`__.
 
 -  **Vagrant** (optional): Download it from `Vagrant website <https://www.vagrantup.com/downloads.html>`__
    and follow the setup instructions.
@@ -878,11 +874,11 @@ Follow the instructions below sequentially.
 
        sudo apt-get install bridge-utils ethtool
 
-6.  Now, install and run OpenDaylight Carbon release on the VM. Please
-    follow the general OpenDaylight Carbon Installation Guide for this
-    step from :ref:`install_odl`. Before running OpenDaylight, we need
-    to change the configuration for RTR to work. Update ``etc/custom.properties``
-    with the ``lisp.elpPolicy`` to be replace.
+6.  Now, install and run OpenDaylight on the VM. Please follow the general
+    OpenDaylight Installation Guide for this step from :ref:`install_odl`.
+    Before running OpenDaylight, we need to change the configuration for RTR
+    to work. Update ``etc/custom.properties`` with the ``lisp.elpPolicy`` to
+    be replace.
     ::
 
         lisp.elpPolicy = replace
@@ -1045,6 +1041,264 @@ Follow the instructions below sequentially.
         ::
 
             sudo ./topology_setup.sh clean
+
+Creating a LISP overlay with Cisco IOS-XE
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This section describes how to create a simple LISP overlay using the Cisco
+IOS-XE network operating system as the data plane software running on the
+`Cisco CSR 1000v Series Cloud Services Router
+<http://www.cisco.com/c/en/us/support/routers/cloud-services-router-1000v/model.html>`_.
+
+Prerequisites
+^^^^^^^^^^^^^
+
+-  **The OpenDaylight Karaf Distribution** (`download
+   <https://www.opendaylight.org/downloads>`_)
+
+-  **CSR1Kv image with Cisco IOS-XE version 03.13.00.S or later** (`download
+   <http://www.cisco.com/c/en/us/support/routers/cloud-services-router-1000v/model.html#~tab-downloads>`_;
+   the instructions have been tested on version 03.15.00.S).
+
+-  **A virtualization platform** supported by CSR1Kv images (VMware ESXi,
+   Citrix XenServer, KVM, and Microsoft Hyper-V).
+
+Target Environment
+^^^^^^^^^^^^^^^^^^
+
+The CSR1Kv images are configured with one management interface
+(``GigabitEthernet1``), and another interface (``GigabitEthernet2``) connected
+to a host-only network on the virtualization platform, while the LISP mapping
+system is assumed to be running in a Linux virtual machine, which has the
+``eth0`` interface in NAT mode to allow outside internet access and ``eth1``
+connected to the host-only network, with the following IP addresses (please
+adjust configuration files, JSON examples, etc.  accordingly if you’re using
+another addressing scheme):
+
++--------------------------+--------------------------+--------------------------+
+| Node                     | Node Type                | IP Address               |
++==========================+==========================+==========================+
+| **controller**           | OpenDaylight             | 192.168.16.11            |
++--------------------------+--------------------------+--------------------------+
+| **client**               | CSR1Kv                   | 192.168.16.30            |
++--------------------------+--------------------------+--------------------------+
+| **server**               | CSR1Kv                   | 192.168.16.31            |
++--------------------------+--------------------------+--------------------------+
+
+Table: Nodes in the tutorial
+
+The scenario and EID allocation is the same as the OOR scenario, except that
+there is no **server2** and **service-node** (for now).
+
+Before this tutorial can be followed, basic connectivity between the Linux VM
+and the CSRs should work on the host-only network.
+
+Instructions
+^^^^^^^^^^^^
+
+The below steps use the command line tool cURL to talk to the LISP Flow
+Mapping RPC REST API. This is so that you can see the actual request
+URLs and body content on the page. The easy way is to just use Postman.
+
+1.  Install and run the OpenDaylight distribution on the controller VM.
+    Please follow the general OpenDaylight Installation Guide from
+    :ref:`install_odl` for this step. Once the OpenDaylight controller is
+    running install the *odl-lispflowmapping-msmr* feature from the Karaf CLI:
+
+    ::
+
+        feature:install odl-lispflowmapping-msmr
+
+    It takes quite a while to load and initialize all features and their
+    dependencies. It’s worth running the command ``log:tail`` in the
+    Karaf console to see when the log output is winding down, and
+    continue with the tutorial after that.
+
+2.  Create the **client** and **server** VMs following the installation
+    instructions from the `CSR1Kv Configuration Guide
+    <http://www.cisco.com/c/en/us/td/docs/routers/csr1000/software/configuration/b_CSR1000v_Configuration_Guide.html>`_.
+
+3.  Define a key and EID prefix association in OpenDaylight using the RPC REST
+    API for the **client** and **server** EIDs (1.1.1.1/32 and 2.2.2.2/32
+    respectively) to allow registration from the southbound.  Run the below
+    command on the **controller** (or any machine that can reach
+    **controller**, by replacing *localhost* with the IP address of
+    **controller**).
+
+    ::
+
+        curl -u "admin":"admin" -H "Content-type: application/json" -X PUT \
+            http://localhost:8181/restconf/config/odl-mappingservice:mapping-database/virtual-network-identifier/0/authentication-key/ipv4:1.1.1.1%2f32/ \
+            --data @add-key.json
+
+    where the content of the *add-key.json* file is the following:
+
+    .. code:: json
+
+        {
+            "authentication-key": {
+                "eid-uri": "ipv4:1.1.1.1/32",
+                "eid": {
+                    "address-type": "ietf-lisp-address-types:ipv4-prefix-afi",
+                    "ipv4-prefix": "1.1.1.1/32"
+                },
+                "mapping-authkey": {
+                    "key-string": "password",
+                    "key-type": 1
+                }
+            }
+        }
+
+    The same should be done for 2.2.2.2/32 too.
+
+4.  Verify that the key is added properly by requesting the following
+    URL:
+
+    ::
+
+        curl -u "admin":"admin" -H "Content-type: application/json" -X GET \
+            http://localhost:8181/restconf/config/odl-mappingservice:mapping-database/virtual-network-identifier/0/authentication-key/ipv4:1.1.1.1%2f32/
+
+    The output the above invocation should look like this:
+
+    .. code:: json
+
+        {
+            "authentication-key":[
+                {
+                    "eid-uri":"ipv4:1.1.1.1/32",
+                    "eid":{
+                        "ipv4-prefix":"1.1.1.1/32",
+                        "address-type":"ietf-lisp-address-types:ipv4-prefix-afi"
+                    },
+                    "mapping-authkey":{
+                        "key-string":"password"
+                        ,"key-type":1
+                    }
+                }
+            ]
+        }
+
+5.  Configure the CSR installations from the previous step. The EID needs to
+    be configured on a loopback interface (except when the CSR is used as a
+    router not a simple client like in this tutorial and the EID is assigned
+    to a real interface).
+
+    ::
+
+        interface Loopback0
+         ip address 1.1.1.1 255.255.255.255
+
+6.  The LISP specific configuration goes to a ``router lisp`` section in the
+    configuration. A ``locator-set`` defines the list of locators with their
+    priorities and weights, either statically, or better yet, as an interface
+    name:
+
+    ::
+
+        locator-set rloc-network
+         IPv4-interface GigabitEthernet2 priority 1 weight 1
+         exit
+
+7.  To make sure a Map-Request is using the above defined ``rloc-network``
+    locator set, the following configuration is used:
+
+    ::
+
+        map-request itr-rlocs rloc-network
+
+8.  Each Instance ID needs its own configuration. For the default Instance ID
+    of 0, the following configuration is needed for a besic setup:
+
+    ::
+
+        eid-table default instance-id 0
+         database-mapping 1.1.1.1/32 locator-set rloc-network
+         map-cache 0.0.0.0/0 map-request
+         no ipv4 map-cache-persistent
+         ipv4 itr map-resolver 192.168.16.11
+         ipv4 itr
+         ipv4 etr map-server 192.168.16.11 key password
+         ipv4 etr
+         exit
+
+    ``database-mapping`` defines the EID prefix the router will register in
+    the mapping system and which locator set it will use (``rloc-network`` in
+    this case, which was defined in step 6).
+
+    The next line creates a static map-cache entry for the whole IPv4 EID
+    space, causing a Map-Request to be triggered for every destination (that
+    is not directly connected on some interface).
+
+    LISP routers save their map cache to a fie which is used to restore
+    previous state on reboot. To avoid confusion due to state restored from a
+    previous run, ``no ipv4 map-cache-persistent`` can be used to disable this
+    behavior for non-production testing environments.
+
+    A ``map-resolver`` is then defined, where Map-Requests will be directed to
+    for mapping lookups, and then a ``map-server`` association with a shared
+    secret key.
+
+9.  Here's the full configuration that needs to be pasted into the
+    configuration of the **client** to follow this tutorial:
+
+    ::
+
+        interface Loopback0
+         ip address 1.1.1.1 255.255.255.255
+        !
+        router lisp
+         locator-set rloc-network
+          IPv4-interface GigabitEthernet2 priority 1 weight 1
+          exit
+         !
+         map-request itr-rlocs rloc-network
+         eid-table default instance-id 0
+          database-mapping 1.1.1.1/32 locator-set rloc-network
+          map-cache 0.0.0.0/0 map-request
+          no ipv4 map-cache-persistent
+          ipv4 itr map-resolver 192.168.16.11
+          ipv4 itr
+          ipv4 etr map-server 192.168.16.11 key password
+          ipv4 etr
+          exit
+         !
+         exit
+
+    Configuring the **server** is done by replacing ``1.1.1.1`` with
+    ``2.2.2.2`` in the above configuration snippet.
+
+10. The CSR nodes should now register their EID-to-RLOC mappings to
+    OpenDaylight. To verify, the corresponding EIDs can be looked up via the
+    REST API:
+
+    ::
+
+        curl -u "admin":"admin" -H "Content-type: application/json" -X GET \
+            http://localhost:8181/restconf/operational/odl-mappingservice:mapping-database/virtual-network-identifier/0/mapping/ipv4:1.1.1.1%2f32/southbound/
+
+    An alternative way for retrieving mappings from OpenDaylight using the
+    southbound interface is using the
+    `lig <https://github.com/davidmeyer/lig>`_ open source tool.
+
+    Yet another different way is to use the OpenDaylight mappingservice CLI,
+    and type the following at the Karaf prompt:
+
+    ::
+
+        mappingservice:mappings
+
+    This needs the *odl-lispflowmapping-mappingservice-shell* feature to be
+    loaded. The output is intended for debugging purposes and shows the full
+    Java objects stored in the map-cache.
+
+
+11. Now the LISP network is up. It can be verified by pinging the **server**
+    EID from the **client** CSR EID:
+
+    ::
+
+        ping 2.2.2.2 source 1.1.1.1
 
 LISP Flow Mapping Support
 -------------------------
