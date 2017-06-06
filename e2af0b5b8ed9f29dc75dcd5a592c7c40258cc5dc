@@ -1,0 +1,124 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afa9182_794617c1",
+        "filename": "docs/getting-started-guide/project-release-notes/cardinal.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-06-06T19:42:50Z",
+      "side": 1,
+      "message": "should be stable/carbon",
+      "range": {
+        "startLine": 11,
+        "startChar": 65,
+        "endLine": 11,
+        "endChar": 71
+      },
+      "revId": "e2af0b5b8ed9f29dc75dcd5a592c7c40258cc5dc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afa9182_190d5391",
+        "filename": "docs/getting-started-guide/project-release-notes/cardinal.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-06-06T19:42:50Z",
+      "side": 1,
+      "message": "Anything that should be noted about how this is secured or not? I\u0027m guessing it has no encryption or authentication.",
+      "revId": "e2af0b5b8ed9f29dc75dcd5a592c7c40258cc5dc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afa9182_b917dfa2",
+        "filename": "docs/getting-started-guide/project-release-notes/cardinal.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-06-06T19:42:50Z",
+      "side": 1,
+      "message": "Is this all over RESTCONF and thus protected by AAA? If so, just say something like \n\n * Are all interfaces exposed using RESTCONF?\n \n   * Other than the SNMP agent noted above, yes.",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 54
+      },
+      "revId": "e2af0b5b8ed9f29dc75dcd5a592c7c40258cc5dc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afa9182_f91167ad",
+        "filename": "docs/getting-started-guide/project-release-notes/cardinal.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-06-06T19:42:50Z",
+      "side": 1,
+      "message": "This seems odd, but OK.",
+      "range": {
+        "startLine": 45,
+        "startChar": 25,
+        "endLine": 45,
+        "endChar": 77
+      },
+      "revId": "e2af0b5b8ed9f29dc75dcd5a592c7c40258cc5dc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afa9182_3923ef06",
+        "filename": "docs/getting-started-guide/project-release-notes/cardinal.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-06-06T19:42:50Z",
+      "side": 1,
+      "message": "Should be indented under the previous bullet.",
+      "revId": "e2af0b5b8ed9f29dc75dcd5a592c7c40258cc5dc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afa9182_5926bb17",
+        "filename": "docs/getting-started-guide/project-release-notes/cardinal.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-06-06T19:42:50Z",
+      "side": 1,
+      "message": "This isn\u0027t needed, cut it.",
+      "revId": "e2af0b5b8ed9f29dc75dcd5a592c7c40258cc5dc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
