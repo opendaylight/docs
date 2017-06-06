@@ -1,3 +1,4 @@
+.. _pcep-user-guide:
 PCEP User Guide
 ===============
 This guide contains information on how to use the OpenDaylight Path Computation Element Configuration Protocol (PCEP) plugin.

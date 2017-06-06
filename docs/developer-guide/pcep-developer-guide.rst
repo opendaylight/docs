@@ -1,3 +1,4 @@
+.. _pcep-developer-guide:
 PCEP Developer Guide
 ====================
 

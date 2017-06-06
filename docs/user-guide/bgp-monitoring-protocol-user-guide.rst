@@ -1,3 +1,4 @@
+.. _bgp-monitoring-protocol-user-guide:
 BGP Monitoring Protocol User Guide
 ==================================
 This guide contains information on how to use the OpenDaylight BGP Monitoring Protocol (BMP) plugin.

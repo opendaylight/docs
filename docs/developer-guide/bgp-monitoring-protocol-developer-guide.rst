@@ -1,3 +1,4 @@
+.. _bgp-monitoring-protocol-developer-guide:
 BGP Monitoring Protocol Developer Guide
 =======================================
 

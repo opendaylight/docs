@@ -1,3 +1,4 @@
+.. _bgp-user-guide:
 BGP User Guide
 ==============
 This guide contains information on how to use OpenDaylight Border Gateway Protocol (BGP) plugin.
