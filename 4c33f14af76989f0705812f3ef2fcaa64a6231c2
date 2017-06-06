@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afa9182_1936f352",
+        "filename": "docs/getting-started-guide/project-release-notes/gbp-release-notes.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-06-06T19:35:58Z",
+      "side": 1,
+      "message": "Is this needed given the list below? You can say yes, but it seems redundant.\n\nAlong those lines, there are a lot of features which mostly repeat the same stuff. Could you turn it into one feature description with a list of feature names just to make it easier to consume?",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 71
+      },
+      "revId": "4c33f14af76989f0705812f3ef2fcaa64a6231c2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afa9182_593fdb25",
+        "filename": "docs/getting-started-guide/project-release-notes/gbp-release-notes.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-06-06T19:35:58Z",
+      "side": 1,
+      "message": "Is this needed? We document generic feature installation here:\nhttp://docs.opendaylight.org/en/stable-boron/getting-started-guide/installing_opendaylight.html#install-the-karaf-features",
+      "revId": "4c33f14af76989f0705812f3ef2fcaa64a6231c2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afa9182_f93a0735",
+        "filename": "docs/getting-started-guide/project-release-notes/gbp-release-notes.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-06-06T19:35:58Z",
+      "side": 1,
+      "message": "Link to Guide. Should be formatted something like:\n\n :ref:`Guide name \u003cguide-label-name\u003e`\n\nWhere the \u003cguide-label-name\u003e is something like:\n\n .. _guide-label-name:\n \n Project User Guide\n \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\n ....\n\nAs described here:\nhttp://www.sphinx-doc.org/en/stable/markup/inline.html#cross-referencing-arbitrary-locations",
+      "revId": "4c33f14af76989f0705812f3ef2fcaa64a6231c2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afa9182_393c8f2f",
+        "filename": "docs/getting-started-guide/project-release-notes/gbp-release-notes.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-06-06T19:35:58Z",
+      "side": 1,
+      "message": "Can you leave the questions? At least you need a blank line to separate things.",
+      "range": {
+        "startLine": 176,
+        "startChar": 0,
+        "endLine": 177,
+        "endChar": 18
+      },
+      "revId": "4c33f14af76989f0705812f3ef2fcaa64a6231c2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
