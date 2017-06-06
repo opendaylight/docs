@@ -101,8 +101,11 @@ Releasing OpenDaylight
 - Run autorelease-generate-release-notes-${STREAM} job
   **(Release Engineering Team)**
 
-  This job is run a the end of every autorelease build. The release notes file
-  (release_notes.rst) is available under archives.
+  This job is run a the end of every autorelease build can be used only for
+  service releases (SR). The release notes file (release_notes.rst) is available
+  under archives. For major releases (Nitrogen, Carbon) the docs repository has
+  to branched and published which is only done after release reviews are
+  completed.
 
   Release notes can also be manually generated with the script.
 
