@@ -20,8 +20,12 @@ Documentation
 
 * **Getting Started:**
 
-  * :ref:`snmp-user-guide` https://wiki.opendaylight.org/view/SNMP_Plugin:Getting_Started
+  * :ref:`snmp-getting-started` https://wiki.opendaylight.org/view/SNMP_Plugin:Getting_Started
+  
+* **User Guide:**
 
+  * :ref:`snmp-user-guide` http://docs.opendaylight.org/en/stable-boron/user-guide/snmp-plugin-user-guide.html
+    
 * **SNMP Simulator:**
 
   * :ref:`snmp-dev-guide` https://wiki.opendaylight.org/view/SNMP_Plugin:SNMP_Simulator
@@ -35,7 +39,7 @@ Security Considerations
 
 * Other security issues?
 
-  None
+  There is no security framework defined by this plug-in for the SNMP SouthBound Interface
 
 Quality Assurance
 =================
@@ -45,14 +49,16 @@ Quality Assurance
 * Other manual testing and QA information - None
 * Testing methodology. How extensive was it? What should be expected to work? What hasn't been tested as much?
 
-  From Boron release review: "JUNIT testing and Integration testing"
+  The % testing coverage is unknown as the original team is no longer engaged. Notes from Boron release review 
+    simply state: "JUNIT testing and Integration testing"
 
 Migration
 ---------
 
 * Is is possible migrate from the previous release? If so, how?
 
-  Yes. No functional change to features
+  It is possible to seamlessly migrate consumers to this iteration of the plug-in as there has been no functional
+   change to features. Migration of state data is not defined.
 
 Compatiblity
 ------------
