@@ -1,3 +1,5 @@
+.. _gbp-user-guide:
+
 Group Based Policy User Guide
 =============================
 
