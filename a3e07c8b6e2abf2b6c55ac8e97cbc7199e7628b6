@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ba068154_d459a1ff",
+        "filename": "docs/getting-started-guide/project-release-notes/aaa.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 3635
+      },
+      "writtenOn": "2017-06-07T14:26:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_9df747f5",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 109
+      },
+      "revId": "a3e07c8b6e2abf2b6c55ac8e97cbc7199e7628b6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_fdddb371",
         "filename": "docs/getting-started-guide/project-release-notes/aaa.rst",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2017-05-17T15:15:21Z",
       "side": 1,
       "message": "encrypted or encryption?",
+      "range": {
+        "startLine": 44,
+        "startChar": 41,
+        "endLine": 44,
+        "endChar": 50
+      },
+      "revId": "a3e07c8b6e2abf2b6c55ac8e97cbc7199e7628b6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_f46dc59a",
+        "filename": "docs/getting-started-guide/project-release-notes/aaa.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 3635
+      },
+      "writtenOn": "2017-06-07T14:26:18Z",
+      "side": 1,
+      "message": "encrypted is correct.",
+      "parentUuid": "ba068154_fdddb371",
       "range": {
         "startLine": 44,
         "startChar": 41,
