@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3afa9182_901d8d76",
+        "filename": "docs/getting-started-guide/project-release-notes/l2switch.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1602
+      },
+      "writtenOn": "2017-06-07T23:18:53Z",
+      "side": 1,
+      "message": "Fixed. There are no known security issues as of now.",
+      "parentUuid": "3afa9182_8d945a38",
+      "range": {
+        "startLine": 42,
+        "startChar": 0,
+        "endLine": 43,
+        "endChar": 8
+      },
+      "revId": "c28d182e734be4213c264b03c98aa5309f01363b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afa9182_cd9e6256",
         "filename": "docs/getting-started-guide/project-release-notes/l2switch.rst",
         "patchSetId": 6
@@ -36,6 +60,24 @@
       "writtenOn": "2017-06-07T18:34:11Z",
       "side": 1,
       "message": "Please confirm this or not. Is the only state in config files and the config files are the same, so migration should work?",
+      "revId": "c28d182e734be4213c264b03c98aa5309f01363b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afa9182_d040b558",
+        "filename": "docs/getting-started-guide/project-release-notes/l2switch.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1602
+      },
+      "writtenOn": "2017-06-07T23:18:53Z",
+      "side": 1,
+      "message": "It is safe to state migration is NOT tested / supported. But in theory since the config files are same, it might work.",
+      "parentUuid": "3afa9182_cd9e6256",
       "revId": "c28d182e734be4213c264b03c98aa5309f01363b",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
