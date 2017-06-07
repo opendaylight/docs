@@ -59,6 +59,24 @@
     },
     {
       "key": {
+        "uuid": "3afa9182_adff9600",
+        "filename": "docs/getting-started-guide/project-release-notes/gbp-release-notes.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-06-07T17:50:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3afa9182_f93a0735",
+      "revId": "4c33f14af76989f0705812f3ef2fcaa64a6231c2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afa9182_393c8f2f",
         "filename": "docs/getting-started-guide/project-release-notes/gbp-release-notes.rst",
         "patchSetId": 10
@@ -70,6 +88,30 @@
       "writtenOn": "2017-06-06T19:35:58Z",
       "side": 1,
       "message": "Can you leave the questions? At least you need a blank line to separate things.",
+      "range": {
+        "startLine": 176,
+        "startChar": 0,
+        "endLine": 177,
+        "endChar": 18
+      },
+      "revId": "4c33f14af76989f0705812f3ef2fcaa64a6231c2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afa9182_8d045a16",
+        "filename": "docs/getting-started-guide/project-release-notes/gbp-release-notes.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-06-07T17:50:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3afa9182_393c8f2f",
       "range": {
         "startLine": 176,
         "startChar": 0,
