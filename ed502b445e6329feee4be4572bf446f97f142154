@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afa9182_fa12f260",
+        "filename": "docs/getting-started-guide/project-release-notes/gbp-release-notes.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-06-07T17:50:25Z",
+      "side": 1,
+      "message": "Is this needed given the list below? You can say yes, but it seems redundant.\n\nAlong those lines, there are a lot of features which mostly repeat the same stuff. Could you turn it into one feature description with a list of feature names just to make it easier to consume?",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 71
+      },
+      "revId": "ed502b445e6329feee4be4572bf446f97f142154",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afa9182_5a03460f",
+        "filename": "docs/getting-started-guide/project-release-notes/gbp-release-notes.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-06-07T17:50:25Z",
+      "side": 1,
+      "message": "Is this needed? We document generic feature installation here:\nhttp://docs.opendaylight.org/en/stable-boron/getting-started-guide/installing_opendaylight.html#install-the-karaf-features",
+      "revId": "ed502b445e6329feee4be4572bf446f97f142154",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
