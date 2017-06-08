@@ -1,3 +1,5 @@
+.. _cardinal-user-guide:
+
 Cardinal: OpenDaylight Monitoring as a Service
 ==============================================
 
