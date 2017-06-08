@@ -40,22 +40,22 @@ To run the Karaf distribution:
 
 For Example::
 
-   $ ls distribution-karaf-0.5.x-Boron.zip
-   distribution-karaf-0.5.x-Boron.zip
-   $ unzip distribution-karaf-0.5.x-Boron.zip
-   Archive:  distribution-karaf-0.5.x-Boron.zip
-      creating: distribution-karaf-0.5.x-Boron/
-      creating: distribution-karaf-0.5.x-Boron/configuration/
-      creating: distribution-karaf-0.5.x-Boron/data/
-      creating: distribution-karaf-0.5.x-Boron/data/tmp/
-      creating: distribution-karaf-0.5.x-Boron/deploy/
-      creating: distribution-karaf-0.5.x-Boron/etc/
-      creating: distribution-karaf-0.5.x-Boron/externalapps/
+   $ ls distribution-karaf-0.6.x-Carbon.zip
+   distribution-karaf-0.6.x-Carbon.zip
+   $ unzip distribution-karaf-0.6.x-Carbon.zip
+   Archive:  distribution-karaf-0.6.x-Carbon.zip
+      creating: distribution-karaf-0.6.x-Carbon/
+      creating: distribution-karaf-0.6.x-Carbon/configuration/
+      creating: distribution-karaf-0.6.x-Carbon/data/
+      creating: distribution-karaf-0.6.x-Carbon/data/tmp/
+      creating: distribution-karaf-0.6.x-Carbon/deploy/
+      creating: distribution-karaf-0.6.x-Carbon/etc/
+      creating: distribution-karaf-0.6.x-Carbon/externalapps/
       ...
-      inflating: distribution-karaf-0.5.x-Boron/bin/start.bat
-      inflating: distribution-karaf-0.5.x-Boron/bin/status.bat
-      inflating: distribution-karaf-0.5.x-Boron/bin/stop.bat
-   $ cd distribution-karaf-0.5.x-Boron
+      inflating: distribution-karaf-0.6.x-Carbon/bin/start.bat
+      inflating: distribution-karaf-0.6.x-Carbon/bin/status.bat
+      inflating: distribution-karaf-0.6.x-Carbon/bin/stop.bat
+   $ cd distribution-karaf-0.6.x-Carbon
    $ ./bin/karaf
 
        ________                       ________                .__  .__       .__     __
