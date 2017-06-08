@@ -1,4 +1,4 @@
-.. _alto-developer-guide
+.. _alto-developer-guide:
 
 ALTO Developer Guide
 ====================

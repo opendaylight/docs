@@ -93,8 +93,8 @@ Migration
   The Boron configfile would work, but users are advised to consider reporting a bumped version.
 * No upgrade path for other features.
 
-Compatiblity
-------------
+Compatibility
+-------------
 
 * No API changes in Karaf 3.
 * Karaf features are not compatible with Boron.

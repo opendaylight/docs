@@ -74,8 +74,8 @@ Migration
   the removal of deprecated API elements and changed elements, there are no
   additional steps needed for migration to this release.
 
-Compatiblity
-------------
+Compatibility
+-------------
 
 * Release is compatible with the previous one.
 * API changes:

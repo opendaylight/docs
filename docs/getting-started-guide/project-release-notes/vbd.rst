@@ -6,9 +6,9 @@ Major Features
 ==============
 
 odl-vbd
-------------------
+-------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=honeycomb/vbd.git;a=blob;f=features/vbd-features/src/main/features/features.xml;h=66f8ed281850afadcf769a2b9e0925aaedce983a;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=honeycomb/vbd.git;a=blob;f=features/vbd-features/src/main/features/features.xml;hb=refs/heads/stable/carbon
 * **Feature Description:**  This feature provides models to configure Virtual Bridge Domains on VPP.
 * **Top Level:** Yes
 * **User Facing:** Yes
@@ -16,9 +16,9 @@ odl-vbd
 * **CSIT Test:** N/A
 
 odl-vbd-ui
-------------------
+----------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=honeycomb/vbd.git;a=blob;f=features/vbd-features/src/main/features/features.xml;h=66f8ed281850afadcf769a2b9e0925aaedce983a;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=honeycomb/vbd.git;a=blob;f=features/vbd-features/src/main/features/features.xml;hb=refs/heads/stable/carbon
 * **Feature Description:**  This feature provides the GUI for VBD.
 * **Top Level:** Yes
 * **User Facing:** Yes
@@ -30,7 +30,7 @@ Documentation
 =============
 
 * `Wiki <https://wiki.opendaylight.org/view/Honeycomb/VBD>`_
-* `VBD API https://wiki.opendaylight.org/view/Honeycomb/VBD/API>`_
+* `VBD API <https://wiki.opendaylight.org/view/Honeycomb/VBD/API>`_
 
 Security Considerations
 =======================
@@ -53,8 +53,8 @@ Migration
 
 * Please upgrade to VPP 17.04 stable.
 
-Compatiblity
-------------
+Compatibility
+-------------
 
 * Not compatible with previous VPP 17.01 or older stable versions.
 
