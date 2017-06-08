@@ -6,7 +6,7 @@ This section introduces you to the OpenDaylight User Experience (DLUX) applicati
 Getting Started with DLUX
 -------------------------
 
-DLUX provides a number of different Karaf features, which you can enable and disable separately. In Boron they are:
+DLUX provides a number of different Karaf features, which you can enable and disable separately. They are:
 
 #. odl-dlux-core
 #. odl-dlux-node

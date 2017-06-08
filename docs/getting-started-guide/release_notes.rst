@@ -55,7 +55,7 @@ Known Issues and Limitations
 Other than as noted in project-specific release notes, we know of the
 following limitations:
 
-* Migration from Helium, Lithium and Beryllium to Boron has not been
+* Migration from prior OpenDaylight releases to Carbon has not been
   extensively tested. The per-project release notes include migration and
   compatibility information when it is known.
 * There are scales beyond which the controller has been unreliable when
