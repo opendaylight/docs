@@ -1,3 +1,5 @@
+.. _sdni-user-guide:
+
 ODL-SDNi User Guide
 ===================
 
@@ -37,4 +39,3 @@ to 6653 and other controller to 6663 in
 
 TCP port on which the controller is listening (default 6633)
 of.listenPort=6653
-
