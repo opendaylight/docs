@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "3afa9182_c6263fba",
+        "filename": "docs/getting-started-guide/project-release-notes/didm.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 2559
+      },
+      "writtenOn": "2017-06-08T05:51:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7af0899e_0255fac5",
+      "revId": "df902aa65267ac400bc01bffc68c338c2880057a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7af0899e_e251ced9",
         "filename": "docs/getting-started-guide/project-release-notes/didm.rst",
         "patchSetId": 3
@@ -47,6 +65,24 @@
       "writtenOn": "2017-05-23T16:16:29Z",
       "side": 1,
       "message": "Link to Guide. Should be formatted something like:\n\n :ref:`Guide name \u003cguide-label-name\u003e`\n\nWhere the \u003cguide-label-name\u003e is something like:\n\n .. _guide-label-name:\n Project User Guide\n \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\n ....\n\nAs described here:\nhttp://www.sphinx-doc.org/en/stable/markup/inline.html#cross-referencing-arbitrary-locations",
+      "revId": "df902aa65267ac400bc01bffc68c338c2880057a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afa9182_a62b3381",
+        "filename": "docs/getting-started-guide/project-release-notes/didm.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 2559
+      },
+      "writtenOn": "2017-06-08T05:51:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7af0899e_e251ced9",
       "revId": "df902aa65267ac400bc01bffc68c338c2880057a",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "3afa9182_c6ff5f00",
+        "filename": "docs/getting-started-guide/project-release-notes/didm.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 2559
+      },
+      "writtenOn": "2017-06-08T05:51:32Z",
+      "side": 1,
+      "message": "Code coverage is not available for DIDM:\n\nhttps://sonar.opendaylight.org/overview/coverage?id\u003dorg.opendaylight.didm%3Adidm-aggregator",
+      "parentUuid": "7af0899e_425ee2ea",
+      "revId": "df902aa65267ac400bc01bffc68c338c2880057a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7af0899e_8258cafb",
         "filename": "docs/getting-started-guide/project-release-notes/didm.rst",
         "patchSetId": 3
@@ -81,6 +135,24 @@
       "writtenOn": "2017-05-23T16:16:29Z",
       "side": 1,
       "message": "Should link directly to here:\nhttps://jenkins.opendaylight.org/releng/view/didm/job/didm-csit-1node-discovery-only-carbon/\nAlso it\u0027s failing…",
+      "revId": "df902aa65267ac400bc01bffc68c338c2880057a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afa9182_a604d315",
+        "filename": "docs/getting-started-guide/project-release-notes/didm.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 2559
+      },
+      "writtenOn": "2017-06-08T05:51:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7af0899e_8258cafb",
       "revId": "df902aa65267ac400bc01bffc68c338c2880057a",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -104,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "3afa9182_060a0721",
+        "filename": "docs/getting-started-guide/project-release-notes/didm.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 2559
+      },
+      "writtenOn": "2017-06-08T05:51:32Z",
+      "side": 1,
+      "message": "Test is done manually by installing the feature and installing the the flow rules to OF switch using the exposed FlowObjective api\u0027s as part of previous release effort.",
+      "parentUuid": "7af0899e_c2713279",
+      "revId": "df902aa65267ac400bc01bffc68c338c2880057a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7af0899e_a26ea694",
         "filename": "docs/getting-started-guide/project-release-notes/didm.rst",
         "patchSetId": 3
@@ -115,6 +205,24 @@
       "writtenOn": "2017-05-23T16:16:29Z",
       "side": 1,
       "message": "This is about migration from Boron to Carbon? Is this supported because DIDM has no state?",
+      "revId": "df902aa65267ac400bc01bffc68c338c2880057a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afa9182_e6253bac",
+        "filename": "docs/getting-started-guide/project-release-notes/didm.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 2559
+      },
+      "writtenOn": "2017-06-08T05:51:32Z",
+      "side": 1,
+      "message": "DIDM doesn\u0027t maintain any state so migration should not be the issue.",
+      "parentUuid": "7af0899e_a26ea694",
       "revId": "df902aa65267ac400bc01bffc68c338c2880057a",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -144,6 +252,30 @@
     },
     {
       "key": {
+        "uuid": "3afa9182_46136f5c",
+        "filename": "docs/getting-started-guide/project-release-notes/didm.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 2559
+      },
+      "writtenOn": "2017-06-08T05:51:32Z",
+      "side": 1,
+      "message": "Yes this need to be corrected for the OVS as well.",
+      "parentUuid": "7af0899e_420542c1",
+      "range": {
+        "startLine": 83,
+        "startChar": 45,
+        "endLine": 83,
+        "endChar": 105
+      },
+      "revId": "df902aa65267ac400bc01bffc68c338c2880057a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7af0899e_820f2ae1",
         "filename": "docs/getting-started-guide/project-release-notes/didm.rst",
         "patchSetId": 3
@@ -161,6 +293,24 @@
     },
     {
       "key": {
+        "uuid": "3afa9182_463a4fce",
+        "filename": "docs/getting-started-guide/project-release-notes/didm.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 2559
+      },
+      "writtenOn": "2017-06-08T05:51:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7af0899e_820f2ae1",
+      "revId": "df902aa65267ac400bc01bffc68c338c2880057a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7af0899e_6214bef5",
         "filename": "docs/getting-started-guide/project-release-notes/didm.rst",
         "patchSetId": 3
@@ -172,6 +322,24 @@
       "writtenOn": "2017-05-23T16:16:29Z",
       "side": 1,
       "message": "Were there any major changes in what was delivered vs. what was promised?",
+      "revId": "df902aa65267ac400bc01bffc68c338c2880057a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afa9182_861d5769",
+        "filename": "docs/getting-started-guide/project-release-notes/didm.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 2559
+      },
+      "writtenOn": "2017-06-08T05:51:32Z",
+      "side": 1,
+      "message": "No, there no changes has been done since Boron release.",
+      "parentUuid": "7af0899e_6214bef5",
       "revId": "df902aa65267ac400bc01bffc68c338c2880057a",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
