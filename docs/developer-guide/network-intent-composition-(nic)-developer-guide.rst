@@ -1,3 +1,5 @@
+.. _nic-dev-guide:
+
 Network Intent Composition (NIC) Developer Guide
 ================================================
 
