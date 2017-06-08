@@ -1,3 +1,5 @@
+.. _controller-user-guide:
+
 OpenDaylight Controller Overview
 ================================
 

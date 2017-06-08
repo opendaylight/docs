@@ -1,4 +1,4 @@
-.. _alto-user-guide
+.. _alto-user-guide:
 
 ALTO User Guide
 ===============

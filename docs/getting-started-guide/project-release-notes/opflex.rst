@@ -70,8 +70,8 @@ Migration
 
 * Simply install and restart daemons.
 
-Compatiblity
-------------
+Compatibility
+-------------
 
 OpFlex GBP model and configuration files remain backward compatible.
 

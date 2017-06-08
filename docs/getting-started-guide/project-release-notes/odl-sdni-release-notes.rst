@@ -68,8 +68,8 @@ Migration
   No, current release is backward incompatible.
 
 
-Compatiblity
-------------
+Compatibility
+-------------
 
 * Is this release compatible with the previous release?
   No

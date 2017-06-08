@@ -52,12 +52,12 @@ Migration
 
   * No
 
-Compatiblity
-------------
+Compatibility
+-------------
 
 * Is this release compatible with the previous release? Yes
 * Any API changes? No.
-* Any configuraiton changes? No.
+* Any configuration changes? No.
 
 Bugs Fixed
 ----------
