@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "7af0899e_7d41030b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-06-08T01:40:25Z",
+      "side": 1,
+      "message": "This should really be \"LACP release notes\" since it\u0027s about a lot more than Karaf 4 migration.",
+      "revId": "0e1d92123f861555c47e4bfa0af4631973f7a6c0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a0b7d60_95912455",
         "filename": "docs/getting-started-guide/project-release-notes/lacp.rst",
         "patchSetId": 2
