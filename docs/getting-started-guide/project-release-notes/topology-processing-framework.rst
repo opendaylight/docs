@@ -8,7 +8,7 @@ Major Features
 odl-topoprocessing-framewrok
 ------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=topoprocessing.git;a=blob;f=features/src/main/resources/features.xml;h=0f4b0c438e19f57682ae5586696c36f238bb6255;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=topoprocessing.git;a=blob;f=features/src/main/resources/features.xml;hb=refs/heads/stable/carbon
 * **Feature Description:**  Topology processing core
 * **Top Level:** No
 * **User Facing:** No
@@ -18,7 +18,7 @@ odl-topoprocessing-framewrok
 odl-topoprocessing-mlmt
 ------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=topoprocessing.git;a=blob;f=features/src/main/resources/features.xml;h=0f4b0c438e19f57682ae5586696c36f238bb6255;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=topoprocessing.git;a=blob;f=features/src/main/resources/features.xml;hb=refs/heads/stable/carbon
 * **Feature Description:**  Multi-Layer and Multi-Technology (MLMT) module
 * **Top Level:** Yes
 * **User Facing:** No
@@ -28,7 +28,7 @@ odl-topoprocessing-mlmt
 odl-topoprocessing-network-topology
 ------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=topoprocessing.git;a=blob;f=features/src/main/resources/features.xml;h=0f4b0c438e19f57682ae5586696c36f238bb6255;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=topoprocessing.git;a=blob;f=features/src/main/resources/features.xml;hb=refs/heads/stable/carbon
 * **Feature Description:**  Support for network-topology model
 * **Top Level:** Yes
 * **User Facing:** No
@@ -38,7 +38,7 @@ odl-topoprocessing-network-topology
 odl-topoprocessing-inventory
 ------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=topoprocessing.git;a=blob;f=features/src/main/resources/features.xml;h=0f4b0c438e19f57682ae5586696c36f238bb6255;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=topoprocessing.git;a=blob;f=features/src/main/resources/features.xml;hb=refs/heads/stable/carbon
 * **Feature Description:**  Support for inventory model
 * **Top Level:** Yes
 * **User Facing:** No
@@ -48,7 +48,7 @@ odl-topoprocessing-inventory
 odl-topoprocessing-I2rs
 ------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=topoprocessing.git;a=blob;f=features/src/main/resources/features.xml;h=0f4b0c438e19f57682ae5586696c36f238bb6255;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=topoprocessing.git;a=blob;f=features/src/main/resources/features.xml;hb=refs/heads/stable/carbon
 * **Feature Description:**  Support for i2rs model
 * **Top Level:** Yes
 * **User Facing:** No
@@ -58,7 +58,7 @@ odl-topoprocessing-I2rs
 odl-topoprocessing-inventory-rendering
 ------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=topoprocessing.git;a=blob;f=features/src/main/resources/features.xml;h=0f4b0c438e19f57682ae5586696c36f238bb6255;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=topoprocessing.git;a=blob;f=features/src/main/resources/features.xml;hb=refs/heads/stable/carbon
 * **Feature Description:**  Rendering demo
 * **Top Level:** Yes
 * **User Facing:** No
@@ -71,7 +71,7 @@ Documentation
 * **Developer Guide(s):**
 
   * `Docs on docs.opendaylight.org <http://docs.opendaylight.org/en/latest/developer-guide/topology-processing-framework-developer-guide.html>`_
-  * `Rst documentation <https://git.opendaylight.org/gerrit/gitweb?p=docs.git;a=blob;f=docs/developer-guide/topology-processing-framework-developer-guide.rst;h=9ee838bc79b80bb1b6a8230f8d5402495348e8e0;hb=refs/heads/stable/boron>`_
+  * `Rst documentation <https://git.opendaylight.org/gerrit/gitweb?p=docs.git;a=blob;f=docs/developer-guide/topology-processing-framework-developer-guide.rst;hb=refs/heads/stable/carbon>`_
   * `Wiki <https://wiki.opendaylight.org/view/Topology_Processing_Framework:Developer_Guide>`_
 
 Security Considerations

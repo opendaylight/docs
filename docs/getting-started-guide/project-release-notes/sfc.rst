@@ -13,7 +13,7 @@ odl-sfc-netconf
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** Yes
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sfc/job/sfc-csit-3node-clustering-all-boron
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sfc/job/sfc-csit-3node-clustering-all-carbon
 
 
 odl-sfc-scf-openflow
@@ -24,7 +24,7 @@ odl-sfc-scf-openflow
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** No
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sfc/job/sfc-csit-3node-clustering-all-boron
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sfc/job/sfc-csit-3node-clustering-all-carbon
 
 
 odl-sfc-scf-vpp
@@ -35,7 +35,7 @@ odl-sfc-scf-vpp
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** No
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sfc/job/sfc-csit-3node-clustering-all-boron
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sfc/job/sfc-csit-3node-clustering-all-carbon
 
 
 odl-sfc-openflow-renderer
@@ -46,7 +46,7 @@ odl-sfc-openflow-renderer
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** No
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sfc/job/sfc-csit-3node-clustering-all-boron
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sfc/job/sfc-csit-3node-clustering-all-carbon
 
 
 odl-sfclisp
@@ -57,7 +57,7 @@ odl-sfclisp
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** Yes
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sfc/job/sfc-csit-3node-clustering-all-boron
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sfc/job/sfc-csit-3node-clustering-all-carbon
 
 
 odl-sfc-sb-rest
@@ -68,7 +68,7 @@ odl-sfc-sb-rest
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** Yes
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sfc/job/sfc-csit-3node-clustering-all-boron
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sfc/job/sfc-csit-3node-clustering-all-carbon
 
 
 odl-sfc-ui
@@ -79,7 +79,7 @@ odl-sfc-ui
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** Yes
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sfc/job/sfc-csit-3node-clustering-all-boron
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sfc/job/sfc-csit-3node-clustering-all-carbon
 
 
 odl-sfc-vnfm-tacker
@@ -90,7 +90,7 @@ odl-sfc-vnfm-tacker
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** Yes
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sfc/job/sfc-csit-3node-clustering-all-boron
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sfc/job/sfc-csit-3node-clustering-all-carbon
 
 
 odl-sfc-ios-xe-renderer
@@ -101,7 +101,7 @@ odl-sfc-ios-xe-renderer
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** Yes
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sfc/job/sfc-csit-3node-clustering-all-boron
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sfc/job/sfc-csit-3node-clustering-all-carbon
 
 
 odl-sfc-vpp-renderer
@@ -112,7 +112,7 @@ odl-sfc-vpp-renderer
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** Yes
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sfc/job/sfc-csit-3node-clustering-all-boron
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sfc/job/sfc-csit-3node-clustering-all-carbon
 
 
 odl-sfc-pot
@@ -123,7 +123,7 @@ odl-sfc-pot
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** Yes
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sfc/job/sfc-csit-3node-clustering-all-boron
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sfc/job/sfc-csit-3node-clustering-all-carbon
 
 
 These features are consumed by the User facing features above
@@ -138,7 +138,7 @@ odl-sfc-genius
 * **Top Level:** Yes
 * **User Facing:** No
 * **Experimental:** No
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sfc/job/sfc-csit-3node-clustering-all-boron
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sfc/job/sfc-csit-3node-clustering-all-carbon
 
 
 odl-sfc-model
@@ -149,7 +149,7 @@ odl-sfc-model
 * **Top Level:** Yes
 * **User Facing:** No
 * **Experimental:** No
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sfc/job/sfc-csit-3node-clustering-all-boron
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sfc/job/sfc-csit-3node-clustering-all-carbon
 
 
 odl-sfc-pot-netconf-renderer
@@ -160,7 +160,7 @@ odl-sfc-pot-netconf-renderer
 * **Top Level:** Yes
 * **User Facing:** No
 * **Experimental:** No
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sfc/job/sfc-csit-3node-clustering-all-boron
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sfc/job/sfc-csit-3node-clustering-all-carbon
 
 
 odl-sfc-provider
@@ -171,7 +171,7 @@ odl-sfc-provider
 * **Top Level:** Yes
 * **User Facing:** No
 * **Experimental:** No
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sfc/job/sfc-csit-3node-clustering-all-boron
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sfc/job/sfc-csit-3node-clustering-all-carbon
 
 
 odl-sfc-provider-rest
@@ -182,7 +182,7 @@ odl-sfc-provider-rest
 * **Top Level:** Yes
 * **User Facing:** No
 * **Experimental:** No
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sfc/job/sfc-csit-3node-clustering-all-boron
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sfc/job/sfc-csit-3node-clustering-all-carbon
 
 
 odl-sfc-ovs
@@ -193,7 +193,7 @@ odl-sfc-ovs
 * **Top Level:** Yes
 * **User Facing:** No
 * **Experimental:** No
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sfc/job/sfc-csit-3node-clustering-all-boron
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sfc/job/sfc-csit-3node-clustering-all-carbon
 
 
 odl-sfc-test-consumer
@@ -204,7 +204,7 @@ odl-sfc-test-consumer
 * **Top Level:** Yes
 * **User Facing:** No
 * **Experimental:** Yes
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sfc/job/sfc-csit-3node-clustering-all-boron
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sfc/job/sfc-csit-3node-clustering-all-carbon
 
 
 Features removed in this release

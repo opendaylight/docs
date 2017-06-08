@@ -47,7 +47,7 @@ Feature Name
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** Yes
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sample/job/sample-csit-1node-feature-all-boron/
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sample/job/sample-csit-1node-feature-all-carbon/
 
 Documentation
 =============
