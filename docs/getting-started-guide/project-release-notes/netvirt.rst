@@ -21,16 +21,16 @@ Documentation
 
 * **User Guide(s):**
 
-  * `NetVirt User Guide <http://docs.opendaylight.org/en/latest/submodules/netvirt/docs/user-guide/index.html>`_
-  * `OpenStack with NetVirt <http://docs.opendaylight.org/en/latest/submodules/netvirt/docs/openstack-guide/index.html>`_
+  * :doc:`../../submodules/netvirt/docs/user-guide/index`
+  * :doc:`../../submodules/netvirt/docs/openstack-guide/index`
 
 * **Developer Guide(s):**
 
-  * `NetVirt Developer Guide <http://docs.opendaylight.org/en/latest/submodules/netvirt/docs/developer-guide/index.html>`_
+  * :doc:`../../submodules/netvirt/docs/developer-guide/index`
 
 * **Contributor Guide(s):**
 
-  * `NetVirt Contributor Guide <http://docs.opendaylight.org/en/latest/submodules/netvirt/docs/contributor-guide/index.html>`_
+  * :doc:`../../submodules/netvirt/docs/contributor-guide/index`
 
 Security Considerations
 =======================

@@ -1,3 +1,5 @@
+.. _sxp-dev-guide:
+
 SXP Developer Guide
 ===================
 

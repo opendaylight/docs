@@ -1,3 +1,5 @@
+.. _usc-dev-guide:
+
 Unified Secure Channel
 ======================
 

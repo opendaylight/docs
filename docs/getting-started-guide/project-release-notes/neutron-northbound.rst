@@ -113,10 +113,6 @@ Documentation
     develops new OpenStack Service Provider like netvirt,
     group-based-policy.
 
-.. Commented out because Colin doens't think it provides any value.
-.. Architectural Issues
-.. --------------------
-
 Security Considerations
 =======================
 
@@ -165,8 +161,8 @@ Migration
 
   No as incompatble change was introduced.
 
-Compatiblity
-------------
+Compatibility
+-------------
 
 * Is this release compatible with the previous release?
 
@@ -185,7 +181,7 @@ Compatiblity
   * `Neutron YANG model update
     <https://git.opendaylight.org/gerrit/#/c/51534/>`_
 
-* Any configuraiton changes?
+* Any configuration changes?
 
   No.
 

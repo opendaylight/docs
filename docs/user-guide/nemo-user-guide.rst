@@ -1,3 +1,5 @@
+.. _nemo-user-guide:
+
 NEtwork MOdeling (NEMO)
 =======================
 

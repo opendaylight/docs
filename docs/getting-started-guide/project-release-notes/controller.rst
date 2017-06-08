@@ -15,6 +15,17 @@ odl-mdsal-broker
 * **Experimental:** No
 * **CSIT Test:** https://jenkins.opendaylight.org/releng/view/controller/job/controller-csit-verify-3node-clustering/
 
+Documentation
+=============
+
+* **User Guide(s):**
+
+  * :ref:`User Guide <controller-user-guide>`
+
+* **Developer Guide(s):**
+
+  * :ref:`controller-dev-guide`
+
 Security Considerations
 =======================
 
@@ -39,8 +50,8 @@ Migration
 
   * There are no issues with migration from Boron to Carbon.
 
-Compatiblity
-------------
+Compatibility
+-------------
 
 * Is this release compatible with the previous release?
 

@@ -269,8 +269,8 @@ internally, one uplink and another downlink.
 The Service Function ``nsh-aware`` and ``requires-classification`` fields
 have been moved to the Service Function Type.
 
-Compatiblity
-------------
+Compatibility
+-------------
 
 Other than the API changes mentioned in the previous section, this
 release is compatible with the previous release.

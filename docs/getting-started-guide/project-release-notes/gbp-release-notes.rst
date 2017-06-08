@@ -18,7 +18,7 @@ Major Features
 odl-groupbasedpolicy-ofoverlay
 ------------------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=groupbasedpolicy.git;a=blob;f=features/features-groupedpolicy/src/main/features/features.xml;h=df5008a589f69302250b0a2450a2d262f239477f;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=groupbasedpolicy.git;a=blob;f=features/features-groupedpolicy/src/main/features/features.xml;hb=refs/heads/stable/carbon
 * **Feature Description:** Feature can be added to the base to enable a Network Virtualization behavior using OpenFlow
 * **Top Level:** Yes
 * **User Facing:** Yes
@@ -29,7 +29,7 @@ odl-groupbasedpolicy-ofoverlay
 odl-groupbasedpolicy-ovssfc
 ---------------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=groupbasedpolicy.git;a=blob;f=features/features-groupedpolicy/src/main/features/features.xml;h=df5008a589f69302250b0a2450a2d262f239477f;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=groupbasedpolicy.git;a=blob;f=features/features-groupedpolicy/src/main/features/features.xml;hb=refs/heads/stable/carbon
 * **Feature Description:** Feature can be added to the base to enable a Network Virtualization behavior using OpenFlow that integrates with the SFC project
 * **Top Level:** Yes
 * **User Facing:** Yes
@@ -40,7 +40,7 @@ odl-groupbasedpolicy-ovssfc
 odl-groupbasedpolicy-faas
 -------------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=groupbasedpolicy.git;a=blob;f=features/features-groupedpolicy/src/main/features/features.xml;h=df5008a589f69302250b0a2450a2d262f239477f;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=groupbasedpolicy.git;a=blob;f=features/features-groupedpolicy/src/main/features/features.xml;hb=refs/heads/stable/carbon
 * **Feature Description:**  This renderer maps GBP service model to the common abstraction logical network models of the Fabric As A Service (FAAS). In turns, FAAS maps those abstraction models to the physical networks.
 * **Top Level:** Yes
 * **User Facing:** Yes
@@ -50,7 +50,7 @@ odl-groupbasedpolicy-faas
 odl-groupbasedpolicy-iovisor
 ----------------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=groupbasedpolicy.git;a=blob;f=features/features-groupedpolicy/src/main/features/features.xml;h=df5008a589f69302250b0a2450a2d262f239477f;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=groupbasedpolicy.git;a=blob;f=features/features-groupedpolicy/src/main/features/features.xml;hb=refs/heads/stable/carbon
 * **Feature Description:**  This renderer maps GBP service model to agents of the IOVisor Linux Foundation project
 * **Top Level:** Yes
 * **User Facing:** Yes
@@ -60,7 +60,7 @@ odl-groupbasedpolicy-iovisor
 odl-groupbasedpolicy-netconf
 ----------------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=groupbasedpolicy.git;a=blob;f=features/features-groupedpolicy/src/main/features/features.xml;h=df5008a589f69302250b0a2450a2d262f239477f;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=groupbasedpolicy.git;a=blob;f=features/features-groupedpolicy/src/main/features/features.xml;hb=refs/heads/stable/carbon
 * **Feature Description:**  This renderer maps GBP service model to NETCONF based network elements
 * **Top Level:** Yes
 * **User Facing:** Yes
@@ -70,7 +70,7 @@ odl-groupbasedpolicy-netconf
 odl-groupbasedpolicy-neutronmapper
 ----------------------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=groupbasedpolicy.git;a=blob;f=features/features-groupedpolicy/src/main/features/features.xml;h=df5008a589f69302250b0a2450a2d262f239477f;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=groupbasedpolicy.git;a=blob;f=features/features-groupedpolicy/src/main/features/features.xml;hb=refs/heads/stable/carbon
 * **Feature Description:**  This renderer maps Neutron northbound configuration to GBP service model
 * **Top Level:** Yes
 * **User Facing:** Yes
@@ -80,7 +80,7 @@ odl-groupbasedpolicy-neutronmapper
 odl-groupbasedpolicy-neutron-and-ofoverlay
 ------------------------------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=groupbasedpolicy.git;a=blob;f=features/features-groupedpolicy/src/main/features/features.xml;h=df5008a589f69302250b0a2450a2d262f239477f;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=groupbasedpolicy.git;a=blob;f=features/features-groupedpolicy/src/main/features/features.xml;hb=refs/heads/stable/carbon
 * **Feature Description:**  Neutron and OpenFlow Overlay
 * **Top Level:** Yes
 * **User Facing:** Yes
@@ -92,7 +92,7 @@ odl-groupbasedpolicy-neutron-and-ofoverlay
 odl-groupbasedpolicy-vpp
 ------------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=groupbasedpolicy.git;a=blob;f=features/features-groupedpolicy/src/main/features/features.xml;h=df5008a589f69302250b0a2450a2d262f239477f;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=groupbasedpolicy.git;a=blob;f=features/features-groupedpolicy/src/main/features/features.xml;hb=refs/heads/stable/carbon
 * **Feature Description:**  This renderer maps GBP service model to VPP devices
 * **Top Level:** Yes
 * **User Facing:** Yes
@@ -102,7 +102,7 @@ odl-groupbasedpolicy-vpp
 odl-groupbasedpolicy-neutron-vpp-mapper
 ---------------------------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=groupbasedpolicy.git;a=blob;f=features/features-groupedpolicy/src/main/features/features.xml;h=df5008a589f69302250b0a2450a2d262f239477f;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=groupbasedpolicy.git;a=blob;f=features/features-groupedpolicy/src/main/features/features.xml;hb=refs/heads/stable/carbon
 * **Feature Description:**  Neutron Northbound services for VPP renderer
 * **Top Level:** Yes
 * **User Facing:** Yes
@@ -112,7 +112,7 @@ odl-groupbasedpolicy-neutron-vpp-mapper
 odl-groupbasedpolicy-ui
 -----------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=groupbasedpolicy.git;a=blob;f=features/features-groupedpolicy/src/main/features/features.xml;h=df5008a589f69302250b0a2450a2d262f239477f;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=groupbasedpolicy.git;a=blob;f=features/features-groupedpolicy/src/main/features/features.xml;hb=refs/heads/stable/carbon
 * **Feature Description:**  Groupbasedpolicy User Interface
 * **Top Level:** Yes
 * **User Facing:** Yes
@@ -122,7 +122,7 @@ odl-groupbasedpolicy-ui
 odl-groupbasedpolicy-ip-sgt-distribution-service
 ------------------------------------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=groupbasedpolicy.git;a=blob;f=features/features-groupedpolicy/src/main/features/features.xml;h=df5008a589f69302250b0a2450a2d262f239477f;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=groupbasedpolicy.git;a=blob;f=features/features-groupedpolicy/src/main/features/features.xml;hb=refs/heads/stable/carbon
 * **Feature Description:**  SXP Distribution Service
 * **Top Level:** Yes
 * **User Facing:** Yes
@@ -132,7 +132,7 @@ odl-groupbasedpolicy-ip-sgt-distribution-service
 odl-groupbasedpolicy-ios-xe
 ---------------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=groupbasedpolicy.git;a=blob;f=features/features-groupedpolicy/src/main/features/features.xml;h=df5008a589f69302250b0a2450a2d262f239477f;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=groupbasedpolicy.git;a=blob;f=features/features-groupedpolicy/src/main/features/features.xml;hb=refs/heads/stable/carbon
 * **Feature Description:**  This renderer maps GBP service model to IOS-XE devices
 * **Top Level:** Yes
 * **User Facing:** Yes
@@ -142,7 +142,7 @@ odl-groupbasedpolicy-ios-xe
 odl-groupbasedpolicy-sxp-ep-provider
 ------------------------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=groupbasedpolicy.git;a=blob;f=features/features-groupedpolicy/src/main/features/features.xml;h=df5008a589f69302250b0a2450a2d262f239477f;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=groupbasedpolicy.git;a=blob;f=features/features-groupedpolicy/src/main/features/features.xml;hb=refs/heads/stable/carbon
 * **Feature Description:**  SXP integration: Endpoint provider
 * **Top Level:** Yes
 * **User Facing:** Yes
@@ -152,7 +152,7 @@ odl-groupbasedpolicy-sxp-ep-provider
 odl-groupbasedpolicy-sxp-ise-adapter
 ------------------------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=groupbasedpolicy.git;a=blob;f=features/features-groupedpolicy/src/main/features/features.xml;h=df5008a589f69302250b0a2450a2d262f239477f;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=groupbasedpolicy.git;a=blob;f=features/features-groupedpolicy/src/main/features/features.xml;hb=refs/heads/stable/carbon
 * **Feature Description:**  SXP integration: ISE adapter
 * **Top Level:** Yes
 * **User Facing:** Yes

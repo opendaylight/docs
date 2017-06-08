@@ -55,8 +55,8 @@ Migration
 
   N/A as this is first release
 
-Compatiblity
-------------
+Compatibility
+-------------
 
 N/A as this is first release
 

@@ -64,8 +64,8 @@ Migration
 
   * Yes, there is no change in config and no need to migrate data in the datastore.
 
-Compatiblity
-------------
+Compatibility
+-------------
 
 * Is this release compatible with the previous release?
 

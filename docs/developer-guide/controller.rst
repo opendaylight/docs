@@ -1,3 +1,5 @@
+.. _controller-dev-guide:
+
 Controller
 ==========
 

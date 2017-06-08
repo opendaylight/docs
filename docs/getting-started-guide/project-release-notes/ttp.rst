@@ -73,8 +73,8 @@ Migration
   RESTCONF GETs and then import it by doing RESTCONF PUTs after the fact, this
   has not been tested and isn't officially supported.
 
-Compatiblity
-------------
+Compatibility
+-------------
 
 * Is this release compatible with the previous release?
 

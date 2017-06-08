@@ -8,7 +8,7 @@ Major Features
 odl-vtn-manager-rest
 --------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=vtn.git;a=blob;f=manager/features/features-vtn-manager/src/main/features/features.xml;h=e4fe7f62405d07653bffa291f984f2cd30db4a4c;hb=refs/heads/stable/carbon#l41
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=vtn.git;a=blob;f=manager/features/features-vtn-manager/src/main/features/features.xml;hb=refs/heads/stable/carbon#l41
 * **Feature Description:**  This is the feature that allows users to use the VTN virtualization, by creating the various components as needed for the network.
 * **Top Level:** Yes
 * **User Facing:** Yes
@@ -19,7 +19,7 @@ odl-vtn-manager-rest
 odl-vtn-manager-neutron
 ----------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=vtn.git;a=blob;f=manager/features/features-vtn-manager/src/main/features/features.xml;h=e4fe7f62405d07653bffa291f984f2cd30db4a4c;hb=refs/heads/stable/carbon#l49
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=vtn.git;a=blob;f=manager/features/features-vtn-manager/src/main/features/features.xml;hb=refs/heads/stable/carbon#l49
 * **Feature Description:**  This feature provides support for integration with Openstack (L2 API)
 * **Top Level:** Yes
 * **User Facing:** Yes
@@ -61,8 +61,8 @@ Migration
 
 * Not Supported.
 
-Compatiblity
-------------
+Compatibility
+-------------
 
 * No Specific Compatibility issues.
 

@@ -8,7 +8,7 @@ Major Features
 odl-sxp-api
 -----------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=sxp.git;a=blob;f=features/features-sxp/src/main/features/features.xml;h=60b04abb2af30126b121f56357f086a051251e0d;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=sxp.git;a=blob;f=features/features-sxp/src/main/features/features.xml;hb=refs/heads/stable/carbon
 * **Feature Description:**  This feature provides models based on `RFC <https://tools.ietf.org/pdf/draft-smith-kandula-sxp-05.pdf>`_.
 * **Top Level:** No
 * **User Facing:** No
@@ -18,7 +18,7 @@ odl-sxp-api
 odl-sxp-core
 ------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=sxp.git;a=blob;f=features/features-sxp/src/main/features/features.xml;h=60b04abb2af30126b121f56357f086a051251e0d;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=sxp.git;a=blob;f=features/features-sxp/src/main/features/features.xml;hb=refs/heads/stable/carbon
 * **Feature Description:**  This feature performs tasks for managing SXP devices and provides the implementation of `RFC <https://tools.ietf.org/pdf/draft-smith-kandula-sxp-05.pdf>`_.
 * **Top Level:** No
 * **User Facing:** No
@@ -28,7 +28,7 @@ odl-sxp-core
 odl-sxp-controller
 ------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=sxp.git;a=blob;f=features/features-sxp/src/main/features/features.xml;h=60b04abb2af30126b121f56357f086a051251e0d;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=sxp.git;a=blob;f=features/features-sxp/src/main/features/features.xml;hb=refs/heads/stable/carbon
 * **Feature Description:**  This feature performs tasks regarding managing SXP devices via RESTCONF.
 * **Top Level:** Yes
 * **User Facing:** Yes
@@ -41,7 +41,7 @@ odl-sxp-controller
 odl-sxp-robot
 -------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=sxp.git;a=blob;f=features/features-sxp/src/main/features/features.xml;h=60b04abb2af30126b121f56357f086a051251e0d;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=sxp.git;a=blob;f=features/features-sxp/src/main/features/features.xml;hb=refs/heads/stable/carbon
 * **Feature Description:**  This is a sample feature used in CSIT testing.
 * **Top Level:** No
 * **User Facing:** No
@@ -51,7 +51,7 @@ odl-sxp-robot
 odl-sxp-route
 -------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=sxp.git;a=blob;f=features/features-sxp/src/main/features/features.xml;h=60b04abb2af30126b121f56357f086a051251e0d;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=sxp.git;a=blob;f=features/features-sxp/src/main/features/features.xml;hb=refs/heads/stable/carbon
 * **Feature Description:**  This feature that performs managing of SXP devices in cluster environment.
 * **Top Level:** Yes
 * **User Facing:** Yes
@@ -64,15 +64,15 @@ Documentation
 
 * **Installation Guide(s):**
 
-  * `InstallationGuide <https://wiki.opendaylight.org/view/SXP:Lithium:Installation_Guide>`_
+  * `Installation Guide <https://wiki.opendaylight.org/view/SXP:Lithium:Installation_Guide>`_
 
 * **User Guide(s):**
 
-  * `SXP User Guide <http://docs.opendaylight.org/en/latest/user-guide/sxp-user-guide.html>`_
+  * :ref:`sxp-user-guide`
 
 * **Developer Guide(s):**
 
-  * `SXP Developer Guide <http://docs.opendaylight.org/en/latest/developer-guide/sxp-developer-guide.html>`_
+  * :ref:`sxp-dev-guide`
 
 Security Considerations
 =======================

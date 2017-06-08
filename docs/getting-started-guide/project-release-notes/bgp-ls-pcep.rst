@@ -8,7 +8,7 @@ Major Features
 odl-bgpcep-bgp
 --------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=bgpcep.git;a=blob;f=features/bgp/features-bgp/src/main/features/features.xml;h=66c79d8a949d139b21ad3aab43d4b75bcf3cf385;hb=73449afa26d3771525d10abbf7441c094e638c9b
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=bgpcep.git;a=blob;f=features/bgp/features-bgp/src/main/features/features.xml;hb=refs/heads/stable/carbon
 * **Feature Description:**  OpenDaylight Border Gateway Protocol (BGP) plugin.
 * **Top Level:** Yes
 * **User Facing:** Yes
@@ -18,7 +18,7 @@ odl-bgpcep-bgp
 odl-bgpcep-bmp
 --------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=bgpcep.git;a=blob;f=features/bmp/features-bmp/src/main/features/features.xml;h=d614ef9789bd254242fae352fb701dc5ca816208;hb=73449afa26d3771525d10abbf7441c094e638c9bhttps://git.opendaylight.org/gerrit/gitweb?p=bgpcep.git;a=blob;f=features/bmp/features-bmp/src/main/features/features.xml;h=d614ef9789bd254242fae352fb701dc5ca816208;hb=73449afa26d3771525d10abbf7441c094e638c9b
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=bgpcep.git;a=blob;f=features/bmp/features-bmp/src/main/features/features.xml;hb=refs/heads/stable/carbon
 * **Feature Description:**  OpenDaylight BGP Monitoring Protocol (BMP) plugin.
 * **Top Level:** Yes
 * **User Facing:** Yes
@@ -28,7 +28,7 @@ odl-bgpcep-bmp
 odl-bgpcep-pcep
 ---------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=bgpcep.git;a=blob;f=features/pcep/features-pcep/src/main/features/features.xml;h=e43f22337c2492df39ff498f29744e8e69a8659a;hb=73449afa26d3771525d10abbf7441c094e638c9b
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=bgpcep.git;a=blob;f=features/pcep/features-pcep/src/main/features/features.xml;hb=refs/heads/stable/carbon
 * **Feature Description:**  OpenDaylight Path Computation Element Configuration Protocol (PCEP) plugin.
 * **Top Level:** Yes
 * **User Facing:** Yes
@@ -132,14 +132,14 @@ PCEP:
 
 There are no additional steps needed for migration to this release.
 
-Compatiblity
-------------
+Compatibility
+-------------
 
 * Is this release compatible with the previous release?
   Yes
 * Any API changes?
 * Any configuration changes?
-  BGP Openconfig configuration should be used instead of previous BGP CSS configuration.
+  BGP OpenConfig configuration should be used instead of previous BGP CSS configuration.
 
 Bugs Fixed
 ----------

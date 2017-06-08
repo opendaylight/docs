@@ -29,11 +29,11 @@ the document is under review, provide a link to the change in Gerrit.
 
 * **Installation Guide(s):**
 
-  * https://git.opendaylight.org/gerrit/gitweb?p=federation.git;a=blob;f=docs/install-guide/federation-install-guide.rst
+  * :doc:`../../submodules/federation/docs/install-guide/federation-install-guide`
 
 * **Developer Guide(s):**
 
-  * https://git.opendaylight.org/gerrit/gitweb?p=federation.git;a=blob;f=docs/developer-guide/federation-developer-guide.rst
+  * :doc:`../../submodules/federation/docs/developer-guide/federation-developer-guide`
 
 Security Considerations
 =======================
@@ -54,8 +54,8 @@ Migration
 * Not applicable. Federation is a new project released in the Carbon
   release for the first time.
 
-Compatiblity
-------------
+Compatibility
+-------------
 
 * Not applicable. Federation is a new project released in the Carbon
   release for the first time.

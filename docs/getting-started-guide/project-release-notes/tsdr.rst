@@ -96,10 +96,6 @@ Please provide the URL to each document at docs.opendaylight.org. If the documen
 
   * :ref:`TSDR User Guide <tsdr-user-guide>`
 
-* **Developer Guide(s):**
-  * N/A
-
-
 Security Considerations
 =======================
 
@@ -124,8 +120,8 @@ Migration
 
   * Yes, since there's no change of features from the previous releases.
 
-Compatiblity
-------------
+Compatibility
+-------------
 
 * Is this release compatible with the previous release?
   Yes.
