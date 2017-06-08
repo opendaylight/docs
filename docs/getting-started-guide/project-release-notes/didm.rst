@@ -65,8 +65,8 @@ Migration
 
 * No changes has been done from the last release.
 
-Compatiblity
-------------
+Compatibility
+-------------
 
 * Release is compatible with previous release.
 * No API changes has been done.

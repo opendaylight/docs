@@ -28,11 +28,11 @@ Documentation
 
 * **User Guide(s):**
 
-  * `NEMO User Guide <http://docs.opendaylight.org/en/latest/user-guide/nemo-user-guide.html>`_
+  * :ref:`nemo-user-guide`
 
 * **Developer Guide(s):**
 
-  * `NEMO Developer Guide <http://docs.opendaylight.org/en/latest/developer-guide/nemo-developer-guide.html>`_
+  * :ref:`nemo-dev-guide`
 
 Security Considerations
 =======================
@@ -52,8 +52,8 @@ Migration
 
 * Nothing beyond general Carbon migration requirements. 
 
-Compatiblity
-------------
+Compatibility
+-------------
 
 * Nothing beyond general Carbon compatibility constraints. 
 

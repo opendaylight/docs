@@ -1,4 +1,4 @@
-.. neutron-service-user-guide:
+.. _neutron-service-user-guide:
 
 Neutron Service User Guide
 ==========================

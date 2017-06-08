@@ -54,8 +54,8 @@ Migration
 
   Yes. Features as well as interfaces are not changed.
 
-Compatiblity
-------------
+Compatibility
+-------------
 
 * Is this release compatible with the previous release?
 
@@ -65,7 +65,7 @@ Compatiblity
 
   No
 
-* Any configuraiton changes?
+* Any configuration changes?
 
   No
 

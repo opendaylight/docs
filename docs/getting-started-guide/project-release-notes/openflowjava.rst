@@ -8,7 +8,7 @@ Major Features
 odl-openflowjava-protocol
 -------------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=openflowjava.git;a=blob;f=features/features-openflowjava/src/main/features/features.xml;h=f1b58ba66493ccbfd496cb9d4f072cc8398340c3;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=openflowjava.git;a=blob;f=features/features-openflowjava/src/main/features/features.xml;hb=refs/heads/stable/carbon
 * **Feature Description:**  This feature exposes SwitchConnectionProvider for building openflow connections
 * **Top Level:** Yes
 * **User Facing:** Yes
@@ -53,8 +53,8 @@ Migration
 
 * no additional migration steps needed
 
-Compatiblity
-------------
+Compatibility
+-------------
 
 * release is compatible with the previous release
 * no API changes

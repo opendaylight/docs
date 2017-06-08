@@ -1,3 +1,5 @@
+.. _sxp-user-guide:
+
 SXP User Guide
 ==============
 
