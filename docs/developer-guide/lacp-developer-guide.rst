@@ -1,3 +1,5 @@
+.. _lacp-dev-guide:
+
 LACP Developer Guide
 ====================
 
