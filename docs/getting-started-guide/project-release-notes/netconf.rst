@@ -11,7 +11,7 @@ User-facing features are used directly by end users.
 odl-netconf-topology
 --------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/netconf-connector/features-netconf-connector/src/main/features/features.xml;h=a3d60f24cad204862c6b392b391048a0147e3933;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/netconf-connector/features-netconf-connector/src/main/features/features.xml;hb=refs/heads/stable/carbon
 * **Feature Description:**  NETCONF southbound plugin, configuration through mdsal
 * **Top Level:** Yes
 * **User Facing:** Yes
@@ -21,7 +21,7 @@ odl-netconf-topology
 odl-netconf-clustered-topology
 ------------------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/netconf-connector/features-netconf-connector/src/main/features/features.xml;h=a3d60f24cad204862c6b392b391048a0147e3933;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/netconf-connector/features-netconf-connector/src/main/features/features.xml;hb=refs/heads/stable/carbon
 * **Feature Description:**  NETCONF southbound plugin, configuration through mdsal
 * **Top Level:** Yes
 * **User Facing:** Yes
@@ -31,7 +31,7 @@ odl-netconf-clustered-topology
 odl-netconf-console
 -------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/netconf-connector/features-netconf-connector/src/main/features/features.xml;h=a3d60f24cad204862c6b392b391048a0147e3933;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/netconf-connector/features-netconf-connector/src/main/features/features.xml;hb=refs/heads/stable/carbon
 * **Feature Description:**  NETCONF southbound configuration with karaf cli
 * **Top Level:** Yes
 * **User Facing:** Yes
@@ -40,7 +40,7 @@ odl-netconf-console
 odl-netconf-connector-all
 -------------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/netconf-connector/features-netconf-connector/src/main/features/features.xml;h=a3d60f24cad204862c6b392b391048a0147e3933;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/netconf-connector/features-netconf-connector/src/main/features/features.xml;hb=refs/heads/stable/carbon
 * **Feature Description:** NETCONF southbound plugin, configuration with configub subsystem
 * **Top Level:** Yes
 * **User Facing:** Yes
@@ -50,7 +50,7 @@ odl-netconf-connector-all
 odl-netconf-mdsal
 -----------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/netconf/features-netconf/src/main/features/features.xml;h=29e9400108a8790ac7786fbfc6e2d3bbd1fa2ec0;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/netconf/features-netconf/src/main/features/features.xml;hb=refs/heads/stable/carbon
 * **Feature Description:** NETCONF server for mdsal
 * **Top Level:** Yes
 * **User Facing:** Yes
@@ -60,7 +60,7 @@ odl-netconf-mdsal
 odl-restconf
 ------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/restconf/features-restconf/src/main/features/features.xml;h=77c9687fba7862f018b8cea43830cc1b9688c8e5;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/restconf/features-restconf/src/main/features/features.xml;hb=refs/heads/stable/carbon
 * **Feature Description:** Restconf
 * **Top Level:** Yes
 * **User Facing:** Yes
@@ -70,7 +70,7 @@ odl-restconf
 odl-mdsal-apidocs
 -----------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/restconf/features-restconf/src/main/features/features.xml;h=77c9687fba7862f018b8cea43830cc1b9688c8e5;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/restconf/features-restconf/src/main/features/features.xml;hb=refs/heads/stable/carbon
 * **Feature Description:** MDSal - apidocs
 * **Top Level:** Yes
 * **User Facing:** Yes
@@ -79,7 +79,7 @@ odl-mdsal-apidocs
 odl-yanglib
 -----------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/yanglib/features-yanglib/src/main/features/features.xml;h=81ccb4954eb32394a9d4ef1986ad0e4bb67b9e1f;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/yanglib/features-yanglib/src/main/features/features.xml;hb=refs/heads/stable/carbon
 * **Feature Description:** Yanglib server
 * **Top Level:** Yes
 * **User Facing:** Yes
@@ -88,7 +88,7 @@ odl-yanglib
 odl-netconf-callhome-ssh
 ------------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/netconf-connector/features-netconf-connector/src/main/features/features.xml;h=a3d60f24cad204862c6b392b391048a0147e3933;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/netconf-connector/features-netconf-connector/src/main/features/features.xml;hb=refs/heads/stable/carbon
 * **Feature Description:** Netconf call home
 * **Top Level:** Yes
 * **User Facing:** Yes
@@ -104,11 +104,11 @@ document is under review, provide a link to the change in Gerrit.
 
 * **User Guide(s):**
 
-  * `Netconf user guide <http://docs.opendaylight.org/en/latest/user-guide/netconf-user-guide.html>`_
+  * :ref:`netconf-user-guide`
 
 * **Developer Guide(s):**
 
-  * `Netconf developer guide <http://docs.opendaylight.org/en/latest/developer-guide/netconf-developer-guide.html>`_
+  * :ref:`netconf-dev-guide`
 
 Security Considerations
 =======================
@@ -142,8 +142,8 @@ Migration
 
   Yes, no specific steps needed apart from migrating netconf's topology configuration from DS.
 
-Compatiblity
-------------
+Compatibility
+-------------
 
 * Is this release compatible with the previous release?
 
@@ -153,7 +153,7 @@ Compatiblity
 
   No
 
-* Any configuraiton changes?
+* Any configuration changes?
 
   md-sal netconf northbound is started via blueprint instead of config subsystem.
 

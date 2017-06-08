@@ -70,8 +70,8 @@ Migration
 
   * LISP Flow Mapping service will auto-populate the datastructures from existing MD-SAL data upon service start if the data has already been migrated separately.
 
-Compatiblity
-------------
+Compatibility
+-------------
 
 * Is this release compatible with the previous release?
 
@@ -81,7 +81,7 @@ Compatiblity
 
   * No
 
-* Any configuraiton changes?
+* Any configuration changes?
 
   * No
 

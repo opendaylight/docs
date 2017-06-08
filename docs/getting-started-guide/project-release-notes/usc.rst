@@ -40,11 +40,11 @@ document is under review, provide a link to the change in Gerrit.
 
 * **User Guide(s):**
 
-  * `USC User Guide <http://docs.opendaylight.org/en/latest/user-guide/unified-secure-channel.html>`_
+  * :ref:`usc-user-guide`
 
 * **Developer Guide(s):**
 
-  * `USC Developer Guide <http://docs.opendaylight.org/en/latest/developer-guide/unified-secure-channel.html>`_
+  * :ref:`usc-dev-guide`
 
 Security Considerations
 =======================
@@ -69,8 +69,8 @@ Migration
 
 * Nothing beyond general Carbon migration requirements.
 
-Compatiblity
-------------
+Compatibility
+-------------
 
 * Nothing beyond general Carbon compatibility constraints.
 

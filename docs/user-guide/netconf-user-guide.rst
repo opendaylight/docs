@@ -1,3 +1,5 @@
+.. _netconf-user-guide:
+
 NETCONF User Guide
 ==================
 

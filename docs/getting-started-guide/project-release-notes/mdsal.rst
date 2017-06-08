@@ -8,7 +8,7 @@ Major Features
 odl-mdsal-binding
 -----------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=mdsal.git;a=blob;f=common/features/features-mdsal/src/main/features/features.xml;h=d41e7fd1e56cfe91934a5c077719ce4cb438b3ef;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=mdsal.git;a=blob;f=common/features/features-mdsal/src/main/features/features.xml;hb=refs/heads/stable/carbon
 * **Feature Description:** MDSAL Binding layer, representing mapping of YANG modeled data to respective Java Objects
 * **Top Level:** Yes
 * **User Facing:** No
@@ -17,7 +17,7 @@ odl-mdsal-binding
 
 odl-mdsal-binding2
 ------------------
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=mdsal.git;a=blob;f=common/features/features-mdsal/src/main/features/features.xml;h=d41e7fd1e56cfe91934a5c077719ce4cb438b3ef;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=mdsal.git;a=blob;f=common/features/features-mdsal/src/main/features/features.xml;hb=refs/heads/stable/carbon
 * **Feature Description:** MDSAL Binding v2 layer, representing mapping of YANG modeled data to respective Java Objects
 * **Top Level:** Yes
 * **User Facing:** No
@@ -48,8 +48,8 @@ Migration
 
 * no additional steps needed for migration
 
-Compatiblity
-------------
+Compatibility
+-------------
 
 * Release is compatible with the previous one
 * No configuration changes

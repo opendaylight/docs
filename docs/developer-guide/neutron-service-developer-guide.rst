@@ -1,4 +1,4 @@
-.. neutron-service-developer-guide:
+.. _neutron-service-developer-guide:
 
 Neutron Service Developer Guide
 ===============================

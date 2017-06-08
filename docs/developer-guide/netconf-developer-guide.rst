@@ -1,3 +1,5 @@
+.. _netconf-dev-guide:
+
 NETCONF Developer Guide
 =======================
 

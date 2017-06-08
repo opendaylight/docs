@@ -1,12 +1,12 @@
 ============
 Topology Processing Framework
-============
+=============================
 
 Major Features
 ==============
 
-odl-topoprocessing-framewrok
-------------
+odl-topoprocessing-framework
+----------------------------
 
 * **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=topoprocessing.git;a=blob;f=features/src/main/resources/features.xml;hb=refs/heads/stable/carbon
 * **Feature Description:**  Topology processing core
@@ -16,7 +16,7 @@ odl-topoprocessing-framewrok
 * **CSIT Test:** https://jenkins.opendaylight.org/releng/view/topoprocessing/job/topoprocessing-csit-1node-topology-operations-all-carbon/
 
 odl-topoprocessing-mlmt
-------------
+-----------------------
 
 * **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=topoprocessing.git;a=blob;f=features/src/main/resources/features.xml;hb=refs/heads/stable/carbon
 * **Feature Description:**  Multi-Layer and Multi-Technology (MLMT) module
@@ -26,7 +26,7 @@ odl-topoprocessing-mlmt
 * **CSIT Test:** https://jenkins.opendaylight.org/releng/view/topoprocessing/job/topoprocessing-csit-1node-topology-operations-all-carbon/
 
 odl-topoprocessing-network-topology
-------------
+-----------------------------------
 
 * **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=topoprocessing.git;a=blob;f=features/src/main/resources/features.xml;hb=refs/heads/stable/carbon
 * **Feature Description:**  Support for network-topology model
@@ -36,7 +36,7 @@ odl-topoprocessing-network-topology
 * **CSIT Test:** https://jenkins.opendaylight.org/releng/view/topoprocessing/job/topoprocessing-csit-1node-topology-operations-all-carbon/
 
 odl-topoprocessing-inventory
-------------
+----------------------------
 
 * **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=topoprocessing.git;a=blob;f=features/src/main/resources/features.xml;hb=refs/heads/stable/carbon
 * **Feature Description:**  Support for inventory model
@@ -46,7 +46,7 @@ odl-topoprocessing-inventory
 * **CSIT Test:** https://jenkins.opendaylight.org/releng/view/topoprocessing/job/topoprocessing-csit-1node-topology-operations-all-carbon/
 
 odl-topoprocessing-I2rs
-------------
+-----------------------
 
 * **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=topoprocessing.git;a=blob;f=features/src/main/resources/features.xml;hb=refs/heads/stable/carbon
 * **Feature Description:**  Support for i2rs model
@@ -56,7 +56,7 @@ odl-topoprocessing-I2rs
 * **CSIT Test:** https://jenkins.opendaylight.org/releng/view/topoprocessing/job/topoprocessing-csit-1node-topology-operations-all-carbon/
 
 odl-topoprocessing-inventory-rendering
-------------
+--------------------------------------
 
 * **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=topoprocessing.git;a=blob;f=features/src/main/resources/features.xml;hb=refs/heads/stable/carbon
 * **Feature Description:**  Rendering demo
@@ -70,8 +70,7 @@ Documentation
 
 * **Developer Guide(s):**
 
-  * `Docs on docs.opendaylight.org <http://docs.opendaylight.org/en/latest/developer-guide/topology-processing-framework-developer-guide.html>`_
-  * `Rst documentation <https://git.opendaylight.org/gerrit/gitweb?p=docs.git;a=blob;f=docs/developer-guide/topology-processing-framework-developer-guide.rst;hb=refs/heads/stable/carbon>`_
+  * :ref:`topoprocessing-dev-guide`
   * `Wiki <https://wiki.opendaylight.org/view/Topology_Processing_Framework:Developer_Guide>`_
 
 Security Considerations
@@ -91,8 +90,8 @@ Migration
 
 * Not supported
 
-Compatiblity
-------------
+Compatibility
+-------------
 
 * Compatible
 

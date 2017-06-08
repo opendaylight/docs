@@ -51,12 +51,12 @@ Migration
 
 * Not applicable as there is no previous release.
 
-Compatiblity
-------------
+Compatibility
+-------------
 
 * Is this release compatible with the previous release? No previous release.
 * Any API changes? No.
-* Any configuraiton changes? No.
+* Any configuration changes? No.
 
 Bugs Fixed
 ----------
