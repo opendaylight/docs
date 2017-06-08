@@ -1,3 +1,5 @@
+.. _ofconfig-user-guide:
+
 OF-CONFIG User Guide
 ====================
 
