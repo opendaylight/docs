@@ -1,3 +1,5 @@
+.. _netide-user-guide:
+
 NetIDE User Guide
 =================
 

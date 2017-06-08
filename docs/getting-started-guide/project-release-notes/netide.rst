@@ -49,11 +49,11 @@ Documentation
 
 * **User Guide(s):**
 
-  * `NetIDE User Guide <http://docs.opendaylight.org/en/stable-boron/user-guide/netide-user-guide.html>`_
+  * :ref:`netide-user-guide`
 
 * **Developer Guide(s):**
 
-  * `NetIDE Developer Guide <http://docs.opendaylight.org/en/stable-boron/developer-guide/netide-developer-guide.html>`_
+  * :ref:`netide-dev-guide`
 
 Security Considerations
 =======================
