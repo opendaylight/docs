@@ -40,22 +40,22 @@ To run the Karaf distribution:
 
 For Example::
 
-   $ ls distribution-karaf-0.6.x-Carbon.zip
-   distribution-karaf-0.6.x-Carbon.zip
-   $ unzip distribution-karaf-0.6.x-Carbon.zip
-   Archive:  distribution-karaf-0.6.x-Carbon.zip
-      creating: distribution-karaf-0.6.x-Carbon/
-      creating: distribution-karaf-0.6.x-Carbon/configuration/
-      creating: distribution-karaf-0.6.x-Carbon/data/
-      creating: distribution-karaf-0.6.x-Carbon/data/tmp/
-      creating: distribution-karaf-0.6.x-Carbon/deploy/
-      creating: distribution-karaf-0.6.x-Carbon/etc/
-      creating: distribution-karaf-0.6.x-Carbon/externalapps/
+   $ ls distribution-karaf-0.7.x-Nitrogen.zip
+   distribution-karaf-0.7.x-Nitrogen.zip
+   $ unzip distribution-karaf-0.7.x-Nitrogen.zip
+   Archive:  distribution-karaf-0.7.x-Nitrogen.zip
+      creating: distribution-karaf-0.7.x-Nitrogen/
+      creating: distribution-karaf-0.7.x-Nitrogen/configuration/
+      creating: distribution-karaf-0.7.x-Nitrogen/data/
+      creating: distribution-karaf-0.7.x-Nitrogen/data/tmp/
+      creating: distribution-karaf-0.7.x-Nitrogen/deploy/
+      creating: distribution-karaf-0.7.x-Nitrogen/etc/
+      creating: distribution-karaf-0.7.x-Nitrogen/externalapps/
       ...
-      inflating: distribution-karaf-0.6.x-Carbon/bin/start.bat
-      inflating: distribution-karaf-0.6.x-Carbon/bin/status.bat
-      inflating: distribution-karaf-0.6.x-Carbon/bin/stop.bat
-   $ cd distribution-karaf-0.6.x-Carbon
+      inflating: distribution-karaf-0.7.x-Nitrogen/bin/start.bat
+      inflating: distribution-karaf-0.7.x-Nitrogen/bin/status.bat
+      inflating: distribution-karaf-0.7.x-Nitrogen/bin/stop.bat
+   $ cd distribution-karaf-0.7.x-Nitrogen
    $ ./bin/karaf
 
        ________                       ________                .__  .__       .__     __
