@@ -46,6 +46,30 @@
       "revId": "126999df884bbbbe65ecd02bb433fe1faf147677",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afa9182_29eeec88",
+        "filename": "docs/release-process/simultaneous-release.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-06-09T17:04:38Z",
+      "side": 1,
+      "message": "I don\u0027t think log archives is an official location to tell the end user to look for release notes. It\u0027s just for devs.\n\nBut after seeing this patch from Colin I understand where release notes really go now.\n\nhttps://git.opendaylight.org/gerrit/58519\n\nWe should make the release job push a patch automatically to docs when it runs to update the release notes.",
+      "parentUuid": "3afa9182_6f365005",
+      "range": {
+        "startLine": 105,
+        "startChar": 49,
+        "endLine": 105,
+        "endChar": 66
+      },
+      "revId": "126999df884bbbbe65ecd02bb433fe1faf147677",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
