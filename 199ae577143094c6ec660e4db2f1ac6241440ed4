@@ -1,0 +1,318 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afa9182_acee6aea",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1106,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-06-09T20:22:41Z",
+      "side": 1,
+      "message": "belongs",
+      "range": {
+        "startLine": 1106,
+        "startChar": 64,
+        "endLine": 1106,
+        "endChar": 70
+      },
+      "revId": "199ae577143094c6ec660e4db2f1ac6241440ed4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afa9182_ecbfd2ce",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1106,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-06-09T20:22:41Z",
+      "side": 1,
+      "message": "is there a reason to switch genders in the middle?",
+      "range": {
+        "startLine": 1106,
+        "startChar": 32,
+        "endLine": 1106,
+        "endChar": 35
+      },
+      "revId": "199ae577143094c6ec660e4db2f1ac6241440ed4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afa9182_ccf136cf",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1106,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-06-09T20:22:41Z",
+      "side": 1,
+      "message": ", such as",
+      "range": {
+        "startLine": 1106,
+        "startChar": 16,
+        "endLine": 1106,
+        "endChar": 19
+      },
+      "revId": "199ae577143094c6ec660e4db2f1ac6241440ed4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afa9182_acc5ca5c",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1120,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-06-09T20:22:41Z",
+      "side": 1,
+      "message": "Is there a logic to what commands you need a password for? Assuming these docs are right, you can create a new user with the admin role and without needing admin credentials, and then you could use them to execute all the other commands.\n\nIs that a flaw in the docs or the actual implementation?",
+      "range": {
+        "startLine": 1119,
+        "startChar": 76,
+        "endLine": 1120,
+        "endChar": 70
+      },
+      "revId": "199ae577143094c6ec660e4db2f1ac6241440ed4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afa9182_4cb546ed",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1127,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-06-09T20:22:41Z",
+      "side": 1,
+      "message": "I don\u0027t understand what these two lines are trying to say...",
+      "range": {
+        "startLine": 1126,
+        "startChar": 0,
+        "endLine": 1127,
+        "endChar": 9
+      },
+      "revId": "199ae577143094c6ec660e4db2f1ac6241440ed4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afa9182_2cba7ade",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1142,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-06-09T20:22:41Z",
+      "side": 1,
+      "message": "user\u0027s",
+      "range": {
+        "startLine": 1142,
+        "startChar": 67,
+        "endLine": 1142,
+        "endChar": 72
+      },
+      "revId": "199ae577143094c6ec660e4db2f1ac6241440ed4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afa9182_6ccbe272",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1175,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-06-09T20:22:41Z",
+      "side": 1,
+      "message": "I still don\u0027t really understand what this means.\n\nI\u0027m guessing from context that it means it will ask for a a username and password with the admin role.",
+      "range": {
+        "startLine": 1174,
+        "startChar": 0,
+        "endLine": 1175,
+        "endChar": 9
+      },
+      "revId": "199ae577143094c6ec660e4db2f1ac6241440ed4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afa9182_0ca21eae",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1181,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-06-09T20:22:41Z",
+      "side": 1,
+      "message": "What happens if you remove a role which some users have? Will it stop you? Just remove it from the users? Is that well documented when you actually run the command so not needed here?",
+      "revId": "199ae577143094c6ec660e4db2f1ac6241440ed4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afa9182_eca6b2c0",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1222,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-06-09T20:22:41Z",
+      "side": 1,
+      "message": "I don\u0027t know what adding a grant really means. It\u0027s not defined elsewhere as far as I can tell either.",
+      "revId": "199ae577143094c6ec660e4db2f1ac6241440ed4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afa9182_2cb1daf8",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1246,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-06-09T20:22:41Z",
+      "side": 1,
+      "message": "What would you do with this cert req?",
+      "revId": "199ae577143094c6ec660e4db2f1ac6241440ed4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afa9182_8c956e42",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1267,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-06-09T20:22:41Z",
+      "side": 1,
+      "message": "What certificate is this? What\u0027s it used for?",
+      "revId": "199ae577143094c6ec660e4db2f1ac6241440ed4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afa9182_cc9f765e",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1291,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-06-09T20:22:41Z",
+      "side": 1,
+      "message": "Does everyone comply with this or is there some effort projects have to go through. What should a user expect this actually does.",
+      "revId": "199ae577143094c6ec660e4db2f1ac6241440ed4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afa9182_ac9caa6a",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1305,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-06-09T20:22:41Z",
+      "side": 1,
+      "message": "Same question as above. What does this apply to what can users expect?",
+      "revId": "199ae577143094c6ec660e4db2f1ac6241440ed4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afa9182_4c838604",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1355,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-06-09T20:22:41Z",
+      "side": 1,
+      "message": "Does this work if you only want to import some of this data?",
+      "revId": "199ae577143094c6ec660e4db2f1ac6241440ed4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afa9182_2c88ba1e",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1365,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-06-09T20:22:41Z",
+      "side": 1,
+      "message": "Is there a reason the keystore has an alias, but not the trust keystore?",
+      "revId": "199ae577143094c6ec660e4db2f1ac6241440ed4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afa9182_0c897e26",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1369,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-06-09T20:22:41Z",
+      "side": 1,
+      "message": "This should maybe be important, or warning, or caution. See:\nhttp://docutils.sourceforge.net/docs/ref/rst/directives.html#admonitions",
+      "revId": "199ae577143094c6ec660e4db2f1ac6241440ed4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
