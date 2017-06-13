@@ -6,13 +6,11 @@ TMP_ROBOT_DIR=`pwd`/_build/robot
 mkdir -p $ROBOT_DIR $TMP_ROBOT_DIR
 cd submodules/integration/test/csit/libraries
 for f in *.robot; do
-    python -m robot.libdoc $f $TMP_ROBOT_DIR/$f.html &
+    python -m robot.libdoc $f $TMP_ROBOT_DIR/$f.html
 done
-wait
 for f in *.py; do
-    python -m robot.libdoc $f $TMP_ROBOT_DIR/$f.html > /dev/null 2>&1 &
+    python -m robot.libdoc $f $TMP_ROBOT_DIR/$f.html > /dev/null 2>&1
 done
-wait
 
 cd $TMP_ROBOT_DIR/
 echo "<html><body><ul>" > $ROBOT_DIR/index.html
