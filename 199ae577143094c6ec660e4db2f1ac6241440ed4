@@ -71,6 +71,30 @@
     },
     {
       "key": {
+        "uuid": "1af78d9a_32f154ce",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1106,
+      "author": {
+        "id": 5861
+      },
+      "writtenOn": "2017-06-14T23:13:33Z",
+      "side": 1,
+      "message": "I rephrased the sentence.",
+      "parentUuid": "3afa9182_ecbfd2ce",
+      "range": {
+        "startLine": 1106,
+        "startChar": 32,
+        "endLine": 1106,
+        "endChar": 35
+      },
+      "revId": "199ae577143094c6ec660e4db2f1ac6241440ed4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afa9182_acc5ca5c",
         "filename": "docs/user-guide/authentication-and-authorization-services.rst",
         "patchSetId": 7
@@ -82,6 +106,30 @@
       "writtenOn": "2017-06-09T20:22:41Z",
       "side": 1,
       "message": "Is there a logic to what commands you need a password for? Assuming these docs are right, you can create a new user with the admin role and without needing admin credentials, and then you could use them to execute all the other commands.\n\nIs that a flaw in the docs or the actual implementation?",
+      "range": {
+        "startLine": 1119,
+        "startChar": 76,
+        "endLine": 1120,
+        "endChar": 70
+      },
+      "revId": "199ae577143094c6ec660e4db2f1ac6241440ed4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1af78d9a_267c7920",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1120,
+      "author": {
+        "id": 5861
+      },
+      "writtenOn": "2017-06-14T23:13:33Z",
+      "side": 1,
+      "message": "The system actually asks for admin credentials and keeps the user authenticate until his session expires. It is a flaw in the docs.",
+      "parentUuid": "3afa9182_acc5ca5c",
       "range": {
         "startLine": 1119,
         "startChar": 76,
@@ -117,6 +165,30 @@
     },
     {
       "key": {
+        "uuid": "1af78d9a_4673854d",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1127,
+      "author": {
+        "id": 5861
+      },
+      "writtenOn": "2017-06-14T23:13:33Z",
+      "side": 1,
+      "message": "These is the current list of available users.",
+      "parentUuid": "3afa9182_4cb546ed",
+      "range": {
+        "startLine": 1126,
+        "startChar": 0,
+        "endLine": 1127,
+        "endChar": 9
+      },
+      "revId": "199ae577143094c6ec660e4db2f1ac6241440ed4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afa9182_2cba7ade",
         "filename": "docs/user-guide/authentication-and-authorization-services.rst",
         "patchSetId": 7
@@ -128,6 +200,30 @@
       "writtenOn": "2017-06-09T20:22:41Z",
       "side": 1,
       "message": "user\u0027s",
+      "range": {
+        "startLine": 1142,
+        "startChar": 67,
+        "endLine": 1142,
+        "endChar": 72
+      },
+      "revId": "199ae577143094c6ec660e4db2f1ac6241440ed4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1af78d9a_86944d38",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1142,
+      "author": {
+        "id": 5861
+      },
+      "writtenOn": "2017-06-14T23:13:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3afa9182_2cba7ade",
       "range": {
         "startLine": 1142,
         "startChar": 67,
@@ -163,6 +259,30 @@
     },
     {
       "key": {
+        "uuid": "1af78d9a_e699d16f",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1175,
+      "author": {
+        "id": 5861
+      },
+      "writtenOn": "2017-06-14T23:13:33Z",
+      "side": 1,
+      "message": "This is the output of the command, so those are the current roles available on the system.",
+      "parentUuid": "3afa9182_6ccbe272",
+      "range": {
+        "startLine": 1174,
+        "startChar": 0,
+        "endLine": 1175,
+        "endChar": 9
+      },
+      "revId": "199ae577143094c6ec660e4db2f1ac6241440ed4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afa9182_0ca21eae",
         "filename": "docs/user-guide/authentication-and-authorization-services.rst",
         "patchSetId": 7
@@ -174,6 +294,24 @@
       "writtenOn": "2017-06-09T20:22:41Z",
       "side": 1,
       "message": "What happens if you remove a role which some users have? Will it stop you? Just remove it from the users? Is that well documented when you actually run the command so not needed here?",
+      "revId": "199ae577143094c6ec660e4db2f1ac6241440ed4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1af78d9a_66ade188",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1181,
+      "author": {
+        "id": 5861
+      },
+      "writtenOn": "2017-06-14T23:13:33Z",
+      "side": 1,
+      "message": "The\nrole will be removed from those users who have it.",
+      "parentUuid": "3afa9182_0ca21eae",
       "revId": "199ae577143094c6ec660e4db2f1ac6241440ed4",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -197,6 +335,24 @@
     },
     {
       "key": {
+        "uuid": "1af78d9a_e6b0b1df",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1222,
+      "author": {
+        "id": 5861
+      },
+      "writtenOn": "2017-06-14T23:13:33Z",
+      "side": 1,
+      "message": "It is the entity associating a user with his role and domain. You are right, it is not explained anywhere, now it is added to the list of terms and definitions.",
+      "parentUuid": "3afa9182_eca6b2c0",
+      "revId": "199ae577143094c6ec660e4db2f1ac6241440ed4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afa9182_2cb1daf8",
         "filename": "docs/user-guide/authentication-and-authorization-services.rst",
         "patchSetId": 7
@@ -208,6 +364,24 @@
       "writtenOn": "2017-06-09T20:22:41Z",
       "side": 1,
       "message": "What would you do with this cert req?",
+      "revId": "199ae577143094c6ec660e4db2f1ac6241440ed4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1af78d9a_c6b5b5ce",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1246,
+      "author": {
+        "id": 5861
+      },
+      "writtenOn": "2017-06-14T23:13:33Z",
+      "side": 1,
+      "message": "Mohamed might add more on this, but I think we are asking the system to generate a new certificate so that we might, for example, export it to other systems.",
+      "parentUuid": "3afa9182_2cb1daf8",
       "revId": "199ae577143094c6ec660e4db2f1ac6241440ed4",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -231,6 +405,24 @@
     },
     {
       "key": {
+        "uuid": "1af78d9a_26cab94f",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1267,
+      "author": {
+        "id": 5861
+      },
+      "writtenOn": "2017-06-14T23:13:33Z",
+      "side": 1,
+      "message": "Here we just want the Controller to show a specific certificate so we could, for example, export it to other systems by cutting and paste.",
+      "parentUuid": "3afa9182_8c956e42",
+      "revId": "199ae577143094c6ec660e4db2f1ac6241440ed4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afa9182_cc9f765e",
         "filename": "docs/user-guide/authentication-and-authorization-services.rst",
         "patchSetId": 7
@@ -242,6 +434,24 @@
       "writtenOn": "2017-06-09T20:22:41Z",
       "side": 1,
       "message": "Does everyone comply with this or is there some effort projects have to go through. What should a user expect this actually does.",
+      "revId": "199ae577143094c6ec660e4db2f1ac6241440ed4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1af78d9a_66c4c140",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1291,
+      "author": {
+        "id": 5861
+      },
+      "writtenOn": "2017-06-14T23:13:33Z",
+      "side": 1,
+      "message": "I do not understand your question, but I guess that the original intention of this command is just to show which are the available cipher suites installed on the system.",
+      "parentUuid": "3afa9182_cc9f765e",
       "revId": "199ae577143094c6ec660e4db2f1ac6241440ed4",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -265,6 +475,24 @@
     },
     {
       "key": {
+        "uuid": "1af78d9a_a6dd0917",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1305,
+      "author": {
+        "id": 5861
+      },
+      "writtenOn": "2017-06-14T23:13:33Z",
+      "side": 1,
+      "message": "Just showing the TLS protocols available on the Controller.",
+      "parentUuid": "3afa9182_ac9caa6a",
+      "revId": "199ae577143094c6ec660e4db2f1ac6241440ed4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afa9182_4c838604",
         "filename": "docs/user-guide/authentication-and-authorization-services.rst",
         "patchSetId": 7
@@ -276,6 +504,24 @@
       "writtenOn": "2017-06-09T20:22:41Z",
       "side": 1,
       "message": "Does this work if you only want to import some of this data?",
+      "revId": "199ae577143094c6ec660e4db2f1ac6241440ed4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1af78d9a_c603f571",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1355,
+      "author": {
+        "id": 5861
+      },
+      "writtenOn": "2017-06-14T23:13:33Z",
+      "side": 1,
+      "message": "No, although the cipher suites are really optional.",
+      "parentUuid": "3afa9182_4c838604",
       "revId": "199ae577143094c6ec660e4db2f1ac6241440ed4",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -299,6 +545,24 @@
     },
     {
       "key": {
+        "uuid": "1af78d9a_26f8f97b",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1365,
+      "author": {
+        "id": 5861
+      },
+      "writtenOn": "2017-06-14T23:13:33Z",
+      "side": 1,
+      "message": "No.",
+      "parentUuid": "3afa9182_2c88ba1e",
+      "revId": "199ae577143094c6ec660e4db2f1ac6241440ed4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afa9182_0c897e26",
         "filename": "docs/user-guide/authentication-and-authorization-services.rst",
         "patchSetId": 7
@@ -310,6 +574,24 @@
       "writtenOn": "2017-06-09T20:22:41Z",
       "side": 1,
       "message": "This should maybe be important, or warning, or caution. See:\nhttp://docutils.sourceforge.net/docs/ref/rst/directives.html#admonitions",
+      "revId": "199ae577143094c6ec660e4db2f1ac6241440ed4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1af78d9a_06f5fd82",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1369,
+      "author": {
+        "id": 5861
+      },
+      "writtenOn": "2017-06-14T23:13:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3afa9182_0c897e26",
       "revId": "199ae577143094c6ec660e4db2f1ac6241440ed4",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
