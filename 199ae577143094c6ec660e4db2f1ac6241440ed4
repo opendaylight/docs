@@ -388,6 +388,24 @@
     },
     {
       "key": {
+        "uuid": "1af78d9a_9a4dba75",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1246,
+      "author": {
+        "id": 4013
+      },
+      "writtenOn": "2017-06-15T15:28:07Z",
+      "side": 1,
+      "message": "in order to sign the ODL certificate by a CA, you need signing certificate request. The admin should be able to copy this certificate request and in manual procedures sign it by a CA and import it back to the ODL-keystore.",
+      "parentUuid": "1af78d9a_c6b5b5ce",
+      "revId": "199ae577143094c6ec660e4db2f1ac6241440ed4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afa9182_8c956e42",
         "filename": "docs/user-guide/authentication-and-authorization-services.rst",
         "patchSetId": 7
