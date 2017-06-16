@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1af78d9a_06517d62",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-06-16T13:46:43Z",
+      "side": 1,
+      "message": "I\u0027m still not 100% sure what this is. It just the concept that domain X grants user Y the role Z so that X has role Z in organization Y? Aren\u0027t users inherently rooted in a domain?",
+      "revId": "5aa25f10a953d5fa59bd3d6e2109144af30ae383",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1af78d9a_a6606936",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 1172,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-06-16T13:46:43Z",
+      "side": 1,
+      "message": "This is in the wrong place. Should be in the next command.",
+      "revId": "5aa25f10a953d5fa59bd3d6e2109144af30ae383",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1af78d9a_86cc4d37",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 1250,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-06-16T13:46:43Z",
+      "side": 1,
+      "message": "I would still like to know what somebody would do with this, but we don\u0027t need to block on it.",
+      "revId": "5aa25f10a953d5fa59bd3d6e2109144af30ae383",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1af78d9a_e6d1d1ce",
+        "filename": "docs/user-guide/authentication-and-authorization-services.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 1272,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-06-16T13:46:43Z",
+      "side": 1,
+      "message": "I\u0027d really like to give an example of what somebody might actually do, e.g., paste it into OVS or something?",
+      "revId": "5aa25f10a953d5fa59bd3d6e2109144af30ae383",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
