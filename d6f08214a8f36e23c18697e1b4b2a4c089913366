@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1af78d9a_8cf29a98",
+        "filename": "docs/release-process/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-06-20T18:13:56Z",
+      "side": 1,
+      "message": "This grouping is visible only in the text .rst file, did you want to call it out in a way that was visible in the html/pdf too?",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 21
+      },
+      "revId": "d6f08214a8f36e23c18697e1b4b2a4c089913366",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1af78d9a_6cef6eb1",
+        "filename": "docs/release-process/project-release.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-06-20T18:13:56Z",
+      "side": 1,
+      "message": "Do we also have a versions.csv file that gets created?",
+      "revId": "d6f08214a8f36e23c18697e1b4b2a4c089913366",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
