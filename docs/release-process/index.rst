@@ -17,9 +17,12 @@ Processes
 .. toctree::
    :maxdepth: 1
 
+   project-release
+   namespace
+
+   .. Simultanious Release Related
    autorelease
    project-lifecycle
-   namespace
    branch-cutting
    simultaneous-release
    milestone-readouts
@@ -32,4 +35,3 @@ The release management team maintains several documents in Google Drive to
 track releases. These documents can be found at this link:
 
 https://drive.google.com/drive/folders/0ByPlysxjHHJaUXdfRkJqRGo4aDg
-
