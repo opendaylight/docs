@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "fa2559ec_802b9f2f",
+        "filename": "docs/developer-guide/controller.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 903,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2017-06-22T16:54:47Z",
+      "side": 1,
+      "message": "See TransactionChain javadocs, they are explaining the timeline thing. It is rarely the case that you can:\n- peek into the future\n- can afford to block processing until submit completes",
+      "parentUuid": "fa2559ec_6504bd7e",
+      "revId": "45e5c7ffaec7e76497de10ff4de33effb1732325",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa2559ec_4509b994",
         "filename": "docs/developer-guide/controller.rst",
         "patchSetId": 1
@@ -47,6 +65,24 @@
       "writtenOn": "2017-06-22T15:13:20Z",
       "side": 1,
       "message": "?",
+      "revId": "45e5c7ffaec7e76497de10ff4de33effb1732325",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa2559ec_20f113ce",
+        "filename": "docs/developer-guide/controller.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 905,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2017-06-22T16:54:47Z",
+      "side": 1,
+      "message": "https://github.com/opendaylight/controller/blob/master/opendaylight/md-sal/sal-dom-broker/src/main/java/org/opendaylight/controller/md/sal/dom/broker/impl/PingPongTransactionChain.java#L43\n\nEffectively batches transactions into chunks based on how quickly they can be committed -- no matter what churn you are doing in the app, you will always have at most two transactions in the system: one committing and one being filled.",
+      "parentUuid": "fa2559ec_4509b994",
       "revId": "45e5c7ffaec7e76497de10ff4de33effb1732325",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
