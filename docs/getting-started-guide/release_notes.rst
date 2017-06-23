@@ -1611,3 +1611,243 @@ YANG Tools
 * `1fd63e <https://git.opendaylight.org/gerrit/#/q/1fd63e4e1c78822abbc105ed2b8f348e9651e10f>`_ `BUG-7161 <https://bugs.opendaylight.org/show_bug.cgi?id=7161>`_: Do not tolerate source-level exceptions
 * `cf0eb8 <https://git.opendaylight.org/gerrit/#/q/cf0eb84c185ebd032d41e453c21e6aa709c0776b>`_ `BUG-7267 <https://bugs.opendaylight.org/show_bug.cgi?id=7267>`_: catch null path offenders
 
+Boron-SR4 Release Notes
+=======================
+
+This page details changes and bug fixes between the Boron Stability Release 3 (Boron-SR3) and the Boron Stability Release 4 (Boron-SR4) of OpenDaylight.
+
+Projects with No Noteworthy Changes
+-----------------------------------
+
+The following projects had no noteworthy changes in the Boron-SR4 Release:
+
+* Atrium Router
+* Authentication, Authorization and Accounting (AAA)
+* Cardinal
+* Centinel
+* Control And Provisioning of Wireless Access Points (CAPWAP)
+* Controller Shield
+* DLUX
+* Device Identification and Driver Management (DIDM)
+* Energy Management Plugin
+* Fabric As A Service (FaaS)
+* Group Based Policy (GBP)
+* Honeycomb Virtual Bridge Domain
+* Infrastructure Utilities
+* Internet of Things Data Management (IoTDM)
+* L2 Switch
+* LISP Flow Mapping
+* Link Aggregation Control Protocol (LACP)
+* NAT Application Plugin
+* NEtwork MOdeling (NEMO)
+* NeXt UI Toolkit
+* NetIDE
+* Network Intent Composition (NIC)
+* Neutron Northbound
+* ORI C&M Protocol (OCP)
+* OpenFlow Configuration Protocol (OF-CONFIG)
+* OpenFlow Protocol Library
+* Packet Cable/PCMM
+* SDN Interface Application (SDNi)
+* SNMP Plugin
+* SNMP4SDN
+* Secure Network Bootstrapping Infrastructure (SNBI)
+* Service Function Chaining
+* Table Type Patterns (TTP)
+* Time Series Data Repository (TSDR)
+* Topology Processing Framework
+* Unified Secure Channel (USC)
+* User Network Interface Manager (UNIMGR)
+* YANG PUBSUB
+
+ALTO
+----
+* `4f45d0 <https://git.opendaylight.org/gerrit/#/q/4f45d078faaf4c9fb3508c019519e6d036e0b342>`_ Fix yang model validity
+
+BGP PCEP
+--------
+* `e5ec0b <https://git.opendaylight.org/gerrit/#/q/e5ec0b2550df1084588006d0e89d1b9164b21328>`_ `BUG-8292 <https://bugs.opendaylight.org/show_bug.cgi?id=8292>`_ Fix BGP flowspec NLRI length read
+* `83214e <https://git.opendaylight.org/gerrit/#/q/83214ec093fa10b5b12157560ff994f85f874dda>`_ `BUG-8548 <https://bugs.opendaylight.org/show_bug.cgi?id=8548>`_: Pass missing parameter to
+* `2801f2 <https://git.opendaylight.org/gerrit/#/q/2801f2b71ca49dcee50b643ef5ed4f53938609fc>`_ `BUG-8156 <https://bugs.opendaylight.org/show_bug.cgi?id=8156>`_ Fix PCEP topology registration
+* `4b1b55 <https://git.opendaylight.org/gerrit/#/q/4b1b55c3b2a28df1de05887e0e1abed7855bc95c>`_ Fix RD pattern in RouteDistinguisherBuilder
+* `042b3e <https://git.opendaylight.org/gerrit/#/q/042b3e5ff2fd7371342693948a282546c2a6165a>`_ `BUG-4491 <https://bugs.opendaylight.org/show_bug.cgi?id=4491>`_: Race condition under PCEP Topology Provider
+* `859728 <https://git.opendaylight.org/gerrit/#/q/8597287b7fbffbe1b7eec154812f89509a397102>`_ `BUG-8306 <https://bugs.opendaylight.org/show_bug.cgi?id=8306>`_: Fix Pcep failing test
+* `c99daf <https://git.opendaylight.org/gerrit/#/q/c99dafd24386a2ed1d12b972c6e6229877176e24>`_ `BUG-8202 <https://bugs.opendaylight.org/show_bug.cgi?id=8202>`_: Fix Conflict Modification on odl-programming
+* `732599 <https://git.opendaylight.org/gerrit/#/q/7325992cf67b8190cd22f1aa3b3285754def18dc>`_ `BUG-8275 <https://bugs.opendaylight.org/show_bug.cgi?id=8275>`_: Close ReadOnly transaction
+* `c3c46c <https://git.opendaylight.org/gerrit/#/q/c3c46c780c191c0a93ab77e4b5cb2066085cd832>`_ `BUG-8198 <https://bugs.opendaylight.org/show_bug.cgi?id=8198>`_: Fix InferenceException
+* `66199e <https://git.opendaylight.org/gerrit/#/q/66199e71903bdec43d8753287a7c594bde59a19d>`_ `BUG-8252 <https://bugs.opendaylight.org/show_bug.cgi?id=8252>`_ Fix IP prefix length util
+* `a41992 <https://git.opendaylight.org/gerrit/#/q/a419922b34fc1a1b1f896fd4bfcaacb1b39a8d08>`_ `BUG-6973 <https://bugs.opendaylight.org/show_bug.cgi?id=6973>`_: Implement test for InstructionDeployer
+* `85bc55 <https://git.opendaylight.org/gerrit/#/q/85bc555fe0329b8ff301ab9d317ee331406ccdf6>`_ Rework CheckUtil Test
+* `24ecbf <https://git.opendaylight.org/gerrit/#/q/24ecbf1bc54c9f75a66d514b67bc3c22b34d998f>`_ `BUG-8007 <https://bugs.opendaylight.org/show_bug.cgi?id=8007>`_: Code Clean Up
+* `036b01 <https://git.opendaylight.org/gerrit/#/q/036b018b24c065f3e9cda42d53b5d8a63773f951>`_ `BUG-8007 <https://bugs.opendaylight.org/show_bug.cgi?id=8007>`_: Code clean Up
+* `560438 <https://git.opendaylight.org/gerrit/#/q/5604385a16f8b0080fd3c859d2268d45b816c3eb>`_ `BUG-8007 <https://bugs.opendaylight.org/show_bug.cgi?id=8007>`_: Code Clean Up
+* `7576c5 <https://git.opendaylight.org/gerrit/#/q/7576c5924cc21997ff456635659f5c7c162f2804>`_ `BUG-8007 <https://bugs.opendaylight.org/show_bug.cgi?id=8007>`_: Code clean up
+* `a58c6b <https://git.opendaylight.org/gerrit/#/q/a58c6bba601d090861dc3b79fd7f37e7b364441d>`_ `BUG-6975 <https://bugs.opendaylight.org/show_bug.cgi?id=6975>`_: Integrate Topology Provider with CS Service
+* `d53c03 <https://git.opendaylight.org/gerrit/#/q/d53c0309de375b68e9fa4ea9878fc6312c976c0b>`_ `BUG-6973 <https://bugs.opendaylight.org/show_bug.cgi?id=6973>`_: Wire topology-provider with BP
+* `feee36 <https://git.opendaylight.org/gerrit/#/q/feee36e9412f34d2e2c930d9e13bdc7eed6eacfe>`_ `BUG-8213 <https://bugs.opendaylight.org/show_bug.cgi?id=8213>`_: Add missing mandatory attribute on tests
+* `aa7617 <https://git.opendaylight.org/gerrit/#/q/aa76178904dc5435d9cfd6530d38ad235e8292a6>`_ `BUG-8007 <https://bugs.opendaylight.org/show_bug.cgi?id=8007>`_: Programming Clean up
+* `ac6687 <https://git.opendaylight.org/gerrit/#/q/ac6687e4092c7b27310896ae5b1b1f5d664175ec>`_ `BUG-6975 <https://bugs.opendaylight.org/show_bug.cgi?id=6975>`_: Integrate Programming with Cluster Singleton Service
+* `636a1b <https://git.opendaylight.org/gerrit/#/q/636a1b17601f5506f423286c779c84accee3a393>`_ `BUG-6973 <https://bugs.opendaylight.org/show_bug.cgi?id=6973>`_: Implement Programming config via DS
+* `fea98e <https://git.opendaylight.org/gerrit/#/q/fea98eb05cfc8d996eaca38b7fd121563b63331d>`_ `BUG-6973 <https://bugs.opendaylight.org/show_bug.cgi?id=6973>`_: Wire Programming with BP
+* `5f0f0e <https://git.opendaylight.org/gerrit/#/q/5f0f0e8fd6e12fccd621fbc8de7e8ec5bf7dd690>`_ `BUG-8203 <https://bugs.opendaylight.org/show_bug.cgi?id=8203>`_: update Netty isRoot method name
+* `6c16df <https://git.opendaylight.org/gerrit/#/q/6c16dff2e36c65b58bf0e67d3435e46bc4f6000c>`_ Restrict powermock dependency scope to test
+* `aa71d4 <https://git.opendaylight.org/gerrit/#/q/aa71d43f58dc8b5242553ecc75a196fb5c0ca5e6>`_ `BUG-7976 <https://bugs.opendaylight.org/show_bug.cgi?id=7976>`_: Race between peer removal and routes update
+
+Controller
+----------
+* `b11aa4 <https://git.opendaylight.org/gerrit/#/q/b11aa4da9a8a80025332c2f1da225e4b581176f3>`_ `BUG-8038 <https://bugs.opendaylight.org/show_bug.cgi?id=8038>`_: Ignore testLeadershipTransferOnShutdown
+* `ca7d83 <https://git.opendaylight.org/gerrit/#/q/ca7d831361dd318158b7737104a9a52d63e09944>`_ `BUG-8327 <https://bugs.opendaylight.org/show_bug.cgi?id=8327>`_: GlobalBundleScanningSchemaServiceImpl should be a proxy
+* `eff76f <https://git.opendaylight.org/gerrit/#/q/eff76fdd3d3ed3570aed964f8715312a01ef3a37>`_ `BUG-7927 <https://bugs.opendaylight.org/show_bug.cgi?id=7927>`_: stop scanning bundles on framework stop
+* `869a74 <https://git.opendaylight.org/gerrit/#/q/869a7497b9e7f6c765626848dbcc9a1f4db0a3d2>`_ Turn off visibility of GlobalBundleScanningSchemaServiceImpl#start()
+* `09f442 <https://git.opendaylight.org/gerrit/#/q/09f44218611fb5a1439d1b2c7ffef401449c354b>`_ Remove artifacts entries for long-gone RESTCONF
+* `5515ab <https://git.opendaylight.org/gerrit/#/q/5515abe04abc3913871c11b896c1c93699d9ce89>`_ Move sal-remote to sal-rest-connector
+* `8edc82 <https://git.opendaylight.org/gerrit/#/q/8edc82760c423e16da02213251b5231de59e9dc8>`_ `BUG-8219 <https://bugs.opendaylight.org/show_bug.cgi?id=8219>`_: optimize empty CompositeDataTreeCohort case
+* `1374a9 <https://git.opendaylight.org/gerrit/#/q/1374a9e6f072862b5144b7af7a5cfd078f42e31a>`_ `BUG-7783 <https://bugs.opendaylight.org/show_bug.cgi?id=7783>`_: increase precision of execution times
+* `7b9477 <https://git.opendaylight.org/gerrit/#/q/7b94771d6216ebb5217e3412ecc7f496ff6cee52>`_ `BUG-7814 <https://bugs.opendaylight.org/show_bug.cgi?id=7814>`_: Add counter to make tx actor names unique
+
+Genius
+------
+* `5c7f36 <https://git.opendaylight.org/gerrit/#/q/5c7f36f8f2da6153f90fff0e82e9bf2ce2ebc87a>`_ Workaround for `BUG-7451 <https://bugs.opendaylight.org/show_bug.cgi?id=7451>`_
+* `dbfd73 <https://git.opendaylight.org/gerrit/#/q/dbfd73fc1abf517d25f3f16d54963aae9d5c6b01>`_ Add getChildInterfaces to IInterfaceManager
+* `5d68e4 <https://git.opendaylight.org/gerrit/#/q/5d68e4338fd86b7008dba550ccb9ffd2d31a0225>`_ `BUG-8023 <https://bugs.opendaylight.org/show_bug.cgi?id=8023>`_ CSIT failures with ELAN drop rule
+
+Integration/Distribution
+------------------------
+* `18eade <https://git.opendaylight.org/gerrit/#/q/18eade956f7e6c9d6c0c7c784f81d6219f278238>`_ `BUG-8197 <https://bugs.opendaylight.org/show_bug.cgi?id=8197>`_: Remove CAPWAP from compatible
+
+MD-SAL
+------
+* `ba557d <https://git.opendaylight.org/gerrit/#/q/ba557dbadcac933b6be48e509299f5e899fd6f29>`_ `BUG-8449 <https://bugs.opendaylight.org/show_bug.cgi?id=8449>`_ - BindingToNormalizedNodeCodec fails to deserialize union of leafrefs
+* `33f90b <https://git.opendaylight.org/gerrit/#/q/33f90b7b47a33eddae0df31437aa0070e5456901>`_ `BUG-8237 <https://bugs.opendaylight.org/show_bug.cgi?id=8237>`_ - BI to BA conversion not resolving nested nodes
+* `14f049 <https://git.opendaylight.org/gerrit/#/q/14f04995729708e2ac192df2bdfce6fe6a5a9aaf>`_ `BUG-8327 <https://bugs.opendaylight.org/show_bug.cgi?id=8327>`_: Introduce DOMYangTextSourceProvider and implement it
+* `262d02 <https://git.opendaylight.org/gerrit/#/q/262d0237b17d4596b167f49a644c1dbe8f7505bc>`_ `BUG-7927 <https://bugs.opendaylight.org/show_bug.cgi?id=7927>`_: stop scanning bundles on framework stop
+* `98bc46 <https://git.opendaylight.org/gerrit/#/q/98bc46847cda68e350c3d498e2bd718f7f82cafa>`_ Lazily create schema context in GlobalBundleScanning*
+* `c2c61d <https://git.opendaylight.org/gerrit/#/q/c2c61de266b41416a11f381d3dba79d5866d7e76>`_ Turn off visibility of OsgiBundleScanningSchemaService#start()
+* `45dfd0 <https://git.opendaylight.org/gerrit/#/q/45dfd0c8f23a157ea64a9acd5b88b6f62e324776>`_ Speed up OsgiBundleScanningSchemaService close
+* `eba650 <https://git.opendaylight.org/gerrit/#/q/eba6505fa7ca734ff895fcf753664f3d73f1324b>`_ `BUG-8004 <https://bugs.opendaylight.org/show_bug.cgi?id=8004>`_: handle implicit RPC input
+
+NETCONF
+-------
+* `8dfd6a <https://git.opendaylight.org/gerrit/#/q/8dfd6ad2518483494941b90da43c87da19213336>`_ `BUG-8085 <https://bugs.opendaylight.org/show_bug.cgi?id=8085>`_: create missing parent augmentation node
+* `5fc76d <https://git.opendaylight.org/gerrit/#/q/5fc76d99368f3b1c0c9aeba0512992819123eff3>`_ `BUG-8566 <https://bugs.opendaylight.org/show_bug.cgi?id=8566>`_ direct writes to ordered list fail
+* `6fdf99 <https://git.opendaylight.org/gerrit/#/q/6fdf99175b9327f84feb8b32313087e5f4b56aa6>`_ `BUG-8455 <https://bugs.opendaylight.org/show_bug.cgi?id=8455>`_: Yang Patch response is not having the error details
+* `e76019 <https://git.opendaylight.org/gerrit/#/q/e76019dc20112db9c60a403b12647d84299c95ea>`_ `BUG-8289 <https://bugs.opendaylight.org/show_bug.cgi?id=8289>`_ - 409 in cluster restperfclient test
+* `e98774 <https://git.opendaylight.org/gerrit/#/q/e9877415e15d5c5098b20aa7f96cbb31837c3e9c>`_ `BUG-8405 <https://bugs.opendaylight.org/show_bug.cgi?id=8405>`_: Add close check to NetconfDevice
+* `09a3b0 <https://git.opendaylight.org/gerrit/#/q/09a3b011ff481d384766126159eefc16a4c9c014>`_ `BUG-8311 <https://bugs.opendaylight.org/show_bug.cgi?id=8311>`_ - Apidoc: Incomprehensible 500 id model is wrong `BUG-8266 <https://bugs.opendaylight.org/show_bug.cgi?id=8266>`_ - Apidoc explorer is broken after installing Boron SR3
+* `cfa555 <https://git.opendaylight.org/gerrit/#/q/cfa555d8286e24291eac986dada2e89084964bdf>`_ `BUG-8197 <https://bugs.opendaylight.org/show_bug.cgi?id=8197>`_: Deregister schema sources on actor stop
+* `0569f0 <https://git.opendaylight.org/gerrit/#/q/0569f044b41bc19ffc61c6448a41a3ae5e75dd0c>`_ Remove references to controller's sal-remote
+* `da2126 <https://git.opendaylight.org/gerrit/#/q/da2126ecf60a994578c2ef654f4ff73ae727f6b5>`_ Refactor netconf clustered topology tests
+* `46bc71 <https://git.opendaylight.org/gerrit/#/q/46bc71d8f6dd54db48abb0f6365910d337f3eab0>`_ `BUG-8152 <https://bugs.opendaylight.org/show_bug.cgi?id=8152>`_: Add way to configure idle timeout
+* `3cf390 <https://git.opendaylight.org/gerrit/#/q/3cf390bc42cd5df19408387ba2a93d30752fb9d3>`_ Do not include duplicate models
+* `d57368 <https://git.opendaylight.org/gerrit/#/q/d573686ff91c5bb92486287e3e95207972bbcfb7>`_ `BUG-8152 <https://bugs.opendaylight.org/show_bug.cgi?id=8152>`_: Transaction is already opened
+* `c27b52 <https://git.opendaylight.org/gerrit/#/q/c27b52008dcfe785b0aad79e0900d829ec7bf3d4>`_ Change handling of netconf cluster transactions
+* `a4199d <https://git.opendaylight.org/gerrit/#/q/a4199d37ca3d4a8c81d4e3cfd3bc0b4488ed60dd>`_ Close read-only transactions
+* `7f898e <https://git.opendaylight.org/gerrit/#/q/7f898edbc352f41c212146994f8409c89d855ef5>`_ `BUG-7868 <https://bugs.opendaylight.org/show_bug.cgi?id=7868>`_: perform checks before starting modifications
+* `574d8b <https://git.opendaylight.org/gerrit/#/q/574d8beb3e081cf6da0d7306cbc3ec5eaa9ca2bd>`_ `BUG-8115 <https://bugs.opendaylight.org/show_bug.cgi?id=8115>`_: Change URI decoding from ISO-8859-1 to UTF-8
+* `b936ff <https://git.opendaylight.org/gerrit/#/q/b936ffc1e85ab2c9365f36ba30620a5af4e8199d>`_ `BUG-8084 <https://bugs.opendaylight.org/show_bug.cgi?id=8084>`_ - FilterContentValidator.getKeyValues creates invalid YII key values
+* `a728c0 <https://git.opendaylight.org/gerrit/#/q/a728c028309ef356c4179f3c510b8e0a66a6a62f>`_ `BUG-5581 <https://bugs.opendaylight.org/show_bug.cgi?id=5581>`_: Optimize subtree filtering
+* `614388 <https://git.opendaylight.org/gerrit/#/q/6143889e3ac88c0b19e4da61a2ddf41b42389268>`_ `BUG-8072 <https://bugs.opendaylight.org/show_bug.cgi?id=8072>`_: Fix decoding of URLs with external identityref
+* `751b3f <https://git.opendaylight.org/gerrit/#/q/751b3f739cb75bef573f0c9390a84800f5e4dcce>`_ Fix LibraryModulesSchemasTest failure
+* `d44c83 <https://git.opendaylight.org/gerrit/#/q/d44c83d26c063caf97fdda6160188e02a7f651fd>`_ `BUG-7812 <https://bugs.opendaylight.org/show_bug.cgi?id=7812>`_: NPE when NetconfDeviceSalProvider.close
+* `c52b7e <https://git.opendaylight.org/gerrit/#/q/c52b7e26101d1a141818299d86c69f46408e6362>`_ `BUG-8037 <https://bugs.opendaylight.org/show_bug.cgi?id=8037>`_ YANG Patch using "replace" instead of "merge"
+
+Network Virtualization
+----------------------
+* `3ddaa2 <https://git.opendaylight.org/gerrit/#/q/3ddaa2d2d020c34b615e74feb13b5a118610e887>`_ `BUG-8696 <https://bugs.opendaylight.org/show_bug.cgi?id=8696>`_ fix elan blueprint xml
+* `72e3e2 <https://git.opendaylight.org/gerrit/#/q/72e3e247636fa9ea0ec6fbd5598e974f9f68ecbc>`_ `BUG-7988 <https://bugs.opendaylight.org/show_bug.cgi?id=7988>`_ - Cluster reboot fix
+* `995d2d <https://git.opendaylight.org/gerrit/#/q/995d2d3db6e2c5f4362afa41f8daa85d8b68938a>`_ `BUG-7809 <https://bugs.opendaylight.org/show_bug.cgi?id=7809>`_ - NAT snatGroupIdPool is overlapping with Elan Groups
+* `34fae9 <https://git.opendaylight.org/gerrit/#/q/34fae92facefdf3c3276b42a8780d5c0f72b56b2>`_ Bug8484: Non-NAPT Group action is drop for router associated with BGP-VPN
+* `32175d <https://git.opendaylight.org/gerrit/#/q/32175d56bbfa9538fab587d33d4ee2af5907cf70>`_ `BUG-8376 <https://bugs.opendaylight.org/show_bug.cgi?id=8376>`_: Fix DHCP for external tunnels
+* `a9945a <https://git.opendaylight.org/gerrit/#/q/a9945a7e9f0f1ce5251fcebcff7b5ffd24509e76>`_ `BUG-7866 <https://bugs.opendaylight.org/show_bug.cgi?id=7866>`_ fixing remote bc group for vlan provider network
+* `022afb <https://git.opendaylight.org/gerrit/#/q/022afb3a8e60d63ff97e50e0180319ce996a96d9>`_ `BUG-7599 <https://bugs.opendaylight.org/show_bug.cgi?id=7599>`_  hwvtep ucast mac add performance improv
+* `55da67 <https://git.opendaylight.org/gerrit/#/q/55da67182f0298c56ad63094e8279572bc2dd137>`_ `BUG-7866 <https://bugs.opendaylight.org/show_bug.cgi?id=7866>`_ adding retries for remote dmac programming during tunnel up event
+* `7c94c9 <https://git.opendaylight.org/gerrit/#/q/7c94c96ef068646cc5a3c7ac2ac04c13622ddaea>`_ `BUG-7758 <https://bugs.opendaylight.org/show_bug.cgi?id=7758>`_: Use Trunk instead of Transparent port for Flat networks
+* `f3b171 <https://git.opendaylight.org/gerrit/#/q/f3b171c984c9e4b51c26d1fb8409b95ba49ca6de>`_ `BUG-8142 <https://bugs.opendaylight.org/show_bug.cgi?id=8142>`_ : DHCP timeout issue.
+* `348193 <https://git.opendaylight.org/gerrit/#/q/34819334b9ef66593df81853cc9f95857161856d>`_ `BUG-8229 <https://bugs.opendaylight.org/show_bug.cgi?id=8229>`_: fix bad git merge of handleFloatingIpPortUpdated
+* `1e3242 <https://git.opendaylight.org/gerrit/#/q/1e3242f767b5631c531ca1eea5b709081594ae5f>`_ `BUG-8023 <https://bugs.opendaylight.org/show_bug.cgi?id=8023>`_ Handling ELAN remote DMAC programming correctly
+* `a6d99b <https://git.opendaylight.org/gerrit/#/q/a6d99b0a698e79e59cb5faeda6f721088f5cce12>`_ `BUG-7606 <https://bugs.opendaylight.org/show_bug.cgi?id=7606>`_: Fix for missing table 110 flow in OVS 2.4 after VM live migration
+* `8e23ff <https://git.opendaylight.org/gerrit/#/q/8e23ffcb123b95252893444faac2ab7b11050852>`_ `BUG-7778 <https://bugs.opendaylight.org/show_bug.cgi?id=7778>`_: VM's FIP are not able communicate to each other in external network provider
+* `a3a54f <https://git.opendaylight.org/gerrit/#/q/a3a54f227737f1b542bce6811faea7d9487cd1a7>`_ `BUG-8165 <https://bugs.opendaylight.org/show_bug.cgi?id=8165>`_ - Learnt IP route does not reappear on DC-GW after OVSRestart
+* `31f21b <https://git.opendaylight.org/gerrit/#/q/31f21ba76b7223acaca57b9d5acb09de2c4fb306>`_ `BUG-7922 <https://bugs.opendaylight.org/show_bug.cgi?id=7922>`_ - Use counter to keep track of duplicate flow entries
+* `99a36e <https://git.opendaylight.org/gerrit/#/q/99a36e584168ac8bbf9e2b05925a16809a6bd82e>`_ `BUG-7939 <https://bugs.opendaylight.org/show_bug.cgi?id=7939>`_ - Remote flows missing in Table 21
+* `4ed33a <https://git.opendaylight.org/gerrit/#/q/4ed33ac63f597a999af34b95f20ce483a40ae0b6>`_ `BUG-7939 <https://bugs.opendaylight.org/show_bug.cgi?id=7939>`_, 7938, 7968, 7997: Potential fix for the four L3VPN bugs
+* `770c08 <https://git.opendaylight.org/gerrit/#/q/770c08d6d48e59d9a2a4da3fc2b2407d36f4fbab>`_ `BUG-7939 <https://bugs.opendaylight.org/show_bug.cgi?id=7939>`_:  VpnService Suite and Tempest failures
+* `9521be <https://git.opendaylight.org/gerrit/#/q/9521be701bab521e742e1d26d5ebed194b0639f5>`_ `BUG-8019 <https://bugs.opendaylight.org/show_bug.cgi?id=8019>`_: when the neutron port acting as gateway is deleted, invisible ip is not removed from FIB
+* `b7d79b <https://git.opendaylight.org/gerrit/#/q/b7d79b3650489979d0fc75726efa453b3c2f212a>`_ `BUG-7816 <https://bugs.opendaylight.org/show_bug.cgi?id=7816>`_: NullPointerException while create a router in external network provider
+* `d6b892 <https://git.opendaylight.org/gerrit/#/q/d6b89205460ee9bf2c7bad9e6fbc80a05708e615>`_ Fix ACL IPv6 flows to match on ipv6_src/ipv6_dst for remote SG
+* `72359b <https://git.opendaylight.org/gerrit/#/q/72359b80a0c2010872f80779691f20744cba8c65>`_ `BUG-7952 <https://bugs.opendaylight.org/show_bug.cgi?id=7952>`_: ACLService to treat Ethertype=IPv6 and Protocol=icmp as a request for ICMPv6
+* `96117b <https://git.opendaylight.org/gerrit/#/q/96117b5185cac34c166afed2383c264dfcc20a2c>`_ `BUG-7979 <https://bugs.opendaylight.org/show_bug.cgi?id=7979>`_: Fix issue where VM is unable to acquire address during IPv6 tests
+* `261ad3 <https://git.opendaylight.org/gerrit/#/q/261ad33a4c51e9e6f371db878173b45341b863f2>`_ `BUG-7913 <https://bugs.opendaylight.org/show_bug.cgi?id=7913>`_: QosInterfaceStateChangeListener IllegalArgumentException
+* `c74e6c <https://git.opendaylight.org/gerrit/#/q/c74e6c4e411f4274d406003216a53482788e8e20>`_ Migrate l3vpn service docs to netvirt
+* `4c2608 <https://git.opendaylight.org/gerrit/#/q/4c26089391036631cd7ecdbd7282e2636851beb5>`_ `BUG-8023 <https://bugs.opendaylight.org/show_bug.cgi?id=8023>`_: Making ELAN to use StateTunnelList listener
+* `d0c2e1 <https://git.opendaylight.org/gerrit/#/q/d0c2e142a2082eafc85c263c0a80ec4c02b0a969>`_ Correct several equals() bugs
+
+ODL Root Parent
+---------------
+* `195c5b <https://git.opendaylight.org/gerrit/#/q/195c5be2b917364ae4b33ff2e70ec55a73a7eb37>`_ Bump netty to 4.0.45
+* `0bb105 <https://git.opendaylight.org/gerrit/#/q/0bb105904f2f882e1a739aa1240732ec96186788>`_ Add cli property to un-skip git-commit-id skip flag
+
+OVSDB Integration
+-----------------
+* `d55457 <https://git.opendaylight.org/gerrit/#/q/d554578cf11073c314ebd0e22f7092b0b490583e>`_ `BUG-8280 <https://bugs.opendaylight.org/show_bug.cgi?id=8280>`_: TerminationPoint reconciliation fails
+* `5145a7 <https://git.opendaylight.org/gerrit/#/q/5145a76b3600913bd171047408239b5a78b4ba50>`_ `BUG-6692 <https://bugs.opendaylight.org/show_bug.cgi?id=6692>`_ - Fix checkstyle problems not detected by the current version
+* `25f0d0 <https://git.opendaylight.org/gerrit/#/q/25f0d037873174ed83ab618ce35ed7ebea6954b7>`_ `BUG-7781 <https://bugs.opendaylight.org/show_bug.cgi?id=7781>`_ update vlan bindings and tunnel ips
+* `c4b95f <https://git.opendaylight.org/gerrit/#/q/c4b95fc389c99e3e4a2187898902439644713360>`_ Don't ignore .gitignore
+* `20613e <https://git.opendaylight.org/gerrit/#/q/20613e570aca1d66e61031eed545453c19211454>`_ `BUG-7599 <https://bugs.opendaylight.org/show_bug.cgi?id=7599>`_ rename opData method as operData
+* `018c31 <https://git.opendaylight.org/gerrit/#/q/018c316db61228536ab1db395ecc3b177bf85d12>`_ `BUG-7599 <https://bugs.opendaylight.org/show_bug.cgi?id=7599>`_ improve perf of ucast mcas
+* `3db9fe <https://git.opendaylight.org/gerrit/#/q/3db9fe3ace592d7f2b12351077b886af313dc639>`_ `BUG-7599 <https://bugs.opendaylight.org/show_bug.cgi?id=7599>`_ avoid mdsal read
+* `602d82 <https://git.opendaylight.org/gerrit/#/q/602d82a44cc2dd32859b82054ca88836556c9159>`_ `BUG-7599 <https://bugs.opendaylight.org/show_bug.cgi?id=7599>`_ performance improvement for ucast macs
+* `d02b70 <https://git.opendaylight.org/gerrit/#/q/d02b700d51144cac9af0bed1b97e68f2f36a41a2>`_ `BUG-7781 <https://bugs.opendaylight.org/show_bug.cgi?id=7781>`_ update vlan bindings and tunnel ips
+* `c23fdc <https://git.opendaylight.org/gerrit/#/q/c23fdccdaa7e95a57cc6072bf0ca4d2df4a6c274>`_ `BUG-7779 <https://bugs.opendaylight.org/show_bug.cgi?id=7779>`_: Adding try-catch in hwvtep transactions.
+* `2d7190 <https://git.opendaylight.org/gerrit/#/q/2d7190af186557ab6d8bd03338497fcdfa056674>`_ Fix Checkstyle "Redundant Modifier: Redundant 'final' modifier."
+* `672607 <https://git.opendaylight.org/gerrit/#/q/6726074e646b7a102007544ade6a565a3b1303f4>`_ Fix NPE in OvsdbConnectionService updateConfigParameter
+* `8c8e25 <https://git.opendaylight.org/gerrit/#/q/8c8e2512d1c74de91894b5d7323126ee7382cbb4>`_ `BUG-8055 <https://bugs.opendaylight.org/show_bug.cgi?id=8055>`_: remove unnecessary type parameters
+* `2399d5 <https://git.opendaylight.org/gerrit/#/q/2399d57fbd0cc92bf2de0df44f26cfb67b5cc82d>`_ `BUG-8055 <https://bugs.opendaylight.org/show_bug.cgi?id=8055>`_: remove all unused imports
+* `8b259d <https://git.opendaylight.org/gerrit/#/q/8b259dccc319ba3b0be1f708e90ce971ef809faf>`_ `BUG-8055 <https://bugs.opendaylight.org/show_bug.cgi?id=8055>`_: various performance issues
+* `752044 <https://git.opendaylight.org/gerrit/#/q/7520449b84e80e2708d366b841932c5fdd2c96ae>`_ `BUG-8055 <https://bugs.opendaylight.org/show_bug.cgi?id=8055>`_: remove unnecessary type arguments
+* `a2dc83 <https://git.opendaylight.org/gerrit/#/q/a2dc83e2f71270a0e4751ca8f5d587cd352cb22b>`_ `BUG-8055 <https://bugs.opendaylight.org/show_bug.cgi?id=8055>`_: remove redundant array creation
+* `cf13e3 <https://git.opendaylight.org/gerrit/#/q/cf13e304e501347cd635a70cec39f0ff62ae0e2d>`_ `BUG-8055 <https://bugs.opendaylight.org/show_bug.cgi?id=8055>`_: remove unnecessary type casts
+* `45e38d <https://git.opendaylight.org/gerrit/#/q/45e38dad23239a319e837d4c8c8eac3d44c71984>`_ `BUG-8055 <https://bugs.opendaylight.org/show_bug.cgi?id=8055>`_: simplify a couple of streams
+* `c8a4f9 <https://git.opendaylight.org/gerrit/#/q/c8a4f9ca61faeef5028f32ae747c0cb8ad35cc70>`_ `BUG-8055 <https://bugs.opendaylight.org/show_bug.cgi?id=8055>`_: use method references instead of lambdas
+* `7acf2d <https://git.opendaylight.org/gerrit/#/q/7acf2ddcae2d380cec58d2e1bd6860d608a9eccf>`_ `BUG-8055 <https://bugs.opendaylight.org/show_bug.cgi?id=8055>`_: use Java 8 predicates instead of Guava
+* `3e88dc <https://git.opendaylight.org/gerrit/#/q/3e88dc24d535541b418498d7fe45b65e0a35ecdf>`_ `BUG-8055 <https://bugs.opendaylight.org/show_bug.cgi?id=8055>`_: use lambdas instead of anonymous classes
+
+OpenFlow Plugin
+---------------
+* `c4fe3d <https://git.opendaylight.org/gerrit/#/q/c4fe3dd3371abc597bd28ef04d6099c85d297011>`_ Optimize port status and hello message handling
+* `b25cf4 <https://git.opendaylight.org/gerrit/#/q/b25cf49f7e7b7918845df710f5188099a952464e>`_ `BUG-8497 <https://bugs.opendaylight.org/show_bug.cgi?id=8497>`_ - Provide config knob to disable the Forwarding Rule Manager reconciliation
+* `62dc27 <https://git.opendaylight.org/gerrit/#/q/62dc27ce6a90435febe4744309a4c040cd07fe39>`_ Fix logging of exception in HandshakeListenerImpl
+* `c94d17 <https://git.opendaylight.org/gerrit/#/q/c94d17e938e1577e25f0743eb3d31f8ffc49529d>`_ Improve property-based configuration
+* `438465 <https://git.opendaylight.org/gerrit/#/q/438465fbd0748e1b6d76a18facb38912774412bd>`_ Fix masked NXM reg length
+* `53428e <https://git.opendaylight.org/gerrit/#/q/53428e6279ede1bb6b01d45389c56335ef5c60ed>`_ Fix checkstyle api.openflow.md.util
+* `a1adc8 <https://git.opendaylight.org/gerrit/#/q/a1adc80dd2ac1c5fe50f15b777ca67a5de2a28a4>`_ Fix checkstyle - api.openflow.md.queue
+* `53d724 <https://git.opendaylight.org/gerrit/#/q/53d7246c283845a76d1ea48807f1ee69c534fba4>`_ Fix checkstyle warnings.
+* `c1e1ce <https://git.opendaylight.org/gerrit/#/q/c1e1ce0808419c67ffcba5b18c93ee4fa6af59bf>`_ Fix checkstyle warnings
+* `88445a <https://git.opendaylight.org/gerrit/#/q/88445a3f880e07dc462737c4fbc94d38ce10127b>`_ Fix modifiers order to comply with Java coding guidelines
+* `4d9a32 <https://git.opendaylight.org/gerrit/#/q/4d9a3256580180a769a2abcb38fcdd2b3c2ef20a>`_ Fix minor issues regarding checkstyle
+* `f10e19 <https://git.opendaylight.org/gerrit/#/q/f10e19e003d2b769c1626f610acc65afb3fab0c6>`_ `BUG-8217 <https://bugs.opendaylight.org/show_bug.cgi?id=8217>`_: Set error information into direct statistics RPC result.
+* `c7c10d <https://git.opendaylight.org/gerrit/#/q/c7c10dfc36437fdf724f3ae6515cfe9478b7408d>`_ `BUG-7901 <https://bugs.opendaylight.org/show_bug.cgi?id=7901>`_: fix unsynchronized transaction access
+* `55623d <https://git.opendaylight.org/gerrit/#/q/55623dbd3effdbb92784a312524518f2414094ef>`_ Fix DeviceFlowRegistry performance regression
+* `36aaf6 <https://git.opendaylight.org/gerrit/#/q/36aaf674a8d3033e2b7462866bf3536ba2606ff3>`_ Fix table miss flow push
+
+Secure tag eXchange Protocol (SXP)
+----------------------------------
+* `b7a538 <https://git.opendaylight.org/gerrit/#/q/b7a5384c511a3afe0519f58fd06a71d571a822e2>`_ `BUG-8368 <https://bugs.opendaylight.org/show_bug.cgi?id=8368>`_ - UT - ThreadsWorker tests consist of race conditions
+
+Virtual Tenant Network (VTN)
+----------------------------
+* `826e06 <https://git.opendaylight.org/gerrit/#/q/826e06b5a17c0a43b970614a91965feef4763a1a>`_ `BUG-8211 <https://bugs.opendaylight.org/show_bug.cgi?id=8211>`_: Fixed bug that failed to associate MD-SAL flow with VTN flow.
+* `ab723c <https://git.opendaylight.org/gerrit/#/q/ab723cf5bbdc925fcda35790af22198ca7833817>`_ `BUG-8212 <https://bugs.opendaylight.org/show_bug.cgi?id=8212>`_: Accept data-flow-source that contains no vlan-id.
+* `83e8b1 <https://git.opendaylight.org/gerrit/#/q/83e8b1020fbec41032e5202b498e2c0edc0ce6de>`_ `BUG-8184 <https://bugs.opendaylight.org/show_bug.cgi?id=8184>`_: Suppress unnecessary send-barrier RPC error logs.
+* `fadf81 <https://git.opendaylight.org/gerrit/#/q/fadf8163eea4b8df79739bd09f317e364c5ca494>`_ `BUG-8191 <https://bugs.opendaylight.org/show_bug.cgi?id=8191>`_: Suppress warning detected by FindBugs.
+
+YANG Tools
+----------
+* `848b1f <https://git.opendaylight.org/gerrit/#/q/848b1fc4212f5cb60553c4625def992074a58e0b>`_ Do not create temporary array for module sorting
+* `bd168f <https://git.opendaylight.org/gerrit/#/q/bd168fb05c425bbf1992157b2ec0981c5a6b73c7>`_ `BUG-8566 <https://bugs.opendaylight.org/show_bug.cgi?id=8566>`_ Introduce a fallback for ChoiceSchemaNode lookup
+* `b70220 <https://git.opendaylight.org/gerrit/#/q/b702209198f4b13651b1bf4021a727ad7c6c737e>`_ `BUG-7844 <https://bugs.opendaylight.org/show_bug.cgi?id=7844>`_ - Unable to create LeafRefContext for leafref
+* `83d0e1 <https://git.opendaylight.org/gerrit/#/q/83d0e11dbf26fc492789f4b38fb25b7577230e11>`_ `BUG-8123 <https://bugs.opendaylight.org/show_bug.cgi?id=8123>`_: fix URL naming mixup
+* `5fdb34 <https://git.opendaylight.org/gerrit/#/q/5fdb3481e6fcc916a20377639e606129003106cd>`_ `BUG-7954 <https://bugs.opendaylight.org/show_bug.cgi?id=7954>`_: Throw an exception when parsing duplicate (sub)modules
+* `9f3901 <https://git.opendaylight.org/gerrit/#/q/9f390185b2869fd215a7cb1ee86b1760506d8662>`_ `BUG-8123 <https://bugs.opendaylight.org/show_bug.cgi?id=8123>`_: be better at guessing identifiers
+* `c36433 <https://git.opendaylight.org/gerrit/#/q/c364332ceeb3c60ac43f9869f1f74537e728e3e0>`_ `BUG-7062 <https://bugs.opendaylight.org/show_bug.cgi?id=7062>`_: add revision awareness to Yin/YangTextSchemaSource
+* `83fe83 <https://git.opendaylight.org/gerrit/#/q/83fe839b6429be95230ac07750dc4b451d517cb1>`_ `BUG-8039 <https://bugs.opendaylight.org/show_bug.cgi?id=8039>`_: Enforce binary/string type length
