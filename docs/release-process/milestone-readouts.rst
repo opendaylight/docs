@@ -164,9 +164,12 @@ Documentation:
    * One developer guide per top-level feature.
    * An installation guide for any top-level features that require more than ``feature:install
      <feature-name>`` to install.
+   * Eventually, release notes, but it is a good idea to keep release notes as a living document
+     when significant changes others should be aware of are made.
    * Optional tutorials and how tos.
 
-#. Have you checked in an AsciiDoc outline to the docs repository? Yes/No (link to gerrit patch)
+#. Have you checked in a reStructuredText outline for each of the documents you will provide
+   to the docs repository? Yes/No (link to gerrit patch)
 
 Integration and Test:
 
