@@ -845,6 +845,17 @@ Line 112: We register salFlowService1 as implementation for nodeOne.
 The salFlowService1 will be executed only for RPCs which contains
 Instance Identifier for foo:node:1.
 
+RPCs and cluster
+^^^^^^^^^^^^^^^^
+
+In case there is is only a single provider of an RPC in the cluster
+the RPC registration is propagated to other nodes via Gossip protocol
+and the RPC calls from other nodes are correctly routed to the
+provider. Since the registrations are not expected to change rapidly
+there is a latency of about 1 second until the registration is reflected
+on the remote nodes.
+
+
 OpenDaylight Controller MD-SAL: RESTCONF
 ----------------------------------------
 
