@@ -24,6 +24,7 @@ Processes
    autorelease
    project-lifecycle
    branch-cutting
+   release-schedule
    simultaneous-release
    milestone-readouts
 
