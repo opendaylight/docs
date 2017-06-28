@@ -315,6 +315,8 @@ linkcheck_ignore = [
     'https://git.opendaylight.org/gerrit/#/admin/projects/releng/builder',
 ]
 
+nitpicky = True
+
 import platform
 if platform.system() != 'Windows':
 
