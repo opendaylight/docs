@@ -83,6 +83,24 @@
     },
     {
       "key": {
+        "uuid": "da2a55be_a8732ee6",
+        "filename": "docs/getting-started-guide/project-release-notes/packetcable.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-06-28T15:48:40Z",
+      "side": 1,
+      "message": "After talking with Kevin it sounds like it does use COPS to talk to devices and while that communication likely needs to be secured, but that is out of scope of the project.",
+      "parentUuid": "ba068154_c1f43bd1",
+      "revId": "68f90e56468590030222207fffd0efdbe60432b7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_e3718a45",
         "filename": "docs/getting-started-guide/project-release-notes/packetcable.rst",
         "patchSetId": 3
