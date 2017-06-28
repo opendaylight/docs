@@ -21,6 +21,7 @@ Processes
    project-lifecycle
    namespace
    branch-cutting
+   release-schedule
    simultaneous-release
    milestone-readouts
 
