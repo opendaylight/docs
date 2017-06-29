@@ -42,6 +42,24 @@
     },
     {
       "key": {
+        "uuid": "da2a55be_37be7a00",
+        "filename": "docs/gerrit.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-06-29T15:00:40Z",
+      "side": 1,
+      "message": "In general, +1 to that, but since you need to later on do\n\n git submodule update\n\nI just basically ask people to do this regularly\n\n git submodule update --init\n\nSince it seems to handle all the different cases.",
+      "parentUuid": "da2a55be_979f6703",
+      "revId": "1884cd91ef992ab95e77ea3fe48efcb00dceddef",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da2a55be_77a47357",
         "filename": "docs/gerrit.rst",
         "patchSetId": 11
