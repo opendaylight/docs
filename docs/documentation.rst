@@ -135,11 +135,8 @@ browser as follows:
    git clone https://git.opendaylight.org/gerrit/docs
    cd docs
    git submodule update --init
-   tox -edocs
+   tox
    firefox docs/_build/html/index.html
-
-.. note:: Make sure to run `tox -edocs` and not just `tox`. See `Make
-          sure you run tox -edocs`_
 
 Directory Structure
 -------------------
@@ -380,19 +377,6 @@ submodules directory and then re-clone the submodules::
              in the submodules. This should only be the case if you
              manually edited files in that directory.
 
-Make sure you run tox -edocs
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-If you see an error like::
-
-   ERROR:   docs: could not install deps [-rrequirements.txt]; v = InvocationError('/Users/ckd/git-reps/docs/.tox/docs/bin/pip install -rrequirements.txt (see /Users/ckd/git-reps/docs/.tox/docs/log/docs-1.log)', 1)
-   ERROR:   docs-linkcheck: could not install deps [-rrequirements.txt]; v = InvocationError('/Users/ckd/git-reps/docs/.tox/docs-linkcheck/bin/pip install -rrequirements.txt (see /Users/ckd/git-reps/docs/.tox/docs-linkcheck/log/docs-linkcheck-1.log)', 1)
-
-It usually means you ran `tox` and not `tox -edocs`, which will result
-in running jobs inside submodules which aren't supported by the
-environment defined by the `requirements.txt` file in the documentation
-tox setup. Just run tox -edocs and it should be fine.
-
 Clear your tox directory and try again
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -403,7 +387,7 @@ an ``ExtensionError`` and can be fixed by deleting the ``.tox``
 directory and building again::
 
    rm -rf .tox
-   tox -edocs
+   tox
 
 Builds on Read the Docs
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -418,6 +402,66 @@ https://git.opendaylight.org/gerrit/41679
 Finally fixed the fact that our builds for failing because they were
 taking too long by removing directories of generated javadoc that were
 present from previous runs.
+
+Weird Errors from Coala
+^^^^^^^^^^^^^^^^^^^^^^^
+
+As pat of running ``tox``, two environments run: ``coala`` which does a variety
+of reStructuredText_ (and other) linting, and ``docs``, which runs Sphinx_ to
+build HTML and PDF documentation. You can run them independently by doing
+``tox -ecoala`` or ``tox -edocs``.
+
+The ``coala`` linter for reStructuredText isn't always the most helpful in
+explaining why it failed. So, here are some common ones. There should also be
+Jenkins Failure Cause Management rules that will highlight these for you.
+
+
+
+Git Commit Message Errors
+"""""""""""""""""""""""""
+
+Coala will check git commit messages for a variety of things including
+
+* Shortlog (1st line of commit message) is less than 50 characters
+* Shortlog (1st line of commit message) is in the imperative mood, e.g., "Add
+  foo unit test" is good, but "Adding foo unit test is bad""
+* Body (all lines but 1st line of commit message) are less than 72 characters.
+  Some exceptions seem to exist, e.g., for long URLs.
+
+Some examples of those being logged are:
+
+::
+   Project wide:
+   |    | [NORMAL] GitCommitBear:
+   |    | Shortlog of HEAD commit isn't in imperative mood! Bad words are 'Adding'
+
+::
+   Project wide:
+   |    | [NORMAL] GitCommitBear:
+   |    | Body of HEAD commit contains too long lines. Commit body lines should not exceed 72 characters.
+
+Error in "code-block" directive
+"""""""""""""""""""""""""""""""
+
+If you see an error like this:
+
+::
+   docs/gerrit.rst
+   |  89| ···..·code-block::·bash
+   |    | [MAJOR] RSTcheckBear:
+   |    | (ERROR/3) Error in "code-block" directive:
+
+It seems to mean that the relevant code-block does is not valid for the
+language specified, in this case bash. Note that if you specify no language, it
+seems as though it assumes the language is python. If you want the code-block
+to not be an any particular language, instead use the ``::`` directive. For
+example:
+
+::
+   ::
+      This is a code block
+      that will not be parsed
+      in any particluar langauge
 
 Project Documentation Requirements
 ==================================
@@ -487,7 +531,7 @@ Submitting Documentation Outlines (M3)
 
 #. Make sure the documentation project still builds.
 
-   * Run ``tox -edocs`` from the root of the cloned docs repo.
+   * Run ``tox`` from the root of the cloned docs repo.
 
      * After that, you should be able to find the HTML version of the
        docs at ``docs.git/docs/_build/html/index.html``.
