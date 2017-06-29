@@ -1,6 +1,6 @@
-============
+=======
 NETCONF
-============
+=======
 
 Major Features
 ==============
@@ -11,8 +11,8 @@ User-facing features are used directly by end users.
 odl-netconf-topology
 --------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/netconf-connector/features-netconf-connector/src/main/features/features.xml;hb=refs/heads/stable/carbon
-* **Feature Description:**  NETCONF southbound plugin, configuration through mdsal
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/netconf-connector/odl-netconf-topology/pom.xml;hb=refs/heads/stable/carbon
+* **Feature Description:**  NETCONF southbound plugin single-node, configuration through mdsal
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** No
@@ -21,8 +21,8 @@ odl-netconf-topology
 odl-netconf-clustered-topology
 ------------------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/netconf-connector/features-netconf-connector/src/main/features/features.xml;hb=refs/heads/stable/carbon
-* **Feature Description:**  NETCONF southbound plugin, configuration through mdsal
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/netconf-connector/odl-netconf-clustered-topology/pom.xml;hb=refs/heads/stable/carbon
+* **Feature Description:**  NETCONF southbound plugin clustered, configuration through mdsal
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** Yes
@@ -31,7 +31,7 @@ odl-netconf-clustered-topology
 odl-netconf-console
 -------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/netconf-connector/features-netconf-connector/src/main/features/features.xml;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/netconf-connector/odl-netconf-console/pom.xml;hb=refs/heads/stable/carbon
 * **Feature Description:**  NETCONF southbound configuration with karaf cli
 * **Top Level:** Yes
 * **User Facing:** Yes
@@ -40,7 +40,7 @@ odl-netconf-console
 odl-netconf-connector-all
 -------------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/netconf-connector/features-netconf-connector/src/main/features/features.xml;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/netconf-connector/odl-netconf-connector-all/pom.xml;hb=refs/heads/stable/carbon
 * **Feature Description:** NETCONF southbound plugin, configuration with configub subsystem
 * **Top Level:** Yes
 * **User Facing:** Yes
@@ -50,7 +50,7 @@ odl-netconf-connector-all
 odl-netconf-mdsal
 -----------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/netconf/features-netconf/src/main/features/features.xml;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/netconf/odl-netconf-mdsal/pom.xml;hb=refs/heads/stable/carbon
 * **Feature Description:** NETCONF server for mdsal
 * **Top Level:** Yes
 * **User Facing:** Yes
@@ -60,7 +60,7 @@ odl-netconf-mdsal
 odl-restconf
 ------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/restconf/features-restconf/src/main/features/features.xml;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/restconf/odl-restconf/pom.xml;hb=refs/heads/stable/carbon
 * **Feature Description:** Restconf
 * **Top Level:** Yes
 * **User Facing:** Yes
@@ -70,7 +70,7 @@ odl-restconf
 odl-mdsal-apidocs
 -----------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/restconf/features-restconf/src/main/features/features.xml;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/restconf/odl-mdsal-apidocs/pom.xml;hb=refs/heads/stable/carbon
 * **Feature Description:** MDSal - apidocs
 * **Top Level:** Yes
 * **User Facing:** Yes
@@ -79,7 +79,7 @@ odl-mdsal-apidocs
 odl-yanglib
 -----------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/yanglib/features-yanglib/src/main/features/features.xml;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/yanglib/odl-yanglib/pom.xml;hb=refs/heads/stable/carbon
 * **Feature Description:** Yanglib server
 * **Top Level:** Yes
 * **User Facing:** Yes
@@ -88,7 +88,7 @@ odl-yanglib
 odl-netconf-callhome-ssh
 ------------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/netconf-connector/features-netconf-connector/src/main/features/features.xml;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/netconf-connector/odl-netconf-callhome-ssh/pom.xml;hb=refs/heads/stable/carbon
 * **Feature Description:** Netconf call home
 * **Top Level:** Yes
 * **User Facing:** Yes
@@ -140,7 +140,30 @@ Migration
 
 * Is is possible migrate from the previous release? If so, how?
 
-  Yes, no specific steps needed apart from migrating netconf's topology configuration from DS.
+  Yes.
+
+  Several config subsystem yang modules were removed therefore if prior updates to
+  config subsystem modules were made via the controller-config loopback mountpoint
+  then the etc/opendaylight/current/controller.currentconfig.xml file must be manually
+  edited to remove elements corresponding to the removed config yang modules.
+  These include the elements from the following XML files under
+  etc/opendaylight/karaf:
+
+    * 10-rest-connector.xml
+    * 10-restconf-service.xml
+
+  The mechanism of spawning netconf connectors via the controller-config loopback
+  mountpoint was removed so any previously configured connectors must be migrated to the
+  config datastore and the elements removed from the controller.currentconfig.xml file.
+
+  The netconf yanglib config subsystem module was removed so any configuration change
+  that was made via the controller-config loopback mountpoint must be migrated to the
+  config datastore (see the Compatibility section) and must also be removed from the
+  controller.currentconfig.xml file.
+
+  Since the config subsystem is deprecated, it is recommended to migrate any custom
+  configuration additions and/or changes contained in controller.currentconfig.xml
+  and remove the file.
 
 Compatibility
 -------------
@@ -155,7 +178,21 @@ Compatibility
 
 * Any configuration changes?
 
-  md-sal netconf northbound is started via blueprint instead of config subsystem.
+  * The restconf northbound feature is now started via blueprint instead of the config
+    subsystem. The corresponding config yang file, opendaylight-rest-connector.yang,
+    and the 10-rest-connector.xml file installed under etc/opendaylight/karaf have been
+    removed. The restconf configuration attributes (specifically websocket-port) are
+    now specified via the etc/org.opendaylight.restconf.cfg file.
+
+  * The JSONRestconfService API is no longer advertised via the config subsystem and
+    the corresponding config yang file, sal-restconf-service.yang, and the
+    10-restconf-service.xml file installed under etc/opendaylight/karaf have been
+    removed. The JSONRestconfService must now be obtained directly from the OSGi
+    service registry (preferably via blueprint).
+.
+  * The netconf yanglib feature is now now started via blueprint instead of the config
+    subsystem and is configured using the yanglib:yanglib-config container defined in
+    yanglib.yang via the config datastore.
 
 Bugs Fixed
 ----------
@@ -179,7 +216,9 @@ End-of-life
 * List of features/APIs which are EOLed, deprecated, and/or removed in this
   release
 
-  NETCONF southbound plugin, configuration with configub subsystem is deprecated
+  The mechanism of spawning netconf connectors via the config subsystem's
+  controller-config loopback mountpoint was deprecated in the previous release and
+  has been removed.
 
 Standards
 =========
