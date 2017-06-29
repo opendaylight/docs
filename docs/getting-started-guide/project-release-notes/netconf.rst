@@ -140,7 +140,24 @@ Migration
 
 * Is is possible migrate from the previous release? If so, how?
 
-  Yes, no specific steps needed apart from migrating netconf's topology configuration from DS.
+  Yes, no specific steps needed unless prior updates to config subsystem modules
+  were made via the controller-config yang-ext mount in which case the
+  etc/opendaylight/current/controller.currentconfig.xml file must be manually
+  edited to remove elements corresponding to config yang modules that were
+  removed. These include the elements from the following XML files under
+  etc/opendaylight/karaf:
+
+    * 10-rest-connector.xml
+    * 10-restconf-service.xml 
+
+  In addition, if a netconf yanglib module configuration change was made via the
+  controller-config yang-ext mount, it must also be removed from the
+  controller.currentconfig.xml file and migrated to the config datastore
+  (see the Compatibility section).
+
+  Since the config subsystem is deprecated, it is recommended to migrate any custom
+  configuration additions and/or changes contained in controller.currentconfig.xml
+  and remove the file.
 
 Compatibility
 -------------
@@ -155,7 +172,21 @@ Compatibility
 
 * Any configuration changes?
 
-  md-sal netconf northbound is started via blueprint instead of config subsystem.
+  * The restconf northbound feature is now started via blueprint instead of the config
+    subsystem. The corresponding config yang file, opendaylight-rest-connector.yang,
+    and the 10-rest-connector.xml file installed under etc/opendaylight/karaf have been
+    removed. The restconf configuration attributes (specifically websocket-port) are
+    now specified via the etc/org.opendaylight.restconf.cfg file.
+
+  * The JSONRestconfService API is no longer advertised via the config subsystem and
+    the corresponding config yang file, sal-restconf-service.yang, and the
+    10-restconf-service.xml file installed under etc/opendaylight/karaf have been
+    removed. The JSONRestconfService must now be obtained directly from the OSGi
+    service registry (preferably via blueprint).
+.
+  * The netconf yanglib feature is now now started via blueprint instead of the config
+    subsystem and is configured using the yanglib:yanglib-config container defined in
+    yanglib.yang via the config datastore. 
 
 Bugs Fixed
 ----------
