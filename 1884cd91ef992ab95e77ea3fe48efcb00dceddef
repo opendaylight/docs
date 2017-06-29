@@ -1,0 +1,176 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da2a55be_5795efe2",
+        "filename": "docs/gerrit.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2017-06-29T14:44:30Z",
+      "side": 1,
+      "message": "\"to clone\"?",
+      "range": {
+        "startLine": 64,
+        "startChar": 0,
+        "endLine": 64,
+        "endChar": 9
+      },
+      "revId": "1884cd91ef992ab95e77ea3fe48efcb00dceddef",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da2a55be_979f6703",
+        "filename": "docs/gerrit.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2017-06-29T14:44:30Z",
+      "side": 1,
+      "message": "Tempted to suggest adding a --recursive flag by default so we get less of these \"what\u0027s this global-jjb error\" when people clone releng/builder but miss the submodule",
+      "revId": "1884cd91ef992ab95e77ea3fe48efcb00dceddef",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da2a55be_77a47357",
+        "filename": "docs/gerrit.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2017-06-29T14:44:30Z",
+      "side": 1,
+      "message": "Just changes in general, I guess this is left over from a copy+paste of doc\u0027s guide",
+      "range": {
+        "startLine": 81,
+        "startChar": 0,
+        "endLine": 81,
+        "endChar": 29
+      },
+      "revId": "1884cd91ef992ab95e77ea3fe48efcb00dceddef",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da2a55be_b7854baf",
+        "filename": "docs/gerrit.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2017-06-29T14:44:30Z",
+      "side": 1,
+      "message": "carbon?",
+      "range": {
+        "startLine": 103,
+        "startChar": 63,
+        "endLine": 103,
+        "endChar": 69
+      },
+      "revId": "1884cd91ef992ab95e77ea3fe48efcb00dceddef",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da2a55be_d776ffd7",
+        "filename": "docs/gerrit.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2017-06-29T14:44:30Z",
+      "side": 1,
+      "message": "Maybe we want to link to this git commit message guide? I\u0027ve seen lots of ODL devs use it as guidance, myself included\n\nhttps://chris.beams.io/posts/git-commit/\n\nMay also want to warn about length of first line, since we have Coala linting checking that in many places",
+      "range": {
+        "startLine": 172,
+        "startChar": 4,
+        "endLine": 173,
+        "endChar": 31
+      },
+      "revId": "1884cd91ef992ab95e77ea3fe48efcb00dceddef",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da2a55be_f754e322",
+        "filename": "docs/gerrit.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2017-06-29T14:44:30Z",
+      "side": 1,
+      "message": "This is good to have, I still fuck this up sometimes",
+      "revId": "1884cd91ef992ab95e77ea3fe48efcb00dceddef",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da2a55be_371ddb74",
+        "filename": "docs/gerrit.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2017-06-29T14:44:30Z",
+      "side": 1,
+      "message": "maybe add (\"by pushing with `git-review -D`)",
+      "range": {
+        "startLine": 250,
+        "startChar": 38,
+        "endLine": 250,
+        "endChar": 52
+      },
+      "revId": "1884cd91ef992ab95e77ea3fe48efcb00dceddef",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da2a55be_d7927e9e",
+        "filename": "docs/gerrit.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 327,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2017-06-29T14:44:30Z",
+      "side": 1,
+      "message": "Very specific to Int/Pack",
+      "range": {
+        "startLine": 325,
+        "startChar": 0,
+        "endLine": 327,
+        "endChar": 13
+      },
+      "revId": "1884cd91ef992ab95e77ea3fe48efcb00dceddef",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
