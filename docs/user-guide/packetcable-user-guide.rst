@@ -1,3 +1,5 @@
+.. _packetcable-user-guide:
+
 PacketCable User Guide
 ======================
 
@@ -406,5 +408,3 @@ PacketCable REST API Usage Examples
             "timestamp": "2016-03-24T13:25:30.471-05:00"
         }
      }
-
-
