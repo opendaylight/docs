@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "da2a55be_d11c4616",
+        "filename": "docs/gerrit.rst",
+        "patchSetId": 16
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-06-30T15:35:34Z",
+      "side": 1,
+      "message": "??",
+      "parentUuid": "da2a55be_5de22dd6",
+      "range": {
+        "startLine": 126,
+        "startChar": 13,
+        "endLine": 126,
+        "endChar": 19
+      },
+      "revId": "487a9931a6635445d233bf0abc34f6a87a1de472",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da2a55be_1dd8b51c",
         "filename": "docs/gerrit.rst",
         "patchSetId": 16
@@ -36,6 +60,30 @@
       "writtenOn": "2017-06-30T02:37:42Z",
       "side": 1,
       "message": "This is not needed as we allow anyone to upload a patch on behalf of other authors. This advice removes credit to the original author.\n\nThe advice should be primary author should be set to the person who did the most work on the patch so that they appear in ``git log``. Additional authors can be added to the commit message footer using either \"Co-Authored-By: First Last \u003cemail\u003e\" or \"Also-By: First Last \u003cemail\u003e\". To not be confusing we should probably choose one and recommend that one. FWIW OpenStack uses Co-Authored-By.",
+      "range": {
+        "startLine": 214,
+        "startChar": 33,
+        "endLine": 214,
+        "endChar": 80
+      },
+      "revId": "487a9931a6635445d233bf0abc34f6a87a1de472",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da2a55be_d19f264f",
+        "filename": "docs/gerrit.rst",
+        "patchSetId": 16
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-06-30T15:35:34Z",
+      "side": 1,
+      "message": "Cool. This is left-over from Beryllium I think when this wasn\u0027t the case. I guess you need to sign-off still, but not change authors.",
+      "parentUuid": "da2a55be_1dd8b51c",
       "range": {
         "startLine": 214,
         "startChar": 33,
@@ -288,6 +336,30 @@
       "writtenOn": "2017-06-30T02:37:42Z",
       "side": 1,
       "message": "Should these things be \u0027#.\u0027",
+      "range": {
+        "startLine": 365,
+        "startChar": 0,
+        "endLine": 365,
+        "endChar": 2
+      },
+      "revId": "487a9931a6635445d233bf0abc34f6a87a1de472",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da2a55be_51bb36c4",
+        "filename": "docs/gerrit.rst",
+        "patchSetId": 16
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-06-30T15:35:34Z",
+      "side": 1,
+      "message": "Yes.",
+      "parentUuid": "da2a55be_dd3bbd36",
       "range": {
         "startLine": 365,
         "startChar": 0,
