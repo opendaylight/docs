@@ -157,7 +157,7 @@ you have to install the following features to enable RESTCONF and DLUX.
 
 ::
 
-    karaf#>feature:install odl-restconf odl-l2switch-switch odl-mdsal-apidocs odl-dlux-core odl-dlux-all
+    karaf#>feature:install odl-restconf odl-l2switch-switch odl-mdsal-apidocs odl-dlux-core odl-dluxapps-applications
 
 Then install the odl-ocpplugin-all feature which includes the
 odl-ocpplugin-southbound and odl-ocpplugin-app-ocp-service features.

@@ -32,9 +32,9 @@ using commands such as -
 
 ::
 
-    $ feature:install odl-dlux-node
+    $ feature:install odl-dluxapps-nodes
 
-    $ feature:install odl-dlux-yangui
+    $ feature:install odl-dluxapps-yangui
 
 DLUX Modules
 ------------

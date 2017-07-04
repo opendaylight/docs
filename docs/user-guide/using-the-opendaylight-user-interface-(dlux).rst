@@ -9,7 +9,9 @@ Getting Started with DLUX
 
 DLUX provides a number of different Karaf features, which you can enable
 and disable separately. In Beryllum they are: . odl-dlux-core .
-odl-dlux-node . odl-dlux-yangui . odl-dlux-yangvisualizer
+odl-dlux-node . odl-dlux-yangui . odl-dlux-yangvisualizer In Carbon they
+are: . odl-dlux-core . odl-dluxapps-nodes . odl-dluxapps-topology.
+odl-dluxapps-yangui . odl-dluxapps-yangvisualizer . odl-dluxapps-yangman
 
 Logging In
 ----------
@@ -39,8 +41,8 @@ will see only topology application available in the left pane.
     odl-l2switch-switch feature in Karaf.
 
 DLUX has other applications such as node, yang UI and those apps won’t
-show up, until you enable their features odl-dlux-node and
-odl-dlux-yangui respectively in the Karaf distribution.
+show up, until you enable their features odl-dluxapps-nodes and
+odl-dluxapps-yangui respectively in the Karaf distribution.
 
 .. figure:: ./images/dlux-login.png
    :alt: DLUX Modules

@@ -121,7 +121,7 @@ Once the Karaf distribution is up, install dlux and apidocs.
 
 ::
 
-    feature:install odl-dlux-all odl-mdsal-apidocs
+    feature:install odl-dlux-core odl-dluxapps-applications odl-mdsal-apidocs
 
 Logging In
 ''''''''''
