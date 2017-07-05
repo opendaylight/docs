@@ -81,7 +81,32 @@ Quality Assurance
 Migration
 ---------
 
-* No data model changes occurred, so everything should work.  You can either copy the existing idmlight.db.mv.db into the new karaf distribution folder, or just start fresh with a new one.
+* Bug 7793:  shiro.ini is no longer exposed in ODL Nitrogen.
+
+shiro.ini is no longer exposed in ODL Nitrogen.  A more robust mechanism is
+provided to configure AAA in ODL Nitrogen based on the clustered-app-config
+framework.  A migration utility is provided and may be run by invoking the
+following:
+
+.. code-block:: bash
+
+    python bin/upgrade/convert-shiro-ini-to-rest-payload <filename>
+
+An XML payload is output to stdout, which can be used as a PUT payload to the
+aaa-app-config REST endpoint to maintain configuration from a previous version.
+An alternative is to write the resulting payload to the initial application
+config:
+
+.. code-block:: bash
+
+    python bin/upgrade/convert-shiro-ini-to-rest-payload <filename> > etc/opendaylight/datastore/initial/config/aaa-app-config.xml
+
+For Example:
+
+.. code-block:: bash
+
+    python bin/upgrade/convert-shiro-ini-to-rest-payload etc/shiro.ini > etc/opendaylight/datastore/initial/config/aaa-app-config.xml
+
 
 Compatibility
 -------------
