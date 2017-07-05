@@ -8,7 +8,7 @@ Major Features
 odl-mdsal-broker
 ----------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=controller.git;a=blob;f=features/mdsal/features-mdsal/src/main/features/features.xml
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=controller.git;a=blob;f=features/mdsal/odl-mdsal-broker/pom.xml
 * **Feature Description:**  Core MD-SAL implementations.
 * **Top Level:** Yes
 * **User Facing:** No
@@ -48,7 +48,20 @@ Migration
 
 * Is is possible migrate from the previous release? If so, how?
 
-  * There are no issues with migration from Boron to Carbon.
+  Yes, no specific steps needed unless prior updates to config subsystem modules
+  were made via the controller-config yang-ext mount in which case the
+  etc/opendaylight/current/controller.currentconfig.xml file must be manually
+  edited to remove the following elements corresponding to config yang modules
+  that were removed:
+
+    * Remove the <data-broker> element from the <module> element with
+      <name> binding-broker-impl
+    * Remove the <module> element with <name> inmemory-binding-data-broker
+    * Remove the <service> element with <name> binding-data-broker
+
+  Since the config subsystem is deprecated, it is recommended to migrate any custom
+  configuration additions and/or changes contained in controller.currentconfig.xml
+  and remove the file.
 
 Compatibility
 -------------
@@ -63,8 +76,7 @@ Compatibility
 
 * Any configuration changes?
 
-  * Preview for Distributed Datastore Tell-Based protocol. This is enabled using etc/org.opendaylight.controller.cluster.datastore.cfg's
-    use-tell-based-protocol knob and should eliminate most sources of AskTimeouts.
+  * No
 
 Bugs Fixed
 ----------
@@ -88,26 +100,11 @@ End-of-life
 * List of features/APIs which are EOLed, deprecated, and/or removed in this
   release
 
-  * The XSQL component packaged in odl-mdsal-xsql has been deprecated and will be removed in
-    the next release.
+  * The XSQL component packaged in odl-mdsal-xsql has been removed.
 
-  * The following API elements are deprecated, pending future removal:
-
-    * org.opendaylight.controller.md.sal.binding.api.ClusteredDataChangeListener
-    * org.opendaylight.controller.md.sal.binding.api.DataChangeListener
-    * org.opendaylight.controller.sal.binding.api.AbstractBindingAwareConsumer
-    * org.opendaylight.controller.sal.binding.api.AbstractBindingAwareProvider
-    * org.opendaylight.controller.sal.binding.api.data.DataBrokerService
-    * org.opendaylight.controller.sal.binding.api.data.DataChangeListener
-    * org.opendaylight.controller.sal.binding.api.data.DataModificationTransaction
-    * org.opendaylight.controller.sal.binding.api.data.DataProviderService
-    * org.opendaylight.controller.sal.binding.api.data.SynchronizedTransaction
-    * org.opendaylight.controller.sal.binding.api.NotificationListener
-    * org.opendaylight.controller.sal.binding.api.NotificationProviderService
-    * org.opendaylight.controller.sal.binding.api.NotificationService
-    * org.opendaylight.controller.sal.common.util.RpcErrors.java
-    * org.opendaylight.controller.sal.common.util.Rpcs.java
-    * org.opendaylight.controller.sal.core.api.model.SchemaService
+  * The DataProviderService and DataBrokerService APIs and the corresponding
+    implementations that were previously deprecated after the Hydrogen release
+    have been removed.
 
 Standards
 =========
