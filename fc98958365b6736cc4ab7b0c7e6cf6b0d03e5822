@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da2a55be_d474269e",
+        "filename": "docs/user-guide/using-the-opendaylight-user-interface-(dlux).rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-07-06T02:04:27Z",
+      "side": 1,
+      "message": "I don\u0027t like the wording here. The docs are currently:\n\n- master \u003d Nitrogen\n- stable/carbon \u003d Carbon\n- stable/boron \u003d Boron\n- stable/beryllium \u003d Beryllium\n\nSo I think since the docs are already structured in such a way that master is building Nitrogen then this patch should be updated to just list the features:\n\n - odl-dlux-core\n - odl-dluxapps-nodes\n - ...\n\nThis change should be cherry-picked to Carbon and Boron and updated as makes sense for those releases.",
+      "range": {
+        "startLine": 11,
+        "startChar": 24,
+        "endLine": 14,
+        "endChar": 72
+      },
+      "revId": "fc98958365b6736cc4ab7b0c7e6cf6b0d03e5822",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
