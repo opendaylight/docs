@@ -221,6 +221,10 @@ html_sidebars = {
 # implements a search results scorer. If empty, the default will be used.
 #html_search_scorer = 'scorer.js'
 
+html_context = dict(
+    version_status='unsupported',
+    )
+
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'OpenDaylightDocumentationdoc'
 
