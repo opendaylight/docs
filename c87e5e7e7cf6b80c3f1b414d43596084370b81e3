@@ -16,6 +16,24 @@
       "revId": "c87e5e7e7cf6b80c3f1b414d43596084370b81e3",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da2a55be_b4041216",
+        "filename": "docs/conf.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-07-06T01:38:04Z",
+      "side": 1,
+      "message": "We have branches stable/carbon stable/boron, etc... So I think having a version if-statement is likely not the right thing to do here as for each branch we know exactly what the version is set to already.\n\nThis could be as simple as a single variable:\n\n supported \u003d True|False\n\nand we can bump that variable on the required branch when it\u0027s no longer supported.",
+      "parentUuid": "da2a55be_0e84ebd2",
+      "revId": "c87e5e7e7cf6b80c3f1b414d43596084370b81e3",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
