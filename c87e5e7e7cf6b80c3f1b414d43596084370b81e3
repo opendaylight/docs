@@ -34,6 +34,24 @@
       "revId": "c87e5e7e7cf6b80c3f1b414d43596084370b81e3",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da2a55be_547cb620",
+        "filename": "docs/conf.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 6900
+      },
+      "writtenOn": "2017-07-06T04:22:22Z",
+      "side": 1,
+      "message": "Yes, as I said \"need a better..\". I sense that manually changing the variable is fine since it is not going to be updated frequently. \n\nAlso, can we move to Patch Set 5? I find it good too. \n\nhttps://git.opendaylight.org/gerrit/#/c/49856/5/docs/conf.py@235",
+      "parentUuid": "da2a55be_b4041216",
+      "revId": "c87e5e7e7cf6b80c3f1b414d43596084370b81e3",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
