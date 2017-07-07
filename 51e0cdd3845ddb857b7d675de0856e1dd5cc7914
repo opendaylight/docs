@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da2a55be_24dd8b71",
+        "filename": "docs/_static/css/warning-header.css",
+        "patchSetId": 8
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 6900
+      },
+      "writtenOn": "2017-07-07T05:15:14Z",
+      "side": 1,
+      "message": "I have taken the colors from bootstrap website, what they use for different types of warnings.",
+      "revId": "51e0cdd3845ddb857b7d675de0856e1dd5cc7914",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da2a55be_04da0778",
+        "filename": "docs/_templates/navbar.html",
+        "patchSetId": 8
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6900
+      },
+      "writtenOn": "2017-07-07T05:15:14Z",
+      "side": 1,
+      "message": "Or it can have a class and both warning ids under it?",
+      "revId": "51e0cdd3845ddb857b7d675de0856e1dd5cc7914",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da2a55be_c4f8efe7",
+        "filename": "docs/conf.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 6900
+      },
+      "writtenOn": "2017-07-07T05:15:14Z",
+      "side": 1,
+      "message": "Yes, it was as simple as adding one variable for a branch.",
+      "revId": "51e0cdd3845ddb857b7d675de0856e1dd5cc7914",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
