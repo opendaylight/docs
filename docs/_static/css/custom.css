@@ -1,0 +1,40 @@
+#unsupported_warning {
+  background-color: #f2dede;
+  width: 100%;
+  padding: 8px 20px 8px;
+  text-align: center;
+  font-size: 14px;
+  color: #a94442;
+}
+
+#deprecated_warning {
+  background-color: #fcf8e3;
+  width: 100%;
+  padding: 8px 20px 8px;
+  text-align: center;
+  font-size: 14px;
+  color: #8a6d3b;
+}
+
+.report-button {
+    background-color: #fab814;
+    border-radius: 5px;
+    text-indent: 0;
+    border: 1px solid #e65f44;
+    display: inline-block;
+    color: #dd4814;
+    font-size: 14px;
+    font-style: normal;
+    line-height: 20px;
+    width: auto;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    float: right !important;
+}
+
+.report-button:hover {
+    background-color:#f2ab1e;
+}
