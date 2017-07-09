@@ -699,3 +699,6 @@ Setting up gpg-agent on a Mac
    give you an option to save your passphrase in the keychain.
 
    .. figure:: images/pinentry-mac.png
+
+.. report-button::
+   :text: Give Feedback

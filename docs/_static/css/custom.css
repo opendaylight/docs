@@ -15,3 +15,18 @@
   font-size: 14px;
   color: #8a6d3b;
 }
+
+#bug-form {
+  display: none;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#give-feedback-button {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#cancel-btn {
+  padding-left: 0;
+}
