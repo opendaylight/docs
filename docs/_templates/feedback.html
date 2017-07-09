@@ -1,0 +1,84 @@
+<div class="row">
+    <div class="col-sm-4">
+        <button
+            id="give-feedback-button"
+            class="btn btn-warning"
+            style="background-color: #fab814; border-color: #fab814"
+            onclick="giveFeedback()">
+            {{ text }}
+        </button>
+    </div>
+</div>
+<div class="row" id="bug-form">
+    <div id="" class="col-sm-8">
+        <div class="" id="jira-form">
+            <p style="padding-top: 8px"> You need to log In with JIRA to submit feedback</p>
+            <div id="" class="row">
+                <div role="form">
+                    <div class="form-group col-sm-5">
+                        <label for="usr"><span class="glyphicon glyphicon-user"></span> Username</label>
+                        <input type="text" class="form-control" id="usr" placeholder="JIRA username">
+                    </div>
+                    <div class="form-group col-sm-5">
+                        <label for="psw"><span class="glyphicon glyphicon-lock"></span> Password</label>
+                        <input type="password" class="form-control" id="psw" placeholder="JIRA password">
+                    </div>
+                    <div class="col-sm-2" style="margin-top: 25px">
+                        <button
+                            class="btn btn-default"
+                            onclick="login()">
+                            Login
+                        </button>
+                    </div>
+                    <div class="form-group col-sm-3">
+                        <button
+                            id="cancel-btn"
+                            class="btn btn-link"
+                            onclick="showFeedbackButton()">
+                            Cancel
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="" id="feedback-form">
+            <p style="padding-top: 8px">Your suggestion: </p>
+            <div id="" class="row">
+                <div role="form">
+                    <div class="form-group col-sm-12">
+                        <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Summary"
+                            id="smry">
+                    </div>
+                    <div class="form-group col-sm-12">
+                        <textarea
+                            rows="5"
+                            cols="60"
+                            wrap="hard"
+                            class="form-control"
+                            placeholder="Description"
+                            id="desc"></textarea>
+                    </div>
+                    <div class="form-group col-sm-3">
+                        <button
+                            id="submit-btn"
+                            class="btn btn-block btn-success"
+                            onclick="createIssue()">
+                            Submit
+                        </button>
+                    </div>
+                    <div class="form-group col-sm-3">
+                        <button
+                            id="cancel-btn"
+                            class="btn btn-link"
+                            onclick="showFeedbackButton()">
+                            Cancel
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
