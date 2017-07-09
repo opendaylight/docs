@@ -2,4 +2,8 @@
 {% extends "!layout.html" %}
 
 {# Custom CSS override for warning banner #}
-{% set css_files = css_files + ['_static/css/warning-header.css'] %}
+{% set css_files = css_files + ['_static/css/custom.css'] %}
+
+{% block extrahead %}
+<script type="text/javascript" src="_static/js/bug.js"></script>
+{% endblock %}
