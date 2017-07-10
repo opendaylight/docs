@@ -62,7 +62,7 @@ BIER Feature
 -  **odl-bier-topomanager-ui**
 
    -  This feature can display bier-topo-manager's APIs on UIs (odl-mdsal-apidocs and
-      odl-dlux-yangui).
+      odl-dluxapps-yangui).
 
 -  **odl-bier-topomanager-cli**
 
@@ -85,7 +85,7 @@ BIER Feature
 
 -  **odl-bier-channel-ui**
 
-   -  This feature can display bier-channel's APIs on UIs (odl-mdsal-apidocs and odl-dlux-yangui).
+   -  This feature can display bier-channel's APIs on UIs (odl-mdsal-apidocs and odl-dluxapps-yangui).
 
 -  **odl-bier-channel-cli**
 

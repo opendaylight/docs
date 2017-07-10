@@ -1227,7 +1227,7 @@ It is recommended to use either:
 If the REST API must be used, and the above resources are not
 sufficient:
 
--  feature:install odl-dlux-yangui
+-  feature:install odl-dluxapps-yangui
 
 -  browse to:
    ``http://<odl-controller>:8181/index.html``

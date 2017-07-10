@@ -180,7 +180,7 @@ Karaf OpenDaylight Features
 
     * - DLUX
       - Provides an intuitive graphical user interface for OpenDaylight
-      - odl-dlux-all
+      - odl-dluxapps-applications
       - all
     * - Fabric as a Service (Faas)
       - Creates a common abstraction layer on top of a physical network so
