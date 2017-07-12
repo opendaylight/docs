@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da2a55be_952c55ad",
+        "filename": "docs/_static/css/custom.css",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-07-12T23:12:23Z",
+      "side": 1,
+      "message": "I\u0027m not in love which how much this makes things pop. You want people to be able to find it, but not have it be all they can see.",
+      "revId": "6a03b1462cd8e9724d78a849e102d8446ca15f4a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da2a55be_b52fd9a0",
+        "filename": "docs/_templates/navbar.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-07-12T23:12:23Z",
+      "side": 1,
+      "message": "I think you want this to be \"Feedback?\" or \"Something wrong? Let us know.\"",
+      "revId": "6a03b1462cd8e9724d78a849e102d8446ca15f4a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da2a55be_5522ddb9",
+        "filename": "docs/index.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-07-12T23:12:23Z",
+      "side": 1,
+      "message": "The build is failing because the RSTCheckBear for Coala doesn\u0027t think this is a defined command because it\u0027s a custom one we wrote. Thanh, is there an easy way to disable that? I guess we could disable linting for this file…",
+      "revId": "6a03b1462cd8e9724d78a849e102d8446ca15f4a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da2a55be_d51d2d75",
+        "filename": "docs/index.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-07-12T23:12:23Z",
+      "side": 1,
+      "message": "I think you want this to be \"Feedback?\" or \"Something wrong? Let us know.\"",
+      "revId": "6a03b1462cd8e9724d78a849e102d8446ca15f4a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da2a55be_752561c1",
+        "filename": "docs/report-button.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-07-12T23:12:23Z",
+      "side": 1,
+      "message": "We generally avoid tabs in our codebase.",
+      "revId": "6a03b1462cd8e9724d78a849e102d8446ca15f4a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
