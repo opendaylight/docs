@@ -59,6 +59,30 @@
     },
     {
       "key": {
+        "uuid": "da2a55be_9148e488",
+        "filename": "docs/conf.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-07-13T16:36:20Z",
+      "side": 1,
+      "message": "In theory never. As I understand it the date should always be the first date that a file was created. If we want to list additional dates we can do:\n\n- 2016-2020 if the dates are consecutive\n- 2016, 2018 if the dates are non-consecutive\n\nAlthough I\u0027m not entirely sure why you can have a copyright missing some years but I\u0027ve seen it happen before.\n\nBut I\u0027m talking about this from a perspective of the copyright header in code files. I\u0027m not sure how it applies to copyright of documentation.",
+      "parentUuid": "da2a55be_c4cf4faf",
+      "range": {
+        "startLine": 61,
+        "startChar": 13,
+        "endLine": 61,
+        "endChar": 17
+      },
+      "revId": "51e0cdd3845ddb857b7d675de0856e1dd5cc7914",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da2a55be_c4f8efe7",
         "filename": "docs/conf.py",
         "patchSetId": 8
