@@ -8,13 +8,15 @@ approved a release.
 Preparations
 ============
 
-After release candidate is built gpg sign artifacts using odlsign-bulk script in
-**releng/builder/scripts**.
+After release candidate is built gpg sign artifacts using the
+`lftools sign <https://lf-releng-tools.readthedocs.io/en/latest/commands/sign.html>`_
+command.
 
 .. code-block:: bash
 
-    cd scripts/
-    ./odlsign-bulk STAGING_REPO_ID  # eg. autorelease-1367
+    STAGING_REPO=autorelease-1903
+    STAGING_PROFILE_ID=abc123def456  # This Profile ID is listed in Nexus > Staging Profiles
+    lftools sign deploy-nexus https://nexus.opendaylight.org $STAGING_REPO $STAGING_PROFILE_ID
 
 Verify the distribution-karaf file with the signature.
 
