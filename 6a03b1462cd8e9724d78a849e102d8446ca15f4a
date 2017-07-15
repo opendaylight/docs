@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "da2a55be_1d423e3e",
+        "filename": "docs/_templates/navbar.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 6900
+      },
+      "writtenOn": "2017-07-15T16:25:35Z",
+      "side": 1,
+      "message": "In that case, it\u0027d be better if we have it as hyperlink and place it in the footer. A \"Feedback?\" button doesn\u0027t really help and \"Something wrong? Let us know.\" is too long for a button-text. Placing it in the footer seems more standard practice.",
+      "parentUuid": "da2a55be_b52fd9a0",
+      "revId": "6a03b1462cd8e9724d78a849e102d8446ca15f4a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da2a55be_5522ddb9",
         "filename": "docs/index.rst",
         "patchSetId": 3
