@@ -71,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "da2a55be_89670c25",
+        "filename": "docs/index.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-07-17T16:01:33Z",
+      "side": 1,
+      "message": "Yes I think we will have to disable linting for this file unfortunately.",
+      "parentUuid": "da2a55be_5522ddb9",
+      "revId": "6a03b1462cd8e9724d78a849e102d8446ca15f4a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da2a55be_d51d2d75",
         "filename": "docs/index.rst",
         "patchSetId": 3
@@ -99,6 +117,24 @@
       "writtenOn": "2017-07-12T23:12:23Z",
       "side": 1,
       "message": "We generally avoid tabs in our codebase.",
+      "revId": "6a03b1462cd8e9724d78a849e102d8446ca15f4a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da2a55be_e96e8800",
+        "filename": "docs/report-button.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-07-17T16:01:33Z",
+      "side": 1,
+      "message": "Also needs a license header. We cannot accept code without a proper license header.\n\nPlease make sure the python file passes PEP8. You can install pep8 and run it locally to make sure you conform to style standards.",
+      "parentUuid": "da2a55be_752561c1",
       "revId": "6a03b1462cd8e9724d78a849e102d8446ca15f4a",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
