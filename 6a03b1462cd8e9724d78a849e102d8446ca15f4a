@@ -89,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "da2a55be_64f3df9e",
+        "filename": "docs/index.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 6900
+      },
+      "writtenOn": "2017-07-17T21:15:08Z",
+      "side": 1,
+      "message": "disabled index.rst in .coafile",
+      "parentUuid": "da2a55be_89670c25",
+      "revId": "6a03b1462cd8e9724d78a849e102d8446ca15f4a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da2a55be_d51d2d75",
         "filename": "docs/index.rst",
         "patchSetId": 3
@@ -135,6 +153,24 @@
       "side": 1,
       "message": "Also needs a license header. We cannot accept code without a proper license header.\n\nPlease make sure the python file passes PEP8. You can install pep8 and run it locally to make sure you conform to style standards.",
       "parentUuid": "da2a55be_752561c1",
+      "revId": "6a03b1462cd8e9724d78a849e102d8446ca15f4a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da2a55be_44ee9bb5",
+        "filename": "docs/report-button.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6900
+      },
+      "writtenOn": "2017-07-17T21:15:08Z",
+      "side": 1,
+      "message": "I checked and removed all the pep8 errors. Also, I\u0027m not really aware of the licenses, so can you help it out here? EPL probably?",
+      "parentUuid": "da2a55be_e96e8800",
       "revId": "6a03b1462cd8e9724d78a849e102d8446ca15f4a",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
