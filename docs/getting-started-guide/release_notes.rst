@@ -851,9 +851,8 @@ netvirt
 * `5c7a7b61a <https://git.opendaylight.org/gerrit/#/q/5c7a7b61a>`_
   : Spec update for DHCP Neutron Port Allocation
 * `230a53309 <https://git.opendaylight.org/gerrit/#/q/230a53309>`_
-  `BUG-8441
-8630 <https://bugs.opendaylight.org/show_bug.cgi?id=8441
-8630>`_
+  `BUG-8441 <https://bugs.opendaylight.org/show_bug.cgi?id=8441>`_
+  `BUG-8630 <https://bugs.opendaylight.org/show_bug.cgi?id=8630>`_
   : Bug 8441, 8630 - LB groups not deleted after extra route deletion
 * `7b5cdf963 <https://git.opendaylight.org/gerrit/#/q/7b5cdf963>`_
   : Fix null Optional instantiations
