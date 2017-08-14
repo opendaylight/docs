@@ -101,11 +101,11 @@ Autorelease
 
       git submodule foreach sed -i -e "s#defaultbranch=master#defaultbranch=stable/${CURR_RELEASE,,}#" .gitreview
       git submodule foreach git commit -asm "Update .gitreview to stable/${CURR_RELEASE,,}"
-      git submodule foreach 'git review -t nitrogen-br-cut'
+      git submodule foreach 'git review -t ${CURR_RELEASE,,}-branch-cut'
       sed -i -e "s#defaultbranch=master#defaultbranch=stable/${CURR_RELEASE,,}#" .gitreview
       git add .gitreview
       git commit -s -v -m "Update .gitreview to stable/${CURR_RELEASE,,}"
-      git review -t  ${NEXT_RELEASE,,}-branch-cut
+      git review -t  ${CURR_RELEASE,,}-branch-cut
 
 - Merge all .gitreview patches submitted in the above step. **(Release Engineering Team)**
 - Remove create reference permissions set on gerrit for RE's. **(Helpdesk)**
