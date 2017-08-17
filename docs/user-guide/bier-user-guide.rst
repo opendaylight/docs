@@ -15,7 +15,7 @@ to maintain any per-flow state. See specific in `draft-ietf-bier-architecture-05
 <https://datatracker.ietf.org/doc/draft-ietf-bier-architecture/>`_
 and related documents.
 
-The BIER project provides functionality about BIER topo-mamagement and BIER
+The BIER project provides functionality about BIER/BIER-TE topo-mamagement and BIER/BIER-TE
 channel-mamagement, and invoking south-bound-interface for device driver.
 
 
@@ -31,33 +31,40 @@ BIER User-Facing Features
    -  This feature contains all models of BIER project, such as ietf-bier,
       ietf-multicast-information and so on.
 
--  **odl-bier-topomanager-ui**
+-  **odl-bier-bierman**
 
-   -  This feature can display bier-topo-manager's APIs on UIs
-      (odl-mdsal-apidocs and odl-dluxapps-yangui).
+   -  This feature generates BIER's topology from network topology, and configuration
+      of BIER, BIER-TE, etc.
 
--  **odl-bier-channel-ui**
+-  **odl-bier-channel**
 
-   -  This feature can display bier-channel's APIs on UIs (odl-mdsal-apidocs
-      and odl-dluxapps-yangui).
+   -  This feature provides function about multicast flow information configuration
+      and deployment in BIER domain.
 
 -  **odl-bier-service**
 
-   -  This feature provides function which processing the result of BIER
-      topo-mamager and BIER channel-manager, and invoking south-bound-interface
-      for driver.
+   -  This feature provides function which processing the result of BIER topo-mamager and BIER
+      channel-mamager, and invoking south-bound-interface for driver.
 
 -  **odl-bier-adapter**
 
    -  This feature provides adapter for different BIER south-bound NETCONF
-      interface, so all BFRs in BIER domain with different NETCONF
-      configuration interface, they can operate normally together.
+      interfaces, so all BFRs in BIER domain with different NETCONF
+      configuration interfaces and they can operate normally together.
 
 -  **odl-bier-driver**
 
-   -  This feature is south-bound NETCONF interface for BIER, it has
-      implemented standard interface (ietf-bier). If your BFR's NETCONF
-      interface is Non-standard, you should add your own interface for driver.
+   -  This feature is south-bound NETCONF interface for BIER, it has implemented standard interface
+      (ietf-bier). If your BFR's NETCONF interface is Non-standard, you should add your own
+      interface for driver.
+
+-  **odl-te-pce**
+
+   - This feature provides path computation function for BIER-TE.
+
+-  **odl-bier-app**
+
+   -  This feature provides the interface of BIER management, which contain BIER/BIER-TE manager, channel manager, topology manager.
 
 
 How To Start
@@ -66,12 +73,14 @@ How To Start
 Preparing for Installation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Forwarding devices must support the OpenFlow protocol, and already be
-   configured so that OpenDaylight can discover those devices via the :ref:`OpenFlow
-   Plugin <ofp-user-guide>`.
+1. Forwarding devices must support the BGP-LS protocol, and already be
+   configured so that OpenDaylight can discover those devices.
 
 2. Forwarding devices must support BIER configuration via NETCONF, which has a
    standard IETF YANG model.
+   
+3. The feature *odl-bier-app* or third-party App provides the northbound interface 
+   of BIER management for BIER controller.
 
 
 Installation Feature
