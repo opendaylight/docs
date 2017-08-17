@@ -27,92 +27,18 @@ BIER Architecture
 
    -  Major processor function for BIER.
 
--  **Topomanager**
+-  **Bierman**
 
-   -  BIER topology management.
+   -  BIER topology management, and BIER information (BIER, BIER-TE, lable info) configuration.
 
+-  **Pce**
 
-BIER Feature
-------------
+   -  Path computation element for BIER-TE.
 
--  **odl-bier-all**
+-  **Bierapp**
 
-   -  This feature contains all other features/bundles of BIER project. If you
-      install it, it provides all functions that the BIER project can support.
+   -  BIER UI, show topology and configure BIER/BIER-TE and channel.
 
--  **odl-bier-models**
-
-   -  This feature contains all models of BIER project, such as ietf-bier,
-      ietf-multicast-information and so on.
-
--  **odl-bier-topomanager**
-
-   -  This feature generates BIER's topology from network topology which discovered
-      via OpenFlow Plugin.
-
--  **odl-bier-topomanager-api**
-
-   -  This feature provides all APIs about BIER topology.
-
--  **odl-bier-topomanager-rest**
-
-   -  This feature provides function of BIER topology management, such as configure
-      BIER domain, sub-domain, nodes, and user can invoke these RPCs via RESTCONF.
-
--  **odl-bier-topomanager-ui**
-
-   -  This feature can display bier-topo-manager's APIs on UIs (odl-mdsal-apidocs and
-      odl-dluxapps-yangui).
-
--  **odl-bier-topomanager-cli**
-
-   -  This feature provides Karaf commands for BIER topo-manager debugging, which is
-      useful for troubleshooting.
-
--  **odl-bier-channel**
-
-   -  This feature provides function about multicast flow information configuration
-      and deployment in BIER domain.
-
--  **odl-bier-channel-api**
-
-   -  This feature provides all APIs about multicast flow configuration and deployment.
-
--  **odl-bier-channel-rest**
-
-   -  This feature provides function of BIER multicast information management, such as configure
-      multicast, deploying BFIR and BFER in BIER domain, and user can invoke these RPCs via RESTCONF.
-
--  **odl-bier-channel-ui**
-
-   -  This feature can display bier-channel's APIs on UIs (odl-mdsal-apidocs and odl-dluxapps-yangui).
-
--  **odl-bier-channel-cli**
-
-   -  This feature provides Karaf commands for bier-channel debugging, which is useful for
-      troubleshooting.
-
--  **odl-bier-service**
-
-   -  This feature provides function which processing the result of BIER topo-mamager and BIER
-      channel-mamager, and invoking south-bound-interface for driver.
-
--  **odl-bier-service-cli**
-
-   -  This feature provides Karaf commands for bier-service debugging, which is useful for
-      troubleshooting.
-
--  **odl-bier-adapter**
-
-   -  This feature provides adapter for different BIER south-bound NETCONF
-      interfaces, so all BFRs in BIER domain with different NETCONF
-      configuration interfaces and they can operate normally together.
-
--  **odl-bier-driver**
-
-   -  This feature is south-bound NETCONF interface for BIER, it has implemented standard interface
-      (ietf-bier). If your BFR's NETCONF interface is Non-standard, you should add your own
-      interface for driver.
 
 APIs in BIER
 ------------
@@ -120,13 +46,13 @@ APIs in BIER
 The sections below give details about the configuration settings for
 the components that can be configured.
 
-Topology Manager
-~~~~~~~~~~~~~~~~
+BIER Information Manager
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 API Description
 ^^^^^^^^^^^^^^^
 
--  bier/topomanager/api/src/main/yang/bier-topology-api.yang
+-  bier/bierman/api/src/main/yang/bier-topology-api.yang
 
    -  **load-topology**
 
@@ -140,11 +66,6 @@ API Description
 
       -  Configure sub-domain in given BIER domain and topology.
 
-   -  **configure-node**
-
-      -  Configure node information in given topology, which defined in ietf-bier,
-         such as domains, sub-domains, bitstringlength, bfr-id, encapsulation-type, etc.
-
    -  **delete-domain**
 
       -  Delete given domain in given topology.
@@ -152,11 +73,6 @@ API Description
    -  **delete-subdomain**
 
       -  Delete given sub-domain in given domain and topology.
-
-   -  **delete-node**
-
-      -  Delete given node which be assigned to given sub-domain and domain in
-         given topology.
 
    -  **query-topology**
 
@@ -192,6 +108,64 @@ API Description
       -  Query links which have been assigned to given sub-domain and domain in given
          topology, and then display these links' details.
 
+   -  **query-te-subdomain-node**
+
+      -  Query te-nodes which have been assigned to given sub-domain and domain in given
+         topology, and then display these te-nodes' details.
+
+   -  **query-te-subdomain-link**
+
+      -  Query te-links which have been assigned to given sub-domain and domain in given
+         topology, and then display these te-links' details.
+
+
+-  bier/bierman/api/src/main/yang/bier-config-api.yang
+
+   -  **configure-node**
+
+      -  Configure node information in given topology, which defined in ietf-bier,
+         such as domains, sub-domains, bitstringlength, bfr-id, encapsulation-type, etc.
+
+   -  **delete-node**
+
+      -  Delete given node which be assigned to given sub-domain and domain in
+         given topology.
+
+   -  **delete-ipv4**
+
+      -  Delete bier mapping entry of ipv4.
+
+   -  **delete-ipv6**
+
+      -  Delete bier mapping entry of ipv6.
+
+
+-  bier/bierman/api/src/main/yang/bier-te-config-api.yang
+
+   -  **configure-te-node**
+
+      -  Configure adjancency information for node, such as domains, sub-domains, si,
+         bitstringlength, tpid, bitposition, etc.
+
+   -  **configure-te-label**
+
+      -  Configure BIER-TE label range for node.
+
+   -  **delete-te-babel**
+
+      -  Delete BIER-TE label range of node.
+
+   -  **delete-te-bsl**
+
+      -  Delete BIER-TE bitstringlength, including all SIs which belongs to this bitstringlenght.
+
+   -  **delete-te-si**
+
+      -  Delete BIER-TE SI, including all bitpositions which belongs to this SI.
+
+   -  **delete-te-bp**
+
+      -  Delete BIER-TE bitposition of an adjancency.
 
 Parameters Description
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -406,6 +380,10 @@ Parameters Description
 
    -  The bfr-id of BRER.
 
+-  **bier-forwarding-type**
+
+   -  The forwarding type, enum type contains BIER and BIER-TE.
+
 .. note:: For more information about BIER terminology, see `YANG Data Model for BIER Protocol <https://datatracker.ietf.org/doc/draft-ietf-bier-bier-yang/?include_text=1>`_.
 
 
@@ -426,7 +404,7 @@ Sample Configurations
 
     {
          "input": {
-            "topo-id": " flow:1" ,
+            "topo-id": " bier-topo" ,
             "domain ":[
                {
                   "domain-id": " 1",
@@ -449,7 +427,7 @@ Sample Configurations
 
     {
         "input": {
-            "topo-id": " flow:1" ,
+            "topo-id": " bier-topo" ,
             "domain-id":" 1",
             "sub-domain":[
                 {
@@ -462,10 +440,13 @@ Sample Configurations
         }
     }
 
-2. Configure BIER Node
-~~~~~~~~~~~~~~~~~~~~~~
+2. Configure Node
+~~~~~~~~~~~~~~~~~
 
-**REST API** : *POST /restconf/operations/bier-topology-api:configure-node*
+2.1. Configure BIER Parameters
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**REST API** : *POST /restconf/operations/bier-config-api:configure-node*
 
 **Sample JSON Data**
 
@@ -473,8 +454,8 @@ Sample Configurations
 
     {
         "input": {
-            "topology-id": "flow:1",
-            "node-id": "openflow:3",
+            "topology-id": "bier-topo",
+            "node-id": "node1",
             "domain": [
                 {
                     "domain-id": "2",
@@ -508,6 +489,66 @@ Sample Configurations
         }
     }
 
+2.2. Configure BIER-TE label
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**REST API** : *POST /restconf/operations/bier-te-config-api:configure-te-label*
+
+**Sample JSON Data**
+
+.. code:: json
+
+    {
+        "input": {
+            "topology-id": "bier-topo",
+            "node-id": "node1",
+            "label-base": "100",
+            "label-range-size": "20"
+        }
+    }
+
+2.3. Configure BIER-TE Parameters
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**REST API** : *POST /restconf/operations/bier-te-config-api:configure-te-node*
+
+**Sample JSON Data**
+
+.. code:: json
+
+    {
+        "input": {
+            "topology-id": "bier-topo",
+            "node-id": "node1",
+            "te-domain": [
+                {
+                    "domain-id": "1",
+                    "te-sub-domain": [
+                        {
+                            "sub-domain-id": "0",
+                            "te-bsl": [
+                                {
+                                    "bitstringlength": "64-bit",
+                                    "te-si": [
+                                        {
+                                            "si": "1",
+                                            "te-bp": [
+                                                {
+                                                    "tp-id":"tp1",
+                                                    "bitposition": "1"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+
 3. Query BIER Topology Information
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -529,7 +570,7 @@ no request body.
 
     {
         "input": {
-            "topo-id": " flow:1"
+            "topo-id": "bier-topo"
         }
     }
 
@@ -544,8 +585,8 @@ no request body.
 
     {
         "input": {
-             "topo-id": " flow:1",
-             "node-id": "openflow:3"
+             "topo-id": "bier-topo",
+             "node-id": "node1"
          }
     }
 
@@ -560,8 +601,8 @@ no request body.
 
     {
         "input": {
-             "topo-id": " flow:1",
-             "node-id": "openflow:3"
+             "topo-id": "bier-topo",
+             "node-id": "node1"
          }
     }
 
@@ -576,7 +617,7 @@ no request body.
 
     {
         "input": {
-             "topo-id": " flow:1"
+             "topo-id": "bier-topo"
          }
     }
 
@@ -591,7 +632,7 @@ no request body.
 
     {
         "input": {
-             "topo-id": " flow:1",
+             "topo-id": "bier-topo",
              "domain-id": "1"
          }
     }
@@ -607,7 +648,7 @@ no request body.
 
     {
         "input": {
-            "topology-id": "flow:1",
+            "topology-id": "bier-topo",
             "domain-id": "1",
             "sub-domain-id": "0"
         }
@@ -624,14 +665,48 @@ no request body.
 
     {
         "input": {
-            "topology-id": "flow:1",
+            "topology-id": "bier-topo",
             "domain-id": "1",
             "sub-domain-id": "0"
         }
     }
 
-4. BIER Channel    Configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+3.9. Query BIER-TE Sub-domain Node
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**REST API** : *POST /restconf/operations/bier-topology-api:query-te-subdomain-node*
+
+**Sample JSON Data**
+
+.. code:: json
+
+    {
+        "input": {
+            "topology-id": "bier-topo",
+            "domain-id": "1",
+            "sub-domain-id": "0"
+        }
+    }
+
+3.10. Query BIER-TE Sub-domain Link
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**REST API** : *POST /restconf/operations/bier-topology-api:query-te-subdomain-link*
+
+**Sample JSON Data**
+
+.. code:: json
+
+    {
+        "input": {
+            "topology-id": "bier-topo",
+            "domain-id": "1",
+            "sub-domain-id": "0"
+        }
+    }
+
+4. BIER Channel  Configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 4.1. Configure Channel
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -644,7 +719,7 @@ no request body.
 
     {
         "input": {
-            "topology-id": "flow:1",
+            "topology-id": "bier-topo",
             "name": "channel-1",
             "src-ip": "1.1.1.1",
             "dst-group": "224.1.1.1",
@@ -666,7 +741,7 @@ no request body.
 
     {
         "input": {
-            "topology-id": "flow:1",
+            "topology-id": "bier-topo",
             "name": "channel-1",
             "src-ip": "2.2.2.2",
             "dst-group": "225.1.1.1",
@@ -688,8 +763,9 @@ no request body.
 
     {
         "input": {
-            "topology-id": "flow:1",
+            "topology-id": "bier-topo",
             "channel-name": "channel-1",
+            "bier-forwarding-type":"bier-te"
             "ingress-node": "node1",
             "egress-node": [
                 {
@@ -716,7 +792,7 @@ no request body.
 
     {
         "input": {
-            "topology-id": "flow:1"
+            "topology-id": "bier-topo"
         }
     }
 
@@ -731,7 +807,7 @@ no request body.
 
     {
         "input": {
-            "topology-id": "flow:1",
+            "topology-id": "bier-topo",
             "channel-name": [
                 "channel-1",
                 "channel-2"
@@ -750,18 +826,18 @@ no request body.
 
     {
         "input": {
-            "topology-id": "flow:1",
+            "topology-id": "bier-topo",
             "channel-name": "channel-1"
         }
     }
 
-8. Delete BIER Topology Configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+8. Delete BIER and BIER-TE Configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 8.1. Delete BIER Node
 ^^^^^^^^^^^^^^^^^^^^^
 
-**REST API** : *POST /restconf/operations/bier-topology-api:delete-node*
+**REST API** : *POST /restconf/operations/bier-config-api:delete-node*
 
 **Sample JSON Data**
 
@@ -769,14 +845,136 @@ no request body.
 
     {
          "input": {
-                 "topo-id": "flow:1",
-                 "node-id": " openflow:3",
+                 "topo-id": "bier-topo",
+                 "node-id": "node3",
                  "domain-id": "1",
                  "subdomain-id": "0"
         }
     }
 
-8.2. Delete Sub-domain
+8.2. Delete IPv4 of BIER Node
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**REST API** : *POST /restconf/operations/bier-config-api:delete-ipv4*
+
+**Sample JSON Data**
+
+.. code:: json
+
+    {
+        input: {
+            "topology-id": "bier-topo",
+            "domain-id": "1",
+            "sub-domain-id": "0",
+            "node-id": "node1",
+            "ipv4": {
+                "bier-mpls-label-base": "10",
+                "bier-mpls-label-range-size": "16",
+                "bitstringlength": "64"
+            }
+        }
+    }
+
+8.3. Delete IPv6 of BIER Node
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**REST API** : *POST /restconf/operations/bier-config-api:delete-ipv6*
+
+**Sample JSON Data**
+
+.. code:: json
+
+    {
+        input: {
+            "topology-id": "bier-topo",
+            "domain-id": "1",
+            "sub-domain-id": "0",
+            "node-id": "node1",
+            "ipv6": {
+                "bier-mpls-label-base": "10",
+                "bier-mpls-label-range-size": "16",
+                "bitstringlength": "64"
+            }
+        }
+    }
+
+8.4. Delete BIER-TE BSL
+^^^^^^^^^^^^^^^^^^^^^^^
+
+**REST API** : *POST /restconf/operations/bier-te-config-api:delete-te-bsl*
+
+**Sample JSON Data**
+
+.. code:: json
+
+    {
+        input:{
+            "topology-id": "bier-topo",
+            "node-id": "node1",
+            "domain-id": "1",
+            "sub-domain-id": "0",
+            "bitstringlength": "64-bit"
+        }
+    }
+
+8.5. Delete BIER-TE SI
+^^^^^^^^^^^^^^^^^^^^^^
+
+**REST API** : *POST /restconf/operations/bier-te-config-api:delete-te-si*
+
+**Sample JSON Data**
+
+.. code:: json
+
+    {
+        input:{
+            "topology-id": "bier-topo",
+            "node-id": "node1",
+            "domain-id": "1",
+            "sub-domain-id": "0",
+            "bitstringlength": "64-bit",
+            "si": "1"
+        }
+    }
+
+8.6. Delete BIER-TE BP
+^^^^^^^^^^^^^^^^^^^^^^
+
+**REST API** : *POST /restconf/operations/bier-te-config-api:delete-te-bp*
+
+**Sample JSON Data**
+
+.. code:: json
+
+    {
+        input: {
+            "topology-id": "bier-topo",
+            "node-id": "node1",
+            "domain-id": "1",
+            "sub-domain-id": "0",
+            "bitstringlength": "64-bit",
+            "si": "1",
+            "tp-id": "tp1"
+        }
+    }
+
+8.7. Delete BIER-TE Label
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**REST API** : *POST /restconf/operations/bier-te-config-api:delete-te-label*
+
+**Sample JSON Data**
+
+.. code:: json
+
+    {
+         "input": {
+                 "topo-id": "bier-topo",
+                 "node-id": "node1"
+        }
+    }
+
+8.8. Delete Sub-domain
 ^^^^^^^^^^^^^^^^^^^^^^
 
 **REST API** : *POST /restconf/operations/bier-topology-api:delete-subdomian*
@@ -787,13 +985,13 @@ no request body.
 
     {
          "input": {
-                 "topo-id": "flow:1",
+                 "topo-id": "bier-topo",
                  "domain-id": "1",
                  "subdomain-id": "0"
         }
     }
 
-8.3. Delete Domain
+8.9. Delete Domain
 ^^^^^^^^^^^^^^^^^^
 
 **REST API** : *POST /restconf/operations/bier-topology-api:delete-domian*
@@ -804,7 +1002,7 @@ no request body.
 
     {
          "input": {
-                 "topo-id": "flow:1",
+                 "topo-id": "bier-topo",
                  "domain-id": "1"
         }
     }
