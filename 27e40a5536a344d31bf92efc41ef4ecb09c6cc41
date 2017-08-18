@@ -22,6 +22,30 @@
       "revId": "27e40a5536a344d31bf92efc41ef4ecb09c6cc41",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba1f61a0_f7b9382f",
+        "filename": "docs/developer-guide/bier-developer-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6854
+      },
+      "writtenOn": "2017-08-18T01:29:04Z",
+      "side": 0,
+      "message": "We added pce and bierapp feature and merge some features in Nitrogen and changed the topology feature\u0027s name to bierman.Cause this feature is not just about topology.",
+      "parentUuid": "ba1f61a0_9621e2fe",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 12
+      },
+      "revId": "27e40a5536a344d31bf92efc41ef4ecb09c6cc41",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
