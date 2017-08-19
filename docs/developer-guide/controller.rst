@@ -28,12 +28,12 @@ The OpenDaylight Controller relies on the following technologies:
 The OpenDaylight Controller provides following model-driven subsystems
 as a foundation for Java applications:
 
--  **`Config Subsystem <#_config_subsystem>`__** - an activation,
+-  :ref:`config_subsystem` - an activation,
    dependency-injection and configuration framework, which allows
    two-phase commits of configuration and dependency-injection, and
    allows for run-time rewiring.
 
--  **`MD-SAL <#_md_sal_overview>`__** - messaging and data storage
+-  :ref:`MD-SAL <mdsal_dev_guide>` - messaging and data storage
    functionality for data, notifications and RPCs modeled by application
    developers. MD-SAL uses YANG as the modeling for both interface and
    data definitions, and provides a messaging and data-centric runtime
@@ -185,8 +185,8 @@ MD-SAL **Data Broker** provides transactional access to conceptual
     this is state of controller, applications and also external systems
     (network devices).
 
-**Transactions** provide **`stable and isolated
-view <#_transaction_isolation>`__** from other currently running
+**Transactions** provide :ref:`stable and isolated
+view <transaction_isolation>` from other currently running
 transactions. The state of running transaction and underlying data tree
 is not affected by other concurrently running transactions.
 
@@ -237,8 +237,8 @@ for the conceptual data trees.
    using ``put``, ``merge`` and/or ``delete``.
 
 3. application finishes transaction using
-   ```submit()`` <#_submitting_transaction>`__, which seals transaction
-   and submits it to be processed.
+   ``submit()``, which :ref:`seals transaction
+   and submits <submitting_transaction>` it to be processed.
 
 4. application observes the result of the transaction commit using
    either blocking or asynchronous calls.
@@ -249,12 +249,12 @@ it’s state and underlying data tree are not affected by other
 concurrently running transactions.
 
 Write transactions are **isolated** from other concurrent write
-transactions. All **`writes are local <#_transaction_local_state>`__**
+transactions. All :ref:`writes are local <transaction_local_state>`
 to the transaction and represents only a **proposal of state change**
 for data tree and **are not visible** to any other concurrently running
 transactions (including read-only transactions).
 
-The transaction **`commit may fail <#_commit_failure_scenarios>`__** due
+The transaction :ref:`commit may fail <commit_failure_scenarios>` due
 to failing verification of data or concurrent transaction modifying and
 affected data in an incompatible way.
 
@@ -289,6 +289,8 @@ delete
         void delete(LogicalDatastoreType store, InstanceIdentifier<?> path);
 
     Removes a whole subtree from a specified path.
+
+.. _submitting_transaction:
 
 Submitting transaction
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -352,6 +354,8 @@ If application need to block till commit is finished it may use
 
 -  Catches ``TransactionCommitFailedException`` and logs it.
 
+.. _transaction_local_state:
+
 Transaction local state
 ^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -387,6 +391,8 @@ Let assume initial state of data tree for ``PATH`` is ``A``.
 
 -  Read will return value ``C`` for ``PATH``, since previous write
    occurred in same transaction.
+
+.. _transaction_isolation:
 
 Transaction isolation
 ~~~~~~~~~~~~~~~~~~~~~
@@ -445,6 +451,8 @@ Lets assume initial state of data tree for ``PATH`` is ``A``.
     use-cases and you should use
     ``Futures#addCallback(ListenableFuture, FutureCallback)`` to listen
     asynchronously for result.
+
+.. _commit_failure_scenarios:
 
 Commit failure scenarios
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1669,6 +1677,8 @@ RESTCONF.
     for more information about WebSockets in JavaScript visit `Writing
     WebSocket client
     applications <https://developer.mozilla.org/en-US/docs/WebSockets/Writing_WebSocket_client_applications>`__
+
+.. _config_subsystem:
 
 Config Subsystem
 ----------------
