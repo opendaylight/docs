@@ -269,7 +269,7 @@ Instructions
    Karaf console.
 
 -  Go to
-   ***`http://${ipaddress}:8181/apidoc/explorer/index.html <http://${ipaddress}:8181/apidoc/explorer/index.html>`__***
+   `http://${ipaddress}:8181/apidoc/explorer/index.html <http://${ipaddress}:8181/apidoc/explorer/index.html>`__
 
 -  Get the network topology after OVS switches are registered in the
    controller
