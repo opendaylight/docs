@@ -867,7 +867,7 @@ on the remote nodes.
 OpenDaylight Controller MD-SAL: RESTCONF
 ----------------------------------------
 
-RESCONF operations overview
+RESTCONF operations overview
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | RESTCONF allows access to datastores in the controller.
@@ -1409,7 +1409,7 @@ provide three parameters to this RPC:
    -  SUBTREE: changes anywhere in the subtree starting at the node will
       be reported
 
-The RPC to create the stream can be invoked via RESCONF like this:
+The RPC to create the stream can be invoked via RESTCONF like this:
 
 -  URI:
    http://{odlAddress}:{odlPort}/restconf/operations/sal-remote:create-data-change-event-subscription
