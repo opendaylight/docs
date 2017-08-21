@@ -39,9 +39,9 @@ or checked out from the official OpenDaylight repository:
 
 -  https://git.opendaylight.org/gerrit/#/admin/projects/coretutorials
 
-**The application was built using the `project startup maven
+**The application was built using the** `project startup maven
 archetype <https://wiki.opendaylight.org/view/OpenDaylight_Controller:MD-SAL:Startup_Project_Archetype>`__
-and demonstrates how to:**
+**and demonstrates how to:**
 
 -  preconfigure connectors to NETCONF devices
 
