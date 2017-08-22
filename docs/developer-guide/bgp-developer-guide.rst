@@ -237,24 +237,24 @@ to *BGPPeer* to datastore and various types of RIB.
 
    RIB
 
-**`AdjRibInWriter <https://git.opendaylight.org/gerrit/gitweb?p=bgpcep.git;a=blob;f=bgp/rib-impl/src/main/java/org/opendaylight/protocol/bgp/rib/impl/AdjRibInWriter.java;hb=refs/heads/stable/boron>`__**
+`AdjRibInWriter <https://git.opendaylight.org/gerrit/gitweb?p=bgpcep.git;a=blob;f=bgp/rib-impl/src/main/java/org/opendaylight/protocol/bgp/rib/impl/AdjRibInWriter.java;hb=refs/heads/stable/boron>`__
 - represents the first step in putting data to datastore. This writer is
 notified whenever a peer receives an Update message. The message is
 transformed into binding-independent format and pushed into datastore to
 *adj-rib-in*. This RIB is associated with a peer.
 
-**`EffectiveRibInWriter <https://git.opendaylight.org/gerrit/gitweb?p=bgpcep.git;a=blob;f=bgp/rib-impl/src/main/java/org/opendaylight/protocol/bgp/rib/impl/EffectiveRibInWriter.java;hb=refs/heads/stable/boron>`__**
+`EffectiveRibInWriter <https://git.opendaylight.org/gerrit/gitweb?p=bgpcep.git;a=blob;f=bgp/rib-impl/src/main/java/org/opendaylight/protocol/bgp/rib/impl/EffectiveRibInWriter.java;hb=refs/heads/stable/boron>`__
 - this writer is notified whenever *adj-rib-in* is updated. It applies
 all configured import policies to the routes and stores them in
 *effective-rib-in*. This RIB is also associated with a peer.
 
-**`LocRibWriter <https://git.opendaylight.org/gerrit/gitweb?p=bgpcep.git;a=blob;f=bgp/rib-impl/src/main/java/org/opendaylight/protocol/bgp/rib/impl/LocRibWriter.java;hb=refs/heads/stable/boron>`__**
+`LocRibWriter <https://git.opendaylight.org/gerrit/gitweb?p=bgpcep.git;a=blob;f=bgp/rib-impl/src/main/java/org/opendaylight/protocol/bgp/rib/impl/LocRibWriter.java;hb=refs/heads/stable/boron>`__
 - this writer is notified whenever **any** *effective-rib-in* is updated
 (in any peer). Performs best path selection filtering and stores the
 routes in *loc-rib*. It also determines which routes need to be
 advertised and fills in *adj-rib-out* that is per peer as well.
 
-**`AdjRibOutListener <https://git.opendaylight.org/gerrit/gitweb?p=bgpcep.git;a=blob;f=bgp/rib-impl/src/main/java/org/opendaylight/protocol/bgp/rib/impl/AdjRibOutListener.java;h=a14fd54a29ea613b381a36248f67491d968963b8;hb=refs/heads/stable/boron>`__**
+`AdjRibOutListener <https://git.opendaylight.org/gerrit/gitweb?p=bgpcep.git;a=blob;f=bgp/rib-impl/src/main/java/org/opendaylight/protocol/bgp/rib/impl/AdjRibOutListener.java;h=a14fd54a29ea613b381a36248f67491d968963b8;hb=refs/heads/stable/boron>`__
 - listens for changes in *adj-rib-out*, transforms the routes into
 BGPUpdate messages and sends them to its associated peer.
 
