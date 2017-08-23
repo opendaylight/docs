@@ -24,19 +24,26 @@ progress to the following state.
 - **not-in-autorelease**
   Project merge job passes, but the project is not added to
   autorelease (git submodule, maven module, validate-autorelease job passes).
+- **failing-autorelease**
+  The project is added to autorelease (git submodule, maven module, validate-autorelease job passes),
+  but autorelease build fails when building project's artifact.
+  Temporary state, timing out into not-in-autorelease.
 - **repo-not-in-integration**
-  Project is added do autorelease, but integration/distribution:features-index
+  Project is succesfully built within autorelease, but integration/distribution:features-index
   is not listing all its public feature repositories.
-- **distribution-check-not-passing**
-  Project is in autorelease, but its distribution-check job
-  is either not running, or it is failing for any reason.
 - **feature-not-in-integration**
   Feature repositories are referenced, distribution-check job is passing,
   but some user-facing features are absent from integration/distribution:features-test
+  (possibly because adding them does not pass distribution SingleFeatureTest).
+- **distribution-check-not-passing**
+  Features are in distribution, but distribution-check job is either not running,
+  or it is failing for any reason. Temporary state, timing out into feature-not-in-integration.
 - **feature-is-experimental**
   All user-facing features are in features-test, but at least one of the corresponding
-  functional CSIT jobs does not meet integration/test requirements.
-- **ready**
+  functional CSIT jobs does not meet Integration/Test requirements.
+- **feature-is-not-stable**
+  Feature does meet Integration/Test requirements, but it does not meed all requirements for stable features.
+- **feature-is-stable**
 
 .. note::
 
@@ -51,6 +58,4 @@ progress to the following state.
    - Mention other jobs involved in verification (verify, validate-autorelease, ... releng-check-poms).
    - Add back-references to this document (from integration/distribution, job definition templates, ...).
    - Do we need a special rules applicable at Release Review?
-   - By adding features to integration, distribution-check job may start failing on issues
-     that were not visible before. Document a workaround or create a specialized verify-like job.
    - Mention that some rules do not make sense for Integration/Distribution project, provide substitute rules.
