@@ -5,8 +5,8 @@ Project lifecycle
 This page documents the current rules to follow when adding and removing
 a particular project to Simultaneous Release (SR).
 
-List of states
-==============
+List of states for projects in autorelease
+==========================================
 
 The state names are short negative phrases describing what is missing to
 progress to the following state.
@@ -50,6 +50,12 @@ progress to the following state.
    A project may change its state in both directions, this list is to make sure
    a project is not left in an invalid state, for example distribution referencing
    feature repositories, but without passing distribution-check job.
+
+.. note::
+
+   Projects can participate in Simultaneous Release even if they are not included in autorelease.
+   Nitrogen example: Odlparent.
+   FIXME: Clarify states for such projects (per version, if they released multiple times within the same cycle).
 
 .. todo::
 
