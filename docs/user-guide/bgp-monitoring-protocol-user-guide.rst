@@ -87,7 +87,7 @@ This section explains how to install BMP plugin.
 2. The BMP plugin contains a default configuration, which is applied after the feature starts up.
    One instance of BMP monitoring station is created (named *example-bmp-monitor*), and its presence can be verified via REST:
 
-   **URL:** ``/restconf/operational/bmp-monitor:bmp-monitor/monitor/example-bmp-monitor``
+   **URL:** ``/restconf/config/odl-bmp-monitor-config:odl-bmp-monitors/bmp-monitor-config/example-bmp-monitor``
 
    **Method:** ``GET``
 
@@ -95,9 +95,13 @@ This section explains how to install BMP plugin.
 
    .. code-block:: xml
 
-      <monitor xmlns="urn:opendaylight:params:xml:ns:yang:bmp-monitor">
-          <monitor-id>example-bmp-monitor</monitor-id>
-      </monitor>
+      <bmp-monitor-config xmlns="urn:opendaylight:params:xml:ns:yang:bmp-monitor-config">
+         <monitor-id>example-bmp-monitor</monitor-id>
+         <server>
+            <binding-port>12345</binding-port>
+            <binding-address>0.0.0.0</binding-address>
+         </server>
+      </bmp-monitor-config>
 
 BMP Monitoring Station
 ----------------------
@@ -114,15 +118,11 @@ Configuration
 ^^^^^^^^^^^^^
 This section shows the way to configure the BMP monitoring station via REST API.
 
-.. warning:: The BMP monitoring station configuration is going to be changed in Carbon.
-   This user-guide will be updated accordingly.
-
 Monitoring station configuration
 ''''''''''''''''''''''''''''''''
 In order to change default's BMP monitoring station configuration, use following request.
-It is required to install ``odl-netconf-connector-ssh`` feature first.
 
-**URL:** ``/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules/config:module/odl-bmp-impl-cfg:bmp-monitor-impl/example-bmp-monitor``
+**URL:** ``/restconf/config/odl-bmp-monitor-config:odl-bmp-monitors/bmp-monitor-config/example-bmp-monitor``
 
 **Method:** ``PUT``
 
@@ -134,28 +134,13 @@ It is required to install ``odl-netconf-connector-ssh`` feature first.
    :linenos:
    :emphasize-lines: 4,5
 
-    <module xmlns="urn:opendaylight:params:xml:ns:yang:controller:config">
-      <name>example-bmp-monitor</name>
-      <type xmlns:x="urn:opendaylight:params:xml:ns:yang:controller:bmp:impl">x:bmp-monitor-impl</type>
-      <binding-port xmlns="urn:opendaylight:params:xml:ns:yang:controller:bmp:impl">12355</binding-port>
-      <binding-address xmlns="urn:opendaylight:params:xml:ns:yang:controller:bmp:impl">0.0.0.0</binding-address>
-      <bmp-dispatcher xmlns="urn:opendaylight:params:xml:ns:yang:controller:bmp:impl">
-        <type>bmp-dispatcher</type>
-        <name>global-bmp-dispatcher</name>
-      </bmp-dispatcher>
-      <codec-tree-factory xmlns="urn:opendaylight:params:xml:ns:yang:controller:bmp:impl">
-        <type xmlns:x="urn:opendaylight:params:xml:ns:yang:controller:md:sal:binding">x:binding-codec-tree-factory</type>
-        <name>runtime-mapping-singleton</name>
-      </codec-tree-factory>
-      <extensions xmlns="urn:opendaylight:params:xml:ns:yang:controller:bmp:impl">
-        <type xmlns:x="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:spi">x:extensions</type>
-        <name>global-rib-extensions</name>
-      </extensions>
-      <dom-data-provider xmlns="urn:opendaylight:params:xml:ns:yang:controller:bmp:impl">
-        <type xmlns:x="urn:opendaylight:params:xml:ns:yang:controller:md:sal:dom">x:dom-async-data-broker</type>
-        <name>pingpong-broker</name>
-      </dom-data-provider>
-    </module>
+   <bmp-monitor-config xmlns="urn:opendaylight:params:xml:ns:yang:bmp-monitor-config">
+      <monitor-id>example-bmp-monitor</monitor-id>
+      <server>
+         <binding-port>12345</binding-port>
+         <binding-address>0.0.0.0</binding-address>
+      </server>
+   </bmp-monitor-config>
 
 @line 4: **binding-port** - The BMP server listening port.
 
@@ -166,9 +151,8 @@ It is required to install ``odl-netconf-connector-ssh`` feature first.
 Active mode configuration
 '''''''''''''''''''''''''
 In order to enable active connection, use following request.
-It is required to install ``odl-netconf-connector-ssh`` feature first.
 
-**URL:** ``/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules/config:module/odl-bmp-impl-cfg:bmp-monitor-impl/example-bmp-monitor``
+**URL:** ``/restconf/config/odl-bmp-monitor-config:odl-bmp-monitors/bmp-monitor-config/example-bmp-monitor``
 
 **Method:** ``PUT``
 
@@ -178,50 +162,34 @@ It is required to install ``odl-netconf-connector-ssh`` feature first.
 
 .. code-block:: xml
    :linenos:
-   :emphasize-lines: 23,24,25
+   :emphasize-lines: 8,9,10
 
-    <module xmlns="urn:opendaylight:params:xml:ns:yang:controller:config">
-      <name>example-bmp-monitor</name>
-      <type xmlns:x="urn:opendaylight:params:xml:ns:yang:controller:bmp:impl">x:bmp-monitor-impl</type>
-      <bmp-dispatcher xmlns="urn:opendaylight:params:xml:ns:yang:controller:bmp:impl">
-        <type>bmp-dispatcher</type>
-        <name>global-bmp-dispatcher</name>
-      </bmp-dispatcher>
-      <codec-tree-factory xmlns="urn:opendaylight:params:xml:ns:yang:controller:bmp:impl">
-        <type xmlns:x="urn:opendaylight:params:xml:ns:yang:controller:md:sal:binding">x:binding-codec-tree-factory</type>
-        <name>runtime-mapping-singleton</name>
-      </codec-tree-factory>
-      <extensions xmlns="urn:opendaylight:params:xml:ns:yang:controller:bmp:impl">
-        <type xmlns:x="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:spi">x:extensions</type>
-        <name>global-rib-extensions</name>
-      </extensions>
-      <binding-address xmlns="urn:opendaylight:params:xml:ns:yang:controller:bmp:impl">0.0.0.0</binding-address>
-          <dom-data-provider xmlns="urn:opendaylight:params:xml:ns:yang:controller:bmp:impl">
-        <type xmlns:x="urn:opendaylight:params:xml:ns:yang:controller:md:sal:dom">x:dom-async-data-broker</type>
-        <name>pingpong-broker</name>
-      </dom-data-provider>
-      <binding-port xmlns="urn:opendaylight:params:xml:ns:yang:controller:bmp:impl">12345</binding-port>
-      <monitored-router xmlns="urn:opendaylight:params:xml:ns:yang:controller:bmp:impl">
-        <address xmlns="urn:opendaylight:params:xml:ns:yang:controller:bmp:impl">10.10.10.10</address>
-        <port xmlns="urn:opendaylight:params:xml:ns:yang:controller:bmp:impl">1234</port>
-        <active xmlns="urn:opendaylight:params:xml:ns:yang:controller:bmp:impl">true</active>
+   <bmp-monitor-config xmlns="urn:opendaylight:params:xml:ns:yang:bmp-monitor-config">
+      <monitor-id>example-bmp-monitor</monitor-id>
+      <server>
+         <binding-port>12345</binding-port>
+         <binding-address>0.0.0.0</binding-address>
+      </server>
+      <monitored-router>
+         <address>192.0.2.2</address>
+         <port>1234</port>
+         <active>true</active>
       </monitored-router>
-    </module>
+   </bmp-monitor-config>
 
-@line 23: **address** - The monitored router's IP address.
+@line 8: **address** - The monitored router's IP address.
 
-@line 24: **port** - The monitored router's port.
+@line 9: **port** - The monitored router's port.
 
-@line 25: **active** - Active mode set.
+@line 10: **active** - Active mode set.
 
 .. note:: User may configure active session establishment for multiple monitored routers.
 
 MD5 authentication configuration
 ''''''''''''''''''''''''''''''''
 In order to enable active connection, use following request.
-It is required to install ``odl-netconf-connector-ssh`` feature first.
 
-**URL:** ``/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules/config:module/odl-bmp-impl-cfg:bmp-monitor-impl/example-bmp-monitor``
+**URL:** ``/restconf/config/odl-bmp-monitor-config:odl-bmp-monitors/bmp-monitor-config/example-bmp-monitor``
 
 **Method:** ``PUT``
 
@@ -231,38 +199,23 @@ It is required to install ``odl-netconf-connector-ssh`` feature first.
 
 .. code-block:: xml
    :linenos:
-   :emphasize-lines: 23,24
+   :emphasize-lines: 8,9
 
-    <module xmlns="urn:opendaylight:params:xml:ns:yang:controller:config">
-      <name>example-bmp-monitor</name>
-      <type xmlns:x="urn:opendaylight:params:xml:ns:yang:controller:bmp:impl">x:bmp-monitor-impl</type>
-      <bmp-dispatcher xmlns="urn:opendaylight:params:xml:ns:yang:controller:bmp:impl">
-        <type>bmp-dispatcher</type>
-        <name>global-bmp-dispatcher</name>
-      </bmp-dispatcher>
-      <codec-tree-factory xmlns="urn:opendaylight:params:xml:ns:yang:controller:bmp:impl">
-        <type xmlns:x="urn:opendaylight:params:xml:ns:yang:controller:md:sal:binding">x:binding-codec-tree-factory</type>
-        <name>runtime-mapping-singleton</name>
-      </codec-tree-factory>
-      <extensions xmlns="urn:opendaylight:params:xml:ns:yang:controller:bmp:impl">
-        <type xmlns:x="urn:opendaylight:params:xml:ns:yang:controller:bgp:rib:spi">x:extensions</type>
-        <name>global-rib-extensions</name>
-      </extensions>
-      <binding-address xmlns="urn:opendaylight:params:xml:ns:yang:controller:bmp:impl">0.0.0.0</binding-address>
-          <dom-data-provider xmlns="urn:opendaylight:params:xml:ns:yang:controller:bmp:impl">
-        <type xmlns:x="urn:opendaylight:params:xml:ns:yang:controller:md:sal:dom">x:dom-async-data-broker</type>
-        <name>pingpong-broker</name>
-      </dom-data-provider>
-      <binding-port xmlns="urn:opendaylight:params:xml:ns:yang:controller:bmp:impl">12345</binding-port>
-      <monitored-router xmlns="urn:opendaylight:params:xml:ns:yang:controller:bmp:impl">
-        <address xmlns="urn:opendaylight:params:xml:ns:yang:controller:bmp:impl">11.11.11.11</address>
-        <password xmlns="urn:opendaylight:params:xml:ns:yang:controller:bmp:impl">topsecret</password>
+   <bmp-monitor-config xmlns="urn:opendaylight:params:xml:ns:yang:bmp-monitor-config">
+      <monitor-id>example-bmp-monitor</monitor-id>
+      <server>
+         <binding-port>12345</binding-port>
+         <binding-address>0.0.0.0</binding-address>
+      </server>
+      <monitored-router>
+         <address>192.0.2.2</address>
+         <password>changeme</password>
       </monitored-router>
-    </module>
+   </bmp-monitor-config>
 
-@line 23: **address** - The monitored router's IP address.
+@line 8: **address** - The monitored router's IP address.
 
-@line 24: **password** - The TCP MD5 signature.
+@line 9: **password** - The TCP MD5 signature.
 
 Collector DB Tree
 ^^^^^^^^^^^^^^^^^
