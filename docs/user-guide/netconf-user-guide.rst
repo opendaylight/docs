@@ -611,6 +611,13 @@ OpenDaylight provides 2 types of NETCONF servers:
     different approach for NETCONF message handling and data
     translation. These 2 components will probably merge in the future.
 
+.. note::
+
+    Since Nitrogen release, there is performance regression in NETCONF
+    servers accepting SSH connections. While opening a connection takes
+    less than 10 seconds on Carbon, on Nitrogen time can increase up to
+    60 seconds. Please see https://bugs.opendaylight.org/show_bug.cgi?id=9020
+
 NETCONF server for config-subsystem
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
