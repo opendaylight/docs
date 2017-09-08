@@ -14,8 +14,9 @@ Major Features
 odl-neutron-service
 -------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=neutron.git;a=blob;f=features/production/features-neutron/src/main/features/features.xml;hb=refs/heads/stable/carbon
-* **Feature Description:**  This is a top level feature to load Neutron northbound functionality.
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=neutron.git;a=blob;f=features/production/odl-neutron-service/pom.xml;hb=refs/heads/stable/nitrogen
+* **Feature Description:** This is a top level feature to load Neutron
+  northbound functionality.
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** No
@@ -26,8 +27,9 @@ odl-neutron-service
 odl-neutron-northbound-api
 --------------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=neutron.git;a=blob;f=features/production/features-neutron/src/main/features/features.xml;hb=refs/heads/stable/carbon
-* **Feature Description:**  This feature provides REST API for OpenStack Neutron
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=neutron.git;a=blob;f=features/production/odl-neutron-northbound-api/pom.xml;hhb=refs/heads/stable/nitrogen
+* **Feature Description:** This feature provides REST API for
+  OpenStack Neutron
 * **Top Level:** No
 * **User Facing:** No
 * **Experimental:** No
@@ -39,7 +41,7 @@ odl-neutron-northbound-api
 odl-neutron-spi
 ---------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=neutron.git;a=blob;f=features/production/features-neutron/src/main/features/features.xml;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=neutron.git;a=blob;f=features/production/odl-neutron-spi/pom.xml;hb=stable/nitrogen
 * **Feature Description:**  SPI for Neutron northbound feature
 * **Top Level:** No
 * **User Facing:** No
@@ -51,8 +53,9 @@ odl-neutron-spi
 odl-neutron-transcriber
 -----------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=neutron.git;a=blob;f=features/production/features-neutron/src/main/features/features.xml;hb=refs/heads/stable/carbon
-* **Feature Description:**  Data converter from/to REST API to/from MD-SAL YANG model
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=neutron.git;a=blob;f=features/production/odl-neutron-transcriber/pom.xml;hb=stable/nitrogen
+* **Feature Description:** Data converter from/to REST API to/from
+  MD-SAL YANG model
 * **Top Level:** No
 * **User Facing:** No
 * **Experimental:** No
@@ -63,7 +66,7 @@ odl-neutron-transcriber
 odl-neutron-logger
 ------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=neutron.git;a=blob;f=features/production/features-neutron/src/main/features/features.xml;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=neutron.git;a=blob;f=features/production/odl-neutron-logger/pom.xml;hb=stable/nitrogen
 * **Feature Description:**  Logger on activity on Neutron YANG models
 * **Top Level:** No
 * **User Facing:** No
@@ -75,8 +78,9 @@ odl-neutron-logger
 odl-neutron-hostconfig-ovs
 --------------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=neutron.git;a=blob;f=features/production/features-neutron/src/main/features/features.xml;hb=refs/heads/stable/carbon
-* **Feature Description:**  Helper library to support hostconfig for OpenStack service provider with Open vSwitch
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=neutron.git;a=blob;f=features/production/odl-neutron-hostconfig-ovs/pom.xml;hb=stable/nitrogen
+* **Feature Description:** Helper library to support hostconfig for
+  OpenStack service provider with Open vSwitch
 * **Top Level:** No
 * **User Facing:** No
 * **Experimental:** No
@@ -87,8 +91,9 @@ odl-neutron-hostconfig-ovs
 odl-neutron-hostconfig-vpp
 --------------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=neutron.git;a=blob;f=features/production/features-neutron/src/main/features/features.xml;hb=refs/heads/stable/carbon
-* **Feature Description:**  Helper library to support hostconfig for OpenStack service provider with VPP
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=neutron.git;a=blob;f=features/production/odl-neutron-hostconfig-vpp/pom.xml;hb=stable/nitrogen
+* **Feature Description:** Helper library to support hostconfig for
+  OpenStack service provider with VPP
 * **Top Level:** No
 * **User Facing:** No
 * **Experimental:** No
@@ -145,13 +150,11 @@ Quality Assurance
     tests which also exercise Neutron Norhtbound. Which give coverage.
 
 
-* Testing methodology. How extensive was it? What should be expected to work? What hasn't been tested as much?
+* Testing methodology. How extensive was it? What should be expected
+  to work? What hasn't been tested as much?
 
-  * Unit test: coverage 26.5%
-  * Integration test(Karaf 3): coverage 75.9%
-  * Integration test(karaf 4): doens't work reliably.
-    https://git.opendaylight.org/gerrit/#/c/55128/ is pending to migrate
-    integration test to karaf4
+  * Unit test: coverage 24.9%
+  * Integration test: coverage 75.8%
   * OpenStack CI
 
 Migration
@@ -170,16 +173,7 @@ Compatibility
 
 * Any API changes?
 
-  Yes. adding new YANG models/nodes and REST API.
-
-  * `TRUNK API
-    <https://git.opendaylight.org/gerrit/#/c/50615/>`_
-  * `add configuration string
-    <https://git.opendaylight.org/gerrit/#/c/51817/>`_
-  * `add service provider feature model
-    <https://git.opendaylight.org/gerrit/#/c/52081/>`_
-  * `Neutron YANG model update
-    <https://git.opendaylight.org/gerrit/#/c/51534/>`_
+  No.
 
 * Any configuration changes?
 
@@ -191,7 +185,7 @@ Bugs Fixed
 * List of bugs fixed since the previous release
 
   * `Link to Bugs fixed
-    <https://bugs.opendaylight.org/buglist.cgi?chfieldfrom=2016-08-09&chfieldto=2017-05-25&list_id=78675&product=neutron&query_format=advanced&resolution=FIXED>`_
+    <https://bugs.opendaylight.org/buglist.cgi?chfieldfrom=2017-05-25&chfieldto=2017-09-08&list_id=78675&product=neutron&query_format=advanced&resolution=FIXED>`_
 
 
 Known Issues
@@ -232,7 +226,10 @@ Release Mechanics
 =================
 
 * `Link to release plan
-  <https://wiki.opendaylight.org/view/NeutronNorthbound:Carbon_Release_Plan>`_
+  <https://wiki.opendaylight.org/view/NeutronNorthbound:Nitrogen_Release_Plan>`_
 * Describe any major shifts in release schedule from the release plan
 
-  * Postponed YANG model change to drop tenant-id, make status operational to Nitrogen cycle
+  * Postponed YANG model change to drop tenant-id, make status
+    operational to Nitrogen cycle
+  * update supported QoS rules
+  * TAPaaS
