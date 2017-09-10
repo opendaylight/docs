@@ -9,12 +9,12 @@ Feature Name
 ------------
 
 * **Feature Name:** odl-netvirt-openstack
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=netvirt.git;a=blob_plain;f=vpnservice/features/src/main/features/features.xml
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=netvirt.git;a=blob;f=vpnservice/features/odl-netvirt-openstack/pom.xml;hb=HEAD
 * **Feature Description:**  This feature provides a network virtualization solution.
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** No
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/netvirt-csit/job/netvirt-csit-1node-openstack-newton-nodl-v2-upstream-stateful-carbon/
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/netvirt-csit/job/netvirt-csit-1node-openstack-ocata-upstream-stateful-carbon/
 
 Documentation
 =============
@@ -42,26 +42,22 @@ Quality Assurance
 
 * `Sonar Report <https://sonar.opendaylight.org/overview?id=64219>`_
 * `All CSIT Jobs <https://jenkins.opendaylight.org/releng/view/netvirt-csit>`_
-* `Default stateful tests <https://jenkins.opendaylight.org/releng/view/netvirt-csit/job/netvirt-csit-1node-openstack-newton-nodl-v2-upstream-stateful-carbon>`_
-* `Conntrack SNAT stateful tests <https://jenkins.opendaylight.org/releng/view/netvirt-csit/job/netvirt-csit-1node-openstack-newton-nodl-v2-upstream-stateful-snat-conntrack-carbon>`_
-* `v1 tests <https://jenkins.opendaylight.org/releng/view/netvirt-csit/job/netvirt-csit-1node-openstack-newton-upstream-stateful-carbon>`_
-* `Learn tests <https://jenkins.opendaylight.org/releng/view/netvirt-csit/job/netvirt-csit-1node-openstack-newton-nodl-v2-upstream-learn-carbon>`_
-* `Transparent tests <https://jenkins.opendaylight.org/releng/view/netvirt-csit/job/netvirt-csit-1node-openstack-newton-nodl-v2-upstream-transparent-carbon>`_
+* `Main test jobs <https://jenkins.opendaylight.org/releng/view/netvirt-csit/job/netvirt-csit-1node-openstack-ocata-upstream-stateful-nitrogen/>`_
 
 Migration
 ---------
 
-Nothing beyond general Carbon migration requirements.
+Nothing beyond general migration requirements.
 
 Compatibility
 -------------
 
-Nothing beyond general Carbon Compatibility requirements.
+Nothing beyond general compatibility requirements.
 
 Bugs Fixed
 ----------
 
-* `Closed Bugs <https://bugs.opendaylight.org/buglist.cgi?bug_status=RESOLVED&bug_status=VERIFIED&component=General&list_id=78695&order=changeddate%2Cpriority%2Cbug_severity&product=netvirt&query_based_on=&query_format=advanced&resolution=FIXED&resolution=INVALID&resolution=WONTFIX&resolution=DUPLICATE&resolution=WORKSFORME&version=Carbon>`_
+* `Closed Bugs <https://bugs.opendaylight.org/buglist.cgi?bug_status=RESOLVED&bug_status=VERIFIED&component=General&list_id=78695&order=changeddate%2Cpriority%2Cbug_severity&product=netvirt&query_based_on=&query_format=advanced&resolution=FIXED&resolution=INVALID&resolution=WONTFIX&resolution=DUPLICATE&resolution=WORKSFORME&version=Nitrogen>`_
 
 Known Issues
 ------------
@@ -71,7 +67,7 @@ Known Issues
 End-of-life
 ===========
 
-* odl-ovsdb-openstack: the feature was replaced with odl-netvirt-openstack
+N/A
 
 Standards
 =========
@@ -81,5 +77,5 @@ N/A
 Release Mechanics
 =================
 
-* `Release Plan <https://wiki.opendaylight.org/view/NetVirt:Carbon:Release_Plan>`_
+* `Release Plan <https://wiki.opendaylight.org/view/NetVirt:nitrogen:Release_Plan>`_
 * Project was on schedule
