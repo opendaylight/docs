@@ -16,7 +16,7 @@ Genius project provides Generic Network Interfaces, Utilities & Services. Any OD
 Major Features
 ==============
 
-* **Features URL:** https://git.opendaylight.org/gerrit/gitweb?p=genius.git;a=blob;f=features/genius-features/src/main/features/features.xml
+* **Features URL:** https://git.opendaylight.org/gerrit/gitweb?p=genius.git;a=blob_plain;f=features/genius-features/pom.xml 
 
 odl-genius-rest
 ---------------
@@ -28,9 +28,8 @@ odl-genius-rest
 * **Experimental:** No
 * **CSIT Tests:**
 
-  * https://jenkins.opendaylight.org/releng/view/genius/job/genius-csit-1node-genius-all-carbon/
-  * https://jenkins.opendaylight.org/releng/view/genius/job/genius-csit-3node-genius-all-carbon/
-
+  * https://jenkins.opendaylight.org/releng/view/genius/job/genius-csit-1node-upstream-all-nitrogen/
+  * https://jenkins.opendaylight.org/releng/view/genius/job/genius-csit-3node-upstream-all-nitrogen/
 
 odl-genius-fcaps-application
 ----------------------------
@@ -51,36 +50,21 @@ odl-genius-fcaps-framework
 * **CSIT Tests:** None
 
 
-New capabilities and enhancements added in Carbon
-=================================================
+New capabilities and enhancements added in Nitrogen
+===================================================
 
-Planned new capabilities added
+Planned new capability added
 ------------------------------
 
-* :doc:`/submodules/genius/docs/specs/of-tunnels`
-* :doc:`/submodules/genius/docs/specs/itm-tunnel-auto-config`
-* :doc:`/submodules/genius/docs/specs/service-binding-on-tunnels`
+* :doc:`/submodules/genius/docs/specs/service-recovery`
 
-
-Unplanned new capabilities added (needed by Netvirt Project)
-------------------------------------------------------------
-
-* :doc:`/submodules/genius/docs/specs/multiple-vxlan-tunnels`
-
-Enhancements added to existing features/services
-------------------------------------------------
-
-* Interface manager : Increase max services bind on an interface to 16
-* ITM to support same TEP in multiple Transport Zones
-* Various performance and scale improvements
 
 Enhancements added to project
 -----------------------------
 
-#. Migration to Blueprint
-#. Checkstyle enforcement
-#. IT framework enhancements
-#. Junits and CSIT enhancements
+#. Migration to Karaf4
+#. Bug fixes
+
 
 Documentation
 =============
@@ -111,13 +95,13 @@ Security Considerations
 Quality Assurance
 =================
 
-* `Sonar Report <https://sonar.opendaylight.org/overview?id=64114>`_ (40.7%)
+* `Sonar Report <https://sonar.opendaylight.org/overview?id=64114>`_
 
-* `CSIT Jobs <https://jenkins.opendaylight.org/releng/view/genius/job/genius-csit-1node-genius-all-carbon//>`_
+* `CSIT Jobs <https://jenkins.opendaylight.org/releng/view/genius/job/genius-csit-1node-upstream-all-nitrogen//>`_
 
-* `Netvirt CSIT for Genius patches <https://jenkins.opendaylight.org/releng/job/genius-patch-test-netvirt-carbon/>`_
+* `Netvirt CSIT for Genius patches <https://jenkins.opendaylight.org/releng/job/genius-patch-test-netvirt-nitrogen/>`_
 
-* `Netvirt Cluster CSIT for Genius patches <https://jenkins.opendaylight.org/releng/job/genius-patch-test-cluster-netvirt-carbon/>`_
+* `Netvirt Cluster CSIT for Genius patches <https://jenkins.opendaylight.org/releng/job/genius-patch-test-cluster-netvirt-nitrogen/>`_
 
   .. note:: Genius is used extensively in NetVirt, so NetVirt's CSIT also
             provides confidence in genius.
@@ -146,7 +130,7 @@ Compatibility
 
 * Any API changes?
 
-  * No
+  * New API added for `service-recovery </submodules/genius/docs/specs/service-recovery>` feature
 
 * Any configuration changes?
 
@@ -157,7 +141,7 @@ Bugs Fixed
 
 * List of bugs fixed since the previous release
 
-  * `Fixed BUGS <https://bugs.opendaylight.org/buglist.cgi?chfieldfrom=2016-08-9&chfieldto=2017-05-25&list_id=78466&product=genius&query_format=advanced&resolution=FIXED>`_
+  * `Fixed BUGS <https://bugs.opendaylight.org/buglist.cgi?chfieldfrom=2017-05-25&chfieldto=2017-08-09&list_id=78466&product=genius&query_format=advanced&resolution=FIXED>`_
 
 Known Issues
 ------------
@@ -173,7 +157,7 @@ End-of-life
 
 * List of features/APIs which are EOLed, deprecated, and/or removed in this release
 
-  * `MDSalUtil Async*ListenerBase classes deprecated <https://git.opendaylight.org/gerrit/#/c/51913/>`_
+  * N/A
 
 Standards
 =========
@@ -185,7 +169,7 @@ Standards
 Release Mechanics
 =================
 
-* `Release plan <https://wiki.opendaylight.org/view/Genius:Carbon_Release_Plan>`_
+* `Release plan <https://wiki.opendaylight.org/view/Genius:Nitrogen_Release_Plan>`_
 
 * Describe any major shifts in release schedule from the release plan
 
