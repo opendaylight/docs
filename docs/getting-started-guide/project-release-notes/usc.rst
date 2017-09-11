@@ -22,7 +22,7 @@ USC Channel UI
 --------------
 
 * **Feature Name:** odl-usc-channel-ui
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=usc.git;a=blob;f=usc-features/src/main/features/features.xml;
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=usc.git;a=blob;f=usc-features/odl-usc-channel-ui/pom.xml;
 * **Feature Description:**  Responsible for communication between the controller
   and the USC agent . It responds to call-home with the controller, maintains
   live connections with the devices, acts as muxer/demuxer for packets with the
@@ -30,7 +30,7 @@ USC Channel UI
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** No
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/usc/job/usc-csit-1node-tcp-all-carbon/
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/usc/job/usc-csit-1node-tcp-all-nitrogen/
 
 Documentation
 =============
@@ -58,8 +58,8 @@ Quality Assurance
 =================
 
 * `Link to Sonar Report <https://sonar.opendaylight.org/overview?id=44336>`_
-* `Link to CSIT Jobs <https://jenkins.opendaylight.org/releng/view/usc/job/usc-csit-1node-tcp-all-carbon/>`_
-* `Link to Additional Details <https://wiki.opendaylight.org/view/USC:Carbon:Integration_Test>`_
+* `Link to CSIT Jobs <https://jenkins.opendaylight.org/releng/view/usc/job/usc-csit-1node-tcp-all-nitrogen/>`_
+* `Link to Additional Details <https://wiki.opendaylight.org/view/USC:Integration_Test>`_
 * Code is covered by unit and integration tests
 * System Tests are performed by CSIT jobs using java test agent.
 
@@ -67,12 +67,12 @@ Quality Assurance
 Migration
 ---------
 
-* Nothing beyond general Carbon migration requirements.
+* Nothing beyond general OpenDaylight migration requirements.
 
 Compatibility
 -------------
 
-* Nothing beyond general Carbon compatibility constraints.
+* Nothing beyond general OpenDaylight compatibility constraints.
 
 Bugs Fixed
 ----------
@@ -97,5 +97,5 @@ Standards
 Release Mechanics
 =================
 
-* `USC Release Plan <https://wiki.opendaylight.org/view/USC:Carbon:Release_Plan>`_
+* `USC Release Plan <https://wiki.opendaylight.org/view/USC:Nitrogen:Release_Plan>`_
 * Project was on schedule
