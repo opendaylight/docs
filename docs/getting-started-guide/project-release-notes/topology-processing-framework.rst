@@ -8,62 +8,62 @@ Major Features
 odl-topoprocessing-framework
 ----------------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=topoprocessing.git;a=blob;f=features/src/main/resources/features.xml;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=topoprocessing.git;a=blob;f=features/odl-topoprocessing-framework/pom.xml;h=c1c7b89ddb42af81efbeb5ae444e3179b0a14533;hb=refs/heads/stable/nitrogen
 * **Feature Description:**  Topology processing core
 * **Top Level:** No
 * **User Facing:** No
 * **Experimental:** Yes
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/topoprocessing/job/topoprocessing-csit-1node-topology-operations-all-carbon/
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/topoprocessing/job/topoprocessing-csit-1node-topology-operations-all-nitrogen/
 
 odl-topoprocessing-mlmt
 -----------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=topoprocessing.git;a=blob;f=features/src/main/resources/features.xml;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=topoprocessing.git;a=blob;f=features/odl-topoprocessing-mlmt/pom.xml;h=9fe3d505825f0f06dfcb166708b629d06855ec72;hb=refs/heads/stable/nitrogen
 * **Feature Description:**  Multi-Layer and Multi-Technology (MLMT) module
 * **Top Level:** Yes
 * **User Facing:** No
 * **Experimental:** Yes
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/topoprocessing/job/topoprocessing-csit-1node-topology-operations-all-carbon/
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/topoprocessing/job/topoprocessing-csit-1node-topology-operations-all-nitrogen/
 
 odl-topoprocessing-network-topology
 -----------------------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=topoprocessing.git;a=blob;f=features/src/main/resources/features.xml;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=topoprocessing.git;a=blob;f=features/odl-topoprocessing-network-topology/pom.xml;h=0de34de8dd99de3ac4b0c0bc5908a1de24a8f7ea;hb=refs/heads/stable/nitrogen
 * **Feature Description:**  Support for network-topology model
 * **Top Level:** Yes
 * **User Facing:** No
 * **Experimental:** Yes
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/topoprocessing/job/topoprocessing-csit-1node-topology-operations-all-carbon/
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/topoprocessing/job/topoprocessing-csit-1node-topology-operations-all-nitrogen/
 
 odl-topoprocessing-inventory
 ----------------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=topoprocessing.git;a=blob;f=features/src/main/resources/features.xml;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=topoprocessing.git;a=blob;f=features/odl-topoprocessing-inventory/pom.xml;h=ef8b9c3b1cffc72bf871fd7168799ab797e05e5d;hb=refs/heads/stable/nitrogen
 * **Feature Description:**  Support for inventory model
 * **Top Level:** Yes
 * **User Facing:** No
 * **Experimental:** Yes
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/topoprocessing/job/topoprocessing-csit-1node-topology-operations-all-carbon/
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/topoprocessing/job/topoprocessing-csit-1node-topology-operations-all-nitrogen/
 
 odl-topoprocessing-I2rs
 -----------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=topoprocessing.git;a=blob;f=features/src/main/resources/features.xml;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=topoprocessing.git;a=blob;f=features/odl-topoprocessing-i2rs/pom.xml;h=f6b747cadfebc92d6df58e84ed894ffd390d6768;hb=refs/heads/stable/nitrogen
 * **Feature Description:**  Support for i2rs model
 * **Top Level:** Yes
 * **User Facing:** No
 * **Experimental:** Yes
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/topoprocessing/job/topoprocessing-csit-1node-topology-operations-all-carbon/
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/topoprocessing/job/topoprocessing-csit-1node-topology-operations-all-nitrogen/
 
 odl-topoprocessing-inventory-rendering
 --------------------------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=topoprocessing.git;a=blob;f=features/src/main/resources/features.xml;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=topoprocessing.git;a=blob;f=features/odl-topoprocessing-inventory-rendering/pom.xml;h=cf278e2429f7ae048eac134a7c7b7f7095d4ba24;hb=refs/heads/stable/nitrogen
 * **Feature Description:**  Rendering demo
 * **Top Level:** Yes
 * **User Facing:** No
 * **Experimental:** Yes
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/topoprocessing/job/topoprocessing-csit-1node-topology-operations-all-carbon/
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/topoprocessing/job/topoprocessing-csit-1node-topology-operations-all-nitrogen/
 
 Documentation
 =============
@@ -82,8 +82,8 @@ Security Considerations
 Quality Assurance
 =================
 
-* `Link to Sonar Report <https://sonar.opendaylight.org/overview?id=31056>`_ (80.2%)
-* `Link to CSIT Jobs <https://jenkins.opendaylight.org/releng/view/topoprocessing/job/topoprocessing-csit-1node-topology-operations-all-carbon/>`_
+* `Link to Sonar Report <https://sonar.opendaylight.org/overview?id=org.opendaylight.topoprocessing%3Atopoprocessing-aggregator>`_ (80%)
+* `Link to CSIT Jobs <https://jenkins.opendaylight.org/releng/view/topoprocessing/job/topoprocessing-csit-1node-topology-operations-all-nitrogen/>`_
 
 Migration
 ---------
@@ -98,7 +98,7 @@ Compatibility
 Bugs Fixed
 ----------
 
-* `Link to fixed bugs <https://bugs.opendaylight.org/buglist.cgi?bug_status=UNCONFIRMED&bug_status=CONFIRMED&bug_status=IN_PROGRESS&bug_status=WAITING_FOR_REVIEW&bug_status=RESOLVED&bug_status=VERIFIED&chfield=bug_status&chfieldfrom=2016-09-08&chfieldto=2017-04-24&component=General&product=topoprocessing&query_format=advanced&resolution=FIXED&resolution=INVALID&resolution=WONTFIX&resolution=DUPLICATE&resolution=WORKSFORME>`_
+* `Link to fixed bugs <https://bugs.opendaylight.org/buglist.cgi?chfield=bug_status&chfieldto=Now&component=General&f1=bug_status&f2=bug_status&o1=changedafter&o2=changedbefore&product=topoprocessing&query_format=advanced&resolution=FIXED&v1=2017-4-24&v2=2017-9-11>`_
 
 Known Issues
 ------------
@@ -131,4 +131,4 @@ End-of-life
 Release Mechanics
 =================
 
-* `Link to release plan <https://wiki.opendaylight.org/view/Topology_Processing_Framework:CARBON_Release_Plan>`_
+* `Link to release plan <https://wiki.opendaylight.org/view/Topology_Processing_Framework:NITROGEN_Release_Plan>`_
