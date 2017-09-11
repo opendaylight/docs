@@ -1,3 +1,5 @@
+.. _daexim-user-guide:
+
 Data Export/Import User Guide
 =============================
 
