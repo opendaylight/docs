@@ -46,7 +46,7 @@ Security Considerations
 Quality Assurance
 =================
 
-* `Link to Sonar Report <https://sonar.opendaylight.org/overview?id=50636>`_ (22.0% code coverage)
+* `Link to Sonar Report <https://sonar.opendaylight.org/overview?id=org.opendaylight.l2switch%3Al2switch>`_
 * `Link to CSIT Jobs <https://jenkins.opendaylight.org/releng/view/l2switch/>`_
 * The tests are using the OpenDaylight CSIT infrastructure.
 
@@ -93,5 +93,5 @@ None.
 Release Mechanics
 =================
 
-* `Link to release plan <https://wiki.opendaylight.org/view/L2_Switch:Carbon_Release_Plan>`_
+* `Link to release plan <https://wiki.opendaylight.org/view/L2_Switch:Nitrogen_Release_Plan>`_
 *  No major changes.
