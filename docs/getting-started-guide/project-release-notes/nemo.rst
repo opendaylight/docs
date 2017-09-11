@@ -16,12 +16,12 @@ NEMO Engine UI
 --------------
 
 * **Feature Name:** odl-nemo-engine-ui
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=nemo.git;a=blob;f=nemo-features/src/main/features/features.xml;
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=nemo.git;a=blob;f=nemo-features/odl-nemo-engine-ui/pom.xml;
 * **Feature Description:**  DSL based for the abstraction of network models and conclusion of operation patterns.
 * **Top Level:** Yes
 * **User Facing:** Yes
-* **Experimental:** No
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/nemo/job/nemo-csit-1node-engine-all-carbon/
+* **Experimental:** Yes
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/nemo/job/nemo-csit-1node-engine-all-nitrogen/
 
 Documentation
 =============
@@ -43,8 +43,8 @@ Quality Assurance
 =================
 
 * `Link to Sonar Report <https://sonar.opendaylight.org/overview?id=53347>`_ 42.8%
-* `Link to CSIT Jobs <https://jenkins.opendaylight.org/releng/view/nemo/job/nemo-csit-1node-engine-all-carbon/>`_
-* `Manual Tests <https://wiki.opendaylight.org/view/NEMO:Carbon:System_Test>`_
+* `Link to CSIT Jobs <https://jenkins.opendaylight.org/releng/view/nemo/job/nemo-csit-1node-engine-all-nitrogen/>`_
+* `Manual Tests <https://wiki.opendaylight.org/view/NEMO:System_Test>`_
 * External System Test is done manually, since the sandbox environment could not satisfy NEMO's requirements.
 
 Migration
@@ -82,5 +82,5 @@ Standards
 Release Mechanics
 =================
 
-* `NEMO Release Plan <https://wiki.opendaylight.org/view/NEMO:Carbon:Release_Plan>`_
+* `NEMO Release Plan <https://wiki.opendaylight.org/view/NEMO:Nitrogen:Release_Plan>`_
 * Project was on schedule
