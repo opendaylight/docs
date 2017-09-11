@@ -77,6 +77,7 @@ Project-specific Release Notes
    project-release-notes/bier
    project-release-notes/cardinal
    project-release-notes/controller
+   project-release-notes/daexim-release-notes
    project-release-notes/didm
    project-release-notes/distribution
    project-release-notes/dluxapps
