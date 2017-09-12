@@ -42,8 +42,8 @@ Quality Assurance
 
 * `Link to Sonar Report <https://sonar.opendaylight.org/overview?id=58232>`_ (N/A)
 * There are unit tests and integration test scripts available under folder "demo" in the faas repo,
-  these scripts can be manually invoked for testing. these tests only depends on minnet and ovs
-  which can easily been installed on one VM.
+  these scripts can be manually invoked for testing. These tests only depend on mininet and ovs
+  which can easily be installed on one VM.
 
 Migration
 ---------
@@ -89,7 +89,7 @@ Standards
 Release Mechanics
 =================
 
-* `Link to release plan <https://wiki.opendaylight.org/view/FaaS:Carbon_Release_Plan>`_
+* `Link to release plan <https://wiki.opendaylight.org/view/FaaS:Nitrogen_Release_Plan>`_
 * Describe any major shifts in release schedule from the release plan
 
   * None
