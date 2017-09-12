@@ -5,12 +5,12 @@ Bit Indexed Explicit Replication (BIER)
 odl-bier-all
 ------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=bier.git;a=blob;f=features/features-bier/src/main/features/features.xml
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=bier.git;a=blob;f=features/features-bier/pom.xml;hb=refs/heads/stable/nitrogen
 * **Feature Description:**  This is a summary feature containing the default functionalities provided by BIER project.
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** Yes
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/bier/job/bier-csit-1node-basic-all-carbon/
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/bier/job/bier-csit-1node-basic-all-nitrogen/
 
 Documentation
 =============
@@ -28,17 +28,17 @@ Security Considerations
 
 * Do you have any external interfaces other than RESTCONF?
 
-  * BIER project needs to get topology information via OpenFlow and BIER configuration via NETCONF.
+  * BIER project needs to get topology information via BGP-LS and BIER configuration via NETCONF.
 
 * Other security issues?
 
-  * The required security issues are provided in the RESTCONF, NETCONF and OpenFlow project.
+  * The required security issues are provided in the RESTCONF, NETCONF and BGP-LS project.
 
 Quality Assurance
 =================
 
-* `Link to Sonar Report <https://sonar.opendaylight.org/overview?id=72693>`_ 76.5%
-* `Link to CSIT Jobs <https://jenkins.opendaylight.org/releng/view/bier/job/bier-csit-1node-basic-all-carbon/>`_
+* `Link to Sonar Report <https://sonar.opendaylight.org/overview?id=72693>`_ 76.7%
+* `Link to CSIT Jobs <https://jenkins.opendaylight.org/releng/view/bier/job/bier-csit-1node-basic-all-nitrogen/>`_
 * Testing methodology. How extensive was it? What should be expected to work?
   What has not been tested as much?
 * There are unit tests and integration test available under folder "test" and system test in CSIT but the NETCONF
@@ -49,31 +49,29 @@ Migration
 
 * Is is possible migrate from the previous release? If so, how?
 
-* Not applicable as there is no previous release.
+* Migration with data from Carbon to Nitrogen is not supported.
 
 Compatibility
 -------------
 
-* Is this release compatible with the previous release? No previous release.
-* Any API changes? No.
-* Any configuration changes? No.
+* Is this release compatible with the previous release? Yes.
+* Any API changes? Yes. Some BIER-TE APIs have been added.
+* Any configuration changes? Yes. BGP-LS should be used instead of OpenFlow to get topology information.
 
 Bugs Fixed
 ----------
 
-* Not applicable as there is no previous release.
+* None.
 
 Known Issues
 ------------
 
-* Not applicable as there is no previous release.
+* None.
 
 End-of-life
 ===========
 
-* List of features/APIs which are EOLed, deprecated, and/or removed in this
-  release
-* N/A
+* None.
 
 Standards
 =========
@@ -84,6 +82,5 @@ Standards
 Release Mechanics
 =================
 
-* `Link to release plan <https://wiki.opendaylight.org/view/BIER:Carbon:Release_Plan>`_
-* Describe any major shifts in release schedule from the release plan
-* N/A
+* `Link to release plan <https://wiki.opendaylight.org/view/BIER:Nitrogen:Release_Plan>`_
+* No major changes.
