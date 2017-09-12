@@ -89,7 +89,7 @@ Standards
 Release Mechanics
 =================
 
-* `Link to release plan <https://wiki.opendaylight.org/view/FaaS:Carbon_Release_Plan>`_
+* `Link to release plan <https://wiki.opendaylight.org/view/FaaS:Nitrogen_Release_Plan>`_
 * Describe any major shifts in release schedule from the release plan
 
   * None
