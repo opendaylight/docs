@@ -207,13 +207,6 @@ odl-sfc-test-consumer
 * **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sfc/job/sfc-csit-3node-clustering-all-carbon
 
 
-Features removed in this release
-================================
-
-* odl-sfc-bootstrap - used to load an initial configuration that is no longer needed
-* odl-sfcofl2 - was deprecated since it was renamed to odl-sfc-openflow-renderer
-
-
 Documentation
 =============
 
@@ -235,7 +228,7 @@ None.
 Quality Assurance
 =================
 
-* `Link to Sonar Report <https://sonar.opendaylight.org/overview?id=19574>`_ (55.9%)
+* `Link to Sonar Report <https://sonar.opendaylight.org/overview?id=19574>`_ (57.1%)
 * `Link to CSIT Jobs <https://jenkins.opendaylight.org/releng/view/sfc/>`_
 * All modules have been unit tested. Integration tests have been performed for
   all major features. System tests have been performed on most major features.
@@ -243,31 +236,10 @@ Quality Assurance
 Migration
 ---------
 
-The impacts on the SFC data models in this release are minimal.
-Several fields that were marked as deprecated in Beryllium and
-Boron have been removed in Carbon, as follows. No automatic data
-migration is supported.
+* Is it possible migrate from the previous release? If so, how?
 
-**Service Chain Symmetry**
-
-Previously a Service Chain could be marked symmetric by using
-either the symmetric flag in the Service Function Chain (SFC),
-the Service Function Path (SFP), or the Rendered Service Path (RSP).
-This approach can be confusing if the SFC, SFP, or RSP have different
-values for the symmetric flag. The symmetric flag has been removed
-from the SFC and RSP and can now only be set in the SFP. Additionally,
-if the symmetric flag is not present in the SFP, if any of the Service
-Functions is of a Service Funtion Type (SFT) that has the bidirectional
-flag set true, then the Service Chain will be symmetric. The SFP
-symmetric flag overides the SFT bidirectional flag. To say that
-a Service Chain is symmetric means that 2 RSPs will be created
-internally, one uplink and another downlink.
-
-
-**Deprecated Service Function fields**
-
-The Service Function ``nsh-aware`` and ``requires-classification`` fields
-have been moved to the Service Function Type.
+No changes were made to the SFC data model in this release, so
+SFC is 100% compatible with the previous release.
 
 Compatibility
 -------------
@@ -280,49 +252,32 @@ Bugs Fixed
 
 List of bugs fixed since the previous release
 
-* https://bugs.opendaylight.org/buglist.cgi?chfieldfrom=2016-08-09&chfieldto=2017-05-25&list_id=78767&product=sfc&query_format=advanced&resolution=FIXED
+* `3712 <https://bugs.opendaylight.org/show_bug.cgi?id=3712>`_ Setting an SF on an SFP hop with an SF type different than the corresponding SFC hop should fail
+* `7554 <https://bugs.opendaylight.org/show_bug.cgi?id=7554>`_ Update GUI after deprecating nsh-aware in SF and other changes in model
+* `7555 <https://bugs.opendaylight.org/show_bug.cgi?id=7555>`_ SfcRenderingException for logicalSFF when SFs share a compute node
+* `7629 <https://bugs.opendaylight.org/show_bug.cgi?id=7629>`_ Karaf 4 migration: provide Karaf 4 sfc features
 
 
 Known Issues
 ------------
 
 SFC needs changes in OVS to include the Network Service Headers (NSH) Chaining
-encapsulation feature. This patch has been ongoing for quite a while (2 years+),
-and still has not been officially merged. Until NSH is officially merged in
-OVS, SFC will use a branched version of OVS based on 2.6.1, called the
-"Yi Yang Patch", `located here <https://github.com/yyang13/ovs_nsh_patches>`_.
+encapsulation feature. This patch has been ongoing for quite a while, but has
+finally been officially merged in OVS 2.8. ODL will be updated to use this new
+version of OVS in the Oxygen release. Until then, SFC will use a branched
+version of OVS based on 2.6.1, called the "Yi Yang Patch",
+`located here <https://github.com/yyang13/ovs_nsh_patches>`_.
 Previous versions of this OVS patch only supported VXLAN-GPE + NSH
 encapsulation, but this version supports both ETH + NSH and VXLAN-GPE + ETH + NSH.
 
 * `Link to Open Bugs <https://bugs.opendaylight.org/buglist.cgi?bug_status=__open__&list_id=78823&order=Importance&product=sfc&query_format=specific>`_
 
-The following bug was found during Carbon RC testing, which was
-originally marked as a blocker. Upon further investigation, the
-MDSAL team decided its not a blocker and decided to postpone
-fixing it until Carbon SR1.
-
-* https://bugs.opendaylight.org/show_bug.cgi?id=8501
-
 
 End-of-life
 ===========
 
-List of features/APIs which are EOLed, deprecated, and/or removed in this release
+* None
 
-* In the Beryllium release, the Service Function nsh-aware and request-classification
-  API fields were deprecated, and were subsequently removed in Carbon.
-
-  * Use the corresponding fields in the Service Function Type instead.
-
-* In the Boron release, the symmetrice API field was deprecated in the Service
-  Function Chain and Rendered Service Path data models, and were subsequently
-  removed in Carbon.
-
-  * Use the Service Function Path (SFP) symmetric field instead of the SFC or
-    RSP symmetric field.
-  * Or, if the SFP symmetric field is not present and any of the Service
-    Functions has a Service Function type that sets bidirection true, then
-    the resulting Rendered Service Path will be symmetric.
 
 Standards
 =========
@@ -337,5 +292,5 @@ Standards
 Release Mechanics
 =================
 
-* `ODL SFC Carbon release plan <https://wiki.opendaylight.org/view/Service_Function_Chaining:Carbon_Release_Plan>`_
+* `ODL SFC Carbon release plan <https://wiki.opendaylight.org/view/Service_Function_Chaining:Nitrogen_Release_Plan>`_
 * No major shifts in the release schedule from the release plan
