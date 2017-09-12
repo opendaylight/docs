@@ -66,9 +66,9 @@ Quality Assurance
 Migration
 ---------
 
-* Is is possible migrate from the previous release? If so, how?
+* Is it possible migrate from the previous release? If so, how?
 
-  * LISP Flow Mapping service will auto-populate the datastructures from existing MD-SAL data upon service start if the data has already been migrated separately.
+  * LISP Flow Mapping service will auto-populate the datastructures from existing MD-SAL data upon service start if the data has already been migrated separately. No automated way for transfering the data is provided in this release.
 
 Compatibility
 -------------
@@ -90,25 +90,18 @@ Bugs Fixed
 
 * List of bugs fixed since the previous release:
 
-* `6536 <https://bugs.opendaylight.org/show_bug.cgi?id=6536>`_ Clustering: operational data is not showing up in the in-memory map-cache on the replicas 2016-09-08
-* `6754 <https://bugs.opendaylight.org/show_bug.cgi?id=6754>`_ No serializer defined for IPv6 prefix SimpleAddress 2016-09-20
-* `6759 <https://bugs.opendaylight.org/show_bug.cgi?id=6759>`_ Expired mappings are not returned from SimpleMapCache before deletion.  2016-09-21
-* `6634 <https://bugs.opendaylight.org/show_bug.cgi?id=6634>`_ LispNeutronService give exception: java.lang.NullPointerException 2016-10-13
-* `6782 <https://bugs.opendaylight.org/show_bug.cgi?id=6782>`_ RadixTrie parent insertion not done correctly for non-empty children  2016-10-13
-* `6925 <https://bugs.opendaylight.org/show_bug.cgi?id=6925>`_ Error during Map-Register performance test  2016-10-13
-* `7018 <https://bugs.opendaylight.org/show_bug.cgi?id=7018>`_ Null pointer exception when SMR map request is received 2016-10-25
-* `7035 <https://bugs.opendaylight.org/show_bug.cgi?id=7035>`_ Boron autorelease failing on lispflowmapping tests  2016-11-01
-* `6361 <https://bugs.opendaylight.org/show_bug.cgi?id=6361>`_ LispSouthboundHandler is marked @ChannelHandler.Sharable but is not stateless 2016-11-23
-* `7293 <https://bugs.opendaylight.org/show_bug.cgi?id=7293>`_ Radix trie node removals that update the root don't work  2016-12-05
-* `7586 <https://bugs.opendaylight.org/show_bug.cgi?id=7586>`_ Fix broken lispflowmapping features failing the new extended SingleFeatureTest incl. TestBundleDiag 2017-01-23
-* `7789 <https://bugs.opendaylight.org/show_bug.cgi?id=7789>`_ Odl-lispflowmapping-ui breaks DLUX  2017-02-15
-* `7628 <https://bugs.opendaylight.org/show_bug.cgi?id=7628>`_ Karaf 4 migration: provide Karaf 4 lispflowmapping features 2017-03-24
-* `7818 <https://bugs.opendaylight.org/show_bug.cgi?id=7818>`_ Map-Register fast path not working correctly  2017-03-27
-* `6071 <https://bugs.opendaylight.org/show_bug.cgi?id=6071>`_ Map Notify Authentication Data is not computed correctly  2017-03-27
-* `6381 <https://bugs.opendaylight.org/show_bug.cgi?id=6381>`_ Expired xTR-ID mappings are not removed 2017-03-27
-* `8248 <https://bugs.opendaylight.org/show_bug.cgi?id=8248>`_ Intermittent SingleFeatureTest failures in autorelease  2017-04-26
-* `8429 <https://bugs.opendaylight.org/show_bug.cgi?id=8429>`_ Integration tests fail intermittently with unexpected SMR (a.k.a. the Heisenbug)  04:21:56
-* `7272 <https://bugs.opendaylight.org/show_bug.cgi?id=7272>`_ Map-resolver replies with wrong mapping record and TTL  05:04:17
+* `6536 <https://bugs.opendaylight.org/show_bug.cgi?id=8679>`_ MappingSystem#getWidestNegativePrefix(Eid) returns incorrect results
+* `6754 <https://bugs.opendaylight.org/show_bug.cgi?id=9023>`_ Merging of negative prefixes is incorrect
+* `6759 <https://bugs.opendaylight.org/show_bug.cgi?id=7947>`_ Subscribers from both Northbound and Southbound origin are stored in SimpleMapCache
+* `6634 <https://bugs.opendaylight.org/show_bug.cgi?id=8469>`_ SMR scheduler task tracking unreliable
+* `6782 <https://bugs.opendaylight.org/show_bug.cgi?id=8506>`_ RNegative mapping subscriptions on SB take into account NB mappings too
+* `6925 <https://bugs.opendaylight.org/show_bug.cgi?id=8764>`_ Newly added mapping is removed when it has the same EID prefix as the old one
+* `7018 <https://bugs.opendaylight.org/show_bug.cgi?id=9037>`_ Negative mapping in SB masking overlapping more specific positive added later to NB
+* `7035 <https://bugs.opendaylight.org/show_bug.cgi?id=6537>`_ Expired mapping removed from map-cache, not removed from MD-SAL
+* `6361 <https://bugs.opendaylight.org/show_bug.cgi?id=8503>`_ DAO: Empty sub-tables are not removed
+* `7293 <https://bugs.opendaylight.org/show_bug.cgi?id=8112>`_ Integration tests: multi-site doesn't send SMR-invoked Map-Request on SMR
+* `7586 <https://bugs.opendaylight.org/show_bug.cgi?id=8591>`_ Authentication cannot be properly disabled
+* `7789 <https://bugs.opendaylight.org/show_bug.cgi?id=8775>`_ Upon negative mapping removal, subscribers should be notified to delete the negative
 
 
 Known Issues
@@ -135,6 +128,6 @@ Standards
 Release Mechanics
 =================
 
-* `Link to release plan <https://wiki.opendaylight.org/view/OpenDaylight_Lisp_Flow_Mapping:Carbon_Release_Plan>`_
+* `Link to release plan <https://wiki.opendaylight.org/view/OpenDaylight_Lisp_Flow_Mapping:Nitrogen_Release_Plan>`_
 
   * No major shifts from the release plan.
