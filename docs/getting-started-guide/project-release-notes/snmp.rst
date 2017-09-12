@@ -15,8 +15,7 @@ odl-snmp-plugin
 * **Experimental:** Yes
 * **CSIT Test:**
 
-  * https://jenkins.opendaylight.org/releng/view/snmp/job/snmp-csit-1node-basic-all-carbon/
-  * https://jenkins.opendaylight.org/releng/view/snmp/job/snmp-csit-1node-basic-only-carbon/
+  * https://jenkins.opendaylight.org/releng/view/snmp/job/snmp-csit-1node-basic-all-nitrogen/
 
 Documentation
 =============
@@ -52,15 +51,14 @@ Quality Assurance
 * `Link to Sonar Report <https://sonar.opendaylight.org/overview?id=69960>`_ (3.5% code coverage)
 * Link to CSIT Jobs:
 
-  * https://jenkins.opendaylight.org/releng/view/snmp/job/snmp-csit-1node-basic-all-carbon/
-  * https://jenkins.opendaylight.org/releng/view/snmp/job/snmp-csit-1node-basic-only-carbon/
+  * https://jenkins.opendaylight.org/releng/view/snmp/job/snmp-csit-1node-basic-all-nitrogen/
 
 * Other manual testing and QA information: None
 
 Migration
 ---------
 
-* Is is possible migrate from the previous release? If so, how?
+* Is it possible to migrate from the previous release? If so, how?
 
   It is possible to seamlessly migrate consumers to this iteration of the plug-in as there has been no functional
   change to features. Migration of state data is not defined.
@@ -68,14 +66,14 @@ Migration
 Compatibility
 -------------
 
-Compatible with previous release. No functional change to features
+Compatible with the previous release, no functional change to features
 
 Bugs Fixed
 ----------
 
 * List of bugs fixed since the previous release
 
-  None. No functional change to features
+  None - no functional change to features
 
 Known Issues
 ------------
@@ -93,7 +91,7 @@ End-of-life
 
 * List of features/APIs which are EOLed, deprecated, and/or removed in this release
 
-  none
+  None
 
 Standards
 =========
@@ -106,7 +104,7 @@ Standards
 Release Mechanics
 =================
 
-* `Link to release plan <https://wiki.opendaylight.org/view/SNMP_Plugin:Carbon_Release_Plan>`_
+* `Link to release plan <https://wiki.opendaylight.org/view/SNMP_Plugin:Nitrogen_Release_Plan>`_
 * Describe any major shifts in release schedule from the release plan
 
   None
