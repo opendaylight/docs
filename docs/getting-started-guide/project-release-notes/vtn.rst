@@ -8,12 +8,12 @@ Major Features
 odl-vtn-manager-rest
 --------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=vtn.git;a=blob;f=manager/features/features-vtn-manager/src/main/features/features.xml;hb=refs/heads/stable/carbon#l41
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=vtn.git;a=blob;f=manager/features/odl-vtn-manager-rest/pom.xml;h=89ef18b6b71461828fc0dc36162d1820f0ed5625;hb=HEAD#l24
 * **Feature Description:**  This is the feature that allows users to use the VTN virtualization, by creating the various components as needed for the network.
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** No
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-csit-1node-manager-only-carbon/,https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-csit-1node-manager-all-carbon/
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-csit-1node-manager-only-nitrogen,https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-csit-1node-manager-all-nitrogen
 
 
 odl-vtn-manager-neutron
@@ -69,16 +69,7 @@ Compatibility
 Bugs Fixed
 ----------
 
-* 6632 - VTN Coordinator Build Issues with Fedora 24
-* 7360 - VTN Coordinator Build Issues in Fedora 25
-* 7402 - VTN Coordinator Tomcat Upgrade to 7.0.73
-* 6859 - Clean up package names across ODL for yangtools
-* 7969 - VTN Coordinator Issues with recent Postgres Versions
-* 7652 - VTN Manager Support for Karaf 4
-* 8191 - VTN Manager Addressed some Checkstyle/findbugs warnings
-* 8184 - VTN Manager Removed some log messages when handling send-barrier RPC
-* 8211 - VTN Manager Addressed Problems in mapping VTN Flow and MD-SAL Flow
-* 8212 - VTN Manager Fixed Failure in retrieving dataflow
+
 
 Known Issues
 ------------
