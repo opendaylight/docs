@@ -19,16 +19,16 @@ Security Considerations
 
 * Do you have any external interfaces other than RESTCONF?
 
-  No
+  No.
 
 * Other security issues?
 
-  No
+  No.
 
 Quality Assurance
 =================
 
-* `Link to Sonar Report <https://sonar.opendaylight.org/overview?id=23179>`_ (6.9% coverage)
+* `Link to Sonar Report <https://sonar.opendaylight.org/overview?id=23179>`_ (6.4% coverage)
 * There are no CSIT jobs, ODL Parent has a system test waiver
 * ODL Parent is tested by all builds, and manually tested by running the basic
   Karaf container and verifying the scripts we modify (``client`` in
@@ -45,18 +45,19 @@ Migration
 
 * Is is possible migrate from the previous release? If so, how?
 
-  Yes. There are no specific migration aspects related to ODL Parent.
+  Yes. Migration to this release involves migrating features to Karaf 4; see
+  `the wiki <https://wiki.opendaylight.org/view/Karaf_4_migration>`_ for details.
 
 Compatibility
 -------------
 
 * Is this release compatible with the previous release?
 
-  Yes.
+  No.
 
 * Any API changes?
 
-  Yes, but they are backwards-compatible.
+  All Karaf 3 features have been removed in favour of (compatible) Karaf 4 features.
 
 * Any configuration changes?
 
@@ -65,23 +66,24 @@ Compatibility
 Bugs Fixed
 ----------
 
-* `6236: Code generation performance optimization required in YangTemplate <https://bugs.opendaylight.org/show_bug.cgi?id=6236>`_
-* `6523: RuntimeException at MethodVisitor.visitParameter <https://bugs.opendaylight.org/show_bug.cgi?id=6523>`_
-* `6790: Karaf ssh EOFError <https://bugs.opendaylight.org/show_bug.cgi?id=6790>`_
-* `7537: Add git.properties <https://bugs.opendaylight.org/show_bug.cgi?id=7537>`_
-* `7745: Port already in use: 1099 <https://bugs.opendaylight.org/show_bug.cgi?id=7745>`_
-* `7813: Karaf: do not package Spring <https://bugs.opendaylight.org/show_bug.cgi?id=7813>`_
+* `4219: Milestone: Upgrade karaf to 4.0.1 or later <https://bugs.opendaylight.org/show_bug.cgi?id=4219>`_
+* `6278: karaf-parent belongs in odlparent <https://bugs.opendaylight.org/show_bug.cgi?id=6278>`_
+* `6523: org.osgi.service.blueprint.container.ComponentDefinitionException Caused by: java.lang.RuntimeException at org.objectweb.asm.MethodVisitor.visitParameter <https://bugs.opendaylight.org/show_bug.cgi?id=6523>`_
+* `6652: Migrate to karaf-maven-plugin features generation <https://bugs.opendaylight.org/show_bug.cgi?id=6652>`_
+* `6709: Migrate dependent projects off opendaylight-karaf-empty <https://bugs.opendaylight.org/show_bug.cgi?id=6709>`_
+* `6730: Upgrade shiro to current compatible release <https://bugs.opendaylight.org/show_bug.cgi?id=6730>`_
+* `7446: Milestone: upgrade to guava-22 <https://bugs.opendaylight.org/show_bug.cgi?id=7446>`_
+* `7813: karaf: do not package spring<https://bugs.opendaylight.org/show_bug.cgi?id=7813>`_
 
 Known Issues
 ------------
 
-* The Karaf 4 distribution doesn’t work; the workaround is to use Karaf 3 for Carbon.
 * `Link to Open Bugs <https://bugs.opendaylight.org/buglist.cgi?bug_status=UNCONFIRMED&bug_status=CONFIRMED&bug_status=IN_PROGRESS&bug_status=WAITING_FOR_REVIEW&product=odlparent>`_
 
 End-of-life
 ===========
 
-* All the Karaf 3 features are deprecated and will be removed in Nitrogen.
+* N/A.
 
 Standards
 =========
@@ -91,5 +93,4 @@ Standards
 Release Mechanics
 =================
 
-* `Link to release plan <https://wiki.opendaylight.org/view/ODL_Parent:Carbon_Release_Plan>`_
-* We failed to implement the switch to Karaf 4; this has been postponed to Nitrogen.
+* `Link to release plan <https://wiki.opendaylight.org/view/ODL_Parent:Nitrogen_Release_Plan>`_
