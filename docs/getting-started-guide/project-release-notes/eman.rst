@@ -53,19 +53,19 @@ Migration
 
 * Is is possible migrate from the previous release? If so, how?
 
-  N/A as this is first release
+  Yes, no changes to API
 
 Compatibility
 -------------
 
-N/A as this is first release
+    Yes, compatible with other features and previous release
 
 Bugs Fixed
 ----------
 
 * List of bugs fixed since the previous release
 
-  N/A as this is first release
+  none
 
 Known Issues
 ------------
@@ -83,7 +83,7 @@ End-of-life
 
 * List of features/APIs which are EOLed, deprecated, and/or removed in this release
 
-  N/A as this is first release
+  none
 
 Standards
 =========
