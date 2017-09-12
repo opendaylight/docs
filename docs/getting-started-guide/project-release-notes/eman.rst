@@ -51,39 +51,39 @@ Quality Assurance
 Migration
 ---------
 
-* Is is possible migrate from the previous release? If so, how?
+* Is it possible to migrate from the previous release? If so, how?
 
-  N/A as this is first release
+  Yes, no changes to API
 
 Compatibility
 -------------
 
-N/A as this is first release
+    Yes, compatible with other features and the previous release
 
 Bugs Fixed
 ----------
 
 * List of bugs fixed since the previous release
 
-  N/A as this is first release
+  None
 
 Known Issues
 ------------
 
 * List key known issues with workarounds
 
-  no known issues
+  No known issues
 
 * Link to Open Bugs
 
-  no open bugs
+  No open bugs
 
 End-of-life
 ===========
 
 * List of features/APIs which are EOLed, deprecated, and/or removed in this release
 
-  N/A as this is first release
+  None
 
 Standards
 =========
@@ -91,12 +91,12 @@ Standards
 * List of standards implemented and to what extent
 
   * `IETF Energy Management (eman) standards. <https://datatracker.ietf.org/wg/eman/charter/>`_
-    Only powerMeasurement table currently implemented.
+    Only powerMeasurement table is currently implemented.
 
 Release Mechanics
 =================
 
-* `Link to release plan <https://wiki.opendaylight.org/view/Eman:Carbon_Release_Plan>`_
+* `Link to release plan <https://wiki.opendaylight.org/view/Eman:Nitrogen_Release_Plan>`_
 * Describe any major shifts in release schedule from the release plan
 
   None
