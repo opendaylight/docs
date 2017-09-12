@@ -15,8 +15,7 @@ odl-snmp-plugin
 * **Experimental:** Yes
 * **CSIT Test:**
 
-  * https://jenkins.opendaylight.org/releng/view/snmp/job/snmp-csit-1node-basic-all-carbon/
-  * https://jenkins.opendaylight.org/releng/view/snmp/job/snmp-csit-1node-basic-only-carbon/
+  * https://jenkins.opendaylight.org/releng/view/snmp/job/snmp-csit-1node-basic-all-nitrogen/
 
 Documentation
 =============
@@ -53,7 +52,6 @@ Quality Assurance
 * Link to CSIT Jobs:
 
   * https://jenkins.opendaylight.org/releng/view/snmp/job/snmp-csit-1node-basic-all-carbon/
-  * https://jenkins.opendaylight.org/releng/view/snmp/job/snmp-csit-1node-basic-only-carbon/
 
 * Other manual testing and QA information: None
 
