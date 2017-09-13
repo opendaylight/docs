@@ -8,7 +8,7 @@ Major Features
 odl-ovsdb-southbound-api
 ------------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=ovsdb.git;a=blob;f=southbound/southbound-features/features/src/main/features/features.xml
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=ovsdb.git;a=blob;f=southbound/southbound-features/odl-ovsdb-southbound-api/pom.xml;h=7baad461a78e7dd311516ec03b7dbf7c9a0679aa;hb=refs/heads/stable/nitrogen
 * **Feature Description:**  This feature provides the YANG models for northbound users to configure the OVSDB device.
   These YANG models are designed based on the `OVSDB schema <http://openvswitch.org/ovs-vswitchd.conf.db.5.pdf>`_. This
   feature does not provide the implementation of YANG models. If user/developer prefer to write their own implementation
@@ -18,14 +18,13 @@ odl-ovsdb-southbound-api
 * **Experimental:** No
 * **CSIT Test:**
 
-  * https://jenkins.opendaylight.org/releng/view/ovsdb/job/ovsdb-csit-1node-upstream-southbound-all-carbon/
-  * https://jenkins.opendaylight.org/releng/view/ovsdb/job/ovsdb-csit-1node-upstream-southbound-only-carbon/
-  * https://jenkins.opendaylight.org/releng/view/ovsdb/job/ovsdb-csit-3node-upstream-clustering-only-carbon/
+  * https://jenkins.opendaylight.org/releng/view/ovsdb/job/ovsdb-csit-1node-upstream-southbound-all-nitrogen/
+  * https://jenkins.opendaylight.org/releng/view/ovsdb/job/ovsdb-csit-3node-upstream-clustering-only-nitrogen/
 
 odl-ovsdb-southbound-impl
 -------------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=ovsdb.git;a=blob;f=southbound/southbound-features/features/src/main/features/features.xml
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=ovsdb.git;a=blob;f=southbound/southbound-features/odl-ovsdb-southbound-impl/pom.xml;h=261a85eacef24c1985a11f60d018816b1f880b10;hb=refs/heads/stable/nitrogen
 * **Feature Description:**  This feature is the main feature of the OVSDB Southbound plugin. This plugin handle the OVS
   device that supports the `OVSDB schema <http://openvswitch.org/ovs-vswitchd.conf.db.5.pdf>`_ and uses the
   `OVSDB protocol <https://tools.ietf.org/html/rfc7047>`_. This feature provides the implementation of the defined YANG
@@ -36,14 +35,13 @@ odl-ovsdb-southbound-impl
 * **Experimental:** No
 * **CSIT Test:**
 
-  * https://jenkins.opendaylight.org/releng/view/ovsdb/job/ovsdb-csit-1node-upstream-southbound-all-carbon/
-  * https://jenkins.opendaylight.org/releng/view/ovsdb/job/ovsdb-csit-1node-upstream-southbound-only-carbon/
-  * https://jenkins.opendaylight.org/releng/view/ovsdb/job/ovsdb-csit-3node-upstream-clustering-only-carbon/
+  * https://jenkins.opendaylight.org/releng/view/ovsdb/job/ovsdb-csit-1node-upstream-southbound-all-nitrogen/
+  * https://jenkins.opendaylight.org/releng/view/ovsdb/job/ovsdb-csit-3node-upstream-clustering-only-nitrogen/
 
 odl-ovsdb-southbound-impl-rest
 ------------------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=ovsdb.git;a=blob;f=southbound/southbound-features/features/src/main/features/features.xml
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=ovsdb.git;a=blob;f=southbound/southbound-features/odl-ovsdb-southbound-impl-rest/pom.xml;h=6a14e3f90fceba595695d69cdab2571e1a306999;hb=refs/heads/stable/nitrogen
 * **Feature Description:**  This feature is the wrapper feature that installs the odl-ovsdb-southbound-api &
   odl-ovsdb-southbound-impl feature with other required features for restconf access to provide a functional OVSDB
   southbound plugin. Users, who want to develop application that manages the OVSDB supported devices but want to runs
@@ -53,15 +51,14 @@ odl-ovsdb-southbound-impl-rest
 * **Experimental:** No
 * **CSIT Test:**
 
-  * https://jenkins.opendaylight.org/releng/view/ovsdb/job/ovsdb-csit-1node-upstream-southbound-all-carbon/
-  * https://jenkins.opendaylight.org/releng/view/ovsdb/job/ovsdb-csit-1node-upstream-southbound-only-carbon/
-  * https://jenkins.opendaylight.org/releng/view/ovsdb/job/ovsdb-csit-3node-upstream-clustering-only-carbon/
+  * https://jenkins.opendaylight.org/releng/view/ovsdb/job/ovsdb-csit-1node-upstream-southbound-all-nitrogen/
+  * https://jenkins.opendaylight.org/releng/view/ovsdb/job/ovsdb-csit-3node-upstream-clustering-only-nitrogen/
 
 
 odl-ovsdb-hwvtepsouthbound-api
 ------------------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=ovsdb.git;a=blob;f=hwvtepsouthbound/hwvtepsouthbound-features/features/src/main/features/features.xml
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=ovsdb.git;a=blob;f=hwvtepsouthbound/hwvtepsouthbound-features/odl-ovsdb-hwvtepsouthbound-api/pom.xml;h=e08f4233a6025da2d84dc1d87b6fb220a187e070;hb=refs/heads/stable/nitrogen
 * **Feature Description:**  This feature provides the YANG models for northbound users to configure the device
   that supports OVSDB Hardware vTEP schema. These YANG models are designed based on the
   `OVSDB Hardware vTEP schema <http://openvswitch.org/docs/vtep.5.pdf>`_. This feature does not provide the
@@ -70,13 +67,15 @@ odl-ovsdb-hwvtepsouthbound-api
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** Yes
-* **CSIT Test:** Currently no CSIT Tests are available, but work is in progress and will be available by nitrogen
-  release.
+* **CSIT Test:** Minimal set of CSIT test is already in place. More work is in progress and will have better functional
+  coverage in Oxygen release.
+
+  * https://jenkins.opendaylight.org/releng/view/Patch-Test/job/ovsdb-patch-test-l2gw-nitrogen/
 
 odl-ovsdb-hwvtepsouthbound
 --------------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=ovsdb.git;a=blob;f=hwvtepsouthbound/hwvtepsouthbound-features/features/src/main/features/features.xml
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=ovsdb.git;a=blob;f=hwvtepsouthbound/hwvtepsouthbound-features/odl-ovsdb-hwvtepsouthbound/pom.xml;h=3bb0d9f0093d83d0a82b3b8edffc0acfc93ee93c;hb=refs/heads/stable/nitrogen
 * **Feature Description:**  This feature is the main feature of the OVSDB Hardware vTep Southbound plugin. This plugin
   handle the OVS device that supports the `OVSDB Hardware vTEP schema <http://openvswitch.org/docs/vtep.5.pdf>`_ and
   uses the `OVSDB protocol <https://tools.ietf.org/html/rfc7047>`_. This feature provides the implementation of the
@@ -85,13 +84,15 @@ odl-ovsdb-hwvtepsouthbound
 * **Top Level:** Yes
 * **User Facing:** No
 * **Experimental:** Yes
-* **CSIT Test:** Currently no CSIT Tests are available, but work is in progress and will be available by nitrogen
-  release.
+* **CSIT Test:** Minimal set of CSIT test is already in place. More work is in progress and will have better functional
+  coverage in Oxygen release.
+
+  * https://jenkins.opendaylight.org/releng/view/Patch-Test/job/ovsdb-patch-test-l2gw-nitrogen/
 
 odl-ovsdb-hwvtepsouthbound-rest
 -------------------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=ovsdb.git;a=blob;f=hwvtepsouthbound/hwvtepsouthbound-features/features/src/main/features/features.xml
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=ovsdb.git;a=blob;f=hwvtepsouthbound/hwvtepsouthbound-features/odl-ovsdb-hwvtepsouthbound-rest/pom.xml;h=8691103618cbe430994657016229b23c9b372d9d;hb=refs/heads/stable/nitrogen
 * **Feature Description:**  This feature is the wrapper feature that installs the odl-ovsdb-hwvtepsouthbound-api &
   odl-ovsdb-hwvtepsouthbound feature with other required features for restconf access to provide a functional OVSDB
   Hardware vTEP plugin. Users, who want to develop application that manages the hardware vTEP supported devices but want
@@ -99,22 +100,23 @@ odl-ovsdb-hwvtepsouthbound-rest
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** Yes
-* **CSIT Test:** Currently no CSIT Tests are available, but work is in progress and will be available by nitrogen
-  release.
+* **CSIT Test:** Minimal set of CSIT test is already in place. More work is in progress and will have better functional
+  coverage in Oxygen release.
+
+  * https://jenkins.opendaylight.org/releng/view/Patch-Test/job/ovsdb-patch-test-l2gw-nitrogen/
 
 odl-ovsdb-library
 -----------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=ovsdb.git;a=blob;f=library/features/features/src/main/features/features.xml
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=ovsdb.git;a=blob;f=library/features/odl-ovsdb-library/pom.xml;h=58002499237ac290071a89ca5e0b9c9297974400;hb=refs/heads/stable/nitrogen
 * **Feature Description:**  Encode/decoder library for OVSDB and Hardware vTEP schema.
 * **Top Level:** Yes
 * **User Facing:** No
 * **Experimental:** No
 * **CSIT Test:**
 
-  * https://jenkins.opendaylight.org/releng/view/ovsdb/job/ovsdb-csit-1node-upstream-southbound-all-carbon/
-  * https://jenkins.opendaylight.org/releng/view/ovsdb/job/ovsdb-csit-1node-upstream-southbound-only-carbon/
-  * https://jenkins.opendaylight.org/releng/view/ovsdb/job/ovsdb-csit-3node-upstream-clustering-only-carbon/
+  * https://jenkins.opendaylight.org/releng/view/ovsdb/job/ovsdb-csit-1node-upstream-southbound-all-nitrogen/
+  * https://jenkins.opendaylight.org/releng/view/ovsdb/job/ovsdb-csit-3node-upstream-clustering-only-nitrogen/
 
 Documentation
 =============
@@ -146,21 +148,20 @@ Quality Assurance
 *
 * OVSDB southbound plugin is extensively tested through Unit Tests, IT test and system tests. OVSDB southbound plugin
   is tested in both single node setup as well as three node cluster setup. Hardware vTEP plugin is currently tested
-  through (1) Unit testing (2) NetVirt project L2 Gateway features CSIT tests and (3) Manual Testing.
-  (2) https://jenkins.opendaylight.org/releng/view/netvirt/job/netvirt-csit-hwvtep-1node-openstack-newton-nodl-v2-upstream-stateful-carbon
+  through (1) Unit testing (2) CSIT Tests (3) NetVirt project L2 Gateway features CSIT tests and (4) Manual Testing.
+  (3) https://jenkins.opendaylight.org/releng/view/netvirt/job/netvirt-csit-hwvtep-1node-openstack-newton-nodl-v2-upstream-stateful-nitrogen/
 
 Migration
 ---------
 
-* Is is possible migrate from the previous release? If so, how?
+* Is it possible to migrate from the previous release? If so, how?
   Yes. User facing features and interfaces are not changed, only enhancements are done.
 
 Compatibility
 -------------
 
-* Is this release compatible with the previous release? No
-* Any API changes? No changes in the YANG models from previous release. Only one minor enhancement is being done.
-  https://git.opendaylight.org/gerrit/#/c/50993/
+* Is this release compatible with the previous release? Yes
+* Any API changes? No changes in the YANG models from previous release.
 
 * Any configuration changes? No
 
@@ -168,7 +169,7 @@ Bugs Fixed
 ----------
 
 * List of bugs fixed since the previous release
-  https://bugs.opendaylight.org/buglist.cgi?chfieldfrom=2016-08-09&chfieldto=2017-05-25&list_id=78767&product=ovsdb&query_format=advanced&resolution=FIXED
+  https://bugs.opendaylight.org/buglist.cgi?chfieldfrom=2017-05-25&chfieldto=2017-09-10&list_id=78767&product=ovsdb&query_format=advanced&resolution=FIXED
 
 Known Issues
 ------------
@@ -194,8 +195,4 @@ Standards
 Release Mechanics
 =================
 
-* `Link to release plan <https://wiki.opendaylight.org/view/OpenDaylight_OVSDB:Carbon_Release_Plan>`_
-* Describe any major shifts in release schedule from the release plan
-
-  We planned to do some exploratory work to improve the performance, scalability and robustness, but it didn't make the
-  expected progress in this release. Project will continue this effort in the next release.
+* `Link to release plan <https://wiki.opendaylight.org/view/OpenDaylight_OVSDB:Nitrogen_Release_Plan>`_
