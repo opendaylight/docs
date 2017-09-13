@@ -8,14 +8,14 @@ Major Features
 odl-packetcable-policy-server
 -----------------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=packetcable.git;a=blob;f=features-packetcable-policy/features-packetcable-policy/src/main/features/features.xml;hb=refs/heads/stable/carbon
-* **Feature Description:** Plugin that provides PCMM model implementation based
-  on CMTS structure and COPS protocol and provides the implementation of
-  `RFC 2748 <https://tools.ietf.org/html/rfc2748>`_.
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=packetcable.git;a=blob;f=features-packetcable-policy/features4-packetcable-policy/pom.xml;h=0945b9287711a1ce9a7bd6cc0b457607a3cd6248;hb=refs/heads/stable/nitrogen
+* **Feature Description:** Plugin that provides a PCMM model implementation
+  based on CMTS structure and COPS protocol.  It implements
+  `RFC 2748 <https://tools.ietf.org/html/rfc2748>`.
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** No
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/packetcable/job/packetcable-csit-1node-pcmm-all-carbon/
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/packetcable/job/packetcable-csit-1node-pcmm-all-nitrogen/
 
 Documentation
 =============
@@ -33,37 +33,38 @@ Security Considerations
 
 * Do you have any external interfaces other than RESTCONF? No.
 
-* The PacketCable project talks to southbound devices using the COPS protocol.
-  Securing this communication is outslide the scope of this project.
+* The PacketCable project interfaces to southbound devices using the
+  COPS protocol.  Securing communication on this interface is outslide
+  the scope of this project.
 
 
 Quality Assurance
 =================
 
-* `Link to Sonar Report <https://jenkins.opendaylight.org/releng/view/packetcable/job/packetcable-sonar>`_ ( Test coverage percent - 53.21% )
-* Link to CSIT Jobs:
+* `Link to Sonar Report <https://jenkins.opendaylight.org/releng/view/packetcable/job/packetcable-sonar>`_ ( Test coverage percent - 53.41% )
 
-  * https://jenkins.opendaylight.org/releng/view/packetcable/job/packetcable-csit-1node-pcmm-only-carbon
-  * https://jenkins.opendaylight.org/releng/view/packetcable/job/packetcable-csit-1node-pcmm-all-carbon
+* Link to CSIT Job:
+* https://jenkins.opendaylight.org/releng/view/packetcable/job/packetcable-csit-1node-pcmm-all-nitrogen/
 
-* Other manual testing and QA information - While the CSIT jobs run the
-  PacketCable plugin against a simple "emulated" instance of a CMTS network
-  device, the code is frequently tested during the development cycle against
-  actual CMTS devices.
-* Testing methodology. There is substantial unit testing associated with the
-  project build process and CSIT testing is executed against an "emulated" CMTS
-  device.  All product APIs are validated during the development cycle but CSIT
-  testing has not been upgraded to cover some of the most recent feature
-  additions that are incorporated in the Carbon release.
+* Other manual testing and QA information - The CSIT job runs the
+  PacketCable plugin in a simple cable access controller emulation
+  environment. The code is manually tested during the development
+  cycle with an actual (controller).
+
+* Testing methodology. There is substantial unit testing executed in
+  the project build process; CSIT testing is executed in an "emulated"
+  cable access network environment.  All product APIs are validated
+  during the development cycle.  CSIT testing would benefit from an
+  upgrade to cover some of the post-Carbon feature additions.
 
 Migration
 ---------
 
-* Is is possible migrate from the previous release?  Yes
-* Migration from PacketCable Boron version to Carbon version can be
+* Is it possible migrate from the previous release?  Yes
+  Migration from PacketCable Carbon version to the Nitrogen version is
   accomplished by replacement of the PacketCable plugin components.
 
-  * Any data stored in COPS models will need to be manually copied over.
+* Any data stored in COPS models will need to be manually replicated.
 
 * All previous API calls will work with the new release.
 
@@ -78,40 +79,36 @@ Bugs Fixed
 ----------
 
 * List of Bugzilla bugs fixed since the previous release
-* `6302 <https://bugs.opendaylight.org/show_bug.cgi?id=6302>`_
-* `6762 <https://bugs.opendaylight.org/show_bug.cgi?id=6762>`_
-* `6763 <https://bugs.opendaylight.org/show_bug.cgi?id=6763>`_
-* `7108 <https://bugs.opendaylight.org/show_bug.cgi?id=7108>`_
-* `7109 <https://bugs.opendaylight.org/show_bug.cgi?id=7109>`_
-* `7110 <https://bugs.opendaylight.org/show_bug.cgi?id=7110>`_
-* `7111 <https://bugs.opendaylight.org/show_bug.cgi?id=7111>`_
-* `7112 <https://bugs.opendaylight.org/show_bug.cgi?id=7112>`_
-* `7113 <https://bugs.opendaylight.org/show_bug.cgi?id=7113>`_
-* `7114 <https://bugs.opendaylight.org/show_bug.cgi?id=7114>`_
-* `7115 <https://bugs.opendaylight.org/show_bug.cgi?id=7115>`_
-* `7636 <https://bugs.opendaylight.org/show_bug.cgi?id=7636>`_
+  NONE
+* The only functional change for the Nitrogen release of Packetcable
+  is the upgrade from Karaf3 to Karaf4.
 
-Known Issues
-------------
+ Known Issues
+-------------
 
 * There are no known issues with the Carbon release of PacketCable
 
 End-of-life
 ===========
 
-* No PacketCable features or APIs are EOLed, deprecated, or removed in this
-  release
+* No PacketCable features or APIs are EOLed, deprecated, or removed
+  in this release
 
 Standards
 =========
 
+* The Packetcable plug-in implements a subset of the provisioning operations
+  defined in these specifications.
+
 * CableLabs "PacketCable 1.5 Specification: MTA Device Provisioning"
   PKT-SP-PROV1.5-I04-090624
-  The Packetcable plug-in implements a subset of the provisioning operations
-  defined in this specification.
+
+* COPS protocol
+  RFC 2748 <https://tools.ietf.org/html/rfc2748>
 
 Release Mechanics
 =================
 
-* `Link to release plan <https://wiki.opendaylight.org/view/PacketCablePCMM:Release_Plan_Carbon>`_
+* Link to Packetcable Nitrogen release plan:
+  <https://wiki.opendaylight.org/view/PacketCablePCMM:Release_Plan_Nitrogen>
 * There were no major shifts in release schedule from the release plan
