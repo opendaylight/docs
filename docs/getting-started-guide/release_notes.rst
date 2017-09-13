@@ -78,7 +78,7 @@ Project-specific Release Notes
    project-release-notes/cardinal
    project-release-notes/controller
    project-release-notes/didm
-   project-release-notes/distribution
+   project-release-notes/distribution-release-notes
    project-release-notes/dluxapps
    project-release-notes/docs
    project-release-notes/eman
