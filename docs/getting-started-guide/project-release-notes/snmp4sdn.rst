@@ -8,7 +8,7 @@ Major Features
 odl-snmp4sdn-snmp4sdn
 ---------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=snmp4sdn.git;a=blob;f=features/features-snmp4sdn/src/main/resources/features.xml
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=snmp4sdn.git;a=blob;f=features/odl-snmp4sdn-snmp4sdn/pom.xml;h=eece899425487cf81e81e3d87bff78a2f3d2797c;hb=HEAD
 * **Feature Description:**  This feature will install all bundles required for SNMP4SDN Plugin
 * **Top Level:** Yes
 * **User Facing:** Yes
@@ -50,9 +50,9 @@ Quality Assurance
 Migration
 ---------
 
-* Is is possible migrate from the previous release? If so, how?
+* Is it possible migrate from the previous release? If so, how?
 
-  Yes. Features as well as interfaces are not changed.
+No
 
 Compatibility
 -------------
@@ -101,5 +101,5 @@ Standards
 Release Mechanics
 =================
 
-* `Link to release plan <https://wiki.opendaylight.org/view/SNMP4SDN:Release_Plan_Carbon>`_
+* `Link to release plan <https://wiki.opendaylight.org/view/SNMP4SDN:Release_Plan_Nitrogen>`_
 * No changes in this release
