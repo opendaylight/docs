@@ -8,8 +8,8 @@ Major Features
 odl-of-config-all
 -----------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=of-config.git;a=blob;f=features/features-of-config/src/main/features/features.xml;hb=stable/carbon
-* **Feature Description:**  This is a top level wrapper feature which includes all the sub features OF-CONFIG offers.
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=of-config.git;a=blob;f=features/features-of-config/src/main/features/features.xml;h=86615e2f22ebc8f21b403185d3a600aa2a463588;hb=HEAD
+* **Feature Description:**  This is a top level wrapper feature which includes all the sub features of-config offers. 
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** Yes
@@ -44,18 +44,14 @@ Quality Assurance
 * Other manual testing and QA information
 * Testing methodology. How extensive was it? What should be expected to work?
   What has not been tested as much?
-* External System Test is almost done manually, since the sandbox environment
-  could not satisfy OF-CONFIG's requirement. The test has covered all external
-  APIs of OF-CONFIG and all supplementary options based on OF-CONFIG 1.2.
+* External System Test is almost done manually. The test has coverd all external APIs of OF-CONFIG and all supplementary options based on OF-CONFIG 1.2.
 
 Migration
 ---------
 
 * Is is possible migrate from the previous release? If so, how?
 
-  There is no additional support for migration in OF-CONFIG than there is in
-  general. User configuration and state will need to be manually migrated when
-  upgrading between major versions of OpenDaylight.
+Yes. There is no additonal steps for migration. 
 
 Compatibility
 -------------
@@ -69,7 +65,7 @@ Bugs Fixed
 
 * List of bugs fixed since the previous release
 
-  `Replace mockito-all by mockito-core <https://git.opendaylight.org/gerrit/#/c/50878/>`_
+https://git.opendaylight.org/gerrit/#/c/61025/2
 
 Known Issues
 ------------
@@ -93,7 +89,7 @@ Standards
 Release Mechanics
 =================
 
-* `Link to release plan <https://wiki.opendaylight.org/view/OF-CONFIG:Carbon:Release_Plan>`_
-* Describe any major shifts in release schedule from the release plan
+* `Link to release plan <https://wiki.opendaylight.org/view/OF-CONFIG:Nitrogen:Release_Plan>`_
+* Describe any major shifts in release schedule from the release plan 
 
   N/A
