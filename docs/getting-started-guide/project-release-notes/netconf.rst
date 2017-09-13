@@ -16,7 +16,7 @@ odl-netconf-topology
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** No
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/netconf/job/netconf-csit-1node-userfeatures-only-carbon/
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/netconf/job/netconf-csit-1node-userfeatures-all-nitrogen/
 
 odl-netconf-clustered-topology
 ------------------------------
@@ -26,7 +26,7 @@ odl-netconf-clustered-topology
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** Yes
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/netconf/job/netconf-csit-3node-clustering-only-carbon/
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/netconf/job/netconf-csit-3node-clustering-all-nitrogen/
 
 odl-netconf-console
 -------------------
@@ -45,7 +45,7 @@ odl-netconf-mdsal
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** No
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/netconf/job/netconf-csit-1node-userfeatures-only-carbon/
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/netconf/job/netconf-csit-1node-userfeatures-all-nitrogen/
 
 odl-restconf
 ------------
@@ -55,7 +55,7 @@ odl-restconf
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** No
-* **CSIT Test:**  Tested by any suit that uses Restconf
+* **CSIT Test:**  Tested by any suite that uses Restconf
 
 odl-mdsal-apidocs
 -----------------
@@ -83,7 +83,7 @@ odl-netconf-callhome-ssh
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** No
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/netconf/job/netconf-csit-1node-callhome-only-carbon/
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/netconf/job/netconf-csit-1node-callhome-all-nitrogen/
 
 
 Documentation
@@ -113,7 +113,7 @@ Security Considerations
 
   * What port numbers do they use?
 
-    Please see https://wiki.opendaylight.org/view/Ports. Netconf call-home uses TCP 6666
+    Please see https://wiki.opendaylight.org/view/Ports. Netconf call-home uses TCP port 6666
 
 * Other security issues?
 
@@ -124,6 +124,7 @@ Quality Assurance
 
 * `Link to Sonar Report <https://sonar.opendaylight.org/overview?id=54548>`_ Test coverage percent: 63.3%
 * `Link to CSIT Jobs <https://jenkins.opendaylight.org/releng/view/netconf/>`_
+* 
 
 Migration
 ---------
@@ -189,7 +190,7 @@ Bugs Fixed
 
 * List of bugs fixed since the previous release
 
-  https://bugs.opendaylight.org/buglist.cgi?bug_status=RESOLVED&bug_status=VERIFIED&chfield=resolution&chfieldfrom=2016-09-08&chfieldto=Now&chfieldvalue=FIXED&list_id=78801&product=netconf&query_format=advanced&resolution=FIXED
+  https://bugs.opendaylight.org/buglist.cgi?bug_status=RESOLVED&bug_status=VERIFIED&chfield=resolution&chfieldfrom=2017-07-12&chfieldto=Now&chfieldvalue=FIXED&list_id=78801&product=netconf&query_format=advanced&resolution=FIXED
 
 Known Issues
 ------------
@@ -223,7 +224,7 @@ Standards
 Release Mechanics
 =================
 
-* `Link to release plan <https://wiki.opendaylight.org/view/NETCONF:Carbon:Release_Plan>`_
+* `Link to release plan <https://wiki.opendaylight.org/view/NETCONF:Nitrogen:Release_Plan>`_
 * Describe any major shifts in release schedule from the release plan
 
   No shifts
