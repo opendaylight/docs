@@ -8,23 +8,23 @@ Major Features
 odl-ocpplugin-southbound
 ------------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=ocpplugin.git;a=blob;f=features/features-ocpplugin/src/main/features/features.xml;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=ocpplugin.git;a=blob;f=features/features-ocpplugin/pom.xml;hb=refs/heads/stable/nitrogen
 * **Feature Description:**  Handling of OCP v4.1.1 request/response messages
 * **Top Level:** No
 * **User Facing:** No
 * **Experimental:** No
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/ocpplugin/job/ocpplugin-csit-1node-get-all-carbon
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/ocpplugin/job/ocpplugin-csit-1node-get-all-nitrogen
 
 
 odl-ocpplugin-app-ocp-service
 -----------------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=ocpplugin.git;a=blob;f=features/features-ocpplugin/src/main/features/features.xml;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=ocpplugin.git;a=blob;f=features/features-ocpplugin/pom.xml;hb=refs/heads/stable/nitrogen
 * **Feature Description:**  User facing interface and rrh-agent registration and lifecycle management
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** No
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/ocpplugin/job/ocpplugin-csit-1node-get-all-carbon
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/ocpplugin/job/ocpplugin-csit-1node-get-all-nitrogen
 
 Documentation
 =============
@@ -51,11 +51,11 @@ Security Considerations
 Quality Assurance
 =================
 
-* `Link to Sonar Report <https://sonar.opendaylight.org/overview?id=64810>`_ (61.7%)
-* `Link to CSIT Jobs <https://jenkins.opendaylight.org/releng/view/ocpplugin/job/ocpplugin-csit-1node-get-all-carbon>`_
+* `Link to Sonar Report <https://sonar.opendaylight.org/overview?id=64810>`_ (60.8%)
+* `Link to CSIT Jobs <https://jenkins.opendaylight.org/releng/view/ocpplugin/job/ocpplugin-csit-1node-get-all-nitrogen>`_
 * Other manual testing and QA information
 
-  * More detail testing, https://wiki.opendaylight.org/view/OCP_Plugin:Carbon_System_Test_Report
+  * More detail testing, https://wiki.opendaylight.org/view/OCP_Plugin:Nitrogen_System_Test_Report
 
 Migration
 ---------
@@ -84,7 +84,7 @@ Bugs Fixed
 
 * List of bugs fixed since the previous release
 
-  * `7634 <https://bugs.opendaylight.org/show_bug.cgi?id=7634>`_ Karaf 4 migration: provide Karaf 4 ocpplugin features
+  * `Fixed BUGS <https://bugs.opendaylight.org/buglist.cgi?chfieldfrom=2017-05-25&chfieldto=2017-08-09&list_id=78466&product=ocpplugin&query_format=advanced&resolution=FIXED>`_
 
 Known Issues
 ------------
@@ -98,7 +98,7 @@ End-of-life
 
 * List of features/APIs which are EOLed, deprecated, and/or removed in this release
 
-  * Nothing deprecated, EOL.
+  * Migrated from using the CSS to blueprint, deprecated CSS
 
 Standards
 =========
@@ -111,7 +111,7 @@ Standards
 Release Mechanics
 =================
 
-* `Link to release plan <https://wiki.opendaylight.org/view/OCP_Plugin:Carbon:Release_Plan>`_
+* `Link to release plan <https://wiki.opendaylight.org/view/OCP_Plugin:Nitrogen:Release_Plan>`_
 
 * Describe any major shifts in release schedule from the release plan
 
