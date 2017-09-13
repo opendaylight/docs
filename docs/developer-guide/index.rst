@@ -26,6 +26,7 @@ Project-specific Developer Guides
    controller
    didm-developer-guide
    distribution-version
+   distribution-test-features
    dlux
    eman-developer-guide
    fabric-as-a-service
