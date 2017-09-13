@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba1f61a0_7b2dd594",
+        "filename": "docs/user-guide/daexim-user-guide.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2017-09-13T10:21:47Z",
+      "side": 1,
+      "message": "I don\u0027t think I can agree with how this is phrased, and fear that this could mislead to wrong expectations of the DAEXIM project re. its suitability for ODL migrations... because if the YANG model changes (as it typically will between different versions of ODL), then AFAIK I don\u0027t think you can \"file data may be readily produced by, consumed by and transferred between different versions of ODL\".  Instead of writing up a complicated and possibly more confusing than helpful paragraph here, with explanations how via external tools which massage data to fit schema changes and what not, I would therefore suggest that we simply just completely remove this entire paragraph - would that work for you?",
+      "revId": "cf59d1b264beae9ad9667f207bfb46d2f83f14e4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
