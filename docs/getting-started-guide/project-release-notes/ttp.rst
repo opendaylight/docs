@@ -8,9 +8,9 @@ Major Features
 odl-ttp-model
 -------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=ttp.git;a=blob;f=features/features-ttp/src/main/features/features.xml;hb=stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=ttp.git;a=blob;f=features/features-ttp/src/main/features/features.xml;hb=stable/nitrogen
 * **Feature Description:**  Provides a YANG model for describing
-  `ONF TTP 1.0 <https://www.opennetworking.org/images/stories/downloads/sdn-resources/onf-specifications/openflow/OpenFlow%20Table%20Type%20Patterns%20v1.0.pdf>`
+  `ONF TTP 1.0 <https://www.opennetworking.org/images/stories/downloads/sdn-resources/onf-specifications/openflow/OpenFlow%20Table%20Type%20Patterns%20v1.0.pdf>`_
   Table Type Patterns (TTPs) in JSON as well as a database of TTPs and an
   augmentation adding supported and active TTPs on OpenFlow nodes.
 * **Top Level:** Yes
@@ -21,7 +21,7 @@ odl-ttp-model
 TTP CLI Tools
 -------------
 
-* **Feature URL:** The Carbon executable jar can be found here: https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/ttp/parser/0.4.0-Carbon/parser-0.4.0-Carbon-jar-with-dependencies.jar
+* **Feature URL:** The Nitrogen executable jar can be found here: https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/ttp/parser/0.5.0-Nitrogen/parser-0.5.0-Nitrogen-jar-with-dependencies.jar
 * **Feature Description:**  Provides stand-alone command line tools to validate
   and interact with TTPs in XML or JSON.
 * **Top Level:** Yes
@@ -58,9 +58,9 @@ Security Considerations
 Quality Assurance
 =================
 
-* `Link to Sonar Report <https://sonar.opendaylight.org/overview/coverage?id=org.opendaylight.ttp%3Attp-parent>`_ (43.3% Test Coverage)
+* `Link to Sonar Report <https://sonar.opendaylight.org/overview?id=20096>`_ (43.3% Test Coverage)
 * No CSIT testing.
-* There was minimal manual testing in Carbon, but also there were no changes
+* There was minimal manual testing in Nitrogen, but also there were no changes
   beyond keeping up-to-date with changes in upstream projects. Unit tests cover
   the basics of the model.
 
@@ -99,7 +99,7 @@ Known Issues
 
 The TTP YANG model does not match the ONF TTP JSON precisely. Exact details are
 documented in the `TTP model YANG
-<https://git.opendaylight.org/gerrit/gitweb?p=ttp.git;a=blob;f=ttp-model/src/main/yang/ttp.yang;hb=stable/carbon>`_
+<https://git.opendaylight.org/gerrit/gitweb?p=ttp.git;a=blob;f=ttp-model/src/main/yang/ttp.yang;hb=stable/nitrogen>`_
 file.
 
 `Open Bugs <https://bugs.opendaylight.org/buglist.cgi?component=General&list_id=79056&product=ttp&resolution=--->`_
@@ -118,7 +118,7 @@ Standards
 Release Mechanics
 =================
 
-* `Carbon Table Type Patterns Release Plan
-  <https://wiki.opendaylight.org/view/Table_Type_Patterns/Carbon/Release_Plan>`_
+* `Nitrogen Table Type Patterns Release Plan
+  <https://wiki.opendaylight.org/view/Table_Type_Patterns/Nitrogen/Release_Plan>`_
 
-  * Dropped all new features including TTP 1.1 support, Dynamic Mapping, and auto-loading of TTP repositories.
+  * This was purely a maintenance release, so no changes were planned or happend.
