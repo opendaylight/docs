@@ -63,7 +63,7 @@ Quality Assurance
 
 * OpFlex projects are tested with extensive unit testing as well as
   Cisco-internal automated testing with ACI.
-* Unit tests run as part of `regular build <https://jenkins.opendaylight.org/releng/view/opflex/job/opflex-merge-carbon/34/>`_
+* Unit tests run as part of `regular build <https://jenkins.opendaylight.org/releng/view/opflex/job/opflex-merge-nitrogen/26/>`_
 
 Migration
 ---------
@@ -75,17 +75,16 @@ Compatibility
 
 OpFlex GBP model and configuration files remain backward compatible.
 
-Bugs Fixed
-----------
+Changes since previous release
+------------------------------
 
-* Flows that are routed are allowed to hairpin out the same interface
-* Allow working with newer compilers and development environments
-
-  * Newest versions of boost remove support for comments in JSON; we
-    work around this by stripping comments before doing JSON parsing
-    for configuration files
-  * Various changes and improvements to enable working with musl and
-    alpine linux
+* Advertise external services on their interface with ARP/ND packets
+  when the interface comes up.
+* Always allow ARP and ND packets without contracts
+* Improved robustness of agent shutdown and OpenFlow socket
+  reconnections
+* Clean up endpoint-related OpenFlow rules when EPG is removed with
+  endpoint remaining
 
 Known Issues
 ------------
