@@ -10,42 +10,42 @@ For each top-level feature, identify the name, url, description, etc. User-facin
 odl-aaa-shiro
 -------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=aaa.git;a=blob_plain;f=features/shiro/features-aaa-shiro/src/main/features/features.xml;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=aaa.git;a=blob_plain;f=features/shiro/features-aaa-shiro/src/main/features/features.xml;hb=refs/heads/stable/nitrogen
 * **Feature Description:**  ODL Shiro-based AAA implementation
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** Yes
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/aaa/job/aaa-csit-1node-authn-all-carbon/
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/aaa/job/aaa-csit-1node-authn-all-nitrogen/
 
 odl-aaa-authn
 -------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=aaa.git;a=blob;f=features/authn/features-aaa/src/main/features/features.xml;hb=refs/heads/stable/carbon
-* **Feature Description:**  Existing AAA infrastructure, now wrapped by odl-aaa-shiro
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=aaa.git;a=blob;f=features/authn/features-aaa/src/main/features/features.xml;hb=refs/heads/stable/nitrogen
+* **Feature Description:**  Same as odl-aaa-shiro
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** Yes
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/aaa/job/aaa-csit-1node-authn-all-carbon/
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/aaa/job/aaa-csit-1node-authn-all-nitrogen/
 
 odl-aaa-cert
 ------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=aaa.git;a=blob;f=features/authn/features-aaa/src/main/features/features.xml;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=aaa.git;a=blob;f=features/authn/features-aaa/src/main/features/features.xml;hb=refs/heads/stable/nitrogen
 * **Feature Description:**  MD-SAL based encrypted certificate management
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** Yes
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/aaa/job/aaa-csit-1node-authn-all-carbon/
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/aaa/job/aaa-csit-1node-authn-all-nitrogen/
 
 odl-aaa-cli
 ------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=aaa.git;a=blob;f=features/authn/features-aaa/src/main/features/features.xml;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=aaa.git;a=blob;f=features/authn/features-aaa/src/main/features/features.xml;hb=refs/heads/stable/nitrogen
 * **Feature Description:**  Basic karaf CLI commands for interacting with AAA
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** Yes
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/aaa/job/aaa-csit-1node-authn-all-carbon/
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/aaa/job/aaa-csit-1node-authn-all-nitrogen/
 
 
 Documentation
@@ -75,7 +75,7 @@ Security Considerations
 Quality Assurance
 =================
 
-* `Link to Sonar Report <https://jenkins.opendaylight.org/releng/view/aaa/job/aaa-sonar/>`_ (56.39% code coverage)
+* `Link to Sonar Report <https://jenkins.opendaylight.org/releng/view/aaa/job/aaa-sonar/>`_ (54% code coverage)
 * `Link to CSIT Jobs <https://jenkins.opendaylight.org/releng/view/aaa/>`_
 
 Migration
@@ -126,19 +126,17 @@ Compatibility
 Bugs Fixed
 ----------
 
-* `8373 <https://bugs.opendaylight.org/show_bug.cgi?id=8373>`_ Unable to start blueprint container for bundle org.opendaylight.aaa.idmlight
-* `8062 <https://bugs.opendaylight.org/show_bug.cgi?id=8062>`_ Bad padding in encrypted data
-* `8214 <https://bugs.opendaylight.org/show_bug.cgi?id=8214>`_ NPE in org.opendaylight.aaa.shiro.realm.MDSALDynamicAuthorizationFilter
-* `8313 <https://bugs.opendaylight.org/show_bug.cgi?id=8313>`_ AAA dependencies cause it not to come up
-* `8157 <https://bugs.opendaylight.org/show_bug.cgi?id=8157>`_ Deleting a user and recreating it fails using the aaa-cli-jar
-* `7527 <https://bugs.opendaylight.org/show_bug.cgi?id=7527>`_ Karaf 4 migration: provide Karaf 4 aaa features
+* `6772 <https://bugs.opendaylight.org/show_bug.cgi?id=6772>`_ When it is known some features have not activated fully, do not return 401
+* `8717 <https://bugs.opendaylight.org/show_bug.cgi?id=8717>`_ deprecate the existing mdsal AAA datastore impl
+* `8572 <https://bugs.opendaylight.org/show_bug.cgi?id=8572>`_ remove SecureBlockingQueue which is unused
+* `8724 <https://bugs.opendaylight.org/show_bug.cgi?id=8724>`_ clean AAA features
 
 Known Issues
 ------------
 
 * List key known issues with workarounds
 
-  N/A
+* `5838 <https://bugs.opendaylight.org/show_bug.cgi?id=5838>`_ token authentication fails intermittently
 
 * `Link to Open Bugs <https://bugs.opendaylight.org/buglist.cgi?component=General&list_id=78831&product=aaa&resolution=--->`_
 
@@ -150,12 +148,12 @@ End-of-life
 Standards
 =========
 
-* LDAP, ActiveDirectory (less tested)
+* LDAP, JDBC, ActiveDirectory (less tested)
 
 Release Mechanics
 =================
 
-* `Link to release plan <https://wiki.opendaylight.org/view/AAA:Carbon:Release_Plan>`_
+* `Link to release plan <https://wiki.opendaylight.org/view/AAA:Nitrogen:Release_Plan>`_
 * Describe any major shifts in release schedule from the release plan
 
   None.
