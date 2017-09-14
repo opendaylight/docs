@@ -33,6 +33,7 @@ Project-specific User Guides
    cardinal_-opendaylight-monitoring-as-a-service
    centinel-user-guide
    didm-user-guide
+   distribution-version-user-guide
    eman-user-guide
    fabric-as-a-service
    genius-user-guide
