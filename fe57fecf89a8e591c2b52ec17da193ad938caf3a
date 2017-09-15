@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "ba1f61a0_d252db65",
+        "filename": "docs/getting-started-guide/project-release-notes/sfc.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 2039
+      },
+      "writtenOn": "2017-09-15T15:51:33Z",
+      "side": 1,
+      "message": "This section covers Migration, and I want to mention that no migration is needed.",
+      "parentUuid": "ba1f61a0_3247f7bd",
+      "range": {
+        "startLine": 241,
+        "startChar": 0,
+        "endLine": 242,
+        "endChar": 49
+      },
+      "revId": "fe57fecf89a8e591c2b52ec17da193ad938caf3a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba1f61a0_d23dbb2c",
         "filename": "docs/getting-started-guide/project-release-notes/sfc.rst",
         "patchSetId": 3
@@ -59,6 +83,30 @@
       "writtenOn": "2017-09-15T15:22:12Z",
       "side": 1,
       "message": "In the previous statement above, you also made a comment about compatibility. All the compatibility information should be together.",
+      "range": {
+        "startLine": 247,
+        "startChar": 0,
+        "endLine": 248,
+        "endChar": 48
+      },
+      "revId": "fe57fecf89a8e591c2b52ec17da193ad938caf3a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba1f61a0_324c17c8",
+        "filename": "docs/getting-started-guide/project-release-notes/sfc.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 2039
+      },
+      "writtenOn": "2017-09-15T15:51:33Z",
+      "side": 1,
+      "message": "Agreed. This is text left over from the previous release. Are you suggesting we combine the Compatibility and Migration sections? If so, then you need to modify the Release Notes template and get everybody to make the change.",
+      "parentUuid": "ba1f61a0_d23dbb2c",
       "range": {
         "startLine": 247,
         "startChar": 0,
