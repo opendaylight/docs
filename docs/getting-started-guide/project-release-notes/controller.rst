@@ -46,7 +46,7 @@ Quality Assurance
 Migration
 ---------
 
-* Is is possible migrate from the previous release? If so, how?
+* Is it possible to migrate from the previous release? If so, how?
 
   Yes, no specific steps needed unless prior updates to config subsystem modules
   were made via the controller-config yang-ext mount in which case the

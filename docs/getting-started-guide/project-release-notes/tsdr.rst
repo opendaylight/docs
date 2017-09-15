@@ -116,7 +116,7 @@ Quality Assurance
 Migration
 ---------
 
-* Is it possible migrate from the previous release? If so, how?
+* Is it possible to migrate from the previous release? If so, how?
 
   * Yes, since there's no change of features from the previous releases.
 

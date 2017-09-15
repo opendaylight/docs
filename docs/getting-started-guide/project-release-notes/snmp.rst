@@ -60,7 +60,7 @@ Quality Assurance
 Migration
 ---------
 
-* Is is possible migrate from the previous release? If so, how?
+* Is it possible to migrate from the previous release? If so, how?
 
   It is possible to seamlessly migrate consumers to this iteration of the plug-in as there has been no functional
   change to features. Migration of state data is not defined.
