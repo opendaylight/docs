@@ -8,18 +8,18 @@ Major Features
 odl-nic-core-mdsal
 ------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=nic.git;a=blob_plain;f=features/odl-nic-core-mdsal/pom.xml;hb=stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=nic.git;a=blob_plain;f=features/odl-nic-core-mdsal/pom.xml;hb=stable/nitrogen
 * **Feature Description:**  This feature contains the dependencies to use MDSAL
   features on NIC
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** Yes
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/nic/job/nic-csit-1node-basic-all-carbon/
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/nic/job/nic-csit-1node-basic-all-nitrogen/
 
 odl-nic-intent-common
 ---------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=nic.git;a=blob_plain;f=features/odl-nic-intent-common/pom.xml;hb=stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=nic.git;a=blob_plain;f=features/odl-nic-intent-common/pom.xml;hb=stable/nitrogen
 * **Feature Description:**  This feature contains the lifecycle management for
   Intents, also is used to join two major features 'intent-statemachine' and
   'intent-listeners'. This feature enable NIC to work with different renderers
@@ -27,44 +27,7 @@ odl-nic-intent-common
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** Yes
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/nic/job/nic-csit-1node-basic-all-carbon/
-
-odl-nic-statemachine
---------------------
-
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=nic.git;a=blob_plain;f=features/odl-nic-intent-statemachine/pom.xml;hb=stable/carbon
-* **Feature Description:**  This feature is used to manage Intent state
-  transactions and then share those transactions on MD-SAL.
-* **Top Level:** Yes
-* **User Facing:** Yes
-* **Experimental:** Yes
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/nic/job/nic-csit-1node-basic-all-carbon/
-
-odl-nic-listeners
------------------
-
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=nic.git;a=blob_plain;f=features/odl-nic-listeners/pom.xml;hb=stable/carbon
-* **Feature Description:**  This feature dependes of 'odl-nic-core-mdsal' to
-  listen about changes on MDSAL, it works as a listener for Intent and network
-  events.
-* **Top Level:** Yes
-* **User Facing:** Yes
-* **Experimental:** Yes
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/nic/job/nic-csit-1node-basic-all-carbon/
-
-odl-nic-renderer-of
--------------------
-
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=nic.git;a=blob_plain;f=features/odl-nic-renderer-of/pom.xml;hb=stable/carbon
-* **Feature Description:**  This feature is responsible to apply network
-  configurations based in Intents. Once an Intent is created, the
-  'intent-common' module will extract all information and then, send to
-  'renderer-of'.
-* **Top Level:** Yes
-* **User Facing:** Yes
-* **Experimental:** Yes
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/nic/job/nic-csit-1node-basic-all-carbon/
-
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/nic/job/nic-csit-1node-basic-all-nitrogen/
 
 Documentation
 =============
@@ -94,8 +57,8 @@ Security Considerations
 Quality Assurance
 =================
 
-* `Link to Sonar Report <https://sonar.opendaylight.org/overview?id=44164>`_ (48.1% code coverage)
-* `Link to CSIT Jobs <https://jenkins.opendaylight.org/releng/view/nic/job/nic-csit-1node-basic-all-carbon/>`_
+* `Link to Sonar Report <https://sonar.opendaylight.org/overview?id=44164>`_ (33.2% code coverage)
+* `Link to CSIT Jobs <https://jenkins.opendaylight.org/releng/view/nic/job/nic-csit-1node-basic-all-nitrogen/>`_
 * Other manual testing and QA information
 * Testing methodology. How extensive was it? What should be expected to work?
   What has not been tested as much?
@@ -106,7 +69,7 @@ Quality Assurance
 Migration
 ---------
 
-* Is is possible migrate from the previous release? If so, how?
+* Is is possible to  migrate from the previous release? If so, how?
 
   Migration with user configuration and state is not supported.
 
@@ -135,15 +98,13 @@ Known Issues
 
 * List key known issues with workarounds
 
-  For Carbon release, NIC contains multiple renderers, but just one renderer can be used at the same time
-  to use another renderer after start NIC, you have to uninstall NIC and restart ODL.
-
-* `Link to Open Bugs <https://bugs.opendaylight.org/buglist.cgi?bug_status=__open__&list_id=79901&product=nic>`_
+  For Nitrogen release, NIC contains multiple renderers, where each renderer can be used at the same time
+  without uninstall NIC and restart ODL.
 
 End-of-life
 ===========
 
-* List of features/APIs which are EOLed, deprecated, and/or removed in this
+* List of features/APIs which are EOLed, deprecated, and/or removed in this or last
   release
 
 * odl-nic-renderer-nemo
@@ -160,7 +121,12 @@ Standards
 Release Mechanics
 =================
 
-* `Link to release plan <https://wiki.opendaylight.org/view/NIC:Carbon:Release_Plan>`_
+* `Link to release plan <https://wiki.opendaylight.org/view/NIC:Nitrogen:Release_Plan>`_
 * Describe any major shifts in release schedule from the release plan
 
-  Increase code coverage and initial implementation of Intent life cycle management.
+  Capability to use multiple Renderers at the same time.
+  Capability to support new Intent definitions.
+  Integration with Intent State Machine.
+  Integration with BGPCEP project in order to advertise routes using Intents.
+  Apply OpenFlow rules using OpenFlowPlugin Meters
+  Integration with Genius project in order to manage the Meter IDs.
