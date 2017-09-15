@@ -59,7 +59,7 @@ Quality Assurance
 Migration
 ---------
 
-* Is is possible migrate from the previous release?  Yes
+* Is it possible to migrate from the previous release?  Yes
 * Migration from PacketCable Boron version to Carbon version can be
   accomplished by replacement of the PacketCable plugin components.
 

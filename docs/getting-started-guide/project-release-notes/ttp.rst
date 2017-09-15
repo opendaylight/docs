@@ -67,7 +67,7 @@ Quality Assurance
 Migration
 ---------
 
-* Is is possible migrate from the previous release? If so, how?
+* Is it possible to migrate from the previous release? If so, how?
 
   While it should be possible to export all TTP-related information by doing
   RESTCONF GETs and then import it by doing RESTCONF PUTs after the fact, this
