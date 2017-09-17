@@ -228,7 +228,7 @@ Quality Assurance
 Migration
 ---------
 
-* Is is possible migrate from the previous release? If so, how?
+* Is it possible to migrate from the previous release? If so, how?
 
   Yes. `single-layer-serialization needs to be disabled <https://wiki.opendaylight.org/view/OpenDaylight_OpenFlow_Plugin:OF13%2B_Single_Layer_Serialization#Enabling.2FDisabling_Single_Layer_Serialization>`_
   in order to achieve same functionality as in previous release.

@@ -105,7 +105,7 @@ Quality Assurance
 Migration
 ---------
 
-* Is is possible migrate from the previous release? If so, how?
+* Is it possible to migrate from the previous release? If so, how?
 
 .. note:: This is asking if somebody can move from an installation of the
           previous release while keeping data. This isn't currently, natively

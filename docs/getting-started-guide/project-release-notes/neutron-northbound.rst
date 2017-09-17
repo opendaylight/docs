@@ -157,7 +157,7 @@ Quality Assurance
 Migration
 ---------
 
-* Is it possible migrate from the previous release? If so, how?
+* Is it possible to migrate from the previous release? If so, how?
 
   No as incompatble change was introduced.
 

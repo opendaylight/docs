@@ -51,7 +51,7 @@ Quality Assurance
 Migration
 ---------
 
-* Is is possible migrate from the previous release?
+* Is it possible to migrate from the previous release?
   No, Current release is backward incompatible.
 
 Compatibility

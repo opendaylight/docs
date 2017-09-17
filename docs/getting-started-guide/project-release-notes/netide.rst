@@ -72,7 +72,7 @@ Quality Assurance
 Migration
 ---------
 
-* Is is possible migrate from the previous release? If so, how?
+* Is it possible to migrate from the previous release? If so, how?
 
   Yes. No state data kept in datastore. User facing features and interfaces have not changed between releases, only
   enhancements/bugfixes were added.

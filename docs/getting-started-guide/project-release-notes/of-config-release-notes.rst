@@ -51,7 +51,7 @@ Quality Assurance
 Migration
 ---------
 
-* Is is possible migrate from the previous release? If so, how?
+* Is it possible to migrate from the previous release? If so, how?
 
   There is no additional support for migration in OF-CONFIG than there is in
   general. User configuration and state will need to be manually migrated when
