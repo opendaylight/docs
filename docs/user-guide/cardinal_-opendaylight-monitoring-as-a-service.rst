@@ -59,7 +59,7 @@ basic component in OpenDaylight
 
 2. Karaf Info
 
-3. Project Specific Information.
+3. Project Specific Information(Openflow and Netconf devices).
 
 Prerequisites
 ^^^^^^^^^^^^^

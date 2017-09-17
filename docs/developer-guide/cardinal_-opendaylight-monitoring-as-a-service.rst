@@ -44,6 +44,10 @@ features installed. You can do that by entering the following at the Karaf conso
     feature:install odl-netconf-all
     feature:install odl-netconf-connector-all
     feature:install odl-netconf-mdsal
+    feature:install cardinal-features4
+    feature:install odl-cardinal-api
+    feature:install odl-cardinal-ui
+    feature:install odl-cardinal-rest
 
 System Info APIs
 ~~~~~~~~~~~~~~~~
