@@ -5,13 +5,13 @@ Application-Layer Traffic Optimization (ALTO)
 odl-alto-release
 ----------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=alto.git;a=blob;f=alto-release-features/features-alto/src/main/features/features.xml
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=alto.git;a=blob;f=alto-release-features/features-alto/pom.xml;hb=refs/heads/stable/nitrogen
 * **Feature Description:**  This is a summary feature containing the default
   functionalities provided by ALTO project.
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** Yes
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/alto/job/alto-csit-1node-setup-all-carbon/
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/alto/job/alto-csit-1node-setup-all-nitrogen/
 
 Documentation
 =============
@@ -36,8 +36,8 @@ project. All resources exposed by customized interfaces are read-only.
 Quality Assurance
 =================
 
-* `Link to Sonar Report <https://sonar.opendaylight.org/overview?id=50636>`_ 22.0%
-* `Link to CSIT Jobs <https://jenkins.opendaylight.org/releng/view/alto/job/alto-csit-1node-setup-all-carbon/>`_
+* `Link to Sonar Report <https://sonar.opendaylight.org/overview?id=50636>`_ 31.7%
+* `Link to CSIT Jobs <https://jenkins.opendaylight.org/releng/view/alto/job/alto-csit-1node-setup-all-nitrogen/>`_
 * The tests are using the OpenDaylight CSIT infrastructure.
 
   * How extensive was it? Not very extensive since the tests are customized to
@@ -50,7 +50,7 @@ Quality Assurance
 Migration
 ---------
 
-Migration with data from Boron to Carbon isn't supported.
+Migration with data from Boron isn't supported.
 
 Compatibility
 -------------
@@ -72,29 +72,19 @@ also need to migrate to Blueprint instead of using CONFIG subsystem.
 Bugs Fixed
 ----------
 
-No bug is fixed in this release.
+* `Fixed Bugs <https://bugs.opendaylight.org/buglist.cgi?bug_status=RESOLVED&chfield=%5BBug%20creation%5D&chfieldfrom=2017-05-25&chfieldto=2017-08-14&list_id=84715&product=alto&query_format=advanced&resolution=FIXED>`_
 
 Known Issues
 ------------
 
-* `Bug 5753 <https://bugs.opendaylight.org/show_bug.cgi?id=5753>`_
+Parallel query for simple-ecs service can conduct failure.
 
-Both Jersey 1.0 and 2.0 are imported in karaf.
-
-This seems like a general bug which resides in several projects.
+* `Bug 8826 <https://bugs.opendaylight.org/show_bug.cgi?id=8826>`_
 
 End-of-life
 ===========
 
-* Namespaces:
-
-  * urn:opendaylight:alto:core
-  * urn:opendaylight:alto:basic
-
-* Packages:
-
-  * org.opendaylight.yang.gen.v1.urn.opendaylight.alto.core.*
-  * org.opendaylight.yang.gen.v1.urn.opendaylight.alto.basic.*
+* Nothing deprecated, EOL.
 
 Standards
 =========
@@ -102,14 +92,13 @@ Standards
 * ALTO protocols are not compatible with YANG model
 * Message types for RFC 7285 have been implemented
 * ALTO project provides several basic services in RFC 7285
-* Work-in-progress Internet drafts for multi-cost, incremental updates and RSA
-  service are also scheduled but not fully implemented.
+* Work-in-progress Internet drafts for path-vector, multi-cost, incremental
+  updates and RSA service are also scheduled but not fully implemented.
 
 Release Mechanics
 =================
 
-* `Link to release plan <https://wiki.opendaylight.org/view/ALTO:Carbon_Release_Plan>`_
+* `Link to release plan <https://wiki.opendaylight.org/view/ALTO:Nitrogen_Release_Plan>`_
 * Major shifts:
 
-  * Unable to finish the extensions (multi-cost, incremental update and RSA service)
-  * Unable to reach the goal of improving code quality
+  * Unable to finish the extensions (path-vector and RSA service)
