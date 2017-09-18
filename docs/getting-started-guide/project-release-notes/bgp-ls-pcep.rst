@@ -8,32 +8,32 @@ Major Features
 odl-bgpcep-bgp
 --------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=bgpcep.git;a=blob;f=features/bgp/features-bgp/src/main/features/features.xml;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=bgpcep.git;a=blob;f=features/bgp/features-bgp/src/main/features/features.xml;hb=refs/heads/stable/nitrogen
 * **Feature Description:**  OpenDaylight Border Gateway Protocol (BGP) plugin.
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** No
-* **CSIT Test:** https://logs.opendaylight.org/releng/jenkins092/bgpcep-csit-1node-userfeatures-all-carbon
+* **CSIT Test:** https://logs.opendaylight.org/releng/jenkins092/bgpcep-csit-1node-userfeatures-all-nitrogen
 
 odl-bgpcep-bmp
 --------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=bgpcep.git;a=blob;f=features/bmp/features-bmp/src/main/features/features.xml;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=bgpcep.git;a=blob;f=features/bmp/features-bmp/src/main/features/features.xml;hb=refs/heads/stable/nitrogen
 * **Feature Description:**  OpenDaylight BGP Monitoring Protocol (BMP) plugin.
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** No
-* **CSIT Test:** https://logs.opendaylight.org/releng/jenkins092/bgpcep-csit-1node-userfeatures-all-carbon
+* **CSIT Test:** https://logs.opendaylight.org/releng/jenkins092/bgpcep-csit-1node-userfeatures-all-nitrogen
 
 odl-bgpcep-pcep
 ---------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=bgpcep.git;a=blob;f=features/pcep/features-pcep/src/main/features/features.xml;hb=refs/heads/stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=bgpcep.git;a=blob;f=features/pcep/features-pcep/src/main/features/features.xml;hb=refs/heads/stable/nitrogen
 * **Feature Description:**  OpenDaylight Path Computation Element Configuration Protocol (PCEP) plugin.
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** No
-* **CSIT Test:** https://logs.opendaylight.org/releng/jenkins092/bgpcep-csit-1node-userfeatures-all-carbon
+* **CSIT Test:** https://logs.opendaylight.org/releng/jenkins092/bgpcep-csit-1node-userfeatures-all-nitrogen
 
 
 Documentation
@@ -59,14 +59,14 @@ None Known - all protocol implements the TCP Authentication Option (TCP MD5)
 Quality Assurance
 =================
 
-* `Link to Sonar Report <https://sonar.opendaylight.org/overview?id=10075>`_ (80,8%)
+* `Link to Sonar Report <https://sonar.opendaylight.org/overview?id=10075>`_ (80%)
 * `Link to CSIT Jobs <https://jenkins.opendaylight.org/releng/view/bgpcep/>`_
 
-* `User features test <https://jenkins.opendaylight.org/releng/view/bgpcep/job/bgpcep-csit-1node-userfeatures-only-carbon/>`_
-* `PCEP performance and scale tests <https://jenkins.opendaylight.org/releng/view/bgpcep/job/bgpcep-csit-1node-periodic-throughpcep-only-carbon/>`_
-* `BGP Application peer performance and scale tests <https://jenkins.opendaylight.org/releng/view/bgpcep/job/bgpcep-csit-1node-periodic-bgp-ingest-only-carbon/>`_
-* `BGP performance and scale test <https://jenkins.opendaylight.org/releng/view/bgpcep/job/bgpcep-csit-1node-periodic-bgp-ingest-mixed-only-carbon/>`_
-* `BGP clustering <https://jenkins.opendaylight.org/releng/view/bgpcep/job/bgpcep-csit-3node-periodic-bgpclustering-only-carbon/>`_
+* `User features test <https://jenkins.opendaylight.org/releng/view/bgpcep/job/bgpcep-csit-1node-userfeatures-only-nitrogen/>`_
+* `PCEP performance and scale tests <https://jenkins.opendaylight.org/releng/view/bgpcep/job/bgpcep-csit-1node-periodic-throughpcep-only-nitrogen/>`_
+* `BGP Application peer performance and scale tests <https://jenkins.opendaylight.org/releng/view/bgpcep/job/bgpcep-csit-1node-periodic-bgp-ingest-only-nitrogen/>`_
+* `BGP performance and scale test <https://jenkins.opendaylight.org/releng/view/bgpcep/job/bgpcep-csit-1node-periodic-bgp-ingest-mixed-only-nitrogen/>`_
+* `BGP clustering <https://jenkins.opendaylight.org/releng/view/bgpcep/job/bgpcep-csit-3node-periodic-bgpclustering-only-nitrogen/>`_
 
   The BGP extensions were tested manually with vendor's BGP router implementation or other software implementations (exaBGP, bagpipeBGP). Also, they are covered by the unit tests and automated system tests.
 
@@ -144,7 +144,7 @@ Compatibility
 Bugs Fixed
 ----------
 
-* `List of bugs fixed since the previous release <https://bugs.opendaylight.org/buglist.cgi?columnlist=product%2Ccomponent%2Cassigned_to%2Cbug_severity%2Ccf_issue_type%2Cshort_desc%2Cbug_status%2Cpriority%2Cdeadline%2Ccf_target_milestone&f1=cf_target_milestone&f2=cf_issue_type&known_name=Lithium%3A%20bgpcep&o1=substring&o2=equals&product=bgpcep&query_based_on=Lithium%3A%20bgpcep&query_format=advanced&resolution=FIXED&v1=Carbon&v2=Bug>`_
+* `List of bugs fixed since the previous release <https://bugs.opendaylight.org/buglist.cgi?columnlist=product%2Ccomponent%2Cassigned_to%2Cbug_severity%2Ccf_issue_type%2Cshort_desc%2Cbug_status%2Cpriority%2Cdeadline%2Ccf_target_milestone&f1=cf_target_milestone&f2=cf_issue_type&known_name=Carbon%3A%20bgpcep&list_id=84608&o1=substring&o2=equals&product=bgpcep&query_based_on=Carbon%3A%20bgpcep&query_format=advanced&resolution=FIXED&v1=nitrogen&v2=Bug>`_
 
 Known Issues
 ------------
@@ -207,11 +207,4 @@ Standards
 Release Mechanics
 =================
 
-* `Link to release plan <https://wiki.opendaylight.org/view/BGP_LS_PCEP:Carbon_Release_Plan>`_
-
-* Release plan not achieved
-
-  * `BUG-6966 <https://bugs.opendaylight.org/show_bug.cgi?id=6966>`_ Introduce infrastructure for inbound/outbound routing policies
-  * `BUG-6973 <https://bugs.opendaylight.org/show_bug.cgi?id=6973>`_ Migrate PCEP topology provider to use BP wiring
-  * `BUG-6976 <https://bugs.opendaylight.org/show_bug.cgi?id=6976>`_ Migrate BMP collector to use BP wiring
-  * `BUG-6978 <https://bugs.opendaylight.org/show_bug.cgi?id=6978>`_ Integrate BMP collector with Cluster Singleton Service
+* `Link to release plan <https://wiki.opendaylight.org/view/BGP_LS_PCEP:Nitrogen_Release_Plan>`_
