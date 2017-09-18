@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba1f61a0_632364bd",
+        "filename": "docs/getting-started-guide/project-release-notes/yangtools.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 6900
+      },
+      "writtenOn": "2017-09-18T07:24:20Z",
+      "side": 1,
+      "message": "keep the line length under 80 chars, ignoring URLs for now. At other places as well in the file.",
+      "revId": "2b447a546938e5e1e5361ef8d8479408a7c3d7a4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba1f61a0_8328189b",
+        "filename": "docs/getting-started-guide/project-release-notes/yangtools.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6900
+      },
+      "writtenOn": "2017-09-18T07:24:20Z",
+      "side": 1,
+      "message": "trailing whitespace",
+      "range": {
+        "startLine": 25,
+        "startChar": 122,
+        "endLine": 25,
+        "endChar": 123
+      },
+      "revId": "2b447a546938e5e1e5361ef8d8479408a7c3d7a4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba1f61a0_c32e90a4",
+        "filename": "docs/getting-started-guide/project-release-notes/yangtools.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 6900
+      },
+      "writtenOn": "2017-09-18T07:24:20Z",
+      "side": 1,
+      "message": "his -\u003e this",
+      "range": {
+        "startLine": 130,
+        "startChar": 107,
+        "endLine": 130,
+        "endChar": 110
+      },
+      "revId": "2b447a546938e5e1e5361ef8d8479408a7c3d7a4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
