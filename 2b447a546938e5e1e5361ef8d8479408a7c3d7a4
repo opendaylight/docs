@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "ba1f61a0_0903a90e",
+        "filename": "docs/getting-started-guide/project-release-notes/yangtools.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 6900
+      },
+      "writtenOn": "2017-09-18T11:37:10Z",
+      "side": 1,
+      "message": "We usually follow the defaults in the guides ([0] for .rst files), unless there\u0027s an absolute reason not to. It is possible for older docs to have not been updated according to the guidelines but should be moving towards to. Something that was decided while writing .rst for Int/Test project.\n\n[0]: http://documentation-style-guide-sphinx.readthedocs.io/en/latest/style-guide.html",
+      "parentUuid": "ba1f61a0_e695a233",
+      "revId": "2b447a546938e5e1e5361ef8d8479408a7c3d7a4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba1f61a0_8328189b",
         "filename": "docs/getting-started-guide/project-release-notes/yangtools.rst",
         "patchSetId": 2
