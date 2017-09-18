@@ -8,23 +8,23 @@ Major Features
 odl-vtn-manager-rest
 --------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=vtn.git;a=blob;f=manager/features/features-vtn-manager/src/main/features/features.xml;hb=refs/heads/stable/carbon#l41
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=vtn.git;a=blob;f=manager/features/odl-vtn-manager-rest/pom.xml;h=c130771e9dbc0d77dddf9b81a65d1a0c9aab936c;hb=refs/heads/stable/nitrogen#l24
 * **Feature Description:**  This is the feature that allows users to use the VTN virtualization, by creating the various components as needed for the network.
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** No
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-csit-1node-manager-only-carbon/,https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-csit-1node-manager-all-carbon/
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-csit-1node-manager-all-nitrogen/
 
 
 odl-vtn-manager-neutron
 ----------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=vtn.git;a=blob;f=manager/features/features-vtn-manager/src/main/features/features.xml;hb=refs/heads/stable/carbon#l49
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=vtn.git;a=blob;f=manager/features/odl-vtn-manager-neutron/pom.xml;h=600411e41a52ddc8ac90e9a3c5c58b73ed774b8c;hb=refs/heads/stable/nitrogen#l24
 * **Feature Description:**  This feature provides support for integration with Openstack (L2 API)
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** No
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-csit-1node-openstack-newton-neutron-carbon/
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-csit-1node-openstack-newton-neutron-nitrogen/
 
 Documentation
 =============
@@ -69,16 +69,8 @@ Compatibility
 Bugs Fixed
 ----------
 
-* 6632 - VTN Coordinator Build Issues with Fedora 24
-* 7360 - VTN Coordinator Build Issues in Fedora 25
-* 7402 - VTN Coordinator Tomcat Upgrade to 7.0.73
-* 6859 - Clean up package names across ODL for yangtools
-* 7969 - VTN Coordinator Issues with recent Postgres Versions
-* 7652 - VTN Manager Support for Karaf 4
-* 8191 - VTN Manager Addressed some Checkstyle/findbugs warnings
-* 8184 - VTN Manager Removed some log messages when handling send-barrier RPC
-* 8211 - VTN Manager Addressed Problems in mapping VTN Flow and MD-SAL Flow
-* 8212 - VTN Manager Fixed Failure in retrieving dataflow
+* 8761 - VTN coordinator Portmapping fails due to unnecessary hex conversion.
+* 9024 - VTN Manager Set null to bundle version qualifier if it is empty.
 
 Known Issues
 ------------
@@ -98,5 +90,5 @@ Standards
 Release Mechanics
 =================
 
-* `Link to release plan <https://wiki.opendaylight.org/view/VTN:Carbon_Release_Plan>`_
+* `Link to release plan <https://wiki.opendaylight.org/view/VTN:Nitrogen_Release_Plan>`_
 * There was no deviation from the plan.
