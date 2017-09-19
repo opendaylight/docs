@@ -58,7 +58,7 @@ Migration
 Compatibility
 -------------
 
-N/A as this is first release
+  N/A as this is first release
 
 Bugs Fixed
 ----------
@@ -96,7 +96,7 @@ Standards
 Release Mechanics
 =================
 
-* `Link to release plan <https://wiki.opendaylight.org/view/Eman:Carbon_Release_Plan>`_
+* `Link to release plan <https://wiki.opendaylight.org/view/Eman:Nitrogen_Release_Plan>`_
 * Describe any major shifts in release schedule from the release plan
 
   None
