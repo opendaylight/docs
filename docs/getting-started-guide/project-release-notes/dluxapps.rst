@@ -5,13 +5,10 @@ DluxApps
 Major Features
 ==============
 
-For each top-level feature, identify the name, url, description, etc.
-User-facing features are used directly by end users.
-
 odl-dluxapps-nodes
 ------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=dluxapps.git;a=blob;f=features/src/main/features/features.xml;hb=621a9e576e15233177a20f89f83b3992999b9423
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=dluxapps.git;a=blob;f=features/odl-dluxapps-nodes/pom.xml;h=672a6a317ccfe4b51c8fddd25e3e285b3018581e;hb=3eedd3072f269d652d0ddb664a0b8bf20cf81e6e
 * **Feature Description:**  Application displays list of nodes in openflow (flow:1) topology.
 * **Top Level:** Yes
 * **User Facing:** Yes
@@ -21,7 +18,7 @@ odl-dluxapps-nodes
 odl-dluxapps-topology
 ---------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=dluxapps.git;a=blob;f=features/src/main/features/features.xml;hb=621a9e576e15233177a20f89f83b3992999b9423
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=dluxapps.git;a=blob;f=features/odl-dluxapps-topology/pom.xml;h=5796edc2869cc2cf98b92b7c7bc4813848659bf7;hb=3eedd3072f269d652d0ddb664a0b8bf20cf81e6e
 * **Feature Description:**  Basic topology application. Displays nodes and links from openflow (flow:1) topology.
 * **Top Level:** Yes
 * **User Facing:** Yes
@@ -31,7 +28,7 @@ odl-dluxapps-topology
 odl-dluxapps-yangman
 --------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=dluxapps.git;a=blob;f=features/src/main/features/features.xml;hb=621a9e576e15233177a20f89f83b3992999b9423
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=dluxapps.git;a=blob;f=features/odl-dluxapps-yangman/pom.xml;h=2a743ba9667bf60d144a8cb527a41f5323cd5a29;hb=3eedd3072f269d652d0ddb664a0b8bf20cf81e6e
 * **Feature Description:**  GUI for data manipulation in controller. Generates forms based on loaded Yang models.
   User can interact with controller without knowledge of Yang models, test them, etc. Replacement of YangUI app.
 * **Top Level:** Yes
@@ -42,7 +39,7 @@ odl-dluxapps-yangman
 odl-dluxapps-yangui
 -------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=dluxapps.git;a=blob;f=features/src/main/features/features.xml;hb=621a9e576e15233177a20f89f83b3992999b9423
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=dluxapps.git;a=blob;f=features/odl-dluxapps-yangui/pom.xml;h=fe56512415f35f145cdd7925812533466182399c;hb=3eedd3072f269d652d0ddb664a0b8bf20cf81e6e
 * **Feature Description:**  Previous version of YangUI. Will be removed in next release.
 * **Top Level:** Yes
 * **User Facing:** Yes
@@ -52,7 +49,7 @@ odl-dluxapps-yangui
 odl-dluxapps-yangvisualizer
 ---------------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=dluxapps.git;a=blob;f=features/src/main/features/features.xml;hb=621a9e576e15233177a20f89f83b3992999b9423
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=dluxapps.git;a=blob;f=features/odl-dluxapps-yangvisualizer/pom.xml;h=daf31e33454403f8d8f5cc8c3bce4a3938cc4a35;hb=3eedd3072f269d652d0ddb664a0b8bf20cf81e6e
 * **Feature Description:**  Topology-like visualization of Yang models loaded in controller.
 * **Top Level:** Yes
 * **User Facing:** Yes
@@ -115,6 +112,6 @@ Standards
 Release Mechanics
 =================
 
-* `Link to release plan <https://wiki.opendaylight.org/view/DluxApps:Carbon_Release_Plan>`_
+* `Link to release plan <https://wiki.opendaylight.org/view/DluxApps:Nitrogen_Release_Plan>`_
 * UT coverage is not increased
 * Yang Visualized refactor and redesign is not started
