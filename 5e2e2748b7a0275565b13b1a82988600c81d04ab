@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba1f61a0_7d3818d3",
+        "filename": "docs/developer-guide/dluxapps.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-09-19T21:53:37Z",
+      "side": 1,
+      "message": "The \u003d\u003d\u003d\u003d needs to line up with the text above it.",
+      "revId": "5e2e2748b7a0275565b13b1a82988600c81d04ab",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba1f61a0_6a0fb0e1",
         "filename": "docs/getting-started-guide/project-release-notes/dluxapps.rst",
         "patchSetId": 1
@@ -13,6 +30,30 @@
       "writtenOn": "2017-09-19T19:07:59Z",
       "side": 1,
       "message": "Minor comment. This boilerplate text from the template is not necessary here.",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 52
+      },
+      "revId": "5e2e2748b7a0275565b13b1a82988600c81d04ab",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba1f61a0_bd2e108a",
+        "filename": "docs/getting-started-guide/project-release-notes/dluxapps.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-09-19T21:53:37Z",
+      "side": 1,
+      "message": "Please remove this boilerplate text.",
+      "parentUuid": "ba1f61a0_6a0fb0e1",
       "range": {
         "startLine": 8,
         "startChar": 0,
