@@ -20,21 +20,11 @@ command on the Karaf console -
 
     feature:install odl-dlux-core
 
-The above command will install odl-restconf and DLUX topology
-application internally, along with core DLUX components. Once this
+The above command will install odl-restconf along with core DLUX components. Once this
 feature is successfully installed, access the UI at
 http://localhost:8181/index.html. The default credentials for login are
-admin/admin.
-
-All the applications in DLUX are Karaf features. A user can install
-other dlux applications such as node and yang-ui from Karaf console
-using commands such as -
-
-::
-
-    $ feature:install odl-dluxapps-nodes
-
-    $ feature:install odl-dluxapps-yangui
+admin/admin. After successful login you'll see empty page.
+For applications, continue with DluxApps project.
 
 DLUX Modules
 ------------
