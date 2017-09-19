@@ -5,6 +5,14 @@ Infrautils
 Major Features
 ==============
 
+We have done a lot of clean-up and minor fixes for bugs reported via Bugzilla.
+
+Major changes delivered in this release are:
+
+* Job Coordinator: enables executing jobs in a parallel/sequential fashion, based on their keys (contribution from genius project)
+* Ready Framework: new framework to indicate system readiness, initial version
+* New JUnit Test Rules RunUntilFailureRule, LogCaptureRule, and LogRule
+
 odl-infrautils-all
 ------------------
 
@@ -24,7 +32,7 @@ Documentation
 
 * **User Guide(s):**
 
-  * Infrautils provides low-level technical framework utilities and therefore has no user guide
+  * Infrautils provides low-level technical framework utilities and therefore has no user guide.
 
 * **Developer Guide(s):**
 
@@ -38,7 +46,7 @@ Security Considerations
 Quality Assurance
 =================
 
-* `Link to Sonar Report <https://sonar.opendaylight.org/overview?id=66717>`_ (82.8% line coverage)
+* `Link to Sonar Report <https://sonar.opendaylight.org/overview?id=66717>`_ (43.6% line coverage)
 * Project infrautils provides low-level technical framework utilities
   and therefore no CSIT automated system testing is available
 
@@ -57,8 +65,7 @@ Compatibility
 Bugs Fixed
 ----------
 
-* `List of bugs fixed since the previous release: <https://bugs.opendaylight.org/buglist.cgi?bug_status=RESOLVED&chfield=target_milestone&chfieldto=Now&component=General&f1=cf_target_milestone&f2=cf_target_milestone&f3=cf_target_milestone&f4=cf_target_milestone&f5=cf_target_milestone&j_top=AND_G&list_id=78956&o1=substring&product=infrautils&query_format=advanced&resolution=FIXED&resolution=INVALID&resolution=WONTFIX&resolution=DUPLICATE&resolution=WORKSFORME&v1=Carbon>`_
-
+* `List of bugs fixed since the previous release: <https://bugs.opendaylight.org/buglist.cgi?bug_status=RESOLVED&chfield=target_milestone&chfieldto=Now&component=General&f1=cf_target_milestone&f2=cf_target_milestone&f3=cf_target_milestone&f4=cf_target_milestone&f5=cf_target_milestone&j_top=AND_G&list_id=78956&o1=substring&product=infrautils&query_format=advanced&resolution=FIXED&resolution=INVALID&resolution=WONTFIX&resolution=DUPLICATE&resolution=WORKSFORME&v1=Nitrogen>`_
 
 Known Issues
 ------------
@@ -78,4 +85,4 @@ Standards
 Release Mechanics
 =================
 
-* `Link to release plan <https://wiki.opendaylight.org/view/Infrastructure_Utilities:Carbon_Release_Plan>`_
+* `Link to release plan <https://wiki.opendaylight.org/view/Infrastructure_Utilities:Nitrogen:Release_Plan>`_
