@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba1f61a0_7d3f78b4",
+        "filename": "docs/getting-started-guide/project-release-notes/dlux.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-09-19T21:54:38Z",
+      "side": 1,
+      "message": "The overline and underline needs to match the text in between for it to properly render.",
+      "revId": "cb9929038072657c2b07073b90f1f7c8d1aa9ee7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba1f61a0_2a0938de",
         "filename": "docs/getting-started-guide/project-release-notes/dlux.rst",
         "patchSetId": 1
@@ -13,6 +30,30 @@
       "writtenOn": "2017-09-19T19:06:00Z",
       "side": 1,
       "message": "Minor comment. This boilerplate text can be removed.",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 52
+      },
+      "revId": "cb9929038072657c2b07073b90f1f7c8d1aa9ee7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba1f61a0_3d5a202a",
+        "filename": "docs/getting-started-guide/project-release-notes/dlux.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-09-19T21:54:38Z",
+      "side": 1,
+      "message": "Please remove the boilerplate text.",
+      "parentUuid": "ba1f61a0_2a0938de",
       "range": {
         "startLine": 8,
         "startChar": 0,
