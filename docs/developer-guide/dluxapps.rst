@@ -1,4 +1,4 @@
-DLUX
+DLUX Applications
 ====
 
 Setup and Run
@@ -13,24 +13,22 @@ Required Technology Stack
 Run DLUX
 ~~~~~~~~
 
-To turn on the DLUX UI, install DLUX core feature via running following
+To turn on the DLUX Applications, install DluxApps Applications feature via running following
 command on the Karaf console -
 
 ::
 
-    feature:install odl-dlux-core
+    feature:install odl-dluxapps-applications
 
-The above command will install odl-restconf with core DLUX components. Once this
+The above command will install odl-dlux-core, along with all available DLUX applications. Once this
 feature is successfully installed, access the UI at
 http://localhost:8181/index.html. The default credentials for login are
 admin/admin.
 
-::
-
 DLUX Modules
 ------------
 
-DLUX modules are the individual features.
+DLUX modules are the individual features such as nodes and topology.
 Each module has a defined structure and you can find all existing
 modules at
 https://github.com/opendaylight/dlux/tree/stable/boron/modules.
@@ -318,3 +316,55 @@ karaf (or you can create a new feature for your application), karaf will
 read your blueprint.xml and it will try to register your application
 with dlux. Once successful, if you refresh your dlux UI, you will see
 your application in left hand navigation bar of dlux.
+
+Yang Utils
+----------
+
+Yang Utils are used by UI to perform all CRUD operations. All of these
+utilities are present in yangutils.services.js file. It has following
+AngularJS factories -
+
+-  **arrayUtils** – defines functions for working with arrays.
+
+-  **pathUtils** – defines functions for working with xpath (paths to
+   APIs and subAPIs). It divides xpath string to array of elements, so
+   this array can be later used for search functions.
+
+-  **syncFact** – provides synchronization between requests to and from
+   OpenDaylight when it’s needed.
+
+-  **custFunct** – it is linked with
+   apiConnector.createCustomFunctionalityApis in yangui controller in
+   yangui.controller.js. That function makes it possible to create some
+   custom function called by the click on button in index.tpl.html. All
+   custom functions are stored in array and linked to specific subAPI.
+   When particular subAPI is expanded and clicked, its inputs (linked
+   root node with its child nodes) are displayed in the bottom part of
+   the page and its buttons with custom functionality are displayed
+   also.
+
+-  **reqBuilder** – Builds object in JSON format from input fields of
+   the UI page. **Show Preview** button on Yang UI use this builder.
+   This request is sent to OpenDaylight when button PUT or POST is
+   clicked.
+
+-  **yinParser** – factory for reading .xml files of yang models and
+   creating object hierarchy. Every statement from yang is represented
+   by a node.
+
+-  **nodeWrapper** – adds functions to objects in tree hierarchy created
+   with yinParser. These functions provide functionality for every type
+   of node.
+
+-  **apiConnector** – the main functionality is filling the main
+   structures and linking them. Structure of APIs and subAPIs which is
+   two level array - first level is filled by main APIs, second level is
+   filled by others sub APIs. Second main structure is array of root
+   nodes, which are objects including root node and its children nodes.
+   Linking these two structures is creating links between every subAPI
+   (second level of APIs array) and its root node, which must be
+   displayed like inputs when subAPI is expanded.
+
+-  **yangUtils** – some top level functions which are used by yangui
+   controller for creating the main structures.
+
