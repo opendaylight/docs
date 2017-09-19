@@ -24,7 +24,7 @@ Documentation
 
 * **User Guide(s):**
 
-  * Infrautils provides low-level technical framework utilities and therefore has no user guide
+  * Infrautils provides low-level technical framework utilities and therefore has no user guide.
 
 * **Developer Guide(s):**
 
