@@ -24,7 +24,7 @@ Documentation
 
 * **User Guide(s):**
 
-  * Infrautils provides low-level technical framework utilities and therefore has no user guide
+  * Infrautils provides low-level technical framework utilities and therefore has no user guide.
 
 * **Developer Guide(s):**
 
@@ -78,4 +78,4 @@ Standards
 Release Mechanics
 =================
 
-* `Link to release plan <https://wiki.opendaylight.org/view/Infrastructure_Utilities:Carbon_Release_Plan>`_
+* `Link to release plan <https://wiki.opendaylight.org/view/Infrastructure_Utilities:Nitrogen:Release_Plan>`_
