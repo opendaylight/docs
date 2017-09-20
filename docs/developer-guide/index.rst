@@ -27,6 +27,7 @@ Project-specific Developer Guides
    daexim-developer-guide
    didm-developer-guide
    distribution-version
+   distribution-test-features
    dlux
    eman-developer-guide
    fabric-as-a-service
