@@ -8,8 +8,47 @@ Major Features
 odl-cardinal
 ------------
 
-* **Feature URL:** https://github.com/opendaylight/cardinal/blob/stable/carbon/features/cardinal-features/src/main/features/features.xml
-* **Feature Description:** This feature installs the odl-cardinal application which provides opendaylight health statistics, Karaf and Bundle statistics, Openflow/NETCONF specific statistics to a NMS server via SNMP protocol. And it also provides REST service to expose these statistics.
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=cardinal.git;a=blob;f=features/odl-cardinal/pom.xml
+* **Feature Description:** This feature installs the odl-cardinal
+  application which provides opendaylight health statistics,Karaf
+  and Bundle statistics, Openflow/NETCONF specific statistics to
+  a NMS server via SNMP protocol. And it also provides REST service
+  to expose these statistics.
+* **Top Level:** Yes
+* **User Facing:** Yes
+* **Experimental:** Yes
+* **CSIT Test:** NA
+
+
+odl-cardinal-api
+----------------
+
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=cardinal.git;a=blob;f=features/odl-cardinal-api/pom.xml
+* **Feature Description:**  This feature contains the dependencies to
+  use MDSAL features in CARDINAL.
+* **Top Level:** Yes
+* **User Facing:** Yes
+* **Experimental:** Yes
+* **CSIT Test:** NA
+
+
+odl-cardinal-rest
+-----------------
+
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=cardinal.git;a=blob;f=features/odl-cardinal-rest/pom.xml
+* **Feature Description:**  Implements a South Bound Rest interface to
+  send configuration to REST-capable switches.
+* **Top Level:** Yes
+* **User Facing:** Yes
+* **Experimental:** Yes
+* **CSIT Test:** NA
+
+
+odl-cardinal-ui
+---------------
+
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=cardinal.git;a=blob;f=features/odl-cardinal-ui/pom.xml
+* **Feature Description:**  This feature is the CARDINAL User Interface.
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** Yes
@@ -21,11 +60,11 @@ Documentation
 
 * **User Guide(s):**
 
-  * :ref:`Cardinal User Guide <cardinal-user-guide>`
+  * :ref:`cardinal-user-guide`
 
 * **Developer Guide(s):**
 
-  * :ref:`Cardinal Developer Guide <cardinal-dev-guide>`
+  * :ref:`cardinal-dev-guide`
 
 
 Security Considerations
@@ -42,50 +81,50 @@ Security Considerations
   * Cardinal SNMP support is through SNMP Agent (SNMPv2c as mentioned above)
   * :ref:`Link to all RESTCONF API <cardinal-dev-guide>`
 
-
 Quality Assurance
 =================
 
+* `Link to Sonar Report <https://sonar.opendaylight.org/overview?id=66521>`_ (25.8%)
+* `Link to CSIT Jobs <https://jenkins.opendaylight.org/releng/view/cardinal/>`_
+* All modules have been unit tested. Integration tests have been performed for
+  all major features. System tests have been performed on most major features.
 
-* `Link to Sonar Report <https://sonar.opendaylight.org/overview?id=66521>`_
+Migration
+---------
 
-  Code coverage is 25.7% (User required to be as root to cover more coverage)
+* Is it possible to migrate from the previous release? If so, how?
 
-* Link to CSIT Jobs
-
-  N/A
-
-* `Other manual testing and QA information <https://wiki.opendaylight.org/view/Cardinal:Boron_Feature_Integration_System_Test>`_
-
-  There are some manual tests written to check if snmp daemon started on feature installation and snmpget/snmpwalk command is working.
-
+  Yes. Migration to this release involves migrating features to Karaf 4; see
+  `the wiki <https://wiki.opendaylight.org/view/Karaf_4_migration>`_ for details.
 
 Compatibility
 -------------
 
-* Any API changes:
+* Is this release compatible with the previous release?
 
-* `Change 50715 <https://git.opendaylight.org/gerrit/50715>`_
-  Patch for monitoring Multiple Openflow Devices statistics via SNMP and REST
+  No.
 
-* `Change 51145 <https://git.opendaylight.org/gerrit/51145>`_
-  Patch for monitoring multiple NETCONF devices statistics via SNMP and REST
+* Any API changes?
+
+  All Karaf 3 features have been removed in favour of (compatible) Karaf 4 features
 
 Bugs Fixed
 ----------
 
-* `Bug 7617 <https://bugs.opendaylight.org/show_bug.cgi?id=7617>`_
-  Karaf 4 migration: provide Karaf 4 cardinal features
+List of bugs fixed since the previous release
+
+  No.
+
 
 Known Issues
 ------------
 
-* N/A
+  No.
 
 End-of-life
 ===========
 
-* N/A
+* N/A.
 
 
 Standards
@@ -93,9 +132,8 @@ Standards
 
 * MIB OIDS were compiled for generating java classes using 3rd party library Open-DMK(mib-gen)
 
-
 Release Mechanics
 =================
 
-* `Release plan <https://wiki.opendaylight.org/view/Cardinal:_Carbon_Release_Plan>`_
-* `Another functionality was added - Cardinal as an "SNMP Agent as a Service" in M4 <https://git.opendaylight.org/gerrit/52204>`_
+* `ODL CARDINAL Nitrogen release plan <https://wiki.opendaylight.org/view/Cardinal:_Nitrogen_Release_Plan>`_
+* No major shifts in the release schedule from the release plan
