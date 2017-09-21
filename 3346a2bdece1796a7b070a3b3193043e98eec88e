@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba1f61a0_26db287d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2017-09-21T16:35:41Z",
+      "side": 1,
+      "message": "That is not really a reason to skip Nitrogen checkpoints.\n\nSince the branch point there has been a slew of changes:\n 105 files changed, 4897 insertions(+), 808 deletions(-)\n\nwith features and changes. That warrants proper release notes.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 35
+      },
+      "revId": "3346a2bdece1796a7b070a3b3193043e98eec88e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba1f61a0_8723fdbb",
         "filename": "docs/getting-started-guide/project-release-notes/infrautils.rst",
         "patchSetId": 1
