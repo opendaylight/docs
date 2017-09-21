@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba1f61a0_5599a4c2",
+        "filename": "docs/getting-started-guide/project-release-notes/cardinal.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6900
+      },
+      "writtenOn": "2017-09-21T08:28:26Z",
+      "side": 1,
+      "message": "OpenDaylight, notice the capital D here. I wonder how the builds are passing since we have a script to catch errors like this.",
+      "range": {
+        "startLine": 13,
+        "startChar": 29,
+        "endLine": 13,
+        "endChar": 41
+      },
+      "revId": "a6d3d9acfc4601ba09ee13d243254e3798fe493e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba1f61a0_d5ec742c",
+        "filename": "docs/getting-started-guide/project-release-notes/cardinal.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 6900
+      },
+      "writtenOn": "2017-09-21T08:28:26Z",
+      "side": 1,
+      "message": "Change it to either \"No known issues.\"\n\nOR\n\n`Open Bugs \u003cinsert-link-here\u003e`_",
+      "revId": "a6d3d9acfc4601ba09ee13d243254e3798fe493e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
