@@ -78,48 +78,37 @@ Project-specific Release Notes
    project-release-notes/cardinal
    project-release-notes/controller
    project-release-notes/daexim-release-notes
-   project-release-notes/didm
    project-release-notes/distribution-release-notes
+   project-release-notes/dlux
    project-release-notes/dluxapps
-   project-release-notes/docs
    project-release-notes/eman
    project-release-notes/faas-release-notes
-   project-release-notes/federation
    project-release-notes/gbp-release-notes
    project-release-notes/genius
    project-release-notes/infrautils
-   project-release-notes/iotdm
    project-release-notes/l2switch
-   project-release-notes/lacp
    project-release-notes/lispflowmapping
    project-release-notes/mdsal
+   project-release-notes/nemo
    project-release-notes/netconf
-   project-release-notes/netide
    project-release-notes/netvirt
    project-release-notes/neutron-northbound
    project-release-notes/nic
    project-release-notes/ocpplugin-release-notes
-   project-release-notes/odl-sdni-release-notes
    project-release-notes/odlparent
    project-release-notes/of-config-release-notes
-   project-release-notes/openflowjava
    project-release-notes/openflowplugin
    project-release-notes/opflex
    project-release-notes/ovsdb
+   project-release-notes/packetcable
    project-release-notes/sfc
    project-release-notes/snmp
    project-release-notes/snmp4sdn
    project-release-notes/sxp
    project-release-notes/topology-processing-framework
-   project-release-notes/tsdr
    project-release-notes/ttp
    project-release-notes/unimgr
    project-release-notes/usc
    project-release-notes/vbd
    project-release-notes/vtn
    project-release-notes/yangtools
-
-.. Still missing:
-.. * PacketCable: https://git.opendaylight.org/gerrit/57218
-.. * DLUX
-.. * NeXt
