@@ -34,6 +34,7 @@ Project-specific User Guides
    centinel-user-guide
    daexim-user-guide
    didm-user-guide
+   distribution-version-user-guide
    eman-user-guide
    fabric-as-a-service
    genius-user-guide
