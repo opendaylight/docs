@@ -39,13 +39,22 @@ SFC User Interface
 Overview
 ~~~~~~~~
 
-SFC User Interface (SFC-UI) is based on Dlux project. It provides an
-easy way to create, read, update and delete configuration stored in
-datastore. Moreover, it shows the status of all SFC features (e.g
-installed, uninstalled) and Karaf log messages as well.
+The SFC User interface comes in two flavors:
 
-SFC-UI Architecture
-~~~~~~~~~~~~~~~~~~~
+-  Web Interface (SFC-UI): is based on Dlux project. It provides an easy way to
+   create, read, update and delete configuration stored in the datastore.
+   Moreover, it shows the status of all SFC features (e.g installed,
+   uninstalled) and Karaf log messages as well.
+
+-  Command Line Interface (CLI): it provides several Karaf console commands to
+   show the SFC model (SF, SFFs, etc.) provisioned in the datastore.
+
+
+SFC Web Interface (SFC-UI)
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Architecture
+^^^^^^^^^^^^
 
 SFC-UI operates purely by using RESTCONF.
 
@@ -54,8 +63,8 @@ SFC-UI operates purely by using RESTCONF.
 
    SFC-UI integration into ODL
 
-Configuring SFC-UI
-~~~~~~~~~~~~~~~~~~
+How to access
+^^^^^^^^^^^^^
 
 1. Run ODL distribution (run karaf)
 
@@ -63,8 +72,70 @@ Configuring SFC-UI
 
 3. Visit SFC-UI on: ``http://<odl_ip_address>:8181/sfc/index.html``
 
+
+SFC Command Line Interface (SFC-CLI)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Overview
+^^^^^^^^
+
+The Karaf Container offers a very complete Unix-like console that allows managing
+the container. This console can be extended with custom commands to manage the
+features deployed on it. This feature will add some basic commands to show the
+provisioned SFC entities.
+
+How to use it
+^^^^^^^^^^^^^
+
+The SFC-CLI implements commands to show some of the provisioned SFC entities:
+Service Functions, Service Function Forwarders, Service Function
+Chains, Service Function Paths, Service Function Classifiers, Service Nodes and
+Service Function Types:
+
+* List one/all provisioned Service Functions:
+
+  .. code-block:: bash
+
+    sfc:sf-list [--name <name>]
+
+* List one/all provisioned Service Function Forwarders:
+
+  .. code-block:: bash
+
+    sfc:sff-list [--name <name>]
+
+* List one/all provisioned Service Function Chains:
+
+  .. code-block:: bash
+
+    sfc:sfc-list [--name <name>]
+
+* List one/all provisioned Service Function Paths:
+
+  .. code-block:: bash
+
+    sfc:sfp-list [--name <name>]
+
+* List one/all provisioned Service Function Classifiers:
+
+  .. code-block:: bash
+
+    sfc:sc-list [--name <name>]
+
+* List one/all provisioned Service Nodes:
+
+  .. code-block:: bash
+
+    sfc:sn-list [--name <name>]
+
+* List one/all provisioned Service Function Types:
+
+  .. code-block:: bash
+
+    sfc:sft-list [--name <name>]
+
 SFC Southbound REST Plug-in
---------------------------
+---------------------------
 
 Overview
 ~~~~~~~~
@@ -89,7 +160,7 @@ triggered accordingly by changes in the SFC data stores.
 -  Rendered Service Path (RSP)
 
 Southbound REST Plug-in Architecture
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 From the user perspective, the REST plug-in is another SFC Southbound
 plug-in used to communicate with network devices.
@@ -668,9 +739,9 @@ To use this example, SFF OpenFlow switches must be created and connected
 as illustrated above. Additionally, the SFs must be created and
 connected.
 
-Note that RSP symmetry depends on Service Function Path symmetric field, if present.
-If not, the RSP will be symmetric if any of the SFs involved in the chain
-has the bidirectional field set to true.
+Note that RSP symmetry depends on Service Function Path symmetric field, if
+present. If not, the RSP will be symmetric if any of the SFs involved in the
+chain has the bidirectional field set to true.
 
 Target Environment
 ^^^^^^^^^^^^^^^^^^
@@ -2614,47 +2685,51 @@ Overview
 Rationale
 ^^^^^^^^^
 When the current SFC is deployed in a cloud environment, it is assumed that each
-switch connected to a Service Function is configured as a Service Function Forwarder and
-each Service Function is connected to its Service Function Forwarder depending on the
-Compute Node where the Virtual Machine is located.
+switch connected to a Service Function is configured as a Service Function
+Forwarder and each Service Function is connected to its Service Function
+Forwarder depending on the Compute Node where the Virtual Machine is located.
 
 .. figure:: ./images/sfc/sfc-in-cloud.png
    :alt: Deploying SFC in Cloud Environments
 
-As shown in the picture above, this solution allows the basic cloud use cases to be fulfilled,
-as for example, the ones required in OPNFV Brahmaputra, however, some advanced use cases
-like the transparent migration of VMs can not be implemented. The Logical Service Function Forwarder
-enables the following advanced use cases:
+As shown in the picture above, this solution allows the basic cloud use cases to
+be fulfilled, as for example, the ones required in OPNFV Brahmaputra, however,
+some advanced use cases like the transparent migration of VMs can not be
+implemented. The Logical Service Function Forwarder enables the following
+advanced use cases:
 
 1. Service Function mobility without service disruption
 2. Service Functions load balancing and failover
 
-As shown in the picture below, the Logical Service Function Forwarder concept extends the current
-SFC northbound API to provide an abstraction of the underlying Data Center infrastructure.
-The Data Center underlaying network can be abstracted by a single SFF. This single SFF uses
-the logical port UUID as data plane locator to connect SFs globally and in a location-transparent manner.
+As shown in the picture below, the Logical Service Function Forwarder concept
+extends the current SFC northbound API to provide an abstraction of the
+underlying Data Center infrastructure. The Data Center underlaying network can
+be abstracted by a single SFF. This single SFF uses the logical port UUID as
+data plane locator to connect SFs globally and in a location-transparent manner.
 SFC makes use of `Genius <./genius-user-guide.html>`__ project to track the
 location of the SF's logical ports.
 
 .. figure:: ./images/sfc/single-logical-sff-concept.png
    :alt: Single Logical SFF concept
 
-The SFC internally distributes the necessary flow state over the relevant switches based on the
-internal Data Center topology and the deployment of SFs.
+The SFC internally distributes the necessary flow state over the relevant
+switches based on the internal Data Center topology and the deployment of SFs.
 
 Changes in data model
 ~~~~~~~~~~~~~~~~~~~~~
-The Logical Service Function Forwarder concept extends the current SFC northbound API to provide
-an abstraction of the underlying Data Center infrastructure.
+The Logical Service Function Forwarder concept extends the current SFC
+northbound API to provide an abstraction of the underlying Data Center
+infrastructure.
 
-The Logical SFF simplifies the configuration of the current SFC data model by reducing the number
-of parameters to be be configured in every SFF, since the controller will discover those parameters
-by interacting with the services offered by the `Genius <./genius-user-guide.html>`__ project.
+The Logical SFF simplifies the configuration of the current SFC data model by
+reducing the number of parameters to be be configured in every SFF, since the
+controller will discover those parameters by interacting with the services
+offered by the `Genius <./genius-user-guide.html>`__ project.
 
-The following picture shows the Logical SFF data model. The model gets simplified as most of the
-configuration parameters of the current SFC data model are discovered in runtime. The complete
-YANG model can be found here `logical SFF model
-<https://github.com/opendaylight/sfc/blob/master/sfc-model/src/main/yang/service-function-forwarder-logical.yang>`__.
+The following picture shows the Logical SFF data model. The model gets
+simplified as most of the configuration parameters of the current SFC data model
+are discovered in runtime. The complete YANG model can be found here
+`logical SFF model <https://github.com/opendaylight/sfc/blob/master/sfc-model/src/main/yang/service-function-forwarder-logical.yang>`__.
 
 .. figure:: ./images/sfc/logical-sff-datamodel.png
    :alt: Logical SFF data model
@@ -2803,14 +2878,17 @@ The following picture shows a topology and traffic flow (in green) which corresp
 
 
 
-The Logical SFF functionality allows OpenDaylight to find out the SFFs holding the SFs involved in a path. In this example
-the SFFs affected are Node3 and Node4 thus the controller renders the flows containing NSH parameters just in those SFFs.
+The Logical SFF functionality allows OpenDaylight to find out the SFFs holding
+the SFs involved in a path. In this example the SFFs affected are Node3 and
+Node4 thus the controller renders the flows containing NSH parameters just in
+those SFFs.
 
-Here you have the new flows rendered in Node3 and Node4 which implement the NSH protocol. Every Rendered Service Path is represented
-by an NSP value. We provisioned a symmetric RSP so we get two NSPs: 8388613 and 5. Node3 holds the first SF of NSP 8388613 and
-the last SF of NSP 5. Node 4 holds the first SF of NSP 5 and the last SF of NSP 8388613. Both Node3 and Node4 will pop the NSH header
-when the received packet has gone through the last SF of its path.
-
+Here you have the new flows rendered in Node3 and Node4 which implement the NSH
+protocol. Every Rendered Service Path is represented by an NSP value. We
+provisioned a symmetric RSP so we get two NSPs: 8388613 and 5. Node3 holds the
+first SF of NSP 8388613 and the last SF of NSP 5. Node 4 holds the first SF of
+NSP 5 and the last SF of NSP 8388613. Both Node3 and Node4 will pop the NSH
+header when the received packet has gone through the last SF of its path.
 
 **Rendered flows Node 3**
 
@@ -2839,8 +2917,9 @@ when the received packet has gone through the last SF of its path.
  cookie=0xba5eba1100000203, duration=68.996s, table=87, n_packets=0, n_bytes=0, priority=650,nsi=253,nsp=8388613 actions=pop_nsh,set_field:02:14:84:5e:a8:5d->eth_src,resubmit(,17)
 
 
-An interesting scenario to show the Logical SFF strength is the migration of a SF from a compute node to another.
-The OpenDaylight will learn the new topology by itself, then it will re-render the new flows to the new SFFs affected.
+An interesting scenario to show the Logical SFF strength is the migration of a
+SF from a compute node to another. The OpenDaylight will learn the new topology
+by itself, then it will re-render the new flows to the new SFFs affected.
 
 .. figure:: ./images/sfc/single-logical-sff-example-migration.png
    :alt: Logical SFF - SF Migration Example
@@ -2850,10 +2929,11 @@ The OpenDaylight will learn the new topology by itself, then it will re-render t
    Logical SFF - SF Migration Example
 
 
-In our example, SF2 is moved from Node4 to Node2 then OpenDaylight removes NSH specific flows from Node4 and puts them in Node2.
-Check below flows showing this effect. Now Node3 keeps holding the first SF of NSP 8388613 and the last SF of NSP 5;
-but Node2 becomes the new holder of the first SF of NSP 5 and the last SF of NSP 8388613.
-
+In our example, SF2 is moved from Node4 to Node2 then OpenDaylight removes NSH
+specific flows from Node4 and puts them in Node2. Check below flows showing this
+effect. Now Node3 keeps holding the first SF of NSP 8388613 and the last SF of
+NSP 5; but Node2 becomes the new holder of the first SF of NSP 5 and the last SF
+of NSP 8388613.
 
 **Rendered Flows Node 3 After Migration**
 
@@ -3024,10 +3104,12 @@ indicate the neutron ports of the VMs you want to classify.
 SFC pipeline impacts
 ~~~~~~~~~~~~~~~~~~~~
 
-After binding SFC service with a particular interface by means of Genius, as explained in the :ref:`Genius User Guide <genius-user-guide-binding-services>`,
-the entry point in the SFC pipeline will be table 82 (SFC_TRANSPORT_CLASSIFIER_TABLE), and from that point, packet
-processing will be similar to the :ref:`SFC OpenFlow pipeline <sfc-user-guide-sfc-of-pipeline>`, just with another set
-of specific tables for the SFC service.
+After binding SFC service with a particular interface by means of Genius, as
+explained in the :ref:`Genius User Guide <genius-user-guide-binding-services>`,
+the entry point in the SFC pipeline will be table 82
+(SFC_TRANSPORT_CLASSIFIER_TABLE), and from that point, packet processing will be
+similar to the :ref:`SFC OpenFlow pipeline <sfc-user-guide-sfc-of-pipeline>`,
+just with another set of specific tables for the SFC service.
 
 This picture shows the SFC pipeline after service integration with Genius:
 
