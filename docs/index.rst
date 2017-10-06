@@ -20,6 +20,7 @@ just learn more about OpenDaylight.
 .. toctree::
    :maxdepth: 1
 
+   release-notes/index
    getting-started-guide/index
    user-guide/index
    opendaylight-with-openstack/index
