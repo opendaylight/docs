@@ -39,13 +39,22 @@ SFC User Interface
 Overview
 ~~~~~~~~
 
-SFC User Interface (SFC-UI) is based on Dlux project. It provides an
-easy way to create, read, update and delete configuration stored in
-datastore. Moreover, it shows the status of all SFC features (e.g
-installed, uninstalled) and Karaf log messages as well.
+The SFC User interface comes in two flavors:
 
-SFC-UI Architecture
-~~~~~~~~~~~~~~~~~~~
+-  Web Interface (SFC-UI): is based on Dlux project. It provides an easy way to
+   create, read, update and delete configuration stored in the datastore.
+   Moreover, it shows the status of all SFC features (e.g installed,
+   uninstalled) and Karaf log messages as well.
+
+-  Command Line Interface (CLI): it provides several Karaf console commands to
+   show the SFC model (SF, SFFs, etc.) provisioned in the datastore.
+
+
+SFC Web Interface (SFC-UI)
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Architecture
+^^^^^^^^^^^^
 
 SFC-UI operates purely by using RESTCONF.
 
@@ -54,8 +63,8 @@ SFC-UI operates purely by using RESTCONF.
 
    SFC-UI integration into ODL
 
-Configuring SFC-UI
-~~~~~~~~~~~~~~~~~~
+How to access
+^^^^^^^^^^^^^
 
 1. Run ODL distribution (run karaf)
 
@@ -63,8 +72,70 @@ Configuring SFC-UI
 
 3. Visit SFC-UI on: ``http://<odl_ip_address>:8181/sfc/index.html``
 
+
+SFC Command Line Interface (SFC-CLI)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Overview
+^^^^^^^^
+
+The Karaf Container offers a complete Unix-like console that allows managing
+the container. This console can be extended with custom commands to manage the
+features deployed on it. This feature will add some basic commands to show the
+provisioned SFC entities.
+
+How to use it
+^^^^^^^^^^^^^
+
+The SFC-CLI implements commands to show some of the provisioned SFC entities:
+Service Functions, Service Function Forwarders, Service Function
+Chains, Service Function Paths, Service Function Classifiers, Service Nodes and
+Service Function Types:
+
+* List one/all provisioned Service Functions:
+
+  .. code-block:: bash
+
+     sfc:sf-list [--name <name>]
+
+* List one/all provisioned Service Function Forwarders:
+
+  .. code-block:: bash
+
+     sfc:sff-list [--name <name>]
+
+* List one/all provisioned Service Function Chains:
+
+  .. code-block:: bash
+
+     sfc:sfc-list [--name <name>]
+
+* List one/all provisioned Service Function Paths:
+
+  .. code-block:: bash
+
+     sfc:sfp-list [--name <name>]
+
+* List one/all provisioned Service Function Classifiers:
+
+  .. code-block:: bash
+
+     sfc:sc-list [--name <name>]
+
+* List one/all provisioned Service Nodes:
+
+  .. code-block:: bash
+
+     sfc:sn-list [--name <name>]
+
+* List one/all provisioned Service Function Types:
+
+  .. code-block:: bash
+
+     sfc:sft-list [--name <name>]
+
 SFC Southbound REST Plug-in
---------------------------
+---------------------------
 
 Overview
 ~~~~~~~~
@@ -89,7 +160,7 @@ triggered accordingly by changes in the SFC data stores.
 -  Rendered Service Path (RSP)
 
 Southbound REST Plug-in Architecture
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 From the user perspective, the REST plug-in is another SFC Southbound
 plug-in used to communicate with network devices.
@@ -367,9 +438,10 @@ Administering or Managing Classifier
 Classifier runs alongside sfc\_agent, therefore the command for starting
 it locally is:
 
-::
+  .. code-block:: bash
 
-    sudo python3.4 sfc-py/sfc_agent.py --rest --odl-ip-port localhost:8181 --auto-sff-name --nfq-class
+     sudo python3.4 sfc-py/sfc_agent.py --rest --odl-ip-port localhost:8181
+     --auto-sff-name --nfq-class
 
 SFC OpenFlow Renderer User Guide
 --------------------------------
@@ -632,16 +704,16 @@ features must be installed.
 The following command can be used to view all of the currently installed
 Karaf features:
 
-::
+  .. code-block:: bash
 
-    opendaylight-user@root>feature:list -i
+     opendaylight-user@root>feature:list -i
 
 Or, pipe the command to a grep to see a subset of the currently
 installed Karaf features:
 
-::
+  .. code-block:: bash
 
-    opendaylight-user@root>feature:list -i | grep sfc
+     opendaylight-user@root>feature:list -i | grep sfc
 
 To install a particular feature, use the Karaf ``feature:install``
 command.
@@ -668,9 +740,9 @@ To use this example, SFF OpenFlow switches must be created and connected
 as illustrated above. Additionally, the SFs must be created and
 connected.
 
-Note that RSP symmetry depends on Service Function Path symmetric field, if present.
-If not, the RSP will be symmetric if any of the SFs involved in the chain
-has the bidirectional field set to true.
+Note that RSP symmetry depends on Service Function Path symmetric field, if
+present. If not, the RSP will be symmetric if any of the SFs involved in the
+chain has the bidirectional field set to true.
 
 Target Environment
 ^^^^^^^^^^^^^^^^^^
@@ -714,13 +786,13 @@ Traffic can now be injected from a client into the Service Chain. To
 debug problems, the OpenFlow tables can be dumped with the following
 commands, assuming SFF1 is called ``s1`` and SFF2 is called ``s2``.
 
-::
+  .. code-block:: bash
 
-    sudo ovs-ofctl -O OpenFlow13  dump-flows s1
+     sudo ovs-ofctl -O OpenFlow13  dump-flows s1
 
-::
+  .. code-block:: bash
 
-    sudo ovs-ofctl -O OpenFlow13  dump-flows s2
+     sudo ovs-ofctl -O OpenFlow13  dump-flows s2
 
 In all the following configuration sections, replace the ``${JSON}``
 string with the appropriate JSON configuration. Also, change the
@@ -737,13 +809,13 @@ elements using NSH encapsulation.
 The Service Function configuration can be sent with the following
 command:
 
-::
+  .. code-block:: bash
 
-    curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '${JSON}' -X PUT --user admin:admin http://localhost:8181/restconf/config/service-function:service-functions/
+     curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '${JSON}' -X PUT --user admin:admin http://localhost:8181/restconf/config/service-function:service-functions/
 
 **SF configuration JSON.**
 
-::
+.. code-block:: json
 
     {
      "service-functions": {
@@ -785,13 +857,13 @@ command:
 The Service Function Forwarder configuration can be sent with the
 following command:
 
-::
+  .. code-block:: bash
 
-    curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '${JSON}' -X PUT --user admin:admin http://localhost:8181/restconf/config/service-function-forwarder:service-function-forwarders/
+     curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '${JSON}' -X PUT --user admin:admin http://localhost:8181/restconf/config/service-function-forwarder:service-function-forwarders/
 
 **SFF configuration JSON.**
 
-::
+.. code-block:: json
 
     {
      "service-function-forwarders": {
@@ -855,13 +927,13 @@ following command:
 The Service Function Chain configuration can be sent with the following
 command:
 
-::
+  .. code-block:: bash
 
-    curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '${JSON}' -X PUT --user admin:admin http://localhost:8181/restconf/config/service-function-chain:service-function-chains/
+     curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '${JSON}' -X PUT --user admin:admin http://localhost:8181/restconf/config/service-function-chain:service-function-chains/
 
 **SFC configuration JSON.**
 
-::
+.. code-block:: json
 
     {
      "service-function-chains": {
@@ -888,13 +960,13 @@ command:
 The Service Function Path configuration can be sent with the following
 command:
 
-::
+  .. code-block:: bash
 
-    curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '${JSON}' -X PUT --user admin:admin http://localhost:8181/restconf/config/service-function-path:service-function-paths/
+     curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '${JSON}' -X PUT --user admin:admin http://localhost:8181/restconf/config/service-function-path:service-function-paths/
 
 **SFP configuration JSON.**
 
-::
+.. code-block:: json
 
     {
       "service-function-paths": {
@@ -911,13 +983,13 @@ command:
 
 | **NSH Rendered Service Path creation**
 
-::
+  .. code-block:: bash
 
-    curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '${JSON}' -X POST --user admin:admin http://localhost:8181/restconf/operations/rendered-service-path:create-rendered-path/
+     curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '${JSON}' -X POST --user admin:admin http://localhost:8181/restconf/operations/rendered-service-path:create-rendered-path/
 
 **RSP creation JSON.**
 
-::
+.. code-block:: json
 
     {
      "input": {
@@ -931,18 +1003,18 @@ command:
 The following command can be used to remove a Rendered Service Path
 called ``sfc-path1``:
 
-::
+  .. code-block:: bash
 
-    curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '{"input": {"name": "sfc-path1" } }' -X POST --user admin:admin http://localhost:8181/restconf/operations/rendered-service-path:delete-rendered-path/
+     curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '{"input": {"name": "sfc-path1" } }' -X POST --user admin:admin http://localhost:8181/restconf/operations/rendered-service-path:delete-rendered-path/
 
 | **NSH Rendered Service Path Query**
 
 The following command can be used to query all of the created Rendered
 Service Paths:
 
-::
+  .. code-block:: bash
 
-    curl -H "Content-Type: application/json" -H "Cache-Control: no-cache" -X GET --user admin:admin http://localhost:8181/restconf/operational/rendered-service-path:rendered-service-paths/
+     curl -H "Content-Type: application/json" -H "Cache-Control: no-cache" -X GET --user admin:admin http://localhost:8181/restconf/operational/rendered-service-path:rendered-service-paths/
 
 SFC OF Renderer MPLS Tutorial
 '''''''''''''''''''''''''''''
@@ -955,13 +1027,13 @@ elements using MPLS encapsulation.
 The Service Function configuration can be sent with the following
 command:
 
-::
+  .. code-block:: bash
 
-    curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '${JSON}' -X PUT --user admin:admin http://localhost:8181/restconf/config/service-function:service-functions/
+     curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '${JSON}' -X PUT --user admin:admin http://localhost:8181/restconf/config/service-function:service-functions/
 
 **SF configuration JSON.**
 
-::
+.. code-block:: json
 
     {
      "service-functions": {
@@ -1003,13 +1075,13 @@ command:
 The Service Function Forwarder configuration can be sent with the
 following command:
 
-::
+  .. code-block:: bash
 
-    curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '${JSON}' -X PUT --user admin:admin http://localhost:8181/restconf/config/service-function-forwarder:service-function-forwarders/
+     curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '${JSON}' -X PUT --user admin:admin http://localhost:8181/restconf/config/service-function-forwarder:service-function-forwarders/
 
 **SFF configuration JSON.**
 
-::
+.. code-block:: json
 
     {
      "service-function-forwarders": {
@@ -1139,13 +1211,13 @@ following command:
 The Service Function Chain configuration can be sent with the following
 command:
 
-::
+  .. code-block:: bash
 
-    curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '${JSON}' -X PUT --user admin:admin http://localhost:8181/restconf/config/service-function-chain:service-function-chains/
+     curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '${JSON}' -X PUT --user admin:admin http://localhost:8181/restconf/config/service-function-chain:service-function-chains/
 
 **SFC configuration JSON.**
 
-::
+.. code-block:: json
 
     {
      "service-function-chains": {
@@ -1172,13 +1244,13 @@ command:
 The Service Function Path configuration can be sent with the following
 command:
 
-::
+  .. code-block:: bash
 
-    curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '${JSON}' -X PUT --user admin:admin http://localhost:8181/restconf/config/service-function-path:service-function-paths/
+     curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '${JSON}' -X PUT --user admin:admin http://localhost:8181/restconf/config/service-function-path:service-function-paths/
 
 **SFP configuration JSON.**
 
-::
+.. code-block:: json
 
     {
       "service-function-paths": {
@@ -1195,13 +1267,13 @@ command:
 
 | **MPLS Rendered Service Path creation**
 
-::
+  .. code-block:: bash
 
-    curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '${JSON}' -X POST --user admin:admin http://localhost:8181/restconf/operations/rendered-service-path:create-rendered-path/
+     curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '${JSON}' -X POST --user admin:admin http://localhost:8181/restconf/operations/rendered-service-path:create-rendered-path/
 
 **RSP creation JSON.**
 
-::
+.. code-block:: json
 
     {
      "input": {
@@ -1215,18 +1287,18 @@ command:
 The following command can be used to remove a Rendered Service Path
 called ``sfc-path1``:
 
-::
+  .. code-block:: bash
 
-    curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '{"input": {"name": "sfc-path1" } }' -X POST --user admin:admin http://localhost:8181/restconf/operations/rendered-service-path:delete-rendered-path/
+     curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '{"input": {"name": "sfc-path1" } }' -X POST --user admin:admin http://localhost:8181/restconf/operations/rendered-service-path:delete-rendered-path/
 
 | **MPLS Rendered Service Path Query**
 
 The following command can be used to query all of the created Rendered
 Service Paths:
 
-::
+  .. code-block:: bash
 
-    curl -H "Content-Type: application/json" -H "Cache-Control: no-cache" -X GET --user admin:admin http://localhost:8181/restconf/operational/rendered-service-path:rendered-service-paths/
+     curl -H "Content-Type: application/json" -H "Cache-Control: no-cache" -X GET --user admin:admin http://localhost:8181/restconf/operational/rendered-service-path:rendered-service-paths/
 
 SFC IOS XE Renderer User Guide
 ------------------------------
@@ -1348,9 +1420,9 @@ project. These files have to be copied to the ``cache/schema``
 directory, before Karaf is started. After that, custom capabilities have
 to be sent to network-topology:
 
-::
+*  PUT ./config/network-topology:network-topology/topology/topology-netconf/node/<device-name>
 
-    PUT ./config/network-topology:network-topology/topology/topology-netconf/node/<device-name>
+   .. code-block:: xml
 
     <node xmlns="urn:TBD:params:xml:ns:yang:network-topology">
       <node-id>device-name</node-id>
@@ -1396,9 +1468,9 @@ mountpoints are cached. The first step is to create LSF on node.
 
 ``Service Function Forwarder configuration``
 
-::
+*  PUT ./config/service-function-forwarder:service-function-forwarders
 
-    PUT ./config/service-function-forwarder:service-function-forwarders
+   .. code-block:: json
 
     {
         "service-function-forwarders": {
@@ -1425,9 +1497,9 @@ If the IOS-XE node with appropriate management IP exists, this
 configuration is mapped and LSF is created on the device. The same
 approach is used for Service Functions.
 
-::
+*  PUT ./config/service-function:service-functions
 
-    PUT ./config/service-function:service-functions
+   .. code-block:: json
 
     {
         "service-functions": {
@@ -1481,9 +1553,9 @@ approach is used for Service Functions.
 All these SFs are configured on the same device as the LSF. The next
 step is to prepare Service Function Chain.
 
-::
+*  PUT ./config/service-function-chain:service-function-chains/
 
-    PUT ./config/service-function-chain:service-function-chains/
+   .. code-block:: json
 
     {
         "service-function-chains": {
@@ -1511,9 +1583,9 @@ step is to prepare Service Function Chain.
 
 Service Function Path:
 
-::
+*  PUT ./config/service-function-path:service-function-paths/
 
-    PUT ./config/service-function-path:service-function-paths/
+   .. code-block:: json
 
     {
         "service-function-paths": {
@@ -1530,9 +1602,9 @@ Service Function Path:
 
 Without a classifier, there is possibility to POST RSP directly.
 
-::
+*  POST ./operations/rendered-service-path:create-rendered-path
 
-    POST ./operations/rendered-service-path:create-rendered-path
+   .. code-block:: json
 
     {
       "input": {
@@ -1640,7 +1712,7 @@ selection algorithm when creating a Rendered Service Path.
    content is needed at the moment:
    Service\_function\_schudule\_type.json
 
-   ::
+   .. code-block:: json
 
        {
          "service-function-scheduler-types": {
@@ -1671,12 +1743,14 @@ selection algorithm when creating a Rendered Service Path.
 
    If using the Linux curl command, it could be:
 
-   ::
+   .. code-block:: bash
 
-       curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '$${Service_function_schudule_type.json}'
-       -X PUT --user admin:admin http://localhost:8181/restconf/config/service-function-scheduler-type:service-function-scheduler-types/
+      curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache"
+      --data '$${Service_function_schudule_type.json}' -X PUT
+      --user admin:admin http://localhost:8181/restconf/config/service-function-scheduler-type:service-function-scheduler-types/
 
-   Here is also a snapshot for using the RESTClient plugin:
+
+Here is also a snapshot for using the RESTClient plugin:
 
 .. figure:: ./images/sfc/RESTClient-snapshot.png
    :alt: Mozilla Firefox RESTClient
@@ -1809,7 +1883,7 @@ c. Get Monitoring data from NETCONF server. These monitoring data should
 
 static XML data like this:
 
-::
+.. code-block:: xml
 
     <?xml version="1.0" encoding="UTF-8"?>
     <service-function-description-monitor-report>
@@ -1911,7 +1985,7 @@ c. Depoly SFFs and SFs. import the service-function-forwarders.json and
 
 service-function-forwarders.json:
 
-::
+.. code-block:: json
 
     {
       "service-function-forwarders": {
@@ -2051,7 +2125,7 @@ service-function-forwarders.json:
 
 service-functions.json:
 
-::
+.. code-block:: json
 
     {
       "service-functions": {
@@ -2146,7 +2220,7 @@ service-functions.json:
 
 The deployed topology like this:
 
-::
+.. code-block:: json
 
                   +----+           +----+          +----+
                   |sff1|+----------|sff3|---------+|sff2|
@@ -2257,7 +2331,7 @@ Create an algorithm
 POST -
 http://127.0.0.1:8181/restconf/config/service-function-group-algorithm:service-function-group-algorithms
 
-::
+.. code-block:: json
 
     {
         "service-function-group-algorithm": [
@@ -2285,7 +2359,7 @@ Create a group
 POST -
 http://127.0.0.1:8181/restconf/config/service-function-group:service-function-groups
 
-::
+.. code-block:: json
 
     {
         "service-function-group": [
@@ -2614,47 +2688,51 @@ Overview
 Rationale
 ^^^^^^^^^
 When the current SFC is deployed in a cloud environment, it is assumed that each
-switch connected to a Service Function is configured as a Service Function Forwarder and
-each Service Function is connected to its Service Function Forwarder depending on the
-Compute Node where the Virtual Machine is located.
+switch connected to a Service Function is configured as a Service Function
+Forwarder and each Service Function is connected to its Service Function
+Forwarder depending on the Compute Node where the Virtual Machine is located.
 
 .. figure:: ./images/sfc/sfc-in-cloud.png
    :alt: Deploying SFC in Cloud Environments
 
-As shown in the picture above, this solution allows the basic cloud use cases to be fulfilled,
-as for example, the ones required in OPNFV Brahmaputra, however, some advanced use cases
-like the transparent migration of VMs can not be implemented. The Logical Service Function Forwarder
-enables the following advanced use cases:
+As shown in the picture above, this solution allows the basic cloud use cases to
+be fulfilled, as for example, the ones required in OPNFV Brahmaputra, however,
+some advanced use cases like the transparent migration of VMs can not be
+implemented. The Logical Service Function Forwarder enables the following
+advanced use cases:
 
 1. Service Function mobility without service disruption
 2. Service Functions load balancing and failover
 
-As shown in the picture below, the Logical Service Function Forwarder concept extends the current
-SFC northbound API to provide an abstraction of the underlying Data Center infrastructure.
-The Data Center underlaying network can be abstracted by a single SFF. This single SFF uses
-the logical port UUID as data plane locator to connect SFs globally and in a location-transparent manner.
+As shown in the picture below, the Logical Service Function Forwarder concept
+extends the current SFC northbound API to provide an abstraction of the
+underlying Data Center infrastructure. The Data Center underlaying network can
+be abstracted by a single SFF. This single SFF uses the logical port UUID as
+data plane locator to connect SFs globally and in a location-transparent manner.
 SFC makes use of `Genius <./genius-user-guide.html>`__ project to track the
 location of the SF's logical ports.
 
 .. figure:: ./images/sfc/single-logical-sff-concept.png
    :alt: Single Logical SFF concept
 
-The SFC internally distributes the necessary flow state over the relevant switches based on the
-internal Data Center topology and the deployment of SFs.
+The SFC internally distributes the necessary flow state over the relevant
+switches based on the internal Data Center topology and the deployment of SFs.
 
 Changes in data model
 ~~~~~~~~~~~~~~~~~~~~~
-The Logical Service Function Forwarder concept extends the current SFC northbound API to provide
-an abstraction of the underlying Data Center infrastructure.
+The Logical Service Function Forwarder concept extends the current SFC
+northbound API to provide an abstraction of the underlying Data Center
+infrastructure.
 
-The Logical SFF simplifies the configuration of the current SFC data model by reducing the number
-of parameters to be be configured in every SFF, since the controller will discover those parameters
-by interacting with the services offered by the `Genius <./genius-user-guide.html>`__ project.
+The Logical SFF simplifies the configuration of the current SFC data model by
+reducing the number of parameters to be be configured in every SFF, since the
+controller will discover those parameters by interacting with the services
+offered by the `Genius <./genius-user-guide.html>`__ project.
 
-The following picture shows the Logical SFF data model. The model gets simplified as most of the
-configuration parameters of the current SFC data model are discovered in runtime. The complete
-YANG model can be found here `logical SFF model
-<https://github.com/opendaylight/sfc/blob/master/sfc-model/src/main/yang/service-function-forwarder-logical.yang>`__.
+The following picture shows the Logical SFF data model. The model gets
+simplified as most of the configuration parameters of the current SFC data model
+are discovered in runtime. The complete YANG model can be found here
+`logical SFF model <https://github.com/opendaylight/sfc/blob/master/sfc-model/src/main/yang/service-function-forwarder-logical.yang>`__.
 
 .. figure:: ./images/sfc/logical-sff-datamodel.png
    :alt: Logical SFF data model
@@ -2662,13 +2740,16 @@ YANG model can be found here `logical SFF model
 How to configure the Logical SFF
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The following are examples to configure the Logical SFF:
-::
 
-    curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '${JSON}' -X PUT --user admin:admin http://localhost:8181/restconf/config/restconf/config/service-function:service-functions/
+.. code-block:: bash
+
+   curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache"
+   --data '${JSON}' -X PUT --user
+   admin:admin http://localhost:8181/restconf/config/restconf/config/service-function:service-functions/
 
 **Service Functions JSON.**
 
-::
+.. code-block:: json
 
     {
     "service-functions": {
@@ -2702,13 +2783,15 @@ The following are examples to configure the Logical SFF:
     }
     }
 
-::
+.. code-block:: bash
 
-    curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '${JSON}' -X PUT --user admin:admin http://localhost:8181/restconf/config/service-function-forwarder:service-function-forwarders/
+   curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache"
+   --data '${JSON}' -X PUT --user
+   admin:admin http://localhost:8181/restconf/config/service-function-forwarder:service-function-forwarders/
 
 **Service Function Forwarders JSON.**
 
-::
+.. code-block:: json
 
     {
     "service-function-forwarders": {
@@ -2720,13 +2803,15 @@ The following are examples to configure the Logical SFF:
     }
     }
 
-::
+.. code-block:: bash
 
-    curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '${JSON}' -X PUT --user admin:admin http://localhost:8181/restconf/config/service-function-chain:service-function-chains/
+   curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache"
+   --data '${JSON}' -X PUT --user
+   admin:admin http://localhost:8181/restconf/config/service-function-chain:service-function-chains/
 
 **Service Function Chains JSON.**
 
-::
+.. code-block:: json
 
     {
     "service-function-chains": {
@@ -2757,13 +2842,15 @@ The following are examples to configure the Logical SFF:
     }
     }
 
-::
+.. code-block:: bash
 
-    curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '${JSON}' -X PUT --user admin:admin http://localhost:8182/restconf/config/service-function-chain:service-function-paths/
+   curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache"
+   --data '${JSON}' -X PUT --user
+    admin:admin http://localhost:8182/restconf/config/service-function-chain:service-function-paths/
 
 **Service Function Paths JSON.**
 
-::
+.. code-block:: json
 
     {
     "service-function-paths": {
@@ -2802,15 +2889,17 @@ The following picture shows a topology and traffic flow (in green) which corresp
    Logical SFF Example
 
 
+The Logical SFF functionality allows OpenDaylight to find out the SFFs holding
+the SFs involved in a path. In this example the SFFs affected are Node3 and
+Node4 thus the controller renders the flows containing NSH parameters just in
+those SFFs.
 
-The Logical SFF functionality allows OpenDaylight to find out the SFFs holding the SFs involved in a path. In this example
-the SFFs affected are Node3 and Node4 thus the controller renders the flows containing NSH parameters just in those SFFs.
-
-Here you have the new flows rendered in Node3 and Node4 which implement the NSH protocol. Every Rendered Service Path is represented
-by an NSP value. We provisioned a symmetric RSP so we get two NSPs: 8388613 and 5. Node3 holds the first SF of NSP 8388613 and
-the last SF of NSP 5. Node 4 holds the first SF of NSP 5 and the last SF of NSP 8388613. Both Node3 and Node4 will pop the NSH header
-when the received packet has gone through the last SF of its path.
-
+Here you have the new flows rendered in Node3 and Node4 which implement the NSH
+protocol. Every Rendered Service Path is represented by an NSP value. We
+provisioned a symmetric RSP so we get two NSPs: 8388613 and 5. Node3 holds the
+first SF of NSP 8388613 and the last SF of NSP 5. Node 4 holds the first SF of
+NSP 5 and the last SF of NSP 8388613. Both Node3 and Node4 will pop the NSH
+header when the received packet has gone through the last SF of its path.
 
 **Rendered flows Node 3**
 
@@ -2839,8 +2928,9 @@ when the received packet has gone through the last SF of its path.
  cookie=0xba5eba1100000203, duration=68.996s, table=87, n_packets=0, n_bytes=0, priority=650,nsi=253,nsp=8388613 actions=pop_nsh,set_field:02:14:84:5e:a8:5d->eth_src,resubmit(,17)
 
 
-An interesting scenario to show the Logical SFF strength is the migration of a SF from a compute node to another.
-The OpenDaylight will learn the new topology by itself, then it will re-render the new flows to the new SFFs affected.
+An interesting scenario to show the Logical SFF strength is the migration of a
+SF from a compute node to another. The OpenDaylight will learn the new topology
+by itself, then it will re-render the new flows to the new SFFs affected.
 
 .. figure:: ./images/sfc/single-logical-sff-example-migration.png
    :alt: Logical SFF - SF Migration Example
@@ -2850,10 +2940,11 @@ The OpenDaylight will learn the new topology by itself, then it will re-render t
    Logical SFF - SF Migration Example
 
 
-In our example, SF2 is moved from Node4 to Node2 then OpenDaylight removes NSH specific flows from Node4 and puts them in Node2.
-Check below flows showing this effect. Now Node3 keeps holding the first SF of NSP 8388613 and the last SF of NSP 5;
-but Node2 becomes the new holder of the first SF of NSP 5 and the last SF of NSP 8388613.
-
+In our example, SF2 is moved from Node4 to Node2 then OpenDaylight removes NSH
+specific flows from Node4 and puts them in Node2. Check below flows showing this
+effect. Now Node3 keeps holding the first SF of NSP 8388613 and the last SF of
+NSP 5; but Node2 becomes the new holder of the first SF of NSP 5 and the last SF
+of NSP 8388613.
 
 **Rendered Flows Node 3 After Migration**
 
@@ -2924,7 +3015,7 @@ a Logical SFF as an attachment-point:
 The following ACL enables traffic intended for port 80 within the subnetwork
 192.168.2.0/24, for RSP1 and RSP1-Reverse.
 
-::
+.. code-block:: json
 
         {
           "access-lists": {
@@ -2983,9 +3074,11 @@ The following ACL enables traffic intended for port 80 within the subnetwork
           }
         }
 
-::
+.. code-block:: bash
 
-  curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '${JSON}' -X PUT --user admin:admin http://localhost:8181/restconf/config/ietf-access-control-list:access-lists/
+   curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache"
+   --data '${JSON}' -X PUT --user
+   admin:admin http://localhost:8181/restconf/config/ietf-access-control-list:access-lists/
 
 **Configure a classifier JSON**
 
@@ -2993,7 +3086,7 @@ The following JSON provisions a classifier, having a Logical SFF as an
 attachment point. The value of the field 'interface' is where you
 indicate the neutron ports of the VMs you want to classify.
 
-::
+.. code-block:: json
 
         {
           "service-function-classifiers": {
@@ -3015,19 +3108,23 @@ indicate the neutron ports of the VMs you want to classify.
           }
         }
 
-::
+.. code-block:: bash
 
-  curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '${JSON}' -X PUT --user admin:admin http://localhost:8181/restconf/config/service-function-classifier:service-function-classifiers/
+   curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache"
+   --data '${JSON}' -X PUT --user
+   admin:admin http://localhost:8181/restconf/config/service-function-classifier:service-function-classifiers/
 
 .. _sfc-user-guide-pipeline-impacts:
 
 SFC pipeline impacts
 ~~~~~~~~~~~~~~~~~~~~
 
-After binding SFC service with a particular interface by means of Genius, as explained in the :ref:`Genius User Guide <genius-user-guide-binding-services>`,
-the entry point in the SFC pipeline will be table 82 (SFC_TRANSPORT_CLASSIFIER_TABLE), and from that point, packet
-processing will be similar to the :ref:`SFC OpenFlow pipeline <sfc-user-guide-sfc-of-pipeline>`, just with another set
-of specific tables for the SFC service.
+After binding SFC service with a particular interface by means of Genius, as
+explained in the :ref:`Genius User Guide <genius-user-guide-binding-services>`,
+the entry point in the SFC pipeline will be table 82
+(SFC_TRANSPORT_CLASSIFIER_TABLE), and from that point, packet processing will be
+similar to the :ref:`SFC OpenFlow pipeline <sfc-user-guide-sfc-of-pipeline>`,
+just with another set of specific tables for the SFC service.
 
 This picture shows the SFC pipeline after service integration with Genius:
 
