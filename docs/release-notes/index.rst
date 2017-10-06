@@ -1,6 +1,6 @@
-*************
+#############
 Release Notes
-*************
+#############
 
 Target Environment
 ==================
@@ -63,52 +63,56 @@ following limitations:
   issues became apparent when managing thousands of OpenFlow
   switches, however this may vary depending on deployment and use cases.
 
-.. _proj_rel_notes:
-
 Project-specific Release Notes
 ==============================
 
 .. toctree::
    :maxdepth: 1
 
-   project-release-notes/aaa
-   project-release-notes/alto
-   project-release-notes/bgp-ls-pcep
-   project-release-notes/bier
-   project-release-notes/cardinal
-   project-release-notes/controller
-   project-release-notes/daexim-release-notes
-   project-release-notes/distribution-release-notes
-   project-release-notes/dlux
-   project-release-notes/dluxapps
-   project-release-notes/eman
-   project-release-notes/faas-release-notes
-   project-release-notes/gbp-release-notes
-   project-release-notes/genius
-   project-release-notes/infrautils
-   project-release-notes/l2switch
-   project-release-notes/lispflowmapping
-   project-release-notes/mdsal
-   project-release-notes/nemo
-   project-release-notes/netconf
-   project-release-notes/netvirt
-   project-release-notes/neutron-northbound
-   project-release-notes/nic
-   project-release-notes/ocpplugin-release-notes
-   project-release-notes/odlparent
-   project-release-notes/of-config-release-notes
-   project-release-notes/openflowplugin
-   project-release-notes/opflex
-   project-release-notes/ovsdb
-   project-release-notes/packetcable
-   project-release-notes/sfc
-   project-release-notes/snmp
-   project-release-notes/snmp4sdn
-   project-release-notes/sxp
-   project-release-notes/topology-processing-framework
-   project-release-notes/ttp
-   project-release-notes/unimgr
-   project-release-notes/usc
-   project-release-notes/vbd
-   project-release-notes/vtn
-   project-release-notes/yangtools
+   projects/aaa
+   projects/alto
+   projects/bgp-ls-pcep
+   projects/bier
+   projects/cardinal
+   projects/controller
+   projects/daexim
+   projects/didm
+   projects/distribution
+   projects/dlux
+   projects/dluxapps
+   projects/eman
+   projects/faas
+   projects/gbp
+   projects/genius
+   projects/infrautils
+   projects/iotdm
+   projects/l2switch
+   projects/lispflowmapping
+   projects/mdsal
+   projects/nemo
+   projects/netconf
+   projects/netide
+   projects/netvirt
+   projects/neutron-northbound
+   projects/nic
+   projects/ocpplugin
+   projects/odlparent
+   projects/odl-sdni.rst
+   projects/of-config
+   projects/openflowjava
+   projects/openflowplugin
+   projects/opflex
+   projects/ovsdb
+   projects/packetcable
+   projects/sfc
+   projects/snmp
+   projects/snmp4sdn
+   projects/sxp
+   projects/topology-processing-framework
+   projects/tsdr
+   projects/ttp
+   projects/unimgr
+   projects/usc
+   projects/vbd
+   projects/vtn
+   projects/yangtools

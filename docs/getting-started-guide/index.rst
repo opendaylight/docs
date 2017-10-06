@@ -16,7 +16,7 @@ Getting Started Guide
    other_features
    api
    installing_opendaylight
-   release_notes
+   ../release-notes
    project-specific-guides/index
    common-features/index
    security_considerations
