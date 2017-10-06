@@ -39,13 +39,22 @@ SFC User Interface
 Overview
 ~~~~~~~~
 
-SFC User Interface (SFC-UI) is based on Dlux project. It provides an
-easy way to create, read, update and delete configuration stored in
-datastore. Moreover, it shows the status of all SFC features (e.g
-installed, uninstalled) and Karaf log messages as well.
+The SFC User interface comes in two flavors:
 
-SFC-UI Architecture
-~~~~~~~~~~~~~~~~~~~
+-  Web Interface (SFC-UI): is based on Dlux project. It provides an easy way to
+   create, read, update and delete configuration stored in datastore. Moreover,
+   it shows the status of all SFC features (e.g installed, uninstalled) and
+   Karaf's log messages as well.
+
+-  Command Line Interface (CLI): it provides several Karaf's console commands to
+   show the SFC model (SF, SFFs, etc.) provisioned in datastore.
+
+
+SFC Web Interface (SFC-UI)
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Architecture
+^^^^^^^^^^^^
 
 SFC-UI operates purely by using RESTCONF.
 
@@ -54,8 +63,8 @@ SFC-UI operates purely by using RESTCONF.
 
    SFC-UI integration into ODL
 
-Configuring SFC-UI
-~~~~~~~~~~~~~~~~~~
+How to access
+^^^^^^^^^^^^^
 
 1. Run ODL distribution (run karaf)
 
@@ -63,8 +72,70 @@ Configuring SFC-UI
 
 3. Visit SFC-UI on: ``http://<odl_ip_address>:8181/sfc/index.html``
 
+
+SFC Command Line Interface (SFC-CLI)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Overview
+^^^^^^^^
+
+The Karaf Container offers a very complete Unix-like console that allows managing
+the container. This console can be extended with custom commands to manage the
+features deployed on it. This feature will add some basic commands to show the
+provisioned SFC's entities.
+
+How to use it
+^^^^^^^^^^^^^
+
+The SFC-CLI implements commands to show some of the provisioned SFC's
+entities: Service Functions, Service Function Forwarders, Service Function
+Chains, Service Function Paths, Service Function Classifiers, Service Nodes and
+Service Function Types:
+
+* List one/all provisioned Service Functions:
+
+  .. code-block:: bash
+
+    sfc:sf-list [--name <name>]
+
+* List one/all provisioned Service Function Forwarders:
+
+  .. code-block:: bash
+
+    sfc:sff-list [--name <name>]
+
+* List one/all provisioned Service Function Chains:
+
+  .. code-block:: bash
+
+    sfc:sfc-list [--name <name>]
+
+* List one/all provisioned Service Function Paths:
+
+  .. code-block:: bash
+
+    sfc:sfp-list [--name <name>]
+
+* List one/all provisioned Service Function Classifiers:
+
+  .. code-block:: bash
+
+    sfc:sc-list [--name <name>]
+
+* List one/all provisioned Service Nodes:
+
+  .. code-block:: bash
+
+    sfc:sn-list [--name <name>]
+
+* List one/all provisioned Service Function Types:
+
+  .. code-block:: bash
+
+    sfc:sft-list [--name <name>]
+
 SFC Southbound REST Plug-in
---------------------------
+---------------------------
 
 Overview
 ~~~~~~~~
@@ -89,7 +160,7 @@ triggered accordingly by changes in the SFC data stores.
 -  Rendered Service Path (RSP)
 
 Southbound REST Plug-in Architecture
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 From the user perspective, the REST plug-in is another SFC Southbound
 plug-in used to communicate with network devices.
