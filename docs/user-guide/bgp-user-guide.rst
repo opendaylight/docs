@@ -1084,7 +1084,8 @@ Once the file is processed, the defined configuration will be available from the
 
 .. note:: If the BGP instance is already present, no update or configuration will be applied.
 
-When installing BGP an example will be provided and a default configuration loaded.
+When installing BGP an example will be provided for illustration purposes but it's contents are commented out.
+Uncomment/update it as per your usage requirements before use.
 
 **PATH:** ``etc/opendaylight/bgp/protocols-config.xml``
 
@@ -5018,7 +5019,8 @@ Once the file is processed, the defined configuration will be available from the
 
 .. note:: If the BGP topology instance is already present, no update or configuration will be applied.
 
-When installing BGP an example will be provided and a default configuration loaded.
+When installing BGP an example will be provided for illustration purposes but it's contents are commented out.
+Uncomment/update it as per your usage requirements before use.
 
 **PATH:** ``etc/opendaylight/bgp/network-topology-config.xml``
 
