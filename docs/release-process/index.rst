@@ -10,6 +10,17 @@ This guide provides details on various processes related to OpenDaylight's
 release process and attempts to document the steps used by OpenDaylight Release
 Engineers to perform release operations.
 
+****************
+Release Planning
+****************
+
+.. toctree::
+   :maxdepth: 1
+
+   release-plan
+   release-schedule
+   milestone-readouts
+
 *********
 Processes
 *********
@@ -24,9 +35,7 @@ Processes
    autorelease
    project-lifecycle
    branch-cutting
-   release-schedule
    simultaneous-release
-   milestone-readouts
 
 ************************
 Supporting Documentation
