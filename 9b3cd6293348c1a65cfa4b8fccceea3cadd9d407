@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a245df4_2fb0c88a",
+        "filename": "docs/release-process/milestone-readouts/m1/M1_netconf.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-10-12T23:26:47Z",
+      "side": 1,
+      "message": "I think project name should be the name of the actual project. In this case NetConf",
+      "revId": "9b3cd6293348c1a65cfa4b8fccceea3cadd9d407",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_0fad0432",
+        "filename": "docs/release-process/milestone-readouts/m1/M1_netconf.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-10-12T23:26:47Z",
+      "side": 1,
+      "message": "If we look here this does not produce a nice formatting:\n\nhttps://logs.opendaylight.org/releng/jenkins092/docs-rtd-verify-oxygen/113/html/release-process/milestone-readouts/m1/M1_netconf.html.gz\n\nIf we want this to be a single item list in the final output then we need to put a blank line before the list starts. Similar to what we have below.",
+      "revId": "9b3cd6293348c1a65cfa4b8fccceea3cadd9d407",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
