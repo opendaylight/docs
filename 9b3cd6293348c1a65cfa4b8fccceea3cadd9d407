@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a245df4_8f4f3492",
+        "filename": "docs/release-process/milestone-readouts/m1/M1_netconf.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-10-12T23:36:04Z",
+      "side": 1,
+      "message": "We should probably also avoid using uppercase in filenames. Some folks use filesystems that are case insensitive.",
+      "revId": "9b3cd6293348c1a65cfa4b8fccceea3cadd9d407",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a245df4_2fb0c88a",
         "filename": "docs/release-process/milestone-readouts/m1/M1_netconf.rst",
         "patchSetId": 3
