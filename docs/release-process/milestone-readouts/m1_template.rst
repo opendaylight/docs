@@ -46,7 +46,7 @@ Project Name
    - (If yes, link to final release plan wiki page)
    - (If no, ETA to finalize release plan)
 
-9. Do you have all APIs intended to be externally consumable listed? (Yes/No)
+9. Do you have all APIs intended to be externally consumable listed? (Yes/No/Not Applicable)
 
    - Does each API have a useful short name? (Yes/No)
    - Are the Java interface and/or YANG files listed for each API? (Yes/No)
