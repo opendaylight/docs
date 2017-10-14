@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a245df4_d6038171",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-10-14T19:10:55Z",
+      "side": 1,
+      "message": "typo: Line",
+      "range": {
+        "startLine": 10,
+        "startChar": 44,
+        "endLine": 10,
+        "endChar": 50
+      },
+      "revId": "713c8a3d6c0d78bf494bc1faf2d59f404be84bf2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_16f51983",
+        "filename": "docs/user-guide/service-function-chaining.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-10-14T19:10:55Z",
+      "side": 1,
+      "message": "weasel word. Unnecessary in docs.",
+      "range": {
+        "startLine": 82,
+        "startChar": 29,
+        "endLine": 82,
+        "endChar": 33
+      },
+      "revId": "713c8a3d6c0d78bf494bc1faf2d59f404be84bf2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_36f81d7c",
+        "filename": "docs/user-guide/service-function-chaining.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-10-14T19:10:55Z",
+      "side": 1,
+      "message": "While this works. This and other instances below should line up with `code-block` to format correctly.",
+      "revId": "713c8a3d6c0d78bf494bc1faf2d59f404be84bf2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
