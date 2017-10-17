@@ -53,11 +53,22 @@ Releasing OpenDaylight
 
   .. code-block:: bash
 
-      git clone --recursive https://git.opendaylight.org/gerrit/releng/autorelease
-      cd autorelease
-      git submodule update --init
-      git review -s
-      git submodule foreach 'git review -s'
+     export BRANCH=origin/stable/nitrogen
+
+     git clone --recursive https://git.opendaylight.org/gerrit/releng/autorelease
+     cd autorelease
+     git fetch origin
+
+     # Ensure we are on the right branch. Note that we are wiping out all
+     # modifications in the repo so backup unsaved changes before doing this.
+     git checkout -f
+     git clean -fdx
+     git checkout ${BRANCH,,}
+     git submodule update --init
+
+     # Ensure git review is setup
+     git review -s
+     git submodule foreach 'git review -s'
 
 - Make sure the latest lftools is installed
   **(Release Engineering Team)**
