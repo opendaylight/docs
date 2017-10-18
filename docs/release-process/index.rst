@@ -32,4 +32,3 @@ The release management team maintains several documents in Google Drive to
 track releases. These documents can be found at this link:
 
 https://drive.google.com/drive/folders/0ByPlysxjHHJaUXdfRkJqRGo4aDg
-
