@@ -104,6 +104,7 @@ Project-specific Release Notes
    projects/openflowplugin
    projects/opflex
    projects/ovsdb
+   projects/packetcable
    projects/sfc
    projects/snmp
    projects/snmp4sdn
@@ -118,7 +119,6 @@ Project-specific Release Notes
    projects/yangtools
 
 .. Still missing:
-.. * PacketCable: https://git.opendaylight.org/gerrit/57218
 .. * DLUX
 .. * NeXt
 
