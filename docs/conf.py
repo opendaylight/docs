@@ -15,6 +15,7 @@
 
 import sys
 import os
+import time
 import sphinx_bootstrap_theme
 
 # If extensions (or modules to document with autodoc) are in another directory,
@@ -58,7 +59,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'OpenDaylight Documentation'
-copyright = '2016, OpenDaylight Project'
+copyright = '2016-{}, OpenDaylight Project'.format(time.strftime("%Y"))'
 author = 'OpenDaylight Project'
 
 # The version info for the project you're documenting, acts as replacement for
