@@ -112,3 +112,14 @@ Project-specific Release Notes
    projects/vbd
    projects/vtn
    projects/yangtools
+
+
+Service Release Notes
+=====================
+
+.. toctree::
+   :glob:
+   :maxdepth: 2
+
+   release-notes-*
+
