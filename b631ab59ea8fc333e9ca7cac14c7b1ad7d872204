@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a245df4_8317fbec",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-10-18T22:32:45Z",
+      "side": 1,
+      "message": "No need to quote the summary line of the commit message.",
+      "revId": "b631ab59ea8fc333e9ca7cac14c7b1ad7d872204",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_23de0f40",
+        "filename": "docs/conf.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-10-18T22:32:45Z",
+      "side": 1,
+      "message": "I think we should set this to 2016-$today, OpenDaylight Project. Something like\n\n1. Add `import time` to the top of this file\n2. Change this line to:\n\n \u00272016-{}, OpenDaylight Project\u0027.format(time.strftime(\"%Y\"))",
+      "revId": "b631ab59ea8fc333e9ca7cac14c7b1ad7d872204",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
