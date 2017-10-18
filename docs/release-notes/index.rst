@@ -69,54 +69,7 @@ Project-specific Release Notes
 .. toctree::
    :maxdepth: 1
 
-   projects/aaa
-   projects/alto
-   projects/bgp-ls-pcep
-   projects/bier
-   projects/cardinal
-   projects/controller
-   projects/daexim
-   projects/didm
-   projects/distribution
-   projects/dlux
-   projects/dluxapps
-   projects/eman
-   projects/faas
-   projects/gbp
-   projects/genius
-   projects/infrautils
-   projects/iotdm
-   projects/l2switch
-   projects/lispflowmapping
-   projects/mdsal
-   projects/nemo
-   projects/netconf
-   projects/netide
-   projects/netvirt
-   projects/neutron-northbound
-   projects/nic
-   projects/ocpplugin
-   projects/odlparent
-   projects/odl-sdni.rst
-   projects/of-config
-   projects/openflowjava
-   projects/openflowplugin
-   projects/opflex
-   projects/ovsdb
-   projects/packetcable
-   projects/sfc
-   projects/snmp
-   projects/snmp4sdn
-   projects/sxp
-   projects/topology-processing-framework
-   projects/tsdr
-   projects/ttp
-   projects/unimgr
-   projects/usc
-   projects/vbd
-   projects/vtn
-   projects/yangtools
-
+   projects/*
 
 Service Release Notes
 =====================
