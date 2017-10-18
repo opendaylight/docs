@@ -63,7 +63,6 @@ following limitations:
   issues became apparent when managing thousands of OpenFlow
   switches, however this may vary depending on deployment and use cases.
 
-.. _proj_rel_notes:
 
 Project-specific Release Notes
 ==============================
@@ -71,52 +70,52 @@ Project-specific Release Notes
 .. toctree::
    :maxdepth: 1
 
-   project-release-notes/aaa
-   project-release-notes/alto
-   project-release-notes/bgp-ls-pcep
-   project-release-notes/bier
-   project-release-notes/cardinal
-   project-release-notes/controller
-   project-release-notes/didm
-   project-release-notes/distribution
-   project-release-notes/dluxapps
-   project-release-notes/docs
-   project-release-notes/eman
-   project-release-notes/faas-release-notes
-   project-release-notes/federation
-   project-release-notes/gbp-release-notes
-   project-release-notes/genius
-   project-release-notes/infrautils
-   project-release-notes/iotdm
-   project-release-notes/l2switch
-   project-release-notes/lacp
-   project-release-notes/lispflowmapping
-   project-release-notes/mdsal
-   project-release-notes/netconf
-   project-release-notes/netide
-   project-release-notes/netvirt
-   project-release-notes/neutron-northbound
-   project-release-notes/nic
-   project-release-notes/ocpplugin-release-notes
-   project-release-notes/odl-sdni-release-notes
-   project-release-notes/odlparent
-   project-release-notes/of-config-release-notes
-   project-release-notes/openflowjava
-   project-release-notes/openflowplugin
-   project-release-notes/opflex
-   project-release-notes/ovsdb
-   project-release-notes/sfc
-   project-release-notes/snmp
-   project-release-notes/snmp4sdn
-   project-release-notes/sxp
-   project-release-notes/topology-processing-framework
-   project-release-notes/tsdr
-   project-release-notes/ttp
-   project-release-notes/unimgr
-   project-release-notes/usc
-   project-release-notes/vbd
-   project-release-notes/vtn
-   project-release-notes/yangtools
+   projects/aaa
+   projects/alto
+   projects/bgp-ls-pcep
+   projects/bier
+   projects/cardinal
+   projects/controller
+   projects/didm
+   projects/distribution
+   projects/dluxapps
+   projects/docs
+   projects/eman
+   projects/faas
+   projects/federation
+   projects/gbp
+   projects/genius
+   projects/infrautils
+   projects/iotdm
+   projects/l2switch
+   projects/lacp
+   projects/lispflowmapping
+   projects/mdsal
+   projects/netconf
+   projects/netide
+   projects/netvirt
+   projects/neutron-northbound
+   projects/nic
+   projects/ocpplugin
+   projects/odl-sdni
+   projects/odlparent
+   projects/of-config
+   projects/openflowjava
+   projects/openflowplugin
+   projects/opflex
+   projects/ovsdb
+   projects/sfc
+   projects/snmp
+   projects/snmp4sdn
+   projects/sxp
+   projects/topology-processing-framework
+   projects/tsdr
+   projects/ttp
+   projects/unimgr
+   projects/usc
+   projects/vbd
+   projects/vtn
+   projects/yangtools
 
 .. Still missing:
 .. * PacketCable: https://git.opendaylight.org/gerrit/57218
