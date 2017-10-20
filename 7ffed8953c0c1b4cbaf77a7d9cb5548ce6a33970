@@ -1,0 +1,170 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a245df4_89643523",
+        "filename": "docs/release-process/release-plans/oxygen-release-plan.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-10-20T15:18:53Z",
+      "side": 1,
+      "message": "Since with Git we can have multiple branches. Let\u0027s just have one release plan. doc per branch so no need to put it in a folder.",
+      "revId": "7ffed8953c0c1b4cbaf77a7d9cb5548ce6a33970",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_4994fde1",
+        "filename": "docs/release-process/release-plans/oxygen-release-plan.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-10-20T15:18:53Z",
+      "side": 1,
+      "message": "The lists below would be easier to read if it was spaced with a new line in-between. But very minor suggestion.",
+      "revId": "7ffed8953c0c1b4cbaf77a7d9cb5548ce6a33970",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_c9b74d85",
+        "filename": "docs/release-process/release-plans/oxygen-release-plan.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-10-20T15:18:53Z",
+      "side": 1,
+      "message": "The proper way to do a note in Sphinx is to use the .. note:: annotation. I will update the patch to fix that.",
+      "range": {
+        "startLine": 129,
+        "startChar": 22,
+        "endLine": 129,
+        "endChar": 32
+      },
+      "revId": "7ffed8953c0c1b4cbaf77a7d9cb5548ce6a33970",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_a9bad96b",
+        "filename": "docs/release-process/release-plans/oxygen-release-plan.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-10-20T15:18:53Z",
+      "side": 1,
+      "message": "As mentioned previously the proper way to do notes is to use the .. note:: annotation. I\u0027ll update the patch to fix it.",
+      "range": {
+        "startLine": 146,
+        "startChar": 9,
+        "endLine": 146,
+        "endChar": 16
+      },
+      "revId": "7ffed8953c0c1b4cbaf77a7d9cb5548ce6a33970",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_09b1658f",
+        "filename": "docs/release-process/release-plans/oxygen-release-plan.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-10-20T15:18:53Z",
+      "side": 1,
+      "message": ".. note::",
+      "range": {
+        "startLine": 176,
+        "startChar": 9,
+        "endLine": 176,
+        "endChar": 18
+      },
+      "revId": "7ffed8953c0c1b4cbaf77a7d9cb5548ce6a33970",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_e9ab311c",
+        "filename": "docs/release-process/release-plans/oxygen-release-plan.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-10-20T15:18:53Z",
+      "side": 1,
+      "message": ".. note::",
+      "range": {
+        "startLine": 217,
+        "startChar": 7,
+        "endLine": 217,
+        "endChar": 11
+      },
+      "revId": "7ffed8953c0c1b4cbaf77a7d9cb5548ce6a33970",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_49ab5d1d",
+        "filename": "docs/release-process/release-plans/oxygen-release-plan.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-10-20T15:18:53Z",
+      "side": 1,
+      "message": ".. note::",
+      "range": {
+        "startLine": 400,
+        "startChar": 9,
+        "endLine": 400,
+        "endChar": 13
+      },
+      "revId": "7ffed8953c0c1b4cbaf77a7d9cb5548ce6a33970",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_29a6e953",
+        "filename": "docs/release-process/release-plans/oxygen-release-plan.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 939,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-10-20T15:18:53Z",
+      "side": 1,
+      "message": "The content blow should be linked to or if we want to to be on this page included using a Sphinx literalinclude from the m1 milestone directory.",
+      "revId": "7ffed8953c0c1b4cbaf77a7d9cb5548ce6a33970",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
