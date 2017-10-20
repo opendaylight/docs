@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a245df4_097845c3",
+        "filename": "docs/release-process/release-plans/oxygen-release-plan.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-10-20T16:39:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a245df4_89643523",
+      "revId": "7ffed8953c0c1b4cbaf77a7d9cb5548ce6a33970",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a245df4_4994fde1",
         "filename": "docs/release-process/release-plans/oxygen-release-plan.rst",
         "patchSetId": 13
@@ -162,6 +180,30 @@
       "writtenOn": "2017-10-20T15:31:46Z",
       "side": 1,
       "message": "2017-09-07\n\nSee https://www.xkcd.com/1179/\nAlso update the autorelease script which generates this, please.",
+      "range": {
+        "startLine": 521,
+        "startChar": 43,
+        "endLine": 521,
+        "endChar": 51
+      },
+      "revId": "7ffed8953c0c1b4cbaf77a7d9cb5548ce6a33970",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_443504d9",
+        "filename": "docs/release-process/release-plans/oxygen-release-plan.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 521,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-10-20T16:39:46Z",
+      "side": 1,
+      "message": "Thanks for the reminder. I\u0027ll fix this. :)",
+      "parentUuid": "9a245df4_e97211e2",
       "range": {
         "startLine": 521,
         "startChar": 43,
