@@ -4,12 +4,20 @@ Milestone Readouts
 M0: Declare Intent
 ------------------
 
-.. include:: milestone-readouts/M0_template.rst
+.. toctree::
+   :glob:
+   :maxdepth: 1
+
+   milestone-readouts/m0/*
 
 M1: Final Release Plan
 ----------------------
 
-.. include:: milestone-readouts/M1_template.rst
+.. toctree::
+   :glob:
+   :maxdepth: 1
+
+   milestone-readouts/m1/*
 
 M2: Functionality Freeze
 ------------------------
