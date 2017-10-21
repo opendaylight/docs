@@ -4,28 +4,48 @@ Milestone Readouts
 M0: Declare Intent
 ------------------
 
-.. include:: milestone-readouts/M0_template.rst
+.. toctree::
+   :glob:
+   :maxdepth: 1
+
+   milestone-readouts/m0/*
 
 M1: Final Release Plan
 ----------------------
 
-.. include:: milestone-readouts/M1_template.rst
+.. toctree::
+   :glob:
+   :maxdepth: 1
+
+   milestone-readouts/m1/*
 
 M2: Functionality Freeze
 ------------------------
 
-.. include:: milestone-readouts/M2_template.rst
+.. toctree::
+   :glob:
+   :maxdepth: 1
+
+   milestone-readouts/m2/*
 
 M3: API Freeze
 --------------
 
-.. include:: milestone-readouts/M3_template.rst
+.. toctree::
+   :glob:
+   :maxdepth: 1
+
+   milestone-readouts/m3/*
 
 M4: Code Freeze
 ---------------
 
-.. include:: milestone-readouts/M4_template.rst
+.. toctree::
+   :glob:
+   :maxdepth: 1
 
+   milestone-readouts/m4/*
+   
 RCX: Release Candidate Testing
 ------------------------------
 
