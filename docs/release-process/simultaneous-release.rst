@@ -53,7 +53,9 @@ Releasing OpenDaylight
 
   .. code-block:: bash
 
-     export BRANCH=origin/stable/oxygen
+     export RELEASE=Nitrogen-SR1
+     export STREAM=${RELEASE//-*}
+     export BRANCH=origin/stable/${STREAM,,}
 
      git clone --recursive https://git.opendaylight.org/gerrit/releng/autorelease
      cd autorelease
@@ -86,8 +88,6 @@ Releasing OpenDaylight
 
   .. code-block:: bash
 
-      export RELEASE=Beryllium-SR4
-      export STREAM=${RELEASE//-*}
       export BUILD_NUM=55
       export PATCH_URL="https://logs.opendaylight.org/releng/jenkins092/autorelease-release-${STREAM,,}/${BUILD_NUM}/patches.tar.gz"
       ./scripts/release-tags.sh "${RELEASE}" /tmp/patches "$PATCH_URL"
@@ -126,6 +126,6 @@ Releasing OpenDaylight
   .. code-block:: bash
 
       git checkout stable/${BRANCH,,}
-      ./scripts/release-notes-generator.sh Carbon-SR2
+      ./scripts/release-notes-generator.sh ${RELEASE}
 
   A `release-notes.rst` will be generated in the working directory.
