@@ -64,8 +64,8 @@ Releasing OpenDaylight
      # Ensure we are on the right branch. Note that we are wiping out all
      # modifications in the repo so backup unsaved changes before doing this.
      git checkout -f
-     git clean -fdx
      git checkout ${BRANCH,,}
+     git clean -xdff
      git submodule update --init
 
      # Ensure git review is setup
