@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a245df4_070f892f",
+        "filename": "docs/release-process/simultaneous-release.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 2046
+      },
+      "writtenOn": "2017-10-23T16:40:54Z",
+      "side": 1,
+      "message": "How could there be any unsaved changes? I do not think \"git clone\" can pass if there is any (non-empty) autorelease directory already.",
+      "range": {
+        "startLine": 65,
+        "startChar": 7,
+        "endLine": 65,
+        "endChar": 58
+      },
+      "revId": "86c76509cbcacc70ffedffc56806d4fb542ec5fa",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
