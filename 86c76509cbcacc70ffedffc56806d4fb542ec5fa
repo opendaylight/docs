@@ -22,6 +22,30 @@
       "revId": "86c76509cbcacc70ffedffc56806d4fb542ec5fa",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_27b0cd42",
+        "filename": "docs/release-process/simultaneous-release.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-10-23T17:54:57Z",
+      "side": 1,
+      "message": "We are not assuming people will git clone autorelease every single time they want to perform a simultaneous release. The not in the previous block mentions that \"if you already cloned autorelease... then you can skip cloning\"\n\nAt least in my case I sometimes do work inside of releng/autorelease so I want to make sure whoever\u0027s following these steps hopefully don\u0027t blindly throw away their work if they were previously working on some other task in an existing repo.",
+      "parentUuid": "9a245df4_070f892f",
+      "range": {
+        "startLine": 65,
+        "startChar": 7,
+        "endLine": 65,
+        "endChar": 58
+      },
+      "revId": "86c76509cbcacc70ffedffc56806d4fb542ec5fa",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
