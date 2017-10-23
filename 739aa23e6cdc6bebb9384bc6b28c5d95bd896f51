@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a245df4_8e643623",
+        "filename": "docs/release-process/simultaneous-release.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 2046
+      },
+      "writtenOn": "2017-10-23T10:41:48Z",
+      "side": 1,
+      "message": "At the time of Oxygen Formal Release, this will clone master branch which is stream fluorine at that time, which might have more submodules present.",
+      "range": {
+        "startLine": 58,
+        "startChar": 9,
+        "endLine": 58,
+        "endChar": 26
+      },
+      "revId": "739aa23e6cdc6bebb9384bc6b28c5d95bd896f51",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_ae713ae2",
+        "filename": "docs/release-process/simultaneous-release.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 2046
+      },
+      "writtenOn": "2017-10-23T10:41:48Z",
+      "side": 1,
+      "message": "Only here we are checking out stable/oxygen, which does NOT remove the additional fluorine submodules.",
+      "range": {
+        "startLine": 66,
+        "startChar": 9,
+        "endLine": 66,
+        "endChar": 29
+      },
+      "revId": "739aa23e6cdc6bebb9384bc6b28c5d95bd896f51",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_0e7846c3",
+        "filename": "docs/release-process/simultaneous-release.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 2046
+      },
+      "writtenOn": "2017-10-23T10:41:48Z",
+      "side": 1,
+      "message": "Fluorine submodules are still present.",
+      "range": {
+        "startLine": 67,
+        "startChar": 19,
+        "endLine": 67,
+        "endChar": 32
+      },
+      "revId": "739aa23e6cdc6bebb9384bc6b28c5d95bd896f51",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_2e7d4ab2",
+        "filename": "docs/release-process/simultaneous-release.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 2046
+      },
+      "writtenOn": "2017-10-23T10:41:48Z",
+      "side": 1,
+      "message": "We need something like \"git clean -xdff\" here, to remove the fluorine submodules.",
+      "range": {
+        "startLine": 69,
+        "startChar": 5,
+        "endLine": 69,
+        "endChar": 6
+      },
+      "revId": "739aa23e6cdc6bebb9384bc6b28c5d95bd896f51",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
