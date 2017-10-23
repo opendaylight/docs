@@ -91,6 +91,30 @@
       "revId": "739aa23e6cdc6bebb9384bc6b28c5d95bd896f51",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_8cc0bee1",
+        "filename": "docs/release-process/simultaneous-release.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-10-23T16:05:57Z",
+      "side": 1,
+      "message": "We\u0027ll re-organize above to clean -xdff after checking out. See I6a684446912affd6647191492c6219be17899711 for updated instructions.",
+      "parentUuid": "9a245df4_2e7d4ab2",
+      "range": {
+        "startLine": 69,
+        "startChar": 5,
+        "endLine": 69,
+        "endChar": 6
+      },
+      "revId": "739aa23e6cdc6bebb9384bc6b28c5d95bd896f51",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
