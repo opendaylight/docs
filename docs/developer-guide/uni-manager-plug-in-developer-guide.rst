@@ -1,4 +1,4 @@
-.. _unimgr-dev-guide:
+﻿.. _unimgr-dev-guide:
 
 User Network Interface Manager Plug-in (Unimgr) Developer Guide
 ===============================================================
@@ -19,16 +19,71 @@ Unimgr provides support for both service orchestration, via the Legato API, and
 network resource provisioning, via the Presto API.  These APIs, and the
 interfaces they provide, are defined by YANG models developed within MEF in
 collaboration with ONF and IETF. An application/user can interact with Unimgr
-at either layer.  For the Carbon release, the YANG models are as follows:
+at either layer. Presto and Legato APIs are for LSO Architecture reference points
+defined in `MEF 55 specification <https://www.mef.net/Assets/Technical_Specifications/PDF/MEF_55.pdf>`_.
+
+Presto layer 
+````````````
+.. figure:: ./images/unimgr/architecture.png
+   :scale: 65
+   :alt: Presto layer  Architecture
+In current version of Unimgr the recent version of Presto NRP is supported. This model is based on Transport API (TAPI) from ONF. 
+This API allows for management of connectivity services and exposes abstract topology of the managed infrastracture. By its nature Presto NRP write and update operations are defined as set of RPC calls.
+All the reads operation can be either specific RPCs or via RESTCONF data tree.
+Presto layer architecture is depicted in figure above. There are two distinctive parts of Presto NRP business logic Activation Service and Activation Driver.
+Activation Service part of the framework is to encapsulate the common logic whereas Activation Driver is a way to encapsulate business logic to transform Presto Request into a given underlying technology.
+This way we are able to handle multi-vendor infrastructures and address various use cases as vendors specific code is encapsulated in drivers.
+
+Activation Service
+..................
+
+Activation service is responsible for handling the connectivity request. In case of service activation following steps are performed:
+ 1.	Validation of a request (e.g. if all endpoints exists)
+ 2.	Decomposition of a request into number of drivers sub-requests
+ 3.	Activation of the request for selected drivers
+ 4.	Update of the data model and creating ``ConnectivityService`` and ``Connection`` objects for the request
+
+Step 1. implements only minimal functionality.
+Step 2. allows for multi-vendor configuration as decomposition mechanisms defines all drivers required to satisfy given connectivity request. Currently only p2p connectivity services are supported
+in the decomposition mechanism.
+Both validation and decomposition mechanisms are plug-able thus users can support more sophisticated scenarios.
+
+
+Activation Driver
+.................
+
+.. figure:: ./images/unimgr/drivers.png
+   :scale: 90
+   :alt: Presto NRP topology and drivers
+
+Activation Driver has two main responsibilities:
+ * to handle connectvitiy service requests
+ * to contribute to Presto Topology with abstract nodes driver can handle
+
+In figure above example topology and drivers are shown. As you can see it is up to driver how to model infrastructure it manages.
+Thus, driver A has decided to model all devices as single virtual node, whereas driver C is exposing every single device as a node.
+
+The connectivity service is defined between ``ServiceInterfacePoint``  (SIP) which are mapped to ``NodeEdgePoint`` (NEP).
+A SIP can have UNI, ENNI or INNI role. Assigning a SIP to NEP can be done automatically by driver of with the use of Unimgr extension API.
+It is assumed that driver can connect eny number of SIPs related to NEPs for every ``Node`` it exposes.
+
+There is a contract for a given Karaf bundle to be recognized as a driver. The following must be fulfiled:
+ * a driver have to expose an OSGI service that implements ``org.opendaylight.unimgr.mef.nrp.api.ActivationDriverBuilder``
+ * implement a component that is responsible for writing to topology (in general the requirement is to add at least a single node to topology with id ``org.opendaylight.unimgr.mef.nrp.api.TapiConstants#PRESTO_SYSTEM_TOPO``
+
+There are three drivers maintained as part of Unimgr project:
+ * template-driver - which is intended as a template for real drivers development. It is not connected to infrastructure.
+ * ovs-driver - which is a driver for OpenFlow infrasturcture;
+ * cisco-xr-driver - a netconf driver for Cisco XR devices for MPLS inter-connectivity
 
 Key APIs and Interfaces
 -----------------------
 
 Legato YANG models:
-https://git.opendaylight.org/gerrit/gitweb?p=unimgr.git;a=tree;f=legato-api/src/main/yang;hb=refs/heads/stable/carbon
+https://git.opendaylight.org/gerrit/gitweb?p=unimgr.git;a=tree;f=legato-api/src/main/yang;hb=refs/heads/stable/nitrogen
 
 Presto YANG models:
-https://git.opendaylight.org/gerrit/gitweb?p=unimgr.git;a=tree;f=presto-api/src/main/yang;hb=refs/heads/stable/carbon
+https://git.opendaylight.org/gerrit/gitweb?p=unimgr.git;a=tree;f=presto-api/src/main/yang;hb=refs/heads/stable/nitrogen
 
 Legato API Tree
 ---------------
