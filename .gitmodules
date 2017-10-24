@@ -1,3 +1,8 @@
+[submodule "docs/submodules/bgpcep"]
+	path = docs/submodules/bgpcep
+	url = ../bgpcep
+	branch = .
+	ignore = dirty
 [submodule "source/submodules/releng/builder"]
 	path = docs/submodules/releng/builder
 	url = ../releng/builder
