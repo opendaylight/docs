@@ -67,3 +67,7 @@
 	url = ../sfc
 	branch = .
 	ignore = dirty
+[submodule "docs/submodules/bgpcep"]
+	path = docs/submodules/bgpcep
+	url = ../bgpcep
+	branch = .
