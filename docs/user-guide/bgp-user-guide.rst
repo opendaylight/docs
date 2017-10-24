@@ -4616,6 +4616,28 @@ BGP Peer Groups Operational State
 @line 6: Total Prefixes installed under by peers pertaining to this peer group (effective-rib-in).
 This count doesn't differentiate repeated prefixes.
 
+Cli
+-----------------
+BGP Karaf Console (odl-bgpcep-bgp-cli) is a feature that: Provides a CLI feature to read operational state per RIB, Neighbor and Peer Group.
+
+.. code-block:: cmd
+   :linenos:
+   :emphasize-lines: 3,5,6
+
+   karaf>bgp:operational-state -rib example-bgp-rib
+
+.. code-block:: cmd
+   :linenos:
+   :emphasize-lines: 3,5,6
+
+   karaf>bgp:operational-state -rib example-bgp-rib -peer 192.0.2.1
+
+.. code-block:: cmd
+   :linenos:
+   :emphasize-lines: 3,5,6
+
+   karaf>bgp:operational-state -rib example-bgp-rib -group application-peers
+
 High Availability
 -----------------
 Running OpenDaylight BGP in clustered environment brings an advantage of the plugin's high availability (HA).
