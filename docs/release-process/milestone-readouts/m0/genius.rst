@@ -11,16 +11,8 @@ Genius
 
 3. Project Category: Protocol
 
-4. Project Labels: (List keywords and tags that fit the description of your
-   project comma separated)
+4. Project Labels: Network Interfaces Utilities Services
 
-   - Network Interfaces Utilities Services
+5. Project PTL: Vivek Srivastava, vivek.v.srivastava@ericsson.com, vivek.v.srivastava
 
-5. Project PTL:
-
-   - Vivek Srivastava
-   - vivek.v.srivastava@ericsson.com
-   - vivek.v.srivastava
-
-6. Do you confirm that the list of Project Committers is updated and accurate?
-   Yes
+6. Do you confirm that the list of Project Committers is updated and accurate? Yes

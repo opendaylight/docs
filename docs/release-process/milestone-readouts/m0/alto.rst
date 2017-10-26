@@ -13,9 +13,6 @@ ALTO
 
 4. Project Labels: ALTO, network abstraction, network optimization
 
-5. Project PTL:
-
-   - Kai Gao, gaok12 at mails.tsinghua.edu.cn, emiapwil
-   - Jensen Zhang, jingxuan.n.zhang at gmail.com, jensenzhang (Project Contact)
+5. Project PTL: Kai Gao, gaok12@mails.tsinghua.edu.cn, emiapwil
 
 6. Do you confirm that the list of Project Committers is updated and accurate? Yes

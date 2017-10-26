@@ -1,6 +1,6 @@
-=====
+====
 DLUX
-=====
+====
 
 1. The DLUX project formally joins the OpenDaylight Oxygen
    Simultaneous Release and agrees to the activities and timeline documented on

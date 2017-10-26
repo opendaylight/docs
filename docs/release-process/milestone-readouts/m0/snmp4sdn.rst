@@ -11,16 +11,8 @@ SNMP4SDN
 
 3. Project Category: Protocol
 
-4. Project Labels: (List keywords and tags that fit the description of your
-   project comma separated)
+4. Project Labels: southbound plugin, commodify Ethernet switch, by SNMP
 
-   - southbound plugin, commodify Ethernet switch, by SNMP
+5. Project PTL: Christine Hsieh, ylhsieh@itri.org.tw,ChristineH
 
-5. Project PTL:
-
-   - Christine Hsieh
-   - ylhsieh@itri.org.tw
-   - ChristineH
-
-6. Do you confirm that the list of Project Committers is updated and accurate?
-   Yes
+6. Do you confirm that the list of Project Committers is updated and accurate? Yes

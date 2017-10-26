@@ -11,17 +11,8 @@ Packetcable
 
 3. Project Category: Application
 
-4. Project Labels: (List keywords and tags that fit the description of your
-   project comma separated)
+4. Project Labels: cable telephony provisioning, COPS, CMTS
 
-   - cable telephony provisioning, COPS, CMTS
+5. Project PTL: Steve Pisarski, s.pisarski@cablelabs.com, spisarski
 
-5. Project PTL:
-
-   - Steve Pisarski
-   - s.pisarski@cablelabs.com
-   - spisarski
-   - Kevin Kershaw is Project Contact and manages most communications
-
-6. Do you confirm that the list of Project Committers is updated and accurate?
-   Yes
+6. Do you confirm that the list of Project Committers is updated and accurate? Yes
