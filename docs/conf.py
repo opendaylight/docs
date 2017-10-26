@@ -239,6 +239,7 @@ if platform.system() != 'Windows':
     # Build integration stuff
     import subprocess
 
+    subprocess.call(["./generate-milestone-status.sh"])
     subprocess.call(["./build-integration-robot-libdoc.sh"])
 
     # Disable javasphinx generation until we have a solution to long build
