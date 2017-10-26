@@ -1,5 +1,5 @@
 ======
-GENIUS
+Genius
 ======
 
 1. Project PTL:

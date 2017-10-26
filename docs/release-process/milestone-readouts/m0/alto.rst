@@ -1,5 +1,5 @@
 ====
-Alto
+ALTO
 ====
 
 1. The ALTO project formally joins the OpenDaylight Oxygen

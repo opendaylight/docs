@@ -1,6 +1,6 @@
-==================
-Data Export/Import
-==================
+======
+DAEXIM
+======
 
 1. The Data Export/Import (daexim) project formally joins the OpenDaylight Oxygen
    Simultaneous Release and agrees to the activities and timeline documented on

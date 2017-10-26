@@ -1,6 +1,6 @@
-========
-BGP PCEP
-========
+===========
+BGP PCEP LS
+===========
 
 1. The BGP PCEP project formally joins the OpenDaylight Oxygen
    Simultaneous Release and agrees to the activities and timeline documented on
