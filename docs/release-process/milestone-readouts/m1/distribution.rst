@@ -51,21 +51,21 @@ Integration/Distribution
 
    - Does each API have a useful short name?
 
-    - Yes.
+     - Yes.
 
    - Are the Java interface and/or YANG files listed for each API?
 
-    - Yes.
+     - Yes.
 
    - Are they labeled as tentative, provisional, or stable as appropriate for
      each API?
 
-    - Yes.
+     - Yes.
 
    - Do you call out the OSGi bundles and/or Karaf features providing the API
      for each API?
 
-    - Yes.
+     - Yes.
 
 10. Have all project dependencies requests on other projects' release plans
     been acknowledged and documented by upstream projects?
