@@ -1,6 +1,6 @@
-==============
-HHONEYCOMB/VBD
-==============
+=============
+Honeycomb/VBD
+=============
 
 1. Project PTL:
 
@@ -70,4 +70,3 @@ HHONEYCOMB/VBD
     - There are tests for top level features that are provided via
       `OPNFV (Open Platform for Network Functions Virtualization) pipeline. <http://testresults.opnfv.org/>`_
       Documentation for testing via OPNFV is available here: `FDS (FastDataStacks) Testing Euphrates <https://wiki.opnfv.org/display/fds/FDS+Testing+Euphrates>`_
-

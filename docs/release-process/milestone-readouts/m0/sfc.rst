@@ -1,6 +1,6 @@
-===
-SFC
-===
+=========================
+Service Function Chaining
+=========================
 
 1. The SFC project formally joins the OpenDaylight Oxygen
    Simultaneous Release and agrees to the activities and timeline documented on

@@ -1,6 +1,6 @@
-================
-GROUPBASEDPOLICY
-================
+==================
+Group Based Policy
+==================
 
 1. Project PTL:
 
@@ -70,4 +70,3 @@ GROUPBASEDPOLICY
     - There are tests for top level features that are provided via
       `OPNFV (Open Platform for Network Functions Virtualization) pipeline. <http://testresults.opnfv.org/>`_
       Documentation for testing via OPNFV is available here: `FDS (FastDataStacks) Testing Euphrates <https://wiki.opnfv.org/display/fds/FDS+Testing+Euphrates>`_
-
