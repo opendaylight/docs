@@ -11,16 +11,8 @@ OVSDB
 
 3. Project Category: Protocol
 
-4. Project Labels: (List keywords and tags that fit the description of your
-   project comma separated)
+4. Project Labels: OVSDB Southbound Plugin, OVSDB Hardware, vTep Plugin
 
-   - OVSDB Southbound Plugin, OVSDB Hardware, vTep Plugin
+5. Project PTL: Anil Vishnoi, vishnoianil@gmail.com, vishnoianil
 
-5. Project PTL:
-
-   - Anil Vishnoi
-   - vishnoianil@gmail.com
-   - vishnoianil
-
-6. Do you confirm that the list of Project Committers is updated and accurate?
-   Yes
+6. Do you confirm that the list of Project Committers is updated and accurate? Yes

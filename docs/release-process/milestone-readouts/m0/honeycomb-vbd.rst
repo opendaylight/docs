@@ -11,16 +11,8 @@ Honeycomb/VBD
 
 3. Project Category: Application
 
-4. Project Labels: (List keywords and tags that fit the description of your
-   project comma separated)
+4. Project Labels: honeycomb/vbd, vbd
 
-   - honeycomb/vbd, vbd
+5. Project PTL: Michal Cmarada, mcmarada@cisco.com, michal-cmarada
 
-5. Project PTL:
-
-   - Michal Cmarada
-   - mcmarada@cisco.com
-   - michal-cmarada
-
-6. Do you confirm that the list of Project Committers is updated and accurate?
-   Yes
+6. Do you confirm that the list of Project Committers is updated and accurate? Yes

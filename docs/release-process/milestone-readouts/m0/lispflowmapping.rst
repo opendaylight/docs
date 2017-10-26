@@ -11,16 +11,8 @@ LISP Flow Mapping
 
 3. Project Category: Protocol
 
-4. Project Labels: (List keywords and tags that fit the description of your
-   project comma separated)
+4. Project Labels: LISP, mapping service, overlay control pane, VXLAN-GPE
 
-   - LISP, mapping service, overlay control pane, VXLAN-GPE
+5. Project PTL: Vina Ermagan, vermagan@cisco.com, vina_ermagan
 
-5. Project PTL:
-
-   - Vina Ermagan
-   - vermagan@cisco.com
-   - vina_ermagan
-
-6. Do you confirm that the list of Project Committers is updated and accurate?
-   No
+6. Do you confirm that the list of Project Committers is updated and accurate? No

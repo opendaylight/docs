@@ -11,16 +11,8 @@ FaaS
 
 3. Project Category: Application
 
-4. Project Labels: (List keywords and tags that fit the description of your
-   project comma separated)
+4. Project Labels: Fabric, Logic Network Service
 
-   - Fabric, Logic Network Service
+5. Project PTL: Xingjun Chu, Xingjun.Chu@huawei.com, xingjun
 
-5. Project PTL:
-
-   - Xingjun Chu
-   - Xingjun.Chu@huawei.com
-   - xingjun
-
-6. Do you confirm that the list of Project Committers is updated and accurate?
-   Yes
+6. Do you confirm that the list of Project Committers is updated and accurate? Yes

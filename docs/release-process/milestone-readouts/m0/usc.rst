@@ -11,16 +11,8 @@ USC
 
 3. Project Category: Protocol
 
-4. Project Labels: (List keywords and tags that fit the description of your
-   project comma separated)
+4. Project Labels: unified secure channel
 
-   - unified secure channel
+5. Project PTL: An Ho, an.ho@huawei.com, anipbu
 
-5. Project PTL:
-
-   - An Ho
-   - an.ho@huawei.com
-   - anipbu
-
-6. Do you confirm that the list of Project Committers is updated and accurate?
-   Yes
+6. Do you confirm that the list of Project Committers is updated and accurate? Yes

@@ -11,16 +11,8 @@ TSDR
 
 3. Project Category: Application
 
-4. Project Labels: (List keywords and tags that fit the description of your
-   project comma separated)
+4. Project Labels: Time Series Data Repository
 
-   - Time Series Data Repository
+5. Project PTL: YuLing Chen, yulingchen54@gmail.com, yulingchen
 
-5. Project PTL:
-
-   - YuLing Chen
-   - yulingchen54@gmail.com
-   - yulingchen
-
-6. Do you confirm that the list of Project Committers is updated and accurate?
-   No - being updated
+6. Do you confirm that the list of Project Committers is updated and accurate? No, being updated.

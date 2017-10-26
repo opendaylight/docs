@@ -11,16 +11,8 @@ Unimgr
 
 3. Project Category: Application
 
-4. Project Labels: (List keywords and tags that fit the description of your
-   project comma separated)
+4. Project Labels: MEF, Eline, netconf, T-API, connectivity services
 
-   - MEF, Eline, netconf, T-API, connectivity services
+5. Project PTL: Donald Hunter, donaldh@cisco.com, donaldh
 
-5. Project PTL:
-
-   - Donald Hunter
-   - donaldh@cisco.com
-   - donaldh
-
-6. Do you confirm that the list of Project Committers is updated and accurate?
-   Yes
+6. Do you confirm that the list of Project Committers is updated and accurate? Yes

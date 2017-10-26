@@ -11,16 +11,8 @@ SNMP
 
 3. Project Category: Protocol
 
-4. Project Labels: (List keywords and tags that fit the description of your
-   project comma separated)
+4. Project Labels: SNMP
 
-   - SNMP
+5. Project PTL: Ryan Goulding, ryandgoulding@gmail.com, rgoulding
 
-5. Project PTL:
-
-   - Ryan Goulding
-   - ryandgoulding@gmail.com
-   - rgoulding
-
-6. Do you confirm that the list of Project Committers is updated and accurate?
-   No, working on this with the rest of the team
+6. Do you confirm that the list of Project Committers is updated and accurate? No, working on this.
