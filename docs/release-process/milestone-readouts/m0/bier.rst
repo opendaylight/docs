@@ -11,10 +11,7 @@ BIER
 
 3. Project Category: Service
 
-4. Project Labels: (List keywords and tags that fit the description of your
-   project comma separated)
-
-   - BIER, multicast
+4. Project Labels: BIER, multicast
 
 5. Project PTL: Quan Xiong, xiong.quan@zte.com.cn, xiong.quan
 

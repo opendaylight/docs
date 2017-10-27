@@ -11,16 +11,8 @@ MD-SAL
 
 3. Project Category: Kernel
 
-4. Project Labels: (List keywords and tags that fit the description of your
-   project comma separated)
+4. Project Labels: mdsal
 
-   - mdsal
+5. Project PTL: Robert Varga, nite@hq.sk, rovarga
 
-5. Project PTL:
-
-   - Robert Varga
-   - nite@hq.sk
-   - rovarga
-
-6. Do you confirm that the list of Project Committers is updated and accurate?
-   Yes
+6. Do you confirm that the list of Project Committers is updated and accurate? Yes

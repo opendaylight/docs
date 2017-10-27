@@ -11,16 +11,8 @@ VTN
 
 3. Project Category: Application
 
-4. Project Labels: (List keywords and tags that fit the description of your
-   project comma separated)
+4. Project Labels: vtn, virtual tenant network
 
-   - vtn, virtual tenant network
+5. Project PTL: Hideyuki Tai, h-tai@cd.jp.nec.com, hideyuki
 
-5. Project PTL:
-
-   - Hideyuki Tai
-   - h-tai@cd.jp.nec.com
-   - hideyuki
-
-6. Do you confirm that the list of Project Committers is updated and accurate?
-   Yes
+6. Do you confirm that the list of Project Committers is updated and accurate? Yes

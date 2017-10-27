@@ -11,16 +11,8 @@ L2 Switch
 
 3. Project Category: Services
 
-4. Project Labels: (List keywords and tags that fit the description of your
-   project comma separated)
+4. Project Labels: hosttracker, arphandler, packethandler, mac learning, openflow
 
-   - hosttracker, arphandler, packethandler, mac learning, openflow
+5. Project PTL: Sai MarapaReddy, sai.marapareddy@gmail.com, sai_marapareddy
 
-5. Project PTL:
-
-   - Sai MarapaReddy
-   - sai.marapareddy@gmail.com
-   - sai_marapareddy
-
-6. Do you confirm that the list of Project Committers is updated and accurate?
-   Yes
+6. Do you confirm that the list of Project Committers is updated and accurate? Yes

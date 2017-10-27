@@ -11,16 +11,8 @@ Integration/Distribution
 
 3. Project Category: Support
 
-4. Project Labels: (List keywords and tags that fit the description of your
-   project comma separated)
+4. Project Labels: distribution, karaf
 
-   - distribution, karaf
+5. Project PTL: Vratko Polak, vrpolak@cisco.com
 
-5. Project PTL:
-
-   - Vratko Polak
-   - vrpolak@cisco.com
-   - vrpolak
-
-6. Do you confirm that the list of Project Committers is updated and accurate?
-   Yes
+6. Do you confirm that the list of Project Committers is updated and accurate? Yes

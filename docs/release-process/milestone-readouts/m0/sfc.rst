@@ -11,16 +11,8 @@ Service Function Chaining
 
 3. Project Category: Application
 
-4. Project Labels: (List keywords and tags that fit the description of your
-   project comma separated)
+4. Project Labels: Service Function Chaining, SFC
 
-   - Service Function Chaining, SFC
+5. Project PTL: Brady Johnson, bjohnson@inocybe.com, bjohnson
 
-5. Project PTL:
-
-   - Brady Johnson
-   - bjohnson@inocybe.com
-   - bjohnson
-
-6. Do you confirm that the list of Project Committers is updated and accurate?
-   Yes
+6. Do you confirm that the list of Project Committers is updated and accurate? Yes

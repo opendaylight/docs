@@ -1,6 +1,15 @@
 Milestone Readouts
 ==================
 
+Milestone Status
+----------------
+
+.. toctree::
+   :glob:
+   :maxdepth: 1
+
+   milestone-readouts/status/*
+
 M0: Declare Intent
 ------------------
 
