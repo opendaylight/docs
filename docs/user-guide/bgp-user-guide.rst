@@ -4192,6 +4192,37 @@ References
 ^^^^^^^^^^
 * `Route Refresh Capability for BGP-4 <https://tools.ietf.org/html/rfc2918>`_
 
+Peer Session Release
+-------------
+
+BGP provides a RPC feature to release a Neighbor session.
+
+.. contents:: Contents
+   :depth: 2
+   :local:
+
+Configuration
+^^^^^^^^^^^^^
+The capability is enabled by default, no additional configuration is required.
+
+Usage
+^^^^^
+To release neighbor session, invoke RPC:
+
+**URL:** ``/restconf/operations/bgp-peer-rpc:release-session``
+
+**Method:** ``POST``
+
+**Content-Type:** ``application/xml``
+
+**Request Body:**
+
+.. code-block:: xml
+
+   <input xmlns="urn:opendaylight:params:xml:ns:yang:bgp-peer-rpc">
+       <peer-ref xmlns:rib="urn:opendaylight:params:xml:ns:yang:bgp-rib">/rib:bgp-rib/rib:rib[rib:id="bgp-example"]/rib:peer[rib:peer-id="bgp://10.25.1.9"]</peer-ref>
+   </input>
+
 Operational State
 -----------------
 
