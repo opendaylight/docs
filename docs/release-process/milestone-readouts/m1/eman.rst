@@ -1,5 +1,5 @@
 ============
-Project Name
+Eman
 ============
 
 1. Project PTL:
@@ -7,7 +7,7 @@ Project Name
    - Frank Sandoval
    - francisrsandoval@gmail.com
    - francisrsandoval
-   - I have reviewed the PTL Requirements [1]_Yes
+   - I have reviewed the PTL Requirements Yes
 
 2. Project Contact:
 
@@ -46,7 +46,7 @@ Project Name
    - No
    - 11/3/2017
 
-9. Do you have all APIs intended to be externally consumable listed? (Yes/No/Not Applicable)
+9. Do you have all APIs intended to be externally consumable listed? Yes
 
    - Does each API have a useful short name? (Yes/No) - Yes
    - Are the Java interface and/or YANG files listed for each API? (Yes/No) - Yes
