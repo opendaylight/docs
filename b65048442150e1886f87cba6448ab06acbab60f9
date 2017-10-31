@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a245df4_3d08b92c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-10-31T14:54:20Z",
+      "side": 1,
+      "message": "Add eman Oxygen M1 readout\n\n(One reason the build is failing is because of the use of past tense here. It is best practice to use present-tense, imperative-style when writing commit messages.)",
+      "revId": "b65048442150e1886f87cba6448ab06acbab60f9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_a01e4261",
+        "filename": "docs/release-process/milestone-readouts/m1/eman.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-10-31T14:54:20Z",
+      "side": 1,
+      "message": "Project Name is the display name of your project that will appear on the Milestone readouts page [0]. So should say EMAN (at least according to the eman m0 readout), try to stay consistent between the milestones so that it\u0027s easy to find the project.\n\n[0] http://docs.opendaylight.org/en/latest/release-process/milestone-readouts.html",
+      "revId": "b65048442150e1886f87cba6448ab06acbab60f9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
