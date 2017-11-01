@@ -37,7 +37,7 @@ trim_leading_and_trailing_whitespace() {
     echo "     - PTL IRC"
     echo "     - Committers Updated"
 
-    files=($(find release-process/milestone-readouts/m0 -type f))
+    files=($(find release-process/milestone-readouts/m0 -type f | sort))
     for f in ${files[@]}; do
         project="$(basename $f | awk -F. '{print $1}')"
         offset=$(grep 'Project Offset:' "$f" | awk -F: '{print $2}' | trim_leading_and_trailing_whitespace)
