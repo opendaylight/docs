@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a245df4_0c37854f",
+        "filename": "docs/release-process/milestone-readouts/m1/netvirt.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-11-01T14:59:47Z",
+      "side": 1,
+      "message": "This is the display name of the project as shown on this page [0]. Since M0 was using NetVirt to stay consistent it should probably also say NetVirt here.\n\nThe overline and underline needs to match the title too.\n\n[0] http://docs.opendaylight.org/en/latest/release-process/milestone-readouts.html",
+      "revId": "7a569fd6908124b33942033a0b861bce5330d7ea",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_4c405da5",
+        "filename": "docs/release-process/milestone-readouts/m1/netvirt.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-11-01T14:59:47Z",
+      "side": 1,
+      "message": "shague?",
+      "revId": "7a569fd6908124b33942033a0b861bce5330d7ea",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_8c4a55c3",
+        "filename": "docs/release-process/milestone-readouts/m1/netvirt.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-11-01T14:59:47Z",
+      "side": 1,
+      "message": "Did we delete the 2 footnote below?\n\nThe build is failing because this is missing a valid link.",
+      "range": {
+        "startLine": 40,
+        "startChar": 65,
+        "endLine": 40,
+        "endChar": 68
+      },
+      "revId": "7a569fd6908124b33942033a0b861bce5330d7ea",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
