@@ -4,27 +4,27 @@ FaaS
 
 1. Project PTL:
 
-   - Xingjun Chu 
-   - xingjun.chu at huawei dot com
+   - Xingjun Chu
+   - xingjun.chu@huawei.com
    - xingjun
    - I have reviewed the PTL Requirements
 
 2. Project Contact:
 
    - Xingjun Chu
-   - xingjun.chu at huawei dot com
+   - xingjun.chu@huawei.com
    - xingjun
 
 3. Test Contact:
 
-   - Xingjun Chu 
-   - xingjun.chu at huawei dot com
+   - Xingjun Chu
+   - xingjun.chu@huawei.com
    - xingjun
 
 4. Documentation Contact
 
-   - Xingjun Chu 
-   - Xingjun.Chu at huawei dot com
+   - Xingjun Chu
+   - Xingjun.Chu@huawei.com
    - xingjun
 
 5. Does your project have any updates on any previously-incomplete items from
