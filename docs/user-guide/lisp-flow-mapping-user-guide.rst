@@ -151,7 +151,7 @@ The ``etc/custom.properties`` file in the Karaf distribution allows
 configuration of several OpenDaylight parameters. The LISP service has
 the following properties that can be adjusted:
 
-**lisp.smr** (default: *false*)
+**lisp.smr** (default: *true*)
     Enables/disables the `Solicit-Map-Request
     (SMR) <http://tools.ietf.org/html/rfc6830#section-6.6.2>`__
     functionality. SMR is a method to notify changes in an EID-to-RLOC
