@@ -217,6 +217,39 @@ In order to enable active connection, use following request.
 
 @line 9: **password** - The TCP MD5 signature.
 
+BMP Monitors Configuration Loader
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+BMP Monitors Configuration Loader allows user to define static initial configuration for a BMP protocol instance.
+This service will detect the creation of new configuration files following the pattern "odl-bmp-monitors-*.xml" under the path "etc/opendaylight/bgpcep".
+Once the file is processed, the defined configuration will be available from the configuration Data Store.
+
+.. note:: If the BMP Monitor instance is already present, no update or configuration will be applied.
+
+**PATH:** ``etc/opendaylight/bgpcep/odl-bmp-monitors-config.xml``
+
+.. code-block:: xml
+
+    <odl-bmp-monitors xmlns="urn:opendaylight:params:xml:ns:yang:bmp-monitor-config">
+        <bmp-monitor-config>
+            <monitor-id>example-bmp-monitor</monitor-id>
+            <server>
+                <binding-port>12345</binding-port>
+                <binding-address>0.0.0.0</binding-address>
+            </server>
+        </bmp-monitor-config>
+    </odl-bmp-monitors>
+
+BMP Monitor Configuration Example
+'''''''''''''''''''''''''''''''''
+
+BGP provides a feature providing a BMP Monitor configuration file example.
+Once feature is installed defined configuration will be loaded and setup.
+
+.. code-block:: console
+
+   feature:install odl-bgpcep-bmp-config-example
+
 Collector DB Tree
 ^^^^^^^^^^^^^^^^^
 
