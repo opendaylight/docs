@@ -1078,8 +1078,8 @@ Consequently, route disappears from programmable RIB, *Application Peer's* RIBs,
 BGP Protocol Configuration Loader
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-BGP Protocol Configuration Loader allows user to define static initial configuration for a BGP protocol instance.
-This service will detect the creation of new configuration files following the pattern "protocols-*.xml" under the path "etc/opendaylight/bgp".
+BGP Protocol Configuration Loader allows the user to define the static initial configuration for a BGP protocol instance.
+This service will detect the creation of new configuration files following the pattern "protocols-*.xml" under the path "etc/opendaylight/bgpcep".
 Once the file is processed, the defined configuration will be available from the configuration Data Store.
 
 .. note:: If the BGP instance is already present, no update or configuration will be applied.
@@ -1221,6 +1221,16 @@ When installing BGP an example will be provided and a default configuration load
             </bgp>
         </protocol>
     </protocols>
+
+BGP Configuration Example
+'''''''''''''''''''''''''
+
+BGP provides a feature providing a BGP Protocol and Network Topology configuration file example.
+Once feature is installed defined configuration will be loaded and setup.
+
+.. code-block:: console
+
+   feature:install odl-bgpcep-bgp-config-example
 
 BGP pipeline
 ^^^^^^^^^^^^
@@ -5064,7 +5074,7 @@ BGP Network Topology Configuration Loader
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 BGP Network Topology Configuration Loader allows user to define static initial configuration for a BGP protocol instance.
-This service will detect the creation of new configuration files following the pattern "network-topology-*.xml" under the path "etc/opendaylight/bgp".
+This service will detect the creation of new configuration files following the pattern "network-topology-*.xml" under the path "etc/opendaylight/bgpcep".
 Once the file is processed, the defined configuration will be available from the configuration Data Store.
 
 .. note:: If the BGP topology instance is already present, no update or configuration will be applied.
