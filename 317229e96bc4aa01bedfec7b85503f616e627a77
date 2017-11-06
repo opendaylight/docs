@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a245df4_96c6cd66",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-11-06T16:02:48Z",
+      "side": 1,
+      "message": "Commit messages are not a list of changes made during code review. They exist to explain why a change is necessary. So no need to mention this here.",
+      "revId": "317229e96bc4aa01bedfec7b85503f616e627a77",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_d6a325b0",
+        "filename": "docs/release-process/milestone-readouts/m1/packetcable.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-11-06T16:02:48Z",
+      "side": 1,
+      "message": "Project Name is the name of your project as it will appear in the docs. So should change this to Packet Cable.",
+      "revId": "317229e96bc4aa01bedfec7b85503f616e627a77",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_b6a8318e",
+        "filename": "docs/release-process/milestone-readouts/m1/packetcable.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-11-06T16:02:48Z",
+      "side": 1,
+      "message": "Trailing whitespace matters and is why Jenkins fails the builds. I highly recommend configuring your preferred code editor to automatically removing trailing whitespace.",
+      "revId": "317229e96bc4aa01bedfec7b85503f616e627a77",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
