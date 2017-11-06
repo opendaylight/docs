@@ -1,5 +1,5 @@
 ===========
-Packetcable
+PacketCable
 ===========
 
 1. The Packetcable project formally joins the OpenDaylight Oxygen
