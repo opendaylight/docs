@@ -5,7 +5,7 @@ Java API Documentation
 * `bgpcep <https://javadocs.opendaylight.org/bgpcep/oxygen>`_
 * `controller <https://javadocs.opendaylight.org/controller/oxygen>`_
 * `genius <https://javadocs.opendaylight.org/genius/oxygen>`_
-* `infrautils <https://javadocs.opendaylight.org/genius/infrautils>`_
+* `infrautils <https://javadocs.opendaylight.org/infrautils/oxygen>`_
 * `lispflowmapping <https://javadocs.opendaylight.org/lispflowmapping/oxygen>`_
 * `mdsal <https://javadocs.opendaylight.org/mdsal/oxygen>`_
 * `netvirt <https://javadocs.opendaylight.org/netvirt/oxygen>`_
