@@ -37,7 +37,7 @@ itself.
    :maxdepth: 1
 
    developer-guide/index
-
+   javadoc
 
 Content for OpenDaylight Contributors
 -------------------------------------
@@ -54,7 +54,6 @@ participate in the development of OpenDaylight or would like to start.
    documentation
    release-process/index
    submodules/spectrometer/docs/index
-   javadoc
    submodules/genius/docs/index
    submodules/infrautils/docs/index
    submodules/netvirt/docs/contributor-guide/index
