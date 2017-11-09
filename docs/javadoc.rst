@@ -5,7 +5,7 @@ Java API Documentation
 * `bgpcep <https://javadocs.opendaylight.org/bgpcep/carbon>`_
 * `controller <https://javadocs.opendaylight.org/controller/carbon>`_
 * `genius <https://javadocs.opendaylight.org/genius/carbon>`_
-* `infrautils <https://javadocs.opendaylight.org/genius/infrautils>`_
+* `infrautils <https://javadocs.opendaylight.org/infrautils/carbon>`_
 * `lispflowmapping <https://javadocs.opendaylight.org/lispflowmapping/carbon>`_
 * `mdsal <https://javadocs.opendaylight.org/mdsal/carbon>`_
 * `netvirt <https://javadocs.opendaylight.org/netvirt/carbon>`_
