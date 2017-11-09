@@ -5,7 +5,7 @@ Java API Documentation
 * `bgpcep <https://javadocs.opendaylight.org/bgpcep/nitrogen>`_
 * `controller <https://javadocs.opendaylight.org/controller/nitrogen>`_
 * `genius <https://javadocs.opendaylight.org/genius/nitrogen>`_
-* `infrautils <https://javadocs.opendaylight.org/genius/infrautils>`_
+* `infrautils <https://javadocs.opendaylight.org/infrautils/nitrogen>`_
 * `lispflowmapping <https://javadocs.opendaylight.org/lispflowmapping/nitrogen>`_
 * `mdsal <https://javadocs.opendaylight.org/mdsal/nitrogen>`_
 * `netvirt <https://javadocs.opendaylight.org/netvirt/nitrogen>`_
