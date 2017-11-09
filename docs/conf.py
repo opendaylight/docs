@@ -33,16 +33,6 @@ sys.path.insert(0, os.path.abspath('submodules/spectrometer/server'))
 # ones.
 extensions = ['sphinx.ext.autodoc','sphinx.ext.graphviz']
 
-# Disable javasphinx generation until we have a solution to long build
-# times. readthedocs timesout after 902 seconds.
-javasphinx_available = False
-try:
-    import javasphinx
-    javasphinx_available = True
-    extensions.append('javasphinx')
-except ImportError, e:
-    pass
-
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
@@ -242,7 +232,3 @@ if platform.system() != 'Windows':
     subprocess.call(["./generate-milestone-status.sh"])
     subprocess.call(["./build-integration-robot-libdoc.sh"])
 
-    # Disable javasphinx generation until we have a solution to long build
-    # times. readthedocs timesout after 902 seconds.
-    if javasphinx_available:
-        subprocess.call(["./generate-javaapidoc.sh"])
