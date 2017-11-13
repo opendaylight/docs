@@ -62,3 +62,13 @@
 	url = ../coe
 	branch = .
 	ignore = dirty
+[submodule "docs/submodules/sfc"]
+	path = docs/submodules/sfc
+	url = ../sfc
+	branch = .
+	ignore = dirty
+[submodule "docs/submodules/openflowplugin"]
+	path = docs/submodules/openflowplugin
+	url = ../openflowplugin
+	branch = .
+	ignore = dirty
