@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a245df4_32c9cd26",
+        "filename": "docs/release-process/milestone-readouts/m1/mdsal.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 7493
+      },
+      "writtenOn": "2017-11-13T23:55:25Z",
+      "side": 1,
+      "message": "Line 11 is redundant - duplicate of line 10",
+      "range": {
+        "startLine": 11,
+        "startChar": 3,
+        "endLine": 11,
+        "endChar": 46
+      },
+      "revId": "94894725398e981e722bcd5a42afb049ce11fad1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_52d441bc",
+        "filename": "docs/release-process/milestone-readouts/m1/mdsal.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 7493
+      },
+      "writtenOn": "2017-11-13T23:55:25Z",
+      "side": 1,
+      "message": "redundant .",
+      "range": {
+        "startLine": 61,
+        "startChar": 9,
+        "endLine": 61,
+        "endChar": 10
+      },
+      "revId": "94894725398e981e722bcd5a42afb049ce11fad1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_b2dc9de5",
+        "filename": "docs/release-process/milestone-readouts/m1/mdsal.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 7493
+      },
+      "writtenOn": "2017-11-13T23:55:25Z",
+      "side": 1,
+      "message": "Suggest removing it and adding it to the line below",
+      "range": {
+        "startLine": 64,
+        "startChar": 4,
+        "endLine": 64,
+        "endChar": 7
+      },
+      "revId": "94894725398e981e722bcd5a42afb049ce11fad1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_92d999f5",
+        "filename": "docs/release-process/milestone-readouts/m1/mdsal.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 7493
+      },
+      "writtenOn": "2017-11-13T23:55:25Z",
+      "side": 1,
+      "message": "Add Yes here, perhaps something like this:\n\n- Yes, for experimental features: waiver TBD",
+      "revId": "94894725398e981e722bcd5a42afb049ce11fad1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_f2e2959e",
+        "filename": "docs/release-process/milestone-readouts/m1/mdsal.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 7493
+      },
+      "writtenOn": "2017-11-13T23:55:25Z",
+      "side": 1,
+      "message": "Suggest moving it as a sublist response like the others above to be consistent, i.e.,\n\n - Yes",
+      "range": {
+        "startLine": 69,
+        "startChar": 46,
+        "endLine": 69,
+        "endChar": 49
+      },
+      "revId": "94894725398e981e722bcd5a42afb049ce11fad1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
