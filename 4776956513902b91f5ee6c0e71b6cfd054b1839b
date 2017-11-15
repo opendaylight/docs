@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a245df4_1f43e542",
+        "filename": "docs/release-process/milestone-readouts/m1/snmp.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 7493
+      },
+      "writtenOn": "2017-11-15T23:11:29Z",
+      "side": 1,
+      "message": "The \u003d lines (lines 1 and 3) must align with the text in line 2, i.e. you must have as many \u003d\u0027s as the length of the text. In this case, maybe we should just remove \"Plugin\" as we use \"SNMP\" in M0 readout?",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 5
+      },
+      "revId": "4776956513902b91f5ee6c0e71b6cfd054b1839b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
