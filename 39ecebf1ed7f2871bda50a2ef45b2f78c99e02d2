@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a245df4_3f8ea9d0",
+        "filename": "docs/release-process/milestone-readouts/m2/lispflowmapping.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 7493
+      },
+      "writtenOn": "2017-11-16T03:29:18Z",
+      "side": 1,
+      "message": "Need to add spaces in front of \"the\" such that the t in the is directly under odl-... in the line above",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 4
+      },
+      "revId": "39ecebf1ed7f2871bda50a2ef45b2f78c99e02d2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_7fc301ed",
+        "filename": "docs/release-process/milestone-readouts/m2/lispflowmapping.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 7493
+      },
+      "writtenOn": "2017-11-16T03:29:18Z",
+      "side": 1,
+      "message": "Need to move \"Yes\" back to the end of line 49 and remove line 50",
+      "range": {
+        "startLine": 50,
+        "startChar": 3,
+        "endLine": 50,
+        "endChar": 6
+      },
+      "revId": "39ecebf1ed7f2871bda50a2ef45b2f78c99e02d2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
