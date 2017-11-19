@@ -32,6 +32,10 @@ Releasing OpenDaylight
   rights on Gerrit.
   **(Helpdesk)**
 
+  .. note::
+
+     For all Nitrogen releases, also lock down the yangtools version of the nitrogen branch (v1.2.x).
+
   .. figure:: images/gerrit-update-committer-rights.png
 
   .. note::
@@ -39,6 +43,7 @@ Releasing OpenDaylight
      Enable **Exclusive** checkbox for the submit button to override any
      existing persmissions. Code-Review and Verify permissions are only needed
      during version bumping. DO NOT enable it during code freeze.
+
 
 - Nexus: click release for staging repo
   **(Helpdesk)**
