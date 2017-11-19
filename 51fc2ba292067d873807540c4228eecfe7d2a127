@@ -1,0 +1,326 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a245df4_45fe266c",
+        "filename": "docs/user-guide/p4plugin-user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2017-11-19T15:52:42Z",
+      "side": 1,
+      "message": "Too short. The underline must be at least as long as the title text.",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 15
+      },
+      "revId": "51fc2ba292067d873807540c4228eecfe7d2a127",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_85fbfe77",
+        "filename": "docs/user-guide/p4plugin-user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2017-11-19T15:52:42Z",
+      "side": 1,
+      "message": "Global comment: Delete all trailing spaces.",
+      "range": {
+        "startLine": 9,
+        "startChar": 84,
+        "endLine": 9,
+        "endChar": 85
+      },
+      "revId": "51fc2ba292067d873807540c4228eecfe7d2a127",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_2501726a",
+        "filename": "docs/user-guide/p4plugin-user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2017-11-19T15:52:42Z",
+      "side": 1,
+      "message": "Change \"and etc.\" to either \"and so on\" or you can simply change it to \"(bmv2), etc.\"",
+      "range": {
+        "startLine": 11,
+        "startChar": 16,
+        "endLine": 11,
+        "endChar": 23
+      },
+      "revId": "51fc2ba292067d873807540c4228eecfe7d2a127",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_65f6ca90",
+        "filename": "docs/user-guide/p4plugin-user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2017-11-19T15:52:42Z",
+      "side": 1,
+      "message": "Change \"and etc.\" to \"packet-out process, etc.\"",
+      "range": {
+        "startLine": 15,
+        "startChar": 51,
+        "endLine": 15,
+        "endChar": 58
+      },
+      "revId": "51fc2ba292067d873807540c4228eecfe7d2a127",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_a5ec42bc",
+        "filename": "docs/user-guide/p4plugin-user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2017-11-19T15:52:42Z",
+      "side": 1,
+      "message": "Change to \"Implement\" to \"implements\"",
+      "range": {
+        "startLine": 27,
+        "startChar": 43,
+        "endLine": 27,
+        "endChar": 52
+      },
+      "revId": "51fc2ba292067d873807540c4228eecfe7d2a127",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_c5f17696",
+        "filename": "docs/user-guide/p4plugin-user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2017-11-19T15:52:42Z",
+      "side": 1,
+      "message": "Change to \"a function\"",
+      "range": {
+        "startLine": 27,
+        "startChar": 28,
+        "endLine": 27,
+        "endChar": 35
+      },
+      "revId": "51fc2ba292067d873807540c4228eecfe7d2a127",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_e5311a5b",
+        "filename": "docs/user-guide/p4plugin-user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2017-11-19T15:52:42Z",
+      "side": 1,
+      "message": "Change to \"retrieving\"",
+      "range": {
+        "startLine": 28,
+        "startChar": 37,
+        "endLine": 28,
+        "endChar": 44
+      },
+      "revId": "51fc2ba292067d873807540c4228eecfe7d2a127",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_052f0ef8",
+        "filename": "docs/user-guide/p4plugin-user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2017-11-19T15:52:42Z",
+      "side": 1,
+      "message": "Change to \"that provides RPCs for users\"",
+      "range": {
+        "startLine": 27,
+        "startChar": 66,
+        "endLine": 28,
+        "endChar": 15
+      },
+      "revId": "51fc2ba292067d873807540c4228eecfe7d2a127",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_c54856ce",
+        "filename": "docs/user-guide/p4plugin-user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2017-11-19T15:52:42Z",
+      "side": 1,
+      "message": "Change to \"complete table entry population and packet in/out procedures\"",
+      "range": {
+        "startLine": 29,
+        "startChar": 6,
+        "endLine": 29,
+        "endChar": 45
+      },
+      "revId": "51fc2ba292067d873807540c4228eecfe7d2a127",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_45358644",
+        "filename": "docs/user-guide/p4plugin-user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2017-11-19T15:52:42Z",
+      "side": 1,
+      "message": "Change to \"connect to them\"",
+      "range": {
+        "startLine": 42,
+        "startChar": 69,
+        "endLine": 42,
+        "endChar": 81
+      },
+      "revId": "51fc2ba292067d873807540c4228eecfe7d2a127",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_2538523c",
+        "filename": "docs/user-guide/p4plugin-user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2017-11-19T15:52:42Z",
+      "side": 1,
+      "message": "Change to \"resources\"",
+      "range": {
+        "startLine": 43,
+        "startChar": 14,
+        "endLine": 43,
+        "endChar": 22
+      },
+      "revId": "51fc2ba292067d873807540c4228eecfe7d2a127",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_8542deab",
+        "filename": "docs/user-guide/p4plugin-user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2017-11-19T15:52:42Z",
+      "side": 1,
+      "message": "Delete \"can\"",
+      "range": {
+        "startLine": 45,
+        "startChar": 44,
+        "endLine": 45,
+        "endChar": 47
+      },
+      "revId": "51fc2ba292067d873807540c4228eecfe7d2a127",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_653d2a2b",
+        "filename": "docs/user-guide/p4plugin-user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2017-11-19T15:52:42Z",
+      "side": 1,
+      "message": "Change to \"can set the forwarding pipeline config\"",
+      "range": {
+        "startLine": 46,
+        "startChar": 3,
+        "endLine": 46,
+        "endChar": 37
+      },
+      "revId": "51fc2ba292067d873807540c4228eecfe7d2a127",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_a543a2ad",
+        "filename": "docs/user-guide/p4plugin-user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2017-11-19T15:52:42Z",
+      "side": 1,
+      "message": "Change to \"as shown below\" and delete extra colon.",
+      "range": {
+        "startLine": 54,
+        "startChar": 66,
+        "endLine": 54,
+        "endChar": 75
+      },
+      "revId": "51fc2ba292067d873807540c4228eecfe7d2a127",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
