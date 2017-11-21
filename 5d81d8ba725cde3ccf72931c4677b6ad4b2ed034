@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a245df4_f2571124",
+        "filename": "docs/release-process/milestone-readouts/m2/groupbasedpolicy.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 7493
+      },
+      "writtenOn": "2017-11-21T20:44:44Z",
+      "side": 1,
+      "message": "Need to indent this line such that the \u0027h\u0027 in https is directly under \u0027s\u0027 in the line above",
+      "range": {
+        "startLine": 34,
+        "startChar": 3,
+        "endLine": 34,
+        "endChar": 119
+      },
+      "revId": "5d81d8ba725cde3ccf72931c4677b6ad4b2ed034",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_d252cd33",
+        "filename": "docs/release-process/milestone-readouts/m2/groupbasedpolicy.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 7493
+      },
+      "writtenOn": "2017-11-21T20:44:44Z",
+      "side": 1,
+      "message": "Need a blank line between 50 and 51 to ensure the sub bullets show up properly",
+      "revId": "5d81d8ba725cde3ccf72931c4677b6ad4b2ed034",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
