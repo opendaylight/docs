@@ -54,8 +54,9 @@ Project-specific User Guides
    openflow-plugin-project-user-guide
    opflex-agent-ovs-user-guide
    ovsdb-user-guide
-   pcep-user-guide
+   p4plugin-user-guide
    packetcable-user-guide
+   pcep-user-guide
    service-function-chaining
    snmp-plugin-user-guide
    snmp4sdn-user-guide
