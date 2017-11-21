@@ -10,6 +10,7 @@ Overview
 
    ../gerrit
    developing-apps-on-the-opendaylight-controller
+   integrating-animal-sniffer-plugin-with-projects
 
 Project-specific Developer Guides
 ---------------------------------
