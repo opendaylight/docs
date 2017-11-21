@@ -70,7 +70,6 @@ Project-specific Release Notes
    :glob:
    :maxdepth: 1
 
-   projects/*
 
 Service Release Notes
 =====================
