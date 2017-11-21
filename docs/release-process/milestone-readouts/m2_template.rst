@@ -73,6 +73,10 @@ Integration and Test:
    - (If yes, link to test plans)
    - (If no, why?)
 
+3. Have you integrated odlparent 3 / yangtools 2? (Yes/No/NA)
+
+   - (If yes, link to gerrit patch)
+
 Project Specific:
 -----------------
 
