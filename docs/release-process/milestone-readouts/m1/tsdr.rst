@@ -4,20 +4,20 @@ TSDR
 
 1. Project PTL:
 
-   - YuLing Chen 
+   - YuLing Chen
    - yulingchen54@gmail.com
-   - yuling_c 
+   - yuling_c
    - Yes, I have reviewed the PTL Requirements [1]_
 
 2. Project Contact:
 
-   - YuLing Chen 
+   - YuLing Chen
    - yulingchen54@gmail.com
-   - yuling_c 
+   - yuling_c
 
 3. Test Contact:
 
-   - YuLing Chen 
+   - YuLing Chen
    - yulingchen54@gmail.com
    - yuling_c
 
