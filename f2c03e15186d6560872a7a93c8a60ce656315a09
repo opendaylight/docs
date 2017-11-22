@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a245df4_916b3284",
+        "filename": "docs/release-process/milestone-readouts/m2/l2switch.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 7493
+      },
+      "writtenOn": "2017-11-22T04:06:51Z",
+      "side": 1,
+      "message": "Need to reformat to avoid tabs (use spaces). Sub bullets need to be precisely aligned (there must be a blank line between each bullet item).  For example:\n\n2. List all top-level, ...\n\n   - Packet Handler\n\n     - Decodes the packets coming to the controller and\n       dispatches them appropriately\n\n   - Loop Remover\n\n     - Removes loops in the network\n\n   ...",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 60
+      },
+      "revId": "f2c03e15186d6560872a7a93c8a60ce656315a09",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
