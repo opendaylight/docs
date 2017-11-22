@@ -1,0 +1,326 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a245df4_1183c2cc",
+        "filename": "docs/release-process/milestone-readouts/m2/genius.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2017-11-22T05:09:48Z",
+      "side": 1,
+      "message": "Make sure title overline and underline match.",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 56
+      },
+      "revId": "5d091563711e722cfce6c3f95e9dd80e8f95be09",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_51989a77",
+        "filename": "docs/release-process/milestone-readouts/m2/genius.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2017-11-22T05:09:48Z",
+      "side": 1,
+      "message": "Shorten title. Use \"Genius\" as the title, as this is the project name used in past reports.",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 6
+      },
+      "revId": "5d091563711e722cfce6c3f95e9dd80e8f95be09",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_919e9261",
+        "filename": "docs/release-process/milestone-readouts/m2/genius.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2017-11-22T05:09:48Z",
+      "side": 1,
+      "message": "The formatting in this section could be improved. I would not make the first sentence a bullet. You can remove the hypen change the text to \"Updates to mdsalutil-api module:\"\nand make the text at the same level of indentation as the sentence above, i.e. \"Final list ...\" (first-level bullet)",
+      "range": {
+        "startLine": 13,
+        "startChar": 5,
+        "endLine": 13,
+        "endChar": 36
+      },
+      "revId": "5d091563711e722cfce6c3f95e9dd80e8f95be09",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_71995e78",
+        "filename": "docs/release-process/milestone-readouts/m2/genius.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2017-11-22T05:09:48Z",
+      "side": 1,
+      "message": "Make this bullet flush at the same level of indentation as \"Final updates\" (first-level bullet)",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 45
+      },
+      "revId": "5d091563711e722cfce6c3f95e9dd80e8f95be09",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_d18bea1c",
+        "filename": "docs/release-process/milestone-readouts/m2/genius.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2017-11-22T05:09:48Z",
+      "side": 1,
+      "message": "Make these two sub-bullets at the same level of indentation as where you originally placed the \"following utility classes are removed\" (second-level bullet)",
+      "range": {
+        "startLine": 15,
+        "startChar": 9,
+        "endLine": 16,
+        "endChar": 27
+      },
+      "revId": "5d091563711e722cfce6c3f95e9dd80e8f95be09",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_f1e9ceb7",
+        "filename": "docs/release-process/milestone-readouts/m2/genius.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2017-11-22T05:09:48Z",
+      "side": 1,
+      "message": "Make this bullet flush with with \"-following utility classes are removed\" (first-level bullet)",
+      "range": {
+        "startLine": 17,
+        "startChar": 5,
+        "endLine": 17,
+        "endChar": 65
+      },
+      "revId": "5d091563711e722cfce6c3f95e9dd80e8f95be09",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_f100ae67",
+        "filename": "docs/release-process/milestone-readouts/m2/genius.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2017-11-22T05:09:48Z",
+      "side": 1,
+      "message": "Make this a second-level bullet.",
+      "range": {
+        "startLine": 18,
+        "startChar": 8,
+        "endLine": 18,
+        "endChar": 31
+      },
+      "revId": "5d091563711e722cfce6c3f95e9dd80e8f95be09",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_31f6c68f",
+        "filename": "docs/release-process/milestone-readouts/m2/genius.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2017-11-22T05:09:48Z",
+      "side": 1,
+      "message": "This does not need to be a bullet. Make the text flush with \"Final list of ...\" and change to \"Updates to ITM api:\"",
+      "range": {
+        "startLine": 19,
+        "startChar": 5,
+        "endLine": 19,
+        "endChar": 23
+      },
+      "revId": "5d091563711e722cfce6c3f95e9dd80e8f95be09",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_91f17297",
+        "filename": "docs/release-process/milestone-readouts/m2/genius.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2017-11-22T05:09:48Z",
+      "side": 1,
+      "message": "Make a first-level bullet",
+      "range": {
+        "startLine": 20,
+        "startChar": 8,
+        "endLine": 20,
+        "endChar": 67
+      },
+      "revId": "5d091563711e722cfce6c3f95e9dd80e8f95be09",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_71ecbebb",
+        "filename": "docs/release-process/milestone-readouts/m2/genius.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2017-11-22T05:09:48Z",
+      "side": 1,
+      "message": "Make second-level bullets",
+      "range": {
+        "startLine": 21,
+        "startChar": 10,
+        "endLine": 22,
+        "endChar": 43
+      },
+      "revId": "5d091563711e722cfce6c3f95e9dd80e8f95be09",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_d12e4afa",
+        "filename": "docs/release-process/milestone-readouts/m2/genius.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2017-11-22T05:09:48Z",
+      "side": 1,
+      "message": "Make a first-level bullet.",
+      "range": {
+        "startLine": 23,
+        "startChar": 8,
+        "endLine": 24,
+        "endChar": 53
+      },
+      "revId": "5d091563711e722cfce6c3f95e9dd80e8f95be09",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_11358245",
+        "filename": "docs/release-process/milestone-readouts/m2/genius.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2017-11-22T05:09:48Z",
+      "side": 1,
+      "message": "Make this URLs first-level bullets.",
+      "range": {
+        "startLine": 38,
+        "startChar": 3,
+        "endLine": 39,
+        "endChar": 166
+      },
+      "revId": "5d091563711e722cfce6c3f95e9dd80e8f95be09",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_d17c8aee",
+        "filename": "docs/release-process/milestone-readouts/m2/genius.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2017-11-22T05:09:48Z",
+      "side": 1,
+      "message": "Separate links with bullets.",
+      "range": {
+        "startLine": 65,
+        "startChar": 4,
+        "endLine": 66,
+        "endChar": 57
+      },
+      "revId": "5d091563711e722cfce6c3f95e9dd80e8f95be09",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_b17f56df",
+        "filename": "docs/release-process/milestone-readouts/m2/genius.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2017-11-22T05:09:48Z",
+      "side": 1,
+      "message": "Separate links with bullets.",
+      "range": {
+        "startLine": 95,
+        "startChar": 4,
+        "endLine": 96,
+        "endChar": 97
+      },
+      "revId": "5d091563711e722cfce6c3f95e9dd80e8f95be09",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
