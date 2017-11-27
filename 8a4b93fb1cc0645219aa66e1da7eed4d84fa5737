@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a1969be_8c780b2d",
+        "filename": "docs/release-process/milestone-readouts/m2/bgpcep.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 3443
+      },
+      "writtenOn": "2017-11-27T09:29:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a245df4_714f9e34",
+      "revId": "8a4b93fb1cc0645219aa66e1da7eed4d84fa5737",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a245df4_d1612aaa",
         "filename": "docs/release-process/milestone-readouts/m2/bgpcep.rst",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2017-11-22T03:57:15Z",
       "side": 1,
       "message": "Need a blank line between 19 and 20",
+      "revId": "8a4b93fb1cc0645219aa66e1da7eed4d84fa5737",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a1969be_ac7b4728",
+        "filename": "docs/release-process/milestone-readouts/m2/bgpcep.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 3443
+      },
+      "writtenOn": "2017-11-27T09:29:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a245df4_d1612aaa",
       "revId": "8a4b93fb1cc0645219aa66e1da7eed4d84fa5737",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -59,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "7a1969be_4c873310",
+        "filename": "docs/release-process/milestone-readouts/m2/bgpcep.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 3443
+      },
+      "writtenOn": "2017-11-27T09:29:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a245df4_1158e2f8",
+      "range": {
+        "startLine": 51,
+        "startChar": 74,
+        "endLine": 51,
+        "endChar": 82
+      },
+      "revId": "8a4b93fb1cc0645219aa66e1da7eed4d84fa5737",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a245df4_2ee02ff9",
         "filename": "docs/release-process/milestone-readouts/m2/bgpcep.rst",
         "patchSetId": 1
@@ -70,6 +130,30 @@
       "writtenOn": "2017-11-20T14:19:35Z",
       "side": 1,
       "message": "There is a trailing white space here - need to remove based on the coala check",
+      "range": {
+        "startLine": 60,
+        "startChar": 8,
+        "endLine": 60,
+        "endChar": 10
+      },
+      "revId": "8a4b93fb1cc0645219aa66e1da7eed4d84fa5737",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a1969be_6c82ef01",
+        "filename": "docs/release-process/milestone-readouts/m2/bgpcep.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 3443
+      },
+      "writtenOn": "2017-11-27T09:29:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a245df4_2ee02ff9",
       "range": {
         "startLine": 60,
         "startChar": 8,
