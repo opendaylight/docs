@@ -201,9 +201,7 @@ Securing OpenDaylight using AAA
 ===============================
 
 AAA stands for Authentication, Authorization, and Accounting. All three of
-can help improve the security posture of and OpenDaylight deployment. In this
-release, only authentication is fully supported, while authorization is an
-experimental feature and accounting remains a work in progress.
+can help improve the security posture of and OpenDaylight deployment.
 
 The vast majority of OpenDaylight's northbound APIs (and all RESTCONF APIs) are
 protected by AAA by default when installing the +odl-restconf+ feature. In the
