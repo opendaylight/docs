@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a1969be_c3af692a",
+        "filename": "docs/release-notes/release-notes-nitrogen-sr1.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6258
+      },
+      "writtenOn": "2017-11-28T22:30:03Z",
+      "side": 1,
+      "message": "I noticed we need to handle dups issue id\u0027s, change is merged here:\nhttps://git.opendaylight.org/gerrit/#/c/66032/\n\nwe may need to remerge this change again or update it!",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 10
+      },
+      "revId": "f1f5bd5258df90b7f0aca301d2474ef8d8a9ced7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
