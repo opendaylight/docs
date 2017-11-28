@@ -21,8 +21,7 @@ Follow these steps to install the version feature:
 
       feature:install odl-distribution-version
 
-.. note:: For RESTCONF access, it is recommended to install odl-restconf
-          and odl-netconf-connector-ssh.
+.. note:: For RESTCONF access, it is recommended to install odl-restconf.
 
 Version Feature Usage
 ---------------------
