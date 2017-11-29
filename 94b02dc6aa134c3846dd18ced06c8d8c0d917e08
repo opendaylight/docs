@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a1969be_dc258a0b",
+        "filename": "docs/release-process/milestone-readouts/m2/snmp.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-11-29T14:33:55Z",
+      "side": 1,
+      "message": "The nested list item needs to start at the same level as the first character of the list item it is nesting under. Eg.\n\n 2. List all top-level...\n \n    - odl-snmp-plugin\n\nAlso field list [0] here would look nicer.\n\nhttp://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#field-lists",
+      "revId": "94b02dc6aa134c3846dd18ced06c8d8c0d917e08",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
