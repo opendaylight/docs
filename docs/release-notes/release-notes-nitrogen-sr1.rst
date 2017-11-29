@@ -16,9 +16,7 @@ Projects with No Noteworthy Changes
 aaa
 ---
 * `78fa45e <https://git.opendaylight.org/gerrit/#/q/78fa45e>`_
-  `AAA-151
-AAA-151 <https://jira.opendaylight.org/browse/AAA-151
-AAA-151>`_
+  `AAA-151 <https://jira.opendaylight.org/browse/AAA-151>`_
   : AAA-151: Invalidate claim cache for CLI initiated changes
 * `4818c31 <https://git.opendaylight.org/gerrit/#/q/4818c31>`_
   : Declare odl-aaa-encryption-service in artifacts
