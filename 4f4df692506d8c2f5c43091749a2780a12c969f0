@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a1969be_fcd7a6eb",
+        "filename": "docs/release-process/milestone-readouts/m2/aaa.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-11-29T14:31:04Z",
+      "side": 1,
+      "message": "The nested unordered list needs to line up with the first character of the ordered list item it is listing under. Eg.\n\n 2. List all\n \n    - odl-aaa-api\n    - odl-aaa-cert\n    - etc...\n\nreStructuredText tends to be a bit strict in formatting.\n\nAs an aside... we should use field-lists here instead of triple nested lists IMO as it will produce a nicer looking output than a triple nested list will.\n\nhttp://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#field-lists",
+      "revId": "4f4df692506d8c2f5c43091749a2780a12c969f0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
