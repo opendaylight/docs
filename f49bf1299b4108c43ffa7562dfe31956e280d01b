@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a1969be_c6949746",
+        "filename": "docs/release-process/milestone-readouts/m2/l2switch.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 634
+      },
+      "writtenOn": "2017-11-29T02:39:07Z",
+      "side": 1,
+      "message": "Can you clarify? I added a space on the following line but looks like it\u0027s failing a trailing whitespace check.",
+      "parentUuid": "7a1969be_b0ab95d5",
+      "revId": "f49bf1299b4108c43ffa7562dfe31956e280d01b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a1969be_f0b50d32",
         "filename": "docs/release-process/milestone-readouts/m2/l2switch.rst",
         "patchSetId": 2
