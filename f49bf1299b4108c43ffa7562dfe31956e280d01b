@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "7a1969be_fc720648",
+        "filename": "docs/release-process/milestone-readouts/m2/l2switch.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2017-11-29T14:21:35Z",
+      "side": 1,
+      "message": "Hi Evan,\n\nSo in reStructuredText a nested list starts at the start of the text of the previous list item. So in this case for \"- Decodes ...\" to correctly nest under Packer Handler it needs to look something like this:\n\n - Packet Handler\n \n   - Decodes the packets ...\n\nOf course the start of Packet handle line also needs to align with the numbered list it is nested under as well so the full text should format like this:\n\n 2. List all top-level ...\n \n    - Packet Handler\n \n      - Decodes the packets ...\n\nPersonally I think this is an ugly way to format this kind of information though because what you really want here is a way to name a feature and provide a description for it. In cases like these using \"field lists\" will make the output generated look better IMO [0] so a field list definition would look something like this:\n\n 2. List all top-level ...\n \n    :Packet Handler: Decodes the packets coming to the ...\n\nThis makes a list where the feature name will be bolded while the explanation will appear next to it in plain text and Sphinx will take care of the formatting and layout. This looks a lot better than a numbered list with a nested unordered list that has a single nested unordered list description for every list item.\n\nHope this helps,\nThanh\n\n[0] http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#field-lists",
+      "parentUuid": "7a1969be_c6949746",
+      "revId": "f49bf1299b4108c43ffa7562dfe31956e280d01b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a1969be_f0b50d32",
         "filename": "docs/release-process/milestone-readouts/m2/l2switch.rst",
         "patchSetId": 2
