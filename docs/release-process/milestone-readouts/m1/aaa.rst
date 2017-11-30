@@ -1,49 +1,30 @@
-=====
+===
 AAA
-=====
+===
 
-1. Project PTL:
+1. Project PTL: Ryan Goulding, ryandgoulding@gmail.com, rgoulding
 
-   - Ryan Goulding
-   - ryandgoulding@gmail.com
-   - rgoulding
-   - Yes, I have reviewed the PTL Requirements [1]_
+   -  Yes, I have reviewed the PTL Requirements [1]_
 
-2. Project Contact:
+2. Project Contact: Ryan Goulding, ryandgoulding@gmail.com, rgoulding
 
-   - Ryan Goulding
-   - ryandgoulding@gmail.com
-   - rgoulding
+3. Test Contact: Ryan Goulding, ryandgoulding@gmail.com, rgoulding
 
-3. Test Contact:
-
-   - Ryan Goulding
-   - ryandgoulding@gmail.com
-   - rgoulding
-
-4. Documentation Contact
-
-   - Ryan Goulding
-   - ryandgoulding@gmail.com
-   - rgoulding
+4. Documentation Contact: Ryan Goulding, ryandgoulding@gmail.com, rgoulding
 
 5. Does your project have any updates on any previously-incomplete items from
-   prior milestone readouts?
+   prior milestone readouts? Yes
 
-   - Yes, committer lists were updated.
+   - Committer lists were updated.
 
 6. Were project-specific deliverables planned for this milestone delivered
-   successfully?
+   successfully? No Deliverables
 
-   - No Deliverables
+7. Does your project have any special needs in CI Infrastructure [2]_? No
 
-7. Does your project have any special needs in CI Infrastructure [2]_?
+8. Is your project release plan finalized? Yes
 
-   - No
-
-8. Is your project release plan finalized?
-
-   - Yes, available here: `Release plan <https://wiki.opendaylight.org/view/AAA:Oxygen_Release_Plan>`_
+   - `Release plan <https://wiki.opendaylight.org/view/AAA:Oxygen_Release_Plan>`_
 
 9. Do you have all APIs intended to be externally consumable listed?
 
@@ -55,22 +36,17 @@ AAA
      for each API? *Yes*
 
 10. Have all project dependencies requests on other projects' release plans
-    been acknowledged and documented by upstream projects?
+    been acknowledged and documented by upstream projects? Yes
 
     - controller, Implicit acknowledgement
     - mdsal, Implicit acknowledgement
     - odlparent, Implicit acknowledgement
     - yangtools, Implicit acknowledgement
 
-
-11. Will your project have top-level features not requiring system test?
-
-    - No
+11. Will your project have top-level features not requiring system test? No
 
 12. Will your project use the OpenDaylight CI infrastructure for testing
-    top-level features requiring system test?
-
-    - Yes
+    top-level features requiring system test? Yes
 
 .. [1] Be sure to read the responsibilities of being a project lead under
        Leadership & Communication in the Requirements for Participation section
@@ -80,4 +56,3 @@ AAA
        only available tools in CI are basic RHEL/CentOS linux images with Java.
        You should note and ask for anything beyond that here.  Email
        helpdesk@opendaylight.org
-

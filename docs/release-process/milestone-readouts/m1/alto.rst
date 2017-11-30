@@ -2,47 +2,25 @@
 ALTO
 ====
 
-1. Project PTL:
+1. Project PTL: Kai Gao, gaok12@mails.tsinghua.edu.cn, kaigao
 
-   - Kai Gao
-   - gaok12@mails.tsinghua.edu.cn, godrickk@gmail.com
-   - kaigao
+2. Project Contact: Jingxuan Zhang (Jensen), jingxuan.zhang@tongji.edu.cn, jensen_zhang
 
-2. Project Contact:
+3. Test Contact: Xiao Lin, xiao.lin@tongji.edu.cn, ShawnLin
 
-   - Jingxuan Zhang (Jensen)
-   - jingxuan.zhang@tongji.edu.cn
-   - jensen_zhang
-
-3. Test Contact:
-
-   - Xiao Lin
-   - xiao.lin@tongji.edu.cn
-   - ShawnLin
-
-4. Documentation Contact
-
-   - Kai Gao
-   - gaok12@mails.tsinghua.edu.cn
-   - kaigao
+4. Documentation Contact: Kai Gao, gaok12@mails.tsinghua.edu.cn, kaigao
 
 5. Does your project have any updates on any previously-incomplete items from
-   prior milestone readouts? (Yes/No)
-
-   - No
+   prior milestone readouts? No
 
 6. Were project-specific deliverables planned for this milestone delivered
-   successfully? (No Deliverables/Yes/No)
+   successfully? No Deliverables
 
-   - No Deliverables
+7. Does your project have any special needs in CI Infrastructure? No
 
-7. Does your project have any special needs in CI Infrastructure? (Yes/No)
+8. Is your project release plan finalized? No
 
-   - No
-
-8. Is your project release plan finalized?  (Yes/No)
-
-   - No. ETA is by M2 status
+   - ETA is by M2 status
 
 9. Do you have all APIs intended to be externally consumable listed? (Yes/No/Not Applicable)
 
@@ -54,16 +32,12 @@ ALTO
      for each API? Yes
 
 10. Have all project dependencies requests on other projects' release plans
-    been acknowledged and documented by upstream projects?  (Yes/No)
+    been acknowledged and documented by upstream projects? Yes
 
     - Dependencies: l2switch, openflow-plugin
-    - Yes. The dependent projects have been acknowledged in previous releases.
+    - The dependent projects have been acknowledged in previous releases.
 
-11. Will your project have top-level features not requiring system test?
-
-    - No
+11. Will your project have top-level features not requiring system test? No
 
 12. Will your project use the OpenDaylight CI infrastructure for testing
-    top-level features requiring system test? (Yes/No)
-
-    - Yes
+    top-level features requiring system test? Yes
