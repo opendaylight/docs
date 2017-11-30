@@ -58,3 +58,90 @@ trim_leading_and_trailing_whitespace() {
         echo "     - $updated_committers" | trim_trailing_whitespace
     done
 } > "$MILESTONE_STATUS_DIR/m0.rst"
+
+{
+    echo "Milestone 1 Status"
+    echo "=================="
+    echo
+    echo ".. list-table:: Milestone 1 Status"
+    echo "   :widths: auto"
+    echo "   :header-rows: 1"
+    echo
+    echo "   * - Project ID"
+    echo "     - Project Technical Lead"
+    echo "     - Project Contact"
+    echo "     - Test Contact"
+    echo "     - Documentation Contact"
+    echo "     - Prior milestone updates?"
+    echo "     - Delivered milestone deliverables?"
+    echo "     - Special CI requirements?"
+    echo "     - Release Plan finalized?"
+    echo "     - APIs listed"
+    echo "     - Dependencies documented"
+    echo "     - Features requiring system test"
+    echo "     - Using ODL CI for testing"
+
+    files=($(find release-process/milestone-readouts/m1 -type f | sort))
+    for f in ${files[@]}; do
+        project="$(basename $f | awk -F. '{print $1}')"
+
+        ptl=$(grep 'Project PTL:' "$f" | awk -F: '{print $2}' | trim_leading_and_trailing_whitespace)
+        ptl_name=$(echo $ptl | awk -F, '{print $1}' | trim_leading_and_trailing_whitespace)
+        ptl_email=$(echo $ptl | awk -F, '{print $2}' | trim_leading_and_trailing_whitespace)
+        ptl_irc=$(echo $ptl | awk -F, '{print $3}' | trim_leading_and_trailing_whitespace)
+
+        pc=$(grep 'Project Contact:' "$f" | awk -F: '{print $2}' | trim_leading_and_trailing_whitespace)
+        pc_name=$(echo $ptl | awk -F, '{print $1}' | trim_leading_and_trailing_whitespace)
+        pc_email=$(echo $ptl | awk -F, '{print $2}' | trim_leading_and_trailing_whitespace)
+        pc_irc=$(echo $ptl | awk -F, '{print $3}' | trim_leading_and_trailing_whitespace)
+
+        tc=$(grep 'Test Contact:' "$f" | awk -F: '{print $2}' | trim_leading_and_trailing_whitespace)
+        tc_name=$(echo $ptl | awk -F, '{print $1}' | trim_leading_and_trailing_whitespace)
+        tc_email=$(echo $ptl | awk -F, '{print $2}' | trim_leading_and_trailing_whitespace)
+        tc_irc=$(echo $ptl | awk -F, '{print $3}' | trim_leading_and_trailing_whitespace)
+
+        dc=$(grep 'Documentation Contact:' "$f" | awk -F: '{print $2}' | trim_leading_and_trailing_whitespace)
+        dc_name=$(echo $ptl | awk -F, '{print $1}' | trim_leading_and_trailing_whitespace)
+        dc_email=$(echo $ptl | awk -F, '{print $2}' | trim_leading_and_trailing_whitespace)
+        dc_irc=$(echo $ptl | awk -F, '{print $3}' | trim_leading_and_trailing_whitespace)
+
+        prior_milestone_updates=$(grep 'prior milestone readouts?' "$f" | awk -F'?' '{print $2}' | trim_leading_and_trailing_whitespace)
+        delivered_milestone_deliverables=$(awk -F'?' '/deliverables planned for this milestone delivered/,/successfully?/ {print $2}' "$f" | tr -d '\n' | trim_leading_and_trailing_whitespace)
+        ci_needs=$(awk -F'?' '/Does your project have any special needs in CI Infrastructure/ {print $2}' "$f" | trim_leading_and_trailing_whitespace)
+        release_plan_finalized=$(awk -F'?' '/Is your project release plan finalized/ {print $2}' "$f" | trim_leading_and_trailing_whitespace)
+
+        api_shortname=$(awk -F'?' '/Does each API have a useful short name/ {print $2}' "$f" | trim_leading_and_trailing_whitespace)
+        api_interfaces_listed=$(awk -F'?' '/Are the Java interface and\/or YANG files listed for each API/ {print $2}' "$f" | trim_leading_and_trailing_whitespace)
+        api_labeled=$(awk -F'?' '/labeled as tentative, provisional, or stable as appropriate for/,/each API/ {print $2}' "$f" | tr -d '\n' | trim_leading_and_trailing_whitespace)
+        api_features_identified=$(awk -F'?' '/call out the OSGi bundles and\/or Karaf features providing the API/,/for each API/ {print $2}' "$f" | tr -d '\n' | trim_leading_and_trailing_whitespace)
+
+        deps_documented=$(awk -F'?' '/Have all project dependencies requests on other projects/,/been acknowledged and documented by upstream projects/ {print $2}' "$f" | tr -d '\n' | trim_leading_and_trailing_whitespace)
+        features_require_system_test=$(awk -F'?' '/have top-level features not requiring system test/ {print $2}' "$f" | trim_leading_and_trailing_whitespace)
+        use_odl_ci=$(awk -F'?' '/use the OpenDaylight CI infrastructure for testing/,/top-level features requiring system test/ {print $2}' "$f" | tr -d '\n' | trim_leading_and_trailing_whitespace)
+
+        echo "   * - $project" | trim_trailing_whitespace
+        echo "     - :name: $ptl_name" | trim_trailing_whitespace
+        echo "       :email: $ptl_email" | trim_trailing_whitespace
+        echo "       :irc: $ptl_irc" | trim_trailing_whitespace
+        echo "     - :name: $pc_name" | trim_trailing_whitespace
+        echo "       :email: $pc_email" | trim_trailing_whitespace
+        echo "       :irc: $pc_irc" | trim_trailing_whitespace
+        echo "     - :name: $tc_name" | trim_trailing_whitespace
+        echo "       :email: $tc_email" | trim_trailing_whitespace
+        echo "       :irc: $tc_irc" | trim_trailing_whitespace
+        echo "     - :name: $dc_name" | trim_trailing_whitespace
+        echo "       :email: $dc_email" | trim_trailing_whitespace
+        echo "       :irc: $dc_irc" | trim_trailing_whitespace
+        echo "     - $prior_milestone_updates" | trim_trailing_whitespace
+        echo "     - $delivered_milestone_deliverables" | trim_trailing_whitespace
+        echo "     - $ci_needs" | trim_trailing_whitespace
+        echo "     - $release_plan_finalized" | trim_trailing_whitespace
+        echo "     - :short-name: $api_shortname" | trim_trailing_whitespace
+        echo "       :interfaces: $api_interfaces_listed" | trim_trailing_whitespace
+        echo "       :labeled: $api_labeled" | trim_trailing_whitespace
+        echo "       :features: $api_features_identified" | trim_trailing_whitespace
+        echo "     - $deps_documented" | trim_trailing_whitespace
+        echo "     - $features_require_system_test" | trim_trailing_whitespace
+        echo "     - $use_odl_ci" | trim_trailing_whitespace
+    done
+} > "$MILESTONE_STATUS_DIR/m1.rst"
