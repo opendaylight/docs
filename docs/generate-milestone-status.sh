@@ -60,3 +60,63 @@ trim_leading_and_trailing_whitespace() {
         echo "     - $updated_committers" | trim_trailing_whitespace
     done
 } > "$MILESTONE_STATUS_DIR/m0.rst"
+
+{
+    echo "Milestone 1 Status"
+    echo "=================="
+    echo
+    echo "Definitions:"
+    echo
+    echo ":PTL: Project Technical Lead"
+    echo ":PC: Project Contact"
+    echo ":TC: Test Contact"
+    echo ":DC: Documentation Contact"
+    echo
+    echo ".. list-table:: Milestone 1 Status"
+    echo "   :widths: auto"
+    echo "   :header-rows: 1"
+    echo
+    echo "   * - Project ID"
+    echo "     - PTL Name"
+    echo "     - PTL Email"
+    echo "     - PTL IRC"
+    echo "     - PC Name"
+    echo "     - PC Email"
+    echo "     - PC IRC"
+    echo "     - TC Name"
+    echo "     - TC Email"
+    echo "     - TC IRC"
+    echo "     - DC Name"
+    echo "     - DC Email"
+    echo "     - DC IRC"
+
+    files=($(find release-process/milestone-readouts/m1 -type f | sort))
+    for f in ${files[@]}; do
+        project="$(basename $f | awk -F. '{print $1}')"
+
+        ptl=$(grep 'Project PTL:' "$f" | awk -F: '{print $2}' | trim_leading_and_trailing_whitespace)
+        ptl_name=$(echo $ptl | awk -F, '{print $1}' | trim_leading_and_trailing_whitespace)
+        ptl_email=$(echo $ptl | awk -F, '{print $2}' | trim_leading_and_trailing_whitespace)
+        ptl_irc=$(echo $ptl | awk -F, '{print $3}' | trim_leading_and_trailing_whitespace)
+
+        pc=$(grep 'Project Contact:' "$f" | awk -F: '{print $2}' | trim_leading_and_trailing_whitespace)
+        pc_name=$(echo $ptl | awk -F, '{print $1}' | trim_leading_and_trailing_whitespace)
+        pc_email=$(echo $ptl | awk -F, '{print $2}' | trim_leading_and_trailing_whitespace)
+        pc_irc=$(echo $ptl | awk -F, '{print $3}' | trim_leading_and_trailing_whitespace)
+
+        tc=$(grep 'Test Contact:' "$f" | awk -F: '{print $2}' | trim_leading_and_trailing_whitespace)
+        tc_name=$(echo $ptl | awk -F, '{print $1}' | trim_leading_and_trailing_whitespace)
+        tc_email=$(echo $ptl | awk -F, '{print $2}' | trim_leading_and_trailing_whitespace)
+        tc_irc=$(echo $ptl | awk -F, '{print $3}' | trim_leading_and_trailing_whitespace)
+
+        dc=$(grep 'Documentation Contact:' "$f" | awk -F: '{print $2}' | trim_leading_and_trailing_whitespace)
+        dc_name=$(echo $ptl | awk -F, '{print $1}' | trim_leading_and_trailing_whitespace)
+        dc_email=$(echo $ptl | awk -F, '{print $2}' | trim_leading_and_trailing_whitespace)
+        dc_irc=$(echo $ptl | awk -F, '{print $3}' | trim_leading_and_trailing_whitespace)
+
+        echo "   * - $project" | trim_trailing_whitespace
+        echo "     - $ptl_name" | trim_trailing_whitespace
+        echo "     - $ptl_email" | trim_trailing_whitespace
+        echo "     - $ptl_irc" | trim_trailing_whitespace
+    done
+} > "$MILESTONE_STATUS_DIR/m1.rst"
