@@ -4364,7 +4364,7 @@ BGP Neighbor Operational State
 
 .. note:: Supported Capabilities only provided when session has been established.
 
-**URL:** ``/restconf/operational/openconfig-network-instance:network-instances/network-instance/global-bgp/openconfig-network-instance:protocols/protocol/openconfig-policy-types:BGP/bgp-example/bgp/neighbor/127.0.0.2/state``
+**URL:** ``/restconf/operational/openconfig-network-instance:network-instances/network-instance/global-bgp/openconfig-network-instance:protocols/protocol/openconfig-policy-types:BGP/bgp-example/bgp/neighbors/neighbor/127.0.0.2/state``
 
 **Method:** ``GET``
 
@@ -5142,7 +5142,7 @@ with optional input parameters:
    -sc <N>, --speakersCount <N>
       Number of simulated BGP speakers, when creating each speaker, uses incremented local-address for binding, by default 0.
 
-   -ra <IP_ADDRESS:PORT,...>, --remoteAddress <IP_ADDRESS:PORT,...>
+   -ra <IP_ADDRESS:PORT,...>, --remote-address <IP_ADDRESS:PORT,...>
       A list of IP addresses of remote BGP peers, that the tool can accept or initiate connect to that address (based on the mode), by default 192.0.2.2:1790.
 
    -la <IP_ADDRESS:PORT>, --localAddress <IP_ADDRESS:PORT>
