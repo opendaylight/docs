@@ -32,9 +32,7 @@ trim_leading_and_trailing_whitespace() {
     echo "     - Offset"
     echo "     - Category"
     echo "     - Labels"
-    echo "     - PTL Name"
-    echo "     - PTL Email"
-    echo "     - PTL IRC"
+    echo "     - Project Technical Lead"
     echo "     - Committers Updated"
 
     files=($(find release-process/milestone-readouts/m0 -type f | sort))
@@ -54,9 +52,9 @@ trim_leading_and_trailing_whitespace() {
         echo "     - $offset" | trim_trailing_whitespace
         echo "     - $category" | trim_trailing_whitespace
         echo "     - $labels" | trim_trailing_whitespace
-        echo "     - $ptl_name" | trim_trailing_whitespace
-        echo "     - $ptl_email" | trim_trailing_whitespace
-        echo "     - $ptl_irc" | trim_trailing_whitespace
+        echo "     - :name: $ptl_name" | trim_trailing_whitespace
+        echo "       :email: $ptl_email" | trim_trailing_whitespace
+        echo "       :irc: $ptl_irc" | trim_trailing_whitespace
         echo "     - $updated_committers" | trim_trailing_whitespace
     done
 } > "$MILESTONE_STATUS_DIR/m0.rst"
