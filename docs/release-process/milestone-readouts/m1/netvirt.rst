@@ -2,60 +2,39 @@
 NetVirt
 =======
 
-1. Project PTL:
+1. Project PTL: Sam Hague, shague@gmail.com, shague
 
-   - Sam Hague
-   - shague@gmail.com
-   - shague
-   - I have reviewed the PTL Requirements [1]_
+   - Yes, I have reviewed the PTL Requirements [1]_.
 
-2. Project Contact:
+2. Project Contact: Sam Hague, shague@gmail.com, shague
 
-   - Sam Hague
-   - shague@gmail.com
-   - shague
+3. Test Contact: Jamo Luhrsen, jluhrsen@redhat.com, jamoluhrsen
 
-3. Test Contact:
-
-   - Jamo Luhrsen
-   - jluhrsen@redhat.com
-   - jamoluhrsen
-
-4. Documentation Contact
-
-   - Vishal Thapar
-   - vthapar@ericsson.com
-   - vthapar
+4. Documentation Contact: Vishal Thapar, vthapar@ericsson.com, vthapar
 
 5. Does your project have any updates on any previously-incomplete items from
-   prior milestone readouts? (Yes/No)
-
-   - No
+   prior milestone readouts? No
 
 6. Were project-specific deliverables planned for this milestone delivered
-   successfully? (No Deliverables/Yes/No)
+   successfully? No Deliverables
 
-   - No deliverables
+7. Does your project have any special needs in CI Infrastructure [2]_? No
 
-7. Does your project have any special needs in CI Infrastructure [2]_? (Yes/No)
-
-   - No
-
-8. Is your project release plan finalized?  (Yes/No)
+8. Is your project release plan finalized?  Yes
 
    - `Release plan <https://wiki.opendaylight.org/view/NetVirt:Oxygen:Release_Plan>`_
 
-9. Do you have all APIs intended to be externally consumable listed? (Yes/No/Not Applicable)
+9. Do you have all APIs intended to be externally consumable listed? 
 
-   - Does each API have a useful short name? Yes
-   - Are the Java interface and/or YANG files listed for each API? Yes
+   - Does each API have a useful short name? *Yes*
+   - Are the Java interface and/or YANG files listed for each API? *Yes*
    - Are they labeled as tentative, provisional, or stable as appropriate for
-     each API? Yes
+     each API? *Yes*
    - Do you call out the OSGi bundles and/or Karaf features providing the API
-     for each API? Yes
+     for each API? *Yes*
 
 10. Have all project dependencies requests on other projects' release plans
-    been acknowledged and documented by upstream projects?  (Yes/No)
+    been acknowledged and documented by upstream projects?  No
 
     - controller, Implicit acknowledgement
     - mdsal, Implicit acknowledgement
@@ -64,15 +43,10 @@ NetVirt
     - genius
     - sfc
 
-11. Will your project have top-level features not requiring system test?
-    (Yes/No)
-
-    - No
+11. Will your project have top-level features not requiring system test? No
 
 12. Will your project use the OpenDaylight CI infrastructure for testing
-    top-level features requiring system test? (Yes/No)
-
-    - No
+    top-level features requiring system test? No
 
 .. [1] Be sure to read the responsibilities of being a project lead under
        Leadership & Communication in the Requirements for Participation section
