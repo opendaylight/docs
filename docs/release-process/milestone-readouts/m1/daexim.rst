@@ -2,68 +2,39 @@
 DAEXIM
 ======
 
-1. Project PTL:
+1. Project PTL: Shaleen Saxena, shaleen.external@gmail.com, ssaxena
 
-   - Shaleen Saxena
-   - shaleen.external@gmail.com
-   - ssaxena
    - I have reviewed the PTL Requirements
 
-2. Project Contact:
+2. Project Contact: Shaleen Saxena, shaleen.external@gmail.com, ssaxena
 
-   - Shaleen Saxena
-   - shaleen.external@gmail.com
-   - ssaxena
+3. Test Contact: Sreekalyan Devaraj, kalyan.ds@gmail.com, sdevaraj
 
-3. Test Contact:
-
-   - Sreekalyan Devaraj
-   - kalyan.ds@gmail.com
-   - sdevaraj
-
-4. Documentation Contact
-
-   - Shaleen Saxena
-   - shaleen.external@gmail.com
-   - ssaxena
+4. Documentation Contact: Shaleen Saxena, shaleen.external@gmail.com, ssaxena
 
 5. Does your project have any updates on any previously-incomplete items from
-   prior milestone readouts? (Yes/No)
-
-   - No
+   prior milestone readouts? No
 
 6. Were project-specific deliverables planned for this milestone delivered
-   successfully? (No Deliverables/Yes/No)
+   successfully? No Deliverables
 
-   - No Deliverables
+7. Does your project have any special needs in CI Infrastructure [2]_? No
 
-7. Does your project have any special needs in CI Infrastructure [2]_? (Yes/No)
+8. Is your project release plan finalized? Yes
 
-   - No
+   - https://wiki.opendaylight.org/view/Daexim:Oxygen:Release_Plan
 
-8. Is your project release plan finalized?  (Yes/No)
-
-   - Yes, https://wiki.opendaylight.org/view/Daexim:Oxygen:Release_Plan
-
-
-9. Do you have all APIs intended to be externally consumable listed? (Yes/No/Not Applicable)
-
-   - Not Applicable
+9. Do you have all APIs intended to be externally consumable listed? Not Applicable
 
 10. Have all project dependencies requests on other projects' release plans
-    been acknowledged and documented by upstream projects?  (Yes/No)
+    been acknowledged and documented by upstream projects? Yes
 
-    - Yes. Dependencies are on standard Offset 0 Projects.
+    - Dependencies are on standard Offset 0 Projects.
 
-11. Will your project have top-level features not requiring system test?
-    (Yes/No)
-
-    - No
+11. Will your project have top-level features not requiring system test? No
 
 12. Will your project use the OpenDaylight CI infrastructure for testing
-    top-level features requiring system test? (Yes/No)
-
-    - Yes
+    top-level features requiring system test? Yes
 
 **FOR NEW PROJECTS ONLY**
 
