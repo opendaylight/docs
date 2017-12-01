@@ -5,23 +5,17 @@ Infrautils
 Major Features
 ==============
 
-We have done a lot of clean-up and minor fixes for bugs reported via Bugzilla.
-
-Major changes delivered in this release are:
-
-* Job Coordinator: enables executing jobs in a parallel/sequential fashion, based on their keys (contribution from genius project)
-* Ready Framework: new framework to indicate system readiness, initial version
-* New JUnit Test Rules RunUntilFailureRule, LogCaptureRule, and LogRule
-
 odl-infrautils-all
 ------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=infrautils.git;a=blob;f=common/features/infrautils-features/src/main/features/features.xml;hb=stable/carbon
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=infrautils.git;a=blob;f=common/features/odl-infrautils-all/pom.xml;hb=stable/nitrogen
 * **Feature Description:**  This feature exposes all infrautils framework features
 * **Top Level:** Yes
 * **User Facing:** No
 * **Experimental:** Yes
-* **CSIT Test:** none
+* **CSIT Test:** covered by netvirt and genius CSITs
+  * https://jenkins.opendaylight.org/releng/view/netvirt-csit/job/netvirt-csit-1node-openstack-ocata-upstream-stateful-nitrogen/
+  * https://jenkins.opendaylight.org/releng/view/genius/job/genius-csit-1node-upstream-all-nitrogen/
 
 .. note that this is experimental until the system test waiver is granted
 .. on this thread:
@@ -36,7 +30,7 @@ Documentation
 
 * **Developer Guide(s):**
 
-  * :ref:`infrautils-dev-guide`
+  * :doc:`Developer Guide </submodules/infrautils/docs/index>`
 
 Security Considerations
 =======================
@@ -46,9 +40,10 @@ Security Considerations
 Quality Assurance
 =================
 
-* `Link to Sonar Report <https://sonar.opendaylight.org/overview?id=66717>`_ (43.6% line coverage)
+* `Link to Sonar Report <https://sonar.opendaylight.org/overview?id=66717>`_
 * Project infrautils provides low-level technical framework utilities
-  and therefore no CSIT automated system testing is available
+  and therefore no CSIT automated system testing is available. However
+  the same gets covered by the CSIT of users of infrautils (eg : genius, netvirt)
 
 Migration
 ---------
@@ -58,9 +53,18 @@ Migration
 Compatibility
 -------------
 
-* This release is compatible with previous release
-* Async API was removed (dead code, not used by any odl projects)
-* No configuration changes made
+* Is this release compatible with the previous release?
+
+  * Functionality is fully backwards compatible.
+
+* Any API changes?
+
+  * New APIs added for system ready
+  * New APIs added for jobcoordinator
+
+* Any configuration changes?
+
+  * No
 
 Bugs Fixed
 ----------
