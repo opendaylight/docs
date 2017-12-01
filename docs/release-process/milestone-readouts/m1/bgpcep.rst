@@ -2,46 +2,25 @@
 BGP PCEP LS
 ===========
 
-1. Project PTL:
+1. Project PTL: Claudio David Gasparini, claudio.gasparini@pantheon.tech, cgasparini
 
-   - Claudio David Gasparini
-   - claudio.gasparini@pantheon.tech
-   - cgasparini
    - Yes, I have reviewed the PTL Requirements
 
-2. Project Contact:
+2. Project Contact: Claudio David Gasparini, claudio.gasparini@pantheon.tech, cgasparini
 
-   - Claudio David Gasparini
-   - claudio.gasparini@pantheon.tech
-   - cgasparini
+3. Test Contact: Vratko Polak, vrpolak@cisco.com, vrpolak
 
-3. Test Contact:
-
-   - Vratko Polak
-   - vrpolak@cisco.com
-   - vrpolak
-
-4. Documentation Contact
-
-   - Claudio David Gasparini
-   - claudio.gasparini@pantheon.tech
-   - cgasparini
+4. Documentation Contact: Claudio David Gasparini, claudio.gasparini@pantheon.tech, cgasparini
 
 5. Does your project have any updates on any previously-incomplete items from
-   prior milestone readouts? (Yes/No)
-
-   - No
+   prior milestone readouts? No
 
 6. Were project-specific deliverables planned for this milestone delivered
-   successfully? (No Deliverables/Yes/No)
+   successfully? No Deliverables
 
-   - No Deliverables
+7. Does your project have any special needs in CI Infrastructure? No
 
-7. Does your project have any special needs in CI Infrastructure?
-
-   - No
-
-8. Is your project release plan finalized?
+8. Is your project release plan finalized? No
 
    - Eta is by m2 status
 
@@ -55,15 +34,9 @@ BGP PCEP LS
      for each API? Yes
 
 10. Have all project dependencies requests on other projects' release plans
-    been acknowledged and documented by upstream projects?
+    been acknowledged and documented by upstream projects? Yes
 
-    - Yes
-
-11. Will your project have top-level features not requiring system test?
-
-    - No
+11. Will your project have top-level features not requiring system test? No
 
 12. Will your project use the OpenDaylight CI infrastructure for testing
-    top-level features requiring system test?
-
-    - Yes
+    top-level features requiring system test? Yes
