@@ -2,72 +2,43 @@
 OpenFlow Plugin
 ===============
 
-1. Project PTL:
+1. Project PTL: Abhijit Kumbhare, abhijitkoss@gmail.com, abhijitkumbhare
+   - Yes, I have reviewed the PTL Requirements [1]_.
 
-   - Abhijit Kumbhare
-   - abhijitkoss@gmail.com
-   - abhijitkumbhare
-   - I have reviewed the PTL Requirements [1]_
+2. Project Contact: Abhijit Kumbhare, abhijitkoss@gmail.com, abhijitkumbhare
 
-2. Project Contact:
+3. Test Contact: Luis Gomez, ecelgp@gmail.com, LuisGomez
 
-   - Abhijit Kumbhare
-   - abhijitkoss@gmail.com
-   - abhijitkumbhare
-
-3. Test Contact:
-
-   - Luis Gomez
-   - ecelgp@gmail.com
-   - LuisGomez
-
-4. Documentation Contact
-
-   - Shuva Jyoti Kar
-   - shuva.jyoti.kar.87@gmail.com
-   - shuva
+4. Documentation Contact: Shuva Jyoti Kar, shuva.jyoti.kar.87@gmail.com, shuva
 
 5. Does your project have any updates on any previously-incomplete items from
-   prior milestone readouts?
-
-   - No
+   prior milestone readouts? No
 
 6. Were project-specific deliverables planned for this milestone delivered
-   successfully?
+   successfully? Yes
 
-   - Yes
+7. Does your project have any special needs in CI Infrastructure [2]_? No
 
-7. Does your project have any special needs in CI Infrastructure [2]_?
+8. Is your project release plan finalized? Yes
 
-   - No
+   - `Release plan <https://wiki.opendaylight.org/view/OpenDaylight_OpenFlow_Plugin:Oxygen_Release_Plan>`_
 
-8. Is your project release plan finalized?
+9. Do you have all APIs intended to be externally consumable listed? Yes
 
-   Yes - (subject to reasonable changes)
-   Link to final release plan wiki page: https://wiki.opendaylight.org/view/OpenDaylight_OpenFlow_Plugin:Oxygen_Release_Plan
-
-9. Do you have all APIs intended to be externally consumable listed? Yes - no change
-
-   - Does each API have a useful short name? Yes - no change
-   - Are the Java interface and/or YANG files listed for each API? Yes - no change
+   - Does each API have a useful short name? Yes
+   - Are the Java interface and/or YANG files listed for each API? Yes
    - Are they labeled as tentative, provisional, or stable as appropriate for
-     each API? Yes - no change
+     each API? Yes
    - Do you call out the OSGi bundles and/or Karaf features providing the API
-     for each API? Yes - no change
+     for each API? Yes
 
 10. Have all project dependencies requests on other projects' release plans
-    been acknowledged and documented by upstream projects?
+    been acknowledged and documented by upstream projects? Yes
 
-    Yes. Depends on some offset 0 projects like ODL parent, controller, MD-SAL, etc. These have been acknowledged previous releases - no new dependencies & hence do not need to be acknowledged.
-
-11. Will your project have top-level features not requiring system test?
-
-    - No
+11. Will your project have top-level features not requiring system test? No
 
 12. Will your project use the OpenDaylight CI infrastructure for testing
-    top-level features requiring system test?
-
-    - Yes
+    top-level features requiring system test? Yes
 
 **FOR NEW PROJECTS ONLY**
 
