@@ -2,72 +2,44 @@
 VTN
 ===
 
-1. Project PTL:
+1. Project PTL: Hideyuki Tai, h-tai@cd.jp.nec.com, hideyuki
 
-   - Hideyuki Tai
-   - h-tai@cd.jp.nec.com
-   - hideyuki
-   - I have reviewed the PTL Requirements [1]_
+   - Yes, I have reviewed the PTL Requirements [1]_.
 
-2. Project Contact:
+2. Project Contact: Venkatrangan Govindarajan, venkatrangang@hcl.com, gvrangan
 
-   - Venkatrangan Govindarajan
-   - venkatrangang@hcl.com
-   - gvrangan
+3. Test Contact: Venkatrangan Govindarajan, venkatrangang@hcl.com, gvrangan
 
-3. Test Contact:
-
-   - Venkatrangan Govindarajan
-   - venkatrangang@hcl.com
-   - gvrangan
-
-4. Documentation Contact
-
-   - Venkatrangan Govindarajan
-   - venkatrangang@hcl.com
-   - gvrangan
+4. Documentation Contact: Venkatrangan Govindarajan, venkatrangang@hcl.com, gvrangan
 
 5. Does your project have any updates on any previously-incomplete items from
-   prior milestone readouts?
-
-   - No
+   prior milestone readouts? No
 
 6. Were project-specific deliverables planned for this milestone delivered
-   successfully?
+   successfully? No Deliverables
 
-   - No Deliverables
+7. Does your project have any special needs in CI Infrastructure [2]_? No
 
-7. Does your project have any special needs in CI Infrastructure [2]_?
+8. Is your project release plan finalized? Yes
 
-   - No
+   - `Release plan <https://wiki.opendaylight.org/view/VTN:Oxygen_Release_Plan>`_
 
-8. Is your project release plan finalized?
+9. Do you have all APIs intended to be externally consumable listed?
 
-   - Yes, https://wiki.opendaylight.org/view/VTN:Oxygen_Release_Plan
-
-9. Do you have all APIs intended to be externally consumable listed? - Yes
-
-   - Does each API have a useful short name? - Yes
-   - Are the Java interface and/or YANG files listed for each API? - Yes
+   - Does each API have a useful short name? - *Yes*
+   - Are the Java interface and/or YANG files listed for each API? - *Yes*
    - Are they labeled as tentative, provisional, or stable as appropriate for
-     each API? - No
+     each API? - *No*
    - Do you call out the OSGi bundles and/or Karaf features providing the API
-     for each API? - No
+     for each API? - *No*
 
 10. Have all project dependencies requests on other projects' release plans
-    been acknowledged and documented by upstream projects?
+    been acknowledged and documented by upstream projects? Yes
 
-    - Dependencies: Controller, MD-SAL, YANG Tools, OpenFlow Plugin, OVSDB, Neutron Northbound
-    - Yes, Dependent projects have been acknowledged in previous releases.
-
-11. Will your project have top-level features not requiring system test?
-
-    - No
+11. Will your project have top-level features not requiring system test? No
 
 12. Will your project use the OpenDaylight CI infrastructure for testing
-    top-level features requiring system test?
-
-    - Yes
+    top-level features requiring system test? Yes
 
 .. [1] Be sure to read the responsibilities of being a project lead under
        Leadership & Communication in the Requirements for Participation section
