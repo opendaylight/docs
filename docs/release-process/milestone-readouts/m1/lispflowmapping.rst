@@ -2,36 +2,17 @@
 LISP Flow Mapping
 =================
 
-1. Project PTL:
+1. Project PTL: Vina Ermagan, vermagan@cisco.com, vina_ermagan
 
-   - Vina Ermagan
-   - vermagan@cisco.com
-   - vina_ermagan
    - Yes. I have reviewed the PTL Requirements.
 
-2. Project Contact:
+2. Project Contact: Vina Ermagan, vermagan@cisco.com, vina_ermagan
 
-   - Vina Ermagan
-   - vermagan@cisco.com
-   - vina_ermagan
+   - and Lori Jakab, lojakab@cisco.com, lori
 
-   and
+3. Test Contact: Lori Jakab, lojakab@cisco.com, lori
 
-   - Lori Jakab
-   - lojakab@cisco.com
-   - lori
-
-3. Test Contact:
-
-   - Lori Jakab
-   - lojakab@cisco.com
-   - lori
-
-4. Documentation Contact
-
-   - Vina Ermagan
-   - vermagan@cisco.com
-   - vina_ermagan
+4. Documentation Contact: Vina Ermagan, vermagan@cisco.com, vina_ermagan
 
 5. Does your project have any updates on any previously-incomplete items from
    prior milestone readouts? No
