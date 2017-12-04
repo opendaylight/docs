@@ -2,48 +2,27 @@
 TSDR
 ====
 
-1. Project PTL:
+1. Project PTL: YuLing Chen, yulingchen54@gmail.com, yuling_c
 
-   - YuLing Chen
-   - yulingchen54@gmail.com
-   - yuling_c
-   - Yes, I have reviewed the PTL Requirements [1]_
+   - Yes, I have reviewed the PTL Requirements [1]_.
 
-2. Project Contact:
+2. Project Contact: YuLing Chen, yulingchen54@gmail.com, yuling_c
 
-   - YuLing Chen
-   - yulingchen54@gmail.com
-   - yuling_c
+3. Test Contact: YuLing Chen, yulingchen54@gmail.com, yuling_c
 
-3. Test Contact:
-
-   - YuLing Chen
-   - yulingchen54@gmail.com
-   - yuling_c
-
-4. Documentation Contact
-
-   - YuLing Chen
-   - yulingchen54@gmail.com
-   - yuling_c
+4. Documentation Contact: YuLing Chen, yulingchen54@gmail.com, yuling_c
 
 5. Does your project have any updates on any previously-incomplete items from
-   prior milestone readouts?
-
-   - No
+   prior milestone readouts? No
 
 6. Were project-specific deliverables planned for this milestone delivered
-   successfully?
+   successfully? No Deliverables
 
-   - No Deliverables
+7. Does your project have any special needs in CI Infrastructure [2]_? No
 
-7. Does your project have any special needs in CI Infrastructure [2]_?
+8. Is your project release plan finalized? Yes
 
-   - No
-
-8. Is your project release plan finalized?
-
-   - Yes, available here: `Release plan <https://wiki.opendaylight.org/view/TSDR:TSDR_Oxygen_Release_Plan>`
+   - `Release plan <https://wiki.opendaylight.org/view/TSDR:TSDR_Oxygen_Release_Plan>`_
 
 9. Do you have all APIs intended to be externally consumable listed?
 
@@ -63,14 +42,10 @@ TSDR
     - yangtools, Implicit acknowledgement
 
 
-11. Will your project have top-level features not requiring system test?
-
-    - No
+11. Will your project have top-level features not requiring system test? No
 
 12. Will your project use the OpenDaylight CI infrastructure for testing
-    top-level features requiring system test?
-
-    - Yes
+    top-level features requiring system test? Yes
 
 .. [1] Be sure to read the responsibilities of being a project lead under
        Leadership & Communication in the Requirements for Participation section

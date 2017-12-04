@@ -2,48 +2,27 @@
 Unimgr
 ======
 
-1. Project PTL:
+1. Project PTL: Donald Hunter, donaldh@cisco.com, donaldh
 
-   - Donald Hunter
-   - donaldh@cisco.com
-   - IRC donaldh
-   - I have reviewed the PTL Requirements [1]_
+   - Yes, I have reviewed the PTL Requirements [1]_.
 
-2. Project Contact:
+2. Project Contact: Donald Hunter, donaldh@cisco.com, donaldh
 
-   - Donald Hunter
-   - donaldh@cisco.com
-   - IRC donaldh
+3. Test Contact: Bartosz Michalik, bartosz.michalik@amartus.com
 
-3. Test Contact:
-
-   - Bartosz Michalik
-   - bartosz.michalik@amartus.com
-
-4. Documentation Contact
-
-   - Charles Eckel
-   - eckelcu@cisco.com
+4. Documentation Contact: Charles Eckel, eckelcu@cisco.com
 
 5. Does your project have any updates on any previously-incomplete items from
-   prior milestone readouts? (Yes/No)
-
-   - No
+   prior milestone readouts? No
 
 6. Were project-specific deliverables planned for this milestone delivered
-   successfully? (No Deliverables/Yes/No)
+   successfully? No Deliverables
 
-   - No Deliverables
+7. Does your project have any special needs in CI Infrastructure [2]_? No
 
-7. Does your project have any special needs in CI Infrastructure [2]_? (Yes/No)
+8. Is your project release plan finalized? No
 
-   - No
-
-8. Is your project release plan finalized?  (Yes/No)
-
-   - No, M2
-
-9. Do you have all APIs intended to be externally consumable listed? (Yes/No/Not Applicable)
+9. Do you have all APIs intended to be externally consumable listed?
 
    - Does each API have a useful short name? *Yes*
    - Are the Java interface and/or YANG files listed for each API? *Yes*
@@ -53,7 +32,7 @@ Unimgr
      for each API? *Yes*
 
 10. Have all project dependencies requests on other projects' release plans
-    been acknowledged and documented by upstream projects?  (Yes/No)
+    been acknowledged and documented by upstream projects?
 
     - dlux, not acknowledged
     - genius, not acknowledged
@@ -62,15 +41,10 @@ Unimgr
     - ovsdb, not acknowledged
     - vpnservice, not acknowledged
 
-11. Will your project have top-level features not requiring system test?
-    (Yes/No)
-
-    - No
+11. Will your project have top-level features not requiring system test? No
 
 12. Will your project use the OpenDaylight CI infrastructure for testing
-    top-level features requiring system test? (Yes/No)
-
-    - Yes
+    top-level features requiring system test? Yes
 
 
 .. [1] Be sure to read the responsibilities of being a project lead under
