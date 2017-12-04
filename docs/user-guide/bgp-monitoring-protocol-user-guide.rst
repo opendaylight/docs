@@ -536,7 +536,7 @@ with optional input parameters:
    --local_address <address> (optional, default 127.0.0.1)
       The IPv4 address where BMP mock is bind to.
 
-   -ra <IP_ADDRESS:PORT,...>, --remoteAddress <IP_ADDRESS:PORT,...>
+   -ra <IP_ADDRESS:PORT,...>, --remote_address <IP_ADDRESS:PORT,...>
       A list of IP addresses of BMP monitoring station, by default 127.0.0.1:12345.
 
    --passive (optional, not present by default)
