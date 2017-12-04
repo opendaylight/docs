@@ -2,72 +2,44 @@
 SNMP4SDN
 ========
 
-1. Project PTL:
+1. Project PTL: Yi-Ling (Christine) Hsieh, ylhsieh@itri.org.tw, ChristineH
 
-   - Yi-Ling (Christine) Hsieh
-   - ylhsieh@itri.org.tw
-   - ChristineH
    - Yes, I have reviewed the PTL Requirements
 
-2. Project Contact:
+2. Project Contact: Yi-Ling (Christine) Hsieh, ylhsieh@itri.org.tw, ChristineH
 
-   - Yi-Ling (Christine) Hsieh
-   - ylhsieh@itri.org.tw
-   - ChristineH
+3. Test Contact: Yi-Ling (Christine) Hsieh, ylhsieh@itri.org.tw, ChristineH
 
-3. Test Contact:
-
-   - Yi-Ling (Christine) Hsieh
-   - ylhsieh@itri.org.tw
-   - ChristineH
-
-4. Documentation Contact
-
-   - Yi-Ling (Christine) Hsieh
-   - ylhsieh@itri.org.tw
-   - ChristineH
+4. Documentation Contact: Yi-Ling (Christine) Hsieh, ylhsieh@itri.org.tw, ChristineH
 
 5. Does your project have any updates on any previously-incomplete items from
-   prior milestone readouts? (Yes/No)
-
-   - No
+   prior milestone readouts? No
 
 6. Were project-specific deliverables planned for this milestone delivered
-   successfully? (No Deliverables/Yes/No)
+   successfully? No Deliverables
 
-   - No Deliverables
+7. Does your project have any special needs in CI Infrastructure [2]_? No
 
-7. Does your project have any special needs in CI Infrastructure [2]_? (Yes/No)
+8. Is your project release plan finalized? Yes
 
-   - No
+   - `Release plan <https://wiki.opendaylight.org/view/SNMP4SDN:Release_Plan_Oxygen>`_
 
-8. Is your project release plan finalized?  (Yes/No)
+9. Do you have all APIs intended to be externally consumable listed?
 
-   - Yes, https://wiki.opendaylight.org/view/SNMP4SDN:Release_Plan_Oxygen
-
-9. Do you have all APIs intended to be externally consumable listed? (Yes/No/Not Applicable)
-
-   - Does each API have a useful short name? Yes
-   - Are the Java interface and/or YANG files listed for each API? Yes
+   - Does each API have a useful short name? *Yes*
+   - Are the Java interface and/or YANG files listed for each API? *Yes*
    - Are they labeled as tentative, provisional, or stable as appropriate for
-     each API? Yes
+     each API? *Yes*
    - Do you call out the OSGi bundles and/or Karaf features providing the API
-     for each API? Yes
+     for each API? *Yes*
 
 10. Have all project dependencies requests on other projects' release plans
-    been acknowledged and documented by upstream projects?  (Yes/No)
+    been acknowledged and documented by upstream projects? Yes
 
-    - Yes
-
-11. Will your project have top-level features not requiring system test?
-    (Yes/No)
-
-    - Yes
+11. Will your project have top-level features not requiring system test? Yes
 
 12. Will your project use the OpenDaylight CI infrastructure for testing
-    top-level features requiring system test? (Yes/No)
-
-    - No
+    top-level features requiring system test? No
 
 
 .. [1] Be sure to read the responsibilities of being a project lead under
