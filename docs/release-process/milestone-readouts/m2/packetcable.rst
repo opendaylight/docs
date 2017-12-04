@@ -1,6 +1,6 @@
-======================
-Project - Packetcable
-======================
+===========
+Packetcable
+===========
 
 Please provide updates on any previously-incomplete items from prior milestone
 readouts.
@@ -75,4 +75,3 @@ Project Specific:
 
 3. Do you acknowledge the changes to the RC Blocking Bug Policy?
    Yes
-
