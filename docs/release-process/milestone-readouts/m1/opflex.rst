@@ -2,72 +2,39 @@
 OpFlex
 ======
 
-1. Project PTL:
+1. Project PTL: Rob Adams, readams@readams.net, readams
 
-   - Rob Adams
-   - readams@readams.net
-   - readams
-   - I have reviewed the PTL Requirements
+   - Yes, I have reviewed the PTL Requirements.
 
-2. Project Contact:
+2. Project Contact: Rob Adams, readams@readams.net, readams
 
-   - Rob Adams
-   - readams@readams.net
-   - readams
+3. Test Contact: Rob Adams, readams@readams.net, readams
 
-3. Test Contact:
-
-   - Rob Adams
-   - readams@readams.net
-   - readams
-
-4. Documentation Contact
-
-   - Rob Adams
-   - readams@readams.net
-   - readams
+4. Documentation Contact: Rob Adams, readams@readams.net, readams
 
 5. Does your project have any updates on any previously-incomplete items from
-   prior milestone readouts?
-
-   - No
+   prior milestone readouts? No
 
 6. Were project-specific deliverables planned for this milestone delivered
-   successfully?
+   successfully? No deliverables
 
-   - No deliverables
+7. Does your project have any special needs in CI Infrastructure ? No
 
-7. Does your project have any special needs in CI Infrastructure ? (Yes/No)
+8. Is your project release plan finalized? No
 
-   - No
+9. Do you have all APIs intended to be externally consumable listed?
 
-8. Is your project release plan finalized?  (Yes/No)
-
-   - No - I seem to have lost the ability to edit the wiki.  This will
-     be a very minor release with incremental changes and/or bug fixes.
-
-9. Do you have all APIs intended to be externally consumable listed? (Yes/No/Not Applicable)
-
-   - Does each API have a useful short name? NA
-   - Are the Java interface and/or YANG files listed for each API? NA
+   - Does each API have a useful short name? *Not Applicable*
+   - Are the Java interface and/or YANG files listed for each API? *Not Applicable*
    - Are they labeled as tentative, provisional, or stable as appropriate for
-     each API? NA
+     each API? *Not Applicable*
    - Do you call out the OSGi bundles and/or Karaf features providing the API
-     for each API? NA
+     for each API? *Not Applicable*
 
 10. Have all project dependencies requests on other projects' release plans
-    been acknowledged and documented by upstream projects?  (Yes/No)
+    been acknowledged and documented by upstream projects?  Yes
 
-    - None
-
-11. Will your project have top-level features not requiring system test?
-    (Yes/No)
-
-    - NA
+11. Will your project have top-level features not requiring system test? No
 
 12. Will your project use the OpenDaylight CI infrastructure for testing
-    top-level features requiring system test? (Yes/No)
-
-    - We have no top-level Karaf features, but the code is unit tested
-      in ODL infra and integration tested in our automated lab
-      infrastructure for integration with Kubernetes, OpenStack and ACI.
+    top-level features requiring system test? Yes
