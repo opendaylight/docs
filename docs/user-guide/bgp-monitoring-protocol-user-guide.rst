@@ -503,8 +503,8 @@ with optional input parameters:
    --local_address <address> (optional, default 127.0.0.1)
       The IPv4 address where BMP mock is bind to.
 
-   --remote_address <address:port> (optional, default 127.0.0.1:12345)
-      The remote IPv4 Address and port number of BMP monitoring station.
+   --remote_address <IP_ADDRESS:PORT,...>, -ra <IP_ADDRESS:PORT,...> 
+      A list of IP addresses of BMP monitoring station, by default 127.0.0.1:12345
 
    --passive (optional, not present by default)
       This flags enables passive mode for simulated routers.
