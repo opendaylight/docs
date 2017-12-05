@@ -1,0 +1,351 @@
+Milestone 0 Status
+==================
+
+.. list-table:: Milestone 0 Status
+   :widths: auto
+   :header-rows: 1
+
+   * - Project ID
+     - Offset
+     - Category
+     - Labels
+     - PTL Name
+     - PTL Email
+     - PTL IRC
+     - Committers Updated
+   * - aaa
+     - Offset 0
+     - Kernel
+     - Authentication, Authorization and Accounting, AAA
+     - Ryan Goulding
+     - ryandgoulding@gmail.com
+     - rgoulding
+     - No, working on this.
+   * - alto
+     - Offset 2
+     - Service
+     - ALTO, network abstraction, network optimization
+     - Kai Gao
+     - gaok12@mails.tsinghua.edu.cn
+     - emiapwil
+     - Yes
+   * - bgppcep
+     - Offset 1
+     - Protocol
+     - bgp, bmp, pcep, bgp pcep ls
+     - Claudio D. Gasparini
+     - claudio.gasparini@pantheon.tech
+     - cgasparini
+     - Yes
+   * - bier
+     - Offset 2
+     - Service
+     - BIER, multicast
+     - Quan Xiong
+     - xiong.quan@zte.com.cn
+     - xiong.quan
+     - Yes
+   * - coe
+     - Offset 2
+     - Application
+     - Kubernetes integration, Kuryr, Containers
+     - Prem Sankar G
+     - prem.sankar.g@ericsson.com
+     - premsankar
+     - Yes
+   * - controller
+     - Offset 0
+     - Kernel
+     - Controller
+     - Tom Pantelis
+     - tompantelis@gmail.com
+     - tpanteli
+     - Yes
+   * - daexim
+     - Offset 2
+     - Application
+     - Data Export Import, daexim
+     - Shaleen Saxena
+     - shaleen.external@gmail.com
+     - ssaxena
+     - Yes
+   * - dluxapps
+     - Offset 1
+     - Application
+     - ui, gui, angular, javascript, frontend
+     - Daniel Malachovsky
+     - dmalacho@cisco.com
+     - dmalachovsky
+     - Yes
+   * - dlux
+     - Offset 1
+     - Application
+     - ui, gui, angular, javascript, frontend
+     - Daniel Malachovsky
+     - dmalacho@cisco.com
+     - dmalachovsky
+     - Yes
+   * - eman
+     - Offset 2
+     - Application
+     - energy management
+     - Frank Sandoval
+     - francisrsandoval@gmail.com
+     - francisrsandoval
+     - Yes
+   * - faas
+     - Offset 2
+     - Application
+     - Fabric, Logic Network Service
+     - Xingjun Chu
+     - Xingjun.Chu@huawei.com
+     - xingjun
+     - Yes
+   * - genius
+     - Offset 1
+     - Protocol
+     - Network Interfaces Utilities Services
+     - Vivek Srivastava
+     - vivek.v.srivastava@ericsson.com
+     - vivek.v.srivastava
+     - Yes
+   * - groupbasedpolicy
+     - Offset 2
+     - Application
+     - groupbasedpolicy, gbp
+     - Michal Cmarada
+     - mcmarada@cisco.com
+     - michal-cmarada
+     - Yes
+   * - honeycomb-vbd
+     - Offset 2
+     - Application
+     - honeycomb/vbd, vbd
+     - Michal Cmarada
+     - mcmarada@cisco.com
+     - michal-cmarada
+     - Yes
+   * - infrautils
+     - Offset 0
+     - Kernel
+     - infrastructure, utility
+     - Michael Vorburger
+     - vorburger@redhat.com
+     - vorburger
+     - Yes
+   * - integration-distribution
+     - Offset 2
+     - Support
+     - distribution, karaf
+     - Vratko Polak
+     - vrpolak@cisco.com
+     -
+     - Yes
+   * - jsonrpc
+     - Offset 2
+     - Application
+     - json-rpc, jsonrpc
+     - Anton Ivanov
+     - anton.ivanov@kot-begemot.co.uk
+     - aivanov
+     - Yes
+   * - l2switch
+     - Offset 1
+     - Services
+     - hosttracker, arphandler, packethandler, mac learning, openflow
+     - Sai MarapaReddy
+     - sai.marapareddy@gmail.com
+     - sai_marapareddy
+     - Yes
+   * - lispflowmapping
+     - Offset 1
+     - Protocol
+     - LISP, mapping service, overlay control pane, VXLAN-GPE
+     - Vina Ermagan
+     - vermagan@cisco.com
+     - vina_ermagan
+     - No
+   * - mdsal
+     - Offset 0
+     - Kernel
+     - mdsal
+     - Robert Varga
+     - nite@hq.sk
+     - rovarga
+     - Yes
+   * - nemo
+     - Offset 2
+     - Application
+     - network modeling
+     - Tianran Zhou
+     - zhoutianran@huawei.com
+     - tianran
+     - Yes
+   * - netconf
+     - Offset 0
+     - Kernel
+     - netconf, restconf
+     - Tomas Cere
+     - tcere@cisco.com
+     - tcere
+     - Yes
+   * - netvirt
+     - Offset 2
+     - Application
+     - network virtualization, openstack
+     - Sam Hague
+     - shague@redhat.com
+     - shague
+     - Yes
+   * - neutron-northbound
+     - Offset 1
+     - Application
+     - openstack, neutron, networking-odl, northbound, network virtualization
+     - Isaku Yamahata
+     - isaku.yamahata@gmail.com
+     - yamahata
+     - Yes
+   * - nic
+     - Offset 2
+     - Application
+     - network intent composition
+     - Yrineu Rodrigues
+     - yrineu.rodrigues@serro.com
+     - yrineu_rodrigues
+     - Yes
+   * - ocpplugin
+     - Offset 1
+     - Protocol
+     - OCP plugin, OCP protocol library
+     - Chinning Lai
+     - marko.lai@gmail.com
+     - Chinning
+     - Yes
+   * - odlparent
+     - Offset 0
+     - Kernel
+     - parent POMs, SingleFeatureTest, Karaf integration
+     - Stephen Kitt
+     - skitt@redhat.com
+     - skitt
+     - Yes
+   * - of-config
+     - Offset 1
+     - Protocol
+     - network modeling, Southbound Plugin
+     - Wei Meng
+     - meng.wei2@zte.com.cn
+     - valley
+     - Yes
+   * - openflowplugin
+     - Offset 1
+     - Protocol
+     - OpenFlow Plugin
+     - Abhijit Kumbhare
+     - abhijitkoss@gmail.com
+     - abhijitkumbhare
+     - Yes
+   * - opflex
+     - Offset 2
+     - Application
+     - virtual networking
+     - Rob Adams
+     - readams@readams.net
+     - readams
+     - Yes
+   * - ovsdb
+     - Offset 1
+     - Protocol
+     - OVSDB Southbound Plugin, OVSDB Hardware, vTep Plugin
+     - Anil Vishnoi
+     - vishnoianil@gmail.com
+     - vishnoianil
+     - Yes
+   * - p4plugin
+     - Offset 1
+     - Protocol
+     - P4, P4Runtime, gRPC
+     - Ding Rui
+     - ding.rui@zte.com.cn
+     - ding.rui
+     - Yes
+   * - packetcable
+     - Offset 2
+     - Application
+     - cable telephony provisioning, COPS, CMTS
+     - Steve Pisarski
+     - s.pisarski@cablelabs.com
+     - spisarski
+     - Yes
+   * - sfc
+     - Offset 2
+     - Application
+     - Service Function Chaining, SFC
+     - Brady Johnson
+     - bjohnson@inocybe.com
+     - bjohnson
+     - Yes
+   * - snmp4sdn
+     - Offset 1
+     - Protocol
+     - southbound plugin, commodify Ethernet switch, by SNMP
+     - Christine Hsieh
+     - ylhsieh@itri.org.tw
+     - ChristineH
+     - Yes
+   * - snmp
+     - Offset 1
+     - Protocol
+     - SNMP
+     - Ryan Goulding
+     - ryandgoulding@gmail.com
+     - rgoulding
+     - No, working on this.
+   * - sxp
+     - Offset 1
+     - Application
+     - SXP
+     - Michal Rehak
+     - mirehak@cisco.com
+     - michal_rehak
+     - Yes
+   * - tsdr
+     - Offset 2
+     - Application
+     - Time Series Data Repository
+     - YuLing Chen
+     - yulingchen54@gmail.com
+     - yulingchen
+     - No, being updated.
+   * - unimgr
+     - Offset 2
+     - Application
+     - MEF, Eline, netconf, T-API, connectivity services
+     - Donald Hunter
+     - donaldh@cisco.com
+     - donaldh
+     - Yes
+   * - usc
+     - Offset 1
+     - Protocol
+     - unified secure channel
+     - An Ho
+     - an.ho@huawei.com
+     - anipbu
+     - Yes
+   * - vtn
+     - Offset 2
+     - Application
+     - vtn, virtual tenant network
+     - Hideyuki Tai
+     - h-tai@cd.jp.nec.com
+     - hideyuki
+     - Yes
+   * - yangtools
+     - Offset 0
+     - Kernel
+     - YANG
+     - Robert Varga
+     - nite@hq.sk
+     - rovarga
+     - No
