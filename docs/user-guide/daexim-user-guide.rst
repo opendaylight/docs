@@ -190,3 +190,18 @@ URL:
 
 Payload:
   No payload
+
+
+Import from a file automatically on boot
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Any files places inside the *daexim/boot* subdirectory are automatically
+imported on start-up.  The import performed is the exact same as the one by explicit
+**immediate-import** RPC imports from files in *daexim/* it just happens automatically.
+
+This will happen AFTER all other ODL OSGi bundles have successfully started.  The INFO log and
+**status-import** will accurately reflect when this is planned (via *boot-import-scheduled*)
+and ongoing (via *boot-import-in-progress* and possibly *boot-import-failed*).
+
+Upon completion or failure of this boot import, the files inside the *daexim/boot* directory
+are renamed to *.imported* in order to avoid another import on the next start.
