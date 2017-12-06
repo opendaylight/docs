@@ -153,8 +153,8 @@ Payload:
   No payload
 
 
-Import from a file
-^^^^^^^^^^^^^^^^^^
+Importing from a file
+^^^^^^^^^^^^^^^^^^^^^
 
 The **immediate-import** RPC imports data from files already present in
 the file system.
@@ -190,3 +190,18 @@ URL:
 
 Payload:
   No payload
+
+
+Importing from a file automatically on boot
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Any files placed inside the *daexim/boot* subdirectory are automatically
+imported on start-up.  The import performed is the exact same as the one by explicit
+**immediate-import** RPC, which imports from files *daexim/*, except it happens automatically.
+
+The import on boot happens AFTER all other ODL OSGi bundles have successfully started.  The INFO log and
+**status import** automatically reflect when the boot import is planned (via *boot-import-scheduled*),
+when the boot import is ongoing (via *boot-import-in-progress*), and when the boot import fails (via *boot-import-failed*).
+
+Upon completion or failure of this boot import, the files inside the *daexim/boot* directory
+are renamed to *.imported* in order to avoid another import on the next start.
