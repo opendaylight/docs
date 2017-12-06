@@ -1,9 +1,19 @@
+.. Instructions
+..    1. Replace Project Name with your actual project name, ensure you have
+..       the same number of ='s as the length of your project in the line before
+..       and the line after.
+..    2. Remove the (Yes/No) answer at the end of each question with your actual
+..       response: Yes or No
+..       Note: For Question 5, the response could be: No Deliverables
+..    3. For detailed information on each question, use a sub list with a -
+..       in front that aligns with the text above and ensure you have a blank
+..
 ============
 Project Name
 ============
 
-1. Please provide updates on any previously-incomplete items from prior
-   milestone readouts.
+1. Do you have any previously-incomplete items from prior milestone
+   readouts? (Yes/No)
 
 2. Has your project achieved API freeze such that all externally accessible
    Stable or Provisional APIs will not be modified after now? (Yes/No)
@@ -22,8 +32,7 @@ Project Name
 5. Were project-specific deliverables planned for this milestone delivered
    successfully? (No Deliverables/Yes/No)
 
-6. Have you started automated system testing for your top-level features.
-   (Yes/No)
+6. Have you started automated system testing for your top-level features? (Yes/No)
 
    - (If yes, link to test report)
    - (If no, explain why)
@@ -33,7 +42,7 @@ Project Name
    - (If yes, list of ports used)
    - (If yes, have you updated the wiki [3]_ with all ports used? Yes/No)
 
-8. Does your project build successful in Autorelease?
+8. Does your project build successfully in Autorelease? (Yes/No)
 
    - (If yes, link to successful autorelease job [4]_)
    - (If not, explain why)
