@@ -7,7 +7,7 @@ Data Export/Import User Guide
 Overview
 --------
 
-The Data Export/Import is known as "daexim" (pronounced 'deck-sim') for
+Data Export/Import is known as "daexim" (pronounced 'deck-sim') for
 short. The intended audience are administrators responsible for
 operations of OpenDaylight.
 
@@ -66,19 +66,23 @@ The following tutorials provide examples of REST API that are supported
 by the Data Export/Import feature.  As for all ODL RESTCONF calls, the
 following are the common setting for REST calls:
 
-* Headers:
-  * Content-Type: application/json
-  * Accept: application/json
-  * Authentication: admin:admin
-* Method: HTTP POST
-* <controller-ip> : Host (or IP) where OpenDaylight controller is
+* **Headers:**
+
+  * **Content-Type:** ``application/json``
+
+  * **Accept:** ``application/json``
+
+  * **Authentication:** ``admin:admin``
+  
+* **Method:** ``HTTP POST``
+* <controller-ip>: Host (or IP) where OpenDaylight controller is
   running, e.g. localhost
-* <restconf-port> : TCP port where RESTCONF has been configured to
+* <restconf-port>: TCP port where RESTCONF has been configured to
   listen, e.g. 8181 by default
 
 The files created by export are placed in a subdirectory called
-*daexim/* in the installation directory of OpenDaylight. Similarly files
-to import must be placed in this *daexim/* subdirectory.
+``daexim/`` in the installation directory of OpenDaylight. Similarly files
+to import must be placed in this ``daexim/`` subdirectory.
 
 
 
@@ -86,17 +90,16 @@ Scheduling Export
 ^^^^^^^^^^^^^^^^^
 
 The **schedule-export** RPC exports the data at a specific time in the
-future. The *run-at* time may be specified as an absolute UTC time or a
+future. The ``run-at`` time may be specified as an absolute UTC time or a
 relative offset from the server clock. Attempts to schedule an export in
 the past times are rejected. Each file has a JSON-encoded object that
 contains module data from the corresponding data store.  Module data is
 not included in the object for any module identified in the exclusion
 list. Each file contains at least one empty JSON object.
 
-URL:
-  http://<controller-ip>:<restconf-port>/restconf/operations/data-export-import:schedule-export
+**URL:** ``http://<controller-ip>:<restconf-port>/restconf/operations/data-export-import:schedule-export``
 
-Payload:
+**Payload:**
 
 .. code:: json
 
@@ -112,23 +115,21 @@ Checking Export Status
 ^^^^^^^^^^^^^^^^^^^^^^
 
 The **status-export** RPC checks the status of the exported data. If the
-status has the value of *initial*, an export has not been scheduled. If
-the status has the value of *scheduled*, *run-at* indicates the time at
+status has the value of ``initial``, an export has not been scheduled. If
+the status has the value of ``scheduled``, ``run-at`` indicates the time at
 which the next export runs. If the status has the value of
-*in-progress*, *run-at* indicates the time at which the running export
-was scheduled to start. A status of *tasks* indicates activities that
-are scheduled and currently being performed. The *tasks* status serves
+``in-progress``, ``run-at`` indicates the time at which the running export
+was scheduled to start. A status of ``tasks`` indicates activities that
+are scheduled and currently being performed. The ``tasks`` status serves
 as an indicator of progress and success of the activity. If the status
-has any other value, *run-at* indicates the time at which the last
-export was scheduled to start; and *tasks* indicates the activities that
+has any other value, ``run-at`` indicates the time at which the last
+export was scheduled to start; and ``tasks`` indicates the activities that
 were undertaken. If the status for any node has failed, the
 corresponding reason for failure is listed.
 
-URL:
-  http://<controller-ip>:<restconf-port>/restconf/operations/data-export-import:status-export
+**URL:** ``http://<controller-ip>:<restconf-port>/restconf/operations/data-export-import:status-export``
 
-Payload:
-  No payload
+**Payload:** No payload
 
 
 
@@ -140,29 +141,26 @@ job. To cancel the export, the server stops the tasks that are running
 (where possible, immediately), clears any scheduled export time value,
 and releases the associated resources. This RPC may be called at any
 time, whether an export is in progress, scheduled or not yet
-scheduled. The returned result is *True* when the server has
+scheduled. The returned result is ``True`` when the server has
 successfully cleared tasks, the state, and resources. The status is
-*False* on failure to do so. Note that if no export is scheduled or
+``False`` on failure to do so. Note that if no export is scheduled or
 running, there is no tasks for the server to clear. Therefore, the
-return result is *True* because the server cannot fail.
+return result is ``True`` because the server cannot fail.
 
-URL:
-  http://<controller-ip>:<restconf-port>/restconf/operations/data-export-import:cancel-export
+**URL:** ``http://<controller-ip>:<restconf-port>/restconf/operations/data-export-import:cancel-export``
 
-Payload:
-  No payload
+**Payload:** No payload
 
 
-Import from a file
-^^^^^^^^^^^^^^^^^^
+Importing from a file
+^^^^^^^^^^^^^^^^^^^^^
 
 The **immediate-import** RPC imports data from files already present in
 the file system.
 
-URL:
-  http://<controller-ip>:<restconf-port>/restconf/operations/data-export-import:immediate-import
+**URL:** ``http://<controller-ip>:<restconf-port>/restconf/operations/data-export-import:immediate-import``
 
-Payload:
+**Payload:**
 
 .. code:: json
 
@@ -180,13 +178,30 @@ Status of Import
 ^^^^^^^^^^^^^^^^
 
 The **status-import** RPC checks the last import status. If the status
-has the value of *initial*, an import has not taken place. For all other
-values of status, *imported-at* indicates the time at which the
+has the value of ``initial``, an import has not taken place. For all other
+values of status, ``imported-at`` indicates the time at which the
 restoration has taken place. List nodes hold status about the
 restoration for each node.
 
-URL:
-  http://<controller-ip>:<restconf-port>/restconf/operations/data-export-import:status-import
+**URL:** ``http://<controller-ip>:<restconf-port>/restconf/operations/data-export-import:status-import``
 
-Payload:
-  No payload
+**Payload:** No payload
+
+
+Importing from a file automatically on boot
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Any files placed inside the ``daexim/boot`` subdirectory are automatically
+imported on start-up.  The import performed is the exact same as the one by
+explicit **immediate-import** RPC, which imports from files ``daexim/``, except
+it happens automatically.
+
+The import on boot happens after all other ODL OSGi bundles have successfully
+started.  The INFO log and **status import** automatically reflect when the boot
+import is planned (via ``boot-import-scheduled``), when the boot import is
+ongoing (via ``boot-import-in-progress``), and when the boot import fails
+(via ``boot-import-failed``).
+
+Upon completion or failure of this boot import, the files inside the
+``daexim/boot`` directory are renamed to ``.imported`` in order to avoid
+another import on the next start.
