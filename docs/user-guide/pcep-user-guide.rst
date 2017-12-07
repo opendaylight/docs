@@ -1184,7 +1184,7 @@ Following RPC example illustrates a request for the LSP re-synchronization:
 Node session statistics
 ----------------------------
 
-The PCEP statistics provides information about PCE <-> PCC session and it's stateful listener (topology-provider).
+The PCEP statistics provides information about PCE <-> PCC session and its stateful listener (topology-provider).
 
 Usage
 '''''
