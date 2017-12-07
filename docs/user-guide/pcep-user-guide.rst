@@ -918,8 +918,26 @@ Segment Identifier (SID) is encoded as a MPLS label.
 Configuration
 '''''''''''''
 This capability is enabled by default.
+
 In PCEP-SR draft version 6, SR Explicit Route Object/Record Route Object subobjects IANA code points change was proposed.
 In order to use the latest code points, a configuration should be changed in following way:
+
+**URL:** ``/restconf/config/pcep-segment-routing-app-config:pcep-segment-routing-config``
+
+**Method:** ``PUT``
+
+**Content-Type:** ``application/xml``
+
+**Request Body:**
+
+.. code-block:: xml
+   :linenos:
+
+   <pcep-segment-routing-config xmlns="urn:opendaylight:params:xml:ns:yang:controller:pcep:segment-routing-app-config">
+      <iana-sr-subobjects-type>true</iana-sr-subobjects-type>
+   </pcep-segment-routing-config>
+
+Disable Capability
 
 **URL:** ``/restconf/config/pcep-segment-routing-app-config:pcep-segment-routing-app-config``
 
@@ -933,7 +951,7 @@ In order to use the latest code points, a configuration should be changed in fol
    :linenos:
 
    <pcep-segment-routing-config xmlns="urn:opendaylight:params:xml:ns:yang:controller:pcep:segment-routing-app-config">
-      <iana-sr-subobjects-type>true</iana-sr-subobjects-type>
+      <sr-capable>false</sr-capable>
    </pcep-segment-routing-config>
 
 LSP Operations for PCEP SR
