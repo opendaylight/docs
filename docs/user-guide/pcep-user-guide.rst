@@ -134,7 +134,7 @@ The OpenDaylight PCEP implementation is supporting TCP MD5 for authentication.
 Sample configuration below shows how to set authentication password for a particular PCC.
 It is required to install ``odl-netconf-connector-ssh`` feature first.
 
-**URL:** ``/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules/module/odl-pcep-topology-provider-cfg:pcep-topology-provider/pcep-topology``
+**URL:** ``/restconf/config/network-topology:network-topology/topology/pcep-topology/node/43.43.43.43``
 
 **Method:** ``PUT``
 
@@ -144,43 +144,18 @@ It is required to install ``odl-netconf-connector-ssh`` feature first.
 
 .. code-block:: xml
    :linenos:
-   :emphasize-lines: 26,27
+   :emphasize-lines: 2,4
 
-    <module xmlns="urn:opendaylight:params:xml:ns:yang:controller:config">
-        <type xmlns:x="urn:opendaylight:params:xml:ns:yang:controller:pcep:topology:provider">x:pcep-topology-provider</type>
-        <name>pcep-topology</name>
-        <data-provider xmlns="urn:opendaylight:params:xml:ns:yang:controller:pcep:topology:provider">
-            <type xmlns:x="urn:opendaylight:params:xml:ns:yang:controller:md:sal:binding">x:binding-async-data-broker</type>
-            <name>pingpong-binding-data-broker</name>
-        </data-provider>
-        <dispatcher xmlns="urn:opendaylight:params:xml:ns:yang:controller:pcep:topology:provider">
-            <type xmlns:x="urn:opendaylight:params:xml:ns:yang:controller:pcep">x:pcep-dispatcher</type>
-            <name>global-pcep-dispatcher</name>
-        </dispatcher>
-        <rpc-registry xmlns="urn:opendaylight:params:xml:ns:yang:controller:pcep:topology:provider">
-            <type xmlns:x="urn:opendaylight:params:xml:ns:yang:controller:md:sal:binding">x:binding-rpc-registry</type>
-            <name>binding-rpc-broker</name>
-        </rpc-registry>
-        <scheduler xmlns="urn:opendaylight:params:xml:ns:yang:controller:pcep:topology:provider">
-            <type xmlns:x="urn:opendaylight:params:xml:ns:yang:controller:programming:spi">x:instruction-scheduler</type>
-            <name>global-instruction-scheduler</name>
-        </scheduler>
-        <stateful-plugin xmlns="urn:opendaylight:params:xml:ns:yang:controller:pcep:topology:provider">
-            <type>pcep-topology-stateful</type>
-            <name>stateful07</name>
-        </stateful-plugin>
-        <topology-id xmlns="urn:opendaylight:params:xml:ns:yang:controller:pcep:topology:provider">pcep-topology</topology-id>
-        <client xmlns="urn:opendaylight:params:xml:ns:yang:controller:pcep:topology:provider">
-            <address>43.43.43.43</address>
+    <node>
+        <node-id>43.43.43.43</node-id>
+        <session-config xmlns="urn:opendaylight:params:xml:ns:yang:topology:pcep:config">
             <password>topsecret</password>
-        </client>
-    </module>
+        </session-config>
+    </node>
 
-@line 26: **address** - A PCC IP address.
+@line 2: **address** - A PCC IP address.
 
-@line 27: **password** - MD5 authentication phrase.
-
-.. warning:: The PCE (*pcep-topology-provider*) configuration is going to be changed in Carbon release - moving to configuration datastore.
+@line 4: **password** - MD5 authentication phrase.
 
 LSP State Database
 ^^^^^^^^^^^^^^^^^^
