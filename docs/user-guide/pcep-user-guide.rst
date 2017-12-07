@@ -917,7 +917,10 @@ Segment Identifier (SID) is encoded as a MPLS label.
 
 Configuration
 '''''''''''''
+<<<<<<< c085dbe234e1538700060db17068295460e652e0
 This capability is enabled by default. In order to disable it, a configuration should be changed as follows:
+=======
+This capability is enabled by default. In order to disable it, a configuration should be changed in following way:
 
 **URL:** ``/restconf/config/pcep-segment-routing-app-config:pcep-segment-routing-app-config``
 
@@ -930,6 +933,32 @@ This capability is enabled by default. In order to disable it, a configuration s
 .. code-block:: xml
    :linenos:
    :emphasize-lines: 2
+
+   <pcep-segment-routing-config xmlns="urn:opendaylight:params:xml:ns:yang:controller:pcep:segment-routing-app-config">
+      <sr-capable>false</sr-capable>
+   </pcep-segment-routing-config>
+
+@line 2: **sr-capable** - True if capability is supported.
+
+IANA code points
+''''''''''''''''
+
+In PCEP-SR draft version 6, SR Explicit Route Object/Record Route Object subobjects IANA code points change was proposed.
+In order to use the latest code points, a configuration should be changed in following way:
+>>>>>>> Pcep segment routing config
+
+**URL:** ``/restconf/config/pcep-segment-routing-app-config:pcep-segment-routing-config``
+
+**Method:** ``PUT``
+
+**Content-Type:** ``application/xml``
+
+**Request Body:**
+
+.. code-block:: xml
+   :linenos:
+   :emphasize-lines: 2
+<<<<<<< c085dbe234e1538700060db17068295460e652e0
 
    <pcep-segment-routing-config xmlns="urn:opendaylight:params:xml:ns:yang:controller:pcep:segment-routing-app-config">
       <sr-capable>false</sr-capable>
@@ -954,12 +983,18 @@ In order to use the latest code points, a configuration should be changed as fol
 .. code-block:: xml
    :linenos:
    :emphasize-lines: 2
+=======
+>>>>>>> Pcep segment routing config
 
    <pcep-segment-routing-config xmlns="urn:opendaylight:params:xml:ns:yang:controller:pcep:segment-routing-app-config">
       <iana-sr-subobjects-type>true</iana-sr-subobjects-type>
    </pcep-segment-routing-config>
 
+<<<<<<< c085dbe234e1538700060db17068295460e652e0
 @line 2: **iana-sr-subobjects-type** - True if IANA code points should be used.
+=======
+@line 2: **iana-sr-subobjects-type** - True if iana code points should be used.
+>>>>>>> Pcep segment routing config
 
 LSP Operations for PCEP SR
 ''''''''''''''''''''''''''
@@ -1184,7 +1219,7 @@ Following RPC example illustrates a request for the LSP re-synchronization:
 Node session statistics
 ----------------------------
 
-The PCEP statistics provides information about PCE <-> PCC session and it's stateful listener (topology-provider).
+The PCEP statistics provides information about PCE <-> PCC session and its stateful listener (topology-provider).
 
 Usage
 '''''
