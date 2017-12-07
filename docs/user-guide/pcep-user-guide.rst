@@ -917,9 +917,7 @@ Segment Identifier (SID) is encoded as a MPLS label.
 
 Configuration
 '''''''''''''
-This capability is enabled by default.
-In PCEP-SR draft version 6, SR Explicit Route Object/Record Route Object subobjects IANA code points change was proposed.
-In order to use the latest code points, a configuration should be changed in following way:
+This capability is enabled by default. In order to disable it, a configuration should be changed in following way:
 
 **URL:** ``/restconf/config/pcep-segment-routing-app-config:pcep-segment-routing-app-config``
 
@@ -931,10 +929,37 @@ In order to use the latest code points, a configuration should be changed in fol
 
 .. code-block:: xml
    :linenos:
+   :emphasize-lines: 2
+
+   <pcep-segment-routing-config xmlns="urn:opendaylight:params:xml:ns:yang:controller:pcep:segment-routing-app-config">
+      <sr-capable>false</sr-capable>
+   </pcep-segment-routing-config>
+
+@line 2: **sr-capable** - True if capability is supported.
+
+IANA code points
+''''''''''''''''
+
+In PCEP-SR draft version 6, SR Explicit Route Object/Record Route Object subobjects IANA code points change was proposed.
+In order to use the latest code points, a configuration should be changed in following way:
+
+**URL:** ``/restconf/config/pcep-segment-routing-app-config:pcep-segment-routing-config``
+
+**Method:** ``PUT``
+
+**Content-Type:** ``application/xml``
+
+**Request Body:**
+
+.. code-block:: xml
+   :linenos:
+   :emphasize-lines: 2
 
    <pcep-segment-routing-config xmlns="urn:opendaylight:params:xml:ns:yang:controller:pcep:segment-routing-app-config">
       <iana-sr-subobjects-type>true</iana-sr-subobjects-type>
    </pcep-segment-routing-config>
+
+@line 2: **iana-sr-subobjects-type** - True if iana code points should be used.
 
 LSP Operations for PCEP SR
 ''''''''''''''''''''''''''
