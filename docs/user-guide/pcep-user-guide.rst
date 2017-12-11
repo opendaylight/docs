@@ -128,6 +128,37 @@ Configuration
 ^^^^^^^^^^^^^
 This capability is enabled by default. No additional configuration is required.
 
+Speaker Entity identifier
+'''''''''''''''''''''''''
+The Speaker Entity Identifier is an optional
+TLV that may be included in the OPEN Object when a PCEP speaker
+wishes to determine if state synchronization can be skipped when a
+PCEP session is restarted.
+
+**URL:** ``/restconf/config/network-topology:network-topology/topology/pcep-topology/node/43.43.43.43``
+
+**Method:** ``PUT``
+
+**Content-Type:** ``application/xml``
+
+**Request Body:**
+
+.. code-block:: xml
+   :linenos:
+   :emphasize-lines: 2,4
+
+
+    <node xmlns="urn:TBD:params:xml:ns:yang:network-topology">
+        <node-id>43.43.43.43</node-id>
+        <session-config xmlns="urn:opendaylight:params:xml:ns:yang:topology:pcep:config">
+            <speaker-entity-id-value xmlns="urn:opendaylight:params:xml:ns:yang:topology:pcep:sync:optimizations:config">AQIDBA==</speaker-entity-id-value>
+        </session-config>
+    </node>
+
+@line 2: **address** - A PCC IP address.
+
+@line 4: **Speaker Entity Identifier** - The Speaker Entity identifier assigned to PCEP Node.
+
 MD5 authentication configuration
 ''''''''''''''''''''''''''''''''
 The OpenDaylight PCEP implementation is supporting TCP MD5 for authentication.
