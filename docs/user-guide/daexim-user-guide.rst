@@ -89,9 +89,13 @@ The **schedule-export** RPC exports the data at a specific time in the
 future. The *run-at* time may be specified as an absolute UTC time or a
 relative offset from the server clock. Attempts to schedule an export in
 the past times are rejected. Each file has a JSON-encoded object that
-contains module data from the corresponding data store.  Module data is
+contains module data from the corresponding data store. Module data is
 not included in the object for any module identified in the exclusion
-list. Each file contains at least one empty JSON object.
+list. Each file contains at least one empty JSON object. In a clustered
+environment, if *local-node-only* is provided with a value of *true*,
+the export operation is performed only on the node on which the RPC was
+received; otherwise, the export operation is performed on all nodes in
+the cluster.
 
 URL:
   http://<controller-ip>:<restconf-port>/restconf/operations/data-export-import:schedule-export
