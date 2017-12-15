@@ -106,17 +106,43 @@ None since Carbon SR1 release.
 Known Issues
 ------------
 
-* `Bug 9044 <https://bugs.opendaylight.org/show_bug.cgi?id=9044>`_
+* `ODLPARENT-110 <https://jira.opendaylight.org/browse/ODLPARENT-110>`_
+
+** Successive feature installation from karaf4 console causes bundle refreshes.
+
+*** **Workaround:**
+
+  * Use --no-auto-refresh option in the karaf feature install command;
+
+  .. code:: bash
+
+    feature:install --no-auto-refresh odl-netconf-topology
+
+  * List all the features you need in the karaf config boot file;
+  * Install all features at once in console, for example:
+
+  .. code:: bash
+
+    feature:install odl-restconf odl-netconf-mdsal odl-mdsal-apidocs odl-clustering-test-app odl-netconf-topology
+
+* `ODLPARENT-113 <https://jira.opendaylight.org/browse/ODLPARENT-113>`_
 
 ** The ssh-dss method is used by Karaf SSH console, but no longer supported by clients such as OpenSSH.
 
-*** **Workaround:** Use the bin/client script, which uses karaf:karaf as the default credentials.
+*** **Workaround:**
+
+  * Use the bin/client script, which uses karaf:karaf as the default credentials.
+  * Use this ssh option:
+
+  .. code:: bash
+
+    ssh -oHostKeyAlgorithms=+ssh-dss -p 8101 karaf@localhost
 
 ** After restart, Karaf is unable to re-use the generated host.key file.
 
-*** **Workaround** Delete the etc/host.key file before starting Karaf again.
+*** **Workaround:** Delete the etc/host.key file before starting Karaf again.
 
-* `Bug 9161 <https://bugs.opendaylight.org/show_bug.cgi?id=9161>`_
+* `ODLPARENT-115 <https://jira.opendaylight.org/browse/ODLPARENT-115>`_
 
 ** Karaf is slow to start processing features after start.
 
