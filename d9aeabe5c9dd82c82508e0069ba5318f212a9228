@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6b919f55_fcc53814",
+        "filename": "docs/release-process/milestone-readouts/m2/eman.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 7493
+      },
+      "writtenOn": "2017-12-19T22:01:43Z",
+      "side": 1,
+      "message": "The * on lines 32 and 33 need to align directly under L in List on line 30 (i.e. remove a space on both lines)",
+      "range": {
+        "startLine": 32,
+        "startChar": 4,
+        "endLine": 33,
+        "endChar": 40
+      },
+      "revId": "d9aeabe5c9dd82c82508e0069ba5318f212a9228",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1bf5a26e_8cd02977",
+        "filename": "docs/release-process/milestone-readouts/m2/eman.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 7493
+      },
+      "writtenOn": "2017-12-19T22:01:43Z",
+      "side": 1,
+      "message": "Need to remove the trailing white spaces on line 34",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 4
+      },
+      "revId": "d9aeabe5c9dd82c82508e0069ba5318f212a9228",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
