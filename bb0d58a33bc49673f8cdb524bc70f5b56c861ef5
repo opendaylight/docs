@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f5598338_ba94668d",
+        "filename": "docs/release-process/milestone-readouts/m3/packetcable.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 7493
+      },
+      "writtenOn": "2017-12-21T03:10:57Z",
+      "side": 1,
+      "message": "Looks like the verify job is failing due to a white space here. I will remove the white space and upload a new patch set.",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 1
+      },
+      "revId": "bb0d58a33bc49673f8cdb524bc70f5b56c861ef5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
