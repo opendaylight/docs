@@ -177,7 +177,7 @@ Standards
 * `RFC6286 <https://tools.ietf.org/html/rfc6286>`_ - Autonomous-System-Wide Unique BGP Identifier for BGP-4
 * `RFC6793 <https://tools.ietf.org/html/rfc6793>`_ - BGP Support for Four-Octet Autonomous System (AS) Number Space
 * `RFC7311 <https://tools.ietf.org/html/rfc7311>`_ - The Accumulated IGP Metric Attribute for BGP
-* `RFC7674 <http://tools.ietf.org/html/rfc7674 >`_ - Clarification of the Flowspec Redirect Extended Community
+* `RFC7674 <https://tools.ietf.org/html/rfc7674>`_ - Clarification of the Flowspec Redirect Extended Community
 * `RFC5668 <https://tools.ietf.org/html/rfc5668>`_ - 4-Octet AS Specific BGP Extended Community
 * `RFC3107 <https://tools.ietf.org/html/rfc3107>`_ - Carrying Label Information in BGP-4
 * `RFC4364 <https://tools.ietf.org/html/rfc4364>`_ - BGP/MPLS IP Virtual Private Networks (VPNs)
@@ -185,10 +185,11 @@ Standards
 * `RFC7911 <https://tools.ietf.org/html/rfc7911>`_ - Advertisement of Multiple Paths in BGP
 * `RFC2918 <https://tools.ietf.org/html/rfc2918>`_ - Route Refresh Capability for BGP-4
 * `draft-ietf-bess-evpn-overlay <https://tools.ietf.org/html/draft-ietf-bess-evpn-overlay-04>`_ - A Network Virtualization Overlay Solution using EVPN
+* `draft-ietf-bess-evpn-vpws-02 https://tools.ietf.org/html/draft-ietf-bess-evpn-vpws-02>`_ VPWS support in EVPN
 * `draft-ietf-pce-pceps <https://tools.ietf.org/html/draft-ietf-pce-pceps-03>`_ - Secure Transport for PCEP
 * `draft-gredler-idr-bgp-ls-segment-routing-ext-03 <https://tools.ietf.org/html/draft-gredler-idr-bgp-ls-segment-routing-ext-03>`_ - BGP Link-State extensions for Segment Routing
 * `draft-ietf-idr-bgpls-segment-routing-epe-05 <https://tools.ietf.org/html/draft-ietf-idr-bgpls-segment-routing-epe-05>`_ - Segment Routing Egress Peer Engineering BGP-LS Extensions
-* `draft-ietf-idr-flow-spec-v6-06 <https://tools.ietf.org/html/draft-ietf-idr-flow-spec-v6-06>`_ - Dissemination of Flow Specification Rules for IPv6 <br />
+* `draft-ietf-idr-flow-spec-v6-06 <https://tools.ietf.org/html/draft-ietf-idr-flow-spec-v6-06>`_ - Dissemination of Flow Specification Rules for IPv6
 * `draft-ietf-idr-flowspec-redirect-ip-01 <https://tools.ietf.org/html/draft-ietf-idr-flowspec-redirect-ip-01>`_ - BGP Flow-Spec Redirect to IP Action
 
 * Stateful extensions to the Path Computation Element Protocol, December 2013
