@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a6fe23b1_b14df27a",
+        "filename": "docs/getting-started-guide/security_considerations.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2018-01-08T18:25:32Z",
+      "side": 1,
+      "message": "\"To secure Jetty RESTful services, including RESTCONF, you\nmust configure the Jetty server to utilize SSL by performing the following steps:\"",
+      "range": {
+        "startLine": 217,
+        "startChar": 0,
+        "endLine": 218,
+        "endChar": 32
+      },
+      "revId": "37a67f5106e8ddf2b4d16d457fdd9531283ed8ba",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ed5e39df_614111c3",
+        "filename": "docs/getting-started-guide/security_considerations.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2018-01-08T18:25:32Z",
+      "side": 1,
+      "message": "Ryan: I think we should organize this section as steps. \n\n\"1. Create a self-signed certificate for use by the ODL deployment by issuing the following command sequence:\"",
+      "range": {
+        "startLine": 218,
+        "startChar": 34,
+        "endLine": 220,
+        "endChar": 31
+      },
+      "revId": "37a67f5106e8ddf2b4d16d457fdd9531283ed8ba",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6c583eb5_101e678d",
+        "filename": "docs/getting-started-guide/security_considerations.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2018-01-08T18:25:32Z",
+      "side": 1,
+      "message": "\"2. After the key has been obtained, make the following changes to ``etc/customer.properties`` file to set a few \ndefault properties:",
+      "range": {
+        "startLine": 243,
+        "startChar": 0,
+        "endLine": 244,
+        "endChar": 58
+      },
+      "revId": "37a67f5106e8ddf2b4d16d457fdd9531283ed8ba",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8a7e376c_0f7368c8",
+        "filename": "docs/getting-started-guide/security_considerations.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2018-01-08T18:25:32Z",
+      "side": 1,
+      "message": "\"3. Then edit the ``etc/jetty.xml`` file with the appropriate HTTP connectors.\"",
+      "range": {
+        "startLine": 254,
+        "startChar": 0,
+        "endLine": 254,
+        "endChar": 61
+      },
+      "revId": "37a67f5106e8ddf2b4d16d457fdd9531283ed8ba",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f2c9e2f5_2744034d",
+        "filename": "docs/getting-started-guide/security_considerations.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 369,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2018-01-08T18:25:32Z",
+      "side": 1,
+      "message": "\"The configuration snippet above adds a connector that is protected by SSL on port 8443. You can test that the changes have succeeded by restarting Karaf, issuing the following ``curl`` command, and ensuring that the 2XX HTTP status code appears in the returned message.\"",
+      "range": {
+        "startLine": 367,
+        "startChar": 0,
+        "endLine": 369,
+        "endChar": 38
+      },
+      "revId": "37a67f5106e8ddf2b4d16d457fdd9531283ed8ba",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
