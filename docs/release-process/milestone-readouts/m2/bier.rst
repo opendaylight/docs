@@ -66,7 +66,7 @@ Integration and Test:
 1. Have you started automated system testing for your top-level features?
    (Yes/No)
 
-   - Yes, https://jenkins.opendaylight.org/releng/view/bier/job/bier-csit-1node-basic-all-nitrogen/
+   - Yes, https://jenkins.opendaylight.org/releng/view/bgpcep/job/bgpcep-validate-autorelease-oxygen/
 
 2. Have you filled out basic system test plan template for each top-level
    feature (karaf and not karaf) and a comprehensive system test plan template
