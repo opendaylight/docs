@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "0860a9cb_1fde6fbb",
+        "filename": "docs/user-guide/daexim-user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2018-01-09T16:14:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a1969be_70a74450",
+      "range": {
+        "startLine": 195,
+        "startChar": 0,
+        "endLine": 195,
+        "endChar": 6
+      },
+      "revId": "875f8c7c00d9bb276d54760002348be89504be88",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a1969be_d0639818",
         "filename": "docs/user-guide/daexim-user-guide.rst",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2017-12-06T15:00:02Z",
       "side": 1,
       "message": "Change \"places\" to \"placed\"",
+      "range": {
+        "startLine": 198,
+        "startChar": 10,
+        "endLine": 198,
+        "endChar": 16
+      },
+      "revId": "875f8c7c00d9bb276d54760002348be89504be88",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "843e2060_27cf44ba",
+        "filename": "docs/user-guide/daexim-user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2018-01-09T16:14:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a1969be_d0639818",
       "range": {
         "startLine": 198,
         "startChar": 10,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "5ccb2acb_cd2f16b6",
+        "filename": "docs/user-guide/daexim-user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2018-01-09T16:14:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a1969be_707e24b0",
+      "range": {
+        "startLine": 199,
+        "startChar": 23,
+        "endLine": 200,
+        "endChar": 87
+      },
+      "revId": "875f8c7c00d9bb276d54760002348be89504be88",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a1969be_10453070",
         "filename": "docs/user-guide/daexim-user-guide.rst",
         "patchSetId": 1
@@ -82,6 +154,30 @@
       "writtenOn": "2017-12-06T15:00:02Z",
       "side": 1,
       "message": "What will happen? The boot import? If so, restate the sentence to be clear, i.e. \"The boot import happens after ...\"",
+      "range": {
+        "startLine": 202,
+        "startChar": 0,
+        "endLine": 202,
+        "endChar": 23
+      },
+      "revId": "875f8c7c00d9bb276d54760002348be89504be88",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9d24320f_92851d2e",
+        "filename": "docs/user-guide/daexim-user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2018-01-09T16:14:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a1969be_10453070",
       "range": {
         "startLine": 202,
         "startChar": 0,
@@ -140,6 +236,30 @@
     },
     {
       "key": {
+        "uuid": "ea8ff6e2_6aab98a7",
+        "filename": "docs/user-guide/daexim-user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2018-01-09T16:14:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a1969be_f049748c",
+      "range": {
+        "startLine": 203,
+        "startChar": 18,
+        "endLine": 203,
+        "endChar": 41
+      },
+      "revId": "875f8c7c00d9bb276d54760002348be89504be88",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a1969be_3022ecb9",
         "filename": "docs/user-guide/daexim-user-guide.rst",
         "patchSetId": 1
@@ -151,6 +271,30 @@
       "writtenOn": "2017-12-06T15:00:02Z",
       "side": 1,
       "message": "I would rewrite this sentence as follows: \"The INFO log and **status import** automatically reflect when the boot import is planned (via *boot-import-scheduled*), when the boot import is ongoing (via *boot-import-in-progress*), and when the boot import fails (via *boot-import-failed*).",
+      "range": {
+        "startLine": 204,
+        "startChar": 0,
+        "endLine": 204,
+        "endChar": 78
+      },
+      "revId": "875f8c7c00d9bb276d54760002348be89504be88",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1bf77ced_eb499395",
+        "filename": "docs/user-guide/daexim-user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2018-01-09T16:14:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a1969be_3022ecb9",
       "range": {
         "startLine": 204,
         "startChar": 0,
