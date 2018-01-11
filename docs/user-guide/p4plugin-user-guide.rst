@@ -22,7 +22,7 @@ P4 Plugin User-Facing Features
    -  This feature contains all other features/bundles of P4 Plugin project. If you
       install it, it provides all functions that the P4 Plugin project can support.
 
--  **odl-p4plugin-core**
+-  **odl-p4plugin-runtime**
 
    -  This feature provides a function which implements a gRPC client that provides RPCs
       for users, such as setting and retrieving forwarding pipeline config dynamically,
