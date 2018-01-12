@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "02abf73b_a52532d5",
+        "filename": "docs/release-notes/projects/p4plugin.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 7493
+      },
+      "writtenOn": "2018-01-12T12:50:06Z",
+      "side": 1,
+      "message": "Suggest removing the first 2 words",
+      "range": {
+        "startLine": 35,
+        "startChar": 4,
+        "endLine": 35,
+        "endChar": 16
+      },
+      "revId": "86d82aebc0bade4296139304b93d3823daadf5ae",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b645b9ff_6e7f2fe3",
+        "filename": "docs/release-notes/projects/p4plugin.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 7493
+      },
+      "writtenOn": "2018-01-12T12:50:06Z",
+      "side": 1,
+      "message": "Line 44 should be a sub-bullet of line 42/43, i.e. add a blank line and start line 44 (which should now be 45) with a - under W in What on line 43",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 1
+      },
+      "revId": "86d82aebc0bade4296139304b93d3823daadf5ae",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b63e6c66_19de52ef",
+        "filename": "docs/release-notes/projects/p4plugin.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 7493
+      },
+      "writtenOn": "2018-01-12T12:50:06Z",
+      "side": 1,
+      "message": "Add response \"None\"",
+      "revId": "86d82aebc0bade4296139304b93d3823daadf5ae",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
