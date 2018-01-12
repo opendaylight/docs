@@ -4217,7 +4217,7 @@ Usage
 ^^^^^
 To release neighbor session, invoke RPC:
 
-**URL:** ``/restconf/operations/bgp-peer-rpc:release-session``
+**URL:** ``/restconf/operations/bgp-peer-rpc:reset-session``
 
 **Method:** ``POST``
 
