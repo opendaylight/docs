@@ -377,7 +377,7 @@ Prerequisites
    file. You can import this file to Postman by clicking *Import* at the
    top, choosing *Download from link* and then entering the following
    URL:
-   `<https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=blob_plain;f=resources/tutorial/OOR/Beryllium_Tutorial.json.postman_collection;hb=refs/heads/stable/nitrogen>`__.
+   `<https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=blob_plain;f=resources/tutorial/OOR/Beryllium_Tutorial.json.postman_collection;hb=refs/heads/stable/oxygen>`__.
    Alternatively, you can save the file on your machine, or if you have
    the repository checked out, you can import from there. You will need
    to create a new Postman Environment and define some variables within:
@@ -476,7 +476,7 @@ URLs and body content on the page.
 
         The ``resources/tutorial/OOR`` directory in the project git repository
         has the files used in the tutorial `checked in
-        <https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=tree;f=resources/tutorial/OOR;hb=refs/heads/stable/nitrogen>`_,
+        <https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=tree;f=resources/tutorial/OOR;hb=refs/heads/stable/oxygen>`_,
         so you can just copy the files to ``/etc/oor.conf`` on the respective
         VMs. You will also find the JSON files referenced below in the same
         directory.
@@ -785,7 +785,7 @@ Prerequisites
    <https://www.opendaylight.org/downloads>`_)
 
 -  **The Postman Chrome App**: Please follow the instructions_ and import
-   postman collection from the following URL: `<https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=blob;f=resources/tutorial/FD_io/lfm_vpp.postman_collection.json;hb=refs/heads/stable/nitrogen>`__.
+   postman collection from the following URL: `<https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=blob;f=resources/tutorial/FD_io/lfm_vpp.postman_collection.json;hb=refs/heads/stable/oxygen>`__.
 
 -  **Vagrant** (optional): Download it from `Vagrant website <https://www.vagrantup.com/downloads.html>`__
    and follow the setup instructions.
@@ -899,7 +899,7 @@ Follow the instructions below sequentially.
 
 7.  For setting up VPP, get the files from ``resources/tutorial/FD_io``
     folder of the lispflowmapping repo. The files can also be found `here
-    <https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=tree;f=resources/tutorial/FD_io;hb=refs/heads/stable/nitrogen>`__.
+    <https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=tree;f=resources/tutorial/FD_io;hb=refs/heads/stable/oxygen>`__.
     Copy the ``vpp1.config``, ``vpp2.config`` and ``rtr.config`` files in
     ``/etc/vpp/lite/``.
 
@@ -1021,14 +1021,14 @@ Follow the instructions below sequentially.
         }
 
     The JSON files regarding these can be found in `here
-    <https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=tree;f=resources/tutorial/FD_io;hb=refs/heads/stable/nitrogen>`__.
+    <https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=tree;f=resources/tutorial/FD_io;hb=refs/heads/stable/oxygen>`__.
     Even though there is no southbound registration for mapping to OpenDaylight, using
     northbound policy we can specify mappings, when Client requests for
     the Server eid, Client gets a reply from OpenDaylight.
 
 9.  Assuming all files have been created and OpenDaylight has been configured as
     explained above, execute the host script you've created or the ``topology_setup.sh``
-    script from `here <https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=tree;f=resources/tutorial/FD_io;hb=refs/heads/stable/nitrogen>`__.
+    script from `here <https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=tree;f=resources/tutorial/FD_io;hb=refs/heads/stable/oxygen>`__.
 
 10. If all goes well, you can now test connectivity between the namespaces with:
     ::
