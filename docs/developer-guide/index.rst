@@ -24,6 +24,7 @@ Project-specific Developer Guides
    bier-developer-guide
    capwap-developer-guide
    cardinal_-opendaylight-monitoring-as-a-service
+   ../submodules/coe/docs/index
    controller
    daexim-developer-guide
    didm-developer-guide
