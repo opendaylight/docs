@@ -35,6 +35,7 @@ Project-specific Developer Guides
    fabric-as-a-service
    infrautils-developer-guide
    iotdm-developer-guide
+   jsonrpc
    l2switch-developer-guide
    lacp-developer-guide
    ../user-guide/lisp-flow-mapping-user-guide

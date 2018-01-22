@@ -39,6 +39,7 @@ Project-specific User Guides
    fabric-as-a-service
    genius-user-guide
    group-based-policy-user-guide
+   jsonrpc-user-guide
    l2switch-user-guide
    link-aggregation-control-protocol-user-guide
    lisp-flow-mapping-user-guide
