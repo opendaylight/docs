@@ -19,3 +19,4 @@ Getting Started Guide
    project-specific-guides/index
    common-features/index
    security_considerations
+   how-to-get-help
