@@ -27,12 +27,10 @@ GENIUS
 6. Are you running at least one basic automated system test job for each
    top-level feature? Yes
 
-   - https://jenkins.opendaylight.org/releng/view/sxp/job/sxp-csit-1node-basic-all-oxygen/
-   - https://jenkins.opendaylight.org/releng/view/sxp/job/sxp-csit-1node-filtering-all-oxygen/
-   - https://jenkins.opendaylight.org/releng/view/sxp/job/sxp-csit-1node-periodic-performance-all-oxygen/
-   - https://jenkins.opendaylight.org/releng/view/sxp/job/sxp-csit-1node-topology-all-oxygen/
-   - https://jenkins.opendaylight.org/releng/view/sxp/job/sxp-csit-3node-periodic-clustering-all-oxygen/
-   - https://jenkins.opendaylight.org/releng/view/sxp/job/sxp-csit-3node-periodic-routing-all-oxygen/
+   - https://jenkins.opendaylight.org/releng/view/genius/job/genius-csit-1node-gate-all-oxygen/
+   - https://jenkins.opendaylight.org/releng/view/genius/job/genius-csit-1node-upstream-all-oxygen/
+   - https://jenkins.opendaylight.org/releng/view/genius/job/genius-csit-3node-gate-all-oxygen/
+   - https://jenkins.opendaylight.org/releng/view/genius/job/genius-csit-3node-upstream-all-oxygen/
 
 7. Do you have any CLM violations? No
 
