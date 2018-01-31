@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "680651f9_15913d92",
+        "filename": "docs/getting-started-guide/how-to-get-help.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 6258
+      },
+      "writtenOn": "2018-01-31T23:37:41Z",
+      "side": 1,
+      "message": "LGTM, a comma is optional here!",
+      "range": {
+        "startLine": 6,
+        "startChar": 18,
+        "endLine": 6,
+        "endChar": 19
+      },
+      "revId": "32ffcd43d03f952cbabdf470e8f1bd0ff17a8d9e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3d62f3a0_c124f8ef",
         "filename": "docs/getting-started-guide/how-to-get-help.rst",
         "patchSetId": 3
@@ -13,6 +36,30 @@
       "writtenOn": "2018-01-31T23:19:30Z",
       "side": 1,
       "message": "typo?",
+      "range": {
+        "startLine": 23,
+        "startChar": 60,
+        "endLine": 23,
+        "endChar": 62
+      },
+      "revId": "32ffcd43d03f952cbabdf470e8f1bd0ff17a8d9e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "01fee843_6e0f905c",
+        "filename": "docs/getting-started-guide/how-to-get-help.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6258
+      },
+      "writtenOn": "2018-01-31T23:37:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3d62f3a0_c124f8ef",
       "range": {
         "startLine": 23,
         "startChar": 60,
