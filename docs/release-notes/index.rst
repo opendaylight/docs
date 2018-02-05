@@ -63,6 +63,14 @@ following limitations:
   issues became apparent when managing thousands of OpenFlow
   switches, however this may vary depending on deployment and use cases.
 
+Security Limitations
+====================
+
+All OpenDaylight Security Advisories can be found on the `Security Advisories
+wiki page <https://wiki.opendaylight.org/view/Security:Advisories>`_.
+
+  
+
 .. _proj_rel_notes:
 
 Project-specific Release Notes
