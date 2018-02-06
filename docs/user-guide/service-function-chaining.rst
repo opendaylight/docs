@@ -3147,3 +3147,322 @@ This picture shows the SFC pipeline after service integration with Genius:
    :alt: SFC Logical SFF OpenFlow pipeline
 
    SFC Logical SFF OpenFlow pipeline
+
+Directional data plane locators for symmetric paths
+---------------------------------------------------
+
+Overview
+~~~~~~~~
+
+A symmetric path results from a Service Function Path with the symmetric field
+set or when any of the constituent Service Functions is set as bidirectional.
+Such path is defined by two Rendered Service Paths where one of them steers the
+traffic through the same Service Functions as the other but in opposite order.
+These two Rendered Service Paths are also said to be symmetric to each other
+and gives to each path a sense of direction: the Rendered Service Path that
+corresponds to the same order of Service Functions as that defined on the
+Service Function Chain is tagged as the forward or up-link path, while the
+Rendered Service Path that corresponds to the opposite order is tagged as
+reverse or down-link path.
+
+Directional data plane locators allow the use of different interfaces or
+interface details between the Service Function Forwarder and the Service
+Function in relation with the direction of the path for which they are being
+used. This function is relevant for Service Functions that would have no other
+way of discerning the direction of the traffic, like for example legacy
+bump-in-the-wire network devices.
+
+::
+
+                        +-----------------------------------------------+
+                        |                                               |
+                        |                                               |
+                        |                      SF                       |
+                        |                                               |
+                        |  sf-forward-dpl                sf-reverse-dpl |
+                        +--------+-----------------------------+--------+
+                                 |                             |
+                         ^       |      +              +       |      ^
+                         |       |      |              |       |      |
+                         |       |      |              |       |      |
+                         +       |      +              +       |      +
+                    Forward Path | Reverse Path   Forward Path | Reverse Path
+                         +       |      +              +       |      +
+                         |       |      |              |       |      |
+                         |       |      |              |       |      |
+                         |       |      |              |       |      |
+                         +       |      v              v       |      +
+                                 |                             |
+                     +-----------+-----------------------------------------+
+      Forward Path   |     sff-forward-dpl               sff-reverse-dpl   |   Forward Path
+    +--------------> |                                                     | +-------------->
+                     |                                                     |
+                     |                         SFF                         |
+                     |                                                     |
+    <--------------+ |                                                     | <--------------+
+      Reverse Path   |                                                     |   Reverse Path
+                     +-----------------------------------------------------+
+
+As it can be seen in the picture, the forward path egress from the Service
+Function Forwarder towards the Service Function is defined by the
+sff-forward-dpl and sf-forward-dpl data plane locators. The forward path
+ingress from the Service Function to the Service Function Forwarder is defined
+by the sf-reverse-dpl and sff-reverse-dpl data plane locators. For the reverse
+path, it's the opposite: the sff-reverse-dpl and sf-reverse-dpl define the
+egress from the Service Function Forwarder to the Service Function, and the
+sf-forward-dpl and sff-forward-dpl define the ingress into the Service Function
+Forwarder from the Service Function.
+
+Configuration
+~~~~~~~~~~~~~
+
+Directional data plane locators are configured within the
+service-function-forwarder, in the service-function-dictionary entity which
+describes the association between a Service Function Forwarder and Service
+Functions:
+
+.. code-block:: service-function-forwarder.yang
+
+        list service-function-dictionary {
+            key "name";
+            leaf name {
+              type sfc-common:sf-name;
+              description
+                  "The name of the service function.";
+            }
+            container sff-sf-data-plane-locator {
+              description
+                "SFF and SF data plane locators to use when sending
+                 packets from this SFF to the associated SF";
+              leaf sf-dpl-name {
+                type sfc-common:sf-data-plane-locator-name;
+                description
+                  "The SF data plane locator to use when sending
+                   packets to the associated service function.
+                   Used both as forward and reverse locators for
+                   paths of a symmetric chain.";
+              }
+              leaf sff-dpl-name {
+                type sfc-common:sff-data-plane-locator-name;
+                description
+                  "The SFF data plane locator to use when sending
+                   packets to the associated service function.
+                   Used both as forward and reverse locators for
+                   paths of a symmetric chain.";
+              }
+              leaf sf-forward-dpl-name {
+                type sfc-common:sf-data-plane-locator-name;
+                description
+                  "The SF data plane locator to use when sending
+                   packets to the associated service function
+                   on the forward path of a symmetric chain";
+              }
+              leaf sf-reverse-dpl-name {
+                type sfc-common:sf-data-plane-locator-name;
+                description
+                  "The SF data plane locator to use when sending
+                   packets to the associated service function
+                   on the reverse path of a symmetric chain";
+              }
+              leaf sff-forward-dpl-name {
+                type sfc-common:sff-data-plane-locator-name;
+                description
+                  "The SFF data plane locator to use when sending
+                   packets to the associated service function
+                   on the forward path of a symmetric chain.";
+              }
+              leaf sff-reverse-dpl-name {
+                type sfc-common:sff-data-plane-locator-name;
+                description
+                  "The SFF data plane locator to use when sending
+                   packets to the associated service function
+                   on the reverse path of a symmetric chain.";
+              }
+            }
+        }
+
+Example
+~~~~~~~
+
+The following configuration example is based on the Logical SFF configuration
+one. Only the Service Function and Service Function Forwarder configuration
+changes with respect to that example:
+
+.. code-block:: bash
+
+   curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache"
+   --data '${JSON}' -X PUT --user
+   admin:admin http://localhost:8181/restconf/config/restconf/config/service-function:service-functions/
+
+**Service Functions JSON.**
+
+.. code-block:: json
+
+    {
+    "service-functions": {
+        "service-function": [
+            {
+                "name": "firewall-1",
+                "type": "firewall",
+                "sf-data-plane-locator": [
+                    {
+                        "name": "sf-firewall-net-A-dpl",
+                        "interface-name": "eccb57ae-5a2e-467f-823e-45d7bb2a6a9a",
+                        "transport": "service-locator:mac",
+                        "service-function-forwarder": "sfflogical1"
+
+                    },
+                    {
+                        "name": "sf-firewall-net-B-dpl",
+                        "interface-name": "7764b6f1-a5cd-46be-9201-78f917ddee1d",
+                        "transport": "service-locator:mac",
+                        "service-function-forwarder": "sfflogical1"
+
+                    }
+                ]
+            },
+            {
+                "name": "dpi-1",
+                "type": "dpi",
+                "sf-data-plane-locator": [
+                    {
+                        "name": "sf-dpi-net-A-dpl",
+                        "interface-name": "df15ac52-e8ef-4e9a-8340-ae0738aba0c0",
+                        "transport": "service-locator:mac",
+                        "service-function-forwarder": "sfflogical1"
+                    },
+                    {
+                        "name": "sf-dpi-net-B-dpl",
+                        "interface-name": "1bb09b01-422d-4ccf-8d7a-9ebf00d1a1a5",
+                        "transport": "service-locator:mac",
+                        "service-function-forwarder": "sfflogical1"
+                    }
+                ]
+            }
+        ]
+    }
+    }
+
+.. code-block:: bash
+
+   curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache"
+   --data '${JSON}' -X PUT --user
+   admin:admin http://localhost:8181/restconf/config/service-function-forwarder:service-function-forwarders/
+
+**Service Function Forwarders JSON.**
+
+.. code-block:: json
+
+    {
+    "service-function-forwarders": {
+        "service-function-forwarder": [
+            {
+                "name": "sfflogical1"
+                "sff-data-plane-locator": [
+                    {
+                        "name": "sff-firewall-net-A-dpl",
+                        "data-plane-locator": {
+                            "interface-name": "eccb57ae-5a2e-467f-823e-45d7bb2a6a9a",
+                            "transport": "service-locator:mac"
+                        }
+                    },
+                    {
+                        "name": "sff-firewall-net-B-dpl",
+                        "data-plane-locator": {
+                            "interface-name": "7764b6f1-a5cd-46be-9201-78f917ddee1d",
+                            "transport": "service-locator:mac"
+                        }
+                    },
+                    {
+                        "name": "sff-dpi-net-A-dpl",
+                        "data-plane-locator": {
+                            "interface-name": "df15ac52-e8ef-4e9a-8340-ae0738aba0c0",
+                            "transport": "service-locator:mac"
+                        }
+                    },
+                    {
+                        "name": "sff-dpi-net-B-dpl",
+                        "data-plane-locator": {
+                            "interface-name": "1bb09b01-422d-4ccf-8d7a-9ebf00d1a1a5",
+                            "transport": "service-locator:mac"
+                        }
+                    }
+                ],
+                "service-function-dictionary": [
+                    {
+                        "name": "firewall-1",
+                        "sff-sf-data-plane-locator": {
+                            "sf-forward-dpl-name": "sf-firewall-net-A-dpl",
+                            "sf-reverse-dpl-name": "sf-firewall-net-B-dpl",
+                            "sff-forward-dpl-name": "sff-firewall-net-A-dpl",
+                            "sff-reverse-dpl-name": "sff-firewall-net-B-dpl",
+                        }
+                    },
+                    {
+                        "name": "dpi-1",
+                        "sff-sf-data-plane-locator": {
+                            "sf-forward-dpl-name": "sf-dpi-net-A-dpl",
+                            "sf-reverse-dpl-name": "sf-dpi-net-B-dpl",
+                            "sff-forward-dpl-name": "sff-dpi-net-A-dpl",
+                            "sff-reverse-dpl-name": "sff-dpi-net-B-dpl",
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+    }
+
+In comparison with the Logical SFF example, it can be noticed that each
+Service Function is configured with two data plane locators instead of
+one so that each can be used in different directions of the path. To
+specify which locator is used on which direction, the Service Function
+Forwarder configuration is also more extensive compared to the previous
+example.
+
+It can also be noticed in the above example that the associated Service
+Function and Service Function Forwarder data plane locators for a given
+direction hold the same interface name values. This is because a single
+logical interface fully describes a single attachment of a Service Function
+Forwarder to a Service Function on both the Service Function and Service
+Function Forwarder sides of the attachment. For non Logical SFF scenarios,
+the data plan locators may hold different values for each, for example, if mac
+addresses are to be specified in the locators, the Service Function would
+have a different mac address that the Service Function Forwarder
+
+
+As a result two Rendered Service Paths are implemented, the forward path:
+
+::
+
+                        +------------+                +-------+
+                        | firewall-1 |                | dpi- 1 |
+                        +---+---+----+                +--+--+-+
+                            ^   |                        ^  |
+                   net-A-dpl|   |net-B-dpl      net-A-dpl|  |net-B-dpl
+                            |   |                        |  |
+  +----------+              |   |                        |  |             +----------+
+  | client A +--------------+   +------------------------+  +------------>+ server B |
+  +----------+                                                            +----------+
+
+And the reverse path:
+
+::
+
+                        +------------+                +-------+
+                        | firewall 1 |                | dpi-1 |
+                        +---+---+----+                +--+--+-+
+                            |   ^                        |  ^
+                   net-A-dpl|   |net-B-dpl      net-A-dpl|  |net-B-dpl
+                            |   |                        |  |
+  +----------+              |   |                        |  |             +----------+
+  | client A +<-------------+   +------------------------+  +-------------+ server B |
+  +----------+                                                            +----------+
+
+Consider the following notes to put the example in context:
+
+- The path is for up-link and down-link traffic from a client on network A to
+  a server on network B.
+- The classification function is obviated from the illustration.
+- The service functions might be legacy bump-in-the-wire network devices that
+  need to use different interfaces for each different network.
