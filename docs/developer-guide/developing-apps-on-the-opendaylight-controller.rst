@@ -39,7 +39,7 @@ This example requires the following.
 
       ::
 
-          cp -n ~/.m2/settings.xml{,.orig} ; \wget -q -O - https://raw.githubusercontent.com/opendaylight/odlparent/stable/boron/settings.xml > ~/.m2/settings.xml
+          cp -n ~/.m2/settings.xml{,.orig} ; wget -q -O - https://raw.githubusercontent.com/opendaylight/odlparent/master/settings.xml > ~/.m2/settings.xml
 
 .. note::
 
@@ -60,8 +60,13 @@ To develop an app perform the following steps.
    .. code:: shell
 
        mvn archetype:generate -DarchetypeGroupId=org.opendaylight.controller -DarchetypeArtifactId=opendaylight-startup-archetype \
-       -DarchetypeRepository=https://nexus.opendaylight.org/content/repositories/public/ \
-       -DarchetypeCatalog=https://nexus.opendaylight.org/content/repositories/public/archetype-catalog.xml
+       -DarchetypeRepository=https://nexus.opendaylight.org/content/repositories/<opendaylight.release | opendaylight.snapshot>/ \
+       -DarchetypeCatalog=remote -DarchetypeVersion=<Archetype-Version>
+
+   To find the correct <Archetype-Version> for an OpenDaylight release, search https://nexus.opendaylight.org for the
+   ``archetypeArtifactId`` (e.g. ``https://nexus.opendaylight.org/#nexus-search;quick~opendaylight-startup-archetype``); and if it's a
+   ``*-SNAPSHOT`` then use ``-DarchetypeRepository=https://nexus.opendaylight.org/content/repositories/opendaylight.snapshot/``, otherwise
+   use ``-DarchetypeRepository=https://nexus.opendaylight.org/content/repositories/opendaylight.release/``.
 
 2. Update the properties values as follows. Ensure that the groupid and
    the artifactid is lower case.
