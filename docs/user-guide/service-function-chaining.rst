@@ -7,10 +7,10 @@ OpenDaylight Service Function Chaining (SFC) Overview
 -----------------------------------------------------
 
 OpenDaylight Service Function Chaining (SFC) provides the ability to
-define an ordered list of a network services (e.g. firewalls, load
+define an ordered list of a network services (for example, firewalls and load
 balancers). These service are then "stitched" together in the network to
 create a service chain. This project provides the infrastructure
-(chaining logic, APIs) needed for ODL to provision a service chain in
+(chaining logic and APIs) needed for ODL to provision a service chain in
 the network and an end-user application for defining such chains.
 
 -  ACE - Access Control Entry
@@ -41,13 +41,13 @@ Overview
 
 The SFC User interface comes in two flavors:
 
--  Web Interface (SFC-UI): is based on Dlux project. It provides an easy way to
-   create, read, update and delete configuration stored in the datastore.
-   Moreover, it shows the status of all SFC features (e.g installed,
-   uninstalled) and Karaf log messages as well.
+-  Web Interface (SFC-UI): The SFC-UI is based on the DLUX project. It provides an
+   easy way to create, read, update, and delete configuration stored in the
+   datastore. Moreover, it shows the status of all SFC features (for example,
+   installed or uninstalled features) and Karaf log messages, as well.
 
--  Command Line Interface (CLI): it provides several Karaf console commands to
-   show the SFC model (SF, SFFs, etc.) provisioned in the datastore.
+-  Command Line Interface (CLI): The CLI provides several Karaf console commands
+   to show the SFC model (SF and SFFs) provisioned in the datastore.
 
 
 SFC Web Interface (SFC-UI)
@@ -68,7 +68,7 @@ How to access
 
 1. Run ODL distribution (run karaf)
 
-2. In Karaf console execute: ``feature:install odl-sfc-ui``
+2. In the Karaf console, execute: ``feature:install odl-sfc-ui``
 
 3. Visit SFC-UI on: ``http://<odl_ip_address>:8181/sfc/index.html``
 
@@ -79,18 +79,18 @@ SFC Command Line Interface (SFC-CLI)
 Overview
 ^^^^^^^^
 
-The Karaf Container offers a complete Unix-like console that allows managing
+The Karaf Container offers a complete Unix-like console that allows management of
 the container. This console can be extended with custom commands to manage the
-features deployed on it. This feature will add some basic commands to show the
+features deployed on it. This feature adds some basic commands to show the
 provisioned SFC entities.
 
 How to use it
 ^^^^^^^^^^^^^
 
-The SFC-CLI implements commands to show some of the provisioned SFC entities:
+The SFC-CLI implements the following commands to show some of the provisioned SFC entities:
 Service Functions, Service Function Forwarders, Service Function
-Chains, Service Function Paths, Service Function Classifiers, Service Nodes and
-Service Function Types:
+Chains, Service Function Paths, Service Function Classifiers, Service Nodes, and
+Service Function Types.
 
 * List one/all provisioned Service Functions:
 
@@ -134,14 +134,14 @@ Service Function Types:
 
      sfc:sft-list [--name <name>]
 
-SFC Southbound REST Plug-in
+SFC Southbound REST Plugin
 ---------------------------
 
 Overview
 ~~~~~~~~
 
-The Southbound REST Plug-in is used to send configuration from datastore
-down to network devices supporting a REST API (i.e. they have a
+The Southbound REST plugin is used to send configuration from datastore
+down to network devices supporting a REST API (that is, they have a
 configured REST URI). It supports POST/PUT/DELETE operations, which are
 triggered accordingly by changes in the SFC data stores.
 
@@ -159,34 +159,34 @@ triggered accordingly by changes in the SFC data stores.
 
 -  Rendered Service Path (RSP)
 
-Southbound REST Plug-in Architecture
+Southbound REST Plugin Architecture
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-From the user perspective, the REST plug-in is another SFC Southbound
-plug-in used to communicate with network devices.
+From the user perspective, the Southbound REST Plugin is another SFC Southbound
+plugin used to communicate with network devices.
 
 .. figure:: ./images/sfc/sb-rest-architecture-user.png
-   :alt: Southbound REST Plug-in integration into ODL
+   :alt: Southbound REST Plugin integration into ODL
 
-   Southbound REST Plug-in integration into ODL
+   Southbound REST Plugin integration into ODL
 
 Configuring Southbound REST Plugin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Run ODL distribution (run karaf)
 
-2. In Karaf console execute: ``feature:install odl-sfc-sb-rest``
+2. In the Karaf console, execute: ``feature:install odl-sfc-sb-rest``
 
 3. Configure REST URIs for SF/SFF through SFC User Interface or RESTCONF
    (required configuration steps can be found in the tutorial stated
-   bellow)
+   below)
 
 Tutorial
 ~~~~~~~~
 
-Comprehensive tutorial on how to use the Southbound REST Plug-in and how
-to control network devices with it can be found on:
-https://wiki.opendaylight.org/view/Service_Function_Chaining:Main#SFC_101
+Comprehensive tutorial on how to use the Southbound REST Plugin and how
+to control network devices with it can be found on the following wiki page:
+https://wiki.opendaylight.org/view/Service_Function_Chaining:Main#SFC_103
 
 SFC-OVS integration
 -------------------
@@ -195,15 +195,14 @@ Overview
 ~~~~~~~~
 
 SFC-OVS provides integration of SFC with Open vSwitch (OVS) devices.
-Integration is realized through mapping of SFC objects (like SF, SFF,
-Classifier, etc.) to OVS objects (like Bridge,
+Integration is realized through mapping of SFC objects (such as SF, SFF,
+Classifier, and so on) to OVS objects (such as, Bridge,
 TerminationPoint=Port/Interface). The mapping takes care of automatic
 instantiation (setup) of corresponding object whenever its counterpart
-is created. For example, when a new SFF is created, the SFC-OVS plug-in
-will create a new OVS bridge and when a new OVS Bridge is created, the
-SFC-OVS plug-in will create a new SFF.
+is created. For example, when a new SFF is created, the SFC-OVS plugin
+creates a new OVS bridge.
 
-The feature is intended for SFC users willing to use Open vSwitch as
+The feature is intended for SFC users that are willing to use Open vSwitch as an
 underlying network infrastructure for deploying RSPs (Rendered Service
 Paths).
 
@@ -222,52 +221,15 @@ as a layer between SFC datastore and OVSDB.
 Configuring SFC-OVS
 ~~~~~~~~~~~~~~~~~~~
 
-1. Run ODL distribution (run karaf)
+1. Run ODL distribution (run karaf).
 
-2. In Karaf console execute: ``feature:install odl-sfc-ovs``
+2. In the Karaf console, execute: ``feature:install odl-sfc-ovs``
 
-3. Configure Open vSwitch to use ODL as a manager, using following
+3. Configure Open vSwitch to use ODL as a manager by running the following
    command: ``ovs-vsctl set-manager tcp:<odl_ip_address>:6640``
 
 Tutorials
 ~~~~~~~~~
-
-Verifying mapping from OVS to SFF
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Overview
-''''''''
-
-This tutorial shows the usual work flow when OVS configuration is
-transformed to corresponding SFC objects (in this case SFF).
-
-Prerequisites
-''''''''''''''
-
--  Open vSwitch installed (ovs-vsctl command available in shell)
-
--  SFC-OVS feature configured as stated above
-
-Instructions
-''''''''''''
-
-1. ``ovs-vsctl set-manager tcp:<odl_ip_address>:6640``
-
-2. ``ovs-vsctl add-br br1``
-
-3. ``ovs-vsctl add-port br1 testPort``
-
-Verification
-''''''''''''
-
-a. visit SFC User Interface:
-   ``http://<odl_ip_address>:8181/sfc/index.html#/sfc/serviceforwarder``
-
-b. use pure RESTCONF and send GET request to URL:
-   ``http://<odl_ip_address>:8181/restconf/config/service-function-forwarder:service-function-forwarders``
-
-There should be SFF, which name will be ending with *br1* and the SFF
-should containt two DataPlane locators: *br1* and *testPort*.
 
 Verifying mapping from SFF to OVS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -275,11 +237,11 @@ Verifying mapping from SFF to OVS
 Overview
 ''''''''
 
-This tutorial shows the usual workflow during creation of OVS Bridge
-with use of SFC APIs.
+This tutorial shows the usual workflow during creation of an OVS
+Bridge with use of the SFC APIs.
 
 Prerequisites
-''''''''''''''
+'''''''''''''
 
 -  Open vSwitch installed (ovs-vsctl command available in shell)
 
@@ -288,7 +250,7 @@ Prerequisites
 Instructions
 ''''''''''''
 
-1. In shell execute: ``ovs-vsctl set-manager tcp:<odl_ip_address>:6640``
+1. In a shell, execute: ``ovs-vsctl set-manager tcp:<odl_ip_address>:6640``
 
 2. Send POST request to URL:
    ``http://<odl_ip_address>:8181/restconf/operations/service-function-forwarder-ovs:create-ovs-bridge``
@@ -308,18 +270,28 @@ Instructions
         }
     }
 
-Open\_vSwitch\_ip\_address is IP address of machine, where Open vSwitch
+``Open\_vSwitch\_ip\_address`` is the IP address of the machine where Open vSwitch
 is installed.
 
 Verification
 ''''''''''''
 
-In shell execute: ``ovs-vsctl show``. There should be Bridge with name
-*br-test* and one port/interface called *br-test*.
+In a shell, execute: ``ovs-vsctl show``. There should be a Bridge with
+the name *br-test* and one port/interface called *br-test*.
 
-Also, corresponding SFF for this OVS Bridge should be configured, which
-can be verified through SFC User Interface or RESTCONF as stated in
-previous tutorial.
+Also, the corresponding SFF for this OVS Bridge should be configured,
+which can be verified through the SFC User Interface or RESTCONF as
+follows.
+
+a. Visit the SFC User Interface:
+   ``http://<odl_ip_address>:8181/sfc/index.html#/sfc/serviceforwarder``
+
+b. Use pure RESTCONF and send a GET request to URL:
+   ``http://<odl_ip_address>:8181/restconf/config/service-function-forwarder:service-function-forwarders``
+
+There should be an SFF, whose name ends with *br1* and the
+SFF should contain two DataPlane locators: *br1* and *testPort*.
+
 
 SFC Classifier User Guide
 -------------------------
@@ -340,13 +312,13 @@ OpenFlow Classifier
 ~~~~~~~~~~~~~~~~~~~
 
 OpenFlow Classifier implements the classification criteria based on
-OpenFlow rules deployed into an OpenFlow switch. An Open vSwitch will
-take the role of a classifier and performs various encapsulations such
-NSH, VLAN, MPLS, etc. In the existing implementation, classifier can
+OpenFlow rules deployed into an OpenFlow switch. An Open vSwitch
+takes the role of a classifier and performs various encapsulations such
+NSH, VLAN, MPLS, and so on. In the existing implementation, classifier can
 support NSH encapsulation. Matching information is based on ACL for MAC
-addresses, ports, protocol, IPv4 and IPv6. Supported protocols are TCP,
-UDP and SCTP. Actions information in the OF rules, shall be forwarding
-of the encapsulated packets with specific information related to the
+addresses, ports, protocol, IPv4, and IPv6. Supported protocols are TCP,
+UDP and SCTP. Actions information in the OF rules are used to forward
+the encapsulated packets with specific information related to the
 RSP.
 
 Classifier Architecture
@@ -358,10 +330,8 @@ OpenFlow rules that perform the classification of the packets and react
 accordingly. The OpenFlow Southbound interface is used to translate the
 ACL information into OF rules within the Open vSwitch.
 
-.. note::
-
-    in order to create the instance of the bridge that takes the role of
-    a classifier, an "empty" SFF must be created.
+.. note:: In order to create the instance of the bridge that takes the role of
+          a classifier, an "empty" SFF must be created.
 
 Configuring Classifier
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -376,21 +346,21 @@ Configuring Classifier
 Administering or Managing Classifier
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Classification information is based on MAC addresses, protocol, ports
+Classification information is based on MAC addresses, protocol, ports,
 and IP. ACL gathers this information and is assigned to an RSP which
-turns to be a specific path for a Service Chain.
+becomes a specific path for a Service Chain.
 
 Iptables Classifier
 ~~~~~~~~~~~~~~~~~~~
 
 Classifier manages everything from starting the packet listener to
 creation (and removal) of appropriate ip(6)tables rules and marking
-received packets accordingly. Its functionality is **available only on
-Linux** as it leverdges **NetfilterQueue**, which provides access to
-packets matched by an **iptables** rule. Classifier requires **root
+received packets accordingly. Its functionality is available only on
+Linux as it leverages **NetfilterQueue**, which provides access to
+packets matched by an iptables rule. Classifier requires **root
 privileges** to be able to operate.
 
-So far it is capable of processing ACL for MAC addresses, ports, IPv4
+So far it is capable of processing ACL for MAC addresses, ports, IPv4,
 and IPv6. Supported protocols are TCP and UDP.
 
 Classifier Architecture
@@ -399,44 +369,40 @@ Classifier Architecture
 Python code located in the project repository
 sfc-py/common/classifier.py.
 
-.. note::
-
-    classifier assumes that Rendered Service Path (RSP) **already
-    exists** in ODL when an ACL referencing it is obtained
+.. note:: Classifier assumes that Rendered Service Path (RSP) already
+          exists in ODL when an ACL referencing it is obtained.
 
 1. sfc\_agent receives an ACL and passes it for processing to the
-   classifier
+   classifier.
 
-2. the RSP (its SFF locator) referenced by ACL is requested from ODL
+2. The RSP (its SFF locator) referenced by ACL is requested from ODL.
 
-3. if the RSP exists in the ODL then ACL based iptables rules for it are
-   applied
+3. If the RSP exists in the ODL then ACL based iptables rules for it are
+   applied.
 
-After this process is over, every packet successfully matched to an
-iptables rule (i.e. successfully classified) will be NSH encapsulated
+After this process concludes, every packet successfully matched to an
+iptables rule (i.e. successfully classified) is NSH encapsulated
 and forwarded to a related SFF, which knows how to traverse the RSP.
 
-Rules are created using appropriate iptables command. If the Access
-Control Entry (ACE) rule is MAC address related both iptables and
-IPv6 tables rules re issued. If ACE rule is IPv4 address related, only
+Rules are created using appropriate iptables commands. If the Access
+Control Entry (ACE) rule is a MAC address related to both iptables and
+IPv6 tables rules re-issued. If ACE rule is IPv4 address related, only
 iptables rules are issued, same for IPv6.
 
-.. note::
-
-    iptables **raw** table contains all created rules
+.. note:: iptables **raw** table contains all created rules.
 
 Configuring Classifier
 ^^^^^^^^^^^^^^^^^^^^^^
 
-| Classfier does’t need any configuration.
-| Its only requirement is that the **second (2) Netfilter Queue** is not
-  used by any other process and is **avalilable for the classifier**.
+Classfier does not require any configuration. Its only requirement is that
+the **second (2) Netfilter Queue** is not used by any other process and
+is available for the classifier.
 
 Administering or Managing Classifier
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Classifier runs alongside sfc\_agent, therefore the command for starting
-it locally is:
+Classifier runs alongside sfc\_agent; therefore, the command for starting
+it locally is as follows:
 
 .. code-block:: bash
 
@@ -451,9 +417,10 @@ Overview
 
 The Service Function Chaining (SFC) OpenFlow Renderer (SFC OF Renderer)
 implements Service Chaining on OpenFlow switches. It listens for the
-creation of a Rendered Service Path (RSP), and once received it programs
-Service Function Forwarders (SFF) that are hosted on OpenFlow capable
-switches to steer packets through the service chain.
+creation of a Rendered Service Path (RSP) in the operational data store,
+and once received it programs Service Function Forwarders (SFF) that
+are hosted on OpenFlow capable switches to forward packets through the
+service chain.
 
 Common acronyms used in the following sections:
 
@@ -470,12 +437,13 @@ Common acronyms used in the following sections:
 SFC OpenFlow Renderer Architecture
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The SFC OF Renderer is invoked after a RSP is created using an MD-SAL
-listener called ``SfcOfRspDataListener``. Upon SFC OF Renderer
-initialization, the ``SfcOfRspDataListener`` registers itself to listen
-for RSP changes. When invoked, the ``SfcOfRspDataListener`` processes
-the RSP and calls the ``SfcOfFlowProgrammerImpl`` to create the
-necessary flows in the Service Function Forwarders configured in the
+The SFC OF Renderer is invoked after a RSP is created in the operational
+data store using an MD-SAL listener called ``SfcOfRspDataListener``.
+Upon SFC OF Renderer initialization, the ``SfcOfRspDataListener``
+registers itself to listen for RSP changes. When invoked, the
+``SfcOfRspDataListener`` processes the RSP and calls the
+``SfcOfFlowProgrammerImpl`` to create the necessary flows in
+the Service Function Forwarders configured in the
 RSP. Refer to the following diagram for more details.
 
 .. figure:: ./images/sfc/sfcofrenderer_architecture.png
@@ -524,8 +492,8 @@ It is possible for the SFF to also act as a classifier. This table maps
 subscriber traffic to RSPs, and is explained in detail in the classifier
 documentation.
 
-If the SFF is not a classifier, then this table will just have a simple
-Goto Table 1 flow.
+If the SFF is not a classifier, then this table simple contains a Goto Table 1
+flow.
 
 Transport Ingress Table detailed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -601,7 +569,7 @@ Path Mapper ACL Table detailed
 
 This table is only populated when PacketIn packets are received from the
 switch for TcpProxy type SFs. These flows are created with an inactivity
-timer of 60 seconds and will be automatically deleted upon expiration.
+timer of 60 seconds and are automatically deleted upon expiration.
 
 Next Hop Table detailed
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -654,7 +622,7 @@ the packets out.
 
 Here are two examples on SFF1. RSP Paths 1 and 2 are symmetric MPLS
 paths that use VLAN for the SFF-SF. RSP Paths 3 and 4 are symmetric NSH
-paths. Since it is assumed that switches used for NSH will only have one
+paths. Since it is assumed that switches used for NSH only have one
 VXLAN port, the NSH packets are just sent back where they came from.
 
 +----------+--------------------------------+--------------------------------+
@@ -701,6 +669,10 @@ features must be installed.
 
 -  odl-sfc-ui (optional)
 
+Since OpenDaylight Karaf features internally install dependent features,
+all of the above features can be installed by simply installing the
+''odl-sfc-openflow-renderer'' feature.
+
 The following command can be used to view all of the currently installed
 Karaf features:
 
@@ -724,8 +696,9 @@ SFC OF Renderer Tutorial
 Overview
 ^^^^^^^^
 
-In this tutorial, 2 different encapsulations will be shown: MPLS and
-NSH. The following Network Topology diagram is a logical view of the
+The VXLAN-GPE NSH encapsulations are shown in this tutorial.
+
+The following Network Topology diagram is a logical view of the
 SFFs and SFs involved in creating the Service Chains.
 
 .. figure:: ./images/sfc/sfcofrenderer_nwtopo.png
@@ -740,9 +713,9 @@ To use this example, SFF OpenFlow switches must be created and connected
 as illustrated above. Additionally, the SFs must be created and
 connected.
 
-Note that RSP symmetry depends on Service Function Path symmetric field, if
-present. If not, the RSP will be symmetric if any of the SFs involved in the
-chain has the bidirectional field set to true.
+.. note:: RSP symmetry depends on the Service Function Path symmetric field,
+          if present. If not, the RSP is symmetric if any of the SFs
+          involved in the chain has the bidirectional field set to true.
 
 Target Environment
 ^^^^^^^^^^^^^^^^^^
@@ -770,15 +743,15 @@ Steps to configure the SFC OF Renderer tutorial:
 
 4. Send the ``SFP`` RESTCONF configuration
 
-5. Create the ``RSP`` with a RESTCONF RPC command
+5. The ``RSP`` is created internally when the ``SFP`` is created.
 
 Once the configuration has been successfully created, query the Rendered
 Service Paths with either the SFC UI or via RESTCONF. Notice that the
-RSP is symmetrical, so the following 2 RSPs will be created:
+RSP is symmetrical, so the following 2 RSPs are created:
 
--  sfc-path1
+-  sfc-path1-Path-<RSP-ID>
 
--  sfc-path1-Reverse
+-  sfc-path1-Path-<RSP-ID>-Reverse
 
 At this point the Service Chains have been created, and the OpenFlow
 Switches are programmed to steer traffic through the Service Chain.
@@ -984,32 +957,6 @@ command:
         ]
       }
     }
-
-| **NSH Rendered Service Path creation**
-
-.. code-block:: bash
-
-   curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '${JSON}' -X POST --user admin:admin http://localhost:8181/restconf/operations/rendered-service-path:create-rendered-path/
-
-**RSP creation JSON.**
-
-.. code-block:: json
-
-    {
-     "input": {
-         "name": "sfc-path1",
-         "parent-service-function-path": "sfc-path1"
-     }
-    }
-
-| **NSH Rendered Service Path removal**
-
-The following command can be used to remove a Rendered Service Path
-called ``sfc-path1``:
-
-.. code-block:: bash
-
-   curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '{"input": {"name": "sfc-path1" } }' -X POST --user admin:admin http://localhost:8181/restconf/operations/rendered-service-path:delete-rendered-path/
 
 | **NSH Rendered Service Path Query**
 
@@ -1283,28 +1230,6 @@ command:
    --data '${JSON}' -X POST --user admin:admin
     http://localhost:8181/restconf/operations/rendered-service-path:create-rendered-path/
 
-**RSP creation JSON.**
-
-.. code-block:: json
-
-    {
-     "input": {
-         "name": "sfc-path1",
-         "parent-service-function-path": "sfc-path1"
-     }
-    }
-
-| **MPLS Rendered Service Path removal**
-
-The following command can be used to remove a Rendered Service Path
-called ``sfc-path1``:
-
-.. code-block:: bash
-
-   curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache"
-   --data '{"input": {"name": "sfc-path1" } }' -X POST --user
-    admin:admin http://localhost:8181/restconf/operations/rendered-service-path:delete-rendered-path/
-
 | **MPLS Rendered Service Path Query**
 
 The following command can be used to query all of the created Rendered
@@ -1470,9 +1395,7 @@ to be sent to network-topology:
       </yang-module-capabilities>
     </node>
 
-.. note::
-
-    The device name in the URL and in the XML must match.
+.. note:: The device name in the URL and in the XML must match.
 
 Instructions
 ^^^^^^^^^^^^
@@ -1712,7 +1635,7 @@ choosing the service function selection algorithm. MD-SAL data store
 provides all supported service function selection algorithms, and
 provides APIs to enable one of the provided service function selection
 algorithms. Once a service function selection algorithm is enabled, the
-service function selection algorithm will work when creating a Rendered
+service function selection algorithm works when creating a Rendered
 Service Path.
 
 Select SFs with Scheduler
@@ -1781,11 +1704,9 @@ Here is also a snapshot for using the RESTClient plugin:
 
    Karaf Web UI
 
-.. note::
-
-    Some service function selection algorithms in the drop list are not
-    implemented yet. Only the first three algorithms are committed at
-    the moment.
+.. note:: Some service function selection algorithms in the drop list are not
+          implemented yet. Only the first three algorithms are committed at
+          the moment.
 
 Random
 ^^^^^^
@@ -1808,7 +1729,7 @@ Prerequisites
 Target Environment
 ''''''''''''''''''
 
-The Random algorithm will work either no algorithm type is selected or
+The Random algorithm works when either no algorithm type is selected or
 the Random algorithm is selected.
 
 Instructions
@@ -1828,7 +1749,7 @@ Overview
 
 The Round Robin algorithm is used to select one Service Function from
 the name list which it gets from the Service Function Type in a Round
-Robin manner, this will balance workloads to all Service Functions.
+Robin manner; this balances workloads to all Service Functions.
 However, this method cannot help all Service Functions load the same
 workload because it’s flow-based Round Robin.
 
@@ -1842,7 +1763,7 @@ Prerequisites
 Target Environment
 ''''''''''''''''''
 
-The Round Robin algorithm will work one the Round Robin algorithm is
+The Round Robin algorithm works once the Round Robin algorithm is
 selected.
 
 Instructions
@@ -2259,7 +2180,7 @@ The deployed topology like this:
 -  Verify the Rendered Service Path to ensure the selected hops are
    linked in one SFF. The correct RSP is firewall-1⇒napt44-1 or
    firewall-2⇒napt44-2. The first SF type is Firewall in Service
-   Function Chain. So the algorithm will select first Hop randomly among
+   Function Chain. Therefore, the algorithm selects the first Hop randomly among
    all the SFs type is Firewall. Assume the first selected SF is
    firewall-2. All the path from firewall-1 to SF which type is Napt44
    are list:
@@ -2330,8 +2251,8 @@ Relevant objects in the YANG model are as follows:
 Tutorials
 ~~~~~~~~~
 
-This tutorial will explain how to create a simple SFC configuration,
-with SFG instead of SF. In this example, the SFG will include two
+This tutorial explains how to create a simple SFC configuration,
+with SFG instead of SF. In this example, the SFG includes two
 existing SF.
 
 Setup SFC
@@ -2523,9 +2444,9 @@ features must be installed:
 
 -  odl-sfc-pot
 
-Please note that the odl-sfc-pot-netconf-renderer or other renderers in future
-must be installed for the feature to take full-effect.  The details of the renderer
-features are described in other parts of this document.
+.. note:: The odl-sfc-pot-netconf-renderer or other renderers in future
+          must be installed for the feature to take full-effect.  The details
+          of the renderer features are described in other parts of this document.
 
 SFC Proof of Transit Tutorial
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2533,15 +2454,15 @@ SFC Proof of Transit Tutorial
 Overview
 ^^^^^^^^
 
-This tutorial is a simple example how to configure Service Function
-Chain Proof of Transit using SFC POT feature.
+This tutorial is a simple example of how to configure Service Function
+Chain Proof of Transit using the SFC POT feature.
 
 Preconditions
 ^^^^^^^^^^^^^
 
 To enable a device to handle SFC Proof of Transit, it is expected that
 the NETCONF node device advertise capability as under ioam-sb-pot.yang
-present under sfc-model/src/main/yang folder. It is also expected that base
+present under ``sfc-model/src/main/yang`` folder. It is also expected that base
 NETCONF support be enabled and its support capability advertised as capabilities.
 
 NETCONF support:``urn:ietf:params:netconf:base:1.0``
@@ -2667,7 +2588,7 @@ devices.
 Preconditions
 ^^^^^^^^^^^^^
 
-The NETCONF-capable device will have to support sfc-ioam-sb-pot.yang file.
+The NETCONF-capable device must support the sfc-ioam-sb-pot.yang file.
 
 It is expected that a NETCONF-capable VPP device has Honeycomb (Hc2vpp)
 Java-based agent that helps to translate between NETCONF and VPP internal
@@ -2686,7 +2607,7 @@ The first step is to create RSP for the SFC as per SFC guidelines above.
 
 Enable SFC PoT is done on the RSP via RESTCONF to the ODL as outlined above.
 
-Internally, the NETCONF renderer will act on the callback to a modified RSP
+Internally, the NETCONF renderer acts on the callback to a modified RSP
 that has PoT enabled.
 
 In-situ OAM algorithms for auto-generation of SFC PoT parameters are
@@ -2741,7 +2662,7 @@ infrastructure.
 
 The Logical SFF simplifies the configuration of the current SFC data model by
 reducing the number of parameters to be be configured in every SFF, since the
-controller will discover those parameters by interacting with the services
+controller discovers those parameters by interacting with the services
 offered by the `Genius <./genius-user-guide.html>`__ project.
 
 The following picture shows the Logical SFF data model. The model gets
@@ -2913,7 +2834,7 @@ Here you have the new flows rendered in Node3 and Node4 which implement the NSH
 protocol. Every Rendered Service Path is represented by an NSP value. We
 provisioned a symmetric RSP so we get two NSPs: 8388613 and 5. Node3 holds the
 first SF of NSP 8388613 and the last SF of NSP 5. Node 4 holds the first SF of
-NSP 5 and the last SF of NSP 8388613. Both Node3 and Node4 will pop the NSH
+NSP 5 and the last SF of NSP 8388613. Both Node3 and Node4 pop the NSH
 header when the received packet has gone through the last SF of its path.
 
 **Rendered flows Node 3**
@@ -2944,8 +2865,8 @@ header when the received packet has gone through the last SF of its path.
 
 
 An interesting scenario to show the Logical SFF strength is the migration of a
-SF from a compute node to another. The OpenDaylight will learn the new topology
-by itself, then it will re-render the new flows to the new SFFs affected.
+SF from a compute node to another. OpenDaylight learns the new topology
+by itself, then it re-renders the new flows to the new SFFs affected.
 
 .. figure:: ./images/sfc/single-logical-sff-example-migration.png
    :alt: Logical SFF - SF Migration Example
@@ -3136,8 +3057,8 @@ SFC pipeline impacts
 
 After binding SFC service with a particular interface by means of Genius, as
 explained in the :ref:`Genius User Guide <genius-user-guide-binding-services>`,
-the entry point in the SFC pipeline will be table 82
-(SFC_TRANSPORT_CLASSIFIER_TABLE), and from that point, packet processing will be
+the entry point in the SFC pipeline is table 82
+(SFC_TRANSPORT_CLASSIFIER_TABLE), and from that point, packet processing is
 similar to the :ref:`SFC OpenFlow pipeline <sfc-user-guide-sfc-of-pipeline>`,
 just with another set of specific tables for the SFC service.
 
@@ -3147,3 +3068,60 @@ This picture shows the SFC pipeline after service integration with Genius:
    :alt: SFC Logical SFF OpenFlow pipeline
 
    SFC Logical SFF OpenFlow pipeline
+
+SFC Statistics User Guide
+-------------------------
+
+Statistics can be queried for Rendered Service Paths created on OVS bridges.
+Future support will be added for Service Function Forwarders and Service
+Functions. Future support will also be added for VPP and IOs-XE devices.
+
+To use SFC statistics, the 'odl-sfc-statistics' Karaf feature must be
+installed.
+
+Statistics are queried by sending an RPC RESTCONF message to ODL. For
+RSPs, it is possible to either query statistics for one individual RSP
+or for all RSPs, as follows:
+
+Querying statistics for a specific RSP:
+
+.. code-block:: bash
+
+   curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache"
+   --data '{ "input": { "name" : "path1-Path-42" } }' -X POST --user admin:admin
+   http://localhost:8181/restconf/operations/sfc-statistics-operations:get-rsp-statistics
+
+
+Querying statistics for all RSPs:
+
+.. code-block:: bash
+
+   curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache"
+   --data '{ "input": { } }' -X POST --user admin:admin
+   http://localhost:8181/restconf/operations/sfc-statistics-operations:get-rsp-statistics
+
+
+Following is an example of output that can be expected for each RSP.
+
+.. code-block:: json
+
+   {
+       "output": {
+           "statistics": [
+               {
+                   "name": "sfc-path-1sf1sff-Path-34",
+                   "statistic-by-timestamp": [
+                       {
+                           "service-statistic": {
+                               "bytes-in": 0,
+                               "bytes-out": 0,
+                               "packets-in": 0,
+                               "packets-out": 0
+                           },
+                           "timestamp": 1518561500480
+                       }
+                   ]
+               }
+           ]
+       }
+   }
