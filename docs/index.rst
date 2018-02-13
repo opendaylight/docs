@@ -54,7 +54,6 @@ participate in the development of OpenDaylight or would like to start.
    submodules/integration/test/docs/index
    documentation
    release-process/index
-   submodules/spectrometer/docs/index
    submodules/genius/docs/index
    submodules/infrautils/docs/index
    submodules/netvirt/docs/contributor-guide/index
