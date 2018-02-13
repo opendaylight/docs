@@ -63,6 +63,15 @@ following limitations:
   issues became apparent when managing thousands of OpenFlow
   switches, however this may vary depending on deployment and use cases.
 
+Security Limitations
+====================
+
+All OpenDaylight Security Advisories can be found on the `Security Advisories
+wiki page <https://wiki.opendaylight.org/view/Security:Advisories>`_.
+
+The following Security Advisory is of special note to OpenDaylight Carbon users:
+
+* `CVE-2017-1000406 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-1000406>`_
 
 Project-specific Release Notes
 ==============================
