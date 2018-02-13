@@ -7,9 +7,9 @@ OpenDaylight Service Function Chaining (SFC) Overview
 -----------------------------------------------------
 
 OpenDaylight Service Function Chaining (SFC) provides the ability to
-define an ordered list of a network services (e.g. firewalls, load
-balancers). These service are then "stitched" together in the network to
-create a service chain. This project provides the infrastructure
+define an ordered list of network services (e.g. firewalls, load
+balancers). These services are then "stitched" together in the network
+to create a service chain. This project provides the infrastructure
 (chaining logic, APIs) needed for ODL to provision a service chain in
 the network and an end-user application for defining such chains.
 
@@ -186,7 +186,7 @@ Tutorial
 
 Comprehensive tutorial on how to use the Southbound REST Plug-in and how
 to control network devices with it can be found on:
-https://wiki.opendaylight.org/view/Service_Function_Chaining:Main#SFC_101
+https://wiki.opendaylight.org/view/Service_Function_Chaining:Main#SFC_103
 
 SFC-OVS integration
 -------------------
@@ -200,10 +200,9 @@ Classifier, etc.) to OVS objects (like Bridge,
 TerminationPoint=Port/Interface). The mapping takes care of automatic
 instantiation (setup) of corresponding object whenever its counterpart
 is created. For example, when a new SFF is created, the SFC-OVS plug-in
-will create a new OVS bridge and when a new OVS Bridge is created, the
-SFC-OVS plug-in will create a new SFF.
+will create a new OVS bridge.
 
-The feature is intended for SFC users willing to use Open vSwitch as
+The feature is intended for SFC users willing to use Open vSwitch as an
 underlying network infrastructure for deploying RSPs (Rendered Service
 Paths).
 
@@ -232,54 +231,17 @@ Configuring SFC-OVS
 Tutorials
 ~~~~~~~~~
 
-Verifying mapping from OVS to SFF
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Overview
-''''''''
-
-This tutorial shows the usual work flow when OVS configuration is
-transformed to corresponding SFC objects (in this case SFF).
-
-Prerequisites
-''''''''''''''
-
--  Open vSwitch installed (ovs-vsctl command available in shell)
-
--  SFC-OVS feature configured as stated above
-
-Instructions
-''''''''''''
-
-1. ``ovs-vsctl set-manager tcp:<odl_ip_address>:6640``
-
-2. ``ovs-vsctl add-br br1``
-
-3. ``ovs-vsctl add-port br1 testPort``
-
-Verification
-''''''''''''
-
-a. visit SFC User Interface:
-   ``http://<odl_ip_address>:8181/sfc/index.html#/sfc/serviceforwarder``
-
-b. use pure RESTCONF and send GET request to URL:
-   ``http://<odl_ip_address>:8181/restconf/config/service-function-forwarder:service-function-forwarders``
-
-There should be SFF, which name will be ending with *br1* and the SFF
-should containt two DataPlane locators: *br1* and *testPort*.
-
 Verifying mapping from SFF to OVS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Overview
 ''''''''
 
-This tutorial shows the usual workflow during creation of OVS Bridge
-with use of SFC APIs.
+This tutorial shows the usual workflow during creation of an OVS
+Bridge with use of the SFC APIs.
 
 Prerequisites
-''''''''''''''
+'''''''''''''
 
 -  Open vSwitch installed (ovs-vsctl command available in shell)
 
@@ -288,7 +250,7 @@ Prerequisites
 Instructions
 ''''''''''''
 
-1. In shell execute: ``ovs-vsctl set-manager tcp:<odl_ip_address>:6640``
+1. In a shell execute: ``ovs-vsctl set-manager tcp:<odl_ip_address>:6640``
 
 2. Send POST request to URL:
    ``http://<odl_ip_address>:8181/restconf/operations/service-function-forwarder-ovs:create-ovs-bridge``
@@ -308,18 +270,28 @@ Instructions
         }
     }
 
-Open\_vSwitch\_ip\_address is IP address of machine, where Open vSwitch
+Open\_vSwitch\_ip\_address is the IP address of the machine where Open vSwitch
 is installed.
 
 Verification
 ''''''''''''
 
-In shell execute: ``ovs-vsctl show``. There should be Bridge with name
-*br-test* and one port/interface called *br-test*.
+In a shell execute: ``ovs-vsctl show``. There should be a Bridge with
+the name *br-test* and one port/interface called *br-test*.
 
-Also, corresponding SFF for this OVS Bridge should be configured, which
-can be verified through SFC User Interface or RESTCONF as stated in
-previous tutorial.
+Also, the corresponding SFF for this OVS Bridge should be configured,
+which can be verified through the SFC User Interface or RESTCONF as
+follows.
+
+a. Visit the SFC User Interface:
+   ``http://<odl_ip_address>:8181/sfc/index.html#/sfc/serviceforwarder``
+
+b. Use pure RESTCONF and send a GET request to URL:
+   ``http://<odl_ip_address>:8181/restconf/config/service-function-forwarder:service-function-forwarders``
+
+There should be an SFF, whose name will be ending with *br1* and the
+SFF should contain two DataPlane locators: *br1* and *testPort*.
+
 
 SFC Classifier User Guide
 -------------------------
@@ -451,9 +423,10 @@ Overview
 
 The Service Function Chaining (SFC) OpenFlow Renderer (SFC OF Renderer)
 implements Service Chaining on OpenFlow switches. It listens for the
-creation of a Rendered Service Path (RSP), and once received it programs
-Service Function Forwarders (SFF) that are hosted on OpenFlow capable
-switches to steer packets through the service chain.
+creation of a Rendered Service Path (RSP) in the operational data store,
+and once received it programs Service Function Forwarders (SFF) that
+are hosted on OpenFlow capable switches to forward packets through the
+service chain.
 
 Common acronyms used in the following sections:
 
@@ -470,12 +443,13 @@ Common acronyms used in the following sections:
 SFC OpenFlow Renderer Architecture
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The SFC OF Renderer is invoked after a RSP is created using an MD-SAL
-listener called ``SfcOfRspDataListener``. Upon SFC OF Renderer
-initialization, the ``SfcOfRspDataListener`` registers itself to listen
-for RSP changes. When invoked, the ``SfcOfRspDataListener`` processes
-the RSP and calls the ``SfcOfFlowProgrammerImpl`` to create the
-necessary flows in the Service Function Forwarders configured in the
+The SFC OF Renderer is invoked after a RSP is created in the operational
+data store using an MD-SAL listener called ``SfcOfRspDataListener``.
+Upon SFC OF Renderer initialization, the ``SfcOfRspDataListener``
+registers itself to listen for RSP changes. When invoked, the
+``SfcOfRspDataListener`` processes the RSP and calls the
+``SfcOfFlowProgrammerImpl`` to create the necessary flows in
+the Service Function Forwarders configured in the
 RSP. Refer to the following diagram for more details.
 
 .. figure:: ./images/sfc/sfcofrenderer_architecture.png
@@ -701,6 +675,10 @@ features must be installed.
 
 -  odl-sfc-ui (optional)
 
+Since OpenDaylight Karaf features internally install dependent features
+all of the above features can be installed by simply installing the
+''odl-sfc-openflow-renderer'' feature.
+
 The following command can be used to view all of the currently installed
 Karaf features:
 
@@ -724,8 +702,8 @@ SFC OF Renderer Tutorial
 Overview
 ^^^^^^^^
 
-In this tutorial, 2 different encapsulations will be shown: MPLS and
-NSH. The following Network Topology diagram is a logical view of the
+In this tutorial, the VXLAN-GPE NSH encapsulations will be shown.
+The following Network Topology diagram is a logical view of the
 SFFs and SFs involved in creating the Service Chains.
 
 .. figure:: ./images/sfc/sfcofrenderer_nwtopo.png
@@ -740,9 +718,9 @@ To use this example, SFF OpenFlow switches must be created and connected
 as illustrated above. Additionally, the SFs must be created and
 connected.
 
-Note that RSP symmetry depends on Service Function Path symmetric field, if
-present. If not, the RSP will be symmetric if any of the SFs involved in the
-chain has the bidirectional field set to true.
+Note that RSP symmetry depends on the Service Function Path symmetric
+field, if present. If not, the RSP will be symmetric if any of the SFs
+involved in the chain has the bidirectional field set to true.
 
 Target Environment
 ^^^^^^^^^^^^^^^^^^
@@ -770,15 +748,15 @@ Steps to configure the SFC OF Renderer tutorial:
 
 4. Send the ``SFP`` RESTCONF configuration
 
-5. Create the ``RSP`` with a RESTCONF RPC command
+5. The ``RSP`` will be created internally when the ``SFP`` is created.
 
 Once the configuration has been successfully created, query the Rendered
 Service Paths with either the SFC UI or via RESTCONF. Notice that the
 RSP is symmetrical, so the following 2 RSPs will be created:
 
--  sfc-path1
+-  sfc-path1-Path-<RSP-ID>
 
--  sfc-path1-Reverse
+-  sfc-path1-Path-<RSP-ID>-Reverse
 
 At this point the Service Chains have been created, and the OpenFlow
 Switches are programmed to steer traffic through the Service Chain.
@@ -984,32 +962,6 @@ command:
         ]
       }
     }
-
-| **NSH Rendered Service Path creation**
-
-.. code-block:: bash
-
-   curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '${JSON}' -X POST --user admin:admin http://localhost:8181/restconf/operations/rendered-service-path:create-rendered-path/
-
-**RSP creation JSON.**
-
-.. code-block:: json
-
-    {
-     "input": {
-         "name": "sfc-path1",
-         "parent-service-function-path": "sfc-path1"
-     }
-    }
-
-| **NSH Rendered Service Path removal**
-
-The following command can be used to remove a Rendered Service Path
-called ``sfc-path1``:
-
-.. code-block:: bash
-
-   curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache" --data '{"input": {"name": "sfc-path1" } }' -X POST --user admin:admin http://localhost:8181/restconf/operations/rendered-service-path:delete-rendered-path/
 
 | **NSH Rendered Service Path Query**
 
@@ -1282,28 +1234,6 @@ command:
    curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache"
    --data '${JSON}' -X POST --user admin:admin
     http://localhost:8181/restconf/operations/rendered-service-path:create-rendered-path/
-
-**RSP creation JSON.**
-
-.. code-block:: json
-
-    {
-     "input": {
-         "name": "sfc-path1",
-         "parent-service-function-path": "sfc-path1"
-     }
-    }
-
-| **MPLS Rendered Service Path removal**
-
-The following command can be used to remove a Rendered Service Path
-called ``sfc-path1``:
-
-.. code-block:: bash
-
-   curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache"
-   --data '{"input": {"name": "sfc-path1" } }' -X POST --user
-    admin:admin http://localhost:8181/restconf/operations/rendered-service-path:delete-rendered-path/
 
 | **MPLS Rendered Service Path Query**
 
@@ -3147,3 +3077,61 @@ This picture shows the SFC pipeline after service integration with Genius:
    :alt: SFC Logical SFF OpenFlow pipeline
 
    SFC Logical SFF OpenFlow pipeline
+
+SFC Statistics User Guide
+-------------------------
+
+Statistics can be queried for Rendered Service Paths created on OVS bridges.
+Future support will be added for Service Function Forwarders and Service
+Functions. Future support will also be added for VPP and IOs-XE devices.
+
+To use SFC statistics the 'odl-sfc-statistics' Karaf feature needs to be
+installed.
+
+Statistics are queried by sending an RPC RESTconf message to ODL. For
+RSPs, its possible to either query statistics for one individual RSP
+or for all RSPs, as follows:
+
+Querying statistics for a specific RSP:
+
+.. code-block:: bash
+
+   curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache"
+   --data '{ "input": { "name" : "path1-Path-42" } }' -X POST --user admin:admin
+   http://localhost:8181/restconf/operations/sfc-statistics-operations:get-rsp-statistics
+
+
+Querying statistics for all RSPs:
+
+.. code-block:: bash
+
+   curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache"
+   --data '{ "input": { } }' -X POST --user admin:admin
+   http://localhost:8181/restconf/operations/sfc-statistics-operations:get-rsp-statistics
+
+
+The following is the sort of output that can be expected for each RSP.
+
+.. code-block:: json
+
+   {
+       "output": {
+           "statistics": [
+               {
+                   "name": "sfc-path-1sf1sff-Path-34",
+                   "statistic-by-timestamp": [
+                       {
+                           "service-statistic": {
+                               "bytes-in": 0,
+                               "bytes-out": 0,
+                               "packets-in": 0,
+                               "packets-out": 0
+                           },
+                           "timestamp": 1518561500480
+                       }
+                   ]
+               }
+           ]
+       }
+   }
+
