@@ -5320,7 +5320,7 @@ Possibly, a reason/hint for a cause of the problem can be found there.
 
 Bug reporting
 ^^^^^^^^^^^^^
-Before you report a bug, check `BGPCEP Bugzilla <https://bugs.opendaylight.org/buglist.cgi?list_id=65849&product=bgpcep&resolution=--->`_ to ensure same/similar bug is not already filed there.
+Before you report a bug, check `BGPCEP Jira <https://jira.opendaylight.org/browse/BGPCEP-756?jql=project%20%3D%20BGPCEP%20AND%20component%20%3D%20BGP>`_ to ensure same/similar bug is not already filed there.
 
 Write an e-mail to bgpcep-users@lists.opendaylight.org and provide following information:
 
