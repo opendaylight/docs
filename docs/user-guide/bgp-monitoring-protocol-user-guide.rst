@@ -564,7 +564,7 @@ BMP is not working...
 
 Bug reporting
 ^^^^^^^^^^^^^
-Before you report a bug, check `BGPCEP Bugzilla <https://bugs.opendaylight.org/buglist.cgi?list_id=65849&product=bgpcep&resolution=--->`_ to ensure same/similar bug is not already filed there.
+Before you report a bug, check `BGPCEP Jira <https://jira.opendaylight.org/projects/BGPCEP/issues/BGPCEP-589?filter=allopenissues>`_ to ensure same/similar bug is not already filed there.
 
 Write an e-mail to bgpcep-users@lists.opendaylight.org and provide following information:
 
