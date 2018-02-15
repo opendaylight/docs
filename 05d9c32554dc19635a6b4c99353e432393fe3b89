@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "39dc62d0_4f0ab015",
+        "filename": "docs/release-process/milestone-readouts/mf_template.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 2567
+      },
+      "writtenOn": "2018-02-15T22:18:49Z",
+      "side": 1,
+      "message": "I think question 2 and 3 could be merged.  Essentially, we need in writing that the projects have downloaded, installed, and tested RC2 and confirmed that there are no blockers and sing off on all CSIT failures as OKAY and not not blockers.  So I think: \"Have downloaded and tested RC2 and confirmed that there are no blockers and all CSIT test failures are OKAY to release.\"",
+      "range": {
+        "startLine": 25,
+        "startChar": 3,
+        "endLine": 25,
+        "endChar": 73
+      },
+      "revId": "05d9c32554dc19635a6b4c99353e432393fe3b89",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a4a7228d_29aa600f",
+        "filename": "docs/release-process/milestone-readouts/mf_template.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 2567
+      },
+      "writtenOn": "2018-02-15T22:18:49Z",
+      "side": 1,
+      "message": "We can remove this question, as it is already addressed in M4 milestone readout.",
+      "range": {
+        "startLine": 29,
+        "startChar": 3,
+        "endLine": 30,
+        "endChar": 15
+      },
+      "revId": "05d9c32554dc19635a6b4c99353e432393fe3b89",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d7fafca6_12f6244d",
+        "filename": "docs/release-process/milestone-readouts/mf_template.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 2567
+      },
+      "writtenOn": "2018-02-15T22:18:49Z",
+      "side": 1,
+      "message": "We should not be using MF for this question.  This should be asked for vote GO/NOGO against a specific build of RC3 (autorelease-xxxx build number).",
+      "range": {
+        "startLine": 32,
+        "startChar": 3,
+        "endLine": 33,
+        "endChar": 10
+      },
+      "revId": "05d9c32554dc19635a6b4c99353e432393fe3b89",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
