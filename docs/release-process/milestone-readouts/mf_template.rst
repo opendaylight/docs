@@ -27,7 +27,7 @@ Project Name
    - Updated tracking spreadsheet for failures: (Yes/No/Not Applicable)
 
 4. Do you plan to address CLM violations applicable to your project
-   post-release? (Yes/No)
+   post-release? (Yes/No/Not Applicable)
 
 5. Do you approve making the latest release candidate the official Opendaylight
    release? (Yes/No)
