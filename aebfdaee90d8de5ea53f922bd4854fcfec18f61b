@@ -2,6 +2,132 @@
   "comments": [
     {
       "key": {
+        "uuid": "da5d7faa_dbff747b",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 773
+      },
+      "writtenOn": "2018-02-17T21:05:42Z",
+      "side": 1,
+      "message": "Would this goal also cover \"Empower Release Team to Adapt Builds\"? That is another goal where the Release Team is more empowered to ensure the builds work and can work on  the project\u0027s behalf if needed. it ultimately rolls up into a timely release so I am fine with just that goal also.",
+      "revId": "aebfdaee90d8de5ea53f922bd4854fcfec18f61b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2c33ed5e_e8c54ba4",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 773
+      },
+      "writtenOn": "2018-02-17T21:05:42Z",
+      "side": 1,
+      "message": "Add the initial list of Managed projects?",
+      "revId": "aebfdaee90d8de5ea53f922bd4854fcfec18f61b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c7437a5a_7daa2485",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 773
+      },
+      "writtenOn": "2018-02-17T21:05:42Z",
+      "side": 1,
+      "message": "talked about this that some projects don\u0027t have a need for a meeting. Is there something we could use in lieu of that?",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 16
+      },
+      "revId": "aebfdaee90d8de5ea53f922bd4854fcfec18f61b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "88eef931_adec0cd0",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 773
+      },
+      "writtenOn": "2018-02-17T21:05:42Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 49,
+        "startChar": 3,
+        "endLine": 49,
+        "endChar": 4
+      },
+      "revId": "aebfdaee90d8de5ea53f922bd4854fcfec18f61b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e1905a79_d48ad389",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 773
+      },
+      "writtenOn": "2018-02-17T21:05:42Z",
+      "side": 1,
+      "message": "manner",
+      "range": {
+        "startLine": 57,
+        "startChar": 26,
+        "endLine": 57,
+        "endChar": 31
+      },
+      "revId": "aebfdaee90d8de5ea53f922bd4854fcfec18f61b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "819eeae2_18ce54a6",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 773
+      },
+      "writtenOn": "2018-02-17T21:05:42Z",
+      "side": 1,
+      "message": "to the",
+      "range": {
+        "startLine": 72,
+        "startChar": 9,
+        "endLine": 72,
+        "endChar": 12
+      },
+      "revId": "aebfdaee90d8de5ea53f922bd4854fcfec18f61b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e8a79518_356dd626",
         "filename": "docs/release-process/managed-release.rst",
         "patchSetId": 1
@@ -48,6 +174,30 @@
     },
     {
       "key": {
+        "uuid": "6f13a107_c1fa96d0",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 773
+      },
+      "writtenOn": "2018-02-17T21:05:42Z",
+      "side": 1,
+      "message": "We should add verbiage that certain \"core\" projects are grandfathered initially. This should be just a startup problem this time where we needed to grandfather some projects since they were core to the platform. We could also mention that the leaf projects covers the CSIT requirements. For the next group coming in I think it is good that they work to get those dependencies Managed-ready since they should likely be leaf\u0027s also.",
+      "parentUuid": "066d370e_eeb3f951",
+      "range": {
+        "startLine": 96,
+        "startChar": 0,
+        "endLine": 100,
+        "endChar": 32
+      },
+      "revId": "aebfdaee90d8de5ea53f922bd4854fcfec18f61b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "22452185_0e88367d",
         "filename": "docs/release-process/managed-release.rst",
         "patchSetId": 1
@@ -59,6 +209,30 @@
       "writtenOn": "2018-02-17T19:54:18Z",
       "side": 1,
       "message": "I think we want this every time, by all managed projects. Actually, it should be a flag/tag that they can just\nset in the jira above. So we require the one Jira with the human readable description and they need to\nadd the tag \"Managed Release\" or whatever we call it.",
+      "range": {
+        "startLine": 128,
+        "startChar": 0,
+        "endLine": 129,
+        "endChar": 61
+      },
+      "revId": "aebfdaee90d8de5ea53f922bd4854fcfec18f61b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "769d7d48_4ba31826",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 773
+      },
+      "writtenOn": "2018-02-17T21:05:42Z",
+      "side": 1,
+      "message": "Yeah, we need to come up with tags. Also for the Weather items. Maybe the Managed/Unmanaged tag should be more generic like Intent and then the jira example would have Managed or Unmanaged in the text? Thought I guess an explicit tag is better.",
+      "parentUuid": "22452185_0e88367d",
       "range": {
         "startLine": 128,
         "startChar": 0,
@@ -94,6 +268,30 @@
     },
     {
       "key": {
+        "uuid": "6ce384c0_8c668d70",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 773
+      },
+      "writtenOn": "2018-02-17T21:05:42Z",
+      "side": 1,
+      "message": "The report is collected monthly so we have history, but only the final one is need to be given to the TSC. But, we should  have the option to report before then if there are some warning signs. So maybe it should be reported all long to the TSC. We could always just say nothing to report if there are no warnings.",
+      "parentUuid": "88fba5d5_a46a9e6d",
+      "range": {
+        "startLine": 144,
+        "startChar": 52,
+        "endLine": 146,
+        "endChar": 8
+      },
+      "revId": "aebfdaee90d8de5ea53f922bd4854fcfec18f61b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "718760f2_fc12794f",
         "filename": "docs/release-process/managed-release.rst",
         "patchSetId": 1
@@ -114,6 +312,23 @@
       "revId": "aebfdaee90d8de5ea53f922bd4854fcfec18f61b",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b021e9d8_f257a07c",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 773
+      },
+      "writtenOn": "2018-02-17T21:05:42Z",
+      "side": 1,
+      "message": "extend this line",
+      "revId": "aebfdaee90d8de5ea53f922bd4854fcfec18f61b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
