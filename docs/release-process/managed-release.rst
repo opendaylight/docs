@@ -1,0 +1,729 @@
+***************
+Managed Release
+***************
+
+Managed Release Summary
+=======================
+
+The Managed Release Process will facilitate timely, stable OpenDaylight
+releases by allowing the release team to focus on closely managing a small set
+of core OpenDaylight projects while not imposing undue requirements on projects
+that prefer more autonomy.
+
+Managed Release Goals
+=====================
+
+Reduce Overhead on Release Team
+-------------------------------
+
+The Managed Release Model will allow the release team to focus their efforts
+on a smaller set of more stable, more responsive projects.
+
+Reduce Overhead on Projects
+---------------------------
+
+The Managed Release Model will reduce the overhead both on projects taking
+part in the Managed Release and Unmanaged Projects.
+
+Managed Projects will have fewer, smaller checkpoints consisting of only
+information that is maximally helpful for driving the release process. Much of
+the information collected at checkpoints will be automatically scraped,
+requiring minimal to no effort from projects. Additionally, Managed Release
+projects should have a more stable development environment, as the projects
+that can break the jobs they depend on will be a smaller set, more stable and
+more responsive.
+
+Projects that are Unmanaged will have less overhead and reporting. They will
+be free to develop in their own way, providing their artifacts to include in
+the final release or choosing to release on their own schedule. They will not
+be required to submit any checkpoints and will not be expected to work closely
+with the rest of the OpenDaylight community to resolve breakages.
+
+Enable Timely Releases
+----------------------
+
+The Managed Release Process will reduce the set of projects that must
+simultaneously become stable at release time. The release and test teams will
+be able to focus on orchestrating a quality release for a smaller set of more
+stable, more responsive projects. The release team will also have greater
+latitude to step in and help projects that are required for dependency reasons
+but may not have a large set of active contributors.
+
+Managed Projects
+================
+
+Managed Projects Summary
+========================
+
+Managed Projects are either required by most applications for dependency
+reasons or are mature, stable, responsive projects that are consistently able
+to take part in releases without jeopardizing them. Managed Projects will
+receive additional support from the test and release teams to further their
+stability and make sure OpenDaylight releases go out on-time. To enable this
+extra support, Managed Projects will be given less autonomy than OpenDaylight
+projects have historically been granted.
+
+Managed Projects for Dependency Reasons
+---------------------------------------
+
+Some projects are required by almost all other OpenDaylight projects. These
+projects must be in the Managed Release for it to support almost every
+OpenDaylight use case. Such projects will not have a choice about being in the
+Managed Release, the TSC will decide they are critical to the OpenDaylight
+platform and include them. They may not always meet the requirements that
+would normally be imposed on projects that wish to join the Managed Release.
+Since they cannot be kicked out of the release, the TSC, test and release teams
+will do their best to help them meet the Managed Release Requirements. This
+may involve giving Linux Foundation staff temporary committer rights to merge
+patches on behalf of unresponsive projects, or appointing committers if
+projects continue to remain unresponsive. The TSC will strive to work with
+projects and member companies to proactively keep projects healthy and find
+active contributors who can become committers in the normal way without the
+need to appoint them in times of crisis.
+
+Managed Non-Simultaneous Release Projects
+-----------------------------------------
+
+Some Managed Projects may decide to release on their own, not as a part of the
+Simultaneous Release. Such projects will still be subject to Managed Release
+Requirements, but will need to follow a different release process.
+
+For implementation reasons, the projects that are able to release independently
+must depend only on other projects that release independently. Therefore the
+Non-SR Projects will form a tree starting from odlparent and working up through
+the remainder of the Managed Projects. Currently odlparent and yangtools are
+the only such projects, but others may join them in the future.
+
+Requirements for Managed Projects
+---------------------------------
+
+Healthy Community
++++++++++++++++++
+
+Managed Projects should strive to have a healthy community.
+
+Responsiveness
+##############
+
+Managed Projects should be responsive over email, IRC, Gerrit, Jira and in
+regular meetings.
+
+All committers should be subscribed to their project's mailing list and the
+release mailing list.
+
+For the following particularly time-sensitive events, an appropriate response
+is expected within two business days.
+
+* RC or SR candidate feedback.
+* Major disruptions to downstream projects where a Jira weather item was not
+  present and the pending breakage was not reported to the release mailing
+  list.
+
+If anyone feels that a Managed Project is not responsive, a grievance process
+is in place to clearly handle the situation and keep a record for future
+consideration by the TSC.
+
+Active Committers
+#################
+
+Managed Projects should have sufficient active committers to review
+contributions in a timely manner, support potential contributors, keep CSIT
+healthy and generally effectively drive the project.
+
+If a project that the TSC deems is critical to the Managed Release is shown to
+not have sufficient active committers the TSC may step in and appoint
+additional committers. Projects that can be dropped from the Managed Release
+will be dropped instead of having additional committers appointed.
+
+Managed Projects should regularly prune their committer list to remove
+inactive committers.
+
+TSC Attendance
+##############
+
+Managed Projects are required to send a representative to attend TSC meetings.
+
+To facilitate quickly acting on problems identified during TSC meetings,
+representatives must be a committer to the project they are representing. A
+single person can represent any number of projects.
+
+Representatives will make the following entry into the meeting minutes to
+record their presence:
+
+#project <project ID>
+
+TSC minutes will be scraped per-release to gather attendance statistics. If a
+project does not provide a representative for at least half of TSC meetings a
+grievance will be filed for future consideration.
+
+Checkpoints Submitted On-Time
++++++++++++++++++++++++++++++
+
+Managed Projects must submit information required for checkpoints on-time.
+Submissions must be correct and adequate, as judged by the release team and
+the TSC. Inadequate or missing submissions will result in a grievance.
+
+Jobs Required for Managed Projects Running
+++++++++++++++++++++++++++++++++++++++++++
+
+Managed Projects are required to have the following jobs running and healthy.
+
+* Distribution check job (voting)
+* Validate autorelease job (voting)
+* Merge job (non-voting)
+* Sonar job (non-voting)
+* CLM job (non-voting)
+
+Depend only on Managed Projects
++++++++++++++++++++++++++++++++
+
+Managed Projects should only depend on other Managed Projects.
+
+If a project wants to be Managed but depends on Unmanaged Projects, they
+should work with their dependencies to become Managed at the same time or
+drop any Unmanaged dependencies.
+
+Documentation
++++++++++++++
+
+Managed Projects are required to produce a user guide, developer guide and
+release notes for each release.
+
+CLM
++++
+
+Managed Projects are required to handle CLM (Component Lifecycle Management)
+violations in a timely manner.
+
+Managed Release Process
+-----------------------
+
+Managed Release Checkpoints
++++++++++++++++++++++++++++
+
+Checkpoints are designed to be mostly automated, to be maximally effective at
+driving the release process and to impose as little overhead on projects as
+possible.
+
+There will be an initial checkpoint two weeks after the start of the release,
+a midway checkpoints one month before RC0 and a final checkpoint at RC0.
+
+.. _iniitial_checkpoint:
+
+Initial Checkpoint
+##################
+
+An initial checkpoint will be collected two weeks after the start of each
+release. The release team will review the information collected and report
+it to the TSC at the next TSC meeting.
+
+Projects will need to create the following artifacts:
+
+* High-level, human-readable description of what the project plans to do in this
+  release. This should be submitted as a Jira **Project_Plan** issue against the
+  TSC project.
+
+  * Select your project in the **ODL_Project** field
+
+  * Select the release version in the **ODL_Release** field
+
+  * Select the appropriate value in the **ODL_Participation** field:
+
+    ``SNAPSHOT_Integrated (Managed)`` or ``RELEASE_Integrated (Managed)``
+
+  * Select the value ``Initial`` in the **ODL_Checkpoint** field
+
+  * In the **Summary** field, put something like:
+
+    ``Project-X Fluorine Release Plan``
+
+  * In the **Description** field, fill in the details of your plan:
+
+    ``This should list a high-level, human-readable summary of what a project
+      plans to do in a release.  It should cover the project's planned major
+      accomplishments during the release, such as features, bugfixes, scale,
+      stability or longevity improvements, additional test coverage, better
+      documentation or other improvements.  It may cover challenges the
+      project is facing and needs help with from other projects, the TSC or
+      the LFN umbrella.  It should be written in a way that makes it
+      amenable to use for external communication, such as marketing to users
+      or a report to other LFN projects or the LFN Board.``
+
+* If a project is transitioning from Unmanaged to Managed or applying for
+  the first time into a Managed release, raise a Jira **Project_Plan** issue
+  against the TSC project highlighting the request.
+
+  * Select your project in the **ODL_Project** field
+
+  * Select the release version in the **ODL_Release** field
+
+  * Select the appropriate value in the **ODL_Participation** field:
+
+    ``SNAPSHOT_Integrated (Managed)`` or ``RELEASE_Integrated (Managed)``
+
+  * In the **Summary** field, put something like:
+
+    ``Project-X joining/moving to Managed Release for Fluorine``
+
+  * In the **Description** field, fill in the details using the template
+    below:
+
+    ``Summary
+      This is an example of a request for a project to moved from Unmanaged
+      to Managed. It should be submitted no later than the start of the release.
+      The request should make it clear that the requesting project meets all of
+      the Managed Release Requirements.
+
+      Healthy Community
+      The request should make it clear that the requesting project has a healthy
+      community. The request may also highlight a history of having a healthy
+      community.
+
+      Responsiveness
+      The request should make it clear that the requesting project is responsive
+      over email, IRC, Jira and in regular meetings. All committers should be
+      subscribed to the project's mailing list and the release mailing list.
+      The request may also highlight a history of responsiveness.
+
+      Active Committers
+      The request should make it clear that the requesting project has a
+      sufficient number of active committers to review contributions in a
+      timely manner, upport potential contributors, keep CSIT healthy and
+      generally effectively drive the project. The requesting project should
+      also make it clear that they have pruned any inactive committers. The
+      request may also highlight a history of having sufficient active
+      committers and few inactive committers.
+
+      TSC Attendance
+      The request should acknowledge that the requesting project is required to
+      send a committer to represent the project to at least 50% of TSC meetings.
+      The request may also highlight a history of sending representatives to
+      attend TSC meetings.
+
+      Checkpoints Submitted On-Time
+      The request should acknowledge that the requesting project is required to
+      submit checkpoints on time. The request may also highlight a history of
+      providing deliverables on-time.
+
+      Jobs Required for Managed Projects Running
+      The request should show that the requesting project has the required jobs
+      for Managed Projects running and healthy. Links should be provided.
+
+      Depend only on Managed Projects
+      The request should show that the requesting project only depends on
+      Managed Projects.
+
+      Documentation
+      The request should acknowledge that the requesting project is required to
+      produce a user guide, developer guide and release notes for each release.
+      The request may also highlight a history of providing quality
+      documentation.
+
+      CLM
+      The request should acknowledge that the requesting project is required to
+      handle Component Lifecycle Violations in a timely manner. The request
+      should show that the project's CLM job is currently healthy. The request
+      may also show that the project has a history of dealing with CLM
+      violations in a timely manner.``
+
+* If a project is transitioning from Managed to Unmanaged, raise a Jira
+  **Project_Plan** issue against the TSC project highlighting the request.
+
+  * Select your project in the **ODL_Project** field
+
+  * Select the release version in the **ODL_Release** field
+
+  * Select the ``NOT_Integrated (Unmanaged)`` value in the
+    **ODL_Participation** field
+
+  * In the **Summary** field, put something like:
+
+      ``Project-X Fluorine Joining/Moving to Unmanged for Fluorine``
+
+  * In the **Description** field, fill in the details:
+
+    ``This is a request for a project to move from Unmanged to Managed.
+      It should be submitted no later than the start of the release. The
+      request does not require any additional information, but it may be
+      helpful for the requesting project to provide some background and their
+      reasoning.``
+
+* Weather items that may impact other projects should be submitted as
+  Jira issues.  For a weather item, raise a Jira **Weather_Item** issue
+  against the TSC project highlighting the details.
+
+  * Select your project in the **ODL_Project** field
+
+  * Select the release version in the **ODL_Release** field
+
+  * For the **ODL_Impacted_Projects** field, fill in the impacted
+    projects using label values - each label value should correspond to the
+    respective project prefix in Jira, e.g. netvirt is NETVIRT.  If all
+    projects are impacted, use the label value ``ALL``.
+
+  * Fill in the expected date of weather event in the **ODL_Expected_Date**
+    field
+
+  * Select the appropriate value for **ODL_Checkpoint** (may skip)
+
+  * In the **Summary** field, summarize the weather event
+
+  * In the **Description** field, provide the details of the weather event.
+    Provide as much relevant information as possible.
+
+The remaining artifacts will be automatically scraped:
+
+* Blocker bugs that were raised between the previous RC0 and release.
+* Grievances raised against the project during the last release.
+
+Midway Checkpoint
+#################
+
+One month before RC0, a midway checkpoint will be collected. The release team
+will review the information collected and report it to the TSC at the next TSC
+meeting. All information for midway checkpoint will be automatically collected.
+
+* Open Jira bugs marked as blockers.
+* Open Jira issues tracking weather items.
+* Statistics about jobs.
+  * Autorelease failures per-project.
+  * CLM violations.
+* Grievances raised against the project since the last checkpoint.
+
+Since the midway checkpoint is fully automated, the release team may collect
+this information more frequently, to provide trends over time.
+
+Final Checkpoint
+################
+
+At 2 weeks after RC0 a final checkpoint will be collected by the release team
+and presented to the TSC at the next TSC meeting.
+
+Projects will need to create the following artifacts:
+
+* High-level, human-readable description of what the project did in this
+  release. This should be submitted as a Jira **Project_Plan** issue against
+  the TSC project.  This will be reused for external communication/marketing
+  for the release.
+
+  * Select your project in the **ODL_Project** field
+
+  * Select the release version in the **ODL_Release** field
+
+  * Select the appropriate value in the **ODL_Participation** field:
+
+    ``SNAPSHOT_Integrated (Managed)`` or ``RELEASE_Integrated (Managed)``
+
+  * Select the value ``Final`` in the **ODL_Checkpoint** field
+
+  * In the **Summary** field, put something like:
+
+    ``Project-X Fluorine Release details``
+
+  * In the **Description** field, fill in the details of your accomplishments:
+  
+    ``This should list a high-level, human-readable summary of what a project
+      did during a release. It should cover the project's major
+      accomplishments, such as features, bugfixes, scale, stability or
+      longevity improvements, additional test coverage, better documentation
+      or other improvements. It may cover challenges the project has faced
+      and need help in the future from other projects, the TSC or the LFN
+      umbrella. It should be written in a way that makes it amenable to use
+      for external communication, such as marketing to users or a report to
+      other LFN projects or the LFN Board.``
+
+* Release notes, user guide, developer guide submitted to the docs project.
+
+The remaining artifacts will be automatically scraped:
+
+* Open Jira bugs marked as blockers.
+* Open Jira issues tracking weather items.
+* Statistics about jobs.
+  * Autorelease failures per-project.
+* Statistics about patches.
+  * Number of patches submitted during the release.
+  * Number of patches merged during the release.
+  * Number of reviews per-reviewer.
+* Grievances raised against the project since the start of the release.
+
+Managed Non-Simultaneious Release Process
+-----------------------------------------
+
+Managed Projects that release independently, not as a part of the Simultaneous
+Release, will need to follow a different release process.
+
+Managed Non-SR Projects will provide the releases they want the Managed
+Projects to consume no later than two weeks after the start of the Managed
+Release. Managed SR Projects will decide by a majority vote of PTLs if they
+want to bump their versions to consume the new releases. This should happen as
+early in the release as possible to get integration woes out of the way and
+allow projects to focus on developing against a stable base. If they decide to
+consume the proposed releases, they are all required to bump to the new
+versions within a two day window. If some projects fail to merge version bump
+patches in time, the TSC will instruct Linux Foundation staff to temporarily
+wield committer rights and merge version bump patches. Managed SR Projects may
+decide by a PTL vote at any time to back out of a version bump if the new
+releases are found to be unsuitable.
+
+Managed Non-SR Projects are expected to provide bugfixes via minor or patch
+version updates during the release, but should strive to not expect Managed
+Projects to consume another major version update during the release.
+
+Managed Non-SR Projects are free to follow their own release cadence as they
+develop new features during the Managed Release. They need only have a stable
+version ready for the Manged SR Projects to consume by the next integration
+point.
+
+Managed Non-Simultaneous Release Checkpoints
+++++++++++++++++++++++++++++++++++++++++++++
+
+The Managed Non-SR Release Projects will follow similar checkpoints as the
+Managed Release SR Projects, but the timing will be different. At the time
+Managed Non-SR Release Projects provide the releases they wish Managed Release
+Projects to consume for the next release, they will also provide their final
+checkpoints. Their midway checkpoints will be scraped one month before the
+deadline for them to deliver their artifacts to the Managed Release Projects.
+Their initial checkpoints will be due no later two weeks following the deadline
+for their delivery of artifacts to the Managed Release Projects. Their initial
+checkpoints will cover everything they expect to do in the next Managed
+Release, which may encompass multiple Managed Non-SR Releases.
+
+Moving a Project from Unmanaged to Managed
+------------------------------------------
+
+Unmanaged Projects can request to become Managed by submitting a
+**Project_Plan** issue to the TSC project in Jira. See details as described
+under the :ref:`initial_checkpoint`_ section above.  Requests should be submitted
+before the start of a release. The requesting project should make it clear that
+they meet the Managed Release Project Requirements.
+
+The TSC will evaluate requests to become Managed and inform projects of the
+result and the TSC's reasoning no later than the start of the release or one
+week after the request was submitted, whichever comes last.
+
+For the first release, the TSC will bootstrap the Managed Release with
+projects that are critical to the OpenDaylight platform. Other projects will
+need to follow the normal application process defined above.
+
+The following projects are deemed critical to the OpenDaylight platform:
+
+* aaa
+* controller
+* infrautils
+* mdsal
+* netconf
+* odlparent
+* yangtools
+
+Unmanaged Projects
+==================
+
+Requirements for Unmanaged Projects
+-----------------------------------
+
+Unmanaged Project requirements are designed to be as low-overhead as possible
+while still allowing for participation in the final release. If Unmanaged
+Projects do not want to participate in the final release and instead provide
+their artifacts to their consumers through another channel, there are no
+requirements.
+
+SNAPSHOT Versions by Release
+++++++++++++++++++++++++++++
+
+Unmanaged Projects can consume whichever version of their upstream
+dependencies they want during most of the release cycle, but if they want
+to be included in the final release distribution they must bump their versions
+to SNAPSHOT no later than one week before RC0.
+
+Jobs Required for Unmanaged Projects Running
+++++++++++++++++++++++++++++++++++++++++++++
+
+Unmanaged Projects that wish to take part in the final release must enable
+the validate-autorelease job. Unmanaged Projects can release artifacts at
+any time using the release job. To take part in the final release, Unmanaged
+Projects will need to run the release job with the version of the final
+distribution no later than one week before RC0.
+
+Added to Final Distribution POM
++++++++++++++++++++++++++++++++
+
+In order to be included in the final distribution, Unmanaged Projects must
+submit a patch to include themselves in the final distribution pom.xml file
+no later than one week before RC0. Projects should only be added to the
+final distribution pom.xml after they have published artifacts with the
+release job to avoid breaking the build.
+
+Unmanaged Release Process
+-------------------------
+
+Unmanaged Projects are free to follow their own processes. To have their
+artifacts included in the final distribution, they need only follow the
+Requirements for Unmanaged Projects above by the deadlines. Note that Unmanaged
+Projects will not have any leeway for missing deadlines. If projects are not
+in the final distribution by one week before RC0 their artifacts will not be
+included in the final release, but they may still publish artifacts and help
+their consumers install them out-of-band.
+
+Checkpoints
++++++++++++
+
+There are no checkpoints for Unmanaged Projects.
+
+Moving a Project from Managed to Unmanaged
+------------------------------------------
+
+Managed Projects that are not required for dependency reasons can submit a
+**Project_Plan** issue to be Unmanaged to the TSC project in Jira. See details
+in the :ref:`initial_checkpoint`_ section above. Requests should be submitted
+before the start of a release. Requests will be evaluated by the TSC.
+
+The TSC may withdraw a project from the Managed Release at any time.
+
+Installing Features from Unmanaged Projects
+-------------------------------------------
+
+Unmanaged Projects will have their artifacts included in the final release if
+they are available on-time, but they will not be available to be installed
+until the user does a repo:add.
+
+To install an Unmanaged Project feature, find the feature description in the
+system directory. For example, NetVirt's main feature:
+
+system/org/opendaylight/netvirt/odl-netvirt-openstack/0.6.0-SNAPSHOT/
+
+Then use the Karaf shell to repo:add the feature:
+
+feature:repo-add mvn:org.opendaylight.netvirt/odl-netvirt-openstack/0.6.0
+-SNAPSHOT/xml/features
+
+Grievances
+==========
+
+For requirements that are difficult to automatically ascertain if a Managed
+Project is following or not, there should be a clear reporting process in place.
+
+Grievance reports should be filed against the TSC project in Jira. Very urgent
+grievances can additionally be brought to the TSC's attention via the TSC's
+mailing list.
+
+Process for Reporting Unresponsive Projects
+-------------------------------------------
+
+If a Managed Project does not meet the `Responsiveness`_ Requirements, a
+**Grievance** issue should be filed against the TSC project in Jira.
+
+Unresponsive project reports should include (at least):
+
+* Select the project being reported in the **ODL_Project** field
+
+* Select the release version in the **ODL_Release** field
+
+* In the **Summary** field, put something like:
+  ``Grievance against Project-X``
+
+* In the **Description** field, fill in the details:
+
+  ``Document the details that ExampleProject was slow to review a change.
+    The report should include as much relevant information as possible,
+    including a description of the situation, relevant Gerrit change IDs and
+    relevant public email list threads.``
+
+* In the **ODL_Gerrit_Patch**, put in a URL to a gerrit patch, if applicable
+
+Release Schedule
+================
+
+The start date for odd release is September 7 and the start date for even
+release is March 7.
+
+.. list-table::
+   :widths: 20 20 20 40
+   :header-rows: 1
+   :stub-columns: 1
+
+   * - **Milestone**
+     - **Time**
+     - **Fluorine**
+     - **Description**
+
+   * - Release start
+     - Start Date
+     - 2018-03-07
+     - Declare Intention: Submit **Project_Plan** Jira item in TSC project
+
+   * - Initial Checkpoint
+     - Start Date + 2 weeks
+     - 2018-03-21
+     - Initial Checkpoint.  All managed projects must have completed
+       **Project_Plan** Jira items in TSC project.
+
+   * - Release Integrated Deadline
+     - Initial Checkpoint + 2 weeks
+     - 2018-04-07
+     - Deadline for Release Integrated projects (currently ODLPARENT and
+       YANGTOOLS) to provide the desired version deliverables for downstream
+       Snapshot Integrated projects to consume.
+
+   * - Version Bump
+     - 2 week window after Release Integrated Deadline
+     - 2018-04-07 through 2018-04-21
+     - Version bump for all snapshot integrated Projects
+
+   * - Version Bump Checkpoint
+     - Release Integrated Deadline + 2 weeks
+     - 2018-04-21
+     - Check status of version bump and decide whether to proceed or revert
+
+   * - CSIT Checkpoint
+     - Version Bump Checkpoint + 2 weeks
+     - 2018-05-07
+     - All managed release CSIT should be in good shape - final call to see if
+       release can proceed with the Release Integrated project deliverables
+
+   * - Middle Checkpoint
+     - CSIT Checkpoint + 10 weeks
+     - 2018-07-19
+     - Checkpoint for status of managed projects - especially snapshot
+       integrated projects
+
+   * - Code Freeze
+     - Middle Checkpoint + 2 weeks
+     - 2018-08-07
+     - Code freeze for all managed projects - cut and lock release branch.
+       Only allow blocker bugfixes in release branch
+
+   * - Final Checkpoint
+     - TSC meeting 2 weeks after Code Freeze
+     - 2018-08-23
+     - Final Checkpoint for all managed projects
+
+   * - Formal Release
+     - 6 months after Start Date
+     - 2018-09-07
+     - Formal release
+
+   * - Service Release 1
+     - 1 month after Formal Release
+     - 2018-10-07
+     - Service Release 1 (SR1)
+
+   * - Service Release 2
+     - 2 months after SR1
+     - 2018-12-07
+     - Service Release 2 (SR2)
+
+   * - Service Release 3
+     - 2 months after SR2
+     - 2019-02-07
+     - Service Release 3 (SR3)
+
+   * - Service Release 4
+     - 3 months after SR3
+     - 2019-05-07
+     - Service Release 4 (SR4) - final service release
+
+   * - Release End of Life
+     - 4 months after SR4
+     - 2019-09-07
+     - End of Life - coincides with the Formal Release of the current release+2
+       versions and the start of the current release+3 versions
