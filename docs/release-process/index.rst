@@ -30,6 +30,7 @@ Processes
 
    project-release
    namespace
+   managed-release
 
    .. Simultanious Release Related
    autorelease
