@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "eb3a4b2e_31a17c79",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-02-19T15:00:59Z",
+      "side": 1,
+      "message": "I think I covered something like this in the next patchset",
+      "parentUuid": "da5d7faa_dbff747b",
+      "revId": "aebfdaee90d8de5ea53f922bd4854fcfec18f61b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2c33ed5e_e8c54ba4",
         "filename": "docs/release-process/managed-release.rst",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2018-02-17T21:05:42Z",
       "side": 1,
       "message": "Add the initial list of Managed projects?",
+      "revId": "aebfdaee90d8de5ea53f922bd4854fcfec18f61b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "afbd3fd4_91c5ffd6",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-02-19T15:00:59Z",
+      "side": 1,
+      "message": "I think we might could include projects that are there for dependency reasons, but I don\u0027t think we can propose an \"initial list\" here. Our lists were for wrapping our head around how things would likely look, but it\u0027s up to leaf projects to apply themselves.",
+      "parentUuid": "2c33ed5e_e8c54ba4",
       "revId": "aebfdaee90d8de5ea53f922bd4854fcfec18f61b",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -82,6 +118,30 @@
     },
     {
       "key": {
+        "uuid": "1763c889_e614b752",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-02-19T15:00:59Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "88eef931_adec0cd0",
+      "range": {
+        "startLine": 49,
+        "startChar": 3,
+        "endLine": 49,
+        "endChar": 4
+      },
+      "revId": "aebfdaee90d8de5ea53f922bd4854fcfec18f61b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e1905a79_d48ad389",
         "filename": "docs/release-process/managed-release.rst",
         "patchSetId": 1
@@ -93,6 +153,30 @@
       "writtenOn": "2018-02-17T21:05:42Z",
       "side": 1,
       "message": "manner",
+      "range": {
+        "startLine": 57,
+        "startChar": 26,
+        "endLine": 57,
+        "endChar": 31
+      },
+      "revId": "aebfdaee90d8de5ea53f922bd4854fcfec18f61b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "195601a0_7e059e07",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-02-19T15:00:59Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "e1905a79_d48ad389",
       "range": {
         "startLine": 57,
         "startChar": 26,
@@ -128,6 +212,30 @@
     },
     {
       "key": {
+        "uuid": "0eb25aa6_621dc401",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-02-19T15:00:59Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "819eeae2_18ce54a6",
+      "range": {
+        "startLine": 72,
+        "startChar": 9,
+        "endLine": 72,
+        "endChar": 12
+      },
+      "revId": "aebfdaee90d8de5ea53f922bd4854fcfec18f61b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e8a79518_356dd626",
         "filename": "docs/release-process/managed-release.rst",
         "patchSetId": 1
@@ -139,6 +247,30 @@
       "writtenOn": "2018-02-17T19:54:18Z",
       "side": 1,
       "message": "don\u0027t like the word Submitted. not sure what\u0027s better, but the concept is that checkpoints are pulled (hopefully via automation) so there is no submission process. either the proper information (mostly from Jira) is available or it\u0027s not. anyway, I can\u0027t think of the right terminology right now.",
+      "range": {
+        "startLine": 79,
+        "startChar": 12,
+        "endLine": 79,
+        "endChar": 21
+      },
+      "revId": "aebfdaee90d8de5ea53f922bd4854fcfec18f61b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cdd9ef03_c4c24afe",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-02-19T15:00:59Z",
+      "side": 1,
+      "message": "Some things that are pulled automatically aren\u0027t fully automatic, the project still has to make sure they Jiras are in place (high-level description, weather items...)",
+      "parentUuid": "e8a79518_356dd626",
       "range": {
         "startLine": 79,
         "startChar": 12,
@@ -198,6 +330,30 @@
     },
     {
       "key": {
+        "uuid": "59bb9709_6fa15c61",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-02-19T15:00:59Z",
+      "side": 1,
+      "message": "I\u0027ll add another section to talk about projects that must be managed for dep reasons vs others",
+      "parentUuid": "6f13a107_c1fa96d0",
+      "range": {
+        "startLine": 96,
+        "startChar": 0,
+        "endLine": 100,
+        "endChar": 32
+      },
+      "revId": "aebfdaee90d8de5ea53f922bd4854fcfec18f61b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "22452185_0e88367d",
         "filename": "docs/release-process/managed-release.rst",
         "patchSetId": 1
@@ -233,6 +389,30 @@
       "side": 1,
       "message": "Yeah, we need to come up with tags. Also for the Weather items. Maybe the Managed/Unmanaged tag should be more generic like Intent and then the jira example would have Managed or Unmanaged in the text? Thought I guess an explicit tag is better.",
       "parentUuid": "22452185_0e88367d",
+      "range": {
+        "startLine": 128,
+        "startChar": 0,
+        "endLine": 129,
+        "endChar": 61
+      },
+      "revId": "aebfdaee90d8de5ea53f922bd4854fcfec18f61b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4c463ec1_89745e3c",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-02-19T15:00:59Z",
+      "side": 1,
+      "message": "Why do it every release vs just assuming projects will stay in the same state unless they say otherwise? Makes things slightly lower overhead.",
+      "parentUuid": "769d7d48_4ba31826",
       "range": {
         "startLine": 128,
         "startChar": 0,
@@ -292,6 +472,30 @@
     },
     {
       "key": {
+        "uuid": "73c6d729_427c5333",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-02-19T15:00:59Z",
+      "side": 1,
+      "message": "I\u0027m okay either way. If it\u0027s every month is needs to be totally automatic.",
+      "parentUuid": "6ce384c0_8c668d70",
+      "range": {
+        "startLine": 144,
+        "startChar": 52,
+        "endLine": 146,
+        "endChar": 8
+      },
+      "revId": "aebfdaee90d8de5ea53f922bd4854fcfec18f61b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "718760f2_fc12794f",
         "filename": "docs/release-process/managed-release.rst",
         "patchSetId": 1
@@ -315,6 +519,30 @@
     },
     {
       "key": {
+        "uuid": "934e8346_9dbb3b37",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-02-19T15:00:59Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "718760f2_fc12794f",
+      "range": {
+        "startLine": 162,
+        "startChar": 61,
+        "endLine": 162,
+        "endChar": 72
+      },
+      "revId": "aebfdaee90d8de5ea53f922bd4854fcfec18f61b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "b021e9d8_f257a07c",
         "filename": "docs/release-process/managed-release.rst",
         "patchSetId": 1
@@ -326,6 +554,24 @@
       "writtenOn": "2018-02-17T21:05:42Z",
       "side": 1,
       "message": "extend this line",
+      "revId": "aebfdaee90d8de5ea53f922bd4854fcfec18f61b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "16c9e4d6_d9ab4c97",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-02-19T15:00:59Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "b021e9d8_f257a07c",
       "revId": "aebfdaee90d8de5ea53f922bd4854fcfec18f61b",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
