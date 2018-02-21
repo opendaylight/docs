@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "b1925c8a_80433b99",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 797
+      },
+      "writtenOn": "2018-02-21T19:20:32Z",
+      "side": 1,
+      "message": "Maybe we should mention or just answer if someone asks: for first Managed release, TSC will automatically include those projects required by the platform while the rest should file a ticket to apply. For further releases only those projects that are Unmanaged and want to be Managed need to file ticket.",
+      "revId": "305f0174200ecf575d1df0907ff21f1bae44c134",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7013ff0a_3ac07724",
         "filename": "docs/release-process/managed-release.rst",
         "patchSetId": 10
@@ -19,6 +36,23 @@
         "endLine": 285,
         "endChar": 8
       },
+      "revId": "305f0174200ecf575d1df0907ff21f1bae44c134",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bb151f7d_170acdfd",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 329,
+      "author": {
+        "id": 797
+      },
+      "writtenOn": "2018-02-21T19:20:32Z",
+      "side": 1,
+      "message": "Not sure if we need a note for this but whenever possible TSC should drop a project by Initial checkpoint, causing minimal impact to the project and the rest of the community.",
       "revId": "305f0174200ecf575d1df0907ff21f1bae44c134",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
