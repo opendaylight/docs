@@ -1,0 +1,280 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e9f1a4bb_2e0f0f5d",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2018-02-21T07:26:52Z",
+      "side": 1,
+      "message": "remove (grammar)",
+      "range": {
+        "startLine": 36,
+        "startChar": 39,
+        "endLine": 36,
+        "endChar": 41
+      },
+      "revId": "4fa91c262550e7a010d60cf42e4fb8e30f34267e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "03b5323f_e0582061",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2018-02-21T07:26:52Z",
+      "side": 1,
+      "message": "would it be worth stating that projects are not even required to provide artifacts if they do\nnot want to. I could see some project off on their own that\u0027s fine and dandy to do their\nown releases as they see fit and just provide documentation when they do a release on\nhow to externally grab their artifacts to install on top of managed release version X.",
+      "range": {
+        "startLine": 37,
+        "startChar": 37,
+        "endLine": 37,
+        "endChar": 69
+      },
+      "revId": "4fa91c262550e7a010d60cf42e4fb8e30f34267e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f68c48fe_37a9abee",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2018-02-21T07:26:52Z",
+      "side": 1,
+      "message": "this got jumbled I think.",
+      "range": {
+        "startLine": 58,
+        "startChar": 0,
+        "endLine": 59,
+        "endChar": 18
+      },
+      "revId": "4fa91c262550e7a010d60cf42e4fb8e30f34267e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5f9b2f2e_1b6d015a",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2018-02-21T07:26:52Z",
+      "side": 1,
+      "message": "more",
+      "range": {
+        "startLine": 63,
+        "startChar": 58,
+        "endLine": 63,
+        "endChar": 62
+      },
+      "revId": "4fa91c262550e7a010d60cf42e4fb8e30f34267e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "37a6e7ae_6c4b7e27",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2018-02-21T07:26:52Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 63,
+        "startChar": 27,
+        "endLine": 63,
+        "endChar": 34
+      },
+      "revId": "4fa91c262550e7a010d60cf42e4fb8e30f34267e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e623b56f_f3c55122",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2018-02-21T07:26:52Z",
+      "side": 1,
+      "message": "work",
+      "range": {
+        "startLine": 79,
+        "startChar": 65,
+        "endLine": 79,
+        "endChar": 69
+      },
+      "revId": "4fa91c262550e7a010d60cf42e4fb8e30f34267e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cf4cc475_2b066a5a",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2018-02-21T07:26:52Z",
+      "side": 1,
+      "message": "trying to find better wording around this:\n\n    Checkpoint reviews that are inadequate or missing can result in a filed grievance for future consideration.\n\n\njust trying to make sure it\u0027s worded such that checkpoints can\u0027t be submitted late. They will just be scraped\nat the expected time, and reviewed by the release team. At that time is when we\u0027ll notice that something\nis missing or whatever.",
+      "range": {
+        "startLine": 145,
+        "startChar": 0,
+        "endLine": 146,
+        "endChar": 30
+      },
+      "revId": "4fa91c262550e7a010d60cf42e4fb8e30f34267e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1e076a6b_878520a6",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2018-02-21T07:26:52Z",
+      "side": 1,
+      "message": "when is this midterm collected? 30 days before RC0? and is that the one that we expect the\nrelease team to report to the TSC? I think that\u0027s what we mean here, but it wasn\u0027t totally \nclear to me.",
+      "range": {
+        "startLine": 222,
+        "startChar": 12,
+        "endLine": 222,
+        "endChar": 50
+      },
+      "revId": "4fa91c262550e7a010d60cf42e4fb8e30f34267e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "01035d9e_cd215031",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2018-02-21T07:26:52Z",
+      "side": 1,
+      "message": "this sort of addresses my comment above. so not sure there is anything to do about it now. I\u0027ll leave it anyway.",
+      "range": {
+        "startLine": 276,
+        "startChar": 61,
+        "endLine": 279,
+        "endChar": 13
+      },
+      "revId": "4fa91c262550e7a010d60cf42e4fb8e30f34267e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "75db2e72_6100c5a9",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2018-02-21T07:26:52Z",
+      "side": 1,
+      "message": "I don\u0027t know if we have or can impose a hard deadline for this. If they bump the day before RC0 and\nthings build fine they\u0027d be in right?",
+      "range": {
+        "startLine": 285,
+        "startChar": 57,
+        "endLine": 287,
+        "endChar": 48
+      },
+      "revId": "4fa91c262550e7a010d60cf42e4fb8e30f34267e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7035e28e_cfbd370f",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2018-02-21T07:26:52Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 336,
+        "startChar": 0,
+        "endLine": 336,
+        "endChar": 9
+      },
+      "revId": "4fa91c262550e7a010d60cf42e4fb8e30f34267e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a9b53b48_cf4fc6b0",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2018-02-21T07:26:52Z",
+      "side": 1,
+      "message": "not",
+      "range": {
+        "startLine": 340,
+        "startChar": 24,
+        "endLine": 340,
+        "endChar": 26
+      },
+      "revId": "4fa91c262550e7a010d60cf42e4fb8e30f34267e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    }
+  ]
+}
