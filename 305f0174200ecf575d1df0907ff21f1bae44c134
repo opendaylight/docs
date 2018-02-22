@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "057b00d8_43755fdb",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 2567
+      },
+      "writtenOn": "2018-02-22T01:15:26Z",
+      "side": 1,
+      "message": "Project representatives must log #project \u003cprojectid\u003e\n\nFor example, a committer on the mdsal team may issue the command #project mdsal",
+      "range": {
+        "startLine": 137,
+        "startChar": 0,
+        "endLine": 138,
+        "endChar": 10
+      },
+      "revId": "305f0174200ecf575d1df0907ff21f1bae44c134",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b1925c8a_80433b99",
         "filename": "docs/release-process/managed-release.rst",
         "patchSetId": 10
