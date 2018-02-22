@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "21034e17_74170a90",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 773
+      },
+      "writtenOn": "2018-02-22T04:18:03Z",
+      "side": 1,
+      "message": "shorten",
+      "range": {
+        "startLine": 149,
+        "startChar": 43,
+        "endLine": 149,
+        "endChar": 44
+      },
+      "revId": "305f0174200ecf575d1df0907ff21f1bae44c134",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b1925c8a_80433b99",
         "filename": "docs/release-process/managed-release.rst",
         "patchSetId": 10
@@ -65,6 +88,29 @@
     },
     {
       "key": {
+        "uuid": "fabce3b0_b9209cfd",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 773
+      },
+      "writtenOn": "2018-02-22T04:18:03Z",
+      "side": 1,
+      "message": "Repeat the verbiage that the release artifacts are built using the previously mentioned jobs to ensure they don\u0027t break the build and can load.",
+      "range": {
+        "startLine": 313,
+        "startChar": 14,
+        "endLine": 313,
+        "endChar": 32
+      },
+      "revId": "305f0174200ecf575d1df0907ff21f1bae44c134",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bb151f7d_170acdfd",
         "filename": "docs/release-process/managed-release.rst",
         "patchSetId": 10
@@ -82,6 +128,24 @@
     },
     {
       "key": {
+        "uuid": "ba96dff7_a8aab906",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 329,
+      "author": {
+        "id": 773
+      },
+      "writtenOn": "2018-02-22T04:18:03Z",
+      "side": 1,
+      "message": "We don\u0027t want to restrict the team from being able to drop a project if needed.",
+      "parentUuid": "bb151f7d_170acdfd",
+      "revId": "305f0174200ecf575d1df0907ff21f1bae44c134",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d12e22d1_5df3e977",
         "filename": "docs/release-process/managed-release.rst",
         "patchSetId": 10
@@ -93,6 +157,52 @@
       "writtenOn": "2018-02-21T18:59:57Z",
       "side": 1,
       "message": "typo",
+      "revId": "305f0174200ecf575d1df0907ff21f1bae44c134",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7b3382b2_600aef4b",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 773
+      },
+      "writtenOn": "2018-02-22T04:18:03Z",
+      "side": 1,
+      "message": "Why not against the project itself? Seems better to scrape against the project, with specific tags or in the template provided. These should stay with the project so they can scrub them in their regular meetings :)",
+      "range": {
+        "startLine": 346,
+        "startChar": 46,
+        "endLine": 346,
+        "endChar": 57
+      },
+      "revId": "305f0174200ecf575d1df0907ff21f1bae44c134",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f5cd3b2_bb9e703d",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 773
+      },
+      "writtenOn": "2018-02-22T04:18:03Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 353,
+        "startChar": 21,
+        "endLine": 353,
+        "endChar": 23
+      },
       "revId": "305f0174200ecf575d1df0907ff21f1bae44c134",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
