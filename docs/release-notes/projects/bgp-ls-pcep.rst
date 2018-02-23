@@ -13,7 +13,7 @@ odl-bgpcep-bgp
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** No
-* **CSIT Test:** https://logs.opendaylight.org/releng/jenkins092/bgpcep-csit-1node-userfeatures-all-nitrogen
+* **CSIT Test:** https://logs.opendaylight.org/releng/vex-yul-odl-jenkins-1/bgpcep-csit-1node-userfeatures-all-nitrogen
 
 odl-bgpcep-bmp
 --------------
@@ -23,7 +23,7 @@ odl-bgpcep-bmp
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** No
-* **CSIT Test:** https://logs.opendaylight.org/releng/jenkins092/bgpcep-csit-1node-userfeatures-all-nitrogen
+* **CSIT Test:** https://logs.opendaylight.org/releng/vex-yul-odl-jenkins-1/bgpcep-csit-1node-userfeatures-all-nitrogen
 
 odl-bgpcep-pcep
 ---------------
@@ -33,7 +33,7 @@ odl-bgpcep-pcep
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** No
-* **CSIT Test:** https://logs.opendaylight.org/releng/jenkins092/bgpcep-csit-1node-userfeatures-all-nitrogen
+* **CSIT Test:** https://logs.opendaylight.org/releng/vex-yul-odl-jenkins-1/bgpcep-csit-1node-userfeatures-all-nitrogen
 
 
 Documentation

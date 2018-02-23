@@ -24,7 +24,7 @@ OF-CONFIG
 
 8. Does your project build successfully in Autorelease? Yes
 
-   - https://logs.opendaylight.org/releng/jenkins092/of-config-validate-autorelease-oxygen/4/
+   - https://logs.opendaylight.org/releng/vex-yul-odl-jenkins-1/of-config-validate-autorelease-oxygen/4/
 
 .. [1] Provide a link to a gerrit search for patches modifying the files
        defined as specifying the API. For example:
