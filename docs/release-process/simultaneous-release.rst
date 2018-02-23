@@ -94,7 +94,7 @@ Releasing OpenDaylight
   .. code-block:: bash
 
       export BUILD_NUM=55
-      export PATCH_URL="https://logs.opendaylight.org/releng/jenkins092/autorelease-release-${STREAM,,}/${BUILD_NUM}/patches.tar.gz"
+      export PATCH_URL="https://logs.opendaylight.org/releng/vex-yul-odl-jenkins-1/autorelease-release-${STREAM,,}/${BUILD_NUM}/patches.tar.gz"
       ./scripts/release-tags.sh "${RELEASE}" /tmp/patches "$PATCH_URL"
 
 - Run autorelease-version-bump-${STREAM} job
