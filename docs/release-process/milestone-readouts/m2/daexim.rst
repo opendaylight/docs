@@ -109,7 +109,7 @@ Integration and Test:
    - (If no, why?)
 
    Yes.
-   https://logs.opendaylight.org/releng/jenkins092/daexim-csit-1node-basic-only-nitrogen/
+   https://logs.opendaylight.org/releng/vex-yul-odl-jenkins-1/daexim-csit-1node-basic-only-nitrogen/
 
 2. Have you filled out basic system test plan template for each top-level
    feature (karaf and not karaf) and a comprehensive system test plan template
