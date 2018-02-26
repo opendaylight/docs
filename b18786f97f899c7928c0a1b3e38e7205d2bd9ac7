@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "98d200c2_2b4ddf62",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-02-26T13:01:12Z",
+      "side": 1,
+      "message": "Abijit asked about this on last TSC call, also recording it here:\n\nHe suggested we add wording to explicitly allow the proxy to be not-a-committer to the project. After thinking about it, I disagree and suggest making the inverse explicit - that the proxy must be a committer to the project. The idea of it being a committer is that they have the power to merge patches, so if the TSC identifies some action the project needs to take they can go and do it right away.",
+      "revId": "b18786f97f899c7928c0a1b3e38e7205d2bd9ac7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
