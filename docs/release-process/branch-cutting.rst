@@ -81,6 +81,7 @@ Autorelease
 
   .. code-block:: bash
 
+      git checkout -b stable/${CURR_RELEASE,,} origin/master
       git submodule foreach 'git checkout -b stable/${CURR_RELEASE,,} origin/master'
       git push gerrit stable/${CURR_RELEASE,,}
       git submodule foreach 'git push gerrit stable/${CURR_RELEASE,,}'
@@ -129,7 +130,7 @@ Autorelease
   .. code-block:: bash
 
       git submodule foreach 'git commit -asm "Bump versions by x.(y+1).z for next dev cycle"'
-      git submodule foreach 'git review -t nitrogen-br-cut'
+      git submodule foreach 'git review -t ${CURR_RELEASE,,}-branch-cut'
 
 - Merge all version bump patches in the order of dependencies. **(Release Engineering Team)**
 - Re-enable submit permissions for registered users and disable elevated RE committer rights on gerrit. **(Helpdesk)**
