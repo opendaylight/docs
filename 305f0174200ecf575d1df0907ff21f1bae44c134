@@ -144,6 +144,30 @@
     },
     {
       "key": {
+        "uuid": "72bfe803_015b96a6",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2018-02-26T22:49:51Z",
+      "side": 1,
+      "message": "but, #project wont show up in the minutes. that\u0027s not a special keyword. i just tested:\n\n14:48 \u003cjamoluhrsen\u003e #startmeeting testmeeting\n14:48 \u003codl_meetbot\u003e Meeting started Mon Feb 26 22:48:21 2018 UTC.  The chair is jamoluhrsen. Information about MeetBot at http://ci.openstack.org/meetbot.html.\n14:48 \u003codl_meetbot\u003e Useful Commands: #action #agreed #help #info #idea #link #topic #startvote.\n14:48 -!- odl_meetbot changed the topic of #opendaylight-integration to:  (Meeting topic: testmeeting)\n14:48 \u003codl_meetbot\u003e The meeting name has been set to \u0027testmeeting\u0027\n14:48 \u003cjamoluhrsen\u003e #info test item\n14:48 \u003cjamoluhrsen\u003e #project foo\n14:48 \u003cjamoluhrsen\u003e #info bar item\n14:48 \u003cjamoluhrsen\u003e #endmeeting\n\nminutes are here:\nhttps://meetings.opendaylight.org/opendaylight-integration/2018/testmeeting/opendaylight-integration-testmeeting.2018-02-26-22.48.html",
+      "parentUuid": "ca6130d5_a880177e",
+      "range": {
+        "startLine": 137,
+        "startChar": 0,
+        "endLine": 138,
+        "endChar": 10
+      },
+      "revId": "305f0174200ecf575d1df0907ff21f1bae44c134",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "21034e17_74170a90",
         "filename": "docs/release-process/managed-release.rst",
         "patchSetId": 10
