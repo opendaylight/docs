@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "f22d8941_56002dbd",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-02-26T12:55:26Z",
+      "side": 1,
+      "message": "This will not show up in most of the meetbot summaries of the minutes, as it\u0027s not a real keyword. Maybe just: #info \u003cproject ID\u003e",
+      "parentUuid": "057b00d8_43755fdb",
+      "range": {
+        "startLine": 137,
+        "startChar": 0,
+        "endLine": 138,
+        "endChar": 10
+      },
+      "revId": "305f0174200ecf575d1df0907ff21f1bae44c134",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "21034e17_74170a90",
         "filename": "docs/release-process/managed-release.rst",
         "patchSetId": 10
