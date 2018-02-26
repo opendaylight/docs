@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3359a7fe_6fae3dda",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-02-26T13:39:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "033044bc_13261ee6",
+      "range": {
+        "startLine": 63,
+        "startChar": 27,
+        "endLine": 63,
+        "endChar": 64
+      },
+      "revId": "305f0174200ecf575d1df0907ff21f1bae44c134",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "057b00d8_43755fdb",
         "filename": "docs/release-process/managed-release.rst",
         "patchSetId": 10
@@ -72,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "5be8d83d_ae8c7781",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-02-26T13:39:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f22d8941_56002dbd",
+      "range": {
+        "startLine": 137,
+        "startChar": 0,
+        "endLine": 138,
+        "endChar": 10
+      },
+      "revId": "305f0174200ecf575d1df0907ff21f1bae44c134",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "21034e17_74170a90",
         "filename": "docs/release-process/managed-release.rst",
         "patchSetId": 10
@@ -95,6 +143,30 @@
     },
     {
       "key": {
+        "uuid": "42e8217e_7f69fada",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-02-26T13:39:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "21034e17_74170a90",
+      "range": {
+        "startLine": 149,
+        "startChar": 43,
+        "endLine": 149,
+        "endChar": 44
+      },
+      "revId": "305f0174200ecf575d1df0907ff21f1bae44c134",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b1925c8a_80433b99",
         "filename": "docs/release-process/managed-release.rst",
         "patchSetId": 10
@@ -106,6 +178,24 @@
       "writtenOn": "2018-02-21T19:20:32Z",
       "side": 1,
       "message": "Maybe we should mention or just answer if someone asks: for first Managed release, TSC will automatically include those projects required by the platform while the rest should file a ticket to apply. For further releases only those projects that are Unmanaged and want to be Managed need to file ticket.",
+      "revId": "305f0174200ecf575d1df0907ff21f1bae44c134",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "154b7f80_b929c68c",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-02-26T13:39:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b1925c8a_80433b99",
       "revId": "305f0174200ecf575d1df0907ff21f1bae44c134",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -158,6 +248,30 @@
     },
     {
       "key": {
+        "uuid": "46f6f12f_48fa5664",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-02-26T13:39:47Z",
+      "side": 1,
+      "message": "Done, but double-check what I wrote makes sense please",
+      "parentUuid": "fabce3b0_b9209cfd",
+      "range": {
+        "startLine": 313,
+        "startChar": 14,
+        "endLine": 313,
+        "endChar": 32
+      },
+      "revId": "305f0174200ecf575d1df0907ff21f1bae44c134",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bb151f7d_170acdfd",
         "filename": "docs/release-process/managed-release.rst",
         "patchSetId": 10
@@ -193,6 +307,24 @@
     },
     {
       "key": {
+        "uuid": "f413e8d2_b830746c",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 329,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-02-26T13:39:47Z",
+      "side": 1,
+      "message": "+1 to leaving it like this to give more freedom to TSC",
+      "parentUuid": "ba96dff7_a8aab906",
+      "revId": "305f0174200ecf575d1df0907ff21f1bae44c134",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d12e22d1_5df3e977",
         "filename": "docs/release-process/managed-release.rst",
         "patchSetId": 10
@@ -204,6 +336,24 @@
       "writtenOn": "2018-02-21T18:59:57Z",
       "side": 1,
       "message": "typo",
+      "revId": "305f0174200ecf575d1df0907ff21f1bae44c134",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0fc6ace3_93b959c2",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-02-26T13:39:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d12e22d1_5df3e977",
       "revId": "305f0174200ecf575d1df0907ff21f1bae44c134",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -305,6 +455,30 @@
     },
     {
       "key": {
+        "uuid": "ff3d13ad_b22e1319",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-02-26T13:39:47Z",
+      "side": 1,
+      "message": "I think the main advantage of raising it against the TSC Jira is that it lowers the barrier to actually filing grievances.  I think it would make people more nervous to send a report to the people they are reporting than a 3rd party arbitrating body.",
+      "parentUuid": "d8532dc5_c0c468eb",
+      "range": {
+        "startLine": 346,
+        "startChar": 46,
+        "endLine": 346,
+        "endChar": 57
+      },
+      "revId": "305f0174200ecf575d1df0907ff21f1bae44c134",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f5cd3b2_bb9e703d",
         "filename": "docs/release-process/managed-release.rst",
         "patchSetId": 10
@@ -316,6 +490,30 @@
       "writtenOn": "2018-02-22T04:18:03Z",
       "side": 1,
       "message": "remove",
+      "range": {
+        "startLine": 353,
+        "startChar": 21,
+        "endLine": 353,
+        "endChar": 23
+      },
+      "revId": "305f0174200ecf575d1df0907ff21f1bae44c134",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fdb3c821_6d739a8a",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-02-26T13:39:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f5cd3b2_bb9e703d",
       "range": {
         "startLine": 353,
         "startChar": 21,
