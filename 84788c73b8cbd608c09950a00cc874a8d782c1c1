@@ -42,6 +42,30 @@
     },
     {
       "key": {
+        "uuid": "1acd2794_d823a760",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-02-26T12:37:42Z",
+      "side": 1,
+      "message": "We\u0027ve tried to be diligent about keeping the scope of this effort to things that will make the release process easier. We\u0027ve classed ideas that are more about code quality as out-of-scope and recommend that follow-up efforts take place to address them. Also, we need to get this done and approved to start in Fluorine, so I don\u0027t think we can wait for something that is at this stage of maturation.",
+      "parentUuid": "48a33181_f2ed9d78",
+      "range": {
+        "startLine": 218,
+        "startChar": 0,
+        "endLine": 218,
+        "endChar": 17
+      },
+      "revId": "84788c73b8cbd608c09950a00cc874a8d782c1c1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2ee4869f_b7a7fb25",
         "filename": "docs/release-process/managed-release.rst",
         "patchSetId": 11
