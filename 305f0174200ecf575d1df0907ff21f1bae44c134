@@ -168,6 +168,30 @@
     },
     {
       "key": {
+        "uuid": "66ae1bfa_aedd67f6",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 2567
+      },
+      "writtenOn": "2018-02-27T00:02:37Z",
+      "side": 1,
+      "message": "Correct, we don\u0027t need it to show in the meeting minutes.  We only need a script to be able to parse the meeting log.  Using a keyword simplifies it.  Here\u0027s the sample code.  run \"python generate_matrix\" and it should output \"foo\".\n\nhttps://github.com/anipbu/autochecklist",
+      "parentUuid": "72bfe803_015b96a6",
+      "range": {
+        "startLine": 137,
+        "startChar": 0,
+        "endLine": 138,
+        "endChar": 10
+      },
+      "revId": "305f0174200ecf575d1df0907ff21f1bae44c134",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "21034e17_74170a90",
         "filename": "docs/release-process/managed-release.rst",
         "patchSetId": 10
