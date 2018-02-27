@@ -16,6 +16,24 @@
       "revId": "b18786f97f899c7928c0a1b3e38e7205d2bd9ac7",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9b34b9c6_8c269dfc",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 773
+      },
+      "writtenOn": "2018-02-27T14:00:21Z",
+      "side": 1,
+      "message": "We went with anyone to cover cases where the project was something pulled in as a dependency of another project. Say netconf, whose committers are not active, they could get a proxy from the other projects. In the longer term extra committers should be included to netconf, but that takes time.",
+      "parentUuid": "98d200c2_2b4ddf62",
+      "revId": "b18786f97f899c7928c0a1b3e38e7205d2bd9ac7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
