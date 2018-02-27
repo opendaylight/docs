@@ -264,6 +264,30 @@
     },
     {
       "key": {
+        "uuid": "7c718508_18656560",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-02-27T21:27:03Z",
+      "side": 1,
+      "message": "Yeah, true, that would work. We could also use #info project \u003cproject ID\u003e. I don\u0027t have a strong preference, I\u0027ll change it to #project in the next patchset.",
+      "parentUuid": "ca6130d5_a880177e",
+      "range": {
+        "startLine": 137,
+        "startChar": 0,
+        "endLine": 138,
+        "endChar": 10
+      },
+      "revId": "305f0174200ecf575d1df0907ff21f1bae44c134",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "21034e17_74170a90",
         "filename": "docs/release-process/managed-release.rst",
         "patchSetId": 10
