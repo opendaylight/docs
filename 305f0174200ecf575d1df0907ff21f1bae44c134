@@ -240,6 +240,30 @@
     },
     {
       "key": {
+        "uuid": "4bb78ae1_f80f9918",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2018-02-27T19:25:54Z",
+      "side": 1,
+      "message": "I think it\u0027s just as simple as \"#project netvirt\"\n\nwe scrape the full irc logs (not the meetbot minutes) which will be like this:\n  \u003cshague\u003e #project netvirt\n\nthat\u0027s all we need right? a name \u003cshague\u003e, a key \"#project\" and value: \"netvirt\"",
+      "parentUuid": "4f7db0e6_88a67843",
+      "range": {
+        "startLine": 137,
+        "startChar": 0,
+        "endLine": 138,
+        "endChar": 10
+      },
+      "revId": "305f0174200ecf575d1df0907ff21f1bae44c134",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "21034e17_74170a90",
         "filename": "docs/release-process/managed-release.rst",
         "patchSetId": 10
