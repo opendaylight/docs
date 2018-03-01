@@ -2,6 +2,75 @@
   "comments": [
     {
       "key": {
+        "uuid": "87841a6c_6329d1d1",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2018-03-01T17:53:30Z",
+      "side": 1,
+      "message": "Given this document assumes autorelease-style builds, this also affects downstreams breaking upstreams via distcheck jobs.",
+      "range": {
+        "startLine": 118,
+        "startChar": 0,
+        "endLine": 120,
+        "endChar": 7
+      },
+      "revId": "eb3d21880f3c42e2807213a6ccaf973666d361f1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5133a45b_f65165ae",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2018-03-01T17:53:30Z",
+      "side": 1,
+      "message": "A pointer to the process would be nice.",
+      "range": {
+        "startLine": 138,
+        "startChar": 0,
+        "endLine": 139,
+        "endChar": 20
+      },
+      "revId": "eb3d21880f3c42e2807213a6ccaf973666d361f1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f201ee6c_7fafcbf9",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2018-03-01T17:53:30Z",
+      "side": 1,
+      "message": "This name is quite a bit confusing when matched to https://www.opendaylight.org/what-we-do/lifecycle-releases section 4.",
+      "range": {
+        "startLine": 279,
+        "startChar": 0,
+        "endLine": 279,
+        "endChar": 41
+      },
+      "revId": "eb3d21880f3c42e2807213a6ccaf973666d361f1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f740eb3d_6478ca43",
         "filename": "docs/release-process/managed-release.rst",
         "patchSetId": 23
@@ -66,6 +135,98 @@
         "startChar": 54,
         "endLine": 286,
         "endChar": 59
+      },
+      "revId": "eb3d21880f3c42e2807213a6ccaf973666d361f1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "28fc9b16_52d6fcbb",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2018-03-01T17:53:30Z",
+      "side": 1,
+      "message": "This means the release plan for the next release needs to be finalized around the midway checkpoint -- otherwise it leaves very little time to plan the integration point.",
+      "range": {
+        "startLine": 286,
+        "startChar": 34,
+        "endLine": 286,
+        "endChar": 59
+      },
+      "revId": "eb3d21880f3c42e2807213a6ccaf973666d361f1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "83c694ac_3f8038c7",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2018-03-01T17:53:30Z",
+      "side": 1,
+      "message": "Are there any provisions for integration windows?",
+      "range": {
+        "startLine": 298,
+        "startChar": 0,
+        "endLine": 300,
+        "endChar": 68
+      },
+      "revId": "eb3d21880f3c42e2807213a6ccaf973666d361f1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e0f7d8c8_2ec1e88d",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2018-03-01T17:53:30Z",
+      "side": 1,
+      "message": "It would be nice to explicitly mention that all \"Managed SR projects\" are SNAPSHOT-integrated. Overall the document could use an explicit vocabulary and reference section.",
+      "range": {
+        "startLine": 361,
+        "startChar": 0,
+        "endLine": 361,
+        "endChar": 17
+      },
+      "revId": "eb3d21880f3c42e2807213a6ccaf973666d361f1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "966233e1_d414a251",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 374,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2018-03-01T17:53:30Z",
+      "side": 1,
+      "message": "AFAIK the release job does not currently enforce no SNAPSHOT dependencies. That needs to be fixed before this becomes effective.",
+      "range": {
+        "startLine": 373,
+        "startChar": 30,
+        "endLine": 374,
+        "endChar": 32
       },
       "revId": "eb3d21880f3c42e2807213a6ccaf973666d361f1",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
