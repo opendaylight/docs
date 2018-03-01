@@ -288,6 +288,30 @@
     },
     {
       "key": {
+        "uuid": "a12badb4_2b3c341e",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 773
+      },
+      "writtenOn": "2018-03-01T01:47:07Z",
+      "side": 1,
+      "message": "I realize #project doesn\u0027t need to be in the meeting minutes since it is in the full irc log, but wouldn\u0027t we want it recorded in the minutes? That is the official record and what most people would look at. Seems like we should have a #info #project or whatever, but it should be with #info to get it into the minutes.",
+      "parentUuid": "7c718508_18656560",
+      "range": {
+        "startLine": 137,
+        "startChar": 0,
+        "endLine": 138,
+        "endChar": 10
+      },
+      "revId": "305f0174200ecf575d1df0907ff21f1bae44c134",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "21034e17_74170a90",
         "filename": "docs/release-process/managed-release.rst",
         "patchSetId": 10
