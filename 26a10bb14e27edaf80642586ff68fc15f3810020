@@ -1,0 +1,176 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6118b5d2_4e353380",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 22
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 7493
+      },
+      "writtenOn": "2018-03-01T14:37:51Z",
+      "side": 1,
+      "message": "typo: use case (need a space in between)",
+      "range": {
+        "startLine": 71,
+        "startChar": 13,
+        "endLine": 71,
+        "endChar": 20
+      },
+      "revId": "26a10bb14e27edaf80642586ff68fc15f3810020",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ac7336c6_560fc296",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 22
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 7493
+      },
+      "writtenOn": "2018-03-01T14:37:51Z",
+      "side": 1,
+      "message": "better spell out \"release mailing list\"",
+      "revId": "26a10bb14e27edaf80642586ff68fc15f3810020",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e0d7b8dc_eb371d1d",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 22
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 7493
+      },
+      "writtenOn": "2018-03-01T14:37:51Z",
+      "side": 1,
+      "message": "better spell out \"release mailing list\" here also",
+      "revId": "26a10bb14e27edaf80642586ff68fc15f3810020",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fb848983_84a23904",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 22
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 7493
+      },
+      "writtenOn": "2018-03-01T14:37:51Z",
+      "side": 1,
+      "message": "I believe CLM stands for Component Lifecycle Management: https://blog.sonatype.com/2013/04/announcing-sonatype-clm-component-lifecycle-management/",
+      "range": {
+        "startLine": 194,
+        "startChar": 45,
+        "endLine": 194,
+        "endChar": 52
+      },
+      "revId": "26a10bb14e27edaf80642586ff68fc15f3810020",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "98089233_595cec50",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 22
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 7493
+      },
+      "writtenOn": "2018-03-01T14:37:51Z",
+      "side": 1,
+      "message": "Implementation Details: We should look at creating new issue types (instead of using the generic Task) in JIRA such as \"Project_Plan\", \"Weather\", \"Grievance\" etc., customize the fields we want for these new issue types, define new workflow (if needed) to help with automatic data collection.  We may also need to adopt a set of label values to help with automatic data collection.",
+      "range": {
+        "startLine": 220,
+        "startChar": 41,
+        "endLine": 220,
+        "endChar": 51
+      },
+      "revId": "26a10bb14e27edaf80642586ff68fc15f3810020",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7b4e7fd0_7866ab08",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 22
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 7493
+      },
+      "writtenOn": "2018-03-01T14:37:51Z",
+      "side": 1,
+      "message": "typo - should omit",
+      "range": {
+        "startLine": 312,
+        "startChar": 65,
+        "endLine": 312,
+        "endChar": 66
+      },
+      "revId": "26a10bb14e27edaf80642586ff68fc15f3810020",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "13260c4a_46f03fb9",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 22
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 7493
+      },
+      "writtenOn": "2018-03-01T14:37:51Z",
+      "side": 1,
+      "message": "Does it have to be no later than 2 weeks?  It seems a month may be more reasonable.",
+      "range": {
+        "startLine": 315,
+        "startChar": 38,
+        "endLine": 315,
+        "endChar": 57
+      },
+      "revId": "26a10bb14e27edaf80642586ff68fc15f3810020",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "04d26db1_d69a944a",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 22
+      },
+      "lineNbr": 444,
+      "author": {
+        "id": 7493
+      },
+      "writtenOn": "2018-03-01T14:37:51Z",
+      "side": 1,
+      "message": "It will help a lot to create a new issue type \"Grievance\" with custom fields and possibly workflows to help with automation.",
+      "range": {
+        "startLine": 444,
+        "startChar": 41,
+        "endLine": 444,
+        "endChar": 64
+      },
+      "revId": "26a10bb14e27edaf80642586ff68fc15f3810020",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
