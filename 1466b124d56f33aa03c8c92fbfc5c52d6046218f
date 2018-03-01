@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "b35a1dfc_f455a63c",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-03-01T10:52:07Z",
+      "side": 1,
+      "message": "I\u0027m not sure what good it does for someone not closely enough involved with the project to be a committer to know about a weather item. Would they really know if it\u0027s going to have an impact on the project? I think this would just result in sending proxies from the same company, not from the same part of ODL.\n\nFor projects that aren\u0027t healthy, my point is that we need to let them fail at this to show they aren\u0027t healthy. If they can just proxy to someone who will always be at the TSC but isn\u0027t active in the project that will never surface.",
+      "parentUuid": "38f977ec_d1c553e3",
+      "range": {
+        "startLine": 146,
+        "startChar": 26,
+        "endLine": 146,
+        "endChar": 35
+      },
+      "revId": "1466b124d56f33aa03c8c92fbfc5c52d6046218f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "641ef364_607ab4e8",
         "filename": "docs/release-process/managed-release.rst",
         "patchSetId": 20
@@ -71,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "a4bb8b4e_96defa00",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-03-01T10:52:07Z",
+      "side": 1,
+      "message": "Maybe don\u0027t make comments to avoid cluttering them, but do feel free to edit them directly, add labels/tags/whatever.",
+      "parentUuid": "641ef364_607ab4e8",
+      "range": {
+        "startLine": 221,
+        "startChar": 29,
+        "endLine": 221,
+        "endChar": 71
+      },
+      "revId": "1466b124d56f33aa03c8c92fbfc5c52d6046218f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f3fdfc83_616f6a04",
         "filename": "docs/release-process/managed-release.rst",
         "patchSetId": 20
@@ -82,6 +130,30 @@
       "writtenOn": "2018-03-01T07:01:20Z",
       "side": 1,
       "message": "but, if a project just doesn\u0027t do the \"initial summary\" jira, that is the same as requesting to move from managed to unmanaged right? just wondering if this is something we don\u0027t even need to look/ask for.",
+      "range": {
+        "startLine": 225,
+        "startChar": 34,
+        "endLine": 225,
+        "endChar": 76
+      },
+      "revId": "1466b124d56f33aa03c8c92fbfc5c52d6046218f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0a33c9db_b53e3e74",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-03-01T10:52:07Z",
+      "side": 1,
+      "message": "Yeah, I see your point. I guess having it as a different step allows us to differentiate between projects that want to transition from Managed and projects that accidently messed up. I think I prefer explicit over implicit.",
+      "parentUuid": "f3fdfc83_616f6a04",
       "range": {
         "startLine": 225,
         "startChar": 34,
@@ -128,6 +200,30 @@
       "writtenOn": "2018-03-01T07:01:20Z",
       "side": 1,
       "message": "PTLs or TSC?",
+      "range": {
+        "startLine": 286,
+        "startChar": 63,
+        "endLine": 286,
+        "endChar": 67
+      },
+      "revId": "1466b124d56f33aa03c8c92fbfc5c52d6046218f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "37081557_5d822c83",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-03-01T10:52:07Z",
+      "side": 1,
+      "message": "Yeah, we should talk about that. I considered both but went with PTLs because they are the ones directly impacted (there will be a fair number of folks on the TSC from unmanaged projects). It also forces the PTLs who are about to have to merge a version bump patch to pay attention to the upcoming bump, start thinking about getting their projects ready for it. The advantage of the TSC is that it\u0027s easier to have a vote, but I don\u0027t think that\u0027s a big deal.",
+      "parentUuid": "e8216956_836d3ccc",
       "range": {
         "startLine": 286,
         "startChar": 63,
@@ -198,6 +294,42 @@
     },
     {
       "key": {
+        "uuid": "d3cc662b_fda8fa30",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-03-01T10:52:07Z",
+      "side": 1,
+      "message": "Yes, will fix.",
+      "parentUuid": "e4c43fc4_afb5a670",
+      "revId": "1466b124d56f33aa03c8c92fbfc5c52d6046218f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "81455e48_74cb4651",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-03-01T10:52:07Z",
+      "side": 1,
+      "message": "Yeah, I\u0027m not so sure about that term. Isn\u0027t \"integrated\" exactly the opposite of what they are? The SR projects are integrated, the non-SR projects are disintegrated, need to be integrated into the SR projects at the \"integration point\". I think non-SR is very clear to folks, as it\u0027s what we\u0027ve been calling them for quite some time. It also exactly describes what they are.",
+      "parentUuid": "d79a964e_82b37239",
+      "revId": "1466b124d56f33aa03c8c92fbfc5c52d6046218f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fb224b95_1e848884",
         "filename": "docs/release-process/managed-release.rst",
         "patchSetId": 20
@@ -209,6 +341,30 @@
       "writtenOn": "2018-03-01T07:01:20Z",
       "side": 1,
       "message": "the terminology of \"provide\" and \"due\" doesn\u0027t seem quite right. The idea (afaik) is that we will just collect (aka scrape)\ntheir checkpoint data at these certain times to review them. If, for example, we scrape for their \"Initial High Level Summary\"\njira at that \"two weeks after...\" date and it\u0027s not there, then we take note at the TSC level and file a grievance. Or am I just\nbeing nit-picky?",
+      "range": {
+        "startLine": 312,
+        "startChar": 42,
+        "endLine": 315,
+        "endChar": 50
+      },
+      "revId": "1466b124d56f33aa03c8c92fbfc5c52d6046218f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c0b9514a_b81941ea",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-03-01T10:52:07Z",
+      "side": 1,
+      "message": "For the things they actually have to create, I think \"provide\" and \"due\" makes sense. You\u0027re right that for the midway checkpoint I should just say \"scrape\", as they aren\u0027t creating anything themselves.",
+      "parentUuid": "fb224b95_1e848884",
       "range": {
         "startLine": 312,
         "startChar": 42,
@@ -238,6 +394,24 @@
     },
     {
       "key": {
+        "uuid": "9356d7b5_d4a34409",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-03-01T10:52:07Z",
+      "side": 1,
+      "message": "Yeah, agreed, I\u0027ll work on this.",
+      "parentUuid": "f0411de6_e9f47bbe",
+      "revId": "1466b124d56f33aa03c8c92fbfc5c52d6046218f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "30f9eb8b_1f707acc",
         "filename": "docs/release-process/managed-release.rst",
         "patchSetId": 20
@@ -255,6 +429,24 @@
     },
     {
       "key": {
+        "uuid": "b56a935b_cb990169",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 414,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-03-01T10:52:07Z",
+      "side": 1,
+      "message": "Okay, thanks Sam, will add.",
+      "parentUuid": "30f9eb8b_1f707acc",
+      "revId": "1466b124d56f33aa03c8c92fbfc5c52d6046218f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "99c0e5de_0ae5c5e8",
         "filename": "docs/release-process/managed-release.rst",
         "patchSetId": 20
@@ -266,6 +458,24 @@
       "writtenOn": "2018-03-01T07:01:20Z",
       "side": 1,
       "message": "should we give an example jira for a grievance as well?",
+      "revId": "1466b124d56f33aa03c8c92fbfc5c52d6046218f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "07b47b91_e7d01b0c",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 437,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-03-01T10:52:07Z",
+      "side": 1,
+      "message": "Yeah, can do.",
+      "parentUuid": "99c0e5de_0ae5c5e8",
       "revId": "1466b124d56f33aa03c8c92fbfc5c52d6046218f",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": true
