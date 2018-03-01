@@ -372,6 +372,24 @@
     },
     {
       "key": {
+        "uuid": "50cc7aef_107a6b7f",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2018-03-01T16:47:30Z",
+      "side": 1,
+      "message": "personally, I\u0027ve always hated and got confused with what SR is and means. Eventually I figured it out. So then globbing on extra words like \"Managed non-\"\nmakes me cringe even more. These projects are the ones that the Managed Release needs to \"Integrate\" in to their release, is how I see the term\nworking. Either way, I want to lobby for a shorter, more obvious, single word name for these projects.\n\nand of course, I\u0027ll submit to the majority on this.",
+      "parentUuid": "bf463529_4022e7f9",
+      "revId": "1466b124d56f33aa03c8c92fbfc5c52d6046218f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fb224b95_1e848884",
         "filename": "docs/release-process/managed-release.rst",
         "patchSetId": 20
