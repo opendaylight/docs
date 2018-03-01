@@ -22,6 +22,23 @@
       "revId": "1466b124d56f33aa03c8c92fbfc5c52d6046218f",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "30f9eb8b_1f707acc",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 414,
+      "author": {
+        "id": 773
+      },
+      "writtenOn": "2018-03-01T01:51:32Z",
+      "side": 1,
+      "message": "1. Find or map the artifact in the zip/system dir, i.e. the netvirt features are in org/opendaylight/netvirt/odl-netvirt-openstack/0.6.0-SNAPSHOT.\n\n2. Add the repo:\nfeature:repo-add mvn:org.opendaylight.netvirt/odl-netvirt-openstack/0.6.0\n-SNAPSHOT/xml/features",
+      "revId": "1466b124d56f33aa03c8c92fbfc5c52d6046218f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
