@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "2a29766a_98c88795",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2018-03-01T07:01:20Z",
+      "side": 1,
+      "message": "Integrated?\n(see my comment in line 299)",
+      "range": {
+        "startLine": 84,
+        "startChar": 0,
+        "endLine": 84,
+        "endChar": 24
+      },
+      "revId": "1466b124d56f33aa03c8c92fbfc5c52d6046218f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "38f977ec_d1c553e3",
         "filename": "docs/release-process/managed-release.rst",
         "patchSetId": 20
@@ -25,6 +48,121 @@
     },
     {
       "key": {
+        "uuid": "641ef364_607ab4e8",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2018-03-01T07:01:20Z",
+      "side": 1,
+      "message": "should we make comments on these JIRAs? I don\u0027t want to pollute them. We should have some\nfields/tags/etc in the jira for these to make scraping work easier.",
+      "range": {
+        "startLine": 221,
+        "startChar": 29,
+        "endLine": 221,
+        "endChar": 71
+      },
+      "revId": "1466b124d56f33aa03c8c92fbfc5c52d6046218f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f3fdfc83_616f6a04",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2018-03-01T07:01:20Z",
+      "side": 1,
+      "message": "but, if a project just doesn\u0027t do the \"initial summary\" jira, that is the same as requesting to move from managed to unmanaged right? just wondering if this is something we don\u0027t even need to look/ask for.",
+      "range": {
+        "startLine": 225,
+        "startChar": 34,
+        "endLine": 225,
+        "endChar": 76
+      },
+      "revId": "1466b124d56f33aa03c8c92fbfc5c52d6046218f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4be473aa_11d3b1cf",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2018-03-01T07:01:20Z",
+      "side": 1,
+      "message": "Integrated Projects",
+      "range": {
+        "startLine": 278,
+        "startChar": 0,
+        "endLine": 278,
+        "endChar": 25
+      },
+      "revId": "1466b124d56f33aa03c8c92fbfc5c52d6046218f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e8216956_836d3ccc",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2018-03-01T07:01:20Z",
+      "side": 1,
+      "message": "PTLs or TSC?",
+      "range": {
+        "startLine": 286,
+        "startChar": 63,
+        "endLine": 286,
+        "endChar": 67
+      },
+      "revId": "1466b124d56f33aa03c8c92fbfc5c52d6046218f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0d4c76bc_5310560e",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2018-03-01T07:01:20Z",
+      "side": 1,
+      "message": "I like these lines.",
+      "range": {
+        "startLine": 289,
+        "startChar": 61,
+        "endLine": 295,
+        "endChar": 36
+      },
+      "revId": "1466b124d56f33aa03c8c92fbfc5c52d6046218f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "e4c43fc4_afb5a670",
         "filename": "docs/release-process/managed-release.rst",
         "patchSetId": 20
@@ -42,6 +180,64 @@
     },
     {
       "key": {
+        "uuid": "d79a964e_82b37239",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2018-03-01T07:01:20Z",
+      "side": 1,
+      "message": "I liked the term Robert used for these projects outside of the \"SR\". It was \"Integrated\" so we have\nIntegrated Projects   - e.g., odlparent, yangtools\nManaged Projects - e.g., aaa, openflowplugin, netvirt\nUnmanaged Projects  - e.g., tsdr, bier",
+      "parentUuid": "e4c43fc4_afb5a670",
+      "revId": "1466b124d56f33aa03c8c92fbfc5c52d6046218f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fb224b95_1e848884",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2018-03-01T07:01:20Z",
+      "side": 1,
+      "message": "the terminology of \"provide\" and \"due\" doesn\u0027t seem quite right. The idea (afaik) is that we will just collect (aka scrape)\ntheir checkpoint data at these certain times to review them. If, for example, we scrape for their \"Initial High Level Summary\"\njira at that \"two weeks after...\" date and it\u0027s not there, then we take note at the TSC level and file a grievance. Or am I just\nbeing nit-picky?",
+      "range": {
+        "startLine": 312,
+        "startChar": 42,
+        "endLine": 315,
+        "endChar": 50
+      },
+      "revId": "1466b124d56f33aa03c8c92fbfc5c52d6046218f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f0411de6_e9f47bbe",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2018-03-01T07:01:20Z",
+      "side": 1,
+      "message": "I feel like we need to make it a little more clear that if an unmanaged project does not have\na passing release job that puts artifacts on nexus, then doing this final step should not be \ndone. If they did do this step without a passing release job, then won\u0027t this final distribution\njob fail? Also, somewhere it should be clear that the Managed release is not waiting around\nfor unmanaged projects to figure this out. This is a moving train, and not stopping.",
+      "revId": "1466b124d56f33aa03c8c92fbfc5c52d6046218f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "30f9eb8b_1f707acc",
         "filename": "docs/release-process/managed-release.rst",
         "patchSetId": 20
@@ -56,6 +252,23 @@
       "revId": "1466b124d56f33aa03c8c92fbfc5c52d6046218f",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "99c0e5de_0ae5c5e8",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 437,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2018-03-01T07:01:20Z",
+      "side": 1,
+      "message": "should we give an example jira for a grievance as well?",
+      "revId": "1466b124d56f33aa03c8c92fbfc5c52d6046218f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
     }
   ]
 }
