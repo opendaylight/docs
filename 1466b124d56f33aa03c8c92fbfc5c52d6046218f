@@ -119,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "1499a3c2_8ecb8f9b",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 773
+      },
+      "writtenOn": "2018-03-02T14:41:12Z",
+      "side": 1,
+      "message": "Use the Jira Description as the canonical text. Then you can add comments all along and update the description as needed. But the Description is what gets scraped. Add a tag so we know this is the project plan.",
+      "parentUuid": "a4bb8b4e_96defa00",
+      "range": {
+        "startLine": 221,
+        "startChar": 29,
+        "endLine": 221,
+        "endChar": 71
+      },
+      "revId": "1466b124d56f33aa03c8c92fbfc5c52d6046218f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f3fdfc83_616f6a04",
         "filename": "docs/release-process/managed-release.rst",
         "patchSetId": 20
@@ -260,6 +284,30 @@
     },
     {
       "key": {
+        "uuid": "d1f4600f_399ad0da",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 773
+      },
+      "writtenOn": "2018-03-02T14:41:12Z",
+      "side": 1,
+      "message": "I like PTLs, but lean towards TSC based on Robert\u0027s concerns that the integrated projects need to be taken sooner rather than later so they can avoid long-term maintenance. A large portion of the TSC are PTLs so maybe we are covered.",
+      "parentUuid": "37081557_5d822c83",
+      "range": {
+        "startLine": 286,
+        "startChar": 63,
+        "endLine": 286,
+        "endChar": 67
+      },
+      "revId": "1466b124d56f33aa03c8c92fbfc5c52d6046218f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "0d4c76bc_5310560e",
         "filename": "docs/release-process/managed-release.rst",
         "patchSetId": 20
@@ -271,6 +319,30 @@
       "writtenOn": "2018-03-01T07:01:20Z",
       "side": 1,
       "message": "I like these lines.",
+      "range": {
+        "startLine": 289,
+        "startChar": 61,
+        "endLine": 295,
+        "endChar": 36
+      },
+      "revId": "1466b124d56f33aa03c8c92fbfc5c52d6046218f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "406d776b_d7b6409e",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 773
+      },
+      "writtenOn": "2018-03-02T14:41:12Z",
+      "side": 1,
+      "message": "Can we add text to say this doesn\u0027t require a vote from the TSC? The releng team needs to be able to execute as needed. The schedule is in place and if deadlines are hit then the releng team can act.",
+      "parentUuid": "0d4c76bc_5310560e",
       "range": {
         "startLine": 289,
         "startChar": 61,
@@ -508,6 +580,24 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "9356d7b5_d4a34409",
+      "revId": "1466b124d56f33aa03c8c92fbfc5c52d6046218f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f1448630_ec951cdf",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 20
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 773
+      },
+      "writtenOn": "2018-03-02T14:41:12Z",
+      "side": 1,
+      "message": "Seems like we could automate this. If the projects job is passing and building artifacts then the job could update the poms.",
+      "parentUuid": "f0411de6_e9f47bbe",
       "revId": "1466b124d56f33aa03c8c92fbfc5c52d6046218f",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": true
