@@ -6,11 +6,11 @@ TSDR
 
    - Yes, I have reviewed the PTL Requirements [1]_.
 
-2. Project Contact: YuLing Chen, yulingchen54@gmail.com, yuling_c
+2. Project Contact: Scott Melton, smelton2@uccs.edu
 
 3. Test Contact: YuLing Chen, yulingchen54@gmail.com, yuling_c
 
-4. Documentation Contact: YuLing Chen, yulingchen54@gmail.com, yuling_c
+4. Documentation Contact: Scott Melton, smelton2@uccs.edu
 
 5. Does your project have any updates on any previously-incomplete items from
    prior milestone readouts? No
@@ -40,7 +40,7 @@ TSDR
     - mdsal, Implicit acknowledgement
     - odlparent, Implicit acknowledgement
     - yangtools, Implicit acknowledgement
-
+    - openflowplugin, Implicit acknowledgement
 
 11. Will your project have top-level features not requiring system test? No
 

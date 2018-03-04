@@ -4,7 +4,7 @@ TSDR
 
 1. The TSDR project formally joins the OpenDaylight Oxygen
    Simultaneous Release and agrees to the activities and timeline documented on
-   the Oxygen  Release Plan Page:
+   the Oxygen Release Plan Page:
    https://wiki.opendaylight.org/view/Simultaneous_Release:Oxygen_Release_Plan
 
 2. Project Offset: Offset 2
