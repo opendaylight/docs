@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "14e17b25_496c054c",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-03-06T18:52:02Z",
+      "side": 1,
+      "message": "Good point, will make more clear",
+      "parentUuid": "87841a6c_6329d1d1",
+      "range": {
+        "startLine": 118,
+        "startChar": 0,
+        "endLine": 120,
+        "endChar": 7
+      },
+      "revId": "eb3d21880f3c42e2807213a6ccaf973666d361f1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5133a45b_f65165ae",
         "filename": "docs/release-process/managed-release.rst",
         "patchSetId": 23
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "72e66c03_fc52a609",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-03-06T18:52:02Z",
+      "side": 1,
+      "message": "Good point, I\u0027ll dig one up or make one",
+      "parentUuid": "5133a45b_f65165ae",
+      "range": {
+        "startLine": 138,
+        "startChar": 0,
+        "endLine": 139,
+        "endChar": 20
+      },
+      "revId": "eb3d21880f3c42e2807213a6ccaf973666d361f1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f201ee6c_7fafcbf9",
         "filename": "docs/release-process/managed-release.rst",
         "patchSetId": 23
@@ -59,6 +107,30 @@
       "writtenOn": "2018-03-01T17:53:30Z",
       "side": 1,
       "message": "This name is quite a bit confusing when matched to https://www.opendaylight.org/what-we-do/lifecycle-releases section 4.",
+      "range": {
+        "startLine": 279,
+        "startChar": 0,
+        "endLine": 279,
+        "endChar": 41
+      },
+      "revId": "eb3d21880f3c42e2807213a6ccaf973666d361f1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2a679ba9_7fd54f24",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-03-06T18:52:02Z",
+      "side": 1,
+      "message": "I think we decided to go with \"Managed Snapshot Integrated\" and \"Managed Release Integrated\" on the last TSC call, which are names I\u0027m a big fan of. Thanks for helping to find these.",
+      "parentUuid": "f201ee6c_7fafcbf9",
       "range": {
         "startLine": 279,
         "startChar": 0,
@@ -165,6 +237,30 @@
     },
     {
       "key": {
+        "uuid": "ba602c06_092d16db",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-03-06T18:52:02Z",
+      "side": 1,
+      "message": "If you mean the timeline for the release, I think it will be the same release-over-release. We\u0027ll just have to plug in the start date and compute the relative dates based on that.",
+      "parentUuid": "28fc9b16_52d6fcbb",
+      "range": {
+        "startLine": 286,
+        "startChar": 34,
+        "endLine": 286,
+        "endChar": 59
+      },
+      "revId": "eb3d21880f3c42e2807213a6ccaf973666d361f1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "83c694ac_3f8038c7",
         "filename": "docs/release-process/managed-release.rst",
         "patchSetId": 23
@@ -176,6 +272,30 @@
       "writtenOn": "2018-03-01T17:53:30Z",
       "side": 1,
       "message": "Are there any provisions for integration windows?",
+      "range": {
+        "startLine": 298,
+        "startChar": 0,
+        "endLine": 300,
+        "endChar": 68
+      },
+      "revId": "eb3d21880f3c42e2807213a6ccaf973666d361f1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fd1a9e1_aa92a0bd",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-03-06T18:52:02Z",
+      "side": 1,
+      "message": "You\u0027re saying that during an integration window, it might be good to allow for a second major version bump? That could make sense.",
+      "parentUuid": "83c694ac_3f8038c7",
       "range": {
         "startLine": 298,
         "startChar": 0,
@@ -211,6 +331,30 @@
     },
     {
       "key": {
+        "uuid": "4f66a806_e72c58de",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-03-06T18:52:02Z",
+      "side": 1,
+      "message": "Yeah, agreed to this naming style as mentioned above. +1 to vocabulary section, will add.",
+      "parentUuid": "e0f7d8c8_2ec1e88d",
+      "range": {
+        "startLine": 361,
+        "startChar": 0,
+        "endLine": 361,
+        "endChar": 17
+      },
+      "revId": "eb3d21880f3c42e2807213a6ccaf973666d361f1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "966233e1_d414a251",
         "filename": "docs/release-process/managed-release.rst",
         "patchSetId": 23
@@ -222,6 +366,30 @@
       "writtenOn": "2018-03-01T17:53:30Z",
       "side": 1,
       "message": "AFAIK the release job does not currently enforce no SNAPSHOT dependencies. That needs to be fixed before this becomes effective.",
+      "range": {
+        "startLine": 373,
+        "startChar": 30,
+        "endLine": 374,
+        "endChar": 32
+      },
+      "revId": "eb3d21880f3c42e2807213a6ccaf973666d361f1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "51de093f_1d443bfd",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 374,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-03-06T18:52:02Z",
+      "side": 1,
+      "message": "Luis or Thanh, can one of you run point on this?",
+      "parentUuid": "966233e1_d414a251",
       "range": {
         "startLine": 373,
         "startChar": 30,
