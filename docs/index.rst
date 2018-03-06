@@ -46,6 +46,8 @@ Content for OpenDaylight Contributors
 The following content is intended for developers who either currently
 participate in the development of OpenDaylight or would like to start.
 
+* :ref:`Infrastructure Guide <odl-infra>`
+
 .. toctree::
    :maxdepth: 1
 

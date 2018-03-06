@@ -12,6 +12,9 @@
 
 from docs_conf.conf import *
 
+# Append to intersphinx_mapping
+intersphinx_mapping['odl-releng-builder'] = ('http://docs.opendaylight.org/projects/releng-builder/en/latest/', None)
+
 linkcheck_ignore = [
     # Ignore jenkins because it's often slow to respond.
     'https://jenkins.opendaylight.org/releng',
