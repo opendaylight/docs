@@ -23,7 +23,7 @@ TSDR
 
 7. Does your project use any ports, including for testing? Yes
 
-   - (If yes, list of ports used)  Yes, 514,1514, 2055,6343.
+   - (If yes, list of ports used)  Yes, 514, 1514, 2055,6343.
    - (If yes, have you updated the wiki [3]_ with all ports used? Yes
 
 8. Does your project build successfully in Autorelease? Yes
