@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e9c4c99_771b30c1",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 29
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-03-06T18:52:02Z",
+      "side": 1,
+      "message": "Double spaces seemed to have creeped in between the Jira and here;)\n\nhttps://en.wikipedia.org/wiki/Sentence_spacing_in_language_and_style_guides",
+      "range": {
+        "startLine": 242,
+        "startChar": 33,
+        "endLine": 242,
+        "endChar": 34
+      },
+      "revId": "446210057618f494cc3e5d7e3adc2ea23ab0fc1e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "90feeaf7_948693d7",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 29
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-03-06T18:52:02Z",
+      "side": 1,
+      "message": "I have mixed feelings about including this here. We could just link to the example Jira vs making this longer than it already is. I also duplicated quite a bit that\u0027s mentioned elsewhere, which made sense when they were in different docs but maybe not so much now.",
+      "revId": "446210057618f494cc3e5d7e3adc2ea23ab0fc1e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
