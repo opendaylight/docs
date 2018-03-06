@@ -3,11 +3,6 @@
 	url = ../bgpcep
 	branch = .
 	ignore = dirty
-[submodule "source/submodules/releng/builder"]
-	path = docs/submodules/releng/builder
-	url = ../releng/builder
-	branch = master
-	ignore = dirty
 [submodule "docs/submodules/infrautils"]
 	path = docs/submodules/infrautils
 	url = ../infrautils
