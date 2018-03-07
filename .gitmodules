@@ -28,11 +28,6 @@
 	url = ../odlparent
 	branch = .
 	ignore = dirty
-[submodule "source/submodules/spectrometer"]
-	path = docs/submodules/spectrometer
-	url = ../spectrometer
-	branch = master
-	ignore = dirty
 [submodule "docs/submodules/netvirt"]
 	path = docs/submodules/netvirt
 	url = ../netvirt
