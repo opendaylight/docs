@@ -27,10 +27,10 @@ below.
 
   As a short example of installing a Karaf feature, OpenDaylight
   offers Application Layer Traffic Optimization (ALTO). The Karaf feature to
-  install ALTO is odl-alto-all. On the Karaf console, the command to install it
-  is:
+  install ALTO is odl-alto-release. On the Karaf console, the command to
+  install it is:
 
-  feature:install odl-alto-all
+  feature:install odl-alto-release
 
 * **DLUX** is a web-based interface that OpenDaylight provides for you to manage
   your network. Its Karaf feature installation name is “odl-dlux-core”.
