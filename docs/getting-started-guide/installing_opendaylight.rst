@@ -352,8 +352,7 @@ Karaf OpenDaylight Features
 
     * - Time Series Data Repository (TSDR)
       - Enables support for collecting, storing and querying time series data.
-        TSDR supports the following collection data:
-
+        TSDR collects and supports the following collection data:
         * OpenFlow statistics
         * NETFLOW statistics
         * sFlow statistics
@@ -361,53 +360,28 @@ Karaf OpenDaylight Features
         * SNMP data
         * SysLog data
         * RestConf data
-
-        TSDR supports the following data stores:
-
+        TSDR supports the following Data Stores:
         * HSQLDB
         * HBase
         * Cassandra
+        TSDR Data Query REST API
+        TSDR supports OpenDaylight RESTCONF and API interfaces
+        for queries to all data stores.
+        TSDR supports an integrated ElasticSearch query.
+        TSDR supports a Grafana interface.
 
-        TSDR supports the default OpenDaylight RESTCONF and API interfaces and an
-        ElasticSearch interface for all data stores.
-      - odl-tsdr-core, odl-tsdr-hsqldb
-      - all
+      - odl-tsdr-openflow-statistics-collector
+        odl-tsdr-netflow-statistics-collector
+        odl-tsdr-sflow-statistics-collector
+        odl-tsdr-controller-metrics-collector
+        odl-tsdr-snmp-data-collector
+        odl-tsdr-syslog-collector
+        odl-tsdr-restconf-collector
 
-    * - TSDR Data Collectors
-      - TSDR collector features include support for collecting the following
-        data:
-
-        * OpenFlow statistics
-        * NETFLOW statistics
-        * sFlow statistics
-        * OpenFlow Controller metrics
-        * SNMP data
-        * SysLog data
-        * RESTCONF data.
-
-      - * odl-tsdr-openflow-statistics-collector
-        * odl-tsdr-netflow-statistics-collector
-        * odl-tsdr-sflow-statistics-collector
-        * odl-tsdr-controller-metrics-collector
-        * odl-tsdr-snmp-data-collector
-        * odl-tsdr-syslog-collector
-        * odl-tsdr-restconf-collector
-      - all
-
-    * - TSDR Data Stores
-      - TSDR enables support for the following data stores:
-        * HSQLDB
-        * HBase
-        * Cassandra
-      - * odl-tsdr-hsqldb
-        * odl-tsdr-hbase
-        * odl-tsdr-cassandra
-      - all
-
-    * - TSDR Data Query
-      - TSDR supports the default OpenDaylight RESTCONF and ODL API interfaces
-        for queries to all data stores.  It also supports an integrated ElasticSearch query.
-      - odl-tsdr-elasticsearch
+        odl-tsdr-core
+        odl-tsdr-hsqldb
+        odl-tsdr-hbase
+        odl-tsdr-cassandra
       - all
 
     * - Topology Processing Framework
