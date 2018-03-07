@@ -1,6 +1,9 @@
 Running XSQL Console Commands and Queries
 =========================================
 
+.. note:: The XSQL component packaged in odl-mdsal-xsql has been deprecated and
+          will be removed in the next release.
+
 XSQL Overview
 -------------
 
@@ -171,4 +174,3 @@ Module!=\ *YY***. This tells XSQL to disregard any parent module data
 that does not meet the type YY criteria and collect results for any
 matching child modules. In this example, you are instructing the query
 to skip module 1 and collect the relevant data from module 1.1.
-
