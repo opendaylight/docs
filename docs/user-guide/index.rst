@@ -14,7 +14,6 @@ the OpenDaylight Release using the generic base functionality.
 
    opendaylight-controller-overview
    using-the-opendaylight-user-interface-(dlux)
-   running-xsql-console-commands-and-queries
    ../getting-started-guide/common-features/clustering.rst
    ../getting-started-guide/common-features/persistence_and_backup.rst
 
