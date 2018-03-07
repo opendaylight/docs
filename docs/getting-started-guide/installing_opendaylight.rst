@@ -453,7 +453,7 @@ deploying it.
 
     * - ALTO
       - Enables support for Application-Layer Traffic Optimization
-      - odl-alto-core
+      - odl-alto-release
       - self+all
 
     * - CAPWAP
