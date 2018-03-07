@@ -8,7 +8,7 @@ Major Features
 odl-sxp-api
 -----------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=sxp.git;a=blob;f=features/odl-sxp-api/pom.xml;hb=refs/heads/stable/nitrogen
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=sxp.git;a=blob;f=features/odl-sxp-api/pom.xml;hb=refs/heads/stable/oxygen
 * **Feature Description:**  This feature provides models based on
   `RFC <https://tools.ietf.org/pdf/draft-smith-kandula-sxp-05.pdf>`_.
 * **Top Level:** No
@@ -19,7 +19,7 @@ odl-sxp-api
 odl-sxp-core
 ------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=sxp.git;a=blob;f=features/odl-sxp-core/pom.xml;hb=refs/heads/stable/nitrogen
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=sxp.git;a=blob;f=features/odl-sxp-core/pom.xml;hb=refs/heads/stable/oxygen
 * **Feature Description:**  This feature performs tasks for managing SXP
   devices and provides the implementation of
   `RFC <https://tools.ietf.org/pdf/draft-smith-kandula-sxp-05.pdf>`_.
@@ -31,37 +31,37 @@ odl-sxp-core
 odl-sxp-controller
 ------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=sxp.git;a=blob;f=features/odl-sxp-controller/pom.xml;hb=refs/heads/stable/nitrogen
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=sxp.git;a=blob;f=features/odl-sxp-controller/pom.xml;hb=refs/heads/stable/oxygen
 * **Feature Description:**  This feature performs tasks regarding managing SXP
   devices via RESTCONF.
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** Yes
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sxp/job/sxp-csit-1node-basic-all-nitrogen/
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sxp/job/sxp-csit-1node-filtering-all-nitrogen/
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sxp/job/sxp-csit-1node-topology-all-nitrogen/
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sxp/job/sxp-csit-3node-periodic-clustering-all-nitrogen/
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sxp/job/sxp-csit-1node-basic-all-oxygen/
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sxp/job/sxp-csit-1node-filtering-all-oxygen/
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sxp/job/sxp-csit-1node-topology-all-oxygen/
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sxp/job/sxp-csit-3node-periodic-clustering-all-oxygen/
 
 odl-sxp-robot
 -------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=sxp.git;a=blob;f=features/odl-sxp-robot/pom.xml;hb=refs/heads/stable/nitrogen
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=sxp.git;a=blob;f=features/odl-sxp-robot/pom.xml;hb=refs/heads/stable/oxygen
 * **Feature Description:**  This is a sample feature used in CSIT testing.
 * **Top Level:** No
 * **User Facing:** No
 * **Experimental:** Yes
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sxp/job/sxp-csit-1node-periodic-performance-all-nitrogen/
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sxp/job/sxp-csit-1node-periodic-performance-all-oxygen/
 
 odl-sxp-routing
 -------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=sxp.git;a=blob;f=features/odl-sxp-routing/pom.xml;hb=refs/heads/stable/nitrogen
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=sxp.git;a=blob;f=features/odl-sxp-routing/pom.xml;hb=refs/heads/stable/oxygen
 * **Feature Description:**  This feature that performs managing of SXP devices
   in cluster environment.
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** Yes
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sxp/job/sxp-csit-3node-periodic-routing-all-nitrogen/
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sxp/job/sxp-csit-3node-periodic-routing-all-oxygen/
 
 
 Documentation
@@ -93,16 +93,16 @@ Security Considerations
 Quality Assurance
 =================
 
-* Link to `Sonar Report <https://sonar.opendaylight.org/overview?id=45270>`_ (80%)
+* Link to `Sonar Report <https://sonar.opendaylight.org/dashboard?id=org.opendaylight.sxp%3Asxp-parent>`_ (82.4%)
 
 * Link to CSIT Jobs
 
-  * `CSIT Job basic <https://jenkins.opendaylight.org/releng/view/sxp/job/sxp-csit-1node-basic-all-nitrogen/>`_
-  * `CSIT Job filtering <https://jenkins.opendaylight.org/releng/view/sxp/job/sxp-csit-1node-filtering-all-nitrogen/>`_
-  * `CSIT Job topology <https://jenkins.opendaylight.org/releng/view/sxp/job/sxp-csit-1node-topology-all-nitrogen/>`_
-  * `CSIT Job clustering <https://jenkins.opendaylight.org/releng/view/sxp/job/sxp-csit-3node-periodic-clustering-all-nitrogen/>`_
-  * `CSIT Job performance <https://jenkins.opendaylight.org/releng/view/sxp/job/sxp-csit-1node-periodic-performance-all-nitrogen/>`_
-  * `CSIT Job routing <https://jenkins.opendaylight.org/releng/view/sxp/job/sxp-csit-3node-periodic-routing-all-nitrogen/>`_
+  * `CSIT Job basic <https://jenkins.opendaylight.org/releng/view/sxp/job/sxp-csit-1node-basic-all-oxygen/>`_
+  * `CSIT Job filtering <https://jenkins.opendaylight.org/releng/view/sxp/job/sxp-csit-1node-filtering-all-oxygen/>`_
+  * `CSIT Job topology <https://jenkins.opendaylight.org/releng/view/sxp/job/sxp-csit-1node-topology-all-oxygen/>`_
+  * `CSIT Job clustering <https://jenkins.opendaylight.org/releng/view/sxp/job/sxp-csit-3node-periodic-clustering-all-oxygen/>`_
+  * `CSIT Job performance <https://jenkins.opendaylight.org/releng/view/sxp/job/sxp-csit-1node-periodic-performance-all-oxygen/>`_
+  * `CSIT Job routing <https://jenkins.opendaylight.org/releng/view/sxp/job/sxp-csit-3node-periodic-routing-all-oxygen/>`_
 
 * Other manual testing and QA information
 
@@ -135,14 +135,14 @@ Compatibility
 
 * Any configuration changes?
 
-  * feature odl-sxp-route was renamed to odl-sxp-routing
+  * No
 
 Bugs Fixed
 ----------
 
 * List of bugs fixed since the previous release
 
-  * `Fixed BUGS <https://bugs.opendaylight.org/buglist.cgi?chfieldfrom=2017-05-25&chfieldto=2017-08-09&list_id=78466&product=sxp&query_format=advanced&resolution=FIXED>`_
+  * `Fixed BUGS <https://jira.opendaylight.org/browse/SXP-130?jql=project%20in%20(GBP%2C%20SXP)%20AND%20issuetype%20%3D%20Bug%20AND%20status%20in%20(Resolved%2C%20Verified)%20AND%20created%20%3E%3D%202017-08-14%20AND%20created%20%3C%3D%202018-03-07>`_
 
 Known Issues
 ------------
@@ -151,7 +151,7 @@ Known Issues
 
   * N/A
 
-* `Open Bugs <https://bugs.opendaylight.org/buglist.cgi?chfieldfrom=2017-05-25&chfieldto=2017-08-09&list_id=84506&product=sxp&query_format=advanced&bug_status=__open__>`_
+* `Open Bugs <https://jira.opendaylight.org/browse/SXP-134?jql=project%20%3D%20SXP%20AND%20issuetype%20%3D%20Bug%20AND%20status%20%3D%20Open>`_
 
 End-of-life
 ===========
@@ -170,7 +170,7 @@ Standards
 Release Mechanics
 =================
 
-* `Release plan <https://wiki.opendaylight.org/view/SXP:Nitrogen:Release_Plan>`_
+* `Release plan <https://wiki.opendaylight.org/view/SXP:Oxygen:Release_Plan>`_
 
 * Describe any major shifts in release schedule from the release plan
 
