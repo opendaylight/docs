@@ -8,32 +8,32 @@ Major Features
 odl-bgpcep-bgp
 --------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=bgpcep.git;a=blob;f=features/bgp/features-bgp/src/main/features/features.xml;hb=refs/heads/stable/nitrogen
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=bgpcep.git;a=blob;f=features/bgp/features-bgp/pom.xml;h=f5acb8c44359fb258ef3b22c00269e48a091b7ee;hb=refs/heads/stable/oxygen
 * **Feature Description:**  OpenDaylight Border Gateway Protocol (BGP) plugin.
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** No
-* **CSIT Test:** https://logs.opendaylight.org/releng/vex-yul-odl-jenkins-1/bgpcep-csit-1node-userfeatures-all-nitrogen
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/bgpcep/job/bgpcep-csit-1node-userfeatures-all-oxygen
 
 odl-bgpcep-bmp
 --------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=bgpcep.git;a=blob;f=features/bmp/features-bmp/src/main/features/features.xml;hb=refs/heads/stable/nitrogen
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=bgpcep.git;a=blob;f=features/bmp/features-bmp/pom.xml;h=6b195866c508ea053ecec4445973467b31aa7bfe;hb=refs/heads/stable/oxygen
 * **Feature Description:**  OpenDaylight BGP Monitoring Protocol (BMP) plugin.
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** No
-* **CSIT Test:** https://logs.opendaylight.org/releng/vex-yul-odl-jenkins-1/bgpcep-csit-1node-userfeatures-all-nitrogen
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/bgpcep/job/bgpcep-csit-1node-userfeatures-all-oxygen
 
 odl-bgpcep-pcep
 ---------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=bgpcep.git;a=blob;f=features/pcep/features-pcep/src/main/features/features.xml;hb=refs/heads/stable/nitrogen
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=bgpcep.git;a=tree;f=features/pcep/features-pcep;h=252a957bf6b8549ad53cedb45bbd76dca9ba7cb5;hb=refs/heads/stable/oxygen
 * **Feature Description:**  OpenDaylight Path Computation Element Configuration Protocol (PCEP) plugin.
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** No
-* **CSIT Test:** https://logs.opendaylight.org/releng/vex-yul-odl-jenkins-1/bgpcep-csit-1node-userfeatures-all-nitrogen
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/bgpcep/job/bgpcep-csit-1node-userfeatures-all-oxygen
 
 
 Documentation
@@ -59,78 +59,21 @@ None Known - all protocol implements the TCP Authentication Option (TCP MD5)
 Quality Assurance
 =================
 
-* `Link to Sonar Report <https://sonar.opendaylight.org/overview?id=10075>`_ (80%)
+* `Link to Sonar Report <https://sonar.opendaylight.org/dashboard?id=org.opendaylight.bgpcep%3Abgpcep-aggregator>`_ (72.4%)
 * `Link to CSIT Jobs <https://jenkins.opendaylight.org/releng/view/bgpcep/>`_
 
-* `User features test <https://jenkins.opendaylight.org/releng/view/bgpcep/job/bgpcep-csit-1node-userfeatures-only-nitrogen/>`_
-* `PCEP performance and scale tests <https://jenkins.opendaylight.org/releng/view/bgpcep/job/bgpcep-csit-1node-periodic-throughpcep-only-nitrogen/>`_
-* `BGP Application peer performance and scale tests <https://jenkins.opendaylight.org/releng/view/bgpcep/job/bgpcep-csit-1node-periodic-bgp-ingest-only-nitrogen/>`_
-* `BGP performance and scale test <https://jenkins.opendaylight.org/releng/view/bgpcep/job/bgpcep-csit-1node-periodic-bgp-ingest-mixed-only-nitrogen/>`_
-* `BGP clustering <https://jenkins.opendaylight.org/releng/view/bgpcep/job/bgpcep-csit-3node-periodic-bgpclustering-only-nitrogen/>`_
+* `User features test <https://jenkins.opendaylight.org/releng/view/bgpcep/job/bgpcep-csit-1node-gate-userfeatures-all-oxygen/>`_
+* `PCEP performance and scale tests <https://jenkins.opendaylight.org/releng/view/bgpcep/job/bgpcep-csit-1node-periodic-throughpcep-only-oxygen/>`_
+* `BGP Application peer performance and scale tests <https://jenkins.opendaylight.org/releng/view/bgpcep/job/bgpcep-csit-1node-periodic-throughpcep-all-oxygen/>`_
+* `BGP performance and scale test <https://jenkins.opendaylight.org/releng/view/bgpcep/job/bgpcep-csit-1node-periodic-bgp-ingest-mixed-all-oxygen/>`_
+* `BGP clustering <https://jenkins.opendaylight.org/releng/view/bgpcep/job/bgpcep-csit-3node-periodic-bgpclustering-ha-only-oxygen/>`_
 
   The BGP extensions were tested manually with vendor's BGP router implementation or other software implementations (exaBGP, bagpipeBGP). Also, they are covered by the unit tests and automated system tests.
-
-*  New BGP Openconfig statistics feature requires more testing.
 
 Migration
 ---------
 
-BGP:
-^^^^
-
-Protocol Configuration
-''''''''''''''''''''''
-
-First we get old configuration
-
-**URL:** ``/restconf/config/openconfig-network-instance:network-instances/network-instance/global-bgp/openconfig-network-instance:protocols``
-
-**Method:** ``GET``
-
-where *example-bmp-monitor* old bmp monitor id
-
-Then we insert it
-
-**URL:** ``/restconf/config/openconfig-network-instance:network-instances/network-instance/global-bgp/openconfig-network-instance:protocols``
-
-**Method:** ``POST``
-
-Topology Configuration
-''''''''''''''''''''''
-
-First we get old configuration
-
-**URL:** ``/restconf/config/network-topology:network-topology``
-
-**Method:** ``GET``
-
-Then we insert it
-
-**URL:** ``/restconf/config/network-topology:network-topology``
-
-**Method:** ``POST``
-
-BMP:
-^^^^
-
-First we get old configuration
-
-**URL:** ``/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules/config:module/odl-bmp-impl-cfg:bmp-monitor-impl/example-bmp-monitor``
-
-**Method:** ``GET``
-
-**example-bmp-monitor** old bmp monitor id
-
-Then we insert it
-
-**URL:** ``/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules/config:module/odl-bmp-impl-cfg:bmp-monitor-impl/example-bmp-monitor``
-
-**Method:** ``PUT``
-
-PCEP:
-^^^^^
-
-There are no additional steps needed for migration to this release.
+* No additional migration steps needed.
 
 Compatibility
 -------------
@@ -139,22 +82,26 @@ Compatibility
   Yes
 * Any API changes?
 * Any configuration changes?
-  BGP OpenConfig configuration should be used instead of previous BGP CSS configuration.
+  BGP CSS configuration is not longer supported.
+  BMP CSS configuration is not longer supported.
+  PCEP CSS configuration is not longer supported.
 
 Bugs Fixed
 ----------
 
-* `List of bugs fixed since the previous release <https://bugs.opendaylight.org/buglist.cgi?columnlist=product%2Ccomponent%2Cassigned_to%2Cbug_severity%2Ccf_issue_type%2Cshort_desc%2Cbug_status%2Cpriority%2Cdeadline%2Ccf_target_milestone&f1=cf_target_milestone&f2=cf_issue_type&known_name=Carbon%3A%20bgpcep&list_id=84608&o1=substring&o2=equals&product=bgpcep&query_based_on=Carbon%3A%20bgpcep&query_format=advanced&resolution=FIXED&v1=nitrogen&v2=Bug>`_
+* `List of bugs fixed since the previous release <https://jira.opendaylight.org/browse/BGPCEP-763?jql=project%20%3D%20BGPCEP%20AND%20status%20in%20(Resolved%2C%20Verified)%20AND%20created%20%3E%3D%202017-10-07%20AND%20created%20%3C%3D%202018-03-08>`_
 
 Known Issues
 ------------
 
-* `BUG-6562 <https://bugs.opendaylight.org/show_bug.cgi?id=6562>`_ Support add-path in base BGP NLRI
+* `List key known issues with workarounds <https://jira.opendaylight.org/browse/BGPCEP-762?jql=project%20%3D%20BGPCEP%20AND%20status%20in%20(Open%2C%20%22In%20Progress%22)%20AND%20created%20%3E%3D%202017-10-07%20AND%20created%20%3C%3D%202018-03-08>`_
 
 End-of-life
 ===========
 
-* None
+* BGP CSS Configuration.
+* PCEP CSS Configuration.
+* BMP CSS Configuration.
 
 Standards
 =========
@@ -190,6 +137,7 @@ Standards
 * `draft-ietf-idr-bgpls-segment-routing-epe-05 <https://tools.ietf.org/html/draft-ietf-idr-bgpls-segment-routing-epe-05>`_ - Segment Routing Egress Peer Engineering BGP-LS Extensions
 * `draft-ietf-idr-flow-spec-v6-06 <https://tools.ietf.org/html/draft-ietf-idr-flow-spec-v6-06>`_ - Dissemination of Flow Specification Rules for IPv6 <br />
 * `draft-ietf-idr-flowspec-redirect-ip-01 <https://tools.ietf.org/html/draft-ietf-idr-flowspec-redirect-ip-01>`_ - BGP Flow-Spec Redirect to IP Action
+* `draft-sajassi-bess-evpn-vpws-fxc-01 <https://tools.ietf.org/html/draft-sajassi-bess-evpn-vpws-fxc-01>`_ - EVPN VPWS Flexible Cross-Connect Service
 
 * Stateful extensions to the Path Computation Element Protocol, December 2013
 
@@ -207,4 +155,4 @@ Standards
 Release Mechanics
 =================
 
-* `Link to release plan <https://wiki.opendaylight.org/view/BGP_LS_PCEP:Nitrogen_Release_Plan>`_
+* `Link to release plan <https://wiki.opendaylight.org/view/BGP_LS_PCEP:Oxygen_Release_Plan>`_
