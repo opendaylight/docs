@@ -1,0 +1,234 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "42d14a98_24e88b6d",
+        "filename": "docs/release-notes/projects/coe.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2018-03-08T16:04:05Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this be in all caps, i.e. \"COE\"?",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 4
+      },
+      "revId": "eb7a8f4a2b193e89164d8b0d05f09d47dac86347",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "247e6a0c_bd0724c9",
+        "filename": "docs/release-notes/projects/coe.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2018-03-08T16:04:05Z",
+      "side": 1,
+      "message": "Changed to \"CNI\"",
+      "range": {
+        "startLine": 9,
+        "startChar": 52,
+        "endLine": 9,
+        "endChar": 55
+      },
+      "revId": "eb7a8f4a2b193e89164d8b0d05f09d47dac86347",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "42879758_7fc93381",
+        "filename": "docs/release-notes/projects/coe.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2018-03-08T16:04:05Z",
+      "side": 1,
+      "message": "Change to \"OpenDaylight\"",
+      "range": {
+        "startLine": 9,
+        "startChar": 77,
+        "endLine": 9,
+        "endChar": 89
+      },
+      "revId": "eb7a8f4a2b193e89164d8b0d05f09d47dac86347",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e10849c6_33bd1ddb",
+        "filename": "docs/release-notes/projects/coe.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2018-03-08T16:04:05Z",
+      "side": 1,
+      "message": "Capitalize the \"k\" here for consistency, i.e. \"Kubernetes\"",
+      "range": {
+        "startLine": 9,
+        "startChar": 41,
+        "endLine": 9,
+        "endChar": 51
+      },
+      "revId": "eb7a8f4a2b193e89164d8b0d05f09d47dac86347",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07e118db_c8f8bd3a",
+        "filename": "docs/release-notes/projects/coe.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2018-03-08T16:04:05Z",
+      "side": 1,
+      "message": "Delete this and simply state: \"A custom Kubernetes CNI plugin developed for OpenDaylight.",
+      "range": {
+        "startLine": 9,
+        "startChar": 24,
+        "endLine": 9,
+        "endChar": 33
+      },
+      "revId": "eb7a8f4a2b193e89164d8b0d05f09d47dac86347",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "975e2f74_4671f72f",
+        "filename": "docs/release-notes/projects/coe.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2018-03-08T16:04:05Z",
+      "side": 1,
+      "message": "Rewrite this phrase as follows: A Kubernetes API watcher module that communicates events to OpenDaylight.",
+      "range": {
+        "startLine": 10,
+        "startChar": 14,
+        "endLine": 10,
+        "endChar": 102
+      },
+      "revId": "eb7a8f4a2b193e89164d8b0d05f09d47dac86347",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b9baef01_831e51e7",
+        "filename": "docs/release-notes/projects/coe.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2018-03-08T16:04:05Z",
+      "side": 1,
+      "message": "Rewrite this phrase as follows: Module that provides the models necessary for consuming Kubernetes events.",
+      "range": {
+        "startLine": 11,
+        "startChar": 21,
+        "endLine": 11,
+        "endChar": 86
+      },
+      "revId": "eb7a8f4a2b193e89164d8b0d05f09d47dac86347",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ef3d023_5d1037c8",
+        "filename": "docs/release-notes/projects/coe.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2018-03-08T16:04:05Z",
+      "side": 1,
+      "message": "APIs",
+      "range": {
+        "startLine": 21,
+        "startChar": 54,
+        "endLine": 21,
+        "endChar": 58
+      },
+      "revId": "eb7a8f4a2b193e89164d8b0d05f09d47dac86347",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "65fcdfbe_fd8aa1b7",
+        "filename": "docs/release-notes/projects/coe.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2018-03-08T16:04:05Z",
+      "side": 1,
+      "message": "COE?",
+      "range": {
+        "startLine": 22,
+        "startChar": 2,
+        "endLine": 22,
+        "endChar": 5
+      },
+      "revId": "eb7a8f4a2b193e89164d8b0d05f09d47dac86347",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aa5718bf_ced6083a",
+        "filename": "docs/release-notes/projects/coe.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2018-03-08T16:04:05Z",
+      "side": 1,
+      "message": "Should be \"kubernetes be initially capped, i.e. \"Kubernetes\"?",
+      "range": {
+        "startLine": 83,
+        "startChar": 56,
+        "endLine": 83,
+        "endChar": 66
+      },
+      "revId": "eb7a8f4a2b193e89164d8b0d05f09d47dac86347",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
