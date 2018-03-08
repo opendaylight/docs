@@ -117,6 +117,30 @@
     },
     {
       "key": {
+        "uuid": "eda5b33d_7fc73823",
+        "filename": "docs/release-notes/projects/coe.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 817
+      },
+      "writtenOn": "2018-03-08T17:48:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "247e6a0c_bd0724c9",
+      "range": {
+        "startLine": 9,
+        "startChar": 52,
+        "endLine": 9,
+        "endChar": 55
+      },
+      "revId": "eb7a8f4a2b193e89164d8b0d05f09d47dac86347",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "975e2f74_4671f72f",
         "filename": "docs/release-notes/projects/coe.rst",
         "patchSetId": 1
@@ -128,6 +152,30 @@
       "writtenOn": "2018-03-08T16:04:05Z",
       "side": 1,
       "message": "Rewrite this phrase as follows: A Kubernetes API watcher module that communicates events to OpenDaylight.",
+      "range": {
+        "startLine": 10,
+        "startChar": 14,
+        "endLine": 10,
+        "endChar": 102
+      },
+      "revId": "eb7a8f4a2b193e89164d8b0d05f09d47dac86347",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "be6837bf_2675762e",
+        "filename": "docs/release-notes/projects/coe.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 817
+      },
+      "writtenOn": "2018-03-08T17:48:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "975e2f74_4671f72f",
       "range": {
         "startLine": 10,
         "startChar": 14,
@@ -163,6 +211,30 @@
     },
     {
       "key": {
+        "uuid": "7809e194_10058f12",
+        "filename": "docs/release-notes/projects/coe.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 817
+      },
+      "writtenOn": "2018-03-08T17:48:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b9baef01_831e51e7",
+      "range": {
+        "startLine": 11,
+        "startChar": 21,
+        "endLine": 11,
+        "endChar": 86
+      },
+      "revId": "eb7a8f4a2b193e89164d8b0d05f09d47dac86347",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ef3d023_5d1037c8",
         "filename": "docs/release-notes/projects/coe.rst",
         "patchSetId": 1
@@ -174,6 +246,30 @@
       "writtenOn": "2018-03-08T16:04:05Z",
       "side": 1,
       "message": "APIs",
+      "range": {
+        "startLine": 21,
+        "startChar": 54,
+        "endLine": 21,
+        "endChar": 58
+      },
+      "revId": "eb7a8f4a2b193e89164d8b0d05f09d47dac86347",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c4487c68_d9736f32",
+        "filename": "docs/release-notes/projects/coe.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 817
+      },
+      "writtenOn": "2018-03-08T17:48:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9ef3d023_5d1037c8",
       "range": {
         "startLine": 21,
         "startChar": 54,
@@ -209,6 +305,30 @@
     },
     {
       "key": {
+        "uuid": "8df27fb9_bec4f5ea",
+        "filename": "docs/release-notes/projects/coe.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 817
+      },
+      "writtenOn": "2018-03-08T17:48:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "65fcdfbe_fd8aa1b7",
+      "range": {
+        "startLine": 22,
+        "startChar": 2,
+        "endLine": 22,
+        "endChar": 5
+      },
+      "revId": "eb7a8f4a2b193e89164d8b0d05f09d47dac86347",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "aa5718bf_ced6083a",
         "filename": "docs/release-notes/projects/coe.rst",
         "patchSetId": 1
@@ -220,6 +340,30 @@
       "writtenOn": "2018-03-08T16:04:05Z",
       "side": 1,
       "message": "Should be \"kubernetes be initially capped, i.e. \"Kubernetes\"?",
+      "range": {
+        "startLine": 83,
+        "startChar": 56,
+        "endLine": 83,
+        "endChar": 66
+      },
+      "revId": "eb7a8f4a2b193e89164d8b0d05f09d47dac86347",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "733b8022_27ee72c6",
+        "filename": "docs/release-notes/projects/coe.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 817
+      },
+      "writtenOn": "2018-03-08T17:48:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aa5718bf_ced6083a",
       "range": {
         "startLine": 83,
         "startChar": 56,
