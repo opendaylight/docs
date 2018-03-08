@@ -30,7 +30,7 @@ USC Channel UI
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** Yes
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/usc/job/usc-csit-1node-tcp-all-nitrogen/
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/usc
 
 Documentation
 =============
@@ -58,7 +58,7 @@ Quality Assurance
 =================
 
 * `Link to Sonar Report <https://sonar.opendaylight.org/overview?id=44336>`_
-* `Link to CSIT Jobs <https://jenkins.opendaylight.org/releng/view/usc/job/usc-csit-1node-tcp-all-nitrogen/>`_
+* `Link to CSIT Jobs <https://jenkins.opendaylight.org/releng/view/usc>`_
 * `Link to Additional Details <https://wiki.opendaylight.org/view/USC:Integration_Test>`_
 * Code is covered by unit and integration tests
 * System Tests are performed by CSIT jobs using java test agent.
@@ -77,12 +77,12 @@ Compatibility
 Bugs Fixed
 ----------
 
-* `Bug Report <https://bugs.opendaylight.org/buglist.cgi?bug_status=UNCONFIRMED&bug_status=CONFIRMED&bug_status=IN_PROGRESS&bug_status=WAITING_FOR_REVIEW&bug_status=VERIFIED&list_id=47710&product=usc&query_format=advanced&resolution=--->`_
+* `USC Bugs List <https://jira.opendaylight.org/projects/USC>`_
 
 Known Issues
 ------------
 
-* `3402 <https://bugs.opendaylight.org/show_bug.cgi?id=4558>`_ USC features has configuration issues with 3-node cluster environment.
+* `USC-12 <https://jira.opendaylight.org/browse/USC-12>`_ USC features has configuration issues with 3-node cluster environment.
 
 End-of-life
 ===========
@@ -97,5 +97,5 @@ Standards
 Release Mechanics
 =================
 
-* `USC Release Plan <https://wiki.opendaylight.org/view/USC:Nitrogen:Release_Plan>`_
+* `USC Release Plan <https://wiki.opendaylight.org/view/USC:Release_Plan>`_
 * Project was on schedule
