@@ -21,7 +21,7 @@ NEMO Engine UI
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** Yes
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/nemo/job/nemo-csit-1node-engine-all-nitrogen/
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/nemo
 
 Documentation
 =============
@@ -43,7 +43,7 @@ Quality Assurance
 =================
 
 * `Link to Sonar Report <https://sonar.opendaylight.org/overview?id=53347>`_ 42.8%
-* `Link to CSIT Jobs <https://jenkins.opendaylight.org/releng/view/nemo/job/nemo-csit-1node-engine-all-nitrogen/>`_
+* `Link to CSIT Jobs <https://jenkins.opendaylight.org/releng/view/nemo>`_
 * `Manual Tests <https://wiki.opendaylight.org/view/NEMO:System_Test>`_
 * External System Test is done manually, since the sandbox environment could not satisfy NEMO's requirements.
 
@@ -60,14 +60,14 @@ Compatibility
 Bugs Fixed
 ----------
 
-* `Bug Report <https://bugs.opendaylight.org/buglist.cgi?bug_status=UNCONFIRMED&bug_status=CONFIRMED&bug_status=IN_PROGRESS&bug_status=WAITING_FOR_REVIEW&bug_status=VERIFIED&list_id=47710&product=nemo&query_format=advanced&resolution=--->`_
+* `NEMO Bug List <https://jira.opendaylight.org/projects/NEMO>`_
 
 Known Issues
 ------------
 
 
 * For using openflow-renderer, requiring special switch to construct physical network. The install guide is in https://github.com/zhangmroy?tab=repositories. Other virtual switch, such as, ovs, will be support in future OpenDaylight version.
-* For using cli-renderer, the physical network should be constructed with HuaWei's device: NE40E. More devices will be considered in the future OpenDaylight versions.
+* For using cli-renderer, the physical network should be constructed with Huawei's device: NE40E. More devices will be considered in the future OpenDaylight versions.
 
 End-of-life
 ===========
@@ -82,5 +82,5 @@ Standards
 Release Mechanics
 =================
 
-* `NEMO Release Plan <https://wiki.opendaylight.org/view/NEMO:Nitrogen:Release_Plan>`_
+* `NEMO Release Plan <https://wiki.opendaylight.org/view/NEMO:Release_Plan>`_
 * Project was on schedule
