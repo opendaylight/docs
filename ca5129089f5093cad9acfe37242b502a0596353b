@@ -19,6 +19,115 @@
     },
     {
       "key": {
+        "uuid": "b6c7860d_058cf757",
+        "filename": "docs/release-process/release-goals.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2018-03-08T05:50:27Z",
+      "side": 1,
+      "message": "Can we note that we want these at least once a month if not more frequent. This makes it more tangible.\n\nDo we want to ask for anything specific? just getting a\ndollar amount is good, but if we can get things like\nper flavor usage so we can try to map that what jobs we\ncan look at for the most bang.",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 66
+      },
+      "revId": "ca5129089f5093cad9acfe37242b502a0596353b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c8f89179_5c42dcba",
+        "filename": "docs/release-process/release-goals.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2018-03-08T05:50:27Z",
+      "side": 1,
+      "message": "the real stuff we want to audit will be those projects\noutside of the managed release, which we will probably\nlose a lot of visibility to. we probably want to call that\nout here.",
+      "range": {
+        "startLine": 58,
+        "startChar": 0,
+        "endLine": 61,
+        "endChar": 31
+      },
+      "revId": "ca5129089f5093cad9acfe37242b502a0596353b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3b0460c0_29aff61c",
+        "filename": "docs/release-process/release-goals.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2018-03-08T05:50:27Z",
+      "side": 1,
+      "message": "I had to read this a few times to finally get what your\nmeaning. Maybe re-word it like:\n\nThe cloud infra hosted by Vexxhost runs on OpenStack. We\nwould like to use OpenDaylight Netvirt as the neutron\nbackend in this infra.",
+      "range": {
+        "startLine": 75,
+        "startChar": 1,
+        "endLine": 76,
+        "endChar": 77
+      },
+      "revId": "ca5129089f5093cad9acfe37242b502a0596353b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "49065894_131b5017",
+        "filename": "docs/release-process/release-goals.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2018-03-08T05:50:27Z",
+      "side": 1,
+      "message": "this should be a top priority, if not THE top.",
+      "range": {
+        "startLine": 84,
+        "startChar": 0,
+        "endLine": 84,
+        "endChar": 24
+      },
+      "revId": "ca5129089f5093cad9acfe37242b502a0596353b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "65de849b_fc673d51",
+        "filename": "docs/release-process/release-goals.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2018-03-08T05:50:27Z",
+      "side": 1,
+      "message": "and documentation?",
+      "revId": "ca5129089f5093cad9acfe37242b502a0596353b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4d5a48b4_27de0252",
         "filename": "docs/release-process/release-goals.rst",
         "patchSetId": 1
@@ -69,6 +178,29 @@
         "startChar": 56,
         "endLine": 135,
         "endChar": 31
+      },
+      "revId": "ca5129089f5093cad9acfe37242b502a0596353b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "896188d7_439d05bb",
+        "filename": "docs/release-process/release-goals.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2018-03-08T05:50:27Z",
+      "side": 1,
+      "message": "I\u0027d like to somehow make it a concrete goal to meet our 6 month cadence release on time. quantify on-time and we can hold ourselves accountable.",
+      "range": {
+        "startLine": 137,
+        "startChar": 0,
+        "endLine": 155,
+        "endChar": 53
       },
       "revId": "ca5129089f5093cad9acfe37242b502a0596353b",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
