@@ -1,5 +1,5 @@
 ==========
-Controller
+controller
 ==========
 
 Major Features
@@ -48,21 +48,7 @@ Migration
 
 * Is it possible to migrate from the previous release? If so, how?
 
-  Yes, no specific steps needed unless prior updates to config subsystem modules
-  were made via the controller-config yang-ext mount in which case the
-  etc/opendaylight/current/controller.currentconfig.xml file must be manually
-  edited to remove the following elements corresponding to config yang modules
-  that were removed:
-
-    * Remove the <data-broker> element from the <module> element with
-      <name> binding-broker-impl
-    * Remove the <module> element with <name> inmemory-binding-data-broker
-    * Remove the <service> element with <name> binding-data-broker
-    * Remove <capability>urn:opendaylight:params:xml:ns:yang:controller:threadpool?module=threadpool&amp;revision=2013-04-09</capability> from <required-capabilities>
-
-  Since the config subsystem is deprecated, it is recommended to migrate any custom
-  configuration additions and/or changes contained in controller.currentconfig.xml
-  and remove the file.
+  Yes, no specific steps needed.
 
 Compatibility
 -------------
@@ -82,9 +68,12 @@ Compatibility
 Bugs Fixed
 ----------
 
-* List of bugs fixed since the previous release
-
-  * `Bugs Fixed <https://bugs.opendaylight.org/buglist.cgi?chfieldfrom=2016-08-9&chfieldto=2017-05-25&list_id=78854&product=controller&query_format=advanced&resolution=FIXED>`_
+* `CONTROLLER-1791 <https://jira.opendaylight.org/browse/CONTROLLER-1791>`_ member-1-shard-inventory-operational should not be in default clustering config
+* `CONTROLLER-1793 <https://jira.opendaylight.org/browse/CONTROLLER-1793>`_ Exceptions in listener threads are going to stdout instead of karaf.log
+* `CONTROLLER-1798 <https://jira.opendaylight.org/browse/CONTROLLER-1798>`_ ShardManager will miss sending a PeerAddressResolved message to local shards when UpdateSchemaContext comes after MemberUp
+* `CONTROLLER-1799 <https://jira.opendaylight.org/browse/CONTROLLER-1799>`_ Archetype should self test during Maven build
+* `CONTROLLER-1809 <https://jira.opendaylight.org/browse/CONTROLLER-1809>`_ Failed to restart all blueprint containers within 5 minutes
+* `CONTROLLER-1812 <https://jira.opendaylight.org/browse/CONTROLLER-1812>`_ DOMForwardedWriteTransaction infinite loop on cancel after exception
 
 Known Issues
 ------------
@@ -93,31 +82,23 @@ Known Issues
 
   * None
 
-* `Link to Open Bugs <https://bugs.opendaylight.org/buglist.cgi?bug_status=__open__&chfieldfrom=2016-08-9&chfieldto=2017-05-25&list_id=78855&product=controller&query_format=advanced>`_
-
 End-of-life
 ===========
 
 * List of features/APIs which are EOLed, deprecated, and/or removed in this
   release
 
-  * The XSQL component packaged in odl-mdsal-xsql has been removed.
+  * The DataChangeListener interface was previously deprecated and is scheduled for removal
+    in the next release, Flourine. All users of this interface must be converted to the
+    DataTreeChangeListener interface.
 
-  * The DataProviderService and DataBrokerService APIs and the corresponding
-    implementations that were previously deprecated after the Hydrogen release
-    have been removed.
-
-  * The following config subsystem yang modules have been removed:
-
-    * threadpool
-    * threadpool-impl-fixed
-    * threadpool-impl-flexible
-    * threadpool-impl-scheduled
-    * threadpool-impl
-
-  * The config subsystem is officially deprecated in this release with removal
-    planned in 2 releases (Flourine). All projects still using the config subsystem
+  * The config subsystem was previously deprecated and is scheduled for removal
+    in the next release, Flourine. All projects still using the config subsystem
     must be converted to use Blueprint.
+
+  * The controller EntityOwnershipService interface was previously deprecated and is
+    scheduled for removal in the next release, Flourine. All users of this interface must be
+    converted to the mdsal EntityOwnershipService interface.
 
 Standards
 =========
@@ -129,4 +110,4 @@ Standards
 Release Mechanics
 =================
 
-* `Link to release plan <https://wiki.opendaylight.org/view/OpenDaylight_Controller:Carbon:Release_Plan>`_
+* `Link to release plan <https://wiki.opendaylight.org/view/OpenDaylight_Controller:Oxygen:Release_Plan>`_
