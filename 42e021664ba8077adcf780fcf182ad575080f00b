@@ -72,6 +72,64 @@
     },
     {
       "key": {
+        "uuid": "5be6fe95_6b7a9d2d",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 30
+      },
+      "lineNbr": 682,
+      "author": {
+        "id": 797
+      },
+      "writtenOn": "2018-03-08T06:37:46Z",
+      "side": 1,
+      "message": "This is not well explained as I said last Friday the version bump patches should be prepared and optionally merged in 1 day, after that we have 2 weeks to get all MSI projects green build and get a healthy distribution. So this is effectively 1 day as you say.",
+      "parentUuid": "53d2be16_dec5d5cc",
+      "range": {
+        "startLine": 679,
+        "startChar": 0,
+        "endLine": 682,
+        "endChar": 56
+      },
+      "revId": "42e021664ba8077adcf780fcf182ad575080f00b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3c8b5d61_a84ea8f7",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 30
+      },
+      "lineNbr": 684,
+      "author": {
+        "id": 797
+      },
+      "writtenOn": "2018-03-08T06:37:46Z",
+      "side": 1,
+      "message": "explain this is to get all MSI projects green build and get a healthy distribution",
+      "revId": "42e021664ba8077adcf780fcf182ad575080f00b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "735d4372_1fc6acb6",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 30
+      },
+      "lineNbr": 690,
+      "author": {
+        "id": 797
+      },
+      "writtenOn": "2018-03-08T06:37:46Z",
+      "side": 1,
+      "message": "explain this is to get all MSI projects CSIT results as they were before de bump.",
+      "revId": "42e021664ba8077adcf780fcf182ad575080f00b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d6587872_09de7db4",
         "filename": "docs/release-process/managed-release.rst",
         "patchSetId": 30
