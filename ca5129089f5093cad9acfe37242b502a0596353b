@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "e6d9a3c0_aefdc212",
+        "filename": "docs/release-process/release-goals.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-03-09T19:31:56Z",
+      "side": 1,
+      "message": "The ordering is just meant to flow such that you\u0027ve already read anything that is referenced. I\u0027d hate to have to make a priority ordering;)",
+      "parentUuid": "c19a9d2d_e2a40a56",
+      "revId": "ca5129089f5093cad9acfe37242b502a0596353b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b6c7860d_058cf757",
         "filename": "docs/release-process/release-goals.rst",
         "patchSetId": 1
@@ -30,6 +48,30 @@
       "writtenOn": "2018-03-08T05:50:27Z",
       "side": 1,
       "message": "Can we note that we want these at least once a month if not more frequent. This makes it more tangible.\n\nDo we want to ask for anything specific? just getting a\ndollar amount is good, but if we can get things like\nper flavor usage so we can try to map that what jobs we\ncan look at for the most bang.",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 66
+      },
+      "revId": "ca5129089f5093cad9acfe37242b502a0596353b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "880c15ff_7c27cb1f",
+        "filename": "docs/release-process/release-goals.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-03-09T19:31:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b6c7860d_058cf757",
       "range": {
         "startLine": 30,
         "startChar": 0,
@@ -65,6 +107,30 @@
     },
     {
       "key": {
+        "uuid": "fcfdaa02_4f19c2e3",
+        "filename": "docs/release-process/release-goals.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-03-09T19:31:56Z",
+      "side": 1,
+      "message": "Think we need to go into that much detail? \"Not actively watched\" is basically exactly what we will cut, right?\n\nAlso not really sure how to write that in a way that doesn\u0027t sound like we\u0027re relegating Unmanaged projects to some black hole.",
+      "parentUuid": "c8f89179_5c42dcba",
+      "range": {
+        "startLine": 58,
+        "startChar": 0,
+        "endLine": 61,
+        "endChar": 31
+      },
+      "revId": "ca5129089f5093cad9acfe37242b502a0596353b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3b0460c0_29aff61c",
         "filename": "docs/release-process/release-goals.rst",
         "patchSetId": 1
@@ -76,6 +142,30 @@
       "writtenOn": "2018-03-08T05:50:27Z",
       "side": 1,
       "message": "I had to read this a few times to finally get what your\nmeaning. Maybe re-word it like:\n\nThe cloud infra hosted by Vexxhost runs on OpenStack. We\nwould like to use OpenDaylight Netvirt as the neutron\nbackend in this infra.",
+      "range": {
+        "startLine": 75,
+        "startChar": 1,
+        "endLine": 76,
+        "endChar": 77
+      },
+      "revId": "ca5129089f5093cad9acfe37242b502a0596353b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec23c67_b4394297",
+        "filename": "docs/release-process/release-goals.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-03-09T19:31:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3b0460c0_29aff61c",
       "range": {
         "startLine": 75,
         "startChar": 1,
@@ -111,6 +201,30 @@
     },
     {
       "key": {
+        "uuid": "58afd023_8c8b25ef",
+        "filename": "docs/release-process/release-goals.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-03-09T19:31:56Z",
+      "side": 1,
+      "message": "I haven\u0027t tried to establish priorities.",
+      "parentUuid": "49065894_131b5017",
+      "range": {
+        "startLine": 84,
+        "startChar": 0,
+        "endLine": 84,
+        "endChar": 24
+      },
+      "revId": "ca5129089f5093cad9acfe37242b502a0596353b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "65de849b_fc673d51",
         "filename": "docs/release-process/release-goals.rst",
         "patchSetId": 1
@@ -122,6 +236,24 @@
       "writtenOn": "2018-03-08T05:50:27Z",
       "side": 1,
       "message": "and documentation?",
+      "revId": "ca5129089f5093cad9acfe37242b502a0596353b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4db5e2ce_f59d6744",
+        "filename": "docs/release-process/release-goals.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-03-09T19:31:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "65de849b_fc673d51",
       "revId": "ca5129089f5093cad9acfe37242b502a0596353b",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -145,6 +277,24 @@
     },
     {
       "key": {
+        "uuid": "4afbe4cb_ccc280dc",
+        "filename": "docs/release-process/release-goals.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-03-09T19:31:56Z",
+      "side": 1,
+      "message": "Isn\u0027t that basically what we\u0027re saying here? Universities could be one of these downstream groups we build a special relationship with. Can you be more specific with what we should add/change?",
+      "parentUuid": "4d5a48b4_27de0252",
+      "revId": "ca5129089f5093cad9acfe37242b502a0596353b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6f496d22_842d2a78",
         "filename": "docs/release-process/release-goals.rst",
         "patchSetId": 1
@@ -156,6 +306,24 @@
       "writtenOn": "2018-03-08T01:51:16Z",
       "side": 1,
       "message": "Apart from LFM member company contributing resources, i believe we should put a goal to emphasize on asking existing project contributors to ask for contribution to the existing ODL community and also help them with the on-boarding. That will help in creating a long term healthy community around the projects.",
+      "revId": "ca5129089f5093cad9acfe37242b502a0596353b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7835507a_d6d8880d",
+        "filename": "docs/release-process/release-goals.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-03-09T19:31:56Z",
+      "side": 1,
+      "message": "This seems like a good thing to work on, but I think it\u0027s more a \"making Managed Projects meet the healthy community requirement\"-context discussion than a \"these are the project-wide goals relevant to the LFN\"-context.",
+      "parentUuid": "6f496d22_842d2a78",
       "revId": "ca5129089f5093cad9acfe37242b502a0596353b",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -185,6 +353,30 @@
     },
     {
       "key": {
+        "uuid": "ce028b06_085ee893",
+        "filename": "docs/release-process/release-goals.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-03-09T19:31:56Z",
+      "side": 1,
+      "message": "I think it\u0027s pretty unlikely LFN is going to hire a docs writer for each LFN project. Being specific/realistic up-front seems better to me.",
+      "parentUuid": "6089db97_6aead921",
+      "range": {
+        "startLine": 134,
+        "startChar": 56,
+        "endLine": 135,
+        "endChar": 31
+      },
+      "revId": "ca5129089f5093cad9acfe37242b502a0596353b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "896188d7_439d05bb",
         "filename": "docs/release-process/release-goals.rst",
         "patchSetId": 1
@@ -196,6 +388,30 @@
       "writtenOn": "2018-03-08T05:50:27Z",
       "side": 1,
       "message": "I\u0027d like to somehow make it a concrete goal to meet our 6 month cadence release on time. quantify on-time and we can hold ourselves accountable.",
+      "range": {
+        "startLine": 137,
+        "startChar": 0,
+        "endLine": 155,
+        "endChar": 53
+      },
+      "revId": "ca5129089f5093cad9acfe37242b502a0596353b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b1697544_6d57a861",
+        "filename": "docs/release-process/release-goals.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-03-09T19:31:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "896188d7_439d05bb",
       "range": {
         "startLine": 137,
         "startChar": 0,
