@@ -15,18 +15,18 @@ odl-packetcable-policy-server
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** No
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/packetcable/job/packetcable-csit-1node-pcmm-all-nitrogen/
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/packetcable/job/packetcable-csit-1node-pcmm-all-oxygen/
 
 Documentation
 =============
 
 * **User Guide(s):**
 
-  * :ref:`packetcable-user-guide`
+  * :doc:`Packetcable User Guide <../../user-guide/packetcable-user-guide>`
 
 * **Developer Guide(s):**
 
-  * :ref:`packetcable-dev-guide`
+  * :doc:`Packetcable Developer Guide <../../user-guide/packetcable-user-guide>`
 
 Security Considerations
 =======================
@@ -41,10 +41,10 @@ Security Considerations
 Quality Assurance
 =================
 
-* `Link to Sonar Report <https://jenkins.opendaylight.org/releng/view/packetcable/job/packetcable-sonar>`_ ( Test coverage percent - 53.41% )
+* `Link to Sonar Report <https://jenkins.opendaylight.org/releng/view/packetcable/job/packetcable-sonar>`_ ( Test coverage percent - 53.39% )
 
 * Link to CSIT Job:
-* https://jenkins.opendaylight.org/releng/view/packetcable/job/packetcable-csit-1node-pcmm-all-nitrogen/
+* https://jenkins.opendaylight.org/releng/view/packetcable/job/packetcable-csit-1node-pcmm-all-oxygen/
 
 * Other manual testing and QA information - The CSIT job runs the
   PacketCable plugin in a simple cable access controller emulation
@@ -61,7 +61,7 @@ Migration
 ---------
 
 * Is it possible to migrate from the previous release?  Yes
-  Migration from PacketCable Carbon version to the Nitrogen version is
+  Migration from PacketCable Nitrogen version to the Oxygen version is
   accomplished by replacement of the PacketCable plugin components.
 
 * Any data stored in COPS models will need to be manually replicated.
@@ -80,13 +80,13 @@ Bugs Fixed
 
 * List of Bugzilla bugs fixed since the previous release
   NONE
-* The only functional change for the Nitrogen release of Packetcable
-  is the upgrade from Karaf3 to Karaf4.
+* The only change for the Oxygen release of Packetcable
+  is the upgrade in odlparent version from 2.0.5 to 3.0.2.
 
  Known Issues
 -------------
 
-* There are no known issues with the Carbon release of PacketCable
+* There are no known issues with the Oxygen release of PacketCable
 
 End-of-life
 ===========
@@ -109,6 +109,6 @@ Standards
 Release Mechanics
 =================
 
-* Link to Packetcable Nitrogen release plan:
-  <https://wiki.opendaylight.org/view/PacketCablePCMM:Release_Plan_Nitrogen>
+* Link to Packetcable Oxygen release plan:
+  <https://wiki.opendaylight.org/view/PacketCablePCMM:Release_Plan_Oxygen>
 * There were no major shifts in release schedule from the release plan
