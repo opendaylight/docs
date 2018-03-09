@@ -126,6 +126,17 @@ odl-sfc-pot
 * **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sfc/job/sfc-csit-3node-clustering-all-carbon
 
 
+odl-sfc-statistics
+------------------
+
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=sfc.git;a=blob;f=features/src/main/features/features.xml
+* **Feature Description:**  This feature implements SFC statistics gathering.
+* **Top Level:** Yes
+* **User Facing:** Yes
+* **Experimental:** Yes
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sfc/job/sfc-csit-3node-clustering-all-carbon
+
+
 These features are consumed by the User facing features above
 =============================================================
 
@@ -228,7 +239,6 @@ None.
 Quality Assurance
 =================
 
-* `Link to Sonar Report <https://sonar.opendaylight.org/overview?id=19574>`_ (57.1%)
 * `Link to CSIT Jobs <https://jenkins.opendaylight.org/releng/view/sfc/>`_
 * All modules have been unit tested. Integration tests have been performed for
   all major features. System tests have been performed on most major features.
@@ -236,25 +246,31 @@ Quality Assurance
 Migration
 ---------
 
-* Is it possible to migrate from the previous release? If so, how?
-
-No changes were made to the SFC data model in this release, so
-no migration from the previous release is needed.
+Nothing special is needed to migrate from the previous release.
 
 Compatibility
 -------------
 
 This release of SFC is completely compatible with the previous release.
+The create and delete Rendered Service Path (RSP) RPCs were deprecated
+in this release, but are still available. These RPCs will be removed in
+the next release. Instead of using the RSP RPCs, RSP creation is now
+triggered by Service Function Path (SFP) creation. SFP creation will
+trigger RSP creation in the configuration data store, which will in
+turn trigger RSP creation in the operational data store. Previously,
+RSPs were only stored in the operational data store, which would be
+lost if ODL restarts. Now it is possible to maintain RSPs when ODL is
+restarted.
 
 Bugs Fixed
 ----------
 
 List of bugs fixed since the previous release
 
-* `3712 <https://bugs.opendaylight.org/show_bug.cgi?id=3712>`_ Setting an SF on an SFP hop with an SF type different than the corresponding SFC hop should fail
-* `7554 <https://bugs.opendaylight.org/show_bug.cgi?id=7554>`_ Update GUI after deprecating nsh-aware in SF and other changes in model
-* `7555 <https://bugs.opendaylight.org/show_bug.cgi?id=7555>`_ SfcRenderingException for logicalSFF when SFs share a compute node
-* `7629 <https://bugs.opendaylight.org/show_bug.cgi?id=7629>`_ Karaf 4 migration: provide Karaf 4 sfc features
+* `SFC-213 <https://jira.opendaylight.org/browse/SFC-213>`_ SFC statistics dont always work
+* `SFC-214 <https://jira.opendaylight.org/browse/SFC-214>`_ Fix sb-rest wiring
+* `SFC-216 <https://jira.opendaylight.org/browse/SFC-216>`_ Fix exception message check for bad macs
+* `SFC-218 <https://jira.opendaylight.org/browse/SFC-218>`_ Fix sfc-scf-vpp wiring
 
 
 Known Issues
@@ -263,13 +279,13 @@ Known Issues
 SFC needs changes in OVS to include the Network Service Headers (NSH) Chaining
 encapsulation feature. This patch has been ongoing for quite a while, but has
 finally been officially merged in OVS 2.8. ODL will be updated to use this new
-version of OVS in the Oxygen release. Until then, SFC will use a branched
+version of OVS in the Fluorine release. Until then, SFC will use a branched
 version of OVS based on 2.6.1, called the "Yi Yang Patch",
 `located here <https://github.com/yyang13/ovs_nsh_patches>`_.
 Previous versions of this OVS patch only supported VXLAN-GPE + NSH
 encapsulation, but this version supports both ETH + NSH and VXLAN-GPE + ETH + NSH.
 
-* `Link to Open Bugs <https://bugs.opendaylight.org/buglist.cgi?bug_status=__open__&list_id=78823&order=Importance&product=sfc&query_format=specific>`_
+* `Link to Open Bugs <https://jira.opendaylight.org/browse/SFC-218?jql=project%20%3D%20SFC%20AND%20status%20%3D%20Open>`_
 
 
 End-of-life
@@ -291,5 +307,5 @@ Standards
 Release Mechanics
 =================
 
-* `ODL SFC Carbon release plan <https://wiki.opendaylight.org/view/Service_Function_Chaining:Nitrogen_Release_Plan>`_
+* `ODL SFC Oxygen release plan <https://wiki.opendaylight.org/view/Service_Function_Chaining:Oxygen_Release_Plan>`_
 * No major shifts in the release schedule from the release plan
