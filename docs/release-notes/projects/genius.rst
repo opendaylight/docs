@@ -38,8 +38,10 @@ odl-genius
 * **User Facing:** Yes
 * **Experimental:** No
 * **CSIT Tests:**
-  * https://jenkins.opendaylight.org/releng/view/genius/job/genius-csit-1node-upstream-all-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/genius/job/genius-csit-3node-upstream-all-nitrogen/
+
+  * https://jenkins.opendaylight.org/releng/view/genius/job/genius-csit-1node-upstream-all-oxygen/
+
+  * https://jenkins.opendaylight.org/releng/view/genius/job/genius-csit-3node-upstream-all-oxygen/
 
 odl-genius-rest
 ---------------
@@ -51,8 +53,10 @@ odl-genius-rest
 * **User Facing:** Yes
 * **Experimental:** No
 * **CSIT Tests:**
-  * https://jenkins.opendaylight.org/releng/view/genius/job/genius-csit-1node-upstream-all-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/genius/job/genius-csit-3node-upstream-all-nitrogen/
+
+  * https://jenkins.opendaylight.org/releng/view/genius/job/genius-csit-1node-upstream-all-oxygen/
+
+  * https://jenkins.opendaylight.org/releng/view/genius/job/genius-csit-3node-upstream-all-oxygen/
 
 odl-genius-api
 ---------------
@@ -64,8 +68,10 @@ odl-genius-api
 * **User Facing:** No
 * **Experimental:** No
 * **CSIT Tests:**
-  * https://jenkins.opendaylight.org/releng/view/genius/job/genius-csit-1node-upstream-all-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/genius/job/genius-csit-3node-upstream-all-nitrogen/
+
+  * https://jenkins.opendaylight.org/releng/view/genius/job/genius-csit-1node-upstream-all-oxygen/
+
+  * https://jenkins.opendaylight.org/releng/view/genius/job/genius-csit-3node-upstream-all-oxygen/
 
 odl-genius-fcaps-application
 ----------------------------
@@ -86,20 +92,23 @@ odl-genius-fcaps-framework
 * **CSIT Tests:** None
 
 
-New capabilities and enhancements added in Nitrogen
-===================================================
+New capabilities and enhancements added in Oxygen
+=================================================
 
 Planned new capability added
 ----------------------------
 
-* :doc:`/submodules/genius/docs/specs/service-recovery`
+* :doc:`/submodules/genius/docs/specs/itm-scale-improvements`
 
 
-Enhancements added to project
------------------------------
+Other enhancements added to project
+-----------------------------------
 
-#. Migration to Karaf4
-#. Bug fixes
+#. Using new ManagedNewTransactionRunner utility where there is a DataBroker
+#. Using new FutureRpcResults utility in every RPC
+#. Migrate all users of @Deprecated genius DJC to infrautils JC
+#. Switch to using new infrautils Cache API instead of using ConcurrentMap
+#. Migrate all users of @Deprecated Data Store Listeners to new ones 
 
 
 Documentation
@@ -133,11 +142,15 @@ Quality Assurance
 
 * `Sonar Report <https://sonar.opendaylight.org/overview?id=64114>`_
 
-* `CSIT Jobs <https://jenkins.opendaylight.org/releng/view/genius/job/genius-csit-1node-upstream-all-nitrogen//>`_
+* Link to CSIT Jobs 
 
-* `Netvirt CSIT for Genius patches <https://jenkins.opendaylight.org/releng/job/genius-patch-test-netvirt-nitrogen/>`_
+	* `CSIT Job basic <https://jenkins.opendaylight.org/releng/view/genius/job/genius-csit-1node-upstream-all-oxygen//>`_
 
-* `Netvirt Cluster CSIT for Genius patches <https://jenkins.opendaylight.org/releng/job/genius-patch-test-cluster-netvirt-nitrogen/>`_
+	* `CSIT Job clustering <https://jenkins.opendaylight.org/releng/view/genius/job/genius-csit-3node-upstream-all-oxygen//>`_
+
+	* `Netvirt CSIT for Genius patches <https://jenkins.opendaylight.org/releng/job/genius-patch-test-netvirt-oxygen/>`_
+
+	* `Netvirt Cluster CSIT for Genius patches <https://jenkins.opendaylight.org/releng/job/genius-patch-test-cluster-netvirt-oxygen/>`_
 
   .. note:: Genius is used extensively in NetVirt, so NetVirt's CSIT also
             provides confidence in genius.
@@ -149,7 +162,11 @@ Quality Assurance
 * Testing methodology. How extensive was it? What should be expected to work?
   What hasn't been tested as much?
 
-  * fcaps_framework and fcaps_application features hasn't been tested much.
+  * `Running Genius CSIT in Dev Environmrnt <http://docs.opendaylight.org/en/latest/submodules/genius/docs/genius-csit-howto.html/>`_
+  * `Genius test plans <http://docs.opendaylight.org/en/latest/submodules/genius/docs/testplans/index.html>`_
+  
+  .. note:: fcaps_framework and fcaps_application features hasn't been tested
+            much.
 
 Migration
 ---------
@@ -168,7 +185,7 @@ Compatibility
 
 * Any API changes?
 
-  * New API added for `service-recovery </submodules/genius/docs/specs/service-recovery>` feature
+  * New APIs added for `itm-scale-improvements </submodules/genius/docs/specs/itm-scale-improvements>` feature
 
 * Any configuration changes?
 
@@ -179,7 +196,7 @@ Bugs Fixed
 
 * List of bugs fixed since the previous release
 
-  * `Fixed BUGS <https://bugs.opendaylight.org/buglist.cgi?chfieldfrom=2017-05-25&chfieldto=2017-08-09&list_id=78466&product=genius&query_format=advanced&resolution=FIXED>`_
+  * `Fixed BUGS <https://jira.opendaylight.org/browse/GENIUS-112?jql=project%20in%20(genius)%20AND%20issuetype%20%3D%20Bug%20AND%20status%20in%20(Resolved%2C%20Verified)%20AND%20created%20%3E%3D%202017-08-14%20AND%20created%20%3C%3D%202018-03-07>`_
 
 Known Issues
 ------------
@@ -188,7 +205,7 @@ Known Issues
 
   * None
 
-* `Open Bugs <https://bugs.opendaylight.org/buglist.cgi?chfieldfrom=2016-08-9&chfieldto=2017-05-25&list_id=78466&product=genius&query_format=advanced&bug_status=__open__>`_
+* `Open Bugs <https://jira.opendaylight.org/browse/GENIUS-99?jql=project%20%3D%20GENIUS%20AND%20issuetype%20%3D%20Bug%20AND%20status%20%3D%20Open>`_
 
 End-of-life
 ===========
@@ -208,7 +225,7 @@ Standards
 Release Mechanics
 =================
 
-* `Release plan <https://wiki.opendaylight.org/view/Genius:Nitrogen_Release_Plan>`_
+* `Release plan <https://wiki.opendaylight.org/view/Genius:Oxygen_Release_Plan>`_
 
 * Describe any major shifts in release schedule from the release plan
 
