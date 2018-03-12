@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ab9d2239_870bcb17",
+        "filename": "docs/release-process/release-goals.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-03-12T18:11:40Z",
+      "side": 1,
+      "message": "Good idea, something to remember once we have some confidence in it working with a release maybe.",
+      "parentUuid": "2a9edb5b_80154cce",
+      "revId": "178277130a2eed90847718e321319fe7ffe73627",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "82dc3512_389eec1e",
         "filename": "docs/release-process/release-goals.rst",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2018-03-12T17:59:24Z",
       "side": 1,
       "message": "I don\u0027t suppose this is the right place to say something about adhering to a very strict fixed timeboxed release calendar, like other open source communities are successfully doing? What we have recently done, e.g. in Oxygen, is the pure opposite of that... where we had forced major technical upgrades into the release stream post code freeze, as an intentional mechanism to break things and Get Things Done.",
+      "revId": "178277130a2eed90847718e321319fe7ffe73627",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5d271ce3_9c4088d3",
+        "filename": "docs/release-process/release-goals.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-03-12T18:11:40Z",
+      "side": 1,
+      "message": "Yeah, good point. I\u0027m hoping that kind of thing will not happen in the Managed Release model much because projects will have a stable env to develop most of the release, unlike this one where things were broken much of the time and they had to sneak in features at the end, even past code freeze. We will at least have a stronger stick to say \"no\" in that world.\n\nJamo\u0027s idea of making it clear that the TSC is accountable for following the release schedule amounts to including your idea (in a suitably abstract way for this doc) I think.",
+      "parentUuid": "82dc3512_389eec1e",
       "revId": "178277130a2eed90847718e321319fe7ffe73627",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
