@@ -106,51 +106,9 @@ End-of-life
 Standards
 =========
 
-* `RFC4271 <https://tools.ietf.org/html/rfc4271>`_ - A Border Gateway Protocol 4 (BGP-4)
-* `RFC4760 <https://tools.ietf.org/html/rfc4760>`_ - Multiprotocol Extensions for BGP-4
-* `RFC1997 <https://tools.ietf.org/html/rfc1997>`_ - BGP Communities Attribute
-* `RFC4360 <https://tools.ietf.org/html/rfc4360>`_ - BGP Extended Communities Attribute
-* `RFC4486 <https://tools.ietf.org/html/rfc4486>`_ - Subcodes for BGP Cease Notification Message
-* `RFC5004 <https://tools.ietf.org/html/rfc5004>`_ - Avoid BGP Best Path Transitions from One External to Another
-* `RFC7752 <https://tools.ietf.org/html/rfc7752>`_ - North-Bound Distribution of Link-State and TE Information using BGP
-* `RFC5440 <https://tools.ietf.org/html/rfc5440>`_ - Path Computation Element (PCE) Communication Protocol (PCEP)
-* `RFC5541 <https://tools.ietf.org/html/rfc5541>`_ - Encoding of Objective Functions in the Path Computation Element Communication Protocol (PCEP)
-* `RFC5455 <https://tools.ietf.org/html/rfc5455>`_ - Diffserv-Aware Class-Type Object for the Path Computation Element Communication Protocol
-* `RFC5492 <https://tools.ietf.org/html/rfc5492>`_ - Capabilities Advertisement with BGP-4
-* `RFC5521 <https://tools.ietf.org/html/rfc5521>`_ - Extensions to the Path Computation Element Communication Protocol (PCEP) for Route Exclusions
-* `RFC5557 <https://tools.ietf.org/html/rfc5557>`_ - Path Computation Element Communication Protocol (PCEP) Requirements and Protocol Extensions in Support of Global Concurrent Optimization
-* `RFC5575 <https://tools.ietf.org/html/rfc5575>`_ - Flow Specification
-* `RFC5886 <https://tools.ietf.org/html/rfc5886>`_ - A Set of Monitoring Tools for Path Computation Element (PCE)-Based Architecture
-* `RFC6286 <https://tools.ietf.org/html/rfc6286>`_ - Autonomous-System-Wide Unique BGP Identifier for BGP-4
-* `RFC6793 <https://tools.ietf.org/html/rfc6793>`_ - BGP Support for Four-Octet Autonomous System (AS) Number Space
-* `RFC7311 <https://tools.ietf.org/html/rfc7311>`_ - The Accumulated IGP Metric Attribute for BGP
-* `RFC7674 <http://tools.ietf.org/html/rfc7674 >`_ - Clarification of the Flowspec Redirect Extended Community
-* `RFC5668 <https://tools.ietf.org/html/rfc5668>`_ - 4-Octet AS Specific BGP Extended Community
-* `RFC3107 <https://tools.ietf.org/html/rfc3107>`_ - Carrying Label Information in BGP-4
-* `RFC4364 <https://tools.ietf.org/html/rfc4364>`_ - BGP/MPLS IP Virtual Private Networks (VPNs)
-* `RFC7432 <https://tools.ietf.org/html/rfc7432>`_ - BGP MPLS-Based Ethernet VPN
-* `RFC7911 <https://tools.ietf.org/html/rfc7911>`_ - Advertisement of Multiple Paths in BGP
-* `RFC2918 <https://tools.ietf.org/html/rfc2918>`_ - Route Refresh Capability for BGP-4
-* `draft-ietf-bess-evpn-overlay <https://tools.ietf.org/html/draft-ietf-bess-evpn-overlay-04>`_ - A Network Virtualization Overlay Solution using EVPN
-* `draft-ietf-pce-pceps <https://tools.ietf.org/html/draft-ietf-pce-pceps-03>`_ - Secure Transport for PCEP
-* `draft-gredler-idr-bgp-ls-segment-routing-ext-03 <https://tools.ietf.org/html/draft-gredler-idr-bgp-ls-segment-routing-ext-03>`_ - BGP Link-State extensions for Segment Routing
-* `draft-ietf-idr-bgpls-segment-routing-epe-05 <https://tools.ietf.org/html/draft-ietf-idr-bgpls-segment-routing-epe-05>`_ - Segment Routing Egress Peer Engineering BGP-LS Extensions
-* `draft-ietf-idr-flow-spec-v6-06 <https://tools.ietf.org/html/draft-ietf-idr-flow-spec-v6-06>`_ - Dissemination of Flow Specification Rules for IPv6 <br />
-* `draft-ietf-idr-flowspec-redirect-ip-01 <https://tools.ietf.org/html/draft-ietf-idr-flowspec-redirect-ip-01>`_ - BGP Flow-Spec Redirect to IP Action
-* `draft-sajassi-bess-evpn-vpws-fxc-01 <https://tools.ietf.org/html/draft-sajassi-bess-evpn-vpws-fxc-01>`_ - EVPN VPWS Flexible Cross-Connect Service
-
-* Stateful extensions to the Path Computation Element Protocol, December 2013
-
-  * `draft-ietf-pce-stateful-pce-07 <https://tools.ietf.org/html/draft-ietf-pce-stateful-pce-07>`_ - PCEP Extensions for Stateful PCE
-  * `draft-ietf-pce-pce-initiated-lsp-00 <https://tools.ietf.org/html/draft-ietf-pce-pce-initiated-lsp-00>`_ - PCEP Extensions for PCE-initiated LSP Setup in a Stateful PCE Model
-
-* Segment routing extension to the Path Computation Element Protocol, October 2014
-
-  * `draft-ietf-pce-segment-routing-01 <https://tools.ietf.org/html/draft-ietf-pce-segment-routing-01>`_ - PCEP Extension for segment routing
-  * `draft-ietf-pce-lsp-setup-type-01 <https://tools.ietf.org/html/draft-ietf-pce-lsp-setup-type-01>`_ - PCEP Extension for path setup type
-  * `draft-ietf-pce-stateful-sync-optimizations-03 <https://tools.ietf.org/html/draft-ietf-pce-stateful-sync-optimizations-03>`_ - Optimizations of Label Switched Path State Synchronization Procedures for a Stateful PCE
-  * `draft-sivabalan-pce-binding-label-sid-01 <https://tools.ietf.org/html/draft-sivabalan-pce-binding-label-sid-01>`_ - Carrying Binding Label/Segment-ID in PCE-based Networks
-  * `RFC7854 <https://tools.ietf.org/html/rfc7854>`_ - BGP Monitoring Protocol
+* :ref:`BGP Supported Capabilities <bgp-user-guide-supported-capabilities>`
+* :ref:`PCEP Supported Capabilities <pcep-user-guide-supported-capabilities>`
+* :ref:`BGP Monitoring Protocol Supported Capabilities <bgp-monitoring-protocol-user-guide-supported-capabilities>`
 
 Release Mechanics
 =================
