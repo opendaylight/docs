@@ -25,7 +25,7 @@ The path computation request includes the source and destination of the path and
 The PCE response contains the computed path or the computation failure reason.
 The PCEP operates on top the TCP, which provides reliable communication.
 
-.. figure:: ./images/bgpcep/pcep.png
+.. figure:: ./images/pcep.png
    :align: center
    :alt: PCEP
 
@@ -54,7 +54,7 @@ It consists of the following components:
 * Stateful PCE LSP-DB
 * Active Stateful PCE LSP Operations
 
-.. figure:: ./images/bgpcep/pcep-plugin.png
+.. figure:: ./images/pcep-plugin.png
    :align: center
    :alt: PCEP plugin
 
@@ -196,7 +196,7 @@ First, initial LSP state synchronization is performed once the session between P
 This step is a prerequisite to following LSPs manipulation operations.
 
 
-.. figure:: ./images/bgpcep/pcep-sync.png
+.. figure:: ./images/pcep-sync.png
    :align: center
    :alt: LSP State synchronization
 
@@ -648,7 +648,7 @@ The LSP control delegations is an mechanism, where PCC grants to a PCE the tempo
 The PCC can revoke the delegation or the PCE may waive the delegation at any time.
 The LSP control is delegated to at most one PCE at the same time.
 
-.. figure:: ./images/bgpcep/pcep-delegation-return.png
+.. figure:: ./images/pcep-delegation-return.png
    :align: center
    :alt: Returning a Delegation
 
@@ -701,7 +701,7 @@ The LSP Update Request is an operation where a PCE requests a PCC to update attr
 In order to update LSP, the PCE must hold a LSP delegation.
 The LSP update is done in *make-before-break* fashion - first, new LSP is initiated and then the old LSP is torn down.
 
-.. figure:: ./images/bgpcep/pcep-update.png
+.. figure:: ./images/pcep-update.png
    :align: center
    :alt: Active Stateful PCE LSP Update
 
@@ -780,7 +780,7 @@ The LSP instantiation is done by sending an LSP Initiate Message to PCC.
 The PCC assign delegation to PCE which triggered creation.
 PCE-initiated LSPs are identified by *Create* flag.
 
-.. figure:: ./images/bgpcep/pcep-initiate.png
+.. figure:: ./images/pcep-initiate.png
    :align: center
    :alt: LSP instantiation
 
@@ -853,7 +853,7 @@ LSP Deletion
 The PCE may request a deletion of PCE-initiated LSPs.
 The PCE must be delegation holder for this particular LSP.
 
-.. figure:: ./images/bgpcep/pcep-deletion.png
+.. figure:: ./images/pcep-deletion.png
    :align: center
    :alt: LSP deletion.
 
@@ -892,7 +892,7 @@ The PCC cannot revoke delegation of PCE-initiated LSP.
 When PCE returns delegation for such LSP or PCE fails, then the LSP become orphan and can be removed by a PCC after some time.
 The PCE may ask for a delegation of the orphan LSP.
 
-.. figure:: ./images/bgpcep/pcep-revoke-delegation.png
+.. figure:: ./images/pcep-revoke-delegation.png
    :align: center
    :alt: LSP re-delegation
 
@@ -1132,7 +1132,7 @@ State Synchronization Avoidance
 '''''''''''''''''''''''''''''''
 The State Synchronization Avoidance procedure is intended to skip state synchronization if the state has survived and not changed during session restart.
 
-.. figure:: ./images/bgpcep/pcep-sync-skipped.png
+.. figure:: ./images/pcep-sync-skipped.png
    :align: center
    :alt: Sync skipped
 
@@ -1142,7 +1142,7 @@ Incremental State Synchronization
 '''''''''''''''''''''''''''''''''
 The Incremental State Synchronization procedure is intended to do incremental (delta) state synchronization when possible.
 
-.. figure:: ./images/bgpcep/pcep-sync-incremental.png
+.. figure:: ./images/pcep-sync-incremental.png
    :align: center
    :alt: Sync incremental
 
@@ -1152,7 +1152,7 @@ PCE-triggered Initial Synchronization
 '''''''''''''''''''''''''''''''''''''
 The PCE-triggered Initial Synchronization procedure is intended to do let PCE control the timing of the initial state synchronization.
 
-.. figure:: ./images/bgpcep/pcep-sync-initial.png
+.. figure:: ./images/pcep-sync-initial.png
    :align: center
    :alt: Initial Sync
 
@@ -1182,7 +1182,7 @@ PCE-triggered Re-synchronization
 ''''''''''''''''''''''''''''''''
 The PCE-triggered Re-synchronization: To let PCE re-synchronize the state for sanity check.
 
-.. figure:: ./images/bgpcep/pcep-re-sync.png
+.. figure:: ./images/pcep-re-sync.png
    :align: center
    :alt: Re-sync
 
