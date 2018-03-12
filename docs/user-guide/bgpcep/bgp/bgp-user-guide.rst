@@ -1232,12 +1232,12 @@ Once feature is installed defined configuration will be loaded and setup.
 
 BGP pipeline
 ^^^^^^^^^^^^
-.. figure:: ./images/bgpcep/bgp-pipeline.png
+.. figure:: ./images/bgp-pipeline.png
    :alt: BGP pipeline.
 
    BGP pipeline - routes re-advertisement.
 
-.. figure:: ./images/bgpcep/bgp-app-pipeline.png
+.. figure:: ./images/bgp-app-pipeline.png
    :alt: BGP Application Peer pipeline.
 
    BGP applcaition peer pipeline - routes injection.
@@ -4730,7 +4730,7 @@ Failover scenario
 ^^^^^^^^^^^^^^^^^
 Following section presents a basic BGP speaker failover scenario on 3-node OpenDaylight cluster setup.
 
-.. figure:: ./images/bgpcep/BGP_HA.png
+.. figure:: ./images/BGP_HA.png
    :alt: BGP HA setup.
 
    Once the OpenDaylight BGP is configured, the speaker become active on one of the cluster nodes. Remote peer can establish connection with this BGP instance.
@@ -4738,14 +4738,14 @@ Following section presents a basic BGP speaker failover scenario on 3-node OpenD
 
 -----
 
-.. figure:: ./images/bgpcep/BGP_HA_failure.png
+.. figure:: ./images/BGP_HA_failure.png
    :alt: Node went down.
 
    In a case a cluster node, where BGP instance is running, goes down (unexpected failure, restart), active BGP session is dropped.
 
 -----
 
-.. figure:: ./images/bgpcep/BGP_HA_recovery.png
+.. figure:: ./images/BGP_HA_recovery.png
    :alt: BGP recovery.
 
    Now, one of the stand-by BGP speaker instances become active. Remote peer establishes new connection and advertises routes again.
