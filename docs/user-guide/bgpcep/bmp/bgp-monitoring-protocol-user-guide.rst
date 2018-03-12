@@ -29,7 +29,7 @@ The passive party listens at particular port.
 The router can be monitored by multiple monitoring stations.
 BMP messages are sent by monitored router only, monitoring station supposed to collect and process data received over BMP.
 
-.. figure:: ./images/bgpcep/bmp.png
+.. figure:: ./images/bmp.png
    :align: center
    :alt: BMP
 
@@ -55,7 +55,7 @@ The plugin can establish BMP session with one or more monitored routers in order
 * Read-only routes and statistics view
 * Supports various routing information types
 
-.. figure:: ./images/bgpcep/bmp-plugin.png
+.. figure:: ./images/bmp-plugin.png
    :align: center
    :alt: BMP plugin
 
