@@ -1,4 +1,5 @@
 .. _bgp-user-guide-route-refresh-capability:
+
 Route Refresh
 =============
 The Route Refresh Capability allows to dynamically request a re-advertisement of the Adj-RIB-Out from a BGP peer.

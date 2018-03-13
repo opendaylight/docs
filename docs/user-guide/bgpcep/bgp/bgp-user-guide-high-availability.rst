@@ -1,4 +1,5 @@
 .. _bgp-user-guide-high-availability:
+
 High Availability
 =================
 Running OpenDaylight BGP in clustered environment brings an advantage of the plugin's high availability (HA).

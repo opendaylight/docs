@@ -1,8 +1,11 @@
 .. _bgp-user-guide-protocol-configuration:
+
 Protocol Configuration
 ======================
 As a first step, a new protocol instance needs to be configured.
 It is a very basic configuration conforming with RFC4271.
+
+.. note:: Rib policy to be used must be already be configured and present before configure protocol.
 
 **URL:** ``/restconf/config/openconfig-network-instance:network-instances/network-instance/global-bgp/openconfig-network-instance:protocols``
 
@@ -25,6 +28,14 @@ It is a very basic configuration conforming with RFC4271.
                    <router-id>192.0.2.2</router-id>
                    <as>65000</as>
                </config>
+                <apply-policy>
+                    <config>
+                        <default-export-policy>REJECT-ROUTE</default-export-policy>
+                        <default-import-policy>REJECT-ROUTE</default-import-policy>
+                        <import-policy>default-odl-import-policy</import-policy>
+                        <export-policy>default-odl-export-policy</export-policy>
+                    </config>
+                </apply-policy>
            </global>
        </bgp>
    </protocol>
@@ -34,6 +45,10 @@ It is a very basic configuration conforming with RFC4271.
 @line 7: BGP Identifier of the speaker.
 
 @line 8: Local autonomous system number of the speaker. Note that, OpenDaylight BGP implementation supports four-octet AS numbers only.
+
+@line 14: Default ODL Import Policy.
+
+@line 15: Default ODL Export Policy.
 
 -----
 

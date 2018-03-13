@@ -1,4 +1,5 @@
 .. _bgp-user-guide-config-concepts:
+
 Basic Configuration & Concepts
 ==============================
 The following section shows how to configure BGP basics, how to verify functionality and presents essential components of the plugin.
@@ -73,6 +74,7 @@ Configuration
    :maxdepth: 1
 
    bgp-user-guide-protocol-configuration
+   bgp-user-guide-rib-config-policies
    bgp-user-guide-bgp-server
    bgp-user-guide-bgp-peering
    bgp-user-guide-bgp-application-peer

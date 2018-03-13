@@ -1,4 +1,5 @@
 .. _bgp-user-guide-bgp-peering:
+
 BGP Peering
 ===========
 To exchange routing information between two BGP systems (peers), it is required to configure a peering on both BGP speakers first.

@@ -1,4 +1,5 @@
 .. _bgp-user-guide-operational-state:
+
 Operational State
 =================
 

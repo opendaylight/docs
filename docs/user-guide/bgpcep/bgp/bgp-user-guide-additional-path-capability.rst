@@ -1,4 +1,5 @@
 .. _bgp-user-guide-additional-path-capability:
+
 Additional Path Capability
 ==========================
 The ADD-PATH capability allows to advertise multiple paths for the same address prefix.

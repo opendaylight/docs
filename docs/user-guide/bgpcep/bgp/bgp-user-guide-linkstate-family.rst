@@ -1,4 +1,5 @@
 .. _bgp-user-guide-linkstate-family:
+
 Link-State Family
 =================
 The BGP Link-State (BGP-LS) Multiprotocol extension allows to distribute Link-State and Traffic Engineering (TE) information.

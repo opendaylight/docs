@@ -1,4 +1,5 @@
 .. _bgp-user-guide-labeled-family:
+
 IP Labeled Unicast Family
 =========================
 The BGP Labeled Unicast (BGP-LU) Multiprotocol extension is used to distribute a MPLS label that is mapped to a particular route.
