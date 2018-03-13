@@ -5,11 +5,9 @@ Neutron Northbound
 Major Features
 ==============
 
-* YANG model for OpenStack Neutron integration
-* REST API for OpenStack Neutron integration which stores necessary
-  information into Neutron YANG model
-* Logger to log activity on Neutron YANG models
-* helper library to support for OpenStack service providers
+* Tap-as-a-Service (TapAAS) for port mirroring
+* Minimum bandwidth QoS rule
+* Various code clean up(checkstyle, findbugs, and pom cleanup)
 
 odl-neutron-service
 -------------------
@@ -137,7 +135,7 @@ Security Considerations
 Quality Assurance
 =================
 
-* `Link to Sonar Report <https://sonar.opendaylight.org/overview?id=org.opendaylight.neutron%3Aproject-neutron>`_ (78.2%)
+* `Link to Sonar Report <https://sonar.opendaylight.org/overview?id=org.opendaylight.neutron%3Aproject-neutron>`_ (55.3%)
 * Link to CSIT Jobs N/A
 * Other manual testing and QA information
 
@@ -153,8 +151,8 @@ Quality Assurance
 * Testing methodology. How extensive was it? What should be expected
   to work? What hasn't been tested as much?
 
-  * Unit test: coverage 24.9%
-  * Integration test: coverage 75.8%
+  * Unit test: coverage 53.4%
+  * Integration test:
   * OpenStack CI
 
 Migration
@@ -173,7 +171,8 @@ Compatibility
 
 * Any API changes?
 
-  No.
+  New API (TapAAS, minimum bandwidth qos rule) were introduced. Not change
+  to the existing API.
 
 * Any configuration changes?
 
@@ -185,7 +184,7 @@ Bugs Fixed
 * List of bugs fixed since the previous release
 
   * `Link to Bugs fixed
-    <https://bugs.opendaylight.org/buglist.cgi?chfieldfrom=2017-05-25&chfieldto=2017-09-08&list_id=78675&product=neutron&query_format=advanced&resolution=FIXED>`_
+    <https://jira.opendaylight.org/issues/?jql=project%20%3D%20NEUTRON%20AND%20issuetype%20%3D%20Bug%20AND%20status%20%3D%20Resolved%20AND%20fixVersion%20%3D%20Oxygen>`_
 
 
 Known Issues
@@ -196,7 +195,7 @@ Known Issues
   None
 
 * `Link to Open Bugs
-  <https://bugs.opendaylight.org/buglist.cgi?bug_status=__open__&list_id=78677&order=Importance&product=neutron&query_format=specific>`_
+  <https://jira.opendaylight.org/projects/NEUTRON/>`_
 
 
 End-of-life
@@ -226,10 +225,8 @@ Release Mechanics
 =================
 
 * `Link to release plan
-  <https://wiki.opendaylight.org/view/NeutronNorthbound:Nitrogen_Release_Plan>`_
+  <https://wiki.opendaylight.org/view/NeutronNorthbound:Oxygen_Release_Plan>`_
 * Describe any major shifts in release schedule from the release plan
 
   * Postponed YANG model change to drop tenant-id, make status
-    operational to Nitrogen cycle
-  * update supported QoS rules
-  * TAPaaS
+    operational to Fluorine cycle
