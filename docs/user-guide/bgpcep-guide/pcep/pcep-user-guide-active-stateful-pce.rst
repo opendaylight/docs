@@ -1,121 +1,7 @@
-.. _pcep-user-guide:
-PCEP User Guide
-===============
-This guide contains information on how to use the OpenDaylight Path Computation Element Configuration Protocol (PCEP) plugin.
-The user should learn about PCEP basic concepts, supported capabilities, configuration and operations.
-
-.. contents:: Contents
-   :depth: 1
-   :local:
-
-Overview
---------
-This section provides a high-level overview of the PCEP, SDN use-cases and OpenDaylight implementation.
-
-.. contents:: Contents
-   :depth: 2
-   :local:
-
-Path Computation Element Communication Protocol
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The Path Computation Element (PCE) Communication Protocol (PCEP) is used for communication between a Path Computation Client (PCC) and a PCE in context of MPLS and GMPLS Traffic Engineering (TE) Label Switched Paths (LSPs).
-This interaction include path computation requests and computation replies.
-The PCE operates on a network graph, built from the (Traffic Engineering Database) TED, in order to compute paths based on the path computation request issued by the PCC.
-The path computation request includes the source and destination of the path and set of constrains to be applied during the computation.
-The PCE response contains the computed path or the computation failure reason.
-The PCEP operates on top the TCP, which provides reliable communication.
-
-.. figure:: ./images/bgpcep/pcep.png
-   :align: center
-   :alt: PCEP
-
-   PCE-based architecture.
-
-PCEP in SDN
-^^^^^^^^^^^
-The Path Computation Element perfectly fits into the centralized SDN controller architecture.
-The PCE's knowledge of the availability of network resources (i.e. TED) and active LSPs awareness (LSP-DB) allows to perform automated application-driven network operations:
-
-* LSP Re-optimization
-* Resource defragmentation
-* Link failure restoration
-* Auto-bandwidth adjustment
-* Bandwidth scheduling
-* Shared Risk Link Group (SRLG) diversity maintenance
-
-OpenDaylight PCEP plugin
-^^^^^^^^^^^^^^^^^^^^^^^^
-The OpenDaylight PCEP plugin provides all basic service units necessary to build-up a PCE-based controller.
-In addition, it offers LSP management functionality for Active Stateful PCE - the cornerstone for majority of PCE-enabled SDN solutions.
-It consists of the following components:
-
-* Protocol library
-* PCEP session handling
-* Stateful PCE LSP-DB
-* Active Stateful PCE LSP Operations
-
-.. figure:: ./images/bgpcep/pcep-plugin.png
-   :align: center
-   :alt: PCEP plugin
-
-   OpenDaylight PCEP plugin overview.
-
-.. important:: The PCEP plugin does not provide path computational functionality and does not build TED.
-
-List of supported capabilities
-''''''''''''''''''''''''''''''
-
-* `RFC5440 <https://tools.ietf.org/html/rfc5440>`_ - Path Computation Element (PCE) Communication Protocol (PCEP)
-* `RFC5455 <https://tools.ietf.org/html/rfc5455>`_ - Diffserv-Aware Class-Type Object for the Path Computation Element Communication Protocol
-* `RFC5520 <https://tools.ietf.org/html/rfc5520>`_ - Preserving Topology Confidentiality in Inter-Domain Path Computation Using a Path-Key-Based Mechanism
-* `RFC5521 <https://tools.ietf.org/html/rfc5521>`_ - Extensions to the Path Computation Element Communication Protocol (PCEP) for Route Exclusions
-* `RFC5541 <https://tools.ietf.org/html/rfc5541>`_ - Encoding of Objective Functions in the Path Computation Element Communication Protocol (PCEP)
-* `RFC5557 <https://tools.ietf.org/html/rfc5557>`_ - Path Computation Element Communication Protocol (PCEP) Requirements and Protocol Extensions in Support of Global Concurrent Optimization
-* `RFC5886 <https://tools.ietf.org/html/rfc5886>`_ - A Set of Monitoring Tools for Path Computation Element (PCE)-Based Architecture
-* `RFC7470 <https://tools.ietf.org/html/rfc7470>`_ - Conveying Vendor-Specific Constraints in the Path Computation Element Communication Protocol
-* `RFC7896 <https://tools.ietf.org/html/rfc7896>`_ - Update to the Include Route Object (IRO) Specification in the Path Computation Element Communication Protocol (PCEP)
-* `draft-ietf-pce-stateful-pce <https://tools.ietf.org/html/draft-ietf-pce-stateful-pce-16>`_ - PCEP Extensions for Stateful PCE
-
-  * `draft-ietf-pce-pce-initiated-lsp <https://tools.ietf.org/html/draft-ietf-pce-pce-initiated-lsp-07>`_ - PCEP Extensions for PCE-initiated LSP Setup in a Stateful PCE Model
-  * `draft-ietf-pce-segment-routing <https://tools.ietf.org/html/draft-ietf-pce-segment-routing-07>`_ - PCEP Extension for segment routing
-  * `draft-ietf-pce-lsp-setup-type <https://tools.ietf.org/html/draft-ietf-pce-lsp-setup-type-03>`_ - PCEP Extension for path setup type
-  * `draft-ietf-pce-stateful-sync-optimizations <https://tools.ietf.org/html/draft-ietf-pce-stateful-sync-optimizations-05>`_ - Optimizations of Label Switched Path State Synchronization Procedures for a Stateful PCE
-  * `draft-sivabalan-pce-binding-label-sid <https://tools.ietf.org/html/draft-sivabalan-pce-binding-label-sid-01>`_ - Carrying Binding Label/Segment-ID in PCE-based Networks
-
-* `draft-ietf-pce-pceps <https://tools.ietf.org/html/draft-ietf-pce-pceps-10>`_ - Secure Transport for PCEP
-
-Running PCEP
-------------
-This section explains how to install PCEP plugin.
-
-1. Install PCEP feature - ``odl-bgpcep-pcep``.
-   Also, for sake of this sample, it is required to install RESTCONF.
-   In the Karaf console, type command:
-
-   .. code-block:: console
-
-      feature:install odl-restconf odl-bgpcep-pcep
-
-2. The PCEP plugin contains a default configuration, which is applied after the feature starts up.
-   One instance of PCEP plugin is created (named *pcep-topology*), and its presence can be verified via REST:
-
-   **URL:** ``restconf/operational/network-topology:network-topology/topology/pcep-topology``
-
-   **Method:** ``GET``
-
-   **Response Body:**
-
-   .. code-block:: xml
-
-      <topology xmlns="urn:TBD:params:xml:ns:yang:network-topology">
-          <topology-id>pcep-topology</topology-id>
-          <topology-types>
-              <topology-pcep xmlns="urn:opendaylight:params:xml:ns:yang:topology:pcep"></topology-pcep>
-          </topology-types>
-      </topology>
+.. _pcep-user-guide-active-stateful-pce:
 
 Active Stateful PCE
--------------------
+===================
 The PCEP extension for Stateful PCE brings a visibility of active LSPs to PCE, in order to optimize path computation, while considering individual LSPs and their interactions.
 This requires state synchronization mechanism between PCE and PCC.
 Moreover, Active Stateful PCE is capable to address LSP parameter changes to the PCC.
@@ -196,7 +82,7 @@ First, initial LSP state synchronization is performed once the session between P
 This step is a prerequisite to following LSPs manipulation operations.
 
 
-.. figure:: ./images/bgpcep/pcep-sync.png
+.. figure:: ./images/pcep-sync.png
    :align: center
    :alt: LSP State synchronization
 
@@ -648,7 +534,7 @@ The LSP control delegations is an mechanism, where PCC grants to a PCE the tempo
 The PCC can revoke the delegation or the PCE may waive the delegation at any time.
 The LSP control is delegated to at most one PCE at the same time.
 
-.. figure:: ./images/bgpcep/pcep-delegation-return.png
+.. figure:: ./images/pcep-delegation-return.png
    :align: center
    :alt: Returning a Delegation
 
@@ -701,7 +587,7 @@ The LSP Update Request is an operation where a PCE requests a PCC to update attr
 In order to update LSP, the PCE must hold a LSP delegation.
 The LSP update is done in *make-before-break* fashion - first, new LSP is initiated and then the old LSP is torn down.
 
-.. figure:: ./images/bgpcep/pcep-update.png
+.. figure:: ./images/pcep-update.png
    :align: center
    :alt: Active Stateful PCE LSP Update
 
@@ -780,7 +666,7 @@ The LSP instantiation is done by sending an LSP Initiate Message to PCC.
 The PCC assign delegation to PCE which triggered creation.
 PCE-initiated LSPs are identified by *Create* flag.
 
-.. figure:: ./images/bgpcep/pcep-initiate.png
+.. figure:: ./images/pcep-initiate.png
    :align: center
    :alt: LSP instantiation
 
@@ -853,7 +739,7 @@ LSP Deletion
 The PCE may request a deletion of PCE-initiated LSPs.
 The PCE must be delegation holder for this particular LSP.
 
-.. figure:: ./images/bgpcep/pcep-deletion.png
+.. figure:: ./images/pcep-deletion.png
    :align: center
    :alt: LSP deletion.
 
@@ -892,7 +778,7 @@ The PCC cannot revoke delegation of PCE-initiated LSP.
 When PCE returns delegation for such LSP or PCE fails, then the LSP become orphan and can be removed by a PCC after some time.
 The PCE may ask for a delegation of the orphan LSP.
 
-.. figure:: ./images/bgpcep/pcep-revoke-delegation.png
+.. figure:: ./images/pcep-revoke-delegation.png
    :align: center
    :alt: LSP re-delegation
 
@@ -1132,7 +1018,7 @@ State Synchronization Avoidance
 '''''''''''''''''''''''''''''''
 The State Synchronization Avoidance procedure is intended to skip state synchronization if the state has survived and not changed during session restart.
 
-.. figure:: ./images/bgpcep/pcep-sync-skipped.png
+.. figure:: ./images/pcep-sync-skipped.png
    :align: center
    :alt: Sync skipped
 
@@ -1142,7 +1028,7 @@ Incremental State Synchronization
 '''''''''''''''''''''''''''''''''
 The Incremental State Synchronization procedure is intended to do incremental (delta) state synchronization when possible.
 
-.. figure:: ./images/bgpcep/pcep-sync-incremental.png
+.. figure:: ./images/pcep-sync-incremental.png
    :align: center
    :alt: Sync incremental
 
@@ -1152,7 +1038,7 @@ PCE-triggered Initial Synchronization
 '''''''''''''''''''''''''''''''''''''
 The PCE-triggered Initial Synchronization procedure is intended to do let PCE control the timing of the initial state synchronization.
 
-.. figure:: ./images/bgpcep/pcep-sync-initial.png
+.. figure:: ./images/pcep-sync-initial.png
    :align: center
    :alt: Initial Sync
 
@@ -1182,7 +1068,7 @@ PCE-triggered Re-synchronization
 ''''''''''''''''''''''''''''''''
 The PCE-triggered Re-synchronization: To let PCE re-synchronize the state for sanity check.
 
-.. figure:: ./images/bgpcep/pcep-re-sync.png
+.. figure:: ./images/pcep-re-sync.png
    :align: center
    :alt: Re-sync
 
@@ -1211,335 +1097,3 @@ Following RPC example illustrates a request for the LSP re-synchronization:
    </input>
 
 @line 3: **name** - The LSP name. If this parameter is omitted, re-synchronization is requested for all PCC's LSPs.
-
-Node session statistics
-----------------------------
-
-The PCEP statistics provides information about PCE <-> PCC session and its stateful listener (topology-provider).
-
-Usage
-'''''
-
-**URL:** ``/restconf/operational/network-topology:network-topology/topology/pcep-topology/node/pcc:%2F%2F43.43.43.43/pcep-session-state``
-
-**Method:** ``GET``
-
-**Response Body:**
-
-.. code-block:: xml
-   :linenos:
-   :emphasize-lines: 3,4,5,6,7,8,9,10,13,14,15,16,19,20,21,22,25,26,27,28,31,32,33,35,36,37
-
-   <pcep-session-state xmlns="urn:opendaylight:params:xml:ns:yang:topology:pcep:stats">
-      <messages>
-         <last-received-rpt-msg-timestamp xmlns="urn:opendaylight:params:xml:ns:yang:pcep:stateful:stats">1512640592</last-received-rpt-msg-timestamp>
-         <sent-upd-msg-count xmlns="urn:opendaylight:params:xml:ns:yang:pcep:stateful:stats">0</sent-upd-msg-count>
-         <received-rpt-msg-count xmlns="urn:opendaylight:params:xml:ns:yang:pcep:stateful:stats">2</received-rpt-msg-count>
-         <sent-init-msg-count xmlns="urn:opendaylight:params:xml:ns:yang:pcep:stateful:stats">0</sent-init-msg-count>
-         <sent-msg-count>0</sent-msg-count>
-         <last-sent-msg-timestamp>0</last-sent-msg-timestamp>
-         <unknown-msg-received>0</unknown-msg-received>
-         <received-msg-count>2</received-msg-count>
-         <error-messages>
-            <last-sent-error></last-sent-error>
-            <received-error-msg-count>0</received-error-msg-count>
-            <sent-error-msg-count>0</sent-error-msg-count>
-            <last-received-error></last-received-error>
-         </error-messages>
-         <reply-time>
-            <average-time>0</average-time>
-            <min-time>0</min-time>
-            <max-time>0</max-time>
-         </reply-time>
-      </messages>
-      <peer-pref>
-         <keepalive>30</keepalive>
-         <deadtimer>120</deadtimer>
-         <ip-address>127.0.0.1</ip-address>
-         <session-id>0</session-id>
-      </peer-pref>
-      <local-pref>
-         <keepalive>30</keepalive>
-         <deadtimer>120</deadtimer>
-         <ip-address>127.0.0.1</ip-address>
-         <session-id>0</session-id>
-      </local-pref>
-      <peer-capabilities>
-         <stateful xmlns="urn:opendaylight:params:xml:ns:yang:pcep:stateful:stats">true</stateful>
-         <instantiation xmlns="urn:opendaylight:params:xml:ns:yang:pcep:stateful:stats">true</instantiation>
-         <active xmlns="urn:opendaylight:params:xml:ns:yang:pcep:stateful:stats">true</active>
-      </peer-capabilities>
-      <session-duration>0:00:00:18</session-duration>
-      <delegated-lsps-count>1</delegated-lsps-count>
-      <synchronized>true</synchronized>
-   </pcep-session-state>
-
-@line 3: **last-received-rpt-msg-timestamp** - The timestamp of last received PCRpt message.
-
-@line 4: **sent-upd-msg-count** - The number of sent PCUpd messages.
-
-@line 5: **received-rpt-msg-count** - The number of received PcRpt messages.
-
-@line 6: **sent-init-msg-count** - The number of sent PCInitiate messages.
-
-@line 7: **sent-msg-count** - Total number of sent PCEP messages.
-
-@line 8: **last-sent-msg-timestamp** - The timestamp of last sent message.
-
-@line 9: **unknown-msg-received** - The number of received unknown messages.
-
-@line 10: **received-msg-count** - Total number of received PCEP messages.
-
-@line 13: **last-sent-error** - Type/value tuple of last sent error.
-
-@line 14: **received-error-msg-count** - Total number of received PCErr messages.
-
-@line 15: **sent-error-msg-count** - Total number of sent PCErr messages.
-
-@line 16: **last-received-error** - Type/value tuple of last sent error.
-
-@line 19: **keepalive** - Advertised keep-alive value.
-
-@line 20: **deadtimer** - Advertised deadtimer value.
-
-@line 21: **ip-address** - Peer's IP address.
-
-@line 22: **session-id** - Peer's session identifier.
-
-@line 25: **keepalive** - Advertised keep-alive value.
-
-@line 26: **deadtimer** - Advertised deadtimer value.
-
-@line 27: **ip-address** - Peer's IP address.
-
-@line 28: **session-id** - Peer's session identifier.
-
-@line 31: **stateful** - Represents peer's stateful/stateless capability.
-
-@line 32: **instantiation** - Represents peer's instantiation capability.
-
-@line 33: **active** - Represents peer's LSP update capability.
-
-@line 35: **session-duration** - Elapsed time (in d:H:m:s) from session-up until last statistic update.
-
-@line 36: **delegated-lsps-count** - The number of delegated LSPs (tunnels) from PCC.
-
-@line 37: **synchronized** - Represents synchronization status.
-
-CLI
----
-
-PCEP Karaf Console (odl-bgpcep-pcep-cli) provides a CLI feature to read session statistics per node.
-
-.. code-block:: bash
-   :linenos:
-
-   opendaylight-user@root> pcep:node-state -topology-id pcep-topology -node-id pcc://43.43.43.43
-
-Test tools
-----------
-PCC Mock
-^^^^^^^^
-The PCC Mock is a stand-alone Java application purposed to simulate a PCC(s).
-The simulator is capable to report sample LSPs, respond to delegation, LSP management operations and synchronization optimization procedures.
-This application is not part of the OpenDaylight Karaf distribution, however it can be downloaded from OpenDaylight's Nexus (use latest release version):
-
-``https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/bgpcep/pcep-pcc-mock``
-
-Usage
-'''''
-The application can be run from command line:
-
-.. code-block:: console
-
-   java -jar pcep-pcc-mock-*-executable.jar
-
-
-with optional input parameters:
-
-.. code-block:: console
-
-   --local-address <Address:Port> (optional, default 127.0.0.1)
-      The first PCC IP address. If more PCCs are required, the IP address will be incremented. Port number can be optionally specified.
-
-   --remote-address <Address1:Port1,Address2:Port2,Address3:Port3,...> (optional, default 127.0.0.1:4189)
-      The list of IP address for the PCE servers. Port number can be optionally specified, otherwise default port number 4189 is used.
-
-   --pcc <N> (optional, default 1)
-      Number of mocked PCC instances.
-
-   --lsp <N> (optional, default 1)
-      Number of tunnels (LSPs) reported per PCC, might be zero.
-
-   --pcerr (optional flag)
-      If the flag is present, response with PCErr, otherwise PCUpd.
-
-   --log-level <LEVEL> (optional, default INFO)
-      Set logging level for pcc-mock.
-
-   -d, --deadtimer <0..255> (optional, default 120)
-      DeadTimer value in seconds.
-
-   -ka, --keepalive <0.255> (optional, default 30)
-      KeepAlive timer value in seconds.
-
-   --password <password> (optional)
-      If the password is present, it is used in TCP MD5 signature, otherwise plain TCP is used.
-
-   --reconnect <seconds> (optional)
-      If the argument is present, the value in seconds, is used as a delay before each new reconnect (initial connect or connection re-establishment) attempt.
-      The number of reconnect attempts is unlimited. If the argument is omitted, pcc-mock is not trying to reconnect.
-
-   --redelegation-timeout <seconds> (optional, default 0)
-      The timeout starts when LSP delegation is returned or PCE fails, stops when LSP is re-delegated to PCE.
-      When timeout expires, LSP delegation is revoked and held by PCC.
-
-   --state-timeout <seconds> (optional, default -1 (disabled))
-      The timeout starts when LSP delegation is returned or PCE fails, stops when LSP is re-delegated to PCE.
-      When timeout expires, PCE-initiated LSP is removed.
-
-   --state-sync-avoidance <disconnect_after_x_seconds> <reconnect_after_x_seconds> <dbVersion>
-      Synchronization avoidance capability enabled.
-         - disconnect_after_x_seconds: seconds that will pass until disconnections is forced. If set to smaller number than 1, disconnection wont be performed.
-         - reconnect_after_x_seconds: seconds that will pass between disconnection and new connection attempt. Only happens if disconnection has been performed.
-         - dbVersion: dbVersion used in new Open and must be always equal or bigger than LSP. If equal than LSP skip synchronization will be performed,
-           if not full synchronization will be performed taking in account new starting dbVersion desired.
-    --incremental-sync-procedure <disconnect_after_x_seconds> <reconnect_after_x_seconds> <dbVersion>
-      Incremental synchronization capability enabled.
-         - dbVersion: dbVersion used in new Open and must be always bigger than LSP. Incremental synchronization will be performed taking in account new starting dbVersion desired.
-
-    --triggered-initial-sync
-      PCE-triggered synchronization capability enabled. Can be combined combined with state-sync-avoidance/incremental-sync-procedure.
-
-    --triggered-re-sync
-      PCE-triggered re-synchronization capability enabled.
-
-Data Change Counter Tool
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-Data Change Counter tool registers a Data Change Listener to a specified topology's subtree.
-This will allow us to know the quantity of changes produced under it, with each data change event counter will be incremented.
-
-Installation
-''''''''''''
-Installing data change counter tool
-
-.. code-block:: console
-
-   feature:install odl-restconf odl-bgpcep-data-change-counter
-
-Configuration
-'''''''''''''
-Once we set the configuration, a new data change counter will be created and registers to example-linkstate-topology.
-
-.. important:: **Clustering** - Each Counter Identifier should be unique.
-
-**URL:** ``/restconf/config/odl-data-change-counter-config:data-change-counter-config/data-change-counter``
-
-**Method:** ``PUT``
-
-**Content-Type:** ``application/xml``
-
-**Request Body:**
-
-.. code-block:: xml
-   :linenos:
-   :emphasize-lines: 2,3
-
-   <data-change-counter-config xmlns="urn:opendaylight:params:xml:ns:yang:bgpcep:data-change-counter-config">
-       <counter-id>data-change-counter</counter-id>
-       <topology-name>example-linkstate-topology</topology-name>
-   </data-change-counter-config>
-
-@line 2: **Counter Id** - Unique counter change identifier.
-
-@line 3: **Topology Name** - An identifier for a topology.
-
-Usage
-'''''
-
-Counter state for topology
-
-**URL:** ``/restconf/operational/data-change-counter:data-change-counter/counter/data-change-counter``
-
-**Method:** ``GET``
-
-**Response Body:**
-
-.. code-block:: xml
-   :linenos:
-   :emphasize-lines: 2,3
-
-   <counter xmlns="urn:opendaylight:params:xml:ns:yang:bgp-data-change-counter">
-       <id>data-change-counter</id>
-       <count>0</count>
-   </counter>
-
-@line 2: **Counter Id** - Unique counter change identifier.
-
-@line 3: **Count** - Number of changes under registered topology's subtree.
-
-Troubleshooting
----------------
-This section offers advices in a case OpenDaylight PCEP plugin is not working as expected.
-
-.. contents:: Contents
-   :depth: 2
-   :local:
-
-PCEP is not working...
-^^^^^^^^^^^^^^^^^^^^^^
-* First of all, ensure that all required features are installed, local PCE and remote PCC configuration is correct.
-
-  To list all installed features in OpenDaylight use the following command at the Karaf console:
-
-  .. code-block:: console
-
-     feature:list -i
-
-* Check OpenDaylight Karaf logs:
-
-  From Karaf console:
-
-  .. code-block:: console
-
-     log:tail
-
-  or open log file: ``data/log/karaf.log``
-
-  Possibly, a reason/hint for a cause of the problem can be found there.
-
-* Try to minimize effect of other OpenDaylight features, when searching for a reason of the problem.
-
-* Try to set DEBUG severity level for PCEP logger via Karaf console commands, in order to collect more information:
-
-  .. code-block:: console
-
-     log:set DEBUG org.opendaylight.protocol.pcep
-
-  .. code-block:: console
-
-     log:set DEBUG org.opendaylight.bgpcep.pcep
-
-Bug reporting
-^^^^^^^^^^^^^
-Before you report a bug, check `BGPCEP Jira <https://jira.opendaylight.org/projects/BGPCEP/issues/BGPCEP-589?filter=allopenissues>`_ to ensure same/similar bug is not already filed there.
-
-Write an e-mail to bgpcep-users@lists.opendaylight.org and provide following information:
-
-#. State OpenDaylight version
-
-#. Describe your use-case and provide as much details related to PCEP as possible
-
-#. Steps to reproduce
-
-#. Attach Karaf log files, optionally packet captures, REST input/output
-
-References
-----------
-* `A Path Computation Element (PCE)-Based Architecture <https://tools.ietf.org/html/rfc4655>`_
-* `Path Computation Element (PCE) Communication Protocol Generic Requirements <https://tools.ietf.org/html/rfc4657>`_
-* `Unanswered Questions in the Path Computation Element Architecture <https://tools.ietf.org/html/rfc7399>`_
-* `A PCE-Based Architecture for Application-Based Network Operations <https://tools.ietf.org/html/rfc7491>`_
-* `Framework for PCE-Based Inter-Layer MPLS and GMPLS Traffic Engineering <https://tools.ietf.org/html/rfc5623>`_
-* `Applicability of a Stateful Path Computation Element (PCE) <https://tools.ietf.org/html/draft-ietf-pce-stateful-pce-app-07>`_
