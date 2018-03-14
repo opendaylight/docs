@@ -8,12 +8,12 @@ Major Features
 odl-snmp4sdn-snmp4sdn
 ---------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=snmp4sdn.git;a=blob;f=features/odl-snmp4sdn-snmp4sdn/pom.xml;h=eece899425487cf81e81e3d87bff78a2f3d2797c;hb=HEAD
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=snmp4sdn.git;a=tree;f=features;h=d6ff42ff4a927b3f772f63dbc1abceab17cd9e90;hb=db0ab7a12ef59e24fd0d63f1dc21fc60e7fe4c7a
 * **Feature Description:**  This feature will install all bundles required for SNMP4SDN Plugin
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** Yes
-* **CSIT Test:** NA
+* **CSIT Test:** NA, system test waiver
 
 
 Documentation
@@ -30,12 +30,10 @@ Documentation
 Security Considerations
 =======================
 
-* The interface or configurable resource exposed to users includes RESTCONF API
-  and the switch list file. Switch list file, which is a plain-text file,
-  contains security information such as SNMP community.
+* Switch list file, which is a plain-text file, contains security information such as SNMP community. File access privilege would be carefully set.
 
-* SNMP4SDN Plugin configures switches via SNMP protocol, and listens to SNMP
-  listen port for link-up/down trap. SNMP v2c is used.
+* SNMP protocol v2c is used by SNMP4SDN Plugin. SNMP4SDN Plugin configures switches and listens to SNMP
+  listen port for link-up/down trap, via SNMP protocol.
 
 Quality Assurance
 =================
@@ -82,7 +80,7 @@ Known Issues
 
   None
 
-* `Link to Open Bugs <https://bugs.opendaylight.org/buglist.cgi?bug_status=__open__&list_id=78998&order=Importance&product=snmp4sdn&query_format=specific>`_
+* `Link to Open Bugs <https://jira.opendaylight.org/projects/SNMP4SDN/>`_
 
 End-of-life
 ===========
