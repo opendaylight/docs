@@ -99,6 +99,12 @@ End-of-life
   * The controller EntityOwnershipService interface was previously deprecated and is
     scheduled for removal in the next release, Flourine. All users of this interface must be
     converted to the mdsal EntityOwnershipService interface.
+  
+  * The controller liblldp module has been moved to the openflowplugin project and will be
+    removed from the controller project in Flourine.
+
+  * Various other APIs and classes in the controller project that have been long since
+    deperecated may be removed in Flourine.
 
 Standards
 =========
