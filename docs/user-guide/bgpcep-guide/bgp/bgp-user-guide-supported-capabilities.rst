@@ -18,7 +18,6 @@ In addition to the base protocol implementation, the plugin provides many extens
 * `draft-ietf-idr-link-bandwidth <https://tools.ietf.org/html/draft-ietf-idr-link-bandwidth-06>`_ - BGP Link Bandwidth Extended Community
 * `draft-ietf-idr-bgp-extended-messages <https://tools.ietf.org/html/draft-ietf-idr-bgp-extended-messages-13>`_ - Extended Message support for BGP
 * `RFC4760 <https://tools.ietf.org/html/rfc4760>`_ - Multiprotocol Extensions for BGP-4
-
    * `RFC7752 <https://tools.ietf.org/html/rfc7752>`_ - North-Bound Distribution of Link-State and TE Information using BGP
       * `draft-gredler-idr-bgp-ls-segment-routing-ext <https://tools.ietf.org/html/draft-gredler-idr-bgp-ls-segment-routing-ext-03>`_  - BGP Link-State extensions for Segment Routing
       * `draft-ietf-idr-bgpls-segment-routing-epe <https://tools.ietf.org/html/draft-ietf-idr-bgpls-segment-routing-epe-05>`_  - Segment Routing Egress Peer Engineering BGP-LS Extensions
@@ -34,6 +33,5 @@ In addition to the base protocol implementation, the plugin provides many extens
       * `draft-ietf-bess-evpn-overlay <https://tools.ietf.org/html/draft-ietf-bess-evpn-overlay-04>`_  - A Network Virtualization Overlay Solution using EVPN
       * `draft-ietf-bess-evpn-vpws <https://tools.ietf.org/html/draft-ietf-bess-evpn-vpws-07>`_  - VPWS support in EVPN
       * `draft-sajassi-bess-evpn-vpws-fxc-01 <https://tools.ietf.org/html/draft-sajassi-bess-evpn-vpws-fxc-01>`_ - EVPN VPWS Flexible Cross-Connect Service
-
 * `RFC7911 <https://tools.ietf.org/html/rfc7911>`_  - Advertisement of Multiple Paths in BGP
 * `RFC2918 <https://tools.ietf.org/html/rfc2918>`_  - Route Refresh Capability for BGP-4
