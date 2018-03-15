@@ -13,7 +13,7 @@ odl-of-config-all
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** Yes
-* **CSIT Test:** N/A
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/of-config/job/of-config-csit-1node-basic-all-oxygen/
 
 Documentation
 =============
@@ -35,7 +35,7 @@ Security Considerations
 
 * Other security issues?
 
-  * N/A
+  * Security issues are provided in the RESTCONF and NETCONF projects.
 
 Quality Assurance
 =================
@@ -87,7 +87,7 @@ Standards
 Release Mechanics
 =================
 
-* `Link to release plan <https://wiki.opendaylight.org/view/OF-CONFIG:Nitrogen:Release_Plan>`_
+* `Link to release plan <https://wiki.opendaylight.org/view/OF-CONFIG:Oxygen:Release_Plan>`_
 * Describe any major shifts in release schedule from the release plan
 
   N/A
