@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9552afd5_d2bafd15",
+        "filename": "docs/user-guide/bgpcep-guide/bgp/bgp-user-guide-protocol-configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2018-03-15T16:02:07Z",
+      "side": 1,
+      "message": "Minor typo. Change sentence as follows: \"RIB policy must already be configured and present before configuring the protocol.\"",
+      "revId": "602267a1239376f87f085b426120073869ed4294",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "19a514b4_9d877513",
+        "filename": "docs/user-guide/bgpcep/bgp/bgp-user-guide-rib-config-policies.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2018-03-15T16:02:07Z",
+      "side": 1,
+      "message": "Minor edit. Change the sentence as follows: The OpenDaylight BGP implementation supports configurable RIB policies that allow the modification of import and export policies.\"",
+      "revId": "602267a1239376f87f085b426120073869ed4294",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6738cb9f_c64043a6",
+        "filename": "docs/user-guide/bgpcep/bgp/bgp-user-guide-rib-config-policies.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2018-03-15T16:02:07Z",
+      "side": 1,
+      "message": "Minor edit. Please consider rewriting this sentence as follows: \"Conditions may include multiple match or comparison operations; similarly, actions may consist of a multitude of changes to route attributes or a final disposition regarding the acceptance or rejection of the route.\"",
+      "range": {
+        "startLine": 73,
+        "startChar": 54,
+        "endLine": 74,
+        "endChar": 115
+      },
+      "revId": "602267a1239376f87f085b426120073869ed4294",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
