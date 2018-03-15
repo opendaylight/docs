@@ -5,12 +5,12 @@ Bit Indexed Explicit Replication (BIER)
 odl-bier-all
 ------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=bier.git;a=blob;f=features/features-bier/pom.xml;hb=refs/heads/stable/nitrogen
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=bier.git;a=blob;f=features/features-bier/pom.xml;hb=refs/heads/stable/oxygen
 * **Feature Description:**  This is a summary feature containing the default functionalities provided by BIER project.
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** Yes
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/bier/job/bier-csit-1node-basic-all-nitrogen/
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/bier/job/bier-csit-1node-basic-all-oxygen/
 
 Documentation
 =============
@@ -37,8 +37,8 @@ Security Considerations
 Quality Assurance
 =================
 
-* `Link to Sonar Report <https://sonar.opendaylight.org/overview?id=72693>`_ 76.7%
-* `Link to CSIT Jobs <https://jenkins.opendaylight.org/releng/view/bier/job/bier-csit-1node-basic-all-nitrogen/>`_
+* `Link to Sonar Report <https://sonar.opendaylight.org/dashboard?id=org.opendaylight.bier%3Abier>`_ 69.5%
+* `Link to CSIT Jobs <https://jenkins.opendaylight.org/releng/view/bier/job/bier-csit-1node-basic-all-oxygen/>`_
 * Testing methodology. How extensive was it? What should be expected to work?
   What has not been tested as much?
 * There are unit tests and integration test available under folder "test" and system test in CSIT but the NETCONF
@@ -47,13 +47,9 @@ Quality Assurance
 Migration
 ---------
 
-<<<<<<< HEAD
 * Is it possible to migrate from the previous release? If so, how?
-=======
-* Is it possible migrate from the previous release? If so, how?
->>>>>>> Update bier release-notes for nitrogen
 
-* Migration with data from Carbon to Nitrogen is not supported.
+  * No additional migration steps needed.
 
 Compatibility
 -------------
@@ -67,7 +63,11 @@ delete-te-babel
 delete-te-bsl
 delete-te-si
 delete-te-bp
-* Any configuration changes? Yes. BGP-LS should be used instead of OpenFlow to get topology information.
+bier/oam/api/src/main/yang/bier-oam-api@2017-08-08.yang
+start-echo-request
+receive-echo-reply
+
+* Any configuration changes? None.
 
 Bugs Fixed
 ----------
@@ -93,5 +93,5 @@ Standards
 Release Mechanics
 =================
 
-* `Link to release plan <https://wiki.opendaylight.org/view/BIER:Nitrogen:Release_Plan>`_
+* `Link to release plan <https://wiki.opendaylight.org/view/BIER:Oxygen:Release_Plan>`_
 * No major changes.
