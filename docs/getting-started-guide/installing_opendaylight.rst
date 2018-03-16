@@ -249,14 +249,19 @@ Karaf OpenDaylight Features
       - odl-netconf-connector-ssh
       - all
 
+    * - NetVirt OpenStack
+      - OpenStack Network Virtualization using OpenDaylight's OVSDB and OpenFlow support
+      - odl-netvirt-openstack
+      - all
+
+    * - NetVirt SFC
+      - NetVirt support for SFC
+      - odl-netvirt-sfc
+      - all
+
     * - OF-CONFIG
       - Enables remote configuration of OpenFlow datapaths
       - odl-of-config-rest
-      - all
-
-    * - OVSDB OpenStack Neutron
-      - OpenStack Network Virtualization using OpenDaylight's OVSDB support
-      - odl-ovsdb-openstack
       - all
 
     * - OVSDB Southbound
@@ -267,11 +272,6 @@ Karaf OpenDaylight Features
     * - OVSDB HWVTEP Southbound
       - OVSDB MDSAL hwvtep southbound plugin for the hw_vtep schema
       - odl-ovsdb-hwvtepsouthbound-ui
-      - all
-
-    * - OVSDB NetVirt SFC
-      - OVSDB NetVirt support for SFC
-      - odl-ovsdb-sfc-ui
       - all
 
     * - OpenFlow Flow Programming
@@ -487,6 +487,11 @@ deploying it.
       - odl-lispflowmapping-neutron
       - self+all
 
+    * - NetVirt UI
+      - DLUX UI
+      - odl-netvirt-ui
+      - all
+
     * - Network Intent Composition (NIC)
       - Provides abstraction layer for communcating network intents (including
         a distributed intent mapping service REST API) using either Hazelcast
@@ -519,11 +524,6 @@ deploying it.
       - NEtwork MOdeling renderer for Network Intent Composition
       - odl-nic-renderer-nemo
       - self+all
-
-    * - OVSDB NetVirt UI
-      - OVSDB DLUX UI
-      - odl-ovsdb-ui
-      - all
 
     * - Secure Networking Bootstrap
       - Defines a SNBi domain and associated white lists of devices to be

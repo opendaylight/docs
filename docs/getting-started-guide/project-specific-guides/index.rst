@@ -6,7 +6,7 @@ Project-Specific Installation Guides
    :maxdepth: 1
 
    centinel
-   ../../submodules/netvirt/docs/getting-started-guide/index
+   ../../submodules/netvirt/docs/index
    opflex
    tsdr
    vtn

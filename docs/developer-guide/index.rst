@@ -43,7 +43,7 @@ Project-specific Developer Guides
    netconf-developer-guide
    network-intent-composition-(nic)-developer-guide
    netide-developer-guide
-   ../submodules/netvirt/docs/developer-guide/index
+   ../submodules/netvirt/docs/index
    neutron-service-developer-guide
    neutron-northbound
    odl-parent-developer-guide
