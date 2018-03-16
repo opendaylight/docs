@@ -24,7 +24,7 @@ Use cases and who will use the feature
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you want OpenStack integration with OpenDaylight, you will need this
-feature with an OpenDaylight provider feature like ovsdb/netvirt, group
+feature with an OpenDaylight provider feature like netvirt, group
 based policy, VTN, and lisp mapper. For provider configuration, please
 refer to each individual provider’s documentation. Since the Neutron
 service only provides the northbound API for the OpenStack Neutron ML2
