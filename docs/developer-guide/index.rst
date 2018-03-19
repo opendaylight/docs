@@ -14,6 +14,9 @@ Overview
 
 Project-specific Developer Guides
 ---------------------------------
+
+* :doc:`NetVirt Documentation <netvirt:index>`
+
 .. toctree::
    :maxdepth: 1
 
@@ -43,7 +46,6 @@ Project-specific Developer Guides
    netconf-developer-guide
    network-intent-composition-(nic)-developer-guide
    netide-developer-guide
-   ../submodules/netvirt/docs/index
    neutron-service-developer-guide
    neutron-northbound
    odl-parent-developer-guide

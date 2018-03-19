@@ -37,10 +37,11 @@ see each other.
 Installing OpenDaylight
 ***********************
 
+* :doc:`NetVirt Documentation <netvirt:index>`
+
 .. toctree::
    :maxdepth: 1
 
-   ../submodules/netvirt/docs/index
    openstack-with-ovsdb
    openstack-with-gbp
    openstack-with-gbp-vpp

@@ -20,6 +20,8 @@ the OpenDaylight Release using the generic base functionality.
 Project-specific User Guides
 ----------------------------
 
+* :doc:`NetVirt Documentation <netvirt:index>`
+
 .. toctree::
    :maxdepth: 1
 
@@ -45,7 +47,6 @@ Project-specific User Guides
    nemo-user-guide
    netconf-user-guide
    netide-user-guide
-   ../submodules/netvirt/docs/index
    neutron-service-user-guide
    network-intent-composition-(nic)-user-guide
    ocp-plugin-user-guide

@@ -23,11 +23,6 @@
 	url = ../odlparent
 	branch = .
 	ignore = dirty
-[submodule "docs/submodules/netvirt"]
-	path = docs/submodules/netvirt
-	url = ../netvirt
-	branch = .
-	ignore = dirty
 [submodule "docs/submodules/genius"]
 	path = docs/submodules/genius
 	url = ../genius

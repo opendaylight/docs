@@ -16,6 +16,9 @@ from docs_conf.conf import *
 intersphinx_mapping['odl-integration-test'] = ('http://docs.opendaylight.org/projects/integration-test/en/latest/', None)
 intersphinx_mapping['odl-releng-builder'] = ('http://docs.opendaylight.org/projects/releng-builder/en/latest/', None)
 
+# Projects that have stable/branches
+intersphinx_mapping['netvirt'] = ('http://docs.opendaylight.org/projects/netvirt/en/latest/', None)
+
 linkcheck_ignore = [
     # Ignore jenkins because it's often slow to respond.
     'https://jenkins.opendaylight.org/releng',
