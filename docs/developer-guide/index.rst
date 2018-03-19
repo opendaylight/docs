@@ -5,10 +5,12 @@ Developer Guide
 
 Overview
 --------
+
+* :doc:`Gerrit Guide <lfdocs:gerrit>`
+
 .. toctree::
    :maxdepth: 1
 
-   ../gerrit
    developing-apps-on-the-opendaylight-controller
 
 Project-specific Developer Guides
