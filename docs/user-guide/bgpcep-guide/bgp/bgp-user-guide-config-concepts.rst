@@ -71,7 +71,7 @@ BGP pipeline
 Configuration
 ^^^^^^^^^^^^^
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    bgp-user-guide-protocol-configuration
    bgp-user-guide-bgp-server
