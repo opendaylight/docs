@@ -45,7 +45,7 @@ Project-specific User Guides
    nemo-user-guide
    netconf-user-guide
    netide-user-guide
-   ../submodules/netvirt/docs/user-guide/index
+   ../submodules/netvirt/docs/index
    neutron-service-user-guide
    network-intent-composition-(nic)-user-guide
    ocp-plugin-user-guide

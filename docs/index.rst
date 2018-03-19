@@ -58,7 +58,7 @@ participate in the development of OpenDaylight or would like to start.
    release-process/index
    submodules/genius/docs/index
    submodules/infrautils/docs/index
-   submodules/netvirt/docs/contributor-guide/index
+   submodules/netvirt/docs/index
    submodules/openflowplugin/docs/index
    submodules/sfc/docs/index
 

@@ -162,14 +162,14 @@ OpenDaylight. NetIDE details:
 * The NetIDE Configuration file contains the configurable elements for the
   engine.
 
-OVSDB-based Network Virtualization Services
-===========================================
+NetVirt - Network Virtualization Services
+=========================================
 Several services and plugins in OpenDaylight work together to provide simplified
 integration with the OpenStack Neutron framework. These services enable
 OpenStack to offload network processing to OpenDaylight while enabling
 OpenDaylight to provide enhanced network services to OpenStack.
 
-OVSDB Services are at parity with the Neutron Reference Implementation in
+NetVirt Services are at parity with the Neutron Reference Implementation in
 OpenStack, including support for:
 
 * L2/L3
@@ -180,11 +180,14 @@ OpenStack, including support for:
     are fully distributed as well.
   * Full support for distributed Layer-2 switching and distributed IPv4 routing
     is now available.
+  * NAT and Floating IPs
+  * IPv6
+  * MAC and IP learning
 
 * Clustering - Full support for clustering and High Availability (HA) is
   available in the this OpenDaylight release. In particular, the OVSDB
   southbound plugin supports clustering that any application can use, and the
-  Openstack network integration with OpenDaylight (through OVSDB Net-Virt) has
+  Openstack network integration with OpenDaylight (through NetVirt) has
   full clustering support. While there is no specific limit on cluster size, a
   3-node cluster has been tested extensively as part of the release.
 
@@ -195,12 +198,15 @@ OpenStack, including support for:
   Contract-based Security Groups require OVS v2.5 with contract support.
 
 * Hardware Virtual Tunnel End Point (HW-VTEP) - Full HW-VTEP schema support has
-  been implemented in the OVSDB protocol driver.  Support for HW-VTEP via
-  OpenStack through the OVSDB-NetVirt implementation has not yet been provided
-  as we wait for full support of Layer-2 Gateway (L2GW) to be implemented within
-  OpenStack.
+  been implemented in the OVSDB protocol driver.
+
+* Hardware VTEP for hardware switches
+
+* Support for OVS and DPDK-accelerated OVS data paths
 
 * Service Function Chaining
+
+* L3VPN (BGPVPN), EVPN, ELAN
 
 * Open vSwitch southbound support for quality of service and Queue configuration
   Load Balancer as service (LBaaS) with Distributed Virtual Router
