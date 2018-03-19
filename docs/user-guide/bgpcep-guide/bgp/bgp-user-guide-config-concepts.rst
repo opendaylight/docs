@@ -10,6 +10,17 @@ It shows the way to configure the plugin via REST, using standardized OpenConfig
    :depth: 2
    :local:
 
+Configuration
+^^^^^^^^^^^^^
+.. toctree::
+   :maxdepth: 2
+
+   bgp-user-guide-protocol-configuration
+   bgp-user-guide-bgp-server
+   bgp-user-guide-bgp-peering
+   bgp-user-guide-bgp-application-peer
+   bgp-user-guide-protocol-configuration-loader
+
 BGP RIB API
 ^^^^^^^^^^^
 This tree illustrates the BGP RIBs organization in datastore.
@@ -67,17 +78,6 @@ BGP pipeline
    :alt: BGP Application Peer pipeline.
 
    BGP applcaition peer pipeline - routes injection.
-
-Configuration
-^^^^^^^^^^^^^
-.. toctree::
-   :maxdepth: 1
-
-   bgp-user-guide-protocol-configuration
-   bgp-user-guide-bgp-server
-   bgp-user-guide-bgp-peering
-   bgp-user-guide-bgp-application-peer
-   bgp-user-guide-protocol-configuration-loader
 
 References
 ^^^^^^^^^^
