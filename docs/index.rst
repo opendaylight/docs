@@ -47,13 +47,13 @@ The following content is intended for developers who either currently
 participate in the development of OpenDaylight or would like to start.
 
 * :ref:`Infrastructure Guide <odl-infra>`
+* :doc:`Integration Testing Guide <odl-integration-test:index>`
 
 .. toctree::
    :maxdepth: 1
 
    gerrit
    submodules/releng/builder/docs/index
-   submodules/integration/test/docs/index
    documentation
    release-process/index
    submodules/genius/docs/index
