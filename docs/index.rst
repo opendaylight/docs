@@ -48,11 +48,11 @@ participate in the development of OpenDaylight or would like to start.
 
 * :doc:`Gerrit Guide <lfdocs:gerrit>`
 * :ref:`Infrastructure Guide <odl-infra>`
+* :doc:`Integration Testing Guide <odl-integration-test:index>`
 
 .. toctree::
    :maxdepth: 1
 
-   submodules/integration/test/docs/index
    documentation
    release-process/index
    submodules/genius/docs/index

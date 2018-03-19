@@ -13,6 +13,7 @@
 from docs_conf.conf import *
 
 # Append to intersphinx_mapping
+intersphinx_mapping['odl-integration-test'] = ('http://docs.opendaylight.org/projects/integration-test/en/latest/', None)
 intersphinx_mapping['odl-releng-builder'] = ('http://docs.opendaylight.org/projects/releng-builder/en/latest/', None)
 
 linkcheck_ignore = [
@@ -26,11 +27,3 @@ linkcheck_ignore = [
 
 nitpicky = True
 release = version
-
-import platform
-if platform.system() != 'Windows':
-
-    # Build integration stuff
-    import subprocess
-
-    subprocess.call(["./build-integration-robot-libdoc.sh"])
