@@ -13,6 +13,7 @@
 from docs_conf.conf import *
 
 # Append to intersphinx_mapping
+intersphinx_mapping['odl-integration-test'] = ('http://docs.opendaylight.org/projects/integration-test/en/latest/', None)
 intersphinx_mapping['odl-releng-builder'] = ('http://docs.opendaylight.org/projects/releng-builder/en/latest/', None)
 
 linkcheck_ignore = [
@@ -34,4 +35,3 @@ if platform.system() != 'Windows':
     import subprocess
 
     subprocess.call(["./generate-milestone-status.sh"])
-    subprocess.call(["./build-integration-robot-libdoc.sh"])
