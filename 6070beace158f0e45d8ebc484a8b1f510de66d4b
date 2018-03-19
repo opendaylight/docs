@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "412b3835_1919bec1",
+        "filename": "docs/user-guide/bgpcep-guide/bgp/bgp-user-guide-bgp-peering.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 456,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2018-03-19T17:54:50Z",
+      "side": 1,
+      "message": "Minor edit: \"Allows the creation of a peer group configuration that applies to all peers configured as part of the group.\"",
+      "range": {
+        "startLine": 456,
+        "startChar": 0,
+        "endLine": 456,
+        "endChar": 112
+      },
+      "revId": "6070beace158f0e45d8ebc484a8b1f510de66d4b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "401ce637_abf76690",
+        "filename": "docs/user-guide/bgpcep-guide/bgp/bgp-user-guide-bgp-peering.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 458,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2018-03-19T17:54:50Z",
+      "side": 1,
+      "message": "Rewrite as follows: \"A sample peer group configuration follows:\"",
+      "range": {
+        "startLine": 458,
+        "startChar": 0,
+        "endLine": 458,
+        "endChar": 42
+      },
+      "revId": "6070beace158f0e45d8ebc484a8b1f510de66d4b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c82429e2_ab12e6e3",
+        "filename": "docs/user-guide/bgpcep-guide/bgp/bgp-user-guide-bgp-peering.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 542,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2018-03-19T17:54:50Z",
+      "side": 1,
+      "message": "Rewrite as follows: \"A sample basic neighbor configuration using a peer group follows:\"",
+      "range": {
+        "startLine": 542,
+        "startChar": 0,
+        "endLine": 542,
+        "endChar": 63
+      },
+      "revId": "6070beace158f0e45d8ebc484a8b1f510de66d4b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
