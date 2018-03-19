@@ -450,6 +450,118 @@ Sample configuration below shows how to set authentication password for a peer:
 
 @line 4: Configures an MD5 authentication password for use with neighboring devices.
 
+BGP Peer Group
+''''''''''''''
+
+Allows to create a peer group configuration, which will be inherit by all peers configured as part of the group.
+
+Here is a sample peer group configuration:
+
+**URL:** ``/restconf/config/openconfig-network-instance:network-instances/network-instance/global-bgp/openconfig-network-instance:protocols/protocol/openconfig-policy-types:BGP/bgp-example/bgp/peer-groups``
+
+**Method:** ``POST``
+
+**Content-Type:** ``application/xml``
+
+**Request Body:**
+
+.. code-block:: xml
+   :linenos:
+   :emphasize-lines: 2
+
+   <peer-group>
+       <peer-group-name>internal-neighbor</peer-group-name>
+       <config>
+           <peer-type>INTERNAL</peer-type>
+           <peer-as>64496</peer-as>
+       </config>
+       <transport>
+           <config>
+               <remote-port>179</remote-port>
+               <passive-mode>true</passive-mode>
+           </config>
+       </transport>
+       <timers>
+           <config>
+               <hold-time>180</hold-time>
+               <connect-retry>10</connect-retry>
+           </config>
+       </timers>
+       <route-reflector>
+           <config>
+               <route-reflector-client>false</route-reflector-client>
+           </config>
+       </route-reflector>
+       <afi-safis>
+           <afi-safi>
+               <afi-safi-name xmlns:x="http://openconfig.net/yang/bgp-types">x:IPV4-UNICAST</afi-safi-name>
+               <!--Advertise N Paths
+               <receive>true</receive>
+               <send-max>0</send-max>-->
+           </afi-safi>
+           <afi-safi>
+               <afi-safi-name xmlns:x="http://openconfig.net/yang/bgp-types">x:IPV6-UNICAST</afi-safi-name>
+           </afi-safi>
+           <afi-safi>
+               <afi-safi-name xmlns:x="http://openconfig.net/yang/bgp-types">x:IPV4-LABELLED-UNICAST</afi-safi-name>
+           </afi-safi>
+           <afi-safi>
+               <afi-safi-name xmlns:x="http://openconfig.net/yang/bgp-types">x:IPV6-LABELLED-UNICAST</afi-safi-name>
+           </afi-safi>
+           <afi-safi>
+               <afi-safi-name xmlns:x="http://openconfig.net/yang/bgp-types">x:L3VPN-IPV4-UNICAST</afi-safi-name>
+           </afi-safi>
+           <afi-safi>
+               <afi-safi-name xmlns:x="http://openconfig.net/yang/bgp-types">x:L3VPN-IPV6-UNICAST</afi-safi-name>
+           </afi-safi>
+           <afi-safi>
+               <afi-safi-name xmlns:x="http://openconfig.net/yang/bgp-types">x:L2VPN-EVPN</afi-safi-name>
+           </afi-safi>
+           <afi-safi>
+               <afi-safi-name>LINKSTATE</afi-safi-name>
+           </afi-safi>
+           <afi-safi>
+               <afi-safi-name>IPV4-FLOW</afi-safi-name>
+           </afi-safi>
+           <afi-safi>
+               <afi-safi-name>IPV6-FLOW</afi-safi-name>
+           </afi-safi>
+           <afi-safi>
+               <afi-safi-name>IPV4-L3VPN-FLOW</afi-safi-name>
+           </afi-safi>
+           <afi-safi>
+               <afi-safi-name>IPV6-L3VPN-FLOW</afi-safi-name>
+           </afi-safi>
+       </afi-safis>
+   </peer-group>
+
+@line 2: Peer Group Identifier.
+
+-----
+
+Here is a sample basic neighbor configuration using peer group:
+
+**URL:** ``/restconf/config/openconfig-network-instance:network-instances/network-instance/global-bgp/openconfig-network-instance:protocols/protocol/openconfig-policy-types:BGP/bgp-example/bgp/neighbors``
+
+**Method:** ``POST``
+
+**Content-Type:** ``application/xml``
+
+**Request Body:**
+
+.. code-block:: xml
+   :linenos:
+   :emphasize-lines: 4
+
+   <neighbor>
+      <neighbor-address>192.0.2.1</neighbor-address>
+      <config>
+         <peer-group>/bgp/neighbors/neighbor/bgp/peer-groups/peer-group[peer-group-name="internal-neighbor"]</peer-group>
+      </config>
+   </neighbor>
+
+@line 4: Peer group identifier.
+
 Simple Routing Policy configuration
 '''''''''''''''''''''''''''''''''''
 The OpenDaylight BGP implementation is supporting *Simple Routing Policy*.
