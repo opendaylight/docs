@@ -6,7 +6,7 @@ This guide contains information on how to use OpenDaylight Border Gateway Protoc
 The user should learn about BGP basic concepts, supported capabilities, configuration and usage.
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 4
 
    bgp-user-guide-overview
    bgp-user-guide-supported-capabilities
