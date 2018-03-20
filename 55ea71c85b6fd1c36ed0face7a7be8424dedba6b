@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bd1e3220_665d8471",
+        "filename": "docs/release-notes/projects/aaa.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 7493
+      },
+      "writtenOn": "2018-03-20T15:17:25Z",
+      "side": 1,
+      "message": "Please update link to point to JIRA. 5838 maps to AAA-101.",
+      "range": {
+        "startLine": 109,
+        "startChar": 2,
+        "endLine": 109,
+        "endChar": 62
+      },
+      "revId": "55ea71c85b6fd1c36ed0face7a7be8424dedba6b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ab45f34_e77a4fb2",
+        "filename": "docs/release-notes/projects/aaa.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 7493
+      },
+      "writtenOn": "2018-03-20T15:17:25Z",
+      "side": 1,
+      "message": "Update to point to JIRA:\n\nhttps://jira.opendaylight.org/browse/AAA",
+      "range": {
+        "startLine": 111,
+        "startChar": 22,
+        "endLine": 111,
+        "endChar": 122
+      },
+      "revId": "55ea71c85b6fd1c36ed0face7a7be8424dedba6b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
