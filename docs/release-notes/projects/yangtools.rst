@@ -5,58 +5,121 @@ YANG Tools
 Major Features
 ==============
 
-Nitrogen release marks the seventh release of YANG Tools components. We have
-fixed lot of issues ranging from small annoyances to major reworks.
+Oxgeyn release marks the eightth release of YANG Tools components. The focus
+of this release was to clean up deprecated APIs and perform maintenance
+which requires breaking API compatibility -- hence producing a 2.0.x release
+train.
 
-Major changes delivered in this release are
+Major items delivered are:
+* Split up yang-parser-impl, allowing components to be plugged more cleanly
+* Remove use of Guava's Optional in favor of Java 8's equivalent
+* Define yang-parser-api
+* Mandatory leaves are enforced by default
+* RFC7951-compliant JSON codec
+* Features have been split into stable and experimental
+* Old XML parser has been removed
+* YANG model revisions are represented via a dedicated class, not Date
+* YANG type empty is represented as a dedicated class, not Void
 
-* Migration to new XML Parser
-  `Bug 5824 <https://bugs.opendaylight.org/show_bug.cgi?id=5824>`_
-  `Bug 5825 <https://bugs.opendaylight.org/show_bug.cgi?id=5825>`_
-* Fix of new XML parser design flaws
-  `Bug 8675 <https://bugs.opendaylight.org/show_bug.cgi?id=8675>`_
-  `Bug 8715 <https://bugs.opendaylight.org/show_bug.cgi?id=8715>`_
-  `Bug 8745 <https://bugs.opendaylight.org/show_bug.cgi?id=8745>`_.
-* InMemoryDataTree can be configured to perform full mandatory leaf
-  validation
-  `Bug 8291 <https://bugs.opendaylight.org/show_bug.cgi?id=8291>`_
-* Deviation statements are properly activated
-  `Bug 8307 <https://bugs.opendaylight.org/show_bug.cgi?id=8307>`_
-* TrieMap implementation
-  `Bug 7464 <https://bugs.opendaylight.org/show_bug.cgi?id=7464>`_
-* Improvements, bug fixing and clean up yang-model-export, yang-parser-impl,
-  yang-model-api, yang-data-impl, yang-data-api
+odl-triemap
+-----------
 
-
-odl-yangtools-yang-data
------------------------
-
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=yangtools.git;a=blob_plain;f=features/odl-yangtools-yang-data/pom.xml;hb=refs/heads/v1.2.x
-* **Feature Description:** to install YANG Data APIs and implementation.
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=yangtools.git;a=blob_plain;f=features/odl-triemap/pom.xml;hb=refs/tags/v2.0.1
+* **Feature Description:** to install concurrent-hash-trie-based Map implementation
 * **Top Level:** Yes
 * **User Facing:** No
-* **Experimental:** Yes
+* **Experimental:** No
+* **CSIT Test:** System test waiver request pending.
+
+odl-yangtools-codec
+-------------------
+
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=yangtools.git;a=blob_plain;f=features/odl-yangtools-common/pom.xml;hb=refs/tags/v2.0.1
+* **Feature Description:** to install JSON and XML parsers
+* **Top Level:** Yes
+* **User Facing:** No
+* **Experimental:** No
 * **CSIT Test:** System test waiver request pending.
 
 odl-yangtools-common
 --------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=yangtools.git;a=blob;f=features/odl-yangtools-common/pom.xml;hb=refs/heads/v1.2.x
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=yangtools.git;a=blob_plain;f=features/odl-yangtools-common/pom.xml;hb=refs/tags/v2.0.1
 * **Feature Description:** to install common concepts and utilities.
+* **Top Level:** Yes
+* **User Facing:** No
+* **Experimental:** No
+* **CSIT Test:** System test waiver request pending.
+
+odl-yangtools-data-api
+----------------------
+
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=yangtools.git;a=blob_plain;f=features/odl-yangtools-data-api/pom.xml;hb=refs/tags/v2.0.1
+* **Feature Description:** to install YANG Data APIs.
+* **Top Level:** Yes
+* **User Facing:** No
+* **Experimental:** No
+* **CSIT Test:** System test waiver request pending.
+
+odl-yangtools-data
+------------------
+
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=yangtools.git;a=blob_plain;f=features/odl-yangtools-data/pom.xml;hb=refs/tags/v2.0.1
+* **Feature Description:** to install YANG Data implementation.
+* **Top Level:** Yes
+* **User Facing:** No
+* **Experimental:** No
+* **CSIT Test:** System test waiver request pending.
+
+odl-yangtools-export
+--------------------
+
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=yangtools.git;a=blob_plain;f=features/odl-yangtools-export/pom.xml;hb=refs/tags/v2.0.1
+* **Feature Description:** to install YANG model export utilities.
+* **Top Level:** Yes
+* **User Facing:** No
+* **Experimental:** No
+* **CSIT Test:** System test waiver request pending.
+
+odl-yangtools-parser-api
+------------------------
+
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=yangtools.git;a=blob_plain;f=features/odl-yangtools-parser-api/pom.xml;hb=refs/tags/v2.0.1
+* **Feature Description:** to install YANG model APIs
+* **Top Level:** Yes
+* **User Facing:** No
+* **Experimental:** No
+* **CSIT Test:** System test waiver request pending.
+
+odl-yangtools-parser
+--------------------
+
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=yangtools.git;a=blob_plain;f=features/odl-yangtools-parser/pom.xml;hb=refs/tags/v2.0.1
+* **Feature Description:** to install YANG Parser
+* **Top Level:** Yes
+* **User Facing:** No
+* **Experimental:** No
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/yangtools/job/yangtools-csit-1node-periodic-system-only-oxygen/
+
+odl-yangtools-xpath
+-------------------
+
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=yangtools.git;a=blob_plain;f=features/odl-yangtools-xpath/pom.xml;hb=refs/tags/v2.0.1
+* **Feature Description:** to install XPath evaluation engine
+* **Top Level:** Yes
+* **User Facing:** No
+* **Experimental:** No
+* **CSIT Test:** System test waiver request pending.
+
+odl-exp-objcache
+----------------
+
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=yangtools.git;a=blob_plain;f=features/odl-exp-objcache/pom.xml;hb=refs/tags/v2.0.1
+* **Feature Description:** to install Object Cache APIs and implementation
 * **Top Level:** Yes
 * **User Facing:** No
 * **Experimental:** Yes
 * **CSIT Test:** System test waiver request pending.
-
-odl-yangtools-yang-parser
--------------------------
-
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=yangtools.git;a=blob;f=features/odl-yangtools-yang-parser/pom.xml;hb=refs/heads/v1.2.x
-* **Feature Description:** to install YANG model APIs and YANG Parser
-* **Top Level:** Yes
-* **User Facing:** No
-* **Experimental:** No
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/yangtools/job/yangtools-csit-1node-periodic-system-only-nitrogen/
 
 Documentation
 =============
@@ -74,79 +137,62 @@ Security Considerations
 Quality Assurance
 =================
 
-* `Link to Sonar Report <https://sonar.opendaylight.org/overview?id=13079>`_
-  (Test coverage 75.4%)
+* `Link to Sonar Report <https://sonar.opendaylight.org/dashboard?id=org.opendaylight.yangtools%3Ayangtools-aggregator>`_
+  Test coverage 62.3%, which constitutes a drop by 12%. This is caused by the parser being more modular, hence tests which
+  previously accounted to code coverage are no longer counted. We will address this with targeted unit tests if following
+  releases.
 * `Link to CSIT Jobs
-  <https://jenkins.opendaylight.org/releng/view/yangtools/job/yangtools-csit-1node-periodic-system-only-nitrogen/>`_
+  <https://jenkins.opendaylight.org/releng/view/yangtools/job/yangtools-csit-1node-periodic-system-only-oxygen/>`_
 
 Migration
 ---------
 
-* It is possible to migrate from the previous release. Aside from adjusting to
-  the removal of deprecated API elements and changed elements, there are no
-  additional steps needed for migration to this release.
+* This release constitutes a major shift in all APIs exposed by yangtools. Code
+  users need to adjust their feature refences and adjust to changed method
+  signatures. Most users should not be impacted as they should be interacting
+  with MD-SAL.
 
 Compatibility
 -------------
 
-* Release is compatible with the previous one.
-* API changes:
-
-  * `XmlParserStream.traverse (DOMSource)
-    <https://git.opendaylight.org/gerrit/#/c/60864/5>`_
-  * `Added UnrecognizedStatement and refactoring of StmtContextUtils
-    <https://git.opendaylight.org/gerrit/#/c/61571/>`_
-  * `Moving of SubstatementValidator into spi.meta package
-    <https://git.opendaylight.org/gerrit/#/c/61570/>`_
-  * EffectiveSchemaContext was moved, users are advised to use
-    SimpleSchemaContext
-  * org.opendaylight.yangtools.yang.parser.spi package was adjusted
+* Release is not compatible with the previous one. The APIs changed are too numerous to list here.
 
 * No configuration changes.
 
 * Behavior changes:
-  * concepts.Registration does not allow nulls
-  * SemVer and the associated Semantic Version is now bound to OpenConfig
-  * YANG/YIN parser is less forgiving in face of ambiguous constructs
-    (like 'mandatory ture' or 'status foobar')
+  * Mandatory leaf presence is enforced by default
+  * Pattern invert-match modifier is honored in both JSON and XML codecs
 
 Bugs Fixed
 ----------
 
-* List of fixed `Bugs
-  <https://bugs.opendaylight.org/buglist.cgi?bug_severity=blocker&bug_severity=critical&bug_severity=major&bug_severity=normal&bug_severity=minor&bug_severity=trivial&bug_severity=enhancement&columnlist=product%2Ccomponent%2Cassigned_to%2Cbug_severity%2Ccf_issue_type%2Cshort_desc%2Cbug_status%2Cpriority%2Cdeadline%2Ccf_target_milestone&component=General&f1=cf_target_milestone&known_name=Nitrogen%3A%20Yangtools&list_id=78630&o1=substring&order=bug_id&product=yangtools&query_based_on=Nitrogen%3A%20Yangtools&query_format=advanced&resolution=FIXED&v1=Nitrogen>`_.
+* List of fixed `Bugs <https://jira.opendaylight.org/issues/?jql=project%20%3D%20YANGTOOLS%20AND%20fixVersion%20%3D%202.0.0%20OR%20fixVersion%20%3D%202.0.1>`
 
 Known Issues
 ------------
 
-* `Link to Open Bugs
-  <https://bugs.opendaylight.org/buglist.cgi?bug_severity=blocker&bug_severity=critical&bug_severity=major&bug_severity=normal&bug_severity=minor&bug_severity=trivial&bug_severity=enhancement&columnlist=product%2Ccomponent%2Cassigned_to%2Cbug_severity%2Ccf_issue_type%2Cshort_desc%2Cbug_status%2Cpriority%2Cdeadline%2Ccf_target_milestone&component=General&f1=cf_target_milestone&known_name=Nitrogen%3A%20Yangtools&list_id=78805&o1=substring&product=yangtools&query_based_on=Nitrogen%3A%20Yangtools&query_format=advanced&resolution=---&v1=Nitrogen>`_
+* List of open `Bugs <https://jira.opendaylight.org/issues/?jql=project%20%3D%20YANGTOOLS%20AND%20affectedVersion%20%3D%202.0.1?`
 
 End-of-life
 ===========
 
-* This release has not introduced any new deprecation of a major feature
-  or API. However, there are some minor deprecations such as:
+* odl-exp-objcache is marked as experimental and will be removed in the next
+  major (3.0.0) release.
 
-  * Yang-data-impl XML codec has been deprecated
-    `<https://git.opendaylight.org/gerrit/#/c/60558/>`_
-  * YangParseException has been deprecated
-    `<https://git.opendaylight.org/gerrit/#/c/58751/>`_
+* This release contains deprecated API elements in all code artifacts. These
+  will be removed in the next major (3.0.0) release.
 
-* Major development is shifting to 2.0.0 version, which is guaranteed to be
-  API incompatible. Users are advised to eliminate any reliance on @Deprecated
-  components as soon as possible after adopting this release.
-  Furthermore, the use of CheckedFuture will be eliminated, hence users should
-  reduce their reliance on this class.
-  Next release will also move Optional, Function, Predicate and others
-  from Guava to their java.util equivalents.
+* All API elements are expected to remain compatible for at least the duration
+  of Fluorine release cycle.
 
 Standards
 =========
 
 * YANG and YIN parser processing according to
   `RFC 6020 <https://tools.ietf.org/html/rfc6020>`_,
-  `RFC 7950 <https://tools.ietf.org/html/rfc7950>`_ and
+  `RFC 6536 <https://tools.ietf.org/html/rfc6536>`_,
+  `RFC 7950 <https://tools.ietf.org/html/rfc7950>`_,
+  `RFC 7952 <https://tools.ietf.org/html/rfc7950>`_ and
   `RFC 8040 <https://tools.ietf.org/html/rfc8040>`_
 * XML parser for YANG-modeled data according to
   `RFC 6020 <https://tools.ietf.org/html/rfc6020>`_ and
@@ -157,4 +203,4 @@ Standards
 Release Mechanics
 =================
 
-* `Link to the release plan <https://wiki.opendaylight.org/view/Simultaneous_Release:Nitrogen_Release_Plan>`_
+* `Link to the release plan <https://wiki.opendaylight.org/view/Simultaneous_Release:Oxygen_Release_Plan>`_
