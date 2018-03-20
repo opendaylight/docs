@@ -46,6 +46,40 @@
       "revId": "2427efff10903444f6a25250c39a980bc9a5bb0c",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0425d392_01aeb28a",
+        "filename": "docs/release-notes/projects/netconf.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 797
+      },
+      "writtenOn": "2018-03-20T22:06:38Z",
+      "side": 1,
+      "message": "I know there was no time for this ticket, but can we at least include the ticket in release notes because API effectively changed from nitrogen: https://jira.opendaylight.org/browse/NETCONF-523",
+      "revId": "2427efff10903444f6a25250c39a980bc9a5bb0c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ad1d5c5d_6a2b4a30",
+        "filename": "docs/release-notes/projects/netconf.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 797
+      },
+      "writtenOn": "2018-03-20T22:06:38Z",
+      "side": 1,
+      "message": "This basically means there is no \"netconf\" oxygen release plan :(",
+      "revId": "2427efff10903444f6a25250c39a980bc9a5bb0c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
