@@ -4607,7 +4607,8 @@ BGP Peer Groups Operational State
                <total-paths>0</total-paths>
                <total-prefixes>0</total-prefixes>
            </state>
-   </peer-group>
+       </peer-group>
+   </peer-groups>
 
 @line 3: Peer Group Identifier.
 
