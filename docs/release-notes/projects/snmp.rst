@@ -8,14 +8,12 @@ Major Features
 odl-snmp-plugin
 ---------------
 
-* **Feature URL:**  https://git.opendaylight.org/gerrit/gitweb?p=snmp.git;a=blob;f=features/features-snmp/src/main/features/features.xml;hb=stable/carbon
+* **Feature URL:**  https://git.opendaylight.org/gerrit/gitweb?p=snmp.git;a=blob;f=features/features-snmp/src/main/features/features.xml;hb=stable/oxygen
 * **Feature Description:**  Provides NB API to SB SNMP interface
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** Yes
 * **CSIT Test:**
-
-  * https://jenkins.opendaylight.org/releng/view/snmp/job/snmp-csit-1node-basic-all-nitrogen/
 
 Documentation
 =============
@@ -27,7 +25,7 @@ Documentation
 
 * **User Guide:**
 
-  * :ref:`snmp-user-guide`
+  * :ref:`snmp-plugin-user-guide`
 
 * **SNMP Simulator:**
 
@@ -48,11 +46,8 @@ Security Considerations
 Quality Assurance
 =================
 
-* `Link to Sonar Report <https://sonar.opendaylight.org/overview?id=69960>`_ (3.5% code coverage)
-* Link to CSIT Jobs:
-
-  * https://jenkins.opendaylight.org/releng/view/snmp/job/snmp-csit-1node-basic-all-nitrogen/
-
+* No Sonar Report
+* No CSIT Jobs
 * Other manual testing and QA information: None
 
 Migration
@@ -60,13 +55,22 @@ Migration
 
 * Is it possible to migrate from the previous release? If so, how?
 
-  It is possible to seamlessly migrate consumers to this iteration of the plug-in as there has been no functional
-  change to features. Migration of state data is not defined.
+  Yes, no specific steps needed.
 
 Compatibility
 -------------
 
-Compatible with the previous release, no functional change to features
+* Is this release compatible with the previous release?
+
+  * Yes
+
+* Any API changes?
+
+  * No
+
+* Any configuration changes?
+
+  * No
 
 Bugs Fixed
 ----------
@@ -81,9 +85,6 @@ Known Issues
 * List key known issues with workarounds
 
   No known issues
-
-* `Link to Open Bugs <https://bugs.opendaylight.org/buglist.cgi?component=General&list_id=29216&product=snmp>`_
-
 
 
 End-of-life
@@ -104,7 +105,4 @@ Standards
 Release Mechanics
 =================
 
-* `Link to release plan <https://wiki.opendaylight.org/view/SNMP_Plugin:Nitrogen_Release_Plan>`_
-* Describe any major shifts in release schedule from the release plan
-
-  None
+* `Link to release plan <https://wiki.opendaylight.org/view/SNMP_Plugin:Oxygen_Release_Plan>`_
