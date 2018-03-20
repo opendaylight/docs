@@ -5,7 +5,7 @@ YANG Tools
 Major Features
 ==============
 
-Oxgeyn release marks the eightth release of YANG Tools components. The focus
+Oxygen release marks the eighth release of YANG Tools components. The focus
 of this release was to clean up deprecated APIs and perform maintenance
 which requires breaking API compatibility -- hence producing a 2.0.x release
 train.
