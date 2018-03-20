@@ -6,7 +6,7 @@ Major Features
 ==============
 
 odl-openflowjava-protocol
-------------------------------------
+-------------------------
 
 * **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=openflowplugin.git;a=blob;f=openflowjava/features-openflowjava-aggregator/odl-openflowjava-protocol/pom.xml
 * **Feature Description:** OpenFlow protocol implementation
@@ -15,15 +15,7 @@ odl-openflowjava-protocol
 * **Experimental:** No
 * **CSIT Test:**
 
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-flow-services-all-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-flow-services-frs-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-3node-clustering-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-periodic-bulkomatic-perf-daily-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-3node-periodic-bulkomatic-clustering-perf-daily-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-periodic-gate-scale-stats-collection-daily-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-periodic-scale-stats-collection-daily-frs-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-periodic-sw-scalability-daily-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-periodic-link-scalability-daily-only-nitrogen/
+  * https://jenkins.opendaylight.org/releng/view/openflowplugin-oxygen/
 
 odl-openflowplugin-app-config-pusher
 ------------------------------------
@@ -35,15 +27,7 @@ odl-openflowplugin-app-config-pusher
 * **Experimental:** No
 * **CSIT Test:**
 
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-flow-services-all-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-flow-services-frs-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-3node-clustering-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-periodic-bulkomatic-perf-daily-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-3node-periodic-bulkomatic-clustering-perf-daily-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-periodic-gate-scale-stats-collection-daily-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-periodic-scale-stats-collection-daily-frs-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-periodic-sw-scalability-daily-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-periodic-link-scalability-daily-only-nitrogen/
+  * https://jenkins.opendaylight.org/releng/view/openflowplugin-oxygen/
 
 odl-openflowplugin-app-forwardingrules-manager
 ----------------------------------------------
@@ -55,8 +39,7 @@ odl-openflowplugin-app-forwardingrules-manager
 * **Experimental:** No
 * **CSIT Test:**
 
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-flow-services-all-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-periodic-gate-scale-stats-collection-daily-only-nitrogen/
+  * https://jenkins.opendaylight.org/releng/view/openflowplugin-oxygen/
 
 odl-openflowplugin-app-forwardingrules-sync
 -------------------------------------------
@@ -68,8 +51,7 @@ odl-openflowplugin-app-forwardingrules-sync
 * **Experimental:** Yes
 * **CSIT Test:**
 
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-flow-services-frs-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-periodic-scale-stats-collection-daily-frs-only-nitrogen/
+  * https://jenkins.opendaylight.org/releng/view/openflowplugin-oxygen/job/openflowplugin-csit-1node-flow-services-all-oxygen/
 
 odl-openflowplugin-app-table-miss-enforcer
 ------------------------------------------
@@ -81,8 +63,7 @@ odl-openflowplugin-app-table-miss-enforcer
 * **Experimental:** No
 * **CSIT Test:**
 
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-periodic-sw-scalability-daily-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-periodic-link-scalability-daily-only-nitrogen/
+  * https://jenkins.opendaylight.org/releng/view/openflowplugin-oxygen/
 
 odl-openflowplugin-app-topology
 -------------------------------
@@ -94,15 +75,7 @@ odl-openflowplugin-app-topology
 * **Experimental:** No
 * **CSIT Test:**
 
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-flow-services-all-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-flow-services-frs-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-3node-clustering-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-periodic-bulkomatic-perf-daily-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-3node-periodic-bulkomatic-clustering-perf-daily-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-periodic-gate-scale-stats-collection-daily-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-periodic-scale-stats-collection-daily-frs-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-periodic-sw-scalability-daily-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-periodic-link-scalability-daily-only-nitrogen/
+  * https://jenkins.opendaylight.org/releng/view/openflowplugin-oxygen/
 
 odl-openflowplugin-nxm-extensions
 ---------------------------------
@@ -114,7 +87,7 @@ odl-openflowplugin-nxm-extensions
 * **Experimental:** No
 * **CSIT Test:**
 
-  * https://jenkins.opendaylight.org/releng/view/netvirt/job/netvirt-csit-1node-openstack-newton-upstream-stateful-snat-conntrack-nitrogen/
+  * https://jenkins.opendaylight.org/releng/view/netvirt/job/netvirt-csit-1node-openstack-pike-gate-stateful-snat-conntrack-oxygen/
 
 
 odl-openflowplugin-onf-extensions
@@ -137,15 +110,7 @@ odl-openflowplugin-flow-services
 * **Experimental:** No
 * **CSIT Test:**
 
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-flow-services-all-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-flow-services-frs-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-3node-clustering-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-periodic-bulkomatic-perf-daily-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-3node-periodic-bulkomatic-clustering-perf-daily-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-periodic-gate-scale-stats-collection-daily-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-periodic-scale-stats-collection-daily-frs-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-periodic-sw-scalability-daily-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-periodic-link-scalability-daily-only-nitrogen/
+  * https://jenkins.opendaylight.org/releng/view/openflowplugin-oxygen/
 
 odl-openflowplugin-flow-services-rest
 -------------------------------------
@@ -157,15 +122,7 @@ odl-openflowplugin-flow-services-rest
 * **Experimental:** No
 * **CSIT Test:**
 
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-flow-services-all-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-flow-services-frs-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-3node-clustering-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-periodic-bulkomatic-perf-daily-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-3node-periodic-bulkomatic-clustering-perf-daily-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-periodic-gate-scale-stats-collection-daily-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-periodic-scale-stats-collection-daily-frs-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-periodic-sw-scalability-daily-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-periodic-link-scalability-daily-only-nitrogen/
+  * https://jenkins.opendaylight.org/releng/view/openflowplugin-oxygen/
 
 odl-openflowplugin-flow-services-ui
 -----------------------------------
@@ -177,15 +134,7 @@ odl-openflowplugin-flow-services-ui
 * **Experimental:** No
 * **CSIT Test:**
 
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-flow-services-all-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-flow-services-frs-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-3node-clustering-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-periodic-bulkomatic-perf-daily-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-3node-periodic-bulkomatic-clustering-perf-daily-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-periodic-gate-scale-stats-collection-daily-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-periodic-scale-stats-collection-daily-frs-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-periodic-sw-scalability-daily-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-periodic-link-scalability-daily-only-nitrogen/
+  * https://jenkins.opendaylight.org/releng/view/openflowplugin-oxygen/
 
 odl-openflowplugin-nsf-model
 ----------------------------
@@ -197,15 +146,7 @@ odl-openflowplugin-nsf-model
 * **Experimental:** No
 * **CSIT Test:**
 
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-flow-services-all-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-flow-services-frs-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-3node-clustering-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-periodic-bulkomatic-perf-daily-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-3node-periodic-bulkomatic-clustering-perf-daily-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-periodic-gate-scale-stats-collection-daily-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-periodic-scale-stats-collection-daily-frs-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-periodic-sw-scalability-daily-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-periodic-link-scalability-daily-only-nitrogen/
+  * https://jenkins.opendaylight.org/releng/view/openflowplugin-oxygen/
 
 odl-openflowplugin-southbound
 -----------------------------
@@ -217,15 +158,7 @@ odl-openflowplugin-southbound
 * **Experimental:** No
 * **CSIT Test:**
 
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-flow-services-all-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-flow-services-frs-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-3node-clustering-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-periodic-bulkomatic-perf-daily-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-3node-periodic-bulkomatic-clustering-perf-daily-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-periodic-gate-scale-stats-collection-daily-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-periodic-scale-stats-collection-daily-frs-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-periodic-sw-scalability-daily-only-nitrogen/
-  * https://jenkins.opendaylight.org/releng/view/openflowplugin/job/openflowplugin-csit-1node-periodic-link-scalability-daily-only-nitrogen/
+  * https://jenkins.opendaylight.org/releng/view/openflowplugin-oxygen/
 
 Documentation
 =============
@@ -253,35 +186,33 @@ Security Considerations
 Quality Assurance
 =================
 
-* `Link to Sonar Report <https://sonar.opendaylight.org/overview?id=org.opendaylight.openflowplugin%3Aopenflowplugin-aggregator>`_ (73.8)
-* `Link to CSIT Jobs <https://jenkins.opendaylight.org/releng/view/openflowplugin/>`_
+* `Link to Sonar Report <https://sonar.opendaylight.org/dashboard?id=org.opendaylight.openflowplugin%3Aopenflowplugin-aggregator>`_ (73.8)
+* `Link to CSIT Jobs <https://jenkins.opendaylight.org/releng/view/openflowplugin-oxygen/>`_
 
 Migration
 ---------
 
 * Is it possible to migrate from the previous release? If so, how?
 
-  Yes, OpenFlowJava was merged into OpenFlowPlugin, so if project was relying on **org.opendaylight.openflowjava** dependency, it was moved to **org.opendaylight.openflowplugin.openflowjava**. Feature **odl-openflowjava-protocol** is same as before.
+  Yes, API's from Nitrogen release are supported in Oxygen release.
 
 Compatibility
 -------------
 
 * Is this release compatible with the previous release? Yes
-* Any API changes? Yes, `mastershipChangeServiceManager <https://git.opendaylight.org/gerrit/gitweb?p=openflowplugin.git;a=blob;f=openflowplugin-api/src/main/java/org/opendaylight/openflowplugin/api/openflow/mastership/MastershipChangeServiceManager.java>` and `reconcilliationManager <https://git.opendaylight.org/gerrit/gitweb?p=openflowplugin.git;a=blob;f=applications/reconciliation-framework/src/main/java/org/opendaylight/openflowplugin/applications/reconciliation/ReconciliationManager.java>` blueprint services was added
-* Any configuration changes? Yes, **bundle-based-reconcilliation** flag was added to `configuration file <https://git.opendaylight.org/gerrit/gitweb?p=openflowplugin.git;a=blob;f=openflowplugin-blueprint-config/src/main/resources/initial/openflowplugin.cfg#l33>`
 
 Bugs Fixed
 ----------
 
 * List of bugs fixed since the previous release
 
-  https://bugs.opendaylight.org/buglist.cgi?chfieldfrom=2017-05-25&chfieldto=2017-09-12&list_id=78767&product=openflowplugin&query_format=advanced&resolution=FIXED
+  https://jira.opendaylight.org/browse/OPNFLWPLUG-974?jql=project%20%3D%20OPNFLWPLUG%20AND%20issuetype%20%3D%20Bug%20AND%20status%20in%20(Resolved%2C%20Verified)%20AND%20fixVersion%20in%20(Oxygen%2C%20Nitrogen%2C%20Nitrogen-SR1)%20ORDER%20BY%20created%20DESC
 
 Known Issues
 ------------
 
 * List key known issues with workarounds: None
-* `Link to Open Bugs <https://bugs.opendaylight.org/buglist.cgi?bug_severity=blocker&bug_severity=critical&bug_severity=major&bug_severity=normal&bug_severity=minor&bug_severity=trivial&bug_status=UNCONFIRMED&bug_status=CONFIRMED&bug_status=IN_PROGRESS&bug_status=WAITING_FOR_REVIEW&component=General&list_id=78939&product=openflowplugin&query_format=advanced&resolution=--->`_
+* `Link to Open Bugs <https://jira.opendaylight.org/browse/OPNFLWPLUG-987?jql=project%20%3D%20OPNFLWPLUG%20AND%20issuetype%20%3D%20Bug%20AND%20status%20in%20(Open%2C%20%22In%20Progress%22%2C%20Confirmed)%20ORDER%20BY%20created%20DESC>`_
 
 End-of-life
 ===========
@@ -299,4 +230,4 @@ OpenFlow versions:
 Release Mechanics
 =================
 
-* `Link to release plan <https://wiki.opendaylight.org/view/OpenDaylight_OpenFlow_Plugin:Nitrogen_Release_Plan>`_
+* `Link to release plan <https://wiki.opendaylight.org/view/OpenDaylight_OpenFlow_Plugin:Oxygen_Release_Plan>`_
