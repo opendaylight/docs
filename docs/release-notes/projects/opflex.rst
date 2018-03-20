@@ -63,7 +63,7 @@ Quality Assurance
 
 * OpFlex projects are tested with extensive unit testing as well as
   Cisco-internal automated testing with ACI.
-* Unit tests run as part of `regular build <https://jenkins.opendaylight.org/releng/view/opflex/job/opflex-merge-nitrogen/26/>`_
+* Unit tests run as part of `regular build <https://jenkins.opendaylight.org/releng/view/opflex/job/opflex-merge-oxygen/43/>`_
 
 Migration
 ---------
@@ -75,16 +75,15 @@ Compatibility
 
 OpFlex GBP model and configuration files remain backward compatible.
 
-Changes since previous release
-------------------------------
+Bugs Fixed
+----------
 
-* Advertise external services on their interface with ARP/ND packets
-  when the interface comes up.
-* Always allow ARP and ND packets without contracts
-* Improved robustness of agent shutdown and OpenFlow socket
-  reconnections
-* Clean up endpoint-related OpenFlow rules when EPG is removed with
-  endpoint remaining
+* Occasionally would hang when restarting from a configuration reload.
+* Fix a possible memory leak when sending packets through packet-out
+* Fix an occasional crash when reporting statistics for removed
+  endpoints or policy
+* Other minor issues fixed.
+
 
 Known Issues
 ------------
