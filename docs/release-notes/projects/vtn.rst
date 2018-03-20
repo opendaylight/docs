@@ -8,23 +8,23 @@ Major Features
 odl-vtn-manager-rest
 --------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=vtn.git;a=blob;f=manager/features/odl-vtn-manager-rest/pom.xml;h=c130771e9dbc0d77dddf9b81a65d1a0c9aab936c;hb=refs/heads/stable/nitrogen#l24
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=vtn.git;a=blob;f=manager/features/odl-vtn-manager-rest/pom.xml;h=f47f7681bc04f054e8dbaa69a01ae600ef9e60b7;hb=refs/heads/stable/oxygen#l24
 * **Feature Description:**  This is the feature that allows users to use the VTN virtualization, by creating the various components as needed for the network.
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** No
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-csit-1node-manager-all-nitrogen/
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-csit-1node-manager-all-oxygen/
 
 
 odl-vtn-manager-neutron
 ----------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=vtn.git;a=blob;f=manager/features/odl-vtn-manager-neutron/pom.xml;h=600411e41a52ddc8ac90e9a3c5c58b73ed774b8c;hb=refs/heads/stable/nitrogen#l24
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=vtn.git;a=blob;f=manager/features/odl-vtn-manager-neutron/pom.xml;h=39c9d48dd430f5970860566a5f888b4b6c269992;hb=refs/heads/stable/oxygen#l24
 * **Feature Description:**  This feature provides support for integration with Openstack (L2 API)
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** No
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-csit-1node-openstack-newton-neutron-nitrogen/
+* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/vtn/job/vtn-csit-1node-openstack-pike-neutron-oxygen/
 
 Documentation
 =============
@@ -54,7 +54,7 @@ Quality Assurance
 * `Link to Sonar Report <https://sonar.opendaylight.org/dashboard?id=org.opendaylight.vtn%3Adistribution&did=1>`_ (56.2%)
 * `Link to CSIT Jobs <https://jenkins.opendaylight.org/releng/view/vtn/>`_
 *  CSIT covers most of the options in RESTCONF
-*  The 3 node deployment has not been tested well.
+*  The 3 node deployment is experimental and not well tested.
 
 Migration
 ---------
@@ -69,8 +69,10 @@ Compatibility
 Bugs Fixed
 ----------
 
-* 8761 - VTN coordinator Portmapping fails due to unnecessary hex conversion.
-* 9024 - VTN Manager Set null to bundle version qualifier if it is empty.
+* vtn-164 - VTN Coordinator Flowlistentry Creation fails for "port-from" and "port-to"
+* vtn-165 - UDP L4 match details of source and destination creation failure in Flowlistentry
+* vtn-166 - vtn-inet-match protocol and dscp values not mapped from VTN Coordinator to VTN manager
+* vtn-167 - VTN Coodinator: Upgrading Tomcat to 7.0.81
 
 Known Issues
 ------------
@@ -90,5 +92,5 @@ Standards
 Release Mechanics
 =================
 
-* `Link to release plan <https://wiki.opendaylight.org/view/VTN:Nitrogen_Release_Plan>`_
+* `Link to release plan <https://wiki.opendaylight.org/view/VTN:Oxygen_Release_Plan>`_
 * There was no deviation from the plan.
