@@ -475,12 +475,116 @@ Basic Conditions
 ````````````````
 ODL BGP by default provides support for a group of BGP Conditions.
 
+Match BGP Neighbor Set
+''''''''''''''''''''''
+
+.. code-block:: xml
+   :linenos:
+   :emphasize-lines: 3,4,5,6
+
+    <conditions>
+        <bgp-conditions xmlns="http://openconfig.net/yang/bgp-policy">
+            <match-bgp-neighbor-set xmlns="urn:opendaylight:params:xml:ns:yang:odl:bgp:default:policy">
+                <from-neighbor>
+                    <neighbor-set>/rpol:routing-policy/rpol:defined-sets/rpol:neighbor-sets/neighbor-set[neighbor-set-name="bgp-neighbor-set-example"</neighbor-set>
+                    <match-set-options>INVERT</match-set-options>
+                </from-neighbor>
+            </match-bgp-neighbor-set>
+        </bgp-conditions>
+    </conditions>
+
+@line 3: Match BGP Neighbor Condition set.
+
+@line 4: Match BGP Neighbor from whom we receive the route.
+
+@line 5: Match BGP Neighbor Set reference.
+
+@line 6: Match Set Options (ANY, INVERT)
+
+.. code-block:: xml
+   :linenos:
+   :emphasize-lines: 3,4,5,6
+
+    <conditions>
+        <bgp-conditions xmlns="http://openconfig.net/yang/bgp-policy">
+            <match-bgp-neighbor-set xmlns="urn:opendaylight:params:xml:ns:yang:odl:bgp:default:policy">
+                <to-neighbor>
+                    <neighbor-set>/rpol:routing-policy/rpol:defined-sets/rpol:neighbor-sets/neighbor-set[neighbor-set-name="bgp-neighbor-set-example"</neighbor-set>
+                    <match-set-options>INVERT</match-set-options>
+                </to-neighbor>
+            </match-bgp-neighbor-set>
+        </bgp-conditions>
+    </conditions>
+
+@line 3: Match BGP Neighbor Condition set.
+
+@line 4: Match BGP Neighbor to whom we send the route.
+
+@line 5: Match BGP Neighbor Set reference.
+
+@line 6: Match Set Options (ANY, INVERT)
+
+.. code-block:: xml
+   :linenos:
+   :emphasize-lines: 3,5,6
+
+    <conditions>
+        <bgp-conditions xmlns="http://openconfig.net/yang/bgp-policy">
+            <match-bgp-neighbor-set xmlns="urn:opendaylight:params:xml:ns:yang:odl:bgp:default:policy">
+                <from-neighbor>
+                    <neighbor-set>/rpol:routing-policy/rpol:defined-sets/rpol:neighbor-sets/neighbor-set[neighbor-set-name="bgp-neighbor-set-example"</neighbor-set>
+                </from-neighbor>
+                <to-neighbor>
+                    <neighbor-set>/rpol:routing-policy/rpol:defined-sets/rpol:neighbor-sets/neighbor-set[neighbor-set-name="bgp-neighbor-set-example"</neighbor-set>
+                    <match-set-options>INVERT</match-set-options>
+                </to-neighbor>
+            </match-bgp-neighbor-set>
+        </bgp-conditions>
+    </conditions>
+
+@line 3: Match BGP Neighbor Condition set.
+
+@line 4: Match BGP Neighbor from whom we receive the route.
+
+@line 5: Match BGP Neighbor Set reference.
+
+@line 7: Match BGP Neighbor to whom we send the route.
+
+@line 8: Match BGP Neighbor Set reference.
+
+@line 9: Match Set Options (ANY, INVERT)
+
+-----
+
+Defined set
+
+.. code-block:: xml
+   :linenos:
+   :emphasize-lines: 3,5
+    <defined-sets>
+	<neighbor-sets>
+            <neighbor-set>
+                <neighbor-set-name>bgp-neighbor-set-example</neighbor-set-name>
+                <neighbor>
+                    <address>127.0.0.1</address>
+                </neighbor>
+                <neighbor>
+                    <address>127.0.0.2</address>
+                </neighbor>
+            </neighbor-set>
+        </neighbor-sets>
+    </defined-sets>
+
+@line 3: Originator Id Set.
+
+@line 5: Originator Id Set name.
+
 Match Originator Id Set
 '''''''''''''''''''''''    
 
 .. code-block:: xml
    :linenos:
-   :emphasize-lines: 3,5
+   :emphasize-lines: 3,5,7
 
     <conditions>
         <bgp-conditions xmlns="http://openconfig.net/yang/bgp-policy">
@@ -496,6 +600,8 @@ Match Originator Id Set
 @line 3: Match Originator Id Condition set.
 
 @line 5: Match Originator Id Set reference.
+
+@line 7: Match Set Options (ANY, INVERT)
 
 -----
 
