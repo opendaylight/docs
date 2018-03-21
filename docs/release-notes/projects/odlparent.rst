@@ -45,8 +45,8 @@ Migration
 
 * Is it possible to migrate from the previous release? If so, how?
 
-  Yes. Migration to this release involves migrating features to Karaf 4; see
-  `the wiki <https://wiki.opendaylight.org/view/Karaf_4_migration>`_ for details.
+  Yes. Projects may encounter issues upgrading to Karaf 4.1, which is used in
+  this release; however there aren’t generic upgrade instructions.
 
 Compatibility
 -------------
@@ -57,7 +57,30 @@ Compatibility
 
 * Any API changes?
 
-  All Karaf 3 features have been removed in favour of (compatible) Karaf 4 features.
+  The ``odl-triemap-0.2`` feature wrapping
+  ``com.github.romix:java-concurrent-hash-trie-map`` was rendered obsolete by
+  YANG Tools' implementation and has been removed.
+
+  The following third-party dependencies have been removed from dependency
+  management:
+
+    * Chameleon MBeans
+    * Eclipse Link
+    * Equinox HTTP service bridge
+    * ``equinoxSDK381`` artifacts
+    * Coda Hale Metrics, which are mostly unused and should eventually be wrapped
+      by InfraUtils
+    * ``com.google.code.findbugs:jsr305`` (which *must not* be used; this is
+      enforced — ``annotations`` should be used instead)
+    * Felix File Install and Web Console
+    * Gemini Web
+    * Orbit
+    * ``org.mockito:mockito-all`` (which *must not* be used; this is enforced —
+      ``mockito-core`` should be used instead)
+    * Spring Framework
+    * ``txw2``
+    * Xerces
+    * ``xml-apis``
 
 * Any configuration changes?
 
@@ -66,19 +89,17 @@ Compatibility
 Bugs Fixed
 ----------
 
-* `4219: Milestone: Upgrade karaf to 4.0.1 or later <https://bugs.opendaylight.org/show_bug.cgi?id=4219>`_
-* `6278: karaf-parent belongs in odlparent <https://bugs.opendaylight.org/show_bug.cgi?id=6278>`_
-* `6523: org.osgi.service.blueprint.container.ComponentDefinitionException Caused by: java.lang.RuntimeException at org.objectweb.asm.MethodVisitor.visitParameter <https://bugs.opendaylight.org/show_bug.cgi?id=6523>`_
-* `6652: Migrate to karaf-maven-plugin features generation <https://bugs.opendaylight.org/show_bug.cgi?id=6652>`_
-* `6709: Migrate dependent projects off opendaylight-karaf-empty <https://bugs.opendaylight.org/show_bug.cgi?id=6709>`_
-* `6730: Upgrade shiro to current compatible release <https://bugs.opendaylight.org/show_bug.cgi?id=6730>`_
-* `7446: Milestone: upgrade to guava-22 <https://bugs.opendaylight.org/show_bug.cgi?id=7446>`_
-* `7813: karaf: do not package spring<https://bugs.opendaylight.org/show_bug.cgi?id=7813>`_
+* `66: Consolidate web services to bind to a single port <https://jira.opendaylight.org/browse/ODLPARENT-66>`_
+* `86: Milestone: Upgrade karaf to 4.1.2 or later <https://jira.opendaylight.org/browse/ODLPARENT-86>`_
+* `121: Upgrade maven-javadoc-plugin to 3.0.0 <https://jira.opendaylight.org/browse/ODLPARENT-121>`_
+* `132: odlparent 2.0.5 depends on servlet-api/3.0.1, whereas Karaf 4 depends on /3.1.0 <https://jira.opendaylight.org/browse/ODLPARENT-132>`_
+* `133: Our base distribution doesn’t include webconsole <https://jira.opendaylight.org/browse/ODLPARENT-133>`_
+* `135: Karaf feature:installation “deadlock” <https://jira.opendaylight.org/browse/ODLPARENT-135>`_
 
 Known Issues
 ------------
 
-* `Link to Open Bugs <https://bugs.opendaylight.org/buglist.cgi?bug_status=UNCONFIRMED&bug_status=CONFIRMED&bug_status=IN_PROGRESS&bug_status=WAITING_FOR_REVIEW&product=odlparent>`_
+* `Link to Open Bugs <https://jira.opendaylight.org/browse/ODLPARENT>`_
 
 End-of-life
 ===========
@@ -93,4 +114,4 @@ Standards
 Release Mechanics
 =================
 
-* `Link to release plan <https://wiki.opendaylight.org/view/ODL_Parent:Nitrogen_Release_Plan>`_
+* `Link to release plan <https://wiki.opendaylight.org/view/ODL_Parent:Oxygen_Release_Plan>`_
