@@ -8,7 +8,7 @@ Major Features
 odl-dlux-core
 ------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/#/c/61762/1/features/odl-dlux-core/pom.xml
+* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=dlux.git;a=blob;f=features/odl-dlux-core/pom.xml;h=8226826118c376b79924327acc656945938fcb14;hb=refs/heads/stable/oxygen
 * **Feature Description:**  Core DLUX functionality
 * **Top Level:** Yes
 * **User Facing:** Yes
@@ -46,12 +46,12 @@ Compatibility
 Bugs Fixed
 ----------
 
-https://bugs.opendaylight.org/buglist.cgi?bug_status=__closed__&content=&no_redirect=1&order=Importance&product=dlux&query_format=specific
+https://jira.opendaylight.org/browse/DLUX-115?jql=project%20%3D%20DLUX%20AND%20resolution%20in%20(Done)
 
 Known Issues
 ------------
 
-* `Link to Open Bugs <https://bugs.opendaylight.org/buglist.cgi?bug_status=__open__&content=&no_redirect=1&order=Importance&product=dlux&query_format=specific>`_
+* `Link to Open Bugs <https://jira.opendaylight.org/projects/DLUX/issues/DLUX-67?filter=allopenissues>`_
 
 End-of-life
 ===========
@@ -68,4 +68,4 @@ Standards
 Release Mechanics
 =================
 
-* `Link to release plan <https://wiki.opendaylight.org/view/OpenDaylight_dlux:Nitrogen_Release_Plan>`_
+* `Link to release plan <https://wiki.opendaylight.org/view/OpenDaylight_dlux:Oxygen_Release_Plan>`_
