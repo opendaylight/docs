@@ -19,7 +19,7 @@ ignore = .**,
 max_line_length = 120
 
 [reStructuredText]
-bears = RSTcheckBear,SpaceConsistencyBear
+bears = SpaceConsistencyBear
 files = **.rst
 ignore = .**,
     docs/developer-guide/**,
@@ -43,4 +43,3 @@ ignore = .**,
     docs/submodules/spectrometer/**,
     docs/templates/template-user-guide.rst,
     docs/user-guide/**
-
