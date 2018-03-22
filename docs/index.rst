@@ -50,6 +50,7 @@ participate in the development of OpenDaylight or would like to start.
 * :ref:`Infrastructure Guide <odl-infra>`
 * :doc:`Integration Testing Guide <odl-integration-test:index>`
 * :doc:`Integration Packaging Guide <odl-integration-packaging:index>`
+* :doc:`NetVirt Documentation <netvirt:index>`
 
 .. toctree::
    :maxdepth: 1
@@ -59,7 +60,6 @@ participate in the development of OpenDaylight or would like to start.
    release-process/index
    submodules/genius/docs/index
    submodules/infrautils/docs/index
-   submodules/netvirt/docs/index
    submodules/openflowplugin/docs/index
    submodules/sfc/docs/index
 
