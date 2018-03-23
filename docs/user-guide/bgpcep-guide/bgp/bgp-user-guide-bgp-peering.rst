@@ -562,35 +562,6 @@ A sample basic neighbor configuration using a peer group follows:
 
 @line 4: Peer group identifier.
 
-Simple Routing Policy configuration
-'''''''''''''''''''''''''''''''''''
-The OpenDaylight BGP implementation is supporting *Simple Routing Policy*.
-Sample configuration below shows how to set *Simple Routing Policy* for a peer:
-
-**URL:** ``/restconf/config/openconfig-network-instance:network-instances/network-instance/global-bgp/openconfig-network-instance:protocols/protocol/openconfig-policy-types:BGP/bgp-example/bgp/neighbors``
-
-**Method:** ``POST``
-
-**Content-Type:** ``application/xml``
-
-**Request Body:**
-
-.. code-block:: xml
-   :linenos:
-   :emphasize-lines: 4
-
-   <neighbor xmlns="urn:opendaylight:params:xml:ns:yang:bgp:openconfig-extensions">
-       <neighbor-address>192.0.2.7</neighbor-address>
-       <config>
-           <simple-routing-policy>learn-none</simple-routing-policy>
-       </config>
-   </neighbor>
-
-@line 4: *Simple Routing Policy*:
-
-   * ``learn-none`` - routes advertised by the peer are not propagated to Effective-RIB-In and Loc-RIB
-   * ``announce-none`` - routes from local Loc-RIB are not advertised to the peer
-
 .. note:: Existing neighbor configuration can be reconfigured (change configuration parameters) anytime.
    As a result, established connection is dropped, peer instance is recreated with a new configuration settings and connection re-established.
 
