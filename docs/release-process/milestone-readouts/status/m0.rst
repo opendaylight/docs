@@ -1,0 +1,349 @@
+Milestone 0 Status
+==================
+
+.. list-table:: Milestone 0 Status
+   :widths: auto
+   :header-rows: 1
+
+   * - Project ID
+     - Offset
+     - Category
+     - Labels
+     - Project Technical Lead
+     - Committers Updated
+   * - aaa
+     - Offset 0
+     - Kernel
+     - Authentication, Authorization and Accounting, AAA
+     - :name: Ryan Goulding
+       :email: ryandgoulding@gmail.com
+       :irc: rgoulding
+     - No, working on this.
+   * - alto
+     - Offset 2
+     - Service
+     - ALTO, network abstraction, network optimization
+     - :name: Kai Gao
+       :email: gaok12@mails.tsinghua.edu.cn
+       :irc: emiapwil
+     - Yes
+   * - bgppcep
+     - Offset 1
+     - Protocol
+     - bgp, bmp, pcep, bgp pcep ls
+     - :name: Claudio D. Gasparini
+       :email: claudio.gasparini@pantheon.tech
+       :irc: cgasparini
+     - Yes
+   * - bier
+     - Offset 2
+     - Service
+     - BIER, multicast
+     - :name: Quan Xiong
+       :email: xiong.quan@zte.com.cn
+       :irc: xiong.quan
+     - Yes
+   * - coe
+     - Offset 2
+     - Application
+     - Kubernetes integration, Kuryr, Containers
+     - :name: Prem Sankar G
+       :email: prem.sankar.g@ericsson.com
+       :irc: premsankar
+     - Yes
+   * - controller
+     - Offset 0
+     - Kernel
+     - Controller
+     - :name: Tom Pantelis
+       :email: tompantelis@gmail.com
+       :irc: tpanteli
+     - Yes
+   * - daexim
+     - Offset 2
+     - Application
+     - Data Export Import, daexim
+     - :name: Shaleen Saxena
+       :email: shaleen.external@gmail.com
+       :irc: ssaxena
+     - Yes
+   * - dluxapps
+     - Offset 1
+     - Application
+     - ui, gui, angular, javascript, frontend
+     - :name: Daniel Malachovsky
+       :email: dmalacho@cisco.com
+       :irc: dmalachovsky
+     - Yes
+   * - dlux
+     - Offset 1
+     - Application
+     - ui, gui, angular, javascript, frontend
+     - :name: Daniel Malachovsky
+       :email: dmalacho@cisco.com
+       :irc: dmalachovsky
+     - Yes
+   * - eman
+     - Offset 2
+     - Application
+     - energy management
+     - :name: Frank Sandoval
+       :email: francisrsandoval@gmail.com
+       :irc: francisrsandoval
+     - Yes
+   * - faas
+     - Offset 2
+     - Application
+     - Fabric, Logic Network Service
+     - :name: Xingjun Chu
+       :email: Xingjun.Chu@huawei.com
+       :irc: xingjun
+     - Yes
+   * - genius
+     - Offset 1
+     - Protocol
+     - Network Interfaces Utilities Services
+     - :name: Vivek Srivastava
+       :email: vivek.v.srivastava@ericsson.com
+       :irc: vivek.v.srivastava
+     - Yes
+   * - groupbasedpolicy
+     - Offset 2
+     - Application
+     - groupbasedpolicy, gbp
+     - :name: Michal Cmarada
+       :email: mcmarada@cisco.com
+       :irc: michal-cmarada
+     - Yes
+   * - honeycomb-vbd
+     - Offset 2
+     - Application
+     - honeycomb/vbd, vbd
+     - :name: Michal Cmarada
+       :email: mcmarada@cisco.com
+       :irc: michal-cmarada
+     - Yes
+   * - infrautils
+     - Offset 0
+     - Kernel
+     - infrastructure, utility
+     - :name: Michael Vorburger
+       :email: vorburger@redhat.com
+       :irc: vorburger
+     - Yes
+   * - integration-distribution
+     - Offset 2
+     - Support
+     - distribution, karaf
+     - :name: Vratko Polak
+       :email: vrpolak@cisco.com
+       :irc:
+     - Yes
+   * - jsonrpc
+     - Offset 2
+     - Application
+     - json-rpc, jsonrpc
+     - :name: Anton Ivanov
+       :email: anton.ivanov@kot-begemot.co.uk
+       :irc: aivanov
+     - Yes
+   * - l2switch
+     - Offset 1
+     - Services
+     - hosttracker, arphandler, packethandler, mac learning, openflow
+     - :name: Sai MarapaReddy
+       :email: sai.marapareddy@gmail.com
+       :irc: sai_marapareddy
+     - Yes
+   * - lispflowmapping
+     - Offset 1
+     - Protocol
+     - LISP, mapping service, overlay control pane, VXLAN-GPE
+     - :name: Vina Ermagan
+       :email: vermagan@cisco.com
+       :irc: vina_ermagan
+     - No
+   * - mdsal
+     - Offset 0
+     - Kernel
+     - mdsal
+     - :name: Robert Varga
+       :email: nite@hq.sk
+       :irc: rovarga
+     - Yes
+   * - nemo
+     - Offset 2
+     - Application
+     - network modeling
+     - :name: Tianran Zhou
+       :email: zhoutianran@huawei.com
+       :irc: tianran
+     - Yes
+   * - netconf
+     - Offset 0
+     - Kernel
+     - netconf, restconf
+     - :name: Tomas Cere
+       :email: tcere@cisco.com
+       :irc: tcere
+     - Yes
+   * - netvirt
+     - Offset 2
+     - Application
+     - network virtualization, openstack
+     - :name: Sam Hague
+       :email: shague@redhat.com
+       :irc: shague
+     - Yes
+   * - neutron-northbound
+     - Offset 1
+     - Application
+     - openstack, neutron, networking-odl, northbound, network virtualization
+     - :name: Isaku Yamahata
+       :email: isaku.yamahata@gmail.com
+       :irc: yamahata
+     - Yes
+   * - nic
+     - Offset 2
+     - Application
+     - network intent composition
+     - :name: Yrineu Rodrigues
+       :email: yrineu.rodrigues@serro.com
+       :irc: yrineu_rodrigues
+     - Yes
+   * - ocpplugin
+     - Offset 1
+     - Protocol
+     - OCP plugin, OCP protocol library
+     - :name: Chinning Lai
+       :email: marko.lai@gmail.com
+       :irc: Chinning
+     - Yes
+   * - odlparent
+     - Offset 0
+     - Kernel
+     - parent POMs, SingleFeatureTest, Karaf integration
+     - :name: Stephen Kitt
+       :email: skitt@redhat.com
+       :irc: skitt
+     - Yes
+   * - of-config
+     - Offset 1
+     - Protocol
+     - network modeling, Southbound Plugin
+     - :name: Wei Meng
+       :email: meng.wei2@zte.com.cn
+       :irc: valley
+     - Yes
+   * - openflowplugin
+     - Offset 1
+     - Protocol
+     - OpenFlow Plugin
+     - :name: Abhijit Kumbhare
+       :email: abhijitkoss@gmail.com
+       :irc: abhijitkumbhare
+     - Yes
+   * - opflex
+     - Offset 2
+     - Application
+     - virtual networking
+     - :name: Rob Adams
+       :email: readams@readams.net
+       :irc: readams
+     - Yes
+   * - ovsdb
+     - Offset 1
+     - Protocol
+     - OVSDB Southbound Plugin, OVSDB Hardware, vTep Plugin
+     - :name: Anil Vishnoi
+       :email: vishnoianil@gmail.com
+       :irc: vishnoianil
+     - Yes
+   * - p4plugin
+     - Offset 1
+     - Protocol
+     - P4, P4Runtime, gRPC
+     - :name: Ding Rui
+       :email: ding.rui@zte.com.cn
+       :irc: ding.rui
+     - Yes
+   * - packetcable
+     - Offset 2
+     - Application
+     - cable telephony provisioning, COPS, CMTS
+     - :name: Steve Pisarski
+       :email: s.pisarski@cablelabs.com
+       :irc: spisarski
+     - Yes
+   * - sfc
+     - Offset 2
+     - Application
+     - Service Function Chaining, SFC
+     - :name: Brady Johnson
+       :email: bjohnson@inocybe.com
+       :irc: bjohnson
+     - Yes
+   * - snmp4sdn
+     - Offset 1
+     - Protocol
+     - southbound plugin, commodify Ethernet switch, by SNMP
+     - :name: Christine Hsieh
+       :email: ylhsieh@itri.org.tw
+       :irc: ChristineH
+     - Yes
+   * - snmp
+     - Offset 1
+     - Protocol
+     - SNMP
+     - :name: Ryan Goulding
+       :email: ryandgoulding@gmail.com
+       :irc: rgoulding
+     - No, working on this.
+   * - sxp
+     - Offset 1
+     - Application
+     - SXP
+     - :name: Michal Rehak
+       :email: mirehak@cisco.com
+       :irc: michal_rehak
+     - Yes
+   * - tsdr
+     - Offset 2
+     - Application
+     - Time Series Data Repository
+     - :name: YuLing Chen
+       :email: yulingchen54@gmail.com
+       :irc: yulingchen
+     - No, being updated.
+   * - unimgr
+     - Offset 2
+     - Application
+     - MEF, Eline, netconf, T-API, connectivity services
+     - :name: Donald Hunter
+       :email: donaldh@cisco.com
+       :irc: donaldh
+     - Yes
+   * - usc
+     - Offset 1
+     - Protocol
+     - unified secure channel
+     - :name: An Ho
+       :email: an.ho@huawei.com
+       :irc: anipbu
+     - Yes
+   * - vtn
+     - Offset 2
+     - Application
+     - vtn, virtual tenant network
+     - :name: Hideyuki Tai
+       :email: h-tai@cd.jp.nec.com
+       :irc: hideyuki
+     - Yes
+   * - yangtools
+     - Offset 0
+     - Kernel
+     - YANG
+     - :name: Robert Varga
+       :email: nite@hq.sk
+       :irc: rovarga
+     - No
