@@ -16,6 +16,7 @@ Configuration
    :maxdepth: 2
 
    bgp-user-guide-protocol-configuration
+   bgp-user-guide-rib-config-policies
    bgp-user-guide-bgp-server
    bgp-user-guide-bgp-peering
    bgp-user-guide-bgp-application-peer
