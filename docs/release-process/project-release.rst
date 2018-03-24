@@ -46,7 +46,7 @@ Steps 4-7 as bash:
     PATCH_DIR=/tmp/patches
     PROJECT=odlparent
     VERSION=1.2.3
-    git checkout $(cat "$PATCH_DIR/taglist.log")
+    git checkout $(awk '{print $NF}' "$PATCH_DIR/taglist.log")
     git fetch "$PATCH_DIR/$PROJECT.bundle"
     git merge --ff-only FETCH_HEAD
     git tag -asm "$PROJECT $VERSION" "v$VERSION"
