@@ -37,6 +37,9 @@ Here is a sample basic neighbor configuration:
        <config>
            <peer-type>INTERNAL</peer-type>
        </config>
+       <afi-safis>
+           ...
+       </afi-safis>
    </neighbor>
 
 @line 2: IP address of the remote BGP peer. Also serves as an unique identifier of a neighbor in a list of neighbors.
@@ -50,6 +53,8 @@ Here is a sample basic neighbor configuration:
 @line 12: Wait for peers to issue requests to open a BGP session, rather than initiating sessions from the local router. Default value is **false**.
 
 @line 16: Explicitly designate the peer as internal or external. Default value is **INTERNAL**.
+
+@line 18: Enable families.
 
 -----
 
