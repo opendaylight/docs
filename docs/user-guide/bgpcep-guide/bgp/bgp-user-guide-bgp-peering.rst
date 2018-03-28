@@ -429,6 +429,48 @@ Following configuration sample is intended for route reflector client peering:
 
 @line 8: Configure the neighbor as a route reflector client. Default value is *false*.
 
+Route reflector and Multiple Cluster IDs
+''''''''''''''''''''''''''''''''''''''''
+
+An optional non-transitive attribute called CLUSTER_LIST is modified when route reflector reflects a prefix. Route reflector adds its own cluster ID to it,
+this is used for loop prevention: discard update containing router's own cluster ID. 
+Using multiple cluster ids, allows to spread the update to nodes pertaining to different cluster.
+
+
+.. figure:: ./images/MultipleClustersIds.png
+   :alt: BGP RR Multiple Cluster IDs setup.
+
+Following configuration sample is intended for route reflector client peering using specific cluster id:
+
+**URL:** ``/restconf/config/openconfig-network-instance:network-instances/network-instance/global-bgp/openconfig-network-instance:protocols/protocol/openconfig-policy-types:BGP/bgp-example/bgp/neighbors``
+
+**Method:** ``POST``
+
+**Content-Type:** ``application/xml``
+
+**Request Body:**
+
+.. code-block:: xml
+   :linenos:
+   :emphasize-lines: 5,8
+
+   <neighbor xmlns="urn:opendaylight:params:xml:ns:yang:bgp:openconfig-extensions">
+       <neighbor-address>192.0.2.4</neighbor-address>
+       <config>
+           <peer-type>INTERNAL</peer-type>
+           <route-reflector-cluster-id>192.0.2.4</route-reflector-cluster-id>
+       </config>
+       <route-reflector>
+           <config>
+               <route-reflector-client>true</route-reflector-client>
+           </config>
+       </route-reflector>
+   </neighbor>
+
+@line 5: Route-reflector cluster id to use for this specific neighbor when local router is configured as a route reflector.
+
+@line 8: Configure the neighbor as a route reflector client. Default value is *false*.
+
 MD5 authentication configuration
 ''''''''''''''''''''''''''''''''
 The OpenDaylight BGP implementation is supporting TCP MD5 for authentication.
