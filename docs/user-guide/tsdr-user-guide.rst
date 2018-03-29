@@ -119,8 +119,11 @@ the installation of HBase Data Store from Karaf console.
 
    -  Start Karaf Console
 
-   -  Run the following commands from Karaf Console: feature:install
-      odl-tsdr-hbase
+   -  Run the following commands from Karaf Console:
+
+       ::
+
+           feature:install odl-tsdr-hbase
 
 To Configure Cassandra Data Store
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -142,9 +145,9 @@ Once the TSDR default datastore feature (odl-tsdr-hsqldb-all) is
 enabled, the TSDR captured OpenFlow statistics metrics can be accessed
 from Karaf Console by executing the command
 
-::
+    ::
 
-    tsdr:list <metric-category> <starttimestamp> <endtimestamp>
+        tsdr:list <metric-category> <starttimestamp> <endtimestamp>
 
 wherein
 
@@ -164,19 +167,24 @@ wherein
 To Administer HBase Data Store
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Using Karaf Command to retrieve data from HBase Data Store
+Using Karaf Command to retrieve data from HBase Data Store
 
 The user first need to install hbase data store from karaf console:
 
-feature:install odl-tsdr-hbase
+    ::
+
+        feature:install odl-tsdr-hbase
 
 The user can retrieve the data from HBase data store using the following
 commands from Karaf console:
 
-::
+    ::
 
-    tsdr:list
-    tsdr:list <CategoryName> <StartTime> <EndTime>
+        tsdr:list
+
+    ::
+
+        tsdr:list <CategoryName> <StartTime> <EndTime>
 
 Typing tab will get the context prompt of the arguments when typeing the
 command in Karaf console.
@@ -186,17 +194,20 @@ To Administer Cassandra Data Store
 
 The user first needs to install Cassandra data store from Karaf console:
 
-::
+    ::
 
-    feature:install odl-tsdr-cassandra
+        feature:install odl-tsdr-cassandra
 
 Then the user can retrieve the data from Cassandra data store using the
 following commands from Karaf console:
 
-::
+    ::
 
-    tsdr:list
-    tsdr:list <CategoryName> <StartTime> <EndTime>
+        tsdr:list
+
+    ::
+
+        tsdr:list <CategoryName> <StartTime> <EndTime>
 
 Typing tab will get the context prompt of the arguments when typeing the
 command in Karaf console.
@@ -229,18 +240,6 @@ associated feature install commands:
 
        feature:install odl-tsdr-netflow-statistics-collector
 
--  sFlow Data Collector
-
-   ::
-
-       feature:install odl-tsdr-sflow-statistics-colletor
-
--  SNMP Data Collector
-
-   ::
-
-       feature:install odl-tsdr-snmp-data-collector
-
 -  Syslog Data Collector
 
    ::
@@ -258,6 +257,18 @@ associated feature install commands:
    ::
 
        feature:install odl-tsdr-restconf-collector
+
+-  sFlow Data Collector (experimental)
+
+   ::
+
+       feature:install odl-tsdr-sflow-statistics-colletor
+
+-  SNMP Data Collector (experimental)
+
+   ::
+
+       feature:install odl-tsdr-snmp-data-collector
 
 
 In order to use controller metrics collector, the user needs to install
@@ -281,10 +292,92 @@ Ubuntu:
    directory in your controller home directory and place the
    "sigar-1.6.4.jar" there
 
+
+Querying TSDR from REST APIs
+----------------------------
+
+TSDR provides two REST APIs for querying data stored in TSDR data
+stores.
+
+-  Query of TSDR Metrics
+
+   -  URL: http://localhost:8181/tsdr/metrics/query
+
+   -  Verb: GET
+
+   -  Parameters:
+
+      -  tsdrkey=[NID=][DC=][MN=][RK=]
+
+         ::
+
+             The TSDRKey format indicates the NodeID(NID), DataCategory(DC), MetricName(MN), and RecordKey(RK) of the monitored objects.
+             For example, the following is a valid tsdrkey:
+             [NID=openflow:1][DC=FLOWSTATS][MN=PacketCount][RK=Node:openflow:1,Table:0,Flow:3]
+             The following is also a valid tsdrkey:
+             tsdrkey=[NID=][DC=FLOWSTATS][MN=][RK=]
+             In the case when the sections in the tsdrkey is empty, the query will return all the records in the TSDR data store that matches the filled tsdrkey. In the above example, the query will return all the data in FLOWSTATS data category.
+             The query will return only the first 1000 records that match the query criteria.
+
+      -  from=<time\_in\_seconds>
+
+      -  until=<time\_in\_seconds>
+
+The following is an example curl command for querying metric data from
+TSDR data store:
+
+    ::
+
+        curl -G -v -H "Accept: application/json" -H "Content-Type:
+        application/json" "http://localhost:8181/tsdr/metrics/query"
+        --data-urlencode "tsdrkey=[NID=][DC=FLOWSTATS][MN=][RK=]"
+        --data-urlencode "from=0" --data-urlencode "until=240000000000"\|more
+
+-  Query of TSDR Log type of data
+
+   -  URL:http://localhost:8181/tsdr/logs/query
+
+   -  Verb: GET
+
+   -  Parameters:
+
+      -  tsdrkey=tsdrkey=[NID=][DC=][RK=]
+
+      -      The TSDRKey format indicates the NodeID(NID), DataCategory(DC), and RecordKey(RK) of the monitored objects.
+             For example, the following is a valid tsdrkey:
+             [NID=openflow:1][DC=NETFLOW][RK]
+             The query will return only the first 1000 records that match the query criteria.
+
+      -  from=<time\_in\_seconds>
+
+      -  until=<time\_in\_seconds>
+
+The following is an example curl command for querying log type of data
+from TSDR data store:
+
+    ::
+
+        curl -G -v -H "Accept: application/json" -H "Content-Type: application/json" "http://localhost:8181/tsdr/logs/query"
+        --data-urlencode "tsdrkey=[NID=][DC=NETFLOW][RK=]" --data-urlencode
+        "from=0" --data-urlencode "until=240000000000"\|more
+
+Grafana integration with TSDR
+-----------------------------
+
+TSDR provides northbound integration with Grafana time series data
+visualization tool. All the metric type of data stored in TSDR data
+store can be visualized using Grafana.
+
+For the detailed instruction about how to install and configure Grafana
+to work with TSDR, please refer to the following link:
+
+https://wiki.opendaylight.org/view/Grafana_Integration_with_TSDR_Step-by-Step
+
 Configuring TSDR Data Collectors
 --------------------------------
 
--  SNMP Data Collector Device Credential Configuration
+SNMP Data Collector Device Credential Configuration (experimental)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 After installing SNMP Data Collector, a configuration file under etc/
 directory of ODL distribution is generated: etc/tsdr.snmp.cfg is
@@ -362,85 +455,6 @@ interval will be picked up by TSDR in the next collection cycle.
              }
           }
 
-Querying TSDR from REST APIs
-----------------------------
-
-TSDR provides two REST APIs for querying data stored in TSDR data
-stores.
-
--  Query of TSDR Metrics
-
-   -  URL: http://localhost:8181/tsdr/metrics/query
-
-   -  Verb: GET
-
-   -  Parameters:
-
-      -  tsdrkey=[NID=][DC=][MN=][RK=]
-
-         ::
-
-             The TSDRKey format indicates the NodeID(NID), DataCategory(DC), MetricName(MN), and RecordKey(RK) of the monitored objects.
-             For example, the following is a valid tsdrkey:
-             [NID=openflow:1][DC=FLOWSTATS][MN=PacketCount][RK=Node:openflow:1,Table:0,Flow:3]
-             The following is also a valid tsdrkey:
-             tsdrkey=[NID=][DC=FLOWSTATS][MN=][RK=]
-             In the case when the sections in the tsdrkey is empty, the query will return all the records in the TSDR data store that matches the filled tsdrkey. In the above example, the query will return all the data in FLOWSTATS data category.
-             The query will return only the first 1000 records that match the query criteria.
-
-      -  from=<time\_in\_seconds>
-
-      -  until=<time\_in\_seconds>
-
-The following is an example curl command for querying metric data from
-TSDR data store:
-
-curl -G -v -H "Accept: application/json" -H "Content-Type:
-application/json" "http://localhost:8181/tsdr/metrics/query"
---data-urlencode "tsdrkey=[NID=][DC=FLOWSTATS][MN=][RK=]"
---data-urlencode "from=0" --data-urlencode "until=240000000000"\|more
-
--  Query of TSDR Log type of data
-
-   -  URL:http://localhost:8181/tsdr/logs/query
-
-   -  Verb: GET
-
-   -  Parameters:
-
-      -  tsdrkey=tsdrkey=[NID=][DC=][RK=]
-
-         ::
-
-             The TSDRKey format indicates the NodeID(NID), DataCategory(DC), and RecordKey(RK) of the monitored objects.
-             For example, the following is a valid tsdrkey:
-             [NID=openflow:1][DC=NETFLOW][RK]
-             The query will return only the first 1000 records that match the query criteria.
-
-      -  from=<time\_in\_seconds>
-
-      -  until=<time\_in\_seconds>
-
-The following is an example curl command for querying log type of data
-from TSDR data store:
-
-curl -G -v -H "Accept: application/json" -H "Content-Type:
-application/json" "http://localhost:8181/tsdr/logs/query"
---data-urlencode "tsdrkey=[NID=][DC=NETFLOW][RK=]" --data-urlencode
-"from=0" --data-urlencode "until=240000000000"\|more
-
-Grafana integration with TSDR
------------------------------
-
-TSDR provides northbound integration with Grafana time series data
-visualization tool. All the metric type of data stored in TSDR data
-store can be visualized using Grafana.
-
-For the detailed instruction about how to install and configure Grafana
-to work with TSDR, please refer to the following link:
-
-https://wiki.opendaylight.org/view/Grafana_Integration_with_TSDR_Step-by-Step
-
 Purging Service configuration
 -----------------------------
 
@@ -500,21 +514,28 @@ Instructions
    -  If using mininet, run the following commands from mininet command
       line:
 
-      -  mn --topo single,3 --controller
-         *remote,ip=172.17.252.210,port=6653* --switch
-         ovsk,protocols=OpenFlow13
+    ::
+
+        mn --topo single,3 --controller *remote,ip=172.17.252.210,port=6653* --switch
+        ovsk,protocols=OpenFlow13
 
 -  Install TSDR hbase feature from Karaf:
 
-   -  feature:install odl-tsdr-hbase
+    ::
+
+        feature:install odl-tsdr-hbase
 
 -  Install OpenFlow Statistics Collector from Karaf:
 
-   -  feature:install odl-tsdr-openflow-statistics-collector
+    ::
+
+        feature:install odl-tsdr-openflow-statistics-collector
 
 -  run the following command from Karaf console:
 
-   -  tsdr:list PORTSTATS
+    ::
+
+        tsdr:list PORTSTATS
 
 You should be able to see the interface statistics of the switch(es)
 from the HBase Data Store. If there are too many rows, you can use
@@ -523,9 +544,6 @@ from the HBase Data Store. If there are too many rows, you can use
 By tabbing after "tsdr:list", you will see all the supported data
 categories. For example, "tsdr:list FlowStats" will output the Flow
 statistics data collected from the switch(es).
-
-
-.. include:: tsdr-elastic-search.rst
 
 
 Troubleshooting
@@ -565,12 +583,6 @@ different ways.
       (TLS) since the OpenFlow Plugin that TSDR depends on provides this
       security support.
 
--  SNMP Security
-
-   -  The SNMP version3 has security support. However, since ODL SNMP
-      Plugin that TSDR depends on does not support version 3, we (TSDR)
-      will not have security support at this moment.
-
 -  NetFlow Security
 
    -  NetFlow, which cannot be configured with security so we recommend
@@ -580,6 +592,17 @@ different ways.
 
    -  Syslog, which cannot be configured with security so we recommend
       making sure it flows only over a secured management network.
+
+-  SNMP Security
+
+   -  The SNMP version3 has security support. However, since ODL SNMP
+      Plugin that TSDR depends on does not support version 3, we (TSDR)
+      will not have security support at this moment.
+
+-  sFlow Security
+
+   -  The sflow has security support.
+
 
 Support multiple data stores simultaneously at runtime
 ------------------------------------------------------
@@ -598,11 +621,11 @@ By default, all the types of data are supported in the data store. For
 example, the default content of tsdr-persistence-hsqldb.properties is as
 follows:
 
-::
+   ::
 
-    metric-persistency=true
-    log-persistency=true
-    binary-persistency=true
+      metric-persistency=true
+      log-persistency=true
+      binary-persistency=true
 
 When the user would like to use different data stores to support
 different types of data, he/she could enable or disable a particular
@@ -630,3 +653,4 @@ console. Then the user needs to modify the properties file under
        metric-psersistency=true
        log-persistency=false
        binary-persistency=false
+
