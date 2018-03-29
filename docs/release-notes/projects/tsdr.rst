@@ -6,7 +6,7 @@ Major Features
 ==============
 The Time Series Data Repository (TSDR) project in OpenDaylight (ODL)
 creates a framework for collecting, storing, querying, and maintaining
-time series data from multiple similar and disparate data sources.
+time series data from many similar and disparate data sources.
 
 * **TSDR Features URL:** https://git.opendaylight.org/gerrit/gitweb?p=tsdr.git;a=blob;f=features/features-tsdr/pom.xml
 
@@ -117,14 +117,17 @@ Please provide the URL to each document at docs.opendaylight.org. If the documen
 
 * **Installation Guide(s):**
 
-  * :ref:`TSDR Installation Guide <tsdr-install-guide>`
+  * `TSDR Installation Guide <https://github.com/opendaylight/docs/blob/master/docs/getting-started-guide/project-specific-guides/tsdr-install-guide.rst>`
+  * `TSDR HBase Installation Guide <https://github.com/opendaylight/docs/blob/master/docs/getting-started-guide/project-specific-guides/tsdr-hbase-install-guide.rst>`
+  * `TSDR HSQLDB Installation Guide <https://github.com/opendaylight/docs/blob/master/docs/getting-started-guide/project-specific-guides/tsdr-hsqldb-install-guide.rst>`
 
 * **User Guide(s):**
 
-  * :ref:`TSDR User Guide <tsdr-user-guide>`
-
-* **HSQLDB TSDR User Guide:** https://github.com/opendaylight/docs/blob/stable/lithium/manuals/user-guide/src/main/asciidoc/tsdr/tsdr-hsqldb-user.adoc
-* **HBase TSDR User Guide:** https://github.com/opendaylight/docs/blob/stable/lithium/manuals/user-guide/src/main/asciidoc/tsdr/tsdr-hbase-user.adoc
+  * `TSDR User Guide <https://github.com/opendaylight/docs/blob/master/docs/user-guide/tsdr-user-guide.rst>`
+  * `TSDR HSQLDB User Guide <https://github.com/opendaylight/docs/blob/master/docs/user-guide/tsdr-hsqldb-user-guide.rst>`
+  * `TSDR HBase User Guide <https://github.com/opendaylight/docs/blob/master/docs/user-guide/tsdr-hbase-user-guide.rst>`
+  * `TSDR ElasticSearch User Guide <https://github.com/opendaylight/docs/blob/master/docs/user-guide/tsdr-elastic-search-user-guide.rst>`
+  * `<coming soon> TSDR Grafana User Guide <tsdr-grafana-user-guide>`
 
 Security Considerations
 =======================
@@ -178,7 +181,8 @@ End-of-life
 
 * List of features/APIs which are EOLed, deprecated, and/or removed in this release
 
-  * SNMP data collector was temporarily removed.
+  * experimental SNMP data collector was temporarily removed until further support is found.
+  * experimental sFlow data collector was temporarily removed until further support is found.
 
 Standards
 =========
@@ -189,5 +193,5 @@ Release Mechanics
 =================
 
 * `Link to release plan <https://wiki.opendaylight.org/view/TSDR:TSDR_Oxygen_Release_Plan>`_
-* Describe any major shifts in release schedule from the release plan
-  * N/A.
+* Describe any major shifts in release schedule from the release plan.  None
+
