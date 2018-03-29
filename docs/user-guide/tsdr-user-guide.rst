@@ -164,19 +164,17 @@ wherein
 To Administer HBase Data Store
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Using Karaf Command to retrieve data from HBase Data Store
+Using Karaf Command to retrieve data from HBase Data Store
 
 The user first need to install hbase data store from karaf console:
 
-feature:install odl-tsdr-hbase
+ feature:install odl-tsdr-hbase
 
 The user can retrieve the data from HBase data store using the following
 commands from Karaf console:
 
-::
-
-    tsdr:list
-    tsdr:list <CategoryName> <StartTime> <EndTime>
+ tsdr:list
+ tsdr:list <CategoryName> <StartTime> <EndTime>
 
 Typing tab will get the context prompt of the arguments when typeing the
 command in Karaf console.
@@ -186,17 +184,13 @@ To Administer Cassandra Data Store
 
 The user first needs to install Cassandra data store from Karaf console:
 
-::
-
-    feature:install odl-tsdr-cassandra
+ feature:install odl-tsdr-cassandra
 
 Then the user can retrieve the data from Cassandra data store using the
 following commands from Karaf console:
 
-::
-
-    tsdr:list
-    tsdr:list <CategoryName> <StartTime> <EndTime>
+ tsdr:list
+ tsdr:list <CategoryName> <StartTime> <EndTime>
 
 Typing tab will get the context prompt of the arguments when typeing the
 command in Karaf console.
@@ -229,18 +223,6 @@ associated feature install commands:
 
        feature:install odl-tsdr-netflow-statistics-collector
 
--  sFlow Data Collector
-
-   ::
-
-       feature:install odl-tsdr-sflow-statistics-colletor
-
--  SNMP Data Collector
-
-   ::
-
-       feature:install odl-tsdr-snmp-data-collector
-
 -  Syslog Data Collector
 
    ::
@@ -258,6 +240,18 @@ associated feature install commands:
    ::
 
        feature:install odl-tsdr-restconf-collector
+
+-  sFlow Data Collector (experimental)
+
+   ::
+
+       feature:install odl-tsdr-sflow-statistics-colletor
+
+-  SNMP Data Collector (experimental)
+
+   ::
+
+       feature:install odl-tsdr-snmp-data-collector
 
 
 In order to use controller metrics collector, the user needs to install
@@ -281,86 +275,6 @@ Ubuntu:
    directory in your controller home directory and place the
    "sigar-1.6.4.jar" there
 
-Configuring TSDR Data Collectors
---------------------------------
-
--  SNMP Data Collector Device Credential Configuration
-
-After installing SNMP Data Collector, a configuration file under etc/
-directory of ODL distribution is generated: etc/tsdr.snmp.cfg is
-created.
-
-The following is a sample tsdr.snmp.cfg file:
-
-credentials=[192.168.0.2,public],[192.168.0.3,public]
-
-The above credentials indicate that TSDR SNMP Collector is going to
-connect to two devices. The IPAddress and Read community string of these
-two devices are (192.168.0.2, public), and (192.168.0.3) respectively.
-
-The user can make changes to this configuration file any time during
-runtime. The configuration will be picked up by TSDR in the next cycle
-of data collection.
-
-Polling interval configuration for SNMP Collector and OpenFlow Stats Collector
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The default polling interval of SNMP Collector and OpenFlow Stats
-Collector is 30 seconds and 15 seconds respectively. The user can change
-the polling interval through restconf APIs at any time. The new polling
-interval will be picked up by TSDR in the next collection cycle.
-
--  Retrieve Polling Interval API for SNMP Collector
-
-   -  URL:
-      http://localhost:8181/restconf/config/tsdr-snmp-data-collector:TSDRSnmpDataCollectorConfig
-
-   -  Verb: GET
-
--  Update Polling Interval API for SNMP Collector
-
-   -  URL:
-      http://localhost:8181/restconf/operations/tsdr-snmp-data-collector:setPollingInterval
-
-   -  Verb: POST
-
-   -  Content Type: application/json
-
-   -  Input Payload:
-
-      ::
-
-          {
-             "input": {
-                 "interval": "15000"
-             }
-          }
-
--  Retrieve Polling Interval API for OpenFlowStats Collector
-
-   -  URL:
-      http://localhost:8181/restconf/config/tsdr-openflow-statistics-collector:TSDROSCConfig
-
-   -  Verb: GET
-
--  Update Polling Interval API for OpenFlowStats Collector
-
-   -  URL:
-      http://localhost:8181/restconf/operations/tsdr-openflow-statistics-collector:setPollingInterval
-
-   -  Verb: POST
-
-   -  Content Type: application/json
-
-   -  Input Payload:
-
-      ::
-
-          {
-             "input": {
-                 "interval": "15000"
-             }
-          }
 
 Querying TSDR from REST APIs
 ----------------------------
@@ -440,6 +354,88 @@ For the detailed instruction about how to install and configure Grafana
 to work with TSDR, please refer to the following link:
 
 https://wiki.opendaylight.org/view/Grafana_Integration_with_TSDR_Step-by-Step
+
+Configuring TSDR Data Collectors
+--------------------------------
+
+SNMP Data Collector Device Credential Configuration (experimental)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+After installing SNMP Data Collector, a configuration file under etc/
+directory of ODL distribution is generated: etc/tsdr.snmp.cfg is
+created.
+
+The following is a sample tsdr.snmp.cfg file:
+
+credentials=[192.168.0.2,public],[192.168.0.3,public]
+
+The above credentials indicate that TSDR SNMP Collector is going to
+connect to two devices. The IPAddress and Read community string of these
+two devices are (192.168.0.2, public), and (192.168.0.3) respectively.
+
+The user can make changes to this configuration file any time during
+runtime. The configuration will be picked up by TSDR in the next cycle
+of data collection.
+
+Polling interval configuration for SNMP Collector and OpenFlow Stats Collector
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The default polling interval of SNMP Collector and OpenFlow Stats
+Collector is 30 seconds and 15 seconds respectively. The user can change
+the polling interval through restconf APIs at any time. The new polling
+interval will be picked up by TSDR in the next collection cycle.
+
+-  Retrieve Polling Interval API for SNMP Collector
+
+   -  URL:
+      http://localhost:8181/restconf/config/tsdr-snmp-data-collector:TSDRSnmpDataCollectorConfig
+
+   -  Verb: GET
+
+-  Update Polling Interval API for SNMP Collector
+
+   -  URL:
+      http://localhost:8181/restconf/operations/tsdr-snmp-data-collector:setPollingInterval
+
+   -  Verb: POST
+
+   -  Content Type: application/json
+
+   -  Input Payload:
+
+      ::
+
+          {
+             "input": {
+                 "interval": "15000"
+             }
+          }
+
+-  Retrieve Polling Interval API for OpenFlowStats Collector
+
+   -  URL:
+      http://localhost:8181/restconf/config/tsdr-openflow-statistics-collector:TSDROSCConfig
+
+   -  Verb: GET
+
+-  Update Polling Interval API for OpenFlowStats Collector
+
+   -  URL:
+      http://localhost:8181/restconf/operations/tsdr-openflow-statistics-collector:setPollingInterval
+
+   -  Verb: POST
+
+   -  Content Type: application/json
+
+   -  Input Payload:
+
+      ::
+
+          {
+             "input": {
+                 "interval": "15000"
+             }
+          }
 
 Purging Service configuration
 -----------------------------
@@ -525,9 +521,6 @@ categories. For example, "tsdr:list FlowStats" will output the Flow
 statistics data collected from the switch(es).
 
 
-.. include:: tsdr-elastic-search.rst
-
-
 Troubleshooting
 ---------------
 
@@ -565,12 +558,6 @@ different ways.
       (TLS) since the OpenFlow Plugin that TSDR depends on provides this
       security support.
 
--  SNMP Security
-
-   -  The SNMP version3 has security support. However, since ODL SNMP
-      Plugin that TSDR depends on does not support version 3, we (TSDR)
-      will not have security support at this moment.
-
 -  NetFlow Security
 
    -  NetFlow, which cannot be configured with security so we recommend
@@ -580,6 +567,17 @@ different ways.
 
    -  Syslog, which cannot be configured with security so we recommend
       making sure it flows only over a secured management network.
+
+-  SNMP Security
+
+   -  The SNMP version3 has security support. However, since ODL SNMP
+      Plugin that TSDR depends on does not support version 3, we (TSDR)
+      will not have security support at this moment.
+
+-  sFlow Security
+
+   -  The sflow has security support.
+
 
 Support multiple data stores simultaneously at runtime
 ------------------------------------------------------
@@ -598,11 +596,11 @@ By default, all the types of data are supported in the data store. For
 example, the default content of tsdr-persistence-hsqldb.properties is as
 follows:
 
-::
+   ::
 
-    metric-persistency=true
-    log-persistency=true
-    binary-persistency=true
+      metric-persistency=true
+      log-persistency=true
+      binary-persistency=true
 
 When the user would like to use different data stores to support
 different types of data, he/she could enable or disable a particular
