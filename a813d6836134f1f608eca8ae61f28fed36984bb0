@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "45dace20_db852918",
+        "filename": "docs/user-guide/bgpcep-guide/bgp/bgp-user-guide-bgp-peering.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 435,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2018-03-29T14:37:57Z",
+      "side": 1,
+      "message": "\"The route reflector\"",
+      "range": {
+        "startLine": 435,
+        "startChar": 109,
+        "endLine": 435,
+        "endChar": 125
+      },
+      "revId": "a813d6836134f1f608eca8ae61f28fed36984bb0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ea8bcf1_4501296d",
+        "filename": "docs/user-guide/bgpcep-guide/bgp/bgp-user-guide-bgp-peering.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 435,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2018-03-29T14:37:57Z",
+      "side": 1,
+      "message": "Add a period instead of a comma here.",
+      "range": {
+        "startLine": 435,
+        "startChar": 154,
+        "endLine": 435,
+        "endChar": 155
+      },
+      "revId": "a813d6836134f1f608eca8ae61f28fed36984bb0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ea6bf5d_94747611",
+        "filename": "docs/user-guide/bgpcep-guide/bgp/bgp-user-guide-bgp-peering.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 435,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2018-03-29T14:37:57Z",
+      "side": 1,
+      "message": "Minor edit: \"When a route reflector\"",
+      "range": {
+        "startLine": 435,
+        "startChar": 69,
+        "endLine": 435,
+        "endChar": 89
+      },
+      "revId": "a813d6836134f1f608eca8ae61f28fed36984bb0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8f8bece4_39fbff47",
+        "filename": "docs/user-guide/bgpcep-guide/bgp/bgp-user-guide-bgp-peering.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 436,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2018-03-29T14:37:57Z",
+      "side": 1,
+      "message": "I would change this sentence to something like, \"The following rule is to used for loop prevention: Discard updates that contain the router\u0027s cluster ID.\"",
+      "range": {
+        "startLine": 436,
+        "startChar": 0,
+        "endLine": 436,
+        "endChar": 84
+      },
+      "revId": "a813d6836134f1f608eca8ae61f28fed36984bb0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "201cdfeb_9ee5af17",
+        "filename": "docs/user-guide/bgpcep-guide/bgp/bgp-user-guide-bgp-peering.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 437,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2018-03-29T14:37:57Z",
+      "side": 1,
+      "message": "Suggested rewrite: \"Using multiple cluster IDs allows updates to propagate to nodes that reside in a different cluster.\"",
+      "range": {
+        "startLine": 437,
+        "startChar": 0,
+        "endLine": 437,
+        "endChar": 97
+      },
+      "revId": "a813d6836134f1f608eca8ae61f28fed36984bb0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "10c6668d_3a70ec95",
+        "filename": "docs/user-guide/bgpcep-guide/bgp/bgp-user-guide-bgp-peering.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 437,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2018-03-29T14:37:57Z",
+      "side": 1,
+      "message": "Delete comma here.",
+      "range": {
+        "startLine": 437,
+        "startChar": 26,
+        "endLine": 437,
+        "endChar": 27
+      },
+      "revId": "a813d6836134f1f608eca8ae61f28fed36984bb0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
