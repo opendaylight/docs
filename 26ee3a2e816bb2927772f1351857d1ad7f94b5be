@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e176ea16_6fedac5b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-04-03T15:19:10Z",
+      "side": 1,
+      "message": "This should be at bottom, summary on first line",
+      "revId": "26ee3a2e816bb2927772f1351857d1ad7f94b5be",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c6d28d2e_0d0082b8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-04-03T15:19:10Z",
+      "side": 1,
+      "message": "See docs about commit message length, generally how to write good commit messages: https://chris.beams.io/posts/git-commit/",
+      "revId": "26ee3a2e816bb2927772f1351857d1ad7f94b5be",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a8f04e74_a57635cf",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 387,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-04-03T15:19:10Z",
+      "side": 1,
+      "message": "Continue formatting \u003c80 char line length",
+      "range": {
+        "startLine": 387,
+        "startChar": 17,
+        "endLine": 387,
+        "endChar": 28
+      },
+      "revId": "26ee3a2e816bb2927772f1351857d1ad7f94b5be",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
