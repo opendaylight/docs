@@ -78,8 +78,9 @@ Following tree illustrate the BGP EVPN route structure.
 
    :(evpn-routes-case)
       +--ro evpn-routes
-         +--ro evpn-route* [route-key]
+         +--ro evpn-route* [route-key path-id]
             +--ro route-key                     string
+            +--ro path-id                       path-id
             +--ro (evpn-choice)
             |  +--:(ethernet-a-d-route-case)
             |  |  +--ro ethernet-a-d-route
@@ -255,6 +256,7 @@ The L2VPN EVPN table in an instance of the speaker's Loc-RIB can be verified via
    <evpn-routes xmlns="urn:opendaylight:params:xml:ns:yang:bgp-evpn">
       <evpn-route>
          <route-key>AxEAAcCoZAED6AAAAQAgwKhkAQ==</route-key>
+         <path-id>0</path-id>
          <route-distinguisher>192.168.100.1:1000</route-distinguisher>
          <inc-multi-ethernet-tag-res>
             <ethernet-tag-id>
@@ -307,10 +309,11 @@ Make sure the *Application Peer* is configured first.
 
 .. code-block:: xml
    :linenos:
-   :emphasize-lines: 3,4,14
+   :emphasize-lines: 4,5,15
 
    <evpn-route xmlns="urn:opendaylight:params:xml:ns:yang:bgp-evpn">
        <route-key>evpn</route-key>
+       <path-id>0</path-id>
        <route-distinguisher>172.12.123.3:200</route-distinguisher>
        ....
        <attributes>
@@ -327,11 +330,11 @@ Make sure the *Application Peer* is configured first.
        </attributes>
    </evpn-route>
 
-@line 3: Route Distinguisher (RD) - set to RD of the MAC-VRF advertising the NLRI, recommended format *<IP>:<VLAN_ID>*
+@line 4: Route Distinguisher (RD) - set to RD of the MAC-VRF advertising the NLRI, recommended format *<IP>:<VLAN_ID>*
 
-@line 4: One of the EVPN route must be set here.
+@line 5: One of the EVPN route must be set here.
 
-@line 14: In some cases, specific extended community presence is required. The route may carry one or more Route Target attributes.
+@line 15: In some cases, specific extended community presence is required. The route may carry one or more Route Target attributes.
 
 -----
 
@@ -545,7 +548,7 @@ Make sure the *Application Peer* is configured first.
 
 To remove the route added above, following request can be used:
 
-**URL:** ``/restconf/config/bgp-rib:application-rib/10.25.1.9/tables/bgp-types:ipv4-address-family/odl-bgp-evpn:l2vpn-address-family/odl-bgp-evpn:evpn-subsequent-address-family/odl-bgp-evpn:evpn-routes/evpn-route/evpn``
+**URL:** ``/restconf/config/bgp-rib:application-rib/10.25.1.9/tables/bgp-types:ipv4-address-family/odl-bgp-evpn:l2vpn-address-family/odl-bgp-evpn:evpn-subsequent-address-family/odl-bgp-evpn:evpn-routes/evpn-route/evpn/0``
 
 **Method:** ``DELETE``
 
