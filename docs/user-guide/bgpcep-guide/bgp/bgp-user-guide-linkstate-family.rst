@@ -99,8 +99,9 @@ Following tree illustrate the BGP Link-State route structure.
 
    :(linkstate-routes-case)
       +--ro linkstate-routes
-         +--ro linkstate-route* [route-key]
+         +--ro linkstate-route* [route-key path-id]
             +--ro route-key                       binary
+            +--ro path-id                         path-id
             +--ro protocol-id                     protocol-id
             +--ro identifier                      identifier
             +--ro (object-type)?
