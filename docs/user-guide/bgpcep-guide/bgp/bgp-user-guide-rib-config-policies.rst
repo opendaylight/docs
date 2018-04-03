@@ -94,7 +94,9 @@ Conditions may include multiple match or comparison operations; similarly, actio
                 <conditions>
                     <bgp-conditions xmlns="http://openconfig.net/yang/bgp-policy">
                         <match-role-set xmlns="urn:opendaylight:params:xml:ns:yang:odl:bgp:default:policy">
-                            <role-set>/rpol:routing-policy/rpol:defined-sets/bgppol:bgp-defined-sets/role-sets/role-set[role-set-name="all"</role-set>
+                            <from-role>
+                               <role-set>/rpol:routing-policy/rpol:defined-sets/bgppol:bgp-defined-sets/role-sets/role-set[role-set-name="all"</role-set>
+                            </from-role>
                         </match-role-set>
                     </bgp-conditions>
                 </conditions>
@@ -135,8 +137,10 @@ The new instance presence can be verified via REST:
                 <conditions>
                     <bgp-conditions xmlns="http://openconfig.net/yang/bgp-policy">
                         <match-role-set xmlns="urn:opendaylight:params:xml:ns:yang:odl:bgp:default:policy">
-                            <role-set>/rpol:routing-policy/rpol:defined-sets/bgppol:bgp-defined-sets/role-sets/role-set[role-set-name="all"</role-set>
-                            <match-set-options>ANY</match-set-options>
+			    <from-role>
+                                <role-set>/rpol:routing-policy/rpol:defined-sets/bgppol:bgp-defined-sets/role-sets/role-set[role-set-name="all"</role-set>
+                                <match-set-options>ANY</match-set-options>
+                            <from-role>
                         </match-role-set>
                     </bgp-conditions>
                 </conditions>
@@ -675,21 +679,18 @@ Match Peer Role Set
 
 .. code-block:: xml
    :linenos:
-   :emphasize-lines: 3,5,7,13
+   :emphasize-lines: 3,5,6
 
     <conditions>
         <bgp-conditions xmlns="http://openconfig.net/yang/bgp-policy">
             <match-role-set xmlns="urn:opendaylight:params:xml:ns:yang:odl:bgp:default:policy">
-                <role-set>
-                    /rpol:routing-policy/rpol:defined-sets/bgppol:bgp-defined-sets/role-sets/role-set[role-set-name="only-ibgp"
-                </role-set>
-    			<match-set-options>INVERT</match-set-options>
-            </match-role-set>
-            <match-role-set xmlns="urn:opendaylight:params:xml:ns:yang:odl:bgp:default:policy">
-                <role-set>
-                    /rpol:routing-policy/rpol:defined-sets/bgppol:bgp-defined-sets/role-sets/role-set[role-set-name="all"
-                </role-set>
-                <match-set-direction-options>TO</match-set-direction-options>
+                <from-role>
+                    <role-set>/rpol:routing-policy/rpol:defined-sets/bgppol:bgp-defined-sets/role-sets/role-set[role-set-name="only-ibgp"]</role-set>
+    		    <match-set-options>INVERT</match-set-options>
+                </from-role>
+                <to-role>
+                    <role-set>/rpol:routing-policy/rpol:defined-sets/bgppol:bgp-defined-sets/role-sets/role-set[role-set-name="all"]</role-set>
+                <to-role>
             </match-role-set>
         </bgp-conditions>
     </conditions>
@@ -698,9 +699,7 @@ Match Peer Role Set
 
 @line 5: Match Role Set reference.
 	
-@line 7: Match Set Options (ANY, INVERT)
-
-@line 13: Match Set Direction Options (FROM, TO)
+@line 6: Match Set Options (ANY, INVERT)
 
 -----
 	
