@@ -206,7 +206,7 @@ driving the release process and to impose as little overhead on projects as
 possible.
 
 There will be an initial checkpoint two weeks after the start of the release,
-a midway checkpoints one month before RC0 and a final checkpoint at RC0.
+a midway checkpoints one month before code freeze and a final checkpoint at code freeze.
 
 Initial Checkpoint
 ##################
@@ -378,13 +378,13 @@ Projects will need to create the following artifacts:
 
 The remaining artifacts will be automatically scraped:
 
-* Blocker bugs that were raised between the previous RC0 and release.
+* Blocker bugs that were raised between the previous code freeze and release.
 * Grievances raised against the project during the last release.
 
 Midway Checkpoint
 #################
 
-One month before RC0, a midway checkpoint will be collected. The release team
+One month before code freeze, a midway checkpoint will be collected. The release team
 will review the information collected and report it to the TSC at the next TSC
 meeting. All information for midway checkpoint will be automatically collected.
 
@@ -401,7 +401,7 @@ this information more frequently, to provide trends over time.
 Final Checkpoint
 ################
 
-At 2 weeks after RC0 a final checkpoint will be collected by the release team
+At 2 weeks after code freeze a final checkpoint will be collected by the release team
 and presented to the TSC at the next TSC meeting.
 
 Projects will need to create the following artifacts:
@@ -540,7 +540,7 @@ SNAPSHOT Versions by Release
 Unmanaged Projects can consume whichever version of their upstream dependencies
 they want during most of the release cycle, but if they want to be included in
 the final release distribution they must bump their versions to SNAPSHOT no
-later than one week before RC0.
+later than one week before code freeze.
 
 Jobs Required for Unmanaged Projects Running
 ++++++++++++++++++++++++++++++++++++++++++++
@@ -549,14 +549,14 @@ Unmanaged Projects that wish to take part in the final release must enable the
 validate-autorelease job. Unmanaged Projects can release artifacts at any time
 using the release job. To take part in the final release, Unmanaged Projects
 will need to run the release job with the version of the final distribution no
-later than one week before RC0.
+later than one week before code freeze.
 
 Added to Final Distribution POM
 +++++++++++++++++++++++++++++++
 
 In order to be included in the final distribution, Unmanaged Projects must
 submit a patch to include themselves in the final distribution pom.xml file no
-later than one week before RC0. Projects should only be added to the final
+later than one week before code freeze. Projects should only be added to the final
 distribution pom.xml after they have published artifacts with the release job
 to avoid breaking the build.
 
@@ -567,7 +567,7 @@ Unmanaged Projects are free to follow their own processes. To have their
 artifacts included in the final distribution, they need only follow the
 Requirements for Unmanaged Projects above by the deadlines. Note that Unmanaged
 Projects will not have any leeway for missing deadlines. If projects are not
-in the final distribution by one week before RC0 their artifacts will not be
+in the final distribution by one week before code freeze their artifacts will not be
 included in the final release, but they may still publish artifacts and help
 their consumers install them out-of-band.
 
