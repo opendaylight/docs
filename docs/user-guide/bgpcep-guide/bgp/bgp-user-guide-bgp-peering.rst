@@ -18,7 +18,7 @@ Here is a sample basic neighbor configuration:
 
 .. code-block:: xml
    :linenos:
-   :emphasize-lines: 3,4
+   :emphasize-lines: 2,5,6,11,12,17,19
 
    <neighbor xmlns="urn:opendaylight:params:xml:ns:yang:bgp:openconfig-extensions">
        <neighbor-address>192.0.2.1</neighbor-address>
@@ -32,6 +32,7 @@ Here is a sample basic neighbor configuration:
            <config>
                <remote-port>179</remote-port>
                <passive-mode>false</passive-mode>
+	       <!--<local-address>192.0.2.5</local-address>-->
            </config>
        </transport>
        <config>
@@ -52,9 +53,11 @@ Here is a sample basic neighbor configuration:
 
 @line 12: Wait for peers to issue requests to open a BGP session, rather than initiating sessions from the local router. Default value is **false**.
 
-@line 16: Explicitly designate the peer as internal or external. Default value is **INTERNAL**.
+@line 13: Optional Local IP (either IPv4 or IPv6) address used to establish connections to the remote peer. Effective in active mode only.
 
-@line 18: Enable families.
+@line 17: Explicitly designate the peer as internal or external. Default value is **INTERNAL**.
+
+@line 19: Enable families.
 
 -----
 
