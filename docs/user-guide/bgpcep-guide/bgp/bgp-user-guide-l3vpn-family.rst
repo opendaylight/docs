@@ -84,8 +84,9 @@ IPv4 L3VPN Route
 
    :(vpn-ipv4-routes-case)
       +--ro vpn-ipv4-routes
-         +--ro vpn-route* [route-key]
+         +--ro vpn-route* [route-key path-id]
             +--ro route-key              string
+            +--ro path-id                path-id
             +--ro label-stack*
             |  +--ro label-value?   netc:mpls-label
             +--ro prefix?                inet:ip-prefix
@@ -100,8 +101,9 @@ IPv6 L3VPN Route
 
    :(vpn-ipv6-routes-case)
       +--ro vpn-ipv6-routes
-         +--ro vpn-route* [route-key]
+         +--ro vpn-route* [route-key path-id]
             +--ro route-key              string
+            +--ro path-id                path-id
             +--ro label-stack*
             |  +--ro label-value?   netc:mpls-label
             +--ro prefix?                inet:ip-prefix
@@ -126,6 +128,7 @@ The IPv4 L3VPN table in an instance of the speaker's Loc-RIB can be verified via
 
    <vpn-ipv4-routes xmlns="urn:opendaylight:params:xml:ns:yang:bgp-vpn-ipv4">
        <vpn-route>
+           <path-id>0</path-id>
            <route-key>cAXdYQABrBAALABlCgIi</route-key>
            <label-stack>
                <label-value>24022</label-value>
@@ -168,6 +171,7 @@ The IPv6 L3VPN table in an instance of the speaker's Loc-RIB can be verified via
 
    <vpn-ipv6-routes xmlns="urn:opendaylight:params:xml:ns:yang:bgp-vpn-ipv6">
        <vpn-route>
+           <path-id>0</path-id>
            <route-key>mAXdcQABrBAALABlKgILgAAAAAE=</route-key>
            <label-stack>
                <label-value>24023</label-value>
@@ -212,6 +216,7 @@ Make sure the *Application Peer* is configured first.
 .. code-block:: xml
 
    <vpn-route xmlns="urn:opendaylight:params:xml:ns:yang:bgp-vpn-ipv4">
+       <path-id>0</path-id>
        <route-key>vpn1</route-key>
        <label-stack>
            <label-value>123</label-value>
@@ -240,7 +245,7 @@ Make sure the *Application Peer* is configured first.
 
 To remove the route added above, following request can be used:
 
-**URL:** ``/restconf/config/bgp-rib:application-rib/10.25.1.9/tables/bgp-types:ipv4-address-family/bgp-types:mpls-labeled-vpn-subsequent-address-family/bgp-vpn-ipv4:vpn-ipv4-routes/vpn-route/vpn1``
+**URL:** ``/restconf/config/bgp-rib:application-rib/10.25.1.9/tables/bgp-types:ipv4-address-family/bgp-types:mpls-labeled-vpn-subsequent-address-family/bgp-vpn-ipv4:vpn-ipv4-routes/vpn-route/vpn1/0``
 
 **Method:** ``DELETE``
 
