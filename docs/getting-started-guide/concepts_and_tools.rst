@@ -32,36 +32,6 @@ below.
 
   feature:install odl-alto-release
 
-* **DLUX** is a web-based interface that OpenDaylight provides for you to manage
-  your network. Its Karaf feature installation name is “odl-dlux-core”.
-
-  a. DLUX draws information from OpenDaylight’s topology and host databases to
-     display the following information:
-
-     i. The network
-     #. Flow statistics
-     #. Host locations
-
-  #. To enable the DLUX UI after installing OpenDaylight, run:
-
-     feature:install odl-dlux-core
-
-     on the Karaf console.
-
-* **Network embedded Experience (NeXt)** is a developer toolkit that provides
-  tools to draw network-centric topology UI elements that offer visualizations
-  of the following:
-
-  a. Large complex network topologies
-  #. Aggregated network nodes
-  #. Traffic/path/tunnel/group visualizations
-  #. Different layout algorithms
-  #. Map overlays
-  #. Preset user-friendly interactions
-
-  NeXt can work with DLUX to build OpenDaylight applications. Check out the
-  NeXt_demo_ for more information on the interface.
-
 * Model-Driven Service Abstraction Layer (MD-SAL) is the OpenDaylight framework
   that allows developers to create new Karaf features in the form of services
   and protocol drivers and connects them to one another. You can think of the
@@ -81,4 +51,3 @@ below.
   using the the OpenDaylight interfaces, the microservices architecture allows
   you to select available services, protocols, and REST APIs.
 
-.. _NeXt_demo: https://www.youtube.com/watch?v=gBsUDu8aucs
