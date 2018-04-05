@@ -48,20 +48,6 @@ below.
 
      on the Karaf console.
 
-* **Network embedded Experience (NeXt)** is a developer toolkit that provides
-  tools to draw network-centric topology UI elements that offer visualizations
-  of the following:
-
-  a. Large complex network topologies
-  #. Aggregated network nodes
-  #. Traffic/path/tunnel/group visualizations
-  #. Different layout algorithms
-  #. Map overlays
-  #. Preset user-friendly interactions
-
-  NeXt can work with DLUX to build OpenDaylight applications. Check out the
-  NeXt_demo_ for more information on the interface.
-
 * Model-Driven Service Abstraction Layer (MD-SAL) is the OpenDaylight framework
   that allows developers to create new Karaf features in the form of services
   and protocol drivers and connects them to one another. You can think of the
@@ -81,4 +67,3 @@ below.
   using the the OpenDaylight interfaces, the microservices architecture allows
   you to select available services, protocols, and REST APIs.
 
-.. _NeXt_demo: https://www.youtube.com/watch?v=gBsUDu8aucs
