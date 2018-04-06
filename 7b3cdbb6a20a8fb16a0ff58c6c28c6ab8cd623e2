@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5e384693_e9f790ff",
+        "filename": "docs/getting-started-guide/concepts_and_tools.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-04-06T04:11:59Z",
+      "side": 1,
+      "message": "Would could likely remove DLUX as well, or could wait until it\u0027s formally archived and try to purge all of it I guess.",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 26
+      },
+      "revId": "7b3cdbb6a20a8fb16a0ff58c6c28c6ab8cd623e2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e1c8e36_25aaed45",
+        "filename": "docs/getting-started-guide/dlux.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-04-06T04:11:59Z",
+      "side": 1,
+      "message": "Again, this can likely be rm\u0027d soon",
+      "revId": "7b3cdbb6a20a8fb16a0ff58c6c28c6ab8cd623e2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "05b4f686_0f9f3581",
+        "filename": "docs/getting-started-guide/images/dlux/dlux-yang-list-warning.png",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-04-06T04:11:59Z",
+      "side": 1,
+      "message": "Eh, yikes, should likely not have merged these images",
+      "revId": "7b3cdbb6a20a8fb16a0ff58c6c28c6ab8cd623e2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "363aa51a_626c3678",
+        "filename": "docs/getting-started-guide/project-specific-guides/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-04-06T04:11:59Z",
+      "side": 1,
+      "message": "VTN could go as well, they have requested to be archived.",
+      "revId": "7b3cdbb6a20a8fb16a0ff58c6c28c6ab8cd623e2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
