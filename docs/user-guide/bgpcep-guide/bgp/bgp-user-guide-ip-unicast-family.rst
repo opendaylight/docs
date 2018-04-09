@@ -86,7 +86,8 @@ IPv4 Unicast Route
 
    :(ipv4-routes-case)
       +--ro ipv4-routes
-        +--ro ipv4-route* [prefix path-id]
+        +--ro ipv4-route* [route-key path-id]
+           +--ro route-key     string
            +--ro prefix        inet:ipv4-prefix
            +--ro path-id       path-id
            +--ro attributes
@@ -187,7 +188,8 @@ IPv6 Unicast Route
 
    :(ipv6-routes-case)
       +--ro ipv6-routes
-         +--ro ipv6-route* [prefix path-id]
+         +--ro ipv6-route* [route-key path-id]
+            +--ro route-key     string
             +--ro prefix        inet:ipv6-prefix
             +--ro path-id       path-id
             +--ro attributes
@@ -277,8 +279,9 @@ Make sure the *Application Peer* is configured first.
 .. code-block:: xml
 
    <ipv4-route xmlns="urn:opendaylight:params:xml:ns:yang:bgp-inet">
-       <path-id>0</path-id>
+       <route-key>10.0.0.11/32</route-key>
        <prefix>10.0.0.11/32</prefix>
+       <path-id>0</path-id>
        <attributes>
            <as-path></as-path>
            <origin>
@@ -316,6 +319,7 @@ This examples show how to originate and remove IPv6 route via programmable RIB:
 .. code-block:: xml
 
    <ipv6-route xmlns="urn:opendaylight:params:xml:ns:yang:bgp-inet">
+       <route-key>2001:db8:30::3/128</route-key>
        <prefix>2001:db8:30::3/128</prefix>
        <path-id>0</path-id>
        <attributes>
