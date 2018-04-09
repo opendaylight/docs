@@ -380,7 +380,6 @@ Local AS
 ''''''''
 
 .. figure:: ./images/local-as.png
-   :align: middle
    :alt: BGP eBGP with Local AS setup.
 
 The local-AS feature allows a router(eBGP) to appear to be a member of a second autonomous system (AS), in addition to its real AS.
