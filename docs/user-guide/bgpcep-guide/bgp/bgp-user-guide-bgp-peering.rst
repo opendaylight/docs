@@ -376,6 +376,46 @@ Following configuration sample is intended for external peering:
 
 @line 5: AS number of the remote peer.
 
+Local AS
+''''''''
+
+.. figure:: ./images/local-as.png
+   :alt: BGP eBGP with Local AS setup.
+   :align: middle
+
+The local-AS feature allows a router(eBGP) to appear to be a member of a second autonomous system (AS), in addition to its real AS.
+
+In updates sent from R3 to R2, the AS_SEQUENCE in the AS_PATH attribute contains "62 63". And updates sent from R2 to R3, the AS_SEQUENCE in the AS_PATH attribute contains "62 65".
+
+AS 62 will be prepended to updates that are sent to and received from R3.
+
+Following configuration sample is intended for external peering with Local AS:
+
+**URL:** ``/restconf/config/openconfig-network-instance:network-instances/network-instance/global-bgp/openconfig-network-instance:protocols/protocol/openconfig-policy-types:BGP/bgp-example/bgp/neighbors``
+
+**Method:** ``POST``
+
+**Content-Type:** ``application/xml``
+
+**Request Body:**
+
+.. code-block:: xml
+   :linenos:
+   :emphasize-lines: 5,6
+
+   <neighbor xmlns="urn:opendaylight:params:xml:ns:yang:bgp:openconfig-extensions">
+       <neighbor-address>192.0.2.3</neighbor-address>
+       <config>
+           <peer-type>EXTERNAL</peer-type>
+           <peer-as>64999</peer-as>
+           <local-as>65100</local-as>
+       </config>
+   </neighbor>
+
+@line 5: AS number of the remote peer.
+
+@line 6: Local AS number of the remote peer.
+
 Route reflector configuration
 '''''''''''''''''''''''''''''
 The local BGP speaker can be configured with a specific *cluster ID*.
