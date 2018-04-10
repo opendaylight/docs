@@ -22,6 +22,30 @@
       "revId": "0d92439f769fc7834b9eb1e7c8fe6bbbe9c2a441",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fe72921_14c592b7",
+        "filename": "docs/release-process/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2018-04-10T21:24:03Z",
+      "side": 1,
+      "message": "I removed release-plan, but I think the schedule is still\nok. It seem accurate for our new release timeframe. Can\nsomeone double check that?",
+      "parentUuid": "599f0573_a1817c27",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 19
+      },
+      "revId": "0d92439f769fc7834b9eb1e7c8fe6bbbe9c2a441",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
