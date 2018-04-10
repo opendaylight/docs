@@ -6,8 +6,8 @@ This page documents the current branch cutting tasks that are needed
 to be performed at various milestones and which team has the necessary
 permissions in order to perform the necessary task in Parentheses.
 
-M5 Offset 2
-===========
+Perform at RC0
+==============
 
 JJB (releng/builder)
 --------------------
