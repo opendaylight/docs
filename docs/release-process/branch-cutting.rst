@@ -3,11 +3,8 @@ Branch Cutting
 **************
 
 This page documents the current branch cutting tasks that are needed
-to be performed at various milestones and which team has the necessary
-permissions in order to perform the necessary task in Parentheses.
-
-M5 Offset 2
-===========
+to be performed at RC0 and which team has the necessary permissions
+in order to perform the necessary task in Parentheses.
 
 JJB (releng/builder)
 --------------------
@@ -17,10 +14,10 @@ JJB (releng/builder)
 
    .. code-block:: bash
 
-      export NEXT_RELEASE="Nitrogen"
-      export CURR_RELEASE="Carbon"
+      export NEXT_RELEASE="Neon"
+      export CURR_RELEASE="Fluorine"
 
-#. Change JJB yaml files from `stream:carbon` branch pointer from `master -> stable/${CURR_RELEASE,,}`
+#. Change JJB yaml files from `stream:fluorine` branch pointer from `master -> stable/${CURR_RELEASE,,}`
    and create new `stream: ${NEXT_RELEASE,,}` branch pointer to branch master. This
    requires handling two different file formats interspersed with in autorelease projects.
    **(releng/builder committers)**
@@ -28,18 +25,18 @@ JJB (releng/builder)
    .. code-block:: yaml
 
       stream:
-        - Nitrogen:
+        - Neon:
             branch: master
-        - Carbon:
-            branch: stable/carbon
+        - Fluorine:
+            branch: stable/fluorine
 
    .. code-block:: yaml
 
       - project:
-          name: aaa-carbon
+          name: aaa-neon
           jobs:
             - '{project-name}-verify-{stream}-{maven}-{jdks}'
-          stream: nitrogen
+          stream: neon
           branch: master
 
    - The above manual process of updating individual files is automated with the script.
@@ -73,7 +70,7 @@ Autorelease
 
       Enable Exclusive checkbox override any existing permissions.
 
-#.  Start the branch cut job or use the manual steps below for branch cutting autorelease. **(Release Engineering Team)**
+#. Start the branch cut job or use the manual steps below for branch cutting autorelease. **(Release Engineering Team)**
 #. Start the version bump job or use the manual steps below for version bump autorelease. **(Release Engineering Team)**
 #. Merge all .gitreview patches submitted though the job or manually. **(Release Engineering Team)**
 #. Remove create reference permissions set on gerrit for RE's. **(Helpdesk)**
