@@ -86,7 +86,8 @@ IPv4 Unicast Route
 
    :(ipv4-routes-case)
       +--ro ipv4-routes
-        +--ro ipv4-route* [prefix path-id]
+        +--ro ipv4-route* [route-key path-id]
+           +--ro route-key     string
            +--ro prefix        inet:ipv4-prefix
            +--ro path-id       path-id
            +--ro attributes
@@ -187,7 +188,8 @@ IPv6 Unicast Route
 
    :(ipv6-routes-case)
       +--ro ipv6-routes
-         +--ro ipv6-route* [prefix path-id]
+         +--ro ipv6-route* [route-key path-id]
+            +--ro route-key     string
             +--ro prefix        inet:ipv6-prefix
             +--ro path-id       path-id
             +--ro attributes
@@ -209,6 +211,7 @@ The IPv4 Unicast table in an instance of the speaker's Loc-RIB can be verified v
 
    <ipv4-routes xmlns="urn:opendaylight:params:xml:ns:yang:bgp-inet">
        <ipv4-route>
+           <route-key>193.0.2.1/32</route-key>
            <path-id>0</path-id>
            <prefix>193.0.2.1/32</prefix>
            <attributes>
@@ -240,6 +243,7 @@ The IPv6 Unicast table in an instance of the speaker's Loc-RIB can be verified v
 
    <ipv6-routes xmlns="urn:opendaylight:params:xml:ns:yang:bgp-inet">
        <ipv6-route>
+           <route-key>2a02:b80:0:1::/64</route-key>
            <path-id>0</path-id>
            <prefix>2a02:b80:0:1::/64</prefix>
            <attributes>
@@ -266,6 +270,8 @@ IPv4 Unicast
 This examples show how to originate and remove IPv4 route via programmable RIB.
 Make sure the *Application Peer* is configured first.
 
+.. note:: IPv4 Route Key must be equal to prefix.
+
 **URL:** ``/restconf/config/bgp-rib:application-rib/10.25.1.9/tables/bgp-types:ipv4-address-family/bgp-types:unicast-subsequent-address-family/bgp-inet:ipv4-routes``
 
 **Method:** ``POST``
@@ -277,8 +283,9 @@ Make sure the *Application Peer* is configured first.
 .. code-block:: xml
 
    <ipv4-route xmlns="urn:opendaylight:params:xml:ns:yang:bgp-inet">
-       <path-id>0</path-id>
+       <route-key>10.0.0.11/32</route-key>
        <prefix>10.0.0.11/32</prefix>
+       <path-id>0</path-id>
        <attributes>
            <as-path></as-path>
            <origin>
@@ -305,6 +312,8 @@ IPv6 Unicast
 ''''''''''''
 This examples show how to originate and remove IPv6 route via programmable RIB:
 
+.. note:: IPv6 Route Key must be equal to prefix.
+
 **URL:** ``/restconf/config/bgp-rib:application-rib/10.25.1.9/tables/bgp-types:ipv6-address-family/bgp-types:unicast-subsequent-address-family/bgp-inet:ipv6-routes``
 
 **Method:** ``POST``
@@ -316,6 +325,7 @@ This examples show how to originate and remove IPv6 route via programmable RIB:
 .. code-block:: xml
 
    <ipv6-route xmlns="urn:opendaylight:params:xml:ns:yang:bgp-inet">
+       <route-key>2001:db8:30::3/128</route-key>
        <prefix>2001:db8:30::3/128</prefix>
        <path-id>0</path-id>
        <attributes>
