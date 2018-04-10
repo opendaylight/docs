@@ -63,7 +63,6 @@ The Getting Started Guide also includes other helpful information, with the
 following organization:
 
 #. An overview of OpenDaylight and common use models
-#. Who should use this guide?
 #. OpenDaylight concepts and tools
 #. Explanations of OpenDaylight Apache Karaf features and other features that
    extend network functionality
