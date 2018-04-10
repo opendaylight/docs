@@ -494,24 +494,24 @@ Following configuration sample is intended for route reflector client peering us
 
 .. code-block:: xml
    :linenos:
-   :emphasize-lines: 5,8
+   :emphasize-lines: 8,9
 
    <neighbor xmlns="urn:opendaylight:params:xml:ns:yang:bgp:openconfig-extensions">
        <neighbor-address>192.0.2.4</neighbor-address>
        <config>
            <peer-type>INTERNAL</peer-type>
-           <route-reflector-cluster-id>192.0.2.4</route-reflector-cluster-id>
        </config>
        <route-reflector>
            <config>
                <route-reflector-client>true</route-reflector-client>
+               <route-reflector-cluster-id>192.0.2.4</route-reflector-cluster-id>
            </config>
        </route-reflector>
    </neighbor>
 
-@line 5: Route-reflector cluster id to use for this specific neighbor when local router is configured as a route reflector.
-
 @line 8: Configure the neighbor as a route reflector client. Default value is *false*.
+
+@line 9: Route-reflector cluster id to use for this specific neighbor when local router is configured as a route reflector.
 
 MD5 authentication configuration
 ''''''''''''''''''''''''''''''''
