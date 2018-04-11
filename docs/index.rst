@@ -23,7 +23,6 @@ just learn more about OpenDaylight.
    release-notes/index
    getting-started-guide/index
    user-guide/index
-   opendaylight-with-openstack/index
 
 
 Content for OpenDaylight Developers
