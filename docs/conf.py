@@ -32,10 +32,3 @@ linkcheck_ignore = [
 nitpicky = True
 release = version
 
-import platform
-if platform.system() != 'Windows':
-
-    # Build integration stuff
-    import subprocess
-
-    subprocess.call(["./generate-milestone-status.sh"])
