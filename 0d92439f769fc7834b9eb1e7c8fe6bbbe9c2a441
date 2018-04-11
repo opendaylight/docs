@@ -46,6 +46,30 @@
       "revId": "0d92439f769fc7834b9eb1e7c8fe6bbbe9c2a441",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aa909b9e_a9f764e8",
+        "filename": "docs/release-process/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-04-11T19:40:32Z",
+      "side": 1,
+      "message": "Maybe better to handle it in a different patch. My concern is that we seem to be duplicating schedules in many places (wiki x2 at least, MR docs, here)",
+      "parentUuid": "3fe72921_14c592b7",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 19
+      },
+      "revId": "0d92439f769fc7834b9eb1e7c8fe6bbbe9c2a441",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
