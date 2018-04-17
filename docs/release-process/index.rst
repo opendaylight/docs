@@ -17,9 +17,8 @@ Release Planning
 .. toctree::
    :maxdepth: 1
 
-   release-plan
+   managed-release
    release-schedule
-   milestone-readouts
 
 *********
 Processes
@@ -30,7 +29,6 @@ Processes
 
    project-release
    namespace
-   managed-release
 
    .. Simultanious Release Related
    autorelease
