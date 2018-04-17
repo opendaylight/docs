@@ -20,17 +20,6 @@ below.
 * **Apache Karaf** provides a lightweight runtime to install the Karaf features
   you want to implement and is included in the OpenDaylight platform software.
   By default, OpenDaylight has no pre-installed features.
-* After installing OpenDaylight, you install your selected features using the
-  Karaf console to expand networking capabilities. In the Karaf feature list
-  below are the ones you’re most likely to use when creating your network
-  environment.
-
-  As a short example of installing a Karaf feature, OpenDaylight
-  offers Application Layer Traffic Optimization (ALTO). The Karaf feature to
-  install ALTO is odl-alto-release. On the Karaf console, the command to
-  install it is:
-
-  feature:install odl-alto-release
 
 * Model-Driven Service Abstraction Layer (MD-SAL) is the OpenDaylight framework
   that allows developers to create new Karaf features in the form of services
@@ -50,4 +39,3 @@ below.
 * If you’re interacting with OpenDaylight through DLUX or the REST APIs while
   using the the OpenDaylight interfaces, the microservices architecture allows
   you to select available services, protocols, and REST APIs.
-
