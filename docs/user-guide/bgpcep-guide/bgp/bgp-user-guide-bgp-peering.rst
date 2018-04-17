@@ -384,6 +384,8 @@ Local AS
 
 The local-AS feature allows a router(eBGP) to appear to be a member of a second autonomous system (AS), in addition to its real AS.
 
+In above figure, R3 is eBGP router with configured local-as of 62, and peer-as of 63.
+
 In updates sent from R3 to R2, the AS_SEQUENCE in the AS_PATH attribute contains "62 63". And updates sent from R2 to R3, the AS_SEQUENCE in the AS_PATH attribute contains "62 65".
 
 AS 62 will be prepended to updates that are sent to and received from R3.
@@ -406,8 +408,8 @@ Following configuration sample is intended for external peering with Local AS:
        <neighbor-address>192.0.2.3</neighbor-address>
        <config>
            <peer-type>EXTERNAL</peer-type>
-           <peer-as>64999</peer-as>
-           <local-as>65100</local-as>
+           <peer-as>63</peer-as>
+           <local-as>62</local-as>
        </config>
    </neighbor>
 
