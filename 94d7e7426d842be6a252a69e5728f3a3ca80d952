@@ -16,6 +16,24 @@
       "revId": "94d7e7426d842be6a252a69e5728f3a3ca80d952",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "56f84b10_904e18ae",
+        "filename": "docs/getting-started-guide/concepts_and_tools.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2018-04-18T17:50:37Z",
+      "side": 1,
+      "message": "I don\u0027t get it either, but this was already there and\nnot part of this patch\u0027s change.\n\nI have a jira to remove anything talking about DLUX though,\nso I\u0027ll be looking specifically at this line when I get to\nit.",
+      "parentUuid": "5d39892f_b513c639",
+      "revId": "94d7e7426d842be6a252a69e5728f3a3ca80d952",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
