@@ -28,9 +28,6 @@ Processes
    :maxdepth: 1
 
    project-release
-   namespace
-
-   .. Simultanious Release Related
    autorelease
    project-lifecycle
    branch-cutting
