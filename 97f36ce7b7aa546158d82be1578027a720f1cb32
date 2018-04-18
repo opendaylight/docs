@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e864619e_8ef02e51",
+        "filename": "docs/getting-started-guide/concepts_and_tools.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2018-04-18T17:05:07Z",
+      "side": 1,
+      "message": "I suggest we add the following:\n\nFeatures and feature repositories can be managed in the\nkaraf config file \"etc/org.apache.karaf.features.cfg\" using\nthe \"featuresRepositories\" and \"featuresBoot\" variables.",
+      "revId": "97f36ce7b7aa546158d82be1578027a720f1cb32",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
