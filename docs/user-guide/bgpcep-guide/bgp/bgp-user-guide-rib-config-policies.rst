@@ -10,7 +10,7 @@ The OpenDaylight BGP implementation supports configurable RIB policies that allo
 
 **URL:** ``/restconf/config/openconfig-routing-policy:routing-policy``
 
-**Method:** ``GET    ``
+**Method:** ``GET``
 
 **Content-Type:** ``application/xml``
 
@@ -95,7 +95,7 @@ Conditions may include multiple match or comparison operations; similarly, actio
                     <bgp-conditions xmlns="http://openconfig.net/yang/bgp-policy">
                         <match-role-set xmlns="urn:opendaylight:params:xml:ns:yang:odl:bgp:default:policy">
                             <from-role>
-                               <role-set>/rpol:routing-policy/rpol:defined-sets/bgppol:bgp-defined-sets/role-sets/role-set[role-set-name="all"</role-set>
+                               <role-set>/rpol:routing-policy/rpol:defined-sets/bgppol:bgp-defined-sets/role-sets/role-set[role-set-name="all"]</role-set>
                             </from-role>
                         </match-role-set>
                     </bgp-conditions>
@@ -103,7 +103,7 @@ Conditions may include multiple match or comparison operations; similarly, actio
             </statement>
         </statements>
     </policy-definition>    
-	
+
 @line 2: The unique policy instance identifier.
 
 @line 5: Policy Statement Identifier.
@@ -137,10 +137,10 @@ The new instance presence can be verified via REST:
                 <conditions>
                     <bgp-conditions xmlns="http://openconfig.net/yang/bgp-policy">
                         <match-role-set xmlns="urn:opendaylight:params:xml:ns:yang:odl:bgp:default:policy">
-			    <from-role>
-                                <role-set>/rpol:routing-policy/rpol:defined-sets/bgppol:bgp-defined-sets/role-sets/role-set[role-set-name="all"</role-set>
-                                <match-set-options>ANY</match-set-options>
                             <from-role>
+                                <role-set>/rpol:routing-policy/rpol:defined-sets/bgppol:bgp-defined-sets/role-sets/role-set[role-set-name="all"]</role-set>
+                                <match-set-options>ANY</match-set-options>
+                            </from-role>
                         </match-role-set>
                     </bgp-conditions>
                 </conditions>
@@ -217,7 +217,7 @@ Action to prepend Originator Id. In case there is non Originator Id present, loc
     <bgp-actions xmlns="http://openconfig.net/yang/bgp-policy">
         <set-originator-id-prepend xmlns="urn:opendaylight:params:xml:ns:yang:odl:bgp:default:policy">
             <originator-id>192.0.2.1</originator-id>
-            </set-originator-id-prepend>
+        </set-originator-id-prepend>
     </bgp-actions>
 
 Cluster Id prepend
@@ -315,7 +315,7 @@ Action to set the community attributes of the route, along with options to modif
             </set-community>
         </bgp-actions>
     </actions>
-	
+
 @line 3: Set Community.
 
 * By reference
@@ -328,7 +328,7 @@ Action to set the community attributes of the route, along with options to modif
         <bgp-actions xmlns="http://openconfig.net/yang/bgp-policy">
             <set-community>
                 <community-set-ref>
-                    /rpol:routing-policy/rpol:defined-sets/rpol:community-sets/community-set[community-set-name="community-set-name-example"
+                    /rpol:routing-policy/rpol:defined-sets/rpol:community-sets/community-set[community-set-name="community-set-name-example"]
                 </community-set-ref>
                 <options>ADD</options>
             </set-community>
@@ -366,8 +366,8 @@ Defined set
             </community-sets>
         </bgp-defined-sets>
     </defined-sets>
-	
-	@line 3: Community set.
+
+@line 3: Community set.
 
 Extended Community set action
 ''''''''''''''''''''''''''''''
@@ -399,7 +399,7 @@ Action to set the extended community attributes of the route, along with options
             </set-ext-community>
         </bgp-actions>
     </actions>
-	
+
 @line 3: Set Extended Community.
 
 * By reference
@@ -412,7 +412,7 @@ Action to set the extended community attributes of the route, along with options
         <bgp-actions xmlns="http://openconfig.net/yang/bgp-policy">
             <set-ext-community>
                 <ext-community-set-ref>
-                    /rpol:routing-policy/rpol:defined-sets/rpol:ext-community-sets/ext-community-set[ext-community-set-name="ext-community-set-name-example"
+                    /rpol:routing-policy/rpol:defined-sets/rpol:ext-community-sets/ext-community-set[ext-community-set-name="ext-community-set-name-example"]
                 </ext-community-set-ref>
                 <options>REMOVE</options>
             </set-ext-community>
@@ -457,7 +457,7 @@ Defined set
     </defined-sets>
 
 @line 3: Extendend Community set.
-	
+
 @line 5: Extendend Community set name.
 
 
@@ -490,7 +490,7 @@ Match BGP Neighbor Set
         <bgp-conditions xmlns="http://openconfig.net/yang/bgp-policy">
             <match-bgp-neighbor-set xmlns="urn:opendaylight:params:xml:ns:yang:odl:bgp:default:policy">
                 <from-neighbor>
-                    <neighbor-set>/rpol:routing-policy/rpol:defined-sets/rpol:neighbor-sets/neighbor-set[neighbor-set-name="bgp-neighbor-set-example"</neighbor-set>
+                    <neighbor-set>/rpol:routing-policy/rpol:defined-sets/rpol:neighbor-sets/neighbor-set[neighbor-set-name="bgp-neighbor-set-example"]</neighbor-set>
                     <match-set-options>INVERT</match-set-options>
                 </from-neighbor>
             </match-bgp-neighbor-set>
@@ -513,7 +513,7 @@ Match BGP Neighbor Set
         <bgp-conditions xmlns="http://openconfig.net/yang/bgp-policy">
             <match-bgp-neighbor-set xmlns="urn:opendaylight:params:xml:ns:yang:odl:bgp:default:policy">
                 <to-neighbor>
-                    <neighbor-set>/rpol:routing-policy/rpol:defined-sets/rpol:neighbor-sets/neighbor-set[neighbor-set-name="bgp-neighbor-set-example"</neighbor-set>
+                    <neighbor-set>/rpol:routing-policy/rpol:defined-sets/rpol:neighbor-sets/neighbor-set[neighbor-set-name="bgp-neighbor-set-example"]</neighbor-set>
                     <match-set-options>INVERT</match-set-options>
                 </to-neighbor>
             </match-bgp-neighbor-set>
@@ -530,16 +530,16 @@ Match BGP Neighbor Set
 
 .. code-block:: xml
    :linenos:
-   :emphasize-lines: 3,5,6
+   :emphasize-lines: 3,4,5,7,8,9
 
     <conditions>
         <bgp-conditions xmlns="http://openconfig.net/yang/bgp-policy">
             <match-bgp-neighbor-set xmlns="urn:opendaylight:params:xml:ns:yang:odl:bgp:default:policy">
                 <from-neighbor>
-                    <neighbor-set>/rpol:routing-policy/rpol:defined-sets/rpol:neighbor-sets/neighbor-set[neighbor-set-name="bgp-neighbor-set-example"</neighbor-set>
+                    <neighbor-set>/rpol:routing-policy/rpol:defined-sets/rpol:neighbor-sets/neighbor-set[neighbor-set-name="bgp-neighbor-set-example"]</neighbor-set>
                 </from-neighbor>
                 <to-neighbor>
-                    <neighbor-set>/rpol:routing-policy/rpol:defined-sets/rpol:neighbor-sets/neighbor-set[neighbor-set-name="bgp-neighbor-set-example"</neighbor-set>
+                    <neighbor-set>/rpol:routing-policy/rpol:defined-sets/rpol:neighbor-sets/neighbor-set[neighbor-set-name="bgp-neighbor-set-example"]</neighbor-set>
                     <match-set-options>INVERT</match-set-options>
                 </to-neighbor>
             </match-bgp-neighbor-set>
@@ -594,7 +594,7 @@ Match Originator Id Set
         <bgp-conditions xmlns="http://openconfig.net/yang/bgp-policy">
             <match-originator-id-set-condition xmlns="urn:opendaylight:params:xml:ns:yang:odl:bgp:default:policy">
                 <originator-id-set>
-                    /rpol:routing-policy/rpol:defined-sets/bgppol:bgp-defined-sets/originator-id-sets/originator-id-set[originator-set-name="local-originator-id"
+                    /rpol:routing-policy/rpol:defined-sets/bgppol:bgp-defined-sets/originator-id-sets/originator-id-set[originator-set-name="local-originator-id"]
                 </originator-id-set>
                 <match-set-options>INVERT</match-set-options>
             </match-originator-id-set-condition>
@@ -640,7 +640,7 @@ Match Cluster Id Set
         <bgp-conditions xmlns="http://openconfig.net/yang/bgp-policy">
             <match-cluster-id-set-condition xmlns="urn:opendaylight:params:xml:ns:yang:odl:bgp:default:policy">
                 <cluster-id-set>
-                    /rpol:routing-policy/rpol:defined-sets/bgppol:bgp-defined-sets/cluster-id-sets/cluster-id-set[cluster-set-name="local-cluster-id"
+                    /rpol:routing-policy/rpol:defined-sets/bgppol:bgp-defined-sets/cluster-id-sets/cluster-id-set[cluster-set-name="local-cluster-id"]
                 </cluster-id-set>
                 <match-set-options>INVERT</match-set-options>
             </match-cluster-id-set-condition>
@@ -686,7 +686,7 @@ Match Peer Role Set
             <match-role-set xmlns="urn:opendaylight:params:xml:ns:yang:odl:bgp:default:policy">
                 <from-role>
                     <role-set>/rpol:routing-policy/rpol:defined-sets/bgppol:bgp-defined-sets/role-sets/role-set[role-set-name="only-ibgp"]</role-set>
-    		    <match-set-options>INVERT</match-set-options>
+                    <match-set-options>INVERT</match-set-options>
                 </from-role>
                 <to-role>
                     <role-set>/rpol:routing-policy/rpol:defined-sets/bgppol:bgp-defined-sets/role-sets/role-set[role-set-name="all"]</role-set>
@@ -698,16 +698,16 @@ Match Peer Role Set
 @line 3: Match Role Set.
 
 @line 5: Match Role Set reference.
-	
+
 @line 6: Match Set Options (ANY, INVERT)
 
 -----
-	
+
 Defined set
 
 .. code-block:: xml
    :linenos:
-   :emphasize-lines: 3,5
+   :emphasize-lines: 3,4,10,11
 
     <defined-sets>
         <bgp-defined-sets xmlns="http://openconfig.net/yang/bgp-policy">
@@ -718,20 +718,20 @@ Defined set
                 <role>rr-client</role>
                 <role>internal</role>
             </role-set>
-			<role-set>
+            <role-set>
                 <role-set-name>only-ibgp</role-set-name>
                 <role>ibgp</role>
             </role-set>
         </bgp-defined-sets>
     </defined-sets>
-	
+
 @line 3: Role Set.
 
-@line 4: Cluster Id Set name.
-	
+@line 4: Role Set name.
+
 @line 10: Role Set.
-	
-@line 11: Cluster Id Set name.
+
+@line 11: Role Id Set name.
 
 Match AS Path Set
 '''''''''''''''''
@@ -744,7 +744,7 @@ Match AS Path Set
         <bgp-conditions xmlns="http://openconfig.net/yang/bgp-policy">
             <match-as-path-set>
                 <as-path-set>
-                    /rpol:routing-policy/rpol:defined-sets/bgp-pol:bgp-defined-sets/bgp-pol:as-path-sets/bgp-pol:as-path-set/[as-path-set-name="as-path-set-example"
+                    /rpol:routing-policy/rpol:defined-sets/bgp-pol:bgp-defined-sets/bgp-pol:as-path-sets/bgp-pol:as-path-set/[as-path-set-name="as-path-set-example"]
                 </as-path-set>
                 <match-set-options>ANY</match-set-options>
             </match-as-path-set>
@@ -754,11 +754,11 @@ Match AS Path Set
 @line 3: Match AS Path Set.
 
 @line 5: AS Path Set reference.
-	
+
 @line 7: Match Set Option(ANY, ALL, INVERT).
 
 -----
-	
+
 Defined set
 
 .. code-block:: xml
@@ -777,11 +777,11 @@ Defined set
             </as-path-sets>
         </bgp-defined-sets>
     </defined-sets>
-	
+
 @line 4: AS Path Set.
 
 @line 5: AS Path Set name.
-	
+
 @line 6: AS Path set member
 
 Match Comunity Set
@@ -794,21 +794,21 @@ Match Comunity Set
         <bgp-conditions xmlns="http://openconfig.net/yang/bgp-policy">
             <match-community-set>
                 <community-set>
-                    /rpol:routing-policy/rpol:defined-sets/rpol:community-sets/community-set[community-set-name="community-set-name-example"
+                    /rpol:routing-policy/rpol:defined-sets/rpol:community-sets/community-set[community-set-name="community-set-name-example"]
                 </community-set>
                 <match-set-options>ANY</match-set-options>
             </match-community-set>
         </bgp-conditions>
     </conditions>
-	
+
 @line 3: Match Community Set.
-	
+
 @line 5: Match Community Set reference.
-	
+
 @line 7: Match Set Option(ANY, ALL, INVERT).
 
 -----
-	
+
 Defined set
 
 .. code-block:: xml
@@ -832,13 +832,13 @@ Defined set
             </community-sets>
         </bgp-defined-sets>
     </defined-sets>
-	
+
 @line 4: Community Set.
 
 @line 5: Community Set name.
-	
+
 @line 6: Communities.
-	
+
 @line 10: Communities.
 
 Match Extended Comunity Set
@@ -852,21 +852,21 @@ Match Extended Comunity Set
         <bgp-conditions xmlns="http://openconfig.net/yang/bgp-policy">
             <match-ext-community-set>
                 <ext-community-set>
-                    /rpol:routing-policy/rpol:defined-sets/rpol:ext-community-sets/ext-community-set[ext-community-set-name="ext-community-set-name-test"
+                    /rpol:routing-policy/rpol:defined-sets/rpol:ext-community-sets/ext-community-set[ext-community-set-name="ext-community-set-name-test"]
                 </ext-community-set>
                 <match-set-options>ANY</match-set-options>
             </match-ext-community-set>
         </bgp-conditions>
-    </conditions>    
-	
+    </conditions>
+
 @line 3: Match Extended Community Set.
-	
+
 @line 5: Match Extended Community Set reference.
-	
+
 @line 7: Match Set Option(ANY, ALL, INVERT).
 
 -----
-	
+
 Defined set
 
 .. code-block:: xml
@@ -895,13 +895,13 @@ Defined set
             </ext-community-sets>
         </bgp-defined-sets>
     </defined-sets>
-	
+
 @line 4: Extended Community Set.
 
 @line 5: Extended Community Set name.
-	
+
 @line 6: Extended Communities.
-	
+
 @line 11: Extended Communities.
 
 Match As Path Lenght
@@ -918,8 +918,8 @@ Match As Path Lenght
             </as-path-length>
         </bgp-conditions>
     </conditions>  
-	
-@line 3: As Path Lenght match.
+
+@line 3: As Path Length match.
 
 Match Local Pref
 ''''''''''''''''
@@ -932,7 +932,7 @@ Match Local Pref
             <local-pref-eq>100</local-pref-eq>
         </bgp-conditions>
     </conditions>
-	
+
 @line 3: Local Preference match.
 
 Match Origin
@@ -953,21 +953,21 @@ Match MED
 '''''''''
 .. code-block:: xml
    :linenos:
-   :emphasize-lines: 3,5,7,13
+   :emphasize-lines: 3
 
     <conditions>
         <bgp-conditions xmlns="http://openconfig.net/yang/bgp-policy">
             <med-eq>100</med-eq>
         </bgp-conditions>
     </conditions>
-	
+
 @line 3: MED match.
 
 Match Next Hop
 ''''''''''''''
 .. code-block:: xml
    :linenos:
-   :emphasize-lines: 3,5,7,13
+   :emphasize-lines: 3
 
     <conditions>
         <bgp-conditions xmlns="http://openconfig.net/yang/bgp-policy">
