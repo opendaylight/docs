@@ -644,7 +644,7 @@ A sample basic neighbor configuration using a peer group follows:
    :linenos:
    :emphasize-lines: 4
 
-   <neighbor>
+   <neighbor xmlns="urn:opendaylight:params:xml:ns:yang:bgp:openconfig-extensions">
       <neighbor-address>192.0.2.1</neighbor-address>
       <config>
          <peer-group>/bgp/neighbors/neighbor/bgp/peer-groups/peer-group[peer-group-name="internal-neighbor"]</peer-group>
