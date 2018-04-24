@@ -217,21 +217,6 @@ feature run the following command
 
     karaf#>feature:install odl-restconf
 
-If you want to access the Controller GUI, you have to install
-*odl-dlux-core* feature to enable that. Run following command to install
-it
-
-::
-
-    karaf#>feature:install odl-dlux-core
-
-Once you enable the feature, access the Controller GUI using following
-URL
-
-::
-
-    http://<controller-ip>:8181/dlux/index.html
-
 OpenFlow 1.3 Enabled Software Switches / Environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

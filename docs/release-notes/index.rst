@@ -19,7 +19,6 @@ Projects and features which have known additional requirements are:
 * SFC requires addition features for certain configurations
 * SXP depends on TCP-MD5 on thus requires 64-bit Linux
 * OpFlex requires Linux
-* DLUX requires a modern web browser to view the UI
 * AAA when using federation has additional requirements for external tools
 * VTN has components which require Linux
 

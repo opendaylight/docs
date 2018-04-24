@@ -151,13 +151,12 @@ southbound (odl-ocpplugin-southbound) and OCP protocol library
 (odl-ocpjava-protocol), provides OpenDaylight with basic OCP v4.1.1
 functionality.
 
-There are two ways to interact with OCP service: one is via RESTCONF
-(programmatic) and the other is using DLUX web interface (manual), so
-you have to install the following features to enable RESTCONF and DLUX.
+You can interact with OCP service via RESTCONF, so you have to install
+the following features to enable RESTCONF.
 
 ::
 
-    karaf#>feature:install odl-restconf odl-l2switch-switch odl-mdsal-apidocs odl-dlux-core odl-dluxapps-applications
+    karaf#>feature:install odl-restconf odl-l2switch-switch odl-mdsal-apidocs
 
 Then install the odl-ocpplugin-all feature which includes the
 odl-ocpplugin-southbound and odl-ocpplugin-app-ocp-service features.
@@ -238,35 +237,6 @@ Here is an example:
 ::
 
     java -classpath simple-agent-${ocp-version}.jar org.opendaylight.ocpplugin.OcpAgent 127.0.0.1 1033 XYZ 123
-
-Web / Graphical Interface
--------------------------
-
-Once you enable the DLUX feature, you can access the Controller GUI
-using following URL.
-
-::
-
-    http://<controller-ip>:8080/index.html
-
-Expand Nodes. You should see all the radio head devices that are
-connected to the controller running at <controller-ip>.
-
-.. figure:: ./images/ocpplugin/dlux-ocp-nodes.jpg
-   :alt: DLUX Nodes
-
-   DLUX Nodes
-
-And expand Yang UI if you want to browse the various northbound APIs
-exposed by the OCP service.
-
-.. figure:: ./images/ocpplugin/dlux-ocp-apis.jpg
-   :alt: DLUX Yang UI
-
-   DLUX Yang UI
-
-For information on how to use these northbound APIs, please refer to the
-OCP Plugin Developer Guide.
 
 Programmatic Interface
 ----------------------

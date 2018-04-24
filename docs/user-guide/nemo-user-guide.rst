@@ -28,9 +28,6 @@ NEMO Engine Architecture
 * NEMO REST
   * The NEMO REST provides users REST APIs to access NEMO engine, that is, user could
   transmit the intent instance to NEMO engine through basic REST methods.
-* NEMO UI
-  * The NEMO UI provides users a visual interface to deploy service with NEMO model,
-  and display the state in DLUX UI.
 
 Installing NEMO engine
 ----------------------

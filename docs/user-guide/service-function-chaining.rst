@@ -39,15 +39,9 @@ SFC User Interface
 Overview
 ~~~~~~~~
 
-The SFC User interface comes in two flavors:
-
--  Web Interface (SFC-UI): is based on Dlux project. It provides an easy way to
-   create, read, update and delete configuration stored in the datastore.
-   Moreover, it shows the status of all SFC features (e.g installed,
-   uninstalled) and Karaf log messages as well.
-
--  Command Line Interface (CLI): it provides several Karaf console commands to
-   show the SFC model (SF, SFFs, etc.) provisioned in the datastore.
+The SFC User interface comes with a Command Line Interface (CLI): it provides
+several Karaf console commands to show the SFC model (SF, SFFs, etc.) provisioned
+in the datastore.
 
 
 SFC Web Interface (SFC-UI)

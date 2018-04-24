@@ -42,12 +42,6 @@ USC Channel Architecture
    -  The USC Manager handles configurations, high availability,
       security, monitoring, and clustering support for USC.
 
--  USC UI
-
-   -  The USC UI is responsible for displaying a graphical user
-      interface representing the state of USC in the OpenDaylight DLUX
-      UI.
-
 Installing USC Channel
 ----------------------
 

@@ -812,22 +812,6 @@ Verify Compute Node Stacking
 
 Additional Verifications
 ^^^^^^^^^^^^^^^^^^^^^^^^
-
--  Please visit the OpenDaylight DLUX GUI after stacking all the nodes,
-   http://<ODL\_IP\_ADDRESS>:8181/index.html.
-   The switches, topology and the ports that are currently read can be
-   validated.
-
-::
-
-    http://<controller-ip>:8181/index.html
-
-.. tip::
-
-    If the interconnected between the Open vSwitch is not seen, Please
-    bring up the interface for the dataplane manually using the below
-    comamnd
-
 ::
 
     ifup <interface_name>
@@ -954,89 +938,6 @@ Verification of Control and Compute Node after VM creation
    br-int bridge in Open vSwitch.
 
 -  Use *sudo ovs-vsctl show* to list the number of interfaces added.
-
--  Please visit the DLUX GUI to list the new nodes in every switch.
-
-Getting started with DLUX
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Ensure that you have created a topology and enabled MD-SAL feature in
-the Karaf distribution before you use DLUX for network management.
-
-Logging In
-^^^^^^^^^^
-
-To log in to DLUX, after installing the application: \* Open a browser
-and enter the login URL. If you have installed DLUX as a stand-alone,
-then the login URL is http://localhost:9000/DLUX/index.html. However if
-you have deployed DLUX with Karaf, then the login URL is
-http://<your IP>:8181/dlux/index.html. \* Login
-to the application with user ID and password credentials as admin.
-NOTE:admin is the only user type available for DLUX in this release.
-
-Working with DLUX
-^^^^^^^^^^^^^^^^^
-
-To get a complete DLUX feature list, install restconf, odl l2 switch,
-and switch while you start the DLUX distribution.
-
-.. figure:: ./images/vtn/Dlux_login.png
-   :alt: DLUX\_GUI
-
-   DLUX\_GUI
-
-.. note::
-
-    DLUX enables only those modules, whose APIs are responding. If you
-    enable just the MD-SAL in beginning and then start dlux, only MD-SAL
-    related tabs will be visible. While using the GUI if you enable
-    AD-SAL karaf features, those tabs will appear automatically.
-
-Viewing Network Statistics
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The Nodes module on the left pane enables you to view the network
-statistics and port information for the switches in the network. \* To
-use the Nodes module: \*\* Select Nodeson the left pane.
-
-::
-
-    The right pane displays atable that lists all the nodes, node connectors and the statistics.
-
--  Enter a node ID in the Search Nodes tab to search by node connectors.
-
--  Click on the Node Connector number to view details such as port ID,
-   port name, number of ports per switch, MAC Address, and so on.
-
--  Click Flows in the Statistics column to view Flow Table Statistics
-   for the particular node like table ID, packet match, active flows and
-   so on.
-
--  Click Node Connectors to view Node Connector Statistics for the
-   particular node ID.
-
-Viewing Network Topology
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-To view network topology: \* Select Topology on the left pane. You will
-view the graphical representation on the right pane.
-
-::
-
-    In the diagram
-    blue boxes represent the switches,black represents the hosts available, and lines represents how switches are connected.
-
-.. note::
-
-    DLUX UI does not provide ability to add topology information. The
-    Topology should be created using an open flow plugin. Controller
-    stores this information in the database and displays on the DLUX
-    page, when the you connect to the controller using OpenFlow.
-
-.. figure:: ./images/vtn/Dlux_topology.png
-   :alt: Topology
-
-   Topology
 
 OpenStack PackStack Installation Steps
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

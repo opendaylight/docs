@@ -15,8 +15,6 @@ Major Features
   header, and provides support for TLS/DTLS.
 * USC Manager handles configurations, high availability, security, monitoring,
   and clustering support for USC.
-* USC UI is responsible for displaying a graphical user interface representing
-  the state of USC in the OpenDaylight DLUX UI.
 
 USC Channel UI
 --------------

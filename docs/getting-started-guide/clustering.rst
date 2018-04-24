@@ -469,9 +469,7 @@ statistics/counters.
 
 The Integration team is maintaining a Python based `tool
 <https://github.com/opendaylight/integration-test/tree/master/tools/clustering/cluster-monitor>`_,
-that takes advantage of the above MBeans exposed via Jolokia, and the
-*systemmetrics* project offers a DLUX based UI to display the same
-information.
+that takes advantage of the above MBeans exposed via Jolokia.
 
 .. _cluster_admin_api:
 

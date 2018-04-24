@@ -259,8 +259,8 @@ Prerequisites
 A set of virtual switches (OVS) have to be registered or discovered by
 ODL. Mininet is recommended to create a OVS network. After an OVS
 network is created, set up the controller IP pointing to ODL IP address
-in each of the OVS. From ODL, a physical topology can be viewed via ODL
-DLUX UI or retrieved via RESTCONF API.
+in each of the OVS. From ODL, a physical topology can be viewed via
+RESTCONF API.
 
 Instructions
 ^^^^^^^^^^^^
