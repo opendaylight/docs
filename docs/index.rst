@@ -17,6 +17,9 @@ Content for OpenDaylight Users
 The following content is intended for people who would like to deploy, use, or
 just learn more about OpenDaylight.
 
+* `Downloads
+  <https://www.opendaylight.org/technical-community/getting-started-for-developers/downloads-and-documentation>`_
+
 .. toctree::
    :maxdepth: 1
 
