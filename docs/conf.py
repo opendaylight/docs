@@ -18,7 +18,7 @@ intersphinx_mapping['odl-integration-packaging'] = ('http://docs.opendaylight.or
 intersphinx_mapping['odl-releng-builder'] = ('http://docs.opendaylight.org/projects/releng-builder/en/latest/', None)
 
 # Projects that have stable/branches
-intersphinx_mapping['netvirt'] = ('http://docs.opendaylight.org/projects/netvirt/en/latest/', None)
+intersphinx_mapping['netvirt'] = ('http://docs.opendaylight.org/projects/netvirt/en/stable-oxygen/', None)
 
 linkcheck_ignore = [
     # Ignore jenkins because it's often slow to respond.
