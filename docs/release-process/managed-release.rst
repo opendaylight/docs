@@ -23,7 +23,7 @@ Reduce Overhead on Projects
 ---------------------------
 
 The Managed Release Model will reduce the overhead both on projects taking
-part in the Managed Release and Unmanaged Projects.
+part in the Managed Release and Self-Managed Projects.
 
 Managed Projects will have fewer, smaller checkpoints consisting of only
 information that is maximally helpful for driving the release process. Much of
@@ -33,7 +33,7 @@ projects should have a more stable development environment, as the projects
 that can break the jobs they depend on will be a smaller set, more stable and
 more responsive.
 
-Projects that are Unmanaged will have less overhead and reporting. They will
+Projects that are Self-Managed will have less overhead and reporting. They will
 be free to develop in their own way, providing their artifacts to include in
 the final release or choosing to release on their own schedule. They will not
 be required to submit any checkpoints and will not be expected to work closely
@@ -179,9 +179,9 @@ Depend only on Managed Projects
 
 Managed Projects should only depend on other Managed Projects.
 
-If a project wants to be Managed but depends on Unmanaged Projects, they
+If a project wants to be Managed but depends on Self-Managed Projects, they
 should work with their dependencies to become Managed at the same time or
-drop any Unmanaged dependencies.
+drop any Self-Managed dependencies.
 
 Documentation
 +++++++++++++
@@ -247,7 +247,7 @@ Projects will need to create the following artifacts:
        for external communication, such as marketing to users or a report to
        other LFN projects or the LFN Board.
 
-* If a project is transitioning from Unmanaged to Managed or applying for
+* If a project is transitioning from Self-Managed to Managed or applying for
   the first time into a Managed release, raise a Jira **Project Plan** issue
   against the TSC project highlighting the request.
 
@@ -255,7 +255,7 @@ Projects will need to create the following artifacts:
 
   * Select the release version in the **ODL Release** field
 
-  * Select the ``NOT_Integrated (Unmanaged)`` value in the **ODL Participation**
+  * Select the ``NOT_Integrated (Self-Managed)`` value in the **ODL Participation**
     field
 
   * Select the appropriate value in the **ODL New Participation** field:
@@ -270,10 +270,10 @@ Projects will need to create the following artifacts:
     .. code-block:: none
 
        Summary
-       This is an example of a request for a project to move from Unmanaged to
-       Managed. It should be submitted no later than the start of the release.
-       The request should make it clear that the requesting project meets all
-       of the Managed Release Requirements.
+       This is an example of a request for a project to move from Self-Managed
+       to Managed. It should be submitted no later than the start of the
+       release. The request should make it clear that the requesting project
+       meets all of the Managed Release Requirements.
 
        Healthy Community
        The request should make it clear that the requesting project has a
@@ -328,7 +328,7 @@ Projects will need to create the following artifacts:
        may also show that the project has a history of dealing with CLM
        violations in a timely manner.
 
-* If a project is transitioning from Managed to Unmanaged, raise a Jira
+* If a project is transitioning from Managed to Self-Managed, raise a Jira
   **Project Plan** issue against the TSC project highlighting the request.
 
   * Select your project in the **ODL Project** field
@@ -338,17 +338,17 @@ Projects will need to create the following artifacts:
   * Select the appropriate value in the **ODL Participation** field:
     ``SNAPSHOT_Integrated (Managed)`` or ``RELEASE_Integrated (Managed)``
 
-  * Select the ``NOT_Integrated (Unmanaged)`` value in the
+  * Select the ``NOT_Integrated (Self-Managed)`` value in the
     **ODL New Participation** field
 
   * In the **Summary** field, put something like:
-    ``Project-X Fluorine Joining/Moving to Unmanged for Fluorine``
+    ``Project-X Fluorine Joining/Moving to Self-Manged for Fluorine``
 
   * In the **Description** field, fill in the details:
 
     .. code-block:: none
 
-       This is a request for a project to move from Unmanged to Managed. It
+       This is a request for a project to move from Self-Managed to Managed. It
        should be submitted no later than the start of the release. The request
        does not require any additional information, but it may be helpful for
        the requesting project to provide some background and their reasoning.
@@ -495,10 +495,10 @@ their delivery of artifacts to the MSI Projects. Their initial checkpoints will
 cover everything they expect to do in the next Managed Release, which may
 encompass any number of major version bumps for the MRI Projects.
 
-Moving a Project from Unmanaged to Managed
-------------------------------------------
+Moving a Project from Self-Managed to Managed
+---------------------------------------------
 
-Unmanaged Projects can request to become Managed by submitting a
+Self-Managed Projects can request to become Managed by submitting a
 **Project_Plan** issue to the TSC project in Jira. See details as described
 under the `Initial Checkpoint`_ section above. Requests should be submitted
 before the start of a release. The requesting project should make it clear that
@@ -522,78 +522,78 @@ The following projects are deemed critical to the OpenDaylight platform:
 * odlparent
 * yangtools
 
-Unmanaged Projects
-==================
+Self-Managed Projects
+=====================
 
-Requirements for Unmanaged Projects
------------------------------------
+Requirements for Self-Managed Projects
+--------------------------------------
 
-Unmanaged Project requirements are designed to be as low-overhead as possible
-while still allowing for participation in the final release. If Unmanaged
-Projects do not want to participate in the final release and instead provide
-their artifacts to their consumers through another channel, there are no
-requirements.
+Self-Managed Project requirements are designed to be as low-overhead as
+possible while still allowing for participation in the final release. If
+Self-Managed Projects do not want to participate in the final release and
+instead provide their artifacts to their consumers through another channel,
+there are no requirements.
 
 SNAPSHOT Versions by Release
 ++++++++++++++++++++++++++++
 
-Unmanaged Projects can consume whichever version of their upstream dependencies
-they want during most of the release cycle, but if they want to be included in
-the final release distribution they must bump their versions to SNAPSHOT no
-later than one week before code freeze.
+Self-Managed Projects can consume whichever version of their upstream
+dependencies they want during most of the release cycle, but if they want to be
+included in the final release distribution they must bump their versions to
+SNAPSHOT no later than one week before code freeze.
 
-Jobs Required for Unmanaged Projects Running
-++++++++++++++++++++++++++++++++++++++++++++
+Jobs Required for Self-Managed Projects Running
++++++++++++++++++++++++++++++++++++++++++++++++
 
-Unmanaged Projects that wish to take part in the final release must enable the
-validate-autorelease job. Unmanaged Projects can release artifacts at any time
-using the release job. To take part in the final release, Unmanaged Projects
-will need to run the release job with the version of the final distribution no
-later than one week before code freeze.
+Self-Managed Projects that wish to take part in the final release must enable
+the validate-autorelease job. Self-Managed Projects can release artifacts at
+any time using the release job. To take part in the final release, Self-Managed
+Projects will need to run the release job with the version of the final
+distribution no later than one week before code freeze.
 
 Added to Final Distribution POM
 +++++++++++++++++++++++++++++++
 
-In order to be included in the final distribution, Unmanaged Projects must
+In order to be included in the final distribution, Self-Managed Projects must
 submit a patch to include themselves in the final distribution pom.xml file no
-later than one week before code freeze. Projects should only be added to the final
-distribution pom.xml after they have published artifacts with the release job
-to avoid breaking the build.
+later than one week before code freeze. Projects should only be added to the
+final distribution pom.xml after they have published artifacts with the release
+job to avoid breaking the build.
 
-Unmanaged Release Process
--------------------------
+Self-Managed Release Process
+----------------------------
 
-Unmanaged Projects are free to follow their own processes. To have their
+Self-Managed Projects are free to follow their own processes. To have their
 artifacts included in the final distribution, they need only follow the
-Requirements for Unmanaged Projects above by the deadlines. Note that Unmanaged
-Projects will not have any leeway for missing deadlines. If projects are not
-in the final distribution by one week before code freeze their artifacts will not be
-included in the final release, but they may still publish artifacts and help
-their consumers install them out-of-band.
+Requirements for Self-Managed Projects above by the deadlines. Note that
+Self-Managed Projects will not have any leeway for missing deadlines. If
+projects are not in the final distribution by one week before code freeze their
+artifacts will not be included in the final release, but they may still publish
+artifacts and help their consumers install them out-of-band.
 
 Checkpoints
 +++++++++++
 
-There are no checkpoints for Unmanaged Projects.
+There are no checkpoints for Self-Managed Projects.
 
-Moving a Project from Managed to Unmanaged
-------------------------------------------
+Moving a Project from Managed to Self-Managed
+---------------------------------------------
 
 Managed Projects that are not required for dependency reasons can submit a
-**Project_Plan** issue to be Unmanaged to the TSC project in Jira. See details
+**Project_Plan** issue to be Self-Managed to the TSC project in Jira. See details
 in the `Initial Checkpoint`_ section above. Requests should be submitted before
 the start of a release. Requests will be evaluated by the TSC.
 
 The TSC may withdraw a project from the Managed Release at any time.
 
-Installing Features from Unmanaged Projects
--------------------------------------------
+Installing Features from Self-Managed Projects
+----------------------------------------------
 
-Unmanaged Projects will have their artifacts included in the final release if
-they are available on-time, but they will not be available to be installed
+Self-Managed Projects will have their artifacts included in the final release
+if they are available on-time, but they will not be available to be installed
 until the user does a repo:add.
 
-To install an Unmanaged Project feature, find the feature description in the
+To install an Self-Managed Project feature, find the feature description in the
 system directory. For example, NetVirt's main feature:
 
 system/org/opendaylight/netvirt/odl-netvirt-openstack/0.6.0-SNAPSHOT/
@@ -746,7 +746,8 @@ Vocabulary Reference
 
 * Managed Release Process: The release process described in this document.
 * Managed Project: A project taking part in the Managed Release Process.
-* Unmanaged Project: A project not taking part in the Managed Release Process.
+* Self-Managed Project: A project not taking part in the Managed Release
+  Process.
 * Simultaneous Release: Event wherein all Snapshot Integrated Project versions
   are rewriten to release versions and release artifacts are produced.
 * Snapshot Integrated Project: Project that integrates with OpenDaylight
