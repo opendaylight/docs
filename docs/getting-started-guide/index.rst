@@ -8,7 +8,6 @@ Getting Started Guide
    :maxdepth: 1
 
    introduction
-   who_should_use
    concepts_and_tools
    installing_opendaylight
    project-specific-guides/index
