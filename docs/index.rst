@@ -39,7 +39,6 @@ itself.
    developer-guide/index
    javadoc
 
-
 Content for OpenDaylight Contributors
 -------------------------------------
 
@@ -50,18 +49,10 @@ participate in the development of OpenDaylight or would like to start.
 * :ref:`Infrastructure Guide <odl-infra>`
 * :doc:`Integration Testing Guide <odl-integration-test:index>`
 * :doc:`Integration Packaging Guide <odl-integration-packaging:index>`
-* :doc:`NetVirt Documentation <netvirt:index>`
+* documentation
+* release-process/index
 
-.. toctree::
-   :maxdepth: 1
 
-   submodules/releng/builder/docs/index
-   documentation
-   release-process/index
-   submodules/genius/docs/index
-   submodules/infrautils/docs/index
-   submodules/openflowplugin/docs/index
-   submodules/sfc/docs/index
 
 .. Commenting the below out until we actually use it
 .. Indices and tables
