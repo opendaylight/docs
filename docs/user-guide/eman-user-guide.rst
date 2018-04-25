@@ -27,7 +27,6 @@ administrators.
 eman is composed of 3 Karaf features:
     * ``eman`` incudes the YANG model and its implementation
     * ``eman-api`` adds support for REST
-    * ``eman-ui`` adds support for DLUX.
 
 Developers will typically interface with ``eman-api``.
 

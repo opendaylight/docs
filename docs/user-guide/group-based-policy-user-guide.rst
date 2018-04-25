@@ -1218,22 +1218,9 @@ Please see:
 
 -  `the **GBP** demo and development environments for tips <#demo>`__
 
-It is recommended to use either:
+It is recommended to use:
 
 -  `Neutron mapper <gbp-neutron>`
-
--  :ref:`the UX <gbp-ux>`
-
-If the REST API must be used, and the above resources are not
-sufficient:
-
--  feature:install odl-dluxapps-yangui
-
--  browse to:
-   ``http://<odl-controller>:8181/index.html``
-   and select YangUI from the left menu.
-
-to explore the various **GBP** REST options
 
 .. _gbp-neutron:
 

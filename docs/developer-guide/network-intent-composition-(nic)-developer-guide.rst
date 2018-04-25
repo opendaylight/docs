@@ -310,10 +310,9 @@ How to use it?
    ::
 
        feature:install odl-nic-core-service-mdsal odl-nic-core odl-nic-console odl-nic-listeners
-       feature:install  odl-dlux-core odl-dluxapps-applications
 
-2. Start mininet topology and verify in DLUX Topology page for the nodes
-   and link.
+2. Start mininet topology. (verification of topology can be done with the topology
+   URI using RESTCONF)
 
    ::
 

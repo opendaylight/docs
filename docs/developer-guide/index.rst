@@ -35,7 +35,6 @@ Project-specific Developer Guides
    didm-developer-guide
    distribution-version
    distribution-test-features
-   dlux
    eman-developer-guide
    fabric-as-a-service
    infrautils-developer-guide

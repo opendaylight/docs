@@ -24,7 +24,6 @@ linkcheck_ignore = [
     # Ignore jenkins because it's often slow to respond.
     'https://jenkins.opendaylight.org/releng',
     'https://jenkins.opendaylight.org/sandbox',
-    'http://\$CONTROL_HOST:8181/dlux/index.html',
     # The '#' in the path makes sphinx think it's an anchor
     'https://git.opendaylight.org/gerrit/#/admin/projects/releng/builder',
 ]

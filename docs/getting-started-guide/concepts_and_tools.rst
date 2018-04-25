@@ -40,6 +40,6 @@ below.
   b. A message bus that provides a way for the various services and protocol
      drivers to notify and communicate with one another.
 
-* If you’re interacting with OpenDaylight through DLUX or the REST APIs while
+* If you’re interacting with OpenDaylight through the REST APIs while
   using the the OpenDaylight interfaces, the microservices architecture allows
   you to select available services, protocols, and REST APIs.

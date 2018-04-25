@@ -111,9 +111,6 @@ A brief description of each module is as follows:
    well as adding mapping information through the Map Server. Key-EID
    associations and mappings can also be queried via this API.
 
--  **GUI:** This module enables adding and querying the mapping service
-   through a GUI based on ODL DLUX.
-
 -  **Neutron:** This module implements the OpenDaylight Neutron Service
    APIs. It provides integration between the LISP service and the
    OpenDaylight Neutron service, and thus OpenStack.

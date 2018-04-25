@@ -117,37 +117,6 @@ https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/man
 For VTN Java API documentation, please refer to:
 https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/apidocs/index.html
 
-Once the Karaf distribution is up, install dlux and apidocs.
-
-::
-
-    feature:install odl-dlux-core odl-dluxapps-applications odl-mdsal-apidocs
-
-Logging In
-''''''''''
-
-To Log in to DLUX, after installing the application:
-
--  Open a browser and enter the login URL as
-   http://<OpenDaylight-IP>:8181/index.html
-
-.. note::
-
-    Replace "<OpenDaylight-IP>" with the IP address of OpenDaylight
-    based on your environment.
-
--  Login to the application with user ID and password credentials as
-   admin.
-
-.. note::
-
-    admin is the only default user available for DLUX in this release.
-
--  In the right hand side frame, click "Yang UI".
-
-YANG documentation for VTN Manager, please refer to:
-https://nexus.opendaylight.org/content/sites/site/org.opendaylight.vtn/boron/manager.model/apidocs/index.html
-
 .. _vtn-coordinator:
 
 VTN Coordinator
