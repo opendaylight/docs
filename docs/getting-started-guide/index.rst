@@ -15,4 +15,5 @@ Getting Started Guide
    clustering
    persistence_and_backup
    security_considerations
+   what_to_do_with_odl
    how-to-get-help
