@@ -3,13 +3,13 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to the OpenDaylight Handbook!
+Welcome to the OpenDaylight Documentation!
 =====================================
 
-This handbook provides details on various aspects of OpenDaylight from the user
-guides to the developer guides and tries to act as a single point of contact
-for all documentation related articles in OpenDaylight. If you would like to
-contribute to the Handbook please refer to the :ref:`documentation-guide`.
+The following guides and documentation provides details on various aspects of
+OpenDaylight from the user guides to the developer guides and tries to act as
+a single point of contact for all documentation related articles in OpenDaylight.
+If you would like to contribute to documentation please refer to the :ref:`documentation-guide`.
 
 Content for OpenDaylight Users
 ------------------------------
