@@ -16,6 +16,7 @@ from docs_conf.conf import *
 intersphinx_mapping['odl-integration-test'] = ('http://docs.opendaylight.org/projects/integration-test/en/latest/', None)
 intersphinx_mapping['odl-integration-packaging'] = ('http://docs.opendaylight.org/projects/integration-packaging/en/latest/', None)
 intersphinx_mapping['odl-releng-builder'] = ('http://docs.opendaylight.org/projects/releng-builder/en/latest/', None)
+intersphinx_mapping['opnfv-apex:installation-instructions'] = ('http://artifacts.opnfv.org/apex/docs/installation-instructions/', None)
 
 # Projects that have stable/branches
 intersphinx_mapping['netvirt'] = ('http://docs.opendaylight.org/projects/netvirt/en/latest/', None)
@@ -30,4 +31,3 @@ linkcheck_ignore = [
 
 nitpicky = True
 release = version
-
