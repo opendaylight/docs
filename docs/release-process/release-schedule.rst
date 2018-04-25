@@ -2,121 +2,104 @@
 Release Schedule
 ================
 
-While OpenDaylight has always targeted two releases per year, in practice our
-release process for the first six releases (through Carbon) has, in practice,
-released approximately every 8 months. This has meant we don't quite release
-twice a year (Lithium was our only release in 2015) and we struggle to
-coordinate releases with other projects that release at regular times each
-year, e.g., OpenStack and OPNFV.
+In an attempt to synchronize with other related open source projects
+(e.g., OPNFV and OpenStack), OpenDaylight releases twice per year on
+a 6 month cadence. These releases are scheduled for September 7th
+and March 7th. These release dates are also used as the beginning
+for the subsequent release.
 
-To try to fix this, we had a short Nitrogen release and then we move to
-a date-based, six-month release calendar releasing at the same time each year.
-Oxygen is the first date-based release of 2018.
+.. list-table::
+   :widths: 20 20 20 40
+   :header-rows: 1
+   :stub-columns: 1
 
-Oxygen
-========
+   * - **Milestone**
+     - **Time**
+     - **Fluorine**
+     - **Description**
 
-+-----------+------------+------------+------------+----------------------------------------+
-| Milestone | offset 0   | offset 1   |  offset 2  | Description                            |
-+===========+============+============+============+========================================+
-|      M0   | 2017/09/07 | 2017/09/07 | 2017/09/07 | Declare Intent                         |
-+-----------+------------+------------+------------+----------------------------------------+
-|      M1   | 2017/10/07 | 2017/10/14 | 2017/10/21 | Final Release Plan, Project Setup      |
-+-----------+------------+------------+------------+----------------------------------------+
-|      M2   | 2017/11/07 | 2017/11/14 | 2017/11/21 | Functionality Freeze                   |
-+-----------+------------+------------+------------+----------------------------------------+
-|      M3   | 2017/12/07 | 2017/12/14 | 2017/12/21 | API Freeze                             |
-+-----------+------------+------------+------------+----------------------------------------+
-|      M4   | 2018/01/07 | 2018/01/14 | 2018/01/21 | Code Freeze *(note M3-M4 will likely   |
-|           |            |            |            | be short since it includes 12/25-1/1)* |
-+-----------+------------+------------+------------+----------------------------------------+
-|     RC0   | 2018/02/07 |    N/A     |    N/A     | All projects must be in the            |
-|           |            |            |            | distribution and autorelease           |
-+-----------+------------+------------+------------+----------------------------------------+
-|     RC1   | 2018/02/14 |    N/A     |    N/A     | Lock branches                          |
-+-----------+------------+------------+------------+----------------------------------------+
-|     RC2   | 2018/02/21 |    N/A     |    N/A     | Only merge blocking bugs               |
-+-----------+------------+------------+------------+----------------------------------------+
-|     RC3   | 2018/02/28 |    N/A     |    N/A     | Release Reviews, All known blockers    |
-|           |            |            |            | addressed/merged                       |
-+-----------+------------+------------+------------+----------------------------------------+
-| Release   | 2018/03/07 |            |            |                                        |
-+-----------+------------+------------+------------+----------------------------------------+
-|     SR1   | 2018/04/07 |            |            |                                        |
-+-----------+------------+------------+------------+----------------------------------------+
-|     SR2   | 2018/06/07 |            |            |                                        |
-+-----------+------------+------------+------------+----------------------------------------+
-|     SR3   | 2018/08/07 |            |            |                                        |
-+-----------+------------+------------+------------+----------------------------------------+
-|     SR4   | 2018/09/21 |            |            |                                        |
-|           | -          |            |            |                                        |
-|           | 2018/11/07 |            |            |                                        |
-+-----------+------------+------------+------------+----------------------------------------+
+   * - Release Start
+     - Start Date
+     - 2018-03-07
+     - Declare Intention: Submit **Project_Plan** Jira item in TSC project
 
-.. note:: Dates are calendar based on the 7th, 14th, 21st, and 28th of each month instead of being
-          on a particular day of the week. The intent is that projects will figure out how to meet
-          the deadline in the way that best works for them even if that means getting work done
-          ahead of time to avoid holidays, weekends, vacation or travel.
+   * - Initial Checkpoint
+     - Start Date + 2 weeks
+     - 2018-03-22
+     - Initial Checkpoint. All Managed Projects must have completed
+       **Project_Plan** Jira items in TSC project.
 
-Future Odd Releases
-===================
+   * - Release Integrated Deadline
+     - Initial Checkpoint + 2 weeks
+     - 2018-04-07
+     - Deadline for Release Integrated Projects (currently ODLPARENT and
+       YANGTOOLS) to provide the desired version deliverables for downstream
+       Snapshot Integrated Projects to consume.
 
-Starting with Oxygen, our odd-numbered element releases will look like this:
+   * - Version Bump
+     - Release Integrated Deadline + 1 day
+     - 2018-04-08
+     - Prepare version bump patches and merge them in (RelEng team). Spend the
+       next 2 weeks to get green build for all MSI Projects and a healthy
+       distribution.
 
-+-----------+-----------+-------+-------+----------------------------------------+
-| Milestone | off0      | off1  | off2  | Description                            |
-+===========+===========+=======+=======+========================================+
-|      M0   | 9/7       |       |       | Draft Release Plan                     |
-+-----------+-----------+-------+-------+----------------------------------------+
-|      M1   | 10/7      | 10/14 | 10/21 | Final Release Plan, Project Setup      |
-+-----------+-----------+-------+-------+----------------------------------------+
-|      M2   | 11/7      | 11/14 | 11/21 | Functionality Freeze                   |
-+-----------+-----------+-------+-------+----------------------------------------+
-|      M3   | 12/7      | 12/14 | 12/21 | API Freeze                             |
-+-----------+-----------+-------+-------+----------------------------------------+
-|      M4   | 1/7       | 1/14  | 1/21  | Code Freeze *(note M3-M4 will likely   |
-|           |           |       |       | be short since it includes 12/25-1/1)* |
-+-----------+-----------+-------+-------+----------------------------------------+
-|     RCs   | 1/21-3/7  |       |       | (continuous build)                     |
-+-----------+-----------+-------+-------+----------------------------------------+
-| Release   | 3/7       |       |       |                                        |
-+-----------+-----------+-------+-------+----------------------------------------+
-|     SR1   | 4/7       |       |       |                                        |
-+-----------+-----------+-------+-------+----------------------------------------+
-|     SR2   | 6/7       |       |       |                                        |
-+-----------+-----------+-------+-------+----------------------------------------+
-|     SR3   | 8/7       |       |       |                                        |
-+-----------+-----------+-------+-------+----------------------------------------+
-|     SR4   | 9/21-11/7 |       |       |                                        |
-+-----------+-----------+-------+-------+----------------------------------------+
+   * - Version Bump Checkpoint
+     - Release Integrated Deadline + 2 weeks
+     - 2018-04-21
+     - Check status of MSI Projects to see if we have green builds and a
+       healthy distribution. Revert the MRI deliverables if deemed necessary.
 
-Future Even Releases
-====================
+   * - CSIT Checkpoint
+     - Version Bump Checkpoint + 2 weeks
+     - 2018-05-07
+     - All Managed Release CSIT should be in good shape - get all MSI Projects'
+       CSIT results as they were before the version bump. This is the final
+       opportunity to revert the MRI deliverables if deemed necessary.
 
-Starting with Fluorine, our even-numbered element releases will look like this:
+   * - Middle Checkpoint
+     - CSIT Checkpoint + 8 weeks
+     - 2018-07-05
+     - Checkpoint for status of Managed Projects - especially Snapshot
+       Integrated Projects.
 
-+-----------+-----------+-------+-------+----------------------------------------+
-| Milestone | off0      | off1  | off2  | Description                            |
-+===========+===========+=======+=======+========================================+
-|      M0   | 3/7       |       |       | Draft Release Plan                     |
-+-----------+-----------+-------+-------+----------------------------------------+
-|      M1   | 4/7       | 4/14  | 4/21  | Final Release Plan, Project Setup      |
-+-----------+-----------+-------+-------+----------------------------------------+
-|      M2   | 5/7       | 5/14  | 5/21  | Functionality Freeze                   |
-+-----------+-----------+-------+-------+----------------------------------------+
-|      M3   | 6/7       | 6/14  | 6/21  | API Freeze                             |
-+-----------+-----------+-------+-------+----------------------------------------+
-|      M4   | 7/7       | 7/14  | 7/21  | Code Freeze                            |
-+-----------+-----------+-------+-------+----------------------------------------+
-|     RCs   | 7/21-9/7  |       |       | (continuous build)                     |
-+-----------+-----------+-------+-------+----------------------------------------+
-| Release   | 9/7       |       |       |                                        |
-+-----------+-----------+-------+-------+----------------------------------------+
-|     SR1   | 10/7      |       |       |                                        |
-+-----------+-----------+-------+-------+----------------------------------------+
-|     SR2   | 12/7      |       |       |                                        |
-+-----------+-----------+-------+-------+----------------------------------------+
-|     SR3   | 2/7       |       |       |                                        |
-+-----------+-----------+-------+-------+----------------------------------------+
-|     SR4   | 3/21-5/7  |       |       |                                        |
-+-----------+-----------+-------+-------+----------------------------------------+
+   * - Code Freeze
+     - Middle Checkpoint + 4 weeks
+     - 2018-08-07
+     - Code freeze for all Managed Projects - cut and lock release branch. Only
+       allow blocker bugfixes in release branch.
+
+   * - Final Checkpoint
+     - TSC meeting 2 weeks after Code Freeze
+     - 2018-08-23
+     - Final Checkpoint for all Managed Projects.
+
+   * - Formal Release
+     - 6 months after Start Date
+     - 2018-09-07
+     - Formal release
+
+   * - Service Release 1
+     - 1 month after Formal Release
+     - 2018-10-07
+     - Service Release 1 (SR1)
+
+   * - Service Release 2
+     - 2 months after SR1
+     - 2018-12-07
+     - Service Release 2 (SR2)
+
+   * - Service Release 3
+     - 2 months after SR2
+     - 2019-02-07
+     - Service Release 3 (SR3)
+
+   * - Service Release 4
+     - 3 months after SR3
+     - 2019-05-07
+     - Service Release 4 (SR4) - final service release
+
+   * - Release End of Life
+     - 4 months after SR4
+     - 2019-09-07
+     - End of Life - coincides with the Formal Release of the current release+2
+       versions and the start of the current release+3 versions
