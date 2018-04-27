@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "d2918aba_e0a8c141",
+        "filename": "docs/getting-started-guide/what_to_do_with_odl.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2018-04-27T18:47:46Z",
+      "side": 1,
+      "message": "Fixed.",
+      "parentUuid": "a5c85425_b2732883",
+      "revId": "95aca6d38dbaa343dce74badac72573b92240585",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "96584931_5400b83c",
         "filename": "docs/getting-started-guide/what_to_do_with_odl.rst",
         "patchSetId": 2
@@ -48,6 +66,24 @@
       "writtenOn": "2018-04-27T15:01:50Z",
       "side": 1,
       "message": "This looks like Sphinx,\n\nWe should intersphinx link by adding to conf.py and then using something like:\n\n :doc:`OPNFV Installation Instructions (Apex) \u003copnfv-apex:installation-instructions\u003e`",
+      "revId": "95aca6d38dbaa343dce74badac72573b92240585",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da298a37_20527c36",
+        "filename": "docs/getting-started-guide/what_to_do_with_odl.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 7597
+      },
+      "writtenOn": "2018-04-27T18:47:46Z",
+      "side": 1,
+      "message": "Thanh: I was able to fix the link without using intersphinx linking. The link looks fine on the page. Let me know if you are okay with this.",
+      "parentUuid": "96584931_5400b83c",
       "revId": "95aca6d38dbaa343dce74badac72573b92240585",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
