@@ -16,6 +16,41 @@
       "revId": "95aca6d38dbaa343dce74badac72573b92240585",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a5c85425_b2732883",
+        "filename": "docs/getting-started-guide/what_to_do_with_odl.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2018-04-27T15:01:50Z",
+      "side": 1,
+      "message": "Not sure but I think it\u0027s not indented enough. When you start a bullet point the next line if it continues the bullet must be indented as if it was inside the bullet item. For example:\n\n * bullet item\n   continued item in bullet",
+      "parentUuid": "3a010105_02a6209f",
+      "revId": "95aca6d38dbaa343dce74badac72573b92240585",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "96584931_5400b83c",
+        "filename": "docs/getting-started-guide/what_to_do_with_odl.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2018-04-27T15:01:50Z",
+      "side": 1,
+      "message": "This looks like Sphinx,\n\nWe should intersphinx link by adding to conf.py and then using something like:\n\n :doc:`OPNFV Installation Instructions (Apex) \u003copnfv-apex:installation-instructions\u003e`",
+      "revId": "95aca6d38dbaa343dce74badac72573b92240585",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
