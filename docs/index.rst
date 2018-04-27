@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to the OpenDaylight Documentation!
+Welcome to OpenDaylight Documentation
 =====================================
 
 The following guides and documentation provides details on various aspects of
@@ -29,7 +29,7 @@ just learn more about OpenDaylight.
 Content for OpenDaylight Developers
 -----------------------------------
 
-The Following content is intended for developers building applications or code
+The following content is intended for developers building applications or code
 on top of OpenDaylight, but who do not plan to modify OpenDaylight code
 itself.
 
@@ -49,8 +49,12 @@ participate in the development of OpenDaylight or would like to start.
 * :ref:`Infrastructure Guide <odl-infra>`
 * :doc:`Integration Testing Guide <odl-integration-test:index>`
 * :doc:`Integration Packaging Guide <odl-integration-packaging:index>`
-* documentation
-* release-process/index
+
+.. toctree::
+   :maxdepth: 1
+
+   documentation
+   release-process/index* release-process/index
 
 
 
