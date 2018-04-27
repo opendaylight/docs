@@ -48,6 +48,7 @@ participate in the development of OpenDaylight or would like to start.
 * :doc:`Gerrit Guide <lfdocs:gerrit>`
 * :ref:`Infrastructure Guide <odl-infra>`
 * :doc:`Integration Testing Guide <odl-integration-test:index>`
+* :doc:`Integration Distribution Guide <odl-integration-distribution:index>`
 * :doc:`Integration Packaging Guide <odl-integration-packaging:index>`
 
 .. toctree::
