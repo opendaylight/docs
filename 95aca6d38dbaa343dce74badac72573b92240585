@@ -87,6 +87,24 @@
       "revId": "95aca6d38dbaa343dce74badac72573b92240585",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0768b5bd_673eb44d",
+        "filename": "docs/getting-started-guide/what_to_do_with_odl.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2018-04-27T18:52:36Z",
+      "side": 1,
+      "message": "I\u0027m fine with it. We should move towards intersphinx linking though as sphinx will automatically update links if they change upstream whereas direct linking like this means if this page ever moves we\u0027ll have a broken link. but we can do that in another patch.",
+      "parentUuid": "da298a37_20527c36",
+      "revId": "95aca6d38dbaa343dce74badac72573b92240585",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
