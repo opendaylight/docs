@@ -31,4 +31,3 @@ linkcheck_ignore = [
 
 nitpicky = True
 release = version
-
