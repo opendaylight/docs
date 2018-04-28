@@ -55,11 +55,11 @@ M4: Code Freeze
 
    milestone-readouts/m4/*
 
-RCX: Release Candidate Testing
+MF: Final Milestone
 ------------------------------
 
 .. toctree::
    :glob:
    :maxdepth: 1
 
-   milestone-readouts/rcx/*
+   milestone-readouts/mf/*
