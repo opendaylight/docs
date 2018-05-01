@@ -15,9 +15,9 @@ Oxygen-SR1
 :Service Release Date: April 25, 2018
 
 :Downloads:
-    * `OpenDaylight Tar
+    * `OpenDaylight Oxygen Tar
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/karaf/0.8.1/karaf-0.8.1.tar.gz>`_
-    * `OpenDaylight Zip
+    * `OpenDaylight Oxygen Zip
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/karaf/0.8.1/karaf-0.8.1.zip>`_
     * `OpFlex
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/opflex/>`_
@@ -38,9 +38,9 @@ Nitrogen-SR2
 :Service Release Date: February 23, 2018
 
 :Downloads:
-    * `OpenDaylight Tar
+    * `OpenDaylight Nitrogen Tar
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/karaf/0.7.2/karaf-0.7.2.tar.gz>`_
-    * `OpenDaylight Zip
+    * `OpenDaylight Nitrogen Zip
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/karaf/0.7.2/karaf-0.7.2.zip>`_
     * `Virtual Tenant Network (VTN) Coordinator
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/vtn/distribution.vtn-coordinator/6.5.2/distribution.vtn-coordinator-6.5.2-bin.tar.bz2>`_
@@ -63,9 +63,9 @@ Carbon-SR4
 :Service Release Date: April 27, 2018
 
 :Downloads:
-    * `OpenDaylight Tar
+    * `OpenDaylight Carbon Tar
       <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/distribution-karaf/0.6.4-Carbon/distribution-karaf-0.6.4-Carbon.tar.gz>`_
-    * `OpenDaylight Zip
+    * `OpenDaylight Carbon Zip
       <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/distribution-karaf/0.6.4-Carbon/distribution-karaf-0.6.4-Carbon.zip>`_
     * `OpFlex
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/opflex/>`_
