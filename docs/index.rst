@@ -6,16 +6,12 @@
 Welcome to OpenDaylight Documentation
 =====================================
 
-The following guides and documentation provides details on various aspects of
-OpenDaylight from the user guides to the developer guides and tries to act as
-a single point of contact for all documentation related articles in OpenDaylight.
-If you would like to contribute to documentation please refer to the :ref:`documentation-guide`.
+The OpenDaylight documentation site acts as a central clearinghouse for
+OpenDaylight project and release documentation. If you would like to contribute
+to documentation, refer to the :ref:`documentation-guide`.
 
-Content for OpenDaylight Users
+Getting Started with OpenDaylight
 ------------------------------
-
-The following content is intended for people who would like to deploy, use, or
-just learn more about OpenDaylight.
 
 .. toctree::
    :maxdepth: 1
@@ -23,28 +19,35 @@ just learn more about OpenDaylight.
    downloads
    release-notes/index
    getting-started-guide/index
-   user-guide/index
-   opendaylight-with-openstack/index
 
-
-Content for OpenDaylight Developers
+OpenDaylight Project Documentation
 -----------------------------------
 
-The following content is intended for developers building applications or code
-on top of OpenDaylight, but who do not plan to modify OpenDaylight code
-itself.
+Managed Projects
+~~~~~~~~~~~~~~~~~
 
-.. toctree::
-   :maxdepth: 1
+* :doc:`AAA Documentation <aaa:index>`
+* :doc:`BGPCEP Documentation <bgpcep:index>`
+* :doc:`Controller Documentation <controller:index>`
+* :doc:`COE Documentation <coe:index>`
+* :doc:`DAEXIM Documentation <daexim:index>`
+* :doc:`Genius Documentation <genius:index>`
+* :doc:`Infrautils Documentation <infrautils:index>`
+* :doc:`LISP Flow Mapping Documentation <lispflowmapping:index>`
+* :doc:`MD-SAL Documentation <mdsal:index>`
+* :doc:`NETCONF Documentation <netconf:index>`
+* :doc:`NetVirt Documentation <netvirt:index>`
+* :doc:`Neutron Documentation <neutron:index>`
+* :doc:`OpenFlowPlugin Documentation <openflowplugin:index>`
+* :doc:`OVSDB Documentation <ovsdb:index>`
 
-   developer-guide/index
-   javadoc
 
-Content for OpenDaylight Contributors
--------------------------------------
+Self-Managed Projects
+~~~~~~~~~~~~~~~~~~~~~~
 
-The following content is intended for developers who either currently
-participate in the development of OpenDaylight or would like to start.
+
+OpenDaylight Contributor Guides
+--------------------------------
 
 * :doc:`Gerrit Guide <lfdocs:gerrit>`
 * :ref:`Infrastructure Guide <odl-infra>`
