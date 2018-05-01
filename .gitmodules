@@ -28,10 +28,6 @@
 	url = ../ovsdb
 	branch = .
 	ignore = dirty
-[submodule "docs/submodules/federation"]
-	path = docs/submodules/federation
-	url = ../federation
-	branch = master
 [submodule "docs/submodules/coe"]
 	path = docs/submodules/coe
 	url = ../coe
