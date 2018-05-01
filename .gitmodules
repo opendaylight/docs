@@ -18,11 +18,6 @@
 	url = ../netconf
 	branch = .
 	ignore = dirty
-[submodule "docs/submodules/odlparent"]
-	path = docs/submodules/odlparent
-	url = ../odlparent
-	branch = .
-	ignore = dirty
 [submodule "docs/submodules/genius"]
 	path = docs/submodules/genius
 	url = ../genius
