@@ -55,17 +55,19 @@ Compatibility
 -------------
 
 * Is this release compatible with the previous release? Yes.
-* Any API changes? Yes. Some BIER-TE APIs have been added and listed as following.
-bier/bierman/api/src/main/yang/bier-te-config-api.yang
-configure-te-node
-configure-te-label
-delete-te-babel
-delete-te-bsl
-delete-te-si
-delete-te-bp
-bier/oam/api/src/main/yang/bier-oam-api@2017-08-08.yang
-start-echo-request
-receive-echo-reply
+* Any API changes? Yes.
+  Some BIER-TE APIs have been added and listed as following:
+
+  * bier/bierman/api/src/main/yang/bier-te-config-api.yang
+  * configure-te-node
+  * configure-te-label
+  * delete-te-babel
+  * delete-te-bsl
+  * delete-te-si
+  * delete-te-bp
+  * bier/oam/api/src/main/yang/bier-oam-api@2017-08-08.yang
+  * start-echo-request
+  * receive-echo-reply
 
 * Any configuration changes? None.
 

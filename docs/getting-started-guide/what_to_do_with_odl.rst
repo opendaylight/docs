@@ -1,4 +1,4 @@
-.. _what_to_do_with_odl
+.. _what_to_do_with_odl:
 
 *****************************
 What to Do with OpenDaylight

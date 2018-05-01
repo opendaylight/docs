@@ -1,4 +1,5 @@
 .. _didm-developer-guide:
+
 DIDM Developer Guide
 ====================
 
@@ -220,4 +221,3 @@ Go to
 http://${controller-ip}:8181/apidoc/explorer/index.html,
 and look under DIDM section to see all the available REST calls and
 tables
-

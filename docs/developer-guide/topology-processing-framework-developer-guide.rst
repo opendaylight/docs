@@ -1279,4 +1279,3 @@ API Reference Documentation
 
 You can find API examples on `this wiki
 page <https://wiki.opendaylight.org/view/Topology_Processing_Framework:Developer_Guide:REST_API_Specification>`__.
-
