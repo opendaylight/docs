@@ -8,11 +8,6 @@
 	url = ../infrautils
 	branch = .
 	ignore = dirty
-[submodule "docs/submodules/aaa"]
-	path = docs/submodules/aaa
-	url = ../aaa
-	branch = .
-	ignore = dirty
 [submodule "docs/submodules/netconf"]
 	path = docs/submodules/netconf
 	url = ../netconf
