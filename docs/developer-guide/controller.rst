@@ -720,7 +720,7 @@ be routed.
 Declaring a routing context type
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. code:: yang
+.. code::
 
     identity node-context {
         description "Identity used to mark node context";
@@ -737,7 +737,7 @@ In order to define possible values of **context instances** for routed
 RPCs, we need to model that set accordingly using ``context-instance``
 extension from the ``yang-ext`` model.
 
-.. code:: yang
+.. code::
 
     import yang-ext { prefix ext; }
 
@@ -782,7 +782,7 @@ reference**.
 This is achieved using YANG extension ``context-reference`` from
 ``yang-ext`` model on leaf, which will be used for RPC routing.
 
-.. code:: yang
+.. code::
 
     rpc example-routed-rpc  {
         input {

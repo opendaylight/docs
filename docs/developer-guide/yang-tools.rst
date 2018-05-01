@@ -324,7 +324,7 @@ Before you use a semantic version statement in a YANG module, you need
 to define an extension for it so that the YANG statement parser can
 recognize it.
 
-.. code:: yang
+.. code::
 
     module semantic-version {
         namespace "urn:opendaylight:yang:extension:semantic-version";
@@ -352,7 +352,7 @@ semantic version processing mode being active, the foo module imports
 the bar module based on its semantic version. Notice how both modules
 import the module with the semantic-version extension.
 
-.. code:: yang
+.. code::
 
     module foo {
         namespace foo;
@@ -370,7 +370,7 @@ import the module with the semantic-version extension.
         ...
     }
 
-.. code:: yang
+.. code::
 
     module bar {
         namespace bar;
@@ -500,7 +500,7 @@ Below is an example which shows the use of this method.
 Let us show a more complex example of creating a NormalizedNode. First,
 consider the following YANG module:
 
-.. code:: yang
+.. code::
 
     module example-module {
         namespace "opendaylight.org/example-module";

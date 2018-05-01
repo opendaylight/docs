@@ -468,7 +468,7 @@ pieces are:
 
 -  output model
 
-.. code:: yang
+.. code::
 
     leaf output-model {
         type identityref {
@@ -479,7 +479,7 @@ pieces are:
 
 -  overlay topology with new nodes
 
-.. code:: yang
+.. code::
 
     container node-info {
         leaf node-topology {
@@ -493,7 +493,7 @@ pieces are:
 
 -  underlay topologies with original links
 
-.. code:: yang
+.. code::
 
     list link-info {
         key "link-topology input-model";
@@ -730,7 +730,7 @@ which you can set your new model as output model. To do that you have to
 add another identity item to topology-correlation.yang file. For our
 inventory-rendering model identity looks like this:
 
-.. code:: yang
+.. code::
 
     identity inventory-rendering-model {
         description "inventory-rendering.yang";
