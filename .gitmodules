@@ -13,11 +13,6 @@
 	url = ../aaa
 	branch = .
 	ignore = dirty
-[submodule "docs/submodules/netconf"]
-	path = docs/submodules/netconf
-	url = ../netconf
-	branch = .
-	ignore = dirty
 [submodule "docs/submodules/odlparent"]
 	path = docs/submodules/odlparent
 	url = ../odlparent
