@@ -18,11 +18,6 @@
 	url = ../genius
 	branch = .
 	ignore = dirty
-[submodule "docs/submodules/ovsdb"]
-	path = docs/submodules/ovsdb
-	url = ../ovsdb
-	branch = .
-	ignore = dirty
 [submodule "docs/submodules/federation"]
 	path = docs/submodules/federation
 	url = ../federation
