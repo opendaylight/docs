@@ -252,7 +252,7 @@ Add a simple HelloWorld RPC API
 2. Edit this file as follows. In the following example, we are adding
    the code in a YANG module to define the *hello-world* RPC:
 
-   .. code:: yang
+   .. code::
 
        module hello {
            yang-version 1;

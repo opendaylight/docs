@@ -222,7 +222,7 @@ describes the YANG files used to model each module.
 
 -  and target implementation is assigned (``...OpenflowPluginProvider``)
 
-.. code:: yang
+.. code::
 
     module openflow-provider {
        yang-version 1;
@@ -259,7 +259,7 @@ describes the YANG files used to model each module.
       provided by openflowjava, one plugin instance will orchestrate
       multiple openflowjava modules)
 
-.. code:: yang
+.. code::
 
     module openflow-provider-impl {
        yang-version 1;

@@ -159,7 +159,7 @@ Currently ``alto-core/standard-service-models/model-base`` has defined a
 template of the service RPC. You can define your own RPC using
 ``augment`` in YANG. Here is an example in ``alto-simpleird``.
 
-.. code:: yang
+.. code::
 
         grouping "alto-ird-request" {
             container "ird-request" {
