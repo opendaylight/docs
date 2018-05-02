@@ -1,4 +1,4 @@
-.. _tsdr-install-guide:
+.. _tsdr-guide:
 
 TSDR Installation Guide
 =======================

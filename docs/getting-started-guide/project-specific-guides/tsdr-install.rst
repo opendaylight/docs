@@ -23,8 +23,8 @@ Pre Requisites for Installing TSDR
 The software requirements for TSDR HBase Data Store are as follows:
 
 * In the case when the user chooses HBase or Cassandra data store, besides the
-software that ODL requires, we also require HBase and Cassandra database
-running in single node deployment scenario.
+  software that ODL requires, we also require HBase and Cassandra database
+  running in single node deployment scenario.
 
 No additional software is required for the HSQLDB Data Stores.
 
@@ -171,7 +171,7 @@ Installing TSDR Cassandra Data Store contains two steps:
 
 #. Install Cassandra data store feature from Karaf console
 
-   .. code-block::
+   .. code-block:: bash
 
       feature:install odl-tsdr-cassandra
 
@@ -310,14 +310,18 @@ To uninstall the TSDR functionality with the Cassandra store,
      feature:uninstall odl-tsdr-cassandra
      feature:uninstall odl-tsdr-core
 
-* stop cassandra database::
+* stop cassandra database
 
-  ps auwx | grep cassandra
-  sudo kill pid
+  .. code-block:: bash
 
-* remove the cassandra installation files::
+     ps auwx | grep cassandra
+     sudo kill pid
 
-  rm <cassandra-installation-directory>
+* remove the cassandra installation files
+
+  .. code-block:: bash
+
+     rm <cassandra-installation-directory>
 
 It is recommended to restart the Karaf container after uninstallation of the
 TSDR data store.

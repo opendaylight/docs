@@ -382,7 +382,7 @@ mechanism allows for a more robust configuration capabilities. `Shiro-based
 Authorization <http://shiro.apache.org/web.html#Web-%7B%7B%5Curls%5C%7D%7D>`_
 describes how to configure the Authentication feature in detail.
 
-.. notes::
+.. note::
 
     The Shiro-Based Authorization that uses the *shiro.ini* URLs section to
     define roles requirements is **deprecated** and **discouraged** since the

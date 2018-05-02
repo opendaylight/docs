@@ -868,7 +868,7 @@ OpenDaylight Controller MD-SAL: RESTCONF
 ----------------------------------------
 
 RESTCONF operations overview
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | RESTCONF allows access to datastores in the controller.
 | There are two datastores:
@@ -1905,4 +1905,3 @@ It can be acquired from, for example, environment variables. After the
 creation of a default instance, it acts as a regular instance and fully
 participates in the configuration subsystem (It can be reconfigured or
 deleted in following transactions.).
-

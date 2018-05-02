@@ -711,4 +711,3 @@ Introducing specific extension support for YANG parser
 
 Diagnostics
 ~~~~~~~~~~~
-

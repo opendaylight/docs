@@ -15,9 +15,9 @@ Oxygen-SR1
 :Service Release Date: April 25, 2018
 
 :Downloads:
-    * `OpenDaylight Tar
+    * `OpenDaylight Oxygen Tar
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/karaf/0.8.1/karaf-0.8.1.tar.gz>`_
-    * `OpenDaylight Zip
+    * `OpenDaylight Oxygen Zip
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/karaf/0.8.1/karaf-0.8.1.zip>`_
     * `OpenDaylight RPM
       <http://cbs.centos.org/repos/nfv7-opendaylight-81-release/x86_64/os/Packages/opendaylight-8.1.0-1.el7.noarch.rpm>`_
@@ -40,9 +40,9 @@ Nitrogen-SR2
 :Service Release Date: February 23, 2018
 
 :Downloads:
-    * `OpenDaylight Tar
+    * `OpenDaylight Nitrogen Tar
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/karaf/0.7.2/karaf-0.7.2.tar.gz>`_
-    * `OpenDaylight Zip
+    * `OpenDaylight Nitrogen Zip
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/karaf/0.7.2/karaf-0.7.2.zip>`_
     * `OpenDaylight RPM
       <http://cbs.centos.org/repos/nfv7-opendaylight-72-release/x86_64/os/Packages/opendaylight-7.2.0-1.el7.noarch.rpm>`_
@@ -67,9 +67,9 @@ Carbon-SR4
 :Service Release Date: April 27, 2018
 
 :Downloads:
-    * `OpenDaylight Tar
+    * `OpenDaylight Carbon Tar
       <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/distribution-karaf/0.6.4-Carbon/distribution-karaf-0.6.4-Carbon.tar.gz>`_
-    * `OpenDaylight Zip
+    * `OpenDaylight Carbon Zip
       <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/distribution-karaf/0.6.4-Carbon/distribution-karaf-0.6.4-Carbon.zip>`_
     * `OpenDaylight RPM
       <http://cbs.centos.org/repos/nfv7-opendaylight-64-release/x86_64/os/Packages/opendaylight-6.4.0-1.el7.noarch.rpm>`_

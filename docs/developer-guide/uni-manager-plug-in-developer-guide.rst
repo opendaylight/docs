@@ -121,7 +121,9 @@ Legato API Tree
 ---------------
 
 module: mef-services
+
 ::
+
   +--rw mef-services
      +--rw mef-service* [svc-id]
         +--rw evc
@@ -202,7 +204,9 @@ module: mef-services
         +--rw svc-entity?   mef-types:service-entity-type
 
 module: mef-global
+
 ::
+
   +--rw mef-global
      +--rw svc-providers!
      |  +--rw svc-provider* [sp-id]
@@ -389,7 +393,9 @@ Presto API Tree
 ---------------
 
 module: onf-core-network-module
+
 ::
+
   +--rw forwarding-constructs
      +--rw forwarding-construct* [uuid]
         +--rw uuid                   string
@@ -427,7 +433,9 @@ module: onf-core-network-module
         +--rw forwardingDirection?   onf-cnt:ForwardingDirection
 
 augment /nt:network-topology/nt:topology/nt:node/nt:termination-point:
+
 ::
+
   +--rw ltp-attrs
      +--rw lpList* [uuid]
      |  +--rw uuid                        string
