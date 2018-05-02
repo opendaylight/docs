@@ -19,6 +19,8 @@ Oxygen-SR1
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/karaf/0.8.1/karaf-0.8.1.tar.gz>`_
     * `OpenDaylight Zip
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/karaf/0.8.1/karaf-0.8.1.zip>`_
+    * `OpenDaylight RPM
+      <http://cbs.centos.org/repos/nfv7-opendaylight-81-release/x86_64/os/Packages/opendaylight-8.1.0-1.el7.noarch.rpm>`_
     * `OpFlex
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/opflex/>`_
 
@@ -42,6 +44,8 @@ Nitrogen-SR2
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/karaf/0.7.2/karaf-0.7.2.tar.gz>`_
     * `OpenDaylight Zip
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/karaf/0.7.2/karaf-0.7.2.zip>`_
+    * `OpenDaylight RPM
+      <http://cbs.centos.org/repos/nfv7-opendaylight-72-release/x86_64/os/Packages/opendaylight-7.2.0-1.el7.noarch.rpm>`_
     * `Virtual Tenant Network (VTN) Coordinator
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/vtn/distribution.vtn-coordinator/6.5.2/distribution.vtn-coordinator-6.5.2-bin.tar.bz2>`_
     * `OpFlex
@@ -67,6 +71,8 @@ Carbon-SR4
       <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/distribution-karaf/0.6.4-Carbon/distribution-karaf-0.6.4-Carbon.tar.gz>`_
     * `OpenDaylight Zip
       <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/distribution-karaf/0.6.4-Carbon/distribution-karaf-0.6.4-Carbon.zip>`_
+    * `OpenDaylight RPM
+      <http://cbs.centos.org/repos/nfv7-opendaylight-64-release/x86_64/os/Packages/opendaylight-6.4.0-1.el7.noarch.rpm>`_
     * `OpFlex
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/opflex/>`_
 
