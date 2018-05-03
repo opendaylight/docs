@@ -19,6 +19,8 @@ intersphinx_mapping['odl-integration-packaging'] = ('http://docs.opendaylight.or
 intersphinx_mapping['odl-releng-builder'] = ('http://docs.opendaylight.org/projects/releng-builder/en/latest/', None)
 
 # Projects that have stable/branches
+intersphinx_mapping['coe'] = ('http://docs.opendaylight.org/projects/coe/en/latest/', None)
+intersphinx_mapping['genius'] = ('http://docs.opendaylight.org/projects/genius/en/latest/', None)
 intersphinx_mapping['netvirt'] = ('http://docs.opendaylight.org/projects/netvirt/en/latest/', None)
 
 # OpenDaylight Documentation Releases
