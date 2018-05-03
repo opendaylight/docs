@@ -3,11 +3,6 @@
 	url = ../infrautils
 	branch = .
 	ignore = dirty
-[submodule "docs/submodules/genius"]
-	path = docs/submodules/genius
-	url = ../genius
-	branch = .
-	ignore = dirty
 [submodule "docs/submodules/sfc"]
 	path = docs/submodules/sfc
 	url = ../sfc
