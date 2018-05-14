@@ -32,22 +32,18 @@ Oxygen-SR1
     * :doc:`Using OpenDaylight with OpenStack <odl-oxygen:opendaylight-with-openstack/index>`
     * :doc:`Release Notes <odl-oxygen:release-notes/index>`
 
-Nitrogen-SR2
+Nitrogen-SR3
 ------------
 
 :Annoucement: https://www.opendaylight.org/blog/2017/09/26/opendaylight-introduces-nitrogen
 :Original Release Date: September 26, 2017
-:Service Release Date: February 23, 2018
+:Service Release Date: May 11, 2018
 
 :Downloads:
-    * `OpenDaylight Nitrogen Tar
-      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/karaf/0.7.2/karaf-0.7.2.tar.gz>`_
-    * `OpenDaylight Nitrogen Zip
-      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/karaf/0.7.2/karaf-0.7.2.zip>`_
-    * `OpenDaylight RPM
-      <http://cbs.centos.org/repos/nfv7-opendaylight-72-release/x86_64/os/Packages/opendaylight-7.2.0-1.el7.noarch.rpm>`_
-    * `Virtual Tenant Network (VTN) Coordinator
-      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/vtn/distribution.vtn-coordinator/6.5.2/distribution.vtn-coordinator-6.5.2-bin.tar.bz2>`_
+    * `OpenDaylight Tar
+      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/karaf/0.7.3/karaf-0.7.3.tar.gz>`_
+    * `OpenDaylight Zip
+      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/karaf/0.7.3/karaf-0.7.3.zip>`_
     * `OpFlex
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/opflex/>`_
 
