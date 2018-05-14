@@ -15,11 +15,11 @@ Oxygen-SR1
 :Service Release Date: April 25, 2018
 
 :Downloads:
-    * `OpenDaylight Oxygen Tar
+    * `OpenDaylight Oxygen SR1 Tar
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/karaf/0.8.1/karaf-0.8.1.tar.gz>`_
-    * `OpenDaylight Oxygen Zip
+    * `OpenDaylight Oxygen SR1 Zip
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/karaf/0.8.1/karaf-0.8.1.zip>`_
-    * `OpenDaylight RPM
+    * `OpenDaylight Oxygen SR1 RPM
       <http://cbs.centos.org/repos/nfv7-opendaylight-81-release/x86_64/os/Packages/opendaylight-8.1.0-1.el7.noarch.rpm>`_
     * `OpFlex
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/opflex/>`_
@@ -40,9 +40,9 @@ Nitrogen-SR3
 :Service Release Date: May 11, 2018
 
 :Downloads:
-    * `OpenDaylight Tar
+    * `OpenDaylight Nitrogen SR3 Tar
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/karaf/0.7.3/karaf-0.7.3.tar.gz>`_
-    * `OpenDaylight Zip
+    * `OpenDaylight Nitrogen SR3 Zip
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/karaf/0.7.3/karaf-0.7.3.zip>`_
     * `OpFlex
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/opflex/>`_
@@ -63,11 +63,11 @@ Carbon-SR4
 :Service Release Date: April 27, 2018
 
 :Downloads:
-    * `OpenDaylight Carbon Tar
+    * `OpenDaylight Carbon SR4 Tar
       <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/distribution-karaf/0.6.4-Carbon/distribution-karaf-0.6.4-Carbon.tar.gz>`_
-    * `OpenDaylight Carbon Zip
+    * `OpenDaylight Carbon SR4 Zip
       <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/distribution-karaf/0.6.4-Carbon/distribution-karaf-0.6.4-Carbon.zip>`_
-    * `OpenDaylight RPM
+    * `OpenDaylight Carbon SR4 RPM
       <http://cbs.centos.org/repos/nfv7-opendaylight-64-release/x86_64/os/Packages/opendaylight-6.4.0-1.el7.noarch.rpm>`_
     * `OpFlex
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/opflex/>`_
