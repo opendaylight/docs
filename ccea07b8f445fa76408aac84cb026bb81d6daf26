@@ -22,6 +22,30 @@
       "revId": "ccea07b8f445fa76408aac84cb026bb81d6daf26",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2b27dd4d_28f3b6d9",
+        "filename": "docs/release-notes/release-notes-nitrogen-sr3.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6258
+      },
+      "writtenOn": "2018-05-15T11:10:53Z",
+      "side": 1,
+      "message": "This requires to be fixed in the release notes generator scripts. \"Projects with No Noteworthy Changes\" is correct, but we have all the participating projects with some changes/fixes. Maybe that line must be skipped altogether.",
+      "parentUuid": "8a722d56_4cf69175",
+      "range": {
+        "startLine": 7,
+        "startChar": 14,
+        "endLine": 7,
+        "endChar": 27
+      },
+      "revId": "ccea07b8f445fa76408aac84cb026bb81d6daf26",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
