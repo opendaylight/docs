@@ -17,6 +17,7 @@ The user should learn about BGP basic concepts, supported capabilities, configur
    bgp-user-guide-l3vpn-family
    bgp-user-guide-linkstate-family
    bgp-user-guide-flowspec-family
+   bgp-user-guide-mvpn-family
    bgp-user-guide-evpn-family
    bgp-user-guide-additional-path-capability
    bgp-user-guide-route-refresh-capability
