@@ -43,6 +43,12 @@ To enable IPv4 and IPv6 L3VPN support in BGP plugin, first configure BGP speaker
                    <afi-safi>
                        <afi-safi-name xmlns:x="http://openconfig.net/yang/bgp-types">x:L3VPN-IPV6-UNICAST</afi-safi-name>
                    </afi-safi>
+                   <afi-safi>
+                       <afi-safi-name xmlns:x="http://openconfig.net/yang/bgp-types">x:L3VPN-IPV4-MULTICAST</afi-safi-name>
+                   </afi-safi>
+                   <afi-safi>
+                       <afi-safi-name xmlns:x="http://openconfig.net/yang/bgp-types">x:L3VPN-IPV6-MULTICAST</afi-safi-name>
+                   </afi-safi>
                </afi-safis>
            </global>
        </bgp>
@@ -78,8 +84,8 @@ IP L3VPN API
 ^^^^^^^^^^^^
 Following trees illustrate the BGP IP L3VPN routes structures.
 
-IPv4 L3VPN Route
-''''''''''''''''
+IPv4 L3VPN Unicast Route
+''''''''''''''''''''''''
 .. code-block:: console
 
    :(vpn-ipv4-routes-case)
@@ -95,8 +101,8 @@ IPv4 L3VPN Route
             +--ro attributes
             ...
 
-IPv6 L3VPN Route
-''''''''''''''''
+IPv6 L3VPN Unicast Route
+''''''''''''''''''''''''
 .. code-block:: console
 
    :(vpn-ipv6-routes-case)
@@ -112,11 +118,32 @@ IPv6 L3VPN Route
             +--ro attributes
             ...
 
+IPv4 L3VPN Multicast Route
+''''''''''''''''''''''''''
+.. code-block:: console
+
+   :(l3vpn-mcast-routes-ipv4-case)
+      +--ro l3vpn-mcast-routes-ipv4
+           +--ro l3vpn-mcast-route* [route-key path-id]
+              +--ro prefix?                inet:ip-prefix
+              +--ro route-distinguisher?   bgp-t:route-distinguisher
+
+IPv6 L3VPN Multicast Route
+''''''''''''''''''''''''''
+.. code-block:: console
+
+   :(l3vpn-mcast-routes-ipv6-case)
+      +--ro l3vpn-mcast-routes-ipv6
+           +--ro l3vpn-mcast-route* [route-key path-id]
+              +--ro prefix?                inet:ip-prefix
+              +--ro route-distinguisher?   bgp-t:route-distinguisher
+
+
 Usage
 ^^^^^
-IPv4 L3VPN
-''''''''''
-The IPv4 L3VPN table in an instance of the speaker's Loc-RIB can be verified via REST:
+IPv4 L3VPN Unicast
+''''''''''''''''''
+The IPv4 L3VPN Unicast table in an instance of the speaker's Loc-RIB can be verified via REST:
 
 **URL:** ``/restconf/operational/bgp-rib:bgp-rib/rib/bgp-example/loc-rib/tables/bgp-types:ipv4-address-family/bgp-types:mpls-labeled-vpn-subsequent-address-family/bgp-vpn-ipv4:vpn-ipv4-routes``
 
@@ -157,9 +184,9 @@ The IPv4 L3VPN table in an instance of the speaker's Loc-RIB can be verified via
        </vpn-route>
    </vpn-ipv4-routes>
 
-IPv6 L3VPN
-''''''''''
-The IPv6 L3VPN table in an instance of the speaker's Loc-RIB can be verified via REST:
+IPv6 L3VPN Unicast
+''''''''''''''''''
+The IPv6 L3VPN Unicast table in an instance of the speaker's Loc-RIB can be verified via REST:
 
 **URL:** ``/restconf/operational/bgp-rib:bgp-rib/rib/bgp-example/loc-rib/tables/bgp-types:ipv6-address-family/bgp-types:mpls-labeled-vpn-subsequent-address-family/bgp-vpn-ipv6:vpn-ipv6-routes``
 
@@ -200,9 +227,93 @@ The IPv6 L3VPN table in an instance of the speaker's Loc-RIB can be verified via
        </vpn-route>
    </vpn-ipv6-routes>
 
+IPv4 L3VPN Multicast
+''''''''''''''''''''
+The IPv4 L3VPN Multicast table in an instance of the speaker's Loc-RIB can be verified via REST:
+
+**URL:** ``/restconf/operational/bgp-rib:bgp-rib/rib/bgp-example/loc-rib/tables/bgp-types:ipv4-address-family/bgp-types:mcast-mpls-labeled-vpn-subsequent-address-family/bgp-l3vpn-mcast:l3vpn-mcast-routes``
+
+**Method:** ``GET``
+
+**Response Body:**
+
+.. code-block:: xml
+
+   <l3vpn-mcast-routes xmlns="urn:opendaylight:params:xml:ns:yang:bgp:l3vpn:mcast">
+       <l3vpn-mcast-route>
+           <path-id>0</path-id>
+           <route-key>mAXdcQABrBAALABlKgILgAAAAAE=</route-key>
+           <route-distinguisher>172.16.0.44:101</route-distinguisher>
+           <prefix>10.2.34.0/24</prefix>
+           <attributes>
+               <local-pref>
+                   <pref>100</pref>
+               </local-pref>
+               <extended-communities>
+                   <transitive>true</transitive>
+                   <vrf-route-import-extended-community>
+                       <inet4-specific-extended-community-common>
+                           <global-administrator>10.0.0.1</global-administrator>
+                           <local-administrator>123=</local-administrator>
+                        </inet4-specific-extended-community-common>
+                    </vrf-route-import-extended-community>
+               </extended-communities>
+               <ipv4-next-hop>
+                   <global>127.16.0.44</global>
+               </ipv4-next-hop>
+               <origin>
+                   <value>igp</value>
+               </origin>
+               <as-path></as-path>
+           </attributes>
+       </l3vpn-mcast-route>
+   </l3vpn-mcast-routes>
+
+IPv6 L3VPN Multicast
+''''''''''''''''''''
+The IPv4 L3VPN Multicast table in an instance of the speaker's Loc-RIB can be verified via REST:
+
+**URL:** ``/restconf/operational/bgp-rib:bgp-rib/rib/bgp-example/loc-rib/tables/bgp-types:ipv6-address-family/bgp-types:mcast-mpls-labeled-vpn-subsequent-address-family/bgp-l3vpn-mcast:l3vpn-mcast-routes``
+
+**Method:** ``GET``
+
+**Response Body:**
+
+.. code-block:: xml
+
+   <l3vpn-mcast-routes xmlns="urn:opendaylight:params:xml:ns:yang:bgp:l3vpn:mcast">
+       <l3vpn-mcast-route>
+           <path-id>0</path-id>
+           <route-key>mAXdcQABrBAALABlKgILgAAAAAE=</route-key>
+           <route-distinguisher>172.16.0.44:101</route-distinguisher>
+           <prefix>2a02:b80:0:1::/64</prefix>
+           <attributes>
+               <local-pref>
+                   <pref>100</pref>
+               </local-pref>
+               <extended-communities>
+                   <transitive>true</transitive>
+                   <vrf-route-import-extended-community>
+                       <inet4-specific-extended-community-common>
+                           <global-administrator>10.0.0.1</global-administrator>
+                           <local-administrator>123=</local-administrator>
+                        </inet4-specific-extended-community-common>
+                    </vrf-route-import-extended-community>
+               </extended-communities>
+               <ipv6-next-hop>
+                   <global>2a02:b80:0:2::1</global>
+               </ipv6-next-hop>
+               <origin>
+                   <value>igp</value>
+               </origin>
+               <as-path></as-path>
+           </attributes>
+       </l3vpn-mcast-route>
+   </l3vpn-mcast-routes>
+
 Programming
 ^^^^^^^^^^^
-This examples show how to originate and remove IPv4 L3VPN route via programmable RIB.
+This examples show how to originate and remove IPv4 L3VPN Unicast route via programmable RIB.
 Make sure the *Application Peer* is configured first.
 
 **URL:** ``/restconf/config/bgp-rib:application-rib/10.25.1.9/tables/bgp-types:ipv4-address-family/bgp-types:mpls-labeled-vpn-subsequent-address-family/bgp-vpn-ipv4:vpn-ipv4-routes``
