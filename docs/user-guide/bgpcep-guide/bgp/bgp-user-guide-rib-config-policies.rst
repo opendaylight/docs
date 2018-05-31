@@ -905,6 +905,20 @@ Defined set
 
 @line 11: Extended Communities.
 
+Match Afi Safi
+''''''''''''''
+.. code-block:: xml
+   :linenos:
+   :emphasize-lines: 3
+
+    <conditions>
+        <bgp-conditions xmlns="http://openconfig.net/yang/bgp-policy">
+            <afi-safi-in xmlns:x="http://openconfig.net/yang/bgp-types">x:IPV4-UNICAST</afi-safi-in>
+        </bgp-conditions>
+    </conditions>
+
+@line 3: Afi Safi match.
+
 Match As Path Length
 ''''''''''''''''''''
 .. code-block:: xml
