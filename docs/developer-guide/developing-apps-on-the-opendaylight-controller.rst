@@ -30,9 +30,9 @@ This example requires the following.
 -  A development environment with following set up and working correctly
    from the shell:
 
-   -  Maven 3.1.1 or later
+   -  Maven 3.5.2 or later
 
-   -  Java 7- or Java 8-compliant JDK
+   -  Java 8-compliant JDK
 
    -  An appropriate Maven settings.xml file. A simple way to get the
       default OpenDaylight settings.xml file is:
@@ -59,17 +59,14 @@ To develop an app perform the following steps.
 
    .. code:: shell
 
-       mvn archetype:generate -DarchetypeGroupId=org.opendaylight.controller -DarchetypeArtifactId=opendaylight-startup-archetype \
-       -DarchetypeRepository=https://nexus.opendaylight.org/content/repositories/<opendaylight.release | opendaylight.snapshot>/ \
-       -DarchetypeCatalog=remote -DarchetypeVersion=<Archetype-Version>
+       mvn archetype:generate -DarchetypeGroupId=org.opendaylight.archetypes -DarchetypeArtifactId=opendaylight-startup-archetype \
+       -DarchetypeCatalog=remote -DarchetypeVersion=1.0.0-SNAPSHOT
 
-   To find the correct <Archetype-Version> for an OpenDaylight release, search https://nexus.opendaylight.org for the
-   ``archetypeArtifactId`` (e.g. ``https://nexus.opendaylight.org/#nexus-search;quick~opendaylight-startup-archetype``); and if it's a
-   ``*-SNAPSHOT`` then use ``-DarchetypeRepository=https://nexus.opendaylight.org/content/repositories/opendaylight.snapshot/``, otherwise
-   use ``-DarchetypeRepository=https://nexus.opendaylight.org/content/repositories/opendaylight.release/``.
+   To find the correct <Archetype-Version> for an OpenDaylight release, search https://nexus.opendaylight.org;
+   e.g. ``https://nexus.opendaylight.org/#nexus-search;gav~org.opendaylight.archetypes~~~~``.
 
-2. Update the properties values as follows. Ensure that the groupid and
-   the artifactid is lower case.
+2. Update the properties values as follows. Ensure that the values for the groupId and
+   the artifactId are in lower case.
 
    .. code:: shell
 
@@ -139,7 +136,7 @@ To develop an app perform the following steps.
 
        log:display | grep Example
 
-8. Shutdown the OpenDaylight through the console by using the following
+8. Shutdown OpenDaylight through the console by using the following
    command.
 
    .. code:: shell
@@ -149,87 +146,18 @@ To develop an app perform the following steps.
 Defining a Simple Hello World RPC
 ---------------------------------
 
-1.  | Run the maven archetype *opendaylight-startup-archetype*, and
-      create the *hello* project.
+1.  | Build a *hello* example from the Maven archetype *opendaylight-startup-archetype*,
+      same as above.
 
-    .. code:: shell
-
-        mvn archetype:generate -DarchetypeGroupId=org.opendaylight.controller -DarchetypeArtifactId=opendaylight-startup-archetype \
-        -DarchetypeRepository=http://nexus.opendaylight.org/content/repositories/opendaylight.snapshot/ \
-        -DarchetypeCatalog=http://nexus.opendaylight.org/content/repositories/opendaylight.snapshot/archetype-catalog.xml
-
-2.  Update the Properties values as follows.
-
-    .. code:: shell
-
-        Define value for property 'groupId': : org.opendaylight.hello
-        Define value for property 'artifactId': : hello
-        Define value for property 'version':  1.0-SNAPSHOT: : 1.0.0-SNAPSHOT
-        Define value for property 'package':  org.opendaylight.hello: :
-        Define value for property 'classPrefix':  ${artifactId.substring(0,1).toUpperCase()}${artifactId.substring(1)}
-        Define value for property 'copyright': : Copyright(c) Yoyodyne, Inc.
-
-3.  View the *hello* project.
-
-    .. code:: shell
-
-        cd hello/
-        ls -1
-        api
-        artifacts
-        features
-        impl
-        karaf
-        pom.xml
-
-4.  Build *hello* project by using the following command.
-
-    .. code:: shell
-
-        mvn clean install
-
-5.  Verify that the project is functioning by executing karaf.
-
-    .. code:: shell
-
-        cd karaf/target/assembly/bin
-        ./karaf
-
-6.  | The karaf cli appears as follows.
-    | NOTE: Remember to wait for OpenDaylight to load completely. Verify
-      that the Java process CPU has stabilized.+
-
-    .. code:: shell
-
-        opendaylight-user@root>
-
-7.  Verify that the *hello* module is loaded by checking the log.
-
-    .. code:: shell
-
-        log:display | grep Hello
-
-8.  Shutdown karaf.
-
-    .. code:: shell
-
-        shutdown -f
-
-9.  Return to the top of the directory structure:
-
-    .. code:: shell
-
-        cd ../../../../
-
-10. View the entry point to understand where the log line came from. The
+2.  Now view the entry point to understand where the log line came from. The
     entry point is in the impl project:
 
     .. code:: shell
 
         impl/src/main/java/org/opendaylight/hello/impl/HelloProvider.java
 
-11. Add any new things that you are doing in your implementation by
-    using the HelloProvider.onSessionInitiate method. Its analogous to
+3.  Add any new things that you are doing in your implementation by
+    using the HelloProvider.onSessionInitiate method. It's analogous to
     an Activator.
 
     .. code:: java
@@ -298,6 +226,7 @@ Implement the HelloWorld RPC API
    .. code:: java
 
        package org.opendaylight.hello.impl;
+
        import java.util.concurrent.Future;
        import org.opendaylight.yang.gen.v1.urn.opendaylight.params.xml.ns.yang.hello.rev150105.HelloService;
        import org.opendaylight.yang.gen.v1.urn.opendaylight.params.xml.ns.yang.hello.rev150105.HelloWorldInput;
@@ -305,7 +234,9 @@ Implement the HelloWorld RPC API
        import org.opendaylight.yang.gen.v1.urn.opendaylight.params.xml.ns.yang.hello.rev150105.HelloWorldOutputBuilder;
        import org.opendaylight.yangtools.yang.common.RpcResult;
        import org.opendaylight.yangtools.yang.common.RpcResultBuilder;
+
        public class HelloWorldImpl implements HelloService {
+
            @Override
            public Future<RpcResult<HelloWorldOutput>> helloWorld(HelloWorldInput input) {
                HelloWorldOutputBuilder helloBuilder = new HelloWorldOutputBuilder();
@@ -339,13 +270,16 @@ Implement the HelloWorld RPC API
        import org.slf4j.LoggerFactory;
 
        public class HelloProvider implements BindingAwareProvider, AutoCloseable {
+
            private static final Logger LOG = LoggerFactory.getLogger(HelloProvider.class);
            private RpcRegistration<HelloService> helloService;
+
            @Override
            public void onSessionInitiated(ProviderContext session) {
                LOG.info("HelloProvider Session Initiated");
                helloService = session.addRpcImplementation(HelloService.class, new HelloWorldImpl());
            }
+
            @Override
            public void close() throws Exception {
                LOG.info("HelloProvider Closed");
@@ -479,4 +413,3 @@ If you get a response code 501 while attempting to POST
 make sure the helloService member is being set. By not invoking
 "session.addRpcImplementation()" the REST API will be unable to map
 /operations/hello:hello-world url to HelloWorldImpl.
-
