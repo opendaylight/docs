@@ -38,11 +38,6 @@
 	url = ../sfc
 	branch = .
 	ignore = dirty
-[submodule "docs/submodules/openflowplugin"]
-	path = docs/submodules/openflowplugin
-	url = ../openflowplugin
-	branch = .
-	ignore = dirty
 [submodule "docs/submodules/yangtools"]
 	path = docs/submodules/yangtools
 	url = ../yangtools
