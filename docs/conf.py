@@ -22,6 +22,7 @@ intersphinx_mapping['odl-releng-builder'] = ('http://docs.opendaylight.org/proje
 intersphinx_mapping['coe'] = ('http://docs.opendaylight.org/projects/coe/en/latest/', None)
 intersphinx_mapping['genius'] = ('http://docs.opendaylight.org/projects/genius/en/latest/', None)
 intersphinx_mapping['netvirt'] = ('http://docs.opendaylight.org/projects/netvirt/en/latest/', None)
+intersphinx_mapping['openflowplugin'] = ('http://docs.opendaylight.org/projects/openflowplugin/en/latest/', None)
 
 # OpenDaylight Documentation Releases
 intersphinx_mapping['odl-oxygen'] = ('http://docs.opendaylight.org/en/stable-oxygen/', None)
