@@ -11,16 +11,6 @@ For Execution
 The OpenDaylight Karaf container, OSGi bundles, and Java class files
 are portable and should run on any Java 8-compliant JVM. Certain projects and
 certain features of some projects may have additional requirements.
-Those are noted in the project-specific release notes.
-
-Projects and features which have known additional requirements are:
-
-* TSDR has extended requirements for external databases
-* SFC requires addition features for certain configurations
-* SXP depends on TCP-MD5 on thus requires 64-bit Linux
-* OpFlex requires Linux
-* AAA when using federation has additional requirements for external tools
-* VTN has components which require Linux
 
 For Development
 ---------------
@@ -30,7 +20,7 @@ Maven as a build tool Consequently the two main requirements to develop
 projects within OpenDaylight are:
 
 * A Java 8-compliant JDK
-* Maven 3.1.1 or later
+* Maven 3.5.2 or later
 
 Applications and tools built on top of OpenDaylight using its REST
 APIs should have no special requirements beyond whatever is needed to
@@ -53,11 +43,6 @@ following limitations:
 * Migration from prior OpenDaylight releases to |release| has not been
   extensively tested. The per-project release notes include migration and
   compatibility information when it is known.
-* There are scales beyond which the controller has been unreliable when
-  collecting flow statistics from OpenFlow switches. In tests, these
-  issues became apparent when managing thousands of OpenFlow
-  switches; however, this limitation may vary depending on deployment and use
-  cases.
 
 Project-specific Release Notes
 ==============================
