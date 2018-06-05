@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "27f2e8c9_1e1d1521",
+        "filename": "docs/release-notes/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-06-05T20:23:16Z",
+      "side": 0,
+      "message": "Agreed, we should not try to maintain this here, let projects do it.",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 40
+      },
+      "revId": "4350126a7adf2a076519eb9981e4840edca6e2a5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9e4dafc8_969e3373",
+        "filename": "docs/release-notes/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-06-05T20:23:16Z",
+      "side": 0,
+      "message": "This is obvious \"scale limits exist\", not helpful",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 8
+      },
+      "revId": "4350126a7adf2a076519eb9981e4840edca6e2a5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
