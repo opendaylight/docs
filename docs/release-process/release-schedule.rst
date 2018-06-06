@@ -13,7 +13,7 @@ for the subsequent release.
    :header-rows: 1
    :stub-columns: 1
 
-   * - **Milestone**
+   * - **Event**
      - **Time**
      - **Fluorine**
      - **Description**
