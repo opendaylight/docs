@@ -89,6 +89,18 @@ Design
 
    overal architecture
 
+Security
+''''''''
+
+**TLS**
+
+It is strongly recommended that any production deployments utilising
+the OpenFlow Plugin do so with TLS encryption to protect against
+various man-in-the-middle attacks. Please refer to the `Certificate
+Management section of the user guide <https://docs.opendaylight.org/en/latest/user-guide/authentication-and-authorization-services.html#id4>`__
+for more details. TLS Support in the OpenFlow Plugin is outlined on `this
+wiki page <https://wiki.opendaylight.org/view/OpenDaylight_OpenFlow_Plugin:_TLS_Support`__.
+
 Coverage
 ~~~~~~~~
 
