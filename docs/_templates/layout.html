@@ -3,3 +3,18 @@
 
 {# Custom CSS override for warning banner #}
 {% set css_files = css_files + ['_static/css/warning-header.css'] %}
+
+{# Ribbon #}
+{% block content %}
+  <div class="ribbon">
+    <a href="https://jira.opendaylight.org/secure/CreateIssueDetails!init.jspa
+?pid=10121
+&issuetype=10104
+&components=10228
+&priority=2
+&description=version:+{{version}}%0Apage:+{{pagename}}%0A%0A">
+      Report Issue
+    </a>
+  </div>
+  {{ super() }}
+{% endblock %}
