@@ -5,14 +5,14 @@ OpenDaylight Downloads
 Supported Releases
 ==================
 
-Oxygen-SR1
+Oxygen-SR2
 ----------
 
 (Current Release)
 
 :Annoucement: https://www.opendaylight.org/about/news/blogs/opendaylight-releases-oxygen-with-new-p4-and-container-support
 :Original Release Date: March 22, 2018
-:Service Release Date: April 25, 2018
+:Service Release Date: June 13, 2018
 
 :Downloads:
     * `OpenDaylight Oxygen SR2 Tar
