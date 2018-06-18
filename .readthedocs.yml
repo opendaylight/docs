@@ -1,0 +1,8 @@
+formats:
+  - htmlzip
+
+requirements_file: ci-requirements.txt
+
+build:
+   image: latest
+
