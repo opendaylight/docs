@@ -1,7 +1,7 @@
 formats:
   - htmlzip
 
-requirements_file: requirements.txt
+requirements_file: ci-requirements.txt
 
 build:
    image: latest
