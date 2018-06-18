@@ -12,7 +12,7 @@ Oxygen-SR1
 
 :Annoucement: https://www.opendaylight.org/about/news/blogs/opendaylight-releases-oxygen-with-new-p4-and-container-support
 :Original Release Date: March 22, 2018
-:Service Release Date: April 25, 2018
+:Service Release Date: June 07, 2018
 
 :Downloads:
     * `OpenDaylight Oxygen SR2 Tar
