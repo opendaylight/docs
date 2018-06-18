@@ -161,8 +161,8 @@ done in sequence.
 
 - Notify Community and Website teams
 
-  #. `Create Jira <https://jira.linuxfoundation.org>`_ against LF Projects
-     **(Helpdesk)**
+  #. Submit a patch to ODL docs project to update `downloads <https://docs.opendaylight.org/en/latest/downloads.html>`_
+     page with the latest binaries and packages. **(Helpdesk)**
 
      This Jira provides the URLs to the binary files to update the
      downloads website.
