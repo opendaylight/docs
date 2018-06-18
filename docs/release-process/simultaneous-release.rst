@@ -161,11 +161,11 @@ done in sequence.
 
 - Notify Community and Website teams
 
-  #. Submit a patch to ODL docs project to update `downloads <https://docs.opendaylight.org/en/latest/downloads.html>`_
-     page with the latest binaries and packages. **(Helpdesk)**
+  #. Update downloads page
 
-     This Jira provides the URLs to the binary files to update the
-     downloads website.
+     Submit a patch to the ODL docs project to update the
+     `downloads <https://docs.opendaylight.org/en/latest/downloads.html>`_
+     page with the latest binaries and packages **(Release Engineering Team)**
 
   #. Email dev/release/tsc mailing lists announcing release binaries location
      **(Release Engineering Team)**
