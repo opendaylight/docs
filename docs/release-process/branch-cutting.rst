@@ -170,3 +170,15 @@ Manual steps to version bump (Autorelease)
 
        git submodule foreach 'git commit -asm "Bump versions by x.(y+1).z for next dev cycle"'
        git submodule foreach 'git review -t ${CURR_RELEASE,,}-branch-cut'
+
+Documentation post branch tasks
+-------------------------------
+
+#. Git remove all files/directories from the docs/release-notes/* directory. **(Release Engineering Team)**
+
+  .. code-block:: bash
+
+      git checkout master
+      git rm -rf docs/release-notes/<project file and/or folder>
+      git commit -sm "Reset release notes for next dev cycle"
+      git review
