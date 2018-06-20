@@ -44,3 +44,6 @@ if platform.system() != 'Windows':
 html_context = {
     'version_status': 'supported',
 }
+
+def setup(app):
+    app.add_stylesheet("css/ribbon.css")
