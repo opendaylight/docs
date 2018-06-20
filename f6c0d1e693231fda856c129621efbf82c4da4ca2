@@ -1,0 +1,107 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cf57a2aa_53667e7b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2018-06-20T14:48:24Z",
+      "side": 1,
+      "message": "No blank space, Issue: should be attached to the footer of the commit message.",
+      "revId": "f6c0d1e693231fda856c129621efbf82c4da4ca2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3b3ad382_109b7b47",
+        "filename": "docs/release-process/branch-cutting.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2018-06-20T14:48:24Z",
+      "side": 1,
+      "message": "Documentation post branch tasks\n -------------------------------",
+      "range": {
+        "startLine": 174,
+        "startChar": 0,
+        "endLine": 174,
+        "endChar": 51
+      },
+      "revId": "f6c0d1e693231fda856c129621efbf82c4da4ca2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "12a86805_1dc1b7ba",
+        "filename": "docs/release-process/branch-cutting.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2018-06-20T14:48:24Z",
+      "side": 1,
+      "message": "#. Git remove all files/directories from the docs/release-notes/* directory **(Release Engineering Team)**",
+      "range": {
+        "startLine": 177,
+        "startChar": 3,
+        "endLine": 177,
+        "endChar": 75
+      },
+      "revId": "f6c0d1e693231fda856c129621efbf82c4da4ca2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eb2e8eff_184191f0",
+        "filename": "docs/release-process/branch-cutting.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2018-06-20T14:48:24Z",
+      "side": 1,
+      "message": "docs/release-notes/*\n\ngit-rm supports wildcard patterns with *",
+      "range": {
+        "startLine": 182,
+        "startChar": 17,
+        "endLine": 182,
+        "endChar": 64
+      },
+      "revId": "f6c0d1e693231fda856c129621efbf82c4da4ca2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a9ca9f7f_e1b6cfb6",
+        "filename": "docs/release-process/branch-cutting.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2018-06-20T14:48:24Z",
+      "side": 1,
+      "message": "git commit -sm \"Reset release notes for next dev cycle\"\n git review",
+      "revId": "f6c0d1e693231fda856c129621efbf82c4da4ca2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
