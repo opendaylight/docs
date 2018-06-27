@@ -19,6 +19,7 @@ The user should learn about BGP basic concepts, supported capabilities, configur
    bgp-user-guide-flowspec-family
    bgp-user-guide-mvpn-family
    bgp-user-guide-evpn-family
+   bgp-user-guide-route-target-family
    bgp-user-guide-additional-path-capability
    bgp-user-guide-route-refresh-capability
    bgp-user-guide-operational-state
