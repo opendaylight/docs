@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fc9e106c_f2a1acba",
+        "filename": "docs/user-guide/bgpcep-guide/bgp/bgp-user-guide-route-target-family.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-06-27T16:04:23Z",
+      "side": 1,
+      "message": "Shouldn\u0027t move to this style just in this part of this patch, if the project wants to go that route need to do consistently and across other files.",
+      "parentUuid": "ed593591_421da3ba",
+      "revId": "f8dec088b66f34294f3352902fce559fa1366f22",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "42f8b550_8dad56ee",
         "filename": "docs/user-guide/bgpcep-guide/bgp/bgp-user-guide-route-target-family.rst",
         "patchSetId": 2
@@ -30,6 +48,30 @@
       "writtenOn": "2018-06-27T14:18:05Z",
       "side": 1,
       "message": "Trailing whitespace",
+      "range": {
+        "startLine": 155,
+        "startChar": 34,
+        "endLine": 155,
+        "endChar": 38
+      },
+      "revId": "f8dec088b66f34294f3352902fce559fa1366f22",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "29c8845f_6b0aad9c",
+        "filename": "docs/user-guide/bgpcep-guide/bgp/bgp-user-guide-route-target-family.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2018-06-27T16:04:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "42f8b550_8dad56ee",
       "range": {
         "startLine": 155,
         "startChar": 34,
