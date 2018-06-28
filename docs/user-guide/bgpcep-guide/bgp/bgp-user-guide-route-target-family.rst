@@ -225,6 +225,101 @@ To remove the route added above, following request can be used:
 
 **Method:** ``DELETE``
 
+Routing Policies
+^^^^^^^^^^^^^^^^
+
+.. code-block:: xml
+
+   <policy-definition>
+       <name>default-odl-export-policy</name>
+       <statement>
+       ...
+       <statement>
+           <name>from-external-to-external-RTC</name>
+           <conditions>
+               <bgp-conditions xmlns="http://openconfig.net/yang/bgp-policy">
+                   <match-role-set xmlns="urn:opendaylight:params:xml:ns:yang:odl:bgp:default:policy">
+                       <afi-safi-in xmlns:x="urn:opendaylight:params:xml:ns:yang:bgp:openconfig-extensions">x:ROUTE-TARGET-CONSTRAIN</afi-safi-in>
+                       <from-role>
+                           <role-set>/rpol:routing-policy/rpol:defined-sets/bgppol:bgp-defined-sets/role-sets/role-set[role-set-name="only-ebgp"]</role-set>
+                       </from-role>
+                       <to-role>
+                           <role-set>/rpol:routing-policy/rpol:defined-sets/bgppol:bgp-defined-sets/role-sets/role-set[role-set-name="only-ebgp"]</role-set>
+                       </to-role>
+                   </match-role-set>
+               </bgp-conditions>
+           </conditions>
+           <actions>
+               <bgp-actions xmlns="http://openconfig.net/yang/bgp-policy">
+                   <client-attribute-prepend xmlns="urn:opendaylight:params:xml:ns:yang:bgp:route:target:constrain"/>
+               </bgp-actions>
+           </actions>
+       </statement>
+       ...
+       </statement>
+       <statement>
+           <name>from-internal-or-rr-client-to-route-reflector</name>
+           <conditions>
+               <bgp-conditions xmlns="http://openconfig.net/yang/bgp-policy">
+                   <afi-safi-not-in xmlns:x="urn:opendaylight:params:xml:ns:yang:bgp:openconfig-extensions"
+                                    xmlns="urn:opendaylight:params:xml:ns:yang:odl:bgp:default:policy">x:ROUTE-TARGET-CONSTRAIN
+                   </afi-safi-not-in>
+                   <match-role-set xmlns="urn:opendaylight:params:xml:ns:yang:odl:bgp:default:policy">
+                       <from-role>
+                           <role-set>/rpol:routing-policy/rpol:defined-sets/bgppol:bgp-defined-sets/role-sets/role-set[role-set-name="ibgp-rr-client"]</role-set>
+                       </from-role>
+                       <to-role>
+                           <role-set>/rpol:routing-policy/rpol:defined-sets/bgppol:bgp-defined-sets/role-sets/role-set[role-set-name="only-rr-client"]</role-set>
+                       </to-role>
+                   </match-role-set>
+               </bgp-conditions>
+           </conditions>
+           <actions>
+               <bgp-actions xmlns="http://openconfig.net/yang/bgp-policy">
+                   <set-cluster-id-prepend xmlns="urn:opendaylight:params:xml:ns:yang:odl:bgp:default:policy"/>
+                   <set-originator-id-prepend xmlns="urn:opendaylight:params:xml:ns:yang:odl:bgp:default:policy"/>
+               </bgp-actions>
+           </actions>
+       </statement>
+       <statement>
+           <name>from-internal-or-rr-client-to-route-RTC</name>
+           <conditions>
+               <bgp-conditions xmlns="http://openconfig.net/yang/bgp-policy">
+                   <match-role-set xmlns="urn:opendaylight:params:xml:ns:yang:odl:bgp:default:policy">
+                       <afi-safi-in xmlns:x="urn:opendaylight:params:xml:ns:yang:bgp:openconfig-extensions">x:ROUTE-TARGET-CONSTRAIN</afi-safi-in>
+                       <from-role>
+                           <role-set>/rpol:routing-policy/rpol:defined-sets/bgppol:bgp-defined-sets/role-sets/role-set[role-set-name="ibgp-rr-client"]</role-set>
+                       </from-role>
+                       <to-role>
+                           <role-set>/rpol:routing-policy/rpol:defined-sets/bgppol:bgp-defined-sets/role-sets/role-set[role-set-name="only-rr-client"]</role-set>
+                       </to-role>
+                   </match-role-set>
+               </bgp-conditions>
+           </conditions>
+           <actions>
+               <bgp-actions xmlns="http://openconfig.net/yang/bgp-policy">
+                   <set-originator-id-prepend xmlns="urn:opendaylight:params:xml:ns:yang:odl:bgp:default:policy"/>
+                   <set-next-hop>SELF</set-next-hop>
+               </bgp-actions>
+           </actions>
+       </statement>
+       <statement>
+           <name>vpn-membership-RTC</name>
+           <conditions>
+               <bgp-conditions xmlns="http://openconfig.net/yang/bgp-policy">
+                   <afi-safi-in xmlns:x="http://openconfig.net/yang/bgp-types">x:L3VPN-IPV4-UNICAST</afi-safi-in>
+                   <afi-safi-in xmlns:x="http://openconfig.net/yang/bgp-types">x:L3VPN-IPV6-UNICAST</afi-safi-in>
+                   <vpn-non-member-condition xmlns="urn:opendaylight:params:xml:ns:yang:odl:bgp:default:policy"/>
+               </bgp-conditions>
+           </conditions>
+           <actions>
+               <reject-route/>
+           </actions>
+       </statement>
+       ...
+       ...
+   </policy-definition>
+
 References
 ^^^^^^^^^^
 * `Constrained Route Distribution for Border Gateway Protocol/MultiProtocol Label Switching (BGP/MPLS) Internet Protocol (IP) Virtual Private Networks (VPNs) <https://tools.ietf.org/html/rfc4684>`_
