@@ -152,8 +152,8 @@ The new instance presence can be verified via REST:
 
 @line 5: Policy Statement Identifier.
 
-Basic Actions
-`````````````
+Actions
+```````
 ODL BGP by default provides support for a group of BGP Actions.
 
 Accept
@@ -265,6 +265,21 @@ Set the local pref attribute on the route update.
 Set NextHop
 '''''''''''
 Set the next-hop attribute in the route update.
+
+* Local
+
+.. code-block:: xml
+   :linenos:
+   :emphasize-lines: 3
+
+    <actions>
+        <bgp-actions xmlns="http://openconfig.net/yang/bgp-policy">
+            <set-next-hop>SELF</set-next-hop>
+        </bgp-actions>
+    </actions>
+
+
+* By value
 
 .. code-block:: xml
    :linenos:
@@ -475,8 +490,22 @@ Filters attributes, removing non transitive attributes.
         </bgp-actions>
     </actions>
 
-Basic Conditions
-````````````````
+Client Attribute Prepend
+''''''''''''''''''''''''
+Replace attributes per any VPN Route attributes from client Peer, if present.
+
+.. code-block:: xml
+   :linenos:
+   :emphasize-lines: 3
+
+    <actions>
+        <bgp-actions xmlns="http://openconfig.net/yang/bgp-policy">
+            <client-attribute-prepend xmlns="urn:opendaylight:params:xml:ns:yang:bgp:route:target:constrain"/>
+        </bgp-actions>
+    </actions>
+
+Conditions
+``````````
 ODL BGP by default provides support for a group of BGP Conditions.
 
 Match BGP Neighbor Set
@@ -905,8 +934,8 @@ Defined set
 
 @line 11: Extended Communities.
 
-Match Afi Safi
-''''''''''''''
+Match in Afi Safi
+'''''''''''''''''
 .. code-block:: xml
    :linenos:
    :emphasize-lines: 3
@@ -918,6 +947,23 @@ Match Afi Safi
     </conditions>
 
 @line 3: Afi Safi match.
+
+Match not in Afi Safi
+'''''''''''''''''''''
+.. code-block:: xml
+   :linenos:
+   :emphasize-lines: 3
+
+    <conditions>
+        <bgp-conditions xmlns="http://openconfig.net/yang/bgp-policy">
+            <afi-safi-not-in xmlns="urn:opendaylight:params:xml:ns:yang:odl:bgp:default:policy"
+                xmlns:x="http://openconfig.net/yang/bgp-types">x:IPV4-UNICAST</afi-safi-not-in>
+            <afi-safi-not-in xmlns="urn:opendaylight:params:xml:ns:yang:odl:bgp:default:policy"
+                xmlns:x="http://openconfig.net/yang/bgp-types">x:IPV6-UNICAST</afi-safi-not-in>
+        </bgp-conditions>
+    </conditions>
+
+@line 3: Afi Safi not in match.
 
 Match As Path Length
 ''''''''''''''''''''
@@ -992,3 +1038,20 @@ Match Next Hop
     </conditions>
 
 @line 3: Next hop match.
+
+Match VPN Non member
+''''''''''''''''''''
+
+True if Route Targets attributes does not match with any Route Target Contrain advertized per Advertized peer.
+
+.. code-block:: xml
+   :linenos:
+   :emphasize-lines: 3
+
+    <conditions>
+        <bgp-conditions xmlns="http://openconfig.net/yang/bgp-policy">
+            <vpn-non-member xmlns="urn:opendaylight:params:xml:ns:yang:odl:bgp:default:policy"/>
+        </bgp-conditions>
+    </conditions>
+
+@line 3: VPN Non member match.

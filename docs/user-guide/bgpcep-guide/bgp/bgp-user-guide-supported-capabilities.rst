@@ -32,6 +32,7 @@ In addition to the base protocol implementation, the plugin provides many extens
    * `RFC6513 <https://tools.ietf.org/html/rfc6513>`_  - Multicast in MPLS/BGP IP VPNs (VPNs)
       * `RFC6514 <https://tools.ietf.org/html/rfc6514>`_  - BGP Encodings and Procedures for Multicast in MPLS/BGP IP VPNs
       * `RFC6515 <https://tools.ietf.org/html/rfc6515>`_  - IPv4 and IPv6 Infrastructure Addresses in BGP Updates for Multicast VPN
+      * `RFC4684 <https://tools.ietf.org/html/rfc4684>`_  - Constrained Route Distribution for Border Gateway Protocol/MultiProtocol Label Switching (BGP/MPLS) Internet Protocol (IP) Virtual Private Networks (VPNs)
    * `RFC7432 <https://tools.ietf.org/html/rfc7432>`_  - BGP MPLS-Based Ethernet VPN
       * `draft-ietf-bess-evpn-overlay <https://tools.ietf.org/html/draft-ietf-bess-evpn-overlay-04>`_  - A Network Virtualization Overlay Solution using EVPN
       * `draft-ietf-bess-evpn-vpws <https://tools.ietf.org/html/draft-ietf-bess-evpn-vpws-07>`_  - VPWS support in EVPN
