@@ -178,6 +178,30 @@
     },
     {
       "key": {
+        "uuid": "ec5a506b_841d08ff",
+        "filename": "docs/release-process/branch-cutting.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2018-07-09T16:40:01Z",
+      "side": 1,
+      "message": "Maybe we should have a projects folder in there. Like:\n\n docs/release-notes/projects/aaa.rst\n\nThen we can simplify the instructions to `git rm -rf docs/release-notes/projects/*` and all the extra non-project files will be left in the root.",
+      "parentUuid": "2bbb45cf_088ad09f",
+      "range": {
+        "startLine": 182,
+        "startChar": 17,
+        "endLine": 182,
+        "endChar": 64
+      },
+      "revId": "f6c0d1e693231fda856c129621efbf82c4da4ca2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a9ca9f7f_e1b6cfb6",
         "filename": "docs/release-process/branch-cutting.rst",
         "patchSetId": 2
