@@ -51,7 +51,7 @@ Managed Projects
 * :doc:`DAEXIM Documentation <daexim:index>`
 * :doc:`Genius Documentation <genius:index>`
 * :doc:`Infrautils Documentation <infrautils:index>`
-* :doc:`LISP Flow Mapping Documentation <lispflowmapping:index>`
+* :doc:`../project-indexes/lispflowmapping-index`
 * :doc:`MD-SAL Documentation <mdsal:index>`
 * :doc:`NETCONF Documentation <netconf:index>`
 * :doc:`NetVirt Documentation <netvirt:index>`
