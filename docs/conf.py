@@ -18,6 +18,7 @@ intersphinx_mapping['odl-integration-packaging'] = ('http://docs.opendaylight.or
 intersphinx_mapping['odl-releng-builder'] = ('http://docs.opendaylight.org/projects/releng-builder/en/latest/', None)
 
 # Projects that have stable/branches
+intersphinx_mapping['infrautils'] = ('http://docs.opendaylight.org/projects/infrautils/en/stable-oxygen/', None)
 intersphinx_mapping['netvirt'] = ('http://docs.opendaylight.org/projects/netvirt/en/stable-oxygen/', None)
 intersphinx_mapping['openflowplugin'] = ('http://docs.opendaylight.org/projects/openflowplugin/en/stable-oxygen/', None)
 intersphinx_mapping['sfc'] = ('http://docs.opendaylight.org/projects/sfc/en/stable-oxygen/', None)
