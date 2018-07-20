@@ -48,6 +48,8 @@ participate in the development of OpenDaylight or would like to start.
 
 * :doc:`Gerrit Guide <lfdocs:gerrit>`
 * :ref:`Infrastructure Guide <odl-infra>`
+
+* :doc:`Genius Documentation <genius:index>`
 * :doc:`Infrautils Documentation <infrautils:index>`
 * :doc:`Integration Testing Guide <odl-integration-test:index>`
 * :doc:`Integration Packaging Guide <odl-integration-packaging:index>`
@@ -60,7 +62,6 @@ participate in the development of OpenDaylight or would like to start.
 
    documentation
    release-process/index
-   submodules/genius/docs/index
 
 .. Commenting the below out until we actually use it
 .. Indices and tables
