@@ -52,6 +52,7 @@ participate in the development of OpenDaylight or would like to start.
 * :doc:`Integration Packaging Guide <odl-integration-packaging:index>`
 * :doc:`NetVirt Documentation <netvirt:index>`
 * :doc:`OpenFlowPlugin Documentation <openflowplugin:index>`
+* :doc:`Service Function Chaining Documentation <sfc:index>`
 
 .. toctree::
    :maxdepth: 1
@@ -61,7 +62,6 @@ participate in the development of OpenDaylight or would like to start.
    release-process/index
    submodules/genius/docs/index
    submodules/infrautils/docs/index
-   submodules/sfc/docs/index
 
 .. Commenting the below out until we actually use it
 .. Indices and tables

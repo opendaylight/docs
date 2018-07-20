@@ -20,6 +20,7 @@ intersphinx_mapping['odl-releng-builder'] = ('http://docs.opendaylight.org/proje
 # Projects that have stable/branches
 intersphinx_mapping['netvirt'] = ('http://docs.opendaylight.org/projects/netvirt/en/stable-oxygen/', None)
 intersphinx_mapping['openflowplugin'] = ('http://docs.opendaylight.org/projects/openflowplugin/en/stable-oxygen/', None)
+intersphinx_mapping['sfc'] = ('http://docs.opendaylight.org/projects/sfc/en/stable-oxygen/', None)
 
 linkcheck_ignore = [
     # Ignore jenkins because it's often slow to respond.
