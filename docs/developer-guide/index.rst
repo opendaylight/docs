@@ -37,7 +37,7 @@ Project-specific Developer Guides
    distribution-test-features
    eman-developer-guide
    fabric-as-a-service
-   infrautils-developer-guide
+   ../submodules/infrautils/docs/index
    iotdm-developer-guide
    jsonrpc
    l2switch-developer-guide
