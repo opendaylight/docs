@@ -48,7 +48,7 @@ Managed Projects
 * :doc:`../project-indexes/bgpcep-index`
 * :doc:`Controller Documentation <controller:index>`
 * :doc:`COE Documentation <coe:index>`
-* :doc:`DAEXIM Documentation <daexim:index>`
+* :doc:`../project-indexes/daexim-index`
 * :doc:`Genius Documentation <genius:index>`
 * :doc:`Infrautils Documentation <infrautils:index>`
 * :doc:`../project-indexes/lispflowmapping-index`
