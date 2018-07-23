@@ -24,6 +24,7 @@ intersphinx_mapping['genius'] = ('http://docs.opendaylight.org/projects/genius/e
 intersphinx_mapping['infrautils'] = ('http://docs.opendaylight.org/projects/infrautils/en/latest/', None)
 intersphinx_mapping['netvirt'] = ('http://docs.opendaylight.org/projects/netvirt/en/latest/', None)
 intersphinx_mapping['openflowplugin'] = ('http://docs.opendaylight.org/projects/openflowplugin/en/latest/', None)
+intersphinx_mapping['ovsdb'] = ('http://docs.opendaylight.org/projects/ovsdb/en/latest/', None)
 
 # OpenDaylight Documentation Releases
 intersphinx_mapping['odl-oxygen'] = ('http://docs.opendaylight.org/en/stable-oxygen/', None)

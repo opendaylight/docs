@@ -18,6 +18,7 @@ Project-specific Developer Guides
 ---------------------------------
 
 * :doc:`NetVirt Documentation <netvirt:index>`
+* :doc:`OVSDB Documentation <ovsdb:index>`
 
 .. toctree::
    :maxdepth: 1
@@ -58,7 +59,6 @@ Project-specific Developer Guides
    opflex-agent-ovs-developer-guide
    opflex-genie-developer-guide
    opflex-libopflex-developer-guide
-   ovsdb-developer-guide
    pcep-developer-guide
    packetcable-developer-guide
    service-function-chaining
