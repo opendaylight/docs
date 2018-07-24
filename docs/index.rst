@@ -20,24 +20,6 @@ Getting Started with OpenDaylight
    release-notes/index
    getting-started-guide/index
 
-OpenDaylight User Guides
--------------------------
-
-.. toctree::
-   :maxdepth: 1
-
-   user-guide/index
-
-OpenDaylight Developer Guides
-------------------------------
-
-.. toctree::
-   :maxdepth: 1
-
-   developer-guide/index
-   javadoc
-
-
 OpenDaylight Project Documentation
 -----------------------------------
 
@@ -80,8 +62,7 @@ OpenDaylight Contributor Guides
 
    documentation
    release-process/index
-
-
+   javadocs
 
 .. Commenting the below out until we actually use it
 .. Indices and tables
