@@ -11,7 +11,7 @@ OpenDaylight platform with IP-SGT (IP Address to Source Group Tag)
 bindings that can be learned from connected SXP-aware network nodes. The
 current implementation supports SXP protocol version 4 according to the
 Smith, Kandula - SXP `IETF
-draft <https://tools.ietf.org/html/draft-smith-kandula-sxp-05>`__ and
+draft <https://tools.ietf.org/html/draft-smith-kandula-sxp-06>`__ and
 grouping of peers and creating filters based on ACL/Prefix-list syntax
 for filtering outbound and inbound IP-SGT bindings. All protocol legacy
 versions 1-3 are supported as well. Additionally, version 4 adds
@@ -58,11 +58,7 @@ SXP-Domains by ACL, Prefix List or Peer-Sequence filters
 Configuring SXP
 ---------------
 
-The OpenDaylight Karaf distribution comes pre-configured with baseline
-SXP configuration. Configuration of SXP Nodes is also possible via
-NETCONF.
-
--  **22-sxp-controller-one-node.xml** (defines the basic parameters)
+SXP requires no manual configuration.
 
 Administering or Managing SXP
 -----------------------------
@@ -137,46 +133,45 @@ status):
      <peer-address>172.20.161.50</peer-address>
     </input>
 
--  Add Binding Entry POST
-   http://127.0.0.1:8181/restconf/operations/sxp-controller:add-entry
+-  Add/Update Bindings POST
+   http://127.0.0.1:8181/restconf/operations/sxp-controller:add-bindings
 
 ::
 
-    <input xmlns:xsi="urn:opendaylight:sxp:controller">
-     <requested-node>0.0.0.100</requested-node>
-     <domain-name>global</domain-name>
-     <ip-prefix>192.168.2.1/32</ip-prefix>
-     <sgt>20</sgt >
+    <input xmlns="urn:opendaylight:sxp:controller">
+	    <node-id>0.0.0.100</node-id>
+	    <domain-name>global</domain-name>
+	    <origin>LOCAL</origin>
+	    <master-database>
+		    <binding>
+			    <sgt>50</sgt>
+			    <ip-prefix>192.168.2.1/32</ip-prefix>
+			    <ip-prefix>192.168.2.2/32</ip-prefix>
+		    </binding>
+		    <binding>
+			    <sgt>100</sgt>
+			    <ip-prefix>192.168.3.1/32</ip-prefix>
+			    <ip-prefix>192.168.3.2/32</ip-prefix>
+		    </binding>
+	    </master-database>
     </input>
 
--  Update Binding Entry POST
-   http://127.0.0.1:8181/restconf/operations/sxp-controller:update-entry
+-  Delete Bindings POST
+   http://127.0.0.1:8181/restconf/operations/sxp-controller:delete-bindings
 
 ::
 
-    <input xmlns:xsi="urn:opendaylight:sxp:controller">
-     <requested-node>0.0.0.100</requested-node>
-     <domain-name>global</domain-name>
-     <original-binding>
-      <ip-prefix>192.168.2.1/32</ip-prefix>
-      <sgt>20</sgt>
-     </original-binding>
-     <new-binding>
-      <ip-prefix>192.168.3.1/32</ip-prefix>
-      <sgt>30</sgt>
-     </new-binding>
-    </input>
-
--  Delete Binding Entry POST
-   http://127.0.0.1:8181/restconf/operations/sxp-controller:delete-entry
-
-::
-
-    <input xmlns:xsi="urn:opendaylight:sxp:controller">
-     <requested-node>0.0.0.100</requested-node>
-     <domain-name>global</domain-name>
-     <ip-prefix>192.168.3.1/32</ip-prefix>
-     <sgt>30</sgt >
+    <input xmlns="urn:opendaylight:sxp:controller">
+	    <node-id>0.0.0.100</node-id>
+	    <domain-name>global</domain-name>
+	    <binding>
+		    <sgt>50</sgt>
+		    <ip-prefix>192.168.2.2/32</ip-prefix>
+	    </binding>
+	    <binding>
+		    <sgt>100</sgt>
+		    <ip-prefix>192.168.3.2/32</ip-prefix>
+	    </binding>
     </input>
 
 -  Get Node Bindings
@@ -346,7 +341,6 @@ status):
         <tcp-port>64999</tcp-port>
         <version>version4</version>
         <description>ODL SXP Controller</description>
-        <master-database></master-database>
     </input>
 
 -  Delete SXP aware node POST
