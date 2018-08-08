@@ -11,7 +11,7 @@ OpenDaylight platform with IP-SGT (IP Address to Source Group Tag)
 bindings that can be learned from connected SXP-aware network nodes. The
 current implementation supports SXP protocol version 4 according to the
 Smith, Kandula - SXP `IETF
-draft <https://tools.ietf.org/html/draft-smith-kandula-sxp-05>`__ and
+draft <https://tools.ietf.org/html/draft-smith-kandula-sxp-06>`__ and
 grouping of peers and creating filters based on ACL/Prefix-list syntax
 for filtering outbound and inbound IP-SGT bindings. All protocol legacy
 versions 1-3 are supported as well. Additionally, version 4 adds
@@ -61,23 +61,20 @@ Key APIs and Interfaces
 As this project is fairly small, it provides only few features that
 install and provide all APIs and implementations for this project.
 
--  sxp-route
-
--  sxp-controller
-
 -  sxp-api
 
 -  spx-core
 
-sxp-route
-~~~~~~~~~
+-  sxp-controller
 
-Performs managing of SXP devices in cluster environment
+-  sxp-cluster-route
 
-sxp-controller
-~~~~~~~~~~~~~~
+-  sxp-karaf
 
-RPC request handling
+-  sxp-robot
+
+-  sxp-system-tests
+
 
 sxp-api
 ~~~~~~~
@@ -88,6 +85,31 @@ spx-core
 ~~~~~~~~
 
 Main logic and core features
+
+sxp-controller
+~~~~~~~~~~~~~~
+
+RPC request handling
+
+sxp-cluster-route
+~~~~~~~~~
+
+Performs managing of SXP devices in cluster environment
+
+sxp-karaf
+~~~~~~~~~
+
+Defines Karaf4 dependencies
+
+sxp-robot
+~~~~~~~~~
+
+Contains JRobot libraries used in `CSIT Robot tests <https://jenkins.opendaylight.org/releng/view/sxp/>`__
+
+sxp-system-tests
+~~~~~~~~~~~~~~~~
+
+Contains REST client used for testing purposes
 
 API Reference Documentation
 ---------------------------
