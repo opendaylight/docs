@@ -170,3 +170,12 @@ Manual steps to version bump (Autorelease)
 
        git submodule foreach 'git commit -asm "Bump versions by x.(y+1).z for next dev cycle"'
        git submodule foreach 'git review -t ${CURR_RELEASE,,}-branch-cut'
+
+#. Merge the patches in order according to the merge-order.log file found
+   in autorelease jobs. **(Release Engineering Team)**
+
+.. note::
+
+   The version bump patches can be merged more quickly by performing a local
+   build with ``mvn clean deploy -DskipTests`` to prime Nexus with the new
+   version updates.
