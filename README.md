@@ -1,7 +1,6 @@
 This project is providing manuals and documentation for OpenDaylight
 
-For the documentation see:
-<http://docs.opendaylight.org/>
+For the documentation see: [Documenation](http://docs.opendaylight.org/)
 
 For information on how to contribute to and/or build the documentation see:
-<http://docs.opendaylight.org/en/latest/documentation.html>
+[Updated Documentation](http://docs.opendaylight.org/en/latest/documentation.html)
