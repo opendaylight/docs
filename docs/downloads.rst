@@ -5,7 +5,7 @@ OpenDaylight Downloads
 Supported Releases
 ==================
 
-Oxygen-SR2
+Oxygen-SR3
 ----------
 
 (Current Release)
@@ -15,12 +15,12 @@ Oxygen-SR2
 :Service Release Date: June 13, 2018
 
 :Downloads:
-    * `OpenDaylight Oxygen SR2 Tar
-      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/karaf/0.8.2/karaf-0.8.2.tar.gz>`_
-    * `OpenDaylight Oxygen SR2 Zip
-      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/karaf/0.8.2/karaf-0.8.2.zip>`_
-    * `OpenDaylight Oxygen SR2 RPM
-      <http://cbs.centos.org/repos/nfv7-opendaylight-82-release/x86_64/os/Packages/opendaylight-8.2.0-1.el7.noarch.rpm>`_
+    * `OpenDaylight Oxygen SR3 Tar
+      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/karaf/0.8.3/karaf-0.8.3.tar.gz>`_
+    * `OpenDaylight Oxygen SR3 Zip
+      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/karaf/0.8.3/karaf-0.8.3.zip>`_
+    * `OpenDaylight Oxygen SR3 RPM
+      <http://cbs.centos.org/repos/nfv7-opendaylight-83-release/x86_64/os/Packages/opendaylight-8.3.0-1.el7.noarch.rpm>`_
     * `OpFlex
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/opflex/>`_
 
