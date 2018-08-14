@@ -10,7 +10,7 @@ Oxygen-SR3
 
 (Current Release)
 
-:Annoucement: https://www.opendaylight.org/about/news/blogs/opendaylight-releases-oxygen-with-new-p4-and-container-support
+:Announcement: https://www.opendaylight.org/about/news/blogs/opendaylight-releases-oxygen-with-new-p4-and-container-support
 :Original Release Date: March 22, 2018
 :Service Release Date: August 10, 2018
 
