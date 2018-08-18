@@ -13,6 +13,7 @@
 from docs_conf.conf import *
 
 # Append to intersphinx_mapping
+intersphinx_mapping['mdsal'] = ('https://docs.opendaylight.org/projects/mdsal/en/latest/', None)
 intersphinx_mapping['odl-integration-test'] = ('http://docs.opendaylight.org/projects/integration-test/en/latest/', None)
 intersphinx_mapping['odl-integration-distribution'] = ('http://docs.opendaylight.org/projects/integration-distribution/en/latest/', None)
 intersphinx_mapping['odl-integration-packaging'] = ('http://docs.opendaylight.org/projects/integration-packaging/en/latest/', None)
