@@ -247,3 +247,12 @@ It is recommended to restart the Karaf container after uninstallation of the TSD
 
 
 .. include:: ../../user-guide/tsdr-elastic-search.rst
+
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+
+   tsdr-install
+   tsdr-hsqldb-install
+   tsdr-hbase-install

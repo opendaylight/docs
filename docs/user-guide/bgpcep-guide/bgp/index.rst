@@ -26,4 +26,5 @@ The user should learn about BGP basic concepts, supported capabilities, configur
    bgp-user-guide-high-availability
    bgp-user-guide-topology-provider
    bgp-user-guide-test-tools
+   bgp-user-guide-pmsi-attribute
    bgp-user-guide-troubleshooting

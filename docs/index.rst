@@ -26,18 +26,19 @@ OpenDaylight Project Documentation
 Managed Projects
 ~~~~~~~~~~~~~~~~
 
-* :doc:`AAA Documentation <aaa:index>`
+.. :doc:`AAA Documentation <aaa:index>`
+.. :doc:`Controller Documentation <controller:index>`
+.. :doc:`NETCONF Documentation <netconf:index>`
+.. :doc:`Neutron Documentation <neutron:index>`
+
 * :doc:`../project-indexes/bgpcep-index`
-* :doc:`Controller Documentation <controller:index>`
 * :doc:`COE Documentation <coe:index>`
 * :doc:`../project-indexes/daexim-index`
 * :doc:`Genius Documentation <genius:index>`
 * :doc:`Infrautils Documentation <infrautils:index>`
 * :doc:`../project-indexes/lispflowmapping-index`
 * :doc:`MD-SAL Documentation <mdsal:index>`
-* :doc:`NETCONF Documentation <netconf:index>`
 * :doc:`NetVirt Documentation <netvirt:index>`
-* :doc:`Neutron Documentation <neutron:index>`
 * :doc:`OpenFlowPlugin Documentation <openflowplugin:index>`
 * :doc:`OVSDB Documentation <ovsdb:index>`
 
@@ -63,6 +64,7 @@ OpenDaylight Contributor Guides
    documentation
    release-process/index
    javadoc
+   developer-guide/index
 
 .. Commenting the below out until we actually use it
 .. Indices and tables
@@ -71,3 +73,18 @@ OpenDaylight Contributor Guides
 .. * :ref:`genindex`
 .. * :ref:`modindex`
 .. * :ref:`search`
+
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+
+   developer-guide/index
+
+   opendaylight-with-openstack/index
+   release-notes/sample-release-notes
+   user-guide/index
+   project-indexes/bgpcep-index
+   project-indexes/daexim-index
+   project-indexes/lispflowmapping-index
+   project-indexes/sxp-index

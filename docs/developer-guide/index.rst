@@ -59,8 +59,10 @@ Project-specific Developer Guides
    opflex-agent-ovs-developer-guide
    opflex-genie-developer-guide
    opflex-libopflex-developer-guide
+   ovsdb-developer-guide
    pcep-developer-guide
    packetcable-developer-guide
+   p4plugin-developer-guide
    service-function-chaining
    snmp4sdn-developer-guide
    sxp-developer-guide

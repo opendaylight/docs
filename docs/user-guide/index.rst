@@ -52,6 +52,7 @@ Project-specific User Guides
    of-config-user-guide
    openflow-plugin-project-user-guide
    opflex-agent-ovs-user-guide
+   ovsdb-user-guide
    p4plugin-user-guide
    packetcable-user-guide
    bgpcep-guide/pcep/index

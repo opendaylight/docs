@@ -353,7 +353,7 @@ which is hard-coded. The default domain can be also configured through the
 
 The protocol between the Controller and the Keystone Server (2) can be either
 HTTPS or HTTP. In order to use HTTPS the Keystone Server's certificate
-must be exported and imported on the Controller (see the :ref:`Certificate Management <Certificate Management>` section).
+must be exported and imported on the Controller (see the :ref:`Certificate Management <aaa-certificate-management>` section).
 
 Authorization Configuration
 ---------------------------
@@ -484,6 +484,8 @@ It is possible to add custom AuthenticationListener(s) to the Shiro-based
 configuration, allowing different ways to listen for successful/unsuccessful
 authentication attempts. Custom AuthenticationListener(s) must implement
 the org.apache.shiro.authc.AuthenticationListener interface.
+
+.. _aaa-certificate-management:
 
 Certificate Management
 ----------------------
