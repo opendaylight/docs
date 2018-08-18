@@ -1,4 +1,4 @@
-.. _dist-version:
+.. _dist-version-report:
 
 Distribution Version reporting
 ==============================
@@ -100,4 +100,3 @@ here is an example ``curl`` command accessing ``odl-odlparent-version`` config m
 .. code:: bash
 
     curl 127.0.0.1:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules/module/odl-distribution-version:odl-version/odl-odlparent-version
-
