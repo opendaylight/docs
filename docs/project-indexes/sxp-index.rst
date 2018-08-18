@@ -1,9 +1,9 @@
 SXP Project Documentation
-============================
+=========================
 This page provides pointers to the existing documentation for the SXP project.
 
 Developer Guides
------------------
+----------------
 
 .. toctree::
    :maxdepth: 1

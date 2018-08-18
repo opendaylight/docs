@@ -91,7 +91,7 @@ sxp-controller
 RPC request handling
 
 sxp-cluster-route
-~~~~~~~~~
+~~~~~~~~~~~~~~~~~
 
 Performs managing of SXP devices in cluster environment
 

@@ -38,7 +38,7 @@ References
 * `Route Refresh Capability for BGP-4 <https://tools.ietf.org/html/rfc2918>`_
 
 Peer Session Release
--------------
+--------------------
 
 BGP provides a RPC feature to release a Neighbor session.
 

@@ -816,7 +816,8 @@ Defined set
 @line 6: AS Path set member
 
 Match Community Set
-''''''''''''''''''
+'''''''''''''''''''
+
 .. code-block:: xml
    :linenos:
    :emphasize-lines: 3,5
@@ -873,7 +874,7 @@ Defined set
 @line 10: Communities.
 
 Match Extended Community Set
-'''''''''''''''''''''''''''
+''''''''''''''''''''''''''''
 .. code-block:: xml
    :linenos:
    :emphasize-lines: 3,5,7
