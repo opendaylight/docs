@@ -3,8 +3,8 @@
 MCAST-VPN Family
 ================
 The BGP Multicast VPN(BGP MCAST-VPN) Multiprotocol extension can be used for MVPN auto-discovery, advertising MVPN to Inclusive P-Multicast Service
-Interface (I-PMSI) tunnel binding, advertising (C-S,C-G) to Selective PMSI (S-PMSI) tunnel binding, VPN customer multicast routing 
-information exchange among Provider Edge routers (PEs), choosing a single forwarder PE, and for procedures in support of co-locating a 
+Interface (I-PMSI) tunnel binding, advertising (C-S,C-G) to Selective PMSI (S-PMSI) tunnel binding, VPN customer multicast routing
+information exchange among Provider Edge routers (PEs), choosing a single forwarder PE, and for procedures in support of co-locating a
 Customer Rendezvous Point (C-RP) on a PE.
 
 .. contents:: Contents
@@ -147,8 +147,10 @@ Following tree illustrates the BGP MCAST-VPN route structure.
                                  +--ro opaque-extended-type?   uint16
                                  +--ro opaque                  yang:hex-string
                      ...
+
 Ipv6 MCAST-VPN Route API
 ^^^^^^^^^^^^^^^^^^^^^^^^
+
 Following tree illustrates the BGP MCAST-VPN route structure.
 
 .. code-block:: console
