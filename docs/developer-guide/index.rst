@@ -17,6 +17,8 @@ Overview
 Project-specific Developer Guides
 ---------------------------------
 
+* :doc:`COE Documentation <coe:index>`
+* :doc:`InfraUtils Documentation <infrautils:index>`
 * :doc:`NetVirt Documentation <netvirt:index>`
 * :doc:`OVSDB Documentation <ovsdb:index>`
 
@@ -30,7 +32,6 @@ Project-specific Developer Guides
    bier-developer-guide
    capwap-developer-guide
    cardinal_-opendaylight-monitoring-as-a-service
-   ../submodules/coe/docs/index
    controller
    daexim-developer-guide
    didm-developer-guide
@@ -38,7 +39,6 @@ Project-specific Developer Guides
    distribution-test-features
    eman-developer-guide
    fabric-as-a-service
-   ../submodules/infrautils/docs/index
    iotdm-developer-guide
    jsonrpc
    l2switch-developer-guide
