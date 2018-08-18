@@ -4,6 +4,7 @@ Scalable-Group Tag eXchange Protocol (SXP)
 
 Major Features
 ==============
+
 * Distributed implementation of binding databases backed by Hazelcast
 * Configurable binding origins with priorities
 
@@ -46,7 +47,7 @@ odl-sxp-controller
 * **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sxp/job/sxp-csit-1node-topology-all-fluorine/
 
 odl-sxp-routing
--------------
+---------------
 
 * **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=sxp.git;a=blob;f=features/odl-sxp-routing/pom.xml;hb=refs/heads/stable/fluorine
 * **Feature Description:**  This feature that performs managing of SXP devices
