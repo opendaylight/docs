@@ -71,4 +71,3 @@ Project-specific Developer Guides
    unified-secure-channel
    virtual-tenant-network-(vtn)
    yang-tools
-   yang-push-developer-guide
