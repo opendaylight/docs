@@ -13,24 +13,24 @@
 from docs_conf.conf import *
 
 # Append to intersphinx_mapping
-intersphinx_mapping['odl-integration-test'] = ('http://docs.opendaylight.org/projects/integration-test/en/latest/', None)
-intersphinx_mapping['odl-integration-distribution'] = ('http://docs.opendaylight.org/projects/integration-distribution/en/latest/', None)
-intersphinx_mapping['odl-integration-packaging'] = ('http://docs.opendaylight.org/projects/integration-packaging/en/latest/', None)
-intersphinx_mapping['odl-releng-builder'] = ('http://docs.opendaylight.org/projects/releng-builder/en/latest/', None)
+intersphinx_mapping['odl-integration-test'] = ('https://docs.opendaylight.org/projects/integration-test/en/latest/', None)
+intersphinx_mapping['odl-integration-distribution'] = ('https://docs.opendaylight.org/projects/integration-distribution/en/latest/', None)
+intersphinx_mapping['odl-integration-packaging'] = ('https://docs.opendaylight.org/projects/integration-packaging/en/latest/', None)
+intersphinx_mapping['odl-releng-builder'] = ('https://docs.opendaylight.org/projects/releng-builder/en/latest/', None)
 
 # Projects that have stable/branches
-intersphinx_mapping['coe'] = ('http://docs.opendaylight.org/projects/coe/en/stable-fluorine/', None)
-intersphinx_mapping['genius'] = ('http://docs.opendaylight.org/projects/genius/en/stable-fluorine/', None)
-intersphinx_mapping['infrautils'] = ('http://docs.opendaylight.org/projects/infrautils/en/stable-fluorine/', None)
-intersphinx_mapping['netvirt'] = ('http://docs.opendaylight.org/projects/netvirt/en/stable-fluorine/', None)
-intersphinx_mapping['openflowplugin'] = ('http://docs.opendaylight.org/projects/openflowplugin/en/stable-fluorine/', None)
-intersphinx_mapping['ovsdb'] = ('http://docs.opendaylight.org/projects/ovsdb/en/stable-fluorine/', None)
+intersphinx_mapping['coe'] = ('https://docs.opendaylight.org/projects/coe/en/stable-fluorine/', None)
+intersphinx_mapping['genius'] = ('https://docs.opendaylight.org/projects/genius/en/stable-fluorine/', None)
+intersphinx_mapping['infrautils'] = ('https://docs.opendaylight.org/projects/infrautils/en/stable-fluorine/', None)
+intersphinx_mapping['netvirt'] = ('https://docs.opendaylight.org/projects/netvirt/en/stable-fluorine/', None)
+intersphinx_mapping['openflowplugin'] = ('https://docs.opendaylight.org/projects/openflowplugin/en/stable-fluorine/', None)
+intersphinx_mapping['ovsdb'] = ('https://docs.opendaylight.org/projects/ovsdb/en/stable-fluorine/', None)
 
 # OpenDaylight Documentation Releases
-intersphinx_mapping['odl-fluorine'] = ('http://docs.opendaylight.org/en/stable-fluorine/', None)
-intersphinx_mapping['odl-oxygen'] = ('http://docs.opendaylight.org/en/stable-oxygen/', None)
-intersphinx_mapping['odl-nitrogen'] = ('http://docs.opendaylight.org/en/stable-nitrogen/', None)
-intersphinx_mapping['odl-carbon'] = ('http://docs.opendaylight.org/en/stable-carbon/', None)
+intersphinx_mapping['odl-fluorine'] = ('https://docs.opendaylight.org/en/stable-fluorine/', None)
+intersphinx_mapping['odl-oxygen'] = ('https://docs.opendaylight.org/en/stable-oxygen/', None)
+intersphinx_mapping['odl-nitrogen'] = ('https://docs.opendaylight.org/en/stable-nitrogen/', None)
+intersphinx_mapping['odl-carbon'] = ('https://docs.opendaylight.org/en/stable-carbon/', None)
 
 linkcheck_ignore = [
     # Ignore jenkins because it's often slow to respond.
