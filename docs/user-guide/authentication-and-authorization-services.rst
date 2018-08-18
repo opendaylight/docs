@@ -880,6 +880,7 @@ authentication attempts. Custom AuthenticationListener(s) must implement
 the org.apache.shiro.authc.AuthenticationListener interface.
 
 .. _certificate-management:
+
 Certificate Management
 ----------------------
 
