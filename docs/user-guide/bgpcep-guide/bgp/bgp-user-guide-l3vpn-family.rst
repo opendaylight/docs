@@ -1,4 +1,4 @@
-.. _bgp-user-guide:
+.. _ip-l3vpn-family:
 
 IP L3VPN Family
 ===============
