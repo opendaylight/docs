@@ -13,8 +13,6 @@ the OpenDaylight Release using the generic base functionality.
    :maxdepth: 1
 
    opendaylight-controller-overview
-   ../getting-started-guide/common-features/clustering.rst
-   ../getting-started-guide/common-features/persistence_and_backup.rst
 
 Project-specific User Guides
 ----------------------------
