@@ -14,8 +14,8 @@ Event Sequences
 Session Establishment
 ~~~~~~~~~~~~~~~~~~~~~
 
-The :ref:`OpenFlow Protocol
-Library <openflow-protocol-library>` provides
+The OpenFlow Protocol
+Library provides
 interface **SwitchConnectionHandler** which contains method
 *onSwitchConnected* (step 1). This event is raised in the OpenFlow
 Protocol Library when an OpenFlow device connects to OpenDaylight and
@@ -1197,8 +1197,8 @@ Wiring up notifications
 Introduction
 ~~~~~~~~~~~~
 
-We need to translate OpenFlow messages coming up from the :ref:`OpenFlow
-Protocol Library <openflow-protocol-library>` into
+We need to translate OpenFlow messages coming up from the OpenFlow
+Protocol Library into
 MD-SAL Notification objects and then publish them to the MD-SAL.
 
 Mechanics
@@ -1309,4 +1309,3 @@ processor cores on machine it is run, e.g., 8 threads if the machine has
 
     While each device is assigned to one thread, multiple devices can be
     assigned to the same thread.
-

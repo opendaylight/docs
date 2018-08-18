@@ -19,6 +19,7 @@ Release Planning
 
    managed-release
    release-schedule
+   release-goals
 
 *********
 Processes

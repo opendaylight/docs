@@ -654,3 +654,11 @@ console. Then the user needs to modify the properties file under
        log-persistency=false
        binary-persistency=false
 
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+
+   tsdr-elastic-search
+   tsdr-elasticsearch-user-guide
+   tsdr-hbase-user-guide
+   tsdr-hsqldb-user-guide
