@@ -11,7 +11,7 @@ OpenDaylight project and release documentation. If you would like to contribute
 to documentation, refer to the :ref:`documentation-guide`.
 
 Getting Started with OpenDaylight
-------------------------------
+---------------------------------
 
 .. toctree::
    :maxdepth: 1
@@ -21,10 +21,10 @@ Getting Started with OpenDaylight
    getting-started-guide/index
 
 OpenDaylight Project Documentation
------------------------------------
+----------------------------------
 
 Managed Projects
-~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 
 * :doc:`AAA Documentation <aaa:index>`
 * :doc:`../project-indexes/bgpcep-index`
@@ -43,13 +43,13 @@ Managed Projects
 
 
 Self-Managed Projects
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
 
 * :doc:`../project-indexes/sxp-index`
 
 
 OpenDaylight Contributor Guides
---------------------------------
+-------------------------------
 
 * :doc:`Gerrit Guide <lfdocs:gerrit>`
 * :ref:`Infrastructure Guide <odl-infra>`

@@ -129,7 +129,7 @@ API Reference Documentation
 See: sfc-model/src/main/yang/service-function-classifier.yang
 
 SFC-OVS Plug-in
---------------
+---------------
 
 Overview
 ~~~~~~~~
@@ -177,7 +177,7 @@ Key APIs and Interfaces
    TerminationPoints to SFF object)
 
 SFC Southbound REST Plug-in
---------------------------
+---------------------------
 
 Overview
 ~~~~~~~~
@@ -202,7 +202,7 @@ triggered accordingly by changes in the SFC data stores.
 -  Rendered Service Path (RSP)
 
 Southbound REST Plug-in Architecture
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. **listeners** - used to listen on changes in the SFC data stores
 
