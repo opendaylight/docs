@@ -3,9 +3,12 @@
 BGP Protocol Configuration Loader
 =================================
 
-BGP Protocol Configuration Loader allows the user to define the static initial configuration for a BGP protocol instance.
-This service will detect the creation of new configuration files following the pattern "protocols-*.xml" under the path "etc/opendaylight/bgpcep".
-Once the file is processed, the defined configuration will be available from the configuration Data Store.
+BGP Protocol Configuration Loader allows the user to define the static initial
+configuration for a BGP protocol instance.
+This service will detect the creation of new configuration files following the
+pattern ``protocols-*.xml`` under the path "etc/opendaylight/bgpcep".
+Once the file is processed, the defined configuration will be available from
+the configuration Data Store.
 
 .. note:: If the BGP instance is already present, no update or configuration will be applied.
 

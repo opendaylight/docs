@@ -321,9 +321,12 @@ A sample output below represents a two node topology with two unidirectional lin
 BGP Network Topology Configuration Loader
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-BGP Network Topology Configuration Loader allows user to define static initial configuration for a BGP protocol instance.
-This service will detect the creation of new configuration files following the pattern "network-topology-*.xml" under the path "etc/opendaylight/bgpcep".
-Once the file is processed, the defined configuration will be available from the configuration Data Store.
+BGP Network Topology Configuration Loader allows user to define static initial
+configuration for a BGP protocol instance.
+This service will detect the creation of new configuration files following the
+pattern ``network-topology-*.xml`` under the path ``etc/opendaylight/bgpcep``.
+Once the file is processed, the defined configuration will be available from
+the configuration Data Store.
 
 .. note:: If the BGP topology instance is already present, no update or configuration will be applied.
 

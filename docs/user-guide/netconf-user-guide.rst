@@ -1324,7 +1324,7 @@ with username and passwords specified.
 
 *Configuring global username & passwords to try*
 
-.. code-block:: http
+.. code-block:: none
 
     PUT
     /restconf/config/odl-netconf-callhome-server:netconf-callhome-server/global/credentials HTTP/1.1
@@ -1361,7 +1361,7 @@ This is a debug feature and should not be used in production. Besides being an o
 security issue, this also causes the Call-Home Server to drastically increase its output
 to the log.
 
-.. code-block:: http
+.. code-block:: none
 
     POST
     /restconf/config/odl-netconf-callhome-server:netconf-callhome-server/global HTTP/1.1
@@ -1395,7 +1395,7 @@ leaves a record of its presence in the operational store.
 
 *Example of configuring device*
 
-.. code-block:: http
+.. code-block:: none
 
     PUT
     /restconf/config/odl-netconf-callhome-server:netconf-callhome-server/allowed-devices/device/example HTTP/1.1
@@ -1420,7 +1420,7 @@ device-specific configuration. Format is same as in global credentials.
 
 *Configuring Device with Credentials*
 
-.. code-block:: http
+.. code-block:: none
 
     PUT
     /restconf/config/odl-netconf-callhome-server:netconf-callhome-server/allowed-devices/device/example HTTP/1.1
