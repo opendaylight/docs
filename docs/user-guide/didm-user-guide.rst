@@ -1,4 +1,5 @@
 .. _didm-user-guide:
+
 DIDM User Guide
 ===============
 
@@ -192,4 +193,3 @@ Forward Objective
 ~~~~~~~~~~~~~~~~~
 
 http://<CONTROLLER-IP>:8181/restconf/operations/atrium-flow-objective:forward
-
