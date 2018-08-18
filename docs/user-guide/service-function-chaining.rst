@@ -789,7 +789,7 @@ command:
 
 **SF configuration JSON.**
 
-.. code-block:: json
+.. code-block:: none
 
     {
      "service-functions": {
@@ -837,7 +837,7 @@ following command:
 
 **SFF configuration JSON.**
 
-.. code-block:: json
+.. code-block:: none
 
     {
      "service-function-forwarders": {
@@ -909,7 +909,7 @@ command:
 
 **SFC configuration JSON.**
 
-.. code-block:: json
+.. code-block:: none
 
     {
      "service-function-chains": {
@@ -942,7 +942,7 @@ command:
 
 **SFP configuration JSON.**
 
-.. code-block:: json
+.. code-block:: none
 
     {
       "service-function-paths": {
@@ -985,7 +985,7 @@ command:
 
 **SF configuration JSON.**
 
-.. code-block:: json
+.. code-block:: none
 
     {
      "service-functions": {
@@ -1033,7 +1033,7 @@ following command:
 
 **SFF configuration JSON.**
 
-.. code-block:: json
+.. code-block:: none
 
     {
      "service-function-forwarders": {
@@ -1171,7 +1171,7 @@ command:
 
 **SFC configuration JSON.**
 
-.. code-block:: json
+.. code-block:: none
 
     {
      "service-function-chains": {
@@ -1206,7 +1206,7 @@ command:
 
 **SFP configuration JSON.**
 
-.. code-block:: json
+.. code-block:: none
 
     {
       "service-function-paths": {
@@ -1409,7 +1409,7 @@ mountpoints are cached. The first step is to create LSF on node.
 
 *  PUT ./config/service-function-forwarder:service-function-forwarders
 
-   .. code-block:: json
+   .. code-block:: none
 
     {
         "service-function-forwarders": {
@@ -1438,7 +1438,7 @@ approach is used for Service Functions.
 
 *  PUT ./config/service-function:service-functions
 
-   .. code-block:: json
+   .. code-block:: none
 
     {
         "service-functions": {
@@ -1494,7 +1494,7 @@ step is to prepare Service Function Chain.
 
 *  PUT ./config/service-function-chain:service-function-chains/
 
-   .. code-block:: json
+   .. code-block:: none
 
     {
         "service-function-chains": {
@@ -1524,7 +1524,7 @@ Service Function Path:
 
 *  PUT ./config/service-function-path:service-function-paths/
 
-   .. code-block:: json
+   .. code-block:: none
 
     {
         "service-function-paths": {
@@ -1543,7 +1543,7 @@ Without a classifier, there is possibility to POST RSP directly.
 
 *  POST ./operations/rendered-service-path:create-rendered-path
 
-   .. code-block:: json
+   .. code-block:: none
 
     {
       "input": {
@@ -1651,7 +1651,7 @@ selection algorithm when creating a Rendered Service Path.
    content is needed at the moment:
    Service\_function\_schudule\_type.json
 
-   .. code-block:: json
+   .. code-block:: none
 
        {
          "service-function-scheduler-types": {
@@ -1924,7 +1924,7 @@ c. Depoly SFFs and SFs. import the service-function-forwarders.json and
 
 service-function-forwarders.json:
 
-.. code-block:: json
+.. code-block:: none
 
     {
       "service-function-forwarders": {
@@ -2064,7 +2064,7 @@ service-function-forwarders.json:
 
 service-functions.json:
 
-.. code-block:: json
+.. code-block:: none
 
     {
       "service-functions": {
@@ -2159,7 +2159,7 @@ service-functions.json:
 
 The deployed topology like this:
 
-.. code-block:: json
+.. code-block:: none
 
                   +----+           +----+          +----+
                   |sff1|+----------|sff3|---------+|sff2|
@@ -2270,7 +2270,7 @@ Create an algorithm
 POST -
 http://127.0.0.1:8181/restconf/config/service-function-group-algorithm:service-function-group-algorithms
 
-.. code-block:: json
+.. code-block:: none
 
     {
         "service-function-group-algorithm": [
@@ -2298,7 +2298,7 @@ Create a group
 POST -
 http://127.0.0.1:8181/restconf/config/service-function-group:service-function-groups
 
-.. code-block:: json
+.. code-block:: none
 
     {
         "service-function-group": [
@@ -2490,7 +2490,7 @@ controller similar to below:
 POST -
 http://ODL-IP:8181/restconf/operations/sfc-ioam-nb-pot:enable-sfc-ioam-pot-rendered-path/
 
-.. code-block:: json
+.. code-block:: none
 
     {
         "input":
@@ -2510,7 +2510,7 @@ which disables the PoT feature.
 POST -
 http://ODL-IP:8181/restconf/operations/sfc-ioam-nb-pot:disable-sfc-ioam-pot-rendered-path/
 
-.. code-block:: json
+.. code-block:: none
 
     {
         "input":
@@ -2688,7 +2688,7 @@ The following are examples to configure the Logical SFF:
 
 **Service Functions JSON.**
 
-.. code-block:: json
+.. code-block:: none
 
     {
     "service-functions": {
@@ -2730,7 +2730,7 @@ The following are examples to configure the Logical SFF:
 
 **Service Function Forwarders JSON.**
 
-.. code-block:: json
+.. code-block:: none
 
     {
     "service-function-forwarders": {
@@ -2750,7 +2750,7 @@ The following are examples to configure the Logical SFF:
 
 **Service Function Chains JSON.**
 
-.. code-block:: json
+.. code-block:: none
 
     {
     "service-function-chains": {
@@ -2789,7 +2789,7 @@ The following are examples to configure the Logical SFF:
 
 **Service Function Paths JSON.**
 
-.. code-block:: json
+.. code-block:: none
 
     {
     "service-function-paths": {
@@ -2954,7 +2954,7 @@ a Logical SFF as an attachment-point:
 The following ACL enables traffic intended for port 80 within the subnetwork
 192.168.2.0/24, for RSP1 and RSP1-Reverse.
 
-.. code-block:: json
+.. code-block:: none
 
         {
           "access-lists": {
@@ -3025,7 +3025,7 @@ The following JSON provisions a classifier, having a Logical SFF as an
 attachment point. The value of the field 'interface' is where you
 indicate the neutron ports of the VMs you want to classify.
 
-.. code-block:: json
+.. code-block:: none
 
         {
           "service-function-classifiers": {
@@ -3148,7 +3148,8 @@ service-function-forwarder in the service-function-dictionary entity, which
 describes the association between a Service Function Forwarder and Service
 Functions:
 
-.. code-block:: service-function-forwarder.yang
+.. code-block:: none
+   :caption: service-function-forwarder.yang
 
         list service-function-dictionary {
             key "name";
@@ -3223,7 +3224,7 @@ changes with respect to that example:
 
 **Service Functions JSON.**
 
-.. code-block:: json
+.. code-block:: none
 
     {
     "service-functions": {
@@ -3278,7 +3279,7 @@ changes with respect to that example:
 
 **Service Function Forwarders JSON.**
 
-.. code-block:: json
+.. code-block:: none
 
     {
     "service-function-forwarders": {
@@ -3432,7 +3433,7 @@ Querying statistics for all RSPs:
 
 The following is the sort of output that can be expected for each RSP.
 
-.. code-block:: json
+.. code-block:: none
 
    {
        "output": {
@@ -3454,4 +3455,3 @@ The following is the sort of output that can be expected for each RSP.
            ]
        }
    }
-

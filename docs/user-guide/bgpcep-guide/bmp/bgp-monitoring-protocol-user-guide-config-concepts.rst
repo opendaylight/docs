@@ -117,9 +117,12 @@ In order to enable active connection, use following request.
 BMP Monitors Configuration Loader
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-BMP Monitors Configuration Loader allows user to define static initial configuration for a BMP protocol instance.
-This service will detect the creation of new configuration files following the pattern "odl-bmp-monitors-*.xml" under the path "etc/opendaylight/bgpcep".
-Once the file is processed, the defined configuration will be available from the configuration Data Store.
+BMP Monitors Configuration Loader allows user to define static initial
+configuration for a BMP protocol instance.
+This service will detect the creation of new configuration files following the
+pattern ``odl-bmp-monitors-*.xml`` under the path ``etc/opendaylight/bgpcep``.
+Once the file is processed, the defined configuration will be available from
+the configuration Data Store.
 
 .. note:: If the BMP Monitor instance is already present, no update or configuration will be applied.
 

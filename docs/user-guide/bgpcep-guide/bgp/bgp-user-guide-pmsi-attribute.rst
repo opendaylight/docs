@@ -1,3 +1,6 @@
+PSMI Attribute
+==============
+
 * **P-Multicast Service Interface Tunnel (PMSI) attribute:**
 
   - **RSVP-TE P2MP LSP**
