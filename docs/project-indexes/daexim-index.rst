@@ -4,7 +4,7 @@ Data Export/Import Project Documentation
 This page provides pointers to the existing documentation for the Data Export Import (daexim) project.
 
 Developer Guides
------------------
+----------------
 
 .. toctree::
    :maxdepth: 1
