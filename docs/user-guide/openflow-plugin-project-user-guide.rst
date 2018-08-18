@@ -97,9 +97,9 @@ Security
 It is strongly recommended that any production deployments utilising
 the OpenFlow Plugin do so with TLS encryption to protect against
 various man-in-the-middle attacks. Please refer to the `Certificate
-Management section of the user guide <https://docs.opendaylight.org/en/latest/user-guide/authentication-and-authorization-services.html#id4>`__
+Management section of the user guide <https://docs.opendaylight.org/en/latest/user-guide/authentication-and-authorization-services.html#id4>`_
 for more details. TLS Support in the OpenFlow Plugin is outlined on `this
-wiki page <https://wiki.opendaylight.org/view/OpenDaylight_OpenFlow_Plugin:_TLS_Support`__.
+wiki page <https://wiki.opendaylight.org/view/OpenDaylight_OpenFlow_Plugin:_TLS_Support`_.
 
 Coverage
 ~~~~~~~~
@@ -114,7 +114,7 @@ Coverage
 ^^^^^^^^
 
 Coverage has been moved to a `GoogleDoc
-Spreadsheet <https://docs.google.com/spreadsheet/ccc?key=0AtpUuSEP8OyMdHNTZjBoM0VjOE9BcGhHMzk3N19uamc&usp=sharing%23gid=2#gid=0>`__
+Spreadsheet <https://docs.google.com/spreadsheet/ccc?key=0AtpUuSEP8OyMdHNTZjBoM0VjOE9BcGhHMzk3N19uamc&usp=sharing%23gid=2#gid=0>`_
 
 OF 1.3 Considerations
 ^^^^^^^^^^^^^^^^^^^^^
@@ -236,9 +236,9 @@ Getting Mininet with OF 1.3
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 `Download Mininet VM Upgraded to OF
-1.3 <https://www.dropbox.com/s/dbf9a372elqs1s1/mininet-of-1.3.zip>`__
+1.3 <https://www.dropbox.com/s/dbf9a372elqs1s1/mininet-of-1.3.zip>`_
 (or the `newer mininet-2.1.0 with
-OVS-2.0 <https://www.dropbox.com/s/t66vqfqx57a7nhk/mininet-2.1.0-of1.3.zip>`__
+OVS-2.0 <https://www.dropbox.com/s/t66vqfqx57a7nhk/mininet-2.1.0-of1.3.zip>`_
 that works with VMware Player. For using this on VirtualBox, import this
 to VMware Player and then export the .vmdk ) or you could build one
 yourself Openflow Protocol Library:OpenVirtualSwitch[Instructions for
@@ -279,8 +279,8 @@ address and the the host-only interface gets a 192.168.56.x address.
 Your simplest choice: Use Vagrant
 '''''''''''''''''''''''''''''''''
 
-`Download Virtual Box <https://www.virtualbox.org/>`__ and install it
-`Download Vagrant <http://www.vagrantup.com/>`__ and install it
+`Download Virtual Box <https://www.virtualbox.org/>`_ and install it
+`Download Vagrant <http://www.vagrantup.com/>`_ and install it
 
 ::
 
@@ -302,7 +302,7 @@ features.
 -  You can setup the switch as per the instructions given on the
    following URL
 
-`https://github.com/CPqD/ofsoftswitch13 <https://github.com/CPqD/ofsoftswitch13>`__
+`https://github.com/CPqD/ofsoftswitch13 <https://github.com/CPqD/ofsoftswitch13>`_
 
 -  Fire following command to start the switch
 
@@ -472,7 +472,7 @@ How to hit RestConf with Postman
 ''''''''''''''''''''''''''''''''
 
 `Install Postman for
-Chrome <https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm?hl=en>`__
+Chrome <https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm?hl=en>`_
 
 In the chrome browser bar enter
 
@@ -519,7 +519,7 @@ Current way to flush a flow to switch looks like this:
 
 1. Create MD-SAL modeled flow and commit it into dataStore using two
    phase commit `MD-SAL
-   FAQ <https://wiki.opendaylight.org/view/OpenDaylight_Controller:MD-SAL:FAQ>`__
+   FAQ <https://wiki.opendaylight.org/view/OpenDaylight_Controller:MD-SAL:FAQ>`_
 
 2. FRM gets notified and invokes corresponding rpc (addFlow) on
    particular service provider (if suitable provider for given node
@@ -1353,8 +1353,8 @@ Basically, you will learn how to:
    openflowplugin: :ref:`Running the controller with the new OpenFlow
    Plugin <ofp-running-new-plugin>`
 
-2. Start mininet to use OF 1.3: :ref:`OpenFlow 1.3 Enabled Software Switches
-   / Environment <ofp-test-environment>`
+2. Start mininet to use OF 1.3: OpenFlow 1.3 Enabled Software Switches
+   / Environment
 
 3. Use RESTCONF to see the topology information.
 
@@ -1392,7 +1392,7 @@ How to hit RestConf with Postman
 ''''''''''''''''''''''''''''''''
 
 Install
-`postman <https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm?hl=en>`__
+`postman <https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm?hl=en>`_
 for Chrome
 
 In the chrome browser bar enter
@@ -1414,7 +1414,7 @@ NOTE
 ^^^^
 
 Groups are NOT SUPPORTED in current (2.0.0) version of
-`openvswitch <http://www.openvswitch.org/download>`__. See
+`openvswitch <http://www.openvswitch.org/download>`_. See
 
 -  http://openvswitch.org/releases/NEWS-2.0.0
 
@@ -1475,6 +1475,7 @@ Push your Group
       "http://<ip-address>:8080/restconf/config/opendaylight-inventory:nodes/node/openflow:1/group/1"
 
    -  PUT
+
 
    -  Use Body:
 
@@ -1882,7 +1883,7 @@ At a high level statistics collection mechanism is divided into
 following three parts
 
 1. Statistics related `YANG models, service APIs and notification
-   interfaces <https://git.opendaylight.org/gerrit/gitweb?p=controller.git;a=tree;f=opendaylight/md-sal/model/model-flow-statistics;h=3488133625ccf18d023bc59aa35c38e922b17d8d;hb=HEAD>`__
+   interfaces <https://git.opendaylight.org/gerrit/gitweb?p=controller.git;a=tree;f=opendaylight/md-sal/model/model-flow-statistics;h=3488133625ccf18d023bc59aa35c38e922b17d8d;hb=HEAD>`_
    are defined in the MD-SAL.
 
 2. Service APIs (RPCs) defined in yang models are implemented by
@@ -1992,7 +1993,7 @@ Bugs
 For more details and queuries, please send mail to
 openflowplugin-dev@lists.opendaylight.org or avishnoi@in.ibm.com If you
 want to report any bug in statistics collection, please use
-`bugzilla <https://bugs.opendaylight.org>`__.
+`bugzilla <https://bugs.opendaylight.org>`_.
 
 Web / Graphical Interface
 -------------------------
@@ -2305,7 +2306,7 @@ The API is documented in the model documentation under the section
 OpenFlow Services at:
 
 -  `Models Documentation (OpenFlow Services
-   Section) <https://wiki.opendaylight.org/view/OpenDaylight_Controller:Config:Model_Reference>`__
+   Section) <https://wiki.opendaylight.org/view/OpenDaylight_Controller:Config:Model_Reference>`_
 
 .. _ofp-example-flows:
 
@@ -4008,7 +4009,7 @@ Pop MPLS
 -  Note that ethernet-type MUST be 34887
 
 -  Issue with OVS 2.1 `OVS
-   fix <http://git.openvswitch.org/cgi-bin/gitweb.cgi?p=openvswitch;a=commitdiff;h=b3f2fc93e3f357f8d05a92f53ec253339a40887f>`__
+   fix <http://git.openvswitch.org/cgi-bin/gitweb.cgi?p=openvswitch;a=commitdiff;h=b3f2fc93e3f357f8d05a92f53ec253339a40887f>`_
 
 .. code:: xml
 
@@ -4171,4 +4172,3 @@ Opendaylight OpenFlow Plugin: Troubleshooting
 ---------------------------------------------
 
 empty section
-

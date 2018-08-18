@@ -360,8 +360,8 @@ a client and two servers, then performing a failover between the two
 Prerequisites
 ^^^^^^^^^^^^^
 
--  **The OpenDaylight Karaf Distribution** (`download
-   <https://www.opendaylight.org/downloads>`_)
+-  `The OpenDaylight Karaf Distribution
+   <https://www.opendaylight.org/downloads>`_
 
 .. _instructions:
 
@@ -778,8 +778,8 @@ interfaces. All configuration files used in the tutorials can be found
 Prerequisites
 ^^^^^^^^^^^^^
 
--  **The OpenDaylight Karaf Distribution** (`download
-   <https://www.opendaylight.org/downloads>`_)
+-  `The OpenDaylight Karaf Distribution
+   <https://www.opendaylight.org/downloads>`_
 
 -  **The Postman Chrome App**: Please follow the instructions_ and import
    postman collection from the following URL: `<https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=blob;f=resources/tutorial/FD_io/lfm_vpp.postman_collection.json;hb=refs/heads/stable/oxygen>`__.
@@ -1050,12 +1050,12 @@ IOS-XE network operating system as the data plane software running on the
 Prerequisites
 ^^^^^^^^^^^^^
 
--  **The OpenDaylight Karaf Distribution** (`download
-   <https://www.opendaylight.org/downloads>`_)
+-  `The OpenDaylight Karaf Distribution**
+   <https://www.opendaylight.org/downloads>`_
 
--  **CSR1Kv image with Cisco IOS-XE version 03.13.00.S or later** (`download
+-  `CSR1Kv image with Cisco IOS-XE version 03.13.00.S or later
    <http://www.cisco.com/c/en/us/support/routers/cloud-services-router-1000v/model.html#~tab-downloads>`_;
-   the instructions have been tested on version 03.15.00.S).
+   the instructions have been tested on version 03.15.00.S.
 
 -  **A virtualization platform** supported by CSR1Kv images (VMware ESXi,
    Citrix XenServer, KVM, and Microsoft Hyper-V).
@@ -1372,4 +1372,3 @@ It is necessary to have:
 
 -  set all remote hosts /etc/sudoers files to not **requiretty** (should
    only matter on debian hosts)
-
