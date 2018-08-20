@@ -529,8 +529,8 @@ Requirements for Self-Managed Projects
 --------------------------------------
 
 Self-Managed Project requirements are designed to be as low-overhead as
-possible while still allowing for participation in the final release. If
-Self-Managed Projects do not want to participate in the final release and
+possible while still allowing for participation in the formal release. If
+Self-Managed Projects do not want to participate in the formal release and
 instead provide their artifacts to their consumers through another channel,
 there are no requirements.
 
@@ -539,37 +539,50 @@ SNAPSHOT Versions by Release
 
 Self-Managed Projects can consume whichever version of their upstream
 dependencies they want during most of the release cycle, but if they want to be
-included in the final release distribution they must bump their versions to
-SNAPSHOT no later than one week before code freeze.
+included in the formal release (or service release) they must have their upstream
+versions bumped to SNAPSHOT and build successfully no later than one week before
+the first release candidate (RC). Since bumping and integrating with upstream takes
+time, it is strongly recommended for Self-Managed projects to start this work early
+enough. This is no later than the middle checkpoint if they want to be in the
+formal release, or by the previous release if they want to be in a service release
+(e.g. by formal release if they want to be in SR1).
 
-Jobs Required for Self-Managed Projects Running
-+++++++++++++++++++++++++++++++++++++++++++++++
+.. note:: Before the formal release, the weather page should include API and other
+          important changes during the release cycle. After the formal release, the
+          release notes should include this information too.
 
-Self-Managed Projects that wish to take part in the final release must enable
-the validate-autorelease job. Self-Managed Projects can release artifacts at
-any time using the release job. To take part in the final release, Self-Managed
-Projects will need to run the release job with the version of the final
-distribution no later than one week before code freeze.
+Added to Final Distribution
++++++++++++++++++++++++++++
 
-Added to Final Distribution POM
-+++++++++++++++++++++++++++++++
+In order to be included in the formal release (or service release) final distribution,
+Self-Managed Projects must be in the final distribution pom.xml file and run the
+distribution sanity test (see :ref:`add-proj-dist`) no later than one week before
+the first release candidate (RC). Projects should only be added to the final
+distribution pom.xml after they have suceesfully published artifacts using upstream
+SNAPSHOTs. See `SNAPSHOT Versions by Release`_.
 
-In order to be included in the final distribution, Self-Managed Projects must
-submit a patch to include themselves in the final distribution pom.xml file no
-later than one week before code freeze. Projects should only be added to the
-final distribution pom.xml after they have published artifacts with the release
-job to avoid breaking the build.
+.. note:: It is very important Self-Managed projects do not miss the deadlines for
+          upstream integration and final distribution check, otherwise there are
+          high chances for missing the formal (or service) release. See
+          `Self-Managed Release Process`_.
 
 Self-Managed Release Process
 ----------------------------
 
-Self-Managed Projects are free to follow their own processes. To have their
-artifacts included in the final distribution, they need only follow the
-Requirements for Self-Managed Projects above by the deadlines. Note that
-Self-Managed Projects will not have any leeway for missing deadlines. If
-projects are not in the final distribution by one week before code freeze their
-artifacts will not be included in the final release, but they may still publish
-artifacts and help their consumers install them out-of-band.
+Self-Managed Projects are free to follow their own processes. However if they want
+to be included in the formal release (or service release), they must perform the
+following tasks in the week after the Managed release is published to nexus:
+
+#. Bump their upstream version to latest Managed release.
+#. Release the project and publish the artifacts to nexus. All projects have
+   a job for this.
+#. Add their release artifact to the full distribution. 
+
+.. note:: Self-Managed Projects will not have any leeway for missing deadlines. If
+          projects are not in the final distribution in the allocated time (normally
+          one week) after the Managed projects release, they will not be included
+          in the formal (or service) release, but they may still publish
+          artifacts and help their consumers install them out-of-band.
 
 Checkpoints
 +++++++++++
