@@ -525,51 +525,67 @@ The following projects are deemed critical to the OpenDaylight platform:
 Self-Managed Projects
 =====================
 
-Requirements for Self-Managed Projects
---------------------------------------
+In general there are two types of Self-Managed (SM) projects:
 
-Self-Managed Project requirements are designed to be as low-overhead as
-possible while still allowing for participation in the final release. If
-Self-Managed Projects do not want to participate in the final release and
-instead provide their artifacts to their consumers through another channel,
-there are no requirements.
+#. Self-Managed projects that want to participate in the formal (major or
+   service) OpenDaylight release. This section includes the requirements
+   and release process for these projects.
 
-SNAPSHOT Versions by Release
-++++++++++++++++++++++++++++
+#. Self-Managed projects that want to manage their own release schedule
+   and installation instructions. There are no specific requirements for
+   these projects.
+
+Requirements for SM projects participating in the formal release 
+----------------------------------------------------------------
+
+Use of SNAPSHOT versions
+++++++++++++++++++++++++
 
 Self-Managed Projects can consume whichever version of their upstream
 dependencies they want during most of the release cycle, but if they want to be
-included in the final release distribution they must bump their versions to
-SNAPSHOT no later than one week before code freeze.
+included in the formal (major or service) release they must have their upstream
+versions bumped to SNAPSHOT and build successfully no later than one week before
+the first Managed release candidate (RC) is created. Since bumping and integrating
+with upstream takes time, it is strongly recommended Self-Managed projects start
+this work early enough. This is no later than the middle checkpoint if they want to
+be in the formal release, or by the previous release if they want to be in a
+service release (e.g. by the major release date if they want to be in SR1).
 
-Jobs Required for Self-Managed Projects Running
-+++++++++++++++++++++++++++++++++++++++++++++++
+.. note:: To help with the integration effort, the `Weather Page`_ includes API and
+          other important changes during the release cycle. After the formal release,
+          the release notes also include this information.
 
-Self-Managed Projects that wish to take part in the final release must enable
-the validate-autorelease job. Self-Managed Projects can release artifacts at
-any time using the release job. To take part in the final release, Self-Managed
-Projects will need to run the release job with the version of the final
-distribution no later than one week before code freeze.
+Add to Final Distribution
++++++++++++++++++++++++++
 
-Added to Final Distribution POM
-+++++++++++++++++++++++++++++++
+In order to be included in the formal (major or service) release final distribution,
+Self-Managed Projects must be in the final distribution pom.xml file and the
+distribution sanity test (see :ref:`add-proj-dist`) no later than one week before
+the first Managed release candidate (RC) is created. Projects should only be added
+to the final distribution pom.xml after they have succesfully published artifacts
+using upstream SNAPSHOTs. See `Use of SNAPSHOT versions`_.
 
-In order to be included in the final distribution, Self-Managed Projects must
-submit a patch to include themselves in the final distribution pom.xml file no
-later than one week before code freeze. Projects should only be added to the
-final distribution pom.xml after they have published artifacts with the release
-job to avoid breaking the build.
+.. note:: It is very important Self-Managed projects do not miss the deadlines for
+          upstream integration and final distribution check, otherwise there are
+          high chances for missing the formal release. See
+          `Release the project artifacts`_.
 
-Self-Managed Release Process
-----------------------------
+Release the project artifacts
++++++++++++++++++++++++++++++
 
-Self-Managed Projects are free to follow their own processes. To have their
-artifacts included in the final distribution, they need only follow the
-Requirements for Self-Managed Projects above by the deadlines. Note that
-Self-Managed Projects will not have any leeway for missing deadlines. If
-projects are not in the final distribution by one week before code freeze their
-artifacts will not be included in the final release, but they may still publish
-artifacts and help their consumers install them out-of-band.
+Self-Managed Projects wanting to participate in a formal (major or service) release,
+must perform the following tasks in the week after the Managed release is published
+to nexus:
+
+#. Bump their upstream version to latest Managed release.
+#. Release the project and publish the artifacts to nexus. All projects have
+   a job for this.
+#. Add their release artifact to the full distribution.
+
+.. note:: Self-Managed Projects will not have any leeway for missing deadlines. If
+          projects are not in the final distribution in the allocated time (normally
+          one week) after the Managed projects release, they will not be included
+          in the formal release.
 
 Checkpoints
 +++++++++++
@@ -656,3 +672,4 @@ Vocabulary Reference
   Projects based on release version numbers, not snapshot versions.
 
 .. _Committer Removal Process: https://wiki.opendaylight.org/view/TSC:Main#Committer_Removal_Process
+.. _Weather Page: https://jira.opendaylight.org/browse/TSC-132?jql=Project%20%3D%20TSC%20AND%20Type%20%3D%20%22Weather%20Item%22%20
