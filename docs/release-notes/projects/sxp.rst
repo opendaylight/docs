@@ -138,7 +138,7 @@ Compatibility
   * (sxp-core) Removed MasterDatabaseInf#addLocalBindings method
   * (sxp-core) Removed MasterDatabaseInf#deleteBindingsLocal method
   * (sxp-core) Removed MasterDatabaseInf#getLocalBindings method
-  * (sxp-core) Added OriginType filed to SxpBindingFields class
+  * (sxp-core) Added OriginType field to SxpBindingFields class
 
 * Any configuration changes?
 
