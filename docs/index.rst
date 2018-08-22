@@ -57,7 +57,7 @@ OpenDaylight Contributor Guides
 * :doc:`Integration Testing Guide <odl-integration-test:index>`
 * :doc:`Integration Distribution Guide <odl-integration-distribution:index>`
 * :doc:`Integration Packaging Guide <odl-integration-packaging:index>`
-
+* `Administration Guide <https://github.com/opendaylight/docs/blob/stable/lithium/manuals/user-guide/src/main/asciidoc/bk-user-guide.adoc#opendaylight-user-guide>`
 .. toctree::
    :maxdepth: 1
 
