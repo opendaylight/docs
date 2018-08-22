@@ -48,7 +48,7 @@ participate in the development of OpenDaylight or would like to start.
 
 * :doc:`Gerrit Guide <lfdocs:gerrit>`
 * :ref:`Infrastructure Guide <odl-infra>`
-
+* `Administration Guide <https://github.com/opendaylight/docs/blob/stable/lithium/manuals/user-guide/src/main/asciidoc/bk-user-guide.adoc>`
 * :doc:`Genius Documentation <genius:index>`
 * :doc:`Infrautils Documentation <infrautils:index>`
 * :doc:`Integration Testing Guide <odl-integration-test:index>`
