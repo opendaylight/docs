@@ -46,6 +46,30 @@
       "revId": "1c1c3f5598ce47e3534437c50674ef64f1a70cbd",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e6f54fb_e964565e",
+        "filename": "README.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2018-08-22T14:54:46Z",
+      "side": 1,
+      "message": "No we don\u0027t want to add the current version to this. Documentation about documentation should always be \"Latest\" people should never have to check a specific version of the meta documentation.",
+      "parentUuid": "bd5c006a_99c1f9d7",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 23
+      },
+      "revId": "1c1c3f5598ce47e3534437c50674ef64f1a70cbd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
