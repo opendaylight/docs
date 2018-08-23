@@ -59,6 +59,7 @@ Project-specific User Guides
    snmp-plugin-user-guide
    snmp4sdn-user-guide
    sxp-user-guide
+   transportpce-user-guide
    tsdr-user-guide
    ttp-cli-tools-user-guide
    uni-manager-plug-in-project
