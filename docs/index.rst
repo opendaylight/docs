@@ -47,6 +47,7 @@ Self-Managed Projects
 ~~~~~~~~~~~~~~~~~~~~~
 
 * :doc:`SXP Documentation <project-indexes/sxp-index>`
+* :doc:`../project-indexes/transportpce-index`
 
 
 OpenDaylight Contributor Guides
@@ -86,3 +87,4 @@ OpenDaylight Contributor Guides
    project-indexes/daexim-index
    project-indexes/lispflowmapping-index
    project-indexes/sxp-index
+   project-indexes/transportpce-index
