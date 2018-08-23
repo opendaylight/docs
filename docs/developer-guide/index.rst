@@ -67,6 +67,7 @@ Project-specific Developer Guides
    snmp4sdn-developer-guide
    sxp-developer-guide
    topology-processing-framework-developer-guide
+   transportpce-developer-guide
    ttp-model-developer-guide
    ttp-cli-tools-developer-guide
    uni-manager-plug-in-developer-guide
