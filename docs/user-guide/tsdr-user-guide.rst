@@ -1,47 +1,72 @@
 .. _tsdr-user-guide:
 
 TSDR User Guide
-===============
+###############
 
-This document describes how to use HSQLDB, HBase, and Cassandra data
-stores to capture time series data using Time Series Data Repository
-(TSDR) features in OpenDaylight.  This document contains configuration,
-administration, management, usage, and troubleshooting sections for these
-features.
+TSDR Overview
+=============
 
-Overview
---------
+The Time Series Data Repository (TSDR) project in OpenDaylight (ODL) is an
+extendible collector framework used to collect and store network metrics from
+SDN protocols, traditional network protocols as well as SDN controller and
+environment data. This data is stored in a common format using one of several
+datastores and is accessible by a REST interface, Grafana interface (beta) and
+by the ODL provided API.
 
-The Time Series Data Repository (TSDR) project in OpenDaylight (ODL)
-creates a framework for collecting, storing, querying, and maintaining
-time series data.  TSDR provides the framework for plugging in
-data collectors to collect various time series data and store the data
-into TSDR Data Stores. With a common data model and generic TSDR data
-persistence APIs, the user can choose various data stores to be plugged
-into the TSDR persistence framework. Currently, three types of data
-stores are supported: HSQLDB relational database (default installed),
-HBase NoSQL database and Cassandra NoSQL database.
+SDN, Environment and Traditional Network Data Collected
 
-With the capabilities of data collection, storage, query, aggregation,
-and purging provided by TSDR, network administrators can leverage
-various data driven applications built on top of TSDR for security risk
-detection, performance analysis, operational configuration optimization,
-traffic engineering and network analytics with automated intelligence.
+  * OpenFlow
+  * NetFlow
+  * sFlow
+  * REST
+  * SNMP
+  * SysLog
+  * Controller Metrics
 
-TSDR Architecture
------------------
+* **TSDR Features URL:** https://git.opendaylight.org/gerrit/gitweb?p=tsdr.git;a=blob;f=features/features-tsdr/pom.xml
+
+The Time Series Data Repository (TSDR) project in OpenDaylight (ODL) creates a
+framework for collecting, storing, querying, and maintaining time series data in
+the OpenDaylight infrastructure. TSDR provides the framework for plugging in
+various data collectors to collect OpenFlow, sFlow, NetFlow, SysLog and
+Controller metrics time series data in a common data model and generic TSDR
+data persistence API. The user can choose which data stores to be plugged into
+the TSDR Persistence framework. Three data stores are currently supported:
+HSQLDB (loaded by default), HBase and Cassandra.
+
+With the capabilities of data collection, storage, query, aggregation and
+purging provided by TSDR, network administrators could leverage various data
+driven applications built on top of TSDR for security risk detection,
+performance analysis, operational configuration optimization, traffic
+engineering and network analytics with automated intelligence.
+
+TSDR Model/Architecture
+-----------------------
+
+ https://wiki.opendaylight.org/view/TSDR_Data_Storage_Service_and_Persistence_with_HBase_Plugin
+ https://wiki.opendaylight.org/view/TSDR_Data_Collection_Service
 
 TSDR has the following major components:
 
 -  Data Collection Service
 
+   - OpenFlow Data Collector
+   - RestConf Data Collector
+   - NetFlow Data Collector
+   - SNMP Data Collector
+   - sFlow Data Collector
+   - SysLog Data Collector
+   - Controller Metrics Data Collector
+
 -  Data Storage Service
 
--  TSDR Persistence Layer with data stores as plugins
-
--  TSDR Data Stores
+   - HSQLDB Datastore (loaded by default)
+   - HBase Datastore
+   - Cassandra Datastore
 
 -  Data Query Service
+
+-  ElasticSearch Service
 
 -  Grafana integration for time series data visualization
 
@@ -49,45 +74,41 @@ TSDR has the following major components:
 
 -  Data Purging Service
 
-The Data Collection Service handles the collection of time series data
-into TSDR and hands it over to the Data Storage Service. The Data
-Storage Service stores the data into TSDR through the TSDR Persistence
-Layer. The TSDR Persistence Layer provides generic Service APIs allowing
-various data stores to be plugged in. The Data Aggregation Service
-aggregates time series fine-grained raw data into course-grained roll-up
-data to control the size of the data. The Data Purging Service
-periodically purges both fine-grained raw data and course-grained
-aggregated data according to user-defined schedules.
+The Data Collection Service handles the collection of time series data into TSDR
+and hands it over to the Data Storage Service. The Data Storage Service stores
+the data into TSDR through the TSDR Persistence Layer. The TSDR Persistence
+Layer provides generic Service APIs allowing various data stores to be plugged
+in. The Data Aggregation Service aggregates time series fine-grained raw data
+into course-grained roll-up data to control the size of the data. The Data
+Purging Service periodically purges both fine-grained raw data and
+course-grained aggregated data according to user-defined schedules.
 
-TSDR provides component-based services on a common data model. These
-services include the data collection service, data storage service and
-data query service.  The TSDR data storage service supports HSQLDB
-(the default datastore), HBASE and Cassandra datastores.  Between these
-services and components, time series data is communicated using a common
-TSDR data model.  This data model is designed around the abstraction of
-time series data commonalities. With these services, TSDR is able
-to collect the data from the data sources and store them into one of
-the TSDR data stores; HSQLDB, HBase and Cassandra datastores.  Data can
-be retrieved with the Data Query service using the default OpenDaylight
-RestConf interface or its ODL API interface.  TSDR also has integrated
-support for ElasticSearch capabilities.  TSDR data can also be viewed
-directly with Grafana for time series visualization or various chart formats.
+TSDR provides component-based services on a common data model. These services
+include the data collection service, data storage service and data query
+service.  The TSDR data storage service supports HSQLDB (the default datastore),
+HBase and Cassandra datastores.  Between these services and components, time
+series data is communicated using a common TSDR data model. This data model is
+designed around the abstraction of time series data commonalities. With these
+services, TSDR is able to collect the data from the data sources and store them
+into one of the TSDR data stores; HSQLDB, HBase and Cassandra datastores.
+Data can be retrieved with the Data Query service using the default OpenDaylight
+RestConf interface or its ODL API interface.  TSDR also has integrated support
+for ElasticSearch capabilities.  TSDR data can also be viewed directly with
+Grafana (beta) for time series visualization or various chart formats.
 
 Configuring TSDR Data Stores
-----------------------------
+============================
 
-To Configure HSQLDB Data Store
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+For detailed instruction, see the individual datastore installation guides.
 
-The HSQLDB based storage files get stored automatically in <karaf
-install folder>/tsdr/ directory. If you want to change the default
-storage location, the configuration file to change can be found in
-<karaf install folder>/etc directory. The filename is
-org.ops4j.datasource-metric.cfg. Change the last portion of the
+Configure HSQLDB Data Store
+---------------------------
+
+The HSQLDB files are stored automatically in <karaf install folder>/tsdr/
+directory. If you want to change the default storage location, the configuration
+file to change can be found in <karaf install folder>/etc directory. The
+filename is org.ops4j.datasource-metric.cfg. Change the last portion of the
 url=jdbc:hsqldb:./tsdr/metric to point to different directory.
-
-To Configure HBase Data Store
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 After installing HBase Server on the same machine as OpenDaylight, if
 the user accepts the default configuration of the HBase Data Store, the
@@ -119,14 +140,11 @@ the installation of HBase Data Store from Karaf console.
 
    -  Start Karaf Console
 
-   -  Run the following commands from Karaf Console:
-
-       ::
-
-           feature:install odl-tsdr-hbase
+   -  Run the following commands from Karaf Console: feature:install
+      odl-tsdr-hbase
 
 To Configure Cassandra Data Store
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------
 
 Currently, there’s no configuration needed for Cassandra Data Store. The
 user can use Cassandra data store directly after installing the feature
@@ -145,9 +163,9 @@ Once the TSDR default datastore feature (odl-tsdr-hsqldb-all) is
 enabled, the TSDR captured OpenFlow statistics metrics can be accessed
 from Karaf Console by executing the command
 
-    ::
+::
 
-        tsdr:list <metric-category> <starttimestamp> <endtimestamp>
+    tsdr:list <metric-category> <starttimestamp> <endtimestamp>
 
 wherein
 
@@ -171,20 +189,13 @@ Using Karaf Command to retrieve data from HBase Data Store
 
 The user first need to install hbase data store from karaf console:
 
-    ::
-
-        feature:install odl-tsdr-hbase
+ feature:install odl-tsdr-hbase
 
 The user can retrieve the data from HBase data store using the following
 commands from Karaf console:
 
-    ::
-
-        tsdr:list
-
-    ::
-
-        tsdr:list <CategoryName> <StartTime> <EndTime>
+ tsdr:list
+ tsdr:list <CategoryName> <StartTime> <EndTime>
 
 Typing tab will get the context prompt of the arguments when typeing the
 command in Karaf console.
@@ -194,20 +205,13 @@ To Administer Cassandra Data Store
 
 The user first needs to install Cassandra data store from Karaf console:
 
-    ::
-
-        feature:install odl-tsdr-cassandra
+ feature:install odl-tsdr-cassandra
 
 Then the user can retrieve the data from Cassandra data store using the
 following commands from Karaf console:
 
-    ::
-
-        tsdr:list
-
-    ::
-
-        tsdr:list <CategoryName> <StartTime> <EndTime>
+ tsdr:list
+ tsdr:list <CategoryName> <StartTime> <EndTime>
 
 Typing tab will get the context prompt of the arguments when typeing the
 command in Karaf console.
@@ -326,12 +330,10 @@ stores.
 The following is an example curl command for querying metric data from
 TSDR data store:
 
-    ::
-
-        curl -G -v -H "Accept: application/json" -H "Content-Type:
-        application/json" "http://localhost:8181/tsdr/metrics/query"
-        --data-urlencode "tsdrkey=[NID=][DC=FLOWSTATS][MN=][RK=]"
-        --data-urlencode "from=0" --data-urlencode "until=240000000000"\|more
+curl -G -v -H "Accept: application/json" -H "Content-Type:
+application/json" "http://localhost:8181/tsdr/metrics/query"
+--data-urlencode "tsdrkey=[NID=][DC=FLOWSTATS][MN=][RK=]"
+--data-urlencode "from=0" --data-urlencode "until=240000000000"\|more
 
 -  Query of TSDR Log type of data
 
@@ -343,7 +345,9 @@ TSDR data store:
 
       -  tsdrkey=tsdrkey=[NID=][DC=][RK=]
 
-      -      The TSDRKey format indicates the NodeID(NID), DataCategory(DC), and RecordKey(RK) of the monitored objects.
+         ::
+
+             The TSDRKey format indicates the NodeID(NID), DataCategory(DC), and RecordKey(RK) of the monitored objects.
              For example, the following is a valid tsdrkey:
              [NID=openflow:1][DC=NETFLOW][RK]
              The query will return only the first 1000 records that match the query criteria.
@@ -355,11 +359,10 @@ TSDR data store:
 The following is an example curl command for querying log type of data
 from TSDR data store:
 
-    ::
-
-        curl -G -v -H "Accept: application/json" -H "Content-Type: application/json" "http://localhost:8181/tsdr/logs/query"
-        --data-urlencode "tsdrkey=[NID=][DC=NETFLOW][RK=]" --data-urlencode
-        "from=0" --data-urlencode "until=240000000000"\|more
+curl -G -v -H "Accept: application/json" -H "Content-Type:
+application/json" "http://localhost:8181/tsdr/logs/query"
+--data-urlencode "tsdrkey=[NID=][DC=NETFLOW][RK=]" --data-urlencode
+"from=0" --data-urlencode "until=240000000000"\|more
 
 Grafana integration with TSDR
 -----------------------------
@@ -514,28 +517,21 @@ Instructions
    -  If using mininet, run the following commands from mininet command
       line:
 
-    ::
-
-        mn --topo single,3 --controller *remote,ip=172.17.252.210,port=6653* --switch
-        ovsk,protocols=OpenFlow13
+      -  mn --topo single,3 --controller
+         *remote,ip=172.17.252.210,port=6653* --switch
+         ovsk,protocols=OpenFlow13
 
 -  Install TSDR hbase feature from Karaf:
 
-    ::
-
-        feature:install odl-tsdr-hbase
+   -  feature:install odl-tsdr-hbase
 
 -  Install OpenFlow Statistics Collector from Karaf:
 
-    ::
-
-        feature:install odl-tsdr-openflow-statistics-collector
+   -  feature:install odl-tsdr-openflow-statistics-collector
 
 -  run the following command from Karaf console:
 
-    ::
-
-        tsdr:list PORTSTATS
+   -  tsdr:list PORTSTATS
 
 You should be able to see the interface statistics of the switch(es)
 from the HBase Data Store. If there are too many rows, you can use
@@ -653,12 +649,3 @@ console. Then the user needs to modify the properties file under
        metric-psersistency=true
        log-persistency=false
        binary-persistency=false
-
-.. toctree::
-   :maxdepth: 1
-   :hidden:
-
-   tsdr-elastic-search
-   tsdr-elasticsearch-user-guide
-   tsdr-hbase-user-guide
-   tsdr-hsqldb-user-guide
