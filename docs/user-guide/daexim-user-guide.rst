@@ -89,17 +89,10 @@ to import must be placed in this ``daexim/`` subdirectory.
 Scheduling Export
 ^^^^^^^^^^^^^^^^^
 
-The **schedule-export** RPC exports the data at a specific time in the
-future. The ``run-at`` time may be specified as an absolute UTC time or a
-relative offset from the server clock. Attempts to schedule an export in
-the past times are rejected. Each file has a JSON-encoded object that
-contains module data from the corresponding data store. Module data is
-not included in the object for any module identified in the exclusion
-list. Each file contains at least one empty JSON object. In a clustered
-environment, if *local-node-only* is provided with a value of *true*,
-the export operation is performed only on the node on which the RPC was
-received; otherwise, the export operation is performed on all nodes in
-the cluster.
+The **schedule-export** RPC exports data from data store at a specific time
+in the future. Each exported file has a JSON-encoded object that contains
+module data from the corresponding data store. Each file contains at least
+one empty JSON object.
 
 **URL:** ``http://<controller-ip>:<restconf-port>/restconf/operations/data-export-import:schedule-export``
 
@@ -113,6 +106,108 @@ the cluster.
      }
   }
 
+
+The following export options are available:
+
+- run-at
+
+- local-node-only
+
+- strict-data-consistency
+
+- split-by-module
+
+- included-modules
+
+- excluded-modules
+
+
+The ``run-at`` time may be specified as an absolute UTC time or a relative
+offset from the server clock. Attempts to schedule an export in the past
+times are rejected.
+
+
+In a clustered environment, if ``local-node-only`` is provided with a value
+of ``true``, the export operation is performed only on the node on which the
+RPC was received; otherwise, the export operation is performed on all nodes
+in the cluster.
+
+.. code:: json
+
+       {
+           "input": {
+               "data-export-import:run-at": 500,
+               "data-export-import:local-node-only": true
+           }
+       }
+
+
+The ``strict-data-consistency`` flag may be used to specify if strict data
+consistency needs to be maintained while exporting data. This value
+determines how data is read from the datastore during export - in one
+shot (``true`` - default) or in smaller chunks (``false``).
+
+.. code:: json
+
+       {
+           "input": {
+               "data-export-import:run-at": 500,
+               "data-export-import:strict-data-consistency": false
+           }
+       }
+
+
+The ``split-by-module`` flag may be used to request exported data to be
+split by module name. If value of this flag is ``true``, then export process
+will create separate json files for every top-level container present in
+the data store.
+
+.. code:: json
+
+       {
+           "input": {
+               "data-export-import:run-at": 500,
+               "data-export-import:split-by-module": true
+           }
+       }
+
+
+Options ``included-modules`` and ``excluded-modules`` can be used to include
+and/or exclude specific modules while exporting the data. Modules are specified
+according to each data store. If both options are specified, then a module is
+only exported if it is included (whilelisted) but not also excluded (blacklisted).
+
+Guidelines for including/excluding data are:
+
+-  The data store name can be ``config`` or ``operational``.
+
+-  To select a module, you can use a specific module name or a wildcard
+   (*). Note that wildcard input is currently supported for excluded-modules
+   only. If you use a wild card for a module, all modules from that data
+   store are excluded.
+
+-  To include/exclude all the data of a specific module, specify a list of each
+   data store and each item by using the same module name.
+
+.. code:: json
+
+       {
+           "input": {
+               "data-export-import:run-at": 500,
+               "data-export-import:included-modules" : [
+                   {
+                       "module-name": "bgp-rib",
+                       "data-store": "config"
+                   }
+               ],
+               "data-export-import:excluded-modules" : [
+                   {
+                       "module-name": "*",
+                       "data-store": "config"
+                   }
+               ]
+           }
+       }
 
 
 Checking Export Status
@@ -176,6 +271,111 @@ the file system.
   }
 
 
+The following import options are available:
+
+- check-models
+
+- clear-stores
+
+- file-name-filter
+
+- strict-data-consistency
+
+
+The following table lists the options for ``check-models``.
+
+.. list-table::
+   :widths: 20 80
+   :header-rows: 1
+
+   * - **Boolean flag**
+     - **Controller action**
+   * - ``true``
+     - If the boolean flag is ``true`` then the
+       import process reads the models
+       declaration file and checks that all
+       declared models are loaded before
+       performing any data modifications.
+
+       If the application cannot verify the models
+       declaration file, the file has bad content,
+       or any declared model is not loaded, then
+       no data modifications are performed and a
+       results of false is returned. This is the
+       default value.
+
+   * - ``false``
+     - The check is skipped. If a models declaration file
+       is present, it is ignored.
+
+
+The following table lists the options for clear-stores.
+
+.. list-table::
+   :widths: 20 80
+   :header-rows: 1
+
+   * - **Enum value**
+     - **Controller action**
+
+   * - ``all``
+     - Data in all of the data stores is deleted and the new data
+       is imported. This is the default value.
+
+   * - ``data``
+     - All data in the data stores for which data files are supplied
+       is deleted. For example, if only the configuration data is
+       provided (even for a single module), the entire configuration
+       data store is cleared before importing data and the operational
+       data store is untouched. A similar behavior occurs with the any
+       operational data too, where the operational data store is purged
+       and configuration data store is untouched. If the input files
+       contain both configuration and operational data (even for a single
+       module) and this flag is used, both data stores are cleared
+       completely before importing any data, essentially making the option
+       equivalent to ``all``.
+
+   * - ``none``
+     - Data is not deleted explicitly from any store. The data provided in
+       the data files is imported into the data stores by using the ``PUT``
+       operation. Note that this done at the highest container level. So,
+       depending on the data in the JSON files, you may lose some data in
+       the target controller.
+
+
+The following table lists the options for file-name-filter.
+
+.. list-table::
+   :widths: 20 80
+   :header-rows: 1
+
+   * - **Value**
+     - **Controller action**
+   * - ``.*`` or empty
+     - If property value is ``.*`` or is omitted (empty),
+       then all data files are considered for import.
+
+   * - regular expression
+     - Each data file's filename is matched against provided regular expression.
+       Only those that match are considered for import.
+
+
+The ``strict-data-consistency`` flag may be used to specify if strict data
+consistency needs to be maintained while importing data. This value
+determines how data is written to the datastore during import - in one
+shot (*true* - default) or in smaller chunks (*false*).
+
+
+.. code:: json
+
+       {
+           "input" : {
+               "check-models" : true,
+               "clear-stores" : "none",
+               "file-name-filter": ".*topology.*",
+               "strict-data-consistency": false
+           }
+       }
 
 
 Status of Import
