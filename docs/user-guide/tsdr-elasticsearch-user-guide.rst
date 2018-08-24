@@ -21,52 +21,46 @@ Creating a custom ElasticSearch docker image
 
 Run the following set of commands:
 
-    ::
+.. code-block:: bash
 
-        cat << EOF > Dockerfile
-        FROM elasticsearch:2
-        RUN /usr/share/elasticsearch/bin/plugin install --batch delete-by-query
-        EOF
-
+    cat << EOF > Dockerfile
+    FROM elasticsearch:2
+    RUN /usr/share/elasticsearch/bin/plugin install --batch delete-by-query
+    EOF
 
 To build the image, run the following command in the directory where the
 Dockerfile was created:
 
-    ::
+.. code-block:: bash
 
-        docker build . -t elasticsearch-dd
-
+    docker build . -t elasticsearch-dd
 
 You can check whether the image was properly created by running:
 
-    ::
+.. code-block:: bash
 
-        docker images
-
+    docker images
 
 This should print all your container images including the elasticsearch-dd.
 
 Now we can create and run a container from our image by typing:
 
-    ::
+.. code-block:: bash
 
-        docker run -d -p 9200:9200 -p 9300:9300 --name elasticsearch-dd elasticsearch-dd
-
+    docker run -d -p 9200:9200 -p 9300:9300 --name elasticsearch-dd elasticsearch-dd
 
 To see whether the container is running, run the following command:
 
-    ::
+.. code-block:: bash
 
-        docker ps
-
+    docker ps
 
 The output should include a row with elasticsearch-dd in the NAMES column.
 To check the std out of this container use
 
-    ::
+.. code-block:: bash
 
-        docker logs elasticsearch-dd
-
+    docker logs elasticsearch-dd
 
 Running the ElasticSearch feature
 ---------------------------------
@@ -75,19 +69,21 @@ Once the features have been installed, you can change some of its properties. Fo
 example, to setup the URL where your ElasticSearch installation runs,
 change the *serverUrl* parameter in tsdr/persistence-elasticsearch/src/main/resources/configuration/initial/:
 
-    tsdr-persistence-elasticsearch.properties
+.. code-block:: bash
 
+    tsdr-persistence-elasticsearch.properties
 
 All the data are stored into the TSDR index under a type. The metric data are
 stored under the metric type and the log data are store under the log type.
 You can modify the files in tsdr/persistence-elasticsearch/src/main/resources/configuration/initial/:
+
+.. code-block:: bash
 
     tsdr-persistence-elasticsearch_metric_mapping.json
     tsdr-persistence-elasticsearch_log_mapping.json
 
 to change or tune the mapping for those types. The changes in those files will be promoted after
 the feature is reloaded or the distribution is restarted.
-
 
 Testing the setup
 ^^^^^^^^^^^^^^^^^
@@ -97,25 +93,23 @@ which we use to send some data to the running ElasticSearch instance.
 
 Installing the necessary features:
 
-Start OpenDaylight
+.. code-block:: bash
 
-    ::
-
-        feature:install odl-restconf odl-l2switch-switch odl-tsdr-core odl-tsdr-openflow-statistics-collector
-        feature:install odl-tsdr-elasticsearch
+    start OpenDaylight
+    feature:install odl-restconf odl-l2switch-switch odl-tsdr-core odl-tsdr-openflow-statistics-collector
+    feature:install odl-tsdr-elasticsearch
 
 We can check whether the distribution is now listening on port 6653:
 
-    ::
+.. code-block:: bash
 
-        netstat -an | grep 6653
+    netstat -an | grep 6653
 
 Run mininet
 
-    ::
+.. code-block:: bash
 
-        sudo mn --topo single,3 --controller 'remote,ip=distro_ip,port=6653' --switch ovsk,protocols=OpenFlow13
-
+    sudo mn --topo single,3 --controller 'remote,ip=distro_ip,port=6653' --switch ovsk,protocols=OpenFlow13
 
 where the distro_ip is the IP address of the machine where the OpenDaylight distribution
 is running. This command will create three hosts connected to one OpenFlow capable
@@ -124,9 +118,9 @@ switch.
 We can check if data was stored by ElasticSearch in TSDR by running the
 following command:
 
-    ::
+.. code-block:: bash
 
-        tsdr:list FLOWTABLESTATS
+    tsdr:list FLOWTABLESTATS
 
 The output should look similar to the following::
 
@@ -140,9 +134,9 @@ The output should look similar to the following::
 
 Or you can query your ElasticSearch instance:
 
-    ::
+.. code-block:: bash
 
-        curl -XPOST "http://elasticseach_ip:9200/_search?pretty" -d'{ "from": 0, "size": 10000, "query": { "match_all": {} } }'
+    curl -XPOST "http://elasticseach_ip:9200/_search?pretty" -d'{ "from": 0, "size": 10000, "query": { "match_all": {} } }'
 
 The elasticseach_ip is the IP address of the server where the ElasticSearch is running.
 
@@ -162,10 +156,9 @@ How to test the RESTCONF Collector
   For example, you could call the register-filter RPC of tsdr-syslog-collector.
 - Look up data in TSDR database from Karaf.
 
-    ::
+  .. code-block:: bash
 
-        tsdr:list RESTCONF
-
+    tsdr:list RESTCONF
 
 - You should see the request that you have sent, along with its information
   (URL, HTTP method, requesting IP address and request body)
@@ -174,8 +167,9 @@ How to test the RESTCONF Collector
 - Open the file: "etc/tsdr.restconf.collector.cfg", and add GET to the list of
   METHODS_TO_LOG, so that it becomes:
 
+  ::
 
-  METHODS_TO_LOG=POST,PUT,DELETE,GET
+      METHODS_TO_LOG=POST,PUT,DELETE,GET
 
   - Try again to issue your GET request, and check if it was recorded this time,
     it should be recorder.
@@ -188,4 +182,3 @@ How to test the RESTCONF Collector
     expressions for the other parameters), then check karaf's log using
     "log:display". It should tell you that the value is invalid, and that it
     will use the default value instead.
-

@@ -3,7 +3,8 @@
 TSDR HSQLDB Datastore User Guide
 ================================
 
-This document describes how to use the embedded datastore HSQLDB, which is the default datastore (recommended for non-production use case) introduced as part of OpenDaylight Time Series Data Respository (TSDR) project. This store captures the  time series data. This document contains configuration, administration, management, using, and troubleshooting sections for the feature.
+This document describes how to use the embedded datastore HSQLDB, which is the default datastore (recommended for non-production use case) introduced as part of OpenDaylight Time Series Data Respository (TSDR) project. This store captures the  time series data. This document contains configuration, administration, management, using, and troubleshooting
+sections for the feature.
 
 Overview
 --------
@@ -25,17 +26,13 @@ Administering or Managing TSDR with default datastore HSQLDB
 
 Once the TSDR default datastore feature (odl-tsdr-all) is enabled, the TSDR captured OpenFlow statistics metrics can be accessed from Karaf Console by executing the command 
 
-    ::
-
-        tsdr:list <metric-category> <starttimestamp> <endtimestamp>
+ tsdr:list <metric-category> <starttimestamp> <endtimestamp>
 
 wherein
 
-    ::
-
-        <metric-category> = any one of the following categories FlowGroupStats, FlowMeterStats, FlowStats, FlowTableStats, PortStats, QueueStats
-        <starttimestamp> = to filter the list of metrics starting this timestamp
-        <endtimestamp>   = to filter the list of metrics ending this timestamp
+   <metric-category> = any one of the following categories FlowGroupStats, FlowMeterStats, FlowStats, FlowTableStats, PortStats, QueueStats
+   <starttimestamp> = to filter the list of metrics starting this timestamp
+   <endtimestamp>   = to filter the list of metrics ending this timestamp
 
 If either of <starttimestamp> or <endtimestamp> is not specified, this command displays the latest 1000 metrics captured.
 
