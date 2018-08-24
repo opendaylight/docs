@@ -3,11 +3,23 @@
 TSDR User Guide
 ===============
 
-This document describes how to use HSQLDB, HBase, and Cassandra data
-stores to capture time series data using Time Series Data Repository
-(TSDR) features in OpenDaylight.  This document contains configuration,
-administration, management, usage, and troubleshooting sections for these
-features.
+The Time Series Data Repository (TSDR) project in OpenDaylight (ODL)
+is an extendible collector framework used to gather and store network metrics from SDN protocols,
+traditional network protocols as well as SDN and network environment data.
+This data is stored in a common format using one of several databases and is accessible by a REST
+northbound interface, Grafana interface (beta) and by the ODL API.
+
+SDN, Environment and Traditional Network Data Collected 
+-------------------------------------------------------
+  * OpenFlow
+  * NetFlow
+  * sFlow
+  * RestConf
+  * SNMP
+  * SysLog
+  * Controller
+
+* **TSDR Features URL:** https://git.opendaylight.org/gerrit/gitweb?p=tsdr.git;a=blob;f=features/features-tsdr/pom.xml
 
 Overview
 --------
@@ -119,11 +131,8 @@ the installation of HBase Data Store from Karaf console.
 
    -  Start Karaf Console
 
-   -  Run the following commands from Karaf Console:
-
-       ::
-
-           feature:install odl-tsdr-hbase
+   -  Run the following commands from Karaf Console: feature:install
+      odl-tsdr-hbase
 
 To Configure Cassandra Data Store
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -145,9 +154,9 @@ Once the TSDR default datastore feature (odl-tsdr-hsqldb-all) is
 enabled, the TSDR captured OpenFlow statistics metrics can be accessed
 from Karaf Console by executing the command
 
-    ::
+::
 
-        tsdr:list <metric-category> <starttimestamp> <endtimestamp>
+    tsdr:list <metric-category> <starttimestamp> <endtimestamp>
 
 wherein
 
@@ -171,20 +180,13 @@ Using Karaf Command to retrieve data from HBase Data Store
 
 The user first need to install hbase data store from karaf console:
 
-    ::
-
-        feature:install odl-tsdr-hbase
+ feature:install odl-tsdr-hbase
 
 The user can retrieve the data from HBase data store using the following
 commands from Karaf console:
 
-    ::
-
-        tsdr:list
-
-    ::
-
-        tsdr:list <CategoryName> <StartTime> <EndTime>
+ tsdr:list
+ tsdr:list <CategoryName> <StartTime> <EndTime>
 
 Typing tab will get the context prompt of the arguments when typeing the
 command in Karaf console.
@@ -194,20 +196,13 @@ To Administer Cassandra Data Store
 
 The user first needs to install Cassandra data store from Karaf console:
 
-    ::
-
-        feature:install odl-tsdr-cassandra
+ feature:install odl-tsdr-cassandra
 
 Then the user can retrieve the data from Cassandra data store using the
 following commands from Karaf console:
 
-    ::
-
-        tsdr:list
-
-    ::
-
-        tsdr:list <CategoryName> <StartTime> <EndTime>
+ tsdr:list
+ tsdr:list <CategoryName> <StartTime> <EndTime>
 
 Typing tab will get the context prompt of the arguments when typeing the
 command in Karaf console.
@@ -326,12 +321,10 @@ stores.
 The following is an example curl command for querying metric data from
 TSDR data store:
 
-    ::
-
-        curl -G -v -H "Accept: application/json" -H "Content-Type:
-        application/json" "http://localhost:8181/tsdr/metrics/query"
-        --data-urlencode "tsdrkey=[NID=][DC=FLOWSTATS][MN=][RK=]"
-        --data-urlencode "from=0" --data-urlencode "until=240000000000"\|more
+curl -G -v -H "Accept: application/json" -H "Content-Type:
+application/json" "http://localhost:8181/tsdr/metrics/query"
+--data-urlencode "tsdrkey=[NID=][DC=FLOWSTATS][MN=][RK=]"
+--data-urlencode "from=0" --data-urlencode "until=240000000000"\|more
 
 -  Query of TSDR Log type of data
 
@@ -343,7 +336,9 @@ TSDR data store:
 
       -  tsdrkey=tsdrkey=[NID=][DC=][RK=]
 
-      -      The TSDRKey format indicates the NodeID(NID), DataCategory(DC), and RecordKey(RK) of the monitored objects.
+         ::
+
+             The TSDRKey format indicates the NodeID(NID), DataCategory(DC), and RecordKey(RK) of the monitored objects.
              For example, the following is a valid tsdrkey:
              [NID=openflow:1][DC=NETFLOW][RK]
              The query will return only the first 1000 records that match the query criteria.
@@ -355,11 +350,10 @@ TSDR data store:
 The following is an example curl command for querying log type of data
 from TSDR data store:
 
-    ::
-
-        curl -G -v -H "Accept: application/json" -H "Content-Type: application/json" "http://localhost:8181/tsdr/logs/query"
-        --data-urlencode "tsdrkey=[NID=][DC=NETFLOW][RK=]" --data-urlencode
-        "from=0" --data-urlencode "until=240000000000"\|more
+curl -G -v -H "Accept: application/json" -H "Content-Type:
+application/json" "http://localhost:8181/tsdr/logs/query"
+--data-urlencode "tsdrkey=[NID=][DC=NETFLOW][RK=]" --data-urlencode
+"from=0" --data-urlencode "until=240000000000"\|more
 
 Grafana integration with TSDR
 -----------------------------
@@ -514,28 +508,21 @@ Instructions
    -  If using mininet, run the following commands from mininet command
       line:
 
-    ::
-
-        mn --topo single,3 --controller *remote,ip=172.17.252.210,port=6653* --switch
-        ovsk,protocols=OpenFlow13
+      -  mn --topo single,3 --controller
+         *remote,ip=172.17.252.210,port=6653* --switch
+         ovsk,protocols=OpenFlow13
 
 -  Install TSDR hbase feature from Karaf:
 
-    ::
-
-        feature:install odl-tsdr-hbase
+   -  feature:install odl-tsdr-hbase
 
 -  Install OpenFlow Statistics Collector from Karaf:
 
-    ::
-
-        feature:install odl-tsdr-openflow-statistics-collector
+   -  feature:install odl-tsdr-openflow-statistics-collector
 
 -  run the following command from Karaf console:
 
-    ::
-
-        tsdr:list PORTSTATS
+   -  tsdr:list PORTSTATS
 
 You should be able to see the interface statistics of the switch(es)
 from the HBase Data Store. If there are too many rows, you can use
@@ -653,12 +640,3 @@ console. Then the user needs to modify the properties file under
        metric-psersistency=true
        log-persistency=false
        binary-persistency=false
-
-.. toctree::
-   :maxdepth: 1
-   :hidden:
-
-   tsdr-elastic-search
-   tsdr-elasticsearch-user-guide
-   tsdr-hbase-user-guide
-   tsdr-hsqldb-user-guide
