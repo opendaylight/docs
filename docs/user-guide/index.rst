@@ -61,6 +61,10 @@ Project-specific User Guides
    snmp4sdn-user-guide
    sxp-user-guide
    tsdr-user-guide
+   tsdr-elasticsearch-user-guide
+   tsdr-hbase-user-guide
+   tsdr-hsqldb-user-guide
+   tsdr-restconf-user-guide
    ttp-cli-tools-user-guide
    uni-manager-plug-in-project
    unified-secure-channel

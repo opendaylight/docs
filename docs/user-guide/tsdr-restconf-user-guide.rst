@@ -1,11 +1,7 @@
-.. _tsdr-hsqldb-user-guide:
+.. _tsdr-restconf-user-guide:
 
-TSDR HSQLDB Datastore User Guide
-================================
-
-This document describes how to use the embedded datastore HSQLDB, which is the default datastore (recommended for non-production use case) introduced as part of OpenDaylight Time Series Data Respository (TSDR) project. This store captures the  time series data. This document contains configuration, administration, management, using, and troubleshooting
-sections for the feature.
-
+Web Activity (RestConf) User Guide
+##################################
 
 TSDR Overview
 =============
@@ -100,25 +96,42 @@ RestConf interface or its ODL API interface.  TSDR also has integrated support
 for ElasticSearch capabilities.  TSDR data can also be viewed directly with
 Grafana (beta) for time series visualization or various chart formats.
 
-HSQLDB Overview
-===============
+RestConf Collector
+==================
 
-Administering or Managing TSDR with default datastore HSQLDB
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+The RestConf Web Activity Collector records the meaningful REST requests made
+through the OpenDaylight RESTCONF interface.
 
-Once the TSDR default datastore feature (odl-tsdr-all) is enabled, the TSDR
-captured OpenFlow statistics metrics can be accessed from Karaf Console by
-executing the command 
+How to test the RestConf Collector
+==================================
 
- tsdr:list <metric-category> <starttimestamp> <endtimestamp>
+- Issue a RESTCONF command that uses either POST,PUT or DELETE.
+  For example, you could call the register-filter RPC of tsdr-syslog-collector.
+- Look up data in TSDR database from Karaf.
 
-wherein
+  .. code-block:: bash
 
-   <metric-category> = any one of the following categories FlowGroupStats,
-   FlowMeterStats, FlowStats, FlowTableStats, PortStats, QueueStats
-   <starttimestamp> = to filter the list of metrics starting this timestamp
-   <endtimestamp>   = to filter the list of metrics ending this timestamp
+    tsdr:list RESTCONF
 
-If either of <starttimestamp> or <endtimestamp> is not specified, this command
-displays the latest 1000 metrics captured.
+- You should see the request that you have sent, along with its information
+  (URL, HTTP method, requesting IP address and request body)
+- Try to send a GET request, then check again, your request should not be
+  registered, because the collector does not register GET requests by default.
+- Open the file: "etc/tsdr.restconf.collector.cfg", and add GET to the list of
+  METHODS_TO_LOG, so that it becomes:
 
+  ::
+
+      METHODS_TO_LOG=POST,PUT,DELETE,GET
+
+  - Try again to issue your GET request, and check if it was recorded this time,
+    it should be recorder.
+  - Try manipulating the other properties (PATHS_TO_LOG (which URLs do we want
+    to log from), REMOTE_ADDRESSES_TO_LOG (which requesting IP addresses do we
+    want to log from) and CONTENT_TO_LOG (what should be in the request's body
+    in order to log it)), and see if the requests are getting logged.
+  - Try providing invalid properties (unknown methods for the METHODS_TO_LOG
+    parameter, or the same method repeated multiple times, and invalid regular
+    expressions for the other parameters), then check karaf's log using
+    "log:display". It should tell you that the value is invalid, and that it
+    will use the default value instead.
