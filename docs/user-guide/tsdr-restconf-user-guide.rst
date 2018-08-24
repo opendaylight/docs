@@ -1,10 +1,7 @@
-.. _tsdr-hbase-install-guide:
+.. _tsdr-restconf-user-guide:
 
-TSDR HBase Data Store Installation Guide
-########################################
-
-This document is for the user to install the artifacts that are needed for using
-the HBase Data Store in Time Series Data Repository.
+Web Activity (RestConf) User Guide
+##################################
 
 TSDR Overview
 =============
@@ -99,96 +96,42 @@ RestConf interface or its ODL API interface.  TSDR also has integrated support
 for ElasticSearch capabilities.  TSDR data can also be viewed directly with
 Grafana (beta) for time series visualization or various chart formats.
 
-Prerequisites for Installing TSDR HBase Data Store
-==================================================
+RestConf Collector
+==================
 
-The hardware requirements are the same as those for standard ODL controller
-installation.
+The RestConf Web Activity Collector records the meaningful REST requests made
+through the OpenDaylight RESTCONF interface.
 
-The supported operating system for TSDR HBase Data Store is Unix.
+How to test the RestConf Collector
+==================================
 
-Preparing for Installation
-""""""""""""""""""""""""""
+- Issue a RESTCONF command that uses either POST,PUT or DELETE.
+  For example, you could call the register-filter RPC of tsdr-syslog-collector.
+- Look up data in TSDR database from Karaf.
 
-Download HBase from the following web site.
+  .. code-block:: bash
 
-   http://archive.apache.org/dist/hbase/hbase-0.94.15/
+    tsdr:list RESTCONF
 
-Other versions of HBase work, but the later versions may not.
+- You should see the request that you have sent, along with its information
+  (URL, HTTP method, requesting IP address and request body)
+- Try to send a GET request, then check again, your request should not be
+  registered, because the collector does not register GET requests by default.
+- Open the file: "etc/tsdr.restconf.collector.cfg", and add GET to the list of
+  METHODS_TO_LOG, so that it becomes:
 
-Upgrading to the latest HBase is on the fast track to be implemented.
+  ::
 
-Installing TSDR HBase Data Store
-================================
+      METHODS_TO_LOG=POST,PUT,DELETE,GET
 
-Installing TSDR HBase Data Store contains two steps: Installing HBase server
-and installing TSDR HBase Data Store features from ODL Karaf console.
-
-This installation guide will only cover the first step. For installing TSDR
-HBase Data Store features, please refer to TSDR HBase Data Store User Guide.
-
-TSDR supports HBase single node running together on the same machine as ODL
-controller. Therefore, follow the steps to download and install HBase server
-onto the same box as where ODL controller is running:
-
-   Create a folder in Linux operating system for the HBase server.
-
-For example, create an hbase directory under /usr/lib:
-
-      mkdir /usr/lib/hbase
-
-   Unzip the downloaded HBase server tar file.
-
-Run the following command to unzip the installation package:
-
-      tar xvf <hbase-installer-name>  /usr/lib/hbase
-
-   Make proper changes in hbase-site.xml
-
-   .. Under <hbase-install-directory>/conf/, there is a hbase-site.xml. Although it is not recommended, an experience user with HBase canmodify the data directory for hbase server to store the data.
-
-   .. Modify the value of the property with name "hbase.rootdir" in the file to reflect the desired file directory for storing hbase data.
-
-The following is an example of the file:
-
-   ::
-
-      <configuration>
-         <property>
-            <name>hbase.rootdir</name>
-            <value>file:///usr/lib/hbase/data</value>
-         </property>
-         <property>
-            <name>hbase.zookeeper.property.dataDir</name>
-            <value>/usr/lib/hbase/zookeeper</value>
-         </property>
-      </configuration>
-
-Verifying your Installation
-===========================
-
-After the HBase server is properly installed, start hbase server and hbase shell.
-
-   start hbase server
-      cd <hbase-installation-directory>
-      ./start-hbase.sh
-
-   start hbase shell
-      cd <hbase-insatllation-directory>
-      ./hbase shell
-
-Post Installation Configuration
-===============================
-
-Please refer to HBase Data Store User Guide.
-
-Uninstalling HBase Data Store
-=============================
-
-To uninstall TSDR HBase Data Store,
-   stop hbase server
-   cd <hbase-installation-directory>
-   ./stop-hbase.sh
-
-To remove the file directory that contains the HBase server installation.
-    rm -r <hbase-installation-directory>
+  - Try again to issue your GET request, and check if it was recorded this time,
+    it should be recorder.
+  - Try manipulating the other properties (PATHS_TO_LOG (which URLs do we want
+    to log from), REMOTE_ADDRESSES_TO_LOG (which requesting IP addresses do we
+    want to log from) and CONTENT_TO_LOG (what should be in the request's body
+    in order to log it)), and see if the requests are getting logged.
+  - Try providing invalid properties (unknown methods for the METHODS_TO_LOG
+    parameter, or the same method repeated multiple times, and invalid regular
+    expressions for the other parameters), then check karaf's log using
+    "log:display". It should tell you that the value is invalid, and that it
+    will use the default value instead.
