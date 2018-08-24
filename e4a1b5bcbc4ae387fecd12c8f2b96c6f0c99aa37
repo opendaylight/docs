@@ -2,6 +2,98 @@
   "comments": [
     {
       "key": {
+        "uuid": "a8c60d67_8006047f",
+        "filename": "docs/user-guide/transportpce-user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 7217
+      },
+      "writtenOn": "2018-08-24T09:01:42Z",
+      "side": 1,
+      "message": "Suggestion : This feature contains all Transportpce project specific models defined in \"Service-path\". These models complement OpenROADM models describing South and Northbound APIs, and define the data structure used to interconnect the generic blocks/functions described on the previous diagram.",
+      "range": {
+        "startLine": 47,
+        "startChar": 6,
+        "endLine": 48,
+        "endChar": 51
+      },
+      "revId": "e4a1b5bcbc4ae387fecd12c8f2b96c6f0c99aa37",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0825f635_3510f4c0",
+        "filename": "docs/user-guide/transportpce-user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 7217
+      },
+      "writtenOn": "2018-08-24T09:01:42Z",
+      "side": 1,
+      "message": "OpenROADM",
+      "range": {
+        "startLine": 52,
+        "startChar": 32,
+        "endLine": 52,
+        "endChar": 42
+      },
+      "revId": "e4a1b5bcbc4ae387fecd12c8f2b96c6f0c99aa37",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a32e96ab_79000053",
+        "filename": "docs/user-guide/transportpce-user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 7217
+      },
+      "writtenOn": "2018-08-24T09:01:42Z",
+      "side": 1,
+      "message": "Common, Device, Network and Service models.",
+      "range": {
+        "startLine": 53,
+        "startChar": 6,
+        "endLine": 53,
+        "endChar": 50
+      },
+      "revId": "e4a1b5bcbc4ae387fecd12c8f2b96c6f0c99aa37",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e9af2bc3_005ff702",
+        "filename": "docs/user-guide/transportpce-user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 7217
+      },
+      "writtenOn": "2018-08-24T09:01:42Z",
+      "side": 1,
+      "message": "some of TransportPCE modules? (Stubpce and Stubrenderer). Stubs are used for development purposes and required for some of the functionnal tests.",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 58,
+        "endChar": 32
+      },
+      "revId": "e4a1b5bcbc4ae387fecd12c8f2b96c6f0c99aa37",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "aa7ea5d0_953481f0",
         "filename": "docs/user-guide/transportpce-user-guide.rst",
         "patchSetId": 1
@@ -18,6 +110,29 @@
         "startChar": 37,
         "endLine": 67,
         "endChar": 46
+      },
+      "revId": "e4a1b5bcbc4ae387fecd12c8f2b96c6f0c99aa37",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "349be51f_8524d6c2",
+        "filename": "docs/user-guide/transportpce-user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 7217
+      },
+      "writtenOn": "2018-08-24T09:01:42Z",
+      "side": 1,
+      "message": "Please reformulate : Probably not  transportPCE configuration that they need to support \n\nDevices must support configuration through NETCONF protocol/API?",
+      "range": {
+        "startLine": 70,
+        "startChar": 1,
+        "endLine": 71,
+        "endChar": 28
       },
       "revId": "e4a1b5bcbc4ae387fecd12c8f2b96c6f0c99aa37",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
