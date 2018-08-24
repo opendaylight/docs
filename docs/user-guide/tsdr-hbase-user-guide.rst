@@ -33,10 +33,10 @@ Data Collection Service handles the collection of time series data into TSDR and
 
 In Lithium, we implemented Data Collection Service, Data Storage Service, TSDR Persistence Layer, TSDR HBase Data Store, and TSDR H2 Data Store. Among these services and components, time series data is communicated using a common TSDR data model, which is designed and implemented for the abstraction of time series data commonalities. With these functions, TSDR will be able to collect the data from the data sources and store them into one of the TSDR data stores: either HBase Data Store or H2 Data Store. We also provided a simple query command from Karaf console for the user to retrieve TSDR data from the data stores.
 
-
+ 
 A future release will contain Data Aggregation service, Data Purging Service, and a full-fledged Data Query Service with Norghbound APIs.
 
-Configuring TSDR with HBase Data Store
+Configuring TSDR with HBase Data Store 
 --------------------------------------
 
 After installing HBase Server on the same VM as the OpenDaylight Controller, if the user accepts the default configuration of the HBase Data Store, the user can directly proceed with the installation of HBase Data Store from Karaf console.
@@ -45,9 +45,9 @@ Optionally, the user can configure TSDR HBase Data Store following HBase Data St
 
 HBase Data Store Configuration Steps
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- Open the file etc/tsdr-persistence-hbase.peroperties under karaf distribution directory.
+- Open the file etc/tsdr-persistence-hbase.peroperties under karaf distribution directory. 
 - Edit the following parameters
-   - HBase server name
+   - HBase server name 
    - HBase server port
    - HBase client connection pool size
    - HBase client write buffer size
@@ -57,13 +57,10 @@ After the configuration of HBase Data Store is complete, proceed with the instal
 - HBase Data Store Installation Steps
       - Start Karaf Console
       - Run the following commands from Karaf Console:
-
-          ::
-
-              feature:install odl-tsdr-hbase
+         - feature:install odl-tsdr-hbase
 
 
-Administering or Managing TSDR HBase Data Store
+Administering or Managing TSDR HBase Data Store 
 -----------------------------------------------
 
 Using Karaf Command to retrieve data from HBase Data Store
@@ -71,13 +68,9 @@ Using Karaf Command to retrieve data from HBase Data Store
 
 The user can retrieve the data from HBase data store using the following commands from Karaf console:
 
-    ::
+- tsdr:list
 
-        tsdr:list
-
-    ::
-
-        tsdr:list <CategoryName> <StartTime> <EndTime>
+- tsdr:list <CategoryName> <StartTime> <EndTime>
 
 Typing tab will get the context prompt of the arguments when typeing the command in Karaf console.
 
@@ -85,7 +78,7 @@ Troubleshooting issues with log files
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - Karaf logs
 
-Similar to other OpenDaylight components and features, TSDR HBase Data Store writes logging information to Karaf logs.  All the information messages, warnings, error messages, and debug messages are written to Karaf logs.
+Similar to other OpenDaylight components and features, TSDR HBase Data Store writes logging information to Karaf logs.  All the information messages, warnings, error messages, and debug messages are written to Karaf logs. 
 
 - HBase logs
 
@@ -94,12 +87,12 @@ For HBase system level logs, the user can check standard HBase server logs, whic
 Tutorials
 =========
 
-How to use TSDR to collect, store, and view OpenFlow Interface Statistics
+How to use TSDR to collect, store, and view OpenFlow Interface Statistics 
 
 Overview
 --------
 
-This tutorial describes an example of using TSDR to collect, store, and view one type of time series data in OpenDaylight environment.
+This tutorial describes an example of using TSDR to collect, store, and view one type of time series data in OpenDaylight environment. 
 
 
 Prerequisites
@@ -123,25 +116,18 @@ Instructions
 
 - Connect OpenFlow enabled switch(es) to the controller. If using mininet, run the following commands from mininet command line:
 
-    ::
-
-        mn --topo single,3  --controller 'remote,ip=172.17.252.210,port=6653' --switch ovsk,protocols=OpenFlow13
+ mn --topo single,3  --controller 'remote,ip=172.17.252.210,port=6653' --switch ovsk,protocols=OpenFlow13
 
 - If using real switch(es), the OpenDaylight controller should be able to discover the network toplogy containing the switches.
 
 - Install tsdr hbase feature from Karaf:
 
-    ::
-
-        feature:install odl-tsdr-hbase
+ feature:install odl-tsdr-hbase
 
 - run the following command from Karaf console:
 
-    ::
-
-        tsdr:list InterfaceStats
+ tsdr:list InterfaceStats
 
 You should be able to see the interface statistics of the switch(es) from the HBase Data Store. If there are too many rows, you can use "tsdr:list InterfaceStats|more" to view it page by page.
 
 By tabbing after "tsdr:list", you will see all the supported data categories. For example, "tsdr:list FlowStats" will output the Flow statistics data collected from the switch(es).
-
