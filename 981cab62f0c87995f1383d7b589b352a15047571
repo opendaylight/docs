@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "e9fe4a20_2ad034be",
+        "filename": "docs/downloads.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6258
+      },
+      "writtenOn": "2018-08-30T18:31:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b742bb34_b92cb1f5",
+      "revId": "981cab62f0c87995f1383d7b589b352a15047571",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "48781148_ccf9e241",
         "filename": "docs/downloads.rst",
         "patchSetId": 1
@@ -30,6 +48,30 @@
       "writtenOn": "2018-08-30T18:29:46Z",
       "side": 1,
       "message": "This should go away I think",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 17
+      },
+      "revId": "981cab62f0c87995f1383d7b589b352a15047571",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e2de76db_6d1105b5",
+        "filename": "docs/downloads.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6258
+      },
+      "writtenOn": "2018-08-30T18:31:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "48781148_ccf9e241",
       "range": {
         "startLine": 34,
         "startChar": 0,
