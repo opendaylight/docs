@@ -5,6 +5,29 @@ OpenDaylight Downloads
 Supported Releases
 ==================
 
+Fluorine
+--------
+:Original Release Date: August 30, 2018
+
+:Downloads:
+    * `OpenDaylight Fluorine Tar
+      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/karaf/0.9.0/karaf-0.9.0.tar.gz>`_
+    * `OpenDaylight Flourine Zip
+      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/karaf/0.9.0/karaf-0.9.0.zip>`_
+    * `OpenDaylight Flourine RPM
+      <http://cbs.centos.org/repos/nfv7-opendaylight-90-release/x86_64/os/Packages/opendaylight-0.9.0-1.el7.noarch.rpm>`_
+    * `OpFlex
+      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/opflex/>`_
+
+:Documentation:
+    * :doc:`Getting Started Guide <odl-fluorine:getting-started-guide/index>`
+    * :doc:`Developers Guide <odl-flourine:developer-guide/index>`
+    * :doc:`User Guide <odl-flourine:user-guide/index>`
+    * :doc:`Installation Guide <odl-flourine:getting-started-guide/installing_opendaylight>`
+    * :doc:`Using OpenDaylight with OpenStack <odl-flourine:opendaylight-with-openstack/index>`
+    * :doc:`Release Notes <odl-flourine:release-notes/index>`
+
+
 Oxygen-SR3
 ----------
 
