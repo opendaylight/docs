@@ -57,14 +57,10 @@ OpenDaylight Contributor Guides
 * :doc:`Integration Testing Guide <odl-integration-test:index>`
 * :doc:`Integration Distribution Guide <odl-integration-distribution:index>`
 * :doc:`Integration Packaging Guide <odl-integration-packaging:index>`
+* :doc:`Release Process Guide <release-process/index>`
+* :doc:`Documentation Guide <documentation>`
+* :doc:`Javadocs <javadocs>`
 
-.. toctree::
-   :maxdepth: 1
-
-   documentation
-   release-process/index
-   javadoc
-   developer-guide/index
 
 .. Commenting the below out until we actually use it
 .. Indices and tables
