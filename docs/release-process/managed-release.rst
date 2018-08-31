@@ -528,27 +528,27 @@ Self-Managed Projects
 In general there are two types of Self-Managed (SM) projects:
 
 #. Self-Managed projects that want to participate in the formal (major or
-   service) OpenDaylight release. This section includes the requirements
-   and release process for these projects.
+   service) OpenDaylight release distribution. This section includes the
+   requirements and release process for these projects.
 
 #. Self-Managed projects that want to manage their own release schedule
-   and installation instructions. There are no specific requirements for
-   these projects.
+   or provide their release distribution and installation instructions.
+   There are no specific requirements for these projects.
 
-Requirements for SM projects participating in the formal release
-----------------------------------------------------------------
+Requirements for SM projects participating in the release distribution
+----------------------------------------------------------------------
 
 Use of SNAPSHOT versions
 ++++++++++++++++++++++++
 
-Self-Managed Projects can consume whichever version of their upstream
-dependencies they want during most of the release cycle, but if they want to be
-included in the formal (major or service) release they must have their upstream
+Self-Managed Projects can consume whichever version of their upstream dependencies
+they want during most of the release cycle, but if they want to be included in the
+formal (major or service) release distribution they must have their upstream
 versions bumped to SNAPSHOT and build successfully no later than one week before
 the first Managed release candidate (RC) is created. Since bumping and integrating
 with upstream takes time, it is strongly recommended Self-Managed projects start
-this work early enough. This is no later than the middle checkpoint if they want to
-be in the formal release, or by the previous release if they want to be in a
+this work early enough. This is no later than the middle checkpoint if they want
+to be in a major release, or by the previous release if they want to be in a
 service release (e.g. by the major release date if they want to be in SR1).
 
 .. note:: To help with the integration effort, the `Weather Page`_ includes API and
@@ -558,8 +558,8 @@ service release (e.g. by the major release date if they want to be in SR1).
 Add to Final Distribution
 +++++++++++++++++++++++++
 
-In order to be included in the formal (major or service) release final distribution,
-Self-Managed Projects must be in the final distribution pom.xml file and the
+In order to be included in the formal (major or service) release distribution,
+Self-Managed Projects must be in the common distribution pom.xml file and the
 distribution sanity test (see :ref:`add-proj-dist`) no later than one week before
 the first Managed release candidate (RC) is created. Projects should only be added
 to the final distribution pom.xml after they have succesfully published artifacts
@@ -567,7 +567,7 @@ using upstream SNAPSHOTs. See `Use of SNAPSHOT versions`_.
 
 .. note:: It is very important Self-Managed projects do not miss the deadlines for
           upstream integration and final distribution check, otherwise there are
-          high chances for missing the formal release. See
+          high chances for missing the formal release distribution. See
           `Release the project artifacts`_.
 
 Release the project artifacts
@@ -578,14 +578,24 @@ must perform the following tasks in the week after the Managed release is publis
 to nexus:
 
 #. Bump their upstream version to latest Managed release.
-#. Release the project and publish the artifacts to nexus. All projects have
-   a job for this.
-#. Add their release artifact to the full distribution.
+#. Release the project and publish the artifacts to nexus.
+  
+   SM projects relaying on latest Managed projects SNAPSHOT can use the release job
+   for the 2 actions above. See more information about the release job in
+   :doc:`project-release`.
+
+.. note:: The release job can be triggered from any project patch by just leaving
+   a comment containing "build release".
+
+#. Add their release artifact to the common distribution.
+
+   If not done yet, SM projects can add their artifacts to the common distribution
+   by following this guide :ref:`add-proj-dist`
 
 .. note:: Self-Managed Projects will not have any leeway for missing deadlines. If
           projects are not in the final distribution in the allocated time (normally
           one week) after the Managed projects release, they will not be included
-          in the formal release.
+          in the release distribution.
 
 Checkpoints
 +++++++++++
