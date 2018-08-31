@@ -534,8 +534,9 @@ In general there are two types of Self-Managed (SM) projects:
    requirements and release process for these projects.
 
 #. Self-Managed projects that want to manage their own release schedule
-   or provide their release distribution and installation instructions.
-   There are no specific requirements for these projects.
+   or provide their release distribution and installation instructions
+   by the time of the release. There are no specific requirements for
+   these projects.
 
 Requirements for SM projects participating in the release distribution
 ----------------------------------------------------------------------
@@ -557,8 +558,8 @@ service release (e.g. by the major release date if they want to be in SR1).
           other important changes during the release cycle. After the formal release,
           the release notes also include this information.
 
-Add to Final Distribution
-+++++++++++++++++++++++++
+Add to Common Distribution
+++++++++++++++++++++++++++
 
 In order to be included in the formal (major or service) release distribution,
 Self-Managed Projects must be in the common distribution pom.xml file and the
@@ -572,27 +573,32 @@ using upstream SNAPSHOTs. See `Use of SNAPSHOT versions`_.
           high chances for missing the formal release distribution. See
           `Release the project artifacts`_.
 
+Cut Stable Branch
++++++++++++++++++
+
+Self-Managed projects wanting to use the existing release job to release their
+artifacts (see `Release the project artifacts`_) must have an stable branch in
+the major release (fluorine, neon, etc) they are targeting. It is highly recommended
+to cut the stable branch before the first Managed release candidate (RC) is created.
+
+.. note:: Do not forget to update your jenkins jobs once the stable branch is
+          created. If you do not know how to do this please open a ticket
+          to opendaylight helpdesk.
+
 Release the project artifacts
 +++++++++++++++++++++++++++++
 
-Self-Managed Projects wanting to participate in a formal (major or service) release,
-must perform the following tasks in the week after the Managed release is published
-to nexus:
+Self-Managed projects wanting to participate in the formal (major or service) release
+distribution must release and publish their artifacts to nexus in the week after the
+Managed release is published to nexus.
 
-#. Bump their upstream version to latest Managed release.
-#. Release the project and publish the artifacts to nexus.
+Self-Managed projects having an stable branch with latest upstream SNAPSHOT (see
+previous requirements) can use the release job in :doc:`project-release` to release
+their artifacts.
 
-   SM projects relaying on latest Managed projects SNAPSHOT can use the release job
-   for the 2 actions above. See more information about the release job in
-   :doc:`project-release`.
-
-   .. note:: The release job can be triggered from any project patch by just leaving
-      a comment containing "build release".
-
-#. Add their release artifact to the common distribution.
-
-   If not done yet, SM projects can add their artifacts to the common distribution
-   by following this guide :ref:`add-proj-dist`
+.. note:: The release job can be triggered from any project patch in the intended
+          release (fluorine, neon, etc) by just leaving a comment containing "build
+          release".
 
 .. note:: Self-Managed Projects will not have any leeway for missing deadlines. If
           projects are not in the final distribution in the allocated time (normally
