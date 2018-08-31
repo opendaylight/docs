@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "e8bd23a1_5eb0e017",
+        "filename": "docs/getting-started-guide/project-specific-guides/index.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 773
+      },
+      "writtenOn": "2018-08-31T14:29:14Z",
+      "side": 1,
+      "message": "same comment as the user-guide",
+      "revId": "f52c3ed289201eb8d16177fb5549278287f1198a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fca5122_4fa24b58",
+        "filename": "docs/user-guide/index.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 773
+      },
+      "writtenOn": "2018-08-31T14:29:14Z",
+      "side": 1,
+      "message": "we want a single index for a project, so a link here to a tsdr user-guide.rst and in there these links would be included.",
+      "revId": "f52c3ed289201eb8d16177fb5549278287f1198a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fea50674_1b312b58",
         "filename": "docs/user-guide/tsdr-hsqldb-user-guide.rst",
         "patchSetId": 6
