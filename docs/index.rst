@@ -26,45 +26,50 @@ OpenDaylight Project Documentation
 Managed Projects
 ~~~~~~~~~~~~~~~~
 
+.. toctree::
+   :maxdepth: 1
+
+   project-indexes/bgpcep-index
+   coe:index
+   project-indexes/daexim-index
+   genius:index
+   infrautils:index
+   project-indexes/lispflowmapping-index
+   mdsal:index
+   netvirt:index
+   openflowplugin:index
+   ovsdb:index
+
 .. :doc:`AAA Documentation <aaa:index>`
 .. :doc:`Controller Documentation <controller:index>`
 .. :doc:`NETCONF Documentation <netconf:index>`
 .. :doc:`Neutron Documentation <neutron:index>`
 
-* :doc:`../project-indexes/bgpcep-index`
-* :doc:`COE Documentation <coe:index>`
-* :doc:`../project-indexes/daexim-index`
-* :doc:`Genius Documentation <genius:index>`
-* :doc:`Infrautils Documentation <infrautils:index>`
-* :doc:`../project-indexes/lispflowmapping-index`
-* :doc:`MD-SAL Documentation <mdsal:index>`
-* :doc:`NetVirt Documentation <netvirt:index>`
-* :doc:`OpenFlowPlugin Documentation <openflowplugin:index>`
-* :doc:`OVSDB Documentation <ovsdb:index>`
-
 
 Self-Managed Projects
 ~~~~~~~~~~~~~~~~~~~~~
 
-* :doc:`../project-indexes/sxp-index`
+.. toctree::
+   :maxdepth: 1
+
+   project-indexes/sxp-index
 
 
 OpenDaylight Contributor Guides
 -------------------------------
 
-* :doc:`Gerrit Guide <lfdocs:gerrit>`
-* :ref:`Infrastructure Guide <odl-infra>`
-* :doc:`Integration Testing Guide <odl-integration-test:index>`
-* :doc:`Integration Distribution Guide <odl-integration-distribution:index>`
-* :doc:`Integration Packaging Guide <odl-integration-packaging:index>`
-
 .. toctree::
    :maxdepth: 1
 
-   documentation
+   lfdocs:gerrit
+   odl-infra
+   odl-integration-test:index
+   odl-integration-distribution:index
+   odl-integration-packaging:index
    release-process/index
-   javadoc
-   developer-guide/index
+   documentation
+   javadocs
+
 
 .. Commenting the below out until we actually use it
 .. Indices and tables
@@ -74,17 +79,3 @@ OpenDaylight Contributor Guides
 .. * :ref:`modindex`
 .. * :ref:`search`
 
-
-.. toctree::
-   :maxdepth: 1
-   :hidden:
-
-   developer-guide/index
-
-   opendaylight-with-openstack/index
-   release-notes/sample-release-notes
-   user-guide/index
-   project-indexes/bgpcep-index
-   project-indexes/daexim-index
-   project-indexes/lispflowmapping-index
-   project-indexes/sxp-index
