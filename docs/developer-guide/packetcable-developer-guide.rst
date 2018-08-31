@@ -34,7 +34,7 @@ The packetcable maven project is comprised of several modules.
 |                                      | connections to CCAPS/CMTSes.         |
 +--------------------------------------+--------------------------------------+
 | packetcable-emulator                 | A basic CCAP emulator to facilitate  |
-|                                      | testing the the plugin when no       |
+|                                      | testing the plugin when no       |
 |                                      | physical CCAP is avaible.            |
 +--------------------------------------+--------------------------------------+
 | packetcable-policy-karaf             | Generates a Karaf distribution with  |

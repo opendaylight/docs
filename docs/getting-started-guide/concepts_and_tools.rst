@@ -41,5 +41,5 @@ below.
      drivers to notify and communicate with one another.
 
 * If you’re interacting with OpenDaylight through the REST APIs while
-  using the the OpenDaylight interfaces, the microservices architecture allows
+  using the OpenDaylight interfaces, the microservices architecture allows
   you to select available services, protocols, and REST APIs.
