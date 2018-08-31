@@ -26,45 +26,50 @@ OpenDaylight Project Documentation
 Managed Projects
 ~~~~~~~~~~~~~~~~
 
+.. toctree::
+   :maxdepth: 1
+
+   * :doc:`../project-indexes/bgpcep-index`
+   * :doc:`COE Documentation <coe:index>`
+   * :doc:`../project-indexes/daexim-index`
+   * :doc:`Genius Documentation <genius:index>`
+   * :doc:`Infrautils Documentation <infrautils:index>`
+   * :doc:`../project-indexes/lispflowmapping-index`
+   * :doc:`MD-SAL Documentation <mdsal:index>`
+   * :doc:`NetVirt Documentation <netvirt:index>`
+   * :doc:`OpenFlowPlugin Documentation <openflowplugin:index>`
+   * :doc:`OVSDB Documentation <ovsdb:index>`
+
 .. :doc:`AAA Documentation <aaa:index>`
 .. :doc:`Controller Documentation <controller:index>`
 .. :doc:`NETCONF Documentation <netconf:index>`
 .. :doc:`Neutron Documentation <neutron:index>`
 
-* :doc:`../project-indexes/bgpcep-index`
-* :doc:`COE Documentation <coe:index>`
-* :doc:`../project-indexes/daexim-index`
-* :doc:`Genius Documentation <genius:index>`
-* :doc:`Infrautils Documentation <infrautils:index>`
-* :doc:`../project-indexes/lispflowmapping-index`
-* :doc:`MD-SAL Documentation <mdsal:index>`
-* :doc:`NetVirt Documentation <netvirt:index>`
-* :doc:`OpenFlowPlugin Documentation <openflowplugin:index>`
-* :doc:`OVSDB Documentation <ovsdb:index>`
-
 
 Self-Managed Projects
 ~~~~~~~~~~~~~~~~~~~~~
 
-* :doc:`../project-indexes/sxp-index`
+.. toctree::
+   :maxdepth: 1
+
+   * :doc:`../project-indexes/sxp-index`
 
 
 OpenDaylight Contributor Guides
 -------------------------------
 
-* :doc:`Gerrit Guide <lfdocs:gerrit>`
-* :ref:`Infrastructure Guide <odl-infra>`
-* :doc:`Integration Testing Guide <odl-integration-test:index>`
-* :doc:`Integration Distribution Guide <odl-integration-distribution:index>`
-* :doc:`Integration Packaging Guide <odl-integration-packaging:index>`
-
 .. toctree::
    :maxdepth: 1
 
-   documentation
-   release-process/index
-   javadoc
-   developer-guide/index
+   * :doc:`Gerrit Guide <lfdocs:gerrit>`
+   * :ref:`Infrastructure Guide <odl-infra>`
+   * :doc:`Integration Testing Guide <odl-integration-test:index>`
+   * :doc:`Integration Distribution Guide <odl-integration-distribution:index>`
+   * :doc:`Integration Packaging Guide <odl-integration-packaging:index>`
+   * :doc:`Release Process Guide <release-process/index>`
+   * :doc:`Documentation Guide <documentation>`
+   * :doc:`Javadocs <javadocs>`
+
 
 .. Commenting the below out until we actually use it
 .. Indices and tables
