@@ -684,7 +684,7 @@ MD-SAL RPC routing
 
 The MD-SAL provides a way to deliver Remote Procedure Calls (RPCs) to a
 particular implementation based on content in the input as it is modeled
-in YANG. This part of the the RPC input is referred to as a **context
+in YANG. This part of the RPC input is referred to as a **context
 reference**.
 
 The MD-SAL does not dictate the name of the leaf which is used for this
