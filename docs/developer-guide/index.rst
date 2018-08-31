@@ -35,7 +35,6 @@ Project-specific Developer Guides
    controller
    daexim-developer-guide
    didm-developer-guide
-   distribution-version
    distribution-test-features
    eman-developer-guide
    fabric-as-a-service

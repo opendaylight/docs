@@ -1,3 +1,5 @@
+.. _managed-release:
+
 ***************
 Managed Release
 ***************
