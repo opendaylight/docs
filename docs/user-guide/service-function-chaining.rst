@@ -420,7 +420,8 @@ implements Service Chaining on OpenFlow switches. It listens for the
 creation of a Rendered Service Path (RSP) in the operational data store,
 and once received it programs Service Function Forwarders (SFF) that
 are hosted on OpenFlow capable switches to forward packets through the
-service chain.
+service chain. Currently the only tested OpenFlow capable switch is
+OVS 2.9.
 
 Common acronyms used in the following sections:
 
@@ -504,7 +505,7 @@ configuration.
 
 Here are two example on SFF1: one where the RSP ingress tunnel is MPLS
 assuming VLAN is used for the SFF-SF, and the other where the RSP
-ingress tunnel is NSH GRE (UDP port 4789):
+ingress tunnel is either Eth+NSH or just NSH with no ethernet.
 
 +----------+-------------------------------------+--------------+
 | Priority | Match                               | Action       |
@@ -513,11 +514,13 @@ ingress tunnel is NSH GRE (UDP port 4789):
 +----------+-------------------------------------+--------------+
 | 256      | EtherType==0x8100 (VLAN)            | Goto Table 2 |
 +----------+-------------------------------------+--------------+
-| 256      | EtherType==0x0800,udp,tp\_dst==4789 | Goto Table 2 |
-|          | (IP v4)                             |              |
+| 250      | EtherType==0x894f (Eth+NSH)         | Goto Table 2 |
++----------+-------------------------------------+--------------+
+| 250      | PacketType==0x894f (NSH no Eth)     | Goto Table 2 |
 +----------+-------------------------------------+--------------+
 | 5        | Match Any                           | Drop         |
 +----------+-------------------------------------+--------------+
+
 
 Table: Table Transport Ingress
 
@@ -597,17 +600,18 @@ which we don’t have the source MAC address (MacSrc).
 +----------+--------------------------------+--------------------------------+
 | 246      | RSP Path==1                    | MacDst=SF1, Goto Table 10      |
 +----------+--------------------------------+--------------------------------+
-| 256      | nsp=3,nsi=255 (SFF Ingress RSP | load:0xa000002→NXM\_NX\_TUN\_I |
-|          | 3)                             | PV4\_DST[],                    |
-|          |                                | Goto Table 10                  |
+| 550      | dl_type=0x894f,                | load:0xa000002→                |
+|          | nsh_spi=3,nsh_si=255           |   NXM\_NX\_TUN\_IPV4\_DST[],   |
+|          | (NSH, SFF Ingress RSP 3, hop 1)| Goto Table 10                  |
 +----------+--------------------------------+--------------------------------+
-| 256      | nsp=3,nsi=254 (SFF Ingress     | load:0xa00000a→NXM\_NX\_TUN\_I |
-|          | from SF, RSP 3)                | PV4\_DST[],                    |
-|          |                                | Goto Table 10                  |
+| 550      | dl_type=0x894f                 | load:0xa00000a→                |
+|          | nsh_spi=3,nsh_si=254           |   NXM\_NX\_TUN\_IPV4\_DST[],   |
+|          | (NSH, SFF Ingress from SF,     | Goto Table 10                  |
+|          |  RSP 3, hop 2)                 |                                |
 +----------+--------------------------------+--------------------------------+
-| 256      | nsp=4,nsi=254 (SFF1 Ingress    | load:0xa00000a→NXM\_NX\_TUN\_I |
-|          | from SFF2)                     | PV4\_DST[],                    |
-|          |                                | Goto Table 10                  |
+| 550      | dl_type=0x894f,                | load:0xa00000a→                |
+|          | nsh_spi=4,nsh_si=254           |   NXM\_NX\_TUN\_IPV4\_DST[],   |
+|          | (NSH, SFF1 Ingress from SFF2)  | Goto Table 10                  |
 +----------+--------------------------------+--------------------------------+
 | 5        | Match Any                      | Drop                           |
 +----------+--------------------------------+--------------------------------+
@@ -637,17 +641,20 @@ VXLAN port, the NSH packets are just sent back where they came from.
 | 246      | RSP Path==2                    | Push MPLS Label 100,           |
 |          |                                | Port=Ingress                   |
 +----------+--------------------------------+--------------------------------+
-| 256      | nsp=3,nsi=255 (SFF Ingress RSP | IN\_PORT                       |
-|          | 3)                             |                                |
+| 256      | in_port=1,dl_type=0x894f       | IN\_PORT                       |
+|          | nsh_spi=0x3,nsh_si=255         |                                |
+|          | (NSH, SFF Ingress RSP 3)       |                                |
 +----------+--------------------------------+--------------------------------+
-| 256      | nsp=3,nsi=254 (SFF Ingress     | IN\_PORT                       |
-|          | from SF, RSP 3)                |                                |
+| 256      | in_port=1,dl_type=0x894f,      | IN\_PORT                       |
+|          | nsh_spi=0x3,nsh_si=254         |                                |
+|          | (NSH,SFF Ingress from SF,RSP 3)|                                |
 +----------+--------------------------------+--------------------------------+
-| 256      | nsp=4,nsi=254 (SFF1 Ingress    | IN\_PORT                       |
-|          | from SFF2)                     |                                |
-+----------+--------------------------------+--------------------------------+
-| 5        | Match Any                      | Drop                           |
-+----------+--------------------------------+--------------------------------+
+| 256      | in_port=1,dl_type=0x894f,      | IN\_PORT                       |
+|          | nsh_spi=0x4,nsh_si=254         |                                |
+|          | (NSH, SFF1 Ingress from SFF2)  |                                |
++---------+---------------------------------+--------------------------------+
+| 5       |  Match Any                      | Drop                           |
++---------+---------------------------------+--------------------------------+
 
 Table: Table Transport Egress
 
@@ -1196,7 +1203,8 @@ command:
 | **MPLS Service Function Path configuration**
 
 The Service Function Path configuration can be sent with the following
-command:
+command. This will internally trigger the Rendered Service Paths to be
+created.
 
 .. code-block:: bash
 
@@ -1221,18 +1229,8 @@ command:
       }
     }
 
-| **MPLS Rendered Service Path creation**
-
-.. code-block:: bash
-
-   curl -i -H "Content-Type: application/json" -H "Cache-Control: no-cache"
-   --data '${JSON}' -X POST --user admin:admin
-    http://localhost:8181/restconf/operations/rendered-service-path:create-rendered-path/
-
-| **MPLS Rendered Service Path Query**
-
-The following command can be used to query all of the created Rendered
-Service Paths:
+The following command can be used to query all of the Rendered Service
+Paths that were created when the Service Function Path was created:
 
 .. code-block:: bash
 
