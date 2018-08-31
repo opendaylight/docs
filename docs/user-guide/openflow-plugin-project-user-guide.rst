@@ -274,7 +274,7 @@ this by:
 At this point you should have two interfaces one which gives you NATed
 access to the internet and another that gives you access between your
 mac and the VMs. At least for me, the NATed interface gets a 10.0.2.x
-address and the the host-only interface gets a 192.168.56.x address.
+address and the host-only interface gets a 192.168.56.x address.
 
 Your simplest choice: Use Vagrant
 '''''''''''''''''''''''''''''''''
