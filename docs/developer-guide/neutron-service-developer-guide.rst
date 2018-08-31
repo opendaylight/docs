@@ -66,7 +66,7 @@ referred as the above documentation doesn’t always cover the necessary
 details. There is nothing special to utilize those Neutron YANG models.
 The basic procedure will be:
 
-1. subscribe for changes made to the the model
+1. subscribe for changes made to the model
 
 2. respond on the data change notification for each models
 

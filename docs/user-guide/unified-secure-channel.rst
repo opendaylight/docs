@@ -81,7 +81,7 @@ Administering or Managing USC Channel
 -------------------------------------
 
 After installing the odl-usc-channel-ui feature from the Karaf console,
-users can administer and manage USC channels from the the UI or APIDOCS
+users can administer and manage USC channels from the UI or APIDOCS
 explorer.
 
 Go to
