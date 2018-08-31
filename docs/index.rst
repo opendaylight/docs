@@ -57,14 +57,10 @@ OpenDaylight Contributor Guides
 * :doc:`Integration Testing Guide <odl-integration-test:index>`
 * :doc:`Integration Distribution Guide <odl-integration-distribution:index>`
 * :doc:`Integration Packaging Guide <odl-integration-packaging:index>`
+* :doc:`Release Process Guide <release-process/index>`
+* :doc:`Documentation Guide <documentation>`
+* :doc:`Javadocs <javadoc>`
 
-.. toctree::
-   :maxdepth: 1
-
-   documentation
-   release-process/index
-   javadoc
-   developer-guide/index
 
 .. Commenting the below out until we actually use it
 .. Indices and tables
@@ -79,11 +75,13 @@ OpenDaylight Contributor Guides
    :maxdepth: 1
    :hidden:
 
-   developer-guide/index
-
+   documentation
+   release-process/index
+   javadoc
    opendaylight-with-openstack/index
    release-notes/sample-release-notes
    user-guide/index
+   developer-guide/index
    project-indexes/bgpcep-index
    project-indexes/daexim-index
    project-indexes/lispflowmapping-index
