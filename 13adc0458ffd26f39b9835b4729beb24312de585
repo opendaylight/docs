@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7365713c_45feedb5",
+        "filename": "docs/project-proposals/Hydrogen-proposals/BGP_and_PCEP_Project_Proposal.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2018-09-03T14:53:39Z",
+      "side": 1,
+      "message": "I think \"Hydrogen-proposals\" is redundant information considering this file is already in a directory named \"project-proposals\"\n\nCan we simply rename the folder to \"hydrogen\"? Also I\u0027d recommend lower casing filenames since case insensitive file systems have trouble dealing with this.\n\nI\u0027m thinking maybe we should have the filename patch the repo name to keep things simple. In this case this file should be titled \"bgpcep.rst\". Do other docs committers agree?",
+      "revId": "13adc0458ffd26f39b9835b4729beb24312de585",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dacac0cd_5877c642",
+        "filename": "docs/project-proposals/Hydrogen-proposals/BGP_and_PCEP_Project_Proposal.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2018-09-03T14:53:39Z",
+      "side": 1,
+      "message": "Instead of Name: BGP/PCEP protocal library. I\u0027d make this the top level heading since it\u0027s obvious from the title. and then use \"---\" to mark sub-headings. Example:\n\n BGP/PCEP protocol library\n \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\n \n Repo name\n ---------\n \n bgpcep\n \n Description\n -----------\n \n ...\n\nUse this format for all the other files.",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 25
+      },
+      "revId": "13adc0458ffd26f39b9835b4729beb24312de585",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
