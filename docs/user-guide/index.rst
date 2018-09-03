@@ -19,6 +19,7 @@ Project-specific User Guides
 
 * :doc:`NetVirt Documentation <netvirt:index>`
 * :doc:`OVSDB Documentation <ovsdb:index>`
+* :doc:`TSDR Documentation <tsdr:index>`
 
 .. toctree::
    :maxdepth: 1
@@ -61,6 +62,10 @@ Project-specific User Guides
    sxp-user-guide
    transportpce-user-guide
    tsdr-user-guide
+   tsdr-elasticsearch-user-guide
+   tsdr-hsqldb-user-guide
+   tsdr-hbase-user-guide
+   tsdr-rest-web-activity-user-guide
    ttp-cli-tools-user-guide
    uni-manager-plug-in-project
    unified-secure-channel
