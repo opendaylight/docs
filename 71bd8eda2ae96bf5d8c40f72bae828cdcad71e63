@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e5facd9d_d16dfb62",
+        "filename": "docs/project-proposals/hydrogen/affinity_metadata_service.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2018-09-04T15:45:06Z",
+      "side": 1,
+      "message": "You can delete this block from every page.\n\n\nRST uses \"\u003d\u003d\u003d\" to mean section and \"---\" as sub-section. So\n\n Affinity Meta-Data Service\n \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\n\n Repo Name\n ---------\n \n affinity\n\nMakes \"repo name\" a sub-section of \"Affinity Meta-Data Service\" so the output page looks something like:\n\n 1. Affinity Meta-Data Service\n 1.a Repo Name\n ...\n\nOtherwise RST will incorrectly generate this page as:\n\n 1. Name\n 1.a Affinity Meta-Data Service\n 2. Repo Name\n ...",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 4
+      },
+      "revId": "71bd8eda2ae96bf5d8c40f72bae828cdcad71e63",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
