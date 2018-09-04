@@ -581,9 +581,17 @@ artifacts (see `Release the project artifacts`_) must have an stable branch in
 the major release (fluorine, neon, etc) they are targeting. It is highly recommended
 to cut the stable branch before the first Managed release candidate (RC) is created.
 
-.. note:: Do not forget to update your jenkins jobs once the stable branch is
-          created. If you do not know how to do this please open a ticket
-          to opendaylight helpdesk.
+After creating the stable branch Self-Managed projects should:
+
+* Bump master branch version to X.Y+1.Z-SNAPSHOT, this way any new merge in master
+  will not interfere with the new created stable branch artifacts.
+
+* Update .gitreview for stable branch: change defaultbranch=master to stable branch.
+  This way folks running "git review" will get the right branch.
+
+* Update their jenkins jobs: current release should point to the new created stable
+  branch and next release should point to master branch. If you do not know how to
+  do this please open a ticket to opendaylight helpdesk.
 
 Release the project artifacts
 +++++++++++++++++++++++++++++
@@ -599,6 +607,10 @@ their artifacts.
 .. note:: The release job can be triggered from any project patch in the intended
           release (fluorine, neon, etc) by just leaving a comment containing "build
           release".
+
+After creating the release, Self-Managed projects should bump the stable branch
+version to X.Y.Z+1-SNAPSHOT, this way any new merge in the stable branch will not
+interfere with pre-release artifacts.
 
 .. note:: Self-Managed Projects will not have any leeway for missing deadlines. If
           projects are not in the final distribution in the allocated time (normally
