@@ -86,3 +86,4 @@ OpenDaylight Contributor Guides
    project-indexes/daexim-index
    project-indexes/lispflowmapping-index
    project-indexes/sxp-index
+   project-indexes/transportpce-index
