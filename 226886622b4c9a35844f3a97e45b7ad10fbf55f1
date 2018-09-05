@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fe6c5f5d_da6231a2",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 586,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2018-09-05T14:24:48Z",
+      "side": 1,
+      "message": "I think more accurately this should be X.Y+1.0-SNAPSHOT specifically because we should always be resetting the last digit to 0 when bumping the middle number.",
+      "range": {
+        "startLine": 586,
+        "startChar": 34,
+        "endLine": 586,
+        "endChar": 39
+      },
+      "revId": "226886622b4c9a35844f3a97e45b7ad10fbf55f1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
