@@ -38,6 +38,7 @@ Managed Projects
 * :doc:`NetVirt Documentation <netvirt:index>`
 * :doc:`OpenFlowPlugin Documentation <openflowplugin:index>`
 * :doc:`OVSDB Documentation <ovsdb:index>`
+* :doc:`Service Function Chaining Documentation <sfc:index>`
 
 .. :doc:`NETCONF Documentation <netconf:index>`
 .. :doc:`Neutron Documentation <neutron:index>`
