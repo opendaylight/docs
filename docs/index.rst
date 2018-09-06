@@ -26,10 +26,8 @@ OpenDaylight Project Documentation
 Managed Projects
 ~~~~~~~~~~~~~~~~
 
-* :doc:`AAA Documentation <project-indexes/aaa-index>`
 * :doc:`BGPCEP Documentation <project-indexes/bgpcep-index>`
 * :doc:`COE Documentation <coe:index>`
-* :doc:`Controller Documentation <project-indexes/controller-index>`
 * :doc:`DAEXIM Documentation <project-indexes/daexim-index>`
 * :doc:`Genius Documentation <genius:index>`
 * :doc:`Infrautils Documentation <infrautils:index>`
@@ -39,6 +37,8 @@ Managed Projects
 * :doc:`OpenFlowPlugin Documentation <openflowplugin:index>`
 * :doc:`OVSDB Documentation <ovsdb:index>`
 
+.. :doc:`AAA Documentation <aaa:index>`
+.. :doc:`Controller Documentation <controller:index>`
 .. :doc:`NETCONF Documentation <netconf:index>`
 .. :doc:`Neutron Documentation <neutron:index>`
 
@@ -48,6 +48,7 @@ Self-Managed Projects
 
 * :doc:`SXP Documentation <project-indexes/sxp-index>`
 * :doc:`TransportPCE Documentation <project-indexes/transportpce-index>`
+* :doc:`TSDR Documentation <project-indexes/tsdr-index>`
 
 
 OpenDaylight Contributor Guides
@@ -83,10 +84,10 @@ OpenDaylight Contributor Guides
    release-notes/sample-release-notes
    user-guide/index
    developer-guide/index
-   project-indexes/aaa-index
    project-indexes/bgpcep-index
    project-indexes/daexim-index
    project-indexes/lispflowmapping-index
    project-indexes/sxp-index
    project-indexes/transportpce-index
-   project-indexes/controller-index
+   project-indexes/tsdr-index
+
