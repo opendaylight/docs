@@ -8,13 +8,15 @@ Supported Releases
 Fluorine
 --------
 
+(Current Release)
+
 :Original Release Date: August 30, 2018
 
 :Downloads:
     * `OpenDaylight Fluorine Tar
-      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/karaf/0.9.0/karaf-0.9.0.tar.gz>`_
+      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.9.0/opendaylight-0.9.0.tar.gz>`_
     * `OpenDaylight Flourine Zip
-      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/karaf/0.9.0/karaf-0.9.0.zip>`_
+      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.9.0/opendaylight-0.9.0.zip>`_
     * `OpenDaylight Flourine RPM
       <http://cbs.centos.org/repos/nfv7-opendaylight-9-release/x86_64/os/Packages/opendaylight-9.0.0-1.el7.noarch.rpm>`_
     * `OpFlex
