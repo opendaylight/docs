@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "0860451b_4914255c",
+        "filename": "docs/developer-guide/transportpce-developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 3814
+      },
+      "writtenOn": "2018-09-06T12:35:17Z",
+      "side": 1,
+      "message": ". redundant mistake yes\n. \u0027_\u0027 character is interpreted by rst compiler so it\u0027s to ignore them.",
+      "parentUuid": "20914da0_87556c85",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 385
+      },
+      "revId": "307bed302f7c866612748be6e39d5512bc10eab4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ece101cc_8c88a326",
         "filename": "docs/developer-guide/transportpce-developer-guide.rst",
         "patchSetId": 6
@@ -36,6 +60,30 @@
       "writtenOn": "2018-09-06T12:19:52Z",
       "side": 1,
       "message": "trailing blank",
+      "range": {
+        "startLine": 33,
+        "startChar": 205,
+        "endLine": 33,
+        "endChar": 206
+      },
+      "revId": "307bed302f7c866612748be6e39d5512bc10eab4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4ceb203c_781accb3",
+        "filename": "docs/developer-guide/transportpce-developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 3814
+      },
+      "writtenOn": "2018-09-06T12:35:17Z",
+      "side": 1,
+      "message": "ok",
+      "parentUuid": "ece101cc_8c88a326",
       "range": {
         "startLine": 33,
         "startChar": 205,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "70f17995_aecd1f06",
+        "filename": "docs/developer-guide/transportpce-developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 3814
+      },
+      "writtenOn": "2018-09-06T12:35:17Z",
+      "side": 1,
+      "message": "yes",
+      "parentUuid": "e2069d53_f44fe78a",
+      "range": {
+        "startLine": 54,
+        "startChar": 0,
+        "endLine": 54,
+        "endChar": 693
+      },
+      "revId": "307bed302f7c866612748be6e39d5512bc10eab4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2107fb6d_32989ca8",
         "filename": "docs/developer-guide/transportpce-developer-guide.rst",
         "patchSetId": 6
@@ -82,6 +154,30 @@
       "writtenOn": "2018-09-06T12:19:52Z",
       "side": 1,
       "message": "I2RS model IETF draft 0 (revision xx)",
+      "range": {
+        "startLine": 66,
+        "startChar": 129,
+        "endLine": 66,
+        "endChar": 139
+      },
+      "revId": "307bed302f7c866612748be6e39d5512bc10eab4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "79eaa949_fb43b430",
+        "filename": "docs/developer-guide/transportpce-developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 3814
+      },
+      "writtenOn": "2018-09-06T12:35:17Z",
+      "side": 1,
+      "message": "Question for Olivier ?",
+      "parentUuid": "2107fb6d_32989ca8",
       "range": {
         "startLine": 66,
         "startChar": 129,
