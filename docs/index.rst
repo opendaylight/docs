@@ -48,6 +48,7 @@ Self-Managed Projects
 
 * :doc:`SXP Documentation <project-indexes/sxp-index>`
 * :doc:`TransportPCE Documentation <project-indexes/transportpce-index>`
+* :doc:`TSDR Documentation <project-indexes/tsdr-index>`
 
 
 OpenDaylight Contributor Guides
@@ -85,8 +86,9 @@ OpenDaylight Contributor Guides
    developer-guide/index
    project-indexes/aaa-index
    project-indexes/bgpcep-index
+   project-indexes/controller-index
    project-indexes/daexim-index
    project-indexes/lispflowmapping-index
    project-indexes/sxp-index
    project-indexes/transportpce-index
-   project-indexes/controller-index
+   project-indexes/tsdr-index
