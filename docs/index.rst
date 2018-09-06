@@ -26,6 +26,7 @@ OpenDaylight Project Documentation
 Managed Projects
 ~~~~~~~~~~~~~~~~
 
+* :doc:`AAA Documentation <project-indexes/aaa-index>`
 * :doc:`BGPCEP Documentation <project-indexes/bgpcep-index>`
 * :doc:`COE Documentation <coe:index>`
 * :doc:`Controller Documentation <project-indexes/controller-index>`
@@ -38,7 +39,6 @@ Managed Projects
 * :doc:`OpenFlowPlugin Documentation <openflowplugin:index>`
 * :doc:`OVSDB Documentation <ovsdb:index>`
 
-.. :doc:`AAA Documentation <aaa:index>`
 .. :doc:`NETCONF Documentation <netconf:index>`
 .. :doc:`Neutron Documentation <neutron:index>`
 
