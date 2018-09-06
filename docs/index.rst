@@ -28,6 +28,7 @@ Managed Projects
 
 * :doc:`BGPCEP Documentation <project-indexes/bgpcep-index>`
 * :doc:`COE Documentation <coe:index>`
+* :doc:`Controller Documentation <project-indexes/controller-index>`
 * :doc:`DAEXIM Documentation <project-indexes/daexim-index>`
 * :doc:`Genius Documentation <genius:index>`
 * :doc:`Infrautils Documentation <infrautils:index>`
@@ -38,7 +39,6 @@ Managed Projects
 * :doc:`OVSDB Documentation <ovsdb:index>`
 
 .. :doc:`AAA Documentation <aaa:index>`
-.. :doc:`Controller Documentation <controller:index>`
 .. :doc:`NETCONF Documentation <netconf:index>`
 .. :doc:`Neutron Documentation <neutron:index>`
 
