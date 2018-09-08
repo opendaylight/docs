@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "77ca375c_96e3f26f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2018-09-08T23:27:17Z",
+      "side": 1,
+      "message": "This is metadata so should be attached to the footer below.\nAlso good practice to leave a blank space after the colon.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 12
+      },
+      "revId": "cf1ee9fb4a417c3019261024d7f6e9b297a545bd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a5b118f3_4b39c25e",
+        "filename": "docs/getting-started-guide/project-specific-guides/tsdr-hsqldb-install.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2018-09-08T23:27:17Z",
+      "side": 1,
+      "message": "No need to capitalize links.",
+      "range": {
+        "startLine": 1,
+        "startChar": 4,
+        "endLine": 1,
+        "endChar": 8
+      },
+      "revId": "cf1ee9fb4a417c3019261024d7f6e9b297a545bd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
