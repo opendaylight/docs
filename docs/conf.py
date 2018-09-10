@@ -21,6 +21,7 @@ intersphinx_mapping['odl-releng-builder'] = ('https://docs.opendaylight.org/proj
 
 # Projects that have stable/branches
 intersphinx_mapping['coe'] = ('https://docs.opendaylight.org/projects/coe/en/latest/', None)
+intersphinx_mapping['daexim'] = ('https://docs.opendaylight.org/projects/daexim/en/latest/', None)
 intersphinx_mapping['genius'] = ('https://docs.opendaylight.org/projects/genius/en/latest/', None)
 intersphinx_mapping['infrautils'] = ('https://docs.opendaylight.org/projects/infrautils/en/latest/', None)
 intersphinx_mapping['netvirt'] = ('https://docs.opendaylight.org/projects/netvirt/en/latest/', None)
