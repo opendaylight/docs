@@ -30,7 +30,7 @@ Managed Projects
 * :doc:`BGPCEP Documentation <bgpcep:index>`
 * :doc:`COE Documentation <coe:index>`
 * :doc:`Controller Documentation <project-indexes/controller-index>`
-* :doc:`DAEXIM Documentation <project-indexes/daexim-index>`
+* :doc:`DAEXIM Documentation <daexim:index>`
 * :doc:`Genius Documentation <genius:index>`
 * :doc:`Infrautils Documentation <infrautils:index>`
 * :doc:`LISP Flow Mapping Documentation <project-indexes/lispflowmapping-index>`
@@ -85,7 +85,6 @@ OpenDaylight Contributor Guides
    release-notes/sample-release-notes
    user-guide/index
    developer-guide/index
-   project-indexes/daexim-index
    project-indexes/lispflowmapping-index
    project-indexes/transportpce-index
    project-indexes/controller-index
