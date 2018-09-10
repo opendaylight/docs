@@ -6,7 +6,3 @@ Project-Specific Installation Guides
    :maxdepth: 1
 
    opflex
-   tsdr-install
-   tsdr-hsqldb-install
-   tsdr-hbase-install
-
