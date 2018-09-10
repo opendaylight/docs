@@ -46,7 +46,7 @@ Managed Projects
 Self-Managed Projects
 ~~~~~~~~~~~~~~~~~~~~~
 
-* :doc:`SXP Documentation <project-indexes/sxp-index>`
+* :doc:`SXP Documentation <sxp:index>`
 
 
 OpenDaylight Contributor Guides
