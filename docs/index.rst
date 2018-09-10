@@ -27,7 +27,7 @@ Managed Projects
 ~~~~~~~~~~~~~~~~
 
 * :doc:`AAA Documentation <project-indexes/aaa-index>`
-* :doc:`BGPCEP Documentation <project-indexes/bgpcep-index>`
+* :doc:`BGPCEP Documentation <bgpcep:index>`
 * :doc:`COE Documentation <coe:index>`
 * :doc:`Controller Documentation <project-indexes/controller-index>`
 * :doc:`DAEXIM Documentation <project-indexes/daexim-index>`
@@ -86,7 +86,6 @@ OpenDaylight Contributor Guides
    user-guide/index
    developer-guide/index
    project-indexes/aaa-index
-   project-indexes/bgpcep-index
    project-indexes/daexim-index
    project-indexes/lispflowmapping-index
    project-indexes/sxp-index

@@ -25,8 +25,6 @@ Project-specific User Guides
 
    alto-user-guide
    authentication-and-authorization-services
-   bgpcep-guide/bgp/index
-   bgpcep-guide/bmp/index
    bier-user-guide
    capwap-user-guide
    cardinal_-opendaylight-monitoring-as-a-service
@@ -54,7 +52,6 @@ Project-specific User Guides
    ovsdb-user-guide
    p4plugin-user-guide
    packetcable-user-guide
-   bgpcep-guide/pcep/index
    service-function-chaining
    snmp-plugin-user-guide
    snmp4sdn-user-guide
