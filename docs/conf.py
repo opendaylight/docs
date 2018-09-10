@@ -26,6 +26,7 @@ intersphinx_mapping['infrautils'] = ('https://docs.opendaylight.org/projects/inf
 intersphinx_mapping['netvirt'] = ('https://docs.opendaylight.org/projects/netvirt/en/latest/', None)
 intersphinx_mapping['openflowplugin'] = ('https://docs.opendaylight.org/projects/openflowplugin/en/latest/', None)
 intersphinx_mapping['ovsdb'] = ('https://docs.opendaylight.org/projects/ovsdb/en/latest/', None)
+intersphinx_mapping['sxp'] = ('https://docs.opendaylight.org/projects/sxp/en/latest/', None)
 
 # OpenDaylight Documentation Releases
 intersphinx_mapping['odl-oxygen'] = ('https://docs.opendaylight.org/en/stable-oxygen/', None)
