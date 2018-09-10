@@ -6,4 +6,3 @@ Project-Specific Installation Guides
    :maxdepth: 1
 
    opflex
-   tsdr
