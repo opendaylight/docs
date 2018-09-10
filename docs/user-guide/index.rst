@@ -31,7 +31,6 @@ Project-specific User Guides
    capwap-user-guide
    cardinal_-opendaylight-monitoring-as-a-service
    centinel-user-guide
-   daexim-user-guide
    didm-user-guide
    eman-user-guide
    fabric-as-a-service

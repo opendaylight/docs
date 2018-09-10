@@ -20,6 +20,7 @@ intersphinx_mapping['odl-releng-builder'] = ('https://docs.opendaylight.org/proj
 
 # Projects that have stable/branches
 intersphinx_mapping['coe'] = ('https://docs.opendaylight.org/projects/coe/en/stable-fluorine/', None)
+intersphinx_mapping['daexim'] = ('https://docs.opendaylight.org/projects/daexim/en/stable-fluorine/', None)
 intersphinx_mapping['genius'] = ('https://docs.opendaylight.org/projects/genius/en/stable-fluorine/', None)
 intersphinx_mapping['infrautils'] = ('https://docs.opendaylight.org/projects/infrautils/en/stable-fluorine/', None)
 intersphinx_mapping['mdsal'] = ('https://docs.opendaylight.org/projects/mdsal/en/stable-fluorine/', None)
