@@ -26,7 +26,7 @@ OpenDaylight Project Documentation
 Managed Projects
 ~~~~~~~~~~~~~~~~
 
-* :doc:`BGPCEP Documentation <project-indexes/bgpcep-index>`
+* :doc:`BGPCEP Documentation <bgpcep:index>`
 * :doc:`COE Documentation <coe:index>`
 * :doc:`DAEXIM Documentation <project-indexes/daexim-index>`
 * :doc:`Genius Documentation <genius:index>`
@@ -82,7 +82,18 @@ OpenDaylight Contributor Guides
    release-notes/sample-release-notes
    user-guide/index
    developer-guide/index
+<<<<<<< HEAD
    project-indexes/bgpcep-index
    project-indexes/daexim-index
    project-indexes/lispflowmapping-index
    project-indexes/sxp-index
+=======
+   project-indexes/aaa-index
+   project-indexes/daexim-index
+   project-indexes/lispflowmapping-index
+   project-indexes/sxp-index
+   project-indexes/transportpce-index
+   project-indexes/controller-index
+   project-indexes/sfc-index
+   project-indexes/tsdr-index
+>>>>>>> 544925593... Add intersphinx for BGPCEP and remove from docs
