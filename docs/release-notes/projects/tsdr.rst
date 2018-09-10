@@ -264,7 +264,7 @@ Bugs Fixed
   * TSDR-28 odl-openflow-statistics-collector doesn't collects openflow stats from multiple mininet
   * TSDR-31 Fix broken tsdr feature failing the new extended SingleFeatureTest incl. 
   * TSDR-37 Upgrade Guava because of Jersey 2.x dependency
-  * TSDR-42 Remove SNMP dependency for Flourine
+  * TSDR-42 Remove SNMP dependency for Fluorine
   * TSDR-47 Convert NBI to use new web registration API
   * TSDR-49 Provide support for new grafana and re-add dataquery feature
   * TSDR-52 Investigate FlowCapableNodeConnectorStatistics building
@@ -299,7 +299,7 @@ Standards
 Release Mechanics
 =================
 
-* `Link to Flourine release plan <https://jira.opendaylight.org/projects/TSC/issues/TSC-143?filter=allissues>`_
+* `Link to Fluorine release plan <https://jira.opendaylight.org/projects/TSC/issues/TSC-143?filter=allissues>`_
 
 * Describe any major shifts in release schedule from the release plan
 
