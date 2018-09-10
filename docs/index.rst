@@ -49,7 +49,7 @@ Self-Managed Projects
 
 * :doc:`SXP Documentation <project-indexes/sxp-index>`
 * :doc:`TransportPCE Documentation <project-indexes/transportpce-index>`
-* :doc:`TSDR Documentation <project-indexes/tsdr-index>`
+* :doc:`TSDR Documentation <tsdr:index>`
 
 
 OpenDaylight Contributor Guides
