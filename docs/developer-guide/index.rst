@@ -26,8 +26,6 @@ Project-specific Developer Guides
    :maxdepth: 1
 
    alto-developer-guide
-   bgp-developer-guide
-   bgp-monitoring-protocol-developer-guide
    bier-developer-guide
    capwap-developer-guide
    cardinal_-opendaylight-monitoring-as-a-service
@@ -58,7 +56,6 @@ Project-specific Developer Guides
    opflex-genie-developer-guide
    opflex-libopflex-developer-guide
    ovsdb-developer-guide
-   pcep-developer-guide
    packetcable-developer-guide
    p4plugin-developer-guide
    service-function-chaining
