@@ -28,8 +28,10 @@ intersphinx_mapping['mdsal'] = ('https://docs.opendaylight.org/projects/mdsal/en
 intersphinx_mapping['netvirt'] = ('https://docs.opendaylight.org/projects/netvirt/en/stable-fluorine/', None)
 intersphinx_mapping['openflowplugin'] = ('https://docs.opendaylight.org/projects/openflowplugin/en/stable-fluorine/', None)
 intersphinx_mapping['ovsdb'] = ('https://docs.opendaylight.org/projects/ovsdb/en/stable-fluorine/', None)
-intersphinx_mapping['tsdr'] = ('https://docs.opendaylight.org/projects/tsdr/en/stable-fluorine/', None)
 intersphinx_mapping['sxp'] = ('https://docs.opendaylight.org/projects/sxp/en/stable-fluorine/', None)
+intersphinx_mapping['transportpce'] = ('https://docs.opendaylight.org/projects/transportpce/en/stable-fluorine/', None)
+intersphinx_mapping['tsdr'] = ('https://docs.opendaylight.org/projects/tsdr/en/stable-fluorine/', None)
+
 
 # OpenDaylight Documentation Releases
 intersphinx_mapping['odl-fluorine'] = ('https://docs.opendaylight.org/en/stable-fluorine/', None)
