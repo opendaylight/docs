@@ -50,6 +50,10 @@ following from the Karaf CLI:
 
 ::
 
+    feature:repo-add mvn:org.opendaylight.snmp4sdn/features-snmp4sdn//xml/features
+
+::
+
     feature:install odl-snmp4sdn-all
 
 Troubleshooting
