@@ -24,7 +24,6 @@ Project-specific User Guides
    :maxdepth: 1
 
    alto-user-guide
-   authentication-and-authorization-services
    bgpcep-guide/bgp/index
    bgpcep-guide/bmp/index
    bier-user-guide
