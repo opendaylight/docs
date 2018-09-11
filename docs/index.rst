@@ -48,7 +48,7 @@ Self-Managed Projects
 ~~~~~~~~~~~~~~~~~~~~~
 
 * :doc:`SXP Documentation <sxp:index>`
-* :doc:`TransportPCE Documentation <project-indexes/transportpce-index>`
+* :doc:`TransportPCE Documentation <transportpce:index>`
 * :doc:`TSDR Documentation <tsdr:index>`
 
 
@@ -88,6 +88,13 @@ OpenDaylight Contributor Guides
    project-indexes/aaa-index
    project-indexes/daexim-index
    project-indexes/lispflowmapping-index
+<<<<<<< HEAD
    project-indexes/transportpce-index
    project-indexes/controller-index
    project-indexes/sfc-index
+=======
+   project-indexes/sxp-index
+   project-indexes/controller-index
+   project-indexes/sfc-index
+   project-indexes/tsdr-index
+>>>>>>> Add intersphinx for tpce and remove them from docs
