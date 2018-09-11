@@ -59,7 +59,6 @@ Project-specific User Guides
    snmp-plugin-user-guide
    snmp4sdn-user-guide
    sxp-user-guide
-   transportpce-user-guide
    tsdr-user-guide
    tsdr-elasticsearch-user-guide
    tsdr-hsqldb-user-guide
