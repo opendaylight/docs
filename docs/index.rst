@@ -26,7 +26,7 @@ OpenDaylight Project Documentation
 Managed Projects
 ~~~~~~~~~~~~~~~~
 
-* :doc:`AAA Documentation <project-indexes/aaa-index>`
+* :doc:`AAA Documentation <aaa:index>`
 * :doc:`BGPCEP Documentation <bgpcep:index>`
 * :doc:`COE Documentation <coe:index>`
 * :doc:`Controller Documentation <project-indexes/controller-index>`
@@ -85,7 +85,6 @@ OpenDaylight Contributor Guides
    release-notes/sample-release-notes
    user-guide/index
    developer-guide/index
-   project-indexes/aaa-index
    project-indexes/daexim-index
    project-indexes/lispflowmapping-index
    project-indexes/transportpce-index

@@ -26,7 +26,6 @@ Project-specific Developer Guides
    :maxdepth: 1
 
    alto-developer-guide
-   authentication-and-authorization-services
    bier-developer-guide
    capwap-developer-guide
    cardinal_-opendaylight-monitoring-as-a-service

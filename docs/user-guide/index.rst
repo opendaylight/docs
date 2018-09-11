@@ -24,7 +24,6 @@ Project-specific User Guides
    :maxdepth: 1
 
    alto-user-guide
-   authentication-and-authorization-services
    bier-user-guide
    capwap-user-guide
    cardinal_-opendaylight-monitoring-as-a-service
