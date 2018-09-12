@@ -4,7 +4,7 @@ COE (Container Orchestration Engine)
 
 COE(Container Orchestration Engine) project aims at developing a framework for
 integrating Container Orchestration Engine (like Kuberenetes) and OpenDaylight.
-OpenDayLight Flourine COE provides following modules --
+OpenDayLight Fluorine COE provides following modules --
 
 * **odlovs-cni plugin** A custom Kubernetes CNI Plugin developed for OpenDaylight.
 * **watcher** A Kubernetes API watcher module which can communicate Kubernetes events to OpenDaylight.

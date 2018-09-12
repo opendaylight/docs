@@ -134,7 +134,7 @@ Known Issues
 End-of-life
 ===========
 
-Version feature is removed in Flourine release.
+Version feature is removed in Fluorine release.
 
 Standards
 =========
