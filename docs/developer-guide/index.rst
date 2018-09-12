@@ -67,8 +67,6 @@ Project-specific Developer Guides
    snmp4sdn-developer-guide
    sxp-developer-guide
    topology-processing-framework-developer-guide
-   ttp-model-developer-guide
-   ttp-cli-tools-developer-guide
    uni-manager-plug-in-developer-guide
    unified-secure-channel
    virtual-tenant-network-(vtn)
