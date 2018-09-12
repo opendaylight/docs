@@ -46,7 +46,7 @@ Managed Projects
 Self-Managed Projects
 ~~~~~~~~~~~~~~~~~~~~~
 
-* :doc:`SXP Documentation <project-indexes/sxp-index>`
+* :doc:`SXP Documentation <sxp:index>`
 
 
 OpenDaylight Contributor Guides
@@ -84,4 +84,3 @@ OpenDaylight Contributor Guides
    developer-guide/index
    project-indexes/bgpcep-index
    project-indexes/lispflowmapping-index
-   project-indexes/sxp-index
