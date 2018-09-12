@@ -31,7 +31,7 @@ Managed Projects
 * :doc:`DAEXIM Documentation <daexim:index>`
 * :doc:`Genius Documentation <genius:index>`
 * :doc:`Infrautils Documentation <infrautils:index>`
-* :doc:`LISP Flow Mapping Documentation <project-indexes/lispflowmapping-index>`
+* :doc:`LISP Flow Mapping Documentation <lispflowmapping:index>`
 * :doc:`MD-SAL Documentation <mdsal:index>`
 * :doc:`NetVirt Documentation <netvirt:index>`
 * :doc:`OpenFlowPlugin Documentation <openflowplugin:index>`
@@ -82,4 +82,3 @@ OpenDaylight Contributor Guides
    release-notes/sample-release-notes
    user-guide/index
    developer-guide/index
-   project-indexes/lispflowmapping-index

@@ -26,6 +26,7 @@ intersphinx_mapping['coe'] = ('https://docs.opendaylight.org/projects/coe/en/lat
 intersphinx_mapping['daexim'] = ('https://docs.opendaylight.org/projects/daexim/en/latest/', None)
 intersphinx_mapping['genius'] = ('https://docs.opendaylight.org/projects/genius/en/latest/', None)
 intersphinx_mapping['infrautils'] = ('https://docs.opendaylight.org/projects/infrautils/en/latest/', None)
+intersphinx_mapping['lispflowmapping'] = ('https://docs.opendaylight.org/projects/lispflowmapping/en/latest/', None)
 intersphinx_mapping['netvirt'] = ('https://docs.opendaylight.org/projects/netvirt/en/latest/', None)
 intersphinx_mapping['openflowplugin'] = ('https://docs.opendaylight.org/projects/openflowplugin/en/latest/', None)
 intersphinx_mapping['ovsdb'] = ('https://docs.opendaylight.org/projects/ovsdb/en/latest/', None)
