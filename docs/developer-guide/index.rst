@@ -39,7 +39,6 @@ Project-specific Developer Guides
    jsonrpc
    l2switch-developer-guide
    lacp-developer-guide
-   ../user-guide/lisp-flow-mapping-user-guide
    nemo-developer-guide
    netconf-developer-guide
    network-intent-composition-(nic)-developer-guide
