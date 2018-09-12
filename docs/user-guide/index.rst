@@ -36,7 +36,6 @@ Project-specific User Guides
    distribution-version-user-guide
    eman-user-guide
    fabric-as-a-service
-   genius-user-guide
    group-based-policy-user-guide
    jsonrpc-user-guide
    l2switch-user-guide
