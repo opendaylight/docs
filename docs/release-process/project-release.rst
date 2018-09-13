@@ -54,3 +54,42 @@ Steps 4-7 as bash:
 
 Once complete the Git tag should be available in Gerrit and the Artifacts should
 appear in the Nexus opendaylight.release repo.
+
+The following shell script will do this for you:
+
+.. code:: bash
+
+    #!/bin/sh
+
+    set -e
+
+    if [ $# != 3 ]; then
+        echo Usage: $0 project version log-URL
+        echo fetches a project release\'s logs from log-URL and tags the git repository
+        exit 1
+    fi
+
+    PROJECT=$1
+    VERSION=$2
+    PATCH_DIR=/tmp/patches
+
+    mkdir -p $PATCH_DIR
+    cd $PATCH_DIR
+    rm -f ${PROJECT}.bundle taglist.log{,.gz}
+    wget ${3}/patches/{${PROJECT}.bundle,taglist.log.gz}
+    gunzip taglist.log.gz
+    cd -
+    git checkout $(awk '{print $NF}' "$PATCH_DIR/taglist.log")
+    git fetch "$PATCH_DIR/$PROJECT.bundle"
+    git merge --ff-only FETCH_HEAD
+    git tag -asm "$PROJECT $VERSION" "v$VERSION"
+    git push origin "v$VERSION"
+
+You need to run it from a clone git repository of your project,
+and give it as arguments the project’s short name, the newly-
+released version, and the URL of the release build’s logs; for
+example:
+
+.. code:: bash
+
+    sign-odl-release odlparent 4.0.0 https://logs.opendaylight.org/releng/vex-yul-odl-jenkins-1/odlparent-maven-release-master/11/
