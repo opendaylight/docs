@@ -348,7 +348,7 @@ Projects will need to create the following artifacts:
 
     .. code-block:: none
 
-       This is a request for a project to move from Self-Managed to Managed. It
+       This is a request for a project to move from Managed to Self-Managed. It
        should be submitted no later than the start of the release. The request
        does not require any additional information, but it may be helpful for
        the requesting project to provide some background and their reasoning.
