@@ -64,7 +64,6 @@ Project-specific Developer Guides
    p4plugin-developer-guide
    service-function-chaining
    snmp4sdn-developer-guide
-   sxp-developer-guide
    topology-processing-framework-developer-guide
    transportpce-developer-guide
    ttp-model-developer-guide

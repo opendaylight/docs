@@ -57,7 +57,6 @@ Project-specific User Guides
    service-function-chaining
    snmp-plugin-user-guide
    snmp4sdn-user-guide
-   sxp-user-guide
    transportpce-user-guide
    ttp-cli-tools-user-guide
    uni-manager-plug-in-project
