@@ -35,12 +35,12 @@ Managed Projects
 * :doc:`Infrautils Documentation <infrautils:index>`
 * :doc:`LISP Flow Mapping Documentation <project-indexes/lispflowmapping-index>`
 * :doc:`MD-SAL Documentation <mdsal:index>`
+* :doc:`Netconf Documentation <project-indexes/netconf-index>`
 * :doc:`NetVirt Documentation <netvirt:index>`
 * :doc:`OpenFlowPlugin Documentation <openflowplugin:index>`
 * :doc:`OVSDB Documentation <ovsdb:index>`
 * :doc:`Service Function Chaining Documentation <project-indexes/sfc-index>`
 
-.. :doc:`NETCONF Documentation <netconf:index>`
 .. :doc:`Neutron Documentation <neutron:index>`
 
 
@@ -87,8 +87,9 @@ OpenDaylight Contributor Guides
    developer-guide/index
    project-indexes/aaa-index
    project-indexes/bgpcep-index
+   project-indexes/controller-index
    project-indexes/daexim-index
    project-indexes/lispflowmapping-index
-   project-indexes/transportpce-index
-   project-indexes/controller-index
+   project-indexes/netconf-index
    project-indexes/sfc-index
+   project-indexes/transportpce-index
