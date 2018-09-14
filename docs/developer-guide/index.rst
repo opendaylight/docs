@@ -39,7 +39,6 @@ Project-specific Developer Guides
    l2switch-developer-guide
    lacp-developer-guide
    nemo-developer-guide
-   netconf-developer-guide
    network-intent-composition-(nic)-developer-guide
    netide-developer-guide
    neutron-service-developer-guide

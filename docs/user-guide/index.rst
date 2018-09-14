@@ -37,7 +37,6 @@ Project-specific User Guides
    l2switch-user-guide
    link-aggregation-control-protocol-user-guide
    nemo-user-guide
-   netconf-user-guide
    netide-user-guide
    neutron-service-user-guide
    network-intent-composition-(nic)-user-guide

@@ -26,6 +26,7 @@ OpenDaylight Project Documentation
 Managed Projects
 ~~~~~~~~~~~~~~~~
 
+* :doc:`AAA Documentation <aaa:index>`
 * :doc:`BGPCEP Documentation <bgpcep:index>`
 * :doc:`COE Documentation <coe:index>`
 * :doc:`Controller Documentation <controller:index>`
@@ -34,12 +35,11 @@ Managed Projects
 * :doc:`Infrautils Documentation <infrautils:index>`
 * :doc:`LISP Flow Mapping Documentation <lispflowmapping:index>`
 * :doc:`MD-SAL Documentation <mdsal:index>`
+* :doc:`NetConf Documentation <netconf:index>`
 * :doc:`NetVirt Documentation <netvirt:index>`
 * :doc:`OpenFlowPlugin Documentation <openflowplugin:index>`
 * :doc:`OVSDB Documentation <ovsdb:index>`
 
-.. :doc:`AAA Documentation <aaa:index>`
-.. :doc:`NETCONF Documentation <netconf:index>`
 .. :doc:`Neutron Documentation <neutron:index>`
 
 
