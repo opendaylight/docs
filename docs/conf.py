@@ -22,6 +22,7 @@ intersphinx_mapping['odl-releng-builder'] = ('https://docs.opendaylight.org/proj
 intersphinx_mapping['aaa'] = ('https://docs.opendaylight.org/projects/aaa/en/stable-fluorine/', None)
 intersphinx_mapping['bgpcep'] = ('https://docs.opendaylight.org/projects/bgpcep/en/stable-fluorine/', None)
 intersphinx_mapping['coe'] = ('https://docs.opendaylight.org/projects/coe/en/stable-fluorine/', None)
+intersphinx_mapping['controller'] = ('https://docs.opendaylight.org/projects/controller/en/stable-fluorine/', None)
 intersphinx_mapping['daexim'] = ('https://docs.opendaylight.org/projects/daexim/en/stable-fluorine/', None)
 intersphinx_mapping['genius'] = ('https://docs.opendaylight.org/projects/genius/en/stable-fluorine/', None)
 intersphinx_mapping['infrautils'] = ('https://docs.opendaylight.org/projects/infrautils/en/stable-fluorine/', None)
@@ -33,7 +34,6 @@ intersphinx_mapping['ovsdb'] = ('https://docs.opendaylight.org/projects/ovsdb/en
 intersphinx_mapping['sxp'] = ('https://docs.opendaylight.org/projects/sxp/en/stable-fluorine/', None)
 intersphinx_mapping['transportpce'] = ('https://docs.opendaylight.org/projects/transportpce/en/stable-fluorine/', None)
 intersphinx_mapping['tsdr'] = ('https://docs.opendaylight.org/projects/tsdr/en/stable-fluorine/', None)
-
 
 # OpenDaylight Documentation Releases
 intersphinx_mapping['odl-fluorine'] = ('https://docs.opendaylight.org/en/stable-fluorine/', None)
