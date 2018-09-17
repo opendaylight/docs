@@ -23,6 +23,7 @@ intersphinx_mapping['odl-releng-builder'] = ('https://docs.opendaylight.org/proj
 intersphinx_mapping['aaa'] = ('https://docs.opendaylight.org/projects/aaa/en/latest/', None)
 intersphinx_mapping['bgpcep'] = ('https://docs.opendaylight.org/projects/bgpcep/en/latest/', None)
 intersphinx_mapping['coe'] = ('https://docs.opendaylight.org/projects/coe/en/latest/', None)
+intersphinx_mapping['controller'] = ('https://docs.opendaylight.org/projects/controller/en/latest/', None)
 intersphinx_mapping['daexim'] = ('https://docs.opendaylight.org/projects/daexim/en/latest/', None)
 intersphinx_mapping['genius'] = ('https://docs.opendaylight.org/projects/genius/en/latest/', None)
 intersphinx_mapping['infrautils'] = ('https://docs.opendaylight.org/projects/infrautils/en/latest/', None)
