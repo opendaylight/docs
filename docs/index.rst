@@ -38,7 +38,7 @@ Managed Projects
 * :doc:`NetVirt Documentation <netvirt:index>`
 * :doc:`OpenFlowPlugin Documentation <openflowplugin:index>`
 * :doc:`OVSDB Documentation <ovsdb:index>`
-* :doc:`Service Function Chaining Documentation <project-indexes/sfc-index>`
+* :doc:`Service Function Chaining Documentation <sfc:index>`
 
 .. :doc:`NETCONF Documentation <netconf:index>`
 .. :doc:`Neutron Documentation <neutron:index>`
@@ -86,4 +86,3 @@ OpenDaylight Contributor Guides
    user-guide/index
    developer-guide/index
    project-indexes/controller-index
-   project-indexes/sfc-index
