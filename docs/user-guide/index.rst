@@ -54,4 +54,3 @@ Project-specific User Guides
    snmp4sdn-user-guide
    uni-manager-plug-in-project
    unified-secure-channel
-   virtual-tenant-network-(vtn)
