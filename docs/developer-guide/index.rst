@@ -30,7 +30,6 @@ Project-specific Developer Guides
    capwap-developer-guide
    cardinal_-opendaylight-monitoring-as-a-service
    controller
-   daexim-developer-guide
    didm-developer-guide
    distribution-test-features
    eman-developer-guide
