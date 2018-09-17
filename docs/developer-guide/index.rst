@@ -29,7 +29,6 @@ Project-specific Developer Guides
    bier-developer-guide
    capwap-developer-guide
    cardinal_-opendaylight-monitoring-as-a-service
-   controller
    didm-developer-guide
    distribution-test-features
    eman-developer-guide
