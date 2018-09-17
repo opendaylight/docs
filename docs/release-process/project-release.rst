@@ -9,7 +9,7 @@ Preparing your project for release
 ==================================
 
 A project can produce a staging repository by clicking "build" for their
-{project-name}-maven-release-{stream} job. This job performs the following
+{project-name}-maven-stage-{stream} job. This job performs the following
 duties:
 
 1. Removes -SNAPSHOT from all pom files
