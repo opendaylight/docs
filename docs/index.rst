@@ -35,12 +35,12 @@ Managed Projects
 * :doc:`Infrautils Documentation <infrautils:index>`
 * :doc:`LISP Flow Mapping Documentation <lispflowmapping:index>`
 * :doc:`MD-SAL Documentation <mdsal:index>`
+* :doc:`NetConf Documentation <netconf:index>`
 * :doc:`NetVirt Documentation <netvirt:index>`
 * :doc:`OpenFlowPlugin Documentation <openflowplugin:index>`
 * :doc:`OVSDB Documentation <ovsdb:index>`
 * :doc:`Service Function Chaining Documentation <sfc:index>`
 
-.. :doc:`NETCONF Documentation <netconf:index>`
 .. :doc:`Neutron Documentation <neutron:index>`
 
 

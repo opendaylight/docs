@@ -28,6 +28,7 @@ intersphinx_mapping['genius'] = ('https://docs.opendaylight.org/projects/genius/
 intersphinx_mapping['infrautils'] = ('https://docs.opendaylight.org/projects/infrautils/en/stable-fluorine/', None)
 intersphinx_mapping['lispflowmapping'] = ('https://docs.opendaylight.org/projects/lispflowmapping/en/stable-fluorine/', None)
 intersphinx_mapping['mdsal'] = ('https://docs.opendaylight.org/projects/mdsal/en/stable-fluorine/', None)
+intersphinx_mapping['netconf'] = ('https://docs.opendaylight.org/projects/netconf/en/stable-fluorine/', None)
 intersphinx_mapping['netvirt'] = ('https://docs.opendaylight.org/projects/netvirt/en/stable-fluorine/', None)
 intersphinx_mapping['openflowplugin'] = ('https://docs.opendaylight.org/projects/openflowplugin/en/stable-fluorine/', None)
 intersphinx_mapping['ovsdb'] = ('https://docs.opendaylight.org/projects/ovsdb/en/stable-fluorine/', None)
