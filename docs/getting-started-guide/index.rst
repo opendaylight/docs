@@ -10,7 +10,6 @@ Getting Started Guide
    introduction
    concepts_and_tools
    installing_opendaylight
-   project-specific-guides/index
    clustering
    persistence_and_backup
    security_considerations
