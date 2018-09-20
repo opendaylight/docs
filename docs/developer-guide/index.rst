@@ -60,5 +60,4 @@ Project-specific Developer Guides
    topology-processing-framework-developer-guide
    uni-manager-plug-in-developer-guide
    unified-secure-channel
-   virtual-tenant-network-(vtn)
    yang-tools
