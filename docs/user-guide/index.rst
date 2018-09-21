@@ -23,33 +23,15 @@ Project-specific User Guides
 .. toctree::
    :maxdepth: 1
 
-   alto-user-guide
-   bier-user-guide
-   capwap-user-guide
-   cardinal_-opendaylight-monitoring-as-a-service
-   centinel-user-guide
-   didm-user-guide
    distribution-version-user-guide
-   eman-user-guide
-   fabric-as-a-service
-   group-based-policy-user-guide
    jsonrpc-user-guide
-   l2switch-user-guide
-   link-aggregation-control-protocol-user-guide
    nemo-user-guide
-   netide-user-guide
    neutron-service-user-guide
-   network-intent-composition-(nic)-user-guide
-   ocp-plugin-user-guide
-   odl-sdni-user-guide
-   of-config-user-guide
    openflow-plugin-project-user-guide
    opflex-agent-ovs-user-guide
    ovsdb-user-guide
    p4plugin-user-guide
-   packetcable-user-guide
    service-function-chaining
-   snmp-plugin-user-guide
    snmp4sdn-user-guide
    uni-manager-plug-in-project
    unified-secure-channel
