@@ -52,6 +52,9 @@ Project-specific Release Notes
    :maxdepth: 1
 
    projects/*
+   `odlparent`_
+
+.. _odlparent: https://git.opendaylight.org/gerrit/gitweb?p=odlparent;a=blob;f=NEWS.rst
 
 .. Service Release Notes
 .. =====================
