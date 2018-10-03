@@ -47,6 +47,7 @@ Self-Managed Projects
 ~~~~~~~~~~~~~~~~~~~~~
 
 * :doc:`SXP Documentation <sxp:index>`
+* :doc:`UniMgr Documentation <unimgr:index>`
 
 
 OpenDaylight Contributor Guides

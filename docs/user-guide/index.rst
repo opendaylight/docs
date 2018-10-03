@@ -51,5 +51,4 @@ Project-specific User Guides
    service-function-chaining
    snmp-plugin-user-guide
    snmp4sdn-user-guide
-   uni-manager-plug-in-project
    unified-secure-channel

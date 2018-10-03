@@ -58,6 +58,5 @@ Project-specific Developer Guides
    service-function-chaining
    snmp4sdn-developer-guide
    topology-processing-framework-developer-guide
-   uni-manager-plug-in-developer-guide
    unified-secure-channel
    yang-tools
