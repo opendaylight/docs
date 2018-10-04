@@ -19,8 +19,6 @@ Fluorine
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.9.0/opendaylight-0.9.0.zip>`_
     * `OpenDaylight Flourine RPM
       <http://cbs.centos.org/repos/nfv7-opendaylight-9-release/x86_64/os/Packages/opendaylight-9.0.0-1.el7.noarch.rpm>`_
-    * `OpFlex
-      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/opflex/>`_
 
 Oxygen-SR3
 ----------
@@ -54,3 +52,4 @@ Archived Releases
 * `OpenDaylight (Carbon and earlier) <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/distribution-karaf/>`_
 * `NeXt UI <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/next/next/>`_
 * `VTN Coordinator <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/vtn/distribution.vtn-coordinator/>`_
+* `OpFlex <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/opflex/>`_
