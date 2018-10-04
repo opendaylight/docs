@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "507e31aa_f2882b63",
+        "filename": "docs/release-process/branch-cutting.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2018-10-04T17:54:33Z",
+      "side": 1,
+      "message": "so reviving this line (which is all that\u0027s left) before this\nis probably good to merge.\n\nThanh, you wanted to make this \"git rm -rf docs/release-notes/*\" and I was suggesting to not use that wildcard\nin the corner case chance there is actually some file or\nfolder in release-notes/ that we don\u0027t want to dump.\n\nyou make the decision, I\u0027ll update the patch accordingly and you can merge it.",
+      "range": {
+        "startLine": 191,
+        "startChar": 6,
+        "endLine": 191,
+        "endChar": 64
+      },
+      "revId": "fa0ab7584a5830f35f079934a9584e467b7a8433",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
