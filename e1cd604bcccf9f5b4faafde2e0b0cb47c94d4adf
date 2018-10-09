@@ -22,6 +22,23 @@
       "revId": "e1cd604bcccf9f5b4faafde2e0b0cb47c94d4adf",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d8c0d224_7b7c9b85",
+        "filename": "docs/release-notes/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2018-10-09T14:26:28Z",
+      "side": 1,
+      "message": "https://github.com/opendaylight/odlparent/blob/master/NEWS.rst has much nicer RST rendering... but I guess you probably do not want to link to github.com?  Would it be stupid to have both?  Just a thought, not -1; I\u0027m also happy for this to go in like htis.",
+      "revId": "e1cd604bcccf9f5b4faafde2e0b0cb47c94d4adf",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
