@@ -50,6 +50,7 @@ Self-Managed Projects
 * :doc:`SXP Documentation <sxp:index>`
 * :doc:`TransportPCE Documentation <transportpce:index>`
 * :doc:`TSDR Documentation <tsdr:index>`
+* :doc:`UniMgr Documentation <unimgr:index>`
 
 
 OpenDaylight Contributor Guides

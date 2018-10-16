@@ -59,7 +59,6 @@ Project-specific Developer Guides
    topology-processing-framework-developer-guide
    ttp-model-developer-guide
    ttp-cli-tools-developer-guide
-   uni-manager-plug-in-developer-guide
    unified-secure-channel
    virtual-tenant-network-(vtn)
    yang-tools
