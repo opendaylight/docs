@@ -1,3 +1,5 @@
+.. _managed-release:
+
 ***************
 Managed Release
 ***************
@@ -48,6 +50,8 @@ be able to focus on orchestrating a quality release for a smaller set of more
 stable, more responsive projects. The release team will also have greater
 latitude to step in and help projects that are required for dependency reasons
 but may not have a large set of active contributors.
+
+.. _managed-projects:
 
 Managed Projects
 ================
