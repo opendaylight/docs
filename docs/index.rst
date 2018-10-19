@@ -79,7 +79,6 @@ OpenDaylight Contributor Guides
    documentation
    release-process/index
    javadoc
-   opendaylight-with-openstack/index
    release-notes/sample-release-notes
    user-guide/index
    developer-guide/index
