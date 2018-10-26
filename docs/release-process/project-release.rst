@@ -8,9 +8,13 @@ OpenDaylight simultanious release.
 Preparing your project for release
 ==================================
 
-A project can produce a staging repository by clicking "build" for their
-{project-name}-maven-release-{stream} job. This job performs the following
-duties:
+A project can produce a staging repository by using one of the following
+methods against the {project-name}-maven-stage-{stream} job:
+
+* Leave a comment ``stage-release`` against any patch for the stream to build
+* Click ``Build with Parameters`` in Jenkins Web UI for the job
+
+This job performs the following duties:
 
 1. Removes -SNAPSHOT from all pom files
 2. Produces a taglist.log, project.patch, and project.bundle files
