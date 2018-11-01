@@ -43,7 +43,6 @@ Project-specific User Guides
    odl-sdni-user-guide
    of-config-user-guide
    openflow-plugin-project-user-guide
-   opflex-agent-ovs-user-guide
    ovsdb-user-guide
    p4plugin-user-guide
    packetcable-user-guide

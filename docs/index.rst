@@ -47,6 +47,7 @@ Managed Projects
 Self-Managed Projects
 ~~~~~~~~~~~~~~~~~~~~~
 
+* :doc:`OpFlex Documentation <opflex:index>`
 * :doc:`SXP Documentation <sxp:index>`
 * :doc:`TransportPCE Documentation <transportpce:index>`
 * :doc:`TSDR Documentation <tsdr:index>`

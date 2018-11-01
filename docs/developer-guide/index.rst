@@ -48,9 +48,6 @@ Project-specific Developer Guides
    of-config-developer-guide
    openflow-protocol-library-developer-guide
    openflow-plugin-project-developer-guide
-   opflex-agent-ovs-developer-guide
-   opflex-genie-developer-guide
-   opflex-libopflex-developer-guide
    ovsdb-developer-guide
    packetcable-developer-guide
    p4plugin-developer-guide
