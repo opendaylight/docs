@@ -34,9 +34,6 @@ Project-specific Developer Guides
    odl-parent-developer-guide
    openflow-protocol-library-developer-guide
    openflow-plugin-project-developer-guide
-   opflex-agent-ovs-developer-guide
-   opflex-genie-developer-guide
-   opflex-libopflex-developer-guide
    ovsdb-developer-guide
    p4plugin-developer-guide
    service-function-chaining

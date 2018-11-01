@@ -46,6 +46,7 @@ Managed Projects
 Self-Managed Projects
 ~~~~~~~~~~~~~~~~~~~~~
 
+* :doc:`OpFlex Documentation <opflex:index>`
 * :doc:`SXP Documentation <sxp:index>`
 * :doc:`UniMgr Documentation <unimgr:index>`
 

@@ -28,7 +28,6 @@ Project-specific User Guides
    nemo-user-guide
    neutron-service-user-guide
    openflow-plugin-project-user-guide
-   opflex-agent-ovs-user-guide
    ovsdb-user-guide
    p4plugin-user-guide
    service-function-chaining
