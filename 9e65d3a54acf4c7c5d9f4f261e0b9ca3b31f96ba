@@ -102,6 +102,29 @@
       "revId": "9e65d3a54acf4c7c5d9f4f261e0b9ca3b31f96ba",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "873d3b50_3f2ae5a7",
+        "filename": "docs/release-process/super-committers.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 2567
+      },
+      "writtenOn": "2018-11-15T18:37:55Z",
+      "side": 1,
+      "message": "Just curious if folks would kindly entertain the possibility of having the supercommitter list be “time bound”.  For example, the list must be reviewed at the beginning of every release and the list must be updated if certain folks no longer actively attend kernel call, tsc meetings, etc.",
+      "range": {
+        "startLine": 73,
+        "startChar": 0,
+        "endLine": 73,
+        "endChar": 16
+      },
+      "revId": "9e65d3a54acf4c7c5d9f4f261e0b9ca3b31f96ba",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
