@@ -18,8 +18,8 @@ Fluorine-SR1
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.9.1/opendaylight-0.9.1.tar.gz>`_
     * `OpenDaylight Fluorine SR1 Zip
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.9.1/opendaylight-0.9.1.zip>`_
-    * `OpenDaylight Fluorine RPM
-      <http://cbs.centos.org/repos/nfv7-opendaylight-9-release/x86_64/os/Packages/opendaylight-9.0.1-2.el7.noarch.rpm>`_
+    * `OpenDaylight Fluorine SR1 RPM
+      <http://cbs.centos.org/repos/nfv7-opendaylight-91-release/x86_64/os/Packages/opendaylight-9.1.0-1.el7.noarch.rpm>`_
 
 Oxygen-SR3
 ----------
