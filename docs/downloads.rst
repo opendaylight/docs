@@ -15,9 +15,9 @@ Fluorine-SR1
 
 :Downloads:
     * `OpenDaylight Fluorine SR1 Tar
-      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.9.1/opendaylight-0.9.1.tar.gz>`_
+      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/karaf/0.9.1/karaf-0.9.1.tar.gz>`_
     * `OpenDaylight Fluorine SR1 Zip
-      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.9.1/opendaylight-0.9.1.zip>`_
+      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/karaf/0.9.1/karaf-0.9.1.zip>`_
     * `OpenDaylight Fluorine SR1 RPM
       <http://cbs.centos.org/repos/nfv7-opendaylight-91-release/x86_64/os/Packages/opendaylight-9.1.0-1.el7.noarch.rpm>`_
 
