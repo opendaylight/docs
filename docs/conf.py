@@ -14,7 +14,6 @@ from docs_conf.conf import *
 
 # Append to intersphinx_mapping
 intersphinx_mapping['odl-integration-test'] = ('https://docs.opendaylight.org/projects/integration-test/en/latest/', None)
-intersphinx_mapping['odl-integration-distribution'] = ('https://docs.opendaylight.org/projects/integration-distribution/en/latest/', None)
 intersphinx_mapping['odl-integration-packaging'] = ('https://docs.opendaylight.org/projects/integration-packaging/en/latest/', None)
 intersphinx_mapping['odl-releng-builder'] = ('https://docs.opendaylight.org/projects/releng-builder/en/latest/', None)
 intersphinx_mapping['opflex'] = ('https://docs.opendaylight.org/projects/opflex/en/latest/', None)
@@ -31,6 +30,7 @@ intersphinx_mapping['lispflowmapping'] = ('https://docs.opendaylight.org/project
 intersphinx_mapping['mdsal'] = ('https://docs.opendaylight.org/projects/mdsal/en/stable-fluorine/', None)
 intersphinx_mapping['netconf'] = ('https://docs.opendaylight.org/projects/netconf/en/stable-fluorine/', None)
 intersphinx_mapping['netvirt'] = ('https://docs.opendaylight.org/projects/netvirt/en/stable-fluorine/', None)
+intersphinx_mapping['integration-distribution'] = ('https://docs.opendaylight.org/projects/integration-distribution/en/stable-fluorine/', None)
 intersphinx_mapping['openflowplugin'] = ('https://docs.opendaylight.org/projects/openflowplugin/en/stable-fluorine/', None)
 intersphinx_mapping['ovsdb'] = ('https://docs.opendaylight.org/projects/ovsdb/en/stable-fluorine/', None)
 intersphinx_mapping['sfc'] = ('https://docs.opendaylight.org/projects/sfc/en/stable-fluorine/', None)
