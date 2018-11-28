@@ -604,10 +604,6 @@ Self-Managed projects having an stable branch with latest upstream SNAPSHOT (see
 previous requirements) can use the release job in :doc:`project-release` to release
 their artifacts.
 
-.. note:: The release job can be triggered from any project patch in the intended
-          release (fluorine, neon, etc) by just leaving a comment containing "build
-          release".
-
 After creating the release, Self-Managed projects should bump the stable branch
 version to X.Y.Z+1-SNAPSHOT, this way any new merge in the stable branch will not
 interfere with pre-release artifacts.
