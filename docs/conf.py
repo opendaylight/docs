@@ -15,7 +15,6 @@ from docs_conf.conf import *
 # Append to intersphinx_mapping
 intersphinx_mapping['mdsal'] = ('https://docs.opendaylight.org/projects/mdsal/en/latest/', None)
 intersphinx_mapping['odl-integration-test'] = ('https://docs.opendaylight.org/projects/integration-test/en/latest/', None)
-intersphinx_mapping['odl-integration-distribution'] = ('https://docs.opendaylight.org/projects/integration-distribution/en/latest/', None)
 intersphinx_mapping['odl-integration-packaging'] = ('https://docs.opendaylight.org/projects/integration-packaging/en/latest/', None)
 intersphinx_mapping['odl-releng-builder'] = ('https://docs.opendaylight.org/projects/releng-builder/en/latest/', None)
 intersphinx_mapping['opflex'] = ('https://docs.opendaylight.org/projects/opflex/en/latest/', None)
@@ -28,6 +27,7 @@ intersphinx_mapping['controller'] = ('https://docs.opendaylight.org/projects/con
 intersphinx_mapping['daexim'] = ('https://docs.opendaylight.org/projects/daexim/en/latest/', None)
 intersphinx_mapping['genius'] = ('https://docs.opendaylight.org/projects/genius/en/latest/', None)
 intersphinx_mapping['infrautils'] = ('https://docs.opendaylight.org/projects/infrautils/en/latest/', None)
+intersphinx_mapping['integration-distribution'] = ('https://docs.opendaylight.org/projects/integration-distribution/en/latest/', None)
 intersphinx_mapping['lispflowmapping'] = ('https://docs.opendaylight.org/projects/lispflowmapping/en/latest/', None)
 intersphinx_mapping['netconf'] = ('https://docs.opendaylight.org/projects/netconf/en/latest/', None)
 intersphinx_mapping['netvirt'] = ('https://docs.opendaylight.org/projects/netvirt/en/latest/', None)
