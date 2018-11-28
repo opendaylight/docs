@@ -56,7 +56,7 @@ Documentation
 
 * **Developer Guide**
 
-  * :doc:`Distribution Guide <odl-integration-distribution:index>`
+  * :doc:`Distribution Guide <integration-distribution:index>`
 
 Security Considerations
 =======================
