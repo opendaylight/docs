@@ -384,7 +384,7 @@ Using a browser REST client
 
 | For example, use the following information in the Firefox plugin
   *RESTClient*
-  [`https://github.com/chao/RESTClient} <https://github.com/chao/RESTClient}>`__
+  `https://github.com/chao/RESTClient <https://github.com/chao/RESTClient>`_
 
 ::
 
