@@ -91,6 +91,6 @@ Steps to setup up animal sniffer plugin with your project
 
     mvn animal-sniffer:check
 
-.. _odlparent gerrit patch: https://git.opendaylight.org/gerrit/#/c/64688/
+.. _odlparent gerrit patch: https://git.opendaylight.org/gerrit/64688/
 .. _yangtools gerrit patch: https://git.opendaylight.org/gerrit/64781
 .. _Animal Sniffer plugin: http://www.mojohaus.org/animal-sniffer/animal-sniffer-maven-plugin/examples/checking-signatures.html

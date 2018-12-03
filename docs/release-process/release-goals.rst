@@ -171,4 +171,4 @@ ideally two, days of DDF for each OpenDaylight six-month release cycle. It has
 worked well to host these events in conjunction with other large, relevant
 events like ONS.
 
-.. _Managed Release Process: https://git.opendaylight.org/gerrit/#/c/68382/
+.. _Managed Release Process: https://git.opendaylight.org/gerrit/68382/
