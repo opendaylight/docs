@@ -126,7 +126,7 @@ The model definition can be found at
 
 How to populate this for pseudo agent port binding is documented at
 
--  http://git.openstack.org/cgit/openstack/networking-odl/tree/doc/source/devref/hostconfig.rst
+-  https://git.openstack.org/cgit/openstack/networking-odl/tree/doc/source/devref/hostconfig.rst?id=7fd1258f6e161c035da41c8e95361648a0fb0d7c
 
 Neutron extension config
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -160,4 +160,3 @@ The OpenStack Neutron API references
 -  http://developer.openstack.org/api-ref-networking-v2.html
 
 -  http://developer.openstack.org/api-ref-networking-v2-ext.html
-
