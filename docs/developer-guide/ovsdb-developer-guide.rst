@@ -239,7 +239,7 @@ ODL are needed for supporting additional schemas.
    http://openvswitch.org/ovs-vswitchd.conf.db.5.pdf
 
 -  hardwarevtep: Schema wrapper that represents
-   http://openvswitch.org/docs/vtep.5.pdf
+   http://www.openvswitch.org/support/dist-docs/vtep.5.pdf
 
 OVSDB Library Developer Guide
 -----------------------------
