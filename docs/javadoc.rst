@@ -22,4 +22,3 @@ Managed Projects
 * `openflowplugin <https://javadocs.opendaylight.org/openflowplugin/fluorine>`_
 * `ovsdb <https://javadocs.opendaylight.org/ovsdb/fluorine>`_
 * `p4plugin <https://javadocs.opendaylight.org/p4plugin/fluorine>`_
-* `sfc <https://javadocs.opendaylight.org/sfc/fluorine>`_
