@@ -167,16 +167,16 @@ configuration options may be applied to the OpenDaylight Karaf distribution.
           implementing security for the Karaf container.
 
 * For role-based JMX administration, refer to
-  http://karaf.apache.org/manual/latest/users-guide/monitoring.html.
+  https://karaf.apache.org/manual/latest/#_monitoring
 
 * For remote SSH access configuration, refer to
-  http://karaf.apache.org/manual/latest/users-guide/remote.html.
+  https://karaf.apache.org/manual/latest/#_remote
 
 * For WebConsole access, refer to
-  http://karaf.apache.org/manual/latest/users-guide/webconsole.html.
+  https://karaf.apache.org/manual/latest/#_webconsole
 
 * For Karaf security features, refer to
-  http://karaf.apache.org/manual/latest/developers-guide/security-framework.html.
+  https://karaf.apache.org/manual/latest/#_security_framework
 
 Disabling the remote shutdown port
 ----------------------------------
