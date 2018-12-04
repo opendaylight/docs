@@ -467,8 +467,8 @@ The output helps identifying shard state (leader/follower, voting/non-voting),
 peers, follower details if the shard is a leader, and other
 statistics/counters.
 
-The Integration team is maintaining a Python based `tool
-<https://github.com/opendaylight/integration-test/tree/master/tools/clustering/cluster-monitor>`_,
+The ODLTools team is maintaining a Python based `tool
+<https://github.com/opendaylight/odltools>`_,
 that takes advantage of the above MBeans exposed via Jolokia.
 
 .. _cluster_admin_api:
