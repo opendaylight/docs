@@ -50,7 +50,8 @@ models are available via RESTCONF.
 -  Name: view-channel
 
 -  URL:
-   `http://${ipaddress}:8181/restconf/operations/usc-channel:view-channel <http://${ipaddress}:8181/restconf/operations/usc-channel:view-channel>`__
+   `http://localhost:8181/restconf/operations/usc-channel:view-channel
+   <http://localhost:8181/restconf/operations/usc-channel:view-channel>`_
 
 -  Description: Views the current state of the USC environment.
 
@@ -58,7 +59,6 @@ API Reference Documentation
 ---------------------------
 
 Go to
-`http://${ipaddress}:8181/apidoc/explorer/index.html <http://${ipaddress}:8181/apidoc/explorer/index.html>`__,
+`http://localhost:8181/apidoc/explorer/index.html <http://localhost:8181/apidoc/explorer/index.html>`_,
 sign in, and expand the usc-channel panel. From there, users can execute
 various API calls to test their USC deployment.
-
