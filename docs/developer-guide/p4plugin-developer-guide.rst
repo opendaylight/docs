@@ -167,7 +167,7 @@ API Description
 
       -  Set the election ID. For more information about the election IDs and
          and their meaning, refer to the following URL:
-         https://github.com/p4lang/PI/blob/master/proto/docs/arbitration.md
+         https://github.com/p4lang/PI/blob/dc2f4c6cce86e310055677c8b18831fd8f6d1f2c/proto/docs/arbitration.md
 
          When a new election ID is set, it sends master arbitration update
          messages to all devices it connected.

@@ -686,10 +686,10 @@ OVSDB Model
 
 The OVSDB Southbound MD-SAL operates using a YANG model which is based
 on the abstract topology node model found in the `network topology
-model <https://github.com/opendaylight/yangtools/blob/stable/boron/model/ietf/ietf-topology/src/main/yang/network-topology%402013-10-21.yang>`__.
+model <https://github.com/opendaylight/yangtools/blob/7ec507df717ecde4c716c6811b71f322f8409626/model/ietf/ietf-topology/src/main/yang/network-topology%402013-10-21.yang>`_.
 
 The augmentations for the OVSDB Southbound MD-SAL are defined in the
-`ovsdb.yang <https://github.com/opendaylight/ovsdb/blob/stable/boron/southbound/southbound-api/src/main/yang/ovsdb.yang>`__
+`ovsdb.yang <https://github.com/opendaylight/ovsdb/blob/stable/boron/southbound/southbound-api/src/main/yang/ovsdb.yang>`_
 file.
 
 There are three augmentations:
