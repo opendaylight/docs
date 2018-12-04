@@ -304,7 +304,7 @@ Referencing Sections
 This section provides a quick primer for creating references
 in OpenDaylight documentation. For more information, refer to
 `Cross-referencing documents
-<http://www.sphinx-doc.org/en/stable/markup/inline.html#ref-role>`_.
+<https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html>`_.
 
 Within a single document, you can reference another section simply by::
 
