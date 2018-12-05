@@ -8,31 +8,18 @@ Supported Releases
 Fluorine-SR1
 ------------
 
-(Incoming Current Release)
+(Current Release)
 
+:Original Release Date: August 30, 2018
 :Service Release Date: November 20, 2018
 
 :Downloads:
-    * `OpenDaylight Fluorine SR1 Tar (Managed Projects)
-      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/karaf/0.9.1/karaf-0.9.1.tar.gz>`_
-    * `OpenDaylight Fluorine SR1 Zip (Managed Projects)
-      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/karaf/0.9.1/karaf-0.9.1.zip>`_
+    * `OpenDaylight Fluorine SR1 Tar
+      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.9.1/opendaylight-0.9.1.tar.gz>`_
+    * `OpenDaylight Fluorine SR1 Zip
+      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.9.1/opendaylight-0.9.1.zip>`_
     * `OpenDaylight Fluorine SR1 RPM (Managed Projects)
       <http://cbs.centos.org/repos/nfv7-opendaylight-91-release/x86_64/os/Packages/opendaylight-9.1.0-1.el7.noarch.rpm>`_
-
-Fluorine
---------
-
-(Outgoing Current Release)
-
-:Original Release Date: August 30, 2018
-
-    * `OpenDaylight Fluorine Tar
-      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.9.0/opendaylight-0.9.0.tar.gz>`_
-    * `OpenDaylight Fluorine Zip
-      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.9.0/opendaylight-0.9.0.zip>`_
-    * `OpenDaylight Fluorine RPM
-      <http://cbs.centos.org/repos/nfv7-opendaylight-90-release/x86_64/os/Packages/opendaylight-9.0.0-2.el7.noarch.rpm>`_
 
 Oxygen-SR3
 ----------
