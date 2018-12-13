@@ -33,6 +33,7 @@ Processes
    project-lifecycle
    branch-cutting
    simultaneous-release
+   super-committers
 
 ************************
 Supporting Documentation
