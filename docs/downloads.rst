@@ -22,20 +22,20 @@ Fluorine-SR1
     * `OpenDaylight Fluorine SR1 RPM
       <http://cbs.centos.org/repos/nfv7-opendaylight-91-release/x86_64/os/Packages/opendaylight-9.1.0-2.el7.noarch.rpm>`_
 
-Oxygen-SR3
+Oxygen-SR4
 ----------
 
 :Announcement: https://www.opendaylight.org/about/news/blogs/opendaylight-releases-oxygen-with-new-p4-and-container-support
 :Original Release Date: March 22, 2018
-:Service Release Date: August 10, 2018
+:Service Release Date: Dec 12, 2018
 
 :Downloads:
-    * `OpenDaylight Oxygen SR3 Tar
-      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/karaf/0.8.3/karaf-0.8.3.tar.gz>`_
-    * `OpenDaylight Oxygen SR3 Zip
-      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/karaf/0.8.3/karaf-0.8.3.zip>`_
-    * `OpenDaylight Oxygen SR3 RPM
-      <http://cbs.centos.org/repos/nfv7-opendaylight-83-release/x86_64/os/Packages/opendaylight-8.3.0-1.el7.noarch.rpm>`_
+    * `OpenDaylight Oxygen SR4 Tar
+      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/karaf/0.8.4/karaf-0.8.4.tar.gz>`_
+    * `OpenDaylight Oxygen SR4 Zip
+      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/karaf/0.8.4/karaf-0.8.4.zip>`_
+    * `OpenDaylight Oxygen SR4 RPM
+      <http://cbs.centos.org/repos/nfv7-opendaylight-84-release/x86_64/os/Packages/opendaylight-8.4.0-1.el7.noarch.rpm>`_
     * `OpFlex
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/opflex/>`_
 
