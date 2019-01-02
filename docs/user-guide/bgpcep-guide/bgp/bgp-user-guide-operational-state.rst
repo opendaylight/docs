@@ -300,7 +300,7 @@ BGP Neighbor Timers Operational State
 
 @line 3: The negotiated hold-time for the BGP session in seconds.
 
-@line 4: Session duration since establishment in milliseconds.
+@line 4: Session duration since establishment in timeticks (hundredths of a second).
 
 BGP Neighbor Transport Operational State
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
