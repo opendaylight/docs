@@ -12,13 +12,14 @@ Dates may be manually adjusted if they conflict with holidays or are otherwise
 problematic.
 
 .. list-table::
-   :widths: 20 20 20 20 20 40
+   :widths: 20 20 20 20 20 20 40
    :header-rows: 1
    :stub-columns: 1
 
    * - **Event**
      - **Fluorine Date**
      - **Neon Date**
+     - **Sodium Date**
      - **Relative Date**
      - **Start-Relative Date**
      - **Description**
@@ -26,6 +27,7 @@ problematic.
    * - Release Start
      - 2018-03-07
      - 2018-09-06
+     - 2019-03-07
      - Start Date
      - Start Date +0
      - Declare Intention: Submit **Project_Plan** Jira item in TSC project
@@ -33,6 +35,7 @@ problematic.
    * - Initial Checkpoint
      - 2018-03-22
      - 2018-09-20
+     - 2019-03-21
      - Start Date + 2 weeks
      - Start Date +2 weeks
      - Initial Checkpoint. All Managed Projects must have completed
@@ -41,6 +44,7 @@ problematic.
    * - Release Integrated Deadline
      - 2018-04-07
      - 2018-10-04
+     - 2019-04-04
      - Initial Checkpoint + 2 weeks
      - Start Date +4 weeks
      - Deadline for Release Integrated Projects (currently ODLPARENT and
@@ -50,6 +54,7 @@ problematic.
    * - Version Bump
      - 2018-04-08
      - 2018-10-05
+     - 2019-04-05
      - Release Integrated Deadline + 1 day
      - Start Date +4 weeks 1 day
      - Prepare version bump patches and merge them in (RelEng team). Spend the
@@ -59,6 +64,7 @@ problematic.
    * - Version Bump Checkpoint
      - 2018-04-21
      - 2018-10-18
+     - 2019-04-18
      - Release Integrated Deadline + 2 weeks
      - Start Date +6 weeks
      - Check status of MSI Projects to see if we have green builds and a
@@ -67,6 +73,7 @@ problematic.
    * - CSIT Checkpoint
      - 2018-05-07
      - 2018-11-01
+     - 2019-05-02
      - Version Bump Checkpoint + 2 weeks
      - Start Date +8 weeks
      - All Managed Release CSIT should be in good shape - get all MSI Projects'
@@ -76,14 +83,16 @@ problematic.
    * - Middle Checkpoint
      - 2018-07-05
      - 2019-01-10
-     - CSIT Checkpoint + 8 weeks (+2 weeks to avoid holidays)
-     - Start Date +16 weeks (+2 weeks to avoid holidays)
+     - 2019-06-27
+     - CSIT Checkpoint + 8 weeks
+     - Start Date +16 weeks
      - Checkpoint for status of Managed Projects - especially Snapshot
        Integrated Projects.
 
    * - Code Freeze
      - 2018-08-07
      - 2019-01-24
+     - 2019-07-25
      - Middle Checkpoint + 4 weeks
      - Start Date +20 weeks
      - Code freeze for all Managed Projects - cut and lock release branch. Only
@@ -92,6 +101,7 @@ problematic.
    * - Final Checkpoint
      - 2018-08-23
      - 2019-02-07
+     - 2019-08-08
      - Code Freeze + 2 weeks
      - Start Date +22 weeks
      - Final Checkpoint for all Managed Projects.
@@ -99,6 +109,7 @@ problematic.
    * - Formal Release
      - 2018-09-07
      - 2019-03-06
+     - 2019-09-05
      - 6 months after Start Date
      - Start Date +6 months
      - Formal release
@@ -106,6 +117,7 @@ problematic.
    * - Service Release 1
      - 2018-10-07
      - 2019-04-06
+     - 2019-10-03
      - 1 month after Formal Release
      - Start Date +7 months
      - Service Release 1 (SR1)
@@ -113,6 +125,7 @@ problematic.
    * - Service Release 2
      - 2018-12-07
      - 2019-06-06
+     - 2019-12-05
      - 2 months after SR1
      - Start Date +9 months
      - Service Release 2 (SR2)
@@ -120,6 +133,7 @@ problematic.
    * - Service Release 3
      - 2019-02-07
      - 2019-08-06
+     - 2020-02-06
      - 2 months after SR2
      - Start Date +11 months
      - Service Release 3 (SR3)
@@ -127,6 +141,7 @@ problematic.
    * - Service Release 4
      - 2019-05-07
      - 2019-11-06
+     - 2020-05-07
      - 3 months after SR3
      - Start Date +14 months
      - Service Release 4 (SR4) - final service release
@@ -134,6 +149,7 @@ problematic.
    * - Release End of Life
      - 2019-09-07
      - 2020-03-06
+     - 2020-09-03
      - 4 months after SR4
      - Start Date +18 months
      - End of Life - coincides with the Formal Release of the current release+2
