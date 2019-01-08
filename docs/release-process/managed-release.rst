@@ -92,8 +92,8 @@ to follow a different release process.
 For implementation reasons, the projects that are able to release independently
 must depend only on other projects that release independently. Therefore the
 Release Integrated Projects will form a tree starting from odlparent. Currently
-odlparent and yangtools are the only Release Integrated Projects, but others
-may join them in the future.
+odlparent, yangtools and mdsal are the only Release Integrated Projects, but
+others may join them in the future.
 
 Requirements for Managed Projects
 ---------------------------------

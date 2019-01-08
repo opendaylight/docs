@@ -43,9 +43,9 @@ problematic.
      - 2018-10-04
      - Initial Checkpoint + 2 weeks
      - Start Date +4 weeks
-     - Deadline for Release Integrated Projects (currently ODLPARENT and
-       YANGTOOLS) to provide the desired version deliverables for downstream
-       Snapshot Integrated Projects to consume.
+     - Deadline for Release Integrated Projects (currently ODLPARENT,
+       YANGTOOLS and MDSAL) to provide the desired version deliverables for
+       downstream Snapshot Integrated Projects to consume.
 
    * - Version Bump
      - 2018-04-08
