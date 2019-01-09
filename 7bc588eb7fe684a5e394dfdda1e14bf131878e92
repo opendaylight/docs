@@ -22,6 +22,30 @@
       "revId": "7bc588eb7fe684a5e394dfdda1e14bf131878e92",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f9ac96e_5e2582af",
+        "filename": "docs/release-process/release-schedule.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2019-01-09T09:26:38Z",
+      "side": 1,
+      "message": "Code freeze (07/25) + 2 weeks works out to be 08/08.\nI know it looks weird, compared to Fluorine -- but I think Fluorine is wrong:\n\n07/05 to 08/07 is 33 days\n08/07 to 08/23 is 16 days",
+      "parentUuid": "72f10a64_3db50039",
+      "range": {
+        "startLine": 104,
+        "startChar": 15,
+        "endLine": 104,
+        "endChar": 17
+      },
+      "revId": "7bc588eb7fe684a5e394dfdda1e14bf131878e92",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
