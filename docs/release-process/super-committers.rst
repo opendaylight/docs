@@ -56,10 +56,14 @@ The following powers are granted:
 
 * Vote Code-Review +2
 * Vote Verified +1
+* Remove Reviewer
 * Submit button access
 
 These permissions are granted to allow super committers to push through version
-bump patches with haste.
+bump patches with haste. The Remove Reviewer permission is to be used only for
+removing Jenkins vote caused by a failed distribution-check job, if that
+failure is caused by a temporary version inconsistency present while the bump
+activity is being performed.
 
 Version bumping activities come in 2 forms.
 
