@@ -1,8 +1,7 @@
-****************
 How to Get Help
-****************
+================
 
-Users and developers can get support from the OpendayLight community through the
+Users and developers can get support from the OpenDaylight community through the
 mailing lists, IRC and forums.
 
 #. Create your question on `ServerFault <https://serverfault.com>`_
@@ -19,6 +18,10 @@ mailing lists, IRC and forums.
    `projects page <https://wiki.opendaylight.org/view/Project_list>`_.
 
 #. IRC: Connect to #opendaylight or #opendaylight-meeting channel on freenode.
+   The `Linux Foundation's IRC guide <https://docs.releng.linuxfoundation.org/en/latest/freenode.html>`_ may be helpful.
+   You'll need `an IRC client <https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients#Operating_system_support>`_,
+   or can use `the freenode webchat <http://webchat.freenode.net/?channels=opendaylight>`_,
+   or perhaps you'll `like IRCCloud <https://www.irccloud.com>`_.
 
 #. For infrastructure and release engineering queries, mail helpdesk@opendaylight.org.
    IRC: Connect to #lf-releng channel on freenode.
