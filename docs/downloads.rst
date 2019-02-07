@@ -5,22 +5,20 @@ OpenDaylight Downloads
 Supported Releases
 ==================
 
-Fluorine-SR1
+Fluorine-SR2
 ------------
 
 (Current Release)
 
 :Announcement: https://www.opendaylight.org/announcement/2018/09/13/linux-foundations-opendaylight-fluorine-release-brings-streamlined-support-for-cloud-edge-and-wan-solutions
 :Original Release Date: August 30, 2018
-:Service Release Date: November 20, 2018
+:Service Release Date: February 7, 2019
 
 :Downloads:
-    * `OpenDaylight Fluorine SR1 Tar
-      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.9.1/opendaylight-0.9.1.tar.gz>`_
-    * `OpenDaylight Fluorine SR1 Zip
-      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.9.1/opendaylight-0.9.1.zip>`_
-    * `OpenDaylight Fluorine SR1 RPM
-      <http://cbs.centos.org/repos/nfv7-opendaylight-91-release/x86_64/os/Packages/opendaylight-9.1.0-2.el7.noarch.rpm>`_
+    * `OpenDaylight Fluorine SR2 Tar
+      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.9.2/opendaylight-0.9.2.tar.gz>`_
+    * `OpenDaylight Fluorine SR2 Zip
+      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.9.2/opendaylight-0.9.2.zip>`_
 
 Oxygen-SR4
 ----------
