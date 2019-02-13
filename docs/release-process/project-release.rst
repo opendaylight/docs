@@ -35,16 +35,15 @@ Once testing against the staging repo has been completed and project has
 determined that the staged repo is ready for release. A release can the be
 performed as follows:
 
-1. Ask helpdesk to sign the artifacts in staging repo
-2. Ask helpdesk to promote the staging repo
-3. Download taglist.log and project.bundle files. They can be found in the
+1. Ask helpdesk to promote the staging repo
+2. Download taglist.log and project.bundle files. They can be found in the
    "patches" directory of the related jenkins release job logs.
-4. Read taglist.log and checkout the commit hash listed
-5. Merge the project.bundle patches
-6. Git tag the release
-7. Push release tag to Gerrit
+3. Read taglist.log and checkout the commit hash listed
+4. Merge the project.bundle patches
+5. Git tag the release
+6. Push release tag to Gerrit
 
-Steps 4-7 as bash:
+Steps 3-6 as bash:
 You will need a working GPG config to sign the release Git tag ("-s" option)
 
 .. code:: bash
