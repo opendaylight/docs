@@ -19,6 +19,8 @@ Fluorine-SR2
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.9.2/opendaylight-0.9.2.tar.gz>`_
     * `OpenDaylight Fluorine SR2 Zip
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.9.2/opendaylight-0.9.2.zip>`_
+    * `OpenDaylight Fluorine SR2 RPM
+      <http://cbs.centos.org/repos/nfv7-opendaylight-92-release/x86_64/os/Packages/opendaylight-9.2.0-1.el7.noarch.rpm>`_
 
 Oxygen-SR4
 ----------
