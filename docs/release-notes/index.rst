@@ -47,11 +47,11 @@ following limitations:
 Project-specific Release Notes
 ==============================
 
-.. .. toctree::
-..   :glob:
-..   :maxdepth: 1
-..
-..   projects/*
+.. toctree::
+   :glob:
+   :maxdepth: 1
+
+   projects/*
 
 `odlparent`_
 
