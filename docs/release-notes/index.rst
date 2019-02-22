@@ -47,7 +47,7 @@ following limitations:
 Project-specific Release Notes
 ==============================
 
-.. .. toctree::
+.. toctree::
 ..   :glob:
 ..   :maxdepth: 1
 ..
