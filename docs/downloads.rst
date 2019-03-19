@@ -5,10 +5,25 @@ OpenDaylight Downloads
 Supported Releases
 ==================
 
-Fluorine-SR2
-------------
+Neon
+----
 
 (Current Release)
+
+:Announcement:
+:Original Release Date: March 19, 2019
+
+:Downloads:
+    * `OpenDaylight Neon Tar
+      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.10.0/opendaylight-0.10.0.tar.gz>`_
+    * `OpenDaylight Neon Zip
+      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.10.0/opendaylight-0.10.0.zip>`_
+    * `OpenDaylight Neon RPM
+      <http://cbs.centos.org/repos/nfv7-opendaylight-10-release/x86_64/os/Packages/opendaylight-10.0.0-1.el7.noarch.rpm>`_
+
+
+Fluorine-SR2
+------------
 
 :Announcement: https://www.opendaylight.org/announcement/2018/09/13/linux-foundations-opendaylight-fluorine-release-brings-streamlined-support-for-cloud-edge-and-wan-solutions
 :Original Release Date: August 30, 2018
