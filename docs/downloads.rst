@@ -20,6 +20,13 @@ Neon
     * `OpenDaylight Neon Zip
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.10.0/opendaylight-0.10.0.zip>`_
 
+:Documentation:
+    * :doc:`Getting Started Guide <odl-neon:getting-started-guide/index>`
+    * :doc:`Developers Guide <odl-neon:developer-guide/index>`
+    * :doc:`User Guide <odl-neon:user-guide/index>`
+    * :doc:`Installation Guide <odl-neon:getting-started-guide/installing_opendaylight>`
+    * :doc:`Release Notes <odl-neon:release-notes/index>`
+
 Fluorine-SR2
 ------------
 

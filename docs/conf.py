@@ -38,6 +38,7 @@ intersphinx_mapping['tsdr'] = ('https://docs.opendaylight.org/projects/tsdr/en/l
 intersphinx_mapping['unimgr'] = ('https://docs.opendaylight.org/projects/unimgr/en/latest/', None)
 
 # OpenDaylight Documentation Releases
+intersphinx_mapping['odl-neon'] = ('https://docs.opendaylight.org/en/latest/', None)
 intersphinx_mapping['odl-fluorine'] = ('https://docs.opendaylight.org/en/stable-fluorine/', None)
 intersphinx_mapping['odl-oxygen'] = ('https://docs.opendaylight.org/en/stable-oxygen/', None)
 intersphinx_mapping['odl-nitrogen'] = ('https://docs.opendaylight.org/en/stable-nitrogen/', None)
