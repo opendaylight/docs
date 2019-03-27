@@ -10,7 +10,7 @@ Neon
 
 (Current Release)
 
-:Announcement: TBD
+:Announcement: https://www.opendaylight.org/announcement/2019/03/26/opendaylight-most-pervasive-open-source-sdn-controller-celebrates-sixth-anniversary-with-neon-release
 :Original Release Date: March 26, 2019
 :Service Release Date: N/A
 
