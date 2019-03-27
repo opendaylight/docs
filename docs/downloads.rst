@@ -35,6 +35,14 @@ Fluorine-SR2
     * `OpenDaylight Fluorine SR2 RPM
       <http://cbs.centos.org/repos/nfv7-opendaylight-92-release/x86_64/os/Packages/opendaylight-9.2.0-1.el7.noarch.rpm>`_
 
+:Documentation:
+    * :doc:`Getting Started Guide <odl-fluorine:getting-started-guide/index>`
+    * :doc:`Developers Guide <odl-fluorine:developer-guide/index>`
+    * :doc:`User Guide <odl-fluorine:user-guide/index>`
+    * :doc:`Installation Guide <odl-fluorine:getting-started-guide/installing_opendaylight>`
+    * :doc:`Using OpenDaylight with OpenStack <odl-fluorine:opendaylight-with-openstack/index>`
+    * :doc:`Release Notes <odl-fluorine:release-notes/index>`
+
 Oxygen-SR4
 ----------
 
