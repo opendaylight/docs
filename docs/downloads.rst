@@ -19,6 +19,8 @@ Neon
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.10.0/opendaylight-0.10.0.tar.gz>`_
     * `OpenDaylight Neon Zip
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.10.0/opendaylight-0.10.0.zip>`_
+    * `OpenDaylight Neon RPM
+      <https://cbs.centos.org/repos/nfv7-opendaylight-100-release/x86_64/os/Packages/opendaylight-10.0.0-1.el7.noarch.rpm>`_
 
 :Documentation:
     * :doc:`Getting Started Guide <odl-neon:getting-started-guide/index>`
