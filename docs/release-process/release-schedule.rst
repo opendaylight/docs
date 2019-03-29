@@ -109,7 +109,7 @@ problematic.
 
    * - Formal Release
      - 2018-09-07
-     - 2019-03-06
+     - 2019-03-25
      - 2019-09-05
      - 6 months after Start Date
      - Start Date +6 months
@@ -117,7 +117,7 @@ problematic.
 
    * - Service Release 1
      - 2018-10-07
-     - 2019-04-06
+     - 2019-04-25
      - 2019-10-03
      - 1 month after Formal Release
      - Start Date +7 months
