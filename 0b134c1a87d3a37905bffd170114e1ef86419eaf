@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e14703ee_e496ef01",
+        "filename": "tox.ini",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2019-04-09T08:36:12Z",
+      "side": 1,
+      "message": "The \u0027tox\u0027 output still indicates that a coala step is running, since this remains. If we remove the env should also remove this.",
+      "range": {
+        "startLine": 3,
+        "startChar": 10,
+        "endLine": 3,
+        "endChar": 15
+      },
+      "revId": "0b134c1a87d3a37905bffd170114e1ef86419eaf",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}

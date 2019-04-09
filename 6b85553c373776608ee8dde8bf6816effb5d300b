@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d07447f7_d71dda3d",
+        "filename": ".coafile",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2019-04-09T08:36:12Z",
+      "side": 0,
+      "message": "I thought for a moment that we were losing rst linting with this (except through the Sphinx build), but the previous rst linting was actually just SpaceConsistencyBear, so the new pre-commit linting should be equivalent.",
+      "revId": "6b85553c373776608ee8dde8bf6816effb5d300b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
