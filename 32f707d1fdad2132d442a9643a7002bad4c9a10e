@@ -22,6 +22,30 @@
       "revId": "32f707d1fdad2132d442a9643a7002bad4c9a10e",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "35c173de_8d7e3180",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2019-04-09T01:46:36Z",
+      "side": 1,
+      "message": "No in CI \"tox -e pre-commit\" will handle everything for us. This is only for those who want to use their local package manager and manage this theirselves.",
+      "parentUuid": "7f709eab_c9b1b606",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 58
+      },
+      "revId": "32f707d1fdad2132d442a9643a7002bad4c9a10e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
