@@ -22,6 +22,30 @@
       "revId": "0b134c1a87d3a37905bffd170114e1ef86419eaf",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fc0c38d2_36cd44de",
+        "filename": "tox.ini",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2019-04-09T08:42:36Z",
+      "side": 1,
+      "message": "I fixed this in patchset 4 by swapping not-there coala env for new pre-commit env. Imho I\u0027d expect all the reasonably-quick linting to run by default on `tox`.",
+      "parentUuid": "e14703ee_e496ef01",
+      "range": {
+        "startLine": 3,
+        "startChar": 10,
+        "endLine": 3,
+        "endChar": 15
+      },
+      "revId": "0b134c1a87d3a37905bffd170114e1ef86419eaf",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
