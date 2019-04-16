@@ -11,14 +11,13 @@ Release Integrated Projects
 Managed Projects
 ================
 
-* `bgpcep <https://javadocs.opendaylight.org/bgpcep/fluorine>`_
-* `controller <https://javadocs.opendaylight.org/controller/fluorine>`_
-* `genius <https://javadocs.opendaylight.org/genius/fluorine>`_
-* `infrautils <https://javadocs.opendaylight.org/infrautils/fluorine>`_
-* `lispflowmapping <https://javadocs.opendaylight.org/lispflowmapping/fluorine>`_
-* `mdsal <https://javadocs.opendaylight.org/mdsal/fluorine>`_
-* `netvirt <https://javadocs.opendaylight.org/netvirt/fluorine>`_
-* `neutron <https://javadocs.opendaylight.org/neutron/fluorine>`_
-* `openflowplugin <https://javadocs.opendaylight.org/openflowplugin/fluorine>`_
-* `ovsdb <https://javadocs.opendaylight.org/ovsdb/fluorine>`_
-* `p4plugin <https://javadocs.opendaylight.org/p4plugin/fluorine>`_
+* `bgpcep <https://javadocs.opendaylight.org/bgpcep/neon>`_
+* `controller <https://javadocs.opendaylight.org/controller/neon>`_
+* `genius <https://javadocs.opendaylight.org/genius/neon>`_
+* `infrautils <https://javadocs.opendaylight.org/infrautils/neon>`_
+* `lispflowmapping <https://javadocs.opendaylight.org/lispflowmapping/neon>`_
+* `mdsal <https://javadocs.opendaylight.org/mdsal/neon>`_
+* `netvirt <https://javadocs.opendaylight.org/netvirt/neon>`_
+* `neutron <https://javadocs.opendaylight.org/neutron/neon>`_
+* `openflowplugin <https://javadocs.opendaylight.org/openflowplugin/neon>`_
+* `ovsdb <https://javadocs.opendaylight.org/ovsdb/neon>`_
