@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "04445ffa_c26ae729",
+        "filename": "docs/conf.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1723
+      },
+      "writtenOn": "2019-04-17T20:23:23Z",
+      "side": 1,
+      "message": "Are you sure we should change these from latest to stable-neon? That seems like more than just a version bump, more of a logic change. Quickly looking at the rendered HTML it seems like both latest and stable-neon exist, and have the same content.",
+      "revId": "776318330de3c14a9aa1b412b5950839ccc6f2dd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
