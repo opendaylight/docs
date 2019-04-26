@@ -117,7 +117,7 @@ problematic.
 
    * - Service Release 1
      - 2018-10-07
-     - 2019-04-25
+     - 2019-05-09
      - 2019-10-03
      - 1 month after Formal Release
      - Start Date +7 months
