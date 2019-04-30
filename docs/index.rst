@@ -46,6 +46,7 @@ Managed Projects
 Self-Managed Projects
 ~~~~~~~~~~~~~~~~~~~~~
 
+* :doc:`JSON RPC Documentation <jsonrpc:index>`
 * :doc:`TransportPCE Documentation <transportpce:index>`
 
 OpenDaylight Contributor Guides

@@ -19,6 +19,7 @@ Project-specific Developer Guides
 
 * :doc:`COE Documentation <coe:index>`
 * :doc:`InfraUtils Documentation <infrautils:index>`
+* :doc:`JSON RPC Documentation <jsonrpc:index>`
 * :doc:`NetVirt Documentation <netvirt:index>`
 * :doc:`OVSDB Documentation <ovsdb:index>`
 
@@ -27,7 +28,6 @@ Project-specific Developer Guides
 
    distribution-version
    distribution-test-features
-   jsonrpc
    nemo-developer-guide
    neutron-service-developer-guide
    neutron-northbound
