@@ -47,6 +47,7 @@ Managed Projects
 Self-Managed Projects
 ~~~~~~~~~~~~~~~~~~~~~
 
+* :doc:`JSON RPC Documentation <jsonrpc:index>`
 * :doc:`OpFlex Documentation <opflex:index>`
 * :doc:`SXP Documentation <sxp:index>`
 * :doc:`TransportPCE Documentation <transportpce:index>`
