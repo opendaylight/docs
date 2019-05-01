@@ -65,3 +65,10 @@ Project-specific Release Notes
 ..   :maxdepth: 2
 ..
 ..   release-notes-*
+
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+
+   sample-release-notes
