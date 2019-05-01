@@ -19,6 +19,7 @@ Getting Started with OpenDaylight
    downloads
    release-notes/index
    getting-started-guide/index
+   developer-guide/developing-apps-on-the-opendaylight-controller
 
 OpenDaylight Project Documentation
 ----------------------------------
@@ -84,6 +85,5 @@ OpenDaylight Contributor Guides
    release-process/index
    javadoc
    opendaylight-with-openstack/index
-   release-notes/sample-release-notes
    user-guide/index
    developer-guide/index
