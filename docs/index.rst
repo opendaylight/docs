@@ -19,6 +19,7 @@ Getting Started with OpenDaylight
    downloads
    release-notes/index
    getting-started-guide/index
+   developer-guide/developing-apps-on-the-opendaylight-controller
 
 OpenDaylight Project Documentation
 ----------------------------------
