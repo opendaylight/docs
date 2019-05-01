@@ -196,7 +196,7 @@ Add a simple HelloWorld RPC API
                    }
                }
                output {
-                   leaf greating {
+                   leaf greeting {
                        type string;
                    }
                }
@@ -240,7 +240,7 @@ Implement the HelloWorld RPC API
            @Override
            public Future<RpcResult<HelloWorldOutput>> helloWorld(HelloWorldInput input) {
                HelloWorldOutputBuilder helloBuilder = new HelloWorldOutputBuilder();
-               helloBuilder.setGreating("Hello " + input.getName());
+               helloBuilder.setGreeting("Hello " + input.getName());
                return RpcResultBuilder.success(helloBuilder.build()).buildFuture();
            }
        }
@@ -375,7 +375,7 @@ Using the API Explorer through HTTP
 
        {
          "output": {
-           "greating": "Hello Your Name"
+           "greeting": "Hello Your Name"
          }
        }
 
