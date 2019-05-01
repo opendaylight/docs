@@ -19,6 +19,7 @@ Project-specific Developer Guides
 
 * :doc:`COE Documentation <coe:index>`
 * :doc:`InfraUtils Documentation <infrautils:index>`
+* :doc:`JSON RPC Documentation <jsonrpc:index>`
 * :doc:`NetVirt Documentation <netvirt:index>`
 * :doc:`OVSDB Documentation <ovsdb:index>`
 
@@ -34,7 +35,6 @@ Project-specific Developer Guides
    eman-developer-guide
    fabric-as-a-service
    iotdm-developer-guide
-   jsonrpc
    l2switch-developer-guide
    lacp-developer-guide
    nemo-developer-guide

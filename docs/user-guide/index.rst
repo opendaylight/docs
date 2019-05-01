@@ -17,6 +17,7 @@ the OpenDaylight Release using the generic base functionality.
 Project-specific User Guides
 ----------------------------
 
+* :doc:`JSON RPC Documentation <jsonrpc:index>`
 * :doc:`NetVirt Documentation <netvirt:index>`
 * :doc:`OVSDB Documentation <ovsdb:index>`
 
@@ -32,7 +33,6 @@ Project-specific User Guides
    eman-user-guide
    fabric-as-a-service
    group-based-policy-user-guide
-   jsonrpc-user-guide
    l2switch-user-guide
    link-aggregation-control-protocol-user-guide
    nemo-user-guide
