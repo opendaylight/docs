@@ -2,14 +2,9 @@
 Release Schedule
 ================
 
-OpenDaylight releases twice per year, on the Thursdays closest to March 7th and
-September 7th.
-
-The six-month aspect of the cadence is designed to synchronize OpenDaylight
-releases with OpenStack and OPNFV releases. The closest-Thursday aspect is
-designed to cause release events to occur on the same day as TSC meetings.
-Dates may be manually adjusted if they conflict with holidays or are otherwise
-problematic.
+OpenDaylight releases twice per year.The six-month aspect of the cadence was designed to synchronize OpenDaylight
+releases with OpenStack and OPNFV releases. As of today, these dates have been adjusted to match the current resource availability and requirement from current OpenDaylight users. Based on that, we have decided to produce three service releases from now on, so no more SR4 .
+Dates may be manually adjusted if they conflict with holidays, overlap or are otherwise problematic. These dates include the release of both managed and self-managed projects.
 
 .. list-table::
    :widths: 20 20 20 20 20 20 40
@@ -19,7 +14,7 @@ problematic.
    * - **Event**
      - **Fluorine Date**
      - **Neon Date**
-     - **Sodium Date**
+     - **Sodium Date Tentative**
      - **Relative Date**
      - **Start-Relative Date**
      - **Description**
@@ -116,42 +111,42 @@ problematic.
      - Formal release
 
    * - Service Release 1
-     - 2018-10-07
-     - 2019-05-09
-     - 2019-10-03
-     - 1 month after Formal Release
-     - Start Date +7 months
+     - 2018-11-25
+     - 2019-05-16
+     - 2019-10-17
+     - 1.5 month after Formal Release
+     - Start Date +7.5 months
      - Service Release 1 (SR1)
 
    * - Service Release 2
-     - 2018-12-07
-     - 2019-06-06
-     - 2019-12-05
-     - 2 months after SR1
-     - Start Date +9 months
+     - 2019-02-07
+     - 2019-08-08
+     - 2020-01-16
+     - 3 months after SR1
+     - Start Date +10.5 months
      - Service Release 2 (SR2)
 
    * - Service Release 3
-     - 2019-02-07
-     - 2019-08-06
-     - 2020-02-06
-     - 2 months after SR2
-     - Start Date +11 months
-     - Service Release 3 (SR3)
+     - 2019-05-30
+     - 2019-12-05
+     - 2020-05-07
+     - 4 months after SR2
+     - Start Date +14 months
+     - Service Release 3 (SR3) - Final Service Release
 
    * - Service Release 4
-     - 2019-05-07
-     - 2019-11-06
-     - 2020-05-07
-     - 3 months after SR3
-     - Start Date +14 months
-     - Service Release 4 (SR4) - final service release
+     - N/A
+     - N/A
+     - N/A
+     - Not Available Anymore
+     - Not Available Anymore
+     - Service Release 4 (SR4) - N/A
 
    * - Release End of Life
      - 2019-09-07
-     - 2020-03-06
-     - 2020-09-03
-     - 4 months after SR4
+     - 2020-03-25
+     - 2020-09-05
+     - 4 months after SR3
      - Start Date +18 months
      - End of Life - coincides with the Formal Release of the current release+2
        versions and the start of the current release+3 versions
