@@ -2,14 +2,9 @@
 Release Schedule
 ================
 
-OpenDaylight releases twice per year, on the Thursdays closest to March 7th and
-September 7th.
-
-The six-month aspect of the cadence is designed to synchronize OpenDaylight
-releases with OpenStack and OPNFV releases. The closest-Thursday aspect is
-designed to cause release events to occur on the same day as TSC meetings.
-Dates may be manually adjusted if they conflict with holidays or are otherwise
-problematic.
+OpenDaylight releases twice per year.The six-month aspect of the cadence was designed to synchronize OpenDaylight
+releases with OpenStack and OPNFV releases. As of today, these dates have been adjusted to match the current resource availability and requirement from current OpenDaylight users. Based on that, we have decided to produce three service releases from now on, so no more SR4 .
+Dates may be manually adjusted if they conflict with holidays, overlap or are otherwise problematic. These dates include the release of both managed and self-managed projects.
 
 .. list-table::
    :widths: 20 20 20 20 20 20 40
@@ -117,7 +112,7 @@ problematic.
 
    * - Service Release 1
      - 2018-11-25
-     - 2019-05-09
+     - 2019-05-16
      - 2019-10-17
      - 1.5 month after Formal Release
      - Start Date +7.5 months
@@ -132,7 +127,7 @@ problematic.
      - Service Release 2 (SR2)
 
    * - Service Release 3
-     - 2019-05-16
+     - 2019-05-30
      - 2019-12-05
      - 2020-05-07
      - 4 months after SR2
