@@ -18,8 +18,9 @@ Release Planning
    :maxdepth: 1
 
    managed-release
-   release-schedule
    release-goals
+
+* :doc:`Release Schedule <odl-latest:release-process/release-schedule>`
 
 *********
 Processes

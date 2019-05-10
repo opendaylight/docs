@@ -37,6 +37,7 @@ intersphinx_mapping['ovsdb'] = ('https://docs.opendaylight.org/projects/ovsdb/en
 intersphinx_mapping['transportpce'] = ('https://docs.opendaylight.org/projects/transportpce/en/stable-neon/', None)
 
 # OpenDaylight Documentation Releases
+intersphinx_mapping['odl-latest'] = ('https://docs.opendaylight.org/en/latest/', None)
 intersphinx_mapping['odl-neon'] = ('https://docs.opendaylight.org/en/stable-neon/', None)
 intersphinx_mapping['odl-fluorine'] = ('https://docs.opendaylight.org/en/stable-fluorine/', None)
 intersphinx_mapping['odl-oxygen'] = ('https://docs.opendaylight.org/en/stable-oxygen/', None)
