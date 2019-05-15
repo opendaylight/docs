@@ -57,14 +57,14 @@ Project-specific Release Notes
 
 .. _odlparent: https://git.opendaylight.org/gerrit/gitweb?p=odlparent.git;a=blob;f=NEWS.rst
 
-.. Service Release Notes
-.. =====================
-..
-.. .. toctree::
-..   :glob:
-..   :maxdepth: 2
-..
-..   release-notes-*
+Service Release Notes
+=====================
+
+.. toctree::
+   :glob:
+   :maxdepth: 2
+
+   release-notes-*
 
 
 .. toctree::
