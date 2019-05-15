@@ -99,13 +99,13 @@ Super Committers
 Name                      IRC                 Email
 ========================= =================== =================================
 Anil Belur                abelur              abelur@linuxfoundation.org
-Ariel Adams               aadams              aadam@redhat.com
+Ariel Adam                aadam               aadam@redhat.com
 Daniel Farrell            dfarrell07          dfarrell@redhat.com
 Jamo Luhrsen              jamoluhrsen         jluhrsen@gmail.com
 Luis Gomez                LuisGomez           ecelgp@gmail.com
-Michael Vorburger         vorburger           vorburger@redhat.com
+Michael Vorburger         vorburger           mike@vorburger.ch
 Sam Hague                 shague              shague@redhat.com
 Stephen Kitt              skitt               skitt@redhat.com
 Robert Varga              rovarga             nite@hq.sk
-Thanh Ha                  zxiiro              thanh.ha@linuxfoundation.org
+Thanh Ha                  zxiiro              zxiiro@gmail.com
 ========================= =================== =================================
