@@ -127,7 +127,7 @@ Dates may be manually adjusted if they conflict with holidays, overlap or are ot
      - Service Release 2 (SR2)
 
    * - Service Release 3
-     - 2019-05-30
+     - 2019-06-21
      - 2019-12-05
      - 2020-05-07
      - 4 months after SR2
