@@ -60,7 +60,7 @@ To develop an app perform the following steps.
    .. code:: shell
 
        mvn archetype:generate -DarchetypeGroupId=org.opendaylight.archetypes -DarchetypeArtifactId=opendaylight-startup-archetype \
-       -DarchetypeCatalog=remote -DarchetypeVersion=1.0.0-SNAPSHOT
+       -DarchetypeCatalog=remote -DarchetypeVersion=1.1.0-SNAPSHOT
 
    To find the correct <Archetype-Version> for an OpenDaylight release, search https://nexus.opendaylight.org;
    e.g. ``https://nexus.opendaylight.org/#nexus-search;gav~org.opendaylight.archetypes~~~~``.
