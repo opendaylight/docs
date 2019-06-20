@@ -19,8 +19,7 @@ Release Planning
 
    managed-release
    release-goals
-
-* :doc:`Release Schedule <odl-latest:release-process/release-schedule>`
+   release-schedule
 
 *********
 Processes
