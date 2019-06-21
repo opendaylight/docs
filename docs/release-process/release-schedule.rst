@@ -37,7 +37,7 @@ release of both managed and self-managed projects.
      - 2019-04-11
      - Initial Checkpoint + 2 weeks
      - Start Date +4 weeks
-     - Deadline for Release Integrated Projects (currently ODLPARENT,
+     - Deadline for Release Integrated Projects (currently, ODLPARENT,
        YANGTOOLS and MDSAL) to provide the desired version deliverables for
        downstream Snapshot Integrated Projects to consume.
        For Sodium, this is +1 more week to resolve conflict with ONS NA 2019.
