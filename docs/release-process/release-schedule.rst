@@ -2,34 +2,30 @@
 Release Schedule
 ================
 
-OpenDaylight releases twice per year.The six-month aspect of the cadence was designed to synchronize OpenDaylight
-releases with OpenStack and OPNFV releases. As of today, these dates have been adjusted to match the current resource availability and requirement from current OpenDaylight users. Based on that, we have decided to produce three service releases from now on, so no more SR4 .
-Dates may be manually adjusted if they conflict with holidays, overlap or are otherwise problematic. These dates include the release of both managed and self-managed projects.
+OpenDaylight releases twice per year. The six-month cadence is designed to synchronize 
+OpenDaylight releases with OpenStack and OPNFV releases. Dates are adjusted to match 
+current resources and requirements from the current OpenDaylight users. Dates are also
+adjusted when they conflict with holidays, overlap with other releases or are otherwise 
+problematic. Dates include the release of both managed and self-managed projects. 
 
 .. list-table::
-   :widths: 20 20 20 20 20 20 40
+   :widths: 20 20 20 20 40
    :header-rows: 1
    :stub-columns: 1
 
    * - **Event**
-     - **Fluorine Date**
-     - **Neon Date**
      - **Sodium Date Tentative**
      - **Relative Date**
      - **Start-Relative Date**
      - **Description**
 
    * - Release Start
-     - 2018-03-07
-     - 2018-09-06
      - 2019-03-07
      - Start Date
      - Start Date +0
      - Declare Intention: Submit **Project_Plan** Jira item in TSC project
 
    * - Initial Checkpoint
-     - 2018-03-22
-     - 2018-09-20
      - 2019-03-21
      - Start Date + 2 weeks
      - Start Date +2 weeks
@@ -37,8 +33,6 @@ Dates may be manually adjusted if they conflict with holidays, overlap or are ot
        **Project_Plan** Jira items in TSC project.
 
    * - Release Integrated Deadline
-     - 2018-04-07
-     - 2018-10-04
      - 2019-04-11
      - Initial Checkpoint + 2 weeks
      - Start Date +4 weeks
@@ -48,8 +42,6 @@ Dates may be manually adjusted if they conflict with holidays, overlap or are ot
        For Sodium, this is +1 more week to resolve conflict with ONS NA 2019.
 
    * - Version Bump
-     - 2018-04-08
-     - 2018-10-05
      - 2019-04-12
      - Release Integrated Deadline + 1 day
      - Start Date +4 weeks 1 day
@@ -58,8 +50,6 @@ Dates may be manually adjusted if they conflict with holidays, overlap or are ot
        distribution.
 
    * - Version Bump Checkpoint
-     - 2018-04-21
-     - 2018-10-18
      - 2019-04-25
      - Release Integrated Deadline + 2 weeks
      - Start Date +6 weeks
