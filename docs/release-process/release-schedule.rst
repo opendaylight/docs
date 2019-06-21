@@ -92,25 +92,25 @@ for the subsequent release.
    * - Service Release 1
      - 1 month after Formal Release
      - Start Date +28 weeks
-     - 2018-10-07
+     - 2018-11-25
      - Service Release 1 (SR1)
 
    * - Service Release 2
      - 2 months after SR1
      - Start Date +36 weeks
-     - 2018-12-07
+     - 2018-02-07
      - Service Release 2 (SR2)
 
    * - Service Release 3
      - 2 months after SR2
      - Start Date +44 weeks
-     - 2019-02-07
+     - 2019-05-30
      - Service Release 3 (SR3)
 
    * - Service Release 4
      - 3 months after SR3
      - Start Date +56 weeks
-     - 2019-05-07
+     - N/A
      - Service Release 4 (SR4) - final service release
 
    * - Release End of Life
