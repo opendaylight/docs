@@ -60,10 +60,26 @@ To develop an app perform the following steps.
    .. code:: shell
 
        mvn archetype:generate -DarchetypeGroupId=org.opendaylight.archetypes -DarchetypeArtifactId=opendaylight-startup-archetype \
-       -DarchetypeCatalog=remote -DarchetypeVersion=1.1.0-SNAPSHOT
+       -DarchetypeCatalog=remote -DarchetypeVersion=<VERSION>
 
-   To find the correct <Archetype-Version> for an OpenDaylight release, search https://nexus.opendaylight.org;
-   e.g. ``https://nexus.opendaylight.org/#nexus-search;gav~org.opendaylight.archetypes~~~~``.
+   The correct VERSION depends on desired Simultaneous Release:
+
+   .. list-table:: Archetype versions
+      :widths: auto
+      :header-rows: 1
+
+      * - OpenDaylight Simultaneous Release
+        - opendaylight-startup-archetype version
+
+      * - Neon
+        - 1.1.0
+
+      * - Neon SR1
+        - 1.1.1
+
+      * - Neon SR2 Development
+        - 1.1.2-SNAPSHOT
+
 
 2. Update the properties values as follows. Ensure that the values for the groupId and
    the artifactId are in lower case.
