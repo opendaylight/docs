@@ -2,7 +2,12 @@
 Release Schedule
 ================
 
-OpenDaylight releases twice per year. The six-month cadence is designed to synchronize OpenDaylight releases with OpenStack and OPNFV releases. Dates are adjusted to match current resources and requirements from the current OpenDaylight users. Dates are also adjusted when they conflict with holidays, overlap with other releases or are otherwise problematic. Dates include the release of both managed and self-managed projects.
+OpenDaylight releases twice per year. The six-month cadence is designed to
+synchronize OpenDaylight releases with OpenStack and OPNFV releases. Dates
+are adjusted to match current resources and requirements from the current
+OpenDaylight users. Dates are also adjusted when they conflict with holidays,
+overlap with other releases or are otherwise problematic. Dates include the
+release of both managed and self-managed projects.
 
 .. list-table::
    :widths: 20 20 20 20 40
