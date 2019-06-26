@@ -98,7 +98,7 @@ release of both managed and self-managed projects.
      - Service Release 1 (SR1)
 
    * - Service Release 2
-     - 2019-08-08
+     - 2019-09-06
      - 3 months after SR1
      - Start Date +10.5 months
      - Service Release 2 (SR2)
