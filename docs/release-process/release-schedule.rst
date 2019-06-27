@@ -2,11 +2,11 @@
 Release Schedule
 ================
 
-In an attempt to synchronize with other related open source projects
-(e.g., OPNFV and OpenStack), OpenDaylight releases twice per year on
-a 6 month cadence. These releases are scheduled for September 7th
-and March 7th. These release dates are also used as the beginning
-for the subsequent release.
+OpenDaylight releases twice per year. The six-month cadence is designed to synchronize OpenDaylight
+releases with OpenStack and OPNFV releases. Dates are adjusted to match current resources and
+requirements from the current OpenDaylight users. Dates are also adjusted when they conflict
+with holidays, overlap with other releases or are otherwise problematic. Dates include the
+release of both managed and self-managed projects.
 
 .. list-table::
    :widths: 20 20 20 20 40
@@ -104,7 +104,7 @@ for the subsequent release.
    * - Service Release 3
      - 2 months after SR2
      - Start Date +44 weeks
-     - 2019-05-30
+     - 2019-06-21
      - Service Release 3 (SR3)
 
    * - Service Release 4
