@@ -262,7 +262,7 @@ Bugs Fixed
 
   * TSDR-26 TSC-113 Convert to Jersey 2
   * TSDR-28 odl-openflow-statistics-collector doesn't collects openflow stats from multiple mininet
-  * TSDR-31 Fix broken tsdr feature failing the new extended SingleFeatureTest incl. 
+  * TSDR-31 Fix broken tsdr feature failing the new extended SingleFeatureTest incl.
   * TSDR-37 Upgrade Guava because of Jersey 2.x dependency
   * TSDR-42 Remove SNMP dependency for Fluorine
   * TSDR-47 Convert NBI to use new web registration API

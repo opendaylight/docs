@@ -65,9 +65,9 @@ Bugs Fixed
 ----------
 
 * `CONTROLLER-1765 <https://jira.opendaylight.org/browse/CONTROLLER-1765>`_ trace:transactions should suppress false TransactionChain positives, by white list, or showing only x2+
-* `CONTROLLER-1855 <https://jira.opendaylight.org/browse/CONTROLLER-1855>`_ Controller should not error log any OptimisticLockFailedException which applications actually handle 
+* `CONTROLLER-1855 <https://jira.opendaylight.org/browse/CONTROLLER-1855>`_ Controller should not error log any OptimisticLockFailedException which applications actually handle
 * `CONTROLLER-1769 <https://jira.opendaylight.org/browse/CONTROLLER-1769>`_ Global RPC call error in cluster
-* `CONTROLLER-1838 <https://jira.opendaylight.org/browse/CONTROLLER-1838>`_ follower reports 401 (unauthorized) and 500 (Internal Error) when leader is isolated 
+* `CONTROLLER-1838 <https://jira.opendaylight.org/browse/CONTROLLER-1838>`_ follower reports 401 (unauthorized) and 500 (Internal Error) when leader is isolated
 * `CONTROLLER-1844 <https://jira.opendaylight.org/browse/CONTROLLER-1844>`_ Unable to start blueprint container for bundle org.opendaylight.netconf.restconf-nb-bierman02-auth/1.8.0
 * `CONTROLLER-1836 <https://jira.opendaylight.org/browse/CONTROLLER-1836>`_ Deadlock scenario with multi-shard transactions
 * `CONTROLLER-1834 <https://jira.opendaylight.org/browse/CONTROLLER-1834>`_ Transaction Trace tool wiring for ping-pong DataBroker is wrong

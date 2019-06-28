@@ -166,7 +166,7 @@ Bugs Fixed
 
   * fixed 5 major bugs related to diagstatus (INFRAUTILS-44, INFRAUTILS-39, INFRAUTILS-38, INFRAUTILS-36, INFRAUTILS-37),
   * `All fixed BUGS <https://jira.opendaylight.org/browse/INFRAUTILS-44?jql=project%20%3D%20INFRAUTILS%20AND%20issuetype%20%3D%20Bug%20AND%20fixVersion%20%3D%20Fluorine>`_
-  * added 2 noteworthy improvements (INFRAUTILS-33, INFRAUTILS-31) related to diagstatus, 
+  * added 2 noteworthy improvements (INFRAUTILS-33, INFRAUTILS-31) related to diagstatus,
   * also fixed a lot of more minor bugs and technical enhancements.
 
 Known Issues

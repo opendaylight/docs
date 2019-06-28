@@ -165,11 +165,11 @@ Bugs Fixed
 * `NETCONF-539 <https://jira.opendaylight.org/browse/NETCONF-539>`_ Incorect handling of base:1.1 capability when namespaces are used
 * `NETCONF-526 <https://jira.opendaylight.org/browse/NETCONF-526>`_ In edit-config payload default-operation needs to be set to default-value for PUT/POST calls
 * `NETCONF-529 <https://jira.opendaylight.org/browse/NETCONF-529>`_ Add support for <copy-config> to mdsal-netconf-connector
-* `NETCONF-520 <https://jira.opendaylight.org/browse/NETCONF-520>`_ RPC add netconf device does not work 
+* `NETCONF-520 <https://jira.opendaylight.org/browse/NETCONF-520>`_ RPC add netconf device does not work
 * `NETCONF-521 <https://jira.opendaylight.org/browse/NETCONF-521>`_ Netconf with Key auth does not work
 * `NETCONF-516 <https://jira.opendaylight.org/browse/NETCONF-516>`_ netconf.restconf-nb-bierman02 bundle does not start
 * `NETCONF-514 <https://jira.opendaylight.org/browse/NETCONF-514>`_ Spurious reads before put in 8040 implementation across a mounted resource
-* `NETCONF-510 <https://jira.opendaylight.org/browse/NETCONF-510>`_ Fix netconf-tcp and netconf-ssh activators 
+* `NETCONF-510 <https://jira.opendaylight.org/browse/NETCONF-510>`_ Fix netconf-tcp and netconf-ssh activators
 * `NETCONF-509 <https://jira.opendaylight.org/browse/NETCONF-509>`_ RPCs that take no input should throw RestconfDocumentedException instead of bare IllegalStateException when invoked
 
 Known Issues
