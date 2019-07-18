@@ -32,9 +32,6 @@ Project-specific Developer Guides
    neutron-service-developer-guide
    neutron-northbound
    odl-parent-developer-guide
-   openflow-protocol-library-developer-guide
-   openflow-plugin-project-developer-guide
-   ovsdb-developer-guide
    p4plugin-developer-guide
    service-function-chaining
    snmp4sdn-developer-guide
