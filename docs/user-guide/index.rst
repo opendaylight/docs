@@ -27,8 +27,6 @@ Project-specific User Guides
    distribution-version-user-guide
    nemo-user-guide
    neutron-service-user-guide
-   openflow-plugin-project-user-guide
-   ovsdb-user-guide
    p4plugin-user-guide
    service-function-chaining
    snmp4sdn-user-guide
