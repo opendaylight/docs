@@ -15,10 +15,10 @@ release of both managed and self-managed projects.
    :stub-columns: 1
 
    * - **Event**
-     - **Sodium Date Tentative**
-     - **Magnesium Date Tentative**
-     - **Relative Date**
-     - **Start-Relative Date**
+     - **Sodium Dates**
+     - **Magnesium Dates**
+     - **Relative Dates**
+     - **Start-Relative Dates**
      - **Description**
 
    * - Release Start
