@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "decda087_23f75a02",
+        "filename": "projects_branch_automation_script.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2019-08-06T16:48:58Z",
+      "side": 1,
+      "message": "This is a good start. You can take advantage of git submodules to simplify the script a bit too because in autorelease repo all projects are configured as submodules of the autorelease project.\n\nSo you can do something like:\n\n git submodule update\n git submodule foreach sed -i \u0027s/.*version.*/version: $release_version/\u0027 docs/conf.yaml\n\nTo update the conf.yaml of all projects at the same time. This should save you from having to write some for loop code :)\n\nWe have a branch-cutting job which a Release Engineer will run to automatically create branches in all projects so you can start with the assumption that the git-branches for these projects already exist. (Although in your local repo you\u0027ll have to create these branches yourself to test)\n\nInstead this code should focus on updating the necessary conf.yaml file (and any other files) for these projects so that ReadTheDocs has the correct updated information for the stable release and master after we branch cut. Using autorelease repo as a starting point probably makes the most sense here as you can run the \"foreach\" submodule code.",
+      "revId": "25f0757162ec713ca3332254c40ced6c929c31f9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    }
+  ]
+}
