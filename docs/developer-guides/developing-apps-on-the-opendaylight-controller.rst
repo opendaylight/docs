@@ -1,40 +1,38 @@
 Developing apps on the OpenDaylight controller
 ==============================================
 
-This section provides information that is required to develop apps on
-the OpenDaylight controller.
-
-You can either develop apps within the controller using the model-driven
-SAL (MD-SAL) archetype or develop external apps and use the RESTCONF to
-communicate with the controller.
+This section provides the information required to develop apps on
+an OpenDaylight controller. Apps can be developed either within the
+controller using a Model-Driven SAL (MD-SAL) archetype or via an
+external app using the RESTCONF API to communicate with the controller.
 
 Overview
 --------
 
-This section enables you to get started with app development within the
-OpenDaylight controller. In this example, you perform the following
-steps to develop an app.
+This section starts app development within an OpenDaylight controller.
+
+Perform the following steps to develop an app:
 
 1.  Create a local repository for the code using a simple build process.
 
 2.  Start the OpenDaylight controller.
 
-3.  Test a simple remote procedure call (RPC) which you have created
-    based on the principle of *hello world*.
+3.  Test a simple remote procedure call (RPC) that was created based on
+    the principle of *hello world*.
 
 Prerequisites
 -------------
 
-This example requires the following.
+The following are the prerequires for app creation:
 
--   A development environment with following set up and working correctly
+-   A development environment with the following setup and working correctly
     from the shell:
 
     -   Maven 3.5.2 or later
 
     -   Java 11-compliant JDK
 
-    -   An appropriate Maven settings.xml file. A simple way to get the
+    -   An appropriate Maven settings.xml file. One way to get the
         default OpenDaylight settings.xml file is:
 
         .. code:: shell
@@ -44,19 +42,18 @@ This example requires the following.
 
 .. note::
 
-    If you are using Linux or Mac OS X as your development OS, your
-    local repository is ~/.m2/repository. For other platforms the local
-    repository location will vary.
+    For Linux or Mac OS X development operating systems, the default local
+    repository is ~/.m2/repository. For other platforms, the default local
+    repository location varies.
 
-Building an example module
+Building an Example module
 --------------------------
 
-To develop an app perform the following steps.
+Perform the following steps to develop an app:
 
 1.  Create an *Example* project using Maven and an archetype called the
-    *opendaylight-startup-archetype*. If you are downloading this project
-    for the first time, then it will take sometime to pull all the code
-    from the remote repository.
+    *opendaylight-startup-archetype*. For first time downloads, this project
+    will take some time to pull all the code from the remote repository.
 
     .. code:: shell
 
@@ -79,8 +76,8 @@ To develop an app perform the following steps.
       * - Aluminium Development
         - 1.4.0-SNAPSHOT
 
-2.  Update the properties values as follows. Ensure that the values for
-    the *groupId* and  the *artifactId* are in **lower case**.
+2.  Update the properties values. Ensure that the values for the groupId and
+    the artifactId are in lower case.
 
     .. code:: text
 
@@ -92,7 +89,7 @@ To develop an app perform the following steps.
         Define value for property 'copyright': Copyright (c) 2021 Yoyodyne, Inc.
         [INFO] Using property: copyrightYear = 2021
 
-3.  Accept the default value of classPrefix that is,
+3.  Accept the default value of classPrefix, that is:
     ``(${artifactId.substring(0,1).toUpperCase()}${artifactId.substring(1)})``.
     The classPrefix creates a Java Class Prefix by capitalizing the first
     character of the artifactId.
@@ -119,16 +116,15 @@ To develop an app perform the following steps.
 
     .. note::
 
-        Depending on your development machine’s specification this might
-        take a little while. Ensure that you are in the project’s root
-        directory, ``example/``, and then issue the build command, shown
-        below.
+        Build time varies depending on the development machine specification.
+        Ensure that you are in the project’s root directory (example/,) and then
+        issue the the following build command.
 
     .. code:: shell
 
         mvn clean install
 
-5.  Start the *example* project for the first time.
+5.  Initialize the *example* project.
 
     .. code:: shell
 
@@ -136,24 +132,23 @@ To develop an app perform the following steps.
         ls
         ./karaf
 
-6.  Wait for the karaf cli that appears as follows. Wait for OpenDaylight
-    to fully load all the components. This can take a minute or two after
-    the prompt appears. Check the CPU on your dev machine, specifically
-    the Java process to see when it calms down.
+6.  Wait for the Karaf CLI to appear. Wait for OpenDaylight to fully load
+    all components. This can take a minute or two after the prompt appears.
+    Check the CPU on the dev machine, specifically the Java process to see
+    when it slows down.
 
     .. code:: shell
 
         opendaylight-user@root>
 
 7.  Verify if the “example” module is built and search for the log entry
-    which includes the entry *ExampleProvider Session Initiated*.
+    that includes the entry *ExampleProvider Session Initiated*.
 
     .. code:: shell
 
         log:display | grep Example
 
-8.  Shutdown OpenDaylight through the console by using the following
-    command.
+8.  Enter the following command to shutdown OpenDaylight through the console:
 
     .. code:: shell
 
@@ -163,18 +158,17 @@ Defining a simple HelloWorld RPC
 --------------------------------
 
 1.  Build a *hello* example from the Maven archetype *opendaylight-startup-archetype*,
-    same as above.
+    same as what was done in the previous steps.
 
-2.  Now view the entry point to understand where the log line came from. The
-    entry point is in the impl project:
+2.  View the entry point to understand the origins of the log line. The
+    entry point starts in the ./impl project:
 
     .. code:: shell
 
         impl/src/main/java/org/opendaylight/hello/impl/HelloProvider.java
 
-3.  Add any new things that you are doing in your implementation by
-    using the ``HelloProvider.init`` method. It's analogous to
-    an Activator.
+3.  Add any new content that you are doing in your implementation by
+    using the ``HelloProvider.init`` method. It is analogous to an Activator.
 
     .. code:: java
 
@@ -194,7 +188,7 @@ Add a simple HelloWorld RPC API
 
         cd api/src/main/yang/
 
-2.  Edit ``hello.yang`` as follows. In the following example, we are adding
+2.  Edit the ``hello.yang`` file. In the following example, we are adding
     the code in a YANG module to define the *hello-world* RPC:
 
     .. code::
@@ -222,7 +216,7 @@ Add a simple HelloWorld RPC API
             }
         }
 
-3.  Return to the ``hello/api`` directory and build your API as follows.
+3.  Return to the hello/api directory. Do the following to build the API:
 
     .. code:: shell
 
@@ -232,8 +226,7 @@ Add a simple HelloWorld RPC API
 Implement the HelloWorld RPC API
 --------------------------------
 
-1.  Define the HelloService, which is invoked through the *hello-world*
-    API.
+1.  Define the HelloService that was invoked through the *hello-world* API.
 
     .. code:: shell
 
@@ -336,8 +329,8 @@ Implement the HelloWorld RPC API
 
         </blueprint>
 
-3.  Optionally, you can also build the Java classes which will register
-    the new RPC. This is useful to test the edits you have made to
+3.  Optionally, users can build the Java classes that will register
+    the new RPC. This is useful to test the edits that were made to
     ``HelloProvider.java``.
 
     .. code:: shell
@@ -351,8 +344,8 @@ Implement the HelloWorld RPC API
 
         cd ../
 
-5.  Build the entire *hello* again, which will pickup the changes you
-    have made and build them into your project:
+5.  Build the entire *hello* again. This will pickup the new changes,
+    and then build them into the project:
 
     .. code:: shell
 
@@ -378,7 +371,7 @@ Execute the *hello* project for the first time
 Test the *hello-world* RPC via REST
 -----------------------------------
 
-There are a lot of ways to test your RPC. Following are some examples.
+There are a lot of ways to test a RPC. The following are a few examples.
 
 1.  Using the API Explorer through HTTP
 
@@ -442,9 +435,10 @@ Using the API Explorer through HTTP
 Using a browser REST client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| For example, use the following information in the Firefox plugin
-  *RESTClient*
-  `https://github.com/chao/RESTClient <https://github.com/chao/RESTClient>`_
+Next, use a browser to POST a REST client request.
+For example, use the following information in the Firefox plugin:
+
+*RESTClient* `https://github.com/chao/RESTClient <https://github.com/chao/RESTClient>`_
 
 ::
 
