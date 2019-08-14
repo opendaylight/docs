@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4f1a6756_8effad21",
+        "filename": "projects_branch_automation_script.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2019-08-14T13:47:06Z",
+      "side": 1,
+      "message": "This is a start but so far it\u0027s only modifying the files locally and does not yet produce a git commit. So no one will see your changes until you push them to Gerrit. This involves 2 steps:\n\n1) We need to create a \"git commit\" for each of the changes in all the repos so that it is committed and then a patch can be produced from it.\n\n2) We also need to make sure to push the patches to Gerrit as well. You can add an option to your script to such as \"--publish\" which when enabled causes the patches to be pushed to Gerrit. Without that option it will operate as a local test run\n\nI\u0027d recommend using the \"git-review\" tool to do the pushing.\n\nOnce the patches are online then it can be merged and then ReadTheDocs will be able to update the documentation with the new changes.",
+      "revId": "9ac90e8bfd75401fa0bb09606bb5337f6915ca97",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    }
+  ]
+}
