@@ -2,39 +2,34 @@ Developing Apps on the OpenDaylight controller
 ==============================================
 
 This section provides information that is required to develop apps on
-the OpenDaylight controller.
-
-You can either develop apps within the controller using the model-driven
-SAL (MD-SAL) archetype or develop external apps and use the RESTCONF to
-communicate with the controller.
+an OpenDaylight controller. Apps can be developed either within the 
+controller using the Model-Driven SAL (MD-SAL) archetype or via 
+external apps using the RESTCONF to communicate with the controller.
 
 Overview
 --------
-
-This section enables you to get started with app development within the
-OpenDaylight controller. In this example, you perform the following
-steps to develop an app.
+This section starts app development within an OpenDaylight controller. 
+Perform the following steps to develop an app.
 
 1. Create a local repository for the code using a simple build process.
 
 2. Start the OpenDaylight controller.
 
-3. Test a simple remote procedure call (RPC) which you have created
-   based on the principle of *hello world*.
+3. Test a simple remote procedure call (RPC) that was created based on
+   the principle of *hello world*.
 
-Pre requisites
+Prerequisites
 --------------
+The following are the prerequires for app creation:
 
-This example requires the following.
-
--  A development environment with following set up and working correctly
+-  A development environment with the following setup and working correctly
    from the shell:
 
    -  Maven 3.5.2 or later
 
    -  Java 8-compliant JDK
 
-   -  An appropriate Maven settings.xml file. A simple way to get the
+   -  An appropriate Maven settings.xml file. One way to get the
       default OpenDaylight settings.xml file is:
 
       ::
@@ -43,19 +38,17 @@ This example requires the following.
 
 .. note::
 
-    If you are using Linux or Mac OS X as your development OS, your
-    local repository is ~/.m2/repository. For other platforms the local
-    repository location will vary.
+    For Linux or Mac OS X development operating systems, the local
+    repository is ~/.m2/repository. For other platforms, the local
+    repository location varies.
 
-Building an example module
---------------------------
-
-To develop an app perform the following steps.
+Building an Example Module
+-----------------------------
+Perform the following steps to develop an app:
 
 1. Create an *Example* project using Maven and an archetype called the
-   *opendaylight-startup-archetype*. If you are downloading this project
-   for the first time, then it will take sometime to pull all the code
-   from the remote repository.
+   *opendaylight-startup-archetype*. For first time downloads, this project
+   will take sometime to pull all the code from the remote repository.
 
    .. code:: shell
 
@@ -74,7 +67,7 @@ To develop an app perform the following steps.
       * - Sodium Development
         - 1.2.0-SNAPSHOT
 
-2. Update the properties values as follows. Ensure that the values for the groupId and
+2. Update the properties values. Ensure that the values for the groupId and
    the artifactId are in lower case.
 
    .. code:: shell
@@ -86,7 +79,7 @@ To develop an app perform the following steps.
        Define value for property 'classPrefix':  ${artifactId.substring(0,1).toUpperCase()}${artifactId.substring(1)}
        Define value for property 'copyright': : Copyright (c) 2015 Yoyodyne, Inc.
 
-3. Accept the default value of classPrefix that is,
+3. Accept the default value of classPrefix, that is:
    ``(${artifactId.substring(0,1).toUpperCase()}${artifactId.substring(1)})``.
    The classPrefix creates a Java Class Prefix by capitalizing the first
    character of the artifactId.
@@ -112,16 +105,15 @@ To develop an app perform the following steps.
 
    .. note::
 
-       Depending on your development machine’s specification this might
-       take a little while. Ensure that you are in the project’s root
-       directory, example/, and then issue the build command, shown
-       below.
+       Build time varies depending on the development machine’s specification.
+       Ensure that you are in the project’s root directory (example/,) and then 
+       issue the the following build command.
 
    .. code:: shell
 
        mvn clean install
 
-5. Start the *example* project for the first time.
+5. Initialize the *example* project.
 
    .. code:: shell
 
@@ -129,24 +121,23 @@ To develop an app perform the following steps.
        ls
        ./karaf
 
-6. Wait for the karaf cli that appears as follows. Wait for OpenDaylight
-   to fully load all the components. This can take a minute or two after
-   the prompt appears. Check the CPU on your dev machine, specifically
-   the Java process to see when it calms down.
+6. Wait for the Karaf CLI to appears. Wait for OpenDaylight to fully load
+   all components. This can take a minute or two after the prompt appears. 
+   Check the CPU on the dev machine, specifically the Java process to see 
+   when it slows down.
 
    .. code:: shell
 
        opendaylight-user@root>
 
 7. Verify if the “example” module is built and search for the log entry
-   which includes the entry *ExampleProvider Session Initiated*.
+   that includes the entry *ExampleProvider Session Initiated*.
 
    .. code:: shell
 
        log:display | grep Example
 
-8. Shutdown OpenDaylight through the console by using the following
-   command.
+8. Enter the following command to shutdown OpenDaylight through the console:
 
    .. code:: shell
 
@@ -155,18 +146,18 @@ To develop an app perform the following steps.
 Defining a Simple Hello World RPC
 ---------------------------------
 
-1.  | Build a *hello* example from the Maven archetype *opendaylight-startup-archetype*,
-      same as above.
+1.  Build a *hello* example from the Maven archetype *opendaylight-startup-archetype*,
+    same as what was done in the previous steps.
 
-2.  Now view the entry point to understand where the log line came from. The
-    entry point is in the impl project:
+2.  View the entry point to understand the origins of the log line. The
+    entry point starts in the ./impl project:
 
     .. code:: shell
 
         impl/src/main/java/org/opendaylight/hello/impl/HelloProvider.java
 
-3.  Add any new things that you are doing in your implementation by
-    using the HelloProvider.onSessionInitiate method. It's analogous to
+3.  Add any new content that you are doing in your implementation by
+    using the HelloProvider.onSessionInitiate method. It is analogous to
     an Activator.
 
     .. code:: java
@@ -176,7 +167,7 @@ Defining a Simple Hello World RPC
                 LOG.info("HelloProvider Session Initiated");
             }
 
-Add a simple HelloWorld RPC API
+Add a Simple HelloWorld RPC API
 -------------------------------
 
 1. Navigate to the file.
@@ -186,7 +177,7 @@ Add a simple HelloWorld RPC API
        Edit
        api/src/main/yang/hello.yang
 
-2. Edit this file as follows. In the following example, we are adding
+2. Edit this file. In the following example, we are adding
    the code in a YANG module to define the *hello-world* RPC:
 
    .. code::
@@ -212,7 +203,7 @@ Add a simple HelloWorld RPC API
            }
        }
 
-3. Return to the hello/api directory and build your API as follows.
+3. Return to the hello/api directory. Do the following to build the API:
 
    .. code:: shell
 
@@ -222,15 +213,13 @@ Add a simple HelloWorld RPC API
 Implement the HelloWorld RPC API
 --------------------------------
 
-1. Define the HelloService, which is invoked through the *hello-world*
-   API.
+1. Define the HelloService that was invoked through the *hello-world* API.
 
    .. code:: shell
 
        cd ../impl/src/main/java/org/opendaylight/hello/impl/
 
-2. Create a new file called HelloWorldImpl.java and add in the code
-   below.
+2. Create a new file called *HelloWorldImpl.java*. Add it in the code:
 
    .. code:: java
 
@@ -254,11 +243,10 @@ Implement the HelloWorld RPC API
            }
        }
 
-3. The HelloProvider.java file is in the current directory. Register the
-   RPC that you created in the *hello.yang* file in the
-   HelloProvider.java file. You can either edit the HelloProvider.java
-   to match what is below or you can simple replace it with the code
-   below.
+3. The *HelloProvider.java* file is in the current directory. Register the
+   RPC that was created in the *hello.yang* file in the HelloProvider.java 
+   file. Either edit the HelloProvider.java to match what it is or replace
+   it with the following code.
 
    .. code:: java
 
@@ -298,8 +286,8 @@ Implement the HelloWorld RPC API
            }
        }
 
-4. Optionally, you can also build the Java classes which will register
-   the new RPC. This is useful to test the edits you have made to
+4. Optionally, users can build the Java classes that will register
+   the new RPC. This is useful to test the edits that was made to
    HelloProvider.java and HelloWorldImpl.java.
 
    .. code:: shell
@@ -307,21 +295,21 @@ Implement the HelloWorld RPC API
        cd ../../../../../../../
        mvn clean install
 
-5. Return to the top level directory
+5. Return to the top level directory.
 
    .. code:: shell
 
        cd ../
 
-6. Build the entire *hello* again, which will pickup the changes you
-   have made and build them into your project:
+6. Build the entire *hello* again. This will pickup the new changes,
+   and then build them into the project:
 
    .. code:: shell
 
        mvn clean install
 
-Execute the *hello* project for the first time
-----------------------------------------------
+Execute the *hello* Project for the First Time
+-----------------------------------------------
 
 1. Run karaf
 
@@ -330,7 +318,7 @@ Execute the *hello* project for the first time
        cd ../karaf/target/assembly/bin
        ./karaf
 
-2. Wait for the project to load completely. Then view the log to see the
+2. Wait for the project to load completely. Then, view the log to see the
    loaded *Hello* Module:
 
    .. code:: shell
@@ -339,29 +327,29 @@ Execute the *hello* project for the first time
 
 Test the *hello-world* RPC via REST
 -----------------------------------
+There are a lot of ways to test a RPC. The following are a few examples.
 
-There are a lot of ways to test your RPC. Following are some examples.
+1. Using the API Explorer through HTTP.
 
-1. Using the API Explorer through HTTP
+2. Using a browser REST client.
 
-2. Using a browser REST client
-
-Using the API Explorer through HTTP
+Using the API Explorer Through HTTP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. | Navigate to `apidoc
-     UI <http://localhost:8181/apidoc/explorer/index.html>`__ with your
-     web browser.
-   | NOTE: In the URL mentioned above, Change *localhost* to the IP/Host
-     name to reflect your development machine’s network address.
+1. Navigate to the `apidoc UI <http://localhost:8181/apidoc/explorer/index.html>`.
 
-2. Select
+.. note::   
+
+   In the previous URL, change *localhost* to the IP/Host name to 
+   reflect the development machine’s network address.
+
+2. Select the following:
 
    .. code:: shell
 
        hello(2015-01-05)
 
-3. Select
+3. Select the following:
 
    ::
 
@@ -375,10 +363,10 @@ Using the API Explorer through HTTP
 
 5. Click the button.
 
-6. Enter the username and password, by default the credentials are
-   admin/admin.
+6. Enter the username and password. By default, the credentials are
+   *admin/admin*.
 
-7. In the response body you should see.
+7. The following should appear in the response body.
 
    .. code:: json
 
@@ -388,10 +376,10 @@ Using the API Explorer through HTTP
          }
        }
 
-Using a browser REST client
+Using a Browser REST Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-| For example, use the following information in the Firefox plugin
+Next, use a browser to POST a REST client. For example, use the following 
+information in the Firefox plugin
   *RESTClient*
   `https://github.com/chao/RESTClient <https://github.com/chao/RESTClient>`_
 
@@ -415,10 +403,9 @@ Body:
     }
 
 Troubleshooting
----------------
-
-If you get a response code 501 while attempting to POST
+------------------
+If a response code *501* appears while attempting to POST
 /operations/hello:hello-world, check the file: HelloProvider.java and
-make sure the helloService member is being set. By not invoking
-"session.addRpcImplementation()" the REST API will be unable to map
+ensure the helloService member is being set. By not invoking
+"session.addRpcImplementation()", the REST API will be unable to map
 /operations/hello:hello-world url to HelloWorldImpl.
