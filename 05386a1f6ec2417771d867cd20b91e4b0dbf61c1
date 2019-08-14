@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "73617c80_898653b9",
+        "filename": "docs_master_branch_update.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2019-08-14T13:55:51Z",
+      "side": 1,
+      "message": "Would be good to print out a usage statement if no options are passed that acts as documentation for all of the options in this script.",
+      "revId": "05386a1f6ec2417771d867cd20b91e4b0dbf61c1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "97faeabe_5538b56d",
+        "filename": "docs_master_branch_update.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2019-08-14T13:55:51Z",
+      "side": 1,
+      "message": "Seems like the script only modifies files locally. We need to produce a commit and then an option to push the changes to Gerrit. That\u0027s the only way the changes will become live since ReadTheDocs builds what\u0027s in Git.",
+      "revId": "05386a1f6ec2417771d867cd20b91e4b0dbf61c1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    }
+  ]
+}
