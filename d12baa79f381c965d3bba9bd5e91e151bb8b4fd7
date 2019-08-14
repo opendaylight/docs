@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "11b97cab_8700c5a2",
+        "filename": "docs/developer-guide/developing-apps-on-the-opendaylight-controller.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2019-08-14T20:14:18Z",
+      "side": 1,
+      "message": "This needs to be indented at the same level as the \"An appropriate\" otherwise it will not be part of the bullet item.",
+      "revId": "d12baa79f381c965d3bba9bd5e91e151bb8b4fd7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "189907dc_cf3efb43",
+        "filename": "docs/developer-guide/developing-apps-on-the-opendaylight-controller.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2019-08-14T20:14:18Z",
+      "side": 1,
+      "message": "No need to add an extra - here. it should line up with the text above.",
+      "revId": "d12baa79f381c965d3bba9bd5e91e151bb8b4fd7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f0860255_027edd13",
+        "filename": "docs/developer-guide/developing-apps-on-the-opendaylight-controller.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 407,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2019-08-14T20:14:18Z",
+      "side": 1,
+      "message": "No need for the extra 3 - here as it needs to line up with the text above. Also would be good to add a blank line below this line too.",
+      "revId": "d12baa79f381c965d3bba9bd5e91e151bb8b4fd7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    }
+  ]
+}
