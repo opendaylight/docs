@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "db853cec_53bf25b2",
+        "filename": "projects_branch_automation_script.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2019-08-20T14:46:46Z",
+      "side": 1,
+      "message": "You don\u0027t need --recursive because this code is not recursively going into nested submodules and ODL does not have any nested submodule projects.\n\nThis applies to all the commands below too.",
+      "range": {
+        "startLine": 35,
+        "startChar": 22,
+        "endLine": 35,
+        "endChar": 33
+      },
+      "revId": "dc880de560cc9afb8c5b776c3df239109b5edb2d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "51b4537c_43d0aad7",
         "filename": "projects_branch_automation_script.sh",
         "patchSetId": 8
