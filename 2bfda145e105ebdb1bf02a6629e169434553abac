@@ -1,0 +1,187 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b677413e_33000a9c",
+        "filename": "projects_branch_automation_script.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2019-08-20T17:37:29Z",
+      "side": 1,
+      "message": "I think we should rename the script to update_docs_version.sh as it more accurately reflects what the script is actually doing.",
+      "revId": "2bfda145e105ebdb1bf02a6629e169434553abac",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7a431d01_db973158",
+        "filename": "projects_branch_automation_script.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2019-08-20T17:37:29Z",
+      "side": 1,
+      "message": "We need a copyright statement after the shebang you can copy this one and update the year to 2019:\n\nhttps://github.com/lfit/releng-lftools/blob/master/shell/autocorrectinfofile#L2-L10",
+      "revId": "2bfda145e105ebdb1bf02a6629e169434553abac",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "699fbca4_c8253f0a",
+        "filename": "projects_branch_automation_script.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2019-08-20T17:37:29Z",
+      "side": 1,
+      "message": "This really should go in the usage function (see my comment below).",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 93
+      },
+      "revId": "2bfda145e105ebdb1bf02a6629e169434553abac",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7e130c61_c668b3a7",
+        "filename": "projects_branch_automation_script.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2019-08-20T17:37:29Z",
+      "side": 1,
+      "message": "Instead of echoing the output of each option in the case statement it is better to output after you have done all the processing of these variables below. That way the user can see what the final result of all their inputs are. This should go after you manipulate the variables for example the variables block you have below this.",
+      "range": {
+        "startLine": 10,
+        "startChar": 6,
+        "endLine": 10,
+        "endChar": 40
+      },
+      "revId": "2bfda145e105ebdb1bf02a6629e169434553abac",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "04ad0316_067b746a",
+        "filename": "projects_branch_automation_script.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2019-08-20T17:37:29Z",
+      "side": 1,
+      "message": "Instead I\u0027d recommend creating a function called usage() that prints out the full usage information on how to use this script. Then you can call the function here (and anytime it might be helpful for the user to know). Here\u0027s an example:\n\nhttps://github.com/lfit/releng-lftools/blob/master/shell/deploy#L274-L291",
+      "range": {
+        "startLine": 25,
+        "startChar": 6,
+        "endLine": 25,
+        "endChar": 54
+      },
+      "revId": "2bfda145e105ebdb1bf02a6629e169434553abac",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b649904a_f8b5aedd",
+        "filename": "projects_branch_automation_script.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2019-08-20T17:37:29Z",
+      "side": 1,
+      "message": "master is a bad variable name because \"master\" refers to a branch not a variable. We should use a variable name like \"release_name\".\n\nAfter reviewing the whole script I think we can probably achieve what we need with only a single input for the release_name as we do not appear to need the previous release or the next release below. (The script is a really simple sed script that just changes the version the one the user is providing.",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 22
+      },
+      "revId": "2bfda145e105ebdb1bf02a6629e169434553abac",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ba9cce21_7127115f",
+        "filename": "projects_branch_automation_script.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2019-08-20T17:37:29Z",
+      "side": 1,
+      "message": "Why are we using `|| true` everywhere?\n\nWhat this does is tells the script to continue even if something has failed. Which is probably not a good idea. Unless there is a very good reason to ignore failures we shouldn\u0027t be ignoring them. (same comment applies to all instances below).",
+      "range": {
+        "startLine": 43,
+        "startChar": 37,
+        "endLine": 43,
+        "endChar": 44
+      },
+      "revId": "2bfda145e105ebdb1bf02a6629e169434553abac",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "12ad65d6_fbf7a28a",
+        "filename": "projects_branch_automation_script.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2019-08-20T17:37:29Z",
+      "side": 1,
+      "message": "Instead of having the same code duplicated twice and run once for master and once for stable/$branch this entire script should be designed in a way that it can be called twice by the user to perform the changes on as many branches as they like. This will make the script infinitely more re-usable than the current design which assumes the user wants to update master and stable/sodium only.\n\nI image the usage of this script like this:\n\n ./update_docs_version.sh [RELEASE]\n ./update_docs_version.sh magnesium\n ./update_docs_version.sh sodium\n ./update_docs_version.sh neon",
+      "revId": "2bfda145e105ebdb1bf02a6629e169434553abac",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e72f0e1f_4fcf91f4",
+        "filename": "projects_branch_automation_script.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2019-08-20T17:37:29Z",
+      "side": 1,
+      "message": "I find the code here a little difficult to read and could heavily benefit from some spacing for readability. Separate the code with blank lines so that things that are logically together are together and things that are logically separate have some new lines in between.\n\nTake a look at some scripts here for examples of nicely formatted bash scripts https://github.com/lfit/releng-global-jjb/tree/master/shell",
+      "revId": "2bfda145e105ebdb1bf02a6629e169434553abac",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    }
+  ]
+}
