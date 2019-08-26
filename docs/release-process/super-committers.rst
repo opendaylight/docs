@@ -99,7 +99,6 @@ Super Committers
 Name                      IRC                 Email
 ========================= =================== =================================
 Anil Belur                abelur              abelur@linuxfoundation.org
-Ariel Adam                aadam               aadam@redhat.com
 Daniel Farrell            dfarrell07          dfarrell@redhat.com
 Jamo Luhrsen              jamoluhrsen         jluhrsen@gmail.com
 Luis Gomez                LuisGomez           ecelgp@gmail.com
