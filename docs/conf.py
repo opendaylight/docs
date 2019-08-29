@@ -321,6 +321,10 @@ linkcheck_ignore = [
 
 nitpicky = True
 
+intersphinx_mapping = {}
+intersphinx_mapping['odl-integration-test'] = ('https://docs.opendaylight.org/projects/integration-test/en/latest/', None)
+intersphinx_mapping['odl-releng-builder'] = ('https://docs.opendaylight.org/projects/releng-builder/en/latest/', None)
+
 import platform
 if platform.system() != 'Windows':
 
