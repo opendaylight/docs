@@ -311,10 +311,6 @@ linkcheck_ignore = [
 
 nitpicky = True
 
-import platform
-if platform.system() != 'Windows':
-
-    # Build integration stuff
-    import subprocess
-
-    subprocess.call(["./build-integration-robot-libdoc.sh"])
+intersphinx_mapping = {}
+intersphinx_mapping['odl-integration-test'] = ('https://docs.opendaylight.org/projects/integration-test/en/latest/', None)
+intersphinx_mapping['odl-releng-builder'] = ('https://docs.opendaylight.org/projects/releng-builder/en/latest/', None)
