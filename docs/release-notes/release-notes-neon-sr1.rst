@@ -60,96 +60,96 @@ bgpcep
 
 controller
 ----------
-* `a60b5ffab <https://git.opendaylight.org/gerrit/#/q/a60b5ffab>`_
+* `a60b5ffab1 <https://git.opendaylight.org/gerrit/#/q/a60b5ffab1>`_
   `CONTROLLER-1879 <https://jira.opendaylight.org/browse/CONTROLLER-1879>`_
   : Allow SnapshotBackedReadTransaction customization
-* `6141189f5 <https://git.opendaylight.org/gerrit/#/q/6141189f5>`_
+* `6141189f56 <https://git.opendaylight.org/gerrit/#/q/6141189f56>`_
   `CONTROLLER-1879 <https://jira.opendaylight.org/browse/CONTROLLER-1879>`_
   : Enqueue purge payload directly
-* `e67356302 <https://git.opendaylight.org/gerrit/#/q/e67356302>`_
+* `e67356302f <https://git.opendaylight.org/gerrit/#/q/e67356302f>`_
   `CONTROLLER-1879 <https://jira.opendaylight.org/browse/CONTROLLER-1879>`_
   : Make sure we purge transaction on abort
-* `faa7cb4fe <https://git.opendaylight.org/gerrit/#/q/faa7cb4fe>`_
+* `faa7cb4fe5 <https://git.opendaylight.org/gerrit/#/q/faa7cb4fe5>`_
   `CONTROLLER-1884 <https://jira.opendaylight.org/browse/CONTROLLER-1884>`_
   : Improve segmented journal JMX beans
-* `4729fd5af <https://git.opendaylight.org/gerrit/#/q/4729fd5af>`_
+* `4729fd5af0 <https://git.opendaylight.org/gerrit/#/q/4729fd5af0>`_
   `CONTROLLER-1884 <https://jira.opendaylight.org/browse/CONTROLLER-1884>`_
   : Integrate SegmentedJournalActor with metrics/JMX
-* `e7fb0b91a <https://git.opendaylight.org/gerrit/#/q/e7fb0b91a>`_
+* `e7fb0b91ad <https://git.opendaylight.org/gerrit/#/q/e7fb0b91ad>`_
   `CONTROLLER-1884 <https://jira.opendaylight.org/browse/CONTROLLER-1884>`_
   : Change segmented journal naming
-* `31b74822f <https://git.opendaylight.org/gerrit/#/q/31b74822f>`_
+* `31b74822f3 <https://git.opendaylight.org/gerrit/#/q/31b74822f3>`_
   : Fix memory leak in BA mount service
-* `538d2da5d <https://git.opendaylight.org/gerrit/#/q/538d2da5d>`_
+* `538d2da5d5 <https://git.opendaylight.org/gerrit/#/q/538d2da5d5>`_
   `CONTROLLER-1891 <https://jira.opendaylight.org/browse/CONTROLLER-1891>`_
   : Reset snapshot progress after timeout has been hit
-* `2f80081a8 <https://git.opendaylight.org/gerrit/#/q/2f80081a8>`_
+* `2f80081a8d <https://git.opendaylight.org/gerrit/#/q/2f80081a8d>`_
   : Bump mdsal to 3.0.8
-* `71295dcf3 <https://git.opendaylight.org/gerrit/#/q/71295dcf3>`_
+* `71295dcf31 <https://git.opendaylight.org/gerrit/#/q/71295dcf31>`_
   : Bump yangtools to 2.1.10
-* `6d1c0b416 <https://git.opendaylight.org/gerrit/#/q/6d1c0b416>`_
+* `6d1c0b416b <https://git.opendaylight.org/gerrit/#/q/6d1c0b416b>`_
   : Bump odlparent to 4.0.10
-* `4dba2522d <https://git.opendaylight.org/gerrit/#/q/4dba2522d>`_
+* `4dba2522d5 <https://git.opendaylight.org/gerrit/#/q/4dba2522d5>`_
   : Harden ShardCommitCoordinator to survive EOS write retries
-* `5b685df28 <https://git.opendaylight.org/gerrit/#/q/5b685df28>`_
+* `5b685df28d <https://git.opendaylight.org/gerrit/#/q/5b685df28d>`_
   `CONTROLLER-1890 <https://jira.opendaylight.org/browse/CONTROLLER-1890>`_
   : Do not break actor containment
-* `262537312 <https://git.opendaylight.org/gerrit/#/q/262537312>`_
+* `2625373123 <https://git.opendaylight.org/gerrit/#/q/2625373123>`_
   : Fix checkstyle in toaster-it
-* `6b4917d4a <https://git.opendaylight.org/gerrit/#/q/6b4917d4a>`_
+* `6b4917d4a6 <https://git.opendaylight.org/gerrit/#/q/6b4917d4a6>`_
   : Fix transaction mocking
-* `9ed0eb993 <https://git.opendaylight.org/gerrit/#/q/9ed0eb993>`_
+* `9ed0eb9936 <https://git.opendaylight.org/gerrit/#/q/9ed0eb9936>`_
   : Migrate to use openCursor()
-* `d751e0500 <https://git.opendaylight.org/gerrit/#/q/d751e0500>`_
+* `d751e0500f <https://git.opendaylight.org/gerrit/#/q/d751e0500f>`_
   : Fix logging messages
-* `ef8af945b <https://git.opendaylight.org/gerrit/#/q/ef8af945b>`_
+* `ef8af945bb <https://git.opendaylight.org/gerrit/#/q/ef8af945bb>`_
   `CONTROLLER-1887 <https://jira.opendaylight.org/browse/CONTROLLER-1887>`_
   : Use ReusableNormalizedNodePruner in PruningDataTreeModification
-* `dd022cfb4 <https://git.opendaylight.org/gerrit/#/q/dd022cfb4>`_
+* `dd022cfb43 <https://git.opendaylight.org/gerrit/#/q/dd022cfb43>`_
   `CONTROLLER-1887 <https://jira.opendaylight.org/browse/CONTROLLER-1887>`_
   : Add ReusableNormalizedNodePruner
-* `0e832d641 <https://git.opendaylight.org/gerrit/#/q/0e832d641>`_
+* `0e832d6416 <https://git.opendaylight.org/gerrit/#/q/0e832d6416>`_
   `CONTROLLER-1887 <https://jira.opendaylight.org/browse/CONTROLLER-1887>`_
   : Move checkNotSealed() to addBuilder()
-* `aa0eca0dd <https://git.opendaylight.org/gerrit/#/q/aa0eca0dd>`_
+* `aa0eca0dd9 <https://git.opendaylight.org/gerrit/#/q/aa0eca0dd9>`_
   `CONTROLLER-1887 <https://jira.opendaylight.org/browse/CONTROLLER-1887>`_
   : Remove NormalizedNodePruner.findSchemaNodeForNodePath()
-* `7a1459bb0 <https://git.opendaylight.org/gerrit/#/q/7a1459bb0>`_
+* `7a1459bb08 <https://git.opendaylight.org/gerrit/#/q/7a1459bb08>`_
   `CONTROLLER-1887 <https://jira.opendaylight.org/browse/CONTROLLER-1887>`_
   : Do not use Optional in NormalizedNodeWrapper
-* `085edd310 <https://git.opendaylight.org/gerrit/#/q/085edd310>`_
+* `085edd3104 <https://git.opendaylight.org/gerrit/#/q/085edd3104>`_
   `CONTROLLER-1887 <https://jira.opendaylight.org/browse/CONTROLLER-1887>`_
   : Hide NormalizedNodeBuilderWrapper
-* `d91ccfe0d <https://git.opendaylight.org/gerrit/#/q/d91ccfe0d>`_
+* `d91ccfe0d0 <https://git.opendaylight.org/gerrit/#/q/d91ccfe0d0>`_
   `CONTROLLER-1887 <https://jira.opendaylight.org/browse/CONTROLLER-1887>`_
   : Remove NormalizedNodePruner.SimpleStack
-* `807230d67 <https://git.opendaylight.org/gerrit/#/q/807230d67>`_
+* `807230d67b <https://git.opendaylight.org/gerrit/#/q/807230d67b>`_
   `CONTROLLER-1887 <https://jira.opendaylight.org/browse/CONTROLLER-1887>`_
   : Clean up NormalizedNodePruner
-* `21775f1de <https://git.opendaylight.org/gerrit/#/q/21775f1de>`_
+* `21775f1de8 <https://git.opendaylight.org/gerrit/#/q/21775f1de8>`_
   : Update javadoc links
-* `e90ce260e <https://git.opendaylight.org/gerrit/#/q/e90ce260e>`_
+* `e90ce260e7 <https://git.opendaylight.org/gerrit/#/q/e90ce260e7>`_
   : Fix test mocking
-* `fb58f8baa <https://git.opendaylight.org/gerrit/#/q/fb58f8baa>`_
+* `fb58f8baa5 <https://git.opendaylight.org/gerrit/#/q/fb58f8baa5>`_
   : Add missing license headers
-* `c5d0e62df <https://git.opendaylight.org/gerrit/#/q/c5d0e62df>`_
+* `c5d0e62df3 <https://git.opendaylight.org/gerrit/#/q/c5d0e62df3>`_
   : Use a simple list for string code table
-* `6d0c1f1a5 <https://git.opendaylight.org/gerrit/#/q/6d0c1f1a5>`_
+* `6d0c1f1a5b <https://git.opendaylight.org/gerrit/#/q/6d0c1f1a5b>`_
   `CONTROLLER-1752 <https://jira.opendaylight.org/browse/CONTROLLER-1752>`_
   : Improve NormalizedNodeInputStreamReader defensiveness
-* `fe6e0d5cf <https://git.opendaylight.org/gerrit/#/q/fe6e0d5cf>`_
+* `fe6e0d5cf3 <https://git.opendaylight.org/gerrit/#/q/fe6e0d5cf3>`_
   : Fix segmented journal replay
-* `11f5c8648 <https://git.opendaylight.org/gerrit/#/q/11f5c8648>`_
+* `11f5c86481 <https://git.opendaylight.org/gerrit/#/q/11f5c86481>`_
   : Introduce candidate election timeout divisor
-* `1a181f537 <https://git.opendaylight.org/gerrit/#/q/1a181f537>`_
+* `1a181f5371 <https://git.opendaylight.org/gerrit/#/q/1a181f5371>`_
   `JDK-8206399 <https://jira.opendaylight.org/browse/JDK-8206399>`_
   : Prevent a CME during actor instantiation
-* `99b2dc92f <https://git.opendaylight.org/gerrit/#/q/99b2dc92f>`_
+* `99b2dc92f6 <https://git.opendaylight.org/gerrit/#/q/99b2dc92f6>`_
   `CONTROLLER-1884 <https://jira.opendaylight.org/browse/CONTROLLER-1884>`_
   : Add SegmentedFileJournal
-* `90024fe4d <https://git.opendaylight.org/gerrit/#/q/90024fe4d>`_
+* `90024fe4d1 <https://git.opendaylight.org/gerrit/#/q/90024fe4d1>`_
   : Cleanup java.util.Optional references
-* `e8891e7fc <https://git.opendaylight.org/gerrit/#/q/e8891e7fc>`_
+* `e8891e7fcf <https://git.opendaylight.org/gerrit/#/q/e8891e7fcf>`_
   `MDSAL-422 <https://jira.opendaylight.org/browse/MDSAL-422>`_
   : Account for reported UNMODIFIED nodes
 
