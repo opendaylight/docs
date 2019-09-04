@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1e3a85ac_13c2a5f2",
+        "filename": "projects_branch_automation_script.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8500
+      },
+      "writtenOn": "2019-09-04T18:22:16Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "b677413e_33000a9c",
+      "revId": "2bfda145e105ebdb1bf02a6629e169434553abac",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a431d01_db973158",
         "filename": "projects_branch_automation_script.sh",
         "patchSetId": 10
@@ -56,6 +74,30 @@
       "revId": "2bfda145e105ebdb1bf02a6629e169434553abac",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "661bbaf1_424abba9",
+        "filename": "projects_branch_automation_script.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 8500
+      },
+      "writtenOn": "2019-09-04T18:22:16Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "699fbca4_c8253f0a",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 93
+      },
+      "revId": "2bfda145e105ebdb1bf02a6629e169434553abac",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     },
     {
       "key": {
@@ -151,6 +193,30 @@
     },
     {
       "key": {
+        "uuid": "d8dd8b2b_ddcc2aa7",
+        "filename": "projects_branch_automation_script.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 8500
+      },
+      "writtenOn": "2019-09-04T18:22:16Z",
+      "side": 1,
+      "message": "`|| true`is needed because in autorelease there are some projects which fail on the sed command since their docs/conf.yaml does not even exist. Projects like: serviceutils.",
+      "parentUuid": "ba9cce21_7127115f",
+      "range": {
+        "startLine": 43,
+        "startChar": 37,
+        "endLine": 43,
+        "endChar": 44
+      },
+      "revId": "2bfda145e105ebdb1bf02a6629e169434553abac",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "12ad65d6_fbf7a28a",
         "filename": "projects_branch_automation_script.sh",
         "patchSetId": 10
@@ -162,6 +228,24 @@
       "writtenOn": "2019-08-20T17:37:29Z",
       "side": 1,
       "message": "Instead of having the same code duplicated twice and run once for master and once for stable/$branch this entire script should be designed in a way that it can be called twice by the user to perform the changes on as many branches as they like. This will make the script infinitely more re-usable than the current design which assumes the user wants to update master and stable/sodium only.\n\nI image the usage of this script like this:\n\n ./update_docs_version.sh [RELEASE]\n ./update_docs_version.sh magnesium\n ./update_docs_version.sh sodium\n ./update_docs_version.sh neon",
+      "revId": "2bfda145e105ebdb1bf02a6629e169434553abac",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f9f7074d_def81e8c",
+        "filename": "projects_branch_automation_script.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 8500
+      },
+      "writtenOn": "2019-09-04T18:22:16Z",
+      "side": 1,
+      "message": "If we specify just one input ie the release, in what branch will the user be expecting change. There are two kinds of changes: one in master and one in stable/\u003crelease\u003e. For example :\n./update_docs_version.sh sodium should be changing just the stable/sodium branch. But if I want the master branch updated I will be requiring the next_release name. (./update_docs_version.sh magnesium will just assume changing in stable/magnesium branch which does not even exist. )",
+      "parentUuid": "12ad65d6_fbf7a28a",
       "revId": "2bfda145e105ebdb1bf02a6629e169434553abac",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": true
