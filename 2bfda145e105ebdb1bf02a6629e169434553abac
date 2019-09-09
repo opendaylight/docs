@@ -217,6 +217,30 @@
     },
     {
       "key": {
+        "uuid": "cf870662_eca08a27",
+        "filename": "projects_branch_automation_script.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2019-09-09T13:43:40Z",
+      "side": 1,
+      "message": "I just did a test on a repo with no changes and when I ran \"git add .\" it did not cause a failure so I think it\u0027s fine without the `|| true`. Can you confirm and provide output on how it\u0027s failing?\n\nIf it really does need to be there then this is one of the cases where putting a comment is helpful to explain why the `|| true` is necessary.",
+      "parentUuid": "d8dd8b2b_ddcc2aa7",
+      "range": {
+        "startLine": 43,
+        "startChar": 37,
+        "endLine": 43,
+        "endChar": 44
+      },
+      "revId": "2bfda145e105ebdb1bf02a6629e169434553abac",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "12ad65d6_fbf7a28a",
         "filename": "projects_branch_automation_script.sh",
         "patchSetId": 10
@@ -246,6 +270,24 @@
       "side": 1,
       "message": "If we specify just one input ie the release, in what branch will the user be expecting change. There are two kinds of changes: one in master and one in stable/\u003crelease\u003e. For example :\n./update_docs_version.sh sodium should be changing just the stable/sodium branch. But if I want the master branch updated I will be requiring the next_release name. (./update_docs_version.sh magnesium will just assume changing in stable/magnesium branch which does not even exist. )",
       "parentUuid": "12ad65d6_fbf7a28a",
+      "revId": "2bfda145e105ebdb1bf02a6629e169434553abac",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "67b4236a_17a40138",
+        "filename": "projects_branch_automation_script.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2019-09-09T13:43:40Z",
+      "side": 1,
+      "message": "If you really need the 2 variables than provide 2 inputs.\n\n ./update_docs_version.sh \u003cfind\u003e \u003creplace\u003e\n\nThat\u0027s basically all the code is doing. The important part here is the 2 blocks of code are redundant and you can have the 1 script work for both situations.",
+      "parentUuid": "f9f7074d_def81e8c",
       "revId": "2bfda145e105ebdb1bf02a6629e169434553abac",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": true
