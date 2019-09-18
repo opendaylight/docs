@@ -1,0 +1,112 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "859e57af_6aa44c7b",
+        "filename": "docs/release-notes/sample-release-notes.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2019-09-18T13:04:29Z",
+      "side": 1,
+      "message": "The \u003d\u003d\u003d\u003d\u003d lines need to be lined up with the text above it.",
+      "revId": "c99ed19158a2dadddc4fdbbdab1b29b35672176d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0a52b13a_aa317229",
+        "filename": "docs/release-notes/sample-release-notes.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2019-09-18T13:04:29Z",
+      "side": 1,
+      "message": "Same here",
+      "revId": "c99ed19158a2dadddc4fdbbdab1b29b35672176d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d7461619_911c62c7",
+        "filename": "docs/release-notes/sample-release-notes.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2019-09-18T13:04:29Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "c99ed19158a2dadddc4fdbbdab1b29b35672176d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d126e384_8883ee85",
+        "filename": "docs/release-notes/sample-release-notes.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2019-09-18T13:04:29Z",
+      "side": 1,
+      "message": "For the bullet item to correctly render it needs to be lined up with the bullet point and not the bold syntax. This line should look like this:\n\n * **Feature Description:** This sample ...\n   the implementation of RFC 000.\n\nYou can see the bullent point takes 2 characters \u0027* \u0027 which starts the list, which means every line that\u0027s part of that bullet point needs to be 2 characters indented following it.",
+      "range": {
+        "startLine": 44,
+        "startChar": 81,
+        "endLine": 46,
+        "endChar": 0
+      },
+      "revId": "c99ed19158a2dadddc4fdbbdab1b29b35672176d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e89716c9_fb2aa829",
+        "filename": "docs/release-notes/sample-release-notes.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2019-09-18T13:04:29Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "c99ed19158a2dadddc4fdbbdab1b29b35672176d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "47a7742e_029d7920",
+        "filename": "docs/release-notes/sample-release-notes.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2019-09-18T13:04:29Z",
+      "side": 1,
+      "message": "same here.",
+      "revId": "c99ed19158a2dadddc4fdbbdab1b29b35672176d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    }
+  ]
+}
