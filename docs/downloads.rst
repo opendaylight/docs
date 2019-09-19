@@ -5,7 +5,7 @@ OpenDaylight Downloads
 Supported Releases
 ==================
 
-Neon-SR1
+Neon-SR2
 --------
 
 (Current Release)
