@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "70c6e641_28300a6f",
+        "filename": "build_update_version_RTD.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2019-09-24T13:03:46Z",
+      "side": 1,
+      "message": "This function is missing documentation for what $1, $2, $3 means.",
+      "revId": "6e6fb18c7ec489e38c655768824135f8913b9a34",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9a593d0b_a1ab7a83",
+        "filename": "build_update_version_RTD.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2019-09-24T13:03:46Z",
+      "side": 1,
+      "message": "I highly recommend setting $1, $2, $3 to local function variable names so that it\u0027s immediately obvious to the reader what the variables are for. The top of your function should have something like:\n\n token\u003d$1\n project\u003d$2\n version\u003d$3\n\nThen you can use the named variables each time you need them.",
+      "range": {
+        "startLine": 27,
+        "startChar": 50,
+        "endLine": 27,
+        "endChar": 52
+      },
+      "revId": "6e6fb18c7ec489e38c655768824135f8913b9a34",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9627f0da_766ac029",
+        "filename": "build_update_version_RTD.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2019-09-24T13:03:46Z",
+      "side": 1,
+      "message": "It\u0027s _really_ good practice to put spacing betweeen logical tasks so that it\u0027s easy to read what goes together. Following your pattern where you echo things before you perform an action, that can be considered a logical block so try spacing your code out like this:\n\n echo \"Do task 1\"\n ... task1 code ...\n ... task1 code continued ...\n ... task1 code etc ...\n \n echo \"Do task 2\"\n ... task2 code ...\n ... task2 code continued ...\n\nhopefully you get the idea. Reading code that has no spacing is like reading a book that has no paragraphs. It\u0027s long and difficult to parse.",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 59
+      },
+      "revId": "6e6fb18c7ec489e38c655768824135f8913b9a34",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    }
+  ]
+}
