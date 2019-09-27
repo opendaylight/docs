@@ -5,6 +5,28 @@ OpenDaylight Downloads
 Supported Releases
 ==================
 
+Sodium
+------
+
+(Current Release)
+
+:Announcement: https://www.opendaylight.org/what-we-do/current-release/sodium
+:Original Release Date: September 24, 2019
+:Service Release Date: N/A
+
+:Downloads:
+    * `OpenDaylight Sodium Tar
+      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.11.0/opendaylight-0.11.0.tar.gz>`_
+    * `OpenDaylight Sodium Zip
+      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.11.0/opendaylight-0.11.0.zip>`_
+
+:Documentation:
+    * :doc:`Getting Started Guide <odl-sodium:getting-started-guide/index>`
+    * :doc:`Developers Guide <odl-sodium:developer-guide/index>`
+    * :doc:`User Guide <odl-sodium:user-guide/index>`
+    * :doc:`Installation Guide <odl-sodium:getting-started-guide/installing_opendaylight>`
+    * :doc:`Release Notes <odl-sodium:release-notes/index>`
+
 Neon-SR2
 --------
 
