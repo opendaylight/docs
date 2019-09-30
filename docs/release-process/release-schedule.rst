@@ -30,7 +30,7 @@ release of both managed and self-managed projects.
 
    * - Initial Checkpoint
      - 2019-03-21
-     - 2019-09-23
+     - 2019-10-03
      - Start Date + 2 weeks
      - Start Date +2 weeks
      - Initial Checkpoint. All Managed Projects must have completed
@@ -96,14 +96,14 @@ release of both managed and self-managed projects.
      - Final Checkpoint for all Managed Projects.
 
    * - Formal Release
-     - 2019-09-05
+     - 2019-09-24
      - 2020-03-09
      - 6 months after Start Date
      - Start Date +6 months
      - Formal release
 
    * - Service Release 1
-     - 2019-10-17
+     - 2019-10-24
      - 2020-04-20
      - 1.5 month after Formal Release
      - Start Date +7.5 months
