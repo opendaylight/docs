@@ -19,6 +19,8 @@ Sodium
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.11.0/opendaylight-0.11.0.tar.gz>`_
     * `OpenDaylight Sodium Zip
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.11.0/opendaylight-0.11.0.zip>`_
+    * `OpenDaylight Sodium RPM
+      <https://cbs.centos.org/repos/nfv7-opendaylight-110-release/x86_64/os/Packages/opendaylight-11.0.0-1.el7.noarch.rpm>`_
 
 :Documentation:
     * :doc:`Getting Started Guide <odl-sodium:getting-started-guide/index>`
@@ -29,8 +31,6 @@ Sodium
 
 Neon-SR2
 --------
-
-(Current Release)
 
 :Announcement: https://www.opendaylight.org/announcement/2019/03/26/opendaylight-most-pervasive-open-source-sdn-controller-celebrates-sixth-anniversary-with-neon-release
 :Original Release Date: March 26, 2019
