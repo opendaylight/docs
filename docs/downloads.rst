@@ -30,8 +30,6 @@ Sodium
 Neon-SR2
 --------
 
-(Current Release)
-
 :Announcement: https://www.opendaylight.org/announcement/2019/03/26/opendaylight-most-pervasive-open-source-sdn-controller-celebrates-sixth-anniversary-with-neon-release
 :Original Release Date: March 26, 2019
 :Service Release Date: September 06, 2019
@@ -73,31 +71,6 @@ Fluorine-SR3
     * :doc:`Installation Guide <odl-fluorine:getting-started-guide/installing_opendaylight>`
     * :doc:`Using OpenDaylight with OpenStack <odl-fluorine:opendaylight-with-openstack/index>`
     * :doc:`Release Notes <odl-fluorine:release-notes/index>`
-
-Oxygen-SR4
-----------
-
-:Announcement: https://www.opendaylight.org/about/news/blogs/opendaylight-releases-oxygen-with-new-p4-and-container-support
-:Original Release Date: March 22, 2018
-:Service Release Date: Dec 12, 2018
-
-:Downloads:
-    * `OpenDaylight Oxygen SR4 Tar
-      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/karaf/0.8.4/karaf-0.8.4.tar.gz>`_
-    * `OpenDaylight Oxygen SR4 Zip
-      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/karaf/0.8.4/karaf-0.8.4.zip>`_
-    * `OpenDaylight Oxygen SR4 RPM
-      <http://cbs.centos.org/repos/nfv7-opendaylight-84-release/x86_64/os/Packages/opendaylight-8.4.0-1.el7.noarch.rpm>`_
-    * `OpFlex
-      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/opflex/>`_
-
-:Documentation:
-    * :doc:`Getting Started Guide <odl-oxygen:getting-started-guide/index>`
-    * :doc:`Developers Guide <odl-oxygen:developer-guide/index>`
-    * :doc:`User Guide <odl-oxygen:user-guide/index>`
-    * :doc:`Installation Guide <odl-oxygen:getting-started-guide/installing_opendaylight>`
-    * :doc:`Using OpenDaylight with OpenStack <odl-oxygen:opendaylight-with-openstack/index>`
-    * :doc:`Release Notes <odl-oxygen:release-notes/index>`
 
 Archived Releases
 =================
