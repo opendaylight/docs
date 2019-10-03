@@ -21,10 +21,10 @@ release.
 New and Modified Features
 =========================
 
-This releases provides the following new and modified features:
+This release provides the following new and modified features:
 
 * **Feature URL:** `DAEXIM Feature <https://git.opendaylight.org/gerrit/gitweb?p=daexim.git;a=blob;f=features/odl-daexim/src/main/feature/feature.xml;hb=refs/heads/stable/sodium>`_
-* **Feature Description:** This is a wrapper feature which includes all the sub features provided by daexim project.
+* **Feature Description:** This wrapper feature includes all the sub-features provided by the Daexim project.
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** Yes
@@ -34,7 +34,7 @@ This releases provides the following new and modified features:
 Deprecated Features
 ===================
 
-This release did not remove any features.
+This release did not remove any feature.
 
 
 Resolved Issues
@@ -50,7 +50,7 @@ The following table lists the resolved issues fixed in this release.
      - **Summary**
 
    * - General commit
-     - Address Sonar warnings found in the code. No behavior change.
+     - Address Sonar warnings found in the code. No behavior changes.
 
 
 
