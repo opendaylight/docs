@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff0e8937_b42a1af5",
+        "filename": "build_update_version_RTD.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2019-10-04T13:51:07Z",
+      "side": 1,
+      "message": "The indenting in this file is inconsistent.\n\n* In the enable_build_in_RTD_usage() function we are using 4 spaces.\n* In the build_update_version() function we are using 8 spaces.\n* In the while loop we are using both 2 and 4 spaces.\n* In the last section of the script we use 8 spaces.\n\nCan we consolidate all the indents consistently with 4 space indents please?",
+      "revId": "8f4814fe634ecf06b0ca56158f2d2c4e212f9fed",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    }
+  ]
+}
