@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "62a97490_8aee5e04",
+        "filename": "build_update_version_RTD.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2019-10-05T13:02:42Z",
+      "side": 1,
+      "message": "There\u0027s 2 ways to handle if-then and for-do as this is kind of a special case.\n\nSolution 1)\n\n if [ test ]; then\n     # code here\n fi\n\nSolution 2)\n\n if [ test ]\n then\n     # code here\n fi\n\nThe extra indenting for the \"then\" and the \"do\" statement creates an unnatural looking indent as after code is complete it\u0027s unindented by double the width.",
+      "revId": "83643f52d5f8803a2597e7731a08c730ccb0a00c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    }
+  ]
+}
