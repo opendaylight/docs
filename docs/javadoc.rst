@@ -12,12 +12,12 @@ Release Integrated Projects
 Managed Projects
 ================
 
-* `bgpcep <https://javadocs.opendaylight.org/bgpcep/sodium>`_
-* `controller <https://javadocs.opendaylight.org/controller/sodium>`_
-* `genius <https://javadocs.opendaylight.org/genius/sodium>`_
-* `infrautils <https://javadocs.opendaylight.org/infrautils/sodium>`_
-* `lispflowmapping <https://javadocs.opendaylight.org/lispflowmapping/sodium>`_
-* `netvirt <https://javadocs.opendaylight.org/netvirt/sodium>`_
-* `neutron <https://javadocs.opendaylight.org/neutron/sodium>`_
-* `openflowplugin <https://javadocs.opendaylight.org/openflowplugin/sodium>`_
-* `ovsdb <https://javadocs.opendaylight.org/ovsdb/sodium>`_
+* `bgpcep <https://javadocs.opendaylight.org/bgpcep/magnesium>`_
+* `controller <https://javadocs.opendaylight.org/controller/magnesium>`_
+* `genius <https://javadocs.opendaylight.org/genius/magnesium>`_
+* `infrautils <https://javadocs.opendaylight.org/infrautils/magnesium>`_
+* `lispflowmapping <https://javadocs.opendaylight.org/lispflowmapping/magnesium>`_
+* `netvirt <https://javadocs.opendaylight.org/netvirt/magnesium>`_
+* `neutron <https://javadocs.opendaylight.org/neutron/magnesium>`_
+* `openflowplugin <https://javadocs.opendaylight.org/openflowplugin/magnesium>`_
+* `ovsdb <https://javadocs.opendaylight.org/ovsdb/magnesium>`_
