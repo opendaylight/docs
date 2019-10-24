@@ -1,6 +1,6 @@
-===================
-About this Document
-===================
+====================
+Sample Release Notes
+====================
 
 .. note::
 
@@ -28,7 +28,6 @@ About this Document
    "n/a" or "none" as it is often confusing as to whether that means there are
    no issues or you simply didn't think about or address anything.
 
-============
 Project Name
 ============
 
