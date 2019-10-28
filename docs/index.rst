@@ -38,6 +38,7 @@ Managed Projects
 * :doc:`MD-SAL Documentation <mdsal:index>`
 * :doc:`NetConf Documentation <netconf:index>`
 * :doc:`NetVirt Documentation <netvirt:index>`
+* :doc:`ODL Parent Documentation <odlparent:index>`
 * :doc:`OpenFlowPlugin Documentation <openflowplugin:index>`
 * :doc:`OVSDB Documentation <ovsdb:index>`
 
