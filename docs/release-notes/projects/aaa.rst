@@ -1,23 +1,21 @@
-============
- AAA
-============
+===
+AAA
+===
 
 Overview
 ========
 
-AAA stands for Authentication, Authorization, and Accounting. All three of
-these services can help improve the security posture of an OpenDaylight deployment.
-
-The vast majority of OpenDaylight's northbound APIs (and all RESTCONF APIs) are
-protected by AAA by default when installing the +odl-restconf+ feature. In the
-cases that APIs are *not* protected by AAA, this will be noted in the
-per-project release notes.
+AAA (Authentication, Authorization, and Accounting) provides the services
+that help improve the security posture of an OpenDaylight deployment.
+By default, the vast majority of OpenDaylight’s northbound APIs
+(and all RESTCONF APIs) are protected by AAA when installing the
++odl-restconf+ feature. When an API is not protected by AAA, it
+is noted in the project’s release notes.
 
 Behavior Changes
 ================
 
-* Eliminate the Oauth2 Provider Implementation that was based on Apache Oltu.
-  `AAA-173 <https://https://jira.opendaylight.org/browse/AAA-173>`_: https://jira.opendaylight.org/browse/AAA-173
+* `AAA-173 <https://https://jira.opendaylight.org/browse/AAA-173>`_: Eliminate the Oauth2 Provider Implementation that was based on Apache Oltu.
 
 New and Modified Features
 =========================
