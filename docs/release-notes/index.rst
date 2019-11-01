@@ -54,14 +54,14 @@ Project-specific Release Notes
    projects/*
 
 
-.. Service Release Notes
-.. =====================
-..
-.. .. toctree::
-..   :glob:
-..   :maxdepth: 2
-..
-..   release-notes-*
+Service Release Notes
+=====================
+
+.. toctree::
+   :glob:
+   :maxdepth: 2
+
+   release-notes-*
 
 
 .. toctree::
