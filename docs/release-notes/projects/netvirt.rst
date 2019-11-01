@@ -8,17 +8,31 @@ Major Features
 Feature Name
 ------------
 
-* **Feature Name:** odl-netvirt-openstack
-* **Feature URL:** `odl-netvirt-openstack <https://git.opendaylight.org/gerrit/gitweb?p=netvirt.git;a=blob;f=features/odl-netvirt-openstack/pom.xml;hb=HEAD>`_
-* **Feature Description:**  NetVirt is a network virtualization solution that includes the following components as well
-  as others: Open vSwitch based virtualization for software switches, Hardware VTEP for hardware switches,
-  Service Function Chaining support within a virtualized environment, support for OVS and DPDK-accelerated
-  OVS data paths, L3VPN (BGPVPN), EVPN, ELAN, distributed L2 and L3, NAT and Floating IPs, IPv6, Security Groups,
-  MAC and IP learning.
-* **Top Level:** Yes
-* **User Facing:** Yes
-* **Experimental:** No
-* **CSIT Test:** `NetVirt CSIT <https://jenkins.opendaylight.org/releng/view/netvirt-csit/job/netvirt-csit-1node-1cmb-0ctl-0cmp-openstack-rocky-upstream-stateful-sodium/>`_
+.. list-table::
+   :widths: 20 50
+   :header-rows: 1
+
+   * - **Feature**
+     - **Description**
+
+   * - **Feature Name**
+     - odl-netvirt-openstack
+   * - **Feature URL**
+     - `odl-netvirt-openstack <https://git.opendaylight.org/gerrit/gitweb?p=netvirt.git;a=blob;f=features/odl-netvirt-openstack/pom.xml;hb=HEAD>`_
+   * - **Feature Description**
+     - NetVirt is a network virtualization solution that includes the following components as well
+       as others: Open vSwitch based virtualization for software switches, Hardware VTEP for hardware switches,
+       Service Function Chaining support within a virtualized environment, support for OVS and DPDK-accelerated
+       OVS data paths, L3VPN (BGPVPN), EVPN, ELAN, distributed L2 and L3, NAT and Floating IPs, IPv6, Security Groups,
+       MAC and IP learning.
+   * - **Top Level**
+     - Yes
+   * - **User Facing**
+     - Yes
+   * - **Experimental**
+     - No
+   * - **CSIT Test**
+     - `NetVirt CSIT <https://jenkins.opendaylight.org/releng/view/netvirt-csit/job/netvirt-csit-1node-1cmb-0ctl-0cmp-openstack-rocky-upstream-stateful-sodium/>`_
 
 Documentation
 =============
@@ -83,5 +97,5 @@ N/A
 Release Mechanics
 =================
 
-* `Release Plan <https://jira.opendaylight.org/browse/TSC-209>`_
+* `Release plan <https://jira.opendaylight.org/browse/TSC-209>`_
 * Project was on schedule

@@ -2,50 +2,36 @@
 Release Notes
 #############
 
-Target Environment
-==================
+Execution
+---------
 
-For Execution
--------------
+OpenDaylight includes `Karaf <https://karaf.apache.org>`_ containers, `OSGi <https://www.osgi.org>`_
+(Open Service Gateway Initiative) bundles, and Java class files, which are portable and can run on
+any Java 8-compliant JVM (Java virtual machine). Any add-on project or feature of a
+specific project may have additional requirements.
 
-The OpenDaylight Karaf container, OSGi bundles, and Java class files
-are portable and should run on any Java 8-compliant JVM. Certain projects and
-certain features of some projects may have additional requirements.
+Development
+-----------
 
-For Development
----------------
+OpenDaylight is written in Java and utilizes Maven as a build tool. Therefore,
+the only requirements needed to develop projects within OpenDaylight include:
 
-OpenDaylight is written primarily in Java project and primarily uses
-Maven as a build tool Consequently the two main requirements to develop
-projects within OpenDaylight are:
+* `Java JDK <https://www.oracle.com/technetwork/java/javase/certconfig-2095354.html>`_ 8-compliant
+* `Apache Maven <https://maven.apache.org>`_ 3.5.2 or later
 
-* A Java 8-compliant JDK
-* Maven 3.5.2 or later
+If an application or tool is built on top of OpenDaylight’s REST APIs, it does not
+have any special requirement beyond what is necessary to run the application or tool
+to make REST calls.
 
-Applications and tools built on top of OpenDaylight using its REST
-APIs should have no special requirements beyond whatever is needed to
-run the application or tool and make the REST calls.
+In some instances, OpenDaylight uses the `Xtend <https://www.eclipse.org/xtend/>`_ lamguage.
+Even though Maven downloads all appropriate tools to build applications; additional plugins
+may be required to support IDE.
 
-In some places, OpenDaylight makes use of the Xtend language. While
-Maven will download the appropriate tools to build this, additional
-plugins may be required for IDE support.
+Projects with additional requirements for execution typically have similar or
+additional requirements for development. See the platforms release notes for details.
 
-The projects with additional requirements for execution typically have
-similar or more extensive additional requirements for development. See
-the project-specific release notes for details.
-
-Known Issues and Limitations
-============================
-
-Other than as noted in project-specific release notes, we know of the
-following limitations:
-
-* Migration from prior OpenDaylight releases to |release| has not been
-  extensively tested. The per-project release notes include migration and
-  compatibility information when it is known.
-
-Project-specific Release Notes
-==============================
+Project Release Notes
+=====================
 
 .. toctree::
    :glob:
@@ -58,14 +44,14 @@ Service Release Notes
 =====================
 
 .. toctree::
-   :glob:
-   :maxdepth: 2
+  :glob:
+  :maxdepth: 2
 
-   release-notes-*
-
+  release-notes-*
 
 .. toctree::
    :maxdepth: 1
    :hidden:
 
    sample-release-notes
+   release-notes-sodium-sr1
