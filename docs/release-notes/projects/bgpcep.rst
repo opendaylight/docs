@@ -1,12 +1,13 @@
-============
+======
 BGPCEP
-============
+======
 
 Overview
 ========
 
-The OpenDaylight controller provides an implementation of BGP (RFC 4271) as a south-bound protocol plugin.
-The implementation renders all basic *BGP speaker capabilities*:
+The OpenDaylight controller provides an implementation of
+BGP (RFC 4271) as a south-bound protocol plugin. The
+implementation renders all basic *BGP speaker capabilities*:
 
 * inter/intra-AS peering
 * routes advertising
@@ -20,10 +21,10 @@ The plugin's **north-bound API** (``REST``/``Java``) provides to user:
 * read-write programmable RIBs
 * read-only reachability/linkstate topology view
 
-|
-
-The OpenDaylight PCEP plugin provides all basic service units necessary to build-up a PCE-based controller.
-In addition, it offers LSP management functionality for Active Stateful PCE - the cornerstone for majority of PCE-enabled SDN solutions.
+The OpenDaylight PCEP plugin provides all basic service units
+necessary to build-up a PCE-based controller. In addition, it
+offers LSP management functionality for Active Stateful PCE -
+the cornerstone for majority of PCE-enabled SDN solutions.
 It consists of the following components:
 
 * Protocol library
@@ -39,7 +40,7 @@ Behavior Changes
 New and Modified Features
 =========================
 
-This releases provides the following new and modified features:
+This release provides the following new and modified features:
 
 * `BGPCEP-871 <https://jira.opendaylight.org/browse/BGPCEP-871>`_: RPC to provide PCEP session statistics
 * `BGPCEP-868 <https://jira.opendaylight.org/browse/BGPCEP-868>`_: Support for draft-ietf-idr-ext-opt-param

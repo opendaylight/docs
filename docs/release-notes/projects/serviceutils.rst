@@ -2,40 +2,64 @@
 SERVICEUTILS
 ============
 
-ServiceUtils is an infrastructure project for OpenDaylight aimed at providing utilities
-that will assist in Operation and Maintenance of different services provided by OpenDaylight.
-A service is a functionality provided by the ODL controller as seen by the operator.
-These services can be categerized as Networking services, e.g. L2, L3/VPN, NAT etc., and Infra services, e.g. Openflow.
-These services are provided by different ODL projects like Netvirt, Genius and Openflowplugin and are comprised
-of a set of java karaf bundles and associated MD-SAL datastores.
+ServiceUtils is an infrastructure project for OpenDaylight. It provides the
+utilities that will assist in Operation and Maintenance of different services
+provided by OpenDaylight. A service is a functionality provided by the ODL
+controller as seen by the operator. These services can be categorized as
+networking services (for example, L2, L3/VPN, NAT, etc.) and infra services
+(for example, Openflow). These services are provided by different ODL projects,
+such as NetVirt, Genius and Openflow plugin. They are comprised of a set of Java
+Karaf bundles and associated MD-SAL datastores.
 
-Major Features
-==============
+Features
+========
 
 odl-serviceutils-srm
 --------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=serviceutils.git;a=blob;f=features/odl-serviceutils-srm/pom.xml;hb=refs/heads/stable/sodium
-* **Feature Description:**  This feature provides service recovery functionaility for ODL services
-* **Top Level:** Yes
-* **User Facing:** Yes
-* **Experimental:** No
-* **CSIT Test:**
+.. list-table::
+   :widths: 15 55
+   :header-rows: 1
 
-  * ServiceRecovery is tested by Genius CSIT.
-    https://jenkins.opendaylight.org/releng/view/genius/job/genius-csit-1node-gate-only-sodium
+   * - **Feature**
+     - **Description**
+
+   * - **Feature URL**
+     - `Serviceutils SRM <https://git.opendaylight.org/gerrit/gitweb?p=serviceutils.git;a=blob;f=features/odl-serviceutils-srm/pom.xml;hb=refs/heads/stable/sodium>`_
+   * - **Feature Description**
+     - This feature provides service recovery functionality for ODL services.
+   * - **Top Level**
+     - Yes
+   * - **User Facing**
+     - Yes
+   * - **Experimental**
+     - No
+   * - **CSIT**
+     - `ServiceRecovery <https://jenkins.opendaylight.org/releng/view/genius/job/genius-csit-1node-gate-only-sodium>`_
+       is tested by Genius CSIT.
 
 odl-serviceutils-tools
 ----------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=serviceutils.git;a=blob;f=features/odl-serviceutils-tools/pom.xml;hb=refs/heads/stable/sodium
-* **Feature Description:**  This feature currently has utilities for datatree listeners, as well as Upgrade support.
-* **Top Level:** Yes
-* **User Facing:** Yes
-* **Experimental:** No
-* **CSIT Test:**
+.. list-table::
+   :widths: 15 55
+   :header-rows: 1
 
-  * Does not have CSIT on its own, but heavily tested by genius and netvirt CSITs
+   * - **Feature**
+     - **Description**
+
+   * - **Feature URL**
+     - `serviceutils-tools <https://git.opendaylight.org/gerrit/gitweb?p=serviceutils.git;a=blob;f=features/odl-serviceutils-tools/pom.xml;hb=refs/heads/stable/sodium>`_
+   * - **Feature Description**
+     - This feature currently has utilities for datatree listeners, as well as Upgrade support.
+   * - **Top Level**
+     - Yes
+   * - **User Facing**
+     - Yes
+   * - **Experimental**
+     - No
+   * - **CSIT**
+     - Does not have CSIT on its own, but heavily tested by genius and NetVirt CSITs.
 
 Documentation
 =============
@@ -50,7 +74,7 @@ Documentation
 
 * **Developer Guide(s):**
 
-  The project was spun off from GENIUS, and most of the assocaited documentation is still with GENIUS.
+  The project was spun off from GENIUS, and most of the associated documentation is still with GENIUS.
 
   * :doc:`Developer Guide <genius:index>`
 
@@ -78,9 +102,9 @@ Quality Assurance
 
   * `CSIT Job clustering <https://jenkins.opendaylight.org/releng/view/genius/job/genius-csit-3node-gate-only-sodium/>`_
 
-  * `Netvirt CSIT for Serviceutils patches <https://jenkins.opendaylight.org/releng/job/serviceutils-patch-test-netvirt-sodium/>`_
+  * `NetVirt CSIT for Serviceutils patches <https://jenkins.opendaylight.org/releng/job/serviceutils-patch-test-netvirt-sodium/>`_
 
-  * `Netvirt cluster CSIT for Serviceutils patches <https://jenkins.opendaylight.org/releng/job/serviceutils-patch-test-cluster-netvirt-sodium/>`_
+  * `NetVirt cluster CSIT for Serviceutils patches <https://jenkins.opendaylight.org/releng/job/serviceutils-patch-test-cluster-netvirt-sodium/>`_
 
   * `Genius Cluster CSIT for Serviceutils patches <https://jenkins.opendaylight.org/releng/job/serviceutils-patch-test-genius-sodium/>`_
 
@@ -142,7 +166,6 @@ Release Mechanics
 =================
 
 * `Release plan <https://jira.opendaylight.org/browse/TSC-215>`_
+   Describe any major shifts in release schedule from the release plan
 
-* Describe any major shifts in release schedule from the release plan
-
-  * No shifts
+* No shifts
