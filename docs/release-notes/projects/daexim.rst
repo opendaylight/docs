@@ -1,41 +1,49 @@
-
 ======
 DAEXIM
 ======
 
 Overview
 ========
-
-DAEXIM or Data Export/Import feature allows OpenDaylight administrators
-to export the current system state to the file system or to import the
-state from the file system.
-
+Daexim (Data Export/Import) allows OpenDaylight administrators to either
+export a system state to a file system or to import a system state from
+the file system.
 
 Behavior Changes
 ================
 
-DAEXIM is a mature feature. No behavior changes were introduced in this
+Daexim is a mature feature. No behavior changes were introduced in this
 release.
-
 
 New and Modified Features
 =========================
 
 This release provides the following new and modified features:
 
-* **Feature URL:** `DAEXIM Feature <https://git.opendaylight.org/gerrit/gitweb?p=daexim.git;a=blob;f=features/odl-daexim/src/main/feature/feature.xml;hb=refs/heads/stable/sodium>`_
-* **Feature Description:** This wrapper feature includes all the sub-features provided by the Daexim project.
-* **Top Level:** Yes
-* **User Facing:** Yes
-* **Experimental:** Yes
-* **CSIT Test:**  `Single node tests <https://jenkins.opendaylight.org/releng/view/daexim/job/daexim-csit-1node-basic-only-sodium/>`_,  `Three node cluster tests <https://jenkins.opendaylight.org/releng/view/daexim/job/daexim-csit-3node-clustering-basic-only-sodium/>`_
+.. list-table::
+   :widths: 20 50
+   :header-rows: 1
 
+   * - **Feature**
+     - **Description**
+
+   * - **Feature URL**
+     - `Daexim Feature <https://git.opendaylight.org/gerrit/gitweb?p=daexim.git;a=blob;f=features/odl-daexim/src/main/feature/feature.xml;hb=refs/heads/stable/sodium>`_
+   * - **Feature Description**
+     - This wrapper feature includes all the sub-features provided by the Daexim project.
+   * - **Top Level**
+     - Yes
+   * - **User Facing**
+     - Yes
+   * - **Experimental**
+     - Yes
+   * - **CSIT Test**
+     - `Single node tests <https://jenkins.opendaylight.org/releng/view/daexim/job/daexim-csit-1node-basic-only-sodium/>`_
+       and `Three node cluster tests <https://jenkins.opendaylight.org/releng/view/daexim/job/daexim-csit-3node-clustering-basic-only-sodium/>`_
 
 Deprecated Features
 ===================
 
 This release did not remove any feature.
-
 
 Resolved Issues
 ===============
@@ -52,12 +60,7 @@ The following table lists the resolved issues fixed in this release.
    * - General commit
      - Address Sonar warnings found in the code. No behavior changes.
 
-
-
-
 Known Issues
 ============
 
-There are no known issues that exist in this release. List of open
-issues can be found `here <https://jira.opendaylight.org/projects/DAEXIM/issues>`_.
-
+* `DAEXIM-14 <https://jira.opendaylight.org/projects/DAEXIM/issues>`_

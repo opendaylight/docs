@@ -1,15 +1,33 @@
-======================
+=============
 Transport PCE
-======================
+=============
 
 Major Features
 ==============
 
-* Service Handler - translate WDM optical services creation requests so they can be treated by the different modules below - northbound API based on openroadm service models.
-* Topology management
-* Path Calculation Engine (PCE, here in a different meaning than the BGPCEP project since it is not based on (G)MPLS )
-* Renderer - responsible for the path configuration through optical equipment - based on the netconf protocol and openroadm specifications. Southbound plugin.
-* Optical Line Management (OLM)
+
+.. list-table::
+   :widths: 15 55
+   :header-rows: 1
+
+   * - **Feature**
+     - **Description**
+
+   * - **Service Handler**
+     - This translate the WDM optical services creation requests, so
+       they can be treated by different modules. Northbound API are
+       based on openroadm service models.
+   * - **Path Calculation Engine (PCE)**
+     - This is a different meaning than the BGPCEP project, since
+       it is not based on (G)MPLS).
+   * - **Renderer**
+     - This is responsible for the path configuration through optical
+       equipment. This is based on NETCONF and Open ROADM specifications.
+       Southbound plugin.
+   * - **Optical Line Management (OLM)**
+     -
+   * - **Topology management**
+     -
 
 Documentation
 =============
@@ -40,7 +58,9 @@ Improvements
 * This release supports the OpenROADM device version 2.2.1 (this support was experimental in Neon)
 * Openroadm and transportPCE are now based on IETF RFC8345 standard official network models (contrary to Fluorine which was relying on IETF I2RS draft).
 * The discrepancies between the topology db and the portmapping has been fixed in this release.
-* TransportPCE uses flexmap since Neon. The sodium release fixes a bug in the map formula used by Neon. https://git.opendaylight.org/gerrit/c/transportpce/+/84197
-* TransportPCE now relies on the new ODL databroker implementation instead of the deprectad controller one. https://git.opendaylight.org/gerrit/c/transportpce/+/83996
-* Others deprecated functions related to Transaction services have also been migrated https://git.opendaylight.org/gerrit/c/transportpce/+/83839/1
-
+* `84197 <https://git.opendaylight.org/gerrit/c/transportpce/+/84197>`_
+  TransportPCE uses flexmap since Neon. The sodium release fixes a bug in the map formula used by Neon.
+* `83996 <https://git.opendaylight.org/gerrit/c/transportpce/+/83996>`_
+  TransportPCE now relies on the new ODL databroker implementation instead of the deprectad controller one.
+* `83839 <https://git.opendaylight.org/gerrit/c/transportpce/+/83839/1>`_
+  Others deprecated functions related to Transaction services have also been migrated.

@@ -38,20 +38,32 @@ This release introduces the following behavior changes:
 New and Modified Features
 =========================
 
-This releases provides the following new and modified features:
+This release provides the following new and modified features:
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=sample.git;a=blob;f=features/src/main/features/features.xml
-* **Feature Description:**  This sample feature performs various sample tasks to provide
-  the implementation of RFC 0000.
-* **Top Level:** Yes
-* **User Facing:** Yes
-* **Experimental:** Yes
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sample/job/sample-csit-1node-feature-all-carbon/
+.. list-table::
+   :widths: 20 50
+   :header-rows: 1
+
+   * - **Feature**
+     - **Description**
+
+   * - **Feature URL**
+     - `Features <https://git.opendaylight.org/gerrit/gitweb?p=sample.git;a=blob;f=features/src/main/features/features.xml>`_
+   * - **Feature Description**
+     - This sample feature performs various sample tasks to provide the implementation of RFC 0000.
+   * - **Top Level**
+     - Yes
+   * - **User Facing**
+     - Yes
+   * - **Experimental**
+     - Yes
+   * - **CSIT**
+     - `Test <https://jenkins.opendaylight.org/releng/view/sample/job/sample-csit-1node-feature-all-carbon/>`_
 
 Deprecated Features
 ===================
 
-This releases removed the following features:
+This release removed the following features:
 
 *
 
