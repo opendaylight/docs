@@ -99,6 +99,40 @@
     },
     {
       "key": {
+        "uuid": "05ea4277_4678fe4a",
+        "filename": "docs/release-notes/projects/netconf.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 2833
+      },
+      "writtenOn": "2019-11-04T20:06:54Z",
+      "side": 1,
+      "message": "Add these two items as well:\n\n1. An option is provided in yangtools to preserve the ordering of the requests as defined in the YANG file while formulating the NETCONF payload. This will help devices which are picky on ordering of elements. To do this the JAVA parameter \"org.opendaylight.yangtools.yang.data.impl.schema.builder.retain-child-order\" needs to be set to true before starting Karaf\n\n2. NETCONF-608 - Change Netconf keepalives to not send during large payload replies\n\n  * stop to send the keepalive rpc to device while ODL is waiting/processing\n    the response from the device",
+      "revId": "7610d2a6221c9a2472621f248e57d940dcb3ffac",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "01e77fd2_d4757406",
+        "filename": "docs/release-notes/projects/netconf.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 2833
+      },
+      "writtenOn": "2019-11-04T20:06:54Z",
+      "side": 1,
+      "message": "Rewrote this line item as below:\nAn item was added to optionally not issue lock/unlock for NETCONF edit-config issues. This is done for devices where the device is able to handle multiple requests through a queue. Please contact the vendor before enabling this option as all transactions semantics are off if this option is set for a device. This option can be set by issuing a PUT RESTCONF call as below\n\n/restconf/config/netconf-node-optional:netconf-node-fields-optional/topology/topology-netconf/node/{node-id}/datastore-lock\n\n{\n   \"datastore-lock-allowed\" : false\n}",
+      "revId": "7610d2a6221c9a2472621f248e57d940dcb3ffac",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a9272ce5_29e0f9fe",
         "filename": "docs/release-notes/projects/netconf.rst",
         "patchSetId": 2
@@ -119,6 +153,23 @@
       "revId": "7610d2a6221c9a2472621f248e57d940dcb3ffac",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0b5e8a0a_a1400d31",
+        "filename": "docs/release-notes/projects/netconf.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 2833
+      },
+      "writtenOn": "2019-11-04T20:06:54Z",
+      "side": 1,
+      "message": "This feature is added for netconf cann-home feature. We need to be specific on this.",
+      "revId": "7610d2a6221c9a2472621f248e57d940dcb3ffac",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
     },
     {
       "key": {
