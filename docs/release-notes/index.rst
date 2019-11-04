@@ -62,7 +62,7 @@ Service Release Notes
    :maxdepth: 2
 
    release-notes-*
-
+   upgrade-process
 
 .. toctree::
    :maxdepth: 1
