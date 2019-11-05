@@ -103,21 +103,21 @@ release of both managed and self-managed projects.
      - Formal release
 
    * - Service Release 1
-     - 2019-10-24
+     - 2019-11-12
      - 2020-04-20
      - 1.5 month after Formal Release
      - Start Date +7.5 months
      - Service Release 1 (SR1)
 
    * - Service Release 2
-     - 2020-01-16
+     - 2020-01-30
      - 2020-07-20
      - 3 months after SR1
      - Start Date +10.5 months
      - Service Release 2 (SR2)
 
    * - Service Release 3
-     - 2020-05-07
+     - 2020-05-21
      - 2020-11-16
      - 4 months after SR2
      - Start Date +14 months
