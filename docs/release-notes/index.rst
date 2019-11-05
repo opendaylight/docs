@@ -51,18 +51,17 @@ Project-specific Release Notes
    :glob:
    :maxdepth: 1
 
-..   projects/*
-
+   upgrade-process
 
 .. Service Release Notes
 .. =====================
-..
-.. .. toctree::
-..   :glob:
-..   :maxdepth: 2
-..
-..   release-notes-*
 
+..  .. toctree::
+..    :glob:
+..    :maxdepth: 2
+
+..   release-notes-*
+..   projects/*
 
 .. toctree::
    :maxdepth: 1
