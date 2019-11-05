@@ -1,0 +1,222 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a96c907_0353a2e2",
+        "filename": "manuals/readme/src/main/asciidoc/template_installation_guide.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-02-26T22:13:45Z",
+      "side": 1,
+      "message": "We should add a note to the top of the file saying that this is only if the installation process is more complicated than just installing the feature in OpenDaylight. If is simply running a feature:install command, just tell us the feature.",
+      "revId": "fd3f551480d6672fd4846c41cd5f379bef02680f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_434d2a3d",
+        "filename": "manuals/readme/src/main/asciidoc/template_installation_guide.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-02-26T22:13:45Z",
+      "side": 1,
+      "message": "To get bold in AsciiDoc use enclosing asterisks, not triple quotes. Here: *feature*",
+      "range": {
+        "startLine": 2,
+        "startChar": 91,
+        "endLine": 2,
+        "endChar": 104
+      },
+      "revId": "fd3f551480d6672fd4846c41cd5f379bef02680f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_634aa627",
+        "filename": "manuals/readme/src/main/asciidoc/template_installation_guide.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-02-26T22:13:45Z",
+      "side": 1,
+      "message": "I\u0027d remove the title.",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 57
+      },
+      "revId": "fd3f551480d6672fd4846c41cd5f379bef02680f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_23501ed3",
+        "filename": "manuals/readme/src/main/asciidoc/template_installation_guide.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-02-26T22:13:45Z",
+      "side": 1,
+      "message": "feature, not product",
+      "range": {
+        "startLine": 7,
+        "startChar": 20,
+        "endLine": 7,
+        "endChar": 27
+      },
+      "revId": "fd3f551480d6672fd4846c41cd5f379bef02680f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_c3605aa7",
+        "filename": "manuals/readme/src/main/asciidoc/template_installation_guide.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-02-26T22:13:45Z",
+      "side": 1,
+      "message": "Cut the highlighted part. Just \"Prerequisites for Installing \u003cFeature\u003e\"",
+      "range": {
+        "startLine": 9,
+        "startChar": 34,
+        "endLine": 9,
+        "endChar": 76
+      },
+      "revId": "fd3f551480d6672fd4846c41cd5f379bef02680f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_e36556b5",
+        "filename": "manuals/readme/src/main/asciidoc/template_installation_guide.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-02-26T22:13:45Z",
+      "side": 1,
+      "message": "What is an example of a platform requirement that is different from a h/w or s/w requirement?",
+      "revId": "fd3f551480d6672fd4846c41cd5f379bef02680f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_8356d2cc",
+        "filename": "manuals/readme/src/main/asciidoc/template_installation_guide.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-02-26T22:13:45Z",
+      "side": 1,
+      "message": "Just \"Installing \u003cFeature\u003e\"",
+      "range": {
+        "startLine": 17,
+        "startChar": 15,
+        "endLine": 17,
+        "endChar": 18
+      },
+      "revId": "fd3f551480d6672fd4846c41cd5f379bef02680f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_036ac280",
+        "filename": "manuals/readme/src/main/asciidoc/template_installation_guide.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-02-26T22:13:45Z",
+      "side": 1,
+      "message": "Just \"Uninstalling \u003cFeature\u003e\"",
+      "range": {
+        "startLine": 34,
+        "startChar": 17,
+        "endLine": 34,
+        "endChar": 20
+      },
+      "revId": "fd3f551480d6672fd4846c41cd5f379bef02680f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_2367beb8",
+        "filename": "manuals/readme/src/main/asciidoc/template_installation_guide.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-02-26T22:13:45Z",
+      "side": 1,
+      "message": "Should this be a subsection of \"Verifying your Installation\"?",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 38,
+        "endChar": 15
+      },
+      "revId": "fd3f551480d6672fd4846c41cd5f379bef02680f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_c307fac8",
+        "filename": "manuals/readme/src/main/asciidoc/template_installation_guide.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-02-26T22:13:45Z",
+      "side": 1,
+      "message": "What do you imagine going here? If we have examples can we list them? Otherwise, remove it.",
+      "range": {
+        "startLine": 40,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 15
+      },
+      "revId": "fd3f551480d6672fd4846c41cd5f379bef02680f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
