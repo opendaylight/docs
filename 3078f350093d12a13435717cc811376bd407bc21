@@ -1,0 +1,135 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a96c907_e3f0f6ff",
+        "filename": "manuals/readme/src/main/asciidoc/template_release_notes.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-02-26T21:57:54Z",
+      "side": 1,
+      "message": "We probably also want (optional) sections on:\n* compatibility with previous releases\n* migration from previous releases",
+      "revId": "3078f350093d12a13435717cc811376bd407bc21",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_6395c685",
+        "filename": "manuals/readme/src/main/asciidoc/template_release_notes.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-02-26T21:57:54Z",
+      "side": 1,
+      "message": "Do we want release notes to be per-feature or per-project?",
+      "revId": "3078f350093d12a13435717cc811376bd407bc21",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_038e4279",
+        "filename": "manuals/readme/src/main/asciidoc/template_release_notes.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-02-26T21:57:54Z",
+      "side": 1,
+      "message": "My guess is that we don\u0027t want to have an introduction for release notes. It\u0027s really a \"just the facts\" kind of thing. I\u0027d be open to other opinions though.",
+      "revId": "3078f350093d12a13435717cc811376bd407bc21",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_c3eb7a11",
+        "filename": "manuals/readme/src/main/asciidoc/template_release_notes.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-02-26T21:57:54Z",
+      "side": 1,
+      "message": "Maybe change this to major features?",
+      "range": {
+        "startLine": 6,
+        "startChar": 4,
+        "endLine": 6,
+        "endChar": 7
+      },
+      "revId": "3078f350093d12a13435717cc811376bd407bc21",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_238b3e69",
+        "filename": "manuals/readme/src/main/asciidoc/template_release_notes.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-02-26T21:57:54Z",
+      "side": 1,
+      "message": "Remove the extra space.",
+      "range": {
+        "startLine": 12,
+        "startChar": 28,
+        "endLine": 12,
+        "endChar": 29
+      },
+      "revId": "3078f350093d12a13435717cc811376bd407bc21",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_43df6a69",
+        "filename": "manuals/readme/src/main/asciidoc/template_release_notes.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-02-26T21:57:54Z",
+      "side": 1,
+      "message": "Do we want to change this to resolved bugs and just put open bugs in the \"Limitations\" section?",
+      "revId": "3078f350093d12a13435717cc811376bd407bc21",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_a3f66ef7",
+        "filename": "manuals/readme/src/main/asciidoc/template_release_notes.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-02-26T21:57:54Z",
+      "side": 1,
+      "message": "Maybe drop the Related Topics section?",
+      "revId": "3078f350093d12a13435717cc811376bd407bc21",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
