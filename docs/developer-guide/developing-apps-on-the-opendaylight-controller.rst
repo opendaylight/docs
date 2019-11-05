@@ -71,8 +71,14 @@ To develop an app perform the following steps.
       * - OpenDaylight Simultaneous Release
         - opendaylight-startup-archetype version
 
-      * - Sodium Development
-        - 1.2.0-SNAPSHOT
+      * - Sodium
+        - 1.2.0
+
+      * - Sodium SR1
+        - 1.2.1
+
+      * - Sodium SR2 Development
+        - 1.2.2-SNAPSHOT
 
 2. Update the properties values as follows. Ensure that the values for the groupId and
    the artifactId are in lower case.
