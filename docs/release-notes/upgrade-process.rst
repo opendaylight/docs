@@ -16,7 +16,7 @@ Version Bump
 ^^^^^^^^^^^^
 
 Before performing platform upgrade, do the following to *bump* the
-the odlparent versions (for example, `bump-odl-version to <https://github.com/skitt/odl-tools/blob/master/bump-odl-version>`_):
+odlparen versions (for example, `bump-odl-version to <https://github.com/skitt/odl-tools/blob/master/bump-odl-version>`_):
 
 1. Update the odlparent version from 4.0.9 to 5.0.0. There should
    not be any reference to **org.opendaylight.odlparent**, except
@@ -41,8 +41,8 @@ the odlparent versions (for example, `bump-odl-version to <https://github.com/sk
 
   rpl -R 3.0.6 4.0.0
 
-Install Dependent Projects
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+Dependent Projects
+^^^^^^^^^^^^^^^^^^
 
 Before performing platform upgrade, users must also install
 any dependent project. To locally install a dependent project,
@@ -70,10 +70,8 @@ Upgrade the ODL Parent
 ----------------------
 
 The following sub-section describes how to upgrade to the ODL
-Parent version 5. Refer to the following link for the ODL
-parent release notes:
-
-* `ODL Parent Release Notes <https://github.com/opendaylight/odlparent/blob/v5.0.0/NEWS.rst>`_
+Parent version 5. Refer to the `ODL Parent Release Notes <https://github.com/opendaylight/odlparent/blob/v5.0.0/NEWS.rst>`_
+for more information.
 
 Features
 ^^^^^^^^
@@ -81,7 +79,7 @@ Features
 The following features are required to be replaced:
 
 * Change any version range referencing version 4 of ODL Parent to “[5,6]”
-  for ODL Parent 5, for example..
+  for ODL Parent 5, for example:
 
  .. code-block:: none
 
@@ -123,6 +121,15 @@ To:
 
   <groupId>com.github.spotbugs</groupId>
   <artifactId>spotbugs-maven-plugin</artifactId>
+
+JUnit 4.11 and Hamcrest 2.1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Before declaring dependencies on Hamcrest, make sure to update the order of
+Junit and Hamcrest references to match the required order http://hamcrest.org/JavaHamcrest/distributables#maven-upgrade-example.
+Alternatively,
+remove the declarations completely, since odlparent provides them by default
+(at scope=test).
 
 Powermockito
 ^^^^^^^^^^^^
@@ -225,9 +232,9 @@ failures. for example:
 To fix this, there are the following two options:
 
 * Fix the Javadoc. This is preferred, since it is simple to do.
-* Add an override for a particular artifact by creating (and committing
-  to git) an empty file named "odl-javadoc-html5-optout" in a particular
-  artifact's root directory (that is, where its pom.xml is located).
+* Add an override for an artifact by creating (and committing to git)
+  an empty file named "odl-javadoc-html5-optout" in an artifact's
+  root directory (that is, where its pom.xml is located).
 
 YANG Tools Impacts
 ------------------
@@ -274,6 +281,7 @@ Changed from:
    java.lang.Boolean isFoo();
 
 to:
+
  .. code-block:: none
 
    org.opendaylight.yangtools.yang.common.Empty getFoo();
@@ -281,4 +289,89 @@ to:
 In addition, code interacting with these models must be be updated
 to the following: `ProtocolUtile <https://git.opendaylight.org/gerrit/c/bgpcep/+/81384/10/bgp/topology-provider/src/main/java/org/opendaylight/bgpcep/bgp/topology/provider/ProtocolUtil.java>`_.
 
+DataContainer.getImplementedInterface() Renamed
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+The *DataContainer.getImplementedInterface()* method was renamed to just
+*implementedInterface()*. In addition, it is now correctly type-narrowed in
+generated interfaces, which also provides a default implementation. When
+implementing a type registry, update the references to point to this new
+*implementedInterface()* method.
+
+For hand-crafting interfaces or providing mock implementations,
+provide a proper *implementedInterface()* implementation such as
+this one.
+
+DataContainer.implementedInterface() is type-narrowed in DataObjects
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The replacement for *getImplementedInterface()*, *implementedInterface()*
+was narrowed when generated intermediate interfaces. This allows
+groupings to provide a default implementation in container-like interfaces.
+For example:
+
+ .. code-block:: none
+
+  public interface Grp
+       extends
+       DataObject
+    {
+       @Override
+       Class<? extends Grp> implementedInterface();
+    }
+
+The users are like this:
+
+ .. code-block:: none
+
+  public interface Cont
+       extends
+       ChildOf<Mdsal437Data>,
+       Augmentable<Cont>,
+       Grp
+   {
+       @Override
+       default Class<Cont> implementedInterface() {
+           return Cont.class;
+       }
+   }
+
+The preceding command  works, but unfortunately was seen to
+trigger a Javac bug (or something forbidden by JLS, the
+information is not available nor digestible), where the
+following construct involving two unrelated groupings
+fails to compile:
+
+  .. code-block:: none
+
+   <T extends Grp1 & Grp2> void doSomething(Builder<T>);
+
+The intent is to say, "require a Builder of a type T, which
+extends both Grp1 and Grp2". It seems javac (tested with JDK8, JDK11)
+internally performs the equivalent of the following, which fails
+to compile (with the same error as javac reports in the <T ..> case),
+since *T* must do the equivalent of what *Cont* does; narrow
+implementedInterface() to solve the ambiguity. That is not a
+reason to not allow it. For example, Eclipse (that is, JDT
+compiler) will accept this construct without any issues.
+
+  .. code-block:: none
+
+   interface T extends Grp1, Grp2 {
+     }
+
+MD-SAL PingPongDataBroker Does Not Separate
+-------------------------------------------
+
+Both binding and DOM definitions of DataBroker was updated to
+include a *createMergingTransactionChain()* method, which
+integrates the functionality formerly provided by the
+odl:type="pingpong" data broker instance. In addition, the
+downstream will need to update to use the default instance
+to create the appropriate transaction chain manually. Note this
+impacts only the *org.opendaylight.mdsal* interfaces, not
+just the org.opendaylight.controller.
+
+An example of changes can be found `AppPeerBenchmark <https://git.opendaylight.org/gerrit/c/bgpcep/+/81384/15/bgp/benchmark-app/src/main/resources/OSGI-INF/blueprint/bgp-app-peer-benchmark.xml>`_ and `bgp-app-peer <https://git.opendaylight.org/gerrit/c/bgpcep/+/81384/15/bgp/benchmark-app/src/main/java/org/opendaylight/protocol/bgp/benchmark/app/AppPeerBenchmark.java>`_.
+Note the same broker can be used both ways; thus, the proper place to change
+the *createTransactionChain()* call must be updated.
