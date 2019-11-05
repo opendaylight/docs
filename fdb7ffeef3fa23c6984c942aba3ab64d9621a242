@@ -1,0 +1,107 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a96c907_0318821c",
+        "filename": "manuals/readme/src/main/asciidoc/template_how_to.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-02-26T22:19:10Z",
+      "side": 1,
+      "message": "Should we copy this from the user guide section that\u0027s similar?",
+      "revId": "fdb7ffeef3fa23c6984c942aba3ab64d9621a242",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_030162ae",
+        "filename": "manuals/readme/src/main/asciidoc/template_how_to.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-02-26T22:19:10Z",
+      "side": 1,
+      "message": "I *think* we would want the how-tos/tutorials to be cross-project issues. If they were within a project, they\u0027d likely just go in the user guide, right?",
+      "range": {
+        "startLine": 1,
+        "startChar": 3,
+        "endLine": 1,
+        "endChar": 31
+      },
+      "revId": "fdb7ffeef3fa23c6984c942aba3ab64d9621a242",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_c32e1a43",
+        "filename": "manuals/readme/src/main/asciidoc/template_how_to.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-02-26T22:19:10Z",
+      "side": 1,
+      "message": "If these are not per-project, but per-how-to, then we should remove this level of heading.",
+      "revId": "fdb7ffeef3fa23c6984c942aba3ab64d9621a242",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_83249260",
+        "filename": "manuals/readme/src/main/asciidoc/template_how_to.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-02-26T22:19:10Z",
+      "side": 1,
+      "message": "This will get created for the chapter by default. We don\u0027t need to call it out.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 14
+      },
+      "revId": "fdb7ffeef3fa23c6984c942aba3ab64d9621a242",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_631f0609",
+        "filename": "manuals/readme/src/main/asciidoc/template_how_to.adoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-02-26T22:19:10Z",
+      "side": 1,
+      "message": "Remove the second how-to example because (i) it doesn\u0027t belong if we do one chapter per how-to and (ii) it just gives us (the docs group) a harder job of keeping two copies of the same text in sync as we edit things.",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 0
+      },
+      "revId": "fdb7ffeef3fa23c6984c942aba3ab64d9621a242",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
