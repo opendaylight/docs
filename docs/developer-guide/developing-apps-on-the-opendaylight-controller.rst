@@ -77,9 +77,11 @@ To develop an app perform the following steps.
       * - Neon SR1
         - 1.1.1
 
-      * - Neon SR2 Development
-        - 1.1.2-SNAPSHOT
+      * - Neon SR2
+        - 1.1.2
 
+      * - Neon SR3 Development
+        - 1.1.3-SNAPSHOT
 
 2. Update the properties values as follows. Ensure that the values for the groupId and
    the artifactId are in lower case.
