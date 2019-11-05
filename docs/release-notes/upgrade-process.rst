@@ -5,17 +5,18 @@ Neon Platform Upgrade
 This document describes the steps to help users upgrade to the
 Neon planned platform. Refer to `Managed Release Integrated (MRI)
 project <https://git.opendaylight.org/gerrit/#/q/topic:neon-mri>`_
-for more information on MRI.
+for more information.
 
 .. contents:: Contents
 
 Preparation
 -----------
 
-System Updates
-^^^^^^^^^^^^^^
+Version Bump
+^^^^^^^^^^^^
 
-Before performing platform upgrade, users must first update the following:
+Before performing platform upgrade, do the following to bump the odlparent
+versions (for example, `bump-odl-version <https://github.com/skitt/odl-tools/blob/master/bump-odl-version>`_):
 
 1. Update the odlparent version from 3.1.3 to 4.0.2. There should
    not be any reference to **org.opendaylight.odlparent**, except
@@ -46,9 +47,11 @@ Install Dependent Projects
 
 Before performing platform upgrade, users must also install
 any dependent project. To locally install a dependent project,
-pull and install the respective *neon-mri* changes for any
-dependent project. At the minimum, pull and install controller,
-AAA and NETCONF.
+pull and install the respective `neon-mri <https://git.opendaylight.org/gerrit/#/q/topic:neon-mri>`_
+changes for a dependent project. At a minimum, pull and
+install `controller <https://git.opendaylight.org/gerrit/#/c/controller/+/74855/>`_,
+`AAA <https://git.opendaylight.org/gerrit/#/c/aaa/+/74964/>`_ and `NETCONF
+<https://git.opendaylight.org/gerrit/#/c/netconf/+/74966/>`_.
 
 Perform the following steps to save time when locally installing
 any dependent project:
@@ -70,10 +73,9 @@ Upgrade the ODL Parent
 ----------------------
 
 The following sub-section describes how to upgrade to
-the ODL Parent version 4. Refer to the following link for
-the ODL parent release notes:
-
-* `ODL Parent Release Notes <https://github.com/opendaylight/odlparent/blob/v4.0.0/NEWS.rst>`_
+the ODL Parent version 4. Refer to the `ODL Parent Release Notes
+<https://github.com/opendaylight/odlparent/blob/v4.0.0/NEWS.rst>`_
+for more information on upgrading the ODL parent.
 
 Maven
 ^^^^^
@@ -114,7 +116,8 @@ the corresponding library:
     refer to `Apache Common <https://commons.apache.org>`_
 
 * Jackson 2.9: odl-jackson-2.9. Replacing odl-jackson-2.8.
-  Any references to the latter needs to be updated.
+
+Any references to the latter must be updated.
 
 The preceding features should be used in the same way as
 existing ODL Parent features. That is, do not use them in
@@ -244,12 +247,21 @@ generated BP XML. Use this magic incantation (from `c/75180 <https://git.openday
   find . -path '/src/main/resources/org/opendaylight/blueprint/*.xml' -execdir sh -c "mkdir -p ../../../OSGI-INF/blueprint; git mv {} ../../../OSGI-INF/blueprint" \;
 
 When bundles are included in features that have no dependency to the controller's ODL
-blueprint extender bundle this might cause the SFT to fail. This can be solved by
-either adding an artificial controller feature dependency or by removing the object
-that is not required. For more information, refer to the patch set `77008 <https://git.opendaylight.org/gerrit/c/openflowplugin/+/77008/2..3>`_
+blueprint extender bundle, this might cause the SFT to fail with a message of
+"Missing dependencies: (&(objectClass=org.apache.aries.blueprint.NamespaceHandler)
+(osgi.service.blueprint.namespace=http://opendaylight.org/xmlns/blueprint/v1.0.0))".
+This can be solved by either adding an artificial controller feature dependency or
+by removing the object that is not required. For more information, refer to the patch
+set `77008 <https://git.opendaylight.org/gerrit/c/openflowplugin/+/77008/2..3>`_
 
-If a project uses blueprint-maven-plugin, users must migrate from pax-cdi-api to
-blueprint-maven-plugin-annotation. Add the following to the POM:
+If a project uses blueprint-maven-plugin, migrate from pax-cdi-api to
+blueprint-maven-plugin-annotation. In addition, users must add a POM,
+remove the pax-cdi-api dependency, and replace @OsgiServiceProvider on
+a bean class declaration with @Service (using its classes argument),
+@OsgiService with @Reference on injection points like constructors.
+Also, @OsgiService on a bean declaration, if any, with @Service; those
+were wrong. Check that the resulting autowire.xml is identical to the
+previous version.
 
  .. code-block:: none
 
@@ -258,12 +270,6 @@ blueprint-maven-plugin-annotation. Add the following to the POM:
      <artifactId>blueprint-maven-plugin-annotation</artifactId>
      <optional>true</optional>
    </dependency>
-
-Remove the pax-cdi-api dependency and replace the "@OsgiServiceProvider" from the
-bean class declarations with a "@Service" (using its classes argument). Also,
-replace "@OsgiService" with "@Reference" on the injection points constructors.
-In addition, replace the "@OsgiService" on the bean declarations (if any) with
-"@Service." Ensure that the resulting autowire.xml is identical to the previous version.
 
 In Eclipse, the fastest way to do above is to use the following commands:
 
@@ -318,7 +324,7 @@ Replace dependencies to org.opendaylight.mdsal.model:ietf-inet-types-2013-07-15
 and ietf-yang-types-20130715 artifacts in the POMs by org.opendaylight.mdsal.binding.model.ietf:rfc6991.
 
 For more details, see the "Updating model artifact packaging" thread on the mdsal-dev mailing
-list from April 25-26th. In addition, contact the the mdsal-dev list for clarifications about
+list from April 25-26th. In addition, contact the mdsal-dev list for clarifications about
 further doubts. Please do update this section with any new information useful to others.
 `Issue 001656 <https://lists.opendaylight.org/pipermail/mdsal-dev/2018-April/001656.html>`_
 
