@@ -58,9 +58,7 @@ Install Dependent Projects
 
 Before performing platform upgrade, users must also install
 any dependent project. To locally install a dependent project,
-pull and install the respective `magnesium-mri <https://git.opendaylight.org/gerrit/#/q/topic:magnesium-mri>`_ changes for any dependent project. At the minimum, pull and install `controller
-<https://git.opendaylight.org/gerrit/83803>`_, `AAA <https://git.opendaylight.org/gerrit/83858>`_
-and `NETCONF <https://git.opendaylight.org/gerrit/#/c/81273/>`_.
+pull and install the respective `magnesium-mri <https://git.opendaylight.org/gerrit/#/q/topic:magnesium-mri>`_ changes for any dependent project. At the minimum, pull and install *controller*.
 
 Perform the following steps to save time when locally installing
 any dependent project:
