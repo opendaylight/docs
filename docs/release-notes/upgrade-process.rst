@@ -1,11 +1,11 @@
-=====================
-Neon Platform Upgrade
-=====================
+==========================
+Magnesium Platform Upgrade
+==========================
 
 This document describes the steps to help users upgrade to the
 Neon planned platform. Refer to `Managed Release Integrated (MRI)
-project <https://git.opendaylight.org/gerrit/#/q/topic:neon-mri>`_
-for more information on MRI.
+project <https://git.opendaylight.org/gerrit/#/q/topic:magnesium-mri>`_
+for more information.
 
 .. contents:: Contents
 
@@ -47,8 +47,7 @@ Install Dependent Projects
 
 Before performing platform upgrade, users must also install
 any dependent project. To locally install a dependent project,
-pull and install the respective *neon-mri* changes for any
-dependent project. At the minimum, pull and install controller,
+pull and install the respective `magnesium-mri <https://git.opendaylight.org/gerrit/#/q/topic:magnesium-mri>`_ changes for any dependent project. At the minimum, pull and install controller,
 AAA and NETCONF.
 
 Perform the following steps to save time when locally installing
