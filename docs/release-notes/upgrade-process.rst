@@ -12,10 +12,11 @@ for more information on MRI.
 Preparation
 -----------
 
-System Updates
-^^^^^^^^^^^^^^
+Version Bump
+^^^^^^^^^^^^
 
-Before performing platform upgrade, users must first update the following:
+Before performing platform upgrade, do the following to bump the odlparent
+versions (for example, bump-odl-version to):
 
 1. Update the odlparent version from 3.1.3 to 4.0.2. There should
    not be any reference to **org.opendaylight.odlparent**, except
@@ -114,7 +115,8 @@ the corresponding library:
     refer to `Apache Common <https://commons.apache.org>`_
 
 * Jackson 2.9: odl-jackson-2.9. Replacing odl-jackson-2.8.
-  Any references to the latter needs to be updated.
+
+Any references to the latter must be updated.
 
 The preceding features should be used in the same way as
 existing ODL Parent features. That is, do not use them in
@@ -318,7 +320,7 @@ Replace dependencies to org.opendaylight.mdsal.model:ietf-inet-types-2013-07-15
 and ietf-yang-types-20130715 artifacts in the POMs by org.opendaylight.mdsal.binding.model.ietf:rfc6991.
 
 For more details, see the "Updating model artifact packaging" thread on the mdsal-dev mailing
-list from April 25-26th. In addition, contact the the mdsal-dev list for clarifications about
+list from April 25-26th. In addition, contact the mdsal-dev list for clarifications about
 further doubts. Please do update this section with any new information useful to others.
 `Issue 001656 <https://lists.opendaylight.org/pipermail/mdsal-dev/2018-April/001656.html>`_
 
