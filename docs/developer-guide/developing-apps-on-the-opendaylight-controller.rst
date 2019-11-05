@@ -181,9 +181,9 @@ Defining a Simple Hello World RPC
     .. code:: java
 
         @Override
-            public void onSessionInitiated(ProviderContext session) {
-                LOG.info("HelloProvider Session Initiated");
-            }
+        public void onSessionInitiated(ProviderContext session) {
+            LOG.info("HelloProvider Session Initiated");
+        }
 
 Add a simple HelloWorld RPC API
 -------------------------------
@@ -245,7 +245,7 @@ Implement the HelloWorld RPC API
 
        package org.opendaylight.hello.impl;
 
-       import java.util.concurrent.Future;
+       import com.google.common.util.concurrent.ListenableFuture;
        import org.opendaylight.yang.gen.v1.urn.opendaylight.params.xml.ns.yang.hello.rev150105.HelloService;
        import org.opendaylight.yang.gen.v1.urn.opendaylight.params.xml.ns.yang.hello.rev150105.HelloWorldInput;
        import org.opendaylight.yang.gen.v1.urn.opendaylight.params.xml.ns.yang.hello.rev150105.HelloWorldOutput;
@@ -256,7 +256,7 @@ Implement the HelloWorld RPC API
        public class HelloWorldImpl implements HelloService {
 
            @Override
-           public Future<RpcResult<HelloWorldOutput>> helloWorld(HelloWorldInput input) {
+           public ListenableFuture<RpcResult<HelloWorldOutput>> helloWorld(HelloWorldInput input) {
                HelloWorldOutputBuilder helloBuilder = new HelloWorldOutputBuilder();
                helloBuilder.setGreeting("Hello " + input.getName());
                return RpcResultBuilder.success(helloBuilder.build()).buildFuture();
