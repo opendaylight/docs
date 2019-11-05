@@ -32,7 +32,7 @@ This example requires the following.
 
    -  Maven 3.5.2 or later
 
-   -  Java 8-compliant JDK
+   -  Java 11-compliant JDK
 
    -  An appropriate Maven settings.xml file. A simple way to get the
       default OpenDaylight settings.xml file is:
@@ -71,8 +71,8 @@ To develop an app perform the following steps.
       * - OpenDaylight Simultaneous Release
         - opendaylight-startup-archetype version
 
-      * - Sodium Development
-        - 1.2.0-SNAPSHOT
+      * - Magnesium Development
+        - 1.3.0-SNAPSHOT
 
 2. Update the properties values as follows. Ensure that the values for the groupId and
    the artifactId are in lower case.
