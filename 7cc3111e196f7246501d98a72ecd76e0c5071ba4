@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "4bd82504_31db2d65",
+        "filename": "docs/release-notes/projects/netconf.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 2833
+      },
+      "writtenOn": "2019-11-05T18:32:24Z",
+      "side": 1,
+      "message": "This is the actual payload. Please change,\n{\n  \"netconf-node-optional:datastore-lock\"  : {\n  \"datastore-lock-allowed\" : false\n }\n}",
+      "revId": "7cc3111e196f7246501d98a72ecd76e0c5071ba4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "7c088c44_23972e8b",
         "filename": "docs/release-notes/projects/netconf.rst",
         "patchSetId": 2
