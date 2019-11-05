@@ -1,0 +1,199 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a96c907_03e5e236",
+        "filename": "manuals/readme/src/main/asciidoc/template_user_guide.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-02-26T22:06:20Z",
+      "side": 1,
+      "message": "It would be nice to have consistent spacing between sections and the content. Also, lines should probably wrap at ~100 characters.",
+      "revId": "cc313ad2136835bac6230efd77d7f812fb07ca9e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_c3d29a5b",
+        "filename": "manuals/readme/src/main/asciidoc/template_user_guide.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-02-26T22:06:20Z",
+      "side": 1,
+      "message": "Since the user guide is per-feature, we should probably just say feature. The user doesn\u0027t care about the project.",
+      "range": {
+        "startLine": 1,
+        "startChar": 4,
+        "endLine": 1,
+        "endChar": 19
+      },
+      "revId": "cc313ad2136835bac6230efd77d7f812fb07ca9e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_23e25e2f",
+        "filename": "manuals/readme/src/main/asciidoc/template_user_guide.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-02-26T22:06:20Z",
+      "side": 1,
+      "message": "Remove the title section?",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 54
+      },
+      "revId": "cc313ad2136835bac6230efd77d7f812fb07ca9e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_e3d79649",
+        "filename": "manuals/readme/src/main/asciidoc/template_user_guide.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-02-26T22:06:20Z",
+      "side": 1,
+      "message": "We should talk about the feature, not the project here.",
+      "range": {
+        "startLine": 10,
+        "startChar": 5,
+        "endLine": 10,
+        "endChar": 12
+      },
+      "revId": "cc313ad2136835bac6230efd77d7f812fb07ca9e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_a3cd0eb9",
+        "filename": "manuals/readme/src/main/asciidoc/template_user_guide.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-02-26T22:06:20Z",
+      "side": 1,
+      "message": "For this to be a numbered list you need to have # in front of each line.",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 7
+      },
+      "revId": "cc313ad2136835bac6230efd77d7f812fb07ca9e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_23b9fe14",
+        "filename": "manuals/readme/src/main/asciidoc/template_user_guide.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-02-26T22:06:20Z",
+      "side": 1,
+      "message": "Would tutorials be a better name here?",
+      "revId": "cc313ad2136835bac6230efd77d7f812fb07ca9e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_43c68a9b",
+        "filename": "manuals/readme/src/main/asciidoc/template_user_guide.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-02-26T22:06:20Z",
+      "side": 1,
+      "message": "For this to be a numbered list you need to have # in front of each line.",
+      "range": {
+        "startLine": 50,
+        "startChar": 0,
+        "endLine": 52,
+        "endChar": 6
+      },
+      "revId": "cc313ad2136835bac6230efd77d7f812fb07ca9e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_63c38689",
+        "filename": "manuals/readme/src/main/asciidoc/template_user_guide.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-02-26T22:06:20Z",
+      "side": 1,
+      "message": "For this to be a numbered list you need to have # in front of each line.",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 58,
+        "endChar": 6
+      },
+      "revId": "cc313ad2136835bac6230efd77d7f812fb07ca9e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_03bc0205",
+        "filename": "manuals/readme/src/main/asciidoc/template_user_guide.adoc",
+        "patchSetId": 4
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-02-26T22:06:20Z",
+      "side": 1,
+      "message": "For this to be a numbered list you need to have # in front of each line.",
+      "range": {
+        "startLine": 62,
+        "startChar": 0,
+        "endLine": 64,
+        "endChar": 6
+      },
+      "revId": "cc313ad2136835bac6230efd77d7f812fb07ca9e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
