@@ -19,6 +19,52 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_a42f5e87",
+        "filename": "manuals/user-guide/src/main/asciidoc/sdninterfaceapp/odl-sdninterfaceapp-all-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-18T16:06:26Z",
+      "side": 1,
+      "message": "does it really use ODL-BGPCEP or does it use your own internal copy of it? If it\u0027s the latter, it might be good to not say it\u0027s ODL-BGPCEP.",
+      "range": {
+        "startLine": 4,
+        "startChar": 128,
+        "endLine": 4,
+        "endChar": 138
+      },
+      "revId": "d8353b1942684a49b1255b6f97afb4bedc49dba3",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_c43262f1",
+        "filename": "manuals/user-guide/src/main/asciidoc/sdninterfaceapp/odl-sdninterfaceapp-all-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-18T16:06:26Z",
+      "side": 1,
+      "message": "just delete this so you don\u0027t have update it for the next release",
+      "range": {
+        "startLine": 4,
+        "startChar": 60,
+        "endLine": 4,
+        "endChar": 82
+      },
+      "revId": "d8353b1942684a49b1255b6f97afb4bedc49dba3",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_44565207",
         "filename": "manuals/user-guide/src/main/asciidoc/sdninterfaceapp/odl-sdninterfaceapp-all-user.adoc",
         "patchSetId": 1
@@ -36,6 +82,69 @@
         "endLine": 9,
         "endChar": 89
       },
+      "revId": "d8353b1942684a49b1255b6f97afb4bedc49dba3",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_84433a41",
+        "filename": "manuals/user-guide/src/main/asciidoc/sdninterfaceapp/odl-sdninterfaceapp-all-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-18T16:06:26Z",
+      "side": 1,
+      "message": "Is a Northbound REST API",
+      "range": {
+        "startLine": 10,
+        "startChar": 12,
+        "endLine": 10,
+        "endChar": 49
+      },
+      "revId": "d8353b1942684a49b1255b6f97afb4bedc49dba3",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_6440b634",
+        "filename": "manuals/user-guide/src/main/asciidoc/sdninterfaceapp/odl-sdninterfaceapp-all-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-18T16:06:26Z",
+      "side": 1,
+      "message": "instances of OpenDaylight",
+      "range": {
+        "startLine": 11,
+        "startChar": 111,
+        "endLine": 11,
+        "endChar": 122
+      },
+      "revId": "d8353b1942684a49b1255b6f97afb4bedc49dba3",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_e47b268a",
+        "filename": "manuals/user-guide/src/main/asciidoc/sdninterfaceapp/odl-sdninterfaceapp-all-user.adoc",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2016-02-18T16:06:26Z",
+      "side": 1,
+      "message": "What does this mean? It won\u0027t work unless you change to listening on 6653?",
       "revId": "d8353b1942684a49b1255b6f97afb4bedc49dba3",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
