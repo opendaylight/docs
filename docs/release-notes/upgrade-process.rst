@@ -16,7 +16,7 @@ Version Bump
 ^^^^^^^^^^^^
 
 Before performing platform upgrade, do the following to *bump* the
-odlparen versions (for example, `bump-odl-version <https://github.com/skitt/odl-tools/blob/master/bump-odl-version>`_):
+odlparent versions (for example, `bump-odl-version <https://github.com/skitt/odl-tools/blob/master/bump-odl-version>`_):
 
 1. Update the odlparent version from 4.0.9 to 5.0.0. There should
    not be any reference to **org.opendaylight.odlparent**, except
