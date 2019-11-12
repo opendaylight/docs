@@ -52,6 +52,29 @@
       "revId": "884d536d370f13b4fa54b5c8d1317751efa51e7c",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_b0030541",
+        "filename": "docs/getting-started-guide/common-features/clustering.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 612,
+      "author": {
+        "id": 7865
+      },
+      "writtenOn": "2019-11-12T23:22:49Z",
+      "side": 1,
+      "message": "should we add \"The specific node has to be restarted after placing the backup file in \u0027$KARAF_HOME/clustered-datastore-restore\u0027 directory\" ?",
+      "range": {
+        "startLine": 612,
+        "startChar": 1,
+        "endLine": 612,
+        "endChar": 53
+      },
+      "revId": "884d536d370f13b4fa54b5c8d1317751efa51e7c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
