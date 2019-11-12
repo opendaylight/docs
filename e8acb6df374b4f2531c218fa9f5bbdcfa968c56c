@@ -1013,6 +1013,30 @@
     },
     {
       "key": {
+        "uuid": "9a561d44_0c001066",
+        "filename": "manuals/user-guide/src/main/asciidoc/of-config/ofconfig-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 5538
+      },
+      "writtenOn": "2019-11-12T18:51:35Z",
+      "side": 1,
+      "message": "this is from https://www.opennetworking.org/images/stories/downloads/sdn-resources/onf-specifications/openflow-config/of-config-1.2.pdf",
+      "parentUuid": "9a561d44_5ccbdb52",
+      "range": {
+        "startLine": 6,
+        "startChar": 10,
+        "endLine": 6,
+        "endChar": 19
+      },
+      "revId": "e8acb6df374b4f2531c218fa9f5bbdcfa968c56c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a561d44_3ccd475e",
         "filename": "manuals/user-guide/src/main/asciidoc/of-config/ofconfig-user.adoc",
         "patchSetId": 2
@@ -1070,6 +1094,30 @@
       "writtenOn": "2016-07-20T14:34:12Z",
       "side": 1,
       "message": "Users will be downloading the OpenDaylight zip file from the website and we already have documentation on how to start it in the getting started guide. You only need to say what feature to install.",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 1
+      },
+      "revId": "e8acb6df374b4f2531c218fa9f5bbdcfa968c56c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_390f1430",
+        "filename": "manuals/user-guide/src/main/asciidoc/of-config/ofconfig-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 5538
+      },
+      "writtenOn": "2019-11-12T18:51:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a561d44_fc9d8f5a",
       "range": {
         "startLine": 24,
         "startChar": 0,
