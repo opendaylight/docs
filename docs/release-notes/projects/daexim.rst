@@ -8,12 +8,15 @@ Major Features
 odl-daexim
 ----------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=daexim.git;a=blob;f=features/odl-daexim/src/main/feature/feature.xml;hb=refs/heads/stable/neon
-* **Feature Description:** This is a wrapper feature which includes all the sub features provided by daexim project.
+* **Feature URL:** `Daexim <https://git.opendaylight.org/gerrit/gitweb?p=daexim.git;a=blob;f=features/odl-daexim/src/main/feature/feature.xml;hb=refs/heads/stable/neon>`_
+* **Feature Description:** This wrapper feature includes all the sub features provided by Daexim project.
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** No
-* **CSIT Test:** `Single node <https://jenkins.opendaylight.org/releng/view/daexim/job/daexim-csit-1node-basic-only-neon/>`_. `Three node cluster <https://jenkins.opendaylight.org/releng/view/daexim/job/daexim-csit-3node-clustering-basic-only-neon/>`_.
+* **CSIT Test:**
+
+    * `Single node <https://jenkins.opendaylight.org/releng/view/daexim/job/daexim-csit-1node-basic-only-neon/>`_.
+    * `Three node cluster <https://jenkins.opendaylight.org/releng/view/daexim/job/daexim-csit-3node-clustering-basic-only-neon/>`_.
 
 
 Documentation
@@ -22,10 +25,6 @@ Documentation
 * **User Guide(s):**
 
   * :ref:`Data Export/Import User Guide <daexim-user-guide>`
-
-* **Developer Guide(s):**
-
-  * :ref:`Data Export/Import Developer Guide <daexim-dev-guide>`
 
 Security Considerations
 =======================
@@ -45,7 +44,6 @@ Quality Assurance
 * Code coverage is 78.8%.
 * There are extensive unit-tests in the code.
 
-
 Migration
 ---------
 
@@ -53,54 +51,50 @@ Migration
 
   * Migration should work across all releases.
 
-
 Compatibility
 -------------
 
 * Is this release compatible with the previous release?
 
- * Yes
+  * Yes
 
 * Any API changes?
 
- * No.
+  * No
 
 * Any configuration changes?
 
- * No.
-
+  * No
 
 Bugs Fixed
 ----------
 
-* List of bugs fixed since the previous release
+* List of bugs fixed since the previous release.
 
   * All known bugs have been resolved.
 
 Known Issues
 ------------
 
-* None.
-* `Current list of bugs <https://jira.opendaylight.org/projects/DAEXIM/issues/?filter=allopenissues>`_
+* `Open bugs <https://jira.opendaylight.org/projects/DAEXIM/issues/?filter=allopenissues>`_.
 
 End-of-life
 ===========
 
-* List of features/APIs which are EOLed, deprecated, and/or removed in
-  this release
+* List of features/APIs that were EOLed, deprecated, and/or removed from this release.
 
   * None
 
 Standards
 =========
 
-* List of standards implemented and to what extent
+* List of standards implemented and to what extent.
 
   * None
 
 Release Mechanics
 =================
 
-* Describe any major shifts in release schedule from the release plan
+* Describe any major shifts in release schedule from the release plan.
 
   * None

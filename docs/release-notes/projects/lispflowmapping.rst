@@ -8,18 +8,18 @@ Major Features
 odl-lispflowmapping-msmr
 ------------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=blob;f=features/odl-lispflowmapping-msmr/pom.xml
-* **Feature Description:**  This is the core feature that provides the Mapping Services and includes the LISP southbound plugin feature as well.
+* **Feature URL:** `MSMR <https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=blob;f=features/odl-lispflowmapping-msmr/pom.xml>`_
+* **Feature Description:** This is the core feature that provides the Mapping Services and includes the LISP southbound plugin feature as well.
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** No
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/lispflowmapping/job/lispflowmapping-csit-1node-msmr-all-fluorine/
+* **CSIT Test:** `CSIT <https://jenkins.opendaylight.org/releng/view/lispflowmapping/job/lispflowmapping-csit-1node-msmr-all-neon/>`_
 
 odl-lispflowmapping-neutron
 ---------------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=blob;f=features/odl-lispflowmapping-neutron/pom.xml;hb=stable/fluorine
-* **Feature Description:**  This feature provides Neutron integration.
+* **Feature URL:** `Neutron <https://git.opendaylight.org/gerrit/gitweb?p=lispflowmapping.git;a=blob;f=features/odl-lispflowmapping-neutron/pom.xml;hb=stable/neon>`_
+* **Feature Description:** This feature provides Neutron integration.
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** Yes
@@ -28,21 +28,25 @@ Documentation
 =============
 
 * **User Guide(s):**
-    :ref:`lispflowmapping-user-guide`
+
+  * :ref:`lispflowmapping-user-guide`
 
 Security Considerations
 =======================
 
 * Do you have any external interfaces other than RESTCONF?
-* Yes, the southbound plugin
+* Yes, the southbound plugin.
 
   * If so, how are they secure?
+
     * LISP southbound plugin follows LISP `RFC6833 <https://tools.ietf.org/html/rfc6833>`_ security guidelines.
 
   * What port numbers do they use?
+
     * Port used: 4342
 
 * Other security issues?
+
   * None
 
 Quality Assurance
@@ -53,13 +57,12 @@ Quality Assurance
 * All modules have been unit tested. Integration tests have been performed for all major features. System tests have been performed on most major features.
 * Registering and retrieval of basic mappings have been tested more thoroughly. More complicated mapping policies have gone through less testing.
 
-
 Migration
 ---------
 
 * Is it possible to migrate from the previous release? If so, how?
 
-  * LISP Flow Mapping service will auto-populate the datastructures from existing MD-SAL data upon service start if the data has already been migrated separately. No automated way for transfering the data is provided in this release.
+  * LISP Flow Mapping service will auto-populate the data structures from existing MD-SAL data upon service start if the data has already been migrated separately. No automated way for transferring the data is provided in this release.
 
 Compatibility
 -------------
@@ -91,15 +94,18 @@ Known Issues
 End-of-life
 ===========
 
-* None
+* List of features/APIs that were EOLed, deprecated, and/or removed from this release.
 
 Standards
 =========
 
-* The LISP implementation module and southbound plugin conforms to the IETF `RFC6830 <https://tools.ietf.org/html/rfc6830>`_ and `RFC6833 <https://tools.ietf.org/html/rfc6833>`_ , with the following exceptions:
+* The LISP implementation module and southbound plugin conforms to the IETF `RFC6830 <https://tools.ietf.org/html/rfc6830>`_
+  and `RFC6833 <https://tools.ietf.org/html/rfc6833>`_, with the following exceptions:
 
-  - In Map-Request message, M bit(Map-Reply Record exist in the MapRequest) is processed but any mapping data at the bottom of a Map-Request are discarded.
-  - LISP LCAFs are limited to only up to one level of recursion, as described in the IETF `LISP YANG draft <https://tools.ietf.org/html/draft-ietf-lisp-yang-07>`_.
+  - In Map-Request message, M bit(Map-Reply Record exist in the MapRequest) is processed,
+    but any mapping data at the bottom of a Map-Request are discarded.
+  - LISP LCAFs are limited to only up to one level of recursion, as described in the IETF
+    `LISP YANG draft <https://tools.ietf.org/html/draft-ietf-lisp-yang-07>`_.
   - No standards exist for the LISP Mapping System northbound API as of this date.
 
 Release Mechanics
