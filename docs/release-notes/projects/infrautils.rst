@@ -21,70 +21,72 @@ Major Features
 odl-infrautils-all
 ------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=infrautils.git;a=blob;f=common/features/odl-infrautils-all/pom.xml;hb=stable/neon
-* **Feature Description:**  This feature exposes all infrautils framework features
+* **Feature URL:** `All features <https://git.opendaylight.org/gerrit/gitweb?p=infrautils.git;a=blob;f=common/features/odl-infrautils-all/pom.xml;hb=stable/neon>`_
+* **Feature Description:** This feature exposes all infrautils framework features
 * **Top Level:** Yes
 * **User Facing:** No
 * **Experimental:** Yes
-* **CSIT Test:** covered by Netvirt and Genius CSITs
-  * https://jenkins.opendaylight.org/releng/view/netvirt/job/netvirt-csit-1node-0cmb-1ctl-2cmp-openstack-queens-upstream-stateful-neon/
-  * https://jenkins.opendaylight.org/releng/view/genius/job/genius-csit-1node-gate-only-neon/
+* **CSIT Test:**
+
+  * `Netvirt <https://jenkins.opendaylight.org/releng/view/netvirt/job/netvirt-csit-1node-0cmb-1ctl-2cmp-openstack-queens-upstream-stateful-neon/>`_
+
+  * `Genius <https://jenkins.opendaylight.org/releng/view/genius/job/genius-csit-1node-gate-only-neon/>`_
 
 odl-infrautils-jobcoordinator
 -----------------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=infrautils.git;a=blob;f=common/features/odl-infrautils-jobcoordinator/pom.xml;hb=stable/neon
-* **Feature Description:**  This feature provides technical utilities and infrastructures for other projects to use.
+* **Feature URL:** `Jobcoordinator <https://git.opendaylight.org/gerrit/gitweb?p=infrautils.git;a=blob;f=common/features/odl-infrautils-jobcoordinator/pom.xml;hb=stable/neon>`_
+* **Feature Description:** This feature provides technical utilities and infrastructures for other projects to use.
 * **Top Level:** Yes
 * **User Facing:** No
 * **Experimental:** No
-* **CSIT Test:** covered by Netvirt and Genius CSITs
+* **CSIT Test:** Covered by Netvirt and Genius CSITs
 
 odl-infrautils-metrics
 ----------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=infrautils.git;a=blob;f=common/features/odl-infrautils-metrics/pom.xml;hb=stable/neon
-* **Feature Description:**  This feature exposes the new infrautils.metrics API with labels and first implementation based on Dropwizard incl. thread watcher
+* **Feature URL:** `Metrics <https://git.opendaylight.org/gerrit/gitweb?p=infrautils.git;a=blob;f=common/features/odl-infrautils-metrics/pom.xml;hb=stable/neon>`_
+* **Feature Description:** This feature exposes the new infrautils.metrics API with labels and first implementation based on Dropwizard incl. thread watcher
 * **Top Level:** Yes
 * **User Facing:** No
 * **Experimental:** Yes
-* **CSIT Test:** covered by Netvirt and Genius CSITs
+* **CSIT Test:** Covered by Netvirt and Genius CSITs
 
 odl-infrautils-ready
 --------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=infrautils.git;a=blob;f=common/features/odl-infrautils-ready/pom.xml;hb=stable/neon
-* **Feature Description:**  This feature exposes the system readiness framework
+* **Feature URL:** `Ready <https://git.opendaylight.org/gerrit/gitweb?p=infrautils.git;a=blob;f=common/features/odl-infrautils-ready/pom.xml;hb=stable/neon>`_
+* **Feature Description:** This feature exposes the system readiness framework
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** No
-* **CSIT Test:** covered by Netvirt and Genius CSITs
+* **CSIT Test:** Covered by Netvirt and Genius CSITs
 
 odl-infrautils-caches
 ---------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=infrautils.git;a=blob;f=common/features/odl-infrautils-caches/pom.xml;hb=stable/neon
-* **Feature Description:**  This feature exposes new infrautils.caches API, CLI commands for monitoring, and first implementation based on Guava
+* **Feature URL:** `Cache <https://git.opendaylight.org/gerrit/gitweb?p=infrautils.git;a=blob;f=common/features/odl-infrautils-caches/pom.xml;hb=stable/neon>`_
+* **Feature Description:** This feature exposes new infrautils.caches API, CLI commands for monitoring, and first implementation based on Guava
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** Yes
-* **CSIT Test:** covered by Netvirt and Genius CSITs
+* **CSIT Test:** Covered by Netvirt and Genius CSITs
 
 odl-infrautils-diagstatus
 -------------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=infrautils.git;a=blob;f=common/features/odl-infrautils-diagstatus/pom.xml;hb=stable/neon
-* **Feature Description:**  This feature exposes the status and diagnostics framework
+* **Feature URL:** `Diagstatus <https://git.opendaylight.org/gerrit/gitweb?p=infrautils.git;a=blob;f=common/features/odl-infrautils-diagstatus/pom.xml;hb=stable/neon>`_
+* **Feature Description:** This feature exposes the status and diagnostics framework
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** No
-* **CSIT Test:** covered by Netvirt and Genius CSITs
+* **CSIT Test:** Covered by Netvirt and Genius CSITs
 
 odl-infrautils-metrics-prometheus
 ---------------------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=infrautils.git;a=blob;f=common/features/odl-infrautils-metrics-prometheus/pom.xml;hb=stable/neon
-* **Feature Description:**  This feature exposes metrics by HTTP on /metrics/prometheus from the local ODL to an external Prometheus set up to scrape that.
+* **Feature URL:** `Prometheus <https://git.opendaylight.org/gerrit/gitweb?p=infrautils.git;a=blob;f=common/features/odl-infrautils-metrics-prometheus/pom.xml;hb=stable/neon>`_
+* **Feature Description:** This feature exposes metrics by HTTP on /metrics/prometheus from the local ODL to an external Prometheus set up to scrape that.
 * **Top Level:** Yes
 * **User Facing:** No
 * **Experimental:** Yes

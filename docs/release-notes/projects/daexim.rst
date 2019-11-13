@@ -8,8 +8,8 @@ Major Features
 odl-daexim
 ----------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=daexim.git;a=blob;f=features/odl-daexim/src/main/feature/feature.xml;hb=refs/heads/stable/neon
-* **Feature Description:** This is a wrapper feature which includes all the sub features provided by daexim project.
+* **Feature URL:** `Daexim <https://git.opendaylight.org/gerrit/gitweb?p=daexim.git;a=blob;f=features/odl-daexim/src/main/feature/feature.xml;hb=refs/heads/stable/neon>`_
+* **Feature Description:** This wrapper feature includes all the sub features provided by Daexim project.
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** No

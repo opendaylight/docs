@@ -1,5 +1,5 @@
 ==========
-controller
+Controller
 ==========
 
 Major Features
@@ -8,12 +8,12 @@ Major Features
 odl-mdsal-broker
 ----------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=controller.git;a=blob;f=features/mdsal/odl-mdsal-broker/pom.xml;hb=refs/heads/stable/fluorine
-* **Feature Description:**  Core MD-SAL implementations.
+* **Feature URL:** `Broker <https://git.opendaylight.org/gerrit/gitweb?p=controller.git;a=blob;f=features/mdsal/odl-mdsal-broker/pom.xml;hb=refs/heads/stable/neon>`_
+* **Feature Description:** Core MD-SAL implementations.
 * **Top Level:** Yes
 * **User Facing:** No
 * **Experimental:** No
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/controller/job/controller-csit-verify-3node-clustering/
+* **CSIT Test:** `CSIT <https://jenkins.opendaylight.org/releng/view/controller/job/controller-csit-verify-3node-clustering/>`_
 
 Documentation
 =============
@@ -27,7 +27,7 @@ Security Considerations
 
 * Do you have any external interfaces other than RESTCONF?
 
-  * Yes, akka uses port 2550 and by default communicates with unencrypted, unauthenticated messages. Securing akka communication isn't described here, but those concerned should look at the "Configuring SSL/TLS for Akka Remoting" section at http://doc.akka.io/docs/akka//2.5.11/scala/remoting.html.
+  * Yes, akka uses port 2550 and by default communicates with unencrypted, unauthenticated messages. Securing akka communication isn't described here, but those concerned should refer to: `Configuring SSL/TLS for Akka Remoting <http://doc.akka.io/docs/akka//2.5.11/scala/remoting.html>`_.
 
 * Other security issues?
 
@@ -81,15 +81,15 @@ End-of-life
 * List of features/APIs which are EOLed, deprecated, and/or removed in this
   release
 
-  * The controller binding and DOM MD-SAL APIs, classes and interfaces in packages prefixed with  org.opendaylight.controller, have been deprecated in favor of the APIs in the mdsal project prefixed with org.opendaylight.mdsal.
+  * The controller binding and DOM MD-SAL APIs, classes and interfaces in packages prefixed with org.opendaylight.controller, have been deprecated in favor of the APIs in the MDSAL project prefixed with org.opendaylight.mdsal.
 
   * Various other APIs and classes in the controller project that have been long since
-    deperecated and no longer used have been removed.
+    deprecated and no longer used have been removed.
 
 Standards
 =========
 
-* List of standrads implemented and to what extent
+* List of standards implemented and to what extent
 
   * None
 

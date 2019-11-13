@@ -5,34 +5,34 @@ NETCONF
 Major Features
 ==============
 
-For each top-level feature, identify the name, url, description, etc.
+For each top-level feature, identify the name, URL, description, etc.
 User-facing features are used directly by end users.
 
 odl-netconf-topology
 --------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/netconf-connector/odl-netconf-topology/pom.xml;hb=refs/heads/stable/oxygen
-* **Feature Description:**  NETCONF southbound plugin single-node, configuration through mdsal
+* **Feature URL:** `NETCONF Topology <https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/netconf-connector/odl-netconf-topology/pom.xml;hb=refs/heads/stable/neon>`_
+* **Feature Description:** NETCONF southbound plugin single-node, configuration through mdsal
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** No
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/netconf/job/netconf-csit-1node-userfeatures-all-oxygen/
+* **CSIT Test:** `NETCONF CSIT <https://jenkins.opendaylight.org/releng/view/netconf/job/netconf-csit-1node-userfeatures-all-neon/>`_
 
 odl-netconf-clustered-topology
 ------------------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/netconf-connector/odl-netconf-clustered-topology/pom.xml;hb=refs/heads/stable/oxygen
-* **Feature Description:**  NETCONF southbound plugin clustered, configuration through mdsal
+* **Feature URL:** `Clustered Topology <https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/netconf-connector/odl-netconf-clustered-topology/pom.xml;hb=refs/heads/stable/neon>`_
+* **Feature Description:** NETCONF southbound plugin clustered, configuration through MDSAL
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** Yes
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/netconf/job/netconf-csit-3node-clustering-all-oxygen/
+* **CSIT Test:** `Cluster CSIT <https://jenkins.opendaylight.org/releng/view/netconf/job/netconf-csit-3node-clustering-all-neon/>`_
 
 odl-netconf-console
 -------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/netconf-connector/odl-netconf-console/pom.xml;hb=refs/heads/stable/oxygen
-* **Feature Description:**  NETCONF southbound configuration with karaf cli
+* **Feature URL:** `Console <https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/netconf-connector/odl-netconf-console/pom.xml;hb=refs/heads/stable/neon>`_
+* **Feature Description:** NETCONF southbound configuration with Karaf CLI
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** Yes
@@ -40,28 +40,28 @@ odl-netconf-console
 odl-netconf-mdsal
 -----------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/netconf/odl-netconf-mdsal/pom.xml;hb=refs/heads/stable/oxygen
+* **Feature URL:** `MDSAL <https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/netconf/odl-netconf-mdsal/pom.xml;hb=refs/heads/stable/neon>`_
 * **Feature Description:** NETCONF server for mdsal
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** No
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/netconf/job/netconf-csit-1node-userfeatures-all-oxygen/
+* **CSIT Test:** `MDSAL CSIT <https://jenkins.opendaylight.org/releng/view/netconf/job/netconf-csit-1node-userfeatures-all-neon/>`_
 
 odl-restconf
 ------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/restconf/odl-restconf/pom.xml;hb=refs/heads/stable/oxygen
-* **Feature Description:** Restconf
+* **Feature URL:** `RESTCONF <https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/restconf/odl-restconf/pom.xml;hb=refs/heads/stable/neon>`_
+* **Feature Description:** RESTCONF
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** No
-* **CSIT Test:**  Tested by any suite that uses Restconf
+* **CSIT Test:** Tested by any suite that uses RESTCONF
 
 odl-mdsal-apidocs
 -----------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/restconf/odl-mdsal-apidocs/pom.xml;hb=refs/heads/stable/oxygen
-* **Feature Description:** MDSal - apidocs
+* **Feature URL:** `API Docs <https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/restconf/odl-mdsal-apidocs/pom.xml;hb=refs/heads/stable/neon>`_
+* **Feature Description:** MDSAL - apidocs
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** No
@@ -69,7 +69,7 @@ odl-mdsal-apidocs
 odl-yanglib
 -----------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/yanglib/odl-yanglib/pom.xml;hb=refs/heads/stable/oxygen
+* **Feature URL:** `YANG Lib <https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/yanglib/odl-yanglib/pom.xml;hb=refs/heads/stable/neon>`_
 * **Feature Description:** Yanglib server
 * **Top Level:** Yes
 * **User Facing:** Yes
@@ -78,18 +78,17 @@ odl-yanglib
 odl-netconf-callhome-ssh
 ------------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/netconf-connector/odl-netconf-callhome-ssh/pom.xml;hb=refs/heads/stable/oxygen
-* **Feature Description:** Netconf call home
+* **Feature URL:** `Callhome SSH <https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/netconf-connector/odl-netconf-callhome-ssh/pom.xml;hb=refs/heads/stable/neon>`_
+* **Feature Description:** NETCONF call home
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** No
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/netconf/job/netconf-csit-1node-callhome-all-oxygen/
-
+* **CSIT Test:** `Callhome CSIT <https://jenkins.opendaylight.org/releng/view/netconf/job/netconf-csit-1node-callhome-all-neon/>`_
 
 Documentation
 =============
 
-Please provide the URL to each document at docs.opendaylight.org. If the
+Please provide the URL to each document at `OpenDaylight <http://docs.opendaylight.org>`_. If the
 document is under review, provide a link to the change in Gerrit.
 
 * **User Guide(s):**
@@ -150,9 +149,7 @@ Compatibility
 Bugs Fixed
 ----------
 
-* List of bugs fixed since the previous release
-
-  https://jira.opendaylight.org/secure/ReleaseNote.jspa?projectId=10142&version=10727
+* List of bugs fixed since the previous release `Fixed bugs <https://jira.opendaylight.org/secure/ReleaseNote.jspa?projectId=10142&version=10727>`_
 
 Known Issues
 ------------
@@ -161,24 +158,23 @@ Known Issues
 
   None
 
-* `Link to Open Bugs <https://jira.opendaylight.org/projects/NETCONF/issues/?filter=allopenissues>`_
+* Link to `Open Bugs <https://jira.opendaylight.org/projects/NETCONF/issues/?filter=allopenissues>`_
 
 End-of-life
 ===========
 
-* List of features/APIs which are EOLed, deprecated, and/or removed in this
-  release
+List of features/APIs that are EOLed, deprecated, and/or removed in this release:
 
-  The RFC8040 RESTCONF endpoint has been promoted to stable, which marks its first release. Its
+* The RFC8040 RESTCONF endpoint has been promoted to stable, which marks its first release. Its
   un-authenticated feature has been removed.
 
-  Since this endpoint corresponds to a published standard and supports various YANG 1.1 features,
+* Since this endpoint corresponds to a published standard and supports various YANG 1.1 features,
   we will be transitioning to it.
 
-  To that effect, the bierman02 endpoint is now deprecated, and users should start testing and
+* To that effect, the bierman02 endpoint is now deprecated, and users should start testing and
   migrating to the RFC8040 endpoint.
 
-  The old endpoint will not be removed for at least two releases, after which point we will
+* The old endpoint will not be removed for at least two releases, after which we will
   re-evaluate the cost of carrying this code.
 
 Standards

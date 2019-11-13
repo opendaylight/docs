@@ -5,9 +5,9 @@ SERVICEUTILS
 ServiceUtils is an infrastructure project for OpenDaylight aimed at providing utilities
 that will assist in Operation and Maintenance of different services provided by OpenDaylight.
 A service is a functionality provided by the ODL controller as seen by the operator.
-These services can be categerized as Networking services, e.g. L2, L3/VPN, NAT etc., and Infra services, e.g. Openflow.
+These services can be categorized as Networking services, e.g. L2, L3/VPN, NAT etc., and Infra services, e.g. Openflow.
 These services are provided by different ODL projects like Netvirt, Genius and Openflowplugin and are comprised
-of a set of java karaf bundles and associated MD-SAL datastores.
+of a set of Java Karaf bundles and associated MD-SAL datastores.
 
 Major Features
 ==============
@@ -15,27 +15,24 @@ Major Features
 odl-serviceutils-srm
 --------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=serviceutils.git;a=blob;f=features/odl-serviceutils-srm/pom.xml;hb=refs/heads/stable/neon
-* **Feature Description:**  This feature provides service recovery functionaility for ODL services
+* **Feature URL:** `SRM <https://git.opendaylight.org/gerrit/gitweb?p=serviceutils.git;a=blob;f=features/odl-serviceutils-srm/pom.xml;hb=refs/heads/stable/neon>`_
+* **Feature Description:** This feature provides service recovery functionaility for ODL services
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** No
 * **CSIT Test:**
 
-  * ServiceRecovery is tested by Genius CSIT.
-    https://jenkins.opendaylight.org/releng/view/genius/job/genius-csit-1node-gate-only-neon
+  * ServiceRecovery is tested by `Genius CSIT <https://jenkins.opendaylight.org/releng/view/genius/job/genius-csit-1node-gate-only-neon>`_
 
 odl-serviceutils-tools
 ----------------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=serviceutils.git;a=blob;f=features/odl-serviceutils-tools/pom.xml;hb=refs/heads/stable/neon
-* **Feature Description:**  This feature currently has utilities for datatree listeners, as well as Upgrade support.
+* **Feature URL:** `Tools <https://git.opendaylight.org/gerrit/gitweb?p=serviceutils.git;a=blob;f=features/odl-serviceutils-tools/pom.xml;hb=refs/heads/stable/neon>`_
+* **Feature Description:** This feature currently has utilities for datatree listeners, as well as Upgrade support.
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** No
-* **CSIT Test:**
-
-  * Does not have CSIT on its own, but heavily tested by genius and netvirt CSITs
+* **CSIT Test:** Does not have CSIT on its own, but heavily tested by Genius and Netvirt CSITs
 
 Documentation
 =============
@@ -50,7 +47,7 @@ Documentation
 
 * **Developer Guide(s):**
 
-  The project was spun off from GENIUS, and most of the assocaited documentation is still with GENIUS.
+  The project was spun off from GENIUS, and most of the associated documentation is still with GENIUS.
 
   * :doc:`Developer Guide <genius:index>`
 

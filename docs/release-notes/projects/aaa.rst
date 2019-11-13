@@ -1,5 +1,5 @@
 ===
-aaa
+AAA
 ===
 
 Major Features
@@ -8,32 +8,32 @@ Major Features
 odl-aaa-shiro
 ----------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=aaa.git;a=blob_plain;f=features/odl-aaa-shiro/pom.xml;hb=refs/heads/stable/fluorine
-* **Feature Description:**  ODL Shiro-based AAA implementation
+* **Feature URL:** `Shiro <https://git.opendaylight.org/gerrit/gitweb?p=aaa.git;a=blob_plain;f=features/odl-aaa-shiro/pom.xml;hb=refs/heads/stable/neon>`_
+* **Feature Description:** ODL Shiro-based AAA implementation
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** Yes
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/aaa/job/aaa-csit-1node-authn-all-fluorine/
+* **CSIT Test:** `CSIT <https://jenkins.opendaylight.org/releng/view/aaa/job/aaa-csit-1node-authn-all-neon/>`_
 
 odl-aaa-cert
 ------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=aaa.git;a=blob_plain;f=features/odl-aaa-cert/pom.xml;hb=refs/heads/stable/fluorine
-* **Feature Description:**  MD-SAL based encrypted certificate management
+* **Feature URL:** `Cert <https://git.opendaylight.org/gerrit/gitweb?p=aaa.git;a=blob_plain;f=features/odl-aaa-cert/pom.xml;hb=refs/heads/stable/neon>`_
+* **Feature Description:** MD-SAL based encrypted certificate management
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** Yes
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/aaa/job/aaa-csit-1node-authn-all-fluorine/
+* **CSIT Test:** `CIST <https://jenkins.opendaylight.org/releng/view/aaa/job/aaa-csit-1node-authn-all-neon/>`_
 
 odl-aaa-cli
 ------------
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=aaa.git;a=blob_plain;f=features/odl-aaa-cli/pom.xml;hb=refs/heads/stable/fluorine
-* **Feature Description:**  Basic karaf CLI commands for interacting with AAA
+* **Feature URL:** `CLI <https://git.opendaylight.org/gerrit/gitweb?p=aaa.git;a=blob_plain;f=features/odl-aaa-cli/pom.xml;hb=refs/heads/stable/neon>`_
+* **Feature Description:** Basic Karaf CLI commands for interacting with AAA
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** Yes
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/aaa/job/aaa-csit-1node-authn-all-fluorine/
+* **CSIT Test:** `CSIT <https://jenkins.opendaylight.org/releng/view/aaa/job/aaa-csit-1node-authn-all-neon/>`_
 
 Documentation
 =============
@@ -102,8 +102,7 @@ Known Issues
 End-of-life
 ===========
 
-* List of features/APIs which are EOLed, deprecated, and/or removed in this
-  release
+* List of features/APIs that are EOLed, deprecated, and/or removed in this release
 
   * None
 

@@ -8,44 +8,44 @@ Major Features
 odl-integration-all
 -------------------
 
-* **Gitweb URL:** https://git.opendaylight.org/gerrit/gitweb?p=integration/distribution.git;a=blob;f=features/singles/odl-integration-all/pom.xml;hb=refs/heads/stable/neon
-* **Description:** An aggregate feature grouping Managed projects user-facing ODL features.
+* **Gitweb URL:** `Integration <https://git.opendaylight.org/gerrit/gitweb?p=integration/distribution.git;a=blob;f=features/singles/odl-integration-all/pom.xml;hb=refs/heads/stable/neon>`_
+* **Description:** An aggregate feature grouping Managed projects user facing ODL features.
   This feature is used to verify all user features can be installed together without Karaf
   becoming unusable or without port conflicts.
 * **Top Level:** Yes.
 * **User Facing:** Yes, but not intended for production use (only for testing purposes).
 * **Experimental:** No.
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/distribution/job/distribution-sanity-neon
+* **CSIT Test:** `CSIT <https://jenkins.opendaylight.org/releng/view/distribution/job/distribution-sanity-neon>`_
 
 odl-integration-compatible-with-all
 -----------------------------------
 
-* **Gitweb URL:** https://git.opendaylight.org/gerrit/gitweb?p=integration/distribution.git;a=blob;f=features/singles/odl-integration-compatible-with-all/pom.xml;hb=refs/heads/stable/neon
-* **Description:** An aggregate feature grouping Managed projects user-facing ODL features
-  which are not pro-active and which (as a group) should be compatible with most other ODL features.
+* **Gitweb URL:** `Compatibility <https://git.opendaylight.org/gerrit/gitweb?p=integration/distribution.git;a=blob;f=features/singles/odl-integration-compatible-with-all/pom.xml;hb=refs/heads/stable/neon>`_
+* **Description:** An aggregate feature grouping Managed projects user facing ODL features
+  that are not pro-active and which (as a group) should be compatible with most other ODL features.
   This feature is used in CSIT multi-project feature test (-all- CSIT job).
 * **Top Level:** Yes.
 * **User Facing:** Yes, but not intended for production use (only for testing purposes).
 * **Experimental:** No.
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/distribution/job/distribution-sanity-neon
+* **CSIT Test:** `CSIT <https://jenkins.opendaylight.org/releng/view/distribution/job/distribution-sanity-neon>`_
 
 Managed distribution archive
 ----------------------------
-* **Gitweb URL:** https://git.opendaylight.org/gerrit/gitweb?p=integration/distribution.git;a=blob;f=karaf/pom.xml;hb=refs/heads/stable/neon
+* **Gitweb URL:** `Managed archive <https://git.opendaylight.org/gerrit/gitweb?p=integration/distribution.git;a=blob;f=karaf/pom.xml;hb=refs/heads/stable/neon>`_
 * **Description:** Zip or tar.gz; when extracted, a self-consistent ODL installation with Managed projects is created.
 * **Top Level:** Yes.
 * **User Facing:** Yes.
 * **Experimental:** No.
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/distribution/job/distribution-sanity-neon
+* **CSIT Test:** `CSIT <https://jenkins.opendaylight.org/releng/view/distribution/job/distribution-sanity-neon>`_
 
 Full distribution archive
 ----------------------------
-* **Gitweb URL:** https://git.opendaylight.org/gerrit/gitweb?p=integration/distribution.git;a=blob;f=opendaylight/pom.xml;hb=refs/heads/stable/neon
+* **Gitweb URL:** `Distribution archive <https://git.opendaylight.org/gerrit/gitweb?p=integration/distribution.git;a=blob;f=opendaylight/pom.xml;hb=refs/heads/stable/neon>`_
 * **Description:** Zip or tar.gz; when extracted, a self-consistent ODL installation with all projects is created.
 * **Top Level:** Yes.
 * **User Facing:** Yes.
 * **Experimental:** No.
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/distribution/job/distribution-sanity-neon
+* **CSIT Test:** `CSIT <https://jenkins.opendaylight.org/releng/view/distribution/job/distribution-sanity-neon>`_
 
 Documentation
 =============
@@ -68,7 +68,7 @@ Security Considerations
 Quality Assurance
 =================
 
-CSIT job: https://jenkins.opendaylight.org/releng/job/distribution-csit-1node-userfeatures-all-neon
+* `CSIT job <https://jenkins.opendaylight.org/releng/job/distribution-csit-1node-userfeatures-all-neon>`_
 
 No additional manual testing was needed.
 
@@ -76,12 +76,12 @@ Migration
 ---------
 
 Every distribution major release comes with new and deprecated project features as well
-as new Karaf version. Because of this it is recommend to perform a new ODL installation.
+as new Karaf version. Because of this it is recommend performing a new ODL installation.
 
 Compatibility
 -------------
 
-Test features change every release but these are only intended for distribution test.
+Test features change every release, but these are only intended for distribution test.
 
 Bugs Fixed
 ----------
@@ -136,5 +136,3 @@ Release Mechanics
 =================
 
 See :ref:`managed-release`
-
-
