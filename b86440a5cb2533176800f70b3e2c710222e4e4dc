@@ -1,4 +1,28 @@
 {
   "pushCert": "certificate version 0.1\npusher F566C9B1 1473345390 -0400\npushee ssh://git.opendaylight.org:29418/docs.git\nnonce 1473345390-D807FDA8DBB55A92A049D12806BA279E5A1A1EE2\n\n0000000000000000000000000000000000000000 f378f1a4c7c5fea64e7bf0e79cd559d3e270e624 refs/for/master\n-----BEGIN PGP SIGNATURE-----\nVersion: GnuPG v2\n\niQIcBAABCAAGBQJX0XduAAoJEF3VDEv1ZsmxAF8QAL1D+Pv58HPo/DX9JOxasnng\nMe1pYKg+5IALvScouFpSlwbjc1xTbHITBiOFNgKlIosuVNNe3/pTXmH4gklrEXpV\n1k6CPtHRKoMUxPTwraQzRczIpDYWDTWnflfD+E3nk/5b/gkyreVyciiVZD0rBryk\nCZzDkYTDaw42P4cjtDbXjViKgUrptt5gERs+pi90eaYxhF2Ba2kNo+IjnfzwGDfw\n9q8g7bTv+/SLfTDbn92vO/i24yjpJmBXvgQN8MvfM8ODrJvGwC+QokLZM1p/IRHx\nTOkHGK7FAlMp8AXVTKu6a1oMpVPj7vmBQcS21lsAibudURuw36s4w6+nsLPSTOrL\nuIqupq/NT5UaiI6Mz2n474lQzdF8b9a0lNR88zWMNeqqRxMxTPRNSCoCXEWIDd5F\nbtnZPp4zrH+Rx+wnb2IhzZyNlBz2dKZwvfvci8cF8OLz1eX1hEaHqf/PsbYaR02w\nsOWeVQFclUjJhnBl87gWsZCbPSd8unFWNgMA8XQv2/hbPwhca2xrgk7P6gAJqffm\n9DHuHzVLzvyXhwsWFqUN5jErJt0Nkw8Do/1gm0IYJAY/QF+lS75cxTjhJoFoBpGu\nbe/pWWtYyGbnkwbiHZIE9DFMzaKAddcuR0igsD5kd7Hz9p6oldLhqKcxICBvugHT\n4T/C7m68p69iSpa7tXMN\n\u003dgrtu\n-----END PGP SIGNATURE-----\n",
-  "comments": []
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a6b29fe_47e58a36",
+        "filename": "docs/getting-started-guide/project-specific-guides/vtn.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 396
+      },
+      "writtenOn": "2016-09-08T16:23:30Z",
+      "side": 1,
+      "message": "We should use the Boron release version here instead of snapshot version. That being said, I\u0027m ok for merging this patch. We probably fix this point in a different patch.",
+      "range": {
+        "startLine": 75,
+        "startChar": 57,
+        "endLine": 75,
+        "endChar": 143
+      },
+      "revId": "b86440a5cb2533176800f70b3e2c710222e4e4dc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
 }
