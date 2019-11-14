@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9a561d44_dca86f8f",
+        "filename": "manuals/user-guide/src/main/asciidoc/vtn/VTN_How_To_Use_VTN_to_make_packets_take_different_paths.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 8080
+      },
+      "writtenOn": "2019-11-14T21:13:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a561d44_3aaff02b",
+      "range": {
+        "startLine": 48,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 290
+      },
+      "revId": "a8dba89a47748b813219389190bbe92d0686ca7c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a561d44_bac300ec",
         "filename": "manuals/user-guide/src/main/asciidoc/vtn/VTN_How_To_Use_VTN_to_make_packets_take_different_paths.adoc",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2016-07-25T20:53:57Z",
       "side": 1,
       "message": "add a space after the comma and before pathmap",
+      "range": {
+        "startLine": 128,
+        "startChar": 21,
+        "endLine": 128,
+        "endChar": 22
+      },
+      "revId": "a8dba89a47748b813219389190bbe92d0686ca7c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_3caa4b85",
+        "filename": "manuals/user-guide/src/main/asciidoc/vtn/VTN_How_To_Use_VTN_to_make_packets_take_different_paths.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 8080
+      },
+      "writtenOn": "2019-11-14T21:13:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a561d44_bac300ec",
       "range": {
         "startLine": 128,
         "startChar": 21,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "9a561d44_1caf8795",
+        "filename": "manuals/user-guide/src/main/asciidoc/vtn/VTN_How_To_configure_L2_Network_with_Multiple_Controllers.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 8080
+      },
+      "writtenOn": "2019-11-14T21:13:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a561d44_9aa8bc21",
+      "range": {
+        "startLine": 97,
+        "startChar": 0,
+        "endLine": 105,
+        "endChar": 291
+      },
+      "revId": "a8dba89a47748b813219389190bbe92d0686ca7c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a561d44_7aa5e845",
         "filename": "manuals/user-guide/src/main/asciidoc/vtn/VTN_How_To_configure_L2_Network_with_Single_Controller.adoc",
         "patchSetId": 2
@@ -82,6 +154,30 @@
       "writtenOn": "2016-07-25T20:53:57Z",
       "side": 1,
       "message": "Given that this patch is on master which targets Boron, this should all be moot and cut. If this patch is merged to stable/beryllium, maybe you should add this after that?",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 291
+      },
+      "revId": "a8dba89a47748b813219389190bbe92d0686ca7c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_7c97a348",
+        "filename": "manuals/user-guide/src/main/asciidoc/vtn/VTN_How_To_configure_L2_Network_with_Single_Controller.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 8080
+      },
+      "writtenOn": "2019-11-14T21:13:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a561d44_7aa5e845",
       "range": {
         "startLine": 28,
         "startChar": 0,
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "9a561d44_bc9dbb68",
+        "filename": "manuals/user-guide/src/main/asciidoc/vtn/VTN_How_To_configure_flow_filters.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 8080
+      },
+      "writtenOn": "2019-11-14T21:13:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a561d44_da65141f",
+      "range": {
+        "startLine": 52,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 291
+      },
+      "revId": "a8dba89a47748b813219389190bbe92d0686ca7c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a561d44_3a76d0d7",
         "filename": "manuals/user-guide/src/main/asciidoc/vtn/VTN_How_To_view_STATIONS.adoc",
         "patchSetId": 2
@@ -128,6 +248,30 @@
       "writtenOn": "2016-07-25T20:53:57Z",
       "side": 1,
       "message": "Given that this patch is on master which targets Boron, this should all be moot and cut. If this patch is merged to stable/beryllium, maybe you should add this after that?",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 291
+      },
+      "revId": "a8dba89a47748b813219389190bbe92d0686ca7c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_9c9a776c",
+        "filename": "manuals/user-guide/src/main/asciidoc/vtn/VTN_How_To_view_STATIONS.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 8080
+      },
+      "writtenOn": "2019-11-14T21:13:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a561d44_3a76d0d7",
       "range": {
         "startLine": 31,
         "startChar": 0,
@@ -163,6 +307,30 @@
     },
     {
       "key": {
+        "uuid": "9a561d44_3c81abfb",
+        "filename": "manuals/user-guide/src/main/asciidoc/vtn/VTN_OpenStack_Support-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 8080
+      },
+      "writtenOn": "2019-11-14T21:13:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a561d44_ba514038",
+      "range": {
+        "startLine": 11,
+        "startChar": 26,
+        "endLine": 11,
+        "endChar": 27
+      },
+      "revId": "a8dba89a47748b813219389190bbe92d0686ca7c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a561d44_5a60e400",
         "filename": "manuals/user-guide/src/main/asciidoc/vtn/VTN_OpenStack_Support-user.adoc",
         "patchSetId": 2
@@ -180,6 +348,24 @@
     },
     {
       "key": {
+        "uuid": "9a561d44_1c866713",
+        "filename": "manuals/user-guide/src/main/asciidoc/vtn/VTN_OpenStack_Support-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 8080
+      },
+      "writtenOn": "2019-11-14T21:13:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a561d44_5a60e400",
+      "revId": "a8dba89a47748b813219389190bbe92d0686ca7c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a561d44_1a3aece6",
         "filename": "manuals/user-guide/src/main/asciidoc/vtn/VTN_OpenStack_Support-user.adoc",
         "patchSetId": 2
@@ -191,6 +377,24 @@
       "writtenOn": "2016-07-25T20:53:57Z",
       "side": 1,
       "message": "If you want this formatted as note, you need to drop the \"* \" before \"NOTE:\"",
+      "revId": "a8dba89a47748b813219389190bbe92d0686ca7c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_5c7bbf27",
+        "filename": "manuals/user-guide/src/main/asciidoc/vtn/VTN_OpenStack_Support-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 8080
+      },
+      "writtenOn": "2019-11-14T21:13:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a561d44_1a3aece6",
       "revId": "a8dba89a47748b813219389190bbe92d0686ca7c",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -220,6 +424,30 @@
     },
     {
       "key": {
+        "uuid": "9a561d44_9c71d746",
+        "filename": "manuals/user-guide/src/main/asciidoc/vtn/VTN_OpenStack_Support-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 8080
+      },
+      "writtenOn": "2019-11-14T21:13:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a561d44_ba3820f0",
+      "range": {
+        "startLine": 137,
+        "startChar": 0,
+        "endLine": 139,
+        "endChar": 26
+      },
+      "revId": "a8dba89a47748b813219389190bbe92d0686ca7c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a561d44_3a2410c4",
         "filename": "manuals/user-guide/src/main/asciidoc/vtn/VTN_OpenStack_Support-user.adoc",
         "patchSetId": 2
@@ -231,6 +459,24 @@
       "writtenOn": "2016-07-25T20:53:57Z",
       "side": 1,
       "message": "Do you mean \".local.conf\" or just \"local.conf\"\n\nShould you just remove this whole line?",
+      "revId": "a8dba89a47748b813219389190bbe92d0686ca7c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_dc96af3e",
+        "filename": "manuals/user-guide/src/main/asciidoc/vtn/VTN_OpenStack_Support-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 8080
+      },
+      "writtenOn": "2019-11-14T21:13:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a561d44_3a2410c4",
       "revId": "a8dba89a47748b813219389190bbe92d0686ca7c",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -254,6 +500,24 @@
     },
     {
       "key": {
+        "uuid": "9a561d44_3c988b69",
+        "filename": "manuals/user-guide/src/main/asciidoc/vtn/VTN_OpenStack_Support-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 8080
+      },
+      "writtenOn": "2019-11-14T21:13:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a561d44_da1a347c",
+      "revId": "a8dba89a47748b813219389190bbe92d0686ca7c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a561d44_1a114c5d",
         "filename": "manuals/user-guide/src/main/asciidoc/vtn/VTN_OpenStack_Support-user.adoc",
         "patchSetId": 2
@@ -265,6 +529,30 @@
       "writtenOn": "2016-07-25T20:53:57Z",
       "side": 1,
       "message": "Given that this patch is on master which targets Boron, this should all be moot and cut. If this patch is merged to stable/beryllium, maybe you should add this after that?",
+      "range": {
+        "startLine": 214,
+        "startChar": 0,
+        "endLine": 217,
+        "endChar": 4
+      },
+      "revId": "a8dba89a47748b813219389190bbe92d0686ca7c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_1c9dc759",
+        "filename": "manuals/user-guide/src/main/asciidoc/vtn/VTN_OpenStack_Support-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 8080
+      },
+      "writtenOn": "2019-11-14T21:13:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a561d44_1a114c5d",
       "range": {
         "startLine": 214,
         "startChar": 0,
@@ -300,6 +588,30 @@
     },
     {
       "key": {
+        "uuid": "9a561d44_7ca5e3a0",
+        "filename": "manuals/user-guide/src/main/asciidoc/vtn/VTN_OpenStack_Support-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 8080
+      },
+      "writtenOn": "2019-11-14T21:13:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a561d44_fa157849",
+      "range": {
+        "startLine": 224,
+        "startChar": 0,
+        "endLine": 229,
+        "endChar": 292
+      },
+      "revId": "a8dba89a47748b813219389190bbe92d0686ca7c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a561d44_5a0e243c",
         "filename": "manuals/user-guide/src/main/asciidoc/vtn/VTN_OpenStack_Support-user.adoc",
         "patchSetId": 2
@@ -311,6 +623,30 @@
       "writtenOn": "2016-07-25T20:53:57Z",
       "side": 1,
       "message": "if you use ` instead of \u0027, you will get it formatted with fixed-width font.",
+      "range": {
+        "startLine": 304,
+        "startChar": 6,
+        "endLine": 304,
+        "endChar": 27
+      },
+      "revId": "a8dba89a47748b813219389190bbe92d0686ca7c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_5ca29f99",
+        "filename": "manuals/user-guide/src/main/asciidoc/vtn/VTN_OpenStack_Support-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 8080
+      },
+      "writtenOn": "2019-11-14T21:13:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a561d44_5a0e243c",
       "range": {
         "startLine": 304,
         "startChar": 6,
@@ -346,6 +682,30 @@
     },
     {
       "key": {
+        "uuid": "9a561d44_fcb8d3c9",
+        "filename": "manuals/user-guide/src/main/asciidoc/vtn/VTN_OpenStack_Support-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 8080
+      },
+      "writtenOn": "2019-11-14T21:13:18Z",
+      "side": 1,
+      "message": "Yes, we have added the content instead of sharing the link because we had to show dlux GUI to list the new nodes in every switch.",
+      "parentUuid": "9a561d44_3a0b702b",
+      "range": {
+        "startLine": 307,
+        "startChar": 0,
+        "endLine": 346,
+        "endChar": 48
+      },
+      "revId": "a8dba89a47748b813219389190bbe92d0686ca7c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a561d44_7a016805",
         "filename": "manuals/user-guide/src/main/asciidoc/vtn/VTN_OpenStack_Support-user.adoc",
         "patchSetId": 2
@@ -369,6 +729,30 @@
     },
     {
       "key": {
+        "uuid": "9a561d44_dcbd0fb9",
+        "filename": "manuals/user-guide/src/main/asciidoc/vtn/VTN_OpenStack_Support-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 8080
+      },
+      "writtenOn": "2019-11-14T21:13:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a561d44_7a016805",
+      "range": {
+        "startLine": 348,
+        "startChar": 0,
+        "endLine": 348,
+        "endChar": 3
+      },
+      "revId": "a8dba89a47748b813219389190bbe92d0686ca7c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a561d44_d5016706",
         "filename": "manuals/user-guide/src/main/asciidoc/vtn/VTN_OpenStack_Support-user.adoc",
         "patchSetId": 2
@@ -380,6 +764,30 @@
       "writtenOn": "2016-07-25T20:53:57Z",
       "side": 1,
       "message": "I think this is supposed to be 4 \u003ds, not 3, so that it gets nested under \"VTN OpenStack Configuration\".",
+      "range": {
+        "startLine": 352,
+        "startChar": 0,
+        "endLine": 352,
+        "endChar": 3
+      },
+      "revId": "a8dba89a47748b813219389190bbe92d0686ca7c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_3cafeb7e",
+        "filename": "manuals/user-guide/src/main/asciidoc/vtn/VTN_OpenStack_Support-user.adoc",
+        "patchSetId": 2
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 8080
+      },
+      "writtenOn": "2019-11-14T21:13:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a561d44_d5016706",
       "range": {
         "startLine": 352,
         "startChar": 0,
