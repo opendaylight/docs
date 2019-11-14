@@ -26,6 +26,30 @@
     },
     {
       "key": {
+        "uuid": "7a6b29fe_3b14f49e",
+        "filename": "docs/getting-started-guide/project-specific-guides/vtn.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 8080
+      },
+      "writtenOn": "2019-11-14T21:13:18Z",
+      "side": 1,
+      "message": "Modified the required changes for Boron",
+      "parentUuid": "7a6b29fe_45ebcd12",
+      "range": {
+        "startLine": 79,
+        "startChar": 48,
+        "endLine": 79,
+        "endChar": 53
+      },
+      "revId": "cc5597c443f1e9a800ab333868a2db6b765ccf52",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a6b29fe_85f16503",
         "filename": "docs/opendaylight-with-openstack/openstack-with-vtn.rst",
         "patchSetId": 3
@@ -37,6 +61,30 @@
       "writtenOn": "2016-09-06T20:24:53Z",
       "side": 1,
       "message": "Is this still right? Up to date?",
+      "range": {
+        "startLine": 247,
+        "startChar": 72,
+        "endLine": 247,
+        "endChar": 79
+      },
+      "revId": "cc5597c443f1e9a800ab333868a2db6b765ccf52",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_9b24280e",
+        "filename": "docs/opendaylight-with-openstack/openstack-with-vtn.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 8080
+      },
+      "writtenOn": "2019-11-14T21:13:18Z",
+      "side": 1,
+      "message": "This is a common page that is referred for all the releases.So this doesn\u0027t need any modification.",
+      "parentUuid": "7a6b29fe_85f16503",
       "range": {
         "startLine": 247,
         "startChar": 72,
