@@ -42,6 +42,24 @@
     },
     {
       "key": {
+        "uuid": "3afa9182_e60edb33",
+        "filename": "docs/getting-started-guide/project-release-notes/cardinal.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 7281
+      },
+      "writtenOn": "2019-11-14T21:21:28Z",
+      "side": 1,
+      "message": "Current support is for SNMPv2c (no encryption or authentication)",
+      "parentUuid": "3afa9182_190d5391",
+      "revId": "e2af0b5b8ed9f29dc75dcd5a592c7c40258cc5dc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afa9182_b917dfa2",
         "filename": "docs/getting-started-guide/project-release-notes/cardinal.rst",
         "patchSetId": 6
@@ -53,6 +71,30 @@
       "writtenOn": "2017-06-06T19:42:50Z",
       "side": 1,
       "message": "Is this all over RESTCONF and thus protected by AAA? If so, just say something like \n\n * Are all interfaces exposed using RESTCONF?\n \n   * Other than the SNMP agent noted above, yes.",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 54
+      },
+      "revId": "e2af0b5b8ed9f29dc75dcd5a592c7c40258cc5dc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afa9182_2610e34d",
+        "filename": "docs/getting-started-guide/project-release-notes/cardinal.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 7281
+      },
+      "writtenOn": "2019-11-14T21:21:28Z",
+      "side": 1,
+      "message": "* Cardinal supports two interfaces - SNMP and RESTCONF\n* Cardinal REST APIs are RESTCONF (authentication) enabled\n* Cardinal SNMP support is through SNMP Agent (SNMPv2c as mentioned above)",
+      "parentUuid": "3afa9182_b917dfa2",
       "range": {
         "startLine": 36,
         "startChar": 0,
