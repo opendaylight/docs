@@ -1,0 +1,281 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba068154_e4c4ed93",
+        "filename": "docs/getting-started-guide/project-release-notes/openflowplugin.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T16:39:10Z",
+      "side": 1,
+      "message": "Are all of these \"major\" features or should some of them be dropped.",
+      "revId": "1b2f27331b5ccfb79323d36753ebc5dfc37ec76a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_6438fda0",
+        "filename": "docs/getting-started-guide/project-release-notes/openflowplugin.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T16:39:10Z",
+      "side": 1,
+      "message": "Please update all the descriptions with something more human parseable.",
+      "revId": "1b2f27331b5ccfb79323d36753ebc5dfc37ec76a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_c4bf29fb",
+        "filename": "docs/getting-started-guide/project-release-notes/openflowplugin.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T16:39:10Z",
+      "side": 1,
+      "message": "Should this be Yes since there\u0027s no CSIT?",
+      "range": {
+        "startLine": 76,
+        "startChar": 20,
+        "endLine": 76,
+        "endChar": 22
+      },
+      "revId": "1b2f27331b5ccfb79323d36753ebc5dfc37ec76a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_443b399c",
+        "filename": "docs/getting-started-guide/project-release-notes/openflowplugin.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T16:39:10Z",
+      "side": 1,
+      "message": "It would be good to use the reST :ref: style links to labels so they work within branches and if things are renamed. See: http://www.sphinx-doc.org/en/stable/markup/inline.html#ref-role",
+      "range": {
+        "startLine": 253,
+        "startChar": 0,
+        "endLine": 259,
+        "endChar": 139
+      },
+      "revId": "1b2f27331b5ccfb79323d36753ebc5dfc37ec76a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a0b7d60_b571c879",
+        "filename": "docs/getting-started-guide/project-release-notes/openflowplugin.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-22T14:57:02Z",
+      "side": 1,
+      "message": "Cool. I think :refs: are bit more portable since they don\u0027t depend on file system names, but this works.",
+      "parentUuid": "9a0b7d60_b2f8bec5",
+      "range": {
+        "startLine": 253,
+        "startChar": 0,
+        "endLine": 259,
+        "endChar": 139
+      },
+      "revId": "1b2f27331b5ccfb79323d36753ebc5dfc37ec76a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_a442e50d",
+        "filename": "docs/getting-started-guide/project-release-notes/openflowplugin.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T16:39:10Z",
+      "side": 1,
+      "message": "That\u0027s not true you talk to OpenFlow devices.",
+      "revId": "1b2f27331b5ccfb79323d36753ebc5dfc37ec76a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_84452119",
+        "filename": "docs/getting-started-guide/project-release-notes/openflowplugin.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T16:39:10Z",
+      "side": 1,
+      "message": "There are many known security issues around topology spoofing and DoS. We need to list them.",
+      "revId": "1b2f27331b5ccfb79323d36753ebc5dfc37ec76a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_e44b4d29",
+        "filename": "docs/getting-started-guide/project-release-notes/openflowplugin.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T16:39:10Z",
+      "side": 1,
+      "message": "This won\u0027t include migrating an config data, e.g., flows/meters, over though, right?",
+      "range": {
+        "startLine": 278,
+        "startChar": 0,
+        "endLine": 279,
+        "endChar": 64
+      },
+      "revId": "1b2f27331b5ccfb79323d36753ebc5dfc37ec76a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a0b7d60_d568cc89",
+        "filename": "docs/getting-started-guide/project-release-notes/openflowplugin.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-22T14:57:02Z",
+      "side": 1,
+      "message": "But the data itself would be lost right?",
+      "parentUuid": "ba068154_50192f87",
+      "range": {
+        "startLine": 278,
+        "startChar": 0,
+        "endLine": 279,
+        "endChar": 64
+      },
+      "revId": "1b2f27331b5ccfb79323d36753ebc5dfc37ec76a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_2456f5d2",
+        "filename": "docs/getting-started-guide/project-release-notes/openflowplugin.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T16:39:10Z",
+      "side": 1,
+      "message": "Can this be migrated from wiki to reST.",
+      "revId": "1b2f27331b5ccfb79323d36753ebc5dfc37ec76a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a0b7d60_3505d8c2",
+        "filename": "docs/getting-started-guide/project-release-notes/openflowplugin.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-22T14:57:02Z",
+      "side": 1,
+      "message": "True. Just good over time.",
+      "parentUuid": "ba068154_8b0a4c1f",
+      "revId": "1b2f27331b5ccfb79323d36753ebc5dfc37ec76a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_446219ae",
+        "filename": "docs/getting-started-guide/project-release-notes/openflowplugin.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T16:39:10Z",
+      "side": 1,
+      "message": "Anything major you want to call out?",
+      "range": {
+        "startLine": 288,
+        "startChar": 0,
+        "endLine": 299,
+        "endChar": 377
+      },
+      "revId": "1b2f27331b5ccfb79323d36753ebc5dfc37ec76a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_a4594500",
+        "filename": "docs/getting-started-guide/project-release-notes/openflowplugin.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T16:39:10Z",
+      "side": 1,
+      "message": "Is the Helium deign planned to be removed?",
+      "revId": "1b2f27331b5ccfb79323d36753ebc5dfc37ec76a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_845c01ef",
+        "filename": "docs/getting-started-guide/project-release-notes/openflowplugin.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-19T16:39:10Z",
+      "side": 1,
+      "message": "Any major changes?",
+      "revId": "1b2f27331b5ccfb79323d36753ebc5dfc37ec76a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
