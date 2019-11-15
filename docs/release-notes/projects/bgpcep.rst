@@ -171,4 +171,4 @@ Standards
 Release Mechanics
 =================
 
-* `Release plan <https://wiki.opendaylight.org/view/BGP_LS_PCEP:Sodium_Release_Plan>`_
+* `Release plan <https://wiki-archive.opendaylight.org/view/BGP_LS_PCEP:Sodium_Release_Plan>`_
