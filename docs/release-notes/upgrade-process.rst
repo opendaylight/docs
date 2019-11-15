@@ -4,7 +4,7 @@ Magnesium Platform Upgrade
 
 This document describes the steps to help users upgrade to the
 Magnesium planned platform. Refer to `Managed Release Integrated (MRI)
-project <https://git.opendaylight.org/gerrit/#/q/topic:magnesium-mri>`_
+project <https://git.opendaylight.org/gerrit/q/topic:magnesium-mri>`_
 for more information.
 
 .. contents:: Contents
@@ -58,7 +58,7 @@ Install Dependent Projects
 
 Before performing platform upgrade, users must also install
 any dependent project. To locally install a dependent project,
-pull and install the respective `magnesium-mri <https://git.opendaylight.org/gerrit/#/q/topic:magnesium-mri>`_ changes for any dependent project. At the minimum, pull and install *controller*.
+pull and install the respective `magnesium-mri <https://git.opendaylight.org/gerrit/q/topic:magnesium-mri>`_ changes for any dependent project. At the minimum, pull and install *controller*.
 
 Perform the following steps to save time when locally installing
 any dependent project:
@@ -106,7 +106,7 @@ in Java versions 9-11, such as VarHandles, StackWalker, Cleaner, etc. Note
 that installing Java 11 removes several components (refer to, `JEP 320
 <https://openjdk.java.net/jeps/320>`_. A summary of the API
 differences can be found in the java-almanac project (refer to, `Java API
-<http://download.eclipselab.org/jdkdiff/V8/V11/index.html>`_.
+<https://javaalmanac.io/jdk/11/apidiff/8/>`_.
 
 Furthermore, Java 9 switched the default garbage collector to `G1GC
 <https://openjdk.java.net/jeps/248>`_ with `improvements
