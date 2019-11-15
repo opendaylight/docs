@@ -5,9 +5,9 @@ Java API Documentation
 Release Integrated Projects
 ===========================
 
-* `odlparent <https://javadocs.opendaylight.org/odlparent>`_
-* `yangtools <https://javadocs.opendaylight.org/yangtools>`_
-* `mdsal <https://javadocs.opendaylight.org/mdsal>`_
+* `odlparent <https://javadoc.io/doc/org.opendaylight.odlparent>`_
+* `yangtools <https://javadoc.io/doc/org.opendaylight.yangtools>`_
+* `mdsal <https://javadoc.io/doc/org.opendaylight.mdsal>`_
 
 Managed Projects
 ================

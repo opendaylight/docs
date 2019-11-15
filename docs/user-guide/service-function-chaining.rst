@@ -180,7 +180,7 @@ Tutorial
 
 Comprehensive tutorial on how to use the Southbound REST Plug-in and how
 to control network devices with it can be found on:
-https://wiki.opendaylight.org/view/Service_Function_Chaining:Main#SFC_103
+https://wiki-archive.opendaylight.org/view/Service_Function_Chaining:Main#SFC_103
 
 SFC-OVS integration
 -------------------
@@ -1812,7 +1812,7 @@ a. Set up 4 VMs include 2 SFs' type are Firewall, Others are Napt44.
 
 b. Install NETCONF server on every VM and enable it. More information on
    NETCONF can be found on the OpenDaylight wiki here:
-   https://wiki.opendaylight.org/view/OpenDaylight_Controller:Config:Examples:Netconf:Manual_netopeer_installation
+   https://wiki-archive.opendaylight.org/view/OpenDaylight_Controller:Config:Examples:Netconf:Manual_netopeer_installation
 
 c. Get Monitoring data from NETCONF server. These monitoring data should
    be get from the NETCONF server which is running in VMs. The following
@@ -1877,7 +1877,7 @@ a. Unzip SFC release tarball.
 
 b. Run SFC: ${sfc}/bin/karaf. More information on Service Function
    Chaining can be found on the OpenDaylight SFC’s wiki page:
-   https://wiki.opendaylight.org/view/Service_Function_Chaining:Main
+   https://wiki-archive.opendaylight.org/view/Service_Function_Chaining:Main
 
 a. Deploy the SFC2 (firewall-abstract2⇒napt44-abstract2) and click
    button to Create Rendered Service Path in SFC UI
@@ -2260,7 +2260,7 @@ Setup SFC
 ^^^^^^^^^
 
 For general SFC setup and scenarios, please see the SFC wiki page:
-https://wiki.opendaylight.org/view/Service_Function_Chaining:Main#SFC_101
+https://wiki-archive.opendaylight.org/view/Service_Function_Chaining:Main#SFC_101
 
 Create an algorithm
 ^^^^^^^^^^^^^^^^^^^
