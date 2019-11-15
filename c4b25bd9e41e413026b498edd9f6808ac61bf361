@@ -1,0 +1,262 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aa0d159_e78f2d22",
+        "filename": "manuals/install-guide/src/main/asciidoc/tsdr/tsdr-h2-install.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T18:50:24Z",
+      "side": 1,
+      "message": "Since it seems like installing this is just a matter of doing feature:install odl-tsdr-all, do we need this file?\n\nI would think not.",
+      "revId": "c4b25bd9e41e413026b498edd9f6808ac61bf361",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_07d9f956",
+        "filename": "manuals/install-guide/src/main/asciidoc/tsdr/tsdr-h2-install.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T18:50:24Z",
+      "side": 1,
+      "message": "I think you want a space after the parenthesis and.\n\nDatastore doesn\u0027t need to be capitalized unless it\u0027s part of the product name.",
+      "range": {
+        "startLine": 4,
+        "startChar": 39,
+        "endLine": 4,
+        "endChar": 52
+      },
+      "revId": "c4b25bd9e41e413026b498edd9f6808ac61bf361",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_87798931",
+        "filename": "manuals/install-guide/src/main/asciidoc/tsdr/tsdr-h2-install.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T18:50:24Z",
+      "side": 1,
+      "message": "OpenDaylight",
+      "range": {
+        "startLine": 5,
+        "startChar": 9,
+        "endLine": 5,
+        "endChar": 12
+      },
+      "revId": "c4b25bd9e41e413026b498edd9f6808ac61bf361",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_67e79d13",
+        "filename": "manuals/install-guide/src/main/asciidoc/tsdr/tsdr-h2-install.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T18:50:24Z",
+      "side": 1,
+      "message": "no caps",
+      "range": {
+        "startLine": 9,
+        "startChar": 61,
+        "endLine": 9,
+        "endChar": 64
+      },
+      "revId": "c4b25bd9e41e413026b498edd9f6808ac61bf361",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_c79eb156",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-h2-user.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T18:50:24Z",
+      "side": 1,
+      "message": "To be clear it\u0027s the default no matter what. It\u0027s just only recommended for non-production use cases.",
+      "range": {
+        "startLine": 3,
+        "startChar": 18,
+        "endLine": 3,
+        "endChar": 47
+      },
+      "revId": "c4b25bd9e41e413026b498edd9f6808ac61bf361",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_67a31d9f",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-h2-user.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T18:50:24Z",
+      "side": 1,
+      "message": "...the OpenDaylight Lithium release.\n\nAdd the word the.",
+      "range": {
+        "startLine": 5,
+        "startChar": 40,
+        "endLine": 5,
+        "endChar": 52
+      },
+      "revId": "c4b25bd9e41e413026b498edd9f6808ac61bf361",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_87a0a991",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-h2-user.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T18:50:24Z",
+      "side": 1,
+      "message": "is there a better word than using?",
+      "range": {
+        "startLine": 6,
+        "startChar": 61,
+        "endLine": 6,
+        "endChar": 66
+      },
+      "revId": "c4b25bd9e41e413026b498edd9f6808ac61bf361",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_47aaa171",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-h2-user.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T18:50:24Z",
+      "side": 1,
+      "message": "Could we just say \"In the Lithium Release of...\"?",
+      "revId": "c4b25bd9e41e413026b498edd9f6808ac61bf361",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_27ad1589",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-h2-user.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T18:50:24Z",
+      "side": 1,
+      "message": "Replace this with the name of the feature? I think \"TSDR H2\".",
+      "range": {
+        "startLine": 36,
+        "startChar": 30,
+        "endLine": 36,
+        "endChar": 39
+      },
+      "revId": "c4b25bd9e41e413026b498edd9f6808ac61bf361",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_67ca3d51",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-h2-user.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T18:50:24Z",
+      "side": 1,
+      "message": "...the additional command...",
+      "range": {
+        "startLine": 44,
+        "startChar": 58,
+        "endLine": 44,
+        "endChar": 68
+      },
+      "revId": "c4b25bd9e41e413026b498edd9f6808ac61bf361",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_a7e7e5e3",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-h2-user.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T18:50:24Z",
+      "side": 1,
+      "message": "which will...",
+      "range": {
+        "startLine": 48,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 19
+      },
+      "revId": "c4b25bd9e41e413026b498edd9f6808ac61bf361",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_47d8611d",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-h2-user.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T18:50:24Z",
+      "side": 1,
+      "message": "If this is the only instructions, we can probably cut the tutorial.",
+      "revId": "c4b25bd9e41e413026b498edd9f6808ac61bf361",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
