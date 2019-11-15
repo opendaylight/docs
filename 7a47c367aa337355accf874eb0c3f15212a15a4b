@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a9dcd25_3f6984f9",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-h2-user.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-02T01:45:01Z",
+      "side": 1,
+      "message": "You need a space between the period and T",
+      "range": {
+        "startLine": 2,
+        "startChar": 216,
+        "endLine": 2,
+        "endChar": 218
+      },
+      "revId": "7a47c367aa337355accf874eb0c3f15212a15a4b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_ff723ce4",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-h2-user.adoc",
+        "patchSetId": 7
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-02T01:45:01Z",
+      "side": 1,
+      "message": "You still have \"\u003cfeature\u003e\" in the subsection title.",
+      "range": {
+        "startLine": 20,
+        "startChar": 30,
+        "endLine": 20,
+        "endChar": 39
+      },
+      "revId": "7a47c367aa337355accf874eb0c3f15212a15a4b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
