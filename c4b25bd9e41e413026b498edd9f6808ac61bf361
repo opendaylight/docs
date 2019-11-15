@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a9dcd25_f024e6c7",
+        "filename": "manuals/install-guide/src/main/asciidoc/tsdr/tsdr-h2-install.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 988
+      },
+      "writtenOn": "2019-11-15T19:08:23Z",
+      "side": 1,
+      "message": "The file covers details on troubleshooting, post installation configuration, uninstallation and how to move to HBase store -- which I see helpful information to the end user.",
+      "parentUuid": "3aa0d159_e78f2d22",
+      "revId": "c4b25bd9e41e413026b498edd9f6808ac61bf361",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aa0d159_07d9f956",
         "filename": "manuals/install-guide/src/main/asciidoc/tsdr/tsdr-h2-install.adoc",
         "patchSetId": 5
@@ -59,6 +77,24 @@
         "endLine": 5,
         "endChar": 12
       },
+      "revId": "c4b25bd9e41e413026b498edd9f6808ac61bf361",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_1022b2b9",
+        "filename": "manuals/install-guide/src/main/asciidoc/tsdr/tsdr-h2-install.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 988
+      },
+      "writtenOn": "2019-11-15T19:08:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aa0d159_87798931",
       "revId": "c4b25bd9e41e413026b498edd9f6808ac61bf361",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -111,6 +147,24 @@
     },
     {
       "key": {
+        "uuid": "1a9dcd25_b02e5ea4",
+        "filename": "manuals/install-guide/src/main/asciidoc/tsdr/tsdr-h2-install.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 988
+      },
+      "writtenOn": "2019-11-15T19:08:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aa0d159_a7dda544",
+      "revId": "c4b25bd9e41e413026b498edd9f6808ac61bf361",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aa0d159_67e79d13",
         "filename": "manuals/install-guide/src/main/asciidoc/tsdr/tsdr-h2-install.adoc",
         "patchSetId": 5
@@ -134,6 +188,24 @@
     },
     {
       "key": {
+        "uuid": "1a9dcd25_d02bea92",
+        "filename": "manuals/install-guide/src/main/asciidoc/tsdr/tsdr-h2-install.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 988
+      },
+      "writtenOn": "2019-11-15T19:08:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aa0d159_67e79d13",
+      "revId": "c4b25bd9e41e413026b498edd9f6808ac61bf361",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aa0d159_07957932",
         "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-h2-user.adoc",
         "patchSetId": 5
@@ -151,6 +223,24 @@
         "endLine": 2,
         "endChar": 76
       },
+      "revId": "c4b25bd9e41e413026b498edd9f6808ac61bf361",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_7018d684",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-h2-user.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 988
+      },
+      "writtenOn": "2019-11-15T19:08:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aa0d159_07957932",
       "revId": "c4b25bd9e41e413026b498edd9f6808ac61bf361",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -197,6 +287,42 @@
         "endLine": 3,
         "endChar": 69
       },
+      "revId": "c4b25bd9e41e413026b498edd9f6808ac61bf361",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_901d6276",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-h2-user.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 988
+      },
+      "writtenOn": "2019-11-15T19:08:23Z",
+      "side": 1,
+      "message": "Changed the sentence to reflect properly based on your comment",
+      "parentUuid": "3aa0d159_a7992570",
+      "revId": "c4b25bd9e41e413026b498edd9f6808ac61bf361",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_30124e63",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-h2-user.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 988
+      },
+      "writtenOn": "2019-11-15T19:08:23Z",
+      "side": 1,
+      "message": "Included \"recommended\"",
+      "parentUuid": "3aa0d159_c79eb156",
       "revId": "c4b25bd9e41e413026b498edd9f6808ac61bf361",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -266,6 +392,24 @@
     },
     {
       "key": {
+        "uuid": "1a9dcd25_5017da51",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-h2-user.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 988
+      },
+      "writtenOn": "2019-11-15T19:08:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aa0d159_47aaa171",
+      "revId": "c4b25bd9e41e413026b498edd9f6808ac61bf361",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aa0d159_e7b64ddc",
         "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-h2-user.adoc",
         "patchSetId": 5
@@ -289,6 +433,24 @@
     },
     {
       "key": {
+        "uuid": "1a9dcd25_f00b8629",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-h2-user.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 988
+      },
+      "writtenOn": "2019-11-15T19:08:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aa0d159_e7b64ddc",
+      "revId": "c4b25bd9e41e413026b498edd9f6808ac61bf361",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aa0d159_07bc99ba",
         "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-h2-user.adoc",
         "patchSetId": 5
@@ -300,6 +462,24 @@
       "writtenOn": "2015-04-23T18:50:24Z",
       "side": 1,
       "message": "Is the intent to migrate this to AsciiDoc. The issue with wiki content is that it will be likely to become out of date as soon as Lithium is released and we start working on Beryllium.",
+      "revId": "c4b25bd9e41e413026b498edd9f6808ac61bf361",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_b005fe15",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-h2-user.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 988
+      },
+      "writtenOn": "2019-11-15T19:08:23Z",
+      "side": 1,
+      "message": "We intent to keep the Wiki separate if the new release drastically changes the architecture. The new release guides will contain the new release architecture --  We don\u0027t want to covert wiki to ascii docs.",
+      "parentUuid": "3aa0d159_07bc99ba",
       "revId": "c4b25bd9e41e413026b498edd9f6808ac61bf361",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -329,6 +509,24 @@
     },
     {
       "key": {
+        "uuid": "1a9dcd25_d0020a0b",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-h2-user.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 988
+      },
+      "writtenOn": "2019-11-15T19:08:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aa0d159_a7b045de",
+      "revId": "c4b25bd9e41e413026b498edd9f6808ac61bf361",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aa0d159_27ad1589",
         "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-h2-user.adoc",
         "patchSetId": 5
@@ -346,6 +544,24 @@
         "endLine": 36,
         "endChar": 39
       },
+      "revId": "c4b25bd9e41e413026b498edd9f6808ac61bf361",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_84ff6701",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-h2-user.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 988
+      },
+      "writtenOn": "2019-11-15T19:08:23Z",
+      "side": 1,
+      "message": "included the feature name odl-tsdr-all in paranthesis",
+      "parentUuid": "3aa0d159_27ad1589",
       "revId": "c4b25bd9e41e413026b498edd9f6808ac61bf361",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -398,6 +614,24 @@
     },
     {
       "key": {
+        "uuid": "1a9dcd25_640edb36",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-h2-user.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 988
+      },
+      "writtenOn": "2019-11-15T19:08:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aa0d159_67ca3d51",
+      "revId": "c4b25bd9e41e413026b498edd9f6808ac61bf361",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aa0d159_a7e7e5e3",
         "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-h2-user.adoc",
         "patchSetId": 5
@@ -415,6 +649,24 @@
         "endLine": 48,
         "endChar": 19
       },
+      "revId": "c4b25bd9e41e413026b498edd9f6808ac61bf361",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a9dcd25_0413575d",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-h2-user.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 988
+      },
+      "writtenOn": "2019-11-15T19:08:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aa0d159_a7e7e5e3",
       "revId": "c4b25bd9e41e413026b498edd9f6808ac61bf361",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
