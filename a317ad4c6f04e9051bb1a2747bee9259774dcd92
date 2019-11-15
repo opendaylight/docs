@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a9dcd25_13b04442",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-h2-user.adoc",
+        "patchSetId": 8
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-06-02T02:32:54Z",
+      "side": 1,
+      "message": "When you put a space in front of lines lines like this, they format as a code listing, which I don\u0027t think is what you want. I think you want to say: \"Wherein\" with no space before it and then have a list like\n\n* \u003cmetric-category\u003e \u003d\u003d ...\n\nWhere each line starts with an asterisk space.",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 126
+      },
+      "revId": "a317ad4c6f04e9051bb1a2747bee9259774dcd92",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
