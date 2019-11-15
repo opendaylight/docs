@@ -3,11 +3,11 @@ Autorelease
 ***********
 
 The Release Engineering - `Autorelease project
-<https://wiki.opendaylight.org/view/RelEng/Autorelease>`_
+<https://wiki-archive.opendaylight.org/view/RelEng/Autorelease>`_
 is targeted at building the artifacts that are used in the release candidates
 and final full release.
 
-* `Open Gerrit Patches <https://git.opendaylight.org/gerrit/#/q/project:releng/autorelease+status:open>`_
+* `Open Gerrit Patches <https://git.opendaylight.org/gerrit/q/project:releng/autorelease+status:open>`_
 * `Jenkins Jobs <https://jenkins.opendaylight.org/releng/view/autorelease/>`_
 
 Cloning Autorelease

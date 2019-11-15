@@ -699,5 +699,5 @@ Vocabulary Reference
   Simultaneous Release. These projects are consumed by Snapshot Integrated
   Projects based on release version numbers, not snapshot versions.
 
-.. _Committer Removal Process: https://wiki.opendaylight.org/view/TSC:Main#Committer_Removal_Process
+.. _Committer Removal Process: https://wiki-archive.opendaylight.org/view/TSC:Procedures_and_Processes#Committer_Removal_Process
 .. _Weather Page: https://jira.opendaylight.org/browse/TSC-132?jql=Project%20%3D%20TSC%20AND%20Type%20%3D%20%22Weather%20Item%22%20

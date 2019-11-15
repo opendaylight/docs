@@ -68,10 +68,10 @@ OpenDaylight Security Resources
 
 * For the list of current OpenDaylight security issues that are either being
   fixed or resolved, refer to
-  https://wiki.opendaylight.org/view/Security:Advisories.
+  https://wiki-archive.opendaylight.org/view/Security:Advisories.
 
 * To learn more about the OpenDaylight security issues policies and procedure,
-  refer to https://wiki.opendaylight.org/view/Security:Main
+  refer to https://wiki-archive.opendaylight.org/view/Security:Main
 
 .. _security_deployment_recommendations:
 
@@ -131,7 +131,7 @@ security model to add the following features:
   OSGi core and can be obtained from the OSGi service registry. The
   *ConditionalPermissionAdmin* API replaces the earlier *PermissionAdmin* API.
 
-For more information, refer to http://www.osgi.org/Main/HomePage.
+For more information, refer to https://www.osgi.org
 
 .. _securing-karaf:
 

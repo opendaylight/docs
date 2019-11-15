@@ -48,6 +48,7 @@ intersphinx_mapping['odl-nitrogen'] = ('https://docs.opendaylight.org/en/stable-
 intersphinx_mapping['odl-carbon'] = ('https://docs.opendaylight.org/en/stable-carbon/', None)
 
 linkcheck_ignore = [
+    'http://127.0.0.1',
     'http://localhost',
     # Ignore jenkins because it's often slow to respond.
     'https://jenkins.opendaylight.org/releng',
@@ -55,7 +56,12 @@ linkcheck_ignore = [
     # The '#' in the path makes sphinx think it's an anchor
     'https://git.opendaylight.org/gerrit/#/admin/projects/releng/builder',
     'https://git.opendaylight.org/gerrit/gitweb',
+    # URL returns a 403 Forbidden
+    'https://www.osgi.org',
+    # Ignore anchors on github.com because linkcheck fails on them
+    '^http[s]://github.com/.*#',
 ]
+linkcheck_timeout = 300
 
 nitpicky = True
 release = version

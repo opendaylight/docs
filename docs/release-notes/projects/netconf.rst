@@ -150,7 +150,7 @@ Security Considerations
 
 * What port numbers do they use?
 
-  * Refer to `Ports <https://wiki.opendaylight.org/view/Ports>`_. NETCONF Call Home uses TCP port 6666.
+  * Refer to `Ports <https://wiki-archive.opendaylight.org/view/Ports>`_. NETCONF Call Home uses TCP port 6666.
 
 * Other security issues?
 
@@ -288,4 +288,4 @@ Standards
 Release Mechanics
 =================
 
-* `Release plan <https://wiki.opendaylight.org/view/Simultaneous_Release:Sodium_Release_Plan>`_
+* `Release plan <https://jira.opendaylight.org/browse/TSC-216>`_
