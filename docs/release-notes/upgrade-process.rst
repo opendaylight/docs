@@ -4,7 +4,7 @@ Aluminium Platform Upgrade
 
 This document describes the steps to help users upgrade to the
 Magnesium planned platform. Refer to `Managed Release Integrated (MRI)
-project <https://git.opendaylight.org/gerrit/#/q/topic:aluminium-mri>`_
+project <https://git.opendaylight.org/gerrit/q/topic:aluminium-mri>`_
 upgrade patches for more information.
 
 .. contents:: Contents
@@ -65,7 +65,7 @@ Install Dependent Projects
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Before performing platform upgrade, users must also install
 any dependent project. To locally install a dependent project,
-pull and install the respective `magnesium-mri <https://git.opendaylight.org/gerrit/#/q/topic:aluminium-mri>`_ changes for any dependent project.
+pull and install the respective `magnesium-mri <https://git.opendaylight.org/gerrit/q/topic:aluminium-mri>`_ changes for any dependent project.
 
 Perform the following steps to save time when locally installing
 any dependent project:
@@ -87,7 +87,7 @@ Upgrade the ODL Parent
 ----------------------
 The following sub-section describes how to upgrade to
 the ODL Parent version 4. Refer to the `ODL Parent Release Notes
-<https://github.com/opendaylight/odlparent/blob/master/NEWS.rst#version-700>`_
+<https://github.com/opendaylight/odlparent/blob/master/docs/NEWS.rst#version-700>`_
 for more information.
 
 Features
