@@ -19,6 +19,42 @@
     },
     {
       "key": {
+        "uuid": "9a0b7d60_120a6ad2",
+        "filename": "docs/getting-started-guide/project-release-notes/openflowplugin.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 7941
+      },
+      "writtenOn": "2019-11-15T19:11:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_e4c4ed93",
+      "revId": "1b2f27331b5ccfb79323d36753ebc5dfc37ec76a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_90139765",
+        "filename": "docs/getting-started-guide/project-release-notes/openflowplugin.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 7941
+      },
+      "writtenOn": "2019-11-15T19:11:55Z",
+      "side": 1,
+      "message": "Those are actually all features (except Helium design ones). I was not sure what features should or should not be here as I had limited time while writing this. I can remove some testing-related applications I think (bulk-o-matic and drop-test) and also onf-extensions.",
+      "parentUuid": "ba068154_e4c4ed93",
+      "revId": "1b2f27331b5ccfb79323d36753ebc5dfc37ec76a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_6438fda0",
         "filename": "docs/getting-started-guide/project-release-notes/openflowplugin.rst",
         "patchSetId": 4
@@ -36,6 +72,42 @@
     },
     {
       "key": {
+        "uuid": "9a0b7d60_720f76e2",
+        "filename": "docs/getting-started-guide/project-release-notes/openflowplugin.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 7941
+      },
+      "writtenOn": "2019-11-15T19:11:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_6438fda0",
+      "revId": "1b2f27331b5ccfb79323d36753ebc5dfc37ec76a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_7016f356",
+        "filename": "docs/getting-started-guide/project-release-notes/openflowplugin.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 7941
+      },
+      "writtenOn": "2019-11-15T19:11:55Z",
+      "side": 1,
+      "message": "Sure, will do.",
+      "parentUuid": "ba068154_6438fda0",
+      "revId": "1b2f27331b5ccfb79323d36753ebc5dfc37ec76a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_c4bf29fb",
         "filename": "docs/getting-started-guide/project-release-notes/openflowplugin.rst",
         "patchSetId": 4
@@ -47,6 +119,54 @@
       "writtenOn": "2017-05-19T16:39:10Z",
       "side": 1,
       "message": "Should this be Yes since there\u0027s no CSIT?",
+      "range": {
+        "startLine": 76,
+        "startChar": 20,
+        "endLine": 76,
+        "endChar": 22
+      },
+      "revId": "1b2f27331b5ccfb79323d36753ebc5dfc37ec76a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_d00cff44",
+        "filename": "docs/getting-started-guide/project-release-notes/openflowplugin.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 7941
+      },
+      "writtenOn": "2019-11-15T19:11:55Z",
+      "side": 1,
+      "message": "Yes it should, will update this one.",
+      "parentUuid": "ba068154_c4bf29fb",
+      "range": {
+        "startLine": 76,
+        "startChar": 20,
+        "endLine": 76,
+        "endChar": 22
+      },
+      "revId": "1b2f27331b5ccfb79323d36753ebc5dfc37ec76a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a0b7d60_5214f2f4",
+        "filename": "docs/getting-started-guide/project-release-notes/openflowplugin.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 7941
+      },
+      "writtenOn": "2019-11-15T19:11:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_c4bf29fb",
       "range": {
         "startLine": 76,
         "startChar": 20,
@@ -106,6 +226,54 @@
     },
     {
       "key": {
+        "uuid": "ba068154_b007bb1c",
+        "filename": "docs/getting-started-guide/project-release-notes/openflowplugin.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 7941
+      },
+      "writtenOn": "2019-11-15T19:11:55Z",
+      "side": 1,
+      "message": "Good point. Right under that I see :doc: style link, what would be even more suitable here.",
+      "parentUuid": "ba068154_443b399c",
+      "range": {
+        "startLine": 253,
+        "startChar": 0,
+        "endLine": 259,
+        "endChar": 139
+      },
+      "revId": "1b2f27331b5ccfb79323d36753ebc5dfc37ec76a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a0b7d60_b2f8bec5",
+        "filename": "docs/getting-started-guide/project-release-notes/openflowplugin.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 7941
+      },
+      "writtenOn": "2019-11-15T19:11:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_443b399c",
+      "range": {
+        "startLine": 253,
+        "startChar": 0,
+        "endLine": 259,
+        "endChar": 139
+      },
+      "revId": "1b2f27331b5ccfb79323d36753ebc5dfc37ec76a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_a442e50d",
         "filename": "docs/getting-started-guide/project-release-notes/openflowplugin.rst",
         "patchSetId": 4
@@ -123,6 +291,42 @@
     },
     {
       "key": {
+        "uuid": "ba068154_f0014307",
+        "filename": "docs/getting-started-guide/project-release-notes/openflowplugin.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 7941
+      },
+      "writtenOn": "2019-11-15T19:11:55Z",
+      "side": 1,
+      "message": "True. Will update this.",
+      "parentUuid": "ba068154_a442e50d",
+      "revId": "1b2f27331b5ccfb79323d36753ebc5dfc37ec76a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a0b7d60_92f5bacd",
+        "filename": "docs/getting-started-guide/project-release-notes/openflowplugin.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 7941
+      },
+      "writtenOn": "2019-11-15T19:11:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_a442e50d",
+      "revId": "1b2f27331b5ccfb79323d36753ebc5dfc37ec76a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_84452119",
         "filename": "docs/getting-started-guide/project-release-notes/openflowplugin.rst",
         "patchSetId": 4
@@ -134,6 +338,42 @@
       "writtenOn": "2017-05-19T16:39:10Z",
       "side": 1,
       "message": "There are many known security issues around topology spoofing and DoS. We need to list them.",
+      "revId": "1b2f27331b5ccfb79323d36753ebc5dfc37ec76a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_1007a71d",
+        "filename": "docs/getting-started-guide/project-release-notes/openflowplugin.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 7941
+      },
+      "writtenOn": "2019-11-15T19:11:55Z",
+      "side": 1,
+      "message": "Is there list somewhere in wiki so I can put it here? I was using this: https://wiki.opendaylight.org/view/OpenDaylight_OpenFlow_Plugin:Boron_Release_Review#Security_Considerations as base while writing this, and nothing concrete was listed there.",
+      "parentUuid": "ba068154_84452119",
+      "revId": "1b2f27331b5ccfb79323d36753ebc5dfc37ec76a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a0b7d60_f20246b3",
+        "filename": "docs/getting-started-guide/project-release-notes/openflowplugin.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 7941
+      },
+      "writtenOn": "2019-11-15T19:11:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_84452119",
       "revId": "1b2f27331b5ccfb79323d36753ebc5dfc37ec76a",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -187,6 +427,54 @@
     },
     {
       "key": {
+        "uuid": "9a0b7d60_35ddd815",
+        "filename": "docs/getting-started-guide/project-release-notes/openflowplugin.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 7941
+      },
+      "writtenOn": "2019-11-15T19:11:55Z",
+      "side": 1,
+      "message": "With both serialization methods end result is exactly same, so I think not.",
+      "parentUuid": "9a0b7d60_d568cc89",
+      "range": {
+        "startLine": 278,
+        "startChar": 0,
+        "endLine": 279,
+        "endChar": 64
+      },
+      "revId": "1b2f27331b5ccfb79323d36753ebc5dfc37ec76a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_50192f87",
+        "filename": "docs/getting-started-guide/project-release-notes/openflowplugin.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 7941
+      },
+      "writtenOn": "2019-11-15T19:11:55Z",
+      "side": 1,
+      "message": "Config data would stay same, this flag just uses different serialization/deserialization method than when disabled. But it inroduces some incompatibilities with previous release as stated in Wiki (statistic compatibility services, but they was deprecated and replaced with direct statistics anyway).",
+      "parentUuid": "ba068154_e44b4d29",
+      "range": {
+        "startLine": 278,
+        "startChar": 0,
+        "endLine": 279,
+        "endChar": 64
+      },
+      "revId": "1b2f27331b5ccfb79323d36753ebc5dfc37ec76a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_2456f5d2",
         "filename": "docs/getting-started-guide/project-release-notes/openflowplugin.rst",
         "patchSetId": 4
@@ -222,6 +510,24 @@
     },
     {
       "key": {
+        "uuid": "ba068154_8b0a4c1f",
+        "filename": "docs/getting-started-guide/project-release-notes/openflowplugin.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 7941
+      },
+      "writtenOn": "2019-11-15T19:11:55Z",
+      "side": 1,
+      "message": "Probably yes, but I am not sure where exactly to put it, but I assume this isn\u0027t that high priority, right?",
+      "parentUuid": "ba068154_2456f5d2",
+      "revId": "1b2f27331b5ccfb79323d36753ebc5dfc37ec76a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_446219ae",
         "filename": "docs/getting-started-guide/project-release-notes/openflowplugin.rst",
         "patchSetId": 4
@@ -233,6 +539,30 @@
       "writtenOn": "2017-05-19T16:39:10Z",
       "side": 1,
       "message": "Anything major you want to call out?",
+      "range": {
+        "startLine": 288,
+        "startChar": 0,
+        "endLine": 299,
+        "endChar": 377
+      },
+      "revId": "1b2f27331b5ccfb79323d36753ebc5dfc37ec76a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_6b0d6837",
+        "filename": "docs/getting-started-guide/project-release-notes/openflowplugin.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 7941
+      },
+      "writtenOn": "2019-11-15T19:11:55Z",
+      "side": 1,
+      "message": "Nothing comes to my mind, no.",
+      "parentUuid": "ba068154_446219ae",
       "range": {
         "startLine": 288,
         "startChar": 0,
@@ -262,6 +592,42 @@
     },
     {
       "key": {
+        "uuid": "ba068154_cb13b45a",
+        "filename": "docs/getting-started-guide/project-release-notes/openflowplugin.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 7941
+      },
+      "writtenOn": "2019-11-15T19:11:55Z",
+      "side": 1,
+      "message": "Yes, it is planned to be removed in Nitrogen. Should I mention it here?",
+      "parentUuid": "ba068154_a4594500",
+      "revId": "1b2f27331b5ccfb79323d36753ebc5dfc37ec76a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a0b7d60_322cce4a",
+        "filename": "docs/getting-started-guide/project-release-notes/openflowplugin.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 7941
+      },
+      "writtenOn": "2019-11-15T19:11:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba068154_a4594500",
+      "revId": "1b2f27331b5ccfb79323d36753ebc5dfc37ec76a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_845c01ef",
         "filename": "docs/getting-started-guide/project-release-notes/openflowplugin.rst",
         "patchSetId": 4
@@ -273,6 +639,24 @@
       "writtenOn": "2017-05-19T16:39:10Z",
       "side": 1,
       "message": "Any major changes?",
+      "revId": "1b2f27331b5ccfb79323d36753ebc5dfc37ec76a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_ab0e3030",
+        "filename": "docs/getting-started-guide/project-release-notes/openflowplugin.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 7941
+      },
+      "writtenOn": "2019-11-15T19:11:55Z",
+      "side": 1,
+      "message": "No, I don\u0027t think so.",
+      "parentUuid": "ba068154_845c01ef",
       "revId": "1b2f27331b5ccfb79323d36753ebc5dfc37ec76a",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
