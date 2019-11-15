@@ -18,7 +18,7 @@ documentations of each component:
 
 -  http://git.openstack.org/cgit/openstack/networking-odl/
 
--  https://wiki.opendaylight.org/view/NeutronNorthbound:Main
+-  https://wiki-archive.opendaylight.org/view/NeutronNorthbound:Main
 
 Use cases and who will use the feature
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
