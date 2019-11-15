@@ -68,7 +68,7 @@ distribution/karaf/target/assembly/etc/usc
 
    -  This file contains configuration related to clustering. Potential
       configuration properties can be found on the akka website at
-      http://doc.akka.io
+      https://doc.akka.io
 
 -  usc.properties
 
