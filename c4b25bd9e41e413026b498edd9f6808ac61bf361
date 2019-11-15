@@ -65,6 +65,52 @@
     },
     {
       "key": {
+        "uuid": "3aa0d159_a7dda544",
+        "filename": "manuals/install-guide/src/main/asciidoc/tsdr/tsdr-h2-install.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T18:50:24Z",
+      "side": 1,
+      "message": "no caps since it\u0027s not a proper noun.",
+      "range": {
+        "startLine": 8,
+        "startChar": 23,
+        "endLine": 8,
+        "endChar": 47
+      },
+      "revId": "c4b25bd9e41e413026b498edd9f6808ac61bf361",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_c7e23103",
+        "filename": "manuals/install-guide/src/main/asciidoc/tsdr/tsdr-h2-install.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T18:50:24Z",
+      "side": 1,
+      "message": "same here, statistics, not Statistics",
+      "range": {
+        "startLine": 8,
+        "startChar": 60,
+        "endLine": 8,
+        "endChar": 70
+      },
+      "revId": "c4b25bd9e41e413026b498edd9f6808ac61bf361",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aa0d159_67e79d13",
         "filename": "manuals/install-guide/src/main/asciidoc/tsdr/tsdr-h2-install.adoc",
         "patchSetId": 5
@@ -88,6 +134,29 @@
     },
     {
       "key": {
+        "uuid": "3aa0d159_07957932",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-h2-user.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T18:50:24Z",
+      "side": 1,
+      "message": "the",
+      "range": {
+        "startLine": 2,
+        "startChar": 75,
+        "endLine": 2,
+        "endChar": 76
+      },
+      "revId": "c4b25bd9e41e413026b498edd9f6808ac61bf361",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aa0d159_c79eb156",
         "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-h2-user.adoc",
         "patchSetId": 5
@@ -104,6 +173,29 @@
         "startChar": 18,
         "endLine": 3,
         "endChar": 47
+      },
+      "revId": "c4b25bd9e41e413026b498edd9f6808ac61bf361",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_a7992570",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-h2-user.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T18:50:24Z",
+      "side": 1,
+      "message": "TSDR project?\n\nIt\u0027s not the default datastore for the whole of OpenDaylight. You could say \"...for time-series data.\"",
+      "range": {
+        "startLine": 3,
+        "startChar": 59,
+        "endLine": 3,
+        "endChar": 69
       },
       "revId": "c4b25bd9e41e413026b498edd9f6808ac61bf361",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
@@ -174,6 +266,69 @@
     },
     {
       "key": {
+        "uuid": "3aa0d159_e7b64ddc",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-h2-user.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T18:50:24Z",
+      "side": 1,
+      "message": "users since this is the user guide, right?",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 10
+      },
+      "revId": "c4b25bd9e41e413026b498edd9f6808ac61bf361",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_07bc99ba",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-h2-user.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T18:50:24Z",
+      "side": 1,
+      "message": "Is the intent to migrate this to AsciiDoc. The issue with wiki content is that it will be likely to become out of date as soon as Lithium is released and we start working on Beryllium.",
+      "revId": "c4b25bd9e41e413026b498edd9f6808ac61bf361",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_a7b045de",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-h2-user.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T18:50:24Z",
+      "side": 1,
+      "message": "Cut this since it\u0027s just saying what\u0027s above?",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 79
+      },
+      "revId": "c4b25bd9e41e413026b498edd9f6808ac61bf361",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aa0d159_27ad1589",
         "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-h2-user.adoc",
         "patchSetId": 5
@@ -190,6 +345,29 @@
         "startChar": 30,
         "endLine": 36,
         "endChar": 39
+      },
+      "revId": "c4b25bd9e41e413026b498edd9f6808ac61bf361",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aa0d159_c7b551ce",
+        "filename": "manuals/user-guide/src/main/asciidoc/tsdr/tsdr-h2-user.adoc",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2015-04-23T18:50:24Z",
+      "side": 1,
+      "message": "\"...enabled, the...\"\n\nthese two sentences need to be merged",
+      "range": {
+        "startLine": 37,
+        "startChar": 43,
+        "endLine": 37,
+        "endChar": 55
       },
       "revId": "c4b25bd9e41e413026b498edd9f6808ac61bf361",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
