@@ -131,7 +131,7 @@ security model to add the following features:
   OSGi core and can be obtained from the OSGi service registry. The
   *ConditionalPermissionAdmin* API replaces the earlier *PermissionAdmin* API.
 
-For more information, refer to http://www.osgi.org/Main/HomePage.
+For more information, refer to https://www.osgi.org
 
 .. _securing-karaf:
 

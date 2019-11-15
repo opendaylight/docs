@@ -5,19 +5,19 @@ Java API Documentation
 Release Integrated Projects
 ===========================
 
-* `odlparent <https://javadocs.opendaylight.org/odlparent>`_
-* `yangtools <https://javadocs.opendaylight.org/yangtools>`_
-* `mdsal <https://javadocs.opendaylight.org/mdsal>`_
+* `odlparent <https://javadoc.io/doc/org.opendaylight.odlparent>`_
+* `yangtools <https://javadoc.io/doc/org.opendaylight.yangtools>`_
+* `mdsal <https://javadoc.io/doc/org.opendaylight.mdsal>`_
 
 Managed Projects
 ================
 
-* `bgpcep <https://javadocs.opendaylight.org/bgpcep/magnesium>`_
-* `controller <https://javadocs.opendaylight.org/controller/magnesium>`_
-* `genius <https://javadocs.opendaylight.org/genius/magnesium>`_
-* `infrautils <https://javadocs.opendaylight.org/infrautils/magnesium>`_
-* `lispflowmapping <https://javadocs.opendaylight.org/lispflowmapping/magnesium>`_
-* `netvirt <https://javadocs.opendaylight.org/netvirt/magnesium>`_
-* `neutron <https://javadocs.opendaylight.org/neutron/magnesium>`_
-* `openflowplugin <https://javadocs.opendaylight.org/openflowplugin/magnesium>`_
-* `ovsdb <https://javadocs.opendaylight.org/ovsdb/magnesium>`_
+* `bgpcep <https://javadocs.opendaylight.org/bgpcep>`_
+* `controller <https://javadoc.io/doc/org.opendaylight.controller>`_
+* `genius <https://javadocs.opendaylight.org/genius>`_
+* `infrautils <https://javadocs.opendaylight.org/infrautils>`_
+* `lispflowmapping <https://javadoc.io/doc/org.opendaylight.lispflowmapping>`_
+* `netvirt <https://javadocs.opendaylight.org/netvirt>`_
+* `neutron <https://javadocs.opendaylight.org/neutron>`_
+* `openflowplugin <https://javadocs.opendaylight.org/openflowplugin>`_
+* `ovsdb <https://javadocs.opendaylight.org/ovsdb>`_
