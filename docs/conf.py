@@ -53,7 +53,10 @@ linkcheck_ignore = [
     # The '#' in the path makes sphinx think it's an anchor
     'https://git.opendaylight.org/gerrit/#/admin/projects/releng/builder',
     'https://git.opendaylight.org/gerrit/gitweb',
+    # URL returns a 403 Forbidden
+    'https://www.osgi.org',
 ]
+linkcheck_timeout = 300
 
 nitpicky = True
 release = version
