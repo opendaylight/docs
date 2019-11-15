@@ -15,7 +15,7 @@ mailing lists, IRC and forums.
 #. Mail discuss@lists.opendaylight.org or dev@lists.opendaylight.org.
 
 #. Directly mail the PTL as indicated on the specific
-   `projects page <https://wiki.opendaylight.org/view/Project_list>`_.
+   `projects page <https://wiki-archive.opendaylight.org/view/Project_list>`_.
 
 #. IRC: Connect to #opendaylight or #opendaylight-meeting channel on freenode.
    The `Linux Foundation's IRC guide <https://docs.releng.linuxfoundation.org/en/latest/freenode.html>`_ may be helpful.

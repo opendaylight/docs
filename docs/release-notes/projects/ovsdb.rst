@@ -75,7 +75,7 @@ odl-ovsdb-hwvtepsouthbound-api
 * **Feature URL:** `HWVT Southbound API <https://git.opendaylight.org/gerrit/gitweb?p=ovsdb.git;a=blob;f=hwvtepsouthbound/hwvtepsouthbound-features/odl-ovsdb-hwvtepsouthbound-api/pom.xml;h=e08f4233a6025da2d84dc1d87b6fb220a187e070;hb=refs/heads/stable/sodium>`_
 * **Feature Description:** This feature provides the YANG models for northbound users to configure the device
   that supports OVSDB Hardware vTEP schema. These YANG models are designed based on the
-  `OVSDB Hardware vTEP schema <http://openvswitch.org/docs/vtep.5.pdf>`_. This feature does not provide the
+  `OVSDB Hardware vTEP schema <https://www.openvswitch.org/support/dist-docs/vtep.5.pdf>`_. This feature does not provide the
   implementation of YANG models. If user/developer prefer to write their own implementation of the defined YANG
   model, they can use this feature to install the  YANG models in the controller.
 * **Top Level:** Yes
@@ -89,7 +89,7 @@ odl-ovsdb-hwvtepsouthbound
 
 * **Feature URL:** `HWVTEP Southbound <https://git.opendaylight.org/gerrit/gitweb?p=ovsdb.git;a=blob;f=hwvtepsouthbound/hwvtepsouthbound-features/odl-ovsdb-hwvtepsouthbound/pom.xml;h=3bb0d9f0093d83d0a82b3b8edffc0acfc93ee93c;hb=refs/heads/stable/sodium>`_
 * **Feature Description:**  This feature is the main feature of the OVSDB Hardware vTep Southbound plugin. This plugin
-  handles the OVS device that supports the `OVSDB Hardware vTEP schema <http://openvswitch.org/docs/vtep.5.pdf>`_ and
+  handles the OVS device that supports the `OVSDB Hardware vTEP schema <https://www.openvswitch.org/support/dist-docs/vtep.5.pdf>`_ and
   uses the `OVSDB protocol <https://tools.ietf.org/html/rfc7047>`_. This feature provides the implementation of the
   defined YANG  models. Developers developing the in-controller application that want to leverage OVSDB Hardware vTEP
   plugin for device configuration can add a dependency on this feature, and all the required modules will be loaded.
@@ -150,7 +150,7 @@ Security Considerations
 
   * Plugin's connection to device is by default unsecured. Users need to explicitly
     enable the TLS support through ovsdb library configuration file. Users can refer
-    to the wiki page `here <https://wiki.opendaylight.org/view/OVSDB_Integration:TLS_Communication>`_ for the instructions.
+    to the wiki page `here <https://wiki-archive.opendaylight.org/view/OVSDB_Integration:TLS_Communication>`_ for the instructions.
 
 Quality Assurance
 =================
@@ -210,7 +210,7 @@ Standards
 
 * `Open vSwitch Database Management Protocol <https://tools.ietf.org/html/rfc7047>`_
 * `OVSDB Schema <http://openvswitch.org/ovs-vswitchd.conf.db.5.pdf>`_
-* `Hardware vTep Schema <http://openvswitch.org/docs/vtep.5.pdf>`_
+* `Hardware vTep Schema <https://www.openvswitch.org/support/dist-docs/vtep.5.pdf>`_
 
 Release Mechanics
 =================
