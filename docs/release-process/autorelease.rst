@@ -3,7 +3,7 @@ Autorelease
 ***********
 
 The Release Engineering - `Autorelease project
-<https://wiki.opendaylight.org/view/RelEng/Autorelease>`_
+<https://wiki-archive.opendaylight.org/view/RelEng/Autorelease>`_
 is targeted at building the artifacts that are used in the release candidates
 and final full release.
 

@@ -12,13 +12,13 @@ The Neutron Service is only one of the components necessary for
 OpenStack integration. For those related components please refer to
 documentations of each component:
 
--  https://wiki.openstack.org/wiki/Neutron
+-  https://wiki-archive.openstack.org/wiki/Neutron
 
 -  https://launchpad.net/networking-odl
 
 -  http://git.openstack.org/cgit/openstack/networking-odl/
 
--  https://wiki.opendaylight.org/view/NeutronNorthbound:Main
+-  https://wiki-archive.opendaylight.org/view/NeutronNorthbound:Main
 
 Use cases and who will use the feature
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

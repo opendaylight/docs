@@ -567,7 +567,7 @@ Submitting Documentation Outlines (M2)
 
          git review
 
-      See the `Git-review Workflow <https://wiki.opendaylight.org/view/Git-review_Workflow>`_
+      See the `Git-review Workflow <https://wiki-archive.opendaylight.org/view/Git-review_Workflow>`_
       page if you don't have git-review installed.
 
 #. Wait for the patch to be merged or to get feedback
@@ -761,6 +761,6 @@ Timeline for Deliverables from Projects
 
 .. _Sphinx: http://www.sphinx-doc.org/en/stable/
 .. _reStructuredText: http://www.sphinx-doc.org/en/stable/rest.html
-.. _Documentation Group: https://wiki.opendaylight.org/view/Documentation/
-.. _RelEng/Builder: https://wiki.opendaylight.org/view/RelEng/Builder
+.. _Documentation Group: https://wiki-archive.opendaylight.org/view/Documentation/
+.. _RelEng/Builder: https://wiki-archive.opendaylight.org/view/RelEng/Builder
 .. _Pandoc: http://pandoc.org/
