@@ -2,16 +2,93 @@
 NETCONF
 =======
 
-Overview
-========
+Major Features
+==============
 
-Behavior Changes
-================
+For each top-level feature, identify the name, URL, description, etc.
+User-facing features are used directly by end users.
 
-* N/A
+odl-netconf-topology
+--------------------
+
+* **Feature URL:** `NETCONF Topology <https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/netconf-connector/odl-netconf-topology/pom.xml;hb=refs/heads/stable/sodium>`_
+* **Feature Description:** NETCONF southbound plugin single-node, configuration through MD-SAL.
+* **Top Level:** Yes
+* **User Facing:** Yes
+* **Experimental:** No
+* **CSIT Test:** `NETCONF CSIT <https://jenkins.opendaylight.org/releng/view/netconf/job/netconf-csit-1node-userfeatures-all-sodium/>`_
+
+odl-netconf-clustered-topology
+------------------------------
+
+* **Feature URL:** `Clustered Topology <https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/netconf-connector/odl-netconf-clustered-topology/pom.xml;hb=refs/heads/stable/sodium>`_
+* **Feature Description:** NETCONF southbound plugin clustered, configuration through MD-SAL.
+* **Top Level:** Yes
+* **User Facing:** Yes
+* **Experimental:** Yes
+* **CSIT Test:** `Cluster CSIT <https://jenkins.opendaylight.org/releng/view/netconf/job/netconf-csit-3node-clustering-all-sodium/>`_
+
+odl-netconf-console
+-------------------
+
+* **Feature URL:** `Console <https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/netconf-connector/odl-netconf-console/pom.xml;hb=refs/heads/stable/sodium>`_
+* **Feature Description:** NETCONF southbound configuration with Karaf CLI.
+* **Top Level:** Yes
+* **User Facing:** Yes
+* **Experimental:** Yes
+
+odl-netconf-mdsal
+-----------------
+
+* **Feature URL:** `MD-SAL <https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/netconf/odl-netconf-mdsal/pom.xml;hb=refs/heads/stable/sodium>`_
+* **Feature Description:** NETCONF server for MD-SAL.
+* **Top Level:** Yes
+* **User Facing:** Yes
+* **Experimental:** No
+* **CSIT Test:** `MD-SAL CSIT <https://jenkins.opendaylight.org/releng/view/netconf/job/netconf-csit-1node-userfeatures-all-sodium/>`_
+
+odl-restconf
+------------
+
+* **Feature URL:** `RESTCONF <https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/restconf/odl-restconf/pom.xml;hb=refs/heads/stable/sodium>`_
+* **Feature Description:** RESTCONF
+* **Top Level:** Yes
+* **User Facing:** Yes
+* **Experimental:** No
+* **CSIT Test:** Tested by any suite that uses RESTCONF.
+
+odl-mdsal-apidocs
+-----------------
+
+* **Feature URL:** `API Docs <https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/restconf/odl-mdsal-apidocs/pom.xml;hb=refs/heads/stable/sodium>`_
+* **Feature Description:** MD-SAL - apidocs
+* **Top Level:** Yes
+* **User Facing:** Yes
+* **Experimental:** No
+
+odl-yanglib
+-----------
+
+* **Feature URL:** `YANG Lib <https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/yanglib/odl-yanglib/pom.xml;hb=refs/heads/stable/sodium>`_
+* **Feature Description:** Yanglib server.
+* **Top Level:** Yes
+* **User Facing:** Yes
+* **Experimental:** No
+
+odl-netconf-callhome-ssh
+------------------------
+
+* **Feature URL:** `Call Home SSH <https://git.opendaylight.org/gerrit/gitweb?p=netconf.git;a=blob;f=features/netconf-connector/odl-netconf-callhome-ssh/pom.xml;hb=refs/heads/stable/sodium>`_
+* **Feature Description:** NETCONF Call Home.
+* **Top Level:** Yes
+* **User Facing:** Yes
+* **Experimental:** No
+* **CSIT Test:** `Call Home CSIT <https://jenkins.opendaylight.org/releng/view/netconf/job/netconf-csit-1node-callhome-all-sodium/>`_.
 
 New and Modified Features
 =========================
+
+The following list are the new and modified features introduced in this release:
 
 * An option was provided in YANG tools that preserves the ordering of requests as
   defined in the YANG file when formulating the NETCONF payload. This help devices
@@ -49,13 +126,66 @@ New and Modified Features
   mount point names to either contain IP address and port (default), or just the IP address.
   This feature was added for the NETCONF *call-home* feature.
 
-Deprecated Features
-===================
+Documentation
+=============
 
-* N/A
+* **User Guide:**
 
-Resolved Issues
-===============
+  * :ref:`netconf-user-guide`
+
+* **Developer Guide:**
+
+  * :ref:`netconf-dev-guide`
+
+Security Considerations
+=======================
+
+* Do you have any external interfaces other than RESTCONF?
+
+  * Yes, we have MD-SAL and CSS NETCONF servers. Also, a server for NETCONF Call Home.
+
+* If so, how are they secure?
+
+  * NETCONF over SSH
+
+* What port numbers do they use?
+
+  * Refer to `Ports <https://wiki.opendaylight.org/view/Ports>`_. NETCONF Call Home uses TCP port 6666.
+
+* Other security issues?
+
+  * None
+
+Quality Assurance
+=================
+
+* `Sonar Report <https://sonar.opendaylight.org/dashboard?id=org.opendaylight.netconf%3Anetconf-aggregator>`_ Test coverage percent: 64.8%
+* `CSIT Jobs <https://jenkins.opendaylight.org/releng/view/netconf/>`_
+
+Migration
+---------
+
+* Is it possible to migrate from the previous release? If so, how?
+
+  * Yes. No additional steps required.
+
+Compatibility
+-------------
+
+* Is this release compatible with the previous release?
+
+  * Yes
+
+* Any API changes?
+
+  * No
+
+* Any configuration changes?
+
+  * No
+
+Bugs Fixed
+----------
 
 .. list-table::
    :widths: 15 55
@@ -126,7 +256,7 @@ Resolved Issues
        have deviations.
 
 Known Issues
-============
+------------
 
 .. list-table::
    :widths: 15 55
@@ -135,6 +265,27 @@ Known Issues
    * - **Bug ID**
      - **Description**
 
-   * - `NETCONF 644 <https://jira.opendaylight.org/browse/NETCONF-644?jql=project%20%3D%20netconf%20AND%20type%20%3D%20Bug%20AND%20status%20!%3D%20%20Resolved)>`_
-     - In some cases, the standard edit-config failed when the module augmenting base NETCONF
-       was retrieved from a device.
+   * - `NETCONF-644 <https://jira.opendaylight.org/browse/NETCONF-644>`_
+     - In some cases, the standard edit-config failed when the module
+       augmenting base NETCONF was retrieved from a device.
+
+End-of-life
+===========
+
+* List of features/APIs that were EOLed, deprecated, and/or removed from this release:
+
+  * N/A
+
+Standards
+=========
+
+* `RFC 6241 <https://tools.ietf.org/html/rfc6241>`_ - Network Configuration Protocol (NETCONF)
+* `RFC 6470 <https://tools.ietf.org/html/rfc6470>`_ - Base Notifications partly supported, netconf-config-change unsupported
+* `draft-ietf-yang-library-06 <https://tools.ietf.org/html/draft-ietf-netconf-yang-library-06>`_
+* `draft-bierman-netconf-restconf-04 <https://tools.ietf.org/html/draft-bierman-netconf-restconf-04>`_
+* `RFC 8040 <https://tools.ietf.org/html/rfc8040>`_ - RESTCONF protocol
+
+Release Mechanics
+=================
+
+* `Release plan <https://wiki.opendaylight.org/view/Simultaneous_Release:Sodium_Release_Plan>`_

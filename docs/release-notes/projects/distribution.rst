@@ -19,24 +19,59 @@ scripts. Example of these scripts:
 
 * :ref:`Clustering scripts in Distribution <getting-started-clustering-scripts>`
 
-Behavior Changes
-================
 
-No behavior change in this release.
+Major Features
+==============
 
-New and Modified Features
-=========================
+Managed Distribution Archive
+----------------------------
 
-No new features were added in this release, and no existing features were
-modified.
+* Gitweb URL: `Managed Archive <https://git.opendaylight.org/gerrit/gitweb?p=integration/distribution.git;a=blob;f=karaf/pom.xml;hb=refs/heads/stable/sodium>`_
+* Description: Zip or tar.gz; when extracted, a self-consistent ODL installation with Managed projects is created.
+* Top Level: Yes.
+* User Facing: Yes.
+* Experimental: No.
+* CSIT Test: `CSIT <https://jenkins.opendaylight.org/releng/view/distribution/job/distribution-sanity-sodium>`_
 
-Deprecated Features
-===================
+Full Distribution Archive
+-------------------------
 
-No existing features were removed in this release.
+* Gitweb URL: `Distribution Archive <https://git.opendaylight.org/gerrit/gitweb?p=integration/distribution.git;a=blob;f=opendaylight/pom.xml;hb=refs/heads/stable/sodium>`_
+* Description: Zip or tar.gz; when extracted, a self-consistent ODL installation with all projects is created.
+* Top Level: Yes.
+* User Facing: Yes.
+* Experimental: No.
+* CSIT Test: `CSIT <https://jenkins.opendaylight.org/releng/view/distribution/job/distribution-sanity-sodium>`_
 
-Resolved Issues
-===============
+Documentation
+=============
+
+* User Guide
+
+  * `Clustering scripts in Distribution <https://docs.opendaylight.org/en/stable-sodium/getting-started-guide/clustering.html#getting-started-clustering-scripts>`_
+
+* Developer Guide
+
+  * `Distribution Guides <https://docs.opendaylight.org/projects/integration-distribution/en/stable-sodium/index.html>`_
+
+Security Considerations
+=======================
+
+* `CSIT job <https://jenkins.opendaylight.org/releng/job/distribution-csit-1node-userfeatures-all-sodium>`_
+
+* No additional manual testing was needed.
+
+Migration
+=========
+Every distribution major release comes with new and deprecated project features, as well
+as new Karaf version. Because of this it is recommend to perform a new ODL installation.
+
+Compatibility
+=============
+Test features change every release, but these are only intended for distribution test.
+
+Bugs Fixed
+==========
 
 No issues were resolved in this release.
 
@@ -83,3 +118,12 @@ Known Issues
 
   **Workaround:** Delete the etc/host.key file before starting Karaf again.
 
+Standards
+=========
+
+No standard implemented directly (see upstream projects).
+
+Release Mechanics
+=================
+
+* `Managed Release <https://docs.opendaylight.org/en/stable-sodium/release-process/managed-release.html#managed-release>`_
