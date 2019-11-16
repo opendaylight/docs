@@ -1,5 +1,5 @@
 =======
-NETVIRT
+NetVirt
 =======
 
 Major Features
@@ -10,15 +10,18 @@ Feature Name
 
 * **Feature Name:** odl-netvirt-openstack
 * **Feature URL:** `odl-netvirt-openstack <https://git.opendaylight.org/gerrit/gitweb?p=netvirt.git;a=blob;f=features/odl-netvirt-openstack/pom.xml;hb=HEAD>`_
-* **Feature Description:**  NetVirt is a network virtualization solution that includes the following components as well
-  as others: Open vSwitch based virtualization for software switches, Hardware VTEP for hardware switches,
-  Service Function Chaining support within a virtualized environment, support for OVS and DPDK-accelerated
-  OVS data paths, L3VPN (BGPVPN), EVPN, ELAN, distributed L2 and L3, NAT and Floating IPs, IPv6, Security Groups,
-  MAC and IP learning.
+* **Feature Description:** NetVirt is a network virtualization solution that includes the following components:
+
+  * Open vSwitch based virtualization for software switches.
+  * Hardware VTEP for hardware switches.
+  * Service Function Chaining support within a virtualized environment.
+  * Support for OVS and DPDK-accelerated.
+  * OVS data paths, L3VPN (BGPVPN), EVPN, ELAN, distributed L2 and L3, NAT and Floating IPs, IPv6, Security Groups,
+    MAC and IP learning.
 * **Top Level:** Yes
 * **User Facing:** Yes
 * **Experimental:** No
-* **CSIT Test:** `NetVirt CSIT <https://jenkins.opendaylight.org/releng/view/netvirt-csit/job/netvirt-csit-1node-1cmb-0ctl-0cmp-openstack-rocky-upstream-stateful-sodium/>`_
+* **CSIT Test:** `NetVirt CSIT <https://jenkins.opendaylight.org/releng/job/netvirt-csit-1node-0cmb-1ctl-2cmp-openstack-queens-upstream-stateful-sodium/>`_
 
 Documentation
 =============
@@ -39,29 +42,29 @@ Documentation
 Security Considerations
 =======================
 
-No known issues.
+* No known issues.
 
 Quality Assurance
 =================
 
-* `Sonar Report <https://sonar.opendaylight.org/overview?id=64219>`_
+* `Sonar Report <https://sonar.opendaylight.org/dashboard?id=org.opendaylight.netvirt%3Anetvirt>`_
 * `All CSIT Jobs <https://jenkins.opendaylight.org/releng/view/netvirt-csit>`_
-* `Main test job <https://jenkins.opendaylight.org/releng/view/netvirt-csit/job/netvirt-csit-1node-1cmb-0ctl-0cmp-openstack-rocky-upstream-stateful-sodium/>`_
+* `Main test job <https://jenkins.opendaylight.org/releng/job/netvirt-csit-1node-0cmb-1ctl-2cmp-openstack-queens-upstream-stateful-fluorine/>`_
 
 Migration
 ---------
 
-Nothing beyond general migration requirements.
+* Nothing beyond general migration requirements.
 
 Compatibility
 -------------
 
-Nothing beyond general compatibility requirements.
+* Nothing beyond general compatibility requirements.
 
 Bugs Fixed
 ----------
 
-* `Closed Bugs <https://jira.opendaylight.org/browse/NETVIRT-1617?jql=project%20%3D%20NETVIRT%20AND%20resolution%20%3D%20Done%20AND%20fixVersion%20%3D%20Sodium>`_
+* `Fixed Bugs <https://jira.opendaylight.org/browse/NETVIRT-1617?jql=project%20%3D%20NETVIRT%20AND%20resolution%20%3D%20Done%20AND%20fixVersion%20%3D%20Sodium>`_
 
 Known Issues
 ------------
@@ -71,17 +74,16 @@ Known Issues
 End-of-life
 ===========
 
-SFC Netvirt as well as COE Netvirt Integration is reaching an EOL due to lack of support from respective
-projects. COE Netvirt CSIT jobs are already disabled, SFC is deprecated for Sodium, and soon to be
-removed for Magnesium, if required support does not come from SFC project.
+Both SFC Netvirt and COE Netvirt Integration are reaching an EOL due to lack of support
+from their respective projects. COE Netvirt CSIT jobs are already disabled, and SFC is deprecated
+for Sodium and will be removed for Magnesium if support does not come from the SFC project.
 
 Standards
 =========
 
-N/A
+* N/A
 
 Release Mechanics
 =================
 
 * `Release Plan <https://jira.opendaylight.org/browse/TSC-209>`_
-* Project was on schedule
