@@ -33,68 +33,30 @@ Releasing your project
 
 Once testing against the staging repo has been completed and project has
 determined that the staged repo is ready for release. A release can the be
-performed as follows:
+performed using the self-serve release process:
+https://docs.releng.linuxfoundation.org/projects/global-jjb/en/latest/jjb/lf-release-jobs.html
 
-1. Ask helpdesk to promote the staging repo
-2. Download taglist.log and project.bundle files. They can be found in the
-   "patches" directory of the related jenkins release job logs.
-3. Read taglist.log and checkout the commit hash listed
-4. Merge the project.bundle patches
-5. Git tag the release
-6. Push release tag to Gerrit
 
-Steps 3-6 as bash:
-You will need a working GPG config to sign the release Git tag ("-s" option)
+1. Ask helpdesk the necessary right on jenkins if you do not have them
+2. Log on https://jenkins.opendaylight.org/
+3. Choose your project dashboard
+4. Check your relase branch has been successfully staged and note the corresponding log folder
+5. Go back to the dashboard and choose the release-merge job
+6. Click on build with parameters
+7. Fill in the form:
 
-.. code:: bash
+* GERRIT_BRANCH must be changed to the branch name you want to release (e.g. stable/sodium)
+* VERSION with your corresponding project version (e.g. 0.4.1)
+* LOG_DIR with the relative path of the log from the stage release job (e.g. project-maven-stage-master/17/)
+* choose maven DISTRIBUTION_TYPE in the select box
+* uncheck USE_RELEASE_FILE box
 
-    PATCH_DIR=/tmp/patches
-    PROJECT=odlparent
-    VERSION=1.2.3
-    git checkout $(awk '{print $NF}' "$PATCH_DIR/taglist.log")
-    git fetch "$PATCH_DIR/$PROJECT.bundle"
-    git merge --ff-only FETCH_HEAD
-    git tag -asm "$PROJECT $VERSION" "v$VERSION"
-    git push origin "v$VERSION"
+8. Launch the jenkins job
 
-Once complete the Git tag should be available in Gerrit and the Artifacts should
-appear in the Nexus opendaylight.release repo.
 
-The following shell script will do this for you:
+This job performs the following duties:
+* download and patch your project repository
+* build the project
+* publish the artifacts on nexus
+* tag and sign the release on Gerrit
 
-.. code:: bash
-
-    #!/bin/sh
-
-    set -e
-
-    if [ $# != 3 ]; then
-        echo Usage: $0 project version log-URL
-        echo fetches a project release\'s logs from log-URL and tags the git repository
-        exit 1
-    fi
-
-    PROJECT=$1
-    VERSION=$2
-    PATCH_DIR=/tmp/patches
-
-    mkdir -p $PATCH_DIR
-    cd $PATCH_DIR
-    rm -f ${PROJECT}.bundle taglist.log{,.gz}
-    wget ${3}/patches/{${PROJECT}.bundle,taglist.log.gz}
-    gunzip taglist.log.gz
-    cd -
-    git checkout $(awk '{print $NF}' "$PATCH_DIR/taglist.log")
-    git fetch "$PATCH_DIR/$PROJECT.bundle"
-    git merge --ff-only FETCH_HEAD
-    git tag -asm "$PROJECT $VERSION" "v$VERSION"
-    git push origin "v$VERSION"
-
-You need to run it from a clone git repository of your project,
-and give it as arguments the project’s short name, the newly-
-released version, and the URL of the release build’s logs; for
-example:
-
-.. code:: bash
-
-    sign-odl-release odlparent 4.0.0 https://logs.opendaylight.org/releng/vex-yul-odl-jenkins-1/odlparent-maven-release-master/11/
