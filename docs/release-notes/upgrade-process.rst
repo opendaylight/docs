@@ -27,22 +27,22 @@ versions (for example, `bump-odl-version <https://github.com/skitt/odl-tools/blo
 
 1. Update the odlparent version from 5.0.2 to 6.0.0. There should
    not be any reference to **org.opendaylight.odlparent**, except
-   for other 6.0.0. This includes custom feature.xml templates
+   for other 6.0.1. This includes custom feature.xml templates
    (src/main/feature/feature.xml), the version range there should
    be "[6,7)" instead of "[5,6)", "[5.0.2,6)" or any other variation.
 
  .. code-block:: none
 
-  bump-odl-version odlparent 5.0.2 6.0.0
+  bump-odl-version odlparent 5.0.2 6.0.1
 
-2. Update the direct yangtools version references from 3.0.5 to 4.0.0,
+2. Update the direct yangtools version references from 3.0.5 to 4.0.2,
    There should not be any reference to **org.opendaylight.yangtools**,
-   except for 4.0.0. This includes custom feature.xml templates
+   except for 4.0.2. This includes custom feature.xml templates
    (src/main/feature/feature.xml), the version range there should
    be "[4,5)" instead of "[3,4)".
 
-3. Update the MDSAL version from 4.0.6 to 5.0.3. There should not be
-   any reference to **org.opendaylight.mdsal**, except for 5.0.3.
+3. Update the MDSAL version from 4.0.6 to 5.0.4. There should not be
+   any reference to **org.opendaylight.mdsal**, except for 5.0.4.
 
  .. code-block:: none
 
@@ -250,6 +250,7 @@ omit JEP-181).
  .. code-block:: none
 
   <properties>
+    <!-- FIXME: Workaround for https://issues.apache.org/jira/browse/ARIES-1923 -->
     <maven.compiler.release>10</maven.compiler.release>
   </properties>
 
