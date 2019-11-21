@@ -18,29 +18,29 @@ Version Bump
 Before performing platform upgrade, do the following to bump the odlparent
 versions (for example, `bump-odl-version <https://github.com/skitt/odl-tools/blob/master/bump-odl-version>`_):
 
-1. Update the odlparent version from 3.1.3 to 4.0.2. There should
+1. Update the odlparent version from 3.1.3 to 4.0.14. There should
    not be any reference to **org.opendaylight.odlparent**, except
    for other 4.0.2.
 
  .. code-block:: none
 
-  bump-odl-version odlparent 3.1.3 4.0.2
+  bump-odl-version odlparent 3.1.3 4.0.14
 
-2. Update the direct yangtools version references from 2.0.10 to 2.1.1,
+2. Update the direct yangtools version references from 2.0.10 to 2.1.14,
    There should not be any reference to **org.opendaylight.yangtools**,
    except for 2.1.1.
 
-3. Update the MDSAL version from 0.14.0-SNAPSHOT to 3.0.0. There should
-   not be any reference to **org.opendaylight.mdsal**, except for 3.0.0.
+3. Update the MDSAL version from 0.14.0-SNAPSHOT to 3.0.12. There should
+   not be any reference to **org.opendaylight.mdsal**, except for 3.0.12.
 
  .. code-block:: none
 
-  rpl -R 0.14.0-SNAPSHOT 3.0.0
+  rpl -R 0.14.0-SNAPSHOT 3.0.12
 
 or
  .. code-block:: none
 
-  rpl -R 2.6.0-SNAPSHOT 3.0.0
+  rpl -R 2.6.0-SNAPSHOT 3.0.12
 
 Install Dependent Projects
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
