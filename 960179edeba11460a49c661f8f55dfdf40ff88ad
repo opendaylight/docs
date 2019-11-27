@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eee4f417_28e2882b",
+        "filename": "docs/release-notes/projects/bgpcep.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 7569
+      },
+      "writtenOn": "2019-11-27T20:16:58Z",
+      "side": 1,
+      "message": "Line 6 uses \"----\" whereas line 26 uses \"\u003d\u003d\u003d\u003d\". you may want to make it consistent",
+      "revId": "960179edeba11460a49c661f8f55dfdf40ff88ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6789461a_c7716738",
+        "filename": "docs/release-notes/projects/bgpcep.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 7569
+      },
+      "writtenOn": "2019-11-27T20:16:58Z",
+      "side": 1,
+      "message": "Fluorine release-note has few other reports. Any reason to exclude here, if not, can we please add the Neon equivalents here?\nhttps://docs.opendaylight.org/en/stable-fluorine/release-notes/projects/bgp-ls-pcep.html#quality-assurance",
+      "revId": "960179edeba11460a49c661f8f55dfdf40ff88ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7f762125_4859a045",
+        "filename": "docs/release-notes/projects/bgpcep.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 7569
+      },
+      "writtenOn": "2019-11-27T20:16:58Z",
+      "side": 1,
+      "message": "Instead of making it BGP specific, can we just say:\n\"Yes, configuration needs to be updated to latest features configuration as documented under user guides.\"",
+      "revId": "960179edeba11460a49c661f8f55dfdf40ff88ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cec277b2_2547b642",
+        "filename": "docs/release-notes/projects/bgpcep.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 7569
+      },
+      "writtenOn": "2019-11-27T20:16:58Z",
+      "side": 1,
+      "message": "Similar to \"Bug Fixes\" section below, can we add a \"New Features\" section with below link to capture the new features added\nhttps://jira.opendaylight.org/browse/BGPCEP-855?jql\u003dproject%20%3D%20BGPCEP%20AND%20issuetype%20in%20(Improvement%2C%20%22New%20Feature%22)%20AND%20status%20in%20(Resolved%2C%20Verified)%20AND%20fixVersion%20%3D%20Neon",
+      "revId": "960179edeba11460a49c661f8f55dfdf40ff88ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f0152aae_933e7feb",
+        "filename": "docs/release-notes/projects/bgpcep.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 7569
+      },
+      "writtenOn": "2019-11-27T20:16:58Z",
+      "side": 1,
+      "message": "Remove",
+      "revId": "960179edeba11460a49c661f8f55dfdf40ff88ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c34c2699_b18b0570",
+        "filename": "docs/release-notes/projects/bgpcep.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 7569
+      },
+      "writtenOn": "2019-11-27T20:16:58Z",
+      "side": 1,
+      "message": "Can we add standards as in fluorine release notes:\nhttps://docs.opendaylight.org/en/stable-fluorine/release-notes/projects/bgp-ls-pcep.html#standards\nThe links need to be updated to supported-capabilities section of respective Neon user-guides",
+      "revId": "960179edeba11460a49c661f8f55dfdf40ff88ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5fbb62fc_a18adebe",
+        "filename": "docs/release-notes/projects/bgpcep.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 7569
+      },
+      "writtenOn": "2019-11-27T20:16:58Z",
+      "side": 1,
+      "message": "Link to https://jira.opendaylight.org/browse/TSC-161 which is the BGPCEP Neon Release Plan ticket",
+      "revId": "960179edeba11460a49c661f8f55dfdf40ff88ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    }
+  ]
+}
