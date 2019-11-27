@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "564d9927_1c5dcc2c",
+        "filename": "docs/release-notes/projects/bgpcep.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2019-11-27T06:14:21Z",
+      "side": 1,
+      "message": "this is a more direct link:\n\nhttps://git.opendaylight.org/gerrit/gitweb?p\u003dbgpcep.git;a\u003dblob;f\u003dfeatures/pcep/features-pcep/pom.xml;h\u003d1e30b1244b142493bfe4559def0439a1c5eebd38;hb\u003drefs/heads/stable/neon",
+      "range": {
+        "startLine": 65,
+        "startChar": 29,
+        "endLine": 65,
+        "endChar": 190
+      },
+      "revId": "6fd89d7f526b8de131a47beaad0afa41a655bbcc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d378d405_d3be11de",
+        "filename": "docs/release-notes/projects/bgpcep.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2019-11-27T06:14:21Z",
+      "side": 1,
+      "message": "better link:\nhttps://jenkins.opendaylight.org/releng/view/bgpcep/job/bgpcep-csit-3node-bgpclustering-longevity-only-neon/\n\nalthough the job is broken and maybe not something to even link to at all.",
+      "range": {
+        "startLine": 99,
+        "startChar": 29,
+        "endLine": 99,
+        "endChar": 139
+      },
+      "revId": "6fd89d7f526b8de131a47beaad0afa41a655bbcc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    }
+  ]
+}
