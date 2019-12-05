@@ -80,8 +80,8 @@ To develop an app perform the following steps.
       * - Sodium SR2 Development
         - 1.2.2-SNAPSHOT
 
-2. Update the properties values as follows. Ensure that the values for the groupId and
-   the artifactId are in lower case.
+2. Update the properties values as follows. Ensure that the values for
+the *groupId* and  the *artifactId* are in lower case.
 
    .. code:: shell
 
@@ -120,7 +120,7 @@ To develop an app perform the following steps.
 
        Depending on your development machine’s specification this might
        take a little while. Ensure that you are in the project’s root
-       directory, example/, and then issue the build command, shown
+       directory, ``example/``, and then issue the build command, shown
        below.
 
    .. code:: shell
@@ -172,13 +172,15 @@ Defining a Simple Hello World RPC
         impl/src/main/java/org/opendaylight/hello/impl/HelloProvider.java
 
 3.  Add any new things that you are doing in your implementation by
-    using the HelloProvider.onSessionInitiate method. It's analogous to
+    using the ``HelloProvider.init`` method. It's analogous to
     an Activator.
 
     .. code:: java
 
-        @Override
-        public void onSessionInitiated(ProviderContext session) {
+        /**
+        * Method called when the blueprint container is created.
+        */
+        public void init() {
             LOG.info("HelloProvider Session Initiated");
         }
 
@@ -189,7 +191,6 @@ Add a simple HelloWorld RPC API
 
    ::
 
-       Edit
        api/src/main/yang/hello.yang
 
 2. Edit this file as follows. In the following example, we are adding
@@ -201,7 +202,7 @@ Add a simple HelloWorld RPC API
            yang-version 1;
            namespace "urn:opendaylight:params:xml:ns:yang:hello";
            prefix "hello";
-           revision "2015-01-05" {
+           revision "2019-11-27" {
                description "Initial revision of hello model";
            }
            rpc hello-world {
@@ -235,7 +236,7 @@ Implement the HelloWorld RPC API
 
        cd ../impl/src/main/java/org/opendaylight/hello/impl/
 
-2. Create a new file called HelloWorldImpl.java and add in the code
+2. Create a new file called ``HelloWorldImpl.java`` and add in the code
    below.
 
    .. code:: java
@@ -243,26 +244,25 @@ Implement the HelloWorld RPC API
        package org.opendaylight.hello.impl;
 
        import com.google.common.util.concurrent.ListenableFuture;
-       import org.opendaylight.yang.gen.v1.urn.opendaylight.params.xml.ns.yang.hello.rev150105.HelloService;
-       import org.opendaylight.yang.gen.v1.urn.opendaylight.params.xml.ns.yang.hello.rev150105.HelloWorldInput;
-       import org.opendaylight.yang.gen.v1.urn.opendaylight.params.xml.ns.yang.hello.rev150105.HelloWorldOutput;
-       import org.opendaylight.yang.gen.v1.urn.opendaylight.params.xml.ns.yang.hello.rev150105.HelloWorldOutputBuilder;
-       import org.opendaylight.yangtools.yang.common.RpcResult;
-       import org.opendaylight.yangtools.yang.common.RpcResultBuilder;
+        import org.opendaylight.yang.gen.v1.urn.opendaylight.params.xml.ns.yang.hello.rev191127.HelloService;
+        import org.opendaylight.yang.gen.v1.urn.opendaylight.params.xml.ns.yang.hello.rev191127.HelloWorldInput;
+        import org.opendaylight.yang.gen.v1.urn.opendaylight.params.xml.ns.yang.hello.rev191127.HelloWorldOutput;
+        import org.opendaylight.yang.gen.v1.urn.opendaylight.params.xml.ns.yang.hello.rev191127.HelloWorldOutputBuilder;
+        import org.opendaylight.yangtools.yang.common.RpcResult;
+        import org.opendaylight.yangtools.yang.common.RpcResultBuilder;
 
-       public class HelloWorldImpl implements HelloService {
+        public class HelloWorldImpl implements HelloService {
+            @Override
+            public ListenableFuture<RpcResult<HelloWorldOutput>> helloWorld(HelloWorldInput input) {
+                HelloWorldOutputBuilder helloBuilder = new HelloWorldOutputBuilder();
+                helloBuilder.setGreeting("Hello " + input.getName());
+                return RpcResultBuilder.success(helloBuilder.build()).buildFuture();
+            }
+        }
 
-           @Override
-           public ListenableFuture<RpcResult<HelloWorldOutput>> helloWorld(HelloWorldInput input) {
-               HelloWorldOutputBuilder helloBuilder = new HelloWorldOutputBuilder();
-               helloBuilder.setGreeting("Hello " + input.getName());
-               return RpcResultBuilder.success(helloBuilder.build()).buildFuture();
-           }
-       }
-
-3. The HelloProvider.java file is in the current directory. Register the
+3. The ``HelloProvider.java`` file is in the current directory. Register the
    RPC that you created in the *hello.yang* file in the
-   HelloProvider.java file. You can either edit the HelloProvider.java
+   ``HelloProvider.java`` file. You can either edit the ``HelloProvider.java``
    to match what is below or you can simple replace it with the code
    below.
 
@@ -277,32 +277,44 @@ Implement the HelloWorld RPC API
         */
        package org.opendaylight.hello.impl;
 
-       import org.opendaylight.controller.sal.binding.api.BindingAwareBroker.ProviderContext;
-       import org.opendaylight.controller.sal.binding.api.BindingAwareBroker.RpcRegistration;
-       import org.opendaylight.controller.sal.binding.api.BindingAwareProvider;
-       import org.opendaylight.yang.gen.v1.urn.opendaylight.params.xml.ns.yang.hello.rev150105.HelloService;
-       import org.slf4j.Logger;
-       import org.slf4j.LoggerFactory;
+       import org.opendaylight.mdsal.binding.api.DataBroker;
+        import org.opendaylight.mdsal.binding.api.RpcProviderService;
+        import org.opendaylight.yang.gen.v1.urn.opendaylight.params.xml.ns.yang.hello.rev191127.HelloService;
+        import org.opendaylight.yangtools.concepts.ObjectRegistration;
+        import org.slf4j.Logger;
+        import org.slf4j.LoggerFactory;
 
-       public class HelloProvider implements BindingAwareProvider, AutoCloseable {
+        public class HelloProvider {
 
-           private static final Logger LOG = LoggerFactory.getLogger(HelloProvider.class);
-           private RpcRegistration<HelloService> helloService;
+            private static final Logger LOG = LoggerFactory.getLogger(HelloProvider.class);
 
-           @Override
-           public void onSessionInitiated(ProviderContext session) {
-               LOG.info("HelloProvider Session Initiated");
-               helloService = session.addRpcImplementation(HelloService.class, new HelloWorldImpl());
-           }
+            private final DataBroker dataBroker;
+            private ObjectRegistration<HelloService> helloService;
+            private RpcProviderService rpcProviderService;
 
-           @Override
-           public void close() throws Exception {
-               LOG.info("HelloProvider Closed");
-               if (helloService != null) {
-                   helloService.close();
-               }
-           }
-       }
+            public HelloProvider(final DataBroker dataBroker, final RpcProviderService rpcProviderService) {
+                this.dataBroker = dataBroker;
+                this.rpcProviderService = rpcProviderService;
+            }
+
+            /**
+            * Method called when the blueprint container is created.
+            */
+            public void init() {
+                LOG.info("HelloProvider Session Initiated");
+                helloService = rpcProviderService.registerRpcImplementation(HelloService.class, new HelloWorldImpl());
+            }
+
+            /**
+            * Method called when the blueprint container is destroyed.
+            */
+            public void close() {
+                LOG.info("HelloProvider Closed");
+                if (helloService != null) {
+                    helloService.close();
+                }
+            }
+        }
 
 4. Optionally, you can also build the Java classes which will register
    the new RPC. This is useful to test the edits you have made to
@@ -381,8 +393,8 @@ Using the API Explorer through HTTP
 
 5. Click the button.
 
-6. Enter the username and password, by default the credentials are
-   admin/admin.
+6. Enter the username and password.
+By default the credentials are  *admin/admin*.
 
 7. In the response body you should see.
 
@@ -403,13 +415,15 @@ Using a browser REST client
 
 ::
 
-    POST: http://192.168.1.43:8181/restconf/operations/hello:hello-world
+    POST: http://localhost:8181/restconf/operations/hello:hello-world
 
 Header:
 
 ::
 
-    application/json
+    Accept: application/json
+    Content-Type: application/json
+    Authorization: Basic admin admin
 
 Body:
 
@@ -419,6 +433,16 @@ Body:
         "name": "Andrew"
       }
     }
+
+In the response body you should see:
+
+.. code:: json
+
+       {
+         "output": {
+           "greeting": "Hello Your Name"
+         }
+       }
 
 Troubleshooting
 ---------------
