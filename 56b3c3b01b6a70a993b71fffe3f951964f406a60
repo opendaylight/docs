@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "bc8b06f3_3326a35a",
+        "filename": "docs/developer-guide/developing-apps-on-the-opendaylight-controller.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2019-12-06T05:25:32Z",
+      "side": 1,
+      "message": "got an extra space here, but the generated docs will ignore it and only use one.",
+      "range": {
+        "startLine": 78,
+        "startChar": 18,
+        "endLine": 78,
+        "endChar": 19
+      },
+      "revId": "56b3c3b01b6a70a993b71fffe3f951964f406a60",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ded9ea2b_fb61f6bf",
         "filename": "docs/developer-guide/developing-apps-on-the-opendaylight-controller.rst",
         "patchSetId": 1
