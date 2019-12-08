@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0a74f8eb_d4bf460b",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 462,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2019-12-08T02:13:39Z",
+      "side": 1,
+      "message": "I think it would be better to reword this to be \"Service Release Code Freeze\"\nand not a \"checkpoint\" there is nothing we are checking here, it\u0027s just our\nstatement that we will lock branches and not allow anything other than blocker\nbugs or TSC approved patches to be merged.",
+      "range": {
+        "startLine": 462,
+        "startChar": 0,
+        "endLine": 462,
+        "endChar": 37
+      },
+      "revId": "17f36a839a61e4953958b08cbb7eefcd39290c80",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4fb9ea87_67e26743",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 468,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2019-12-08T02:13:39Z",
+      "side": 1,
+      "message": "locked",
+      "range": {
+        "startLine": 468,
+        "startChar": 49,
+        "endLine": 468,
+        "endChar": 53
+      },
+      "revId": "17f36a839a61e4953958b08cbb7eefcd39290c80",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "200a9961_ad52ed5c",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 471,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2019-12-08T02:13:39Z",
+      "side": 1,
+      "message": "bugs",
+      "range": {
+        "startLine": 471,
+        "startChar": 52,
+        "endLine": 471,
+        "endChar": 59
+      },
+      "revId": "17f36a839a61e4953958b08cbb7eefcd39290c80",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a274ebbe_704677bc",
+        "filename": "docs/release-process/managed-release.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 474,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2019-12-08T02:13:39Z",
+      "side": 1,
+      "message": "add a little tid-bit that says \"or TSC approved patches\" since we sometimes\nallow those to come in even when they are not associated with a blocker\nbug.",
+      "revId": "17f36a839a61e4953958b08cbb7eefcd39290c80",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    }
+  ]
+}
