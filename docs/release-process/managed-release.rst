@@ -459,20 +459,20 @@ The remaining artifacts will be automatically scraped:
 * Grievances raised against the project since the start of the release.
 
 
-Service Release Additional Checkpoint
+Service Release Code Freeze
 -------------------------------------------------------------
 
-There will be an additional checkpoint for Service Releases, where code will 
+There will be an additional checkpoint for Service Releases, where code will
 freeze one week before the schedule release. Here are more details:
 
-* After code-freeze, the specific branch will be lock down, just like with a 
+* After code-freeze, the specific branch will be locked down, just like with a
 major release
 
-* Once the branch is locked, only fixes for blocker patches will be allowed, 
-as long as they are approved by TSC and Release PM, even when they are fixed 
-but pending review/merge
+* Once the branch is locked, only fixes for blocker bugs will be allowed,
+as long as they are approved by TSC and Release PM, even when they are fixed
+but pending review/merge or TSC approved patches
 
-* Deadline to communicate to the Release PM that these fixes need review for 
+* Deadline to communicate to the Release PM that these fixes need review for
 a particular Service Release is the code freeze date
 
 Managed Release Integrated Release Process
