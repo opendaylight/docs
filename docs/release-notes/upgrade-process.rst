@@ -25,24 +25,24 @@ Version Bump
 Before performing platform upgrade, do the following to bump the odlparent
 versions (for example, `bump-odl-version <https://github.com/skitt/odl-tools/blob/master/bump-odl-version>`_):
 
-1. Update the odlparent version from 5.0.2 to 6.0.0. There should
+1. Update the odlparent version from 5.0.2 to 6.0.3. There should
    not be any reference to **org.opendaylight.odlparent**, except
-   for other 6.0.1. This includes custom feature.xml templates
+   for other 6.0.3. This includes custom feature.xml templates
    (src/main/feature/feature.xml), the version range there should
    be "[6,7)" instead of "[5,6)", "[5.0.2,6)" or any other variation.
 
  .. code-block:: none
 
-  bump-odl-version odlparent 5.0.2 6.0.1
+  bump-odl-version odlparent 5.0.2 6.0.3
 
-2. Update the direct yangtools version references from 3.0.5 to 4.0.2,
+2. Update the direct yangtools version references from 3.0.5 to 4.0.3,
    There should not be any reference to **org.opendaylight.yangtools**,
    except for 4.0.2. This includes custom feature.xml templates
    (src/main/feature/feature.xml), the version range there should
    be "[4,5)" instead of "[3,4)".
 
-3. Update the MDSAL version from 4.0.6 to 5.0.4. There should not be
-   any reference to **org.opendaylight.mdsal**, except for 5.0.4.
+3. Update the MDSAL version from 4.0.6 to 5.0.6. There should not be
+   any reference to **org.opendaylight.mdsal**, except for 5.0.6.
 
  .. code-block:: none
 
@@ -253,42 +253,6 @@ omit JEP-181).
     <!-- FIXME: Workaround for https://issues.apache.org/jira/browse/ARIES-1923 -->
     <maven.compiler.release>10</maven.compiler.release>
   </properties>
-
-Guice/Java 11
-^^^^^^^^^^^^^
-
-Current version of Guice propagated from the odlparent does not *grok*
-Java 11 classes This results in the following splat:
-
- .. code-block:: none
-
-   Caused by: java.lang.IllegalArgumentException
-     at com.google.inject.internal.asm.$ClassReader.<init>(Unknown Source)
-     at com.google.inject.internal.asm.$ClassReader.<init>(Unknown Source)
-     at com.google.inject.internal.asm.$ClassReader.<init>(Unknown Source)
-     at com.google.inject.internal.util.LineNumbers.<init>(LineNumbers.java:66)
-     at com.google.inject.internal.util.StackTraceElements$1.load(StackTraceElements.java:46)
-     at com.google.inject.internal.util.StackTraceElements$1.load(StackTraceElements.java:43)
-     at com.google.common.cache.LocalCache$LoadingValueReference.loadFuture(LocalCache.java:3529)
-     at com.google.common.cache.LocalCache$Segment.loadSync(LocalCache.java:2278)
-     at com.google.common.cache.LocalCache$Segment.lockedGetOrLoad(LocalCache.java:2155)
-     at com.google.common.cache.LocalCache$Segment.get(LocalCache.java:2045)
-
-Typically, this occurs in UTs that are based on Guice injection. The workaround is to
-override the Guice version in the affected artifact by doing the following. This is not
-needed with the `odlparent-6.0.1. <https://git.opendaylight.org/gerrit/c/odlparent/+/84837>`_:
-
- .. code-block:: none
-
-  <dependencyManagement>
-    <dependencies>
-     <dependency>
-       <groupId>com.google.inject</groupId>
-       <artifactId>guice</artifactId>
-       <version>4.2.2</version>
-     </dependency>
-   </dependencies>
-  </dependencyManagement>
 
 YANG Tools Impacts
 ------------------
