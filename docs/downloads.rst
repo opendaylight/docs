@@ -29,7 +29,7 @@ Neon-SR3
     * :doc:`Installation Guide <odl-neon:getting-started-guide/installing_opendaylight>`
     * :doc:`Release Notes <odl-neon:release-notes/index>`
 
-Fluorine-SR2
+Fluorine-SR3
 ------------
 
 :Announcement: https://www.opendaylight.org/announcement/2018/09/13/linux-foundations-opendaylight-fluorine-release-brings-streamlined-support-for-cloud-edge-and-wan-solutions
@@ -37,11 +37,11 @@ Fluorine-SR2
 :Service Release Date: February 7, 2019
 
 :Downloads:
-    * `OpenDaylight Fluorine SR2 Tar
+    * `OpenDaylight Fluorine SR3 Tar
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.9.2/opendaylight-0.9.2.tar.gz>`_
-    * `OpenDaylight Fluorine SR2 Zip
+    * `OpenDaylight Fluorine SR3 Zip
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.9.2/opendaylight-0.9.2.zip>`_
-    * `OpenDaylight Fluorine SR2 RPM
+    * `OpenDaylight Fluorine SR3 RPM
       <http://cbs.centos.org/repos/nfv7-opendaylight-92-release/x86_64/os/Packages/opendaylight-9.2.0-1.el7.noarch.rpm>`_
 
 :Documentation:
