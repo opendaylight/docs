@@ -5,22 +5,22 @@ OpenDaylight Downloads
 Supported Releases
 ==================
 
-Neon-SR1
+Neon-SR3
 --------
 
 (Current Release)
 
 :Announcement: https://www.opendaylight.org/announcement/2019/03/26/opendaylight-most-pervasive-open-source-sdn-controller-celebrates-sixth-anniversary-with-neon-release
 :Original Release Date: March 26, 2019
-:Service Release Date: May 15, 2019
+:Service Release Date: December 20, 2019
 
 :Downloads:
     * `OpenDaylight Neon Tar
-      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.10.1/opendaylight-0.10.1.tar.gz>`_
+      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.10.3/opendaylight-0.10.3.tar.gz>`_
     * `OpenDaylight Neon Zip
-      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.10.1/opendaylight-0.10.1.zip>`_
+      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.10.3/opendaylight-0.10.3.zip>`_
     * `OpenDaylight Neon RPM
-      <https://cbs.centos.org/repos/nfv7-opendaylight-101-release/x86_64/os/Packages/opendaylight-10.1.0-1.el7.noarch.rpm>`_
+      <https://cbs.centos.org/repos/nfv7-opendaylight-101-release/x86_64/os/Packages/opendaylight-10.3.0-1.el7.noarch.rpm>`_
 
 :Documentation:
     * :doc:`Getting Started Guide <odl-neon:getting-started-guide/index>`
