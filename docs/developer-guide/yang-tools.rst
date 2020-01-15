@@ -472,10 +472,10 @@ normalized node. Here is a simple example of building a normalized node:
 
 .. code:: java
 
-    \\ example 1
+    // example 1
     ContainerNode containerNode == Builders.containerBuilder().withNodeIdentifier(new YangInstanceIdentifier.NodeIdentifier(QName.create(moduleQName, "example-container")).build();
 
-    \\ example 2
+    // example 2
     ContainerNode containerNode2 == Builders.containerBuilder(containerSchemaNode).build();
 
 Both examples produce the same result. NodeIdentifier is one of the four
