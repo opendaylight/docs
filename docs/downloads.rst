@@ -10,7 +10,7 @@ Sodium-SR1
 
 (Current Release)
 
-:Announcement: https://www.opendaylight.org/what-we-do/current-release/sodium
+:Announcement: `Sodium <https://www.opendaylight.org/what-we-do/current-release/sodium>`_
 :Original Release Date: September 24, 2019
 :Service Release Date: November 14, 2019
 
@@ -32,7 +32,7 @@ Sodium-SR1
 Neon-SR3
 --------
 
-:Announcement: https://www.opendaylight.org/announcement/2019/03/26/opendaylight-most-pervasive-open-source-sdn-controller-celebrates-sixth-anniversary-with-neon-release
+:Announcement: `OpenDaylight Most Pervasive open source SDN Controller celebrates sixth anniversary with Neon release <https://www.opendaylight.org/announcement/2019/03/26/opendaylight-most-pervasive-open-source-sdn-controller-celebrates-sixth-anniversary-with-neon-release>`_
 :Original Release Date: March 26, 2019
 :Service Release Date: December 20, 2019
 
@@ -54,12 +54,12 @@ Neon-SR3
 Fluorine-SR3
 ------------
 
-:Announcement: https://www.opendaylight.org/announcement/2018/09/13/linux-foundations-opendaylight-fluorine-release-brings-streamlined-support-for-cloud-edge-and-wan-solutions
+:Announcement: `Linux foundations OpenDaylight Fluorine release brings streamlined support for cloud-edge and WAN solutions <https://www.opendaylight.org/announcement/2018/09/13/linux-foundations-opendaylight-fluorine-release-brings-streamlined-support-for-cloud-edge-and-wan-solutions>`_
 :Original Release Date: August 30, 2018
 :Service Release Date: June 21, 2019
 
 :Downloads:
-    * `OpenDaylight Fluorine SR2 Tar
+    * `OpenDaylight Fluorine SR3 Tar
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.9.3/opendaylight-0.9.3.tar.gz>`_
     * `OpenDaylight Fluorine SR3 Zip
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.9.3/opendaylight-0.9.3.zip>`_
@@ -77,7 +77,7 @@ Fluorine-SR3
 Oxygen-SR4
 ----------
 
-:Announcement: https://www.opendaylight.org/about/news/blogs/opendaylight-releases-oxygen-with-new-p4-and-container-support
+:Announcement: `OpenDaylight releases Oxygen with new P4 and container support <https://www.opendaylight.org/about/news/blogs/opendaylight-releases-oxygen-with-new-p4-and-container-support>`_
 :Original Release Date: March 22, 2018
 :Service Release Date: Dec 12, 2018
 
