@@ -29,20 +29,20 @@ Sodium-SR1
     * :doc:`Installation Guide <odl-sodium:getting-started-guide/installing_opendaylight>`
     * :doc:`Release Notes <odl-sodium:release-notes/index>`
 
-Neon-SR2
+Neon-SR3
 --------
 
 :Announcement: https://www.opendaylight.org/announcement/2019/03/26/opendaylight-most-pervasive-open-source-sdn-controller-celebrates-sixth-anniversary-with-neon-release
 :Original Release Date: March 26, 2019
-:Service Release Date: September 06, 2019
+:Service Release Date: December 20, 2019
 
 :Downloads:
     * `OpenDaylight Neon Tar
-      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.10.2/opendaylight-0.10.2.tar.gz>`_
+      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.10.3/opendaylight-0.10.3.tar.gz>`_
     * `OpenDaylight Neon Zip
-      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.10.2/opendaylight-0.10.2.zip>`_
+      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.10.3/opendaylight-0.10.3.zip>`_
     * `OpenDaylight Neon RPM
-      <https://cbs.centos.org/repos/nfv7-opendaylight-102-release/x86_64/os/Packages/opendaylight-10.2.0-1.el7.noarch.rpm>`_
+      <https://cbs.centos.org/repos/nfv7-opendaylight-102-release/x86_64/os/Packages/opendaylight-10.3.0-1.el7.noarch.rpm>`_
 
 :Documentation:
     * :doc:`Getting Started Guide <odl-neon:getting-started-guide/index>`
