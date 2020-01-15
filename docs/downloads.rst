@@ -29,7 +29,7 @@ Neon-SR3
     * :doc:`Installation Guide <odl-neon:getting-started-guide/installing_opendaylight>`
     * :doc:`Release Notes <odl-neon:release-notes/index>`
 
-Fluorine-SR2
+Fluorine-SR3
 ------------
 
 :Announcement: https://www.opendaylight.org/announcement/2018/09/13/linux-foundations-opendaylight-fluorine-release-brings-streamlined-support-for-cloud-edge-and-wan-solutions
