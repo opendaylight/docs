@@ -32,16 +32,16 @@ aaa
 bgpcep
 ------
 * `24018cbd5 <https://git.opendaylight.org/gerrit/#/q/24018cbd5>`_
-  `PCEP-878 <https://jira.opendaylight.org/browse/PCEP-878>`_
+  `BGPCEP-878 <https://jira.opendaylight.org/browse/BGPCEP-878>`_
   : Fix CSIT regression due to BGPCEP-878 fix
 * `974c77765 <https://git.opendaylight.org/gerrit/#/q/974c77765>`_
-  `PCEP-889 <https://jira.opendaylight.org/browse/PCEP-889>`_
+  `BGPCEP-889 <https://jira.opendaylight.org/browse/BGPCEP-889>`_
   : Register PCEP session to stats handler only after it is fully initialized
 * `3c882e4f7 <https://git.opendaylight.org/gerrit/#/q/3c882e4f7>`_
-  `PCEP-884 <https://jira.opendaylight.org/browse/PCEP-884>`_
+  `BGPCEP-884 <https://jira.opendaylight.org/browse/BGPCEP-884>`_
   : Address deadlock scenarios in BGP peer, session mgmt code
 * `678eb7d88 <https://git.opendaylight.org/gerrit/#/q/678eb7d88>`_
-  `PCEP-878 <https://jira.opendaylight.org/browse/PCEP-878>`_
+  `BGPCEP-878 <https://jira.opendaylight.org/browse/BGPCEP-878>`_
   : Fix NPE while accessing DomTxChain when bgp/app peer singleton service is restarted
 * `258371023 <https://git.opendaylight.org/gerrit/#/q/258371023>`_
   : Bump odlparent/yangtools/mdsal to 4.0.14/2.1.14/3.0.13
@@ -50,13 +50,13 @@ bgpcep
 * `5fb4fab43 <https://git.opendaylight.org/gerrit/#/q/5fb4fab43>`_
   : Remove unused imports
 * `e4b99745b <https://git.opendaylight.org/gerrit/#/q/e4b99745b>`_
-  `PCEP-880 <https://jira.opendaylight.org/browse/PCEP-880>`_
+  `BGPCEP-880 <https://jira.opendaylight.org/browse/BGPCEP-880>`_
   : Fix bgp-segment-routing
 * `e119dd71b <https://git.opendaylight.org/gerrit/#/q/e119dd71b>`_
-  `PCEP-880 <https://jira.opendaylight.org/browse/PCEP-880>`_
+  `BGPCEP-880 <https://jira.opendaylight.org/browse/BGPCEP-880>`_
   : Fix rsvp.yang
 * `c36a902f4 <https://git.opendaylight.org/gerrit/#/q/c36a902f4>`_
-  `PCEP-877 <https://jira.opendaylight.org/browse/PCEP-877>`_
+  `BGPCEP-877 <https://jira.opendaylight.org/browse/BGPCEP-877>`_
   : Set PMSI tunnel attribute transitive.
 
 
