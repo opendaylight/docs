@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9e7819f3_dc107e6b",
+        "filename": "docs/user-guide/netconf-user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2020-01-28T20:54:06Z",
+      "side": 1,
+      "message": "No need for this line since no one should ever link to this page.",
+      "revId": "2f8f15967c54cce4c8c50e812361d69738991d0e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ab0cd75e_d512ebcf",
+        "filename": "docs/user-guide/netconf-user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2020-01-28T20:54:06Z",
+      "side": 1,
+      "message": "Do this instead:\n\n :doc:`here \u003cnetconf:user-guide\u003e`",
+      "revId": "2f8f15967c54cce4c8c50e812361d69738991d0e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    }
+  ]
+}
