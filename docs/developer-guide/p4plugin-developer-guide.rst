@@ -213,9 +213,6 @@ Sample Configurations
              "did": "0",
              "ip": "10.42.94.144",
              "port": "50051"
-                    }
-                }
-            ]
         }
     }
 
