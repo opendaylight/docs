@@ -77,8 +77,11 @@ To develop an app perform the following steps.
       * - Sodium SR1
         - 1.2.1
 
-      * - Sodium SR2 Development
-        - 1.2.2-SNAPSHOT
+      * - Sodium SR2
+        - 1.2.2
+
+      * - Sodium SR3 Development
+        - 1.2.3-SNAPSHOT
 
 2. Update the properties values as follows. Ensure that the values for
 the *groupId* and  the *artifactId* are in lower case.
