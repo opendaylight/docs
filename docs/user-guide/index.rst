@@ -31,3 +31,8 @@ Project-specific User Guides
    service-function-chaining
    snmp4sdn-user-guide
    unified-secure-channel
+
+.. toctree::
+   :hidden:
+
+   netconf-user-guide

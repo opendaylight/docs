@@ -5,22 +5,22 @@ OpenDaylight Downloads
 Supported Releases
 ==================
 
-Sodium-SR1
+Sodium-SR2
 ----------
 
 (Current Release)
 
 :Announcement: https://www.opendaylight.org/what-we-do/current-release/sodium
-:Original Release Date: September 24, 2019
-:Service Release Date: November 14, 2019
+:Original Release Date: January 24, 2019
+:Service Release Date: February 11, 2020
 
 :Downloads:
     * `OpenDaylight Sodium Tar
-      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.11.1/opendaylight-0.11.1.tar.gz>`_
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/0.11.2/opendaylight-0.11.2.tar.gz>`_
     * `OpenDaylight Sodium Zip
-      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.11.1/opendaylight-0.11.1.zip>`_
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/0.11.2/opendaylight-0.11.2.zip>`_
     * `OpenDaylight Sodium RPM
-      <https://cbs.centos.org/repos/nfv7-opendaylight-111-release/x86_64/os/Packages/opendaylight-11.1.0-1.el7.noarch.rpm>`_
+      <https://cbs.centos.org/repos/nfv7-opendaylight-112-release/x86_64/os/Packages/opendaylight-11.2.0-1.el7.noarch.rpm>`_
 
 :Documentation:
     * :doc:`Getting Started Guide <odl-sodium:getting-started-guide/index>`
@@ -59,7 +59,7 @@ Fluorine-SR3
 :Service Release Date: June 21, 2019
 
 :Downloads:
-    * `OpenDaylight Fluorine SR2 Tar
+    * `OpenDaylight Fluorine SR3 Tar
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.9.3/opendaylight-0.9.3.tar.gz>`_
     * `OpenDaylight Fluorine SR3 Zip
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.9.3/opendaylight-0.9.3.zip>`_
