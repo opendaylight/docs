@@ -22,7 +22,6 @@ intersphinx_mapping['opflex'] = ('https://docs.opendaylight.org/projects/opflex/
 # Projects that have stable/branches
 intersphinx_mapping['aaa'] = ('https://docs.opendaylight.org/projects/aaa/en/latest/', None)
 intersphinx_mapping['bgpcep'] = ('https://docs.opendaylight.org/projects/bgpcep/en/latest/', None)
-intersphinx_mapping['coe'] = ('https://docs.opendaylight.org/projects/coe/en/latest/', None)
 intersphinx_mapping['controller'] = ('https://docs.opendaylight.org/projects/controller/en/latest/', None)
 intersphinx_mapping['daexim'] = ('https://docs.opendaylight.org/projects/daexim/en/latest/', None)
 intersphinx_mapping['genius'] = ('https://docs.opendaylight.org/projects/genius/en/latest/', None)
@@ -40,7 +39,8 @@ intersphinx_mapping['tsdr'] = ('https://docs.opendaylight.org/projects/tsdr/en/l
 intersphinx_mapping['unimgr'] = ('https://docs.opendaylight.org/projects/unimgr/en/latest/', None)
 
 # OpenDaylight Documentation Releases
-intersphinx_mapping['odl-magnesium'] = ('https://docs.opendaylight.org/en/latest/', None)
+intersphinx_mapping['odl-aluminum'] = ('https://docs.opendaylight.org/en/latest/', None)
+intersphinx_mapping['odl-magnesium'] = ('https://docs.opendaylight.org/en/stable-magnesium/', None)
 intersphinx_mapping['odl-sodium'] = ('https://docs.opendaylight.org/en/stable-sodium/', None)
 intersphinx_mapping['odl-neon'] = ('https://docs.opendaylight.org/en/stable-neon/', None)
 intersphinx_mapping['odl-fluorine'] = ('https://docs.opendaylight.org/en/stable-fluorine/', None)
