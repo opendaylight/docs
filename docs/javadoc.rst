@@ -12,12 +12,11 @@ Release Integrated Projects
 Managed Projects
 ================
 
-* `bgpcep <https://javadocs.opendaylight.org/bgpcep/magnesium>`_
-* `controller <https://javadocs.opendaylight.org/controller/magnesium>`_
-* `genius <https://javadocs.opendaylight.org/genius/magnesium>`_
-* `infrautils <https://javadocs.opendaylight.org/infrautils/magnesium>`_
-* `lispflowmapping <https://javadocs.opendaylight.org/lispflowmapping/magnesium>`_
-* `netvirt <https://javadocs.opendaylight.org/netvirt/magnesium>`_
-* `neutron <https://javadocs.opendaylight.org/neutron/magnesium>`_
-* `openflowplugin <https://javadocs.opendaylight.org/openflowplugin/magnesium>`_
-* `ovsdb <https://javadocs.opendaylight.org/ovsdb/magnesium>`_
+* `bgpcep <https://javadocs.opendaylight.org/bgpcep/aluminum>`_
+* `genius <https://javadocs.opendaylight.org/genius/aluminum>`_
+* `infrautils <https://javadocs.opendaylight.org/infrautils/aluminum>`_
+* `lispflowmapping <https://javadocs.opendaylight.org/lispflowmapping/aluminum>`_
+* `netvirt <https://javadocs.opendaylight.org/netvirt/aluminum>`_
+* `neutron <https://javadocs.opendaylight.org/neutron/aluminum>`_
+* `openflowplugin <https://javadocs.opendaylight.org/openflowplugin/aluminum>`_
+* `ovsdb <https://javadocs.opendaylight.org/ovsdb/aluminum>`_
