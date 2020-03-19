@@ -29,7 +29,6 @@ Managed Projects
 
 * :doc:`AAA Documentation <aaa:index>`
 * :doc:`BGPCEP Documentation <bgpcep:index>`
-* :doc:`COE Documentation <coe:index>`
 * :doc:`Controller Documentation <controller:index>`
 * :doc:`DAEXIM Documentation <daexim:index>`
 * :doc:`Genius Documentation <genius:index>`

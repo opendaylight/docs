@@ -13,7 +13,6 @@ Managed Projects
 ================
 
 * `bgpcep <https://javadocs.opendaylight.org/bgpcep/magnesium>`_
-* `controller <https://javadocs.opendaylight.org/controller/magnesium>`_
 * `genius <https://javadocs.opendaylight.org/genius/magnesium>`_
 * `infrautils <https://javadocs.opendaylight.org/infrautils/magnesium>`_
 * `lispflowmapping <https://javadocs.opendaylight.org/lispflowmapping/magnesium>`_

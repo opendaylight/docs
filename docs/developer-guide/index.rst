@@ -17,7 +17,6 @@ Overview
 Project-specific Developer Guides
 ---------------------------------
 
-* :doc:`COE Documentation <coe:index>`
 * :doc:`InfraUtils Documentation <infrautils:index>`
 * :doc:`JSON RPC Documentation <jsonrpc:index>`
 * :doc:`NetVirt Documentation <netvirt:index>`
