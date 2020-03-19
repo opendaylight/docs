@@ -43,6 +43,7 @@ Supporting Documentation
    :maxdepth: 1
 
    identifying-managed-projects
+   ternary-operators
 
 The release management team maintains several documents in Google Drive to
 track releases. These documents can be found at the following link:
