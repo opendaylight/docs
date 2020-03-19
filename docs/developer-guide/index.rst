@@ -36,3 +36,4 @@ Project-specific Developer Guides
    snmp4sdn-developer-guide
    unified-secure-channel
    yang-tools
+   ternary-operators
