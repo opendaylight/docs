@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cae3a660_9e15f065",
+        "filename": "docs/release-process/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 797
+      },
+      "writtenOn": "2020-03-20T15:34:44Z",
+      "side": 1,
+      "message": "I do not think the release is the right place for this, this seems like a best practice doc, so I would recommend to open a new item in \"OpenDaylight Contributor Guides\" (land page) called \"Developer Best Practice\", then create index and folder for it, and finally putting this document in both (it could be more like this in future).",
+      "revId": "7f38b8914992d2d40025ef7e64e68ba175e2d7af",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    }
+  ]
+}
