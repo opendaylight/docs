@@ -87,7 +87,7 @@ release of both managed and self-managed projects.
      - Start Date +22 weeks
      - Final Checkpoint for all Managed Projects.
    * - Formal Release
-     - 2020-03-09
+     - 2020-03-09 (actual 2020-03-19)
      - 2020-09-17
      - 6 months after Start Date
      - Start Date +6 months
