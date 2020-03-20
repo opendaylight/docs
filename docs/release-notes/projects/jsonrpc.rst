@@ -31,7 +31,7 @@ New and Modified Features
 Deprecated Features
 ===================
 
-This releases does not deprecated any of existing features.
+This releases does not deprecate any existing features.
 
 Resolved Issues
 ===============
