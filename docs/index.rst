@@ -34,6 +34,7 @@ Managed Projects
 * :doc:`DAEXIM Documentation <daexim:index>`
 * :doc:`Genius Documentation <genius:index>`
 * :doc:`Infrautils Documentation <infrautils:index>`
+* :doc:`JSON RPC Documentation <jsonrpc:index>`
 * :doc:`LISP Flow Mapping Documentation <lispflowmapping:index>`
 * :doc:`MD-SAL Documentation <mdsal:index>`
 * :doc:`NetConf Documentation <netconf:index>`
@@ -47,7 +48,6 @@ Managed Projects
 Self-Managed Projects
 ~~~~~~~~~~~~~~~~~~~~~
 
-* :doc:`JSON RPC Documentation <jsonrpc:index>`
 * :doc:`TransportPCE Documentation <transportpce:index>`
 
 OpenDaylight Contributor Guides
