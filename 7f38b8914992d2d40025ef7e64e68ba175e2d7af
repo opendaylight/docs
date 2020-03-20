@@ -16,6 +16,93 @@
       "revId": "7f38b8914992d2d40025ef7e64e68ba175e2d7af",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5da189a8_50fadb78",
+        "filename": "docs/release-process/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2020-03-20T16:05:45Z",
+      "side": 1,
+      "message": "Agreed. Furthermore most of this is not really \u0027best practice\u0027 but an explanation of patterns that a developer may encounter in our codebase. As noted in the doc itself in multiple places, the techniques described trade off readability for performance (for example based on current state of JIT in JREs). They *definitely* are not something that should be mindlessly proliferated, certainly not in application code.",
+      "parentUuid": "cae3a660_9e15f065",
+      "revId": "7f38b8914992d2d40025ef7e64e68ba175e2d7af",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5ad140c7_a5d21bce",
+        "filename": "docs/release-process/ternary-operators.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2020-03-20T16:05:45Z",
+      "side": 1,
+      "message": "d",
+      "range": {
+        "startLine": 4,
+        "startChar": 5,
+        "endLine": 4,
+        "endChar": 6
+      },
+      "revId": "7f38b8914992d2d40025ef7e64e68ba175e2d7af",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d4d066d8_32d7af9d",
+        "filename": "docs/release-process/ternary-operators.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2020-03-20T16:05:45Z",
+      "side": 1,
+      "message": "memoized, https://en.wiktionary.org/wiki/memoization",
+      "range": {
+        "startLine": 42,
+        "startChar": 41,
+        "endLine": 42,
+        "endChar": 50
+      },
+      "revId": "7f38b8914992d2d40025ef7e64e68ba175e2d7af",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e0dd54e5_d2f3eaff",
+        "filename": "docs/release-process/ternary-operators.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2020-03-20T16:05:45Z",
+      "side": 1,
+      "message": "is this whitespace correct?",
+      "range": {
+        "startLine": 53,
+        "startChar": 4,
+        "endLine": 53,
+        "endChar": 5
+      },
+      "revId": "7f38b8914992d2d40025ef7e64e68ba175e2d7af",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
     }
   ]
 }
