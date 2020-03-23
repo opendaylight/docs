@@ -40,7 +40,7 @@ https://docs.releng.linuxfoundation.org/projects/global-jjb/en/latest/jjb/lf-rel
 1. Ask helpdesk the necessary right on jenkins if you do not have them
 2. Log on https://jenkins.opendaylight.org/
 3. Choose your project dashboard
-4. Check your relase branch has been successfully staged and note the corresponding log folder
+4. Check your release branch has been successfully staged and note the corresponding log folder
 5. Go back to the dashboard and choose the release-merge job
 6. Click on build with parameters
 7. Fill in the form:
