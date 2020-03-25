@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "24fc984a_eb61285b",
+        "filename": "docs/release-notes/projects/bgpcep.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 7231
+      },
+      "writtenOn": "2020-03-25T09:29:58Z",
+      "side": 1,
+      "message": "Why \"BGP LS PCEP\" and not simply \"BGP PCEP\" or \"BGP - PCEP\"?",
+      "revId": "0bc98158979f19d05e67023e5da35c2eff0eb051",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6d46f8c0_2f38d62e",
+        "filename": "docs/release-notes/projects/bgpcep.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 7231
+      },
+      "writtenOn": "2020-03-25T09:29:58Z",
+      "side": 1,
+      "message": "s:/features\"/features\n\nPerhaps precise that this new feature adds the support to PCE stateless a.k.a. RFC5440 and provides PCE server functionalities a.k.a. Path Computation",
+      "revId": "0bc98158979f19d05e67023e5da35c2eff0eb051",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    }
+  ]
+}
