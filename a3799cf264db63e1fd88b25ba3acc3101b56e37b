@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "23db24e2_d00f9407",
+        "filename": "docs/release-notes/projects/netvirt.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 8466
+      },
+      "writtenOn": "2020-03-25T20:55:37Z",
+      "side": 1,
+      "message": "Developed on OpenDaylight, the NetVirt (Network Virtualization) application consists of modular sub-services, including network protocols L2, L3, ACL, NAT, DHCP, IPv6 control, etc.",
+      "revId": "a3799cf264db63e1fd88b25ba3acc3101b56e37b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "46cdc213_b6a9a6ab",
         "filename": "docs/release-notes/projects/netvirt.rst",
         "patchSetId": 3
@@ -30,6 +47,57 @@
       "writtenOn": "2020-03-24T16:31:24Z",
       "side": 1,
       "message": "Is this a new or modified feature in this release? if not please just say no new or modified features in this release.",
+      "revId": "a3799cf264db63e1fd88b25ba3acc3101b56e37b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "05cec52a_a8149b95",
+        "filename": "docs/release-notes/projects/netvirt.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 8466
+      },
+      "writtenOn": "2020-03-25T20:55:37Z",
+      "side": 1,
+      "message": "vSwitch-based",
+      "revId": "a3799cf264db63e1fd88b25ba3acc3101b56e37b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "63cf1759_0c852d2b",
+        "filename": "docs/release-notes/projects/netvirt.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 8466
+      },
+      "writtenOn": "2020-03-25T20:55:37Z",
+      "side": 1,
+      "message": "function chaining",
+      "revId": "a3799cf264db63e1fd88b25ba3acc3101b56e37b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "64352218_55255841",
+        "filename": "docs/release-notes/projects/netvirt.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 8466
+      },
+      "writtenOn": "2020-03-25T20:55:37Z",
+      "side": 1,
+      "message": "datapaths",
       "revId": "a3799cf264db63e1fd88b25ba3acc3101b56e37b",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": true
@@ -70,6 +138,23 @@
     },
     {
       "key": {
+        "uuid": "3538b3d0_8942dbb5",
+        "filename": "docs/release-notes/projects/netvirt.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 8466
+      },
+      "writtenOn": "2020-03-25T20:55:37Z",
+      "side": 1,
+      "message": "release",
+      "revId": "a3799cf264db63e1fd88b25ba3acc3101b56e37b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "3c98ecb1_12e793bc",
         "filename": "docs/release-notes/projects/netvirt.rst",
         "patchSetId": 3
@@ -81,6 +166,23 @@
       "writtenOn": "2020-03-25T02:46:53Z",
       "side": 1,
       "message": "activity",
+      "revId": "a3799cf264db63e1fd88b25ba3acc3101b56e37b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d6c794ae_ba6e5c63",
+        "filename": "docs/release-notes/projects/netvirt.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 8466
+      },
+      "writtenOn": "2020-03-25T20:55:37Z",
+      "side": 1,
+      "message": "did not get IPv6",
       "revId": "a3799cf264db63e1fd88b25ba3acc3101b56e37b",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": true
