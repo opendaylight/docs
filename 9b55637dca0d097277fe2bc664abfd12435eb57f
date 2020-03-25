@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "68dd3b67_bd17f6d1",
+        "filename": "docs/release-notes/projects/ovsdb.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 8466
+      },
+      "writtenOn": "2020-03-25T20:30:07Z",
+      "side": 1,
+      "message": "The OVSDB southbound plugin handles any OVS device that supports both the OVSDB schema and uses the OVSDB protocol. This feature implements a defined YANG model. Developers can use this functionality to develop in-controller applications that leverage OVSDB for device configuration.",
+      "revId": "9b55637dca0d097277fe2bc664abfd12435eb57f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "18f5d1e9_836670ea",
+        "filename": "docs/release-notes/projects/ovsdb.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 8466
+      },
+      "writtenOn": "2020-03-25T20:30:07Z",
+      "side": 1,
+      "message": "The HWvTep southbound plugin handles any OVS device that supports both the OVSDB hardware vTEP schema and uses OVSDB protocol. This feature implements a defined YANG model. Developers can use this functionality to develop in-controller applications that leverage OVSDB hardware vTEP plugin for device configuration.",
+      "revId": "9b55637dca0d097277fe2bc664abfd12435eb57f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f9a195b7_5ae9d2c0",
+        "filename": "docs/release-notes/projects/ovsdb.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 8466
+      },
+      "writtenOn": "2020-03-25T20:30:07Z",
+      "side": 1,
+      "message": "OVSDB removed",
+      "revId": "9b55637dca0d097277fe2bc664abfd12435eb57f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0426a773_b2c24423",
+        "filename": "docs/release-notes/projects/ovsdb.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 8466
+      },
+      "writtenOn": "2020-03-25T20:30:07Z",
+      "side": 1,
+      "message": "HWvTep",
+      "revId": "9b55637dca0d097277fe2bc664abfd12435eb57f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f93105b4_adc280a5",
+        "filename": "docs/release-notes/projects/ovsdb.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 8466
+      },
+      "writtenOn": "2020-03-25T20:30:07Z",
+      "side": 1,
+      "message": "NodeID",
+      "revId": "9b55637dca0d097277fe2bc664abfd12435eb57f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "00c1309a_c592c52a",
+        "filename": "docs/release-notes/projects/ovsdb.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 8466
+      },
+      "writtenOn": "2020-03-25T20:30:07Z",
+      "side": 1,
+      "message": "shard",
+      "revId": "9b55637dca0d097277fe2bc664abfd12435eb57f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c58a356e_f40d770e",
+        "filename": "docs/release-notes/projects/ovsdb.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 8466
+      },
+      "writtenOn": "2020-03-25T20:30:07Z",
+      "side": 1,
+      "message": "OVSDB",
+      "revId": "9b55637dca0d097277fe2bc664abfd12435eb57f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "84c4ed8a_f15d16f0",
+        "filename": "docs/release-notes/projects/ovsdb.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 8466
+      },
+      "writtenOn": "2020-03-25T20:30:07Z",
+      "side": 1,
+      "message": "HWvTep",
+      "revId": "9b55637dca0d097277fe2bc664abfd12435eb57f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    }
+  ]
+}
