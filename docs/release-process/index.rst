@@ -18,7 +18,10 @@ Release Planning
    :maxdepth: 1
 
    managed-release
+<<<<<<< HEAD   (6e383c Change Fluorine SR2 to SR3)
    release-goals
+=======
+>>>>>>> CHANGE (881fe8 Remove Flourine release goals from newer branch)
    release-schedule
 
 *********
