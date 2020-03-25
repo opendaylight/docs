@@ -18,7 +18,6 @@ Release Planning
    :maxdepth: 1
 
    managed-release
-   release-goals
    release-schedule
 
 *********
