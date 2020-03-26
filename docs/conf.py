@@ -33,10 +33,7 @@ intersphinx_mapping['netconf'] = ('https://docs.opendaylight.org/projects/netcon
 intersphinx_mapping['netvirt'] = ('https://docs.opendaylight.org/projects/netvirt/en/latest/', None)
 intersphinx_mapping['openflowplugin'] = ('https://docs.opendaylight.org/projects/openflowplugin/en/latest/', None)
 intersphinx_mapping['ovsdb'] = ('https://docs.opendaylight.org/projects/ovsdb/en/latest/', None)
-intersphinx_mapping['sxp'] = ('https://docs.opendaylight.org/projects/sxp/en/latest/', None)
 intersphinx_mapping['transportpce'] = ('https://docs.opendaylight.org/projects/transportpce/en/latest/', None)
-intersphinx_mapping['tsdr'] = ('https://docs.opendaylight.org/projects/tsdr/en/latest/', None)
-intersphinx_mapping['unimgr'] = ('https://docs.opendaylight.org/projects/unimgr/en/latest/', None)
 
 # OpenDaylight Documentation Releases
 intersphinx_mapping['odl-aluminum'] = ('https://docs.opendaylight.org/en/latest/', None)
