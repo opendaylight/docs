@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "57b762db_0ced7e32",
+        "filename": "docs/release-notes/projects/controller.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 8466
+      },
+      "writtenOn": "2020-03-26T17:19:56Z",
+      "side": 1,
+      "message": "The Controller project is an infrastructure service that supports other OpenDaylight projects. It does not have user-facing features.",
+      "revId": "9d559798c288182c613d01bed6875c83ac2510b0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "21e2a93c_16cf91eb",
+        "filename": "docs/release-notes/projects/controller.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 8466
+      },
+      "writtenOn": "2020-03-26T17:19:56Z",
+      "side": 1,
+      "message": "change:",
+      "revId": "9d559798c288182c613d01bed6875c83ac2510b0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1f4780c4_f1dd8f3d",
+        "filename": "docs/release-notes/projects/controller.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 8466
+      },
+      "writtenOn": "2020-03-26T17:19:56Z",
+      "side": 1,
+      "message": "The persistence format used in the distributed datastore was updated for efficiency. Existing upgrades will trigger data migration during startup.",
+      "revId": "9d559798c288182c613d01bed6875c83ac2510b0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5c282a20_1d651db5",
+        "filename": "docs/release-notes/projects/controller.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 8466
+      },
+      "writtenOn": "2020-03-26T17:19:56Z",
+      "side": 1,
+      "message": "All MD-SAL APIs starting with ``org.opendaylight.controller.md.sal`` and ``org.opendaylight.controller.sal`` were marked for removal. They will be removed in the next release.",
+      "revId": "9d559798c288182c613d01bed6875c83ac2510b0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    }
+  ]
+}
