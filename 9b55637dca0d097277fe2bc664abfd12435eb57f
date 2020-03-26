@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "4d1b1e31_c282f427",
+        "filename": "docs/release-notes/projects/ovsdb.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6545
+      },
+      "writtenOn": "2020-03-26T06:40:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "68dd3b67_bd17f6d1",
+      "revId": "9b55637dca0d097277fe2bc664abfd12435eb57f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "18f5d1e9_836670ea",
         "filename": "docs/release-notes/projects/ovsdb.rst",
         "patchSetId": 5
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "e01c857a_ea9ff0e3",
+        "filename": "docs/release-notes/projects/ovsdb.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6545
+      },
+      "writtenOn": "2020-03-26T06:40:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "18f5d1e9_836670ea",
+      "revId": "9b55637dca0d097277fe2bc664abfd12435eb57f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f9a195b7_5ae9d2c0",
         "filename": "docs/release-notes/projects/ovsdb.rst",
         "patchSetId": 5
@@ -47,6 +83,24 @@
       "writtenOn": "2020-03-25T20:30:07Z",
       "side": 1,
       "message": "OVSDB removed",
+      "revId": "9b55637dca0d097277fe2bc664abfd12435eb57f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3a295f07_3685f256",
+        "filename": "docs/release-notes/projects/ovsdb.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6545
+      },
+      "writtenOn": "2020-03-26T06:40:29Z",
+      "side": 1,
+      "message": "It\u0027s not removed. It\u0027s the Change \"delete reconcilation support\" to take care of removing stale tunnels port from OVS Switches.",
+      "parentUuid": "f9a195b7_5ae9d2c0",
       "revId": "9b55637dca0d097277fe2bc664abfd12435eb57f",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": true
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "a86c36ac_648f3fc0",
+        "filename": "docs/release-notes/projects/ovsdb.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6545
+      },
+      "writtenOn": "2020-03-26T06:40:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0426a773_b2c24423",
+      "revId": "9b55637dca0d097277fe2bc664abfd12435eb57f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f93105b4_adc280a5",
         "filename": "docs/release-notes/projects/ovsdb.rst",
         "patchSetId": 5
@@ -84,6 +156,24 @@
       "revId": "9b55637dca0d097277fe2bc664abfd12435eb57f",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3197a509_df196943",
+        "filename": "docs/release-notes/projects/ovsdb.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6545
+      },
+      "writtenOn": "2020-03-26T06:40:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f93105b4_adc280a5",
+      "revId": "9b55637dca0d097277fe2bc664abfd12435eb57f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     },
     {
       "key": {
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "0bd8a195_a5e5b432",
+        "filename": "docs/release-notes/projects/ovsdb.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 6545
+      },
+      "writtenOn": "2020-03-26T06:40:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "00c1309a_c592c52a",
+      "revId": "9b55637dca0d097277fe2bc664abfd12435eb57f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c58a356e_f40d770e",
         "filename": "docs/release-notes/projects/ovsdb.rst",
         "patchSetId": 5
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "6978683a_a0650b32",
+        "filename": "docs/release-notes/projects/ovsdb.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 6545
+      },
+      "writtenOn": "2020-03-26T06:40:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c58a356e_f40d770e",
+      "revId": "9b55637dca0d097277fe2bc664abfd12435eb57f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "84c4ed8a_f15d16f0",
         "filename": "docs/release-notes/projects/ovsdb.rst",
         "patchSetId": 5
@@ -135,6 +261,24 @@
       "revId": "9b55637dca0d097277fe2bc664abfd12435eb57f",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a94a43a3_b5857bc5",
+        "filename": "docs/release-notes/projects/ovsdb.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6545
+      },
+      "writtenOn": "2020-03-26T06:40:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "84c4ed8a_f15d16f0",
+      "revId": "9b55637dca0d097277fe2bc664abfd12435eb57f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
