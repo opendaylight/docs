@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "31cf4ccb_8136b30b",
+        "filename": "docs/release-notes/projects/serviceutils.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 8466
+      },
+      "writtenOn": "2020-03-26T16:36:37Z",
+      "side": 1,
+      "message": "The ServiceUtils infrastructure project is a utility to assist in the operation and maintenance of services provided by OpenDaylight.  A service is a functionality provided by the ODL controller as seen by the operator. Services can be either networking services (e.g. L2, L3/VPN, NAT, etc.) or infra services (e.g. OpenFlow). Services are also provided by the different ODL projects, such as Netvirt, Genius and OpenFlow plugin, and are comprised of a set of Java Karaf bundles and associated MD-SAL datastores.",
+      "revId": "701b9ff154f6bd3aface8f61c22f37018de75e27",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d1e44b35_907b8a01",
+        "filename": "docs/release-notes/projects/serviceutils.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 8466
+      },
+      "writtenOn": "2020-03-26T16:36:37Z",
+      "side": 1,
+      "message": "feature.",
+      "revId": "701b9ff154f6bd3aface8f61c22f37018de75e27",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "00ec225c_e401fbbc",
+        "filename": "docs/release-notes/projects/serviceutils.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 8466
+      },
+      "writtenOn": "2020-03-26T16:36:37Z",
+      "side": 1,
+      "message": "workarounds:",
+      "revId": "701b9ff154f6bd3aface8f61c22f37018de75e27",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    }
+  ]
+}
