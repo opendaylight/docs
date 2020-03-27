@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "b4946da1_e47ccc06",
+        "filename": "docs/downloads.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2020-03-27T17:11:17Z",
+      "side": 1,
+      "message": "Daniel verified with Brandon Wick that this link will be working and active\nin a few days. You can choose to leave it (have to add back to this patch)\nor do a new patch when it comes, but we need to make sure not to forget.\n\nLet me know what you decide and we can get this merged after that.",
+      "parentUuid": "b01e7880_9b2efc46",
+      "range": {
+        "startLine": 13,
+        "startChar": 27,
+        "endLine": 13,
+        "endChar": 92
+      },
+      "revId": "7093f16e61d7ac96522cdc61f48191e55267457e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "9d5ff9e8_84cb631a",
         "filename": "docs/downloads.rst",
         "patchSetId": 2
