@@ -1,28 +1,27 @@
 .. _yangtools-developer-guide:
 
-YANG Tools Developer Guide
+Yang Tools Developer Guide
 ==========================
 
 Overview
 --------
 
-YANG Tools is set of libraries and tooling providing support for use
-`YANG <https://tools.ietf.org/html/rfc6020>`__ for Java (or other
-JVM-based language) projects and applications.
+Yang Tools is set of libraries and tooling providing support for use
+`Yang <https://tools.ietf.org/html/rfc6020>`__ for Java (or other
+JVM-based language) projects and applications. Yang Tools provides
+following features in OpenDaylight:
 
-YANG Tools provides following features in OpenDaylight:
-
--  parsing of YANG sources and semantic inference of relationship across
-   YANG models as defined in
+-  Parsing of Yang sources and semantic inference of relationship across
+   Yang models as defined in
    `RFC6020 <https://tools.ietf.org/html/rfc6020>`__
 
--  representation of YANG-modeled data in Java
+-  Representation of Yang-modeled data in Java
 
    -  **Normalized Node** representation - DOM-like tree model, which
-      uses conceptual meta-model more tailored to YANG and OpenDaylight
+      uses conceptual meta-model more tailored to Yang and OpenDaylight
       use-cases than a standard XML DOM model allows for.
 
--  serialization / deserialization of YANG-modeled data driven by YANG
+-  Serialization / deserialization of Yang-modeled data driven by YANG
    models
 
    -  XML - as defined in
@@ -31,35 +30,44 @@ YANG Tools provides following features in OpenDaylight:
    -  JSON - as defined in
       `draft-lhotka-netmod-yang-json-01 <https://tools.ietf.org/html/rfc6020>`__
 
-   -  support for third-party generators processing YANG models.
+   -  Support for third-party generators processing Yang models.
 
 Architecture
 ~~~~~~~~~~~~
 
-YANG Tools project consists of following logical subsystems:
+Yang tools consist of the following logical subsystems:
 
--  **Commons** - Set of general purpose code, which is not specific to
-   YANG, but is also useful outside YANG Tools implementation.
+.. list-table:: **Yang Tools**
+   :widths: 20 50
+   :header-rows: 1
 
--  **YANG Model and Parser** - YANG semantic model and lexical and
-   semantic parser of YANG models, which creates in-memory
-   cross-referenced represenation of YANG models, which is used by other
-   components to determine their behaviour based on the model.
+   * - Tool
+     - Description
+   * - **Commons**
+     - Set of general purpose code, which is not specific to
+       Yang, but is also useful outside YANG Tools implementation.
 
--  **YANG Data** - Definition of Normalized Node APIs and Data Tree
-   APIs, reference implementation of these APIs and implementation of
-   XML and JSON codecs for Normalized Nodes.
+   * - **Yang Model and Parser**
+     - YANG semantic model and lexical and
+       semantic parser of Yang models, which creates in-memory
+       cross-referenced representation of Yang models, which is used by other
+       components to determine their behavior based on the model.
 
--  **YANG Maven Plugin** - Maven plugin which integrates YANG parser
-   into Maven build lifecycle and provides code-generation framework for
-   components, which wants to generate code or other artefacts based on
-   YANG model.
+   * - **Yang data**
+     - Definition of Normalized Node APIs and Data Tree
+       APIs, reference implementation of these APIs and implementation of
+       XML and JSON codecs for Normalized Nodes.
+
+   * - **Yang Maven Plugin**
+     - Maven plugin which integrates YANG parser
+       into Maven build lifecycle and provides code-generation framework for
+       components, which wants to generate code or other artefacts based on Yang model.
 
 Concepts
 ~~~~~~~~
 
 Project defines base concepts and helper classes which are
-project-agnostic and could be used outside of YANG Tools project scope.
+project-agnostic and could be used outside of Yang Tools project scope.
 
 Components
 ~~~~~~~~~~
@@ -96,16 +104,16 @@ Components
 
 -  yang-parser-impl
 
-YANG Model API
+Yang Model API
 ^^^^^^^^^^^^^^
 
 Class diagram of yang model API
 
 .. figure:: images/yang-model-api.png
 
-   YANG Model API
+   Yang Model API
 
-YANG Parser
+Yang Parser
 ^^^^^^^^^^^
 
 Yang Statement Parser works on the idea of statement concepts as defined
@@ -113,15 +121,15 @@ in RFC6020, section 6.3. We come up here with basic ModelStatement and
 StatementDefinition, following RFC6020 idea of having sequence of
 statements, where every statement contains keyword and zero or one
 argument. ModelStatement is extended by DeclaredStatement (as it comes
-from source, e.g. YANG source) and EffectiveStatement, which contains
-other substatements and tends to represent result of semantic processing
-of other statements (uses, augment for YANG). IdentifierNamespace
-represents common superclass for YANG model namespaces.
+from source, e.g. Yang source) and EffectiveStatement, which contains
+other sub-statements and tends to represent result of semantic processing
+of other statements (uses, augment for Yang). IdentifierNamespace
+represents common superclass for Yang model namespaces.
 
 Input of the Yang Statement Parser is a collection of
 StatementStreamSource objects. StatementStreamSource interface is used
 for inference of effective model and is required to emit its statements
-using supplied StatementWriter. Each source (e.g. YANG source) has to be
+using supplied StatementWriter. Each source (e.g. Yang source) has to be
 processed in three steps in order to emit different statements for each
 step. This package provides support for various namespaces used across
 statement parser in order to map relations during declaration phase
@@ -134,49 +142,49 @@ Yangtools:
 
 -  YinStatementSourceImpl - intended for yin sources
 
-YANG Data API
+Yang data API
 ^^^^^^^^^^^^^
 
 Class diagram of yang data API
 
 .. figure:: images/yang-data-api.png
 
-   YANG Data API
+   Yang data API
 
-YANG Data Codecs
+Yang data Codecs
 ^^^^^^^^^^^^^^^^
 
-Codecs which enable serialization of NormalizedNodes into YANG-modeled
-data in XML or JSON format and deserialization of YANG-modeled data in
+Codecs which enable serialization of NormalizedNodes into Yang-modeled
+data in XML or JSON format and deserialization of Yang-modeled data in
 XML or JSON format into NormalizedNodes.
 
-YANG Maven Plugin
+Yang Maven Plugin
 ^^^^^^^^^^^^^^^^^
 
-Maven plugin which integrates YANG parser into Maven build lifecycle and
+Maven plugin which integrates Yang parser into Maven build lifecycle and
 provides code-generation framework for components, which wants to
-generate code or other artefacts based on YANG model.
+generate code or other artefacts based on Yang model.
 
 How to / Tutorials
 ------------------
 
-Working with YANG Model
+Working with Yang Model
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-First thing you need to do if you want to work with YANG models is to
+First thing you need to do if you want to work with Yang models is to
 instantiate a SchemaContext object. This object type describes one or
-more parsed YANG modules.
+more parsed Yang modules.
 
-In order to create it you need to utilize YANG statement parser which
+In order to create it you need to utilize Yang statement parser which
 takes one or more StatementStreamSource objects as input and then
 produces the SchemaContext object.
 
 StatementStreamSource object contains the source file information. It
-has two implementations, one for YANG sources - YangStatementSourceImpl,
+has two implementations, one for Yang sources - YangStatementSourceImpl,
 and one for YIN sources - YinStatementSourceImpl.
 
-Here is an example of creating StatementStreamSource objects for YANG
-files, providing them to the YANG statement parser and building the
+Here is an example of creating StatementStreamSource objects for Yang
+files, providing them to the Yang statement parser and building the
 SchemaContext:
 
 .. code:: java
@@ -191,7 +199,7 @@ SchemaContext:
 
 First, StatementStreamSource objects with two constructor arguments
 should be instantiated: path to the yang source file (which is a regular
-String object) and a boolean which determines if the path is absolute or
+String object) and a Boolean which determines if the path is absolute or
 relative.
 
 Next comes the initiation of new yang parsing cycle - which is
@@ -202,7 +210,7 @@ object (RFC6020\_REACTOR) in YangInferencePipeline class.
 Then you should feed yang sources to it by calling method addSources()
 that takes one or more StatementStreamSource objects as arguments.
 
-Finally you call the method buildEffective() on the reactor object which
+Finally, you call the method buildEffective() on the reactor object which
 returns EffectiveSchemaContext (that is a concrete implementation of
 SchemaContext). Now you are ready to work with contents of the added
 yang sources.
@@ -251,7 +259,7 @@ In the third case, you provide both module namespace and revision date
 as arguments.
 
 Once you have a Module object, you can access its contents as they are
-defined in YANG Model API. One way to do this is to use method like
+defined in Yang Model API. One way to do this is to use method like
 getIdentities() or getRpcs() which will give you a Set of objects.
 Otherwise you can access a DataSchemaNode directly via the method
 getDataChildByName() which takes a QName object as its only argument.
@@ -266,7 +274,7 @@ Here are a few examples.
 
     ContainerSchemaNode containerSchemaNode == (ContainerSchemaNode) exampleModule.getDataChildByName(QName.create(exampleModule.getQNameModule(), "example-container"));
 
-The YANG statement parser can work in three modes:
+The Yang statement parser can work in three modes:
 
 -  default mode
 
@@ -306,10 +314,10 @@ empty Set<QName> object.
 
     CrossSourceStatementReactor.BuildAction reactor = YangInferencePipeline.RFC6020_REACTOR.newBuild(supportedFeatures);
 
-When this mode is not activated, all features in the processed YANG
+When this mode is not activated, all features in the processed Yang
 sources are supported.
 
-Mode with active semantic version processing changes the way how YANG
+Mode with active semantic version processing changes the way how Yang
 import statements work - each module import is processed based on the
 specified semantic version statement and the revision-date statement is
 ignored. In order to activate this mode, you have to provide
@@ -320,8 +328,8 @@ newBuild().
 
     CrossSourceStatementReactor.BuildAction reactor == YangInferencePipeline.RFC6020_REACTOR.newBuild(StatementParserMode.SEMVER_MODE);
 
-Before you use a semantic version statement in a YANG module, you need
-to define an extension for it so that the YANG statement parser can
+Before you use a semantic version statement in a Yang module, you need
+to define an extension for it so that the Yang statement parser can
 recognize it.
 
 .. code::
@@ -343,7 +351,7 @@ recognize it.
         }
     }
 
-In the example above, you see a YANG module which defines semantic
+In the example above, you see a Yang module which defines semantic
 version as an extension. This extension can be imported to other modules
 in which we want to utilize the semantic versioning concept.
 
@@ -430,45 +438,52 @@ default one is chosen - 0.0.0. Thus, the module is imported only if it
 has a semantic version compatible with the default one, for example
 0.0.0, 0.1.3, 0.3.5 and so on.
 
-Working with YANG Data
+Working with Yang data
 ~~~~~~~~~~~~~~~~~~~~~~
 
-If you want to work with YANG Data you are going to need NormalizedNode
-objects that are specified in the YANG Data API. NormalizedNode is an
-interface at the top of the YANG Data hierarchy. It is extended through
+If you want to work with Yang data, you are going to need NormalizedNode
+objects that are specified in the Yang data API. NormalizedNode is an
+interface at the top of the Yang data hierarchy. It is extended through
 sub-interfaces which define the behaviour of specific NormalizedNode
 types like AnyXmlNode, ChoiceNode, LeafNode, ContainerNode, etc.
-Concrete implemenations of these interfaces are defined in
+Concrete implementations of these interfaces are defined in
 yang-data-impl module. Once you have one or more NormalizedNode
-instances, you can perform CRUD operations on YANG data tree which is an
+instances, you can perform CRUD operations on Yang data tree which is an
 in-memory database designed to store normalized nodes in a tree-like
 structure.
 
-In some cases it is clear which NormalizedNode type belongs to which
+In some cases it, is clear which NormalizedNode type belongs to which
 yang statement (e.g. AnyXmlNode, ChoiceNode, LeafNode). However, there
 are some normalized nodes which are named differently from their yang
 counterparts. They are listed below:
 
--  LeafSetNode - leaf-list
+.. list-table:: **Normalized Nodes**
+   :widths: auto
+   :header-rows: 1
 
--  OrderedLeafSetNode - leaf-list that is ordered-by user
+   * - Node
+     - Description
+   * - **LeafSetNode**
+     - Leaf-list
+   * - **OrderedLeafSetNode**
+     - Leaf-list that is ordered-by user
+   * - **LeafSetEntryNode**
+     - Concrete entry in a leaf-list
+   * - **MapNode**
+     - Keyed list
+   * - **OrderedMapNode**
+     - Keyed list that is ordered-by user
+   * - **MapEntryNode**
+     - Concrete entry in a keyed list
+   * - **UnkeyedListNode**
+     - Unkeyed list
+   * - **UnkeyedListEntryNode**
+     - Concrete entry in an unkeyed list
 
--  LeafSetEntryNode - concrete entry in a leaf-list
-
--  MapNode - keyed list
-
--  OrderedMapNode - keyed list that is ordered-by user
-
--  MapEntryNode - concrete entry in a keyed list
-
--  UnkeyedListNode - unkeyed list
-
--  UnkeyedListEntryNode - concrete entry in an unkeyed list
-
-In order to create a concrete NormalizedNode object you can use the
-utility class Builders or ImmutableNodes. These classes can be found in
-yang-data-impl module and they provide methods for building each type of
-normalized node. Here is a simple example of building a normalized node:
+To create a concrete NormalizedNode object, use the utility class Builders
+or ImmutableNodes. These classes can be found in `yang-data-impl` module and
+they provide methods for building each type of normalized node. Here is a
+simple example of building a normalized node:
 
 .. code:: java
 
@@ -498,7 +513,7 @@ Below is an example which shows the use of this method.
     NormalizedNode<?, ?> contNode == ImmutableNodes.fromInstanceId(schemaContext, YangInstanceIdentifier.create(contId));
 
 Let us show a more complex example of creating a NormalizedNode. First,
-consider the following YANG module:
+consider the following Yang module:
 
 .. code::
 
@@ -618,7 +633,7 @@ contained in the parent ordered list entry specified by the key value
 "pkval1".
 
 Write operation is performed with both normalized nodes mentioned
-earlier. It consist of several steps. The first step is to instantiate a
+earlier. It consists of several steps. The first step is to instantiate a
 DataTreeModification object based on a DataTreeSnapshot.
 DataTreeSnapshot gives you the current state of the data tree. Then
 comes the write operation which writes a normalized node at the provided
@@ -626,22 +641,22 @@ path in the data tree. After doing both write operations, method ready()
 has to be called, marking the modification as ready for application to
 the data tree. No further operations within the modification are
 allowed. The modification is then validated - checked whether it can be
-applied to the data tree. Finally we commit it to the data tree.
+applied to the data tree. Finally, we commit it to the data tree.
 
-Now you can access the written nodes. In order to do this, you have to
+Now you can access the written nodes. In order to do this, you must
 create a new DataTreeSnapshot instance and call the method readNode()
-with path argument pointing to a particular node in the tree.
+with path argument pointing to a node in the tree.
 
-Serialization / deserialization of YANG Data
+Serialization / deserialization of Yang data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you want to deserialize YANG-modeled data which have the form of an
+If you want to deserialize Yang-modeled data that has the form of an
 XML document, you can use the XML parser found in the module
 yang-data-codec-xml. The parser walks through the XML document
-containing YANG-modeled data based on the provided SchemaContext and
+containing Yang-modeled data based on the provided SchemaContext and
 emits node events into a NormalizedNodeStreamWriter. The parser
 disallows multiple instances of the same element except for leaf-list
-and list entries. The parser also expects that the YANG-modeled data in
+and list entries. The parser also expects that the Yang-modeled data in
 the XML source are wrapped in a root element. Otherwise it will not work
 correctly.
 
@@ -686,8 +701,8 @@ versions of the static overloaded method create() to construct this
 object. One version accepts a NormalizedNodeStreamWriter and a
 SchemaContext as arguments, the other version takes the same arguments
 plus a SchemaNode. Node events are emitted to the writer. The
-SchemaContext is used to check if the YANG data in the XML source comply
-with the provided YANG model(s). The last argument, a SchemaNode object,
+SchemaContext is used to check if the Yang data in the XML source comply
+with the provided Yang model(s). The last argument, a SchemaNode object,
 describes the node that is the parent of nodes defined in the XML data.
 If you do not provide this argument, the parser sets the SchemaContext
 as the parent node.
@@ -696,18 +711,6 @@ The parser is now ready to walk through the XML. Parsing is initiated by
 calling the method parse() on the XmlParserStream object with
 XMLStreamReader as its argument.
 
-Finally you can access the result of parsing - a tree of NormalizedNodes
+Finally, you can access the result of parsing - a tree of NormalizedNodes
 containg the data as they are defined in the parsed XML document - by
 calling the method getResult() on the NormalizedNodeResult object.
-
-Introducing schema source repositories
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Writing YANG driven generators
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Introducing specific extension support for YANG parser
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Diagnostics
-~~~~~~~~~~~
