@@ -42,7 +42,6 @@ release of both managed and self-managed projects.
      - Deadline for Release Integrated Projects (currently, ODLPARENT,
        YANGTOOLS and MDSAL) to provide the desired version deliverables for
        downstream Snapshot Integrated Projects to consume.
-       For Sodium, this is +1 more week to resolve conflict with ONS NA 2019.
    * - Version Bump
      - 2019-10-08
      - 2020-04-14
@@ -93,7 +92,7 @@ release of both managed and self-managed projects.
      - Start Date +6 months
      - Formal Release for Managed Projects. Self-managed projects usually are released a week later.
    * - Service Release 1
-     - 2020-04-20
+     - 2020-05-04
      - 2020-10-29
      - 1.5 month after Formal Release
      - Start Date +7.5 months
