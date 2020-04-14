@@ -81,10 +81,10 @@ the *groupId* and  the *artifactId* are in lower case.
 
        Define value for property 'groupId': : org.opendaylight.example
        Define value for property 'artifactId': : example
-       Define value for property 'version':  1.0-SNAPSHOT: : 1.0.0-SNAPSHOT
+       Define value for property 'version':  1.0-SNAPSHOT: : 1.3.0-SNAPSHOT
        Define value for property 'package':  org.opendaylight.example: :
        Define value for property 'classPrefix':  ${artifactId.substring(0,1).toUpperCase()}${artifactId.substring(1)}
-       Define value for property 'copyright': : Copyright (c) 2015 Yoyodyne, Inc.
+       Define value for property 'copyright': : Copyright (c) 2020 Yoyodyne, Inc.
 
 3. Accept the default value of classPrefix that is,
    ``(${artifactId.substring(0,1).toUpperCase()}${artifactId.substring(1)})``.
@@ -93,20 +93,22 @@ the *groupId* and  the *artifactId* are in lower case.
 
    .. note::
 
-       In this scenario, the classPrefix used is "Example". Create a
-       top-level directory for the archetype.
+       This will create a directory with the name given to artifactId in the above dialog, with
+       the following contents.
 
    .. code:: shell
 
-       ${artifactId}/
-       example/
-       cd example/
+       .gitignore
+       .gitreview
        api/
        artifacts/
+       cli/
        features/
        impl/
+       it/
        karaf/
        pom.xml
+       src/
 
 4. Build the *example* project.
 
