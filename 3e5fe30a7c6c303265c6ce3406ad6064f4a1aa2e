@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f9e82c1_8f464549",
+        "filename": "docs/release-notes/upgrade-process.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2020-05-01T18:11:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "20562d44_fcf2fa3b",
+      "range": {
+        "startLine": 23,
+        "startChar": 7,
+        "endLine": 23,
+        "endChar": 15
+      },
+      "revId": "3e5fe30a7c6c303265c6ce3406ad6064f4a1aa2e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "caffd33f_bd82ff9e",
         "filename": "docs/release-notes/upgrade-process.rst",
         "patchSetId": 5
@@ -45,6 +69,30 @@
       "revId": "3e5fe30a7c6c303265c6ce3406ad6064f4a1aa2e",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "918de329_c257a382",
+        "filename": "docs/release-notes/upgrade-process.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2020-05-01T18:11:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "caffd33f_bd82ff9e",
+      "range": {
+        "startLine": 36,
+        "startChar": 7,
+        "endLine": 36,
+        "endChar": 12
+      },
+      "revId": "3e5fe30a7c6c303265c6ce3406ad6064f4a1aa2e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     },
     {
       "key": {
@@ -94,6 +142,30 @@
     },
     {
       "key": {
+        "uuid": "36eb883c_738493d1",
+        "filename": "docs/release-notes/upgrade-process.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2020-05-01T18:11:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "81dc7135_597026cb",
+      "range": {
+        "startLine": 178,
+        "startChar": 47,
+        "endLine": 178,
+        "endChar": 54
+      },
+      "revId": "3e5fe30a7c6c303265c6ce3406ad6064f4a1aa2e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "14ed6cb5_faf54ccd",
         "filename": "docs/release-notes/upgrade-process.rst",
         "patchSetId": 5
@@ -110,6 +182,53 @@
         "startChar": 0,
         "endLine": 220,
         "endChar": 40
+      },
+      "revId": "3e5fe30a7c6c303265c6ce3406ad6064f4a1aa2e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "98fe183c_c4605998",
+        "filename": "docs/release-notes/upgrade-process.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2020-05-01T18:11:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "14ed6cb5_faf54ccd",
+      "range": {
+        "startLine": 220,
+        "startChar": 0,
+        "endLine": 220,
+        "endChar": 40
+      },
+      "revId": "3e5fe30a7c6c303265c6ce3406ad6064f4a1aa2e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ddc4e8c_63e3a071",
+        "filename": "docs/release-notes/upgrade-process.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2020-05-01T18:11:30Z",
+      "side": 1,
+      "message": "looks like the version of sphinx (2.3.1) we are running does not have this lexer. it is available\nin 2.7 apparently:\nhttps://pygments.org/docs/lexers/#lexer-for-the-yang-1-1-modeling-language-see-rfc-7950\n\nso, we can use \u0027none\u0027 for now, or push for infra to update sphinx version if this is needed. Otherwise\nthe verify job fails.",
+      "range": {
+        "startLine": 225,
+        "startChar": 4,
+        "endLine": 225,
+        "endChar": 21
       },
       "revId": "3e5fe30a7c6c303265c6ce3406ad6064f4a1aa2e",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
@@ -140,6 +259,30 @@
     },
     {
       "key": {
+        "uuid": "2d38ae0b_ea5cf085",
+        "filename": "docs/release-notes/upgrade-process.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2020-05-01T18:11:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f444ee48_57c383a9",
+      "range": {
+        "startLine": 259,
+        "startChar": 20,
+        "endLine": 259,
+        "endChar": 22
+      },
+      "revId": "3e5fe30a7c6c303265c6ce3406ad6064f4a1aa2e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "89767bd8_ff25b903",
         "filename": "docs/release-notes/upgrade-process.rst",
         "patchSetId": 5
@@ -160,6 +303,30 @@
       "revId": "3e5fe30a7c6c303265c6ce3406ad6064f4a1aa2e",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "58f5bd10_d105e9b0",
+        "filename": "docs/release-notes/upgrade-process.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2020-05-01T18:11:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "89767bd8_ff25b903",
+      "range": {
+        "startLine": 262,
+        "startChar": 0,
+        "endLine": 262,
+        "endChar": 4
+      },
+      "revId": "3e5fe30a7c6c303265c6ce3406ad6064f4a1aa2e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     },
     {
       "key": {
@@ -186,6 +353,30 @@
     },
     {
       "key": {
+        "uuid": "2be1968b_fee7d7a1",
+        "filename": "docs/release-notes/upgrade-process.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2020-05-01T18:11:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5339663b_a7337c91",
+      "range": {
+        "startLine": 376,
+        "startChar": 14,
+        "endLine": 376,
+        "endChar": 24
+      },
+      "revId": "3e5fe30a7c6c303265c6ce3406ad6064f4a1aa2e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "20caf19a_4fc31f5f",
         "filename": "docs/release-notes/upgrade-process.rst",
         "patchSetId": 5
@@ -206,6 +397,30 @@
       "revId": "3e5fe30a7c6c303265c6ce3406ad6064f4a1aa2e",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "59926299_51b3f6ed",
+        "filename": "docs/release-notes/upgrade-process.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 402,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2020-05-01T18:11:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "20caf19a_4fc31f5f",
+      "range": {
+        "startLine": 402,
+        "startChar": 52,
+        "endLine": 402,
+        "endChar": 54
+      },
+      "revId": "3e5fe30a7c6c303265c6ce3406ad6064f4a1aa2e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
