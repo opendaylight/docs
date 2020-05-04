@@ -31,35 +31,35 @@ Version Bump
 Before performing platform upgrade, do the following to bump the odlparent
 versions (for example, `bump-odl-version <https://github.com/skitt/odl-tools/blob/master/bump-odl-version>`_):
 
-1. Update the odlparent version from 6.0.4 to 7.0.1. There should
+1. Update the odlparent version from 6.0.4 to 7.0.2. There should
    not be any reference to **org.opendaylight.odlparent**, except
-   for 7.0.1. This includes custom feature.xml templates
+   for 7.0.2. This includes custom feature.xml templates
    (src/main/feature/feature.xml), the version range there should
    be "[7,8)" instead of "[6,7)", "[5.0.2,6)" or any other variation.
 
  .. code-block:: none
 
-  bump-odl-version odlparent 6.0.4 7.0.1
+  bump-odl-version odlparent 6.0.4 7.0.2
 
-2. Update the direct yangtools version references from 4.0.6 to 5.0.1,
+2. Update the direct yangtools version references from 4.0.6 to 5.0.2,
    There should not be any reference to **org.opendaylight.yangtools**,
-   except for 5.0.1. This includes custom feature.xml templates
+   except for 5.0.2. This includes custom feature.xml templates
    (src/main/feature/feature.xml), the version range there should
    be "[5,6)" instead of "[4,5)".
 
-3. Update the MD-SAL version from 5.0.9 to 6.0.0. There should not be
-   any reference to **org.opendaylight.mdsal**, except for 6.0.0.
+3. Update the MD-SAL version from 5.0.9 to 6.0.1. There should not be
+   any reference to **org.opendaylight.mdsal**, except for 6.0.1.
 
  .. code-block:: none
 
-  rpl -R 5.0.9 6.0.0
+  rpl -R 5.0.9 6.0.1
 
-4. Update the Controller version from 1.11.0 to 2.0.0. There should not be
-   any reference to **org.opendaylight.controller**, except for 2.0.0.
+4. Update the Controller version from 1.11.0 to 2.0.1. There should not be
+   any reference to **org.opendaylight.controller**, except for 2.0.1.
 
  .. code-block:: none
 
-  rpl -R 1.11.0 2.0.0
+  rpl -R 1.11.0 2.0.1
 
 Install Dependent Projects
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -298,7 +298,7 @@ would result in
      @NonNull List<Bar> nonnullBar();
    }
 
-In MD-SAL 6.0.0, that YANG snippet will result in
+In MD-SAL 6.0.x, that YANG snippet will result in
 
  .. code-block:: java
 
@@ -395,6 +395,30 @@ details. This isolation will be further extended to all enviornments through
 the use of JPMS in a future major release.
 
 
+WriteOperations.put(..., boolean) and WriteOperations.merge(..., boolean) removed
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+These two methods have multiplexed two distinct operations. When the boolean is
+specified as ``true``, they would end up issuing another merge operation. As such
+they have been deprecated in Magnesium and are now being removed.
+
+ .. code-block:: java
+
+   WriteTransaction wtx;
+   wtx.merge(store, path, data, true);
+   wtx.put(store, path, data, true);
+
+becomes
+
+ .. code-block:: java
+
+   WriteTransaction wtx;
+   wtx.mergeParentStructureMerge(store, path, data);
+   wtx.mergeParentStructurePut(store, path, data);
+
+The longer name reflects the fact that this operation is much more heavy-weight,
+as well as unnecessary in most situations.
+
+
 Controller Impacts
 ------------------
 
@@ -408,7 +432,7 @@ a single artifacts pom:
     <dependency>
       <groupId>org.opendaylight.controller</groupId>
       <artifactId>controller-artifacts</artifactId>
-      <version>2.0.0</version>
+      <version>2.0.1</version>
     </dependency>
 
 This pom combines the roles previously filled by ``mdsal-artifacts``,
