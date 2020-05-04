@@ -395,6 +395,30 @@ details. This isolation will be further extended to all enviornments through
 the use of JPMS in a future major release.
 
 
+WriteOperations.put(..., boolean) and WriteOperations.merge(..., boolean) removed
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+These two methods have multiplexed two distinct operations. When the boolean is
+specified as ``true``, they would end up issuing another merge operation. As such
+they have been deprecated in Magnesium and are now being removed.
+
+ .. code-block:: java
+
+   WriteTransaction wtx;
+   wtx.merge(store, path, data, true);
+   wtx.put(store, path, data, true);
+
+becomes
+
+ .. code-block:: java
+
+   WriteTransaction wtx;
+   wtx.mergeParentStructureMerge(store, path, data);
+   wtx.mergeParentStructurePut(store, path, data);
+
+The longer name reflects the fact that this operation is much more heavy-weight,
+as well as unnecessary in most situations.
+
+
 Controller Impacts
 ------------------
 
