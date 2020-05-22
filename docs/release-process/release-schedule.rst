@@ -92,7 +92,7 @@ release of both managed and self-managed projects.
      - Start Date +6 months
      - Formal Release for Managed Projects. Self-managed projects usually are released a week later.
    * - Service Release 1
-     - 2020-05-04
+     - 2020-05-04 (actual release 2020-05-15)
      - 2020-10-29
      - 1.5 month after Formal Release
      - Start Date +7.5 months
