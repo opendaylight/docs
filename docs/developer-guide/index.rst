@@ -31,5 +31,4 @@ Project-specific Developer Guides
    neutron-northbound
    odl-parent-developer-guide
    p4plugin-developer-guide
-   service-function-chaining
    yang-tools
