@@ -28,7 +28,6 @@ Project-specific Developer Guides
 
    distribution-version
    distribution-test-features
-   nemo-developer-guide
    neutron-service-developer-guide
    neutron-northbound
    odl-parent-developer-guide
