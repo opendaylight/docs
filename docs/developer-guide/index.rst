@@ -34,6 +34,5 @@ Project-specific Developer Guides
    odl-parent-developer-guide
    p4plugin-developer-guide
    service-function-chaining
-   snmp4sdn-developer-guide
    unified-secure-channel
    yang-tools
