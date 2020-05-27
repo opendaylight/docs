@@ -6,9 +6,9 @@ Overview
 ========
 
 JSON-RPC 2.0 is a lightweight remote procedure call and notification
-specification maintained by http://www.jsonrpc.org/. OpenDaylight uses the
-YANG-modelled JSON-RPC 2.0 specification as described in the IETF DRAFT:
-https://tools.ietf.org/html/draft-yang-json-rpc-03
+specification maintained by `JSON RPC <http://www.jsonrpc.org/>`_. OpenDaylight uses the
+YANG-modelled JSON-RPC 2.0 specification as described in the `IETF DRAFT
+<https://tools.ietf.org/html/draft-yang-json-rpc-03>`_.
 
 Behavior Changes
 ================
@@ -25,13 +25,13 @@ New and Modified Features
    * - **Key**
      - **Summary**
 
-   * - JSONRPC-37
+   * - `JSONRPC-37 <https://jira.opendaylight.org/browse/JSONRPC-37>`_
      - Add support for both positional and named arguments in RPCs
 
 Deprecated Features
 ===================
 
-This releases does not deprecate any existing features.
+This release does not deprecate any existing features.
 
 Resolved Issues
 ===============
@@ -45,10 +45,10 @@ The following table lists the resolved issues fixed this release.
    * - **Key**
      - **Summary**
 
-   * - JSONRPC-36
-     - Incorrect deserialization of NULL value
+   * - `JSONRPC-36 <https://jira.opendaylight.org/browse/JSONRPC-36>`_
+     - Incorrect deserialization of NULL value.
 
 Known Issues
 ============
 
-No known issues were identified in this release.
+There are no known issues identified in this release.
