@@ -29,7 +29,6 @@ Project-specific User Guides
    neutron-service-user-guide
    p4plugin-user-guide
    service-function-chaining
-   snmp4sdn-user-guide
    unified-secure-channel
 
 .. toctree::
