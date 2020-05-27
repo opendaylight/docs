@@ -25,11 +25,8 @@ Project-specific User Guides
    :maxdepth: 1
 
    distribution-version-user-guide
-   nemo-user-guide
    neutron-service-user-guide
    p4plugin-user-guide
-   service-function-chaining
-   unified-secure-channel
 
 .. toctree::
    :hidden:
