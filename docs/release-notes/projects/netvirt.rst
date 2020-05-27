@@ -12,7 +12,7 @@ network protocols L2, L3, ACL, NAT, DHCP, IPv6 control, etc.
 Behavior Changes
 ================
 
-No behaviour change in this release.
+There are no behavior changes in this release.
 
 New and Modified Features
 =========================
@@ -38,8 +38,8 @@ Deprecated Features
 
 This release removed the following features:
 
-* COE project features
-* SFC project features
+* COE (Container Orchestration Engine) project features
+* SFC (Service Function Chaining) project features
 
 Resolved Issues
 ===============
@@ -53,44 +53,43 @@ The following table lists the resolved issues fixed this release.
    * - **Key**
      - **Summary**
 
-   * - NETVIRT-1651
+   * - `NETVIRT-1651 <https://jira.opendaylight.org/browse/NETVIRT-1651>`_
      - NetVirt patch test failing due to SFC distro check
 
-   * - NETVIRT-1662
+   * - `NETVIRT-1662 <https://jira.opendaylight.org/browse/NETVIRT-1662>`_
      - Unable to create SNAT table entry for floating IP
 
-   * - NETVIRT-1637
+   * - `NETVIRT-1637 <https://jira.opendaylight.org/browse/NETVIRT-1637>`_
      - L3VPN CSIT failure post MRI activity
 
-   * - NETVIRT-1510
+   * - `NETVIRT-1510 <https://jira.opendaylight.org/browse/NETVIRT-1510>`_
      - Get rid of 'synchronized (String.intern())'
 
-   * - NETVIRT-1641
+   * - `NETVIRT-1641 <https://jira.opendaylight.org/browse/NETVIRT-1641>`_
      - neutronvpn:networkMaps update failed when add the second subnet under network
 
-   * - NETVIRT-1406
+   * - `NETVIRT-1406 <https://jira.opendaylight.org/browse/NETVIRT-1406>`_
      - Few datastores and dump-groups not removed
 
-   * - NETVIRT-1470
+   * - `NETVIRT-1470 <https://jira.opendaylight.org/browse/NETVIRT-1470>`_
      - VMs did not get ipv6 address via SLAAC after VM evacuation
 
-   * - NETVIRT-1109
+   * - `NETVIRT-1109 <https://jira.opendaylight.org/browse/NETVIRT-1109>`_
      - VPN OperDS entry still not updated, if neutron port was deleted
 
-   * - NETVIRT-1667
+   * - `NETVIRT-1667 <https://jira.opendaylight.org/browse/NETVIRT-1667>`_
      - VNF route did not appear in fib/flows due to interface manager did not update the parentref
 
-   * - NETVIRT-1665
+   * - `NETVIRT-1665 <https://jira.opendaylight.org/browse/NETVIRT-1665>`_
      - Exception from NAT service on release the ID from IDManager
 
-   * - NETVIRT-1028
+   * - `NETVIRT-1028 <https://jira.opendaylight.org/browse/NETVIRT-1028>`_
      - Fix unrelated types for equals in HwvtepPhysicalSwitchListener
 
-   * - NETVIRT-1620
-     - Update qos for port failed
-
+   * - `NETVIRT-1620 <https://jira.opendaylight.org/browse/NETVIRT-1620>`_
+     - Update QOS for port failed
 
 Known Issues
 ============
 
-No Known issues in this release.
+There are no known issues in this release.
