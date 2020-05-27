@@ -35,30 +35,30 @@ The following table lists the resolved issues fixed this release.
    * - **Key**
      - **Summary**
 
-   * - CONTROLLER-1626
+   * - `CONTROLLER-1626 <https://jira.opendaylight.org/browse/CONTROLLER-1626>`_
      - Add an option to allow CDS FE to start its generation counting from non-zero
-   * - CONTROLLER-1889
+   * - `CONTROLLER-1889 <https://jira.opendaylight.org/browse/CONTROLLER-1889>`_
      - Rework NormalizedNodePruner in terms of a forwarder
-   * - CONTROLLER-1908
+   * - `CONTROLLER-1908 <https://jira.opendaylight.org/browse/CONTROLLER-1908>`_
      - Deduplicate NodeIdentifierWithPredicate/LeafNode values from incoming streams
-   * - CONTROLLER-1909
+   * - `CONTROLLER-1909 <https://jira.opendaylight.org/browse/CONTROLLER-1909>`_
      - Deduplicate NodeIdentifierWithPredicate/LeafNode values when writing streams
-   * - CONTROLLER-1914
+   * - `CONTROLLER-1914 <https://jira.opendaylight.org/browse/CONTROLLER-1914>`_
      - Allow initial settle time to be tuned
-   * - CONTROLLER-1917
+   * - `CONTROLLER-1917 <https://jira.opendaylight.org/browse/CONTROLLER-1917>`_
      - Deprecate controller MD-SAL APIs for removal
-   * - CONTROLLER-1919
+   * - `CONTROLLER-1919 <https://jira.opendaylight.org/browse/CONTROLLER-1919>`_
      - Add Magnesium streaming format
-   * - CONTROLLER-1920
+   * - `CONTROLLER-1920 <https://jira.opendaylight.org/browse/CONTROLLER-1920>`_
      - CommitTransactionPayload results in humongous objects being allocated
-   * - CONTROLLER-1922
+   * - `CONTROLLER-1922 <https://jira.opendaylight.org/browse/CONTROLLER-1922>`_
      - Split out EntityOwnershipService implementation from distributed-datastore
-   * - CONTROLLER-1923
+   * - `CONTROLLER-1923 <https://jira.opendaylight.org/browse/CONTROLLER-1923>`_
      - Convert pre-Magnesium to Magnesium snapshots/journal entries
-   * - CONTROLLER-1924
+   * - `CONTROLLER-1924 <https://jira.opendaylight.org/browse/CONTROLLER-1924>`_
      - Migrate NormalizedNodeInputOutput to use yangtools and deprecate it
-   * - CONTROLLER-1928
+   * - `CONTROLLER-1928 <https://jira.opendaylight.org/browse/CONTROLLER-1928>`_
      - Regression detected in CSIT
-   * - CONTROLLER-1929
+   * - `CONTROLLER-1929 <https://jira.opendaylight.org/browse/CONTROLLER-1929>`_
      - Propagate TimeoutException if ActorSystem fails to terminate in time
 
