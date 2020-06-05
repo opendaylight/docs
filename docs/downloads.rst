@@ -5,10 +5,30 @@ OpenDaylight Downloads
 Supported Releases
 ==================
 
-Sodium-SR2
+Sodium-SR3
 ----------
 
 (Current Release)
+
+:Announcement: https://www.opendaylight.org/what-we-do/current-release/sodium
+:Original Release Date: January 24, 2019
+:Service Release Date: June 3, 2020
+
+:Downloads:
+    * `OpenDaylight Sodium Tar
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/0.11.3/opendaylight-0.11.3.tar.gz>`_
+    * `OpenDaylight Sodium Zip
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/0.11.3/opendaylight-0.11.3.zip>`_
+
+:Documentation:
+    * :doc:`Getting Started Guide <odl-sodium:getting-started-guide/index>`
+    * :doc:`Developers Guide <odl-sodium:developer-guide/index>`
+    * :doc:`User Guide <odl-sodium:user-guide/index>`
+    * :doc:`Installation Guide <odl-sodium:getting-started-guide/installing_opendaylight>`
+    * :doc:`Release Notes <odl-sodium:release-notes/index>`
+
+Sodium-SR2
+----------
 
 :Announcement: https://www.opendaylight.org/what-we-do/current-release/sodium
 :Original Release Date: January 24, 2019
@@ -19,8 +39,6 @@ Sodium-SR2
       <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/0.11.2/opendaylight-0.11.2.tar.gz>`_
     * `OpenDaylight Sodium Zip
       <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/0.11.2/opendaylight-0.11.2.zip>`_
-    * `OpenDaylight Sodium RPM
-      <https://cbs.centos.org/repos/nfv7-opendaylight-112-release/x86_64/os/Packages/opendaylight-11.2.0-1.el7.noarch.rpm>`_
 
 :Documentation:
     * :doc:`Getting Started Guide <odl-sodium:getting-started-guide/index>`
@@ -41,8 +59,6 @@ Neon-SR3
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.10.3/opendaylight-0.10.3.tar.gz>`_
     * `OpenDaylight Neon Zip
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.10.3/opendaylight-0.10.3.zip>`_
-    * `OpenDaylight Neon RPM
-      <https://cbs.centos.org/repos/nfv7-opendaylight-102-release/x86_64/os/Packages/opendaylight-10.3.0-1.el7.noarch.rpm>`_
 
 :Documentation:
     * :doc:`Getting Started Guide <odl-neon:getting-started-guide/index>`
@@ -63,8 +79,6 @@ Fluorine-SR3
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.9.3/opendaylight-0.9.3.tar.gz>`_
     * `OpenDaylight Fluorine SR3 Zip
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.9.3/opendaylight-0.9.3.zip>`_
-    * `OpenDaylight Fluorine SR3 RPM
-      <http://cbs.centos.org/repos/nfv7-opendaylight-93-release/x86_64/os/Packages/opendaylight-9.3.0-1.el7.noarch.rpm>`_
 
 :Documentation:
     * :doc:`Getting Started Guide <odl-fluorine:getting-started-guide/index>`
@@ -86,8 +100,6 @@ Oxygen-SR4
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/karaf/0.8.4/karaf-0.8.4.tar.gz>`_
     * `OpenDaylight Oxygen SR4 Zip
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/karaf/0.8.4/karaf-0.8.4.zip>`_
-    * `OpenDaylight Oxygen SR4 RPM
-      <http://cbs.centos.org/repos/nfv7-opendaylight-84-release/x86_64/os/Packages/opendaylight-8.4.0-1.el7.noarch.rpm>`_
     * `OpFlex
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/opflex/>`_
 
