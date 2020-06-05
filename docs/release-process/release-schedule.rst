@@ -91,7 +91,7 @@ release of both managed and self-managed projects.
      - Start Date +10.5 months
      - Service Release 2 (SR2)
    * - Service Release 3
-     - 2020-05-28
+     - 2020-06-03
      - 4 months after SR2
      - Start Date +14 months
      - Service Release 3 (SR3) - Final Service Release
