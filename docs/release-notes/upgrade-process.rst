@@ -225,6 +225,31 @@ Java 10 as part of `JEP-286 <https://openjdk.java.net/jeps/286>`__:
    final int size = modules.size();
 
 
+XML and JSON parsers accept only 'true' and 'false' for booleans
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Due to historic implementation reasons, we have accepted various
+capitalizations of ``true`` and ``false`` in ``type boolean`` leaf
+values.
+
+This leniency results in incorrect interpretation of constructs such as
+
+ .. code-block:: none
+
+   leaf foo {
+     type union {
+       type boolean;
+       type string;
+     }
+   }
+
+leading to value being changed when subjected to decode/encode cycle.
+Both codecs have been adjusted to accept only ``true`` and ``false``
+literals.
+
+Further details about this change can be found in the corresponding
+`YANG Tools issue <https://jira.opendaylight.org/browse/YANGTOOLS-1097>`__.
+
+
 MD-SAL Impacts
 --------------
 
