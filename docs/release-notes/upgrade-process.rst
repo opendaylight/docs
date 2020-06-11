@@ -31,35 +31,35 @@ Version Bump
 Before performing platform upgrade, do the following to bump the odlparent
 versions (for example, `bump-odl-version <https://github.com/skitt/odl-tools/blob/master/bump-odl-version>`_):
 
-1. Update the odlparent version from 6.0.4 to 7.0.2. There should
+1. Update the odlparent version from 6.0.4 to 7.0.3. There should
    not be any reference to **org.opendaylight.odlparent**, except
-   for 7.0.2. This includes custom feature.xml templates
+   for 7.0.3. This includes custom feature.xml templates
    (src/main/feature/feature.xml), the version range there should
-   be "[7,8)" instead of "[6,7)", "[5.0.2,6)" or any other variation.
+   be "[7,8)" instead of "[6,7)", "[5.0.3,6)" or any other variation.
 
  .. code-block:: none
 
-  bump-odl-version odlparent 6.0.4 7.0.2
+  bump-odl-version odlparent 6.0.4 7.0.3
 
-2. Update the direct yangtools version references from 4.0.6 to 5.0.2,
+2. Update the direct yangtools version references from 4.0.6 to 5.0.3,
    There should not be any reference to **org.opendaylight.yangtools**,
-   except for 5.0.2. This includes custom feature.xml templates
+   except for 5.0.3. This includes custom feature.xml templates
    (src/main/feature/feature.xml), the version range there should
    be "[5,6)" instead of "[4,5)".
 
-3. Update the MD-SAL version from 5.0.9 to 6.0.1. There should not be
-   any reference to **org.opendaylight.mdsal**, except for 6.0.1.
+3. Update the MD-SAL version from 5.0.9 to 6.0.2. There should not be
+   any reference to **org.opendaylight.mdsal**, except for 6.0.2.
 
  .. code-block:: none
 
-  rpl -R 5.0.9 6.0.1
+  rpl -R 5.0.9 6.0.2
 
-4. Update the Controller version from 1.11.0 to 2.0.1. There should not be
-   any reference to **org.opendaylight.controller**, except for 2.0.1.
+4. Update the Controller version from 1.11.0 to 2.0.2. There should not be
+   any reference to **org.opendaylight.controller**, except for 2.0.2.
 
  .. code-block:: none
 
-  rpl -R 1.11.0 2.0.1
+  rpl -R 1.11.0 2.0.2
 
 Install Dependent Projects
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
