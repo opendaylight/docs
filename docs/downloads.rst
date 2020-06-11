@@ -5,22 +5,20 @@ OpenDaylight Downloads
 Supported Releases
 ==================
 
-Sodium-SR2
+Sodium-SR3
 ----------
 
 (Current Release)
 
-:Announcement: https://www.opendaylight.org/what-we-do/current-release/sodium
-:Original Release Date: January 24, 2019
-:Service Release Date: February 11, 2020
+:Announcement: `Sodium Release <https://www.opendaylight.org/what-we-do/current-release/sodium>`_
+:Original Release Date: September 24, 2019
+:Service Release Date: June 3, 2020
 
 :Downloads:
-    * `OpenDaylight Sodium Tar
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/0.11.2/opendaylight-0.11.2.tar.gz>`_
-    * `OpenDaylight Sodium Zip
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/0.11.2/opendaylight-0.11.2.zip>`_
-    * `OpenDaylight Sodium RPM
-      <https://cbs.centos.org/repos/nfv7-opendaylight-112-release/x86_64/os/Packages/opendaylight-11.2.0-1.el7.noarch.rpm>`_
+    * `OpenDaylight Sodium SR3 Tar
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/0.11.3/opendaylight-0.11.3.tar.gz>`_
+    * `OpenDaylight Sodium SR3 Zip
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/0.11.3/opendaylight-0.11.3.zip>`_
 
 :Documentation:
     * :doc:`Getting Started Guide <odl-sodium:getting-started-guide/index>`
@@ -32,7 +30,7 @@ Sodium-SR2
 Neon-SR3
 --------
 
-:Announcement: https://www.opendaylight.org/announcement/2019/03/26/opendaylight-most-pervasive-open-source-sdn-controller-celebrates-sixth-anniversary-with-neon-release
+:Announcement: `Neon Release: Most Pervasive Open Source SDN Controller <https://www.opendaylight.org/announcement/2019/03/26/opendaylight-most-pervasive-open-source-sdn-controller-celebrates-sixth-anniversary-with-neon-release>`_
 :Original Release Date: March 26, 2019
 :Service Release Date: December 20, 2019
 
@@ -41,8 +39,6 @@ Neon-SR3
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.10.3/opendaylight-0.10.3.tar.gz>`_
     * `OpenDaylight Neon Zip
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.10.3/opendaylight-0.10.3.zip>`_
-    * `OpenDaylight Neon RPM
-      <https://cbs.centos.org/repos/nfv7-opendaylight-102-release/x86_64/os/Packages/opendaylight-10.3.0-1.el7.noarch.rpm>`_
 
 :Documentation:
     * :doc:`Getting Started Guide <odl-neon:getting-started-guide/index>`
@@ -54,7 +50,7 @@ Neon-SR3
 Fluorine-SR3
 ------------
 
-:Announcement: https://www.opendaylight.org/announcement/2018/09/13/linux-foundations-opendaylight-fluorine-release-brings-streamlined-support-for-cloud-edge-and-wan-solutions
+:Announcement: `Fluorine Release: Streamlined Support for Cloud, Edge and WAN Solutions <https://www.opendaylight.org/announcement/2018/09/13/linux-foundations-opendaylight-fluorine-release-brings-streamlined-support-for-cloud-edge-and-wan-solutions>`_
 :Original Release Date: August 30, 2018
 :Service Release Date: June 21, 2019
 
@@ -63,8 +59,6 @@ Fluorine-SR3
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.9.3/opendaylight-0.9.3.tar.gz>`_
     * `OpenDaylight Fluorine SR3 Zip
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.9.3/opendaylight-0.9.3.zip>`_
-    * `OpenDaylight Fluorine SR3 RPM
-      <http://cbs.centos.org/repos/nfv7-opendaylight-93-release/x86_64/os/Packages/opendaylight-9.3.0-1.el7.noarch.rpm>`_
 
 :Documentation:
     * :doc:`Getting Started Guide <odl-fluorine:getting-started-guide/index>`
@@ -77,7 +71,7 @@ Fluorine-SR3
 Oxygen-SR4
 ----------
 
-:Announcement: https://www.opendaylight.org/about/news/blogs/opendaylight-releases-oxygen-with-new-p4-and-container-support
+:Announcement: `Oxygen Release: P4 and Container Support <https://www.opendaylight.org/about/news/blogs/opendaylight-releases-oxygen-with-new-p4-and-container-support>`_
 :Original Release Date: March 22, 2018
 :Service Release Date: Dec 12, 2018
 
@@ -86,8 +80,6 @@ Oxygen-SR4
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/karaf/0.8.4/karaf-0.8.4.tar.gz>`_
     * `OpenDaylight Oxygen SR4 Zip
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/karaf/0.8.4/karaf-0.8.4.zip>`_
-    * `OpenDaylight Oxygen SR4 RPM
-      <http://cbs.centos.org/repos/nfv7-opendaylight-84-release/x86_64/os/Packages/opendaylight-8.4.0-1.el7.noarch.rpm>`_
     * `OpFlex
       <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/opflex/>`_
 
