@@ -28,17 +28,19 @@ Overview
 The overview section is for users to identify and describe the features
 that will be used by end-users (remove this paragraph).
 
-Behavior Changes
-================
+Behavior/Feature Changes
+========================
 
 This release introduces the following behavior changes:
 
 *
 
-New and Modified Features
-=========================
+New Features
+============
 
-This release provides the following new and modified features:
+This release provides the following new features:
+
+*
 
 * **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=sample.git;a=blob;f=features/src/main/features/features.xml
 * **Feature Description:**  This sample feature performs various sample tasks
@@ -50,8 +52,8 @@ This release provides the following new and modified features:
 
 .. note::
 
-   this could be a karaf feature or a feature in general that has been
-   added/modified during the release cycle.
+   this could be a karaf feature or new functionality made available
+   as a new implementation of an already exisiting karaf feature.
 
 Deprecated Features
 ===================
