@@ -42,14 +42,6 @@ This release provides the following new features:
 
 *
 
-* **Feature URL:** https://git.opendaylight.org/gerrit/gitweb?p=sample.git;a=blob;f=features/src/main/features/features.xml
-* **Feature Description:**  This sample feature performs various sample tasks
-  to provide the implementation of RFC 0000.
-* **Top Level:** Yes
-* **User Facing:** Yes
-* **Experimental:** Yes
-* **CSIT Test:** https://jenkins.opendaylight.org/releng/view/sample/job/sample-csit-1node-feature-all-carbon/
-
 .. note::
 
    this could be a karaf feature or new functionality made available
