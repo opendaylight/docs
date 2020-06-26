@@ -70,7 +70,7 @@ Upgrade the ODL Parent
 ----------------------
 
 The following sub-section describes how to upgrade to the ODL
-Parent version 5. Refer to the `ODL Parent Release Notes <https://github.com/opendaylight/odlparent/blob/v5.0.0/NEWS.rst>`_
+Parent version 5. Refer to the `ODL Parent Release Notes <https://github.com/opendaylight/odlparent/blob/5.0.x/NEWS.rst#version-500>`_
 for more information.
 
 Features
