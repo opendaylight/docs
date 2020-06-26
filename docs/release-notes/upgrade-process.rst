@@ -81,7 +81,7 @@ Upgrade the ODL Parent
 
 The following sub-section describes how to upgrade to
 the ODL Parent version 4. Refer to the `ODL Parent Release Notes
-<https://github.com/opendaylight/odlparent/blob/master/NEWS.rst#version-600>`_
+<https://github.com/opendaylight/odlparent/blob/6.0.x/docs/NEWS.rst#version-600>`_
 for more information.
 
 Features
