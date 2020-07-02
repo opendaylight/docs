@@ -4,138 +4,265 @@
 Installing OpenDaylight
 ***********************
 
-You complete the following steps to install your networking environment, with
-specific instructions provided in the subsections below.
+OpenDaylight (ODL) is a modular open platform that is designed to customize and automate networks
+of any size and scale. It addresses a variety of use cases in any existing network environment.
+This document describes how to install ODL.
 
-Before detailing the instructions for these, we address the following:
-Java Runtime Environment (JRE) and operating system information
-Target environment
-Known issues and limitations
+Hardware Prerequisites
+^^^^^^^^^^^^^^^^^^^^^^
+
+The following table lists the minimum hardware prerequisites required before installing ODL.
+
+.. list-table:: Hardware Prerequisites
+   :widths: auto
+   :header-rows: 1
+
+   * - **Component**
+     - **Minimum**
+     - **Recommended**
+   * - **RAM**
+     - 4 GB
+     - 8 GB
+   * - **Network**
+     - 1 GE
+     - 2 GE
+   * - **CPU**
+     - 2 cores
+     - 4 cores
+   * - **Storage**
+     - 2 GB
+     - 8 GB
+
+Recommended Software
+^^^^^^^^^^^^^^^^^^^^
+
+The following table lists the software recommended before installing ODL.
+Java 11 is mandatory starting from the Magnesium release. Earlier ODL releases
+support Java 8 (or later).
+
+.. list-table:: Software Recommendations
+   :widths: 20 50
+   :header-rows: 1
+
+   * - **Component**
+     - **Recommended**
+   * - **Operating systems**
+     - * Ubuntu (18.0)
+       * CentOS/Red Hat Enterprise Linux (7.X)
+   * - **Software**
+     - * Java JDK (11.0)
+
+Karaf
+^^^^^
+
+Apache Karaf provides an OSGi ecosystem for Java applications. Basically,
+Karaf provides a user-friendly CLI, Web console, and remote shell to help
+install, provision, and deploy OpenDaylight. For information on Karaf, refer to
+`Apache Karaf <https://karaf.apache.org>`_.
+
+OpenJDK
+^^^^^^^
+
+OpenJDK Java provides prompts to help install prerequisites during
+installation. OpenJDK Java is standard on most systems; however, Java 11
+is required to install and run ODL starting with the Magnesium release.
+For information on OpenJDK, refer to `OpenJDK <https://openjdk.java.net>`_.
+The following subsection describes how to install OpenJDK.
+
+Installing OpenJDK Java for CentOS/RHEL
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Perform the following steps to install OpenJDK Java for CentOS/RHEL:
+
+.. note:: The following commands should be 'sh' or 'shell'. Refer to
+          `Lexers-for-various-shells <https://pygments.org/docs/lexers/#lexers-for-various-shells>`_.
+
+#. Enter the following command to check the installed version of OpenJDK.
+   Update OpenJDK to release 11 if the command returns a version earlier than 11.
+
+   .. code-block:: none
+
+      java -version
+
+#. Enter the following command to install OpenJDK Java 11for CentOS/RHEL:
+
+   .. code-block:: none
+
+      sudo yum install java-11-openjdk-devel
+
+Installing OpenJDK Java for Ubuntu
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Perform the following steps to install OpenJDK Java for Ubuntu:
+
+#. Enter the following command to check the installed version of OpenJDK. Update
+   OpenJDK to release 11 if the command returns a version earlier than 11.
+
+   .. code-block:: none
+
+      java -version
 
 
-Install OpenDaylight
-====================
+#. Enter the following command to install OpenJDK Java 11 for Ubuntu:
 
-Downloading and installing OpenDaylight
----------------------------------------
+   .. code-block:: none
 
-The default distribution can be found on the OpenDaylight software
-download page: http://www.opendaylight.org/software/downloads
+      sudo apt-get install openjdk-11-jdk
 
-The Karaf distribution has no features enabled by default. However, all
-of the features are available to be installed.
+Java Confirmation
+~~~~~~~~~~~~~~~~~
 
-.. note:: For compatibility reasons, you cannot enable all the features
-          simultaneously. We try to document known incompatibilities in
-          the `Install the Karaf features`_ section below.
+Java 11 is required to install and run ODL. However, there are instances when
+there is more than one version of Java installed, so you must switch versions.
 
-Running the karaf distribution
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**CentOS/RHEL**
 
-To run the Karaf distribution:
+Run the following commands to switch versions of Java versions for CentOS/RHEL:
 
-#. Unzip the zip file.
-#. Navigate to the directory.
-#. run ``./bin/karaf``.
+#. Display the Java versions:
 
-For Example::
+   .. code-block:: none
 
-   $ ls karaf-0.8.x-Oxygen.zip
-   karaf-0.8.x-Oxygen.zip
-   $ unzip karaf-0.8.x-Oxygen.zip
-   Archive:  karaf-0.8.x-Oxygen.zip
-      creating: karaf-0.8.x-Oxygen/
-      creating: karaf-0.8.x-Oxygen/configuration/
-      creating: karaf-0.8.x-Oxygen/data/
-      creating: karaf-0.8.x-Oxygen/data/tmp/
-      creating: karaf-0.8.x-Oxygen/deploy/
-      creating: karaf-0.8.x-Oxygen/etc/
-      creating: karaf-0.8.x-Oxygen/externalapps/
-      ...
-      inflating: karaf-0.8.x-Oxygen/bin/start.bat
-      inflating: karaf-0.8.x-Oxygen/bin/status.bat
-      inflating: karaf-0.8.x-Oxygen/bin/stop.bat
-   $ cd distribution-karaf-0.8.x-Oxygen
-   $ ./bin/karaf
+      sudo alternatives --config java
 
-       ________                       ________                .__  .__       .__     __
-       \_____  \ ______   ____   ____ \______ \ _____  ___.__.\|  \| \|__\| ____ \|  \|___/  \|_
-        /   \|   \\____ \_/ __ \ /    \ \|    \|  \\__  \<   \|  \|\|  \| \|  \|/ ___\\|  \|  \   __\
-       /    \|    \  \|_> >  ___/\|   \|  \\|    `   \/ __ \\___  \|\|  \|_\|  / /_/  >   Y  \  \|
-       \_______  /   __/ \___  >___\|  /_______  (____  / ____\|\|____/__\___  /\|___\|  /__\|
-               \/\|__\|        \/     \/        \/     \/\/            /_____/      \/
+      There are 2 programs which provide 'java'.
+
+      Selection    Command
+      -----------------------------------------------
+      * 1   java-1.8.0-openjdk.x86_64 (/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/bin/java)
+      + 2   java-11-openjdk.x86_64 (/usr/lib/jvm/java-11-openjdk-11.0.7.10-4.el7_8.x86_64/bin/java)
+
+      Enter to keep the current selection[+], or type selection number:
+
+#. Select the Java 11 version.
+
+**Ubuntu**
+
+Run the following commands to switch Java versions for Ubuntu:
+
+#. Display the Java versions:
+
+   .. code-block:: none
+
+      sudo update-alternatives --config java
+
+      There are 2 programs which provide 'java'.
+
+      Selection    Command
+      -----------------------------------------------
+      * 1   java-1.8.0-openjdk.x86_64 (/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/bin/java)
+      + 2   java-11-openjdk.x86_64 (/usr/lib/jvm/java-11-openjdk-11.0.7.10-4.el7_8.x86_64/bin/java)
+
+      Enter to keep the current selection[+], or type selection number:
+
+#. Select the Java 11 version.
+
+.. note:: For best results, it is recommended to set JAVA_HOME. Refer to
+          `JDK Java Home <https://docs.oracle.com/cd/E19182-01/820-7851/inst_cli_jdk_javahome_t/>`_.
+
+Downloading and Installing OpenDaylight
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Perform the following steps to download and install ODL:
+
+#. Go to the `ODL download page <http://www.opendaylight.org/software/downloads>`_
+   to download the ODL ``opendaylight-x.x.x.tar`` file.
+
+#. Enter the following command to expand the ``tar`` file:
+
+   .. code-block:: none
+
+      tar -xvf <distribution>.tar
+
+#. Navigate to the ``opendaylight-x.x.x`` directory.
+
+#. Run the following command:
+
+   .. code-block:: none
+
+      ./bin/karaf
+      karaf: JAVA_HOME not set; results may vary
+      Apache Karaf starting up. Press Enter to open the shell now...
+      100% [========================================================================]
+
+      Karaf started in 0s. Bundle stats: 12 active, 12 total
+
+      ________                       ________                .__  .__       .__     __
+      \_____  \ ______   ____   ____ \______ \ _____  ___.__.|  | |__| ____ |  |___/  |_
+       /   |   \\____ \_/ __ \ /    \ |    |  \\__  \<   |  ||  | |  |/ ___\|  |  \   __\
+      /    |    \  |_> >  ___/|   |  \|    `   \/ __ \\___  ||  |_|  / /_/  >   Y  \  |
+      \_______  /   __/ \___  >___|  /_______  (____  / ____||____/__\___  /|___|  /__|
+              \/|__|        \/     \/        \/     \/\/            /_____/      \/
 
 
+      Hit '<tab>' for a list of available commands
+      and '[cmd] --help' for help on a specific command.
+      Hit '<ctrl-d>' or type 'system:shutdown' or 'logout' to shutdown OpenDaylight.
 
-* Press ``tab`` for a list of available commands
-* Typing ``[cmd] --help`` will show help for a specific command.
-* Press ``ctrl-d`` or type ``system:shutdown`` or ``logout`` to shutdown OpenDaylight.
-
-.. note:: Please take a look at the :ref:`security_deployment_recommendations`
-          and following sections under :ref:`security_considerations` if you're
-          planning on running OpenDaylight outside of an isolated test lab
-          environment.
-
-Install the Karaf features
-==========================
-To install a feature, use the following command, where feature1 is the feature
-name listed in the table below::
-
-    feature:install <feature1>
-
-You can install multiple features using the following command::
+      opendaylight-user@root>
 
 
-    feature:install <feature1> <feature2> ... <featureN-name>
+.. note:: Please refer to the :ref:`security_deployment_recommendations`
+          and the  sections under :ref:`security_considerations` if you plan
+          to run OpenDaylight outside of an isolated test lab environment.
 
-.. note:: For compatibility reasons, you cannot enable all Karaf features
-   simultaneously. The table below documents feature installation names and
-   known incompatibilities.Compatibility values indicate the following:
+Karaf Features
+^^^^^^^^^^^^^^
 
-* **all** - the feature can be run with other features.
-* **self+all** - the feature can be installed with other features with a value of
-  **all**, but may interact badly with other features that have a value of
-  **self+all**. Not every combination has been tested.
+The Karaf distribution does not have any features enabled after installation completes.
+However, all features are available to be installed. Run the following command to list
+the installed Karaf features:
 
-Uninstalling features
----------------------
-To uninstall a feature, you must shut down OpenDaylight, delete the data
-directory, and start OpenDaylight up again.
+.. code-block:: none
 
-.. important:: Uninstalling a feature using the Karaf feature:uninstall command
-   is not supported and can cause unexpected and undesirable behavior.
+   feature:list -i
 
-Listing available features
---------------------------
-To find the complete list of Karaf features, run the following command::
-
-    feature:list
-
-To list the installed Karaf features, run the following command::
-
-    feature:list -i
-
-The decription of these features is in the project specific
+Find the description of these features is in the project's specific
 release notes :ref:`proj_rel_notes` section.
 
-Karaf running on Windows 10
----------------------------
+Installing a Feature
+~~~~~~~~~~~~~~~~~~~~
 
-Windows 10 cannot be identify by Karaf (equinox).
-Issue occurs during installation of karaf features e.g.::
+Perform the following steps to install a feature:
 
-   opendaylight-user@root>feature:install odl-restconf
-   Error executing command: Can't install feature odl-restconf/0.0.0:
-   Could not start bundle mvn:org.fusesource.leveldbjni/leveldbjni-all/1.8-odl in feature(s) odl-akka-leveldb-0.7: The bundle "org.fusesource.leveldbjni.leveldbjni-all_1.8.0 [300]" could not be resolved. Reason: No match found for native code: META-INF/native/windows32/leveldbjni.dll; processor=x86; osname=Win32, META-INF/native/windows64/leveldbjni.dll; processor=x86-64; osname=Win32, META-INF/native/osx/libleveldbjni.jnilib; processor=x86; osname=macosx, META-INF/native/osx/libleveldbjni.jnilib; processor=x86-64; osname=macosx, META-INF/native/linux32/libleveldbjni.so; processor=x86; osname=Linux, META-INF/native/linux64/libleveldbjni.so; processor=x86-64; osname=Linux, META-INF/native/sunos64/amd64/libleveldbjni.so; processor=x86-64; osname=SunOS, META-INF/native/sunos64/sparcv9/libleveldbjni.so; processor=sparcv9; osname=SunOS
+#. Run the following command to find the complete list of Karaf features:
 
-Workaround is to add
+   .. code-block:: none
 
-   org.osgi.framework.os.name = Win32
+      feature:list
 
-to the karaf file
+#. Run the following command to install a Karaf feature:
 
-   etc/system.properties
+   .. code-block:: none
 
-The workaround and further info are in this thread:
-http://stackoverflow.com/questions/35679852/karaf-exception-is-thrown-while-installing-org-fusesource-leveldbjni
+      feature:install <feature>
+
+#. Run the following command to install multiple Karaf features:
+
+   .. code-block:: none
+
+      feature:install <feature1> <feature2> <feature3>
+
+Uninstalling a Feature
+~~~~~~~~~~~~~~~~~~~~~~
+
+Perform the following steps to uninstall a feature:
+
+#. Run the following command to shutdown OpenDaylight:
+
+   .. code-block:: none
+
+      opendaylight-user@root>system:shutdown
+      Confirm: halt instance root (yes/no): yes
+
+#. Delete the ``data`` directory.
+
+   .. code-block:: none
+
+      rm -r data/
+
+#. Restart OpenDaylight.
+
+.. important:: Uninstalling a feature using the Karaf ``feature:uninstall`` command
+   is not supported and can cause unexpected and undesirable behavior.
 
