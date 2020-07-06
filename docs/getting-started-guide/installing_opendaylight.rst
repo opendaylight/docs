@@ -74,19 +74,16 @@ Installing OpenJDK Java for CentOS/RHEL
 
 Perform the following steps to install OpenJDK Java for CentOS/RHEL:
 
-.. note:: The following commands should be 'sh' or 'shell'. Refer to
-          `Lexers-for-various-shells <https://pygments.org/docs/lexers/#lexers-for-various-shells>`_.
-
 #. Enter the following command to check the installed version of OpenJDK.
    Update OpenJDK to release 11 if the command returns a version earlier than 11.
 
-   .. code-block:: none
+   .. code-block:: shell
 
       java -version
 
 #. Enter the following command to install OpenJDK Java 11for CentOS/RHEL:
 
-   .. code-block:: none
+   .. code-block:: shell
 
       sudo yum install java-11-openjdk-devel
 
@@ -98,14 +95,14 @@ Perform the following steps to install OpenJDK Java for Ubuntu:
 #. Enter the following command to check the installed version of OpenJDK. Update
    OpenJDK to release 11 if the command returns a version earlier than 11.
 
-   .. code-block:: none
+   .. code-block:: shell
 
       java -version
 
 
 #. Enter the following command to install OpenJDK Java 11 for Ubuntu:
 
-   .. code-block:: none
+   .. code-block:: shell
 
       sudo apt-get install openjdk-11-jdk
 
@@ -121,7 +118,7 @@ Run the following commands to switch versions of Java versions for CentOS/RHEL:
 
 #. Display the Java versions:
 
-   .. code-block:: none
+   .. code-block:: shell
 
       sudo alternatives --config java
 
@@ -142,7 +139,7 @@ Run the following commands to switch Java versions for Ubuntu:
 
 #. Display the Java versions:
 
-   .. code-block:: none
+   .. code-block:: shell
 
       sudo update-alternatives --config java
 
@@ -170,7 +167,7 @@ Perform the following steps to download and install ODL:
 
 #. Enter the following command to expand the ``tar`` file:
 
-   .. code-block:: none
+   .. code-block:: shell
 
       tar -xvf <distribution>.tar
 
@@ -178,7 +175,7 @@ Perform the following steps to download and install ODL:
 
 #. Run the following command:
 
-   .. code-block:: none
+   .. code-block:: shell
 
       ./bin/karaf
       karaf: JAVA_HOME not set; results may vary
@@ -213,7 +210,7 @@ The Karaf distribution does not have any features enabled after installation com
 However, all features are available to be installed. Run the following command to list
 the installed Karaf features:
 
-.. code-block:: none
+.. code-block:: shell
 
    feature:list -i
 
@@ -227,19 +224,19 @@ Perform the following steps to install a feature:
 
 #. Run the following command to find the complete list of Karaf features:
 
-   .. code-block:: none
+   .. code-block:: shell
 
       feature:list
 
 #. Run the following command to install a Karaf feature:
 
-   .. code-block:: none
+   .. code-block:: shell
 
       feature:install <feature>
 
 #. Run the following command to install multiple Karaf features:
 
-   .. code-block:: none
+   .. code-block:: shell
 
       feature:install <feature1> <feature2> <feature3>
 
@@ -250,14 +247,14 @@ Perform the following steps to uninstall a feature:
 
 #. Run the following command to shutdown OpenDaylight:
 
-   .. code-block:: none
+   .. code-block:: shell
 
       opendaylight-user@root>system:shutdown
       Confirm: halt instance root (yes/no): yes
 
 #. Delete the ``data`` directory.
 
-   .. code-block:: none
+   .. code-block:: shell
 
       rm -r data/
 

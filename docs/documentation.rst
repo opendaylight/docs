@@ -4,10 +4,10 @@
 Documentation Guide
 ###################
 
-This guide provides details on how to contribute to the OpenDaylight
-documentation. OpenDaylight currently uses reStructuredText_ for
-documentation and Sphinx_ to build it. These documentation tools are widely used
-in open source communities to produce both HTML and PDF documentation and can
+This guide provides details on how to contribute documentation to the OpenDaylight
+foundation. OpenDaylight produces documentation as doc-as-code by using reStructuredText_
+to produce documentation and Sphinx_ to build docs. These tools are used in the open source
+community to produce both HTML and PDF documentation and can
 be easily versioned alongside the code. reStructuredText also offers similar
 syntax to Markdown, which is familiar to many developers.
 
@@ -18,10 +18,8 @@ syntax to Markdown, which is familiar to many developers.
 Style Guide
 ===========
 
-This section serves two purposes:
-
-#. A guide for those writing documentation.
-#. A guide for those reviewing documentation.
+This section is both a guide when writing documentation and a guide for those
+who want to review documentation.
 
 .. note:: When reviewing content, assuming that the content is usable, the
           documentation team is biased toward merging the content rather than
