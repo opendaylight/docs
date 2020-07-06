@@ -71,6 +71,30 @@
     },
     {
       "key": {
+        "uuid": "3ccf4a61_9e45fa18",
+        "filename": "docs/getting-started-guide/installing_opendaylight.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2020-07-06T22:39:28Z",
+      "side": 1,
+      "message": "Robert is noting that \"none\" is wrong here. \u0027sh\u0027 or \u0027shell\u0027 is what to use.",
+      "parentUuid": "839cc3c7_005876c1",
+      "range": {
+        "startLine": 79,
+        "startChar": 19,
+        "endLine": 79,
+        "endChar": 23
+      },
+      "revId": "8b02fc3ba5c7eea235f12966e9b9d281b0b9dbf5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "5b33ef9d_7b9576b8",
         "filename": "docs/getting-started-guide/installing_opendaylight.rst",
         "patchSetId": 1
