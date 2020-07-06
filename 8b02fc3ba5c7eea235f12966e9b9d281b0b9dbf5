@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f97f336_8a96ca3e",
+        "filename": "docs/getting-started-guide/installing_opendaylight.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2020-07-06T16:34:28Z",
+      "side": 1,
+      "message": "can you call out that it\u0027s mandatory for Magnesium and newer, and java 8 was used for previous releases?",
+      "range": {
+        "startLine": 40,
+        "startChar": 16,
+        "endLine": 40,
+        "endChar": 25
+      },
+      "revId": "8b02fc3ba5c7eea235f12966e9b9d281b0b9dbf5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "984742e2_8c767390",
+        "filename": "docs/getting-started-guide/installing_opendaylight.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2020-07-06T16:34:28Z",
+      "side": 1,
+      "message": "and is required to install and run ODL",
+      "range": {
+        "startLine": 66,
+        "startChar": 54,
+        "endLine": 67,
+        "endChar": 59
+      },
+      "revId": "8b02fc3ba5c7eea235f12966e9b9d281b0b9dbf5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5b33ef9d_7b9576b8",
+        "filename": "docs/getting-started-guide/installing_opendaylight.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 2264
+      },
+      "writtenOn": "2020-07-06T16:34:28Z",
+      "side": 1,
+      "message": "can you add the step for installing a feature?",
+      "revId": "8b02fc3ba5c7eea235f12966e9b9d281b0b9dbf5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    }
+  ]
+}
