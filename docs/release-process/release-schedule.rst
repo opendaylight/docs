@@ -109,7 +109,13 @@ release of both managed and self-managed projects.
      - 2021-04-30
      - 4 months after SR2
      - Start Date +14 months
-     - Service Release 3 (SR3) - Final Service Release
+     - Service Release 3 (SR3)
+   * - Service Release 4
+     - 2020-08-27
+     - N/A
+     - Not Applicable
+     - Not Applicable
+     - Service Release 4 (SR4) - Final Service Release
    * - Release End of Life
      - 2021-03-08
      - 2021-09-13
