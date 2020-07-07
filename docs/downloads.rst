@@ -33,13 +33,13 @@ Sodium-SR3
 
 :Announcement: `Sodium Release 3 <https://www.opendaylight.org/what-we-do/current-release/sodium>`_
 :Original Release Date: September 24, 2019
-:Service Release Date: June 3, 2020
+:Service Release Date: August 28, 2020
 
 :Downloads:
-    * `OpenDaylight Sodium SR3 Tar
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/0.11.3/opendaylight-0.11.3.tar.gz>`_
-    * `OpenDaylight Sodium SR3 Zip
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/0.11.3/opendaylight-0.11.3.zip>`_
+    * `OpenDaylight Sodium SR4 Tar
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/0.11.4/opendaylight-0.11.4.tar.gz>`_
+    * `OpenDaylight Sodium SR4 Zip
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/0.11.4/opendaylight-0.11.4.zip>`_
 
 :Documentation:
     * :doc:`Getting Started Guide <odl-sodium:getting-started-guide/index>`
