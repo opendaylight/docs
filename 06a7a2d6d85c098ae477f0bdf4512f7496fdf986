@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8863235e_f66ea487",
+        "filename": "docs/getting-started-guide/installing_opendaylight.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 797
+      },
+      "writtenOn": "2020-07-07T02:21:51Z",
+      "side": 1,
+      "message": "You mean when you do \"sudo yum install java-11-openjdk-devel\" you get multiple prompts?",
+      "revId": "06a7a2d6d85c098ae477f0bdf4512f7496fdf986",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3096191d_1a4daecf",
+        "filename": "docs/getting-started-guide/installing_opendaylight.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 797
+      },
+      "writtenOn": "2020-07-07T02:21:51Z",
+      "side": 1,
+      "message": "this seems a repeat of previous section",
+      "revId": "06a7a2d6d85c098ae477f0bdf4512f7496fdf986",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1ea559a5_d990cdef",
+        "filename": "docs/getting-started-guide/installing_opendaylight.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 797
+      },
+      "writtenOn": "2020-07-07T02:21:51Z",
+      "side": 1,
+      "message": "Here I miss the command to check installed features: feature:list -i",
+      "revId": "06a7a2d6d85c098ae477f0bdf4512f7496fdf986",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fa80a4ea_8c3a5a4f",
+        "filename": "docs/getting-started-guide/installing_opendaylight.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 797
+      },
+      "writtenOn": "2020-07-07T02:21:51Z",
+      "side": 1,
+      "message": "Uninstalling all the features",
+      "revId": "06a7a2d6d85c098ae477f0bdf4512f7496fdf986",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    }
+  ]
+}
