@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "02f938ab_b111b52f",
+        "filename": "docs/getting-started-guide/installing_opendaylight.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 797
+      },
+      "writtenOn": "2020-07-07T01:17:47Z",
+      "side": 1,
+      "message": "Not sure we should recommend anything without knowing the use case.",
+      "revId": "85f9b2c50ff0b2188f346c0eda44eb7e9643661c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3c06f6fd_8fe64b6e",
+        "filename": "docs/getting-started-guide/installing_opendaylight.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 797
+      },
+      "writtenOn": "2020-07-07T01:17:47Z",
+      "side": 1,
+      "message": "ODL runs on any OS supporting java, but I guess it is only tested with the OS you mention here. In that case you can say \"Tested OS\" to not give the impression ODL does not support other platforms.",
+      "revId": "85f9b2c50ff0b2188f346c0eda44eb7e9643661c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "efb80e68_108aba9e",
+        "filename": "docs/getting-started-guide/installing_opendaylight.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 797
+      },
+      "writtenOn": "2020-07-07T01:17:47Z",
+      "side": 1,
+      "message": "This seems out of place here (i.e. this is not SW prerequisite), better place it later when you talk or in the same section as \"Karaf Features\".",
+      "revId": "85f9b2c50ff0b2188f346c0eda44eb7e9643661c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "07b689a8_ca6f4cb2",
+        "filename": "docs/getting-started-guide/installing_opendaylight.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 797
+      },
+      "writtenOn": "2020-07-07T01:17:47Z",
+      "side": 1,
+      "message": "Are you talking about prerequisites to install java 11?",
+      "revId": "85f9b2c50ff0b2188f346c0eda44eb7e9643661c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e17cd3d1_1295948d",
+        "filename": "docs/getting-started-guide/installing_opendaylight.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 797
+      },
+      "writtenOn": "2020-07-07T01:17:47Z",
+      "side": 1,
+      "message": "This seems out of place, better to execute this command after you install some feature.",
+      "revId": "85f9b2c50ff0b2188f346c0eda44eb7e9643661c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6d180f9e_f6a1789e",
+        "filename": "docs/getting-started-guide/installing_opendaylight.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 797
+      },
+      "writtenOn": "2020-07-07T01:17:47Z",
+      "side": 1,
+      "message": "This looks more like uninstalling all the features. And if so you also need to remove snapshots and segmented-journal folders AFAIR.",
+      "revId": "85f9b2c50ff0b2188f346c0eda44eb7e9643661c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    }
+  ]
+}
