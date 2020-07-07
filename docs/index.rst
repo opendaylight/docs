@@ -21,6 +21,13 @@ Getting Started with OpenDaylight
    getting-started-guide/index
    developer-guide/developing-apps-on-the-opendaylight-controller
 
+.. toctree::
+   :hidden:
+
+   templates/template-developer-guide
+   templates/template-install-guide
+   templates/template-user-guide
+
 OpenDaylight Project Documentation
 ----------------------------------
 
