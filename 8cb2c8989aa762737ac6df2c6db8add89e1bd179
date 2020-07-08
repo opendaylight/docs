@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "00448a4a_2d75ab5c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2020-07-08T17:11:28Z",
+      "side": 1,
+      "message": "Remove the middle Sign-off and change-id as only the last ones below count for Gerrit.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 52
+      },
+      "revId": "8cb2c8989aa762737ac6df2c6db8add89e1bd179",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3efdc2d4_aa31a956",
+        "filename": "docs/getting-started-guide/installing_opendaylight.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2020-07-08T17:11:28Z",
+      "side": 1,
+      "message": "The docs are versioned so master is Aluminum and stable/RELEASE branches are for those relevant releases. Would it make more sense to only state that Java 11 is required for \"master\" and \"stable/magnesium\" branch and on the older stable/RELEASE branches state only Java 8?\n\nI think if someone\u0027s reading the docs they would be reading the docs for the version of ODL they are using.",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 39
+      },
+      "revId": "8cb2c8989aa762737ac6df2c6db8add89e1bd179",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    }
+  ]
+}
