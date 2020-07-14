@@ -18,6 +18,21 @@ syntax to Markdown, which is familiar to many developers.
 Style Guide
 ===========
 
+.. tabs::
+
+   .. tab:: Apples
+
+      Apples are green, or sometimes red.
+
+   .. tab:: Pears
+
+      Pears are green.
+
+   .. tab:: Oranges
+
+      Oranges are orange.
+
+
 This section serves two purposes:
 
 #. A guide for those writing documentation.
