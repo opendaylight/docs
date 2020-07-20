@@ -20,7 +20,7 @@ Downloading and installing OpenDaylight
 ---------------------------------------
 
 The default distribution can be found on the OpenDaylight software
-download page: http://www.opendaylight.org/software/downloads
+download page: https://docs.opendaylight.org/en/latest/downloads.html
 
 The Karaf distribution has no features enabled by default. However, all
 of the features are available to be installed.
@@ -137,5 +137,5 @@ to the karaf file
    etc/system.properties
 
 The workaround and further info are in this thread:
-http://stackoverflow.com/questions/35679852/karaf-exception-is-thrown-while-installing-org-fusesource-leveldbjni
+https://stackoverflow.com/questions/35679852/karaf-exception-is-thrown-while-installing-org-fusesource-leveldbjni
 
