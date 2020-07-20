@@ -118,7 +118,7 @@ reStructuredText-based Documentation
 ====================================
 
 When using reStructuredText, follow the Python documentation
-style guidelines. See: https://docs.python.org/devguide/documenting.html
+style guidelines. See: https://devguide.python.org/documenting/
 
 One of the best references for reStrucutedText syntax is the Sphinx
 Primer on reStructuredText_.
@@ -357,7 +357,7 @@ italic, and fixed-width font cannot be nested. Furthermore, inline markup cannot
 be mixed with hyperlinks, so you cannot have a link with bold text.
 
 This is tracked in a `Docutils FAQ question
-<http://docutils.sourceforge.net/FAQ.html#is-nested-inline-markup-possible>`_,
+<https://docutils.sourceforge.io/FAQ.html#is-nested-inline-markup-possible>`_,
 but there is no clear current plan to fix this.
 
 Make sure you have cloned submodules
@@ -404,7 +404,7 @@ builds and clones. The result is that you may have to clean up the state of
 old runs of the build script.
 
 As an example, refer to the following patch:
-https://git.opendaylight.org/gerrit/41679
+https://git.opendaylight.org/gerrit/c/docs/+/41679/
 
 This patch fixed the issue that caused builds to fail because they were
 taking too long removing directories associated with generated
@@ -759,8 +759,8 @@ Timeline for Deliverables from Projects
     (or locally in the project's repository if the tooling is developed)
 
 
-.. _Sphinx: http://www.sphinx-doc.org/en/stable/
-.. _reStructuredText: http://www.sphinx-doc.org/en/stable/rest.html
+.. _Sphinx: https://www.sphinx-doc.org/en/master/
+.. _reStructuredText: https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html
 .. _Documentation Group: https://wiki-archive.opendaylight.org/view/Documentation/
 .. _RelEng/Builder: https://wiki-archive.opendaylight.org/view/RelEng/Builder
 .. _Pandoc: http://pandoc.org/

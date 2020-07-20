@@ -16,7 +16,7 @@ documentations of each component:
 
 -  https://launchpad.net/networking-odl
 
--  http://git.openstack.org/cgit/openstack/networking-odl/
+-  https://opendev.org/openstack/networking-odl/
 
 -  https://wiki-archive.opendaylight.org/view/NeutronNorthbound:Main
 
