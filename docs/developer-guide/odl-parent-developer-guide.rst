@@ -184,7 +184,7 @@ If you use any of the following libraries, you should rely on
     This list isn’t exhaustive. It’s also not cast in stone; if you’d
     like to add a new dependency (or migrate a dependency), please
     contact `the mailing
-    list <https://lists.opendaylight.org/mailman/listinfo/odlparent-dev>`__.
+    list <https://lists.opendaylight.org/g/kernel-dev>`__.
 
 ``odlparent`` also enforces some Checkstyle verification rules. In
 particular, it enforces the common license header used in all

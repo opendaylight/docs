@@ -57,6 +57,8 @@ linkcheck_ignore = [
     'https://www.osgi.org',
     # Ignore anchors on github.com because linkcheck fails on them
     '^http[s]://github.com/.*#',
+    # Ignore webchat anchors because '#' is not an anchor for this app
+    'https://webchat.freenode.net/#',
 ]
 linkcheck_timeout = 300
 
