@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "cc5cd4e3_cdf4bc1b",
+        "filename": "INFO.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6258
+      },
+      "writtenOn": "2020-08-04T01:04:22Z",
+      "side": 1,
+      "message": "IMHO, we dont that for the info-yaml, and specific the project key separatly.",
+      "parentUuid": "0686dd89_7bd4f8f9",
+      "range": {
+        "startLine": 15,
+        "startChar": 10,
+        "endLine": 15,
+        "endChar": 48
+      },
+      "revId": "7711209fe81e479cecf59a3bd97202d74984061d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "5f02df82_da917d4b",
         "filename": "INFO.yaml",
         "patchSetId": 1
@@ -45,6 +69,30 @@
       "revId": "7711209fe81e479cecf59a3bd97202d74984061d",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "918f0138_e2f6ecd9",
+        "filename": "INFO.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6258
+      },
+      "writtenOn": "2020-08-04T01:04:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f02df82_da917d4b",
+      "range": {
+        "startLine": 26,
+        "startChar": 13,
+        "endLine": 26,
+        "endChar": 28
+      },
+      "revId": "7711209fe81e479cecf59a3bd97202d74984061d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     },
     {
       "key": {
@@ -94,6 +142,30 @@
     },
     {
       "key": {
+        "uuid": "d4750e31_ac430bfc",
+        "filename": "INFO.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6258
+      },
+      "writtenOn": "2020-08-04T01:04:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e4794707_146ba63f",
+      "range": {
+        "startLine": 30,
+        "startChar": 17,
+        "endLine": 30,
+        "endChar": 29
+      },
+      "revId": "7711209fe81e479cecf59a3bd97202d74984061d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1379fb3c_6dfa2e7c",
         "filename": "INFO.yaml",
         "patchSetId": 1
@@ -114,6 +186,30 @@
       "revId": "7711209fe81e479cecf59a3bd97202d74984061d",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "91feec46_d27ccb00",
+        "filename": "INFO.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6258
+      },
+      "writtenOn": "2020-08-04T01:04:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1379fb3c_6dfa2e7c",
+      "range": {
+        "startLine": 44,
+        "startChar": 15,
+        "endLine": 44,
+        "endChar": 17
+      },
+      "revId": "7711209fe81e479cecf59a3bd97202d74984061d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
