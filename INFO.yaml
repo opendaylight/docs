@@ -1,0 +1,58 @@
+---
+project: 'docs'
+project_creation_date: '2014-03-26'
+project_category: 'Support & Documentation'
+lifecycle_state: 'Incubation'
+project_lead: &odl_docs_ptl
+    name: 'Thanh Ha (zxiiro)'
+    email: 'zxiiro@gmail.com'
+    company: 'Lumina Networks'
+    id: 'zxiiro'
+    timezone: 'Americas/Toronto'
+primary_contact: *odl_docs_ptl
+issue_tracking:
+    type: 'jira'
+    url: 'https://jira.opendaylight.org/projects/'
+    key: 'docs'
+mailing_list:
+    type: 'groups.io'
+    url: 'app-dev@lists.opendaylight.org'
+    tag: '[]'
+realtime_discussion:
+    type: 'irc'
+    server: 'freenode.net'
+    channel: '#opendaylight'
+meetings:
+    - type: 'irc'
+      agenda: 'https://wiki.opendaylight.org'
+      url: ''
+      server: 'freenode.net'
+      channel: '#opendaylight-integration'
+      repeats: ''
+      time: ''
+repositories:
+    - docs
+committers:
+    - <<: *odl_docs_ptl
+    - name: 'Jamo Luhrsen'
+      email: 'jluhrsen@gmail.com'
+      company: 'Lumina Networks'
+      id: 'jluhrsen'
+      timezone: 'Americas/Los_Angeles'
+    - name: 'Daniel Farrell'
+      email: 'dfarrell07@gmail.com'
+      company: 'RedHat'
+      id: 'dfarrell07'
+      timezone: 'Unknown/Unknown'
+    - name: 'Luis Gomez'
+      email: 'ecelgp@gmail.com'
+      company: 'Lumina Networks'
+      id: 'ecelgp'
+      timezone: 'Americas/Los_Angeles'
+tsc:
+    # yamllint disable rule:line-length
+    approval: 'https://meetings.opendaylight.org/meetings/opendaylight-meeting/2014/opendaylight-meeting.2014-04-03-17.03.html'
+    changes:
+        - type: ''
+          name: ''
+          link: ''
