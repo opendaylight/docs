@@ -5,19 +5,19 @@ OpenDaylight Downloads
 Supported Releases
 ==================
 
-Magnesium-SR1
+Magnesium-SR2
 -------------
 
 (Current Release)
 
 :Announcement: `Magnesium <https://www.opendaylight.org/what-we-do/current-release/magnesium>`_
 :Original Release Date: March 25, 2020
-:Service Release Date: May 15, 2020
+:Service Release Date: Aug 11, 2020
 :Downloads:
     * `OpenDaylight Magnesium Tar
-      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.12.1/opendaylight-0.12.1.tar.gz>`_
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/0.12.2/opendaylight-0.12.2.tar.gz>`_
     * `OpenDaylight Magnesium Zip
-      <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.12.1/opendaylight-0.12.1.zip>`_
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/0.12.2/opendaylight-0.12.2.zip>`_
 :Documentation:
     * :doc:`Getting Started Guide <odl-magnesium:getting-started-guide/index>`
     * :doc:`Developers Guide <odl-magnesium:developer-guide/index>`
