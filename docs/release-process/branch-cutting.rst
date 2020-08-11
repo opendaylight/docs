@@ -9,7 +9,7 @@ in order to perform the necessary task in Parentheses.
 JJB (releng/builder)
 --------------------
 
-#. Export ${NEXT_RELEASE} and ${CURR_RELEASE} with new and current release names.
+#. Export ``${NEXT_RELEASE}`` and ``${CURR_RELEASE}`` with new and current release names.
    **(releng/builder committers)**
 
    .. code-block:: bash
@@ -17,8 +17,8 @@ JJB (releng/builder)
       export NEXT_RELEASE="Neon"
       export CURR_RELEASE="Fluorine"
 
-#. Change JJB yaml files from `stream:fluorine` branch pointer from `master -> stable/${CURR_RELEASE,,}`
-   and create new `stream: ${NEXT_RELEASE,,}` branch pointer to branch master. This
+#. Change JJB yaml files from ``stream: fluorine`` branch pointer from *master -> stable/${CURR_RELEASE,,}*
+   and create new ``stream: ${NEXT_RELEASE,,}`` branch pointer to branch master. This
    requires handling two different file formats interspersed with in autorelease projects.
    **(releng/builder committers)**
 
@@ -183,11 +183,12 @@ Manual steps to version bump (Autorelease)
 Documentation post branch tasks
 -------------------------------
 
-#. Git remove all files/directories from the docs/release-notes/* directory. **(Release Engineering Team)**
+#. Git remove all files/directories from the ``docs/release-notes/*`` directory.
+   **(Release Engineering Team)**
 
-  .. code-block:: bash
+   .. code-block:: bash
 
-      git checkout master
-      git rm -rf docs/release-notes/<project file and/or folder>
-      git commit -sm "Reset release notes for next dev cycle"
-      git review
+       git checkout master
+       git rm -rf docs/release-notes/<project file and/or folder>
+       git commit -sm "Reset release notes for next dev cycle"
+       git review
