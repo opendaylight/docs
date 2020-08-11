@@ -26,7 +26,6 @@ Project-specific User Guides
 
    distribution-version-user-guide
    neutron-service-user-guide
-   p4plugin-user-guide
    service-function-chaining
 
 .. toctree::
