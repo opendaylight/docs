@@ -13,7 +13,7 @@ Magnesium-SR2
 :Announcement: `Magnesium <https://www.opendaylight.org/what-we-do/current-release/magnesium>`_
 
 :Original Release Date: March 25, 2020
-:Service Release Date: Aug 10, 2020
+:Service Release Date: Aug 11, 2020
 
 :Downloads:
     * `OpenDaylight Magnesium Tar
