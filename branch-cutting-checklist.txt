@@ -4,3 +4,4 @@ cutting a new stable/branch after a release.
 * conf.py: Update projects intersphinx mapping latest -> stable/branch
 * conf.py: Update odl-{branch} intersphinx mapping add next release
 * conf.yaml: Update version for next release
+* Run the activate-projects-rtd-branch script to enable the new stable/branch docs
