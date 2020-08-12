@@ -1,0 +1,6 @@
+This is a checklist of actions that need to happen to the docs project when
+cutting a new stable/branch after a release.
+
+* conf.py: Update projects intersphinx mapping latest -> stable/branch
+* conf.py: Update odl-{branch} intersphinx mapping add next release
+* conf.yaml: Update version for next release
