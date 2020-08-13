@@ -46,7 +46,7 @@ Project Release Notes
    :glob:
    :maxdepth: 1
 
-..   projects/*
+.. projects/*
 
 Service Release Notes
 =====================
@@ -55,7 +55,7 @@ Service Release Notes
    :glob:
    :maxdepth: 1
 
-   release-notes-*
+.. release-notes-*
 
 .. toctree::
    :maxdepth: 1
