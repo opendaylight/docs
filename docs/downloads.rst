@@ -25,12 +25,12 @@ Magnesium-SR2
     * :doc:`Installation Guide <odl-magnesium:getting-started-guide/installing_opendaylight>`
     * :doc:`Release Notes <odl-magnesium:release-notes/index>`
 
-Sodium-SR2
+Sodium-SR3
 ----------
 
-:Announcement: `Sodium Service Release 2 <https://www.opendaylight.org/what-we-do/current-release/sodium>`_
-:Original Release Date: January 24, 2019
-:Service Release Date: February 11, 2020
+:Announcement: `Sodium Service Release 3 <https://www.opendaylight.org/what-we-do/current-release/sodium>`_
+:Original Release Date: September 24, 2019
+:Service Release Date: June 3, 2020
 :Downloads:
     * `OpenDaylight Sodium Tar
       <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/0.11.2/opendaylight-0.11.2.tar.gz>`_
