@@ -401,7 +401,7 @@ these has at most one downstream user project in current Simultaneous Release
 and hence it is more appropriate to maintain these models in those projects.
 The models removed are:
 
-* iana-afi-safi.yang from `draft-ietf-netmod-iana-afn-safi-00 <https://jira.opendaylight.org/browse/MDSAL-536>`__
+* iana-afn-safi.yang from `draft-ietf-netmod-iana-afn-safi-00 <https://jira.opendaylight.org/browse/MDSAL-536>`__
 * ietf-lisp-address-types.yang from `draft-ietf-lisp-yang-06 <https://jira.opendaylight.org/browse/MDSAL-535>`__
 * the models from `draft-ietf-netmod-acl-model-07 <https://jira.opendaylight.org/browse/MDSAL-537>`__, as this
   draft has been published as RFC8519 and we have been shipping that update for some time now.
