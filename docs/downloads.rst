@@ -25,7 +25,7 @@ Magnesium-SR2
     * :doc:`Installation Guide <odl-magnesium:getting-started-guide/installing_opendaylight>`
     * :doc:`Release Notes <odl-magnesium:release-notes/index>`
 
-Sodium-SR3
+Sodium-SR4
 ----------
 
 :Announcement: `Sodium Service Release 3 <https://www.opendaylight.org/what-we-do/current-release/sodium>`_
