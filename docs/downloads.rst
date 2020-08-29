@@ -5,7 +5,7 @@ OpenDaylight Downloads
 Supported Releases
 ==================
 
-Sodium-SR3
+Sodium-SR4
 ----------
 
 (Current Release)
