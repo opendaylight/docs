@@ -2646,8 +2646,8 @@ extends the current SFC northbound API to provide an abstraction of the
 underlying Data Center infrastructure. The Data Center underlaying network can
 be abstracted by a single SFF. This single SFF uses the logical port UUID as
 data plane locator to connect SFs globally and in a location-transparent manner.
-SFC makes use of `Genius <./genius-user-guide.html>`__ project to track the
-location of the SF's logical ports.
+SFC makes use of :doc:`Genius <genius:index>` project to track the location of
+the SF's logical ports.
 
 .. figure:: ./images/sfc/single-logical-sff-concept.png
    :alt: Single Logical SFF concept
@@ -2664,7 +2664,7 @@ infrastructure.
 The Logical SFF simplifies the configuration of the current SFC data model by
 reducing the number of parameters to be be configured in every SFF, since the
 controller will discover those parameters by interacting with the services
-offered by the `Genius <./genius-user-guide.html>`__ project.
+offered by the :doc:`Genius <genius:index>` project.
 
 The following picture shows the Logical SFF data model. The model gets
 simplified as most of the configuration parameters of the current SFC data model

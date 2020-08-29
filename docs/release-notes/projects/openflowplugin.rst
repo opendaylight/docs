@@ -285,8 +285,8 @@ Standards
 
 OpenFlow versions:
 
-* `OpenFlow1.3.2 <https://www.opennetworking.org/images/stories/downloads/sdn-resources/onf-specifications/openflow/openflow-spec-v1.3.2.pdf>`_
-* `OpenFlow1.0.0 <https://www.opennetworking.org/images/stories/downloads/sdn-resources/onf-specifications/openflow/openflow-spec-v1.0.0.pdf>`_
+* `OpenFlow1.3.2 <https://www.opennetworking.org/wp-content/uploads/2014/10/openflow-spec-v1.3.2.pdf>`_
+* `OpenFlow1.0.0 <https://www.opennetworking.org/wp-content/uploads/2014/10/openflow-spec-v1.0.0.pdf>`_
 
 Release Mechanics
 =================
