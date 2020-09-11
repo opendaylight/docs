@@ -500,6 +500,10 @@ a list of nodes to a given state::
 
    POST  /restconf/operations/cluster-admin:change-member-voting-states-for-all-shards
 
+   or
+
+   POST  /rests/operations/cluster-admin:change-member-voting-states-for-all-shards
+
 This RPC needs the list of nodes and the desired voting state as input. For
 creating the backup nodes, this example input can be used::
 
@@ -530,6 +534,10 @@ following RPC call (no parameters needed)::
 
     POST  /restconf/operations/cluster-admin:flip-member-voting-states-for-all-shards
 
+    or
+
+    POST /rests/operations/cluster-admin:flip-member-voting-states-for-all-shards
+
 If it's an unplanned outage where the primary voting nodes are down, the
 "flip" RPC must be sent to a backup non-voting node. In this case there are no
 shard leaders to carry out the voting changes. However there is a special case
@@ -556,6 +564,10 @@ following RPC::
 
     POST  /restconf/operations/cluster-admin:remove-all-shard-replicas
 
+    or
+
+    POST  /rests/operations/cluster-admin:remove-all-shard-replicas
+
 and example input::
 
     {
@@ -567,6 +579,10 @@ and example input::
 or just one particular shard::
 
     POST  /restconf/operations/cluster-admin:remove-shard-replica
+
+    or
+
+    POST  /rests/operations/cluster-admin:remove-shard-replicas
 
 with example input::
 
@@ -583,6 +599,10 @@ be added at runtime, without changing the configuration files of the healthy
 nodes (requiring reboot)::
 
     POST  /restconf/operations/cluster-admin:add-replicas-for-all-shards
+
+    or
+
+    POST  /rests/operations/cluster-admin:add-replicas-for-all-shards
 
 No input required, but this RPC needs to be sent to the new node, to instruct
 it to replicate all shards from the cluster.
