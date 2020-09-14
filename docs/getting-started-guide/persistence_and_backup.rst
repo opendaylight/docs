@@ -38,6 +38,10 @@ node, taking only the file name as a parameter::
 
     POST  /restconf/operations/cluster-admin:backup-datastore
 
+    or
+
+    POST  /rests/operations/cluster-admin:backup-datastore
+
 RPC input JSON::
 
     {
