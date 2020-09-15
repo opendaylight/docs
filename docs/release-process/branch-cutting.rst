@@ -14,38 +14,51 @@ JJB (releng/builder)
 
    .. code-block:: bash
 
-      export NEXT_RELEASE="Neon"
-      export CURR_RELEASE="Fluorine"
+      export CURR_RELEASE="Silicon"
+      export NEXT_RELEASE="Phosphorus"
 
-#. Change JJB yaml files from ``stream: fluorine`` branch pointer from *master -> stable/${CURR_RELEASE,,}*
-   and create new ``stream: ${NEXT_RELEASE,,}`` branch pointer to branch master. This
-   requires handling two different file formats interspersed with in autorelease projects.
+#. Run the script ``cut-branch-jobs.py`` to generate next release jobs.
    **(releng/builder committers)**
+
+   .. code-block:: bash
+
+      python scripts/cut-branch-jobs.py $CURR_RELEASE $NEXT_RELEASE jjb/
+      pre-commit run --all-files
+
+   .. note:: ``pre-commit`` is necessary to adjust the formatting of the generated YAML.
+
+   This script changes JJB yaml files to insert the next release configuration
+   by updating streams and branches where relevant. For example if ``master``
+   is currently Silicon, the result of this script will update config blocks
+   as follows:
+
+   Update multi-streams:
 
    .. code-block:: yaml
 
       stream:
-        - Neon:
+        - Phosphorus:
             branch: master
-        - Fluorine:
-            branch: stable/fluorine
+        - Silicon:
+            branch: stable/silicon
+
+   Insert project new blocks:
 
    .. code-block:: yaml
 
       - project:
-          name: aaa-neon
+          name: aaa-phosphorus
           jobs:
             - '{project-name}-verify-{stream}-{maven}-{jdks}'
-          stream: neon
+          stream: phosphorus
           branch: master
 
-   - The above manual process of updating individual files is automated with the script.
-     **(releng/builder committers)**
-
-     .. code-block:: bash
-
-        cd builder/scripts/branch_cut
-        ./branch_cutter.sh -n $NEXT_RELEASE -c $CURR_RELEASE
+      - project:
+          name: aaa-silicon
+          jobs:
+            - '{project-name}-verify-{stream}-{maven}-{jdks}'
+          stream: silicon
+          branch: stable/silicon
 
 #. Review and submit the changes to releng/builder project. **(releng/builder committers)**
 
