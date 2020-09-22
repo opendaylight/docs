@@ -13,7 +13,9 @@
 from docs_conf.conf import *
 
 # Append to intersphinx_mapping
-intersphinx_mapping['mdsal'] = ('https://docs.opendaylight.org/projects/mdsal/en/v5.0.3/', None)
+intersphinx_mapping['controller'] = ('https://docs.opendaylight.org/projects/controller/en/v2.0.3/', None)
+intersphinx_mapping['infrautils'] = ('https://docs.opendaylight.org/projects/infrautils/en/v1.8.0/', None)
+intersphinx_mapping['mdsal'] = ('https://docs.opendaylight.org/projects/mdsal/en/v6.0.4/', None)
 intersphinx_mapping['odl-integration-test'] = ('https://docs.opendaylight.org/projects/integration-test/en/latest/', None)
 intersphinx_mapping['odl-integration-packaging'] = ('https://docs.opendaylight.org/projects/integration-packaging/en/latest/', None)
 intersphinx_mapping['odl-releng-builder'] = ('https://docs.opendaylight.org/projects/releng-builder/en/latest/', None)
@@ -22,10 +24,8 @@ intersphinx_mapping['opflex'] = ('https://docs.opendaylight.org/projects/opflex/
 # Projects that have stable/branches
 intersphinx_mapping['aaa'] = ('https://docs.opendaylight.org/projects/aaa/en/latest/', None)
 intersphinx_mapping['bgpcep'] = ('https://docs.opendaylight.org/projects/bgpcep/en/latest/', None)
-intersphinx_mapping['controller'] = ('https://docs.opendaylight.org/projects/controller/en/latest/', None)
 intersphinx_mapping['daexim'] = ('https://docs.opendaylight.org/projects/daexim/en/latest/', None)
 intersphinx_mapping['genius'] = ('https://docs.opendaylight.org/projects/genius/en/latest/', None)
-intersphinx_mapping['infrautils'] = ('https://docs.opendaylight.org/projects/infrautils/en/latest/', None)
 intersphinx_mapping['integration-distribution'] = ('https://docs.opendaylight.org/projects/integration-distribution/en/latest/', None)
 intersphinx_mapping['jsonrpc'] = ('https://docs.opendaylight.org/projects/jsonrpc/en/latest/', None)
 intersphinx_mapping['lispflowmapping'] = ('https://docs.opendaylight.org/projects/lispflowmapping/en/latest/', None)
