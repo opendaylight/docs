@@ -36,7 +36,8 @@ intersphinx_mapping['ovsdb'] = ('https://docs.opendaylight.org/projects/ovsdb/en
 intersphinx_mapping['transportpce'] = ('https://docs.opendaylight.org/projects/transportpce/en/latest/', None)
 
 # OpenDaylight Documentation Releases
-intersphinx_mapping['odl-aluminium'] = ('https://docs.opendaylight.org/en/latest/', None)
+intersphinx_mapping['odl-silicon'] = ('https://docs.opendaylight.org/en/latest/', None)
+intersphinx_mapping['odl-aluminium'] = ('https://docs.opendaylight.org/en/stable-aluminium/', None)
 intersphinx_mapping['odl-magnesium'] = ('https://docs.opendaylight.org/en/stable-magnesium/', None)
 intersphinx_mapping['odl-sodium'] = ('https://docs.opendaylight.org/en/stable-sodium/', None)
 intersphinx_mapping['odl-neon'] = ('https://docs.opendaylight.org/en/stable-neon/', None)
