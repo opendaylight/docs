@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a6cd914_969dc049",
+        "filename": "docs/release-notes/projects/transportpce.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 7217
+      },
+      "writtenOn": "2020-09-28T13:12:31Z",
+      "side": 1,
+      "message": "A part of the computation --\u003e Impairment aware path calculation can be delegated to a GNPY server. (This is not exactely done to offload the PCE, since the PCE still do the long part of the task. And also why do you add \"experimental\" support. I guess it can be considered as consolidated now?)",
+      "range": {
+        "startLine": 41,
+        "startChar": 21,
+        "endLine": 41,
+        "endChar": 32
+      },
+      "revId": "cb7e31a455a050799599d4d77e40e8255f611fbf",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8030afbd_91187293",
+        "filename": "docs/release-notes/projects/transportpce.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 7217
+      },
+      "writtenOn": "2020-09-28T13:12:31Z",
+      "side": 1,
+      "message": "To be removed. We have now a GE board in the xml spdr configuration)",
+      "range": {
+        "startLine": 107,
+        "startChar": 7,
+        "endLine": 108,
+        "endChar": 52
+      },
+      "revId": "cb7e31a455a050799599d4d77e40e8255f611fbf",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bb623279_21a59007",
+        "filename": "docs/release-notes/projects/transportpce.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 7217
+      },
+      "writtenOn": "2020-09-28T13:12:31Z",
+      "side": 1,
+      "message": "I guess this has been solved to",
+      "range": {
+        "startLine": 113,
+        "startChar": 0,
+        "endLine": 114,
+        "endChar": 44
+      },
+      "revId": "cb7e31a455a050799599d4d77e40e8255f611fbf",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    }
+  ]
+}
