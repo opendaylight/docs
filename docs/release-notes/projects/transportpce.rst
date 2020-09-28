@@ -28,14 +28,20 @@ The TransportPCE implementation includes:
    * - **Northbound API**
      - These APIs are for higher level applications, implemented in the Service Handler bundle.
        It relies on the service model defined in the MSA.
+       A minimal experimental support of TAPI topology is also proposed but is not installed by default.
    * - **Renderer and OLM**
      - The renderer and OLM (Optical Line Management) bundles allow configuring OpenROADM devices
        through a southbound NETCONF/YANG interface (based on the MSA device models).
        This release supports the OpenROADM devices version 1.2.1 version 2.2.1.
    * - **Topology Management**
-     - This bundle is based on the defined MSA network model.
+     - This feature is based on the defined MSA network model.
    * - **Path Calculation Engine (PCE)**
      - PCE here has a different meaning than the BGPCEP project since it is not based on (G)MPLS.
+       This bundle allows to compute path across the topology to create services. Impairment aware path computation
+       can be delegated to a GNPy server (hardcoded server address configuration and limited support at that time)
+   * - **Inventory**
+     - This feature is not installed by default.
+       It proposes an experimental support for an external inventory DB currently limited to 1.2.1 OpenROADM devices.
 
 The internal RPCs between those modules are defined in the Transport Service Path models.
 
