@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "bdc9ad7a_a7ac2edc",
+        "filename": "docs/release-notes/projects/transportpce.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 7217
+      },
+      "writtenOn": "2020-09-28T14:23:14Z",
+      "side": 1,
+      "message": "\u003e OK with this formulation that is more precise\n\u003e yes most of the code is consolidated but that does not make all.\n\u003e I\u0027ve replaced \"experimental\" by \"hardcoded server address configuration and limited support at that time\" cause at that time, there is no possiblity to configure the server address and some fields are not supported.",
+      "parentUuid": "e4e27bd3_e829daff",
+      "range": {
+        "startLine": 41,
+        "startChar": 21,
+        "endLine": 41,
+        "endChar": 32
+      },
+      "revId": "cb7e31a455a050799599d4d77e40e8255f611fbf",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8030afbd_91187293",
         "filename": "docs/release-notes/projects/transportpce.rst",
         "patchSetId": 2
@@ -96,6 +120,30 @@
     },
     {
       "key": {
+        "uuid": "062f2436_fa83787c",
+        "filename": "docs/release-notes/projects/transportpce.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 7217
+      },
+      "writtenOn": "2020-09-28T14:23:14Z",
+      "side": 1,
+      "message": "\u003e OK so JIRA ticket not up-to-date. I let you fix it.",
+      "parentUuid": "7ad7a749_beb5a5ac",
+      "range": {
+        "startLine": 107,
+        "startChar": 7,
+        "endLine": 108,
+        "endChar": 52
+      },
+      "revId": "cb7e31a455a050799599d4d77e40e8255f611fbf",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bb623279_21a59007",
         "filename": "docs/release-notes/projects/transportpce.rst",
         "patchSetId": 2
@@ -131,6 +179,30 @@
       "side": 1,
       "message": "idem",
       "parentUuid": "bb623279_21a59007",
+      "range": {
+        "startLine": 113,
+        "startChar": 0,
+        "endLine": 114,
+        "endChar": 44
+      },
+      "revId": "cb7e31a455a050799599d4d77e40e8255f611fbf",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "09a36098_15548376",
+        "filename": "docs/release-notes/projects/transportpce.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 7217
+      },
+      "writtenOn": "2020-09-28T14:23:14Z",
+      "side": 1,
+      "message": "\u003e idem",
+      "parentUuid": "02faa640_3650bbde",
       "range": {
         "startLine": 113,
         "startChar": 0,
