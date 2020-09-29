@@ -23,10 +23,17 @@ Aluminium
 
 :Documentation:
     * :doc:`Getting Started Guide <odl-aluminium:getting-started-guide/index>`
-    * :doc:`Developers Guide <odl-aluminium:developer-guide/index>`
-    * :doc:`User Guide <odl-aluminium:user-guide/index>`
-    * :doc:`Installation Guide <odl-aluminium:getting-started-guide/installing_opendaylight>`
+    * :doc:`Project Guides <odl-aluminium:index>`
     * :doc:`Release Notes <odl-aluminium:release-notes/index>`
+
+:ODL Micro Downloads:
+    * `ODL Micro NETCONF Aluminium Tar
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/odlmicro/micro-netconf/1.0.0/micro-netconf-1.0.0-micro.tar>`_
+    * `ODL Micro OPENFLOW Aluminium Tar
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/odlmicro/micro-openflowplugin/1.0.0/micro-openflowplugin-1.0.0-micro.tar>`_
+
+:ODL Micro Docs:
+    * `Getting Started Guide <https://wiki.opendaylight.org/x/YBQF>`_
 
 
 Magnesium-SR2
@@ -45,9 +52,7 @@ Magnesium-SR2
 
 :Documentation:
     * :doc:`Getting Started Guide <odl-magnesium:getting-started-guide/index>`
-    * :doc:`Developers Guide <odl-magnesium:developer-guide/index>`
-    * :doc:`User Guide <odl-magnesium:user-guide/index>`
-    * :doc:`Installation Guide <odl-magnesium:getting-started-guide/installing_opendaylight>`
+    * :doc:`Project Guides <odl-magnesium:index>`
     * :doc:`Release Notes <odl-magnesium:release-notes/index>`
 
 
