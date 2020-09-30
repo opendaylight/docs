@@ -23,21 +23,23 @@ Behavior/Feature Changes
 
 This release introduces the following behavior changes:
 
-*
+* No behavior change in this release.
 
 New Features
 ============
 
 This release provides the following new features:
 
-*
+* HWVTEP disconnect command support from ODL for L2GW devices which can be used to flap
+  the connection with ODL to explicitly trigger hwvtep reconciliation.
+  command format : hwvtep:disconnect -nodeid <Hwvtep Node ID> from karaf console
 
 Deprecated Features
 ===================
 
 This release removed the following features:
 
-*
+* No features has been deprecated in this release.
 
 Resolved Issues
 ===============
@@ -51,20 +53,15 @@ The following table lists the resolved issues fixed this release.
    * - **Key**
      - **Summary**
 
-   * - <bug ID>
-     -
+   * - OVSDB-487
+     - Migrate to MD-SAL APIs 
+
+   * - OVSDB-495
+     - Eliminate ControllerMdsalUtils
+
+   * - OVSDB-494
+     - Fix Hwvtep Port reconciliation to handle Physical_Port Delete and Add from switch
 
 Known Issues
 ============
-
-The following table lists the known issues that exist in this release.
-
-.. list-table::
-   :widths: 15 55
-   :header-rows: 1
-
-   * - **Key**
-     - **Summary**
-
-   * - <bug ID>
-     -
+There are no known issues in this release.
