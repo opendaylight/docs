@@ -53,23 +53,32 @@ The OpenFlow Plugin project provides the following functionality:
 Behavior/Feature Changes
 ========================
 
-This release introduces the following behavior changes:
+.. list-table::
+   :widths: 15 55
+   :header-rows: 1
 
-*
+   * - **Key**
+     - **Summary**
+	 
+   * - OPNFLWPLUG-1087
+     - ODL Controller should provide a view of openflow node reconciliation status
+	 
+   * - OPNFLWPLUG-1098
+     - Migrate addAugmentation(Class, Augmentation) users
+
+   * - OPNFLWPLUG-1099
+     - Migrate call sites using legacy narrowing to Uint types
 
 New Features
 ============
 
-This release provides the following new features:
+This release does not modify any existing features.
 
-*
 
 Deprecated Features
 ===================
 
-This release removed the following features:
-
-*
+None
 
 Resolved Issues
 ===============
@@ -83,20 +92,25 @@ The following table lists the resolved issues fixed this release.
    * - **Key**
      - **Summary**
 
-   * - <bug ID>
-     -
+   * - OPNFLWPLUG-1080
+     - Nodes not populated in operational/opendaylight-inventory:nodes after Controller Isolation
+
+   * - OPNFLWPLUG-1082
+     - When switch changes owner, all cluster members delete switch inventory operational
+
+   * - OPNFLWPLUG-1090
+     - ConcurrentModificationException: null when connecting cbench switches
+
+   * - OPNFLWPLUG-1093
+     - Exceptions Multiple entries with same key seen in openflowplugin
+
+   * - OPNFLWPLUG-1094
+     - Include switch certificate key attributes in TLS Authentication Failure notification
+
+   * - OPNFLWPLUG-1101
+     - Flow descriptors are not cleared when using delete all flows RPC
 
 Known Issues
 ============
 
-The following table lists the known issues that exist in this release.
-
-.. list-table::
-   :widths: 15 55
-   :header-rows: 1
-
-   * - **Key**
-     - **Summary**
-
-   * - <bug ID>
-     -
+No Known issues in this release.
