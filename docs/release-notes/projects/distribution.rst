@@ -32,23 +32,18 @@ scripts. Example of these scripts:
 Behavior/Feature Changes
 ========================
 
-This release introduces the following behavior changes:
-
-*
+No behavior or feature changes in this release.
 
 New Features
 ============
 
-This release provides the following new features:
-
-*
+New yangtools and mdsal experimental features.
+For more details check both projects information.
 
 Deprecated Features
 ===================
 
-This release removed the following features:
-
-*
+No deprecated features in this release.
 
 Resolved Issues
 ===============
@@ -62,20 +57,11 @@ The following table lists the resolved issues fixed this release.
    * - **Key**
      - **Summary**
 
-   * - <bug ID>
-     -
+   * - INTDIST-109
+     - RFC7950 violation log messages in karaf.log
 
 Known Issues
 ============
 
-The following table lists the known issues that exist in this release.
+There are no known issues in this release.
 
-.. list-table::
-   :widths: 15 55
-   :header-rows: 1
-
-   * - **Key**
-     - **Summary**
-
-   * - <bug ID>
-     -
