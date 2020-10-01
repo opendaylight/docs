@@ -12,50 +12,27 @@ state from the file system.
 Behavior/Feature Changes
 ========================
 
-This release introduces the following behavior changes:
+No changes in this release
 
-*
 
 New Features
 ============
 
-This release provides the following new features:
+No new features has been introduced in this release
 
-*
 
 Deprecated Features
 ===================
 
-This release removed the following features:
+No features has been deprecated in this release
 
-*
 
 Resolved Issues
 ===============
 
-The following table lists the resolved issues fixed this release.
-
-.. list-table::
-   :widths: 15 55
-   :header-rows: 1
-
-   * - **Key**
-     - **Summary**
-
-   * - <bug ID>
-     -
+No issues has been fixed in this release
 
 Known Issues
 ============
 
-The following table lists the known issues that exist in this release.
-
-.. list-table::
-   :widths: 15 55
-   :header-rows: 1
-
-   * - **Key**
-     - **Summary**
-
-   * - <bug ID>
-     -
+No known issues has been reported in this release
