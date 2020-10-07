@@ -1,10 +1,10 @@
-==========================
-Aluminium Platform Upgrade
-==========================
+========================
+Silicon Platform Upgrade
+========================
 
 This document describes the steps to help users upgrade to the
 Magnesium planned platform. Refer to `Managed Release Integrated (MRI)
-project <https://git.opendaylight.org/gerrit/q/topic:aluminium-mri>`_
+project <https://git.opendaylight.org/gerrit/q/topic:silicon-mri>`_
 upgrade patches for more information.
 
 .. contents:: Contents
@@ -31,41 +31,48 @@ Version Bump
 Before performing platform upgrade, do the following to bump the odlparent
 versions (for example, `bump-odl-version <https://github.com/skitt/odl-tools/blob/master/bump-odl-version>`_):
 
-1. Update the odlparent version from 6.0.4 to 7.0.3. There should
+1. Update the odlparent version from 7.0.5 to 8.0.0. There should
    not be any reference to **org.opendaylight.odlparent**, except
-   for 7.0.3. This includes custom feature.xml templates
+   for 8.0.0. This includes custom feature.xml templates
    (src/main/feature/feature.xml), the version range there should
-   be "[7,8)" instead of "[6,7)", "[5.0.3,6)" or any other variation.
+   be "[8,9)" instead of "[8,9)", "[5.0.3,6)" or any other variation.
 
  .. code-block:: none
 
-  bump-odl-version odlparent 6.0.4 7.0.3
+  bump-odl-version odlparent 7.0.5 8.0.0
 
-2. Update the direct yangtools version references from 4.0.6 to 5.0.3,
+2. Update the direct yangtools version references from 5.0.5 to 6.0.0,
    There should not be any reference to **org.opendaylight.yangtools**,
-   except for 5.0.3. This includes custom feature.xml templates
+   except for 6.0.0. This includes custom feature.xml templates
    (src/main/feature/feature.xml), the version range there should
-   be "[5,6)" instead of "[4,5)".
+   be "[6,7)" instead of "[5,6)".
 
-3. Update the MD-SAL version from 5.0.9 to 6.0.2. There should not be
-   any reference to **org.opendaylight.mdsal**, except for 6.0.2.
-
- .. code-block:: none
-
-  rpl -R 5.0.9 6.0.2
-
-4. Update the Controller version from 1.11.0 to 2.0.2. There should not be
-   any reference to **org.opendaylight.controller**, except for 2.0.2.
+3. Update the MD-SAL version from 6.0.4 to 7.0.0. There should not be
+   any reference to **org.opendaylight.mdsal**, except for 7.0.0.
 
  .. code-block:: none
 
-  rpl -R 1.11.0 2.0.2
+  rpl -R 6.0.4 7.0.0
+
+4. Update the Controller version from 2.0.3 to 3.0.0. There should not be
+   any reference to **org.opendaylight.controller**, except for 3.0.0.
+
+ .. code-block:: none
+
+  rpl -R 2.0.3 3.0.0
+
+5. Update the InfraUtils version from 1.8.0 to 1.9.0. There should not be
+   any reference to **org.opendaylight.infrautils**, except for 1.9.0.
+
+ .. code-block:: none
+
+  rpl -R 1.8.0 1.9.0
 
 Install Dependent Projects
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Before performing platform upgrade, users must also install
 any dependent project. To locally install a dependent project,
-pull and install the respective `magnesium-mri <https://git.opendaylight.org/gerrit/q/topic:aluminium-mri>`_ changes for any dependent project.
+pull and install the respective `silicon-mri <https://git.opendaylight.org/gerrit/q/topic:silicon-mri>`_ changes for any dependent project.
 
 Perform the following steps to save time when locally installing
 any dependent project:
@@ -87,13 +94,13 @@ Upgrade the ODL Parent
 ----------------------
 The following sub-section describes how to upgrade to
 the ODL Parent version 4. Refer to the `ODL Parent Release Notes
-<https://github.com/opendaylight/odlparent/blob/master/docs/NEWS.rst#version-700>`_
+<https://github.com/opendaylight/odlparent/blob/master/docs/NEWS.rst#version-800>`_
 for more information.
 
 Features
 ^^^^^^^^
 Any version range referencing version 6 of ODL Parent must be changed
-to “[7,8)” for ODL Parent 7.
+to “[8,9)” for ODL Parent 7.
 
  .. code-block:: xml
 
@@ -104,65 +111,24 @@ to “[7,8)” for ODL Parent 7.
 ODL Parent Impacts
 ------------------
 
-OSGi Compendium dependency
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-ODL Parent no longer declares the old OSGi Release 5 ``org.osgi.compendium`` artifact.
-Please migrate to the correct Release 6 artifact.
+Enforcing maven-modernizer-plugin
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ODL Parent has switched ``maven-modernizer-plugin`` to enforcing mode
+and upgraded the rules to reflect Java 11 requirement. The enforcement
+can be switched off on a per-artifact basis using:
 
  .. code-block:: xml
 
-   <dependency>
-       <groupId>org.osgi</groupId>
-      <artifactId>osgi.cmpn</artifactId>
-   </dependency>
-
-JAXB dependencies
-^^^^^^^^^^^^^^^^^
-ODL Parent no longer declares ``javax.xml.bind`` dependencies and provides
-replacement declarations from the Jakarta project.
-
- .. code-block:: xml
-
-   <dependency>
-       <groupId>jakarta.xml.bind</groupId>
-      <artifactId>jakarta.xml.bind-api</artifactId>
-   </dependency>
-
-Jackson feature name
-^^^^^^^^^^^^^^^^^^^^
-The name of the Jackson feature changed to reflect the upgrade to version ``2.10``.
-The new name is ``odl-jackson-2.10``.
+   <properties>
+       <odlparent.modernizer.enforce>false</odlparent.modernizer.enforce>
+   </properties>
 
 
 YANG Tools Impacts
 ------------------
 
-YANG parser validates XPath expressions
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-In an ongoing effort to improve our feature-completeness, YANG parser now
-requires an XPath parsing library and will perform validation of syntactic
-well-formedness of every XPath expression encountered in YANG models --
-most notably ``when`` and ``must`` statement arguments are covered. Accepted
-syntax is strictly compliant with
-`RFC7950 <https://tools.ietf.org/html/rfc7950#section-6.4>`__.
-
-This also extends to ``path`` statement arguments, as encountered in
-``type leafref`` constructs. Unlike most parsers out there, YANG Tools
-does not allow any XPath expression to be used in this context, but rather
-follows strict definition in
-`RFC7950 <https://tools.ietf.org/html/rfc7950#section-9.9.2>`__, augmented
-to deal with the change proposed in
-`Errata 5617 <https://www.rfc-editor.org/errata/eid5617>`_. This should
-cover even the non-RFC7950-compliant models coming from various standards
-bodies, but it is certainly possible that a previously-accepted model will
-be rejected by the parser. If that happens, the chances are that the model
-itself is invalid. Please consult RFC7950 and the model author before
-filing an issue with
-`YANG Tools JIRA <https://jira.opendaylight.org/projects/YANGTOOLS>`_.
-
-
-SchemaContext is being retired
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SchemaContext is being retired (continued)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 After many years of development and incremental updates, this release marks
 the start of the transition away from ``SchemaContext``. The object model
 exposed by it is problematic in more ways than one. The replacement construct
@@ -172,82 +138,9 @@ and its related interfaces. ``EffectiveModelContext`` retains its
 used in that capacity. Users are encouraged to update their interfaces to
 accept and give out EffectiveModelContext instances.
 
+In this release this effort resulted in removal of ``SchemaContextProvider``
+interface and vast majority of sites now require an ``EffectiveModelContext``.
 
-Restricted YANG parser internals
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-A number of internal classes now require an proper service injection of their
-dependencies. This is step is taken so that we can clearly separate API
-contract from implementation details.
-
-The primary interface to YANG parser is ``YangParserFactory``, which is
-available as an OSGi service, as well as being exposed to Guice and ServiceLoader
-injection mechanisms.
-
-Single-classloader environments (such as JUnit-based unit tests) are not directly
-impacted by this change, as instantiation paths which are not provided with an
-instance of YangParserFactory end up falling back to ServiceLoader-based lookup.
-
-This fallback mechanism does not extend to OSGi and other multi-classloader
-environments and therefore users need to acquire a YangParserFactory service
-from the OSGi service registry and pass it to other YANG tools functional blocks
-as appropriate.
-
-These access restrictions will be extended to all environments in a future
-major version with the use of JPMS.
-
-
-SchemaNode methods use collections with covariance
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-A number of methods which use to return invariant Sets, such as this:
-
- .. code-block:: java
-
-   interface SchemaContext {
-     Set<Module> getModules();
-   }
-
-now use Collection with covariance, such as:
-
- .. code-block:: java
-
-   interface SchemaContext {
-     Collection<? extends Module> getModules();
-   }
-
-For most cases this is not a problem, as the returned collection is only
-ever iterated through, but code that stores the result will need to either
-update the declaration, or use ``var`` type declaration available since
-Java 10 as part of `JEP-286 <https://openjdk.java.net/jeps/286>`__:
-
- .. code-block:: java
-
-   final var modules = context.getModules();
-   final int size = modules.size();
-
-
-XML and JSON parsers accept only 'true' and 'false' for booleans
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Due to historic implementation reasons, we have accepted various
-capitalizations of ``true`` and ``false`` in ``type boolean`` leaf
-values.
-
-This leniency results in incorrect interpretation of constructs such as
-
- .. code-block:: none
-
-   leaf foo {
-     type union {
-       type boolean;
-       type string;
-     }
-   }
-
-leading to value being changed when subjected to decode/encode cycle.
-Both codecs have been adjusted to accept only ``true`` and ``false``
-literals.
-
-Further details about this change can be found in the corresponding
-`YANG Tools issue <https://jira.opendaylight.org/browse/YANGTOOLS-1097>`__.
 
 
 MD-SAL Impacts
