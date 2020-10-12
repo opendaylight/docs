@@ -40,8 +40,9 @@ release of both managed and self-managed projects.
      - Initial Checkpoint + 2 weeks
      - Start Date +4 weeks
      - Deadline for Release Integrated Projects (currently, ODLPARENT,
-       YANGTOOLS and MDSAL) to provide the desired version deliverables for
-       downstream Snapshot Integrated Projects to consume.
+       YANGTOOLS, MDSAL, CONTROLLER and INFRAUTILS) to provide the desired
+       version deliverables for downstream Snapshot Integrated Projects to
+       consume.
    * - Version Bump
      - 2019-10-16
      - 2020-04-14
