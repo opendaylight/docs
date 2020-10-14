@@ -43,7 +43,7 @@ release of both managed and self-managed projects.
        YANGTOOLS and MDSAL) to provide the desired version deliverables for
        downstream Snapshot Integrated Projects to consume.
    * - Version Bump
-     - 2019-10-16
+     - 2020-10-16
      - 2020-04-14
      - Release Integrated Deadline + 1 day
      - Start Date +4 weeks 1 day
