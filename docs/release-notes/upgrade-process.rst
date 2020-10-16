@@ -158,7 +158,18 @@ Binding DTOs enforce non-null keys
 Binding DTOs (data transfer objects), created through builders for a keyed
 list now properly enforce non-null key attributes. This means any code that
 fails to properly set up either ``withKey()`` or individual component leaf
-values will throw a ``NullPointerException``.
+values will throw a ``NullPointerException`` like this:
+
+ .. code-block:: none
+
+    java.lang.NullPointerException: Supplied value may not be null
+            at java.base/java.util.Objects.requireNonNull(Objects.java:246)
+            at org.opendaylight.yangtools.yang.binding.CodeHelpers.requireValue(CodeHelpers.java:63)
+            at org.opendaylight.yang.gen.v1.urn.tbd.params.xml.ns.yang.network.topology.rev131021.network.topology.topology.NodeKey.<init>(NodeKey.java:18)
+            at org.opendaylight.yang.gen.v1.urn.tbd.params.xml.ns.yang.network.topology.rev131021.network.topology.topology.NodeBuilder$NodeImpl.<init>(NodeBuilder.java:236)
+            at org.opendaylight.yang.gen.v1.urn.tbd.params.xml.ns.yang.network.topology.rev131021.network.topology.topology.NodeBuilder.build(NodeBuilder.java:219)
+            at org.opendaylight.ovsdb.southbound.ovsdb.transact.BridgeOperationalStateTest.<init>(BridgeOperationalStateTest.java:57)
+
 
 This change will typically affect incorrect test data, as production values
 tend to be validated on receiver side and would report this error later
