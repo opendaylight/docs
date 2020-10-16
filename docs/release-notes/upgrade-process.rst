@@ -2,8 +2,8 @@
 Aluminium Platform Upgrade
 ==========================
 
-This document describes the steps to help users upgrade to the
-Magnesium planned platform. Refer to `Managed Release Integrated (MRI)
+This document describes the steps to help users upgrade from Magnesium
+to the Aluminium planned platform. Refer to `Managed Release Integrated (MRI)
 project <https://git.opendaylight.org/gerrit/q/topic:aluminium-mri>`_
 upgrade patches for more information.
 
@@ -16,7 +16,10 @@ JDK 11 Version
 ^^^^^^^^^^^^^^
 Aluminium requires Java 11, both during compile-time and run-time.
 Make sure to install JDK 11 corresponding to at least openjdk-11.0.6,
-and that the JAVA_HOME environment variable is points to the JDK directory.
+and that the JAVA_HOME environment variable points to the JDK directory.
+This variable is now particularly needed to perform the Javadoc generation.
+You may still build your project without it by using maven with the option
+"-Dmaven.javadoc.skip".
 
 Controller is a MRI project
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -60,6 +63,9 @@ versions (for example, `bump-odl-version <https://github.com/skitt/odl-tools/blo
  .. code-block:: none
 
   rpl -R 1.11.0 2.0.2
+
+Current Aluminium stable and development versions usable for dependencies can be
+found at `this page <https://docs.opendaylight.org/projects/integration-distribution/en/stable-aluminium/platform-versions.html>`__.
 
 Install Dependent Projects
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -140,7 +146,7 @@ YANG Tools Impacts
 YANG parser validates XPath expressions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 In an ongoing effort to improve our feature-completeness, YANG parser now
-requires an XPath parsing library and will perform validation of syntactic
+requires a XPath parsing library and will perform a validation of syntactic
 well-formedness of every XPath expression encountered in YANG models --
 most notably ``when`` and ``must`` statement arguments are covered. Accepted
 syntax is strictly compliant with
@@ -157,7 +163,7 @@ cover even the non-RFC7950-compliant models coming from various standards
 bodies, but it is certainly possible that a previously-accepted model will
 be rejected by the parser. If that happens, the chances are that the model
 itself is invalid. Please consult RFC7950 and the model author before
-filing an issue with
+filling an issue with
 `YANG Tools JIRA <https://jira.opendaylight.org/projects/YANGTOOLS>`_.
 
 
@@ -175,8 +181,8 @@ accept and give out EffectiveModelContext instances.
 
 Restricted YANG parser internals
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-A number of internal classes now require an proper service injection of their
-dependencies. This is step is taken so that we can clearly separate API
+A number of internal classes now requires a proper service injection of their
+dependencies. This step is taken so that we can clearly separate API
 contract from implementation details.
 
 The primary interface to YANG parser is ``YangParserFactory``, which is
@@ -249,6 +255,12 @@ literals.
 Further details about this change can be found in the corresponding
 `YANG Tools issue <https://jira.opendaylight.org/browse/YANGTOOLS-1097>`__.
 
+RPCs return codes slight evolution
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+There can be minor changes in the return codes sent by the RPCs.
+Most of the time, this concerns HTTP 404 codes "Not found" replaced by
+HTTP 409 codes "Conflict".
+`Example here <https://git.opendaylight.org/gerrit/c/transportpce/+/92349>`__.
 
 MD-SAL Impacts
 --------------
@@ -297,8 +309,8 @@ in the next section. For further details see the
 
 YANG lists with key and system ordering result in Map
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Type mapping of simple keyed lists has changed to better reflect
-their nature. Previously a YANG declaration
+Type mapping of simple keyed lists has changed to better reflect their nature.
+Previously a YANG declaration
 
  .. code-block:: none
 
@@ -415,10 +427,20 @@ in OSGi. Users are advised to use proper injection of
 ``org.opendaylight.mdsal.binding.dom.codec.api`` interfaces available in the
 OSGi service registry.
 
-This is a first step towards isolating API contract from implementation
-details. This isolation will be further extended to all enviornments through
-the use of JPMS in a future major release.
+This means that if you are using in your java code an import of a class in
+``org.opendaylight.mdsal.binding.dom.codec.impl`` , Karaf will not properly work
+at run-time. So if you are still using this API contract for JSON or XML parsing,
+it is probably a good idea to now use the OSGi ``bindingDOMCodecServices``
+as declared in the `blueprint here <https://git.opendaylight.org/gerrit/c/transportpce/+/92403/14/pce/src/main/resources/OSGI-INF/blueprint/pce-blueprint.xml>`__.
 
+This is a first step towards isolating API contract from implementation details.
+This isolation will be further extended to all environments through the use of
+JPMS in a future major release.
+
+Since this only concerns OSGi, this API contract can still (and even maybe must)
+be used in Junit tests. In that case, some adaptations will be needed and is
+probably worth switching from ``SchemaContext`` to ``EffectiveModelContext`` at
+the same time, such as in the `example here <https://git.opendaylight.org/gerrit/c/transportpce/+/92439/12/test-common/src/main/java/org/opendaylight/transportpce/test/DataStoreContextImpl.java>`__.
 
 WriteOperations.put(..., boolean) and WriteOperations.merge(..., boolean) removed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -484,6 +506,6 @@ property set, it is no longer considered a binding contract and future releases
 will most likely stop adding this property in a future minor release.
 
 Users are advised to stop specifying this attribute when making references
-to OSGi services.
+to OSGi services, see `example here <https://git.opendaylight.org/gerrit/c/transportpce/+/92347>`__.
 
 
