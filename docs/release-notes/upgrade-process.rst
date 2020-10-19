@@ -446,3 +446,11 @@ ODL Feature Removed
 The odl-mdsal-model-draft-bierman-netconf-restconf-02 feature was removed.
 This feature, along with org.opendaylight.mdsal.model/ietf-restconf artifact
 was removed from MDSAL, but was migrated to its sole user in these patches.
+
+restconf-artifacts BOM deprecation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The restconf-artifacts BOM, previously present in Sodium and from which was
+inherited the version of the odl-restconf-all dependency (particularly useful
+in Karaf feature poms declaration), is no more available.
+It is now part of the netconf-artifacts BOM.
