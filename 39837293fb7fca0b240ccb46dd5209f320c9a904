@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6f553406_ddd483f5",
+        "filename": "docs/release-notes/upgrade-process.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 450,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2020-10-19T14:18:37Z",
+      "side": 1,
+      "message": "If this feature was removed then I believe deprecation is the incorrect word here. Normally deprecation means feature is still available but it\u0027s use is discouraged as it will be removed in a later release. In this case if it\u0027s removed we should say \"removed\" instead.\n\nCan you confirm if my understanding is correct here?",
+      "range": {
+        "startLine": 450,
+        "startChar": 23,
+        "endLine": 450,
+        "endChar": 34
+      },
+      "revId": "39837293fb7fca0b240ccb46dd5209f320c9a904",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    }
+  ]
+}
