@@ -36,9 +36,23 @@ There are no deprecated features in this release, but there is a large number of
 * prefix-based shards have been completely removed
 * the proof-of-concept ``messagebus`` component was removed
 
+Resolved Issues
+===============
+
+.. jira_issues:: project = CONTROLLER AND resolution = Done AND fixVersion in (4.0.0,4.0.1,4.0.2,4.0.3) ORDER BY KEY ASC
+   :anonymous: true
+   :baseurl: https://jira.opendaylight.org/
+   :columns: Issue Type;Key;Summary;Status;Resolution;fixVersion;
+   :maximum_issues: 1000
+
 Known Issues
 ============
 
-Here is the link to the known issues exist in this release:
+The following table lists the known issues that exist in this release.
 
-`OpenDaylight JIRA Tickets - Known Issue <https://jira.opendaylight.org/issues/?jql=project+%3D+controller+AND+type+%3D+Bug+AND+status+not+in+%28Resolved%2C+Done%2C+Closed%29+ORDER+BY+issuetype+DESC%2C+key+ASC>`_
+.. jira_issues:: project = CONTROLLER AND affectedVersion in (4.0.0,4.0.1,4.0.2,4.0.3) and fixVersion not in (4.0.0,4.0.1,4.0.2,4.0.3) ORDER BY KEY ASC
+   :anonymous: true
+   :baseurl: https://jira.opendaylight.org/
+   :columns: Issue Type;Key;Summary;Status;Resolution;fixVersion;
+   :maximum_issues: 1000
+
