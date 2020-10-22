@@ -32,14 +32,17 @@ Here is the link to the features removed in this release:
 Resolved Issues
 ===============
 
-Here is the link to the resolved issues fixed in this release:
-
-`OpenDaylight JIRA Tickets - Resolved Issue <https://jira.opendaylight.org/issues/?jql=project+%3D+controller+AND+type+%3D+Bug+AND+status+in+%28Resolved%2C+Done%2C+Closed%29+AND+fixVersion+in+%28%22Silicon+GA%22%2C+Silicon%2C+3.0.6%2C+silicon%29++ORDER+BY+issuetype+DESC%2C+key+ASC>`_
+.. jira_issues:: project = CONTROLLER AND resolution = Done AND fixVersion in (3.0.0,3.0.1) ORDER BY KEY ASC
+   :baseurl: https://jira.opendaylight.org/
+   :columns: Issue Type;Key;Summary;Status;Resolution;
 
 
 Known Issues
 ============
 
-Here is the link to the known issues exist in this release:
+The following table lists the known issues that exist in this release.
 
-`OpenDaylight JIRA Tickets - Known Issue <https://jira.opendaylight.org/issues/?jql=project+%3D+controller+AND+type+%3D+Bug+AND+status+not+in+%28Resolved%2C+Done%2C+Closed%29+ORDER+BY+issuetype+DESC%2C+key+ASC>`_
+.. jira_issues:: project = CONTROLLER AND resolution = Done AND affectedVersion in (3.0.0,3.0.1) ORDER BY KEY ASC
+   :baseurl: https://jira.opendaylight.org/
+   :columns: Issue Type;Key;Summary;Status;Resolution;
+

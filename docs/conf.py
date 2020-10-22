@@ -82,5 +82,8 @@ html_context = {
     'version_status': 'supported',
 }
 
+# Helper for JIRA references
+extensions.append('sphinx_confluence')
+
 def setup(app):
     app.add_css_file("css/ribbon.css")
