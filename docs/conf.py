@@ -70,5 +70,10 @@ html_context = {
     'version_status': 'supported',
 }
 
+extensions = [
+    # Helper for JIRA references
+    'sphinx_confluence',
+]
+
 def setup(app):
     app.add_stylesheet("css/ribbon.css")
