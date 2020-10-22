@@ -12,6 +12,9 @@
 
 from docs_conf.conf import *
 
+extensions.append('sphinx_confluence')  # Helper for JIRA references
+
+
 # Append to intersphinx_mapping
 intersphinx_mapping['controller'] = ('https://docs.opendaylight.org/projects/controller/en/v2.0.3/', None)
 intersphinx_mapping['infrautils'] = ('https://docs.opendaylight.org/projects/infrautils/en/v1.8.0/', None)
