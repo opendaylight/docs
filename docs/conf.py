@@ -11,6 +11,7 @@
 ##############################################################################
 
 from docs_conf.conf import *
+import sys, os
 
 # Append to intersphinx_mapping
 intersphinx_mapping['aaa'] = ('https://docs.opendaylight.org/projects/aaa/en/latest/', None)
@@ -86,6 +87,10 @@ spelling_exclude_patterns = ['release-notes/release-notes-*']
 html_context = {
     'version_status': 'supported',
 }
+
+# Helper for JIRA references
+sys.path.append(os.path.abspath('ext'))
+extensions.append('odl-jira')
 
 def setup(app):
     app.add_css_file("css/ribbon.css")
