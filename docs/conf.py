@@ -48,6 +48,8 @@ intersphinx_mapping['odl-carbon'] = ('https://docs.opendaylight.org/en/stable-ca
 
 linkcheck_ignore = [
     'http://localhost',
+    # Ignore example.org urls
+    'http[s]://.*.example.org',
     # Ignore ssh:// links from linkcheck
     'ssh:',
     # Ignore jenkins because it's often slow to respond.
