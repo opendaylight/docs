@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "07caec28_3112a490",
+        "filename": "docs/contributor-guide/newcomers-guide.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 6731
+      },
+      "writtenOn": "2020-10-26T10:30:14Z",
+      "side": 1,
+      "message": "this is a little cumbersome but it is a portable solution,\nmainly aimed to our MAC OS contributors who have the BSD version of sed configured by default on their system.\n\nI\u0027e added below the more efficient GNU sed solution available on all Linux distro",
+      "range": {
+        "startLine": 283,
+        "startChar": 0,
+        "endLine": 286,
+        "endChar": 0
+      },
+      "revId": "098ba8952c93b6b3a5e1ea20e2d3f8f97ea3401f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
