@@ -20,6 +20,7 @@ Getting Started with OpenDaylight
    release-notes/index
    getting-started-guide/index
    developer-guide/developing-apps-on-the-opendaylight-controller
+   contributor-guide/newcomers-guide
 
 OpenDaylight Project Documentation
 ----------------------------------
@@ -52,6 +53,7 @@ Self-Managed Projects
 OpenDaylight Contributor Guides
 -------------------------------
 
+* :doc:`Newcomers Guide <contributor-guide/newcomers-guide>`
 * :doc:`Gerrit Guide <lfdocs:gerrit>`
 * :ref:`Infrastructure Guide <odl-infra>`
 * :doc:`Integration Testing Guide <odl-integration-test:index>`
