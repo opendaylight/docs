@@ -52,6 +52,7 @@ Self-Managed Projects
 OpenDaylight Contributor Guides
 -------------------------------
 
+* :doc:`Newcomers Guide <contributor-guide/newcomers-guide>`
 * :doc:`Gerrit Guide <lfdocs:gerrit>`
 * :ref:`Infrastructure Guide <odl-infra>`
 * :doc:`Integration Testing Guide <odl-integration-test:index>`
