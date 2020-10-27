@@ -2,8 +2,8 @@
 Silicon Platform Upgrade
 ========================
 
-This document describes the steps to help users upgrade to the
-Magnesium planned platform. Refer to `Managed Release Integrated (MRI)
+This document describes the steps to help users upgrade from Aluminium
+to Silicon planned platform. Refer to `Managed Release Integrated (MRI)
 project <https://git.opendaylight.org/gerrit/q/topic:silicon-mri>`_
 upgrade patches for more information.
 
@@ -14,15 +14,15 @@ Preparation
 
 JDK 11 Version
 ^^^^^^^^^^^^^^
-Aluminium requires Java 11, both during compile-time and run-time.
-Make sure to install JDK 11 corresponding to at least openjdk-11.0.6,
-and that the JAVA_HOME environment variable is points to the JDK directory.
+Silicon requires Java 11, both during compile-time and run-time.
+Make sure to install JDK 11 corresponding to at least openjdk-11.0.8,
+and that the JAVA_HOME environment variable points to the JDK directory.
 
-Controller is a MRI project
+InfraUtils is a MRI project
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Unlike in previous releases, the Controller project has joined
-the MRI family at the start of Aluminium Simultaneous Release cycle.
-Going forward it is an error to depend on any ``org.opendaylight.controller``
+Unlike in previous releases, the InfraUtils project has joined
+the MRI family at the end of Aluminium Simultaneous Release cycle.
+Going forward it is an error to depend on any ``org.opendaylight.infrautils``
 with a ``-SNAPSHOT`` version.
 
 
@@ -47,26 +47,26 @@ versions (for example, `bump-odl-version <https://github.com/skitt/odl-tools/blo
    (src/main/feature/feature.xml), the version range there should
    be "[6,7)" instead of "[5,6)".
 
-3. Update the MD-SAL version from 6.0.4 to 7.0.0. There should not be
+3. Update the MD-SAL version from 6.0.4 to 7.0.1. There should not be
    any reference to **org.opendaylight.mdsal**, except for 7.0.0.
 
  .. code-block:: none
 
-  rpl -R 6.0.4 7.0.0
+  rpl -R 6.0.4 7.0.1
 
-4. Update the Controller version from 2.0.3 to 3.0.0. There should not be
+4. Update the Controller version from 2.0.3 to 3.0.1. There should not be
    any reference to **org.opendaylight.controller**, except for 3.0.0.
 
  .. code-block:: none
 
-  rpl -R 2.0.3 3.0.0
+  rpl -R 2.0.3 3.0.1
 
-5. Update the InfraUtils version from 1.8.0 to 1.9.0. There should not be
-   any reference to **org.opendaylight.infrautils**, except for 1.9.0.
+5. Update the InfraUtils version from 1.8.0 to 1.9.1. There should not be
+   any reference to **org.opendaylight.infrautils**, except for 1.9.1.
 
  .. code-block:: none
 
-  rpl -R 1.8.0 1.9.0
+  rpl -R 1.8.0 1.9.1
 
 Install Dependent Projects
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -170,6 +170,24 @@ values will throw a ``NullPointerException`` like this:
             at org.opendaylight.yang.gen.v1.urn.tbd.params.xml.ns.yang.network.topology.rev131021.network.topology.topology.NodeBuilder.build(NodeBuilder.java:219)
             at org.opendaylight.ovsdb.southbound.ovsdb.transact.BridgeOperationalStateTest.<init>(BridgeOperationalStateTest.java:57)
 
+In order to resolve this, check the model involved. It will look something
+like this:
+
+ .. code-block:: none
+
+    list Node {
+        key id;
+        leaf id {
+            type string;
+        }
+    }
+
+What the exception is indicating that the ``NodeBuilder`` does not have
+``id`` set, so the resulting ``Node`` cannot be constructed, because it
+has to have a ``NodeKey`` for which ``id`` is mandatory.
+
+With that knowledge, you should examine the caller and understand how
+the builder is initialized.
 
 This change will typically affect incorrect test data, as production values
 tend to be validated on receiver side and would report this error later
@@ -201,6 +219,8 @@ DOM interfaces no longer use SchemaPath identification
 Interfaces for invocation of ``RPCs`` and ``actions``, as well as
 publishing ``notifications``  have switched from using ``SchemaPath`` to
 using either ``QName`` or ``SchemaNodeIdentifier.Absolute``. This allows
+more efficient invocation and removes ambguity around relative SchemaPath
+being or not being allowed.
 
 
 
@@ -213,6 +233,87 @@ and ``ietf-topology-l3-unicast-igp``. For further details see this
 `MD-SAL issue <https://jira.opendaylight.org/browse/MDSAL-590>`__.
 
 
+Final release to include widened Integer/Long/BigInteger compatibility
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Magnesium introduced a change in how uint8, uint16, uint32 and uint64 types
+are mapped to Java. Previously this would be mapped to Short, Integer, Long
+and BigInteger respectively. With Magnesium these are mapped to dedicated
+yang.common.Uint{8,16,32,64}, whose design matches general design of
+java.lang.Integer.
+
+This change obviously requires some amount adaptation, which is why
+compatibility setter methods and contructors are generated, each of which
+converts the wide type to its native mapping, undoing the widening.
+
+Such conversions are costly in terms of both CPU usage, but also cost
+us quite a bit in terms of class size. They also introduce ambiguity, which
+hinders fluent use native methods.
+
+Compatibility methods have been deprecated for removal since their inception,
+and are now officially scheduled for removal in the next major release,
+Phosphorus. The removal is tracked in
+`this MD-SAL issue https://jira.opendaylight.org/browse/MDSAL-490>`__.
+
+
+Final release to include List/Map compatibility mappers
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Aluminium introduced a change in how a keyed list YANG construct is mapped
+to Java. Previously such lists were mapped to ``java.util.List``. This
+mapping resulted in incorrect ``equals()`` behavior of generated DTOs
+for cases the list's ordering is not specified. Furthermore it was not
+possible to locate entries of such lists through their key. Corrected
+mapping to ``java.util.Map`` solves both problems.
+
+A typical impacted YANG snippet would look something like:
+
+ .. code-block:: none
+
+    list foo {
+        key bar;
+        leaf bar {
+            type string;
+        }
+
+        // ordered-by system; is implied
+    }
+
+Since the ordering is left up to the system, YANG tools uses hash maps
+to track such lists, resulting in inherently unstable iteration order.
+
+If the order of entries is significant, then this needs to be expressed
+in the model like this:
+
+ .. code-block:: none
+
+    list foo {
+        key bar;
+        leaf bar {
+            type string;
+        }
+
+        ordered-by user;
+    }
+
+which maps to ``java.util.List`` again.
+
+Aluminium-generated code provides compatibility for users using
+List to access a Map. This layer indexes the presented list into an
+immutable Map and uses that value. This has both performance and
+correctness implications.
+
+Since ``java.util.List`` offers a simple way of building up a set
+of entries without having to deal with entry keys, a migration utility
+is provided in the form of
+``org.opendaylight.yangtools.yang.binding.util.BindingMap``, which
+allows almost seamless migration, especially for unit test code.
+
+The compatibility setters have been deprecated for removal since
+they inception and are now scheduled for removal. Aluminium is the
+last release shipping with them. They will be removed in the next
+release, Phosphorus. The removal is tracked in
+`this MD-SAL issue <https://jira.opendaylight.org/browse/MDSAL-540>`__.
+
+
 Controller Impacts
 ------------------
 
@@ -221,9 +322,9 @@ Use of odl:type in Blueprint is discouraged
 This property has been used for discerning between various implementations
 of MD-SAL services present in the OSGi service registry. As these services have
 been consolidated in the past couple of releases, the use of this qualifier
-is desupported and discouraged. While some services are advertized with this
-property set, it is no longer considered a binding contract and future releases
-will most likely stop adding this property in a future minor release.
+is discouraged. While some services are advertized with this property set, it
+is no longer considered a binding contract and future releases, even minor,
+will most likely stop adding this property.
 
 Users are advised to stop specifying this attribute when making references
 to OSGi services.
