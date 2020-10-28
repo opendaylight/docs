@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f541d788_1dd8d9a0",
+        "filename": "docs/contributor-guide/newcomers-guide.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2020-10-28T12:38:06Z",
+      "side": 1,
+      "message": "Because linkcheck tries to validate all links we need to have an exception to ignore or use real links. I recommend 2 options:\n\n1) Use a real project and patch from ODL Gerrit. This makes a working example which IMO is better than a made up example where the user has to guess.\n\n2) If you want to use a fake project then use something like https://gerrit.example.org as the domain and add \u0027http[s]://.*.example.org\u0027 to docs/conf.py to make all links to example.org ignored",
+      "range": {
+        "startLine": 103,
+        "startChar": 3,
+        "endLine": 103,
+        "endChar": 31
+      },
+      "revId": "501bf21c6188b68029e6a40cc1b4165536d47762",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ca19365d_9bb40a1a",
+        "filename": "docs/contributor-guide/newcomers-guide.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2020-10-28T12:38:06Z",
+      "side": 1,
+      "message": "See comment above",
+      "range": {
+        "startLine": 140,
+        "startChar": 3,
+        "endLine": 140,
+        "endChar": 31
+      },
+      "revId": "501bf21c6188b68029e6a40cc1b4165536d47762",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    }
+  ]
+}
