@@ -12,50 +12,28 @@ devices in the network. The base NETCONF protocol is described in
 Behavior/Feature Changes
 ========================
 
-This release introduces the following behavior changes:
-
-*
+No behavior or feature changes in this release.
 
 New Features
 ============
 
-This release provides the following new features:
-
-*
+No new features in this release.
 
 Deprecated Features
 ===================
 
-This release removed the following features:
-
-*
+No deprecated features in this release.
 
 Resolved Issues
 ===============
 
 The following table lists the resolved issues fixed this release.
 
-.. list-table::
-   :widths: 15 55
-   :header-rows: 1
-
-   * - **Key**
-     - **Summary**
-
-   * - <bug ID>
-     -
+* `Resolved Issues <https://jira.opendaylight.org/browse/NETCONF-720?jql=project%20%3D%20netconf%20%20AND%20resolution%20%3D%20Done%20%20AND%20fixVersion%20%3D%20Aluminium>`_
 
 Known Issues
 ============
 
 The following table lists the known issues that exist in this release.
 
-.. list-table::
-   :widths: 15 55
-   :header-rows: 1
-
-   * - **Key**
-     - **Summary**
-
-   * - <bug ID>
-     -
+* `Open Bugs <https://jira.opendaylight.org/browse/NETCONF-742?jql=project%20%3D%20netconf%20%20AND%20issuetype%20%3D%20Bug%20AND%20resolution%20%3D%20Unresolved>`_
