@@ -5,29 +5,26 @@ OpenDaylight Downloads
 Supported Releases
 ==================
 
-Aluminium
----------
+Aluminium SR1
+-------------
 
 (Current Release)
 
 :Announcement: `Aluminium <https://www.opendaylight.org/>`_
 
 :Original Release Date: September 22, 2020
-:Service Release Date: TBD
+:Service Release Date: November 12, 2020
 
 :Downloads:
     * `OpenDaylight Aluminium Tar
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/0.13.0/opendaylight-0.13.0.tar.gz>`_
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/0.13.1/opendaylight-0.13.1.tar.gz>`_
     * `OpenDaylight Aluminium Zip
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/0.13.0/opendaylight-0.13.0.zip>`_
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/0.13.1/opendaylight-0.13.1.zip>`_
 
 :Documentation:
     * :doc:`Getting Started Guide <odl-aluminium:getting-started-guide/index>`
-    * :doc:`Developers Guide <odl-aluminium:developer-guide/index>`
-    * :doc:`User Guide <odl-aluminium:user-guide/index>`
-    * :doc:`Installation Guide <odl-aluminium:getting-started-guide/installing_opendaylight>`
+    * :doc:`Project Guides <odl-aluminium:index>`
     * :doc:`Release Notes <odl-aluminium:release-notes/index>`
-
 
 Magnesium-SR2
 -------------
@@ -45,9 +42,7 @@ Magnesium-SR2
 
 :Documentation:
     * :doc:`Getting Started Guide <odl-magnesium:getting-started-guide/index>`
-    * :doc:`Developers Guide <odl-magnesium:developer-guide/index>`
-    * :doc:`User Guide <odl-magnesium:user-guide/index>`
-    * :doc:`Installation Guide <odl-magnesium:getting-started-guide/installing_opendaylight>`
+    * :doc:`Project Guides <odl-magnesium:index>`
     * :doc:`Release Notes <odl-magnesium:release-notes/index>`
 
 
@@ -56,6 +51,8 @@ Archived Releases
 
 * `OpenDaylight (Nitrogen and newer) <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/>`_
 * `OpenDaylight (Carbon and earlier) <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/distribution-karaf/>`_
+* `ODL Micro <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/odlmicro/>`_
 * `NeXt UI <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/next/next/>`_
 * `VTN Coordinator <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/vtn/distribution.vtn-coordinator/>`_
 * `OpFlex <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/opflex/>`_
+
