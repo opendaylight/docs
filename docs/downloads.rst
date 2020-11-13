@@ -5,36 +5,26 @@ OpenDaylight Downloads
 Supported Releases
 ==================
 
-Aluminium
----------
+Aluminium SR1
+-------------
 
 (Current Release)
 
 :Announcement: `Aluminium <https://www.opendaylight.org/>`_
 
 :Original Release Date: September 22, 2020
-:Service Release Date: TBD
+:Service Release Date: November 12, 2020
 
 :Downloads:
     * `OpenDaylight Aluminium Tar
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/0.13.0/opendaylight-0.13.0.tar.gz>`_
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/0.13.1/opendaylight-0.13.1.tar.gz>`_
     * `OpenDaylight Aluminium Zip
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/0.13.0/opendaylight-0.13.0.zip>`_
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/0.13.1/opendaylight-0.13.1.zip>`_
 
 :Documentation:
     * :doc:`Getting Started Guide <odl-aluminium:getting-started-guide/index>`
     * :doc:`Project Guides <odl-aluminium:index>`
     * :doc:`Release Notes <odl-aluminium:release-notes/index>`
-
-:ODL Micro Downloads:
-    * `ODL Micro NETCONF Aluminium Tar
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/odlmicro/micro-netconf/1.0.0/micro-netconf-1.0.0-micro.tar>`_
-    * `ODL Micro OPENFLOW Aluminium Tar
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/odlmicro/micro-openflowplugin/1.0.0/micro-openflowplugin-1.0.0-micro.tar>`_
-
-:ODL Micro Docs:
-    * `Getting Started Guide <https://wiki.opendaylight.org/x/YBQF>`_
-
 
 Magnesium-SR2
 -------------
