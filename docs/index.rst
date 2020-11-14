@@ -13,10 +13,11 @@ to documentation, refer to the :ref:`documentation-guide`.
 Getting Started with OpenDaylight
 ---------------------------------
 
+*  `OpenDaylight Downloads <odl-aluminium:downloads>`_
+
 .. toctree::
    :maxdepth: 1
 
-   downloads
    release-notes/index
    getting-started-guide/index
    developer-guide/developing-apps-on-the-opendaylight-controller
