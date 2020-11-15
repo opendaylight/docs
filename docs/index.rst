@@ -13,7 +13,7 @@ to documentation, refer to the :ref:`documentation-guide`.
 Getting Started with OpenDaylight
 ---------------------------------
 
-*  `OpenDaylight Downloads <odl-aluminium:downloads>`_
+* :doc:`OpenDaylight Downloads <odl-aluminium:downloads>`
 
 .. toctree::
    :maxdepth: 1
