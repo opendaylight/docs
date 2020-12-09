@@ -473,16 +473,414 @@ that takes advantage of the above MBeans exposed via Jolokia.
 
 .. _cluster_admin_api:
 
-Geo-distributed Active/Backup Setup
------------------------------------
+Failure handling
+----------------
 
-An OpenDaylight cluster works best when the latency between the nodes is very
-small, which practically means they should be in the same datacenter. It is
-however desirable to have the possibility to fail over to a different
-datacenter, in case all nodes become unreachable. To achieve that, the cluster
-can be expanded with nodes in a different datacenter, but in a way that
-doesn't affect latency of the primary nodes. To do that, shards in the backup
-nodes must be in "non-voting" state.
+Overview
+--------
+
+A fundamental problem in distributed systems is that network
+partitions (split brain scenarios) and machine crashes are indistinguishable
+for the observer, i.e. a node can observe that there is a problem with another
+node, but it cannot tell if it has crashed and will never be available again,
+if there is a network issue that might or might not heal again after a while or
+if process is unresponsive because of overload, CPU starvation or long garbage
+collection pauses.
+
+When there is a crash, we would like to remove the affected node immediately
+from the cluster membership. When there is a network partition or unresponsive
+process we would like to wait for a while in the hope that it is a transient
+problem that will heal again, but at some point, we must give up and continue
+with the nodes on one side of the partition and shut down nodes on the other
+side. Also, certain features are not fully available during partitions so it
+might not matter that the partition is transient or not if it just takes too
+long. Those two goals are in conflict with each other and there is a trade-off
+between how quickly we can remove a crashed node and premature action on
+transient network partitions.
+
+Split Brain Resolver
+--------------------
+
+You need to enable the Split Brain Resolver by configuring it as downing
+provider in the configuration::
+
+    akka.cluster.downing-provider-class = "akka.cluster.sbr.SplitBrainResolverProvider"
+
+You should also consider different downing strategies, described below.
+
+.. note:: If no downing provider is specified, NoDowning provider is used.
+
+All strategies are inactive until the cluster membership and the information about
+unreachable nodes have been stable for a certain time period. Continuously adding
+more nodes while there is a network partition does not influence this timeout, since
+the status of those nodes will not be changed to Up while there are unreachable nodes.
+Joining nodes are not counted in the logic of the strategies.
+
+Set ``akka.cluster.split-brain-resolver.stable-after`` to a shorter duration to have quicker
+removal of crashed nodes, at the price of risking too early action on transient network
+partitions that otherwise would have healed. Do not set this to a shorter duration than
+the membership dissemination time in the cluster, which depends on the cluster size.
+Recommended minimum duration for different cluster sizes:
+
+============   ============
+Cluster size   stable-after
+============   ============
+5              7 s
+10             10 s
+20             13 s
+50             17 s
+100            20 s
+1000           30 s
+============   ============
+
+.. note:: It is important that you use the same configuration on all nodes.
+
+When reachability observations by the failure detector are changed the SBR
+decisions are deferred until there are no changes within the stable-after
+duration. If this continues for too long it might be an indication of an
+unstable system/network and it could result in delayed or conflicting
+decisions on separate sides of a network partition.
+
+As a precaution for that scenario all nodes are downed if no decision is
+made within stable-after + down-all-when-unstable from the first unreachability
+event. The measurement is reset if all unreachable have been healed, downed or
+removed, or if there are no changes within stable-after * 2.
+
+Configuration::
+
+    akka.cluster.split-brain-resolver {
+      # Time margin after which shards or singletons that belonged to a downed/removed
+      # partition are created in surviving partition. The purpose of this margin is that
+      # in case of a network partition the persistent actors in the non-surviving partitions
+      # must be stopped before corresponding persistent actors are started somewhere else.
+      # This is useful if you implement downing strategies that handle network partitions,
+      # e.g. by keeping the larger side of the partition and shutting down the smaller side.
+      # Decision is taken by the strategy when there has been no membership or
+      # reachability changes for this duration, i.e. the cluster state is stable.
+      stable-after = 20s
+
+      # When reachability observations by the failure detector are changed the SBR decisions
+      # are deferred until there are no changes within the 'stable-after' duration.
+      # If this continues for too long it might be an indication of an unstable system/network
+      # and it could result in delayed or conflicting decisions on separate sides of a network
+      # partition.
+      # As a precaution for that scenario all nodes are downed if no decision is made within
+      # `stable-after + down-all-when-unstable` from the first unreachability event.
+      # The measurement is reset if all unreachable have been healed, downed or removed, or
+      # if there are no changes within `stable-after * 2`.
+      # The value can be on, off, or a duration.
+      # By default it is 'on' and then it is derived to be 3/4 of stable-after, but not less than
+      # 4 seconds.
+      down-all-when-unstable = on
+    }
+
+
+Keep majority
+^^^^^^^^^^^^^
+
+This strategy is used by default, because it works well for most systems.
+It will down the unreachable nodes if the current node is in the majority part
+based on the last known membership information. Otherwise down the reachable nodes,
+i.e. the own part. If the parts are of equal size the part containing the node with
+the lowest address is kept.
+
+This strategy is a good choice when the number of nodes in the cluster change
+dynamically and you can therefore not use static-quorum.
+
+* If there are membership changes at the same time as the network partition
+  occurs, for example, the status of two members are changed to Up on one side
+  but that information is not disseminated to the other side before the
+  connection is broken, it will down all nodes on the side that could be in
+  minority if the joining nodes were changed to Up on the other side.
+  Note that if the joining nodes were not changed to Up and becoming a majority
+  on the other side then each part will shut down itself, terminating the whole
+  cluster.
+
+* If there are more than two partitions and none is in majority each part will
+  shut down itself, terminating the whole cluster.
+
+* If more than half of the nodes crash at the same time the other running nodes
+  will down themselves because they think that they are not in majority, and
+  thereby the whole cluster is terminated.
+
+The decision can be based on nodes with a configured role instead of all nodes
+in the cluster. This can be useful when some types of nodes are more valuable
+than others.
+
+Configuration::
+
+    akka.cluster.split-brain-resolver.active-strategy=keep-majority
+
+::
+
+    akka.cluster.split-brain-resolver.keep-majority {
+      # if the 'role' is defined the decision is based only on members with that 'role'
+      role = ""
+    }
+
+Static quorum
+^^^^^^^^^^^^^
+
+The strategy named static-quorum will down the unreachable nodes if the number
+of remaining nodes are greater than or equal to a configured quorum-size.
+Otherwise, it will down the reachable nodes, i.e. it will shut down that side
+of the partition.
+
+This strategy is a good choice when you have a fixed number of nodes in the
+cluster, or when you can define a fixed number of nodes with a certain role.
+
+* If there are unreachable nodes when starting up the cluster, before reaching
+  this limit, the cluster may shut itself down immediately. This is not an issue
+  if you start all nodes at approximately the same time or use the
+  akka.cluster.min-nr-of-members to define required number of members before the
+  leader changes member status of ‘Joining’ members to ‘Up’. You can tune the
+  timeout after which downing decisions are made using the stable-after setting.
+
+* You should not add more members to the cluster than quorum-size * 2 - 1.
+  If the exceeded cluster size remains when a SBR decision is needed it will down
+  all nodes because otherwise there is a risk that both sides may down each other
+  and thereby form two separate clusters.
+
+* If the cluster is split into 3 (or more) parts each part that is smaller than
+  then configured quorum-size will down itself and possibly shutdown the whole cluster.
+
+* If more nodes than the configured quorum-size crash at the same time the other
+  running nodes will down themselves because they think that they are not in the
+  majority, and thereby the whole cluster is terminated.
+
+The decision can be based on nodes with a configured role instead of all nodes
+in the cluster. This can be useful when some types of nodes are more valuable
+than others.
+
+By defining a role for a few stable nodes in the cluster and using that in the
+configuration of static-quorum you will be able to dynamically add and remove
+other nodes without this role and still have good decisions of what nodes to
+keep running and what nodes to shut down in the case of network partitions.
+The advantage of this approach compared to keep-majority is that you do not risk
+splitting the cluster into two separate clusters, i.e. a split brain.
+
+Configuration::
+
+    akka.cluster.split-brain-resolver.active-strategy=static-quorum
+
+::
+
+    akka.cluster.split-brain-resolver.static-quorum {
+      # minimum number of nodes that the cluster must have
+      quorum-size = undefined
+
+      # if the 'role' is defined the decision is based only on members with that 'role'
+      role = ""
+    }
+
+Keep oldest
+^^^^^^^^^^^
+
+The strategy named keep-oldest will down the part that does not contain the oldest
+member. The oldest member is interesting because the active Cluster Singleton
+instance is running on the oldest member.
+
+This strategy is good to use if you use Cluster Singleton and do not want to shut
+down the node where the singleton instance runs. If the oldest node crashes a new
+singleton instance will be started on the next oldest node.
+
+* If down-if-alone is configured to on, then if the oldest node has partitioned
+  from all other nodes the oldest will down itself and keep all other nodes running.
+  The strategy will not down the single oldest node when it is the only remaining
+  node in the cluster.
+
+* If there are membership changes at the same time as the network partition occurs,
+  for example, the status of the oldest member is changed to Exiting on one side but
+  that information is not disseminated to the other side before the connection is
+  broken, it will detect this situation and make the safe decision to down all nodes
+  on the side that sees the oldest as Leaving. Note that this has the drawback that
+  if the oldest was Leaving and not changed to Exiting then each part will shut down
+  itself, terminating the whole cluster.
+
+The decision can be based on nodes with a configured role instead of all nodes in
+the cluster.
+
+Configuration::
+
+    akka.cluster.split-brain-resolver.active-strategy=keep-oldest
+
+
+::
+
+    akka.cluster.split-brain-resolver.keep-oldest {
+      # Enable downing of the oldest node when it is partitioned from all other nodes
+      down-if-alone = on
+
+      # if the 'role' is defined the decision is based only on members with that 'role',
+      # i.e. using the oldest member (singleton) within the nodes with that role
+      role = ""
+    }
+
+Down all
+^^^^^^^^
+
+The strategy named down-all will down all nodes.
+
+This strategy can be a safe alternative if the network environment is highly unstable
+with unreachability observations that can’t be fully trusted, and including frequent
+occurrences of indirectly connected nodes. Due to the instability there is an increased
+risk of different information on different sides of partitions and therefore the other
+strategies may result in conflicting decisions. In such environments it can be better
+to shutdown all nodes and start up a new fresh cluster.
+
+* This strategy is not recommended for large clusters (> 10 nodes) because any minor
+  problem will shutdown all nodes, and that is more likely to happen in larger clusters
+  since there are more nodes that may fail.
+
+Configuration::
+
+    akka.cluster.split-brain-resolver.active-strategy=down-all
+
+Lease
+^^^^^
+
+The strategy named lease-majority is using a distributed lease (lock) to decide what
+nodes that are allowed to survive. Only one SBR instance can acquire the lease make
+the decision to remain up. The other side will not be able to aquire the lease and
+will therefore down itself.
+
+This strategy is very safe since coordination is added by an external arbiter.
+
+* In some cases the lease will be unavailable when needed for a decision from all
+  SBR instances, e.g. because it is on another side of a network partition, and then
+  all nodes will be downed.
+
+Configuration::
+
+    akka {
+      cluster {
+        downing-provider-class = "akka.cluster.sbr.SplitBrainResolverProvider"
+        split-brain-resolver {
+          active-strategy = "lease-majority"
+          lease-majority {
+            lease-implementation = "akka.coordination.lease.kubernetes"
+          }
+        }
+      }
+    }
+
+::
+
+    akka.cluster.split-brain-resolver.lease-majority {
+      lease-implementation = ""
+
+      # This delay is used on the minority side before trying to acquire the lease,
+      # as an best effort to try to keep the majority side.
+      acquire-lease-delay-for-minority = 2s
+
+      # If the 'role' is defined the majority/minority is based only on members with that 'role'.
+      role = ""
+    }
+
+Indirectly connected nodes
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In a malfunctional network there can be situations where nodes are observed as
+unreachable via some network links but they are still indirectly connected via
+other nodes, i.e. it’s not a clean network partition (or node crash).
+
+When this situation is detected the Split Brain Resolvers will keep fully
+connected nodes and down all the indirectly connected nodes.
+
+If there is a combination of indirectly connected nodes and a clean network
+partition it will combine the above decision with the ordinary decision,
+e.g. keep majority, after excluding suspicious failure detection observations.
+
+Multi-DC cluster
+----------------
+
+An OpenDaylight cluster has an ability to run on multiple data centers in a way,
+that tolerates network partitions among them.
+
+Nodes can be assigned to group of nodes by setting the
+``akka.cluster.multi-data-center.self-data-center`` configuration property.
+A node can only belong to one data center and if nothing is specified a node will
+belong to the default data center.
+
+The grouping of nodes is not limited to the physical boundaries of data centers,
+it could also be used as a logical grouping for other reasons, such as isolation
+of certain nodes to improve stability or splitting up a large cluster into smaller
+groups of nodes for better scalability.
+
+Failure detection
+^^^^^^^^^^^^^^^^^
+
+Failure detection is performed by sending heartbeat messages to detect if a node
+is unreachable. This is done more frequently and with more certainty among the
+nodes in the same data center than across data centers.
+
+Two different failure detectors can be configured for these two purposes:
+
+* ``akka.cluster.failure-detector`` for failure detection within own data center
+
+* ``akka.cluster.multi-data-center.failure-detector`` for failure detection across
+  different data centers
+
+Heartbeat messages for failure detection across data centers are only performed
+between a number of the oldest nodes on each side. The number of nodes is configured
+with ``akka.cluster.multi-data-center.cross-data-center-connections``.
+
+This influences how rolling updates should be performed. Don’t stop all of the oldest
+that are used for gossip at the same time. Stop one or a few at a time so that new
+nodes can take over the responsibility. It’s best to leave the oldest nodes until last.
+
+Configuration::
+
+    multi-data-center {
+
+      # Defines which data center this node belongs to. It is typically used to make islands of the
+      # cluster that are colocated. This can be used to make the cluster aware that it is running
+      # across multiple availability zones or regions. It can also be used for other logical
+      # grouping of nodes.
+      self-data-center = "default"
+
+
+      # Try to limit the number of connections between data centers. Used for gossip and heartbeating.
+      # This will not limit connections created for the messaging of the application.
+      # If the cluster does not span multiple data centers, this value has no effect.
+      cross-data-center-connections = 5
+
+      # The n oldest nodes in a data center will choose to gossip to another data center with
+      # this probability. Must be a value between 0.0 and 1.0 where 0.0 means never, 1.0 means always.
+      # When a data center is first started (nodes < 5) a higher probability is used so other data
+      # centers find out about the new nodes more quickly
+      cross-data-center-gossip-probability = 0.2
+
+      failure-detector {
+        # FQCN of the failure detector implementation.
+        # It must implement akka.remote.FailureDetector and have
+        # a public constructor with a com.typesafe.config.Config and
+        # akka.actor.EventStream parameter.
+        implementation-class = "akka.remote.DeadlineFailureDetector"
+
+        # Number of potentially lost/delayed heartbeats that will be
+        # accepted before considering it to be an anomaly.
+        # This margin is important to be able to survive sudden, occasional,
+        # pauses in heartbeat arrivals, due to for example garbage collect or
+        # network drop.
+        acceptable-heartbeat-pause = 10 s
+
+        # How often keep-alive heartbeat messages should be sent to each connection.
+        heartbeat-interval = 3 s
+
+        # After the heartbeat request has been sent the first failure detection
+        # will start after this period, even though no heartbeat message has
+        # been received.
+        expected-response-after = 1 s
+      }
+    }
+
+Active/Backup Setup
+-------------------
+
+It is desirable to have the possibility to fail over to a different
+data center, in case all nodes become unreachable. To achieve that
+shards in the backup data center must be in "non-voting" state.
 
 The API to manipulate voting states on shards is defined as RPCs in the
 `cluster-admin.yang <https://git.opendaylight.org/gerrit/gitweb?p=controller.git;a=blob;f=opendaylight/md-sal/sal-cluster-admin-api/src/main/yang/cluster-admin.yang>`_
@@ -495,7 +893,21 @@ provided below.
   single cluster node.
 
 To create an active/backup setup with a 6 node cluster (3 active and 3 backup
-nodes in two locations) there is an RPC to set voting states of all shards on
+nodes in two locations) such configuration is used:
+
+* for member-1, member-2 and member-3 (active data center)::
+
+    akka.cluster.multi-data-center {
+      self-data-center = "main"
+    }
+
+* for member-4, member-5, member-6 (backup data center)::
+
+    akka.cluster.multi-data-center {
+      self-data-center = "backup"
+    }
+
+There is an RPC to set voting states of all shards on
 a list of nodes to a given state::
 
    POST  /restconf/operations/cluster-admin:change-member-voting-states-for-all-shards
@@ -528,7 +940,7 @@ creating the backup nodes, this example input can be used::
 
 When an active/backup deployment already exists, with shards on the backup
 nodes in non-voting state, all that is needed for a fail-over from the active
-"sub-cluster" to backup "sub-cluster" is to flip the voting state of each
+data center to backup data center is to flip the voting state of each
 shard (on each node, active AND backup). That can be easily achieved with the
 following RPC call (no parameters needed)::
 
