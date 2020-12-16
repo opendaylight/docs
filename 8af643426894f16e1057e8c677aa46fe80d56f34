@@ -410,6 +410,23 @@
     },
     {
       "key": {
+        "uuid": "426f1f27_97a33c0e",
+        "filename": "docs/contributor-guide/newcomers-guide.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 404,
+      "author": {
+        "id": 797
+      },
+      "writtenOn": "2020-12-16T03:20:34Z",
+      "side": 1,
+      "message": "It looks to me this section and onwards repeat some content already covered at the beginning like \"Upload a Change\".",
+      "revId": "8af643426894f16e1057e8c677aa46fe80d56f34",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "9a145ed2_6cd6a8a9",
         "filename": "docs/contributor-guide/newcomers-guide.rst",
         "patchSetId": 10
@@ -427,6 +444,23 @@
         "endLine": 556,
         "endChar": 50
       },
+      "revId": "8af643426894f16e1057e8c677aa46fe80d56f34",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a8956c5c_a253ef6f",
+        "filename": "docs/contributor-guide/newcomers-guide.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 850,
+      "author": {
+        "id": 797
+      },
+      "writtenOn": "2020-12-16T03:20:34Z",
+      "side": 1,
+      "message": "This seems also redundant with \"Upload a Change\" and \"Prepare a Change\" before.",
       "revId": "8af643426894f16e1057e8c677aa46fe80d56f34",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": true
