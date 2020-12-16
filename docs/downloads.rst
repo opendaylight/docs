@@ -26,19 +26,19 @@ Aluminium SR1
     * :doc:`Project Guides <odl-aluminium:index>`
     * :doc:`Release Notes <odl-aluminium:release-notes/index>`
 
-Magnesium-SR2
+Magnesium-SR3
 -------------
 
 :Announcement: `Magnesium <https://www.opendaylight.org/what-we-do/current-release/magnesium>`_
 
 :Original Release Date: March 25, 2020
-:Service Release Date: Aug 11, 2020
+:Service Release Date: December 15, 2020
 
 :Downloads:
     * `OpenDaylight Magnesium Tar
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/0.12.2/opendaylight-0.12.2.tar.gz>`_
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/0.12.3/opendaylight-0.12.3.tar.gz>`_
     * `OpenDaylight Magnesium Zip
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/0.12.2/opendaylight-0.12.2.zip>`_
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/0.12.3/opendaylight-0.12.3.zip>`_
 
 :Documentation:
     * :doc:`Getting Started Guide <odl-magnesium:getting-started-guide/index>`
