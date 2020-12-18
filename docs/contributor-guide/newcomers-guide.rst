@@ -101,7 +101,7 @@ prepare a change
 ----------------
 
 Once you have a local copy of the repository, you can make your modifications.
-Please follow the best practices given below and in `the old OpenDaylight wiki <https://wiki-archive.opendaylight.org/view/BestPractices/Coding_Guidelines>`__.
+Please follow the best practices given below and in :ref:`coding-guidelines`.
 Remember to check what you have done.
 
 **Be particularly careful to the license headers, the trailing blanks, the empty
@@ -661,8 +661,7 @@ should consider to split your change into several smaller ones.
 Coding Guidelines and common issues
 -----------------------------------
 
-More details at
-https://wiki-archive.opendaylight.org/view/BestPractices/Coding_Guidelines
+More details at :ref:`coding-guidelines`.
 
 Commit message
 ~~~~~~~~~~~~~~
@@ -783,7 +782,7 @@ The EPL license or a compatible license should be present on all
 projects code file in the header. The maven java checkstyle plugin will
 check the presence of this license.
 
-More details on `the old wiki <https://wiki-archive.opendaylight.org/view/BestPractices/Coding_Guidelines#General_Code_headers>`__.
+More details in the :ref:`coding-guidelines`.
 
 License issues are considered particularly sensible by the opensource
 communities.
