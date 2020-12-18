@@ -21,6 +21,7 @@ Getting Started with OpenDaylight
    getting-started-guide/index
    developer-guide/developing-apps-on-the-opendaylight-controller
    contributor-guide/newcomers-guide
+   contributor-guide/coding-guidelines
 
 OpenDaylight Project Documentation
 ----------------------------------
