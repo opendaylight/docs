@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d3729470_0883244e",
+        "filename": "docs/getting-started-guide/clustering.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 520,
+      "author": {
+        "id": 6731
+      },
+      "writtenOn": "2021-01-22T10:35:54Z",
+      "side": 1,
+      "message": "\"a too eartly action\" or \"too early actions\"\n\nAlso not sure the imperative is the right tense in this sentence.\n\nSomething such as \"Setting akka.cluster.split-brain-resolver.stable-after... can be done at the price of ..\"\nseems more appropriate to me.",
+      "range": {
+        "startLine": 520,
+        "startChar": 50,
+        "endLine": 520,
+        "endChar": 66
+      },
+      "revId": "7c2885cbdcc8833af64e33ed2812cc49cd081898",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2dc833ed_dee64826",
+        "filename": "docs/getting-started-guide/clustering.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 538,
+      "author": {
+        "id": 6731
+      },
+      "writtenOn": "2021-01-22T10:35:54Z",
+      "side": 1,
+      "message": "missing colon here",
+      "range": {
+        "startLine": 538,
+        "startChar": 66,
+        "endLine": 538,
+        "endChar": 67
+      },
+      "revId": "7c2885cbdcc8833af64e33ed2812cc49cd081898",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e2360844_ec11cd10",
+        "filename": "docs/getting-started-guide/clustering.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 828,
+      "author": {
+        "id": 6731
+      },
+      "writtenOn": "2021-01-22T10:35:54Z",
+      "side": 1,
+      "message": "oldest nodes",
+      "range": {
+        "startLine": 828,
+        "startChar": 79,
+        "endLine": 828,
+        "endChar": 85
+      },
+      "revId": "7c2885cbdcc8833af64e33ed2812cc49cd081898",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    }
+  ]
+}
