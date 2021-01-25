@@ -11,6 +11,7 @@ Generic
 
    developing-apps-on-the-opendaylight-controller
    integrating-animal-sniffer-plugin-with-projects
+   logging-subsystem
 
 Core features Developer Guides
 ---------------------------------
