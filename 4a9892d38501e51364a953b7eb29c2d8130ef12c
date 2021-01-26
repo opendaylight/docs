@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "755a174d_cdf4b612",
+        "filename": "docs/developer-guides/logging-subsystem.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 6731
+      },
+      "writtenOn": "2021-01-26T09:51:40Z",
+      "side": 1,
+      "message": "yes, it was misplaced in the old wiki original text.",
+      "parentUuid": "f93144c1_efae627d",
+      "range": {
+        "startLine": 172,
+        "startChar": 72,
+        "endLine": 172,
+        "endChar": 73
+      },
+      "revId": "4a9892d38501e51364a953b7eb29c2d8130ef12c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e0ade83e_0384d58a",
         "filename": "docs/developer-guides/logging-subsystem.rst",
         "patchSetId": 1
@@ -45,6 +69,30 @@
       "revId": "4a9892d38501e51364a953b7eb29c2d8130ef12c",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "59d39774_0569e1a1",
+        "filename": "docs/developer-guides/logging-subsystem.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 6731
+      },
+      "writtenOn": "2021-01-26T09:51:40Z",
+      "side": 1,
+      "message": "right - I messed it up with a copy/paste from above\nI add to rework pandoc conversion since the original mediawiki text was not identifying code block from others quotations.",
+      "parentUuid": "e0ade83e_0384d58a",
+      "range": {
+        "startLine": 301,
+        "startChar": 3,
+        "endLine": 301,
+        "endChar": 7
+      },
+      "revId": "4a9892d38501e51364a953b7eb29c2d8130ef12c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
