@@ -4,8 +4,8 @@ About Copyright and License
 
 *Note: This document is a work in progress.*
 
-Contributors must comply with `the terms of the OpenDaylight Technical charter
-<https://www.opendaylight.org/wp-content/uploads/sites/14/2018/01/ODL-Technical-Charter-LF-Projects-LLC-FINAL.pdf>`__.
+Contributors must comply with `the terms of the OpenDaylight
+Technical charter <../_static/OpenDaylight-Technical-Charter-LFN-Projects-LLC-FINAL.pdf>`__.
 
 Following are the requirements with regards to Copyright and License statements
 in all source code in the OpenDaylight projects.

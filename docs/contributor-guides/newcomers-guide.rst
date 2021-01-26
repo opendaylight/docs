@@ -177,7 +177,7 @@ is usually a good idea.
    should use the option “--author=” with “git-commit”
 
    Contributors must agree with `the OpenDaylight Technical charter
-   <https://www.opendaylight.org/wp-content/uploads/sites/14/2018/01/ODL-Technical-Charter-LF-Projects-LLC-FINAL.pdf>`__.
+   <../_static/OpenDaylight-Technical-Charter-LFN-Projects-LLC-FINAL.pdf>`__.
    The sign-off field is related to the role of the Certificate of Origin
    explained in this charter.
 
