@@ -63,6 +63,8 @@ linkcheck_ignore = [
     '^http[s]://github.com/.*#',
     # Ignore webchat anchors because '#' is not an anchor for this app
     'https://webchat.freenode.net/#',
+    # Ignore google docs anchors
+    'https://docs.google.com/presentation/d/1bnwj8CrFGo5KekONYSeIHySdkoXZiewJxkHcZjXnzkQ/edit#slide=id.g17d8ae4d92_0_137',
 ]
 linkcheck_timeout = 300
 
