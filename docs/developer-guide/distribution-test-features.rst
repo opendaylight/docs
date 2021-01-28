@@ -82,3 +82,140 @@ This should also hold if the single added feature is outside odl-integration-all
 if it is one of conflicting implementations (and no such implementations is in odl-integration-all).
 
 This feature is used in the aforementioned -all- CSIT jobs.
+
+
+Static distribution
+-------------------
+
+Background
+~~~~~~~~~~
+
+While the OpenDaylight distribution usually is delivered in the form of
+pre-configured Apache Karaf with a full set of features, this approach
+might not be the best option in some cases. These days with the
+containerization trend, existing distribution has the following drawbacks:
+
+* Features dependencies evaluation and wiring happens in runtime(this leads
+  to a more complicated verification process).
+* Distribution might contain features and tools that are not really needed
+  in the production environment.
+
+To address these limitations, Apache Karaf provides a capability to produce
+static distribution, and this approach is applicable for OpenDaylight
+distribution as well. This kind of distribution brings several advantages:
+
+* Feature dependencies resolution happens during build time and makes
+  a behavior more predictable.
+* Some of the built-in Karaf features might be omitted, and configuration
+  admin will support only read operations.
+* The user can decide what features will be included in the distribution.
+* Overall distribution package becomes a kind of immutable, and the
+  user doesn't need to install/modify anything manually.
+
+
+Guideline for making static distribution
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+:ref:`ODL Parent component<odl-parent-developer-guide>` provides a new parent
+project - **"karaf4-static-parent"** which defines static framework components
+alongside essential OpenDaylight's components(branding, bouncycastle stuff,
+etc). This project can be used to build a static distribution by adding this as
+a parent to your project's pom.xml.
+
+.. code:: xml
+
+    <parent>
+        <groupId>org.opendaylight.odlparent</groupId>
+        <artifactId>karaf4-static-parent</artifactId>
+        <version>8.0.4</version>
+    <relativePath/>
+
+Let's make an assumption that user only needs to manage standard NETCONF
+devices via the southbound interface and RESTCONF as the northbound. In such
+a use case, we only need to declare two dependencies in your pom file:
+
+.. code:: xml
+
+    <dependencies>
+        <dependency>
+            <groupId>org.opendaylight.netconf</groupId>
+            <artifactId>odl-netconf-connector-all</artifactId>
+            <version>1.10.0</version>
+            <classifier>features</classifier>
+            <type>xml</type>
+        </dependency>
+        <dependency>
+            <groupId>org.opendaylight.netconf</groupId>
+            <artifactId>odl-restconf-nb-rfc8040</artifactId>
+            <version>${project.version}</version>
+            <classifier>features</classifier>
+            <type>xml</type>
+        </dependency>
+    </dependencies>
+
+and also put additional configuration for the karaf-maven-plugin about
+these features under the <plugins> block:
+
+.. code:: xml
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.karaf.tooling</groupId>
+                <artifactId>karaf-maven-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <bootFeatures combine.children="append">
+                        <feature>odl-netconf-connector-all</feature>
+                        <feature>odl-restconf-nb-rfc8040</feature>
+                    </bootFeatures>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+.. note:: If you need extra karaf framework features for the distribution,
+          this can be done by extending the <startupFeatures> block.
+          The following example demonstrates how to do this with
+          a 'shell' feature.
+
+.. code:: xml
+
+            <plugin>
+                <groupId>org.apache.karaf.tooling</groupId>
+                <artifactId>karaf-maven-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <startupFeatures combine.children="append">
+                        <feature>shell</feature>
+                    </startupFeatures>
+                    <bootFeatures combine.children="append">
+                        <feature>odl-netconf-connector-all</feature>
+                        <feature>odl-restconf-nb-rfc8040</feature>
+                    </bootFeatures>
+                </configuration>
+            </plugin>
+
+.. note:: Additionally, you can configure **karaf.archiveTarGz**,
+          and **karaf.archiveZip** boolean-type properties to put your static
+          distribution inside the archive.
+
+.. code:: xml
+
+    <properties>
+        <karaf.archiveTarGz>false</karaf.archiveTarGz>
+        <karaf.archiveZip>true</karaf.archiveZip>
+    </properties>
+
+
+Known issues
+~~~~~~~~~~~~
+
+* An issue with FeatureDeploymentListener.bundleChanged and NPE records in
+  log files. More details available here:
+  https://issues.apache.org/jira/browse/KARAF-6612
+
+* Some of the features might try to update configuration files, but that's
+  not supported by static distribution, so StaticConfigurationImpl.update
+  will throw UnsupportedOperationException.
