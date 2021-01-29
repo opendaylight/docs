@@ -130,8 +130,7 @@ Component Tests
 
 It's not that hard to write Component Tests which test the interaction
 of a number of interrelated services, without going to a full blown and
-much "heavier" Karaf OSGi integration test just yet; see `Component
-Testing <https://wiki-archive.opendaylight.org/view/BestPractices/Component_Tests>`__.
+much "heavier" Karaf OSGi integration test just yet; see :ref:`component`.
 
 Integration Tests
 =================
@@ -143,5 +142,5 @@ environment <https://wiki-archive.opendaylight.org/view/CrossProject:HouseKeepin
 Recommended Reading
 ===================
 
--  http://googletesting.blogspot.ch/2013/07/testing-on-toilet-know-your-test-doubles.html
--  http://martinfowler.com/articles/mocksArentStubs.html
+-  https://googletesting.blogspot.ch/2013/07/testing-on-toilet-know-your-test-doubles.html
+-  https://martinfowler.com/articles/mocksArentStubs.html

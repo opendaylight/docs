@@ -11,3 +11,4 @@ Generic
 
    junit
    considerations
+   component
