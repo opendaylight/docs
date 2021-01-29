@@ -19,9 +19,19 @@ Getting Started with OpenDaylight
    downloads
    release-notes/index
    getting-started-guide/index
-   developer-guide/developing-apps-on-the-opendaylight-controller
-   contributor-guide/newcomers-guide
-   contributor-guide/coding-guidelines
+   developer-guides/index
+
+Contributing to OpenDaylight
+----------------------------
+
+* :doc:`Contributor Guides <contributor-guides/index>`
+* :ref:`Infrastructure Guide <odl-infra>`
+* :doc:`Integration Testing Guide <odl-integration-test:index>`
+* :doc:`Integration Distribution Guide <integration-distribution:index>`
+* :doc:`Integration Packaging Guide <odl-integration-packaging:index>`
+* :doc:`Release Process Guide <release-process/index>`
+* :doc:`Documentation Guide <documentation>`
+* :doc:`Javadocs <javadoc>`
 
 OpenDaylight Project Documentation
 ----------------------------------
@@ -51,19 +61,6 @@ Self-Managed Projects
 
 * :doc:`TransportPCE Documentation <transportpce:index>`
 
-OpenDaylight Contributor Guides
--------------------------------
-
-* :doc:`Newcomers Guide <contributor-guide/newcomers-guide>`
-* :doc:`Gerrit Guide <lfdocs:gerrit>`
-* :ref:`Infrastructure Guide <odl-infra>`
-* :doc:`Integration Testing Guide <odl-integration-test:index>`
-* :doc:`Integration Distribution Guide <integration-distribution:index>`
-* :doc:`Integration Packaging Guide <odl-integration-packaging:index>`
-* :doc:`Release Process Guide <release-process/index>`
-* :doc:`Documentation Guide <documentation>`
-* :doc:`Javadocs <javadoc>`
-
 
 .. Commenting the below out until we actually use it
 .. Indices and tables
@@ -82,4 +79,5 @@ OpenDaylight Contributor Guides
    release-process/index
    javadoc
    user-guide/index
-   developer-guide/index
+   developer-guides/index
+   contributor-guides/index
