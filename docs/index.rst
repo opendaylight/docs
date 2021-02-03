@@ -43,13 +43,11 @@ Managed Projects
 * :doc:`BGPCEP Documentation <bgpcep:index>`
 * :doc:`Controller Documentation <controller:index>`
 * :doc:`DAEXIM Documentation <daexim:index>`
-* :doc:`Genius Documentation <genius:index>`
 * :doc:`Infrautils Documentation <infrautils:index>`
 * :doc:`JSON RPC Documentation <jsonrpc:index>`
 * :doc:`LISP Flow Mapping Documentation <lispflowmapping:index>`
 * :doc:`MD-SAL Documentation <mdsal:index>`
 * :doc:`NetConf Documentation <netconf:index>`
-* :doc:`NetVirt Documentation <netvirt:index>`
 * :doc:`OpenFlowPlugin Documentation <openflowplugin:index>`
 * :doc:`OVSDB Documentation <ovsdb:index>`
 
@@ -59,6 +57,8 @@ Managed Projects
 Self-Managed Projects
 ~~~~~~~~~~~~~~~~~~~~~
 
+* :doc:`Genius Documentation <genius:index>`
+* :doc:`NetVirt Documentation <netvirt:index>`
 * :doc:`TransportPCE Documentation <transportpce:index>`
 
 
