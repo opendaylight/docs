@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "75b6bba6_5f86bf75",
+        "filename": "docs/requirements.txt",
+        "patchSetId": 8
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 6731
+      },
+      "writtenOn": "2021-02-04T15:21:44Z",
+      "side": 1,
+      "message": "sphinx-confluence rather but I am not not sure it works when put here.\nif not, try to put it in deps in tox.ini (such as pyEnchant in spelling profile)\n and you go a step further at least locally\n\n\n$ tox -e docs\ndocs recreate: /home/guillaume/git_ws/docs/.tox/docs\ndocs installdeps: -rdocs/requirements.txt, sphinx-confluence\ndocs installed: [..],sphinx-confluence\u003d\u003d0.0.3,[..]\ndocs run-test-pre: PYTHONHASHSEED\u003d\u00272340362669\u0027\ndocs runtests: commands[0] | sphinx-build -j auto -W -b html -n -d /home/guillaume/git_ws/docs/.tox/docs/tmp/doctrees ./docs/ /home/guillaume/git_ws/docs/docs/_build/html\nSphinx v3.2.1 en cours d\u0027exécution\n\nExtension error:\nL\u0027extension ne peut pas être importée sphinx_confluence (exception: cannot import name \u0027JSONHTMLBuilder\u0027 from \u0027sphinx.builders.html\u0027 (unknown location))",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 17
+      },
+      "revId": "6dae13d88686fbeffab03e1e655d2a957a0b5496",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    }
+  ]
+}
