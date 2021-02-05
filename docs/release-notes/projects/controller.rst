@@ -34,15 +34,9 @@ Resolved Issues
 
 The following table lists the resolved issues fixed this release.
 
-.. list-table::
-   :widths: 15 55
+.. csv-table:: resolved issues
+   :file: ./controller_resolved_issues.csv
    :header-rows: 1
-
-   * - **Key**
-     - **Summary**
-
-   * - <bug ID>
-     -
 
 Known Issues
 ============
