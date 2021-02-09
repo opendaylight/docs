@@ -35,7 +35,7 @@ versions (for example, `bump-odl-version <https://github.com/skitt/odl-tools/blo
    not be any reference to **org.opendaylight.odlparent**, except
    for 8.1.1. This includes custom feature.xml templates
    (src/main/feature/feature.xml), the version range there should
-   be "[8,9)" instead of "[8,9)", "[5.0.3,6)" or any other variation.
+   be "[8.1,9)" instead of "[8,9)", "[5.0.3,6)" or any other variation.
 
  .. code-block:: shell
 
@@ -320,6 +320,18 @@ release, Phosphorus. The removal is tracked in
 
 Controller Impacts
 ------------------
+
+Akka remote configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^
+Because of the akka upgrade to 2.6.x in Silicon, remote tcp configuration changed
+from ``netty.tcp`` to ``classic.netty.tcp``:
+
+ .. code-block:: none
+
+      classic.netty.tcp {
+        hostname = "127.0.0.1"
+        port = 2550
+      }
 
 Use of odl:type in Blueprint is discouraged
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
