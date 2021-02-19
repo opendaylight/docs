@@ -74,14 +74,14 @@ release of both managed and self-managed projects.
      - Checkpoint for status of Managed Projects - especially Snapshot
        Integrated Projects.
    * - Code Freeze
-     - 2021-02-04
+     - 2021-02-22
      - 2020-08-03
      - Middle Checkpoint + 4 weeks
      - Start Date +20 weeks
      - Code freeze for all Managed Projects - cut and lock release branch. Only
        allow blocker bugfixes in release branch.
    * - Final Checkpoint
-     - 2021-02-18
+     - 2021-03-08
      - 2020-08-17
      - Code Freeze + 2 weeks
      - Start Date +22 weeks
