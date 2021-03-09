@@ -12,50 +12,35 @@ state from the file system.
 Behavior/Feature Changes
 ========================
 
-This release introduces the following behavior changes:
+Here is the link to the features improved in this release:
 
-*
+`OpenDaylight JIRA Tickets - Improvement <https://jira.opendaylight.org/issues/?jql=project+%3D+daexim+AND+type+%3D+Improvement+AND+status+in+%28Resolved%2C+Done%2C+Closed%29+AND+fixVersion+in+%28%22Silicon+GA%22%2C+Silicon%2C+silicon%29++ORDER+BY+issuetype+DESC%2C+key+ASC>`_
 
 New Features
 ============
 
-This release provides the following new features:
+Here is the link to the new features introduced in this release:
 
-*
+`OpenDaylight JIRA Tickets - New Feature <https://jira.opendaylight.org/issues/?jql=project+%3D+daexim+AND+type+%3D+%22New+Feature%22+AND+status+in+%28Resolved%2C+Done%2C+Closed%29+AND+fixVersion+in+%28%22Silicon+GA%22%2C+Silicon%2C+silicon%29++ORDER+BY+issuetype+DESC%2C+key+ASC>`_
 
 Deprecated Features
 ===================
 
-This release removed the following features:
+Here is the link to the features removed in this release:
 
-*
+`OpenDaylight JIRA Tickets - Deprecated Feature <https://jira.opendaylight.org/issues/?jql=project+%3D+daexim+AND+type+%3D+Deprecate+AND+status+in+%28Resolved%2C+Done%2C+Closed%29+AND+fixVersion+in+%28%22Silicon+GA%22%2C+Silicon%2C+silicon%29++ORDER+BY+issuetype+DESC%2C+key+ASC>`_
 
 Resolved Issues
 ===============
 
-The following table lists the resolved issues fixed this release.
+Here is the link to the resolved issues fixed in this release:
 
-.. list-table::
-   :widths: 15 55
-   :header-rows: 1
+`OpenDaylight JIRA Tickets - Resolved Issue <https://jira.opendaylight.org/issues/?jql=project+%3D+daexim+AND+type+%3D+Bug+AND+status+in+%28Resolved%2C+Done%2C+Closed%29+AND+fixVersion+in+%28%22Silicon+GA%22%2C+Silicon%2C+silicon%29++ORDER+BY+issuetype+DESC%2C+key+ASC>`_
 
-   * - **Key**
-     - **Summary**
-
-   * - <bug ID>
-     -
 
 Known Issues
 ============
 
-The following table lists the known issues that exist in this release.
+Here is the link to the known issues exist in this release:
 
-.. list-table::
-   :widths: 15 55
-   :header-rows: 1
-
-   * - **Key**
-     - **Summary**
-
-   * - <bug ID>
-     -
+`OpenDaylight JIRA Tickets - Known Issue <https://jira.opendaylight.org/issues/?jql=project+%3D+daexim+AND+type+%3D+Bug+AND+status+not+in+%28Resolved%2C+Done%2C+Closed%29+ORDER+BY+issuetype+DESC%2C+key+ASC>`_
