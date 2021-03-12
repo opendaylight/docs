@@ -31,42 +31,46 @@ Version Bump
 Before performing platform upgrade, do the following to bump the odlparent
 versions (for example, `bump-odl-version <https://github.com/skitt/odl-tools/blob/master/bump-odl-version>`_):
 
-1. Update the odlparent version from 7.0.5 to 8.0.0. There should
+1. Update the odlparent version from 7.0.5 to 8.1.1. There should
    not be any reference to **org.opendaylight.odlparent**, except
-   for 8.0.0. This includes custom feature.xml templates
+   for 8.1.1. This includes custom feature.xml templates
    (src/main/feature/feature.xml), the version range there should
    be "[8,9)" instead of "[8,9)", "[5.0.3,6)" or any other variation.
 
- .. code-block:: none
+ .. code-block:: shell
 
-  bump-odl-version odlparent 7.0.5 8.0.0
+  bump-odl-version odlparent 7.0.5 8.1.1
 
-2. Update the direct yangtools version references from 5.0.5 to 6.0.0,
+2. Update the direct yangtools version references from 5.0.5 to 6.0.5,
    There should not be any reference to **org.opendaylight.yangtools**,
-   except for 6.0.0. This includes custom feature.xml templates
+   except for 6.0.5. This includes custom feature.xml templates
    (src/main/feature/feature.xml), the version range there should
    be "[6,7)" instead of "[5,6)".
 
-3. Update the MD-SAL version from 6.0.4 to 7.0.1. There should not be
-   any reference to **org.opendaylight.mdsal**, except for 7.0.1.
+ .. code-block:: shell
 
- .. code-block:: none
+  bump-odl-version odlparent 5.0.5 6.0.5
 
-  rpl -R 6.0.4 7.0.1
+3. Update the MD-SAL version from 6.0.4 to 7.0.6. There should not be
+   any reference to **org.opendaylight.mdsal**, except for 7.0.6.
 
-4. Update the Controller version from 2.0.3 to 3.0.1. There should not be
-   any reference to **org.opendaylight.controller**, except for 3.0.1.
+ .. code-block:: shell
 
- .. code-block:: none
+  bump-odl-version odlparent 6.0.4 7.0.6
 
-  rpl -R 2.0.3 3.0.1
+4. Update the Controller version from 2.0.3 to 3.0.7. There should not be
+   any reference to **org.opendaylight.controller**, except for 3.0.7.
 
-5. Update the InfraUtils version from 1.8.0 to 1.9.1. There should not be
-   any reference to **org.opendaylight.infrautils**, except for 1.9.1.
+ .. code-block:: shell
 
- .. code-block:: none
+  bump-odl-version odlparent 2.0.3 3.0.7
 
-  rpl -R 1.8.0 1.9.1
+5. Update the InfraUtils version from 1.8.0 to 1.9.6. There should not be
+   any reference to **org.opendaylight.infrautils**, except for 1.9.6.
+
+ .. code-block:: shell
+
+  bump-odl-version odlparent 1.8.0 1.9.6
 
 Install Dependent Projects
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -79,14 +83,14 @@ any dependent project:
 
 * For quick install:
 
- .. code-block:: none
+ .. code-block:: shell
 
   mvn -Pq clean install
 
 * If previously installed, go offline and/or use the
   no-snapshot-update option.
 
- .. code-block:: none
+ .. code-block:: shell
 
   mvn -Pq -o -nsu clean install
 
@@ -99,13 +103,13 @@ for more information.
 
 Features
 ^^^^^^^^
-Any version range referencing version 6 of ODL Parent must be changed
-to “[8,9)” for ODL Parent 7.
+Any version range referencing version 7 of ODL Parent must be changed
+to “[8,9)” for ODL Parent 8.1.
 
  .. code-block:: xml
 
    <feature name="odl-infrautils-caches">
-       <feature version="[7,8)">odl-guava</feature>
+       <feature version="[8,9)">odl-guava</feature>
    </feature>
 
 ODL Parent Impacts
@@ -160,7 +164,7 @@ list now properly enforce non-null key attributes. This means any code that
 fails to properly set up either ``withKey()`` or individual component leaf
 values will throw a ``NullPointerException`` like this:
 
- .. code-block:: none
+ .. code-block:
 
     java.lang.NullPointerException: Supplied value may not be null
             at java.base/java.util.Objects.requireNonNull(Objects.java:246)
@@ -173,9 +177,9 @@ values will throw a ``NullPointerException`` like this:
 In order to resolve this, check the model involved. It will look something
 like this:
 
- .. code-block:: none
+ .. code-block:
 
-    list Node {
+    list node {
         key id;
         leaf id {
             type string;
@@ -266,7 +270,7 @@ mapping to ``java.util.Map`` solves both problems.
 
 A typical impacted YANG snippet would look something like:
 
- .. code-block:: none
+ .. code-block:
 
     list foo {
         key bar;
@@ -283,7 +287,7 @@ to track such lists, resulting in inherently unstable iteration order.
 If the order of entries is significant, then this needs to be expressed
 in the model like this:
 
- .. code-block:: none
+ .. code-block:
 
     list foo {
         key bar;
@@ -329,4 +333,11 @@ will most likely stop adding this property.
 Users are advised to stop specifying this attribute when making references
 to OSGi services.
 
+
+Akka 2.6.12
+^^^^^^^^^^^
+This release integrates ``akka-2.6.12``, which is a major upgrade from previous
+``akka-2.5.32``. Most notably the auto-downing feature is no longer present
+and has been replaced by integrating the split-brain resolver. Please refer
+to clustering setup guide for required configuration updates.
 
