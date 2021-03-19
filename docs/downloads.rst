@@ -5,6 +5,27 @@ OpenDaylight Downloads
 Supported Releases
 ==================
 
+Aluminium SR3
+-------------
+
+(Current Release)
+
+:Announcement: `Aluminium <https://www.opendaylight.org/>`_
+
+:Original Release Date: April 30, 2021
+:Service Release Date: March 18, 2021
+
+:Downloads:
+    * `OpenDaylight Aluminium Tar
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/0.13.3/opendaylight-0.13.3.tar.gz>`_
+    * `OpenDaylight Aluminium Zip
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/0.13.3/opendaylight-0.13.3.zip>`_
+
+:Documentation:
+    * :doc:`Getting Started Guide <odl-aluminium:getting-started-guide/index>`
+    * :doc:`Project Guides <odl-aluminium:index>`
+    * :doc:`Release Notes <odl-aluminium:release-notes/index>`
+
 Aluminium SR1
 -------------
 
