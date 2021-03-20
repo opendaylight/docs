@@ -12,7 +12,7 @@ Aluminium SR3
 
 :Announcement: `Aluminium <https://www.opendaylight.org/>`_
 
-:Original Release Date: April 30, 2021
+:GA Release Date: September 22, 2020
 :Service Release Date: March 18, 2021
 
 :Downloads:
@@ -31,7 +31,7 @@ Magnesium-SR3
 
 :Announcement: `Magnesium <https://www.opendaylight.org/what-we-do/current-release/magnesium>`_
 
-:Original Release Date: March 25, 2020
+:GA Release Date: March 25, 2020
 :Service Release Date: December 15, 2020
 
 :Downloads:
@@ -49,7 +49,8 @@ Magnesium-SR3
 Archived Releases
 =================
 
-* `OpenDaylight (Nitrogen and newer) <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/>`_
+* `OpenDaylight (Fluorine and newer) <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/>`_
+* `OpenDaylight (Nitrogen and Oxygen) <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/>`_
 * `OpenDaylight (Carbon and earlier) <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/distribution-karaf/>`_
 * `ODL Micro <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/odlmicro/>`_
 * `NeXt UI <https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/next/next/>`_
