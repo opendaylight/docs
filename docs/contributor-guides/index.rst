@@ -9,6 +9,7 @@ Contributor Guides
 
    newcomers-guide
    coding-guidelines/index
+   jira-ticketing-guide
    copyright
 
 * :doc:`LFN Gerrit Guide <lfdocs:gerrit>`
