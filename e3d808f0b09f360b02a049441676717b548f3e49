@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "18c18166_47da631a",
+        "filename": "docs/contributor-guides/jira-ticketing-guide.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2021-03-25T16:57:18Z",
+      "side": 1,
+      "message": "Ack, I will make it simpler but for the listed projects I think jira uses the names I included.",
+      "parentUuid": "913d48e0_d5baf445",
+      "range": {
+        "startLine": 15,
+        "startChar": 8,
+        "endLine": 15,
+        "endChar": 139
+      },
+      "revId": "e3d808f0b09f360b02a049441676717b548f3e49",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6509d88c_2cd108bb",
         "filename": "docs/contributor-guides/jira-ticketing-guide.rst",
         "patchSetId": 3
@@ -45,6 +69,30 @@
       "revId": "e3d808f0b09f360b02a049441676717b548f3e49",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d4a4a6e4_28a9a666",
+        "filename": "docs/contributor-guides/jira-ticketing-guide.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2021-03-25T16:57:18Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "6509d88c_2cd108bb",
+      "range": {
+        "startLine": 21,
+        "startChar": 1,
+        "endLine": 21,
+        "endChar": 42
+      },
+      "revId": "e3d808f0b09f360b02a049441676717b548f3e49",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     },
     {
       "key": {
@@ -88,6 +136,48 @@
     },
     {
       "key": {
+        "uuid": "6d34b419_68192c8b",
+        "filename": "docs/contributor-guides/jira-ticketing-guide.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2021-03-25T16:57:18Z",
+      "side": 1,
+      "message": "so in that case I\u0027ll remove it from the mandatory list.",
+      "parentUuid": "0bb17b0f_fa9dbf1b",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 79
+      },
+      "revId": "e3d808f0b09f360b02a049441676717b548f3e49",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b7e6fded_ae215e65",
+        "filename": "docs/contributor-guides/jira-ticketing-guide.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2021-03-25T16:57:18Z",
+      "side": 1,
+      "message": "for affectedVersion I think that\u0027s straightforward,\nfor fixVersion I was thinking we should have another page with all release names and timelines (past and future), that page might be used by PTLs to plan and target jira tickets to releases. what do you think?",
+      "parentUuid": "e3aefb4c_1005774a",
+      "revId": "e3d808f0b09f360b02a049441676717b548f3e49",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "25b242db_d2f9a253",
         "filename": "docs/contributor-guides/jira-ticketing-guide.rst",
         "patchSetId": 3
@@ -102,6 +192,24 @@
       "revId": "e3d808f0b09f360b02a049441676717b548f3e49",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a5d5f85a_b77b0071",
+        "filename": "docs/contributor-guides/jira-ticketing-guide.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2021-03-25T16:57:18Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "25b242db_d2f9a253",
+      "revId": "e3d808f0b09f360b02a049441676717b548f3e49",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
