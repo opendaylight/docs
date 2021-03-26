@@ -178,6 +178,24 @@
     },
     {
       "key": {
+        "uuid": "a66873f3_8363dfb9",
+        "filename": "docs/contributor-guides/jira-ticketing-guide.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6731
+      },
+      "writtenOn": "2021-03-26T08:36:13Z",
+      "side": 1,
+      "message": "There is such a page in the documentation https://docs.opendaylight.org/en/latest/release-process/release-schedule.html\nBut projects leaders have still to fill the versions manually in JIRA.\nThe experience have shown that they were not always granted the needed rights to do it.\nSo we must be clear on how to do that and how to request rights to LFN support.\nI agree this can be done on another page linked here.\n\nNB: MSI projects classically use the release name for versioning but MRI use their own numbering.",
+      "parentUuid": "b7e6fded_ae215e65",
+      "revId": "e3d808f0b09f360b02a049441676717b548f3e49",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "25b242db_d2f9a253",
         "filename": "docs/contributor-guides/jira-ticketing-guide.rst",
         "patchSetId": 3
