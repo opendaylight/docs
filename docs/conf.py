@@ -65,6 +65,11 @@ linkcheck_ignore = [
     'https://webchat.freenode.net/#',
     # Ignore google docs anchors
     'https://docs.google.com/presentation/d/1bnwj8CrFGo5KekONYSeIHySdkoXZiewJxkHcZjXnzkQ/edit#slide=id.g17d8ae4d92_0_137',
+    # Ignore local static contents
+    '../_static/OpenDaylight-Technical-Charter-LFN-Projects-LLC-FINAL.pdf',
+    # Ignore IETF URLs often not reachable from Jenkins minions
+    # because of hosting connectivity issues
+    '^http[s]://tools.ietf.org/html/.*',
 ]
 linkcheck_timeout = 300
 
