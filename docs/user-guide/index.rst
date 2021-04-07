@@ -18,7 +18,6 @@ Project-specific User Guides
 ----------------------------
 
 * :doc:`JSON RPC Documentation <jsonrpc:index>`
-* :doc:`NetVirt Documentation <netvirt:index>`
 * :doc:`OVSDB Documentation <ovsdb:index>`
 
 .. toctree::

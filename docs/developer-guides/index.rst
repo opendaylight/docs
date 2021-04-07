@@ -33,7 +33,6 @@ Project-specific Developer Guides
 
 * :doc:`InfraUtils Documentation <infrautils:index>`
 * :doc:`JSON RPC Documentation <jsonrpc:index>`
-* :doc:`NetVirt Documentation <netvirt:index>`
 * :doc:`OVSDB Documentation <ovsdb:index>`
 * :doc:`TransportPCE Documentation <transportpce:index>`
 
