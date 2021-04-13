@@ -69,6 +69,8 @@ linkcheck_ignore = [
     # Ignore IETF URLs often not reachable from Jenkins minions
     # because of hosting connectivity issues
     '^http[s]://tools.ietf.org/html/.*',
+    # pending release -- to remove once published
+    'https://www.opendaylight.org/current-release-silicon',
 ]
 linkcheck_timeout = 300
 
