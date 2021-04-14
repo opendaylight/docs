@@ -75,7 +75,6 @@ supported_projects=(
     odl-jsonrpc
     odl-lispflowmapping
     odl-netconf
-    odl-netvirt
     odl-openflowplugin
     opendaylight-ovsdb
     opendaylight-serviceutils
