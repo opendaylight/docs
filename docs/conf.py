@@ -60,7 +60,7 @@ linkcheck_ignore = [
     # URL returns a 403 Forbidden
     'https://www.osgi.org',
     # Ignore anchors on github.com because linkcheck fails on them
-    '^http[s]://github.com/.*#',
+    '^https?://github.com/.*#',
     # Ignore webchat anchors because '#' is not an anchor for this app
     'https://webchat.freenode.net/#',
     # Ignore google docs anchors
@@ -69,7 +69,7 @@ linkcheck_ignore = [
     '../_static/OpenDaylight-Technical-Charter-LFN-Projects-LLC-FINAL.pdf',
     # Ignore IETF URLs often not reachable from Jenkins minions
     # because of hosting connectivity issues
-    '^http[s]://tools.ietf.org/html/.*',
+    '^https?://tools.ietf.org/html/.*',
     # pending release -- to remove once published
     'https://www.opendaylight.org/current-release-silicon',
 ]
