@@ -99,13 +99,13 @@ release of both managed and self-managed projects.
      - Service Release 1 (SR1)
    * - Service Release 2
      - 2021-07-28
-     - 2020-12-30
+     - N/A
      - 3 months after SR1
      - Start Date +10.5 months
      - Service Release 2 (SR2)
    * - Service Release 3
      - 2021-10-28
-     - 2021-04-30
+     - 2021-03-19
      - 4 months after SR2
      - Start Date +14 months
      - Service Release 3 (SR3)
