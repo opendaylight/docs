@@ -108,7 +108,7 @@ to release once managed projects are ready.
      - Service Release 2 (SR2)
    * - Service Release 3
      - 2021-10-28
-     - 2021-04-30
+     - 2021-03-18
      - 4 months after SR2
      - Start Date +14 months
      - Service Release 3 (SR3)
