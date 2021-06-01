@@ -43,7 +43,7 @@ and ``odl-odlparent-version``.
 RESTCONF usage
 ~~~~~~~~~~~~~~
 
-Opendaylight config subsystem NETCONF northbound is not made available just by installing
+OpenDaylight config subsystem NETCONF northbound is not made available just by installing
 ``odl-distribution-version``, but most other feature installations would enable it.
 RESTCONF interfaces are enabled by installing ``odl-restconf`` feature,
 but that do not allow access to config subsystem by itself.

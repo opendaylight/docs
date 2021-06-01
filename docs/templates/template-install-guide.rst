@@ -20,7 +20,7 @@ Highlighting  the feature in a different color within the overall
 architecture must help. Include information to describe if the project
 is within ODL installation package or to be installed separately.
 
-Pre Requisites for Installing <Feature>
+Pre-Requisites for Installing <Feature>
 =======================================
 
 * Hardware Requirements
@@ -29,7 +29,7 @@ Pre Requisites for Installing <Feature>
 Preparing for Installation
 ==========================
 
-Include any pre configuration, database, or other software downloads
+Include any pre-configuration, database, or other software downloads
 required to install <feature>.
 
 Installing <Feature>

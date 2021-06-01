@@ -29,7 +29,7 @@ based policy, VTN, and lisp mapper. For provider configuration, please
 refer to each individual provider’s documentation. Since the Neutron
 service only provides the northbound API for the OpenStack Neutron ML2
 mechanism driver. Without those provider features, the Neutron service
-itself isn’t useful.
+itself is not useful.
 
 Neutron Service feature Architecture
 ------------------------------------
@@ -71,7 +71,7 @@ installing ``odl-neutron-service`` while the controller running
    stabilizes.
 
 ``odl-neutron-service`` provides only a unified interface for OpenStack
-Neutron. It doesn’t provide actual functionality for network
+Neutron. It does not provide actual functionality for network
 virtualization. Refer to each OpenDaylight project documentation for
 actual configuration with OpenStack Neutron.
 
