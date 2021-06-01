@@ -203,7 +203,7 @@ release notes for each release.
 CLM
 +++
 
-Managed Projects are required to handle CLM (Component Lifecycle Management)
+Managed Projects are required to handle CLM (Component Life-cycle Management)
 violations in a timely manner.
 
 Managed Release Process
@@ -395,9 +395,10 @@ The remaining artifacts will be automatically scraped:
 Midway Checkpoint
 #################
 
-One month before code freeze, a midway checkpoint will be collected. The release team
-will review the information collected and report it to the TSC at the next TSC
-meeting. All information for midway checkpoint will be automatically collected.
+One month before code freeze, a midway checkpoint will be collected.
+The release team will review the information collected and report it to the TSC
+at the next TSC meeting.
+All information for midway checkpoint will be automatically collected.
 
 * Open Jira bugs marked as blockers.
 * Open Jira issues tracking weather items.
@@ -412,8 +413,8 @@ this information more frequently, to provide trends over time.
 Final Checkpoint
 ################
 
-At 2 weeks after code freeze a final checkpoint will be collected by the release team
-and presented to the TSC at the next TSC meeting.
+At 2 weeks after code freeze a final checkpoint will be collected by the release
+team and presented to the TSC at the next TSC meeting.
 
 Projects will need to create the following artifacts:
 
@@ -506,7 +507,7 @@ staff to temporarily wield committer rights and merge version bump patches.
 The TSC vote at any time to back out of a version bump if the new releases are
 found to be unsuitable.
 
-MRI Projects are expected to provide bugfixes via minor or patch version
+MRI Projects are expected to provide bug fixes via minor or patch version
 updates during the release, but should strive to not expect MSI Projects to
 consume another major version update during the release.
 
@@ -593,10 +594,11 @@ Add to Common Distribution
 
 In order to be included in the formal (major or service) release distribution,
 Self-Managed Projects must be in the common distribution pom.xml file and the
-distribution sanity test (see :ref:`add-proj-dist`) no later than one week before
-the first Managed release candidate (RC) is created. Projects should only be added
-to the final distribution pom.xml after they have succesfully published artifacts
-using upstream SNAPSHOTs. See `Use of SNAPSHOT versions`_.
+distribution sanity test (see :ref:`add-proj-dist`) no later than one week
+before the first Managed release candidate (RC) is created.
+Projects should only be added to the final distribution pom.xml after they have
+successfully published artifacts using upstream SNAPSHOTs.
+See `Use of SNAPSHOT versions`_.
 
 .. note:: It is very important Self-Managed projects do not miss the deadlines for
           upstream integration and final distribution check, otherwise there are
@@ -608,20 +610,22 @@ Cut Stable Branch
 
 Self-Managed projects wanting to use the existing release job to release their
 artifacts (see `Release the project artifacts`_) must have an stable branch in
-the major release (fluorine, neon, etc) they are targeting. It is highly recommended
-to cut the stable branch before the first Managed release candidate (RC) is created.
+the major release (fluorine, neon, etc) they are targeting.
+It is highly recommended to cut the stable branch before the first Managed
+release candidate (RC) is created.
 
 After creating the stable branch Self-Managed projects should:
 
-* Bump master branch version to X.Y+1.0-SNAPSHOT, this way any new merge in master
-  will not interfere with the new created stable branch artifacts.
+* Bump master branch version to X.Y+1.0-SNAPSHOT, this way any new merge in
+  master will not interfere with the new created stable branch artifacts.
 
-* Update .gitreview for stable branch: change defaultbranch=master to stable branch.
-  This way folks running "git review" will get the right branch.
+* Update ``.gitreview`` for stable branch: change ``defaultbranch=master`` to
+  stable branch. This way folks running "git review" will get the right branch.
 
-* Update their jenkins jobs: current release should point to the new created stable
-  branch and next release should point to master branch. If you do not know how to
-  do this please open a ticket to opendaylight helpdesk.
+* Update their jenkins jobs: current release should point to the new created
+  stable branch and next release should point to master branch.
+  If you do not know how to do this please open a ticket to OpenDaylight
+  helpdesk.
 
 Release the project artifacts
 +++++++++++++++++++++++++++++
@@ -652,9 +656,10 @@ Moving a Project from Managed to Self-Managed
 ---------------------------------------------
 
 Managed Projects that are not required for dependency reasons can submit a
-**Project_Plan** issue to be Self-Managed to the TSC project in Jira. See details
-in the `Initial Checkpoint`_ section above. Requests should be submitted before
-the start of a release. Requests will be evaluated by the TSC.
+**Project_Plan** issue to be Self-Managed to the TSC project in Jira.
+See details in the `Initial Checkpoint`_ section above.
+Requests should be submitted before the start of a release.
+Requests will be evaluated by the TSC.
 
 The TSC may withdraw a project from the Managed Release at any time.
 
@@ -663,17 +668,20 @@ Installing Features from Self-Managed Projects
 
 Self-Managed Projects will have their artifacts included in the final release
 if they are available on-time, but they will not be available to be installed
-until the user does a repo:add.
+until the user does a `̀ repo:add``.
 
 To install an Self-Managed Project feature, find the feature description in the
 system directory. For example, NetVirt's main feature:
 
-system/org/opendaylight/netvirt/odl-netvirt-openstack/0.6.0-SNAPSHOT/
+.. code-block:: none
 
-Then use the Karaf shell to repo:add the feature:
+   system/org/opendaylight/netvirt/odl-netvirt-openstack/0.6.0-SNAPSHOT/
 
-feature:repo-add mvn:org.opendaylight.netvirt/odl-netvirt-openstack/0.6.0
--SNAPSHOT/xml/features
+Then use the Karaf shell to ``repo:add`` the feature:
+
+.. code-block:: none
+
+   feature:repo-add mvn:org.opendaylight.netvirt/odl-netvirt-openstack/0.6.0-SNAPSHOT/xml/features
 
 Grievances
 ==========
@@ -719,7 +727,7 @@ Vocabulary Reference
 * Self-Managed Project: A project not taking part in the Managed Release
   Process.
 * Simultaneous Release: Event wherein all Snapshot Integrated Project versions
-  are rewriten to release versions and release artifacts are produced.
+  are rewritten to release versions and release artifacts are produced.
 * Snapshot Integrated Project: Project that integrates with OpenDaylight
   projects using snapshot version numbers. These projects release together in
   the Simultaneous Release.

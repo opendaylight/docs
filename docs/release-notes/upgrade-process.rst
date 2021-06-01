@@ -15,7 +15,7 @@ Preparation
 JDK 11 Version
 ^^^^^^^^^^^^^^
 Silicon requires Java 11, both during compile-time and run-time.
-Make sure to install JDK 11 corresponding to at least openjdk-11.0.8,
+Make sure to install JDK 11 corresponding to at least ``openjdk-11.0.8``,
 and that the JAVA_HOME environment variable points to the JDK directory.
 
 InfraUtils is a MRI project
@@ -34,7 +34,7 @@ versions (for example, `bump-odl-version <https://github.com/skitt/odl-tools/blo
 1. Update the odlparent version from 7.0.5 to 8.1.1. There should
    not be any reference to **org.opendaylight.odlparent**, except
    for 8.1.1. This includes custom feature.xml templates
-   (src/main/feature/feature.xml), the version range there should
+   (``src/main/feature/feature.xml``), the version range there should
    be "[8.1,9)" instead of "[8,9)", "[5.0.3,6)" or any other variation.
 
  .. code-block:: shell
@@ -44,7 +44,7 @@ versions (for example, `bump-odl-version <https://github.com/skitt/odl-tools/blo
 2. Update the direct yangtools version references from 5.0.5 to 6.0.5,
    There should not be any reference to **org.opendaylight.yangtools**,
    except for 6.0.5. This includes custom feature.xml templates
-   (src/main/feature/feature.xml), the version range there should
+   (``src/main/feature/feature.xml``), the version range there should
    be "[6,7)" instead of "[5,6)".
 
  .. code-block:: shell
@@ -201,7 +201,7 @@ down the road. For further details see this
 
 Augmentation tracking has been reworked
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-As part of larger lifecycle activities, a number of implementation details
+As part of larger life-cycle activities, a number of implementation details
 have changed to the point as to render the distinction between Augmentable
 and AugmentationHolder interfaces superfluous. AugmentationHolder has therefore
 been completely integrated into Augmentable allowing efficient implementation
@@ -223,14 +223,14 @@ DOM interfaces no longer use SchemaPath identification
 Interfaces for invocation of ``RPCs`` and ``actions``, as well as
 publishing ``notifications``  have switched from using ``SchemaPath`` to
 using either ``QName`` or ``SchemaNodeIdentifier.Absolute``. This allows
-more efficient invocation and removes ambguity around relative SchemaPath
+more efficient invocation and removes ambiguity around relative SchemaPath
 being or not being allowed.
 
 
 
 Removed packaging of draft ietf-topology extensions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-As part of furtherm cleanup, standardization and stabilization of MD-SAL
+As part of further cleanup, standardization and stabilization of MD-SAL
 interfaces, four models from ``draft-clemm-netmod-yang-network-topo-01``
 have been removed: ``ietf-topology-isis``, ``ietf-topology-ospf``, ``ietf-ted``
 and ``ietf-topology-l3-unicast-igp``. For further details see this
@@ -239,14 +239,15 @@ and ``ietf-topology-l3-unicast-igp``. For further details see this
 
 Final release to include widened Integer/Long/BigInteger compatibility
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Magnesium introduced a change in how uint8, uint16, uint32 and uint64 types
-are mapped to Java. Previously this would be mapped to Short, Integer, Long
-and BigInteger respectively. With Magnesium these are mapped to dedicated
-yang.common.Uint{8,16,32,64}, whose design matches general design of
-java.lang.Integer.
+Magnesium introduced a change in how ``uint8``, ``uint16``, ``uint32`` and
+``uint64`` types are mapped to Java.
+Previously this would be mapped to Short, Integer, Long and BigInteger
+respectively.
+With Magnesium these are mapped to dedicated ``yang.common.Uint{8,16,32,64}``,
+whose design matches general design of ``java.lang.Integer``.
 
 This change obviously requires some amount adaptation, which is why
-compatibility setter methods and contructors are generated, each of which
+compatibility setter methods and constructors are generated, each of which
 converts the wide type to its native mapping, undoing the widening.
 
 Such conversions are costly in terms of both CPU usage, but also cost
@@ -323,7 +324,7 @@ Controller Impacts
 
 Akka remote configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^
-Because of the akka upgrade to 2.6.x in Silicon, remote tcp configuration changed
+Because of the akka upgrade to 2.6.x in Silicon, remote TCP configuration changed
 from ``netty.tcp`` to ``classic.netty.tcp``:
 
  .. code-block:: none
@@ -333,12 +334,12 @@ from ``netty.tcp`` to ``classic.netty.tcp``:
         port = 2550
       }
 
-Use of odl:type in Blueprint is discouraged
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Use of ``odl:type`` in Blueprint is discouraged
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 This property has been used for discerning between various implementations
 of MD-SAL services present in the OSGi service registry. As these services have
 been consolidated in the past couple of releases, the use of this qualifier
-is discouraged. While some services are advertized with this property set, it
+is discouraged. While some services are advertised with this property set, it
 is no longer considered a binding contract and future releases, even minor,
 will most likely stop adding this property.
 

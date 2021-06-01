@@ -45,7 +45,7 @@ This release provides the following new features:
 .. note::
 
    this could be a karaf feature or new functionality made available
-   as a new implementation of an already exisiting karaf feature.
+   as a new implementation of an already existing karaf feature.
 
 Deprecated Features
 ===================

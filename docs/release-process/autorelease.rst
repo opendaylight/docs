@@ -13,15 +13,15 @@ and final full release.
 Cloning Autorelease
 ===================
 
-To clone all the autorelease repo including it's submodules simply run the
-clone command with the '''--recursive''' parameter.
+To clone all the autorelease repository including it's ``submodules`` simply
+run the clone command with the '''--recursive''' parameter.
 
 .. code-block:: bash
 
     git clone --recursive https://git.opendaylight.org/gerrit/releng/autorelease
 
 If you forgot to add the --recursive parameter to your git clone you can pull
-the submodules after with the following commands.
+the ``submodules`` after with the following commands.
 
 .. code-block:: bash
 
@@ -49,23 +49,24 @@ button on the left hand menu:
     other fields to their default setting. Set this to Boron, Boron-RC0,
     Boron-RC1, etc... depending on the build you'd like to create.
 
-Adding Autorelease staging repo to settings.xml
-===============================================
+Adding Autorelease staging repository to settings.xml
+=====================================================
 
 If you are building or testing this release in such a way that requires pulling
-some of the artifacts from the Nexus repo you may need to modify your
-settings.xml to include the staging repo URL as this URL is not part of ODL
-Nexus' public or snapshot groups. If you've already cloned the recommended
-settings.xml for building ODL you will need to add an additional profile and
-activate it by adding these sections to the "\<profiles\>" and
-"\<activeProfiles\>" sections (please adjust accordingly).
+some of the artifacts from the Nexus repository you may need to modify your
+``settings.xml`` to include the staging repository URL as this URL is not part
+of OpenDaylight Nexus' public or snapshot groups.
+If you've already cloned the recommended settings.xml for building ODL you will
+need to add an additional profile and activate it by adding these sections to
+the ``\<profiles\>`` and ``\<activeProfiles\>`` sections
+(please adjust accordingly).
 
 .. note::
 
     * This is an example and you need to "Add" these example sections to your
-      settings.xml do not delete your existing sections.
-    * The URLs in the \<repository\> and \<pluginRepository\> sections will also
-      need to be updated with the staging repo you want to test.
+      ``settings.xml`` do not delete your existing sections.
+    * The URLs in the ``\<repository\>`` and ``\<pluginRepository\>`` sections
+      will also need to be updated with the staging repository you want to test.
 
 .. code-block:: xml
 
