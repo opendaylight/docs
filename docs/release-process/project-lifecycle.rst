@@ -1,6 +1,6 @@
-*****************
-Project lifecycle
-*****************
+******************
+Project life-cycle
+******************
 
 This page documents the current rules to follow when adding and removing
 a particular project to Simultaneous Release (SR).
@@ -15,8 +15,8 @@ progress to the following state.
   The project is not recognized by Technical Steering Committee (TSC) to be
   part of OpenDaylight (ODL).
 - **non-participating**
-  The project is recognized byt TSC to be an ODL project, but the project has
-  not confirmed participation in SR for given release cycle.
+  The project is recognized by the TSC to be an ODL project, but the
+  project has not confirmed participation in SR for given release cycle.
 - **non-building**
   The recognized project is willing to participate, but its current codebase is
   not passing its own merge job, or the project artifacts are otherwise
@@ -29,7 +29,7 @@ progress to the following state.
   but autorelease build fails when building project's artifact.
   Temporary state, timing out into not-in-autorelease.
 - **repo-not-in-integration**
-  Project is succesfully built within autorelease, but integration/distribution:features-index
+  Project is successfully built within autorelease, but integration/distribution:features-index
   is not listing all its public feature repositories.
 - **feature-not-in-integration**
   Feature repositories are referenced, distribution-check job is passing,
@@ -59,7 +59,7 @@ progress to the following state.
 
 .. todo::
 
-   - Add links to documents concerning project lifecycle from TSC point of view.
+   - Add links to documents concerning project life-cycle from TSC point of view.
    - Add links to M# templates, test requirements and other relevant info.
    - Mention other jobs involved in verification (verify, validate-autorelease, ... releng-check-poms).
    - Add back-references to this document (from integration/distribution, job definition templates, ...).
