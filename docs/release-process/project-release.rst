@@ -3,7 +3,7 @@ Project Standalone Release
 **************************
 
 This page explains how a project can release independently outside of the
-OpenDaylight simultanious release.
+OpenDaylight simultaneous release.
 
 Preparing your project for release
 ==================================
@@ -17,22 +17,23 @@ methods against the {project-name}-maven-stage-{stream} job:
 This job performs the following duties:
 
 1. Removes -SNAPSHOT from all pom files
-2. Produces a taglist.log, project.patch, and project.bundle files
-3. Runs a `mvn clean deploy` to a local staging repo
-4. Pushes the staging repo to a Nexus staging repo
+2. Produces a ``taglist.log``, project.patch, and project.bundle files
+3. Runs a `mvn clean deploy` to a local staging repository
+4. Pushes the staging repository to a Nexus staging repository
    https://nexus.opendaylight.org/content/repositories/<REPO_ID>
-   (REPO_ID is saved to staging-repo.txt on the log server)
-5. Archives taglist.log, project.patch, and project.bundle files to log server
+   (REPO_ID is saved to ``staging-repo.txt`` on the log server)
+5. Archives ``taglist.log``, project.patch, and project.bundle files to log
+   server
 
-The files taglist.log and project.bundle can be used later at release time to
-reproduce a byte exact commit of what was built by the Jenkins job. This can
-be used to tag the release at release time.
+The files `̀`taglist.log`` and `̀ project.bundle`̀` can be used later at release
+time to reproduce a byte exact commit of what was built by the Jenkins job.
+This can be used to tag the release at release time.
 
 Releasing your project
 ======================
 
-Once testing against the staging repo has been completed and project has
-determined that the staged repo is ready for release. A release can the be
+Once testing against the staging repository has been completed and project has
+determined that the staged repository is ready for release. A release can the be
 performed using the self-serve release process:
 https://docs.releng.linuxfoundation.org/projects/global-jjb/en/latest/jjb/lf-release-jobs.html
 

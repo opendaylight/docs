@@ -81,7 +81,7 @@ to release once managed projects are ready.
      - Middle Checkpoint + 4 weeks
      - Start Date +20 weeks
      - Code freeze for all Managed Projects - cut and lock release branch. Only
-       allow blocker bugfixes in release branch.
+       allow blocker bug fixes in release branch.
    * - Final Checkpoint
      - 2021-03-08
      - 2020-08-17
