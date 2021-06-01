@@ -30,9 +30,9 @@ independently on top of the Managed Distribution later.
 Finding the Managed Projects given a Managed Distribution
 =========================================================
 
-Given a Managed Distribution (tar.gz, .zip, RPM, Deb), the Managed Projects
-that constitute it can be found in the `taglist.log` file in the root of the
-archive.
+Given a Managed Distribution (``.tar.gz``, ``.zip``, RPM, Deb), the Managed
+Projects that constitute it can be found in the `taglist.log` file in the root
+of the archive.
 
 `taglist.log` files are of the format:
 

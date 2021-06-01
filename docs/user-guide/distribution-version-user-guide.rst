@@ -17,7 +17,7 @@ and which workarounds to apply, such user would need to know the exact version
 of at least one OpenDaylight component.
 
 There are indirect ways to deduce such version, but the direct way is enabled
-by odl-distribution-version feature. Administrator can specify version strings,
+by ``odl-distribution-version`` feature. Administrator can specify version strings,
 which would be available to users via NETCONF, or via RESTCONF
 if OpenDaylight is configured to initiate NETCONF connection
 to its config subsystem northbound interface.

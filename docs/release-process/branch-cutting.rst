@@ -60,12 +60,14 @@ JJB (releng/builder)
           stream: silicon
           branch: stable/silicon
 
-#. Review and submit the changes to releng/builder project. **(releng/builder committers)**
+#. Review and submit the changes to releng/builder project.
+   **(releng/builder committers)**
 
 Autorelease
 -----------
 
-#. Block submit permissions for registered users and elevate RE's committer rights on gerrit.
+#. Block submit permissions for registered users and elevate RE's committer
+   rights on Gerrit.
    **(Helpdesk)**
 
    .. figure:: images/gerrit-update-committer-rights.png
@@ -74,7 +76,8 @@ Autorelease
 
       Enable **Exclusive** checkbox for the submit button to override any existing permissions.
 
-#. Enable create reference permissions on gerrit for RE's to submit .gitreview patches.
+#. Enable create reference permissions on Gerrit for RE's to submit
+   ``.gitreview`` patches.
    **(Helpdesk)**
 
    .. figure:: images/gerrit-update-create-reference.png
@@ -85,10 +88,10 @@ Autorelease
 
 #. Start the branch cut job or use the manual steps below for branch cutting autorelease. **(Release Engineering Team)**
 #. Start the version bump job or use the manual steps below for version bump autorelease. **(Release Engineering Team)**
-#. Merge all .gitreview patches submitted though the job or manually. **(Release Engineering Team)**
-#. Remove create reference permissions set on gerrit for RE's. **(Helpdesk)**
+#. Merge all ``.gitreview`` patches submitted though the job or manually. **(Release Engineering Team)**
+#. Remove create reference permissions set on Gerrit for RE's. **(Helpdesk)**
 #. Merge all version bump patches in the order of dependencies. **(Release Engineering Team)**
-#. Re-enable submit permissions for registered users and disable elevated RE committer rights on gerrit. **(Helpdesk)**
+#. Re-enable submit permissions for registered users and disable elevated RE committer rights on Gerrit. **(Helpdesk)**
 #. Notify release list on branch cutting work completion. **(Release Engineering Team)**
 
 
@@ -102,7 +105,7 @@ Branch cutting can be performed either through the job or manually.
 Manual steps to branch cut (Autorelease)
 ----------------------------------------
 
-#. Setup releng/autorelease repository.
+#. Setup ``releng/autorelease`` repository.
    **(Release Engineering Team)**
 
    .. code-block:: bash
@@ -114,7 +117,8 @@ Manual steps to branch cut (Autorelease)
        git pull --rebase
        git submodule foreach 'git pull --rebase'
 
-#. Enable create reference permissions on gerrit for RE's to submit .gitreview patches.
+#. Enable create reference permissions on Gerrit for RE's to submit
+   ``.gitreview`` patches.
    **(Helpdesk)**
 
    .. figure:: images/gerrit-update-create-reference.png
@@ -123,7 +127,7 @@ Manual steps to branch cut (Autorelease)
 
       Enable Exclusive check-box override any existing permissions.
 
-#. Create stable/${CURR_RELEASE} branches based on HEAD master.
+#. Create ``stable/${CURR_RELEASE}`` branches based on HEAD master.
    **(Release Engineering Team)**
 
    .. code-block:: bash
@@ -133,7 +137,7 @@ Manual steps to branch cut (Autorelease)
        git push gerrit stable/${CURR_RELEASE,,}
        git submodule foreach 'git push gerrit stable/${CURR_RELEASE,,}'
 
-#. Contribute .gitreview updates to stable/${CURR_RELEASE,,}.
+#. Contribute ``.gitreview`` updates to ``stable/${CURR_RELEASE,,}``.
    **(Release Engineering Team)**
 
    .. code-block:: bash
@@ -177,7 +181,7 @@ Manual steps to version bump (Autorelease)
 
        git checkout pom.xml scripts/
 
-#. Push version bump master changes to gerrit. **(Release Engineering Team)**
+#. Push version bump master changes to Gerrit. **(Release Engineering Team)**
 
    .. code-block:: bash
 
