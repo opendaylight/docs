@@ -19,10 +19,10 @@ Inter/Intra-AS peering
 
 The plugin's **north-bound API** (``REST``/``Java``) provides to user:
 
-* Fully dynamic runtime standardized BGP configuration
+* Fully dynamic run-time standardized BGP configuration
 * Read-only access to all RIBs
 * Read-write programmable RIBs
-* Read-only reachability/linkstate topology view
+* Read-only reachability/link-state topology view
 
 PCEP Plugin
 -----------

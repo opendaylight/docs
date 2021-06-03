@@ -8,7 +8,7 @@ Overview
 AAA (Authentication, Authorization, and Accounting) are services that help
 improve the security posture of an OpenDaylight deployment. By default,
 the majority of OpenDaylight’s northbound APIs (and all RESTCONF APIs)
-are protected by AAA after installing the +odl-restconf+ feature.
+are protected by AAA after installing the ``+odl-restconf+`` feature.
 
 Resolved Issues
 ===============
