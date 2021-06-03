@@ -115,7 +115,7 @@ To list the installed Karaf features, run the following command::
 
     feature:list -i
 
-The decription of these features is in the project specific
+The description of these features is in the project specific
 release notes :ref:`proj_rel_notes` section.
 
 Karaf running on Windows 10
@@ -128,11 +128,11 @@ Issue occurs during installation of karaf features e.g.::
    Error executing command: Can't install feature odl-restconf/0.0.0:
    Could not start bundle mvn:org.fusesource.leveldbjni/leveldbjni-all/1.8-odl in feature(s) odl-akka-leveldb-0.7: The bundle "org.fusesource.leveldbjni.leveldbjni-all_1.8.0 [300]" could not be resolved. Reason: No match found for native code: META-INF/native/windows32/leveldbjni.dll; processor=x86; osname=Win32, META-INF/native/windows64/leveldbjni.dll; processor=x86-64; osname=Win32, META-INF/native/osx/libleveldbjni.jnilib; processor=x86; osname=macosx, META-INF/native/osx/libleveldbjni.jnilib; processor=x86-64; osname=macosx, META-INF/native/linux32/libleveldbjni.so; processor=x86; osname=Linux, META-INF/native/linux64/libleveldbjni.so; processor=x86-64; osname=Linux, META-INF/native/sunos64/amd64/libleveldbjni.so; processor=x86-64; osname=SunOS, META-INF/native/sunos64/sparcv9/libleveldbjni.so; processor=sparcv9; osname=SunOS
 
-Workaround is to add
+Workaround is to add::
 
    org.osgi.framework.os.name = Win32
 
-to the karaf file
+to the karaf file::
 
    etc/system.properties
 

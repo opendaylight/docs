@@ -23,7 +23,7 @@ If an application or tool is built on top of OpenDaylight’s REST APIs, it does
 have any special requirement beyond what is necessary to run the application or tool
 to make REST calls.
 
-In some instances, OpenDaylight uses the `Xtend <https://www.eclipse.org/xtend/>`_ lamguage.
+In some instances, OpenDaylight uses the `Xtend <https://www.eclipse.org/xtend/>`_ language.
 Even though Maven downloads all appropriate tools to build applications; additional plugins
 may be required to support IDE.
 

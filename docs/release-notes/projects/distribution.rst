@@ -15,13 +15,13 @@ distribution. The project currently generates 3 artifacts:
    * - **Artifact**
      - **Description**
 
-   * - **Managed distribution** (e.g., karaf-<version>.tar.gz)
+   * - **Managed distribution** (e.g., ``karaf-<version>.tar.gz``)
      - This includes the managed projects in OpenDaylight
        (refer to, :ref:`managed-release`).
-   * - **Common distribution** (e.g., opendaylight-<version>.tar.gz)
+   * - **Common distribution** (e.g., ``opendaylight-<version>.tar.gz``)
      - This includes managed and self-managed projects
        (refer to, :ref:`managed-release`).
-   * - **ONAP distribution** (e.g., onap-karaf-<version>.tar.gz)
+   * - **ONAP distribution** (e.g., ``onap-karaf-<version>.tar.gz``)
      - This is the distribution used in the ONAP CCSDK project.
 
 The distribution project is also the placeholder for the distribution
