@@ -62,3 +62,4 @@ Service Release Notes
    :hidden:
 
    sample-release-notes
+   release-notes-silicon-sr1
