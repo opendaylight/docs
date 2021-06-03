@@ -94,16 +94,16 @@ OpenDaylight includes some scripts to help with the clustering configuration.
 
 .. note::
 
-    Scripts are stored in the OpenDaylight distribution/bin folder, and
+    Scripts are stored in the OpenDaylight ``distribution/bin`` folder, and
     maintained in the distribution project
     `repository <https://git.opendaylight.org/gerrit/p/integration/distribution>`_
-    in the folder distribution-karaf/src/main/assembly/bin/.
+    in the folder ``distribution-karaf/src/main/assembly/bin/``.
 
 Configure Cluster Script
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-This script is used to configure the cluster parameters (e.g. akka.conf,
-module-shards.conf) on a member of the controller cluster. The user should
+This script is used to configure the cluster parameters (e.g. ``akka.conf``,
+``module-shards.conf``) on a member of the controller cluster. The user should
 restart the node to apply the changes.
 
 .. note::
@@ -124,7 +124,7 @@ the script. When running this script on multiple seed nodes, keep the
 seed_node_list the same, and vary the index from 1 through N.
 
 Optionally, shards can be configured in a more granular way by modifying the
-file "custom_shard_configs.txt" in the same folder as this tool. Please see
+file ``"custom_shard_configs.txt"`` in the same folder as this tool. Please see
 that file for more details.
 
 Example::
@@ -144,10 +144,10 @@ do the following on each machine:
 
 #. Copy the OpenDaylight distribution zip file to the machine.
 #. Unzip the distribution.
-#. Open the following .conf files:
+#. Open the following configuration files:
 
-   * configuration/initial/akka.conf
-   * configuration/initial/module-shards.conf
+   * ``configuration/initial/akka.conf``
+   * ``configuration/initial/module-shards.conf``
 
 #. In each configuration file, make the following changes:
 
@@ -179,7 +179,7 @@ do the following on each machine:
 
    .. note:: This step should use a different role on each node.
 
-#. Open the configuration/initial/module-shards.conf file and update the
+#. Open the ``configuration/initial/module-shards.conf`` file and update the
    replicas so that each shard is replicated to all three nodes::
 
       replicas = [
@@ -352,13 +352,13 @@ Sample ``module-shards.conf`` file::
 Cluster Monitoring
 ------------------
 
-OpenDaylight exposes shard information via MBeans, which can be explored with
-JConsole, VisualVM, or other JMX clients, or exposed via a REST API using
+OpenDaylight exposes shard information via ``MBeans``, which can be explored
+with ``JConsole``, VisualVM, or other JMX clients, or exposed via a REST API using
 `Jolokia <https://jolokia.org/features-nb.html>`_, provided by the
 ``odl-jolokia`` Karaf feature. This is convenient, due to a significant focus
 on REST in OpenDaylight.
 
-The basic URI that lists a schema of all available MBeans, but not their
+The basic URI that lists a schema of all available ``MBeans``, but not their
 content itself is::
 
     GET  /jolokia/list
@@ -469,7 +469,7 @@ statistics/counters.
 
 The ODLTools team is maintaining a Python based `tool
 <https://github.com/opendaylight/odltools>`_,
-that takes advantage of the above MBeans exposed via Jolokia.
+that takes advantage of the above ``MBeans`` exposed via ``Jolokia``.
 
 .. _cluster_admin_api:
 
@@ -580,9 +580,9 @@ Keep majority
 
 This strategy is used by default, because it works well for most systems.
 It will down the unreachable nodes if the current node is in the majority part
-based on the last known membership information. Otherwise down the reachable nodes,
-i.e. the own part. If the parts are of equal size the part containing the node with
-the lowest address is kept.
+based on the last known membership information. Otherwise down the reachable
+nodes, i.e. the own part. If the parts are of equal size the part containing the
+node with the lowest address is kept.
 
 This strategy is a good choice when the number of nodes in the cluster change
 dynamically and you can therefore not use static-quorum.
@@ -630,19 +630,21 @@ This strategy is a good choice when you have a fixed number of nodes in the
 cluster, or when you can define a fixed number of nodes with a certain role.
 
 * If there are unreachable nodes when starting up the cluster, before reaching
-  this limit, the cluster may shut itself down immediately. This is not an issue
-  if you start all nodes at approximately the same time or use the
-  akka.cluster.min-nr-of-members to define required number of members before the
-  leader changes member status of ‘Joining’ members to ‘Up’. You can tune the
-  timeout after which downing decisions are made using the stable-after setting.
+  this limit, the cluster may shut itself down immediately.
+  This is not an issue if you start all nodes at approximately the same time or
+  use the ``akka.cluster.min-nr-of-members`` to define required number of
+  members before the leader changes member status of ‘Joining’ members to ‘Up’.
+  You can tune the timeout after which downing decisions are made using the
+  stable-after setting.
 
 * You should not add more members to the cluster than quorum-size * 2 - 1.
-  If the exceeded cluster size remains when a SBR decision is needed it will down
-  all nodes because otherwise there is a risk that both sides may down each other
-  and thereby form two separate clusters.
+  If the exceeded cluster size remains when a SBR decision is needed it will
+  down all nodes because otherwise there is a risk that both sides may down each
+  other and thereby form two separate clusters.
 
 * If the cluster is split into 3 (or more) parts each part that is smaller than
-  then configured quorum-size will down itself and possibly shutdown the whole cluster.
+  then configured quorum-size will down itself and possibly shutdown the whole
+  cluster.
 
 * If more nodes than the configured quorum-size crash at the same time the other
   running nodes will down themselves because they think that they are not in the
@@ -697,8 +699,8 @@ singleton instance will be started on the next oldest node.
   if the oldest was Leaving and not changed to Exiting then each part will shut down
   itself, terminating the whole cluster.
 
-The decision can be based on nodes with a configured role instead of all nodes in
-the cluster.
+The decision can be based on nodes with a configured role instead of all nodes
+in the cluster.
 
 Configuration::
 
@@ -741,7 +743,7 @@ Lease
 
 The strategy named lease-majority is using a distributed lease (lock) to decide what
 nodes that are allowed to survive. Only one SBR instance can acquire the lease make
-the decision to remain up. The other side will not be able to aquire the lease and
+the decision to remain up. The other side will not be able to acquire the lease and
 will therefore down itself.
 
 This strategy is very safe since coordination is added by an external arbiter.
@@ -780,7 +782,7 @@ Configuration::
 Indirectly connected nodes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In a malfunctional network there can be situations where nodes are observed as
+In a malfunctioning network there can be situations where nodes are observed as
 unreachable via some network links but they are still indirectly connected via
 other nodes, i.e. it’s not a clean network partition (or node crash).
 
@@ -1037,8 +1039,8 @@ max-shard-data-change-listener-queue-size      uint32 (1..max)   1000    The max
 max-shard-data-store-executor-queue-size       uint32 (1..max)   5000    The maximum queue size for each shard's data store executor.
 shard-transaction-idle-timeout-in-minutes      uint32 (1..max)   10      The maximum amount of time a shard transaction can be idle without receiving any messages before it self-destructs.
 shard-snapshot-batch-count                     uint32 (1..max)   20000   The minimum number of entries to be present in the in-memory journal log before a snapshot is to be taken.
-shard-snapshot-data-threshold-percentage       uint8 (1..100)    12      The percentage of Runtime.totalMemory() used by the in-memory journal log before a snapshot is to be taken
-shard-hearbeat-interval-in-millis              uint16 (100..max) 500     The interval at which a shard will send a heart beat message to its remote shard.
+shard-snapshot-data-threshold-percentage       uint8 (1..100)    12      The percentage of ``Runtime.totalMemory()`` used by the in-memory journal log before a snapshot is to be taken
+shard-heartbeat-interval-in-millis             uint16 (100..max) 500     The interval at which a shard will send a heart beat message to its remote shard.
 operation-timeout-in-seconds                   uint16 (5..max)   5       The maximum amount of time for akka operations (remote or local) to complete before failing.
 shard-journal-recovery-log-batch-size          uint32 (1..max)   5000    The maximum number of journal log entries to batch on recovery for a shard before committing to the data store.
 shard-transaction-commit-timeout-in-seconds    uint32 (1..max)   30      The maximum amount of time a shard transaction three-phase commit can be idle without receiving the next messages before it aborts the transaction
@@ -1051,4 +1053,4 @@ persistent                                     boolean           true    Enable 
 shard-isolated-leader-check-interval-in-millis uint32 (1..max)   5000    the interval at which the leader of the shard will check if its majority followers are active and term itself as isolated
 ============================================== ================= ======= ==============================================================================================================================================================================
 
-These configuration options are included in the etc/org.opendaylight.controller.cluster.datastore.cfg configuration file.
+These configuration options are included in the ``etc/org.opendaylight.controller.cluster.datastore.cfg`` configuration file.

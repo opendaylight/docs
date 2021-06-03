@@ -115,7 +115,7 @@ security model to add the following features:
 * A set of OSGi-specific permission types, such as one that grants the right
   to register an OSGi service or get an OSGi service from the service registry.
 
-* The ability to dynamically modify permissions at runtime. This includes the
+* The ability to dynamically modify permissions at run-time. This includes the
   ability to specify permissions by using code rather than a text configuration
   file.
 
@@ -138,7 +138,7 @@ For more information, refer to https://www.osgi.org
 Securing the Karaf container
 ============================
 
-Apache Karaf is a OSGi-based runtime platform which provides a lightweight
+Apache Karaf is a OSGi-based run-time platform which provides a lightweight
 container for OpenDaylight and applications. Apache Karaf uses
 either Apache Felix Framework or Eclipse Equinox OSGi frameworks, and provide
 additional features on top of the framework.
@@ -200,12 +200,13 @@ mechanisms to connect to devices using the relevant plugins.
 Securing OpenDaylight using AAA
 ===============================
 
-AAA stands for Authentication, Authorization, and Accounting. All three of
-these services can help improve the security posture of an OpenDaylight deployment.
+AAA stands for Authentication, Authorization, and Accounting.
+All three of these services can help improve the security posture of an
+OpenDaylight deployment.
 
 The vast majority of OpenDaylight's northbound APIs (and all RESTCONF APIs) are
-protected by AAA by default when installing the +odl-restconf+ feature. In the
-cases that APIs are *not* protected by AAA, this will be noted in the
+protected by AAA by default when installing the ``+odl-restconf+`` feature.
+In the cases that APIs are *not* protected by AAA, this will be noted in the
 per-project release notes.
 
 By default, OpenDaylight has only one user account with the username and
