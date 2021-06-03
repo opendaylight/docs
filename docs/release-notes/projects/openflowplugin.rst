@@ -7,18 +7,20 @@ Overview
 
 The OpenFlow Plugin project provides the following functionality:
 
-* **OpenFlow 1.0/1.3 implementation project**: This provides the implementation of the
-  OpenFlow 1.0 and OpenFlow 1.3 specification.
-* **ONF Approved Extensions Project**: This provides the implementation of following ONF
-  OpenFlow 1.4 feature, which is approved as extensions for the OpenFlow 1.3
-  specification:
+* **OpenFlow 1.0/1.3 implementation project**: This provides the implementation
+  of the OpenFlow 1.0 and OpenFlow 1.3 specification.
+* **ONF Approved Extensions Project**: This provides the implementation of
+  following ONF OpenFlow 1.4 feature, which is approved as extensions
+  for the OpenFlow 1.3 specification:
 
-  * **Nicira Extensions Project**: This provides the implementation of the Nicira extensions.
-    Some of the important extensions implemented are **Connection Tracking Extension**
-    and **Group Add-Mod Extension**
+  * **Nicira Extensions Project**: This provides the implementation of the
+    ``Nicira`` extensions.
+    Some of the important extensions implemented are
+    **Connection Tracking Extension** and **Group Add-Mod Extension**
 
-* **OpenFlow-Based Applications Project**: This provides the following applications that user can
-  leverage out-of-the-box in developing their application or as a direct end consumer:
+* **OpenFlow-Based Applications Project**: This provides the following
+  applications that user can leverage out-of-the-box in developing their
+  application or as a direct end consumer:
 
   .. list-table:: OpenFlow-Based Applications
      :widths: 15 55
@@ -48,7 +50,7 @@ The OpenFlow Plugin project provides the following functionality:
          plugin data models to the OpenFlow java models before sending it down the
          wire to the device.
      * - **Reconciliation**
-       - Reconciles the state using Openflow 1.4 bundles.
+       - Reconciles the state using OpenFlow 1.4 bundles.
 
 Behavior/Feature Changes
 ========================

@@ -21,7 +21,7 @@ the following:
   the OpenDaylight controller, for example:
 
   * A plugin that provides connectivity to devices via the OpenFlow protocols
-    (openflowplugin).
+    (``openflowplugin``).
   * A platform service such as Authentication, Authorization, and Accounting
     (AAA).
   * A network service providing VM connectivity for OpenStack (netvirt).
@@ -32,6 +32,6 @@ the following:
 * Model Driven Service Abstraction Layer (MD-SAL). Yang models play a key role
   in OpenDaylight and are used for:
 
-  * Creating datastore schemas (tree based structure).
+  * Creating datastore schemata (tree based structure).
   * Generating application REST API (RESTCONF).
   * Automatic code generation (Java interfaces and Data Transfer Objects).

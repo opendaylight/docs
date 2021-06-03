@@ -8,13 +8,13 @@ Overview
 The InfraUtils project provides a low-level utility for use by other OpenDaylight projects, including:
 
 * @Inject DI
-* Utils incl. org.opendaylight.infrautils.utils.concurrent
+* ``Utils`` incl. ``org.opendaylight.infrautils.utils.concurrent``
 * Test Utilities
 * Job Coordinator
 * Ready Service
-* Integration Test Utilities (itestutils)
+* Integration Test Utilities (``itestutils``)
 * Caches
-* Diagstatus
+* ``Diagstatus``
 * Metrics
 
 Behavior/Feature Changes
