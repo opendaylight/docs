@@ -639,8 +639,8 @@ kind.
     * What other top-level features in the release are incompatible with each
       feature
     * This will likely be presented as a table in the documentation and the
-      data will likely also be consumed by automated
-      ``installers``/``configurators``/``downloaders``
+      data will likely also be consumed by an automated installer or configurator
+      or even downloader.
 
   * For some projects, there is extra installation instructions (for external
     components) and/or configuration
