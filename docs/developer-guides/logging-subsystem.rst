@@ -59,7 +59,7 @@ ERROR
 
 This level serves as the general error facility.
 It should be used whenever the software encounters an unexpected error which
-preventsfurther processing.
+prevents further processing.
 The reporting component may attempt recovery which may affect system
 availability or performance for a period of time, or it may forcefully terminate
 if it is unable to recover.
@@ -67,8 +67,8 @@ This level is always reported for all software components.
 
 There are three examples when this level should be used:
 
-#. Incorrectable internal state inconsistency, such as when a JVM
-   reports an OutOfMemoryError. The toplevel handler would log this
+#. Incorrigible internal state inconsistency, such as when a JVM
+   reports an OutOfMemoryError. The top-level handler would log this
    condition and force a JVM exit, as it is not capable of continuing
    execution.
 #. Internal state inconsistency, which is correctable by flushing and
@@ -134,7 +134,7 @@ Placement and amount of events generated at this level are at the discretion of
 the development engineers, as both relate directly to the component logic.
 The amount of detail in these events has to be limited to a single line of
 information useful for pinning down a misbehaving software component in a
-seemingly normal system and should be directly cross-referencable to either
+seemingly normal system and should be directly cross-referenceable to either
 previous **DEBUG** events or component configuration.
 A **hard requirement** is that there has to be at least one flow control
 statement (such as if, for, while) or a call to a different software component
@@ -185,7 +185,7 @@ the following pattern:
 Use parameterized logging
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Using dynamically-constructed message strings constributes to major overhead as
+Using dynamically-constructed message strings contributes to major overhead as
 the message string has to be constructed before the call to logging method is
 performed, thus forcing overhead even if the constructed string is not used
 (for example **DEBUG** level is not enabled).
@@ -196,7 +196,7 @@ creating message catalogue of a particular software release, which in turn is
 needed for things like support knowledge bases, internationalization, etc.
 
 While the former concern is addressed by Logger classes exposing methods such as
-LOG.isDebugEnabled(), the second concern can only be alleviated by using
+``LOG.isDebugEnabled()``, the second concern can only be alleviated by using
 explicit String literals when calling the Logger methods.
 The correct way to address both concerns is to use parameterized logging as
 described at http://www.slf4j.org/faq.html#logging_performance.
@@ -231,7 +231,7 @@ The basic pattern to follow is this:
    }
 
 There is one thing that needs to be noted in this style, which is that logging
-an exception is properly supported if you supply it as the last argumennt,
+an exception is properly supported if you supply it as the last argument,
 but you have to **MAKE SURE IT IS NOT HINTED TO IN THE MESSAGE STRING**:
 
 .. code:: java
@@ -267,16 +267,16 @@ but you have to **MAKE SURE IT IS NOT HINTED TO IN THE MESSAGE STRING**:
 Avoid calls to the methods is{Trace|Debug|Info|Warn|Error}Enabled()
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-While it is true that methods such as isDebugEnabled() & Co. eliminate the
+While it is true that methods such as ``isDebugEnabled()`` & Co. eliminate the
 minor overhead associated with the variadic method call, the burden on
 the developer is not acceptable simply because there are much better
 methods of automatic control of this overhead, without having any impact
 on the source code (or even the class files).
 One of them is JIT-level optimizations stemming from the ability to inline calls
-to LOG.debug().
-The other is the set of interfaces from java.lang.instrument package,
+to ``LOG.debug()``.
+The other is the set of interfaces from ``java.lang.instrument`` package,
 which can be used to completely eliminate the call overhead by removing all
-calls to LOG.debug() from the class bytecode based on the logger configuration.
+calls to ``LOG.debug()`` from the class bytecode based on the logger configuration.
 
 The exception to this rule can be if you log something that has some cost to
 calculate - and if that log statement runs a lot.
@@ -290,7 +290,7 @@ Something (made up) like:
        }
    }
 
-Note that you can and always should pass Object and thus never toString() your
+Note that you can and always should pass Object and thus never ``toString()`` your
 objects passed to a Logger.
 For example, this is WRONG:
 
