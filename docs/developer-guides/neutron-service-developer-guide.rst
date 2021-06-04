@@ -62,7 +62,7 @@ found at
 
 Basically those models are based on OpenStack Neutron API definitions.
 For exact definitions, OpenStack Neutron source code needs to be
-referred as the above documentation doesn’t always cover the necessary
+referred as the above documentation does not always cover the necessary
 details. There is nothing special to utilize those Neutron YANG models.
 The basic procedure will be:
 
@@ -112,10 +112,10 @@ Neutron configuration
 ---------------------
 
 From Boron, new models of configuration for OpenDaylight to tell
-OpenStack neutron/networking-odl its configuration/capability.
+OpenStack Neutron/``networking-odl`` its configuration/capability.
 
-hostconfig
-~~~~~~~~~~
+``hostconfig``
+~~~~~~~~~~~~~~
 
 This is for OpenDaylight to tell per-node configuration to Neutron.
 Especially this is used by pseudo agent port binding heavily.
@@ -138,11 +138,11 @@ In Boron this is experimental. The model definition can be found at
 Each Neutron Service provider has its own feature set. Some support the
 full features of OpenStack, but others support only a subset. With same
 supported Neutron API, some functionality may or may not be supported.
-So there is a need for a way that OpenDaylight can tell networking-odl
-its capability. Thus networking-odl can initialize Neutron properly
+So there is a need for a way that OpenDaylight can tell ``networking-odl``
+its capability. Thus ``networking-odl`` can initialize Neutron properly
 based on reported capability.
 
-Neutorn Logger
+Neutron Logger
 --------------
 
 There is another small Karaf feature, ``odl-neutron-logger``, which logs
