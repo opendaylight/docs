@@ -73,7 +73,7 @@ It also defines two profiles which help during development:
 
 -  ``q`` (``-Pq``), the quick profile, which disables tests, code
    coverage, Javadoc generation, code analysis, etc. — anything which
-   isn’t necessary to build the bundles and features (see `this blog
+   is not necessary to build the bundles and features (see `this blog
    post <http://blog2.vorburger.ch/2016/06/improve-maven-build-speed-with-q.html>`__
    for details);
 
@@ -181,10 +181,9 @@ If you use any of the following libraries, you should rely on
 
 .. note::
 
-    This list isn’t exhaustive. It’s also not cast in stone; if you’d
-    like to add a new dependency (or migrate a dependency), please
-    contact `the mailing
-    list <https://lists.opendaylight.org/g/kernel-dev>`__.
+    This list is not exhaustive. It is also not cast in stone;if you
+    would like to add a new dependency (or migrate a dependency), please
+    contact `the mailing list <https://lists.opendaylight.org/g/kernel-dev>`__.
 
 ``odlparent`` also enforces some Checkstyle verification rules. In
 particular, it enforces the common license header used in all
@@ -263,8 +262,8 @@ This inherits from ``odlparent`` and enables functionality useful for
 Karaf features:
 
 -  ``karaf-maven-plugin`` is activated, to build Karaf features — but
-   for OpenDaylight, projects need to use “jar” packaging (**not**
-   “feature” or “kar”);
+   for OpenDaylight, projects need to use ``“jar”`` packaging (**not**
+   ``“feature”`` or ``“kar”``);
 
 -  ``features.xml`` files are processed from templates stored in
    ``src/main/features/features.xml``;
@@ -272,7 +271,7 @@ Karaf features:
 -  Karaf features are tested after build to ensure they can be activated
    in a Karaf container.
 
-The ``features.xml`` processing allows versions to be ommitted from
+The ``features.xml`` processing allows versions to be omitted from
 certain feature dependencies, and replaced with “\ ``{{version}}``\ ”.
 For example:
 
@@ -299,7 +298,7 @@ For example:
             <configfile finalname="${config.configfile.directory}/${config.mdsal.configfile}">mvn:org.opendaylight.controller/md-sal-config/{{VERSION}}/xml/config</configfile>
         </feature>
 
-As illustrated, versions can be ommitted in this way for repository
+As illustrated, versions can be omitted in this way for repository
 dependencies, bundle dependencies and configuration files. They must be
 specified traditionally (either hard-coded, or using Maven properties)
 for feature dependencies.
@@ -319,10 +318,10 @@ This inherits from ``odlparent`` and enables functionality useful for
 Karaf 4 features:
 
 -  ``karaf-maven-plugin`` is activated, to build Karaf features, typically
-   with “feature” packaging (“kar” is also supported);
+   with ``"feature"`` packaging (``"kar"`` is also supported);
 
 -  ``feature.xml`` files are generated based on the compile-scope dependencies
-   defined in the POM, optionally initialised from a stub in
+   defined in the POM, optionally initialized from a stub in
    ``src/main/feature/feature.xml``.
 
 -  Karaf features are tested after build to ensure they can be activated
@@ -333,15 +332,15 @@ allows features to be defined using only the most significant dependencies
 (those that define the feature); other requirements are determined
 automatically as long as they exist as Maven dependencies.
 
-“configfiles” need to be defined both as Maven dependencies (with the
+``configfiles`` need to be defined both as Maven dependencies (with the
 appropriate type and classifier) and as ``<configfile>`` elements in the
 ``feature.xml`` stub.
 
 Other features which a feature depends on need to be defined as Maven
 dependencies with type “xml” and classifier “features” (note the plural here).
 
-feature-repo-parent
-~~~~~~~~~~~~~~~~~~~
+``feature-repo-parent``
+~~~~~~~~~~~~~~~~~~~~~~~
 
 This inherits from ``odlparent`` and enables functionality useful for
 Karaf 4 feature repositories. It follows the same principles as
@@ -390,11 +389,11 @@ These features are:
 
    -  ``odl-guava-18`` — Guava 18;
 
-   -  ``odl-guava-21`` — Guava 21 (not indended for use in Carbon);
+   -  ``odl-guava-21`` — Guava 21 (not intended for use in Carbon);
 
    -  ``odl-lmax-3`` — LMAX Disruptor;
 
-   -  ``odl-triemap-0.2`` — Concurrent Trie HashMap.
+   -  ``odl-triemap-0.2`` — Concurrent Hash-Trie Map.
 
 To use these, you need to declare a dependency on the appropriate
 repository in your ``features.xml`` file:
@@ -460,7 +459,7 @@ Features (for Karaf 4)
 
 There are equivalent features to all the Karaf 3 features, for Karaf 4.
 The repositories use “features4” instead of “features”, and the features
-use “odl4” instead of “odl”.
+use ``odl4`` instead of ``odl``.
 
 The following new features are specific to Karaf 4:
 
