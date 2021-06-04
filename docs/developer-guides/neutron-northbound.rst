@@ -14,7 +14,7 @@ In the Neutron Northbound project:
 -  Add new YANG model for it under ``neutron/model/src/main/yang`` and
    ``update neutron.yang``
 
--  Add northbound API for it, and neutron-spi
+-  Add northbound API for it, and ``neutron-spi``
 
    -  Implement ``Neutron<New API>Request.java`` and
       ``Neutron<New API>Norhtbound.java`` under
@@ -33,7 +33,7 @@ In the Neutron Northbound project:
 
 -  update
    ``neutron/northbound-api/src/main/java/org/opendaylight/neutron/northbound/api/NeutronNorthboundRSApplication.java``
-   to wire new northbound api to ``RSApplication``
+   to wire new northbound API to ``RSApplication``
 
 -  Add transcriber, ``Neutron<New API>Interface.java`` under
    ``transcriber/src/main/java/org/opendaylight/neutron/transcriber/``
@@ -49,13 +49,13 @@ In the Neutron Northbound project:
       ``integration/test/src/test/java/org/opendaylight/neutron/e2etest/ITNeutronE2E.java``
       to run a newly added tests.
 
-In OpenStack networking-odl
+In OpenStack ``networking-odl``
 
 -  Add new driver (or plugin) for new API with tests.
 
 In a southbound Neutron Provider
 
--  implement actual backend to realize those new API by listening
+-  implement actual back-end to realize those new API by listening
    related YANG models.
 
 How to write transcriber
