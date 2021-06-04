@@ -12,6 +12,7 @@ BigInteger
 boolean
 codebase
 config
+configurator
 Daexim
 Disruptor
 dataplane
@@ -19,6 +20,7 @@ datastore
 datastores
 deliverables
 dev
+downloader
 eg
 Gerrit
 Git
@@ -29,6 +31,7 @@ hostname
 ietf
 infrautils
 intra
+Javadoc
 Jenkins
 Jira
 jamoluhrsen
@@ -36,6 +39,7 @@ jarfile
 Karaf
 karaf
 lftools
+linter
 Magnesium
 mdsal
 microservice
@@ -50,12 +54,15 @@ OpenDaylight
 OpenFlow
 OpenStack
 odlparent
+overline
 ovs
 ovsdb
 PCE
 pre
+QoS
 Resolvers
 Runtime
+reStructuredText
 reachability
 reconfigurable
 reconnection
@@ -68,10 +75,12 @@ runtime
 scalability
 stateful
 submodule
+submodules
 switchponders
 TCP
 TSC
 todo
+tox
 tsc
 uint
 uncheck
@@ -79,5 +88,6 @@ unreachability
 untrusted
 vTEP
 virtualenv
+whitespace
 yangtools
 xml

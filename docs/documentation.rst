@@ -86,30 +86,30 @@ Word Choice
           exact capitalization and spacing associated with the URL or class
           name.
 
-* ACL: not Acl or acl
-* API: not api
-* ARP: not Arp or arp
+* ACL: not ``Acl`` or ``acl``
+* API: not ``api``
+* ARP: not ``Arp`` or ``arp``
 * datastore: not data store, Data Store, or DataStore (unless it is a
   class/object name)
-* IPsec, not IPSEC or ipsec
-* IPv4 or IPv6: not Ipv4, Ipv6, ipv4, ipv6, IPV4, or IPV6
+* ``IPsec``: not IPSEC or ``ipsec``
+* ``IPv4`` or ``IPv6``: not ``Ipv4``, ``Ipv6``, ``ipv4``, ``ipv6``, ``IPV4``, or ``IPV6``
 * Karaf: not karaf
-* Linux: not LINUX or linux
+* Linux: not LINUX or ``linux``
 * NETCONF: not Netconf or netconf
 * Neutron: not neutron
-* OSGi: not osgi or OSGI
-* Open vSwitch: not OpenvSwitch, OpenVSwitch, or Open V Switch.
-* OpenDaylight: not Opendaylight, Open Daylight, or OpenDayLight.
+* OSGi: not ``osgi`` or OSGI
+* ``Open vSwitch``: not OpenvSwitch, OpenVSwitch, or Open V Switch.
+* OpenDaylight: not ``Opendaylight``, ``Open Daylight``, or ``OpenDayLight``.
 
-  .. note:: Also, avoid Opendaylight abbreviations like ODL and ODC.
+  .. note:: Also, avoid OpenDaylight abbreviations such as ODL and OD.
 
-* OpenFlow: not Openflow, Open Flow, or openflow.
-* OpenStack: not Open Stack or Openstack
-* QoS: not Qos, QOS, or qos
-* RESTCONF: not Restconf or restconf
-* RPC not Rpc or rpc
-* URL not Url or url
-* VM: not Vm or vm
+* OpenFlow: not ``Openflow``, ``Open Flow``, or ``openflow``.
+* OpenStack: not ``Open Stack`` or ``Openstack``
+* QoS: not ``Qos``, ``QOS``, or ``qos``
+* RESTCONF: not ``Restconf`` or ``restconf``
+* RPC not ``Rpc`` or ``rpc``
+* URL not ``Url`` or ``url``
+* VM: not ``Vm`` or ``vm``
 * YANG: not Yang or yang
 
 .. _docs-rst:
@@ -120,7 +120,7 @@ reStructuredText-based Documentation
 When using reStructuredText, follow the Python documentation
 style guidelines. See: https://devguide.python.org/documenting/
 
-One of the best references for reStrucutedText syntax is the Sphinx
+One of the best references for reStructuredText syntax is the Sphinx
 Primer on reStructuredText_.
 
 To build and review the reStructuredText documentation locally, you must
@@ -155,7 +155,7 @@ repository.
           Documentation hosted in remote ``git`` repositories are generally
           provided for project-specific information.
 
-For example, here is the directory layout on June, 28th 2016::
+For example, here is the directory layout on ``June, 28th 2016``::
 
    $ tree -L 2
    .
@@ -210,7 +210,7 @@ Adding a submodule
 ^^^^^^^^^^^^^^^^^^
 
 If you want to import a project underneath the documentation project so
-that the docs can be kept in the separate repo, you can do it by using the
+that the docs can be kept in the separate repository, you can do it by using the
 ``git submodule add`` command as follows::
 
   git submodule add -b master ../integration/packaging docs/submodules/integration/packaging
@@ -287,7 +287,7 @@ that recommendation::
     docs/____-guide/index.rst      -> part
     docs/____-guide/<chapter>.rst  -> chapter
 
-In the ____-guide/index.rst we use the ``#`` with overline at the very top
+In the ``____-guide/index.rst`` we use the ``#`` with overline at the very top
 of the file to determine that it is a part and then within each chapter
 file we start the document with a section using ``*`` with overline to
 denote that it is the chapter heading and then everything in the rest of
@@ -408,10 +408,10 @@ https://git.opendaylight.org/gerrit/c/docs/+/41679/
 
 This patch fixed the issue that caused builds to fail because they were
 taking too long removing directories associated with generated
-javadoc files that were present from previous runs.
+Javadoc files that were present from previous runs.
 
-Errors from Coala
-^^^^^^^^^^^^^^^^^^
+Errors from ``Coala``
+^^^^^^^^^^^^^^^^^^^^^
 
 As part of running ``tox``, two environments run: ``coala`` which does a variety
 of reStructuredText_ (and other) linting, and ``docs``, which runs Sphinx_ to
@@ -425,10 +425,10 @@ Jenkins Failure Cause Management rules that will highlight these for you.
 Git Commit Message Errors
 """""""""""""""""""""""""
 
-Coala checks that git commit messages adhere to the following rules:
+``Coala`` checks that git commit messages adhere to the following rules:
 
-* Shortlog (1st line of commit message) is less than 50 characters
-* Shortlog (1st line of commit message) is in the imperative mood. For example,
+* ``Shortlog`` (1st line of commit message) is less than 50 characters
+* ``Shortlog`` (1st line of commit message) is in the imperative mood. For example,
   "Add foo unit test" is good, but "Adding foo unit test is bad""
 * Body (all lines but 1st line of commit message) are less than 72 characters.
   Some exceptions seem to exist, such as for long URLs.
@@ -438,7 +438,7 @@ Some examples of those being logged are:
 ::
    Project wide:
    |    | [NORMAL] GitCommitBear:
-   |    | Shortlog of HEAD commit isn't in imperative mood! Bad words are 'Adding'
+   |    | ``Shortlog`` of HEAD commit isn't in imperative mood! Bad words are 'Adding'
 
 ::
    Project wide:
@@ -451,7 +451,7 @@ Error in "code-block" directive
 If you see an error like this:
 
 ::
-   docs/gerrit.rst
+   ``docs/gerrit.rst``
    |  89| ···..·code-block::·bash
    |    | [MAJOR] RSTcheckBear:
    |    | (ERROR/3) Error in "code-block" directive:
@@ -467,7 +467,7 @@ language specified, in this case ``bash``.
    ::
       This is a code block
       that will not be parsed
-      in any particluar langauge
+      in any particular language
 
 Project Documentation Requirements
 ==================================
@@ -496,9 +496,9 @@ Submitting Documentation Outlines (M2)
              will likely want to have a developer section for the config
              subsystem as well as for the MD-SAL.
 
-#. Clone the docs repo: ``git clone https://git.opendaylight.org/gerrit/docs``
+#. Clone the docs repository: ``git clone https://git.opendaylight.org/gerrit/docs``
 #. For each piece of documentation find the corresponding template in the docs
-   repo.
+   repository.
 
    * For user documentation: ``docs.git/docs/templates/template-user-guide.rst``
    * For developer documentation: ``ddocs/templates/template-developer-guide.rst``
@@ -525,7 +525,7 @@ Submitting Documentation Outlines (M2)
              are not appropriate or do not make sense for a document
              in development, use the convention that you think is more
              appropriate and the documentation team will review it and give
-             feedback on the gerrit patch.
+             feedback on the Gerrit patch.
 
 #. Edit the template to fill in the outline of what you will provide using the
    suggestions in the template. If you feel like a section is not needed, feel
@@ -542,7 +542,7 @@ Submitting Documentation Outlines (M2)
 
 #. Make sure the documentation project still builds.
 
-   * Run ``tox`` from the root of the cloned docs repo.
+   * Run ``tox`` from the root of the cloned docs repository.
 
      * After that, you should be able to find the HTML version of the
        docs at ``docs.git/docs/_build/html/index.html``.
@@ -609,7 +609,7 @@ kind.
 * **User/Operator:** for people looking to use the feature without writing code
 
   * Should include an overview of the project/feature
-  * Should include description of availble configuration options and what they
+  * Should include description of available configuration options and what they
     do
 
 * **Developer:** for people looking to use the feature in code without modifying
@@ -632,15 +632,15 @@ kind.
     options
 
     * As an example, l2switch-switch as the top-level feature with the -rest
-      and -ui options
-    * Features should also note if the options should be checkboxes (that is,
-      they can each be turned on/off independently) or a drop down (that is, at
+      and ``-ui`` options
+    * Features should also note if the options should be check-boxes (that is,
+      they can each be turned on/off independently) or a drop-down (that is, at
       most one can be selected)
     * What other top-level features in the release are incompatible with each
       feature
     * This will likely be presented as a table in the documentation and the
-      data will likely also be consumed by automated
-      installers/configurators/downloaders
+      data will likely also be consumed by an automated installer or configurator
+      or even downloader.
 
   * For some projects, there is extra installation instructions (for external
     components) and/or configuration
@@ -648,7 +648,7 @@ kind.
     * In that case, there will be a (sub)section in the documentation
       describing this process.
 
-* **HowTo/Tutorial:** walk throughs and examples that are not general-purpose
+* **HowTo/Tutorial:** walk-through and examples that are not general-purpose
   documentation
 
   * Generally, these should be done as a (sub)section of either user/operator
@@ -674,7 +674,7 @@ Requirements for projects
       individual features under a single project-wide chapter or section
     * The feature documentation can be provided as a single ``.rst`` file or
       multiple ``.rst`` files if the features fall into different groups
-    * Feature documentation should start with appromimately 300 word overview
+    * Feature documentation should start with approximately 300 words overview
       of the project and include references to any automatically-generated API
       documentation as well as more general developer information (see
       :ref:`kinds-of-docs`).
@@ -684,8 +684,8 @@ Requirements for projects
     * This documentation should be per-feature, not per-project. Users should
       not have to know which project a feature came from.
     * Intimately related features can be documented together. For example,
-      l2switch-switch, l2switch-switch-rest, and l2switch-switch-ui, can be
-      documented as one noting the differences.
+      ``l2switch-switch``, ``l2switch-switch-rest``, and ``l2switch-switch-ui``,
+      can be documented as one noting the differences.
     * This documentation can be provided as a single ``.rst`` file or multiple
       ``.rst`` files if the features fall into different groups
 
@@ -697,13 +697,13 @@ Requirements for projects
   * Release Notes (both on the wiki and reStructuredText) as part of the release
     review.
 
-* Documentation must be contributed to the docs repo (or possibly imported
-  from the project's own repo with tooling that is under development)
+* Documentation must be imported from the project own repository or  contributed
+  to the docs repository for generic information.
 
   * Projects may be encouraged to instead provide this from their own
     repository if the tooling is developed
   * Projects choosing to meet the requirement in this way must provide a patch
-    to docs repo to import the project's documentation
+    to docs repository to import the project's documentation
 
 * Projects must cooperate with the documentation group on edits and enhancements
   to documentation
@@ -735,7 +735,7 @@ Timeline for Deliverables from Projects
 
     #. the list of kinds of documentation
     #. the list of corresponding ``.rst`` files and their location, including
-       repo and path
+       repository and path
     #. the list of commits creating those ``.rst`` files
     #. the current word counts of those ``.rst`` files
 
