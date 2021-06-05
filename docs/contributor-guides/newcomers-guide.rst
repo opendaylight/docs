@@ -81,7 +81,7 @@ for example the magnesium branch of the documentation project
 
    $ git clone -b stable/magnesium ssh://my_login@git.opendaylight.org:29418/docs
 
-at that step, it is usually a good idea to run the setup commands of the repo
+at that step, it is usually a good idea to run the setup commands of the repository
 with git-review
 
 .. code-block:: text
@@ -124,7 +124,7 @@ compilation logs file or piped commands such as:
 
 If you propose an update for an existing feature with tests already available,
 it is a good idea to perform these tests ( e.g. “$ tox -e pre-commit”) and see
-what happens. Available tests can often be found in the tox.ini file at the root
+what happens. Available tests can often be found in the ``tox.ini`` file at the root
 of the project folder.
 
 Once ready, use git status to check the staging files.
@@ -145,9 +145,9 @@ If not, add the right files to your commit.
 .. note::
    You might want to remove some files from the remote repository in this
    commit.
-   In that case, you should use “git rm” instead of only “rm”.
+   In that case, you should use ``git rm`` instead of only ``rm``.
 
-   The same way, use “git mv” if you want to rename or move a file in the
+   The same way, use ``git mv`` if you want to rename or move a file in the
    remote repository too.
 
 It is a good idea to check again your git status    before committing.
@@ -289,9 +289,10 @@ available from the download commands in the change screen (right top corner).
    $ git-review -d 93386,2
    // specifying a Patch-Set number only works with newer git-review versions
 
-Then you can start working on it just as you will do for a new commit with “git
-add/rm/mv etc…”. Once ready, instead of simply doing “$ git commit -s”
-type instead “$ git commit --amend”
+Then you can start working on it just as you will do for a new commit with
+``git add/rm/mv`` etc.
+Once ready, instead of simply doing ``$ git commit -s``
+type instead ``$ git commit --amend``
 
 
 .. code-block:: text
@@ -402,7 +403,7 @@ Modify several changes
 While they have not been merged in the remote repository, it is still possible
 to rework the changes that were posted simultaneously. If you have no more
 a local copy of them, just retrieve the latest change in you git history
-from the Gerrit remote repo. Check the history with
+from the Gerrit remote repository. Check the history with
 
 .. code-block:: text
 
@@ -463,10 +464,10 @@ The editor allows you to proceed to several actions on the git history:
 
 - remove a commit from the history: just delete its line
 - rework dependencies: swap line orders
-- meld several commits into one: replace “pick” by “squash” or “fixup”
-- rework only a specific commit message: replace “pick” by “reword”
-- rework a specific commit: replace “pick” by “edit” then “git add/rm/mv …”,
-  “git commit --amend”, “git rebase --continue”
+- meld several commits into one: replace ``pick`` by ``squash`` or ``fixup``
+- rework only a specific commit message: replace ``pick`` by ``reword``
+- rework a specific commit: replace ``pick`` by ``edit`` then ``git add/rm/mv …``,
+  ``git commit --amend``, ``git rebase --continue``
 
 Beware you may have to deal with potential conflicts when doing this.
 
@@ -490,7 +491,7 @@ commits before the last one. Do your modifications:
    $ git add/rm/mv […]
    $ git commit --amend
 
-A new commit hash (<newhash>) will be generated. Keep it.
+A new commit hash (``<newhash>``) will be generated. Keep it.
 
 .. code-block:: text
 
@@ -514,8 +515,8 @@ the N-2 previous commits up to the last commit. Then upload
 
    $ git-review
 
-Cherry-picks / backports
-------------------------
+Cherry-picks / back-ports
+-------------------------
 
 Cherry-pick consist in importing the content of a specific change (or
 commit) from another (review) branch into your own local branch.
@@ -541,7 +542,7 @@ Several cherry-picks can be cascaded this way.
 Once the change appears in your local branch, you can upload it to the
 Gerrit remote repository as usual with git-review.
 
-Cherry-pick can also be used to backport changes between several
+Cherry-pick can also be used to back-port changes between several
 mainstream branches of the Gerrit remote repository. The procedure is the
 same. Here is an example.
 
@@ -559,7 +560,7 @@ Resolving conflicts
 Conflict resolution in Gerrit is not different from Git.
 You can also refer to the `LFN Git Guide <https://docs.releng.linuxfoundation.org/en/latest/git.html#git-merge-conflicts>`__.
 
-Conflict can occur during Git merges, pushes or rebases.
+Conflict can occur during Git merge, push or rebase operations.
 
 For example, if two or more members make changes on the same part of a file in a
 remote and a local branch that are being merged, Git will not be able to
@@ -641,13 +642,13 @@ posted useful comments, potentially reusable elsewhere.**
 
 There can be several interpretations of what to do in some case and Gerrit
 comments can be very useful to clarify points in case of disagreements.
-If possible, the change uploader/owner must be the code author so that the
+If possible, the change uploader or owner must be the code author so that the
 review is more interactive and responsive.
 
 **The second rule is to keep the code posted reviewable. The change
 should not bring regression nor new compilation errors and warnings.**
 It is a good idea to look at the Gerrit interface editor once your code
-has been posted for review. Most common errors scuh as trailing blanks are
+has been posted for review. Most common errors such as trailing blanks are
 colored in red.
 Those errors pollutes the review process, not only because they generate many
 warnings during the compilation process.
@@ -690,13 +691,13 @@ Here is a summary of Git commit message structure as described in
    with a period.
 -  Subsequent lines should be wrapped at 72 characters. There are some
    exceptions to this rule: for example, URL should not be wrapped. Vim
-   (the default $EDITOR on most distros) can wrap automatically lines
-   for you. In most cases you just need to copy the example vimrc file
-   (which can be found somewhere like
-   /usr/share/vim/vim74/vimrc_example.vim) to ~/.vimrc if you don’t have
-   one already. After editing a paragraph, you can re-wrap it by
-   pressing escape, ensuring the cursor is within the paragraph and
-   typing gqip. Put the ‘Change-id’, ‘Closes-Bug #NNNNN’ and ‘blueprint
+   (the default $EDITOR on most distributions) can wrap automatically lines
+   for you. In most cases you just need to copy the example ``vimrc`` file
+   (which can be found somewhere like `̀ /usr/share/vim/vim74/vimrc_example.vim``)
+   to ``~/.vimrc`` if you don’t have one already.
+   After editing a paragraph, you can re-wrap it by pressing escape,
+   ensuring the cursor is within the paragraph and typing ``gqip``.
+   Put the ‘Change-id’, ‘Closes-Bug #NNNNN’ and ‘blueprint
    NNNNNNNNNNN’ lines at the very end.
 
 
@@ -718,7 +719,7 @@ This means that their line terminator is “\\n” aka LF or LineFeed.
 Feed terminators) should be avoided.**
 Encoding formats commonly accepted are Unicode and ASCII.
 
-You can use the “file” linux command to check the actual status of your
+You can use the ``file`` GNU command to check the actual status of your
 files.
 
 .. code-block:: text
@@ -735,7 +736,7 @@ files.
    web:                             directory
 
 
-and combine it with find and xargs + grep to detect MSDOS file
+and combine it with ``find`` and ``xargs`` + ``grep`` to detect MSDOS file
 
 .. code-block:: text
 
@@ -744,7 +745,7 @@ and combine it with find and xargs + grep to detect MSDOS file
     ./docs/make.bat:  DOS batch file, ASCII text, with CRLF line terminators
 
 
-then create a script with sed to remove the “\\r” special character and
+then create a script with ``sed`` to remove the “\\r” special character and
 convert them in the UNIX format.
 
 .. code-block:: text
@@ -752,13 +753,13 @@ convert them in the UNIX format.
    $ find . | xargs file | grep CRLF  |grep -v make.bat | cut -d’:’ -f1 | xargs sed -i 's/\\r//'
 
 More easily, the vim editor can convert MSDOS file to UNIX format with
-‘:set ff=unix’ If you are on windows, do not use notepad since it only
-uses the MSDOS format. Consider using textpad++ or another advanced
+``:set ff=unix`` If you are on windows, do not use notepad since it only
+uses the MSDOS format. Consider using ``textpad++`` or another advanced
 editor.
 
 **The ODL Java style guide limits the Java files line length to 120
 characters and 72 or 80 chars for javadoc.** It prohibits also the use
-of tabs. They should be replaced with 4 whitespaces. Below is a shell
+of tabs. They should be replaced with 4 white-spaces. Below is a shell
 script to automate the operation inside a folder.
 
 .. code-block:: text
@@ -766,7 +767,7 @@ script to automate the operation inside a folder.
    $ for file in * ; do sed -i 's/\\t/ /g' $file; done
 
 Trailing blanks should be avoided too. Below is a shell script to remove
-trailing whitespaces inside a folder.
+trailing white-spaces inside a folder.
 
 .. code-block:: text
 
@@ -775,19 +776,18 @@ trailing whitespaces inside a folder.
 Useless empty lines must also be avoided.
 
 .. note::
-   If you are using an operating system with another default version of sed than
-   GNU sed, for example BSD sed on MAC OS X, you must adapt the examples given
-   here since the -i option takes a mandatory parameter.
+   If you are using an operating system with a different default version of
+   ``sed`` than GNU ``sed``, for example BSD ``sed`` on MAC OS X, you must adapt
+   the examples given here since the -i option takes a mandatory parameter.
 
 License issues
 ~~~~~~~~~~~~~~
 
 The EPL license or a compatible license should be present on all
-projects code file in the header. The maven java checkstyle plugin will
+projects code file in the header. The maven java Checkstyle plugin will
 check the presence of this license.
 
 More details in the :ref:`coding-guidelines`.
 
-License issues are considered particularly sensible by the opensource
-communities.
+License issues are considered particularly sensible by the open-source communities.
 
