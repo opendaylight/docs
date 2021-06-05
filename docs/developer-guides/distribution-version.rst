@@ -17,7 +17,7 @@ and which workarounds to apply, such user would need to know the exact version
 of at least one OpenDaylight component.
 
 There are indirect ways to deduce such version, but the direct way is enabled
-by odl-distribution-version feature. Administrator can specify version strings,
+by ``odl-distribution-version`` feature. Administrator can specify version strings,
 which would be available to users via NETCONF, or via RESTCONF
 if OpenDaylight is configured to initiate NETCONF connection
 to its config subsystem northbound interface.
@@ -49,7 +49,7 @@ This case contains single leaf ``version``, which would hold the version string.
 Config subsystem can hold multiple modules, the version string should contain
 version of OpenDaylight component corresponding to the module name.
 As this is pure metadata with no consequence on OpenDaylight behavior,
-there is no prescribed scheme for chosing config module names.
+there is no prescribed scheme for choosing config module names.
 But see the default configuration file for examples.
 
 Java API
@@ -78,13 +78,13 @@ Karaf Feature
 ~~~~~~~~~~~~~
 
 The ``odl-distribution-version`` feature is currently the only feature defined
-in feature repository of artifactId ``features-distribution``,
+in feature repository of ``artifactId`` ``features-distribution``,
 which is available (transitively) in OpenDaylight Karaf distribution.
 
 RESTCONF usage
 ~~~~~~~~~~~~~~
 
-Opendaylight config subsystem NETCONF northbound is not made available just by installing
+OpenDaylight config subsystem NETCONF northbound is not made available just by installing
 ``odl-distribution-version``, but most other feature installations would enable it.
 RESTCONF interfaces are enabled by installing ``odl-restconf`` feature,
 but that do not allow access to config subsystem by itself.
