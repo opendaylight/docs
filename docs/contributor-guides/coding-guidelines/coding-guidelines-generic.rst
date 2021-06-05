@@ -51,7 +51,7 @@ For example, write "Add option X to module Y" instead of just "Add option X".
 
 As there are tighter limits on the first line of commit message,
 the end of the line should not be marked by period.
-entences in the rest of commit message should be punctuated as usual.
+sentences in the rest of commit message should be punctuated as usual.
 
 
 Some projects verify commit message formatting in automated verify-style job.

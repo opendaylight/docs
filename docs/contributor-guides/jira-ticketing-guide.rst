@@ -6,7 +6,7 @@ Jira Ticketing Guideline
 Mandatory Fields
 ================
 
-Here is the list of mandatory fields for each jira ticket:
+Here is the list of mandatory fields for each Jira ticket:
 
 **Project:**
 

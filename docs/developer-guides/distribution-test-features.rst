@@ -14,12 +14,12 @@ which gives users access to many Karaf features provided by upstream OpenDayligh
 Users are free to install arbitrary subset of those features,
 but not every feature combination is expected to work properly.
 
-Some features are pro-active, which means OpenDaylight in contact with othe network elements
+Some features are pro-active, which means OpenDaylight in contact with other network elements
 starts diving changes in the network even without prompting by users,
 in order to satisfy initial conditions their use case expects.
 Such activity from one feature may in turn affect behavior of another feature.
 
-In some cases, there exists features which offer diferent implementation of the same service,
+In some cases, there exists features which offer different implementation of the same service,
 they may fail to initialize properly (e.g. failing to bind a port already bound by the other feature).
 
 Integration/Test project is maintaining system tests (CSIT) jobs.
@@ -31,7 +31,7 @@ defines two "aggregate" features. Note that these features are not intended for 
 so the feature repository which defines them is not enabled by default.
 
 The content of these features is determined by upstream OpenDaylight contributions,
-with Integration/Test providing insight on observed compatibuility relations.
+with Integration/Test providing insight on observed compatibility relations.
 Integration/Distribution team is focused only on making sure the build process is reliable.
 
 Feature repositories
@@ -48,7 +48,7 @@ features-test
 ~~~~~~~~~~~~~
 
 This feature repository defines the two aggregate features.
-To enable this repository, change the featuresRepositories line of org.apache.karaf.features.cfg file,
+To enable this repository, change the ``featuresRepositories`` line of ``org.apache.karaf.features.cfg`` file,
 by copy-pasting the feature-index value and editing the name.
 
 Karaf features
@@ -58,27 +58,27 @@ The two aggregate features, defining sets of user-facing features defined by com
 Note that is the compatibility relation differs between single node an cluster deployments,
 single node point of view takes precedence.
 
-odl-integration-all
-~~~~~~~~~~~~~~~~~~~
+``odl-integration-all``
+~~~~~~~~~~~~~~~~~~~~~~~
 
 This feature contains the largest set of user-facing features which may affect each others operation,
 but the set does not affect usability of Karaf infrastructure.
 
 Note that port binding conflicts and "server is unhealthy" status of config subsystem
-are considered to affect usability, as is a failure of Restconf
-to respond to GET on /restconf/modules with HTTP status 200.
+are considered to affect usability, as is a failure of RESTCONF
+to respond to GET on ``/restconf/modules`` with HTTP status 200.
 
 This feature is used in verification process for Integration/Distribution contributions.
 
-odl-integration-compatible-with-all
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``odl-integration-compatible-with-all``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This feature contains the largest set of user-facing features which are not pro-active
 and do not affect each others operation.
 
-Installing this set together with just one of odl-integration-all features should still result
+Installing this set together with just one of ``odl-integration-all`` features should still result
 in fully operational installation, as one pro-active feature should not lead to any conflicts.
-This should also hold if the single added feature is outside odl-integration-all,
-if it is one of conflicting implementations (and no such implementations is in odl-integration-all).
+This should also hold if the single added feature is outside ``odl-integration-all``,
+if it is one of conflicting implementations (and no such implementations is in ``odl-integration-all``).
 
 This feature is used in the aforementioned -all- CSIT jobs.

@@ -11,11 +11,7 @@ with the following exceptions.
 
 -  120 characters line length
 
-To automate pep8 scanning we recommend using a tox configuration as follows:
-
-tox.ini
-
-::
+To automate pep8 scanning we recommend using a ``tox.ini`` configuration file as follows::
 
    [tox]
    envlist = pep8
@@ -29,13 +25,9 @@ tox.ini
    max-line-length = 120
 
 Unfortunately the version of tox installed in the Jenkins build infra does not
-support the skipdist parameter which is necessary if your project does not have
-a setup.py file.
-A workaround is to create a minimal setup.py file as follows:
-
-setup.py
-
-::
+support the ``skipdist`` parameter which is necessary if your project does not have
+a ``setup.py`` file.
+A workaround is to create a minimal ``setup.py`` file as follows::
 
    # Workaround for tox missing parameter 'skipsdist=true' which was not
    # introduced until tox 1.6.0
