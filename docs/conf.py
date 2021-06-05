@@ -14,7 +14,7 @@ from docs_conf.conf import *
 
 # Append to intersphinx_mapping
 intersphinx_mapping['aaa'] = ('https://docs.opendaylight.org/projects/aaa/en/latest/', None)
-intersphinx_mapping['controller'] = ('https://docs.opendaylight.org/projects/controller/en/v3.0.6/', None)
+intersphinx_mapping['controller'] = ('https://docs.opendaylight.org/projects/controller/en/v3.0.8/', None)
 intersphinx_mapping['infrautils'] = ('https://docs.opendaylight.org/projects/infrautils/en/v1.9.5/', None)
 intersphinx_mapping['mdsal'] = ('https://docs.opendaylight.org/projects/mdsal/en/v7.0.5/', None)
 intersphinx_mapping['netconf'] = ('https://docs.opendaylight.org/projects/netconf/en/latest/', None)
