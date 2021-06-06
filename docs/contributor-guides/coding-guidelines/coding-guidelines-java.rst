@@ -11,7 +11,7 @@ See: https://google.github.io/styleguide/javaguide.html
 
 -  4 spaces indentation
 -  120 characters line length
--  72 or 80 characters for javadoc
+-  72 or 80 characters for Javadoc
 -  import ordering
    (https://wiki-archive.opendaylight.org/view/GettingStarted:_Eclipse_Setup#Import_ordering)
 -  YangTools Design Guidelines
@@ -25,7 +25,7 @@ Checkstyle
 ==========
 
 All OpenDaylight projects automatically run Checkstyle, as the
-maven-checkstyle-plugin is declared in the odlparent.
+``maven-checkstyle-plugin`` is declared in the odlparent.
 
 Checkstyle Warnings are considered as errors by default since Magnesium.
 They will prevent your project from building if code violations are found.
@@ -60,7 +60,7 @@ Suggested process (steps) to move a non-compliant project to enforcement
 
 We recommend moving existing at least large projects (which typically have
 hundreds or thousands of Checkstyle violations) to full compliance and
-enforcements through a series of Gerrit changes on single artefacts (bundles),
+enforcement through a series of Gerrit changes on single artefacts (bundles),
 as opposed to a single change fixing everything and change the POM to enable
 enforcement all in one go (god forbid for an entire repository and not just a
 single artifact), because:
@@ -78,10 +78,10 @@ single artifact), because:
    #. ''(...project name...) Checkstyle final clean up & enforcement'
 
 #. it's particularly important to split and separately submit
-   "trivial  pure cosmetic" (e.g. code formatting) from "interesting impactful"
+   "trivial pure cosmetic" (e.g. code formatting) from "interesting impactful"
    (e.g. changes to exception handling) changes required by Checkstyle
 #. in general, doing small steps and intermediate merges are more rewarding for
-   contributing developers than long running massive Gerrits
+   contributing developers than long running massive Gerrit changes
 #. more small changes makes the contributors Stats Great Again
    (ODL top contributors submit massive amounts of micro changes)
 
@@ -92,11 +92,11 @@ it's OK that they'll be re-fixed as part of new changes by the developers
 contributing the clean up in new changes (or rebases)
 - until enforcement is enabled at the end of a series of clean up changes.
 
-@SuppressWarnings
------------------
+``@SuppressWarnings``
+---------------------
 
 If really needed, projects can override individual Checkstyle rules on a
-case-by-case basis by using a @SuppressWarnings annotation:
+case-by-case basis by using a ``@SuppressWarnings`` annotation:
 
  .. code-block:: none
 
@@ -104,16 +104,16 @@ case-by-case basis by using a @SuppressWarnings annotation:
    public AbstractDataTreeListener (INetvirtSfcOF13Provider provider, Class<T> clazz) {
    }
 
-The rule ID (e.g. 'checkstyle:methodparampad' above) is the name of the
+The rule ID (e.g. ``checkstyle:methodparampad`` above) is the name of the
 respective Checkstyle module; these IDs can be found e.g. in the
-git/odlparent/checkstyle/src/main/resources/odl_checks.xml
+``git/odlparent/checkstyle/src/main/resources/odl_checks.xml``
 configuration, or directly on the Checkstyle website from the
 http://checkstyle.sourceforge.net/checks.html list.
 For example, for the
 http://checkstyle.sourceforge.net/config_coding.html#EqualsHashCode rule
-you would put @SuppressWarnings("checkstyle:EqualsHashCode").
+you would put ``@SuppressWarnings("checkstyle:EqualsHashCode")``.
 
-This @SuppressWarnings("checkstyle:...") should in practice be very very rarely
+This ``@SuppressWarnings("checkstyle:...")`` should in practice be very very rarely
 needed.
 Please put a comment explaining why you need to suppress a Checkstyle warning
 into the code for other to understand, for example:
@@ -190,8 +190,8 @@ problems with extendibility due to having to add more exceptions to the "throws"
 declaration of API methods.
 
 The exception for "throws Exception" may be a main() method where it's customary
-to let anything propagate to the CLI, or @Test testSomething() throws Exception
-where it's acceptable (Checkstyle does NOT flag this particular use of
+to let anything propagate to the CLI, or ``@Test testSomething() throws Exception``
+where it is acceptable (Checkstyle does NOT flag this particular use of
 "throws Exception" in @Test methods).
 
 IllegalCatch
@@ -230,7 +230,7 @@ Be particularly careful with methods declaring checked exceptions in their
 “throws” clause:
 if any matching exception is thrown inside the “try” block, changing
 “catch (Exception e)” to “catch (RuntimeException e)” could change the method
-behaviour since the exception will exit the method instead of being processed by
+behavior since the exception will exit the method instead of being processed by
 the “catch” block.
 
 Proliferation of catch (Exception or RuntimeException e)
@@ -245,58 +245,58 @@ For example:
    `c/63372 <https://git.opendaylight.org/gerrit/#/c/63372/>`__ & Co.
 #. For RPC related catch, see
    `c/63413 <https://git.opendaylight.org/gerrit/#/c/63413/>`__
-#. Instead of catch(Exception) after a try { close(anAutoCloseable) }
-   just use AutoCloseables.closeOrWarn(anAutoCloseable) introduced in
+#. Instead of ``catch(Exception)`` after a ``try { close(anAutoCloseable) }``
+   just use ``AutoCloseables.closeOrWarn(anAutoCloseable)`` introduced in
    https://git.opendaylight.org/gerrit/#/c/44145/
 
 Sometimes developers also simply don't see that an existing framework API
 intends implementations to simply propagate their errors up to them.
 For example, for Exception handling in:
 
-#. OsgiCommandSupport's doExecute(), the right thing to do is... nothing.
-   The parent doExecute() method declaration throws Exception,
+#. OsgiCommandSupport's ``doExecute()``, the right thing to do is... nothing.
+   The parent ``doExecute()`` method declaration throws Exception,
    and that is intentional by the Good People of Karaf.
-   Thefore, catch(Exception) in a OsgiCommandSupport's doExecute is not required
+   Therefore, ``catch(Exception)`` in a OsgiCommandSupport's ``doExecute`` is not required
    : in this case it's perfectly OK to just let any error "propagate" upwards
    automatically.
-   If doExecute() calls other private methods of an OsgiCommandSupport
+   If ``doExecute()`` calls other private methods of an OsgiCommandSupport
    implementation, then it is perfectly OK to make those methods declare
-   "throws SomeException" too, and not "handle" them yourself.
+   ``"throws SomeException"`` too, and not "handle" them yourself.
 
-#. Callable's call() passed to a DataStoreJobCoordinator enqueueJob(),
+#. Callable's ``call()`` passed to a ``DataStoreJobCoordinator enqueueJob()``,
    the right thing to do is... nothing.
-   Do not catch (Exception) but let it propagate.
+   Do not catch ``(Exception)`` but let it propagate.
    If it's useful to "augment" the exception message with more custom details
-   which are available inside Callable's call(), then the right thing to do is
-   to catch (Exception e)
-   { throw new YourProjectApiException("Failed to ... for {}", aDetail, e); }
-   and, exceptionally, use @SuppressWarnings("checkstyle:IllegalCatch").
+   which are available inside Callable's ``call()``, then the right thing to do is
+   to ``catch (Exception e)
+   { throw new YourProjectApiException("Failed to ... for {}", aDetail, e); }``
+   and, exceptionally, use ``@SuppressWarnings("checkstyle:IllegalCatch")``.
 
-#. org.opendaylight.infrautils.inject.AbstractLifecycle's start() and stop()
+#. ``org.opendaylight.infrautils.inject.AbstractLifecycle``'s start() and stop()
    methods, again the right thing to do is... nothing.
    Do not catch any Exception but let it propagate.
 
-Here are some cases where catch(Exception) is almost always wrong, and a
-respective @SuppressWarnings almost never acceptable:
+Here are some cases where ``catch(Exception)`` is almost always wrong, and a
+respective ``@SuppressWarnings`` almost never acceptable:
 
-#. In Tests code you typically just "@Test testSomething() throws
-   (Some)Exception" instead of catch,
-   or uses @Test(expected = ReadFailedException.class).
+#. In Tests code you typically just ``@Test testSomething() throws
+   (Some)Exception`` instead of catch,
+   or uses ``@Test(expected = ReadFailedException.class)``.
    One rare case we have seen where it's justified is a
-   @Test(expected = ReadFailedException.class)
-   with catch (Exception e) throw e.getCause().
+   ``@Test(expected = ReadFailedException.class)``
+   with ``catch (Exception e) throw e.getCause()``.
 
 #. In one time "setup" (initialization) kind of code.
-   For example, catch for a DataBroker registerDataChangeListener makes little
+   For example, catch for a ``DataBroker registerDataChangeListener`` makes little
    sense - it's typically much better to let a failure to register a data change
    listener "bubble up" then continue, even if logged, and have users wonder why
    the listener isn't working much later.
 
 Only in lower-level "Framework" kind of code, catch (Exception e) is sometimes
 justified / required,
-and thus @SuppressWarnings("checkstyle:IllegalCatch") acceptable.
+and thus ``@SuppressWarnings("checkstyle:IllegalCatch")`` acceptable.
 
-Catching Throwable in particular is considered an absolute No No
+Catching ``Throwable`` in particular is considered an absolute No No
 (see e.g. discussion in https://git.opendaylight.org/gerrit/#/c/60855/)
 in almost all cases.
 You may got confused any meant to catch Exception (see above)
@@ -305,25 +305,25 @@ or RuntimeException?
 Carefully consider whether you mean to catch and set some flag and/or
 log, and then rethrow, or intended to "swallow" the exception.
 
-System.out
-^^^^^^^^^^
+``System.out``
+^^^^^^^^^^^^^^
 
-The RegexpSingleLineJava "Line contains console output" and "Line contains
-printStackTrace" should NEVER be suppressed.
+The ``RegexpSingleLineJava`` "Line contains console output" and "Line contains
+``printStackTrace``" should NEVER be suppressed.
 
-In src/main code, System.out.println has no place, ever (it should probably be
-a LOG.info; and System.err probably a LOG.error).
+In ``src/main`` code, ``System.out.println`` has no place, ever (it should probably be
+a ``LOG.info``; and ``System.err`` probably a ``LOG.error``).
 
-In Java code producing Karaf console output, we should only use System.out, and
-add the corresponding @SuppressWarnings. System.out handles pipes and remote
+In Java code producing Karaf console output, we should only use ``System.out``, and
+add the corresponding ``@SuppressWarnings``. ``System.out`` handles pipes and remote
 sessions correctly.
 
-In src/test code, there should be no need to write things out - the point of a
+In ``src/test`` code, there should be no need to write things out - the point of a
 test is to assert something.
-During development of a test it's sometimes handy to print things to the console
-to see what's going on instead of using the debugger, but this should be removed
+During development of a test it is sometimes handy to print things to the console
+to see what is going on instead of using the debugger, but this should be removed
 in final code, for clarity, and non-verbose test execution.
-If you must, do you a Logger even in a test - just like in src/main code.
+If you must, do you a Logger even in a test - just like in ``src/main`` code.
 This also makes it easier to later move code such as helper methods from test to
 production code.
 
@@ -363,12 +363,12 @@ on which of the above is more readable.
 Additional Resources
 --------------------
 
--  Checkstyle http://checkstyle.sourceforge.net/
--  Maven:
+-  ``Checkstyle`` http://checkstyle.sourceforge.net/
+-  ``Maven``:
    https://github.com/checkstyle/checkstyle/blob/master/src/main/resources/google_checks.xml
--  Eclipse:
+-  ``Eclipse``:
    https://code.google.com/p/google-styleguide/source/browse/trunk/eclipse-java-google-style.xml
--  IntelliJ:
+-  ``IntelliJ``:
    https://code.google.com/p/google-styleguide/source/browse/trunk/intellij-java-google-style.xml
 -  `How to set Checkstyle up in IntelliJ old wiki page <https://wiki-archive.opendaylight.org/view/How_to_set_Checkstyle_up_in_IntelliJ>`__
 
@@ -445,7 +445,7 @@ Note this list does not include non-private fields.
 The reason is that public fields should be forbidden, as should be any mutable
 non-private fields.
 The reason for that is they are a nightmare to navigate when attempting to
-reason about object lifecycle.
+reason about object life-cycle.
 
 Same reasoning applies to inner class, keep them close to the methods which use
 them so that the class is easy to read.
@@ -460,10 +460,10 @@ error-prone
 The infrautils projects has adopted the `error-prone code quality tool <http://errorprone.info>`__
 (by Google), with suitable customized configuration.
 
-You can use it by using org.opendaylight.infrautils:parent instead of
-org.opendaylight.odlparent:bundle-parent.
+You can use it by using ``org.opendaylight.infrautils:parent`` instead of
+``org.opendaylight.odlparent:bundle-parent``.
 
-Note that @SuppressWarnings("InconsistentOverloads") needs to be placed on the
+Note that ``@SuppressWarnings("InconsistentOverloads")`` needs to be placed on the
 class, not method; see
 https://github.com/google/error-prone/pull/870 and
 https://github.com/google/error-prone/issues/869.
@@ -471,7 +471,7 @@ https://github.com/google/error-prone/issues/869.
 SpotBugs
 ========
 
-SpotBugs is the sucesssor project to FindBugs (which is dead).
+SpotBugs is the successor project to FindBugs (which is dead).
 
 SpotBugs is enforced by default across all artifacts since Magnesium.
 For artifacts that do not pass SpotBugs, either fix them or disable enforcement
@@ -492,19 +492,19 @@ FindBugs
 Note that starting with odlparent 3.0.0 when we say "FindBugs" we now actually
 mean "SpotBugs", see above.
 
-@FBSuppressWarnings
--------------------
+``@FBSuppressWarnings``
+-----------------------
 
 If really needed, projects can to override individual FindBugs rules on
-a case-by-case basis by using a @SuppressFBWarnings annotation:
+a case-by-case basis by using a ``@SuppressFBWarnings`` annotation:
 
 .. code:: java
 
    @SuppressFBWarnings("RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE")
    public V get(K key) {
 
-Unchecked/unconfirmed cast from com.google.common.truth.Subject to com.google.common.truth.BooleanSubject etc.
---------------------------------------------------------------------------------------------------------------
+Unchecked/unconfirmed cast from ``com.google.common.truth.Subject`` to ``com.google.common.truth.BooleanSubject`` etc.
+----------------------------------------------------------------------------------------------------------------------
 
 FindBugs seems to be too dumb to deal with perfectly valid Google Truth test
 code (which does not use any explicit cast...) so it's OK to:
@@ -520,24 +520,24 @@ null analysis errors, incl. FindBugs' NP_NONNULL_FIELD_NOT_INITIALIZED_IN_CONSTR
 
 see the general null analysis next chapter.
 
-nonNullAndOptional
-^^^^^^^^^^^^^^^^^^
+``nonNullAndOptional``
+^^^^^^^^^^^^^^^^^^^^^^
 
 Some of the content from this chapter may be moved to
 http://www.lastnpe.org later...
 
-Everything @NonNullByDefault
-----------------------------
+Everything ``@NonNullByDefault``
+--------------------------------
 
 Do not use null anywhere, assume all method arguments and return values are
-NonNullByDefault.
+``NonNullByDefault``.
 
-null annotations from org.eclipse.jdt.annotation instead of javax.annotation
-----------------------------------------------------------------------------
+null annotations from ``org.eclipse.jdt.annotation`` instead of ``javax.annotation``
+------------------------------------------------------------------------------------
 
-We prefer using the null annotations from the package org.eclipse.jdt.annotation
-, instead of the ones from javax.annotation
-(or those from org.jetbrains:annotations, or ... Android/Lombok's/some of the
+We prefer using the null annotations from the package ``org.eclipse.jdt.annotation``
+, instead of the ones from ``javax.annotation``
+(or those from ``org.jetbrains:annotations``, or ... ``Android``/``Lombok's``/some of the
 other ones out there).
 
 This is because the org.eclipse one are modern generics enabled @Target
@@ -546,12 +546,12 @@ TYPE_USE annotations, whereas the other ones are not.
 Obviously we do NOT "depend on Eclipse" in any way, or "need Eclipse at
 run-time" just because of 4 annotations from an org.eclipse package,
 which are available in a very small JAR at build-time; e.g.
-org.eclipse.jdt.annotation.NonNull is absolutely no different from
-javax.annotation.Nullable, in that regard.
+``org.eclipse.jdt.annotation.NonNull`` is absolutely no different from
+``javax.annotation.Nullable``, in that regard.
 
-BTW: The javax.annotation NonNull & Co. are not more or less "official"
+BTW: The ``javax.annotation NonNull`` & Co. are not more or less "official"
 than others; Prof. FindBugs Bill Pugh pushed those to Maven central, but
-his "dormanant" JSR 305 was never officially finalized and approved;
+his "dormant" JSR 305 was never officially finalized and approved;
 he's since moved on, and no longer maintains FindBugs.
 
 The Eclipse annotations are also supported by SpotBugs/FindBugs (`says
@@ -588,8 +588,8 @@ safety at run-time.
 Please use either `JDK's Object's requireNonNull <http://docs.oracle.com/javase/7/docs/api/java/util/Objects.html#requireNonNull(java.lang.Object,java.lang.String)>`__
 \ () or `Guava's
 Preconditions <https://github.com/google/guava/wiki/PreconditionsExplained>`__
-checkNotNull() utility, instead of if (something == null).
-Please also use the variant of requireNonNull() or checkNotNull() with the
+``checkNotNull()`` utility, instead of if (something == null).
+Please also use the variant of ``requireNonNull()`` or ``checkNotNull()`` with the
 String message to indicate what argument is checked.
 For example:
 
@@ -599,12 +599,12 @@ For example:
        this.something = Objects.requireNonNull(something, "something");
    }
 
-We recommend use of JDK's Object's requireNonNull() instead of Guava's
-Preconditions checkNotNull() just because the String message of the former can
+We recommend use of JDK's Object's ``requireNonNull()`` instead of Guava's
+Preconditions ``checkNotNull()`` just because the String message of the former can
 prevent the problem you can have with the latter if you confuse the order of the
 arguments.
 
-We accept and think its OK that checkNotNull() throws a NullPointerException and
+We accept and think its OK that ``checkNotNull()`` throws a NullPointerException and
 not an IllegalArgumentException (even though code otherwise should never
 manually throw new NullPointerException),
 because in this particular case a NullPointerException would have happened
@@ -614,11 +614,11 @@ information of what is null.
 We NEVER catch (NullPointerException e) anywhere, because they are programming
 errors which should "bubble up", to be fixed, not suppressed.
 
-nullable errors for fields related to dependency injection
-----------------------------------------------------------
+``nullable`` errors for fields related to dependency injection
+--------------------------------------------------------------
 
-null analysis frameworks, such as Eclipse's or FindBugs or others, will not like
-this kind of code in a @NonNullByDefault package:
+null analysis frameworks, such as Eclipse's or FindBugs or other, will not like
+this kind of code in a ``@NonNullByDefault`` package:
 
 .. code:: java
 
@@ -664,19 +664,19 @@ switch some return types to Optional.
 
 You can use Optional for return types, but not method arguments.
 
-Never use Optional<Collection<...>> (obviously incl. Optional<List<...>>
-or Optional<Set<...>> AND Optional<Map<...>> etc.),
+Never use ``Optional<Collection<...>>`` (obviously incl. ``Optional<List<...>>``
+or ``Optional<Set<...>>`` AND ``Optional<Map<...>>`` etc.),
 just return a respective empty Collection instead.
 
-Note that instead of if (anOptional.isPresent()) { return anOptional.get(); }
-else { return null; }
-you can and for readability should just use return anOptional.orNull().
+Note that instead of if ``(anOptional.isPresent()) { return anOptional.get(); }
+else { return null; }``
+you can and for readability should just use return ``anOptional.orNull()``.
 However ideally any such code should not return null but an Optional of
 something itself.
 
-Note that instead of if (aNullable == null) ? Optional.absent() :
-Optional.of(aNullable)a
-;you can and for readability should just use Optional.fromNullable(aNullable).
+Note that instead of ``if (aNullable == null) ? Optional.absent() :
+Optional.of(aNullable)a``
+;you can and for readability should just use ``Optional.fromNullable(aNullable)``.
 
 To transform an Optional into something else if it present, use the transform()
 method instead of an if () check;.
@@ -686,24 +686,24 @@ for example:
 
    List vrfEntries = MDSALUtil.read(broker, LogicalDatastoreType.CONFIGURATION, vpnVrfTables).transform(VrfTables::getVrfEntry).or(new ArrayList<>());
 
-**Take care** with Optional.transform() though: if the transformation can return
-null, Optional.transform() will fail with a NullPointerException
+**Take care** with ``Optional.transform()`` though: if the transformation can return
+null, ``Optional.transform()`` will fail with a NullPointerException
 (this is the case of most YANG-generated methods).
-You can use Java 8 Optional.map() instead; when it encounters null, it returns
-Optional.empty().
+You can use Java 8 ``Optional.map()`` instead; when it encounters null, it returns
+``Optional.empty()``.
 The above example would become
 
 .. code:: java
 
    List<VrfEntry> vrfEntries = MDSALUtil.read(broker, LogicalDatastoreType.CONFIGURATION, vpnVrfTables).toJavaUtil().map(VrfTables::getVrfEntry).orElse(new ArrayList<>());
 
-Prefer the newer Java 8 java.util.Optional (JUO) over the older Google Guava
-com.google.common.base.Optional (GGO), because it offers a better functional
+Prefer the newer Java 8 ``java.util.Optional`` (JUO) over the older Google Guava
+``com.google.common.base.Optional`` (GGO), because it offers a better functional
 style API for use with Java 8 lambdas, which leads to much more naturally
 readable code.
 Until we fully migrate all ODL APIs (which is planned), in glue code calling
 existing APIs returning GGO (such as the DataBroker API) but itself then wanting
-to return a function of that as JUO, please just use the toJavaUtil() method
+to return a function of that as JUO, please just use the ``toJavaUtil()`` method
 available in Guava Optional.
 
 Further Reading & Watching
@@ -715,8 +715,8 @@ Further Reading & Watching
 Streaming and lambdas
 =====================
 
-Lambdas are very useful when encapsulating varying behaviour.
-For example, you can use them instead of boolean behaviour selection parameters:
+Lambdas are very useful when encapsulating varying behavior.
+For example, you can use them instead of boolean behavior selection parameters:
 
 .. code:: java
 
@@ -765,14 +765,14 @@ the functional pattern (implementing an interface with a single non-default
 method).
 Your IDE will typically suggest such transformations.
 
-Lambdas should be avoided when the resulting code is more complex and/ora longer
+Lambdas should be avoided when the resulting code is more complex and/or longer
 than the non-functional form.
 This can happen particularly with streaming.
 
 Streaming also has its place, especially when combined with Optional (see above)
 or when processing collections.
 It should however be avoided when many objects are created in the resulting
-lamba expressions, especially if DTOs end up being necessary to convey
+lambda expressions, especially if DTOs end up being necessary to convey
 information from one lambda to the next where a single variable could do the
 trick in a more traditional form. (TODO: provide examples.)
 
