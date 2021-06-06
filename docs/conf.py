@@ -78,6 +78,8 @@ linkcheck_timeout = 300
 nitpicky = True
 release = version
 
+spelling_warning=True
+
 html_context = {
     'version_status': 'supported',
 }
