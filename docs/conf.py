@@ -15,9 +15,9 @@ from docs_conf.conf import *
 # Append to intersphinx_mapping
 intersphinx_mapping['aaa'] = ('https://docs.opendaylight.org/projects/aaa/en/latest/', None)
 intersphinx_mapping['controller'] = ('https://docs.opendaylight.org/projects/controller/en/v3.0.8/', None)
-intersphinx_mapping['infrautils'] = ('https://docs.opendaylight.org/projects/infrautils/en/v1.9.5/', None)
-intersphinx_mapping['mdsal'] = ('https://docs.opendaylight.org/projects/mdsal/en/v7.0.5/', None)
-intersphinx_mapping['netconf'] = ('https://docs.opendaylight.org/projects/netconf/en/latest/', None)
+intersphinx_mapping['infrautils'] = ('https://docs.opendaylight.org/projects/infrautils/en/v1.9.8/', None)
+intersphinx_mapping['mdsal'] = ('https://docs.opendaylight.org/projects/mdsal/en/v7.0.7/', None)
+intersphinx_mapping['netconf'] = ('https://docs.opendaylight.org/projects/netconf/en/v1.13.2/', None)
 intersphinx_mapping['odl-integration-test'] = ('https://docs.opendaylight.org/projects/integration-test/en/latest/', None)
 intersphinx_mapping['odl-integration-packaging'] = ('https://docs.opendaylight.org/projects/integration-packaging/en/latest/', None)
 intersphinx_mapping['odl-releng-builder'] = ('https://docs.opendaylight.org/projects/releng-builder/en/latest/', None)
