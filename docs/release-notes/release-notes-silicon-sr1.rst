@@ -89,3 +89,43 @@ serviceutils
 * `7313878 <https://git.opendaylight.org/gerrit/q/7313878>`_
   : Bump MRI upstreams
 
+transportpce
+------------
+* `23450283 <https://git.opendaylight.org/gerrit/q/23450283>`_
+  : Prepare use of Lighty core dev SNAPSHOTs
+* `b1027f95 <https://git.opendaylight.org/gerrit/q/b1027f95>`_
+  : Make honeynode install script more robust
+* `6cfc5a22 <https://git.opendaylight.org/gerrit/q/6cfc5a22>`_
+  : Fix bug in ODU interface creation for device 7.1
+* `28af7d79 <https://git.opendaylight.org/gerrit/q/28af7d79>`_
+  : Increase sims startup timeout in functional tests
+* `1c17e949 <https://git.opendaylight.org/gerrit/q/1c17e949>`_
+  : Refactor (un)registration of device listeners
+* `36944907 <https://git.opendaylight.org/gerrit/q/36944907>`_
+  : Handle notification reception on port state change
+* `8a936d90 <https://git.opendaylight.org/gerrit/q/8a936d90>`_
+  : Bump project version to 3.1.0-SNAPSHOT
+* `79e4710c <https://git.opendaylight.org/gerrit/q/79e4710c>`_
+  : Update portmapping on port state notification
+* `a0118cc7 <https://git.opendaylight.org/gerrit/q/a0118cc7>`_
+  : Increase controller startup timeout in func tests
+* `2cda4862 <https://git.opendaylight.org/gerrit/q/2cda4862>`_
+  : Decrease docs tox profiles logs verbosity
+* `d8272fdf <https://git.opendaylight.org/gerrit/q/d8272fdf>`_
+  : Upgrade honeynode sim for device 1.2.1 and 7.1
+* `e26c778f <https://git.opendaylight.org/gerrit/q/e26c778f>`_
+  : Update device transactions operation
+* `49e4bc3b <https://git.opendaylight.org/gerrit/q/49e4bc3b>`_
+  : Bump deps to new Silicon dev versions
+* `450c421e <https://git.opendaylight.org/gerrit/q/450c421e>`_
+  : Lighty support Silicon migration
+* `156b223e <https://git.opendaylight.org/gerrit/q/156b223e>`_
+  : Fix function test PCE 400G return code
+* `3fa24c50 <https://git.opendaylight.org/gerrit/q/3fa24c50>`_
+  : Add nbinotifications feature documentation
+* `24628383 <https://git.opendaylight.org/gerrit/q/24628383>`_
+  : Improve docs/conf.py
+* `795a9970 <https://git.opendaylight.org/gerrit/q/795a9970>`_
+  : Add Dmaap client feature documentation
+* `669891a8 <https://git.opendaylight.org/gerrit/q/669891a8>`_
+  : fix issue in Lighty for PortMapping
