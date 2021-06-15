@@ -59,7 +59,7 @@ linkcheck_ignore = [
     # Ignore anchors on github.com because linkcheck fails on them
     '^http[s]://github.com/.*#',
     # Ignore webchat anchors because '#' is not an anchor for this app
-    'https://webchat.freenode.net/#',
+    'https://web.libera.chat/#',
     # Ignore google docs anchors
     'https://docs.google.com/presentation/d/1bnwj8CrFGo5KekONYSeIHySdkoXZiewJxkHcZjXnzkQ/edit#slide=id.g17d8ae4d92_0_137',
     # Ignore local static contents
