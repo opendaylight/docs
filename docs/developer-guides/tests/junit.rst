@@ -16,10 +16,10 @@ test (in isolation) the logic which belongs to a given project to verify
 it is behaving as desired.
 
 Below we will provide the basics of JUnit tests and how you can use them,
-along with recommendations of how to write JUnits.
+along with recommendations of how to write JUnit tests.
 
 Additionally JUnit integrates nicely with the Eclipse and Idea frameworks
-to provide launching and debuging unit tests from within the IDE framework.
+to provide launching and debugging unit tests from within the IDE framework.
 
 Qualities of a Good Unit Test
 =============================
@@ -61,7 +61,7 @@ running
 
 ``mvn clean install``
 
-is the best way as it recompiles your bundle and then executes any JUnit
+is the best way as it rebuilds your bundle and then executes any JUnit
 tests.
 
 Eclipse
@@ -178,7 +178,7 @@ Below is the flow of a JUnit test test:
 #. *At this point the testing framework will loop back to the @Before on
    a new test class instance to execute the next test method.*
 #. **@AfterClass** - this annotation placed on a static method is used
-   to clean up the initialization performed in the @BeforeClass method.
+   to clean up the initialization performed in the ``@BeforeClass`` method.
    It is executed once when all @Test methods have been executed.
 
 Here is a sample JUnit test class that illustrates the ordering:
@@ -242,15 +242,15 @@ you would get output similar to this:
    Test Clean Up - org.opendaylight.controller.sal.restconf.impl.cnsn.to.json.test.Temp@7260c384
    Static Clean Up
 
-Notice that the object address is different for the two initializations,
+Notice that the object address is different for the two initialization calls,
 indicating that each test method did indeed receive its own object.
 
 .. note::
 
    It is important to not rely on the order of execution of the test methods
    when possible.
-   Junit can be configured to execute in parallel test methods from different
-   classes but also inside the same classe.
+   JUnit can be configured to execute in parallel test methods from different
+   classes but also inside the same class.
 
    *More details on parallel execution experimental support in Junit5 can be
    found at this URL:*
@@ -277,7 +277,7 @@ observed is the behavior that you wanted.
 The Assert library is closely tied to the JUnit library and provides
 methods to make it easy to validate that the data return is non null,
 equals another object etc. For example, if you want to assert that two
-objects are equal, you can use the assertEquals( ... ) method.
+objects are equal, you can use the ``eassertEquals( ... )`` method.
 
 .. code:: java
 
@@ -301,7 +301,7 @@ http://junit.sourceforge.net/javadoc/org/junit/Assert.html
    However the assert methods will do additional things like null checks,
    and printing out more detailed information on the error
    if the assertion does not pass.
-   So in this case, using assertEquals is better as it would null check and
+   So in this case, using ``assertEquals`` is better as it would null check and
    print the values of the expected and actual objects for you automatically,
    making the act of asserting really easy!.
 
@@ -327,9 +327,9 @@ it is a good idea to refactor your test to pass in a ThreadPool instead
 of instantiate your own thread pool. If you do that, then you can use
 one of the following options to avoid multiple threads:
 
--  Pass in a thread pool executor that executes the runnable / callable
+-  Pass in a thread pool executor that executes the ``runnable`` / ``callable``
    on the same thread
--  Capture the runnables in a mock executer and then execute the run /
+-  Capture the ``runnables`` in a mock executer and then execute the run /
    call method at a later point.
 
 [TODO - need to provide more examples for the above two cases]
