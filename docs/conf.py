@@ -75,7 +75,8 @@ linkcheck_timeout = 300
 nitpicky = True
 release = version
 
-spelling_warning=True
+spelling_warning = True
+spelling_exclude_patterns = ['release-notes/release-notes-*']
 
 html_context = {
     'version_status': 'supported',
