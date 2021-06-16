@@ -13,8 +13,8 @@ Code which uses `dependency injection with standard
 annotations <https://wiki-archive.opendaylight.org/view/BestPractices/DI_Guidelines>`__
 is well suite for component tests.
 
-Component tests cover the functionality of 1 single ODL bundle (e.g.
-netvirt's aclservice, genius' interfacemanager, etc.) They are focused
+Component tests cover the functionality of 1 single OpenDaylight bundle (e.g.
+netvirt ``aclservice``, genius ``interfacemanager``, etc.) They are focused
 on end-to-end testing of APIs, not individual internal implementation
 classes (that's what Unit Tests are for). They focus on testing the code
 in their own module, and typically stub required external services. They
@@ -98,8 +98,8 @@ AsyncClusteredDataTreeChangeListenerBase or
 AsyncDataTreeChangeListenerBase subclass before then asserting on the
 outcome of what happened, you just add the
 TestableDataTreeChangeListenerModule to the GuiceRule of your \*Test,
-and then @Inject AsyncEventsWaiter asyncEventsWaiter, and use
-awaitEventsConsumption() AFTER having done action like a data store
+and then ``@Inject AsyncEventsWaiter asyncEventsWaiter``, and use
+``awaitEventsConsumption()`` AFTER having done action like a data store
 write for which a listener should kick in, and BEFORE reading the
 datastore to check the effect:
 
@@ -114,14 +114,14 @@ datastore to check the effect:
 If a AsyncClusteredDataTreeChangeListenerBase or
 AsyncDataTreeChangeListenerBase (subclass) has "fired", then the
 AsyncEventsWaiter verifies that a test has indeed used
-awaitEventsConsumption() - and fails the test with
-IllegalStateException: Test forgot an awaitEventsConsumption() if it
+``awaitEventsConsumption()`` - and fails the test with
+IllegalStateException: Test forgot an ``awaitEventsConsumption()`` if it
 does not. This mechanism ensures that a test does not "forget" to
-awaitEventsConsumption and assert an expected outcome. NB however that
+``awaitEventsConsumption`` and assert an expected outcome. NB however that
 if the test runs fast, it may end before the listeners kicked in, and
 the IllegalStateException may not always been seen (i.e. leading to a
-"heisenbug", found with the RunUntilFailureRule). Therefore, if in your
-test you do not need to awaitEventsConsumption() at all, then you should
+``"heisenbug"``, found with the RunUntilFailureRule). Therefore, if in your
+test you do not need to ``awaitEventsConsumption()`` at all, then you should
 not use the TestableDataTreeChangeListenerModule. However, this is
 likely an indication of lack of better test coverage in your test - you
 probably do want to assert on the effect of your
@@ -164,7 +164,7 @@ completely eliminate them from all tests.
 Tutorial
 ========
 
-Let's imagine you want to make a change e.g. in aclservice, just as an
+Let's imagine you want to make a change e.g. in ``aclservice``, just as an
 example. Specifically, you've added a new argument for another new
 internal bean or external service to the @Singleton
 AclServiceManagerImpl @Inject annotated constructor, let's say to an
@@ -191,7 +191,7 @@ To fix this after having made your change, you would now have to add 1
 line in AclServiceTestModule to do a bind() of IdManagerService to...
 something.
 
-If IdManagerServiceas was some new internal helper class of aclservice
+If IdManagerServiceas was some new internal helper class of ``aclservice``
 which you would like to test, then you would just do:
 
 .. code:: java
@@ -201,7 +201,7 @@ which you would like to test, then you would just do:
 The YOURIdManagerServiceImpl would have a @Singleton annotation on its
 class, and have an @Inject annotation on its constructor, to
 automatically get its dependencies injected (and perhaps have
-@PostConstruct and @PreDestroy, if it has a "lifecycle"; or extend
+``@PostConstruct`` and ``@PreDestroy``, if it has a ``"lifecycle"``; or extend
 AbstractLifecycle). This is further documented on the `DI
 Guidelines <https://wiki-archive.opendaylight.org/view/BestPractices/DI_Guidelines>`__
 page.
@@ -220,24 +220,24 @@ add this in AclServiceTestModule:
 but there is two problems with this, 1. small practical (easy to fix),
 2. conceptual (more important):
 
-1. IdManager at the time of initially writing this documentation didnt't
-have @Singleton @Inject and @PreDestroy on its close() .. this may have
+1. IdManager at the time of initially writing this documentation did not
+have ``@Singleton`` ``@Inject`` and ``@PreDestroy`` on its ``close()`` .. this may have
 already changed - or you could, easily, make a contribution to Genius to
-change that; I'd recommend making IdManager extend AbstractLifecycle in
+change that; I would recommend making IdManager extend AbstractLifecycle in
 this case. This can theoretically, even though we wouldn't recommend
 that, also be worked-around by doing the IdManager "wiring" manually
-through 2 lines of like new IdManager(...) and then use
-bind(IdManagerService.class) .toInstance(myIdManager). BUT...
+through 2 lines of like new ``IdManager(...)`` and then use
+``bind(IdManagerService.class)`` ``.toInstance(myIdManager)``. BUT...
 
 2. ... it would, typically IMHO, be wrong to use IdManager as
 IdManagerService implementation in AclServiceTest. This is more of a
 general recommendation than a hard rule. The idea is that the component
-test of aclservice should NOT have to depend on the real implementation
-of all external services the aclservice code depends on (only all of the
-internal beans of aclservice). So it would, generally, be considered
+test of ``aclservice`` should NOT have to depend on the real implementation
+of all external services the ``aclservice`` code depends on (only all of the
+internal beans of ``aclservice``). So it would, generally, be considered
 better to bind a local test implementation of IdManager, which does the
 minimum you need for the test. A full coverage test of IdManager would
-be the responsibility of genius' idmanager-impl, not aclservice-impl. So
+be the responsibility of genius ``idmanager-impl``, not ``aclservice-impl``. So
 what I would probably start with doing in your case, unless there is a
 very strong need that you must absolutely have the "full" IdManager for
 the AclServiceTest, is to just put this into AclServiceTestModule's
@@ -249,17 +249,17 @@ configure() method:
    bind(IdManagerService.class).toInstance(Mockito.mock(IdManagerService.class, exception());
 
 Doing this will resolve the Guice Exception you have run into below. But
-whenever some aclservice code now actually calls a method
-IdManagerService, you'll get an UnstubbedMethodException .. and this is
+whenever some ``aclservice`` code now actually calls a method
+IdManagerService, you'll get an UnstubbedMethodException - and this is
 normal - because you just mocked IdManagerService! I would still
 recommend to start like this, and then go about fixing
 UnstubbedMethodException as they arise when you run AclServiceTest ...
 
-Let's for example say that your new code calls IdManagerServices'
-allocateIdRange() method somewhere - I don't know if it does, so this is
+Let us for example say that your new code calls IdManagerServices
+``allocateIdRange()`` method somewhere - I don't know if it does, so this is
 just for Illustration. You could make your mocked IdManagerService do
 something else than throw a UnstubbedMethodException for
-allocateIdRange() in two different "styles", this is somewhat dependant
+``allocateIdRange()`` in two different "styles", this is somewhat dependant
 on personal preference:
 
 A) Write out a partial "fake" implementation of it:
@@ -290,13 +290,13 @@ You can then change the binding in configure() to be:
 
    bind(IdManagerService.class).toInstance(Mockito.mock(TestIdManagerService.class, realOrException())
 
-Note the subtle difference with the use of realOrException() instead of
-just exception().
+Note the subtle difference with the use of ``realOrException()`` instead of
+just ``exception()``.
 
-This first style is vorburger's personal preference; finding this code
+This first style is Vorburger's personal preference; finding this code
 clearer to read and understand for anyone than "traditional" Mockito
 usage, and not minding to have to type a few extra lines (for the
-class), which the IDE will put for me on Ctrl-Space anyway, than having
+class), which the IDE will put for me on ``Ctrl-Space`` anyway, than having
 to understand the Mockito magic. This is particular true when the
 implemented methods have anything but non-trivial arguments and return
 types - which is often the case in ODL.
