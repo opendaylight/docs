@@ -23,7 +23,7 @@ Perform the following steps to develop an app:
 Prerequisites
 -------------
 
-The following are the prerequires for app creation:
+The following are the prerequisites for app creation:
 
 -   A development environment with the following setup and working correctly
     from the shell:
@@ -68,7 +68,7 @@ Perform the following steps to develop an app:
        :header-rows: 1
 
       * - OpenDaylight Simultaneous Release
-        - opendaylight-startup-archetype version
+        - ``opendaylight-startup-archetype`` version
 
       * - Magnesium Development
         - 1.3.0-SNAPSHOT
@@ -76,8 +76,8 @@ Perform the following steps to develop an app:
       * - Aluminium Development
         - 1.4.0-SNAPSHOT
 
-2.  Update the properties values. Ensure that the values for the groupId and
-    the artifactId are in lower case.
+2.  Update the properties values. Ensure that the values for the ``groupId`` and
+    the ``artifactId`` are in lower case.
 
     .. code:: text
 
@@ -89,15 +89,15 @@ Perform the following steps to develop an app:
         Define value for property 'copyright': Copyright (c) 2021 Yoyodyne, Inc.
         [INFO] Using property: copyrightYear = 2021
 
-3.  Accept the default value of classPrefix, that is:
+3.  Accept the default value of ``classPrefix``, that is:
     ``(${artifactId.substring(0,1).toUpperCase()}${artifactId.substring(1)})``.
-    The classPrefix creates a Java Class Prefix by capitalizing the first
-    character of the artifactId.
+    The ``classPrefix`` creates a Java Class Prefix by capitalizing the first
+    character of the ``artifactId``.
 
     .. note::
 
-        This will create a directory with the name given to artifactId in the above dialog, with
-        the following contents.
+        This will create a directory with the name given to ``artifactId``
+        in the above dialog, with the following contents.
 
     .. code:: shell
 
@@ -161,7 +161,7 @@ Defining a simple HelloWorld RPC
     same as what was done in the previous steps.
 
 2.  View the entry point to understand the origins of the log line. The
-    entry point starts in the ./impl project:
+    entry point starts in the ``./impl`` project:
 
     .. code:: shell
 
@@ -216,7 +216,7 @@ Add a simple HelloWorld RPC API
             }
         }
 
-3.  Return to the hello/api directory. Do the following to build the API:
+3.  Return to the ``hello/api`` directory. Do the following to build the API:
 
     .. code:: shell
 
