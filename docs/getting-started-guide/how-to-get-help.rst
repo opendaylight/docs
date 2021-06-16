@@ -17,8 +17,8 @@ mailing lists, IRC and forums.
 #. Directly mail the PTL as indicated on the specific
    `projects page <https://wiki-archive.opendaylight.org/view/Project_list>`_.
 
-#. IRC: Connect to #opendaylight or #opendaylight-meeting channel on freenode.
-   The `Linux Foundation's IRC guide <https://docs.releng.linuxfoundation.org/en/latest/freenode.html>`_ may be helpful.
+#. IRC: Connect to ``#opendaylight`` or ``#opendaylight-meeting`` channel on ``Libera.Chat``.
+   The `Linux Foundation's IRC guide <https://docs.releng.linuxfoundation.org/en/latest/liberachat.html>`_ may be helpful.
    You'll need `an IRC client <https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients#Operating_system_support>`_,
    or can use `the freenode webchat <https://webchat.freenode.net/#opendaylight>`_,
    or perhaps you'll `like IRCCloud <https://www.irccloud.com>`_.
