@@ -60,7 +60,7 @@ YANG tools consist of the following logical subsystems:
 
    * - **YANG Maven Plugin**
      - Maven plugin which integrates YANG parser
-       into Maven build lifecycle and provides code-generation framework for
+       into Maven build life-cycle and provides code-generation framework for
        components, which wants to generate code or other artefacts based on YANG model.
 
 Concepts
@@ -72,37 +72,37 @@ project-agnostic and could be used outside of YANG Tools project scope.
 Components
 ~~~~~~~~~~
 
--  yang-common
+-  ``yang-common``
 
--  yang-data-api
+-  ``yang-data-api``
 
--  yang-data-codec-gson
+-  ``yang-data-codec-gson``
 
--  yang-data-codec-xml
+-  ``yang-data-codec-xml``
 
--  yang-data-impl
+-  ``yang-data-impl``
 
--  yang-data-jaxen
+-  ``yang-data-jaxen``
 
--  yang-data-transform
+-  ``yang-data-transform``
 
--  yang-data-util
+-  ``yang-data-util``
 
--  yang-maven-plugin
+-  ``yang-maven-plugin``
 
--  yang-maven-plugin-it
+-  ``yang-maven-plugin-it``
 
--  yang-maven-plugin-spi
+-  ``yang-maven-plugin-spi``
 
--  yang-model-api
+-  ``yang-model-api``
 
--  yang-model-export
+-  ``yang-model-export``
 
--  yang-model-util
+-  ``yang-model-util``
 
--  yang-parser-api
+-  ``yang-parser-api``
 
--  yang-parser-impl
+-  ``yang-parser-impl``
 
 YANG Model API
 ^^^^^^^^^^^^^^
@@ -161,7 +161,7 @@ XML or JSON format into NormalizedNodes.
 YANG Maven Plugin
 ^^^^^^^^^^^^^^^^^
 
-Maven plugin which integrates YANG parser into Maven build lifecycle and
+Maven plugin which integrates YANG parser into Maven build life-cycle and
 provides code-generation framework for components, which wants to
 generate code or other artefacts based on YANG model.
 
@@ -204,22 +204,22 @@ relative.
 
 Next comes the initiation of new yang parsing cycle - which is
 represented by CrossSourceStatementReactor.BuildAction object. You can
-get it by calling method newBuild() on CrossSourceStatementReactor
+get it by calling method ``newBuild()`` on CrossSourceStatementReactor
 object (RFC6020\_REACTOR) in YangInferencePipeline class.
 
-Then you should feed yang sources to it by calling method addSources()
+Then you should feed yang sources to it by calling method ``addSources()``
 that takes one or more StatementStreamSource objects as arguments.
 
-Finally, you call the method buildEffective() on the reactor object which
-returns EffectiveSchemaContext (that is a concrete implementation of
-SchemaContext). Now you are ready to work with contents of the added
-yang sources.
+Finally, you call the method ``buildEffective()`` on the reactor object which
+returns ``EffectiveSchemaContext`` (that is a concrete implementation of
+``SchemaContext``). Now you are ready to work with contents of the added
+YANG sources.
 
 Let us explain how to work with models contained in the newly created
-SchemaContext. If you want to get all the modules in the schemaContext,
-you have to call method getModules() which returns a Set of modules. If
-you want to get all the data definitions in schemaContext, you need to
-call method getDataDefinitions, etc.
+``SchemaContext``. If you want to get all the modules in the ``schemaContext``,
+you have to call method ``getModules()`` which returns a Set of modules. If
+you want to get all the data definitions in ``schemaContext``, you need to
+call method ``getDataDefinitions``, etc.
 
 .. code:: java
 
@@ -229,11 +229,11 @@ call method getDataDefinitions, etc.
 Usually you want to access specific modules. Getting a concrete module
 from SchemaContext is a matter of calling one of these methods:
 
--  findModuleByName(),
+-  ``findModuleByName()``,
 
--  findModuleByNamespace(),
+-  ``findModuleByNamespace()``,
 
--  findModuleByNamespaceAndRevision().
+-  ``findModuleByNamespaceAndRevision()``.
 
 In the first case, you need to provide module name as it is defined in
 the yang source file and module revision date if it specified in the
@@ -260,9 +260,9 @@ as arguments.
 
 Once you have a Module object, you can access its contents as they are
 defined in YANG Model API. One way to do this is to use method like
-getIdentities() or getRpcs() which will give you a Set of objects.
+``getIdentities()`` or ``getRpcs()`` which will give you a Set of objects.
 Otherwise you can access a DataSchemaNode directly via the method
-getDataChildByName() which takes a QName object as its only argument.
+``getDataChildByName()`` which takes a ``QName`` object as its only argument.
 Here are a few examples.
 
 .. code:: java
@@ -283,19 +283,19 @@ The YANG statement parser can work in three modes:
 -  mode with active semantic version processing
 
 The default mode is active when you initialize the parsing cycle as
-usual by calling the method newBuild() without passing any arguments to
-it. The second and third mode can be activated by invoking the
-newBuild() with a special argument. You can either activate just one of
+usual by calling the method ``newBuild()`` without passing any arguments to
+it. The second and third mode can be activated by invoking the ``newBuild()``
+with a special argument. You can either activate just one of
 them or both by passing proper arguments. Let us explain how these modes
 work.
 
 Mode with active resolution of if-features makes yang statements
 containing an if-feature statement conditional based on the supported
-features. These features are provided in the form of a QName-based
-java.util.Set object. In the example below, only two
+features. These features are provided in the form of a ``QName-based``
+``java.util.Set`` object. In the example below, only two
 features are supported: example-feature-1 and example-feature-2. The
 Set which contains this information is passed to the method
-newBuild() and the mode is activated.
+``newBuild()`` and the mode is activated.
 
 .. code:: java
 
@@ -306,7 +306,7 @@ newBuild() and the mode is activated.
     CrossSourceStatementReactor.BuildAction reactor = YangInferencePipeline.RFC6020_REACTOR.newBuild(supportedFeatures);
 
 In case when no features should be supported, you should provide an
-empty Set<QName> object.
+empty ``Set<QName>`` object.
 
 .. code:: java
 
@@ -322,7 +322,7 @@ import statements work - each module import is processed based on the
 specified semantic version statement and the revision-date statement is
 ignored. In order to activate this mode, you have to provide
 StatementParserMode.SEMVER\_MODE enum constant as argument to the method
-newBuild().
+``newBuild()``.
 
 .. code:: java
 
@@ -444,10 +444,10 @@ Working with YANG data
 If you want to work with YANG data, you are going to need NormalizedNode
 objects that are specified in the YANG data API. NormalizedNode is an
 interface at the top of the YANG data hierarchy. It is extended through
-sub-interfaces which define the behaviour of specific NormalizedNode
+sub-interfaces which define the behavior of specific NormalizedNode
 types like AnyXmlNode, ChoiceNode, LeafNode, ContainerNode, etc.
 Concrete implementations of these interfaces are defined in
-yang-data-impl module. Once you have one or more NormalizedNode
+``yang-data-impl`` module. Once you have one or more NormalizedNode
 instances, you can perform CRUD operations on YANG data tree which is an
 in-memory database designed to store normalized nodes in a tree-like
 structure.
@@ -495,14 +495,14 @@ simple example of building a normalized node:
 
 Both examples produce the same result. NodeIdentifier is one of the four
 types of YangInstanceIdentifier (these types are described in the
-javadoc of YangInstanceIdentifier). The purpose of
+Javadoc of YangInstanceIdentifier). The purpose of
 YangInstanceIdentifier is to uniquely identify a particular node in the
 data tree. In the first example, you have to add NodeIdentifier before
 building the resulting node. In the second example it is also added
 using the provided ContainerSchemaNode object.
 
 ImmutableNodes class offers similar builder methods and also adds an
-overloaded method called fromInstanceId() which allows you to create a
+overloaded method called ``fromInstanceId()`` which allows you to create a
 NormalizedNode object based on YangInstanceIdentifier and SchemaContext.
 Below is an example which shows the use of this method.
 
@@ -618,11 +618,11 @@ parent container, a child container and a parent ordered list which
 contains a key leaf and an ordinary leaf. The second normalized node is
 a child ordered list that also contains a key leaf and an ordinary leaf.
 
-In order to add a child node to a node, method withChild() is used. It
+In order to add a child node to a node, method ``withChild()`` is used. It
 takes a NormalizedNode as argument. When creating a list entry,
 YangInstanceIdentifier.NodeIdentifierWithPredicates should be used as
-its identifier. Its arguments are the QName of the list, QName of the
-list key and the value of the key. Method withValue() specifies a value
+its identifier. Its arguments are the ``QName`` of the list, ``QName`` of the
+list key and the value of the key. Method ``withValue()`` specifies a value
 for the ordinary leaf in the list.
 
 Before writing a node to the data tree, a path (YangInstanceIdentifier)
@@ -630,7 +630,7 @@ which determines its place in the data tree needs to be defined. The
 path of the first normalized node starts at the parent container. The
 path of the second normalized node points to the child ordered list
 contained in the parent ordered list entry specified by the key value
-"pkval1".
+``"pkval1"``.
 
 Write operation is performed with both normalized nodes mentioned
 earlier. It consists of several steps. The first step is to instantiate a
@@ -644,7 +644,7 @@ allowed. The modification is then validated - checked whether it can be
 applied to the data tree. Finally, we commit it to the data tree.
 
 Now you can access the written nodes. In order to do this, you must
-create a new DataTreeSnapshot instance and call the method readNode()
+create a new DataTreeSnapshot instance and call the method ``readNode()``
 with path argument pointing to a node in the tree.
 
 Serialization / deserialization of YANG data
@@ -652,7 +652,7 @@ Serialization / deserialization of YANG data
 
 If you want to deserialize YANG-modeled data that has the form of an
 XML document, you can use the XML parser found in the module
-yang-data-codec-xml. The parser walks through the XML document
+``yang-data-codec-xml``. The parser walks through the XML document
 containing YANG-modeled data based on the provided SchemaContext and
 emits node events into a NormalizedNodeStreamWriter. The parser
 disallows multiple instances of the same element except for leaf-list
@@ -677,7 +677,7 @@ Here is an example of using the XML parser.
 
     NormalizedNode<?, ?> transformedInput == result.getResult();
 
-The XML parser utilizes the javax.xml.stream.XMLStreamReader for parsing
+The XML parser utilizes the ``javax.xml.stream.XMLStreamReader`` for parsing
 an XML document. First, you should create an instance of this reader
 using XMLInputFactory and then load an XML document (in the form of
 InputStream object) into it.
@@ -712,5 +712,5 @@ calling the method parse() on the XmlParserStream object with
 XMLStreamReader as its argument.
 
 Finally, you can access the result of parsing - a tree of NormalizedNodes
-containg the data as they are defined in the parsed XML document - by
-calling the method getResult() on the NormalizedNodeResult object.
+contains the data as they are defined in the parsed XML document - by
+calling the method ``getResult()`` on the NormalizedNodeResult object.
