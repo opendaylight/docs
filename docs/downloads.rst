@@ -13,32 +13,32 @@ Silicon-SR0
 :Announcement: `Silicon <https://www.opendaylight.org/current-release-silicon>`_
 
 :GA Release Date: April 2, 2021
-:Service Release Date: April 2, 2021
+:Service Release Date: June 9, 2021
 
 :Downloads:
     * `OpenDaylight Silicon Tar
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/14.0.0/opendaylight-14.0.0.tar.gz>`_
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/14.1.0/opendaylight-14.1.0.tar.gz>`_
     * `OpenDaylight Silicon Zip
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/14.0.0/opendaylight-14.0.0.zip>`_
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/14.1.0/opendaylight-14.1.0.zip>`_
 
 :Documentation:
     * :doc:`Getting Started Guide <odl-silicon:getting-started-guide/index>`
     * :doc:`Project Guides <odl-silicon:index>`
     * :doc:`Release Notes <odl-silicon:release-notes/index>`
 
-Aluminium SR3
+Aluminium SR4
 -------------
 
 :Announcement: `Aluminium <https://www.opendaylight.org/current-release-aluminium>`_
 
 :GA Release Date: September 22, 2020
-:Service Release Date: March 18, 2021
+:Service Release Date: June 22, 2021
 
 :Downloads:
     * `OpenDaylight Aluminium Tar
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/0.13.3/opendaylight-0.13.3.tar.gz>`_
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/0.13.4/opendaylight-0.13.4.tar.gz>`_
     * `OpenDaylight Aluminium Zip
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/0.13.3/opendaylight-0.13.3.zip>`_
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/0.13.4/opendaylight-0.13.4.zip>`_
 
 :Documentation:
     * :doc:`Getting Started Guide <odl-aluminium:getting-started-guide/index>`

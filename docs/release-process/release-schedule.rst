@@ -95,8 +95,13 @@ to release once managed projects are ready.
      - Start Date +6 months
      - Formal Release for Managed Projects. Self-managed projects usually are released a week later.
    * - Service Release 1
+<<<<<<< HEAD   (68b7b9 Update releng IRC documentation URL)
      - 2021-05-12
      - 2020-10-29
+=======
+     - 2021-10-28
+     - 2021-06-03
+>>>>>>> CHANGE (f92cfa Update releases downloads and schedule)
      - 1.5 month after Formal Release
      - Start Date +7.5 months
      - Service Release 1 (SR1)
