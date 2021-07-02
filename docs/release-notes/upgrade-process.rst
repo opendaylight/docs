@@ -1,10 +1,10 @@
-========================
-Silicon Platform Upgrade
-========================
+===================================
+2021.09 Phosphorus Platform Upgrade
+===================================
 
 This document describes the steps to help users upgrade from Aluminium
 to Silicon planned platform. Refer to `Managed Release Integrated (MRI)
-project <https://git.opendaylight.org/gerrit/q/topic:silicon-mri>`_
+project <https://git.opendaylight.org/gerrit/q/topic:phosphorus-mri>`_
 upgrade patches for more information.
 
 .. contents:: Contents
@@ -14,69 +14,77 @@ Preparation
 
 JDK 11 Version
 ^^^^^^^^^^^^^^
-Silicon requires Java 11, both during compile-time and run-time.
-Make sure to install JDK 11 corresponding to at least ``openjdk-11.0.8``,
+Phosphorus requires Java 11, both during compile-time and run-time.
+Make sure to install JDK 11 corresponding to at least ``openjdk-11.0.10``,
 and that the JAVA_HOME environment variable points to the JDK directory.
-
-InfraUtils is a MRI project
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Unlike in previous releases, the InfraUtils project has joined
-the MRI family at the end of Aluminium Simultaneous Release cycle.
-Going forward it is an error to depend on any ``org.opendaylight.infrautils``
-with a ``-SNAPSHOT`` version.
-
 
 Version Bump
 ^^^^^^^^^^^^
 Before performing platform upgrade, do the following to bump the odlparent
 versions (for example, `bump-odl-version <https://github.com/skitt/odl-tools/blob/master/bump-odl-version>`_):
 
-1. Update the odlparent version from 7.0.5 to 8.1.1. There should
+1. Update the odlparent version from 8.1.1 to 9.0.2. There should
    not be any reference to **org.opendaylight.odlparent**, except
-   for 8.1.1. This includes custom feature.xml templates
+   for 9.0.2. This includes custom feature.xml templates
    (``src/main/feature/feature.xml``), the version range should
-   be "[8.1,9)" instead of "[8,9)", "[5.0.3,6)" or any other variation.
+   be "[9,10)" instead of "[8.1,9)", "[5.0.3,6)" or any other variation.
 
  .. code-block:: shell
 
-  bump-odl-version odlparent 7.0.5 8.1.1
+  bump-odl-version odlparent 8.1.1 9.0.2
 
-2. Update the direct yangtools version references from 5.0.5 to 6.0.5,
+2. Update the direct yangtools version references from 6.0.5 to 7.0.3,
    There should not be any reference to **org.opendaylight.yangtools**,
-   except for 6.0.5. This includes custom feature.xml templates
+   except for 7.0.3. This includes custom feature.xml templates
    (``src/main/feature/feature.xml``), the version range should
-   be "[6,7)" instead of "[5,6)".
+   be "[7,8)" instead of "[6,7)".
 
  .. code-block:: shell
 
-  bump-odl-version odlparent 5.0.5 6.0.5
+  bump-odl-version yangtools 8.1.1 7.0.3
 
-3. Update the MD-SAL version from 6.0.4 to 7.0.6. There should not be
-   any reference to **org.opendaylight.mdsal**, except for 7.0.6.
-
- .. code-block:: shell
-
-  bump-odl-version odlparent 6.0.4 7.0.6
-
-4. Update the Controller version from 2.0.3 to 3.0.7. There should not be
-   any reference to **org.opendaylight.controller**, except for 3.0.7.
+3. Update the MD-SAL version from 7.0.6 to 8.0.0. There should not be
+   any reference to **org.opendaylight.mdsal**, except for 8.0.0.
 
  .. code-block:: shell
 
-  bump-odl-version odlparent 2.0.3 3.0.7
+  bump-odl-version mdsal 7.0.6 8.0.0
 
-5. Update the InfraUtils version from 1.8.0 to 1.9.6. There should not be
-   any reference to **org.opendaylight.infrautils**, except for 1.9.6.
+4. Update the Controller version from 3.0.7 to 4.0.0. There should not be
+   any reference to **org.opendaylight.controller**, except for 4.0.0.
 
  .. code-block:: shell
 
-  bump-odl-version odlparent 1.8.0 1.9.6
+  bump-odl-version controller 3.0.7 4.0.0
+
+5. Update the InfraUtils version from 1.9.6 to 2.0.2. There should not be
+   any reference to **org.opendaylight.infrautils**, except for 2.0.2.
+
+ .. code-block:: shell
+
+  bump-odl-version infrautils 1.9.6 2.0.2
+
+6. Update the AAA version from 1.13.0 to 0.14.0. There should not be
+   any reference to **org.opendaylight.aaa**, except for 0.14.0.
+
+ .. code-block:: shell
+
+  bump-odl-version aaa 0.13.2 1.14.0
+
+7. Update the NETCONF version from 1.13.1 to 2.0.0. There should not be
+   any reference to **org.opendaylight.netconf**, except for 2.0.0.
+
+ .. code-block:: shell
+
+  bump-odl-version netconf 1.13.1 2.0.0
 
 Install Dependent Projects
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Before performing platform upgrade, users must also install
 any dependent project. To locally install a dependent project,
-pull and install the respective `silicon-mri <https://git.opendaylight.org/gerrit/q/topic:silicon-mri>`_ changes for any dependent project.
+pull and install the respective
+`phosphorus-mri <https://git.opendaylight.org/gerrit/q/topic:phosphorus-mri>`_
+changes for any dependent project.
 
 Perform the following steps to save time when locally installing
 any dependent project:
@@ -97,35 +105,51 @@ any dependent project:
 Upgrade the ODL Parent
 ----------------------
 The following sub-section describes how to upgrade to
-the ODL Parent version 4. Refer to the `ODL Parent Release Notes
-<https://github.com/opendaylight/odlparent/blob/master/docs/NEWS.rst#version-800>`_
+the ODL Parent version 9. Refer to the `ODL Parent Release Notes
+<https://github.com/opendaylight/odlparent/blob/master/docs/NEWS.rst#version-902>`_
 for more information.
 
 Features
 ^^^^^^^^
-Any version range referencing version 7 of ODL Parent must be changed
-to “[8,9)” for ODL Parent 8.1.
+Any version range referencing version 8 or 8.1 of ODL Parent must be changed
+to “[9,10)” for ODL Parent 9.
 
  .. code-block:: xml
 
    <feature name="odl-infrautils-caches">
-       <feature version="[8,9)">odl-guava</feature>
+       <feature version="[9,10)">odl-guava</feature>
    </feature>
 
 ODL Parent Impacts
 ------------------
 
-Enforcing maven-modernizer-plugin
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-ODL Parent has switched ``maven-modernizer-plugin`` to enforcing mode
-and upgraded the rules to reflect Java 11 requirement. The enforcement
-can be switched off on a per-artifact basis using:
+Updated javax.inject coordinates
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ODL Parent has switched to sourcing ``javax.inject`` artifact from the GuicedEE
+project in version 8.1. With odlparent-9, the old coordinates were removed. Downstreams
+need to update their dependency blocks to:
 
  .. code-block:: xml
 
-   <properties>
-       <odlparent.modernizer.enforce>false</odlparent.modernizer.enforce>
-   </properties>
+   <dependency>
+       <groupId>com.guicedee.services</groupId>
+       <artifactId>javax.inject</artifactId>
+       <optional>true</optional>
+   </dependency>
+
+
+Removed OSGi Release 6 osgi-core
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The artifact name for OSGi Core specification has changed in Release 7. Where odlparent-8.1
+provided both R6 and R7 declarations, odlparent-9 removes the legacy declaration. Downstreams
+need to update their dependency blocks to:
+
+ .. code-block:: xml
+
+   <dependency>
+       <groupId>org.osgi</groupId>
+       <artifactId>osgi.core</artifactId>
+   </dependency>
 
 
 YANG Tools Impacts
