@@ -70,6 +70,10 @@ linkcheck_ignore = [
     # Ignore IETF URLs often not reachable from Jenkins minions
     # because of hosting connectivity issues
     '^https?://tools.ietf.org/html/.*',
+    # anchors not correctly detected by sphinx on the gate
+    'http://checkstyle.sourceforge.net/config_coding.html#.*',
+    # this url often has connectivity issues on the gate
+    'https://www.mojohaus.org/animal-sniffer/animal-sniffer-maven-plugin/examples/checking-signatures.html',
 ]
 linkcheck_timeout = 300
 
