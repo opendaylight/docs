@@ -1,10 +1,10 @@
-========================
-Silicon Platform Upgrade
-========================
+===================================
+2021.09 Phosphorus Platform Upgrade
+===================================
 
 This document describes the steps to help users upgrade from Aluminium
 to Silicon planned platform. Refer to `Managed Release Integrated (MRI)
-project <https://git.opendaylight.org/gerrit/q/topic:silicon-mri>`_
+project <https://git.opendaylight.org/gerrit/q/topic:phosphorus-mri>`_
 upgrade patches for more information.
 
 .. contents:: Contents
@@ -14,69 +14,77 @@ Preparation
 
 JDK 11 Version
 ^^^^^^^^^^^^^^
-Silicon requires Java 11, both during compile-time and run-time.
-Make sure to install JDK 11 corresponding to at least ``openjdk-11.0.8``,
+Phosphorus requires Java 11, both during compile-time and run-time.
+Make sure to install JDK 11 corresponding to at least ``openjdk-11.0.10``,
 and that the JAVA_HOME environment variable points to the JDK directory.
-
-InfraUtils is a MRI project
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Unlike in previous releases, the InfraUtils project has joined
-the MRI family at the end of Aluminium Simultaneous Release cycle.
-Going forward it is an error to depend on any ``org.opendaylight.infrautils``
-with a ``-SNAPSHOT`` version.
-
 
 Version Bump
 ^^^^^^^^^^^^
 Before performing platform upgrade, do the following to bump the odlparent
 versions (for example, `bump-odl-version <https://github.com/skitt/odl-tools/blob/master/bump-odl-version>`_):
 
-1. Update the odlparent version from 7.0.5 to 8.1.1. There should
+1. Update the odlparent version from 8.1.1 to 9.0.2. There should
    not be any reference to **org.opendaylight.odlparent**, except
-   for 8.1.1. This includes custom feature.xml templates
+   for 9.0.2. This includes custom feature.xml templates
    (``src/main/feature/feature.xml``), the version range should
-   be "[8.1,9)" instead of "[8,9)", "[5.0.3,6)" or any other variation.
+   be "[9,10)" instead of "[8.1,9)", "[5.0.3,6)" or any other variation.
 
  .. code-block:: shell
 
-  bump-odl-version odlparent 7.0.5 8.1.1
+  bump-odl-version odlparent 8.1.1 9.0.2
 
-2. Update the direct yangtools version references from 5.0.5 to 6.0.5,
+2. Update the direct yangtools version references from 6.0.5 to 7.0.3,
    There should not be any reference to **org.opendaylight.yangtools**,
-   except for 6.0.5. This includes custom feature.xml templates
+   except for 7.0.3. This includes custom feature.xml templates
    (``src/main/feature/feature.xml``), the version range should
-   be "[6,7)" instead of "[5,6)".
+   be "[7,8)" instead of "[6,7)".
 
  .. code-block:: shell
 
-  bump-odl-version odlparent 5.0.5 6.0.5
+  bump-odl-version yangtools 8.1.1 7.0.3
 
-3. Update the MD-SAL version from 6.0.4 to 7.0.6. There should not be
-   any reference to **org.opendaylight.mdsal**, except for 7.0.6.
-
- .. code-block:: shell
-
-  bump-odl-version odlparent 6.0.4 7.0.6
-
-4. Update the Controller version from 2.0.3 to 3.0.7. There should not be
-   any reference to **org.opendaylight.controller**, except for 3.0.7.
+3. Update the MD-SAL version from 7.0.6 to 8.0.0. There should not be
+   any reference to **org.opendaylight.mdsal**, except for 8.0.0.
 
  .. code-block:: shell
 
-  bump-odl-version odlparent 2.0.3 3.0.7
+  bump-odl-version mdsal 7.0.6 8.0.0
 
-5. Update the InfraUtils version from 1.8.0 to 1.9.6. There should not be
-   any reference to **org.opendaylight.infrautils**, except for 1.9.6.
+4. Update the Controller version from 3.0.7 to 4.0.0. There should not be
+   any reference to **org.opendaylight.controller**, except for 4.0.0.
 
  .. code-block:: shell
 
-  bump-odl-version odlparent 1.8.0 1.9.6
+  bump-odl-version controller 3.0.7 4.0.0
+
+5. Update the InfraUtils version from 1.9.6 to 2.0.2. There should not be
+   any reference to **org.opendaylight.infrautils**, except for 2.0.2.
+
+ .. code-block:: shell
+
+  bump-odl-version infrautils 1.9.6 2.0.2
+
+6. Update the AAA version from 1.13.0 to 0.14.0. There should not be
+   any reference to **org.opendaylight.aaa**, except for 0.14.0.
+
+ .. code-block:: shell
+
+  bump-odl-version aaa 0.13.2 1.14.0
+
+7. Update the NETCONF version from 1.13.1 to 2.0.0. There should not be
+   any reference to **org.opendaylight.netconf**, except for 2.0.0.
+
+ .. code-block:: shell
+
+  bump-odl-version netconf 1.13.1 2.0.0
 
 Install Dependent Projects
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Before performing platform upgrade, users must also install
 any dependent project. To locally install a dependent project,
-pull and install the respective `silicon-mri <https://git.opendaylight.org/gerrit/q/topic:silicon-mri>`_ changes for any dependent project.
+pull and install the respective
+`phosphorus-mri <https://git.opendaylight.org/gerrit/q/topic:phosphorus-mri>`_
+changes for any dependent project.
 
 Perform the following steps to save time when locally installing
 any dependent project:
@@ -97,260 +105,384 @@ any dependent project:
 Upgrade the ODL Parent
 ----------------------
 The following sub-section describes how to upgrade to
-the ODL Parent version 4. Refer to the `ODL Parent Release Notes
-<https://github.com/opendaylight/odlparent/blob/master/docs/NEWS.rst#version-800>`_
+the ODL Parent version 9. Refer to the `ODL Parent Release Notes
+<https://github.com/opendaylight/odlparent/blob/master/docs/NEWS.rst#version-902>`_
 for more information.
 
 Features
 ^^^^^^^^
-Any version range referencing version 7 of ODL Parent must be changed
-to “[8,9)” for ODL Parent 8.1.
+Any version range referencing version 8 or 8.1 of ODL Parent must be changed
+to “[9,10)” for ODL Parent 9.
 
  .. code-block:: xml
 
    <feature name="odl-infrautils-caches">
-       <feature version="[8,9)">odl-guava</feature>
+       <feature version="[9,10)">odl-guava</feature>
    </feature>
 
 ODL Parent Impacts
 ------------------
 
-Enforcing maven-modernizer-plugin
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-ODL Parent has switched ``maven-modernizer-plugin`` to enforcing mode
-and upgraded the rules to reflect Java 11 requirement. The enforcement
-can be switched off on a per-artifact basis using:
+Updated JSR-330 coordinates
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ODL Parent has switched to sourcing ``javax.inject`` artifact from the GuicedEE project in version 8.1.
+With odlparent-9, the old coordinates were removed. Downstreams need to update their dependency blocks to:
 
  .. code-block:: xml
 
-   <properties>
-       <odlparent.modernizer.enforce>false</odlparent.modernizer.enforce>
-   </properties>
+   <dependency>
+       <groupId>com.guicedee.services</groupId>
+       <artifactId>javax.inject</artifactId>
+       <optional>true</optional>
+   </dependency>
+
+
+Removed OSGi Release 6 `osgi-core`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The artifact name for OSGi Core specification has changed in Release 7. Where odlparent-8.1 provided both R6 and R7
+declarations, odlparent-9 removes the legacy declaration. Downstreams need to update their dependency blocks to:
+
+ .. code-block:: xml
+
+   <dependency>
+       <groupId>org.osgi</groupId>
+       <artifactId>osgi.core</artifactId>
+   </dependency>
 
 
 YANG Tools Impacts
 ------------------
 
-SchemaContext is being retired (continued)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-After many years of development and incremental updates, this release marks
-the start of the transition away from ``SchemaContext``. The object model
-exposed by it is problematic in more ways than one. The replacement construct
-is ``EffectiveModelContext``, which operates on ``EffectiveStatement``
-and its related interfaces. ``EffectiveModelContext`` retains its
-``SchemaContext`` trait for the duration of the transition and can be directly
-used in that capacity. Users are encouraged to update their interfaces to
-accept and give out EffectiveModelContext instances.
+SchemaNode.getPath() can throw UnsupportedOperationException
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The original idea that each SchemaNode has a unique identifier, available through ``SchemaNode.getPath()``,
+has proven to be a scalability issue with vendor models. The identifiers themselves account for up to 19%
+of all objects retained by EffectiveModelContext, holding up to 17% of retained memory. These are also
+preventing a number of useful performance and memory footprint optimizations.
 
-In this release this effort resulted in removal of ``SchemaContextProvider``
-interface and vast majority of sites now require an ``EffectiveModelContext``.
+In yangtools-6 we set out on eliminating this problem, with TypeDefinition's `getPath()` method being
+specified as being optional -- but the implementation supported this method.
+
+In yangtools-7 we are taking next three steps:
+  * we make `SchemaNode.getPath()` an default method, with the default implementation throwing
+    UnsupportedOperationException
+  * we are changing TypeDefinition implementation to actually throw UnsupportedOperationException
+    in all cases
+  * we are making `SchemaNode.getPath()` deprecated for removal
+
+All other types of SchemaNode except TypeDefinition retain a fully functional `getPath()` as an implementation
+detail, providing seamless interoperation with current code in most cases.
 
 
-Illegal YANG pattern statements are rejected
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-YANG parser will no longer silently ignore syntactically-illegal patterns.
-This may flush out new non-compliant models. For further details see the
-`corresponding issue <https://jira.opendaylight.org/browse/YANGTOOLS-1136>`__
+NormalizedNode hierarchy was updated
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The interfaces representing normalized view of YANG-modeled data, rooted at
+``org.opendaylight.yangtools.yang.data.api.NormalizedNode``, has been revamped for easier use and better
+consistency of operations.
 
+The most prolific change is the reduction of number of generic arguments for NormalizedNode, DataContainerChild
+and NormalizedNodeContainer. The first two now do not have any generic arguments, while NormalizedNodeContainer
+has only a single argument.
+
+This prompts a very simple replacement pattern, where uses like this:
+
+ .. code-block:: java
+
+   NormalizedNode<?, ?> node = ...
+   NormalizedNodeContainer<?, ?, ?> parent = ...
+   DataContainerChild<?, ?> child = ...
+
+are simplified down to
+
+ .. code-block:: java
+
+   NormalizedNode node = ...
+   NormalizedNodeContainer<?> parent = ...
+   DataContainerChild child = ...
+
+
+Base NormalizedNode interface has also been changed. The ``NormalizedNode.getNodeType()`` method has been removed,
+as it does not work well with ``AugmentationIdentifier`` -- leaving only three methods:
+
+  * ``getIdentifier()`` inherited from the ``Identifiable`` contract
+  * ``body()``, which is actually the new name for ``value()``
+  * ``contract()``, which identifies which NormalizedNode specialization, such as ContainerNode or AnydataNode,
+    a particular object represents
+
+For most users, this change simply means replacing code blocks like
+
+ .. code-block:: java
+
+   NormalizedNode<?, ?> node;
+   QName type = node.getNodeType();
+   Object value = node.getValue();
+
+with a slightly more verbose
+
+ .. code-block:: java
+
+   NormalizedNode node;
+   QName type = node.getIdentifier().getNodeType();
+   Object value = node.body();
+
+which makes safety of `getNodeType()` obvious as soon as NormalizedNode subtypes (such as ContainerNode, MapNode) are
+actually involved.
+
+Also NormalizedNodeContainer's function has changed. It now correctly acts as a common interface
+between containers which allow key-based child lookup (``DistinctNodeContainer``) and containers which allow
+offset-based child lookup (``OrderedNodeContainer``), hosting utility methods like ``size()`` and ``isEmpty()``.
+Call sites which iterate through all available children should continue using NormalizedNodeContainer. Call sites
+which require accessing a child by its identifier need to switch to using DistinctNodeContainer:
+
+ .. code-block:: java
+
+   NormalizedNodeContainer<?, ?, ?> container;
+   PathArgument arg;
+   DataContainerChild<?, ?> child = container.getDataChildByName(arg);
+
+ends up being migrated to
+
+ .. code-block:: java
+
+   DistinctNodeContainer<?> container;
+   PathArgument arg;
+   DataContainerChild child = container.childByArg(arg);
+
+There actually are now three different methods to access a child, allowing flexible and expressive integration:
+  * ``childByArg()``, which returns a child or ``null``,
+  * ``findChildByArg()``, which returns a ``Optional`` child,
+  * ``getChildByArg()``, which returns a child or throws VerifyException
+
+
+Another aspect that got attention is child ordering contract. Both ``MapNode`` and ``LeafSetNode`` are now
+specialized in disjunct interfaces based on how child iteration order affects semantics. ``SystemMapNode`` and
+``SystemLeafSetNode`` represent ``list`` and ``leaf-list`` constructs which have ``ordered-by system`` semantics --
+which is to say order of nodes is not part of semantics similar to what ``java.util.Set`` does. On the other hand
+we have ``UserMapNode`` and ``UserLeafSetNode`` for constructs which are ``ordered-by user`` -- hence the child
+iteration order is part of semantics, i.e. what ``java.util.List`` does.
+
+
+ModelStatement non-existent arguments
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The type mapping of YANG statements argument in the no-argument case has changed. These have been previously mapped
+to ``java.lang.Void`` to express non-presence. This mapping has caused nullability issues of ``ModelStatement.argument()``.
+These have been resolved through mapping non-existent arguments to ``org.opendaylight.yangtools.yang.common.Empty``,
+which maintains the same 'nothingness' contract through a singleton non-null object.
+
+
+XML namespace has a dedicated construct
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+In previous versions, we have used ``java.net.URI`` to model the argument of YANG ``namespace`` statement. This has
+proven to be a bit inefficient from both memory and CPU perspective, for example during looks. In this version, YANG
+namespace is represented by a dedicated ``org.opendaylight.yangtools.yang.common.XMLNamespace`` class. It performs
+same validation as ``URI.create()`` does, but it does not break the string into its constituents for storage like URI
+does.
+
+
+DataSchemaNode's `isConfigration()` is three-state
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The idea that a DataSchemaNode has a boolean attribute representing the effective value of ``config`` statement argument
+has been problematic due to its ignoring definition scope. As an example, ``leaf`` defined in a ``grouping`` has neither
+``config true`` nor ``config false`` effective statement.
+
+In order to fix this modeling problem, as well to stop users from attempting to perform various recovery strategies,
+a new method, ``DataSchemaNode.effectiveConfig()``, has been introduced. This method returns ``Optional<Boolean>``,
+accurately modeling the three possibilities. ``DataSchemaNode.isConfiguration()`` has also been deprecated for removal.
+
+
+SchemaContextUtil has been removed
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+A number of utilities dealing with SchemaNode traversal have been hosted in SchemaContextUtil. All of these were created
+with assumptions of ``SchemaPath`` and with the object model not understanding YANG XPath expressions. This has lead to
+some very obscure code with problematic edge cases.
+
+All of these utilities have been centralized in a stateful SchemaInferenceStack. This stack encapsulates state related to
+how a piece of logic has come to know about an EffectiveStatement. There are number of simple operations, such as
+``enterDataTree(QName)``, ``enterGrouping(QName)``, ``exit()`` and similar.
+
+The stack also provides faculties to resolve ``type leafref`` path expressions, adjusting its internal state to provide
+a path from the conceptual schema root to the leaf a particular leafref (indirectly) points to.
+
+State of a SchemaInferenceStack can be converted to an immutable ``EffectiveStatementInference`` instance. This construct
+serves as the modern replacement of ``SchemaPath``. Rather than containing an opaque path, though, it contains a sequence
+of statements and attached semantics. This allows us to accurately address statements and communicate the state of the
+SchemaInferenceStack across API boundaries, as a SchemaInferenceStack can readily be reconstituted from a number of different
+EffectiveStatementInferences.
+
+A number of entry-points, most notably to XML and JSON codecs, now take an ``EffectiveStatementInference`` instead of
+a ``SchemaPath`` or a context ``SchemaNode``. For migration purposes, users having these available can use the following
+snippet to migrate:
+
+ .. code-block:: java
+
+   EffectiveModelContext context = ...;
+   SchemaNode node = ...;
+   EffectiveStatementInference inference = SchemaInferenceStack.ofSchemaPath(context, node.getPath()).toInference();
+
+
+Unrecognized YANG statement handling
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+YANG parser's does not reflect unrecognized YANG language extensions, defined by
+an ``extension`` statement, in the effective model as exposed by EffectiveModelContext.
+
+This has a direct impact on the contents of ``DocumentedNode.getUnknownSchemaNodes()``, as unrecognized extensions
+will not be presented in the list.
+
+Unrecognized extensions are those that are defined by an ``extension`` statement, but do not have a corresponding
+YANG parser handler. These extensions cannot be semantically be bound and the YANG parser handles in accordance with
+`RFC6020 <https://datatracker.ietf.org/doc/html/rfc6020#section-6.3.1>`__ by treating them as unsupported extensions.
 
 
 MD-SAL Impacts
 --------------
+This MD-SAL release contains a completely rewritten Java Binding generator.
 
-Binding DTOs enforce non-null keys
+The implementation now performs a multi-pass generation as opposed to a memorized single-pass generation approach
+taken by the previous implementation. Multiple passes allow for proper name allocation policies, with conflicts
+being resolved in a consistent matter-of-course way.
+
+Forward compatibility with Java 16
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Binding DTOs (data transfer objects), created through builders for a keyed
-list now properly enforce non-null key attributes. This means any code that
-fails to properly set up either ``withKey()`` or individual component leaf
-values will throw a ``NullPointerException`` like this:
+Java has reserved a few new keywords, ``var``, ``yield`` and most notably ``record``. These are now taken into
+account when generating Java bindings, resulting in slightly different package names being generated, as they are
+now prefixed with a single underscore.
 
- .. code-block:
-
-    java.lang.NullPointerException: Supplied value may not be null
-            at java.base/java.util.Objects.requireNonNull(Objects.java:246)
-            at org.opendaylight.yangtools.yang.binding.CodeHelpers.requireValue(CodeHelpers.java:63)
-            at org.opendaylight.yang.gen.v1.urn.tbd.params.xml.ns.yang.network.topology.rev131021.network.topology.topology.NodeKey.<init>(NodeKey.java:18)
-            at org.opendaylight.yang.gen.v1.urn.tbd.params.xml.ns.yang.network.topology.rev131021.network.topology.topology.NodeBuilder$NodeImpl.<init>(NodeBuilder.java:236)
-            at org.opendaylight.yang.gen.v1.urn.tbd.params.xml.ns.yang.network.topology.rev131021.network.topology.topology.NodeBuilder.build(NodeBuilder.java:219)
-            at org.opendaylight.ovsdb.southbound.ovsdb.transact.BridgeOperationalStateTest.<init>(BridgeOperationalStateTest.java:57)
-
-In order to resolve this, check the model involved. It will look something
-like this:
-
- .. code-block:
-
-    list node {
-        key id;
-        leaf id {
-            type string;
-        }
-    }
-
-What the exception is indicating that the ``NodeBuilder`` does not have
-``id`` set, so the resulting ``Node`` cannot be constructed, because it
-has to have a ``NodeKey`` for which ``id`` is mandatory.
-
-With that knowledge, you should examine the caller and understand how
-the builder is initialized.
-
-This change will typically affect incorrect test data, as production values
-tend to be validated on receiver side and would report this error later
-down the road. For further details see this
-`MD-SAL issue <https://jira.opendaylight.org/browse/MDSAL-491>`__.
+For example ``org.opendaylight.yang.gen.v1.foo.record.bar`` is now generated as
+``org.opendaylight.yang.gen.v1.foo._record.bar``.
 
 
-Augmentation tracking has been reworked
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-As part of larger life-cycle activities, a number of implementation details
-have changed to the point as to render the distinction between Augmentable
-and AugmentationHolder interfaces superfluous. AugmentationHolder has therefore
-been completely integrated into Augmentable allowing efficient implementation
-classes and easier augmentation tracking. For further details see this
-`MD-SAL issue <https://jira.opendaylight.org/browse/MDSAL-577>`__.
+Augmentation child package names
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+As part of class/package name mapping rules, augmentation class name overrides also apply to package names. For
+this example YANG
+
+ .. code-block:: yang
+
+   import yang-ext {
+     prefix ext;
+   }
+
+   container foo {
+     container bar;
+   }
+
+   augment /foo/bar {
+     ext:augment-identifier baz;
+
+     container xyzzy;
+   }
 
 
-DOMNotificationRouter implementation has been reworked
+we would generate ``foo.bar.Xyzzy`` interface. Since the augmentation now makes a proper claim on the ``baz``
+name, we generate ``baz.Xyzzy`` instead.
+
+This change also mean that attempts to define multiple augments with the same augment-identifier will result
+in a build failure.
+
+
+RPCs now reserve the corresponding class name
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Binding mapping of ``action`` and ``rpc`` statements are slightly different, reflecting the evolution of Java
+as well as our assembly of features. In the long term we want to evolve ``rpc`` mapping to resemble more the
+way ``action`` is mapped. As a preparatory step, ``rpc`` statements now reserve the class (and package) names
+corresponding to the RPC argument. This does not affect most use cases, but slightly changes interactions with
+groupings on naming overlap. For the following fragment
+
+ .. code-block:: yang
+
+   module foo {
+     grouping foo;
+     rpc foo;
+   }
+
+we used to generate ``FooService``, ``FooInput`` and ``FooOutput`` for the RPC and ``Foo`` for the grouping. In
+this release we generate ``Foo$G`` for the grouping, leaving ``Foo`` non-existent. A future version will take
+advantage of this gap and generate an interface for the RPC.
+
+
+DOMDataTreeChangeListener.onInitialData() is mandatory
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The default implementation of router, which is used for disseminating YANG
-notifications inside the system, was been reimplemented. The new implementation
-does not use LMAX Disruptor, but rather is based on QueuedNotificationManager.
-For further details see this
-`MD-SAL issue <https://jira.opendaylight.org/browse/MDSAL-546>`__.
+DOMDataTreeChangeListener's callback for initially-empty data, ``onInitialData()``, is no longer a default
+method and therefore is mandatory to implement. It is okay for this method to do nothing, but some users may
+choose to perform some processing, similar to what they'd do if the listen root were to be deleted.
 
 
-DOM interfaces no longer use SchemaPath identification
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Interfaces for invocation of ``RPCs`` and ``actions``, as well as
-publishing ``notifications``  have switched from using ``SchemaPath`` to
-using either ``QName`` or ``SchemaNodeIdentifier.Absolute``. This allows
-more efficient invocation and removes ambiguity around relative SchemaPath
-being or not being allowed.
+Widened Integer/Long/BigInteger compatibility setters and constructors removed
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+In releases prior to Magnesium ``uint8``, ``uint16``, ``uint32`` and ``uint64`` types were mapped to Short, Integer,
+Long and BigInteger respectively. With Magnesium, this mapping changed to ``yang.common.Uint{8,16,32,64}`` and
+compatibility ``setFoo(Short)`` methods were retained as adapters to minimize the API churn.
 
-
-
-Removed packaging of draft ietf-topology extensions
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-As part of further cleanup, standardization and stabilization of MD-SAL
-interfaces, four models from ``draft-clemm-netmod-yang-network-topo-01``
-have been removed: ``ietf-topology-isis``, ``ietf-topology-ospf``, ``ietf-ted``
-and ``ietf-topology-l3-unicast-igp``. For further details see this
-`MD-SAL issue <https://jira.opendaylight.org/browse/MDSAL-590>`__.
-
-
-Final release to include widened Integer/Long/BigInteger compatibility
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Magnesium introduced a change in how ``uint8``, ``uint16``, ``uint32`` and
-``uint64`` types are mapped to Java.
-Previously this would be mapped to Short, Integer, Long and BigInteger
-respectively.
-With Magnesium these are mapped to dedicated ``yang.common.Uint{8,16,32,64}``,
-whose design matches general design of ``java.lang.Integer``.
-
-This change obviously requires some amount adaptation, which is why
-compatibility setter methods and constructors are generated, each of which
-converts the wide type to its native mapping, undoing the widening.
-
-Such conversions are costly in terms of both CPU usage, but also cost
-us quite a bit in terms of class size. They also introduce ambiguity, which
-hinders fluent use native methods.
-
-Compatibility methods have been deprecated for removal since their inception,
-and are now officially scheduled for removal in the next major release,
-Phosphorus. The removal is tracked in
+In this release these compatibility methods are no longer generated, as detailed in
 `this MD-SAL issue <https://jira.opendaylight.org/browse/MDSAL-490>`__.
 
 
-Final release to include List/Map compatibility mappers
+List/Map compatibility setters and constructors removed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Aluminium introduced a change in how a keyed list YANG construct is mapped
-to Java. Previously such lists were mapped to ``java.util.List``. This
-mapping resulted in incorrect ``equals()`` behavior of generated DTOs
-for cases the list's ordering is not specified. Furthermore it was not
-possible to locate entries of such lists through their key. Corrected
-mapping to ``java.util.Map`` solves both problems.
+In releases prior to Aluminium, ``list`` statements were always mapped to ``java.util.List``. With Aluminium, this
+mapping was updated to take into account the semantic meaning implied by ``ordered-by`` statements. For ``list``
+statements, which are ``ordered-by system`` and also have a ``key`` statement, the mapping was changed to
+``java.util.Map``. Compatibility constructors and setters were retained as adapters to minimize the API churn.
 
-A typical impacted YANG snippet would look something like:
-
- .. code-block:
-
-    list foo {
-        key bar;
-        leaf bar {
-            type string;
-        }
-
-        // ordered-by system; is implied
-    }
-
-Since the ordering is left up to the system, YANG tools uses hash maps
-to track such lists, resulting in inherently unstable iteration order.
-
-If the order of entries is significant, then this needs to be expressed
-in the model like this:
-
- .. code-block:
-
-    list foo {
-        key bar;
-        leaf bar {
-            type string;
-        }
-
-        ordered-by user;
-    }
-
-which maps to ``java.util.List`` again.
-
-Aluminium-generated code provides compatibility for users using
-List to access a Map. This layer indexes the presented list into an
-immutable Map and uses that value. This has both performance and
-correctness implications.
-
-Since ``java.util.List`` offers a simple way of building up a set
-of entries without having to deal with entry keys, a migration utility
-is provided in the form of
-``org.opendaylight.yangtools.yang.binding.util.BindingMap``, which
-allows almost seamless migration, especially for unit test code.
-
-The compatibility setters have been deprecated for removal since
-they inception and are now scheduled for removal. Aluminium is the
-last release shipping with them. They will be removed in the next
-release, Phosphorus. The removal is tracked in
+In this release these compatibility methods are no longer generated, as detailed in
 `this MD-SAL issue <https://jira.opendaylight.org/browse/MDSAL-540>`__.
+
+
+Boolean compatibility getters removed
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+In releases prior to Silicon, ``type boolean`` getters were mapped to ``is`` prefix instead of the regular ``get``
+prefix. With Silicon, this mapping was made regular, i.e. all getters share the same ``get`` prefix. Compatibility
+getters were retained as simple adapters, so that both ``boolean isFoo()`` and ``boolean getFoo()`` were available.
+
+In this release these compatibility methods are no longer generated, as detailed in
+`this MD-SAL issue <https://jira.opendaylight.org/browse/MDSAL-659>`__.
+
+
+Producer/Consumer APIs removed
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+``DOMDataTreeShard`` as well as ``DataTreeProducer``, ``DataTreeConsumer`` and related class were removed. These
+APIs failed to get productized and were very problematic in a clustered setting and they were impossible to migrate
+to gradually. A future version of MD-SAL will define a set of replacement interfaces along with a migration guide,
+allowing for gradual migration.
 
 
 Controller Impacts
 ------------------
 
-Akka remote configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^
-Because of the akka upgrade to 2.6.x in Silicon, remote TCP configuration changed
-from ``netty.tcp`` to ``classic.netty.tcp``:
-
- .. code-block:: none
-
-      classic.netty.tcp {
-        hostname = "127.0.0.1"
-        port = 2550
-      }
-
-Use of ``odl:type`` in Blueprint is discouraged
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-This property has been used for discerning between various implementations
-of MD-SAL services present in the OSGi service registry. As these services have
-been consolidated in the past couple of releases, the use of this qualifier
-is discouraged. While some services are advertised with this property set, it
-is no longer considered a binding contract and future releases, even minor,
-will most likely stop adding this property.
-
-Users are advised to stop specifying this attribute when making references
-to OSGi services.
+Distributed Datastore backwards compatibility reduced to Sodium SR1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Backwards compatibility glue in prior versions spanned as far back as Boron release. In this release a number of glue
+items were removed, removing compatibility with datastore versions prior to Sodium SR1.
 
 
-Akka 2.6.12
-^^^^^^^^^^^
-This release integrates ``akka-2.6.12``, which is a major upgrade from previous
-``akka-2.5.32``. Most notably the auto-downing feature is no longer present
-and has been replaced by integrating the split-brain resolver. Please refer
-to clustering setup guide for required configuration updates.
+Prefix-based shards removed
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Prefix-based sharding implementation in the Distributed Datastore has been removed as a consequence of MD-SAL APIs
+it implemented being removed.
+
+
+Message Bus component removed
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The experimental ``messagebus`` component was removed. This component has had only one implementation in NETCONF
+project. The combination has been a proof of concept and was never productized nor has it been tested in real world
+for the past 4 years.
+
+
+`opendaylight-topology` and `opendaylight-inventory` removed
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+These two sets of models are only used in OpenFlow plugin and its users. Most of the concepts they introduce have
+been superseded by IETF-standardized ``ietf-network`` and related models. These models are removed from the controller
+project and reintroduced in OpenFlow Plugin. Users are advised to either consume them from OpenFlow, or migrate to
+using `RFC8345 <https://datatracker.ietf.org/doc/html/rfc8345>`__ instead.
+
+
+Removed support for deprecated `datastore.cfg` properties
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The following properties in `datastore.cfg` have been deprecated and were no-ops in previous releases:
+  * ``max-shard-data-change-executor-pool-size``
+  * ``max-shard-data-change-executor-queue-size``
+  * ``max-shard-data-change-listener-queue-size``
+  * ``max-shard-data-store-executor-queue-size``
+
+This release no longer recognizes these properties and treats them as errors.
 
