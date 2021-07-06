@@ -38,8 +38,18 @@ the following components:
 * Stateful PCE LSP-DB
 * Active Stateful PCE LSP Operations
 
+
+Changes in Phosphorus release stream
+====================================
+
+There is a comprehensive list of JIRA issues
+`resolved in this release <https://jira.opendaylight.org/issues/?jql=project%20%3D%20BGPCEP%20AND%20fixVersion%20%3D%200.16.0>`__
+
+
 Behavior/Feature Changes
 ========================
+
+The sw
 
 Here is the link to the features improved in this release:
 
