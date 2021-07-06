@@ -38,8 +38,20 @@ the following components:
 * Stateful PCE LSP-DB
 * Active Stateful PCE LSP Operations
 
+
+Changes in Phosphorus release stream
+====================================
+
+There is a comprehensive list of JIRA issues
+`resolved in this release <https://jira.opendaylight.org/issues/?jql=project%20%3D%20BGPCEP%20AND%20fixVersion%20in%20(0.16.0%2C%200.16.1%2C%200.16.2%2C%200.16.3%2C%200.16.4)>`__
+
+
 Behavior/Feature Changes
 ========================
+
+The internal refactor done in `BGPCEP-949 <https://jira.opendaylight.org/browse/BGPCEP-949>`__, the configuration knob
+to enable legacy BGP link state path attribute encoding has changed. It is using OSGi Configuration Admin interface, just
+like other global settings.
 
 Here is the link to the features improved in this release:
 
