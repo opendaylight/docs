@@ -96,8 +96,8 @@ OpenDaylight includes some scripts to help with the clustering configuration.
 
     Scripts are stored in the OpenDaylight ``distribution/bin`` folder, and
     maintained in the distribution project
-    `repository <https://git.opendaylight.org/gerrit/p/integration/distribution>`_
-    in the folder ``distribution-karaf/src/main/assembly/bin/``.
+    `repository <https://git.opendaylight.org/gerrit/admin/repos/integration/distribution>`_
+    in the folder ``karaf-scripts/src/main/assembly/bin/``.
 
 Configure Cluster Script
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -143,7 +143,20 @@ First, determine the three machines that will make up the cluster. After that,
 do the following on each machine:
 
 #. Copy the OpenDaylight distribution zip file to the machine.
+
 #. Unzip the distribution.
+
+#. Move into the ``<karaf-distribution-directory>/bin`` directory and run::
+
+	JAVA_MAX_MEM=4G JAVA_MAX_PERM_MEM=512m ./karaf
+
+#. Enable clustering by running the following command at the Karaf command line::
+
+      feature:odl-mdsal-distributed-datastore
+
+   After instalation you will be able to see new folder ``configuration/initial/``
+   with config files
+
 #. Open the following configuration files:
 
    * ``configuration/initial/akka.conf``
@@ -155,8 +168,9 @@ do the following on each machine:
    hostname or IP address of the machine on which this file resides and
    OpenDaylight will run::
 
-      netty.tcp {
-        hostname = "127.0.0.1"
+      artery {
+
+        canonical.hostname = "127.0.0.1"
 
    .. note:: The value you need to specify will be different for each node in the
              cluster.
@@ -165,7 +179,7 @@ do the following on each machine:
    address of any of the machines that will be part of the cluster::
 
       cluster {
-        seed-nodes = ["akka.tcp://opendaylight-cluster-data@${IP_OF_MEMBER1}:2550",
+        seed-nodes = ["akka://opendaylight-cluster-data@${IP_OF_MEMBER1}:2550",
                       <url-to-cluster-member-2>,
                       <url-to-cluster-member-3>]
 
@@ -188,16 +202,11 @@ do the following on each machine:
           "member-3"
       ]
 
-   For reference, view a sample config files <<_sample_config_files,below>>.
+   For reference, view a sample config files below.
 
-#. Move into the +<karaf-distribution-directory>/bin+ directory.
-#. Run the following command::
+#. Restart instance via cli::
 
-      JAVA_MAX_MEM=4G JAVA_MAX_PERM_MEM=512m ./karaf
-
-#. Enable clustering by running the following command at the Karaf command line::
-
-      feature:install odl-mdsal-clustering
+      pendaylight-user@root>restart
 
 OpenDaylight should now be running in a three node cluster. You can use any of
 the three member nodes to access the data residing in the datastore.
@@ -235,19 +244,21 @@ Sample ``akka.conf`` file::
        }
        remote {
          log-remote-lifecycle-events = off
-         netty.tcp {
-           hostname = "10.194.189.96"
-           port = 2550
-           maximum-frame-size = 419430400
-           send-buffer-size = 52428800
-           receive-buffer-size = 52428800
-         }
+         artery {
+           enabled = on
+           transport = tcp
+           canonical.hostname = "10.194.189.96"
+           canonical.port = 2550
+           advanced {
+             maximum-frame-size = 400 MiB
+             #maximum-large-frame-size = 2 MiB
+           }
        }
 
        cluster {
-         seed-nodes = ["akka.tcp://opendaylight-cluster-data@10.194.189.96:2550",
-                       "akka.tcp://opendaylight-cluster-data@10.194.189.98:2550",
-                       "akka.tcp://opendaylight-cluster-data@10.194.189.101:2550"]
+         seed-nodes = ["akka://opendaylight-cluster-data@10.194.189.96:2550",
+                       "akka://opendaylight-cluster-data@10.194.189.98:2550",
+                       "akka://opendaylight-cluster-data@10.194.189.101:2550"]
 
          auto-down-unreachable-after = 10s
 
@@ -278,14 +289,16 @@ Sample ``akka.conf`` file::
        }
        remote {
          log-remote-lifecycle-events = off
-         netty.tcp {
-           hostname = "10.194.189.96"
-           port = 2551
+         artery {
+           enabled = on
+           transport = tcp
+           canonical.hostname = "10.194.189.96"
+           canonical.port = 2551
          }
        }
 
        cluster {
-         seed-nodes = ["akka.tcp://opendaylight-cluster-rpc@10.194.189.96:2551"]
+         seed-nodes = ["akka://opendaylight-cluster-rpc@10.194.189.96:2551"]
 
          auto-down-unreachable-after = 10s
        }
@@ -416,7 +429,7 @@ on a particular shard. An example output for the
         "LastApplied": 5,
         "LastLeadershipChangeTime": "2017-01-06 13:18:37.605",
         "LastLogIndex": 5,
-        "PeerAddresses": "member-3-shard-default-operational: akka.tcp://opendaylight-cluster-data@192.168.16.3:2550/user/shardmanager-operational/member-3-shard-default-operational, member-2-shard-default-operational: akka.tcp://opendaylight-cluster-data@192.168.16.2:2550/user/shardmanager-operational/member-2-shard-default-operational",
+        "PeerAddresses": "member-3-shard-default-operational: akka://opendaylight-cluster-data@192.168.16.3:2550/user/shardmanager-operational/member-3-shard-default-operational, member-2-shard-default-operational: akka://opendaylight-cluster-data@192.168.16.2:2550/user/shardmanager-operational/member-2-shard-default-operational",
         "WriteOnlyTransactionCount": 0,
         "FollowerInitialSyncStatus": false,
         "FollowerInfo": [
