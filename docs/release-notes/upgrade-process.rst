@@ -71,12 +71,12 @@ versions (for example, `bump-odl-version <https://github.com/skitt/odl-tools/blo
 
   bump-odl-version aaa 0.13.2 1.14.0
 
-7. Update the NETCONF version from 1.13.1 to 2.0.0. There should not be
-   any reference to **org.opendaylight.netconf**, except for 2.0.0.
+7. Update the NETCONF version from 1.13.1 to 2.0.1. There should not be
+   any reference to **org.opendaylight.netconf**, except for 2.0.1.
 
  .. code-block:: shell
 
-  bump-odl-version netconf 1.13.1 2.0.0
+  bump-odl-version netconf 1.13.1 2.0.1
 
 Install Dependent Projects
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
