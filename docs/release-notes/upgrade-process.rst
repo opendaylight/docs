@@ -177,11 +177,11 @@ detail, providing seamless interoperation with current code in most cases.
 NormalizedNode hierarchy was updated
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The interfaces representing normalized view of YANG-modeled data, rooted at
-``org.opendaylight.yangtools.yang.data.api.NormalizedNode``, has been revamped for easier use and better
+``org.opendaylight.yangtools.yang.data.api.NormalizedNode``, have been revamped for easier use and better
 consistency of operations.
 
-The most prolific change is the reduction of number of generic arguments for NormalizedNode, DataContainerChild
-and NormalizedNodeContainer. The first two now do not have any generic arguments, while NormalizedNodeContainer
+The most prolific change is the reduction of number of generic arguments for ``NormalizedNode``, ``DataContainerChild``
+and ``NormalizedNodeContainer``. The first two now do not have any generic arguments, while NormalizedNodeContainer
 has only a single argument.
 
 This prompts a very simple replacement pattern, where uses like this:
@@ -322,7 +322,7 @@ snippet to migrate:
 
 Unrecognized YANG statement handling
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-YANG parser's does not reflect unrecognized YANG language extensions, defined by
+YANG parser does not reflect unrecognized YANG language extensions, defined by
 an ``extension`` statement, in the effective model as exposed by EffectiveModelContext.
 
 This has a direct impact on the contents of ``DocumentedNode.getUnknownSchemaNodes()``, as unrecognized extensions
@@ -330,7 +330,8 @@ will not be presented in the list.
 
 Unrecognized extensions are those that are defined by an ``extension`` statement, but do not have a corresponding
 YANG parser handler. These extensions cannot be semantically be bound and the YANG parser handles in accordance with
-`RFC6020 <https://datatracker.ietf.org/doc/html/rfc6020#section-6.3.1>`__ by treating them as unsupported extensions.
+`RFC6020 <https://datatracker.ietf.org/doc/html/rfc6020#section-6.3.1>`__ by treating them as unsupported extensions
+and ignoring them.
 
 
 MD-SAL Impacts
