@@ -320,6 +320,70 @@ snippet to migrate:
    EffectiveStatementInference inference = SchemaInferenceStack.ofSchemaPath(context, node.getPath()).toInference();
 
 
+Strictly-compliant `leafref` path interpretation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Previous versions of YANG Tools have had a number of ways how to resolve where a ``leafref``'s ``path`` statement is
+pointing to. Each of these operated on a different set of assumptions and had its share of caveats and outright bugs --
+most of them stemming from their attempt to operate on raw strings as declared in YANG files.
+
+All of these utilities have been removed in this release and superseded by a single implementation in aforementioned
+``SchemaInferenceStack``. This implementation maintains an
+`XPath Context <https://datatracker.ietf.org/doc/html/rfc7950#section-6.4.1>`__ and performs unqualified name resolution
+based upon its rules.
+
+Low-level API is ``SchemaInferenceStack.resolvePathExpression()``, which takes a ``PathExpression`` and interprets it
+in the context of its current state. On successful return the statement which the expression points will be return and
+the stack will be updated to be at that statement.
+
+High-level API is captured in ``LeafrefResolver`` API, allowing users to (recursively) resolve the actual type that a
+particular ``LeafrefTypeDefinition`` points to. SchemaInferenceStack is its canonical implementation.
+
+End-user visible behaviour has changed in that incorrect leafref paths are now readily identified. This typically affects
+cross-module use of ``type leafref`` with absolute paths in either ``typedef`` or in ``grouping`` contexts. Typical source
+of trouble looks like this:
+
+ .. code-block:: yang
+
+  module foo {
+    prefix foo;
+
+    typedef foo-ref {
+      type leafref {
+        path /foo;
+      }
+    }
+
+    leaf foo {
+      type string;
+    }
+  }
+
+  module bar {
+    prefix bar;
+
+    import foo {
+      prefix foo;
+    }
+
+    leaf bar {
+      type foo:foo-ref;
+    }
+  }
+
+Note how ``foo-ref`` is using an absolute path with unqualified name. The intent seems to be to point at the ``foo:foo``
+leaf and in fact all uses within ``foo`` module operate as expected. In the context of ``bar`` module, though, things
+break down. When we are looking at ``bar:bar`` leaf, the path becomes ``/bar:foo`` -- and thus attempts to resolve it
+will fail. Correct fix in this situation is to correct the definition of the path to use qualified names:
+
+ .. code-block:: yang
+
+  typedef foo-ref {
+    type leafref {
+      path /foo:foo;
+    }
+  }
+
+
 Unrecognized YANG statement handling
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 YANG parser does not reflect unrecognized YANG language extensions, defined by
