@@ -2,8 +2,8 @@
 2021.09 Phosphorus Platform Upgrade
 ===================================
 
-This document describes the steps to help users upgrade from Aluminium
-to Silicon planned platform. Refer to `Managed Release Integrated (MRI)
+This document describes the steps to help users upgrade from Silicon
+to Phosphorus planned platform. Refer to `Managed Release Integrated (MRI)
 project <https://git.opendaylight.org/gerrit/q/topic:phosphorus-mri>`_
 upgrade patches for more information.
 
