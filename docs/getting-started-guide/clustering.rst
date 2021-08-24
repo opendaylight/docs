@@ -96,8 +96,8 @@ OpenDaylight includes some scripts to help with the clustering configuration.
 
     Scripts are stored in the OpenDaylight ``distribution/bin`` folder, and
     maintained in the distribution project
-    `repository <https://git.opendaylight.org/gerrit/p/integration/distribution>`_
-    in the folder ``distribution-karaf/src/main/assembly/bin/``.
+    `repository <https://git.opendaylight.org/gerrit/admin/repos/integration/distribution>`_
+    in the folder ``karaf-scripts/src/main/assembly/bin/``.
 
 Configure Cluster Script
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -144,6 +144,17 @@ do the following on each machine:
 
 #. Copy the OpenDaylight distribution zip file to the machine.
 #. Unzip the distribution.
+#. Move into the ``<karaf-distribution-directory>/bin`` directory and run::
+
+      JAVA_MAX_MEM=4G JAVA_MAX_PERM_MEM=512m ./karaf
+
+#. Enable clustering by running the following command at the Karaf command line::
+
+      feature:install odl-mdsal-distributed-datastore
+
+   After installation you will be able to see new folder ``configuration/initial/``
+   with config files
+
 #. Open the following configuration files:
 
    * ``configuration/initial/akka.conf``
@@ -155,8 +166,8 @@ do the following on each machine:
    hostname or IP address of the machine on which this file resides and
    OpenDaylight will run::
 
-      netty.tcp {
-        hostname = "127.0.0.1"
+      artery {
+        canonical.hostname = "127.0.0.1"
 
    .. note:: The value you need to specify will be different for each node in the
              cluster.
@@ -165,7 +176,7 @@ do the following on each machine:
    address of any of the machines that will be part of the cluster::
 
       cluster {
-        seed-nodes = ["akka.tcp://opendaylight-cluster-data@${IP_OF_MEMBER1}:2550",
+        seed-nodes = ["akka://opendaylight-cluster-data@${IP_OF_MEMBER1}:2550",
                       <url-to-cluster-member-2>,
                       <url-to-cluster-member-3>]
 
@@ -188,16 +199,11 @@ do the following on each machine:
           "member-3"
       ]
 
-   For reference, view a sample config files <<_sample_config_files,below>>.
+   For reference, view a sample config files below.
 
-#. Move into the +<karaf-distribution-directory>/bin+ directory.
-#. Run the following command::
+#. Restart bundle via command line::
 
-      JAVA_MAX_MEM=4G JAVA_MAX_PERM_MEM=512m ./karaf
-
-#. Enable clustering by running the following command at the Karaf command line::
-
-      feature:install odl-mdsal-clustering
+      opendaylight-user@root>restart org.opendaylight.controller.sal-distributed-datastore
 
 OpenDaylight should now be running in a three node cluster. You can use any of
 the three member nodes to access the data residing in the datastore.
@@ -208,87 +214,46 @@ Sample Config Files
 Sample ``akka.conf`` file::
 
    odl-cluster-data {
-     bounded-mailbox {
-       mailbox-type = "org.opendaylight.controller.cluster.common.actor.MeteredBoundedMailbox"
-       mailbox-capacity = 1000
-       mailbox-push-timeout-time = 100ms
-     }
-
-     metric-capture-enabled = true
-
      akka {
-       loglevel = "DEBUG"
-       loggers = ["akka.event.slf4j.Slf4jLogger"]
-
-       actor {
-
-         provider = "akka.cluster.ClusterActorRefProvider"
-         serializers {
-                   java = "akka.serialization.JavaSerializer"
-                   proto = "akka.remote.serialization.ProtobufSerializer"
-                 }
-
-                 serialization-bindings {
-                     "com.google.protobuf.Message" = proto
-
-                 }
-       }
        remote {
-         log-remote-lifecycle-events = off
-         netty.tcp {
-           hostname = "10.194.189.96"
-           port = 2550
-           maximum-frame-size = 419430400
-           send-buffer-size = 52428800
-           receive-buffer-size = 52428800
+         artery {
+           enabled = on
+           transport = tcp
+           canonical.hostname = "10.0.2.10"
+           canonical.port = 2550
          }
        }
 
        cluster {
-         seed-nodes = ["akka.tcp://opendaylight-cluster-data@10.194.189.96:2550",
-                       "akka.tcp://opendaylight-cluster-data@10.194.189.98:2550",
-                       "akka.tcp://opendaylight-cluster-data@10.194.189.101:2550"]
-
-         auto-down-unreachable-after = 10s
+         # Using artery.
+         seed-nodes = ["akka://opendaylight-cluster-data@10.0.2.10:2550",
+                       "akka://opendaylight-cluster-data@10.0.2.11:2550",
+                       "akka://opendaylight-cluster-data@10.0.2.12:2550"]
 
          roles = [
-           "member-2"
+           "member-1"
          ]
 
-       }
-     }
-   }
-
-   odl-cluster-rpc {
-     bounded-mailbox {
-       mailbox-type = "org.opendaylight.controller.cluster.common.actor.MeteredBoundedMailbox"
-       mailbox-capacity = 1000
-       mailbox-push-timeout-time = 100ms
-     }
-
-     metric-capture-enabled = true
-
-     akka {
-       loglevel = "INFO"
-       loggers = ["akka.event.slf4j.Slf4jLogger"]
-
-       actor {
-         provider = "akka.cluster.ClusterActorRefProvider"
-
-       }
-       remote {
-         log-remote-lifecycle-events = off
-         netty.tcp {
-           hostname = "10.194.189.96"
-           port = 2551
-         }
+         # when under load we might trip a false positive on the failure detector
+         # failure-detector {
+           # heartbeat-interval = 4 s
+           # acceptable-heartbeat-pause = 16s
+         # }
        }
 
-       cluster {
-         seed-nodes = ["akka.tcp://opendaylight-cluster-rpc@10.194.189.96:2551"]
+       persistence {
+         # By default the snapshots/journal directories live in KARAF_HOME. You can choose to put it somewhere else by
+         # modifying the following two properties. The directory location specified may be a relative or absolute path.
+         # The relative path is always relative to KARAF_HOME.
 
-         auto-down-unreachable-after = 10s
+         # snapshot-store.local.dir = "target/snapshots"
+
+         # Use lz4 compression for LocalSnapshotStore snapshots
+         snapshot-store.local.use-lz4-compression = false
+         # Size of blocks for lz4 compression: 64KB, 256KB, 1MB or 4MB
+         snapshot-store.local.lz4-blocksize = 256KB
        }
+       disable-default-actor-system-quarantined-event-handling = "false"
      }
    }
 
@@ -416,7 +381,7 @@ on a particular shard. An example output for the
         "LastApplied": 5,
         "LastLeadershipChangeTime": "2017-01-06 13:18:37.605",
         "LastLogIndex": 5,
-        "PeerAddresses": "member-3-shard-default-operational: akka.tcp://opendaylight-cluster-data@192.168.16.3:2550/user/shardmanager-operational/member-3-shard-default-operational, member-2-shard-default-operational: akka.tcp://opendaylight-cluster-data@192.168.16.2:2550/user/shardmanager-operational/member-2-shard-default-operational",
+        "PeerAddresses": "member-3-shard-default-operational: akka://opendaylight-cluster-data@192.168.16.3:2550/user/shardmanager-operational/member-3-shard-default-operational, member-2-shard-default-operational: akka://opendaylight-cluster-data@192.168.16.2:2550/user/shardmanager-operational/member-2-shard-default-operational",
         "WriteOnlyTransactionCount": 0,
         "FollowerInitialSyncStatus": false,
         "FollowerInfo": [
