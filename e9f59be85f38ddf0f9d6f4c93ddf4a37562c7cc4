@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b72823a5_86e2e803",
+        "filename": "docs/release-notes/upgrade-process.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6731
+      },
+      "writtenOn": "2021-08-27T09:55:48Z",
+      "side": 1,
+      "message": "it seems there is no binding-parent 8.0.5 available on Nexus yet.\nSo I am stil using 8.0.4 as specified in integration/distribution platform versions docs.\n\nhttps://git.opendaylight.org/gerrit/c/transportpce/+/97345/1",
+      "revId": "e9f59be85f38ddf0f9d6f4c93ddf4a37562c7cc4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c8d81c38_31818212",
+        "filename": "docs/release-notes/upgrade-process.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 6731
+      },
+      "writtenOn": "2021-08-27T09:55:48Z",
+      "side": 1,
+      "message": "This is quite useful. Thx.\nMaybe it is worth also mentioning this snippet triggers deprecation warnings.\n\nI\u0027ve noticed that YangParserFactory \u0026 friends were deprecated and marked for removal too. ( cf https://git.opendaylight.org/gerrit/c/transportpce/+/97346/1)\n\n$ grep deprecated mvnfull.log.0 \n[WARNING] [...]test-common/src/main/java/org/opendaylight/transportpce/test/converter/XMLDataObjectConverter.java:[195,29] getPath() in org.opendaylight.yangtools.yang.model.api.SchemaNode has been deprecated\n[WARNING] [..]/test-common/src/main/java/org/opendaylight/transportpce/test/converter/XMLDataObjectConverter.java:[194,66] ofSchemaPath(org.opendaylight.yangtools.yang.model.api.EffectiveModelContext,org.opendaylight.yangtools.yang.model.api.SchemaPath) in org.opendaylight.yangtools.yang.model.util.SchemaInferenceStack has been deprecated\n\n$ head -195 test-common/src/main/java/org/opendaylight/transportpce/test/converter/XMLDataObjectConverter.java | tail -5\n\n    private Optional\u003cNormalizedNode\u003e parseInputXML(XMLStreamReader reader, SchemaNode parentSchemaNode) {\n        NormalizedNodeResult result \u003d new NormalizedNodeResult();\n        EffectiveStatementInference schema \u003d SchemaInferenceStack.ofSchemaPath(getSchemaContext(),\n            parentSchemaNode.getPath()).toInference();",
+      "revId": "e9f59be85f38ddf0f9d6f4c93ddf4a37562c7cc4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
