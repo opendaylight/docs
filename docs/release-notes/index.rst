@@ -55,6 +55,7 @@ Service Release Notes
    :glob:
    :maxdepth: 1
 
+<<<<<<< HEAD   (e9f59b Update upgrade guide)
 .. release-notes-*
 
 .. toctree::
@@ -62,3 +63,7 @@ Service Release Notes
    :hidden:
 
    sample-release-notes
+=======
+   release-notes-silicon-sr1
+   release-notes-silicon-sr2
+>>>>>>> CHANGE (03ce9a Fix release notes index)
