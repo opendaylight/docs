@@ -5,7 +5,7 @@ OpenDaylight Downloads
 Supported Releases
 ==================
 
-Silicon-SR1
+Silicon-SR2
 -------------
 
 (Current Release)
@@ -13,13 +13,13 @@ Silicon-SR1
 :Announcement: `Silicon <https://www.opendaylight.org/current-release-silicon>`_
 
 :GA Release Date: April 2, 2021
-:Service Release Date: June 9, 2021
+:Service Release Date: August 27, 2021
 
 :Downloads:
     * `OpenDaylight Silicon Tar
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/14.1.0/opendaylight-14.1.0.tar.gz>`_
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/14.2.0/opendaylight-14.2.0.tar.gz>`_
     * `OpenDaylight Silicon Zip
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/14.1.0/opendaylight-14.1.0.zip>`_
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/14.2.0/opendaylight-14.2.0.zip>`_
 
 :Documentation:
     * :doc:`Getting Started Guide <odl-silicon:getting-started-guide/index>`
