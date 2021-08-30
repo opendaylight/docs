@@ -55,12 +55,5 @@ Service Release Notes
    :glob:
    :maxdepth: 1
 
-.. release-notes-*
-
-.. toctree::
-   :maxdepth: 1
-   :hidden:
-
-   sample-release-notes
    release-notes-silicon-sr1
    release-notes-silicon-sr2
