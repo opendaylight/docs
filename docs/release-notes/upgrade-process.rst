@@ -23,25 +23,25 @@ Version Bump
 Before performing platform upgrade, do the following to bump the odlparent
 versions (for example, `bump-odl-version <https://github.com/skitt/odl-tools/blob/master/bump-odl-version>`_):
 
-1. Update the odlparent version from 8.1.1 to 9.0.5. There should
+1. Update the odlparent version from 8.1.1 to 9.0.6. There should
    not be any reference to **org.opendaylight.odlparent**, except
-   for 9.0.5. This includes custom feature.xml templates
+   for 9.0.6. This includes custom feature.xml templates
    (``src/main/feature/feature.xml``), the version range should
    be "[9,10)" instead of "[8.1,9)", "[5.0.3,6)" or any other variation.
 
  .. code-block:: shell
 
-  bump-odl-version odlparent 8.1.1 9.0.5
+  bump-odl-version odlparent 8.1.1 9.0.6
 
-2. Update the direct yangtools version references from 6.0.5 to 7.0.7,
+2. Update the direct yangtools version references from 6.0.5 to 7.0.8,
    There should not be any reference to **org.opendaylight.yangtools**,
-   except for 7.0.7. This includes custom feature.xml templates
+   except for 7.0.8. This includes custom feature.xml templates
    (``src/main/feature/feature.xml``), the version range should
    be "[7,8)" instead of "[6,7)".
 
  .. code-block:: shell
 
-  bump-odl-version yangtools 6.0.5 7.0.7
+  bump-odl-version yangtools 6.0.5 7.0.8
 
 3. Update the MD-SAL version from 7.0.6 to 8.0.5. There should not be
    any reference to **org.opendaylight.mdsal**, except for 8.0.5.
@@ -50,26 +50,26 @@ versions (for example, `bump-odl-version <https://github.com/skitt/odl-tools/blo
 
   bump-odl-version mdsal 7.0.6 8.0.5
 
-4. Update the Controller version from 3.0.7 to 4.0.2. There should not be
-   any reference to **org.opendaylight.controller**, except for 4.0.2.
+4. Update the Controller version from 3.0.7 to 4.0.3. There should not be
+   any reference to **org.opendaylight.controller**, except for 4.0.3.
 
  .. code-block:: shell
 
-  bump-odl-version controller 3.0.7 4.0.2
+  bump-odl-version controller 3.0.7 4.0.3
 
-5. Update the InfraUtils version from 1.9.6 to 2.0.5. There should not be
-   any reference to **org.opendaylight.infrautils**, except for 2.0.5.
-
- .. code-block:: shell
-
-  bump-odl-version infrautils 1.9.6 2.0.5
-
-6. Update the AAA version from 1.13.0 to 0.14.2. There should not be
-   any reference to **org.opendaylight.aaa**, except for 0.14.2.
+5. Update the InfraUtils version from 1.9.6 to 2.0.6. There should not be
+   any reference to **org.opendaylight.infrautils**, except for 2.0.6.
 
  .. code-block:: shell
 
-  bump-odl-version aaa 0.13.2 0.14.2
+  bump-odl-version infrautils 1.9.6 2.0.6
+
+6. Update the AAA version from 1.13.0 to 0.14.3. There should not be
+   any reference to **org.opendaylight.aaa**, except for 0.14.3.
+
+ .. code-block:: shell
+
+  bump-odl-version aaa 0.13.2 0.14.3
 
 7. Update the NETCONF version from 1.13.1 to 2.0.5. There should not be
    any reference to **org.opendaylight.netconf**, except for 2.0.5.
@@ -148,6 +148,12 @@ declarations, odlparent-9 removes the legacy declaration. Downstreams need to up
        <groupId>org.osgi</groupId>
        <artifactId>osgi.core</artifactId>
    </dependency>
+
+
+Jackson minor version update
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The release stream for Jackson has been changed, we are now tracking the ``2.12.x`` release train. This means that
+references to the corresponding feature need to be updated to point to ``odl-jackson-2.12``.
 
 
 YANG Tools Impacts
