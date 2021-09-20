@@ -8,34 +8,33 @@ Overview
 The Controller project is an infrastructure service that supports other OpenDaylight projects.
 It does not have user-facing features.
 
+
+Changes in Phosphorus release stream
+====================================
+There is a comprehensive list of JIRA issues
+`resolved in this release <https://jira.opendaylight.org/issues/?jql=project%20%3D%20CONTROLLER%20AND%20fixVersion%20in%20(4.0.0%2C%204.0.1%2C%204.0.2%2C%204.0.3)>`__
+
+
 Behavior/Feature Changes
 ========================
 
-Here is the link to the features improved in this release:
+The implementation of Entity Ownership Service has been rewritten from scratch. It is now completely
+independent of ``sal-distributed-datastore``. See `this issue <https://jira.opendaylight.org/browse/CONTROLLER-1982>`__ for details.
 
-`OpenDaylight JIRA Tickets - Improvement <https://jira.opendaylight.org/issues/?jql=project+%3D+CONTROLLER+AND+issuetype+%3D+Improvement+AND+status+in+%28Resolved%2C+Done%2C+Closed%29+AND+fixVersion+in+%28Silicon%2C+%22Silicon+GA%22%2C+3.0.6%29+ORDER+BY+issuetype+DESC%2C+key+ASC>`_
+As per upstream advice from Akka, we have now switched our communications to use Akka Artery. See
+`this issue <https://jira.opendaylight.org/browse/CONTROLLER-1968>`__ for details.
 
 New Features
 ============
+There are no new features.
 
-Here is the link to the new features introduced in this release:
-
-`OpenDaylight JIRA Tickets - New Feature <https://jira.opendaylight.org/issues/?jql=project+%3D+controller+AND+type+%3D+%22New+Feature%22+AND+status+in+%28Resolved%2C+Done%2C+Closed%29+AND+fixVersion+in+%28%22Silicon+GA%22%2C+Silicon%2C+3.0.6%2C+silicon%29++ORDER+BY+issuetype+DESC%2C+key+ASC>`_
-
-Deprecated Features
-===================
-
-Here is the link to the features removed in this release:
-
-`OpenDaylight JIRA Tickets - Deprecated Feature <https://jira.opendaylight.org/issues/?jql=project+%3D+controller+AND+type+%3D+Deprecate+AND+status+in+%28Resolved%2C+Done%2C+Closed%29+AND+fixVersion+in+%28%22Silicon+GA%22%2C+Silicon%2C+3.0.6%2C+silicon%29++ORDER+BY+issuetype+DESC%2C+key+ASC>`_
-
-Resolved Issues
-===============
-
-Here is the link to the resolved issues fixed in this release:
-
-`OpenDaylight JIRA Tickets - Resolved Issue <https://jira.opendaylight.org/issues/?jql=project+%3D+controller+AND+type+%3D+Bug+AND+status+in+%28Resolved%2C+Done%2C+Closed%29+AND+fixVersion+in+%28%22Silicon+GA%22%2C+Silicon%2C+3.0.6%2C+silicon%29++ORDER+BY+issuetype+DESC%2C+key+ASC>`_
-
+Deprecated and Removed Features
+===============================
+There are no deprecated features in this release, but there is a large number of feature removals:
+* ``opendaylight-inventory`` and ``opendaylight-topology`` models have been moved to OpenFlow Plugin
+* support for upgrading from versions before ``Sodium SR`` was removed
+* prefix-based shards have been completely removed
+* the proof-of-concept ``messagebus`` component was removed
 
 Known Issues
 ============
