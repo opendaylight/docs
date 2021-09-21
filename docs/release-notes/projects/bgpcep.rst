@@ -43,7 +43,7 @@ Changes in Phosphorus release stream
 ====================================
 
 There is a comprehensive list of JIRA issues
-`resolved in this release <https://jira.opendaylight.org/issues/?jql=project%20%3D%20BGPCEP%20AND%20fixVersion%20in%20(0.16.0%2C%200.16.1%2C%200.16.2%2C%200.16.3%2C%200.16.4)>`__
+`resolved in this release <https://jira.opendaylight.org/issues/?jql=project%20%3D%20BGPCEP%20AND%20fixVersion%20in%20(0.16.0%2C%200.16.1%2C%200.16.2%2C%200.16.3%2C%200.16.4%200.16.5)>`__
 
 
 Behavior/Feature Changes
