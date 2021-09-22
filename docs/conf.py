@@ -89,3 +89,11 @@ html_context = {
 
 def setup(app):
     app.add_css_file("css/ribbon.css")
+
+tls_verify = False
+# https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-tls_verify
+# LFN releng certificate is ill configured
+# intersphinx inventory 'https://docs.releng.linuxfoundation.org/projects/common-packer/en/latest/objects.inv' not fetchable due to <class 'requests.exceptions.SSLError'>:
+# HTTPSConnectionPool(host='docs.releng.linuxfoundation.org', port=443): Max retries exceeded with url: /projects/common-packer/en/latest/objects.inv
+# (Caused by SSLError(SSLCertVerificationError("hostname 'docs.releng.linuxfoundation.org' doesn't match either of 'ssl1036715.cloudflaressl.com', '*.readthedocs.io', 'readthedocs.io'")))
+
