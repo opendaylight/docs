@@ -343,6 +343,23 @@ Because the labels have to be unique, a best practice is to prefix
 the labels with the project name to help share the label space; for example,
 use ``sfc-user-guide`` instead of just ``user-guide``.
 
+Referencing JIRA issues
+^^^^^^^^^^^^^^^^^^^^^^^
+
+In order to reference JIRA, we provide two new directives, ``jira_fixed_issues`` and
+``jira_known_issues``. These render a table of issues for a particular project and
+its version range. These are used like this:
+
+ .. code-block:: rst
+
+    .. jira_fixed_issues::
+       :project: CONTROLLER
+       :versions: 4.0.0-4.0.3
+
+    .. jira_known_issues::
+       :project: CONTROLLER
+       :versions: 4.0.0-4.0.3
+
 
 .. _docs-rst-troubleshooting:
 
