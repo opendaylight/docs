@@ -9,12 +9,6 @@ The Controller project is an infrastructure service that supports other OpenDayl
 It does not have user-facing features.
 
 
-Changes in Phosphorus release stream
-====================================
-There is a comprehensive list of JIRA issues
-`resolved in this release <https://jira.opendaylight.org/issues/?jql=project%20%3D%20CONTROLLER%20AND%20fixVersion%20in%20(4.0.0%2C%204.0.1%2C%204.0.2%2C%204.0.3)>`__
-
-
 Behavior/Feature Changes
 ========================
 
@@ -36,9 +30,21 @@ There are no deprecated features in this release, but there is a large number of
 * prefix-based shards have been completely removed
 * the proof-of-concept ``messagebus`` component was removed
 
+Resolved Issues
+===============
+
+The following table lists the issues resolved in this release.
+
+.. jira_fixed_issues::
+   :project: CONTROLLER
+   :versions: 4.0.0-4.0.3
+
 Known Issues
 ============
 
-Here is the link to the known issues exist in this release:
+The following table lists the known issues that exist in this release.
 
-`OpenDaylight JIRA Tickets - Known Issue <https://jira.opendaylight.org/issues/?jql=project+%3D+controller+AND+type+%3D+Bug+AND+status+not+in+%28Resolved%2C+Done%2C+Closed%29+ORDER+BY+issuetype+DESC%2C+key+ASC>`_
+.. jira_known_issues::
+   :project: CONTROLLER
+   :versions: 4.0.0-4.0.3
+
