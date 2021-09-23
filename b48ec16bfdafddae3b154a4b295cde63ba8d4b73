@@ -46,6 +46,30 @@
       "revId": "b48ec16bfdafddae3b154a4b295cde63ba8d4b73",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "75944a3a_ad955573",
+        "filename": "docs/ext/odl-jira.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2021-09-23T16:14:09Z",
+      "side": 1,
+      "message": "I might be wrong, but I think that\u0027s the way to publish it to opensource code, unless we don\u0027t expect anyone to download and use it in their own system. Since this is not the case for this code and it needs to be used only in ODL releasing phase, we can skip that.",
+      "parentUuid": "52903622_9031d0b9",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 76
+      },
+      "revId": "b48ec16bfdafddae3b154a4b295cde63ba8d4b73",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
