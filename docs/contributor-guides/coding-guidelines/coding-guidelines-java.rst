@@ -367,9 +367,9 @@ Additional Resources
 -  ``Maven``:
    https://github.com/checkstyle/checkstyle/blob/master/src/main/resources/google_checks.xml
 -  ``Eclipse``:
-   https://code.google.com/p/google-styleguide/source/browse/trunk/eclipse-java-google-style.xml
+   https://github.com/google/styleguide/blob/gh-pages/eclipse-java-google-style.xml
 -  ``IntelliJ``:
-   https://code.google.com/p/google-styleguide/source/browse/trunk/intellij-java-google-style.xml
+   https://github.com/google/styleguide/blob/gh-pages/intellij-java-google-style.xml
 -  `How to set Checkstyle up in IntelliJ old wiki page <https://wiki-archive.opendaylight.org/view/How_to_set_Checkstyle_up_in_IntelliJ>`__
 
 PMD Copy/Paste Detection (CPD)
