@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "92a937c5_b392a301",
+        "filename": "docs/ext/README.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6731
+      },
+      "writtenOn": "2021-09-23T21:12:49Z",
+      "side": 1,
+      "message": "jenkins sends a verified -1 because RST files must be referenced in toc trees (often found in index.rst) so that user can find them when navigating in the web site.\nSince this is specific to documentation, I think there is no need to create a new file. This content can be appended to the file documentation.rst that provides guidelines to write ODL documentation.",
+      "revId": "20c34e77a7caa5dc828a7d6ecddd890003e53727",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    }
+  ]
+}
