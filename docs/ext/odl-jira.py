@@ -38,7 +38,6 @@ class JiraFixedIssuesDirective(Directive):
         # FIXME: this is not quite nice: can we emit the table markup directly
         table = [
             '.. list-table:: Issues resolved in versions %s through %s' % (from_ver, to_ver),
-            # FIXME: bind to https://datatables.net/
             '   :class: datatable',
             '   :header-rows: 1',
             '   :widths: auto',
@@ -104,7 +103,6 @@ class JiraKnownIssuesDirective(Directive):
         # FIXME: this is not quite nice: can we emit the table markup directly
         table = [
             '.. list-table:: Issues affecting versions %s through %s' % (from_ver, to_ver),
-            # FIXME: bind to https://datatables.net/
             '   :class: datatable',
             '   :header-rows: 1',
             '   :widths: auto',
@@ -158,6 +156,14 @@ def setup(app):
     """
     app.add_directive('jira_fixed_issues', JiraFixedIssuesDirective)
     app.add_directive('jira_known_issues', JiraKnownIssuesDirective)
+
+    # https://datatables.net/ improvements to tables
+    app.add_css_file("https://cdn.datatables.net/1.11.2/css/jquery.dataTables.min.css")
+    app.add_js_file("https://cdn.datatables.net/1.11.2/js/jquery.dataTables.min.js")
+    app.add_js_file("https://code.jquery.com/jquery-3.6.0.min.js",
+            integrity = "sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=",
+            crossorigin= " anonymous")
+    app.add_js_file(None, **{"body": "$(document).ready( function () { $('table.datatable').DataTable(); } );", "type": "text/javascript", "class": "init"})
 
     return {
         'version': '0.1',
