@@ -132,16 +132,14 @@ class JiraKnownIssuesDirective(Directive):
 
         if issues:
             for issue in issues:
-                fixVersions = format_versions(issue.fields.fixVersions)
-                affectvedVersions = format_versions(issue.fields.versions)
                 table.append('   * - .. image:: %s' % issue.fields.issuetype.iconUrl)
                 table.append('          :align: center')
                 table.append('          :alt: %s' % issue.fields.issuetype.name)
                 table.append('     - `%s <https://jira.opendaylight.org/browse/%s>`_' % (issue.key, issue.key))
                 table.append('     - %s' % issue.fields.summary)
                 table.append('     - %s' % issue.fields.status)
-                table.append('     - %s' % fixVersions)
-                table.append('     - %s' % affectvedVersions)
+                table.append('     - %s' % format_versions(issue.fields.versions))
+                table.append('     - %s' % format_versions(issue.fields.fixVersions))
 
             table.append('')
 
