@@ -76,20 +76,21 @@ class JiraFixedIssuesDirective(Directive):
             '     - Fix Version(s)',
         ]
 
-        for issue in issues:
-            table.append('   * - .. image:: %s' % issue.fields.issuetype.iconUrl)
-            table.append('          :align: center')
-            table.append('          :alt: %s' % issue.fields.issuetype.name)
-            table.append('     - `%s <https://jira.opendaylight.org/browse/%s>`_' % (issue.key, issue.key))
-            table.append('     - %s' % issue.fields.summary)
-            table.append('     - %s' % issue.fields.resolution)
-            table.append('     - %s' % format_versions(issue.fields.fixVersions))
+        if issues:
+            for issue in issues:
+                table.append('   * - .. image:: %s' % issue.fields.issuetype.iconUrl)
+                table.append('          :align: center')
+                table.append('          :alt: %s' % issue.fields.issuetype.name)
+                table.append('     - `%s <https://jira.opendaylight.org/browse/%s>`_' % (issue.key, issue.key))
+                table.append('     - %s' % issue.fields.summary)
+                table.append('     - %s' % issue.fields.resolution)
+                table.append('     - %s' % format_versions(issue.fields.fixVersions))
 
-        table.append('')
+            table.append('')
 
-        for idx, line in enumerate(table):
-            self.content.data.insert(idx, line)
-            self.content.items.insert(idx, (None, idx))
+            for idx, line in enumerate(table):
+                self.content.data.insert(idx, line)
+                self.content.items.insert(idx, (None, idx))
 
         node = nodes.container()
         self.state.nested_parse(self.content, self.content_offset, node)
@@ -129,23 +130,24 @@ class JiraKnownIssuesDirective(Directive):
             '     - Fix Version(s)',
         ]
 
-        for issue in issues:
-            fixVersions = format_versions(issue.fields.fixVersions)
-            affectvedVersions = format_versions(issue.fields.versions)
-            table.append('   * - .. image:: %s' % issue.fields.issuetype.iconUrl)
-            table.append('          :align: center')
-            table.append('          :alt: %s' % issue.fields.issuetype.name)
-            table.append('     - `%s <https://jira.opendaylight.org/browse/%s>`_' % (issue.key, issue.key))
-            table.append('     - %s' % issue.fields.summary)
-            table.append('     - %s' % issue.fields.status)
-            table.append('     - %s' % fixVersions)
-            table.append('     - %s' % affectvedVersions)
+        if issues:
+            for issue in issues:
+                fixVersions = format_versions(issue.fields.fixVersions)
+                affectvedVersions = format_versions(issue.fields.versions)
+                table.append('   * - .. image:: %s' % issue.fields.issuetype.iconUrl)
+                table.append('          :align: center')
+                table.append('          :alt: %s' % issue.fields.issuetype.name)
+                table.append('     - `%s <https://jira.opendaylight.org/browse/%s>`_' % (issue.key, issue.key))
+                table.append('     - %s' % issue.fields.summary)
+                table.append('     - %s' % issue.fields.status)
+                table.append('     - %s' % fixVersions)
+                table.append('     - %s' % affectvedVersions)
 
-        table.append('')
+            table.append('')
 
-        for idx, line in enumerate(table):
-            self.content.data.insert(idx, line)
-            self.content.items.insert(idx, (None, idx))
+            for idx, line in enumerate(table):
+                self.content.data.insert(idx, line)
+                self.content.items.insert(idx, (None, idx))
 
         node = nodes.container()
         self.state.nested_parse(self.content, self.content_offset, node)
