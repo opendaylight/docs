@@ -13,8 +13,11 @@ YANG parser will no longer take into account ``extension`` statements it does no
 through the appropriate support class. This may affect tools relying on our previous misguided
 attempts to interpret their meaning.
 
-YANG parser's memory efficiency has been improved by about 15% on service-provider-grade device
+YANG parser's memory efficiency has been improved by about 15-20% on service-provider-grade device
 models.
+
+YANG parser can now be configured to retain information about statement declaration, making it
+useful for IDEs and similar tools.
 
 New Features
 ============
