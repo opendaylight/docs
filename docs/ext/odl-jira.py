@@ -61,6 +61,8 @@ class JiraFixedIssuesDirective(Directive):
 
         query = 'project = %s AND resolution is not EMPTY AND fixVersion in (%s) ORDER BY type ASC' % (prj, versions)
         issues = jira.search_issues(query)
+        if len(issues) == 0:
+            return []
 
         # FIXME: this is not quite nice: can we emit the table markup directly
         table = [
@@ -114,6 +116,8 @@ class JiraKnownIssuesDirective(Directive):
 
         query = 'project = %s AND affectedVersion in (%s) AND fixVersion NOT in (%s) ORDER BY type ASC' % (prj, versions, versions)
         issues = jira.search_issues(query)
+        if len(issues) == 0:
+            return []
 
         # FIXME: this is not quite nice: can we emit the table markup directly
         table = [
