@@ -10,7 +10,6 @@ The InfraUtils project provides a low-level utility for use by other OpenDayligh
 * @Inject DI
 * ``Utils`` incl. ``org.opendaylight.infrautils.utils.concurrent``
 * Test Utilities
-* Job Coordinator
 * Ready Service
 * Integration Test Utilities (``itestutils``)
 * Caches
@@ -19,36 +18,36 @@ The InfraUtils project provides a low-level utility for use by other OpenDayligh
 
 Behavior/Feature Changes
 ========================
-
-Here is the link to the features improved in this release:
-
-`OpenDaylight JIRA Tickets - Improvement <https://jira.opendaylight.org/issues/?jql=project+%3D+INFRAUTILS+AND+issuetype+%3D+Improvement+AND+status+in+%28Resolved%2C+Done%2C+Closed%29+AND+fixVersion+in+%28Silicon%2C+%22Silicon+GA%22%2C+1.9.5%29+ORDER+BY+issuetype+DESC%2C+key+ASC>`_
+Error Prone execution for pom.xmls inherited from ``org.opendaylight.infrautils:parent``  is now enabled
+on JDKs 11 through 17. This was previously disabled on JDK 16 and JDK 17 due to compatibility issues.
 
 New Features
 ============
+There are no new features.
 
-Here is the link to the new features introduced in this release:
+Deprecated and Removed Features
+===============================
+Job Coordinator was a rather troublesome attempt at coordinating datastore updates, but in that it made
+reasoning about updates and recovery from failures nigh impossible. It is not used by any active projects
+and has been removed without a replacement.
 
-`OpenDaylight JIRA Tickets - New Feature <https://jira.opendaylight.org/issues/?jql=project+%3D+infrautils+AND+type+%3D+%22New+Feature%22+AND+status+in+%28Resolved%2C+Done%2C+Closed%29+AND+fixVersion+in+%28%22Silicon+GA%22%2C+Silicon%2C+silicon%2C+1.9.5%29++ORDER+BY+issuetype+DESC%2C+key+ASC>`_
-
-Deprecated Features
-===================
-
-Here is the link to the features removed in this release:
-
-`OpenDaylight JIRA Tickets - Deprecated Feature <https://jira.opendaylight.org/issues/?jql=project+%3D+infrautils+AND+type+%3D+Deprecate+AND+status+in+%28Resolved%2C+Done%2C+Closed%29+AND+fixVersion+in+%28%22Silicon+GA%22%2C+Silicon%2C+silicon%2C+1.9.5%29++ORDER+BY+issuetype+DESC%2C+key+ASC>`_
+The ``shell`` artifact has been removed, as it has no users and provided no meaningful functionality.
 
 Resolved Issues
 ===============
 
-Here is the link to the resolved issues fixed in this release:
+The following table lists the issues resolved in this release.
 
-`OpenDaylight JIRA Tickets - Resolved Issue <https://jira.opendaylight.org/issues/?jql=project+%3D+infrautils+AND+type+%3D+Bug+AND+status+in+%28Resolved%2C+Done%2C+Closed%29+AND+fixVersion+in+%28%22Silicon+GA%22%2C+Silicon%2C+silicon%2C+1.9.5%29++ORDER+BY+issuetype+DESC%2C+key+ASC>`_
-
+.. jira_fixed_issues::
+   :project: INFRAUTILS
+   :versions: 2.0.0-2.0.5
 
 Known Issues
 ============
 
-Here is the link to the known issues exist in this release:
+The following table lists the known issues that exist in this release.
 
-`OpenDaylight JIRA Tickets - Known Issue <https://jira.opendaylight.org/issues/?jql=project+%3D+infrautils+AND+type+%3D+Bug+AND+status+not+in+%28Resolved%2C+Done%2C+Closed%29+ORDER+BY+issuetype+DESC%2C+key+ASC>`_
+.. jira_known_issues::
+   :project: INFRAUTILS
+   :versions: 2.0.0-2.0.5
+
