@@ -45,38 +45,49 @@ The TransportPCE implementation includes:
 
 The internal RPCs between those modules are defined in the Transport Service Path models.
 
+
 Behavior/Feature Changes
 ========================
 
-Here is the link to the features improved in this release:
+TransportPCE Phosphorus release provides an improved End to End support of high rates services (100GE, OTU4 and 400GE over OTUC4).
+An experimental support of T-API is provided allowing service-create/delete from a T-API version 2.1.1 compliant NBI. A T-API network topology, with different levels of abstraction and service contexts are maintained in the MDSAL.
+Service state is managed, monitoring device port state changes. Associated notifications are handled through Kafka and  DMaaP clients.
 
-`OpenDaylight JIRA Tickets - Improvement <https://jira.opendaylight.org/issues/?jql=project+%3D+transportpce+AND+type+%3D+Improvement+AND+status+in+%28Resolved%2C+Done%2C+Closed%29+AND+fixVersion+in+%28%22Silicon+GA%22%2C+Silicon%2C+silicon%29++ORDER+BY+issuetype+DESC%2C+key+ASC>`_
+Changes planned in Phosphorus release stream
+============================================
+
+Impairment aware path calculation relying on GNPy for End to End high rate services (beyond 100G) will be introduced across the Phosphorus release train.
+As for OTN use cases, additional use cases with more complex network configurations will be managed:
+- 100GE service terminated on an OTN switch
+- use of a 100G OTN switch as intermediate otn switch (with low order or high order odu switching) along a 1GE or 10GE service
+- management of OTN services (100GE, ODU4) supported by several OTU4s.
+T-API models should evolve towards version 2.1.3.
+Finally, Phosphorus release stream will bring end to end management of services for intermediate higher rates, as 200GE or 300GE.
 
 New Features
 ============
 
-Here is the link to the new features introduced in this release:
-
-`OpenDaylight JIRA Tickets - New Feature <https://jira.opendaylight.org/issues/?jql=project+%3D+transportpce+AND+type+%3D+%22New+Feature%22+AND+status+in+%28Resolved%2C+Done%2C+Closed%29+AND+fixVersion+in+%28%22Silicon+GA%22%2C+Silicon%2C+silicon%29++ORDER+BY+issuetype+DESC%2C+key+ASC>`_
+There are no new features.
 
 Deprecated Features
 ===================
 
-Here is the link to the features removed in this release:
-
-`OpenDaylight JIRA Tickets - Deprecated Feature <https://jira.opendaylight.org/issues/?jql=project+%3D+transportpce+AND+type+%3D+Deprecate+AND+status+in+%28Resolved%2C+Done%2C+Closed%29+AND+fixVersion+in+%28%22Silicon+GA%22%2C+Silicon%2C+silicon%29++ORDER+BY+issuetype+DESC%2C+key+ASC>`_
+There are no deprecated or removed features.
 
 Resolved Issues
 ===============
 
-Here is the link to the resolved issues fixed in this release:
+The following table lists the issues resolved in this release.
 
-`OpenDaylight JIRA Tickets - Resolved Issue <https://jira.opendaylight.org/issues/?jql=project+%3D+transportpce+AND+type+%3D+Bug+AND+status+in+%28Resolved%2C+Done%2C+Closed%29+AND+fixVersion+in+%28%22Silicon+GA%22%2C+Silicon%2C+silicon%29++ORDER+BY+issuetype+DESC%2C+key+ASC>`_
-
+.. jira_fixed_issues::
+   :project: TRNSPRTPCE
+   :versions: Phosphorus-Phosphorus
 
 Known Issues
 ============
 
-Here is the link to the known issues exist in this release:
+The following table lists the known issues that exist in this release.
 
-`OpenDaylight JIRA Tickets - Known Issue <https://jira.opendaylight.org/issues/?jql=project+%3D+transportpce+AND+type+%3D+Bug+AND+status+not+in+%28Resolved%2C+Done%2C+Closed%29+ORDER+BY+issuetype+DESC%2C+key+ASC>`_
+.. jira_known_issues::
+   :project: TRNSPRTPCE
+   :versions: Phosphorus-Phosphorus
