@@ -5,10 +5,29 @@ OpenDaylight Downloads
 Supported Releases
 ==================
 
-Silicon-SR2
--------------
+Phosphorus-SR0
+--------------
 
 (Current Release)
+
+:Announcement: `Phosphorus <https://www.opendaylight.org/current-release-phosphorus>`_
+
+:GA Release Date: October 15, 2021
+:Service Release Date: October 15, 2021
+
+:Downloads:
+    * `OpenDaylight Phosphorus Tar
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/15.0.0/opendaylight-15.0.0.tar.gz>`_
+    * `OpenDaylight Phosphorus Zip
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/15.0.0/opendaylight-15.0.0.zip>`_
+
+:Documentation:
+    * :doc:`Getting Started Guide <odl-phosphorus:getting-started-guide/index>`
+    * :doc:`Project Guides <odl-phosphorus:index>`
+    * :doc:`Release Notes <odl-phosphorus:release-notes/index>`
+
+Silicon-SR2
+-------------
 
 :Announcement: `Silicon <https://www.opendaylight.org/current-release-silicon>`_
 
@@ -25,26 +44,6 @@ Silicon-SR2
     * :doc:`Getting Started Guide <odl-silicon:getting-started-guide/index>`
     * :doc:`Project Guides <odl-silicon:index>`
     * :doc:`Release Notes <odl-silicon:release-notes/index>`
-
-Aluminium SR4
--------------
-
-:Announcement: `Aluminium <https://www.opendaylight.org/current-release-aluminium>`_
-
-:GA Release Date: September 22, 2020
-:Service Release Date: June 22, 2021
-
-:Downloads:
-    * `OpenDaylight Aluminium Tar
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/0.13.4/opendaylight-0.13.4.tar.gz>`_
-    * `OpenDaylight Aluminium Zip
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/0.13.4/opendaylight-0.13.4.zip>`_
-
-:Documentation:
-    * :doc:`Getting Started Guide <odl-aluminium:getting-started-guide/index>`
-    * :doc:`Project Guides <odl-aluminium:index>`
-    * :doc:`Release Notes <odl-aluminium:release-notes/index>`
-
 
 Archived Releases
 =================
