@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "2333fad5_3a7e4f57",
+        "filename": "docs/getting-started-guide/clustering.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 8908
+      },
+      "writtenOn": "2021-10-29T11:48:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d496e43d_1e388f4f",
+      "revId": "e91dad27c65ba822ba4c9335d7408f772e1f9644",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "af32e93f_3e878aa4",
         "filename": "docs/getting-started-guide/clustering.rst",
         "patchSetId": 9
@@ -87,6 +105,24 @@
       "revId": "e91dad27c65ba822ba4c9335d7408f772e1f9644",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "85a546e4_8e6b35e3",
+        "filename": "docs/getting-started-guide/clustering.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 8908
+      },
+      "writtenOn": "2021-10-29T11:48:22Z",
+      "side": 1,
+      "message": "after update IP address (from default 127.0.0.1 to specific 10.0.2.10) in config file we need to restart bundle for rebind to new IP",
+      "parentUuid": "af32e93f_3e878aa4",
+      "revId": "e91dad27c65ba822ba4c9335d7408f772e1f9644",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
     }
   ]
 }

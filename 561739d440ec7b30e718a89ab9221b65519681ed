@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "4f21821c_f6216b3a",
+        "filename": "docs/getting-started-guide/clustering.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 8908
+      },
+      "writtenOn": "2021-10-29T11:48:22Z",
+      "side": 0,
+      "message": "was confused that we have also jolokia separate feature",
+      "parentUuid": "ffc07739_c4bac753",
+      "revId": "561739d440ec7b30e718a89ab9221b65519681ed",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "55ecb4d3_b2b4e50f",
         "filename": "docs/getting-started-guide/clustering.rst",
         "patchSetId": 9
@@ -122,6 +140,24 @@
       "revId": "561739d440ec7b30e718a89ab9221b65519681ed",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "48cefb8e_3a75491e",
+        "filename": "docs/getting-started-guide/clustering.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 8908
+      },
+      "writtenOn": "2021-10-29T11:48:22Z",
+      "side": 0,
+      "message": "accidentally",
+      "parentUuid": "55ecb4d3_b2b4e50f",
+      "revId": "561739d440ec7b30e718a89ab9221b65519681ed",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
     }
   ]
 }
