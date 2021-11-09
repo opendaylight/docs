@@ -29,8 +29,6 @@ Phosphorus-SR0
 Silicon-SR2
 -------------
 
-:Announcement: `Silicon <https://www.opendaylight.org/current-release-silicon>`_
-
 :GA Release Date: April 2, 2021
 :Service Release Date: August 27, 2021
 
