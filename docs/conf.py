@@ -73,8 +73,6 @@ linkcheck_ignore = [
     'http://checkstyle.sourceforge.net/config_coding.html#.*',
     # this url often has connectivity issues on the gate
     'https://www.mojohaus.org/animal-sniffer/animal-sniffer-maven-plugin/examples/checking-signatures.html',
-    # marketing message not ready at release download creation 10/15/21
-    'https://www.opendaylight.org/current-release-phosphorus',
 ]
 linkcheck_timeout = 300
 
