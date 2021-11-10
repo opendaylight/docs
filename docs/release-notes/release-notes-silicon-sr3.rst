@@ -89,3 +89,55 @@ serviceutils
 * `08bfadc <https://git.opendaylight.org/gerrit/q/08bfadc>`_
   : Bump MRI upstreams
 
+TransportPCE
+------------
+* `16d05e92 <https://git.opendaylight.org/gerrit/q/16d05e92>`_
+  : Bump dependencies to Si SR3
+* `aec7fd62 <https://git.opendaylight.org/gerrit/q/aec7fd62>`_
+  : Bump mdsal dependency to 7.0.10 for Si SR3
+* `d5fd5496 <https://git.opendaylight.org/gerrit/q/d5fd5496>`_
+  : Improve container support in tox.ini
+* `c19b7a47 <https://git.opendaylight.org/gerrit/q/c19b7a47>`_
+  : Refactor buildcontroller tox profile
+* `99ee820a <https://git.opendaylight.org/gerrit/q/99ee820a>`_
+  : Add documentation to use tox and functional tests
+* `e95f7074 <https://git.opendaylight.org/gerrit/q/e95f7074>`_
+  : Reenforce Lighty use in the gate
+* `83cd3587 <https://git.opendaylight.org/gerrit/q/83cd3587>`_
+  : Enforce sims download in the gate
+* `22545493 <https://git.opendaylight.org/gerrit/q/22545493>`_
+  : Improve Karaf exec customization for tests
+* `0faa186f <https://git.opendaylight.org/gerrit/q/0faa186f>`_
+  : Improve tox tests parallelization with Karaf
+* `1decbd04 <https://git.opendaylight.org/gerrit/q/1decbd04>`_
+  : Refactor Karaf post-install scripts for tests
+* `eb8671ad <https://git.opendaylight.org/gerrit/q/eb8671ad>`_
+  : Allow tox tests with Karaf to run in parallel
+* `96733f53 <https://git.opendaylight.org/gerrit/q/96733f53>`_
+  : Allow Karaf to use an alternative websocket port
+* `3c2237e1 <https://git.opendaylight.org/gerrit/q/3c2237e1>`_
+  : Allow Karaf to listen to alternative RMI ports
+* `3da6890d <https://git.opendaylight.org/gerrit/q/3da6890d>`_
+  : Allow Karaf to listen to an alternative SSH port
+* `a2277497 <https://git.opendaylight.org/gerrit/q/a2277497>`_
+  : Allow Karaf to use altern. RESTCONF and akka ports
+* `e2886508 <https://git.opendaylight.org/gerrit/q/e2886508>`_
+  : Create a Karaf post-install script for tests
+* `0d7cc953 <https://git.opendaylight.org/gerrit/q/0d7cc953>`_
+  : Fallback gate to Karaf and sequence mode
+* `4ce6900b <https://git.opendaylight.org/gerrit/q/4ce6900b>`_
+  : Allow tox func tests suite to run in parallel
+* `62a9ece9 <https://git.opendaylight.org/gerrit/q/62a9ece9>`_
+  : Set different controller ports in tox tests suites
+* `4737cacd <https://git.opendaylight.org/gerrit/q/4737cacd>`_
+  : Allow Lighty build to listen to alternative ports
+* `7350cc3b <https://git.opendaylight.org/gerrit/q/7350cc3b>`_
+  : Refactor tests launching procedure
+* `431cebcd <https://git.opendaylight.org/gerrit/q/431cebcd>`_
+  : Outsource PCE tests scripts into a separate folder
+* `0cb9cca5 <https://git.opendaylight.org/gerrit/q/0cb9cca5>`_
+  : Outsource tests scripts not in envlist
+* `a00b026c <https://git.opendaylight.org/gerrit/q/a00b026c>`_
+  : Refactor tox.ini to prepare parallelized jobs
+* `13ba83db <https://git.opendaylight.org/gerrit/q/13ba83db>`_
+  : Update PTL info
