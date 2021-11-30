@@ -53,6 +53,6 @@ Service Release Notes
 
 .. toctree::
    :glob:
-   :maxdepth: 1
+   :maxdepth: 2
 
-.. release-notes-*
+   release-notes-*
