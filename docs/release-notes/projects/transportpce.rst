@@ -64,6 +64,11 @@ As for OTN use cases, additional use cases with more complex network configurati
 T-API models should evolve towards version 2.1.3.
 Finally, Phosphorus release stream will bring end to end management of services for intermediate higher rates, as 200GE or 300GE.
 
+P-SR1 brings as new functionality the management of 100GE services terminated on an OTN switch.
+P-SR1 also consolidates the T-API topology implementations (especially the topology named "Full Multi-layer topology"), strengthening the tests (JUnit and python functional tests) of this functionality.
+Python code of the functional test part has also been improved, and the migration of our functional tests towards the RFC8040 has just started.
+Finally, P-SR1 also brings some code improvements (highlighted by sonar) and few fixes.
+
 New Features
 ============
 
