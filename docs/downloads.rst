@@ -5,7 +5,7 @@ OpenDaylight Downloads
 Supported Releases
 ==================
 
-Phosphorus-SR0
+Phosphorus-SR1
 --------------
 
 (Current Release)
@@ -13,13 +13,13 @@ Phosphorus-SR0
 :Announcement: `Phosphorus <https://www.opendaylight.org/current-release-phosphorus>`_
 
 :GA Release Date: October 15, 2021
-:Service Release Date: October 15, 2021
+:Service Release Date: December 2, 2021
 
 :Downloads:
     * `OpenDaylight Phosphorus Tar
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/15.0.0/opendaylight-15.0.0.tar.gz>`_
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/15.1.0/opendaylight-15.1.0.tar.gz>`_
     * `OpenDaylight Phosphorus Zip
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/15.0.0/opendaylight-15.0.0.zip>`_
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/15.1.0/opendaylight-15.1.0.zip>`_
 
 :Documentation:
     * :doc:`Getting Started Guide <odl-phosphorus:getting-started-guide/index>`
