@@ -16,6 +16,23 @@
       "message": "10:43:14 Warning, treated as error:\n10:43:14 failed to reach any of the inventories with the following issues:\n10:43:14 intersphinx inventory \u0027https://docs.releng.linuxfoundation.org/projects/global-jjb/en/latest/objects.inv\u0027 not fetchable due to \u003cclass \u0027requests.exceptions.HTTPError\u0027\u003e: 504 Server Error: Gateway Time-out for url: https://docs.releng.linuxfoundation.org/projects/global-jjb/en/latest/objects.inv",
       "revId": "b43d1980defdabd87068e4ece2d802fef554e92d",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "761b0839_ad950e47",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6731
+      },
+      "writtenOn": "2021-12-06T13:08:33Z",
+      "side": 1,
+      "message": "recheck",
+      "revId": "b43d1980defdabd87068e4ece2d802fef554e92d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ]
 }
