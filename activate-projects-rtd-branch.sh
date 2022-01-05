@@ -67,18 +67,15 @@ token="$1"
 version_name="$2"
 
 supported_projects=(
-    odl-aaa
-    odl-bgpcep
     odl-daexim
     odl-genius
     opendaylight-distribution
     odl-jsonrpc
     odl-lispflowmapping
-    odl-netconf
     odl-openflowplugin
     opendaylight-ovsdb
-    opendaylight-serviceutils
-)
+    odl-transportpce
+    )
 
 for project in ${supported_projects[@]}; do
     update_available_versions "$token" "$project" "$version_name"
