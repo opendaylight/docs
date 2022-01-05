@@ -67,17 +67,13 @@ token="$1"
 version_name="$2"
 
 supported_projects=(
-    odl-aaa
-    odl-bgpcep
     odl-daexim
     odl-genius
     opendaylight-distribution
     odl-jsonrpc
     odl-lispflowmapping
-    odl-netconf
     odl-openflowplugin
     opendaylight-ovsdb
-    opendaylight-serviceutils
 )
 
 for project in ${supported_projects[@]}; do
