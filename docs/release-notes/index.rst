@@ -58,3 +58,4 @@ Service Release Notes
    release-notes-silicon-sr1
    release-notes-silicon-sr2
    release-notes-silicon-sr3
+   release-notes-silicon-sr4
