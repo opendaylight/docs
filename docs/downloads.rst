@@ -26,17 +26,17 @@ Phosphorus-SR1
     * :doc:`Project Guides <odl-phosphorus:index>`
     * :doc:`Release Notes <odl-phosphorus:release-notes/index>`
 
-Silicon-SR3
+Silicon-SR4
 -------------
 
 :GA Release Date: April 2, 2021
-:Service Release Date: November 11, 2021
+:Service Release Date: February 4, 2022
 
 :Downloads:
     * `OpenDaylight Silicon Tar
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/14.3.0/opendaylight-14.3.0.tar.gz>`_
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/14.4.0/opendaylight-14.4.0.tar.gz>`_
     * `OpenDaylight Silicon Zip
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/14.3.0/opendaylight-14.3.0.zip>`_
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/14.4.0/opendaylight-14.4.0.zip>`_
 
 :Documentation:
     * :doc:`Getting Started Guide <odl-silicon:getting-started-guide/index>`
