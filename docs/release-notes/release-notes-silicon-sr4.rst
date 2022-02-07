@@ -119,3 +119,23 @@ serviceutils
 * `2759c1b <https://git.opendaylight.org/gerrit/q/2759c1b>`_
   : Bump upstream versions
 
+
+transportpce
+------------
+
+* `397e5f89 <https://git.opendaylight.org/gerrit/q/397e5f89>`_
+  : Bump project version to Si SR4
+* `952bcd37 <https://git.opendaylight.org/gerrit/q/952bcd37>`_
+  : Update upstream dependencies to Si-SR4
+* `d7d4a8a0 <https://git.opendaylight.org/gerrit/q/d7d4a8a0>`_
+  : Fix bug in OLM during spanloss computation
+* `3778a0e8 <https://git.opendaylight.org/gerrit/q/3778a0e8>`_
+  : Fix GNPy functional tests
+* `339a8b3e <https://git.opendaylight.org/gerrit/q/339a8b3e>`_
+  : Change absolute path of leafref in GNPy model
+* `0ffc4ae2 <https://git.opendaylight.org/gerrit/q/0ffc4ae2>`_
+  : Refactor OLM timers management
+* `64d89fbb <https://git.opendaylight.org/gerrit/q/64d89fbb>`_
+  : Refactor OLM PowerMgmtImpl class
+* `73f059ac <https://git.opendaylight.org/gerrit/q/73f059ac>`_
+  : Update maven download URL & fix gate
