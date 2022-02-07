@@ -39,6 +39,30 @@
       },
       "revId": "16346420529f426ed43f6cd90d38ef5e908b812b",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "12046bcd_1faacd73",
+        "filename": "docs/release-notes/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 6731
+      },
+      "writtenOn": "2022-02-07T10:34:48Z",
+      "side": 1,
+      "message": "I just tried to propose a fix in releng/builder jjb script at\nhttps://git.opendaylight.org/gerrit/c/releng/builder/+/99631",
+      "parentUuid": "d7e51111_2b9b10fd",
+      "range": {
+        "startLine": 61,
+        "startChar": 0,
+        "endLine": 61,
+        "endChar": 2
+      },
+      "revId": "16346420529f426ed43f6cd90d38ef5e908b812b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ]
 }
