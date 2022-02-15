@@ -60,7 +60,7 @@ The following table lists the issues resolved in this release.
 
 .. jira_fixed_issues::
    :project: BGPCEP
-   :versions: 0.16.0-0.16.13
+   :versions: 0.16.0-0.16.6
 
 Known Issues
 ============
@@ -68,4 +68,20 @@ The following table lists the known issues that exist in this release.
 
 .. jira_known_issues::
    :project: BGPCEP
-   :versions: 0.16.0-0.16.13
+   :versions: 0.16.0-0.16.6
+
+Resolved Issues in SR1
+======================
+The following table lists the issues resolved in Service Release 1.
+
+.. jira_fixed_issues::
+   :project: BGPCEP
+   :versions: 0.16.7-0.16.13
+
+Known Issues in SR1
+===================
+The following table lists the known issues that exist in Service Release 1.
+
+.. jira_known_issues::
+   :project: BGPCEP
+   :versions: 0.16.7-0.16.13
