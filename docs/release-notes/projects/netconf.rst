@@ -41,7 +41,7 @@ The following table lists the issues resolved in this release.
 
 .. jira_fixed_issues::
    :project: NETCONF
-   :versions: 2.0.0-2.0.11
+   :versions: 2.0.0-2.0.5
 
 Known Issues
 ============
@@ -50,5 +50,36 @@ The following table lists the known issues that exist in this release.
 
 .. jira_known_issues::
    :project: NETCONF
-   :versions: 2.0.0-2.0.11
+   :versions: 2.0.0-2.0.5
 
+Resolved Issues in SR1
+======================
+The following table lists the issues resolved in Service Release 1.
+
+.. jira_fixed_issues::
+   :project: NETCONF
+   :versions: 2.0.6-2.0.11
+
+Known Issues in SR1
+===================
+The following table lists the known issues that exist in Service Release 1.
+
+.. jira_known_issues::
+   :project: NETCONF
+   :versions: 2.0.6-2.0.11
+
+Resolved Issues in SR2
+======================
+The following table lists the issues resolved in Service Release 2.
+
+.. jira_fixed_issues::
+   :project: NETCONF
+   :versions: 2.0.12-2.0.14
+
+Known Issues in SR2
+===================
+The following table lists the known issues that exist in Service Release 2.
+
+.. jira_known_issues::
+   :project: NETCONF
+   :versions: 2.0.12-2.0.14
