@@ -40,7 +40,7 @@ The following table lists the issues resolved in this release.
 
 .. jira_fixed_issues::
    :project: INFRAUTILS
-   :versions: 2.0.0-2.0.8
+   :versions: 2.0.0-2.0.6
 
 Known Issues
 ============
@@ -49,5 +49,20 @@ The following table lists the known issues that exist in this release.
 
 .. jira_known_issues::
    :project: INFRAUTILS
-   :versions: 2.0.0-2.0.8
+   :versions: 2.0.0-2.0.6
 
+Resolved Issues in SR1
+======================
+The following table lists the issues resolved in Service Release 1.
+
+.. jira_fixed_issues::
+   :project: INFRAUTILS
+   :versions: 2.0.7-2.0.8
+
+Known Issues in SR1
+===================
+The following table lists the known issues that exist in Service Release 1.
+
+.. jira_known_issues::
+   :project: INFRAUTILS
+   :versions: 2.0.7-2.0.8

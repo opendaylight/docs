@@ -37,7 +37,7 @@ The following table lists the issues resolved in this release.
 
 .. jira_fixed_issues::
    :project: CONTROLLER
-   :versions: 4.0.0-4.0.7
+   :versions: 4.0.0-4.0.3
 
 Known Issues
 ============
@@ -46,5 +46,20 @@ The following table lists the known issues that exist in this release.
 
 .. jira_known_issues::
    :project: CONTROLLER
-   :versions: 4.0.0-4.0.7
+   :versions: 4.0.0-4.0.3
 
+Resolved Issues in SR1
+======================
+The following table lists the issues resolved in Service Release 1.
+
+.. jira_fixed_issues::
+   :project: CONTROLLER
+   :versions: 4.0.4-4.0.7
+
+Known Issues in SR1
+===================
+The following table lists the known issues that exist in Service Release 1.
+
+.. jira_known_issues::
+   :project: CONTROLLER
+   :versions: 4.0.4-4.0.7
