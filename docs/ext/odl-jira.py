@@ -20,20 +20,44 @@ import sphinx
 __copyright__ = "Copyright(c) 2021 PANTHEON.tech, s.r.o."
 __license__ = "Eclipse Public License v1.0"
 
+# TODO: we return either a str or a tuple, but we should really define a base Version type,
+#       with two implementations, SemVer and String, and define a proper comparison
+def parse_version(version):
+    parts = version.split('.')
+    if len(parts) == 1:
+        return version
+    try:
+        return tuple(map(int, parts))
+    except ValueError:
+        return None
+
 def jira_prj_versions(project, version_range):
+    (from_str, to_str) = version_range.split('-', 1)
+    from_ver = parse_version(from_str)
+    to_ver = parse_version(from_str)
+    if from_ver == None or to_ver == None:
+        raise ValueError("Cannot parse range %s" % version_range)
+    if type(from_ver) != type(to_ver):
+        raise ValueError("Inconsistent types in range %s" % version_range)
+
     jira = JIRA(server="https://jira.opendaylight.org")
     prj = jira.project(project)
-    (from_ver, to_ver) = version_range.split('-', 1)
 
     versions = set()
-    for ver in jira.project_versions(prj):
-        if ver.name >= from_ver and ver.name <= to_ver:
-            versions.add(ver.name)
+    for version in jira.project_versions(prj):
+        name = version.name
+        ver = parse_version(name)
+        if type(ver) == type(from_ver) and ver >= from_ver and ver <= to_ver:
+            versions.add(name)
+
+    if len(versions) == 0:
+        raise ValueError("No versions selected for project %s range %s" % (project, version_range))
+
     versions = list(versions)
     versions.sort()
     versions = ", ".join(versions)
 
-    return (jira, prj, from_ver, to_ver, versions)
+    return (jira, prj, from_str, to_str, versions)
 
 def format_versions(versions):
     result = set()
