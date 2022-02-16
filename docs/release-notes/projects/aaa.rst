@@ -53,3 +53,19 @@ The following table lists the known issues that exist in Service Release 1.
 .. jira_known_issues::
    :project: AAA
    :versions: 0.14.4-0.14.7
+
+Resolved Issues in SR2
+======================
+The following table lists the issues resolved in Service Release 2.
+
+.. jira_fixed_issues::
+   :project: AAA
+   :versions: 0.14.8-0.14.10
+
+Known Issues in SR2
+===================
+The following table lists the known issues that exist in Service Release 2.
+
+.. jira_known_issues::
+   :project: AAA
+   :versions: 0.14.8-0.14.10
