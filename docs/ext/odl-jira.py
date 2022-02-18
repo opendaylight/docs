@@ -34,7 +34,7 @@ def parse_version(version):
 def jira_prj_versions(project, version_range):
     (from_str, to_str) = version_range.split('-', 1)
     from_ver = parse_version(from_str)
-    to_ver = parse_version(from_str)
+    to_ver = parse_version(to_str)
     if from_ver == None or to_ver == None:
         raise ValueError("Cannot parse range %s" % version_range)
     if type(from_ver) != type(to_ver):
