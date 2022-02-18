@@ -56,3 +56,4 @@ Service Release Notes
    :maxdepth: 1
 
    release-notes-*
+   release-notes-phosphorus-sr2
