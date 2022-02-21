@@ -69,6 +69,14 @@ P-SR1 also consolidates the T-API topology implementations (especially the topol
 Python code of the functional test part has also been improved, and the migration of our functional tests towards the RFC8040 has just started.
 Finally, P-SR1 also brings some code improvements (highlighted by sonar) and few fixes.
 
+P-SR2 brings a given number of improvements, whether in the business code (technical debt reduction) or again in the functional tests code.
+P-SR2 includes the migration of all functional tests towards the new restconf url using RFC8040 (in complement of nb-bierman02 about to be removed).
+This service release also includes the management of new OTN use cases using 100G OTN switch (see description above).
+P-SR2 also includes some fixes regarding the T-API implementation (topologies and begining of the connectivity service implementation).
+At last, P-SR2 brings much of developments to support the end-to-end management of services for intermediate high rates (200GE, 300GE).
+Let's note also that P-SR2 improves the way to manage OLM timer values (using specific environment variables), depending on whether TransportPCE is controlling real OpenROADM devices or simulators.
+
+
 New Features
 ============
 
