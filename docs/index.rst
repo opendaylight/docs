@@ -57,7 +57,6 @@ Managed Projects
 Self-Managed Projects
 ~~~~~~~~~~~~~~~~~~~~~
 
-* :doc:`Genius Documentation <genius:index>`
 * :doc:`TransportPCE Documentation <transportpce:index>`
 
 
