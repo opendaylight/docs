@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2dc4860a_e62e16c5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6731
+      },
+      "writtenOn": "2022-02-28T10:50:31Z",
+      "side": 1,
+      "message": "After removing -W options and regenerating projects docs available with my acount on RTD, here are the remaining warnings.\n\nIn a nutshell, openflowplugin and transportpce and ovsdb docs are missing.\n\n\nWARNING: échec d\u0027accès à un quelconque inventaire, messages de contexte suivants :\nintersphinx inventory \u0027https://docs.opendaylight.org/projects/openflowplugin/en/stable-phosphorus/objects.inv\u0027 not fetchable due to \u003cclass \u0027requests.exceptions.HTTPError\u0027\u003e: 404 Client Error: Not Found for url: https://docs.opendaylight.org/projects/openflowplugin/en/stable-phosphorus/objects.inv\nWARNING: échec d\u0027accès à un quelconque inventaire, messages de contexte suivants :\nintersphinx inventory \u0027https://docs.opendaylight.org/projects/ovsdb/en/stable-phosphorus/objects.inv\u0027 not fetchable due to \u003cclass \u0027requests.exceptions.HTTPError\u0027\u003e: 404 Client Error: Not Found for url: https://docs.opendaylight.org/projects/ovsdb/en/stable-phosphorus/objects.inv\nWARNING: échec d\u0027accès à un quelconque inventaire, messages de contexte suivants :\nintersphinx inventory \u0027https://docs.opendaylight.org/projects/transportpce/en/stable-phosphorus/objects.inv\u0027 not fetchable due to \u003cclass \u0027requests.exceptions.HTTPError\u0027\u003e: 404 Client Error: Not Found for url: https://docs.opendaylight.org/projects/transportpce/en/stable-phosphorus/objects.inv\n\ndocs/docs/developer-guides/index.rst:36: WARNING: unknown document: ovsdb:index\ndocs/docs/developer-guides/index.rst:37: WARNING: unknown document: transportpce:index\ndocs/docs/index.rst:51: WARNING: unknown document: openflowplugin:index\ndocs/docs/index.rst:52: WARNING: unknown document: ovsdb:index\ndocs/docs/index.rst:60: WARNING: unknown document: transportpce:index\ndocs/docs/user-guide/index.rst:21: WARNING: unknown document: ovsdb:index",
+      "revId": "dd2ac5bb06be97a368ada9ad0cfb5e969ebfd88b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    }
+  ]
+}
