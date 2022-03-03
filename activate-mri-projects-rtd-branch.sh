@@ -16,10 +16,9 @@
 
 
 usage() {
-    echo "Usage: $0 <token> <version_name>"
+    echo "Usage: $0 <token>"
     echo ""
     echo "    token:  RTD API Token"
-    echo "    version_name:  Name of the version to be activated e.g stable-aluminium."
     echo ""
 }
 
@@ -47,6 +46,18 @@ update_available_versions() {
         -H "Content-Length: 0"
 }
 
+# Build  to force RTD to update available versions
+build_version() {
+    token=$1
+    project_name=$2
+    version_name=$3
+
+    echo "Forcing RTD to update available versions"
+    curl -X POST "https://readthedocs.org/api/v3/projects/$project_name/versions/$version_name/builds/" \
+        -H "Authorization: Token $token" \
+        -H "Content-Length: 0"
+}
+
 while getopts :h: opts; do
     case "$opts" in
         h)
@@ -60,7 +71,7 @@ while getopts :h: opts; do
     esac
 done
 
-if [ -z $2 ]; then
+if [ -z $1 ]; then
     usage
     exit 1
 fi
@@ -70,20 +81,9 @@ fi
 ################
 
 token="$1"
-version_name="$2"
 
-supported_projects=(
-    odl-daexim
-    opendaylight-distribution
-    odl-jsonrpc
-    odl-lispflowmapping
-    odl-openflowplugin
-    opendaylight-ovsdb
-    odl-transportpce
-    )
-
-for project in ${supported_projects[@]}; do
-    update_available_versions "$token" "$project" "$version_name"
+for project in $(cut -f1 < MRI_projects_to_activate.list); do
+    update_available_versions "$token" "odl-$project"
 done
 
 echo ""
@@ -91,6 +91,8 @@ echo ""
 echo "Waiting 60 seconds for available versions to update"
 sleep 60  # Wait a minute for RTD to update available versions
 
-for project in ${supported_projects[@]}; do
-    activate_version "$token" "$project" "$version_name"
+for project in $(cut -f1 < MRI_projects_to_activate.list); do
+    version_name=$(grep $project MRI_projects_to_activate.list | cut -f2)
+    activate_version "$token" "odl-$project" "$version_name"
+    build_version "$token" "odl-$project" "$version_name"
 done

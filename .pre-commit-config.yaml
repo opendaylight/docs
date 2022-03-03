@@ -20,5 +20,6 @@ repos:
             (?x)^(
                 .git/COMMIT_EDITMSG|
                 docs/make.bat|
-                docs/Makefile
+                docs/Makefile|
+                MRI_projects_to_activate.list
             )$
