@@ -11,31 +11,21 @@
 ##############################################################################
 
 from docs_conf.conf import *
-import sys, os
+import sys, os, csv
 
 # Append to intersphinx_mapping
-# for P-SR2 MRI version can be found at https://git.opendaylight.org/gerrit/c/integration/distribution/+/99752
-# TODO use the TSV MRI projects file rather than hardcoded values
-intersphinx_mapping['aaa'] = ('https://docs.opendaylight.org/projects/aaa/en/v0.14.10/', None)
-intersphinx_mapping['bgpcep'] = ('https://docs.opendaylight.org/projects/bgpcep/en/v0.16.14/', None)
-intersphinx_mapping['controller'] = ('https://docs.opendaylight.org/projects/controller/en/v4.0.10/', None)
-intersphinx_mapping['infrautils'] = ('https://docs.opendaylight.org/projects/infrautils/en/v2.0.13/', None)
-intersphinx_mapping['mdsal'] = ('https://docs.opendaylight.org/projects/mdsal/en/v8.0.11/', None)
-intersphinx_mapping['netconf'] = ('https://docs.opendaylight.org/projects/netconf/en/v2.0.14/', None)
-intersphinx_mapping['odl-integration-test'] = ('https://docs.opendaylight.org/projects/integration-test/en/latest/', None)
-intersphinx_mapping['odl-integration-packaging'] = ('https://docs.opendaylight.org/projects/integration-packaging/en/latest/', None)
-intersphinx_mapping['odl-releng-builder'] = ('https://docs.opendaylight.org/projects/releng-builder/en/latest/', None)
-
-# Projects that have stable/branches
-intersphinx_mapping['daexim'] = ('https://docs.opendaylight.org/projects/daexim/en/stable-phosphorus/', None)
-intersphinx_mapping['integration-distribution'] = ('https://docs.opendaylight.org/projects/integration-distribution/en/stable-phosphorus/', None)
-intersphinx_mapping['jsonrpc'] = ('https://docs.opendaylight.org/projects/jsonrpc/en/stable-phosphorus/', None)
-intersphinx_mapping['lispflowmapping'] = ('https://docs.opendaylight.org/projects/lispflowmapping/en/stable-phosphorus/', None)
-intersphinx_mapping['openflowplugin'] = ('https://docs.opendaylight.org/projects/openflowplugin/en/stable-phosphorus/', None)
-intersphinx_mapping['ovsdb'] = ('https://docs.opendaylight.org/projects/ovsdb/en/stable-phosphorus/', None)
-intersphinx_mapping['transportpce'] = ('https://docs.opendaylight.org/projects/transportpce/en/stable-phosphorus/', None)
+with open('../projects_list.tsv') as fd:
+    rd = csv.reader(fd, delimiter="\t", quotechar='"')
+    for row in rd:
+        if row:
+            project = row[0]
+            if project[0] == "#":
+                continue
+            version = row[1]
+            intersphinx_mapping[project] = ('https://docs.opendaylight.org/projects/' + project + '/en/'+ version +'/', None)
 
 # OpenDaylight Documentation Releases
+intersphinx_mapping['odl-sulfur'] = ('https://docs.opendaylight.org/en/latest/', None)
 intersphinx_mapping['odl-phosphorus'] = ('https://docs.opendaylight.org/en/stable-phosphorus/', None)
 intersphinx_mapping['odl-silicon'] = ('https://docs.opendaylight.org/en/stable-silicon/', None)
 intersphinx_mapping['odl-aluminium'] = ('https://docs.opendaylight.org/en/stable-aluminium/', None)

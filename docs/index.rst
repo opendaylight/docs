@@ -26,9 +26,9 @@ Contributing to OpenDaylight
 
 * :doc:`Contributor Guides <contributor-guides/index>`
 * :ref:`Infrastructure Guide <odl-infra>`
-* :doc:`Integration Testing Guide <odl-integration-test:index>`
+* :doc:`Integration Testing Guide <integration-test:index>`
 * :doc:`Integration Distribution Guide <integration-distribution:index>`
-* :doc:`Integration Packaging Guide <odl-integration-packaging:index>`
+* :doc:`Integration Packaging Guide <integration-packaging:index>`
 * :doc:`Release Process Guide <release-process/index>`
 * :doc:`Documentation Guide <documentation>`
 * :doc:`Javadocs <javadoc>`

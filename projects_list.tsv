@@ -1,0 +1,19 @@
+#MRI projects
+aaa	v0.14.10
+bgpcep	v0.16.14
+controller	v4.0.10
+infrautils	v2.0.13
+mdsal	v8.0.11
+netconf	v2.0.14
+#integration projects without dedicated stable or MRI branches
+integration-test	latest
+integration-packaging	latest
+releng-builder	latest
+#MSI projects
+daexim	stable-phosphorus
+integration-distribution	stable-phosphorus
+jsonrpc	stable-phosphorus
+lispflowmapping	stable-phosphorus
+openflowplugin	stable-phosphorus
+ovsdb	stable-phosphorus
+transportpce	stable-phosphorus
