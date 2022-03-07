@@ -1,0 +1,19 @@
+#MRI projects
+aaa	latest
+bgpcep	latest
+controller	latest
+infrautils	latest
+mdsal	latest
+netconf	latest
+#integration projects without dedicated stable or MRI branches
+integration-test	latest
+integration-packaging	latest
+releng-builder	latest
+#MSI projects
+daexim	latest
+integration-distribution	latest
+jsonrpc	latest
+lispflowmapping	latest
+openflowplugin	latest
+ovsdb	latest
+transportpce	latest
