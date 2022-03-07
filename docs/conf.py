@@ -11,30 +11,18 @@
 ##############################################################################
 
 from docs_conf.conf import *
-import sys, os
+import sys, os, csv
 
 # Append to intersphinx_mapping
-# MRI rojects
-intersphinx_mapping['aaa'] = ('https://docs.opendaylight.org/projects/aaa/en/latest/', None)
-intersphinx_mapping['bgpcep'] = ('https://docs.opendaylight.org/projects/bgpcep/en/latest/', None)
-intersphinx_mapping['controller'] = ('https://docs.opendaylight.org/projects/controller/en/latest/', None)
-intersphinx_mapping['infrautils'] = ('https://docs.opendaylight.org/projects/infrautils/en/latest/', None)
-intersphinx_mapping['mdsal'] = ('https://docs.opendaylight.org/projects/mdsal/en/latest/', None)
-intersphinx_mapping['netconf'] = ('https://docs.opendaylight.org/projects/netconf/en/latest/', None)
-
-# integration projects
-intersphinx_mapping['odl-integration-test'] = ('https://docs.opendaylight.org/projects/integration-test/en/latest/', None)
-intersphinx_mapping['odl-integration-packaging'] = ('https://docs.opendaylight.org/projects/integration-packaging/en/latest/', None)
-intersphinx_mapping['odl-releng-builder'] = ('https://docs.opendaylight.org/projects/releng-builder/en/latest/', None)
-
-# MSI projects
-intersphinx_mapping['daexim'] = ('https://docs.opendaylight.org/projects/daexim/en/latest/', None)
-intersphinx_mapping['integration-distribution'] = ('https://docs.opendaylight.org/projects/integration-distribution/en/latest/', None)
-intersphinx_mapping['jsonrpc'] = ('https://docs.opendaylight.org/projects/jsonrpc/en/latest/', None)
-intersphinx_mapping['lispflowmapping'] = ('https://docs.opendaylight.org/projects/lispflowmapping/en/latest/', None)
-intersphinx_mapping['openflowplugin'] = ('https://docs.opendaylight.org/projects/openflowplugin/en/latest/', None)
-intersphinx_mapping['ovsdb'] = ('https://docs.opendaylight.org/projects/ovsdb/en/latest/', None)
-intersphinx_mapping['transportpce'] = ('https://docs.opendaylight.org/projects/transportpce/en/latest/', None)
+with open('../projects_list.tsv') as fd:
+    rd = csv.reader(fd, delimiter="\t", quotechar='"')
+    for row in rd:
+        if row:
+            project = row[0]
+            if project[0] == "#":
+                continue
+            version = row[1]
+            intersphinx_mapping[project] = ('https://docs.opendaylight.org/projects/' + project + '/en/'+ version +'/', None)
 
 # OpenDaylight Documentation Releases
 intersphinx_mapping['odl-sulfur'] = ('https://docs.opendaylight.org/en/latest/', None)

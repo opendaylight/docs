@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # SPDX-License-Identifier: EPL-1.0
 ##############################################################################
 # Copyright (c) 2019 The Linux Foundation and others.
@@ -10,17 +10,16 @@
 ##############################################################################
 
 
-#activate project docs versions for all supported
-#ODL autorelease projects. This script maintains a list in the project
-#and needs to be run manually by a docs maintainer.
+#activate project docs versions for all supported ODL projects.
+#This script needs to be run either manually by a docs maintainer with a valid RTD API token
+#or a by Jenkins or any CI with a common hidden token.
 
 
 usage() {
-    echo "Usage: $0 <token> <version_name>"
-    echo ""
+    echo "Usage: $0 <token>"
+    echo
     echo "    token:  RTD API Token"
-    echo "    version_name:  Name of the version to be activated e.g stable-aluminium."
-    echo ""
+    echo
 }
 
 # Activate project docs version in RTD
@@ -34,6 +33,7 @@ activate_version() {
         -H "Authorization: Token $token"  \
         -H "Content-Type: application/json" \
         --data "{\"active\": true, \"hidden\": false}"
+    echo
 }
 
 # Build "latest" to force RTD to update available versions
@@ -45,6 +45,20 @@ update_available_versions() {
     curl -X POST "https://readthedocs.org/api/v3/projects/$project_name/versions/latest/builds/" \
         -H "Authorization: Token $token" \
         -H "Content-Length: 0"
+    echo
+}
+
+# Build  to force RTD to update available versions
+build_version() {
+    token=$1
+    project_name=$2
+    version_name=$3
+
+    echo "Forcing RTD to update available versions"
+    curl -X POST "https://readthedocs.org/api/v3/projects/$project_name/versions/$version_name/builds/" \
+        -H "Authorization: Token $token" \
+        -H "Content-Length: 0"
+    echo
 }
 
 while getopts :h: opts; do
@@ -60,7 +74,7 @@ while getopts :h: opts; do
     esac
 done
 
-if [ -z $2 ]; then
+if [ -z $1 ]; then
     usage
     exit 1
 fi
@@ -70,27 +84,18 @@ fi
 ################
 
 token="$1"
-version_name="$2"
 
-supported_projects=(
-    odl-daexim
-    opendaylight-distribution
-    odl-jsonrpc
-    odl-lispflowmapping
-    odl-openflowplugin
-    opendaylight-ovsdb
-    odl-transportpce
-    )
-
-for project in ${supported_projects[@]}; do
-    update_available_versions "$token" "$project" "$version_name"
+for project in $(grep -v ^# projects_list.tsv | cut -f1); do
+    update_available_versions "$token" "odl-$project"
 done
 
-echo ""
-echo ""
+echo
 echo "Waiting 60 seconds for available versions to update"
+echo
 sleep 60  # Wait a minute for RTD to update available versions
 
-for project in ${supported_projects[@]}; do
-    activate_version "$token" "$project" "$version_name"
+for project in $(grep -v ^# projects_list.tsv | cut -f1); do
+    version_name=$(grep $project projects_list.tsv | cut -f2)
+    activate_version "$token" "odl-$project" "$version_name"
+    build_version "$token" "odl-$project" "$version_name"
 done
