@@ -30,6 +30,9 @@ into the release.
       existing permissions. Code-Review and Verify permissions are only needed
       during version bumping.
 
+This step can be achieved with the self-service job to lock or unlock a Gerrit
+branch using ``autorelease-gerrit-branch-lock-${STREAM}`` job on Jenkins CI.
+
 
 .. _simrel-preparations:
 
