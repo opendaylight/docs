@@ -24,7 +24,7 @@ Code Freeze
    This activity has been pre-approved by the TSC and does not require a TSC
    vote. :doc:`Helpdesk <lfdocs:helpdesk>` should be notified to enable the
    permissions and again to disable the permissions once activities are
-   complete.
+   complete or use the self service job to activate the rights for a job.
 
 Super committers are granted powers to merge blocking patches for the duration
 code of freeze until a release is approved and code freeze is lifted. This
@@ -39,8 +39,8 @@ Code-Review by a project committer approving the merge, and the patch passes
 Jenkins Verify check. If neither of these conditions are met then **DO NOT**
 merge the patch.
 
-Version bumping
-'''''''''''''''
+Version bumping (Release Work)
+''''''''''''''''''''''''''''''
 
 .. note::
 
@@ -91,6 +91,21 @@ Any activities not in the list above will fall under the exceptional case in
 which requires TSC approval before Super Committers can merge changes. These
 cases should be brought up to the TSC for voting.
 
+Self-service
+''''''''''''
+
+All of the above states (super committers, code freeze, release work, version
+bump) on the Gerrit branch can be achieved using a self-serviced Jenkins CI job
+``autorelease-gerrit-branch-lock-${STREAM}``. The job be triggered by anyone
+in the releng committers group.
+
+.. note::
+
+   Before starting the job to lock/unlock the branch, check the branch state
+   using the link.
+
+   https://git.opendaylight.org/gerrit/gitweb?p=All-Projects.git;a=blob_plain;f=project.config;hb=HEAD
+
 
 Super Committers
 ----------------
@@ -98,7 +113,7 @@ Super Committers
 ========================= =================== =================================
 Name                      IRC                 Email
 ========================= =================== =================================
-Anil Belur                abelur              abelur@linuxfoundation.org
+Anil Belur                abelur              abelur@linux.com
 Jamo Luhrsen              jamoluhrsen         jluhrsen@gmail.com
 Luis Gomez                LuisGomez           ecelgp@gmail.com
 Robert Varga              rovarga             nite@hq.sk
