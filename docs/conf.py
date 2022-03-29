@@ -13,16 +13,21 @@
 from docs_conf.conf import *
 import sys, os, csv
 
+
+def update_intersphinx_mapping():
+    with open('../projects_list.tsv') as fd:
+        rd = csv.reader(fd, delimiter="\t", quotechar='"')
+        for row in rd:
+            if row:
+                project = row[0]
+                if project[0] == "#":
+                    continue
+                version = row[1]
+                intersphinx_mapping[project] = (f'https://docs.opendaylight.org/projects/{project}/en/{version}/', None)
+
+
 # Append to intersphinx_mapping
-with open('../projects_list.tsv') as fd:
-    rd = csv.reader(fd, delimiter="\t", quotechar='"')
-    for row in rd:
-        if row:
-            project = row[0]
-            if project[0] == "#":
-                continue
-            version = row[1]
-            intersphinx_mapping[project] = ('https://docs.opendaylight.org/projects/' + project + '/en/'+ version +'/', None)
+update_intersphinx_mapping()
 
 # OpenDaylight Documentation Releases
 intersphinx_mapping['odl-sulfur'] = ('https://docs.opendaylight.org/en/latest/', None)
