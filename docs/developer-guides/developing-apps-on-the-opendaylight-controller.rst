@@ -28,7 +28,7 @@ The following are the prerequisites for app creation:
 -   A development environment with the following setup and working correctly
     from the shell:
 
-    -   Maven 3.5.2 or later
+    -   Maven 3.8.3 or later
 
     -   Java 11-compliant JDK
 
