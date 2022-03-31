@@ -41,14 +41,12 @@ the following components:
 
 Behavior/Feature Changes
 ========================
-
-The internal refactor done in `BGPCEP-949 <https://jira.opendaylight.org/browse/BGPCEP-949>`__, the configuration knob
-to enable legacy BGP link state path attribute encoding has changed. It is using OSGi Configuration Admin interface, just
-like other global settings.
+No changes to behavior.
 
 New Features
 ============
-No new features.
+The PCE server has gained the ability to interact with PCEP topology and
+therefore properly manage paths.
 
 Deprecated Features
 ===================
@@ -60,7 +58,7 @@ The following table lists the issues resolved in this release.
 
 .. jira_fixed_issues::
    :project: BGPCEP
-   :versions: 0.16.0-0.16.13
+   :versions: 0.17.0-0.17.0
 
 Known Issues
 ============
@@ -68,4 +66,4 @@ The following table lists the known issues that exist in this release.
 
 .. jira_known_issues::
    :project: BGPCEP
-   :versions: 0.16.0-0.16.13
+   :versions: 0.17.0-0.17.0

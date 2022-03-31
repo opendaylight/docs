@@ -11,12 +11,13 @@ It does not have user-facing features.
 
 Behavior/Feature Changes
 ========================
+The default configuration of the Distributed Datastore has been changed to take advantage
+of the ``tell-based protocol`` which has been long in the works. This prevents the dreaded
+``AskTimeoutException`` being reported to applications. It also has much more modest requirements
+on native memory when coupled with Akka Artery.
 
-The implementation of Entity Ownership Service has been rewritten from scratch. It is now completely
-independent of ``sal-distributed-datastore``. See `this issue <https://jira.opendaylight.org/browse/CONTROLLER-1982>`__ for details.
-
-As per upstream advice from Akka, we have now switched our communications to use Akka Artery. See
-`this issue <https://jira.opendaylight.org/browse/CONTROLLER-1968>`__ for details.
+The ``ask-based protocol`` remains a configurable option and will remain for at least one
+release, but its use should be avoided unless necessary.
 
 New Features
 ============
@@ -24,11 +25,7 @@ There are no new features.
 
 Deprecated and Removed Features
 ===============================
-There are no deprecated features in this release, but there is a large number of feature removals:
-* ``opendaylight-inventory`` and ``opendaylight-topology`` models have been moved to OpenFlow Plugin
-* support for upgrading from versions before ``Sodium SR`` was removed
-* prefix-based shards have been completely removed
-* the proof-of-concept ``messagebus`` component was removed
+No deprecated or removed features.
 
 Resolved Issues
 ===============
@@ -37,7 +34,7 @@ The following table lists the issues resolved in this release.
 
 .. jira_fixed_issues::
    :project: CONTROLLER
-   :versions: 4.0.0-4.0.7
+   :versions: 5.0.0-5.0.1
 
 Known Issues
 ============
@@ -46,5 +43,5 @@ The following table lists the known issues that exist in this release.
 
 .. jira_known_issues::
    :project: CONTROLLER
-   :versions: 4.0.0-4.0.7
+   :versions: 5.0.0-5.0.1
 
