@@ -12,14 +12,11 @@ The InfraUtils project provides a low-level utility for use by other OpenDayligh
 * Test Utilities
 * Ready Service
 * Integration Test Utilities (``itestutils``)
-* Caches
 * ``Diagstatus``
-* Metrics
 
 Behavior/Feature Changes
 ========================
-Error Prone execution for pom.xmls inherited from ``org.opendaylight.infrautils:parent``  is now enabled
-on JDKs 11 through 17. This was previously disabled on JDK 16 and JDK 17 due to compatibility issues.
+There are no changes to behavior.
 
 New Features
 ============
@@ -27,11 +24,10 @@ There are no new features.
 
 Deprecated and Removed Features
 ===============================
-Job Coordinator was a rather troublesome attempt at coordinating datastore updates, but in that it made
-reasoning about updates and recovery from failures nigh impossible. It is not used by any active projects
-and has been removed without a replacement.
+The ``Metrics`` component has been migrated to ``serviceutils`` project, as that is the only user of this
+functionality.
 
-The ``shell`` artifact has been removed, as it has no users and provided no meaningful functionality.
+The ``Caches`` component was removed as it has no users at all.
 
 Resolved Issues
 ===============
@@ -40,7 +36,7 @@ The following table lists the issues resolved in this release.
 
 .. jira_fixed_issues::
    :project: INFRAUTILS
-   :versions: 2.0.0-2.0.8
+   :versions: 3.0.0-3.0.0
 
 Known Issues
 ============
@@ -49,5 +45,5 @@ The following table lists the known issues that exist in this release.
 
 .. jira_known_issues::
    :project: INFRAUTILS
-   :versions: 2.0.0-2.0.8
+   :versions: 3.0.0-3.0.0
 
