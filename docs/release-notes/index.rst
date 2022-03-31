@@ -17,7 +17,7 @@ OpenDaylight is written in Java and utilizes Maven as a build tool. Therefore,
 the only requirements needed to develop projects within OpenDaylight include:
 
 * `Java JDK 11 <https://www.oracle.com/java/technologies/javase/products-doc-jdk11certconfig.html>`_
-* `Apache Maven <https://maven.apache.org>`_ 3.5.2 or later
+* `Apache Maven <https://maven.apache.org>`_ 3.8.3 or later
 
 If an application or tool is built on top of OpenDaylight’s REST APIs, it does not
 have any special requirement beyond what is necessary to run the application or tool
