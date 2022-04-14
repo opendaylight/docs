@@ -33,7 +33,7 @@ versions (for example, `bump-odl-version <https://github.com/skitt/odl-tools/blo
 
   bump-odl-version odlparent 9.0.13 10.0.0
 
-2. Update the direct yangtools version references from 7.0.14 to 8.0.2,
+2. Update the direct yangtools version references from 7.0.14 to 8.0.3,
    There should not be any reference to **org.opendaylight.yangtools**,
    except for 8.0.2. This includes custom feature.xml templates
    (``src/main/feature/feature.xml``), the version range should
@@ -41,21 +41,21 @@ versions (for example, `bump-odl-version <https://github.com/skitt/odl-tools/blo
 
  .. code-block:: shell
 
-  bump-odl-version yangtools 7.0.14 8.0.2
+  bump-odl-version yangtools 7.0.14 8.0.3
 
-3. Update the MD-SAL version from 8.0.11 to 9.0.1. There should not be
-   any reference to **org.opendaylight.mdsal**, except for 9.0.1.
-
- .. code-block:: shell
-
-  bump-odl-version mdsal 8.0.11 9.0.1
-
-4. Update the Controller version from 4.0.10 to 5.0.1. There should not be
-   any reference to **org.opendaylight.controller**, except for 5.0.1.
+3. Update the MD-SAL version from 8.0.11 to 9.0.2. There should not be
+   any reference to **org.opendaylight.mdsal**, except for 9.0.2.
 
  .. code-block:: shell
 
-  bump-odl-version controller 4.0.10 5.0.1
+  bump-odl-version mdsal 8.0.11 9.0.2
+
+4. Update the Controller version from 4.0.10 to 5.0.2. There should not be
+   any reference to **org.opendaylight.controller**, except for 5.0.2.
+
+ .. code-block:: shell
+
+  bump-odl-version controller 4.0.10 5.0.2
 
 5. Update the InfraUtils version from 2.0.13 to 3.0.0. There should not be
    any reference to **org.opendaylight.infrautils**, except for 3.0.0.
@@ -64,19 +64,19 @@ versions (for example, `bump-odl-version <https://github.com/skitt/odl-tools/blo
 
   bump-odl-version infrautils 2.0.13 3.0.0
 
-6. Update the AAA version from 0.14.10 to 0.15.1. There should not be
-   any reference to **org.opendaylight.aaa**, except for 0.15.1.
+6. Update the AAA version from 0.14.10 to 0.15.2. There should not be
+   any reference to **org.opendaylight.aaa**, except for 0.15.2.
 
  .. code-block:: shell
 
   bump-odl-version aaa 0.14.10 0.15.1
 
-7. Update the NETCONF version from 2.0.14 to 3.0.0. There should not be
-   any reference to **org.opendaylight.netconf**, except for 3.0.0.
+7. Update the NETCONF version from 2.0.14 to 3.0.1. There should not be
+   any reference to **org.opendaylight.netconf**, except for 3.0.1.
 
  .. code-block:: shell
 
-  bump-odl-version netconf 2.0.14 3.0.0
+  bump-odl-version netconf 2.0.14 3.0.1
 
 Install Dependent Projects
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
