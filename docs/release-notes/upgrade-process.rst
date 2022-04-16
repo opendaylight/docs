@@ -317,6 +317,41 @@ the identifier to start at a child of a ``DataRoot`` element and all items need 
 than plain ``DataObject``. This improves safety and removes the backdoor where an ``InstanceIdentifier`` could be use
 to identify, for example, a ``notification``.
 
+It also means that top-level constructs defined in a ``grouping`` and then used directly by the defining ``module``:
+
+  .. code-block:: yang
+
+    module foo {
+      grouping grp {
+        container bar;
+      }
+
+      uses grp;
+    }
+
+cannot be created directly through ``InstanceIdentifier.create()`` method. This a modeling pattern seen in OpenConfig models,
+but is used by others as well. The problem here is that since ``grp`` is a top-level grouping, it could very well be used
+by another module:
+
+  .. code-block:: yang
+
+    module baz {
+      import foo { prefix foo; }
+
+      uses foo:grp;
+    }
+
+The two instantiations of ``Bar`` are different and the ``InstanceIdentifier`` needs to positively identify which one it is
+referencing. To reference ``bar`` here, the correct invocation is:
+
+  .. code-block:: java
+
+    // Bar instantiated in 'module foo'
+    InstanceIdentifier<Bar> fooBar = InstanceIdentifier.builderOfInherited(FooData.class, Bar.class).build();
+    // Bar instantiated in 'module baz'
+    InstanceIdentifier<Bar> bazBar = InstanceIdentifier.builderOfInherited(BazData.class, Bar.class).build();
+
+
 RFC7223 `ietf-interfaces` model removed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The ``2014-05-08`` revision of ``ietf-interfaces.yang`` has been removed. Users are advised to migrate to the RFC8343
