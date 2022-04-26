@@ -43,7 +43,7 @@ The following table lists the issues resolved in this release.
 
 .. jira_fixed_issues::
    :project: NETCONF
-   :versions: 3.0.0-3.0.1
+   :versions: 3.0.0-3.0.2
 
 Known Issues
 ============
@@ -52,5 +52,5 @@ The following table lists the known issues that exist in this release.
 
 .. jira_known_issues::
    :project: NETCONF
-   :versions: 3.0.0-3.0.1
+   :versions: 3.0.0-3.0.2
 

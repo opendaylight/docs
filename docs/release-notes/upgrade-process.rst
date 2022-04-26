@@ -50,12 +50,12 @@ versions (for example, `bump-odl-version <https://github.com/skitt/odl-tools/blo
 
   bump-odl-version mdsal 8.0.11 9.0.2
 
-4. Update the Controller version from 4.0.10 to 5.0.2. There should not be
-   any reference to **org.opendaylight.controller**, except for 5.0.2.
+4. Update the Controller version from 4.0.10 to 5.0.3. There should not be
+   any reference to **org.opendaylight.controller**, except for 5.0.3.
 
  .. code-block:: shell
 
-  bump-odl-version controller 4.0.10 5.0.2
+  bump-odl-version controller 4.0.10 5.0.3
 
 5. Update the InfraUtils version from 2.0.13 to 3.0.0. There should not be
    any reference to **org.opendaylight.infrautils**, except for 3.0.0.
@@ -64,19 +64,19 @@ versions (for example, `bump-odl-version <https://github.com/skitt/odl-tools/blo
 
   bump-odl-version infrautils 2.0.13 3.0.0
 
-6. Update the AAA version from 0.14.10 to 0.15.2. There should not be
-   any reference to **org.opendaylight.aaa**, except for 0.15.2.
+6. Update the AAA version from 0.14.10 to 0.15.3. There should not be
+   any reference to **org.opendaylight.aaa**, except for 0.15.3.
 
  .. code-block:: shell
 
-  bump-odl-version aaa 0.14.10 0.15.1
+  bump-odl-version aaa 0.14.10 0.15.3
 
-7. Update the NETCONF version from 2.0.14 to 3.0.1. There should not be
-   any reference to **org.opendaylight.netconf**, except for 3.0.1.
+7. Update the NETCONF version from 2.0.14 to 3.0.2. There should not be
+   any reference to **org.opendaylight.netconf**, except for 3.0.2.
 
  .. code-block:: shell
 
-  bump-odl-version netconf 2.0.14 3.0.1
+  bump-odl-version netconf 2.0.14 3.0.2
 
 Install Dependent Projects
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
