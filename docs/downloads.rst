@@ -5,10 +5,29 @@ OpenDaylight Downloads
 Supported Releases
 ==================
 
-Phosphorus-SR2
+Sulfur-SR0
 --------------
 
 (Current Release)
+
+:Announcement: `Sulfur <https://www.opendaylight.org/current-release-sulfur>`_
+
+:GA Release Date: May 13, 2021
+
+:Downloads:
+    * `OpenDaylight Sulfur Tar
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/16.0.0/opendaylight-16.0.0.tar.gz>`_
+    * `OpenDaylight Sulfur Zip
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/16.0.0/opendaylight-16.0.0.zip>`_
+
+:Documentation:
+    * :doc:`Getting Started Guide <odl-sulfur:getting-started-guide/index>`
+    * :doc:`Project Guides <odl-sulfur:index>`
+    * :doc:`Release Notes <odl-sulfur:release-notes/index>`
+
+
+Phosphorus-SR2
+--------------
 
 :Announcement: `Phosphorus <https://www.opendaylight.org/current-release-phosphorus>`_
 
@@ -25,23 +44,6 @@ Phosphorus-SR2
     * :doc:`Getting Started Guide <odl-phosphorus:getting-started-guide/index>`
     * :doc:`Project Guides <odl-phosphorus:index>`
     * :doc:`Release Notes <odl-phosphorus:release-notes/index>`
-
-Silicon-SR4
--------------
-
-:GA Release Date: April 2, 2021
-:Service Release Date: February 4, 2022
-
-:Downloads:
-    * `OpenDaylight Silicon Tar
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/14.4.0/opendaylight-14.4.0.tar.gz>`_
-    * `OpenDaylight Silicon Zip
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/14.4.0/opendaylight-14.4.0.zip>`_
-
-:Documentation:
-    * :doc:`Getting Started Guide <odl-silicon:getting-started-guide/index>`
-    * :doc:`Project Guides <odl-silicon:index>`
-    * :doc:`Release Notes <odl-silicon:release-notes/index>`
 
 Archived Releases
 =================

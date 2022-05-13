@@ -70,6 +70,8 @@ linkcheck_ignore = [
     'http://checkstyle.sourceforge.net/config_coding.html#.*',
     # this url often has connectivity issues on the gate
     'https://www.mojohaus.org/animal-sniffer/animal-sniffer-maven-plugin/examples/checking-signatures.html',
+    #Ignore announce page link till it is up
+    'https://www.opendaylight.org/current-release-sulfur',
 ]
 linkcheck_timeout = 300
 
