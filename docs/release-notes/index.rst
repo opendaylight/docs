@@ -55,4 +55,4 @@ Service Release Notes
    :glob:
    :maxdepth: 1
 
-   release-notes-*
+#   release-notes-*
