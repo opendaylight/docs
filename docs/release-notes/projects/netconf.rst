@@ -83,3 +83,19 @@ The following table lists the known issues that exist in Service Release 2.
 .. jira_known_issues::
    :project: NETCONF
    :versions: 2.0.12-2.0.14
+
+Resolved Issues in SR3
+======================
+The following table lists the issues resolved in Service Release 3.
+
+.. jira_fixed_issues::
+   :project: NETCONF
+   :versions: 2.0.15-2.0.16
+
+Known Issues in SR3
+===================
+The following table lists the known issues that exist in Service Release 3.
+
+.. jira_known_issues::
+   :project: NETCONF
+   :versions: 2.0.15-2.0.16

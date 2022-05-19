@@ -79,3 +79,19 @@ The following table lists the known issues that exist in Service Release 2.
 .. jira_known_issues::
    :project: CONTROLLER
    :versions: 4.0.8-4.0.10
+
+Resolved Issues in SR3
+======================
+The following table lists the issues resolved in Service Release 3.
+
+.. jira_fixed_issues::
+   :project: CONTROLLER
+   :versions: 4.0.11-4.0.12
+
+Known Issues in SR3
+===================
+The following table lists the known issues that exist in Service Release 3.
+
+.. jira_known_issues::
+   :project: CONTROLLER
+   :versions: 4.0.11-4.0.12

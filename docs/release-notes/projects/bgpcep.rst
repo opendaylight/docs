@@ -101,3 +101,19 @@ The following table lists the known issues that exist in Service Release 2.
 .. jira_known_issues::
    :project: BGPCEP
    :versions: 0.16.14-0.16.14
+
+Resolved Issues in SR3
+======================
+The following table lists the issues resolved in Service Release 3.
+
+.. jira_fixed_issues::
+   :project: BGPCEP
+   :versions: 0.16.15-0.16.15
+
+Known Issues in SR3
+===================
+The following table lists the known issues that exist in Service Release 3.
+
+.. jira_known_issues::
+   :project: BGPCEP
+   :versions: 0.16.15-0.16.15
