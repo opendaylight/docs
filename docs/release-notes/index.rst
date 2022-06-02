@@ -57,3 +57,4 @@ Service Release Notes
 
    release-notes-phosphorus-sr1
    release-notes-phosphorus-sr2
+release-notes-phosphorus-sr3
