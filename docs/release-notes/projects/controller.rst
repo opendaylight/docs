@@ -51,7 +51,7 @@ The following table lists the issues resolved in Service Release 1.
 
 .. jira_fixed_issues::
    :project: CONTROLLER
-   :versions: 5.0.4-5.0.4
+   :versions: 5.0.4-5.0.5
 
 Known Issues in SR1
 ===================
@@ -59,4 +59,4 @@ The following table lists the known issues that exist in Service Release 1.
 
 .. jira_known_issues::
    :project: CONTROLLER
-   :versions: 5.0.4-5.0.4
+   :versions: 5.0.4-5.0.5
