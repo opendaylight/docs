@@ -26,19 +26,19 @@ Sulfur-SR0
     * :doc:`Release Notes <odl-sulfur:release-notes/index>`
 
 
-Phosphorus-SR2
+Phosphorus-SR3
 --------------
 
 :Announcement: `Phosphorus <https://www.opendaylight.org/current-release-phosphorus>`_
 
 :GA Release Date: October 15, 2021
-:Service Release Date: February 28, 2021
+:Service Release Date: July 2, 2021
 
 :Downloads:
     * `OpenDaylight Phosphorus Tar
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/15.2.0/opendaylight-15.2.0.tar.gz>`_
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/15.3.0/opendaylight-15.3.0.tar.gz>`_
     * `OpenDaylight Phosphorus Zip
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/15.2.0/opendaylight-15.2.0.zip>`_
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/15.3.0/opendaylight-15.3.0.zip>`_
 
 :Documentation:
     * :doc:`Getting Started Guide <odl-phosphorus:getting-started-guide/index>`
