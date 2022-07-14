@@ -5,7 +5,7 @@ OpenDaylight Downloads
 Supported Releases
 ==================
 
-Sulfur-SR0
+Sulfur-SR1
 --------------
 
 (Current Release)
@@ -13,12 +13,13 @@ Sulfur-SR0
 :Announcement: `Sulfur <https://www.opendaylight.org/current-release-sulfur>`_
 
 :GA Release Date: May 13, 2021
+:Service Release Date: July 14, 2022
 
 :Downloads:
     * `OpenDaylight Sulfur Tar
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/16.0.0/opendaylight-16.0.0.tar.gz>`_
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/16.1.0/opendaylight-16.1.0.tar.gz>`_
     * `OpenDaylight Sulfur Zip
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/16.0.0/opendaylight-16.0.0.zip>`_
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/16.1.0/opendaylight-16.1.0.zip>`_
 
 :Documentation:
     * :doc:`Getting Started Guide <odl-sulfur:getting-started-guide/index>`
