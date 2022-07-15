@@ -30,7 +30,8 @@ def update_intersphinx_mapping():
 update_intersphinx_mapping()
 
 # OpenDaylight Documentation Releases
-intersphinx_mapping['odl-sulfur'] = ('https://docs.opendaylight.org/en/latest/', None)
+intersphinx_mapping['odl-chlorine'] = ('https://docs.opendaylight.org/en/latest/', None)
+intersphinx_mapping['odl-sulfur'] = ('https://docs.opendaylight.org/en/stable-sulfur/', None)
 intersphinx_mapping['odl-phosphorus'] = ('https://docs.opendaylight.org/en/stable-phosphorus/', None)
 intersphinx_mapping['odl-silicon'] = ('https://docs.opendaylight.org/en/stable-silicon/', None)
 intersphinx_mapping['odl-aluminium'] = ('https://docs.opendaylight.org/en/stable-aluminium/', None)
