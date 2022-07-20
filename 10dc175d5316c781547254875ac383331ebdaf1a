@@ -16,6 +16,24 @@
       "message": "This is not required in the commmit footer, Gerrit already take care of cherry pick, however you can move this to the body of the commit message if its still to be kept. Would make the commit history look much cleaner.",
       "revId": "10dc175d5316c781547254875ac383331ebdaf1a",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3cc65e8f_19123ff3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8144
+      },
+      "writtenOn": "2022-07-20T07:08:49Z",
+      "side": 1,
+      "message": "OK, removed.",
+      "parentUuid": "476e13be_685d6b3d",
+      "revId": "10dc175d5316c781547254875ac383331ebdaf1a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ]
 }
