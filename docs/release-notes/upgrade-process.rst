@@ -14,7 +14,7 @@ Preparation
 
 JDK 11 Version
 ^^^^^^^^^^^^^^
-Phosphorus requires Java 11, both during compile-time and run-time.
+2022.03 Sulfur requires Java 11, both during compile-time and run-time.
 Make sure to install JDK 11 corresponding to at least ``openjdk-11.0.10``,
 and that the JAVA_HOME environment variable points to the JDK directory.
 
