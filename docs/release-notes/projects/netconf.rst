@@ -17,7 +17,7 @@ Behavior/Feature Changes
 The RFC8040 endpoint now correctly interprets `YANG Patch Media Type <https://datatracker.ietf.org/doc/html/rfc8072>`__
 requests.
 
-The ``netcon-node-topology`` YANG model has been updated to correctly mark the presence of OpenDaylight's
+The ``netconf-node-topology`` YANG model has been updated to correctly mark the presence of OpenDaylight's
 ``yang-ext:mount`` extension. This does not affect the implementation, but improves interoperability with
 external system.
 
