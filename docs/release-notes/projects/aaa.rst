@@ -16,7 +16,9 @@ There are no changes to features.
 
 New Features
 ============
-There are no new features.
+This release contains a major upgrade of H2 database. This impacts the ability
+to perform in-place upgrades. Users perfoming an upgrade will need to remove
+``data/idmlight.db.*`` files and re-populate the database.
 
 Deprecated and Removed Features
 ===============================
@@ -24,34 +26,16 @@ There are no deprecated or removed features.
 
 Resolved Issues
 ===============
-
 The following table lists the issues resolved in this release.
 
 .. jira_fixed_issues::
    :project: AAA
-   :versions: 0.15.0-0.15.3
+   :versions: 0.16.0-0.16.1
 
 Known Issues
 ============
-
 The following table lists the known issues that exist in this release.
 
 .. jira_known_issues::
    :project: AAA
-   :versions: 0.15.1-0.15.3
-
-Resolved Issues in SR1
-======================
-The following table lists the issues resolved in Service Release 1.
-
-.. jira_fixed_issues::
-   :project: AAA
-   :versions: 0.15.4-0.15.5
-
-Known Issues in SR1
-===================
-The following table lists the known issues that exist in Service Release 1.
-
-.. jira_known_issues::
-   :project: AAA
-   :versions: 0.15.4-0.15.5
+   :versions: 0.16.0-0.16.1
