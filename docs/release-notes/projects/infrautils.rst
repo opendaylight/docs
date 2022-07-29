@@ -24,41 +24,20 @@ There are no new features.
 
 Deprecated and Removed Features
 ===============================
-The ``Metrics`` component has been migrated to ``serviceutils`` project, as that is the only user of this
-functionality.
-
-The ``Caches`` component was removed as it has no users at all.
+There are no deprecated or removed features.
 
 Resolved Issues
 ===============
-
 The following table lists the issues resolved in this release.
 
 .. jira_fixed_issues::
    :project: INFRAUTILS
-   :versions: 3.0.0-3.0.0
+   :versions: 4.0.0-4.0.1
 
 Known Issues
 ============
-
 The following table lists the known issues that exist in this release.
 
 .. jira_known_issues::
    :project: INFRAUTILS
-   :versions: 3.0.0-3.0.0
-
-Resolved Issues in SR1
-======================
-The following table lists the issues resolved in Service Release 1.
-
-.. jira_fixed_issues::
-   :project: INFRAUTILS
-   :versions: 3.0.1-3.0.1
-
-Known Issues in SR1
-===================
-The following table lists the known issues that exist in Service Release 1.
-
-.. jira_known_issues::
-   :project: INFRAUTILS
-   :versions: 3.0.1-3.0.1
+   :versions: 4.0.0-4.0.1

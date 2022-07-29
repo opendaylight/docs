@@ -41,12 +41,12 @@ the following components:
 
 Behavior/Feature Changes
 ========================
-No changes to behavior.
+The configuration knob for ``pcep-provider``'s timer has been moved into pcep-topology
+configuration. Users relying on non-default value need to update their configuration.
 
 New Features
 ============
-The PCE server has gained the ability to interact with PCEP topology and
-therefore properly manage paths.
+The Graph functionality has been extended to handle multiple PCEP topologies.
 
 Deprecated Features
 ===================
@@ -58,7 +58,7 @@ The following table lists the issues resolved in this release.
 
 .. jira_fixed_issues::
    :project: BGPCEP
-   :versions: 0.17.0-0.17.2
+   :versions: 0.18.0-0.18.1
 
 Known Issues
 ============
@@ -66,20 +66,4 @@ The following table lists the known issues that exist in this release.
 
 .. jira_known_issues::
    :project: BGPCEP
-   :versions: 0.17.0-0.17.2
-
-Resolved Issues in SR1
-======================
-The following table lists the issues resolved in Service Release 1.
-
-.. jira_fixed_issues::
-   :project: BGPCEP
-   :versions: 0.17.3-0.17.5
-
-Known Issues in SR1
-===================
-The following table lists the known issues that exist in Service Release 1.
-
-.. jira_known_issues::
-   :project: BGPCEP
-   :versions: 0.17.3-0.17.5
+   :versions: 0.18.0-0.18.1
