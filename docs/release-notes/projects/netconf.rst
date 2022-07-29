@@ -19,7 +19,7 @@ behavior of silently accepting such requests can be restored through setting the
 ``org.opendaylight.restconf.url.consecutive-slashes`` system property to ``allow``. Valid options are also
 ``debug`` and ``warn``, which cause offending requests to be accepted, but logged to the system log.
 
-The ``netcon-node-topology`` YANG model has been updated to correctly mark the presence of OpenDaylight's
+The ``netconf-node-topology`` YANG model has been updated to correctly mark the presence of OpenDaylight's
 ``yang-ext:mount`` extension. This does not affect the implementation, but improves interoperability with
 external system.
 
