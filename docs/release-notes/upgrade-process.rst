@@ -1,21 +1,22 @@
-===============================
-2022.03 Sulfur Platform Upgrade
-===============================
+=================================
+2022.09 Chlorine Platform Upgrade
+=================================
 
-This document describes the steps to help users upgrade from Phosphorus
-to Sulfur planned platform. Refer to `Managed Release Integrated (MRI)
-project <https://git.opendaylight.org/gerrit/q/topic:sulfur-mri>`_
-upgrade patches for more information.
+This document describes the steps to help users upgrade from Sulfur
+to Chlorine planned platform. Refer to `Managed Snapshot Integrated (MSI)
+project <https://git.opendaylight.org/gerrit/q/topic:chlorine-mri>`_
+upgrade patches for more information and hints for solutions to common
+problems not explicitly listed here.
 
 .. contents:: Contents
 
 Preparation
 -----------
 
-JDK 11 Version
+JDK 17 Version
 ^^^^^^^^^^^^^^
-2022.03 Sulfur requires Java 11, both during compile-time and run-time.
-Make sure to install JDK 11 corresponding to at least ``openjdk-11.0.10``,
+2022.09 Sulfur requires Java 17, both during compile-time and run-time.
+Make sure to install JDK 17 corresponding to at least ``openjdk-17.0.4``,
 and that the JAVA_HOME environment variable points to the JDK directory.
 
 Version Bump
@@ -23,7 +24,7 @@ Version Bump
 Before performing platform upgrade, do the following to bump the odlparent
 versions (for example, `bump-odl-version <https://github.com/skitt/odl-tools/blob/master/bump-odl-version>`_):
 
-1. Update the odlparent version from 9.0.13 to 10.0.0. There should
+1. Update the odlparent version from 9.0.13 to 11.0.0. There should
    not be any reference to **org.opendaylight.odlparent**, except
    for 10.0.0. This includes custom feature.xml templates
    (``src/main/feature/feature.xml``), the version range should
@@ -33,7 +34,7 @@ versions (for example, `bump-odl-version <https://github.com/skitt/odl-tools/blo
 
   bump-odl-version odlparent 9.0.13 10.0.0
 
-2. Update the direct yangtools version references from 7.0.14 to 8.0.3,
+2. Update the direct yangtools version references from 7.0.14 to 9.0.0,
    There should not be any reference to **org.opendaylight.yangtools**,
    except for 8.0.2. This includes custom feature.xml templates
    (``src/main/feature/feature.xml``), the version range should
