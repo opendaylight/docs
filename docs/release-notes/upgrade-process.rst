@@ -1,21 +1,22 @@
-===============================
-2022.03 Sulfur Platform Upgrade
-===============================
+=================================
+2022.09 Chlorine Platform Upgrade
+=================================
 
-This document describes the steps to help users upgrade from Phosphorus
-to Sulfur planned platform. Refer to `Managed Release Integrated (MRI)
-project <https://git.opendaylight.org/gerrit/q/topic:sulfur-mri>`_
-upgrade patches for more information.
+This document describes the steps to help users upgrade from Sulfur
+to Chlorine planned platform. Refer to `Managed Snapshot Integrated (MSI)
+project <https://git.opendaylight.org/gerrit/q/topic:chlorine-mri>`_
+upgrade patches for more information and hints for solutions to common
+problems not explicitly listed here.
 
 .. contents:: Contents
 
 Preparation
 -----------
 
-JDK 11 Version
+JDK 17 Version
 ^^^^^^^^^^^^^^
-2022.03 Sulfur requires Java 11, both during compile-time and run-time.
-Make sure to install JDK 11 corresponding to at least ``openjdk-11.0.10``,
+2022.09 Sulfur requires Java 17, both during compile-time and run-time.
+Make sure to install JDK 17 corresponding to at least ``openjdk-17.0.4``,
 and that the JAVA_HOME environment variable points to the JDK directory.
 
 Version Bump
@@ -23,67 +24,67 @@ Version Bump
 Before performing platform upgrade, do the following to bump the odlparent
 versions (for example, `bump-odl-version <https://github.com/skitt/odl-tools/blob/master/bump-odl-version>`_):
 
-1. Update the odlparent version from 9.0.13 to 10.0.0. There should
+1. Update the odlparent version from 10.0.3 to 11.0.1. There should
    not be any reference to **org.opendaylight.odlparent**, except
-   for 10.0.0. This includes custom feature.xml templates
+   for 11.0.1. This includes custom feature.xml templates
    (``src/main/feature/feature.xml``), the version range should
-   be "[10,11)" instead of "[9,10)", "[5.0.3,6)" or any other variation.
+   be "[11,12)" instead of "[10,11)", "[5.0.3,6)" or any other variation.
 
  .. code-block:: shell
 
-  bump-odl-version odlparent 9.0.13 10.0.0
+  bump-odl-version odlparent 10.0.3 11.0.1
 
-2. Update the direct yangtools version references from 7.0.14 to 8.0.3,
+2. Update the direct yangtools version references from 8.0.7 to 9.0.1,
    There should not be any reference to **org.opendaylight.yangtools**,
-   except for 8.0.2. This includes custom feature.xml templates
+   except for 9.0.1. This includes custom feature.xml templates
    (``src/main/feature/feature.xml``), the version range should
-   be "[8,9)" instead of "[7,8)".
+   be "[9,10)" instead of "[8,9)".
 
  .. code-block:: shell
 
-  bump-odl-version yangtools 7.0.14 8.0.3
+  bump-odl-version yangtools 8.0.7 9.0.1
 
-3. Update the MD-SAL version from 8.0.11 to 9.0.2. There should not be
-   any reference to **org.opendaylight.mdsal**, except for 9.0.2.
-
- .. code-block:: shell
-
-  bump-odl-version mdsal 8.0.11 9.0.2
-
-4. Update the Controller version from 4.0.10 to 5.0.3. There should not be
-   any reference to **org.opendaylight.controller**, except for 5.0.3.
+3. Update the MD-SAL version from 9.0.5 to 10.0.1. There should not be
+   any reference to **org.opendaylight.mdsal**, except for 10.0.1.
 
  .. code-block:: shell
 
-  bump-odl-version controller 4.0.10 5.0.3
+  bump-odl-version mdsal 9.0.5 10.0.1
 
-5. Update the InfraUtils version from 2.0.13 to 3.0.0. There should not be
-   any reference to **org.opendaylight.infrautils**, except for 3.0.0.
-
- .. code-block:: shell
-
-  bump-odl-version infrautils 2.0.13 3.0.0
-
-6. Update the AAA version from 0.14.10 to 0.15.3. There should not be
-   any reference to **org.opendaylight.aaa**, except for 0.15.3.
+4. Update the Controller version from 5.0.6 to 6.0.1. There should not be
+   any reference to **org.opendaylight.controller**, except for 6.0.1.
 
  .. code-block:: shell
 
-  bump-odl-version aaa 0.14.10 0.15.3
+  bump-odl-version controller 5.0.6 6.0.1
 
-7. Update the NETCONF version from 2.0.14 to 3.0.2. There should not be
-   any reference to **org.opendaylight.netconf**, except for 3.0.2.
+5. Update the InfraUtils version from 3.0.2 to 4.0.1. There should not be
+   any reference to **org.opendaylight.infrautils**, except for 4.0.1.
 
  .. code-block:: shell
 
-  bump-odl-version netconf 2.0.14 3.0.2
+  bump-odl-version infrautils 3.0.2 4.0.1
+
+6. Update the AAA version from 0.15.6 to 0.16.1. There should not be
+   any reference to **org.opendaylight.aaa**, except for 0.16.1.
+
+ .. code-block:: shell
+
+  bump-odl-version aaa 0.15.6 0.16.1
+
+7. Update the NETCONF version from 3.0.6 to 4.0.1. There should not be
+   any reference to **org.opendaylight.netconf**, except for 4.0.1.
+
+ .. code-block:: shell
+
+  bump-odl-version netconf 3.0.6 4.0.1
 
 Install Dependent Projects
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Before performing platform upgrade, users must also install
 any dependent project. To locally install a dependent project,
 pull and install the respective
-`sulfur-mri <https://git.opendaylight.org/gerrit/q/topic:sulfur-mri>`_
+`sulfur-mri <https://git.opendaylight.org/gerrit/q/topic:chlorine-mri>`_
 changes for any dependent project.
 
 Perform the following steps to save time when locally installing
@@ -106,69 +107,43 @@ Upgrade the ODL Parent
 ----------------------
 The following sub-section describes how to upgrade to
 the ODL Parent version 9. Refer to the `ODL Parent Release Notes
-<https://github.com/opendaylight/odlparent/blob/master/docs/NEWS.rst#version-1000>`_
+<https://github.com/opendaylight/odlparent/blob/master/docs/NEWS.rst#version-1101>`_
 for more information.
 
 Features
 ^^^^^^^^
-Any version range referencing version 9 of ODL Parent must be changed
-to “[10,11)” for ODL Parent 10.
+Any version range referencing version 10 of ODL Parent must be changed
+to “[11,12)” for ODL Parent 10.
 
  .. code-block:: xml
 
    <feature name="odl-infrautils-caches">
-       <feature version="[10,11)">odl-guava</feature>
+       <feature version="[11,12)">odl-guava</feature>
    </feature>
 
 ODL Parent Impacts
 ------------------
 
-Minimum Maven version is 3.8.3
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The minimum version of Apache Maven has been raised to ``3.8.3``. Attempts to build any component with an older
-version will result in a build failure.
+Upstream declarations removed
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+A number of declarations of upstream projects, which are no longer used in OpenDaylight, have been removed. This
+includes ``Google Truth``, ``commons-codec``, ``commons-fileupload``, ``commons-net``, ``jsonassert``, ``jungg``
+and ``spring-osgi-mock``.
 
-blueprint-maven-plugin declarations removed
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The declarations of ``blueprint-maven-plugin`` and its related annotations has been removed. The plugin seems to
-be no longer maintained. Downstreams are advised to either switch to a hand-written XML container, or pick maintain
-these declarations themselves.
-
-Powermock declarations removed
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The declarations of powermock dependencies have been removed. Downstreams are advised to migrate to pure Mockito,
-as it covers all use cases supported by Powermock. Alternatively, downstreams can maintain these declarations, but
-note that Mockito declaration needs to also be downgraded:
-
-  .. code-block:: xml
-
-    <dependency>
-      <groupId>org.mockito</groupId>
-      <artifactId>mockito-core</artifactId>
-      <version>3.12.4</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.powermock</groupId>
-      <artifactId>powermock-api-mockito2</artifactId>
-      <version>2.0.9</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.powermock</groupId>
-      <artifactId>powermock-module-junit4</artifactId>
-      <version>2.0.9</version>
-      <scope>test</scope>
-    </dependency>
-
-
-Removed OSGi roll-up bundles
+Partial migration to Jakarta
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-In preparation for adoption of OSGi Release 8, the declarations of roll-up bundles -- ``osgi.annotation``, ``osgi.core``,
-``osgi.cmpn`` -- have been removed. Unfortunately these are still leaking from Karaf's BOM with scope=compile.
+A number of Jakarta EE artifacts have been migrated from their legacy ``javax`` namespace to the new ``jakarta``
+namespace. This does not affect Java packages, only dependency declarations.
 
-Downstreams need to migrate their dependency declarations to the individual bundles, like ``org.osgi.framework``,
-``org.osgi.service.component.annotations`` and similar. Failure to do so will end up being caught by Single Feature Test.
+ .. list-table javax to Jakarta conversion
+    :header-rows: 1
+
+    * - Old coordinate
+      - New coordinate
+    * - javax.activation/javax.activation-api
+      - jakarta.activation/jakarta.activation-api
+    * - javax.ws.rs/javax.ws.rs-api
+      - jakarta.ws.rs/jakarta.ws.rs-api
 
 YANG Tools Impacts
 ------------------
