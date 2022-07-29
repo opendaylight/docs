@@ -32,40 +32,20 @@ There are no new features.
 Deprecated and Removed Features
 ===============================
 The old RESTCONF endpoint ``localhost:8181/restconf``, as installed via ``odl-restconf-nb-bierman02`` feature,
-is now considered obsolete and is not installed by default. Users are advised to migrate to using the
-RFC8040-compliant endpoint ``localhost:8181/rests``, as installed via ``odl-restconf-nb-rfc8040``. The support
-for the old endpoint will be removed in the next major release.
+has been removed.
 
 Resolved Issues
 ===============
-
 The following table lists the issues resolved in this release.
 
 .. jira_fixed_issues::
    :project: NETCONF
-   :versions: 3.0.0-3.0.2
+   :versions: 4.0.0-4.0.0
 
 Known Issues
 ============
-
 The following table lists the known issues that exist in this release.
 
 .. jira_known_issues::
    :project: NETCONF
-   :versions: 3.0.0-3.0.2
-
-Resolved Issues in SR1
-======================
-The following table lists the issues resolved in Service Release 1.
-
-.. jira_fixed_issues::
-   :project: NETCONF
-   :versions: 3.0.3-3.0.5
-
-Known Issues in SR1
-===================
-The following table lists the known issues that exist in Service Release 1.
-
-.. jira_known_issues::
-   :project: NETCONF
-   :versions: 3.0.3-3.0.5
+   :versions: 4.0.0-4.0.0
