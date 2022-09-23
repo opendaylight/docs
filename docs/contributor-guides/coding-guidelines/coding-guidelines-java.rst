@@ -372,6 +372,7 @@ Additional Resources
    https://github.com/google/styleguide/blob/gh-pages/intellij-java-google-style.xml
 -  `How to set Checkstyle up in IntelliJ old wiki page <https://wiki-archive.opendaylight.org/view/How_to_set_Checkstyle_up_in_IntelliJ>`__
 
+<<<<<<< HEAD   (216b89 Fix a release reference)
 PMD Copy/Paste Detection (CPD)
 ==============================
 
@@ -399,6 +400,8 @@ positives for a few lines, a method or god forbid an entire class, using:
    ...
    @SuppressWarnings("CPD-END")
 
+=======
+>>>>>>> CHANGE (6c9e05 Remove CPD section in coding guidelines for Java)
 Classes methods / fields ordering
 =================================
 
