@@ -90,5 +90,9 @@ html_context = {
 sys.path.append(os.path.abspath('ext'))
 extensions.append('odl-jira')
 
+# Set language to English
+language = "en"
+
+
 def setup(app):
     app.add_css_file("css/ribbon.css")
