@@ -30,7 +30,7 @@ The following table lists the issues resolved in this release.
 
 .. jira_fixed_issues::
    :project: AAA
-   :versions: 0.16.0-0.16.1
+   :versions: 0.16.0-0.16.3
 
 Known Issues
 ============
@@ -38,4 +38,4 @@ The following table lists the known issues that exist in this release.
 
 .. jira_known_issues::
    :project: AAA
-   :versions: 0.16.0-0.16.1
+   :versions: 0.16.0-0.16.3

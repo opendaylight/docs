@@ -44,19 +44,19 @@ versions (for example, `bump-odl-version <https://github.com/skitt/odl-tools/blo
 
   bump-odl-version yangtools 8.0.7 9.0.1
 
-3. Update the MD-SAL version from 9.0.5 to 10.0.1. There should not be
-   any reference to **org.opendaylight.mdsal**, except for 10.0.1.
+3. Update the MD-SAL version from 9.0.5 to 10.0.2. There should not be
+   any reference to **org.opendaylight.mdsal**, except for 10.0.2.
 
  .. code-block:: shell
 
-  bump-odl-version mdsal 9.0.5 10.0.1
+  bump-odl-version mdsal 9.0.5 10.0.2
 
-4. Update the Controller version from 5.0.6 to 6.0.1. There should not be
-   any reference to **org.opendaylight.controller**, except for 6.0.1.
+4. Update the Controller version from 5.0.6 to 6.0.2. There should not be
+   any reference to **org.opendaylight.controller**, except for 6.0.2.
 
  .. code-block:: shell
 
-  bump-odl-version controller 5.0.6 6.0.1
+  bump-odl-version controller 5.0.6 6.0.2
 
 5. Update the InfraUtils version from 3.0.2 to 4.0.1. There should not be
    any reference to **org.opendaylight.infrautils**, except for 4.0.1.
@@ -65,19 +65,19 @@ versions (for example, `bump-odl-version <https://github.com/skitt/odl-tools/blo
 
   bump-odl-version infrautils 3.0.2 4.0.1
 
-6. Update the AAA version from 0.15.6 to 0.16.1. There should not be
-   any reference to **org.opendaylight.aaa**, except for 0.16.1.
+6. Update the AAA version from 0.15.6 to 0.16.3. There should not be
+   any reference to **org.opendaylight.aaa**, except for 0.16.3.
 
  .. code-block:: shell
 
-  bump-odl-version aaa 0.15.6 0.16.1
+  bump-odl-version aaa 0.15.6 0.16.3
 
-7. Update the NETCONF version from 3.0.6 to 4.0.1. There should not be
-   any reference to **org.opendaylight.netconf**, except for 4.0.1.
+7. Update the NETCONF version from 3.0.6 to 4.0.2. There should not be
+   any reference to **org.opendaylight.netconf**, except for 4.0.2.
 
  .. code-block:: shell
 
-  bump-odl-version netconf 3.0.6 4.0.1
+  bump-odl-version netconf 3.0.6 4.0.2
 
 Install Dependent Projects
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
