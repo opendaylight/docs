@@ -375,7 +375,7 @@ Additional Resources
 PMD Copy/Paste Detection (CPD)
 ==============================
 
-odlparent includes `PMD <https://pmd.github.io>`__ with its `CPD <https://pmd.github.io/pmd-6.0.0/pmd_userdocs_cpd.html>`__
+odlparent includes `PMD <https://pmd.github.io>`__ with its `CPD <https://pmd.github.io/latest/pmd_userdocs_cpd.html>`__
 (Copy/Paste detection), which will warn but yet not fail the build for any
 duplicate code (not just within but also across classes within the same module)
 .
@@ -775,4 +775,3 @@ It should however be avoided when many objects are created in the resulting
 lambda expressions, especially if DTOs end up being necessary to convey
 information from one lambda to the next where a single variable could do the
 trick in a more traditional form. (TODO: provide examples.)
-
