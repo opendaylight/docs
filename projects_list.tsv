@@ -10,10 +10,10 @@ integration-test	latest
 integration-packaging	latest
 releng-builder	latest
 #MSI projects
-daexim	latest
-integration-distribution	latest
-jsonrpc	latest
-lispflowmapping	latest
-openflowplugin	latest
+daexim	stable-sulfur
+integration-distribution	stable-sulfur
+jsonrpc	stable-sulfur
+lispflowmapping	stable-sulfur
+openflowplugin	stable-sulfur
 ovsdb	latest
 transportpce	latest
