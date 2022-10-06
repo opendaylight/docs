@@ -16,6 +16,24 @@
       "message": "Guillaume, is there any reason why this was abandoned other than the merge conflict? If you reactivate this, then I can update this change to resolve the conflict.",
       "revId": "f49d4a48db0292a264999ea59f2c9dee0b13f345",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a549653d_93c5c091",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6731
+      },
+      "writtenOn": "2022-10-06T07:11:49Z",
+      "side": 1,
+      "message": "Hi Sangwook,\n\nI abandonned it because after cherry-picking it, I realized CPD was removed in odlparent with Chlorine and was still present in Sulfur AFAIK.",
+      "parentUuid": "c90b6627_47271d1f",
+      "revId": "f49d4a48db0292a264999ea59f2c9dee0b13f345",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ]
 }
