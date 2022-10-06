@@ -34,6 +34,24 @@
       "parentUuid": "c90b6627_47271d1f",
       "revId": "f49d4a48db0292a264999ea59f2c9dee0b13f345",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ae624ff3_1e7197dd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1927
+      },
+      "writtenOn": "2022-10-06T17:27:58Z",
+      "side": 1,
+      "message": "It\u0027s removed for odlparent 10.0.0 according to ODLPARENT-269 with this change on December 2021:\nhttps://git.opendaylight.org/gerrit/c/odlparent/+/98828\n\nodlparent 10.0.0 was adopted for Sulfur GA:\nhttps://docs.opendaylight.org/projects/integration-distribution/en/stable-sulfur/platform-versions.html",
+      "parentUuid": "a549653d_93c5c091",
+      "revId": "f49d4a48db0292a264999ea59f2c9dee0b13f345",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ]
 }
