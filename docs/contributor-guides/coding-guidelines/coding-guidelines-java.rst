@@ -372,33 +372,6 @@ Additional Resources
    https://github.com/google/styleguide/blob/gh-pages/intellij-java-google-style.xml
 -  `How to set Checkstyle up in IntelliJ old wiki page <https://wiki-archive.opendaylight.org/view/How_to_set_Checkstyle_up_in_IntelliJ>`__
 
-PMD Copy/Paste Detection (CPD)
-==============================
-
-odlparent includes `PMD <https://pmd.github.io>`__ with its `CPD <https://pmd.github.io/pmd-6.0.0/pmd_userdocs_cpd.html>`__
-(Copy/Paste detection), which will warn but yet not fail the build for any
-duplicate code (not just within but also across classes within the same module)
-.
-You should refactor any such copy/pasted code, and can then enforce CPD to fail
-the build for future non regression by adding this to your POM:
-
-.. code-block:: text
-
-   <pmd.cpd.fail>true</pmd.cpd.fail>
-
-Note that CPD's analysis is text-based and not semantic, so it will flag code
-which "looks" identical to it even if it uses different Java types (which do not
-share a common super type; so that it's non-trivial to refactor).
-So in the unlikely case that there is a real good justified reason for what
-looks like copy paste to PMD, you can selectively suppress true PMD CPD false
-positives for a few lines, a method or god forbid an entire class, using:
-
-.. code-block:: text
-
-   @SuppressWarnings("CPD-START")
-   ...
-   @SuppressWarnings("CPD-END")
-
 Classes methods / fields ordering
 =================================
 
@@ -775,4 +748,3 @@ It should however be avoided when many objects are created in the resulting
 lambda expressions, especially if DTOs end up being necessary to convey
 information from one lambda to the next where a single variable could do the
 trick in a more traditional form. (TODO: provide examples.)
-
