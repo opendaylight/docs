@@ -16,6 +16,24 @@
       "message": "The main reason for this change is to link integration-distribution to stable-sulfur to show correct platform version information. At the moment the page linked from https://docs.opendaylight.org/en/stable-sulfur/ shows the platform versions for Chlorine.\n\nUnfortunately, most MRI projects, except for netconf, do not have document set up for the versions used for Sulfur SR2, so they were kept as latest as well as transportpce \u0026 ovsdb, which don\u0027t have stable-sulfur.",
       "revId": "4a83786d7aeb0466b891d3732a0611189ee5c739",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d67e0c4e_1aeedb38",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6731
+      },
+      "writtenOn": "2022-10-07T09:00:25Z",
+      "side": 1,
+      "message": "Thx for poiting this Sangwook.\nIt seems these versions are now referred as stable now.\nand that older version aluminium etc reappeared though they used to be disabled them in RTD...\nI assume something changed in LFN upstrams configuration and automation process... :(\nThis requires a few more investigations...",
+      "parentUuid": "e7ac153d_4cd6d229",
+      "revId": "4a83786d7aeb0466b891d3732a0611189ee5c739",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ]
 }
