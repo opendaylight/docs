@@ -250,8 +250,10 @@ Jetty server to utilize SSL by performing the following steps.
         org.osgi.service.http.secure.enabled=true
         org.osgi.service.http.port.secure=8443
         org.ops4j.pax.web.ssl.keystore=./etc/.keystore
-        org.ops4j.pax.web.ssl.password=123456
-        org.ops4j.pax.web.ssl.keypassword=123456
+        org.ops4j.pax.web.ssl.keystore.password=123456
+        org.ops4j.pax.web.ssl.keystore.type=PKCS12
+        org.ops4j.pax.web.ssl.key.password=123456
+        org.ops4j.pax.web.ssl.key.alias=jetty
 
 #. Then edit the ``etc/jetty.xml`` file with the appropriate HTTP connectors.
 
