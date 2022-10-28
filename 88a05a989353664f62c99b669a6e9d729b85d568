@@ -35,6 +35,24 @@
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "30747f0f_bce9473e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6731
+      },
+      "writtenOn": "2022-10-28T07:12:05Z",
+      "side": 1,
+      "message": "weird -W is specified in tox.ini...",
+      "parentUuid": "6e24f48f_abceb753",
+      "revId": "88a05a989353664f62c99b669a6e9d729b85d568",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f7618db2_8fbefdf0",
@@ -48,6 +66,24 @@
       "writtenOn": "2022-10-28T05:51:05Z",
       "side": 1,
       "message": "underline is incorrect",
+      "revId": "88a05a989353664f62c99b669a6e9d729b85d568",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d7fd1ffb_8218d996",
+        "filename": "docs/downloads.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6731
+      },
+      "writtenOn": "2022-10-28T07:12:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f7618db2_8fbefdf0",
       "revId": "88a05a989353664f62c99b669a6e9d729b85d568",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
