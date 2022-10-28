@@ -5,10 +5,29 @@ OpenDaylight Downloads
 Supported Releases
 ==================
 
-Sulfur-SR2
+Chlorine-SR0
 --------------
 
 (Current Release)
+
+:Announcement: `Chlorine <https://www.opendaylight.org/current-release-chlorine>`_
+
+:GA Release Date: October 27, 2022
+
+:Downloads:
+    * `OpenDaylight Chlorine Tar
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/17.0.0/opendaylight-17.0.0.tar.gz>`_
+    * `OpenDaylight Chlorine Zip
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/17.0.0/opendaylight-17.0.0.zip>`_
+
+:Documentation:
+    * :doc:`Getting Started Guide <odl-chlorine:getting-started-guide/index>`
+    * :doc:`Project Guides <odl-chlorine:index>`
+    * :doc:`Release Notes <odl-chlorine:release-notes/index>`
+
+
+Sulfur-SR2
+--------------
 
 :Announcement: `Sulfur <https://www.opendaylight.org/current-release-sulfur>`_
 
@@ -26,25 +45,6 @@ Sulfur-SR2
     * :doc:`Project Guides <odl-sulfur:index>`
     * :doc:`Release Notes <odl-sulfur:release-notes/index>`
 
-
-Phosphorus-SR3
---------------
-
-:Announcement: `Phosphorus <https://www.opendaylight.org/current-release-phosphorus>`_
-
-:GA Release Date: October 15, 2021
-:Service Release Date: July 2, 2021
-
-:Downloads:
-    * `OpenDaylight Phosphorus Tar
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/15.3.0/opendaylight-15.3.0.tar.gz>`_
-    * `OpenDaylight Phosphorus Zip
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/15.3.0/opendaylight-15.3.0.zip>`_
-
-:Documentation:
-    * :doc:`Getting Started Guide <odl-phosphorus:getting-started-guide/index>`
-    * :doc:`Project Guides <odl-phosphorus:index>`
-    * :doc:`Release Notes <odl-phosphorus:release-notes/index>`
 
 Archived Releases
 =================
