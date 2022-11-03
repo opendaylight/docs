@@ -15,7 +15,7 @@ Preparation
 
 JDK 17 Version
 ^^^^^^^^^^^^^^
-2022.09 Sulfur requires Java 17, both during compile-time and run-time.
+2022.09 Chlorine requires Java 17, both during compile-time and run-time.
 Make sure to install JDK 17 corresponding to at least ``openjdk-17.0.4``,
 and that the JAVA_HOME environment variable points to the JDK directory.
 
