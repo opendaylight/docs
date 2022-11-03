@@ -1,10 +1,10 @@
-=================================
-2022.09 Chlorine Platform Upgrade
-=================================
+==============================
+2023.03 Argon Platform Upgrade
+==============================
 
-This document describes the steps to help users upgrade from Sulfur
-to Chlorine planned platform. Refer to `Managed Snapshot Integrated (MSI)
-project <https://git.opendaylight.org/gerrit/q/topic:chlorine-mri>`_
+This document describes the steps to help users upgrade from Chlorine
+to Argon planned platform. Refer to `Managed Snapshot Integrated (MSI)
+project <https://git.opendaylight.org/gerrit/q/topic:argon-mri>`_
 upgrade patches for more information and hints for solutions to common
 problems not explicitly listed here.
 
@@ -15,8 +15,8 @@ Preparation
 
 JDK 17 Version
 ^^^^^^^^^^^^^^
-2022.09 Chlorine requires Java 17, both during compile-time and run-time.
-Make sure to install JDK 17 corresponding to at least ``openjdk-17.0.4``,
+2023.03 Argon requires Java 17, both during compile-time and run-time.
+Make sure to install JDK 17 corresponding to at least ``openjdk-17.0.5``,
 and that the JAVA_HOME environment variable points to the JDK directory.
 
 Version Bump
@@ -24,67 +24,67 @@ Version Bump
 Before performing platform upgrade, do the following to bump the odlparent
 versions (for example, `bump-odl-version <https://github.com/skitt/odl-tools/blob/master/bump-odl-version>`_):
 
-1. Update the odlparent version from 10.0.3 to 11.0.1. There should
+1. Update the odlparent version from 11.0.2 to 12.0.1. There should
    not be any reference to **org.opendaylight.odlparent**, except
-   for 11.0.1. This includes custom feature.xml templates
+   for 12.0.1. This includes custom feature.xml templates
    (``src/main/feature/feature.xml``), the version range should
-   be "[11,12)" instead of "[10,11)", "[5.0.3,6)" or any other variation.
+   be "[12,13)" instead of "[11,12)", "[5.0.3,6)" or any other variation.
 
  .. code-block:: shell
 
-  bump-odl-version odlparent 10.0.3 11.0.1
+  bump-odl-version odlparent 11.0.2 12.0.1
 
-2. Update the direct yangtools version references from 8.0.7 to 9.0.1,
+2. Update the direct yangtools version references from 9.0.2 to 10.0.2,
    There should not be any reference to **org.opendaylight.yangtools**,
-   except for 9.0.1. This includes custom feature.xml templates
+   except for 10.0.2. This includes custom feature.xml templates
    (``src/main/feature/feature.xml``), the version range should
-   be "[9,10)" instead of "[8,9)".
+   be "[10,11)" instead of "[9,10)".
 
  .. code-block:: shell
 
-  bump-odl-version yangtools 8.0.7 9.0.1
+  bump-odl-version yangtools 9.0.2 10.0.2
 
-3. Update the MD-SAL version from 9.0.5 to 10.0.2. There should not be
-   any reference to **org.opendaylight.mdsal**, except for 10.0.2.
-
- .. code-block:: shell
-
-  bump-odl-version mdsal 9.0.5 10.0.2
-
-4. Update the Controller version from 5.0.6 to 6.0.2. There should not be
-   any reference to **org.opendaylight.controller**, except for 6.0.2.
+3. Update the MD-SAL version from 10.0.2 to 11.0.4. There should not be
+   any reference to **org.opendaylight.mdsal**, except for 11.0.4.
 
  .. code-block:: shell
 
-  bump-odl-version controller 5.0.6 6.0.2
+  bump-odl-version mdsal 10.0.2 11.0.4
 
-5. Update the InfraUtils version from 3.0.2 to 4.0.1. There should not be
-   any reference to **org.opendaylight.infrautils**, except for 4.0.1.
-
- .. code-block:: shell
-
-  bump-odl-version infrautils 3.0.2 4.0.1
-
-6. Update the AAA version from 0.15.6 to 0.16.3. There should not be
-   any reference to **org.opendaylight.aaa**, except for 0.16.3.
+4. Update the Controller version from 6.0.2 to 7.0.2. There should not be
+   any reference to **org.opendaylight.controller**, except for 7.0.2.
 
  .. code-block:: shell
 
-  bump-odl-version aaa 0.15.6 0.16.3
+  bump-odl-version controller 6.0.2 7.0.2
 
-7. Update the NETCONF version from 3.0.6 to 4.0.2. There should not be
-   any reference to **org.opendaylight.netconf**, except for 4.0.2.
+5. Update the InfraUtils version from 4.0.1 to 5.0.1. There should not be
+   any reference to **org.opendaylight.infrautils**, except for 5.0.1.
 
  .. code-block:: shell
 
-  bump-odl-version netconf 3.0.6 4.0.2
+  bump-odl-version infrautils 4.0.1 5.0.1
+
+6. Update the AAA version from 0.16.3 to 0.17.3. There should not be
+   any reference to **org.opendaylight.aaa**, except for 0.17.3.
+
+ .. code-block:: shell
+
+  bump-odl-version aaa 0.16.3 0.17.3
+
+7. Update the NETCONF version from 4.0.2 to 5.0.1. There should not be
+   any reference to **org.opendaylight.netconf**, except for 5.0.1.
+
+ .. code-block:: shell
+
+  bump-odl-version netconf 4.0.2 5.0.1
 
 Install Dependent Projects
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Before performing platform upgrade, users must also install
 any dependent project. To locally install a dependent project,
 pull and install the respective
-`sulfur-mri <https://git.opendaylight.org/gerrit/q/topic:chlorine-mri>`_
+`argon-mri <https://git.opendaylight.org/gerrit/q/topic:argon-mri>`_
 changes for any dependent project.
 
 Perform the following steps to save time when locally installing
@@ -106,23 +106,25 @@ any dependent project:
 Upgrade the ODL Parent
 ----------------------
 The following sub-section describes how to upgrade to
-the ODL Parent version 9. Refer to the `ODL Parent Release Notes
-<https://github.com/opendaylight/odlparent/blob/master/docs/NEWS.rst#version-1101>`_
+the ODL Parent version 12. Refer to the `ODL Parent Release Notes
+<https://github.com/opendaylight/odlparent/blob/master/docs/NEWS.rst#version-1201>`_
 for more information.
 
 Features
 ^^^^^^^^
-Any version range referencing version 10 of ODL Parent must be changed
-to “[11,12)” for ODL Parent 10.
+Any version range referencing version 11 of ODL Parent must be changed
+to “[12,13)” for ODL Parent 12.
 
  .. code-block:: xml
 
    <feature name="odl-infrautils-caches">
-       <feature version="[11,12)">odl-guava</feature>
+       <feature version="[12,13)">odl-guava</feature>
    </feature>
 
 ODL Parent Impacts
 ------------------
+
+// FIXME: finish this up
 
 Upstream declarations removed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
