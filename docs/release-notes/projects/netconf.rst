@@ -17,12 +17,16 @@ The ``odl-restconf-nb-rfc8040`` feature has been renamed to ``odl-restconf-nb``.
 
 New Features
 ============
-There are no new features.
+Support for subscribing to mounted NETCONF devices has been added. See
+`<NETCONF-745 https://jira.opendaylight.org/browse/NETCONF-745>`__ for details.
+
+A new RESTCONF query extension has been added. This supports reporting only leaf values which have actually
+changed. See `NETCONF-862 <https://jira.opendaylight.org/browse/NETCONF-862>`__ for details.
 
 Deprecated and Removed Features
 ===============================
-The old RESTCONF endpoint ``localhost:8181/restconf``, as installed via ``odl-restconf-nb-bierman02`` feature,
-has been removed.
+RPC definitions in ``netconf-node-topology.yang`` have been deprecated. Their functionality is completely covered
+by manipulating the configuration datastore.
 
 Resolved Issues
 ===============
@@ -30,7 +34,7 @@ The following table lists the issues resolved in this release.
 
 .. jira_fixed_issues::
    :project: NETCONF
-   :versions: 4.0.0-4.0.2
+   :versions: 5.0.0-5.0.1
 
 Known Issues
 ============
@@ -38,20 +42,4 @@ The following table lists the known issues that exist in this release.
 
 .. jira_known_issues::
    :project: NETCONF
-   :versions: 4.0.0-4.0.2
-
-Resolved Issues in SR1
-======================
-The following table lists the issues resolved in Service Release 1.
-
-.. jira_fixed_issues::
-   :project: NETCONF
-   :versions: 4.0.3-4.0.3
-
-Known Issues in SR1
-===================
-The following table lists the known issues that exist in Service Release 1.
-
-.. jira_known_issues::
-   :project: NETCONF
-   :versions: 4.0.3-4.0.3
+   :versions: 5.0.0-5.0.1

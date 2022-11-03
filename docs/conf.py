@@ -30,7 +30,8 @@ def update_intersphinx_mapping():
 update_intersphinx_mapping()
 
 # OpenDaylight Documentation Releases
-intersphinx_mapping['odl-chlorine'] = ('https://docs.opendaylight.org/en/latest/', None)
+intersphinx_mapping['odl-argon'] = ('https://docs.opendaylight.org/en/latest/', None)
+intersphinx_mapping['odl-chlorine'] = ('https://docs.opendaylight.org/en/stable-chlorine/', None)
 intersphinx_mapping['odl-sulfur'] = ('https://docs.opendaylight.org/en/stable-sulfur/', None)
 intersphinx_mapping['odl-phosphorus'] = ('https://docs.opendaylight.org/en/stable-phosphorus/', None)
 intersphinx_mapping['odl-silicon'] = ('https://docs.opendaylight.org/en/stable-silicon/', None)
@@ -72,7 +73,7 @@ linkcheck_ignore = [
     # this url often has connectivity issues on the gate
     'https://www.mojohaus.org/animal-sniffer/animal-sniffer-maven-plugin/examples/checking-signatures.html',
     #Ignore announce page link till it is up
-    'https://www.opendaylight.org/current-release-chlorine',
+    'https://www.opendaylight.org/current-release-argon',
 ]
 linkcheck_timeout = 300
 
