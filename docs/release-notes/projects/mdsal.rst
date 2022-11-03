@@ -13,27 +13,25 @@ for providing YANG-defined interaction patterns:
 
 Behavior/Feature Changes
 ========================
-The Binding mapping of ``type identityref`` YANG statement has been updated to use singleton objects
-instead of corresponding ``.class`` references. These singleton objects are exposed as ``VALUE`` constants,
-hence the migration is a straightforward move from ``Foo.class`` to ``Foo.VALUE``.
-
-Binding classes generated for ``type enumeration`` YANG statement now have ``ofName()`` and ``ofValue()``
-methods, which return a non-null object or throw an ``IllegalArgumentException``.
-
-The ``feature`` YANG statement now has a representation in Binding: it is a final class which subclasses
-``YangFeature`` with a singleton value.
+The Binding mapping of ``type bits`` YANG statement has been updated to use a dedicated common
+superinterface, ``BitsTypeObject``. Furthermore individual bits within these classes are now represented
+as primitive ``boolean`` values rather than nullable ``Boolean`` objects.
 
 New Features
 ============
-Both ``DOMNotificationService`` and ``NotificationService`` have gained the ability to register single-type
-and flexible multi-type notification listerners. This change allows Binding users to implement only specific
-listeners, unlike the previous method of using generated interfaces extending ``NotificationListener`` -- which
-required implementation of methods for every notification defined in a specific module.
+Both ``DOMRpcProviderService`` and ``RpcProviderService`` have gained the ability to register single-type
+and flexible multi-type RPC implementations. ``RpcConsumerRegistry`` have gained the ability to access single-RPC
+handles. These capabilities are based on new codegen feature, which generates ``@FunctionalInterface`` interfaces
+for each individual ``rpc``, similar to how ``action`` statements are processed.
 
 Deprecated Features
 ===================
 ``NotificationService.registerNotificationListener()`` method has been deprecated, along with its Binding
-specification interfaces based on ``NotificationListener``. These will be removed in the next major release.
+specification interfaces based on ``NotificationListener``. These will be removed in a future major release.
+
+``RpcProviderService.registerRpcImplementation()`` methods, ``RpcConsumerRegistry.getRpcService()`` methods and
+Binding specification interfaces based on ``RpcService`` have been deprecated. These will be removed in a future
+major release.
 
 Removed Features
 ===================
@@ -45,7 +43,7 @@ The following table lists the issues resolved in this release.
 
 .. jira_fixed_issues::
    :project: MDSAL
-   :versions: 10.0.0-10.0.2
+   :versions: 11.0.0-11.0.4
 
 Known Issues
 ============
@@ -53,20 +51,4 @@ The following table lists the known issues that exist in this release.
 
 .. jira_known_issues::
    :project: MDSAL
-   :versions: 10.0.0-10.0.2
-
-Resolved Issues in SR1
-======================
-The following table lists the issues resolved in Service Release 1.
-
-.. jira_fixed_issues::
-   :project: MDSAL
-   :versions: 10.0.3-10.0.3
-
-Known Issues in SR1
-===================
-The following table lists the known issues that exist in Service Release 1.
-
-.. jira_known_issues::
-   :project: MDSAL
-   :versions: 10.0.3-10.0.3
+   :versions: 11.0.0-10.0.4

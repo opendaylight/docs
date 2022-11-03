@@ -19,7 +19,9 @@ There are no new features.
 
 Deprecated and Removed Features
 ===============================
-No deprecated or removed features.
+Distributed Datastore's ``ask-based`` protocol has been deprecated in this release. Enabling it
+will cause a warning to be logged. Configuration knob along with the actual implementation
+is schedule for removal in a future release.
 
 Resolved Issues
 ===============
@@ -27,7 +29,7 @@ The following table lists the issues resolved in this release.
 
 .. jira_fixed_issues::
    :project: CONTROLLER
-   :versions: 6.0.0-6.0.2
+   :versions: 7.0.0-7.0.2
 
 Known Issues
 ============
@@ -35,20 +37,4 @@ The following table lists the known issues that exist in this release.
 
 .. jira_known_issues::
    :project: CONTROLLER
-   :versions: 6.0.0-6.0.2
-
-Resolved Issues in SR1
-======================
-The following table lists the issues resolved in Service Release 1.
-
-.. jira_fixed_issues::
-   :project: CONTROLLER
-   :versions: 6.0.3-6.0.3
-
-Known Issues in SR1
-===================
-The following table lists the known issues that exist in Service Release 1.
-
-.. jira_known_issues::
-   :project: CONTROLLER
-   :versions: 6.0.3-6.0.3
+   :versions: 7.0.0-7.0.2
