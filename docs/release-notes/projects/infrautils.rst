@@ -85,7 +85,7 @@ The following table lists the issues resolved in Service Release 3.
 
 .. jira_fixed_issues::
    :project: INFRAUTILS
-   :versions: 3.0.3-3.0.3
+   :versions: 3.0.3-3.0.4
 
 Known Issues in SR3
 ===================
@@ -93,4 +93,4 @@ The following table lists the known issues that exist in Service Release 3.
 
 .. jira_known_issues::
    :project: INFRAUTILS
-   :versions: 3.0.3-3.0.3
+   :versions: 3.0.3-3.0.4

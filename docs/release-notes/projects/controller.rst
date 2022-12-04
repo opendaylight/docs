@@ -83,7 +83,7 @@ The following table lists the issues resolved in Service Release 3.
 
 .. jira_fixed_issues::
    :project: CONTROLLER
-   :versions: 5.0.7-5.0.7
+   :versions: 5.0.7-5.0.8
 
 Known Issues in SR3
 ===================
@@ -91,4 +91,4 @@ The following table lists the known issues that exist in Service Release 3.
 
 .. jira_known_issues::
    :project: CONTROLLER
-   :versions: 5.0.7-5.0.7
+   :versions: 5.0.7-5.0.8
