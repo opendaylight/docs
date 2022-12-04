@@ -74,7 +74,7 @@ The following table lists the issues resolved in Service Release 1.
 
 .. jira_fixed_issues::
    :project: BGPCEP
-   :versions: 0.18.3-0.18.3
+   :versions: 0.18.3-0.18.4
 
 Known Issues in SR1
 ===================
@@ -82,4 +82,4 @@ The following table lists the known issues that exist in Service Release 1.
 
 .. jira_known_issues::
    :project: BGPCEP
-   :versions: 0.18.3-0.18.3
+   :versions: 0.18.3-0.18.4

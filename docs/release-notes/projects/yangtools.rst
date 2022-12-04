@@ -60,7 +60,7 @@ The following table lists the issues resolved in Service Release 1.
 
 .. jira_fixed_issues::
    :project: YANGTOOLS
-   :versions: 9.0.2-9.0.2
+   :versions: 9.0.2-9.0.5
 
 Known Issues in SR1
 ===================
@@ -68,4 +68,4 @@ The following table lists the known issues that exist in Service Release 1.
 
 .. jira_known_issues::
    :project: YANGTOOLS
-   :versions: 9.0.2-9.0.2
+   :versions: 9.0.2-9.0.5
