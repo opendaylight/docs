@@ -64,3 +64,16 @@ serviceutils
 * `2b81464 <https://git.opendaylight.org/gerrit/q/2b81464>`_
   : Bump MRI upstreams
 
+
+transportpce
+------------
+* `a7f3ebb4 <https://git.opendaylight.org/gerrit/q/a7f3ebb4>`_
+  : Bump upstream dependencies to S-SR3
+* `1b86b9af <https://git.opendaylight.org/gerrit/q/1b86b9af>`_
+  : Bump upstream dependencies to S-SR3
+* `2bcfbf2c <https://git.opendaylight.org/gerrit/q/2bcfbf2c>`_
+  : Use lighty build for all functional tests
+* `6075d50c <https://git.opendaylight.org/gerrit/q/6075d50c>`_
+  : Bump lighty dependency to S-SR2
+* `45433d0b <https://git.opendaylight.org/gerrit/q/45433d0b>`_
+  : Fix issue in tapi_device_change_notification test
