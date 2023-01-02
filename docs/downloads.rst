@@ -26,19 +26,19 @@ Chlorine-SR0
     * :doc:`Release Notes <odl-chlorine:release-notes/index>`
 
 
-Sulfur-SR2
+Sulfur-SR3
 ----------
 
 :Announcement: `Sulfur <https://www.opendaylight.org/current-release-sulfur>`_
 
 :GA Release Date: May 13, 2021
-:Service Release Date: September 25, 2022
+:Service Release Date: December 18, 2022
 
 :Downloads:
     * `OpenDaylight Sulfur Tar
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/16.2.0/opendaylight-16.2.0.tar.gz>`_
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/16.3.0/opendaylight-16.3.0.tar.gz>`_
     * `OpenDaylight Sulfur Zip
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/16.2.0/opendaylight-16.2.0.zip>`_
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/16.3.0/opendaylight-16.3.0.zip>`_
 
 :Documentation:
     * :doc:`Getting Started Guide <odl-sulfur:getting-started-guide/index>`
