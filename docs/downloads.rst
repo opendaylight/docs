@@ -5,7 +5,7 @@ OpenDaylight Downloads
 Supported Releases
 ==================
 
-Chlorine-SR0
+Chlorine-SR1
 ------------
 
 (Current Release)
@@ -13,12 +13,13 @@ Chlorine-SR0
 :Announcement: `Chlorine <https://www.opendaylight.org/current-release-chlorine>`_
 
 :GA Release Date: October 27, 2022
+:Service Release Date: December 27, 2022
 
 :Downloads:
     * `OpenDaylight Chlorine Tar
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/17.0.0/opendaylight-17.0.0.tar.gz>`_
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.17.1/karaf-0.17.1.tar.gz>`_
     * `OpenDaylight Chlorine Zip
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/opendaylight/17.0.0/opendaylight-17.0.0.zip>`_
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.17.1/karaf-0.17.1.zip>`_
 
 :Documentation:
     * :doc:`Getting Started Guide <odl-chlorine:getting-started-guide/index>`
