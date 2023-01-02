@@ -292,7 +292,7 @@ string which provides a more descriptive error if things are not equal.
 Additionally, the Assertion framework will also to string the objects
 for comparison if things don't match to provide further information.
 Check out the Assert class for all of the other combinations:
-http://junit.sourceforge.net/javadoc/org/junit/Assert.html
+https://junit.org/junit4/javadoc/latest/org/junit/Assert.html
 
 .. note::
    It is a good idea to use the most appropriate method for your assertions.
