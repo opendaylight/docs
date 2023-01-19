@@ -52,3 +52,19 @@ The following table lists the known issues that exist in Service Release 1.
 .. jira_known_issues::
    :project: CONTROLLER
    :versions: 6.0.3-6.0.5
+
+Resolved Issues in SR2
+======================
+The following table lists the issues resolved in Service Release 2.
+
+.. jira_fixed_issues::
+   :project: CONTROLLER
+   :versions: 6.0.6-6.0.7
+
+Known Issues in SR1
+===================
+The following table lists the known issues that exist in Service Release 2.
+
+.. jira_known_issues::
+   :project: CONTROLLER
+   :versions: 6.0.6-6.0.7
