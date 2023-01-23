@@ -18,6 +18,24 @@
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d2f896b3_77eb2bae",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6731
+      },
+      "writtenOn": "2023-01-23T13:52:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cc3cf204_1619a231",
+      "revId": "eaf4807bc602e6f79d77c3e1dab60cdbdc56df27",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "532f6de5_10c6353d",
@@ -31,6 +49,24 @@
       "writtenOn": "2023-01-23T13:47:00Z",
       "side": 1,
       "message": "I guess the problem was here indeed.",
+      "revId": "eaf4807bc602e6f79d77c3e1dab60cdbdc56df27",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c0ff359e_e80be9d4",
+        "filename": "docs/conf.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 6731
+      },
+      "writtenOn": "2023-01-23T13:52:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "532f6de5_10c6353d",
       "revId": "eaf4807bc602e6f79d77c3e1dab60cdbdc56df27",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     },
@@ -52,6 +88,24 @@
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8c726a3e_1a34326b",
+        "filename": "docs/release-notes/upgrade-process.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 6731
+      },
+      "writtenOn": "2023-01-23T13:52:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a930c8ad_9a8722de",
+      "revId": "eaf4807bc602e6f79d77c3e1dab60cdbdc56df27",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "54c23e59_0f28df6c",
@@ -65,6 +119,24 @@
       "writtenOn": "2023-01-23T13:28:50Z",
       "side": 1,
       "message": "typo constitutes",
+      "revId": "eaf4807bc602e6f79d77c3e1dab60cdbdc56df27",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8341f0dc_37c41b63",
+        "filename": "docs/release-notes/upgrade-process.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 6731
+      },
+      "writtenOn": "2023-01-23T13:52:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "54c23e59_0f28df6c",
       "revId": "eaf4807bc602e6f79d77c3e1dab60cdbdc56df27",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
