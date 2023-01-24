@@ -1,18 +1,20 @@
 ---
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.0.1
+    rev: v4.4.0
     hooks:
       - id: trailing-whitespace
 
   - repo: https://github.com/jorisroovers/gitlint
-    rev: v0.15.1
+    rev: v0.19.0dev
     hooks:
       - id: gitlint
         stages: [commit-msg]
+      - id: gitlint-ci
+        stages: [manual]
 
   - repo: https://github.com/Lucas-C/pre-commit-hooks
-    rev: v1.1.10
+    rev: v1.4.1
     hooks:
       - id: remove-tabs
         stages: [commit]
