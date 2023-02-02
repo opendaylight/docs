@@ -1,19 +1,21 @@
 #MRI projects
-aaa	latest
-bgpcep	latest
-controller	latest
+aaa	v0.16.7
+bgpcep	v0.18.5
+controller	v6.0.7
+#FIXME infra utils in error
+#infrautils	v4.0.4
 infrautils	latest
-mdsal	latest
-netconf	latest
+mdsal	v10.0.6
+netconf	v4.0.5
+transportpce	6.2.0
 #integration projects without dedicated stable or MRI branches
 integration-test	latest
 integration-packaging	latest
 releng-builder	latest
 #MSI projects
-daexim	latest
-integration-distribution	latest
-jsonrpc	latest
-lispflowmapping	latest
-openflowplugin	latest
-ovsdb	latest
-transportpce	latest
+daexim	stable-chlorine
+integration-distribution	stable-chlorine
+jsonrpc	stable-chlorine
+lispflowmapping	stable-chlorine
+openflowplugin	stable-chlorine
+ovsdb	stable-chlorine
