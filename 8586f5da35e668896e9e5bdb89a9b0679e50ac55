@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "072e387c_e22736dc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6731
+      },
+      "writtenOn": "2023-02-02T08:12:11Z",
+      "side": 1,
+      "message": "09:02:21 docs-linkcheck run-test: commands[0] | sphinx-build -q -b linkcheck -d /w/workspace/docs-tox-verify-argon/.tox/docs-linkcheck/tmp/doctrees ./docs/ /w/workspace/docs-tox-verify-argon/docs/_build/linkcheck\n09:02:50 /w/workspace/docs-tox-verify-argon/docs/javadoc.rst:10: WARNING: broken link: https://javadoc.io/doc/org.opendaylight.mdsal (521 Server Error:  for url: https://javadoc.io/doc/org.opendaylight.mdsal)\n09:02:50 /w/workspace/docs-tox-verify-argon/docs/javadoc.rst:18: WARNING: broken link: https://javadoc.io/doc/org.opendaylight.lispflowmapping (521 Server Error:  for url: https://javadoc.io/doc/org.opendaylight.lispflowmapping)\n09:02:50 /w/workspace/docs-tox-verify-argon/docs/javadoc.rst:8: WARNING: broken link: https://javadoc.io/doc/org.opendaylight.odlparent (521 Server Error:  for url: https://javadoc.io/doc/org.opendaylight.odlparent)\n09:02:50 /w/workspace/docs-tox-verify-argon/docs/javadoc.rst:9: WARNING: broken link: https://javadoc.io/doc/org.opendaylight.yangtools (521 Server Error:  for url: https://javadoc.io/doc/org.opendaylight.yangtools)\n09:03:08 ERROR: InvocationError for command /w/workspace/docs-tox-verify-argon/.tox/docs-linkcheck/bin/sphinx-build -q -b linkcheck -d /w/workspace/docs-tox-verify-argon/.tox/docs-linkcheck/tmp/doctrees ./docs/ /w/workspace/docs-tox-verify-argon/docs/_build/linkcheck (exited with code 1)\n\n\n\n\n\n\n\n09:04:34 ___________________________________ summary ____________________________________\n09:04:34   pre-commit: commands succeeded\n09:04:34   docs: commands succeeded\n09:04:34 ERROR:   docs-linkcheck: commands failed\n09:04:34   spelling: commands succeeded",
+      "revId": "8586f5da35e668896e9e5bdb89a9b0679e50ac55",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    }
+  ]
+}
