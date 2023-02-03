@@ -34,6 +34,24 @@
       "parentUuid": "6c3e9162_45193d19",
       "revId": "99aef23978c4d745b10d4b7a03b0ea55f7ecd918",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eb586f65_20c0c708",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1927
+      },
+      "writtenOn": "2023-02-03T16:16:55Z",
+      "side": 1,
+      "message": "Right, that\u0027s what I was originally trying to do. But none of the following links works.\n\nhttps://docs.opendaylight.org/projects/daexim/en/stable-chlorine/index.html\nhttps://docs.opendaylight.org/projects/jsonrpc/en/stable-chlorine/index.html\nhttps://docs.opendaylight.org/projects/lispflowmapping/en/stable-chlorine/index.html\nhttps://docs.opendaylight.org/projects/openflowplugin/en/stable-chlorine/index.html\nhttps://docs.opendaylight.org/projects/ovsdb/en/stable-chlorine/index.html\nhttps://docs.opendaylight.org/projects/transportpce/en/stable-chlorine/index.html\n\nintegration-distribution is the only one with \u0027stable/chlorine\u0027 version. Since the project has \u0027Platform versions\u0027 page which is different for each major version, I thought it would be better to update the version of \u0027integration-distribution\u0027 at least. \n\nhttps://docs.opendaylight.org/projects/integration-distribution/en/stable-chlorine/platform-versions.html",
+      "parentUuid": "815b7812_45b524a2",
+      "revId": "99aef23978c4d745b10d4b7a03b0ea55f7ecd918",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ]
 }
