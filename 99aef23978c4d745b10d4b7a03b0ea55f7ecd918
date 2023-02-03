@@ -52,6 +52,24 @@
       "parentUuid": "815b7812_45b524a2",
       "revId": "99aef23978c4d745b10d4b7a03b0ea55f7ecd918",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1634d866_2c337ef7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6731
+      },
+      "writtenOn": "2023-02-03T18:57:55Z",
+      "side": 1,
+      "message": "Ok, that\u0027s were the script activate-projects-rtd-branch.sh come to play.\nIt parses this TSV file content and triggers the compilation on RTD.\nBut for that, a (private) token must be given as argument.\nI just launch it for you because it requires admin rights on RTD.\nThe links should become available but I can see a problem with ovsdb.\nThis uses to be done automatically in the past but something is currently broken in the LFN process.\nNote some MRI project might need a different version than stable-chlorine",
+      "parentUuid": "eb586f65_20c0c708",
+      "revId": "99aef23978c4d745b10d4b7a03b0ea55f7ecd918",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ]
 }
