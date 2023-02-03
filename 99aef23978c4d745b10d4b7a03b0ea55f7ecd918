@@ -16,6 +16,24 @@
       "message": "No other MSI projects seem to have \u0027stable/chrlone\u0027, hence updating just \u0027integration/distribution\u0027.",
       "revId": "99aef23978c4d745b10d4b7a03b0ea55f7ecd918",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "815b7812_45b524a2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6731
+      },
+      "writtenOn": "2023-02-03T09:13:17Z",
+      "side": 1,
+      "message": "Hi Sangwook,\n\nI am not sure to catch what you try to do here.\n\nThis TSV file is only use to activate RTD branch on the server in \nactivate-projects-rtd-branch.sh and in docs/conf.py to update references in the sphynx documentation.\n\nIf the idea to have all URL at https://docs.opendaylight.org/en/stable-chlorine/ pointing to the subrojects chlorine documentation pages, it would probably make sense to update all docs rather than just int/dist.",
+      "parentUuid": "6c3e9162_45193d19",
+      "revId": "99aef23978c4d745b10d4b7a03b0ea55f7ecd918",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ]
 }
