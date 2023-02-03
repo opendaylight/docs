@@ -70,6 +70,24 @@
       "parentUuid": "eb586f65_20c0c708",
       "revId": "99aef23978c4d745b10d4b7a03b0ea55f7ecd918",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7a5efa8f_d93c9d18",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1927
+      },
+      "writtenOn": "2023-02-03T20:31:09Z",
+      "side": 1,
+      "message": "Thanks, Guillaume. Updated the patch to point to \u0027stable-chlorine\u0027 (MSI) and latest release version for Chlorine (MRI) similar to this change:\nhttps://git.opendaylight.org/gerrit/c/docs/+/99997\n\nNote that transportpce version does not have \u0027v\u0027 because the release tag does not include it.",
+      "parentUuid": "1634d866_2c337ef7",
+      "revId": "99aef23978c4d745b10d4b7a03b0ea55f7ecd918",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ]
 }
