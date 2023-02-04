@@ -124,6 +124,24 @@
       "parentUuid": "3905fdcd_0bb57009",
       "revId": "99aef23978c4d745b10d4b7a03b0ea55f7ecd918",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "98197559_ab140a92",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6731
+      },
+      "writtenOn": "2023-02-04T10:58:20Z",
+      "side": 1,
+      "message": "Thanks Sangwook.\nIt looks much better. Only infrautils is now in failure.\nIt seems there is a Gerrit issue with this project...\nhttps://readthedocs.org/api/v2/build/19378095.txt\n\n+ Anil and Daniel\n\n$ git clone --no-single-branch --depth 50 https://git.opendaylight.org/gerrit/infrautils\nClonage dans \u0027infrautils\u0027...\nfatal: erreur distante : Internal server error\n$ git clone --no-single-branch --depth 50 https://git.opendaylight.org/gerrit/aaa\nClonage dans \u0027aaa\u0027...\nremote: Counting objects: 38106, done\nremote: Finding sources: 100% (38106/38106)\n^Cception d\u0027objets:  87% (33153/38106), 1.94 Mio | 1.86 Mi",
+      "parentUuid": "c3486a53_184d9aff",
+      "revId": "99aef23978c4d745b10d4b7a03b0ea55f7ecd918",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ]
 }
