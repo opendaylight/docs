@@ -88,6 +88,24 @@
       "parentUuid": "1634d866_2c337ef7",
       "revId": "99aef23978c4d745b10d4b7a03b0ea55f7ecd918",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3905fdcd_0bb57009",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6731
+      },
+      "writtenOn": "2023-02-04T10:18:10Z",
+      "side": 1,
+      "message": "You\u0027re welcome. It looks OK but now we got the failures below.\nUnfortunately  at this stage, we depend on subprojects repos...\n(Transportpce documentation still uses stable-chlorine indeed.)\nThey are not all up-to-date.\nThe best thing we can do is to ping project and uses the closest version.\n\n21:11:57 WARNING: failed to reach any of the inventories with the following issues:\n21:11:57 intersphinx inventory \u0027https://docs.opendaylight.org/projects/aaa/en/v0.16.7/objects.inv\u0027 not fetchable due to \u003cclass \u0027requests.exceptions.HTTPError\u0027\u003e: 404 Client Error: Not Found for url: https://docs.opendaylight.org/projects/aaa/en/v0.16.7/objects.inv\n21:11:57 WARNING: failed to reach any of the inventories with the following issues:\n21:11:57 intersphinx inventory \u0027https://docs.opendaylight.org/projects/mdsal/en/v10.0.6/objects.inv\u0027 not fetchable due to \u003cclass \u0027requests.exceptions.HTTPError\u0027\u003e: 404 Client Error: Not Found for url: https://docs.opendaylight.org/projects/mdsal/en/v10.0.6/objects.inv\n21:11:57 WARNING: failed to reach any of the inventories with the following issues:\n21:11:57 intersphinx inventory \u0027https://docs.opendaylight.org/projects/controller/en/v6.0.7/objects.inv\u0027 not fetchable due to \u003cclass \u0027requests.exceptions.HTTPError\u0027\u003e: 404 Client Error: Not Found for url: https://docs.opendaylight.org/projects/controller/en/v6.0.7/objects.inv\n21:11:57 WARNING: failed to reach any of the inventories with the following issues:\n21:11:57 intersphinx inventory \u0027https://docs.opendaylight.org/projects/infrautils/en/v4.0.4/objects.inv\u0027 not fetchable due to \u003cclass \u0027requests.exceptions.HTTPError\u0027\u003e: 404 Client Error: Not Found for url: https://docs.opendaylight.org/projects/infrautils/en/v4.0.4/objects.inv\n21:11:57 WARNING: failed to reach any of the inventories with the following issues:\n21:11:57 intersphinx inventory \u0027https://docs.opendaylight.org/projects/transportpce/en/6.2.0/objects.inv\u0027 not fetchable due to \u003cclass \u0027requests.exceptions.HTTPError\u0027\u003e: 404 Client Error: Not Found for url: https://docs.opendaylight.org/projects/transportpce/en/6.2.0/objects.inv\n21:11:57 WARNING: failed to reach any of the inventories with the following issues:\n21:11:57 intersphinx inventory \u0027https://docs.opendaylight.org/projects/bgpcep/en/v0.18.5/objects.inv\u0027 not fetchable due to \u003cclass \u0027requests.exceptions.HTTPError\u0027\u003e: 404 Client Error: Not Found for url: https://docs.opendaylight.org/projects/bgpcep/en/v0.18.5/objects.inv",
+      "parentUuid": "7a5efa8f_d93c9d18",
+      "revId": "99aef23978c4d745b10d4b7a03b0ea55f7ecd918",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ]
 }
