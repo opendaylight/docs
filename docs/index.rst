@@ -50,14 +50,13 @@ Managed Projects
 * :doc:`NetConf Documentation <netconf:index>`
 * :doc:`OpenFlowPlugin Documentation <openflowplugin:index>`
 * :doc:`OVSDB Documentation <ovsdb:index>`
+* :doc:`TransportPCE Documentation <transportpce:index>`
 
 .. :doc:`Neutron Documentation <neutron:index>`
 
 
 Self-Managed Projects
 ~~~~~~~~~~~~~~~~~~~~~
-
-* :doc:`TransportPCE Documentation <transportpce:index>`
 
 
 .. Commenting the below out until we actually use it
