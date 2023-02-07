@@ -7,7 +7,7 @@ Execution
 
 OpenDaylight includes `Karaf <https://karaf.apache.org>`_ containers, `OSGi <https://www.osgi.org>`_
 (Open Service Gateway Initiative) bundles, and Java class files, which are portable and can run on
-any Java 11-compliant JVM (Java virtual machine). Any add-on project or feature of a
+any Java 17-compliant JVM (Java virtual machine). Any add-on project or feature of a
 specific project may have additional requirements.
 
 Development
