@@ -24,6 +24,8 @@ and flexible multi-type RPC implementations. ``RpcConsumerRegistry`` have gained
 handles. These capabilities are based on new codegen feature, which generates ``@FunctionalInterface`` interfaces
 for each individual ``rpc``, similar to how ``action`` statements are processed.
 
+Binding code generator now recognizes ``RFC8040 rc:yang-data`` extensions and generates corresponding interfaces.
+
 Deprecated Features
 ===================
 ``NotificationService.registerNotificationListener()`` method has been deprecated, along with its Binding
@@ -43,7 +45,7 @@ The following table lists the issues resolved in this release.
 
 .. jira_fixed_issues::
    :project: MDSAL
-   :versions: 11.0.0-11.0.6
+   :versions: 11.0.0-11.0.7
 
 Known Issues
 ============
@@ -51,4 +53,4 @@ The following table lists the known issues that exist in this release.
 
 .. jira_known_issues::
    :project: MDSAL
-   :versions: 11.0.0-11.0.6
+   :versions: 11.0.0-11.0.7
