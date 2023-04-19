@@ -85,3 +85,19 @@ The following table lists the known issues that exist in Service Release 2.
 .. jira_known_issues::
    :project: YANGTOOLS
    :versions: 9.0.6-9.0.6
+
+Resolved Issues in SR3
+======================
+The following table lists the issues resolved in Service Release 3.
+
+.. jira_fixed_issues::
+   :project: YANGTOOLS
+   :versions: 9.0.7-9.0.7
+
+Known Issues in SR3
+===================
+The following table lists the known issues that exist in Service Release 3.
+
+.. jira_known_issues::
+   :project: YANGTOOLS
+   :versions: 9.0.7-9.0.7
