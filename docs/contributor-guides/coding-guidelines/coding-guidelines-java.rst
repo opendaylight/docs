@@ -17,7 +17,7 @@ See: https://google.github.io/styleguide/javaguide.html
 -  YangTools Design Guidelines
    (https://wiki-archive.opendaylight.org/view/YANG_Tools:Design_and_Coding_Guidelines)
 -  follow JLS modifier ordering
-   (http://checkstyle.sourceforge.net/config_modifier.html)
+   (https://checkstyle.sourceforge.io/checks/modifier/modifierorder.html)
 -  do not use underscores (_) in identifiers, as they trigger warnings with JDK8
 -  Uppercase " *static final Logger LOG = ...* " (See 5.2.4 examples)
 
