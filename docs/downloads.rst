@@ -5,7 +5,7 @@ OpenDaylight Downloads
 Supported Releases
 ==================
 
-Argon-SR0
+Argon-SR1
 ------------
 
 (Current Release)
@@ -13,12 +13,13 @@ Argon-SR0
 :Announcement: `Argon <https://www.opendaylight.org/current-release-argon>`_
 
 :GA Release Date: April 2, 2023
+:Service Release Date: May 24, 2023
 
 :Downloads:
     * `OpenDaylight Argon Tar
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.18.0/karaf-0.18.0.tar.gz>`_
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.18.1/karaf-0.18.1.tar.gz>`_
     * `OpenDaylight Argon Zip
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.18.0/karaf-0.18.0.zip>`_
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.18.1/karaf-0.18.1.zip>`_
 
 :Documentation:
     * :doc:`Getting Started Guide <odl-argon:getting-started-guide/index>`
