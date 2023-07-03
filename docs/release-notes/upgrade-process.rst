@@ -1,10 +1,10 @@
-==============================
-2023.03 Argon Platform Upgrade
-==============================
+==================================
+2023.09 Potassium Platform Upgrade
+==================================
 
-This document describes the steps to help users upgrade from Chlorine
-to Argon planned platform. Refer to `Managed Snapshot Integrated (MSI)
-project <https://git.opendaylight.org/gerrit/q/topic:argon-mri>`_
+This document describes the steps to help users upgrade from Argon
+to Potassium platform. Refer to `Managed Snapshot Integrated (MSI)
+project <https://git.opendaylight.org/gerrit/q/topic:potassium-mri>`_
 upgrade patches for more information and hints for solutions to common
 problems not explicitly listed here.
 
@@ -15,8 +15,8 @@ Preparation
 
 JDK 17 Version
 ^^^^^^^^^^^^^^
-2023.03 Argon requires Java 17, both during compile-time and run-time.
-Make sure to install JDK 17 corresponding to at least ``openjdk-17.0.5``,
+2023.09 Potassium, requires Java 17, both during compile-time and run-time.
+Make sure to install JDK 17 corresponding to at least ``openjdk-17.0.7``,
 and that the JAVA_HOME environment variable points to the JDK directory.
 
 Version Bump
@@ -24,25 +24,25 @@ Version Bump
 Before performing platform upgrade, do the following to bump the odlparent
 versions (for example, `bump-odl-version <https://github.com/skitt/odl-tools/blob/master/bump-odl-version>`_):
 
-1. Update the odlparent version from 11.0.4 to 12.0.3. There should
+1. Update the odlparent version from 12.0.3 to 13.0.3. There should
    not be any reference to **org.opendaylight.odlparent**, except
-   for 12.0.3. This includes custom feature.xml templates
+   for 13.0.3. This includes custom feature.xml templates
    (``src/main/feature/feature.xml``), the version range should
-   be "[12,13)" instead of "[11,12)", "[5.0.3,6)" or any other variation.
+   be "[13,14)" instead of "[11,12)", "[5.0.3,6)" or any other variation.
 
  .. code-block:: shell
 
-  bump-odl-version odlparent 11.0.4 12.0.3
+  bump-odl-version odlparent 12.0.3 13.0.3
 
-2. Update the direct yangtools version references from 9.0.6 to 10.0.4,
+2. Update the direct yangtools version references from 10.0.4 to 11.0.0,
    There should not be any reference to **org.opendaylight.yangtools**,
-   except for 10.0.4. This includes custom feature.xml templates
+   except for 11.0.0. This includes custom feature.xml templates
    (``src/main/feature/feature.xml``), the version range should
-   be "[10,11)" instead of "[9,10)".
+   be "[11,12)" instead of "[10,11)".
 
  .. code-block:: shell
 
-  bump-odl-version yangtools 9.0.6 10.0.4
+  bump-odl-version yangtools 10.0.4 11.0.0
 
 3. Update the MD-SAL version from 10.0.6 to 11.0.7. There should not be
    any reference to **org.opendaylight.mdsal**, except for 11.0.7.
