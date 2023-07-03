@@ -41,11 +41,7 @@ the following components:
 
 Behavior/Feature Changes
 ========================
-``pcep-topology-provider`` now allows PCEP capabilities, TLS configuration as well as PCEP
-timer proposals to be configured on a per-topology basis rather than being global settings.
-
-Rarely-used configuration knobs for PCEP ``auto-bandwidth`` and ``segment-routing`` extensions
-have been migrated from the datastore to OSGi Configuration Admin properties.
+No changes.
 
 
 New Features
@@ -62,7 +58,7 @@ The following table lists the issues resolved in this release.
 
 .. jira_fixed_issues::
    :project: BGPCEP
-   :versions: 0.19.0-0.19.3
+   :versions: 0.20.0-0.20.0
 
 Known Issues
 ============
@@ -70,4 +66,4 @@ The following table lists the known issues that exist in this release.
 
 .. jira_known_issues::
    :project: BGPCEP
-   :versions: 0.19.0-0.19.3
+   :versions: 0.20.0-0.20.0
