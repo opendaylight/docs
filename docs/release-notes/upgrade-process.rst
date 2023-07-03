@@ -1,10 +1,10 @@
-==============================
-2023.03 Argon Platform Upgrade
-==============================
+==================================
+2023.09 Potassium Platform Upgrade
+==================================
 
-This document describes the steps to help users upgrade from Chlorine
-to Argon planned platform. Refer to `Managed Snapshot Integrated (MSI)
-project <https://git.opendaylight.org/gerrit/q/topic:argon-mri>`_
+This document describes the steps to help users upgrade from Argon
+to Potassium platform. Refer to `Managed Snapshot Integrated (MSI)
+project <https://git.opendaylight.org/gerrit/q/topic:potassium-mri>`_
 upgrade patches for more information and hints for solutions to common
 problems not explicitly listed here.
 
@@ -15,8 +15,8 @@ Preparation
 
 JDK 17 Version
 ^^^^^^^^^^^^^^
-2023.03 Argon requires Java 17, both during compile-time and run-time.
-Make sure to install JDK 17 corresponding to at least ``openjdk-17.0.5``,
+2023.09 Potassium, requires Java 17, both during compile-time and run-time.
+Make sure to install JDK 17 corresponding to at least ``openjdk-17.0.7``,
 and that the JAVA_HOME environment variable points to the JDK directory.
 
 Version Bump
@@ -24,67 +24,67 @@ Version Bump
 Before performing platform upgrade, do the following to bump the odlparent
 versions (for example, `bump-odl-version <https://github.com/skitt/odl-tools/blob/master/bump-odl-version>`_):
 
-1. Update the odlparent version from 11.0.4 to 12.0.3. There should
+1. Update the odlparent version from 12.0.3 to 13.0.3. There should
    not be any reference to **org.opendaylight.odlparent**, except
-   for 12.0.3. This includes custom feature.xml templates
+   for 13.0.3. This includes custom feature.xml templates
    (``src/main/feature/feature.xml``), the version range should
-   be "[12,13)" instead of "[11,12)", "[5.0.3,6)" or any other variation.
+   be "[13,14)" instead of "[11,12)", "[5.0.3,6)" or any other variation.
 
  .. code-block:: shell
 
-  bump-odl-version odlparent 11.0.4 12.0.3
+  bump-odl-version odlparent 12.0.3 13.0.3
 
-2. Update the direct yangtools version references from 9.0.6 to 10.0.4,
+2. Update the direct yangtools version references from 10.0.4 to 11.0.0,
    There should not be any reference to **org.opendaylight.yangtools**,
-   except for 10.0.4. This includes custom feature.xml templates
+   except for 11.0.0. This includes custom feature.xml templates
    (``src/main/feature/feature.xml``), the version range should
-   be "[10,11)" instead of "[9,10)".
+   be "[11,12)" instead of "[10,11)".
 
  .. code-block:: shell
 
-  bump-odl-version yangtools 9.0.6 10.0.4
+  bump-odl-version yangtools 10.0.4 11.0.0
 
-3. Update the MD-SAL version from 10.0.6 to 11.0.7. There should not be
-   any reference to **org.opendaylight.mdsal**, except for 11.0.7.
-
- .. code-block:: shell
-
-  bump-odl-version mdsal 10.0.6 11.0.7
-
-4. Update the Controller version from 6.0.7 to 7.0.4. There should not be
-   any reference to **org.opendaylight.controller**, except for 7.0.4.
+3. Update the MD-SAL version from 11.0.7 to 12.0.0. There should not be
+   any reference to **org.opendaylight.mdsal**, except for 12.0.0.
 
  .. code-block:: shell
 
-  bump-odl-version controller 6.0.7 7.0.2
+  bump-odl-version mdsal 11.0.7 12.0.0
 
-5. Update the InfraUtils version from 4.0.4 to 5.0.3. There should not be
-   any reference to **org.opendaylight.infrautils**, except for 5.0.3.
-
- .. code-block:: shell
-
-  bump-odl-version infrautils 4.0.4 5.0.1
-
-6. Update the AAA version from 0.16.7 to 0.17.7. There should not be
-   any reference to **org.opendaylight.aaa**, except for 0.17.7.
+4. Update the Controller version from 7.0.4 to 8.0.0. There should not be
+   any reference to **org.opendaylight.controller**, except for 8.0.0.
 
  .. code-block:: shell
 
-  bump-odl-version aaa 0.16.7 0.17.3
+  bump-odl-version controller 7.0.4 8.0.0
 
-7. Update the NETCONF version from 4.0.5 to 5.0.4. There should not be
-   any reference to **org.opendaylight.netconf**, except for 5.0.4.
+5. Update the InfraUtils version from 5.0.3 to 6.0.1. There should not be
+   any reference to **org.opendaylight.infrautils**, except for 6.0.1.
 
  .. code-block:: shell
 
-  bump-odl-version netconf 4.0.5 5.0.1
+  bump-odl-version infrautils 5.0.3 6.0.1
+
+6. Update the AAA version from 0.17.7 to 0.18.0. There should not be
+   any reference to **org.opendaylight.aaa**, except for 0.18.0.
+
+ .. code-block:: shell
+
+  bump-odl-version aaa 0.17.7 0.18.0
+
+7. Update the NETCONF version from 5.0.4 to 6.0.0. There should not be
+   any reference to **org.opendaylight.netconf**, except for 6.0.0.
+
+ .. code-block:: shell
+
+  bump-odl-version netconf 5.0.4 6.0.0
 
 Install Dependent Projects
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Before performing platform upgrade, users must also install
 any dependent project. To locally install a dependent project,
 pull and install the respective
-`argon-mri <https://git.opendaylight.org/gerrit/q/topic:argon-mri>`_
+`potassium-mri <https://git.opendaylight.org/gerrit/q/topic:potassium-mri>`_
 changes for any dependent project.
 
 Perform the following steps to save time when locally installing
@@ -106,19 +106,19 @@ any dependent project:
 Upgrade the ODL Parent
 ----------------------
 The following sub-section describes how to upgrade to
-the ODL Parent version 12. Refer to the `ODL Parent Release Notes
-<https://github.com/opendaylight/odlparent/blob/master/docs/NEWS.rst#version-1201>`_
+the ODL Parent version 13. Refer to the `ODL Parent Release Notes
+<https://github.com/opendaylight/odlparent/blob/master/docs/NEWS.rst#version-1303>`_
 for more information.
 
 Features
 ^^^^^^^^
 Any version range referencing version 11 of ODL Parent must be changed
-to “[12,13)” for ODL Parent 12.
+to “[13,14)” for ODL Parent 13.
 
  .. code-block:: xml
 
    <feature name="odl-infrautils-caches">
-       <feature version="[12,13)">odl-guava</feature>
+       <feature version="[13,14)">odl-guava</feature>
    </feature>
 
 ODL Parent Impacts
@@ -126,90 +126,137 @@ ODL Parent Impacts
 
 Upstream declarations removed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The declaration of ``Enunciate``, both dependencies and maven plugin has been removed.
+The declaration of ``commons-lang`` dependency has been removed.
 
-JavaDoc HTML5 opt-out removed
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Support for opting out from HTML5 JavaDocs has been removed. JavaDocs are always generated in HTML5.
-
-ANTLR updated to 4.11.x
-^^^^^^^^^^^^^^^^^^^^^^^
-The ANTLR declaration has been bumped to ``4.11.1``. While the version change would seem to indicate
-a backwards-update, this is not the case: all ANTLR grammars need to be recompiled with the new version.
-Any grammar from older ANTLR versions will not work.
+Default annotation declarations removed
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+``odlparent`` no longer declares ``spotbugs-annotations``, ``org.eclipse.jdt.annotation`` and ``modernizer-maven-annotations``
+as ``<scope>provided</scope>`` dependencies. Downstreams will need to introduce these annotations as appropriate.
 
 YANG Tools Impacts
 ------------------
 
-``EffectiveStatementNamespace`` removed
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-``EffectiveStatementNamespace`` and its specializations have been removed, as was the ability for
-``EffectiveStatement`` to address any namespace. Each namespace has been converted to a specific access method,
-for example ``DataTreeAwareEffectiveStatement.DataTreeNamespace`` is now exposed via
-``DataTreeAwareEffectiveStatement.dataTreeNodes()`` and ``DataTreeAwareEffectiveStatement.findDataTreeNode()``.
-See `YANGTOOLS-1459 <https://jira.opendaylight.org/browse/YANGTOOLS-1459>`__ for details.
+``AugmentationIdentifer`` and ``AugmentationNode`` removed
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The class hierarchy of ``NormalizedNode`` has been updated to not contain augmented nodes in a separate ``AugmentationNode``,
+but rather keep them directly in the node being augmented. This results in a flatter NormalizedNode structure and makes constructing
+structures involving augmentations and reconciling them with ``EffectiveModelContext`` much more straightforward.
 
-``yang.model.api.SchemaPath`` removed
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-SchemaPath is one of the oldest constructs with thoroughly inadequate and confusing semantics. Previous releases
-have gradually removed use of this construct. This release finally removes it. See
-`YANGTOOLS-1236 <https://jira.opendaylight.org/browse/YANGTOOLS-1236>`__ for details.
+See `YANGTOOLS-568 <https://jira.opendaylight.org/browse/YANGTOOLS-568>`__ for details.
+
+RFC7952 and RFC8528 support integrated into ``yang-data``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The interfaces supporting RFC7952 YANG annotations have been integrated into ``yang-data-api`` and ``yang-data-util``
+artifacts. This rendered ``rfc7952-data-api`` and ``rfc7952-data-util`` artifacts empty and thus these have been removed.
+See `YANGTOOLS-1489 <https://jira.opendaylight.org/browse/YANGTOOLS-1489>`__ for details.
+
+The interfaces supporting RFC8528 YANG schema mounts have been integrated into ``yang-data-api`` and ``yang-data-util``
+artifacts. This rendered ``rfc8528-data-api`` and ``rfc8528-data-util`` artifacts empty and thus these have been removed.
+See `YANGTOOLS-1172 <https://jira.opendaylight.org/browse/YANGTOOLS-1172>`__ for details.
+
+As part of these changes, following API changes have also been done in order to ease using these interfaces:
+* ``NormalizedNodeStreamWriterExtension`` has been renamed to ``NormalizedNodeStreamWriter.Extension``
+* ``StreamWriterMetadataExtension`` has been renamed to ``NormalizedNodeStreamWriter.MetadataExtension``
+* ``StreamWriterMountPointExtension`` has been renamed to ``NormalizedNodeStreamWriter.MountPointExtension``
+* ``MountPointIdentifier`` has been removed with ``NormalizedMountPoint`` exposing its ``MountPointLabel`` directly
+
+Finally, the result of ``NormalizedNodeStreamWriter`` is now a combined structure, ``NormalizationResult``, which combines
+a mandatory ``NormalizedNode`` data tree, an optional ``NormalizedMetadata`` and an optional ``NormalizedMountPoints`` tree.
+For the purposes of receiving this the result, ``NormalizedNodeResult`` has been replaced with ``NormalizationResultHolder``.
+
+``DataSchemaContextNode`` replaced with ``DataSchemaContext``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+``yang.data.util.DataSchemaContextNode`` has been completely revamped and renamed to ``DataSchemaContext``. It is now an interface
+implemented completely internally, with a proper interface hierarchy. Implementations of these interfaces are given out by
+``DataSchemaContextTree``.  The resulting API is much easier to figure out and use, especially with proper documentation and naming
+not overlapping with other parts of YANG Tools.
+See `YANGTOOLS-1413 <https://jira.opendaylight.org/browse/YANGTOOLS-1413>`__ for details.
+
+``ExtensibleObject`` has been reworked
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+This interface no longer exposes a ``ClassToInstanceMap``, but rather provides direct lookup and enumeration methods. Users need
+to be updated from performing
+
+  .. code-block:: java
+
+    ExtensibleObject obj;
+    var extension = obj.getExtensions().getInstance(ExtensionType.class);
+
+to instead doing
+
+  .. code-block:: java
+
+    ExtensibleObject obj;
+    var extension = obj.extension(ExtensionType.class);
+
+See `YANGTOOLS-1509 <https://jira.opendaylight.org/browse/YANGTOOLS-1509>`__ for details.
+
+``UsesNode.getRefines()`` exposes only descendant paths
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The return type was changed to return ``Set<Descendant>`` instead of ``Map<Descendant, SchemaNode>``. Users relying on accessing
+target nodes need to perform the resolution themselves.
+See `YANGTOOLS-1518 <https://jira.opendaylight.org/browse/YANGTOOLS-1518>`__ for details.
+
+``YangTextSchemaSources`` is a ``CharSource``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+``yang.model.api.repo.YangTextSchemaSource`` now operates on a stream of characters, not bytes. All users which instantiate sources
+from byte streams must specify the character set used.
+See `YANGTOOLS-1508 <https://jira.opendaylight.org/browse/YANGTOOLS-1508>`__ for details.
 
 
 MD-SAL Impacts
 --------------
 
-``yang.binding.Enumeration`` renamed to ``yang.binding.EnumTypeObject``
+``InstanceIdentifierBuilder`` renamed to ``InstanceIdentifier.Builder``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-In order to prevent potential confusion with ``java.util.Enumeration``, the base interfaces for classes generated
-for ``type enumeration`` YANG construct has been changed to ``EnumTypeObject``.
+A long-standing bug, where a ``KeyedInstanceIdentifier`` could not be safely returned from ``InstanceIdentifierBuilder`` was fixed.
+As part of this fix, ``InstanceIdentifierBuilder`` was renamed to be an inner class, ``InstanceIdentifier.Builder``. There is also
+a corresponding ``InstanceIdentifier.KeyedBuilder``. See `MDSAL-798 <https://jira.opendaylight.org/browse/MDSAL-798>`__ for details.
 
-Introduced ``yang.binding.BitsTypeObject``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Classes generated for ``type bits`` YANG construct have now implement a common interface ``BitsTypeObject``. This
-interface allows for unified access to the value as a ``boolean[]`` vector as well as valid bit names. See
-`MDSAL-743 <https://jira.opendaylight.org/browse/MDSAL-743>`__ for details.
+``BindingReflections.getModuleInfo()`` has moved
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+This reflection-based method was moved to ``BindingRuntimeHelpers`` class, as all its users already interact with
+``mdsal-binding-runtime-spi``. See `MDSAL-803 <https://jira.opendaylight.org/browse/MDSAL-803>`__ for details.
 
-Component bits are now mapped to primitive boolean
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Individual bits within a ``type bits`` value are now exposed as a primitive ``boolean`` rather than a ``Boolean``
-object. This provides for a better mapping, eliminating boxing as well as the problem of having a three-state
-(``true``, ``false`` and ``null``) components. See `MD-744 <https://jira.opendaylight.org/browse/MDSAL-744>`__
-for details.
+Convenience model artifacts removed
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The aggregating multi-module RFCs have been removed. Users declaring a dependency on any of ``rfc6991``, ``rfc8294``, ``rfc8342``,
+``rfc8345``, ``rfc8346``, ``rfc8348``, ``rfc8349``, ``rfc8519``, ``rfc8520``, ``rfc8542``, ``rfc8776`` or ``rfc8795`` need to now
+update these references to individual modules' artifacts.
+See `MDSAL-823 <https://jira.opendaylight.org/browse/MDSAL-823>`__ for details.
 
-Naming of ``action``-defined ``input`` and ``output`` statements
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The naming of interfaces generated for ``input`` and ``output`` statements defined within an ``action`` statement
-has been changed to follow the same naming as those defined within an ``rpc`` statement. See
-`MDSAL-744 <https://jira.opendaylight.org/browse/MDSAL-744>`__ for details.
+``BindingMapping`` moved
+^^^^^^^^^^^^^^^^^^^^^^^^
+``binding.spec.naming.BindingMapping`` has been renamed and moved to ``yang.binding.contract.Naming``.
+See `MDSAL-804 <https://jira.opendaylight.org/browse/MDSAL-804>`__ for details.
 
-``DOMRpcService`` operates on ``ContainerNode``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-DOM interfaces related to RPC invocation, ``DOMRpcResult``, ``DOMRpcService`` and ``DOMRpcImplementation``  have
-all been updated to operate on ``ContainerNode`` rather than plain ``NormalizedNode``. This constitutes a change
-in API, but for most users this just ends up codifying their expectations. See
-`MDSAL-541 <https://jira.opendaylight.org/browse/MDSAL-541>`__ for details.
+``IetfInetUtil.INSTANCE`` and ``IetfYangUtil.INSTANCE`` removed
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+``IetfInetUtil`` and ``IetfYangUtil`` have been refactored so they now expose static utility methods not encapsulated
+in an object instance. All references to ``INSTANCE`` need to be removed:
+
+  .. code-block:: java
+
+    byte[] bytes;
+    IetfYangUtil.INSTANCE.macAddressFor(bytes);
+
+becomes
+
+  .. code-block:: java
+
+    byte[] bytes;
+    IetfYangUtil.macAddressFor(bytes);
+
+See `MDSAL-804 <https://jira.opendaylight.org/browse/MDSAL-804>`__ for details.
+
+Binding ``Identifiable`` and ``Identifier`` renamed
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+``yang.binding.Identifer`` has been renamed to ``yang.binding.Key`` and ``yang.binding.Identifiable`` has been renamed to
+``yang.binding.KeyAware``. This change prevents confusion with ``yangtools.concepts`` interfaces with the same name.
+See `MDSAL-830 <https://jira.opendaylight.org/browse/MDSAL-830>`__ for details.
 
 
 Controller Impacts
 ------------------
-
-Deprecated ``ask-based`` protocol
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Historic ``ask-based`` protocol has been superseded by ``tell-based`` protocol, which in turn is enabled by default.
-This release will produce a deprecation warning when ``ask-based`` protocol is enabled. See
-`CONTROLLER-2053 <https://jira.opendaylight.org/browse/CONTROLLER-2053>`__ for details.
-
-Cross-datastore transactions are no longer supported
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The ability to modify ``OPERATIONAL`` and ``CONFIGURATION`` datastores in the same transaction has been removed. Any attempt
-to have a transaction access both datastores will result in an exception See
-`CONTROLLER-2055 <https://jira.opendaylight.org/browse/CONTROLLER-2055>`__ for details.
-
-Improved datastore access and persistence protocols
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Serialization formats for intra-node messages and ``sal-akka-raft`` journal entries have been improved, in some cases by more
-than 60%. See `CONTROLLER-2051 <https://jira.opendaylight.org/browse/CONTROLLER-2051>`__,
-`CONTROLLER-2056 <https://jira.opendaylight.org/browse/CONTROLLER-2056>`__ and
-`CONTROLLER-2058 <https://jira.opendaylight.org/browse/CONTROLLER-2058>`__ for details.
+None.
 
