@@ -16,6 +16,23 @@
       "message": "recheck",
       "revId": "9b2052cf8bd908a49be0707179c7ed6d90026ccb",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "80f134a8_bbd28907",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6731
+      },
+      "writtenOn": "2023-07-18T15:08:36Z",
+      "side": 1,
+      "message": "only WIP in title is problematic -\u003e verified +1\n\n10:05:53 gitlint..................................................................Failed\n10:05:53 - hook id: gitlint-ci\n10:05:53 - exit code: 1\n10:05:53 \n10:05:53 1: T5 Title contains the word \u0027WIP\u0027 (case-insensitive): \"WIP: Update docs for 2023.09 Potassium\"\n10:05:53 \n\n10:09:30   pre-commit: FAIL code 1 (31.48\u003dsetup[4.00]+cmd[10.10,17.38] seconds)\n10:09:30   docs: OK (52.45\u003dsetup[35.25]+cmd[17.20] seconds)\n10:09:30   docs-linkcheck: OK (78.47\u003dsetup[29.97]+cmd[48.49] seconds)\n10:09:30   spelling: OK (85.45\u003dsetup[21.14]+cmd[35.98,28.33] seconds)\n10:09:30   evaluation failed :( (248.00 seconds)",
+      "revId": "9b2052cf8bd908a49be0707179c7ed6d90026ccb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ]
 }
