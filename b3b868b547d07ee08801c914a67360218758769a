@@ -16,6 +16,23 @@
       "message": "recheck",
       "revId": "b3b868b547d07ee08801c914a67360218758769a",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "01f54b11_e96e788b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6731
+      },
+      "writtenOn": "2023-09-11T06:28:01Z",
+      "side": 1,
+      "message": "hosting connectivyt issue\n\n20:37:30   pre-commit: OK (29.59\u003dsetup[4.02]+cmd[10.36,15.21] seconds)\n20:37:30   docs: OK (60.77\u003dsetup[39.05]+cmd[21.72] seconds)\n20:37:30   docs-linkcheck: FAIL code 1 (70.67\u003dsetup[24.59]+cmd[46.08] seconds)\n20:37:30   spelling: OK (86.16\u003dsetup[21.65]+cmd[38.27,26.23] seconds)\n20:37:30   evaluation failed :( (247.34 seconds)",
+      "revId": "b3b868b547d07ee08801c914a67360218758769a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ]
 }
