@@ -35,7 +35,7 @@ The following table lists the issues resolved in this release.
 
 .. jira_fixed_issues::
    :project: CONTROLLER
-   :versions: 8.0.0-8.0.1
+   :versions: 8.0.0-8.0.2
 
 Known Issues
 ============
@@ -43,4 +43,4 @@ The following table lists the known issues that exist in this release.
 
 .. jira_known_issues::
    :project: CONTROLLER
-   :versions: 8.0.0-8.0.1
+   :versions: 8.0.0-8.0.2

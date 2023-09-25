@@ -58,7 +58,7 @@ The following table lists the issues resolved in this release.
 
 .. jira_fixed_issues::
    :project: BGPCEP
-   :versions: 0.20.0-0.20.3
+   :versions: 0.20.0-0.20.4
 
 Known Issues
 ============
@@ -66,4 +66,4 @@ The following table lists the known issues that exist in this release.
 
 .. jira_known_issues::
    :project: BGPCEP
-   :versions: 0.20.0-0.20.3
+   :versions: 0.20.0-0.20.4
