@@ -49,17 +49,16 @@ The internal RPCs between those modules are defined in the Transport Service Pat
 Behavior/Feature Changes
 ========================
 
-TBD
-
-Changes planned in Sulfur release stream
-============================================
-
-TBD
+The Argon GA version contains a number of code refactorings in order to improve the maintainability of the controller
+code. Moreover, this release also covers some important code evolution, as the removal of all blueprint.xml files that
+will be replaced by OSGi components, or again the migration of all unitary tests of TransportPCE project to JUnit 5.
+From a business point of view, Argon release brings the management of Regenerator in OpenROADM version device 7.1.0.
+It means that some transponder may be used as a simple regenerator (without client ports).
 
 New Features
 ============
 
-TBD
+No new feature as such in Argon.
 
 Deprecated Features
 ===================
@@ -73,7 +72,7 @@ The following table lists the issues resolved in this release.
 
 .. jira_fixed_issues::
    :project: TRNSPRTPCE
-   :versions: Sulfur-Sulfur
+   :versions: Argon-Argon
 
 Known Issues
 ============
@@ -82,4 +81,36 @@ The following table lists the known issues that exist in this release.
 
 .. jira_known_issues::
    :project: TRNSPRTPCE
-   :versions: Sulfur-Sulfur
+   :versions: Argon-Argon
+
+Resolved Issues in SR1
+======================
+The following table lists the issues resolved in Service Release 1.
+
+.. jira_fixed_issues::
+   :project: TRNSPRTPCE
+   :versions: ArgonSR1-ArgonSR1
+
+Known Issues in SR1
+===================
+The following table lists the known issues that exist in Service Release 1.
+
+.. jira_known_issues::
+   :project: TRNSPRTPCE
+   :versions: ArgonSR1-ArgonSR1
+
+Resolved Issues in SR2
+======================
+The following table lists the issues resolved in Service Release 1.
+
+.. jira_fixed_issues::
+   :project: TRNSPRTPCE
+   :versions: ArgonSR2-ArgonSR2
+
+Known Issues in SR2
+===================
+The following table lists the known issues that exist in Service Release 1.
+
+.. jira_known_issues::
+   :project: TRNSPRTPCE
+   :versions: ArgonSR2-ArgonSR2
