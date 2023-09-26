@@ -5,8 +5,8 @@ Transport PCE
 Overview
 ========
 
-Transport PCE is an application running on top of the OpenDaylight controller. Its primary function
-is to control an optical transport infrastructure using a non-proprietary South Bound Interface (SBI).
+Transport PCE is an OpenDaylight controller feature whose primary function is to control high rate transport services.
+To that end, it controls the infrastructure of an optical transport network using a non-proprietary South Bound Interface (SBI).
 
 The controlled transport infrastructure includes a WDM (Wave Division Multiplexing) layer and an OTN
 (optical transport network) layer. The WDM layer is built from ROADMs (reconfigurable optical add-drop multiplexer)
@@ -49,17 +49,28 @@ The internal RPCs between those modules are defined in the Transport Service Pat
 Behavior/Feature Changes
 ========================
 
-TBD
+The Potassium GA version contains a number of code refactorings in order to improve the maintainability of the controller
+code (refactoring of the first implementation of the Catalog in TransportPCE, part of the functional testing code,
+implementation of the lighty.io build following the removal of all blueprint xml file of the projet...).
+From a business point of view, Potassium brings the following new functionalities:
+- ability to create a 400Gbps service between add/drop ports of a ROADM using the openroadm 'OC' service format
+- migration of OpenROADM network and service yang models from version 10.1 to the latest 13.1
+- the start of the developement of a big epic: the Alien Wavelength Use Case. To that end, Potassium covers testing and
+  resolved issues related to the implementation of the 'temp-service' within TransportPCE.
 
-Changes planned in Sulfur release stream
-============================================
+Changes planned in Potassium release stream
+===========================================
 
-TBD
+The Netconf device simulator used until now to perform TransportPCE functional tests (honeynode, based on the archived
+fd.io/honeycomb project) becomes difficult to maintain. It will eventually be replaced by lightynode, optical device
+emulator developped over the lighty-netconf-simulator proposed by PANTHEONtech.
+With Potassium GA, part of TransportPCE functional tests have migrated towards this new netconf device emulator.
+However, Potassium release stream will finalyze this TransportPCE functional test migration from honeynode towards lightynode.
 
 New Features
 ============
 
-TBD
+No new feature as such in Potassium.
 
 Deprecated Features
 ===================
@@ -73,7 +84,7 @@ The following table lists the issues resolved in this release.
 
 .. jira_fixed_issues::
    :project: TRNSPRTPCE
-   :versions: Sulfur-Sulfur
+   :versions: Potassium-Potassium
 
 Known Issues
 ============
@@ -82,4 +93,4 @@ The following table lists the known issues that exist in this release.
 
 .. jira_known_issues::
    :project: TRNSPRTPCE
-   :versions: Sulfur-Sulfur
+   :versions: Potassium-Potassium
