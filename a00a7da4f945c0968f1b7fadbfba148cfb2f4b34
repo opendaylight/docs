@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "33eb83bc_b2cece5b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7446
+      },
+      "writtenOn": "2023-09-27T11:27:02Z",
+      "side": 1,
+      "message": "thank you for the review. Remarks integrated in PS4.",
+      "revId": "a00a7da4f945c0968f1b7fadbfba148cfb2f4b34",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e1454609_51a3f849",
@@ -36,6 +53,24 @@
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "db453474_2d1c0b05",
+        "filename": "docs/release-notes/projects/transportpce.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 7446
+      },
+      "writtenOn": "2023-09-27T11:27:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1b0697cb_870ce5ae",
+      "revId": "a00a7da4f945c0968f1b7fadbfba148cfb2f4b34",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e66259ce_6f36af75",
@@ -49,6 +84,24 @@
       "writtenOn": "2023-09-27T10:55:55Z",
       "side": 1,
       "message": "Good point.\n\nPerhaps we could give the URLS of the repository of all these sims.",
+      "revId": "a00a7da4f945c0968f1b7fadbfba148cfb2f4b34",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "69fd5d6f_cf936895",
+        "filename": "docs/release-notes/projects/transportpce.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 7446
+      },
+      "writtenOn": "2023-09-27T11:27:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e66259ce_6f36af75",
       "revId": "a00a7da4f945c0968f1b7fadbfba148cfb2f4b34",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
