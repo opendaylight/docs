@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e1454609_51a3f849",
+        "filename": "docs/release-notes/projects/transportpce.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 6731
+      },
+      "writtenOn": "2023-09-27T10:55:55Z",
+      "side": 1,
+      "message": "What about this ?\n\nPotassium GA release follows an important refactoring work that has improved the maintainability\nof many code pieces (first implementation of the Catalog, functional tests,\nverification of the lighty.io build needed after the removal of all blueprint xml file of the projet, etc).\nFrom a business point of view, Potassium brings the following new functionalities:\n- ability to create a 400Gbps service between add/drop ports of a ROADM using the openroadm \u0027OC\u0027 service format\n- migration of OpenROADM network and service yang models from version 10.1 to the latest 13.1\n- the start of the developement of a big epic: the Alien Wavelength Use Case.\n  To that end, Potassium covers testing and resolved issues related to\n  the implementation of the \u0027temp-service\u0027 within TransportPCE.",
+      "revId": "a00a7da4f945c0968f1b7fadbfba148cfb2f4b34",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e66259ce_6f36af75",
+        "filename": "docs/release-notes/projects/transportpce.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 6731
+      },
+      "writtenOn": "2023-09-27T10:55:55Z",
+      "side": 1,
+      "message": "Good point.\n\nPerhaps we could give the URLS of the repository of all these sims.",
+      "revId": "a00a7da4f945c0968f1b7fadbfba148cfb2f4b34",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    }
+  ]
+}
