@@ -74,7 +74,7 @@ linkcheck_ignore = [
     # this url often has connectivity issues on the gate
     'https://www.mojohaus.org/animal-sniffer/animal-sniffer-maven-plugin/examples/checking-signatures.html',
     #Ignore announce page link till it is up
-    'https://www.opendaylight.org/current-release-chlorine',
+    'https://www.opendaylight.org/current-release-potassium',
     'https://www.opendaylight.org/current-release-argon',
 ]
 linkcheck_timeout = 300
