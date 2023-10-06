@@ -5,8 +5,29 @@ OpenDaylight Downloads
 Supported Releases
 ==================
 
+Potassium-SR0
+-------------
+
+(Current Release)
+
+:Announcement: `Potassium <https://www.opendaylight.org/current-release-potassium>`_
+
+:GA Release Date: October 6, 2023
+:Service Release Date: October 6, 2023
+
+:Downloads:
+    * `OpenDaylight Potassium Tar
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.19.0/karaf-0.19.0.tar.gz>`_
+    * `OpenDaylight Potassium Zip
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.19.0/karaf-0.19.0.zip>`_
+
+:Documentation:
+    * :doc:`Getting Started Guide <odl-potassium:getting-started-guide/index>`
+    * :doc:`Project Guides <odl-potassium:index>`
+    * :doc:`Release Notes <odl-potassium:release-notes/index>`
+
 Argon-SR2
-------------
+---------
 
 (Current Release)
 
@@ -26,25 +47,6 @@ Argon-SR2
     * :doc:`Project Guides <odl-argon:index>`
     * :doc:`Release Notes <odl-argon:release-notes/index>`
 
-
-Chlorine-SR3
-------------
-
-:Announcement: `Chlorine <https://www.opendaylight.org/current-release-chlorine>`_
-
-:GA Release Date: October 27, 2022
-:Service Release Date: June 26, 2023
-
-:Downloads:
-    * `OpenDaylight Chlorine Tar
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.17.3/karaf-0.17.3.tar.gz>`_
-    * `OpenDaylight Chlorine Zip
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.17.3/karaf-0.17.3.zip>`_
-
-:Documentation:
-    * :doc:`Getting Started Guide <odl-chlorine:getting-started-guide/index>`
-    * :doc:`Project Guides <odl-chlorine:index>`
-    * :doc:`Release Notes <odl-chlorine:release-notes/index>`
 
 Docker images
 =============
