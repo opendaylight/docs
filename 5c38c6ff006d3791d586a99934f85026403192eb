@@ -1,4 +1,28 @@
 {
-  "comments": [],
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "46131253_f6e717e4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6258
+      },
+      "writtenOn": "2023-10-15T01:09:54Z",
+      "side": 1,
+      "message": "This is not a valid commit footer for Gerrit. \n\nYou\u0027ll have to add this as a part of the commit body instead that would like this commit! Alternatively you can also submit a chnage under the same topic under a diff branch.",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 68
+      },
+      "revId": "5c38c6ff006d3791d586a99934f85026403192eb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    }
+  ],
   "submitRequirementResults": []
 }
