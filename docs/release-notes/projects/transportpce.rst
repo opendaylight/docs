@@ -114,3 +114,19 @@ The following table lists the known issues that exist in Service Release 1.
 .. jira_known_issues::
    :project: TRNSPRTPCE
    :versions: ArgonSR2-ArgonSR2
+
+Resolved Issues in SR3
+======================
+The following table lists the issues resolved in Service Release 1.
+
+.. jira_fixed_issues::
+   :project: TRNSPRTPCE
+   :versions: ArgonSR3-ArgonSR3
+
+Known Issues in SR3
+===================
+The following table lists the known issues that exist in Service Release 1.
+
+.. jira_known_issues::
+   :project: TRNSPRTPCE
+   :versions: ArgonSR3-ArgonSR3
