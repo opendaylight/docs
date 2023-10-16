@@ -380,13 +380,13 @@ There are a lot of ways to test a RPC. The following are a few examples.
 Using the API Explorer through HTTP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1.  Navigate to `apidoc
-    UI <http://localhost:8181/apidoc/explorer/index.html>`__ with your
+1.  Navigate to `openapi
+    UI <http://localhost:8181/openapi/explorer/index.html>`__ with your
     web browser.
 
     .. note::
 
-        In the URL link for *apidoc UI*, change *localhost* to the IP/Host
+        In the URL link for *openapi UI*, change *localhost* to the IP/Host
         name to reflect your development machine’s network address.
 
 2.  Enter the username and password.
