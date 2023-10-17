@@ -73,16 +73,12 @@ It also defines two profiles which help during development:
 
 -  ``q`` (``-Pq``), the quick profile, which disables tests, code
    coverage, Javadoc generation, code analysis, etc. — anything which
-   is not necessary to build the bundles and features (see `this blog
-   post <http://blog2.vorburger.ch/2016/06/improve-maven-build-speed-with-q.html>`__
-   for details);
+   is not necessary to build the bundles and features;
 
 -  ``addInstallRepositoryPath``
    (``-DaddInstallRepositoryPath=…/karaf/system``) which can be used to
    drop a bundle in the appropriate Karaf location, to enable
-   hot-reloading of bundles during development (see `this blog
-   post <http://blog2.vorburger.ch/2016/06/maven-install-into-additional.html>`__
-   for details).
+   hot-reloading of bundles during development.
 
 For modules which don’t produce any useful artifacts (*e.g.* aggregator
 POMs), you should add the following to avoid processing artifacts:
