@@ -33,6 +33,23 @@
       "message": "recheck",
       "revId": "a79c3e4ffa11a7daf29db8f871b6d7a1713568b2",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "498730d4_8ff4c725",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6731
+      },
+      "writtenOn": "2023-10-27T08:13:04Z",
+      "side": 1,
+      "message": "pre-commit + gitlint-ci KO because of minions upgrade but docs-linkcheck OK\n\n10:00:27   pre-commit: FAIL code 3 (22.48\u003dsetup[3.76]+cmd[10.52,8.20] seconds)\n10:00:27   docs: OK (51.18\u003dsetup[34.77]+cmd[16.41] seconds)\n10:00:27   docs-linkcheck: OK (62.12\u003dsetup[21.26]+cmd[40.86] seconds)\n10:00:27   spelling: OK (146.87\u003dsetup[19.23]+cmd[102.86,24.79] seconds)\n10:00:27   evaluation failed :( (282.82 seconds)\n10:00:27 + tox_status\u003d255",
+      "revId": "a79c3e4ffa11a7daf29db8f871b6d7a1713568b2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ]
 }
