@@ -6,7 +6,7 @@ repos:
       - id: trailing-whitespace
 
   - repo: https://github.com/jorisroovers/gitlint
-    rev: v0.19.1
+    rev: 4d9119760056492eabc201bfad5de2f9e660b85f
     hooks:
       - id: gitlint
         stages: [commit-msg]
