@@ -16,6 +16,23 @@
       "message": "09:49:46 /w/workspace/docs-tox-verify-calcium/docs/downloads.rst:19: WARNING: broken link: https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.19.0/karaf-0.19.0.tar.gz (404 Client Error: Not Found for url: https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.19.0/karaf-0.19.0.tar.gz)\n09:49:46 /w/workspace/docs-tox-verify-calcium/docs/downloads.rst:21: WARNING: broken link: https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.19.0/karaf-0.19.0.zip (404 Client Error: Not Found for url: https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.19.0/karaf-0.19.0.zip)",
       "revId": "a79c3e4ffa11a7daf29db8f871b6d7a1713568b2",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1aedf0ea_6d5b0ae3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6731
+      },
+      "writtenOn": "2023-10-27T07:51:33Z",
+      "side": 1,
+      "message": "recheck",
+      "revId": "a79c3e4ffa11a7daf29db8f871b6d7a1713568b2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ]
 }
