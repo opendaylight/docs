@@ -155,6 +155,7 @@ artifacts. This rendered ``rfc8528-data-api`` and ``rfc8528-data-util`` artifact
 See `YANGTOOLS-1172 <https://jira.opendaylight.org/browse/YANGTOOLS-1172>`__ for details.
 
 As part of these changes, following API changes have also been done in order to ease using these interfaces:
+
 * ``NormalizedNodeStreamWriterExtension`` has been renamed to ``NormalizedNodeStreamWriter.Extension``
 * ``StreamWriterMetadataExtension`` has been renamed to ``NormalizedNodeStreamWriter.MetadataExtension``
 * ``StreamWriterMountPointExtension`` has been renamed to ``NormalizedNodeStreamWriter.MountPointExtension``
