@@ -69,3 +69,19 @@ The following table lists the known issues that exist in Service Release 2.
 .. jira_known_issues::
    :project: AAA
    :versions: 0.17.9-0.17.11
+
+Resolved Issues in SR3
+======================
+The following table lists the issues resolved in Service Release 3.
+
+.. jira_fixed_issues::
+   :project: AAA
+   :versions: 0.17.12-0.17.14
+
+Known Issues in SR3
+===================
+The following table lists the known issues that exist in Service Release 3.
+
+.. jira_known_issues::
+   :project: AAA
+   :versions: 0.17.12-0.17.14

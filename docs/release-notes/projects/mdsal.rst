@@ -86,3 +86,19 @@ The following table lists the known issues that exist in Service Release 2.
 .. jira_known_issues::
    :project: MDSAL
    :versions: 11.0.10-11.0.12
+
+Resolved Issues in SR3
+======================
+The following table lists the issues resolved in Service Release 3.
+
+.. jira_fixed_issues::
+   :project: MDSAL
+   :versions: 11.0.13-11.0.15
+
+Known Issues in SR3
+===================
+The following table lists the known issues that exist in Service Release 3.
+
+.. jira_known_issues::
+   :project: MDSAL
+   :versions: 11.0.13-11.0.15
