@@ -26,7 +26,7 @@ Potassium-SR0
     * :doc:`Project Guides <odl-potassium:index>`
     * :doc:`Release Notes <odl-potassium:release-notes/index>`
 
-Argon-SR2
+Argon-SR3
 ---------
 
 (Current Release)
@@ -34,13 +34,13 @@ Argon-SR2
 :Announcement: `Argon <https://www.opendaylight.org/current-release-argon>`_
 
 :GA Release Date: April 2, 2023
-:Service Release Date: September 6, 2023
+:Service Release Date: November 6, 2023
 
 :Downloads:
     * `OpenDaylight Argon Tar
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.18.2/karaf-0.18.2.tar.gz>`_
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.18.3/karaf-0.18.3.tar.gz>`_
     * `OpenDaylight Argon Zip
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.18.2/karaf-0.18.2.zip>`_
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.18.3/karaf-0.18.3.zip>`_
 
 :Documentation:
     * :doc:`Getting Started Guide <odl-argon:getting-started-guide/index>`
