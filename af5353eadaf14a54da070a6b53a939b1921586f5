@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cc4c2757_bdcbb61d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6731
+      },
+      "writtenOn": "2023-12-15T15:06:33Z",
+      "side": 1,
+      "message": "docs-linkcheck false positive\n\nw/workspace/docs-tox-verify-argon/docs/contributor-guides/coding-guidelines/coding-guidelines-java.rst:553: WARNING: broken link: https://checkerframework.org (HTTPSConnectionPool(host\u003d\u0027checkerframework.org\u0027, port\u003d443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, \u0027[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:997)\u0027))))",
+      "revId": "af5353eadaf14a54da070a6b53a939b1921586f5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    }
+  ]
+}
