@@ -319,7 +319,7 @@ Cluster Monitoring
 
 OpenDaylight exposes shard information via ``MBeans``, which can be explored
 with ``JConsole``, VisualVM, or other JMX clients, or exposed via a REST API using
-`Jolokia <https://jolokia.org/features-nb.html>`_, provided by the
+`Jolokia <https://jolokia.org/features.html>`_, provided by the
 ``odl-jolokia`` Karaf feature. This is convenient, due to a significant focus
 on REST in OpenDaylight.
 
