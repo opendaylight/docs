@@ -16,6 +16,23 @@
       "message": "recheck",
       "revId": "10340768b5a7e858711405f4957a65cbced4473c",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ec6af271_0d327fa5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6731
+      },
+      "writtenOn": "2024-02-07T18:57:56Z",
+      "side": 1,
+      "message": "false positive\n\n19:49:18   pre-commit: OK (13.53\u003dsetup[3.90]+cmd[9.63] seconds)\n19:49:18   docs: OK (43.58\u003dsetup[23.51]+cmd[20.08] seconds)\n19:49:18   docs-linkcheck: FAIL code 1 (64.21\u003dsetup[22.78]+cmd[41.43] seconds)\n19:49:18   spelling: OK (76.44\u003dsetup[20.85]+cmd[29.18,26.41] seconds)\n19:49:18   gitlint: OK (3.58\u003dsetup[3.42]+cmd[0.16] seconds)",
+      "revId": "10340768b5a7e858711405f4957a65cbced4473c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ]
 }
