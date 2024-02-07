@@ -5,7 +5,7 @@ OpenDaylight Downloads
 Supported Releases
 ==================
 
-Potassium-SR1
+Potassium-SR2
 -------------
 
 (Current Release)
@@ -13,13 +13,13 @@ Potassium-SR1
 :Announcement: `Potassium <https://www.opendaylight.org/current-release-potassium>`_
 
 :GA Release Date: October 6, 2023
-:Service Release Date: December 10, 2023
+:Service Release Date: February 5, 2024
 
 :Downloads:
     * `OpenDaylight Potassium Tar
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.19.1/karaf-0.19.1.tar.gz>`_
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.19.2/karaf-0.19.2.tar.gz>`_
     * `OpenDaylight Potassium Zip
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.19.1/karaf-0.19.1.zip>`_
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.19.2/karaf-0.19.2.zip>`_
 
 :Documentation:
     * :doc:`Getting Started Guide <odl-potassium:getting-started-guide/index>`
