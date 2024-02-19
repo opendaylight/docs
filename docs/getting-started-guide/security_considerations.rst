@@ -182,7 +182,7 @@ Disabling the remote shutdown port
 ----------------------------------
 
 You can lock down your deployment post installation. Set
-``karaf.shutdown.port=-1`` in ``etc/custom.properties`` or ``etc/config.properties`` to
+``karaf.shutdown.port=-1`` in ``etc/custom.properties`` to
 disable the remote shutdown port.
 
 Securing Southbound Plugins
@@ -218,7 +218,7 @@ Securing RESTCONF using HTTPS
 To secure Jetty RESTful services, including RESTCONF, you must configure the
 Jetty server to utilize SSL by performing the following steps.
 
-#. Issue the following command sequence to create a self-signed certificate for
+#. Issue the following command sequence to create a self-signed certificate in the ``etc`` folder for
    use by the ODL deployment.
 
    ::
@@ -243,7 +243,7 @@ Jetty server to utilize SSL by performing the following steps.
 
 
 #.  After the key has been obtained, make the following changes to
-    the ``etc/custom.properties`` file to set a few default properties.
+    the ``etc/org.ops4j.pax.web.cfg`` file to set a few default properties.
 
     ::
 
@@ -255,129 +255,17 @@ Jetty server to utilize SSL by performing the following steps.
         org.ops4j.pax.web.ssl.key.password=123456
         org.ops4j.pax.web.ssl.key.alias=jetty
 
-#. Then edit the ``etc/jetty.xml`` file with the appropriate HTTP connectors.
 
-   For example:
-
-   ::
-
-        <?xml version="1.0"?>
-        <!--
-         Licensed to the Apache Software Foundation (ASF) under one
-         or more contributor license agreements.  See the NOTICE file
-         distributed with this work for additional information
-         regarding copyright ownership.  The ASF licenses this file
-         to you under the Apache License, Version 2.0 (the
-         "License"); you may not use this file except in compliance
-         with the License.  You may obtain a copy of the License at
-
-           http://www.apache.org/licenses/LICENSE-2.0
-
-        Unless required by applicable law or agreed to in writing,
-        software distributed under the License is distributed on an
-        "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-         KIND, either express or implied.  See the License for the
-         specific language governing permissions and limitations
-         under the License.
-        -->
-        <!DOCTYPE Configure PUBLIC "-//Mort Bay Consulting//
-        DTD Configure//EN" "http://jetty.mortbay.org/configure.dtd">
-
-        <Configure id="Server" class="org.eclipse.jetty.server.Server">
-
-            <!-- Use this connector for many frequently idle connections and for
-                threadless continuations. -->
-            <New id="http-default" class="org.eclipse.jetty.server.HttpConfiguration">
-                <Set name="secureScheme">https</Set>
-                <Set name="securePort">
-                    <Property name="jetty.secure.port" default="8443" />
-                </Set>
-                <Set name="outputBufferSize">32768</Set>
-                <Set name="requestHeaderSize">8192</Set>
-                <Set name="responseHeaderSize">8192</Set>
-
-                <!-- Default security setting: do not leak our version -->
-                <Set name="sendServerVersion">false</Set>
-
-                <Set name="sendDateHeader">false</Set>
-                <Set name="headerCacheSize">512</Set>
-            </New>
-
-            <Call name="addConnector">
-                <Arg>
-                    <New class="org.eclipse.jetty.server.ServerConnector">
-                        <Arg name="server">
-                            <Ref refid="Server" />
-                        </Arg>
-                        <Arg name="factories">
-                            <Array type="org.eclipse.jetty.server.ConnectionFactory">
-                                <Item>
-                                    <New class="org.eclipse.jetty.server.HttpConnectionFactory">
-                                        <Arg name="config">
-                                            <Ref refid="http-default"/>
-                                        </Arg>
-                                    </New>
-                                </Item>
-                            </Array>
-                        </Arg>
-                        <Set name="host">
-                            <Property name="jetty.host"/>
-                        </Set>
-                        <Set name="port">
-                            <Property name="jetty.port" default="8181"/>
-                        </Set>
-                        <Set name="idleTimeout">
-                            <Property name="http.timeout" default="300000"/>
-                        </Set>
-                        <Set name="name">jetty-default</Set>
-                    </New>
-                </Arg>
-            </Call>
-
-            <!-- =========================================================== -->
-            <!-- Configure Authentication Realms -->
-            <!-- Realms may be configured for the entire server here, or -->
-            <!-- they can be configured for a specific web app in a context -->
-            <!-- configuration (see $(jetty.home)/contexts/test.xml for an -->
-            <!-- example). -->
-            <!-- =========================================================== -->
-            <Call name="addBean">
-                <Arg>
-                    <New class="org.eclipse.jetty.jaas.JAASLoginService">
-                        <Set name="name">karaf</Set>
-                        <Set name="loginModuleName">karaf</Set>
-                        <Set name="roleClassNames">
-                            <Array type="java.lang.String">
-                                <Item>org.apache.karaf.jaas.boot.principal.RolePrincipal</Item>
-                            </Array>
-                        </Set>
-                    </New>
-                </Arg>
-            </Call>
-            <Call name="addBean">
-                <Arg>
-                   <New class="org.eclipse.jetty.jaas.JAASLoginService">
-                        <Set name="name">default</Set>
-                        <Set name="loginModuleName">karaf</Set>
-                        <Set name="roleClassNames">
-                            <Array type="java.lang.String">
-                                <Item>org.apache.karaf.jaas.boot.principal.RolePrincipal</Item>
-                            </Array>
-                        </Set>
-                    </New>
-                </Arg>
-            </Call>
-        </Configure>
-
-
-The configuration snippet above adds a connector that is protected by SSL on
-port 8443. You can test that the changes have succeeded by restarting Karaf,
+You can test that the changes have succeeded by restarting Karaf,
 issuing the following ``curl`` command, and ensuring that the 2XX HTTP status
 code appears in the returned message.
 
 ::
 
-        curl -u admin:admin -v -k https://localhost:8443/restconf/modules
+        curl -u admin:admin -v -k https://192.168.56.100:8443/rests/operations
+
+A more advanced example of Jetty security configuration can be found in this article:
+https://access.redhat.com/documentation/en-us/red_hat_jboss_fuse/6.3/html/security_guide/webconsole#idm139646384633952
 
 Security Considerations for Clustering
 ======================================
