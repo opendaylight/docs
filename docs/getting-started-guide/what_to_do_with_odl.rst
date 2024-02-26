@@ -16,4 +16,4 @@ OpenDaylight deployment use cases.
 
 * `OPNFV Installation instructions (Apex)
   <https://artifacts.opnfv.org/apex/docs/installation-instructions/index.html>`_
-* `Apex Wiki <https://wiki.opnfv.org/display/apex/Apex>`_
+* `Apex OPNFV documentation <https://docs.opnfv.org/projects/apex/en/latest/index.html>`_
