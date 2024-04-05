@@ -49,34 +49,35 @@ The internal RPCs between those modules are defined in the Transport Service Pat
 Behavior/Feature Changes
 ========================
 
-Potassium GA release follows an important refactoring work that has improved the maintainability
-of many code pieces (first implementation of the Catalog, functional tests,
-verification of the lighty.io build needed after the removal of all blueprint xml files of the projet, etc).
-From a business point of view, Potassium brings the following new functionalities:
-- ability to create a 400Gbps service between add/drop ports of a ROADM using the openroadm 'OC' service format
-- migration of OpenROADM network and service yang models from version 10.1 to the latest 13.1
-- the start of the developement of a big epic: the Alien Wavelength Use Case. To that end, Potassium covers testing and
-resolved issues related to the implementation of the 'temp-service' within TransportPCE.
+2024.03 Calcium release follows an important refactoring work that has improved the maintainability
+of many code pieces and should help future developments (rpc and listener registrations, code optimizations...)
 
-Changes planned in Potassium release stream
-===========================================
-
-The Netconf device simulator used until now to perform TransportPCE functional tests (honeynode, based on the archived
-fd.io/honeycomb project) becomes difficult to maintain. It will eventually be replaced by lightynode, optical device
-emulator developped over the lighty-netconf-simulator proposed by PANTHEONtech
-(https://github.com/PANTHEONtech/lighty-netconf-simulator/tree/main).
-With Potassium GA, part of TransportPCE functional tests have migrated towards this new netconf device emulator.
-However, Potassium release stream will finalyze this TransportPCE functional test migration from honeynode towards lightynode.
 
 New Features
 ============
 
-No new feature as such in Potassium.
+From a business point of view, Calcium brings the following new functionalities:
+- migration of all the TransportPCE T-API implementation based on T-API models version 2.1.1 to T-API models in version 2.4
+- management of the spectrum filling rules defined in the controller-customization module. That functionality may be used by the user to set manually a specific wavelength range when we create an optical transport service.
+- finalization of the migration of all transportpce functional tests towards the new netconf device simulator based on lightynode. Lightynode is a netconf device emulator running currently configuration compatible with OpenROADM device models in versions 1.2.1, 2.2.1 or 7.1.0. The emulator is based on the lighty-netconf-simulator project proposed by lighty.io (see https://github.com/PANTHEONtech/lighty-netconf-simulator).
+- compilation of new official yang models available for future implementations in transportpce. Especially:
+
+  * set of openconfig models in version pre-release 1
+  * openroadm-device models in version 13.1.0
+
+
+Changes planned in Potassium release stream
+===========================================
+
+Throughout the calcium release train, new developments will enrich these new features.
+Developments on T-API will continue. Currently the business logic of all TransportPCE modules (service orchestration, topologies, pce, device rendering) is based on OpenROADM models. In the short term, topologies could be managed independently according to OpenROADM or T-API models. And should also follow the Path Computation module next.
+
 
 Deprecated Features
 ===================
 
-There are no deprecated or removed features.
+In 2024.03 Calcium release, T-API yang modules in version 2.1.1 are no longer used (implementation relies on models in version 2.4) but still present in transportpce-models repository. They will be removed in next 2024.09 Scandium release.
+
 
 Resolved Issues
 ===============
@@ -85,7 +86,8 @@ The following table lists the issues resolved in this release.
 
 .. jira_fixed_issues::
    :project: TRNSPRTPCE
-   :versions: Potassium-Potassium
+   :versions: Calcium-Calcium
+
 
 Known Issues
 ============
@@ -94,22 +96,6 @@ The following table lists the known issues that exist in this release.
 
 .. jira_known_issues::
    :project: TRNSPRTPCE
-   :versions: Potassium-Potassium
+   :versions: Calcium-Calcium
 
-Resolved Issues in SR1
-======================
-
-The following table lists the issues resolved in Service Release 1.
-
-.. jira_fixed_issues::
-   :project: TRNSPRTPCE
-   :versions: PotassiumSR1-PotassiumSR1
-
-Known Issues in SR1
-===================
-
-The following table lists the known issues that exist in Service Release 1.
-
-.. jira_known_issues::
-   :project: TRNSPRTPCE
-   :versions: PotassiumSR1-PotassiumSR1
+Also, swagger does not work for TransportPCE with controller resources (see https://jira.opendaylight.org/browse/NETCONF-1279)
