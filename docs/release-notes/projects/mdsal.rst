@@ -13,31 +13,23 @@ for providing YANG-defined interaction patterns:
 
 Behavior/Feature Changes
 ========================
-The Binding mapping of ``type bits`` YANG statement has been updated to use a dedicated common
-superinterface, ``BitsTypeObject``. Furthermore individual bits within these classes are now represented
-as primitive ``boolean`` values rather than nullable ``Boolean`` objects.
+No behaviour changes.
 
 New Features
 ============
-Both ``DOMRpcProviderService`` and ``RpcProviderService`` have gained the ability to register single-type
-and flexible multi-type RPC implementations. ``RpcConsumerRegistry`` have gained the ability to access single-RPC
-handles. These capabilities are based on new codegen feature, which generates ``@FunctionalInterface`` interfaces
-for each individual ``rpc``, similar to how ``action`` statements are processed.
-
-Binding code generator now recognizes ``RFC8040 rc:yang-data`` extensions and generates corresponding interfaces.
+No new features.
 
 Deprecated Features
 ===================
-``NotificationService.registerNotificationListener()`` method has been deprecated, along with its Binding
-specification interfaces based on ``NotificationListener``. These will be removed in a future major release.
-
-``RpcProviderService.registerRpcImplementation()`` methods, ``RpcConsumerRegistry.getRpcService()`` methods and
-Binding specification interfaces based on ``RpcService`` have been deprecated. These will be removed in a future
-major release.
+No deprecated features.
 
 Removed Features
 ===================
-No removed features.
+``NotificationService.registerNotificationListener()`` method has been removed, along with its Binding
+specification interfaces based on ``NotificationListener``.
+
+``RpcProviderService.registerRpcImplementation()`` methods, ``RpcConsumerRegistry.getRpcService()`` methods and
+Binding specification interfaces based on ``RpcService`` have been removed.
 
 Resolved Issues
 ===============
@@ -45,7 +37,7 @@ The following table lists the issues resolved in this release.
 
 .. jira_fixed_issues::
    :project: MDSAL
-   :versions: 12.0.0-12.0.2
+   :versions: 13.0.0-13.0.1
 
 Known Issues
 ============
@@ -53,4 +45,4 @@ The following table lists the known issues that exist in this release.
 
 .. jira_known_issues::
    :project: MDSAL
-   :versions: 12.0.0-12.0.2
+   :versions: 13.0.0-13.0.1

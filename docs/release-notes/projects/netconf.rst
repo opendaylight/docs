@@ -17,11 +17,7 @@ The ``odl-restconf-nb-rfc8040`` feature has been renamed to ``odl-restconf-nb``.
 
 New Features
 ============
-Support for subscribing to mounted NETCONF devices has been added. See
-`NETCONF-745 <https://jira.opendaylight.org/browse/NETCONF-745>`__ for details.
-
-A new RESTCONF query extension has been added. This supports reporting only leaf values which have actually
-changed. See `NETCONF-862 <https://jira.opendaylight.org/browse/NETCONF-862>`__ for details.
+No new features.
 
 Deprecated and Removed Features
 ===============================
@@ -34,7 +30,7 @@ The following table lists the issues resolved in this release.
 
 .. jira_fixed_issues::
    :project: NETCONF
-   :versions: 6.0.0-6.0.4
+   :versions: 7.0.0-7.0.4
 
 Known Issues
 ============
@@ -42,4 +38,4 @@ The following table lists the known issues that exist in this release.
 
 .. jira_known_issues::
    :project: NETCONF
-   :versions: 6.0.0-6.0.4
+   :versions: 7.0.0-7.0.4
