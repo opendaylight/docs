@@ -32,7 +32,7 @@ The following table lists the issues resolved in this release.
 
 .. jira_fixed_issues::
    :project: INFRAUTILS
-   :versions: 6.0.0-6.0.2
+   :versions: 6.0.5-6.0.6
 
 Known Issues
 ============
@@ -40,4 +40,4 @@ The following table lists the known issues that exist in this release.
 
 .. jira_known_issues::
    :project: INFRAUTILS
-   :versions: 6.0.0-6.0.2
+   :versions: 6.0.5-6.0.6

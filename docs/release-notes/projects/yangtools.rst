@@ -18,12 +18,11 @@ introducing schema sources into the system.
 
 New Features
 ============
-``yang-maven-plugin`` now executes during incremental builds and does its best to not overwrite
-unchanged outputs.
+No new features.
 
 Removed Features
 ================
-``AugmentationNode`` and ``AugmentationIdentifer`` constructs have been removed.
+No removed features.
 
 Deprecated Features
 ===================
@@ -35,7 +34,7 @@ The following table lists the issues resolved in this release.
 
 .. jira_fixed_issues::
    :project: YANGTOOLS
-   :versions: 11.0.0-11.0.2
+   :versions: 12.0.0-13.0.2
 
 Known Issues
 ============
@@ -43,4 +42,4 @@ The following table lists the known issues that exist in this release.
 
 .. jira_known_issues::
    :project: YANGTOOLS
-   :versions: 11.0.0-11.0.2
+   :versions: 12.0.0-13.0.2
