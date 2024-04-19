@@ -75,7 +75,7 @@ linkcheck_ignore = [
     'https://www.mojohaus.org/animal-sniffer/animal-sniffer-maven-plugin/examples/checking-signatures.html',
     #Ignore announce page link till it is up
     'https://www.opendaylight.org/current-release-potassium',
-    'https://www.opendaylight.org/current-release-argon',
+    'https://www.opendaylight.org/current-release-calcium',
 ]
 linkcheck_timeout = 300
 
