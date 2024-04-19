@@ -5,10 +5,29 @@ OpenDaylight Downloads
 Supported Releases
 ==================
 
-Potassium-SR2
+Calcium-SR0
 -------------
 
 (Current Release)
+
+:Announcement: `Calcium <https://www.opendaylight.org/current-release-calcium>`_
+
+:GA Release Date: April 18, 2024
+:Service Release Date: April 18, 2024
+
+:Downloads:
+    * `OpenDaylight Calcium Tar
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.20.0/karaf-0.20.0.tar.gz>`_
+    * `OpenDaylight Calcium Zip
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.20.0/karaf-0.20.0.zip>`_
+
+:Documentation:
+    * :doc:`Getting Started Guide <odl-calcium:getting-started-guide/index>`
+    * :doc:`Project Guides <odl-calcium:index>`
+    * :doc:`Release Notes <odl-calcium:release-notes/index>`
+
+Potassium-SR2
+-------------
 
 :Announcement: `Potassium <https://www.opendaylight.org/current-release-potassium>`_
 
@@ -25,27 +44,6 @@ Potassium-SR2
     * :doc:`Getting Started Guide <odl-potassium:getting-started-guide/index>`
     * :doc:`Project Guides <odl-potassium:index>`
     * :doc:`Release Notes <odl-potassium:release-notes/index>`
-
-Argon-SR3
----------
-
-(Current Release)
-
-:Announcement: `Argon <https://www.opendaylight.org/current-release-argon>`_
-
-:GA Release Date: April 2, 2023
-:Service Release Date: November 6, 2023
-
-:Downloads:
-    * `OpenDaylight Argon Tar
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.18.3/karaf-0.18.3.tar.gz>`_
-    * `OpenDaylight Argon Zip
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.18.3/karaf-0.18.3.zip>`_
-
-:Documentation:
-    * :doc:`Getting Started Guide <odl-argon:getting-started-guide/index>`
-    * :doc:`Project Guides <odl-argon:index>`
-    * :doc:`Release Notes <odl-argon:release-notes/index>`
 
 
 Docker images
