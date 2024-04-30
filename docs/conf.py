@@ -31,7 +31,7 @@ update_intersphinx_mapping()
 
 # OpenDaylight Documentation Releases
 intersphinx_mapping['odl-scandium'] = ('https://docs.opendaylight.org/en/latest/', None)
-intersphinx_mapping['odl-calcium'] = ('https://docs.opendaylight.org/en/calcium/', None)
+intersphinx_mapping['odl-calcium'] = ('https://docs.opendaylight.org/en/stable-calcium/', None)
 intersphinx_mapping['odl-potassium'] = ('https://docs.opendaylight.org/en/stable-potassium/', None)
 intersphinx_mapping['odl-argon'] = ('https://docs.opendaylight.org/en/stable-argon/', None)
 intersphinx_mapping['odl-chlorine'] = ('https://docs.opendaylight.org/en/stable-chlorine/', None)
