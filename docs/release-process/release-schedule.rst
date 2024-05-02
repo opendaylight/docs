@@ -27,9 +27,9 @@ and documented as part of, the corresponding TSC meeting.
    :stub-columns: 1
 
    * - **Event**
+     - **2024.09 Scandium Dates**
      - **2024.03 Argon Dates**
      - **2024.03 Calcium Dates**
-     - **2023.09 Potassium Dates**
      - **Relative Dates**
      - **Start-Relative Dates**
      - **Description**
