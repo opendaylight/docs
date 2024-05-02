@@ -34,6 +34,24 @@
       "parentUuid": "ed4cdea3_fa86c504",
       "revId": "677a027c90a53f589846bff058c3fba1cc5dff8f",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1aebbeec_2a9bb8f7",
+        "filename": "docs/release-process/release-schedule.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6731
+      },
+      "writtenOn": "2024-05-02T06:53:37Z",
+      "side": 1,
+      "message": "Ar and Ca dates are not coherent, I just push a new change to fix that.\nplease can someone confirm it is okay before merging them ?",
+      "parentUuid": "0b5b0d38_7d20475b",
+      "revId": "677a027c90a53f589846bff058c3fba1cc5dff8f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ],
   "submitRequirementResults": [
