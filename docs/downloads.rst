@@ -26,19 +26,19 @@ Calcium-SR0
     * :doc:`Project Guides <odl-calcium:index>`
     * :doc:`Release Notes <odl-calcium:release-notes/index>`
 
-Potassium-SR2
+Potassium-SR3
 -------------
 
 :Announcement: `Potassium <https://www.opendaylight.org/current-release-potassium>`_
 
 :GA Release Date: October 6, 2023
-:Service Release Date: February 5, 2024
+:Service Release Date: June 19, 2024
 
 :Downloads:
     * `OpenDaylight Potassium Tar
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.19.2/karaf-0.19.2.tar.gz>`_
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.19.3/karaf-0.19.3.tar.gz>`_
     * `OpenDaylight Potassium Zip
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.19.2/karaf-0.19.2.zip>`_
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.19.3/karaf-0.19.3.zip>`_
 
 :Documentation:
     * :doc:`Getting Started Guide <odl-potassium:getting-started-guide/index>`
