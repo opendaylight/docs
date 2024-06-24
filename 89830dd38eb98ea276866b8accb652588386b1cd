@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "232a9d4b_f07c53ff",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6731
+      },
+      "writtenOn": "2024-06-24T07:52:41Z",
+      "side": 1,
+      "message": "Hello\n\nI\u0027ve synced potassium branch and master so that conf.py are synced.\nThen I\u0027ve cherrypicked Anil\u0027s work on top of master + applied a few modifications to resolve merge conflicts and to ensure portability when commands are run locally.\n\nHope this helps\nGuillaume",
+      "revId": "89830dd38eb98ea276866b8accb652588386b1cd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c9175a3f_300aff71",
+        "filename": "tox.ini",
+        "patchSetId": 3
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 6731
+      },
+      "writtenOn": "2024-06-24T07:52:41Z",
+      "side": 1,
+      "message": "It would be easier if enchant-2 could come w/ the Ubuntu 2004 minions.\nEach subproject is responsible for its docs and probably needs a spellchecker.",
+      "revId": "89830dd38eb98ea276866b8accb652588386b1cd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    }
+  ]
+}
