@@ -46,7 +46,7 @@ To implement clustering, the deployment considerations are as follows:
 
 * Every device that belongs to a cluster needs to have an identifier.
   OpenDaylight uses the node's ``role`` for this purpose. After you define the
-  first node's role as *member-1* in the ``akka.conf`` file, OpenDaylight uses
+  first node's role as *member-1* in the ``pekko.conf`` file, OpenDaylight uses
   *member-1* to identify that node.
 
 * Data shards are used to contain all or a certain segment of a OpenDaylight's
@@ -102,7 +102,7 @@ OpenDaylight includes some scripts to help with the clustering configuration.
 Configure Cluster Script
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-This script is used to configure the cluster parameters (e.g. ``akka.conf``,
+This script is used to configure the cluster parameters (e.g. ``pekko.conf``,
 ``module-shards.conf``) on a member of the controller cluster. The user should
 restart the node to apply the changes.
 
@@ -157,7 +157,7 @@ do the following on each machine:
 
 #. Open the following configuration files:
 
-   * ``configuration/initial/akka.conf``
+   * ``configuration/initial/pekko.conf``
    * ``configuration/initial/module-shards.conf``
 
 #. In each configuration file, make the following changes:
@@ -176,7 +176,7 @@ do the following on each machine:
    address of any of the machines that will be part of the cluster::
 
       cluster {
-        seed-nodes = ["akka://opendaylight-cluster-data@${IP_OF_MEMBER1}:2550",
+        seed-nodes = ["pekko://opendaylight-cluster-data@${IP_OF_MEMBER1}:2550",
                       <url-to-cluster-member-2>,
                       <url-to-cluster-member-3>]
 
@@ -211,10 +211,10 @@ the three member nodes to access the data residing in the datastore.
 Sample Config Files
 """""""""""""""""""
 
-Sample ``akka.conf`` file::
+Sample ``pekko.conf`` file::
 
    odl-cluster-data {
-     akka {
+     pekko {
        remote {
          artery {
            enabled = on
@@ -226,9 +226,9 @@ Sample ``akka.conf`` file::
 
        cluster {
          # Using artery.
-         seed-nodes = ["akka://opendaylight-cluster-data@10.0.2.10:2550",
-                       "akka://opendaylight-cluster-data@10.0.2.11:2550",
-                       "akka://opendaylight-cluster-data@10.0.2.12:2550"]
+         seed-nodes = ["pekko://opendaylight-cluster-data@10.0.2.10:2550",
+                       "pekko://opendaylight-cluster-data@10.0.2.11:2550",
+                       "pekko://opendaylight-cluster-data@10.0.2.12:2550"]
 
          roles = [
            "member-1"
@@ -381,7 +381,7 @@ on a particular shard. An example output for the
         "LastApplied": 5,
         "LastLeadershipChangeTime": "2017-01-06 13:18:37.605",
         "LastLogIndex": 5,
-        "PeerAddresses": "member-3-shard-default-operational: akka://opendaylight-cluster-data@192.168.16.3:2550/user/shardmanager-operational/member-3-shard-default-operational, member-2-shard-default-operational: akka://opendaylight-cluster-data@192.168.16.2:2550/user/shardmanager-operational/member-2-shard-default-operational",
+        "PeerAddresses": "member-3-shard-default-operational: pekko://opendaylight-cluster-data@192.168.16.3:2550/user/shardmanager-operational/member-3-shard-default-operational, member-2-shard-default-operational: pekko://opendaylight-cluster-data@192.168.16.2:2550/user/shardmanager-operational/member-2-shard-default-operational",
         "WriteOnlyTransactionCount": 0,
         "FollowerInitialSyncStatus": false,
         "FollowerInfo": [
@@ -469,7 +469,7 @@ Split Brain Resolver
 You need to enable the Split Brain Resolver by configuring it as downing
 provider in the configuration::
 
-    akka.cluster.downing-provider-class = "akka.cluster.sbr.SplitBrainResolverProvider"
+    pekko.cluster.downing-provider-class = "org.apache.pekko.cluster.sbr.SplitBrainResolverProvider"
 
 You should also consider different downing strategies, described below.
 
@@ -481,7 +481,7 @@ more nodes while there is a network partition does not influence this timeout, s
 the status of those nodes will not be changed to Up while there are unreachable nodes.
 Joining nodes are not counted in the logic of the strategies.
 
-Setting ``akka.cluster.split-brain-resolver.stable-after`` to a shorter duration for having
+Setting ``pekko.cluster.split-brain-resolver.stable-after`` to a shorter duration for having
 quicker removal of crashed nodes can be done at the price of risking a too early action on
 transient network partitions that otherwise would have healed. Do not set this to a shorter
 duration than the membership dissemination time in the cluster, which depends on the cluster size.
@@ -513,7 +513,7 @@ removed, or if there are no changes within stable-after * 2.
 
 Configuration::
 
-    akka.cluster.split-brain-resolver {
+    pekko.cluster.split-brain-resolver {
       # Time margin after which shards or singletons that belonged to a downed/removed
       # partition are created in surviving partition. The purpose of this margin is that
       # in case of a network partition the persistent actors in the non-surviving partitions
@@ -574,11 +574,11 @@ than others.
 
 Configuration::
 
-    akka.cluster.split-brain-resolver.active-strategy=keep-majority
+    pekko.cluster.split-brain-resolver.active-strategy=keep-majority
 
 ::
 
-    akka.cluster.split-brain-resolver.keep-majority {
+    pekko.cluster.split-brain-resolver.keep-majority {
       # if the 'role' is defined the decision is based only on members with that 'role'
       role = ""
     }
@@ -597,7 +597,7 @@ cluster, or when you can define a fixed number of nodes with a certain role.
 * If there are unreachable nodes when starting up the cluster, before reaching
   this limit, the cluster may shut itself down immediately.
   This is not an issue if you start all nodes at approximately the same time or
-  use the ``akka.cluster.min-nr-of-members`` to define required number of
+  use the ``pekko.cluster.min-nr-of-members`` to define required number of
   members before the leader changes member status of ‘Joining’ members to ‘Up’.
   You can tune the timeout after which downing decisions are made using the
   stable-after setting.
@@ -628,11 +628,11 @@ splitting the cluster into two separate clusters, i.e. a split brain.
 
 Configuration::
 
-    akka.cluster.split-brain-resolver.active-strategy=static-quorum
+    pekko.cluster.split-brain-resolver.active-strategy=static-quorum
 
 ::
 
-    akka.cluster.split-brain-resolver.static-quorum {
+    pekko.cluster.split-brain-resolver.static-quorum {
       # minimum number of nodes that the cluster must have
       quorum-size = undefined
 
@@ -669,12 +669,12 @@ in the cluster.
 
 Configuration::
 
-    akka.cluster.split-brain-resolver.active-strategy=keep-oldest
+    pekko.cluster.split-brain-resolver.active-strategy=keep-oldest
 
 
 ::
 
-    akka.cluster.split-brain-resolver.keep-oldest {
+    pekko.cluster.split-brain-resolver.keep-oldest {
       # Enable downing of the oldest node when it is partitioned from all other nodes
       down-if-alone = on
 
@@ -701,7 +701,7 @@ to shutdown all nodes and start up a new fresh cluster.
 
 Configuration::
 
-    akka.cluster.split-brain-resolver.active-strategy=down-all
+    pekko.cluster.split-brain-resolver.active-strategy=down-all
 
 Lease
 ^^^^^
@@ -719,13 +719,13 @@ This strategy is very safe since coordination is added by an external arbiter.
 
 Configuration::
 
-    akka {
+    pekko {
       cluster {
-        downing-provider-class = "akka.cluster.sbr.SplitBrainResolverProvider"
+        downing-provider-class = "pekko.cluster.sbr.SplitBrainResolverProvider"
         split-brain-resolver {
           active-strategy = "lease-majority"
           lease-majority {
-            lease-implementation = "akka.coordination.lease.kubernetes"
+            lease-implementation = "pekko.coordination.lease.kubernetes"
           }
         }
       }
@@ -733,7 +733,7 @@ Configuration::
 
 ::
 
-    akka.cluster.split-brain-resolver.lease-majority {
+    pekko.cluster.split-brain-resolver.lease-majority {
       lease-implementation = ""
 
       # This delay is used on the minority side before trying to acquire the lease,
@@ -765,7 +765,7 @@ An OpenDaylight cluster has an ability to run on multiple data centers in a way,
 that tolerates network partitions among them.
 
 Nodes can be assigned to group of nodes by setting the
-``akka.cluster.multi-data-center.self-data-center`` configuration property.
+``pekko.cluster.multi-data-center.self-data-center`` configuration property.
 A node can only belong to one data center and if nothing is specified a node will
 belong to the default data center.
 
@@ -783,14 +783,14 @@ nodes in the same data center than across data centers.
 
 Two different failure detectors can be configured for these two purposes:
 
-* ``akka.cluster.failure-detector`` for failure detection within own data center
+* ``pekko.cluster.failure-detector`` for failure detection within own data center
 
-* ``akka.cluster.multi-data-center.failure-detector`` for failure detection across
+* ``pekko.cluster.multi-data-center.failure-detector`` for failure detection across
   different data centers
 
 Heartbeat messages for failure detection across data centers are only performed
 between a number of the oldest nodes on each side. The number of nodes is configured
-with ``akka.cluster.multi-data-center.cross-data-center-connections``.
+with ``pekko.cluster.multi-data-center.cross-data-center-connections``.
 
 This influences how rolling updates should be performed. Don’t stop all of the oldest nodes
 that are used for gossip at the same time. Stop one or a few at a time so that new
@@ -819,10 +819,10 @@ Configuration::
 
       failure-detector {
         # FQCN of the failure detector implementation.
-        # It must implement akka.remote.FailureDetector and have
+        # It must implement pekko.remote.FailureDetector and have
         # a public constructor with a com.typesafe.config.Config and
-        # akka.actor.EventStream parameter.
-        implementation-class = "akka.remote.DeadlineFailureDetector"
+        # pekko.actor.EventStream parameter.
+        implementation-class = "pekko.remote.DeadlineFailureDetector"
 
         # Number of potentially lost/delayed heartbeats that will be
         # accepted before considering it to be an anomaly.
@@ -863,13 +863,13 @@ nodes in two locations) such configuration is used:
 
 * for member-1, member-2 and member-3 (active data center)::
 
-    akka.cluster.multi-data-center {
+    pekko.cluster.multi-data-center {
       self-data-center = "main"
     }
 
 * for member-4, member-5, member-6 (backup data center)::
 
-    akka.cluster.multi-data-center {
+    pekko.cluster.multi-data-center {
       self-data-center = "backup"
     }
 
@@ -1006,7 +1006,7 @@ shard-transaction-idle-timeout-in-minutes      uint32 (1..max)   10      The max
 shard-snapshot-batch-count                     uint32 (1..max)   20000   The minimum number of entries to be present in the in-memory journal log before a snapshot is to be taken.
 shard-snapshot-data-threshold-percentage       uint8 (1..100)    12      The percentage of ``Runtime.totalMemory()`` used by the in-memory journal log before a snapshot is to be taken
 shard-heartbeat-interval-in-millis             uint16 (100..max) 500     The interval at which a shard will send a heart beat message to its remote shard.
-operation-timeout-in-seconds                   uint16 (5..max)   5       The maximum amount of time for akka operations (remote or local) to complete before failing.
+operation-timeout-in-seconds                   uint16 (5..max)   5       The maximum amount of time for pekko operations (remote or local) to complete before failing.
 shard-journal-recovery-log-batch-size          uint32 (1..max)   5000    The maximum number of journal log entries to batch on recovery for a shard before committing to the data store.
 shard-transaction-commit-timeout-in-seconds    uint32 (1..max)   30      The maximum amount of time a shard transaction three-phase commit can be idle without receiving the next messages before it aborts the transaction
 shard-transaction-commit-queue-capacity        uint32 (1..max)   20000   The maximum allowed capacity for each shard's transaction commit queue.
