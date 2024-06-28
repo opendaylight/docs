@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "6df5cfeb_401c05fb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6731
+      },
+      "writtenOn": "2024-06-28T13:48:35Z",
+      "side": 1,
+      "message": "title NOK since it currently works w/ it",
+      "revId": "9062f0b21a00245b6a082fc48803a592406f14d6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "d70aaccb_a318321a",
@@ -14,6 +31,91 @@
       "writtenOn": "2024-06-28T13:23:50Z",
       "side": 1,
       "message": "Hi Anil \u0026 all\n\nthis was already fixed inhttps://git.opendaylight.org/gerrit/c/docs/+/112266\nAlso please see comments in the K change https://git.opendaylight.org/gerrit/c/docs/+/112253\nIMO enchant should be shipped by default in every minion since every project is responsible for its doc and should have a spellchecker...\n\nI am not completely against outsourcing checks in a separate shell script if that\u0027s what you really want. Though, as it is done here, it introduces a few issues.\nMore comments inline.",
+      "revId": "9062f0b21a00245b6a082fc48803a592406f14d6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4155f5ba_461d90fc",
+        "filename": "install-enchant.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6731
+      },
+      "writtenOn": "2024-06-28T13:48:35Z",
+      "side": 1,
+      "message": "this pattern-matching is not portable\nand IMO can be easily rewritten in a more appropriate POSIX case structure\nhttps://mywiki.wooledge.org/BashFAQ/041\n\ntox is designed to be run locally also.\nwhat about debian and all other distros that supports apt-get ?",
+      "revId": "9062f0b21a00245b6a082fc48803a592406f14d6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2f0aa76c_a57a37cc",
+        "filename": "install-enchant.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6731
+      },
+      "writtenOn": "2024-06-28T13:48:35Z",
+      "side": 1,
+      "message": "idem for distros that supports yum.",
+      "revId": "9062f0b21a00245b6a082fc48803a592406f14d6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bb8b34c8_d8e2a46c",
+        "filename": "install-enchant.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6731
+      },
+      "writtenOn": "2024-06-28T13:48:35Z",
+      "side": 1,
+      "message": "what happens if the apt-get or the yum command fails ?\nThe || original structure was more appropriate IMHO",
+      "revId": "9062f0b21a00245b6a082fc48803a592406f14d6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7fc751e6_331637fa",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6731
+      },
+      "writtenOn": "2024-06-28T13:48:35Z",
+      "side": 1,
+      "message": "I don\u0027t see the point to have both sh an bash.\n\nIMO install-enchant.sh would be enough if line 65 was removed and set -xv would be added at the beginning of the bash script.\n\nAlso I am not convinced we need bash to perform this task.\na POSIX /bin/sh such as dash is enough and preferable for at least 3 reasons:\n\n- portability\n  tox is intended to be run both locally and in a CI\n  some distros such as alpine and many BSD systems inc. Mac OS X do not have bash by  default\n- efficiency https://wiki.ubuntu.com/DashAsBinSh#Why_was_this_change_made.3F\n- security\n  bash surface attack is more important than may shell scripts - cf shockshell",
+      "revId": "9062f0b21a00245b6a082fc48803a592406f14d6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0e75f628_c86283ee",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 6731
+      },
+      "writtenOn": "2024-06-28T13:48:35Z",
+      "side": 1,
+      "message": "this should be removed since these commands are now performed in ./install-enchant.sh",
       "revId": "9062f0b21a00245b6a082fc48803a592406f14d6",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
