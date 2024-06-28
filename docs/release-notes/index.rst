@@ -54,5 +54,5 @@ Service Release Notes
 .. toctree::
    :glob:
    :maxdepth: 1
-..
+
    release-notes-*
