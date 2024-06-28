@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d70aaccb_a318321a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6731
+      },
+      "writtenOn": "2024-06-28T13:23:50Z",
+      "side": 1,
+      "message": "Hi Anil \u0026 all\n\nthis was already fixed inhttps://git.opendaylight.org/gerrit/c/docs/+/112266\nAlso please see comments in the K change https://git.opendaylight.org/gerrit/c/docs/+/112253\nIMO enchant should be shipped by default in every minion since every project is responsible for its doc and should have a spellchecker...\n\nI am not completely against outsourcing checks in a separate shell script if that\u0027s what you really want. Though, as it is done here, it introduces a few issues.\nMore comments inline.",
+      "revId": "9062f0b21a00245b6a082fc48803a592406f14d6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    }
+  ]
+}
