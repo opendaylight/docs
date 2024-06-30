@@ -159,8 +159,8 @@ done in sequence.
      .. code-block:: bash
 
         export BUILD_NUM=55
-        export OPENJDKVER="openjdk11"
-        export PATCH_URL="https://s3-logs.opendaylight.org/logs/releng/vex-yul-odl-jenkins-1/autorelease-release-${STREAM,,}-mvn35-${OPENJDKVER}/${BUILD_NUM}/patches.tar.gz"
+        export OPENJDKVER="openjdk21"
+        export PATCH_URL="https://s3-logs.opendaylight.org/logs/releng/vex-yul-odl-jenkins-1/autorelease-release-${STREAM,,}-mvn39-${OPENJDKVER}/${BUILD_NUM}/patches.tar.gz"
         ./scripts/release-tags.sh "${RELEASE}" /tmp/patches "$PATCH_URL"
 
 - Notify Community and Website teams
