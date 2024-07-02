@@ -35,6 +35,24 @@
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0a39b66a_3f23f450",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6258
+      },
+      "writtenOn": "2024-07-02T07:36:25Z",
+      "side": 1,
+      "message": "Hellow Guillaume: I think there was an error with that running on Ubuntu failing to run the yum commands. Therefore, I separated that in a separate script. \n\nIf that is a working fix and works on both platforms we can keep that without having to add additional external scripts. However, a script has easier readability! pros and cons 😊",
+      "parentUuid": "d70aaccb_a318321a",
+      "revId": "9062f0b21a00245b6a082fc48803a592406f14d6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4155f5ba_461d90fc",
