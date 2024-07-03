@@ -89,6 +89,23 @@
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e34a273e_93717b9e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6258
+      },
+      "writtenOn": "2024-07-03T03:21:34Z",
+      "side": 1,
+      "message": "this also overrides and error and always returns \"true\" even if enchant fails in not a good practice.\n\n00:04:21.248 spelling: commands[0]\u003e sh -c \u0027command enchant\u003e/dev/null || command enchant-2 -v\u003e/dev/null || (sudo apt-get -qq update \u0026\u0026  sudo apt-get --yes install enchant-2) || sudo yum -y install enchant || (echo \"enchant command not found - please install it (e.g. sudo apt-get install enchant | yum install enchant )\" \u003e\u00262 \u0026\u0026 exit 1)\u0027\n00:04:21.251 /usr/bin/sh: 1: enchant: not found\n00:04:21.251 /usr/bin/sh: 1: enchant-2: not found",
+      "revId": "9062f0b21a00245b6a082fc48803a592406f14d6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4155f5ba_461d90fc",
