@@ -71,6 +71,24 @@
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "81ce0ec1_8db76baf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6258
+      },
+      "writtenOn": "2024-07-03T03:19:28Z",
+      "side": 1,
+      "message": "Hi Guillaume: yes, putting this as part of the build image is better option than having it done at run time that requires rebuilding all the images and updating. This is more straight forward since the binary is small and can be installed run time and we need to keep the docs verify working.\n\nI\u0027m ok with removing the extra script as long as the embedded cmd\u0027s work as expected in tox.ini, which its failing:\n\nhttps://jenkins.opendaylight.org/releng/job/docs-tox-verify-scandium/15/console\n\nI\u0027ve already submitted a fix to lf-recommended-tools, however that is failing on some other issues.\nhttps://gerrit.linuxfoundation.org/infra/c/ansible/roles/lf-recommended-tools/+/72973",
+      "parentUuid": "be775036_47aec7dc",
+      "revId": "9062f0b21a00245b6a082fc48803a592406f14d6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4155f5ba_461d90fc",
