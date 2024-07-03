@@ -106,6 +106,42 @@
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1a1fbc85_19ff14a1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6731
+      },
+      "writtenOn": "2024-07-03T07:17:28Z",
+      "side": 1,
+      "message": "Thank you for the feedback and for having taken care of the change to update the minions.\n\nI invite you to have a look at the logs of job 15 and also at the job 16 which corresponds to the current state of the change you pointed.\n\nhttps://jenkins.opendaylight.org/releng/job/docs-tox-verify-scandium/15/console\nwas failing because the word \u0027pekko\u0027 was introduced by this change and was absent from the whitelist dictionary.\n\n10:25:45 WARNING: Found 1 misspelled words\n10:25:45 spelling: exit 1 (31.15 seconds) /w/workspace/docs-tox-verify-scandium\u003e sphinx-build -q -W --keep-going -b spelling -d /w/workspace/docs-tox-verify-scandium/.tox/spelling/tmp/doctrees ./docs/ /w/workspace/docs-tox-verify-scandium/docs/_build/spelling pid\u003d31512\n10:25:46 spelling: FAIL ✖ in 1 minute 21.52 seconds\n\nIvan fixed the issue in PS2 by adding pekko to the whitelist\nhttps://git.opendaylight.org/gerrit/c/docs/+/112288/1..2/docs/spelling_wordlist.txt\nand the job 16 did pass after that update.\nhttps://jenkins.opendaylight.org/releng/job/docs-tox-verify-scandium/16/console did pass\nSo the CI currently works now.",
+      "parentUuid": "81ce0ec1_8db76baf",
+      "revId": "9062f0b21a00245b6a082fc48803a592406f14d6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a01c81cb_4dd6fe54",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6731
+      },
+      "writtenOn": "2024-07-03T07:17:28Z",
+      "side": 1,
+      "message": "I don\u0027t catch your point. The commands ends with \u0027\u0026\u0026 exit 1\u0027 which will returns an error code (\u003d\"false\") if enchant is not found and cannot be installed...",
+      "parentUuid": "e34a273e_93717b9e",
+      "revId": "9062f0b21a00245b6a082fc48803a592406f14d6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4155f5ba_461d90fc",
