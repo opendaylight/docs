@@ -33,6 +33,24 @@
       "message": "Please retest with migration patch.",
       "revId": "7106a2e3ddee9df5a74343ced4c3634b989024ad",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bb051dd8_bb2a6256",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9063
+      },
+      "writtenOn": "2024-07-04T17:20:57Z",
+      "side": 1,
+      "message": "Well controller build launched on a 3 node cluster that I made locally. I\u0027m not sure about operations that I can run there but karaf log from nodes seems fine. I tried use this controller to build netconf and run it instead - I have some scripts to run request for that. Just to confirm that both migration for controller and netconf works but I got some errors when building project. It seems like maven missing dependency for some reason but at the same time it is present in my m2 folder and also controller is building correctly with same dependencies.",
+      "parentUuid": "fd05bb3c_04218acd",
+      "revId": "7106a2e3ddee9df5a74343ced4c3634b989024ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ]
 }
