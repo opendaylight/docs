@@ -4,11 +4,11 @@ project_creation_date: '2014-03-26'
 project_category: 'Support & Documentation'
 lifecycle_state: 'Incubation'
 project_lead: &odl_docs_ptl
-    name: 'Guillaume Lambert'
-    email: 'guillaume.lambert@orange.com'
-    company: 'Orange'
-    id: 'guillaume.lambert'
-    timezone: 'Europe/Paris'
+    name: 'Ivan Hraško'
+    email: 'ivan.hrasko@pantheon.tech'
+    company: 'pantheon'
+    id: 'ivanhrasko'
+    timezone: 'Europe/Bratislava'
 primary_contact: *odl_docs_ptl
 issue_tracking:
     type: 'jira'
@@ -34,6 +34,11 @@ repositories:
     - docs
 committers:
     - <<: *odl_docs_ptl
+    - name: 'Guillaume Lambert'
+      email: 'guillaume.lambert@orange.com'
+      company: 'Orange'
+      id: 'guillaume.lambert'
+      timezone: 'Europe/Paris'
     - name: 'Luis Gomez'
       email: 'ecelgp@gmail.com'
       company: 'Kratos'
