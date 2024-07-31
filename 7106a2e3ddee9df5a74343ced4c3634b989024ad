@@ -51,6 +51,23 @@
       "parentUuid": "fd05bb3c_04218acd",
       "revId": "7106a2e3ddee9df5a74343ced4c3634b989024ad",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1eceea33_7007dbcf",
+        "filename": "docs/getting-started-guide/clustering.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 472,
+      "author": {
+        "id": 8144
+      },
+      "writtenOn": "2024-07-31T13:37:50Z",
+      "side": 1,
+      "message": "pekko.cluster.downing-provider-class \u003d \"org.apache.pekko.cluster.sbr.SplitBrainResolverProvider\"\n\nSee: https://github.com/apache/pekko/blob/main/cluster/src/main/scala/org/apache/pekko/cluster/sbr/SplitBrainResolverProvider.scala",
+      "revId": "7106a2e3ddee9df5a74343ced4c3634b989024ad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ]
 }
