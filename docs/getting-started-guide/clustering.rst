@@ -27,6 +27,19 @@ Advantages of clustering are:
 The following sections describe how to set up clustering on both individual and
 multiple OpenDaylight instances.
 
+Akka to Pekko Migration
+-----------------------
+
+Since 2024.09 Scandium we have switched from Akka to Apache Pekko. The only required change on end user should be
+to adapt configuration according to one following in this guide. For more details see
+`Migration Guides <https://pekko.apache.org/docs/pekko/current/project/migration-guides.html>`_.
+
+For data migration you can use:
+
+* :doc:`DAEXIM <daexim:index>` capabilities.
+
+* Akka and Pekko interoperability according to `this article <https://cwiki.apache.org/confluence/display/PEKKO/Pekko+Akka+Compatibility>`_.
+
 Multiple Node Clustering
 ------------------------
 
