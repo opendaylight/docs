@@ -61,7 +61,10 @@ Perform the following steps to develop an app:
             -DarchetypeArtifactId=opendaylight-startup-archetype \
             -DarchetypeCatalog=remote -DarchetypeVersion=<VERSION>
 
-    The correct VERSION depends on desired Simultaneous Release:
+    .. note::
+
+        The correct VERSION in the startup-archetype generation command depends on the desired
+        Simultaneous Release, but this is valid only until the Boron release (version 1.2.2).
 
     .. list-table:: Archetype versions
        :widths: auto
@@ -70,11 +73,8 @@ Perform the following steps to develop an app:
       * - OpenDaylight Simultaneous Release
         - ``opendaylight-startup-archetype`` version
 
-      * - Magnesium Development
-        - 1.3.0-SNAPSHOT
-
-      * - Aluminium Development
-        - 1.4.0-SNAPSHOT
+      * - Boron Development
+        - 1.2.2-SNAPSHOT
 
 2.  Update the properties values. Ensure that the values for the ``groupId`` and
     the ``artifactId`` are in lower case.
