@@ -37,7 +37,8 @@ Platform Release Notes
    :glob:
    :maxdepth: 1
 
-   upgrade-process
+   upgrade-process-potassium
+   upgrade-process-calcium
 
 Project Release Notes
 =====================
