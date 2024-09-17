@@ -47,3 +47,19 @@ The following table lists the known issues that exist in this release.
 .. jira_known_issues::
    :project: NETCONF
    :versions: 7.0.0-7.0.4
+
+Resolved Issues in SR1
+======================
+The following table lists the issues resolved in Service Release 1.
+
+.. jira_fixed_issues::
+   :project: NETCONF
+   :versions: 7.0.5-7.0.7
+
+Known Issues in SR1
+===================
+The following table lists the known issues that exist in Service Release 1.
+
+.. jira_known_issues::
+   :project: NETCONF
+   :versions: 7.0.5-7.0.7
