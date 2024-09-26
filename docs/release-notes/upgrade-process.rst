@@ -56,21 +56,21 @@ versions (for example, `bump-odl-version <https://github.com/skitt/odl-tools/blo
 
  .. code-block:: shell
 
-  bump-odl-version controller 8.0.1. 9.0.2.
+  bump-odl-version controller 8.0.1 9.0.2
 
 5. Update the InfraUtils version from 6.0.2. to 6.0.6. There should not be
    any reference to **org.opendaylight.infrautils**, except for 6.0.6.
 
  .. code-block:: shell
 
-  bump-odl-version infrautils 6.0.2. 6.0.6.
+  bump-odl-version infrautils 6.0.2 6.0.6
 
 6. Update the AAA version from 0.18.1. to 0.19.3 There should not be
    any reference to **org.opendaylight.aaa**, except for 0.19.3
 
  .. code-block:: shell
 
-  bump-odl-version aaa 0.18.1. 0.19.3
+  bump-odl-version aaa 0.18.1 0.19.3
 
 7. Update the NETCONF version from 6.0.3 to 7.0.4 There should not be
    any reference to **org.opendaylight.netconf**, except for 7.0.4
@@ -122,8 +122,7 @@ Any version range referencing version of ODL Parent must be “[13,14)” for OD
 
 ODL Parent Impacts
 ------------------
-
-
+None.
 
 YANG Tools Impacts
 ------------------
