@@ -78,6 +78,7 @@ linkcheck_ignore = [
     #Ignore announce page link till it is up
     'https://www.opendaylight.org/current-release-potassium',
     'https://www.opendaylight.org/current-release-calcium',
+    'https://www.opendaylight.org/current-release-scandium',
 ]
 linkcheck_timeout = 300
 
