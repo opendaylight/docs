@@ -5,10 +5,26 @@ OpenDaylight Downloads
 Supported Releases
 ==================
 
-Calcium-SR1
+Scandium-SR0
 -------------
 
 (Current Release)
+
+:Announcement: `Scandium <https://www.opendaylight.org/current-release-scandium>`_
+
+:Downloads:
+    * `OpenDaylight Scandium Tar
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.21.0/karaf-0.21.0.tar.gz>`_
+    * `OpenDaylight Scandium Zip
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.21.0/karaf-0.21.0.zip>`_
+
+:Documentation:
+    * :doc:`Getting Started Guide <odl-scandium:getting-started-guide/index>`
+    * :doc:`Project Guides <odl-scandium:index>`
+    * :doc:`Release Notes <odl-scandium:release-notes/index>`
+
+Calcium-SR1
+-------------
 
 :Announcement: `Calcium <https://www.opendaylight.org/current-release-calcium>`_
 
@@ -25,25 +41,6 @@ Calcium-SR1
     * :doc:`Getting Started Guide <odl-calcium:getting-started-guide/index>`
     * :doc:`Project Guides <odl-calcium:index>`
     * :doc:`Release Notes <odl-calcium:release-notes/index>`
-
-Potassium-SR3
--------------
-
-:Announcement: `Potassium <https://www.opendaylight.org/current-release-potassium>`_
-
-:GA Release Date: October 6, 2023
-:Service Release Date: June 19, 2024
-
-:Downloads:
-    * `OpenDaylight Potassium Tar
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.19.3/karaf-0.19.3.tar.gz>`_
-    * `OpenDaylight Potassium Zip
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.19.3/karaf-0.19.3.zip>`_
-
-:Documentation:
-    * :doc:`Getting Started Guide <odl-potassium:getting-started-guide/index>`
-    * :doc:`Project Guides <odl-potassium:index>`
-    * :doc:`Release Notes <odl-potassium:release-notes/index>`
 
 
 Docker images
