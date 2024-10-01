@@ -7,7 +7,7 @@ Execution
 
 OpenDaylight includes `Karaf <https://karaf.apache.org>`_ containers, `OSGi <https://www.osgi.org>`_
 (Open Service Gateway Initiative) bundles, and Java class files, which are portable and can run on
-any Java 17-compliant JVM (Java virtual machine). Any add-on project or feature of a
+any Java 21-compliant JVM (Java virtual machine). Any add-on project or feature of a
 specific project may have additional requirements.
 
 Development
@@ -16,8 +16,8 @@ Development
 OpenDaylight is written in Java and utilizes Maven as a build tool. Therefore,
 the only requirements needed to develop projects within OpenDaylight include:
 
-* `Java JDK 17 <https://adoptium.net/temurin/archive/?version=17>`_
-* `Apache Maven <https://maven.apache.org>`_ 3.8.3 or later
+* `Java JDK 21 <https://adoptium.net/temurin/archive/?version=21>`_
+* `Apache Maven <https://maven.apache.org>`_ 3.9.5 or later
 
 If an application or tool is built on top of OpenDaylight’s REST APIs, it does not
 have any special requirement beyond what is necessary to run the application or tool
