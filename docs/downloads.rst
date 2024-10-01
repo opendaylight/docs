@@ -5,7 +5,7 @@ OpenDaylight Downloads
 Supported Releases
 ==================
 
-Calcium-SR1
+Calcium-SR2
 -------------
 
 (Current Release)
@@ -13,13 +13,13 @@ Calcium-SR1
 :Announcement: `Calcium <https://www.opendaylight.org/current-release-calcium>`_
 
 :GA Release Date: April 18, 2024
-:Service Release Date: June 27, 2024
+:Service Release Date: Sept 30, 2024
 
 :Downloads:
     * `OpenDaylight Calcium Tar
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.20.1/karaf-0.20.1.tar.gz>`_
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.20.2/karaf-0.20.2.tar.gz>`_
     * `OpenDaylight Calcium Zip
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.20.1/karaf-0.20.1.zip>`_
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.20.2/karaf-0.20.2.zip>`_
 
 :Documentation:
     * :doc:`Getting Started Guide <odl-calcium:getting-started-guide/index>`
