@@ -37,7 +37,7 @@ The following table lists the issues resolved in this release.
 
 .. jira_fixed_issues::
    :project: CONTROLLER
-   :versions: 9.0.0-9.0.2
+   :versions: 10.0.0-10.0.2
 
 Known Issues
 ============
@@ -45,4 +45,4 @@ The following table lists the known issues that exist in this release.
 
 .. jira_known_issues::
    :project: CONTROLLER
-   :versions: 9.0.0-9.0.2
+   :versions: 10.0.0-10.0.2
