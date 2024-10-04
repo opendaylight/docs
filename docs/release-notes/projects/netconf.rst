@@ -13,24 +13,23 @@ The NETCONF projects hosts multiple components relating to IETF's NETCONF Workin
 
 Behavior/Feature Changes
 ========================
-The transport layer of the NETCONF protocol implementation has been completely refactored. This effort has all but
-unified the 'normal' and 'call-home' mode of operation. This results in a more maintaintanable codebase with much
-easier feature parity between the two modes.
+New NETCONF release offers lightweight Netty-based RESTCONF Northbound on port 8182.
+For more details see: `NETCONF-873 <https://lf-opendaylight.atlassian.net/browse/NETCONF-873>`__.
 
-RESTCONF implementation has been been refactored to a large extent, taking advantage of JAX-RS asynchronous requests,
-so that operations on the datastore and NETCONF devices no longer pin the HTTP thread.
-
-The OpenAPI component has been completely modernized. It is now based on Swagger UI vesion 5.13.0 and is memory
-usage has been brought under control.
-
+The OpenAPI component modernization has continued by introducing parameters to load documentation
+to width and depth which helps users to scale document as needed.
+For mode details see: `NETCONF-1225 <https://lf-opendaylight.atlassian.net/browse/NETCONF-1225>`__
+and `NETCONF-1298 <https://lf-opendaylight.atlassian.net/browse/NETCONF-1298>`__.
 
 New Features
 ============
-No new features.
+* `NETCONF-873 <https://lf-opendaylight.atlassian.net/browse/NETCONF-873>`__
+* `NETCONF-1225 <https://lf-opendaylight.atlassian.net/browse/NETCONF-1225>`__
+* `NETCONF-1298 <https://lf-opendaylight.atlassian.net/browse/NETCONF-1298>`__
 
 Deprecated and Removed Features
 ===============================
-The ``odl-yanglib`` experimental feature has been removed.
+There are no deprecated or removed features.
 
 Resolved Issues
 ===============
