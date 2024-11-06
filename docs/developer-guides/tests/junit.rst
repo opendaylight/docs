@@ -345,7 +345,6 @@ Some example mocking frameworks are:
 
 -  Mockito - https://github.com/mockito/mockito - **Note: Used in
    controller in a number of places**
--  EasyMock - http://easymock.org/
 
 Please refer to these sites for more details. If you have questions
 please reach out the mailing lists with questions - if there is enough
