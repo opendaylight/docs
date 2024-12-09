@@ -73,3 +73,19 @@ The following table lists the known issues that exist in Service Release 2.
 .. jira_known_issues::
    :project: INFRAUTILS
    :versions: 6.0.10-6.0.10
+
+Resolved Issues in SR3
+======================
+The following table lists the issues resolved in Service Release 3.
+
+.. jira_fixed_issues::
+   :project: INFRAUTILS
+   :versions: 6.0.11-6.0.11
+
+Known Issues in SR3
+===================
+The following table lists the known issues that exist in Service Release 3.
+
+.. jira_known_issues::
+   :project: INFRAUTILS
+   :versions: 6.0.11-6.0.11
