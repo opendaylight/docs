@@ -49,34 +49,26 @@ The internal RPCs between those modules are defined in the Transport Service Pat
 Behavior/Feature Changes
 ========================
 
-2024.03 Calcium release follows an important refactoring work that has improved the maintainability
-of many code pieces and should help future developments (rpc and listener registrations, code optimizations...)
+2024.09 Scandium release follows an important refactoring work that has improved the maintainability
+of many code pieces and should help future developments.
 
 
 New Features
 ============
 
-From a business point of view, Calcium brings the following new functionalities:
-- migration of all the TransportPCE T-API implementation based on T-API models version 2.1.1 to T-API models in version 2.4
-- management of the spectrum filling rules defined in the controller-customization module. That functionality may be used by the user to set manually a specific wavelength range when we create an optical transport service.
-- finalization of the migration of all transportpce functional tests towards the new netconf device simulator based on lightynode. Lightynode is a netconf device emulator running currently configuration compatible with OpenROADM device models in versions 1.2.1, 2.2.1 or 7.1.0. The emulator is based on the lighty-netconf-simulator project proposed by lighty.io (see https://github.com/PANTHEONtech/lighty-netconf-simulator).
-- compilation of new official yang models available for future implementations in transportpce. Especially:
-
-  * set of openconfig models in version pre-release 1
-  * openroadm-device models in version 13.1.0
+From a business point of view, Scandium brings the following new functionalities:
+- development of a debug tool dedicated to highjack proprietary augmentations in openconfig transponders
+- implementation of new TAPI 2.4 functionalities associated with OMS and OTS handling
+- new functionality to allow the end user to set the wavelength of its connectivity service
+- augmentation of the OpenROADM topology in the controller to support Allien openconfig Xponders and heterogeneous domain interconnections
+- creation of an abstracted TAPI node at the TAPI feature installation to manage any TAPI topology provided by a client Network Management System (Open Line System architecture). This is a preliminary work to support in a second step the TAPI SBI feature
 
 
-Changes planned in Potassium release stream
+Changes planned in Scandium release stream
 ===========================================
 
-Throughout the calcium release train, new developments will enrich these new features.
+Throughout the Scandium release train, new developments will enrich these new features.
 Developments on T-API will continue. Currently the business logic of all TransportPCE modules (service orchestration, topologies, pce, device rendering) is based on OpenROADM models. In the short term, topologies could be managed independently according to OpenROADM or T-API models. And should also follow the Path Computation module next.
-
-
-Deprecated Features
-===================
-
-In 2024.03 Calcium release, T-API yang modules in version 2.1.1 are no longer used (implementation relies on models in version 2.4) but still present in transportpce-models repository. They will be removed in next 2024.09 Scandium release.
 
 
 Resolved Issues
@@ -86,7 +78,7 @@ The following table lists the issues resolved in this release.
 
 .. jira_fixed_issues::
    :project: TRNSPRTPCE
-   :versions: Calcium-Calcium
+   :versions: Scandium-Scandium
 
 
 Known Issues
@@ -96,6 +88,24 @@ The following table lists the known issues that exist in this release.
 
 .. jira_known_issues::
    :project: TRNSPRTPCE
-   :versions: Calcium-Calcium
+   :versions: Scandium-Scandium
 
-Also, swagger does not work for TransportPCE with controller resources (see https://jira.opendaylight.org/browse/NETCONF-1279)
+Resolved Issues in SR1
+======================
+
+The following table lists the issues resolved in this release.
+
+.. jira_fixed_issues::
+   :project: TRNSPRTPCE
+   :versions: ScandiumSR1-ScandiumSR1
+
+
+Known Issues in SR1
+===================
+
+The following table lists the known issues that exist in this release.
+
+.. jira_known_issues::
+   :project: TRNSPRTPCE
+   :versions: ScandiumSR1-ScandiumSR1
+
