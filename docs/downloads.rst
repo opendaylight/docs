@@ -25,19 +25,19 @@ Scandium-SR1
     * :doc:`Project Guides <odl-scandium:index>`
     * :doc:`Release Notes <odl-scandium:release-notes/index>`
 
-Calcium-SR2
+Calcium-SR3
 -------------
 
 :Announcement: `Calcium <https://www.opendaylight.org/current-release-calcium>`_
 
 :GA Release Date: April 18, 2024
-:Service Release Date: Sept 30, 2024
+:Service Release Date: Dec 12, 2024
 
 :Downloads:
     * `OpenDaylight Calcium Tar
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.20.2/karaf-0.20.2.tar.gz>`_
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.20.3/karaf-0.20.3.tar.gz>`_
     * `OpenDaylight Calcium Zip
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.20.2/karaf-0.20.2.zip>`_
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.20.3/karaf-0.20.3.zip>`_
 
 :Documentation:
     * :doc:`Getting Started Guide <odl-calcium:getting-started-guide/index>`
