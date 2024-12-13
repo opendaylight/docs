@@ -66,7 +66,7 @@ From a business point of view, Calcium brings the following new functionalities:
   * openroadm-device models in version 13.1.0
 
 
-Changes planned in Potassium release stream
+Changes planned in Calcium release stream
 ===========================================
 
 Throughout the calcium release train, new developments will enrich these new features.
@@ -99,3 +99,58 @@ The following table lists the known issues that exist in this release.
    :versions: Calcium-Calcium
 
 Also, swagger does not work for TransportPCE with controller resources (see https://jira.opendaylight.org/browse/NETCONF-1279)
+
+
+Resolved Issues in SR1
+======================
+The following table lists the issues resolved in Service Release 1.
+
+.. jira_fixed_issues::
+   :project: TRNSPRTPCE
+   :versions: CalciumSR1-CalciumSR1
+
+
+Known Issues in SR1
+===================
+The following table lists the known issues that exist in Service Release 1.
+
+.. jira_known_issues::
+   :project: TRNSPRTPCE
+   :versions: CalciumSR1-CalciumSR1
+
+
+Resolved Issues in SR2
+======================
+The following table lists the issues resolved in Service Release 2.
+
+.. jira_fixed_issues::
+   :project: TRNSPRTPCE
+   :versions: CalciumSR2-CalciumSR2
+
+
+Known Issues in SR2
+===================
+The following table lists the known issues that exist in Service Release 2.
+
+.. jira_known_issues::
+   :project: TRNSPRTPCE
+   :versions: CalciumSR2-CalciumSR2
+
+
+Resolved Issues in SR3
+======================
+The following table lists the issues resolved in Service Release 3.
+
+.. jira_fixed_issues::
+   :project: TRNSPRTPCE
+   :versions: CalciumSR3-CalciumSR3
+
+
+Known Issues in SR3
+===================
+The following table lists the known issues that exist in Service Release 3.
+
+.. jira_known_issues::
+   :project: TRNSPRTPCE
+   :versions: CalciumSR3-CalciumSR3
+
