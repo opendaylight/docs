@@ -37,7 +37,7 @@ The following table lists the issues resolved in this release.
 
 .. jira_fixed_issues::
    :project: NETCONF
-   :versions: 8.0.0-8.0.2
+   :versions: 9.0.0-9.0.0
 
 Known Issues
 ============
@@ -45,21 +45,4 @@ The following table lists the known issues that exist in this release.
 
 .. jira_known_issues::
    :project: NETCONF
-   :versions: 8.0.0-8.0.2
-
-Resolved Issues in SR1
-======================
-The following table lists the issues resolved in Service Release 1.
-
-.. jira_fixed_issues::
-   :project: NETCONF
-   :versions: 8.0.3-8.0.3
-
-Known Issues in SR1
-===================
-The following table lists the known issues that exist in Service Release 1.
-
-.. jira_known_issues::
-   :project: NETCONF
-   :versions: 8.0.3-8.0.3
-
+   :versions: 9.0.0-9.0.0

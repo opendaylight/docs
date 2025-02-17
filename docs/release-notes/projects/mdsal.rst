@@ -37,7 +37,7 @@ The following table lists the issues resolved in this release.
 
 .. jira_fixed_issues::
    :project: MDSAL
-   :versions: 14.0.0-14.0.2
+   :versions: 14.0.9-14.0.9
 
 Known Issues
 ============
@@ -45,20 +45,4 @@ The following table lists the known issues that exist in this release.
 
 .. jira_known_issues::
    :project: MDSAL
-   :versions: 14.0.0-14.0.2
-
-Resolved Issues in SR1
-======================
-The following table lists the issues resolved in Service Release 1.
-
-.. jira_fixed_issues::
-   :project: MDSAL
-   :versions: 14.0.3-14.0.4
-
-Known Issues in SR1
-===================
-The following table lists the known issues that exist in Service Release 1.
-
-.. jira_known_issues::
-   :project: MDSAL
-   :versions: 14.0.3-14.0.4
+   :versions: 14.0.9-14.0.9
