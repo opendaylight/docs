@@ -109,3 +109,21 @@ The following table lists the known issues that exist in this release.
    :project: TRNSPRTPCE
    :versions: ScandiumSR1-ScandiumSR1
 
+Resolved Issues in SR2
+======================
+
+The following table lists the issues resolved in this release.
+
+.. jira_fixed_issues::
+   :project: TRNSPRTPCE
+   :versions: ScandiumSR2-ScandiumSR2
+
+
+Known Issues in SR2
+===================
+
+The following table lists the known issues that exist in this release.
+
+.. jira_known_issues::
+   :project: TRNSPRTPCE
+   :versions: ScandiumSR2-ScandiumSR2
