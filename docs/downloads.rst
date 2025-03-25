@@ -5,20 +5,20 @@ OpenDaylight Downloads
 Supported Releases
 ==================
 
-Scandium-SR1
+Scandium-SR2
 -------------
 
 (Current Release)
 
 :Announcement: `Scandium <https://www.opendaylight.org/current-release-scandium>`_
 
-:GA Release Date: November 10, 2024
+:GA Release Date: March 25, 2025
 
 :Downloads:
     * `OpenDaylight Scandium Tar
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.21.1/karaf-0.21.1.tar.gz>`_
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.21.2/karaf-0.21.2.tar.gz>`_
     * `OpenDaylight Scandium Zip
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.21.1/karaf-0.21.1.zip>`_
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.21.2/karaf-0.21.2.zip>`_
 
 :Documentation:
     * :doc:`Getting Started Guide <odl-scandium:getting-started-guide/index>`
