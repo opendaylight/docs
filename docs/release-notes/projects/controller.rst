@@ -11,16 +11,7 @@ It does not have user-facing features.
 
 Behavior/Feature Changes
 ========================
-The ``OpenDaylight Blueprint`` extender has been trimmed down, removing support for the following
-XML elements:
-
-* ``action-implementation``
-* ``action-instance``
-* ``notification-listener``
-* ``rpc-implementation``
-* ``rpc-service``
-* ``specific-reference-list``
-* ``static-reference``
+* `CONTROLLER-2120 <https://lf-opendaylight.atlassian.net/browse/CONTROLLER-2120>`__
 
 New Features
 ============
@@ -28,8 +19,7 @@ There are no new features.
 
 Deprecated and Removed Features
 ===============================
-Distributed Datastore's ``ask-based`` protocol has been removed in this release. The experimental
-``odl-controller-exp-netty-config`` feature has been removed as well.
+There are no deprecated or removed features.
 
 Resolved Issues
 ===============

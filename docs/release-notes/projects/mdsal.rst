@@ -25,11 +25,7 @@ No deprecated features.
 
 Removed Features
 ===================
-``NotificationService.registerNotificationListener()`` method has been removed, along with its Binding
-specification interfaces based on ``NotificationListener``.
-
-``RpcProviderService.registerRpcImplementation()`` methods, ``RpcConsumerRegistry.getRpcService()`` methods and
-Binding specification interfaces based on ``RpcService`` have been removed.
+No removed features.
 
 Resolved Issues
 ===============
