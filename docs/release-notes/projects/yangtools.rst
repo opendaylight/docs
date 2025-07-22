@@ -8,13 +8,7 @@ YANG Tools provides a set of libraries to deal with YANG models and data modeled
 
 Behavior/Feature Changes
 ========================
-The mapping of YANG augmentations in ``yang-data-api`` has changed. Where previously these have
-been supported by ``AugmetationNode`` and addressable via ``AugmentationIdentifier``, any augmented
-nodes are now direct children of their ``data tree`` parent nodes.
-
-``YangTextSchemaSource`` is now a ``CharSource`` rather than a ``ByteSource``. This eliminates ambiguity
-and assumptions made on the text encoding character set, pushing the responsibility down to users
-introducing schema sources into the system.
+There are no behavior changes.
 
 New Features
 ============

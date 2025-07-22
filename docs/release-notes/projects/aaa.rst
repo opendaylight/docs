@@ -12,12 +12,11 @@ are protected by AAA after installing the ``+odl-restconf+`` feature.
 
 Behavior/Feature Changes
 ========================
-We have switched to Galois/Counter in `AAA-267 <https://lf-opendaylight.atlassian.net/browse/AAA-267>`__ to be default
-mode of operation algorithm for symmetric keys.
+There are no behavior changes.
 
 New Features
 ============
-* `AAA-267 <https://lf-opendaylight.atlassian.net/browse/AAA-267>`__
+There are no new features.
 
 Deprecated and Removed Features
 ===============================
