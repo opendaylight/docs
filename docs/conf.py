@@ -30,6 +30,10 @@ def update_intersphinx_mapping():
 update_intersphinx_mapping()
 
 # OpenDaylight Documentation Releases
+<<<<<<< HEAD   (1b8666 Ignore wiki archive during link-check)
+=======
+intersphinx_mapping['odl-titanium'] = ('https://docs.opendaylight.org/en/stable-titanium/', None)
+>>>>>>> CHANGE (4110a8 Update Titanium link to 'stable-titanium')
 intersphinx_mapping['odl-scandium'] = ('https://docs.opendaylight.org/en/stable-scandium/', None)
 intersphinx_mapping['odl-calcium'] = ('https://docs.opendaylight.org/en/stable-calcium/', None)
 intersphinx_mapping['odl-potassium'] = ('https://docs.opendaylight.org/en/stable-potassium/', None)
