@@ -86,6 +86,24 @@
       "parentUuid": "90c32b56_34a160d2",
       "revId": "1360b588e404aa4d888bef8c74672247830eeeb3",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e56b9e39_e93bf74c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6258
+      },
+      "writtenOn": "2025-07-29T08:30:21Z",
+      "side": 1,
+      "message": "Note: The docs branch needs to be created by the doc maintainers and isn\u0027t included as a part of the branch cutting process (mostly for AR projects). \nThe JJB config change is only updates the job config branches and creates them.\n\nJust an FYI, happy to create the branch for the docs? PS let me know.",
+      "parentUuid": "cdc23b44_94ea5172",
+      "revId": "1360b588e404aa4d888bef8c74672247830eeeb3",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ]
 }
