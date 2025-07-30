@@ -139,6 +139,23 @@
       "message": "recheck",
       "revId": "1360b588e404aa4d888bef8c74672247830eeeb3",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4bfed32e_7b360d2e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6258
+      },
+      "writtenOn": "2025-07-30T12:27:22Z",
+      "side": 1,
+      "message": "failing on br0k links in contributor guide?:\n/home/runner/work/docs/docs/docs/contributor-guides/coding-guidelines/coding-guidelines-java.rst:366: WARNING: broken link: http://checkstyle.sourceforge.net/ (403 Client Error: Forbidden for url: https://checkstyle.sourceforge.net/)\n/home/runner/work/docs/docs/docs/contributor-guides/coding-guidelines/coding-guidelines-java.rst:107: WARNING: broken link: http://checkstyle.sourceforge.net/checks.html (403 Client Error: Forbidden for url: https://checkstyle.sourceforge.net/checks.html)\n/home/runner/work/docs/docs/docs/release-notes/index.rst:19: WARNING: broken link: https://adoptium.net/temurin/archive/?version\u003d21 (404 Client Error: Not Found for url: https://adoptium.net/temurin/archive/?version\u003d21)\ndocs-linkcheck: exit 1 (81.85 seconds) /home/runner/work/docs/docs\u003e sphinx-build -q -b linkcheck -d /home/runner/work/docs/docs/.tox/docs-linkcheck/tmp/doctrees ./docs/ /home/runner/work/docs/docs/docs/_build/linkcheck pid\u003d2334",
+      "revId": "1360b588e404aa4d888bef8c74672247830eeeb3",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ]
 }
