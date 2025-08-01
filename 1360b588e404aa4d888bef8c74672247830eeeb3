@@ -190,6 +190,24 @@
       "message": "https://adoptium.net/temurin/archive/?version\u003d21 returns 404 should be resolved separately.",
       "revId": "1360b588e404aa4d888bef8c74672247830eeeb3",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9ead4b9b_c19dc151",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8144
+      },
+      "writtenOn": "2025-08-01T10:13:51Z",
+      "side": 1,
+      "message": "Fixed in https://git.opendaylight.org/gerrit/c/docs/+/117285.",
+      "parentUuid": "4bfed32e_7b360d2e",
+      "revId": "1360b588e404aa4d888bef8c74672247830eeeb3",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ],
   "submitRequirementResults": [
