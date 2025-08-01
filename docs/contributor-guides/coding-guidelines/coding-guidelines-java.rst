@@ -108,9 +108,9 @@ The rule ID (e.g. ``checkstyle:methodparampad`` above) is the name of the
 respective Checkstyle module; these IDs can be found e.g. in the
 ``git/odlparent/checkstyle/src/main/resources/odl_checks.xml``
 configuration, or directly on the Checkstyle website from the
-http://checkstyle.sourceforge.net/checks.html list.
+https://checkstyle.sourceforge.net/checks.html list.
 For example, for the
-http://checkstyle.sourceforge.net/config_coding.html#EqualsHashCode rule
+https://checkstyle.sourceforge.net/config_coding.html#EqualsHashCode rule
 you would put ``@SuppressWarnings("checkstyle:EqualsHashCode")``.
 
 This ``@SuppressWarnings("checkstyle:...")`` should in practice be very very rarely
@@ -197,7 +197,7 @@ where it is acceptable (Checkstyle does NOT flag this particular use of
 IllegalCatch
 ^^^^^^^^^^^^
 
-The `IllegalCatch <http://checkstyle.sourceforge.net/config_coding.html#IllegalCatch>`__
+The `IllegalCatch <https://checkstyle.sourceforge.net/config_coding.html#IllegalCatch>`__
 violation should almost never be suppressed in regular "functional" code.
 Normal code should only catch specific sub classes of the checked Exception,
 and never any generic and/or unchecked exceptions.
@@ -363,7 +363,8 @@ on which of the above is more readable.
 Additional Resources
 --------------------
 
--  ``Checkstyle`` http://checkstyle.sourceforge.net/
+-  ``Checkstyle``:
+   https://checkstyle.sourceforge.net
 -  ``Maven``:
    https://github.com/checkstyle/checkstyle/blob/master/src/main/resources/google_checks.xml
 -  ``Eclipse``:
