@@ -126,7 +126,70 @@ None.
 
 YANG Tools Impacts
 ------------------
-None.
+
+InstanceIdentifier deprecation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Since YANG Tools version 14 ``org.opendaylight.yangtools.yang.binding.InstanceIdentifier`` has been deprecated and its
+being planned for removal in next major release.
+
+There are two replacement classes to be used instead:
+
+* ``DataObjectIdentifier`` used when we target the node exactly, i.e. we specify key value for the list
+* ``DataObjectReference`` used when we target node using wildcard, i.e. we target list without specifying the key
+
+The example usage can be shown on well known ``network-topology`` model where we have for topology with the key:
+
+  .. code-block:: java
+
+    var identifier = DataObjectIdentifier.builder(NetworkTopology.class)
+        .child(Topology.class, new TopologyKey(new TopologyId("topology-netconf")))
+        .build();
+
+And for the list of all topologies:
+
+  .. code-block:: java
+
+    var reference = DataObjectReference.builder(NetworkTopology.class)
+        .child(Topology.class)
+        .build();
+
+Sometimes we need to add additional step to ``DataObjectIdentifier`` or ``DataObjectReference``, here is how to do it:
+
+  .. code-block:: java
+
+    var identifier = DataObjectIdentifier.builder(NetworkTopology.class)
+        .build();
+    assertTrue(identifier.isExact());
+    var reference = identifier.toBuilder().toReferenceBuilder()
+        .child(Topology.class)
+        .build();
+    assertFalse(reference.isExact());
+
+For this purpose we have ``toBuilder`` method. Here we have to pay attention to type of the builder and next step.
+In example above we are adding inexact step (list entry without key) to exact ``DataObjectIdentifier.Builder``
+instance. In case we omit conversion to ``DataObjectReference.Builder`` using ``toReferenceBuilder`` we would get
+an Exception. Of course, the conversion opposite direction is not supported.
+
+Practically, we are using ``DataObjectIdentifier`` when we point to at most one data object and ``DataObjectReference``
+when we know we have not exact address - we know there is a key but we have not specified it, resulting in referencing
+to multiple data objects.
+
+Generally, things like RPCs and YANG actions require exact addressing using ``DataObjectIdentifier``,
+not exact addressing can be used when we would like to monitor multiple resources, with for example data-tree change
+listeners using ``DataObjectReference``.
+
+InstanceIdentifier conversion methods:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* ``toLegacy`` returns legacy ``InstanceIdentifier`` for both ``DataObjectIdentifier`` and ``DataObjectReference``
+* ``toReference`` returns ``DataObjectReference`` for ``InstanceIdentifier`` to avoid confusion even though
+we can use it in place of ``DataObjectReference``
+* ``toIdentifier`` returns ``DataObjectIdentifier`` for ``DataObjectReference`` or legacy ``InstanceIdentifier``,
+throws Exception in case we cannot convert, i.e. there are inexact steps in the converted
+``DataObjectReference`` or ``InstanceIdentifier``
+
+See `YANGTOOLS-1577 <https://jira.opendaylight.org/browse/YANGTOOLS-1577>`__ for details.
 
 MD-SAL Impacts
 --------------
