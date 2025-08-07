@@ -126,7 +126,32 @@ None.
 
 YANG Tools Impacts
 ------------------
-None.
+
+Since YANG Tools version 14 ``org.opendaylight.yangtools.yang.binding.InstanceIdentifier`` has been deprecated and its
+being planned for removal in next major release.
+
+There are two replacement classes to be used instead:
+
+* ``DataObjectIdentifier`` used when we target the node exactly, i.e. we specify key value for the list
+* ``DataObjectReference`` used when we target node using wildcard, i.e. we target list without specifying the key
+
+The example usage can be shown on well known ``network-topology`` model where we have for device with the key:
+
+  .. code-block:: java
+
+    var identifier = DataObjectIdentifier.builder(NetworkTopology.class)
+        .child(Topology.class, new TopologyKey(new TopologyId("topology-netconf")))
+        .build();
+
+And for the whole list of topologies:
+
+  .. code-block:: java
+
+    var reference = DataObjectReference.builder(NetworkTopology.class)
+        .child(Topology.class)
+        .build();
+
+See `YANGTOOLS-1577 <https://jira.opendaylight.org/browse/YANGTOOLS-1577>`__ for details.
 
 MD-SAL Impacts
 --------------
