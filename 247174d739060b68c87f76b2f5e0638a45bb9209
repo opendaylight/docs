@@ -16,6 +16,24 @@
       "message": "Today, original URL works, but anyway it says:\n```\nRefer to http://docs.releng.linuxfoundation.org/en/latest/gerrit.html for details on how to use Gerrit.\n```",
       "revId": "247174d739060b68c87f76b2f5e0638a45bb9209",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c349b01d_1b1b4610",
+        "filename": "docs/documentation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 587,
+      "author": {
+        "id": 8144
+      },
+      "writtenOn": "2025-08-08T10:49:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa18f560_1e341ada",
+      "revId": "247174d739060b68c87f76b2f5e0638a45bb9209",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ],
   "submitRequirementResults": [
