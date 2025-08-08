@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "276f56ab_f086c522",
+        "filename": "docs/release-notes/upgrade-process.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2025-08-08T11:08:49Z",
+      "side": 1,
+      "message": "so a few more things:\n\n- DOR/DOI can be turned into a InstanceIdentifier via .toLegacy()\n- an InstanceIdentifier is a DataObjectReference and can be used as such, but an explicit conversion via .toReference() is preferrable (to prevent potential confusion)\n- a DataObjectReference/InstanceIdentifier can be *attempted* to be converted to a DataObjectIdentifier via .toIdentifier() -- which will throw if the source contains inexact steps\n- .create() .child() methods have been removed in favor of explicit .toBuilder().child(XYZ.class).build()\n- DataObjectIdentifier.Builder will reject .child(Topology.class) above \n- DOI.toBuilder() results in a DOI.Builder, hence if you have a DOI and need to extend with an inexact step and form a DOR, you have to do .toBuilder().toReferenceBuilder().child(Topology.class).build()",
+      "range": {
+        "startLine": 162,
+        "startChar": 1,
+        "endLine": 162,
+        "endChar": 89
+      },
+      "revId": "9d590dd8195da8215d422de30baee8dc26c269a8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    }
+  ]
+}
