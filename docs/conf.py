@@ -76,10 +76,11 @@ linkcheck_ignore = [
     # this url often has connectivity issues on the gate
     'https://www.mojohaus.org/animal-sniffer/animal-sniffer-maven-plugin/examples/checking-signatures.html',
     # this url often has connectivity issues on the gate
-    'https://cwiki.apache.org/confluence/display/PEKKO/Pekko+Akka+Compatibility'
+    'https://cwiki.apache.org/confluence/display/PEKKO/Pekko+Akka+Compatibility',
     # this url often has connectivity issues on the gate
-    'https://wiki-archive.opendaylight.org/images/c/ca/Profile-Java-ODL.xml.zip'
+    'https://wiki-archive.opendaylight.org/images/c/ca/Profile-Java-ODL.xml.zip',
     #Ignore announce page link till it is up
+    'https://www.opendaylight.org/current-release-titanium',
     'https://www.opendaylight.org/current-release-scandium',
     'https://www.opendaylight.org/current-release-calcium',
 ]
