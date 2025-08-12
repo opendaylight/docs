@@ -28,8 +28,6 @@ Titanium
 Scandium-SR2
 -------------
 
-(Current Release)
-
 :Announcement: `Scandium <https://www.opendaylight.org/current-release-scandium>`_
 
 :GA Release Date: March 25, 2025
@@ -45,28 +43,9 @@ Scandium-SR2
     * :doc:`Project Guides <odl-scandium:index>`
     * :doc:`Release Notes <odl-scandium:release-notes/index>`
 
-Calcium-SR3
--------------
-
-:Announcement: `Calcium <https://www.opendaylight.org/current-release-calcium>`_
-
-:GA Release Date: April 18, 2024
-:Service Release Date: Dec 12, 2024
-
-:Downloads:
-    * `OpenDaylight Calcium Tar
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.20.3/karaf-0.20.3.tar.gz>`_
-    * `OpenDaylight Calcium Zip
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.20.3/karaf-0.20.3.zip>`_
-
-:Documentation:
-    * :doc:`Getting Started Guide <odl-calcium:getting-started-guide/index>`
-    * :doc:`Project Guides <odl-calcium:index>`
-    * :doc:`Release Notes <odl-calcium:release-notes/index>`
-
-
 Docker images
 =============
+
 * `OpenDaylight Docker Hub <https://hub.docker.com/r/opendaylight/opendaylight/tags>`_
 
 Archived Releases
