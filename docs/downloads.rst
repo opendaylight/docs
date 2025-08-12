@@ -5,6 +5,26 @@ OpenDaylight Downloads
 Supported Releases
 ==================
 
+Titanium
+---------
+
+(Current Release)
+
+:Announcement: `Titanium <https://www.opendaylight.org/current-release-titanium>`_
+
+:GA Release Date: Aug 11, 2025
+
+:Downloads:
+    * `OpenDaylight Titanium Tar
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.22.0/karaf-0.22.0.tar.gz>`_
+    * `OpenDaylight Titanium Zip
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.22.0/karaf-0.22.0.zip>`_
+
+:Documentation:
+    * :doc:`Getting Started Guide <odl-titanium:getting-started-guide/index>`
+    * :doc:`Project Guides <odl-titanium:index>`
+    * :doc:`Release Notes <odl-titanium:release-notes/index>`
+
 Scandium-SR2
 -------------
 
