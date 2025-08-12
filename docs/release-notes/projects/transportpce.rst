@@ -86,7 +86,7 @@ The following table lists the issues resolved in this release.
 
 .. jira_fixed_issues::
    :project: TRNSPRTPCE
-   :versions: Calcium-Calcium
+   :versions: Titanium-Titanium
 
 
 Known Issues
@@ -96,6 +96,6 @@ The following table lists the known issues that exist in this release.
 
 .. jira_known_issues::
    :project: TRNSPRTPCE
-   :versions: Calcium-Calcium
+   :versions: Titanium-Titanium
 
 Also, swagger does not work for TransportPCE with controller resources (see https://jira.opendaylight.org/browse/NETCONF-1279)
