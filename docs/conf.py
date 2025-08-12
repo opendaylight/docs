@@ -71,6 +71,8 @@ linkcheck_ignore = [
     # Ignore IETF URLs often not reachable from Jenkins minions
     # because of hosting connectivity issues
     '^https?://tools.ietf.org/html/.*',
+    # https://wiki-archive.opendaylight.org is usually slow to respond
+    '^https://wiki-archive.opendaylight.org/.*',
     # URL returns a 403 Forbidden
     '^https://checkstyle.sourceforge.net.*',
     # this url often has connectivity issues on the gate
