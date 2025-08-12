@@ -584,7 +584,7 @@ Submitting Documentation Outlines (M2)
 
          git review
 
-      See the `Git-review Workflow <https://wiki-archive.opendaylight.org/view/Git-review_Workflow>`_
+      See the `Git-review Workflow <https://docs.releng.linuxfoundation.org/en/latest/gerrit.html#gerrit-guide>`_
       page if you don't have git-review installed.
 
 #. Wait for the patch to be merged or to get feedback
