@@ -89,6 +89,8 @@ linkcheck_ignore = [
     'https://www.opendaylight.org/current-release-calcium',
 ]
 linkcheck_timeout = 300
+linkcheck_retries = 3
+linkcheck_workers = 1  # Reduce concurrent workers
 
 nitpicky = True
 release = version
