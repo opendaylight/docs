@@ -40,33 +40,40 @@ To run the Karaf distribution:
 
 For Example::
 
-   $ ls karaf-0.8.x-Oxygen.zip
-   karaf-0.8.x-Oxygen.zip
-   $ unzip karaf-0.8.x-Oxygen.zip
-   Archive:  karaf-0.8.x-Oxygen.zip
-      creating: karaf-0.8.x-Oxygen/
-      creating: karaf-0.8.x-Oxygen/configuration/
-      creating: karaf-0.8.x-Oxygen/data/
-      creating: karaf-0.8.x-Oxygen/data/tmp/
-      creating: karaf-0.8.x-Oxygen/deploy/
-      creating: karaf-0.8.x-Oxygen/etc/
-      creating: karaf-0.8.x-Oxygen/externalapps/
-      ...
-      inflating: karaf-0.8.x-Oxygen/bin/start.bat
-      inflating: karaf-0.8.x-Oxygen/bin/status.bat
-      inflating: karaf-0.8.x-Oxygen/bin/stop.bat
-   $ cd distribution-karaf-0.8.x-Oxygen
+   $ls karaf-0.22.0.zip
+   karaf-0.22.0.zip
+   $ unzip karaf-0.22.0.zip
+   Archive:  karaf-0.22.0.zip
+      inflating: karaf-0.22.0/README.md  
+         creating: karaf-0.22.0/deploy/
+      inflating: karaf-0.22.0/deploy/README  
+         creating: karaf-0.22.0/configuration/
+      inflating: karaf-0.22.0/configuration/context.xml  
+      inflating: karaf-0.22.0/configuration/tomcat-logging.properties  
+      inflating: karaf-0.22.0/configuration/tomcat-server.xml  
+         ..... 
+         creating: karaf-0.22.0/system/tech/pantheon/triemap/pt-triemap/1.3.2/
+      inflating: karaf-0.22.0/system/tech/pantheon/triemap/pt-triemap/1.3.2/pt-triemap-1.3.2-features.xml  
+      inflating: karaf-0.22.0/CONTRIBUTING.md
+   $cd karaf-0.22.0
    $ ./bin/karaf
 
-       ________                       ________                .__  .__       .__     __
-       \_____  \ ______   ____   ____ \______ \ _____  ___.__.\|  \| \|__\| ____ \|  \|___/  \|_
-        /   \|   \\____ \_/ __ \ /    \ \|    \|  \\__  \<   \|  \|\|  \| \|  \|/ ___\\|  \|  \   __\
-       /    \|    \  \|_> >  ___/\|   \|  \\|    `   \/ __ \\___  \|\|  \|_\|  / /_/  >   Y  \  \|
-       \_______  /   __/ \___  >___\|  /_______  (____  / ____\|\|____/__\___  /\|___\|  /__\|
-               \/\|__\|        \/     \/        \/     \/\/            /_____/      \/
+      Apache Karaf starting up. Press Enter to open the shell now...
+      100% [========================================================================]
+      Karaf started in 0s. Bundle stats: 69 active, 70 total
+                                                                                                
+         ________                       ________                .__  .__       .__     __       
+         \_____  \ ______   ____   ____ \______ \ _____  ___.__.|  | |__| ____ |  |___/  |_     
+         /   |   \\____ \_/ __ \ /    \ |    |  \\__  \<   |  ||  | |  |/ ___\|  |  \   __\    
+         /    |    \  |_> >  ___/|   |  \|    `   \/ __ \\___  ||  |_|  / /_/  >   Y  \  |      
+         \_______  /   __/ \___  >___|  /_______  (____  / ____||____/__\___  /|___|  /__|      
+                  \/|__|        \/     \/        \/     \/\/            /_____/      \/          
+                                                                                                
 
-
-
+      Hit '<tab>' for a list of available commands
+      and '[cmd] --help' for help on a specific command.
+      Hit '<ctrl-d>' or type 'system:shutdown' or 'logout' to shutdown OpenDaylight.
+                                                      
 * Press ``tab`` for a list of available commands
 * Typing ``[cmd] --help`` will show help for a specific command.
 * Press ``ctrl-d`` or type ``system:shutdown`` or ``logout`` to shutdown OpenDaylight.
