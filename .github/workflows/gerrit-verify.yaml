@@ -1,21 +1,20 @@
 ---
-name: Gerrit Verify
+name: Gerrit Verify (Hybrid)
 
-# yamllint disable-line rule:truthy
 on:
   workflow_dispatch:
     inputs:
       GERRIT_BRANCH:
         description: "Branch that change is against"
-        required: true
+        required: false
         type: string
       GERRIT_CHANGE_ID:
         description: "The ID for the change"
-        required: true
+        required: false
         type: string
       GERRIT_CHANGE_NUMBER:
         description: "The Gerrit number"
-        required: true
+        required: false
         type: string
       GERRIT_CHANGE_URL:
         description: "URL to the change"
@@ -23,7 +22,7 @@ on:
         type: string
       GERRIT_EVENT_TYPE:
         description: "Type of Gerrit event"
-        required: true
+        required: false
         type: string
       GERRIT_PATCHSET_NUMBER:
         description: "The patch number for the change"
@@ -31,71 +30,95 @@ on:
         type: string
       GERRIT_PATCHSET_REVISION:
         description: "The revision sha"
-        required: true
+        required: false
         type: string
       GERRIT_PROJECT:
         description: "Project in Gerrit"
-        required: true
+        required: false
         type: string
       GERRIT_REFSPEC:
         description: "Gerrit refspec of change"
-        required: true
+        required: false
         type: string
 
 concurrency:
-  # yamllint disable-line rule:line-length
-  group: gerrit-verify-${{ github.workflow }}-${{ github.event.inputs.GERRIT_CHANGE_ID || github.run_id }}
+  group: gerrit-verify-${{ github.ref }}
   cancel-in-progress: true
 
 permissions: read-all
 
 jobs:
-  prepare:
+  local-tox:
     runs-on: ubuntu-latest
     steps:
-      - name: Clear votes
-        uses: lfit/gerrit-review-action@v0.4
+      - name: Check if running in ACT
+        if: ${{ env.ACT == 'true' }}
+        run: echo "Running local tox build via ACT"
+      - uses: actions/checkout@v4
+        if: ${{ env.ACT == 'true' }}
+      - uses: actions/setup-python@v5
+        if: ${{ env.ACT == 'true' }}
         with:
-          host: ${{ vars.GERRIT_SERVER }}
-          username: ${{ vars.GERRIT_SSH_USER }}
-          key: ${{ secrets.GERRIT_SSH_PRIVKEY }}
-          known_hosts: ${{ vars.GERRIT_KNOWN_HOSTS }}
-          gerrit-change-number: ${{ inputs.GERRIT_CHANGE_NUMBER }}
-          gerrit-patchset-number: ${{ inputs.GERRIT_PATCHSET_NUMBER }}
-          vote-type: clear
-      - name: Allow replication
-        run: sleep 10s
+          python-version: '3.x'
+      - name: Install tox
+        if: ${{ env.ACT == 'true' }}
+        run: pip install --upgrade pip && pip install tox
+      - name: Run docs & linkcheck
+        if: ${{ env.ACT == 'true' }}
+        run: tox -e docs,docs-linkcheck
+
+  call-gerrit-change-info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Skip if ACT
+        if: ${{ env.ACT == 'true' }}
+        run: echo "Skipping Gerrit change info in ACT mode" && exit 0
+      - name: Gerrit change information
+        if: ${{ env.ACT != 'true' }}
+        id: gerrit-change-info
+        uses: lfreleng-actions/gerrit-change-info@56e6c9251e94aadf2e747dc985b1a4e783de6c77
+        with:
+          gerrit_change_url: ${{ inputs.GERRIT_CHANGE_URL }}
+          gerrit_patchset_number: ${{ inputs.GERRIT_PATCHSET_NUMBER }}
+          ssh_user_name: ${{ vars.GERRIT_SSH_USER }}
+          ssh_private_key: ${{ secrets.GERRIT_SSH_PRIVKEY }}
+    outputs:
+      GERRIT_BRANCH: "${{ steps.gerrit-change-info.outputs.GERRIT_BRANCH }}"
+      GERRIT_CHANGE_ID: "${{ steps.gerrit-change-info.outputs.GERRIT_CHANGE_ID }}"
+      GERRIT_CHANGE_NUMBER: "${{ steps.gerrit-change-info.outputs.GERRIT_CHANGE_NUMBER }}"
+      GERRIT_CHANGE_URL: "${{ steps.gerrit-change-info.outputs.GERRIT_CHANGE_URL }}"
+      GERRIT_EVENT_TYPE: "${{ steps.gerrit-change-info.outputs.GERRIT_EVENT_TYPE }}"
+      GERRIT_PATCHSET_NUMBER: "${{ steps.gerrit-change-info.outputs.GERRIT_PATCHSET_NUMBER }}"
+      GERRIT_PATCHSET_REVISION: "${{ steps.gerrit-change-info.outputs.GERRIT_PATCHSET_REVISION }}"
+      GERRIT_PROJECT: "${{ steps.gerrit-change-info.outputs.GERRIT_PROJECT }}"
+      GERRIT_REFSPEC: "${{ steps.gerrit-change-info.outputs.GERRIT_REFSPEC }}"
+      GERRIT_HOSTNAME: "${{ steps.gerrit-change-info.outputs.GERRIT_HOSTNAME }}"
 
   call-gerrit-tox-verify:
-    needs: prepare
-    # yamllint disable-line rule:line-length
+    needs: call-gerrit-change-info
     uses: lfit/releng-reusable-workflows/.github/workflows/gerrit-compose-required-tox-verify.yaml@main
     with:
-      GERRIT_BRANCH: ${{ inputs.GERRIT_BRANCH }}
-      GERRIT_CHANGE_ID: ${{ inputs.GERRIT_CHANGE_ID }}
-      GERRIT_CHANGE_NUMBER: ${{ inputs.GERRIT_CHANGE_NUMBER }}
-      GERRIT_CHANGE_URL: ${{ inputs.GERRIT_CHANGE_URL }}
-      GERRIT_EVENT_TYPE: ${{ inputs.GERRIT_EVENT_TYPE }}
-      GERRIT_PATCHSET_NUMBER: ${{ inputs.GERRIT_PATCHSET_NUMBER }}
-      GERRIT_PATCHSET_REVISION: ${{ inputs.GERRIT_PATCHSET_REVISION }}
-      GERRIT_PROJECT: ${{ inputs.GERRIT_PROJECT }}
-      GERRIT_REFSPEC: ${{ inputs.GERRIT_REFSPEC }}
+      GERRIT_BRANCH: ${{ needs.call-gerrit-change-info.outputs.GERRIT_BRANCH }}
+      GERRIT_CHANGE_ID: ${{ needs.call-gerrit-change-info.outputs.GERRIT_CHANGE_ID }}
+      GERRIT_CHANGE_NUMBER: ${{ needs.call-gerrit-change-info.outputs.GERRIT_CHANGE_NUMBER }}
+      GERRIT_CHANGE_URL: ${{ needs.call-gerrit-change-info.outputs.GERRIT_CHANGE_URL }}
+      GERRIT_EVENT_TYPE: ${{ needs.call-gerrit-change-info.outputs.GERRIT_EVENT_TYPE }}
+      GERRIT_PATCHSET_NUMBER: ${{ needs.call-gerrit-change-info.outputs.GERRIT_PATCHSET_NUMBER }}
+      GERRIT_PATCHSET_REVISION: ${{ needs.call-gerrit-change-info.outputs.GERRIT_PATCHSET_REVISION }}
+      GERRIT_PROJECT: ${{ needs.call-gerrit-change-info.outputs.GERRIT_PROJECT }}
+      GERRIT_REFSPEC: ${{ needs.call-gerrit-change-info.outputs.GERRIT_REFSPEC }}
       TOX_ENVS: '["docs","docs-linkcheck"]'
 
   vote:
-    if: ${{ always() }}
-    # yamllint enable rule:line-length
-    needs: [prepare, call-gerrit-tox-verify]
+    needs: [call-gerrit-tox-verify, call-gerrit-change-info]
     runs-on: ubuntu-latest
     steps:
+      - name: Skip if ACT
+        if: ${{ env.ACT == 'true' }}
+        run: echo "Skipping vote in ACT mode" && exit 0
       - uses: technote-space/workflow-conclusion-action@v3
-      - name: Set vote
-        uses: lfit/gerrit-review-action@v0.4
-        with:
-          host: ${{ vars.GERRIT_SERVER }}
-          username: ${{ vars.GERRIT_SSH_USER }}
-          key: ${{ secrets.GERRIT_SSH_PRIVKEY }}
-          known_hosts: ${{ vars.GERRIT_KNOWN_HOSTS }}
-          gerrit-change-number: ${{ inputs.GERRIT_CHANGE_NUMBER }}
-          gerrit-patchset-number: ${{ inputs.GERRIT_PATCHSET_NUMBER }}
-          vote-type: ${{ env.WORKFLOW_CONCLUSION }}
+        if: ${{ env.ACT != 'true' }}
+      - name: Report (non-voting)
+        if: ${{ env.ACT != 'true' }}
+        run: 'echo "Conclusion: $WORKFLOW_CONCLUSION"'
+
