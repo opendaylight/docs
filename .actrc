@@ -1,0 +1,5 @@
+-P ubuntu-latest=catthehacker/ubuntu:act-latest
+--env-file .env.local
+--secret-file .env.local
+--container-architecture linux/amd64
+--pull=false
