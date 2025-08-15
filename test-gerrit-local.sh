@@ -50,22 +50,22 @@ get_latest_patchset() {
     local gerrit_host="git.opendaylight.org"
     # Query Gerrit REST API to get change info with detailed revisions
     local api_url="https://${gerrit_host}/gerrit/changes/${change_number}?o=ALL_REVISIONS"
-    
+
     if command -v curl >/dev/null 2>&1 && command -v jq >/dev/null 2>&1; then
         local patchset
         patchset=$(curl -s "${api_url}" 2>/dev/null | sed '1d' | jq -r '
-            .revisions | 
-            to_entries | 
-            max_by(.value._number) | 
+            .revisions |
+            to_entries |
+            max_by(.value._number) |
             .value._number
         ' 2>/dev/null)
-        
+
         if [[ -n "$patchset" ]] && [[ "$patchset" != "null" ]] && [[ "$patchset" =~ ^[0-9]+$ ]]; then
             echo "$patchset"
             return 0
         fi
     fi
-    
+
     # Fallback to patchset 1 if API query fails
     echo "1"
 }
@@ -80,7 +80,7 @@ if [[ -n "$GERRIT_URL" ]]; then
     # Extract project from URL (e.g., docs)
     GERRIT_PROJECT=$(echo "$GERRIT_URL" | sed -n 's|.*/gerrit/c/\([^/]*\)/.*|\1|p')
     [[ -z "$GERRIT_PROJECT" ]] && GERRIT_PROJECT="docs"
-    
+
     # Resolve latest patchset if needed
     if [[ "$PATCHSET_NUMBER" == "latest" ]]; then
         echo "Fetching latest patchset for change $CHANGE_NUMBER..." >&2

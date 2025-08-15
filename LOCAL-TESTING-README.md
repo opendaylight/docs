@@ -74,7 +74,7 @@ Usage: test-gerrit-local.sh [options]
    - Sphinx documentation build (`tox -e docs`)
    - Link checking (`tox -e docs-linkcheck`)
 
-### Gerrit Integration Flow  
+### Gerrit Integration Flow
 1. **GitHub Actions triggers** on Gerrit events
 2. **Full workflow executes** when `env.ACT != 'true'`
 3. **Gerrit jobs run**: change info → tox verify → vote
@@ -137,7 +137,7 @@ bash test-gerrit-local.sh --gerrit-url "https://git.opendaylight.org/gerrit/c/do
 - `verify-setup.sh` - Environment validation script
 - `.pre-commit-config.yaml` - Pre-commit hooks for code quality
 
-### Modified Files  
+### Modified Files
 - `.github/workflows/gerrit-verify.yaml` - Enhanced with local testing support
 - `docs/index.rst` - Test change (can be reverted)
 
