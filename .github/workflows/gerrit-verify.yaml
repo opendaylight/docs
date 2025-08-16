@@ -48,6 +48,27 @@ concurrency:
 permissions: read-all
 
 jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Skip if ACT
+        if: ${{ env.ACT == 'true' }}
+        run: echo "Skipping vote clearing in ACT mode" && exit 0
+      - name: Clear votes
+        if: ${{ env.ACT != 'true' }}
+        uses: lfit/gerrit-review-action@v0.4
+        with:
+          host: ${{ vars.GERRIT_SERVER }}
+          username: ${{ vars.GERRIT_SSH_USER }}
+          key: ${{ secrets.GERRIT_SSH_PRIVKEY }}
+          known_hosts: ${{ vars.GERRIT_KNOWN_HOSTS }}
+          gerrit-change-number: ${{ inputs.GERRIT_CHANGE_NUMBER }}
+          gerrit-patchset-number: ${{ inputs.GERRIT_PATCHSET_NUMBER }}
+          vote-type: clear
+      - name: Allow replication
+        if: ${{ env.ACT != 'true' }}
+        run: sleep 10s
+
   local-tox:
     runs-on: ubuntu-latest
     steps:
@@ -95,7 +116,7 @@ jobs:
       GERRIT_HOSTNAME: "${{ steps.gerrit-change-info.outputs.GERRIT_HOSTNAME }}"
 
   call-gerrit-tox-verify:
-    needs: call-gerrit-change-info
+    needs: [prepare, call-gerrit-change-info]
     uses: lfit/releng-reusable-workflows/.github/workflows/gerrit-compose-required-tox-verify.yaml@main
     with:
       GERRIT_BRANCH: ${{ needs.call-gerrit-change-info.outputs.GERRIT_BRANCH }}
@@ -110,6 +131,7 @@ jobs:
       TOX_ENVS: '["docs","docs-linkcheck"]'
 
   vote:
+    if: ${{ always() }}
     needs: [call-gerrit-tox-verify, call-gerrit-change-info]
     runs-on: ubuntu-latest
     steps:
@@ -118,7 +140,14 @@ jobs:
         run: echo "Skipping vote in ACT mode" && exit 0
       - uses: technote-space/workflow-conclusion-action@v3
         if: ${{ env.ACT != 'true' }}
-      - name: Report (non-voting)
+      - name: Set vote
         if: ${{ env.ACT != 'true' }}
-        run: 'echo "Conclusion: $WORKFLOW_CONCLUSION"'
-
+        uses: lfit/gerrit-review-action@v0.4
+        with:
+          host: ${{ vars.GERRIT_SERVER }}
+          username: ${{ vars.GERRIT_SSH_USER }}
+          key: ${{ secrets.GERRIT_SSH_PRIVKEY }}
+          known_hosts: ${{ vars.GERRIT_KNOWN_HOSTS }}
+          gerrit-change-number: ${{ needs.call-gerrit-change-info.outputs.GERRIT_CHANGE_NUMBER }}
+          gerrit-patchset-number: ${{ needs.call-gerrit-change-info.outputs.GERRIT_PATCHSET_NUMBER }}
+          vote-type: ${{ env.WORKFLOW_CONCLUSION }}
