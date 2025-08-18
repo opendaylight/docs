@@ -87,6 +87,9 @@ jobs:
       - name: Run docs & linkcheck
         if: ${{ env.ACT == 'true' }}
         run: tox -e docs,docs-linkcheck
+      - name: Run pre-commit checks
+        if: ${{ env.ACT == 'true' }}
+        run: tox -e pre-commit
 
   call-gerrit-change-info:
     runs-on: ubuntu-latest
