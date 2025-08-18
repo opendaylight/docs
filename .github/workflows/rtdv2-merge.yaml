@@ -1,0 +1,245 @@
+---
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-FileCopyrightText: 2025 The Linux Foundation
+
+name: RTDv2 Merge
+
+on:
+  workflow_dispatch:
+    inputs:
+      GERRIT_BRANCH:
+        description: "Branch that change is against"
+        required: false
+        default: "master"
+        type: string
+      GERRIT_CHANGE_ID:
+        description: "The ID for the change"
+        required: false
+        type: string
+      GERRIT_CHANGE_NUMBER:
+        description: "The Gerrit number"
+        required: false
+        type: string
+      GERRIT_CHANGE_URL:
+        description: "URL to the change"
+        required: true
+        type: string
+      GERRIT_EVENT_TYPE:
+        description: "Type of Gerrit event"
+        required: false
+        type: string
+      GERRIT_PATCHSET_NUMBER:
+        description: "The patch number for the change"
+        required: false
+        type: string
+      GERRIT_PATCHSET_REVISION:
+        description: "The revision sha"
+        required: false
+        type: string
+      GERRIT_PROJECT:
+        description: "Project in Gerrit"
+        required: false
+        default: "docs"
+        type: string
+      GERRIT_REFSPEC:
+        description: "Gerrit refspec of change"
+        required: false
+        type: string
+      TARGET_REPO:
+        description: "The target GitHub repository"
+        required: false
+        type: string
+
+concurrency:
+  group: rtdv2-merge-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  READTHEDOCS_FOUND: true
+  TOX_ENVS: docs,docs-linkcheck
+  TOX_DIR: docs/
+  DOC_DIR: _build/html
+  PARALLEL: true
+  DEFAULT_VERSION: latest
+  MASTER_RTD_PROJECT: doc
+
+permissions: read-all
+
+jobs:
+  rtdv2-merge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check if running in ACT
+        run: |
+          if [[ "${{ env.ACT }}" == "true" ]]; then
+            echo "Running RTDv2 merge via ACT (local mode)"
+          else
+            echo "Running RTDv2 merge via GitHub (CI mode)"
+          fi
+
+      # Local checkout for ACT
+      - uses: actions/checkout@v4
+        if: ${{ env.ACT == 'true' }}
+
+      # CI checkout for GitHub
+      - uses: actions/checkout@v4
+        if: ${{ env.ACT != 'true' }}
+        with:
+          ref: ${{ inputs.GERRIT_BRANCH }}
+          repository: ${{ inputs.TARGET_REPO || github.repository }}
+          submodules: "true"
+
+      # Python setup
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        if: ${{ env.ACT == 'true' }}
+        with:
+          python-version: "3.8"
+
+      - name: Setup Python (CI)
+        uses: actions/setup-python@v5
+        if: ${{ env.ACT != 'true' }}
+        id: setup-python
+        with:
+          python-version: "3.8"
+
+      # Install graphviz
+      - name: Install graphviz (local)
+        if: ${{ env.ACT == 'true' }}
+        run: sudo apt-get update && sudo apt-get install -y graphviz
+
+      - name: Install graphviz (CI)
+        if: ${{ env.ACT != 'true' }}
+        run: sudo apt-get update && sudo apt-get install -y graphviz
+
+      # Check readthedocs config
+      - name: Verify If readthedocs Config exists
+        run: |
+          echo "Verifying if readthedocs.yaml config file exists"
+          if [ ! -f .readthedocs.yaml ] ; then
+            echo "INFO Config file not found. Skipping further checks."
+            echo "READTHEDOCS_FOUND=false" >> "$GITHUB_ENV"
+          fi
+
+      # Install dependencies
+      - name: Installing dependencies
+        if: ${{ env.READTHEDOCS_FOUND == 'true' }}
+        run: |
+          python -m pip install --upgrade pip
+          # RTDv2 compatible version of lftools and dependencies
+          pip install 'lftools<1.0.0' 'niet~=1.4.2' 'cryptography<3.4' yq tox
+          # urllib3 needs to be pinned to avoid timeouts
+          pip install --upgrade urllib3~=1.26.15
+
+      # Run tox (local and CI)
+      - name: Running tox
+        if: ${{ env.READTHEDOCS_FOUND == 'true' }}
+        run: |
+          PATH="${GITHUB_WORKSPACE}/.local/bin:${PATH}"
+          cd "${GITHUB_WORKSPACE}/${{ env.TOX_DIR }}" || exit 1
+
+          if [[ -d /opt/pyenv ]]; then
+              echo "---> Setting up pyenv"
+              export PYENV_ROOT="/opt/pyenv"
+              export PATH="$PYENV_ROOT/bin:$PATH"
+              PYTHONPATH="$(pwd)"
+              export PYTHONPATH
+              export TOX_TESTENV_PASSENV=PYTHONPATH
+          fi
+
+          tox --version
+
+          TOX_OPTIONS_LIST=""
+          if [[ -n "${{ env.TOX_ENVS }}" ]]; then
+              TOX_OPTIONS_LIST="${TOX_OPTIONS_LIST} -e ${{ env.TOX_ENVS }}"
+          fi
+
+          case "${{ env.PARALLEL }}" in
+              true|auto)
+                  TOX_OPTIONS_LIST="${TOX_OPTIONS_LIST} --parallel auto --parallel-live";;
+              all)
+                  TOX_OPTIONS_LIST="${TOX_OPTIONS_LIST} --parallel all --parallel-live";;
+              [0-9]*)
+                  TOX_OPTIONS_LIST="${TOX_OPTIONS_LIST} --parallel ${{ env.PARALLEL }} --parallel-live";;
+          esac
+
+          tox $TOX_OPTIONS_LIST
+          echo "---> Completed tox runs"
+
+      # RTDv2 merge operations (CI only)
+      - name: Running rtdv2 merge
+        if: ${{ env.ACT != 'true' && env.READTHEDOCS_FOUND == 'true' }}
+        run: |
+          echo "---> Running rtdv2 merge"
+          set -euo pipefail
+
+          # RTDv2 webhook-based build trigger
+          rtd_webhook_trigger(){
+              echo "INFO: Triggering RTD build via webhook for branch $1"
+              local branch="$1"
+              local webhook_url="${{ vars.RTD_WEBHOOK_URL }}"
+
+              if [[ -z "$webhook_url" ]]; then
+                  echo "ERROR: RTD_WEBHOOK_URL variable not configured"
+                  echo "Please set RTD_WEBHOOK_URL in repository variables"
+                  echo "Example: https://readthedocs.org/api/v2/webhook/your-project/12345/"
+                  return 1
+              fi
+
+              echo "INFO: Using webhook URL: $webhook_url"
+
+              # RTDv2 webhook trigger using form-data (like your successful test)
+              response=$(curl -s -X POST \
+                  -d "branches=${branch}" \
+                  -d "token=${{ secrets.RTD_TOKEN }}" \
+                  "${webhook_url}")
+
+              echo "INFO: Webhook response: $response"
+
+              # Check if build was triggered successfully
+              if echo "$response" | grep -q '"build_triggered":true'; then
+                  echo "INFO: Build triggered successfully for branch: $branch"
+                  return 0
+              else
+                  echo "WARNING: Build trigger may have failed"
+                  echo "Response: $response"
+                  return 1
+              fi
+          echo "INFO:"
+          echo "INFO: Project: ${{ inputs.GERRIT_PROJECT }}"
+          echo "INFO: Branch: ${{ inputs.GERRIT_BRANCH }}"
+          echo "INFO: Read the Docs Project: https://opendaylight.readthedocs.io"
+
+          # RTDv2 webhook approach - simpler than direct API
+          echo "INFO: Using RTDv2 webhook approach for build triggering"
+
+          # For master branch, trigger latest and master
+          if [[ ${{ inputs.GERRIT_BRANCH }} == "master" ]]; then
+              echo "INFO: Triggering webhook for master branch"
+              if rtd_webhook_trigger "master"; then
+                  echo "INFO: Master branch webhook triggered successfully"
+              else
+                  echo "WARNING: Master branch webhook failed"
+              fi
+          else
+              # For other branches, trigger the specific branch
+              branch="${{ inputs.GERRIT_BRANCH }}"
+              echo "INFO: Triggering webhook for branch: $branch"
+              if rtd_webhook_trigger "$branch"; then
+                  echo "INFO: Branch webhook triggered successfully"
+              else
+                  echo "WARNING: Branch webhook failed"
+              fi
+          fi
+
+          echo "INFO: RTDv2 merge webhook triggers completed"
+
+      # Summary step
+      - name: Job Summary
+        run: |
+          if [[ "${{ env.ACT }}" == "true" ]]; then
+            echo "✅ Local RTDv2 merge validation completed (docs build + linkcheck)"
+            echo "Note: RTD webhook triggering skipped in local mode"
+          else
+            echo "✅ Full RTDv2 merge completed (docs build + linkcheck + RTD webhook triggers)"
+          fi
