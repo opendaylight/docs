@@ -5,6 +5,7 @@ REPO_ROOT="$SCRIPT_DIR"
 WORKFLOWS_DIR="$REPO_ROOT/.github/workflows"
 EVENT_JSON="$REPO_ROOT/gerrit-verify-event.json"
 TARGET_WORKFLOW_REL=".github/workflows/gerrit-verify.yaml"
+WORKFLOW_TYPE="gerrit-verify"  # Default workflow type
 JOB=""
 GERRIT_URL=""
 PATCHSET_NUMBER="latest"
@@ -14,6 +15,7 @@ VERBOSE=false
 LOCAL_CHANGES=false
 usage(){ cat <<EOF
 Usage: $0 [options]
+  --workflow <type>         Workflow type: gerrit-verify (default) or rtdv2-verify
   --job <name>              Run only a specific job.
   --gerrit-url <url>        Gerrit change URL (e.g., https://git.opendaylight.org/gerrit/c/docs/+/117503).
   --patchset-number <num>   Gerrit patchset number (default: latest).
@@ -22,9 +24,15 @@ Usage: $0 [options]
   --dry-run                 Pass -n to act.
   --verbose                 Echo act command.
   -h|--help                 This help.
+
+Workflow Types:
+  gerrit-verify             Standard Gerrit verification workflow (default)
+  rtdv2-verify              Read the Docs v2 verification workflow
+  rtdv2-merge               Read the Docs v2 merge workflow
 EOF
 }
 while [[ $# -gt 0 ]]; do case "$1" in
+  --workflow) WORKFLOW_TYPE="$2"; shift 2;;
   --job) JOB="$2"; shift 2;;
   --gerrit-url) GERRIT_URL="$2"; shift 2;;
   --patchset-number) PATCHSET_NUMBER="$2"; shift 2;;
@@ -34,6 +42,27 @@ while [[ $# -gt 0 ]]; do case "$1" in
   --verbose) VERBOSE=true; shift;;
   -h|--help) usage; exit 0;;
   *) echo "Unknown arg $1" >&2; usage; exit 1;; esac; done
+
+# Set workflow file based on type
+case "$WORKFLOW_TYPE" in
+  "gerrit-verify")
+    TARGET_WORKFLOW_REL=".github/workflows/gerrit-verify.yaml"
+    EVENT_JSON="$REPO_ROOT/gerrit-verify-event.json"
+    ;;
+  "rtdv2-verify")
+    TARGET_WORKFLOW_REL=".github/workflows/rtdv2-verify.yaml"
+    EVENT_JSON="$REPO_ROOT/rtdv2-verify-event.json"
+    ;;
+  "rtdv2-merge")
+    TARGET_WORKFLOW_REL=".github/workflows/rtdv2-merge.yaml"
+    EVENT_JSON="$REPO_ROOT/rtdv2-merge-event.json"
+    ;;
+  *)
+    echo "Error: Unknown workflow type '$WORKFLOW_TYPE'" >&2
+    echo "Valid types: gerrit-verify, rtdv2-verify, rtdv2-merge" >&2
+    exit 1
+    ;;
+esac
 
 # Function to extract change number from Gerrit URL
 extract_change_number() {
