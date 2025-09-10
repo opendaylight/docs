@@ -158,7 +158,7 @@ jobs:
 
   vote:
     if: ${{ always() }}
-    needs: [call-gerrit-tox-verify, call-gerrit-change-info]
+    needs: [call-gerrit-tox-verify, rtd-validation, call-gerrit-change-info]
     runs-on: ubuntu-latest
     steps:
       - name: Skip if ACT
