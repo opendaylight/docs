@@ -112,20 +112,20 @@ jobs:
           ssh_user_name: ${{ vars.GERRIT_SSH_USER }}
           ssh_private_key: ${{ secrets.GERRIT_SSH_PRIVKEY }}
     outputs:
-      GERRIT_BRANCH: "${{ steps.gerrit-change-info.outputs.GERRIT_BRANCH }}"
-      GERRIT_CHANGE_ID: "${{ steps.gerrit-change-info.outputs.GERRIT_CHANGE_ID }}"
-      GERRIT_CHANGE_NUMBER: "${{ steps.gerrit-change-info.outputs.GERRIT_CHANGE_NUMBER }}"
-      GERRIT_CHANGE_URL: "${{ steps.gerrit-change-info.outputs.GERRIT_CHANGE_URL }}"
-      GERRIT_EVENT_TYPE: "${{ steps.gerrit-change-info.outputs.GERRIT_EVENT_TYPE }}"
-      GERRIT_PATCHSET_NUMBER: "${{ steps.gerrit-change-info.outputs.GERRIT_PATCHSET_NUMBER }}"
-      GERRIT_PATCHSET_REVISION: "${{ steps.gerrit-change-info.outputs.GERRIT_PATCHSET_REVISION }}"
-      GERRIT_PROJECT: "${{ steps.gerrit-change-info.outputs.GERRIT_PROJECT }}"
-      GERRIT_REFSPEC: "${{ steps.gerrit-change-info.outputs.GERRIT_REFSPEC }}"
-      GERRIT_HOSTNAME: "${{ steps.gerrit-change-info.outputs.GERRIT_HOSTNAME }}"
+      GERRIT_BRANCH: ${{ steps.gerrit-change-info.outputs.GERRIT_BRANCH }}
+      GERRIT_CHANGE_ID: ${{ steps.gerrit-change-info.outputs.GERRIT_CHANGE_ID }}
+      GERRIT_CHANGE_NUMBER: ${{ steps.gerrit-change-info.outputs.GERRIT_CHANGE_NUMBER }}
+      GERRIT_CHANGE_URL: ${{ steps.gerrit-change-info.outputs.GERRIT_CHANGE_URL }}
+      GERRIT_EVENT_TYPE: ${{ steps.gerrit-change-info.outputs.GERRIT_EVENT_TYPE }}
+      GERRIT_PATCHSET_NUMBER: ${{ steps.gerrit-change-info.outputs.GERRIT_PATCHSET_NUMBER }}
+      GERRIT_PATCHSET_REVISION: ${{ steps.gerrit-change-info.outputs.GERRIT_PATCHSET_REVISION }}
+      GERRIT_PROJECT: ${{ steps.gerrit-change-info.outputs.GERRIT_PROJECT }}
+      GERRIT_REFSPEC: ${{ steps.gerrit-change-info.outputs.GERRIT_REFSPEC }}
+      GERRIT_HOSTNAME: ${{ steps.gerrit-change-info.outputs.GERRIT_HOSTNAME }}
 
   call-gerrit-tox-verify:
     needs: [prepare, call-gerrit-change-info]
-    uses: lfit/releng-reusable-workflows/.github/workflows/gerrit-compose-required-tox-verify.yaml@main
+    uses: lfit/releng-reusable-workflows/.github/workflows/gerrit-compose-required-tox-verify.yaml@36ff4d15c9c86771dc5d7073b5df323970f74b95 # 2025-01-22
     with:
       GERRIT_BRANCH: ${{ needs.call-gerrit-change-info.outputs.GERRIT_BRANCH }}
       GERRIT_CHANGE_ID: ${{ needs.call-gerrit-change-info.outputs.GERRIT_CHANGE_ID }}
