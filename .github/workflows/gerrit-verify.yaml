@@ -105,23 +105,24 @@ jobs:
       - name: Gerrit change information
         if: ${{ env.ACT != 'true' }}
         id: gerrit-change-info
-        uses: lfreleng-actions/gerrit-change-info@56e6c9251e94aadf2e747dc985b1a4e783de6c77
+        uses: lfreleng-actions/gerrit-change-info@88f575802e3411efcd50f45ec57ddc08a67ca3a5 # v2.1.0
         with:
           gerrit_change_url: ${{ inputs.GERRIT_CHANGE_URL }}
           gerrit_patchset_number: ${{ inputs.GERRIT_PATCHSET_NUMBER }}
           ssh_user_name: ${{ vars.GERRIT_SSH_USER }}
           ssh_private_key: ${{ secrets.GERRIT_SSH_PRIVKEY }}
+          gerrit_known_hosts: ${{ vars.GERRIT_KNOWN_HOSTS }}
     outputs:
-      GERRIT_BRANCH: ${{ steps.gerrit-change-info.outputs.GERRIT_BRANCH }}
-      GERRIT_CHANGE_ID: ${{ steps.gerrit-change-info.outputs.GERRIT_CHANGE_ID }}
-      GERRIT_CHANGE_NUMBER: ${{ steps.gerrit-change-info.outputs.GERRIT_CHANGE_NUMBER }}
-      GERRIT_CHANGE_URL: ${{ steps.gerrit-change-info.outputs.GERRIT_CHANGE_URL }}
-      GERRIT_EVENT_TYPE: ${{ steps.gerrit-change-info.outputs.GERRIT_EVENT_TYPE }}
-      GERRIT_PATCHSET_NUMBER: ${{ steps.gerrit-change-info.outputs.GERRIT_PATCHSET_NUMBER }}
-      GERRIT_PATCHSET_REVISION: ${{ steps.gerrit-change-info.outputs.GERRIT_PATCHSET_REVISION }}
-      GERRIT_PROJECT: ${{ steps.gerrit-change-info.outputs.GERRIT_PROJECT }}
-      GERRIT_REFSPEC: ${{ steps.gerrit-change-info.outputs.GERRIT_REFSPEC }}
-      GERRIT_HOSTNAME: ${{ steps.gerrit-change-info.outputs.GERRIT_HOSTNAME }}
+      GERRIT_BRANCH: ${{ steps.gerrit-change-info.outputs.gerrit_branch }}
+      GERRIT_CHANGE_ID: ${{ steps.gerrit-change-info.outputs.gerrit_change_id }}
+      GERRIT_CHANGE_NUMBER: ${{ steps.gerrit-change-info.outputs.gerrit_change_number }}
+      GERRIT_CHANGE_URL: ${{ steps.gerrit-change-info.outputs.gerrit_change_url }}
+      GERRIT_EVENT_TYPE: ${{ steps.gerrit-change-info.outputs.gerrit_event_type }}
+      GERRIT_PATCHSET_NUMBER: ${{ steps.gerrit-change-info.outputs.gerrit_patchset_number }}
+      GERRIT_PATCHSET_REVISION: ${{ steps.gerrit-change-info.outputs.gerrit_patchset_revision }}
+      GERRIT_PROJECT: ${{ steps.gerrit-change-info.outputs.gerrit_project }}
+      GERRIT_REFSPEC: ${{ steps.gerrit-change-info.outputs.gerrit_refspec }}
+      GERRIT_HOSTNAME: ${{ steps.gerrit-change-info.outputs.gerrit_hostname }}
 
   call-gerrit-tox-verify:
     needs: [prepare, call-gerrit-change-info]
