@@ -790,4 +790,3 @@ check the presence of this license.
 More details in the :ref:`coding-guidelines`.
 
 License issues are considered particularly sensible by the open-source communities.
-

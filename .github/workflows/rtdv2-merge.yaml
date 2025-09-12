@@ -1,6 +1,7 @@
 ---
 # SPDX-License-Identifier: Apache-2.0
 # SPDX-FileCopyrightText: 2025 The Linux Foundation
+# yamllint disable rule:line-length
 
 name: RTDv2 Merge
 
@@ -67,7 +68,9 @@ permissions: read-all
 
 jobs:
   rtdv2-merge:
+    if: false  # Disabled - using RTDv3 validation instead
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - name: Check if running in ACT
         run: |
@@ -163,7 +166,7 @@ jobs:
                   TOX_OPTIONS_LIST="${TOX_OPTIONS_LIST} --parallel ${{ env.PARALLEL }} --parallel-live";;
           esac
 
-          tox $TOX_OPTIONS_LIST
+          tox "$TOX_OPTIONS_LIST"
           echo "---> Completed tox runs"
 
       # RTDv2 merge operations (CI only)
@@ -205,6 +208,8 @@ jobs:
                   echo "Response: $response"
                   return 1
               fi
+          }
+
           echo "INFO:"
           echo "INFO: Project: ${{ inputs.GERRIT_PROJECT }}"
           echo "INFO: Branch: ${{ inputs.GERRIT_BRANCH }}"

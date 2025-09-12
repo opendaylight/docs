@@ -35,4 +35,3 @@ Project-specific Developer Guides
 * :doc:`JSON RPC Documentation <jsonrpc:index>`
 * :doc:`OVSDB Documentation <ovsdb:index>`
 * :doc:`TransportPCE Documentation <transportpce:index>`
-

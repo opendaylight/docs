@@ -1,3 +1,4 @@
+#!/bin/bash
 curl -O https://meetings.opendaylight.org/opendaylight-meeting/2014/6_26_2014_tsc/opendaylight-meeting-6_26_2014_tsc.2014-06-26-16.57.html
 curl -O https://meetings.opendaylight.org/opendaylight-meeting/2014/6_26_2014_tsc/opendaylight-meeting-6_26_2014_tsc.2014-06-26-16.57.log.html
 curl -O https://meetings.opendaylight.org/opendaylight-meeting/2014/6_26_2014_tsc/opendaylight-meeting-6_26_2014_tsc.2014-06-26-16.57.log.txt

@@ -97,7 +97,7 @@ Test Implementations of commonly used services
 ==============================================
 
 If several tests, or even other modules, are likely to use a stubbed
-service, then (only) it is worth to write something re-usable like this:
+service, then (only) it is worth to write something reusable like this:
 
 .. code:: java
 

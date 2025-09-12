@@ -1,4 +1,7 @@
 ---
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-FileCopyrightText: 2025 The Linux Foundation
+
 name: Gerrit Verify (Hybrid)
 
 on:
@@ -55,6 +58,7 @@ permissions: read-all
 jobs:
   prepare:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - name: Skip if ACT
         if: ${{ env.ACT == 'true' }}
@@ -76,6 +80,7 @@ jobs:
 
   local-tox:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - name: Check if running in ACT
         if: ${{ env.ACT == 'true' }}
@@ -98,6 +103,7 @@ jobs:
 
   call-gerrit-change-info:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - name: Skip if ACT
         if: ${{ env.ACT == 'true' }}
@@ -105,7 +111,8 @@ jobs:
       - name: Gerrit change information
         if: ${{ env.ACT != 'true' }}
         id: gerrit-change-info
-        uses: lfreleng-actions/gerrit-change-info@88f575802e3411efcd50f45ec57ddc08a67ca3a5 # v2.1.0
+        # yamllint disable-line rule:line-length
+        uses: lfreleng-actions/gerrit-change-info@88f575802e3411efcd50f45ec57ddc08a67ca3a5  # v2.1.0
         with:
           gerrit_change_url: ${{ inputs.GERRIT_CHANGE_URL }}
           gerrit_patchset_number: ${{ inputs.GERRIT_PATCHSET_NUMBER }}
@@ -115,10 +122,15 @@ jobs:
     outputs:
       GERRIT_BRANCH: ${{ steps.gerrit-change-info.outputs.gerrit_branch }}
       GERRIT_CHANGE_ID: ${{ steps.gerrit-change-info.outputs.gerrit_change_id }}
+      # yamllint disable-line rule:line-length
       GERRIT_CHANGE_NUMBER: ${{ steps.gerrit-change-info.outputs.gerrit_change_number }}
+      # yamllint disable-line rule:line-length
       GERRIT_CHANGE_URL: ${{ steps.gerrit-change-info.outputs.gerrit_change_url }}
+      # yamllint disable-line rule:line-length
       GERRIT_EVENT_TYPE: ${{ steps.gerrit-change-info.outputs.gerrit_event_type }}
+      # yamllint disable-line rule:line-length
       GERRIT_PATCHSET_NUMBER: ${{ steps.gerrit-change-info.outputs.gerrit_patchset_number }}
+      # yamllint disable-line rule:line-length
       GERRIT_PATCHSET_REVISION: ${{ steps.gerrit-change-info.outputs.gerrit_patchset_revision }}
       GERRIT_PROJECT: ${{ steps.gerrit-change-info.outputs.gerrit_project }}
       GERRIT_REFSPEC: ${{ steps.gerrit-change-info.outputs.gerrit_refspec }}
@@ -126,32 +138,49 @@ jobs:
 
   call-gerrit-tox-verify:
     needs: [prepare, call-gerrit-change-info]
-    uses: lfit/releng-reusable-workflows/.github/workflows/gerrit-compose-required-tox-verify.yaml@36ff4d15c9c86771dc5d7073b5df323970f74b95 # 2025-01-22
+    # yamllint disable-line rule:line-length
+    uses: lfit/releng-reusable-workflows/.github/workflows/gerrit-compose-required-tox-verify.yaml@36ff4d15c9c86771dc5d7073b5df323970f74b95  # 2025-01-22
     with:
       GERRIT_BRANCH: ${{ needs.call-gerrit-change-info.outputs.GERRIT_BRANCH }}
+      # yamllint disable-line rule:line-length
       GERRIT_CHANGE_ID: ${{ needs.call-gerrit-change-info.outputs.GERRIT_CHANGE_ID }}
+      # yamllint disable-line rule:line-length
       GERRIT_CHANGE_NUMBER: ${{ needs.call-gerrit-change-info.outputs.GERRIT_CHANGE_NUMBER }}
+      # yamllint disable-line rule:line-length
       GERRIT_CHANGE_URL: ${{ needs.call-gerrit-change-info.outputs.GERRIT_CHANGE_URL }}
+      # yamllint disable-line rule:line-length
       GERRIT_EVENT_TYPE: ${{ needs.call-gerrit-change-info.outputs.GERRIT_EVENT_TYPE }}
+      # yamllint disable-line rule:line-length
       GERRIT_PATCHSET_NUMBER: ${{ needs.call-gerrit-change-info.outputs.GERRIT_PATCHSET_NUMBER }}
+      # yamllint disable-line rule:line-length
       GERRIT_PATCHSET_REVISION: ${{ needs.call-gerrit-change-info.outputs.GERRIT_PATCHSET_REVISION }}
+      # yamllint disable-line rule:line-length
       GERRIT_PROJECT: ${{ needs.call-gerrit-change-info.outputs.GERRIT_PROJECT }}
+      # yamllint disable-line rule:line-length
       GERRIT_REFSPEC: ${{ needs.call-gerrit-change-info.outputs.GERRIT_REFSPEC }}
       TOX_ENVS: '["docs","docs-linkcheck"]'
 
   rtd-validation:
     needs: [prepare, call-gerrit-change-info]
     # yamllint disable-line rule:line-length
-    uses: lfit/releng-reusable-workflows/.github/workflows/gerrit-compose-required-rtdv3-verify.yaml@36ff4d15c9c86771dc5d7073b5df323970f74b95 # 2025-01-22
+    uses: lfit/releng-reusable-workflows/.github/workflows/gerrit-compose-required-rtdv3-verify.yaml@36ff4d15c9c86771dc5d7073b5df323970f74b95  # 2025-01-22
     with:
       GERRIT_BRANCH: ${{ needs.call-gerrit-change-info.outputs.GERRIT_BRANCH }}
+      # yamllint disable-line rule:line-length
       GERRIT_CHANGE_ID: ${{ needs.call-gerrit-change-info.outputs.GERRIT_CHANGE_ID }}
+      # yamllint disable-line rule:line-length
       GERRIT_CHANGE_NUMBER: ${{ needs.call-gerrit-change-info.outputs.GERRIT_CHANGE_NUMBER }}
+      # yamllint disable-line rule:line-length
       GERRIT_CHANGE_URL: ${{ needs.call-gerrit-change-info.outputs.GERRIT_CHANGE_URL }}
+      # yamllint disable-line rule:line-length
       GERRIT_EVENT_TYPE: ${{ needs.call-gerrit-change-info.outputs.GERRIT_EVENT_TYPE }}
+      # yamllint disable-line rule:line-length
       GERRIT_PATCHSET_NUMBER: ${{ needs.call-gerrit-change-info.outputs.GERRIT_PATCHSET_NUMBER }}
+      # yamllint disable-line rule:line-length
       GERRIT_PATCHSET_REVISION: ${{ needs.call-gerrit-change-info.outputs.GERRIT_PATCHSET_REVISION }}
+      # yamllint disable-line rule:line-length
       GERRIT_PROJECT: ${{ needs.call-gerrit-change-info.outputs.GERRIT_PROJECT }}
+      # yamllint disable-line rule:line-length
       GERRIT_REFSPEC: ${{ needs.call-gerrit-change-info.outputs.GERRIT_REFSPEC }}
       TARGET_REPO: ${{ inputs.TARGET_REPO }}
     secrets:
@@ -161,6 +190,7 @@ jobs:
     if: ${{ always() }}
     needs: [call-gerrit-tox-verify, rtd-validation, call-gerrit-change-info]
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - name: Skip if ACT
         if: ${{ env.ACT == 'true' }}
@@ -175,6 +205,8 @@ jobs:
           username: ${{ vars.GERRIT_SSH_USER }}
           key: ${{ secrets.GERRIT_SSH_PRIVKEY }}
           known_hosts: ${{ vars.GERRIT_KNOWN_HOSTS }}
+          # yamllint disable-line rule:line-length
           gerrit-change-number: ${{ needs.call-gerrit-change-info.outputs.GERRIT_CHANGE_NUMBER }}
+          # yamllint disable-line rule:line-length
           gerrit-patchset-number: ${{ needs.call-gerrit-change-info.outputs.GERRIT_PATCHSET_NUMBER }}
           vote-type: ${{ env.WORKFLOW_CONCLUSION }}
