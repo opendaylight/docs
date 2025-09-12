@@ -110,5 +110,3 @@ General Code Style
 ==================
 
 -  120 characters line length
-
-

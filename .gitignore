@@ -27,3 +27,11 @@ docs/javadoc/
 
 # MacOS
 .DS_Store
+
+# Local development files
+.editorconfig
+.python-version
+.vscode/
+*.txt
+*.json
+*.patch

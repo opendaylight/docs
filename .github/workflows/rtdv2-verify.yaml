@@ -1,6 +1,7 @@
 ---
 # SPDX-License-Identifier: Apache-2.0
 # SPDX-FileCopyrightText: 2025 The Linux Foundation
+# yamllint disable rule:line-length
 
 name: RTDv2 Verify
 
@@ -64,7 +65,9 @@ permissions: read-all
 
 jobs:
   rtdv2-verify:
+    if: false  # Disabled - using RTDv3 validation instead
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - name: Check if running in ACT
         run: |
@@ -81,7 +84,7 @@ jobs:
       # Gerrit checkout for CI
       - name: Gerrit Checkout
         if: ${{ env.ACT != 'true' }}
-        uses: lfit/checkout-gerrit-change-action@54d751e8bd167bc91f7d665dabe33fae87aaaa63 # v0.9
+        uses: lfit/checkout-gerrit-change-action@54d751e8bd167bc91f7d665dabe33fae87aaaa63  # v0.9
         with:
           gerrit-refspec: ${{ inputs.GERRIT_REFSPEC }}
           gerrit-project: ${{ inputs.GERRIT_PROJECT }}
@@ -94,6 +97,7 @@ jobs:
         if: ${{ env.ACT == 'true' }}
         id: python-version-from-tox-local
         run: |
+
           if [ -f "docs/tox.ini" ]; then
             python_version=$(grep -oP '(?<=^basepython = python)\K(.*)' docs/tox.ini | head -1 || echo "")
             echo "extracted_string=${python_version}" >> "$GITHUB_OUTPUT"
@@ -129,14 +133,14 @@ jobs:
       # Python setup (CI version)
       - name: Setup Python [DOCS/TOX.INI] (CI)
         if: ${{ env.ACT != 'true' && steps.python-version-from-tox.outputs.extracted_string != '' }}
-        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065  # v5.6.0
         id: setup-python-from-tox
         with:
           python-version: "${{ steps.python-version-from-tox.outputs.extracted_string }}"
 
       - name: Setup Python [DEFAULT] (CI)
         if: ${{ env.ACT != 'true' && steps.python-version-from-tox.outputs.extracted_string == '' }}
-        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065  # v5.6.0
         id: setup-default-python
         with:
           python-version: "${{ env.DEFAULT_PYTHON }}"
@@ -201,7 +205,7 @@ jobs:
                   TOX_OPTIONS_LIST="${TOX_OPTIONS_LIST} --parallel ${{ env.PARALLEL }} --parallel-live";;
           esac
 
-          tox $TOX_OPTIONS_LIST
+          tox "$TOX_OPTIONS_LIST"
           echo "---> Completed tox runs"
 
       # RTDv2 integration (CI only)
