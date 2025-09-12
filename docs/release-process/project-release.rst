@@ -60,4 +60,3 @@ This job performs the following duties:
 * build the project
 * publish the artifacts on nexus
 * tag and sign the release on Gerrit
-

@@ -259,7 +259,7 @@ Let us for example say that your new code calls IdManagerServices
 ``allocateIdRange()`` method somewhere - I don't know if it does, so this is
 just for Illustration. You could make your mocked IdManagerService do
 something else than throw a UnstubbedMethodException for
-``allocateIdRange()`` in two different "styles", this is somewhat dependant
+``allocateIdRange()`` in two different "styles", this is somewhat dependent
 on personal preference:
 
 A) Write out a partial "fake" implementation of it:

@@ -138,4 +138,3 @@ to the karaf file::
 
 The workaround and further info are in this thread:
 https://stackoverflow.com/questions/35679852/karaf-exception-is-thrown-while-installing-org-fusesource-leveldbjni
-

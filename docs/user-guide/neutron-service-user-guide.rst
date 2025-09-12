@@ -84,4 +84,3 @@ purposes. It logs changes on Neutron YANG models.
 ::
 
     feature:install odl-neutron-logger
-
