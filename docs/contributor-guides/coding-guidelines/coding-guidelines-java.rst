@@ -543,7 +543,7 @@ FindBugs' null analysis is inferior to Eclipse JDT's, because:
    see http://www.lastnpe.org
 -  much better in-IDE support, at least for Eclipse users
 
-*WIP: We are aiming at, eventualy, running headless Eclipse JDT-based null
+*WIP: We are aiming at, eventually, running headless Eclipse JDT-based null
 analysis during the build, not just for users of the Eclipse IDE UI;
 watch*\ `issue ODLPARENT-116 <https://jira.opendaylight.org/browse/ODLPARENT-116>`__
 \ *, and*\ http://www.lastnpe.org\ *.*

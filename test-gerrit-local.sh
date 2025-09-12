@@ -2,7 +2,7 @@
 set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$SCRIPT_DIR"
-WORKFLOWS_DIR="$REPO_ROOT/.github/workflows"
+# WORKFLOWS_DIR="$REPO_ROOT/.github/workflows"  # Currently unused
 EVENT_JSON="$REPO_ROOT/gerrit-verify-event.json"
 TARGET_WORKFLOW_REL=".github/workflows/gerrit-verify.yaml"
 WORKFLOW_TYPE="gerrit-verify"  # Default workflow type
@@ -128,8 +128,8 @@ fi
 rand_hex(){ head -c16 /dev/urandom | sha1sum | cut -c1-40; }
 
 # Set up event data
-CHANGE_ID="I$(rand_hex)"
-REVISION="$(rand_hex)"
+# CHANGE_ID="I$(rand_hex)"  # Currently unused
+# REVISION="$(rand_hex)"   # Currently unused
 REFSPEC="refs/changes/${CHANGE_NUMBER: -2}/$CHANGE_NUMBER/$PATCHSET_NUMBER"
 
 # For local changes, use current HEAD instead of Gerrit refspec

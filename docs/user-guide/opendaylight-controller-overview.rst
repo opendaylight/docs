@@ -53,4 +53,3 @@ generating the topology database for the Topology Manager.
 
 For a more detailed overview of the OpenDaylight controller, see the
 *OpenDaylight Developer Guide*.
-

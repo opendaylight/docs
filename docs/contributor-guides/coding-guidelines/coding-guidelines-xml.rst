@@ -11,4 +11,3 @@ Coding Guidelines for XML
 -  use self-closing
 -  include proper namespace/model/version declarations
 -  TBD
-

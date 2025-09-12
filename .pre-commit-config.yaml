@@ -1,27 +1,95 @@
 ---
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-FileCopyrightText: 2025 The Linux Foundation
+
+ci:
+  autofix_commit_msg: |
+    Chore: pre-commit autofixes
+
+    Signed-off-by: pre-commit-ci[bot] <pre-commit-ci@users.noreply.github.com>
+  autoupdate_commit_msg: |
+    Chore: pre-commit autoupdate
+
+    Signed-off-by: pre-commit-ci[bot] <pre-commit-ci@users.noreply.github.com>
+
+exclude: "^docs/conf.py"
+
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.4.0
+    rev: 3e8a8703264a2f4a69428a0aa4dcb512790b2c8c  # frozen: v6.0.0
     hooks:
       - id: trailing-whitespace
+      - id: check-added-large-files
+      - id: check-ast
+      - id: check-json
+      - id: check-merge-conflict
+      - id: check-xml
+      - id: check-yaml
+      - id: debug-statements
+      - id: end-of-file-fixer
+      - id: requirements-txt-fixer
+      - id: mixed-line-ending
+        args: ["--fix=lf"]
+      - id: no-commit-to-branch
+        args:
+          - --branch=dev
+          - --branch=master
+          - --branch=main
+          - --branch=rc
+          - --branch=production
 
   - repo: https://github.com/jorisroovers/gitlint
-    rev: v0.19.1
+    rev: acc9d9de6369b76d22cb4167029d2035e8730b98  # frozen: v0.19.1
     hooks:
       - id: gitlint
-        stages: [commit-msg]
-      - id: gitlint-ci
-        stages: [manual]
 
-  - repo: https://github.com/Lucas-C/pre-commit-hooks
-    rev: v1.5.1
+  - repo: https://github.com/adrienverge/yamllint.git
+    rev: 79a6b2b1392eaf49cdd32ac4f14be1a809bbd8f7  # frozen: v1.37.1
     hooks:
-      - id: remove-tabs
-        stages: [commit]
-        exclude: >
-            (?x)^(
-                .git/COMMIT_EDITMSG|
-                docs/make.bat|
-                docs/Makefile|
-                projects_list.tsv
-            )$
+      - id: yamllint
+        types: [yaml]
+
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: 412de98d50e846f31ea6f4b0ad036f2c24a7a024  # frozen: v1.17.1
+    hooks:
+      - id: mypy
+
+  - repo: https://github.com/shellcheck-py/shellcheck-py
+    rev: 745eface02aef23e168a8afb6b5737818efbea95  # frozen: v0.11.0.1
+    hooks:
+      - id: shellcheck
+
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.41.0
+    hooks:
+      - id: markdownlint
+        args: ["--fix"]
+
+  # Replaces: https://github.com/rhysd/actionlint
+  # Permits actionlint to run both locally and with precommit.ci/GitHub
+  - repo: https://github.com/Mateusz-Grzelinski/actionlint-py
+    rev: f999ae59ac949d9b57aaa5569c2d60eb846b3a00  # frozen: v1.7.7.24
+    hooks:
+      - id: actionlint
+
+  # Check for misspellings in documentation files
+  - repo: https://github.com/codespell-project/codespell
+    rev: 63c8f8312b7559622c0d82815639671ae42132ac  # frozen: v2.4.1
+    hooks:
+      - id: codespell
+        args: ["--ignore-regex", "https?://[^\\s]+"]
+
+  - repo: https://github.com/python-jsonschema/check-jsonschema
+    rev: 9b9df9f1d3bd9a5e7a52d8f61a3be3e29e73d127  # frozen: 0.33.3
+    hooks:
+      - id: check-github-actions
+      - id: check-github-workflows
+      - id: check-jsonschema
+        name: Check GitHub Workflows set timeout-minutes
+        args:
+          - --builtin-schema
+          - github-workflows-require-timeout
+        files: ^\.github/workflows/[^/]+$
+        types:
+          - yaml
+      - id: check-readthedocs

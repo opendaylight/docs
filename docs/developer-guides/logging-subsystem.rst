@@ -95,7 +95,7 @@ A typical example for a candidate event is when a software component detects
 inconsistency within an external data feed and it performs a corrective action
 to compensate for it.
 Let's say we process a list of key/value pairs and encounter a duplicate key:
-we can either overwrite the old occurance, ignore the new occurance or abort.
+we can either overwrite the old occurrence, ignore the new occurrence or abort.
 If we take any of the first two actions, we should report a **WARN** event.
 If we take the third, we should report an **ERROR** event.
 

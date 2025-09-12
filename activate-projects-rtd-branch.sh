@@ -74,7 +74,7 @@ while getopts :h: opts; do
     esac
 done
 
-if [ -z $1 ]; then
+if [ -z "$1" ]; then
     usage
     exit 1
 fi
@@ -85,7 +85,7 @@ fi
 
 token="$1"
 
-for project in $(grep -v ^# projects_list.tsv | cut -f1); do
+grep -v ^# projects_list.tsv | cut -f1 | while read -r project; do
     update_available_versions "$token" "odl-$project"
 done
 
@@ -94,8 +94,8 @@ echo "Waiting 60 seconds for available versions to update"
 echo
 sleep 60  # Wait a minute for RTD to update available versions
 
-for project in $(grep -v ^# projects_list.tsv | cut -f1); do
-    version_name=$(grep $project projects_list.tsv | grep -v ^# | cut -f2)
+grep -v ^# projects_list.tsv | cut -f1 | while read -r project; do
+    version_name=$(grep "$project" projects_list.tsv | grep -v ^# | cut -f2)
     activate_version "$token" "odl-$project" "$version_name"
     build_version "$token" "odl-$project" "$version_name"
 done

@@ -35,4 +35,3 @@ A workaround is to create a minimal ``setup.py`` file as follows::
    import setuptools
 
    setuptools.setup(name='project-name')
-
