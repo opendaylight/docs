@@ -124,6 +124,24 @@
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1d83d185_8657b96d",
+        "filename": ".github/workflows/rtdv2-merge.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 8144
+      },
+      "writtenOn": "2025-09-12T10:13:17Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "b1ae49f4_a1ade3c5",
+      "revId": "d05881e73ea7b4111d79b28ece8fc75e4b3fc1da",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "47596058_dea1d114",
@@ -190,6 +208,24 @@
       "side": 1,
       "message": "not sure I understand this? The current version has an extra blank line at the end. This was likely added by the end-of-file-fixer pre-commit hook, which ensures all files end with a newline character. This is a common and expected behavior for this hook to ensure proper file formatting.",
       "parentUuid": "7491096e_ec010904",
+      "revId": "d05881e73ea7b4111d79b28ece8fc75e4b3fc1da",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7c4e7f64_4f2b110e",
+        "filename": "docs/make.bat",
+        "patchSetId": 3
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 8144
+      },
+      "writtenOn": "2025-09-12T10:13:17Z",
+      "side": 1,
+      "message": "OK, I mean to remove blanks marked with \u003e\u003e - let\u0027s say that\u0027s for later",
+      "parentUuid": "00ab35ba_10821bfe",
       "revId": "d05881e73ea7b4111d79b28ece8fc75e4b3fc1da",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
