@@ -18,6 +18,24 @@
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4651a704_b712c245",
+        "filename": ".github/workflows/gerrit-verify.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6258
+      },
+      "writtenOn": "2025-09-12T10:01:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cce3bea8_4c2146a2",
+      "revId": "d05881e73ea7b4111d79b28ece8fc75e4b3fc1da",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d5c5e2a0_748fb315",
@@ -31,6 +49,24 @@
       "writtenOn": "2025-09-12T07:27:51Z",
       "side": 1,
       "message": "twice?",
+      "revId": "d05881e73ea7b4111d79b28ece8fc75e4b3fc1da",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e3632a38_9f6f038b",
+        "filename": ".github/workflows/gerrit-verify.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 6258
+      },
+      "writtenOn": "2025-09-12T10:01:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d5c5e2a0_748fb315",
       "revId": "d05881e73ea7b4111d79b28ece8fc75e4b3fc1da",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     },
@@ -54,6 +90,42 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b1ae49f4_a1ade3c5",
+        "filename": ".github/workflows/rtdv2-merge.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 6258
+      },
+      "writtenOn": "2025-09-12T10:01:04Z",
+      "side": 1,
+      "message": "its required EOF which get invoked below",
+      "parentUuid": "ae51e0fb_26b3e3fa",
+      "revId": "d05881e73ea7b4111d79b28ece8fc75e4b3fc1da",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "74fd1174_813a16e6",
+        "filename": ".github/workflows/rtdv2-merge.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 6258
+      },
+      "writtenOn": "2025-09-12T10:01:04Z",
+      "side": 1,
+      "message": "Ack, its an EOFuntion than gets invoked below in the if condition, reformatted by the pre-commit hooks / shellcheck warnings.",
+      "parentUuid": "ae51e0fb_26b3e3fa",
+      "revId": "d05881e73ea7b4111d79b28ece8fc75e4b3fc1da",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "47596058_dea1d114",
         "filename": ".github/workflows/rtdv2-verify.yaml",
         "patchSetId": 3
@@ -65,6 +137,24 @@
       "writtenOn": "2025-09-12T07:27:51Z",
       "side": 1,
       "message": "not intended empty line?",
+      "revId": "d05881e73ea7b4111d79b28ece8fc75e4b3fc1da",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "50e87a6b_3f7c78a5",
+        "filename": ".github/workflows/rtdv2-verify.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 6258
+      },
+      "writtenOn": "2025-09-12T10:01:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "47596058_dea1d114",
       "revId": "d05881e73ea7b4111d79b28ece8fc75e4b3fc1da",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     },
@@ -82,6 +172,24 @@
       "writtenOn": "2025-09-12T07:27:51Z",
       "side": 1,
       "message": "can you please remove \u003e\u003e when here?",
+      "revId": "d05881e73ea7b4111d79b28ece8fc75e4b3fc1da",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "00ab35ba_10821bfe",
+        "filename": "docs/make.bat",
+        "patchSetId": 3
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 6258
+      },
+      "writtenOn": "2025-09-12T10:01:04Z",
+      "side": 1,
+      "message": "not sure I understand this? The current version has an extra blank line at the end. This was likely added by the end-of-file-fixer pre-commit hook, which ensures all files end with a newline character. This is a common and expected behavior for this hook to ensure proper file formatting.",
+      "parentUuid": "7491096e_ec010904",
       "revId": "d05881e73ea7b4111d79b28ece8fc75e4b3fc1da",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
