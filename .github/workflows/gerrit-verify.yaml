@@ -104,21 +104,6 @@ jobs:
   call-gerrit-change-info:
     runs-on: ubuntu-latest
     timeout-minutes: 5
-    steps:
-      - name: Skip if ACT
-        if: ${{ env.ACT == 'true' }}
-        run: echo "Skipping Gerrit change info in ACT mode" && exit 0
-      - name: Gerrit change information
-        if: ${{ env.ACT != 'true' }}
-        id: gerrit-change-info
-        # yamllint disable-line rule:line-length
-        uses: lfreleng-actions/gerrit-change-info@88f575802e3411efcd50f45ec57ddc08a67ca3a5  # v2.1.0
-        with:
-          gerrit_change_url: ${{ inputs.GERRIT_CHANGE_URL }}
-          gerrit_patchset_number: ${{ inputs.GERRIT_PATCHSET_NUMBER }}
-          ssh_user_name: ${{ vars.GERRIT_SSH_USER }}
-          ssh_private_key: ${{ secrets.GERRIT_SSH_PRIVKEY }}
-          gerrit_known_hosts: ${{ vars.GERRIT_KNOWN_HOSTS }}
     outputs:
       GERRIT_BRANCH: ${{ steps.gerrit-change-info.outputs.gerrit_branch }}
       GERRIT_CHANGE_ID: ${{ steps.gerrit-change-info.outputs.gerrit_change_id }}
@@ -135,6 +120,22 @@ jobs:
       GERRIT_PROJECT: ${{ steps.gerrit-change-info.outputs.gerrit_project }}
       GERRIT_REFSPEC: ${{ steps.gerrit-change-info.outputs.gerrit_refspec }}
       GERRIT_HOSTNAME: ${{ steps.gerrit-change-info.outputs.gerrit_hostname }}
+    steps:
+      - name: Skip if ACT
+        if: ${{ env.ACT == 'true' }}
+        run: echo "Skipping Gerrit change info in ACT mode" && exit 0
+      - name: Gerrit change information
+        if: ${{ env.ACT != 'true' }}
+        id: gerrit-change-info
+        # yamllint disable-line rule:line-length
+        uses: lfreleng-actions/gerrit-change-info@542b2b4d78b75e430f64237b2b2b24d9f8dc0d77 # v0.1.2
+        with:
+          gerrit_change_url: ${{ inputs.GERRIT_CHANGE_URL }}
+          gerrit_patchset_number: ${{ inputs.GERRIT_PATCHSET_NUMBER }}
+          ssh_user_name: ${{ vars.GERRIT_SSH_USER }}
+          ssh_private_key: ${{ secrets.GERRIT_SSH_PRIVKEY }}
+          gerrit_known_hosts: ${{ vars.GERRIT_KNOWN_HOSTS }}
+          path_prefix: "gerrit-change-info"
 
   call-gerrit-tox-verify:
     needs: [prepare, call-gerrit-change-info]
