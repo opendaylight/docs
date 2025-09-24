@@ -65,7 +65,8 @@ jobs:
         run: echo "Skipping vote clearing in ACT mode" && exit 0
       - name: Clear votes
         if: ${{ env.ACT != 'true' }}
-        uses: lfit/gerrit-review-action@v0.4
+        # yamllint disable-line rule:line-length
+        uses: lfit/gerrit-review-action@9627b9a144f2a2cad70707ddfae87c87dce60729 # v0.8
         with:
           host: ${{ vars.GERRIT_SERVER }}
           username: ${{ vars.GERRIT_SSH_USER }}
@@ -81,13 +82,14 @@ jobs:
   local-tox:
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    # yamllint disable rule:line-length
     steps:
       - name: Check if running in ACT
         if: ${{ env.ACT == 'true' }}
         run: echo "Running local tox build via ACT"
       - uses: actions/checkout@v4
         if: ${{ env.ACT == 'true' }}
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
         if: ${{ env.ACT == 'true' }}
         with:
           python-version: '3.x'
@@ -104,18 +106,14 @@ jobs:
   call-gerrit-change-info:
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    # yamllint disable rule:line-length
     outputs:
       GERRIT_BRANCH: ${{ steps.gerrit-change-info.outputs.gerrit_branch }}
       GERRIT_CHANGE_ID: ${{ steps.gerrit-change-info.outputs.gerrit_change_id }}
-      # yamllint disable-line rule:line-length
       GERRIT_CHANGE_NUMBER: ${{ steps.gerrit-change-info.outputs.gerrit_change_number }}
-      # yamllint disable-line rule:line-length
       GERRIT_CHANGE_URL: ${{ steps.gerrit-change-info.outputs.gerrit_change_url }}
-      # yamllint disable-line rule:line-length
       GERRIT_EVENT_TYPE: ${{ steps.gerrit-change-info.outputs.gerrit_event_type }}
-      # yamllint disable-line rule:line-length
       GERRIT_PATCHSET_NUMBER: ${{ steps.gerrit-change-info.outputs.gerrit_patchset_number }}
-      # yamllint disable-line rule:line-length
       GERRIT_PATCHSET_REVISION: ${{ steps.gerrit-change-info.outputs.gerrit_patchset_revision }}
       GERRIT_PROJECT: ${{ steps.gerrit-change-info.outputs.gerrit_project }}
       GERRIT_REFSPEC: ${{ steps.gerrit-change-info.outputs.gerrit_refspec }}
@@ -127,8 +125,7 @@ jobs:
       - name: Gerrit change information
         if: ${{ env.ACT != 'true' }}
         id: gerrit-change-info
-        # yamllint disable-line rule:line-length
-        uses: lfreleng-actions/gerrit-change-info@542b2b4d78b75e430f64237b2b2b24d9f8dc0d77 # v0.1.2
+        uses: lfreleng-actions/gerrit-change-info@f0a3c577597ce3373ccaadff1214a113fd75615b # v0.1.2
         with:
           gerrit_change_url: ${{ inputs.GERRIT_CHANGE_URL }}
           gerrit_patchset_number: ${{ inputs.GERRIT_PATCHSET_NUMBER }}
@@ -139,49 +136,33 @@ jobs:
 
   call-gerrit-tox-verify:
     needs: [prepare, call-gerrit-change-info]
-    # yamllint disable-line rule:line-length
-    uses: lfit/releng-reusable-workflows/.github/workflows/gerrit-compose-required-tox-verify.yaml@36ff4d15c9c86771dc5d7073b5df323970f74b95  # 2025-01-22
+    # yamllint disable rule:line-length
+    uses: lfit/releng-reusable-workflows/.github/workflows/gerrit-compose-required-tox-verify.yaml@f318aaac9f4fce73a8059fe95ba9080833e018c2  # v0.2.19
     with:
       GERRIT_BRANCH: ${{ needs.call-gerrit-change-info.outputs.GERRIT_BRANCH }}
-      # yamllint disable-line rule:line-length
       GERRIT_CHANGE_ID: ${{ needs.call-gerrit-change-info.outputs.GERRIT_CHANGE_ID }}
-      # yamllint disable-line rule:line-length
       GERRIT_CHANGE_NUMBER: ${{ needs.call-gerrit-change-info.outputs.GERRIT_CHANGE_NUMBER }}
-      # yamllint disable-line rule:line-length
       GERRIT_CHANGE_URL: ${{ needs.call-gerrit-change-info.outputs.GERRIT_CHANGE_URL }}
-      # yamllint disable-line rule:line-length
       GERRIT_EVENT_TYPE: ${{ needs.call-gerrit-change-info.outputs.GERRIT_EVENT_TYPE }}
-      # yamllint disable-line rule:line-length
       GERRIT_PATCHSET_NUMBER: ${{ needs.call-gerrit-change-info.outputs.GERRIT_PATCHSET_NUMBER }}
-      # yamllint disable-line rule:line-length
       GERRIT_PATCHSET_REVISION: ${{ needs.call-gerrit-change-info.outputs.GERRIT_PATCHSET_REVISION }}
-      # yamllint disable-line rule:line-length
       GERRIT_PROJECT: ${{ needs.call-gerrit-change-info.outputs.GERRIT_PROJECT }}
-      # yamllint disable-line rule:line-length
       GERRIT_REFSPEC: ${{ needs.call-gerrit-change-info.outputs.GERRIT_REFSPEC }}
       TOX_ENVS: '["docs","docs-linkcheck"]'
 
   rtd-validation:
     needs: [prepare, call-gerrit-change-info]
-    # yamllint disable-line rule:line-length
-    uses: lfit/releng-reusable-workflows/.github/workflows/gerrit-compose-required-rtdv3-verify.yaml@36ff4d15c9c86771dc5d7073b5df323970f74b95  # 2025-01-22
+    # yamllint disable rule:line-length
+    uses: lfit/releng-reusable-workflows/.github/workflows/gerrit-compose-required-rtdv3-verify.yaml@f318aaac9f4fce73a8059fe95ba9080833e018c2  # v0.2.19
     with:
       GERRIT_BRANCH: ${{ needs.call-gerrit-change-info.outputs.GERRIT_BRANCH }}
-      # yamllint disable-line rule:line-length
       GERRIT_CHANGE_ID: ${{ needs.call-gerrit-change-info.outputs.GERRIT_CHANGE_ID }}
-      # yamllint disable-line rule:line-length
       GERRIT_CHANGE_NUMBER: ${{ needs.call-gerrit-change-info.outputs.GERRIT_CHANGE_NUMBER }}
-      # yamllint disable-line rule:line-length
       GERRIT_CHANGE_URL: ${{ needs.call-gerrit-change-info.outputs.GERRIT_CHANGE_URL }}
-      # yamllint disable-line rule:line-length
       GERRIT_EVENT_TYPE: ${{ needs.call-gerrit-change-info.outputs.GERRIT_EVENT_TYPE }}
-      # yamllint disable-line rule:line-length
       GERRIT_PATCHSET_NUMBER: ${{ needs.call-gerrit-change-info.outputs.GERRIT_PATCHSET_NUMBER }}
-      # yamllint disable-line rule:line-length
       GERRIT_PATCHSET_REVISION: ${{ needs.call-gerrit-change-info.outputs.GERRIT_PATCHSET_REVISION }}
-      # yamllint disable-line rule:line-length
       GERRIT_PROJECT: ${{ needs.call-gerrit-change-info.outputs.GERRIT_PROJECT }}
-      # yamllint disable-line rule:line-length
       GERRIT_REFSPEC: ${{ needs.call-gerrit-change-info.outputs.GERRIT_REFSPEC }}
       TARGET_REPO: ${{ inputs.TARGET_REPO }}
     secrets:
@@ -192,22 +173,21 @@ jobs:
     needs: [call-gerrit-tox-verify, rtd-validation, call-gerrit-change-info]
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    # yamllint disable rule:line-length
     steps:
       - name: Skip if ACT
         if: ${{ env.ACT == 'true' }}
         run: echo "Skipping vote in ACT mode" && exit 0
-      - uses: technote-space/workflow-conclusion-action@v3
+      - uses: im-open/workflow-conclusion@e4f7c4980600fbe0818173e30931d3550801b992 # v2.2.3
         if: ${{ env.ACT != 'true' }}
       - name: Set vote
         if: ${{ env.ACT != 'true' }}
-        uses: lfit/gerrit-review-action@v0.4
+        uses: lfit/gerrit-review-action@9627b9a144f2a2cad70707ddfae87c87dce60729 # v0.8
         with:
           host: ${{ vars.GERRIT_SERVER }}
           username: ${{ vars.GERRIT_SSH_USER }}
           key: ${{ secrets.GERRIT_SSH_PRIVKEY }}
           known_hosts: ${{ vars.GERRIT_KNOWN_HOSTS }}
-          # yamllint disable-line rule:line-length
           gerrit-change-number: ${{ needs.call-gerrit-change-info.outputs.GERRIT_CHANGE_NUMBER }}
-          # yamllint disable-line rule:line-length
           gerrit-patchset-number: ${{ needs.call-gerrit-change-info.outputs.GERRIT_PATCHSET_NUMBER }}
           vote-type: ${{ env.WORKFLOW_CONCLUSION }}
