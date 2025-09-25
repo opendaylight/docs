@@ -108,16 +108,16 @@ jobs:
     timeout-minutes: 5
     # yamllint disable rule:line-length
     outputs:
-      GERRIT_BRANCH: ${{ steps.gerrit-change-info.outputs.gerrit_branch }}
-      GERRIT_CHANGE_ID: ${{ steps.gerrit-change-info.outputs.gerrit_change_id }}
-      GERRIT_CHANGE_NUMBER: ${{ steps.gerrit-change-info.outputs.gerrit_change_number }}
-      GERRIT_CHANGE_URL: ${{ steps.gerrit-change-info.outputs.gerrit_change_url }}
-      GERRIT_EVENT_TYPE: ${{ steps.gerrit-change-info.outputs.gerrit_event_type }}
-      GERRIT_PATCHSET_NUMBER: ${{ steps.gerrit-change-info.outputs.gerrit_patchset_number }}
-      GERRIT_PATCHSET_REVISION: ${{ steps.gerrit-change-info.outputs.gerrit_patchset_revision }}
-      GERRIT_PROJECT: ${{ steps.gerrit-change-info.outputs.gerrit_project }}
-      GERRIT_REFSPEC: ${{ steps.gerrit-change-info.outputs.gerrit_refspec }}
-      GERRIT_HOSTNAME: ${{ steps.gerrit-change-info.outputs.gerrit_hostname }}
+      GERRIT_BRANCH: ${{ steps.gerrit-change-info.outputs.GERRIT_BRANCH }}
+      GERRIT_CHANGE_ID: ${{ steps.gerrit-change-info.outputs.GERRIT_CHANGE_ID }}
+      GERRIT_CHANGE_NUMBER: ${{ steps.gerrit-change-info.outputs.GERRIT_CHANGE_NUMBER }}
+      GERRIT_CHANGE_URL: ${{ steps.gerrit-change-info.outputs.GERRIT_CHANGE_URL }}
+      GERRIT_EVENT_TYPE: ${{ steps.gerrit-change-info.outputs.GERRIT_EVENT_TYPE }}
+      GERRIT_PATCHSET_NUMBER: ${{ steps.gerrit-change-info.outputs.GERRIT_PATCHSET_NUMBER }}
+      GERRIT_PATCHSET_REVISION: ${{ steps.gerrit-change-info.outputs.GERRIT_PATCHSET_REVISION }}
+      GERRIT_PROJECT: ${{ steps.gerrit-change-info.outputs.GERRIT_PROJECT }}
+      GERRIT_REFSPEC: ${{ steps.gerrit-change-info.outputs.GERRIT_REFSPEC }}
+      GERRIT_HOSTNAME: ${{ steps.gerrit-change-info.outputs.GERRIT_HOSTNAME }}
     steps:
       - name: Skip if ACT
         if: ${{ env.ACT == 'true' }}
@@ -125,7 +125,7 @@ jobs:
       - name: Gerrit change information
         if: ${{ env.ACT != 'true' }}
         id: gerrit-change-info
-        uses: lfreleng-actions/gerrit-change-info@f0a3c577597ce3373ccaadff1214a113fd75615b # v0.1.2
+        uses: lfreleng-actions/gerrit-change-info@542b2b4d78b75e430f64237b2b2b24d9f8dc0d77 # v0.1.2
         with:
           gerrit_change_url: ${{ inputs.GERRIT_CHANGE_URL }}
           gerrit_patchset_number: ${{ inputs.GERRIT_PATCHSET_NUMBER }}
