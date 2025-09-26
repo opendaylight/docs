@@ -41,11 +41,6 @@ on:
         description: "Gerrit refspec of change"
         required: true
         type: string
-      TARGET_REPO:
-        # yamllint disable-line rule:line-length
-        description: "The target GitHub repository needing the bypassable workflow"
-        required: true
-        type: string
 
 concurrency:
   # yamllint disable-line rule:line-length
@@ -86,24 +81,6 @@ jobs:
       GERRIT_PROJECT: ${{ inputs.GERRIT_PROJECT }}
       GERRIT_REFSPEC: ${{ inputs.GERRIT_REFSPEC }}
       TOX_ENVS: '["docs","docs-linkcheck"]'
-
-  rtd-validation:
-    needs: [prepare, call-gerrit-change-info]
-    # yamllint disable-line rule:line-length
-    uses: lfit/releng-reusable-workflows/.github/workflows/gerrit-compose-required-rtdv3-verify.yaml@36ff4d15c9c86771dc5d7073b5df323970f74b95 # 2025-01-22
-    with:
-      GERRIT_BRANCH: ${{ needs.call-gerrit-change-info.outputs.GERRIT_BRANCH }}
-      GERRIT_CHANGE_ID: ${{ needs.call-gerrit-change-info.outputs.GERRIT_CHANGE_ID }}
-      GERRIT_CHANGE_NUMBER: ${{ needs.call-gerrit-change-info.outputs.GERRIT_CHANGE_NUMBER }}
-      GERRIT_CHANGE_URL: ${{ needs.call-gerrit-change-info.outputs.GERRIT_CHANGE_URL }}
-      GERRIT_EVENT_TYPE: ${{ needs.call-gerrit-change-info.outputs.GERRIT_EVENT_TYPE }}
-      GERRIT_PATCHSET_NUMBER: ${{ needs.call-gerrit-change-info.outputs.GERRIT_PATCHSET_NUMBER }}
-      GERRIT_PATCHSET_REVISION: ${{ needs.call-gerrit-change-info.outputs.GERRIT_PATCHSET_REVISION }}
-      GERRIT_PROJECT: ${{ needs.call-gerrit-change-info.outputs.GERRIT_PROJECT }}
-      GERRIT_REFSPEC: ${{ needs.call-gerrit-change-info.outputs.GERRIT_REFSPEC }}
-      TARGET_REPO: ${{ inputs.TARGET_REPO }}
-    secrets:
-      RTD_TOKEN: ${{ secrets.RTD_TOKEN }}
 
   vote:
     if: ${{ always() }}
