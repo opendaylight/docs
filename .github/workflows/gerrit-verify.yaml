@@ -129,8 +129,8 @@ jobs:
         with:
           gerrit_change_url: ${{ inputs.GERRIT_CHANGE_URL }}
           gerrit_patchset_number: ${{ inputs.GERRIT_PATCHSET_NUMBER }}
-          ssh_user_name: ${{ vars.GERRIT_SSH_USER }}
-          ssh_private_key: ${{ secrets.GERRIT_SSH_PRIVKEY }}
+          ssh_user_name: ${{ vars.GERRIT_SSH_USER_G2G }}
+          ssh_private_key: ${{ secrets.GERRIT_SSH_PRIVKEY_G2G }}
           gerrit_known_hosts: ${{ vars.GERRIT_KNOWN_HOSTS }}
           path_prefix: "gerrit-change-info"
 
