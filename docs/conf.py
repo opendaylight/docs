@@ -87,8 +87,14 @@ linkcheck_ignore = [
     'https://www.opendaylight.org/current-release-titanium',
     'https://www.opendaylight.org/current-release-scandium',
     'https://www.opendaylight.org/current-release-calcium',
+    # Ignore JIRA URLs that often timeout during linkcheck
+    '^https://lf-opendaylight.atlassian.net/.*',
 ]
-linkcheck_timeout = 300
+# Linkcheck configuration for better performance and reliability
+linkcheck_timeout = 60  # Timeout per link (reduced from 300 to fail fast)
+linkcheck_retries = 2  # Retry failed links
+linkcheck_workers = 5  # Parallel workers (default)
+linkcheck_rate_limit_timeout = 60.0  # Wait time after rate limit
 
 nitpicky = True
 release = version
