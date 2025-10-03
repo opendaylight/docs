@@ -46,7 +46,8 @@ on:
       TARGET_REPO:
         # yamllint disable-line rule:line-length
         description: "The target GitHub repository needing the bypassable workflow"
-        required: true
+        required: false
+        default: ${{ github.repository }}
         type: string
 
 concurrency:
