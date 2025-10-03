@@ -46,7 +46,7 @@ on:
       TARGET_REPO:
         # yamllint disable-line rule:line-length
         description: "The target GitHub repository needing the bypassable workflow"
-        required: true
+        required: false
         type: string
 
 concurrency:
@@ -164,7 +164,7 @@ jobs:
       GERRIT_PATCHSET_REVISION: ${{ needs.call-gerrit-change-info.outputs.GERRIT_PATCHSET_REVISION }}
       GERRIT_PROJECT: ${{ needs.call-gerrit-change-info.outputs.GERRIT_PROJECT }}
       GERRIT_REFSPEC: ${{ needs.call-gerrit-change-info.outputs.GERRIT_REFSPEC }}
-      TARGET_REPO: ${{ inputs.TARGET_REPO }}
+      TARGET_REPO: ${{ inputs.TARGET_REPO || github.repository }}
     secrets:
       RTD_TOKEN: ${{ secrets.RTD_TOKEN }}
 
