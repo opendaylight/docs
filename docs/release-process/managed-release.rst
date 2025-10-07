@@ -104,6 +104,9 @@ the following projects are Release Integrated:
 * mdsal
 * netconf
 * odlparent
+* openflowplugin
+* transportpce
+* transportpce-models
 * yangtools
 
 Requirements for Managed Projects
