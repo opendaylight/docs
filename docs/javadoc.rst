@@ -13,10 +13,7 @@ Managed Projects
 ================
 
 * `bgpcep <https://javadocs.opendaylight.org/bgpcep>`_
-* `genius <https://javadocs.opendaylight.org/genius>`_
 * `infrautils <https://javadocs.opendaylight.org/infrautils>`_
 * `lispflowmapping <https://javadoc.io/doc/org.opendaylight.lispflowmapping>`_
-* `netvirt <https://javadocs.opendaylight.org/netvirt>`_
-* `neutron <https://javadocs.opendaylight.org/neutron>`_
 * `openflowplugin <https://javadocs.opendaylight.org/openflowplugin>`_
 * `ovsdb <https://javadocs.opendaylight.org/ovsdb>`_
