@@ -22,8 +22,6 @@ Core features Developer Guides
 
    distribution-version
    distribution-test-features
-   neutron-service-developer-guide
-   neutron-northbound
    odl-parent-developer-guide
    yang-tools
 
