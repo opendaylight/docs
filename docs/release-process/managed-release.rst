@@ -100,10 +100,14 @@ the following projects are Release Integrated:
 
 * aaa
 * controller
+* ietf
 * infrautils
 * mdsal
 * netconf
 * odlparent
+* openflowplugin
+* transportpce
+* transportpce-models
 * yangtools
 
 Requirements for Managed Projects
