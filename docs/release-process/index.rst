@@ -27,6 +27,7 @@ Processes
 .. toctree::
    :maxdepth: 1
 
+   tip-and-tail
    project-release
    autorelease
    project-lifecycle
