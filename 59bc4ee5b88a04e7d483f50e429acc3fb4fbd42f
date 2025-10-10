@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5e0301fa_089dec9b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7446
+      },
+      "writtenOn": "2025-10-10T15:17:28Z",
+      "side": 1,
+      "message": "Thank you Robert for this very interesting documentation.\nI fully support this approach which should, indeed, simplify the current process for releasing a new OpenDaylight distribution, and probably help with bumps of MRI projects towards major releases of kernel projects. If I understand correctly, for this to work, kernel projects would have to remain fixed long enough to allow MRI projects to integrate them more easily. The case of TransportPCE is still particular because we have Netconf as upstream dependency. To integrate a given major release, we will have to be sure that the Netconf project also integrates it. It is a very active project, so this should not be a problem.",
+      "revId": "59bc4ee5b88a04e7d483f50e429acc3fb4fbd42f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    }
+  ]
+}
