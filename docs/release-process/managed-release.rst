@@ -98,13 +98,16 @@ must depend only on other projects that release independently. Therefore the
 Release Integrated Projects will form a tree starting from odlparent. Currently
 the following projects are Release Integrated:
 
-* aaa
-* controller
-* infrautils
-* mdsal
-* netconf
-* odlparent
-* yangtools
+* `aaa <https://github.com/opendaylight/aaa/>`__
+* `controller <https://github.com/opendaylight/controller/>`__
+* `infrautils <https://github.com/opendaylight/infrautils/>`__
+* `mdsal <https://github.com/opendaylight/mdsal/>`__
+* `netconf <https://github.com/opendaylight/netconf/>`__
+* `odlparent <https://github.com/opendaylight/odlparent/>`__
+* `openflowplugin <https://github.com/opendaylight/openflowplugin/>`__
+* `transportpce <https://github.com/opendaylight/transportpce/>`__
+* `transportpce-models <https://github.com/opendaylight/transportpce-models/>`__
+* `yangtools <https://github.com/opendaylight/yangtools/>`__
 
 Requirements for Managed Projects
 ---------------------------------
