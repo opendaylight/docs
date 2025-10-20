@@ -17,7 +17,7 @@ Logging in Java
 ~~~~~~~~~~~~~~~
 
 Java provides a diverse set of logging APIs and implementations.
-OpenDaylight has selected `SLF4J API <http://www.slf4j.org/apidocs/index.html>`__,
+OpenDaylight has selected `SLF4J API <https://www.slf4j.org/apidocs/index.html>`__,
 with the implementation being provided by the Karaf container.
 
 The primary reasons for this decision are:
@@ -199,7 +199,7 @@ While the former concern is addressed by Logger classes exposing methods such as
 ``LOG.isDebugEnabled()``, the second concern can only be alleviated by using
 explicit String literals when calling the Logger methods.
 The correct way to address both concerns is to use parameterized logging as
-described at http://www.slf4j.org/faq.html#logging_performance.
+described at https://www.slf4j.org/faq.html#logging_performance.
 The basic pattern to follow is this:
 
 .. code:: java
