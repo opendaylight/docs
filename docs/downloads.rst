@@ -25,18 +25,18 @@ Titanium-SR1
     * :doc:`Project Guides <odl-titanium:index>`
     * :doc:`Release Notes <odl-titanium:release-notes/index>`
 
-Scandium-SR2
+Scandium-SR3
 -------------
 
 :Announcement: `Scandium <https://www.opendaylight.org/current-release-scandium>`_
 
-:GA Release Date: March 25, 2025
+:GA Release Date: October 20, 2025
 
 :Downloads:
     * `OpenDaylight Scandium Tar
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.21.2/karaf-0.21.2.tar.gz>`_
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.21.3/karaf-0.21.3.tar.gz>`_
     * `OpenDaylight Scandium Zip
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.21.2/karaf-0.21.2.zip>`_
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.21.3/karaf-0.21.3.zip>`_
 
 :Documentation:
     * :doc:`Getting Started Guide <odl-scandium:getting-started-guide/index>`
