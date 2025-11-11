@@ -13,19 +13,24 @@ for providing YANG-defined interaction patterns:
 
 Behavior/Feature Changes
 ========================
-No behavior changes.
+The (2026.03) Vanadium MDSAL release brings improved ``DataObjectModification`` sealed hierarchy in
+`MDSAL-889 <https://lf-opendaylight.atlassian.net/browse/MDSAL-889>`__ and ``coerceStep`` method introduced in
+`MDSAL-892 <https://lf-opendaylight.atlassian.net/browse/MDSAL-892>`__.
+
+They together simplifies user experience when dealing with datastore changes enabling usage of Java enhanced ``switch``
+and getting rid of nullness warnings.
 
 New Features
 ============
-No new features.
+* Added DataObjectModification#coerceKeyStep in `MDSAL-892 <https://lf-opendaylight.atlassian.net/browse/MDSAL-892>`__
 
 Deprecated Features
 ===================
-No deprecated features.
+* Deprecated DataObjectModification#ModificationType in `MDSAL-889 <https://lf-opendaylight.atlassian.net/browse/MDSAL-889>`__
 
 Removed Features
 ===================
-No removed features.
+* Removed deprecated DataObjectModification methods in `MDSAL-889 <https://lf-opendaylight.atlassian.net/browse/MDSAL-889>`__
 
 Resolved Issues
 ===============
@@ -33,7 +38,7 @@ The following table lists the issues resolved in this release.
 
 .. jira_fixed_issues::
    :project: MDSAL
-   :versions: 14.0.9-14.0.13
+   :versions: 14.0.19-15.0.2
 
 Known Issues
 ============
@@ -41,20 +46,5 @@ The following table lists the known issues that exist in this release.
 
 .. jira_known_issues::
    :project: MDSAL
-   :versions: 14.0.9-14.0.13
+   :versions: 14.0.19-15.0.2
 
-Resolved Issues in SR1
-======================
-The following table lists the issues resolved in this release.
-
-.. jira_fixed_issues::
-   :project: MDSAL
-   :versions: 14.0.14-14.0.18
-
-Known Issues in SR1
-===================
-The following table lists the known issues that exist in this release.
-
-.. jira_known_issues::
-   :project: MDSAL
-   :versions: 14.0.14-14.0.18
