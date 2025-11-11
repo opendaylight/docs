@@ -1,10 +1,10 @@
 ==================================
-2025.03 Titanium Platform Upgrade
+2025.09 Vanadium Platform Upgrade
 ==================================
 
 This document describes the steps to help users upgrade from Scandium
-to Titanium platform. Refer to `Managed Snapshot Integrated (MSI)
-project <https://git.opendaylight.org/gerrit/q/topic:titanium-mri>`_
+to Vanadium platform. Refer to `Managed Snapshot Integrated (MSI)
+project <https://git.opendaylight.org/gerrit/q/topic:vanadium-mri>`_
 upgrade patches for more information and hints for solutions to common
 problems not explicitly listed here.
 
@@ -15,7 +15,7 @@ Preparation
 
 JDK 21 Version
 ^^^^^^^^^^^^^^
-2025.03 Titanium, requires Java 21, both during compile-time and run-time.
+2025.03 Vanadium, requires Java 21, both during compile-time and run-time.
 Make sure to install JDK 21 corresponding to at least ``openjdk-21.0.8``,
 and that the JAVA_HOME environment variable points to the JDK directory.
 
@@ -84,7 +84,7 @@ Install Dependent Projects
 Before performing platform upgrade, users must also install
 any dependent project. To locally install a dependent project,
 pull and install the respective
-`titanium-mri <https://git.opendaylight.org/gerrit/q/topic:titanium-mri>`_
+`vanadium-mri <https://git.opendaylight.org/gerrit/q/topic:vanadium-mri>`_
 changes for any dependent project.
 
 Perform the following steps to save time when locally installing
@@ -191,7 +191,48 @@ InstanceIdentifier conversion methods:
 
 MD-SAL Impacts
 --------------
-None.
+Since MDSAL version 15 ``DataObjectModification#ModificationType`` enumeration has been deprecated. The new MDSAL
+version introduces sealed class hierarchy of ``DataObjectModification`` to be used instead with the structure:
+
+* ``DataObjectWritten``
+* ``DataObjectModified``
+* ``DataObjectDeleted``
+
+The meaning of new classes is the same as former ``ModificationType`` enumeration.
+
+Its worth to note that ``DataObjectWritten`` and ``DataObjectModified`` have a superclass ``WithDataAfter`` which is
+just enough in most cases for both scenarios.
+
+For more details refer to `MDSAL-889 <https://lf-opendaylight.atlassian.net/browse/MDSAL-889>`__.
+
+The example of new approach follows:
+
+  .. code-block:: java
+
+    for (var mod : rootNode.getModifiedChildren(PrivateKey.class)) {
+        switch (mod) {
+            case WithDataAfter<PrivateKey> present  -> {
+                final var privateKey = present.dataAfter();
+                builder.privateKeys().put(privateKey.requireName(), privateKey);
+            }
+            case DataObjectDeleted<PrivateKey> deleted ->
+                builder.privateKeys().remove(mod.coerceKeyStep(PrivateKey.class).key().getName());
+        }
+    }
+
+The previous example also showcases the improvement made
+in `MDSAL-892 <https://lf-opendaylight.atlassian.net/browse/MDSAL-892>`__.
+The new ``DataObjectModification#coerceKeyStep`` allows users to just get the key for date modified or deleted.
+
+This improvement allows us to use instead of:
+
+  .. code-block:: java
+
+    // TODO node identifier example
+
+  .. code-block:: java
+
+    // TODO node identifier example
 
 Netconf Impacts
 ---------------

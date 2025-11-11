@@ -18,7 +18,7 @@ The (2026.03) Vanadium MDSAL release brings improved ``DataObjectModification`` 
 `MDSAL-892 <https://lf-opendaylight.atlassian.net/browse/MDSAL-892>`__.
 
 They together simplifies user experience when dealing with datastore changes enabling usage of Java enhanced ``switch``
-and getting rid of nullness warnings.
+and getting rid of nullness warnings for ``dataBefore()``/``dataAfter()`` methods.
 
 New Features
 ============
