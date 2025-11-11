@@ -13,19 +13,24 @@ for providing YANG-defined interaction patterns:
 
 Behavior/Feature Changes
 ========================
-No behavior changes.
+The (2025.09) Vanadium MDSAL release brings improved ``DataObjectModification`` sealed hierarchy in
+`MDSAL-889 <https://lf-opendaylight.atlassian.net/browse/MDSAL-889>`__ and ``coerceStep`` method introduced in
+`MDSAL-892 <https://lf-opendaylight.atlassian.net/browse/MDSAL-892>`__.
+
+They together simplifies user experience when dealing with datastore changes enabling usage of Java enhanced ``switch``
+and getting rid of nullness warnings for ``dataBefore()``/``dataAfter()`` methods.
 
 New Features
 ============
-No new features.
+* Added DataObjectModification#coerceKeyStep in `MDSAL-892 <https://lf-opendaylight.atlassian.net/browse/MDSAL-892>`__
 
 Deprecated Features
 ===================
-No deprecated features.
+* Deprecated DataObjectModification#ModificationType in `MDSAL-889 <https://lf-opendaylight.atlassian.net/browse/MDSAL-889>`__
 
 Removed Features
 ===================
-No removed features.
+* Removed deprecated DataObjectModification methods in `MDSAL-889 <https://lf-opendaylight.atlassian.net/browse/MDSAL-889>`__
 
 Resolved Issues
 ===============
