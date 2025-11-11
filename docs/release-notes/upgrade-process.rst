@@ -1,10 +1,10 @@
 ==================================
-2025.03 Titanium Platform Upgrade
+2025.09 Vanadium Platform Upgrade
 ==================================
 
 This document describes the steps to help users upgrade from Scandium
-to Titanium platform. Refer to `Managed Snapshot Integrated (MSI)
-project <https://git.opendaylight.org/gerrit/q/topic:titanium-mri>`_
+to Vanadium platform. Refer to `Managed Snapshot Integrated (MSI)
+project <https://git.opendaylight.org/gerrit/q/topic:vanadium-mri>`_
 upgrade patches for more information and hints for solutions to common
 problems not explicitly listed here.
 
@@ -15,7 +15,7 @@ Preparation
 
 JDK 21 Version
 ^^^^^^^^^^^^^^
-2025.03 Titanium, requires Java 21, both during compile-time and run-time.
+2025.03 Vanadium, requires Java 21, both during compile-time and run-time.
 Make sure to install JDK 21 corresponding to at least ``openjdk-21.0.8``,
 and that the JAVA_HOME environment variable points to the JDK directory.
 
@@ -32,9 +32,9 @@ versions (for example, `bump-odl-version <https://github.com/skitt/odl-tools/blo
 
  .. code-block:: shell
 
-  bump-odl-version odlparent 14.0.3 14.1.0
+  bump-odl-version odlparent 14.1.0 14.1.6
 
-2. Update the direct yangtools version references from 14.0.4 to 14.0.14,
+2. Update the direct yangtools version references from 14.0.14 to 14.0.20,
    There should not be any reference to **org.opendaylight.yangtools**,
    except for 14.0.14. This includes custom feature.xml templates
    (``src/main/feature/feature.xml``), the version range should
@@ -42,49 +42,49 @@ versions (for example, `bump-odl-version <https://github.com/skitt/odl-tools/blo
 
  .. code-block:: shell
 
-  bump-odl-version yangtools 14.0.4 14.0.14
+  bump-odl-version yangtools 14.0.14 14.0.20
 
-3. Update the MD-SAL version from 14.0.2 to 14.0.13. There should not be
-   any reference to **org.opendaylight.mdsal**, except for 14.0.13.
-
- .. code-block:: shell
-
-  bump-odl-version mdsal 14.0.2 14.0.13
-
-4. Update the Controller version from 10.0.2 to 11.0.0. There should not be
-   any reference to **org.opendaylight.controller**, except for 11.0.0.
+3. Update the MD-SAL version from 14.0.13 to 15.0.2. There should not be
+   any reference to **org.opendaylight.mdsal**, except for 15.0.2.
 
  .. code-block:: shell
 
-  bump-odl-version controller 10.0.2 11.0.0
+  bump-odl-version mdsal 14.0.13 15.0.2
 
-5. Update the InfraUtils version from 7.0.3 to 7.1.4. There should not be
-   any reference to **org.opendaylight.infrautils**, except for 7.1.4.
-
- .. code-block:: shell
-
-  bump-odl-version infrautils 7.0.3 7.1.4
-
-6. Update the AAA version from 0.20.1 to 0.21.0 There should not be
-   any reference to **org.opendaylight.aaa**, except for 0.21.0.
+4. Update the Controller version from 11.0.0 to 12.0.3. There should not be
+   any reference to **org.opendaylight.controller**, except for 12.0.3.
 
  .. code-block:: shell
 
-  bump-odl-version aaa 0.20.1 0.21.0
+  bump-odl-version controller 11.0.0 12.0.3
 
-7. Update the NETCONF version from 8.0.2 to 9.0.0 There should not be
-   any reference to **org.opendaylight.netconf**, except for 9.0.0.
+5. Update the InfraUtils version from 7.1.4 to 7.1.9. There should not be
+   any reference to **org.opendaylight.infrautils**, except for 7.1.9.
 
  .. code-block:: shell
 
-  bump-odl-version netconf 8.0.2 9.0.0
+  bump-odl-version infrautils 7.1.4 7.1.9
+
+6. Update the AAA version from 0.21.0 to 0.22.3. There should not be
+   any reference to **org.opendaylight.aaa**, except for 0.22.3.
+
+ .. code-block:: shell
+
+  bump-odl-version aaa 0.21.0 0.22.3
+
+7. Update the NETCONF version from 9.0.0 to 10.0.2. There should not be
+   any reference to **org.opendaylight.netconf**, except for 10.0.2.
+
+ .. code-block:: shell
+
+  bump-odl-version netconf 9.0.0 10.0.2
 
 Install Dependent Projects
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Before performing platform upgrade, users must also install
 any dependent project. To locally install a dependent project,
 pull and install the respective
-`titanium-mri <https://git.opendaylight.org/gerrit/q/topic:titanium-mri>`_
+`vanadium-mri <https://git.opendaylight.org/gerrit/q/topic:vanadium-mri>`_
 changes for any dependent project.
 
 Perform the following steps to save time when locally installing
@@ -107,7 +107,7 @@ Upgrade the ODL Parent
 ----------------------
 The following sub-section describes how to upgrade to
 the ODL Parent version 14. Refer to the `ODL Parent Release Notes
-<https://github.com/opendaylight/odlparent/blob/master/docs/NEWS.rst#version-1410>`_
+<https://github.com/opendaylight/odlparent/blob/master/docs/NEWS.rst#version-1416>`_
 for more information.
 
 Features
@@ -191,11 +191,72 @@ InstanceIdentifier conversion methods:
 
 MD-SAL Impacts
 --------------
-None.
+Since MDSAL version 15 ``DataObjectModification#ModificationType`` enumeration has been deprecated. The new MDSAL
+version introduces sealed class hierarchy of ``DataObjectModification`` to be used instead with the structure:
+
+* ``DataObjectWritten``
+* ``DataObjectModified``
+* ``DataObjectDeleted``
+
+The meaning of new classes is the same as former ``ModificationType`` enumeration.
+
+Its worth to note that ``DataObjectWritten`` and ``DataObjectModified`` have a superclass ``WithDataAfter`` which is
+just enough in most cases for both scenarios.
+
+For more details refer to `MDSAL-889 <https://lf-opendaylight.atlassian.net/browse/MDSAL-889>`__.
+
+The example of new approach follows:
+
+  .. code-block:: java
+
+    for (var mod : rootNode.getModifiedChildren(PrivateKey.class)) {
+        switch (mod) {
+            case WithDataAfter<PrivateKey> present  -> {
+                final var privateKey = present.dataAfter();
+                builder.privateKeys().put(privateKey.requireName(), privateKey);
+            }
+            case DataObjectDeleted<PrivateKey> deleted ->
+                builder.privateKeys().remove(mod.coerceKeyStep(PrivateKey.class).key().getName());
+        }
+    }
+
+The previous example also showcases the improvement made
+in `MDSAL-892 <https://lf-opendaylight.atlassian.net/browse/MDSAL-892>`__.
+The new ``DataObjectModification#coerceKeyStep`` allows users to just get the key for date modified or deleted.
+
+This improvement allows us to use instead of:
+
+  .. code-block:: java
+
+    for (var mod : rootNode.getModifiedChildren(PrivateKey.class)) {
+        switch (mod) {
+            case WithDataAfter<PrivateKey> present  -> {
+                final var privateKey = present.dataAfter();
+                builder.privateKeys().put(privateKey.requireName(), privateKey);
+            }
+            case DataObjectDeleted<PrivateKey> deleted ->
+                builder.privateKeys().remove(mod.dataBefore().requireName());
+        }
+    }
+
+  .. code-block:: java
+
+    for (var mod : rootNode.getModifiedChildren(PrivateKey.class)) {
+        switch (mod) {
+            case WithDataAfter<PrivateKey> present  -> {
+                final var privateKey = present.dataAfter();
+                builder.privateKeys().put(privateKey.requireName(), privateKey);
+            }
+            case DataObjectDeleted<PrivateKey> deleted ->
+                builder.privateKeys().remove(mod.coerceKeyStep(PrivateKey.class).key().getName());
+        }
+    }
 
 Netconf Impacts
 ---------------
-None.
+
+* Update you YANG models import if necessary, for example see:
+  `NETCONF-1502 <>https://lf-opendaylight.atlassian.net/browse/NETCONF-1502>`__.
 
 AAA Impacts
 -----------
