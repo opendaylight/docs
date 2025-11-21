@@ -57,6 +57,7 @@ Managed Projects
 
 Self-Managed Projects
 ~~~~~~~~~~~~~~~~~~~~~
+* :doc:`gNMI Documentation <gnmi:index>`
 
 
 .. Commenting the below out until we actually use it
