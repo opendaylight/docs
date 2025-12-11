@@ -19,6 +19,10 @@ def update_intersphinx_mapping():
         rd = csv.reader(fd, delimiter="\t", quotechar='"')
         for row in rd:
             if row:
+                # Validate row has at least 2 columns
+                if len(row) < 2:
+                    continue
+
                 project = row[0]
                 if project[0] == "#":
                     continue
