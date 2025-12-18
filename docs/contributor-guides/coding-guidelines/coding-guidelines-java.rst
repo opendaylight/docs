@@ -10,6 +10,7 @@ In General we follow the Google Java Code Style Guide with a few exceptions.
 See: https://google.github.io/styleguide/javaguide.html
 
 -  4 spaces indentation
+-  8-space indentation on next line for method parameters
 -  120 characters line length
 -  72 or 80 characters for Javadoc
 -  import ordering
@@ -20,6 +21,7 @@ See: https://google.github.io/styleguide/javaguide.html
    (https://checkstyle.sourceforge.io/checks/modifier/modifierorder.html)
 -  do not use underscores (_) in identifiers, as they trigger warnings with JDK8
 -  Uppercase " *static final Logger LOG = ...* " (See 5.2.4 examples)
+-  prefer immutability: mark method parameters and local variables as ``final`` where practical
 
 Checkstyle
 ==========
@@ -406,6 +408,9 @@ understand the code flow.
 Public methods are obviously entry-points,
 hence are mostly glanced over by users.
 
+For readability, keep each of the above field groups together and separate groups by exactly *one empty line*.
+Avoid interleaving unrelated fields across groups (e.g., mixing ``private final`` and ``private volatile`` fields).
+
 Overall this has worked really well so far because;
 
 -  the first group gives a 10000-foot overview of what is going on in the class,
@@ -749,3 +754,20 @@ It should however be avoided when many objects are created in the resulting
 lambda expressions, especially if DTOs end up being necessary to convey
 information from one lambda to the next where a single variable could do the
 trick in a more traditional form. (TODO: provide examples.)
+
+Pre-review guidance
+===================
+
+When submitting changes, ensure the related ODL JIRA has correct status and a clear description
+(scope, motivation, acceptance criteria). Keep commit messages consistent with:
+https://cbea.ms/git-commit/
+
+Before sending a patch for review, ensure:
+
+-  Unit Tests cover the behavior change (add/update tests where needed)
+-  Javadocs are updated when public APIs or behavior changes
+-  avoid adding new third-party dependencies unless there is strong justification and consensus
+-  keep dependencies and plugins alphabetically sorted in ``pom.xml``
+-  keep changes API-compatible: avoid partial changes which require follow-up patches to be correct
+-  eliminate deprecation warnings as much as possible; do not introduce new deprecations without a plan
+-  keep one logical change per patch; split unrelated fixes/refactors into separate changes
