@@ -43,6 +43,7 @@ Managed Projects
 * :doc:`BGPCEP Documentation <bgpcep:index>`
 * :doc:`Controller Documentation <controller:index>`
 * :doc:`DAEXIM Documentation <daexim:index>`
+* :doc:`IETF Documentation <ietf:index>`
 * :doc:`Infrautils Documentation <infrautils:index>`
 * :doc:`JSON RPC Documentation <jsonrpc:index>`
 * :doc:`LISP Flow Mapping Documentation <lispflowmapping:index>`
