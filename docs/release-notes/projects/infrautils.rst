@@ -32,7 +32,7 @@ The following table lists the issues resolved in this release.
 
 .. jira_fixed_issues::
    :project: INFRAUTILS
-   :versions: 7.1.1-7.1.4
+   :versions: 7.1.7-7.1.9
 
 Known Issues
 ============
@@ -40,20 +40,4 @@ The following table lists the known issues that exist in this release.
 
 .. jira_known_issues::
    :project: INFRAUTILS
-   :versions: 7.1.1-7.1.4
-
-Resolved Issues in SR1
-======================
-The following table lists the issues resolved in this release.
-
-.. jira_fixed_issues::
-   :project: INFRAUTILS
-   :versions: 7.1.5-7.1.7
-
-Known Issues in SR1
-===================
-The following table lists the known issues that exist in this release.
-
-.. jira_known_issues::
-   :project: INFRAUTILS
-   :versions: 7.1.5-7.1.7
+   :versions: 7.1.7-7.1.9
