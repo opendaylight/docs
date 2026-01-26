@@ -47,6 +47,7 @@ Managed Projects
 * :doc:`Infrautils Documentation <infrautils:index>`
 * :doc:`JSON RPC Documentation <jsonrpc:index>`
 * :doc:`LISP Flow Mapping Documentation <lispflowmapping:index>`
+* :doc:`L2Switch Documentation <l2switch:index>`
 * :doc:`MD-SAL Documentation <mdsal:index>`
 * :doc:`NetConf Documentation <netconf:index>`
 * :doc:`OpenFlowPlugin Documentation <openflowplugin:index>`
