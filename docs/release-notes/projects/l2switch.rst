@@ -24,14 +24,10 @@ Resolved Issues
 ===============
 The following table lists the issues resolved in this release.
 
-.. jira_fixed_issues::
-   :project: L2SWITCH
-   :versions: 3.0.0-3.0.0
+None.
 
 Known Issues
 ============
 The following table lists the known issues that exist in this release.
 
-.. jira_known_issues::
-   :project: L2SWITCH
-   :versions: 3.0.0-3.0.0
+None.
