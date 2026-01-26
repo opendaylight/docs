@@ -88,9 +88,8 @@ linkcheck_ignore = [
     # this url often has connectivity issues on the gate
     'https://wiki-archive.opendaylight.org/images/c/ca/Profile-Java-ODL.xml.zip',
     #Ignore announce page link till it is up
+    'https://www.opendaylight.org/current-release-vanadium',
     'https://www.opendaylight.org/current-release-titanium',
-    'https://www.opendaylight.org/current-release-scandium',
-    'https://www.opendaylight.org/current-release-calcium',
     # Ignore JIRA URLs that often timeout during linkcheck
     '^https://lf-opendaylight.atlassian.net/.*',
 ]
