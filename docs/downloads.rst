@@ -5,10 +5,28 @@ OpenDaylight Downloads
 Supported Releases
 ==================
 
-Titanium-SR1
+Vanadium-SR0
 ------------
 
 (Current Release)
+
+:Announcement: `Vanadium <https://www.opendaylight.org/current-release-vanadium>`_
+
+:GA Release Date: January 25, 2026
+
+:Downloads:
+    * `OpenDaylight Vanadium Tar
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.23.0/karaf-0.23.0.tar.gz>`_
+    * `OpenDaylight Vanadium Zip
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.23.0/karaf-0.23.0.zip>`_
+
+:Documentation:
+    * :doc:`Getting Started Guide <odl-vanadium:getting-started-guide/index>`
+    * :doc:`Project Guides <odl-vanadium:index>`
+    * :doc:`Release Notes <odl-vanadium:release-notes/index>`
+
+Titanium-SR1
+------------
 
 :Announcement: `Titanium <https://www.opendaylight.org/current-release-titanium>`_
 
@@ -24,24 +42,6 @@ Titanium-SR1
     * :doc:`Getting Started Guide <odl-titanium:getting-started-guide/index>`
     * :doc:`Project Guides <odl-titanium:index>`
     * :doc:`Release Notes <odl-titanium:release-notes/index>`
-
-Scandium-SR3
--------------
-
-:Announcement: `Scandium <https://www.opendaylight.org/current-release-scandium>`_
-
-:GA Release Date: October 20, 2025
-
-:Downloads:
-    * `OpenDaylight Scandium Tar
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.21.3/karaf-0.21.3.tar.gz>`_
-    * `OpenDaylight Scandium Zip
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.21.3/karaf-0.21.3.zip>`_
-
-:Documentation:
-    * :doc:`Getting Started Guide <odl-scandium:getting-started-guide/index>`
-    * :doc:`Project Guides <odl-scandium:index>`
-    * :doc:`Release Notes <odl-scandium:release-notes/index>`
 
 Docker images
 =============
