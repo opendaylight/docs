@@ -764,10 +764,10 @@ https://cbea.ms/git-commit/
 
 Before sending a patch for review, ensure:
 
--  Unit Tests cover the behavior change (add/update tests where needed)
--  Javadocs are updated when public APIs or behavior changes
+-  unit test coverage of the behavior change (add/update tests where needed)
+-  classes and methods Javadoc are updated when public APIs or behavior changes
 -  avoid adding new third-party dependencies unless there is strong justification and consensus
 -  keep dependencies and plugins alphabetically sorted in ``pom.xml``
 -  keep changes API-compatible: avoid partial changes which require follow-up patches to be correct
--  eliminate deprecation warnings as much as possible; do not introduce new deprecations without a plan
+-  eliminate deprecation warnings as much as possible; do not introduce any new deprecation without a plan
 -  keep one logical change per patch; split unrelated fixes/refactors into separate changes
