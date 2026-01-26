@@ -1,0 +1,333 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Considerations on Tests &#8212; OpenDaylight Documentation Chromium documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-sphinx.css?v=0bf093e7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.2/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/ribbon.css?v=cb953b18" />
+    <link rel="stylesheet" href="../../_static/css/warning-header.css" type="text/css" />
+    <script src="../../_static/documentation_options.js?v=7b4a4459"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://cdn.datatables.net/1.11.2/js/jquery.dataTables.min.js"></script>
+    <script class="init" type="text/javascript">$(document).ready( function () { $('table.datatable').DataTable(); } );</script>
+    <link rel="icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Component Tests (with Guice)" href="component.html" />
+    <link rel="prev" title="Build Time Testing with JUnit" href="junit.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+  <div class="ribbon">
+    <a href="https://jira.opendaylight.org/secure/CreateIssueDetails!init.jspa
+?pid=10121
+&issuetype=10104
+&components=10228
+&priority=2
+&description=version:+Chromium%0Apage:+developer-guides/tests/considerations%0A%0A" target="_blank">
+      Report Issue
+    </a>
+  </div>
+  
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+  <!-- Outdated version warning banner -->
+  
+    <style>
+      body {
+        padding-top: 60px;
+     }
+    </style>
+  
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+          OpenDaylight Documentation</a>
+        <span class="navbar-text navbar-version pull-left"><b>Chromium</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../downloads.html">OpenDaylight Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release-notes/index.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started-guide/index.html">Getting Started Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Developer Guides</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../documentation.html">Documentation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release-process/index.html">OpenDaylight Release Process Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../javadoc.html">Java API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/index.html">OpenDaylight User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Developer Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributor-guides/index.html">Contributor Guides</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Considerations on Tests</a><ul>
+<li><a class="reference internal" href="#powermock">PowerMock</a></li>
+<li><a class="reference internal" href="#databroker">DataBroker</a></li>
+<li><a class="reference internal" href="#mockito">Mockito</a></li>
+<li><a class="reference internal" href="#use-normal-java-with-a-hint-of-mockito">Use “normal” Java, with a hint of Mockito</a></li>
+<li><a class="reference internal" href="#test-implementations-of-commonly-used-services">Test Implementations of commonly used services</a></li>
+<li><a class="reference internal" href="#asserting-object-structures">Asserting Object structures</a></li>
+<li><a class="reference internal" href="#component-tests">Component Tests</a></li>
+<li><a class="reference internal" href="#integration-tests">Integration Tests</a></li>
+<li><a class="reference internal" href="#recommended-reading">Recommended Reading</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Considerations on Tests</a><ul>
+<li><a class="reference internal" href="#powermock">PowerMock</a></li>
+<li><a class="reference internal" href="#databroker">DataBroker</a></li>
+<li><a class="reference internal" href="#mockito">Mockito</a></li>
+<li><a class="reference internal" href="#use-normal-java-with-a-hint-of-mockito">Use “normal” Java, with a hint of Mockito</a></li>
+<li><a class="reference internal" href="#test-implementations-of-commonly-used-services">Test Implementations of commonly used services</a></li>
+<li><a class="reference internal" href="#asserting-object-structures">Asserting Object structures</a></li>
+<li><a class="reference internal" href="#component-tests">Component Tests</a></li>
+<li><a class="reference internal" href="#integration-tests">Integration Tests</a></li>
+<li><a class="reference internal" href="#recommended-reading">Recommended Reading</a></li>
+</ul>
+</li>
+</ul>
+<center>
+<div class="btn-group" role="group" aria-label="...">
+    
+    <a class="btn btn-default" href="junit.html">Prev Page</a>
+    
+
+    
+    <a class="btn btn-default" href="component.html">Next Page</a>
+    
+</div>
+</center>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <section id="considerations-on-tests">
+<h1>Considerations on Tests<a class="headerlink" href="#considerations-on-tests" title="Link to this heading">¶</a></h1>
+<p><em>Note: This document is a work in progress.</em></p>
+<section id="powermock">
+<h2>PowerMock<a class="headerlink" href="#powermock" title="Link to this heading">¶</a></h2>
+<p>Avoid using PowerMock, if you can at all. It is black magic with special
+class loaders to mock static and what not really is a band aid for
+existing legacy code impossible to test. Consider refactoring the respective
+OpenDaylight code to be tested first, if you can.</p>
+<p>Also think twice if you’re using PowerMock on existing utility classes -
+you may be testing at the wrong level. For example, many projects have
+utilities that deals with the DataBroker (that’s wrong, common shared
+utilities should be used). Many of these utility classes have static
+methods (that’s wrong, they should get a DataBroker passed to their
+constructor, see
+<code class="docutils literal notranslate"><span class="pre">org.opendaylight.genius.datastoreutils.SingleTransactionDataBroker</span></code>,
+imagine there is no static there, that’s again just for legacy). When
+writing a test, you could be tempted to use PowerMock on such static
+utility methods. That’s wrong though - you should just let the code
+under test use such utilities - and use a test implementation of the
+DataBroker.</p>
+</section>
+<section id="databroker">
+<h2>DataBroker<a class="headerlink" href="#databroker" title="Link to this heading">¶</a></h2>
+<p>Typically you probably should not be mocking the DataBroker (using
+whatever framework), because there is a reasonably light weight test
+implementation of the entire persistence subsystem that is well suited
+for use in tests. You can easily use it by having your *Test class
+extends
+<code class="docutils literal notranslate"><span class="pre">org.opendaylight.controller.md.sal.binding.test.ConstantSchemaAbstractDataBrokerTest</span></code>
+and calling <code class="docutils literal notranslate"><span class="pre">getDataBroker()</span></code>, or just using the
+<code class="docutils literal notranslate"><span class="pre">org.opendaylight.controller.md.sal.binding.test.DataBrokerTestModule</span></code>
+static <code class="docutils literal notranslate"><span class="pre">dataBroker()</span></code> method.</p>
+<p>NB that if you use the above, then (obviously) it makes no sense
+(anymore) to use <code class="docutils literal notranslate"><span class="pre">&#64;RunWith(MockitoJUnitRunner.class)</span></code> and <code class="docutils literal notranslate"><span class="pre">&#64;Mock</span> <span class="pre">DataBroker</span></code>
+and the transactions.</p>
+</section>
+<section id="mockito">
+<h2>Mockito<a class="headerlink" href="#mockito" title="Link to this heading">¶</a></h2>
+<p>Using Mockito can be fine - but keep an eye on how lines in your test
+are pure “Mockito infrastructure” related VS how many are “actually
+really test code”. Do not “over-mock”; for example, there is absolutely
+no point in mocking implementations of the interfaces YANG code
+generations used e.g. for RPC input &amp; output objects - just use the
+*Builder, like “real” code would. Also of course you would never Mock
+something like e.g. a Future or an Optional (seen in existing ODL
+code!).</p>
+</section>
+<section id="use-normal-java-with-a-hint-of-mockito">
+<h2>Use “normal” Java, with a hint of Mockito<a class="headerlink" href="#use-normal-java-with-a-hint-of-mockito" title="Link to this heading">¶</a></h2>
+<p>Be careful not to overstretch usage of Mockito and write complicated to
+read many lines of Mockito to set up a series of Mock objects if you
+could achieve the same relatively simply using standard Java, perhaps
+using a simple anonymous inner class. For example, the following is
+perfectly fine to do something like this in a test, and probably more
+readable to most people looking at your test than the equivalent in
+Mockito:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">YourRpcService</span><span class="w"> </span><span class="n">testYourRpcService</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">YourRpcService</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"> </span><span class="n">Future</span><span class="o">&lt;</span><span class="n">RpcResult</span><span class="o">&lt;</span><span class="n">Output</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="nf">someOperation</span><span class="p">(</span><span class="n">Input</span><span class="w"> </span><span class="n">input</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="n">input</span><span class="w"> </span><span class="n">some</span><span class="w"> </span><span class="n">condition</span><span class="w"> </span><span class="p">...)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">Futures</span><span class="p">.</span><span class="na">immediateFailedFuture</span><span class="p">(</span><span class="n">RpcResultBuilder</span><span class="p">.</span><span class="na">failed</span><span class="p">());</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>If <code class="docutils literal notranslate"><span class="pre">YourRpcService</span></code> has other methods than just <code class="docutils literal notranslate"><span class="pre">someOperation()</span></code>, you can
+use a variant of “partial mocking”:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import static</span><span class="w"> </span><span class="nn">org.opendaylight.yangtools.testutils.mockito.MoreAnswers.realOrException</span><span class="p">;</span>
+
+<span class="n">YourRpcService</span><span class="w"> </span><span class="n">testYourRpcService</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Mockito</span><span class="p">.</span><span class="na">mock</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">YourRpcService</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"> </span><span class="n">Future</span><span class="o">&lt;</span><span class="n">RpcResult</span><span class="o">&lt;</span><span class="n">Output</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="nf">someOperation</span><span class="p">(</span><span class="n">Input</span><span class="w"> </span><span class="n">input</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="n">input</span><span class="w"> </span><span class="n">some</span><span class="w"> </span><span class="n">condition</span><span class="w"> </span><span class="p">...)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">Futures</span><span class="p">.</span><span class="na">immediateFailedFuture</span><span class="p">(</span><span class="n">RpcResultBuilder</span><span class="p">.</span><span class="na">failed</span><span class="p">());</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="n">realOrException</span><span class="p">());</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="test-implementations-of-commonly-used-services">
+<h2>Test Implementations of commonly used services<a class="headerlink" href="#test-implementations-of-commonly-used-services" title="Link to this heading">¶</a></h2>
+<p>If several tests, or even other modules, are likely to use a stubbed
+service, then (only) it is worth to write something reusable like this:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">abstract</span><span class="w"> </span><span class="n">TestYourRpcService</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">YourRpcService</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">YourRpcService</span><span class="w"> </span><span class="nf">newInstance</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Mockito</span><span class="p">.</span><span class="na">mock</span><span class="p">(</span><span class="n">TestYourRpcService</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="n">realOrException</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"> </span><span class="n">Future</span><span class="o">&lt;</span><span class="n">RpcResult</span><span class="o">&lt;</span><span class="n">Output</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="nf">someOperation</span><span class="p">(</span><span class="n">Input</span><span class="w"> </span><span class="n">input</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="p">...</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="asserting-object-structures">
+<h2>Asserting Object structures<a class="headerlink" href="#asserting-object-structures" title="Link to this heading">¶</a></h2>
+<p>To assert the expected state of a tree of objects, typically but not
+necessarily data objects in Java objects generated by YANG binding, a
+number of projects use the <a class="reference external" href="https://github.com/vorburger/xtendbeans">vorburger/xtendbeans
+library</a>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">org.opendaylight.mdsal.binding.testutils.AssertDataObjects</span></code> provides
+tight integration of this into OpenDaylight, including the
+<code class="docutils literal notranslate"><span class="pre">org.opendaylight.mdsal.binding.testutils.XtendBuilderExtensions</span></code>, which
+makes for a very readable syntax.</p>
+</section>
+<section id="component-tests">
+<h2>Component Tests<a class="headerlink" href="#component-tests" title="Link to this heading">¶</a></h2>
+<p>It’s not that hard to write Component Tests which test the interaction
+of a number of interrelated services, without going to a full blown and
+much “heavier” Karaf OSGi integration test just yet; see <a class="reference internal" href="component.html#component"><span class="std std-ref">Component Tests (with Guice)</span></a>.</p>
+</section>
+<section id="integration-tests">
+<h2>Integration Tests<a class="headerlink" href="#integration-tests" title="Link to this heading">¶</a></h2>
+<p>Use <a class="reference external" href="https://wiki-archive.opendaylight.org/view/CrossProject:HouseKeeping_Best_Practices_Group:Integration_Test">Integration Tests (IT) to get a full Karaf OSGi runtime
+environment</a>.
+<em>TODO Simplify that…</em></p>
+</section>
+<section id="recommended-reading">
+<h2>Recommended Reading<a class="headerlink" href="#recommended-reading" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://googletesting.blogspot.ch/2013/07/testing-on-toilet-know-your-test-doubles.html">https://googletesting.blogspot.ch/2013/07/testing-on-toilet-know-your-test-doubles.html</a></p></li>
+<li><p><a class="reference external" href="https://martinfowler.com/articles/mocksArentStubs.html">https://martinfowler.com/articles/mocksArentStubs.html</a></p></li>
+</ul>
+</section>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/developer-guides/tests/considerations.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2016-2026, OpenDaylight Project.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 8.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

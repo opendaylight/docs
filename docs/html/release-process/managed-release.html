@@ -1,0 +1,961 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Managed Release &#8212; OpenDaylight Documentation Chromium documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css?v=0bf093e7" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.2/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/ribbon.css?v=cb953b18" />
+    <link rel="stylesheet" href="../_static/css/warning-header.css" type="text/css" />
+    <script src="../_static/documentation_options.js?v=7b4a4459"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://cdn.datatables.net/1.11.2/js/jquery.dataTables.min.js"></script>
+    <script class="init" type="text/javascript">$(document).ready( function () { $('table.datatable').DataTable(); } );</script>
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Release Schedule" href="release-schedule.html" />
+    <link rel="prev" title="OpenDaylight Release Process Guide" href="index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+  <div class="ribbon">
+    <a href="https://jira.opendaylight.org/secure/CreateIssueDetails!init.jspa
+?pid=10121
+&issuetype=10104
+&components=10228
+&priority=2
+&description=version:+Chromium%0Apage:+release-process/managed-release%0A%0A" target="_blank">
+      Report Issue
+    </a>
+  </div>
+  
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+  <!-- Outdated version warning banner -->
+  
+    <style>
+      body {
+        padding-top: 60px;
+     }
+    </style>
+  
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          OpenDaylight Documentation</a>
+        <span class="navbar-text navbar-version pull-left"><b>Chromium</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../downloads.html">OpenDaylight Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes/index.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started-guide/index.html">Getting Started Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-guides/index.html">Developer Guides</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../documentation.html">Documentation Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">OpenDaylight Release Process Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../javadoc.html">Java API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/index.html">OpenDaylight User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-guides/index.html">Developer Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributor-guides/index.html">Contributor Guides</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Managed Release</a><ul>
+<li><a class="reference internal" href="#managed-release-summary">Managed Release Summary</a></li>
+<li><a class="reference internal" href="#managed-release-goals">Managed Release Goals</a><ul>
+<li><a class="reference internal" href="#reduce-overhead-on-release-team">Reduce Overhead on Release Team</a></li>
+<li><a class="reference internal" href="#reduce-overhead-on-projects">Reduce Overhead on Projects</a></li>
+<li><a class="reference internal" href="#enable-timely-releases">Enable Timely Releases</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#managed-projects">Managed Projects</a></li>
+<li><a class="reference internal" href="#managed-projects-summary">Managed Projects Summary</a><ul>
+<li><a class="reference internal" href="#managed-projects-for-dependency-reasons">Managed Projects for Dependency Reasons</a></li>
+<li><a class="reference internal" href="#managed-release-integrated-projects">Managed Release Integrated Projects</a></li>
+<li><a class="reference internal" href="#requirements-for-managed-projects">Requirements for Managed Projects</a><ul>
+<li><a class="reference internal" href="#healthy-community">Healthy Community</a><ul>
+<li><a class="reference internal" href="#responsiveness">Responsiveness</a></li>
+<li><a class="reference internal" href="#active-committers">Active Committers</a></li>
+<li><a class="reference internal" href="#tsc-attendance">TSC Attendance</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#checkpoints-submitted-on-time">Checkpoints Submitted On-Time</a></li>
+<li><a class="reference internal" href="#jobs-required-for-managed-projects-running">Jobs Required for Managed Projects Running</a></li>
+<li><a class="reference internal" href="#depend-only-on-managed-projects">Depend only on Managed Projects</a></li>
+<li><a class="reference internal" href="#documentation">Documentation</a></li>
+<li><a class="reference internal" href="#clm">CLM</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#managed-release-process">Managed Release Process</a><ul>
+<li><a class="reference internal" href="#managed-release-checkpoints">Managed Release Checkpoints</a><ul>
+<li><a class="reference internal" href="#initial-checkpoint">Initial Checkpoint</a></li>
+<li><a class="reference internal" href="#midway-checkpoint">Midway Checkpoint</a></li>
+<li><a class="reference internal" href="#final-checkpoint">Final Checkpoint</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#service-release-code-freeze">Service Release Code Freeze</a></li>
+<li><a class="reference internal" href="#managed-release-integrated-release-process">Managed Release Integrated Release Process</a><ul>
+<li><a class="reference internal" href="#managed-release-integrated-checkpoints">Managed Release Integrated Checkpoints</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#moving-a-project-from-self-managed-to-managed">Moving a Project from Self-Managed to Managed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#self-managed-projects">Self-Managed Projects</a><ul>
+<li><a class="reference internal" href="#requirements-for-sm-projects-participating-in-the-release-distribution">Requirements for SM projects participating in the release distribution</a><ul>
+<li><a class="reference internal" href="#use-of-snapshot-versions">Use of SNAPSHOT versions</a></li>
+<li><a class="reference internal" href="#add-to-common-distribution">Add to Common Distribution</a></li>
+<li><a class="reference internal" href="#cut-stable-branch">Cut Stable Branch</a></li>
+<li><a class="reference internal" href="#release-the-project-artifacts">Release the project artifacts</a></li>
+<li><a class="reference internal" href="#checkpoints">Checkpoints</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#moving-a-project-from-managed-to-self-managed">Moving a Project from Managed to Self-Managed</a></li>
+<li><a class="reference internal" href="#installing-features-from-self-managed-projects">Installing Features from Self-Managed Projects</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#grievances">Grievances</a><ul>
+<li><a class="reference internal" href="#process-for-reporting-unresponsive-projects">Process for Reporting Unresponsive Projects</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#vocabulary-reference">Vocabulary Reference</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Managed Release</a><ul>
+<li><a class="reference internal" href="#managed-release-summary">Managed Release Summary</a></li>
+<li><a class="reference internal" href="#managed-release-goals">Managed Release Goals</a><ul>
+<li><a class="reference internal" href="#reduce-overhead-on-release-team">Reduce Overhead on Release Team</a></li>
+<li><a class="reference internal" href="#reduce-overhead-on-projects">Reduce Overhead on Projects</a></li>
+<li><a class="reference internal" href="#enable-timely-releases">Enable Timely Releases</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#managed-projects">Managed Projects</a></li>
+<li><a class="reference internal" href="#managed-projects-summary">Managed Projects Summary</a><ul>
+<li><a class="reference internal" href="#managed-projects-for-dependency-reasons">Managed Projects for Dependency Reasons</a></li>
+<li><a class="reference internal" href="#managed-release-integrated-projects">Managed Release Integrated Projects</a></li>
+<li><a class="reference internal" href="#requirements-for-managed-projects">Requirements for Managed Projects</a><ul>
+<li><a class="reference internal" href="#healthy-community">Healthy Community</a><ul>
+<li><a class="reference internal" href="#responsiveness">Responsiveness</a></li>
+<li><a class="reference internal" href="#active-committers">Active Committers</a></li>
+<li><a class="reference internal" href="#tsc-attendance">TSC Attendance</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#checkpoints-submitted-on-time">Checkpoints Submitted On-Time</a></li>
+<li><a class="reference internal" href="#jobs-required-for-managed-projects-running">Jobs Required for Managed Projects Running</a></li>
+<li><a class="reference internal" href="#depend-only-on-managed-projects">Depend only on Managed Projects</a></li>
+<li><a class="reference internal" href="#documentation">Documentation</a></li>
+<li><a class="reference internal" href="#clm">CLM</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#managed-release-process">Managed Release Process</a><ul>
+<li><a class="reference internal" href="#managed-release-checkpoints">Managed Release Checkpoints</a><ul>
+<li><a class="reference internal" href="#initial-checkpoint">Initial Checkpoint</a></li>
+<li><a class="reference internal" href="#midway-checkpoint">Midway Checkpoint</a></li>
+<li><a class="reference internal" href="#final-checkpoint">Final Checkpoint</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#service-release-code-freeze">Service Release Code Freeze</a></li>
+<li><a class="reference internal" href="#managed-release-integrated-release-process">Managed Release Integrated Release Process</a><ul>
+<li><a class="reference internal" href="#managed-release-integrated-checkpoints">Managed Release Integrated Checkpoints</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#moving-a-project-from-self-managed-to-managed">Moving a Project from Self-Managed to Managed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#self-managed-projects">Self-Managed Projects</a><ul>
+<li><a class="reference internal" href="#requirements-for-sm-projects-participating-in-the-release-distribution">Requirements for SM projects participating in the release distribution</a><ul>
+<li><a class="reference internal" href="#use-of-snapshot-versions">Use of SNAPSHOT versions</a></li>
+<li><a class="reference internal" href="#add-to-common-distribution">Add to Common Distribution</a></li>
+<li><a class="reference internal" href="#cut-stable-branch">Cut Stable Branch</a></li>
+<li><a class="reference internal" href="#release-the-project-artifacts">Release the project artifacts</a></li>
+<li><a class="reference internal" href="#checkpoints">Checkpoints</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#moving-a-project-from-managed-to-self-managed">Moving a Project from Managed to Self-Managed</a></li>
+<li><a class="reference internal" href="#installing-features-from-self-managed-projects">Installing Features from Self-Managed Projects</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#grievances">Grievances</a><ul>
+<li><a class="reference internal" href="#process-for-reporting-unresponsive-projects">Process for Reporting Unresponsive Projects</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#vocabulary-reference">Vocabulary Reference</a></li>
+</ul>
+</li>
+</ul>
+<center>
+<div class="btn-group" role="group" aria-label="...">
+    
+    <a class="btn btn-default" href="index.html">Prev Page</a>
+    
+
+    
+    <a class="btn btn-default" href="release-schedule.html">Next Page</a>
+    
+</div>
+</center>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <section id="managed-release">
+<span id="id1"></span><h1>Managed Release<a class="headerlink" href="#managed-release" title="Link to this heading">¶</a></h1>
+<section id="managed-release-summary">
+<h2>Managed Release Summary<a class="headerlink" href="#managed-release-summary" title="Link to this heading">¶</a></h2>
+<p>The Managed Release Process will facilitate timely, stable OpenDaylight
+releases by allowing the release team to focus on closely managing a small set
+of core OpenDaylight projects while not imposing undue requirements on projects
+that prefer more autonomy.</p>
+</section>
+<section id="managed-release-goals">
+<h2>Managed Release Goals<a class="headerlink" href="#managed-release-goals" title="Link to this heading">¶</a></h2>
+<section id="reduce-overhead-on-release-team">
+<h3>Reduce Overhead on Release Team<a class="headerlink" href="#reduce-overhead-on-release-team" title="Link to this heading">¶</a></h3>
+<p>The Managed Release Model will allow the release team to focus their efforts
+on a smaller set of more stable, more responsive projects.</p>
+</section>
+<section id="reduce-overhead-on-projects">
+<h3>Reduce Overhead on Projects<a class="headerlink" href="#reduce-overhead-on-projects" title="Link to this heading">¶</a></h3>
+<p>The Managed Release Model will reduce the overhead both on projects taking
+part in the Managed Release and Self-Managed Projects.</p>
+<p>Managed Projects will have fewer, smaller checkpoints consisting of only
+information that is maximally helpful for driving the release process. Much of
+the information collected at checkpoints will be automatically scraped,
+requiring minimal to no effort from projects. Additionally, Managed Release
+projects should have a more stable development environment, as the projects
+that can break the jobs they depend on will be a smaller set, more stable and
+more responsive.</p>
+<p>Projects that are Self-Managed will have less overhead and reporting. They will
+be free to develop in their own way, providing their artifacts to include in
+the final release or choosing to release on their own schedule. They will not
+be required to submit any checkpoints and will not be expected to work closely
+with the rest of the OpenDaylight community to resolve breakages.</p>
+</section>
+<section id="enable-timely-releases">
+<h3>Enable Timely Releases<a class="headerlink" href="#enable-timely-releases" title="Link to this heading">¶</a></h3>
+<p>The Managed Release Process will reduce the set of projects that must
+simultaneously become stable at release time. The release and test teams will
+be able to focus on orchestrating a quality release for a smaller set of more
+stable, more responsive projects. The release team will also have greater
+latitude to step in and help projects that are required for dependency reasons
+but may not have a large set of active contributors.</p>
+</section>
+</section>
+<section id="managed-projects">
+<span id="id2"></span><h2>Managed Projects<a class="headerlink" href="#managed-projects" title="Link to this heading">¶</a></h2>
+</section>
+<section id="managed-projects-summary">
+<h2>Managed Projects Summary<a class="headerlink" href="#managed-projects-summary" title="Link to this heading">¶</a></h2>
+<p>Managed Projects are either required by most applications for dependency
+reasons or are mature, stable, responsive projects that are consistently able
+to take part in releases without jeopardizing them. Managed Projects will
+receive additional support from the test and release teams to further their
+stability and make sure OpenDaylight releases go out on-time. To enable this
+extra support, Managed Projects will be given less autonomy than OpenDaylight
+projects have historically been granted.</p>
+<section id="managed-projects-for-dependency-reasons">
+<h3>Managed Projects for Dependency Reasons<a class="headerlink" href="#managed-projects-for-dependency-reasons" title="Link to this heading">¶</a></h3>
+<p>Some projects are required by almost all other OpenDaylight projects. These
+projects must be in the Managed Release for it to support almost every
+OpenDaylight use case. Such projects will not have a choice about being in the
+Managed Release, the TSC will decide they are critical to the OpenDaylight
+platform and include them. They may not always meet the requirements that
+would normally be imposed on projects that wish to join the Managed Release.
+Since they cannot be kicked out of the release, the TSC, test and release teams
+will do their best to help them meet the Managed Release Requirements. This
+may involve giving Linux Foundation staff temporary committer rights to merge
+patches on behalf of unresponsive projects, or appointing committers if
+projects continue to remain unresponsive. The TSC will strive to work with
+projects and member companies to proactively keep projects healthy and find
+active contributors who can become committers in the normal way without the
+need to appoint them in times of crisis.</p>
+</section>
+<section id="managed-release-integrated-projects">
+<h3>Managed Release Integrated Projects<a class="headerlink" href="#managed-release-integrated-projects" title="Link to this heading">¶</a></h3>
+<p>Some Managed Projects may decide to release on their own, not as a part of the
+Simultaneous Release with Snapshot Integrated Projects. Such Release Integrated
+projects will still be subject to Managed Release Requirements, but will need
+to follow a different release process.</p>
+<p>For implementation reasons, the projects that are able to release independently
+must depend only on other projects that release independently. Therefore the
+Release Integrated Projects will form a tree starting from odlparent. Currently
+the following projects are Release Integrated:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/opendaylight/aaa/">aaa</a></p></li>
+<li><p><a class="reference external" href="https://github.com/opendaylight/controller/">controller</a></p></li>
+<li><p><a class="reference external" href="https://github.com/opendaylight/ietf/">ietf</a></p></li>
+<li><p><a class="reference external" href="https://github.com/opendaylight/infrautils/">infrautils</a></p></li>
+<li><p><a class="reference external" href="https://github.com/opendaylight/mdsal/">mdsal</a></p></li>
+<li><p><a class="reference external" href="https://github.com/opendaylight/netconf/">netconf</a></p></li>
+<li><p><a class="reference external" href="https://github.com/opendaylight/odlparent/">odlparent</a></p></li>
+<li><p><a class="reference external" href="https://github.com/opendaylight/openflowplugin/">openflowplugin</a></p></li>
+<li><p><a class="reference external" href="https://github.com/opendaylight/transportpce/">transportpce</a></p></li>
+<li><p><a class="reference external" href="https://github.com/opendaylight/transportpce-models/">transportpce-models</a></p></li>
+<li><p><a class="reference external" href="https://github.com/opendaylight/yangtools/">yangtools</a></p></li>
+</ul>
+</section>
+<section id="requirements-for-managed-projects">
+<h3>Requirements for Managed Projects<a class="headerlink" href="#requirements-for-managed-projects" title="Link to this heading">¶</a></h3>
+<section id="healthy-community">
+<h4>Healthy Community<a class="headerlink" href="#healthy-community" title="Link to this heading">¶</a></h4>
+<p>Managed Projects should strive to have a healthy community.</p>
+<section id="responsiveness">
+<h5>Responsiveness<a class="headerlink" href="#responsiveness" title="Link to this heading">¶</a></h5>
+<p>Managed Projects should be responsive over email, IRC, Gerrit, Jira and in
+regular meetings.</p>
+<p>All committers should be subscribed to their project’s mailing list and the
+release mailing list.</p>
+<p>For the following particularly time-sensitive events, an appropriate response
+is expected within two business days.</p>
+<ul class="simple">
+<li><p>RC or SR candidate feedback.</p></li>
+<li><p>Major disruptions to other projects where a Jira weather item was not present
+and the pending breakage was not reported to the release mailing list.</p></li>
+</ul>
+<p>If anyone feels that a Managed Project is not responsive, a grievance process
+is in place to clearly handle the situation and keep a record for future
+consideration by the TSC.</p>
+</section>
+<section id="active-committers">
+<h5>Active Committers<a class="headerlink" href="#active-committers" title="Link to this heading">¶</a></h5>
+<p>Managed Projects should have sufficient active committers to review
+contributions in a timely manner, support potential contributors, keep CSIT
+healthy and generally effectively drive the project.</p>
+<p>If a project that the TSC deems is critical to the Managed Release is shown to
+not have sufficient active committers the TSC may step in and appoint
+additional committers. Projects that can be dropped from the Managed Release
+will be dropped instead of having additional committers appointed.</p>
+<p>Managed Projects should regularly prune their committer list to remove
+inactive committers, following the <a class="reference external" href="https://wiki-archive.opendaylight.org/view/TSC:Procedures_and_Processes#Committer_Removal_Process">Committer Removal Process</a>.</p>
+</section>
+<section id="tsc-attendance">
+<h5>TSC Attendance<a class="headerlink" href="#tsc-attendance" title="Link to this heading">¶</a></h5>
+<p>Managed Projects are required to send a representative to attend TSC meetings.</p>
+<p>To facilitate quickly acting on problems identified during TSC meetings,
+representatives must be a committer to the project they are representing. A
+single person can represent any number of projects.</p>
+<p>Representatives will make the following entry into the meeting minutes to
+record their presence:</p>
+<p>#project &lt;project ID&gt;</p>
+<p>TSC minutes will be scraped per-release to gather attendance statistics. If a
+project does not provide a representative for at least half of TSC meetings a
+grievance will be filed for future consideration.</p>
+</section>
+</section>
+<section id="checkpoints-submitted-on-time">
+<h4>Checkpoints Submitted On-Time<a class="headerlink" href="#checkpoints-submitted-on-time" title="Link to this heading">¶</a></h4>
+<p>Managed Projects must submit information required for checkpoints on-time.
+Submissions must be correct and adequate, as judged by the release team and
+the TSC. Inadequate or missing submissions will result in a grievance.</p>
+</section>
+<section id="jobs-required-for-managed-projects-running">
+<h4>Jobs Required for Managed Projects Running<a class="headerlink" href="#jobs-required-for-managed-projects-running" title="Link to this heading">¶</a></h4>
+<p>Managed Projects are required to have the following jobs running and healthy.</p>
+<ul class="simple">
+<li><p>Distribution check job (voting)</p></li>
+<li><p>Validate autorelease job (voting)</p></li>
+<li><p>Merge job (non-voting)</p></li>
+<li><p>Sonar job (non-voting)</p></li>
+<li><p>CLM job (non-voting)</p></li>
+</ul>
+</section>
+<section id="depend-only-on-managed-projects">
+<h4>Depend only on Managed Projects<a class="headerlink" href="#depend-only-on-managed-projects" title="Link to this heading">¶</a></h4>
+<p>Managed Projects should only depend on other Managed Projects.</p>
+<p>If a project wants to be Managed but depends on Self-Managed Projects, they
+should work with their dependencies to become Managed at the same time or
+drop any Self-Managed dependencies.</p>
+</section>
+<section id="documentation">
+<h4>Documentation<a class="headerlink" href="#documentation" title="Link to this heading">¶</a></h4>
+<p>Managed Projects are required to produce a user guide, developer guide and
+release notes for each release.</p>
+</section>
+<section id="clm">
+<h4>CLM<a class="headerlink" href="#clm" title="Link to this heading">¶</a></h4>
+<p>Managed Projects are required to handle CLM (Component Life-cycle Management)
+violations in a timely manner.</p>
+</section>
+</section>
+<section id="managed-release-process">
+<h3>Managed Release Process<a class="headerlink" href="#managed-release-process" title="Link to this heading">¶</a></h3>
+<section id="managed-release-checkpoints">
+<h4>Managed Release Checkpoints<a class="headerlink" href="#managed-release-checkpoints" title="Link to this heading">¶</a></h4>
+<p>Checkpoints are designed to be mostly automated, to be maximally effective at
+driving the release process and to impose as little overhead on projects as
+possible.</p>
+<p>There will be an initial checkpoint two weeks after the start of the release,
+a midway checkpoints one month before code freeze and a final checkpoint at code freeze.</p>
+<section id="initial-checkpoint">
+<h5>Initial Checkpoint<a class="headerlink" href="#initial-checkpoint" title="Link to this heading">¶</a></h5>
+<p>An initial checkpoint will be collected two weeks after the start of each
+release. The release team will review the information collected and report
+it to the TSC at the next TSC meeting.</p>
+<p>Projects will need to create the following artifacts:</p>
+<ul>
+<li><p>High-level, human-readable description of what the project plans to do in this
+release. This should be submitted as a Jira <strong>Project Plan</strong> issue against the
+TSC project.</p>
+<ul>
+<li><p>Select your project in the <strong>ODL Project</strong> field</p></li>
+<li><p>Select the release version in the <strong>ODL Release</strong> field</p></li>
+<li><p>Select the appropriate value in the <strong>ODL Participation</strong> field:
+<code class="docutils literal notranslate"><span class="pre">SNAPSHOT_Integrated</span> <span class="pre">(Managed)</span></code> or <code class="docutils literal notranslate"><span class="pre">RELEASE_Integrated</span> <span class="pre">(Managed)</span></code></p></li>
+<li><p>Select the value <code class="docutils literal notranslate"><span class="pre">Initial</span></code> in the <strong>ODL Checkpoint</strong> field</p></li>
+<li><p>In the <strong>Summary</strong> field, put something like:
+<code class="docutils literal notranslate"><span class="pre">Project-X</span> <span class="pre">Fluorine</span> <span class="pre">Release</span> <span class="pre">Plan</span></code></p></li>
+<li><p>In the <strong>Description</strong> field, fill in the details of your plan:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>This should list a high-level, human-readable summary of what a project
+plans to do in a release. It should cover the project&#39;s planned major
+accomplishments during the release, such as features, bugfixes, scale,
+stability or longevity improvements, additional test coverage, better
+documentation or other improvements. It may cover challenges the project
+is facing and needs help with from other projects, the TSC or the LFN
+umbrella. It should be written in a way that makes it amenable to use
+for external communication, such as marketing to users or a report to
+other LFN projects or the LFN Board.
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p>If a project is transitioning from Self-Managed to Managed or applying for
+the first time into a Managed release, raise a Jira <strong>Project Plan</strong> issue
+against the TSC project highlighting the request.</p>
+<ul>
+<li><p>Select your project in the <strong>ODL Project</strong> field</p></li>
+<li><p>Select the release version in the <strong>ODL Release</strong> field</p></li>
+<li><p>Select the <code class="docutils literal notranslate"><span class="pre">NOT_Integrated</span> <span class="pre">(Self-Managed)</span></code> value in the <strong>ODL Participation</strong>
+field</p></li>
+<li><p>Select the appropriate value in the <strong>ODL New Participation</strong> field:
+<code class="docutils literal notranslate"><span class="pre">SNAPSHOT_Integrated</span> <span class="pre">(Managed)</span></code> or <code class="docutils literal notranslate"><span class="pre">RELEASE_Integrated</span> <span class="pre">(Managed)</span></code></p></li>
+<li><p>In the <strong>Summary</strong> field, put something like:
+<code class="docutils literal notranslate"><span class="pre">Project-X</span> <span class="pre">joining/moving</span> <span class="pre">to</span> <span class="pre">Managed</span> <span class="pre">Release</span> <span class="pre">for</span> <span class="pre">Fluorine</span></code></p></li>
+<li><p>In the <strong>Description</strong> field, fill in the details using the template
+below:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Summary
+This is an example of a request for a project to move from Self-Managed
+to Managed. It should be submitted no later than the start of the
+release. The request should make it clear that the requesting project
+meets all of the Managed Release Requirements.
+
+Healthy Community
+The request should make it clear that the requesting project has a
+healthy community. The request may also highlight a history of having a
+healthy community.
+
+Responsiveness
+The request should make it clear that the requesting project is
+responsive over email, IRC, Jira and in regular meetings. All committers
+should be subscribed to the project&#39;s mailing list and the release
+mailing list. The request may also highlight a history of
+responsiveness.
+
+Active Committers
+The request should make it clear that the requesting project has a
+sufficient number of active committers to review contributions in a
+timely manner, support potential contributors, keep CSIT healthy and
+generally effectively drive the project. The requesting project should
+also make it clear that they have pruned any inactive committers. The
+request may also highlight a history of having sufficient active
+committers and few inactive committers.
+
+TSC Attendance
+The request should acknowledge that the requesting project is required
+to send a committer to represent the project to at least 50% of TSC
+meetings. The request may also highlight a history of sending
+representatives to attend TSC meetings.
+
+Checkpoints Submitted On-Time
+The request should acknowledge that the requesting project is required
+to submit checkpoints on time. The request may also highlight a history
+of providing deliverables on time.
+
+Jobs Required for Managed Projects Running
+The request should show that the requesting project has the required
+jobs for Managed Projects running and healthy. Links should be provided.
+
+Depend only on Managed Projects
+The request should show that the requesting project only depends on
+Managed Projects.
+
+Documentation
+The request should acknowledge that the requesting project is required
+to produce a user guide, developer guide and release notes for each
+release. The request may also highlight a history of providing quality
+documentation.
+
+CLM
+The request should acknowledge that the requesting project is required
+to handle Component Lifecycle Violations in a timely manner. The request
+should show that the project&#39;s CLM job is currently healthy. The request
+may also show that the project has a history of dealing with CLM
+violations in a timely manner.
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p>If a project is transitioning from Managed to Self-Managed, raise a Jira
+<strong>Project Plan</strong> issue against the TSC project highlighting the request.</p>
+<ul>
+<li><p>Select your project in the <strong>ODL Project</strong> field</p></li>
+<li><p>Select the release version in the <strong>ODL Release</strong> field</p></li>
+<li><p>Select the appropriate value in the <strong>ODL Participation</strong> field:
+<code class="docutils literal notranslate"><span class="pre">SNAPSHOT_Integrated</span> <span class="pre">(Managed)</span></code> or <code class="docutils literal notranslate"><span class="pre">RELEASE_Integrated</span> <span class="pre">(Managed)</span></code></p></li>
+<li><p>Select the <code class="docutils literal notranslate"><span class="pre">NOT_Integrated</span> <span class="pre">(Self-Managed)</span></code> value in the
+<strong>ODL New Participation</strong> field</p></li>
+<li><p>In the <strong>Summary</strong> field, put something like:
+<code class="docutils literal notranslate"><span class="pre">Project-X</span> <span class="pre">Fluorine</span> <span class="pre">Joining/Moving</span> <span class="pre">to</span> <span class="pre">Self-Manged</span> <span class="pre">for</span> <span class="pre">Fluorine</span></code></p></li>
+<li><p>In the <strong>Description</strong> field, fill in the details:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>This is a request for a project to move from Managed to Self-Managed. It
+should be submitted no later than the start of the release. The request
+does not require any additional information, but it may be helpful for
+the requesting project to provide some background and their reasoning.
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p>Weather items that may impact other projects should be submitted as Jira
+issues. For a weather item, raise a Jira <strong>Weather Item</strong> issue against the
+TSC project highlighting the details.</p>
+<ul class="simple">
+<li><p>Select your project in the <strong>ODL Project</strong> field</p></li>
+<li><p>Select the release version in the <strong>ODL Release</strong> field</p></li>
+<li><p>For the <strong>ODL Impacted Projects</strong> field, fill in the impacted projects
+using label values - each label value should correspond to the respective
+project prefix in Jira, e.g. netvirt is NETVIRT. If all projects are
+impacted, use the label value <code class="docutils literal notranslate"><span class="pre">ALL</span></code>.</p></li>
+<li><p>Fill in the expected date of weather event in the <strong>ODL Expected Date</strong>
+field</p></li>
+<li><p>Select the appropriate value for <strong>ODL Checkpoint</strong> (may skip)</p></li>
+<li><p>In the <strong>Summary</strong> field, summarize the weather event</p></li>
+<li><p>In the <strong>Description</strong> field, provide the details of the weather event.
+Provide as much relevant information as possible.</p></li>
+</ul>
+</li>
+</ul>
+<p>The remaining artifacts will be automatically scraped:</p>
+<ul class="simple">
+<li><p>Blocker bugs that were raised between the previous code freeze and release.</p></li>
+<li><p>Grievances raised against the project during the last release.</p></li>
+</ul>
+</section>
+<section id="midway-checkpoint">
+<h5>Midway Checkpoint<a class="headerlink" href="#midway-checkpoint" title="Link to this heading">¶</a></h5>
+<p>One month before code freeze, a midway checkpoint will be collected.
+The release team will review the information collected and report it to the TSC
+at the next TSC meeting.
+All information for midway checkpoint will be automatically collected.</p>
+<ul class="simple">
+<li><p>Open Jira bugs marked as blockers.</p></li>
+<li><p>Open Jira issues tracking weather items.</p></li>
+<li><p>Statistics about jobs.
+* Autorelease failures per-project.
+* CLM violations.</p></li>
+<li><p>Grievances raised against the project since the last checkpoint.</p></li>
+</ul>
+<p>Since the midway checkpoint is fully automated, the release team may collect
+this information more frequently, to provide trends over time.</p>
+</section>
+<section id="final-checkpoint">
+<h5>Final Checkpoint<a class="headerlink" href="#final-checkpoint" title="Link to this heading">¶</a></h5>
+<p>At 2 weeks after code freeze a final checkpoint will be collected by the release
+team and presented to the TSC at the next TSC meeting.</p>
+<p>Projects will need to create the following artifacts:</p>
+<ul>
+<li><p>High-level, human-readable description of what the project did in this
+release. This should be submitted as a Jira <strong>Project Plan</strong> issue against
+the TSC project. This will be reused for external communication/marketing for
+the release.</p>
+<ul>
+<li><p>Select your project in the <strong>ODL Project</strong> field</p></li>
+<li><p>Select the release version in the <strong>ODL Release</strong> field</p></li>
+<li><p>Select the appropriate value in the <strong>ODL Participation</strong> field:
+<code class="docutils literal notranslate"><span class="pre">SNAPSHOT_Integrated</span> <span class="pre">(Managed)</span></code> or <code class="docutils literal notranslate"><span class="pre">RELEASE_Integrated</span> <span class="pre">(Managed)</span></code></p></li>
+<li><p>Select the value <code class="docutils literal notranslate"><span class="pre">Final</span></code> in the <strong>ODL Checkpoint</strong> field</p></li>
+<li><p>In the <strong>Summary</strong> field, put something like:
+<code class="docutils literal notranslate"><span class="pre">Project-X</span> <span class="pre">Fluorine</span> <span class="pre">Release</span> <span class="pre">details</span></code></p></li>
+<li><p>In the <strong>Description</strong> field, fill in the details of your accomplishments:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>This should be a high-level, human-readable summary of what a project
+did during a release. It should cover the project&#39;s major
+accomplishments, such as features, bugfixes, scale, stability or
+longevity improvements, additional test coverage, better documentation
+or other improvements. It may cover challenges the project has faced
+and needs help in the future from other projects, the TSC or the LFN
+umbrella. It should be written in a way that makes it amenable to use
+for external communication, such as marketing to users or a report to
+other LFN projects or the LFN Board.
+</pre></div>
+</div>
+</li>
+<li><p>In the <strong>ODL Gerrit Patch</strong> field, fill in the Gerrit patch URL to your
+project release notes</p></li>
+</ul>
+</li>
+<li><p>Release notes, user guide, developer guide submitted to the docs project.</p></li>
+</ul>
+<p>The remaining artifacts will be automatically scraped:</p>
+<ul class="simple">
+<li><p>Open Jira bugs marked as blockers.</p></li>
+<li><p>Open Jira issues tracking weather items.</p></li>
+<li><p>Statistics about jobs.
+* Autorelease failures per-project.</p></li>
+<li><p>Statistics about patches.
+* Number of patches submitted during the release.
+* Number of patches merged during the release.
+* Number of reviews per-reviewer.</p></li>
+<li><p>Grievances raised against the project since the start of the release.</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="service-release-code-freeze">
+<h3>Service Release Code Freeze<a class="headerlink" href="#service-release-code-freeze" title="Link to this heading">¶</a></h3>
+<p>There will be an additional checkpoint for Service Releases, where code will
+freeze one week before the schedule release. Here are more details:</p>
+<ul class="simple">
+<li><p>After code-freeze, the specific branch will be locked down, just like with
+a major release.</p></li>
+<li><p>Once the branch is locked, only fixes for blocker bugs will be allowed
+as long as they are approved by TSC and Release PM.</p></li>
+<li><p>Bugs or Regression discovered during RC test will also be considered by
+Release PM.</p></li>
+<li><p>Release PM will track and allow those fixes that have not been reviewed
+or merged because of project low activity or lack of committers. The
+deadline to communicate the list of patches waiting review for a
+particular Service Release is the code freeze date.</p></li>
+</ul>
+</section>
+<section id="managed-release-integrated-release-process">
+<h3>Managed Release Integrated Release Process<a class="headerlink" href="#managed-release-integrated-release-process" title="Link to this heading">¶</a></h3>
+<p>Managed Projects that release independently (Release Integrated Projects),
+not as a part of the Simultaneous Release with Snapshot Integrated Projects,
+will need to follow a different release process.</p>
+<p>Managed Release Integrated (MRI) Projects will provide the releases they want
+the Managed Snapshot Integrated (MSI) Projects to consume no later than two
+weeks after the start of the Managed Release. The TSC will decide by a majority
+vote whether to bump MSI versions to consume the new MRI releases. This should
+happen as early in the release as possible to get integration woes out of the
+way and allow projects to focus on developing against a stable base. If the TSC
+decide to consume the proposed MRI releases, all MSI Projects are required to
+bump to the new versions within a two day window. If some projects fail to
+merge version bump patches in time, the TSC will instruct Linux Foundation
+staff to temporarily wield committer rights and merge version bump patches.
+The TSC vote at any time to back out of a version bump if the new releases are
+found to be unsuitable.</p>
+<p>MRI Projects are expected to provide bug fixes via minor or patch version
+updates during the release, but should strive to not expect MSI Projects to
+consume another major version update during the release.</p>
+<p>MRI Projects are free to follow their own release cadence as they develop new
+features during the Managed Release. They need only have a stable version ready
+for the MSI Projects to consume by the next integration point.</p>
+<section id="managed-release-integrated-checkpoints">
+<h4>Managed Release Integrated Checkpoints<a class="headerlink" href="#managed-release-integrated-checkpoints" title="Link to this heading">¶</a></h4>
+<p>The MRI Projects will follow similar checkpoints as the MSI Projects, but the
+timing will be different. At the time MRI Projects provide the releases they
+wish MSI Projects to consume for the next release, they will also provide their
+final checkpoints. Their midway checkpoints will be scraped one month before
+the deadline for them to deliver their artifacts to the MSI Projects. Their
+initial checkpoints will be due no later two weeks following the deadline for
+their delivery of artifacts to the MSI Projects. Their initial checkpoints will
+cover everything they expect to do in the next Managed Release, which may
+encompass any number of major version bumps for the MRI Projects.</p>
+</section>
+</section>
+<section id="moving-a-project-from-self-managed-to-managed">
+<h3>Moving a Project from Self-Managed to Managed<a class="headerlink" href="#moving-a-project-from-self-managed-to-managed" title="Link to this heading">¶</a></h3>
+<p>Self-Managed Projects can request to become Managed by submitting a
+<strong>Project_Plan</strong> issue to the TSC project in Jira. See details as described
+under the <a class="reference internal" href="#initial-checkpoint">Initial Checkpoint</a> section above. Requests should be submitted
+before the start of a release. The requesting project should make it clear that
+they meet the Managed Release Project Requirements.</p>
+<p>The TSC will evaluate requests to become Managed and inform projects of the
+result and the TSC’s reasoning no later than the start of the release or one
+week after the request was submitted, whichever comes last.</p>
+<p>For the first release, the TSC will bootstrap the Managed Release with projects
+that are critical to the OpenDaylight platform. Other projects will need to
+follow the normal application process defined above.</p>
+<p>The following projects are deemed critical to the OpenDaylight platform:</p>
+<ul class="simple">
+<li><p>aaa</p></li>
+<li><p>controller</p></li>
+<li><p>infrautils</p></li>
+<li><p>mdsal</p></li>
+<li><p>netconf</p></li>
+<li><p>odlparent</p></li>
+<li><p>yangtools</p></li>
+</ul>
+</section>
+</section>
+<section id="self-managed-projects">
+<h2>Self-Managed Projects<a class="headerlink" href="#self-managed-projects" title="Link to this heading">¶</a></h2>
+<p>In general there are two types of Self-Managed (SM) projects:</p>
+<ol class="arabic simple">
+<li><p>Self-Managed projects that want to participate in the formal (major or
+service) OpenDaylight release distribution. This section includes the
+requirements and release process for these projects.</p></li>
+<li><p>Self-Managed projects that want to manage their own release schedule
+or provide their release distribution and installation instructions
+by the time of the release. There are no specific requirements for
+these projects.</p></li>
+</ol>
+<section id="requirements-for-sm-projects-participating-in-the-release-distribution">
+<h3>Requirements for SM projects participating in the release distribution<a class="headerlink" href="#requirements-for-sm-projects-participating-in-the-release-distribution" title="Link to this heading">¶</a></h3>
+<section id="use-of-snapshot-versions">
+<h4>Use of SNAPSHOT versions<a class="headerlink" href="#use-of-snapshot-versions" title="Link to this heading">¶</a></h4>
+<p>Self-Managed Projects can consume whichever version of their upstream dependencies
+they want during most of the release cycle, but if they want to be included in the
+formal (major or service) release distribution they must have their upstream
+versions bumped to SNAPSHOT and build successfully no later than one week before
+the first Managed release candidate (RC) is created. Since bumping and integrating
+with upstream takes time, it is strongly recommended Self-Managed projects start
+this work early enough. This is no later than the middle checkpoint if they want
+to be in a major release, or by the previous release if they want to be in a
+service release (e.g. by the major release date if they want to be in SR1).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To help with the integration effort, the <a class="reference external" href="https://jira.opendaylight.org/browse/TSC-132?jql=Project%20%3D%20TSC%20AND%20Type%20%3D%20%22Weather%20Item%22%20">Weather Page</a> includes API and
+other important changes during the release cycle. After the formal release,
+the release notes also include this information.</p>
+</div>
+</section>
+<section id="add-to-common-distribution">
+<h4>Add to Common Distribution<a class="headerlink" href="#add-to-common-distribution" title="Link to this heading">¶</a></h4>
+<p>In order to be included in the formal (major or service) release distribution,
+Self-Managed Projects must be in the common distribution pom.xml file and the
+distribution sanity test (see <a class="reference external" href="https://docs.opendaylight.org/projects/integration-distribution/en/latest/add-project-distribution.html#add-proj-dist" title="(in integration/distribution vVanadium)"><span>Add Projects to distribution</span></a>) no later than one week
+before the first Managed release candidate (RC) is created.
+Projects should only be added to the final distribution pom.xml after they have
+successfully published artifacts using upstream SNAPSHOTs.
+See <a class="reference internal" href="#use-of-snapshot-versions">Use of SNAPSHOT versions</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is very important Self-Managed projects do not miss the deadlines for
+upstream integration and final distribution check, otherwise there are
+high chances for missing the formal release distribution. See
+<a class="reference internal" href="#release-the-project-artifacts">Release the project artifacts</a>.</p>
+</div>
+</section>
+<section id="cut-stable-branch">
+<h4>Cut Stable Branch<a class="headerlink" href="#cut-stable-branch" title="Link to this heading">¶</a></h4>
+<p>Self-Managed projects wanting to use the existing release job to release their
+artifacts (see <a class="reference internal" href="#release-the-project-artifacts">Release the project artifacts</a>) must have an stable branch in
+the major release (fluorine, neon, etc) they are targeting.
+It is highly recommended to cut the stable branch before the first Managed
+release candidate (RC) is created.</p>
+<p>After creating the stable branch Self-Managed projects should:</p>
+<ul class="simple">
+<li><p>Bump master branch version to X.Y+1.0-SNAPSHOT, this way any new merge in
+master will not interfere with the new created stable branch artifacts.</p></li>
+<li><p>Update <code class="docutils literal notranslate"><span class="pre">.gitreview</span></code> for stable branch: change <code class="docutils literal notranslate"><span class="pre">defaultbranch=master</span></code> to
+stable branch. This way folks running “git review” will get the right branch.</p></li>
+<li><p>Update their jenkins jobs: current release should point to the new created
+stable branch and next release should point to master branch.
+If you do not know how to do this please open a ticket to OpenDaylight
+helpdesk.</p></li>
+</ul>
+</section>
+<section id="release-the-project-artifacts">
+<h4>Release the project artifacts<a class="headerlink" href="#release-the-project-artifacts" title="Link to this heading">¶</a></h4>
+<p>Self-Managed projects wanting to participate in the formal (major or service) release
+distribution must release and publish their artifacts to nexus in the week after the
+Managed release is published to nexus.</p>
+<p>Self-Managed projects having an stable branch with latest upstream SNAPSHOT (see
+previous requirements) can use the release job in <a class="reference internal" href="project-release.html"><span class="doc">Project Standalone Release</span></a> to release
+their artifacts.</p>
+<p>After creating the release, Self-Managed projects should bump the stable branch
+version to X.Y.Z+1-SNAPSHOT, this way any new merge in the stable branch will not
+interfere with pre-release artifacts.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Self-Managed Projects will not have any leeway for missing deadlines. If
+projects are not in the final distribution in the allocated time (normally
+one week) after the Managed projects release, they will not be included
+in the release distribution.</p>
+</div>
+</section>
+<section id="checkpoints">
+<h4>Checkpoints<a class="headerlink" href="#checkpoints" title="Link to this heading">¶</a></h4>
+<p>There are no checkpoints for Self-Managed Projects.</p>
+</section>
+</section>
+<section id="moving-a-project-from-managed-to-self-managed">
+<h3>Moving a Project from Managed to Self-Managed<a class="headerlink" href="#moving-a-project-from-managed-to-self-managed" title="Link to this heading">¶</a></h3>
+<p>Managed Projects that are not required for dependency reasons can submit a
+<strong>Project_Plan</strong> issue to be Self-Managed to the TSC project in Jira.
+See details in the <a class="reference internal" href="#initial-checkpoint">Initial Checkpoint</a> section above.
+Requests should be submitted before the start of a release.
+Requests will be evaluated by the TSC.</p>
+<p>The TSC may withdraw a project from the Managed Release at any time.</p>
+</section>
+<section id="installing-features-from-self-managed-projects">
+<h3>Installing Features from Self-Managed Projects<a class="headerlink" href="#installing-features-from-self-managed-projects" title="Link to this heading">¶</a></h3>
+<p>Self-Managed Projects will have their artifacts included in the final release
+if they are available on-time, but they will not be available to be installed
+until the user does a <cite>̀ repo:add`</cite>.</p>
+<p>To install an Self-Managed Project feature, find the feature description in the
+system directory. For example, NetVirt’s main feature:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>system/org/opendaylight/netvirt/odl-netvirt-openstack/0.6.0-SNAPSHOT/
+</pre></div>
+</div>
+<p>Then use the Karaf shell to <code class="docutils literal notranslate"><span class="pre">repo:add</span></code> the feature:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>feature:repo-add mvn:org.opendaylight.netvirt/odl-netvirt-openstack/0.6.0-SNAPSHOT/xml/features
+</pre></div>
+</div>
+</section>
+</section>
+<section id="grievances">
+<h2>Grievances<a class="headerlink" href="#grievances" title="Link to this heading">¶</a></h2>
+<p>For requirements that are difficult to automatically ascertain if a Managed
+Project is following or not, there should be a clear reporting process.</p>
+<p>Grievance reports should be filed against the TSC project in Jira. Very urgent
+grievances can additionally be brought to the TSC’s attention via the TSC’s
+mailing list.</p>
+<section id="process-for-reporting-unresponsive-projects">
+<h3>Process for Reporting Unresponsive Projects<a class="headerlink" href="#process-for-reporting-unresponsive-projects" title="Link to this heading">¶</a></h3>
+<p>If a Managed Project does not meet the <a class="reference internal" href="#responsiveness">Responsiveness</a> Requirements, a
+<strong>Grievance</strong> issue should be filed against the TSC project in Jira.</p>
+<p>Unresponsive project reports should include (at least):</p>
+<ul>
+<li><p>Select the project being reported in the <strong>ODL_Project</strong> field</p></li>
+<li><p>Select the release version in the <strong>ODL_Release</strong> field</p></li>
+<li><p>In the <strong>Summary</strong> field, put something like:
+<code class="docutils literal notranslate"><span class="pre">Grievance</span> <span class="pre">against</span> <span class="pre">Project-X</span></code></p></li>
+<li><p>In the <strong>Description</strong> field, fill in the details:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Document the details that show ExampleProject was slow to review a change.
+The report should include as much relevant information as possible,
+including a description of the situation, relevant Gerrit change IDs and
+relevant public email list threads.
+</pre></div>
+</div>
+</li>
+<li><p>In the <strong>ODL_Gerrit_Patch</strong>, put in a URL to a Gerrit patch, if applicable</p></li>
+</ul>
+</section>
+</section>
+<section id="vocabulary-reference">
+<h2>Vocabulary Reference<a class="headerlink" href="#vocabulary-reference" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Managed Release Process: The release process described in this document.</p></li>
+<li><p>Managed Project: A project taking part in the Managed Release Process.</p></li>
+<li><p>Self-Managed Project: A project not taking part in the Managed Release
+Process.</p></li>
+<li><p>Simultaneous Release: Event wherein all Snapshot Integrated Project versions
+are rewritten to release versions and release artifacts are produced.</p></li>
+<li><p>Snapshot Integrated Project: Project that integrates with OpenDaylight
+projects using snapshot version numbers. These projects release together in
+the Simultaneous Release.</p></li>
+<li><p>Release Integrated Project: Project that releases independently of the
+Simultaneous Release. These projects are consumed by Snapshot Integrated
+Projects based on release version numbers, not snapshot versions.</p></li>
+</ul>
+</section>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/release-process/managed-release.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2016-2026, OpenDaylight Project.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 8.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

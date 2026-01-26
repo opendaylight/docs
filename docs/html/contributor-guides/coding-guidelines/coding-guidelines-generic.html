@@ -1,0 +1,296 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Generic Coding Guidelines &#8212; OpenDaylight Documentation Chromium documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-sphinx.css?v=0bf093e7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.2/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/ribbon.css?v=cb953b18" />
+    <link rel="stylesheet" href="../../_static/css/warning-header.css" type="text/css" />
+    <script src="../../_static/documentation_options.js?v=7b4a4459"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://cdn.datatables.net/1.11.2/js/jquery.dataTables.min.js"></script>
+    <script class="init" type="text/javascript">$(document).ready( function () { $('table.datatable').DataTable(); } );</script>
+    <link rel="icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Coding Guidelines for Java" href="coding-guidelines-java.html" />
+    <link rel="prev" title="Coding Guidelines" href="index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+  <div class="ribbon">
+    <a href="https://jira.opendaylight.org/secure/CreateIssueDetails!init.jspa
+?pid=10121
+&issuetype=10104
+&components=10228
+&priority=2
+&description=version:+Chromium%0Apage:+contributor-guides/coding-guidelines/coding-guidelines-generic%0A%0A" target="_blank">
+      Report Issue
+    </a>
+  </div>
+  
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+  <!-- Outdated version warning banner -->
+  
+    <style>
+      body {
+        padding-top: 60px;
+     }
+    </style>
+  
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+          OpenDaylight Documentation</a>
+        <span class="navbar-text navbar-version pull-left"><b>Chromium</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../downloads.html">OpenDaylight Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release-notes/index.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started-guide/index.html">Getting Started Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-guides/index.html">Developer Guides</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../documentation.html">Documentation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release-process/index.html">OpenDaylight Release Process Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../javadoc.html">Java API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/index.html">OpenDaylight User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-guides/index.html">Developer Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Contributor Guides</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Generic Coding Guidelines</a><ul>
+<li><a class="reference internal" href="#git-commit-message-style">Git commit message style</a></li>
+<li><a class="reference internal" href="#general-code-headers">General Code headers</a><ul>
+<li><a class="reference internal" href="#c-c-java">C/C++/Java</a></li>
+<li><a class="reference internal" href="#bash-python">Bash/Python</a></li>
+<li><a class="reference internal" href="#xml">XML</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#general-code-style">General Code Style</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Generic Coding Guidelines</a><ul>
+<li><a class="reference internal" href="#git-commit-message-style">Git commit message style</a></li>
+<li><a class="reference internal" href="#general-code-headers">General Code headers</a><ul>
+<li><a class="reference internal" href="#c-c-java">C/C++/Java</a></li>
+<li><a class="reference internal" href="#bash-python">Bash/Python</a></li>
+<li><a class="reference internal" href="#xml">XML</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#general-code-style">General Code Style</a></li>
+</ul>
+</li>
+</ul>
+<center>
+<div class="btn-group" role="group" aria-label="...">
+    
+    <a class="btn btn-default" href="index.html">Prev Page</a>
+    
+
+    
+    <a class="btn btn-default" href="coding-guidelines-java.html">Next Page</a>
+    
+</div>
+</center>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <section id="generic-coding-guidelines">
+<span id="coding-guidelines-generic"></span><h1>Generic Coding Guidelines<a class="headerlink" href="#generic-coding-guidelines" title="Link to this heading">¶</a></h1>
+<p><em>Note: This document is a work in progress.</em></p>
+<section id="git-commit-message-style">
+<h2>Git commit message style<a class="headerlink" href="#git-commit-message-style" title="Link to this heading">¶</a></h2>
+<p>OpenDaylight projects store code in git repositories,
+so contributions to OpenDaylight code have form of git commits.
+Each git commit needs a proper commit message.</p>
+<p>The message should describe what has changed from a previous state.
+Ideally this will be the preceding commit in git history.
+OpenDaylight uses Gerrit to manage reviewing and merging of contributions,
+so in this context “previous state” is shown as Base.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference external" href="http://chris.beams.io/posts/git-commit/">Chris Beams’blog</a> is pretty
+descriptive of why formatting the commit message properly is useful.</p>
+</div>
+<p>For Git commit messages we recommend following the <a class="reference external" href="https://wiki.openstack.org/wiki/GitCommitMessages">OpenStack commit message
+recommendations</a>.</p>
+<ul class="simple">
+<li><p>Separate subject from body with a blank line</p></li>
+<li><p>Limit the subject line to 50 characters</p></li>
+<li><p>Capitalize the subject line</p></li>
+<li><p>Do not end the subject line with a period</p></li>
+<li><p>Use the imperative mood in the subject line</p></li>
+<li><p>Wrap the body at 72 characters</p></li>
+<li><p>Use the body to explain what and why vs. how</p></li>
+</ul>
+<p>During review, reviewers will comment on current patch sets,
+and contributor may add more edits into newer patch sets.
+But previous patch sets are NOT the previous git state the commit message should
+document against.
+Contributors should respond to reviewers via Gerrit posts,
+while updating commit message to track current differences from Base.</p>
+<p>The commit message is most frequently read by people examining “git log” output,
+and they usually do not have information on which files were edited.
+Make sure your commit message is specific enough.
+For example, write “Add option X to module Y” instead of just “Add option X”.</p>
+<p>As there are tighter limits on the first line of commit message,
+the end of the line should not be marked by period.
+sentences in the rest of commit message should be punctuated as usual.</p>
+<p>Some projects verify commit message formatting in automated verify-style job.
+For example Releng/Builders enforces most of <a class="reference external" href="https://github.com/coala/bear-docs/blob/master/docs/GitCommitBear.rst">Coala rules</a>.</p>
+</section>
+<section id="general-code-headers">
+<h2>General Code headers<a class="headerlink" href="#general-code-headers" title="Link to this heading">¶</a></h2>
+<p>License and Copyright headers need to exist at the top of all code files.
+Examples of copyright headers for each language can be seen below.</p>
+<p>Note: In case you need multiple Copyright headers simply duplicate the
+Copyright line for additional copyrights</p>
+<section id="c-c-java">
+<h3>C/C++/Java<a class="headerlink" href="#c-c-java" title="Link to this heading">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/*</span>
+ <span class="o">*</span> <span class="n">Copyright</span> <span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="mi">2021</span> <span class="o">&lt;</span><span class="n">Company</span> <span class="ow">or</span> <span class="n">Individual</span><span class="o">&gt;.</span>  <span class="n">All</span> <span class="n">rights</span> <span class="n">reserved</span><span class="o">.</span>
+ <span class="o">*</span>
+ <span class="o">*</span> <span class="n">This</span> <span class="n">program</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">accompanying</span> <span class="n">materials</span> <span class="n">are</span> <span class="n">made</span> <span class="n">available</span> <span class="n">under</span> <span class="n">the</span>
+ <span class="o">*</span> <span class="n">terms</span> <span class="n">of</span> <span class="n">the</span> <span class="n">Eclipse</span> <span class="n">Public</span> <span class="n">License</span> <span class="n">v1</span><span class="mf">.0</span> <span class="n">which</span> <span class="n">accompanies</span> <span class="n">this</span> <span class="n">distribution</span><span class="p">,</span>
+ <span class="o">*</span> <span class="ow">and</span> <span class="ow">is</span> <span class="n">available</span> <span class="n">at</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">eclipse</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">legal</span><span class="o">/</span><span class="n">epl</span><span class="o">-</span><span class="n">v10</span><span class="o">.</span><span class="n">html</span>
+ <span class="o">*/</span>
+</pre></div>
+</div>
+</section>
+<section id="bash-python">
+<h3>Bash/Python<a class="headerlink" href="#bash-python" title="Link to this heading">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">##############################################################################</span>
+<span class="c1"># Copyright (c) 2021 &lt;Company or Individual&gt;.  All rights reserved.</span>
+<span class="c1">#</span>
+<span class="c1"># This program and the accompanying materials are made available under the</span>
+<span class="c1"># terms of the Eclipse Public License v1.0 which accompanies this distribution,</span>
+<span class="c1"># and is available at http://www.eclipse.org/legal/epl-v10.html</span>
+<span class="c1">##############################################################################</span>
+</pre></div>
+</div>
+</section>
+<section id="xml">
+<h3>XML<a class="headerlink" href="#xml" title="Link to this heading">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;!--
+  Copyright (c) 2021 &lt;Company or Individual&gt;.  All rights reserved.
+
+  This program and the accompanying materials are made available under the
+  terms of the Eclipse Public License v1.0 which accompanies this distribution,
+  and is available at http://www.eclipse.org/legal/epl-v10.html
+--&gt;
+</pre></div>
+</div>
+</section>
+</section>
+<section id="general-code-style">
+<h2>General Code Style<a class="headerlink" href="#general-code-style" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>120 characters line length</p></li>
+</ul>
+</section>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/contributor-guides/coding-guidelines/coding-guidelines-generic.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2016-2026, OpenDaylight Project.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 8.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

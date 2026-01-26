@@ -1,0 +1,609 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Logging subsystem &#8212; OpenDaylight Documentation Chromium documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css?v=0bf093e7" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.2/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/ribbon.css?v=cb953b18" />
+    <link rel="stylesheet" href="../_static/css/warning-header.css" type="text/css" />
+    <script src="../_static/documentation_options.js?v=7b4a4459"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://cdn.datatables.net/1.11.2/js/jquery.dataTables.min.js"></script>
+    <script class="init" type="text/javascript">$(document).ready( function () { $('table.datatable').DataTable(); } );</script>
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Developer Test Guides" href="tests/index.html" />
+    <link rel="prev" title="Integrating Animal Sniffer with OpenDaylight projects" href="integrating-animal-sniffer-plugin-with-projects.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+  <div class="ribbon">
+    <a href="https://jira.opendaylight.org/secure/CreateIssueDetails!init.jspa
+?pid=10121
+&issuetype=10104
+&components=10228
+&priority=2
+&description=version:+Chromium%0Apage:+developer-guides/logging-subsystem%0A%0A" target="_blank">
+      Report Issue
+    </a>
+  </div>
+  
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+  <!-- Outdated version warning banner -->
+  
+    <style>
+      body {
+        padding-top: 60px;
+     }
+    </style>
+  
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          OpenDaylight Documentation</a>
+        <span class="navbar-text navbar-version pull-left"><b>Chromium</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../downloads.html">OpenDaylight Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes/index.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started-guide/index.html">Getting Started Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Developer Guides</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../documentation.html">Documentation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-process/index.html">OpenDaylight Release Process Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../javadoc.html">Java API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/index.html">OpenDaylight User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Developer Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributor-guides/index.html">Contributor Guides</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Logging subsystem</a><ul>
+<li><a class="reference internal" href="#logging-in-java">Logging in Java</a></li>
+<li><a class="reference internal" href="#message-levels">Message levels</a><ul>
+<li><a class="reference internal" href="#error">ERROR</a></li>
+<li><a class="reference internal" href="#warn">WARN</a></li>
+<li><a class="reference internal" href="#info">INFO</a></li>
+<li><a class="reference internal" href="#debug">DEBUG</a></li>
+<li><a class="reference internal" href="#trace">TRACE</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#logger-instances">Logger instances</a></li>
+<li><a class="reference internal" href="#use-parameterized-logging">Use parameterized logging</a></li>
+<li><a class="reference internal" href="#avoid-calls-to-the-methods-is-trace-debug-info-warn-error-enabled">Avoid calls to the methods is{Trace|Debug|Info|Warn|Error}Enabled()</a></li>
+<li><a class="reference internal" href="#provide-useful-event-context">Provide useful event context</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Logging subsystem</a><ul>
+<li><a class="reference internal" href="#logging-in-java">Logging in Java</a></li>
+<li><a class="reference internal" href="#message-levels">Message levels</a><ul>
+<li><a class="reference internal" href="#error">ERROR</a></li>
+<li><a class="reference internal" href="#warn">WARN</a></li>
+<li><a class="reference internal" href="#info">INFO</a></li>
+<li><a class="reference internal" href="#debug">DEBUG</a></li>
+<li><a class="reference internal" href="#trace">TRACE</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#logger-instances">Logger instances</a></li>
+<li><a class="reference internal" href="#use-parameterized-logging">Use parameterized logging</a></li>
+<li><a class="reference internal" href="#avoid-calls-to-the-methods-is-trace-debug-info-warn-error-enabled">Avoid calls to the methods is{Trace|Debug|Info|Warn|Error}Enabled()</a></li>
+<li><a class="reference internal" href="#provide-useful-event-context">Provide useful event context</a></li>
+</ul>
+</li>
+</ul>
+<center>
+<div class="btn-group" role="group" aria-label="...">
+    
+    <a class="btn btn-default" href="integrating-animal-sniffer-plugin-with-projects.html">Prev Page</a>
+    
+
+    
+    <a class="btn btn-default" href="tests/index.html">Next Page</a>
+    
+</div>
+</center>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <section id="logging-subsystem">
+<h1>Logging subsystem<a class="headerlink" href="#logging-subsystem" title="Link to this heading">¶</a></h1>
+<p>Logging subsystem provides facilities for capturing, recording and
+reporting events which occur within the OpenDaylight system.
+These events are the primary means of system diagnostics and troubleshooting,
+serving a wide audience including automated monitoring systems, operators,
+administrators, support personnel and development engineers.</p>
+<p>In order to provide a ‘single system’ experience, all software components should
+follow same basic rules for interfacing with the logging system.
+While it is not practical to force these rules on the various third parties,
+they should to be followed by all newly-developed components.</p>
+<section id="logging-in-java">
+<h2>Logging in Java<a class="headerlink" href="#logging-in-java" title="Link to this heading">¶</a></h2>
+<p>Java provides a diverse set of logging APIs and implementations.
+OpenDaylight has selected <a class="reference external" href="https://www.slf4j.org/apidocs/index.html">SLF4J API</a>,
+with the implementation being provided by the Karaf container.</p>
+<p>The primary reasons for this decision are:</p>
+<ul class="simple">
+<li><p>proper split between API and implementation, allowing us to change
+the implementation without impacting code</p></li>
+<li><p>ability to provide legacy APIs (JUL, JCL, etc.) for third-party code</p></li>
+</ul>
+</section>
+<section id="message-levels">
+<h2>Message levels<a class="headerlink" href="#message-levels" title="Link to this heading">¶</a></h2>
+<p>SLF4J defines five levels of logging messages, ranging from <strong>TRACE</strong> to
+<strong>ERROR</strong>.
+The guidelines for their use are very vague and in the grand UNIX tradition mix
+severity of the message with its granularity.
+The following summary defines the basic rules on when to use a specific level,
+who the target audience is
+and how any message of the specified level will be interpreted.</p>
+<p>Note that all events with level <strong>INFO or higher present an API-like contract</strong>
+of the system from the integration point-of-view:
+if they change, third-party systems such as monitoring may need to be updated to
+work correctly with the new system release.
+The message text on these levels should be understandable to people with
+networking and systems administration background, so any language assuming
+knowledge of programming in general, or Java in particular,
+should be avoided if at all possible.</p>
+<p>Messages on <strong>DEBUG</strong> and higher present are part of interface contract with
+support entities, e.g. if they are changed operator and troubleshooting manuals,
+as well as knowledge-base systems may need to be updated to correctly interpret
+the information conveyed.
+On the <strong>DEBUG</strong> level, messages may assume a slight level of familiarity with
+general programming concepts. Terminology specific to any programming
+language should be avoided if possible.</p>
+<section id="error">
+<h3>ERROR<a class="headerlink" href="#error" title="Link to this heading">¶</a></h3>
+<p>This level serves as the general error facility.
+It should be used whenever the software encounters an unexpected error which
+prevents further processing.
+The reporting component may attempt recovery which may affect system
+availability or performance for a period of time, or it may forcefully terminate
+if it is unable to recover.
+This level is always reported for all software components.</p>
+<p>There are three examples when this level should be used:</p>
+<ol class="arabic simple">
+<li><p>Incorrigible internal state inconsistency, such as when a JVM
+reports an OutOfMemoryError. The top-level handler would log this
+condition and force a JVM exit, as it is not capable of continuing
+execution.</p></li>
+<li><p>Internal state inconsistency, which is correctable by flushing and
+re-creating the state. In this case the component would log an event,
+which would indicate what assertion has been violated and that the
+state has been flushed to recover.</p></li>
+<li><p>Request-level processing error, e.g. the application encounters an
+error which is preventing a particular request from completing, but
+there is no indication of systematic failure which would prevent
+other requests from being successfully processed.</p></li>
+</ol>
+<p>The primary audience are monitoring systems and system operators,
+as the events reported have impact on operational performance of the system.</p>
+</section>
+<section id="warn">
+<h3>WARN<a class="headerlink" href="#warn" title="Link to this heading">¶</a></h3>
+<p>This level serves for events which indicate irregular circumstances,
+from which we have a clearly-defined recovery strategy which has no impact on
+system availability or performance as seen by the reporting component.
+Events on this level are usually reported.</p>
+<p>A typical example for a candidate event is when a software component detects
+inconsistency within an external data feed and it performs a corrective action
+to compensate for it.
+Let’s say we process a list of key/value pairs and encounter a duplicate key:
+we can either overwrite the old occurrence, ignore the new occurrence or abort.
+If we take any of the first two actions, we should report a <strong>WARN</strong> event.
+If we take the third, we should report an <strong>ERROR</strong> event.</p>
+<p>The primary audience of these events are automated systems, operators and
+administrators, as this level of messages indicate non-optimal system operation
+(e.g. data feeds could use normalization) or may forebode a future failure.</p>
+</section>
+<section id="info">
+<h3>INFO<a class="headerlink" href="#info" title="Link to this heading">¶</a></h3>
+<p>This level serves for events which constitute major state changes within
+a software component – such as initialization, shutdown, persistent
+resource allocation, etc. – which are part of normal operations.
+Events on this level are typically reported for non-library components.</p>
+<p>Each software component should log at least four events on this level:</p>
+<ol class="arabic simple">
+<li><p>when it starts its initialization</p></li>
+<li><p>when it becomes operational,</p></li>
+<li><p>when it starts orderly shutdown,</p></li>
+<li><p>just before it terminates normally</p></li>
+</ol>
+<p>The primary audience of these events are operators and administrators,
+who use them to confirm major interactions (such as restarting
+components) have occurred within the system.</p>
+</section>
+<section id="debug">
+<h3>DEBUG<a class="headerlink" href="#debug" title="Link to this heading">¶</a></h3>
+<p>This is the coarse diagnostic level, serving for events which indicate
+internal state transitions and detail what processing occurs.
+Events on this level are usually not reported, but are enabled when a subsystem
+code flows need to be examined for troubleshooting purposes.</p>
+<p>Placement and amount of events generated at this level are at the discretion of
+the development engineers, as both relate directly to the component logic.
+The amount of detail in these events has to be limited to a single line of
+information useful for pinning down a misbehaving software component in a
+seemingly normal system and should be directly cross-referenceable to either
+previous <strong>DEBUG</strong> events or component configuration.
+A <strong>hard requirement</strong> is that there has to be at least one flow control
+statement (such as if, for, while) or a call to a different software component
+between two <strong>DEBUG</strong> event triggers.</p>
+<p>Primary audience of these events are administrators and support personnel
+diagnosing operational issues, mainly in real-time as they occur on the system.</p>
+</section>
+<section id="trace">
+<h3>TRACE<a class="headerlink" href="#trace" title="Link to this heading">¶</a></h3>
+<p>This is the fine-grained diagnostic level, serving for events which
+indicate internal state transitions in full detail.
+Events on this level are not reported, but have to be explicitly enabled and may
+be collected for support purposes.</p>
+<p>Placement, amount and contents of these events is completely at the description
+of development engineers.
+These events are completely release-specific, may change even between minor
+releases.
+Examples of events reported at this level would be method entry and exit,
+possibly including detailed input arguments, and dumps of internal data as it is
+being modified.</p>
+<p>Primary audience of these events are senior support personnel and development
+engineers diagnosing operational irregularities which relate directly to code
+structure, mainly offline after being captured on a live system.</p>
+</section>
+</section>
+<section id="logger-instances">
+<h2>Logger instances<a class="headerlink" href="#logger-instances" title="Link to this heading">¶</a></h2>
+<p>Each class containing calls to the logging subsystem <strong>MUST</strong> have its own
+logger, which is not shared with any other class.
+The variable holding reference to this logger <strong>MUST</strong> me named <strong>‘LOG’</strong>.
+The easiest way to ensure you have the proper logger declaration is to use
+the following pattern:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">org.slf4j.Logger</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.slf4j.LoggerFactory</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">Foo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Logger</span><span class="w"> </span><span class="n">LOG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LoggerFactory</span><span class="p">.</span><span class="na">getLogger</span><span class="p">(</span><span class="n">Foo</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="use-parameterized-logging">
+<h2>Use parameterized logging<a class="headerlink" href="#use-parameterized-logging" title="Link to this heading">¶</a></h2>
+<p>Using dynamically-constructed message strings contributes to major overhead as
+the message string has to be constructed before the call to logging method is
+performed, thus forcing overhead even if the constructed string is not used
+(for example <strong>DEBUG</strong> level is not enabled).</p>
+<p>Another issue with dynamically-constructed message strings is that they cannot
+be easily extracted by static source code analysis – a process critical for
+creating message catalogue of a particular software release, which in turn is
+needed for things like support knowledge bases, internationalization, etc.</p>
+<p>While the former concern is addressed by Logger classes exposing methods such as
+<code class="docutils literal notranslate"><span class="pre">LOG.isDebugEnabled()</span></code>, the second concern can only be alleviated by using
+explicit String literals when calling the Logger methods.
+The correct way to address both concerns is to use parameterized logging as
+described at <a class="reference external" href="https://www.slf4j.org/faq.html#logging_performance">https://www.slf4j.org/faq.html#logging_performance</a>.
+The basic pattern to follow is this:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Foo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Logger</span><span class="w"> </span><span class="n">LOG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LoggerFactory</span><span class="p">.</span><span class="na">getLogger</span><span class="p">(</span><span class="n">Foo</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// GOOD: string literal, no dynamic objects</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">good_method</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">arg</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">LOG</span><span class="p">.</span><span class="na">debug</span><span class="p">(</span><span class="s">&quot;Method called with arg {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">arg</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// BAD: string varies with argument</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">bad_method1</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">arg</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">LOG</span><span class="p">.</span><span class="na">debug</span><span class="p">(</span><span class="s">&quot;Method called with arg &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">arg</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// BAD: code clutter</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">bad_method2</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">arg</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">LOG</span><span class="p">.</span><span class="na">isDebugEnabled</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">LOG</span><span class="p">.</span><span class="na">debug</span><span class="p">(</span><span class="s">&quot;Method called with arg {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">arg</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// BAD: wrong level of language, this would be okay on TRACE</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">bad_method3</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">arg</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">LOG</span><span class="p">.</span><span class="na">debug</span><span class="p">(</span><span class="s">&quot;arg is {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">arg</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>There is one thing that needs to be noted in this style, which is that logging
+an exception is properly supported if you supply it as the last argument,
+but you have to <strong>MAKE SURE IT IS NOT HINTED TO IN THE MESSAGE STRING</strong>:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Foo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Logger</span><span class="w"> </span><span class="n">LOG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LoggerFactory</span><span class="p">.</span><span class="na">getLogger</span><span class="p">(</span><span class="n">Foo</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// GOOD: note how there is no &quot;{}&quot; for ex</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">good_method</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">arg</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">doSomething</span><span class="p">(</span><span class="n">arg</span><span class="p">);</span>
+<span class="w">            </span><span class="p">...</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">SomeException</span><span class="w"> </span><span class="n">ex</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">LOG</span><span class="p">.</span><span class="na">warn</span><span class="p">(</span><span class="s">&quot;Failed to do something with {}, continuing&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">arg</span><span class="p">,</span><span class="w"> </span><span class="n">ex</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// BAD:</span>
+<span class="w">    </span><span class="c1">// - exception is interpreted as an object</span>
+<span class="w">    </span><span class="c1">// - exception chaining cause is lost</span>
+<span class="w">    </span><span class="c1">// - stack trace is lost</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">bad_method</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">arg</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">doSomething</span><span class="p">(</span><span class="n">arg</span><span class="p">);</span>
+<span class="w">            </span><span class="p">...</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">SomeException</span><span class="w"> </span><span class="n">ex</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">LOG</span><span class="p">.</span><span class="na">warn</span><span class="p">(</span><span class="s">&quot;Failed to do something with {} because {}, continuing&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">arg</span><span class="p">,</span><span class="w"> </span><span class="n">ex</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="avoid-calls-to-the-methods-is-trace-debug-info-warn-error-enabled">
+<h2>Avoid calls to the methods is{Trace|Debug|Info|Warn|Error}Enabled()<a class="headerlink" href="#avoid-calls-to-the-methods-is-trace-debug-info-warn-error-enabled" title="Link to this heading">¶</a></h2>
+<p>While it is true that methods such as <code class="docutils literal notranslate"><span class="pre">isDebugEnabled()</span></code> &amp; Co. eliminate the
+minor overhead associated with the variadic method call, the burden on
+the developer is not acceptable simply because there are much better
+methods of automatic control of this overhead, without having any impact
+on the source code (or even the class files).
+One of them is JIT-level optimizations stemming from the ability to inline calls
+to <code class="docutils literal notranslate"><span class="pre">LOG.debug()</span></code>.
+The other is the set of interfaces from <code class="docutils literal notranslate"><span class="pre">java.lang.instrument</span></code> package,
+which can be used to completely eliminate the call overhead by removing all
+calls to <code class="docutils literal notranslate"><span class="pre">LOG.debug()</span></code> from the class bytecode based on the logger configuration.</p>
+<p>The exception to this rule can be if you log something that has some cost to
+calculate - and if that log statement runs a lot.
+Something (made up) like:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">100000</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">LOG</span><span class="p">.</span><span class="na">isDebugEnabled</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">LOG</span><span class="p">.</span><span class="na">debug</span><span class="p">(</span><span class="s">&quot;The size is: {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">expensiveMethodToCalculateSize</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Note that you can and always should pass Object and thus never <code class="docutils literal notranslate"><span class="pre">toString()</span></code> your
+objects passed to a Logger.
+For example, this is WRONG:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Interface</span><span class="o">&gt;</span><span class="w"> </span><span class="n">interfaces</span><span class="p">;</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">LOG</span><span class="p">.</span><span class="na">isDebugEnabled</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">LOG</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">&quot;Interfaces: {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">interfaces</span><span class="p">.</span><span class="na">toString</span><span class="p">());</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>and instead you can simply do:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">LOG</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">&quot;Interfaces: {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">interfaces</span><span class="p">);</span><span class="w"> </span><span class="c1">// no need to guard this with isDebugEnabled!</span>
+</pre></div>
+</div>
+</section>
+<section id="provide-useful-event-context">
+<h2>Provide useful event context<a class="headerlink" href="#provide-useful-event-context" title="Link to this heading">¶</a></h2>
+<p>Each logging call should provide useful context in which it occurred.
+This is not usually the case with a lot of Java-based software, notably even
+with some JVM implementations.
+Here are some typical anti-patterns which contribute to mitigated ability to
+diagnose problems when they happen:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Foo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Logger</span><span class="w"> </span><span class="n">LOG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LoggerFactory</span><span class="p">.</span><span class="na">getLogger</span><span class="p">(</span><span class="n">Foo</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// VERY BAD:</span>
+<span class="w">    </span><span class="c1">// - no context provided</span>
+<span class="w">    </span><span class="c1">// - non-constant message string</span>
+<span class="w">    </span><span class="c1">// - assumes useful toString()</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">bad_method1</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">arg</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">LOG</span><span class="p">.</span><span class="na">debug</span><span class="p">(</span><span class="n">arg</span><span class="p">.</span><span class="na">toString</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// VERY BAD:</span>
+<span class="w">    </span><span class="c1">// - no context provided</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">bad_method2</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">arg</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">LOG</span><span class="p">.</span><span class="na">debug</span><span class="p">(</span><span class="s">&quot;{}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">arg</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// COMPLETELY BAD:</span>
+<span class="w">    </span><span class="c1">// - silently ignoring errors!!!</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">bad_method3</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">arg</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">doSomething</span><span class="p">(</span><span class="n">arg</span><span class="p">);</span>
+<span class="w">            </span><span class="p">...</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">SomeException</span><span class="w"> </span><span class="n">ex</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// EXTREMELY BAD:</span>
+<span class="w">    </span><span class="c1">// - message is not constant</span>
+<span class="w">    </span><span class="c1">// - no context is provided</span>
+<span class="w">    </span><span class="c1">// - ex.getCause() is lost</span>
+<span class="w">    </span><span class="c1">// - call stack is lost</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">bad_method4</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">arg</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">doSomething</span><span class="p">(</span><span class="n">arg</span><span class="p">);</span>
+<span class="w">            </span><span class="p">...</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">SomeException</span><span class="w"> </span><span class="n">ex</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">LOG</span><span class="p">.</span><span class="na">warn</span><span class="p">(</span><span class="n">ex</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// EXTREMELY BAD:</span>
+<span class="w">    </span><span class="c1">// - message is not constant</span>
+<span class="w">    </span><span class="c1">// - no context is provided</span>
+<span class="w">    </span><span class="c1">// - ex.getCause() is probably lost</span>
+<span class="w">    </span><span class="c1">// - call stack is probably lost</span>
+<span class="w">    </span><span class="c1">// - assumes useful toString()</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">bad_method5</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">arg</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">doSomething</span><span class="p">(</span><span class="n">arg</span><span class="p">);</span>
+<span class="w">            </span><span class="p">...</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">SomeException</span><span class="w"> </span><span class="n">ex</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">LOG</span><span class="p">.</span><span class="na">warn</span><span class="p">(</span><span class="n">ex</span><span class="p">.</span><span class="na">toString</span><span class="p">());</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// VERY BAD:</span>
+<span class="w">    </span><span class="c1">// - no useful context is provided</span>
+<span class="w">    </span><span class="c1">// - ex.getCause() is probably lost</span>
+<span class="w">    </span><span class="c1">// - call stack is probably lost</span>
+<span class="w">    </span><span class="c1">// - administrators don&#39;t know what an Exception is!</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">bad_method6</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">arg</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">doSomething</span><span class="p">(</span><span class="n">arg</span><span class="p">);</span>
+<span class="w">            </span><span class="p">...</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">SomeException</span><span class="w"> </span><span class="n">ex</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">LOG</span><span class="p">.</span><span class="na">warn</span><span class="p">(</span><span class="s">&quot;Exception {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ex</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The proper fix for these anti-patterns is to always provide key information
+in the logging event:</p>
+<ul class="simple">
+<li><p>what went wrong</p></li>
+<li><p>how badly it went wrong</p></li>
+<li><p>in case we recover, shortly describe how (especially on <strong>WARN</strong>
+level)</p></li>
+</ul>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Foo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Logger</span><span class="w"> </span><span class="n">LOG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LoggerFactory</span><span class="p">.</span><span class="na">getLogger</span><span class="p">(</span><span class="n">Foo</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// GOOD:</span>
+<span class="w">    </span><span class="c1">// - string literal</span>
+<span class="w">    </span><span class="c1">// - we explain what we tried to do</span>
+<span class="w">    </span><span class="c1">// - we pass along information we have about the failure</span>
+<span class="w">    </span><span class="c1">// - we explain that we recovered from the failure</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">good_method1</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">arg</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">doSomething</span><span class="p">(</span><span class="n">arg</span><span class="p">);</span>
+<span class="w">            </span><span class="p">...</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">SomeException</span><span class="w"> </span><span class="n">ex</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">LOG</span><span class="p">.</span><span class="na">warn</span><span class="p">(</span><span class="s">&quot;Failed to do something with {}, ignoring it&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">arg</span><span class="p">,</span><span class="w"> </span><span class="n">ex</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// GOOD:</span>
+<span class="w">    </span><span class="c1">// - string literal</span>
+<span class="w">    </span><span class="c1">// - we explain what we tried to do</span>
+<span class="w">    </span><span class="c1">// - we pass along information we have about the failure</span>
+<span class="w">    </span><span class="c1">// - we escalate the failure to our caller</span>
+<span class="w">    </span><span class="c1">// - we also &#39;chain&#39; the exception so it is not lost and can be</span>
+<span class="w">    </span><span class="c1">// correlated</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">good_method2</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">arg</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">doSomething</span><span class="p">(</span><span class="n">arg</span><span class="p">);</span>
+<span class="w">            </span><span class="p">...</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">SomeException</span><span class="w"> </span><span class="n">ex</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">LOG</span><span class="p">.</span><span class="na">error</span><span class="p">(</span><span class="s">&quot;Failed to do something with {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">arg</span><span class="p">,</span><span class="w"> </span><span class="n">ex</span><span class="p">);</span>
+<span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RuntimeException</span><span class="p">(</span><span class="s">&quot;Failed to do something&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ex</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/developer-guides/logging-subsystem.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2016-2026, OpenDaylight Project.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 8.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,357 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Release Schedule &#8212; OpenDaylight Documentation Chromium documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css?v=0bf093e7" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.2/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/ribbon.css?v=cb953b18" />
+    <link rel="stylesheet" href="../_static/css/warning-header.css" type="text/css" />
+    <script src="../_static/documentation_options.js?v=7b4a4459"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://cdn.datatables.net/1.11.2/js/jquery.dataTables.min.js"></script>
+    <script class="init" type="text/javascript">$(document).ready( function () { $('table.datatable').DataTable(); } );</script>
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Project Standalone Release" href="project-release.html" />
+    <link rel="prev" title="Managed Release" href="managed-release.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+  <div class="ribbon">
+    <a href="https://jira.opendaylight.org/secure/CreateIssueDetails!init.jspa
+?pid=10121
+&issuetype=10104
+&components=10228
+&priority=2
+&description=version:+Chromium%0Apage:+release-process/release-schedule%0A%0A" target="_blank">
+      Report Issue
+    </a>
+  </div>
+  
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+  <!-- Outdated version warning banner -->
+  
+    <style>
+      body {
+        padding-top: 60px;
+     }
+    </style>
+  
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          OpenDaylight Documentation</a>
+        <span class="navbar-text navbar-version pull-left"><b>Chromium</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../downloads.html">OpenDaylight Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes/index.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started-guide/index.html">Getting Started Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-guides/index.html">Developer Guides</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../documentation.html">Documentation Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">OpenDaylight Release Process Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../javadoc.html">Java API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/index.html">OpenDaylight User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-guides/index.html">Developer Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributor-guides/index.html">Contributor Guides</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Release Schedule</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Release Schedule</a></li>
+</ul>
+<center>
+<div class="btn-group" role="group" aria-label="...">
+    
+    <a class="btn btn-default" href="managed-release.html">Prev Page</a>
+    
+
+    
+    <a class="btn btn-default" href="project-release.html">Next Page</a>
+    
+</div>
+</center>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <section id="release-schedule">
+<h1>Release Schedule<a class="headerlink" href="#release-schedule" title="Link to this heading">¶</a></h1>
+<p>OpenDaylight releases twice per year. The six-month cadence is designed to
+synchronize OpenDaylight releases with OpenStack and OPNFV releases. Dates
+are adjusted to match current resources and requirements from the current
+OpenDaylight users. Dates are also adjusted when they conflict with holidays,
+overlap with other releases or are otherwise problematic.
+Dates are the release deadlines intended for managed projects.
+Self-managed projects that wants to integrate the distribution have one week
+to release once managed projects are ready.</p>
+<p>Each milestone is usually evaluated at a TSC meeting, which dictates deadlines.
+Nominal deadline is midnight UTC on the particular date. As an example, a date
+of 2022-10-06 means that all deliverables are due no later than
+2022-10-06T00:00:00Z. The corresponding TSC meeting happens either on
+9am or 10pm Pacific time. The slack time between the deadline and the actual call
+can be used for justified last-minute work if the need arises (though in general
+WE SHOULD NEVER need it). If such last-minute work results in a SimRel candidate
+build not being available, the reasons for that need to be discussed at,
+and documented as part of, the corresponding TSC meeting.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 12.5%" />
+<col style="width: 12.5%" />
+<col style="width: 12.5%" />
+<col style="width: 12.5%" />
+<col style="width: 12.5%" />
+<col style="width: 12.5%" />
+<col style="width: 25.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head stub"><p><strong>Event</strong></p></th>
+<th class="head"><p><strong>2025.03 Titanium Dates</strong></p></th>
+<th class="head"><p><strong>2024.09 Scandium Dates</strong></p></th>
+<th class="head"><p><strong>2024.03 Calcium Dates</strong></p></th>
+<th class="head"><p><strong>Relative Dates</strong></p></th>
+<th class="head"><p><strong>Start-Relative Dates</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><th class="stub"><p>Release Start</p></th>
+<td><p>2024-09-12</p></td>
+<td><p>2024-03-14</p></td>
+<td><p>2023-09-14</p></td>
+<td><p>Start Date</p></td>
+<td><p>Start Date +0</p></td>
+<td><p>Declare Intention: Submit <strong>Project_Plan</strong> Jira item in TSC project.</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>Initial Checkpoint</p></th>
+<td><p>2024-09-26</p></td>
+<td><p>2024-03-28</p></td>
+<td><p>2023-10-05</p></td>
+<td><p>Start Date +2 weeks</p></td>
+<td><p>Start Date +2 weeks</p></td>
+<td><p>Initial Checkpoint. All Managed Projects must have completed
+<strong>Project_Plan</strong> Jira items in TSC project.</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Release Integrated Deadline</p></th>
+<td><p>2024-10-10</p></td>
+<td><p>2024-04-16</p></td>
+<td><p>2023-10-19</p></td>
+<td><p>Initial Checkpoint + 2 weeks</p></td>
+<td><p>Start Date +4 weeks</p></td>
+<td><p>Deadline for Release Integrated Projects (currently, ODLPARENT,
+YANGTOOLS, MDSAL, CONTROLLER and INFRAUTILS) to provide the desired
+version deliverables for downstream Snapshot Integrated Projects to
+consume.</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>Version Bump</p></th>
+<td><p>2024-10-11</p></td>
+<td><p>2024-04-19</p></td>
+<td><p>2023-10-20</p></td>
+<td><p>Release Integrated Deadline + 1 day</p></td>
+<td><p>Start Date +4 weeks 1 day</p></td>
+<td><p>Prepare version bump patches and merge them in (RelEng team). Spend the
+next 2 weeks to get green build for all MSI Projects and a healthy
+distribution.</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Version Bump Checkpoint</p></th>
+<td><p>2024-10-24</p></td>
+<td><p>2024-04-25</p></td>
+<td><p>2023-11-02</p></td>
+<td><p>Release Integrated Deadline + 2 weeks</p></td>
+<td><p>Start Date +6 weeks</p></td>
+<td><p>Check status of MSI Projects to see if we have green builds and a
+healthy distribution. Revert the MRI deliverables if deemed necessary.</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>CSIT Checkpoint</p></th>
+<td><p>2024-11-07</p></td>
+<td><p>2024-05-09</p></td>
+<td><p>2023-11-16</p></td>
+<td><p>Version Bump Checkpoint + 2 weeks</p></td>
+<td><p>Start Date +8 weeks</p></td>
+<td><p>All Managed Release CSIT should be in good shape - get all MSI Projects’
+CSIT results as they were before the version bump. This is the final
+opportunity to revert the MRI deliverables if deemed necessary.</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Middle Checkpoint</p></th>
+<td><p>2025-01-16</p></td>
+<td><p>2024-07-04</p></td>
+<td><p>2024-01-11</p></td>
+<td><p>CSIT Checkpoint + 8 weeks (sometimes +2 weeks to avoid December holidays)</p></td>
+<td><p>Start Date +16 weeks (sometimes +2 weeks to avoid December holidays)</p></td>
+<td><p>Checkpoint for status of Managed Projects - especially Snapshot
+Integrated Projects.</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>Code Freeze</p></th>
+<td><p>2025-02-13</p></td>
+<td><p>2024-08-01</p></td>
+<td><p>2024-02-08</p></td>
+<td><p>Middle Checkpoint + 4 weeks</p></td>
+<td><p>Start Date +20 weeks</p></td>
+<td><p>Code freeze for all Managed Projects - cut and lock release branch. Only
+allow blocker bug fixes in release branch.</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Final Checkpoint</p></th>
+<td><p>2025-02-27</p></td>
+<td><p>2024-08-15</p></td>
+<td><p>2024-02-22</p></td>
+<td><p>Code Freeze + 2 weeks</p></td>
+<td><p>Start Date +22 weeks</p></td>
+<td><p>Final Checkpoint for all Managed Projects.</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>Formal Release</p></th>
+<td><p>2025-03-13</p></td>
+<td><p>2024-09-19</p></td>
+<td><p>2024-03-14</p></td>
+<td><p>6 months after Start Date</p></td>
+<td><p>Start Date +6 months</p></td>
+<td><p>Formal Release for Managed Projects. Self-managed projects usually are released a week later.</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Service Release 1</p></th>
+<td><p>2025-04-24</p></td>
+<td><p>2024-10-24</p></td>
+<td><p>2024-04-25</p></td>
+<td><p>1.5 month after Formal Release</p></td>
+<td><p>Start Date +7.5 months</p></td>
+<td><p>Service Release 1 (SR1)</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>Service Release 2</p></th>
+<td><p>2025-07-24</p></td>
+<td><p>2025-01-23</p></td>
+<td><p>2024-07-25</p></td>
+<td><p>3 months after SR1</p></td>
+<td><p>Start Date +10.5 months</p></td>
+<td><p>Service Release 2 (SR2)</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Service Release 3</p></th>
+<td><p>2025-10-24</p></td>
+<td><p>2025-05-08</p></td>
+<td><p>2024-10-24</p></td>
+<td><p>4 months after SR2</p></td>
+<td><p>Start Date +14 months</p></td>
+<td><p>Service Release 3 (SR3)</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>Service Release 4 (optional, based on documented need)</p></th>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>Not Applicable</p></td>
+<td><p>Not Applicable</p></td>
+<td><p>Service Release 4 (SR4) - Final Service Release</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Release End of Life</p></th>
+<td><p>2026-03-19</p></td>
+<td><p>2025-09-18</p></td>
+<td><p>2025-03-25</p></td>
+<td><p>4 months after SR3</p></td>
+<td><p>Start Date +18 months</p></td>
+<td><p>End of Life - coincides with the Formal Release of the current release+2
+versions and the start of the current release+3 versions.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/release-process/release-schedule.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2016-2026, OpenDaylight Project.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 8.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

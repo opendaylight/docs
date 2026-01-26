@@ -1,0 +1,392 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Simultaneous Release &#8212; OpenDaylight Documentation Chromium documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css?v=0bf093e7" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.2/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/ribbon.css?v=cb953b18" />
+    <link rel="stylesheet" href="../_static/css/warning-header.css" type="text/css" />
+    <script src="../_static/documentation_options.js?v=7b4a4459"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://cdn.datatables.net/1.11.2/js/jquery.dataTables.min.js"></script>
+    <script class="init" type="text/javascript">$(document).ready( function () { $('table.datatable').DataTable(); } );</script>
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Super Committers" href="super-committers.html" />
+    <link rel="prev" title="Branch Cutting" href="branch-cutting.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+  <div class="ribbon">
+    <a href="https://jira.opendaylight.org/secure/CreateIssueDetails!init.jspa
+?pid=10121
+&issuetype=10104
+&components=10228
+&priority=2
+&description=version:+Chromium%0Apage:+release-process/simultaneous-release%0A%0A" target="_blank">
+      Report Issue
+    </a>
+  </div>
+  
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+  <!-- Outdated version warning banner -->
+  
+    <style>
+      body {
+        padding-top: 60px;
+     }
+    </style>
+  
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          OpenDaylight Documentation</a>
+        <span class="navbar-text navbar-version pull-left"><b>Chromium</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../downloads.html">OpenDaylight Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes/index.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started-guide/index.html">Getting Started Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-guides/index.html">Developer Guides</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../documentation.html">Documentation Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">OpenDaylight Release Process Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../javadoc.html">Java API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/index.html">OpenDaylight User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-guides/index.html">Developer Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributor-guides/index.html">Contributor Guides</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Simultaneous Release</a><ul>
+<li><a class="reference internal" href="#code-freeze">Code Freeze</a></li>
+<li><a class="reference internal" href="#release-preparations">Release Preparations</a></li>
+<li><a class="reference internal" href="#releasing-opendaylight">Releasing OpenDaylight</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Simultaneous Release</a><ul>
+<li><a class="reference internal" href="#code-freeze">Code Freeze</a></li>
+<li><a class="reference internal" href="#release-preparations">Release Preparations</a></li>
+<li><a class="reference internal" href="#releasing-opendaylight">Releasing OpenDaylight</a></li>
+</ul>
+</li>
+</ul>
+<center>
+<div class="btn-group" role="group" aria-label="...">
+    
+    <a class="btn btn-default" href="branch-cutting.html">Prev Page</a>
+    
+
+    
+    <a class="btn btn-default" href="super-committers.html">Next Page</a>
+    
+</div>
+</center>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <section id="simultaneous-release">
+<h1>Simultaneous Release<a class="headerlink" href="#simultaneous-release" title="Link to this heading">¶</a></h1>
+<p>This page explains how the OpenDaylight release process works once the TSC has
+approved a release.</p>
+<section id="code-freeze">
+<h2>Code Freeze<a class="headerlink" href="#code-freeze" title="Link to this heading">¶</a></h2>
+<p>At the first Release Candidate (RC) the <code class="docutils literal notranslate"><span class="pre">Submit</span></code> button is disabled on the
+stable branch to prevent projects from merging non-blocking patches
+into the release.</p>
+<ol class="arabic">
+<li><p>Disable <code class="docutils literal notranslate"><span class="pre">Submit</span></code> for <em>Registered Users</em> and allow permission to the
+<em>Release Engineering Team</em>
+<strong>(Helpdesk)</strong></p>
+<figure class="align-default">
+<img alt="../_images/gerrit-update-committer-rights.png" src="../_images/gerrit-update-committer-rights.png" />
+</figure>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><strong>DO NOT</strong> enable Code-Review+2 and Verified+1 to the
+Release Engineering Team during code freeze.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Enable <strong>Exclusive</strong> checkbox for the submit button to override any
+existing permissions. Code-Review and Verify permissions are only needed
+during version bumping.</p>
+</div>
+</li>
+</ol>
+<p>This step can be achieved with the self-service job to lock or unlock a Gerrit
+branch using <code class="docutils literal notranslate"><span class="pre">autorelease-gerrit-branch-lock-${STREAM}</span></code> job on Jenkins CI.</p>
+</section>
+<section id="release-preparations">
+<span id="simrel-preparations"></span><h2>Release Preparations<a class="headerlink" href="#release-preparations" title="Link to this heading">¶</a></h2>
+<p>After release candidate is built GPG sign artifacts using the
+<a class="reference external" href="https://docs.releng.linuxfoundation.org/projects/lftools/en/stable/commands/sign.html" title="(in lftools v0.37.21)"><span class="xref std std-doc">lftools sign</span></a> command.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">STAGING_REPO</span><span class="o">=</span>autorelease-1903
+<span class="nv">STAGING_PROFILE_ID</span><span class="o">=</span>abc123def456<span class="w">  </span><span class="c1"># This Profile ID is listed in Nexus &gt; Staging Profiles</span>
+lftools<span class="w"> </span>sign<span class="w"> </span>deploy-nexus<span class="w"> </span>https://nexus.opendaylight.org<span class="w"> </span><span class="nv">$STAGING_REPO</span><span class="w"> </span><span class="nv">$STAGING_PROFILE_ID</span>
+</pre></div>
+</div>
+<p>Verify the distribution-karaf file with the signature.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gpg2<span class="w"> </span>--verify<span class="w"> </span>karaf-x.y.z-<span class="si">${</span><span class="nv">RELEASE</span><span class="si">}</span>.tar.gz.asc<span class="w"> </span>karaf-x.y.z-<span class="si">${</span><span class="nv">RELEASE</span><span class="si">}</span>.tar.gz
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Projects such as OpFlex participate in the Simultaneous Release but are not
+part of the autorelease build. Ping those projects and prep their staging
+repository as well.</p>
+</div>
+</section>
+<section id="releasing-opendaylight">
+<h2>Releasing OpenDaylight<a class="headerlink" href="#releasing-opendaylight" title="Link to this heading">¶</a></h2>
+<p>The following describes the Simultaneous Release process for shipping out the
+binary and source code on release day.</p>
+<p>Bulleted actions can be performed in parallel while numbered actions should be
+done in sequence.</p>
+<ul>
+<li><p>Release the Nexus Staging repository
+<strong>(Helpdesk)</strong></p>
+<ol class="arabic simple">
+<li><p>Select both the artifacts and signature repository
+(<a class="reference internal" href="#simrel-preparations"><span class="std std-ref">created previously</span></a>) and <code class="docutils literal notranslate"><span class="pre">click</span> <span class="pre">Release</span></code>.</p></li>
+<li><p>Enter <code class="docutils literal notranslate"><span class="pre">Release</span> <span class="pre">OpenDaylight</span> <span class="pre">$RELEASE</span></code> for the description and
+<code class="docutils literal notranslate"><span class="pre">click</span> <span class="pre">confirm</span></code>.</p></li>
+</ol>
+<p><em>Perform this step for any additional projects that are participating in
+the Simultaneous Release but are not part of the autorelease build.</em></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>This task takes hours to run so kicking it off early is a good idea.</p>
+</div>
+</li>
+<li><p>Version bump for next dev cycle
+<strong>(Release Engineering Team)</strong></p>
+<ol class="arabic">
+<li><p>Run the autorelease-version-bump-${STREAM} job</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>This task takes hours to run so kicking it off early is a good idea.</p>
+</div>
+</li>
+<li><p>Enable <code class="docutils literal notranslate"><span class="pre">Code-Review+2</span></code> and <code class="docutils literal notranslate"><span class="pre">Verify+1</span></code> voting permissions
+for the <code class="docutils literal notranslate"><span class="pre">Release</span> <span class="pre">Engineering</span> <span class="pre">Team</span></code>
+<strong>(Helpdesk)</strong></p>
+<figure class="align-default">
+<img alt="../_images/gerrit-update-committer-rights.png" src="../_images/gerrit-update-committer-rights.png" />
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Enable <strong>Exclusive</strong> checkbox for the submit button to override any
+existing permissions. Code-Review and Verify permissions are only needed
+during version bumping. <strong>DO NOT</strong> enable it during code freeze.</p>
+</div>
+</li>
+<li><p>Merge all patches generated by the job</p></li>
+<li><p>Restore Gerrit permissions for <em>Registered Users</em> and disable elevated
+<em>Release Engineering Team</em> permissions
+<strong>(Helpdesk)</strong></p></li>
+</ol>
+</li>
+<li><p>Tag the release
+<strong>(Release Engineering Team)</strong></p>
+<ol class="arabic">
+<li><p>Install lftools</p>
+<p>lftools contains the version bumping scripts we need to version bump
+and tag the dev branches. We recommend using a virtualenv for this.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Skip mkvirtualenv if you already have an lftools virtualenv</span>
+mkvirtualenv<span class="w"> </span>lftools
+workon<span class="w"> </span>lftools
+pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>lftools
+</pre></div>
+</div>
+</li>
+<li><p>Pull latest autorelease repository</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">RELEASE</span><span class="o">=</span>Nitrogen-SR1
+<span class="nb">export</span><span class="w"> </span><span class="nv">STREAM</span><span class="o">=</span><span class="si">${</span><span class="nv">RELEASE</span><span class="p">//-*</span><span class="si">}</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">BRANCH</span><span class="o">=</span>origin/stable/<span class="si">${</span><span class="nv">STREAM</span><span class="p">,,</span><span class="si">}</span>
+
+<span class="c1"># No need to clean if you have already done it.</span>
+git<span class="w"> </span>clone<span class="w"> </span>--recursive<span class="w"> </span>https://git.opendaylight.org/gerrit/releng/autorelease
+<span class="nb">cd</span><span class="w"> </span>autorelease
+git<span class="w"> </span>fetch<span class="w"> </span>origin
+
+<span class="c1"># Ensure we are on the right branch. Note that we are wiping out all</span>
+<span class="c1"># modifications in the repo so backup unsaved changes before doing this.</span>
+git<span class="w"> </span>checkout<span class="w"> </span>-f
+git<span class="w"> </span>checkout<span class="w"> </span><span class="si">${</span><span class="nv">BRANCH</span><span class="p">,,</span><span class="si">}</span>
+git<span class="w"> </span>clean<span class="w"> </span>-xdff
+git<span class="w"> </span>submodule<span class="w"> </span>foreach<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>-f
+git<span class="w"> </span>submodule<span class="w"> </span>foreach<span class="w"> </span>git<span class="w"> </span>clean<span class="w"> </span>-xdff
+git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init
+
+<span class="c1"># Ensure git review is setup</span>
+git<span class="w"> </span>review<span class="w"> </span>-s
+git<span class="w"> </span>submodule<span class="w"> </span>foreach<span class="w"> </span><span class="s1">&#39;git review -s&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Publish release tags</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">BUILD_NUM</span><span class="o">=</span><span class="m">55</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">OPENJDKVER</span><span class="o">=</span><span class="s2">&quot;openjdk21&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATCH_URL</span><span class="o">=</span><span class="s2">&quot;https://s3-logs.opendaylight.org/logs/releng/vex-yul-odl-jenkins-1/autorelease-release-</span><span class="si">${</span><span class="nv">STREAM</span><span class="p">,,</span><span class="si">}</span><span class="s2">-mvn39-</span><span class="si">${</span><span class="nv">OPENJDKVER</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">BUILD_NUM</span><span class="si">}</span><span class="s2">/patches.tar.gz&quot;</span>
+./scripts/release-tags.sh<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">RELEASE</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>/tmp/patches<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$PATCH_URL</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</li>
+<li><p>Notify Community and Website teams</p>
+<ol class="arabic">
+<li><p>Update downloads page</p>
+<p>Submit a patch to the ODL docs project to update the
+<a class="reference external" href="https://docs.opendaylight.org/en/latest/downloads.html">downloads</a>
+page with the latest binaries and packages <strong>(Release Engineering Team)</strong></p>
+</li>
+<li><p>Email dev/release/tsc mailing lists announcing release binaries location
+<strong>(Release Engineering Team)</strong></p></li>
+<li><p>Email dev/release/tsc mailing lists to notify of tagging and version bump
+completion
+<strong>(Release Engineering Team)</strong></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This step is performed after Version Bump and Tagging steps are
+complete.</p>
+</div>
+</li>
+</ol>
+</li>
+<li><p>Generate Service Release notes</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If this is a major release (eg. Chromium) as opposed to a Service Release
+(eg. Chromium-SR1). Skip this step.</p>
+</div>
+<p>For major releases the notes come from the projects themselves in the docs
+repository via the <cite>docs/releaset-notes/projects</cite> directory.</p>
+<p>For service releases (SRs) we need to generate service release notes. This
+can be performed by running the autorelease-generate-release-notes-$STREAM
+job.</p>
+<ol class="arabic">
+<li><p>Run the autorelease-generate-release-notes-${STREAM} job
+<strong>(Release Engineering Team)</strong></p>
+<p>Trigger this job by leaving a Gerrit comment
+<code class="docutils literal notranslate"><span class="pre">generate-release-notes</span> <span class="pre">Carbon-SR2</span></code></p>
+</li>
+</ol>
+<p>Release notes can also be manually generated with the script:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>stable/<span class="si">${</span><span class="nv">BRANCH</span><span class="p">,,</span><span class="si">}</span>
+./scripts/release-notes-generator.sh<span class="w"> </span><span class="si">${</span><span class="nv">RELEASE</span><span class="si">}</span>
+</pre></div>
+</div>
+<p>A <code class="docutils literal notranslate"><span class="pre">release-notes.rst</span></code> will be generated in the working directory. Submit
+this file as <code class="docutils literal notranslate"><span class="pre">release-notes-sr1.rst</span></code> (update the <code class="docutils literal notranslate"><span class="pre">sr</span></code> as necessary) to the
+docs project.</p>
+</li>
+</ul>
+</section>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/release-process/simultaneous-release.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2016-2026, OpenDaylight Project.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 8.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

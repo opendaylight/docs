@@ -1,0 +1,661 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Developing apps on the OpenDaylight controller &#8212; OpenDaylight Documentation Chromium documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css?v=0bf093e7" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.2/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/ribbon.css?v=cb953b18" />
+    <link rel="stylesheet" href="../_static/css/warning-header.css" type="text/css" />
+    <script src="../_static/documentation_options.js?v=7b4a4459"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://cdn.datatables.net/1.11.2/js/jquery.dataTables.min.js"></script>
+    <script class="init" type="text/javascript">$(document).ready( function () { $('table.datatable').DataTable(); } );</script>
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Integrating Animal Sniffer with OpenDaylight projects" href="integrating-animal-sniffer-plugin-with-projects.html" />
+    <link rel="prev" title="Developer Guides" href="index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+  <div class="ribbon">
+    <a href="https://jira.opendaylight.org/secure/CreateIssueDetails!init.jspa
+?pid=10121
+&issuetype=10104
+&components=10228
+&priority=2
+&description=version:+Chromium%0Apage:+developer-guides/developing-apps-on-the-opendaylight-controller%0A%0A" target="_blank">
+      Report Issue
+    </a>
+  </div>
+  
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+  <!-- Outdated version warning banner -->
+  
+    <style>
+      body {
+        padding-top: 60px;
+     }
+    </style>
+  
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          OpenDaylight Documentation</a>
+        <span class="navbar-text navbar-version pull-left"><b>Chromium</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../downloads.html">OpenDaylight Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes/index.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started-guide/index.html">Getting Started Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Developer Guides</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../documentation.html">Documentation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-process/index.html">OpenDaylight Release Process Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../javadoc.html">Java API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/index.html">OpenDaylight User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Developer Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributor-guides/index.html">Contributor Guides</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Developing apps on the OpenDaylight controller</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li><a class="reference internal" href="#building-an-example-module">Building an Example module</a></li>
+<li><a class="reference internal" href="#defining-a-simple-helloworld-rpc">Defining a simple HelloWorld RPC</a></li>
+<li><a class="reference internal" href="#add-a-simple-helloworld-rpc-api">Add a simple HelloWorld RPC API</a></li>
+<li><a class="reference internal" href="#implement-the-helloworld-rpc-api">Implement the HelloWorld RPC API</a></li>
+<li><a class="reference internal" href="#execute-the-hello-project-for-the-first-time">Execute the <em>hello</em> project for the first time</a></li>
+<li><a class="reference internal" href="#test-the-hello-world-rpc-via-rest">Test the <em>hello-world</em> RPC via REST</a><ul>
+<li><a class="reference internal" href="#using-the-api-explorer-through-http">Using the API Explorer through HTTP</a></li>
+<li><a class="reference internal" href="#using-a-browser-rest-client">Using a browser REST client</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Developing apps on the OpenDaylight controller</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li><a class="reference internal" href="#building-an-example-module">Building an Example module</a></li>
+<li><a class="reference internal" href="#defining-a-simple-helloworld-rpc">Defining a simple HelloWorld RPC</a></li>
+<li><a class="reference internal" href="#add-a-simple-helloworld-rpc-api">Add a simple HelloWorld RPC API</a></li>
+<li><a class="reference internal" href="#implement-the-helloworld-rpc-api">Implement the HelloWorld RPC API</a></li>
+<li><a class="reference internal" href="#execute-the-hello-project-for-the-first-time">Execute the <em>hello</em> project for the first time</a></li>
+<li><a class="reference internal" href="#test-the-hello-world-rpc-via-rest">Test the <em>hello-world</em> RPC via REST</a><ul>
+<li><a class="reference internal" href="#using-the-api-explorer-through-http">Using the API Explorer through HTTP</a></li>
+<li><a class="reference internal" href="#using-a-browser-rest-client">Using a browser REST client</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+</ul>
+<center>
+<div class="btn-group" role="group" aria-label="...">
+    
+    <a class="btn btn-default" href="index.html">Prev Page</a>
+    
+
+    
+    <a class="btn btn-default" href="integrating-animal-sniffer-plugin-with-projects.html">Next Page</a>
+    
+</div>
+</center>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <section id="developing-apps-on-the-opendaylight-controller">
+<h1>Developing apps on the OpenDaylight controller<a class="headerlink" href="#developing-apps-on-the-opendaylight-controller" title="Link to this heading">¶</a></h1>
+<p>This section provides the information required to develop apps on
+an OpenDaylight controller. Apps can be developed either within the
+controller using a Model-Driven SAL (MD-SAL) archetype or via an
+external app using the RESTCONF API to communicate with the controller.</p>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">¶</a></h2>
+<p>This section starts app development within an OpenDaylight controller.</p>
+<p>Perform the following steps to develop an app:</p>
+<ol class="arabic simple">
+<li><p>Create a local repository for the code using a simple build process.</p></li>
+<li><p>Start the OpenDaylight controller.</p></li>
+<li><p>Test a simple remote procedure call (RPC) that was created based on
+the principle of <em>hello world</em>.</p></li>
+</ol>
+</section>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">¶</a></h2>
+<p>The following are the prerequisites for app creation:</p>
+<ul>
+<li><p>A development environment with the following setup and working correctly
+from the shell:</p>
+<ul>
+<li><p>Maven 3.8.3 or later</p></li>
+<li><p>Java 11-compliant JDK</p></li>
+<li><p>An appropriate Maven settings.xml file. One way to get the
+default OpenDaylight settings.xml file is:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>cp<span class="w"> </span>-n<span class="w"> </span>~/.m2/settings.xml<span class="o">{</span>,.orig<span class="o">}</span>
+wget<span class="w"> </span>-q<span class="w"> </span>-O<span class="w"> </span>-<span class="w"> </span>https://raw.githubusercontent.com/opendaylight/odlparent/master/settings.xml<span class="w"> </span>&gt;<span class="w"> </span>~/.m2/settings.xml
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For Linux or Mac OS X development operating systems, the default local
+repository is ~/.m2/repository. For other platforms, the default local
+repository location varies.</p>
+</div>
+</section>
+<section id="building-an-example-module">
+<h2>Building an Example module<a class="headerlink" href="#building-an-example-module" title="Link to this heading">¶</a></h2>
+<p>Perform the following steps to develop an app:</p>
+<ol class="arabic">
+<li><p>Create an <em>Example</em> project using Maven and an archetype called the
+<em>opendaylight-startup-archetype</em>. For first time downloads, this project
+will take some time to pull all the code from the remote repository.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mvn<span class="w"> </span>archetype:generate<span class="w"> </span>-DarchetypeGroupId<span class="o">=</span>org.opendaylight.archetypes<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-DarchetypeArtifactId<span class="o">=</span>opendaylight-startup-archetype<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-DarchetypeCatalog<span class="o">=</span>remote<span class="w"> </span>-DarchetypeVersion<span class="o">=</span>&lt;VERSION&gt;
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The correct VERSION in the startup-archetype generation command depends on the desired
+Simultaneous Release, but this is valid only until the Boron release (version 1.2.2).</p>
+</div>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">Archetype versions
+ :widths: auto
+ :header-rows: 1</span><a class="headerlink" href="#id1" title="Link to this table">¶</a></caption>
+<tbody>
+<tr class="row-odd"><td><p>OpenDaylight Simultaneous Release</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">opendaylight-startup-archetype</span></code> version</p></td>
+</tr>
+<tr class="row-even"><td><p>Boron Development</p></td>
+<td><p>1.2.2-SNAPSHOT</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Update the properties values. Ensure that the values for the <code class="docutils literal notranslate"><span class="pre">groupId</span></code> and
+the <code class="docutils literal notranslate"><span class="pre">artifactId</span></code> are in lower case.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Define value for property &#39;groupId&#39;: org.opendaylight.example
+Define value for property &#39;artifactId&#39;: example
+[INFO] Using property: version = 0.1.0-SNAPSHOT
+Define value for property &#39;package&#39; org.opendaylight.example: :
+Define value for property &#39;classPrefix&#39; Example: :
+Define value for property &#39;copyright&#39;: Copyright (c) 2021 Yoyodyne, Inc.
+[INFO] Using property: copyrightYear = 2021
+</pre></div>
+</div>
+</li>
+<li><p>Accept the default value of <code class="docutils literal notranslate"><span class="pre">classPrefix</span></code>, that is:
+<code class="docutils literal notranslate"><span class="pre">(${artifactId.substring(0,1).toUpperCase()}${artifactId.substring(1)})</span></code>.
+The <code class="docutils literal notranslate"><span class="pre">classPrefix</span></code> creates a Java Class Prefix by capitalizing the first
+character of the <code class="docutils literal notranslate"><span class="pre">artifactId</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This will create a directory with the name given to <code class="docutils literal notranslate"><span class="pre">artifactId</span></code>
+in the above dialog, with the following contents.</p>
+</div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>.gitreview
+api/
+artifacts/
+cli/
+features/
+impl/
+it/
+karaf/
+pom.xml
+src/
+</pre></div>
+</div>
+</li>
+<li><p>Build the <em>example</em> project.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Build time varies depending on the development machine specification.
+Ensure that you are in the project’s root directory (example/,) and then
+issue the the following build command.</p>
+</div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mvn<span class="w"> </span>clean<span class="w"> </span>install
+</pre></div>
+</div>
+</li>
+<li><p>Initialize the <em>example</em> project.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>karaf/target/assembly/bin
+ls
+./karaf
+</pre></div>
+</div>
+</li>
+<li><p>Wait for the Karaf CLI to appear. Wait for OpenDaylight to fully load
+all components. This can take a minute or two after the prompt appears.
+Check the CPU on the dev machine, specifically the Java process to see
+when it slows down.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>opendaylight-user@root&gt;
+</pre></div>
+</div>
+</li>
+<li><p>Verify if the “example” module is built and search for the log entry
+that includes the entry <em>ExampleProvider Session Initiated</em>.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>log:display<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>Example
+</pre></div>
+</div>
+</li>
+<li><p>Enter the following command to shutdown OpenDaylight through the console:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>shutdown<span class="w"> </span>-f
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="defining-a-simple-helloworld-rpc">
+<h2>Defining a simple HelloWorld RPC<a class="headerlink" href="#defining-a-simple-helloworld-rpc" title="Link to this heading">¶</a></h2>
+<ol class="arabic">
+<li><p>Build a <em>hello</em> example from the Maven archetype <em>opendaylight-startup-archetype</em>,
+same as what was done in the previous steps.</p></li>
+<li><p>View the entry point to understand the origins of the log line. The
+entry point starts in the <code class="docutils literal notranslate"><span class="pre">./impl</span></code> project:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>impl/src/main/java/org/opendaylight/hello/impl/HelloProvider.java
+</pre></div>
+</div>
+</li>
+<li><p>Add any new content that you are doing in your implementation by
+using the <code class="docutils literal notranslate"><span class="pre">HelloProvider.init</span></code> method. It is analogous to an Activator.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * Method called when the blueprint container is created.</span>
+<span class="cm"> */</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">init</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">LOG</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">&quot;HelloProvider Session Initiated&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="add-a-simple-helloworld-rpc-api">
+<h2>Add a simple HelloWorld RPC API<a class="headerlink" href="#add-a-simple-helloworld-rpc-api" title="Link to this heading">¶</a></h2>
+<ol class="arabic">
+<li><p>Navigate to <code class="docutils literal notranslate"><span class="pre">api/src/main/yang</span></code>.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>api/src/main/yang/
+</pre></div>
+</div>
+</li>
+<li><p>Edit the <code class="docutils literal notranslate"><span class="pre">hello.yang</span></code> file. In the following example, we are adding
+the code in a YANG module to define the <em>hello-world</em> RPC:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">hello</span> <span class="p">{</span>
+    <span class="n">yang</span><span class="o">-</span><span class="n">version</span> <span class="mf">1.1</span><span class="p">;</span>
+    <span class="n">namespace</span> <span class="s2">&quot;urn:opendaylight:params:xml:ns:yang:hello&quot;</span><span class="p">;</span>
+    <span class="n">prefix</span> <span class="s2">&quot;hello&quot;</span><span class="p">;</span>
+
+    <span class="n">revision</span> <span class="s2">&quot;2021-03-21&quot;</span> <span class="p">{</span>
+        <span class="n">description</span> <span class="s2">&quot;Initial revision of hello model&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">rpc</span> <span class="n">hello</span><span class="o">-</span><span class="n">world</span> <span class="p">{</span>
+        <span class="nb">input</span> <span class="p">{</span>
+            <span class="n">leaf</span> <span class="n">name</span> <span class="p">{</span>
+                <span class="nb">type</span> <span class="n">string</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">output</span> <span class="p">{</span>
+            <span class="n">leaf</span> <span class="n">greeting</span> <span class="p">{</span>
+                <span class="nb">type</span> <span class="n">string</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>Return to the <code class="docutils literal notranslate"><span class="pre">hello/api</span></code> directory. Do the following to build the API:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>../../../
+mvn<span class="w"> </span>clean<span class="w"> </span>install
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="implement-the-helloworld-rpc-api">
+<h2>Implement the HelloWorld RPC API<a class="headerlink" href="#implement-the-helloworld-rpc-api" title="Link to this heading">¶</a></h2>
+<ol class="arabic">
+<li><p>Define the HelloService that was invoked through the <em>hello-world</em> API.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>../impl/src/main/java/org/opendaylight/hello/impl/
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">HelloProvider.java</span></code> file is in the current directory. Register the
+RPC that you created in the <em>hello.yang</em> file in the
+<code class="docutils literal notranslate"><span class="pre">HelloProvider.java</span></code> file. You can either edit the <code class="docutils literal notranslate"><span class="pre">HelloProvider.java</span></code>
+to match what is below or simply replace it with the code below.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm"> * Copyright © 2021 Copyright (c) 2021 Yoyodyne, Inc. and others.  All rights reserved.</span>
+<span class="cm"> *</span>
+<span class="cm"> * This program and the accompanying materials are made available under the</span>
+<span class="cm"> * terms of the Eclipse Public License v1.0 which accompanies this distribution,</span>
+<span class="cm"> * and is available at http://www.eclipse.org/legal/epl-v10.html</span>
+<span class="cm"> */</span>
+<span class="kn">package</span><span class="w"> </span><span class="nn">org.opendaylight.hello.impl</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.google.common.util.concurrent.ListenableFuture</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.opendaylight.mdsal.binding.api.DataBroker</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.opendaylight.yang.gen.v1.urn.opendaylight.params.xml.ns.yang.hello.rev210321.HelloService</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.opendaylight.yang.gen.v1.urn.opendaylight.params.xml.ns.yang.hello.rev210321.HelloWorldInput</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.opendaylight.yang.gen.v1.urn.opendaylight.params.xml.ns.yang.hello.rev210321.HelloWorldOutput</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.opendaylight.yang.gen.v1.urn.opendaylight.params.xml.ns.yang.hello.rev210321.HelloWorldOutputBuilder</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.opendaylight.yangtools.yang.common.RpcResult</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.opendaylight.yangtools.yang.common.RpcResultBuilder</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.slf4j.Logger</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.slf4j.LoggerFactory</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">HelloProvider</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">HelloService</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Logger</span><span class="w"> </span><span class="n">LOG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LoggerFactory</span><span class="p">.</span><span class="na">getLogger</span><span class="p">(</span><span class="n">HelloProvider</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">DataBroker</span><span class="w"> </span><span class="n">dataBroker</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">HelloProvider</span><span class="p">(</span><span class="kd">final</span><span class="w"> </span><span class="n">DataBroker</span><span class="w"> </span><span class="n">dataBroker</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">dataBroker</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dataBroker</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">ListenableFuture</span><span class="o">&lt;</span><span class="n">RpcResult</span><span class="o">&lt;</span><span class="n">HelloWorldOutput</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="nf">helloWorld</span><span class="p">(</span><span class="n">HelloWorldInput</span><span class="w"> </span><span class="n">input</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">HelloWorldOutputBuilder</span><span class="w"> </span><span class="n">helloBuilder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HelloWorldOutputBuilder</span><span class="p">();</span>
+<span class="w">        </span><span class="n">helloBuilder</span><span class="p">.</span><span class="na">setGreeting</span><span class="p">(</span><span class="s">&quot;Hello &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">input</span><span class="p">.</span><span class="na">getName</span><span class="p">());</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">RpcResultBuilder</span><span class="p">.</span><span class="na">success</span><span class="p">(</span><span class="n">helloBuilder</span><span class="p">.</span><span class="na">build</span><span class="p">()).</span><span class="na">buildFuture</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Method called when the blueprint container is created.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">init</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">LOG</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">&quot;HelloProvider Session Initiated&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Method called when the blueprint container is destroyed.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">close</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">LOG</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">&quot;HelloProvider Closed&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>Update Blueprint XML file.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>../../../../../resources/OSGI-INF/blueprint/
+</pre></div>
+</div>
+<p>You can either edit the <code class="docutils literal notranslate"><span class="pre">impl-blueprint.xml</span></code> to match what is below
+or simply replace it with the XML below.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="cm">&lt;!-- vi: set et smarttab sw=4 tabstop=4: --&gt;</span>
+<span class="cm">&lt;!--</span>
+<span class="cm">Copyright © 2021 Copyright (c) 2021 Yoyodyne, Inc. and others. All rights reserved.</span>
+
+<span class="cm">This program and the accompanying materials are made available under the</span>
+<span class="cm">terms of the Eclipse Public License v1.0 which accompanies this distribution,</span>
+<span class="cm">and is available at http://www.eclipse.org/legal/epl-v10.html</span>
+<span class="cm">--&gt;</span>
+<span class="nt">&lt;blueprint</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://www.osgi.org/xmlns/blueprint/v1.0.0&quot;</span>
+<span class="w">  </span><span class="na">xmlns:odl=</span><span class="s">&quot;http://opendaylight.org/xmlns/blueprint/v1.0.0&quot;</span>
+<span class="w">  </span><span class="na">odl:use-default-for-reference-types=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
+
+<span class="w">  </span><span class="nt">&lt;reference</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;dataBroker&quot;</span>
+<span class="w">    </span><span class="na">interface=</span><span class="s">&quot;org.opendaylight.mdsal.binding.api.DataBroker&quot;</span>
+<span class="w">    </span><span class="na">odl:type=</span><span class="s">&quot;default&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+
+<span class="w">  </span><span class="nt">&lt;bean</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;provider&quot;</span>
+<span class="w">    </span><span class="na">class=</span><span class="s">&quot;org.opendaylight.hello.impl.HelloProvider&quot;</span>
+<span class="w">    </span><span class="na">init-method=</span><span class="s">&quot;init&quot;</span><span class="w"> </span><span class="na">destroy-method=</span><span class="s">&quot;close&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;argument</span><span class="w"> </span><span class="na">ref=</span><span class="s">&quot;dataBroker&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/bean&gt;</span>
+
+<span class="w">  </span><span class="nt">&lt;odl:rpc-implementation</span><span class="w"> </span><span class="na">ref=</span><span class="s">&quot;provider&quot;</span><span class="nt">/&gt;</span>
+
+<span class="nt">&lt;/blueprint&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Optionally, users can build the Java classes that will register
+the new RPC. This is useful to test the edits that were made to
+<code class="docutils literal notranslate"><span class="pre">HelloProvider.java</span></code>.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>../../../../../
+mvn<span class="w"> </span>clean<span class="w"> </span>install
+</pre></div>
+</div>
+</li>
+<li><p>Return to the top level directory</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>../
+</pre></div>
+</div>
+</li>
+<li><p>Build the entire <em>hello</em> again. This will pickup the new changes,
+and then build them into the project:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mvn<span class="w"> </span>clean<span class="w"> </span>install
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="execute-the-hello-project-for-the-first-time">
+<h2>Execute the <em>hello</em> project for the first time<a class="headerlink" href="#execute-the-hello-project-for-the-first-time" title="Link to this heading">¶</a></h2>
+<ol class="arabic">
+<li><p>Run karaf</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>karaf/target/assembly/bin
+./karaf
+</pre></div>
+</div>
+</li>
+<li><p>Wait for the project to load completely. Then view the log to see the
+loaded <em>Hello</em> Module:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>log:display<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>Hello
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="test-the-hello-world-rpc-via-rest">
+<h2>Test the <em>hello-world</em> RPC via REST<a class="headerlink" href="#test-the-hello-world-rpc-via-rest" title="Link to this heading">¶</a></h2>
+<p>There are a lot of ways to test a RPC. The following are a few examples.</p>
+<ol class="arabic simple">
+<li><p>Using the API Explorer through HTTP</p></li>
+<li><p>Using a browser REST client</p></li>
+</ol>
+<section id="using-the-api-explorer-through-http">
+<h3>Using the API Explorer through HTTP<a class="headerlink" href="#using-the-api-explorer-through-http" title="Link to this heading">¶</a></h3>
+<ol class="arabic">
+<li><p>Navigate to <a class="reference external" href="http://localhost:8181/openapi/explorer/index.html">openapi
+UI</a> with your
+web browser.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the URL link for <em>openapi UI</em>, change <em>localhost</em> to the IP/Host
+name to reflect your development machine’s network address.</p>
+</div>
+</li>
+<li><p>Enter the username and password.
+By default the credentials are  <em>admin/admin</em>.</p></li>
+<li><p>Select</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>hello
+</pre></div>
+</div>
+</li>
+<li><p>Select</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">POST</span> <span class="o">/</span><span class="n">rests</span><span class="o">/</span><span class="n">operations</span><span class="o">/</span><span class="n">hello</span><span class="p">:</span><span class="n">hello</span><span class="o">-</span><span class="n">world</span>
+</pre></div>
+</div>
+</li>
+<li><p>Click on the <strong>Try it out</strong> button.</p></li>
+<li><p>Provide the required request input.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;input&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Your Name&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>Select <strong>application/json</strong> for <em>Media type</em> in the <em>Responses</em> section.</p></li>
+<li><p>Click the <strong>Execute</strong> button.</p></li>
+<li><p>In the response body you should see</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;hello:output&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;greeting&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Hello Your Name&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="using-a-browser-rest-client">
+<h3>Using a browser REST client<a class="headerlink" href="#using-a-browser-rest-client" title="Link to this heading">¶</a></h3>
+<p>Next, use a browser to POST a REST client request.
+For example, use the following information in the Firefox plugin:</p>
+<p><em>RESTClient</em> <a class="reference external" href="https://github.com/chao/RESTClient">https://github.com/chao/RESTClient</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">POST</span><span class="p">:</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">8181</span><span class="o">/</span><span class="n">rests</span><span class="o">/</span><span class="n">operations</span><span class="o">/</span><span class="n">hello</span><span class="p">:</span><span class="n">hello</span><span class="o">-</span><span class="n">world</span>
+</pre></div>
+</div>
+<p>Header:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Accept</span><span class="p">:</span> <span class="n">application</span><span class="o">/</span><span class="n">json</span>
+<span class="n">Content</span><span class="o">-</span><span class="n">Type</span><span class="p">:</span> <span class="n">application</span><span class="o">/</span><span class="n">json</span>
+<span class="n">Authorization</span><span class="p">:</span> <span class="n">Basic</span> <span class="n">admin</span> <span class="n">admin</span>
+</pre></div>
+</div>
+<p>Body:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;input&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Your Name&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In the response body you should see:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;hello:output&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;greeting&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Hello Your Name&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading">¶</a></h2>
+<p>If you get a response code 500 while attempting to
+<code class="docutils literal notranslate"><span class="pre">POST</span> <span class="pre">/rests/operations/hello:hello-world</span></code>, check the file:
+<code class="docutils literal notranslate"><span class="pre">impl/src/main/resources/OSGI-INF/blueprint/impl-blueprint.xml</span></code>
+and make sure the following element is specified for <code class="docutils literal notranslate"><span class="pre">&lt;blueprint&gt;</span></code>.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;odl:rpc-implementation</span><span class="w"> </span><span class="na">ref=</span><span class="s">&quot;provider&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/developer-guides/developing-apps-on-the-opendaylight-controller.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2016-2026, OpenDaylight Project.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 8.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

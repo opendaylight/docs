@@ -1,0 +1,382 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Transport PCE &#8212; OpenDaylight Documentation Chromium documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-sphinx.css?v=0bf093e7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.2/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/ribbon.css?v=cb953b18" />
+    <link rel="stylesheet" href="../../_static/css/warning-header.css" type="text/css" />
+    <script src="../../_static/documentation_options.js?v=7b4a4459"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://cdn.datatables.net/1.11.2/js/jquery.dataTables.min.js"></script>
+    <script class="init" type="text/javascript">$(document).ready( function () { $('table.datatable').DataTable(); } );</script>
+    <link rel="icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="YANG Tools" href="yangtools.html" />
+    <link rel="prev" title="OVSDB" href="ovsdb.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+  <div class="ribbon">
+    <a href="https://jira.opendaylight.org/secure/CreateIssueDetails!init.jspa
+?pid=10121
+&issuetype=10104
+&components=10228
+&priority=2
+&description=version:+Chromium%0Apage:+release-notes/projects/transportpce%0A%0A" target="_blank">
+      Report Issue
+    </a>
+  </div>
+  
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+  <!-- Outdated version warning banner -->
+  
+    <style>
+      body {
+        padding-top: 60px;
+     }
+    </style>
+  
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+          OpenDaylight Documentation</a>
+        <span class="navbar-text navbar-version pull-left"><b>Chromium</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../downloads.html">OpenDaylight Downloads</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started-guide/index.html">Getting Started Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-guides/index.html">Developer Guides</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../documentation.html">Documentation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release-process/index.html">OpenDaylight Release Process Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../javadoc.html">Java API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/index.html">OpenDaylight User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-guides/index.html">Developer Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributor-guides/index.html">Contributor Guides</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Transport PCE</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#behavior-feature-changes">Behavior/Feature Changes</a></li>
+<li><a class="reference internal" href="#new-features">New Features</a></li>
+<li><a class="reference internal" href="#deprecated-features">Deprecated Features</a></li>
+<li><a class="reference internal" href="#resolved-issues">Resolved Issues</a></li>
+<li><a class="reference internal" href="#known-issues">Known Issues</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Transport PCE</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#behavior-feature-changes">Behavior/Feature Changes</a></li>
+<li><a class="reference internal" href="#new-features">New Features</a></li>
+<li><a class="reference internal" href="#deprecated-features">Deprecated Features</a></li>
+<li><a class="reference internal" href="#resolved-issues">Resolved Issues</a></li>
+<li><a class="reference internal" href="#known-issues">Known Issues</a></li>
+</ul>
+</li>
+</ul>
+<center>
+<div class="btn-group" role="group" aria-label="...">
+    
+    <a class="btn btn-default" href="ovsdb.html">Prev Page</a>
+    
+
+    
+    <a class="btn btn-default" href="yangtools.html">Next Page</a>
+    
+</div>
+</center>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <section id="transport-pce">
+<h1>Transport PCE<a class="headerlink" href="#transport-pce" title="Link to this heading">¶</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">¶</a></h2>
+<p>Transport PCE is an OpenDaylight controller feature whose primary function is to control high rate transport services.
+To that end, it controls the infrastructure of an optical transport network using a non-proprietary South Bound Interface (SBI).</p>
+<p>The controlled transport infrastructure includes a WDM (Wave Division Multiplexing) layer and an OTN
+(optical transport network) layer. The WDM layer is built from ROADMs (reconfigurable optical add-drop multiplexer)
+with colorless, directionless and contention-less features. The OTN layer is built from transponders,
+muxponders or switchponders which include OTN switching functionalities.</p>
+<p>Transport PCE leverages OpenROADM Multi-Source-Agreement (MSA), which defines interoperability specifications,
+consisting of both optical interoperability and YANG data models.</p>
+<p>The TransportPCE implementation includes:</p>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">Transport PCE implementation</span><a class="headerlink" href="#id1" title="Link to this table">¶</a></caption>
+<colgroup>
+<col style="width: 28.6%" />
+<col style="width: 71.4%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Feature</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Northbound API</strong></p></td>
+<td><p>These APIs are for higher level applications, implemented in the Service Handler bundle.
+It relies on the service model defined in the MSA.
+A minimal experimental support of TAPI topology is also proposed but is not installed by default.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Renderer and OLM</strong></p></td>
+<td><p>The renderer and OLM (Optical Line Management) bundles allow configuring OpenROADM devices
+through a southbound NETCONF/YANG interface (based on the MSA device models).
+This release supports the OpenROADM devices version 1.2.1 version 2.2.1.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Topology Management</strong></p></td>
+<td><p>This feature is based on the defined MSA network model.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Path Calculation Engine (PCE)</strong></p></td>
+<td><p>PCE here has a different meaning than the BGPCEP project since it is not based on (G)MPLS.
+This bundle allows to compute path across the topology to create services. Impairment aware path computation
+can be delegated to a GNPy server (hardcoded server address configuration and limited support at that time)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Inventory</strong></p></td>
+<td><p>This feature is not installed by default.
+It proposes an experimental support for an external inventory DB currently limited to 1.2.1 OpenROADM devices.</p></td>
+</tr>
+</tbody>
+</table>
+<p>The internal RPCs between those modules are defined in the Transport Service Path models.</p>
+</section>
+<section id="behavior-feature-changes">
+<h2>Behavior/Feature Changes<a class="headerlink" href="#behavior-feature-changes" title="Link to this heading">¶</a></h2>
+<p>None.</p>
+</section>
+<section id="new-features">
+<h2>New Features<a class="headerlink" href="#new-features" title="Link to this heading">¶</a></h2>
+<p>None.</p>
+</section>
+<section id="deprecated-features">
+<h2>Deprecated Features<a class="headerlink" href="#deprecated-features" title="Link to this heading">¶</a></h2>
+<p>None.</p>
+</section>
+<section id="resolved-issues">
+<h2>Resolved Issues<a class="headerlink" href="#resolved-issues" title="Link to this heading">¶</a></h2>
+<p>The following table lists the issues resolved in this release.</p>
+<table class="datatable docutils align-default" id="id2">
+<caption><span class="caption-text">Issues resolved in versions Vadadium through Vadadium (<a class="reference external" href="https://jira.opendaylight.org/issues/?jql=project%20%3D%20TRNSPRTPCE%20AND%20resolution%20is%20not%20EMPTY%20AND%20fixVersion%20in%20%28Vadadium%29%20ORDER%20BY%20type%20ASC">JIRA</a>)</span><a class="headerlink" href="#id2" title="Link to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Key</p></th>
+<th class="head"><p>Summary</p></th>
+<th class="head"><p>Resolution</p></th>
+<th class="head"><p>Fix Version(s)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><img alt="Bug" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/TRNSPRTPCE-894">TRNSPRTPCE-894</a></p></td>
+<td><p>Potential IndexOutOfBoundsException during spectrum allocation</p></td>
+<td><p>Done</p></td>
+<td><p>Vadadium</p></td>
+</tr>
+<tr class="row-odd"><td><img alt="Bug" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/TRNSPRTPCE-893">TRNSPRTPCE-893</a></p></td>
+<td><p>XmlDataConverterTest fails</p></td>
+<td><p>Done</p></td>
+<td><p>Vadadium</p></td>
+</tr>
+<tr class="row-even"><td><img alt="Bug" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/TRNSPRTPCE-891">TRNSPRTPCE-891</a></p></td>
+<td><p>Backwards logic in TapiContext.deleteConnection(…)</p></td>
+<td><p>Done</p></td>
+<td><p>Vadadium</p></td>
+</tr>
+<tr class="row-odd"><td><img alt="Bug" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/TRNSPRTPCE-890">TRNSPRTPCE-890</a></p></td>
+<td><p>TopologyUtils.createOtnTopology() throws NPE</p></td>
+<td><p>Done</p></td>
+<td><p>Vadadium</p></td>
+</tr>
+<tr class="row-even"><td><img alt="Bug" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/TRNSPRTPCE-888">TRNSPRTPCE-888</a></p></td>
+<td><p>Update the transportpce-models project structure</p></td>
+<td><p>Done</p></td>
+<td><p>Vadadium</p></td>
+</tr>
+<tr class="row-odd"><td><img alt="Bug" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/TRNSPRTPCE-886">TRNSPRTPCE-886</a></p></td>
+<td><p>Spanloss calculation bugfixes</p></td>
+<td><p>Done</p></td>
+<td><p>Titanium, Vadadium</p></td>
+</tr>
+<tr class="row-even"><td><img alt="Bug" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/TRNSPRTPCE-885">TRNSPRTPCE-885</a></p></td>
+<td><p>Set OperationalMode in PathDescription</p></td>
+<td><p>Done</p></td>
+<td><p>Vadadium</p></td>
+</tr>
+<tr class="row-odd"><td><img alt="Bug" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/TRNSPRTPCE-884">TRNSPRTPCE-884</a></p></td>
+<td><p>PceCalculation.validateNode raise an NPE building new PceNode for OC transponder.</p></td>
+<td><p>Done</p></td>
+<td><p>Vadadium</p></td>
+</tr>
+<tr class="row-even"><td><img alt="Bug" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/TRNSPRTPCE-883">TRNSPRTPCE-883</a></p></td>
+<td><p>Correct Bugs in implementation of get-topology-list</p></td>
+<td><p>Done</p></td>
+<td><p>Titanium, Vadadium</p></td>
+</tr>
+<tr class="row-odd"><td><img alt="Bug" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/TRNSPRTPCE-882">TRNSPRTPCE-882</a></p></td>
+<td><p>Reduce Technical Debt</p></td>
+<td><p>Done</p></td>
+<td><p>Titanium, Vadadium</p></td>
+</tr>
+<tr class="row-even"><td><img alt="Bug" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/TRNSPRTPCE-881">TRNSPRTPCE-881</a></p></td>
+<td><p>Fix bug in TAPI topology when mounting an OpenROADM RDM node</p></td>
+<td><p>Done</p></td>
+<td><p>Titanium, Vadadium</p></td>
+</tr>
+<tr class="row-odd"><td><img alt="Improvement" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/TRNSPRTPCE-892">TRNSPRTPCE-892</a></p></td>
+<td><p>Potential NPE when deleting connectivity service in TapiContext.deleteConnectivityService(Uuid serviceUuid)</p></td>
+<td><p>Done</p></td>
+<td><p>Vadadium</p></td>
+</tr>
+<tr class="row-even"><td><img alt="Improvement" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/TRNSPRTPCE-880">TRNSPRTPCE-880</a></p></td>
+<td><p>Add support for OpenROADM 13.1.1 models</p></td>
+<td><p>Done</p></td>
+<td><p>Titanium, Vadadium</p></td>
+</tr>
+<tr class="row-odd"><td><img alt="New Feature" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/TRNSPRTPCE-252">TRNSPRTPCE-252</a></p></td>
+<td><p>Support for C/D/C ROADMs</p></td>
+<td><p>Done</p></td>
+<td><p>Vadadium</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="known-issues">
+<h2>Known Issues<a class="headerlink" href="#known-issues" title="Link to this heading">¶</a></h2>
+<p>The following table lists the known issues that exist in this release.</p>
+<p>Also, swagger does not work for TransportPCE with controller resources (see <a class="reference external" href="https://jira.opendaylight.org/browse/NETCONF-1279">https://jira.opendaylight.org/browse/NETCONF-1279</a>)</p>
+</section>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/release-notes/projects/transportpce.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2016-2026, OpenDaylight Project.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 8.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

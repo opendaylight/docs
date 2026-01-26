@@ -1,0 +1,292 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>OpenFlow Plugin &#8212; OpenDaylight Documentation Chromium documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-sphinx.css?v=0bf093e7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.2/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/ribbon.css?v=cb953b18" />
+    <link rel="stylesheet" href="../../_static/css/warning-header.css" type="text/css" />
+    <script src="../../_static/documentation_options.js?v=7b4a4459"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://cdn.datatables.net/1.11.2/js/jquery.dataTables.min.js"></script>
+    <script class="init" type="text/javascript">$(document).ready( function () { $('table.datatable').DataTable(); } );</script>
+    <link rel="icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="OVSDB" href="ovsdb.html" />
+    <link rel="prev" title="NETCONF" href="netconf.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+  <div class="ribbon">
+    <a href="https://jira.opendaylight.org/secure/CreateIssueDetails!init.jspa
+?pid=10121
+&issuetype=10104
+&components=10228
+&priority=2
+&description=version:+Chromium%0Apage:+release-notes/projects/openflowplugin%0A%0A" target="_blank">
+      Report Issue
+    </a>
+  </div>
+  
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+  <!-- Outdated version warning banner -->
+  
+    <style>
+      body {
+        padding-top: 60px;
+     }
+    </style>
+  
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+          OpenDaylight Documentation</a>
+        <span class="navbar-text navbar-version pull-left"><b>Chromium</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../downloads.html">OpenDaylight Downloads</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started-guide/index.html">Getting Started Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-guides/index.html">Developer Guides</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../documentation.html">Documentation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release-process/index.html">OpenDaylight Release Process Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../javadoc.html">Java API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/index.html">OpenDaylight User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-guides/index.html">Developer Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributor-guides/index.html">Contributor Guides</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">OpenFlow Plugin</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#behavior-feature-changes">Behavior/Feature Changes</a></li>
+<li><a class="reference internal" href="#new-features">New Features</a></li>
+<li><a class="reference internal" href="#deprecated-features">Deprecated Features</a></li>
+<li><a class="reference internal" href="#resolved-issues">Resolved Issues</a></li>
+<li><a class="reference internal" href="#known-issues">Known Issues</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">OpenFlow Plugin</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#behavior-feature-changes">Behavior/Feature Changes</a></li>
+<li><a class="reference internal" href="#new-features">New Features</a></li>
+<li><a class="reference internal" href="#deprecated-features">Deprecated Features</a></li>
+<li><a class="reference internal" href="#resolved-issues">Resolved Issues</a></li>
+<li><a class="reference internal" href="#known-issues">Known Issues</a></li>
+</ul>
+</li>
+</ul>
+<center>
+<div class="btn-group" role="group" aria-label="...">
+    
+    <a class="btn btn-default" href="netconf.html">Prev Page</a>
+    
+
+    
+    <a class="btn btn-default" href="ovsdb.html">Next Page</a>
+    
+</div>
+</center>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <section id="openflow-plugin">
+<h1>OpenFlow Plugin<a class="headerlink" href="#openflow-plugin" title="Link to this heading">¶</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">¶</a></h2>
+<p>The OpenFlow Plugin project provides the following functionality:</p>
+<ul>
+<li><p><strong>OpenFlow 1.0/1.3 implementation project</strong>: This provides the implementation
+of the OpenFlow 1.0 and OpenFlow 1.3 specification.</p></li>
+<li><p><strong>ONF Approved Extensions Project</strong>: This provides the implementation of
+following ONF OpenFlow 1.4 feature, which is approved as extensions
+for the OpenFlow 1.3 specification:</p>
+<ul class="simple">
+<li><p><strong>Nicira Extensions Project</strong>: This provides the implementation of the
+<code class="docutils literal notranslate"><span class="pre">Nicira</span></code> extensions.
+Some of the important extensions implemented are
+<strong>Connection Tracking Extension</strong> and <strong>Group Add-Mod Extension</strong></p></li>
+</ul>
+</li>
+<li><p><strong>OpenFlow-Based Applications Project</strong>: This provides the following
+applications that user can leverage out-of-the-box in developing their
+application or as a direct end consumer:</p>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">OpenFlow-Based Applications</span><a class="headerlink" href="#id1" title="Link to this table">¶</a></caption>
+<colgroup>
+<col style="width: 21.4%" />
+<col style="width: 78.6%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Application</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Forwarding Rules Manager</strong></p></td>
+<td><p>Application provides functionality to add/remove/update flow/groups/meters.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>LLDP Speaker</strong></p></td>
+<td><p>Application sends periodic LLDP packet out on each OpenFlow switch port for link discovery.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Topology LLDP Discovery</strong></p></td>
+<td><p>Application intercept the LLDP packets and discover the link information.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Topology Manager</strong></p></td>
+<td><p>Application receives the discovered links information from Topology LLDP
+Discovery application and stores in the topology yang model datastore.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Reconciliation Framework</strong></p></td>
+<td><p>Framework that exposes the APIs that consumer application (in-controller) can
+leverage to participate in the switch reconciliation process in the event of
+switch connection/reconnection.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Arbitrator Reconciliation</strong></p></td>
+<td><p>Application exposes the APIs that consumer application or direct user can
+leverage to trigger the device configuration reconciliation.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>OpenFlow Java Library Project</strong></p></td>
+<td><p>Provides the OpenFlow Java Library that converts the data based on OpenFlow
+plugin data models to the OpenFlow java models before sending it down the
+wire to the device.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Reconciliation</strong></p></td>
+<td><p>Reconciles the state using OpenFlow 1.4 bundles.</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</section>
+<section id="behavior-feature-changes">
+<h2>Behavior/Feature Changes<a class="headerlink" href="#behavior-feature-changes" title="Link to this heading">¶</a></h2>
+<p>Here is the link to the features improved in this release:</p>
+<p><a class="reference external" href="https://jira.opendaylight.org/issues/?jql=project+%3D+openflowplugin+AND+type+%3D+Improvement+AND+status+in+%28Resolved%2C+Done%2C+Closed%29+AND+fixVersion+in+%28%22Vanadium+GA%22%2C+Vanadium%2C+vanadium%29++ORDER+BY+issuetype+DESC%2C+key+ASC">OpenDaylight JIRA Tickets - Improvement</a></p>
+</section>
+<section id="new-features">
+<h2>New Features<a class="headerlink" href="#new-features" title="Link to this heading">¶</a></h2>
+<p>Here is the link to the new features introduced in this release:</p>
+<p><a class="reference external" href="https://jira.opendaylight.org/issues/?jql=project+%3D+openflowplugin+AND+type+%3D+%22New+Feature%22+AND+status+in+%28Resolved%2C+Done%2C+Closed%29+AND+fixVersion+in+%28%22Vanadium+GA%22%2C+Vanadium%2C+vanadium%29++ORDER+BY+issuetype+DESC%2C+key+ASC">OpenDaylight JIRA Tickets - New Feature</a></p>
+</section>
+<section id="deprecated-features">
+<h2>Deprecated Features<a class="headerlink" href="#deprecated-features" title="Link to this heading">¶</a></h2>
+<p>Here is the link to the features removed in this release:</p>
+<p><a class="reference external" href="https://jira.opendaylight.org/issues/?jql=project+%3D+openflowplugin+AND+type+%3D+Deprecate+AND+status+in+%28Resolved%2C+Done%2C+Closed%29+AND+fixVersion+in+%28%22Vanadium+GA%22%2C+Vanadium%2C+vanadium%29++ORDER+BY+issuetype+DESC%2C+key+ASC">OpenDaylight JIRA Tickets - Deprecated Feature</a></p>
+</section>
+<section id="resolved-issues">
+<h2>Resolved Issues<a class="headerlink" href="#resolved-issues" title="Link to this heading">¶</a></h2>
+<p>Here is the link to the resolved issues fixed in this release:</p>
+<p><a class="reference external" href="https://jira.opendaylight.org/issues/?jql=project+%3D+openflowplugin+AND+type+%3D+Bug+AND+status+in+%28Resolved%2C+Done%2C+Closed%29+AND+fixVersion+in+%28%22Vanadium+GA%22%2C+Vanadium%2C+vanadium%29++ORDER+BY+issuetype+DESC%2C+key+ASC">OpenDaylight JIRA Tickets - Resolved Issue</a></p>
+</section>
+<section id="known-issues">
+<h2>Known Issues<a class="headerlink" href="#known-issues" title="Link to this heading">¶</a></h2>
+<p>Here is the link to the known issues exist in this release:</p>
+<p><a class="reference external" href="https://jira.opendaylight.org/issues/?jql=project+%3D+openflowplugin+AND+type+%3D+Bug+AND+status+not+in+%28Resolved%2C+Done%2C+Closed%29+ORDER+BY+issuetype+DESC%2C+key+ASC">OpenDaylight JIRA Tickets - Known Issue</a></p>
+</section>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/release-notes/projects/openflowplugin.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2016-2026, OpenDaylight Project.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 8.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

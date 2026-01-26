@@ -1,0 +1,352 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Installing OpenDaylight &#8212; OpenDaylight Documentation Chromium documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css?v=0bf093e7" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.2/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/ribbon.css?v=cb953b18" />
+    <link rel="stylesheet" href="../_static/css/warning-header.css" type="text/css" />
+    <script src="../_static/documentation_options.js?v=7b4a4459"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://cdn.datatables.net/1.11.2/js/jquery.dataTables.min.js"></script>
+    <script class="init" type="text/javascript">$(document).ready( function () { $('table.datatable').DataTable(); } );</script>
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Setting Up Clustering" href="clustering.html" />
+    <link rel="prev" title="OpenDaylight concepts and tools" href="concepts_and_tools.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+  <div class="ribbon">
+    <a href="https://jira.opendaylight.org/secure/CreateIssueDetails!init.jspa
+?pid=10121
+&issuetype=10104
+&components=10228
+&priority=2
+&description=version:+Chromium%0Apage:+getting-started-guide/installing_opendaylight%0A%0A" target="_blank">
+      Report Issue
+    </a>
+  </div>
+  
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+  <!-- Outdated version warning banner -->
+  
+    <style>
+      body {
+        padding-top: 60px;
+     }
+    </style>
+  
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          OpenDaylight Documentation</a>
+        <span class="navbar-text navbar-version pull-left"><b>Chromium</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../downloads.html">OpenDaylight Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes/index.html">Release Notes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Getting Started Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-guides/index.html">Developer Guides</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../documentation.html">Documentation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-process/index.html">OpenDaylight Release Process Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../javadoc.html">Java API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/index.html">OpenDaylight User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-guides/index.html">Developer Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributor-guides/index.html">Contributor Guides</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Installing OpenDaylight</a><ul>
+<li><a class="reference internal" href="#install-opendaylight">Install OpenDaylight</a><ul>
+<li><a class="reference internal" href="#downloading-and-installing-opendaylight">Downloading and installing OpenDaylight</a><ul>
+<li><a class="reference internal" href="#running-the-karaf-distribution">Running the karaf distribution</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#install-the-karaf-features">Install the Karaf features</a><ul>
+<li><a class="reference internal" href="#uninstalling-features">Uninstalling features</a></li>
+<li><a class="reference internal" href="#listing-available-features">Listing available features</a></li>
+<li><a class="reference internal" href="#karaf-running-on-windows-10">Karaf running on Windows 10</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Installing OpenDaylight</a><ul>
+<li><a class="reference internal" href="#install-opendaylight">Install OpenDaylight</a><ul>
+<li><a class="reference internal" href="#downloading-and-installing-opendaylight">Downloading and installing OpenDaylight</a><ul>
+<li><a class="reference internal" href="#running-the-karaf-distribution">Running the karaf distribution</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#install-the-karaf-features">Install the Karaf features</a><ul>
+<li><a class="reference internal" href="#uninstalling-features">Uninstalling features</a></li>
+<li><a class="reference internal" href="#listing-available-features">Listing available features</a></li>
+<li><a class="reference internal" href="#karaf-running-on-windows-10">Karaf running on Windows 10</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<center>
+<div class="btn-group" role="group" aria-label="...">
+    
+    <a class="btn btn-default" href="concepts_and_tools.html">Prev Page</a>
+    
+
+    
+    <a class="btn btn-default" href="clustering.html">Next Page</a>
+    
+</div>
+</center>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <section id="installing-opendaylight">
+<span id="install-odl"></span><h1>Installing OpenDaylight<a class="headerlink" href="#installing-opendaylight" title="Link to this heading">¶</a></h1>
+<p>You complete the following steps to install your networking environment, with
+specific instructions provided in the subsections below.</p>
+<p>Before detailing the instructions for these, we address the following:
+Java Runtime Environment (JRE) and operating system information
+Target environment
+Known issues and limitations</p>
+<section id="install-opendaylight">
+<h2>Install OpenDaylight<a class="headerlink" href="#install-opendaylight" title="Link to this heading">¶</a></h2>
+<section id="downloading-and-installing-opendaylight">
+<h3>Downloading and installing OpenDaylight<a class="headerlink" href="#downloading-and-installing-opendaylight" title="Link to this heading">¶</a></h3>
+<p>The default distribution can be found on the OpenDaylight software
+download page: <a class="reference external" href="https://docs.opendaylight.org/en/latest/downloads.html">https://docs.opendaylight.org/en/latest/downloads.html</a></p>
+<p>The Karaf distribution has no features enabled by default. However, all
+of the features are available to be installed.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For compatibility reasons, you cannot enable all the features
+simultaneously. We try to document known incompatibilities in
+the <a class="reference internal" href="#install-the-karaf-features">Install the Karaf features</a> section below.</p>
+</div>
+<section id="running-the-karaf-distribution">
+<h4>Running the karaf distribution<a class="headerlink" href="#running-the-karaf-distribution" title="Link to this heading">¶</a></h4>
+<p>To run the Karaf distribution:</p>
+<ol class="arabic simple">
+<li><p>Unzip the zip file.</p></li>
+<li><p>Navigate to the directory.</p></li>
+<li><p>run <code class="docutils literal notranslate"><span class="pre">./bin/karaf</span></code>.</p></li>
+</ol>
+<p>For Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls karaf-0.8.x-Oxygen.zip
+karaf-0.8.x-Oxygen.zip
+$ unzip karaf-0.8.x-Oxygen.zip
+Archive:  karaf-0.8.x-Oxygen.zip
+   creating: karaf-0.8.x-Oxygen/
+   creating: karaf-0.8.x-Oxygen/configuration/
+   creating: karaf-0.8.x-Oxygen/data/
+   creating: karaf-0.8.x-Oxygen/data/tmp/
+   creating: karaf-0.8.x-Oxygen/deploy/
+   creating: karaf-0.8.x-Oxygen/etc/
+   creating: karaf-0.8.x-Oxygen/externalapps/
+   ...
+   inflating: karaf-0.8.x-Oxygen/bin/start.bat
+   inflating: karaf-0.8.x-Oxygen/bin/status.bat
+   inflating: karaf-0.8.x-Oxygen/bin/stop.bat
+$ cd distribution-karaf-0.8.x-Oxygen
+$ ./bin/karaf
+
+    ________                       ________                .__  .__       .__     __
+    \_____  \ ______   ____   ____ \______ \ _____  ___.__.\|  \| \|__\| ____ \|  \|___/  \|_
+     /   \|   \\____ \_/ __ \ /    \ \|    \|  \\__  \&lt;   \|  \|\|  \| \|  \|/ ___\\|  \|  \   __\
+    /    \|    \  \|_&gt; &gt;  ___/\|   \|  \\|    `   \/ __ \\___  \|\|  \|_\|  / /_/  &gt;   Y  \  \|
+    \_______  /   __/ \___  &gt;___\|  /_______  (____  / ____\|\|____/__\___  /\|___\|  /__\|
+            \/\|__\|        \/     \/        \/     \/\/            /_____/      \/
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Press <code class="docutils literal notranslate"><span class="pre">tab</span></code> for a list of available commands</p></li>
+<li><p>Typing <code class="docutils literal notranslate"><span class="pre">[cmd]</span> <span class="pre">--help</span></code> will show help for a specific command.</p></li>
+<li><p>Press <code class="docutils literal notranslate"><span class="pre">ctrl-d</span></code> or type <code class="docutils literal notranslate"><span class="pre">system:shutdown</span></code> or <code class="docutils literal notranslate"><span class="pre">logout</span></code> to shutdown OpenDaylight.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Please take a look at the <a class="reference internal" href="security_considerations.html#security-deployment-recommendations"><span class="std std-ref">Deployment Recommendations</span></a>
+and following sections under <a class="reference internal" href="security_considerations.html#security-considerations"><span class="std std-ref">Security Considerations</span></a> if you’re
+planning on running OpenDaylight outside of an isolated test lab
+environment.</p>
+</div>
+</section>
+</section>
+</section>
+<section id="install-the-karaf-features">
+<h2>Install the Karaf features<a class="headerlink" href="#install-the-karaf-features" title="Link to this heading">¶</a></h2>
+<p>To install a feature, use the following command, where feature1 is the feature
+name listed in the table below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">feature</span><span class="p">:</span><span class="n">install</span> <span class="o">&lt;</span><span class="n">feature1</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>You can install multiple features using the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">feature</span><span class="p">:</span><span class="n">install</span> <span class="o">&lt;</span><span class="n">feature1</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">feature2</span><span class="o">&gt;</span> <span class="o">...</span> <span class="o">&lt;</span><span class="n">featureN</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For compatibility reasons, you cannot enable all Karaf features
+simultaneously. The table below documents feature installation names and
+known incompatibilities.Compatibility values indicate the following:</p>
+</div>
+<ul class="simple">
+<li><p><strong>all</strong> - the feature can be run with other features.</p></li>
+<li><p><strong>self+all</strong> - the feature can be installed with other features with a value of
+<strong>all</strong>, but may interact badly with other features that have a value of
+<strong>self+all</strong>. Not every combination has been tested.</p></li>
+</ul>
+<section id="uninstalling-features">
+<h3>Uninstalling features<a class="headerlink" href="#uninstalling-features" title="Link to this heading">¶</a></h3>
+<p>To uninstall a feature, you must shut down OpenDaylight, delete the data
+directory, and start OpenDaylight up again.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Uninstalling a feature using the Karaf feature:uninstall command
+is not supported and can cause unexpected and undesirable behavior.</p>
+</div>
+</section>
+<section id="listing-available-features">
+<h3>Listing available features<a class="headerlink" href="#listing-available-features" title="Link to this heading">¶</a></h3>
+<p>To find the complete list of Karaf features, run the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">feature</span><span class="p">:</span><span class="nb">list</span>
+</pre></div>
+</div>
+<p>To list the installed Karaf features, run the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">feature</span><span class="p">:</span><span class="nb">list</span> <span class="o">-</span><span class="n">i</span>
+</pre></div>
+</div>
+<p>The description of these features is in the project specific
+release notes <a class="reference external" href="https://docs.opendaylight.org/en/stable-nitrogen/release-notes/index.html#proj-rel-notes" title="(in OpenDaylight Documentation vNitrogen)"><span>Project-specific Release Notes</span></a> section.</p>
+</section>
+<section id="karaf-running-on-windows-10">
+<h3>Karaf running on Windows 10<a class="headerlink" href="#karaf-running-on-windows-10" title="Link to this heading">¶</a></h3>
+<p>Windows 10 cannot be identify by Karaf (equinox).
+Issue occurs during installation of karaf features e.g.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">opendaylight</span><span class="o">-</span><span class="n">user</span><span class="nd">@root</span><span class="o">&gt;</span><span class="n">feature</span><span class="p">:</span><span class="n">install</span> <span class="n">odl</span><span class="o">-</span><span class="n">restconf</span>
+<span class="n">Error</span> <span class="n">executing</span> <span class="n">command</span><span class="p">:</span> <span class="n">Can</span><span class="s1">&#39;t install feature odl-restconf/0.0.0:</span>
+<span class="n">Could</span> <span class="ow">not</span> <span class="n">start</span> <span class="n">bundle</span> <span class="n">mvn</span><span class="p">:</span><span class="n">org</span><span class="o">.</span><span class="n">fusesource</span><span class="o">.</span><span class="n">leveldbjni</span><span class="o">/</span><span class="n">leveldbjni</span><span class="o">-</span><span class="nb">all</span><span class="o">/</span><span class="mf">1.8</span><span class="o">-</span><span class="n">odl</span> <span class="ow">in</span> <span class="n">feature</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">odl</span><span class="o">-</span><span class="n">akka</span><span class="o">-</span><span class="n">leveldb</span><span class="o">-</span><span class="mf">0.7</span><span class="p">:</span> <span class="n">The</span> <span class="n">bundle</span> <span class="s2">&quot;org.fusesource.leveldbjni.leveldbjni-all_1.8.0 [300]&quot;</span> <span class="n">could</span> <span class="ow">not</span> <span class="n">be</span> <span class="n">resolved</span><span class="o">.</span> <span class="n">Reason</span><span class="p">:</span> <span class="n">No</span> <span class="n">match</span> <span class="n">found</span> <span class="k">for</span> <span class="n">native</span> <span class="n">code</span><span class="p">:</span> <span class="n">META</span><span class="o">-</span><span class="n">INF</span><span class="o">/</span><span class="n">native</span><span class="o">/</span><span class="n">windows32</span><span class="o">/</span><span class="n">leveldbjni</span><span class="o">.</span><span class="n">dll</span><span class="p">;</span> <span class="n">processor</span><span class="o">=</span><span class="n">x86</span><span class="p">;</span> <span class="n">osname</span><span class="o">=</span><span class="n">Win32</span><span class="p">,</span> <span class="n">META</span><span class="o">-</span><span class="n">INF</span><span class="o">/</span><span class="n">native</span><span class="o">/</span><span class="n">windows64</span><span class="o">/</span><span class="n">leveldbjni</span><span class="o">.</span><span class="n">dll</span><span class="p">;</span> <span class="n">processor</span><span class="o">=</span><span class="n">x86</span><span class="o">-</span><span class="mi">64</span><span class="p">;</span> <span class="n">osname</span><span class="o">=</span><span class="n">Win32</span><span class="p">,</span> <span class="n">META</span><span class="o">-</span><span class="n">INF</span><span class="o">/</span><span class="n">native</span><span class="o">/</span><span class="n">osx</span><span class="o">/</span><span class="n">libleveldbjni</span><span class="o">.</span><span class="n">jnilib</span><span class="p">;</span> <span class="n">processor</span><span class="o">=</span><span class="n">x86</span><span class="p">;</span> <span class="n">osname</span><span class="o">=</span><span class="n">macosx</span><span class="p">,</span> <span class="n">META</span><span class="o">-</span><span class="n">INF</span><span class="o">/</span><span class="n">native</span><span class="o">/</span><span class="n">osx</span><span class="o">/</span><span class="n">libleveldbjni</span><span class="o">.</span><span class="n">jnilib</span><span class="p">;</span> <span class="n">processor</span><span class="o">=</span><span class="n">x86</span><span class="o">-</span><span class="mi">64</span><span class="p">;</span> <span class="n">osname</span><span class="o">=</span><span class="n">macosx</span><span class="p">,</span> <span class="n">META</span><span class="o">-</span><span class="n">INF</span><span class="o">/</span><span class="n">native</span><span class="o">/</span><span class="n">linux32</span><span class="o">/</span><span class="n">libleveldbjni</span><span class="o">.</span><span class="n">so</span><span class="p">;</span> <span class="n">processor</span><span class="o">=</span><span class="n">x86</span><span class="p">;</span> <span class="n">osname</span><span class="o">=</span><span class="n">Linux</span><span class="p">,</span> <span class="n">META</span><span class="o">-</span><span class="n">INF</span><span class="o">/</span><span class="n">native</span><span class="o">/</span><span class="n">linux64</span><span class="o">/</span><span class="n">libleveldbjni</span><span class="o">.</span><span class="n">so</span><span class="p">;</span> <span class="n">processor</span><span class="o">=</span><span class="n">x86</span><span class="o">-</span><span class="mi">64</span><span class="p">;</span> <span class="n">osname</span><span class="o">=</span><span class="n">Linux</span><span class="p">,</span> <span class="n">META</span><span class="o">-</span><span class="n">INF</span><span class="o">/</span><span class="n">native</span><span class="o">/</span><span class="n">sunos64</span><span class="o">/</span><span class="n">amd64</span><span class="o">/</span><span class="n">libleveldbjni</span><span class="o">.</span><span class="n">so</span><span class="p">;</span> <span class="n">processor</span><span class="o">=</span><span class="n">x86</span><span class="o">-</span><span class="mi">64</span><span class="p">;</span> <span class="n">osname</span><span class="o">=</span><span class="n">SunOS</span><span class="p">,</span> <span class="n">META</span><span class="o">-</span><span class="n">INF</span><span class="o">/</span><span class="n">native</span><span class="o">/</span><span class="n">sunos64</span><span class="o">/</span><span class="n">sparcv9</span><span class="o">/</span><span class="n">libleveldbjni</span><span class="o">.</span><span class="n">so</span><span class="p">;</span> <span class="n">processor</span><span class="o">=</span><span class="n">sparcv9</span><span class="p">;</span> <span class="n">osname</span><span class="o">=</span><span class="n">SunOS</span>
+</pre></div>
+</div>
+<p>Workaround is to add:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">org</span><span class="o">.</span><span class="n">osgi</span><span class="o">.</span><span class="n">framework</span><span class="o">.</span><span class="n">os</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">Win32</span>
+</pre></div>
+</div>
+<p>to the karaf file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">etc</span><span class="o">/</span><span class="n">system</span><span class="o">.</span><span class="n">properties</span>
+</pre></div>
+</div>
+<p>The workaround and further info are in this thread:
+<a class="reference external" href="https://stackoverflow.com/questions/35679852/karaf-exception-is-thrown-while-installing-org-fusesource-leveldbjni">https://stackoverflow.com/questions/35679852/karaf-exception-is-thrown-while-installing-org-fusesource-leveldbjni</a></p>
+</section>
+</section>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/getting-started-guide/installing_opendaylight.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2016-2026, OpenDaylight Project.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 8.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

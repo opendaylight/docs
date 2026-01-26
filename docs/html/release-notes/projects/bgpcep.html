@@ -1,0 +1,337 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>BGP-PCEP &#8212; OpenDaylight Documentation Chromium documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-sphinx.css?v=0bf093e7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.2/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/ribbon.css?v=cb953b18" />
+    <link rel="stylesheet" href="../../_static/css/warning-header.css" type="text/css" />
+    <script src="../../_static/documentation_options.js?v=7b4a4459"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://cdn.datatables.net/1.11.2/js/jquery.dataTables.min.js"></script>
+    <script class="init" type="text/javascript">$(document).ready( function () { $('table.datatable').DataTable(); } );</script>
+    <link rel="icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Controller" href="controller.html" />
+    <link rel="prev" title="AAA" href="aaa.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+  <div class="ribbon">
+    <a href="https://jira.opendaylight.org/secure/CreateIssueDetails!init.jspa
+?pid=10121
+&issuetype=10104
+&components=10228
+&priority=2
+&description=version:+Chromium%0Apage:+release-notes/projects/bgpcep%0A%0A" target="_blank">
+      Report Issue
+    </a>
+  </div>
+  
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+  <!-- Outdated version warning banner -->
+  
+    <style>
+      body {
+        padding-top: 60px;
+     }
+    </style>
+  
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+          OpenDaylight Documentation</a>
+        <span class="navbar-text navbar-version pull-left"><b>Chromium</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../downloads.html">OpenDaylight Downloads</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started-guide/index.html">Getting Started Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-guides/index.html">Developer Guides</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../documentation.html">Documentation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release-process/index.html">OpenDaylight Release Process Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../javadoc.html">Java API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/index.html">OpenDaylight User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-guides/index.html">Developer Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributor-guides/index.html">Contributor Guides</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">BGP-PCEP</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a><ul>
+<li><a class="reference internal" href="#bgp-plugin">BGP Plugin</a></li>
+<li><a class="reference internal" href="#pcep-plugin">PCEP Plugin</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#behavior-feature-changes">Behavior/Feature Changes</a></li>
+<li><a class="reference internal" href="#new-features">New Features</a></li>
+<li><a class="reference internal" href="#deprecated-features">Deprecated Features</a></li>
+<li><a class="reference internal" href="#resolved-issues">Resolved Issues</a></li>
+<li><a class="reference internal" href="#known-issues">Known Issues</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">BGP-PCEP</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a><ul>
+<li><a class="reference internal" href="#bgp-plugin">BGP Plugin</a></li>
+<li><a class="reference internal" href="#pcep-plugin">PCEP Plugin</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#behavior-feature-changes">Behavior/Feature Changes</a></li>
+<li><a class="reference internal" href="#new-features">New Features</a></li>
+<li><a class="reference internal" href="#deprecated-features">Deprecated Features</a></li>
+<li><a class="reference internal" href="#resolved-issues">Resolved Issues</a></li>
+<li><a class="reference internal" href="#known-issues">Known Issues</a></li>
+</ul>
+</li>
+</ul>
+<center>
+<div class="btn-group" role="group" aria-label="...">
+    
+    <a class="btn btn-default" href="aaa.html">Prev Page</a>
+    
+
+    
+    <a class="btn btn-default" href="controller.html">Next Page</a>
+    
+</div>
+</center>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <section id="bgp-pcep">
+<h1>BGP-PCEP<a class="headerlink" href="#bgp-pcep" title="Link to this heading">¶</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">¶</a></h2>
+<section id="bgp-plugin">
+<h3>BGP Plugin<a class="headerlink" href="#bgp-plugin" title="Link to this heading">¶</a></h3>
+<p>The OpenDaylight controller provides an implementation of BGP
+(Border Gateway Protocol), which is based on <a class="reference external" href="https://tools.ietf.org/html/rfc4271">RFC 4271</a>)
+as a south-bound protocol plugin. The implementation renders all
+basic <em>BGP speaker capabilities</em>, including:</p>
+<p>Inter/Intra-AS peering
+* Routes advertising
+* Routes originating
+* Routes storage</p>
+<p>The plugin’s <strong>north-bound API</strong> (<code class="docutils literal notranslate"><span class="pre">REST</span></code>/<code class="docutils literal notranslate"><span class="pre">Java</span></code>) provides to user:</p>
+<ul class="simple">
+<li><p>Fully dynamic run-time standardized BGP configuration</p></li>
+<li><p>Read-only access to all RIBs</p></li>
+<li><p>Read-write programmable RIBs</p></li>
+<li><p>Read-only reachability/link-state topology view</p></li>
+</ul>
+</section>
+<section id="pcep-plugin">
+<h3>PCEP Plugin<a class="headerlink" href="#pcep-plugin" title="Link to this heading">¶</a></h3>
+<p>The OpenDaylight Path Computation Element Communication Protocol (PCEP)
+plugin provides all basic service units necessary to build-up a
+PCE-based controller. Defined by <a class="reference external" href="https://tools.ietf.org/html/rfc8231">RFC 8231</a>,
+PCEP offers LSP management functionality for Active Stateful PCE, which is
+the cornerstone for majority of PCE-enabled SDN solutions. It consists of
+the following components:</p>
+<ul class="simple">
+<li><p>Protocol library</p></li>
+<li><p>PCEP session handling</p></li>
+<li><p>Stateful PCE LSP-DB</p></li>
+<li><p>Active Stateful PCE LSP Operations</p></li>
+</ul>
+</section>
+</section>
+<section id="behavior-feature-changes">
+<h2>Behavior/Feature Changes<a class="headerlink" href="#behavior-feature-changes" title="Link to this heading">¶</a></h2>
+<p>No changes.</p>
+</section>
+<section id="new-features">
+<h2>New Features<a class="headerlink" href="#new-features" title="Link to this heading">¶</a></h2>
+<p>No new features.</p>
+</section>
+<section id="deprecated-features">
+<h2>Deprecated Features<a class="headerlink" href="#deprecated-features" title="Link to this heading">¶</a></h2>
+<p>No deprecated features.</p>
+</section>
+<section id="resolved-issues">
+<h2>Resolved Issues<a class="headerlink" href="#resolved-issues" title="Link to this heading">¶</a></h2>
+<p>The following table lists the issues resolved in this release.</p>
+<table class="datatable docutils align-default" id="id1">
+<caption><span class="caption-text">Issues resolved in versions 1.0.0 through 1.0.0 (<a class="reference external" href="https://jira.opendaylight.org/issues/?jql=project%20%3D%20BGPCEP%20AND%20resolution%20is%20not%20EMPTY%20AND%20fixVersion%20in%20%281.0.0%29%20ORDER%20BY%20type%20ASC">JIRA</a>)</span><a class="headerlink" href="#id1" title="Link to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Key</p></th>
+<th class="head"><p>Summary</p></th>
+<th class="head"><p>Resolution</p></th>
+<th class="head"><p>Fix Version(s)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><img alt="Bug" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/BGPCEP-1043">BGPCEP-1043</a></p></td>
+<td><p>Problem with injecting large number of prefixes to bgp-rib table</p></td>
+<td><p>Done</p></td>
+<td><p>0.23.1, 1.0.0</p></td>
+</tr>
+<tr class="row-odd"><td><img alt="Improvement" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/BGPCEP-1067">BGPCEP-1067</a></p></td>
+<td><p>Migrate extensions parser to base-parser</p></td>
+<td><p>Done</p></td>
+<td><p>1.0.0</p></td>
+</tr>
+<tr class="row-even"><td><img alt="Improvement" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/BGPCEP-1044">BGPCEP-1044</a></p></td>
+<td><p>Re design PCEP yang models</p></td>
+<td><p>Done</p></td>
+<td><p>1.0.0</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="known-issues">
+<h2>Known Issues<a class="headerlink" href="#known-issues" title="Link to this heading">¶</a></h2>
+<p>The following table lists the known issues that exist in this release.</p>
+<table class="datatable docutils align-default" id="id2">
+<caption><span class="caption-text">Issues affecting versions 1.0.0 through 1.0.0 (<a class="reference external" href="https://jira.opendaylight.org/issues/?jql=project%20%3D%20BGPCEP%20AND%20affectedVersion%20in%20%281.0.0%29%20AND%20fixVersion%20NOT%20in%20%281.0.0%29%20ORDER%20BY%20type%20ASC">JIRA</a>)</span><a class="headerlink" href="#id2" title="Link to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Key</p></th>
+<th class="head"><p>Summary</p></th>
+<th class="head"><p>Status</p></th>
+<th class="head"><p>Affected Version(s)</p></th>
+<th class="head"><p>Fix Version(s)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><img alt="Bug" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/BGPCEP-1072">BGPCEP-1072</a></p></td>
+<td><p>LLGR support ignores GR enabled flag</p></td>
+<td><p>In Review</p></td>
+<td><p>0.21.12, 0.22.12, 1.0.0</p></td>
+<td><p>0.23.1, 1.0.1</p></td>
+</tr>
+<tr class="row-odd"><td><img alt="Bug" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/BGPCEP-1070">BGPCEP-1070</a></p></td>
+<td><p>NullPointerException: LinkAttributes.getSrAttribute() is null</p></td>
+<td><p>In Review</p></td>
+<td><p>0.23.0, 1.0.0</p></td>
+<td><p>0.23.1, 1.0.1</p></td>
+</tr>
+<tr class="row-even"><td><img alt="Bug" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/BGPCEP-1069">BGPCEP-1069</a></p></td>
+<td><p>NullPointerException: Key component “prefix” may not be null</p></td>
+<td><p>Resolved</p></td>
+<td><p>0.22.12, 0.23.0, 1.0.0</p></td>
+<td><p>0.22.13, 0.23.1, 1.0.1</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/release-notes/projects/bgpcep.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2016-2026, OpenDaylight Project.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 8.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

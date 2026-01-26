@@ -1,0 +1,333 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>&lt;Feature&gt; User Guide &#8212; OpenDaylight Documentation Chromium documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css?v=0bf093e7" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.2/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/ribbon.css?v=cb953b18" />
+    <link rel="stylesheet" href="../_static/css/warning-header.css" type="text/css" />
+    <script src="../_static/documentation_options.js?v=7b4a4459"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://cdn.datatables.net/1.11.2/js/jquery.dataTables.min.js"></script>
+    <script class="init" type="text/javascript">$(document).ready( function () { $('table.datatable').DataTable(); } );</script>
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="&lt;Feature&gt; Developer Guide" href="template-developer-guide.html" />
+    <link rel="prev" title="Documentation Guide" href="../documentation.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+  <div class="ribbon">
+    <a href="https://jira.opendaylight.org/secure/CreateIssueDetails!init.jspa
+?pid=10121
+&issuetype=10104
+&components=10228
+&priority=2
+&description=version:+Chromium%0Apage:+templates/template-user-guide%0A%0A" target="_blank">
+      Report Issue
+    </a>
+  </div>
+  
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+  <!-- Outdated version warning banner -->
+  
+    <style>
+      body {
+        padding-top: 60px;
+     }
+    </style>
+  
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          OpenDaylight Documentation</a>
+        <span class="navbar-text navbar-version pull-left"><b>Chromium</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../downloads.html">OpenDaylight Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes/index.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started-guide/index.html">Getting Started Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-guides/index.html">Developer Guides</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../documentation.html">Documentation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-process/index.html">OpenDaylight Release Process Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../javadoc.html">Java API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/index.html">OpenDaylight User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-guides/index.html">Developer Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributor-guides/index.html">Contributor Guides</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">&lt;Feature&gt; User Guide</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#feature-architecture">&lt;Feature&gt; Architecture</a></li>
+<li><a class="reference internal" href="#configuring-feature">Configuring &lt;feature&gt;</a></li>
+<li><a class="reference internal" href="#administering-or-managing-feature">Administering or Managing &lt;feature&gt;</a></li>
+<li><a class="reference internal" href="#tutorials">Tutorials</a><ul>
+<li><a class="reference internal" href="#tutorial-name">&lt;Tutorial Name&gt;</a><ul>
+<li><a class="reference internal" href="#id1">Overview</a></li>
+<li><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li><a class="reference internal" href="#target-environment">Target Environment</a></li>
+<li><a class="reference internal" href="#instructions">Instructions</a><ul>
+<li><a class="reference internal" href="#setting-up-the-vm">Setting up the VM</a></li>
+<li><a class="reference internal" href="#installing-the-feature">Installing the feature</a></li>
+<li><a class="reference internal" href="#configuring-the-environment">Configuring the environment</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">&lt;Feature&gt; User Guide</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#feature-architecture">&lt;Feature&gt; Architecture</a></li>
+<li><a class="reference internal" href="#configuring-feature">Configuring &lt;feature&gt;</a></li>
+<li><a class="reference internal" href="#administering-or-managing-feature">Administering or Managing &lt;feature&gt;</a></li>
+<li><a class="reference internal" href="#tutorials">Tutorials</a><ul>
+<li><a class="reference internal" href="#tutorial-name">&lt;Tutorial Name&gt;</a><ul>
+<li><a class="reference internal" href="#id1">Overview</a></li>
+<li><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li><a class="reference internal" href="#target-environment">Target Environment</a></li>
+<li><a class="reference internal" href="#instructions">Instructions</a><ul>
+<li><a class="reference internal" href="#setting-up-the-vm">Setting up the VM</a></li>
+<li><a class="reference internal" href="#installing-the-feature">Installing the feature</a></li>
+<li><a class="reference internal" href="#configuring-the-environment">Configuring the environment</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<center>
+<div class="btn-group" role="group" aria-label="...">
+    
+    <a class="btn btn-default" href="../documentation.html">Prev Page</a>
+    
+
+    
+    <a class="btn btn-default" href="template-developer-guide.html">Next Page</a>
+    
+</div>
+</center>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <section id="feature-user-guide">
+<h1>&lt;Feature&gt; User Guide<a class="headerlink" href="#feature-user-guide" title="Link to this heading">¶</a></h1>
+<p>Refer to this template to identify the required sections and information
+that you should  provide for a User Guide. The user guide should contain
+configuration, administration, management, using, and troubleshooting
+sections for the feature.</p>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">¶</a></h2>
+<p>Provide an overview of the feature and the use case. Also include the
+audience who will use the feature. For example, audience can be the
+network administrator, cloud administrator, network engineer, system
+administrators, and so on.</p>
+</section>
+<section id="feature-architecture">
+<h2>&lt;Feature&gt; Architecture<a class="headerlink" href="#feature-architecture" title="Link to this heading">¶</a></h2>
+<p>Provide information about feature components and how they work together.
+Also include information about how the feature integrates with
+OpenDaylight. An architecture diagram could help.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Please <em>do not</em> include detailed internals that somebody
+using the feature wouldn’t care about. For example, the fact
+that there are four layers of APIs between a user command and
+a message being sent to a device is probably not useful to
+know unless they have some way to influence how those layers
+work and a reason to do so.</p>
+</div>
+</section>
+<section id="configuring-feature">
+<h2>Configuring &lt;feature&gt;<a class="headerlink" href="#configuring-feature" title="Link to this heading">¶</a></h2>
+<p>Describe how to configure the feature or the project after installation.
+Configuration information could include day-one activities for a project
+such as configuring users, configuring clients/servers and so on.</p>
+</section>
+<section id="administering-or-managing-feature">
+<h2>Administering or Managing &lt;feature&gt;<a class="headerlink" href="#administering-or-managing-feature" title="Link to this heading">¶</a></h2>
+<p>Include related command reference or  operations that you could perform
+using the feature. For example viewing network statistics, monitoring
+the network, generating reports, and so on.</p>
+<p>For example:</p>
+<p>To configure L2switch components perform the following steps.</p>
+<ol class="arabic simple">
+<li><p>Step 1:</p></li>
+<li><p>Step 2:</p></li>
+<li><p>Step 3:</p></li>
+</ol>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Link to this heading">¶</a></h2>
+<p><em>optional</em></p>
+<p>If there is only one tutorial, you skip the “Tutorials” section and
+instead just lead with the single tutorial’s name. If you do, also
+increase the header level by one, i.e., replace the carets (^^^) with
+dashes (- - -) and the dashes with equals signs (===).</p>
+<section id="tutorial-name">
+<h3>&lt;Tutorial Name&gt;<a class="headerlink" href="#tutorial-name" title="Link to this heading">¶</a></h3>
+<p>Ensure that the title starts with a gerund. For example using,
+monitoring, creating, and so on.</p>
+<section id="id1">
+<h4>Overview<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h4>
+<p>An overview of the use case.</p>
+</section>
+<section id="prerequisites">
+<h4>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">¶</a></h4>
+<p>Provide any prerequisite information, assumed knowledge, or environment
+required to execute the use case.</p>
+</section>
+<section id="target-environment">
+<h4>Target Environment<a class="headerlink" href="#target-environment" title="Link to this heading">¶</a></h4>
+<p>Include any topology requirement for the use case. Ideally, provide
+visual (abstract) layout of network diagrams and any other useful visual
+aides.</p>
+</section>
+<section id="instructions">
+<h4>Instructions<a class="headerlink" href="#instructions" title="Link to this heading">¶</a></h4>
+<p>Use case could be a set of configuration procedures. Including
+screenshots to help demonstrate what is happening is especially useful.
+Ensure that you specify them separately. For example:</p>
+<section id="setting-up-the-vm">
+<h5>Setting up the VM<a class="headerlink" href="#setting-up-the-vm" title="Link to this heading">¶</a></h5>
+<p>To set up a VM perform the following steps.</p>
+<ol class="arabic simple">
+<li><p>Step 1</p></li>
+<li><p>Step 2</p></li>
+<li><p>Step 3</p></li>
+</ol>
+</section>
+<section id="installing-the-feature">
+<h5>Installing the feature<a class="headerlink" href="#installing-the-feature" title="Link to this heading">¶</a></h5>
+<p>To install the feature perform the following steps.</p>
+<ol class="arabic simple">
+<li><p>Step 1</p></li>
+<li><p>Step 2</p></li>
+<li><p>Step 3</p></li>
+</ol>
+</section>
+<section id="configuring-the-environment">
+<h5>Configuring the environment<a class="headerlink" href="#configuring-the-environment" title="Link to this heading">¶</a></h5>
+<p>To configure the system perform the following steps.</p>
+<ol class="arabic simple">
+<li><p>Step 1</p></li>
+<li><p>Step 2</p></li>
+<li><p>Step 3</p></li>
+</ol>
+</section>
+</section>
+</section>
+</section>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/templates/template-user-guide.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2016-2026, OpenDaylight Project.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 8.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

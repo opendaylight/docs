@@ -1,0 +1,529 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>NETCONF &#8212; OpenDaylight Documentation Chromium documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-sphinx.css?v=0bf093e7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.2/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/ribbon.css?v=cb953b18" />
+    <link rel="stylesheet" href="../../_static/css/warning-header.css" type="text/css" />
+    <script src="../../_static/documentation_options.js?v=7b4a4459"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://cdn.datatables.net/1.11.2/js/jquery.dataTables.min.js"></script>
+    <script class="init" type="text/javascript">$(document).ready( function () { $('table.datatable').DataTable(); } );</script>
+    <link rel="icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="OpenFlow Plugin" href="openflowplugin.html" />
+    <link rel="prev" title="Model-Driven Service Abstraction Layer (MD-SAL)" href="mdsal.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+  <div class="ribbon">
+    <a href="https://jira.opendaylight.org/secure/CreateIssueDetails!init.jspa
+?pid=10121
+&issuetype=10104
+&components=10228
+&priority=2
+&description=version:+Chromium%0Apage:+release-notes/projects/netconf%0A%0A" target="_blank">
+      Report Issue
+    </a>
+  </div>
+  
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+  <!-- Outdated version warning banner -->
+  
+    <style>
+      body {
+        padding-top: 60px;
+     }
+    </style>
+  
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+          OpenDaylight Documentation</a>
+        <span class="navbar-text navbar-version pull-left"><b>Chromium</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../downloads.html">OpenDaylight Downloads</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started-guide/index.html">Getting Started Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-guides/index.html">Developer Guides</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../documentation.html">Documentation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release-process/index.html">OpenDaylight Release Process Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../javadoc.html">Java API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/index.html">OpenDaylight User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer-guides/index.html">Developer Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributor-guides/index.html">Contributor Guides</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">NETCONF</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#behavior-feature-changes">Behavior/Feature Changes</a></li>
+<li><a class="reference internal" href="#new-features">New Features</a></li>
+<li><a class="reference internal" href="#deprecated-and-removed-features">Deprecated and Removed Features</a></li>
+<li><a class="reference internal" href="#resolved-issues">Resolved Issues</a></li>
+<li><a class="reference internal" href="#known-issues">Known Issues</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">NETCONF</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#behavior-feature-changes">Behavior/Feature Changes</a></li>
+<li><a class="reference internal" href="#new-features">New Features</a></li>
+<li><a class="reference internal" href="#deprecated-and-removed-features">Deprecated and Removed Features</a></li>
+<li><a class="reference internal" href="#resolved-issues">Resolved Issues</a></li>
+<li><a class="reference internal" href="#known-issues">Known Issues</a></li>
+</ul>
+</li>
+</ul>
+<center>
+<div class="btn-group" role="group" aria-label="...">
+    
+    <a class="btn btn-default" href="mdsal.html">Prev Page</a>
+    
+
+    
+    <a class="btn btn-default" href="openflowplugin.html">Next Page</a>
+    
+</div>
+</center>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <section id="netconf">
+<h1>NETCONF<a class="headerlink" href="#netconf" title="Link to this heading">¶</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">¶</a></h2>
+<p>The NETCONF projects hosts multiple components relating to IETF’s NETCONF Working Group:</p>
+<ul class="simple">
+<li><p>Northbound and southbound plugins for NETCONF protocol, as described in <a class="reference external" href="http://tools.ietf.org/html/rfc6241">RFC-6241</a></p></li>
+<li><p>Northbound plugin for RESTCONF protocol, as described in <a class="reference external" href="http://tools.ietf.org/html/rfc8040">RFC-8040</a></p></li>
+<li><p>Northnound plugin for descring RESTCONF endpoint in terms of <a class="reference external" href="https://swagger.io/docs/specification/about/">OpenAPI 3.0</a></p></li>
+</ul>
+</section>
+<section id="behavior-feature-changes">
+<h2>Behavior/Feature Changes<a class="headerlink" href="#behavior-feature-changes" title="Link to this heading">¶</a></h2>
+<p>The highlight of this release is implementation of SSH transport configuration for NETCONF devices in
+<a class="reference external" href="https://lf-opendaylight.atlassian.net/browse/NETCONF-1502">NETCONF-1502</a>.</p>
+<p>There is also continuing effort to bring HTTP/1.1 pipelining and HTTP2 steamings to Netty based RESTCONF.</p>
+</section>
+<section id="new-features">
+<h2>New Features<a class="headerlink" href="#new-features" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://lf-opendaylight.atlassian.net/browse/NETCONF-1502">NETCONF-1502</a>.</p></li>
+</ul>
+</section>
+<section id="deprecated-and-removed-features">
+<h2>Deprecated and Removed Features<a class="headerlink" href="#deprecated-and-removed-features" title="Link to this heading">¶</a></h2>
+<p>There are no deprecated or removed features.</p>
+</section>
+<section id="resolved-issues">
+<h2>Resolved Issues<a class="headerlink" href="#resolved-issues" title="Link to this heading">¶</a></h2>
+<p>The following table lists the issues resolved in this release.</p>
+<table class="datatable docutils align-default" id="id1">
+<caption><span class="caption-text">Issues resolved in versions 10.0.0 through 10.0.2 (<a class="reference external" href="https://jira.opendaylight.org/issues/?jql=project%20%3D%20NETCONF%20AND%20resolution%20is%20not%20EMPTY%20AND%20fixVersion%20in%20%2810.0.0%2C%2010.0.1%2C%2010.0.2%29%20ORDER%20BY%20type%20ASC">JIRA</a>)</span><a class="headerlink" href="#id1" title="Link to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Key</p></th>
+<th class="head"><p>Summary</p></th>
+<th class="head"><p>Resolution</p></th>
+<th class="head"><p>Fix Version(s)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><img alt="Bug" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/NETCONF-1535">NETCONF-1535</a></p></td>
+<td><p>ServerPublicKeyVerifier relies on key implementation</p></td>
+<td><p>Done</p></td>
+<td><p>10.0.1, 8.0.10, 9.0.2</p></td>
+</tr>
+<tr class="row-odd"><td><img alt="Bug" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/NETCONF-1509">NETCONF-1509</a></p></td>
+<td><p>SshKeyExchangeAlgorithm.Sntrup761x25519Sha512 cannot be explicitly configured</p></td>
+<td><p>Done</p></td>
+<td><p>10.0.0, 8.0.9, 9.0.1</p></td>
+</tr>
+<tr class="row-even"><td><img alt="Bug" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/NETCONF-1508">NETCONF-1508</a></p></td>
+<td><p>Cannot configure SshEncryptionAlgorithm.Chacha20Poly1305</p></td>
+<td><p>Done</p></td>
+<td><p>10.0.0, 8.0.9, 9.0.1</p></td>
+</tr>
+<tr class="row-odd"><td><img alt="Bug" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/NETCONF-1507">NETCONF-1507</a></p></td>
+<td><p>Incorrect mapping of SshEncryptionAlgorithm.AEADAES256GCM</p></td>
+<td><p>Done</p></td>
+<td><p>10.0.0, 8.0.9, 9.0.1</p></td>
+</tr>
+<tr class="row-even"><td><img alt="Bug" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/NETCONF-1499">NETCONF-1499</a></p></td>
+<td><p>NetconfDeviceCommunicator.sessionLock can cause starvation</p></td>
+<td><p>Done</p></td>
+<td><p>10.0.0, 8.0.9, 9.0.1</p></td>
+</tr>
+<tr class="row-odd"><td><img alt="Bug" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/NETCONF-1495">NETCONF-1495</a></p></td>
+<td><p>Received data order from GET request is not preserved</p></td>
+<td><p>Done</p></td>
+<td><p>10.0.0, 7.0.12, 8.0.8, 9.0.1</p></td>
+</tr>
+<tr class="row-even"><td><img alt="Bug" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/NETCONF-1494">NETCONF-1494</a></p></td>
+<td><p>Netty does not return error on non-existing mountpoint</p></td>
+<td><p>Done</p></td>
+<td><p>10.0.0, 8.0.9, 9.0.1</p></td>
+</tr>
+<tr class="row-odd"><td><img alt="Bug" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/NETCONF-1491">NETCONF-1491</a></p></td>
+<td><p>Stop-time is not removed from datastore during modifySubscription</p></td>
+<td><p>Done</p></td>
+<td><p>10.0.0, 9.0.2</p></td>
+</tr>
+<tr class="row-even"><td><img alt="Bug" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/NETCONF-1480">NETCONF-1480</a></p></td>
+<td><p>Improving Path Validation for RFC7950 Notifications</p></td>
+<td><p>Done</p></td>
+<td><p>10.0.0, 9.0.2</p></td>
+</tr>
+<tr class="row-odd"><td><img alt="Bug" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/NETCONF-1431">NETCONF-1431</a></p></td>
+<td><p>OpenApi over Netty memory consumption</p></td>
+<td><p>Done</p></td>
+<td><p>10.0.0, 9.0.2</p></td>
+</tr>
+<tr class="row-even"><td><img alt="Improvement" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/NETCONF-1551">NETCONF-1551</a></p></td>
+<td><p>Split out KeyPairWithCertificate</p></td>
+<td><p>Done</p></td>
+<td><p>10.0.1, 9.0.2</p></td>
+</tr>
+<tr class="row-odd"><td><img alt="Improvement" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/NETCONF-1533">NETCONF-1533</a></p></td>
+<td><p>Remove LOG guard in NetconfDeviceCommunicator</p></td>
+<td><p>Done</p></td>
+<td><p>10.0.2</p></td>
+</tr>
+<tr class="row-even"><td><img alt="Improvement" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/NETCONF-1528">NETCONF-1528</a></p></td>
+<td><p>Do not use stax-utils in restconf-server-api</p></td>
+<td><p>Done</p></td>
+<td><p>10.0.0</p></td>
+</tr>
+<tr class="row-odd"><td><img alt="Improvement" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/NETCONF-1527">NETCONF-1527</a></p></td>
+<td><p>Do not use stax-utils in databind</p></td>
+<td><p>Done</p></td>
+<td><p>10.0.0, 9.0.2</p></td>
+</tr>
+<tr class="row-even"><td><img alt="Improvement" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/NETCONF-1511">NETCONF-1511</a></p></td>
+<td><p>SshKeyExchangeAlgorithm.Mlklem* cannot be explicitly configured</p></td>
+<td><p>Done</p></td>
+<td><p>10.0.0, 8.0.9, 9.0.1</p></td>
+</tr>
+<tr class="row-odd"><td><img alt="Improvement" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/NETCONF-1510">NETCONF-1510</a></p></td>
+<td><p>Refactor transport.ssh.TransportUtil</p></td>
+<td><p>Done</p></td>
+<td><p>10.0.0, 8.0.9, 9.0.1</p></td>
+</tr>
+<tr class="row-even"><td><img alt="Improvement" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/NETCONF-1506">NETCONF-1506</a></p></td>
+<td><p>Unify transport-{http,ssh,tls} ietf-crypto-types handling</p></td>
+<td><p>Done</p></td>
+<td><p>10.0.1, 9.0.2</p></td>
+</tr>
+<tr class="row-odd"><td><img alt="Improvement" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/NETCONF-1500">NETCONF-1500</a></p></td>
+<td><p>netconf-testtool: Advertise ietf-netconf to enable model-driven parsing of base NETCONF RPCs</p></td>
+<td><p>Done</p></td>
+<td><p>10.0.0, 9.0.2</p></td>
+</tr>
+<tr class="row-even"><td><img alt="Improvement" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/NETCONF-1484">NETCONF-1484</a></p></td>
+<td><p>Split filter cache &amp; expose oper-state sync</p></td>
+<td><p>Done</p></td>
+<td><p>10.0.0</p></td>
+</tr>
+<tr class="row-odd"><td><img alt="Improvement" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/NETCONF-1352">NETCONF-1352</a></p></td>
+<td><p>Expose ServerDataOperations for schema-aware mount points</p></td>
+<td><p>Done</p></td>
+<td><p>10.0.0</p></td>
+</tr>
+<tr class="row-even"><td><img alt="Improvement" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/NETCONF-1197">NETCONF-1197</a></p></td>
+<td><p>Translate the patch request into a single edit-config</p></td>
+<td><p>Done</p></td>
+<td><p>10.0.0</p></td>
+</tr>
+<tr class="row-odd"><td><img alt="Improvement" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/NETCONF-1155">NETCONF-1155</a></p></td>
+<td><p>Make RestconfStrategy.readData() asynchronous</p></td>
+<td><p>Done</p></td>
+<td><p>10.0.0, 9.0.1</p></td>
+</tr>
+<tr class="row-even"><td><img alt="Story" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/NETCONF-1493">NETCONF-1493</a></p></td>
+<td><p>Solve creating of chunks for FiniteResponse streaming</p></td>
+<td><p>Done</p></td>
+<td><p>10.0.0, 9.0.2</p></td>
+</tr>
+<tr class="row-odd"><td><img alt="Story" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/NETCONF-1492">NETCONF-1492</a></p></td>
+<td><p>Deal with error during generating FiniteResponse</p></td>
+<td><p>Done</p></td>
+<td><p>10.0.0, 9.0.2</p></td>
+</tr>
+<tr class="row-even"><td><img alt="Sub-task" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/NETCONF-1482">NETCONF-1482</a></p></td>
+<td><p>Create logic to suspend and to resume subscriptions</p></td>
+<td><p>Done</p></td>
+<td><p>10.0.0, 9.0.2</p></td>
+</tr>
+<tr class="row-odd"><td><img alt="Sub-task" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/NETCONF-1481">NETCONF-1481</a></p></td>
+<td><p>Move EffectiveModelContext  to AbstractRegistry</p></td>
+<td><p>Done</p></td>
+<td><p>10.0.0, 9.0.2</p></td>
+</tr>
+<tr class="row-even"><td><img alt="Task" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/NETCONF-1529">NETCONF-1529</a></p></td>
+<td><p>Adopt SchemaContextUtil.getConstituentModuleIdentifiers() from upstream</p></td>
+<td><p>Done</p></td>
+<td><p>10.0.0</p></td>
+</tr>
+<tr class="row-odd"><td><img alt="Task" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/NETCONF-1523">NETCONF-1523</a></p></td>
+<td><p>Move wadl-generator</p></td>
+<td><p>Done</p></td>
+<td><p>10.0.0</p></td>
+</tr>
+<tr class="row-even"><td><img alt="Task" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/NETCONF-1522">NETCONF-1522</a></p></td>
+<td><p>Rename restconf-subscription to rfc9639-impl</p></td>
+<td><p>Done</p></td>
+<td><p>10.0.0</p></td>
+</tr>
+<tr class="row-odd"><td><img alt="Task" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/NETCONF-1504">NETCONF-1504</a></p></td>
+<td><p>Bump mina-sshd to 2.16.0</p></td>
+<td><p>Done</p></td>
+<td><p>10.0.1, 11.0.0, 9.0.2</p></td>
+</tr>
+<tr class="row-even"><td><img alt="Task" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/NETCONF-1503">NETCONF-1503</a></p></td>
+<td><p>Stop using net.i2p.crypto</p></td>
+<td><p>Done</p></td>
+<td><p>10.0.0, 8.0.9, 9.0.1</p></td>
+</tr>
+<tr class="row-odd"><td><img alt="Task" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/NETCONF-1502">NETCONF-1502</a></p></td>
+<td><p>Make SSH transport configurable</p></td>
+<td><p>Done</p></td>
+<td><p>10.0.1, 11.0.0, 9.0.2</p></td>
+</tr>
+<tr class="row-even"><td><img alt="Task" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/NETCONF-1488">NETCONF-1488</a></p></td>
+<td><p>Extract Encoding from RPC</p></td>
+<td><p>Done</p></td>
+<td><p>10.0.0, 9.0.2</p></td>
+</tr>
+<tr class="row-odd"><td><img alt="Task" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/NETCONF-1487">NETCONF-1487</a></p></td>
+<td><p>Reconcile RFC 8040 and RFC 8639 Encodings</p></td>
+<td><p>Done</p></td>
+<td><p>10.0.0</p></td>
+</tr>
+<tr class="row-even"><td><img alt="Task" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/NETCONF-1485">NETCONF-1485</a></p></td>
+<td><p>Update swager UI to 5.28.1</p></td>
+<td><p>Done</p></td>
+<td><p>10.0.0, 9.0.1</p></td>
+</tr>
+<tr class="row-odd"><td><img alt="Task" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/NETCONF-1477">NETCONF-1477</a></p></td>
+<td><p>Plug EffectiveModelContext into AbstractRestconfStreamRegistry</p></td>
+<td><p>Done</p></td>
+<td><p>10.0.1, 11.0.0, 9.0.2</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="known-issues">
+<h2>Known Issues<a class="headerlink" href="#known-issues" title="Link to this heading">¶</a></h2>
+<p>The following table lists the known issues that exist in this release.</p>
+<table class="datatable docutils align-default" id="id2">
+<caption><span class="caption-text">Issues affecting versions 10.0.0 through 10.0.2 (<a class="reference external" href="https://jira.opendaylight.org/issues/?jql=project%20%3D%20NETCONF%20AND%20affectedVersion%20in%20%2810.0.0%2C%2010.0.1%2C%2010.0.2%29%20AND%20fixVersion%20NOT%20in%20%2810.0.0%2C%2010.0.1%2C%2010.0.2%29%20ORDER%20BY%20type%20ASC">JIRA</a>)</span><a class="headerlink" href="#id2" title="Link to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Key</p></th>
+<th class="head"><p>Summary</p></th>
+<th class="head"><p>Status</p></th>
+<th class="head"><p>Affected Version(s)</p></th>
+<th class="head"><p>Fix Version(s)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><img alt="Bug" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/NETCONF-1537">NETCONF-1537</a></p></td>
+<td><p>CMSCertificateParser does not handle multiple encoded entities</p></td>
+<td><p>Confirmed</p></td>
+<td><p>10.0.1, 8.0.10, 9.0.2</p></td>
+<td><p>10.0.3, 11.0.0, 9.0.3</p></td>
+</tr>
+<tr class="row-odd"><td><img alt="Bug" class="align-center" src="https://lf-opendaylight.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium" />
+</td>
+<td><p><a class="reference external" href="https://jira.opendaylight.org/browse/NETCONF-1416">NETCONF-1416</a></p></td>
+<td><p>Few devices fail to reconnect after device restart</p></td>
+<td><p>Confirmed</p></td>
+<td><p>10.0.0, 7.0.10, 8.0.2, 9.0.1</p></td>
+<td><p>10.0.3, 11.0.0, 9.0.2</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/release-notes/projects/netconf.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2016-2026, OpenDaylight Project.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 8.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,411 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Branch Cutting &#8212; OpenDaylight Documentation Chromium documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css?v=0bf093e7" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.2/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/ribbon.css?v=cb953b18" />
+    <link rel="stylesheet" href="../_static/css/warning-header.css" type="text/css" />
+    <script src="../_static/documentation_options.js?v=7b4a4459"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://cdn.datatables.net/1.11.2/js/jquery.dataTables.min.js"></script>
+    <script class="init" type="text/javascript">$(document).ready( function () { $('table.datatable').DataTable(); } );</script>
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Simultaneous Release" href="simultaneous-release.html" />
+    <link rel="prev" title="Project life-cycle" href="project-lifecycle.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+  <div class="ribbon">
+    <a href="https://jira.opendaylight.org/secure/CreateIssueDetails!init.jspa
+?pid=10121
+&issuetype=10104
+&components=10228
+&priority=2
+&description=version:+Chromium%0Apage:+release-process/branch-cutting%0A%0A" target="_blank">
+      Report Issue
+    </a>
+  </div>
+  
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+  <!-- Outdated version warning banner -->
+  
+    <style>
+      body {
+        padding-top: 60px;
+     }
+    </style>
+  
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          OpenDaylight Documentation</a>
+        <span class="navbar-text navbar-version pull-left"><b>Chromium</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../downloads.html">OpenDaylight Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes/index.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started-guide/index.html">Getting Started Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-guides/index.html">Developer Guides</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../documentation.html">Documentation Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">OpenDaylight Release Process Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../javadoc.html">Java API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/index.html">OpenDaylight User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-guides/index.html">Developer Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributor-guides/index.html">Contributor Guides</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Branch Cutting</a><ul>
+<li><a class="reference internal" href="#jjb-releng-builder">JJB (releng/builder)</a></li>
+<li><a class="reference internal" href="#autorelease">Autorelease</a></li>
+<li><a class="reference internal" href="#branch-cut-job-autorelease">Branch cut job (Autorelease)</a></li>
+<li><a class="reference internal" href="#manual-steps-to-branch-cut-autorelease">Manual steps to branch cut (Autorelease)</a></li>
+<li><a class="reference internal" href="#version-bump-job-autorelease">Version bump job (Autorelease)</a></li>
+<li><a class="reference internal" href="#manual-steps-to-version-bump-autorelease">Manual steps to version bump (Autorelease)</a></li>
+<li><a class="reference internal" href="#documentation-post-branch-tasks">Documentation post branch tasks</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Branch Cutting</a><ul>
+<li><a class="reference internal" href="#jjb-releng-builder">JJB (releng/builder)</a></li>
+<li><a class="reference internal" href="#autorelease">Autorelease</a></li>
+<li><a class="reference internal" href="#branch-cut-job-autorelease">Branch cut job (Autorelease)</a></li>
+<li><a class="reference internal" href="#manual-steps-to-branch-cut-autorelease">Manual steps to branch cut (Autorelease)</a></li>
+<li><a class="reference internal" href="#version-bump-job-autorelease">Version bump job (Autorelease)</a></li>
+<li><a class="reference internal" href="#manual-steps-to-version-bump-autorelease">Manual steps to version bump (Autorelease)</a></li>
+<li><a class="reference internal" href="#documentation-post-branch-tasks">Documentation post branch tasks</a></li>
+</ul>
+</li>
+</ul>
+<center>
+<div class="btn-group" role="group" aria-label="...">
+    
+    <a class="btn btn-default" href="project-lifecycle.html">Prev Page</a>
+    
+
+    
+    <a class="btn btn-default" href="simultaneous-release.html">Next Page</a>
+    
+</div>
+</center>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <section id="branch-cutting">
+<h1>Branch Cutting<a class="headerlink" href="#branch-cutting" title="Link to this heading">¶</a></h1>
+<p>This page documents the current branch cutting tasks that are needed
+to be performed at RC0 and which team has the necessary permissions
+in order to perform the necessary task in Parentheses.</p>
+<section id="jjb-releng-builder">
+<h2>JJB (releng/builder)<a class="headerlink" href="#jjb-releng-builder" title="Link to this heading">¶</a></h2>
+<ol class="arabic">
+<li><p>Export <code class="docutils literal notranslate"><span class="pre">${NEXT_RELEASE}</span></code> and <code class="docutils literal notranslate"><span class="pre">${CURR_RELEASE}</span></code> with new and current release names.
+<strong>(releng/builder committers)</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">CURR_RELEASE</span><span class="o">=</span><span class="s2">&quot;Silicon&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">NEXT_RELEASE</span><span class="o">=</span><span class="s2">&quot;Phosphorus&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Run the script <code class="docutils literal notranslate"><span class="pre">cut-branch-jobs.py</span></code> to generate next release jobs.
+<strong>(releng/builder committers)</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>scripts/cut-branch-jobs.py<span class="w"> </span><span class="nv">$CURR_RELEASE</span><span class="w"> </span><span class="nv">$NEXT_RELEASE</span><span class="w"> </span>jjb/
+pre-commit<span class="w"> </span>run<span class="w"> </span>--all-files
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">pre-commit</span></code> is necessary to adjust the formatting of the generated YAML.</p>
+</div>
+<p>This script changes JJB yaml files to insert the next release configuration
+by updating streams and branches where relevant. For example if <code class="docutils literal notranslate"><span class="pre">master</span></code>
+is currently Silicon, the result of this script will update config blocks
+as follows:</p>
+<p>Update multi-streams:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">stream</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Phosphorus</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">branch</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">master</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Silicon</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">branch</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">stable/silicon</span>
+</pre></div>
+</div>
+<p>Insert project new blocks:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">project</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aaa-phosphorus</span>
+<span class="w">    </span><span class="nt">jobs</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;{project-name}-verify-{stream}-{maven}-{jdks}&#39;</span>
+<span class="w">    </span><span class="nt">stream</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">phosphorus</span>
+<span class="w">    </span><span class="nt">branch</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">master</span>
+
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">project</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aaa-silicon</span>
+<span class="w">    </span><span class="nt">jobs</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;{project-name}-verify-{stream}-{maven}-{jdks}&#39;</span>
+<span class="w">    </span><span class="nt">stream</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">silicon</span>
+<span class="w">    </span><span class="nt">branch</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">stable/silicon</span>
+</pre></div>
+</div>
+</li>
+<li><p>Review and submit the changes to releng/builder project.
+<strong>(releng/builder committers)</strong></p></li>
+</ol>
+</section>
+<section id="autorelease">
+<h2>Autorelease<a class="headerlink" href="#autorelease" title="Link to this heading">¶</a></h2>
+<ol class="arabic">
+<li><p>Block submit permissions for registered users and elevate RE’s committer
+rights on Gerrit.
+<strong>(Helpdesk)</strong></p>
+<figure class="align-default">
+<img alt="../_images/gerrit-update-committer-rights.png" src="../_images/gerrit-update-committer-rights.png" />
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Enable <strong>Exclusive</strong> checkbox for the submit button to override any existing permissions.</p>
+</div>
+</li>
+<li><p>Enable create reference permissions on Gerrit for RE’s to submit
+<code class="docutils literal notranslate"><span class="pre">.gitreview</span></code> patches.
+<strong>(Helpdesk)</strong></p>
+<figure class="align-default">
+<img alt="../_images/gerrit-update-create-reference.png" src="../_images/gerrit-update-create-reference.png" />
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Enable Exclusive checkbox override any existing permissions.</p>
+</div>
+</li>
+<li><p>Start the branch cut job or use the manual steps below for branch cutting autorelease. <strong>(Release Engineering Team)</strong></p></li>
+<li><p>Start the version bump job or use the manual steps below for version bump autorelease. <strong>(Release Engineering Team)</strong></p></li>
+<li><p>Merge all <code class="docutils literal notranslate"><span class="pre">.gitreview</span></code> patches submitted though the job or manually. <strong>(Release Engineering Team)</strong></p></li>
+<li><p>Remove create reference permissions set on Gerrit for RE’s. <strong>(Helpdesk)</strong></p></li>
+<li><p>Merge all version bump patches in the order of dependencies. <strong>(Release Engineering Team)</strong></p></li>
+<li><p>Re-enable submit permissions for registered users and disable elevated RE committer rights on Gerrit. <strong>(Helpdesk)</strong></p></li>
+<li><p>Notify release list on branch cutting work completion. <strong>(Release Engineering Team)</strong></p></li>
+</ol>
+</section>
+<section id="branch-cut-job-autorelease">
+<h2>Branch cut job (Autorelease)<a class="headerlink" href="#branch-cut-job-autorelease" title="Link to this heading">¶</a></h2>
+<p>Branch cutting can be performed either through the job or manually.</p>
+<ol class="arabic simple">
+<li><p>Start the autorelease-branch-cut job
+<strong>(Release Engineering Team)</strong></p></li>
+</ol>
+</section>
+<section id="manual-steps-to-branch-cut-autorelease">
+<h2>Manual steps to branch cut (Autorelease)<a class="headerlink" href="#manual-steps-to-branch-cut-autorelease" title="Link to this heading">¶</a></h2>
+<ol class="arabic">
+<li><p>Setup <code class="docutils literal notranslate"><span class="pre">releng/autorelease</span></code> repository.
+<strong>(Release Engineering Team)</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>review<span class="w"> </span>-s
+git<span class="w"> </span>submodule<span class="w"> </span>foreach<span class="w"> </span><span class="s1">&#39;git review -s&#39;</span>
+git<span class="w"> </span>checkout<span class="w"> </span>master
+git<span class="w"> </span>submodule<span class="w"> </span>foreach<span class="w"> </span><span class="s1">&#39;git checkout master&#39;</span>
+git<span class="w"> </span>pull<span class="w"> </span>--rebase
+git<span class="w"> </span>submodule<span class="w"> </span>foreach<span class="w"> </span><span class="s1">&#39;git pull --rebase&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Enable create reference permissions on Gerrit for RE’s to submit
+<code class="docutils literal notranslate"><span class="pre">.gitreview</span></code> patches.
+<strong>(Helpdesk)</strong></p>
+<figure class="align-default">
+<img alt="../_images/gerrit-update-create-reference.png" src="../_images/gerrit-update-create-reference.png" />
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Enable Exclusive check-box override any existing permissions.</p>
+</div>
+</li>
+<li><p>Create <code class="docutils literal notranslate"><span class="pre">stable/${CURR_RELEASE}</span></code> branches based on HEAD master.
+<strong>(Release Engineering Team)</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>stable/<span class="si">${</span><span class="nv">CURR_RELEASE</span><span class="p">,,</span><span class="si">}</span><span class="w"> </span>origin/master
+git<span class="w"> </span>submodule<span class="w"> </span>foreach<span class="w"> </span><span class="s1">&#39;git checkout -b stable/${CURR_RELEASE,,} origin/master&#39;</span>
+git<span class="w"> </span>push<span class="w"> </span>gerrit<span class="w"> </span>stable/<span class="si">${</span><span class="nv">CURR_RELEASE</span><span class="p">,,</span><span class="si">}</span>
+git<span class="w"> </span>submodule<span class="w"> </span>foreach<span class="w"> </span><span class="s1">&#39;git push gerrit stable/${CURR_RELEASE,,}&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Contribute <code class="docutils literal notranslate"><span class="pre">.gitreview</span></code> updates to <code class="docutils literal notranslate"><span class="pre">stable/${CURR_RELEASE,,}</span></code>.
+<strong>(Release Engineering Team)</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>submodule<span class="w"> </span>foreach<span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;s#defaultbranch=master#defaultbranch=stable/</span><span class="si">${</span><span class="nv">CURR_RELEASE</span><span class="p">,,</span><span class="si">}</span><span class="s2">#&quot;</span><span class="w"> </span>.gitreview
+git<span class="w"> </span>submodule<span class="w"> </span>foreach<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-asm<span class="w"> </span><span class="s2">&quot;Update .gitreview to stable/</span><span class="si">${</span><span class="nv">CURR_RELEASE</span><span class="p">,,</span><span class="si">}</span><span class="s2">&quot;</span>
+git<span class="w"> </span>submodule<span class="w"> </span>foreach<span class="w"> </span><span class="s1">&#39;git review -t ${CURR_RELEASE,,}-branch-cut&#39;</span>
+sed<span class="w"> </span>-i<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;s#defaultbranch=master#defaultbranch=stable/</span><span class="si">${</span><span class="nv">CURR_RELEASE</span><span class="p">,,</span><span class="si">}</span><span class="s2">#&quot;</span><span class="w"> </span>.gitreview
+git<span class="w"> </span>add<span class="w"> </span>.gitreview
+git<span class="w"> </span>commit<span class="w"> </span>-s<span class="w"> </span>-v<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Update .gitreview to stable/</span><span class="si">${</span><span class="nv">CURR_RELEASE</span><span class="p">,,</span><span class="si">}</span><span class="s2">&quot;</span>
+git<span class="w"> </span>review<span class="w"> </span>-t<span class="w">  </span><span class="si">${</span><span class="nv">CURR_RELEASE</span><span class="p">,,</span><span class="si">}</span>-branch-cut
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="version-bump-job-autorelease">
+<h2>Version bump job (Autorelease)<a class="headerlink" href="#version-bump-job-autorelease" title="Link to this heading">¶</a></h2>
+<p>Version bump can performed either through the job or manually.</p>
+<ol class="arabic">
+<li><p>Start the autorelease-version-bump-${NEXT_RELEASE,,} job
+<strong>(Release Engineering Team)</strong></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Enabled BRANCH_CUT and disable DRY_RUN to run the job for branch cut
+work-flow. The version bump job can be run only on the master branch.</p>
+</div>
+</li>
+</ol>
+</section>
+<section id="manual-steps-to-version-bump-autorelease">
+<h2>Manual steps to version bump (Autorelease)<a class="headerlink" href="#manual-steps-to-version-bump-autorelease" title="Link to this heading">¶</a></h2>
+<ol class="arabic">
+<li><p>Version bump master by x.(y+1).z. <strong>(Release Engineering Team)</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>master
+git<span class="w"> </span>submodule<span class="w"> </span>foreach<span class="w"> </span><span class="s1">&#39;git checkout master&#39;</span>
+pip<span class="w"> </span>install<span class="w"> </span>lftools
+lftools<span class="w"> </span>version<span class="w"> </span>bump<span class="w"> </span><span class="si">${</span><span class="nv">CURR_RELEASE</span><span class="si">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>Make sure the version bump changes does not modify anything under scripts or pom.xml.
+<strong>(Release Engineering Team)</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>pom.xml<span class="w"> </span>scripts/
+</pre></div>
+</div>
+</li>
+<li><p>Push version bump master changes to Gerrit. <strong>(Release Engineering Team)</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>submodule<span class="w"> </span>foreach<span class="w"> </span><span class="s1">&#39;git commit -asm &quot;Bump versions by x.(y+1).z for next dev cycle&quot;&#39;</span>
+git<span class="w"> </span>submodule<span class="w"> </span>foreach<span class="w"> </span><span class="s1">&#39;git review -t ${CURR_RELEASE,,}-branch-cut&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Merge the patches in order according to the merge-order.log file found
+in autorelease jobs. <strong>(Release Engineering Team)</strong></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The version bump patches can be merged more quickly by performing a local
+build with <code class="docutils literal notranslate"><span class="pre">mvn</span> <span class="pre">clean</span> <span class="pre">deploy</span> <span class="pre">-DskipTests</span></code> to prime Nexus with the new
+version updates.</p>
+</div>
+</li>
+</ol>
+</section>
+<section id="documentation-post-branch-tasks">
+<h2>Documentation post branch tasks<a class="headerlink" href="#documentation-post-branch-tasks" title="Link to this heading">¶</a></h2>
+<ol class="arabic">
+<li><p>Git remove all files/directories from the <code class="docutils literal notranslate"><span class="pre">docs/release-notes/*</span></code> directory.
+<strong>(Release Engineering Team)</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>master
+git<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>docs/release-notes/&lt;project<span class="w"> </span>file<span class="w"> </span>and/or<span class="w"> </span>folder&gt;
+git<span class="w"> </span>commit<span class="w"> </span>-sm<span class="w"> </span><span class="s2">&quot;Reset release notes for next dev cycle&quot;</span>
+git<span class="w"> </span>review
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/release-process/branch-cutting.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2016-2026, OpenDaylight Project.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 8.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

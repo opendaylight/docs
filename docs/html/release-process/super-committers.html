@@ -1,0 +1,328 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Super Committers &#8212; OpenDaylight Documentation Chromium documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css?v=0bf093e7" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.2/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/ribbon.css?v=cb953b18" />
+    <link rel="stylesheet" href="../_static/css/warning-header.css" type="text/css" />
+    <script src="../_static/documentation_options.js?v=7b4a4459"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://cdn.datatables.net/1.11.2/js/jquery.dataTables.min.js"></script>
+    <script class="init" type="text/javascript">$(document).ready( function () { $('table.datatable').DataTable(); } );</script>
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Identifying Managed Projects in an OpenDaylight Version" href="identifying-managed-projects.html" />
+    <link rel="prev" title="Simultaneous Release" href="simultaneous-release.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+  <div class="ribbon">
+    <a href="https://jira.opendaylight.org/secure/CreateIssueDetails!init.jspa
+?pid=10121
+&issuetype=10104
+&components=10228
+&priority=2
+&description=version:+Chromium%0Apage:+release-process/super-committers%0A%0A" target="_blank">
+      Report Issue
+    </a>
+  </div>
+  
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+  <!-- Outdated version warning banner -->
+  
+    <style>
+      body {
+        padding-top: 60px;
+     }
+    </style>
+  
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          OpenDaylight Documentation</a>
+        <span class="navbar-text navbar-version pull-left"><b>Chromium</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../downloads.html">OpenDaylight Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes/index.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started-guide/index.html">Getting Started Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-guides/index.html">Developer Guides</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../documentation.html">Documentation Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">OpenDaylight Release Process Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../javadoc.html">Java API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/index.html">OpenDaylight User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-guides/index.html">Developer Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributor-guides/index.html">Contributor Guides</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Super Committers</a><ul>
+<li><a class="reference internal" href="#super-committer-activities">Super Committer Activities</a><ul>
+<li><a class="reference internal" href="#code-freeze">Code Freeze</a></li>
+<li><a class="reference internal" href="#version-bumping-release-work">Version bumping (Release Work)</a></li>
+<li><a class="reference internal" href="#exceptional-cases">Exceptional cases</a></li>
+<li><a class="reference internal" href="#self-service">Self-service</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id1">Super Committers</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Super Committers</a><ul>
+<li><a class="reference internal" href="#super-committer-activities">Super Committer Activities</a><ul>
+<li><a class="reference internal" href="#code-freeze">Code Freeze</a></li>
+<li><a class="reference internal" href="#version-bumping-release-work">Version bumping (Release Work)</a></li>
+<li><a class="reference internal" href="#exceptional-cases">Exceptional cases</a></li>
+<li><a class="reference internal" href="#self-service">Self-service</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id1">Super Committers</a></li>
+</ul>
+</li>
+</ul>
+<center>
+<div class="btn-group" role="group" aria-label="...">
+    
+    <a class="btn btn-default" href="simultaneous-release.html">Prev Page</a>
+    
+
+    
+    <a class="btn btn-default" href="identifying-managed-projects.html">Next Page</a>
+    
+</div>
+</center>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <section id="super-committers">
+<h1>Super Committers<a class="headerlink" href="#super-committers" title="Link to this heading">¶</a></h1>
+<p>Super committers are a group of TSC-approved individuals within the
+OpenDaylight community with the power to merge patches on behalf of projects
+during approved Release Activities.</p>
+<section id="super-committer-activities">
+<h2>Super Committer Activities<a class="headerlink" href="#super-committer-activities" title="Link to this heading">¶</a></h2>
+<p>Super committers are given super committer powers <strong>ONLY</strong> during TSC-approved
+activities and are not a power that is active on a regular basis. Once one of
+the TSC-approved activities are triggered, <a class="reference external" href="https://docs.releng.linuxfoundation.org/en/latest/helpdesk.html" title="(in lf-releng-docs vmaster)"><span class="xref std std-doc">helpdesk</span></a>
+will enable the permissions listed for the respective activities for the
+duration of that activity.</p>
+<section id="code-freeze">
+<h3>Code Freeze<a class="headerlink" href="#code-freeze" title="Link to this heading">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This activity has been pre-approved by the TSC and does not require a TSC
+vote. <a class="reference external" href="https://docs.releng.linuxfoundation.org/en/latest/helpdesk.html" title="(in lf-releng-docs vmaster)"><span class="xref std std-doc">Helpdesk</span></a> should be notified to enable the
+permissions and again to disable the permissions once activities are
+complete or use the self service job to activate the rights for a job.</p>
+</div>
+<p>Super committers are granted powers to merge blocking patches for the duration
+code of freeze until a release is approved and code freeze is lifted. This
+permission is only granted for the specific branch that is frozen.</p>
+<p>The following powers are granted:</p>
+<ul class="simple">
+<li><p>Submit button access</p></li>
+</ul>
+<p>During this time Super Committers can <strong>ONLY</strong> merge patches that have a +2
+Code-Review by a project committer approving the merge, and the patch passes
+Jenkins Verify check. If neither of these conditions are met then <strong>DO NOT</strong>
+merge the patch.</p>
+</section>
+<section id="version-bumping-release-work">
+<h3>Version bumping (Release Work)<a class="headerlink" href="#version-bumping-release-work" title="Link to this heading">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This activity has been pre-approved by the TSC and does not require a TSC
+vote. <a class="reference external" href="https://docs.releng.linuxfoundation.org/en/latest/helpdesk.html" title="(in lf-releng-docs vmaster)"><span class="xref std std-doc">Helpdesk</span></a> should be notified to enable the
+permissions and again to disable the permissions once activities are
+complete.</p>
+</div>
+<p>Super committers are granted powers to merge version bump related patches for
+the duration of version bumping activities.</p>
+<p>The following powers are granted:</p>
+<ul class="simple">
+<li><p>Vote Code-Review +2</p></li>
+<li><p>Vote Verified +1</p></li>
+<li><p>Remove Reviewer</p></li>
+<li><p>Submit button access</p></li>
+</ul>
+<p>These permissions are granted to allow super committers to push through version
+bump patches with haste. The Remove Reviewer permission is to be used only for
+removing Jenkins vote caused by a failed distribution-check job, if that
+failure is caused by a temporary version inconsistency present while the bump
+activity is being performed.</p>
+<p>Version bumping activities come in 2 forms.</p>
+<ol class="arabic simple">
+<li><p>Post-release Autorelease version bumping</p></li>
+<li><p>MRI project version bumping</p></li>
+</ol>
+<p>Case 1, the TSC has approved an official OpenDaylight release and after the
+binaries are released to the world all Autorelease managed projects are version
+bumped appropriately to the next development release number.</p>
+<p>Case 2, During the Release Integrated Deadline of the release schedule MRI
+projects submit desired version updates. Once approved by the TSC Super
+Committers can merge these patches across the projects.</p>
+<p>Ideally the version bumping activities should not include code modifications,
+if they do +2 Code-Review vote should be complete by a committer on the project
+to indicate that they approve the code changes.</p>
+<p>Once version bump patches are merged these permissions are removed.</p>
+</section>
+<section id="exceptional-cases">
+<h3>Exceptional cases<a class="headerlink" href="#exceptional-cases" title="Link to this heading">¶</a></h3>
+<p>Any activities not in the list above will fall under the exceptional case in
+which requires TSC approval before Super Committers can merge changes. These
+cases should be brought up to the TSC for voting.</p>
+</section>
+<section id="self-service">
+<h3>Self-service<a class="headerlink" href="#self-service" title="Link to this heading">¶</a></h3>
+<p>All of the above states (super committers, code freeze, release work, version
+bump) on the Gerrit branch can be achieved using a self-serviced Jenkins CI job
+<code class="docutils literal notranslate"><span class="pre">autorelease-gerrit-branch-lock-${STREAM}</span></code>. The job be triggered by anyone
+in the releng committers group.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Before starting the job to lock/unlock the branch, check the branch state
+using the link.</p>
+<p><a class="reference external" href="https://git.opendaylight.org/gerrit/gitweb?p=All-Projects.git;a=blob_plain;f=project.config;hb=HEAD">https://git.opendaylight.org/gerrit/gitweb?p=All-Projects.git;a=blob_plain;f=project.config;hb=HEAD</a></p>
+</div>
+</section>
+</section>
+<section id="id1">
+<h2>Super Committers<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>IRC</p></th>
+<th class="head"><p>Email</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Anil Belur</p></td>
+<td><p>abelur</p></td>
+<td><p><a class="reference external" href="mailto:abelur&#37;&#52;&#48;linux&#46;com">abelur<span>&#64;</span>linux<span>&#46;</span>com</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Jamo Luhrsen</p></td>
+<td><p>jamoluhrsen</p></td>
+<td><p><a class="reference external" href="mailto:jluhrsen&#37;&#52;&#48;gmail&#46;com">jluhrsen<span>&#64;</span>gmail<span>&#46;</span>com</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Luis Gomez</p></td>
+<td><p>LuisGomez</p></td>
+<td><p><a class="reference external" href="mailto:ecelgp&#37;&#52;&#48;gmail&#46;com">ecelgp<span>&#64;</span>gmail<span>&#46;</span>com</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Robert Varga</p></td>
+<td><p>rovarga</p></td>
+<td><p><a class="reference external" href="mailto:nite&#37;&#52;&#48;hq&#46;sk">nite<span>&#64;</span>hq<span>&#46;</span>sk</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Thanh Ha</p></td>
+<td><p>zxiiro</p></td>
+<td><p><a class="reference external" href="mailto:zxiiro&#37;&#52;&#48;gmail&#46;com">zxiiro<span>&#64;</span>gmail<span>&#46;</span>com</a></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/release-process/super-committers.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2016-2026, OpenDaylight Project.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 8.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

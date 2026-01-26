@@ -1,0 +1,1333 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Setting Up Clustering &#8212; OpenDaylight Documentation Chromium documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css?v=0bf093e7" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.2/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/ribbon.css?v=cb953b18" />
+    <link rel="stylesheet" href="../_static/css/warning-header.css" type="text/css" />
+    <script src="../_static/documentation_options.js?v=7b4a4459"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://cdn.datatables.net/1.11.2/js/jquery.dataTables.min.js"></script>
+    <script class="init" type="text/javascript">$(document).ready( function () { $('table.datatable').DataTable(); } );</script>
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Persistence and Backup" href="persistence_and_backup.html" />
+    <link rel="prev" title="Installing OpenDaylight" href="installing_opendaylight.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+  <div class="ribbon">
+    <a href="https://jira.opendaylight.org/secure/CreateIssueDetails!init.jspa
+?pid=10121
+&issuetype=10104
+&components=10228
+&priority=2
+&description=version:+Chromium%0Apage:+getting-started-guide/clustering%0A%0A" target="_blank">
+      Report Issue
+    </a>
+  </div>
+  
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+  <!-- Outdated version warning banner -->
+  
+    <style>
+      body {
+        padding-top: 60px;
+     }
+    </style>
+  
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          OpenDaylight Documentation</a>
+        <span class="navbar-text navbar-version pull-left"><b>Chromium</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../downloads.html">OpenDaylight Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes/index.html">Release Notes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Getting Started Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-guides/index.html">Developer Guides</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../documentation.html">Documentation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-process/index.html">OpenDaylight Release Process Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../javadoc.html">Java API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/index.html">OpenDaylight User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-guides/index.html">Developer Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributor-guides/index.html">Contributor Guides</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Setting Up Clustering</a><ul>
+<li><a class="reference internal" href="#clustering-overview">Clustering Overview</a></li>
+<li><a class="reference internal" href="#akka-to-pekko-migration">Akka to Pekko Migration</a></li>
+<li><a class="reference internal" href="#multiple-node-clustering">Multiple Node Clustering</a><ul>
+<li><a class="reference internal" href="#deployment-considerations">Deployment Considerations</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#clustering-scripts">Clustering Scripts</a><ul>
+<li><a class="reference internal" href="#configure-cluster-script">Configure Cluster Script</a></li>
+<li><a class="reference internal" href="#setting-up-a-multiple-node-cluster">Setting Up a Multiple Node Cluster</a><ul>
+<li><a class="reference internal" href="#sample-config-files">Sample Config Files</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#cluster-monitoring">Cluster Monitoring</a></li>
+<li><a class="reference internal" href="#failure-handling">Failure handling</a></li>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#split-brain-resolver">Split Brain Resolver</a><ul>
+<li><a class="reference internal" href="#keep-majority">Keep majority</a></li>
+<li><a class="reference internal" href="#static-quorum">Static quorum</a></li>
+<li><a class="reference internal" href="#keep-oldest">Keep oldest</a></li>
+<li><a class="reference internal" href="#down-all">Down all</a></li>
+<li><a class="reference internal" href="#lease">Lease</a></li>
+<li><a class="reference internal" href="#indirectly-connected-nodes">Indirectly connected nodes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#multi-dc-cluster">Multi-DC cluster</a><ul>
+<li><a class="reference internal" href="#failure-detection">Failure detection</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#active-backup-setup">Active/Backup Setup</a></li>
+<li><a class="reference internal" href="#extra-configuration-options">Extra Configuration Options</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Setting Up Clustering</a><ul>
+<li><a class="reference internal" href="#clustering-overview">Clustering Overview</a></li>
+<li><a class="reference internal" href="#akka-to-pekko-migration">Akka to Pekko Migration</a></li>
+<li><a class="reference internal" href="#multiple-node-clustering">Multiple Node Clustering</a><ul>
+<li><a class="reference internal" href="#deployment-considerations">Deployment Considerations</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#clustering-scripts">Clustering Scripts</a><ul>
+<li><a class="reference internal" href="#configure-cluster-script">Configure Cluster Script</a></li>
+<li><a class="reference internal" href="#setting-up-a-multiple-node-cluster">Setting Up a Multiple Node Cluster</a><ul>
+<li><a class="reference internal" href="#sample-config-files">Sample Config Files</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#cluster-monitoring">Cluster Monitoring</a></li>
+<li><a class="reference internal" href="#failure-handling">Failure handling</a></li>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#split-brain-resolver">Split Brain Resolver</a><ul>
+<li><a class="reference internal" href="#keep-majority">Keep majority</a></li>
+<li><a class="reference internal" href="#static-quorum">Static quorum</a></li>
+<li><a class="reference internal" href="#keep-oldest">Keep oldest</a></li>
+<li><a class="reference internal" href="#down-all">Down all</a></li>
+<li><a class="reference internal" href="#lease">Lease</a></li>
+<li><a class="reference internal" href="#indirectly-connected-nodes">Indirectly connected nodes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#multi-dc-cluster">Multi-DC cluster</a><ul>
+<li><a class="reference internal" href="#failure-detection">Failure detection</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#active-backup-setup">Active/Backup Setup</a></li>
+<li><a class="reference internal" href="#extra-configuration-options">Extra Configuration Options</a></li>
+</ul>
+</li>
+</ul>
+<center>
+<div class="btn-group" role="group" aria-label="...">
+    
+    <a class="btn btn-default" href="installing_opendaylight.html">Prev Page</a>
+    
+
+    
+    <a class="btn btn-default" href="persistence_and_backup.html">Next Page</a>
+    
+</div>
+</center>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <section id="setting-up-clustering">
+<h1>Setting Up Clustering<a class="headerlink" href="#setting-up-clustering" title="Link to this heading">¶</a></h1>
+<section id="clustering-overview">
+<h2>Clustering Overview<a class="headerlink" href="#clustering-overview" title="Link to this heading">¶</a></h2>
+<p>Clustering is a mechanism that enables multiple processes and programs to work
+together as one entity.  For example, when you search for something on
+google.com, it may seem like your search request is processed by only one web
+server. In reality, your search request is processed by may web servers
+connected in a cluster. Similarly, you can have multiple instances of
+OpenDaylight working together as one entity.</p>
+<p>Advantages of clustering are:</p>
+<ul class="simple">
+<li><p>Scaling: If you have multiple instances of OpenDaylight running, you can
+potentially do more work and store more data than you could with only one
+instance. You can also break up your data into smaller chunks (shards) and
+either distribute that data across the cluster or perform certain operations
+on certain members of the cluster.</p></li>
+<li><p>High Availability: If you have multiple instances of OpenDaylight running and
+one of them crashes, you will still have the other instances working and
+available.</p></li>
+<li><p>Data Persistence: You will not lose any data stored in OpenDaylight after a
+manual restart or a crash.</p></li>
+</ul>
+<p>The following sections describe how to set up clustering on both individual and
+multiple OpenDaylight instances.</p>
+</section>
+<section id="akka-to-pekko-migration">
+<h2>Akka to Pekko Migration<a class="headerlink" href="#akka-to-pekko-migration" title="Link to this heading">¶</a></h2>
+<p>Since 2025.03 Titanium we have switched from Akka to Apache Pekko. The only required change on end user should be
+to adapt configuration according to one following in this guide. For more details see
+<a class="reference external" href="https://pekko.apache.org/docs/pekko/current/project/migration-guides.html">Migration Guides</a>.</p>
+<p>For data migration you can use:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.opendaylight.org/projects/daexim/en/latest/index.html" title="(in DAEXIM vVanadium)"><span class="xref std std-doc">DAEXIM</span></a> capabilities.</p></li>
+<li><p>Akka and Pekko interoperability according to <a class="reference external" href="https://cwiki.apache.org/confluence/display/PEKKO/Pekko+Akka+Compatibility">this article</a>.</p></li>
+</ul>
+</section>
+<section id="multiple-node-clustering">
+<h2>Multiple Node Clustering<a class="headerlink" href="#multiple-node-clustering" title="Link to this heading">¶</a></h2>
+<p>The following sections describe how to set up multiple node clusters in OpenDaylight.</p>
+<section id="deployment-considerations">
+<h3>Deployment Considerations<a class="headerlink" href="#deployment-considerations" title="Link to this heading">¶</a></h3>
+<p>To implement clustering, the deployment considerations are as follows:</p>
+<ul>
+<li><p>To set up a cluster with multiple nodes, we recommend that you use a minimum
+of three machines. You can set up a cluster with just two nodes. However, if
+one of the two nodes fail, the cluster will not be operational.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is because clustering in OpenDaylight requires a majority of the
+nodes to be up and one node cannot be a majority of two nodes.</p>
+</div>
+</li>
+<li><p>Every device that belongs to a cluster needs to have an identifier.
+OpenDaylight uses the node’s <code class="docutils literal notranslate"><span class="pre">role</span></code> for this purpose. After you define the
+first node’s role as <em>member-1</em> in the <code class="docutils literal notranslate"><span class="pre">pekko.conf</span></code> file, OpenDaylight uses
+<em>member-1</em> to identify that node.</p></li>
+<li><p>Data shards are used to contain all or a certain segment of a OpenDaylight’s
+MD-SAL datastore. For example, one shard can contain all the inventory data
+while another shard contains all of the topology data.</p>
+<p>If you do not specify a module in the <code class="docutils literal notranslate"><span class="pre">modules.conf</span></code> file and do not specify
+a shard in <code class="docutils literal notranslate"><span class="pre">module-shards.conf</span></code>, then (by default) all the data is placed in
+the default shard (which must also be defined in <code class="docutils literal notranslate"><span class="pre">module-shards.conf</span></code> file).
+Each shard has replicas configured. You can specify the details of where the
+replicas reside in <code class="docutils literal notranslate"><span class="pre">module-shards.conf</span></code> file.</p>
+</li>
+<li><p>If you have a three node cluster and would like to be able to tolerate any
+single node crashing, a replica of every defined data shard must be running
+on all three cluster nodes.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is because OpenDaylight’s clustering implementation requires a
+majority of the defined shard replicas to be running in order to
+function. If you define data shard replicas on two of the cluster nodes
+and one of those nodes goes down, the corresponding data shards will not
+function.</p>
+</div>
+</li>
+<li><p>If you have a three node cluster and have defined replicas for a data shard
+on each of those nodes, that shard will still function even if only two of
+the cluster nodes are running. Note that if one of those remaining two nodes
+goes down, the shard will not be operational.</p></li>
+<li><p>It is  recommended that you have multiple seed nodes configured. After a
+cluster member is started, it sends a message to all of its seed nodes.
+The cluster member then sends a join command to the first seed node that
+responds. If none of its seed nodes reply, the cluster member repeats this
+process until it successfully establishes a connection or it is shut down.</p></li>
+<li><p>After a node is unreachable, it remains down for configurable period of time
+(10 seconds, by default). Once a node goes down, you need to restart it so
+that it can rejoin the cluster. Once a restarted node joins a cluster, it
+will synchronize with the lead node automatically.</p></li>
+</ul>
+</section>
+</section>
+<section id="clustering-scripts">
+<span id="getting-started-clustering-scripts"></span><h2>Clustering Scripts<a class="headerlink" href="#clustering-scripts" title="Link to this heading">¶</a></h2>
+<p>OpenDaylight includes some scripts to help with the clustering configuration.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Scripts are stored in the OpenDaylight <code class="docutils literal notranslate"><span class="pre">distribution/bin</span></code> folder, and
+maintained in the distribution project
+<a class="reference external" href="https://git.opendaylight.org/gerrit/admin/repos/integration/distribution">repository</a>
+in the folder <code class="docutils literal notranslate"><span class="pre">karaf-scripts/src/main/assembly/bin/</span></code>.</p>
+</div>
+<section id="configure-cluster-script">
+<h3>Configure Cluster Script<a class="headerlink" href="#configure-cluster-script" title="Link to this heading">¶</a></h3>
+<p>This script is used to configure the cluster parameters (e.g. <code class="docutils literal notranslate"><span class="pre">pekko.conf</span></code>,
+<code class="docutils literal notranslate"><span class="pre">module-shards.conf</span></code>) on a member of the controller cluster. The user should
+restart the node to apply the changes.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The script can be used at any time, even before the controller is started
+for the first time.</p>
+</div>
+<p>Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">bin</span><span class="o">/</span><span class="n">configure_cluster</span><span class="o">.</span><span class="n">sh</span> <span class="o">&lt;</span><span class="n">index</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">seed_nodes_list</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>index: Integer within 1..N, where N is the number of seed nodes. This indicates
+which controller node (1..N) is configured by the script.</p></li>
+<li><p>seed_nodes_list: List of seed nodes (IP address), separated by comma or space.</p></li>
+</ul>
+<p>The IP address at the provided index should belong to the member executing
+the script. When running this script on multiple seed nodes, keep the
+seed_node_list the same, and vary the index from 1 through N.</p>
+<p>Optionally, shards can be configured in a more granular way by modifying the
+file <code class="docutils literal notranslate"><span class="pre">&quot;custom_shard_configs.txt&quot;</span></code> in the same folder as this tool. Please see
+that file for more details.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">bin</span><span class="o">/</span><span class="n">configure_cluster</span><span class="o">.</span><span class="n">sh</span> <span class="mi">2</span> <span class="mf">192.168.0.1</span> <span class="mf">192.168.0.2</span> <span class="mf">192.168.0.3</span>
+</pre></div>
+</div>
+<p>The above command will configure the member 2 (IP address 192.168.0.2) of a
+cluster made of 192.168.0.1 192.168.0.2 192.168.0.3.</p>
+</section>
+<section id="setting-up-a-multiple-node-cluster">
+<h3>Setting Up a Multiple Node Cluster<a class="headerlink" href="#setting-up-a-multiple-node-cluster" title="Link to this heading">¶</a></h3>
+<p>To run OpenDaylight in a three node cluster, perform the following:</p>
+<p>First, determine the three machines that will make up the cluster. After that,
+do the following on each machine:</p>
+<ol class="arabic">
+<li><p>Copy the OpenDaylight distribution zip file to the machine.</p></li>
+<li><p>Unzip the distribution.</p></li>
+<li><p>Move into the <code class="docutils literal notranslate"><span class="pre">&lt;karaf-distribution-directory&gt;/bin</span></code> directory and run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">JAVA_MAX_MEM</span><span class="o">=</span><span class="mi">4</span><span class="n">G</span> <span class="n">JAVA_MAX_PERM_MEM</span><span class="o">=</span><span class="mi">512</span><span class="n">m</span> <span class="o">./</span><span class="n">karaf</span>
+</pre></div>
+</div>
+</li>
+<li><p>Enable clustering by running the following command at the Karaf command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">feature</span><span class="p">:</span><span class="n">install</span> <span class="n">odl</span><span class="o">-</span><span class="n">mdsal</span><span class="o">-</span><span class="n">distributed</span><span class="o">-</span><span class="n">datastore</span>
+</pre></div>
+</div>
+<p>After installation you will be able to see new folder <code class="docutils literal notranslate"><span class="pre">configuration/initial/</span></code>
+with config files</p>
+</li>
+<li><p>Open the following configuration files:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">configuration/initial/pekko.conf</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">configuration/initial/module-shards.conf</span></code></p></li>
+</ul>
+</li>
+<li><p>In each configuration file, make the following changes:</p>
+<p>Find every instance of the following lines and replace _127.0.0.1_ with the
+hostname or IP address of the machine on which this file resides and
+OpenDaylight will run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">artery</span> <span class="p">{</span>
+  <span class="n">canonical</span><span class="o">.</span><span class="n">hostname</span> <span class="o">=</span> <span class="s2">&quot;127.0.0.1&quot;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The value you need to specify will be different for each node in the
+cluster.</p>
+</div>
+</li>
+<li><p>Find the following lines and replace _127.0.0.1_ with the hostname or IP
+address of any of the machines that will be part of the cluster:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cluster</span> <span class="p">{</span>
+  <span class="n">seed</span><span class="o">-</span><span class="n">nodes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;pekko://opendaylight-cluster-data@$</span><span class="si">{IP_OF_MEMBER1}</span><span class="s2">:2550&quot;</span><span class="p">,</span>
+                <span class="o">&lt;</span><span class="n">url</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">cluster</span><span class="o">-</span><span class="n">member</span><span class="o">-</span><span class="mi">2</span><span class="o">&gt;</span><span class="p">,</span>
+                <span class="o">&lt;</span><span class="n">url</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">cluster</span><span class="o">-</span><span class="n">member</span><span class="o">-</span><span class="mi">3</span><span class="o">&gt;</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p>Find the following section and specify the role for each member node. Here
+we assign the first node with the <em>member-1</em> role, the second node with the
+<em>member-2</em> role, and the third node with the <em>member-3</em> role:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">roles</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="s2">&quot;member-1&quot;</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This step should use a different role on each node.</p>
+</div>
+</li>
+<li><p>Open the <code class="docutils literal notranslate"><span class="pre">configuration/initial/module-shards.conf</span></code> file and update the
+replicas so that each shard is replicated to all three nodes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">replicas</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;member-1&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;member-2&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;member-3&quot;</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>For reference, view a sample config files below.</p>
+</li>
+<li><p>Restart bundle via command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">opendaylight</span><span class="o">-</span><span class="n">user</span><span class="nd">@root</span><span class="o">&gt;</span><span class="n">restart</span> <span class="n">org</span><span class="o">.</span><span class="n">opendaylight</span><span class="o">.</span><span class="n">controller</span><span class="o">.</span><span class="n">sal</span><span class="o">-</span><span class="n">distributed</span><span class="o">-</span><span class="n">datastore</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>OpenDaylight should now be running in a three node cluster. You can use any of
+the three member nodes to access the data residing in the datastore.</p>
+<section id="sample-config-files">
+<h4>Sample Config Files<a class="headerlink" href="#sample-config-files" title="Link to this heading">¶</a></h4>
+<p>Sample <code class="docutils literal notranslate"><span class="pre">pekko.conf</span></code> file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">odl</span><span class="o">-</span><span class="n">cluster</span><span class="o">-</span><span class="n">data</span> <span class="p">{</span>
+  <span class="n">pekko</span> <span class="p">{</span>
+    <span class="n">remote</span> <span class="p">{</span>
+      <span class="n">artery</span> <span class="p">{</span>
+        <span class="n">enabled</span> <span class="o">=</span> <span class="n">on</span>
+        <span class="n">transport</span> <span class="o">=</span> <span class="n">tcp</span>
+        <span class="n">canonical</span><span class="o">.</span><span class="n">hostname</span> <span class="o">=</span> <span class="s2">&quot;10.0.2.10&quot;</span>
+        <span class="n">canonical</span><span class="o">.</span><span class="n">port</span> <span class="o">=</span> <span class="mi">2550</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="n">cluster</span> <span class="p">{</span>
+      <span class="c1"># Using artery.</span>
+      <span class="n">seed</span><span class="o">-</span><span class="n">nodes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;pekko://opendaylight-cluster-data@10.0.2.10:2550&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;pekko://opendaylight-cluster-data@10.0.2.11:2550&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;pekko://opendaylight-cluster-data@10.0.2.12:2550&quot;</span><span class="p">]</span>
+
+      <span class="n">roles</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;member-1&quot;</span>
+      <span class="p">]</span>
+
+      <span class="c1"># when under load we might trip a false positive on the failure detector</span>
+      <span class="c1"># failure-detector {</span>
+        <span class="c1"># heartbeat-interval = 4 s</span>
+        <span class="c1"># acceptable-heartbeat-pause = 16s</span>
+      <span class="c1"># }</span>
+    <span class="p">}</span>
+
+    <span class="n">persistence</span> <span class="p">{</span>
+      <span class="c1"># By default the snapshots/journal directories live in KARAF_HOME. You can choose to put it somewhere else by</span>
+      <span class="c1"># modifying the following two properties. The directory location specified may be a relative or absolute path.</span>
+      <span class="c1"># The relative path is always relative to KARAF_HOME.</span>
+
+      <span class="c1"># snapshot-store.local.dir = &quot;target/snapshots&quot;</span>
+
+      <span class="c1"># Use lz4 compression for LocalSnapshotStore snapshots</span>
+      <span class="n">snapshot</span><span class="o">-</span><span class="n">store</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">use</span><span class="o">-</span><span class="n">lz4</span><span class="o">-</span><span class="n">compression</span> <span class="o">=</span> <span class="n">false</span>
+      <span class="c1"># Size of blocks for lz4 compression: 64KB, 256KB, 1MB or 4MB</span>
+      <span class="n">snapshot</span><span class="o">-</span><span class="n">store</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">lz4</span><span class="o">-</span><span class="n">blocksize</span> <span class="o">=</span> <span class="mi">256</span><span class="n">KB</span>
+    <span class="p">}</span>
+    <span class="n">disable</span><span class="o">-</span><span class="n">default</span><span class="o">-</span><span class="n">actor</span><span class="o">-</span><span class="n">system</span><span class="o">-</span><span class="n">quarantined</span><span class="o">-</span><span class="n">event</span><span class="o">-</span><span class="n">handling</span> <span class="o">=</span> <span class="s2">&quot;false&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Sample <code class="docutils literal notranslate"><span class="pre">module-shards.conf</span></code> file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span><span class="o">-</span><span class="n">shards</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;default&quot;</span>
+        <span class="n">shards</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="n">name</span><span class="o">=</span><span class="s2">&quot;default&quot;</span>
+                <span class="n">replicas</span> <span class="o">=</span> <span class="p">[</span>
+                    <span class="s2">&quot;member-1&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;member-2&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;member-3&quot;</span>
+                <span class="p">]</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;topology&quot;</span>
+        <span class="n">shards</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="n">name</span><span class="o">=</span><span class="s2">&quot;topology&quot;</span>
+                <span class="n">replicas</span> <span class="o">=</span> <span class="p">[</span>
+                    <span class="s2">&quot;member-1&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;member-2&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;member-3&quot;</span>
+                <span class="p">]</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;inventory&quot;</span>
+        <span class="n">shards</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="n">name</span><span class="o">=</span><span class="s2">&quot;inventory&quot;</span>
+                <span class="n">replicas</span> <span class="o">=</span> <span class="p">[</span>
+                    <span class="s2">&quot;member-1&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;member-2&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;member-3&quot;</span>
+                <span class="p">]</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+         <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;toaster&quot;</span>
+         <span class="n">shards</span> <span class="o">=</span> <span class="p">[</span>
+             <span class="p">{</span>
+                 <span class="n">name</span><span class="o">=</span><span class="s2">&quot;toaster&quot;</span>
+                 <span class="n">replicas</span> <span class="o">=</span> <span class="p">[</span>
+                    <span class="s2">&quot;member-1&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;member-2&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;member-3&quot;</span>
+                 <span class="p">]</span>
+             <span class="p">}</span>
+         <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="cluster-monitoring">
+<h2>Cluster Monitoring<a class="headerlink" href="#cluster-monitoring" title="Link to this heading">¶</a></h2>
+<p>OpenDaylight exposes shard information via <code class="docutils literal notranslate"><span class="pre">MBeans</span></code>, which can be explored
+with <code class="docutils literal notranslate"><span class="pre">JConsole</span></code>, VisualVM, or other JMX clients, or exposed via a REST API using
+<a class="reference external" href="https://jolokia.org/features.html">Jolokia</a>, provided by the
+<code class="docutils literal notranslate"><span class="pre">odl-jolokia</span></code> Karaf feature. This is convenient, due to a significant focus
+on REST in OpenDaylight.</p>
+<p>The basic URI that lists a schema of all available <code class="docutils literal notranslate"><span class="pre">MBeans</span></code>, but not their
+content itself is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">GET</span>  <span class="o">/</span><span class="n">jolokia</span><span class="o">/</span><span class="nb">list</span>
+</pre></div>
+</div>
+<p>To read the information about the shards local to the queried OpenDaylight
+instance use the following REST calls. For the config datastore:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">GET</span>  <span class="o">/</span><span class="n">jolokia</span><span class="o">/</span><span class="n">read</span><span class="o">/</span><span class="n">org</span><span class="o">.</span><span class="n">opendaylight</span><span class="o">.</span><span class="n">controller</span><span class="p">:</span><span class="nb">type</span><span class="o">=</span><span class="n">DistributedConfigDatastore</span><span class="p">,</span><span class="n">Category</span><span class="o">=</span><span class="n">ShardManager</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="n">shard</span><span class="o">-</span><span class="n">manager</span><span class="o">-</span><span class="n">config</span>
+</pre></div>
+</div>
+<p>For the operational datastore:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">GET</span>  <span class="o">/</span><span class="n">jolokia</span><span class="o">/</span><span class="n">read</span><span class="o">/</span><span class="n">org</span><span class="o">.</span><span class="n">opendaylight</span><span class="o">.</span><span class="n">controller</span><span class="p">:</span><span class="nb">type</span><span class="o">=</span><span class="n">DistributedOperationalDatastore</span><span class="p">,</span><span class="n">Category</span><span class="o">=</span><span class="n">ShardManager</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="n">shard</span><span class="o">-</span><span class="n">manager</span><span class="o">-</span><span class="n">operational</span>
+</pre></div>
+</div>
+<p>The output contains information on shards present on the node:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;request&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;mbean&quot;</span><span class="p">:</span> <span class="s2">&quot;org.opendaylight.controller:Category=ShardManager,name=shard-manager-operational,type=DistributedOperationalDatastore&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;read&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;LocalShards&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s2">&quot;member-1-shard-default-operational&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;member-1-shard-entity-ownership-operational&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;member-1-shard-topology-operational&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;member-1-shard-inventory-operational&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;member-1-shard-toaster-operational&quot;</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;SyncStatus&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+    <span class="s2">&quot;MemberName&quot;</span><span class="p">:</span> <span class="s2">&quot;member-1&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;timestamp&quot;</span><span class="p">:</span> <span class="mi">1483738005</span><span class="p">,</span>
+  <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="mi">200</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The exact names from the “LocalShards” lists are needed for further
+exploration, as they will be used as part of the URI to look up detailed info
+on a particular shard. An example output for the
+<code class="docutils literal notranslate"><span class="pre">member-1-shard-default-operational</span></code> looks like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;request&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;mbean&quot;</span><span class="p">:</span> <span class="s2">&quot;org.opendaylight.controller:Category=Shards,name=member-1-shard-default-operational,type=DistributedOperationalDatastore&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;read&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;ReadWriteTransactionCount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;SnapshotIndex&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+    <span class="s2">&quot;InMemoryJournalLogSize&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;ReplicatedToAllIndex&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+    <span class="s2">&quot;Leader&quot;</span><span class="p">:</span> <span class="s2">&quot;member-1-shard-default-operational&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;LastIndex&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="s2">&quot;RaftState&quot;</span><span class="p">:</span> <span class="s2">&quot;Leader&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;LastCommittedTransactionTime&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-01-06 13:19:00.135&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;LastApplied&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="s2">&quot;LastLeadershipChangeTime&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-01-06 13:18:37.605&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;LastLogIndex&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="s2">&quot;PeerAddresses&quot;</span><span class="p">:</span> <span class="s2">&quot;member-3-shard-default-operational: pekko://opendaylight-cluster-data@192.168.16.3:2550/user/shardmanager-operational/member-3-shard-default-operational, member-2-shard-default-operational: pekko://opendaylight-cluster-data@192.168.16.2:2550/user/shardmanager-operational/member-2-shard-default-operational&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;WriteOnlyTransactionCount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;FollowerInitialSyncStatus&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+    <span class="s2">&quot;FollowerInfo&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="s2">&quot;timeSinceLastActivity&quot;</span><span class="p">:</span> <span class="s2">&quot;00:00:00.320&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;active&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+        <span class="s2">&quot;matchIndex&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+        <span class="s2">&quot;voting&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+        <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;member-3-shard-default-operational&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;nextIndex&quot;</span><span class="p">:</span> <span class="mi">6</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="s2">&quot;timeSinceLastActivity&quot;</span><span class="p">:</span> <span class="s2">&quot;00:00:00.320&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;active&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+        <span class="s2">&quot;matchIndex&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+        <span class="s2">&quot;voting&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+        <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;member-2-shard-default-operational&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;nextIndex&quot;</span><span class="p">:</span> <span class="mi">6</span>
+      <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;FailedReadTransactionsCount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;StatRetrievalTime&quot;</span><span class="p">:</span> <span class="s2">&quot;810.5 μs&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Voting&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+    <span class="s2">&quot;CurrentTerm&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;LastTerm&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;FailedTransactionsCount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;PendingTxCommitQueueSize&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;VotedFor&quot;</span><span class="p">:</span> <span class="s2">&quot;member-1-shard-default-operational&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;SnapshotCaptureInitiated&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+    <span class="s2">&quot;CommittedTransactionsCount&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+    <span class="s2">&quot;TxCohortCacheSize&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;PeerVotingStates&quot;</span><span class="p">:</span> <span class="s2">&quot;member-3-shard-default-operational: true, member-2-shard-default-operational: true&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;LastLogTerm&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;StatRetrievalError&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+    <span class="s2">&quot;CommitIndex&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="s2">&quot;SnapshotTerm&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;AbortTransactionsCount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;ReadOnlyTransactionCount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;ShardName&quot;</span><span class="p">:</span> <span class="s2">&quot;member-1-shard-default-operational&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;LeadershipChangeCount&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;InMemoryJournalDataSize&quot;</span><span class="p">:</span> <span class="mi">450</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;timestamp&quot;</span><span class="p">:</span> <span class="mi">1483740350</span><span class="p">,</span>
+  <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="mi">200</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The output helps identifying shard state (leader/follower, voting/non-voting),
+peers, follower details if the shard is a leader, and other
+statistics/counters.</p>
+<p>The ODLTools team is maintaining a Python based <a class="reference external" href="https://github.com/opendaylight/odltools">tool</a>,
+that takes advantage of the above <code class="docutils literal notranslate"><span class="pre">MBeans</span></code> exposed via <code class="docutils literal notranslate"><span class="pre">Jolokia</span></code>.</p>
+</section>
+<section id="failure-handling">
+<span id="cluster-admin-api"></span><h2>Failure handling<a class="headerlink" href="#failure-handling" title="Link to this heading">¶</a></h2>
+</section>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">¶</a></h2>
+<p>A fundamental problem in distributed systems is that network
+partitions (split brain scenarios) and machine crashes are indistinguishable
+for the observer, i.e. a node can observe that there is a problem with another
+node, but it cannot tell if it has crashed and will never be available again,
+if there is a network issue that might or might not heal again after a while or
+if process is unresponsive because of overload, CPU starvation or long garbage
+collection pauses.</p>
+<p>When there is a crash, we would like to remove the affected node immediately
+from the cluster membership. When there is a network partition or unresponsive
+process we would like to wait for a while in the hope that it is a transient
+problem that will heal again, but at some point, we must give up and continue
+with the nodes on one side of the partition and shut down nodes on the other
+side. Also, certain features are not fully available during partitions so it
+might not matter that the partition is transient or not if it just takes too
+long. Those two goals are in conflict with each other and there is a trade-off
+between how quickly we can remove a crashed node and premature action on
+transient network partitions.</p>
+</section>
+<section id="split-brain-resolver">
+<h2>Split Brain Resolver<a class="headerlink" href="#split-brain-resolver" title="Link to this heading">¶</a></h2>
+<p>You need to enable the Split Brain Resolver by configuring it as downing
+provider in the configuration:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>pekko.cluster.downing-provider-class = &quot;org.apache.pekko.cluster.sbr.SplitBrainResolverProvider&quot;
+</pre></div>
+</div>
+<p>You should also consider different downing strategies, described below.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If no downing provider is specified, NoDowning provider is used.</p>
+</div>
+<p>All strategies are inactive until the cluster membership and the information about
+unreachable nodes have been stable for a certain time period. Continuously adding
+more nodes while there is a network partition does not influence this timeout, since
+the status of those nodes will not be changed to Up while there are unreachable nodes.
+Joining nodes are not counted in the logic of the strategies.</p>
+<p>Setting <code class="docutils literal notranslate"><span class="pre">pekko.cluster.split-brain-resolver.stable-after</span></code> to a shorter duration for having
+quicker removal of crashed nodes can be done at the price of risking a too early action on
+transient network partitions that otherwise would have healed. Do not set this to a shorter
+duration than the membership dissemination time in the cluster, which depends on the cluster size.
+Recommended minimum duration for different cluster sizes:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Cluster size</p></th>
+<th class="head"><p>stable-after</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>7 s</p></td>
+</tr>
+<tr class="row-odd"><td><p>10</p></td>
+<td><p>10 s</p></td>
+</tr>
+<tr class="row-even"><td><p>20</p></td>
+<td><p>13 s</p></td>
+</tr>
+<tr class="row-odd"><td><p>50</p></td>
+<td><p>17 s</p></td>
+</tr>
+<tr class="row-even"><td><p>100</p></td>
+<td><p>20 s</p></td>
+</tr>
+<tr class="row-odd"><td><p>1000</p></td>
+<td><p>30 s</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is important that you use the same configuration on all nodes.</p>
+</div>
+<p>When reachability observations by the failure detector are changed, the SBR
+decisions are deferred until there are no changes within the stable-after
+duration. If this continues for too long it might be an indication of an
+unstable system/network and it could result in delayed or conflicting
+decisions on separate sides of a network partition.</p>
+<p>As a precaution for that scenario all nodes are downed if no decision is
+made within stable-after + down-all-when-unstable from the first unreachability
+event. The measurement is reset if all unreachable have been healed, downed or
+removed, or if there are no changes within stable-after * 2.</p>
+<p>Configuration:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pekko</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">split</span><span class="o">-</span><span class="n">brain</span><span class="o">-</span><span class="n">resolver</span> <span class="p">{</span>
+  <span class="c1"># Time margin after which shards or singletons that belonged to a downed/removed</span>
+  <span class="c1"># partition are created in surviving partition. The purpose of this margin is that</span>
+  <span class="c1"># in case of a network partition the persistent actors in the non-surviving partitions</span>
+  <span class="c1"># must be stopped before corresponding persistent actors are started somewhere else.</span>
+  <span class="c1"># This is useful if you implement downing strategies that handle network partitions,</span>
+  <span class="c1"># e.g. by keeping the larger side of the partition and shutting down the smaller side.</span>
+  <span class="c1"># Decision is taken by the strategy when there has been no membership or</span>
+  <span class="c1"># reachability changes for this duration, i.e. the cluster state is stable.</span>
+  <span class="n">stable</span><span class="o">-</span><span class="n">after</span> <span class="o">=</span> <span class="mi">20</span><span class="n">s</span>
+
+  <span class="c1"># When reachability observations by the failure detector are changed the SBR decisions</span>
+  <span class="c1"># are deferred until there are no changes within the &#39;stable-after&#39; duration.</span>
+  <span class="c1"># If this continues for too long it might be an indication of an unstable system/network</span>
+  <span class="c1"># and it could result in delayed or conflicting decisions on separate sides of a network</span>
+  <span class="c1"># partition.</span>
+  <span class="c1"># As a precaution for that scenario all nodes are downed if no decision is made within</span>
+  <span class="c1"># `stable-after + down-all-when-unstable` from the first unreachability event.</span>
+  <span class="c1"># The measurement is reset if all unreachable have been healed, downed or removed, or</span>
+  <span class="c1"># if there are no changes within `stable-after * 2`.</span>
+  <span class="c1"># The value can be on, off, or a duration.</span>
+  <span class="c1"># By default it is &#39;on&#39; and then it is derived to be 3/4 of stable-after, but not less than</span>
+  <span class="c1"># 4 seconds.</span>
+  <span class="n">down</span><span class="o">-</span><span class="nb">all</span><span class="o">-</span><span class="n">when</span><span class="o">-</span><span class="n">unstable</span> <span class="o">=</span> <span class="n">on</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<section id="keep-majority">
+<h3>Keep majority<a class="headerlink" href="#keep-majority" title="Link to this heading">¶</a></h3>
+<p>This strategy is used by default, because it works well for most systems.
+It will down the unreachable nodes if the current node is in the majority part
+based on the last known membership information. Otherwise down the reachable
+nodes, i.e. the own part. If the parts are of equal size the part containing the
+node with the lowest address is kept.</p>
+<p>This strategy is a good choice when the number of nodes in the cluster change
+dynamically and you can therefore not use static-quorum.</p>
+<ul class="simple">
+<li><p>If there are membership changes at the same time as the network partition
+occurs, for example, the status of two members are changed to Up on one side
+but that information is not disseminated to the other side before the
+connection is broken, it will down all nodes on the side that could be in
+minority if the joining nodes were changed to Up on the other side.
+Note that if the joining nodes were not changed to Up and becoming a majority
+on the other side then each part will shut down itself, terminating the whole
+cluster.</p></li>
+<li><p>If there are more than two partitions and none is in majority each part will
+shut down itself, terminating the whole cluster.</p></li>
+<li><p>If more than half of the nodes crash at the same time the other running nodes
+will down themselves because they think that they are not in majority, and
+thereby the whole cluster is terminated.</p></li>
+</ul>
+<p>The decision can be based on nodes with a configured role instead of all nodes
+in the cluster. This can be useful when some types of nodes are more valuable
+than others.</p>
+<p>Configuration:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pekko</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">split</span><span class="o">-</span><span class="n">brain</span><span class="o">-</span><span class="n">resolver</span><span class="o">.</span><span class="n">active</span><span class="o">-</span><span class="n">strategy</span><span class="o">=</span><span class="n">keep</span><span class="o">-</span><span class="n">majority</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pekko</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">split</span><span class="o">-</span><span class="n">brain</span><span class="o">-</span><span class="n">resolver</span><span class="o">.</span><span class="n">keep</span><span class="o">-</span><span class="n">majority</span> <span class="p">{</span>
+  <span class="c1"># if the &#39;role&#39; is defined the decision is based only on members with that &#39;role&#39;</span>
+  <span class="n">role</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="static-quorum">
+<h3>Static quorum<a class="headerlink" href="#static-quorum" title="Link to this heading">¶</a></h3>
+<p>The strategy named static-quorum will down the unreachable nodes if the number
+of remaining nodes are greater than or equal to a configured quorum-size.
+Otherwise, it will down the reachable nodes, i.e. it will shut down that side
+of the partition.</p>
+<p>This strategy is a good choice when you have a fixed number of nodes in the
+cluster, or when you can define a fixed number of nodes with a certain role.</p>
+<ul class="simple">
+<li><p>If there are unreachable nodes when starting up the cluster, before reaching
+this limit, the cluster may shut itself down immediately.
+This is not an issue if you start all nodes at approximately the same time or
+use the <code class="docutils literal notranslate"><span class="pre">pekko.cluster.min-nr-of-members</span></code> to define required number of
+members before the leader changes member status of ‘Joining’ members to ‘Up’.
+You can tune the timeout after which downing decisions are made using the
+stable-after setting.</p></li>
+<li><p>You should not add more members to the cluster than quorum-size * 2 - 1.
+If the exceeded cluster size remains when a SBR decision is needed it will
+down all nodes because otherwise there is a risk that both sides may down each
+other and thereby form two separate clusters.</p></li>
+<li><p>If the cluster is split into 3 (or more) parts each part that is smaller than
+then configured quorum-size will down itself and possibly shutdown the whole
+cluster.</p></li>
+<li><p>If more nodes than the configured quorum-size crash at the same time the other
+running nodes will down themselves because they think that they are not in the
+majority, and thereby the whole cluster is terminated.</p></li>
+</ul>
+<p>The decision can be based on nodes with a configured role instead of all nodes
+in the cluster. This can be useful when some types of nodes are more valuable
+than others.</p>
+<p>By defining a role for a few stable nodes in the cluster and using that in the
+configuration of static-quorum you will be able to dynamically add and remove
+other nodes without this role and still have good decisions of what nodes to
+keep running and what nodes to shut down in the case of network partitions.
+The advantage of this approach compared to keep-majority is that you do not risk
+splitting the cluster into two separate clusters, i.e. a split brain.</p>
+<p>Configuration:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pekko</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">split</span><span class="o">-</span><span class="n">brain</span><span class="o">-</span><span class="n">resolver</span><span class="o">.</span><span class="n">active</span><span class="o">-</span><span class="n">strategy</span><span class="o">=</span><span class="n">static</span><span class="o">-</span><span class="n">quorum</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pekko</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">split</span><span class="o">-</span><span class="n">brain</span><span class="o">-</span><span class="n">resolver</span><span class="o">.</span><span class="n">static</span><span class="o">-</span><span class="n">quorum</span> <span class="p">{</span>
+  <span class="c1"># minimum number of nodes that the cluster must have</span>
+  <span class="n">quorum</span><span class="o">-</span><span class="n">size</span> <span class="o">=</span> <span class="n">undefined</span>
+
+  <span class="c1"># if the &#39;role&#39; is defined the decision is based only on members with that &#39;role&#39;</span>
+  <span class="n">role</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="keep-oldest">
+<h3>Keep oldest<a class="headerlink" href="#keep-oldest" title="Link to this heading">¶</a></h3>
+<p>The strategy named keep-oldest will down the part that does not contain the oldest
+member. The oldest member is interesting because the active Cluster Singleton
+instance is running on the oldest member.</p>
+<p>This strategy is good to use if you use Cluster Singleton and do not want to shut
+down the node where the singleton instance runs. If the oldest node crashes a new
+singleton instance will be started on the next oldest node.</p>
+<ul class="simple">
+<li><p>If down-if-alone is configured to on, then if the oldest node has partitioned
+from all other nodes the oldest will down itself and keep all other nodes running.
+The strategy will not down the single oldest node when it is the only remaining
+node in the cluster.</p></li>
+<li><p>If there are membership changes at the same time as the network partition occurs,
+for example, the status of the oldest member is changed to Exiting on one side but
+that information is not disseminated to the other side before the connection is
+broken, it will detect this situation and make the safe decision to down all nodes
+on the side that sees the oldest as Leaving. Note that this has the drawback that
+if the oldest was Leaving and not changed to Exiting then each part will shut down
+itself, terminating the whole cluster.</p></li>
+</ul>
+<p>The decision can be based on nodes with a configured role instead of all nodes
+in the cluster.</p>
+<p>Configuration:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pekko</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">split</span><span class="o">-</span><span class="n">brain</span><span class="o">-</span><span class="n">resolver</span><span class="o">.</span><span class="n">active</span><span class="o">-</span><span class="n">strategy</span><span class="o">=</span><span class="n">keep</span><span class="o">-</span><span class="n">oldest</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pekko</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">split</span><span class="o">-</span><span class="n">brain</span><span class="o">-</span><span class="n">resolver</span><span class="o">.</span><span class="n">keep</span><span class="o">-</span><span class="n">oldest</span> <span class="p">{</span>
+  <span class="c1"># Enable downing of the oldest node when it is partitioned from all other nodes</span>
+  <span class="n">down</span><span class="o">-</span><span class="k">if</span><span class="o">-</span><span class="n">alone</span> <span class="o">=</span> <span class="n">on</span>
+
+  <span class="c1"># if the &#39;role&#39; is defined the decision is based only on members with that &#39;role&#39;,</span>
+  <span class="c1"># i.e. using the oldest member (singleton) within the nodes with that role</span>
+  <span class="n">role</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="down-all">
+<h3>Down all<a class="headerlink" href="#down-all" title="Link to this heading">¶</a></h3>
+<p>The strategy named down-all will down all nodes.</p>
+<p>This strategy can be a safe alternative if the network environment is highly unstable
+with unreachability observations that can’t be fully trusted, and including frequent
+occurrences of indirectly connected nodes. Due to the instability there is an increased
+risk of different information on different sides of partitions and therefore the other
+strategies may result in conflicting decisions. In such environments it can be better
+to shutdown all nodes and start up a new fresh cluster.</p>
+<ul class="simple">
+<li><p>This strategy is not recommended for large clusters (&gt; 10 nodes) because any minor
+problem will shutdown all nodes, and that is more likely to happen in larger clusters
+since there are more nodes that may fail.</p></li>
+</ul>
+<p>Configuration:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pekko</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">split</span><span class="o">-</span><span class="n">brain</span><span class="o">-</span><span class="n">resolver</span><span class="o">.</span><span class="n">active</span><span class="o">-</span><span class="n">strategy</span><span class="o">=</span><span class="n">down</span><span class="o">-</span><span class="nb">all</span>
+</pre></div>
+</div>
+</section>
+<section id="lease">
+<h3>Lease<a class="headerlink" href="#lease" title="Link to this heading">¶</a></h3>
+<p>The strategy named lease-majority is using a distributed lease (lock) to decide what
+nodes that are allowed to survive. Only one SBR instance can acquire the lease make
+the decision to remain up. The other side will not be able to acquire the lease and
+will therefore down itself.</p>
+<p>This strategy is very safe since coordination is added by an external arbiter.</p>
+<ul class="simple">
+<li><p>In some cases the lease will be unavailable when needed for a decision from all
+SBR instances, e.g. because it is on another side of a network partition, and then
+all nodes will be downed.</p></li>
+</ul>
+<p>Configuration:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>pekko {
+  cluster {
+    downing-provider-class = &quot;org.apache.pekko.cluster.sbr.SplitBrainResolverProvider&quot;
+    split-brain-resolver {
+      active-strategy = &quot;lease-majority&quot;
+      lease-majority {
+        lease-implementation = &quot;pekko.coordination.lease.kubernetes&quot;
+      }
+    }
+  }
+}
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pekko</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">split</span><span class="o">-</span><span class="n">brain</span><span class="o">-</span><span class="n">resolver</span><span class="o">.</span><span class="n">lease</span><span class="o">-</span><span class="n">majority</span> <span class="p">{</span>
+  <span class="n">lease</span><span class="o">-</span><span class="n">implementation</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+  <span class="c1"># This delay is used on the minority side before trying to acquire the lease,</span>
+  <span class="c1"># as an best effort to try to keep the majority side.</span>
+  <span class="n">acquire</span><span class="o">-</span><span class="n">lease</span><span class="o">-</span><span class="n">delay</span><span class="o">-</span><span class="k">for</span><span class="o">-</span><span class="n">minority</span> <span class="o">=</span> <span class="mi">2</span><span class="n">s</span>
+
+  <span class="c1"># If the &#39;role&#39; is defined the majority/minority is based only on members with that &#39;role&#39;.</span>
+  <span class="n">role</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="indirectly-connected-nodes">
+<h3>Indirectly connected nodes<a class="headerlink" href="#indirectly-connected-nodes" title="Link to this heading">¶</a></h3>
+<p>In a malfunctioning network there can be situations where nodes are observed as
+unreachable via some network links but they are still indirectly connected via
+other nodes, i.e. it’s not a clean network partition (or node crash).</p>
+<p>When this situation is detected the Split Brain Resolvers will keep fully
+connected nodes and down all the indirectly connected nodes.</p>
+<p>If there is a combination of indirectly connected nodes and a clean network
+partition it will combine the above decision with the ordinary decision,
+e.g. keep majority, after excluding suspicious failure detection observations.</p>
+</section>
+</section>
+<section id="multi-dc-cluster">
+<h2>Multi-DC cluster<a class="headerlink" href="#multi-dc-cluster" title="Link to this heading">¶</a></h2>
+<p>An OpenDaylight cluster has an ability to run on multiple data centers in a way,
+that tolerates network partitions among them.</p>
+<p>Nodes can be assigned to group of nodes by setting the
+<code class="docutils literal notranslate"><span class="pre">pekko.cluster.multi-data-center.self-data-center</span></code> configuration property.
+A node can only belong to one data center and if nothing is specified a node will
+belong to the default data center.</p>
+<p>The grouping of nodes is not limited to the physical boundaries of data centers,
+it could also be used as a logical grouping for other reasons, such as isolation
+of certain nodes to improve stability or splitting up a large cluster into smaller
+groups of nodes for better scalability.</p>
+<section id="failure-detection">
+<h3>Failure detection<a class="headerlink" href="#failure-detection" title="Link to this heading">¶</a></h3>
+<p>Failure detection is performed by sending heartbeat messages to detect if a node
+is unreachable. This is done more frequently and with more certainty among the
+nodes in the same data center than across data centers.</p>
+<p>Two different failure detectors can be configured for these two purposes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pekko.cluster.failure-detector</span></code> for failure detection within own data center</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pekko.cluster.multi-data-center.failure-detector</span></code> for failure detection across
+different data centers</p></li>
+</ul>
+<p>Heartbeat messages for failure detection across data centers are only performed
+between a number of the oldest nodes on each side. The number of nodes is configured
+with <code class="docutils literal notranslate"><span class="pre">pekko.cluster.multi-data-center.cross-data-center-connections</span></code>.</p>
+<p>This influences how rolling updates should be performed. Don’t stop all of the oldest nodes
+that are used for gossip at the same time. Stop one or a few at a time so that new
+nodes can take over the responsibility. It’s best to leave the oldest nodes until last.</p>
+<p>Configuration:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>multi-data-center {
+  # Defines which data center this node belongs to. It is typically used to make islands of the
+  # cluster that are colocated. This can be used to make the cluster aware that it is running
+  # across multiple availability zones or regions. It can also be used for other logical
+  # grouping of nodes.
+  self-data-center = &quot;default&quot;
+
+
+  # Try to limit the number of connections between data centers. Used for gossip and heartbeating.
+  # This will not limit connections created for the messaging of the application.
+  # If the cluster does not span multiple data centers, this value has no effect.
+  cross-data-center-connections = 5
+
+  # The n oldest nodes in a data center will choose to gossip to another data center with
+  # this probability. Must be a value between 0.0 and 1.0 where 0.0 means never, 1.0 means always.
+  # When a data center is first started (nodes &lt; 5) a higher probability is used so other data
+  # centers find out about the new nodes more quickly
+  cross-data-center-gossip-probability = 0.2
+
+  failure-detector {
+    # FQCN of the failure detector implementation.
+    # It must implement org.apache.pekko.remote.FailureDetector and have
+    # a public constructor with a com.typesafe.config.Config and
+    # pekko.actor.EventStream parameter.
+    implementation-class = &quot;org.apache.pekko.remote.DeadlineFailureDetector&quot;
+
+    # Number of potentially lost/delayed heartbeats that will be
+    # accepted before considering it to be an anomaly.
+    # This margin is important to be able to survive sudden, occasional,
+    # pauses in heartbeat arrivals, due to for example garbage collect or
+    # network drop.
+    acceptable-heartbeat-pause = 10 s
+
+    # How often keep-alive heartbeat messages should be sent to each connection.
+    heartbeat-interval = 3 s
+
+    # After the heartbeat request has been sent the first failure detection
+    # will start after this period, even though no heartbeat message has
+    # been received.
+    expected-response-after = 1 s
+  }
+}
+</pre></div>
+</div>
+</section>
+</section>
+<section id="active-backup-setup">
+<h2>Active/Backup Setup<a class="headerlink" href="#active-backup-setup" title="Link to this heading">¶</a></h2>
+<p>It is desirable to have the possibility to fail over to a different
+data center, in case all nodes become unreachable. To achieve that
+shards in the backup data center must be in “non-voting” state.</p>
+<p>The API to manipulate voting states on shards is defined as RPCs in the
+<a class="reference external" href="https://git.opendaylight.org/gerrit/gitweb?p=controller.git;a=blob;f=opendaylight/md-sal/sal-cluster-admin-api/src/main/yang/cluster-admin.yang">cluster-admin.yang</a>
+file in the <em>controller</em> project, which is well documented. A summary is
+provided below.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Unless otherwise indicated, the below POST requests are to be sent to any
+single cluster node.</p>
+</div>
+<p>To create an active/backup setup with a 6 node cluster (3 active and 3 backup
+nodes in two locations) such configuration is used:</p>
+<ul>
+<li><p>for member-1, member-2 and member-3 (active data center):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pekko</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">multi</span><span class="o">-</span><span class="n">data</span><span class="o">-</span><span class="n">center</span> <span class="p">{</span>
+  <span class="bp">self</span><span class="o">-</span><span class="n">data</span><span class="o">-</span><span class="n">center</span> <span class="o">=</span> <span class="s2">&quot;main&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>for member-4, member-5, member-6 (backup data center):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pekko</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">multi</span><span class="o">-</span><span class="n">data</span><span class="o">-</span><span class="n">center</span> <span class="p">{</span>
+  <span class="bp">self</span><span class="o">-</span><span class="n">data</span><span class="o">-</span><span class="n">center</span> <span class="o">=</span> <span class="s2">&quot;backup&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>There is an RPC to set voting states of all shards on
+a list of nodes to a given state:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">POST</span>  <span class="o">/</span><span class="n">restconf</span><span class="o">/</span><span class="n">operations</span><span class="o">/</span><span class="n">cluster</span><span class="o">-</span><span class="n">admin</span><span class="p">:</span><span class="n">change</span><span class="o">-</span><span class="n">member</span><span class="o">-</span><span class="n">voting</span><span class="o">-</span><span class="n">states</span><span class="o">-</span><span class="k">for</span><span class="o">-</span><span class="nb">all</span><span class="o">-</span><span class="n">shards</span>
+
+<span class="ow">or</span>
+
+<span class="n">POST</span>  <span class="o">/</span><span class="n">rests</span><span class="o">/</span><span class="n">operations</span><span class="o">/</span><span class="n">cluster</span><span class="o">-</span><span class="n">admin</span><span class="p">:</span><span class="n">change</span><span class="o">-</span><span class="n">member</span><span class="o">-</span><span class="n">voting</span><span class="o">-</span><span class="n">states</span><span class="o">-</span><span class="k">for</span><span class="o">-</span><span class="nb">all</span><span class="o">-</span><span class="n">shards</span>
+</pre></div>
+</div>
+<p>This RPC needs the list of nodes and the desired voting state as input. For
+creating the backup nodes, this example input can be used:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;input&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;member-voting-state&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="s2">&quot;member-name&quot;</span><span class="p">:</span> <span class="s2">&quot;member-4&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;voting&quot;</span><span class="p">:</span> <span class="n">false</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="s2">&quot;member-name&quot;</span><span class="p">:</span> <span class="s2">&quot;member-5&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;voting&quot;</span><span class="p">:</span> <span class="n">false</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="s2">&quot;member-name&quot;</span><span class="p">:</span> <span class="s2">&quot;member-6&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;voting&quot;</span><span class="p">:</span> <span class="n">false</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>When an active/backup deployment already exists, with shards on the backup
+nodes in non-voting state, all that is needed for a fail-over from the active
+data center to backup data center is to flip the voting state of each
+shard (on each node, active AND backup). That can be easily achieved with the
+following RPC call (no parameters needed):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">POST</span>  <span class="o">/</span><span class="n">restconf</span><span class="o">/</span><span class="n">operations</span><span class="o">/</span><span class="n">cluster</span><span class="o">-</span><span class="n">admin</span><span class="p">:</span><span class="n">flip</span><span class="o">-</span><span class="n">member</span><span class="o">-</span><span class="n">voting</span><span class="o">-</span><span class="n">states</span><span class="o">-</span><span class="k">for</span><span class="o">-</span><span class="nb">all</span><span class="o">-</span><span class="n">shards</span>
+
+<span class="ow">or</span>
+
+<span class="n">POST</span> <span class="o">/</span><span class="n">rests</span><span class="o">/</span><span class="n">operations</span><span class="o">/</span><span class="n">cluster</span><span class="o">-</span><span class="n">admin</span><span class="p">:</span><span class="n">flip</span><span class="o">-</span><span class="n">member</span><span class="o">-</span><span class="n">voting</span><span class="o">-</span><span class="n">states</span><span class="o">-</span><span class="k">for</span><span class="o">-</span><span class="nb">all</span><span class="o">-</span><span class="n">shards</span>
+</pre></div>
+</div>
+<p>If it’s an unplanned outage where the primary voting nodes are down, the
+“flip” RPC must be sent to a backup non-voting node. In this case there are no
+shard leaders to carry out the voting changes. However there is a special case
+whereby if the node that receives the RPC is non-voting and is to be changed
+to voting and there’s no leader, it will apply the voting changes locally and
+attempt to become the leader. If successful, it persists the voting changes
+and replicates them to the remaining nodes.</p>
+<p>When the primary site is fixed and you want to fail back to it, care must be
+taken when bringing the site back up. Because it was down when the voting
+states were flipped on the secondary, its persisted database won’t contain
+those changes. If brought back up in that state, the nodes will think they’re
+still voting. If the nodes have connectivity to the secondary site, they
+should follow the leader in the secondary site and sync with it. However if
+this does not happen then the primary site may elect its own leader thereby
+partitioning the 2 clusters, which can lead to undesirable results. Therefore
+it is recommended to either clean the databases (i.e., <code class="docutils literal notranslate"><span class="pre">journal</span></code> and
+<code class="docutils literal notranslate"><span class="pre">snapshots</span></code> directory) on the primary nodes before bringing them back up or
+restore them from a recent backup of the secondary site (see section
+<a class="reference internal" href="persistence_and_backup.html#cluster-backup-restore"><span class="std std-ref">Backing Up and Restoring the Datastore</span></a>).</p>
+<p>If is also possible to gracefully remove a node from a cluster, with the
+following RPC:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">POST</span>  <span class="o">/</span><span class="n">restconf</span><span class="o">/</span><span class="n">operations</span><span class="o">/</span><span class="n">cluster</span><span class="o">-</span><span class="n">admin</span><span class="p">:</span><span class="n">remove</span><span class="o">-</span><span class="nb">all</span><span class="o">-</span><span class="n">shard</span><span class="o">-</span><span class="n">replicas</span>
+
+<span class="ow">or</span>
+
+<span class="n">POST</span>  <span class="o">/</span><span class="n">rests</span><span class="o">/</span><span class="n">operations</span><span class="o">/</span><span class="n">cluster</span><span class="o">-</span><span class="n">admin</span><span class="p">:</span><span class="n">remove</span><span class="o">-</span><span class="nb">all</span><span class="o">-</span><span class="n">shard</span><span class="o">-</span><span class="n">replicas</span>
+</pre></div>
+</div>
+<p>and example input:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;input&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;member-name&quot;</span><span class="p">:</span> <span class="s2">&quot;member-1&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>or just one particular shard:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">POST</span>  <span class="o">/</span><span class="n">restconf</span><span class="o">/</span><span class="n">operations</span><span class="o">/</span><span class="n">cluster</span><span class="o">-</span><span class="n">admin</span><span class="p">:</span><span class="n">remove</span><span class="o">-</span><span class="n">shard</span><span class="o">-</span><span class="n">replica</span>
+
+<span class="ow">or</span>
+
+<span class="n">POST</span>  <span class="o">/</span><span class="n">rests</span><span class="o">/</span><span class="n">operations</span><span class="o">/</span><span class="n">cluster</span><span class="o">-</span><span class="n">admin</span><span class="p">:</span><span class="n">remove</span><span class="o">-</span><span class="n">shard</span><span class="o">-</span><span class="n">replicas</span>
+</pre></div>
+</div>
+<p>with example input:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;input&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;shard-name&quot;</span><span class="p">:</span> <span class="s2">&quot;default&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;member-name&quot;</span><span class="p">:</span> <span class="s2">&quot;member-2&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;data-store-type&quot;</span><span class="p">:</span> <span class="s2">&quot;config&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Now that a (potentially dead/unrecoverable) node was removed, another one can
+be added at runtime, without changing the configuration files of the healthy
+nodes (requiring reboot):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">POST</span>  <span class="o">/</span><span class="n">restconf</span><span class="o">/</span><span class="n">operations</span><span class="o">/</span><span class="n">cluster</span><span class="o">-</span><span class="n">admin</span><span class="p">:</span><span class="n">add</span><span class="o">-</span><span class="n">replicas</span><span class="o">-</span><span class="k">for</span><span class="o">-</span><span class="nb">all</span><span class="o">-</span><span class="n">shards</span>
+
+<span class="ow">or</span>
+
+<span class="n">POST</span>  <span class="o">/</span><span class="n">rests</span><span class="o">/</span><span class="n">operations</span><span class="o">/</span><span class="n">cluster</span><span class="o">-</span><span class="n">admin</span><span class="p">:</span><span class="n">add</span><span class="o">-</span><span class="n">replicas</span><span class="o">-</span><span class="k">for</span><span class="o">-</span><span class="nb">all</span><span class="o">-</span><span class="n">shards</span>
+</pre></div>
+</div>
+<p>No input required, but this RPC needs to be sent to the new node, to instruct
+it to replicate all shards from the cluster.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>While the cluster admin API allows adding and removing shards dynamically,
+the <code class="docutils literal notranslate"><span class="pre">module-shard.conf</span></code> and <code class="docutils literal notranslate"><span class="pre">modules.conf</span></code> files are still used on
+startup to define the initial configuration of shards. Modifications from
+the use of the API are not stored to those static files, but to the journal.</p>
+</div>
+</section>
+<section id="extra-configuration-options">
+<h2>Extra Configuration Options<a class="headerlink" href="#extra-configuration-options" title="Link to this heading">¶</a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>max-shard-data-change-executor-queue-size</p></td>
+<td><p>uint32 (1..max)</p></td>
+<td><p>1000</p></td>
+<td><p>The maximum queue size for each shard’s data store data change notification executor.</p></td>
+</tr>
+<tr class="row-odd"><td><p>max-shard-data-change-executor-pool-size</p></td>
+<td><p>uint32 (1..max)</p></td>
+<td><p>20</p></td>
+<td><p>The maximum thread pool size for each shard’s data store data change notification executor.</p></td>
+</tr>
+<tr class="row-even"><td><p>max-shard-data-change-listener-queue-size</p></td>
+<td><p>uint32 (1..max)</p></td>
+<td><p>1000</p></td>
+<td><p>The maximum queue size for each shard’s data store data change listener.</p></td>
+</tr>
+<tr class="row-odd"><td><p>max-shard-data-store-executor-queue-size</p></td>
+<td><p>uint32 (1..max)</p></td>
+<td><p>5000</p></td>
+<td><p>The maximum queue size for each shard’s data store executor.</p></td>
+</tr>
+<tr class="row-even"><td><p>shard-transaction-idle-timeout-in-minutes</p></td>
+<td><p>uint32 (1..max)</p></td>
+<td><p>10</p></td>
+<td><p>The maximum amount of time a shard transaction can be idle without receiving any messages before it self-destructs.</p></td>
+</tr>
+<tr class="row-odd"><td><p>shard-snapshot-batch-count</p></td>
+<td><p>uint32 (1..max)</p></td>
+<td><p>20000</p></td>
+<td><p>The minimum number of entries to be present in the in-memory journal log before a snapshot is to be taken.</p></td>
+</tr>
+<tr class="row-even"><td><p>shard-snapshot-data-threshold-percentage</p></td>
+<td><p>uint8 (1..100)</p></td>
+<td><p>12</p></td>
+<td><p>The percentage of <code class="docutils literal notranslate"><span class="pre">Runtime.totalMemory()</span></code> used by the in-memory journal log before a snapshot is to be taken</p></td>
+</tr>
+<tr class="row-odd"><td><p>shard-heartbeat-interval-in-millis</p></td>
+<td><p>uint16 (100..max)</p></td>
+<td><p>500</p></td>
+<td><p>The interval at which a shard will send a heart beat message to its remote shard.</p></td>
+</tr>
+<tr class="row-even"><td><p>operation-timeout-in-seconds</p></td>
+<td><p>uint16 (5..max)</p></td>
+<td><p>5</p></td>
+<td><p>The maximum amount of time for pekko operations (remote or local) to complete before failing.</p></td>
+</tr>
+<tr class="row-odd"><td><p>shard-journal-recovery-log-batch-size</p></td>
+<td><p>uint32 (1..max)</p></td>
+<td><p>5000</p></td>
+<td><p>The maximum number of journal log entries to batch on recovery for a shard before committing to the data store.</p></td>
+</tr>
+<tr class="row-even"><td><p>shard-transaction-commit-timeout-in-seconds</p></td>
+<td><p>uint32 (1..max)</p></td>
+<td><p>30</p></td>
+<td><p>The maximum amount of time a shard transaction three-phase commit can be idle without receiving the next messages before it aborts the transaction</p></td>
+</tr>
+<tr class="row-odd"><td><p>shard-transaction-commit-queue-capacity</p></td>
+<td><p>uint32 (1..max)</p></td>
+<td><p>20000</p></td>
+<td><p>The maximum allowed capacity for each shard’s transaction commit queue.</p></td>
+</tr>
+<tr class="row-even"><td><p>shard-initialization-timeout-in-seconds</p></td>
+<td><p>uint32 (1..max)</p></td>
+<td><p>300</p></td>
+<td><p>The maximum amount of time to wait for a shard to initialize from persistence on startup before failing an operation (eg transaction create and change listener registration).</p></td>
+</tr>
+<tr class="row-odd"><td><p>shard-leader-election-timeout-in-seconds</p></td>
+<td><p>uint32 (1..max)</p></td>
+<td><p>30</p></td>
+<td><p>The maximum amount of time to wait for a shard to elect a leader before failing an operation (eg transaction create).</p></td>
+</tr>
+<tr class="row-even"><td><p>enable-metric-capture</p></td>
+<td><p>boolean</p></td>
+<td><p>false</p></td>
+<td><p>Enable or disable metric capture.</p></td>
+</tr>
+<tr class="row-odd"><td><p>bounded-mailbox-capacity</p></td>
+<td><p>uint32 (1..max)</p></td>
+<td><p>1000</p></td>
+<td><p>Max queue size that an actor’s mailbox can reach</p></td>
+</tr>
+<tr class="row-even"><td><p>persistent</p></td>
+<td><p>boolean</p></td>
+<td><p>true</p></td>
+<td><p>Enable or disable data persistence</p></td>
+</tr>
+<tr class="row-odd"><td><p>shard-isolated-leader-check-interval-in-millis</p></td>
+<td><p>uint32 (1..max)</p></td>
+<td><p>5000</p></td>
+<td><p>the interval at which the leader of the shard will check if its majority followers are active and term itself as isolated</p></td>
+</tr>
+</tbody>
+</table>
+<p>These configuration options are included in the <code class="docutils literal notranslate"><span class="pre">etc/org.opendaylight.controller.cluster.datastore.cfg</span></code> configuration file.</p>
+</section>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/getting-started-guide/clustering.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2016-2026, OpenDaylight Project.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 8.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

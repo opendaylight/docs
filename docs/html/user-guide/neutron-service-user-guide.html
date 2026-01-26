@@ -1,0 +1,284 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Neutron Service User Guide &#8212; OpenDaylight Documentation Chromium documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css?v=0bf093e7" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.2/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/ribbon.css?v=cb953b18" />
+    <link rel="stylesheet" href="../_static/css/warning-header.css" type="text/css" />
+    <script src="../_static/documentation_options.js?v=7b4a4459"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://cdn.datatables.net/1.11.2/js/jquery.dataTables.min.js"></script>
+    <script class="init" type="text/javascript">$(document).ready( function () { $('table.datatable').DataTable(); } );</script>
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="NETCONF User Guide" href="netconf-user-guide.html" />
+    <link rel="prev" title="Distribution Version reporting" href="distribution-version-user-guide.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+  <div class="ribbon">
+    <a href="https://jira.opendaylight.org/secure/CreateIssueDetails!init.jspa
+?pid=10121
+&issuetype=10104
+&components=10228
+&priority=2
+&description=version:+Chromium%0Apage:+user-guide/neutron-service-user-guide%0A%0A" target="_blank">
+      Report Issue
+    </a>
+  </div>
+  
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+  <!-- Outdated version warning banner -->
+  
+    <style>
+      body {
+        padding-top: 60px;
+     }
+    </style>
+  
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          OpenDaylight Documentation</a>
+        <span class="navbar-text navbar-version pull-left"><b>Chromium</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../downloads.html">OpenDaylight Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes/index.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started-guide/index.html">Getting Started Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-guides/index.html">Developer Guides</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../documentation.html">Documentation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-process/index.html">OpenDaylight Release Process Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../javadoc.html">Java API Documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">OpenDaylight User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-guides/index.html">Developer Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributor-guides/index.html">Contributor Guides</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Neutron Service User Guide</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a><ul>
+<li><a class="reference internal" href="#use-cases-and-who-will-use-the-feature">Use cases and who will use the feature</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neutron-service-feature-architecture">Neutron Service feature Architecture</a></li>
+<li><a class="reference internal" href="#configuring-neutron-service-feature">Configuring Neutron Service feature</a></li>
+<li><a class="reference internal" href="#administering-or-managing-odl-neutron-service">Administering or Managing <code class="docutils literal notranslate"><span class="pre">odl-neutron-service</span></code></a><ul>
+<li><a class="reference internal" href="#installing-odl-neutron-service-while-the-controller-running">installing <code class="docutils literal notranslate"><span class="pre">odl-neutron-service</span></code> while the controller running</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neutron-logger">Neutron Logger</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Neutron Service User Guide</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a><ul>
+<li><a class="reference internal" href="#use-cases-and-who-will-use-the-feature">Use cases and who will use the feature</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neutron-service-feature-architecture">Neutron Service feature Architecture</a></li>
+<li><a class="reference internal" href="#configuring-neutron-service-feature">Configuring Neutron Service feature</a></li>
+<li><a class="reference internal" href="#administering-or-managing-odl-neutron-service">Administering or Managing <code class="docutils literal notranslate"><span class="pre">odl-neutron-service</span></code></a><ul>
+<li><a class="reference internal" href="#installing-odl-neutron-service-while-the-controller-running">installing <code class="docutils literal notranslate"><span class="pre">odl-neutron-service</span></code> while the controller running</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neutron-logger">Neutron Logger</a></li>
+</ul>
+</li>
+</ul>
+<center>
+<div class="btn-group" role="group" aria-label="...">
+    
+    <a class="btn btn-default" href="distribution-version-user-guide.html">Prev Page</a>
+    
+
+    
+    <a class="btn btn-default" href="netconf-user-guide.html">Next Page</a>
+    
+</div>
+</center>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <section id="neutron-service-user-guide">
+<span id="id1"></span><h1>Neutron Service User Guide<a class="headerlink" href="#neutron-service-user-guide" title="Link to this heading">¶</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">¶</a></h2>
+<p>This Karaf feature (<code class="docutils literal notranslate"><span class="pre">odl-neutron-service</span></code>) provides integration
+support for OpenStack Neutron via the OpenDaylight ML2 mechanism driver.
+The Neutron Service is only one of the components necessary for
+OpenStack integration. For those related components please refer to
+documentations of each component:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://wiki.openstack.org/wiki/Neutron">https://wiki.openstack.org/wiki/Neutron</a></p></li>
+<li><p><a class="reference external" href="https://launchpad.net/networking-odl">https://launchpad.net/networking-odl</a></p></li>
+<li><p><a class="reference external" href="https://opendev.org/openstack/networking-odl/">https://opendev.org/openstack/networking-odl/</a></p></li>
+<li><p><a class="reference external" href="https://wiki-archive.opendaylight.org/view/NeutronNorthbound:Main">https://wiki-archive.opendaylight.org/view/NeutronNorthbound:Main</a></p></li>
+</ul>
+<section id="use-cases-and-who-will-use-the-feature">
+<h3>Use cases and who will use the feature<a class="headerlink" href="#use-cases-and-who-will-use-the-feature" title="Link to this heading">¶</a></h3>
+<p>If you want OpenStack integration with OpenDaylight, you will need this
+feature with an OpenDaylight provider feature like netvirt, group
+based policy, VTN, and lisp mapper. For provider configuration, please
+refer to each individual provider’s documentation. Since the Neutron
+service only provides the northbound API for the OpenStack Neutron ML2
+mechanism driver. Without those provider features, the Neutron service
+itself is not useful.</p>
+</section>
+</section>
+<section id="neutron-service-feature-architecture">
+<h2>Neutron Service feature Architecture<a class="headerlink" href="#neutron-service-feature-architecture" title="Link to this heading">¶</a></h2>
+<p>The Neutron service provides northbound API for OpenStack Neutron via
+RESTCONF and also its dedicated REST API. It communicates through its
+YANG model with providers.</p>
+<figure class="align-default" id="id2">
+<img alt="Neutron Service Architecture" src="../_images/odl-neutron-service-architecture.png" />
+<figcaption>
+<p><span class="caption-text">Neutron Service Architecture</span><a class="headerlink" href="#id2" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="configuring-neutron-service-feature">
+<h2>Configuring Neutron Service feature<a class="headerlink" href="#configuring-neutron-service-feature" title="Link to this heading">¶</a></h2>
+<p>As the Karaf feature includes everything necessary for communicating
+northbound, no special configuration is needed. Usually this feature is
+used with an OpenDaylight southbound plugin that implements actual
+network virtualization functionality and OpenStack Neutron. The user
+wants to setup those configurations. Refer to each related
+documentations for each configurations.</p>
+</section>
+<section id="administering-or-managing-odl-neutron-service">
+<h2>Administering or Managing <code class="docutils literal notranslate"><span class="pre">odl-neutron-service</span></code><a class="headerlink" href="#administering-or-managing-odl-neutron-service" title="Link to this heading">¶</a></h2>
+<p>There is no specific configuration regarding to Neutron service itself.
+For related configuration, please refer to OpenStack Neutron
+configuration and OpenDaylight related services which are providers for
+OpenStack.</p>
+<section id="installing-odl-neutron-service-while-the-controller-running">
+<h3>installing <code class="docutils literal notranslate"><span class="pre">odl-neutron-service</span></code> while the controller running<a class="headerlink" href="#installing-odl-neutron-service-while-the-controller-running" title="Link to this heading">¶</a></h3>
+<ol class="arabic simple">
+<li><p>While OpenDaylight is running, in Karaf prompt, type:
+<code class="docutils literal notranslate"><span class="pre">feature:install</span> <span class="pre">odl-neutron-service</span></code>.</p></li>
+<li><p>Wait a while until the initialization is done and the controller
+stabilizes.</p></li>
+</ol>
+<p><code class="docutils literal notranslate"><span class="pre">odl-neutron-service</span></code> provides only a unified interface for OpenStack
+Neutron. It does not provide actual functionality for network
+virtualization. Refer to each OpenDaylight project documentation for
+actual configuration with OpenStack Neutron.</p>
+</section>
+</section>
+<section id="neutron-logger">
+<h2>Neutron Logger<a class="headerlink" href="#neutron-logger" title="Link to this heading">¶</a></h2>
+<p>Another service, the Neutron Logger, is provided for debugging/logging
+purposes. It logs changes on Neutron YANG models.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">feature</span><span class="p">:</span><span class="n">install</span> <span class="n">odl</span><span class="o">-</span><span class="n">neutron</span><span class="o">-</span><span class="n">logger</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/user-guide/neutron-service-user-guide.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2016-2026, OpenDaylight Project.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 8.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

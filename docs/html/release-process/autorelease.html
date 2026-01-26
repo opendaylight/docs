@@ -1,0 +1,295 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Autorelease &#8212; OpenDaylight Documentation Chromium documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css?v=0bf093e7" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.2/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/ribbon.css?v=cb953b18" />
+    <link rel="stylesheet" href="../_static/css/warning-header.css" type="text/css" />
+    <script src="../_static/documentation_options.js?v=7b4a4459"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://cdn.datatables.net/1.11.2/js/jquery.dataTables.min.js"></script>
+    <script class="init" type="text/javascript">$(document).ready( function () { $('table.datatable').DataTable(); } );</script>
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Project life-cycle" href="project-lifecycle.html" />
+    <link rel="prev" title="Project Standalone Release" href="project-release.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+  <div class="ribbon">
+    <a href="https://jira.opendaylight.org/secure/CreateIssueDetails!init.jspa
+?pid=10121
+&issuetype=10104
+&components=10228
+&priority=2
+&description=version:+Chromium%0Apage:+release-process/autorelease%0A%0A" target="_blank">
+      Report Issue
+    </a>
+  </div>
+  
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+  <!-- Outdated version warning banner -->
+  
+    <style>
+      body {
+        padding-top: 60px;
+     }
+    </style>
+  
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          OpenDaylight Documentation</a>
+        <span class="navbar-text navbar-version pull-left"><b>Chromium</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../downloads.html">OpenDaylight Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes/index.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started-guide/index.html">Getting Started Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-guides/index.html">Developer Guides</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../documentation.html">Documentation Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">OpenDaylight Release Process Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../javadoc.html">Java API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/index.html">OpenDaylight User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-guides/index.html">Developer Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributor-guides/index.html">Contributor Guides</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Autorelease</a><ul>
+<li><a class="reference internal" href="#cloning-autorelease">Cloning Autorelease</a></li>
+<li><a class="reference internal" href="#creating-autorelease-release-and-rc-build">Creating Autorelease - Release and RC build</a></li>
+<li><a class="reference internal" href="#adding-autorelease-staging-repository-to-settings-xml">Adding Autorelease staging repository to settings.xml</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Autorelease</a><ul>
+<li><a class="reference internal" href="#cloning-autorelease">Cloning Autorelease</a></li>
+<li><a class="reference internal" href="#creating-autorelease-release-and-rc-build">Creating Autorelease - Release and RC build</a></li>
+<li><a class="reference internal" href="#adding-autorelease-staging-repository-to-settings-xml">Adding Autorelease staging repository to settings.xml</a></li>
+</ul>
+</li>
+</ul>
+<center>
+<div class="btn-group" role="group" aria-label="...">
+    
+    <a class="btn btn-default" href="project-release.html">Prev Page</a>
+    
+
+    
+    <a class="btn btn-default" href="project-lifecycle.html">Next Page</a>
+    
+</div>
+</center>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <section id="autorelease">
+<h1>Autorelease<a class="headerlink" href="#autorelease" title="Link to this heading">¶</a></h1>
+<p>The Release Engineering - <a class="reference external" href="https://wiki-archive.opendaylight.org/view/RelEng/Autorelease">Autorelease project</a>
+is targeted at building the artifacts that are used in the release candidates
+and final full release.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://git.opendaylight.org/gerrit/q/project:releng/autorelease+status:open">Open Gerrit Patches</a></p></li>
+<li><p><a class="reference external" href="https://jenkins.opendaylight.org/releng/view/autorelease/">Jenkins Jobs</a></p></li>
+</ul>
+<section id="cloning-autorelease">
+<h2>Cloning Autorelease<a class="headerlink" href="#cloning-autorelease" title="Link to this heading">¶</a></h2>
+<p>To clone all the autorelease repository including it’s <code class="docutils literal notranslate"><span class="pre">submodules</span></code> simply
+run the clone command with the ‘’’–recursive’’’ parameter.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>--recursive<span class="w"> </span>https://git.opendaylight.org/gerrit/releng/autorelease
+</pre></div>
+</div>
+<p>If you forgot to add the –recursive parameter to your git clone you can pull
+the <code class="docutils literal notranslate"><span class="pre">submodules</span></code> after with the following commands.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>submodule<span class="w"> </span>init
+git<span class="w"> </span>submodule<span class="w"> </span>update
+</pre></div>
+</div>
+</section>
+<section id="creating-autorelease-release-and-rc-build">
+<h2>Creating Autorelease - Release and RC build<a class="headerlink" href="#creating-autorelease-release-and-rc-build" title="Link to this heading">¶</a></h2>
+<p>An autorelease release build comes from the autorelease-release-&lt;branch&gt; job
+which can be found on the autorelease tab in the releng master:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jenkins.opendaylight.org/releng/view/autorelease/">https://jenkins.opendaylight.org/releng/view/autorelease/</a></p></li>
+</ul>
+<p>For example to create a Boron release candidate build launch a build from the
+autorelease-release-boron job by clicking the ‘’’Build with Parameters’’’
+button on the left hand menu:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jenkins.opendaylight.org/releng/view/autorelease/job/autorelease-release-boron/">https://jenkins.opendaylight.org/releng/view/autorelease/job/autorelease-release-boron/</a></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The only field that needs to be filled in is the ‘’’RELEASE_TAG’’’, leave all
+other fields to their default setting. Set this to Boron, Boron-RC0,
+Boron-RC1, etc… depending on the build you’d like to create.</p>
+</div>
+</section>
+<section id="adding-autorelease-staging-repository-to-settings-xml">
+<h2>Adding Autorelease staging repository to settings.xml<a class="headerlink" href="#adding-autorelease-staging-repository-to-settings-xml" title="Link to this heading">¶</a></h2>
+<p>If you are building or testing this release in such a way that requires pulling
+some of the artifacts from the Nexus repository you may need to modify your
+<code class="docutils literal notranslate"><span class="pre">settings.xml</span></code> to include the staging repository URL as this URL is not part
+of OpenDaylight Nexus’ public or snapshot groups.
+If you’ve already cloned the recommended settings.xml for building ODL you will
+need to add an additional profile and activate it by adding these sections to
+the <code class="docutils literal notranslate"><span class="pre">\&lt;profiles\&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">\&lt;activeProfiles\&gt;</span></code> sections
+(please adjust accordingly).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>This is an example and you need to “Add” these example sections to your
+<code class="docutils literal notranslate"><span class="pre">settings.xml</span></code> do not delete your existing sections.</p></li>
+<li><p>The URLs in the <code class="docutils literal notranslate"><span class="pre">\&lt;repository\&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">\&lt;pluginRepository\&gt;</span></code> sections
+will also need to be updated with the staging repository you want to test.</p></li>
+</ul>
+</div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;profiles&gt;</span>
+<span class="w">  </span><span class="nt">&lt;profile&gt;</span>
+<span class="w">    </span><span class="nt">&lt;id&gt;</span>opendaylight-staging<span class="nt">&lt;/id&gt;</span>
+<span class="w">    </span><span class="nt">&lt;repositories&gt;</span>
+<span class="w">      </span><span class="nt">&lt;repository&gt;</span>
+<span class="w">        </span><span class="nt">&lt;id&gt;</span>opendaylight-staging<span class="nt">&lt;/id&gt;</span>
+<span class="w">        </span><span class="nt">&lt;name&gt;</span>opendaylight-staging<span class="nt">&lt;/name&gt;</span>
+<span class="w">        </span><span class="nt">&lt;url&gt;</span>https://nexus.opendaylight.org/content/repositories/automatedweeklyreleases-1062<span class="nt">&lt;/url&gt;</span>
+<span class="w">        </span><span class="nt">&lt;releases&gt;</span>
+<span class="w">          </span><span class="nt">&lt;enabled&gt;</span>true<span class="nt">&lt;/enabled&gt;</span>
+<span class="w">          </span><span class="nt">&lt;updatePolicy&gt;</span>never<span class="nt">&lt;/updatePolicy&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/releases&gt;</span>
+<span class="w">        </span><span class="nt">&lt;snapshots&gt;</span>
+<span class="w">          </span><span class="nt">&lt;enabled&gt;</span>false<span class="nt">&lt;/enabled&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/snapshots&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/repository&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/repositories&gt;</span>
+<span class="w">    </span><span class="nt">&lt;pluginRepositories&gt;</span>
+<span class="w">      </span><span class="nt">&lt;pluginRepository&gt;</span>
+<span class="w">        </span><span class="nt">&lt;id&gt;</span>opendaylight-staging<span class="nt">&lt;/id&gt;</span>
+<span class="w">        </span><span class="nt">&lt;name&gt;</span>opendaylight-staging<span class="nt">&lt;/name&gt;</span>
+<span class="w">        </span><span class="nt">&lt;url&gt;</span>https://nexus.opendaylight.org/content/repositories/automatedweeklyreleases-1062<span class="nt">&lt;/url&gt;</span>
+<span class="w">        </span><span class="nt">&lt;releases&gt;</span>
+<span class="w">          </span><span class="nt">&lt;enabled&gt;</span>true<span class="nt">&lt;/enabled&gt;</span>
+<span class="w">          </span><span class="nt">&lt;updatePolicy&gt;</span>never<span class="nt">&lt;/updatePolicy&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/releases&gt;</span>
+<span class="w">        </span><span class="nt">&lt;snapshots&gt;</span>
+<span class="w">          </span><span class="nt">&lt;enabled&gt;</span>false<span class="nt">&lt;/enabled&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/snapshots&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/pluginRepository&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/pluginRepositories&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/profile&gt;</span>
+<span class="nt">&lt;/profiles&gt;</span>
+
+<span class="nt">&lt;activeProfiles&gt;</span>
+<span class="w">  </span><span class="nt">&lt;activeProfile&gt;</span>opendaylight-staging<span class="nt">&lt;/activeProfile&gt;</span>
+<span class="nt">&lt;/activeProfiles&gt;</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/release-process/autorelease.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2016-2026, OpenDaylight Project.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 8.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

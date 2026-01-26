@@ -1,0 +1,245 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Project life-cycle &#8212; OpenDaylight Documentation Chromium documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css?v=0bf093e7" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.2/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/ribbon.css?v=cb953b18" />
+    <link rel="stylesheet" href="../_static/css/warning-header.css" type="text/css" />
+    <script src="../_static/documentation_options.js?v=7b4a4459"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://cdn.datatables.net/1.11.2/js/jquery.dataTables.min.js"></script>
+    <script class="init" type="text/javascript">$(document).ready( function () { $('table.datatable').DataTable(); } );</script>
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Branch Cutting" href="branch-cutting.html" />
+    <link rel="prev" title="Autorelease" href="autorelease.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+  <div class="ribbon">
+    <a href="https://jira.opendaylight.org/secure/CreateIssueDetails!init.jspa
+?pid=10121
+&issuetype=10104
+&components=10228
+&priority=2
+&description=version:+Chromium%0Apage:+release-process/project-lifecycle%0A%0A" target="_blank">
+      Report Issue
+    </a>
+  </div>
+  
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+  <!-- Outdated version warning banner -->
+  
+    <style>
+      body {
+        padding-top: 60px;
+     }
+    </style>
+  
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          OpenDaylight Documentation</a>
+        <span class="navbar-text navbar-version pull-left"><b>Chromium</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../downloads.html">OpenDaylight Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes/index.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started-guide/index.html">Getting Started Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-guides/index.html">Developer Guides</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../documentation.html">Documentation Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">OpenDaylight Release Process Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../javadoc.html">Java API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/index.html">OpenDaylight User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-guides/index.html">Developer Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributor-guides/index.html">Contributor Guides</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Project life-cycle</a><ul>
+<li><a class="reference internal" href="#list-of-states-for-projects-in-autorelease">List of states for projects in autorelease</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Project life-cycle</a><ul>
+<li><a class="reference internal" href="#list-of-states-for-projects-in-autorelease">List of states for projects in autorelease</a></li>
+</ul>
+</li>
+</ul>
+<center>
+<div class="btn-group" role="group" aria-label="...">
+    
+    <a class="btn btn-default" href="autorelease.html">Prev Page</a>
+    
+
+    
+    <a class="btn btn-default" href="branch-cutting.html">Next Page</a>
+    
+</div>
+</center>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <section id="project-life-cycle">
+<h1>Project life-cycle<a class="headerlink" href="#project-life-cycle" title="Link to this heading">¶</a></h1>
+<p>This page documents the current rules to follow when adding and removing
+a particular project to Simultaneous Release (SR).</p>
+<section id="list-of-states-for-projects-in-autorelease">
+<h2>List of states for projects in autorelease<a class="headerlink" href="#list-of-states-for-projects-in-autorelease" title="Link to this heading">¶</a></h2>
+<p>The state names are short negative phrases describing what is missing to
+progress to the following state.</p>
+<ul class="simple">
+<li><p><strong>non-existent</strong>
+The project is not recognized by Technical Steering Committee (TSC) to be
+part of OpenDaylight (ODL).</p></li>
+<li><p><strong>non-participating</strong>
+The project is recognized by the TSC to be an ODL project, but the
+project has not confirmed participation in SR for given release cycle.</p></li>
+<li><p><strong>non-building</strong>
+The recognized project is willing to participate, but its current codebase is
+not passing its own merge job, or the project artifacts are otherwise
+unavailable in Nexus.</p></li>
+<li><p><strong>not-in-autorelease</strong>
+Project merge job passes, but the project is not added to
+autorelease (git submodule, maven module, validate-autorelease job passes).</p></li>
+<li><p><strong>failing-autorelease</strong>
+The project is added to autorelease (git submodule, maven module, validate-autorelease job passes),
+but autorelease build fails when building project’s artifact.
+Temporary state, timing out into not-in-autorelease.</p></li>
+<li><p><strong>repo-not-in-integration</strong>
+Project is successfully built within autorelease, but integration/distribution:features-index
+is not listing all its public feature repositories.</p></li>
+<li><p><strong>feature-not-in-integration</strong>
+Feature repositories are referenced, distribution-check job is passing,
+but some user-facing features are absent from integration/distribution:features-test
+(possibly because adding them does not pass distribution SingleFeatureTest).</p></li>
+<li><p><strong>distribution-check-not-passing</strong>
+Features are in distribution, but distribution-check job is either not running,
+or it is failing for any reason. Temporary state, timing out into feature-not-in-integration.</p></li>
+<li><p><strong>feature-is-experimental</strong>
+All user-facing features are in features-test, but at least one of the corresponding
+functional CSIT jobs does not meet Integration/Test requirements.</p></li>
+<li><p><strong>feature-is-not-stable</strong>
+Feature does meet Integration/Test requirements, but it does not meed all requirements for stable features.</p></li>
+<li><p><strong>feature-is-stable</strong></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A project may change its state in both directions, this list is to make sure
+a project is not left in an invalid state, for example distribution referencing
+feature repositories, but without passing distribution-check job.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Projects can participate in Simultaneous Release even if they are not included in autorelease.
+Nitrogen example: Odlparent.
+FIXME: Clarify states for such projects (per version, if they released multiple times within the same cycle).</p>
+</div>
+</section>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/release-process/project-lifecycle.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2016-2026, OpenDaylight Project.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 8.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

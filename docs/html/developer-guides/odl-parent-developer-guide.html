@@ -1,0 +1,645 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>ODL Parent Developer Guide &#8212; OpenDaylight Documentation Chromium documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css?v=0bf093e7" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.2/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/ribbon.css?v=cb953b18" />
+    <link rel="stylesheet" href="../_static/css/warning-header.css" type="text/css" />
+    <script src="../_static/documentation_options.js?v=7b4a4459"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://cdn.datatables.net/1.11.2/js/jquery.dataTables.min.js"></script>
+    <script class="init" type="text/javascript">$(document).ready( function () { $('table.datatable').DataTable(); } );</script>
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="YANG Tools Developer Guide" href="yang-tools.html" />
+    <link rel="prev" title="Distribution features" href="distribution-test-features.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+  <div class="ribbon">
+    <a href="https://jira.opendaylight.org/secure/CreateIssueDetails!init.jspa
+?pid=10121
+&issuetype=10104
+&components=10228
+&priority=2
+&description=version:+Chromium%0Apage:+developer-guides/odl-parent-developer-guide%0A%0A" target="_blank">
+      Report Issue
+    </a>
+  </div>
+  
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+  <!-- Outdated version warning banner -->
+  
+    <style>
+      body {
+        padding-top: 60px;
+     }
+    </style>
+  
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          OpenDaylight Documentation</a>
+        <span class="navbar-text navbar-version pull-left"><b>Chromium</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../downloads.html">OpenDaylight Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes/index.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started-guide/index.html">Getting Started Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Developer Guides</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../documentation.html">Documentation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-process/index.html">OpenDaylight Release Process Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../javadoc.html">Java API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/index.html">OpenDaylight User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Developer Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributor-guides/index.html">Contributor Guides</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">ODL Parent Developer Guide</a><ul>
+<li><a class="reference internal" href="#parent-poms">Parent POMs</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#odlparent-lite">odlparent-lite</a></li>
+<li><a class="reference internal" href="#odlparent">odlparent</a></li>
+<li><a class="reference internal" href="#bundle-parent">bundle-parent</a></li>
+<li><a class="reference internal" href="#features-parent">features-parent</a></li>
+<li><a class="reference internal" href="#karaf-parent">karaf-parent</a></li>
+<li><a class="reference internal" href="#single-feature-parent">single-feature-parent</a></li>
+<li><a class="reference internal" href="#feature-repo-parent"><code class="docutils literal notranslate"><span class="pre">feature-repo-parent</span></code></a></li>
+<li><a class="reference internal" href="#karaf4-parent">karaf4-parent</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#features-for-karaf-3">Features (for Karaf 3)</a></li>
+<li><a class="reference internal" href="#features-for-karaf-4">Features (for Karaf 4)</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">ODL Parent Developer Guide</a><ul>
+<li><a class="reference internal" href="#parent-poms">Parent POMs</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#odlparent-lite">odlparent-lite</a></li>
+<li><a class="reference internal" href="#odlparent">odlparent</a></li>
+<li><a class="reference internal" href="#bundle-parent">bundle-parent</a></li>
+<li><a class="reference internal" href="#features-parent">features-parent</a></li>
+<li><a class="reference internal" href="#karaf-parent">karaf-parent</a></li>
+<li><a class="reference internal" href="#single-feature-parent">single-feature-parent</a></li>
+<li><a class="reference internal" href="#feature-repo-parent"><code class="docutils literal notranslate"><span class="pre">feature-repo-parent</span></code></a></li>
+<li><a class="reference internal" href="#karaf4-parent">karaf4-parent</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#features-for-karaf-3">Features (for Karaf 3)</a></li>
+<li><a class="reference internal" href="#features-for-karaf-4">Features (for Karaf 4)</a></li>
+</ul>
+</li>
+</ul>
+<center>
+<div class="btn-group" role="group" aria-label="...">
+    
+    <a class="btn btn-default" href="distribution-test-features.html">Prev Page</a>
+    
+
+    
+    <a class="btn btn-default" href="yang-tools.html">Next Page</a>
+    
+</div>
+</center>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <section id="odl-parent-developer-guide">
+<span id="id1"></span><h1>ODL Parent Developer Guide<a class="headerlink" href="#odl-parent-developer-guide" title="Link to this heading">¶</a></h1>
+<section id="parent-poms">
+<h2>Parent POMs<a class="headerlink" href="#parent-poms" title="Link to this heading">¶</a></h2>
+<section id="overview">
+<h3>Overview<a class="headerlink" href="#overview" title="Link to this heading">¶</a></h3>
+<p>The ODL Parent component for OpenDaylight provides a number of Maven
+parent POMs which allow Maven projects to be easily integrated in the
+OpenDaylight ecosystem. Technically, the aim of projects in OpenDaylight
+is to produce Karaf features, and these parent projects provide common
+support for the different types of projects involved.</p>
+<p>These parent projects are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">odlparent-lite</span></code> — the basic parent POM for Maven modules which
+don’t produce artifacts (<em>e.g.</em> aggregator POMs)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">odlparent</span></code> — the common parent POM for Maven modules containing
+Java code</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bundle-parent</span></code> — the parent POM for Maven modules producing OSGi
+bundles</p></li>
+</ul>
+<p>The following parent projects are deprecated, but still used in Carbon:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">feature-parent</span></code> — the parent POM for Maven modules producing
+Karaf 3 feature repositories</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">karaf-parent</span></code> — the parent POM for Maven modules producing Karaf 3
+distributions</p></li>
+</ul>
+<p>The following parent projects are new in Carbon, for Karaf 4 support (which
+won’t be complete until Nitrogen):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">single-feature-parent</span></code> — the parent POM for Maven modules producing
+a single Karaf 4 feature</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">feature-repo-parent</span></code> — the parent POM for Maven modules producing
+Karaf 4 feature repositories</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">karaf4-parent</span></code> — the parent POM for Maven modules producing Karaf 4
+distributions</p></li>
+</ul>
+</section>
+<section id="odlparent-lite">
+<h3>odlparent-lite<a class="headerlink" href="#odlparent-lite" title="Link to this heading">¶</a></h3>
+<p>This is the base parent for all OpenDaylight Maven projects and
+modules. It provides the following, notably to allow publishing
+artifacts to Maven Central:</p>
+<ul class="simple">
+<li><p>license information;</p></li>
+<li><p>organization information;</p></li>
+<li><p>issue management information (a link to our Bugzilla);</p></li>
+<li><p>continuous integration information (a link to our Jenkins setup);</p></li>
+<li><p>default Maven plugins (<code class="docutils literal notranslate"><span class="pre">maven-clean-plugin</span></code>,
+<code class="docutils literal notranslate"><span class="pre">maven-deploy-plugin</span></code>, <code class="docutils literal notranslate"><span class="pre">maven-install-plugin</span></code>,
+<code class="docutils literal notranslate"><span class="pre">maven-javadoc-plugin</span></code> with HelpMojo support,
+<code class="docutils literal notranslate"><span class="pre">maven-project-info-reports-plugin</span></code>, <code class="docutils literal notranslate"><span class="pre">maven-site-plugin</span></code> with
+Asciidoc support, <code class="docutils literal notranslate"><span class="pre">jdepend-maven-plugin</span></code>);</p></li>
+<li><p>distribution management information.</p></li>
+</ul>
+<p>It also defines two profiles which help during development:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">q</span></code> (<code class="docutils literal notranslate"><span class="pre">-Pq</span></code>), the quick profile, which disables tests, code
+coverage, Javadoc generation, code analysis, etc. — anything which
+is not necessary to build the bundles and features;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">addInstallRepositoryPath</span></code>
+(<code class="docutils literal notranslate"><span class="pre">-DaddInstallRepositoryPath=…/karaf/system</span></code>) which can be used to
+drop a bundle in the appropriate Karaf location, to enable
+hot-reloading of bundles during development.</p></li>
+</ul>
+<p>For modules which don’t produce any useful artifacts (<em>e.g.</em> aggregator
+POMs), you should add the following to avoid processing artifacts:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">build</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">plugins</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">plugin</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">groupId</span><span class="o">&gt;</span><span class="n">org</span><span class="o">.</span><span class="n">apache</span><span class="o">.</span><span class="n">maven</span><span class="o">.</span><span class="n">plugins</span><span class="o">&lt;/</span><span class="n">groupId</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">artifactId</span><span class="o">&gt;</span><span class="n">maven</span><span class="o">-</span><span class="n">deploy</span><span class="o">-</span><span class="n">plugin</span><span class="o">&lt;/</span><span class="n">artifactId</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">configuration</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">skip</span><span class="o">&gt;</span><span class="n">true</span><span class="o">&lt;/</span><span class="n">skip</span><span class="o">&gt;</span>
+            <span class="o">&lt;/</span><span class="n">configuration</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="n">plugin</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">plugin</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">groupId</span><span class="o">&gt;</span><span class="n">org</span><span class="o">.</span><span class="n">apache</span><span class="o">.</span><span class="n">maven</span><span class="o">.</span><span class="n">plugins</span><span class="o">&lt;/</span><span class="n">groupId</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">artifactId</span><span class="o">&gt;</span><span class="n">maven</span><span class="o">-</span><span class="n">install</span><span class="o">-</span><span class="n">plugin</span><span class="o">&lt;/</span><span class="n">artifactId</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">configuration</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">skip</span><span class="o">&gt;</span><span class="n">true</span><span class="o">&lt;/</span><span class="n">skip</span><span class="o">&gt;</span>
+            <span class="o">&lt;/</span><span class="n">configuration</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="n">plugin</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">plugins</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">build</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="odlparent">
+<h3>odlparent<a class="headerlink" href="#odlparent" title="Link to this heading">¶</a></h3>
+<p>This inherits from <code class="docutils literal notranslate"><span class="pre">odlparent-lite</span></code> and mainly provides dependency and
+plugin management for OpenDaylight projects.</p>
+<p>If you use any of the following libraries, you should rely on
+<code class="docutils literal notranslate"><span class="pre">odlparent</span></code> to provide the appropriate versions:</p>
+<ul class="simple">
+<li><p>Akka (and Scala)</p></li>
+<li><p>Apache Commons:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">commons-codec</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">commons-fileupload</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">commons-io</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">commons-lang</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">commons-lang3</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">commons-net</span></code></p></li>
+</ul>
+</li>
+<li><p>Apache Shiro</p></li>
+<li><p>Guava</p></li>
+<li><p>JAX-RS with Jersey</p></li>
+<li><p>JSON processing:</p>
+<ul>
+<li><p>GSON</p></li>
+<li><p>Jackson</p></li>
+</ul>
+</li>
+<li><p>Logging:</p>
+<ul>
+<li><p>Logback</p></li>
+<li><p>SLF4J</p></li>
+</ul>
+</li>
+<li><p>Netty</p></li>
+<li><p>OSGi:</p>
+<ul>
+<li><p>Apache Felix</p></li>
+<li><p>core OSGi dependencies (<code class="docutils literal notranslate"><span class="pre">core</span></code>, <code class="docutils literal notranslate"><span class="pre">compendium</span></code>…)</p></li>
+</ul>
+</li>
+<li><p>Testing:</p>
+<ul>
+<li><p>Hamcrest</p></li>
+<li><p>JSON assert</p></li>
+<li><p>JUnit</p></li>
+<li><p>Mockito</p></li>
+<li><p>Pax Exam</p></li>
+<li><p>PowerMock</p></li>
+</ul>
+</li>
+<li><p>XML/XSL:</p>
+<ul>
+<li><p>Xerces</p></li>
+<li><p>XML APIs</p></li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This list is not exhaustive. It is also not cast in stone;if you
+would like to add a new dependency (or migrate a dependency), please
+contact <a class="reference external" href="https://lists.opendaylight.org/g/kernel-dev">the mailing list</a>.</p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">odlparent</span></code> also enforces some Checkstyle verification rules. In
+particular, it enforces the common license header used in all
+OpenDaylight code:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>/*
+ * Copyright © ${year} ${holder} and others.  All rights reserved.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ * and is available at http://www.eclipse.org/legal/epl-v10.html
+ */
+</pre></div>
+</div>
+<p>where “<code class="docutils literal notranslate"><span class="pre">${year}</span></code>” is initially the first year of publication, then
+(after a year has passed) the first and latest years of publication,
+separated by commas (<em>e.g.</em> “2014, 2016”), and “<code class="docutils literal notranslate"><span class="pre">${holder}</span></code>” is
+the initial copyright holder (typically, the first author’s employer).
+“All rights reserved” is optional.</p>
+<p>If you need to disable this license check, <em>e.g.</em> for files imported
+under another license (EPL-compatible of course), you can override the
+<code class="docutils literal notranslate"><span class="pre">maven-checkstyle-plugin</span></code> configuration. <code class="docutils literal notranslate"><span class="pre">features-test</span></code> does this
+for its <code class="docutils literal notranslate"><span class="pre">CustomBundleUrlStreamHandlerFactory</span></code> class, which is
+ASL-licensed:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;plugin&gt;
+    &lt;artifactId&gt;maven-checkstyle-plugin&lt;/artifactId&gt;
+    &lt;executions&gt;
+        &lt;execution&gt;
+            &lt;id&gt;check-license&lt;/id&gt;
+            &lt;goals&gt;
+                &lt;goal&gt;check&lt;/goal&gt;
+            &lt;/goals&gt;
+            &lt;phase&gt;process-sources&lt;/phase&gt;
+            &lt;configuration&gt;
+                &lt;configLocation&gt;check-license.xml&lt;/configLocation&gt;
+                &lt;headerLocation&gt;EPL-LICENSE.regexp.txt&lt;/headerLocation&gt;
+                &lt;includeResources&gt;false&lt;/includeResources&gt;
+                &lt;includeTestResources&gt;false&lt;/includeTestResources&gt;
+                &lt;sourceDirectory&gt;${project.build.sourceDirectory}&lt;/sourceDirectory&gt;
+                &lt;excludes&gt;
+                    &lt;!-- Skip Apache Licensed files --&gt;
+                    org/opendaylight/odlparent/featuretest/CustomBundleUrlStreamHandlerFactory.java
+                &lt;/excludes&gt;
+                &lt;failsOnError&gt;false&lt;/failsOnError&gt;
+                &lt;consoleOutput&gt;true&lt;/consoleOutput&gt;
+            &lt;/configuration&gt;
+        &lt;/execution&gt;
+    &lt;/executions&gt;
+&lt;/plugin&gt;
+</pre></div>
+</div>
+</section>
+<section id="bundle-parent">
+<h3>bundle-parent<a class="headerlink" href="#bundle-parent" title="Link to this heading">¶</a></h3>
+<p>This inherits from <code class="docutils literal notranslate"><span class="pre">odlparent</span></code> and enables functionality useful for
+OSGi bundles:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">maven-javadoc-plugin</span></code> is activated, to build the Javadoc JAR;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">maven-source-plugin</span></code> is activated, to build the source JAR;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">maven-bundle-plugin</span></code> is activated (including extensions), to build
+OSGi bundles (using the “bundle” packaging).</p></li>
+</ul>
+<p>In addition to this, JUnit is included as a default dependency in “test”
+scope.</p>
+</section>
+<section id="features-parent">
+<h3>features-parent<a class="headerlink" href="#features-parent" title="Link to this heading">¶</a></h3>
+<p>This inherits from <code class="docutils literal notranslate"><span class="pre">odlparent</span></code> and enables functionality useful for
+Karaf features:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">karaf-maven-plugin</span></code> is activated, to build Karaf features — but
+for OpenDaylight, projects need to use <code class="docutils literal notranslate"><span class="pre">“jar”</span></code> packaging (<strong>not</strong>
+<code class="docutils literal notranslate"><span class="pre">“feature”</span></code> or <code class="docutils literal notranslate"><span class="pre">“kar”</span></code>);</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">features.xml</span></code> files are processed from templates stored in
+<code class="docutils literal notranslate"><span class="pre">src/main/features/features.xml</span></code>;</p></li>
+<li><p>Karaf features are tested after build to ensure they can be activated
+in a Karaf container.</p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">features.xml</span></code> processing allows versions to be omitted from
+certain feature dependencies, and replaced with “<code class="docutils literal notranslate"><span class="pre">{{version}}</span></code>”.
+For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">features</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;odl-mdsal-$</span><span class="si">{project.version}</span><span class="s2">&quot;</span> <span class="n">xmlns</span><span class="o">=</span><span class="s2">&quot;http://karaf.apache.org/xmlns/features/v1.2.0&quot;</span>
+   <span class="n">xmlns</span><span class="p">:</span><span class="n">xsi</span><span class="o">=</span><span class="s2">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+   <span class="n">xsi</span><span class="p">:</span><span class="n">schemaLocation</span><span class="o">=</span><span class="s2">&quot;http://karaf.apache.org/xmlns/features/v1.2.0 http://karaf.apache.org/xmlns/features/v1.2.0&quot;</span><span class="o">&gt;</span>
+
+    <span class="o">&lt;</span><span class="n">repository</span><span class="o">&gt;</span><span class="n">mvn</span><span class="p">:</span><span class="n">org</span><span class="o">.</span><span class="n">opendaylight</span><span class="o">.</span><span class="n">odlparent</span><span class="o">/</span><span class="n">features</span><span class="o">-</span><span class="n">odlparent</span><span class="o">/</span><span class="p">{{</span><span class="n">VERSION</span><span class="p">}}</span><span class="o">/</span><span class="n">xml</span><span class="o">/</span><span class="n">features</span><span class="o">&lt;/</span><span class="n">repository</span><span class="o">&gt;</span>
+
+    <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+    <span class="o">&lt;</span><span class="n">feature</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;odl-mdsal-broker-local&#39;</span> <span class="n">version</span><span class="o">=</span><span class="s1">&#39;$</span><span class="si">{project.version}</span><span class="s1">&#39;</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;OpenDaylight :: MDSAL :: Broker&quot;</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">feature</span> <span class="n">version</span><span class="o">=</span><span class="s1">&#39;$</span><span class="si">{yangtools.version}</span><span class="s1">&#39;</span><span class="o">&gt;</span><span class="n">odl</span><span class="o">-</span><span class="n">yangtools</span><span class="o">-</span><span class="n">common</span><span class="o">&lt;/</span><span class="n">feature</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">feature</span> <span class="n">version</span><span class="o">=</span><span class="s1">&#39;$</span><span class="si">{mdsal.version}</span><span class="s1">&#39;</span><span class="o">&gt;</span><span class="n">odl</span><span class="o">-</span><span class="n">mdsal</span><span class="o">-</span><span class="n">binding</span><span class="o">-</span><span class="n">dom</span><span class="o">-</span><span class="n">adapter</span><span class="o">&lt;/</span><span class="n">feature</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">feature</span> <span class="n">version</span><span class="o">=</span><span class="s1">&#39;$</span><span class="si">{mdsal.model.version}</span><span class="s1">&#39;</span><span class="o">&gt;</span><span class="n">odl</span><span class="o">-</span><span class="n">mdsal</span><span class="o">-</span><span class="n">models</span><span class="o">&lt;/</span><span class="n">feature</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">feature</span> <span class="n">version</span><span class="o">=</span><span class="s1">&#39;$</span><span class="si">{project.version}</span><span class="s1">&#39;</span><span class="o">&gt;</span><span class="n">odl</span><span class="o">-</span><span class="n">mdsal</span><span class="o">-</span><span class="n">common</span><span class="o">&lt;/</span><span class="n">feature</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">feature</span> <span class="n">version</span><span class="o">=</span><span class="s1">&#39;$</span><span class="si">{config.version}</span><span class="s1">&#39;</span><span class="o">&gt;</span><span class="n">odl</span><span class="o">-</span><span class="n">config</span><span class="o">-</span><span class="n">startup</span><span class="o">&lt;/</span><span class="n">feature</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">feature</span> <span class="n">version</span><span class="o">=</span><span class="s1">&#39;$</span><span class="si">{config.version}</span><span class="s1">&#39;</span><span class="o">&gt;</span><span class="n">odl</span><span class="o">-</span><span class="n">config</span><span class="o">-</span><span class="n">netty</span><span class="o">&lt;/</span><span class="n">feature</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">feature</span> <span class="n">version</span><span class="o">=</span><span class="s1">&#39;[3.3.0,4.0.0)&#39;</span><span class="o">&gt;</span><span class="n">odl</span><span class="o">-</span><span class="n">lmax</span><span class="o">&lt;/</span><span class="n">feature</span><span class="o">&gt;</span>
+        <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+        <span class="o">&lt;</span><span class="n">bundle</span><span class="o">&gt;</span><span class="n">mvn</span><span class="p">:</span><span class="n">org</span><span class="o">.</span><span class="n">opendaylight</span><span class="o">.</span><span class="n">controller</span><span class="o">/</span><span class="n">sal</span><span class="o">-</span><span class="n">dom</span><span class="o">-</span><span class="n">broker</span><span class="o">-</span><span class="n">config</span><span class="o">/</span><span class="p">{{</span><span class="n">VERSION</span><span class="p">}}</span><span class="o">&lt;/</span><span class="n">bundle</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">bundle</span> <span class="n">start</span><span class="o">-</span><span class="n">level</span><span class="o">=</span><span class="s2">&quot;40&quot;</span><span class="o">&gt;</span><span class="n">mvn</span><span class="p">:</span><span class="n">org</span><span class="o">.</span><span class="n">opendaylight</span><span class="o">.</span><span class="n">controller</span><span class="o">/</span><span class="n">blueprint</span><span class="o">/</span><span class="p">{{</span><span class="n">VERSION</span><span class="p">}}</span><span class="o">&lt;/</span><span class="n">bundle</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">configfile</span> <span class="n">finalname</span><span class="o">=</span><span class="s2">&quot;$</span><span class="si">{config.configfile.directory}</span><span class="s2">/$</span><span class="si">{config.mdsal.configfile}</span><span class="s2">&quot;</span><span class="o">&gt;</span><span class="n">mvn</span><span class="p">:</span><span class="n">org</span><span class="o">.</span><span class="n">opendaylight</span><span class="o">.</span><span class="n">controller</span><span class="o">/</span><span class="n">md</span><span class="o">-</span><span class="n">sal</span><span class="o">-</span><span class="n">config</span><span class="o">/</span><span class="p">{{</span><span class="n">VERSION</span><span class="p">}}</span><span class="o">/</span><span class="n">xml</span><span class="o">/</span><span class="n">config</span><span class="o">&lt;/</span><span class="n">configfile</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">feature</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>As illustrated, versions can be omitted in this way for repository
+dependencies, bundle dependencies and configuration files. They must be
+specified traditionally (either hard-coded, or using Maven properties)
+for feature dependencies.</p>
+</section>
+<section id="karaf-parent">
+<h3>karaf-parent<a class="headerlink" href="#karaf-parent" title="Link to this heading">¶</a></h3>
+<p>This allows building a Karaf 3 distribution, typically for local testing
+purposes. Any runtime-scoped feature dependencies will be included in the
+distribution, and the <code class="docutils literal notranslate"><span class="pre">karaf.localFeature</span></code> property can be used to
+specify the boot feature (in addition to <code class="docutils literal notranslate"><span class="pre">standard</span></code>).</p>
+</section>
+<section id="single-feature-parent">
+<h3>single-feature-parent<a class="headerlink" href="#single-feature-parent" title="Link to this heading">¶</a></h3>
+<p>This inherits from <code class="docutils literal notranslate"><span class="pre">odlparent</span></code> and enables functionality useful for
+Karaf 4 features:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">karaf-maven-plugin</span></code> is activated, to build Karaf features, typically
+with <code class="docutils literal notranslate"><span class="pre">&quot;feature&quot;</span></code> packaging (<code class="docutils literal notranslate"><span class="pre">&quot;kar&quot;</span></code> is also supported);</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">feature.xml</span></code> files are generated based on the compile-scope dependencies
+defined in the POM, optionally initialized from a stub in
+<code class="docutils literal notranslate"><span class="pre">src/main/feature/feature.xml</span></code>.</p></li>
+<li><p>Karaf features are tested after build to ensure they can be activated
+in a Karaf container.</p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">feature.xml</span></code> processing adds transitive dependencies by default, which
+allows features to be defined using only the most significant dependencies
+(those that define the feature); other requirements are determined
+automatically as long as they exist as Maven dependencies.</p>
+<p><code class="docutils literal notranslate"><span class="pre">configfiles</span></code> need to be defined both as Maven dependencies (with the
+appropriate type and classifier) and as <code class="docutils literal notranslate"><span class="pre">&lt;configfile&gt;</span></code> elements in the
+<code class="docutils literal notranslate"><span class="pre">feature.xml</span></code> stub.</p>
+<p>Other features which a feature depends on need to be defined as Maven
+dependencies with type “xml” and classifier “features” (note the plural here).</p>
+</section>
+<section id="feature-repo-parent">
+<h3><code class="docutils literal notranslate"><span class="pre">feature-repo-parent</span></code><a class="headerlink" href="#feature-repo-parent" title="Link to this heading">¶</a></h3>
+<p>This inherits from <code class="docutils literal notranslate"><span class="pre">odlparent</span></code> and enables functionality useful for
+Karaf 4 feature repositories. It follows the same principles as
+<code class="docutils literal notranslate"><span class="pre">single-feature-parent</span></code>, but is designed specifically for repositories
+and should be used only for this type of artifacts.</p>
+<p>It builds a feature repository referencing all the (feature) dependencies
+listed in the POM.</p>
+</section>
+<section id="karaf4-parent">
+<h3>karaf4-parent<a class="headerlink" href="#karaf4-parent" title="Link to this heading">¶</a></h3>
+<p>This allows building a Karaf 4 distribution, typically for local testing
+purposes. Any runtime-scoped feature dependencies will be included in the
+distribution, and the <code class="docutils literal notranslate"><span class="pre">karaf.localFeature</span></code> property can be used to
+specify the boot feature (in addition to <code class="docutils literal notranslate"><span class="pre">standard</span></code>).</p>
+</section>
+</section>
+<section id="features-for-karaf-3">
+<h2>Features (for Karaf 3)<a class="headerlink" href="#features-for-karaf-3" title="Link to this heading">¶</a></h2>
+<p>The ODL Parent component for OpenDaylight provides a number of Karaf 3
+features which can be used by other Karaf 3 features to use certain
+third-party upstream dependencies.</p>
+<p>These features are:</p>
+<ul class="simple">
+<li><p>Akka features (in the <code class="docutils literal notranslate"><span class="pre">features-akka</span></code> repository):</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">odl-akka-all</span></code> — all Akka bundles;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">odl-akka-scala-2.11</span></code> — Scala runtime for OpenDaylight;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">odl-akka-system-2.4</span></code> — Akka actor framework bundles;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">odl-akka-clustering-2.4</span></code> — Akka clustering bundles and
+dependencies;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">odl-akka-leveldb-0.7</span></code> — LevelDB;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">odl-akka-persistence-2.4</span></code> — Akka persistence;</p></li>
+</ul>
+</li>
+<li><p>general third-party features (in the <code class="docutils literal notranslate"><span class="pre">features-odlparent</span></code>
+repository):</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">odl-netty-4</span></code> — all Netty bundles;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">odl-guava-18</span></code> — Guava 18;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">odl-guava-21</span></code> — Guava 21 (not intended for use in Carbon);</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">odl-lmax-3</span></code> — LMAX Disruptor;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">odl-triemap-0.2</span></code> — Concurrent Hash-Trie Map.</p></li>
+</ul>
+</li>
+</ul>
+<p>To use these, you need to declare a dependency on the appropriate
+repository in your <code class="docutils literal notranslate"><span class="pre">features.xml</span></code> file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">repository</span><span class="o">&gt;</span><span class="n">mvn</span><span class="p">:</span><span class="n">org</span><span class="o">.</span><span class="n">opendaylight</span><span class="o">.</span><span class="n">odlparent</span><span class="o">/</span><span class="n">features</span><span class="o">-</span><span class="n">odlparent</span><span class="o">/</span><span class="p">{{</span><span class="n">VERSION</span><span class="p">}}</span><span class="o">/</span><span class="n">xml</span><span class="o">/</span><span class="n">features</span><span class="o">&lt;/</span><span class="n">repository</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>and then include the feature, <em>e.g.</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">feature</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;odl-mdsal-broker-local&#39;</span> <span class="n">version</span><span class="o">=</span><span class="s1">&#39;$</span><span class="si">{project.version}</span><span class="s1">&#39;</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;OpenDaylight :: MDSAL :: Broker&quot;</span><span class="o">&gt;</span>
+    <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+    <span class="o">&lt;</span><span class="n">feature</span> <span class="n">version</span><span class="o">=</span><span class="s1">&#39;[3.3.0,4.0.0)&#39;</span><span class="o">&gt;</span><span class="n">odl</span><span class="o">-</span><span class="n">lmax</span><span class="o">&lt;/</span><span class="n">feature</span><span class="o">&gt;</span>
+    <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+<span class="o">&lt;/</span><span class="n">feature</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>You also need to depend on the features repository in your POM:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">dependency</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">groupId</span><span class="o">&gt;</span><span class="n">org</span><span class="o">.</span><span class="n">opendaylight</span><span class="o">.</span><span class="n">odlparent</span><span class="o">&lt;/</span><span class="n">groupId</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">artifactId</span><span class="o">&gt;</span><span class="n">features</span><span class="o">-</span><span class="n">odlparent</span><span class="o">&lt;/</span><span class="n">artifactId</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">classifier</span><span class="o">&gt;</span><span class="n">features</span><span class="o">&lt;/</span><span class="n">classifier</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nb">type</span><span class="o">&gt;</span><span class="n">xml</span><span class="o">&lt;/</span><span class="nb">type</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">dependency</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>assuming the appropriate dependency management:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">dependencyManagement</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">dependencies</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">dependency</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">groupId</span><span class="o">&gt;</span><span class="n">org</span><span class="o">.</span><span class="n">opendaylight</span><span class="o">.</span><span class="n">odlparent</span><span class="o">&lt;/</span><span class="n">groupId</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">artifactId</span><span class="o">&gt;</span><span class="n">odlparent</span><span class="o">-</span><span class="n">artifacts</span><span class="o">&lt;/</span><span class="n">artifactId</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">version</span><span class="o">&gt;</span><span class="mf">1.8.0</span><span class="o">-</span><span class="n">SNAPSHOT</span><span class="o">&lt;/</span><span class="n">version</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">scope</span><span class="o">&gt;</span><span class="n">import</span><span class="o">&lt;/</span><span class="n">scope</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nb">type</span><span class="o">&gt;</span><span class="n">pom</span><span class="o">&lt;/</span><span class="nb">type</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="n">dependency</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">dependencies</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">dependencyManagement</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>(the version number there is appropriate for Carbon). For the time being
+you also need to depend separately on the individual JARs as
+compile-time dependencies to build your dependent code; the relevant
+dependencies are managed in <code class="docutils literal notranslate"><span class="pre">odlparent</span></code>’s dependency management.</p>
+<div class="line-block">
+<div class="line">The suggested version ranges are as follows:</div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">odl-netty</span></code>: <code class="docutils literal notranslate"><span class="pre">[4.0.37,4.1.0)</span></code> or <code class="docutils literal notranslate"><span class="pre">[4.0.37,5.0.0)</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">odl-guava</span></code>: <code class="docutils literal notranslate"><span class="pre">[18,19)</span></code> (if your code is ready for it, <code class="docutils literal notranslate"><span class="pre">[19,20)</span></code>
+is also available, but the current default version of Guava in
+OpenDaylight is 18);</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">odl-lmax</span></code>: <code class="docutils literal notranslate"><span class="pre">[3.3.4,4.0.0)</span></code></p></li>
+</ul>
+</section>
+<section id="features-for-karaf-4">
+<h2>Features (for Karaf 4)<a class="headerlink" href="#features-for-karaf-4" title="Link to this heading">¶</a></h2>
+<p>There are equivalent features to all the Karaf 3 features, for Karaf 4.
+The repositories use “features4” instead of “features”, and the features
+use <code class="docutils literal notranslate"><span class="pre">odl4</span></code> instead of <code class="docutils literal notranslate"><span class="pre">odl</span></code>.</p>
+<p>The following new features are specific to Karaf 4:</p>
+<ul class="simple">
+<li><p>Karaf wrapper features (also in the <code class="docutils literal notranslate"><span class="pre">features4-odlparent</span></code>
+repository) — these can be used to pull in a Karaf feature
+using a Maven dependency in a POM:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">odl-karaf-feat-feature</span></code> — the Karaf <code class="docutils literal notranslate"><span class="pre">feature</span></code> feature;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">odl-karaf-feat-jdbc</span></code> — the Karaf <code class="docutils literal notranslate"><span class="pre">jdbc</span></code> feature;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">odl-karaf-feat-jetty</span></code> — the Karaf <code class="docutils literal notranslate"><span class="pre">jetty</span></code> feature;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">odl-karaf-feat-war</span></code> — the Karaf <code class="docutils literal notranslate"><span class="pre">war</span></code> feature.</p></li>
+</ul>
+</li>
+</ul>
+<p>To use these, all you need to do now is add the appropriate dependency
+in your feature POM; for example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">dependency</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">groupId</span><span class="o">&gt;</span><span class="n">org</span><span class="o">.</span><span class="n">opendaylight</span><span class="o">.</span><span class="n">odlparent</span><span class="o">&lt;/</span><span class="n">groupId</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">artifactId</span><span class="o">&gt;</span><span class="n">odl4</span><span class="o">-</span><span class="n">guava</span><span class="o">-</span><span class="mi">18</span><span class="o">&lt;/</span><span class="n">artifactId</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">classifier</span><span class="o">&gt;</span><span class="n">features</span><span class="o">&lt;/</span><span class="n">classifier</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nb">type</span><span class="o">&gt;</span><span class="n">xml</span><span class="o">&lt;/</span><span class="nb">type</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">dependency</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>assuming the appropriate dependency management:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">dependencyManagement</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">dependencies</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">dependency</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">groupId</span><span class="o">&gt;</span><span class="n">org</span><span class="o">.</span><span class="n">opendaylight</span><span class="o">.</span><span class="n">odlparent</span><span class="o">&lt;/</span><span class="n">groupId</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">artifactId</span><span class="o">&gt;</span><span class="n">odlparent</span><span class="o">-</span><span class="n">artifacts</span><span class="o">&lt;/</span><span class="n">artifactId</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">version</span><span class="o">&gt;</span><span class="mf">1.8.0</span><span class="o">-</span><span class="n">SNAPSHOT</span><span class="o">&lt;/</span><span class="n">version</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">scope</span><span class="o">&gt;</span><span class="n">import</span><span class="o">&lt;/</span><span class="n">scope</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nb">type</span><span class="o">&gt;</span><span class="n">pom</span><span class="o">&lt;/</span><span class="nb">type</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="n">dependency</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">dependencies</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">dependencyManagement</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>(the version number there is appropriate for Carbon). We no longer use version
+ranges, the feature dependencies all use the <code class="docutils literal notranslate"><span class="pre">odlparent</span></code> version (but you
+should rely on the artifacts POM).</p>
+</section>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/developer-guides/odl-parent-developer-guide.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2016-2026, OpenDaylight Project.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 8.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

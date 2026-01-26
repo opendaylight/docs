@@ -1,0 +1,279 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Integrating Animal Sniffer with OpenDaylight projects &#8212; OpenDaylight Documentation Chromium documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css?v=0bf093e7" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.2/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/ribbon.css?v=cb953b18" />
+    <link rel="stylesheet" href="../_static/css/warning-header.css" type="text/css" />
+    <script src="../_static/documentation_options.js?v=7b4a4459"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://cdn.datatables.net/1.11.2/js/jquery.dataTables.min.js"></script>
+    <script class="init" type="text/javascript">$(document).ready( function () { $('table.datatable').DataTable(); } );</script>
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Logging subsystem" href="logging-subsystem.html" />
+    <link rel="prev" title="Developing apps on the OpenDaylight controller" href="developing-apps-on-the-opendaylight-controller.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+  <div class="ribbon">
+    <a href="https://jira.opendaylight.org/secure/CreateIssueDetails!init.jspa
+?pid=10121
+&issuetype=10104
+&components=10228
+&priority=2
+&description=version:+Chromium%0Apage:+developer-guides/integrating-animal-sniffer-plugin-with-projects%0A%0A" target="_blank">
+      Report Issue
+    </a>
+  </div>
+  
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+  <!-- Outdated version warning banner -->
+  
+    <style>
+      body {
+        padding-top: 60px;
+     }
+    </style>
+  
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          OpenDaylight Documentation</a>
+        <span class="navbar-text navbar-version pull-left"><b>Chromium</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../downloads.html">OpenDaylight Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes/index.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started-guide/index.html">Getting Started Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Developer Guides</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../documentation.html">Documentation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-process/index.html">OpenDaylight Release Process Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../javadoc.html">Java API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/index.html">OpenDaylight User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Developer Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributor-guides/index.html">Contributor Guides</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Integrating Animal Sniffer with OpenDaylight projects</a><ul>
+<li><a class="reference internal" href="#steps-to-setup-up-animal-sniffer-plugin-with-your-project">Steps to setup up animal sniffer plugin with your project</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Integrating Animal Sniffer with OpenDaylight projects</a><ul>
+<li><a class="reference internal" href="#steps-to-setup-up-animal-sniffer-plugin-with-your-project">Steps to setup up animal sniffer plugin with your project</a></li>
+</ul>
+</li>
+</ul>
+<center>
+<div class="btn-group" role="group" aria-label="...">
+    
+    <a class="btn btn-default" href="developing-apps-on-the-opendaylight-controller.html">Prev Page</a>
+    
+
+    
+    <a class="btn btn-default" href="logging-subsystem.html">Next Page</a>
+    
+</div>
+</center>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <section id="integrating-animal-sniffer-with-opendaylight-projects">
+<h1>Integrating Animal Sniffer with OpenDaylight projects<a class="headerlink" href="#integrating-animal-sniffer-with-opendaylight-projects" title="Link to this heading">¶</a></h1>
+<p>This section provides information required to setup OpenDaylight projects with
+the Maven’s <a class="reference external" href="https://www.mojohaus.org/animal-sniffer/animal-sniffer-maven-plugin/examples/checking-signatures.html">Animal Sniffer plugin</a> for testing API compatibility with OpenJDK.</p>
+<section id="steps-to-setup-up-animal-sniffer-plugin-with-your-project">
+<h2>Steps to setup up animal sniffer plugin with your project<a class="headerlink" href="#steps-to-setup-up-animal-sniffer-plugin-with-your-project" title="Link to this heading">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Clone odlparent and checkout the required branch. The example below uses
+the branch ‘origin/master/2.0.x’</p></li>
+</ol>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://git.opendaylight.org/gerrit/odlparent
+<span class="nb">cd</span><span class="w"> </span>odlparent
+git<span class="w"> </span>checkout<span class="w"> </span>origin/master/2.0.x
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Modify the file <cite>odlparent/pom.xml</cite> to install the <a class="reference external" href="https://www.mojohaus.org/animal-sniffer/animal-sniffer-maven-plugin/examples/checking-signatures.html">Animal Sniffer plugin</a> as
+shown in the below example or refer to the change <a class="reference external" href="https://git.opendaylight.org/gerrit/c/odlparent/+/64688/">odlparent gerrit patch</a>.</p></li>
+</ol>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;plugin&gt;</span>
+<span class="w">  </span><span class="nt">&lt;groupId&gt;</span>org.codehaus.mojo<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">  </span><span class="nt">&lt;artifactId&gt;</span>animal-sniffer-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">  </span><span class="nt">&lt;version&gt;</span>1.16<span class="nt">&lt;/version&gt;</span>
+<span class="w">  </span><span class="nt">&lt;configuration&gt;</span>
+<span class="w">      </span><span class="nt">&lt;signature&gt;</span>
+<span class="w">          </span><span class="nt">&lt;groupId&gt;</span>org.codehaus.mojo.signature<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">          </span><span class="nt">&lt;artifactId&gt;</span>java18<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">          </span><span class="nt">&lt;version&gt;</span>1.0<span class="nt">&lt;/version&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/signature&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/configuration&gt;</span>
+<span class="w">  </span><span class="nt">&lt;executions&gt;</span>
+<span class="w">      </span><span class="nt">&lt;execution&gt;</span>
+<span class="w">          </span><span class="nt">&lt;id&gt;</span>animal-sniffer<span class="nt">&lt;/id&gt;</span>
+<span class="w">          </span><span class="nt">&lt;phase&gt;</span>verify<span class="nt">&lt;/phase&gt;</span>
+<span class="w">          </span><span class="nt">&lt;goals&gt;</span>
+<span class="w">              </span><span class="nt">&lt;goal&gt;</span>check<span class="nt">&lt;/goal&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/goals&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/execution&gt;</span>
+<span class="w">      </span><span class="nt">&lt;execution&gt;</span>
+<span class="w">          </span><span class="nt">&lt;id&gt;</span>check-java-version<span class="nt">&lt;/id&gt;</span>
+<span class="w">          </span><span class="nt">&lt;phase&gt;</span>package<span class="nt">&lt;/phase&gt;</span>
+<span class="w">          </span><span class="nt">&lt;goals&gt;</span>
+<span class="w">              </span><span class="nt">&lt;goal&gt;</span>build<span class="nt">&lt;/goal&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/goals&gt;</span>
+<span class="w">          </span><span class="nt">&lt;configuration&gt;</span>
+<span class="w">            </span><span class="nt">&lt;signature&gt;</span>
+<span class="w">              </span><span class="nt">&lt;groupId&gt;</span>org.codehaus.mojo.signature<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">              </span><span class="nt">&lt;artifactId&gt;</span>java18<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">              </span><span class="nt">&lt;version&gt;</span>1.0<span class="nt">&lt;/version&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/signature&gt;</span>
+<span class="w">          </span><span class="nt">&lt;/configuration&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/execution&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/executions&gt;</span>
+<span class="nt">&lt;/plugin&gt;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Run a <cite>mvn clean install</cite> in odlparent.</p></li>
+</ol>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mvn<span class="w"> </span>clean<span class="w"> </span>install
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Clone the respective project to be tested with the plugin. As shown in the
+example in <a class="reference external" href="https://git.opendaylight.org/gerrit/c/yangtools/+/64781/">yangtools gerrit patch</a>, modify the relevant pom.xml files to
+reference the version of odlparent which is checked-out. As shown in the example
+below change the version to <cite>2.0.6-SNAPSHOT</cite> or the version of the
+<cite>2.0.x-SNAPSHOT</cite> odlparent is checked out.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">parent</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">groupId</span><span class="o">&gt;</span><span class="n">org</span><span class="o">.</span><span class="n">opendaylight</span><span class="o">.</span><span class="n">odlparent</span><span class="o">&lt;/</span><span class="n">groupId</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">artifactId</span><span class="o">&gt;</span><span class="n">odlparent</span><span class="o">&lt;/</span><span class="n">artifactId</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">version</span><span class="o">&gt;</span><span class="mf">2.0.6</span><span class="o">-</span><span class="n">SNAPSHOT</span><span class="o">&lt;/</span><span class="n">version</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">relativePath</span><span class="o">/&gt;</span>
+<span class="o">&lt;/</span><span class="n">parent</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Run a <cite>mvn clean install</cite> in your project.</p></li>
+</ol>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mvn<span class="w"> </span>clean<span class="w"> </span>install
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Run <cite>mvn animal-sniffer:check</cite> on your project and fix any relevant issues.</p></li>
+</ol>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mvn<span class="w"> </span>animal-sniffer:check
+</pre></div>
+</div>
+</section>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/developer-guides/integrating-animal-sniffer-plugin-with-projects.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2016-2026, OpenDaylight Project.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 8.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

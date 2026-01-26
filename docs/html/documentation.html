@@ -1,0 +1,1119 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Documentation Guide &#8212; OpenDaylight Documentation Chromium documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap-sphinx.css?v=0bf093e7" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.2/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/ribbon.css?v=cb953b18" />
+    <link rel="stylesheet" href="_static/css/warning-header.css" type="text/css" />
+    <script src="_static/documentation_options.js?v=7b4a4459"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://cdn.datatables.net/1.11.2/js/jquery.dataTables.min.js"></script>
+    <script class="init" type="text/javascript">$(document).ready( function () { $('table.datatable').DataTable(); } );</script>
+    <link rel="icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="&lt;Feature&gt; User Guide" href="templates/template-user-guide.html" />
+    <link rel="prev" title="YANG Tools Developer Guide" href="developer-guides/yang-tools.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+  <div class="ribbon">
+    <a href="https://jira.opendaylight.org/secure/CreateIssueDetails!init.jspa
+?pid=10121
+&issuetype=10104
+&components=10228
+&priority=2
+&description=version:+Chromium%0Apage:+documentation%0A%0A" target="_blank">
+      Report Issue
+    </a>
+  </div>
+  
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+  <!-- Outdated version warning banner -->
+  
+    <style>
+      body {
+        padding-top: 60px;
+     }
+    </style>
+  
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          OpenDaylight Documentation</a>
+        <span class="navbar-text navbar-version pull-left"><b>Chromium</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="downloads.html">OpenDaylight Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/index.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started-guide/index.html">Getting Started Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer-guides/index.html">Developer Guides</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Documentation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-process/index.html">OpenDaylight Release Process Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="javadoc.html">Java API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user-guide/index.html">OpenDaylight User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer-guides/index.html">Developer Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributor-guides/index.html">Contributor Guides</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Documentation Guide</a><ul>
+<li><a class="reference internal" href="#style-guide">Style Guide</a><ul>
+<li><a class="reference internal" href="#formatting-preferences">Formatting Preferences</a></li>
+<li><a class="reference internal" href="#key-terms">Key terms</a></li>
+<li><a class="reference internal" href="#common-writing-style-mistakes">Common writing style mistakes</a><ul>
+<li><a class="reference internal" href="#grammar-preferences">Grammar Preferences</a></li>
+<li><a class="reference internal" href="#word-choice">Word Choice</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#restructuredtext-based-documentation">reStructuredText-based Documentation</a><ul>
+<li><a class="reference internal" href="#directory-structure">Directory Structure</a><ul>
+<li><a class="reference internal" href="#adding-a-submodule">Adding a submodule</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#documentation-layout-and-style">Documentation Layout and Style</a><ul>
+<li><a class="reference internal" href="#referencing-sections">Referencing Sections</a></li>
+<li><a class="reference internal" href="#referencing-jira-issues">Referencing JIRA issues</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#troubleshooting">Troubleshooting</a><ul>
+<li><a class="reference internal" href="#nested-formatting-does-not-work">Nested formatting does not work</a></li>
+<li><a class="reference internal" href="#make-sure-you-have-cloned-submodules">Make sure you have cloned submodules</a></li>
+<li><a class="reference internal" href="#clear-your-tox-directory-and-try-again">Clear your tox directory and try again</a></li>
+<li><a class="reference internal" href="#builds-on-read-the-docs">Builds on Read the Docs</a></li>
+<li><a class="reference internal" href="#errors-from-coala">Errors from <code class="docutils literal notranslate"><span class="pre">Coala</span></code></a><ul>
+<li><a class="reference internal" href="#git-commit-message-errors">Git Commit Message Errors</a></li>
+<li><a class="reference internal" href="#error-in-code-block-directive">Error in “code-block” directive</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#project-documentation-requirements">Project Documentation Requirements</a><ul>
+<li><a class="reference internal" href="#submitting-documentation-outlines-m2">Submitting Documentation Outlines (M2)</a></li>
+<li><a class="reference internal" href="#expected-output-from-documentation-project">Expected Output From Documentation Project</a></li>
+<li><a class="reference internal" href="#id2">Project Documentation Requirements</a><ul>
+<li><a class="reference internal" href="#content-types">Content Types</a></li>
+<li><a class="reference internal" href="#requirements-for-projects">Requirements for projects</a></li>
+<li><a class="reference internal" href="#timeline-for-deliverables-from-projects">Timeline for Deliverables from Projects</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Documentation Guide</a><ul>
+<li><a class="reference internal" href="#style-guide">Style Guide</a><ul>
+<li><a class="reference internal" href="#formatting-preferences">Formatting Preferences</a></li>
+<li><a class="reference internal" href="#key-terms">Key terms</a></li>
+<li><a class="reference internal" href="#common-writing-style-mistakes">Common writing style mistakes</a><ul>
+<li><a class="reference internal" href="#grammar-preferences">Grammar Preferences</a></li>
+<li><a class="reference internal" href="#word-choice">Word Choice</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#restructuredtext-based-documentation">reStructuredText-based Documentation</a><ul>
+<li><a class="reference internal" href="#directory-structure">Directory Structure</a><ul>
+<li><a class="reference internal" href="#adding-a-submodule">Adding a submodule</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#documentation-layout-and-style">Documentation Layout and Style</a><ul>
+<li><a class="reference internal" href="#referencing-sections">Referencing Sections</a></li>
+<li><a class="reference internal" href="#referencing-jira-issues">Referencing JIRA issues</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#troubleshooting">Troubleshooting</a><ul>
+<li><a class="reference internal" href="#nested-formatting-does-not-work">Nested formatting does not work</a></li>
+<li><a class="reference internal" href="#make-sure-you-have-cloned-submodules">Make sure you have cloned submodules</a></li>
+<li><a class="reference internal" href="#clear-your-tox-directory-and-try-again">Clear your tox directory and try again</a></li>
+<li><a class="reference internal" href="#builds-on-read-the-docs">Builds on Read the Docs</a></li>
+<li><a class="reference internal" href="#errors-from-coala">Errors from <code class="docutils literal notranslate"><span class="pre">Coala</span></code></a><ul>
+<li><a class="reference internal" href="#git-commit-message-errors">Git Commit Message Errors</a></li>
+<li><a class="reference internal" href="#error-in-code-block-directive">Error in “code-block” directive</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#project-documentation-requirements">Project Documentation Requirements</a><ul>
+<li><a class="reference internal" href="#submitting-documentation-outlines-m2">Submitting Documentation Outlines (M2)</a></li>
+<li><a class="reference internal" href="#expected-output-from-documentation-project">Expected Output From Documentation Project</a></li>
+<li><a class="reference internal" href="#id2">Project Documentation Requirements</a><ul>
+<li><a class="reference internal" href="#content-types">Content Types</a></li>
+<li><a class="reference internal" href="#requirements-for-projects">Requirements for projects</a></li>
+<li><a class="reference internal" href="#timeline-for-deliverables-from-projects">Timeline for Deliverables from Projects</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<center>
+<div class="btn-group" role="group" aria-label="...">
+    
+    <a class="btn btn-default" href="developer-guides/yang-tools.html">Prev Page</a>
+    
+
+    
+    <a class="btn btn-default" href="templates/template-user-guide.html">Next Page</a>
+    
+</div>
+</center>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <section id="documentation-guide">
+<span id="id1"></span><h1>Documentation Guide<a class="headerlink" href="#documentation-guide" title="Link to this heading">¶</a></h1>
+<p>This guide provides details on how to contribute to the OpenDaylight
+documentation. OpenDaylight currently uses <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html">reStructuredText</a> for
+documentation and <a class="reference external" href="https://www.sphinx-doc.org/en/master/">Sphinx</a> to build it. These documentation tools are widely used
+in open source communities to produce both HTML and PDF documentation and can
+be easily versioned alongside the code. reStructuredText also offers similar
+syntax to Markdown, which is familiar to many developers.</p>
+<nav class="contents local" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#style-guide" id="id4">Style Guide</a></p>
+<ul>
+<li><p><a class="reference internal" href="#formatting-preferences" id="id5">Formatting Preferences</a></p></li>
+<li><p><a class="reference internal" href="#key-terms" id="id6">Key terms</a></p></li>
+<li><p><a class="reference internal" href="#common-writing-style-mistakes" id="id7">Common writing style mistakes</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#restructuredtext-based-documentation" id="id8">reStructuredText-based Documentation</a></p>
+<ul>
+<li><p><a class="reference internal" href="#directory-structure" id="id9">Directory Structure</a></p></li>
+<li><p><a class="reference internal" href="#documentation-layout-and-style" id="id10">Documentation Layout and Style</a></p></li>
+<li><p><a class="reference internal" href="#troubleshooting" id="id11">Troubleshooting</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#project-documentation-requirements" id="id12">Project Documentation Requirements</a></p>
+<ul>
+<li><p><a class="reference internal" href="#submitting-documentation-outlines-m2" id="id13">Submitting Documentation Outlines (M2)</a></p></li>
+<li><p><a class="reference internal" href="#expected-output-from-documentation-project" id="id14">Expected Output From Documentation Project</a></p></li>
+<li><p><a class="reference internal" href="#id2" id="id15">Project Documentation Requirements</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="style-guide">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Style Guide</a><a class="headerlink" href="#style-guide" title="Link to this heading">¶</a></h2>
+<p>This section serves two purposes:</p>
+<ol class="arabic simple">
+<li><p>A guide for those writing documentation.</p></li>
+<li><p>A guide for those reviewing documentation.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When reviewing content, assuming that the content is usable, the
+documentation team is biased toward merging the content rather than
+blocking it due to relatively minor editorial issues.</p>
+</div>
+<section id="formatting-preferences">
+<h3><a class="toc-backref" href="#id5" role="doc-backlink">Formatting Preferences</a><a class="headerlink" href="#formatting-preferences" title="Link to this heading">¶</a></h3>
+<p>In general, when reviewing content, the documentation team ensures that it
+is comprehensible but tries not to be overly pedantic. Along those lines,
+while it is preferred that the following formatting preferences are followed,
+they are generally not an exclusive reason to give a “-1” reply to a patch in
+Gerrit:</p>
+<ul class="simple">
+<li><p>No trailing whitespace</p></li>
+<li><p>Line wrapping at something reasonable, that is, 72–100 characters</p></li>
+</ul>
+</section>
+<section id="key-terms">
+<h3><a class="toc-backref" href="#id6" role="doc-backlink">Key terms</a><a class="headerlink" href="#key-terms" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Functionality: something useful a project provides abstractly</p></li>
+<li><p>Feature: a Karaf feature that somebody could install</p></li>
+<li><p>Project: a project within OpenDaylight; projects ship features to
+provide functionality</p></li>
+<li><p>OpenDaylight: this refers to the software we release; use this in
+place of OpenDaylight controller, the OpenDaylight controller, not
+ODL, not ODC</p>
+<ul>
+<li><p>Since there is a controller project within OpenDaylight, using
+other terms is hard.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="common-writing-style-mistakes">
+<h3><a class="toc-backref" href="#id7" role="doc-backlink">Common writing style mistakes</a><a class="headerlink" href="#common-writing-style-mistakes" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>In per-project user documentation, you should never say <em>git clone</em>,
+but should assume people have downloaded and installed the controller
+per the getting started guide and start with <code class="docutils literal notranslate"><span class="pre">feature:install</span>
+<span class="pre">&lt;something&gt;</span></code></p></li>
+<li><p>Avoid statements which are true about part of OpenDaylight, but not
+generally true.</p>
+<ul>
+<li><p>For example: “OpenDaylight is a NETCONF controller.” It is, but
+that is not all it is.</p></li>
+</ul>
+</li>
+<li><p>In general, developer documentation should target external developers
+to your project so should talk about what APIs you have and how they
+could use them. It <em>should not</em> document how to contribute to your
+project.</p></li>
+</ul>
+<section id="grammar-preferences">
+<h4>Grammar Preferences<a class="headerlink" href="#grammar-preferences" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>Avoid contractions: Use “cannot” instead of “can’t”, “it is” instead of
+“it’s”, and so on.</p></li>
+</ul>
+</section>
+<section id="word-choice">
+<h4>Word Choice<a class="headerlink" href="#word-choice" title="Link to this heading">¶</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The following word choice guidelines apply when using these terms in
+text. If these terms are used as part of a URL, class name, or
+any instance where modifying the case would create issues, use the
+exact capitalization and spacing associated with the URL or class
+name.</p>
+</div>
+<ul>
+<li><p>ACL: not <code class="docutils literal notranslate"><span class="pre">Acl</span></code> or <code class="docutils literal notranslate"><span class="pre">acl</span></code></p></li>
+<li><p>API: not <code class="docutils literal notranslate"><span class="pre">api</span></code></p></li>
+<li><p>ARP: not <code class="docutils literal notranslate"><span class="pre">Arp</span></code> or <code class="docutils literal notranslate"><span class="pre">arp</span></code></p></li>
+<li><p>datastore: not data store, Data Store, or DataStore (unless it is a
+class/object name)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IPsec</span></code>: not IPSEC or <code class="docutils literal notranslate"><span class="pre">ipsec</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IPv4</span></code> or <code class="docutils literal notranslate"><span class="pre">IPv6</span></code>: not <code class="docutils literal notranslate"><span class="pre">Ipv4</span></code>, <code class="docutils literal notranslate"><span class="pre">Ipv6</span></code>, <code class="docutils literal notranslate"><span class="pre">ipv4</span></code>, <code class="docutils literal notranslate"><span class="pre">ipv6</span></code>, <code class="docutils literal notranslate"><span class="pre">IPV4</span></code>, or <code class="docutils literal notranslate"><span class="pre">IPV6</span></code></p></li>
+<li><p>Karaf: not karaf</p></li>
+<li><p>Linux: not LINUX or <code class="docutils literal notranslate"><span class="pre">linux</span></code></p></li>
+<li><p>NETCONF: not Netconf or netconf</p></li>
+<li><p>Neutron: not neutron</p></li>
+<li><p>OSGi: not <code class="docutils literal notranslate"><span class="pre">osgi</span></code> or OSGI</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Open</span> <span class="pre">vSwitch</span></code>: not OpenvSwitch, OpenVSwitch, or Open V Switch.</p></li>
+<li><p>OpenDaylight: not <code class="docutils literal notranslate"><span class="pre">Opendaylight</span></code>, <code class="docutils literal notranslate"><span class="pre">Open</span> <span class="pre">Daylight</span></code>, or <code class="docutils literal notranslate"><span class="pre">OpenDayLight</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Also, avoid OpenDaylight abbreviations such as ODL and OD.</p>
+</div>
+</li>
+<li><p>OpenFlow: not <code class="docutils literal notranslate"><span class="pre">Openflow</span></code>, <code class="docutils literal notranslate"><span class="pre">Open</span> <span class="pre">Flow</span></code>, or <code class="docutils literal notranslate"><span class="pre">openflow</span></code>.</p></li>
+<li><p>OpenStack: not <code class="docutils literal notranslate"><span class="pre">Open</span> <span class="pre">Stack</span></code> or <code class="docutils literal notranslate"><span class="pre">Openstack</span></code></p></li>
+<li><p>QoS: not <code class="docutils literal notranslate"><span class="pre">Qos</span></code>, <code class="docutils literal notranslate"><span class="pre">QOS</span></code>, or <code class="docutils literal notranslate"><span class="pre">qos</span></code></p></li>
+<li><p>RESTCONF: not <code class="docutils literal notranslate"><span class="pre">Restconf</span></code> or <code class="docutils literal notranslate"><span class="pre">restconf</span></code></p></li>
+<li><p>RPC not <code class="docutils literal notranslate"><span class="pre">Rpc</span></code> or <code class="docutils literal notranslate"><span class="pre">rpc</span></code></p></li>
+<li><p>URL not <code class="docutils literal notranslate"><span class="pre">Url</span></code> or <code class="docutils literal notranslate"><span class="pre">url</span></code></p></li>
+<li><p>VM: not <code class="docutils literal notranslate"><span class="pre">Vm</span></code> or <code class="docutils literal notranslate"><span class="pre">vm</span></code></p></li>
+<li><p>YANG: not Yang or yang</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="restructuredtext-based-documentation">
+<span id="docs-rst"></span><h2><a class="toc-backref" href="#id8" role="doc-backlink">reStructuredText-based Documentation</a><a class="headerlink" href="#restructuredtext-based-documentation" title="Link to this heading">¶</a></h2>
+<p>When using reStructuredText, follow the Python documentation
+style guidelines. See: <a class="reference external" href="https://devguide.python.org/documenting/">https://devguide.python.org/documenting/</a></p>
+<p>One of the best references for reStructuredText syntax is the Sphinx
+Primer on <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html">reStructuredText</a>.</p>
+<p>To build and review the reStructuredText documentation locally, you must
+have the following packages installed locally:</p>
+<ul class="simple">
+<li><p>python</p></li>
+<li><p>python-tox</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Both packages should be available in most distribution package
+managers.</p>
+</div>
+<p>Then simply run <code class="docutils literal notranslate"><span class="pre">tox</span></code> and open the HTML produced by using your favorite web
+browser as follows:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://git.opendaylight.org/gerrit/docs
+<span class="nb">cd</span><span class="w"> </span>docs
+git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init
+tox
+firefox<span class="w"> </span>docs/_build/html/index.html
+</pre></div>
+</div>
+<section id="directory-structure">
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">Directory Structure</a><a class="headerlink" href="#directory-structure" title="Link to this heading">¶</a></h3>
+<p>The directory structure for the reStructuredText documentation is
+rooted in the <code class="docutils literal notranslate"><span class="pre">docs</span></code> directory inside the <code class="docutils literal notranslate"><span class="pre">docs</span></code> <code class="docutils literal notranslate"><span class="pre">git</span></code>
+repository.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There are guides hosted directly in the <code class="docutils literal notranslate"><span class="pre">docs</span></code> <code class="docutils literal notranslate"><span class="pre">git</span></code>
+repository and there are guides hosted in remote <code class="docutils literal notranslate"><span class="pre">git</span></code> repositories.
+Documentation hosted in remote <code class="docutils literal notranslate"><span class="pre">git</span></code> repositories are generally
+provided for project-specific information.</p>
+</div>
+<p>For example, here is the directory layout on <code class="docutils literal notranslate"><span class="pre">June,</span> <span class="pre">28th</span> <span class="pre">2016</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ tree -L 2
+.
+├── Makefile
+├── conf.py
+├── documentation.rst
+├── getting-started-guide
+│   ├── api.rst
+│   ├── concepts_and_tools.rst
+│   ├── experimental_features.rst
+│   ├── index.rst
+│   ├── installing_opendaylight.rst
+│   ├── introduction.rst
+│   ├── karaf_features.rst
+│   ├── other_features.rst
+│   ├── overview.rst
+│   └── who_should_use.rst
+├── index.rst
+├── make.bat
+├── opendaylight-with-openstack
+│   ├── images
+│   ├── index.rst
+│   ├── openstack-with-gbp.rst
+│   ├── openstack-with-ovsdb.rst
+│   └── openstack-with-vtn.rst
+└── submodules
+    └── releng
+        └── builder
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">getting-started-guide</span></code> and <code class="docutils literal notranslate"><span class="pre">opendaylight-with-openstack</span></code>
+directories correspond to two guides hosted in the <code class="docutils literal notranslate"><span class="pre">docs</span></code> repository,
+while the <code class="docutils literal notranslate"><span class="pre">submodules/releng/builder</span></code> directory houses documentation
+for the <a class="reference external" href="https://wiki-archive.opendaylight.org/view/RelEng/Builder">RelEng/Builder</a> project.</p>
+<p>Each guide includes an <code class="docutils literal notranslate"><span class="pre">index.rst</span></code> file, which uses a <code class="docutils literal notranslate"><span class="pre">toctree</span></code>
+directive that includes the other files associated with the guide. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">toctree</span><span class="p">::</span>
+   <span class="p">:</span><span class="n">maxdepth</span><span class="p">:</span> <span class="mi">1</span>
+
+   <span class="n">getting</span><span class="o">-</span><span class="n">started</span><span class="o">-</span><span class="n">guide</span><span class="o">/</span><span class="n">index</span>
+   <span class="n">opendaylight</span><span class="o">-</span><span class="k">with</span><span class="o">-</span><span class="n">openstack</span><span class="o">/</span><span class="n">index</span>
+   <span class="n">submodules</span><span class="o">/</span><span class="n">releng</span><span class="o">/</span><span class="n">builder</span><span class="o">/</span><span class="n">docs</span><span class="o">/</span><span class="n">index</span>
+</pre></div>
+</div>
+<p>This example creates a table of contents on that page where each heading of the
+table of contents is the root of the files that are included.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When including <code class="docutils literal notranslate"><span class="pre">.rst</span></code> files using the <code class="docutils literal notranslate"><span class="pre">toctree</span></code> directive, omit
+the <code class="docutils literal notranslate"><span class="pre">.rst</span></code> file extension at the end of the file name.</p>
+</div>
+<section id="adding-a-submodule">
+<h4>Adding a submodule<a class="headerlink" href="#adding-a-submodule" title="Link to this heading">¶</a></h4>
+<p>If you want to import a project underneath the documentation project so
+that the docs can be kept in the separate repository, you can do it by using the
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">submodule</span> <span class="pre">add</span></code> command as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">submodule</span> <span class="n">add</span> <span class="o">-</span><span class="n">b</span> <span class="n">master</span> <span class="o">../</span><span class="n">integration</span><span class="o">/</span><span class="n">packaging</span> <span class="n">docs</span><span class="o">/</span><span class="n">submodules</span><span class="o">/</span><span class="n">integration</span><span class="o">/</span><span class="n">packaging</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">s</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Most projects will not want to use <code class="docutils literal notranslate"><span class="pre">-b</span> <span class="pre">master</span></code>, but instead
+use the branch <code class="docutils literal notranslate"><span class="pre">.</span></code>, which tracks whatever branch
+of the documentation project you happen to be on.</p>
+<p>Unfortunately, <code class="docutils literal notranslate"><span class="pre">-b</span> <span class="pre">.</span></code> does not work, so you have to manually
+edit the <code class="docutils literal notranslate"><span class="pre">.gitmodules</span></code> file to add <code class="docutils literal notranslate"><span class="pre">branch</span> <span class="pre">=</span> <span class="pre">.</span></code> and then
+commit it. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">edit</span> <span class="n">the</span> <span class="o">.</span><span class="n">gitmodules</span> <span class="n">file</span><span class="o">&gt;</span>
+<span class="n">git</span> <span class="n">add</span> <span class="o">.</span><span class="n">gitmodules</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="o">--</span><span class="n">amend</span>
+</pre></div>
+</div>
+</div>
+<p>When you’re done you should have a git commit something like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git show
+commit 7943ce2cb41cd9d36ce93ee9003510ce3edd7fa9
+Author: Daniel Farrell &lt;dfarrell@redhat.com&gt;
+Date:   Fri Dec 23 14:45:44 2016 -0500
+
+    Add Int/Pack to git submodules for RTD generation
+
+    Change-Id: I64cd36ca044b8303cb7fc465b2d91470819a9fe6
+    Signed-off-by: Daniel Farrell &lt;dfarrell@redhat.com&gt;
+
+diff --git a/.gitmodules b/.gitmodules
+index 91201bf6..b56e11c8 100644
+--- a/.gitmodules
++++ b/.gitmodules
+@@ -38,3 +38,7 @@
+        path = docs/submodules/ovsdb
+        url = ../ovsdb
+        branch = .
++[submodule &quot;docs/submodules/integration/packaging&quot;]
++       path = docs/submodules/integration/packaging
++       url = ../integration/packaging
++       branch = master
+diff --git a/docs/submodules/integration/packaging b/docs/submodules/integration/packaging
+new file mode 160000
+index 00000000..fd5a8185
+--- /dev/null
++++ b/docs/submodules/integration/packaging
+@@ -0,0 +1 @@
++Subproject commit fd5a81853e71d45945471d0f91bbdac1a1444386
+</pre></div>
+</div>
+<p>As usual, you can push it to Gerrit with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">review</span></code>.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>It is critical that the Gerrit patch be merged before the
+git commit hash of the submodule changes. Otherwise,
+Gerrit is not able to automatically keep it up-to-date
+for you.</p>
+</div>
+</section>
+</section>
+<section id="documentation-layout-and-style">
+<h3><a class="toc-backref" href="#id10" role="doc-backlink">Documentation Layout and Style</a><a class="headerlink" href="#documentation-layout-and-style" title="Link to this heading">¶</a></h3>
+<p>As mentioned previously, OpenDaylight aims to follow the Python documentation
+style guidelines, which defines a few types of sections:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># with overline, for parts</span>
+<span class="o">*</span> <span class="k">with</span> <span class="n">overline</span><span class="p">,</span> <span class="k">for</span> <span class="n">chapters</span>
+<span class="o">=</span><span class="p">,</span> <span class="k">for</span> <span class="n">sections</span>
+<span class="o">-</span><span class="p">,</span> <span class="k">for</span> <span class="n">subsections</span>
+<span class="o">^</span><span class="p">,</span> <span class="k">for</span> <span class="n">subsubsections</span>
+<span class="s2">&quot;, for paragraphs</span>
+</pre></div>
+</div>
+<p>OpenDaylight documentation is organized around the following structure based on
+that recommendation:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docs</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">rst</span>                 <span class="o">-&gt;</span> <span class="n">entry</span> <span class="n">point</span>
+<span class="n">docs</span><span class="o">/</span><span class="n">____</span><span class="o">-</span><span class="n">guide</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">rst</span>      <span class="o">-&gt;</span> <span class="n">part</span>
+<span class="n">docs</span><span class="o">/</span><span class="n">____</span><span class="o">-</span><span class="n">guide</span><span class="o">/&lt;</span><span class="n">chapter</span><span class="o">&gt;.</span><span class="n">rst</span>  <span class="o">-&gt;</span> <span class="n">chapter</span>
+</pre></div>
+</div>
+<p>In the <code class="docutils literal notranslate"><span class="pre">____-guide/index.rst</span></code> we use the <code class="docutils literal notranslate"><span class="pre">#</span></code> with overline at the very top
+of the file to determine that it is a part and then within each chapter
+file we start the document with a section using <code class="docutils literal notranslate"><span class="pre">*</span></code> with overline to
+denote that it is the chapter heading and then everything in the rest of
+the chapter should use:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">=</span><span class="p">,</span> <span class="k">for</span> <span class="n">sections</span>
+<span class="o">-</span><span class="p">,</span> <span class="k">for</span> <span class="n">subsections</span>
+<span class="o">^</span><span class="p">,</span> <span class="k">for</span> <span class="n">subsubsections</span>
+<span class="s2">&quot;, for paragraphs</span>
+</pre></div>
+</div>
+<section id="referencing-sections">
+<h4>Referencing Sections<a class="headerlink" href="#referencing-sections" title="Link to this heading">¶</a></h4>
+<p>This section provides a quick primer for creating references
+in OpenDaylight documentation. For more information, refer to
+<a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html">Cross-referencing documents</a>.</p>
+<p>Within a single document, you can reference another section simply by:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>This is a reference to `The title of a section`_
+</pre></div>
+</div>
+<p>Assuming that somewhere else in the same file, there a is a section
+title something like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">title</span> <span class="n">of</span> <span class="n">a</span> <span class="n">section</span>
+<span class="o">^^^^^^^^^^^^^^^^^^^^^^</span>
+</pre></div>
+</div>
+<p>It is typically better to use <code class="docutils literal notranslate"><span class="pre">:ref:</span></code> syntax and labels to provide
+links as they work across files and are resilient to sections being
+renamed. First, you need to create a label something like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">_a</span><span class="o">-</span><span class="n">label</span><span class="p">:</span>
+
+<span class="n">The</span> <span class="n">title</span> <span class="n">of</span> <span class="n">a</span> <span class="n">section</span>
+<span class="o">^^^^^^^^^^^^^^^^^^^^^^</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The underscore (_) before the label is required.</p>
+</div>
+<p>Then you can reference the section anywhere by simply doing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>This is a reference to :ref:`a-label`
+</pre></div>
+</div>
+<p>or:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>This is a reference to :ref:`a section I really liked &lt;a-label&gt;`
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When using <code class="docutils literal notranslate"><span class="pre">:ref:</span></code>-style links, you don’t need a trailing
+underscore (_).</p>
+</div>
+<p>Because the labels have to be unique, a best practice is to prefix
+the labels with the project name to help share the label space; for example,
+use <code class="docutils literal notranslate"><span class="pre">sfc-user-guide</span></code> instead of just <code class="docutils literal notranslate"><span class="pre">user-guide</span></code>.</p>
+</section>
+<section id="referencing-jira-issues">
+<h4>Referencing JIRA issues<a class="headerlink" href="#referencing-jira-issues" title="Link to this heading">¶</a></h4>
+<p>In order to reference JIRA, we provide two new directives, <code class="docutils literal notranslate"><span class="pre">jira_fixed_issues</span></code> and
+<code class="docutils literal notranslate"><span class="pre">jira_known_issues</span></code>. These render a table of issues for a particular project and
+its version range. These are used like this:</p>
+<blockquote>
+<div><div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">jira_fixed_issues</span><span class="p">::</span>
+   <span class="nc">:project:</span> CONTROLLER
+   <span class="nc">:versions:</span> 4.0.0-4.0.3
+
+<span class="p">..</span> <span class="ow">jira_known_issues</span><span class="p">::</span>
+   <span class="nc">:project:</span> CONTROLLER
+   <span class="nc">:versions:</span> 4.0.0-4.0.3
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+</section>
+<section id="troubleshooting">
+<span id="docs-rst-troubleshooting"></span><h3><a class="toc-backref" href="#id11" role="doc-backlink">Troubleshooting</a><a class="headerlink" href="#troubleshooting" title="Link to this heading">¶</a></h3>
+<section id="nested-formatting-does-not-work">
+<h4>Nested formatting does not work<a class="headerlink" href="#nested-formatting-does-not-work" title="Link to this heading">¶</a></h4>
+<p>As stated in the <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html">reStructuredText</a> guide, inline markup for bold,
+italic, and fixed-width font cannot be nested. Furthermore, inline markup cannot
+be mixed with hyperlinks, so you cannot have a link with bold text.</p>
+<p>This is tracked in a <a class="reference external" href="https://docutils.sourceforge.io/FAQ.html#is-nested-inline-markup-possible">Docutils FAQ question</a>,
+but there is no clear current plan to fix this.</p>
+</section>
+<section id="make-sure-you-have-cloned-submodules">
+<h4>Make sure you have cloned submodules<a class="headerlink" href="#make-sure-you-have-cloned-submodules" title="Link to this heading">¶</a></h4>
+<p>If you see an error like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">build</span><span class="o">-</span><span class="n">integration</span><span class="o">-</span><span class="n">robot</span><span class="o">-</span><span class="n">libdoc</span><span class="o">.</span><span class="n">sh</span><span class="p">:</span> <span class="n">line</span> <span class="mi">6</span><span class="p">:</span> <span class="n">cd</span><span class="p">:</span> <span class="n">submodules</span><span class="o">/</span><span class="n">integration</span><span class="o">/</span><span class="n">test</span><span class="o">/</span><span class="n">csit</span><span class="o">/</span><span class="n">libraries</span><span class="p">:</span> <span class="n">No</span> <span class="n">such</span> <span class="n">file</span> <span class="ow">or</span> <span class="n">directory</span>
+<span class="n">Resource</span> <span class="n">file</span> <span class="s1">&#39;*.robot&#39;</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">exist</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>It means that you have not pulled down the git submodule for the
+integration/test project. The fastest way to do that is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">submodule</span> <span class="n">update</span> <span class="o">--</span><span class="n">init</span>
+</pre></div>
+</div>
+<p>In some cases, you might wind up with submodules which are somehow
+out-of-sync. In that case, the easiest way to fix them is to delete the
+submodules directory and then re-clone the submodules:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="n">docs</span><span class="o">/</span><span class="n">submodules</span><span class="o">/</span>
+<span class="n">git</span> <span class="n">submodule</span> <span class="n">update</span> <span class="o">--</span><span class="n">init</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>These steps delete any local changes or information you made
+in the submodules, which would only occur if you
+manually edited files in that directory.</p>
+</div>
+</section>
+<section id="clear-your-tox-directory-and-try-again">
+<h4>Clear your tox directory and try again<a class="headerlink" href="#clear-your-tox-directory-and-try-again" title="Link to this heading">¶</a></h4>
+<p>Sometimes, tox will not detect when your <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file has
+changed and so will try to run things without the correct dependencies.
+This issue usually manifests  as <code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">module</span> <span class="pre">named</span> <span class="pre">X</span></code> errors or
+an <code class="docutils literal notranslate"><span class="pre">ExtensionError</span></code> and can be fixed by deleting the <code class="docutils literal notranslate"><span class="pre">.tox</span></code>
+directory and building again:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="o">.</span><span class="n">tox</span>
+<span class="n">tox</span>
+</pre></div>
+</div>
+</section>
+<section id="builds-on-read-the-docs">
+<h4>Builds on Read the Docs<a class="headerlink" href="#builds-on-read-the-docs" title="Link to this heading">¶</a></h4>
+<p>Read the Docs builds do not automatically clear the file structure between
+builds and clones. The result is that you may have to clean up the state of
+old runs of the build script.</p>
+<p>As an example, refer to the following patch:
+<a class="reference external" href="https://git.opendaylight.org/gerrit/c/docs/+/41679/">https://git.opendaylight.org/gerrit/c/docs/+/41679/</a></p>
+<p>This patch fixed the issue that caused builds to fail because they were
+taking too long removing directories associated with generated
+Javadoc files that were present from previous runs.</p>
+</section>
+<section id="errors-from-coala">
+<h4>Errors from <code class="docutils literal notranslate"><span class="pre">Coala</span></code><a class="headerlink" href="#errors-from-coala" title="Link to this heading">¶</a></h4>
+<p>As part of running <code class="docutils literal notranslate"><span class="pre">tox</span></code>, two environments run: <code class="docutils literal notranslate"><span class="pre">coala</span></code> which does a variety
+of <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html">reStructuredText</a> (and other) linting, and <code class="docutils literal notranslate"><span class="pre">docs</span></code>, which runs <a class="reference external" href="https://www.sphinx-doc.org/en/master/">Sphinx</a> to
+build HTML and PDF documentation. You can run them independently by doing
+<code class="docutils literal notranslate"><span class="pre">tox</span> <span class="pre">-ecoala</span></code> or <code class="docutils literal notranslate"><span class="pre">tox</span> <span class="pre">-edocs</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">coala</span></code> linter for reStructuredText is not always the most helpful in
+explaining why it failed. So, here are some common ones. There should also be
+Jenkins Failure Cause Management rules that will highlight these for you.</p>
+<section id="git-commit-message-errors">
+<h5>Git Commit Message Errors<a class="headerlink" href="#git-commit-message-errors" title="Link to this heading">¶</a></h5>
+<p><code class="docutils literal notranslate"><span class="pre">Coala</span></code> checks that git commit messages adhere to the following rules:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Shortlog</span></code> (1st line of commit message) is less than 50 characters</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Shortlog</span></code> (1st line of commit message) is in the imperative mood. For example,
+“Add foo unit test” is good, but “Adding foo unit test is bad””</p></li>
+<li><p>Body (all lines but 1st line of commit message) are less than 72 characters.
+Some exceptions seem to exist, such as for long URLs.</p></li>
+</ul>
+<p>Some examples of those being logged are:</p>
+<dl class="simple">
+<dt>::</dt><dd><p>Project wide:
+|    | [NORMAL] GitCommitBear:
+|    | <code class="docutils literal notranslate"><span class="pre">Shortlog</span></code> of HEAD commit isn’t in imperative mood! Bad words are ‘Adding’</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>::</dt><dd><p>Project wide:
+|    | [NORMAL] GitCommitBear:
+|    | Body of HEAD commit contains too long lines. Commit body lines should not exceed 72 characters.</p>
+</dd>
+</dl>
+</section>
+<section id="error-in-code-block-directive">
+<h5>Error in “code-block” directive<a class="headerlink" href="#error-in-code-block-directive" title="Link to this heading">¶</a></h5>
+<p>If you see an error like this:</p>
+<dl class="simple">
+<dt>::</dt><dd><p><code class="docutils literal notranslate"><span class="pre">docs/gerrit.rst</span></code>
+|  89| ···..·code-block::·bash
+|    | [MAJOR] RSTcheckBear:
+|    | (ERROR/3) Error in “code-block” directive:</p>
+</dd>
+</dl>
+<p>It means that the relevant code-block is not valid for the
+language specified, in this case <code class="docutils literal notranslate"><span class="pre">bash</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you do not specify a language, the default language is Python. If
+you want the code-block to not be an any particular language, instead
+use the <code class="docutils literal notranslate"><span class="pre">::</span></code> directive. For example:</p>
+</div>
+<dl class="simple">
+<dt>::</dt><dd><dl class="simple">
+<dt>::</dt><dd><p>This is a code block
+that will not be parsed
+in any particular language</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</section>
+</section>
+</section>
+<section id="project-documentation-requirements">
+<h2><a class="toc-backref" href="#id12" role="doc-backlink">Project Documentation Requirements</a><a class="headerlink" href="#project-documentation-requirements" title="Link to this heading">¶</a></h2>
+<section id="submitting-documentation-outlines-m2">
+<h3><a class="toc-backref" href="#id13" role="doc-backlink">Submitting Documentation Outlines (M2)</a><a class="headerlink" href="#submitting-documentation-outlines-m2" title="Link to this heading">¶</a></h3>
+<ol class="arabic">
+<li><p>Determine the features your project will have and which ones will be
+‘’user-facing’’.</p>
+<ul class="simple">
+<li><p>In general, a feature is user-facing if it creates functionality that a
+user would directly interact with.</p></li>
+<li><p>For example, <code class="docutils literal notranslate"><span class="pre">odl-openflowplugin-flow-services-ui</span></code> is likely
+user-facing since it installs user-facing OpenFlow features, while
+<code class="docutils literal notranslate"><span class="pre">odl-openflowplugin-flow-services</span></code> is not because it provides only
+developer-facing features.</p></li>
+</ul>
+</li>
+<li><p>Determine pieces of documentation that you need to provide based on the
+features your project will have and which ones will be user-facing.</p>
+<ul class="simple">
+<li><p>The kinds of required documentation can be found below in the
+<a class="reference internal" href="#requirements-for-projects"><span class="std std-ref">Requirements for projects</span></a> section.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You might need to create multiple documents for the
+same kind of documentation. For example, the controller project
+will likely want to have a developer section for the config
+subsystem as well as for the MD-SAL.</p>
+</div>
+</li>
+<li><p>Clone the docs repository: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://git.opendaylight.org/gerrit/docs</span></code></p></li>
+<li><p>For each piece of documentation find the corresponding template in the docs
+repository.</p>
+<ul class="simple">
+<li><p>For user documentation: <code class="docutils literal notranslate"><span class="pre">docs.git/docs/templates/template-user-guide.rst</span></code></p></li>
+<li><p>For developer documentation: <code class="docutils literal notranslate"><span class="pre">ddocs/templates/template-developer-guide.rst</span></code></p></li>
+<li><p>For installation documentation (if any): <code class="docutils literal notranslate"><span class="pre">docs/templates/template-install-guide.rst</span></code></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can find the rendered templates here:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="templates/template-user-guide.html">&lt;Feature&gt; User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="templates/template-developer-guide.html">&lt;Feature&gt; Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="templates/template-install-guide.html">&lt;Feature&gt; Installation Guide</a></li>
+</ul>
+</div>
+</div>
+</li>
+<li><p>Copy the template into the appropriate directory for your project.</p>
+<ul class="simple">
+<li><p>For user documentation: <code class="docutils literal notranslate"><span class="pre">docs.git/docs/user-guide/${feature-name}-user-guide.rst</span></code></p></li>
+<li><p>For developer documentation: <code class="docutils literal notranslate"><span class="pre">docs.git/docs/developer-guide/${feature-name}-developer-guide.rst</span></code></p></li>
+<li><p>For installation documentation (if any): <code class="docutils literal notranslate"><span class="pre">docs.git/docs/getting-started-guide/project-specific-guides/${project-name}.rst</span></code></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These naming conventions are not set in stone, but are used to
+maintain a consistent document taxonomy. If these conventions
+are not appropriate or do not make sense for a document
+in development, use the convention that you think is more
+appropriate and the documentation team will review it and give
+feedback on the Gerrit patch.</p>
+</div>
+</li>
+<li><p>Edit the template to fill in the outline of what you will provide using the
+suggestions in the template. If you feel like a section is not needed, feel
+free to omit it.</p></li>
+<li><p>Link the template into the appropriate core <code class="docutils literal notranslate"><span class="pre">.rst</span></code> file.</p>
+<ul class="simple">
+<li><p>For user documentation: <code class="docutils literal notranslate"><span class="pre">docs.git/docs/user-guide/index.rst</span></code></p></li>
+<li><p>For developer documentation: <code class="docutils literal notranslate"><span class="pre">docs.git/docs/developer-guide/index.rst</span></code></p></li>
+<li><p>For installation documentation (if any): <code class="docutils literal notranslate"><span class="pre">docs.git/docs/getting-started-guide/project-specific-guides/index.rst</span></code></p></li>
+<li><p>In each file, it should be pretty clear what line you need to add. In
+general if you have an <code class="docutils literal notranslate"><span class="pre">.rst</span></code> file <code class="docutils literal notranslate"><span class="pre">project-name.rst</span></code>, you include it
+by adding a new line <code class="docutils literal notranslate"><span class="pre">project-name</span></code> without the <code class="docutils literal notranslate"><span class="pre">.rst</span></code> at the end.</p></li>
+</ul>
+</li>
+<li><p>Make sure the documentation project still builds.</p>
+<ul class="simple">
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">tox</span></code> from the root of the cloned docs repository.</p>
+<ul>
+<li><p>After that, you should be able to find the HTML version of the
+docs at <code class="docutils literal notranslate"><span class="pre">docs.git/docs/_build/html/index.html</span></code>.</p></li>
+<li><p>See <a class="reference internal" href="#docs-rst"><span class="std std-ref">reStructuredText-based Documentation</span></a> for more details about building the docs.</p></li>
+</ul>
+</li>
+<li><p>The <a class="reference internal" href="#docs-rst-troubleshooting"><span class="std std-ref">reStructuredText Troubleshooting</span></a>
+section provides common errors and solutions.</p></li>
+<li><p>If you still have problems e-mail the documentation group at
+<a class="reference external" href="mailto:documentation&#37;&#52;&#48;lists&#46;opendaylight&#46;org">documentation<span>&#64;</span>lists<span>&#46;</span>opendaylight<span>&#46;</span>org</a></p></li>
+</ul>
+</li>
+<li><p>Commit and submit the patch.</p>
+<ol class="arabic">
+<li><p>Commit using:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>--all<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-sm<span class="w"> </span><span class="s2">&quot;Documentation outline for </span><span class="si">${</span><span class="nv">project</span><span class="p">-shortname</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Submit using:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>review
+</pre></div>
+</div>
+<p>See the <a class="reference external" href="https://docs.releng.linuxfoundation.org/en/latest/gerrit.html#gerrit-guide">Git-review Workflow</a>
+page if you don’t have git-review installed.</p>
+</li>
+</ol>
+</li>
+<li><p>Wait for the patch to be merged or to get feedback</p>
+<ul class="simple">
+<li><p>If you get feedback, make the requested changes and resubmit the patch.</p></li>
+<li><p>When you resubmit the patch, it is helpful if you also post a “+0” reply to
+the patch in Gerrit, stating what patch set you just submitted and what you
+fixed in the patch set.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="expected-output-from-documentation-project">
+<h3><a class="toc-backref" href="#id14" role="doc-backlink">Expected Output From Documentation Project</a><a class="headerlink" href="#expected-output-from-documentation-project" title="Link to this heading">¶</a></h3>
+<p>The expected output is (at least) 3 PDFs and equivalent web-based documentation:</p>
+<ul class="simple">
+<li><p>User/Operator Guide</p></li>
+<li><p>Developer Guide</p></li>
+<li><p>Installation Guide</p></li>
+</ul>
+<p>These guides will consist of “front matter” produced by the documentation group
+and the per-project/per-feature documentation provided by the projects.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This requirement is intended for the person responsible for the
+documentation and should not be interpreted as preventing people not
+normally in the documentation group from helping with front matter
+nor preventing people from the documentation group from helping with
+per-project/per-feature documentation.</p>
+</div>
+</section>
+<section id="id2">
+<h3><a class="toc-backref" href="#id15" role="doc-backlink">Project Documentation Requirements</a><a class="headerlink" href="#id2" title="Link to this heading">¶</a></h3>
+<section id="content-types">
+<span id="kinds-of-docs"></span><h4>Content Types<a class="headerlink" href="#content-types" title="Link to this heading">¶</a></h4>
+<p>These are the expected kinds of documentation and target audiences for each
+kind.</p>
+<ul>
+<li><p><strong>User/Operator:</strong> for people looking to use the feature without writing code</p>
+<ul class="simple">
+<li><p>Should include an overview of the project/feature</p></li>
+<li><p>Should include description of available configuration options and what they
+do</p></li>
+</ul>
+</li>
+<li><p><strong>Developer:</strong> for people looking to use the feature in code without modifying
+it</p>
+<ul class="simple">
+<li><p>Should include API documentation, such as, enunciate for REST, Javadoc for
+Java, ??? for RESTCONF/models</p></li>
+</ul>
+</li>
+<li><p><strong>Contributor:</strong> for people looking to extend or modify the feature’s source
+code</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can find this information on the wiki.</p>
+</div>
+</li>
+<li><p><strong>Installation:</strong> for people looking for instructions to install the feature
+after they have downloaded the ODL release</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The audience for this content is the same as User/Operator docs</p>
+</div>
+<ul class="simple">
+<li><p>For most projects, this will be just a list of top-level features and
+options</p>
+<ul>
+<li><p>As an example, l2switch-switch as the top-level feature with the -rest
+and <code class="docutils literal notranslate"><span class="pre">-ui</span></code> options</p></li>
+<li><p>Features should also note if the options should be check-boxes (that is,
+they can each be turned on/off independently) or a drop-down (that is, at
+most one can be selected)</p></li>
+<li><p>What other top-level features in the release are incompatible with each
+feature</p></li>
+<li><p>This will likely be presented as a table in the documentation and the
+data will likely also be consumed by an automated installer or configurator
+or even downloader.</p></li>
+</ul>
+</li>
+<li><p>For some projects, there is extra installation instructions (for external
+components) and/or configuration</p>
+<ul>
+<li><p>In that case, there will be a (sub)section in the documentation
+describing this process.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>HowTo/Tutorial:</strong> walk-through and examples that are not general-purpose
+documentation</p>
+<ul class="simple">
+<li><p>Generally, these should be done as a (sub)section of either user/operator
+or developer documentation.</p></li>
+<li><p>If they are especially long or complex, they may belong on their own</p></li>
+</ul>
+</li>
+<li><p><strong>Release Notes:</strong></p>
+<ul class="simple">
+<li><p>Release notes are required as part of each project’s release review. They
+must also be translated into reStructuredText for inclusion in the formal
+documentation.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="requirements-for-projects">
+<span id="id3"></span><h4>Requirements for projects<a class="headerlink" href="#requirements-for-projects" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>Projects must provide reStructuredText documentation including:</p>
+<ul>
+<li><p>Developer documentation for every feature</p>
+<ul>
+<li><p>Most projects will want to logically nest the documentation for
+individual features under a single project-wide chapter or section</p></li>
+<li><p>The feature documentation can be provided as a single <code class="docutils literal notranslate"><span class="pre">.rst</span></code> file or
+multiple <code class="docutils literal notranslate"><span class="pre">.rst</span></code> files if the features fall into different groups</p></li>
+<li><p>Feature documentation should start with approximately 300 words overview
+of the project and include references to any automatically-generated API
+documentation as well as more general developer information (see
+<a class="reference internal" href="#kinds-of-docs"><span class="std std-ref">Content Types</span></a>).</p></li>
+</ul>
+</li>
+<li><p>User/Operator documentation for every every user-facing feature (if any)</p>
+<ul>
+<li><p>This documentation should be per-feature, not per-project. Users should
+not have to know which project a feature came from.</p></li>
+<li><p>Intimately related features can be documented together. For example,
+<code class="docutils literal notranslate"><span class="pre">l2switch-switch</span></code>, <code class="docutils literal notranslate"><span class="pre">l2switch-switch-rest</span></code>, and <code class="docutils literal notranslate"><span class="pre">l2switch-switch-ui</span></code>,
+can be documented as one noting the differences.</p></li>
+<li><p>This documentation can be provided as a single <code class="docutils literal notranslate"><span class="pre">.rst</span></code> file or multiple
+<code class="docutils literal notranslate"><span class="pre">.rst</span></code> files if the features fall into different groups</p></li>
+</ul>
+</li>
+<li><p>Installation documentation</p>
+<ul>
+<li><p>Most projects will simply provide a list of user-facing features and
+options. See <a class="reference internal" href="#kinds-of-docs"><span class="std std-ref">Content Types</span></a> above.</p></li>
+</ul>
+</li>
+<li><p>Release Notes (both on the wiki and reStructuredText) as part of the release
+review.</p></li>
+</ul>
+</li>
+<li><p>Documentation must be imported from the project own repository or  contributed
+to the docs repository for generic information.</p>
+<ul>
+<li><p>Projects may be encouraged to instead provide this from their own
+repository if the tooling is developed</p></li>
+<li><p>Projects choosing to meet the requirement in this way must provide a patch
+to docs repository to import the project’s documentation</p></li>
+</ul>
+</li>
+<li><p>Projects must cooperate with the documentation group on edits and enhancements
+to documentation</p></li>
+</ul>
+</section>
+<section id="timeline-for-deliverables-from-projects">
+<h4>Timeline for Deliverables from Projects<a class="headerlink" href="#timeline-for-deliverables-from-projects" title="Link to this heading">¶</a></h4>
+<ul>
+<li><p><strong>M2:</strong> Documentation Started</p>
+<p>The following tasks for documentation deliverables must be completed for the
+M2 readout:</p>
+<ul>
+<li><p>The kinds of documentation that will be provided and for what features must
+be identified.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Release Notes are not required until release reviews at <strong>RC2</strong></p>
+</div>
+</li>
+<li><p>The appropriate <code class="docutils literal notranslate"><span class="pre">.rst</span></code> files must be created in the docs repository
+(or their own repository if the tooling is available).</p></li>
+<li><p>An outline for the expected documentation must be completed in those
+<code class="docutils literal notranslate"><span class="pre">.rst</span></code> files including the relevant (sub)sections and a sentence or two
+explaining what will be contained in these sections.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If an outline is not provided, delivering actual documentation
+in the (sub)sections meets this requirement.</p>
+</div>
+</li>
+<li><p>M2 readouts should include</p>
+<ol class="arabic simple">
+<li><p>the list of kinds of documentation</p></li>
+<li><p>the list of corresponding <code class="docutils literal notranslate"><span class="pre">.rst</span></code> files and their location, including
+repository and path</p></li>
+<li><p>the list of commits creating those <code class="docutils literal notranslate"><span class="pre">.rst</span></code> files</p></li>
+<li><p>the current word counts of those <code class="docutils literal notranslate"><span class="pre">.rst</span></code> files</p></li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p><strong>M3:</strong> Documentation Continues</p>
+<ul class="simple">
+<li><p>The readout at M3 should include the word counts of all <code class="docutils literal notranslate"><span class="pre">.rst</span></code> files with
+links to commits</p></li>
+<li><p>The goal is to have draft documentation complete at the M3 readout so that
+the documentation group can comment on it.</p></li>
+</ul>
+</li>
+<li><p><strong>M4:</strong> Documentation Complete</p>
+<ul class="simple">
+<li><p>All (sub)sections in all <code class="docutils literal notranslate"><span class="pre">.rst</span></code> files have complete, readable, usable
+content.</p></li>
+<li><p>Ideally, there should have been some interaction with the documentation
+group about any suggested edits and enhancements</p></li>
+</ul>
+</li>
+<li><p><strong>RC2:</strong> Release notes</p>
+<ul class="simple">
+<li><p>Projects must provide release notes in <code class="docutils literal notranslate"><span class="pre">.rst</span></code> format pushed to integration
+(or locally in the project’s repository if the tooling is developed)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+</section>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="_sources/documentation.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2016-2026, OpenDaylight Project.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 8.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

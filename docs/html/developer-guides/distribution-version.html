@@ -1,0 +1,287 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Distribution Version reporting &#8212; OpenDaylight Documentation Chromium documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css?v=0bf093e7" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.2/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/ribbon.css?v=cb953b18" />
+    <link rel="stylesheet" href="../_static/css/warning-header.css" type="text/css" />
+    <script src="../_static/documentation_options.js?v=7b4a4459"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://cdn.datatables.net/1.11.2/js/jquery.dataTables.min.js"></script>
+    <script class="init" type="text/javascript">$(document).ready( function () { $('table.datatable').DataTable(); } );</script>
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Distribution features" href="distribution-test-features.html" />
+    <link rel="prev" title="Component Tests (with Guice)" href="tests/component.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+
+  </head><body>
+  <div class="ribbon">
+    <a href="https://jira.opendaylight.org/secure/CreateIssueDetails!init.jspa
+?pid=10121
+&issuetype=10104
+&components=10228
+&priority=2
+&description=version:+Chromium%0Apage:+developer-guides/distribution-version%0A%0A" target="_blank">
+      Report Issue
+    </a>
+  </div>
+  
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+  <!-- Outdated version warning banner -->
+  
+    <style>
+      body {
+        padding-top: 60px;
+     }
+    </style>
+  
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          OpenDaylight Documentation</a>
+        <span class="navbar-text navbar-version pull-left"><b>Chromium</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../downloads.html">OpenDaylight Downloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes/index.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started-guide/index.html">Getting Started Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Developer Guides</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../documentation.html">Documentation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-process/index.html">OpenDaylight Release Process Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../javadoc.html">Java API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/index.html">OpenDaylight User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Developer Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributor-guides/index.html">Contributor Guides</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Distribution Version reporting</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#key-apis-and-interfaces">Key APIs and Interfaces</a><ul>
+<li><a class="reference internal" href="#yang-model-for-config-subsystem">YANG model for config subsystem</a></li>
+<li><a class="reference internal" href="#java-api">Java API</a></li>
+<li><a class="reference internal" href="#default-config-file">Default config file</a></li>
+<li><a class="reference internal" href="#karaf-feature">Karaf Feature</a></li>
+<li><a class="reference internal" href="#restconf-usage">RESTCONF usage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Distribution Version reporting</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#key-apis-and-interfaces">Key APIs and Interfaces</a><ul>
+<li><a class="reference internal" href="#yang-model-for-config-subsystem">YANG model for config subsystem</a></li>
+<li><a class="reference internal" href="#java-api">Java API</a></li>
+<li><a class="reference internal" href="#default-config-file">Default config file</a></li>
+<li><a class="reference internal" href="#karaf-feature">Karaf Feature</a></li>
+<li><a class="reference internal" href="#restconf-usage">RESTCONF usage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<center>
+<div class="btn-group" role="group" aria-label="...">
+    
+    <a class="btn btn-default" href="tests/component.html">Prev Page</a>
+    
+
+    
+    <a class="btn btn-default" href="distribution-test-features.html">Next Page</a>
+    
+</div>
+</center>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <section id="distribution-version-reporting">
+<span id="dist-version-report"></span><h1>Distribution Version reporting<a class="headerlink" href="#distribution-version-reporting" title="Link to this heading">¶</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">¶</a></h2>
+<p>This section provides an overview of <strong>odl-distribution-version</strong> feature.</p>
+<p>A remote user of OpenDaylight usually has access to RESTCONF and NETCONF
+northbound interfaces, but does not have access to the system
+OpenDaylight is running on. OpenDaylight has released multiple versions
+including Service Releases, and there are incompatible changes between them.
+In order to know which YANG modules to use, which bugs to expect
+and which workarounds to apply, such user would need to know the exact version
+of at least one OpenDaylight component.</p>
+<p>There are indirect ways to deduce such version, but the direct way is enabled
+by <code class="docutils literal notranslate"><span class="pre">odl-distribution-version</span></code> feature. Administrator can specify version strings,
+which would be available to users via NETCONF, or via RESTCONF
+if OpenDaylight is configured to initiate NETCONF connection
+to its config subsystem northbound interface.</p>
+<p>By default, users have write access to config subsystem,
+so they can add, modify or delete any version strings present there.
+Admins can only influence whether the feature is installed, and initial values.</p>
+<p>Config subsystem is local only, not cluster aware,
+so each member reports versions independently. This is suitable for heterogeneous clusters.
+On homogeneous clusters, make sure you set and check every member.</p>
+</section>
+<section id="key-apis-and-interfaces">
+<h2>Key APIs and Interfaces<a class="headerlink" href="#key-apis-and-interfaces" title="Link to this heading">¶</a></h2>
+<p>Current implementation relies heavily on <code class="docutils literal notranslate"><span class="pre">config-parent</span></code> parent POM file from Controller project.</p>
+<section id="yang-model-for-config-subsystem">
+<h3>YANG model for config subsystem<a class="headerlink" href="#yang-model-for-config-subsystem" title="Link to this heading">¶</a></h3>
+<p>Throughout this chapter, <em>model</em> denotes YANG module, and <em>module</em> denotes item
+in config subsystem module list.</p>
+<p>Version functionality relies on config subsystem and its <code class="docutils literal notranslate"><span class="pre">config</span></code> YANG model.
+The YANG model <code class="docutils literal notranslate"><span class="pre">odl-distribution-version</span></code> adds an identity <code class="docutils literal notranslate"><span class="pre">odl-version</span></code>
+and augments <code class="docutils literal notranslate"><span class="pre">/config:modules/module/configuration</span></code> adding new case for <code class="docutils literal notranslate"><span class="pre">odl-version</span></code> type.
+This case contains single leaf <code class="docutils literal notranslate"><span class="pre">version</span></code>, which would hold the version string.</p>
+<p>Config subsystem can hold multiple modules, the version string should contain
+version of OpenDaylight component corresponding to the module name.
+As this is pure metadata with no consequence on OpenDaylight behavior,
+there is no prescribed scheme for choosing config module names.
+But see the default configuration file for examples.</p>
+</section>
+<section id="java-api">
+<h3>Java API<a class="headerlink" href="#java-api" title="Link to this heading">¶</a></h3>
+<p>Each config module needs to come with java classes which override <code class="docutils literal notranslate"><span class="pre">customValidation()</span></code>
+and <code class="docutils literal notranslate"><span class="pre">createInstance()</span></code>. Version related modules have no impact on OpenDaylight internal behavior,
+so the methods return void and dummy closeable respectively, without any side effect.</p>
+</section>
+<section id="default-config-file">
+<h3>Default config file<a class="headerlink" href="#default-config-file" title="Link to this heading">¶</a></h3>
+<p>Initial version values are set via config file <code class="docutils literal notranslate"><span class="pre">odl-version.xml</span></code> which is created in
+<code class="docutils literal notranslate"><span class="pre">$KARAF_HOME/etc/opendaylight/karaf/</span></code> upon installation of <code class="docutils literal notranslate"><span class="pre">odl-distribution-version</span></code> feature.
+If admin wants to use different content, the file with desired content has to be created
+there before feature installation happens.</p>
+<p>By default, the config file defines two config modules, named <code class="docutils literal notranslate"><span class="pre">odl-distribution-version</span></code>
+and <code class="docutils literal notranslate"><span class="pre">odl-odlparent-version</span></code>.</p>
+<p>Currently the default version values are set to Maven property strings
+(as opposed to valid values), as the needed new functionality did not make it
+into Controller project in Boron. See Bug number 6003.</p>
+</section>
+<section id="karaf-feature">
+<h3>Karaf Feature<a class="headerlink" href="#karaf-feature" title="Link to this heading">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">odl-distribution-version</span></code> feature is currently the only feature defined
+in feature repository of <code class="docutils literal notranslate"><span class="pre">artifactId</span></code> <code class="docutils literal notranslate"><span class="pre">features-distribution</span></code>,
+which is available (transitively) in OpenDaylight Karaf distribution.</p>
+</section>
+<section id="restconf-usage">
+<h3>RESTCONF usage<a class="headerlink" href="#restconf-usage" title="Link to this heading">¶</a></h3>
+<p>OpenDaylight config subsystem NETCONF northbound is not made available just by installing
+<code class="docutils literal notranslate"><span class="pre">odl-distribution-version</span></code>, but most other feature installations would enable it.
+RESTCONF interfaces are enabled by installing <code class="docutils literal notranslate"><span class="pre">odl-restconf</span></code> feature,
+but that do not allow access to config subsystem by itself.</p>
+<p>On single node deployments, installation of <code class="docutils literal notranslate"><span class="pre">odl-netconf-connector-ssh</span></code> is recommended,
+which would configure <code class="docutils literal notranslate"><span class="pre">controller-config</span></code> device and its MD-SAL mount point.
+See documentation for clustering on how to create similar devices for member modes,
+as <code class="docutils literal notranslate"><span class="pre">controller-config</span></code> name is not unique in that context.</p>
+<p>Assuming single node deployment and user located on the same system,
+here is an example <code class="docutils literal notranslate"><span class="pre">curl</span></code> command accessing <code class="docutils literal notranslate"><span class="pre">odl-odlparent-version</span></code> config module:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span><span class="m">127</span>.0.0.1:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules/module/odl-distribution-version:odl-version/odl-odlparent-version
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/developer-guides/distribution-version.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2016-2026, OpenDaylight Project.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 8.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
