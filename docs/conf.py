@@ -84,8 +84,6 @@ linkcheck_ignore = [
     'https://wiki-archive.opendaylight.org/images/c/ca/Profile-Java-ODL.xml.zip',
     #Ignore announce page link till it is up
     'https://www.opendaylight.org/current-release-titanium',
-    'https://www.opendaylight.org/current-release-scandium',
-    'https://www.opendaylight.org/current-release-calcium',
 ]
 linkcheck_timeout = 300
 
