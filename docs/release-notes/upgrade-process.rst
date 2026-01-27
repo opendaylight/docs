@@ -24,9 +24,9 @@ Version Bump
 Before performing platform upgrade, do the following to bump the odlparent
 versions (for example, `bump-odl-version <https://github.com/skitt/odl-tools/blob/master/bump-odl-version>`_):
 
-1. Update the odlparent version from 14.0.3 to 14.1.0. There should
+1. Update the odlparent version from 14.1.0 to 14.1.6. There should
    not be any reference to **org.opendaylight.odlparent**, except
-   for 14.1.0. This includes custom feature.xml templates
+   for 14.1.6. This includes custom feature.xml templates
    (``src/main/feature/feature.xml``), the version range should
    be "[14,15)".
 
@@ -36,7 +36,7 @@ versions (for example, `bump-odl-version <https://github.com/skitt/odl-tools/blo
 
 2. Update the direct yangtools version references from 14.0.14 to 14.0.20,
    There should not be any reference to **org.opendaylight.yangtools**,
-   except for 14.0.14. This includes custom feature.xml templates
+   except for 14.0.20. This includes custom feature.xml templates
    (``src/main/feature/feature.xml``), the version range should
    be "[14,15)" instead of "[13,14)".
 
