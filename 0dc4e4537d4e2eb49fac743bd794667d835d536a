@@ -16,6 +16,23 @@
       "message": "linkcheck is failing on https://github.com/google/styleguide/blob/gh-pages/eclipse-java-google-style.xml",
       "revId": "0dc4e4537d4e2eb49fac743bd794667d835d536a",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "91da0253_277b2993",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8144
+      },
+      "writtenOn": "2026-01-27T08:37:29Z",
+      "side": 1,
+      "message": "It helps to solve spellchek issues on yangtools.rst (lines we have not under control), thus theory verified - but anyway - we do not merge this.",
+      "revId": "0dc4e4537d4e2eb49fac743bd794667d835d536a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ]
 }
