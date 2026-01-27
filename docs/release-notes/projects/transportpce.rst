@@ -82,5 +82,3 @@ The following table lists the known issues that exist in this release.
 .. jira_known_issues::
    :project: TRNSPRTPCE
    :versions: Vanadium-Vanadium
-
-Also, swagger does not work for TransportPCE with controller resources (see https://jira.opendaylight.org/browse/NETCONF-1279)
