@@ -30,6 +30,7 @@ def update_intersphinx_mapping():
 update_intersphinx_mapping()
 
 # OpenDaylight Documentation Releases
+intersphinx_mapping['odl-vanadium'] = ('https://docs.opendaylight.org/en/stable-vanadium/', None)
 intersphinx_mapping['odl-titanium'] = ('https://docs.opendaylight.org/en/stable-titanium/', None)
 intersphinx_mapping['odl-scandium'] = ('https://docs.opendaylight.org/en/stable-scandium/', None)
 intersphinx_mapping['odl-calcium'] = ('https://docs.opendaylight.org/en/stable-calcium/', None)
