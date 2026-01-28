@@ -239,6 +239,13 @@ This improvement allows us to use above example instead of the below one, improv
         }
     }
 
+IETF Liaison Project Impacts
+----------------------------
+
+* Please take into account that since Vanadium YANG models related artifacts have been moved from
+  ``MD-SAL`` to new ``ietf`` project. Update your dependencies accordingly. New group-id is ``org.opendaylight.ietf``.
+* See `project proposal <https://lf-opendaylight.atlassian.net/wiki/spaces/ODL/pages/282525740/IETF+Liaison+Project>`__.
+
 Netconf Impacts
 ---------------
 
