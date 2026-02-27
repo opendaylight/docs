@@ -4,7 +4,7 @@
 
 name: Gerrit Verify (Hybrid)
 
-on:
+"on":
   workflow_dispatch:
     inputs:
       GERRIT_BRANCH:
