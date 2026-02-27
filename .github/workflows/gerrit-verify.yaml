@@ -165,9 +165,26 @@ jobs:
     secrets:
       RTD_TOKEN: ${{ secrets.RTD_TOKEN }}
 
+  pre-commit-linting:
+    needs: [prepare, call-gerrit-change-info]
+    # yamllint disable-line rule:line-length
+    uses: lfit/releng-reusable-workflows/.github/workflows/compose-repo-linting.yaml@main
+    with:
+      GERRIT_BRANCH: ${{ needs.call-gerrit-change-info.outputs.GERRIT_BRANCH }}
+      GERRIT_CHANGE_ID: ${{ needs.call-gerrit-change-info.outputs.GERRIT_CHANGE_ID }}
+      GERRIT_CHANGE_NUMBER: ${{ needs.call-gerrit-change-info.outputs.GERRIT_CHANGE_NUMBER }}
+      GERRIT_CHANGE_URL: ${{ needs.call-gerrit-change-info.outputs.GERRIT_CHANGE_URL }}
+      GERRIT_EVENT_TYPE: ${{ needs.call-gerrit-change-info.outputs.GERRIT_EVENT_TYPE }}
+      GERRIT_PATCHSET_NUMBER: ${{ needs.call-gerrit-change-info.outputs.GERRIT_PATCHSET_NUMBER }}
+      GERRIT_PATCHSET_REVISION: ${{ needs.call-gerrit-change-info.outputs.GERRIT_PATCHSET_REVISION }}
+      GERRIT_PROJECT: ${{ needs.call-gerrit-change-info.outputs.GERRIT_PROJECT }}
+      GERRIT_REFSPEC: ${{ needs.call-gerrit-change-info.outputs.GERRIT_REFSPEC }}
+      PRE_COMMIT_VERSION: "4.1.0"
+
   vote:
     if: ${{ always() }}
-    needs: [call-gerrit-tox-verify, rtd-validation, call-gerrit-change-info]
+    # yamllint disable-line rule:line-length
+    needs: [call-gerrit-tox-verify, rtd-validation, call-gerrit-change-info, pre-commit-linting]
     runs-on: ubuntu-latest
     timeout-minutes: 5
     # yamllint disable rule:line-length
