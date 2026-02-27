@@ -1,8 +1,8 @@
 ---
 # SPDX-License-Identifier: Apache-2.0
-# Copyright 2024 The Linux Foundation <abelur@linux.com>
+# SPDX-FileCopyrightText: 2026 The Linux Foundation
 
-name: call-github2gerrit-reusable-workflow
+name: GitHub to Gerrit Sync
 
 # yamllint disable-line rule:truthy
 on:
@@ -19,15 +19,19 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  call-in-g2g-workflow:
+  github2gerrit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
     permissions:
       contents: read
       pull-requests: write
-    uses: lfit/github2gerrit/.github/workflows/github2gerrit.yaml@main
-    with:
-      GERRIT_KNOWN_HOSTS: ${{ vars.GERRIT_KNOWN_HOSTS }}
-      GERRIT_SSH_USER_G2G: ${{ vars.GERRIT_SSH_USER_G2G }}
-      GERRIT_SSH_USER_G2G_EMAIL: ${{ vars.GERRIT_SSH_USER_G2G_EMAIL }}
-      ORGANIZATION: ${{ vars.ORGANIZATION }}
-    secrets:
-      GERRIT_SSH_PRIVKEY_G2G: ${{ secrets.GERRIT_SSH_PRIVKEY_G2G }}
+
+    steps:
+      - name: Convert GitHub PR to Gerrit Change
+        uses: lfreleng-actions/github2gerrit-action@ad00dcd39ae9aed3260f39b27e7c07b0d88c54ca # v0.0.16
+        with:
+          GERRIT_SSH_PRIVKEY_G2G: ${{ secrets.GERRIT_SSH_PRIVKEY_G2G }}
+          GERRIT_KNOWN_HOSTS: ${{ vars.GERRIT_KNOWN_HOSTS }}
+          GERRIT_SSH_USER_G2G: ${{ vars.GERRIT_SSH_USER_G2G }}
+          GERRIT_SSH_USER_G2G_EMAIL: ${{ vars.GERRIT_SSH_USER_G2G_EMAIL }}
+          ORGANIZATION: "opendaylight"
