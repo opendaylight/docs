@@ -87,7 +87,7 @@ jobs:
       - name: Check if running in ACT
         if: ${{ env.ACT == 'true' }}
         run: echo "Running local tox build via ACT"
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         if: ${{ env.ACT == 'true' }}
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
         if: ${{ env.ACT == 'true' }}
