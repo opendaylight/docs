@@ -58,3 +58,19 @@ The following table lists the known issues that exist in this release.
 .. jira_known_issues::
    :project: MDSAL
    :versions: 14.0.14-14.0.18
+
+Resolved Issues in SR2
+======================
+The following table lists the issues resolved in this release.
+
+.. jira_fixed_issues::
+   :project: MDSAL
+   :versions: 14.0.19-14.0.21
+
+Known Issues in SR2
+===================
+The following table lists the known issues that exist in this release.
+
+.. jira_known_issues::
+   :project: MDSAL
+   :versions: 14.0.19-14.0.21

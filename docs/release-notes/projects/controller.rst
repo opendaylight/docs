@@ -52,3 +52,19 @@ The following table lists the known issues that exist in this release.
 .. jira_known_issues::
    :project: CONTROLLER
    :versions: 11.0.1-11.0.2
+
+Resolved Issues in SR2
+======================
+The following table lists the issues resolved in this release.
+
+.. jira_fixed_issues::
+   :project: CONTROLLER
+   :versions: 11.0.3-11.0.4
+
+Known Issues in SR2
+===================
+The following table lists the known issues that exist in this release.
+
+.. jira_known_issues::
+   :project: CONTROLLER
+   :versions: 11.0.3-11.0.4
