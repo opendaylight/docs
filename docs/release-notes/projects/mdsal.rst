@@ -47,3 +47,19 @@ The following table lists the known issues that exist in this release.
 .. jira_known_issues::
    :project: MDSAL
    :versions: 15.0.0-15.0.2
+
+Resolved Issues in SR1
+======================
+The following table lists the issues resolved in this release.
+
+.. jira_fixed_issues::
+   :project: MDSAL
+   :versions: 15.0.3-15.0.4
+
+Known Issues in SR1
+===================
+The following table lists the known issues that exist in this release.
+
+.. jira_known_issues::
+   :project: MDSAL
+   :versions: 15.0.3-15.0.4

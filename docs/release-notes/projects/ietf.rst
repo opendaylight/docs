@@ -30,3 +30,15 @@ Known Issues
 The following table lists the known issues that exist in this release.
 
 None.
+
+Resolved Issues in SR1
+======================
+The following table lists the issues resolved in this release.
+
+None.
+
+Known Issues in SR1
+===================
+The following table lists the known issues that exist in this release.
+
+None.
