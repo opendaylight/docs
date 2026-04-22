@@ -5,20 +5,20 @@ OpenDaylight Downloads
 Supported Releases
 ==================
 
-Vanadium-SR0
+Vanadium-SR1
 ------------
 
 (Current Release)
 
 :Announcement: `Vanadium <https://www.opendaylight.org/current-release-vanadium>`_
 
-:GA Release Date: January 25, 2026
+:SR1 Release Date: April 22, 2026
 
 :Downloads:
     * `OpenDaylight Vanadium Tar
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.23.0/karaf-0.23.0.tar.gz>`_
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.23.1/karaf-0.23.1.tar.gz>`_
     * `OpenDaylight Vanadium Zip
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.23.0/karaf-0.23.0.zip>`_
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.23.1/karaf-0.23.1.zip>`_
 
 :Documentation:
     * :doc:`Getting Started Guide <odl-vanadium:getting-started-guide/index>`
@@ -30,7 +30,11 @@ Titanium-SR1
 
 :Announcement: `Titanium <https://www.opendaylight.org/current-release-titanium>`_
 
+<<<<<<< HEAD   (f85c51 Update release notes for Vanadium-SR1)
 :GA Release Date: October 20, 2025
+=======
+:SR2 Release Date: April 10, 2026
+>>>>>>> CHANGE (bd03a7 Update downloads page for Vanadium SR1 release)
 
 :Downloads:
     * `OpenDaylight Titanium Tar
