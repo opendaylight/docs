@@ -69,3 +69,19 @@ The following table lists the known issues that exist in this release.
 .. jira_known_issues::
    :project: YANGTOOLS
    :versions: 14.0.18-14.0.23
+
+Resolved Issues in SR3
+======================
+The following table lists the issues resolved in this release.
+
+.. jira_fixed_issues::
+   :project: YANGTOOLS
+   :versions: 14.0.23-14.0.24
+
+Known Issues in SR3
+===================
+The following table lists the known issues that exist in this release.
+
+.. jira_known_issues::
+   :project: YANGTOOLS
+   :versions: 14.0.23-14.0.24
