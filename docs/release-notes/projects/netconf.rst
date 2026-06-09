@@ -74,3 +74,19 @@ The following table lists the known issues that exist in this release.
 .. jira_known_issues::
    :project: NETCONF
    :versions: 9.0.2-9.0.2
+
+Resolved Issues in SR3
+======================
+The following table lists the issues resolved in this release.
+
+.. jira_fixed_issues::
+   :project: NETCONF
+   :versions: 9.0.3-9.0.3
+
+Known Issues in SR3
+===================
+The following table lists the known issues that exist in this release.
+
+.. jira_known_issues::
+   :project: NETCONF
+   :versions: 9.0.3-9.0.3
