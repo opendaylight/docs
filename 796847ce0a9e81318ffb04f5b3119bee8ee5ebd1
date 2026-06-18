@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2bb4ba17_d661eed0",
+        "filename": "docs/release-notes/upgrade-process.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 8144
+      },
+      "writtenOn": "2026-06-18T06:49:15Z",
+      "side": 1,
+      "message": "This can be moved as part of projects and its impacts.",
+      "revId": "796847ce0a9e81318ffb04f5b3119bee8ee5ebd1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2c1ad186_5455d32a",
+        "filename": "docs/release-notes/upgrade-process.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 8144
+      },
+      "writtenOn": "2026-06-18T06:49:15Z",
+      "side": 1,
+      "message": "Use versions from Vanadium SR0",
+      "revId": "796847ce0a9e81318ffb04f5b3119bee8ee5ebd1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cc24d4d8_371bbb2a",
+        "filename": "docs/release-notes/upgrade-process.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 8144
+      },
+      "writtenOn": "2026-06-18T06:49:15Z",
+      "side": 1,
+      "message": "not needed, it not there yet, but we have to bump ietf?",
+      "revId": "796847ce0a9e81318ffb04f5b3119bee8ee5ebd1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eecb75f7_664b234b",
+        "filename": "docs/release-notes/upgrade-process.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 8144
+      },
+      "writtenOn": "2026-06-18T06:49:15Z",
+      "side": 1,
+      "message": "Can we use links? As much as possible?\n\nFor more info, follow: \u003ctext: NETCONF-1605, link: https://lf-opendaylight.atlassian.net/browse/NETCONF-1605\u003e\n\nFor correct syntax consult RST docs.",
+      "revId": "796847ce0a9e81318ffb04f5b3119bee8ee5ebd1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c629fff6_7343b4ff",
+        "filename": "docs/release-notes/upgrade-process.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 370,
+      "author": {
+        "id": 8144
+      },
+      "writtenOn": "2026-06-18T06:49:15Z",
+      "side": 1,
+      "message": "use ticks (``) to highlight classes within text",
+      "revId": "796847ce0a9e81318ffb04f5b3119bee8ee5ebd1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "88e2c276_94fd8215",
+        "filename": "docs/release-notes/upgrade-process.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 8144
+      },
+      "writtenOn": "2026-06-18T06:49:15Z",
+      "side": 1,
+      "message": "final var?",
+      "revId": "796847ce0a9e81318ffb04f5b3119bee8ee5ebd1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    }
+  ]
+}
