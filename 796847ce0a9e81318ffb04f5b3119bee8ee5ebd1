@@ -18,6 +18,24 @@
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a976e702_10a0f2dd",
+        "filename": "docs/release-notes/upgrade-process.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 9136
+      },
+      "writtenOn": "2026-06-19T08:15:49Z",
+      "side": 1,
+      "message": "moved",
+      "parentUuid": "2bb4ba17_d661eed0",
+      "revId": "796847ce0a9e81318ffb04f5b3119bee8ee5ebd1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2c1ad186_5455d32a",
@@ -31,6 +49,24 @@
       "writtenOn": "2026-06-18T06:49:15Z",
       "side": 1,
       "message": "Use versions from Vanadium SR0",
+      "revId": "796847ce0a9e81318ffb04f5b3119bee8ee5ebd1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ec5bfdb6_c70fd4a6",
+        "filename": "docs/release-notes/upgrade-process.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 9136
+      },
+      "writtenOn": "2026-06-19T08:15:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2c1ad186_5455d32a",
       "revId": "796847ce0a9e81318ffb04f5b3119bee8ee5ebd1",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     },
@@ -52,6 +88,24 @@
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8f4aacd1_59cb7dc5",
+        "filename": "docs/release-notes/upgrade-process.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 9136
+      },
+      "writtenOn": "2026-06-19T08:15:49Z",
+      "side": 1,
+      "message": "added ietf bump",
+      "parentUuid": "cc24d4d8_371bbb2a",
+      "revId": "796847ce0a9e81318ffb04f5b3119bee8ee5ebd1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "eecb75f7_664b234b",
@@ -65,6 +119,24 @@
       "writtenOn": "2026-06-18T06:49:15Z",
       "side": 1,
       "message": "Can we use links? As much as possible?\n\nFor more info, follow: \u003ctext: NETCONF-1605, link: https://lf-opendaylight.atlassian.net/browse/NETCONF-1605\u003e\n\nFor correct syntax consult RST docs.",
+      "revId": "796847ce0a9e81318ffb04f5b3119bee8ee5ebd1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f1369e7e_35b40257",
+        "filename": "docs/release-notes/upgrade-process.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 9136
+      },
+      "writtenOn": "2026-06-19T08:15:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eecb75f7_664b234b",
       "revId": "796847ce0a9e81318ffb04f5b3119bee8ee5ebd1",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     },
@@ -86,6 +158,24 @@
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "38374194_3ae9c089",
+        "filename": "docs/release-notes/upgrade-process.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 370,
+      "author": {
+        "id": 9136
+      },
+      "writtenOn": "2026-06-19T08:15:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c629fff6_7343b4ff",
+      "revId": "796847ce0a9e81318ffb04f5b3119bee8ee5ebd1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "88e2c276_94fd8215",
@@ -99,6 +189,24 @@
       "writtenOn": "2026-06-18T06:49:15Z",
       "side": 1,
       "message": "final var?",
+      "revId": "796847ce0a9e81318ffb04f5b3119bee8ee5ebd1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e3f75d48_3cb6a5db",
+        "filename": "docs/release-notes/upgrade-process.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 9136
+      },
+      "writtenOn": "2026-06-19T08:15:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "88e2c276_94fd8215",
       "revId": "796847ce0a9e81318ffb04f5b3119bee8ee5ebd1",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
