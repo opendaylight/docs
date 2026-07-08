@@ -1,5 +1,40 @@
 {
-  "comments": [],
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aa4d0a74_ae48555d",
+        "filename": "docs/getting-started-guide/clustering.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 797,
+      "author": {
+        "id": 8144
+      },
+      "writtenOn": "2026-07-08T06:27:48Z",
+      "side": 1,
+      "message": "If you switch to .. note:: it could looks better.",
+      "revId": "437c0cc7d426122c9b43945244b180a8c95c1d64",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4d27071a_3bcbd900",
+        "filename": "docs/getting-started-guide/clustering.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 801,
+      "author": {
+        "id": 8144
+      },
+      "writtenOn": "2026-07-08T06:27:48Z",
+      "side": 1,
+      "message": "you need double `` to apply special formatting, see other examples",
+      "revId": "437c0cc7d426122c9b43945244b180a8c95c1d64",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    }
+  ],
   "submitRequirementResults": [
     {
       "submitRequirement": {
