@@ -787,6 +787,20 @@ it could also be used as a logical grouping for other reasons, such as isolation
 of certain nodes to improve stability or splitting up a large cluster into smaller
 groups of nodes for better scalability.
 
+When a multi datacenter configuration is started all datacenters are considered inactive
+and one datacenter must be activated in order for their nodes to become active and be able to take
+ownership of processes. Only one datacenter should be active at the same time.
+
+If multiple datacenters are active at the same time, their active nodes will have race conditions writing to the data
+stores, and both datacenters will trigger on incoming events etc. ::
+
+ Important: Only one datacenter active at a time!
+
+ Important: All datacenters starts inactive.
+
+ Important: Activate a data center by calling the cluster_admin RPC `activate-eos-datacenter`
+
+
 Failure detection
 ^^^^^^^^^^^^^^^^^
 
