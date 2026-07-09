@@ -792,14 +792,13 @@ and one datacenter must be activated in order for their nodes to become active a
 ownership of processes. Only one datacenter should be active at the same time.
 
 If multiple datacenters are active at the same time, their active nodes will have race conditions writing to the data
-stores, and both datacenters will trigger on incoming events etc. ::
+stores, and both datacenters will trigger on incoming events etc.
 
- Important: Only one datacenter active at a time!
+.. note::
 
- Important: All datacenters starts inactive.
-
- Important: Activate a data center by calling the cluster_admin RPC `activate-eos-datacenter`
-
+  Only one datacenter can be active at a time!
+  All datacenters starts inactive.
+  Activate a data center by calling the cluster_admin RPC ``activate-eos-datacenter``.
 
 Failure detection
 ^^^^^^^^^^^^^^^^^
