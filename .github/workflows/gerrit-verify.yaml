@@ -53,7 +53,8 @@ concurrency:
   group: gerrit-verify-${{ github.ref }}
   cancel-in-progress: true
 
-permissions: read-all
+permissions:
+  contents: read
 
 jobs:
   prepare:
@@ -95,7 +96,8 @@ jobs:
           python-version: '3.x'
       - name: Install tox
         if: ${{ env.ACT == 'true' }}
-        run: pip install --upgrade pip && pip install tox
+        # ponytail: ACT-only local step; tox pinned for S8544, bump manually
+        run: "pip install --only-binary :all: --upgrade pip && pip install --only-binary :all: tox==4.58.0"
       - name: Run docs & linkcheck
         if: ${{ env.ACT == 'true' }}
         run: tox -e docs,docs-linkcheck
