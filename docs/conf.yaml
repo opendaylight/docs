@@ -5,3 +5,9 @@ version: Chromium
 
 html_logo: _static/odl_small.png
 pdf_charter: _static/OpenDaylight-Technical-Charter-LFN-Projects-LLC-FINAL.pdf
+
+html_theme: bootstrap
+html_theme_options:
+  bootswatch_theme: united
+  navbar_sidebarrel: false
+  source_link_position: footer

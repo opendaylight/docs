@@ -59,6 +59,10 @@ def jira_prj_versions(project, version_range):
 
     return (jira, prj, from_str, to_str, versions)
 
+def escape_rst(text):
+    """Escape characters that would otherwise be parsed as RST inline markup."""
+    return re.sub(r'([\\*_`|])', r'\\\1', str(text))
+
 def format_versions(versions):
     result = set()
     for version in versions:
@@ -106,7 +110,7 @@ class JiraFixedIssuesDirective(Directive):
                 table.append('          :align: center')
                 table.append('          :alt: %s' % issue.fields.issuetype.name)
                 table.append('     - `%s <https://jira.opendaylight.org/browse/%s>`_' % (issue.key, issue.key))
-                table.append('     - %s' % issue.fields.summary)
+                table.append('     - %s' % escape_rst(issue.fields.summary))
                 table.append('     - %s' % issue.fields.resolution)
                 table.append('     - %s' % format_versions(issue.fields.fixVersions))
 
@@ -160,7 +164,7 @@ class JiraKnownIssuesDirective(Directive):
                 table.append('          :align: center')
                 table.append('          :alt: %s' % issue.fields.issuetype.name)
                 table.append('     - `%s <https://jira.opendaylight.org/browse/%s>`_' % (issue.key, issue.key))
-                table.append('     - %s' % issue.fields.summary)
+                table.append('     - %s' % escape_rst(issue.fields.summary))
                 table.append('     - %s' % issue.fields.status)
                 table.append('     - %s' % format_versions(issue.fields.versions))
                 table.append('     - %s' % format_versions(issue.fields.fixVersions))
