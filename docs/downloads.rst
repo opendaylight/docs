@@ -5,10 +5,28 @@ OpenDaylight Downloads
 Supported Releases
 ==================
 
-Vanadium-SR1
+Chromium-SR0
 ------------
 
 (Current Release)
+
+:Announcement: `Chromium <https://www.opendaylight.org/current-release-chromium>`_
+
+:GA Release Date: July 29, 2026
+
+:Downloads:
+    * `OpenDaylight Chromium Tar
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.24.0/karaf-0.24.0.tar.gz>`_
+    * `OpenDaylight Chromium Zip
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.24.0/karaf-0.24.0.zip>`_
+
+:Documentation:
+    * :doc:`Getting Started Guide <odl-chromium:getting-started-guide/index>`
+    * :doc:`Project Guides <odl-chromium:index>`
+    * :doc:`Release Notes <odl-chromium:release-notes/index>`
+
+Vanadium-SR1
+------------
 
 :Announcement: `Vanadium <https://www.opendaylight.org/current-release-vanadium>`_
 
