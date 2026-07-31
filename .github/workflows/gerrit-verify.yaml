@@ -90,7 +90,7 @@ jobs:
         run: echo "Running local tox build via ACT"
       - uses: actions/checkout@v7
         if: ${{ env.ACT == 'true' }}
-      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         if: ${{ env.ACT == 'true' }}
         with:
           python-version: '3.x'
@@ -136,7 +136,7 @@ jobs:
   call-gerrit-tox-verify:
     needs: [prepare, call-gerrit-change-info]
     # yamllint disable rule:line-length
-    uses: lfit/releng-reusable-workflows/.github/workflows/gerrit-compose-required-tox-verify.yaml@5278f76fc1d27c49d0c9f795a6ddea65eeb5c11b # v0.8.1
+    uses: lfit/releng-reusable-workflows/.github/workflows/gerrit-compose-required-tox-verify.yaml@973bba87aa9cc4ab43242ba9afac37d70c72f134 # v0.9.1
     with:
       GERRIT_BRANCH: ${{ needs.call-gerrit-change-info.outputs.GERRIT_BRANCH }}
       GERRIT_CHANGE_ID: ${{ needs.call-gerrit-change-info.outputs.GERRIT_CHANGE_ID }}
@@ -152,7 +152,7 @@ jobs:
   rtd-validation:
     needs: [prepare, call-gerrit-change-info]
     # yamllint disable rule:line-length
-    uses: lfit/releng-reusable-workflows/.github/workflows/gerrit-compose-required-rtdv3-verify.yaml@5278f76fc1d27c49d0c9f795a6ddea65eeb5c11b # v0.8.1
+    uses: lfit/releng-reusable-workflows/.github/workflows/gerrit-compose-required-rtdv3-verify.yaml@973bba87aa9cc4ab43242ba9afac37d70c72f134 # v0.9.1
     with:
       GERRIT_BRANCH: ${{ needs.call-gerrit-change-info.outputs.GERRIT_BRANCH }}
       GERRIT_CHANGE_ID: ${{ needs.call-gerrit-change-info.outputs.GERRIT_CHANGE_ID }}
