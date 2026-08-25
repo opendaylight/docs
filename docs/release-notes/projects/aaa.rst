@@ -28,7 +28,7 @@ The following table lists the issues resolved in this release.
 
 .. jira_fixed_issues::
    :project: AAA
-   :versions: 0.22.0-0.22.3
+   :versions: 0.23.0-0.23.2
 
 Known Issues
 ============
@@ -36,4 +36,4 @@ The following table lists the known issues that exist in this release.
 
 .. jira_known_issues::
    :project: AAA
-   :versions: 0.22.0-0.22.3
+   :versions: 0.23.0-0.23.2
