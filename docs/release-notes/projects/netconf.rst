@@ -12,14 +12,19 @@ The NETCONF projects hosts multiple components relating to IETF's NETCONF Workin
 
 Behavior/Feature Changes
 ========================
-The highlight of this release is implementation of SSH transport configuration for NETCONF devices in
-`NETCONF-1502 <https://lf-opendaylight.atlassian.net/browse/NETCONF-1502>`__.
+The highlights of this release are:
 
-There is also continuing effort to bring HTTP/1.1 pipelining and HTTP2 steamings to Netty based RESTCONF.
+- `Add support for HTTP/2 prior-knowledge to Netty server <https://lf-opendaylight.atlassian.net/browse/NETCONF-1557>`__
+- `Make topology SSH transport configuration effective immediately <https://lf-opendaylight.atlassian.net/browse/NETCONF-1532>`__
+- `Adopt RFC-to-be ietf-restconf-server from draft-ietf-netconf-restconf-client-server-45 <https://lf-opendaylight.atlassian.net/browse/NETCONF-1619>`__
+- `Implement Netty HTTP2 streaming <https://lf-opendaylight.atlassian.net/browse/NETCONF-1497>`__
+- `Implement HTTP/3 streaming <https://lf-opendaylight.atlassian.net/browse/NETCONF-1539>`__
+- `Stream notifications over HTTP3 <https://lf-opendaylight.atlassian.net/browse/NETCONF-1561>`__
+- `Establish HTTP3 connection <https://lf-opendaylight.atlassian.net/browse/NETCONF-1538>`__
 
 New Features
 ============
-* `NETCONF-1502 <https://lf-opendaylight.atlassian.net/browse/NETCONF-1502>`__.
+* Support for HTTP/3 sessions and HTTP/3 SSE notification streaming.
 
 Deprecated and Removed Features
 ===============================
