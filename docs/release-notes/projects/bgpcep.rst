@@ -105,7 +105,7 @@ The following table lists the issues resolved in this release.
 
 .. jira_fixed_issues::
    :project: BGPCEP
-   :versions: 0.23.3-0.23.3
+   :versions: 0.23.3-0.23.4
 
 Known Issues in SR3
 ===================
@@ -113,4 +113,4 @@ The following table lists the known issues that exist in this release.
 
 .. jira_known_issues::
    :project: BGPCEP
-   :versions: 0.23.3-0.23.3
+   :versions: 0.23.3-0.23.4

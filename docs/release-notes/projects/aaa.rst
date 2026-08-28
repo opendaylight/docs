@@ -76,7 +76,7 @@ The following table lists the issues resolved in this release.
 
 .. jira_fixed_issues::
    :project: AAA
-   :versions: 0.21.5-0.21.5
+   :versions: 0.21.5-0.21.6
 
 Known Issues in SR3
 ===================
@@ -84,4 +84,4 @@ The following table lists the known issues that exist in this release.
 
 .. jira_known_issues::
    :project: AAA
-   :versions: 0.21.5-0.21.5
+   :versions: 0.21.5-0.21.6
