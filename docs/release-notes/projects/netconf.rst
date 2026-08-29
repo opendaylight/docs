@@ -63,7 +63,7 @@ The following table lists the issues resolved in this release.
 
 .. jira_fixed_issues::
    :project: NETCONF
-   :versions: 10.0.4-10.0.4
+   :versions: 10.0.4-10.0.5
 
 Known Issues in SR2
 ===================
@@ -71,4 +71,4 @@ The following table lists the known issues that exist in this release.
 
 .. jira_known_issues::
    :project: NETCONF
-   :versions: 10.0.4-10.0.4
+   :versions: 10.0.4-10.0.5

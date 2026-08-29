@@ -89,7 +89,7 @@ The following table lists the issues resolved in this release.
 
 .. jira_fixed_issues::
    :project: BGPCEP
-   :versions: 1.0.2-1.0.2
+   :versions: 1.0.2-1.0.3
 
 Known Issues in SR2
 ===================
@@ -97,4 +97,4 @@ The following table lists the known issues that exist in this release.
 
 .. jira_known_issues::
    :project: BGPCEP
-   :versions: 1.0.2-1.0.2
+   :versions: 1.0.2-1.0.3
