@@ -24,6 +24,7 @@ Core features Developer Guides
    distribution-test-features
    odl-parent-developer-guide
    yang-tools
+   migrating-from-schemanode
 
 
 Project-specific Developer Guides
