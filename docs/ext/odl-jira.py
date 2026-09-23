@@ -67,6 +67,22 @@ def format_versions(versions):
     result.sort()
     return ", ".join(result)
 
+# Characters that start RST inline markup. Backslash must be escaped first,
+# otherwise the backslashes inserted for the other characters would
+# themselves be escaped.
+_RST_SPECIAL_CHARS = ['\\', '*', '`', '_', '|']
+
+def escape_rst(text):
+    """
+    Escape characters that have special meaning in RST inline markup, so
+    that arbitrary text (e.g. a JIRA issue summary) can be safely embedded
+    in generated RST source without being interpreted as markup.
+    """
+    text = str(text)
+    for char in _RST_SPECIAL_CHARS:
+        text = text.replace(char, '\\' + char)
+    return text
+
 class JiraFixedIssuesDirective(Directive):
     """
     JIRA Fixed Issues directive
@@ -106,8 +122,8 @@ class JiraFixedIssuesDirective(Directive):
                 table.append('          :align: center')
                 table.append('          :alt: %s' % issue.fields.issuetype.name)
                 table.append('     - `%s <https://jira.opendaylight.org/browse/%s>`_' % (issue.key, issue.key))
-                table.append('     - %s' % issue.fields.summary)
-                table.append('     - %s' % issue.fields.resolution)
+                table.append('     - %s' % escape_rst(issue.fields.summary))
+                table.append('     - %s' % escape_rst(issue.fields.resolution))
                 table.append('     - %s' % format_versions(issue.fields.fixVersions))
 
             table.append('')
@@ -160,8 +176,8 @@ class JiraKnownIssuesDirective(Directive):
                 table.append('          :align: center')
                 table.append('          :alt: %s' % issue.fields.issuetype.name)
                 table.append('     - `%s <https://jira.opendaylight.org/browse/%s>`_' % (issue.key, issue.key))
-                table.append('     - %s' % issue.fields.summary)
-                table.append('     - %s' % issue.fields.status)
+                table.append('     - %s' % escape_rst(issue.fields.summary))
+                table.append('     - %s' % escape_rst(issue.fields.status))
                 table.append('     - %s' % format_versions(issue.fields.versions))
                 table.append('     - %s' % format_versions(issue.fields.fixVersions))
 
