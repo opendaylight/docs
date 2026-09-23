@@ -276,7 +276,7 @@ IETF Liaison Project Impacts
 Netconf Impacts
 ---------------
 
-OpenAPI: separate out jaxrs and netty
+OpenAPI: separate out JAX-RS and Netty
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This module was separated and depending on your implementation, you might need to add this dependency to use it.
