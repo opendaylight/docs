@@ -93,6 +93,14 @@ linkcheck_ignore = [
     'https://www.opendaylight.org/current-release-titanium',
     # Ignore JIRA URLs that often timeout during linkcheck
     '^https://lf-opendaylight.atlassian.net/.*',
+<<<<<<< HEAD   (db2d55 Add "un" to spell check exceptions)
+=======
+    # Ignore all nexus links, since ODL nexus is no more browsable
+    '^https://nexus.opendaylight.org/.*',
+    # URL returns a 403 Forbidden (redirects to docs.redhat.com, which
+    # forbids non-browser clients)
+    'https://access.redhat.com/documentation/en-us/red_hat_jboss_fuse/6.3/html/security_guide/webconsole',
+>>>>>>> CHANGE (e1974e Add Fuse to link-check exceptions)
 ]
 # Linkcheck configuration for better performance and reliability
 linkcheck_timeout = 60  # Timeout per link (reduced from 300 to fail fast)
