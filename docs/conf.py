@@ -83,6 +83,20 @@ linkcheck_ignore = [
     '^https://wiki-archive.opendaylight.org/.*',
     # URL returns a 403 Forbidden
     '^https://checkstyle.sourceforge.net.*',
+    # URL returns a 403 Forbidden to non-browser clients
+    'https://checkstyle.sourceforge.io/checks/modifier/modifierorder.html',
+    # URL returns a 403 Forbidden to non-browser clients
+    'https://docutils.sourceforge.io/FAQ.html#is-nested-inline-markup-possible',
+    # stackoverflow.com/questions/* returns a 403 Forbidden to non-browser clients
+    'https://stackoverflow.com/',
+    'https://stackoverflow.com/questions/26327957/should-java-8-getters-return-optional-type',
+    'https://stackoverflow.com/questions/35679852/karaf-exception-is-thrown-while-installing-org-fusesource-leveldbjni',
+    # wiki.openstack.org intermittently serves an anti-bot (Anubis) challenge
+    # page instead of the real content, which makes the anchor check fail
+    # even though the anchor exists
+    'https://wiki.openstack.org/wiki/GitCommitMessages#Summary_of_Git_commit_message_structure',
+    # this url often has connectivity issues (GitHub rate limiting) on the gate
+    'https://github.com/checkstyle/checkstyle/blob/master/src/main/resources/google_checks.xml',
     # this url often has connectivity issues on the gate
     'https://www.mojohaus.org/animal-sniffer/animal-sniffer-maven-plugin/examples/checking-signatures.html',
     # this url often has connectivity issues on the gate
@@ -90,10 +104,16 @@ linkcheck_ignore = [
     # this url often has connectivity issues on the gate
     'https://wiki-archive.opendaylight.org/images/c/ca/Profile-Java-ODL.xml.zip',
     #Ignore announce page link till it is up
+    'https://www.opendaylight.org/current-release-chromium',
     'https://www.opendaylight.org/current-release-vanadium',
     'https://www.opendaylight.org/current-release-titanium',
     # Ignore JIRA URLs that often timeout during linkcheck
     '^https://lf-opendaylight.atlassian.net/.*',
+    # Ignore all nexus links, since ODL nexus is no more browsable
+    '^https://nexus.opendaylight.org/.*',
+    # URL returns a 403 Forbidden (redirects to docs.redhat.com, which
+    # forbids non-browser clients)
+    'https://access.redhat.com/documentation/en-us/red_hat_jboss_fuse/6.3/html/security_guide/webconsole',
 ]
 # Linkcheck configuration for better performance and reliability
 linkcheck_timeout = 60  # Timeout per link (reduced from 300 to fail fast)
