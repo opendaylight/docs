@@ -110,7 +110,10 @@ linkcheck_ignore = [
     # Ignore JIRA URLs that often timeout during linkcheck
     '^https://lf-opendaylight.atlassian.net/.*',
     # Ignore all nexus links, since ODL nexus is no more browsable
-    '^https://nexus.opendaylight.org/.*'
+    '^https://nexus.opendaylight.org/.*',
+    # URL returns a 403 Forbidden (redirects to docs.redhat.com, which
+    # forbids non-browser clients)
+    'https://access.redhat.com/documentation/en-us/red_hat_jboss_fuse/6.3/html/security_guide/webconsole',
 ]
 # Linkcheck configuration for better performance and reliability
 linkcheck_timeout = 60  # Timeout per link (reduced from 300 to fail fast)
