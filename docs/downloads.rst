@@ -43,18 +43,18 @@ Vanadium-SR1
     * :doc:`Project Guides <odl-vanadium:index>`
     * :doc:`Release Notes <odl-vanadium:release-notes/index>`
 
-Titanium-SR2
+Titanium-SR3
 ------------
 
 :Announcement: `Titanium <https://www.opendaylight.org/current-release-titanium>`_
 
-:SR2 Release Date: April 10, 2026
+:SR2 Release Date: September 22, 2026
 
 :Downloads:
     * `OpenDaylight Titanium Tar
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.22.2/karaf-0.22.2.tar.gz>`_
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.22.3/karaf-0.22.3.tar.gz>`_
     * `OpenDaylight Titanium Zip
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.22.2/karaf-0.22.2.zip>`_
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.22.3/karaf-0.22.3.zip>`_
 
 :Documentation:
     * :doc:`Getting Started Guide <odl-titanium:getting-started-guide/index>`
