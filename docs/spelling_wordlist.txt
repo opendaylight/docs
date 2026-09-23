@@ -6,6 +6,7 @@ akka
 Akka
 Aluminium
 analytics
+api
 artefacts
 Asciidoc
 async
@@ -13,11 +14,13 @@ Async
 augmentable
 autorelease
 Autorelease
+backoff
 bgpcep
 BigInteger
 boolean
 breakpoint
 bugfixes
+BuiltInType
 Bulleted
 bytecode
 catalogue
@@ -33,6 +36,8 @@ committers
 config
 configurator
 Daexim
+datacenter
+datacenters
 dataplane
 datastore
 datastores
@@ -44,6 +49,7 @@ dev
 Disruptor
 disjunct
 DOM
+dom
 downloader
 Downstreams
 downstreams
@@ -58,6 +64,7 @@ Git
 google
 GPG
 Guice
+gNMI
 Hamcrest
 hardcoded
 helpdesk
@@ -66,6 +73,7 @@ IDE
 idiosyncrasies
 ietf
 impactful
+impl
 infrautils
 instantiation
 interoperability
@@ -85,6 +93,7 @@ karaf
 Karaf
 keyed
 leafref
+lexing
 lftools
 linter
 Logback
@@ -103,11 +112,13 @@ Multi
 muxponders
 namespace
 namespaces
+natively
 netconf
 Netty
 netvirt
 nitty
 nullability
+nullable
 occurrence
 odlparent
 OpenDaylight
@@ -127,6 +138,8 @@ powermock
 pre
 productized
 QoS
+QName
+QNames
 reachability
 rebase
 rebases
@@ -173,6 +186,7 @@ TSC
 typeless
 uint
 uncheck
+un-escaping
 unkeyed
 unmodifiable
 unreachability
@@ -188,6 +202,7 @@ vTEP
 whitespace
 Xerces
 xml
+xpath
 XPath
+yang
 yangtools
-backoff
