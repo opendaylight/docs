@@ -33,6 +33,8 @@ committers
 config
 configurator
 Daexim
+datacenter
+datacenters
 dataplane
 datastore
 datastores
@@ -58,6 +60,7 @@ Git
 google
 GPG
 Guice
+gNMI
 Hamcrest
 hardcoded
 helpdesk
@@ -127,6 +130,8 @@ powermock
 pre
 productized
 QoS
+QName
+QNames
 reachability
 rebase
 rebases
@@ -190,4 +195,5 @@ Xerces
 xml
 XPath
 yangtools
+yang-xpath-impl
 backoff
