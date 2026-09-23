@@ -100,7 +100,10 @@ linkcheck_ignore = [
     #Ignore announce page link till it is up
     'https://www.opendaylight.org/current-release-titanium',
     # Ignore all nexus links, since ODL nexus is no more browsable
-    '^https://nexus.opendaylight.org/.*'
+    '^https://nexus.opendaylight.org/.*',
+    # URL returns a 403 Forbidden (redirects to docs.redhat.com, which
+    # forbids non-browser clients)
+    'https://access.redhat.com/documentation/en-us/red_hat_jboss_fuse/6.3/html/security_guide/webconsole',
 ]
 linkcheck_timeout = 300
 
