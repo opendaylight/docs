@@ -195,7 +195,82 @@ None.
 
 Netconf Impacts
 ---------------
+<<<<<<< HEAD   (0f5796 Update release notes for Titanium SR3)
 None.
+=======
+
+OpenAPI: separate out JAX-RS and Netty
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This module was separated and depending on your implementation, you might need to add this dependency to use it.
+
+  .. code-block:: xml
+
+        <dependency>
+            <groupId>org.opendaylight.netconf</groupId>
+            <artifactId>restconf-openapi-jaxrs</artifactId>
+        </dependency>
+
+For more info, follow: `NETCONF-1605 <https://lf-opendaylight.atlassian.net/browse/NETCONF-1605>`__.
+
+Change OpenAPI base path handling
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+OpenAPI now gets its base path from a string instead of ``JaxRsEndpoint``, so there is no need to rely on ``JaxRsEndpoint``.
+For more info, follow: `NETCONF-1560 <https://lf-opendaylight.atlassian.net/browse/NETCONF-1560>`__.
+
+RESTCONF HTTP/3 Support and NettyEndpointConfiguration Impacts
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+RESTCONF now natively supports an HTTP/3 (QUIC) listener. This listener bootstraps automatically when TLS
+(certificate and private key) and a bind address/port are configured.
+
+Because of this addition, the ``NettyEndpointConfiguration`` class constructors have been significantly expanded to
+include binding, TLS, and HTTP/3 QUIC transport tuning parameters. If your code instantiates
+``NettyEndpointConfiguration`` directly (such as in custom endpoints or integration tests), you must update your
+constructor calls to include these new parameters:
+
+* ``bindAddress`` (String, nullable)
+* ``bindPort`` (int)
+* ``tlsCertificate`` (X509Certificate, nullable)
+* ``tlsPrivateKey`` (PrivateKey, nullable)
+* ``http3AltSvcMaxAgeSeconds`` (Uint32)
+* ``http3InitialMaxData`` (Uint64)
+* ``http3InitialMaxStreamDataBidirectionalRemote`` (Uint64)
+* ``http3InitialMaxStreamsBidirectional`` (Uint32)
+
+The example of the new approach follows:
+
+  .. code-block:: java
+
+    final var configuration = new NettyEndpointConfiguration(
+        ERROR_TAG_MAPPING, PrettyPrintParam.FALSE, Uint16.ZERO, Uint32.valueOf(1000),
+        "rests", MessageEncoding.JSON, serverStackGrouping, CHUNK_SIZE, FRAME_SIZE, ALT_SVC_HEADER,
+        bindAddress, bindPort, tlsCertificate, tlsPrivateKey,
+        Uint32.valueOf(3600), // http3AltSvcMaxAgeSeconds
+        Uint64.valueOf(4L * 1024 * 1024), // http3InitialMaxData
+        Uint64.valueOf(256L * 1024), // http3InitialMaxStreamDataBidirectionalRemote
+        Uint32.valueOf(100)); // http3InitialMaxStreamsBidirectional
+
+Additionally, if you maintain custom Karaf features that package RESTCONF, you must add the new HTTP/3 dependencies
+to your ``feature.xml``:
+
+  .. code-block:: xml
+
+    <feature version="[14,15)">odl-netty-http3</feature>
+    <feature version="[14,15)">odl-netty-quic</feature>
+
+Remove ConfigUtils.serverTransport{Tcp,Tls}
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Some previously-deprecated methods were removed. Their replacements live in
+``HTTPServerOver{Tcp,Tls}``.
+
+  .. code-block:: java
+
+        final var serverTransport = HTTPServerOverTcp.of(localAddress, CONTROLLER_PORT);
+
+>>>>>>> CHANGE (106d62 Add spell check exceptions)
 
 AAA Impacts
 -----------
