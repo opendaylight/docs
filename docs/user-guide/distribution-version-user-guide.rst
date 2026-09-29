@@ -45,8 +45,9 @@ RESTCONF usage
 
 OpenDaylight config subsystem NETCONF northbound is not made available just by installing
 ``odl-distribution-version``, but most other feature installations would enable it.
-RESTCONF interfaces are enabled by installing ``odl-restconf`` feature,
-but that do not allow access to config subsystem by itself.
+The default Netty RESTCONF endpoint is enabled by installing
+``odl-restconf-nb`` (see :ref:`restconf-installation`), but that does not allow
+access to the config subsystem by itself.
 
 On single node deployments, installation of ``odl-netconf-connector-ssh`` is recommended,
 which would configure ``controller-config`` device and its MD-SAL mount point.
@@ -60,4 +61,4 @@ here is an example ``curl`` command accessing ``odl-odlparent-version`` config m
 
 .. code:: bash
 
-    curl 127.0.0.1:8181/restconf/config/network-topology:network-topology/topology/topology-netconf/node/controller-config/yang-ext:mount/config:modules/module/odl-distribution-version:odl-version/odl-odlparent-version
+    curl -u admin:admin "http://127.0.0.1:8182/restconf/data/network-topology:network-topology/topology=topology-netconf/node=controller-config/yang-ext:mount/config:modules/module=odl-distribution-version:odl-version,odl-odlparent-version?content=config"

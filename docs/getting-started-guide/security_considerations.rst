@@ -205,7 +205,7 @@ All three of these services can help improve the security posture of an
 OpenDaylight deployment.
 
 The vast majority of OpenDaylight's northbound APIs (and all RESTCONF APIs) are
-protected by AAA by default when installing the ``+odl-restconf+`` feature.
+protected by AAA by default when installing the ``odl-restconf-nb`` feature.
 In the cases that APIs are *not* protected by AAA, this will be noted in the
 per-project release notes.
 
@@ -215,11 +215,59 @@ password *admin*. This should be changed before deploying OpenDaylight.
 Securing RESTCONF using HTTPS
 =============================
 
-Jetty
------
+Netty (default)
+---------------
 
-To secure Jetty RESTful services, including RESTCONF, you must configure the
-Jetty server to utilize SSL by performing the following steps.
+To secure Netty RESTful services, including RESTCONF, you must configure the
+Netty server. To enable HTTPS, you must configure private key and a X509 certificate.
+
+The ``odl-restconf-nb`` feature provides the default endpoint at
+``http://<controller-ip>:8182/restconf``. The following example enables HTTPS
+and changes the listening port to ``8443`` while retaining the ``/restconf``
+root path. Its settings use the ``org.opendaylight.restconf.nb.rfc8040``
+configuration PID.
+
+1. Create Certificate and Private Key.
+
+    ::
+
+        openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -sha256 -days 3650 -nodes -subj "/C=SK/ST=State/L=City/O=Company/OU=Dev/CN=common"
+
+
+2. Copy the certificate and private key to the karaf's ``etc/tls`` folder.
+
+    ::
+
+        mkdir {karaf-directory}/etc/tls
+        cp key.pem {karaf-directory}/etc/tls/key.pem
+        cp cert.pem {karaf-directory}/etc/tls/cert.pem
+
+
+3. Configure the Netty server to use the certificate and private key in running karaf.
+
+    ::
+
+        feature:install odl-restconf-nb
+        config:edit org.opendaylight.restconf.nb.rfc8040
+        config:property-set bind-port 8443
+        config:property-set tls-certificate "etc/tls/cert.pem"
+        config:property-set tls-private-key "etc/tls/key.pem"
+        config:update
+
+
+4. Access the RESTCONF API using HTTPS.
+
+    ::
+
+        curl -u admin:admin -v -k https://localhost:8443/restconf/operations
+
+
+Legacy JAX-RS and Jetty (deprecated)
+------------------------------------
+
+These instructions apply to the deprecated ``odl-restconf-nb-jaxrs`` endpoint
+on Jetty. Jetty configuration does not configure the Netty RESTCONF endpoint.
+To enable HTTPS for the legacy endpoint, perform the following steps.
 
 1. Issue the following command sequence to create a self-signed certificate in the ``etc`` folder for
    use by the ODL deployment.
@@ -269,49 +317,6 @@ code appears in the returned message.
 
 A more advanced example of Jetty security configuration can be found in this article:
 https://access.redhat.com/documentation/en-us/red_hat_jboss_fuse/6.3/html/security_guide/webconsole#idm139646384633952
-
-Netty
------
-
-To secure Netty RESTful services, including RESTCONF, you must configure the
-Netty server. To enable HTTPS, you must configure private key and a X509 certificate.
-
-The following example shows how to configure the Netty server.
-
-1. Create Certificate and Private Key.
-
-    ::
-
-        openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -sha256 -days 3650 -nodes -subj "/C=SK/ST=State/L=City/O=Company/OU=Dev/CN=common"
-
-
-2. Copy the certificate and private key to the karaf's ``etc/tls`` folder.
-
-    ::
-
-        mkdir {karaf-directory}/etc/tls
-        cp key.pem {karaf-directory}/etc/tls/key.pem
-        cp cert.pem {karaf-directory}/etc/tls/cert.pem
-
-
-3. Configure the Netty server to use the certificate and private key in running karaf.
-
-    ::
-
-        feature:install odl-restconf-nb
-        config:edit org.opendaylight.restconf.nb.rfc8040
-        config:property-set bind-port 8443
-        config:property-set tls-certificate "etc/tls/cert.pem"
-        config:property-set tls-private-key "etc/tls/key.pem"
-        config:update
-
-
-4. Access the RESTCONF API using HTTPS.
-
-    ::
-
-        curl -u admin:admin -v -k https://localhost:8443/rests/operations
-
 
 Security Considerations for Clustering
 ======================================

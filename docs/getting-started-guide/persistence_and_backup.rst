@@ -32,13 +32,17 @@ The above command will disable the config datastore persistence.
 Backing Up and Restoring the Datastore
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+The examples below use the default Netty RESTCONF endpoint on port ``8182``
+and also show the deprecated legacy JAX-RS alternative on port ``8181``.
+See :ref:`restconf-installation` for the corresponding features.
+
 The same cluster-admin API described in the :ref:`cluster guide <cluster_admin_api>`
 for managing shard voting states has an RPC allowing backup of the datastore in a single
 node, taking only the file name as a parameter::
 
     POST  /restconf/operations/cluster-admin:backup-datastore
 
-    or
+Or, using the deprecated legacy JAX-RS endpoint on port ``8181``::
 
     POST  /rests/operations/cluster-admin:backup-datastore
 

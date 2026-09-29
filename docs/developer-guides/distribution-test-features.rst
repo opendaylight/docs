@@ -66,7 +66,9 @@ but the set does not affect usability of Karaf infrastructure.
 
 Note that port binding conflicts and "server is unhealthy" status of config subsystem
 are considered to affect usability, as is a failure of RESTCONF
-to respond to GET on ``/restconf/modules`` with HTTP status 200.
+to respond to an authenticated GET on
+``http://<controller-ip>:8182/restconf/data/ietf-yang-library:yang-library``
+with HTTP status 200 using the default Netty endpoint.
 
 This feature is used in verification process for Integration/Distribution contributions.
 

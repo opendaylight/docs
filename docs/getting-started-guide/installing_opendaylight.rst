@@ -97,6 +97,37 @@ You can install multiple features using the following command::
   **all**, but may interact badly with other features that have a value of
   **self+all**. Not every combination has been tested.
 
+.. _restconf-installation:
+
+Installing RESTCONF
+-------------------
+
+The RESTCONF features are split by implementation. Netty is the default
+RESTCONF implementation. Install its northbound endpoint with::
+
+    feature:install odl-restconf-nb
+
+The default HTTP endpoints are:
+
+* Data: ``http://<controller-ip>:8182/restconf/data/...``
+* Operations: ``http://<controller-ip>:8182/restconf/operations/...``
+
+Install ``odl-restconf-openapi`` to add OpenAPI support for Netty RESTCONF.
+
+The legacy JAX-RS implementation is deprecated and is installed separately
+with ``odl-restconf-nb-jaxrs``. Its default HTTP endpoints are:
+
+* Data: ``http://<controller-ip>:8181/rests/data/...``
+* Operations: ``http://<controller-ip>:8181/rests/operations/...``
+
+Its OpenAPI feature is ``odl-restconf-openapi-jaxrs``, which is also deprecated.
+The aggregate ``odl-restconf-all`` feature installs both implementations and
+both OpenAPI features. Use ``odl-restconf-nb`` for the default Netty endpoint.
+
+When migrating clients from JAX-RS to Netty, change both the port from ``8181``
+to ``8182`` and the root path from ``/rests`` to ``/restconf``.
+See :ref:`security_considerations` for authentication and HTTPS configuration.
+
 Uninstalling features
 ---------------------
 To uninstall a feature, you must shut down OpenDaylight, delete the data
