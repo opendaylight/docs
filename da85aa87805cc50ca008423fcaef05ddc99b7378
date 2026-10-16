@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e7617aa1_5481ff7b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8144
+      },
+      "writtenOn": "2026-10-16T07:52:30Z",
+      "side": 1,
+      "message": "06:04:47 3: B1 Line exceeds max length (563\u003e72): \"Bumps the actions-deps group with 4 updates: [lfreleng-actions/github2gerrit-action](https://github.com/lfreleng-actions/github2gerrit-action), [lfit/releng-reusable-workflows/.github/workflows/gerrit-compose-required-tox-verify.yaml](https://github.com/lfit/releng-reusable-workflows), [lfit/releng-reusable-workflows/.github/workflows/gerrit-compose-required-rtdv3-verify.yaml](https://github.com/lfit/releng-reusable-workflows) and [lfit/releng-reusable-workflows/.github/workflows/compose-repo-linting.yaml](https://github.com/lfit/releng-reusable-workflows).\"\n06:04:47 5: B1 Line exceeds max length (84\u003e72): \"- [Release notes](https://github.com/lfreleng-actions/github2gerrit-action/releases)\"\n06:04:47 6: B1 Line exceeds max length (161\u003e72): \"- [Commits](https://github.com/lfreleng-actions/github2gerrit-action/compare/6cdadc0d954315c37bbe50cf0edac88eb01df041...f2ffe06d3ec444fb4ebff0f40362660380490513)\"\n06:04:47 7: B1 Line exceeds max length (120\u003e72): \"Updates `lfit/releng-reusable-workflows/.github/workflows/gerrit-compose-required-tox-verify.yaml` from 0.10.3 to 0.10.4\"\n06:04:47 8: B1 Line exceeds max length (77\u003e72): \"- [Release notes](https://github.com/lfit/releng-reusable-workflows/releases)\"\n06:04:47 9: B1 Line exceeds max length (154\u003e72): \"- [Commits](https://github.com/lfit/releng-reusable-workflows/compare/87eacd1f8322263ebbc1411ce2ea82bab10ed091...fb907909b12bbaf262de6b24fcafd181cabe6b24)\"\n06:04:47 10: B1 Line exceeds max length (122\u003e72): \"Updates `lfit/releng-reusable-workflows/.github/workflows/gerrit-compose-required-rtdv3-verify.yaml` from 0.10.3 to 0.10.4\"\n06:04:47 11: B1 Line exceeds max length (77\u003e72): \"- [Release notes](https://github.com/lfit/releng-reusable-workflows/releases)\"\n06:04:47 12: B1 Line exceeds max length (154\u003e72): \"- [Commits](https://github.com/lfit/releng-reusable-workflows/compare/87eacd1f8322263ebbc1411ce2ea82bab10ed091...fb907909b12bbaf262de6b24fcafd181cabe6b24)\"\n06:04:47 13: B1 Line exceeds max length (106\u003e72): \"Updates `lfit/releng-reusable-workflows/.github/workflows/compose-repo-linting.yaml` from 0.10.3 to 0.10.4\"\n06:04:47 14: B1 Line exceeds max length (77\u003e72): \"- [Release notes](https://github.com/lfit/releng-reusable-workflows/releases)\"\n06:04:47 15: B1 Line exceeds max length (154\u003e72): \"- [Commits](https://github.com/lfit/releng-reusable-workflows/compare/87eacd1f8322263ebbc1411ce2ea82bab10ed091...fb907909b12bbaf262de6b24fcafd181cabe6b24)\"",
+      "revId": "da85aa87805cc50ca008423fcaef05ddc99b7378",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    }
+  ]
+}
