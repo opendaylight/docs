@@ -19,6 +19,7 @@
 # extra-path=examples/
 # contrib=contrib-title-conventional-commits,contrib-body-requires-signed-off-b
 contrib=contrib-body-requires-signed-off-by
+regex-style-search=True
 [title-max-length]
 # line-length=80
 line-length=50
@@ -79,3 +80,10 @@ line-length=72
 # to the following (fairly standard) topics and require them to be Mixed Case
 #[contrib-title-conventional-commits]
 #types=Fix,Feat,Chore,Docs,Style,Refactor,Perf,Test,Revert,CI,Build
+
+# Dependabot generates these messages (relayed unchanged by github2gerrit)
+# and its long title, URL and summary lines cannot be configured, so skip
+# the length rules for them. Human-authored commits are still checked.
+[ignore-by-body]
+regex=Signed-off-by: dependabot\[bot\]
+ignore=T1,B1
