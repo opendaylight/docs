@@ -369,10 +369,8 @@ Additional Resources
    https://checkstyle.sourceforge.net
 -  ``Maven``:
    https://github.com/checkstyle/checkstyle/blob/master/src/main/resources/google_checks.xml
--  ``Eclipse``:
-   https://github.com/google/styleguide/blob/gh-pages/eclipse-java-google-style.xml
--  ``IntelliJ``:
-   https://github.com/google/styleguide/blob/gh-pages/intellij-java-google-style.xml
+-  ``Google Java Style Guide``:
+   https://google.github.io/styleguide/javaguide.html
 -  `How to set Checkstyle up in IntelliJ old wiki page <https://wiki-archive.opendaylight.org/view/How_to_set_Checkstyle_up_in_IntelliJ>`__
 
 Classes methods / fields ordering
