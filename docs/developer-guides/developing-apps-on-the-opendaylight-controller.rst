@@ -371,6 +371,10 @@ Execute the *hello* project for the first time
 Test the *hello-world* RPC via REST
 -----------------------------------
 
+These examples use the default Netty RESTCONF endpoint on port ``8182``.
+Install ``odl-restconf-openapi`` to enable the API Explorer and Netty RESTCONF
+(see :ref:`restconf-installation`).
+
 There are a lot of ways to test a RPC. The following are a few examples.
 
 1.  Using the API Explorer through HTTP
@@ -381,7 +385,7 @@ Using the API Explorer through HTTP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1.  Navigate to `openapi
-    UI <http://localhost:8181/openapi/explorer/index.html>`__ with your
+    UI <http://localhost:8182/openapi/explorer/index.html>`__ with your
     web browser.
 
     .. note::
@@ -402,7 +406,7 @@ Using the API Explorer through HTTP
 
     ::
 
-        POST /rests/operations/hello:hello-world
+        POST /restconf/operations/hello:hello-world
 
 5.  Click on the **Try it out** button.
 
@@ -442,7 +446,7 @@ For example, use the following information in the Firefox plugin:
 
 ::
 
-    POST: http://localhost:8181/rests/operations/hello:hello-world
+    POST: http://localhost:8182/restconf/operations/hello:hello-world
 
 Header:
 
@@ -476,7 +480,7 @@ Troubleshooting
 ---------------
 
 If you get a response code 500 while attempting to
-``POST /rests/operations/hello:hello-world``, check the file:
+``POST /restconf/operations/hello:hello-world``, check the file:
 ``impl/src/main/resources/OSGI-INF/blueprint/impl-blueprint.xml``
 and make sure the following element is specified for ``<blueprint>``.
 

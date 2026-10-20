@@ -899,12 +899,16 @@ nodes in two locations) such configuration is used:
       self-data-center = "backup"
     }
 
+The examples below use the default Netty RESTCONF endpoint on port ``8182``
+and also show the deprecated legacy JAX-RS alternative on port ``8181``.
+See :ref:`restconf-installation` for the corresponding features.
+
 There is an RPC to set voting states of all shards on
 a list of nodes to a given state::
 
    POST  /restconf/operations/cluster-admin:change-member-voting-states-for-all-shards
 
-   or
+Or, using the deprecated legacy JAX-RS endpoint on port ``8181``::
 
    POST  /rests/operations/cluster-admin:change-member-voting-states-for-all-shards
 
@@ -938,9 +942,9 @@ following RPC call (no parameters needed)::
 
     POST  /restconf/operations/cluster-admin:flip-member-voting-states-for-all-shards
 
-    or
+Or, using the deprecated legacy JAX-RS endpoint on port ``8181``::
 
-    POST /rests/operations/cluster-admin:flip-member-voting-states-for-all-shards
+    POST  /rests/operations/cluster-admin:flip-member-voting-states-for-all-shards
 
 If it's an unplanned outage where the primary voting nodes are down, the
 "flip" RPC must be sent to a backup non-voting node. In this case there are no
@@ -968,7 +972,7 @@ following RPC::
 
     POST  /restconf/operations/cluster-admin:remove-all-shard-replicas
 
-    or
+Or, using the deprecated legacy JAX-RS endpoint on port ``8181``::
 
     POST  /rests/operations/cluster-admin:remove-all-shard-replicas
 
@@ -984,9 +988,9 @@ or just one particular shard::
 
     POST  /restconf/operations/cluster-admin:remove-shard-replica
 
-    or
+Or, using the deprecated legacy JAX-RS endpoint on port ``8181``::
 
-    POST  /rests/operations/cluster-admin:remove-shard-replicas
+    POST  /rests/operations/cluster-admin:remove-shard-replica
 
 with example input::
 
@@ -1004,7 +1008,7 @@ nodes (requiring reboot)::
 
     POST  /restconf/operations/cluster-admin:add-replicas-for-all-shards
 
-    or
+Or, using the deprecated legacy JAX-RS endpoint on port ``8181``::
 
     POST  /rests/operations/cluster-admin:add-replicas-for-all-shards
 
