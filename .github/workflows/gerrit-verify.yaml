@@ -54,7 +54,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Clear votes
-        uses: lfit/gerrit-review-action@v0.4
+        uses: lfit/gerrit-review-action@v0.9
         with:
           host: ${{ vars.GERRIT_SERVER }}
           username: ${{ vars.GERRIT_SSH_USER }}
@@ -90,7 +90,7 @@ jobs:
     steps:
       - uses: technote-space/workflow-conclusion-action@v3
       - name: Set vote
-        uses: lfit/gerrit-review-action@v0.4
+        uses: lfit/gerrit-review-action@v0.9
         with:
           host: ${{ vars.GERRIT_SERVER }}
           username: ${{ vars.GERRIT_SSH_USER }}
