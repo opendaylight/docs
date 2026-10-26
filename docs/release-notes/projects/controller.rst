@@ -36,3 +36,19 @@ The following table lists the known issues that exist in this release.
 .. jira_known_issues::
    :project: CONTROLLER
    :versions: 13.0.0-13.0.2
+
+Resolved Issues in SR1
+======================
+The following table lists the issues resolved in this release.
+
+.. jira_fixed_issues::
+   :project: CONTROLLER
+   :versions: 13.0.3-13.0.5
+
+Known Issues in SR1
+===================
+The following table lists the known issues that exist in this release.
+
+.. jira_known_issues::
+   :project: CONTROLLER
+   :versions: 13.0.3-13.0.5
