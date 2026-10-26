@@ -26,24 +26,6 @@ Chromium-SR1
     * :doc:`Project Guides <odl-chromium:index>`
     * :doc:`Release Notes <odl-chromium:release-notes/index>`
 
-Vanadium-SR2
-------------
-
-:Announcement: `Vanadium <https://www.opendaylight.org/current-release-vanadium>`_
-
-:SR2 Release Date: September 28, 2026
-
-:Downloads:
-    * `OpenDaylight Vanadium Tar
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.23.2/karaf-0.23.2.tar.gz>`_
-    * `OpenDaylight Vanadium Zip
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.23.2/karaf-0.23.2.zip>`_
-
-:Documentation:
-    * :doc:`Getting Started Guide <odl-vanadium:getting-started-guide/index>`
-    * :doc:`Project Guides <odl-vanadium:index>`
-    * :doc:`Release Notes <odl-vanadium:release-notes/index>`
-
 Titanium-SR3
 ------------
 
