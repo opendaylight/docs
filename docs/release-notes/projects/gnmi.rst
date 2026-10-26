@@ -33,10 +33,30 @@ Resolved Issues
 ===============
 The following table lists the issues resolved in this release.
 
-None.
+.. jira_known_issues::
+   :project: GNMI
+   :versions: 3.0.0-3.0.0
 
 Known Issues
 ============
 The following table lists the known issues that exist in this release.
 
-None.
+.. jira_known_issues::
+   :project: GNMI
+   :versions: 3.0.0-3.0.0
+
+Resolved Issues in SR1
+======================
+The following table lists the issues resolved in this release.
+
+.. jira_known_issues::
+   :project: GNMI
+   :versions: 3.0.1-3.0.1
+
+Known Issues in SR1
+===================
+The following table lists the known issues that exist in this release.
+
+.. jira_known_issues::
+   :project: GNMI
+   :versions: 3.0.1-3.0.1

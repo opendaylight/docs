@@ -23,10 +23,30 @@ Resolved Issues
 ===============
 The following table lists the issues resolved in this release.
 
-None.
+.. jira_known_issues::
+   :project: IETF
+   :versions: 2.0.0-2.0.2
 
 Known Issues
 ============
 The following table lists the known issues that exist in this release.
 
-None.
+.. jira_known_issues::
+   :project: IETF
+   :versions: 2.0.0-2.0.2
+
+Resolved Issues in SR1
+======================
+The following table lists the issues resolved in this release.
+
+.. jira_known_issues::
+   :project: IETF
+   :versions: 2.0.3-2.0.6
+
+Known Issues in SR1
+===================
+The following table lists the known issues that exist in this release.
+
+.. jira_known_issues::
+   :project: IETF
+   :versions: 2.0.3-2.0.6
