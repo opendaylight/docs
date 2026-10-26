@@ -26,6 +26,7 @@ Chromium-SR1
     * :doc:`Project Guides <odl-chromium:index>`
     * :doc:`Release Notes <odl-chromium:release-notes/index>`
 
+<<<<<<< HEAD   (a7c389 Document current tip and tail releases)
 Vanadium-SR1
 ------------
 
@@ -45,6 +46,9 @@ Vanadium-SR1
     * :doc:`Release Notes <odl-vanadium:release-notes/index>`
 
 Titanium-SR2
+=======
+Titanium-SR3
+>>>>>>> CHANGE (14a08e Remove Vanadium from Downloads)
 ------------
 
 :Announcement: `Titanium <https://www.opendaylight.org/current-release-titanium>`_
