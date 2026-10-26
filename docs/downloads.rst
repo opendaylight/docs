@@ -5,7 +5,7 @@ OpenDaylight Downloads
 Supported Releases
 ==================
 
-Chromium-SR0
+Chromium-SR1
 ------------
 
 (Current Release)
@@ -13,12 +13,13 @@ Chromium-SR0
 :Announcement: `Chromium <https://www.opendaylight.org/current-release-chromium>`_
 
 :GA Release Date: July 29, 2026
+:SR1 Release Date: October 24, 2026
 
 :Downloads:
     * `OpenDaylight Chromium Tar
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.24.0/karaf-0.24.0.tar.gz>`_
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.24.1/karaf-0.24.1.tar.gz>`_
     * `OpenDaylight Chromium Zip
-      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.24.0/karaf-0.24.0.zip>`_
+      <https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.24.1/karaf-0.24.1.zip>`_
 
 :Documentation:
     * :doc:`Getting Started Guide <odl-chromium:getting-started-guide/index>`
