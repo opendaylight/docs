@@ -8,7 +8,7 @@ Supported Releases
 Chromium-SR1
 ------------
 
-(Current Release)
+(Current Tip Release)
 
 :Announcement: `Chromium <https://www.opendaylight.org/current-release-chromium>`_
 
@@ -50,6 +50,8 @@ Titanium-SR3
 :Announcement: `Titanium <https://www.opendaylight.org/current-release-titanium>`_
 
 :SR2 Release Date: September 22, 2026
+
+(Current Tail/LTS Release: supported until March 2028)
 
 :Downloads:
     * `OpenDaylight Titanium Tar
