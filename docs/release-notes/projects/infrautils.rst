@@ -48,7 +48,7 @@ Resolved Issues in SR1
 
  .. jira_fixed_issues::
     :project: INFRAUTILS
-    :versions: 7.10.4-7.1.14
+    :versions: 7.1.10-7.1.14
 
  Known Issues in SR1
  ===================
@@ -56,4 +56,4 @@ Resolved Issues in SR1
 
  .. jira_known_issues::
     :project: INFRAUTILS
-    :versions: 7.10.4-7.1.14
+    :versions: 7.1.10-7.1.14
