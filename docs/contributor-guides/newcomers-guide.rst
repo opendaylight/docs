@@ -58,7 +58,7 @@ clone a project repository and get a local copy of the code
 -----------------------------------------------------------
 
 *To access OpenDaylight repository, you need a Linux Foundation ID to log in.*
-This can be done at `this URL <https://identity.linuxfoundation.org/>`__.
+This can be done at `this URL <https://app.lfx.dev/>`__.
 
 *Once that done, you need to generate your SSH keys pair and publish
 your public on your ODL Gerrit account as described in* `this link <https://git.opendaylight.org/gerrit/Documentation/user-upload.html#ssh>`__.
@@ -165,7 +165,7 @@ is usually a good idea.
    $ git commit -s
 
 .. note::
-   Please abide by the commit messages rules given below and at `the openStack wiki <https://wiki.openstack.org/wiki/GitCommitMessages>`__.
+   Please abide by the commit messages rules given below and at `the OpenStack Contributor Guide <https://docs.openstack.org/contributors/common/git.html#commit-messages>`__.
 
    Be careful with the title length (50 char), the empty line after the title,
    and the body length (72 char).
@@ -671,7 +671,7 @@ More details at :ref:`coding-guidelines`.
 Commit message
 ~~~~~~~~~~~~~~
 
-More details at https://wiki.openstack.org/wiki/GitCommitMessages
+More details at https://docs.openstack.org/contributors/common/git.html#commit-messages
 
 **The commit message should reflect the feature or improvements posted
 in the change.** The message must give a good idea of what have been
@@ -681,7 +681,7 @@ External references are welcome to point out to more details, but they
 should not be a substitute to a correct description.
 
 Here is a summary of Git commit message structure as described in
-`the OpenStack wiki <https://wiki.openstack.org/wiki/GitCommitMessages#Summary_of_Git_commit_message_structure>`__.
+`the OpenStack Contributor Guide <https://docs.openstack.org/contributors/common/git.html#commit-messages>`__.
 
 -  Provide a brief description of the change in the first line.
 -  Insert a single blank line after the first line.
