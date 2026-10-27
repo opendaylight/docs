@@ -39,6 +39,8 @@ Platform Release Notes
 
    upgrade-process
 
+.. _proj_rel_notes:
+
 Project Release Notes
 =====================
 
