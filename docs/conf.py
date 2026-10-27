@@ -35,24 +35,7 @@ update_intersphinx_mapping()
 
 # OpenDaylight Documentation Releases
 intersphinx_mapping['odl-chromium'] = ('https://docs.opendaylight.org/en/stable-chromium/', None)
-intersphinx_mapping['odl-vanadium'] = ('https://docs.opendaylight.org/en/stable-vanadium/', None)
 intersphinx_mapping['odl-titanium'] = ('https://docs.opendaylight.org/en/stable-titanium/', None)
-intersphinx_mapping['odl-scandium'] = ('https://docs.opendaylight.org/en/stable-scandium/', None)
-intersphinx_mapping['odl-calcium'] = ('https://docs.opendaylight.org/en/stable-calcium/', None)
-intersphinx_mapping['odl-potassium'] = ('https://docs.opendaylight.org/en/stable-potassium/', None)
-intersphinx_mapping['odl-argon'] = ('https://docs.opendaylight.org/en/stable-argon/', None)
-intersphinx_mapping['odl-chlorine'] = ('https://docs.opendaylight.org/en/stable-chlorine/', None)
-intersphinx_mapping['odl-sulfur'] = ('https://docs.opendaylight.org/en/stable-sulfur/', None)
-intersphinx_mapping['odl-phosphorus'] = ('https://docs.opendaylight.org/en/stable-phosphorus/', None)
-intersphinx_mapping['odl-silicon'] = ('https://docs.opendaylight.org/en/stable-silicon/', None)
-intersphinx_mapping['odl-aluminium'] = ('https://docs.opendaylight.org/en/stable-aluminium/', None)
-intersphinx_mapping['odl-magnesium'] = ('https://docs.opendaylight.org/en/stable-magnesium/', None)
-intersphinx_mapping['odl-sodium'] = ('https://docs.opendaylight.org/en/stable-sodium/', None)
-intersphinx_mapping['odl-neon'] = ('https://docs.opendaylight.org/en/stable-neon/', None)
-intersphinx_mapping['odl-fluorine'] = ('https://docs.opendaylight.org/en/stable-fluorine/', None)
-intersphinx_mapping['odl-oxygen'] = ('https://docs.opendaylight.org/en/stable-oxygen/', None)
-intersphinx_mapping['odl-nitrogen'] = ('https://docs.opendaylight.org/en/stable-nitrogen/', None)
-intersphinx_mapping['odl-carbon'] = ('https://docs.opendaylight.org/en/stable-carbon/', None)
 
 linkcheck_ignore = [
     'http://localhost',
