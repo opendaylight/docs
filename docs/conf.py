@@ -73,10 +73,8 @@ linkcheck_ignore = [
     'https://stackoverflow.com/',
     'https://stackoverflow.com/questions/26327957/should-java-8-getters-return-optional-type',
     'https://stackoverflow.com/questions/35679852/karaf-exception-is-thrown-while-installing-org-fusesource-leveldbjni',
-    # wiki.openstack.org intermittently serves an anti-bot (Anubis) challenge
-    # page instead of the real content, which makes the anchor check fail
-    # even though the anchor exists
-    'https://wiki.openstack.org/wiki/GitCommitMessages#Summary_of_Git_commit_message_structure',
+    # LFX login page returns 401 Unauthorized to non-browser clients
+    'https://app.lfx.dev/',
     # this url often has connectivity issues (GitHub rate limiting) on the gate
     'https://github.com/checkstyle/checkstyle/blob/master/src/main/resources/google_checks.xml',
     # this url often has connectivity issues on the gate
