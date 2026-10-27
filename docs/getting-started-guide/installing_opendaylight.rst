@@ -115,9 +115,6 @@ To list the installed Karaf features, run the following command::
 
     feature:list -i
 
-The description of these features is in the project specific
-release notes :ref:`proj_rel_notes` section.
-
 Karaf running on Windows 10
 ---------------------------
 
