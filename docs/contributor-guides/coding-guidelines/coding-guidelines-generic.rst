@@ -19,13 +19,9 @@ Ideally this will be the preceding commit in git history.
 OpenDaylight uses Gerrit to manage reviewing and merging of contributions,
 so in this context "previous state" is shown as Base.
 
-.. note::
-   `Chris Beams'blog <http://chris.beams.io/posts/git-commit/>`__ is pretty
-   descriptive of why formatting the commit message properly is useful.
-
-
-For Git commit messages we recommend following the `OpenStack commit message
-recommendations <https://wiki.openstack.org/wiki/GitCommitMessages>`__.
+For Git commit messages we recommend following the seven rules from
+`Chris Beams' blog <https://cbea.ms/git-commit/>`__, which also explains
+why formatting the commit message properly is useful:
 
 * Separate subject from body with a blank line
 * Limit the subject line to 50 characters
