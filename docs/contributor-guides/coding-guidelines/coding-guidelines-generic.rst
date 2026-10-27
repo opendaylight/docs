@@ -25,7 +25,7 @@ so in this context "previous state" is shown as Base.
 
 
 For Git commit messages we recommend following the `OpenStack commit message
-recommendations <https://wiki.openstack.org/wiki/GitCommitMessages>`__.
+recommendations <https://docs.openstack.org/contributors/common/git.html#commit-messages>`__.
 
 * Separate subject from body with a blank line
 * Limit the subject line to 50 characters
