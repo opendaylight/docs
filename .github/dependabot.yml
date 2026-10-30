@@ -36,19 +36,6 @@ updates:
           - "*"
   - package-ecosystem: "github-actions"
     directory: "/"
-    target-branch: "stable/scandium"
-    schedule:
-      interval: "weekly"
-    commit-message:
-      prefix: "CI(actions)"
-    cooldown:
-      default-days: 7
-    groups:
-      actions-deps:
-        patterns:
-          - "*"
-  - package-ecosystem: "github-actions"
-    directory: "/"
     target-branch: "stable/titanium"
     schedule:
       interval: "weekly"
