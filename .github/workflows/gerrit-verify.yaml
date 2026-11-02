@@ -124,7 +124,7 @@ jobs:
       - name: Gerrit change information
         if: ${{ env.ACT != 'true' }}
         id: gerrit-change-info
-        uses: lfreleng-actions/gerrit-change-info@c22caf1804ff0c2be40b90da36a63c0da7b19d33 # v0.1.6
+        uses: lfreleng-actions/gerrit-change-info@26b81b4b135ed1826b2e6f64301afbde8bc2246d # v0.1.7
         with:
           gerrit_change_url: ${{ inputs.GERRIT_CHANGE_URL }}
           gerrit_patchset_number: ${{ inputs.GERRIT_PATCHSET_NUMBER }}
@@ -204,6 +204,6 @@ jobs:
           username: ${{ vars.GERRIT_SSH_USER }}
           key: ${{ secrets.GERRIT_SSH_PRIVKEY }}
           known_hosts: ${{ vars.GERRIT_KNOWN_HOSTS }}
-          gerrit-change-number: ${{ needs.call-gerrit-change-info.outputs.GERRIT_CHANGE_NUMBER }}
-          gerrit-patchset-number: ${{ needs.call-gerrit-change-info.outputs.GERRIT_PATCHSET_NUMBER }}
+          gerrit-change-number: ${{ inputs.GERRIT_CHANGE_NUMBER }}
+          gerrit-patchset-number: ${{ inputs.GERRIT_PATCHSET_NUMBER }}
           vote-type: ${{ env.WORKFLOW_CONCLUSION }}
