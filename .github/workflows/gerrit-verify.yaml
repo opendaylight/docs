@@ -50,7 +50,7 @@ name: Gerrit Verify (Hybrid)
         type: string
 
 concurrency:
-  group: gerrit-verify-${{ github.ref }}
+  group: gerrit-verify-${{ inputs.GERRIT_BRANCH }}-${{ inputs.GERRIT_CHANGE_ID || github.run_id }}
   cancel-in-progress: true
 
 permissions:
