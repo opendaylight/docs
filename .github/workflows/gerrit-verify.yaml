@@ -147,7 +147,7 @@ jobs:
       GERRIT_PATCHSET_REVISION: ${{ needs.call-gerrit-change-info.outputs.GERRIT_PATCHSET_REVISION }}
       GERRIT_PROJECT: ${{ needs.call-gerrit-change-info.outputs.GERRIT_PROJECT }}
       GERRIT_REFSPEC: ${{ needs.call-gerrit-change-info.outputs.GERRIT_REFSPEC }}
-      TOX_ENVS: '["docs","docs-linkcheck"]'
+      TOX_ENVS: '["docs","docs-linkcheck","spelling","gitlint"]'
 
   rtd-validation:
     needs: [prepare, call-gerrit-change-info]
