@@ -67,7 +67,7 @@ jobs:
       - name: Clear votes
         if: ${{ env.ACT != 'true' }}
         # yamllint disable-line rule:line-length
-        uses: lfit/gerrit-review-action@d56b0b5c81402f8cb435aaca513bebdea3be951e # v1.2.0
+        uses: lfit/gerrit-review-action@31093af31cec3755c34d8563ee54e2b7eb3a4eac # v1.3.1
         with:
           host: ${{ vars.GERRIT_SERVER }}
           username: ${{ vars.GERRIT_SSH_USER }}
@@ -124,7 +124,7 @@ jobs:
       - name: Gerrit change information
         if: ${{ env.ACT != 'true' }}
         id: gerrit-change-info
-        uses: lfreleng-actions/gerrit-change-info@c22caf1804ff0c2be40b90da36a63c0da7b19d33 # v0.1.6
+        uses: lfreleng-actions/gerrit-change-info@402f2dcf608311a98e1bea1fdf5368bcdcb80171 # v0.1.8
         with:
           gerrit_change_url: ${{ inputs.GERRIT_CHANGE_URL }}
           gerrit_patchset_number: ${{ inputs.GERRIT_PATCHSET_NUMBER }}
@@ -136,7 +136,7 @@ jobs:
   call-gerrit-tox-verify:
     needs: [prepare, call-gerrit-change-info]
     # yamllint disable rule:line-length
-    uses: lfit/releng-reusable-workflows/.github/workflows/gerrit-compose-required-tox-verify.yaml@e3bb02dd0d2e5027cde63732fe00f591d6ecec03 # v0.11.0
+    uses: lfit/releng-reusable-workflows/.github/workflows/gerrit-compose-required-tox-verify.yaml@fc3aea6f1ec56737c3cdd8fe1c46cbbb7209394b # v0.11.1
     with:
       GERRIT_BRANCH: ${{ needs.call-gerrit-change-info.outputs.GERRIT_BRANCH }}
       GERRIT_CHANGE_ID: ${{ needs.call-gerrit-change-info.outputs.GERRIT_CHANGE_ID }}
@@ -152,7 +152,7 @@ jobs:
   rtd-validation:
     needs: [prepare, call-gerrit-change-info]
     # yamllint disable rule:line-length
-    uses: lfit/releng-reusable-workflows/.github/workflows/gerrit-compose-required-rtdv3-verify.yaml@e3bb02dd0d2e5027cde63732fe00f591d6ecec03 # v0.11.0
+    uses: lfit/releng-reusable-workflows/.github/workflows/gerrit-compose-required-rtdv3-verify.yaml@fc3aea6f1ec56737c3cdd8fe1c46cbbb7209394b # v0.11.1
     with:
       GERRIT_BRANCH: ${{ needs.call-gerrit-change-info.outputs.GERRIT_BRANCH }}
       GERRIT_CHANGE_ID: ${{ needs.call-gerrit-change-info.outputs.GERRIT_CHANGE_ID }}
@@ -170,7 +170,7 @@ jobs:
   pre-commit-linting:
     needs: [prepare, call-gerrit-change-info]
     # yamllint disable-line rule:line-length
-    uses: lfit/releng-reusable-workflows/.github/workflows/compose-repo-linting.yaml@e3bb02dd0d2e5027cde63732fe00f591d6ecec03 # v0.11.0
+    uses: lfit/releng-reusable-workflows/.github/workflows/compose-repo-linting.yaml@fc3aea6f1ec56737c3cdd8fe1c46cbbb7209394b # v0.11.1
     with:
       GERRIT_BRANCH: ${{ needs.call-gerrit-change-info.outputs.GERRIT_BRANCH }}
       GERRIT_CHANGE_ID: ${{ needs.call-gerrit-change-info.outputs.GERRIT_CHANGE_ID }}
@@ -198,7 +198,7 @@ jobs:
         if: ${{ env.ACT != 'true' }}
       - name: Set vote
         if: ${{ env.ACT != 'true' }}
-        uses: lfit/gerrit-review-action@d56b0b5c81402f8cb435aaca513bebdea3be951e # v1.2.0
+        uses: lfit/gerrit-review-action@31093af31cec3755c34d8563ee54e2b7eb3a4eac # v1.3.1
         with:
           host: ${{ vars.GERRIT_SERVER }}
           username: ${{ vars.GERRIT_SSH_USER }}
