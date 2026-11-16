@@ -147,23 +147,27 @@ jobs:
       GERRIT_PATCHSET_REVISION: ${{ needs.call-gerrit-change-info.outputs.GERRIT_PATCHSET_REVISION }}
       GERRIT_PROJECT: ${{ needs.call-gerrit-change-info.outputs.GERRIT_PROJECT }}
       GERRIT_REFSPEC: ${{ needs.call-gerrit-change-info.outputs.GERRIT_REFSPEC }}
-      TOX_ENVS: '["docs","docs-linkcheck","spelling","gitlint"]'
+      # docs-build runs the docs and docs-linkcheck environments, so
+      # this job covers only the environments it leaves behind.
+      TOX_ENVS: '["spelling","gitlint"]'
 
-  rtd-validation:
+  # Replaces the rtdv3 verify workflow and the docs/docs-linkcheck tox
+  # environments: one call audits .readthedocs.yaml, builds the
+  # documentation, checks links and validates the ReadTheDocs project.
+  docs-build:
     needs: [prepare, call-gerrit-change-info]
     # yamllint disable rule:line-length
-    uses: lfit/releng-reusable-workflows/.github/workflows/gerrit-compose-required-rtdv3-verify.yaml@fc3aea6f1ec56737c3cdd8fe1c46cbbb7209394b # v0.11.1
+    uses: lfreleng-actions/docs-workflows/.github/workflows/docs-build.yaml@10ccba562be2f2d2c76cf6fb751e0486070610a3 # v0.4.6
     with:
-      GERRIT_BRANCH: ${{ needs.call-gerrit-change-info.outputs.GERRIT_BRANCH }}
-      GERRIT_CHANGE_ID: ${{ needs.call-gerrit-change-info.outputs.GERRIT_CHANGE_ID }}
-      GERRIT_CHANGE_NUMBER: ${{ needs.call-gerrit-change-info.outputs.GERRIT_CHANGE_NUMBER }}
-      GERRIT_CHANGE_URL: ${{ needs.call-gerrit-change-info.outputs.GERRIT_CHANGE_URL }}
-      GERRIT_EVENT_TYPE: ${{ needs.call-gerrit-change-info.outputs.GERRIT_EVENT_TYPE }}
-      GERRIT_PATCHSET_NUMBER: ${{ needs.call-gerrit-change-info.outputs.GERRIT_PATCHSET_NUMBER }}
-      GERRIT_PATCHSET_REVISION: ${{ needs.call-gerrit-change-info.outputs.GERRIT_PATCHSET_REVISION }}
-      GERRIT_PROJECT: ${{ needs.call-gerrit-change-info.outputs.GERRIT_PROJECT }}
-      GERRIT_REFSPEC: ${{ needs.call-gerrit-change-info.outputs.GERRIT_REFSPEC }}
-      TARGET_REPO: ${{ inputs.TARGET_REPO || github.repository }}
+      mode: "verify"
+      # docs-build treats link failures as advisory by default. The
+      # docs-linkcheck tox environment blocked the vote before this
+      # change, so keep it blocking.
+      linkcheck_advisory: false
+      gerrit_refspec: ${{ needs.call-gerrit-change-info.outputs.GERRIT_REFSPEC }}
+      gerrit_project: ${{ needs.call-gerrit-change-info.outputs.GERRIT_PROJECT }}
+      gerrit_branch: ${{ needs.call-gerrit-change-info.outputs.GERRIT_BRANCH }}
+      gerrit_url: ${{ vars.GERRIT_URL }}
     secrets:
       RTD_TOKEN: ${{ secrets.RTD_TOKEN }}
 
@@ -185,7 +189,7 @@ jobs:
   vote:
     if: ${{ always() }}
     # yamllint disable-line rule:line-length
-    needs: [call-gerrit-tox-verify, rtd-validation, call-gerrit-change-info, pre-commit-linting]
+    needs: [call-gerrit-tox-verify, docs-build, call-gerrit-change-info, pre-commit-linting]
     runs-on: ubuntu-latest
     timeout-minutes: 5
     # yamllint disable rule:line-length
