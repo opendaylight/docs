@@ -14,6 +14,4 @@ OpenDaylight deployment use cases.
           to documentation with examples of interesting OpenDaylight deployment
           use cases in this section.
 
-* `OPNFV Installation instructions (Apex)
-  <https://artifacts.opnfv.org/apex/docs/installation-instructions/index.html>`_
 * `Apex OPNFV documentation <https://docs.opnfv.org/projects/apex/en/latest/index.html>`_
