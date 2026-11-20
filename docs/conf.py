@@ -106,6 +106,8 @@ nitpicky = True
 release = version
 
 spelling_warning = True
+# CI checks out a depth-1 clone, so git-log-derived names differ from local.
+spelling_ignore_contributor_names = False
 spelling_exclude_patterns = ['release-notes/release-notes-*', 'release-notes/projects/*']
 
 html_context = {
