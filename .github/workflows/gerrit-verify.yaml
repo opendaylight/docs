@@ -164,6 +164,16 @@ jobs:
       # docs-linkcheck tox environment blocked the vote before this
       # change, so keep it blocking.
       linkcheck_advisory: false
+      # intersphinx fetches the Python inventory, which the baseline
+      # egress allow-list does not cover yet.
+      harden_runner_extra_endpoints: "docs.python.org:443"
+      # The derived slugs (opendaylight-docs, opendaylight-doc) do not
+      # exist; docs.opendaylight.org is the "opendaylight" project.
+      rtd_project: "opendaylight"
+      rtd_parent_project: "opendaylight"
+      # RTD_TOKEN is rejected with HTTP 401. Re-enable once a valid
+      # Read the Docs API token is in the repository secret.
+      rtd_enabled: false
       gerrit_refspec: ${{ needs.call-gerrit-change-info.outputs.GERRIT_REFSPEC }}
       gerrit_project: ${{ needs.call-gerrit-change-info.outputs.GERRIT_PROJECT }}
       gerrit_branch: ${{ needs.call-gerrit-change-info.outputs.GERRIT_BRANCH }}
